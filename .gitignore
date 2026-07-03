@@ -1,0 +1,18 @@
+# API keys — DO NOT COMMIT
+.env
+**/.env
+
+# Cache directories
+cache/
+**/cache/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Results (large output directories)
+results/
+results_*/
+
+# OS files
+.DS_Store
+Thumbs.db
