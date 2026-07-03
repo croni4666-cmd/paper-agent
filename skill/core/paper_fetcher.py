@@ -315,13 +315,20 @@ def search_with_searchpool(
     openalex_api_key: Optional[str] = None,
     polite_email: str = 'researcher@paper-agent.local',
     use_cache: bool = True,
-    min_per_source: int = 0,
+    min_per_source: Optional[int] = None,
 ) -> Dict[str, List[Dict]]:
     """Search via SearchPool; return channel-keyed dict compatible with the
     legacy fetch_all_channels() shape.
 
-    Each searcher (crossref / semanticscholar / arxiv / openalex) becomes one
-    channel entry.  Channels with no results are simply omitted.
+    Each searcher (crossref / semanticscholar / arxiv / openalex / core) becomes
+    one channel entry.  Channels with no results are simply omitted.
+
+    v3.1 (2026-07-03): `min_per_source` default changed from 0 to
+    `max_per_channel`. This is the critical fix that makes 5-engine search
+    actually exercise all engines — without it, the pool stops as soon as the
+    first engine (Crossref) returns >= limit, and the other 4 engines never
+    fire. With `min_per_source=max_per_channel`, every enabled engine
+    contributes up to max_per_channel hits (or all of them) before stopping.
 
     Usage in pipeline.py:
         channel_results = search_with_searchpool(query, max_per_channel=30)
@@ -341,10 +348,13 @@ def search_with_searchpool(
             ttl_days=7,
         )
     pool = _POOL_CACHE['pool_with_oa']
+    # v3.1: default min_per_source to max_per_channel so all 5 engines fire.
+    # Override only when caller explicitly wants fast-Crossref-first behavior.
+    effective_min = max_per_channel if min_per_source is None else min_per_source
     papers = pool.search(
         query, limit=max_per_channel,
         use_cache=use_cache,
-        min_per_source=min_per_source,
+        min_per_source=effective_min,
     )
 
     # Split by source so legacy Dict shape is preserved
@@ -354,6 +364,41 @@ def search_with_searchpool(
         channel_results.setdefault(ch, [])
         channel_results[ch].append(_paper_to_dict(p))
     return channel_results
+
+
+def fetch_all_channels(
+    query: str,
+    channels: Optional[List[str]] = None,
+    max_per_channel: int = 30,
+    api_keys: Optional[Dict[str, str]] = None,
+) -> Dict[str, List[Dict]]:
+    """Legacy multi-channel search facade.
+
+    v3.0.1+: this is a thin wrapper around `search_with_searchpool`. Channels
+    that the SearchPool exposes (crossref / semanticscholar / arxiv / openalex
+    / core) are returned as keys; the `channels` and `api_keys` arguments are
+    accepted for backward compatibility with v3.0.0 callers.
+
+    The `channels` filter is best-effort: if specified, results are restricted
+    to those channels; if None (default), all enabled channels are returned.
+
+    Note: prefers search_with_searchpool (Phase 4 SearchPool backend) over the
+    v3.0.0 hand-rolled urllib fallback. This wrapper exists so the import in
+    pipeline.py:run_search_screen_pipeline doesn't break.
+    """
+    if not _HAS_SEARCH_POOL:
+        raise RuntimeError(
+            'api_pool unavailable — fetch_all_channels needs SearchPool backend'
+        )
+    # Delegate to the new pool; the channel filter is applied post-hoc
+    result = search_with_searchpool(
+        query=query,
+        max_per_channel=max_per_channel,
+        openalex_api_key=(api_keys or {}).get('openalex'),
+    )
+    if channels:
+        result = {k: v for k, v in result.items() if k in channels}
+    return result
 
 
 __all__ = [
