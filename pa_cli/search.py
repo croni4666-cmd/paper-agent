@@ -73,13 +73,21 @@ def _normalize_crossref(it: dict) -> dict:
 
 
 def search_openalex(query: str, year_min: int = None, year_max: int = None,
-                    limit: int = 50) -> List[Dict]:
-    """OpenAlex: best coverage + has OA flag."""
+                    limit: int = 50, concepts_filter: str = None) -> List[Dict]:
+    """OpenAlex: best coverage + has OA flag.
+
+    concepts_filter: optional OpenAlex filter string like
+        "concepts.id:C1|C2" (OR) or "concepts.id:C1+concepts.id:C2" (AND).
+        Built by pa_cli.concepts.build_concepts_filter.
+    """
     f = ""
     if year_min or year_max:
         ymin = year_min or 1900
         ymax = year_max or 2099
         f = f",publication_year:{ymin}-{ymax}"
+    if concepts_filter:
+        # Add concepts filter; multiple filters joined by comma
+        f = f + ("," + concepts_filter if f else concepts_filter)
     url = (f"https://api.openalex.org/works?search={quote(query)}&per_page={min(limit, 100)}"
            f"&filter=type:article{f}")
     api_key = os.environ.get("OPENALEX_API_KEY")
@@ -224,8 +232,16 @@ def search_core(query: str, year_min: int = None, year_max: int = None,
 
 
 def run_search(query: str, year_min: int = None, year_max: int = None,
-               limit: int = 50, engine: str = "all") -> Dict[str, Any]:
-    """Run search across specified engines; returns deduped unified results."""
+               limit: int = 50, engine: str = "all",
+               concepts_filter: str = None) -> Dict[str, Any]:
+    """Run search across specified engines; returns deduped unified results.
+
+    concepts_filter: OpenAlex `concepts.id:...` filter string (built by
+                     pa_cli.concepts.build_concepts_filter). Only OpenAlex
+                     applies it; other engines ignore. Format examples:
+                       - OR:  "concepts.id:C1|C2"
+                       - AND: "concepts.id:C1+concepts.id:C2"
+    """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "core"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     by_engine: Dict[str, List[Dict]] = {}
@@ -240,7 +256,12 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         if eng not in funcs:
             continue
         try:
-            by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
+            # Pass concepts_filter to OpenAlex; other engines ignore extra args
+            if eng == "openalex" and concepts_filter:
+                by_engine[eng] = search_openalex(query, year_min, year_max, limit,
+                                                concepts_filter=concepts_filter)
+            else:
+                by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
         except Exception as e:
             by_engine[eng] = [{"error": str(e)[:200]}]
 

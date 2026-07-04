@@ -22,6 +22,59 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.6.0] - 2026-07-04
+
+### Added — [P1-2] OpenAlex concepts semantic filtering (`pa search --concepts`)
+
+Implements all 3 acceptance criteria from `ROADMAP.md` [P1-2].
+
+**New module**:
+- `pa_cli/concepts.py` (~165 lines) — `search_concepts(query, limit)` (text→ID via OpenAlex `/concepts?search=`), `resolve_concept_ids(names_or_ids)` (mixed input parser: IDs pass through, names look up), `build_concepts_filter(ids, mode)` (OpenAlex filter string builder, OR via pipe / AND via `+`), `fetch_concept_metadata(id)` (single-concept metadata lookup), `is_concept_id(s)` (regex validator).
+
+**CLI integration**: `pa search` adds 3 new flags (in `pa_cli/cli.py`):
+- `--concepts C1,C2` (comma-separated OpenAlex concept IDs)
+- `--concept "name"` (repeatable, resolves to ID via `search_concepts`)
+- `--concept-mode or|and` (default `or`; `and` requires all)
+
+**How it works**:
+1. User provides raw concepts (mixed IDs + names)
+2. `resolve_concept_ids()` returns canonical C<digits> list + warnings for unresolvable names
+3. `fetch_concept_metadata()` enriches each ID with display_name + works_count for human-readable output
+4. `build_concepts_filter()` produces the OpenAlex filter string
+5. `search.py:run_search()` passes the filter to `search_openalex()` only (other engines ignore; recorded as a known scope limit)
+6. Result JSON includes `applied_concepts` array + `concept_mode` for downstream consumers
+
+**OpenAlex API notes** (researched 2026-07-04):
+- `GET /concepts?search=<text>` does full-text search across concept names + descriptions
+- Multi-word queries work better than single words ("higher education" → 11 results; "AI literacy" → 0 because not a registered concept)
+- Multi-concept filter syntax:
+  - OR:  `concepts.id:C1|C2` (pipe separator in single filter)
+  - AND: `concepts.id:C1+concepts.id:C2` (separate filter expressions joined with `+`)
+
+**Validation** (`test_output/test_concepts_e2e.py` — 10/10 sub-tests, real OpenAlex API):
+- OR filter syntax correct
+- AND filter syntax correct
+- `search_concepts` finds "higher education" → C120912362 (1.3M works)
+- `resolve_concept_ids` mixed (ID + name) works, dedup
+- `pa search --concepts C154945302` filters, populates `applied_concepts` in result
+- `pa search --concept "machine learning"` resolves to C119857082
+- OR vs AND record different `concept_mode` correctly
+- Unresolvable name (`xyzzz_no_such_concept_xyz`) → warning to stderr, search continues without filter
+- Empty concepts list = no filter (no error)
+- Build filter handles empty list → returns `""`
+
+**Effort** (per estimation methodology):
+- Estimate: 2.25h, Actual: ~1h, Variance: ~2x under
+- Speedups: (a) OpenAlex API key pre-configured (faster than 1 RPS free tier); (b) `_normalize_openalex` reuse from v3.3.0; (c) `concepts_filter` was a 2-line threading through `run_search` → `search_openalex`
+- For "API integration + filter" type items: estimate 1-2h with 0.5h buffer
+
+**Deferred to backlog** (recorded in [P1-2] outcome section):
+- Concept name fuzzy matching ("machine learn" → "machine learning") — current behavior is exact-phrase; users can fall back to IDs
+- Concept disambiguation UI — when `--concept "X"` resolves to multiple C<id>s, currently we pick top-1 by works_count; could show picker
+- Cache concept metadata (each `fetch_concept_metadata` is a network call; 5-concept search = 5 calls; could memoize per session)
+
+---
+
 ## [3.5.1] - 2026-07-04 (post-MCP-revert state, follow-up commit)
 
 ### Real-machine verification (added 2026-07-04 after follow-up commit)
