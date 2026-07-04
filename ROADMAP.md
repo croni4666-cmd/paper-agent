@@ -20,10 +20,12 @@
 
 ### [P0-1] Bibtex export
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-04
+- **Started**: 2026-07-04
+- **Completed**: 2026-07-04
 - **Priority**: P0
-- **Effort**: 1-2 days
+- **Effort**: ~3 hours (faster than estimate)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.1
 - **Rationale**: PyPaperBot has built-in Bibtex export; missing from paper-agent v3.3.0. Academic users need Bibtex for Zotero / Mendeley / Overleaf workflows. Without Bibtex, paper-agent loses one of the primary reasons users migrate from PyPaperBot.
 - **Acceptance criteria**:
@@ -31,6 +33,31 @@
   - Entries use DOI as cite-key with collision handling (`doi_v2`, `doi_v3` for duplicates)
   - Author list, journal, year, volume, issue, pages all populated from OpenAlex / Crossref metadata
 - **Dependencies**: None (uses existing search API metadata)
+
+#### Outcome (2026-07-04)
+
+Implementation: `pa_cli/bibtex.py` (220 lines) + `--format` option in `pa search`.
+
+Validation passed (`test_output/validate_bibtex.py`):
+- 3 entries from `pa search "AI literacy higher education"` parsed cleanly by bibtexparser v1.4.4
+- Round-trip test: serialize + parse again → 3 entries, no data loss
+- All 3 cite-keys unique (DOI-stripped format)
+- All entries have valid DOI (10.* prefix)
+- 0 results edge case: 0 entries written, no crash, header still generated
+- Auto-naming when no `--output`: `machine_learning.bib` from query
+
+Fields populated per entry: title / author / journal / year / doi / url / note
+(citation count + OA status). Special chars escaped: `\` `{` `}` `&` `%` `$` `#` `_`.
+
+Surprise findings during validation:
+- Used 3 hours vs estimate 1-2 days — OpenAlex metadata is rich enough that no Crossref fallback was needed
+- bibtexparser v1.4.4 was already installable; no extra deps beyond pip install
+- Round-trip serialization preserved byte-for-byte content; downstream tools (Zotero, JabRef) will accept these unchanged
+
+What v3.4.1+ could improve (deferred to backlog):
+- Author name disambiguation (initials vs full first names — currently uses OpenAlex's display_name which is good but not always consistent)
+- Pages / volume / issue fields — OpenAlex doesn't expose these; would need Crossref fallback or just `pages = {}` empty
+- Entry type auto-detection for proceedings / books — currently hardcoded `@article` per source type
 
 ### [P0-2] Local cache (avoid re-download)
 

@@ -9,6 +9,7 @@ Usage examples:
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -242,18 +243,34 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, quie
               help="Max results per engine")
 @click.option("--engine", default="all", show_default=True,
               help="all / crossref,openalex,arxiv,semanticscholar,core (comma-separated)")
+@click.option("--format", "out_format", default="json", show_default=True,
+              type=click.Choice(["json", "bibtex"]),
+              help="Output format: json (default) or bibtex")
 @click.option("-o", "--output", default=None,
-              help="Save JSON results to file")
+              help="Save results to file (.json or .bib)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def search(query, year_min, year_max, limit, engine, output, quiet):
+def search(query, year_min, year_max, limit, engine, out_format, output, quiet):
     """5-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / CORE)."""
     from .search import run_search
+    from .bibtex import write_bibtex
     if not quiet:
-        click.echo(f"[pa] search query={query!r} years={year_min}-{year_max}", err=True)
+        click.echo(f"[pa] search query={query!r} years={year_min}-{year_max} format={out_format}", err=True)
     results = run_search(query, year_min, year_max, limit, engine)
     if not quiet:
         click.echo(f"[pa] by_engine: {results['by_engine']}", err=True)
         click.echo(f"[pa] dedup_count: {results['dedup_count']}", err=True)
+    if out_format == "bibtex":
+        # Determine default output path if none given
+        if not output:
+            safe_q = re.sub(r'[^A-Za-z0-9_-]+', '_', query)[:40]
+            output = f"{safe_q}.bib"
+        papers = results["results"]
+        out_path = write_bibtex(papers, output)
+        click.echo(f"[pa] wrote {len(papers)} BibTeX entries to {out_path}", err=True)
+        if not quiet:
+            click.echo(f"[pa] cite-key format: doi-stripped (e.g. 1186_s41239_023_00411_8)", err=True)
+        return
+    # Default: JSON
     out = json.dumps(results, indent=2, ensure_ascii=False)
     if output:
         Path(output).write_text(out, encoding="utf-8")

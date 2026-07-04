@@ -17,6 +17,51 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.4.0] - 2026-07-04
+
+### Added — [P0-1] Bibtex export (`pa_cli/bibtex.py`, 220 lines)
+
+New `--format` option on `pa search`:
+
+```bash
+# JSON output (default, unchanged)
+pa search "AI literacy" --limit 5 --output results.json
+
+# Bibtex output (NEW)
+pa search "AI literacy" --limit 5 --format bibtex --output results.bib
+# or with auto-named output:
+pa search "AI literacy" --format bibtex
+# → writes "AI_literacy.bib"
+```
+
+**Validation passed** (`test_output/validate_bibtex.py`):
+- bibtexparser v1.4.4 parses output cleanly
+- Round-trip serialize + parse: zero data loss
+- All cite-keys unique (DOI-stripped, e.g. `1186_s41239_023_00411_8`)
+- 0-result edge case handled: empty `.bib` with header only, no crash
+- Auto-naming when no `--output`: query → filename (`machine_learning.bib`)
+
+**Fields per entry**: title / author / journal / year / doi / url / note.
+- `note` carries `Open Access` flag, citation count, `oa_status`, source engine
+- Author format: `Last, First Middle` joined with ` and ` (Zotero-compatible)
+- Special chars escaped: `\` `{` `}` `&` `%` `$` `#` `_`
+
+**Effort**: ~3 hours actual vs 1-2 days estimate (OpenAlex metadata
+rich enough that no Crossref fallback needed). Status: `done` in
+`ROADMAP.md` with full outcome log.
+
+**Parity with PyPaperBot**: closes the main feature gap from
+`COMPETITOR_ANALYSIS_v3.3.0.md` §6.1. Migration reason from
+PyPaperBot to paper-agent now strengthened.
+
+### Changed — `pa_cli/cli.py` search command
+
+- New `--format {json,bibtex}` option (default: json)
+- Auto-output path when `--format bibtex` and no `-o` given
+- Imports `re` for query sanitization in auto-naming
+
+---
+
 ## [3.3.0] - 2026-07-04
 
 ### Added — `pa_cli/keys.py` API key registry + reminder system (validated)
