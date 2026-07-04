@@ -467,5 +467,61 @@ def mcp_serve():
     _mcp_main()
 
 
+@main.command()
+@click.argument("doi")
+@click.option("--direction", "direction",
+              type=click.Choice(["forward", "backward"]),
+              default="forward", show_default=True,
+              help="forward = papers that cite <DOI>; backward = papers <DOI> cites")
+@click.option("--limit", default=100, show_default=True, type=int,
+              help="Max papers to return (forward default 100; backward 50 recommended)")
+@click.option("--save-bib", "save_bib_path", default=None, metavar="PATH",
+              help="Also write BibTeX to this path")
+@click.option("-o", "--output", default=None, metavar="PATH",
+              help="Save JSON result to this path (else stdout)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def citations(doi, direction, limit, save_bib_path, output, quiet):
+    """Walk citation graph via OpenAlex.
+
+    Examples:
+      pa citations 10.1186/s41239-023-00411-8 --direction forward --limit 20
+      pa citations 10.1186/s41239-023-00411-8 --direction backward --limit 50
+      pa citations 10.1186/s41239-023-00411-8 --save-bib crompton_citers.bib
+
+    forward = "who cites this paper?"
+      Cursor-paginated; bounded by --limit.
+
+    backward = "what does this paper cite?"
+      Resolves DOI -> referenced_works[] via OpenAlex, fetches each.
+      N+1 API calls (one per reference). Use --limit wisely (default 100,
+      but recommend 50 since each ref = a separate HTTP request).
+
+    Requires OPENALEX_API_KEY env var for higher rate limit (1 RPS free, faster
+    with key). Without key, the walk still works but slower.
+    """
+    import json as _json
+    from .citations import citation_walk
+    from .bibtex import write_bibtex
+    if not quiet:
+        click.echo(f"[pa] citations doi={doi} direction={direction} limit={limit}", err=True)
+    result = citation_walk(doi, direction=direction, limit=limit)
+    if result.get("error"):
+        click.echo(f"[pa] error: {result['error']}", err=True)
+        click.echo(_json.dumps(result, indent=2, ensure_ascii=False))
+        sys.exit(2)
+    if not quiet:
+        click.echo(f"[pa] source: {result['source_work'].get('title', '')[:80]!r}", err=True)
+        click.echo(f"[pa] fetched {result['count']} papers (truncated={result['truncated']})", err=True)
+    out_json = _json.dumps(result, indent=2, ensure_ascii=False)
+    if output:
+        Path(output).write_text(out_json, encoding="utf-8")
+        click.echo(f"[pa] saved JSON to {output}", err=True)
+    else:
+        click.echo(out_json)
+    if save_bib_path:
+        write_bibtex(result["results"], save_bib_path)
+        click.echo(f"[pa] saved BibTeX ({result['count']} entries) to {save_bib_path}", err=True)
+
+
 if __name__ == "__main__":
     main()

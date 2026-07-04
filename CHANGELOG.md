@@ -17,6 +17,53 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.7.0] - 2026-07-04
+
+### Added — [P1-1] Forward / backward citation walk (`pa citations <DOI>`)
+
+Implements all 3 acceptance criteria from `ROADMAP.md` [P1-1].
+
+**New files**:
+- `pa_cli/citations.py` (~150 lines) — OpenAlex wrappers: `get_work_by_doi`, `get_citing` (cursor-paginated), `get_referenced` (N+1 API calls per reference), `citation_walk` (top-level). Reuses `search._normalize_openalex` for output shape consistency with `pa search`.
+
+**CLI integration**: `pa citations <DOI>` subcommand in `pa_cli/cli.py`:
+- `--direction forward|backward` (default forward)
+- `--limit N` (default 100 forward, 50 recommended for backward since each ref is a separate API call)
+- `--save-bib path.bib` to also write BibTeX
+- `-o path.json` to save JSON output (else stdout)
+
+**MCP integration**: `pa_citations` (5th MCP tool) exposed via `pa mcp-serve`. Args: `doi` (req), `direction?` (forward|backward, default forward), `limit?` (1-200, default 100). Returns the same dict shape as CLI.
+
+**OpenAlex API**:
+- Forward: 2-step (DOI→ID, then `filter=cites:W<id>` cursor-paginated, 50/page default)
+- Backward: 2-step (DOI→work, read `referenced_works[]`, then fetch each individually). Bounded by `--limit` since each ref is a separate HTTP request.
+- **Discovered 2026-07-04**: `cites` filter accepts **only OpenAlex IDs** (W-prefixed), NOT DOIs in any form. Direct DOI URL in filter returns 0 results.
+
+**Validation** (`test_output/test_citations_e2e.py` — 8/8 sub-tests using real OpenAlex API):
+- `forward` walk returns 5 papers with titles + DOIs + cited_by_count
+- `backward` walk returns 3 referenced papers
+- Unknown DOI returns `{error: "doi_not_found"}` (no exception)
+- CLI JSON output structure correct (count, direction, source_work, results, truncated)
+- `--save-bib` produces valid BibTeX (1593 bytes, 3 entries)
+- Unknown DOI via CLI exits with rc=2
+- `pa_citations` MCP tool returns the same structure as CLI
+- `list_tools` now returns 5 tools (was 4 in v3.6.0)
+
+**Test fixture**: DOI `10.1186/s41239-023-00411-8` (Crompton 2023, 1819 citations, 46 references).
+
+**Effort** (per estimation methodology):
+- Estimate: 2.75h, Actual: ~1.5h, Variance: ~2x under
+- Speedups: (a) OpenAlex API key already configured (1 RPS → faster); (b) `_normalize_openalex` reuse from v3.3.0 search; (c) `pa_citations` MCP tool was a 5-line wrapper once citations module was done.
+- For "API integration + CLI + MCP" type items: estimate 2-3h with 0.5h buffer (vs wider 4h first-of-kind).
+
+**Deferred to backlog** (recorded in [P1-1] outcome section):
+- Multi-source citation walk (Crossref + Semantic Scholar have `references` field; would dedupe across sources for higher recall)
+- Citation graph depth (pa citations X --depth 2 = forward(forward(X)))
+- Save citations to pa cache (use existing PDF cache infra)
+- Per-page caching (each OpenAlex response cacheable for 7 days per [P0-2] TTL pattern)
+
+---
+
 ## [3.6.0] - 2026-07-04
 
 ### Added — [P0-3] MCP server (`pa mcp-serve`, exposes 4 tools to any MCP client)

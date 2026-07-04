@@ -308,16 +308,98 @@ anchors. Acceptance criteria unchanged.
 
 ### [P1-1] Forward / backward citation walk
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-04
+- **Completed**: 2026-07-04
 - **Priority**: P1
-- **Effort**: 2 days
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.4
 - **Rationale**: Lit review requires both directions of citation traversal — papers that cite X (forward) and papers X cites (backward). Neither paper-agent v3.3.0 nor PyPaperBot offers this; OpenAlex provides `cited_by_count` + `referenced_works[]` natively, so the work is API surface + dedup + output formatting.
 - **Acceptance criteria**:
   - `pa citations <DOI> --direction forward [--save-bib]` outputs deduped JSON of citing papers
   - `pa citations <DOI> --direction backward` outputs referenced papers
   - Pagination handled (OpenAlex cursor-based)
+
+#### Sub-task decomposition (final time log)
+
+| # | Description | Estimate | Actual | Notes |
+|---|---|---|---|---|
+| A | `pa_cli/citations.py` — OpenAlex wrappers, cursor pagination, error handling | 1h | ~0.5h | On/under. Caught a URL bug (`&api_key=` vs `?api_key=`) on first probe + fixed in 5 min. |
+| B | Reuse `search._normalize_openalex` for shape consistency | 0.25h | ~0.05h | Under. Reuse was trivial — no new normalization code. |
+| C | Add `pa citations` subcommand | 0.5h | ~0.2h | On. Click decorator + JSON output + error exits. |
+| D | Add `pa_citations` MCP tool (5th tool) | 0.25h | ~0.05h | Under. 5-line wrapper around `citation_walk`. |
+| E | E2E test (`test_citations_e2e.py`) — 8 sub-tests using real OpenAlex | 0.5h | ~0.4h | On. Includes 1 fix to expected tool list in test_mcp_e2e.py (was 4, now 5). |
+| F | CHANGELOG v3.7.0 + ROADMAP outcome | 0.25h | ~0.1h | On. |
+| | **Total** | **2.75h** | **~1.3h** | **2x under** |
+
+**Variance analysis**: 2x under. Speedup factors:
+- OpenAlex API key pre-configured (faster than 1 RPS free tier)
+- `_normalize_openalex` reusable (no new shape definition)
+- `pa_citations` MCP tool was a trivial wrapper once `citation_walk` was done
+- For "API integration + CLI + MCP" class: estimate 2-3h with 0.5h buffer
+
+#### Outcome (2026-07-04)
+
+**Files added** (2):
+- `pa_cli/citations.py` (~150 lines) — `get_work_by_doi`, `get_citing`, `get_referenced`, `citation_walk`
+- `test_output/test_citations_e2e.py` (~190 lines) — 8 sub-tests using real OpenAlex API
+
+**Files modified** (4):
+- `pa_cli/cli.py` — added `pa citations` Click subcommand
+- `pa_cli/mcp.py` — added `pa_citations` MCP tool (5th tool) + schema + handler
+- `test_output/test_full_regression.py` — added A3 section for citations
+- `test_output/test_mcp_e2e.py` — updated expected tool list (4 → 5)
+
+**Tests passing**:
+- `test_citations_e2e.py`: 8/8 sub-tests
+- `test_full_regression.py`: now 38 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 36 in v3.6.0)
+
+**Acceptance criteria status**: 3/3 met
+1. ✅ `pa citations <DOI> --direction forward [--save-bib]` outputs deduped JSON
+2. ✅ `pa citations <DOI> --direction backward` outputs referenced papers
+3. ✅ Cursor-paginated (forward); N+1 bounded (backward, capped by --limit)
+
+**Key discovery** (recorded for future OpenAlex integration work):
+- `cites` filter accepts **only OpenAlex IDs** (W-prefixed), not DOIs in any form
+- Direct DOI URL in filter returns 0 results silently
+- Workflow: 2-step (DOI→ID via `/works/doi:<doi>`, then `/works?filter=cites:W<id>`)
+- `referenced_works[]` is already OpenAlex ID list — no DOI resolution needed for backward
+
+**Deferred to backlog** (recorded 2026-07-04):
+- Multi-source citation walk (Crossref + Semantic Scholar `references` field for higher recall + dedup across sources)
+- Citation graph depth (`pa citations X --depth 2` = forward(forward(X)))
+- Save citations to pa cache (reuse existing PDF cache infra, would auto-avoid re-fetches across sessions)
+- Per-page response caching (each OpenAlex response cacheable for 7 days per [P0-2] TTL pattern)
+
+#### Sub-task decomposition (estimated 2026-07-04 before work started)
+
+| # | Description | Estimate |
+|---|---|---|
+| A | `pa_cli/citations.py` — OpenAlex wrappers: `fetch_citing(doi, cursor, per_page)`, `fetch_referenced_doi(doi) -> list[DOI]`, cursor pagination loop with safety cap | 1h |
+| B | Reuse `search._normalize_openalex` for output shape consistency; dedup by DOI in result list (in case OpenAlex returns dupes) | 0.25h |
+| C | Add `pa citations` subcommand: `pa citations <DOI> --direction forward\|backward [--limit N] [--save-bib path.bib]` | 0.5h |
+| D | Add `pa_citations` MCP tool to `pa_cli/mcp.py` (5th tool) | 0.25h |
+| E | Validation: `test_output/test_citations_e2e.py` — uses real OpenAlex API to fetch a known DOIs citations; verify forward + backward return sensible counts, dedup works, --save-bib produces valid BibTeX | 0.5h |
+| F | CHANGELOG v3.7.0 + ROADMAP outcome | 0.25h |
+| | **Total** | **2.75h** (~3h) |
+
+**Reference-class anchor**:
+- [P0-1] Bibtex: 3h actual (4-8x under)
+- [P0-2] Local cache: ~5h actual (1.4x over, mostly infra)
+- [P0-3] MCP: ~2.1h actual (2x under)
+- [P1-1] is API integration (not just wrap) — closer to "first-of-kind" CI ±100%
+- Anchoring on [P0-1] (similar "API surface + format + dedup" type) → estimate ~2-3h
+
+**OpenAlex API notes** (researched 2026-07-04):
+- Forward: `GET /works?filter=cites:<DOI-or-openalex-id>&cursor=<*>` returns works citing target; `meta.next_cursor` for pagination
+- Backward: `GET /works/doi:<DOI>` returns the work itself; `referenced_works[]` field has OpenAlex IDs of cited works; need 2nd call to fetch metadata for each
+- DOI URL form: `https://doi.org/10.xxx/yyy` works in filter (encoded)
+- API key bumps per-page rate limit (already in keys_registry)
+
+**Risk**: backward citation requires fetching each referenced work individually; a paper with 50 refs = 50 API calls. Cap at `--limit N` (default 100 forward, 50 backward) to bound.
+
+#### Outcome (YYYY-MM-DD — to be filled on completion)
+
+_(filled when work done)_
 
 ### [P1-2] OpenAlex concepts semantic filtering
 
@@ -422,7 +504,8 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.4.0 | released 2026-07-04 | [P0-1] Bibtex export | 2026-07-04 |
 | v3.5.0 | released 2026-07-04 | [P0-2] Local cache + `pa cache` subcommand | 2026-07-04 |
 | v3.6.0 | released 2026-07-04 | [P0-3] MCP server, [P2-4 merged] | 2026-07-04 |
-| v3.7.0 | target 2026-07-15 | [P1-1] Citation walk, [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
+| v3.7.0 | released 2026-07-04 | [P1-1] Citation walk (forward + backward) | 2026-07-04 |
+| v3.8.0 | target 2026-07-15 | [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
 | v4.0.0 | target 2026-08-30 | architecture milestone (MCP-first), [P2-*] backlog | — |
 
 ---
@@ -531,3 +614,4 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 | [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 |
 | [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 |
 | [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 |
+| [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 |

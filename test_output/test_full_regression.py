@@ -103,7 +103,31 @@ def section_mcp_tests():
         print(f"  [{status}] test_mcp_e2e.py (rc={rc})")
         print(f"        stdout_tail: {out[-500:]!r}")
         print(f"        stderr_tail: {err[-300:]!r}")
-    return [("test_mcp_e2e.py", status, rc, "")] 
+    return [("test_mcp_e2e.py", status, rc, "")]
+
+
+# ============== Section A3: citations tests ==============
+
+def section_citations_tests():
+    """Run citations E2E test (real OpenAlex API)."""
+    print("\n" + "="*60)
+    print("A3. Citations tests (1 script, requires network, expect all PASS)")
+    print("="*60)
+    if os.environ.get("PA_NETWORK_OFFLINE", "").lower() in ("1", "true", "yes"):
+        print("  [SKIP] PA_NETWORK_OFFLINE=1")
+        return [("test_citations_e2e.py", "SKIP", 0, "PA_NETWORK_OFFLINE=1")]
+    script = TEST_OUTPUT / "test_citations_e2e.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=120)
+    ok = rc == 0 and "ALL CITATIONS TESTS PASSED" in out
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        passed = sum(1 for l in out.splitlines() if "PASS" in l)
+        print(f"  [PASS] test_citations_e2e.py (rc={rc}, {passed} sub-tests)")
+    else:
+        print(f"  [{status}] test_citations_e2e.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_citations_e2e.py", status, rc, "")] 
 
 
 # ============== Section B: pa_cli module imports ==============
@@ -156,6 +180,7 @@ def section_cli_help_surface():
         ["fetch", "--help"],
         ["search", "--help"],
         ["review", "--help"],
+        ["citations", "--help"],          # [P1-1] v3.7.0
         ["keys", "--help"],
         ["keys", "list", "--help"],
         ["keys", "check", "--help"],
@@ -339,7 +364,7 @@ def print_summary(all_results):
     print()
     # Detail
     for section_idx, section_results in enumerate(all_results):
-        section_names = ["A. cache", "A2. mcp", "B. imports", "C. --help", "D. safe cli",
+        section_names = ["A. cache", "A2. mcp", "A3. citations", "B. imports", "C. --help", "D. safe cli",
                          "E. python api", "F. skill local", "G. skill skip"] 
         print(f"  {section_names[section_idx]}:")
         for label, status, _rc, _ in section_results:
@@ -352,6 +377,7 @@ def main():
     all_results = [
         section_cache_tests(),
         section_mcp_tests(),
+        section_citations_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),

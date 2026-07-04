@@ -70,8 +70,10 @@ async def test_list_tools():
         tools = tools_result.tools
         names = sorted(t.name for t in tools)
         print(f"  registered tools: {names}")
-        assert names == ["pa_fetch", "pa_keys_status", "pa_review", "pa_search"], \
-            f"unexpected tool list: {names}"
+        # 5 tools expected (pa_citations added in v3.7.0 / [P1-1])
+        expected = sorted(["pa_fetch", "pa_keys_status", "pa_review",
+                           "pa_search", "pa_citations"])
+        assert names == expected, f"unexpected tool list: {names}"
         # Each tool must have a non-empty inputSchema with type=object
         for t in tools:
             assert t.name, "tool missing name"
