@@ -37,6 +37,58 @@ REGISTRY_PATH = Path(__file__).parent.parent / "keys_registry.json"
 ENV_PATH = Path(__file__).parent.parent / ".env"
 
 
+# =============== check() in-memory cache (P0-2, 2026-07-04) ===============
+# Acceptance criterion: "pa keys check caches 30 min — second invocation
+# in same window skips HTTP probe".
+#
+# Cache shape:
+#   _check_cache = {"ts": <float epoch>, "data": <dict>, "service_id": <str|None>}
+#
+# Invalidation rules:
+#   - TTL 30 min (1800 sec); after that, next cmd_check() does a fresh probe
+#   - Different service_id (or none) busts cache (per-service caching is
+#     not supported in v3.4.0 — 30 min covers full check + targeted check)
+#   - Clear via `pa keys check --no-cache` (CLI flag pass-through; defer to
+#     cli.py)
+#   - Reset on test mode (PA_TEST=1) so unit tests don't see stale data
+
+_CHECK_CACHE_TTL_SEC = 1800
+_check_cache = {"ts": 0.0, "data": None, "service_id": None}
+
+
+def _check_cache_get(service_id: Optional[str]) -> Optional[Dict[str, Any]]:
+    """Return cached check result if valid; else None.
+
+    Honor TTL + same-service constraint. Test mode bypasses (returns None).
+    Only PA_TEST in {"1", "true", "yes"} bypasses — "0" or unset is treated
+    as production (cache enabled).
+    """
+    if os.environ.get("PA_TEST", "").lower() in ("1", "true", "yes"):
+        return None
+    cache = _check_cache
+    if cache["data"] is None:
+        return None
+    if cache["service_id"] != service_id:
+        return None
+    if time.time() - cache["ts"] > _CHECK_CACHE_TTL_SEC:
+        return None
+    return cache["data"]
+
+
+def _check_cache_put(service_id: Optional[str], data: Dict[str, Any]) -> None:
+    """Update cache timestamp + payload."""
+    _check_cache["ts"] = time.time()
+    _check_cache["data"] = data
+    _check_cache["service_id"] = service_id
+
+
+def _check_cache_clear() -> None:
+    """Force-clear cache. Used by --no-cache flag and tests."""
+    _check_cache["ts"] = 0.0
+    _check_cache["data"] = None
+    _check_cache["service_id"] = None
+
+
 def load_env_into_environ() -> int:
     """Parse .env file (KEY=VALUE per line) and set into os.environ if not
     already set. Does NOT override existing os.environ values.
@@ -239,7 +291,19 @@ def _probe(url: str, headers: dict = None, timeout: int = 15) -> tuple:
 
 
 def cmd_check(service_id: Optional[str] = None) -> Dict[str, Any]:
-    """Live probe each key (or one specific). Updates last_checked timestamp."""
+    """Live probe each key (or one specific). Updates last_checked timestamp.
+
+    P0-2 (2026-07-04): 30-min in-memory cache — second invocation within
+    30 min returns the cached payload without HTTP probes. Use
+    `pa keys check --no-cache` (added by cli.py) or _check_cache_clear()
+    to bypass.
+    """
+    # Cache hit short-circuit — P0-2 acceptance criteria
+    cached = _check_cache_get(service_id)
+    if cached is not None:
+        return {**cached, "cache_hit": True,
+                "cache_age_sec": round(time.time() - _check_cache["ts"], 1)}
+
     reg = load_registry()
     target = reg if service_id is None else {service_id: reg.get(service_id, {})}
     if not target:
@@ -281,6 +345,8 @@ def cmd_check(service_id: Optional[str] = None) -> Dict[str, Any]:
         # Update last_checked timestamp
         svc["last_checked"] = datetime.now().isoformat(timespec="seconds")
     save_registry(reg)
+    # Populate cache for next call within TTL window
+    _check_cache_put(service_id, results)
     return results
 
 

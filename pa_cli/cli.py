@@ -117,9 +117,17 @@ def keys_list(as_json):
 @click.option("--alert-file", "alert_file_path", default=None,
               metavar="PATH",
               help="Also write current alerts to this path (default: ~/.mavis/state/api_key_alerts.json)")
-def keys_check(service_id, alert_file_path):
-    """Live-probe each API key (or one specific). Updates last_checked timestamp."""
-    from .keys import cmd_check, write_alerts_to_state
+@click.option("--no-cache", is_flag=True,
+              help="Bypass the 30-min in-memory cache; do a fresh probe")
+def keys_check(service_id, alert_file_path, no_cache):
+    """Live-probe each API key (or one specific). Updates last_checked timestamp.
+
+    P0-2 cache behaviour: results are cached in-memory for 30 min.
+    Use --no-cache to force a fresh probe and refresh the cache.
+    """
+    from .keys import cmd_check, write_alerts_to_state, _check_cache_clear
+    if no_cache:
+        _check_cache_clear()
     results = cmd_check(service_id)
     click.echo(json.dumps(results, indent=2, ensure_ascii=False))
     # Also update alerts file for cross-session reminder pickup
@@ -128,7 +136,8 @@ def keys_check(service_id, alert_file_path):
     # Count warnings
     n_warn = sum(1 for r in results.values()
                  if isinstance(r, dict) and r.get("status") not in ("ok", "missing"))
-    click.echo(f"\n[pa-keys] alerts file: {path} ({n_warn} non-ok status)", err=True)
+    cache_marker = " (bypassed)" if no_cache else ""
+    click.echo(f"\n[pa-keys] alerts file: {path} ({n_warn} non-ok status){cache_marker}", err=True)
 
 
 @keys.command("add")
@@ -209,23 +218,34 @@ def keys_remind(as_json, write_alerts_path):
               help="Email registered with Unpaywall API")
 @click.option("--max-total-sec", default=300, show_default=True,
               help="Hard cap on total runtime (paper-agent v4: 300s)")
+@click.option("--no-cache", is_flag=True,
+              help="Bypass cache lookup; cascade attempts download (cache still written on success)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, quiet):
-    """Fetch a single paper PDF by DOI using 8 channels with Cloudflare fallback."""
+def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_cache, quiet):
+    """Fetch a single paper PDF by DOI using 8 channels with Cloudflare fallback.
+
+    Cache behaviour (P0-2):
+      - By default (~/.paper-agent/cache/), checks cache first; on hit returns
+        immediately with via_channel=cache:* and elapsed < 1s.
+      - Use --no-cache to skip the cache lookup (cascade proceeds to network).
+        Even with --no-cache, a successful cascade still writes to cache.
+    """
     from .fetch import fetch_doi
     if not quiet:
         click.echo(f"[pa] fetch DOI={doi}", err=True)
         click.echo(f"[pa] output_dir={output_dir} proxy={proxy or '(none)'}", err=True)
-        click.echo(f"[pa] channels={channels}", err=True)
+        click.echo(f"[pa] channels={channels} cache={'disabled' if no_cache else 'enabled'}", err=True)
         click.echo(f"[pa] max_total_sec={max_total_sec}", err=True)
     result = fetch_doi(
         doi=doi, output_dir=output_dir, proxy=proxy,
         channels=channels.split(","), unpaywall_email=unpaywall_email,
         max_total_sec=max_total_sec,
+        use_cache=not no_cache,
     )
     click.echo(json.dumps(result, indent=2, ensure_ascii=False))
     if result.get("saved_as"):
-        click.echo(f"\n[pa] ✅ saved {result['saved_as']}", err=True)
+        suffix = " (cache hit)" if result.get("cache_hit") else ""
+        click.echo(f"\n[pa] ✅ saved {result['saved_as']}{suffix}", err=True)
         sys.exit(0)
     elif result.get("handoff"):
         click.echo(f"\n[pa] ⚠ handoff: {result['handoff'].get('user_action_required')}", err=True)
@@ -299,6 +319,125 @@ def review(corpus_dir, template, output, word_count_min, quiet):
         click.echo(f"[pa] saved {output}", err=True)
     else:
         click.echo(md)
+
+
+# =============== cache subcommand group (P0-2, 2026-07-04) ===============
+
+@main.group()
+def cache():
+    """Manage the local PDF + meta cache (~/.paper-agent/cache/).
+
+    The cache avoids re-downloading PDFs across `pa fetch` calls. Each entry
+    is a `<doi_slug>.pdf` + `<doi_slug>.meta.json` pair. After 7-day TTL
+    (matches skill/core/api_pool/cache.py convention), entries are treated
+    as miss on read; admin path is `pa cache clean --older-than 30d`.
+
+    Subcommands: path / stats / clean / put / drop
+    """
+
+
+@cache.command("path")
+def cache_path():
+    """Show the cache root directory currently in use."""
+    from .cache import get_cache_root
+    root = get_cache_root()
+    click.echo(str(root))
+
+
+@cache.command("stats")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def cache_stats(as_json):
+    """Show cache size / entry count / age distribution."""
+    from .cache import cache_stats as _cache_stats_impl
+    stats = _cache_stats_impl()
+    if as_json:
+        click.echo(json.dumps(stats, indent=2, ensure_ascii=False))
+        return
+    click.echo(f"Cache root:       {stats['root']}")
+    click.echo(f"Total entries:    {stats['paper_count']} PDF(s) / "
+               f"{stats['total_files']} total files")
+    size_kb = stats['total_size_bytes'] / 1024
+    if size_kb < 1024:
+        click.echo(f"Total size:       {size_kb:.1f} KB ({stats['total_size_bytes']} bytes)")
+    else:
+        click.echo(f"Total size:       {size_kb/1024:.2f} MB ({stats['total_size_bytes']} bytes)")
+    if stats.get("oldest_age_days") is not None:
+        click.echo(f"Oldest entry:     {stats['oldest_age_days']:.1f} days ago")
+        click.echo(f"Newest entry:     {stats['newest_age_days']:.1f} days ago")
+    else:
+        click.echo("Oldest entry:     (empty cache)")
+        click.echo("Newest entry:     (empty cache)")
+
+
+@cache.command("clean")
+@click.option("--older-than", "older_than_days", type=int, default=None,
+              metavar="N", help="Remove entries older than N days")
+@click.option("--all", "purge_all", is_flag=True,
+              help="Remove ALL entries (equivalent to --older-than 0)")
+@click.option("--dry-run", is_flag=True,
+              help="Print what would be removed without actually deleting")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def cache_clean(older_than_days, purge_all, dry_run, as_json):
+    """Remove cache entries. Default: requires --older-than or --all.
+
+    Examples:
+      pa cache clean --older-than 30d
+      pa cache clean --all
+      pa cache clean --all --dry-run
+    """
+    from .cache import cache_clean as _cache_clean_impl, cache_stats as _cache_stats_impl
+    if purge_all:
+        older_than_days = older_than_days if older_than_days is not None else 0
+    if older_than_days is None:
+        click.echo("Refusing to clean: spec --older-than Nd OR --all", err=True)
+        sys.exit(2)
+    if dry_run:
+        stats = _cache_stats_impl()
+        click.echo(f"[dry-run] would remove entries older than {older_than_days}d")
+        click.echo(f"[dry-run] currently {stats['paper_count']} entries, "
+                   f"oldest {stats.get('oldest_age_days'):.1f}d" if stats.get('oldest_age_days')
+                   else f"[dry-run] currently {stats['paper_count']} entries")
+        click.echo("[dry-run] use without --dry-run to actually delete")
+        sys.exit(0)
+    result = _cache_clean_impl(older_than_days=older_than_days)
+    if as_json:
+        click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+        return
+    click.echo(f"Removed:  {result['removed_files']} file(s)")
+    click.echo(f"Freed:    {result['freed_bytes']} bytes ({result['freed_bytes']/1024:.1f} KB)")
+    click.echo(f"Remaining: {result['remaining_papers']} PDF(s) in {result['remaining_files']} total files")
+
+
+@cache.command("put")
+@click.argument("doi")
+@click.argument("pdf_path", type=click.Path(exists=True, dir_okay=False))
+@click.option("--channel", default="manual", show_default=True,
+              help="Channel name to record in meta (e.g. 'openalex', 'manual')")
+@click.option("--url", default="", help="Originating URL to record in meta")
+def cache_put(doi, pdf_path, channel, url):
+    """Manually insert a PDF into cache (e.g. for offline-routed downloads)."""
+    from .cache import cache_put as _cache_put_impl
+    body = Path(pdf_path).read_bytes()
+    try:
+        entry = _cache_put_impl(doi, body, channel=channel, url=url)
+    except ValueError as e:
+        click.echo(f"[pa-cache] ❌ {e}", err=True)
+        sys.exit(2)
+    click.echo(f"[pa-cache] ✅ cached {doi}")
+    click.echo(f"  pdf:  {entry['pdf_path']}")
+    click.echo(f"  meta: {entry['meta_path']}")
+    click.echo(f"  sha256: {entry['sha256'][:16]}...  size: {entry['size']}")
+
+
+@cache.command("drop")
+@click.argument("doi")
+def cache_drop(doi):
+    """Remove a single entry from cache."""
+    from .cache import cache_remove
+    if cache_remove(doi):
+        click.echo(f"[pa-cache] ✅ dropped {doi}")
+    else:
+        click.echo(f"[pa-cache] nothing to drop for {doi} (no entry found)")
 
 
 if __name__ == "__main__":

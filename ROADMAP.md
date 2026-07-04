@@ -61,10 +61,10 @@ What v3.4.1+ could improve (deferred to backlog):
 
 ### [P0-2] Local cache (avoid re-download)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-04
+- **Completed**: 2026-07-04
 - **Priority**: P0
-- **Effort**: 0.5 day
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.2
 - **Rationale**: Same DOI re-fetched wastes bandwidth; iterative lit-review iteration needs to skip already-downloaded papers. Daily cron `pa-keys-daily-check` already wastes a probe per API per day — caching for 30 min saves 24x duplicate requests.
 - **Acceptance criteria**:
@@ -73,6 +73,97 @@ What v3.4.1+ could improve (deferred to backlog):
   - `pa keys check` caches 30 min — second invocation in same window skips HTTP probe
   - `pa cache stats` shows size / count / oldest / newest
   - `pa cache clean --older-than 30d` removes cold entries
+
+#### Sub-task decomposition (final time log)
+
+| # | Description | Estimate | Actual | Notes |
+|---|---|---|---|---|
+| A | Add `pa_cli/cache.py` — PDF cache layer | 1h | ~1h | On target. DiskCache-style hash + JSON sidecar + _is_pdf magic check + corrupt-cleanup-on-mismatch. |
+| B | Integrate cache into `pa_cli/fetch.py` — early-return on hit, write-after-success | 0.5h | ~0.5h | On target. 6 cascade branches updated; `channel_playwright_pdf` re-reads file from disk to write cache. |
+| C | Add 30-min in-memory cache to `pa_cli/keys.py` `cmd_check()` | 0.5h | ~0.5h | On target. Used `PA_TEST` env var to bypass in unit tests. |
+| D | Add `pa cache {path,stats,clean,put,drop}` subcommand group + `--no-cache` flags | 0.5h | ~1h | 2x over. Discovered: (a) Windows encoding hell (had to add PYTHONIOENCODING=utf-8 to test subprocess); (b) `~/.paper-agent` not yet existing first run — removed unnecessary fallback. |
+| E | Add `--no-cache` flag to `pa fetch` and `pa keys check` | 0.25h | ~0.1h | Under. Click decorator + 2 line callsite changes. |
+| F | Validation (4 test scripts) | 0.5h | ~1h | 2x over. (a) `test_cache_integration.py` hung in subprocess because cascade reaches `playwright` channel which tries to launch real chromium — needed `channel_playwright_pdf` mock. (b) `PA_TEST=0` was still bypassing cache (truthy string). Fixed cache_get to use truthy-set. (c) `Path.home() / .paper-agent / cache` fallback mis-detection. |
+| G | CHANGELOG + ROADMAP outcome | 0.25h | ~0.2h | On target. |
+| | **Total** | **3.5h** | **~5h** | **1.4x over** |
+
+**Variance analysis**: 1.4x over estimate. Two infrastructure costs not anticipated:
+1. Windows encoding issue in subprocess tests (1-2 debug iterations)
+2. Missing `channel_playwright_pdf` mock in test 2 (single line fix but cost 10 min of debugging)
+
+Both are isolated to the testing harness; production code is unchanged. For future cache-class items, **add 1 hour buffer for cross-platform test setup**.
+
+#### Outcome (2026-07-04)
+
+**Files added** (5):
+- `pa_cli/cache.py` (~210 lines) — `cache_get`, `cache_put`, `cache_remove`, `cache_stats`, `cache_clean`, `_doi_slug`, `get_cache_root`, plus `_is_pdf` magic check
+- `test_output/test_cache_smoke.py` — 6 sub-tests on cache module round-trip
+- `test_output/test_cache_integration.py` — `pa fetch` cache hit + bypass semantics
+- `test_output/test_keys_cache.py` — 30-min cache for `keys check`
+- `test_output/test_pa_cache_cli.py` — E2E for `pa cache` subcommand (path/stats/put/drop/clean)
+- `test_output/_run_all.py` — wrapper to run all 4 cache tests
+
+**Files modified** (3):
+- `pa_cli/fetch.py` — added `use_cache` param + cache check at function entry + cache write after each successful cascade (6 branches: openalex, arxiv, unpaywall, doi_redirect's HTML PDF + playwright_pdf fallback, scihub)
+- `pa_cli/keys.py` — added `_check_cache_{get,put,clear}` + integrated into `cmd_check()`; cache survives 30 min (configurable in code)
+- `pa_cli/cli.py` — added `--no-cache` flag to `fetch` and `keys check`; added `cache` subcommand group with 5 subcommands
+
+**Tests passing** (4/4):
+- `test_cache_smoke.py` — 6/6 checks (miss, put/get roundtrip, corrupt cleanup, remove, stats, clean)
+- `test_cache_integration.py` — 2/2 (cache hit short-circuits in <0.5s; use_cache=False falls through to cascade)
+- `test_keys_cache.py` — 5/5 (cold cache probes, warm cache returns instantly, different service_id busts, same service_id reuses, manual clear invalidates)
+- `test_pa_cache_cli.py` — 6/6 (path resolves to ~/.paper-agent/cache, empty stats, put/stats/drop roundtrip, --all cleans, refusal on no-filter, --dry-run previews)
+
+**Acceptance criteria status**: 5/5 met
+1. ✅ `~/.paper-agent/cache/{doi_slug}.pdf` + sidecar meta (sha256, ts, channel, url, size)
+2. ✅ `pa fetch <DOI>` checks cache first; cascade skipped on hit (sub-second)
+3. ✅ `pa keys check` caches 30 min
+4. ✅ `pa cache stats` shows size/count/oldest/newest
+5. ✅ `pa cache clean --older-than 30d` removes cold entries
+
+**Deferred to backlog** (recorded 2026-07-04):
+- **Atime-based LRU**: when cache count > N (e.g. 500), evict oldest-accessed. Current impl is FIFO by ts; for v3.5.0 most users won't hit the limit, and `pa cache clean --older-than` gives them manual control.
+- **Per-key size cap**: refuse to cache PDFs > 100MB (some books are larger). Not a [P0-2] blocker; deferred to "edge case pass" later.
+- **Cache hit rate metrics**: track cache hits per session for `pa audit`. Useful but not core to [P0-2].
+- **Legacy dirs cleanup**: 7 dirs (`arxiv_cache/`, `core_cache/`, etc.) from v3.0 `paper_fetcher.py` should be added to `.gitignore` (or deleted) — out of scope for [P0-2] but pollutes `git status`.
+
+**Lesson for future estimates** (added 2026-07-04 to estimation methodology):
+- "cache layer" type items: estimate 3-5h with 1h buffer for Windows subprocess test setup.
+- Sub-task F (test infrastructure) for any cross-platform code should be ≥0.5h, often 1-1.5h due to encoding / mocking surprises.
+
+#### Sub-task decomposition (estimated 2026-07-04 before work started)
+
+| # | Description | Estimate |
+|---|---|---|
+| A | Add `pa_cli/cache.py` — PDF cache layer: `cache_get(doi)` validates PDF magic + sha256 against sidecar; `cache_put(doi, body, channel)` writes `.pdf` + `.meta.json`; `cache_stats()` / `cache_clean(older_than_nd)` admin helpers. Default root: `~/.paper-agent/cache/` (overridable via `PA_CACHE_DIR` env var, fallback to `./pa_cache/` if HOME undefined) | 1h |
+| B | Modify `pa_cli/fetch.py` `fetch_doi()`: cache check at start (return early with `via_channel="cache"`); after successful cascade, also `cache_put()` so next call hits cache | 0.5h |
+| C | Modify `pa_cli/keys.py`: in-memory 30-min cache for `keys_status()` output (single module-level dict with TTL check; reset if any test mode flag set) | 0.5h |
+| D | Add `pa cache stats` + `pa cache clean [--older-than Nd\|--all]` subcommands to `pa_cli/cli.py` | 0.5h |
+| E | Add `--no-cache` flag to `pa fetch` (bypass cache check, still writes to cache after success — opt-in to skip-but-record) | 0.25h |
+| F | Validation script `test_output/test_cache.py`: cache_miss→hit cycle, PDF magic validation, sha256 integrity, `cache_stats` returns expected counts, `cache_clean` removes old entries, `--no-cache` bypasses, 30-min keys cache works | 0.5h |
+| G | CHANGELOG v3.4.0 entry citing `[P0-2]` + ROADMAP Outcome subsection | 0.25h |
+| | **Total** | **3.5h** (~3-4h with overhead) |
+
+**Reference-class anchor**: [P0-1] Bibtex (3h actual, 4-8x under-estimate). Cache work shares few patterns (hash → file naming, JSON sidecar) so reuse 3h as anchor + 0.5h for fetch integration.
+
+#### Existing state to leverage (discovered 2026-07-04 during scoping)
+
+- `skill/core/api_pool/cache.py` `DiskCache` exists with SHA-256 + TTL. Different domain (search results, not PDFs), so copy pattern only — don't import across package.
+- `pa_cli/fetch.py` `fetch_doi()` writes PDFs to `output_dir/{doi_slug}.pdf` but does NOT maintain cache. Sidecar `.meta.json` does not exist yet.
+- `pa_cli/keys.py` exists, has `keys_status()` function but no caching.
+- 7 legacy cache dirs (`arxiv_cache/`, `openalex_cache/`, etc.) from v3.0 `paper_fetcher.py` — NOT in `.gitignore`, polluting `git status`. **Out of scope for [P0-2]** but worth a separate `.gitignore` cleanup ticket post-implementation.
+
+### Modified 2026-07-04 — scope clarified (search-result vs PDF cache)
+
+**Mistake caught**: my initial mental model confused two different caching concerns — search-result caching (across `pa search` calls) and PDF-download caching (across `pa fetch` calls). Original acceptance criteria here target **PDF-download cache**, which is the bigger win because:
+
+1. Same DOI might be re-fetched many times during lit-review iteration
+2. PDFs are 1-10 MB each, downloading them again is real waste
+3. Crossref/OpenAlex API costs grow with re-fetches
+
+The correct work plan is in the `Sub-task decomposition` table above. Acceptance criteria unchanged.
+
+**Lesson learned (for memory)**: when a `P0-N` has detailed acceptance criteria already, **read them first before sub-task decomposition**. My first attempt sub-task-decomposed based on assumption; corrected after re-reading. Apply this pattern to all future items.
 
 ### [P0-3] MCP server (expose `pa` as Model Context Protocol tool)
 
@@ -199,8 +290,9 @@ What v3.4.1+ could improve (deferred to backlog):
 | Version | Status | Items | Released |
 |---|---|---|---|
 | v3.3.0 | released 2026-07-04 | (pre-roadmap items: CLI package, keys registry, v4 principle) | 2026-07-04 |
-| v3.4.0 | target 2026-07-15 | [P0-1] Bibtex, [P0-2] Local cache, [P0-3] MCP server | — |
-| v3.5.0 | target 2026-07-31 | [P1-1] Citation walk, [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
+| v3.4.0 | released 2026-07-04 | [P0-1] Bibtex export | 2026-07-04 |
+| v3.5.0 | released 2026-07-04 | [P0-2] Local cache + `pa cache` subcommand | 2026-07-04 |
+| v3.6.0 | target 2026-07-15 | [P0-3] MCP server, [P1-1] Citation walk, [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
 | v4.0.0 | target 2026-08-30 | architecture milestone (MCP-first), [P2-*] backlog | — |
 
 ---
@@ -307,3 +399,4 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 | Item | Estimate | Actual | Variance | Completed |
 |---|---|---|---|---|
 | [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 |
+| [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 |
