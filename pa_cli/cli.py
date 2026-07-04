@@ -440,35 +440,78 @@ def cache_drop(doi):
         click.echo(f"[pa-cache] nothing to drop for {doi} (no entry found)")
 
 
+@main.group()
+def mcp():
+    """Integrate paper-agent with a public MCP server.
+
+    Self-hosted `pa mcp-serve` was removed 2026-07-04 (see ROADMAP [P0-3]
+    Deprecated). Use the public `paper-search-mcp` (PyPI) instead — this
+    subcommand group helps you install it and prints the JSON config block
+    to paste into your MCP client.
+
+    Subcommands: install / config / serve-deprecated
+    """
+
+
+@mcp.command("install")
+@click.option("--uvx", "use_uvx", is_flag=True,
+              help="Use uvx (no install) instead of pip")
+@click.option("--dry-run", is_flag=True,
+              help="Don't actually run pip; just print what would happen")
+def mcp_install(use_uvx, dry_run):
+    """Install the public paper-search-mcp package and print config block.
+
+    Default: `python -m pip install --user paper-search-mcp`
+    Falls back to: print `uvx` command if pip install fails.
+
+    Does NOT auto-edit your MCP client config. Prints the JSON block
+    for you to paste (per Global Rule: user sovereignty over their own
+    config files).
+    """
+    from .mcp_setup import install as _install
+    result = _install(use_uvx=use_uvx, dry_run=dry_run)
+    if result["status"] == "install_failed":
+        click.echo(f"\n[pa-mcp] FAILED to install via pip. Try: pa mcp install --uvx",
+                   err=True)
+        sys.exit(1)
+
+
+@mcp.command("config")
+def mcp_config():
+    """Print the JSON config block for your MCP client (no install)."""
+    from .mcp_setup import _print_config_block
+    _print_config_block(method="pip")
+
+
+@mcp.command("serve-deprecated")
+def mcp_serve_deprecated():
+    """DEPRECATED 2026-07-04: removed. Use `pa mcp install` instead.
+
+    Original `pa mcp-serve` self-hosted the MCP server. That was reverted
+    per the Global Rule (one-hobbyist maintenance budget). For academic
+    paper search via MCP, run `pa mcp install` to set up paper-search-mcp.
+    """
+    click.echo(
+        "[pa] mcp-serve was removed 2026-07-04. "
+        "Use `pa mcp install` to set up paper-search-mcp (PyPI).",
+        err=True,
+    )
+    sys.exit(1)
+
+
 @main.command()
 def mcp_serve():
-    """DEPRECATED 2026-07-04: removed.
+    """DEPRECATED: shim that points to `pa mcp install` (kept for grep-ability).
 
-    Reason: User prefers PUBLIC MCP servers (e.g. openags/paper-search-mcp)
-    over self-maintained ones. Self-maintaining an MCP adds a long-term
-    maintenance surface that one hobbyist can't sustain.
-
-    For academic paper search via MCP, use:
-      pip install paper-search-mcp
-      # OR
-      uvx paper-search-mcp
-
-    Configure your MCP client (Claude Code, Cursor, OpenCode) with:
-      {
-        "mcpServers": {
-          "paper-search-mcp": {
-            "command": "uvx",
-            "args": ["paper-search-mcp"]
-          }
-        }
-      }
+    See `pa mcp --help` for the new subcommand group.
     """
-    import sys as _sys
-    _sys.stderr.write(
-        "[pa] mcp-serve was removed 2026-07-04. "
-        "Use paper-search-mcp (PyPI) instead — see `pa --help` for details.\n"
+    click.echo(
+        "[pa] `pa mcp-serve` was removed 2026-07-04. Use `pa mcp install` instead.\n"
+        "  pip install paper-search-mcp  (or `pa mcp install` to do it + print config)\n"
+        "  See `pa mcp --help` for the new subcommand group.",
+        err=True,
     )
-    _sys.exit(1)
+    sys.exit(1)
 
 
 @main.command()
