@@ -360,20 +360,111 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
 @click.option("-o", "--output", default=None, help="Output markdown file (else stdout)")
 @click.option("--word-count-min", type=int, default=1000, show_default=True,
               help="Min words extracted to count as full-text (else abstract-only)")
+@click.option("--with-prisma", is_flag=True,
+              help="Prepend a PRISMA 2020 flow diagram (auto-derived from corpus)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def review(corpus_dir, template, output, word_count_min, quiet):
-    """Synthesize lit review markdown from a corpus directory of PDFs."""
+def review(corpus_dir, template, output, word_count_min, with_prisma, quiet):
+    """Synthesize lit review markdown from a corpus directory of PDFs.
+
+    --with-prisma adds a PRISMA 2020 flow diagram at the top of the output,
+    auto-derived from the corpus (identified=PDFs found, after-screening=
+    full-text vs abstract-only by word_count_min).
+    """
     from .review import synthesize
     corpus_path = Path(corpus_dir)
     if not quiet:
         click.echo(f"[pa] review corpus={corpus_path}", err=True)
         click.echo(f"[pa] word_count_min={word_count_min} template={template}", err=True)
+        if with_prisma:
+            click.echo(f"[pa] including PRISMA flow diagram", err=True)
     md = synthesize(corpus_path, template, word_count_min)
+    if with_prisma:
+        from .prisma import derive_counts_from_corpus, render_prisma
+        counts = derive_counts_from_corpus(corpus_path, word_count_min)
+        prisma_block = render_prisma(
+            identified=counts["identified"],
+            after_screening=counts["after_screening"],
+            after_eligibility=counts["after_eligibility"],
+            included=counts["included"],
+            pdf_count=counts["pdf_count"],
+            abstract_count=counts["abstract_count"],
+        )
+        md = f"{prisma_block}\n\n---\n\n{md}"
+        if not quiet:
+            click.echo(f"[pa] PRISMA: identified={counts['identified']} "
+                       f"screened={counts['after_screening']} "
+                       f"abstract_only={counts['abstract_count']}", err=True)
     if output:
         Path(output).write_text(md, encoding="utf-8")
         click.echo(f"[pa] saved {output}", err=True)
     else:
         click.echo(md)
+
+
+@main.command()
+@click.option("--identified", "identified", type=int, required=True,
+              help="Total papers identified from search (PRISMA stage 1)")
+@click.option("--after-screening", "after_screening", type=int, required=True,
+              help="Papers remaining after title/abstract screening (stage 2)")
+@click.option("--after-eligibility", "after_eligibility", type=int, required=True,
+              help="Papers remaining after full-text eligibility check (stage 3)")
+@click.option("--included", "included", type=int, required=True,
+              help="Papers finally included in the review (stage 4)")
+@click.option("--by-source", "by_source", default="",
+              help='JSON dict of source→count, e.g. \'{"arxiv":15,"openalex":50}\'')
+@click.option("--pdf", "pdf_count", type=int, default=0,
+              help="Of included, how many are full-text PDFs")
+@click.option("--abstract", "abstract_count", type=int, default=0,
+              help="Of included, how many are abstract-only")
+@click.option("--excluded-reasons", "excluded_reasons", default="",
+              help='JSON dict of stage→excluded count, e.g. \'{"stage1":50,"stage2":30}\'')
+@click.option("--format", "out_format", default="markdown", show_default=True,
+              type=click.Choice(["markdown", "mermaid"]),
+              help="Output: full markdown report (default) or just the mermaid block")
+@click.option("-o", "--output", default=None, help="Save to file (else stdout)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def prisma(identified, after_screening, after_eligibility, included,
+          by_source, pdf_count, abstract_count, excluded_reasons,
+          out_format, output, quiet):
+    """Generate a PRISMA 2020 flow diagram (standalone).
+
+    Use this for systematic-review journal submissions. Provide the 4
+    count stages explicitly; the diagram auto-derives exclusions as the
+    differences between stages. Output is a GitHub-renderable mermaid
+    block (within a full markdown report by default).
+
+    Examples:
+      pa prisma --identified 287 --after-screening 57 \\
+        --after-eligibility 57 --included 57 --pdf 25 --abstract 32
+      pa prisma --identified 100 --after-screening 30 \\
+        --after-eligibility 20 --included 15 \\
+        --by-source '{"arxiv":40,"openalex":60}' --format mermaid
+    """
+    from .prisma import render_prisma, parse_json_arg
+    by_source_d = parse_json_arg(by_source) if by_source else None
+    excluded_d = parse_json_arg(excluded_reasons) if excluded_reasons else None
+    if not quiet:
+        click.echo(
+            f"[pa] PRISMA: identified={identified} after_screening={after_screening} "
+            f"after_eligibility={after_eligibility} included={included} "
+            f"format={out_format}", err=True,
+        )
+    out = render_prisma(
+        identified=identified,
+        after_screening=after_screening,
+        after_eligibility=after_eligibility,
+        included=included,
+        by_source=by_source_d,
+        pdf_count=pdf_count,
+        abstract_count=abstract_count,
+        excluded_reasons=excluded_d,
+        output_format=out_format,
+    )
+    if output:
+        Path(output).write_text(out, encoding="utf-8")
+        click.echo(f"[pa] saved {output}", err=True)
+    else:
+        click.echo(out)
 
 
 # =============== cache subcommand group (P0-2, 2026-07-04) ===============
