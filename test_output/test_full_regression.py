@@ -89,12 +89,12 @@ def section_cache_tests():
 # Reason: User prefers public MCP servers (e.g. paper-search-mcp on PyPI)
 # over self-maintained ones — see ROADMAP "Global Rule" section.
 
-# ============== Section A3: citations tests ==============
+# ============== Section A2: citations tests ==============
 
 def section_citations_tests():
     """Run citations E2E test (real OpenAlex API)."""
     print("\n" + "="*60)
-    print("A3. Citations tests (1 script, requires network, expect all PASS)")
+    print("A2. Citations tests (1 script, requires network, expect all PASS)")
     print("="*60)
     if os.environ.get("PA_NETWORK_OFFLINE", "").lower() in ("1", "true", "yes"):
         print("  [SKIP] PA_NETWORK_OFFLINE=1")
@@ -110,7 +110,28 @@ def section_citations_tests():
         print(f"  [{status}] test_citations_e2e.py (rc={rc})")
         print(f"        stdout_tail: {out[-500:]!r}")
         print(f"        stderr_tail: {err[-300:]!r}")
-    return [("test_citations_e2e.py", status, rc, "")] 
+    return [("test_citations_e2e.py", status, rc, "")]
+
+
+# ============== Section A3: MCP setup tests (post-revert) ==============
+
+def section_mcp_setup_tests():
+    """Run pa mcp install/config smoke tests (no actual install — uses mocks)."""
+    print("\n" + "="*60)
+    print("A3. MCP setup tests (1 script, mocks subprocess, expect all PASS)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_mcp_setup.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=60)
+    ok = rc == 0 and "ALL MCP SETUP TESTS PASSED" in out
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        passed = sum(1 for l in out.splitlines() if "PASS" in l)
+        print(f"  [PASS] test_mcp_setup.py (rc={rc}, {passed} sub-tests)")
+    else:
+        print(f"  [{status}] test_mcp_setup.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_mcp_setup.py", status, rc, "")] 
 
 
 # ============== Section B: pa_cli module imports ==============
@@ -163,7 +184,10 @@ def section_cli_help_surface():
         ["fetch", "--help"],
         ["search", "--help"],
         ["review", "--help"],
-        ["citations", "--help"],          # [P1-1] v3.7.0
+        ["citations", "--help"],          # [P1-1] v3.5.1
+        ["mcp", "--help"],                # post-revert: pa mcp install/config
+        ["mcp", "install", "--help"],
+        ["mcp", "config", "--help"],
         ["keys", "--help"],
         ["keys", "list", "--help"],
         ["keys", "check", "--help"],
@@ -347,7 +371,7 @@ def print_summary(all_results):
     print()
     # Detail
     for section_idx, section_results in enumerate(all_results):
-        section_names = ["A. cache", "A2. citations", "B. imports", "C. --help", "D. safe cli",
+        section_names = ["A. cache", "A2. citations", "A3. mcp-setup", "B. imports", "C. --help", "D. safe cli",
                          "E. python api", "F. skill local", "G. skill skip"] 
         print(f"  {section_names[section_idx]}:")
         for label, status, _rc, _ in section_results:
@@ -360,6 +384,7 @@ def main():
     all_results = [
         section_cache_tests(),
         section_citations_tests(),
+        section_mcp_setup_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),

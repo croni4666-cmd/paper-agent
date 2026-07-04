@@ -396,6 +396,13 @@ revert commit (created in this same pass, 2026-07-04).
 }
 ```
 
+**Project integration** (added in v3.5.1 follow-up commit, 2026-07-04
+same day): `pa mcp install` / `pa mcp config` subcommands exist so
+users can find this from `pa --help` instead of reading the CHANGELOG.
+The install helper does NOT auto-edit user MCP client config files
+(per Global Rule + user sovereignty). It just installs the package
+and prints the JSON for the user to paste.
+
 **Future [P0-3] resurrection criterion** (for the discipline record): only
 consider re-implementing if (a) paper-search-mcp goes unmaintained,
 (b) all good public alternatives go away, AND (c) user explicitly

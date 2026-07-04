@@ -22,6 +22,69 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.5.1] - 2026-07-04 (post-MCP-revert state, follow-up commit)
+
+### Added — `pa mcp install` / `pa mcp config` (public MCP integration)
+
+Following the same-day revert of [P0-3] self-hosted MCP, this commit
+adds the **integration glue** for the public alternative
+`openags/paper-search-mcp` (PyPI, 22 free sources, MIT).
+
+**New file**:
+- `pa_cli/mcp_setup.py` (~140 lines) — `install()` function, `_print_config_block()` helper, `_is_installed()` / `_have_uvx()` probes.
+
+**New CLI subcommand group** (in `pa_cli/cli.py`):
+```
+pa mcp install [--uvx] [--dry-run]   install + print config block
+pa mcp config                         print config block (no install)
+pa mcp serve-deprecated               exits 1 with redirect to install
+```
+
+`pa mcp install` flow:
+1. Probes `import paper_search_mcp` — if already installed, just prints config
+2. Else probes `which uvx` — if available, prints uvx config (no install)
+3. Else runs `python -m pip install --user paper-search-mcp`
+4. On pip failure, prints the uvx config as fallback
+
+**Critical design choices** (recorded for audit):
+- **Does NOT auto-edit** `claude_desktop_config.json` or any other MCP
+  client config. The user pastes the JSON block themselves. Per Global
+  Rule + user sovereignty principle.
+- **Uses `--user`** for pip install so the package goes to user
+  site-packages and can be cleanly removed with `pip uninstall`.
+- **Backward-compat shim** at top level: `pa mcp-serve` (old name)
+  still works but exits 1 with a redirect to `pa mcp install`.
+
+**Validation** (`test_output/test_mcp_setup.py` — 9/9 sub-tests):
+- `pa mcp config` prints valid JSON config block
+- `pa mcp install --dry-run` prints intent without running pip
+- `_is_installed` short-circuits when package is importable
+- `--uvx` flag uses uvx when on PATH, falls back to pip when not
+- pip failure → `status=install_failed` + uvx config in fallback block
+- `pa mcp serve-deprecated` exits 1 with redirect
+- `pa mcp-serve` (old top-level name) exits 1 with redirect
+
+**Test infra updates** (`test_output/test_full_regression.py`):
+- Added A3 section: `test_mcp_setup.py` runs as part of full regression
+- Added `mcp`, `mcp install`, `mcp config` to the --help surface check
+- Total: now 35+ PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE
+
+**Why this is in scope per Global Rule** (5-check audit):
+1. ✅ Runs for $0 (pip install is free)
+2. ✅ No hosted service (just a one-shot install + local package)
+3. ✅ Single-hobbyist maintenance: ~140 lines, no ongoing obligation
+4. ✅ No "must publish" obligation
+5. ✅ Free-tier degradation: if paper-search-mcp breaks, user uninstalls and the rest of paper-agent is unaffected
+
+### Audit pass on [P0-3] (precedent)
+
+This commit is the follow-up to the v3.5.1 (same-day) revert. The
+revert removed the maintenance surface; this commit restores
+**discoverability** so users can find the public alternative via
+`pa --help` instead of needing to read the CHANGELOG to learn about it.
+
+---
+
 ## [3.5.1] - 2026-07-04 (post-MCP-revert state)
 
 This release reflects the state of the codebase after the user-initiated
