@@ -15,9 +15,45 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > marked `### Modified YYYY-MM-DD` rather than deleted (audit trail
 > preserved). See `ROADMAP.md` for the discipline spec and current state.
 
+> **User Global Rule (added 2026-07-04)**: unless user explicitly says
+> "commercialize", no feature may exceed a personal-hobbyist's
+> economic + maintenance burden. See `ROADMAP.md` "Global Rule" section
+> for the full text and per-item audit log.
+
 ---
 
-## [3.7.0] - 2026-07-04
+## [3.5.1] - 2026-07-04 (post-MCP-revert state)
+
+This release reflects the state of the codebase after the user-initiated
+rollback of the [P0-3] MCP server (originally shipped as v3.6.0, now
+removed). The version is bumped to 3.5.1 (PATCH) to indicate that no
+new features are added in the reverted state — the citation work that
+was tagged as v3.7.0 is folded into this PATCH release, as the
+[P0-3] MCP feature that v3.6.0 introduced is the only thing that
+changed relative to v3.5.0.
+
+### Reverted — [P0-3] MCP server (`pa mcp-serve`)
+
+Removed in v3.5.1 — see ROADMAP `[P0-3] ### Modified 2026-07-04 — abandoned`
+for full rationale. The CLI subcommand `pa mcp-serve` still exists but
+exits with a deprecation message pointing users to the public alternative.
+
+**Use instead** (copy-paste into your Claude Code / Cursor / OpenCode
+MCP config):
+```json
+{
+  "mcpServers": {
+    "paper-search-mcp": {
+      "command": "uvx",
+      "args": ["paper-search-mcp"]
+    }
+  }
+}
+```
+22 sources, free-first, no API keys required (Unpaywall email only).
+Not in this repo — owned by `openags/paper-search-mcp`.
+
+### Added — [P1-1] Forward / backward citation walk (`pa citations <DOI>`)
 
 ### Added — [P1-1] Forward / backward citation walk (`pa citations <DOI>`)
 

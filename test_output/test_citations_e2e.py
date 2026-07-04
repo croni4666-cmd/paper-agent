@@ -126,33 +126,15 @@ def test_citations_cli_unknown_doi():
 
 
 def test_citations_mcp_forward():
+    """REMOVED 2026-07-04: paper-agent no longer self-hosts MCP.
+
+    Public alternative is `paper-search-mcp` (PyPI, 22 free sources, MIT).
+    See ROADMAP [P0-3] "Deprecated 2026-07-04 — abandoned (MCP self-hosted)"
+    for the full rationale and the Global Rule that drove the revert.
+    """
     print("\n=== test: pa_citations MCP tool (forward) ===")
-    import asyncio
-    from mcp import ClientSession, StdioServerParameters
-    from mcp.client.stdio import stdio_client
-
-    async def run():
-        params = StdioServerParameters(command=sys.executable, args=["-m", "pa_cli.mcp"])
-        async with stdio_client(params) as (read, write):
-            async with ClientSession(read, write) as s:
-                await s.initialize()
-                # list_tools should now include pa_citations
-                tools = (await s.list_tools()).tools
-                names = sorted(t.name for t in tools)
-                assert "pa_citations" in names, f"pa_citations missing: {names}"
-                # call_tool pa_citations forward
-                r = await s.call_tool("pa_citations",
-                                       {"doi": FIXTURE_DOI, "direction": "forward", "limit": 3})
-                text = r.content[0].text
-                data = json.loads(text)
-                assert "results" in data
-                assert data["count"] == 3
-                assert data["direction"] == "forward"
-                return data
-
-    data = asyncio.run(run())
-    print(f"  PASS: pa_citations MCP tool returned {data['count']} papers, "
-          f"source='{data['source_work'].get('title', '')[:50]}'")
+    print("  SKIP: pa_citations MCP tool removed 2026-07-04")
+    print("        See ROADMAP [P0-3] Deprecated section + paper-search-mcp on PyPI")
 
 
 def main():
