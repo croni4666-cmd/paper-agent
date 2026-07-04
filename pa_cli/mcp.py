@@ -118,6 +118,20 @@ PA_KEYS_STATUS_SCHEMA: dict[str, Any] = {
     "additionalProperties": False,
 }
 
+PA_CITATIONS_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "doi": {"type": "string", "description": "Target paper DOI."},
+        "direction": {"type": "string", "enum": ["forward", "backward"],
+                      "default": "forward",
+                      "description": "forward = citing; backward = referenced."},
+        "limit": {"type": "integer", "minimum": 1, "maximum": 200, "default": 100,
+                  "description": "Max papers to return."},
+    },
+    "required": ["doi"],
+    "additionalProperties": False,
+}
+
 
 # =============== Server instance + handlers ===============
 
@@ -167,6 +181,16 @@ async def handle_list_tools() -> list[Tool]:
             ),
             inputSchema=PA_KEYS_STATUS_SCHEMA,
         ),
+        Tool(
+            name="pa_citations",
+            description=(
+                "Walk citation graph via OpenAlex. direction='forward' returns "
+                "papers that cite the given DOI (cursor-paginated); "
+                "direction='backward' returns papers that the DOI cites "
+                "(N+1 API calls, one per reference). Bounded by --limit."
+            ),
+            inputSchema=PA_CITATIONS_SCHEMA,
+        ),
     ]
 
 
@@ -191,10 +215,12 @@ async def handle_call_tool(name: str, arguments: dict) -> CallToolResult:
             result = await _call_pa_review(arguments)
         elif name == "pa_keys_status":
             result = await _call_pa_keys_status(arguments)
+        elif name == "pa_citations":
+            result = await _call_pa_citations(arguments)
         else:
             return CallToolResult(
                 content=_txt({"error": "unknown_tool", "available": [
-                    "pa_fetch", "pa_search", "pa_review", "pa_keys_status"]}),
+                    "pa_fetch", "pa_search", "pa_review", "pa_keys_status", "pa_citations"]}),
                 isError=True,
             )
         return CallToolResult(content=_txt(result), structuredContent=result)
@@ -295,6 +321,15 @@ async def _call_pa_keys_status(args: dict) -> dict:
     """pa_keys_status() → audit dict."""
     from .keys import cmd_audit
     return cmd_audit()
+
+
+async def _call_pa_citations(args: dict) -> dict:
+    """pa_citations(doi, direction?, limit?) → citation walk dict."""
+    from .citations import citation_walk
+    doi = args["doi"]
+    direction = args.get("direction", "forward")
+    limit = args.get("limit", 100)
+    return citation_walk(doi, direction=direction, limit=limit)
 
 
 # =============== Server lifecycle ===============
