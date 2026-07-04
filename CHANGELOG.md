@@ -70,6 +70,57 @@ CLI / fetch codifies this as `--max-total-sec 300` hard cap and a `handoff`
 JSON block; downstream callers must respect it instead of iterating stealth
 parameters.
 
+### Added — `pa_cli/keys.py` API key registry + reminder system
+
+Two-layer storage:
+- `.env` (gitignored): actual secrets, never committed
+- `keys_registry.json` (committed): metadata only — service, env var, tier,
+  expiry date, last-checked, last-used, notes
+
+#### CLI commands
+
+```
+pa keys list                       # show all keys + status indicators
+pa keys check [service]            # live probe (HTTP) each key, updates last_checked
+pa keys add <service> <value>      # add or rotate, writes .env + registry + live-probes
+                                   # flags: --expires YYYY-MM-DD, --tier free|paid|institutional, --notes
+pa keys audit                       # count active/expiring/expired/missing; show never-checked
+pa keys remind                      # print expiry warnings; write alerts file
+```
+
+Status indicators: `✓ active` / `⏰ expiring-soon (≤14d)` / `⚠ expiring-week (≤7d)` /
+`🚨 expiring-today` / `❌ EXPIRED` / `✗ missing`.
+
+#### Reminder hook
+
+`main()` calls `load_env_into_environ()` then `cmd_remind(quiet=True)` on every
+CLI invocation. If any key has `expires` within 14 days or is already expired,
+a single-line `[pa-keys] <warning>` is written to stderr before the actual
+subcommand output. Non-intrusive — `pa fetch`, `pa search`, `pa review`
+behaviour unchanged unless a warning is active.
+
+#### Daily cron
+
+New cron job `pa-keys-daily-check` (mavis agent, `0 9 * * *` Asia/Shanghai)
+runs `pa keys check --write-alerts ~/.mavis/state/api_key_alerts.json` daily
+and reads the alerts file to surface expiry warnings to the user. The
+alerts file is also written on every `pa keys check` invocation, so
+non-cron runs of `pa keys check` also feed the cross-session reminder
+channel.
+
+#### Default registry (committed)
+
+| service | env_var | tier | expires | notes |
+|---|---|---|---|---|
+| openalex | OPENALEX_API_KEY | free | none | 1 RPS dedicated; no expiry reported |
+| semanticscholar | S2_API_KEY | free | none | x-api-key header; no expiry reported |
+| core | CORE_API_KEY | free | none | Bearer token; no expiry reported |
+| unpaywall | UNPAYWALL_EMAIL | free | none | email registration; no API key needed |
+
+Users add `expires` field via `pa keys add --expires YYYY-MM-DD` to opt into
+expiry tracking — for paid-tier keys, institutional subscriptions with
+quarterly rotation, etc.
+
 ### Added — full-text corpus recovery (8/8, +109% word count)
 
 Recovered all 3 abstract-only papers via human browser handoff:

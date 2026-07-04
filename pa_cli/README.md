@@ -76,17 +76,55 @@ python -m pa_cli version
 
 Shows paper-agent version and key dep status (click, pymupdf, arxiv, requests).
 
+### `pa keys` — API key registry + expiry reminders
+
+```bash
+python -m pa_cli keys list                 # show all known keys with status
+python -m pa_cli keys check                # live probe each key, write alerts file
+python -m pa_cli keys check openalex       # probe one key
+python -m pa_cli keys add openalex <key> --expires 2027-01-01 --tier paid
+python -m pa_cli keys audit                # count active/expiring/missing
+python -m pa_cli keys remind               # print warnings + write alerts file
+```
+
+Two-layer storage:
+- `.env` (gitignored): actual secrets
+- `keys_registry.json` (committed): metadata only — service, tier, expiry,
+  last-checked, last-used, notes
+
+**Auto-reminder**: every CLI invocation silently runs `keys remind`. If any
+key expires within 14 days or is already expired/missing, a single-line
+warning prints to stderr before the subcommand's output. No exit code
+change; non-intrusive.
+
+**Daily cron**: `pa-keys-daily-check` (mavis agent, `0 9 * * *` Asia/Shanghai)
+probes all keys + writes alerts to `~/.mavis/state/api_key_alerts.json`. The
+Mavis session-start hook reads this file to surface reminders proactively.
+
+Status indicators:
+- `✓ active` — healthy
+- `⏰ expiring-soon` — ≤14 days
+- `⚠ expiring-week` — ≤7 days
+- `🚨 expiring-today` — within 24h
+- `❌ EXPIRED` — already past expiry
+- `✗ missing` — env var not set
+
 ## Architecture
 
 ```
 pa_cli/
-├── __init__.py        # version + metadata
+├── __init__.py        # version + public API surface
 ├── __main__.py        # python -m pa_cli entry point
-├── cli.py             # Click command group (fetch / search / review / version)
+├── cli.py             # Click command group (fetch / search / review / version / keys)
 ├── fetch.py           # 8-channel PDF recovery with CF timeout
 ├── search.py          # 5-engine academic search with dedup
-└── review.py          # corpus → lit review synthesizer (PyMuPDF + template)
+├── review.py          # corpus → lit review synthesizer (PyMuPDF + template)
+└── keys.py            # API key registry + expiry reminders
 ```
+
+Companion files (project root):
+- `.env` (gitignored): actual secrets
+- `keys_registry.json` (committed): metadata only
 
 ## The v4 Design Principle
 
