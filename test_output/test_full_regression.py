@@ -155,7 +155,28 @@ def section_concepts_tests():
         print(f"  [{status}] test_concepts_e2e.py (rc={rc})")
         print(f"        stdout_tail: {out[-500:]!r}")
         print(f"        stderr_tail: {err[-300:]!r}")
-    return [("test_concepts_e2e.py", status, rc, "")] 
+    return [("test_concepts_e2e.py", status, rc, "")]
+
+
+# ============== Section A5: PRISMA tests ==============
+
+def section_prisma_tests():
+    """Run PRISMA E2E test (no network)."""
+    print("\n" + "="*60)
+    print("A5. PRISMA tests (1 script, no network, expect all PASS)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_prisma_e2e.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=60)
+    ok = rc == 0 and "ALL PRISMA TESTS PASSED" in out
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        passed = sum(1 for l in out.splitlines() if "PASS" in l)
+        print(f"  [PASS] test_prisma_e2e.py (rc={rc}, {passed} sub-tests)")
+    else:
+        print(f"  [{status}] test_prisma_e2e.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_prisma_e2e.py", status, rc, "")] 
 
 
 # ============== Section B: pa_cli module imports ==============
@@ -212,6 +233,7 @@ def section_cli_help_surface():
         ["mcp", "--help"],                # post-revert: pa mcp install/config
         ["mcp", "install", "--help"],
         ["mcp", "config", "--help"],
+        ["prisma", "--help"],             # [P1-3] v3.7.0
         ["keys", "--help"],
         ["keys", "list", "--help"],
         ["keys", "check", "--help"],
@@ -395,7 +417,7 @@ def print_summary(all_results):
     print()
     # Detail
     for section_idx, section_results in enumerate(all_results):
-        section_names = ["A. cache", "A2. citations", "A3. mcp-setup", "A4. concepts",
+        section_names = ["A. cache", "A2. citations", "A3. mcp-setup", "A4. concepts", "A5. prisma",
                          "B. imports", "C. --help", "D. safe cli",
                          "E. python api", "F. skill local", "G. skill skip"] 
         print(f"  {section_names[section_idx]}:")
@@ -411,6 +433,7 @@ def main():
         section_citations_tests(),
         section_mcp_setup_tests(),
         section_concepts_tests(),
+        section_prisma_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),

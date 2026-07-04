@@ -22,6 +22,81 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.7.0] - 2026-07-04
+
+### Added — [P1-3] PRISMA 2020 flow diagram (`pa prisma` + `pa review --with-prisma`)
+
+Implements all 4 acceptance criteria from `ROADMAP.md` [P1-3]:
+
+  1. `pa review --with-prisma` outputs a mermaid PRISMA block (auto-derived
+     from corpus_dir word counts)
+  2. Mermaid block renders on GitHub automatically
+  3. Each stage shows count + auto-derived exclusion count
+  4. Static PNG/SVG export deferred (mermaid-cli install would breach Global Rule;
+     see Backlog)
+
+**New module**:
+- `pa_cli/prisma.py` (~130 lines) — re-exports `skill.core.prisma.generate_mermaid` + `generate_markdown` (avoids cross-package imports; skill/ is untracked, pa_cli/ is the tracked boundary). Adds `derive_counts_from_corpus(corpus_dir, word_count_min)` for review integration; `render_prisma(...)` top-level entry; `parse_json_arg(s)` helper for JSON list inputs.
+
+**CLI integration**: `pa_cli/cli.py` adds 2 things:
+- New `pa prisma` command (standalone, takes explicit counts)
+- `pa review --with-prisma` flag (auto-derives counts from corpus)
+
+**pa prisma usage**:
+```bash
+# Full markdown report (default)
+pa prisma --identified 287 --after-screening 57 \\
+  --after-eligibility 57 --included 57 --pdf 25 --abstract 32
+
+# Just the mermaid block (for embedding)
+pa prisma --identified 100 --after-screening 30 \\
+  --after-eligibility 20 --included 15 --format mermaid
+
+# With source breakdown
+pa prisma --identified 100 --after-screening 30 --after-eligibility 20 \\
+  --included 15 --by-source '{"arxiv":40,"openalex":60}'
+```
+
+**pa review --with-prisma usage**:
+```bash
+pa review ./pdfs --with-prisma --word-count-min 1000 -o lit_review.md
+# Output: PRISMA block + --- separator + standard lit review
+```
+
+Counts auto-derived:
+- `identified` = total PDFs in corpus
+- `after_screening` = PDFs with `word_count >= word_count_min` (full-text)
+- `abstract_count` = PDFs with `word_count < word_count_min` (excluded)
+- `after_eligibility` = `after_screening` (no manual eligibility step)
+- `included` = `after_screening` (same — review is the inclusion step)
+
+**Pre-existing infrastructure** (discovered 2026-07-04 during scoping):
+- `skill/core/prisma.py` already had working `generate_mermaid()` + `generate_markdown()` (~150 lines, untracked in git). No need to reimplement — `pa_cli/prisma.py` is a 130-line thin wrapper. **Reuse over rebuild** = faster + no risk of skew.
+
+**Validation** (`test_output/test_prisma_e2e.py` — 10/10 sub-tests, no network):
+- `pa prisma --format mermaid` produces parseable mermaid block
+- `pa prisma --format markdown` produces full report (title + 4 sections)
+- `--by-source JSON` parsed + in output
+- `--excluded-reasons JSON` parsed + in output
+- Internal counts consistent (excluded = diffs between stages)
+- Invalid JSON fails with non-zero exit + clear error
+- `pa review --with-prisma` prepends PRISMA block before review body
+- `pa review` without `--with-prisma` unchanged (regression check)
+- `derive_counts_from_corpus()` returns correct counts from temp corpus
+
+**Effort** (per estimation methodology):
+- Estimate: 2h, Actual: ~1h, Variance: ~2x under
+- Speedups: (a) `skill/core/prisma.py` already implemented (saved ~1.5h), (b) thin wrapper pattern = 130 lines, (c) `build_corpus_index` reuse from `pa_cli.review`
+- "Thin wrapper for pre-existing module" class: estimate ~0.5-1h with 0.5h buffer
+
+**Deferred to backlog** (recorded in [P1-3] outcome section):
+- Static PNG/SVG export (would require `mermaid-cli` install, possibly npm dep — may breach Global Rule "no paid/hosted infra")
+- Auto-eligibility stage (needs user-driven exclusion reason codes; not auto-detectable from PDFs)
+- PRISMA template variations (PRISMA-ScR for scoping reviews, PRISMA-IPD for individual-patient-data reviews)
+- HTML embed in `pa review` output (currently just a markdown fence; GitHub renders natively, no extra work needed)
+
+---
+
 ## [3.6.0] - 2026-07-04
 
 ### Added — [P1-2] OpenAlex concepts semantic filtering (`pa search --concepts`)
