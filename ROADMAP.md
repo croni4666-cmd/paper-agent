@@ -218,3 +218,92 @@ What v3.4.1+ could improve (deferred to backlog):
 **Item permanently abandoned**: mark `Status: deprecated`. Add `### Deprecated YYYY-MM-DD — <reason>`. Do **NOT** delete the original.
 
 **Reference in CHANGELOG.md**: every release entry should list the roadmap item IDs it implements. Example: `### Added — [P0-1] Bibtex export`.
+
+---
+
+## Estimation methodology (added 2026-07-04, post-[P0-1] retrospective)
+
+User question exposed that the original estimates on [P0-1]–[P2-4] were
+**intuitive gut-feel guesses, not plan-based estimates**. [P0-1] came in
+**4-8x under estimate** (1-2 days estimated, 3 hours actual). To prevent
+this on future items, every entry follows this discipline:
+
+### 1. Sub-task decomposition (required for all new items)
+
+Every proposed item **must** include a sub-task breakdown in its body:
+
+```markdown
+### [Px-N] Title
+
+Sub-tasks (estimated before work starts):
+- [ ] Sub-task A description                       — estimate: Xh
+- [ ] Sub-task B description                       — estimate: Xh
+- [ ] Sub-task C description                       — estimate: Xh
+                                                ----
+Total estimate: Xh  (X-X days)
+```
+
+The total estimate then becomes a sum of sub-task estimates, not a
+single gut-feel number.
+
+### 2. Reference-class anchoring
+
+When estimating, look at the **most recently completed similar item**
+in the Active items / Outcome sections. For example:
+- All "metadata conversion" type items → anchor on [P0-1] Bibtex (3h)
+- All "API client wrapper" type items → look for similar completed anchor
+- If no anchor exists, mark `first-of-kind` and add a wider confidence interval (±100%)
+
+### 3. Outcome time-tracking (required on every completion)
+
+When changing Status to `done`, the Outcome section **must** include
+per-sub-task actual time and variance:
+
+```markdown
+#### Outcome (YYYY-MM-DD)
+
+Sub-task breakdown:
+- sub-task A: estimate Xh, actual Yh  (variance Zx under/over)
+- sub-task B: estimate Xh, actual Yh  (variance Zx under/over)
+- sub-task C: estimate Xh, actual Yh  (avoided / cancelled)
+                          ---------------------------------
+Total: estimate Xh,   actual Yh     (variance Zx)
+
+Why the variance:
+- Reason A
+- Reason B
+
+Lesson for future estimates:
+- For similar tasks, estimate X-Y hours (not the original estimate)
+```
+
+### 4. Confidence interval rule
+
+- **First-of-kind items**: estimate as range with ±100% margin (e.g. "1-4 days")
+- **Repeat-pattern items**: use tight range based on prior outcome (e.g. "2-3 hours")
+- **Items with cross-system integrations** (browser ext, MCP): add 50% buffer for unknown unknowns
+
+### 5. Anti-patterns (avoid these)
+
+- ❌ Single gut-feel number without sub-tasks
+- ❌ "1-2 days" without specifying what takes 1 vs 2 days
+- ❌ Copy-paste estimates from similar items without re-decomposing
+- ❌ Estimates that never get checked against actual (no feedback loop)
+
+### 6. Reference data so far
+
+After [P0-1] Bibtex completion, the project has its first anchor:
+
+| Item type | Anchor item | Actual time | Notes |
+|---|---|---|---|
+| Small data format conversion (text/bibtex) | [P0-1] Bibtex | ~3h | OpenAlex metadata rich; Click + bibtexparser library overhead minimal |
+
+Future similar items should use 3h as the anchor, with ±50% margin for unknown unknowns.
+
+---
+
+## Estimation log (running record of estimate vs actual)
+
+| Item | Estimate | Actual | Variance | Completed |
+|---|---|---|---|---|
+| [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 |
