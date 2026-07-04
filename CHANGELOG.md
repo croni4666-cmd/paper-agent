@@ -22,6 +22,47 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.7.1] - 2026-07-04 (cleanup commit)
+
+### Deprecated — [P2-1] / [P2-2] / [P2-3] (user review)
+
+Per user "反思一下" prompt: I reflected honestly on the 3 P2 items I'd
+scoped in the ROADMAP. All 3 were filled in from
+`COMPETITOR_ANALYSIS_v3.3.0.md` (competitor parity bullets) without
+checking whether user actually needs them. Each item now has a
+`### Deprecated 2026-07-04 — abandoned (user review)` sub-section
+in ROADMAP explaining the honest reflection.
+
+**What was deprecated** (per ROADMAP audit trail):
+- **[P2-1] Browser extension / Tampermonkey userscript**
+  → No concrete workflow: user does lit review via CLI, not browser
+- **[P2-2] API key auto-application script**
+  → User already has all 4 keys configured; "new users" assumption
+     broken under Global Rule (personal-hobbyist tool)
+- **[P2-3] `pa watch <topic>` daily subscription + local MD report**
+  → No concrete topic yet. Cron + report design itself is sound per
+     Global Rule; what's missing is user's stated workflow need.
+     Resurrection requires (a) a specific research topic, AND
+     (b) confirmation user wants daily monitoring vs on-demand.
+
+**No code change** — this is documentation-only. Version bumps
+3.7.0 → 3.7.1 (PATCH) to mark the audit trail + ROADMAP cleanup.
+
+**Lesson recorded** (added to estimation methodology):
+- When filling ROADMAP from competitor analysis, **stop and ask user**
+  whether each item fits their workflow. Don't assume "competitor has
+  it, we should have it too". Competitor parity ≠ user need.
+- The right time to ask "do you actually want this?" was before
+  spending sub-task estimation time on it. For future ROADMAP items,
+  pause for "is this for you?" before deep scoping.
+
+**Active roadmap after this cleanup**: P0/P1 done (5 done + 1 deprecated);
+P2 fully deprecated (3 items); v3.8.0 has no planned items until user
+requests a specific feature. Future work must be **user-driven**, not
+competitor-driven, per Global Rule.
+
+---
+
 ## [3.7.0] - 2026-07-04
 
 ### Added — [P1-3] PRISMA 2020 flow diagram (`pa prisma` + `pa review --with-prisma`)
