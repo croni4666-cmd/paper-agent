@@ -268,14 +268,69 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               help="Output format: json (default) or bibtex")
 @click.option("-o", "--output", default=None,
               help="Save results to file (.json or .bib)")
+@click.option("--concepts", "concept_ids", default=None,
+              help="OpenAlex concept IDs (C<digits>) — comma-separated; "
+                   "OR by default, use --concept-mode for AND")
+@click.option("--concept", "concept_names", multiple=True,
+              help="Concept name(s) to resolve to IDs (repeatable). "
+                   "Looked up via OpenAlex /concepts?search=")
+@click.option("--concept-mode", "concept_mode", default="or", show_default=True,
+              type=click.Choice(["or", "and"]),
+              help="How to combine multiple concepts: or (any) or and (all)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def search(query, year_min, year_max, limit, engine, out_format, output, quiet):
-    """5-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / CORE)."""
+def search(query, year_min, year_max, limit, engine, out_format, output,
+           concept_ids, concept_names, concept_mode, quiet):
+    """5-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / CORE).
+
+    Concept filtering (OpenAlex [P1-2]):
+      --concepts C1,C2         direct concept IDs (OR by default)
+      --concept "name"         resolve name to ID via OpenAlex search
+      --concept-mode and       require ALL specified concepts
+
+    Examples:
+      pa search "AI literacy" --concepts C154945302
+      pa search "ChatGPT" --concepts C154945302,C2779384929 --concept-mode and
+      pa search "transformer" --concept "machine learning"
+    """
     from .search import run_search
     from .bibtex import write_bibtex
+    from .concepts import resolve_concept_ids, build_concepts_filter, fetch_concept_metadata
+
+    # Resolve concepts (if any) before searching
+    raw_concepts = []
+    if concept_ids:
+        raw_concepts.extend(s.strip() for s in concept_ids.split(",") if s.strip())
+    raw_concepts.extend(concept_names)
+
+    resolved_ids: list = []
+    resolved_meta: list = []
+    if raw_concepts:
+        resolved_ids, warnings = resolve_concept_ids(raw_concepts)
+        if warnings:
+            for w in warnings:
+                click.echo(f"[pa] concept warning: {w['input']!r} -> {w['reason']}",
+                           err=True)
+        for cid in resolved_ids:
+            meta = fetch_concept_metadata(cid)
+            if meta:
+                resolved_meta.append(meta)
+                if not quiet:
+                    click.echo(f"[pa] concept: {cid} = {meta['display_name']!r} "
+                               f"(works={meta['works_count']:,})", err=True)
+        if not resolved_ids:
+            click.echo("[pa] no concepts resolved; running search without concept filter",
+                       err=True)
+    concepts_filter = build_concepts_filter(resolved_ids, mode=concept_mode)
     if not quiet:
-        click.echo(f"[pa] search query={query!r} years={year_min}-{year_max} format={out_format}", err=True)
-    results = run_search(query, year_min, year_max, limit, engine)
+        click.echo(f"[pa] search query={query!r} years={year_min}-{year_max} "
+                   f"concepts={resolved_ids or 'none'} mode={concept_mode if resolved_ids else 'n/a'} "
+                   f"format={out_format}", err=True)
+    results = run_search(query, year_min, year_max, limit, engine,
+                         concepts_filter=concepts_filter or None)
+    # Augment with concept metadata so user sees what was applied
+    if resolved_meta:
+        results["applied_concepts"] = resolved_meta
+        results["concept_mode"] = concept_mode
     if not quiet:
         click.echo(f"[pa] by_engine: {results['by_engine']}", err=True)
         click.echo(f"[pa] dedup_count: {results['dedup_count']}", err=True)

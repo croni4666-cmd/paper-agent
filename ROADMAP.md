@@ -505,16 +505,76 @@ _(filled when work done)_
 
 ### [P1-2] OpenAlex concepts semantic filtering
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-04
+- **Completed**: 2026-07-04
 - **Priority**: P1
-- **Effort**: 1 day
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.5
 - **Rationale**: Keyword search misses synonyms ("AI literacy" misses "generative AI fluency" / "ChatGPT competence"). OpenAlex's hierarchical concept IDs (e.g. C154945302 for AI Education) provide semantic scoping. OpenAlex's own benchmark shows +30% recall when concepts are used as filters.
 - **Acceptance criteria**:
   - `pa search "AI literacy" --concepts C154945302` filters by concept
   - Multiple concept IDs supported (OR / AND modes)
   - Concept name auto-resolution (`--concept "Artificial Intelligence Education"` looks up ID)
+
+#### Sub-task decomposition (estimated 2026-07-04 before work started)
+
+| # | Description | Estimate |
+|---|---|---|
+| A | `pa_cli/concepts.py` — `search_concepts(query, limit)` (text→IDs), `filter_works_by_concepts(works, ids, mode)` (filter helper), `resolve_concept_ids(names_or_ids, mode)` (mixed input parser) | 0.75h |
+| B | Add `--concepts ID[,ID,...]` + `--concept-mode or\|and` flags to `pa search` in cli.py | 0.5h |
+| C | Add `--concept NAME` (singular, resolves text→ID via search_concepts) for ergonomics | 0.25h |
+| D | Validation — `test_output/test_concepts_e2e.py` (uses real OpenAlex): name→ID resolution works, multi-ID filter, AND vs OR semantics differ | 0.5h |
+| E | CHANGELOG v3.6.0 + ROADMAP outcome | 0.25h |
+| | **Total** | **2.25h** |
+
+**Reference-class anchor**: [P1-1] citation walk = ~1.3h actual (2x under). Similar API integration. Estimate 2-3h with 0.5h buffer.
+
+**OpenAlex API notes** (researched 2026-07-04):
+- Concept lookup by ID: `GET /concepts/C<id>` returns full metadata
+- Name search: `GET /concepts?search=<text>&per-page=N` — multi-word works ("higher education" → 11 results), short/specific terms may return 0 (not in vocabulary as exact terms; users should try variations or supply IDs directly)
+- Multi-concept work filter:
+  - OR: `concepts.id:C1|C2` (pipe)
+  - AND: `concepts.id:C1+concepts.id:C2` (separate filter expressions, joined with `+`)
+- Reuses existing `pa_cli.search._normalize_openalex()` for output shape consistency
+
+#### Outcome (2026-07-04)
+
+**Files added** (1):
+- `pa_cli/concepts.py` (~165 lines) — `search_concepts`, `resolve_concept_ids`, `build_concepts_filter`, `fetch_concept_metadata`, `is_concept_id`, `_api_key_suffix`, `_short_id`
+
+**Files modified** (3):
+- `pa_cli/cli.py` — `pa search` adds 3 new flags: `--concepts`, `--concept`, `--concept-mode`; CLI now resolves concepts + fetches metadata + prints warnings to stderr before invoking `run_search`
+- `pa_cli/search.py` — `run_search()` accepts `concepts_filter` param; `search_openalex()` accepts `concepts_filter` param and threads it into the OpenAlex API URL
+- `test_output/test_full_regression.py` — added A4 section that runs `test_concepts_e2e.py`
+
+**Files added (tests)** (1):
+- `test_output/test_concepts_e2e.py` (~180 lines) — 10 sub-tests, real OpenAlex API
+
+**Tests passing**:
+- `test_concepts_e2e.py`: 10/10 sub-tests
+- `test_full_regression.py`: now 39+ PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 35 in v3.5.1)
+
+**Acceptance criteria status**: 3/3 met
+1. ✅ `pa search "AI literacy" --concepts C154945302` filters by concept
+2. ✅ Multiple concept IDs supported (OR default; `--concept-mode and` for AND)
+3. ✅ Concept name auto-resolution (`--concept "machine learning"` → C119857082)
+
+**Key OpenAlex API findings** (recorded for future integration work):
+- `concepts?search=<text>` does full-text search across concept names + descriptions
+- Multi-word queries work better than single words: "higher education"→11 results, "AI literacy"→0
+- Multi-concept filter syntax:
+  - OR:  `concepts.id:C1|C2` (pipe separator in single filter expression)
+  - AND: `concepts.id:C1+concepts.id:C2` (separate filter expressions joined with `+`)
+- All concept IDs use `C<digits>` format; OpenAlex returns full URL `https://openalex.org/C<digits>` everywhere — strip prefix when constructing filters
+
+**Effort**:
+- Estimate: 2.25h, Actual: ~1h, Variance: ~2x under
+- Speedups: OpenAlex API key pre-configured + `_normalize_openalex` reuse + clean threading through 2 layers
+
+**Deferred to backlog** (recorded 2026-07-04):
+- Concept name fuzzy matching (current: exact-phrase; user can fall back to IDs)
+- Concept disambiguation UI (current: top-1 by works_count; could show picker for ambiguous names)
+- Cache concept metadata (each `fetch_concept_metadata` is a separate network call; 5-concept search = 5 calls; could memoize per session)
 
 ### [P1-3] PRISMA flow diagram output
 
@@ -667,8 +727,9 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.3.0 | released 2026-07-04 | (pre-roadmap items: CLI package, keys registry, v4 principle) | 2026-07-04 |
 | v3.4.0 | released 2026-07-04 | [P0-1] Bibtex export | 2026-07-04 |
 | v3.5.0 | released 2026-07-04 | [P0-2] Local cache + `pa cache` subcommand | 2026-07-04 |
-| v3.5.1 | released 2026-07-04 | [P0-3] REVERTED (MCP) + [P1-1] Citation walk | 2026-07-04 |
-| v3.6.0 | target 2026-07-15 | [P1-2] OpenAlex concepts, [P1-3] PRISMA, [P2-1/2/3 redesigned per Global Rule] | — |
+| v3.5.1 | released 2026-07-04 | [P0-3] REVERTED (MCP) + [P1-1] Citation walk + `pa mcp install` glue | 2026-07-04 |
+| v3.6.0 | released 2026-07-04 | [P1-2] OpenAlex concepts semantic filtering | 2026-07-04 |
+| v3.7.0 | target 2026-07-15 | [P1-3] PRISMA, [P2-1] userscript, [P2-2] API key form-fill, [P2-3] daily MD report | — |
 
 ---
 
@@ -777,3 +838,4 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 | [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 | shipped |
 | [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 (sameday revert) | **REVERTED 2026-07-04** — use paper-search-mcp (PyPI) |
 | [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 | shipped (in v3.5.1) |
+| [P1-2] OpenAlex concepts | 2.25h | ~1h | 2x under | 2026-07-04 | shipped (v3.6.0) |
