@@ -442,29 +442,33 @@ def cache_drop(doi):
 
 @main.command()
 def mcp_serve():
-    """Run paper-agent as an MCP (Model Context Protocol) server.
+    """DEPRECATED 2026-07-04: removed.
 
-    Uses stdio transport (JSON-RPC over stdin/stdout). Configure your MCP
-    client (Claude Code, Cursor, OpenCode, etc.) to launch this command:
+    Reason: User prefers PUBLIC MCP servers (e.g. openags/paper-search-mcp)
+    over self-maintained ones. Self-maintaining an MCP adds a long-term
+    maintenance surface that one hobbyist can't sustain.
 
-      claude_desktop_config.json:
+    For academic paper search via MCP, use:
+      pip install paper-search-mcp
+      # OR
+      uvx paper-search-mcp
+
+    Configure your MCP client (Claude Code, Cursor, OpenCode) with:
       {
         "mcpServers": {
-          "pa": {
-            "command": "python",
-            "args": ["-m", "pa_cli.mcp"]
+          "paper-search-mcp": {
+            "command": "uvx",
+            "args": ["paper-search-mcp"]
           }
         }
       }
-
-    Exposes 4 tools: pa_fetch, pa_search, pa_review, pa_keys_status.
-    All tool results are JSON-serialisable. Structured errors return
-    isError=True with a JSON error payload in content.
-
-    Forwards SIGINT cleanly when stdin closes (client disconnect).
     """
-    from .mcp import main as _mcp_main
-    _mcp_main()
+    import sys as _sys
+    _sys.stderr.write(
+        "[pa] mcp-serve was removed 2026-07-04. "
+        "Use paper-search-mcp (PyPI) instead — see `pa --help` for details.\n"
+    )
+    _sys.exit(1)
 
 
 @main.command()

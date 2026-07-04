@@ -9,9 +9,58 @@
 > 4. **Proven wrong / partial**: do **NOT** delete the entry. Add a sub-section under the same item with heading `### Modified YYYY-MM-DD — <what changed>` and write the new reasoning + new status. The original rationale is preserved as an audit trail.
 > 5. **Abandoned** (won't do for foreseeable future): mark `Status: deprecated`. Keep the entry + add `### Deprecated YYYY-MM-DD — <why>`. Future readers can see the history.
 > 6. **Cited from CHANGELOG.md** — every release must reference which roadmap items it implements.
+> 7. **Global Rule (added 2026-07-04)**: every proposed item MUST be checked against the Global Rule below. Items that exceed personal-hobbyist burden are out of scope unless user explicitly says "commercialize".
+
+---
+
+## Global Rule — Personal-hobbyist budget (added 2026-07-04)
+
+> **除非我强调要商业化,千万不要制作超过个人爱好者经济负担能力的大服务,因为维护能力有限。**
+>
+> Translation: Unless I explicitly say "commercialize", never build a service whose economic + maintenance burden exceeds what one personal hobbyist can sustain.
+
+**What this rule means in practice**:
+
+| ✅ Allowed | ❌ Out of scope |
+|---|---|
+| Code that runs locally on one machine | Hosted services requiring paid infra |
+| Free public APIs (OpenAlex, Crossref, Unpaywall free tier, Semantic Scholar free tier) | Paid API tiers (S2 paid, Scopus, Web of Science) |
+| Local files (cache, config, downloads) | Cloud storage / managed databases |
+| Open source packages published to PyPI/npm | Custom Docker / K8s deployment |
+| stdio / local-socket integration | Public-facing HTTP servers with SLA |
+| Public MCPs (someone else maintains) | Self-maintained MCP servers (see [P0-3] revert 2026-07-04) |
+| Cron + local file output | Cron + email/Slack push to external service |
+| Single-developer browser userscript (Tampermonkey / Violentmonkey) | Published browser extension (Chrome Web Store review, manifest v3 churn) |
+
+**Checklist for any new item** (must pass ALL before adding to roadmap):
+1. **No paid infra required** to run it for the user or a peer
+2. **No hosted service** the user must keep alive
+3. **Maintenance cadence** ≤ a few hours per month for a single hobbyist
+4. **No "must publish / must maintain public-facing infra"** obligation
+5. **Free-tier degradation**: if the item depends on a third-party free API, what happens when that free tier is removed? (must be: degrades gracefully, not "tool becomes useless")
+
+**Per-item audit log** (added 2026-07-04 in the same pass as the rule itself):
+
+| Item ID | Verdict | Action |
+|---|---|---|
+| [P0-1] Bibtex export | ✅ pass | already shipped; pure local code |
+| [P0-2] Local cache | ✅ pass | already shipped; local files only |
+| [P0-3] MCP server | ❌ fail | **REVERTED 2026-07-04** — self-maintained MCP exceeded maintenance budget. Use public `paper-search-mcp` (PyPI) instead. |
+| [P1-1] Citation walk | ✅ pass | uses OpenAlex free API; degrades gracefully when key unset |
+| [P1-2] OpenAlex concepts | ✅ pass | same as P1-1 (free API + local filter) |
+| [P1-3] PRISMA diagram | ✅ pass | pure local markdown generation |
+| [P2-1] Browser extension | ❌ fail | **REDESIGN as userscript** — see Modified 2026-07-04 entry below |
+| [P2-2] API key auto-application | ⚠️ needs design review | deferred — see Modified 2026-07-04 entry below |
+| [P2-3] `pa watch` daily subscription | ❌ fail | **REDESIGN — drop email push** — see Modified 2026-07-04 entry below |
+| [P2-4] ~~pa cache stats~~ | n/a | already merged into [P0-2] |
+
+**Last audit**: 2026-07-04 (initial rule codification + revert pass)
+**Next audit**: every time a new item is added (Status: proposed → in-progress transition)
+
+---
 
 **Owner**: Mavis (mavis)
-**Last reviewed**: 2026-07-04 (initial scaffold)
+**Last reviewed**: 2026-07-04 (MCP revert + global rule codification pass)
 **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6 + §7 + §8 (the original brainstorming; preserved here as the inception log)
 
 ---
@@ -182,12 +231,13 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 
 ### [P0-3] MCP server (expose `pa` as Model Context Protocol tool)
 
-- **Status**: done
+- **Status**: deprecated
 - **Added**: 2026-07-04
-- **Completed**: 2026-07-04
+- **Completed (initially)**: 2026-07-04
+- **Deprecated**: 2026-07-04
 - **Priority**: P0
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.3
-- **Rationale**: User's strong preference for "one-time investment, long-term reuse" patterns. Claude Code / OpenCode / Cursor all support MCP; exposing `pa fetch / search / review / keys status` as MCP tools means agent sessions can call them inline without terminal-switching. Long-term leverage — install once, use across all future agent sessions.
+- **Rationale (original)**: User's strong preference for "one-time investment, long-term reuse" patterns. Claude Code / OpenCode / Cursor all support MCP; exposing `pa fetch / search / review / keys status` as MCP tools means agent sessions can call them inline without terminal-switching. Long-term leverage — install once, use across all future agent sessions.
 - **Acceptance criteria**:
   - `python -m pa_cli mcp-serve` runs as stdio JSON-RPC server
   - Exposes 4 tools: `pa_fetch(doi)`, `pa_search(query, year_min, year_max)`, `pa_review(corpus_dir)`, `pa_keys_status()`
@@ -305,6 +355,51 @@ _(filled when work done)_
 Original [P0-3] entry had 4 acceptance criteria at high level. This
 update adds the 6-task breakdown, tool schemas, and reference-class
 anchors. Acceptance criteria unchanged.
+
+### Deprecated 2026-07-04 — abandoned (MCP self-hosted)
+
+User explicitly walked back the [P0-3] MCP server the same day it shipped
+(v3.6.0 → reverted in v3.5.1). Reasons (all tied to the new Global Rule —
+"no services exceeding personal-hobbyist maintenance budget"):
+
+1. **Self-maintenance burden**: every pa_cli feature change would need
+   a paired MCP handler update. Schema drift + 5 hand-written JSON
+   Schemas = ongoing tax for one hobbyist.
+2. **Public alternative exists**: `openags/paper-search-mcp` (PyPI,
+   22 free sources, MIT) covers the same use case (academic search via
+   MCP for LLM clients) without user maintenance. Better to consume
+   public work than to maintain a worse duplicate.
+3. **Trust boundary / security model is unclear**: an MCP server that
+   can spawn `pa fetch` (which can route through Sci-Hub mirrors via
+   channel cascade) needs ongoing security review. One hobbyist can't
+   do that sustainably.
+4. **Subprocess + stdio debugging is high-friction**: when the MCP
+   client crashes mid-session, the stdio server may not exit cleanly
+   (we hand-rolled `BrokenPipeError` handling). Production MCP servers
+   need ops engineering, not a hobbyist.
+
+**Audit trail preserved**: the original implementation (`pa_cli/mcp.py`,
+`test_mcp_e2e.py`, `pa mcp-serve` CLI subcommand, CHANGELOG v3.6.0 entry,
+ROADMAP [P0-3] outcome subsection) is recoverable via `git log` — see
+commits `e82ff30` (the original `feat(mcp): v3.6.0` commit) and the
+revert commit (created in this same pass, 2026-07-04).
+
+**Replacement guidance for users** (recorded in CHANGELOG v3.5.1):
+```json
+{
+  "mcpServers": {
+    "paper-search-mcp": {
+      "command": "uvx",
+      "args": ["paper-search-mcp"]
+    }
+  }
+}
+```
+
+**Future [P0-3] resurrection criterion** (for the discipline record): only
+consider re-implementing if (a) paper-search-mcp goes unmaintained,
+(b) all good public alternatives go away, AND (c) user explicitly
+opts in. Until then, this entry stays `Status: deprecated`.
 
 ### [P1-1] Forward / backward citation walk
 
@@ -430,42 +525,104 @@ _(filled when work done)_
 
 ### [P2-1] Browser extension companion (SciHub Addon-style)
 
-- **Status**: proposed
+- **Status**: proposed (REDESIGN NEEDED per Global Rule)
 - **Added**: 2026-07-04
 - **Priority**: P2
-- **Effort**: 0.5 day (manifest + docs only — don't write the extension itself)
+- **Effort**: 0.5 day (revised after redesign — was 0.5d for manifest only, redesign reduces further)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.7
-- **Rationale**: Non-CLI users hit paper-agent via browser. `pa browser-install` opens SciHub Addon Chrome Web Store page + auto-configures fallback URLs pointing to local daemon.
-- **Acceptance criteria**:
-  - `pa browser-install` opens Chrome store + sets up extension with our 11-source fallback list
-  - Local daemon (`pa serve`) accepts browser-extension callbacks for paper lookup
+- **Rationale (original)**: Non-CLI users hit paper-agent via browser. `pa browser-install` opens SciHub Addon Chrome Web Store page + auto-configures fallback URLs pointing to local daemon.
+- **Acceptance criteria (original — fails Global Rule ❌)**:
+  - `pa browser-install` opens Chrome store + sets up extension with our 11-source fallback list  ← needs published extension (Chrome Web Store review + ongoing manifest v3 churn)
+  - Local daemon (`pa serve`) accepts browser-extension callbacks for paper lookup  ← local daemon = hosted service within scope, but Chrome store publication is the violation
+
+### Modified 2026-07-04 — redesign as userscript (Global Rule compliance)
+
+Per Global Rule, browser extensions that need to be published and reviewed
+by Chrome/Firefox stores exceed personal-hobbyist maintenance budget
+(manifest v3 churn, store review process, ongoing compatibility). Redesign:
+
+- **What it is now**: a **Tampermonkey / Violentmonkey userscript** that
+  the user manually loads from a local file. No store review, no manifest
+  v3 to chase, just JS that calls `pa` via `fetch` to local daemon.
+- **Maintenance**: ~50 lines of JS + a markdown install guide. Versioning
+  via Git, not via Chrome Web Store.
+- **Local daemon `pa serve`**: kept (it's a local stdio service, not
+  a hosted one — within scope).
+- **Why this is OK for hobbyist**: no publication, no review, no
+  per-browser-version compat matrix. If a browser breaks the userscript,
+  edit it.
+
+**New acceptance criteria**:
+- `pa browser-install` writes a `pa-helper.user.js` userscript to `~/.paper-agent/`
+  and prints Tampermonkey / Violentmonkey install instructions
+- Userscript adds a "↘ pa fetch this" button to DOI landing pages; clicking
+  sends the DOI to local `pa serve` daemon
+- Local daemon runs as a regular Python script (`pa serve`); no
+  authentication (localhost only)
 
 ### [P2-2] API key auto-application script
 
-- **Status**: proposed
+- **Status**: proposed (REVIEW PENDING per Global Rule)
 - **Added**: 2026-07-04
 - **Priority**: P2
-- **Effort**: 0.5 day
+- **Effort**: 0.5 day (unchanged but scope reduced)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.8
-- **Rationale**: New users hit friction when needing 3 API keys to run 5-engine search. Automating the registration form filling saves setup time.
-- **Acceptance criteria**:
-  - `pa keys setup` opens browser, fills OpenAlex / S2 / CORE registration forms
-  - Auto-detects confirmation emails and pulls key
-  - Writes to `.env` + registry automatically
-- **Risk**: API registration forms change; needs maintenance commitment
+- **Rationale (original)**: New users hit friction when needing 3 API keys to run 5-engine search. Automating the registration form filling saves setup time.
+- **Acceptance criteria (original — partly fails Global Rule ⚠️)**:
+  - `pa keys setup` opens browser, fills OpenAlex / S2 / CORE registration forms  ← OK (uses Playwright locally)
+  - Auto-detects confirmation emails and pulls key  ← ⚠️ requires email IMAP polling (depends on user's mail server config)
+  - Writes to `.env` + registry automatically  ← OK
+- **Risk noted in original**: API registration forms change; needs maintenance commitment
+
+### Modified 2026-07-04 — drop auto-detect-email, keep registration form-fill (Global Rule)
+
+Per Global Rule, "auto-detect confirmation emails" depends on user's
+mail server (IMAP / OAuth) which adds credentials-handling + ongoing
+maintenance as mail providers change. Drop that step.
+
+**Revised acceptance criteria**:
+- `pa keys setup` opens browser via Playwright, fills OpenAlex / S2 / CORE
+  registration forms with user-supplied info (name, email)
+- After submission, **prints the link / instructions** for the user to
+  manually check their email and copy the confirmation key back
+- `pa keys add <service> <key>` already exists; users feed the key in
+  directly (one extra 30-sec step vs full automation, but no mail-server
+  maintenance tax)
+- **Maintenance**: Playwright selectors may break as forms change. The
+  0.5-day estimate includes a `pa keys setup --dry-run` mode for users
+  to detect breakage without committing. Worst case, they fall back to
+  manual `pa keys add`.
 
 ### [P2-3] `pa watch <topic>` daily subscription + email push
 
-- **Status**: proposed
+- **Status**: proposed (REDESIGN NEEDED per Global Rule)
 - **Added**: 2026-07-04
 - **Priority**: P2
-- **Effort**: 1 day
+- **Effort**: 0.5 day (revised after redesign — was 1d, redesign reduces)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.9
-- **Rationale**: On-demand search misses daily new papers. Research monitoring needs daily/weekly automatic push. biohack-fetch-clean cron design is a template.
-- **Acceptance criteria**:
-  - `pa watch "AI literacy higher education" --daily --email user@x.com` registers mavis cron
-  - Cron runs `pa search` + diffs against seen-set + emails new papers
+- **Rationale (original)**: On-demand search misses daily new papers. Research monitoring needs daily/weekly automatic push. biohack-fetch-clean cron design is a template.
+- **Acceptance criteria (original — fails Global Rule ❌)**:
+  - `pa watch "AI literacy higher education" --daily --email user@x.com` registers mavis cron  ← ⚠️ cron OK, but email push
+  - Cron runs `pa search` + diffs against seen-set + emails new papers  ← ❌ needs SMTP/transactional email (SendGrid etc. = $$, or self-hosted mailserver = maintenance)
   - Deduplication via DOI
+
+### Modified 2026-07-04 — drop email push, generate daily MD report (Global Rule)
+
+Per Global Rule, hosted email push (SendGrid/Mailgun/self-hosted SMTP)
+exceeds hobbyist budget. Drop email entirely; replace with a daily
+markdown report that the user reads locally.
+
+**Revised acceptance criteria**:
+- `pa watch "AI literacy higher education" --daily` registers mavis cron
+- Cron runs `pa search` + diffs against seen-set + writes
+  `~/.paper-agent/reports/YYYY-MM-DD.md` (just a markdown file, no network push)
+- User reads it next time they open terminal / via `pa reports` subcommand
+- Deduplication via DOI
+- Optional: `--open` flag to auto-open the report in default editor
+
+**Why this is OK**: the cron is local (mavis cron is in scope), the
+output is a file (no hosted service), and reading is manual (no
+"must keep service alive").
 
 ### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ — REMOVED, merged into [P0-2]
 
@@ -503,10 +660,8 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.3.0 | released 2026-07-04 | (pre-roadmap items: CLI package, keys registry, v4 principle) | 2026-07-04 |
 | v3.4.0 | released 2026-07-04 | [P0-1] Bibtex export | 2026-07-04 |
 | v3.5.0 | released 2026-07-04 | [P0-2] Local cache + `pa cache` subcommand | 2026-07-04 |
-| v3.6.0 | released 2026-07-04 | [P0-3] MCP server, [P2-4 merged] | 2026-07-04 |
-| v3.7.0 | released 2026-07-04 | [P1-1] Citation walk (forward + backward) | 2026-07-04 |
-| v3.8.0 | target 2026-07-15 | [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
-| v4.0.0 | target 2026-08-30 | architecture milestone (MCP-first), [P2-*] backlog | — |
+| v3.5.1 | released 2026-07-04 | [P0-3] REVERTED (MCP) + [P1-1] Citation walk | 2026-07-04 |
+| v3.6.0 | target 2026-07-15 | [P1-2] OpenAlex concepts, [P1-3] PRISMA, [P2-1/2/3 redesigned per Global Rule] | — |
 
 ---
 
@@ -609,9 +764,9 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 
 ## Estimation log (running record of estimate vs actual)
 
-| Item | Estimate | Actual | Variance | Completed |
-|---|---|---|---|---|
-| [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 |
-| [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 |
-| [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 |
-| [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 |
+| Item | Estimate | Actual | Variance | Completed | Note |
+|---|---|---|---|---|---|
+| [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 | shipped |
+| [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 | shipped |
+| [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 (sameday revert) | **REVERTED 2026-07-04** — use paper-search-mcp (PyPI) |
+| [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 | shipped (in v3.5.1) |
