@@ -27,6 +27,8 @@ from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
 
+from . import cache as _cache
+
 
 # =============== HTTP helpers ===============
 
@@ -63,6 +65,19 @@ def save_pdf(out_dir: Path, doi_slug: str, body: bytes, tag: str = "") -> str:
     fp = out_dir / name
     fp.write_bytes(body)
     return str(fp)
+
+
+# =============== Cache helpers ===============
+
+def _cache_write_safe(doi: str, body: bytes, channel: str, url: str) -> Optional[dict]:
+    """Write to cache; log + skip on failure so cascade result isn't blocked."""
+    try:
+        return _cache.cache_put(doi, body, channel=channel, url=url)
+    except Exception as e:
+        # Avoid blocking the cascade result — cache is opportunistic
+        import logging
+        logging.getLogger(__name__).warning(f"cache_put failed for {doi}: {e}")
+        return None
 
 
 # =============== Channels ===============
@@ -225,8 +240,20 @@ def channel_playwright_pdf(url: str, out_path: Path, max_wait: int = 25) -> dict
 def fetch_doi(doi: str, output_dir: str = ".",
               proxy: str = None, channels: List[str] = None,
               unpaywall_email: str = "hello@example.com",
-              max_total_sec: int = 300) -> Dict[str, Any]:
-    """Try channels in order until success. Hard cap at max_total_sec (paper-agent v4: 5 min)."""
+              max_total_sec: int = 300,
+              use_cache: bool = True) -> Dict[str, Any]:
+    """Try channels in order until success. Hard cap at max_total_sec (paper-agent v4: 5 min).
+
+    Cache integration (P0-2, 2026-07-04):
+      1. On entry, if use_cache=True, check ~/.paper-agent/cache/{doi_slug}.pdf
+         — if hit (PDF magic + sha256 match), return immediately with via_channel='cache'.
+         Cascade skipped entirely.
+      2. After each successful cascade channel, write the downloaded PDF to
+         cache (always, regardless of use_cache flag) so subsequent fetches
+         benefit even if this call used --no-cache.
+      3. use_cache=False still writes to cache after cascade — see point 2.
+         (Flag is "skip the read", not "skip the write".)
+    """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     channels = channels or ["openalex", "arxiv", "unpaywall", "doi_redirect",
@@ -235,6 +262,23 @@ def fetch_doi(doi: str, output_dir: str = ".",
     t0 = time.time()
 
     results = {"doi": doi, "saved_as": None, "channels": {}}
+
+    # Cache check at function entry — short-circuit cascade on hit.
+    # P0-2 acceptance: "if PDF magic valid + sha256 unchanged, return
+    # without re-downloading".
+    if use_cache:
+        hit = _cache.cache_get(doi)
+        if hit:
+            results["saved_as"] = hit["pdf_path"]
+            results["via_channel"] = f"cache:{hit['channel']}" if hit["channel"] else "cache"
+            results["via_url"] = hit.get("url", "")
+            results["cache_hit"] = True
+            results["cache_age_days"] = round(hit.get("age_days", 0), 3)
+            results["cache_sha256"] = hit["sha256"]
+            results["elapsed_sec"] = round(time.time() - t0, 3)
+            results["final_status"] = "SUCCESS_CACHE_HIT"
+            # Skip entire cascade — user request satisfied.
+            return results
     for ch_name in channels:
         elapsed = time.time() - t0
         if elapsed > max_total_sec:
@@ -254,6 +298,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
                     results["saved_as"] = saved
                     results["via_channel"] = "openalex"
                     results["via_url"] = cand
+                    _cache_write_safe(doi, body, channel="openalex", url=cand)
                     return results
         elif ch_name == "arxiv":
             r = channel_arxiv(doi)
@@ -265,6 +310,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
                     results["saved_as"] = saved
                     results["via_channel"] = "arxiv"
                     results["via_url"] = r["url"]
+                    _cache_write_safe(doi, body, channel="arxiv", url=r["url"])
                     return results
         elif ch_name == "unpaywall":
             r = channel_unpaywall(doi, unpaywall_email)
@@ -276,6 +322,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
                     results["saved_as"] = saved
                     results["via_channel"] = "unpaywall"
                     results["via_url"] = r["url"]
+                    _cache_write_safe(doi, body, channel="unpaywall", url=r["url"])
                     return results
         elif ch_name == "doi_redirect":
             r = channel_doi_redirect(doi)
@@ -289,6 +336,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
                     results["saved_as"] = saved
                     results["via_channel"] = "doi_redirect"
                     results["via_url"] = full
+                    _cache_write_safe(doi, body, channel="doi_redirect", url=full)
                     return results
             # Try Playwright on /doi/pdf/ URL pattern
             pdf_url = r.get("final", "").replace("/abs/", "/pdf/").replace("/full/", "/pdf/")
@@ -299,6 +347,12 @@ def fetch_doi(doi: str, output_dir: str = ".",
                 if pw_r.get("status") == "success":
                     results["saved_as"] = pw_r["saved_as"]
                     results["via_channel"] = "playwright_pdf"
+                    # Re-read body from disk to write cache
+                    try:
+                        pw_body = Path(pw_r["saved_as"]).read_bytes()
+                        _cache_write_safe(doi, pw_body, channel="playwright_pdf", url=pdf_url)
+                    except Exception:
+                        pass
                     return results
         elif ch_name == "scihub":
             r = channel_scihub_mirror(doi)
@@ -310,6 +364,8 @@ def fetch_doi(doi: str, output_dir: str = ".",
                     saved = save_pdf(output_dir, doi_slug, body, tag="scihub")
                     results["saved_as"] = saved
                     results["via_channel"] = "scihub"
+                    results["via_url"] = r.get("iframe_url", "")
+                    _cache_write_safe(doi, body, channel="scihub", url=r.get("iframe_url", ""))
                     return results
         elif ch_name == "playwright":
             # Last-ditch: try Playwright on the doi.org URL directly

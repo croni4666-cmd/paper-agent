@@ -17,6 +17,51 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.5.0] - 2026-07-04
+
+### Added — [P0-2] Local PDF cache + `pa cache` subcommand group
+
+Implements all 5 acceptance criteria from `ROADMAP.md` [P0-2] (Local cache, avoid re-download).
+
+**New files**:
+- `pa_cli/cache.py` (~210 lines) — `cache_get`, `cache_put`, `cache_remove`, `cache_stats`, `cache_clean`, `_doi_slug`, `get_cache_root`. Cache root defaults to `~/.paper-agent/cache/` per spec; overridable via `PA_CACHE_DIR` env var. Sidecar `.meta.json` carries `{ts, sha256, channel, url, size}`. PDF magic check (`%PDF` prefix + ≥50KB) guards against caching corrupted bytes; sha256 mismatch auto-cleans both files on next read.
+
+**Fetch integration**: `pa fetch <DOI>` checks cache first; on hit (`PDF magic + sha256 valid`) returns immediately with `via_channel="cache:<original>"`, `final_status="SUCCESS_CACHE_HIT"`, `cache_hit=True`, and the cascade is skipped entirely (`elapsed_sec < 0.001s` in tests). After each successful cascade channel, the downloaded PDF is written to cache via `cache_put` so the next call benefits — even when `use_cache=False` was passed (the flag controls read, not write).
+
+**Keys check cache**: `pa keys check` adds a 30-min in-memory cache (P0-2 acceptance: "second invocation in same window skips HTTP probe"). Cache busts on different `service_id`, manual `_check_cache_clear()`, or `pa keys check --no-cache`. PA_TEST=1 (truthy) bypasses cache for unit tests; "0" or unset treats as production.
+
+**`pa cache` subcommand group** (5 subcommands):
+```
+pa cache path   # show current cache root
+pa cache stats  # size / entry count / oldest / newest
+pa cache put <DOI> <PDF_PATH> --channel openalex --url ...
+pa cache drop <DOI>
+pa cache clean [--older-than Nd|--all] [--dry-run] [--json]
+```
+`pa cache clean` refuses without `--older-than Nd` or `--all` (safety against accidental wipes); `--dry-run` previews without deleting.
+
+**`--no-cache` flag** added to `pa fetch` and `pa keys check`. Both flags mean "skip the read", not "skip the write" — successful operations still populate cache.
+
+**Validation** (4 test scripts in `test_output/`):
+- `test_cache_smoke.py` — 6/6 sub-tests on cache module (miss, put/get, corrupt cleanup, remove, stats, clean)
+- `test_cache_integration.py` — 2/2 (cache hit short-circuits cascade in <0.5s; `use_cache=False` falls through)
+- `test_keys_cache.py` — 5/5 (cold probes, warm cache, diff service_id busts, same service_id reuses, manual clear)
+- `test_pa_cache_cli.py` — 6/6 (`pa cache path/stats/put/drop/clean` E2E)
+
+**Effort**: estimate 3.5h, actual ~5h (1.4x over). Two unforeseen infrastructure costs: (a) Windows UTF-8 encoding in subprocess tests; (b) missing `channel_playwright_pdf` mock in test 2 (cascade was reaching the playwright channel and trying to launch real chromium). Both isolated to test harness; production code unchanged. Full outcome logged under [P0-2] in `ROADMAP.md`.
+
+**Deferred to backlog** (recorded in [P0-2] outcome section):
+- atime-based LRU eviction (FIFO by ts for now)
+- per-key 100MB size cap
+- cache hit-rate metrics for `pa audit`
+- legacy v3.0 dirs (`arxiv_cache/`, `core_cache/`, etc.) cleanup — separate `.gitignore` ticket
+
+### Changed — `pa_cli/fetch.py` `fetch_doi()` signature
+
+Added `use_cache: bool = True` parameter. Existing callers pass `use_cache=not no_cache` via the new CLI flag. Default `True` preserves existing behaviour for programmatic use.
+
+---
+
 ## [3.4.0] - 2026-07-04
 
 ### Added — [P0-1] Bibtex export (`pa_cli/bibtex.py`, 220 lines)
