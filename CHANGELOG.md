@@ -7,6 +7,14 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+> **Roadmap discipline** (added 2026-07-04): every release entry below
+> references which roadmap item IDs from `ROADMAP.md` it implements. The
+> roadmap is the single source of truth for paper-agent's evolution —
+> new proposals get added to it with Status: proposed, in-flight items
+> transition through in-progress → done, and items proven wrong are
+> marked `### Modified YYYY-MM-DD` rather than deleted (audit trail
+> preserved). See `ROADMAP.md` for the discipline spec and current state.
+
 ---
 
 ## [3.3.0] - 2026-07-04
