@@ -655,8 +655,9 @@ _(filled when work done)_
 
 ### [P2-1] Browser extension companion (SciHub Addon-style)
 
-- **Status**: proposed (REDESIGN NEEDED per Global Rule)
+- **Status**: deprecated
 - **Added**: 2026-07-04
+- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
 - **Priority**: P2
 - **Effort**: 0.5 day (revised after redesign — was 0.5d for manifest only, redesign reduces further)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.7
@@ -690,17 +691,48 @@ by Chrome/Firefox stores exceed personal-hobbyist maintenance budget
 - Local daemon runs as a regular Python script (`pa serve`); no
   authentication (localhost only)
 
+### Deprecated 2026-07-04 — abandoned (user review)
+
+**Honest reflection after user "reflection" prompt**:
+
+I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md §6.7` (a competitor
+parity bullet: "SciHub Addon is a popular browser extension") without
+checking whether the user actually needs it. After reflection:
+
+1. **No concrete workflow**: user does lit review via CLI
+   (`pa fetch` / `pa search` / `pa citations`), not via browsing
+   publisher landing pages in a browser. The "userscript button on
+   DOI pages" use case is hypothetical, not observed.
+2. **Even after Global Rule redesign**, the userscript + local daemon
+   still requires (a) installing Tampermonkey/Violentmonkey, (b)
+   pasting the userscript, (c) running `pa serve` daemon. That's
+   three new habits for the user to maintain, with no observed benefit
+   in current workflow.
+3. **Competitor parity ≠ user need**: just because SciHub Addon exists
+   as a browser extension doesn't mean paper-agent needs one.
+
+**Decision**: DEPRECATED. No code written (avoid sunk-cost). The
+Modified 2026-07-04 redesign sub-section above is preserved as audit
+trail showing the redesign thought process, in case user later says
+"I actually do want this, here's my workflow".
+
+**Resurrection criterion** (per ROADMAP discipline): only re-propose
+if user provides a specific scenario where they would use the
+userscript (e.g. "I want to click a button on a publisher page to
+auto-fetch via pa"). Until then, shelved.
+
 ### [P2-2] API key auto-application script
 
-- **Status**: proposed (REVIEW PENDING per Global Rule)
+- **Status**: deprecated
 - **Added**: 2026-07-04
+- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
 - **Priority**: P2
 - **Effort**: 0.5 day (unchanged but scope reduced)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.8
 - **Rationale (original)**: New users hit friction when needing 3 API keys to run 5-engine search. Automating the registration form filling saves setup time.
 - **Acceptance criteria (original — partly fails Global Rule ⚠️)**:
   - `pa keys setup` opens browser, fills OpenAlex / S2 / CORE registration forms  ← OK (uses Playwright locally)
-  - Auto-detects confirmation emails and pulls key  ← ⚠️ requires email IMAP polling (depends on user's mail server config)
+  - Auto-detect confirmation emails and pulls key  ← ⚠️ requires email IMAP polling (depends on user's mail server config)
   - Writes to `.env` + registry automatically  ← OK
 - **Risk noted in original**: API registration forms change; needs maintenance commitment
 
@@ -723,10 +755,41 @@ maintenance as mail providers change. Drop that step.
   to detect breakage without committing. Worst case, they fall back to
   manual `pa keys add`.
 
+### Deprecated 2026-07-04 — abandoned (user review)
+
+**Honest reflection after user "reflection" prompt**:
+
+I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md §6.8` (a competitor
+parity bullet: "PaperBot does API key auto-setup") without checking
+whether the user actually needs it. After reflection:
+
+1. **User already has all keys configured**: `OPENALEX_API_KEY`,
+   `S2_API_KEY`, `CORE_API_KEY`, `UNPAYWALL_EMAIL` are all set in `.env`
+   and `keys_registry.json` shows `last_checked` completed for all.
+   The user is not a "new user" who would benefit from auto-setup.
+2. **"New users" assumption is broken**: per Global Rule (codified
+   2026-07-04), paper-agent is a personal-hobbyist tool — there are
+   no other users to onboard. The "new users hit friction" rationale
+   assumed a public/commercialized product, which user explicitly
+   ruled out.
+3. **Even the redesigned form-fill (no email IMAP)** still requires
+   maintaining Playwright selectors against 3 different registration
+   forms that change without notice. One hobbyist can't sustain that.
+
+**Decision**: DEPRECATED. No code written. The Modified 2026-07-04
+sub-section above is preserved as audit trail showing the redesign
+thought process.
+
+**Resurrection criterion**: only re-propose if (a) user explicitly
+decides to share paper-agent with someone who needs onboarding, OR
+(b) one of user's existing keys needs rotation AND user wants automation
+for just that one form. Until then, shelved.
+
 ### [P2-3] `pa watch <topic>` daily subscription + email push
 
-- **Status**: proposed (REDESIGN NEEDED per Global Rule)
+- **Status**: deprecated
 - **Added**: 2026-07-04
+- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
 - **Priority**: P2
 - **Effort**: 0.5 day (revised after redesign — was 1d, redesign reduces)
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.9
@@ -754,6 +817,39 @@ markdown report that the user reads locally.
 output is a file (no hosted service), and reading is manual (no
 "must keep service alive").
 
+### Deprecated 2026-07-04 — abandoned (user review)
+
+**Honest reflection after user "reflection" prompt**:
+
+The redesigned version (drop email, generate daily MD report) is closer
+to in-scope per Global Rule, BUT:
+
+1. **No concrete topic yet**: the original entry says `<topic>` without
+   a value. User does have cron habits (`biohack-fetch-clean` for
+   nutrition, `pa-keys-daily-check` for API keys), but **not yet**
+   paper-monitoring. Adding `pa watch` without a specific topic would
+   be speculative infrastructure with no current workflow to support.
+2. **Even minimal MD-report generator** needs:
+   - A mavis cron registration command (one-time setup)
+   - A DOI-dedup state file (~/.paper-agent/reports/seen.json)
+   - Search query string persistence
+   - Reasonable paper scoring (filter out low-quality hits)
+3. **Maintenance risk**: even at minimum, this is one more cron + one
+   more state file + one more script to keep alive. User already runs
+   biohack-fetch-clean cron; adding paper-agent cron before there's
+   a topic is cargo-culting.
+
+**Decision**: DEPRECATED for now. The Modified 2026-07-04 redesign
+sub-section above is preserved as audit trail showing the redesigned
+plan, ready to be re-implemented **if and when user provides a topic**
+(e.g. "monitor daily for new papers in <X field>"). The cron + local
+MD report design itself is sound per Global Rule; what's missing is
+the user's stated workflow need.
+
+**Resurrection criterion**: only re-propose if user provides (a) a
+specific research topic to monitor, AND (b) confirms they want daily
+monitoring vs on-demand. Until then, shelved.
+
 ### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ — REMOVED, merged into [P0-2]
 
 ### Modified 2026-07-04 — merged into [P0-2] (already shipped)
@@ -773,13 +869,43 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 ## Modified items (proven wrong or revised)
 
-*(none yet — populated as items are worked on and learn from the outcome)*
+- **[P0-3] MCP server** — see [P0-3] Modified 2026-07-04 sub-section. Original
+  design (self-hosted `pa mcp-serve`) exceeded maintenance budget; user
+  walked back the same day. Replaced with public `paper-search-mcp`
+  integration via `pa mcp install`. NOT a "modified" item in the failed-
+  sense — the redesign was successful — but tracked here for the audit.
+
+- **[P2-1] Browser extension** — see [P2-1] Modified 2026-07-04. Original
+  Chrome extension failed Global Rule (Chrome Web Store review); redesigned
+  as Tampermonkey userscript. Later deprecated entirely on user review —
+  see [P2-1] Deprecated 2026-07-04.
+
+- **[P2-2] API key auto-apply** — see [P2-2] Modified 2026-07-04. Original
+  design included email IMAP polling (fails Global Rule); redesigned to drop
+  email auto-detect. Later deprecated entirely on user review — see
+  [P2-2] Deprecated 2026-07-04.
+
+- **[P2-3] pa watch daily + email** — see [P2-3] Modified 2026-07-04. Original
+  design included SMTP email push (fails Global Rule); redesigned as
+  local MD report + cron. Later deprecated entirely on user review (no
+  concrete topic) — see [P2-3] Deprecated 2026-07-04.
 
 ---
 
 ## Deprecated items (abandoned, won't do)
 
-*(none yet)*
+- **[P2-1] Browser extension / userscript** — DEPRECATED 2026-07-04 (user review).
+  No concrete workflow. Resurrection requires user-provided scenario.
+
+- **[P2-2] API key auto-application** — DEPRECATED 2026-07-04 (user review).
+  User already has all keys; "new users" assumption invalid under Global Rule.
+
+- **[P2-3] pa watch daily subscription** — DEPRECATED 2026-07-04 (user review).
+  No concrete topic yet. Resurrection requires user-provided topic + workflow.
+
+- **[P0-3] MCP server (self-hosted)** — DEPRECATED 2026-07-04 (user reflection).
+  Replaced by `pa mcp install` glue for public `paper-search-mcp`. Different
+  from "abandoned" — the value was real, just better served by public package.
 
 ---
 
@@ -793,7 +919,8 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.5.1 | released 2026-07-04 | [P0-3] REVERTED (MCP) + [P1-1] Citation walk + `pa mcp install` glue | 2026-07-04 |
 | v3.6.0 | released 2026-07-04 | [P1-2] OpenAlex concepts semantic filtering | 2026-07-04 |
 | v3.7.0 | released 2026-07-04 | [P1-3] PRISMA flow diagram (pa prisma + pa review --with-prisma) | 2026-07-04 |
-| v3.8.0 | target 2026-07-15 | [P2-1] userscript, [P2-2] API key form-fill, [P2-3] daily MD report | — |
+| v3.7.1 | released 2026-07-04 | Cleanup: deprecated [P2-1] / [P2-2] / [P2-3] after user review | 2026-07-04 |
+| v3.8.0 | target (deferred) | (no new features planned; ship only if user requests) | — |
 
 ---
 
