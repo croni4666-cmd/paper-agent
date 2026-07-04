@@ -17,6 +17,64 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.6.0] - 2026-07-04
+
+### Added — [P0-3] MCP server (`pa mcp-serve`, exposes 4 tools to any MCP client)
+
+Implements all 4 acceptance criteria from `ROADMAP.md` [P0-3].
+
+**New files**:
+- `pa_cli/mcp.py` (~250 lines) — `mcp.Server` instance, 4 tool handlers, async `serve()`, JSON-serialisable results, structured error responses. Wraps existing pa_cli Python functions; no logic duplication.
+
+**Tools exposed**:
+1. **`pa_fetch`** — args: `doi` (req), `output_dir?`, `proxy?`, `channels?`, `use_cache?` → returns fetch_doi result dict (saved_as, via_channel, cache_hit, error/handoff). Supports paper-agent v4 handoff: `handoff.user_action_required` propagates as structured error.
+2. **`pa_search`** — args: `query` (req), `year_min?`, `year_max?`, `limit?`, `engine?`, `format?` (json|bibtex) → returns run_search result dict; `format=bibtex` returns BibTeX-formatted text in `bibtex` field.
+3. **`pa_review`** — args: `corpus_dir` (req), `template?`, `word_count_min?` → returns `{markdown: str, corpus_dir: str}`. Missing corpus_dir returns structured error dict (NOT MCP `isError`), letting agent-specific recovery logic kick in.
+4. **`pa_keys_status`** — args: `{}` → returns `cmd_audit()` dict (rows + summary counts). Pure-local; no HTTP probe.
+
+**Transport**: stdio JSON-RPC via official `mcp` Python SDK (Anthropic, v1.27.2 — already installed; no install step).
+
+**CLI integration**: `pa mcp-serve` subcommand in `pa_cli/cli.py` runs `pa_cli.mcp.main()` in foreground; cleanly handles stdin close (BrokenPipeError → exit 0) and KeyboardInterrupt (sys.exit 0).
+
+**MCP client config** (Claude Code / Cursor / OpenCode):
+```json
+{
+  "mcpServers": {
+    "pa": {
+      "command": "python",
+      "args": ["-m", "pa_cli.mcp"]
+    }
+  }
+}
+```
+
+**Validation** (`test_output/test_mcp_e2e.py` — 7/7 sub-tests):
+- `list_tools` returns 4 tools with valid JSON Schema input schemas (object + required properties)
+- `pa_keys_status` returns audit dict with `rows` + summary counts
+- `pa_keys_status` works with API keys cleared (purely local computation)
+- `pa_review` returns markdown string for empty corpus
+- `pa_review` returns `{error: "corpus_dir_not_found", corpus_dir, markdown: ""}` for missing path
+- unknown tool returns `isError=True` with `available: [...]` list
+- `pa_fetch` returns `cache_hit=True, via_channel="cache:openalex"` for cached DOI (full cascade skipped)
+
+End-to-end tests use `mcp.ClientSession + stdio_client(StdioServerParameters(command=python, args=["-m","pa_cli.mcp"]))` so the live server is exercised in a real subprocess — exactly the path any MCP client would use.
+
+**Effort**: estimate 4h, actual ~2h (2x under). Two speedups:
+- `mcp` SDK already installed (saved ~10 min discovery + install).
+- Local imports (`from .fetch import fetch_doi` inside handler) kept mcp.py dep-light and avoided pre-loading the 8-channel cascade on every stdio invocation.
+
+**Deferred to backlog** (recorded in [P0-3] outcome section):
+- HTTP transport (current stdio-only is enough for local single-machine use)
+- Token-bucket rate limit on per-DOI fetch (DOS guard when many agents share one server)
+- Elicitation prompts for confirmation flows (e.g. "really download from Sci-Hub?")
+- Persistent sampling for batch literature reviews (vs single-DOI fetch)
+
+### Added — [P2-4] pa cache stats (was already in P0-2, removed duplicate P2-4 item)
+
+ROADMAP [P2-4] was functionally a subset of [P0-2]; marked `### Modified 2026-07-04 — merged into [P0-2] (already shipped)` and removed from active items list.
+
+---
+
 ## [3.5.0] - 2026-07-04
 
 ### Added — [P0-2] Local PDF cache + `pa cache` subcommand group

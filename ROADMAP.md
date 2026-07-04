@@ -59,6 +59,21 @@ What v3.4.1+ could improve (deferred to backlog):
 - Pages / volume / issue fields — OpenAlex doesn't expose these; would need Crossref fallback or just `pages = {}` empty
 - Entry type auto-detection for proceedings / books — currently hardcoded `@article` per source type
 
+### [P2-4] ~~pa cache stats~~ — merged into [P0-2]
+
+### Modified 2026-07-04 — merged into [P0-2] (already shipped)
+
+[P2-4] was originally "pa cache stats" — descriptive single feature.
+Once [P0-2] shipped with `pa cache stats` as one of 5 admin subcommands,
+[P2-4] became functionally redundant (a strict subset of [P0-2]).
+Removed from active items to avoid double-tracking. Outcome: covered
+under [P0-2] outcomes.
+
+**Migration**: existing references to `[P2-4] pa cache stats` should
+be read as `[P0-2] Local cache, pa cache stats subcommand`.
+
+---
+
 ### [P0-2] Local cache (avoid re-download)
 
 - **Status**: done
@@ -167,10 +182,10 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 
 ### [P0-3] MCP server (expose `pa` as Model Context Protocol tool)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-04
+- **Completed**: 2026-07-04
 - **Priority**: P0
-- **Effort**: 0.5 day
 - **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.3
 - **Rationale**: User's strong preference for "one-time investment, long-term reuse" patterns. Claude Code / OpenCode / Cursor all support MCP; exposing `pa fetch / search / review / keys status` as MCP tools means agent sessions can call them inline without terminal-switching. Long-term leverage — install once, use across all future agent sessions.
 - **Acceptance criteria**:
@@ -178,6 +193,118 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
   - Exposes 4 tools: `pa_fetch(doi)`, `pa_search(query, year_min, year_max)`, `pa_review(corpus_dir)`, `pa_keys_status()`
   - All tool results are JSON-serialisable (no raw bytes)
   - Error states return structured errors (handoff from paper-agent v4 surfaces as `user_action_required` field)
+
+#### Sub-task decomposition (final time log)
+
+| # | Description | Estimate | Actual | Notes |
+|---|---|---|---|---|
+| A | Design tool schemas (JSON Schema for 4 tools) | 0.5h | ~0.2h | Under. Tool surface is bounded by existing pa_cli functions; minimal schema design work. |
+| B | Implement `pa_cli/mcp.py` — `mcp.Server`, 4 handlers, async `serve()` | 1.5h | ~1.0h | Under. Local imports keep module dep-light; stdio transport boilerplate is minimal. |
+| C | Add `pa mcp-serve` subcommand | 0.25h | ~0.05h | Under. 7-line Click wrapper. |
+| D | E2E test (`test_mcp_e2e.py`) — in-process stdio client + 7 sub-tests | 1h | ~0.6h | Under. `mcp.ClientSession + stdio_client` make subprocess launching easy; pre-populated cache avoids network deps. |
+| E | Edge cases (errors, handoff propagation, no-keys scenarios) | 0.5h | ~0.1h | Under. Covered by sub-task D tests. |
+| F | CHANGELOG v3.6.0 + ROADMAP outcome + remove [P2-4] | 0.25h | ~0.2h | On target. |
+| | **Total** | **4h** | **~2.1h** | **2x under** |
+
+**Variance analysis**: 2x under. Speedup factors:
+1. `mcp` Python SDK v1.27.2 already installed (saved ~10 min).
+2. Tool surface reuses existing Click-command functions (no logic duplication).
+3. Local imports in handlers (`from .fetch import fetch_doi` inside each handler) avoid pre-loading the cascade module on every stdio invocation.
+4. First-of-kind item, no Maven-grade estimation. Would calibrate better with a second similar item (vs first-of-kind wide CI).
+
+#### Outcome (2026-07-04)
+
+**Files added** (2):
+- `pa_cli/mcp.py` (~250 lines) — `mcp.Server` instance, 4 tool handlers, async `serve()`, structured error responses
+- `test_output/test_mcp_e2e.py` (~180 lines) — 7 sub-tests covering list_tools + 4 tool calls + cache-hit fetch + error paths
+
+**Files modified** (2):
+- `pa_cli/cli.py` — added `pa mcp-serve` Click subcommand (7 lines)
+- `test_output/test_full_regression.py` — added `A2. MCP server tests` section that wraps `test_mcp_e2e.py`
+
+**Tests passing** (regression baseline):
+- `test_mcp_e2e.py`: 7/7 sub-tests
+- `test_full_regression.py`: now reports 36 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 29 PASS in v3.5.0)
+
+**Acceptance criteria status**: 4/4 met
+1. ✅ `python -m pa_cli mcp-serve` runs as stdio JSON-RPC server (and equivalent `pa mcp-serve` CLI)
+2. ✅ Exposes 4 tools with JSON Schema input validation
+3. ✅ All tool results are JSON-serialisable (verified: every text content is `json.dumps(..., ensure_ascii=False, indent=2)` over the existing function output)
+4. ✅ Errors structured:
+    - Unknown tool → `CallToolResult(isError=True, content=[TextContent(json)])`
+    - Tool exception → wrapped with `error: <ExceptionClass>, message, tool`
+    - Missing corpus_dir → returns structured dict `{error: "corpus_dir_not_found", ...}` (NOT MCP isError) so agent-specific recovery can inspect handoff fields
+    - Paper-agent v4 handoff propagation: `fetch_doi()` already surfaces `handoff.user_action_required`; that flows through MCP result JSON unchanged
+
+**MCP client config (example)**:
+```json
+{
+  "mcpServers": {
+    "pa": {
+      "command": "python",
+      "args": ["-m", "pa_cli.mcp"]
+    }
+  }
+}
+```
+
+**Deferred to backlog** (recorded 2026-07-04):
+- HTTP transport (stdio is enough for single-machine local use; HTTP for cross-machine needed deferred)
+- Token-bucket rate limit on per-DOI fetch (DOS guard when many agents share one server)
+- Elicitation prompts for confirmation flows (`"really download from Sci-Hub?"`)
+- Persistent sampling for batch literature reviews (vs single-DOI fetch)
+- `pa mcp install` helper that auto-writes the JSON config block into the active MCP client's settings file (would close the "now I need to manually edit config" gap)
+
+**Lesson for future estimates** (added to estimation methodology):
+- For "wrap existing functions for new interface" type items (CLI → MCP, MCP → HTTP, CLI → REST): estimate 2-3h with smaller buffer. The bulk of work is interface plumbing, not new logic.
+- For MCP / external-protocol integrations, a pre-installed SDK can shave ~10-15 min vs full feature estimate.
+
+#### Sub-task decomposition (estimated 2026-07-04 before work started)
+
+| # | Description | Estimate |
+|---|---|---|
+| A | Design MCP tool schema for 4 tools (pa_fetch / pa_search / pa_review / pa_keys_status). JSON Schema for input/output, structured error mapping | 0.5h |
+| B | Implement `pa_cli/mcp.py` — `mcp.Server` instance, register 4 tool handlers, async `serve()` using stdio transport, JSON-serialise all results | 1.5h |
+| C | Add `pa mcp-serve` subcommand to `pa_cli/cli.py` — Click wrapper + asyncio.run + handling KeyboardInterrupt on stdin close | 0.25h |
+| D | Validation — `test_output/test_mcp_e2e.py`: in-process stdio client launches `pa mcp-serve`, sends `initialize`, `tools/list`, `tools/call` for each of the 4 tools. Verify schemas + response contents | 1h |
+| E | Edge cases — empty search results, missing DOI, network errors, structured error responses (handoff path in pa_fetch surfaces as MCP error with `user_action_required` field) | 0.5h |
+| F | CHANGELOG v3.6.0 + ROADMAP Outcome subsection + remove [P2-4] (now covered) | 0.25h |
+| | **Total** | **4h** (~3-5h with overhead) |
+
+**Reference-class anchor**:
+- [P0-1] Bibtex export: 3h actual, 4-8x under-estimate
+- [P0-2] Local cache: ~5h actual, 1.4x over-estimate
+- [P0-3] is first-of-kind (no prior MCP work) — wider ±100% confidence window
+- Likely: faster than 4h due to lean tool surface (4 tools, all JSON-bounded)
+
+**Pre-existing infrastructure discovered 2026-07-04 during scoping**:
+- `mcp` Python SDK v1.27.2 already installed (Anthropic official, https://modelcontextprotocol.io)
+- Has `mcp.Server`, `mcp.server.stdio.stdio_server`, `mcp.types.{Tool,CallToolResult}`, `mcp.ClientSession` for in-process testing
+- NO install step needed — saves ~10 min vs original plan
+
+**Tools to expose** (final shapes, decided 2026-07-04):
+1. **`pa_fetch`** — args `{doi: str, output_dir?: str, proxy?: str, channels?: list[str], use_cache?: bool}` → returns fetch result dict (saved_as, via_channel, cache_hit, error/handoff)
+2. **`pa_search`** — args `{query: str, year_min?: int, year_max?: int, limit?: int, engine?: str, format?: "json"|"bibtex"}` → returns search result dict (results array, by_engine counts, bibtex text)
+3. **`pa_review`** — args `{corpus_dir: str, template?: str, word_count_min?: int}` → returns `{markdown: str, corpus_dir: str}` (markdown as string, never raw bytes)
+4. **`pa_keys_status`** — args `{}` → returns `{rows: list[dict], total: int, active: int, expiring: int, expired: int, missing: int}`
+
+**Files to add/modify**:
+- NEW `pa_cli/mcp.py` (~150 lines)
+- MODIFY `pa_cli/cli.py` — add `pa mcp-serve` subcommand
+- NEW `test_output/test_mcp_e2e.py` — in-process client test
+- NEW `test_output/test_mcp_schemas.py` — JSON Schema validation for each tool
+
+#### Outcome (YYYY-MM-DD — to be filled on completion)
+
+_(filled when work done)_
+
+---
+
+### Modified 2026-07-04 — scope clarified (added sub-task breakdown)
+
+Original [P0-3] entry had 4 acceptance criteria at high level. This
+update adds the 6-task breakdown, tool schemas, and reference-class
+anchors. Acceptance criteria unchanged.
 
 ### [P1-1] Forward / backward citation walk
 
@@ -258,18 +385,20 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
   - Cron runs `pa search` + diffs against seen-set + emails new papers
   - Deduplication via DOI
 
-### [P2-4] `pa cache stats` and `pa cache clean` subcommands
+### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ — REMOVED, merged into [P0-2]
 
-- **Status**: proposed
-- **Added**: 2026-07-04
-- **Priority**: P2
-- **Effort**: 0.5 day
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.10
-- **Rationale**: Once cache exists, users need to know size / age / when to clean.
-- **Acceptance criteria**:
-  - `pa cache stats` — size, count, oldest, newest
-  - `pa cache clean --older-than N` removes cold entries
-  - Aligns with existing `arxiv_cache/`, `core_cache/` directories
+### Modified 2026-07-04 — merged into [P0-2] (already shipped)
+
+[P2-4] was originally "pa cache stats + clean" descriptive features.
+Once [P0-2] shipped with `pa cache stats` + `pa cache clean` as 2 of 5
+admin subcommands, [P2-4] became functionally redundant (a strict subset
+of [P0-2]). Removed from active items list to avoid double-tracking.
+
+**Rationale preserved for audit trail**: Once cache exists, users need
+size/age/when-to-clean visibility. — Now satisfied by [P0-2] v3.5.0.
+
+**Migration**: existing references to `[P2-4] pa cache stats` should
+be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 ---
 
@@ -292,7 +421,8 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 | v3.3.0 | released 2026-07-04 | (pre-roadmap items: CLI package, keys registry, v4 principle) | 2026-07-04 |
 | v3.4.0 | released 2026-07-04 | [P0-1] Bibtex export | 2026-07-04 |
 | v3.5.0 | released 2026-07-04 | [P0-2] Local cache + `pa cache` subcommand | 2026-07-04 |
-| v3.6.0 | target 2026-07-15 | [P0-3] MCP server, [P1-1] Citation walk, [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
+| v3.6.0 | released 2026-07-04 | [P0-3] MCP server, [P2-4 merged] | 2026-07-04 |
+| v3.7.0 | target 2026-07-15 | [P1-1] Citation walk, [P1-2] OpenAlex concepts, [P1-3] PRISMA | — |
 | v4.0.0 | target 2026-08-30 | architecture milestone (MCP-first), [P2-*] backlog | — |
 
 ---
@@ -400,3 +530,4 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 |---|---|---|---|---|
 | [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 |
 | [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 |
+| [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 |

@@ -440,5 +440,32 @@ def cache_drop(doi):
         click.echo(f"[pa-cache] nothing to drop for {doi} (no entry found)")
 
 
+@main.command()
+def mcp_serve():
+    """Run paper-agent as an MCP (Model Context Protocol) server.
+
+    Uses stdio transport (JSON-RPC over stdin/stdout). Configure your MCP
+    client (Claude Code, Cursor, OpenCode, etc.) to launch this command:
+
+      claude_desktop_config.json:
+      {
+        "mcpServers": {
+          "pa": {
+            "command": "python",
+            "args": ["-m", "pa_cli.mcp"]
+          }
+        }
+      }
+
+    Exposes 4 tools: pa_fetch, pa_search, pa_review, pa_keys_status.
+    All tool results are JSON-serialisable. Structured errors return
+    isError=True with a JSON error payload in content.
+
+    Forwards SIGINT cleanly when stdin closes (client disconnect).
+    """
+    from .mcp import main as _mcp_main
+    _mcp_main()
+
+
 if __name__ == "__main__":
     main()
