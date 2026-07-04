@@ -84,6 +84,28 @@ def section_cache_tests():
     return results
 
 
+# ============== Section A2: MCP tests ==============
+
+def section_mcp_tests():
+    """Run MCP E2E test (spawns pa_cli.mcp subprocess)."""
+    print("\n" + "="*60)
+    print("A2. MCP server tests (1 script, expect all PASS)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_mcp_e2e.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=90)
+    ok = rc == 0 and "ALL PA_MCP E2E TESTS PASSED" in out
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        # count PASS lines
+        passed = sum(1 for l in out.splitlines() if "PASS:" in l)
+        print(f"  [PASS] test_mcp_e2e.py (rc={rc}, {passed} sub-tests)")
+    else:
+        print(f"  [{status}] test_mcp_e2e.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_mcp_e2e.py", status, rc, "")] 
+
+
 # ============== Section B: pa_cli module imports ==============
 
 def section_pa_cli_imports():
@@ -317,8 +339,8 @@ def print_summary(all_results):
     print()
     # Detail
     for section_idx, section_results in enumerate(all_results):
-        section_names = ["A. cache", "B. imports", "C. --help", "D. safe cli",
-                         "E. python api", "F. skill local", "G. skill skip"]
+        section_names = ["A. cache", "A2. mcp", "B. imports", "C. --help", "D. safe cli",
+                         "E. python api", "F. skill local", "G. skill skip"] 
         print(f"  {section_names[section_idx]}:")
         for label, status, _rc, _ in section_results:
             print(f"    [{status:14s}] {label}")
@@ -329,6 +351,7 @@ def print_summary(all_results):
 def main():
     all_results = [
         section_cache_tests(),
+        section_mcp_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),
