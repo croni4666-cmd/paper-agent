@@ -24,6 +24,34 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [3.5.1] - 2026-07-04 (post-MCP-revert state, follow-up commit)
 
+### Real-machine verification (added 2026-07-04 after follow-up commit)
+
+End-to-end smoke ran on the user's actual machine (Windows, Python 3.12).
+Recorded for the discipline log:
+
+| Check | Result |
+|---|---|
+| `pa mcp install` exit code | 0 |
+| `paper-search-mcp` install path | `C:\Users\DengN\AppData\Roaming\Python\Python312\site-packages\paper_search_mcp\` |
+| `import paper_search_mcp` | OK |
+| `import paper_search_mcp.server` | OK |
+| `python -m paper_search_mcp.server` boot | OK (waits on stdio as expected) |
+| MCP `initialize` roundtrip | OK — server reports name=`paper_search_server` version=`1.27.2` |
+| MCP `list_tools` count | **57 tools** (vs my self-hosted 5 — 11× more coverage) |
+| MCP `call_tool("search_papers", ...)` | OK, `isError=False` |
+| Public config warnings | 2 (DOAJ + Unpaywall — optional, public rate limits still work) |
+
+**Tool count comparison** (from `list_tools`):
+- arxiv / pubmed / pmc / europepmc / biorxiv / medrxiv / iacr (7 preprint/repo)
+- semantic / openalex / crossref / dblp / citeseerx / core (6 metadata)
+- doaj / openaire / ssrn / hal / zenodo / base / google_scholar (7 OA)
+- per-source `search_*`, `download_*`, `read_*` triplets × 22 sources
+- 4 high-level tools: `search_papers`, `download_with_fallback`, `get_*_paper_by_doi`, etc.
+- **Total 57 tools**, MIT-licensed, free-first, public-maintained.
+
+This confirms the public MCP is the right choice — it would have taken one
+hobbyist many months to write + maintain a comparable tool surface.
+
 ### Added — `pa mcp install` / `pa mcp config` (public MCP integration)
 
 Following the same-day revert of [P0-3] self-hosted MCP, this commit
