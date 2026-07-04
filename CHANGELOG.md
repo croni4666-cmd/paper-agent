@@ -9,6 +9,75 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.3.0] - 2026-07-04
+
+### Added — `pa_cli/keys.py` API key registry + reminder system (validated)
+
+Complete 5-command group under `pa keys` for managing API key lifecycles.
+
+**Commands** (all validated end-to-end 2026-07-04):
+- `pa keys list` — table view with status indicators (✓/⏰/⚠/🚨/❌/✗)
+- `pa keys check [service]` — live HTTP probe per service, updates `last_checked`
+- `pa keys add <service> <value>` — add/rotate, writes `.env` + registry, auto-probes
+- `pa keys audit` — count active/expiring/missing, show never-checked/never-used
+- `pa keys remind` — print expiry warnings + write alerts file
+
+**Live probe results (2026-07-04)**:
+| service | endpoint | status | http |
+|---|---|---|---|
+| openalex | api.openalex.org | ok | 200 |
+| semanticscholar | api.semanticscholar.org | http-429 (transient rate limit; unrelated to key config) | 429 |
+| core | api.core.ac.uk | ok | 200 |
+| unpaywall | api.unpaywall.org | ok (real email <REDACTED-UNPAYWALL-EMAIL>) | 200 |
+| demo-api-key | (no service_url set) | no-probe-url (skipped) | n/a |
+
+**End-to-end `pa fetch` validation**:
+- DOI `10.1038/nature12373` (Nature article)
+- 8-channel pipeline ran in <2s
+- OpenAlex → arxiv.org/pdf/1304.1068 → 2.36 MB PDF saved
+- `%PDF-1.5` magic verified, valid PDF
+- Confirms: fetch pipeline + openalex channel + Unpaywall integration all wired correctly
+
+**Auto-reminder hook**:
+- `main()` calls `load_env_into_environ()` then `cmd_remind(quiet=False)` on every CLI invocation
+- stderr-line reminder: `[pa-keys] ⚠ demo-api-key: expires in 5 days — schedule rotation → pa keys add demo-api-key <new_key>`
+- Non-intrusive: only fires when warnings exist
+
+**Daily cron** (`pa-keys-daily-check`, mavis agent):
+- schedule `0 9 * * *` Asia/Shanghai
+- Runs `pa keys check --write-alerts ~/.mavis/state/api_key_alerts.json`
+- Reads alerts file + surfaces warnings to user
+
+**Registry on disk** (`keys_registry.json`):
+- 5 services registered with metadata (service / env_var / tier / expires / notes)
+- Committed to git (NO secrets; only metadata)
+- Real `.env` (gitignored) holds the actual keys
+
+### Fixed — bug fixes from end-to-end smoke test
+
+1. `.env` loader regex: allow hyphens in env var names (e.g. `DEMO-API-KEY_API_KEY`)
+   old: `r'^[A-Z_][A-Z0-9_]*'` — fails on hyphens
+   new: `r'^[A-Za-z_][A-Za-z0-9_-]*'` — covers all OpenAlex-style mixed-case names
+2. `cmd_remind` auto-trigger: was `quiet=True` (suppressed) — now `quiet=False`
+   so every CLI invocation prints expiring/expired warnings to stderr.
+   User feedback: "记得提醒我再导入之" — proactive reminders required.
+3. Click `--write-alerts` / `--alert-file` options: now accept optional string
+   via `metavar="PATH"` instead of bare `default=None` — no more "requires an argument".
+
+### Validation — pa-keys smoke test summary
+
+| step | result |
+|---|---|
+| `pa keys list` (5 keys) | 4 active + 1 expiring-week |
+| `pa keys check` | 3 ok + 1 transient-429 + 1 skipped |
+| `pa keys add unpaywall <real-email>` | live probe 200 OK |
+| `pa keys add demo-api-key --expires +5d` | warn + write + auto-probe |
+| `pa fetch 10.1038/nature12373` | 2.36 MB PDF via openalex/arxiv |
+| Startup auto-reminder | stderr line printed on every CLI call |
+| Daily cron registered | `mavis cron` shows `pa-keys-daily-check` |
+
+---
+
 ## [3.2.0] - 2026-07-04
 
 ### Added — `pa_cli/` package (paper-agent CLI)
