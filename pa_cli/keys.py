@@ -51,7 +51,9 @@ def load_env_into_environ() -> int:
             line = raw.strip()
             if not line or line.startswith("#"):
                 continue
-            m = re.match(r'^([A-Z_][A-Z0-9_]*)\s*=\s*(.*)$', line)
+            # Allow uppercase letters, digits, underscores, AND hyphens
+            # (case-insensitive to support OpenAlex-style mixed-case env vars)
+            m = re.match(r'^([A-Za-z_][A-Za-z0-9_-]*)\s*=\s*(.*)$', line)
             if not m:
                 continue
             key, value = m.group(1), m.group(2).strip()
@@ -250,8 +252,15 @@ def cmd_check(service_id: Optional[str] = None) -> Dict[str, Any]:
             results[sid] = {"status": "missing",
                             "hint": f"set {svc['env_var']} in .env"}
             continue
+        url = svc.get("service_url", "") or ""
+        if not url:
+            results[sid] = {"status": "no-probe-url",
+                            "hint": (f"{svc.get('name', sid)}: no service_url configured "
+                                     f"(set in keys_registry.json or omit this key from auto-check)"),
+                            "env_var": svc["env_var"]}
+            svc["last_checked"] = datetime.now().isoformat(timespec="seconds")
+            continue
         # Build probe URL with the key inline
-        url = svc["service_url"]
         headers = {}
         if svc["env_var"] == "OPENALEX_API_KEY":
             url = url + "&api_key=" + quote(env_value)

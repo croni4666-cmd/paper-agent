@@ -38,7 +38,8 @@ def main():
     n_loaded = load_env_into_environ()
     if n_loaded > 0:
         sys.stderr.write(f"[pa] loaded {n_loaded} env var(s) from .env\n")
-    cmd_remind(quiet=True)
+    # Show expiry reminders on every CLI invocation (non-intrusive: stderr only)
+    cmd_remind(quiet=False)
 
 
 @main.command()
@@ -112,18 +113,17 @@ def keys_list(as_json):
 
 @keys.command("check")
 @click.argument("service_id", required=False)
-@click.option("--alert-file", default=None,
+@click.option("--alert-file", "alert_file_path", default=None,
+              metavar="PATH",
               help="Also write current alerts to this path (default: ~/.mavis/state/api_key_alerts.json)")
-def keys_check(service_id, alert_file):
+def keys_check(service_id, alert_file_path):
     """Live-probe each API key (or one specific). Updates last_checked timestamp."""
     from .keys import cmd_check, write_alerts_to_state
     results = cmd_check(service_id)
     click.echo(json.dumps(results, indent=2, ensure_ascii=False))
     # Also update alerts file for cross-session reminder pickup
-    if alert_file:
-        path = write_alerts_to_state(Path(alert_file))
-    else:
-        path = write_alerts_to_state()
+    target = Path(alert_file_path) if alert_file_path else None
+    path = write_alerts_to_state(target)
     # Count warnings
     n_warn = sum(1 for r in results.values()
                  if isinstance(r, dict) and r.get("status") not in ("ok", "missing"))
@@ -174,9 +174,10 @@ def keys_audit():
 
 @keys.command("remind")
 @click.option("--json", "as_json", is_flag=True, help="Output as JSON")
-@click.option("--write-alerts", default=None,
+@click.option("--write-alerts", "write_alerts_path", default=None,
+              metavar="PATH",
               help="Write alerts to this path (default: ~/.mavis/state/api_key_alerts.json)")
-def keys_remind(as_json, write_alerts):
+def keys_remind(as_json, write_alerts_path):
     """Show expiry warnings for all keys (or write alerts file)."""
     from .keys import cmd_remind, write_alerts_to_state
     alerts = cmd_remind(quiet=True)
@@ -189,8 +190,8 @@ def keys_remind(as_json, write_alerts):
         click.echo(f"[pa-keys] {len(alerts['warnings'])} warning(s):")
         for w in alerts["warnings"]:
             click.echo("  " + w["reminder_message"])
-    # Write alerts file by default
-    target = Path(write_alerts) if write_alerts else None
+    # Write alerts file by default (or to custom path if --write-alerts given)
+    target = Path(write_alerts_path) if write_alerts_path else None
     path = write_alerts_to_state(target)
     click.echo(f"\n[pa-keys] alerts file written: {path}")
 
