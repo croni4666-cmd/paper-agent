@@ -29,6 +29,170 @@ def main():
     failure, stop iterating and surface a "your turn" handoff. Real human
     browser sessions remain the only reliable Cloudflare bypass.
     """
+    # At every CLI invocation:
+    #   1. Load .env into os.environ (does not override existing values)
+    #   2. Emit expiry reminders to stderr if any keys are <= 14 days
+    #      to expiry or already expired. Quiet by default to keep
+    #      subcommand output clean; use `pa keys remind` to force.
+    from .keys import load_env_into_environ, cmd_remind
+    n_loaded = load_env_into_environ()
+    if n_loaded > 0:
+        sys.stderr.write(f"[pa] loaded {n_loaded} env var(s) from .env\n")
+    cmd_remind(quiet=True)
+
+
+@main.command()
+@click.option("--remind", is_flag=True,
+              help="Force expiry reminders even when no warnings would print")
+def version(remind):
+    """Show paper-agent version + key dependency status."""
+    import importlib.util
+    deps = {
+        "click": "click",
+        "pymupdf": "fitz",
+        "arxiv": "arxiv",
+        "requests": "requests",
+    }
+    click.echo(f"paper-agent CLI v{__version__}")
+    click.echo(f"\nDependency status:")
+    for label, mod in deps.items():
+        try:
+            spec = importlib.util.find_spec(mod)
+            if spec is not None:
+                mod_obj = __import__(mod)
+                ver = getattr(mod_obj, "__version__", "(unknown)")
+                click.echo(f"  [OK] {label:10s} {ver}")
+            else:
+                click.echo(f"  [--] {label:10s} not installed")
+        except Exception:
+            click.echo(f"  [--] {label:10s} not installed")
+    click.echo(f"\nPython: {sys.version.split()[0]}")
+    click.echo(f"Entry: python -m pa_cli <command>")
+
+
+# =============== keys subcommand group ===============
+
+@main.group()
+def keys():
+    """Manage API keys + expiry reminders.
+
+    Two-layer storage:
+      - .env (gitignored): holds ACTUAL secrets
+      - keys_registry.json (NOT gitignored): holds METADATA only
+
+    Subcommands: list / check / add / audit / remind
+    """
+
+
+@keys.command("list")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def keys_list(as_json):
+    """List all known API keys with status."""
+    from .keys import cmd_list
+    rows = cmd_list()
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    click.echo(f"{'ID':16s} {'STATUS':18s} {'EXPIRES':12s} {'DAYS':6s} {'TIER':5s} {'NAME':30s} HINT")
+    click.echo("-" * 120)
+    for r in rows:
+        marker = {
+            "active": "✓ active",
+            "expiring-soon": "⏰ expiring-soon",
+            "expiring-week": "⚠ expiring-week",
+            "expiring-today": "🚨 expiring-today",
+            "expired": "❌ EXPIRED",
+            "missing": "✗ missing",
+        }.get(r["status"], r["status"])
+        click.echo(
+            f"{r['id']:16s} {marker:18s} {str(r['expires'])[:12]:12s} "
+            f"{str(r['days_to_expiry'])[:6]:6s} {r['tier']:5s} {r['name'][:30]:30s} {r['hint']}"
+        )
+
+
+@keys.command("check")
+@click.argument("service_id", required=False)
+@click.option("--alert-file", default=None,
+              help="Also write current alerts to this path (default: ~/.mavis/state/api_key_alerts.json)")
+def keys_check(service_id, alert_file):
+    """Live-probe each API key (or one specific). Updates last_checked timestamp."""
+    from .keys import cmd_check, write_alerts_to_state
+    results = cmd_check(service_id)
+    click.echo(json.dumps(results, indent=2, ensure_ascii=False))
+    # Also update alerts file for cross-session reminder pickup
+    if alert_file:
+        path = write_alerts_to_state(Path(alert_file))
+    else:
+        path = write_alerts_to_state()
+    # Count warnings
+    n_warn = sum(1 for r in results.values()
+                 if isinstance(r, dict) and r.get("status") not in ("ok", "missing"))
+    click.echo(f"\n[pa-keys] alerts file: {path} ({n_warn} non-ok status)", err=True)
+
+
+@keys.command("add")
+@click.argument("service_id")
+@click.argument("key_value")
+@click.option("--expires", default=None,
+              help="Expiry date YYYY-MM-DD (omit if no expiry)")
+@click.option("--tier", default="free", type=click.Choice(["free", "paid", "institutional"]),
+              help="Service tier (affects reminder urgency)")
+@click.option("--notes", default=None, help="Free-text notes")
+def keys_add(service_id, key_value, expires, tier, notes):
+    """Add or rotate a key. Updates .env + keys_registry.json."""
+    from .keys import cmd_add, cmd_check
+    result = cmd_add(service_id, key_value, expires=expires, tier=tier, notes=notes)
+    click.echo(f"[pa-keys] added {service_id} → {result['env_var']}")
+    click.echo(f"[pa-keys] registry: {result['registry_path']}")
+    click.echo(f"[pa-keys] .env:     {result['env_path']}")
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+    # Immediately live-check the new key
+    click.echo(f"\n[pa-keys] live-probe {service_id} ...")
+    chk = cmd_check(service_id)
+    click.echo(json.dumps(chk, indent=2, ensure_ascii=False))
+
+
+@keys.command("audit")
+def keys_audit():
+    """Audit: which keys are active, never-checked, never-used, etc."""
+    from .keys import cmd_audit
+    a = cmd_audit()
+    click.echo(f"Total services in registry: {a['total']}")
+    click.echo(f"  active:        {a['active']}")
+    click.echo(f"  expiring soon: {a['expiring_soon']}")
+    click.echo(f"  expired:       {a['expired']}")
+    click.echo(f"  missing:       {a['missing']}")
+    if a["never_checked"]:
+        click.echo(f"\nNever-checked (run `pa keys check` to verify):")
+        for sid in a["never_checked"]:
+            click.echo(f"  - {sid}")
+    if a["never_used"]:
+        click.echo(f"\nNever-used (paper-agent has never called this key):")
+        for sid in a["never_used"]:
+            click.echo(f"  - {sid}")
+
+
+@keys.command("remind")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+@click.option("--write-alerts", default=None,
+              help="Write alerts to this path (default: ~/.mavis/state/api_key_alerts.json)")
+def keys_remind(as_json, write_alerts):
+    """Show expiry warnings for all keys (or write alerts file)."""
+    from .keys import cmd_remind, write_alerts_to_state
+    alerts = cmd_remind(quiet=True)
+    if as_json:
+        click.echo(json.dumps(alerts, indent=2, ensure_ascii=False))
+        return
+    if not alerts["warnings"]:
+        click.echo("[pa-keys] all keys OK (no warnings)")
+    else:
+        click.echo(f"[pa-keys] {len(alerts['warnings'])} warning(s):")
+        for w in alerts["warnings"]:
+            click.echo("  " + w["reminder_message"])
+    # Write alerts file by default
+    target = Path(write_alerts) if write_alerts else None
+    path = write_alerts_to_state(target)
+    click.echo(f"\n[pa-keys] alerts file written: {path}")
 
 
 @main.command()
@@ -117,33 +281,6 @@ def review(corpus_dir, template, output, word_count_min, quiet):
         click.echo(f"[pa] saved {output}", err=True)
     else:
         click.echo(md)
-
-
-@main.command()
-def version():
-    """Show paper-agent version + key dependency status."""
-    import importlib.util
-    deps = {
-        "click": "click",
-        "pymupdf": "fitz",
-        "arxiv": "arxiv",
-        "requests": "requests",
-    }
-    click.echo(f"paper-agent CLI v{__version__}")
-    click.echo(f"\nDependency status:")
-    for label, mod in deps.items():
-        try:
-            spec = importlib.util.find_spec(mod)
-            if spec is not None:
-                mod_obj = __import__(mod)
-                ver = getattr(mod_obj, "__version__", "(unknown)")
-                click.echo(f"  [OK] {label:10s} {ver}")
-            else:
-                click.echo(f"  [--] {label:10s} not installed")
-        except Exception:
-            click.echo(f"  [--] {label:10s} not installed")
-    click.echo(f"\nPython: {sys.version.split()[0]}")
-    click.echo(f"Entry: python -m pa_cli <command>")
 
 
 if __name__ == "__main__":

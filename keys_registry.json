@@ -1,0 +1,42 @@
+{
+  "openalex": {
+    "name": "OpenAlex",
+    "env_var": "OPENALEX_API_KEY",
+    "service_url": "https://api.openalex.org/works?search=ai+literacy",
+    "tier": "free",
+    "expires": null,
+    "notes": "OpenAlex API key for higher rate limit (1 RPS dedicated). Free tier, no expiry reported.",
+    "last_checked": "2026-07-04T11:00:46",
+    "last_used": null
+  },
+  "semanticscholar": {
+    "name": "Semantic Scholar",
+    "env_var": "S2_API_KEY",
+    "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=test&limit=1",
+    "tier": "free",
+    "expires": null,
+    "notes": "S2 API key for higher rate limit. Free tier, no expiry reported.",
+    "last_checked": null,
+    "last_used": null
+  },
+  "core": {
+    "name": "CORE.ac.uk",
+    "env_var": "CORE_API_KEY",
+    "service_url": "https://api.core.ac.uk/v3/search/works?q=test&limit=1",
+    "tier": "free",
+    "expires": null,
+    "notes": "CORE v3 API key for higher rate limit. Free tier, no expiry reported.",
+    "last_checked": null,
+    "last_used": null
+  },
+  "unpaywall": {
+    "name": "Unpaywall",
+    "env_var": "UNPAYWALL_EMAIL",
+    "service_url": "https://api.unpaywall.org/v2/10.1038/nature12373?email={email}",
+    "tier": "free",
+    "expires": null,
+    "notes": "test email for unpaywall API",
+    "last_checked": "2026-07-04T11:01:07",
+    "last_used": null
+  }
+}
