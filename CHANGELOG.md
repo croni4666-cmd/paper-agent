@@ -9,6 +9,107 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.2.0] - 2026-07-04
+
+### Added — `pa_cli/` package (paper-agent CLI)
+
+Lightweight Click-based CLI exposing 4 commands for programmatic + scriptable access:
+
+```
+python -m pa_cli fetch <DOI>      # 8-channel PDF recovery + CF timeout handoff
+python -m pa_cli search <query>   # 5-engine academic search with dedup
+python -m pa_cli review <dir>     # corpus → lit review synthesizer (PyMuPDF)
+python -m pa_cli version          # dependency status
+```
+
+Each command is independent and testable; the package adds no breaking
+changes to the existing `paper_fetcher.py` / `paper-agent skill` API surface.
+
+#### `pa fetch` (pa_cli/fetch.py, 8 channels)
+- **Channel 1 — OpenAlex Work API**: discovers OA locations; tries each in turn
+- **Channel 2 — arXiv SDK**: only for `10.48550/...` DOIs
+- **Channel 3 — Unpaywall API**: legal OA via registered email
+- **Channel 4 — DOI.org redirect**: detects Gold OA, extracts PDF links from HTML
+- **Channel 5 — Playwright /doi/pdf/ URL pattern**: T&F-style server-side PDF
+- **Channel 6 — Playwright fallback**: last-ditch Cloudflare challenge attempt
+- **Channel 7 — Sci-Hub mirror rotation**: gray; user-consent assumed
+- **Channel 8 — Unpaywall PDF inline**: post-discovery fetch
+- Hard cap `--max-total-sec 300` (paper-agent v4 principle)
+- On cap or all-fail: surfaces JSON `handoff` block with `user_action_required`
+
+#### `pa search` (pa_cli/search.py, 5 engines)
+- Crossref / OpenAlex / arXiv / Semantic Scholar / CORE (CORE/S2/OA keys via env)
+- `--year-min` / `--year-max` / `--limit` / `--engine` / `-o`
+- Dedup by DOI (arXiv ID fallback), merged with `found_by: [...]` arrays
+- Returns unified JSON sorted by `cited_by_count` desc
+
+#### `pa review` (pa_cli/review.py, PyMuPDF + template)
+- Walks corpus dir, extracts text per PDF, classifies full-text vs abstract-only
+- `--word-count-min 1000` threshold (default)
+- Outputs structured markdown ready for LLM-driven deeper synthesis
+- Abstract-only papers flagged for v4 handoff
+
+### Added — paper-agent v4 design principle
+
+After 5 minutes of Cloudflare challenge failure, **stop iterating and surface
+a "your turn" handoff** to the user. Real human browser sessions remain the
+only reliable Cloudflare bypass for academic PDF recovery.
+
+Cloudflare protects ~70% of academic PDF endpoints (Elsevier, T&F, worktribe,
+ResearchGate, Anna's Archive) with checks Playwright headless cannot pass:
+
+1. TLS JA3 fingerprint
+2. HTTP/2 frame order
+3. Canvas / WebGL fingerprint
+4. `navigator.webdriver` flag
+5. Sec-CH-UA-* client hint headers
+6. Mouse-movement entropy (real human Bezier)
+7. `cf_clearance` cookie timing (15-30 min TTL, bound to IP + UA + TLS hash)
+
+CLI / fetch codifies this as `--max-total-sec 300` hard cap and a `handoff`
+JSON block; downstream callers must respect it instead of iterating stealth
+parameters.
+
+### Added — full-text corpus recovery (8/8, +109% word count)
+
+Recovered all 3 abstract-only papers via human browser handoff:
+
+| Paper | Recovery method | Words extracted |
+|---|---|---|
+| McMinn / He et al. 2025 | T&F `/doi/pdf/` direct via Chrome | 12,040 |
+| Tzirides et al. 2024 | Nottingham institutional repository via Chrome | 11,622 |
+| Southworth et al. 2023 | ScienceDirect Gold OA via Chrome | 10,700 |
+
+Plus the 5 papers already full-text in v3 corpus. Total extracted word
+count: **~70,000** (up from ~33,500 in v3, +109%).
+
+`Lit_Review_Section_AI_Literacy_v32_FT.md` updated: §5 reorganised into 4
+sub-sections (5a Utami ADDIE / 5b McMinn HKUST / 5c Southworth QEP / 5d
+Tzirides cyber-social); §6 gains a fifth methodological observation; §7
+now offers 7 claims (added institutional-pathway 4-model portfolio and
+full-text recovery as resolved citation-graph bias). Author order for paper
+[3] corrected from "Rohadi & Utami" to **"Utami & Rohadi"** per
+`final_8_papers.json`.
+
+### Validation — CLI smoke tests
+
+```
+$ python -m pa_cli version
+paper-agent CLI v3.2.0
+[OK] click    8.4.1
+[OK] pymupdf  1.27.2.3
+[OK] arxiv    4.0.0
+[OK] requests 2.33.1
+
+$ python -m pa_cli search "AI literacy higher education" --year-min 2023 --limit 3 --engine openalex
+→ 3 results, top: Chan & Hu 2023 (1819 citations, diamond OA)
+
+$ python -m pa_cli review ./pdfs --output lit_review.md
+→ 6 PDFs, 58,821 words, 6/6 classified full-text
+```
+
+---
+
 ## [3.1.0] - 2026-07-03
 
 ### Added — 3 new searcher interfaces
