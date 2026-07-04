@@ -35,8 +35,18 @@
     "service_url": "https://api.unpaywall.org/v2/10.1038/nature12373?email={email}",
     "tier": "free",
     "expires": null,
-    "notes": "test email for unpaywall API",
-    "last_checked": "2026-07-04T11:01:07",
+    "notes": "Unpaywall API requires verified email — registered 2026-07-04",
+    "last_checked": "2026-07-04T11:18:37",
+    "last_used": null
+  },
+  "demo-api-key": {
+    "name": "demo-api-key",
+    "env_var": "DEMO-API-KEY_API_KEY",
+    "service_url": "",
+    "tier": "paid",
+    "expires": "2026-07-09",
+    "notes": "Test key to demo reminder system — expires in 5 days",
+    "last_checked": "2026-07-04T11:08:30",
     "last_used": null
   }
 }
