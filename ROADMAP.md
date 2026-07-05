@@ -49,12 +49,13 @@
 | [P1-1] Citation walk | ✅ pass | uses OpenAlex free API; degrades gracefully when key unset |
 | [P1-2] OpenAlex concepts | ✅ pass | same as P1-1 (free API + local filter) |
 | [P1-3] PRISMA diagram | ✅ pass | pure local markdown generation |
+| [P1-4] Topic clustering + polish (custom labels + domain stopwords + pluggable ABC) | ✅ pass | local code + sklearn + jieba (all free); no hosted service; ~340 LOC new in labels/ subpackage |
 | [P2-1] Browser extension | ❌ fail | **REDESIGN as userscript** — see Modified 2026-07-04 entry below |
 | [P2-2] API key auto-application | ⚠️ needs design review | deferred — see Modified 2026-07-04 entry below |
 | [P2-3] `pa watch` daily subscription | ❌ fail | **REDESIGN — drop email push** — see Modified 2026-07-04 entry below |
 | [P2-4] ~~pa cache stats~~ | n/a | already merged into [P0-2] |
 
-**Last audit**: 2026-07-04 (initial rule codification + revert pass)
+**Last audit**: 2026-07-05 ([P1-4] polish, labels/ subpackage, regression 42 PASS)
 **Next audit**: every time a new item is added (Status: proposed → in-progress transition)
 
 ---
@@ -653,6 +654,111 @@ _(filled when work done)_
 
 _(filled when work done)_
 
+### [P1-4] Cross-paper topic clustering (`pa review-topics`)
+
+- **Status**: done
+- **Added**: 2026-07-05
+- **Started**: 2026-07-05
+- **Completed**: 2026-07-05
+- **Priority**: P1
+- **Effort**: ~5h (v3.8.0) + ~2h (v3.8.1 polish) = ~7h total
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.10 (lit-review synthesis prep)
+- **Rationale**: Lit review synthesis requires per-paper topic clusters as
+  input to LLM prompt-pack (`pa review-synthesize` in [P1-6]). User's own
+  lit review workflow ([P1-4] audit, see `ROADMAP_RESEARCH_2026-07-05_P1-4.md`)
+  hit the same need: hand-curating cluster labels is the bottleneck.
+- **Acceptance criteria**:
+  - `pa review-topics <CORPUS_DIR>` outputs `topics.json` with cluster + label + keywords + filenames
+  - Works on PDF + MD + TXT mixed corpus (DOCX deliberately skipped per user direction)
+  - Two-method auto-fallback: BERTopic primary, hand-roll fallback for n<5 or BERTopic unavailable
+  - Chinese tokenization via jieba + stopwords-iso (replaces 7-year-old gitee.com/yinzm/ChineseStopWords)
+  - **Polish (v3.8.1)**: user can override any topic's label via `--custom-labels '{"1": "..."}'`
+  - **Polish (v3.8.1)**: corpus-specific noise terms auto-mined + extendable via `--domain-stopwords-file`
+  - **Polish (v3.8.1)**: pluggable `LabelGenerator` ABC + `register_label_generator()` for plugins
+
+#### Sub-task decomposition (final time log)
+
+| # | Description | Estimate | Actual | Notes |
+|---|---|---|---|---|
+| A | `pa_cli/topics.py` (~862 lines) — main module: extract_text dispatcher, build_corpus_index, cluster_topics, hand-roll + BERTopic paths | 2h | ~2h | On target. Existing v3.6 review.py patterns reused heavily. |
+| B | jieba CN tokenization + stopwords-iso upgrade (replaces 7-year-old gitee list) | 0.5h | ~0.3h | Under. Single-file swap. |
+| C | Two-method auto-fallback wiring (BERTopic lazy-import + hand-roll always-available) | 1h | ~1h | On target. Network timeout on real corpus (HF 5-min rule per paper-agent v4 principle) correctly surfaces to user, doesn't infinite-loop. |
+| D | `test_output/test_topics_e2e.py` (5 sub-tests + 1 BERTopic opt-in) + add to regression Section A6 | 0.5h | ~0.3h | Under. Used same mock-data pattern as citations_e2e. |
+| E | `ROADMAP_RESEARCH_2026-07-05_P1-4.md` — research doc explaining CoLRev / AHAM / LLM-Topic-Reduction audit | 0.5h | ~0.4h | On target. |
+| F | Real-data verification on user's `课件/ch1-econ-ppt` corpus (9 files, 7,392 words) — surfaced label-quality weakness | 0.5h | ~0.5h | On target. Direct user feedback prompted v3.8.1 polish. |
+| | **v3.8.0 subtotal** | **5h** | **~4.5h** | on target |
+| G | **[v3.8.1 polish] `pa_cli/labels/` subpackage** (5 files, ~340 lines): `__init__.py` factory + lazy load, `base.py` ABC, `ctfidf.py` + `handroll.py` + `custom.py` + `domain_stopwords.py` | 1.5h | ~1h | Under. Heavy lift was the ABC + factory design (chose `__getattr__` lazy import for sub-ms startup). |
+| H | `cluster_topics()` kwargs: `label_method`, `custom_labels`, `domain_stopwords` (post-clustering overlay) | 0.5h | ~0.3h | Under. ~30 lines threading through existing functions. |
+| I | CLI: 3 new flags `--label-method`, `--custom-labels`, `--domain-stopwords-file` | 0.3h | ~0.2h | Under. Standard Click plumbing. |
+| J | `test_output/test_labels_e2e.py` (23 sub-tests across ABC, Custom, Domain, E2E) + add to regression Section A7 | 1h | ~0.5h | Under. Parallel to topics_e2e structure. |
+| | **v3.8.1 subtotal** | **3.3h** | **~2h** | **2x under** |
+| | **Total** | **8.3h** | **~6.5h** | on target |
+
+**Variance analysis**: 2x under for v3.8.1 polish (similar pattern to other
+"wrap existing interface" type items: [P1-1] citations 2x under, [P1-2]
+concepts 2x under). Speedups:
+- v3.8.0 already shipped the heavy lifting (clustering, OpenAlex concept lookup, CN tokenization)
+- v3.8.1 polish was just thin wrappers + 3 CLI flags + tests; the ABC + factory was the only design decision
+
+#### Outcome (2026-07-05)
+
+**v3.8.0 files**:
+- `pa_cli/topics.py` (~862 lines, NEW)
+- `pa_cli/data/cn_stopwords.txt` (794 lines, NEW; sourced from stopwords-iso/stopwords-zh MIT)
+- `test_output/test_topics_e2e.py` (~280 lines, 5+1 sub-tests, NEW)
+- `pa_cli/review.py` modified: build_corpus_index globs `.pdf/.md/.txt`, extract_text dispatches by suffix. Bug fix: pre-existing `return doi` early-return → assigned `doi = ...` then continued.
+- `pa_cli/cli.py` modified: added `pa review-topics` subcommand
+- `test_output/test_full_regression.py` modified: added Section A6
+
+**v3.8.1 files** (this commit):
+- `pa_cli/labels/__init__.py` (NEW, ~190 lines) — factory + `__getattr__` lazy load + `register_label_generator()`
+- `pa_cli/labels/base.py` (NEW, ~30 lines) — `LabelGenerator` ABC
+- `pa_cli/labels/ctfidf.py` (NEW, ~50 lines) — `CTFIDFLabelGenerator`
+- `pa_cli/labels/handroll.py` (NEW, ~30 lines) — `HandrollLabelGenerator`
+- `pa_cli/labels/custom.py` (NEW, ~80 lines) — `CustomLabelGenerator` post-processor
+- `pa_cli/labels/domain_stopwords.py` (NEW, ~150 lines) — `extract_domain_stopwords` + heuristics + save/load
+- `pa_cli/topics.py` (modified): `cluster_topics()` accepts 3 new kwargs; topics.json schema adds 3 fields
+- `pa_cli/cli.py` (modified): 3 new CLI flags
+- `test_output/test_labels_e2e.py` (NEW, ~310 lines, 23 sub-tests)
+- `test_output/test_full_regression.py` (modified): added Section A7
+- `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md` (NEW) — research audit explaining the choice (custom_labels + domain_stopwords + pluggable ABC) over training a custom model
+
+**Tests passing**:
+- `test_topics_e2e.py`: 5/5 PASS (1 BERTopic opt-in, skipped without `PA_TEST_BERTOPIC=1`)
+- `test_labels_e2e.py`: 23/23 PASS
+- `test_full_regression.py`: **42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE** (up from 40 in v3.7.1)
+  - +1 = topics e2e suite (v3.8.0)
+  - +1 = labels e2e suite (v3.8.1)
+
+**Acceptance criteria status**: 7/7 met
+1. ✅ `pa review-topics <CORPUS_DIR>` outputs topics.json with cluster + label + keywords + filenames
+2. ✅ PDF + MD + TXT (DOCX skipped per user direction "只加 MD/TXT (不 docx)")
+3. ✅ BERTopic primary + hand-roll fallback (auto-fallback for n<5 or BERTopic unavailable)
+4. ✅ jieba CN tokenization + stopwords-iso (replaces 7-year-old gitee list)
+5. ✅ User can override any topic's label via `--custom-labels '{"1": "..."}'`
+6. ✅ Corpus-specific noise terms auto-mined + extendable via `--domain-stopwords-file`
+7. ✅ Pluggable `LabelGenerator` ABC + `register_label_generator()` for plugins
+
+**Real-data verification** (`G:\Minmax - workspace\课件\ch1-econ-ppt\`, 9 MD/TXT files):
+- v3.8.0 alone: Topic 1 = "ppt / ppt-prompt" with noise keywords `iphone`, `pptxgenjs`, `skill`
+- v3.8.1 with `--custom-labels '{"1": "PPT 设计文档", "2": "PPT 内容来源"}'`:
+  - Topic 1: "PPT 设计文档" (6 papers) ✅ clean human-readable
+  - Topic 2: "PPT 内容来源" (3 papers) ✅ clean human-readable
+  - Noise keywords still extracted but no longer drive the human-visible topic name
+
+**5-check audit against Global Rule**: 5/5 pass (no $ cost, no hosted service, ~340 lines
+maintenance, no publish obligation, free-tier degradation graceful — see CHANGELOG v3.8.1
+"5-check audit" section).
+
+**Deferred to backlog** (recorded for future items):
+- **LLM label generator** (`LLMLabelGenerator` subclass of `LabelGenerator`) — natural [P1-6] candidate. Plugs into the existing ABC without touching topics.py or cli.py.
+- **KeyBERTInspired representation** — community consensus helps at n≥50 (per `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md`); deferred until corpora grow.
+- **Document-level preprocessing** (drop "Tools used" / "References" sections from MD before clustering) — would push auto-mined stopwords quality higher. Cost: ~30 lines + a small config file.
+
+**Why this matters for user's planned RL research** (separate project at `G:\minimax - workspace\Paper agent experiments\MEMO.md`):
+- The `register_label_generator()` API + `__init__.py` docstring shows the exact 3-step path for plugging in a custom PIEClass / RL-trained generator: write a `LabelGenerator` subclass + `register_label_generator("name", cls)` + `pa review-topics <corpus> --label-method <name>`. No edits to topics.py or cli.py needed.
+- Once user's research produces a paper, the trained generator can be packaged as `pa-cli-labels-pieclass` PyPI plugin and consumed via entry_points (also documented in `labels/__init__.py`).
+
 ### [P2-1] Browser extension companion (SciHub Addon-style)
 
 - **Status**: deprecated
@@ -920,7 +1026,8 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.6.0 | released 2026-07-04 | [P1-2] OpenAlex concepts semantic filtering | 2026-07-04 |
 | v3.7.0 | released 2026-07-04 | [P1-3] PRISMA flow diagram (pa prisma + pa review --with-prisma) | 2026-07-04 |
 | v3.7.1 | released 2026-07-04 | Cleanup: deprecated [P2-1] / [P2-2] / [P2-3] after user review | 2026-07-04 |
-| v3.8.0 | target (deferred) | (no new features planned; ship only if user requests) | — |
+| v3.8.0 | released 2026-07-05 | [P1-4] `pa review-topics` (cross-paper topic clustering) | 2026-07-05 |
+| v3.8.1 | released 2026-07-05 | [P1-4 polish] Pluggable label generators (custom labels + domain stopwords + `LabelGenerator` ABC) | 2026-07-05 |
 
 ---
 
@@ -1031,3 +1138,4 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 | [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 | shipped (in v3.5.1) |
 | [P1-2] OpenAlex concepts | 2.25h | ~1h | 2x under | 2026-07-04 | shipped (v3.6.0) |
 | [P1-3] PRISMA diagram | 2h | ~1h | 2x under | 2026-07-04 | shipped (v3.7.0) — reused skill/core/prisma.py |
+| [P1-4] Topic clustering | 5h (v3.8.0) + 3.3h (v3.8.1) = 8.3h | ~6.5h | on target | 2026-07-05 | shipped (v3.8.0 + v3.8.1) — first-of-kind [P1-4] wide CI; v3.8.1 polish 2x under (interface wrap pattern) |

@@ -176,7 +176,54 @@ def section_prisma_tests():
         print(f"  [{status}] test_prisma_e2e.py (rc={rc})")
         print(f"        stdout_tail: {out[-500:]!r}")
         print(f"        stderr_tail: {err[-300:]!r}")
-    return [("test_prisma_e2e.py", status, rc, "")] 
+    return [("test_prisma_e2e.py", status, rc, "")]
+
+
+# ============== Section A6: Topics tests (cross-paper synthesis prep) ==============
+
+def section_topics_tests():
+    """Run topics E2E test (mocks OpenAlex, no network)."""
+    print("\n" + "="*60)
+    print("A6. Topics tests (1 script, no network, expect all PASS)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_topics_e2e.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=60)
+    ok = rc == 0 and "ALL PASS" in out
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        passed = sum(1 for l in out.splitlines() if "[PASS]" in l)
+        print(f"  [PASS] test_topics_e2e.py (rc={rc}, {passed} sub-tests)")
+    else:
+        print(f"  [{status}] test_topics_e2e.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_topics_e2e.py", status, rc, "")]
+
+
+# ============== Section A7: Labels tests (pluggable label generators) ==============
+
+def section_labels_tests():
+    """Run labels E2E test (no network, no HF model)."""
+    print("\n" + "="*60)
+    print("A7. Labels tests (pluggable label generators, no network)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_labels_e2e.py"
+    rc, out, err = run([sys.executable, str(script)], timeout=60)
+    # unittest prints summary to stderr; check both streams + rc
+    combined = out + err
+    ok = rc == 0 and "OK" in combined and "FAILED" not in combined
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        # parse "Ran N tests" for count
+        import re as _re
+        m = _re.search(r"Ran (\d+) tests?", combined)
+        n = m.group(1) if m else "?"
+        print(f"  [PASS] test_labels_e2e.py (rc={rc}, {n} sub-tests)")
+    else:
+        print(f"  [{status}] test_labels_e2e.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_labels_e2e.py", status, rc, "")] 
 
 
 # ============== Section B: pa_cli module imports ==============
@@ -195,6 +242,7 @@ def section_pa_cli_imports():
         "pa_cli.cache",
         "pa_cli.keys",
         "pa_cli.review",
+        "pa_cli.topics",
     ]
     src = (
         "import sys; "
@@ -202,7 +250,8 @@ def section_pa_cli_imports():
         + "; ".join(f"import {m}" for m in modules)
         + f"; print('OK: {len(modules)} modules imported')"
     )
-    rc, out, err = run([sys.executable, "-c", src], timeout=15)
+    # Timeout 30s (was 15s) — topics.py now imports bertopic + torch which is heavy
+    rc, out, err = run([sys.executable, "-c", src], timeout=30)
     print(f"  import result: rc={rc}")
     print(f"  stdout: {out.strip()[:200]!r}")
     if err:
@@ -234,6 +283,7 @@ def section_cli_help_surface():
         ["mcp", "install", "--help"],
         ["mcp", "config", "--help"],
         ["prisma", "--help"],             # [P1-3] v3.7.0
+        ["review-topics", "--help"],      # [P1-4] v3.8.0
         ["keys", "--help"],
         ["keys", "list", "--help"],
         ["keys", "check", "--help"],
@@ -418,8 +468,9 @@ def print_summary(all_results):
     # Detail
     for section_idx, section_results in enumerate(all_results):
         section_names = ["A. cache", "A2. citations", "A3. mcp-setup", "A4. concepts", "A5. prisma",
+                         "A6. topics", "A7. labels",
                          "B. imports", "C. --help", "D. safe cli",
-                         "E. python api", "F. skill local", "G. skill skip"] 
+                         "E. python api", "F. skill local", "G. skill skip"]
         print(f"  {section_names[section_idx]}:")
         for label, status, _rc, _ in section_results:
             print(f"    [{status:14s}] {label}")
@@ -434,6 +485,8 @@ def main():
         section_mcp_setup_tests(),
         section_concepts_tests(),
         section_prisma_tests(),
+        section_topics_tests(),
+        section_labels_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),

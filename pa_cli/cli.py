@@ -402,6 +402,93 @@ def review(corpus_dir, template, output, word_count_min, with_prisma, quiet):
 
 
 @main.command()
+@click.argument("corpus_dir", type=click.Path(exists=True, file_okay=False))
+@click.option("-o", "--output", default=None,
+              help="Output topics.json path (default: <corpus_dir>/topics.json)")
+@click.option("--alpha", type=float, default=0.4, show_default=True,
+              help="Weight on OpenAlex concept-Jaccard vs TF-IDF cosine (0..1)")
+@click.option("--word-count-min", type=int, default=1000, show_default=True,
+              help="Min words extracted to count as full-text (passed to review.build_corpus_index)")
+@click.option("--label-method", default="auto", show_default=True,
+              type=click.Choice(["auto", "ctfidf", "handroll", "custom"]),
+              help="[P1-4 v3.8.0] Label generator to use")
+@click.option("--custom-labels", default=None,
+              help="[P1-4 v3.8.0] JSON dict {topic_id: label_str} to override auto labels. "
+                   "E.g. '{\"1\": \"PPT 设计文档\", \"2\": \"PPT 内容来源\"}'")
+@click.option("--domain-stopwords-file", default=None, type=click.Path(exists=True),
+              help="[P1-4 v3.8.0] File with domain-specific stopwords (one per line). "
+                   "If omitted, auto-mines from corpus.")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def review_topics(corpus_dir, output, alpha, word_count_min,
+                  label_method, custom_labels, domain_stopwords_file, quiet):
+    """Cluster corpus papers by topic (cross-paper synthesis prep, zero LLM).
+
+    Algorithm (3-stage ensemble):
+      1. Per-paper OpenAlex concept vectors
+      2. TF-IDF on (title + abstract)
+      3. Hybrid agglomerative clustering with silhouette-driven k selection
+
+    Output: topics.json with clusters, keywords, top concepts, cohesion scores.
+    For downstream narrative synthesis, feed this file (along with relations.json
+    from `pa review relations`) to an LLM session — or read it yourself.
+
+    [P1-4 v3.8.0 polish]
+      --label-method: switch between ctfidf / handroll / custom generators
+      --custom-labels: override topic labels with human-written names (highest priority)
+      --domain-stopwords-file: extend c-TF-IDF stop_words with corpus-specific noise terms
+    """
+    from .topics import cluster_topics
+    from .labels.domain_stopwords import load_domain_stopwords_file
+
+    corpus_path = Path(corpus_dir)
+    output_path = Path(output) if output else (corpus_path / "topics.json")
+
+    # Parse custom_labels JSON (string → Dict[int, str])
+    parsed_custom_labels = None
+    if custom_labels:
+        import json as _json
+        try:
+            raw = _json.loads(custom_labels)
+            parsed_custom_labels = {int(k): str(v) for k, v in raw.items()}
+        except (ValueError, TypeError) as e:
+            raise click.BadParameter(
+                f"custom-labels must be valid JSON dict like '{{\"1\": \"label\"}}': {e}"
+            )
+
+    # Load domain stopwords file
+    parsed_domain_stopwords = None
+    if domain_stopwords_file:
+        parsed_domain_stopwords = load_domain_stopwords_file(Path(domain_stopwords_file))
+
+    if not quiet:
+        click.echo(f"[pa] review-topics corpus={corpus_path}", err=True)
+        click.echo(f"[pa] alpha={alpha} word_count_min={word_count_min}", err=True)
+        click.echo(f"[pa] label_method={label_method}", err=True)
+        if parsed_custom_labels:
+            click.echo(f"[pa] custom_labels={parsed_custom_labels}", err=True)
+        if parsed_domain_stopwords:
+            click.echo(f"[pa] domain_stopwords={len(parsed_domain_stopwords)} terms", err=True)
+    result = cluster_topics(
+        corpus_dir=corpus_path,
+        output_path=output_path,
+        alpha=alpha,
+        word_count_min=word_count_min,
+        label_method=label_method,
+        custom_labels=parsed_custom_labels,
+        domain_stopwords=parsed_domain_stopwords,
+    )
+    if not quiet:
+        click.echo(
+            f"[pa] n_papers={result['n_papers']} k={result['k']} "
+            f"topics={len(result['topics'])} warnings={len(result['warnings'])}",
+            err=True,
+        )
+        for w in result["warnings"][:5]:
+            click.echo(f"[pa]   warn: {w}", err=True)
+    click.echo(f"[pa] saved {output_path}", err=True)
+
+
+@main.command()
 @click.option("--identified", "identified", type=int, required=True,
               help="Total papers identified from search (PRISMA stage 1)")
 @click.option("--after-screening", "after_screening", type=int, required=True,
