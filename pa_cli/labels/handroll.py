@@ -1,8 +1,16 @@
 """HandrollLabelGenerator — TF-IDF + Jaccard + Agglomerative clustering.
 
-Wraps the existing hand-roll fallback from pa_cli.topics. Used when n<5
-or BERTopic is unavailable. Like CTFIDFLabelGenerator, the actual labeling
-happens inside topics.cluster_topics() — this is a thin post-processor.
+Pass-through implementation. The actual hand-roll clustering happens
+inside topics.cluster_topics() (used when n<5 or BERTopic unavailable).
+This generator's role is to apply custom label overrides + return
+the topics list, same as CTFIDFLabelGenerator.
+
+Architecturally, "handroll" vs "ctfidf" label generators behave identically
+post-clustering — both are pass-through with optional custom overlay.
+The difference is in which clustering algorithm topics.cluster_topics()
+uses internally (BERTopic c-TF-IDF vs hand-roll TF-IDF + Jaccard +
+Agglomerative), which is selected by `force_method` not by the label
+generator.
 """
 
 from __future__ import annotations
@@ -16,18 +24,22 @@ log = logging.getLogger(__name__)
 
 
 class HandrollLabelGenerator(LabelGenerator):
-    """TF-IDF + Jaccard + Agglomerative clustering (hand-roll fallback).
+    """Hand-roll TF-IDF + Jaccard + Agglomerative (pass-through with custom overlay).
 
-    Like CTFIDFLabelGenerator, this is a post-processor. The actual clustering
-    happens inside topics.cluster_topics() (handroll branch). This class exists
-    for plugin consistency and to expose custom label overrides.
+    Args:
+        custom_labels: Optional dict {topic_id: label_str} to override.
+
+    Behavior:
+        - If `topics` kwarg is passed: applies custom_labels overlay,
+          returns updated topics list.
+        - If `topics` kwarg is missing: returns [] + warning.
     """
 
     def __init__(
         self,
         custom_labels: Optional[Dict[int, str]] = None,
     ) -> None:
-        self.custom_labels = custom_labels or {}
+        self.custom_labels = {int(k): str(v) for k, v in (custom_labels or {}).items()}
 
     def name(self) -> str:
         return "handroll"
@@ -39,9 +51,30 @@ class HandrollLabelGenerator(LabelGenerator):
         tfidf_mat: Any = None,
         filenames: Optional[List[str]] = None,
         concept_data: Optional[Dict[str, Dict]] = None,
+        topics: Optional[List[Dict[str, Any]]] = None,
         **kwargs: Any,
     ) -> List[Dict[str, Any]]:
-        raise NotImplementedError(
-            "HandrollLabelGenerator.generate() is not a standalone labeler. "
-            "Use pa_cli.topics.cluster_topics() with --label-method handroll instead."
-        )
+        if topics is None:
+            log.warning(
+                "HandrollLabelGenerator.generate() called without `topics` kwarg. "
+                "Use topics.cluster_topics(label_method='handroll', ...) for the full pipeline. "
+                "Returning empty list."
+            )
+            return []
+
+        if not self.custom_labels:
+            return topics
+
+        # Apply custom label overlay
+        result = []
+        for topic in topics:
+            tid = topic.get("topic_id")
+            new_topic = dict(topic)
+            if tid in self.custom_labels:
+                new_topic["label"] = self.custom_labels[tid]
+                log.info(
+                    f"HandrollLabelGenerator: overrode topic {tid} label: "
+                    f"'{topic.get('label')}' → '{self.custom_labels[tid]}'"
+                )
+            result.append(new_topic)
+        return result

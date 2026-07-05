@@ -1,15 +1,15 @@
 """CTFIDFLabelGenerator — Default c-TF-IDF based label generator.
 
-Wraps the existing _label_topics_bertopic and _label_topics_fallback logic
-from pa_cli.topics, exposed via the LabelGenerator ABC for plugin consistency.
+Acts as a pass-through: the actual c-TF-IDF computation happens inside
+topics.cluster_topics() (because clustering depends on c-TF-IDF too).
+This generator's role is to optionally apply custom label overrides +
+domain stopwords filtering to the topics list produced by cluster_topics().
 
-This is the default method. It uses:
-- BERTopic's c-TF-IDF (when BERTopic is available and n >= 5)
-- Hand-rolled TF-IDF + Jaccard + Agglomerative clustering (fallback for small corpora)
-
-The actual labeling happens inside topics.cluster_topics() — this generator
-returns the topics list as-is from the cluster output, applying only
-custom_labels overlay if provided.
+Architecture note: The actual clustering + c-TF-IDF labeling is done in
+topics._cluster_with_bertopic() and topics._cluster_with_handroll().
+This generator is a thin post-processor, but **does implement** the ABC
+for plugin consistency (so users can swap ctfidf ↔ handroll ↔ custom ↔
+future PIEClass without changing call sites).
 """
 
 from __future__ import annotations
@@ -23,19 +23,25 @@ log = logging.getLogger(__name__)
 
 
 class CTFIDFLabelGenerator(LabelGenerator):
-    """Default c-TF-IDF based label generator.
+    """Default c-TF-IDF based label generator (pass-through with custom overlay).
 
     Args:
         custom_labels: Optional dict {topic_id: label_str} to override
                        auto-generated labels.
-        domain_stopwords: Optional list of extra stopwords to add to c-TF-IDF.
-                          Used when filter_domain_stopwords=True.
-        filter_domain_stopwords: If True, augment the c-TF-IDF stop_words
-                                 with `domain_stopwords` list.
+        domain_stopwords: Optional list of extra stopwords (currently logged
+                          for visibility; actual application happens in
+                          topics.cluster_topics() before this generator is
+                          called).
+        filter_domain_stopwords: Currently informational only — see
+                                 topics.cluster_topics() for actual stopword
+                                 application.
 
-    Note: The actual c-TF-IDF computation happens inside topics.cluster_topics().
-    This generator acts as a thin post-processor: it accepts the topics list
-    and applies label overrides / domain stopwords filtering.
+    Behavior:
+        - If `topics` kwarg is passed (post-cluster_topics() output):
+          applies custom_labels overlay, returns updated topics list.
+        - If `topics` kwarg is missing: returns [] with a warning. Use
+          topics.cluster_topics() with label_method="ctfidf" to do the
+          full pipeline.
     """
 
     def __init__(
@@ -44,7 +50,7 @@ class CTFIDFLabelGenerator(LabelGenerator):
         domain_stopwords: Optional[List[str]] = None,
         filter_domain_stopwords: bool = True,
     ) -> None:
-        self.custom_labels = custom_labels or {}
+        self.custom_labels = {int(k): str(v) for k, v in (custom_labels or {}).items()}
         self.domain_stopwords = list(domain_stopwords or [])
         self.filter_domain_stopwords = filter_domain_stopwords
 
@@ -58,24 +64,36 @@ class CTFIDFLabelGenerator(LabelGenerator):
         tfidf_mat: Any = None,
         filenames: Optional[List[str]] = None,
         concept_data: Optional[Dict[str, Dict]] = None,
+        topics: Optional[List[Dict[str, Any]]] = None,
         **kwargs: Any,
     ) -> List[Dict[str, Any]]:
-        """Generate topic labels using c-TF-IDF.
+        """Apply custom label overrides to existing topics (post-cluster_topics pass-through).
 
-        In practice, the topics list is already produced by topics.cluster_topics()
-        before this method is called (because clustering depends on c-TF-IDF too).
-        This method applies label overrides and returns the topics.
-
-        For a pure-c-TF-IDF-only label generation (without re-clustering),
-        use topics._label_topics_bertopic() or _label_topics_fallback() directly.
+        For standalone use without a prior cluster_topics() call, this
+        returns [] + warning. The full pipeline is `topics.cluster_topics(
+        label_method="ctfidf", custom_labels=..., domain_stopwords=...)`.
         """
-        # Note: This method is called AFTER cluster_topics() has already produced
-        # the topics list. The actual c-TF-IDF labeling is done inside
-        # topics._label_topics_bertopic(). Here we just apply custom label overrides.
-        # The orchestration is in topics.cluster_topics() — see how it calls
-        # the generator at the post-clustering step.
-        raise NotImplementedError(
-            "CTFIDFLabelGenerator.generate() is not a standalone labeler. "
-            "Use pa_cli.topics.cluster_topics() with --label-method ctfidf instead. "
-            "The actual c-TF-IDF labeling happens during clustering."
-        )
+        if topics is None:
+            log.warning(
+                "CTFIDFLabelGenerator.generate() called without `topics` kwarg. "
+                "Use topics.cluster_topics(label_method='ctfidf', ...) for the full pipeline. "
+                "Returning empty list."
+            )
+            return []
+
+        if not self.custom_labels:
+            return topics
+
+        # Apply custom label overlay (same logic as CustomLabelGenerator)
+        result = []
+        for topic in topics:
+            tid = topic.get("topic_id")
+            new_topic = dict(topic)
+            if tid in self.custom_labels:
+                new_topic["label"] = self.custom_labels[tid]
+                log.info(
+                    f"CTFIDFLabelGenerator: overrode topic {tid} label: "
+                    f"'{topic.get('label')}' → '{self.custom_labels[tid]}'"
+                )
+            result.append(new_topic)
+        return result

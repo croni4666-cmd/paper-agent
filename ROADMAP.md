@@ -841,6 +841,65 @@ is the post-commit honest correction. No claim is deleted — the
 "passes 23/23" line was true at the time and is still true for the
 unit tests; the gap was that unit tests didn't cover real-corpus behavior.
 
+### Modified 2026-07-05 — v3.8.3 polish: close the v3.8.1 ⚠️ "code exists but unverified" claims
+
+After v3.8.2 (commit `22e6cd2`) shipped, user pressed "测试所有没有测试过的，
+然后更新 changelog 和 commit". Honest re-audit found 4 remaining ⚠️ items
+that the v3.8.1 + v3.8.2 commits had explicitly left untested:
+
+**Issue 1 — `CTFIDFLabelGenerator.generate()` + `HandrollLabelGenerator.generate()` raised NotImplementedError**:
+Built-in generators were stubs that raised. ABC felt half-implemented.
+A future PIEClass plugin author would wonder why their subclass needs to
+implement `generate()` but built-ins don't. Fix: rewrote both as
+pass-through post-processors that apply optional `custom_labels` overlay.
+
+**Issue 2 — `--label-method ctfidf` end-to-end never verified**:
+BERTopic downloads `all-MiniLM-L6-v2` (~80MB) from HuggingFace. In
+networks where HF is blocked, default behavior is 5-minute retry storm
+before fallback. User has been staring at hanging terminals.
+Fix: added `bertopic_timeout: float = 60.0` kwarg to `cluster_topics()`.
+`_get_sentence_model()` wraps `SentenceTransformer()` in a thread +
+`join(timeout=...)`. On timeout, raises `TimeoutError` with message
+"sentence-transformers download of '...' exceeded 60s timeout. Falling
+back to handroll." Pre-existing try/except catches it. Result on user's
+network: ctfidf command exits in ~85s with explicit warning instead of
+5-min hang.
+
+**Issue 3 — `--domain-stopwords-file <path>` CLI end-to-end never verified**:
+CLI flag parsed correctly per unit test, but never tested with real corpus.
+Fix: new `test_cli_domain_stopwords_file_end_to_end` runs the subprocess
+with a 9-term fixture file, asserts `domain_stopwords_count == 9` (file
+content) NOT 20 (auto-mine default). Exact-9 match proves file was loaded.
+
+**Issue 4 — `register_label_generator()` plugin chain end-to-end never verified**:
+Factory was unit-tested but no test exercised full chain (register →
+available → get → name → generate → return shape). Fix: 2 new tests
+verify ABC actually implements and plugin chain works end-to-end.
+
+**Test infrastructure fix — subprocess cache isolation**:
+When `test_labels_real_corpus.py` ran as subprocess inside regression
+Section A8, **after** A7's `test_labels_e2e.py`, it failed with
+`AssertionError: Artifact of type=precompile already registered in
+mega-cache artifact factory`. Root cause: torch's `_inductor` cache
+shared across subprocesses. Fix: each subprocess gets unique `TMPDIR`,
+`TORCH_HOME`, `TORCHINDUCTOR_CACHE_DIR`, `XDG_CACHE_HOME`, plus
+`TORCHDYNAMO_DISABLE=1` + `TORCH_COMPILE_DISABLE=1` to skip precompile
+machinery entirely.
+
+**New release: v3.8.3 patch** (target: 2026-07-05, same day — same justification as v3.8.2):
+- 4 sub-issues closed + test infra fix
+- v3.8.1 + v3.8.2 outcomes above preserved (audit trail discipline)
+- All closed claims now have real-corpus + CLI-subprocess test verification
+  (previously: ⚠️ code exists but unverified)
+
+**Effort** (final time log):
+- ABC stubs → pass-through: ~15min
+- bertopic_timeout + thread wrapper: ~15min
+- 5 new test sub-tests + 1 fixture file: ~15min
+- Subprocess cache isolation: ~10min
+- CHANGELOG + ROADMAP: ~10min
+- Total: ~1h, anchored on `[P1-4 v3.8.2] ~0.5h actual` as similar polish.
+
 ### [P2-1] Browser extension companion (SciHub Addon-style)
 
 - **Status**: deprecated

@@ -1,0 +1,12 @@
+# Domain stopwords — test fixture for CLI integration test
+# Curated from real ch1-econ-ppt corpus (2026-07-05)
+# Mix of auto-mined + user-supplied noise terms.
+iphone
+pptxgenjs
+skill
+beautiful
+gamma
+mermaid
+chip
+exy
+"@
