@@ -759,6 +759,88 @@ maintenance, no publish obligation, free-tier degradation graceful — see CHANG
 - The `register_label_generator()` API + `__init__.py` docstring shows the exact 3-step path for plugging in a custom PIEClass / RL-trained generator: write a `LabelGenerator` subclass + `register_label_generator("name", cls)` + `pa review-topics <corpus> --label-method <name>`. No edits to topics.py or cli.py needed.
 - Once user's research produces a paper, the trained generator can be packaged as `pa-cli-labels-pieclass` PyPI plugin and consumed via entry_points (also documented in `labels/__init__.py`).
 
+### Modified 2026-07-05 — domain_stopwords heuristics too strict + end-to-end test missing
+
+**Honest post-commit audit** (after user pressed "诚实说，你做的work 没有？"):
+
+The v3.8.1 commit (7e61c3e) shipped two sub-features that, on reflection, are
+**partially functional** rather than fully working. Recording as Modified
+audit per discipline — original `Outcome` above is preserved as it was.
+
+**Issue 1 — `extract_domain_stopwords` heuristics too narrow**:
+The shipped `_looks_like_noise()` function flags only:
+- camelCase tokens (`pptxgenjs` ✅)
+- snake_case / kebab-case (`next-js` ✅)
+- tokens with digits (`v1.0`, `2025` ✅)
+- all-caps short tokens (`JSON`, `API` ✅)
+- length ≤ 3 (✅)
+
+But **misses** plain lowercase product/tool names that are 4-7 chars:
+- `iphone` (6 chars, no digits, no separators) — **missed**
+- `skill`, `beautiful`, `gamma` (similarly) — **missed**
+
+On the user's real corpus (`课件/ch1-econ-ppt`, 9 MD/TXT files, 7,392 words),
+`extract_domain_stopwords` returns **empty list** because the actual noise
+terms (`iphone`, `pptxgenjs`, `skill`, `beautiful`, `gamma`) are the only
+ones present in TF-IDF top-N, and only `pptxgenjs` matches the strict
+heuristics. The "auto_mined_20_domain_stopwords" warning fires (because
+we set `top_n=20`) but the list is empty in practice.
+
+**Fix plan (v3.8.2 patch)**:
+- Add: short lowercase tokens (4-7 chars) that don't end in common English
+  suffixes AND don't appear in a basic English word list are likely noise.
+  Approximate without external wordlist: use NLTK's `words` corpus if
+  available, else fallback to a small embedded high-frequency English list.
+- Add: ANY token that's in TF-IDF top-N AND has high IDF variance across
+  the corpus is suspicious (real content terms vary by topic; tool names
+  appear in many docs uniformly).
+- Add: user-editable `pa_cli/data/domain_stopwords.txt` (already created
+  by domain_stopwords.save_domain_stopwords) — this is the **escape hatch**:
+  if auto-mine misses something, user can hand-add it via the file.
+- Verify: real-corpus test confirms `extract_domain_stopwords` returns
+  ≥3 noise terms on `ch1-econ-ppt` (iphone, skill, beautiful expected).
+
+**Issue 2 — no end-to-end real-corpus test**:
+The 23 sub-tests in `test_labels_e2e.py` cover:
+- LabelGenerator ABC + factory dispatch + register
+- CustomLabelGenerator unit behavior (single, multi, JSON keys, immutability)
+- domain_stopwords unit (extract, save/load, comments)
+
+But **no test** actually runs `cluster_topics()` on the user's real
+`ch1-econ-ppt` corpus and verifies `--custom-labels` flows end-to-end.
+The real verification (Topic 1 = "PPT 设计文档") was a one-off bash
+session and not captured in any test. This means a future regression
+could silently break custom_labels flow on the real corpus without
+any test catching it.
+
+**Fix plan (v3.8.2 patch)**:
+- Add `test_output/test_labels_real_corpus.py` that walks the real
+  `G:\Minmax - workspace\课件\ch1-econ-ppt\` corpus, calls
+  `cluster_topics(label_method="handroll", custom_labels={...})`, asserts:
+  - Topic 1 label == "PPT 设计文档" (custom label applied)
+  - Topic 2 label == "PPT 内容来源"
+  - `domain_stopwords_count` ≥ 3 (after Issue 1 fix)
+  - topics.json schema fields populated
+- Gate with env var `PA_TEST_REAL_CORPUS=1` (real corpus is 7,392 words +
+  file system dependency; don't slow down CI).
+- Also update `test_full_regression.py` to invoke it (still gated).
+
+**New release: v3.8.2 patch** (target: 2026-07-05, same day):
+- 2 sub-changes bundled: heuristics loosening + real-corpus test
+- Same-day patch OK because issues caught in same session, before any
+  downstream user adoption (only user + Mavis use paper-agent today)
+
+**Effort estimate** (per estimation methodology):
+- Heuristics loosening: ~0.5h (touch `_looks_like_noise` + maybe NLTK import)
+- Real-corpus test: ~0.3h (mirror existing test_topics_e2e pattern)
+- ROADMAP + CHANGELOG updates: ~0.2h
+- Total: **~1h**, anchored on `[P1-4 v3.8.1 polish] ~2h actual` as prior wrap-interface pattern.
+
+**Audit trail**: original v3.8.1 Outcome preserved above. Modified sub-section
+is the post-commit honest correction. No claim is deleted — the
+"passes 23/23" line was true at the time and is still true for the
+unit tests; the gap was that unit tests didn't cover real-corpus behavior.
+
 ### [P2-1] Browser extension companion (SciHub Addon-style)
 
 - **Status**: deprecated
