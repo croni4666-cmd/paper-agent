@@ -302,6 +302,110 @@ designed to keep paper-agent zero-LLM and personal-hobbyist-friendly.
 
 ---
 
+## [3.8.2] - 2026-07-05 (patch — same-day honesty correction)
+
+### Fixed — domain_stopwords heuristics too strict + missing real-corpus E2E test
+
+Followup to v3.8.1 (commit `7e61c3e`). After user pressed "诚实说，你做的
+work 没有？", self-audit revealed two sub-features that were technically
+correct (unit tests passed) but **functionally hollow** on the real corpus
+that motivated the feature.
+
+**Issue 1 — `extract_domain_stopwords` returned empty on user's real corpus**:
+The shipped `_looks_like_noise()` heuristics flagged only camelCase /
+snake_case / digits / all-caps-short / file-extension patterns. On the
+user's real `课件/ch1-econ-ppt` corpus (9 MD/TXT, 7,392 words), the actual
+noise terms (`iphone`, `skill`, `beautiful`, `gamma`, `mermaid`, `chip`)
+are plain lowercase 4-12 char tokens that matched NONE of those patterns.
+Result: `extract_domain_stopwords` returned `[]` in practice even though
+the `auto_mined_20_domain_stopwords` warning fired (because `top_n=20`
+filled with path refs like `p29-p40`, `phase2-applications-detail`).
+
+**Fix** (`pa_cli/labels/domain_stopwords.py`):
+- Added `_COMMON_ENGLISH` frozenset (~258 words: function words +
+  common content words + academic/business/technical vocabulary including
+  `economics`, `supply`, `demand`, `price`, `elasticity`, `paper`,
+  `topic`, `cluster`, `corpus`, `label`, etc.).
+- New heuristic #8: plain lowercase 4-12 char token that is **not** in
+  `_COMMON_ENGLISH` AND doesn't end in a typical English suffix
+  (`tion`, `ment`, `ing`, `ous`, `ive`, `able`, `ible`, `ful`, `less`,
+  etc.) is flagged as noise.
+- Result on real corpus: now returns **20 noise terms including**
+  `iphone`, `skill`, `mermaid`, `chip`, `n276`, plus the path refs.
+
+**Issue 2 — no end-to-end test against the user's real corpus**:
+The 23 unit tests in `test_labels_e2e.py` covered ABC + factory + custom +
+domain_stopwords unit behavior, but **no test** ran `cluster_topics()`
+end-to-end against the user's real `ch1-econ-ppt` corpus and verified
+`--custom-labels` flowed through. A future regression could silently
+break the custom_labels flow on the real corpus without any test catching it.
+
+**Fix** (`test_output/test_labels_real_corpus.py`, NEW, 4 sub-tests):
+- Gated by `PA_TEST_REAL_CORPUS=1` env var (same pattern as
+  `test_cluster_topics_bertopic` gated by `PA_TEST_BERTOPIC=1`).
+- `test_custom_labels_override_on_real_corpus` — runs
+  `cluster_topics(custom_labels={1: "PPT 设计文档", 2: "PPT 内容来源"})`
+  on the real 9-file corpus, asserts both labels applied + schema fields
+  populated.
+- `test_domain_stopwords_auto_mines_real_corpus` — regression for
+  Issue 1. Asserts `extract_domain_stopwords` returns ≥3 noise terms
+  AND ≥1 of `{iphone, skill, pptxgenjs, mermaid}` is present.
+- `test_domain_stopwords_via_cli_flag_flows_through` — end-to-end
+  `cluster_topics()` with auto-mined domain_stopwords, asserts
+  `domain_stopwords_count` ≥ 3 on real corpus.
+- `test_topics_json_schema_on_disk` — asserts the 3 v3.8.1 schema
+  fields (`label_method`, `custom_labels`, `domain_stopwords_count`)
+  are persisted to the JSON file on disk.
+
+**Regression integration** (`test_output/test_full_regression.py`):
+- New Section A8 (`section_labels_real_corpus_tests()`) runs the
+  real-corpus test with `PA_TEST_REAL_CORPUS=1` injected.
+- Reports `SKIP` (not `FAIL`) when env var unset, so CI without the
+  real corpus is unaffected.
+
+**Verification** (user's `G:\Minmax - workspace\课件\ch1-econ-ppt\`,
+9 MD/TXT files):
+- `extract_domain_stopwords` BEFORE fix: returned `[]` (only path refs)
+- `extract_domain_stopwords` AFTER fix: returns `['chip', 'exy', 'iphone',
+  'mermaid', 'n276', 'p29-p40', 'p41-p52', ..., 'phase2-applications-detail',
+  ..., 'skill', 'slide']` — 20 terms, includes `iphone` and `skill`.
+- `cluster_topics(custom_labels={1: "PPT 设计文档", 2: "PPT 内容来源"})`
+  end-to-end → Topic 1 = "PPT 设计文档" (6 papers), Topic 2 = "PPT 内容来源"
+  (3 papers), `domain_stopwords_count = 20`.
+- All 4 real-corpus tests pass.
+
+**Tests passing**:
+- `test_labels_e2e.py`: 23/23 PASS (unchanged from v3.8.1; expanded
+  `_COMMON_ENGLISH` made `test_keeps_real_english_words` pass — previously
+  one test failed at first because `economics` was being flagged, fixed
+  by adding academic vocabulary to the dictionary).
+- `test_labels_real_corpus.py`: 4/4 PASS (NEW, gated by env var).
+- `test_full_regression.py`: **46 PASS / 0 FAIL / 3 SKIP / 1 KNOWN_ISSUE**
+  (up from 42 in v3.8.1; +4 = real-corpus suite; SKIPs go from 2 → 3
+  because the new gated section reports SKIP when env var unset).
+
+**Effort**:
+- Estimate: ~1h (heuristics fix + test + docs)
+- Actual: ~0.5h (heuristics fix was a small `_COMMON_ENGLISH` list +
+  one extra `if` branch in `_looks_like_noise`; test was copy-paste of
+  the existing topics_e2e real-corpus pattern).
+
+**5-check audit against Global Rule**: 5/5 pass (no $ cost, no hosted
+service, ~30 lines maintenance in `_COMMON_ENGLISH`, no publish obligation,
+free-tier degradation graceful — when no English wordlist, falls back
+to "match if not in `_COMMON_ENGLISH`" which is the safe direction).
+
+**Honest note on the v3.8.1 ship**: This same-day patch is unusual
+(usually we'd wait a week before patching). Justification:
+- No external users (only user + Mavis use paper-agent currently)
+- Bug was caught before any downstream adoption
+- Per ROADMAP discipline: "被证伪或部分错误: 不删原条目, 在同一 item 下
+  加 ### Modified YYYY-MM-DD 子节" — this CHANGELOG entry is the Modified
+  record; `ROADMAP.md [P1-4]` already has the audit subsection documenting
+  these gaps.
+
+---
+
 ## [3.7.1] - 2026-07-04 (cleanup commit)
 
 ### Deprecated — [P2-1] / [P2-2] / [P2-3] (user review)

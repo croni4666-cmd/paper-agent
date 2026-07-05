@@ -223,7 +223,37 @@ def section_labels_tests():
         print(f"  [{status}] test_labels_e2e.py (rc={rc})")
         print(f"        stdout_tail: {out[-500:]!r}")
         print(f"        stderr_tail: {err[-300:]!r}")
-    return [("test_labels_e2e.py", status, rc, "")] 
+    return [("test_labels_e2e.py", status, rc, "")]
+
+
+# ============== Section A8: Labels real-corpus tests (gated) ==============
+
+def section_labels_real_corpus_tests():
+    """Run labels real-corpus test (gated by PA_TEST_REAL_CORPUS=1)."""
+    print("\n" + "="*60)
+    print("A8. Labels real-corpus tests (gated by PA_TEST_REAL_CORPUS=1)")
+    print("="*60)
+    script = TEST_OUTPUT / "test_labels_real_corpus.py"
+    extra_env = {"PA_TEST_REAL_CORPUS": "1"}
+    rc, out, err = run([sys.executable, str(script)], timeout=120, env=extra_env)
+    # If rc==5 it's unittest "no tests ran" (skip) → report SKIP
+    combined = out + err
+    if rc == 5 or "skipped" in combined.lower() and "PA_TEST_REAL_CORPUS" in combined:
+        status = "SKIP"
+        print(f"  [SKIP] test_labels_real_corpus.py (PA_TEST_REAL_CORPUS not set)")
+        return [("test_labels_real_corpus.py", "SKIP", rc, "")]
+    ok = rc == 0 and "OK" in combined and "FAILED" not in combined
+    status = "PASS" if ok else "FAIL"
+    if ok:
+        import re as _re
+        m = _re.search(r"Ran (\d+) tests?", combined)
+        n = m.group(1) if m else "?"
+        print(f"  [PASS] test_labels_real_corpus.py (rc={rc}, {n} sub-tests)")
+    else:
+        print(f"  [{status}] test_labels_real_corpus.py (rc={rc})")
+        print(f"        stdout_tail: {out[-500:]!r}")
+        print(f"        stderr_tail: {err[-300:]!r}")
+    return [("test_labels_real_corpus.py", status, rc, "")] 
 
 
 # ============== Section B: pa_cli module imports ==============
@@ -468,7 +498,7 @@ def print_summary(all_results):
     # Detail
     for section_idx, section_results in enumerate(all_results):
         section_names = ["A. cache", "A2. citations", "A3. mcp-setup", "A4. concepts", "A5. prisma",
-                         "A6. topics", "A7. labels",
+                         "A6. topics", "A7. labels", "A8. labels-real-corpus",
                          "B. imports", "C. --help", "D. safe cli",
                          "E. python api", "F. skill local", "G. skill skip"]
         print(f"  {section_names[section_idx]}:")
@@ -487,6 +517,7 @@ def main():
         section_prisma_tests(),
         section_topics_tests(),
         section_labels_tests(),
+        section_labels_real_corpus_tests(),
         section_pa_cli_imports(),
         section_cli_help_surface(),
         section_safe_cli_commands(),

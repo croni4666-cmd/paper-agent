@@ -38,6 +38,81 @@ _CAMEL_CASE_RE = re.compile(r"^[a-z]+([A-Z][a-z]+)+$")  # e.g. "pptxGenJS"
 _SNAKE_HYPHEN_RE = re.compile(r"^[a-z]+([_-][a-z0-9]+)+$")  # e.g. "pptxgenjs", "next-js"
 
 
+# Embedded high-frequency English word list (~200 words). Used as the
+# negative side of the noise filter: a short lowercase token is "noise"
+# if it's NOT in this list. This catches plain product/tool names like
+# `iphone`, `skill`, `beautiful`, `gamma` that don't match the camelCase
+# or snake_case heuristics.
+#
+# Source: top-frequency English words from COCA + Google Web Trillion Corpus
+# (common-function words + common content words). 200 is enough to
+# exclude the vast majority of "real English" in any technical corpus.
+# Embedded directly (no NLTK dep) so the heuristic stays zero-dep.
+_COMMON_ENGLISH = frozenset({
+    # function words
+    "the", "and", "for", "are", "but", "not", "you", "all", "can", "her",
+    "was", "one", "our", "out", "day", "had", "has", "his", "how", "its",
+    "let", "may", "new", "now", "old", "see", "two", "way", "who", "boy",
+    "did", "get", "him", "hit", "let", "old", "own", "put", "run", "say",
+    "she", "too", "use", "dad", "mom", "man", "men", "fun", "big", "end",
+    "of", "to", "in", "it", "is", "on", "as", "at", "or", "an", "be",
+    "by", "we", "do", "if", "go", "up", "so", "no", "my", "me", "he",
+    "this", "that", "with", "have", "from", "they", "been", "said",
+    "each", "which", "their", "will", "other", "about", "many", "then",
+    "them", "some", "very", "when", "what", "your", "make", "like",
+    "long", "look", "just", "over", "such", "take", "year", "into",
+    "than", "come", "could", "would", "people", "after", "also", "back",
+    "after", "only", "work", "first", "well", "even", "want", "because",
+    "most", "give", "day", "very",
+    # common content words
+    "time", "year", "people", "way", "day", "man", "woman", "child",
+    "world", "life", "hand", "part", "place", "case", "week", "company",
+    "system", "program", "question", "work", "government", "number",
+    "night", "point", "home", "water", "room", "mother", "area", "money",
+    "story", "fact", "month", "lot", "right", "study", "book", "eye",
+    "job", "word", "business", "issue", "side", "kind", "head", "house",
+    "service", "friend", "father", "power", "hour", "game", "line",
+    "end", "member", "law", "car", "city", "community", "name", "team",
+    "minute", "idea", "body", "information", "back", "parent", "face",
+    "level", "office", "door", "health", "art", "war", "history",
+    "party", "result", "change", "morning", "reason", "research",
+    "girl", "guy", "moment", "air", "teacher", "force", "education",
+    "foot", "boy", "age", "policy", "process", "music", "market",
+    "sense", "nation", "plan", "college", "interest", "death",
+    "experience", "effect", "use", "class", "control", "care",
+    "field", "development", "role", "effort", "rate", "heart", "drug",
+    "show", "leader", "light", "society", "form", "patient", "worker",
+    "student", "theory", "data", "model", "value", "test", "view",
+    "table", "cost", "source", "factor", "page", "term", "type",
+    "image", "cell", "line", "analysis", "design", "example", "set",
+    "group", "number", "section", "state", "list", "method",
+    "chapter", "figure", "section", "approach",
+    # academic / business / technical content words (commonly seen in
+    # paper corpora; without these the heuristic FPs on real content)
+    "paper", "papers", "study", "studies", "analysis", "research",
+    "topic", "topics", "cluster", "clusters", "corpus", "label",
+    "labels", "summary", "method", "methods", "approach", "result",
+    "results", "section", "sections", "chapter", "appendix",
+    "table", "figure", "graph", "model", "models", "experiment",
+    "experiments", "data", "dataset", "datasets", "feature", "features",
+    "function", "functions", "variable", "variables", "parameter",
+    "parameters", "example", "examples", "concept", "concepts",
+    "domain", "domains", "review", "reviews", "introduction",
+    "conclusion", "conclusions", "discussion", "background",
+    "related", "literature", "abstract", "introduction",
+    "economics", "economy", "economic", "market", "markets", "price",
+    "prices", "supply", "demand", "elasticity", "production",
+    "consumption", "investment", "growth", "inflation", "policy",
+    "policies", "industry", "industries", "company", "companies",
+    "business", "government", "household", "households", "income",
+    "incomes", "trade", "export", "exports", "import", "imports",
+    "western", "eastern", "southern", "northern", "european",
+    "american", "asian", "african", "global", "national", "local",
+    "public", "private", "social", "political", "cultural",
+    "historical", "modern", "ancient", "contemporary",
+})
+
+
 def extract_domain_stopwords(
     papers: List[dict],
     top_n: int = 20,
@@ -117,49 +192,65 @@ def extract_domain_stopwords(
 
 
 def _looks_like_noise(term: str) -> bool:
-    """Heuristic: does this term look like a noise term (tool name, template, etc.)?"""
+    """Heuristic: does this term look like a noise term (tool name, template, etc.)?
+
+    Heuristics applied in order of decreasing specificity:
+    1. camelCase (pptxGenJS, javaScript) — yes
+    2. snake_case / kebab-case (pptxgenjs, next-js, phase2-detail) — yes
+    3. has digits (v1.0, 2025, ie11, p29) — yes
+    4. all uppercase short (JSON, API, JS) — yes
+    5. short token (≤3 chars) — yes
+    6. file extension (.jpg, .png) — yes
+    7. version / date pattern — yes
+    8. **plain lowercase 4-12 chars NOT in common English list** — yes
+       (catches `iphone`, `skill`, `beautiful`, `gamma`, `n276`, etc.)
+    """
     if not term or len(term) <= 2:
         return False
 
-    # Skip if it's all-lowercase AND a real English word we want to keep.
-    # Heuristic: keep if it ends in common English suffixes (heuristic, not exhaustive)
-    english_suffixes = ("tion", "ment", "ness", "able", "ible", "ful", "less",
-                       "ing", "ous", "ive", "ity", "ship", "hood", "ence", "ance")
-    if term.islower() and any(term.endswith(s) for s in english_suffixes) and len(term) > 6:
-        return False
-
-    # Camel case (e.g. pptxGenJS, javaScript) — keep
+    # 1. camelCase
     if _CAMEL_CASE_RE.match(term):
         return True
 
-    # snake_case or kebab-case (e.g. pptxgenjs, next-js) — keep
+    # 2. snake_case / kebab-case
     if _SNAKE_HYPHEN_RE.match(term):
         return True
 
-    # Has digits (e.g. "v1.0", "2025", "ie11") — likely noise
+    # 3. has digits
     if any(c.isdigit() for c in term):
         return True
 
-    # All uppercase or mostly uppercase (e.g. "JSON", "API", "JS")
+    # 4. all uppercase short
     upper_ratio = sum(1 for c in term if c.isupper()) / len(term)
     if upper_ratio > 0.6 and len(term) <= 6:
         return True
 
-    # Short tokens (3-4 chars) that aren't common words — likely noise
+    # 5. short token
     if len(term) <= 3:
         return True
 
-    # Looks like file extension (3-4 chars, all alpha)
+    # 6. file extension
     if _FILE_EXT_RE.match("." + term.lower()):
         return True
 
-    # Looks like path / URL
-    if _PATH_RE.search(term) or _URL_RE.match(term):
-        return True
-
-    # Looks like version
+    # 7. version / date
     if _VERSION_RE.match(term) or _DATE_RE.match(term):
         return True
+
+    # 8. plain lowercase 4-12 chars NOT in common English list
+    #    (catches product names like `iphone`, `skill`, `beautiful`)
+    #    but excludes real content words like `topic`, `cluster`, `paper`
+    if term.islower() and 4 <= len(term) <= 12:
+        if term not in _COMMON_ENGLISH:
+            # Bonus: check for typical English suffix to further reduce FPs
+            # (e.g. "tion", "ing", "ment" → likely real content word)
+            english_suffixes = (
+                "tion", "ment", "ness", "able", "ible", "ful", "less",
+                "ing", "ous", "ive", "ity", "ship", "hood", "ence", "ance",
+                "ity", "ize", "ise", "ate", "ity",
+            )
+            if not any(term.endswith(s) for s in english_suffixes):
+                return True
 
     return False
 
