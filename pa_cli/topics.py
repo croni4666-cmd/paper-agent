@@ -285,16 +285,52 @@ def _build_docs(papers: List[Dict]) -> Tuple[List[str], List[str], List[Dict]]:
 _MODEL_CACHE: Dict[str, Any] = {}
 
 
-def _get_sentence_model(model_name: str = "all-MiniLM-L6-v2"):
+def _get_sentence_model(model_name: str = "all-MiniLM-L6-v2", download_timeout: Optional[float] = None):
     """Lazy-load + cache the sentence-transformers model.
 
     First call downloads ~80MB. Subsequent calls use disk cache.
+
+    download_timeout: optional seconds to wait on the model download
+        before raising TimeoutError (so caller can fall back to handroll
+        per paper-agent v4 principle: "after 5 minutes, stop iterating,
+        surface to user"). None = no timeout (default sentence-transformers
+        behavior — retries up to 5 times with exponential backoff).
     """
     if model_name in _MODEL_CACHE:
         return _MODEL_CACHE[model_name]
     if not _ensure_bertopic():
         raise RuntimeError("BERTopic not available")
-    model = SentenceTransformer(model_name)
+
+    if download_timeout is None:
+        model = SentenceTransformer(model_name)
+    else:
+        # Honor the timeout via a background thread. SentenceTransformer's
+        # underlying huggingface_hub download uses retries internally;
+        # we wrap with a thread + timeout join to enforce the cap.
+        import threading
+        result = {}
+        error = {}
+
+        def _load():
+            try:
+                result["model"] = SentenceTransformer(model_name)
+            except Exception as e:
+                error["e"] = e
+
+        t = threading.Thread(target=_load, daemon=True)
+        t.start()
+        t.join(timeout=download_timeout)
+        if t.is_alive():
+            raise TimeoutError(
+                f"sentence-transformers download of '{model_name}' exceeded "
+                f"{download_timeout}s timeout. Falling back to handroll."
+            )
+        if error:
+            raise error["e"]
+        model = result.get("model")
+        if model is None:
+            raise RuntimeError(f"SentenceTransformer({model_name!r}) returned None")
+
     _MODEL_CACHE[model_name] = model
     return model
 
@@ -715,6 +751,8 @@ def cluster_topics(
     label_method: str = "auto",  # "auto" | "ctfidf" | "handroll" | "custom"
     custom_labels: Optional[Dict[int, str]] = None,  # {topic_id: label_str}
     domain_stopwords: Optional[List[str]] = None,  # extra stopwords for c-TF-IDF
+    # ---- [P1-4 v3.8.3] ----
+    bertopic_timeout: Optional[float] = 60.0,  # seconds; None = no timeout
 ) -> Dict:
     """Cluster papers in corpus_dir by topic.
 
@@ -727,6 +765,11 @@ def cluster_topics(
       - custom_labels: {topic_id: label_str} overrides auto labels
       - domain_stopwords: corpus-specific noise terms (tool names, file
                           extensions) added to c-TF-IDF stop_words
+      - bertopic_timeout: seconds to wait on sentence-transformers model
+                          download before falling back to handroll.
+                          Default 60s (per paper-agent v4 principle: "after
+                          5 minutes, surface to user" — but for individual
+                          ops we want faster fallback).
 
     Returns the same topics.json schema regardless of method.
     """
@@ -807,7 +850,7 @@ def cluster_topics(
     if use_bertopic:
         try:
             docs, filenames, papers_with_text = _build_docs(papers)
-            _get_sentence_model(model_name)  # warm cache
+            _get_sentence_model(model_name, download_timeout=bertopic_timeout)  # warm cache
             topic_ids, model, bt_warnings = _cluster_with_bertopic(
                 docs, filenames, n, extra_stopwords=domain_stopwords
             )

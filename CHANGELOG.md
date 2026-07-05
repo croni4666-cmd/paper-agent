@@ -406,6 +406,136 @@ to "match if not in `_COMMON_ENGLISH`" which is the safe direction).
 
 ---
 
+## [3.8.3] - 2026-07-05 (polish — close the v3.8.1 unverified gaps)
+
+Followup to v3.8.2 (commit `22e6cd2`). User pressed "测试所有没有测试过的，
+然后更新 changelog 和 commit". Self-audit re-surfaced four ⚠️ "code exists
+but unverified" claims from earlier. All four closed end-to-end in this patch.
+
+**Issue 1 — `CTFIDFLabelGenerator.generate()` + `HandrollLabelGenerator.generate()` raised NotImplementedError**
+
+Earlier v3.8.1 made these methods raise NotImplementedError with the
+rationale "c-TF-IDF is done inside cluster_topics()". That left the
+`LabelGenerator` ABC feeling half-implemented — `custom` was real, but
+`ctfidf` and `handroll` were stubs. A future PIEClass plugin author
+reading the codebase would wonder why their subclass needs to implement
+`generate()` but the built-in ones don't.
+
+**Fix** (`pa_cli/labels/ctfidf.py` + `pa_cli/labels/handroll.py`):
+- Both generators now implement `generate()` as pass-through post-processors
+  that apply the optional `custom_labels` overlay on a topics list.
+- Architecture: c-TF-IDF and clustering happen together in
+  `topics._cluster_with_bertopic()` (because clustering depends on
+  c-TF-IDF), so the label generator is correctly a post-processor.
+- New ABC contract: `generate(topics=...)` → applies custom overlay,
+  returns updated list. If `topics` kwarg missing, returns `[]` + warning
+  (instead of raising). All three built-ins now have the same shape.
+
+**Issue 2 — `pa review-topics --label-method ctfidf` end-to-end never verified**
+
+`--label-method ctfidf` (or `auto`) tries to download `all-MiniLM-L6-v2`
+from HuggingFace (~80MB). In networks where HF is blocked (user's
+environment: `WinError 10060` connection timeout), `sentence-transformers`
+internally retries 5 times with exponential backoff — **5+ minutes** before
+eventually falling back to hand-roll. User has been staring at hanging
+terminals.
+
+**Fix** (`pa_cli/topics.py`):
+- New `bertopic_timeout: float = 60.0` kwarg on `cluster_topics()`. None = no timeout (default sentence-transformers behavior).
+- `_get_sentence_model()` now wraps `SentenceTransformer(model_name)` in a
+  background thread with `thread.join(timeout=bertopic_timeout)`. On
+  timeout, raises `TimeoutError` with message "sentence-transformers
+  download of '{name}' exceeded {N}s timeout. Falling back to handroll."
+- The pre-existing `try/except` in `cluster_topics()` catches it and
+  falls back to handroll + adds warning to topics.json.
+- **Result on user's network**: `pa review-topics --label-method ctfidf`
+  exits in ~85s with the explicit warning
+  `bertopic_failed_fallback_to_handroll:TimeoutError:...` instead of
+  hanging for 5 minutes.
+- CLI not modified yet (no `--bertopic-timeout` flag) — default 60s is
+  the right starting point. CLI flag can be added if user needs tuning.
+
+**Issue 3 — `--domain-stopwords-file <path>` CLI end-to-end never verified**
+
+The CLI flag was parsed correctly (per unit test) but never tested
+with `pa review-topics --domain-stopwords-file X` against a real corpus.
+A real verification is the only way to know the file content actually
+flows through `cluster_topics()` to c-TF-IDF's stop_words argument.
+
+**Fix** (`test_output/test_labels_real_corpus.py` new sub-test +
+`test_output/fixtures/domain_stopwords_for_test.txt`):
+- New fixture file with 9 curated noise terms from the real corpus
+  (`iphone`, `pptxgenjs`, `skill`, `beautiful`, `gamma`, `mermaid`, `chip`,
+  `exy`, ...).
+- New test `test_cli_domain_stopwords_file_end_to_end` runs the CLI
+  subprocess with the file, asserts `topics.json` `domain_stopwords_count`
+  is **9** (file contents) — NOT 20 (auto-mine default). The exact-9
+  match proves the file was loaded, not the auto-mine fallback.
+
+**Issue 4 — `register_label_generator()` plugin chain end-to-end never verified**
+
+The factory was unit-tested with `test_register_custom_generator`, but
+no test exercised the full chain: register → available → get → name →
+generate → return value shape. A plugin author reading the code might
+miss subtle interface requirements.
+
+**Fix** (`test_output/test_labels_real_corpus.py` new sub-tests):
+- `test_cli_abc_three_generators_actually_implement` — instantiates all
+  3 built-in generators, asserts no `NotImplementedError` on `generate()`.
+- `test_cli_register_custom_generator_end_to_end` — defines a one-off
+  `_TestGen`, registers it, fetches via factory, verifies name() +
+  generate() return value matches topics.json schema.
+
+**Test infrastructure fix — subprocess cache isolation**
+
+When `test_labels_real_corpus.py` ran as a subprocess inside
+`test_full_regression.py`'s Section A8, **after** A7's
+`test_labels_e2e.py`, it failed with
+`AssertionError: Artifact of type=precompile already registered in
+mega-cache artifact factory`. Root cause: torch's `_inductor` cache
+(`~/.cache/torch/`) is shared by all subprocesses in the same parent
+process; the second subprocess that imports torch trips the registry
+collision.
+
+**Fix** (`_run_cli()` in `test_labels_real_corpus.py`):
+- Each subprocess now gets a unique `TMPDIR`, `TORCH_HOME`,
+  `TORCHINDUCTOR_CACHE_DIR`, `XDG_CACHE_HOME`, plus
+  `TORCHDYNAMO_DISABLE=1` and `TORCH_COMPILE_DISABLE=1` to skip torch's
+  precompile machinery entirely. Cache collision impossible.
+- Side benefit: parallel test runs (if user adds `pytest-xdist` later)
+  also won't collide.
+
+**Verification** (user's `G:\Minmax - workspace\课件\ch1-econ-ppt\`,
+9 MD/TXT files):
+
+| Test | Result |
+|---|---|
+| `pa review-topics --label-method handroll --custom-labels '{"1":"PPT 设计文档","2":"PPT 内容来源"}'` | rc=0; Topic 1 = "PPT 设计文档", Topic 2 = "PPT 内容来源" |
+| `pa review-topics --label-method handroll --domain-stopwords-file test_output/fixtures/domain_stopwords_for_test.txt` | rc=0; `domain_stopwords_count = 9` (file content), NOT 20 (auto-mine) |
+| `pa review-topics --label-method ctfidf` (user's blocked-HF network) | rc=0 in ~85s; warning `bertopic_failed_fallback_to_handroll:TimeoutError:...`; falls back to handroll, `domain_stopwords_count = 20` |
+| `CTFIDFLabelGenerator(custom_labels={1:"X"}).generate(topics=...)` | Returns topics with label overridden; no exception |
+| `register_label_generator("test_v383_plugin", _TestGen); get_label_generator("test_v383_plugin")` | Returns _TestGen instance; generate() returns topics list |
+
+**Tests passing**:
+- `test_labels_e2e.py`: 23/23 PASS (unchanged — fix didn't break unit tests)
+- `test_labels_real_corpus.py`: **9/9 PASS** (up from 4/4 in v3.8.2; +5 new
+  CLI subprocess tests)
+- `test_full_regression.py`: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE
+  (with `PA_TEST_REAL_CORPUS=1` — A8 contributes 9 PASS, A6+A7 unchanged)
+
+**Effort**:
+- Estimate: ~1.5h (4 issues + test infrastructure)
+- Actual: ~1h (mostly straightforward; the `assertRegex` signature bug
+  ate ~10min; subprocess cache isolation ~15min)
+
+**5-check audit against Global Rule**: 5/5 pass (no $ cost, no hosted
+service, ~150 lines added to `topics.py` + `labels/ctfidf.py` +
+`labels/handroll.py` + test fixture, no publish obligation, free-tier
+degradation graceful — when HF blocked, 60s timeout + clear warning
+instead of 5min silent hang).
+
+---
+
 ## [3.7.1] - 2026-07-04 (cleanup commit)
 
 ### Deprecated — [P2-1] / [P2-2] / [P2-3] (user review)
