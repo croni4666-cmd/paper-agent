@@ -1,13 +1,20 @@
 """
-pa_cli.review — synthesize lit review section from a corpus of PDFs.
+pa_cli.review — synthesize lit review section from a corpus of papers.
 
 Pipeline:
-  1. Extract text from each PDF in corpus_dir using PyMuPDF
-  2. Classify each paper (full-text vs abstract-only based on word count)
-  3. Build standardized metadata block (authors, year, DOI, venue)
-  4. Generate lit review markdown following the v3.2 template
+  1. Walk corpus_dir for *.pdf / *.md / *.txt (DOCX NOT supported — 2026-07-05)
+  2. Extract text:
+       - PDF: PyMuPDF
+       - MD / TXT: read as UTF-8 (with BOM / encoding-error fallback)
+  3. Classify each paper (full-text vs abstract-only based on word count)
+  4. Build standardized metadata block (authors, year, DOI, venue)
+  5. Generate lit review markdown following the v3.2 template
 
 Output is a markdown file structured for direct use in academic lit review.
+
+[ P1-4 FORMAT-EXPANSION ] (2026-07-05): added MD + TXT readers per user request
+  (real corpus is 95% MD; previously only PDF was supported, which silently ignored
+  most files).
 """
 
 import json
@@ -23,7 +30,27 @@ except ImportError:
     HAS_PYMUPDF = False
 
 
-def extract_text(pdf_path: Path) -> Dict[str, Any]:
+# Supported file extensions for build_corpus_index
+SUPPORTED_EXTENSIONS = {".pdf", ".md", ".txt"}
+
+
+def extract_text(path: Path) -> Dict[str, Any]:
+    """Extract text from a paper file. Dispatches by extension.
+
+    Returns dict with: text (str), pages (int), error (str|None).
+    - .pdf → PyMuPDF
+    - .md / .txt → read as UTF-8 with fallback
+    - other → returns error="unsupported_extension"
+    """
+    ext = path.suffix.lower()
+    if ext == ".pdf":
+        return _extract_text_pdf(path)
+    if ext in (".md", ".txt"):
+        return _extract_text_plain(path)
+    return {"text": "", "pages": 0, "error": f"unsupported_extension:{ext}"}
+
+
+def _extract_text_pdf(pdf_path: Path) -> Dict[str, Any]:
     """Extract text from a PDF using PyMuPDF."""
     if not HAS_PYMUPDF:
         return {"text": "", "pages": 0, "error": "pymupdf-not-installed"}
@@ -38,9 +65,29 @@ def extract_text(pdf_path: Path) -> Dict[str, Any]:
         return {"text": "", "pages": 0, "error": str(e)[:200]}
 
 
+def _extract_text_plain(path: Path) -> Dict[str, Any]:
+    """Read a plain-text file (MD or TXT) as UTF-8 with fallback.
+
+    - Tries UTF-8 first
+    - Falls back to UTF-8 with BOM
+    - Falls back to GBK (Chinese Windows files often saved as GBK)
+    - On total failure returns error message
+    """
+    encodings = ["utf-8-sig", "utf-8", "gbk", "latin-1"]
+    for enc in encodings:
+        try:
+            text = path.read_text(encoding=enc)
+            return {"text": text, "pages": 1, "error": None}
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+        except Exception as e:
+            return {"text": "", "pages": 0, "error": f"read_error:{type(e).__name__}:{str(e)[:200]}"}
+    return {"text": "", "pages": 0, "error": "decode_failed_all_encodings"}
+
+
 def parse_pdf_metadata(pdf_path: Path) -> Dict[str, str]:
     """Extract Title/Author/Subject from PDF metadata block."""
-    if not HAS_PYMUPDF:
+    if pdf_path.suffix.lower() != ".pdf" or not HAS_PYMUPDF:
         return {}
     try:
         doc = fitz.open(str(pdf_path))
@@ -58,25 +105,53 @@ def parse_pdf_metadata(pdf_path: Path) -> Dict[str, str]:
 
 
 def build_corpus_index(corpus_dir: Path, word_count_min: int = 1000) -> List[Dict[str, Any]]:
-    """Walk corpus_dir, extract text from each PDF, classify full-text vs abstract-only."""
+    """Walk corpus_dir, extract text from each paper file (PDF / MD / TXT).
+
+    DOCX is NOT supported (user explicitly opted out 2026-07-05 to keep deps minimal).
+    """
     papers = []
-    for pdf in sorted(corpus_dir.glob("*.pdf")):
-        meta = parse_pdf_metadata(pdf)
-        text_data = extract_text(pdf)
+    # Glob all supported extensions, dedupe by filename
+    seen: set = set()
+    files: List[Path] = []
+    for ext in SUPPORTED_EXTENSIONS:
+        for f in sorted(corpus_dir.glob(f"*{ext}")):
+            if f.name not in seen:
+                seen.add(f.name)
+                files.append(f)
+    files.sort()  # stable order across extensions
+
+    for f in files:
+        ext = f.suffix.lower()
+        meta = parse_pdf_metadata(f) if ext == ".pdf" else {}
+        text_data = extract_text(f)
         word_count = len(text_data["text"].split()) if text_data["text"] else 0
         # Extract DOI from filename or text
         doi = ""
-        m = re.search(r'10\.\d{4,9}/[^\s"]+', pdf.name)
+        m = re.search(r'10\.\d{4,9}/[^\s"]+', f.name)
         if m:
             doi = m.group(0).rstrip("._-")
         elif text_data["text"]:
             m2 = re.search(r'(10\.\d{4,9}/[^\s,;]+)', text_data["text"][:5000])
             if m2:
                 doi = m2.group(1).rstrip(".,;)")
+        # For MD/TXT: try to extract title from first H1 (# ...)
+        title = meta.get("title", "")
+        if not title and ext in (".md", ".txt"):
+            first_lines = text_data["text"].splitlines()[:5]
+            for line in first_lines:
+                line = line.strip()
+                if line.startswith("# "):
+                    title = line[2:].strip()
+                    break
+            if not title:
+                title = f.stem.replace("_", " ").replace("-", " ")
+        elif not title:
+            title = f.stem.replace("_", " ")
         papers.append({
-            "path": str(pdf),
-            "filename": pdf.name,
-            "title": meta.get("title", "") or pdf.stem.replace("_", " "),
+            "path": str(f),
+            "filename": f.name,
+            "extension": ext,
+            "title": title,
             "author": meta.get("author", ""),
             "subject": meta.get("subject", ""),
             "doi": doi,
