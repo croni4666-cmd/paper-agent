@@ -1879,8 +1879,10 @@ User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将
 
 ### [P0-8] Full-text deep rerank layer (post-download, PaSa-inspired)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
 - **Priority**: P0
 - **Layer**: 6 (Download) + 7 (Full-text deep rerank)
 - **Source**: User request 2026-07-13 — "由于你说你没有办法读全文,我考虑到读全文需要人工下载,因此可以设置额外一个Layer,前面的Layer 先筛选出来最优的论文,然后尝试下载,把不能下载的给我,我来人工下载。之前整合的下载方法也可以应用到这层,然后再重新跑"
@@ -1924,3 +1926,23 @@ User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将
   - manual download 失败 list 的格式 (纯 DOI list vs 表格带 title)
   - 是否要支持"半自动"模式(下载成功 5/10,剩下 5 用户决定要不要人工)
 - **GitHub reference**: 无直接对应。Pattern 灵感来自 PaSa 的"读完再判 relevance"循环 + OpenScholar 的"full-text-aware rerank"
+
+#### **BLOCKED pending user input** (recorded 2026-07-13):
+
+**Q026-Q050: 25 more labeled queries from user.**
+- User said 2026-07-13: "我需要时间提交，等明天给你"
+- 25 → 50 queries would unblock re-running:
+  - LTR ([P0-6]) with proper n=50 sample size
+  - MoE router ([P1-11]) with class diversity (openalex currently 96%)
+  - Cross-encoder ([P0-7]) with statistical significance test
+- Currently n=25 is the bottleneck for all 3 items being "verified on real data" but "metric magnitude is noise"
+
+**Manual PDF downloads for [P0-8] full-text deep rerank**:
+- 8-channel cascade cannot fetch all papers (publisher paywalls, Cloudflare, etc.)
+- User agreed to manually download PDFs that auto-cascade misses
+- Re-run `pa deep-rerank --user-pdf-dir <path>` after manual download to combine auto + manual
+- See [P0-8] "User confirmation needed" for the manual download workflow
+
+---
+
+#### 2026-07-13 status: [P0-6] LTR, [P0-7] Cross-encoder, [P1-11] MoE router SHIPPED

@@ -1,0 +1,175 @@
+{
+  "auto_downloaded": [
+    {
+      "qid": "q001",
+      "doi": "10.58631/injurity.v2i3.52",
+      "title": "Role of AI in Education",
+      "saved_as": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_58631_injurity_v2i3_52.pdf",
+      "via_channel": "openalex",
+      "size_bytes": 407391
+    },
+    {
+      "qid": "q001",
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "Impact of AI assistance on student agency",
+      "saved_as": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_1016_j_compedu_2023_104967.pdf",
+      "via_channel": "openalex",
+      "size_bytes": 6469197
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1007/978-3-030-01177-2_12",
+      "title": "Legal Document Retrieval using Document Vector Embeddings and Deep Learning",
+      "saved_as": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1007_978-3-030-01177-2_12.pdf",
+      "via_channel": "openalex",
+      "size_bytes": 2431176
+    },
+    {
+      "qid": "q003",
+      "doi": "10.18653/v1/2021.naacl-main.241",
+      "title": "COIL: Revisit Exact Lexical Match in Information Retrieval with Contextualized Inverted List",
+      "saved_as": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_18653_v1_2021_naacl-main_241.pdf",
+      "via_channel": "openalex",
+      "size_bytes": 696244
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1109/cvpr.2009.5206529",
+      "title": "Efficient representation of local geometry for large scale object retrieval",
+      "saved_as": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1109_cvpr_2009_5206529.pdf",
+      "via_channel": "openalex",
+      "size_bytes": 1104182
+    }
+  ],
+  "manual_needed": [
+    {
+      "qid": "q001",
+      "doi": "10.1186/s41239-021-00292-9",
+      "title": "The impact of artificial intelligence on learner–instructor interaction in online learning",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q001",
+      "doi": "10.1001/jamanetworkopen.2021.49008",
+      "title": "Effect of Artificial Intelligence Tutoring vs Expert Instruction on Learning Simulated Surgical Skills Among Medical Stu",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q001",
+      "doi": "10.3390/su151612451",
+      "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1093/oxrep/graa051",
+      "title": "Do technological advances reduce the gender wage gap?",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1016/j.jebo.2020.07.014",
+      "title": "Robots, computers, and the gender wage gap",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1111/j.1467-9914.2007.00378.x",
+      "title": "The Gender Wage Gap in the Turkish Labor Market",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q002",
+      "doi": "10.5089/9781498303743.001",
+      "title": "Is Technology Widening the Gender Gap? Automation and the Future of Female Employment",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1037/e686432011-001",
+      "title": "Separate and Not Equal? Gender Segregation in the Labor Market and the Gender Wage Gap",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1145/3488560.3498443",
+      "title": "Learning Discrete Representations via Constrained Clustering for Effective and Efficient Dense Retrieval",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1109/icdar.2013.114",
+      "title": "Writer Identification and Writer Retrieval Using the Fisher Vector on Visual Vocabularies",
+      "reason": "paper-agent v4: all channels exhausted",
+      "channels_tried": [
+        "openalex",
+        "arxiv",
+        "unpaywall",
+        "doi_redirect"
+      ]
+    }
+  ],
+  "manual_downloads_md_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_downloads_20260713_170509.md",
+  "summary": {
+    "n_queries": 3,
+    "top_k_per_query": 5,
+    "n_total_candidates": 15,
+    "n_auto_downloaded": 5,
+    "n_manual_needed": 10,
+    "auto_pct": 33.3
+  }
+}
