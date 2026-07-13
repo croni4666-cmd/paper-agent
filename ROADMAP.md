@@ -1836,8 +1836,10 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 
 ### [P2-6] PaSa-lite (rule-based, no LLM)
 
-- **Status**: proposed (partial)
+- **Status**: done
 - **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
 - **Priority**: P2
 - **Layer**: 2 (Recall enhancement)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)

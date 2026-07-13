@@ -1,0 +1,765 @@
+[
+  {
+    "query": "AI tutoring systems and their effect on K-12 student learning outcomes",
+    "variants": [
+      "original",
+      "synonym",
+      "prf"
+    ],
+    "candidate_pool_size": 136,
+    "citation_walk_added": 0,
+    "final_results": [
+      {
+        "doi": "10.1016/j.lindif.2023.102274",
+        "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+        "authors": [
+          "Enkelejda Kasneci",
+          "Kathrin Seßler",
+          "Stefan Küchemann",
+          "Maria Bannert",
+          "Daryna Dementieva",
+          "Frank Fischer",
+          "Urs Gasser",
+          "Georg Groh",
+          "Stephan Günnemann",
+          "Eyke Hüllermeier",
+          "Stephan Krusche",
+          "Gitta Kutyniok",
+          "Tilman Michaeli",
+          "Claudia Nerdel",
+          "Jürgen Pfeffer",
+          "Oleksandra Poquet",
+          "Michael Sailer",
+          "Albrecht Schmidt",
+          "Tina Seidel",
+          "Matthias Stadler",
+          "J. Weller",
+          "Jochen Kühn",
+          "Gjergji Kasneci"
+        ],
+        "venue": "Learning and Individual Differences",
+        "year": 2023,
+        "cited_by_count": 5344,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://epub.ub.uni-muenchen.de/125071/1/ChatGPT_for_Good_v3.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1186/s41039-017-0062-8",
+        "title": "Exploring the impact of artificial intelligence on teaching and learning in higher education",
+        "authors": [
+          "Ştefan Popenici",
+          "Sharon Kerr"
+        ],
+        "venue": "Research and Practice in Technology Enhanced Learning",
+        "year": 2017,
+        "cited_by_count": 1791,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://telrp.springeropen.com/track/pdf/10.1186/s41039-017-0062-8",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1111/j.1551-6709.2012.01245.x",
+        "title": "The Knowledge‐Learning‐Instruction Framework: Bridging the Science‐Practice Chasm to Enhance Robust Student Learning",
+        "authors": [
+          "Kenneth R. Koedinger",
+          "Albert T. Corbett",
+          "Charles A. Perfetti"
+        ],
+        "venue": "Cognitive Science",
+        "year": 2012,
+        "cited_by_count": 737,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://figshare.com/articles/The_knowledge-learning-instruction_framework_bridging_the_science-practice_chasm_to_enhance_robust_student_learning_/6470522",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1186/s41239-021-00292-9",
+        "title": "The impact of artificial intelligence on learner–instructor interaction in online learning",
+        "authors": [
+          "Kyoungwon Seo",
+          "Joice Tang",
+          "Ido Roll",
+          "Sidney Fels",
+          "Dongwook Yoon"
+        ],
+        "venue": "International Journal of Educational Technology in Higher Education",
+        "year": 2021,
+        "cited_by_count": 715,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educationaltechnologyjournal.springeropen.com/track/pdf/10.1186/s41239-021-00292-9",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.3389/fpsyg.2023.1260843",
+        "title": "Enhancing academic writing skills and motivation: assessing the efficacy of ChatGPT in AI-assisted language learning for EFL students",
+        "authors": [
+          "Cuiping Song",
+          "Yanping Song"
+        ],
+        "venue": "Frontiers in Psychology",
+        "year": 2023,
+        "cited_by_count": 579,
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1260843/pdf?isPublishedV2=False",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1186/s41039-018-0078-8",
+        "title": "Students’ perception of Kahoot!’s influence on teaching and learning",
+        "authors": [
+          "Sherlock A. Licorish",
+          "Helen Owen",
+          "Ben Kei Daniel",
+          "Jade Li George"
+        ],
+        "venue": "Research and Practice in Technology Enhanced Learning",
+        "year": 2018,
+        "cited_by_count": 510,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://telrp.springeropen.com/counter/pdf/10.1186/s41039-018-0078-8",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1111/bjet.13334",
+        "title": "Do <scp>AI</scp> chatbots improve students learning outcomes? Evidence from a meta‐analysis",
+        "authors": [
+          "Rong Wu",
+          "Zhonggen Yu"
+        ],
+        "venue": "British Journal of Educational Technology",
+        "year": 2023,
+        "cited_by_count": 484,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjet.13334",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1186/s41239-023-00425-2",
+        "title": "AI-generated feedback on writing: insights into efficacy and ENL student preference",
+        "authors": [
+          "Juan Escalante",
+          "Austin Pack",
+          "Alex Barrett"
+        ],
+        "venue": "International Journal of Educational Technology in Higher Education",
+        "year": 2023,
+        "cited_by_count": 476,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00425-2",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1016/j.compedu.2023.104967",
+        "title": "Impact of AI assistance on student agency",
+        "authors": [
+          "Ali Darvishi",
+          "Hassan Khosravi",
+          "Shazia Sadiq",
+          "Dragan Gašević",
+          "George Siemens"
+        ],
+        "venue": "Computers & Education",
+        "year": 2023,
+        "cited_by_count": 398,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.compedu.2023.104967",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1001/jamanetworkopen.2021.49008",
+        "title": "Effect of Artificial Intelligence Tutoring vs Expert Instruction on Learning Simulated Surgical Skills Among Medical Students",
+        "authors": [
+          "Ali M. Fazlollahi",
+          "Mohamad Bakhaidar",
+          "Ahmad Alsayegh",
+          "Recai Yilmaz",
+          "Alexander Winkler-Schwartz",
+          "Nykan Mirchi",
+          "Ian Langleben",
+          "Nicole Ledwos",
+          "Abdulrahman J. Sabbagh",
+          "Khalid Bajunaid",
+          "Jason M. Harley",
+          "Rolando F. Del Maestro"
+        ],
+        "venue": "JAMA Network Open",
+        "year": 2022,
+        "cited_by_count": 256,
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2789268/fazlollahi_2022_oi_211346_1644628736.68454.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      }
+    ],
+    "qid": "q001",
+    "n_variants_generated": 3
+  },
+  {
+    "query": "automation impact on labor market gender wage gap",
+    "variants": [
+      "original",
+      "prf"
+    ],
+    "candidate_pool_size": 68,
+    "citation_walk_added": 0,
+    "final_results": [
+      {
+        "doi": "10.1257/aer.103.6.2121",
+        "title": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+        "authors": [
+          "David Autor",
+          "David Dorn",
+          "Gordon Hanson"
+        ],
+        "venue": "American Economic Review",
+        "year": 2013,
+        "cited_by_count": 4352,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.103.6.2121",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1257/jep.33.2.3",
+        "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+        "authors": [
+          "Daron Acemoğlu",
+          "Pascual Restrepo"
+        ],
+        "venue": "The Journal of Economic Perspectives",
+        "year": 2019,
+        "cited_by_count": 2212,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1093/qje/qjx022",
+        "title": "The Growing Importance of Social Skills in the Labor Market*",
+        "authors": [
+          "David Deming"
+        ],
+        "venue": "The Quarterly Journal of Economics",
+        "year": 2017,
+        "cited_by_count": 1620,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/qje/article-pdf/132/4/1593/30637898/qjx022.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1111/apps.12241",
+        "title": "Automation, Algorithms, and Beyond: Why Work Design Matters More Than Ever in a Digital World",
+        "authors": [
+          "Sharon K. Parker",
+          "Gudela Grote"
+        ],
+        "venue": "Applied Psychology",
+        "year": 2019,
+        "cited_by_count": 788,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/apps.12241",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.3390/econometrics6020028",
+        "title": "Decomposing Wage Distributions Using Recentered Influence Function Regressions",
+        "authors": [
+          "Sérgio Firpo",
+          "Nicole M. Fortin",
+          "Thomas Lemieux"
+        ],
+        "venue": "Econometrics",
+        "year": 2018,
+        "cited_by_count": 638,
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2225-1146/6/2/28/pdf?version=1527493602",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1093/jeea/jvab012",
+        "title": "The Adjustment of Labor Markets to Robots",
+        "authors": [
+          "Wolfgang Dauth",
+          "Sebastian Findeisen",
+          "Jens Suedekum",
+          "Nicole Woessner"
+        ],
+        "venue": "Journal of the European Economic Association",
+        "year": 2021,
+        "cited_by_count": 519,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://kops.uni-konstanz.de/server/api/core/bitstreams/1db5d40b-7c39-496f-b543-a8c3afe19f69/content",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1257/aeri.20180010",
+        "title": "When Work Disappears: Manufacturing Decline and the Falling Marriage Market Value of Young Men",
+        "authors": [
+          "David Autor",
+          "David Dorn",
+          "Gordon Hanson"
+        ],
+        "venue": "American Economic Review Insights",
+        "year": 2019,
+        "cited_by_count": 478,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aeri.20180010",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1162/rest_a_00234",
+        "title": "Spillovers from High-Skill Consumption to Low-Skill Labor Markets",
+        "authors": [
+          "Francesca Mazzolari",
+          "Giuseppe Ragusa"
+        ],
+        "venue": "The Review of Economics and Statistics",
+        "year": 2011,
+        "cited_by_count": 230,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arpi.unipi.it/bitstream/11568/958556/2/REST_a_00234.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1108/jebde-10-2023-0021",
+        "title": "Economics of ChatGPT: a labor market view on the occupational impact of artificial intelligence",
+        "authors": [
+          "Ali Zarifhonarvar"
+        ],
+        "venue": "Journal of Electronic Business & Digital Economics",
+        "year": 2023,
+        "cited_by_count": 157,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JEBDE-10-2023-0021/full/pdf?title=economics-of-chatgpt-a-labor-market-view-on-the-occupational-impact-of-artificial-intelligence",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1016/j.jebo.2020.07.014",
+        "title": "Robots, computers, and the gender wage gap",
+        "authors": [
+          "Suqin Ge",
+          "Yu Zhou"
+        ],
+        "venue": "Journal of Economic Behavior & Organization",
+        "year": 2020,
+        "cited_by_count": 67,
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      }
+    ],
+    "qid": "q002",
+    "n_variants_generated": 2
+  },
+  {
+    "query": "vector quantized representations for document retrieval",
+    "variants": [
+      "original",
+      "prf"
+    ],
+    "candidate_pool_size": 77,
+    "citation_walk_added": 0,
+    "final_results": [
+      {
+        "doi": "10.1038/s41592-019-0686-2",
+        "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+        "authors": [
+          "Pauli Virtanen",
+          "Ralf Gommers",
+          "Travis E. Oliphant",
+          "Matt Haberland",
+          "Tyler Reddy",
+          "David Cournapeau",
+          "Evgeni Burovski",
+          "Pearu Peterson",
+          "Warren Weckesser",
+          "Jonathan Bright",
+          "Stéfan J. van der Walt",
+          "Matthew Brett",
+          "Joshua Wilson",
+          "K. Jarrod Millman",
+          "Nikolay Mayorov",
+          "Andrew R. J. Nelson",
+          "Eric Jones",
+          "Robert Kern",
+          "Eric Larson",
+          "C J Carey",
+          "İlhan Polat",
+          "Yu Feng",
+          "Eric W. Moore",
+          "Jake VanderPlas",
+          "Denis Laxalde",
+          "Josef Perktold",
+          "Robert Cimrman",
+          "Ian Henriksen",
+          "E. A. Quintero",
+          "Charles R. Harris",
+          "Anne M. Archibald",
+          "Antônio H. Ribeiro",
+          "Fabian Pedregosa",
+          "Paul van Mulbregt",
+          "SciPy 1.0 Contributors",
+          "Aditya Vijaykumar",
+          "Alessandro Pietro Bardelli",
+          "Alex Rothberg",
+          "Andreas Hilboll",
+          "Andreas Kloeckner",
+          "Anthony Scopatz",
+          "Antony Lee",
+          "Ariel Rokem",
+          "C. Nathan Woods",
+          "Chad Fulton",
+          "Charles Masson",
+          "Christian Häggström",
+          "Clark Fitzgerald",
+          "David A. Nicholson",
+          "David R. Hagen",
+          "Dmitrii V. Pasechnik",
+          "Emanuele Olivetti",
+          "Eric Martin",
+          "Eric Wieser",
+          "Fabrice Silva",
+          "Felix Lenders",
+          "Florian Wilhelm",
+          "G. Young",
+          "Gavin A. Price",
+          "Gert-Ludwig Ingold",
+          "Gregory E. Allen",
+          "Gregory R. Lee",
+          "Hervé Audren",
+          "Irvin Probst",
+          "Jörg P. Dietrich",
+          "Jacob Silterra",
+          "James T Webber",
+          "Janko Slavič",
+          "Joel Nothman",
+          "Johannes Buchner",
+          "Johannes Kulick",
+          "Johannes L. Schönberger",
+          "José Vinícius de Miranda Cardoso",
+          "Joscha Reimer",
+          "Joseph Harrington",
+          "Juan Luis Cano Rodríguez",
+          "Juan Nunez-Iglesias",
+          "Justin Kuczynski",
+          "Kevin Tritz",
+          "Martin Thoma",
+          "Matthew Newville",
+          "Matthias Kümmerer",
+          "Maximilian Bolingbroke",
+          "Michael Tartre",
+          "Mikhail Pak",
+          "Nathaniel J. Smith",
+          "Nikolai Nowaczyk",
+          "Nikolay Shebanov",
+          "Oleksandr Pavlyk",
+          "Per A. Brodtkorb",
+          "Perry Lee",
+          "Robert T. McGibbon",
+          "Roman Feldbauer",
+          "Sam Lewis",
+          "Sam Tygier",
+          "Scott Sievert",
+          "Sebastiano Vigna",
+          "Stefan Peterson",
+          "Surhud More",
+          "Tadeusz Pudlik"
+        ],
+        "venue": "Nature Methods",
+        "year": 2020,
+        "cited_by_count": 38325,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1038/s41592-019-0686-2",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1016/j.neucom.2019.10.118",
+        "title": "A comprehensive survey on support vector machine classification: Applications, challenges and trends",
+        "authors": [
+          "Jair Cervantes",
+          "Farid García‐Lamont",
+          "Lisbeth Rodríguez-Mazahua",
+          "Asdrúbal López‐Chau"
+        ],
+        "venue": "Neurocomputing",
+        "year": 2020,
+        "cited_by_count": 2291,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0925231220307153",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1006/jvci.1999.0413",
+        "title": "Image Retrieval: Current Techniques, Promising Directions, and Open Issues",
+        "authors": [
+          "Yong Rui",
+          "Thomas S. Huang",
+          "Shih‐Fu Chang"
+        ],
+        "venue": "Journal of Visual Communication and Image Representation",
+        "year": 1999,
+        "cited_by_count": 1594,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1047320399904133",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1609/aaai.v28i1.8952",
+        "title": "Supervised Hashing for Image Retrieval via Image Representation Learning",
+        "authors": [
+          "Rongkai Xia",
+          "Yan Pan",
+          "Hanjiang Lai",
+          "Cong Liu",
+          "Shuicheng Yan"
+        ],
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "year": 2014,
+        "cited_by_count": 1007,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/8952/8811",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1609/aaai.v31i1.10958",
+        "title": "SummaRuNNer: A Recurrent Neural Network Based Sequence Model for Extractive Summarization of Documents",
+        "authors": [
+          "Ramesh Nallapati",
+          "Feifei Zhai",
+          "Bowen Zhou"
+        ],
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "year": 2017,
+        "cited_by_count": 959,
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/10958/10817",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1109/cvpr42600.2020.00877",
+        "title": "ActBERT: Learning Global-Local Video-Text Representations",
+        "authors": [
+          "Linchao Zhu",
+          "Yi Yang"
+        ],
+        "venue": "",
+        "year": 2020,
+        "cited_by_count": 408,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://opus.lib.uts.edu.au/bitstream/10453/146933/3/2-s2.0-85094561261%20am.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1109/cvpr.2009.5206529",
+        "title": "Efficient representation of local geometry for large scale object retrieval",
+        "authors": [
+          "Michal Perďoch",
+          "Ondřej Chum",
+          "Jiřı́ Matas"
+        ],
+        "venue": "2009 IEEE Conference on Computer Vision and Pattern Recognition",
+        "year": 2009,
+        "cited_by_count": 265,
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.cvut.cz/bitstream/handle/10467/9548/2009-Efficient-representation-of-local-geometry-for-large-scale-object-retrieval.pdf?sequence=1&isAllowed=y",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1007/s10916-016-0659-2",
+        "title": "Medical Image Retrieval Using Vector Quantization and Fuzzy S-tree",
+        "authors": [
+          "Jana Nowaková",
+          "Michal Prílepok",
+          "Václav Snåšel"
+        ],
+        "venue": "Journal of Medical Systems",
+        "year": 2016,
+        "cited_by_count": 80,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs10916-016-0659-2.pdf",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1145/3488560.3498443",
+        "title": "Learning Discrete Representations via Constrained Clustering for Effective and Efficient Dense Retrieval",
+        "authors": [
+          "Jingtao Zhan",
+          "Jiaxin Mao",
+          "Yiqun Liu",
+          "Jiafeng Guo",
+          "Min Zhang",
+          "Shaoping Ma"
+        ],
+        "venue": "Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining",
+        "year": 2022,
+        "cited_by_count": 60,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3488560.3498443",
+        "source": "openalex",
+        "type": "article",
+        "found_by": [
+          "openalex"
+        ]
+      },
+      {
+        "doi": "10.1007/s10791-012-9217-9",
+        "title": "Document vector representations for feature extraction in multi-stage document ranking",
+        "authors": [
+          "Asadi, Nima",
+          "Lin, Jimmy"
+        ],
+        "venue": "Information Retrieval",
+        "year": 2013,
+        "cited_by_count": 17,
+        "type": "journal-article",
+        "source": "crossref",
+        "abstract": "",
+        "found_by": [
+          "crossref"
+        ]
+      }
+    ],
+    "qid": "q003",
+    "n_variants_generated": 2
+  }
+]

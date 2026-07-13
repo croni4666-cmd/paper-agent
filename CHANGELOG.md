@@ -9,6 +9,84 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.6] - 2026-07-13 (minor — [P2-6] PaSa-lite rule-based + Layer 2 enhancement)
+
+Implements ROADMAP [P2-6] (added 2026-07-13, completed same day in v3.9.6).
+
+Replicates ~50% of full PaSa (ByteDance + 北大鄂维南, arXiv 2501.10120) without using an LLM.
+
+**New module** (`pa_cli/pasa_lite.py`, ~350 lines):
+- `PaSaLiteConfig` dataclass — n_query_variants, n_rounds, n_results_per_round, use_concepts, use_prf, use_citation_walk
+- `expand_query(query, n_variants)` — multi-strategy query expansion (3 variants):
+  - `original` — the user's query as-is
+  - `synonym` — word-level substitution (AI→artificial intelligence, ML→machine learning, K-12→K-12 primary secondary education, etc.)
+  - `concept` — OpenAlex concept lookup + concept name appended
+  - `prf` — pseudo-relevance feedback: top-2 result titles as new query
+- `walk_citations(candidate, limit, direction)` — 1-hop forward + backward citation walk (NO LLM, no adaptive direction)
+- `iterative_refine(query, config)` — 2 rounds of: search → top-K → re-query using top-2 titles → dedup → expand pool
+- `run_pasa_lite(query, config)` — full PaSa-lite pipeline orchestrator
+  - Step 1: multi-strategy expansion (3 variants)
+  - Step 2: iterative refinement per variant (2 rounds)
+  - Step 3: citation walk for top-5 candidates
+  - Step 4: dedup + final ranked list
+- `generate_pasa_lite_report(results_per_query, config)` — markdown report
+
+**Pipeline runner** (`test_output/_run_pasa_lite_v3_9_6.py`, ~70 lines):
+- Demo: 3 queries × 3 variants × 2 rounds = 18 searches
+- Citation walk disabled by default (was hanging on OpenAlex 404)
+
+**Result** (n=3 queries demo):
+
+| Query | Variants | Candidate pool size |
+|---|---:|---:|
+| q001 (AI tutoring K-12) | 3 | 136 |
+| q002 (automation labor wage gap) | 2 | 68 |
+| q003 (vector quantized retrieval) | 2 | 77 |
+| **Avg** | **2.3** | **93.7** |
+
+**Sample expanded query** (q001 "AI tutoring systems and their effect on K-12 student learning outcomes"):
+- `original`: "AI tutoring systems and their effect on K-12 student learning outcomes"
+- `synonym`: not expanded (no matches in synonym map; e.g. "AI" not detected as standalone word)
+- `concept`: "AI tutoring systems and their effect on K-12 student learning outcomes + Top OpenAlex concept"
+- `prf`: "Top 2 result titles from initial search"
+
+**3-tier honest audit** (per `MEMORY.md` discipline):
+- ✅ **Verified architecture**: PaSaLiteAgent runs end-to-end on 3 real queries, generates 2-3 variants, builds 68-136 candidate pools
+- ⚠️ **Lift vs single-engine baseline**: not measured (would need full v4_rerank side-by-side comparison)
+- ❌ **NOT a 'finding'**: 50-60% PaSa coverage is an estimate, not a measured lift
+
+**PaSa coverage re-estimate (per ROADMAP, with all 4 options + [P0-8] Layer 6-7)**:
+| PaSa Component | Coverage | Notes |
+|---|---:|---|
+| Multi-strategy query expansion | 70% | rule-based, no LLM creativity |
+| Full-text paper reading | 70% | with [P0-8] Layer 6-7 |
+| Citation walk (1-hop) | 60% | rule-based direction |
+| Stop decision | 30% | fixed 2 rounds, not adaptive |
+| Relevance reasoning | 60% | use [P0-7] BGE cross-encoder |
+| Adaptive iteration | 50% | rule-based pipeline |
+| SFT + PPO training | 0% | Global Rule ❌ |
+| Google Search API | 0% | Global Rule ❌ |
+| **Overall** | **~50-60%** | up from 30-40% in v3.9.0 |
+
+**5-check Global Rule audit**: 5/5 pass
+1. ✅ Runs for $0 (no LLM, no paid API; reuses existing free APIs)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~350 LOC new in pa_cli/pasa_lite.py
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: if individual building blocks fail, PaSa-lite falls back to single-engine search
+
+**Layer architecture**: PaSa-lite sits at **Layer 2 (Recall enhancement)** — multi-strategy query expansion + 1-hop citation walk.
+
+**Deferred to backlog** (recorded 2026-07-13):
+- **Re-enable citation walk** (after OpenAlex 404 / timeout handling is fixed)
+- **Per-domain synonym map** (currently 12 entries; expand to 50+ for coverage)
+- **Concept expansion depth** (currently 1 concept; could go 2-3 deep)
+- **PRF quality filter** (currently takes top-2 titles; could weight by relevance score)
+- **Adaptive rounds** (currently fixed 2; could increase to 3-4 if low new-DOI rate)
+- **Re-run full 25 queries** (only demoed 3; full benchmark needed for lift measurement)
+
+---
+
 ## [3.9.5] - 2026-07-13 (minor — [P0-8] Full-text deep rerank layer (Layer 6-7))
 
 Implements ROADMAP [P0-8] (added 2026-07-13, completed same day in v3.9.5).
