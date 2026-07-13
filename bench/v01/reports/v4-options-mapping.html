@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4 方案 真实实现 vs 替代实现 映射图 · paper-agent v4 评估</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --line: #e9e3d6;
+    --line-soft: #f0ebde;
+    --ink: #14171e;
+    --ink-soft: #3a4256;
+    --muted: #7c7a72;
+    --primary: #2f6f5e;        /* 真实实现 — 茶绿 */
+    --primary-soft: rgba(47,111,94,0.08);
+    --primary-line: rgba(47,111,94,0.28);
+    --warm: #c97b3f;           /* 替代实现 — 赤陶 */
+    --warm-soft: rgba(201,123,63,0.08);
+    --warm-line: rgba(201,123,63,0.28);
+    --gap: #b06367;            /* 差距 — 玫瑰 */
+    --gap-soft: rgba(176,99,103,0.06);
+    --gap-line: rgba(176,99,103,0.22);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Outfit', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse 800px 600px at 100% 0%, rgba(47,111,94,0.05), transparent 60%),
+      radial-gradient(ellipse 800px 600px at 0% 100%, rgba(201,123,63,0.04), transparent 60%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--muted);
+  }
+  h1 {
+    font-family: 'DM Serif Display', 'STZhongsong', 'SimSun', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  h1 em { color: var(--primary); font-style: normal; }
+  .lede {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 0 28px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 32px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .meta b {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  /* ---------- Section ---------- */
+  .option { margin: 56px 0; }
+  .option-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .option-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--primary);
+    line-height: 1;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0;
+    color: var(--ink);
+  }
+  .option-tag {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ---------- Comparison grid ---------- */
+  .cmp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .cmp-side {
+    padding: 22px 24px 24px;
+    border-right: 1px solid var(--line-soft);
+  }
+  .cmp-side:last-child { border-right: 0; }
+
+  .side-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .side-head.real { color: var(--primary); }
+  .side-head.sub  { color: var(--warm); }
+  .side-head svg { flex-shrink: 0; }
+
+  .side-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .side-list li {
+    position: relative;
+    padding: 6px 0 6px 18px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .side-list li:last-child { border-bottom: 0; }
+  .side-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .cmp-side.real .side-list li::before { background: var(--primary); }
+  .cmp-side.sub  .side-list li::before { background: var(--warm); }
+
+  .side-list code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Gap box ---------- */
+  .gap {
+    margin-top: 16px;
+    padding: 18px 22px;
+    background: var(--gap-soft);
+    border: 1px dashed var(--gap-line);
+    border-radius: 12px;
+  }
+  .gap-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--gap);
+    margin-bottom: 10px;
+  }
+  .gap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .gap-list li {
+    position: relative;
+    padding: 4px 0 4px 18px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .gap-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--gap);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .gap-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--gap-line);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .gap-meta b { color: var(--ink-soft); font-weight: 500; }
+  .gap-meta .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    background: var(--card);
+    border: 1px solid var(--gap-line);
+    color: var(--gap);
+  }
+
+  /* ---------- Verdict table ---------- */
+  .verdict {
+    margin-top: 64px;
+    padding: 28px 32px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .verdict h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  th {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  tr:last-child td { border-bottom: 0; }
+  td.num { font-family: 'DM Serif Display', serif; color: var(--primary); width: 50px; font-size: 18px; }
+  td.yn { width: 110px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  td.yn.pass { color: var(--primary); }
+  td.yn.partial { color: var(--warm); }
+  td.eta, td.lift { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-soft); }
+  td .badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-go { background: var(--primary-soft); color: var(--primary); }
+  .badge-wait { background: var(--warm-soft); color: var(--warm); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .foot code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .page { padding: 32px 18px 56px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    .cmp { grid-template-columns: 1fr; }
+    .cmp-side { border-right: 0; border-bottom: 1px solid var(--line-soft); }
+    .cmp-side:last-child { border-bottom: 0; }
+    .option-head { flex-wrap: wrap; }
+    .option-tag { margin-left: 0; }
+    table { font-size: 12.5px; }
+    th, td { padding: 9px 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="eyebrow">paper-agent v4 评估方法 · 映射图</div>
+    <h1>4 方案 <em>真实实现</em> vs <em>替代实现</em> 一一对应</h1>
+    <p class="lede">
+      你问的 4 个 v4 评估选项(北大的 pa / MoE routing / Cross-encoder / LTR)——目前 paper-agent v3.9.0 / v3.9.1 用了什么、近似到什么程度、缺口在哪。这一张图全部对应清楚。
+    </p>
+    <div class="meta">
+      <span><b>项目</b> paper-agent</span>
+      <span><b>当前版本</b> v3.9.0 / v3.9.1</span>
+      <span><b>框架</b> 5 引擎检索 + 6 条件重排 + 1 个 ablation</span>
+      <span><b>基准</b> 25 queries × 30 candidates × 3 级标签</span>
+      <span><b>3.9x lift</b> 已 verified</span>
+    </div>
+  </header>
+
+  <!-- ============ OPTION 1: LTR ============ -->
+  <section class="option">
+    <div class="option-head">
+      <span class="option-num">1</span>
+      <h2>LTR (Learning to Rank)</h2>
+      <span class="option-tag">P0 · 1-2h · 5-10% lift</span>
+    </div>
+
+    <div class="cmp">
+      <!-- 真实实现 -->
+      <div class="cmp-side real">
+        <div class="side-head real">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          真实实现
+        </div>
+        <ul class="side-list">
+          <li>算法:<b>LambdaMART / LightGBM ranker</b>(gradient-boosted trees + pairwise rank loss)</li>
+          <li>训练目标:<code>objective=lambdarank</code>,优化 NDCG</li>
+          <li>8 维特征:BM25 / biencoder / combined / PRF / citation_count / year / is_recent / has_abstract</li>
+          <li>数据:25 queries × 30 candidates × 3-level labels = <b>3,725 labeled pairs</b></li>
+          <li>5-fold CV,per-query group(candidates of same query 必须在同一 fold)</li>
+          <li>库:lightgbm(pure local,$0)</li>
+          <li>参考:<code>AkariAsai/OpenScholar</code> 用了同样的 LightGBM 风格 rerank</li>
+        </ul>
+      </div>
+      <!-- 替代实现 -->
+      <div class="cmp-side sub">
+        <div class="side-head sub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          替代实现 (v3.9.0)
+        </div>
+        <ul class="side-list">
+          <li><code>combined = 0.5 × BM25 + 0.5 × biencoder</code></li>
+          <li>固定线性加权,没有学习</li>
+          <li>权重 0.5/0.5 是拍脑袋定的(没有数据驱动)</li>
+          <li>不能识别"BM25 高 + biencoder 低 vs BM25 低 + biencoder 高 哪个更相关"</li>
+          <li>6 条件之一,跟 bm25 / biencoder / prf / random / original 并列</li>
+          <li>来自 <code>bench/v01/_v4_rerank.py</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gap">
+      <div class="gap-head">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        差距 / 估时
+      </div>
+      <ul class="gap-list">
+        <li>不能 capture feature 之间的非线性交互</li>
+        <li>权重手动调,无数据驱动</li>
+        <li>不能 learn 不同 query type 应用不同 feature weight</li>
+      </ul>
+      <div class="gap-meta">
+        <span class="pill">1-2h</span>
+        <span>修复路径 → <b>[P0-6] LambdaMART</b>, 加 200 LOC <code>pa_cli/ltr.py</code> + 5-fold CV 报告</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 2: Cross-encoder ============ -->
+  <section class="option">
+    <div class="option-head">
+      <span class="option-num">2</span>
+      <h2>Cross-encoder reranker</h2>
+      <span class="option-tag">P0 · 2-3h · 5-15% lift</span>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-side real">
+        <div class="side-head real">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          真实实现
+        </div>
+        <ul class="side-list">
+          <li>模型:<b>BAAI/bge-reranker-base</b>(~278MB 单 .bin 文件,本地下载一次)</li>
+          <li>架构:query + candidate 拼接作为单一输入,transformer 内部 <b>L×L 注意力跨 token 交互</b></li>
+          <li>推理:batch (query, candidate) pair → relevance score ∈ [0, 1]</li>
+          <li>流程:bi-encoder top-30 → cross-encoder rerank top-30 → final ranking</li>
+          <li>库:<code>sentence-transformers.CrossEncoder</code>(HuggingFace)</li>
+          <li>参考:BGE-reranker 官方 repo, MIT, ~3k stars, IR 文献广泛引用</li>
+        </ul>
+      </div>
+      <div class="cmp-side sub">
+        <div class="side-head sub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          替代实现 (v3.9.0)
+        </div>
+        <ul class="side-list">
+          <li><b>Bi-encoder</b>:<code>SentenceTransformer('all-MiniLM-L6-v2')</code> 单独 embed query 和 candidate</li>
+          <li>cosine similarity 作为 score</li>
+          <li>query 和 candidate <b>没有任何 token 级别 attention</b></li>
+          <li>例:query "AI in higher ed" 和 candidate title "Generative AI in higher education: A systematic review" 的 token overlap 没用上</li>
+          <li>来自 <code>pa_cli/search.py</code> 的 <code>_embed_biencoder()</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gap">
+      <div class="gap-head">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        差距 / 估时
+      </div>
+      <ul class="gap-list">
+        <li>无 query-candidate 跨 token 注意力</li>
+        <li>bi-encoder 更快但精度低 5-15%(标准 IR 经验值)</li>
+        <li>不能 capture token-level semantic match(同义词 / 改写)</li>
+      </ul>
+      <div class="gap-meta">
+        <span class="pill">2-3h</span>
+        <span>修复路径 → <b>[P0-7] BGE-reranker</b>, 新增 <code>pa_cli/cross_encoder.py</code>(一次性下载 278MB 本地)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 3: MoE routing ============ -->
+  <section class="option">
+    <div class="option-head">
+      <span class="option-num">3</span>
+      <h2>MoE routing (for IR)</h2>
+      <span class="option-tag">P1 · 0.5-1d · 5-10% lift</span>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-side real">
+        <div class="side-head real">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          真实实现
+        </div>
+        <ul class="side-list">
+          <li><b>5 个 LGBMClassifier</b>(per-engine,Crossref / S2 / arxiv / OpenAlex / CORE 各一)</li>
+          <li>训练 label:per query,哪个 engine 贡献了最多 <code>label=2</code> 候选</li>
+          <li>特征:TF-IDF on query text(max 5000)+ query metadata(length / has-acronym / year constraint)</li>
+          <li>输出:per-(query, engine) weight ∈ [0, 1],sum = 1</li>
+          <li>应用:搜索时 per-engine weighted aggregation,而非 round-robin</li>
+          <li>库:sklearn + lightgbm,纯本地</li>
+          <li>参考:GitHub 无现成 IR-MoE 库,模式参考 OpenScholar + Mixture-of-Retrievers 论文</li>
+        </ul>
+      </div>
+      <div class="cmp-side sub">
+        <div class="side-head sub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          替代实现 (v3.9.0)
+        </div>
+        <ul class="side-list">
+          <li><b>"unweighted MoE"</b>:5-engine round-robin pool,固定顺序</li>
+          <li><code>min_per_source</code> interleaving,无 learned weights</li>
+          <li>每个 query 都走同样顺序:arXiv → OpenAlex → S2 → Crossref → CORE</li>
+          <li>无 query-type 感知,技术 CS/ML query 和引用图谱 query 都按同一顺序</li>
+          <li>来自 <code>pa_cli/search.py</code> 的 <code>_interleave_round_robin()</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gap">
+      <div class="gap-head">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        差距 / 估时
+      </div>
+      <ul class="gap-list">
+        <li>无 query-type 感知:技术 query 应该先 arxiv,引用图谱应该先 Crossref,OA 应该先 CORE</li>
+        <li>round-robin 浪费:technical query 拉了 OpenAlex 但前 5 命中都是 0</li>
+        <li>所有 query 都消耗同样 5-engine 查询预算</li>
+      </ul>
+      <div class="gap-meta">
+        <span class="pill">0.5-1d</span>
+        <span>修复路径 → <b>[P1-11] MoE router</b>, 新增 <code>pa_cli/moe_router.py</code>(routing labels 已有,从 v3.9.0 benchmark 提取)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPTION 4: PaSa-lite ============ -->
+  <section class="option">
+    <div class="option-head">
+      <span class="option-num">4</span>
+      <h2>PaSa-lite (北大的 pa)</h2>
+      <span class="option-tag">P2 · 1-2 周 · partial · 未知 lift</span>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-side real">
+        <div class="side-head real">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          真实实现
+        </div>
+        <ul class="side-list">
+          <li><b>Crawler agent</b>:7B LLM (Qwen2.5-7B),4 actions — search / read / expand / stop</li>
+          <li><b>Selector agent</b>:7B LLM,decision token + reasoning chain</li>
+          <li>训练:SFT(13,000 演示轨迹)+ PPO session-level,16 GPU 数周</li>
+          <li>外部依赖:Google Search API(<b>serper.dev, paid $</b>)+ arxiv/ar5iv</li>
+          <li>数据集:AutoScholarQuery(35k 合成 queries),RealScholarQuery benchmark</li>
+          <li>效果:优于 Google Scholar + GPT-4 paraphrased</li>
+          <li>来源:ByteDance Seed + 北大鄂维南, arXiv 2501.10120</li>
+        </ul>
+      </div>
+      <div class="cmp-side sub">
+        <div class="side-head sub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          替代实现 (v3.9.0, rule-based ~50%)
+        </div>
+        <ul class="side-list">
+          <li><b>Multi-strategy query expansion</b>:<code>pa search --concepts</code> (OpenAlex concept) + <code>--prf</code> (pseudo-relevance feedback) + <code>--expand</code> (synonym/related)</li>
+          <li><b>1-hop citation walk</b>:<code>pa citations &lt;DOI&gt; --direction forward</code>(已 shipped,<b>[P1-1]</b>)</li>
+          <li><b>Iterative refinement</b>:2-3 轮 "query → top-30 → re-query using top titles → dedup → rerank"(未实现)</li>
+          <li>无 LLM reasoning,无 adaptive stop decision</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gap">
+      <div class="gap-head">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        差距 / 估时
+      </div>
+      <ul class="gap-list">
+        <li>无 LLM 驱动的 query 改写(PaSa 的 "expand" action)</li>
+        <li>无 relevance reasoning(PaSa Selector 读 full paper 决定 relevance)</li>
+        <li>无 adaptive stop(固定 2-3 轮,LLM 决定 convergence)</li>
+        <li>不能 content-aware rerank(PaSa 读 full PDF,paper-agent 只有 abstract)</li>
+        <li>PaSa 全版 Global Rule ❌(hosted LLM + paid API)</li>
+      </ul>
+      <div class="gap-meta">
+        <span class="pill">1-2 周</span>
+        <span>修复路径 → <b>[P2-6] PaSa-lite rule-based</b>,rule-based 50% 子集可实现;<b>PaSa 全版永久 Global Rule ❌</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERDICT ============ -->
+  <div class="verdict">
+    <h2>优先级与 Global Rule 终审</h2>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>方案</th>
+          <th>Global Rule</th>
+          <th>估时</th>
+          <th>预期 lift</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">1</td>
+          <td>LTR (LambdaMART)</td>
+          <td class="yn pass">✅ pass</td>
+          <td class="eta">1-2h</td>
+          <td class="lift">5-10%</td>
+          <td><span class="badge badge-go">立即做</span></td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td>Cross-encoder (BGE-reranker)</td>
+          <td class="yn pass">✅ pass</td>
+          <td class="eta">2-3h</td>
+          <td class="lift">5-15%</td>
+          <td><span class="badge badge-go">立即做</span></td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td>MoE routing (sklearn)</td>
+          <td class="yn pass">✅ pass</td>
+          <td class="eta">0.5-1d</td>
+          <td class="lift">5-10%</td>
+          <td><span class="badge badge-go">立即做</span></td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td>PaSa-lite (rule-based)</td>
+          <td class="yn partial">⚠️ partial</td>
+          <td class="eta">1-2 周</td>
+          <td class="lift">未知</td>
+          <td><span class="badge badge-wait">等前三</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <p>
+      <b>出处</b>:本图基于 2026-07-13 用户原话"这四个方案有哪些可以部分实现的?有哪些可以完全实现的?优先在Global rule下,完全实现的。不能实现的给我替代方案。还有关注 pasa 和 Moe 相关的 Github 仓库,看看他们是如何实现的"。
+    </p>
+    <p>
+      <b>GitHub 调研</b>:<code>bytedance/pasa</code>(8 commits, dual-agent 7B LLM)+ <code>AkariAsai/OpenScholar</code>(LTR-style rerank 设计参考)+ <code>AkariAsai/bge-reranker</code>(BAAI 官方,~3k stars, MIT)。
+    </p>
+    <p>
+      <b>3-tier honest audit</b>:v3.9.0/v3.9.1 中 4 个 sophisticated 选项全部 <b>❌ 未实现</b>;已实现的是 5 个 simpler condition(BM25 / biencoder / combined / PRF / random)+ round-robin 5-engine pool。
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
