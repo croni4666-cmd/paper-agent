@@ -34,11 +34,20 @@ from . import cache as _cache
 # =============== HTTP helpers ===============
 
 def http_get(url: str, headers: dict = None, timeout: int = 20, proxy: str = None) -> tuple:
-    """GET with optional proxy, return (status, body_bytes, final_url, headers_dict)."""
+    """GET with optional proxy, return (status, body_bytes, final_url, headers_dict).
+
+    Bug fix (2026-07-13): if proxy is None, fall back to HTTP_PROXY env var.
+    This makes all channels (openalex, arxiv, unpaywall, doi_redirect, scihub)
+    honor the user's proxy setting without requiring per-channel code changes.
+    In CN, set HTTP_PROXY=http://127.0.0.1:7897 to use clash.
+    """
     h = {"User-Agent": "paper-agent/3.2 (Mavis; mailto:hello@example.com)",
          "Accept": "*/*"}
     if headers:
         h.update(headers)
+    # Fall back to env var if proxy not explicitly passed
+    if proxy is None:
+        proxy = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")
     if proxy:
         opener = ur.build_opener(ur.ProxyHandler({"http": proxy, "https": proxy}))
         ur.install_opener(opener)

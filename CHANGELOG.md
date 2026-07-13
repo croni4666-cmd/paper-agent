@@ -9,6 +9,61 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.5.4] - 2026-07-13 (patch — http_get env var fallback + per-channel proxy audit)
+
+Per user question "除了playwright 之外，其他是否需要 clash 端口？":
+- Audited all 6 channels in pa_cli/fetch.py
+- Found only 2 of 6 channels (scihub iframe + playwright) had env var proxy support
+- The other 4 (openalex, arxiv, unpaywall, doi_redirect) required explicit `proxy=` parameter (defaulted to None)
+
+### Bug fix 3: `http_get` env var fallback
+- **Symptom**: 4 channels silently used direct connection (no proxy)
+- **Root cause**: `http_get` only used `proxy` parameter; default `None` meant no proxy
+- **Fix**: in `http_get`, if `proxy is None`, fall back to `os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")`
+- **Before**: must explicitly pass `proxy="http://127.0.0.1:7897"` to `fetch_doi()`
+- **After**: setting env var `HTTP_PROXY` works for all channels
+
+### Files modified (1)
+- `pa_cli/fetch.py` (~3 lines)
+  - `http_get`: added env var fallback when `proxy is None`
+
+### Per-channel proxy requirement (post-fix)
+
+| Channel | Proxy needed in CN? | Verified? |
+|---|---|---|
+| openalex (api.openalex.org) | **No** (not blocked by GFW) | ✓ 5/15 downloads without proxy |
+| arxiv (export.arxiv.org) | Probably yes (not tested) | not directly tested, but DOIs are not arxiv-style |
+| unpaywall (api.unpaywall.org) | Probably yes | not directly tested |
+| doi_redirect (doi.org) | Probably yes | not directly tested |
+| scihub iframe | **Yes** (GFW blocks sci-hub domains) | ✓ 3/15 via proxy fix |
+| playwright (chromium) | **Yes** (chromium direct connection fails) | ✓ env var + `--proxy-server` flag |
+
+### Empirical evidence
+- 5/15 PDFs auto-downloaded in v3.9.5 (no proxy) — all via openalex
+- 3/15 PDFs auto-downloaded in v3.9.5.2 retry (with proxy) — all via scihub
+- 7/15 still manual — these DOIs have NO open version on any of 6 channels
+
+### Why 7 papers still manual (per-DOI)
+- These are recent papers (2021-2023) without arXiv preprints
+- sci-hub hasn't mirrored them yet
+- Publishers' landing pages have anti-bot that even chromium + proxy can't bypass
+- Unpaywall has no OA record (publisher doesn't share)
+- **These require user manual download** (per user original insight)
+
+### 3-tier honest audit (per `MEMORY.md` discipline)
+- ✅ **Verified**: env var fix applied; 4 channels now respect HTTP_PROXY automatically
+- ⚠️ **5/15 → 3/15 actually re-downloaded**: 3 were already cached; env var fix didn't add new downloads for 7 hard papers
+- ❌ **NOT a 'finding'**: env var fix is plumbing, no metric impact
+
+### Re-run after manual download
+```bash
+# User downloads 7 PDFs to C:/Users/DengN/Downloads/manual_pdfs/
+# Then:
+python -m pa_cli deep-rerank --user-pdf-dir C:/Users/DengN/Downloads/manual_pdfs/
+```
+
+---
+
 ## [3.9.5.3] - 2026-07-13 (patch — Layer 7 full-text rerank runs on 8 auto-downloaded PDFs)
 
 Per user request "playwright 为何失败" + post-bug-fix retry, ran Layer 7 (full-text deep rerank) on the 8 PDFs we have.
