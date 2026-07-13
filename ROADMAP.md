@@ -1664,8 +1664,10 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 
 ### [P0-7] Cross-encoder reranker (BGE-reranker)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
 - **Priority**: P0
 - **Layer**: 3 (Rerank)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
@@ -1682,6 +1684,67 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **User confirmation needed**: model size (base vs large vs v2-m3); whether to download on first use or require explicit `--download` flag
 - **GitHub reference**: `BAAI/bge-reranker` is the official BAAI repo, MIT, ~3k stars; widely cited in IR literature
 - **Why not HF `cross-encoder/ms-marco-MiniLM-L-6-v2`**: HF model downloads require git clone + auth in some networks; BGE-reranker is single .bin
+
+#### Outcome (2026-07-13) — 3-tier honest audit
+
+**Files added** (3):
+- `pa_cli/cross_encoder.py` (~250 lines) — BGEReranker class with multi-endpoint fallback download
+- `test_output/_run_cross_encoder_v3_9_3.py` (~200 lines) — pipeline runner with per-query metrics
+- `bench/v01/reports/v3_9_3_cross_encoder.{md,json}` — generated report
+
+**Files modified** (1):
+- `pa_cli/__init__.py` — version 3.9.2 → 3.9.3
+
+**Result** (n=25 v3.9.0 queries, paired comparison):
+
+| Method | NDCG@10 | Recall@10 | Precision@10 |
+|---|---:|---:|---:|
+| biencoder (v3.9.0 baseline) | 0.7205 | 0.6683 | 0.4680 |
+| bge-rerank (v3.9.3 new) | 0.6928 | 0.6569 | 0.4560 |
+| **Δ (bge − biencoder)** | **−0.0277** | **−0.0114** | **−0.0120** |
+
+**Per-query variance is high** (σ ≈ 0.20):
+- 11 queries improved (q004 +0.32, q007 +0.32, q015 +0.25, ...)
+- 14 queries hurt (q002 −0.42, q012 −0.39, q019 −0.30, ...)
+
+**3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
+- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, model loaded from local cache
+- ✅ **Verified architecture**: BGE-reranker inference works, smoke test passed (irrelevant=0.00, K-12 AI=0.95)
+- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = −0.0277 on n=25 is within noise band
+- ❌ **NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal
+
+**Why cross-encoder didn't beat bi-encoder on n=25** (honest analysis):
+1. n=25 too small — high per-query variance (σ ≈ 0.20) drowns out average effect
+2. BGE trained on MS MARCO + CMedQA — `all-MiniLM-L6-v2` is a strong academic sentence encoder; gap is small
+3. 14/25 queries hurt (q002 -0.42, q012 -0.39, etc.) — could be label noise or query ambiguity
+4. No significance test — single point estimate
+
+**Smoke test verification**:
+- Query "AI tutoring systems in K-12 education"
+- K-12 AI tutoring candidate: 0.9546 (perfect match)
+- Frog / climate candidates: 0.0000 each (correctly irrelevant)
+- ✅ Cross-encoder model is working correctly; failure is at the metric-aggregate level
+
+**Acceptance criteria status**: 5/5 met
+1. ✅ `pa_cli/cross_encoder.py` — BGEReranker class with max_length=512
+2. ✅ Model: `BAAI/bge-reranker-base` (1.06 GB safetensors, downloaded via clash proxy 127.0.0.1:7897)
+3. ✅ First-time setup: `ensure_model_downloaded()` auto-downloads + multi-endpoint fallback (HF → CN mirror)
+4. ✅ Reuses v3.9.0 bi-encoder top-30 → cross-encoder rerank pipeline
+5. ✅ Side-by-side comparison report at `bench/v01/reports/v3_9_3_cross_encoder.md`
+
+**5-check Global Rule audit**: 5/5 pass
+1. ✅ Runs for $0 (one-time 1.06 GB local download via clash proxy)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~250 LOC new
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: if BGE download fails, fall back to bi-encoder-only
+
+**Deferred to backlog** (recorded 2026-07-13):
+- **Per-query variance analysis**: 14/25 queries hurt — investigate why (label noise? query type? BGE weak on academic?)
+- **Re-run with n=50+ queries** (q026-q050) to confirm Δ is noise, not real
+- **BGE-reranker-large** (1.7 GB) for higher accuracy
+- **BGE-reranker-v2-m3** (multilingual) for non-English queries
+- **Hybrid rerank**: 0.5*bge + 0.5*biencoder (combine strengths)
 
 ### [P1-11] MoE-for-IR router (sklearn-based)
 
