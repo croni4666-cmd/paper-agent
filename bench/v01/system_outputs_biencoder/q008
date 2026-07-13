@@ -1,0 +1,587 @@
+{
+  "query_id": "q008",
+  "query": "drug repurposing using graph neural networks",
+  "topic_bucket": "bio",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:05:11",
+  "config": "v4-biencoder",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1016/j.compbiomed.2022.105992",
+      "title": "A computational approach to drug repurposing using graph neural networks",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Computers in Biology and Medicine",
+      "citation_count": 54,
+      "engines_found_in": [
+        "crossref",
+        "openalex",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 27,
+      "v4_score": 0.98005,
+      "bm25_score": 5.7787,
+      "biencoder_score": 0.9801
+    },
+    {
+      "rank": 2,
+      "doi": "10.1093/bioinformatics/btaa921",
+      "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+      "abstract": "SUMMARY: The development of new drugs is costly, time consuming and often accompanied with safety issues. Drug repurposing can avoid the expensive and lengthy process of drug development by finding new uses for already approved drugs. In order to repurpose drugs effectively, it is useful to know which proteins are targeted by which drugs. Computational models that estimate the interaction strength of new drug-target pairs have the potential to expedite drug repurposing. Several models have been proposed for this task. However, these models represent the drugs as strings, which is not a natural way to represent molecules. We propose a new model called GraphDTA that represents drugs as graphs and uses graph neural networks to predict drug-target affinity. We show that graph neural networks not only predict drug-target affinity better than non-deep learning models, but also outperform competing deep learning methods. Our results confirm that deep learning models are appropriate for drug-target binding affinity prediction, and that representing drugs as graphs can lead to further improvements. AVAILABILITY OF IMPLEMENTATION: The proposed models are implemented in Python. Related data, pre-trained models and source code are publicly available at https://github.com/thinng/GraphDTA. All scripts and data needed to reproduce the post hoc statistical analysis are available from https://doi.org/10.5281/zenodo.3603523. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+      "year": 2020,
+      "venue": "Bioinformatics",
+      "citation_count": 1157,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.700878,
+      "bm25_score": 3.4607,
+      "biencoder_score": 0.7009
+    },
+    {
+      "rank": 3,
+      "doi": "10.1093/bioinformatics/btab191",
+      "title": "Drug repurposing against breast cancer by integrating drug-exposure expression profiles and drug–drug links based on graph neural network",
+      "abstract": "MOTIVATION: Breast cancer is one of the leading causes of cancer deaths among women worldwide. It is necessary to develop new breast cancer drugs because of the shortcomings of existing therapies. The traditional discovery process is time-consuming and expensive. Repositioning of clinically approved drugs has emerged as a novel approach for breast cancer therapy. However, serendipitous or experiential repurposing cannot be used as a routine method. RESULTS: In this study, we proposed a graph neural network model GraphRepur based on GraphSAGE for drug repurposing against breast cancer. GraphRepur integrated two major classes of computational methods, drug network-based and drug signature-based. The differentially expressed genes of disease, drug-exposure gene expression data and the drug-drug links information were collected. By extracting the drug signatures and topological structure information contained in the drug relationships, GraphRepur can predict new drugs for breast cancer, outperforming previous state-of-the-art approaches and some classic machine learning methods. The high-ranked drugs have indeed been reported as new uses for breast cancer treatment recently. AVAILABILITYAND IMPLEMENTATION: The source code of our model and datasets are available at: https://github.com/cckamy/GraphRepur and https://figshare.com/articles/software/GraphRepur_Breast_Cancer_Drug_Repurposing/14220050. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+      "year": 2021,
+      "venue": "Bioinformatics",
+      "citation_count": 53,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.686572,
+      "bm25_score": 2.4281,
+      "biencoder_score": 0.6866
+    },
+    {
+      "rank": 4,
+      "doi": "10.1093/bib/bbad431",
+      "title": "Drug repositioning based on weighted local information augmented graph neural network",
+      "abstract": "Drug repositioning, the strategy of redirecting existing drugs to new therapeutic purposes, is pivotal in accelerating drug discovery. While many studies have engaged in modeling complex drug-disease associations, they often overlook the relevance between different node embeddings. Consequently, we propose a novel weighted local information augmented graph neural network model, termed DRAGNN, for drug repositioning. Specifically, DRAGNN firstly incorporates a graph attention mechanism to dynamically allocate attention coefficients to drug and disease heterogeneous nodes, enhancing the effectiveness of target node information collection. To prevent excessive embedding of information in a limited vector space, we omit self-node information aggregation, thereby emphasizing valuable heterogeneous and homogeneous information. Additionally, average pooling in neighbor information aggregation is introduced to enhance local information while maintaining simplicity. A multi-layer perceptron is then employed to generate the final association predictions. The model's effectiveness for drug repositioning is supported by a 10-times 10-fold cross-validation on three benchmark datasets. Further validation is provided through analysis of the predicted associations using multiple authoritative data sources, molecular docking experiments and drug-disease network analysis, laying a solid foundation for future drug discovery.",
+      "year": 2023,
+      "venue": "Briefings in Bioinformatics",
+      "citation_count": 103,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.662347,
+      "bm25_score": 2.3484,
+      "biencoder_score": 0.6623
+    },
+    {
+      "rank": 5,
+      "doi": "10.1038/s41591-024-03233-x",
+      "title": "A foundation model for clinician-centered drug repurposing",
+      "abstract": "Drug repurposing—identifying new therapeutic uses for approved drugs—is often a serendipitous and opportunistic endeavour to expand the use of drugs for new diseases. The clinical utility of drug-repurposing artificial intelligence (AI) models remains limited because these models focus narrowly on diseases for which some drugs already exist. Here we introduce TxGNN, a graph foundation model for zero-shot drug repurposing, identifying therapeutic candidates even for diseases with limited treatment options or no existing drugs. Trained on a medical knowledge graph, TxGNN uses a graph neural network and metric learning module to rank drugs as potential indications and contraindications for 17,080 diseases. When benchmarked against 8 methods, TxGNN improves prediction accuracy for indications by 49.2% and contraindications by 35.1% under stringent zero-shot evaluation. To facilitate model interpretation, TxGNN’s Explainer module offers transparent insights into multi-hop medical knowledge paths that form TxGNN’s predictive rationales. Human evaluation of TxGNN’s Explainer showed that TxGNN’s predictions and explanations perform encouragingly on multiple axes of performance beyond accuracy. Many of TxGNN’s new predictions align well with off-label prescriptions that clinicians previously made in a large healthcare system. TxGNN’s drug-repurposing predictions are accurate, consistent with off-label drug use, and can be investigated by human experts through multi-hop interpretable rationales. Trained on a medical knowledge graph, a foundation model is used to rank drugs as potential indications and contraindications across 17,080 diseases, identifying therapeutic candidates in a zero-shot framework even for diseases with limited treatment options or no existing drugs and outperforming existing models by a large margin.",
+      "year": 2024,
+      "venue": "Nature Medicine",
+      "citation_count": 176,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.634546,
+      "bm25_score": 2.268,
+      "biencoder_score": 0.6345
+    },
+    {
+      "rank": 6,
+      "doi": "10.1016/j.jbi.2021.103696",
+      "title": "Drug repurposing for COVID-19 via knowledge graph completion",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Journal of Biomedical Informatics",
+      "citation_count": 210,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.629646,
+      "bm25_score": 1.9708,
+      "biencoder_score": 0.6296
+    },
+    {
+      "rank": 7,
+      "doi": "10.1093/bib/bbab159",
+      "title": "Utilizing graph machine learning within drug discovery and development",
+      "abstract": "Graph machine learning (GML) is receiving growing interest within the pharmaceutical and biotechnology industries for its ability to model biomolecular structures, the functional relationships between them, and integrate multi-omic datasets - amongst other data types. Herein, we present a multidisciplinary academic-industrial review of the topic within the context of drug discovery and development. After introducing key terms and modelling approaches, we move chronologically through the drug development pipeline to identify and summarize work incorporating: target identification, design of small molecules and biologics, and drug repurposing. Whilst the field is still emerging, key milestones including repurposed drugs entering in vivo studies, suggest GML will become a modelling framework of choice within biomedical machine learning.",
+      "year": 2021,
+      "venue": "Briefings in Bioinformatics",
+      "citation_count": 287,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.615963,
+      "bm25_score": 1.5466,
+      "biencoder_score": 0.616
+    },
+    {
+      "rank": 8,
+      "doi": "10.21203/rs.3.rs-114758/v1",
+      "title": "Drug Repurposing for COVID-19 using Graph Neural Network with Genetic, Mechanistic, and Epidemiological Validation",
+      "abstract": "Amid the pandemic of 2019 novel coronavirus disease (COVID-19) infected by SARS-CoV-2, a vast amount of drug research for prevention and treatment has been quickly conducted, but these efforts have been unsuccessful thus far. Our objective is to prioritize repurposable drugs using a drug repurposing pipeline that systematically integrates multiple SARS-CoV-2 and drug interactions, deep graph neural networks, and in-vitro/population-based validations. We first collected all the available drugs (n= 3,635) involved in COVID-19 patient treatment through CTDbase. We built a SARS-CoV-2 knowledge graph based on the interactions among virus baits, host genes, pathways, drugs, and phenotypes. A deep graph neural network approach was used to derive the candidate drugâ€™s representation based on the biological interactions. We prioritized the candidate drugs using clinical trial history, and then validated them with their genetic profiles, in vitro experimental efficacy, and electronic health records. We highlight the top 22 drugs including Azithromycin, Atorvastatin, Aspirin, Acetaminophen, and Albuterol. We further pinpointed drug combinations that may synergistically target COVID-19. In summary, we demonstrated that the integration of extensive interactions, deep neural networks, and rigorous validation can facilitate the rapid identification of candidate drugs for COVID-19 treatment. This paper had been uploaded to arXiv : https://arxiv.org/abs/2009.10931.",
+      "year": 2020,
+      "venue": "Research Square",
+      "citation_count": 33,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.613706,
+      "bm25_score": 4.9387,
+      "biencoder_score": 0.6137
+    },
+    {
+      "rank": 9,
+      "doi": "10.1038/s41598-021-02353-5",
+      "title": "Drug repurposing for COVID-19 using graph neural network and harmonizing multiple evidence",
+      "abstract": "Since the 2019 novel coronavirus disease (COVID-19) outbreak in 2019 and the pandemic continues for more than one year, a vast amount of drug research has been conducted and few of them got FDA approval. Our objective is to prioritize repurposable drugs using a pipeline that systematically integrates the interaction between COVID-19 and drugs, deep graph neural networks, and in vitro/population-based validations. We first collected all available drugs (n = 3635) related to COVID-19 patient treatment through CTDbase. We built a COVID-19 knowledge graph based on the interactions among virus baits, host genes, pathways, drugs, and phenotypes. A deep graph neural network approach was used to derive the candidate drug's representation based on the biological interactions. We prioritized the candidate drugs using clinical trial history, and then validated them with their genetic profiles, in vitro experimental efficacy, and population-based treatment effect. We highlight the top 22 drugs including Azithromycin, Atorvastatin, Aspirin, Acetaminophen, and Albuterol. We further pinpointed drug combinations that may synergistically target COVID-19. In summary, we demonstrated that the integration of extensive interactions, deep neural networks, and multiple evidence can facilitate the rapid identification of candidate drugs for COVID-19 treatment.",
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "citation_count": 68,
+      "engines_found_in": [
+        "openalex",
+        "arxiv",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.609533,
+      "bm25_score": 4.7465,
+      "biencoder_score": 0.6095
+    },
+    {
+      "rank": 10,
+      "doi": "10.1093/bib/bbac578",
+      "title": "Metapath-aggregated heterogeneous graph neural network for drug–target interaction prediction",
+      "abstract": "Drug-target interaction (DTI) prediction is an essential step in drug repositioning. A few graph neural network (GNN)-based methods have been proposed for DTI prediction using heterogeneous biological data. However, existing GNN-based methods only aggregate information from directly connected nodes restricted in a drug-related or a target-related network and are incapable of capturing high-order dependencies in the biological heterogeneous graph. In this paper, we propose a metapath-aggregated heterogeneous graph neural network (MHGNN) to capture complex structures and rich semantics in the biological heterogeneous graph for DTI prediction. Specifically, MHGNN enhances heterogeneous graph structure learning and high-order semantics learning by modeling high-order relations via metapaths. Additionally, MHGNN enriches high-order correlations between drug-target pairs (DTPs) by constructing a DTP correlation graph with DTPs as nodes. We conduct extensive experiments on three biological heterogeneous datasets. MHGNN favorably surpasses 17 state-of-the-art methods over 6 evaluation metrics, which verifies its efficacy for DTI prediction. The code is available at https://github.com/Zora-LM/MHGNN-DTI.",
+      "year": 2023,
+      "venue": "Briefings in Bioinformatics",
+      "citation_count": 71,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.604874,
+      "bm25_score": 2.617,
+      "biencoder_score": 0.6049
+    },
+    {
+      "rank": 11,
+      "doi": "10.1371/journal.pcbi.1010812",
+      "title": "A dual graph neural network for drug–drug interactions prediction based on molecular structure and interactions",
+      "abstract": "Expressive molecular representation plays critical roles in researching drug design, while effective methods are beneficial to learning molecular representations and solving related problems in drug discovery, especially for drug-drug interactions (DDIs) prediction. Recently, a lot of work has been put forward using graph neural networks (GNNs) to forecast DDIs and learn molecular representations. However, under the current GNNs structure, the majority of approaches learn drug molecular representation from one-dimensional string or two-dimensional molecular graph structure, while the interaction information between chemical substructure remains rarely explored, and it is neglected to identify key substructures that contribute significantly to the DDIs prediction. Therefore, we proposed a dual graph neural network named DGNN-DDI to learn drug molecular features by using molecular structure and interactions. Specifically, we first designed a directed message passing neural network with substructure attention mechanism (SA-DMPNN) to adaptively extract substructures. Second, in order to improve the final features, we separated the drug-drug interactions into pairwise interactions between each drug's unique substructures. Then, the features are adopted to predict interaction probability of a DDI tuple. We evaluated DGNN-DDI on real-world dataset. Compared to state-of-the-art methods, the model improved DDIs prediction performance. We also conducted case study on existing drugs aiming to predict drug combinations that may be effective for the novel coronavirus disease 2019 (COVID-19). Moreover, the visual interpretation results proved that the DGNN-DDI was sensitive to the structure information of drugs and able to detect the key substructures for DDIs. These advantages demonstrated that the proposed method enhanced the performance and interpretation capability of DDI prediction modeling.",
+      "year": 2023,
+      "venue": "PLoS Computational Biology",
+      "citation_count": 97,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.604645,
+      "bm25_score": 3.3075,
+      "biencoder_score": 0.6046
+    },
+    {
+      "rank": 12,
+      "doi": "10.1038/s41401-022-00996-2",
+      "title": "DrugRep: an automatic virtual screening server for drug repurposing",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Acta Pharmacologica Sinica",
+      "citation_count": 127,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.603031,
+      "bm25_score": 1.4296,
+      "biencoder_score": 0.603
+    },
+    {
+      "rank": 13,
+      "doi": "10.1038/s41467-021-27138-2",
+      "title": "Network medicine for disease module identification and drug repurposing with the NeDRex platform",
+      "abstract": "Traditional drug discovery faces a severe efficacy crisis. Repurposing of registered drugs provides an alternative with lower costs and faster drug development timelines. However, the data necessary for the identification of disease modules, i.e. pathways and sub-networks describing the mechanisms of complex diseases which contain potential drug targets, are scattered across independent databases. Moreover, existing studies are limited to predictions for specific diseases or non-translational algorithmic approaches. There is an unmet need for adaptable tools allowing biomedical researchers to employ network-based drug repurposing approaches for their individual use cases. We close this gap with NeDRex, an integrative and interactive platform for network-based drug repurposing and disease module discovery. NeDRex integrates ten different data sources covering genes, drugs, drug targets, disease annotations, and their relationships. NeDRex allows for constructing heterogeneous biological networks, mining them for disease modules, prioritizing drugs targeting disease mechanisms, and statistical validation. We demonstrate the utility of NeDRex in five specific use-cases.",
+      "year": 2021,
+      "venue": "Nature Communications",
+      "citation_count": 141,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.577265,
+      "bm25_score": 2.5611,
+      "biencoder_score": 0.5773
+    },
+    {
+      "rank": 14,
+      "doi": "10.1038/s41467-023-39301-y",
+      "title": "Biomedical knowledge graph learning for drug repurposing by extending guilt-by-association to multiple layers",
+      "abstract": "Computational drug repurposing aims to identify new indications for existing drugs by utilizing high-throughput data, often in the form of biomedical knowledge graphs. However, learning on biomedical knowledge graphs can be challenging due to the dominance of genes and a small number of drug and disease entities, resulting in less effective representations. To overcome this challenge, we propose a \"semantic multi-layer guilt-by-association\" approach that leverages the principle of guilt-by-association - \"similar genes share similar functions\", at the drug-gene-disease level. Using this approach, our model DREAMwalk: Drug Repurposing through Exploring Associations using Multi-layer random walk uses our semantic information-guided random walk to generate drug and disease-populated node sequences, allowing for effective mapping of both drugs and diseases in a unified embedding space. Compared to state-of-the-art link prediction models, our approach improves drug-disease association prediction accuracy by up to 16.8%. Moreover, exploration of the embedding space reveals a well-aligned harmony between biological and semantic contexts. We demonstrate the effectiveness of our approach through repurposing case studies for breast carcinoma and Alzheimer's disease, highlighting the potential of multi-layer guilt-by-association perspective for drug repurposing on biomedical knowledge graphs.",
+      "year": 2023,
+      "venue": "Nature Communications",
+      "citation_count": 109,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.569567,
+      "bm25_score": 3.0843,
+      "biencoder_score": 0.5696
+    },
+    {
+      "rank": 15,
+      "doi": "10.1038/s43586-024-00294-7",
+      "title": "Graph neural networks",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Nature Reviews Methods Primers",
+      "citation_count": 355,
+      "engines_found_in": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.567558,
+      "bm25_score": 2.7477,
+      "biencoder_score": 0.5676
+    },
+    {
+      "rank": 16,
+      "doi": "10.1109/jbhi.2023.3328337",
+      "title": "AntiViralDL: Computational Antiviral Drug Repurposing Using Graph Neural Network and Self-Supervised Learning",
+      "abstract": "Viral infections have emerged as significant public health concerns for decades. Antiviral drugs, specifically designed to combat these infections, have the potential to reduce the disease burden substantially. However, traditional drug development methods, based on biological experiments, are resource-intensive, time-consuming, and low efficiency. Therefore, computational approaches for identifying antiviral drugs can enhance drug development efficiency. In this study, we introduce AntiViralDL, a computational framework for predicting virus-drug associations using self-supervised learning. Initially, we construct a reliable virus-drug association dataset by integrating the existing Drugvirus2 database and FDA-approved virus-drug associations. Utilizing these two datasets, we create a virus-drug association bipartite graph and employ the Light Graph Convolutional Network (LightGCN) to learn embedding representations of viruses and drugs. To address the sparsity of virus-drug association pairs, AntiViralDL incorporates contrastive learning to improve prediction accuracy. We implement data augmentation by adding random noise to the embedding representation space of virus and drug nodes, as opposed to traditional edge and node dropout. Finally, we calculate an inner product to predict virus-drug association relationships. Experimental results reveal that AntiViralDL achieves AUC and AUPR values of 0.8450 and 0.8494, respectively, outperforming four benchmarked virus-drug association prediction models. The case study further highlights the efficacy of AntiViralDL in predicting anti-COVID-19 drug candidates.",
+      "year": 2023,
+      "venue": "IEEE Journal of Biomedical and Health Informatics",
+      "citation_count": 21,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 0.557675,
+      "bm25_score": 2.9795,
+      "biencoder_score": 0.5577
+    },
+    {
+      "rank": 17,
+      "doi": "10.1093/bioinformatics/bty294",
+      "title": "Modeling polypharmacy side effects with graph convolutional networks",
+      "abstract": "Motivation: The use of drug combinations, termed polypharmacy, is common to treat patients with complex diseases or co-existing conditions. However, a major consequence of polypharmacy is a much higher risk of adverse side effects for the patient. Polypharmacy side effects emerge because of drug-drug interactions, in which activity of one drug may change, favorably or unfavorably, if taken with another drug. The knowledge of drug interactions is often limited because these complex relationships are rare, and are usually not observed in relatively small clinical testing. Discovering polypharmacy side effects thus remains an important challenge with significant implications for patient mortality and morbidity. Results: Here, we present Decagon, an approach for modeling polypharmacy side effects. The approach constructs a multimodal graph of protein-protein interactions, drug-protein target interactions and the polypharmacy side effects, which are represented as drug-drug interactions, where each side effect is an edge of a different type. Decagon is developed specifically to handle such multimodal graphs with a large number of edge types. Our approach develops a new graph convolutional neural network for multirelational link prediction in multimodal networks. Unlike approaches limited to predicting simple drug-drug interaction values, Decagon can predict the exact side effect, if any, through which a given drug combination manifests clinically. Decagon accurately predicts polypharmacy side effects, outperforming baselines by up to 69%. We find that it automatically learns representations of side effects indicative of co-occurrence of polypharmacy in patients. Furthermore, Decagon models particularly well polypharmacy side effects that have a strong molecular basis, while on predominantly non-molecular side effects, it achieves good performance because of effective sharing of model parameters across edge types. Decagon opens up opportunities to use large pharmacogenomi",
+      "year": 2018,
+      "venue": "Bioinformatics",
+      "citation_count": 1398,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.521071,
+      "bm25_score": 2.0185,
+      "biencoder_score": 0.5211
+    },
+    {
+      "rank": 18,
+      "doi": "10.18653/v1/2021.naacl-demos.8",
+      "title": "COVID-19 Literature Knowledge Graph Construction and Drug Repurposing Report Generation",
+      "abstract": "Qingyun Wang, Manling Li, Xuan Wang, Nikolaus Parulian, Guangxing Han, Jiawei Ma, Jingxuan Tu, Ying Lin, Ranran Haoran Zhang, Weili Liu, Aabhas Chauhan, Yingjun Guan, Bangzheng Li, Ruisong Li, Xiangchen Song, Yi Fung, Heng Ji, Jiawei Han, Shih-Fu Chang, James Pustejovsky, Jasmine Rah, David Liem, Ahmed ELsayed, Martha Palmer, Clare Voss, Cynthia Schneider, Boyan Onyshkevych. Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies: Demonstrations. 2021.",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 106,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.512444,
+      "bm25_score": 1.3223,
+      "biencoder_score": 0.5124
+    },
+    {
+      "rank": 19,
+      "doi": "10.1093/bioinformatics/btz600",
+      "title": "Discovering protein drug targets using knowledge graph embeddings",
+      "abstract": "MOTIVATION: Computational approaches for predicting drug-target interactions (DTIs) can provide valuable insights into the drug mechanism of action. DTI predictions can help to quickly identify new promising (on-target) or unintended (off-target) effects of drugs. However, existing models face several challenges. Many can only process a limited number of drugs and/or have poor proteome coverage. The current approaches also often suffer from high false positive prediction rates. RESULTS: We propose a novel computational approach for predicting drug target proteins. The approach is based on formulating the problem as a link prediction in knowledge graphs (robust, machine-readable representations of networked knowledge). We use biomedical knowledge bases to create a knowledge graph of entities connected to both drugs and their potential targets. We propose a specific knowledge graph embedding model, TriModel, to learn vector representations (i.e. embeddings) for all drugs and targets in the created knowledge graph. These representations are consequently used to infer candidate drug target interactions based on their scores computed by the trained TriModel model. We have experimentally evaluated our method using computer simulations and compared it to five existing models. This has shown that our approach outperforms all previous ones in terms of both area under ROC and precision-recall curves in standard benchmark tests. AVAILABILITY AND IMPLEMENTATION: The data, predictions and models are available at: drugtargets.insight-centre.org. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+      "year": 2019,
+      "venue": "Bioinformatics",
+      "citation_count": 225,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.498344,
+      "bm25_score": 2.0877,
+      "biencoder_score": 0.4983
+    },
+    {
+      "rank": 20,
+      "doi": "10.1038/s42256-020-00285-9",
+      "title": "A deep learning framework for high-throughput mechanism-driven phenotype compound screening and its application to COVID-19 drug repurposing",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Nature Machine Intelligence",
+      "citation_count": 223,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.488057,
+      "bm25_score": 1.3552,
+      "biencoder_score": 0.4881
+    },
+    {
+      "rank": 21,
+      "doi": "10.1039/c9sc04336e",
+      "title": "Target identification among known drugs by deep learning from heterogeneous networks",
+      "abstract": "= 0.43 μM) of human retinoic-acid-receptor-related orphan receptor-gamma t (ROR-γt). Furthermore, by specifically targeting ROR-γt, topotecan reveals a potential therapeutic effect in a mouse model of multiple sclerosis. In summary, deepDTnet offers a powerful network-based deep learning methodology for target identification to accelerate drug repurposing and minimize the translational gap in drug development.",
+      "year": 2020,
+      "venue": "Chemical Science",
+      "citation_count": 350,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.468042,
+      "bm25_score": 2.1879,
+      "biencoder_score": 0.468
+    },
+    {
+      "rank": 22,
+      "doi": "10.1038/s41597-023-01960-3",
+      "title": "Building a knowledge graph to enable precision medicine",
+      "abstract": "Developing personalized diagnostic strategies and targeted treatments requires a deep understanding of disease biology and the ability to dissect the relationship between molecular and genetic factors and their phenotypic consequences. However, such knowledge is fragmented across publications, non-standardized repositories, and evolving ontologies describing various scales of biological organization between genotypes and clinical phenotypes. Here, we present PrimeKG, a multimodal knowledge graph for precision medicine analyses. PrimeKG integrates 20 high-quality resources to describe 17,080 diseases with 4,050,249 relationships representing ten major biological scales, including disease-associated protein perturbations, biological processes and pathways, anatomical and phenotypic scales, and the entire range of approved drugs with their therapeutic action, considerably expanding previous efforts in disease-rooted knowledge graphs. PrimeKG contains an abundance of 'indications', 'contradictions', and 'off-label use' drug-disease edges that lack in other knowledge graphs and can support AI analyses of how drugs affect disease-associated networks. We supplement PrimeKG's graph structure with language descriptions of clinical guidelines to enable multimodal analyses and provide instructions for continual updates of PrimeKG as new data become available.",
+      "year": 2023,
+      "venue": "Scientific Data",
+      "citation_count": 446,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.436704,
+      "bm25_score": 1.3611,
+      "biencoder_score": 0.4367
+    },
+    {
+      "rank": 23,
+      "doi": "10.1038/s41467-021-27137-3",
+      "title": "A unified drug–target interaction prediction framework based on knowledge graph and recommendation system",
+      "abstract": "Prediction of drug-target interactions (DTI) plays a vital role in drug development in various areas, such as virtual screening, drug repurposing and identification of potential drug side effects. Despite extensive efforts have been invested in perfecting DTI prediction, existing methods still suffer from the high sparsity of DTI datasets and the cold start problem. Here, we develop KGE_NFM, a unified framework for DTI prediction by combining knowledge graph (KG) and recommendation system. This framework firstly learns a low-dimensional representation for various entities in the KG, and then integrates the multimodal information via neural factorization machine (NFM). KGE_NFM is evaluated under three realistic scenarios, and achieves accurate and robust predictions on four benchmark datasets, especially in the scenario of the cold start for proteins. Our results indicate that KGE_NFM provides valuable insight to integrate KG and recommendation system-based techniques into a unified framework for novel DTI discovery.",
+      "year": 2021,
+      "venue": "Nature Communications",
+      "citation_count": 256,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.422956,
+      "bm25_score": 1.8886,
+      "biencoder_score": 0.423
+    },
+    {
+      "rank": 24,
+      "doi": "10.3390/cancers15102705",
+      "title": "Hybrid Quantum Neural Network for Drug Response Prediction",
+      "abstract": "Cancer is one of the leading causes of death worldwide. It is caused by various genetic mutations, which makes every instance of the disease unique. Since chemotherapy can have extremely severe side effects, each patient requires a personalized treatment plan. Finding the dosages that maximize the beneficial effects of the drugs and minimize their adverse side effects is vital. Deep neural networks automate and improve drug selection. However, they require a lot of data to be trained on. Therefore, there is a need for machine-learning approaches that require less data. Hybrid quantum neural networks were shown to provide a potential advantage in problems where training data availability is limited. We propose a novel hybrid quantum neural network for drug response prediction based on a combination of convolutional, graph convolutional, and deep quantum neural layers of 8 qubits with 363 layers. We test our model on the reduced Genomics of Drug Sensitivity in Cancer dataset and show that the hybrid quantum model outperforms its classical analog by 15% in predicting IC50 drug effectiveness values. The proposed hybrid quantum machine learning model is a step towards deep quantum data-efficient algorithms with thousands of quantum gates for solving problems in personalized medicine, where data collection is a challenge.",
+      "year": 2023,
+      "venue": "Cancers",
+      "citation_count": 107,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.421586,
+      "bm25_score": 2.4803,
+      "biencoder_score": 0.4216
+    },
+    {
+      "rank": 25,
+      "doi": "10.1039/c9sc03414e",
+      "title": "DEEPScreen: high performance drug–target interaction prediction with convolutional neural networks using 2-D structural compound representations",
+      "abstract": "screening of the chemogenomic space, to provide novel DTIs which can be experimentally pursued. The source code, trained \"ready-to-use\" prediction models, all datasets and the results of this study are available at ; https://github.com/cansyl/DEEPscreen.",
+      "year": 2020,
+      "venue": "Chemical Science",
+      "citation_count": 245,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.416983,
+      "bm25_score": 3.4021,
+      "biencoder_score": 0.417
+    },
+    {
+      "rank": 26,
+      "doi": "10.24963/ijcai.2018/468",
+      "title": "Interpretable Drug Target Prediction Using Deep Neural Representation",
+      "abstract": "The identification of drug-target interactions (DTIs) is a key task in drug discovery, where drugs are chemical compounds and targets are proteins. Traditional DTI prediction methods are either time consuming (simulation-based methods) or heavily dependent on domain expertise (similarity-based and feature-based methods). In this work, we propose an end-to-end neural network model that predicts DTIs directly from low level representations. In addition to making predictions, our model provides biological interpretation using two-way attention mechanism. Instead of using simplified settings where a dataset is evaluated as a whole, we designed an evaluation dataset from BindingDB following more realistic settings where predictions of unobserved examples (proteins and drugs) have to be made. We experimentally compared our model with matrix factorization, similarity-based methods, and a previous deep learning approach. Overall, the results show that our model outperforms other approaches without requiring domain knowledge and feature engineering. In a case study, we illustrated the ability of our approach to provide biological insights to interpret the predictions.",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 248,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.406818,
+      "bm25_score": 2.5712,
+      "biencoder_score": 0.4068
+    },
+    {
+      "rank": 27,
+      "doi": "10.1038/s41597-023-01974-x",
+      "title": "Evaluating explainability for graph neural networks",
+      "abstract": "As explanations are increasingly used to understand the behavior of graph neural networks (GNNs), evaluating the quality and reliability of GNN explanations is crucial. However, assessing the quality of GNN explanations is challenging as existing graph datasets have no or unreliable ground-truth explanations. Here, we introduce a synthetic graph data generator, SHAPEGGEN, which can generate a variety of benchmark datasets (e.g., varying graph sizes, degree distributions, homophilic vs. heterophilic graphs) accompanied by ground-truth explanations. The flexibility to generate diverse synthetic datasets and corresponding ground-truth explanations allows SHAPEGGEN to mimic the data in various real-world areas. We include SHAPEGGEN and several real-world graph datasets in a graph explainability library, GRAPHXAI. In addition to synthetic and real-world graph datasets with ground-truth explanations, GRAPHXAI provides data loaders, data processing functions, visualizers, GNN model implementations, and evaluation metrics to benchmark GNN explainability methods.",
+      "year": 2023,
+      "venue": "Scientific Data",
+      "citation_count": 155,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.37498,
+      "bm25_score": 2.4313,
+      "biencoder_score": 0.375
+    },
+    {
+      "rank": 28,
+      "doi": "10.1007/s10462-023-10465-9",
+      "title": "Knowledge Graphs: Opportunities and Challenges",
+      "abstract": "With the explosive growth of artificial intelligence (AI) and big data, it has become vitally important to organize and represent the enormous volume of knowledge appropriately. As graph data, knowledge graphs accumulate and convey knowledge of the real world. It has been well-recognized that knowledge graphs effectively represent complex information; hence, they rapidly gain the attention of academia and industry in recent years. Thus to develop a deeper understanding of knowledge graphs, this paper presents a systematic overview of this field. Specifically, we focus on the opportunities and challenges of knowledge graphs. We first review the opportunities of knowledge graphs in terms of two aspects: (1) AI systems built upon knowledge graphs; (2) potential application fields of knowledge graphs. Then, we thoroughly discuss severe technical challenges in this field, such as knowledge graph embeddings, knowledge acquisition, knowledge graph completion, knowledge fusion, and knowledge reasoning. We expect that this survey will shed new light on future research and the development of knowledge graphs.",
+      "year": 2023,
+      "venue": "Artificial Intelligence Review",
+      "citation_count": 615,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.312519,
+      "bm25_score": 0.5383,
+      "biencoder_score": 0.3125
+    },
+    {
+      "rank": 29,
+      "doi": "10.1371/journal.pcbi.1005690",
+      "title": "TopologyNet: Topology based deep convolutional and multi-task neural networks for biomolecular property predictions",
+      "abstract": "Although deep learning approaches have had tremendous success in image, video and audio processing, computer vision, and speech recognition, their applications to three-dimensional (3D) biomolecular structural data sets have been hindered by the geometric and biological complexity. To address this problem we introduce the element-specific persistent homology (ESPH) method. ESPH represents 3D complex geometry by one-dimensional (1D) topological invariants and retains important biological information via a multichannel image-like representation. This representation reveals hidden structure-function relationships in biomolecules. We further integrate ESPH and deep convolutional neural networks to construct a multichannel topological neural network (TopologyNet) for the predictions of protein-ligand binding affinities and protein stability changes upon mutation. To overcome the deep learning limitations from small and noisy training sets, we propose a multi-task multichannel topological convolutional neural network (MM-TCNN). We demonstrate that TopologyNet outperforms the latest methods in the prediction of protein-ligand binding affinities, mutation induced globular protein folding free energy changes, and mutation induced membrane protein folding free energy changes. AVAILABILITY: weilab.math.msu.edu/TDL/.",
+      "year": 2017,
+      "venue": "PLoS Computational Biology",
+      "citation_count": 346,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.297625,
+      "bm25_score": 1.7906,
+      "biencoder_score": 0.2976
+    },
+    {
+      "rank": 30,
+      "doi": "10.1016/j.asoc.2020.106691",
+      "title": "Automated medical diagnosis of COVID-19 through EfficientNet convolutional neural network",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Applied Soft Computing",
+      "citation_count": 395,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.202314,
+      "bm25_score": 0.7862,
+      "biencoder_score": 0.2023
+    }
+  ]
+}

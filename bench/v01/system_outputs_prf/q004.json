@@ -1,0 +1,612 @@
+{
+  "query_id": "q004",
+  "query": "Bayesian structural time series for causal inference",
+  "topic_bucket": "ml",
+  "source": "pub",
+  "generated_at": "2026-07-13T14:38:22",
+  "config": "v4-prf-recency-strict",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1016/j.tranpol.2021.01.013",
+      "title": "Quantifying the impact of COVID-19 on non-motorized transportation: A Bayesian structural time series model",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Transport Policy",
+      "citation_count": 102,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 12.330872,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 30,
+      "bm25_score": 7.6765
+    },
+    {
+      "rank": 2,
+      "doi": "10.1214/14-aoas788",
+      "title": "Inferring causal impact using Bayesian structural time-series models",
+      "abstract": "An important problem in econometrics and marketing is to infer the causal impact that a designed market intervention has exerted on an outcome metric over time. This paper proposes to infer causal impact on the basis of a diffusion-regression state-space model that predicts the counterfactual market response in a synthetic control that would have occurred had no intervention taken place. In contrast to classical difference-in-differences schemes, state-space models make it possible to (i) infer the temporal evolution of attributable impact, (ii) incorporate empirical priors on the parameters in a fully Bayesian treatment, and (iii) flexibly accommodate multiple sources of variation, including local trends, seasonality and the time-varying influence of contemporaneous covariates. Using a Markov chain Monte Carlo algorithm for posterior inference, we illustrate the statistical properties of our approach on simulated data. We then demonstrate its practical utility by estimating the causal effect of an online advertising campaign on search-related site visits. We discuss the strengths and limitations of state-space models in enabling causal attribution in those settings where a randomised experiment is unavailable. The CausalImpact R package provides an implementation of our approach.",
+      "year": 2015,
+      "venue": "The Annals of Applied Statistics",
+      "citation_count": 968,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 12.323526,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=11y,cite=968<mean+2.0σ)",
+      "orig_rank": 13,
+      "bm25_score": 6.4426
+    },
+    {
+      "rank": 3,
+      "doi": "10.1214/14-aoas788",
+      "title": "Inferring causal impact using Bayesian structural time-series models",
+      "abstract": "An important problem in econometrics and marketing is to infer the causal impact that a designed market intervention has exerted on an outcome metric over time. This paper proposes to infer causal impact on the basis of a diffusion-regression state-space model that predicts the counterfactual market response in a synthetic control that would have occurred had no intervention taken place. In contrast to classical difference-in-differences schemes, state-space models make it possible to (i) infer the temporal evolution of attributable impact, (ii) incorporate empirical priors on the parameters in a fully Bayesian treatment, and (iii) flexibly accommodate multiple sources of variation, including local trends, seasonality and the time-varying influence of contemporaneous covariates. Using a Markov chain Monte Carlo algorithm for posterior inference, we illustrate the statistical properties of our approach on simulated data. We then demonstrate its practical utility by estimating the causal effect of an online advertising campaign on search-related site visits. We discuss the strengths and limitations of state-space models in enabling causal attribution in those settings where a randomised experiment is unavailable. The CausalImpact R package provides an implementation of our approach.",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 879,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "v4_score": 12.323526,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=11y,cite=879<mean+2.0σ)",
+      "orig_rank": 16,
+      "bm25_score": 6.4426
+    },
+    {
+      "rank": 4,
+      "doi": "10.1126/sciadv.aau4996",
+      "title": "Detecting and quantifying causal associations in large nonlinear time series datasets",
+      "abstract": "Identifying causal relationships and quantifying their strength from observational time series data are key problems in disciplines dealing with complex dynamical systems such as the Earth system or the human body. Data-driven causal inference in such systems is challenging since datasets are often high dimensional and nonlinear with limited sample sizes. Here, we introduce a novel method that flexibly combines linear or nonlinear conditional independence tests with a causal discovery algorithm to estimate causal networks from large-scale time series datasets. We validate the method on time series of well-understood physical mechanisms in the climate system and the human heart and using large-scale synthetic datasets mimicking the typical properties of real-world data. The experiments demonstrate that our method outperforms state-of-the-art techniques in detection power, which opens up entirely new possibilities to discover and quantify causal networks from time series across a range of research fields.",
+      "year": 2019,
+      "venue": "Science Advances",
+      "citation_count": 875,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 10.11745,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 17,
+      "bm25_score": 6.3628
+    },
+    {
+      "rank": 5,
+      "doi": "10.1080/00273171.2018.1454823",
+      "title": "The Gaussian Graphical Model in Cross-Sectional and Time-Series Data",
+      "abstract": "We discuss the Gaussian graphical model (GGM; an undirected network of partial correlation coefficients) and detail its utility as an exploratory data analysis tool. The GGM shows which variables predict one-another, allows for sparse modeling of covariance structures, and may highlight potential causal relationships between observed variables. We describe the utility in three kinds of psychological data sets: data sets in which consecutive cases are assumed independent (e.g., cross-sectional data), temporally ordered data sets (e.g., n = 1 time series), and a mixture of the 2 (e.g., n > 1 time series). In time-series analysis, the GGM can be used to model the residual structure of a vector-autoregression analysis (VAR), also termed graphical VAR. Two network models can then be obtained: a temporal network and a contemporaneous network. When analyzing data from multiple subjects, a GGM can also be formed on the covariance structure of stationary means-the between-subjects network. We discuss the interpretation of these models and propose estimation methods to obtain these networks, which we implement in the R packages graphicalVAR and mlVAR. The methods are showcased in two empirical examples, and simulation studies on these methods are included in the supplementary materials.",
+      "year": 2018,
+      "venue": "Multivariate Behavioral Research",
+      "citation_count": 1173,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 8.40491,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 11,
+      "bm25_score": 4.988
+    },
+    {
+      "rank": 6,
+      "doi": "10.1017/pan.2016.2",
+      "title": "Generalized Synthetic Control Method: Causal Inference with Interactive Fixed Effects Models",
+      "abstract": "Difference-in-differences (DID) is commonly used for causal inference in time-series cross-sectional data. It requires the assumption that the average outcomes of treated and control units would have followed parallel paths in the absence of treatment. In this paper, we propose a method that not only relaxes this often-violated assumption, but also unifies the synthetic control method (Abadie, Diamond, and Hainmueller 2010) with linear fixed effects models under a simple framework, of which DID is a special case. It imputes counterfactuals for each treated unit using control group information based on a linear interactive fixed effects model that incorporates unit-specific intercepts interacted with time-varying coefficients. This method has several advantages. First, it allows the treatment to be correlated with unobserved unit and time heterogeneities under reasonable modeling assumptions. Second, it generalizes the synthetic control method to the case of multiple treated units and variable treatment periods, and improves efficiency and interpretability. Third, with a built-in cross-validation procedure, it avoids specification searches and thus is easy to implement. An empirical example of Election Day Registration and voter turnout in the United States is provided.",
+      "year": 2017,
+      "venue": "Political Analysis",
+      "citation_count": 906,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 7.41482,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 15,
+      "bm25_score": 4.4117
+    },
+    {
+      "rank": 7,
+      "doi": "10.1093/aje/kwn164",
+      "title": "Constructing Inverse Probability Weights for Marginal Structural Models",
+      "abstract": "The method of inverse probability weighting (henceforth, weighting) can be used to adjust for measured confounding and selection bias under the four assumptions of consistency, exchangeability, positivity, and no misspecification of the model used to estimate weights. In recent years, several published estimates of the effect of time-varying exposures have been based on weighted estimation of the parameters of marginal structural models because, unlike standard statistical methods, weighting can appropriately adjust for measured time-varying confounders affected by prior exposure. As an example, the authors describe the last three assumptions using the change in viral load due to initiation of antiretroviral therapy among 918 human immunodeficiency virus-infected US men and women followed for a median of 5.8 years between 1996 and 2005. The authors describe possible tradeoffs that an epidemiologist may encounter when attempting to make inferences. For instance, a tradeoff between bias and precision is illustrated as a function of the extent to which confounding is controlled. Weight truncation is presented as an informal and easily implemented method to deal with these tradeoffs. Inverse probability weighting provides a powerful methodological tool that may uncover causal effects of exposures that are otherwise obscured. However, as with all methods, diagnostics and sensitivity analyses are essential for proper use.",
+      "year": 2008,
+      "venue": "American Journal of Epidemiology",
+      "citation_count": 2712,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 5.957963,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 2,
+      "bm25_score": 3.6121
+    },
+    {
+      "rank": 8,
+      "doi": "10.1186/s13717-016-0063-3",
+      "title": "Applications of structural equation modeling (SEM) in ecological studies: an updated review",
+      "abstract": "This review was developed to introduce the essential components and variants of structural equation modeling (SEM), synthesize the common issues in SEM applications, and share our views on SEM’s future in ecological research. We searched the Web of Science on SEM applications in ecological studies from 1999 through 2016 and summarized the potential of SEMs, with a special focus on unexplored uses in ecology. We also analyzed and discussed the common issues with SEM applications in previous publications and presented our view for its future applications. We searched and found 146 relevant publications on SEM applications in ecological studies. We found that five SEM variants had not commenly been applied in ecology, including the latent growth curve model, Bayesian SEM, partial least square SEM, hierarchical SEM, and variable/model selection. We identified ten common issues in SEM applications including strength of causal assumption, specification of feedback loops, selection of models and variables, identification of models, methods of estimation, explanation of latent variables, selection of fit indices, report of results, estimation of sample size, and the fit of model. In previous ecological studies, measurements of latent variables, explanations of model parameters, and reports of key statistics were commonly overlooked, while several advanced uses of SEM had been ignored overall. With the increasing availability of data, the use of SEM holds immense potential for ecologists in the future.",
+      "year": 2016,
+      "venue": "Ecological Processes",
+      "citation_count": 1445,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 4.970401,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 8,
+      "bm25_score": 2.3906
+    },
+    {
+      "rank": 9,
+      "doi": "10.1214/19-ba1195",
+      "title": "Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects (with Discussion)",
+      "abstract": "This paper presents a novel nonlinear regression model for estimating heterogeneous treatment effects, geared specifically towards situations with small effect sizes, heterogeneous effects, and strong confounding by observables. Standard nonlinear regression models, which may work quite well for prediction, have two notable weaknesses when used to estimate heterogeneous treatment effects. First, they can yield badly biased estimates of treatment effects when fit to data with strong confounding. The Bayesian causal forest model presented in this paper avoids this problem by directly incorporating an estimate of the propensity function in the specification of the response model, implicitly inducing a covariate-dependent prior on the regression function. Second, standard approaches to response surface modeling do not provide adequate control over the strength of regularization over effect heterogeneity. The Bayesian causal forest model permits treatment effect heterogeneity to be regularized separately from the prognostic effect of control variables, making it possible to informatively “shrink to homogeneity”. While we focus on observational data, our methods are equally useful for inferring heterogeneous treatment effects from randomized controlled experiments where careful regularization is somewhat less complicated but no less important. We illustrate these benefits via the reanalysis of an observational study assessing the causal effects of smoking on medical expenditures as well as extensive simulation studies.",
+      "year": 2020,
+      "venue": "Bayesian Analysis",
+      "citation_count": 305,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 4.855806,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 25,
+      "bm25_score": 1.9978
+    },
+    {
+      "rank": 10,
+      "doi": "10.1162/neco_a_00999",
+      "title": "Active Inference, Curiosity and Insight",
+      "abstract": "This article offers a formal account of curiosity and insight in terms of active (Bayesian) inference. It deals with the dual problem of inferring states of the world and learning its statistical structure. In contrast to current trends in machine learning (e.g., deep learning), we focus on how people attain insight and understanding using just a handful of observations, which are solicited through curious behavior. We use simulations of abstract rule learning and approximate Bayesian inference to show that minimizing (expected) variational free energy leads to active sampling of novel contingencies. This epistemic behavior closes explanatory gaps in generative models of the world, thereby reducing uncertainty and satisfying curiosity. We then move from epistemic learning to model selection or structure learning to show how abductive processes emerge when agents test plausible hypotheses about symmetries (i.e., invariances or rules) in their generative models. The ensuing Bayesian model reduction evinces mechanisms associated with sleep and has all the hallmarks of \"aha\" moments. This formulation moves toward a computational account of consciousness in the pre-Cartesian sense of sharable knowledge (i.e., con: \"together\"; scire: \"to know\").",
+      "year": 2017,
+      "venue": "Neural Computation",
+      "citation_count": 380,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 4.518197,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 23,
+      "bm25_score": 1.7893
+    },
+    {
+      "rank": 11,
+      "doi": "10.1371/journal.pcbi.1000709",
+      "title": "Comparing Families of Dynamic Causal Models",
+      "abstract": "Mathematical models of scientific data can be formally compared using Bayesian model evidence. Previous applications in the biological sciences have mainly focussed on model selection in which one first selects the model with the highest evidence and then makes inferences based on the parameters of that model. This \"best model\" approach is very useful but can become brittle if there are a large number of models to compare, and if different subjects use different models. To overcome this shortcoming we propose the combination of two further approaches: (i) family level inference and (ii) Bayesian model averaging within families. Family level inference removes uncertainty about aspects of model structure other than the characteristic of interest. For example: What are the inputs to the system? Is processing serial or parallel? Is it linear or nonlinear? Is it mediated by a single, crucial connection? We apply Bayesian model averaging within families to provide inferences about parameters that are independent of further assumptions about model structure. We illustrate the methods using Dynamic Causal Models of brain imaging data.",
+      "year": 2010,
+      "venue": "PLoS Computational Biology",
+      "citation_count": 730,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 3.647744,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=16y,cite=730<mean+2.0σ)",
+      "orig_rank": 20,
+      "bm25_score": 2.2597
+    },
+    {
+      "rank": 12,
+      "doi": "10.1017/psrm.2014.7",
+      "title": "Explaining Fixed Effects: Random Effects Modeling of Time-Series Cross-Sectional and Panel Data",
+      "abstract": "This article challenges Fixed Effects (FE) modeling as the ‘default’ for time-series-cross-sectional and panel data. Understanding different within and between effects is crucial when choosing modeling strategies. The downside of Random Effects (RE) modeling—correlated lower-level covariates and higher-level residuals—is omitted-variable bias, solvable with Mundlak's (1978a) formulation. Consequently, RE can provide everything that FE promises and more, as confirmed by Monte-Carlo simulations, which additionally show problems with Plümper and Troeger's FE Vector Decomposition method when data are unbalanced. As well as incorporating time-invariant variables, RE models are readily extendable, with random coefficients, cross-level interactions and complex variance functions. We argue not simply for technical solutions to endogeneity, but for the substantive importance of context/heterogeneity, modeled using RE. The implications extend beyond political science to all multilevel datasets. However, omitted variables could still bias estimated higher-level variable effects; as with any model, care is required in interpretation.",
+      "year": 2014,
+      "venue": "Political Science Research and Methods",
+      "citation_count": 1461,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 3.495408,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=12y,cite=1461<mean+2.0σ)",
+      "orig_rank": 7,
+      "bm25_score": 3.8419
+    },
+    {
+      "rank": 13,
+      "doi": "10.1145/3444944",
+      "title": "A Survey on Causal Inference",
+      "abstract": "Causal inference is a critical research topic across many domains, such as statistics, computer science, education, public policy, and economics, for decades. Nowadays, estimating causal effect from observational data has become an appealing research direction owing to the large amount of available data and low budget requirement, compared with randomized controlled trials. Embraced with the rapidly developed machine learning area, various causal effect estimation methods for observational data have sprung up. In this survey, we provide a comprehensive review of causal inference methods under the potential outcome framework, one of the well-known causal inference frameworks. The methods are divided into two categories depending on whether they require all three assumptions of the potential outcome framework or not. For each category, both the traditional statistical methods and the recent machine learning enhanced methods are discussed and compared. The plausible applications of these methods are also presented, including the applications in advertising, recommendation, medicine, and so on. Moreover, the commonly used benchmark datasets as well as the open-source codes are also summarized, which facilitate researchers and practitioners to explore, evaluate and apply the causal inference methods.",
+      "year": 2021,
+      "venue": "ACM Transactions on Knowledge Discovery from Data",
+      "citation_count": 452,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.825595,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 22,
+      "bm25_score": 1.7567
+    },
+    {
+      "rank": 14,
+      "doi": "10.1093/ije/dyw114",
+      "title": "The tale wagged by the DAG: broadening the scope of causal inference and explanation for epidemiology",
+      "abstract": "'Causal inference', in 21st century epidemiology, has notably come to stand for a specific approach, one focused primarily on counterfactual and potential outcome reasoning and using particular representations, such as directed acyclic graphs (DAGs) and Bayesian causal nets. In this essay, we suggest that in epidemiology no one causal approach should drive the questions asked or delimit what counts as useful evidence. Robust causal inference instead comprises a complex narrative, created by scientists appraising, from diverse perspectives, different strands of evidence produced by myriad methods. DAGs can of course be useful, but should not alone wag the causal tale. To make our case, we first address key conceptual issues, after which we offer several concrete examples illustrating how the newly favoured methods, despite their strengths, can also: (i) limit who and what may be deemed a 'cause', thereby narrowing the scope of the field; and (ii) lead to erroneous causal inference, especially if key biological and social assumptions about parameters are poorly conceived, thereby potentially causing harm. As an alternative, we propose that the field of epidemiology consider judicious use of the broad and flexible framework of 'inference to the best explanation', an approach perhaps best developed by Peter Lipton, a philosopher of science who frequently employed epidemiologically relevant examples. This stance requires not only that we be open to being pluralists about both causation and evidence but also that we rise to the challenge of forging explanations that, in Lipton's words, aspire to 'scope, precision, mechanism, unification and simplicity'.",
+      "year": 2016,
+      "venue": "International Journal of Epidemiology",
+      "citation_count": 253,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.813652,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 27,
+      "bm25_score": 2.1309
+    },
+    {
+      "rank": 15,
+      "doi": "10.1214/09-ss057",
+      "title": "Causal inference in statistics: An overview",
+      "abstract": "This review presents empirical researchers with recent advances in causal inference, and stresses the paradigmatic shifts that must be undertaken in moving from traditional statistical analysis to causal analysis of multivariate data. Special emphasis is placed on the assumptions that underly all causal inferences, the languages used in formulating those assumptions, the conditional nature of all causal and counterfactual claims, and the methods that have been developed for the assessment of such claims. These advances are illustrated using a general theory of causation based on the Structural Causal Model (SCM) described in Pearl (2000a), which subsumes and unifies other approaches to causation, and provides a coherent mathematical foundation for the analysis of causes and counterfactuals. In particular, the paper surveys the development of mathematical tools for inferring (from a combination of data and assumptions) answers to three types of causal queries: (1) queries about the effects of potential interventions, (also called “causal effects” or “policy evaluation”) (2) queries about probabilities of counterfactuals, (including assessment of “regret,” “attribution” or “causes of effects”) and (3) queries about direct and indirect effects (also known as “mediation”). Finally, the paper defines the formal and conceptual relationships between the structural and potential-outcome frameworks and presents tools for a symbiotic analysis that uses the strong features of both.",
+      "year": 2009,
+      "venue": "Statistics Surveys",
+      "citation_count": 2341,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.66466,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=17y,cite=2341<mean+2.0σ)",
+      "orig_rank": 3,
+      "bm25_score": 3.1352
+    },
+    {
+      "rank": 16,
+      "doi": "10.1890/es12-00048.1",
+      "title": "Guidelines for a graph‐theoretic implementation of structural equation modeling",
+      "abstract": "Structural equation modeling (SEM) is increasingly being chosen by researchers as a framework for gaining scientific insights from the quantitative analyses of data. New ideas and methods emerging from the study of causality, influences from the field of graphical modeling, and advances in statistics are expanding the rigor, capability, and even purpose of SEM. Guidelines for implementing the expanded capabilities of SEM are currently lacking. In this paper we describe new developments in SEM that we believe constitute a third‐generation of the methodology. Most characteristic of this new approach is the generalization of the structural equation model as a causal graph. In this generalization, analyses are based on graph theoretic principles rather than analyses of matrices. Also, new devices such as metamodels and causal diagrams, as well as an increased emphasis on queries and probabilistic reasoning, are now included. Estimation under a graph theory framework permits the use of Bayesian or likelihood methods. The guidelines presented start from a declaration of the goals of the analysis. We then discuss how theory frames the modeling process, requirements for causal interpretation, model specification choices, selection of estimation method, model evaluation options, and use of queries, both to summarize retrospective results and for prospective analyses. The illustrative example presented involves monitoring data from wetlands on Mount Desert Island, home of Acadia National Park. Our presentation walks through the decision process involved in developing and evaluating models, as well as drawing inferences from the resulting prediction equations. In addition to evaluating hypotheses about the connections between human activities and biotic responses, we illustrate how the structural equation (SE) model can be queried to understand how interventions might take advantage of an environmental threshold to limit Typha invasions. The guidelines presented provide for an",
+      "year": 2012,
+      "venue": "Ecosphere",
+      "citation_count": 597,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.654896,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=14y,cite=597<mean+2.0σ)",
+      "orig_rank": 21,
+      "bm25_score": 2.9897
+    },
+    {
+      "rank": 17,
+      "doi": "10.1023/a:1022623210503",
+      "title": "Learning Bayesian Networks: The Combination of Knowledge and Statistical Data",
+      "abstract": "",
+      "year": 1995,
+      "venue": "Machine Learning",
+      "citation_count": 3245,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.276193,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 1,
+      "bm25_score": 1.0843
+    },
+    {
+      "rank": 18,
+      "doi": "10.3389/fnhum.2015.00001",
+      "title": "Causal reasoning with forces",
+      "abstract": "Causal composition allows people to generate new causal relations by combining existing causal knowledge. We introduce a new computational model of such reasoning, the force theory, which holds that people compose causal relations by simulating the processes that join forces in the world, and compare this theory with the mental model theory (Khemlani et al., 2014) and the causal model theory (Sloman et al., 2009), which explain causal composition on the basis of mental models and structural equations, respectively. In one experiment, the force theory was uniquely able to account for people's ability to compose causal relationships from complex animations of real-world events. In three additional experiments, the force theory did as well as or better than the other two theories in explaining the causal compositions people generated from linguistically presented causal relations. Implications for causal learning and the hierarchical structure of causal knowledge are discussed.",
+      "year": 2015,
+      "venue": "Frontiers in Human Neuroscience",
+      "citation_count": 794,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 2.0206,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=11y,cite=794<mean+2.0σ)",
+      "orig_rank": 19,
+      "bm25_score": 2.1855
+    },
+    {
+      "rank": 19,
+      "doi": "10.1214/12-ba703",
+      "title": "Scalable Variational Inference for Bayesian Variable Selection in Regression, and Its Accuracy in Genetic Association Studies",
+      "abstract": "The Bayesian approach to variable selection in regression is a powerful tool for tackling many scientific problems. Inference for variable selection models is usually implemented using Markov chain Monte Carlo (MCMC). Because MCMC can impose a high computational cost in studies with a large number of variables, we assess an alternative to MCMC based on a simple variational approximation. Our aim is to retain useful features of Bayesian variable selection at a reduced cost. Using simulations designed to mimic genetic association studies, we show that this simple variational approximation yields posterior inferences in some settings that closely match exact values. In less restrictive (and more realistic) conditions, we show that posterior probabilities of inclusion for individual variables are often incorrect, but variational estimates of other useful quantities|including posterior distributions of the hyperparameters|are remarkably accurate. We illustrate how these results guide the use of variational inference for a genome-wide association study with thousands of samples and hundreds of thousands of variables.",
+      "year": 2012,
+      "venue": "Bayesian Analysis",
+      "citation_count": 304,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.899526,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=14y,cite=304<mean+2.0σ)",
+      "orig_rank": 26,
+      "bm25_score": 1.8192
+    },
+    {
+      "rank": 20,
+      "doi": "10.1073/pnas.1510479113",
+      "title": "Causal inference in economics and marketing",
+      "abstract": "This is an elementary introduction to causal inference in economics written for readers familiar with machine learning methods. The critical step in any causal analysis is estimating the counterfactual-a prediction of what would have happened in the absence of the treatment. The powerful techniques used in machine learning may be useful for developing better estimates of the counterfactual, potentially improving causal inference.",
+      "year": 2016,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_count": 250,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.863877,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 28,
+      "bm25_score": 1.8639
+    },
+    {
+      "rank": 21,
+      "doi": "10.1093/scan/nsw154",
+      "title": "The theory of constructed emotion: an active inference account of interoception and categorization",
+      "abstract": "The science of emotion has been using folk psychology categories derived from philosophy to search for the brain basis of emotion. The last two decades of neuroscience research have brought us to the brink of a paradigm shift in understanding the workings of the brain, however, setting the stage to revolutionize our understanding of what emotions are and how they work. In this article, we begin with the structure and function of the brain, and from there deduce what the biological basis of emotions might be. The answer is a brain-based, computational account called the theory of constructed emotion.",
+      "year": 2016,
+      "venue": "Social Cognitive and Affective Neuroscience",
+      "citation_count": 1433,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.726339,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 9,
+      "bm25_score": 0.6256
+    },
+    {
+      "rank": 22,
+      "doi": "10.1007/s10994-006-6889-7",
+      "title": "The max-min hill-climbing Bayesian network structure learning algorithm",
+      "abstract": "We present a new algorithm for Bayesian network structure learning, called Max-Min Hill-Climbing (MMHC). The algorithm combines ideas from local learning, constraint-based, and search-and-score techniques in a principled and effective way. It first reconstructs the skeleton of a Bayesian network and then performs a Bayesian-scoring greedy hill-climbing search to orient the edges. In our extensive empirical evaluation MMHC outperforms on average and in terms of various metrics several prototypical and state-of-the-art algorithms, namely the PC, Sparse Candidate, Three Phase Dependency Analysis, Optimal Reinsertion, Greedy Equivalence Search, and Greedy Search. These are the first empirical results simultaneously comparing most of the major Bayesian network algorithms against each other. MMHC offers certain theoretical advantages, specifically over the Sparse Candidate algorithm, corroborated by our experiments. MMHC and detailed results of our study are publicly available at http://www.dsl-lab.org/supplements/mmhc_paper/mmhc_index.html.",
+      "year": 2006,
+      "venue": "Machine Learning",
+      "citation_count": 1843,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.470065,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=20y,cite=1843<mean+2.0σ)",
+      "orig_rank": 5,
+      "bm25_score": 1.1716
+    },
+    {
+      "rank": 23,
+      "doi": "10.1109/jproc.2021.3058954",
+      "title": "Toward Causal Representation Learning",
+      "abstract": "The two fields of machine learning and graphical causality arose and are developed separately. However, there is, now, cross-pollination and increasing interest in both fields to benefit from the advances of the other. In this article, we review fundamental concepts of causal inference and relate them to crucial open problems of machine learning, including transfer and generalization, thereby assaying how causality can contribute to modern machine learning research. This also applies in the opposite direction: we note that most work in causality starts from the premise that the causal variables are given. A central problem for AI and causality is, thus, causal representation learning, that is, the discovery of high-level causal variables from low-level observations. Finally, we delineate some implications of causality for machine learning and propose key research areas at the intersection of both communities.",
+      "year": 2021,
+      "venue": "Proceedings of the IEEE",
+      "citation_count": 1034,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.341131,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 12,
+      "bm25_score": 1.3411
+    },
+    {
+      "rank": 24,
+      "doi": "10.1038/s43586-020-00001-2",
+      "title": "Bayesian statistics and modelling",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Nature Reviews Methods Primers",
+      "citation_count": 1175,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.119062,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 10,
+      "bm25_score": 1.1191
+    },
+    {
+      "rank": 25,
+      "doi": "10.1016/j.neuroimage.2009.11.015",
+      "title": "Ten simple rules for dynamic causal modeling",
+      "abstract": "Dynamic causal modeling (DCM) is a generic Bayesian framework for inferring hidden neuronal states from measurements of brain activity. It provides posterior estimates of neurobiologically interpretable quantities such as the effective strength of synaptic connections among neuronal populations and their context-dependent modulation. DCM is increasingly used in the analysis of a wide range of neuroimaging and electrophysiological data. Given the relative complexity of DCM, compared to conventional analysis techniques, a good knowledge of its theoretical foundations is needed to avoid pitfalls in its application and interpretation of results. By providing good practice recommendations for DCM, in the form of ten simple rules, we hope that this article serves as a helpful tutorial for the growing community of DCM users.",
+      "year": 2009,
+      "venue": "NeuroImage",
+      "citation_count": 837,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 1.032887,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=17y,cite=837<mean+2.0σ)",
+      "orig_rank": 18,
+      "bm25_score": 1.3122
+    },
+    {
+      "rank": 26,
+      "doi": "10.1016/j.neuroimage.2009.08.065",
+      "title": "Six problems for causal inference from fMRI",
+      "abstract": "",
+      "year": 2009,
+      "venue": "NeuroImage",
+      "citation_count": 354,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.811959,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=17y,cite=354<mean+2.0σ)",
+      "orig_rank": 24,
+      "bm25_score": 1.6239
+    },
+    {
+      "rank": 27,
+      "doi": "10.1086/525638",
+      "title": "Interventions and Causal Inference",
+      "abstract": "The literature on causal discovery has focused on interventions that involve randomly assigning values to a single variable. But such a randomized intervention is not the only possibility, nor is it always optimal. In some cases it is impossible or it would be unethical to perform such an intervention. We provide an account of ‘hard’ and ‘soft’ interventions and discuss what they can contribute to causal discovery. We also describe how the choice of the optimal intervention(s) depends heavily on the particular experimental setup and the assumptions that can be made.",
+      "year": 2007,
+      "venue": "Philosophy of Science",
+      "citation_count": 234,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.720486,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=19y,cite=234<mean+2.0σ)",
+      "orig_rank": 29,
+      "bm25_score": 1.441
+    },
+    {
+      "rank": 28,
+      "doi": "10.1364/josaa.20.001434",
+      "title": "Hierarchical Bayesian inference in the visual cortex",
+      "abstract": "Traditional views of visual processing suggest that early visual neurons in areas V1 and V2 are static spatiotemporal filters that extract local features from a visual scene. The extracted information is then channeled through a feedforward chain of modules in successively higher visual areas for further analysis. Recent electrophysiological recordings from early visual neurons in awake behaving monkeys reveal that there are many levels of complexity in the information processing of the early visual cortex, as seen in the long-latency responses of its neurons. These new findings suggest that activity in the early visual cortex is tightly coupled and highly interactive with the rest of the visual system. They lead us to propose a new theoretical setting based on the mathematical framework of hierarchical Bayesian inference for reasoning about the visual system. In this framework, the recurrent feedforward/feedback loops in the cortex serve to integrate top-down contextual priors and bottom-up observations so as to implement concurrent probabilistic inference along the visual hierarchy. We suggest that the algorithms of particle filtering and Bayesian-belief propagation might model these interactive cortical computations. We review some recent neurophysiological evidences that support the plausibility of these ideas.",
+      "year": 2003,
+      "venue": "Journal of the Optical Society of America A",
+      "citation_count": 1544,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.232542,
+      "recency_factor": 0.1,
+      "recency_reason": "recency:ancient(age=23y,cite=1544<mean+2.5σ)",
+      "orig_rank": 6,
+      "bm25_score": 1.7727
+    },
+    {
+      "rank": 29,
+      "doi": "10.1007/bf00994016",
+      "title": "Learning Bayesian networks: The combination of knowledge and statistical data",
+      "abstract": "",
+      "year": 1995,
+      "venue": "Machine Learning",
+      "citation_count": 2043,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.227619,
+      "recency_factor": 0.1,
+      "recency_reason": "recency:ancient(age=31y,cite=2043<mean+2.5σ)",
+      "orig_rank": 4,
+      "bm25_score": 1.0843
+    },
+    {
+      "rank": 30,
+      "doi": "10.1214/ss/1009211805",
+      "title": "Confounding and Collapsibility in Causal Inference",
+      "abstract": "Consideration of confounding is fundamental to the design and analysis of studies of causal effects. Yet, apart from confounding in experimental designs, the topic is given little or no discussion in most statistics texts. We here provide an overview of confounding and related concepts based on a counterfactual model for causation. Special attention is given to definitions of confounding, problems in control of confounding, the relation of confounding to exchangeability and collapsibility, and the importance of distinguishing confounding from noncollapsibility.",
+      "year": 1999,
+      "venue": "Statistical Science",
+      "citation_count": 939,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.218241,
+      "recency_factor": 0.1,
+      "recency_reason": "recency:ancient(age=27y,cite=939<mean+2.5σ)",
+      "orig_rank": 14,
+      "bm25_score": 1.3693
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "query_id": "q003",
+  "query": "vector quantized representations for document retrieval",
+  "topic_bucket": "ml",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:05:56",
+  "config": "v4-prf",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1145/3488560.3498443",
+      "title": "Learning Discrete Representations via Constrained Clustering for Effective and Efficient Dense Retrieval",
+      "abstract": "Dense Retrieval (DR) has achieved state-of-the-art first-stage ranking effectiveness. However, the efficiency of most existing DR models is limited by the large memory cost of storing dense vectors and the time-consuming nearest neighbor search (NNS) in vector space. Therefore, we present RepCONC, a novel retrieval model that learns discrete Representations via CONstrained Clustering. RepCONC jointly trains dual-encoders and the Product Quantization (PQ) method to learn discrete document representations and enables fast approximate NNS with compact indexes. It models quantization as a constrained clustering process, which requires the document embeddings to be uniformly clustered around the quantization centroids and supports end-to-end optimization of the quantization method and dual-encoders. We theoretically demonstrate the importance of the uniform clustering constraint in RepCONC and derive an efficient approximate solution for constrained clustering by reducing it to an instance of the optimal transport problem. Besides constrained clustering, RepCONC further adopts a vector-based inverted file system (IVF) to support highly efficient vector search on CPUs. Extensive experiments on two popular ad-hoc retrieval benchmarks show that RepCONC achieves better ranking effectiveness than competitive vector quantization baselines under different compression ratio settings. It also substantially outperforms a wide range of existing retrieval models in terms of retrieval effectiveness, memory efficiency, and time efficiency.",
+      "year": 2022,
+      "venue": "Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining",
+      "citation_count": 59,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 23.908155,
+      "bm25_score": 6.3863
+    },
+    {
+      "rank": 2,
+      "doi": "10.1109/icdar.2013.114",
+      "title": "Writer Identification and Writer Retrieval Using the Fisher Vector on Visual Vocabularies",
+      "abstract": "In this paper a method for writer identification and writer retrieval is presented. Writer identification is the task of identifying the writer of a document out of a database of known writers. In contrast to identification, writer retrieval is the task of finding documents in a database according to the similarity of handwritings. The approach presented in this paper uses local features for this task. First a vocabulary is calculated by clustering features using a Gaussian Mixture Model and applying the Fisher kernel. For each document image the features are calculated and the Fisher Vector is generated using the vocabulary. The distance of this vector is then used as similarity measurement for the handwriting and can be used for writer identification and writer retrieval. The proposed method is evaluated on two datasets, namely the ICDAR 2011 Writer Identification Contest dataset which consists of 208 documents from 26 writers, and the CVL Database which contains 1539 documents from 309 writers. Experiments show that the proposed methods performs slightly better than previously presented writer identification approaches.",
+      "year": 2013,
+      "venue": "2013 12th International Conference on Document Analysis and Recognition",
+      "citation_count": 72,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "proceedings-article",
+      "orig_rank": 29,
+      "v4_score": 22.026995,
+      "bm25_score": 4.9847
+    },
+    {
+      "rank": 3,
+      "doi": "10.18653/v1/2021.naacl-main.241",
+      "title": "COIL: Revisit Exact Lexical Match in Information Retrieval with Contextualized Inverted List",
+      "abstract": "Classical information retrieval systems such as BM25 rely on exact lexical match and carry out search efficiently with inverted list index. Recent neural IR models shifts towards soft semantic matching all query document terms, but they lose the computation efficiency of exact match systems. This paper presents COIL, a contextualized exact match retrieval architecture that brings semantic lexical matching. COIL scoring is based on overlapping query document tokens' contextualized representations. The new architecture stores contextualized token representations in inverted lists, bringing together the efficiency of exact match and the representation power of deep language models. Our experimental results show COIL outperforms classical lexical retrievers and state-of-the-art deep LM retrievers with similar or smaller latency. 1",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 174,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 13.795163,
+      "bm25_score": 4.837
+    },
+    {
+      "rank": 4,
+      "doi": "10.1109/cvpr.2009.5206529",
+      "title": "Efficient representation of local geometry for large scale object retrieval",
+      "abstract": "State of the art methods for image and object retrieval exploit both appearance (via visual words) and local geometry (spatial extent, relative pose). In large scale problems, memory becomes a limiting factor - local geometry is stored for each feature detected in each image and requires storage larger than the inverted file and term frequency and inverted document frequency weights together. We propose a novel method for learning discretized local geometry representation based on minimization of average reprojection error in the space of ellipses. The representation requires only 24 bits per feature without drop in performance. Additionally, we show that if the gravity vector assumption is used consistently from the feature description to spatial verification, it improves retrieval performance and decreases the memory footprint. The proposed method outperforms state of the art retrieval algorithms in a standard image retrieval benchmark.",
+      "year": 2009,
+      "venue": "2009 IEEE Conference on Computer Vision and Pattern Recognition",
+      "citation_count": 265,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 8.595754,
+      "bm25_score": 3.6116
+    },
+    {
+      "rank": 5,
+      "doi": "10.1007/978-3-030-01177-2_12",
+      "title": "Legal Document Retrieval using Document Vector Embeddings and Deep Learning",
+      "abstract": "",
+      "year": 2018,
+      "venue": "Advances in Intelligent Systems and Computing",
+      "citation_count": 89,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 26,
+      "v4_score": 6.131674,
+      "bm25_score": 6.1317
+    },
+    {
+      "rank": 6,
+      "doi": "10.1007/s10916-016-0659-2",
+      "title": "Medical Image Retrieval Using Vector Quantization and Fuzzy S-tree",
+      "abstract": "The aim of the article is to present a novel method for fuzzy medical image retrieval (FMIR) using vector quantization (VQ) with fuzzy signatures in conjunction with fuzzy S-trees. In past times, a task of similar pictures searching was not based on searching for similar content (e.g. shapes, colour) of the pictures but on the picture name. There exist some methods for the same purpose, but there is still some space for development of more efficient methods. The proposed image retrieval system is used for finding similar images, in our case in the medical area - in mammography, in addition to the creation of the list of similar images - cases. The created list is used for assessing the nature of the finding - whether the medical finding is malignant or benign. The suggested method is compared to the method using Normalized Compression Distance (NCD) instead of fuzzy signatures and fuzzy S-tree. The method with NCD is useful for the creation of the list of similar cases for malignancy assessment, but it is not able to capture the area of interest in the image. The proposed method is going to be added to the complex decision support system to help to determine appropriate healthcare according to the experiences of similar, previous cases.",
+      "year": 2016,
+      "venue": "Journal of Medical Systems",
+      "citation_count": 80,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 5.039288,
+      "bm25_score": 2.15
+    },
+    {
+      "rank": 7,
+      "doi": "10.24963/ijcai.2018/396",
+      "title": "Unsupervised Deep Hashing via Binary Latent Factor Models for Large-scale Cross-modal Retrieval",
+      "abstract": "Despite its great success, matrix factorization based cross-modality hashing suffers from two problems: 1) there is no engagement between feature learning and binarization; and 2) most existing methods impose the relaxation strategy by discarding the discrete constraints when learning the hash function, which usually yields suboptimal solutions. In this paper, we propose a novel multimodal hashing framework, referred as Unsupervised Deep Cross-Modal Hashing (UDCMH), for multimodal data search in a self-taught manner via integrating deep learning and matrix factorization with binary latent factor models. On one hand, our unsupervised deep learning framework enables the feature learning to be jointly optimized with the binarization. On the other hand, the hashing system based on the binary latent factor models can generate unified binary codes by solving a discrete-constrained objective function directly with no need for a relaxation step. Moreover, novel Laplacian constraints are incorporated into the objective function, which allow to preserve not only the nearest neighbors that are commonly considered in the literature but also the farthest neighbors of data, even if the semantic labels are not available. Extensive experiments on multiple datasets highlight the superiority of the proposed framework over several state-of-the-art baselines.",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 170,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 4.566903,
+      "bm25_score": 0.3079
+    },
+    {
+      "rank": 8,
+      "doi": "10.1609/aaai.v28i1.8952",
+      "title": "Supervised Hashing for Image Retrieval via Image Representation Learning",
+      "abstract": "Hashing is a popular approximate nearest neighbor search approach for large-scale image retrieval. Supervised hashing, which incorporates similarity/dissimilarity information on entity pairs to improve the quality of hashing function learning, has recently received increasing attention. However, in the existing supervised hashing methods for images, an input image is usually encoded by a vector of hand-crafted visual features. Such hand-crafted feature vectors do not necessarily preserve the accurate semantic similarities of images pairs, which may often degrade the performance of hashing function learning. In this paper, we propose a supervised hashing method for image retrieval, in which we automatically learn a good image representation tailored to hashing as well as a set of hash functions. The proposed method has two stages. In the first stage, given the pairwise similarity matrix $S$ over training images, we propose a scalable coordinate descent method to decompose $S$ into a product of $HH^T$ where $H$ is a matrix with each of its rows being the approximate hash code associated to a training image. In the second stage, we propose to simultaneously learn a good feature representation for the input images as well as a set of hash functions, via a deep convolutional network tailored to the learned hash codes in $H$ and optionally the discrete class labels of the images. Extensive empirical evaluations on three benchmark datasets with different kinds of images show that the proposed method has superior performance gains over several state-of-the-art supervised and unsupervised hashing methods.",
+      "year": 2014,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 1007,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 3.966926,
+      "bm25_score": 1.4496
+    },
+    {
+      "rank": 9,
+      "doi": "10.1109/access.2023.3295776",
+      "title": "Information Retrieval: Recent Advances and Beyond",
+      "abstract": "This paper provides an extensive and thorough overview of the models and techniques utilized in the first and second stages of the typical information retrieval processing chain. Our discussion encompasses the current state-of-the-art models, covering a wide range of methods and approaches in the field of information retrieval. We delve into the historical development of these models, analyze the key advancements and breakthroughs, and address the challenges and limitations faced by researchers and practitioners in the domain. By offering a comprehensive understanding of the field, this survey is a valuable resource for researchers, practitioners, and newcomers to the information retrieval domain, fostering knowledge growth, innovation, and the development of novel ideas and techniques.",
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_count": 130,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 3.281737,
+      "bm25_score": 0.7118
+    },
+    {
+      "rank": 10,
+      "doi": "10.1109/tip.2016.2564638",
+      "title": "Supervised Matrix Factorization Hashing for Cross-Modal Retrieval",
+      "abstract": "The target of cross-modal hashing is to embed heterogeneous multimedia data into a common low-dimensional Hamming space, which plays a pivotal part in multimedia retrieval due to the emergence of big multimodal data. Recently, matrix factorization has achieved great success in cross-modal hashing. However, how to effectively use label information and local geometric structure is still a challenging problem for these approaches. To address this issue, we propose a cross-modal hashing method based on collective matrix factorization, which considers both the label consistency across different modalities and the local geometric consistency in each modality. These two elements are formulated as a graph Laplacian term in the objective function, leading to a substantial improvement on the discriminative power of latent semantic features obtained by collective matrix factorization. Moreover, the proposed method learns unified hash codes for different modalities of an instance to facilitate cross-modal search, and the objective function is solved using an iterative strategy. The experimental results on two benchmark data sets show the effectiveness of the proposed method and its superiority over state-of-the-art cross-modal hashing methods.",
+      "year": 2016,
+      "venue": "IEEE Transactions on Image Processing",
+      "citation_count": 250,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 2.908188,
+      "bm25_score": 0.4787
+    },
+    {
+      "rank": 11,
+      "doi": "10.18653/v1/2022.acl-long.203",
+      "title": "Unsupervised Corpus Aware Language Model Pre-training for Dense Passage Retrieval",
+      "abstract": "Recent research demonstrates the effectiveness of using fine-tuned language models (LM) for dense retrieval. However, dense retrievers are hard to train, typically requiring heavily engineered fine-tuning pipelines to realize their full potential. In this paper, we identify and address two underlying problems of dense retrievers: i) fragility to training data noise and ii) requiring large batches to robustly learn the embedding space. We use the recently proposed Condenser pre-training architecture, which learns to condense information into the dense vector through LM pre-training. On top of it, we propose coCondenser, which adds an unsupervised corpus-level contrastive loss to warm up the passage embedding space. Experiments on MS-MARCO, Natural Question, and Trivia QA datasets show that coCondenser removes the need for heavy data engineering such as augmentation, synthesis, or filtering, and the need for large batch training. It shows comparable performance to RocketQA, a state-of-the-art, heavily engineered system, using simple small batch fine-tuning. 1",
+      "year": 2022,
+      "venue": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_count": 139,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 2.865752,
+      "bm25_score": 1.5697
+    },
+    {
+      "rank": 12,
+      "doi": "10.1109/cvpr.2016.572",
+      "title": "NetVLAD: CNN Architecture for Weakly Supervised Place Recognition",
+      "abstract": "We tackle the problem of large scale visual place recognition, where the task is to quickly and accurately recognize the location of a given query photograph. We present the following four principal contributions. First, we develop a convolutional neural network (CNN) architecture that is trainable in an end-to-end manner directly for the place recognition task. The main component of this architecture, NetVLAD, is a new generalized VLAD layer, inspired by the \"Vector of Locally Aggregated Descriptors\" image representation commonly used in image retrieval. The layer is readily pluggable into any CNN architecture and amenable to training via backpropagation. Second, we create a new weakly supervised ranking loss, which enables end-to-end learning of the architecture's parameters from images depicting the same places over time downloaded from Google Street View Time Machine. Third, we develop an efficient training procedure which can be applied on very large-scale weakly labelled tasks. Finally, we show that the proposed architecture and training procedure significantly outperform non-learnt image representations and off-the-shelf CNN descriptors on challenging place recognition and image retrieval benchmarks.",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 648,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 2.592386,
+      "bm25_score": 2.5924
+    },
+    {
+      "rank": 13,
+      "doi": "10.1007/s10278-012-9495-1",
+      "title": "Content-Based Retrieval of Focal Liver Lesions Using Bag-of-Visual-Words Representations of Single- and Multiphase Contrast-Enhanced CT Images",
+      "abstract": "",
+      "year": 2012,
+      "venue": "Journal of Digital Imaging",
+      "citation_count": 84,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 2.48826,
+      "bm25_score": 2.4883
+    },
+    {
+      "rank": 14,
+      "doi": "10.1145/3394486.3403305",
+      "title": "Embedding-based Retrieval in Facebook Search",
+      "abstract": "Search in social networks such as Facebook poses different challenges than in classical web search: besides the query text, it is important to take into account the searcher's context to provide relevant results. Their social graph is an integral part of this context and is a unique aspect of Facebook search. While embedding-based retrieval (EBR) has been applied in web search engines for years, Facebook search was still mainly based on a Boolean matching model. In this paper, we discuss the techniques for applying EBR to a Facebook Search system. We introduce the unified embedding framework developed to model semantic embeddings for personalized search, and the system to serve embedding-based retrieval in a typical search system based on an inverted index. We discuss various tricks and experiences on end-to-end optimization of the whole system, including ANN parameter tuning and full-stack optimization. Finally, we present our progress on two selected advanced topics about modeling. We evaluated EBR on verticals for Facebook Search with significant metrics gains observed in online A/B experiments. We believe this paper will provide useful insights and experiences to help people on developing embedding-based retrieval systems in search engines.",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 263,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 2.345507,
+      "bm25_score": 0.6296
+    },
+    {
+      "rank": 15,
+      "doi": "10.1186/s40537-014-0007-7",
+      "title": "Deep learning applications and challenges in big data analytics",
+      "abstract": "Abstract Big Data Analytics and Deep Learning are two high-focus of data science. Big Data has become important as many organizations both public and private have been collecting massive amounts of domain-specific information, which can contain useful information about problems such as national intelligence, cyber security, fraud detection, marketing, and medical informatics. Companies such as Google and Microsoft are analyzing large volumes of data for business analysis and decisions, impacting existing and future technology. Deep Learning algorithms extract high-level, complex abstractions as data representations through a hierarchical learning process. Complex abstractions are learnt at a given level based on relatively simpler abstractions formulated in the preceding level in the hierarchy. A key benefit of Deep Learning is the analysis and learning of massive amounts of unsupervised data, making it a valuable tool for Big Data Analytics where raw data is largely unlabeled and un-categorized. In the present study, we explore how Deep Learning can be utilized for addressing some important problems in Big Data Analytics, including extracting complex patterns from massive volumes of data, semantic indexing, data tagging, fast information retrieval, and simplifying discriminative tasks. We also investigate some aspects of Deep Learning research that need further exploration to incorporate specific challenges introduced by Big Data Analytics, including streaming data, high-dimensional data, scalability of models, and distributed computing. We conclude by presenting insights into relevant future works by posing some questions, including defining data sampling criteria, domain adaptation modeling, defining criteria for obtaining useful data abstractions, improving semantic indexing, semi-supervised learning, and active learning.",
+      "year": 2015,
+      "venue": "Journal Of Big Data",
+      "citation_count": 2588,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 2.092156,
+      "bm25_score": 1.0917
+    },
+    {
+      "rank": 16,
+      "doi": "10.1111/cogs.12047",
+      "title": "Optimization and Quantization in Gradient Symbol Systems: A Framework for Integrating the Continuous and the Discrete in Cognition",
+      "abstract": "Mental representations have continuous as well as discrete, combinatorial properties. For example, while predominantly discrete, phonological representations also vary continuously; this is reflected by gradient effects in instrumental studies of speech production. Can an integrated theoretical framework address both aspects of structure? The framework we introduce here, Gradient Symbol Processing, characterizes the emergence of grammatical macrostructure from the Parallel Distributed Processing microstructure (McClelland, Rumelhart, & The PDP Research Group, 1986) of language processing. The mental representations that emerge, Distributed Symbol Systems, have both combinatorial and gradient structure. They are processed through Subsymbolic Optimization-Quantization, in which an optimization process favoring representations that satisfy well-formedness constraints operates in parallel with a distributed quantization process favoring discrete symbolic structures. We apply a particular instantiation of this framework, λ-Diffusion Theory, to phonological production. Simulations of the resulting model suggest that Gradient Symbol Processing offers a way to unify accounts of grammatical competence with both discrete and continuous patterns in language performance.",
+      "year": 2013,
+      "venue": "Cognitive Science",
+      "citation_count": 141,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 2.084601,
+      "bm25_score": 2.0846
+    },
+    {
+      "rank": 17,
+      "doi": "10.1016/j.neucom.2019.10.118",
+      "title": "A comprehensive survey on support vector machine classification: Applications, challenges and trends",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Neurocomputing",
+      "citation_count": 2289,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 2.010306,
+      "bm25_score": 2.0103
+    },
+    {
+      "rank": 18,
+      "doi": "10.1109/cvpr42600.2020.00877",
+      "title": "ActBERT: Learning Global-Local Video-Text Representations",
+      "abstract": "In this paper, we introduce ActBERT for self-supervised learning of joint video-text representations from unlabeled data. First, we leverage global action information to catalyze the mutual interactions between linguistic texts and local regional objects. It uncovers global and local visual clues from paired video sequences and text descriptions for detailed visual and text relation modeling. Second, we introduce an ENtangled Transformer block (ENT) to encode three sources of information, i.e., global actions, local regional objects, and linguistic descriptions. Global-local correspondences are discovered via judicious clues extraction from contextual information. It enforces the joint video-text representation to be aware of fine-grained objects as well as global human intention. We validate the generalization capability of ActBERT on downstream video-and language tasks, i.e., text-video clip retrieval, video captioning, video question answering, action segmentation, and action step localization. ActBERT significantly outperform the state-of-the-arts, demonstrating its superiority in video-text representation learning.",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 408,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 1.958006,
+      "bm25_score": 1.958
+    },
+    {
+      "rank": 19,
+      "doi": "10.3390/rs71114680",
+      "title": "Transferring Deep Convolutional Neural Networks for the Scene Classification of High-Resolution Remote Sensing Imagery",
+      "abstract": "Learning efficient image representations is at the core of the scene classification task of remote sensing imagery. The existing methods for solving the scene classification task, based on either feature coding approaches with low-level hand-engineered features or unsupervised feature learning, can only generate mid-level image features with limited representative ability, which essentially prevents them from achieving better performance. Recently, the deep convolutional neural networks (CNNs), which are hierarchical architectures trained on large-scale datasets, have shown astounding performance in object recognition and detection. However, it is still not clear how to use these deep convolutional neural networks for high-resolution remote sensing (HRRS) scene classification. In this paper, we investigate how to transfer features from these successfully pre-trained CNNs for HRRS scene classification. We propose two scenarios for generating image features via extracting CNN features from different layers. In the first scenario, the activation vectors extracted from fully-connected layers are regarded as the final image features; in the second scenario, we extract dense features from the last convolutional layer at multiple scales and then encode the dense features into global image features through commonly used feature coding approaches. Extensive experiments on two public scene classification datasets demonstrate that the image features obtained by the two proposed scenarios, even with a simple linear classifier, can result in remarkable performance and improve the state-of-the-art by a significant margin. The results reveal that the features from pre-trained CNNs generalize well to HRRS datasets and are more expressive than the low- and mid-level features. Moreover, we tentatively combine features extracted from different CNN models for better performance.",
+      "year": 2015,
+      "venue": "Remote Sensing",
+      "citation_count": 1211,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 1.839704,
+      "bm25_score": 0.8363
+    },
+    {
+      "rank": 20,
+      "doi": "10.1145/276698.276876",
+      "title": "Approximate nearest neighbors",
+      "abstract": "The nearest neighbor problem is the follolving: Given a set of n points P = (PI, . . . ,p,} in some metric space X, preprocess P so as to efficiently answer queries which require finding bhe point in P closest to a query point q E X. We focus on the particularly interesting case of the d-dimensional Euclidean space where X = Wd under some Zp norm. Despite decades of effort, t,he current solutions are far from saabisfactory; in fact, for large d, in theory or in practice, they provide litt,le improvement over the brute-force algorithm which compares the query point to each data point. Of late, t,here has been some interest in the approximate newest neighbors problem, which is: Find a point p E P that is an c-approximate nearest neighbor of the query q in t,hat for all p' E P, d(p, q) < (1 + e)d(p', q). We present two algorithmic results for the approximate version t,hat significantly improve the known bounds: (a) preprocessing cost polynomial in n and d, and a truly sublinear query t.ime (for 6 > 1); and, (b) query time polynomial in log-n and d, and only a mildly exponential preprocessing cost* O(n) x 0(1/~)~. Furt.her, applying a classical geometric lemma on random projections (for which we give a simpler proof), we obtain t.he first known algorithm with polynomial preprocessing and query t.ime polynomial in d and log n. Unfortunately, for small E, the latter is a purely theoretical result since bhe e?rponent depends on l/e. Experimental resuits indicate that our tit algori&m offers orders of magnitude improvement on running times over real data sets. Its key ingredient is the notion of locality-sensitive hashing which may be of independent interest; here, we give applications to information ret,rieval, pattern recognition, dynamic closest-pairs, and fast clustering algorithms.",
+      "year": 1998,
+      "venue": "",
+      "citation_count": 4192,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 1.667851,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 21,
+      "doi": "10.1007/s11263-019-01247-4",
+      "title": "Deep Learning for Generic Object Detection: A Survey",
+      "abstract": "Abstract Object detection, one of the most fundamental and challenging problems in computer vision, seeks to locate object instances from a large number of predefined categories in natural images. Deep learning techniques have emerged as a powerful strategy for learning feature representations directly from data and have led to remarkable breakthroughs in the field of generic object detection. Given this period of rapid evolution, the goal of this paper is to provide a comprehensive survey of the recent achievements in this field brought about by deep learning techniques. More than 300 research contributions are included in this survey, covering many aspects of generic object detection: detection frameworks, object feature representation, object proposal generation, context modeling, training strategies, and evaluation metrics. We finish the survey by identifying promising directions for future research.",
+      "year": 2019,
+      "venue": "International Journal of Computer Vision",
+      "citation_count": 2785,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 1.244695,
+      "bm25_score": 1.2447
+    },
+    {
+      "rank": 22,
+      "doi": "10.5121/iju.2012.3202",
+      "title": "Content Based Video Retrieval Systems",
+      "abstract": "With the development of multimedia data types and available bandwidth there is huge demand of video retrieval systems, as users shift from text based retrieval systems to content based retrieval systems. Selection of extracted features play an important role in content based video retrieval regardless of video attributes being under consideration. These features are intended for selecting, indexing and ranking according to their potential interest to the user. Good features selection also allows the time and space costs of the retrieval process to be reduced. This survey reviews the interesting features that can be extracted from video data for indexing and retrieval along with similarity measurement methods. We also identify present research issues in area of content based video retrieval systems.",
+      "year": 2012,
+      "venue": "International Journal of UbiComp",
+      "citation_count": 101,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.787775,
+      "bm25_score": 0.7878
+    },
+    {
+      "rank": 23,
+      "doi": "10.1109/tmm.2018.2832602",
+      "title": "Predicting Visual Features From Text for Image and Video Caption Retrieval",
+      "abstract": "This paper strives to find amidst a set of sentences the one best describing the content of a given image or video. Different from existing works, which rely on a joint subspace for their image and video caption retrieval, we propose to do so in a visual space exclusively. Apart from this conceptual novelty, we contribute Word2VisualVec , a deep neural network architecture that learns to predict a visual feature representation from textual input. Example captions are encoded into a textual embedding based on multiscale sentence vectorization and further transferred into a deep visual feature of choice via a simple multilayer perceptron. We further generalize Word2VisualVec for video caption retrieval, by predicting from text both three-dimensional convolutional neural network features as well as a visual-audio representation. Experiments on Flickr8k, Flickr30k, the Microsoft Video Description dataset, and the very recent NIST TrecVid challenge for video caption retrieval detail Word2VisualVec's properties, its benefit over textual embeddings, the potential for multimodal query composition, and its state-of-the-art results.",
+      "year": 2018,
+      "venue": "IEEE Transactions on Multimedia",
+      "citation_count": 191,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.646202,
+      "bm25_score": 0.6462
+    },
+    {
+      "rank": 24,
+      "doi": "10.1006/jvci.1999.0413",
+      "title": "Image Retrieval: Current Techniques, Promising Directions, and Open Issues",
+      "abstract": "",
+      "year": 1999,
+      "venue": "Journal of Visual Communication and Image Representation",
+      "citation_count": 1593,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.626537,
+      "bm25_score": 0.6265
+    },
+    {
+      "rank": 25,
+      "doi": "10.18653/v1/2022.naacl-main.272",
+      "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+      "abstract": "Keshav Santhanam, Omar Khattab, Jon Saad-Falcon, Christopher Potts, Matei Zaharia. Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 2022.",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+      "citation_count": 282,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.533249,
+      "bm25_score": 0.5332
+    },
+    {
+      "rank": 26,
+      "doi": "10.1109/cvpr.2019.00523",
+      "title": "Semantically Tied Paired Cycle Consistency for Zero-Shot Sketch-Based Image Retrieval",
+      "abstract": "Zero-shot sketch-based image retrieval (SBIR) is an emerging task in computer vision, allowing to retrieve natural images relevant to sketch queries that might not been seen in the training phase. Existing works either require aligned sketch-image pairs or inefficient memory fusion layer for mapping the visual information to a semantic space. In this work, we propose a semantically aligned paired cycle-consistent generative (SEM-PCYC) model for zero-shot SBIR, where each branch maps the visual information to a common semantic space via an adversarial training. Each of these branches maintains a cycle consistency that only requires supervision at category levels, and avoids the need of highly-priced aligned sketch-image pairs. A classification criteria on the generators' outputs ensures the visual to semantic space mapping to be discriminating. Furthermore, we propose to combine textual and hierarchical side information via a feature selection auto-encoder that selects discriminating side information within a same end-to-end model. Our results demonstrate a significant boost in zero-shot SBIR performance over the state-of-the-art on the challenging Sketchy and TU-Berlin datasets.",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 165,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.473387,
+      "bm25_score": 0.4734
+    },
+    {
+      "rank": 27,
+      "doi": "10.1038/s41592-019-0686-2",
+      "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+      "abstract": "SciPy is an open-source scientific computing library for the Python programming language. Since its initial release in 2001, SciPy has become a de facto standard for leveraging scientific algorithms in Python, with over 600 unique code contributors, thousands of dependent packages, over 100,000 dependent repositories and millions of downloads per year. In this work, we provide an overview of the capabilities and development practices of SciPy 1.0 and highlight some recent technical developments.",
+      "year": 2020,
+      "venue": "Nature Methods",
+      "citation_count": 38284,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 28,
+      "doi": "10.1145/3326362",
+      "title": "Dynamic Graph CNN for Learning on Point Clouds",
+      "abstract": "Point clouds provide a flexible geometric representation suitable for countless applications in computer graphics; they also comprise the raw output of most 3D data acquisition devices. While hand-designed features on point clouds have long been proposed in graphics and vision, however, the recent overwhelming success of convolutional neural networks (CNNs) for image analysis suggests the value of adapting insight from CNN to the point cloud world. Point clouds inherently lack topological information, so designing a model to recover topology can enrich the representation power of point clouds. To this end, we propose a new neural network module dubbed EdgeConv suitable for CNN-based high-level tasks on point clouds, including classification and segmentation. EdgeConv acts on graphs dynamically computed in each layer of the network. It is differentiable and can be plugged into existing architectures. Compared to existing modules operating in extrinsic space or treating each point independently, EdgeConv has several appealing properties: It incorporates local neighborhood information; it can be stacked applied to learn global shape properties; and in multi-layer systems affinity in feature space captures semantic characteristics over potentially long distances in the original embedding. We show the performance of our model on standard benchmarks, including ModelNet40, ShapeNetPart, and S3DIS.",
+      "year": 2019,
+      "venue": "ACM Transactions on Graphics",
+      "citation_count": 6770,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 29,
+      "doi": "",
+      "title": "NetVLAD: CNN architecture for weakly supervised place recognition",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv (Cornell University)",
+      "citation_count": 1621,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 30,
+      "doi": "10.1609/aaai.v31i1.10958",
+      "title": "SummaRuNNer: A Recurrent Neural Network Based Sequence Model for Extractive Summarization of Documents",
+      "abstract": "We present SummaRuNNer, a Recurrent Neural Network (RNN) based sequence model for extractive summarization of documents and show that it achieves performance better than or comparable to state-of-the-art. Our model has the additional advantage of being very interpretable, since it allows visualization of its predictions broken up by abstract features such as information content, salience and novelty. Another novel contribution of our work is abstractive training of our extractive model that can train on human generated reference summaries alone, eliminating the need for sentence-level extractive labels.",
+      "year": 2017,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 959,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}

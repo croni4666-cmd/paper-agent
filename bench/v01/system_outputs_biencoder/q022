@@ -1,0 +1,582 @@
+{
+  "query_id": "q022",
+  "query": "machine learning labor market polarization",
+  "topic_bucket": "cross",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-12T13:05:24",
+  "config": "v4-biencoder",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1086/718497",
+      "title": "Seeing beyond the Trees: Using Machine Learning to Estimate the Impact of Minimum Wages on Labor Market Outcomes",
+      "abstract": "We assess the effect of the minimum wage on labor market outcomes. First, we apply modern machine learning tools to predict who is affected by the policy. Second, we implement an event study using 172 prominent minimum wage increases between 1979 and 2019. We find a clear increase in wages of affected workers and no change in employment. Furthermore, minimum wage increases have no effect on the unemployment rate, labor force participation, or labor market transitions. Overall, these findings provide little evidence of changing search effort in response to a minimum wage increase.",
+      "year": 2021,
+      "venue": "Journal of Labor Economics",
+      "citation_count": 42,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 0.546113,
+      "bm25_score": 6.1135,
+      "biencoder_score": 0.5461
+    },
+    {
+      "rank": 2,
+      "doi": "10.2139/ssrn.4527336",
+      "title": "The Short-Term Effects of Generative Artificial Intelligence on Employment: Evidence from an Online Labor Market",
+      "abstract": "",
+      "year": 2023,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 75,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.545483,
+      "bm25_score": 2.0461,
+      "biencoder_score": 0.5455
+    },
+    {
+      "rank": 3,
+      "doi": "10.1257/mac.20150258",
+      "title": "Job Polarization and Structural Change",
+      "abstract": "We document that job polarization—contrary to the consensus— has started as early as the 1950s in the United States: middle-wage workers have been losing both in terms of employment and average wage growth compared to low- and high-wage workers. Given that polarization is a long-run phenomenon and closely linked to the shift from manufacturing to services, we propose a structural change driven explanation, where we explicitly model the sectoral choice of workers. Our simple model does remarkably well not only in matching the evolution of sectoral employment, but also of relative wages over the past 50 years. (JEL E24, J21, J22, J24, J31)",
+      "year": 2018,
+      "venue": "American Economic Journal Macroeconomics",
+      "citation_count": 167,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.545045,
+      "bm25_score": 2.559,
+      "biencoder_score": 0.545
+    },
+    {
+      "rank": 4,
+      "doi": "10.1086/718327",
+      "title": "Artificial Intelligence and Jobs: Evidence from Online Vacancies",
+      "abstract": "We study the impact of artificial intelligence (AI) on labor markets using establishment-level data on the near universe of online vacancies in the United States from 2010 onward. There is rapid growth in AI-related vacancies over 2010–18 that is driven by establishments whose workers engage in tasks compatible with AI’s current capabilities. As these AI-exposed establishments adopt AI, they simultaneously reduce hiring in non-AI positions and change the skill requirements of remaining postings. While visible at the establishment level, the aggregate impacts of AI-labor substitution on employment and wage growth in more exposed occupations and industries is currently too small to be detectable.",
+      "year": 2022,
+      "venue": "Journal of Labor Economics",
+      "citation_count": 908,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.481525,
+      "bm25_score": 0.714,
+      "biencoder_score": 0.4815
+    },
+    {
+      "rank": 5,
+      "doi": "10.5089/9781484361900.001",
+      "title": "The Exposure to Routinization: Labor Market Implications for Developed and Developing Economies",
+      "abstract": "Evidence that the automation of routine tasks has contributed to the polarization of labor markets has been documented for many developed economies, but little is known about its incidence in developing economies. We propose a measure of the exposure to routinization-that is, the risk of the displacement of labor by information technology-and assemble several facts that link the exposure to routinization with the prospects of polarization. Drawing on exposures for about 85 countries since 1990, we establish that: (1) developing economies are significantly less exposed to routinization than their developed counterparts; (2) the initial exposure to routinization is a strong predictor of the long-run exposure; and",
+      "year": 2018,
+      "venue": "IMF Working Paper",
+      "citation_count": 54,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.454609,
+      "bm25_score": 4.035,
+      "biencoder_score": 0.4546
+    },
+    {
+      "rank": 6,
+      "doi": "10.1108/jebde-10-2023-0021",
+      "title": "Economics of ChatGPT: a labor market view on the occupational impact of artificial intelligence",
+      "abstract": "Purpose The study investigates the influence of ChatGPT on the labor market dynamics, aiming to provide a structured understanding of the changes induced by generative AI technologies. Design/methodology/approach An analysis of existing literature serves as the foundation for understanding the impact, while the supply and demand model helps assess the effects of ChatGPT. A text-mining approach is utilized to analyze the International Standard Occupation Classification, identifying occupations most susceptible to disruption by ChatGPT. Findings The study reveals that 32.8% of occupations could be fully impacted by ChatGPT, while 36.5% might experience a partial impact and 30.7% are likely to remain unaffected. Research limitations/implications While this study offers insights into the potential influence of ChatGPT and other generative AI services on the labor market, it is essential to note that these findings represent potential implications rather than realized labor market effects. Further research is needed to track actual changes in employment patterns and job market dynamics where these AI services are widely adopted. Originality/value This paper contributes to the field by systematically categorizing the level of impact on different occupations, providing a nuanced perspective on the short- and long-term implications of ChatGPT and similar generative AI services on the labor market.",
+      "year": 2023,
+      "venue": "Journal of Electronic Business & Digital Economics",
+      "citation_count": 157,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.441336,
+      "bm25_score": 2.2662,
+      "biencoder_score": 0.4413
+    },
+    {
+      "rank": 7,
+      "doi": "10.5089/9798400254802.001",
+      "title": "Labor Market Exposure to AI: Cross-country Differences and Distributional Implications",
+      "abstract": "This paper examines the impact of Artificial Intelligence (AI) on labor markets in both Advanced Economies (AEs) and Emerging Markets (EMs). We propose an extension to a standard measure of AI exposure, accounting for AI's potential as either a complement or a substitute for labor, where complementarity reflects lower risks of job displacement. We analyze worker-level microdata from 2 AEs (US and UK) and 4 EMs (Brazil, Colombia, India, and South Africa), revealing substantial variations in unadjusted AI exposure across countries. AEs face higher exposure than EMs due to a higher employment share in professional and managerial occupations. However, when accounting for potential complementarity, differences in exposure across countries are more muted. Within countries, common patterns emerge in AEs and EMs. Women and highly educated workers face greater occupational exposure to AI, at both high and low complementarity. Workers in the upper tail of the earnings distribution are more likely to be in occupations with high exposure but also high potential complementarity.",
+      "year": 2023,
+      "venue": "IMF Working Paper",
+      "citation_count": 58,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.430071,
+      "bm25_score": 1.4463,
+      "biencoder_score": 0.4301
+    },
+    {
+      "rank": 8,
+      "doi": "10.3386/w11986",
+      "title": "The Polarization of the U.S. Labor Market",
+      "abstract": "This paper analyzes a marked change in the evolution of the U.S. wage structure over the past fifteen years: divergent trends in upper-tail (90/50) and lower-tail (50/10) wage inequality. We document that wage inequality in the top half of distribution has displayed an unchecked and rather smooth secular rise for the last 25 years (since 1980). Wage inequality in the bottom half of the distribution also grew rapidly from 1979 to 1987, but it has ceased growing (and for some measures actually narrowed) since the late 1980s. Furthermore we find that occupational employment growth shifted from monotonically increasing in wages (education) in the 1980s to a pattern of more rapid growth in jobs at the top and bottom relative to the middles of the wage (education) distribution in the 1990s. We characterize these patterns as the \"polarization\" of the U.S. labor market, with employment polarizing into high-wage and low-wage jobs at the expense of middle-wage work. We show how a model of computerization in which computers most strongly complement the nonroutine (abstract) cognitive tasks of high-wage jobs, directly substitute for the routine tasks found in many traditional middle-wage jobs, and may have little direct impact on non-routine manual tasks in relatively low-wage jobs can help explain the observed polarization of the U.S. labor market.",
+      "year": null,
+      "venue": "",
+      "citation_count": 92,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report",
+      "orig_rank": 23,
+      "v4_score": 0.428173,
+      "bm25_score": 3.9917,
+      "biencoder_score": 0.4282
+    },
+    {
+      "rank": 9,
+      "doi": "10.1007/s13194-018-0213-9",
+      "title": "Scientific polarization",
+      "abstract": "",
+      "year": 2018,
+      "venue": "European Journal for Philosophy of Science",
+      "citation_count": 125,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.421434,
+      "bm25_score": 2.5399,
+      "biencoder_score": 0.4214
+    },
+    {
+      "rank": 10,
+      "doi": "10.1371/journal.pone.0235502",
+      "title": "Evolution and impact of bias in human and machine learning algorithm interaction",
+      "abstract": "Traditionally, machine learning algorithms relied on reliable labels from experts to build predictions. More recently however, algorithms have been receiving data from the general population in the form of labeling, annotations, etc. The result is that algorithms are subject to bias that is born from ingesting unchecked information, such as biased samples and biased labels. Furthermore, people and algorithms are increasingly engaged in interactive processes wherein neither the human nor the algorithms receive unbiased data. Algorithms can also make biased predictions, leading to what is now known as algorithmic bias. On the other hand, human's reaction to the output of machine learning methods with algorithmic bias worsen the situations by making decision based on biased information, which will probably be consumed by algorithms later. Some recent research has focused on the ethical and moral implication of machine learning algorithmic bias on society. However, most research has so far treated algorithmic bias as a static factor, which fails to capture the dynamic and iterative properties of bias. We argue that algorithmic bias interacts with humans in an iterative manner, which has a long-term effect on algorithms' performance. For this purpose, we present an iterated-learning framework that is inspired from human language evolution to study the interaction between machine learning algorithms and humans. Our goal is to study two sources of bias that interact: the process by which people select information to label (human action); and the process by which an algorithm selects the subset of information to present to people (iterated algorithmic bias mode). We investigate three forms of iterated algorithmic bias (personalization filter, active learning, and random) and how they affect the performance of machine learning algorithms by formulating research questions about the impact of each type of bias. Based on statistical analyses of the results of several controlled",
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "citation_count": 111,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.417873,
+      "bm25_score": 4.4848,
+      "biencoder_score": 0.4179
+    },
+    {
+      "rank": 11,
+      "doi": "10.1353/eca.2016.0015",
+      "title": "Understanding Declining Fluidity in the U.S. Labor Market",
+      "abstract": "In this paper, we first document a clear, downward trend in labor market fluidity that is common across a variety of measures of worker and job turnover. This trend began in the early 1980s, if not somewhat earlier. Next, we present evidence for a variety of hypotheses that might explain this downward trend, which is only partly related to population demographics and is not due to the secular shift in industrial composition. Moreover, this decline in labor market fluidity seems unlikely to have been caused by an improvement in worker-firm matching or by mounting regulatory strictness in the labor or housing markets. Plausible avenues for further exploration include changes in the worker-firm relationship, particularly with regard to compensation adjustment; changes in firm characteristics, such as firm size and age; and a decline in social trust, which may have increased the cost of job searches or made both parties in the hiring process more risk averse.",
+      "year": 2016,
+      "venue": "Brookings Papers on Economic Activity",
+      "citation_count": 89,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.416295,
+      "bm25_score": 2.125,
+      "biencoder_score": 0.4163
+    },
+    {
+      "rank": 12,
+      "doi": "10.1093/qje/qjx022",
+      "title": "The Growing Importance of Social Skills in the Labor Market*",
+      "abstract": "Abstract The labor market increasingly rewards social skills. Between 1980 and 2012, jobs requiring high levels of social interaction grew by nearly 12 percentage points as a share of the U.S. labor force. Math-intensive but less social jobs—including many STEM occupations—shrank by 3.3 percentage points over the same period. Employment and wage growth were particularly strong for jobs requiring high levels of both math skill and social skills. To understand these patterns, I develop a model of team production where workers “trade tasks” to exploit their comparative advantage. In the model, social skills reduce coordination costs, allowing workers to specialize and work together more efficiently. The model generates predictions about sorting and the relative returns to skill across occupations, which I investigate using data from the NLSY79 and the NLSY97. Using a comparable set of skill measures and covariates across survey waves, I find that the labor market return to social skills was much greater in the 2000s than in the mid-1980s and 1990s.",
+      "year": 2017,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 1620,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.414096,
+      "bm25_score": 2.0243,
+      "biencoder_score": 0.4141
+    },
+    {
+      "rank": 13,
+      "doi": "10.1093/jeea/jvab012",
+      "title": "The Adjustment of Labor Markets to Robots",
+      "abstract": "Abstract We use detailed administrative data to study the adjustment of local labor markets to industrial robots in Germany. Robot exposure, as predicted by a shift-share variable, is associated with displacement effects in manufacturing, but those are fully offset by new jobs in services. The incidence mostly falls on young workers just entering the labor force. Automation is related to more stable employment within firms for incumbents, and this is driven by workers taking over new tasks in their original plants. Several measures indicate that those new jobs are of higher quality than the previous ones. Young workers also adapt their educational choices, and substitute away from vocational training towards colleges and universities. Finally, industrial robots have benefited workers in occupations with complementary tasks, such as managers or technical scientists.",
+      "year": 2021,
+      "venue": "Journal of the European Economic Association",
+      "citation_count": 519,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.380989,
+      "bm25_score": 0.7963,
+      "biencoder_score": 0.381
+    },
+    {
+      "rank": 14,
+      "doi": "10.1073/pnas.1900949116",
+      "title": "Toward understanding the impact of artificial intelligence on labor",
+      "abstract": "Rapid advances in artificial intelligence (AI) and automation technologies have the potential to significantly disrupt labor markets. While AI and automation can augment the productivity of some workers, they can replace the work done by others and will likely transform almost all occupations at least to some degree. Rising automation is happening in a period of growing economic inequality, raising fears of mass technological unemployment and a renewed call for policy efforts to address the consequences of technological change. In this paper we discuss the barriers that inhibit scientists from measuring the effects of AI and automation on the future of work. These barriers include the lack of high-quality data about the nature of work (e.g., the dynamic requirements of occupations), lack of empirically informed models of key microlevel processes (e.g., skill substitution and human-machine complementarity), and insufficient understanding of how cognitive technologies interact with broader economic dynamics and institutional mechanisms (e.g., urban migration and international trade policy). Overcoming these barriers requires improvements in the longitudinal and spatial resolution of data, as well as refinements to data on workplace skills. These improvements will enable multidisciplinary research to quantitatively monitor and predict the complex evolution of work in tandem with technological progress. Finally, given the fundamental uncertainty in predicting technological change, we recommend developing a decision framework that focuses on resilience to unexpected scenarios in addition to general equilibrium behavior.",
+      "year": 2019,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_count": 669,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.373094,
+      "bm25_score": 1.6372,
+      "biencoder_score": 0.3731
+    },
+    {
+      "rank": 15,
+      "doi": "10.1007/s40821-020-00172-8",
+      "title": "The impact of artificial intelligence on labor productivity",
+      "abstract": "Abstract Recent evidence indicates an upsurge in artificial intelligence and robotics (AI) patenting activities in the latest years, suggesting that solutions based on AI technologies might have started to exert an effect on the economy. We test this hypothesis using a worldwide sample of 5257 companies having filed at least a patent related to the field of AI between 2000 and 2016. Our analysis shows that, once controlling for other patenting activities, AI patent applications generate an extra-positive effect on companies’ labor productivity. The effect concentrates on SMEs and services industries, suggesting that the ability to quickly readjust and introduce AI-based applications in the production process is an important determinant of the impact of AI observed to date.",
+      "year": 2021,
+      "venue": "Eurasian Economic Review",
+      "citation_count": 311,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.360788,
+      "bm25_score": 0.7093,
+      "biencoder_score": 0.3608
+    },
+    {
+      "rank": 16,
+      "doi": "10.1257/mac.20160164",
+      "title": "The Rise of the Machines: Automation, Horizontal Innovation, and Income Inequality",
+      "abstract": "We build an endogenous growth model with automation (the replacement of low-skill workers with machines) and horizontal innovation (the creation of new products). Over time, the share of automation innovations endogenously increases through an increase in low-skill wages, leading to an increase in the skill premium and a decline in the labor share. We calibrate the model to the US economy and show that it quantitatively replicates the paths of the skill premium, the labor share, and labor productivity. Our model offers a new perspective on recent trends in the income distribution by showing that they can be explained endogenously. (JEL D31, E25, J24, J31, O33, O41)",
+      "year": 2021,
+      "venue": "American Economic Journal Macroeconomics",
+      "citation_count": 222,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.36055,
+      "bm25_score": 0.8359,
+      "biencoder_score": 0.3605
+    },
+    {
+      "rank": 17,
+      "doi": "10.17705/1cais.04319",
+      "title": "How do Machine Learning, Robotic Process Automation, and Blockchains Affect the Human Factor in Business Process Management?",
+      "abstract": "This paper summarizes a panel discussion at the 15th International Conference on Business Process Management. The panel discussed to what extent the emergence of recent technologies including machine learning, robotic process automation, and blockchain will reduce the human factor in business process management. The panel discussion took place on 14 September, 2017, at the Universitat Politècnica de Catalunya in Barcelona, Spain. Jan Mendling served as a chair; Gero Decker, Richard Hull, Hajo Reijers, and Ingo Weber participated as panelists. The discussions emphasized the impact of emerging technologies at the task level and the coordination level. The major challenges that the panel identified relate to employment, technology acceptance, ethics, customer experience, job design, social integration, and regulation.",
+      "year": 2018,
+      "venue": "Communications of the Association for Information Systems",
+      "citation_count": 173,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.359247,
+      "bm25_score": 3.6203,
+      "biencoder_score": 0.3592
+    },
+    {
+      "rank": 18,
+      "doi": "10.1146/annurev-economics-080315-015041",
+      "title": "The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade",
+      "abstract": "China's emergence as a great economic power has induced an epochal shift in patterns of world trade. Simultaneously, it has challenged much of the received empirical wisdom about how labor markets adjust to trade shocks. Alongside the heralded consumer benefits of expanded trade are substantial adjustment costs and distributional consequences. These impacts are most visible in the local labor markets in which the industries exposed to foreign competition are concentrated. Adjustment in local labor markets is remarkably slow, with wages and labor-force participation rates remaining depressed and unemployment rates remaining elevated for at least a full decade after the China trade shock commences. Exposed workers experience greater job churning and reduced lifetime income. At the national level, employment has fallen in the US industries more exposed to import competition, as expected, but offsetting employment gains in other industries have yet to materialize. Better understanding when and where trade is costly, and how and why it may be beneficial, is a key item on the research agenda for trade and labor economists.",
+      "year": 2016,
+      "venue": "Annual Review of Economics",
+      "citation_count": 1278,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.345408,
+      "bm25_score": 2.6904,
+      "biencoder_score": 0.3454
+    },
+    {
+      "rank": 19,
+      "doi": "10.5771/0935-9915-2017-3-298",
+      "title": "How Big is the Gig? Assessing the Preliminary Evidence on the Effects of Digitalization on the Labor Market",
+      "abstract": "This paper assesses the importance of digitalization in Germany and other developed countries with a particular attention to the potential or actual impact it may have on the labor market. Referring to available empirical evidence, we document the already developing transformation of occupations and forms of employment and the role of the platform economy, including the phenomenon of solo self-employment. We then derive current and future challenges for social protection and suggest some ideas to update social insurance in the face of these new challenges.",
+      "year": 2017,
+      "venue": "management revue",
+      "citation_count": 83,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.338036,
+      "bm25_score": 2.0272,
+      "biencoder_score": 0.338
+    },
+    {
+      "rank": 20,
+      "doi": "10.17323/2500-2597.2017.4.6.8",
+      "title": "Industry 4.0: New Challenges and Opportunities for the Labour Market",
+      "abstract": "The introductory article to the special issue “Labour Market in the Context of Technological Transformations” presents an overall picture of the latest technological trends altogether referred to as the Fourth Industrial Revolution (Industry 4.0), their impact on the changing structure of the labour market, the demand for prospective skills, as well as emerging policy challenges. The author concludes that ensuring the resilience, adaptability and efficiency of labour markets are therefore not only a matter of addressing the skills needs of the Next Production Revolution, but also a prerequisite to social stability and cohesion.",
+      "year": 2017,
+      "venue": "Foresight-Russia",
+      "citation_count": 173,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.333834,
+      "bm25_score": 1.4108,
+      "biencoder_score": 0.3338
+    },
+    {
+      "rank": 21,
+      "doi": "10.1007/s11186-020-09409-x",
+      "title": "Loops, ladders and links: the recursivity of social and machine learning",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Theory and Society",
+      "citation_count": 114,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.332432,
+      "bm25_score": 4.2664,
+      "biencoder_score": 0.3324
+    },
+    {
+      "rank": 22,
+      "doi": "10.1257/aer.20170011",
+      "title": "Importing Political Polarization? The Electoral Consequences of Rising Trade Exposure",
+      "abstract": "Has rising import competition contributed to the polarization of US politics? Analyzing multiple measures of political expression and results of congressional and presidential elections spanning the period 2000 through 2016, we find strong though not definitive evidence of an ideological realignment in trade-exposed local labor markets that commences prior to the divisive 2016 US presidential election. Exploiting the exogenous component of rising import competition by China, we find that trade exposed electoral districts simultaneously exhibit growing ideological polarization in some domains, meaning expanding support for both strong-left and strong-right views, and pure rightward shifts in others. Specifically, trade-impacted commuting zones or districts saw an increasing market share for the Fox News channel (a rightward shift), stronger ideological polarization in campaign contributions (a polarized shift), and a relative rise in the likelihood of electing a Republican to Congress (a rightward shift). Trade-exposed counties with an initial majority White population became more likely to elect a GOP conservative, while trade-exposed counties with an initial majority-minority population became more likely to elect a liberal Democrat, where in both sets of counties, these gains came at the expense of moderate Democrats (a polarized shift). In presidential elections, counties with greater trade exposure shifted toward the Republican candidate (a rightward shift). These results broadly support an emerging political economy literature that connects adverse economic shocks to sharp ideological realignments that cleave along racial and ethnic lines and induce discrete shifts in political preferences and economic policy. (JEL D72, F14, J15, L82, R23)",
+      "year": 2020,
+      "venue": "American Economic Review",
+      "citation_count": 1057,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.317451,
+      "bm25_score": 3.0901,
+      "biencoder_score": 0.3175
+    },
+    {
+      "rank": 23,
+      "doi": "10.1007/s13524-019-00790-6",
+      "title": "Beyond the Great Recession: Labor Market Polarization and Ongoing Fertility Decline in the United States",
+      "abstract": "In the years since the Great Recession, social scientists have anticipated that economic recovery in the United States, characterized by gains in employment and median household income, would augur a reversal of declining fertility trends. However, the expected post-recession rebound in fertility rates has yet to materialize. In this study, I propose an economic explanation for why fertility rates have continued to decline regardless of improvements in conventional economic indicators. I argue that ongoing structural changes in U.S. labor markets have prolonged the financial uncertainty that leads women and couples to delay or forgo childbearing. Combining statistical and survey data with restricted-use vital registration records, I examine how cyclical and structural changes in metropolitan-area labor markets were associated with changes in total fertility rates (TFRs) across racial/ethnic groups from the early 1990s to the present day, with a particular focus on the 2006-2014 period. The findings suggest that changes in industry composition-specifically, the loss of manufacturing and other goods-producing businesses-have a larger effect on TFRs than changes in the unemployment rate for all racial/ethnic groups. Because structural changes in labor markets are more likely to be sustained over time-in contrast to unemployment rates, which fluctuate with economic cycles-further reductions in unemployment are unlikely to reverse declining fertility trends.",
+      "year": 2019,
+      "venue": "Demography",
+      "citation_count": 193,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.309741,
+      "bm25_score": 2.543,
+      "biencoder_score": 0.3097
+    },
+    {
+      "rank": 24,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades.",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2209,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.302123,
+      "bm25_score": 0.9933,
+      "biencoder_score": 0.3021
+    },
+    {
+      "rank": 25,
+      "doi": "10.1155/2019/5941096",
+      "title": "An Intelligent Data Analysis for Recommendation Systems Using Machine Learning",
+      "abstract": "In recent times, selection of a suitable hotel location and reservation of accommodation have become a critical issue for the travelers. The online hotel search has been increased at a very fast pace and became very time-consuming due to the presence of huge amount of online information. Recommender systems (RSs) are getting importance due to their significance in making decisions and providing detailed information about the required product or a service. To acquire the hotel recommendations while dealing with textual hotel reviews, numerical ranks, votes, ratings, and number of video views have become difficult. To generate true recommendations, we have proposed an intelligent approach which also deals with large-sized heterogeneous data to fulfill the needs of the potential customers. The collaborative filtering (CF) approach is one of the most popular techniques of the RS to generate recommendations. We have proposed a novel CF recommendation approach in which opinion-based sentiment analysis is used to achieve hotel feature matrix by polarity identification. Our approach combines lexical analysis, syntax analysis, and semantic analysis to understand sentiment towards hotel features and the profiling of guest type (solo, family, couple etc). The proposed system recommends hotels based on the hotel features and guest type for personalized recommendation. The developed system not only has the ability to handle heterogeneous data using big data Hadoop platform but it also recommends hotel class based on guest type using fuzzy rules. Different experiments are performed over the real-world datasets obtained from two hotel websites. Moreover, the values of precision and recall and F-measure have been calculated, and the results are discussed in terms of improved accuracy and response time, significantly better than the traditional approaches.",
+      "year": 2019,
+      "venue": "Scientific Programming",
+      "citation_count": 96,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.271586,
+      "bm25_score": 1.7642,
+      "biencoder_score": 0.2716
+    },
+    {
+      "rank": 26,
+      "doi": "10.1186/s43593-025-00085-x",
+      "title": "Intelligent nanophotonics: when machine learning sheds light",
+      "abstract": "Abstract The synergistic development of nanophotonics and machine learning has inspired tremendous innovations in both fields in the past decade. In diverse photonics research, deep-learning methods using artificial neural networks become the key game changer that greatly facilitates rapid nanophotonics design and the versatile processing of optical information. Moreover, optical computing platforms that perform calculations through light propagation are receiving tremendous interest as next-generation machine-learning hardware with advantages in computing speed, energy efficiency, and parallelism. This review summarizes the current state-of-the-art nanophotonic devices enabled by machine learning and analyzes the longstanding challenges that must be overcome to make an impact on technology. We also discuss the opportunities of intelligent photonics in applications such as computational imaging/sensing and machine vision. The intersection of nanophotonics with deep learning holds tremendous implications for transformative technologies ranging from internet of things to smart health. Lastly, we provide our perspective on the pressing challenges in intelligent photonics that must be tackled to advance this field to the next level and the vast opportunities for multidisciplinary collaboration.",
+      "year": 2025,
+      "venue": "eLight",
+      "citation_count": 53,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 0.24234,
+      "bm25_score": 4.68,
+      "biencoder_score": 0.2423
+    },
+    {
+      "rank": 27,
+      "doi": "10.1093/jeg/lby011",
+      "title": "Separate Worlds? Explaining the current wave of regional economic polarization",
+      "abstract": "Interregional and intermetropolitan economic divergence is greater in many western developed countries than it has been in many decades. Divergence manifests itself in many ways, including per capita income, labor force participation, and the spatial distribution of skills and returns to education. At the same time, geographical polarization of political preferences and electoral choices has increased, with gains in populism and nationalism in some regions, and broadening of socially liberal, pro-trade and multicultural attitudes in other regions. The task of explaining these developments poses challenges to economic geography and regional and urban economics. These fields have already developed some of the building blocks of an account, but a number of important gaps persist. This article is devoted to identifying priorities for regional science and urban economics, the new economic geography and proper economic geography to tackle the key mechanisms behind divergence as well as to integrate them in a common overall framework.",
+      "year": 2018,
+      "venue": "Journal of Economic Geography",
+      "citation_count": 195,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.227458,
+      "bm25_score": 2.485,
+      "biencoder_score": 0.2275
+    },
+    {
+      "rank": 28,
+      "doi": "10.1257/jep.23.1.167",
+      "title": "Microfinance Meets the Market",
+      "abstract": "In this paper, we examine the economic logic behind microfinance institutions and consider the movement from socially oriented nonprofit microfinance institutions to for- profit microfinance. Drawing on a large dataset that includes most of the world's leading microfinance institutions, we explore eight questions about the microfinance “industry”: Who are the lenders? How widespread is profitability? Are loans in fact repaid at the high rates advertised? Who are the customers? Why are interest rates so high? Are profits high enough to attract profit-maximizing investors? How important are subsidies? The evidence suggests that investors seeking pure profits would have little interest in most of the institutions we see that are now serving poorer customers. We will suggest that the future of microfinance is unlikely to follow a single path. The recent clash between supporters of profit-driven Banco Compartamos and of the Grameen Bank with its “social business” model offers us a false choice. Commercial investment is necessary to fund the continued expansion of microfinance, but institutions with strong social missions, many taking advantage of subsidies, remain best placed to reach and serve the poorest customers, and some are doing so at a massive scale. The market is a powerful force, but it cannot fill all gaps.",
+      "year": 2009,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 530,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.226338,
+      "bm25_score": 0.9965,
+      "biencoder_score": 0.2263
+    },
+    {
+      "rank": 29,
+      "doi": "10.1109/tte.2021.3129479",
+      "title": "Offline and Online Blended Machine Learning for Lithium-Ion Battery Health State Estimation",
+      "abstract": "This article proposes an adaptive state-of-health (SOH) estimation method for lithium-ion (Li-ion) batteries using machine learning. Practical problems with feature extraction, cell inconsistency, and online implementability are specifically solved using a proposed individualized estimation scheme blending offline model migration with online ensemble learning. First, based on the data of pseudo-open-circuit voltage measured over the battery lifespan, a systematic comparison of different incremental capacity features is conducted to identify a suitable SOH indicator. Next, a pool of candidate models, composed of slope-bias correction (SBC) and radial basis function neural networks (RBFNNs), are trained offline. For online operation, the prediction errors due to cell inconsistency in the target new cell are then mitigated by a proposed modified random forest regression (mRFR)-based ensemble learning process with high adaptability. The results show that compared to prevailing methods, the proposed SBC-RBFNN-mRFR-based scheme can achieve considerably improved SOH estimation accuracy (15%) while only a small amount of early-age data and online measurements are needed for practical operation. Furthermore, the applicability of the proposed SBC-RBFNN-mRFR algorithms to real-world operation is validated using measured data from electric vehicles, and it is shown that a 38% improvement in estimation accuracy can be achieved.",
+      "year": 2021,
+      "venue": "IEEE Transactions on Transportation Electrification",
+      "citation_count": 112,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.199778,
+      "bm25_score": 3.4819,
+      "biencoder_score": 0.1998
+    },
+    {
+      "rank": 30,
+      "doi": "",
+      "title": "2020 EDUCAUSE Horizon Report: Teaching and Learning Edition.",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Bibliothèque et Archives nationales du Québec (Québec government)",
+      "citation_count": 505,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.028792,
+      "bm25_score": 2.0374,
+      "biencoder_score": 0.0288
+    }
+  ]
+}

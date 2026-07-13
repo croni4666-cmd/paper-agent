@@ -1,0 +1,462 @@
+{
+  "query_id": "q010",
+  "query": "institutional trust and policy compliance in pandemic responses",
+  "topic_bucket": "social",
+  "source": "pub",
+  "generated_at": "2026-07-10T21:00:18",
+  "config": "baseline-v0.1",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1038/s41562-021-01079-8",
+      "title": "A global panel database of pandemic policies (Oxford COVID-19 Government Response Tracker)",
+      "abstract": "COVID-19 has prompted unprecedented government action around the world. We introduce the Oxford COVID-19 Government Response Tracker (OxCGRT), a dataset that addresses the need for continuously updated, readily usable and comparable information on policy measures. From 1 January 2020, the data capture government policies related to closure and containment, health and economic policy for more than 180 countries, plus several countries’ subnational jurisdictions. Policy responses are recorded on ordinal or continuous scales for 19 policy areas, capturing variation in degree of response. We present two motivating applications of the data, highlighting patterns in the timing of policy adoption and subsequent policy easing and reimposition, and illustrating how the data can be combined with behavioural and epidemiological indicators. This database enables researchers and policymakers to explore the empirical effects of policy responses on the spread of COVID-19 cases and deaths, as well as on economic and social welfare. The Oxford COVID-19 Government Response Tracker (OxCGRT) records data on 19 different government COVID-19 policy indicators for over 190 countries. Covering closure and containment, health and economics measures, it creates an evidence base for effective responses.",
+      "year": 2021,
+      "venue": "Nature Human Behaviour",
+      "citation_count": 4781,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "abstract": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offering multi-disciplinary insight into some of these, this article brings together 43 contributions from experts in fields such as computer science, marketing, information systems, education, policy, hospitality and tourism, management, publishing, and nursing. The contributors acknowledge ChatGPT’s capabilities to enhance productivity and suggest that it is likely to offer significant gains in the banking, hospitality and tourism, and information technology industries, and enhance business activities, such as management and marketing. Nevertheless, they also consider its limitations, disruptions to practices, threats to privacy and security, and consequences of biases, misuse, and misinformation. However, opinion is split on whether ChatGPT’s use should be restricted or legislated. Drawing on these contributions, the article identifies questions requiring further research across three thematic areas: knowledge, transparency, and ethics; digital transformation of organisations and societies; and teaching, learning, and scholarly research. The avenues for further research include: identifying skills, resources, and capabilities needed to handle generative AI; examining biases of generative AI attributable to training datasets and processes; exploring business and societal contexts best suited for generative AI implementation; determining optimal combinations of human and generative AI for various tasks; identifying ways to assess accuracy of text produced by generative AI; and uncovering the ethical and legal issues in using generative AI across different contexts.",
+      "year": 2023,
+      "venue": "International Journal of Information Management",
+      "citation_count": 3781,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.1016/j.ijinfomgt.2022.102542",
+      "title": "Metaverse beyond the hype: Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "abstract": "The metaverse has the potential to extend the physical world using augmented and virtual reality technologies allowing users to seamlessly interact within real and simulated environments using avatars and holograms. Virtual environments and immersive games (such as, Second Life, Fortnite, Roblox and VRChat) have been described as antecedents of the metaverse and offer some insight to the potential socio-economic impact of a fully functional persistent cross platform metaverse. Separating the hype and “meta…” rebranding from current reality is difficult, as “big tech” paints a picture of the transformative nature of the metaverse and how it will positively impact people in their work, leisure, and social interaction. The potential impact on the way we conduct business, interact with brands and others, and develop shared experiences is likely to be transformational as the distinct lines between physical and digital are likely to be somewhat blurred from current perceptions. However, although the technology and infrastructure does not yet exist to allow the development of new immersive virtual worlds at scale - one that our avatars could transcend across platforms, researchers are increasingly examining the transformative impact of the metaverse. Impacted sectors include marketing, education, healthcare as well as societal effects relating to social interaction factors from widespread adoption, and issues relating to trust, privacy, bias, disinformation, application of law as well as psychological aspects linked to addiction and impact on vulnerable people. This study examines these topics in detail by combining the informed narrative and multi-perspective approach from experts with varied disciplinary backgrounds on many aspects of the metaverse and its transformational impact. The paper concludes by proposing a future research agenda that is valuable for researchers, professionals and policy makers alike.",
+      "year": 2022,
+      "venue": "International Journal of Information Management",
+      "citation_count": 2595,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 4,
+      "doi": "10.1007/s10479-020-03640-6",
+      "title": "Viable supply chain model: integrating agility, resilience and sustainability perspectives—lessons from and thinking beyond the COVID-19 pandemic",
+      "abstract": "Viability is the ability of a supply chain (SC) to maintain itself and survive in a changing environment through a redesign of structures and replanning of performance with long-term impacts. In this paper, we theorize a new notion-the viable supply chain (VSC). In our approach, viability is considered as an underlying SC property spanning three perspectives, i.e., agility, resilience, and sustainability. The principal ideas of the VSC model are adaptable structural SC designs for supply-demand allocations and, most importantly, establishment and control of adaptive mechanisms for transitions between the structural designs. Further, we demonstrate how the VSC components can be categorized across organizational, informational, process-functional, technological, and financial structures. Moreover, our study offers a VSC framework within an SC ecosystem. We discuss the relations between resilience and viability. Through the lens and guidance of dynamic systems theory, we illustrate the VSC model at the technical level. The VSC model can be of value for decision-makers to design SCs that can react adaptively to both positive changes (i.e., the agility angle) and be able to absorb negative disturbances, recover and survive during short-term disruptions and long-term, global shocks with societal and economical transformations (i.e., the resilience and sustainability angles). The VSC model can help firms in guiding their decisions on recovery and re-building of their SCs after global, long-term crises such as the COVID-19 pandemic. We emphasize that resilience is the central perspective in the VSC guaranteeing viability of the SCs of the future. Emerging directions in VSC research are discussed.",
+      "year": 2020,
+      "venue": "Annals of Operations Research",
+      "citation_count": 1263,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 5,
+      "doi": "10.1016/j.jpubeco.2020.104316",
+      "title": "Trust and compliance to public health policies in times of COVID-19",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Journal of Public Economics",
+      "citation_count": 925,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 6,
+      "doi": "10.1007/s10916-020-01596-5",
+      "title": "Use of Telemedicine and Virtual Care for Remote Treatment in Response to COVID-19 Pandemic",
+      "abstract": "The current coronavirus disease 2019 (COVID-19) pandemic has caused significant strain on medical centers resources. Thus, concerns about the reducing and management of COVID-19 are on the rise, as there is need to provide diagnosis, treatment, monitoring, and follow-ups during the pandemic. Therefore, the COVID-19 pandemic has radically and quickly altered how medical practitioners provide care to patients. Medical centers are now responding to COVID-19 through rapid adoption of digital tools and technologies such as telemedicine and virtual care which refer to the delivery of healthcare services digital or at a distance using Information and Communications Technology (ICT) for treatment of patients. Telemedicine is expected to deliver timely care while minimizing exposure to protect medical practitioners and patients. Accordingly, a rapid literature review was conducted, and 35 research studies published from 2019 to May 2020 were employed to provide theoretical and practical evidence on the significance of using telemedicine and virtual care for remote treatment of patients during the COVID-19 pandemic. This article provides practical guide based on how to use telemedicine and virtual care during the COVID-19 pandemic. This study provides implication on the potentials of consolidating virtual care solutions in the near future towards contributing to integrate digital technologies into healthcare.",
+      "year": 2020,
+      "venue": "Journal of Medical Systems",
+      "citation_count": 826,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 7,
+      "doi": "10.1371/journal.pone.0249596",
+      "title": "Partisanship, health behavior, and policy attitudes in the early stages of the COVID-19 pandemic",
+      "abstract": "OBJECTIVE: To study the U.S. public's health behaviors, attitudes, and policy opinions about COVID-19 in the earliest weeks of the national health crisis (March 20-23, 2020). METHOD: We designed and fielded an original representative survey of 3,000 American adults between March 20-23, 2020 to collect data on a battery of 38 health-related behaviors, government policy preferences on COVID-19 response and worries about the pandemic. We test for partisan differences COVID-19 related policy attitudes and behaviors, measured in three different ways: party affiliation, intended 2020 Presidential vote, and self-placed ideological positioning. Our multivariate approach adjusts for a wide range of individual demographic and geographic characteristics that might confound the relationship between partisanship and health behaviors, attitudes, and preferences. RESULTS: We find that partisanship-measured as party identification, support for President Trump, or left-right ideological positioning-explains differences in Americans across a wide range of health behaviors and policy preferences. We find no consistent evidence that controlling for individual news consumption, the local policy environment, and local pandemic-related deaths erases the observed partisan differences in health behaviors, beliefs, and attitudes. In further analyses, we use a LASSO regression approach to select predictors, and find that a partisanship indicator is the most commonly selected predictor across the 38 dependent variables that we study. CONCLUSION: Our analysis of individual self-reported behavior, attitudes, and policy preferences in response to COVID-19 reveals that partisanship played a central role in shaping individual responses in the earliest months of the COVID-19 pandemic. These results indicate that partisan differences in responding to a national public health emergency were entrenched from the earliest days of the pandemic.",
+      "year": 2021,
+      "venue": "PLoS ONE",
+      "citation_count": 621,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1007/s11077-020-09381-4",
+      "title": "COVID-19 and the policy sciences: initial reactions and perspectives",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Policy Sciences",
+      "citation_count": 608,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 9,
+      "doi": "10.1016/s0140-6736(15)00946-0",
+      "title": "Will Ebola change the game? Ten essential reforms before the next pandemic. The report of the Harvard-LSHTM Independent Panel on the Global Response to Ebola",
+      "abstract": "An eff ective worldwide response to major outbreaks needs leadership, clarity about roles and responsibilities, and robust measures for accountability, all of which were delayed or absent during the Ebola epidemic. Recommendation 8: For a more timely response in the future, we recommend the creation of a Global Health Committee as part of the UN Security Council to expedite high-level leadership and systematically elevate political attention to health issues, recognising health as essential to human security. Recommendation 9: Additionally, decisive, timebound governance reforms will be needed to rebuild trust in WHO in view of its failings during the Ebola epidemic. With respect to outbreak response, WHO should focus on four core functions: supporting national capacity building through technical advice; rapid early response and assessment of outbreaks (including potential emergency declarations); establishing technical norms, standards, and guidance; and convening the global community to set goals, mobilise resources, and negotiate rules. Beyond outbreaks, WHO should maintain its broad defi nition of health but substantially scale back its expansive range of activities to focus on core functions (to be defi ned through a process launched by the WHO Executive Board). Recommendation 10: The Executive Board should mandate good governance reforms, including establishing a freedom of information policy, an Inspector General's offi ce, and human resource management reform, all to be implemented by an Interim Deputy for Managerial Reform by July 2017. In exchange for successful reforms, governments should fi nance most of the budget with untied funds in a new deal for a more focused WHO. Finally, member states should insist on a Director-General with the character and capacity to challenge even the most powerful governments when necessary to protect public health.",
+      "year": 2015,
+      "venue": "The Lancet",
+      "citation_count": 603,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1080/14494035.2020.1787628",
+      "title": "Mobilizing Policy (In)Capacity to Fight COVID-19: Understanding Variations in State Responses",
+      "abstract": "The objective of this collection of essays is to gain insights into the different national-level state responses to COVID-19 around the world and the conditions that shaped them. The pandemic offers a natural experiment wherein the policy problem governments faced was the same but the responses they made were different, creating opportunities for comparison of both the kinds of policy tools being used and the factors that accounted for their choice. Accordingly, after surveying on-line databases of policy tools used in the pandemic and subjecting these to topic modelling to reveal the characteristics of a 'standard' national pandemic response, we discuss the similarities and differences found in specific responses. This is done with reference to the nature and level of policy capacity of respective governments, highlighting the critical roles played by (in)adequate preparation and lesson-drawing from past experiences with similar outbreaks or crises. Taken together the articles show how the national responses to the COVID-19 pandemic were shaped by the opportunity and capacity each government had to learn from previous pandemics and their capacity to operationalize and build political support for the standard portfolio of policy measures deployed to deal with the crisis. However, they also show how other factors such as the nature of national leadership, the organization of government and civil society, and blindspots towards the vulnerabilities of certain population segments also helped to shape policy responses to the pandemic.",
+      "year": 2020,
+      "venue": "Policy and Society",
+      "citation_count": 577,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 11,
+      "doi": "10.1080/13548506.2020.1772988",
+      "title": "Modeling compliance with COVID-19 prevention guidelines: the critical role of trust in science",
+      "abstract": "The coronavirus pandemic is one of the biggest health crises of our time. In response to this global problem, various institutions around the world had soon issued evidence-based prevention guidelines. However, these guidelines, which were designed to slow the spread of COVID-19 and contribute to public well-being, are (deliberately) disregarded by some individuals. In the present study, we aimed to develop and test a multivariate model that could help us identify individual characteristics that make a person more/less likely to comply with COVID-19 prevention guidelines. A total of 525 attentive participants completed the online survey. The results of structural equation modeling (SEM) show that COVID-19 risk perception and trust in science both independently predict compliance with COVID-19 prevention guidelines, while the remaining variables in the model (political conservatism, religious orthodoxy, conspiracy ideation and intellectual curiosity) do so via the mediating role of trust in science. The described model exhibited an acceptable fit (χ2(1611) = 2485.84, p < .001, CFI = .91, RMSEA = .032, SRMR = .055). These findings thus provide empirical support for the proposed multivariate model and underline the importance of trust in science in explaining the different levels of compliance with COVID-19 prevention guidelines.",
+      "year": 2020,
+      "venue": "Psychology Health & Medicine",
+      "citation_count": 535,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 12,
+      "doi": "10.15585/mmwr.rr6601a1",
+      "title": "Community Mitigation Guidelines to Prevent Pandemic Influenza — United States, 2017",
+      "abstract": "When a novel influenza A virus with pandemic potential emerges, nonpharmaceutical interventions (NPIs) often are the most readily available interventions to help slow transmission of the virus in communities, which is especially important before a pandemic vaccine becomes widely available. NPIs, also known as community mitigation measures, are actions that persons and communities can take to help slow the spread of respiratory virus infections, including seasonal and pandemic influenza viruses.These guidelines replace the 2007 Interim Pre-pandemic Planning Guidance: Community Strategy for Pandemic Influenza Mitigation in the United States - Early, Targeted, Layered Use of Nonpharmaceutical Interventions (https://stacks.cdc.gov/view/cdc/11425). Several elements remain unchanged from the 2007 guidance, which described recommended NPIs and the supporting rationale and key concepts for the use of these interventions during influenza pandemics. NPIs can be phased in, or layered, on the basis of pandemic severity and local transmission patterns over time. Categories of NPIs include personal protective measures for everyday use (e.g., voluntary home isolation of ill persons, respiratory etiquette, and hand hygiene); personal protective measures reserved for influenza pandemics (e.g., voluntary home quarantine of exposed household members and use of face masks in community settings when ill); community measures aimed at increasing social distancing (e.g., school closures and dismissals, social distancing in workplaces, and postponing or cancelling mass gatherings); and environmental measures (e.g., routine cleaning of frequently touched surfaces).Several new elements have been incorporated into the 2017 guidelines. First, to support updated recommendations on the use of NPIs, the latest scientific evidence available since the influenza A (H1N1)pdm09 pandemic has been added. Second, a summary of lessons learned from the 2009 H1N1 pandemic response is presented to underscore ",
+      "year": 2017,
+      "venue": "MMWR Recommendations and Reports",
+      "citation_count": 511,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 13,
+      "doi": "10.1186/1471-2458-11-575",
+      "title": "Monitoring the level of government trust, risk perception and intention of the general public to adopt protective measures during the influenza A (H1N1) pandemic in the Netherlands",
+      "abstract": "BACKGROUND: During the course of an influenza pandemic, governments know relatively little about the possibly changing influence of government trust, risk perception, and receipt of information on the public's intention to adopt protective measures or on the acceptance of vaccination. This study aims to identify and describe possible changes in and factors associated with public's intentions during the 2009 influenza A (H1N1) pandemic in the Netherlands. METHODS: Sixteen cross-sectional telephone surveys were conducted (N = 8060) between April - November 2009. From these repeated measurements three consecutive periods were categorized based on crucial events during the influenza A (H1N1) pandemic. Time trends in government trust, risk perception, intention to adopt protective measures, and the acceptance of vaccination were analysed. Factors associated with an intention to adopt protective measures or vaccination were identified. RESULTS: Trust in the government was high, but decreased over time. During the course of the pandemic, perceived vulnerability and an intention to adopt protective measures increased. Trust and vulnerability were associated with an intention to adopt protective measures in general only during period one. Higher levels of intention to receive vaccination were associated with increased government trust, fear/worry, and perceived vulnerability. In periods two and three receipt of information was positively associated with an intention to adopt protective measures. Most respondents wanted to receive information about infection prevention from municipal health services, health care providers, and the media. CONCLUSIONS: The Dutch response to the H1N1 virus was relatively muted. Higher levels of trust in the government, fear/worry, and perceived vulnerability were all positively related to an intention to accept vaccination. Only fear/worry was positively linked to an intention to adopt protective measures during the entire pandemic. Risk and cri",
+      "year": 2011,
+      "venue": "BMC Public Health",
+      "citation_count": 504,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 14,
+      "doi": "10.1016/j.ijinfomgt.2020.102180",
+      "title": "Agile and adaptive governance in crisis response: Lessons from the COVID-19 pandemic",
+      "abstract": "Countries around the world have had to respond to the COVID-19 outbreak with limited information and confronting many uncertainties. Their ability to be agile and adaptive has been stressed, particularly in regard to the timing of policy measures, the level of decision centralization, the autonomy of decisions and the balance between change and stability. In this contribution we use our observations of responses to COVID-19 to reflect on agility and adaptive governance and provide tools to evaluate it after the dust has settled. Whereas agility relates mainly to the speed of response within given structures, adaptivity implies system-level changes throughout government. Existing institutional structures and tools can enable adaptivity and agility, which can be complimentary approaches. However, agility sometimes conflicts with adaptability. Our analysis points to the paradoxical nature of adaptive governance. Indeed, successful adaptive governance calls for both decision speed and sound analysis, for both centralized and decentralized decision-making, for both innovation and bureaucracy, and both science and politics.",
+      "year": 2020,
+      "venue": "International Journal of Information Management",
+      "citation_count": 495,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 15,
+      "doi": "10.1038/s41562-021-01181-x",
+      "title": "A worldwide assessment of changes in adherence to COVID-19 protective behaviours and hypothesized pandemic fatigue",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Nature Human Behaviour",
+      "citation_count": 487,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 16,
+      "doi": "10.1038/s41562-020-0909-7",
+      "title": "COVID-19 Government Response Event Dataset (CoronaNet v.1.0)",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Nature Human Behaviour",
+      "citation_count": 479,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 17,
+      "doi": "10.1017/iop.2020.48",
+      "title": "Pandemics: Implications for research and practice in industrial and organizational psychology",
+      "abstract": "Abstract Pandemics have historically shaped the world of work in various ways. With COVID-19 presenting as a global pandemic, there is much speculation about the implications of this crisis for the future of work and for people working in organizations. In this article, we discuss 10 of the most relevant research and practice topics in the field of industrial and organizational psychology that will likely be strongly influenced by COVID-19. For each of these topics, the pandemic crisis is creating new work-related challenges, but it is also presenting various opportunities. The topics discussed herein include occupational health and safety, work–family issues, telecommuting, virtual teamwork, job insecurity, precarious work, leadership, human resources policy, the aging workforce, and careers. This article sets the stage for further discussion of various ways in which I-O psychology research and practice can address the issues that COVID-19 creates for work and organizational processes that are affecting workers now and will shape the future of work and organizations in both the short and long term. This article concludes by inviting I-O psychology researchers and practitioners to address the challenges and opportunities of COVID-19 head-on by proactively adapting the work that we do in support of workers, organizations, and society as a whole.",
+      "year": 2021,
+      "venue": "Industrial and Organizational Psychology",
+      "citation_count": 432,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 18,
+      "doi": "10.1017/s0033291721001306",
+      "title": "Trust in government regarding COVID-19 and its associations with preventive health behaviour and prosocial behaviour during the pandemic: a cross-sectional and longitudinal study",
+      "abstract": "Abstract Background The effective implementation of government policies and measures for controlling the coronavirus disease 2019 (COVID-19) pandemic requires compliance from the public. This study aimed to examine cross-sectional and longitudinal associations of trust in government regarding COVID-19 control with the adoption of recommended health behaviours and prosocial behaviours, and potential determinants of trust in government during the pandemic. Methods This study analysed data from the PsyCorona Survey, an international project on COVID-19 that included 23 733 participants from 23 countries (representative in age and gender distributions by country) at baseline survey and 7785 participants who also completed follow-up surveys. Specification curve analysis was used to examine concurrent associations between trust in government and self-reported behaviours. We further used structural equation model to explore potential determinants of trust in government. Multilevel linear regressions were used to examine associations between baseline trust and longitudinal behavioural changes. Results Higher trust in government regarding COVID-19 control was significantly associated with higher adoption of health behaviours (handwashing, avoiding crowded space, self-quarantine) and prosocial behaviours in specification curve analyses (median standardised β = 0.173 and 0.229, p &lt; 0.001). Government perceived as well organised, disseminating clear messages and knowledge on COVID-19, and perceived fairness were positively associated with trust in government (standardised β = 0.358, 0.230, 0.056, and 0.249, p &lt; 0.01). Higher trust at baseline survey was significantly associated with lower rate of decline in health behaviours over time ( p for interaction = 0.001). Conclusions These results highlighted the importance of trust in government in the control of COVID-19.",
+      "year": 2021,
+      "venue": "Psychological Medicine",
+      "citation_count": 393,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 19,
+      "doi": "10.34172/aim.2020.02",
+      "title": "COVID-19 Pandemic and Comparative Health Policy Learning in Iran",
+      "abstract": "BACKGROUND: On March 11, 2020, the World Health Organization (WHO) declared the novel coronavirus disease (COVID-19) a global pandemic. Starting in December 2019 from China, the first cases were officially announced on February 19 in Qom city, Iran. As of April 3, 2020, 206 countries have reported a total of 932166 cases with 46764 deaths. Along with China, USA, Italy, Spain, and Germany, Iran has been suffering the hardest burden of COVID-19 outbreak. Worse still, countries like Iran are struggling with the double burden of political sanctions to provide lifesaving medical equipment and medicines to combat the emergency. METHODS: Using systematic document content analysis and through the lenses of health policy triangle, this article aims to compare the policies and strategies that Iran is adopting, with the experience and recommendations of China and WHO to combat COVID-19. RESULTS: Iran has formulated contextual-based policies to combat COVID-19 outbreak before and after virus entrance. Insufficient whole-government, whole-society approach in managing the outbreak, inadequate lifesaving and protective equipment, and delayed decisive governance are the biggest challenges in policy making to combat COVID-19. COVID-19 policies are a public health concern and require professional advocacy attempts through appropriate inter-sectoral collaboration and whole-government coalitions. CONCLUSION: COVID-19 is an unfolding outbreak; hence, policy learning is crucial to formulate appropriate policies and implement them accordingly. Iran has made many efforts to defeat the outbreak, but more coherent, timely and efficient action is required, now, more than ever, to save lives and slow the spread of this pandemic.",
+      "year": 2020,
+      "venue": "Archives of Iranian Medicine",
+      "citation_count": 298,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 20,
+      "doi": "10.30636/jbpa.32.172",
+      "title": "Rallying around the flag in times of COVID-19: Societal lockdown and trust in democratic institutions",
+      "abstract": "In times of severe international crises, such as wars and terrorist attacks, citizens tend to ‘rally around the flag’ and increase their support for political leaders. We ask if the rallying effects identified in the literature extend to the societal lockdowns in response to the COVID-19 pandemic. COVID-19-related lockdowns differ from crises studied in the existing literature because they are political crisis responses with severe and immediate negative effects on the economy. Using daily responses right before and after the announcement of the Danish lockdown on March 11, 2020, we study trust in democratic institutions among unemployed Danes over the first three weeks of a large-scale societal lockdown. OLS estimates show that trust in the Danish Prime Minister’s administration was higher immediately after the lockdown announcement. This increase lasted throughout the entire period of measurement (until the end of March). We find similarly increased trust in other institutions, most significantly the judicial system and the public sector at large, whereas findings for trust in parliament and the media are less clear. Interrupted time series estimates point to the same conclusions albeit they produce estimates with more noise. Overall, our findings are consistent with the idea that citizens tend to ‘rally around the flag’ in times of crisis and furthermore suggest that increased trust tends to spill over to institutions that are not involved in crisis management decisions.",
+      "year": 2020,
+      "venue": "Journal of Behavioral Public Administration",
+      "citation_count": 225,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 21,
+      "doi": "10.1016/j.healthpol.2020.06.009",
+      "title": "United but divided: Policy responses and people’s perceptions in the EU during the COVID-19 outbreak",
+      "abstract": "To understand the public sentiment toward the measures used by policymakers for COVID-19 containment, a survey among representative samples of the population in seven European countries was carried out in the first two weeks of April 2020. The study addressed people's support for containment policies, worries about COVID-19 consequences, and trust in sources of information. Citizens were overall satisfied with their government's response to the pandemic; however, the extent of approval differed across countries and policy measures. A north-south divide in public opinion was noticeable across the European states. It was particularly pronounced for intrusive policy measures, such as mobile data use for movement tracking, economic concerns, and trust in the information from the national government. Considerable differences in people's attitudes were noticed within countries, especially across individual regions and age groups. The findings suggest that the epidemic acts as a stressor, causing health and economic anxieties even in households that were not directly affected by the virus. At the same time, the burden of stress was unequally distributed across regions and age groups. Based on the data collected, we draw lessons from the containment stage and identify several insights that can facilitate the design of lockdown exit strategies and future containment policies so that a high level of compliance can be expected.",
+      "year": 2020,
+      "venue": "Health Policy",
+      "citation_count": 211,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 22,
+      "doi": "10.1007/s00148-021-00848-z",
+      "title": "Stay-at-home orders, social distancing, and trust",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Journal of Population Economics",
+      "citation_count": 192,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle"
+    },
+    {
+      "rank": 23,
+      "doi": "10.1093/eurpub/ckaa181",
+      "title": "Early lessons from COVID-19 response and shifts in authority: public trust, policy legitimacy and political inclusion",
+      "abstract": "In attempts to reverse the spread and prepare the curative care sector, and under huge uncertainties, many governments have responded to the COVID-19 outbreak with either voluntary or mandatory physical isolation and distancing measures. These have put state-society relationships in any political system under great pressure. In addition, many countries have shifted public decision-making authority from the democratic institutions to temporarily concentrated executive arrangements. With specialist expertise involvement, these arrangements enabled quick and invasive regulatory response.1 To the extent evidence is available, such technocratic crisis administration offers policy rationality. Yet, it also tends to postpone or disregard public value assessments. It thereby increases a perceived contradiction between ‘health’ and ‘the economy’ while in fact the two are mutually reinforcing values. As a result, such shifts in decision-making authorities have consequences for public trust. News about unintended socioeconomic consequences affects the ‘output legitimacy’ of the COVID-19 policies and regulations.2 Moreover, minority needs and impacts are easily overlooked as democratic policy deliberation (a policy’s ‘input legitimacy’) is temporarily postponed or even shut down altogether. For instance, in an open letter ‘A call to defend democracy’, published 25th of June in international and national news media, 500 political and civil leaders, Nobel laureates and pro-democracy institutions from around the world observe that, besides the unsurprising repression of critics by authoritarian regimes, ‘even some democratically elected governments are fighting the pandemic by amassing emergency powers that restrict human rights and enhance state surveillance without regard to legal constraints, parliamentary oversight or timeframes for the restoration of constitutional order.’3 In this viewpoint, we address these issues exploring, at the moment of writing the piece (end of June),",
+      "year": 2020,
+      "venue": "European Journal of Public Health",
+      "citation_count": 186,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 24,
+      "doi": "10.3389/fpsyt.2020.00821",
+      "title": "Psychological and Behavioral Responses to the COVID-19 Pandemic in Greece",
+      "abstract": "OBJECTIVE: Fear of COVID-19 was associated with more severe depressive and anxiety symptoms. This study aimed to explore COVID-19-related fear, depressive and anxiety symptoms, social responsibility, and behavioral responses during the COVID-19 pandemic in Greece. METHOD: A cross-sectional study was conducted from April 10 to April 13, 2020. Members of the Greek general population completed anonymously an online survey, distributed through the social media. Among the 3,700 adult respondents, 3,029 fulfilled inclusion criteria. The survey included sociodemographic questions, questions exploring potential risk factors for increased fear of COVID-19, questions about the employment of safety and checking behaviors, and questions about compliance with public health guidelines. In addition, four psychometric scales were used, the Fear of COVID-19 Scale (FCV-19S), the Brief Patient Health Questionnaire (PHQ-9) depression scale, the Generalized Anxiety Disorder scale (GAD-7), and Steele's Social Responsibility Motivation scale. Multivariate General Linear Models (GLM) were used to depict significant differences among dependent variables (FCV-19S, PHQ-9, GAD-7) and independent variables (potential risk factors, safety and checking behaviors, compliance with guidelines). The relationship between the FCV-19S total score and influencing factors was quantified by linear regression analysis. RESULTS: Several participants reported high levels of COVID-19-related fear (35.7%) and moderate to severe depressive symptoms (22.8%), while a significant proportion reported moderate to severe anxiety symptoms (77.4%). Women scored altogether significantly higher than men. Respondents under the age of 30 reported less fear and depressive symptoms and showed the least social responsibility. Based on GLM, a significant other's COVID-19 illness, being on psychiatric medication, employment of safety and checking behaviors, and compliance with guidelines were associated with higher COVID-19-rela",
+      "year": 2020,
+      "venue": "Frontiers in Psychiatry",
+      "citation_count": 186,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 25,
+      "doi": "10.1371/journal.pone.0252892",
+      "title": "In science we (should) trust: Expectations and compliance across nine countries during the COVID-19 pandemic",
+      "abstract": "The magnitude and nature of the COVID-19 pandemic prevents public health policies from relying on coercive enforcement. Practicing social distancing, wearing masks and staying at home becomes voluntary and conditional on the behavior of others. We present the results of a large-scale survey experiment in nine countries with representative samples of the population. We find that both empirical expectations (what others do) and normative expectations (what others approve of) play a significant role in compliance, beyond the effect of any other individual or group characteristic. In our vignette experiment, respondents evaluate the likelihood of compliance with social distancing and staying at home of someone similar to them in a hypothetical scenario. When empirical and normative expectations of individuals are high, respondents' evaluation of the vignette's character's compliance likelihood goes up by 55% (relative to the low expectations condition). Similar results are obtained when looking at self-reported compliance among those with high expectations. Our results are moderated by individuals' trust in government and trust in science. Holding expectations high, the effect of trusting science is substantial and significant in our vignette experiment (22% increase in compliance likelihood), and even larger in self-reported compliance (76% and 127% increase before and after the lockdown). By contrast, trusting the government only generates modest effects. At the aggregate level, the country-level trust in science, and not in government, becomes a strong predictor of compliance.",
+      "year": 2021,
+      "venue": "PLoS ONE",
+      "citation_count": 169,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 26,
+      "doi": "10.1016/j.hlpt.2020.08.021",
+      "title": "The COVID-19 pandemic in Ireland: An overview of the health service and economic policy response",
+      "abstract": "OBJECTIVES: To outline the situation in Ireland with regard to the COVID-19 pandemic. METHODS: Analyse the evolution of the COVID-19 pandemic in Ireland. Review the key public health and health system responses. RESULTS: Over 1700 people have died with COVID-19 by July 19th while almost 3000 people had been admitted to hospital with COVID-19. A high proportion of the deaths occurred in nursing homes and other residential centres who did not receive sufficient attention during the early phase of the pandemic. CONCLUSIONS: Ireland's response to the COVID-19 crisis has been comprehensive and timely. Transparency, a commitment to a relatively open data policy, the use of traditional and social media to inform the population, and the frequency of updates from the Department of Health and the Health Services Executive are all commendable and have led to a high level of compliance among the general public with the various non-medical measures introduced by the government.",
+      "year": 2020,
+      "venue": "Health Policy and Technology",
+      "citation_count": 146,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 27,
+      "doi": "10.1098/rsos.200589",
+      "title": "Stress and worry in the 2020 coronavirus pandemic: relationships to trust and compliance with preventive measures across 48 countries in the COVIDiSTRESS global survey",
+      "abstract": "The COVIDiSTRESS global survey collects data on early human responses to the 2020 COVID-19 pandemic from 173 429 respondents in 48 countries. The open science study was co-designed by an international consortium of researchers to investigate how psychological responses differ across countries and cultures, and how this has impacted behaviour, coping and trust in government efforts to slow the spread of the virus. Starting in March 2020, COVIDiSTRESS leveraged the convenience of unpaid online recruitment to generate public data. The objective of the present analysis is to understand relationships between psychological responses in the early months of global coronavirus restrictions and help understand how different government measures succeed or fail in changing public behaviour. There were variations between and within countries. Although Western Europeans registered as more concerned over COVID-19, more stressed, and having slightly more trust in the governments' efforts, there was no clear geographical pattern in compliance with behavioural measures. Detailed plots illustrating between-countries differences are provided. Using both traditional and Bayesian analyses, we found that individuals who worried about getting sick worked harder to protect themselves and others. However, concern about the coronavirus itself did not account for all of the variances in experienced stress during the early months of COVID-19 restrictions. More alarmingly, such stress was associated with less compliance. Further, those most concerned over the coronavirus trusted in government measures primarily where policies were strict. While concern over a disease is a source of mental distress, other factors including strictness of protective measures, social support and personal lockdown conditions must also be taken into consideration to fully appreciate the psychological impact of COVID-19 and to understand why some people fail to follow behavioural guidelines intended to protect themselv",
+      "year": 2021,
+      "venue": "Royal Society Open Science",
+      "citation_count": 146,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 28,
+      "doi": "10.1371/journal.pone.0240644",
+      "title": "How confidence in health care systems affects mobility and compliance during the COVID-19 pandemic",
+      "abstract": "Confidence in the health care system implies an expectation that sufficient and appropriate treatments will be provided if needed. The COVID-19 public health crisis is a significant, global, and (mostly) simultaneous test of the behavioral implications arising from this confidence. We explore whether populations reporting low levels of confidence in the health care system exhibit a stronger behavioral reaction to the COVID-19 pandemic. We track the dynamic responses to the COVID-19 pandemic across 38 European countries and 621 regions by employing a large dataset on human mobility generated between February 15 and June 5, 2020 and a broad range of contextual factors (e.g., deaths or policy implementations). Using a time-dynamic framework we find that societies with low levels of health care confidence initially exhibit a faster response with respect to staying home. However, this reaction plateaus sooner, and after the plateau it declines with greater magnitude than does the response from societies with high health care confidence. On the other hand, regions with higher confidence in the health care system are more likely to reduce mobility once the government mandates that its citizens are not to leave home except for essential trips, compared to those with lower health care system confidence. Regions with high trust in the government but low confidence in the health care system dramatically reduce their mobility, suggesting a correlation for trust in the state with respect to behavioral responses during a crisis.",
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "citation_count": 141,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 29,
+      "doi": "10.2147/rmhp.s278774",
+      "title": "Does High Public Trust Amplify Compliance with Stringent COVID-19 Government Health Guidelines? A Multi-country Analysis Using Data from 102,627 Individuals",
+      "abstract": "PURPOSE: To examine how public trust mediates the people's adherence to levels of stringent government health policies and to establish if these effects vary across the political regimes. METHODS: This study utilizes data from two large-scale surveys: the global behaviors and perceptions at the onset of COVID-19 pandemic and the Oxford COVID-19 Government Response Tracker (OxCGRT). Linear regression models were used to estimate the effects of public trust and strictness of restriction measures on people's compliance level. The model accounted for individual and daily variations in country-level stringency of preventative measures. Differences in the dynamics between public trust, the stringent level of government health guidelines and policy compliance were also examined among countries based on political regimes. RESULTS: We find strong evidence of the increase in compliance due to the imposition of stricter government restrictions. The examination of heterogeneous effects suggests that high public trust in government and the perception of its truthfulness double the impact of policy restrictions on public compliance. Among political regimes, higher levels of public trust significantly increase the predicted compliance as stringency level rises in authoritarian and democratic countries. CONCLUSION: This study highlights the importance of public trust in government and its institutions during public health emergencies such as the COVID-19 pandemic. Our results are relevant and help understand why governments need to address the risks of non-compliance among low trusting individuals to achieve the success of the containment policies.",
+      "year": 2021,
+      "venue": "Risk Management and Healthcare Policy",
+      "citation_count": 139,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 30,
+      "doi": "10.1371/journal.pone.0049806",
+      "title": "Longitudinal Investigation of Public Trust in Institutions Relative to the 2009 H1N1 Pandemic in Switzerland",
+      "abstract": "BACKGROUND: The 2009 H1N1 pandemic left a legacy of mistrust in the public relative to how outbreaks of emerging infectious diseases are managed. To prepare for future outbreaks, it is crucial to explore the phenomenon of public trust in the institutions responsible for managing disease outbreaks. We investigated the evolution of public trust in institutions during and after the 2009 pandemic in Switzerland. We also explored respondents' perceptions of the prevention campaign and the roles of the government and media. METHODOLOGY/PRINCIPAL FINDINGS: A two-wave longitudinal survey was mailed to 2,400 members of the Swiss public. Wave 1 was in Spring 2009. Wave 2 was in Spring 2010. Six hundred and two participants responded in both waves. Participants indicated moderate to high levels of trust in medical organizations, the WHO, the Swiss government, the pharmaceutical industry, and the EU. On the other hand, trust in the media was low. Moreover, trust in almost all institutions decreased over time. Participants were satisfied with the amount of information received and indicated having followed official recommendations, but widespread concerns about the vaccine were evident. A large majority of participants agreed the vaccine might have unknown or undesirable side effects. Perceptions of the government's and the media's role in handling the outbreak were characterized by a substantial degree of skepticism and mistrust. CONCLUSIONS/SIGNIFICANCE: Results show clear patterns of skepticism and mistrust on the part of the public relative to various institutions and their actions. Results underscore the importance of systematically investigating trust of the public relative to epidemics. Moreover, studies investigating the evolution of the public's memories of the pandemic over the coming years may be important to understand reactions to future pandemics. A systematic research program on trust can inform public health communication campaigns, enabling tailored communicatio",
+      "year": 2012,
+      "venue": "PLoS ONE",
+      "citation_count": 109,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    }
+  ]
+}

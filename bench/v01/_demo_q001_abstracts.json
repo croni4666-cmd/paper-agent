@@ -1,0 +1,366 @@
+{
+  "qid": "q001",
+  "query": "AI tutoring systems and their effect on K-12 student learning outcomes",
+  "items": [
+    {
+      "rank": 1,
+      "doi": "10.1016/j.lindif.2023.102274",
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citations": 5330,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 2,
+      "doi": "10.1186/s41039-017-0062-8",
+      "title": "Exploring the impact of artificial intelligence on teaching and learning in higher education",
+      "year": 2017,
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "citations": 1791,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 3,
+      "doi": "10.3102/00346543068002179",
+      "title": "Scientific Discovery Learning with Computer Simulations of Conceptual Domains",
+      "year": 1998,
+      "venue": "Review of Educational Research",
+      "citations": 1549,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 4,
+      "doi": "10.1186/s41239-023-00392-8",
+      "title": "Artificial intelligence in higher education: the state of the field",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 1414,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 5,
+      "doi": "10.1109/tnnls.2022.3160699",
+      "title": "Towards Personalized Federated Learning",
+      "year": 2022,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "citations": 1019,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 6,
+      "doi": "10.3390/su151612451",
+      "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
+      "year": 2023,
+      "venue": "Sustainability",
+      "citations": 940,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 7,
+      "doi": "10.1007/s10462-022-10246-w",
+      "title": "Human-in-the-loop machine learning: a state of the art",
+      "year": 2022,
+      "venue": "Artificial Intelligence Review",
+      "citations": 870,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1186/s41239-024-00448-3",
+      "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 831,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 9,
+      "doi": "10.3390/educsci13090856",
+      "title": "Challenges and Opportunities of Generative AI for Higher Education as Explained by ChatGPT",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citations": 769,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1111/j.1551-6709.2012.01245.x",
+      "title": "The Knowledge‐Learning‐Instruction Framework: Bridging the Science‐Practice Chasm to Enhance Robust Student Learning",
+      "year": 2012,
+      "venue": "Cognitive Science",
+      "citations": 737,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 11,
+      "doi": "10.1186/s41239-021-00292-9",
+      "title": "The impact of artificial intelligence on learner–instructor interaction in online learning",
+      "year": 2021,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 715,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 12,
+      "doi": "10.1007/s11423-023-10203-6",
+      "title": "Teachers’ AI digital competencies and twenty-first century skills in the post-pandemic world",
+      "year": 2023,
+      "venue": "Educational Technology Research and Development",
+      "citations": 598,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 13,
+      "doi": "10.3389/fpsyg.2023.1260843",
+      "title": "Enhancing academic writing skills and motivation: assessing the efficacy of ChatGPT in AI-assisted language learning for EFL students",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citations": 576,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 14,
+      "doi": "10.1186/s41039-018-0078-8",
+      "title": "Students’ perception of Kahoot!’s influence on teaching and learning",
+      "year": 2018,
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "citations": 510,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 15,
+      "doi": "10.1111/bjet.13334",
+      "title": "Do <scp>AI</scp> chatbots improve students learning outcomes? Evidence from a meta‐analysis",
+      "year": 2023,
+      "venue": "British Journal of Educational Technology",
+      "citations": 484,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 16,
+      "doi": "10.1186/s41239-023-00425-2",
+      "title": "AI-generated feedback on writing: insights into efficacy and ENL student preference",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 474,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 17,
+      "doi": "10.1080/2331186x.2023.2236469",
+      "title": "The impact of AI writing tools on the content and organization of students’ writing: EFL teachers’ perspective",
+      "year": 2023,
+      "venue": "Cogent Education",
+      "citations": 453,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 18,
+      "doi": "10.3389/fpsyg.2023.1261955",
+      "title": "Artificial intelligence in language instruction: impact on English learning achievement, L2 motivation, and self-regulated learning",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citations": 438,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 19,
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "Impact of AI assistance on student agency",
+      "year": 2023,
+      "venue": "Computers & Education",
+      "citations": 398,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 20,
+      "doi": "10.1186/s41239-022-00362-6",
+      "title": "The impact of a virtual teaching assistant (chatbot) on students' learning in Ghanaian higher education",
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 395,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 21,
+      "doi": "10.1109/access.2022.3193938",
+      "title": "AI-Based Personalized E-Learning Systems: Issues, Challenges, and Solutions",
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citations": 343,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 22,
+      "doi": "10.1186/s41239-022-00372-4",
+      "title": "Integration of artificial intelligence performance prediction and learning analytics to improve student learning in online engineering course",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 337,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 23,
+      "doi": "10.1186/s41239-023-00406-5",
+      "title": "Supporting students’ self-regulated learning in online learning using artificial intelligence applications",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citations": 275,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 24,
+      "doi": "10.1007/s40593-014-0023-y",
+      "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citations": 260,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 25,
+      "doi": "10.3390/electronics13183762",
+      "title": "Leveraging AI in E-Learning: Personalized Learning and Adaptive Assessment through Cognitive Neuropsychology—A Systematic Analysis",
+      "year": 2024,
+      "venue": "Electronics",
+      "citations": 257,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 26,
+      "doi": "10.1001/jamanetworkopen.2021.49008",
+      "title": "Effect of Artificial Intelligence Tutoring vs Expert Instruction on Learning Simulated Surgical Skills Among Medical Students",
+      "year": 2022,
+      "venue": "JAMA Network Open",
+      "citations": 256,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 27,
+      "doi": "10.58631/injurity.v2i3.52",
+      "title": "Role of AI in Education",
+      "year": 2023,
+      "venue": "Interdiciplinary Journal and Hummanity (INJURITY)",
+      "citations": 241,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 28,
+      "doi": "10.3390/su16073034",
+      "title": "Generative AI for Customizable Learning Experiences",
+      "year": 2024,
+      "venue": "Sustainability",
+      "citations": 226,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 29,
+      "doi": "10.1207/s15326985ep4004_7",
+      "title": "Fostering the Intelligent Novice: Learning From Errors With Metacognitive Tutoring",
+      "year": 2005,
+      "venue": "Educational Psychologist",
+      "citations": 197,
+      "engines": [
+        "openalex"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    },
+    {
+      "rank": 30,
+      "doi": "10.1016/j.eswa.2023.121820",
+      "title": "From chatting to self-educating: Can AI tools boost student learning outcomes?",
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citations": 156,
+      "engines": [
+        "crossref"
+      ],
+      "abstract": "[NO ABSTRACT — judge by title only]"
+    }
+  ]
+}

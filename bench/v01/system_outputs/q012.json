@@ -1,0 +1,462 @@
+{
+  "query_id": "q012",
+  "query": "carbon pricing effectiveness in OECD countries",
+  "topic_bucket": "econ",
+  "source": "pub",
+  "generated_at": "2026-07-10T21:02:34",
+  "config": "baseline-v0.1",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1016/j.gloenvcha.2016.05.009",
+      "title": "The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications: An overview",
+      "abstract": "This paper presents the overview of the Shared Socioeconomic Pathways (SSPs) and their energy, land use, and emissions implications. The SSPs are part of a new scenario framework, established by the climate change research community in order to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The pathways were developed over the last years as a joint community effort and describe plausible major global developments that together would lead in the future to different challenges for mitigation and adaptation to climate change. The SSPs are based on five narratives describing alternative socio-economic developments, including sustainable development, regional rivalry, inequality, fossil-fueled development, and middle-of-the-road development. The long-term demographic and economic projections of the SSPs depict a wide uncertainty range consistent with the scenario literature. A multi-model approach was used for the elaboration of the energy, land-use and the emissions trajectories of SSP-based scenarios. The baseline scenarios lead to global energy consumption of 400–1200 EJ in 2100, and feature vastly different land-use dynamics, ranging from a possible reduction in cropland area up to a massive expansion by more than 700 million hectares by 2100. The associated annual CO2 emissions of the baseline scenarios range from about 25 GtCO2 to more than 120 GtCO2 per year by 2100. With respect to mitigation, we find that associated costs strongly depend on three factors: (1) the policy assumptions, (2) the socio-economic narrative, and (3) the stringency of the target. The carbon price for reaching the target of 2.6 W/m2 that is consistent with a temperature change limit of 2 °C, differs in our analysis thus by about a factor of three across the SSP marker scenarios. Moreover, many models could not reach this target from the SSPs with high mitigation challenges. While the SSPs were designed to represent different mitig",
+      "year": 2016,
+      "venue": "Global Environmental Change",
+      "citation_count": 6533,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.1257/0895330042162430",
+      "title": "The Capital Asset Pricing Model: Theory and Evidence",
+      "abstract": "The capital asset pricing model (CAPM) of William Sharpe (1964) and John Lintner (1965) marks the birth of asset pricing theory (resulting in a Nobel Prize for Sharpe in 1990). Before their breakthrough, there were no asset pricing models built from first principles about the nature of tastes and investment opportunities and with clear testable predictions about risk and return. Four decades later, the CAPM is still widely used in applications, such as estimating the cost of equity capital for firms and evaluating the performance of managed portfolios. And it is the centerpiece, indeed often the only asset pricing model taught in MBA level investment courses. The attraction of the CAPM is its powerfully simple logic and intuitively pleasing predictions about how to measure risk and about the relation between expected return and risk. Unfortunately, perhaps because of its simplicity, the empirical record of the model is poor - poor enough to invalidate the way it is used in applications. The model's empirical problems may reflect true failings. (It is, after all, just a model.) But they may also be due to shortcomings of the empirical tests, most notably, poor proxies for the market portfolio of invested wealth, which plays a central role in the model's predictions. We argue, however, that if the market proxy problem invalidates tests of the model, it also invalidates most applications, which typically borrow the market proxies used in empirical tests. For perspective on the CAPM's predictions about risk and expected return, we begin with a brief summary of its logic. We then review the history of empirical work on the model and what it says about shortcomings of the CAPM that pose challenges to be explained by more complicated models.",
+      "year": 2004,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 1929,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.3390/su12135488",
+      "title": "The Role of Agriculture in Ensuring Food Security in Developing Countries: Considerations in the Context of the Problem of Sustainable Food Production",
+      "abstract": "Ensuring food security has become an issue of key importance to countries with different degrees of economic development, while the agricultural sector plays a strategic role in improving food availability. The aim of this paper is to identify relationships between the undernourishment scale and selected characteristics describing the agricultural sector within identified clusters of developing countries. Typological groups of countries were separated using Ward’s method. It results from the analyses that the greatest problems with maintaining food security are observed in the developing countries with a high share of agriculture in their Gross Domestic Product (GDP), adverse conditions hindering agricultural production and deficient infrastructure. Based on research results desirable and tailored strategies for food security improvement in individual clusters were developed. Promoting investments in agricultural infrastructure and extension services along with adopting measures aimed at increasing the households’ purchasing power, especially those in rural areas, appear to be key drivers for improving both food availability and food access. The paper focuses not only on identifying the reasons of undernourishment, but also contributes to recognition of the most effective ways to solve the hunger problem under a country’s unique conditions. It offers a comprehensive perspective for the policy formulation in various areas world-wide, which may be of interest to scholars and policy makers.",
+      "year": 2020,
+      "venue": "Sustainability",
+      "citation_count": 947,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 4,
+      "doi": "10.5194/acp-17-8681-2017",
+      "title": "Global anthropogenic emissions of particulate matter including black carbon",
+      "abstract": "Abstract. This paper presents a comprehensive assessment of historical (1990–2010) global anthropogenic particulate matter (PM) emissions including the consistent and harmonized calculation of mass-based size distribution (PM1, PM2. 5, PM10), as well as primary carbonaceous aerosols including black carbon (BC) and organic carbon (OC). The estimates were developed with the integrated assessment model GAINS, where source- and region-specific technology characteristics are explicitly included. This assessment includes a number of previously unaccounted or often misallocated emission sources, i.e. kerosene lamps, gas flaring, diesel generators, refuse burning; some of them were reported in the past for selected regions or in the context of a particular pollutant or sector but not included as part of a total estimate. Spatially, emissions were calculated for 172 source regions (as well as international shipping), presented for 25 global regions, and allocated to 0.5° × 0.5° longitude–latitude grids. No independent estimates of emissions from forest fires and savannah burning are provided and neither windblown dust nor unpaved roads emissions are included. We estimate that global emissions of PM have not changed significantly between 1990 and 2010, showing a strong decoupling from the global increase in energy consumption and, consequently, CO2 emissions, but there are significantly different regional trends, with a particularly strong increase in East Asia and Africa and a strong decline in Europe, North America, and the Pacific region. This in turn resulted in important changes in the spatial pattern of PM burden, e.g. European, North American, and Pacific contributions to global emissions dropped from nearly 30 % in 1990 to well below 15 % in 2010, while Asia's contribution grew from just over 50 % to nearly two-thirds of the global total in 2010. For all PM species considered, Asian sources represented over 60 % of the global anthropogenic total, and residential combu",
+      "year": 2017,
+      "venue": "Atmospheric chemistry and physics",
+      "citation_count": 900,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 5,
+      "doi": "10.1016/j.cpa.2019.102097",
+      "title": "ESG practices and the cost of debt: Evidence from EU countries",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Critical Perspectives on Accounting",
+      "citation_count": 867,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 6,
+      "doi": "10.1016/j.ecolecon.2015.03.020",
+      "title": "Beyond carbon pricing: The role of banking and monetary policy in financing the transition to a low-carbon economy",
+      "abstract": "It is widely acknowledged that introducing a price on carbon represents a crucial precondition for filling the current gap in low-carbon investment. However, as this paper argues, carbon pricing in itself may not be sufficient. This is due to the existence of market failures in the process of creation and allocation of credit that may lead commercial banks the most important source of external finance for firms not to respond as expected to price signals. Under certain economic conditions, banks would shy away from lending to low-carbon activities even in the presence of a carbon price. This possibility calls for the implementation of additional policies not based on prices. In particular, the paper discusses the potential role of monetary policies and macroprudential financial regulation: modifying the incentives and constraints that banks face when deciding their lending strategy through, for instance, a differentiation of reserve requirements according to the destination of lending may fruitfully expand credit creation directed towards low-carbon sectors. This seems to be especially feasible in emerging economies, where the central banking framework usually allows for a stronger public control on credit allocation and a wider range of monetary policy instruments than the sole interest rate. (C) 2015 Elsevier B.V. All rights reserved.",
+      "year": 2016,
+      "venue": "Archivio istituzionale della ricerca (Alma Mater Studiorum Università di Bologna)",
+      "citation_count": 762,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 7,
+      "doi": "10.7916/d8-w2nc-4103",
+      "title": "Report of the High-Level Commission on Carbon Prices",
+      "abstract": "The purpose of this Commission is to explore explicit carbon-pricing options and levels that would induce the change in behaviors— particularly in those driving the investments in infrastructure, technology, and equipment—needed to deliver on the temperature objective of the Paris Agreement, in a way that fosters economic growth and development, as expressed in the Sustainable Development Goals (SDGs). This report does not focus on the estimation and evaluation of the climate change impacts that would be avoided by reducing carbon emissions. While the Commission also covers other policies relevant and important to carbon-pricing design and delivery on the Paris agreement, its primary focus is on pricing. This report has been prepared based on the Commission’s assessment of the available evidence and literature as well as on its members’ judgment, developed through their extensive international policy experience. While the commissioners are in broad agreement on the overall thrust of the arguments presented in the report, they may not necessarily support every single assertion and conclusion.",
+      "year": 2017,
+      "venue": "",
+      "citation_count": 640,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1016/j.erss.2019.02.001",
+      "title": "It starts at home? Climate policies targeting household consumption and behavioral decisions are key to low-carbon futures",
+      "abstract": "Through their consumption behavior, households are responsible for 72% of global greenhouse gas emissions. Thus, they are key actors in reaching the 1.5 °C goal under the Paris Agreement. However, the possible contribution and position of households in climate policies is neither well understood, nor do households receive sufficiently high priority in current climate policy strategies. This paper investigates how behavioral change can achieve a substantial reduction in greenhouse gas emissions in European high-income countries. It uses theoretical thinking and some core results from the HOPE research project, which investigated household preferences for reducing emissions in four European cities in France, Germany, Norway and Sweden. The paper makes five major points: First, car and plane mobility, meat and dairy consumption, as well as heating are the most dominant components of household footprints. Second, household living situations (demographics, size of home) greatly influence the household potential to reduce their footprint, even more than country or city location. Third, household decisions can be sequential and temporally dynamic, shifting through different phases such as childhood, adulthood, and illness. Fourth, short term voluntary efforts will not be sufficient by themselves to reach the drastic reductions needed to achieve the 1.5 °C goal; instead, households need a regulatory framework supporting their behavioral changes. Fifth, there is a mismatch between the roles and responsibilities conveyed by current climate policies and household perceptions of responsibility. We then conclude with further recommendations for research and policy.",
+      "year": 2019,
+      "venue": "Energy Research & Social Science",
+      "citation_count": 607,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 9,
+      "doi": "10.1016/j.jclepro.2019.01.282",
+      "title": "Foreign direct Investment–CO2 emissions nexus in Middle East and North African countries: Importance of biomass energy consumption",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Journal of Cleaner Production",
+      "citation_count": 604,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1016/j.fuel.2023.127776",
+      "title": "Current status of carbon capture, utilization, and storage technologies in the global economy: A survey of technical assessment",
+      "abstract": "The latest tremendously rapid expansion of the energy and industrial sector has led to a sharp increase in stationary sources of CO2. Consequently, a lot of concerns have been raised about the prevention of global warming and the achievement of climate mitigation strategies by 2050 with a low-carbon and sustainable future. In view of this, the current state of various aspects of carbon capture, utilization, and storage (CCUS) technologies in general technical assessment were concisely reviewed and discussed. We concentrated on precisely identifying the technology readiness level (TRL), which is beneficial to specifically defining the maturity for each key element of the CCUS system with a commercialization direction paths. In addition, we especially presented and emphasized the importance of CO2 capture types from flue gases and CO2 separation methods. Then, we determined valuable data from the largest R&D projects at various scales. This paper provides a critical review of the literature related to challenges of the CCUS system that must be overcome to raise many low TRL technologies and facilitate their implementation on a commercial scale. Finally, our work aims to guide the further scaling up and establishment of worldwide CO2 emission reduction projects.",
+      "year": 2023,
+      "venue": "Fuel",
+      "citation_count": 583,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 11,
+      "doi": "10.1257/jep.26.4.27",
+      "title": "Contingent Valuation: A Practical Alternative when Prices Aren't Available",
+      "abstract": "A person may be willing to make an economic tradeoff to assure that a wilderness area or scenic resource is protected even if neither that person nor (perhaps) anyone else will actually visit this area. This tradeoff is commonly labeled “passive use value.” Contingent valuation studies ask questions that help to reveal the monetary tradeoff each person would make concerning the value of goods or services. Such surveys are a practical alternative approach for eliciting the value of public goods, including those with passive use considerations. First I discuss the Exxon Valdez oil spill of March 1989, focusing on why it is important to measure monetary tradeoffs for goods where passive use considerations loom large. Although discussions of contingent valuation often focus on whether the method is sufficiently reliable for use in assessing natural resource damages in lawsuits, it is important to remember that most estimates from contingent valuation studies are used in benefit–cost assessments, not natural resource damage assessments. Those working on benefit–cost analysis have long recognized that goods and impacts that cannot be quantified are valued, implicitly, by giving them a limitless value when government regulations preclude certain activities, or giving them a value of zero by leaving certain consequences out of the analysis. Contingent valuation offers a practical alternative for reducing the use of either of these extreme choices. I put forward an affirmative case for contingent valuation and address a number of the concerns that have arisen.",
+      "year": 2012,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 542,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 12,
+      "doi": "10.1073/pnas.1918128117",
+      "title": "The European Union Emissions Trading System reduced CO <sub>2</sub> emissions despite low prices",
+      "abstract": "International carbon markets are an appealing and increasingly popular tool to regulate carbon emissions. By putting a price on carbon, carbon markets reshape incentives faced by firms and reduce the value of emissions. How effective are carbon markets? Observers have tended to infer their effectiveness from market prices. The general belief is that a carbon market needs a high price in order to reduce emissions. As a result, many observers remain skeptical of initiatives such as the European Union Emissions Trading System (EU ETS), whose price remained low (compared to the social cost of carbon). In this paper, we assess whether the EU ETS reduced [Formula: see text] emissions despite low prices. We motivate our study by documenting that a carbon market can be effective if it is a credible institution that can plausibly become more stringent in the future. In such a case, firms might cut emissions even though market prices are low. In fact, low prices can be a signal that the demand for carbon permits weakens. Thus, low prices are compatible with successful carbon markets. To assess whether the EU ETS reduced carbon emissions even as permits were cheap, we estimate counterfactual carbon emissions using an original sectoral emissions dataset. We find that the EU ETS saved about 1.2 billion tons of [Formula: see text] between 2008 and 2016 (3.8%) relative to a world without carbon markets, or almost half of what EU governments promised to reduce under their Kyoto Protocol commitments. Emission reductions in sectors covered under the EU ETS were higher.",
+      "year": 2020,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_count": 509,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 13,
+      "doi": "10.1002/wcc.462",
+      "title": "Carbon pricing in climate policy: seven reasons, complementary instruments, and political economy considerations",
+      "abstract": "Carbon pricing is a recurrent theme in debates on climate policy. Discarded at the 2009 COP in Copenhagen, it remained part of deliberations for a climate agreement in subsequent years. As there is still much misunderstanding about the many reasons to implement a global carbon price, ideological resistance against it prospers. Here, we present the main arguments for carbon pricing, to stimulate a fair and well‐informed discussion about it. These include considerations that have received little attention so far. We stress that a main reason to use carbon pricing is environmental effectiveness at a relatively low cost, which in turn contributes to enhance social and political acceptability of climate policy. This includes the property that corrected prices stimulate rapid environmental innovations. These arguments are underappreciated in the public debate, where pricing is frequently downplayed and the erroneous view that innovation policies are sufficient is widespread. Carbon pricing and technology policies are, though, largely complementary and thus are both needed for effective climate policy. We also comment on the complementarity of other instruments to carbon pricing. We further discuss distributional consequences of carbon pricing and present suggestions on how to address these. Other political economy issues that receive attention are lobbying, co‐benefits, international policy coordination, motivational crowding in/out, and long‐term commitment. The overview ends with reflections on implementing a global carbon price, whether through a carbon tax or emissions trading. The discussion goes beyond traditional arguments from environmental economics by including relevant insights from energy research and innovation studies as well. WIREs Clim Change 2017, 8:e462. doi: 10.1002/wcc.462 This article is categorized under: Climate Economics &gt; Economics of Mitigation",
+      "year": 2017,
+      "venue": "Wiley Interdisciplinary Reviews Climate Change",
+      "citation_count": 470,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 14,
+      "doi": "10.1146/annurev.energy.27.122001.083444",
+      "title": "Renewable Energy Markets in Developing Countries",
+      "abstract": "▪ Abstract Renewable energy is shifting from the fringe to the mainstream of sustainable development. Past donor efforts achieved modest results but often were not sustained or replicated, which leads now to greater market orientation. Markets for rural household lighting with solar home systems, biogas, and small hydro power have expanded through rural entrepreneurship, government programs, and donor assistance, serving millions of households. Applications in agriculture, small industry, and social services are emerging. Public programs resulted in 220 million improved biomass cook stoves. Three percent of power generation capacity is largely small hydro and biomass power, with rapid growth of wind power. Experience suggests the need for technical know-how transfer, new replicable business models, credit for rural households and entrepreneurs, regulatory frameworks and financing for private power developers, market facilitation organizations, donor assistance aimed at expanding sustainable markets, smarter subsidies, and greater attention to social benefits and income generation.",
+      "year": 2002,
+      "venue": "Annual Review of Energy and the Environment",
+      "citation_count": 459,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 15,
+      "doi": "10.5194/bg-9-1845-2012",
+      "title": "A synthesis of carbon dioxide emissions from fossil-fuel combustion",
+      "abstract": "Abstract. This synthesis discusses the emissions of carbon dioxide from fossil-fuel combustion and cement production. While much is known about these emissions, there is still much that is unknown about the details surrounding these emissions. This synthesis explores our knowledge of these emissions in terms of why there is concern about them; how they are calculated; the major global efforts on inventorying them; their global, regional, and national totals at different spatial and temporal scales; how they are distributed on global grids (i.e., maps); how they are transported in models; and the uncertainties associated with these different aspects of the emissions. The magnitude of emissions from the combustion of fossil fuels has been almost continuously increasing with time since fossil fuels were first used by humans. Despite events in some nations specifically designed to reduce emissions, or which have had emissions reduction as a byproduct of other events, global total emissions continue their general increase with time. Global total fossil-fuel carbon dioxide emissions are known to within 10 % uncertainty (95 % confidence interval). Uncertainty on individual national total fossil-fuel carbon dioxide emissions range from a few percent to more than 50 %. This manuscript concludes that carbon dioxide emissions from fossil-fuel combustion continue to increase with time and that while much is known about the overall characteristics of these emissions, much is still to be learned about the detailed characteristics of these emissions.",
+      "year": 2012,
+      "venue": "Biogeosciences",
+      "citation_count": 413,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 16,
+      "doi": "10.2307/3146894",
+      "title": "The Cost-Effectiveness of Conservation Payments",
+      "abstract": "<i>International donors invest billions of dollars to conserve ecosystems in low-income nations. The most common investments aim to encourage commercial activities, such as ecotourism, that indirectly generate ecosystem protection as a joint product. We demonstrate that paying for ecosystem protection directly can be far more cost-effective. Although direct-payment initiatives have imposing institutional requirements, we argue that all conservation initiatives face similar challenges. Thus conservation practitioners would be well advised to implement the first-best direct-payment approach, rather than a second-best policy option. An empirical example illustrates the spectacular cost savings that can be realized by direct-payment initiatives.</i> (JEL H21, Q28)",
+      "year": 2002,
+      "venue": "Land Economics",
+      "citation_count": 403,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 17,
+      "doi": "10.1080/14693062.2018.1492897",
+      "title": "Carbon taxes and greenhouse gas emissions trading systems: what have we learned?",
+      "abstract": "Systematic evidence relating to the performance of carbon pricing – carbon taxes and greenhouse gas (GHG) emissions trading systems (ETSs) – is sparse. In 2015, 17 ETSs were operational in 55 jurisdictions while 18 jurisdictions collected a carbon tax. The papers in this special thematic section review the performance of many of these instruments over the 2005–2015 period. The performance of existing carbon taxes and GHG ETSs can help policy makers make informed choices about whether to introduce these instruments and to improve their design. The purpose of carbon pricing instruments is to reduce GHG emissions cost effectively. Assessing their performance is difficult because emissions are also affected by other policies and exogenous factors such as economic conditions. Carbon taxes in Europe prior to 2008 and in British Columbia reduced emissions from business-as-usual but actual emissions continued to rise. Since 2008 emissions subject to European carbon taxes have declined, but in most countries, other mitigation policies have probably contributed more to the reductions than the carbon taxes. Emissions subject to ETSs, with the exception of four systems without emissions caps, have declined. The ETSs contributed to the emissions reductions, but their share of the overall reduction is not known. Most tax rates are low relative to levels thought to be needed to achieve climate change objectives. Few jurisdictions regularly adjust their tax rates. All ETSs have accumulated surplus allowances and implemented measures to reduce these surpluses. The largest ETSs now specify annual reductions in their emissions cap several years into the future. Emissions trading system allowance prices are generally lower than the tax rates.Key policy insights Theoretical discussions usually portray carbon taxes and GHG ETSs as alternatives. In practice, a jurisdiction often implements both instruments to address emissions by different sources.Designs of ETSs have evolved based on exp",
+      "year": 2018,
+      "venue": "Climate Policy",
+      "citation_count": 343,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 18,
+      "doi": "10.1016/j.oneear.2021.10.002",
+      "title": "Carbon capture and storage at the end of a lost decade",
+      "abstract": "Following the landmark 2015 United Nations Paris Agreement, a growing number of countries are committing to the transition to net-zero emissions. Carbon capture and storage (CCS) has been consistently heralded to directly address emissions from the energy and industrial sectors and forms a significant component of plans to reach net-zero. However, despite the critical importance of the technology and substantial research and development to date, CCS deployment has been slow. This review examines deployment efforts over the last decade. We reveal that facility deployment must increase dramatically from current levels, and much work remains to maximize storage of CO2 in vast subsurface reserves. Using current rates of deployment, CO2 storage capacity by 2050 is projected to be around 700 million tons per year, just 10% of what is required. Meeting the net-zero targets via CCS ambitions seems unlikely unless worldwide coordinated efforts and rapid changes in policy take place.",
+      "year": 2021,
+      "venue": "One Earth",
+      "citation_count": 305,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 19,
+      "doi": "10.1038/s41558-021-01250-z",
+      "title": "Potential impacts and challenges of border carbon adjustments",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Nature Climate Change",
+      "citation_count": 273,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 20,
+      "doi": "10.1016/j.enpol.2018.06.020",
+      "title": "Carbon pricing and deep decarbonisation",
+      "abstract": "Experts frequently point to carbon pricing as the most cost-effective tool for reducing greenhouse gas emissions. Empirical studies show that carbon pricing can successfully incentivise incremental emissions reductions. But meeting temperature targets within defined timelines as agreed under the Paris Agreement requires more than incremental improvements: it requires achieving net zero emissions within a few decades. To date, there is little evidence that carbon pricing has produced deep emission reductions, even at high prices. While much steeper carbon prices may deliver greater abatement, political economy constraints render their feasibility doubtful. An approach with multiple instruments, including technology mandates and targeted support for innovation, is indispensable to avoid path dependencies and lock-in of long-lived, high-carbon assets. We argue that carbon pricing serves several important purposes in such an instrument mix, but also that the global commitment to deep decarbonisation requires acknowledging the vital role of instruments other than carbon pricing.",
+      "year": 2018,
+      "venue": "Energy Policy",
+      "citation_count": 251,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 21,
+      "doi": "10.1007/s10018-016-0144-7",
+      "title": "Effectiveness, Earmarking, and Labeling: Testing the Acceptability of Carbon Taxes with Survey Data",
+      "abstract": "This paper analyzes the drivers of carbon taxes acceptability with survey data and a randomized labeling treatment. Based on a sample of more than 300individuals, it assesses the effect on acceptability of specific policy designs and individuals’ perceptions of carbon taxes advantages and disadvantages. We find that the lack of perception of primary and ancillary benefits is one of the main barriers to the acceptability of carbon taxes. In addition, policy design matters for acceptability and in particular earmarking fiscal revenues for environmental purposes can lead to larger support. We also find an effect of labeling, comparing the wording ‘‘climate contribution’’ with ‘‘carbon tax’’. We argue that proper policy design coupled with effective communication on the effects of carbon taxes may lead to a substantial improvement in acceptability.",
+      "year": 2016,
+      "venue": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+      "citation_count": 236,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 22,
+      "doi": "10.5089/9781513595405.001",
+      "title": "Still Not Getting Energy Prices Right: A Global and Country Update of Fossil Fuel Subsidies",
+      "abstract": "This paper provides a comprehensive global, regional, and country-level update of: (i) efficient fossil fuel prices to reflect supply and environmental costs; and (ii) subsidies implied by charging below efficient fuel prices. The methodology improves over previous IMF analyses through more sophisticated estimation of costs and impacts of reform. Globally, fossil fuel subsidies were $5.9 trillion in 2020 or about 6.8 percent of GDP and are expected to rise to 7.4 percent of GDP in 2025. Just 8 percent of the 2020 subsidy reflects undercharging for supply costs (explicit subsidies) and 92 percent for undercharging for environmental costs and foregone consumption taxes (implicit subsidies). Efficient fuel pricing in 2025 would reduce global carbon dioxide global carbon dioxide emissions 36 percent below baseline levels, which is in line with keeping global warming to 1.5 degrees, while raising revenues worth 3.8 percent of global GDP and preventing 0.9 million local air pollution deaths per year. Accompanying spreadsheets provide detailed results for 191 countries.",
+      "year": 2021,
+      "venue": "IMF Working Paper",
+      "citation_count": 205,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 23,
+      "doi": "10.1016/j.jeem.2010.04.004",
+      "title": "Carbon markets and technological innovation",
+      "abstract": "",
+      "year": 2010,
+      "venue": "Journal of Environmental Economics and Management",
+      "citation_count": 181,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 24,
+      "doi": "10.1016/j.eneco.2023.106642",
+      "title": "How social imbalance and governance quality shape policy directives for energy transition in the OECD countries?",
+      "abstract": "In line with the COP26 Summit objectives, this paper develops a policy framework to achieve energy transition by considering the social imbalances and regulatory effectiveness. A new energy transition index is proposed. It is an output-side indicator based on the energy ladder hypothesis. This index enables to apprehend the energy transition scenario in any country by capturing (a) the transition to a cleaner energy source, and (b) the transition to more energy efficient sources. Using the two-step System GMM approach and data for 37 OECD countries over the 2000–2019 period, the dynamic and extreme marginal impacts of energy transition drivers with respect to estimates of the model parameters are analyzed. The results show that the social imbalance dampens the positive impacts of energy transition drivers, whereas governance quality helps in augmenting those impacts. The outcomes, drawn from a scenario-based policy design approach, are particularly helpful in advancing potential policy discourse. They have important practical implications for the development of the SDG-oriented policy framework, with special focus on the attainment of the SDG 7 and 13.",
+      "year": 2023,
+      "venue": "Energy Economics",
+      "citation_count": 140,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 25,
+      "doi": "10.1007/s11356-022-23185-4",
+      "title": "How do foreign direct investment flows affect carbon emissions in BRICS countries? Revisiting the pollution haven hypothesis using bilateral FDI flows from OECD to BRICS countries",
+      "abstract": "Foreign direct investment (FDI) flows from developed to developing countries may increase carbon emissions in developing countries as developing countries are seen as pollution havens due to their lenient environmental regulations. On the other hand, FDI flows from the developed world may improve management practices and advanced technologies in developing countries, and an increase in FDI flows reduces carbon emissions. Most of the existing studies examine the relationship between FDI flows and carbon emissions by using aggregate FDI flows; however, this paper contributes to the literature by analyzing the impact of FDI flows on carbon emissions in Brazil, Russia, India, China, and South Africa (BRICS) between 1993 and 2012 using bilateral FDI flows from eleven OECD countries. According to our empirical results, from which OECD country FDI flows to BRICS countries matters for carbon emissions in BRICS countries. Our results confirm that FDI flows to BRICS countries from Denmark and the UK increase carbon emissions in BRICS countries, confirming the pollution haven hypothesis. On the other hand, FDI that flows from France, Germany, and Italy reduced carbon emissions in the BRICS countries, confirming the pollution halo effect. FDI flows from Austria, Finland, Japan, Netherlands, Portugal, and Switzerland have no significant impact on carbon emissions in BRICS countries. The BRICS countries should promote clean FDI flows by reducing environmental damages, and investing countries should be rated based on their environmental damage in the host countries.",
+      "year": 2022,
+      "venue": "Environmental Science and Pollution Research",
+      "citation_count": 137,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 26,
+      "doi": "10.1016/j.envsci.2010.10.010",
+      "title": "The Copenhagen Accord: abatement costs and carbon prices resulting from the submissions",
+      "abstract": "",
+      "year": 2010,
+      "venue": "Environmental Science & Policy",
+      "citation_count": 130,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 27,
+      "doi": "",
+      "title": "The Social Cost of Carbon and the Shadow Price of Carbon: what they are, and how to use them in economic appraisal in the UK",
+      "abstract": "",
+      "year": 2007,
+      "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
+      "citation_count": 125,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 28,
+      "doi": "10.1016/j.eneco.2023.107198",
+      "title": "Does increasing environmental policy stringency enhance renewable energy consumption in OECD countries?",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Energy Economics",
+      "citation_count": 111,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 29,
+      "doi": "10.1007/s10640-021-00594-6",
+      "title": "Impact of Carbon Pricing on Low-Carbon Innovation and Deep Decarbonisation: Controversies and Path Forward",
+      "abstract": "Abstract There is an ongoing discussion about the effectiveness of carbon pricing, with a strong division between optimists and pessimists. A recent review study by Lilliestam, Patt and Bersalli (2021) of the impact of carbon pricing on low-carbon innovation and deep carbonization concludes that there is no evidence for such an impact. We evaluate this study and identify various shortcomings of it, which together cast strong doubts on its main conclusion. Instead, we conclude, based on the studies reviewed by the authors and additional, overlooked literature, that carbon pricing has had a small but positive and significant effect on low-carbon innovation. Our evaluation provides lessons for undertaking a systematic and objective review of research on this topic. Since the main goal of carbon pricing is changing choices by firms and consumers that affect carbon emissions, we also point the reader towards recent evidence for the broader effectiveness of carbon pricing.",
+      "year": 2021,
+      "venue": "Environmental and Resource Economics",
+      "citation_count": 84,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 30,
+      "doi": "10.1007/s10640-021-00548-y",
+      "title": "Trade in Carbon and Carbon Tariffs",
+      "abstract": "Abstract Carbon-based import tariffs are proposed as a policy measure to reduce carbon leakage and increase the global cost-effectiveness of unilateral CO 2 emission pricing. We investigate the case for carbon tariffs. For our assessment, we combine multi-region input–output and computable general equilibrium analyses based on data from the World Input–Output Database for the period 2000–2014. The multi-region input–output analysis confirms that carbon embodied in trade has increased during this period, but trade flows from Non-OECD to OECD countries became less important in relative terms since the 2007–2008 financial crisis. The computable general equilibrium analysis suggests that carbon tariffs’ efficacy in combating leakage increases in periods when trade in carbon increases. However, its potential to improve the global-cost effectiveness of unilateral emission pricing remains modest. On the other hand, we find that the potential of carbon tariffs to shift the economic burden of CO 2 emission reduction from abating developed regions to non-abating developing regions increases sharply between 2000 and 2007, but declines after the financial crisis.",
+      "year": 2021,
+      "venue": "Environmental and Resource Economics",
+      "citation_count": 75,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    }
+  ]
+}

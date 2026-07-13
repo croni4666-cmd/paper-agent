@@ -1,0 +1,553 @@
+{
+  "query_id": "q015",
+  "query": "few-shot prompting strategies for domain-specific question answering",
+  "topic_bucket": "ml",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:04:58",
+  "config": "v4-random",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1007/s10115-022-01744-y",
+      "title": "Conversational question answering: a survey",
+      "abstract": "Abstract Question answering (QA) systems provide a way of querying the information available in various formats including, but not limited to, unstructured and structured data in natural languages. It constitutes a considerable part of conversational artificial intelligence (AI) which has led to the introduction of a special research topic on conversational question answering (CQA), wherein a system is required to understand the given context and then engages in multi-turn QA to satisfy a user’s information needs. While the focus of most of the existing research work is subjected to single-turn QA, the field of multi-turn QA has recently grasped attention and prominence owing to the availability of large-scale, multi-turn QA datasets and the development of pre-trained language models. With a good amount of models and research papers adding to the literature every year recently, there is a dire need of arranging and presenting the related work in a unified manner to streamline future research. This survey is an effort to present a comprehensive review of the state-of-the-art research trends of CQA primarily based on reviewed papers over the recent years. Our findings show that there has been a trend shift from single-turn to multi-turn QA which empowers the field of Conversational AI from different perspectives. This survey is intended to provide an epitome for the research community with the hope of laying a strong foundation for the field of CQA.",
+      "year": 2022,
+      "venue": "Knowledge and Information Systems",
+      "citation_count": 116,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.987892,
+      "bm25_score": 2.4106
+    },
+    {
+      "rank": 2,
+      "doi": "10.18653/v1/2022.acl-long.576",
+      "title": "PPT: Pre-trained Prompt Tuning for Few-shot Learning",
+      "abstract": "Prompts for pre-trained language models (PLMs) have shown remarkable performance by bridging the gap between pre-training tasks and various downstream tasks. Among these methods, prompt tuning, which freezes PLMs and only tunes soft prompts, provides an efficient and effective solution for adapting largescale PLMs to downstream tasks. However, prompt tuning is yet to be fully explored. In our pilot experiments, we find that prompt tuning performs comparably with conventional full-model tuning when downstream data are sufficient, whereas it is much worse under fewshot learning settings, which may hinder the application of prompt tuning. We attribute this low performance to the manner of initializing soft prompts. Therefore, in this work, we propose to pre-train prompts by adding soft prompts into the pre-training stage to obtain a better initialization. We name this Pretrained Prompt Tuning framework \"PPT\". To ensure the generalization of PPT, we formulate similar classification tasks into a unified task form and pre-train soft prompts for this unified task. Extensive experiments show that tuning pre-trained prompts for downstream tasks can reach or even outperform full-model fine-tuning under both full-data and few-shot settings. Our approach is effective and efficient for using large-scale PLMs in practice.",
+      "year": 2022,
+      "venue": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_count": 246,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.957966,
+      "bm25_score": 1.5168
+    },
+    {
+      "rank": 3,
+      "doi": "10.18653/v1/2023.findings-emnlp.710",
+      "title": "Large Language Model Is Not a Good Few-shot Information Extractor, but a Good Reranker for Hard Samples!",
+      "abstract": "Large Language Models (LLMs) have made remarkable strides in various tasks. Whether LLMs are competitive few-shot solvers for information extraction (IE) tasks, however, remains an open problem. In this work, we aim to provide a thorough answer to this question. Through extensive experiments on nine datasets across four IE tasks, we demonstrate that current advanced LLMs consistently exhibit inferior performance, higher latency, and increased budget requirements compared to fine-tuned SLMs under most settings. Therefore, we conclude that LLMs are not effective few-shot information extractors in general. Nonetheless, we illustrate that with appropriate prompting strategies, LLMs can effectively complement SLMs and tackle challenging samples that SLMs struggle with. And moreover, we propose an adaptive filter-then-rerank paradigm to combine the strengths of LLMs and SLMs. In this paradigm, SLMs serve as filters and LLMs serve as rerankers. By prompting LLMs to rerank a small portion of difficult samples identified by SLMs, our preliminary system consistently achieves promising improvements (2.4% F1-gain on average) on various IE tasks, with an acceptable time and cost investment.",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 98,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.95004,
+      "bm25_score": 5.0637
+    },
+    {
+      "rank": 4,
+      "doi": "10.1038/s41598-024-64827-6",
+      "title": "OpenMedLM: prompt engineering can out-perform fine-tuning in medical question-answering with open-source large language models",
+      "abstract": "LLMs can accomplish specialized medical knowledge tasks, however, equitable access is hindered by the extensive fine-tuning, specialized medical data requirement, and limited access to proprietary models. Open-source (OS) medical LLMs show performance improvements and provide the transparency and compliance required in healthcare. We present OpenMedLM, a prompting platform delivering state-of-the-art (SOTA) performance for OS LLMs on medical benchmarks. We evaluated OS foundation LLMs (7B-70B) on medical benchmarks (MedQA, MedMCQA, PubMedQA, MMLU medical-subset) and selected Yi34B for developing OpenMedLM. Prompting strategies included zero-shot, few-shot, chain-of-thought, and ensemble/self-consistency voting. OpenMedLM delivered OS SOTA results on three medical LLM benchmarks, surpassing previous best-performing OS models that leveraged costly and extensive fine-tuning. OpenMedLM displays the first results to date demonstrating the ability of OS foundation models to optimize performance, absent specialized fine-tuning. The model achieved 72.6% accuracy on MedQA, outperforming the previous SOTA by 2.4%, and 81.7% accuracy on MMLU medical-subset, establishing itself as the first OS LLM to surpass 80% accuracy on this benchmark. Our results highlight medical-specific emergent properties in OS LLMs not documented elsewhere to date and validate the ability of OS models to accomplish healthcare tasks, highlighting the benefits of prompt engineering to improve performance of accessible LLMs for medical applications.",
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_count": 94,
+      "engines_found_in": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.891426,
+      "bm25_score": 5.7038
+    },
+    {
+      "rank": 5,
+      "doi": "10.18653/v1/2024.naacl-long.228",
+      "title": "Better Zero-Shot Reasoning with Role-Play Prompting",
+      "abstract": "Aobo Kong, Shiwan Zhao, Hao Chen, Qicheng Li, Yong Qin, Ruiqi Sun, Xin Zhou, Enzhi Wang, Xiaohang Dong. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": "",
+      "citation_count": 147,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.848336,
+      "bm25_score": 2.1246
+    },
+    {
+      "rank": 6,
+      "doi": "10.48550/arXiv.2305.12586",
+      "title": "Enhancing Few-shot Text-to-SQL Capabilities of Large Language Models: A Study on Prompt Design Strategies",
+      "abstract": "In-context learning (ICL) has emerged as a new approach to various natural language processing tasks, utilizing large language models (LLMs) to make predictions based on context that has been supplemented with a few examples or task-specific instructions. In this paper, we aim to extend this method to question answering tasks that utilize structured knowledge sources, and improve Text-to-SQL systems by exploring various prompt design strategies for employing LLMs. We conduct a systematic investigation into different demonstration selection methods and optimal instruction formats for prompting LLMs in the Text-to-SQL task. Our approach involves leveraging the syntactic structure of an example's SQL query to retrieve demonstrations, and we demonstrate that pursuing both diversity and similarity in demonstration selection leads to enhanced performance. Furthermore, we show that LLMs benefit from database-related knowledge augmentations. Our most effective strategy outperforms the state-of-the-art system by 2.5 points (Execution Accuracy) and the best fine-tuned system by 5.1 points on the Spider dataset. These results highlight the effectiveness of our approach in adapting LLMs to the Text-to-SQL task, and we present an analysis of the factors contributing to the success of our strategy.",
+      "year": 2023,
+      "venue": "arXiv.org",
+      "citation_count": 67,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.830569,
+      "bm25_score": 6.6178
+    },
+    {
+      "rank": 7,
+      "doi": "10.1609/aaai.v38i17.29889",
+      "title": "Knowledge Graph Prompting for Multi-Document Question Answering",
+      "abstract": "The `pre-train, prompt, predict' paradigm of large language models (LLMs) has achieved remarkable success in open-domain question answering (OD-QA). However, few works explore this paradigm in multi-document question answering (MD-QA), a task demanding a thorough understanding of the logical associations among the contents and structures of documents. To fill this crucial gap, we propose a Knowledge Graph Prompting (KGP) method to formulate the right context in prompting LLMs for MD-QA, which consists of a graph construction module and a graph traversal module. For graph construction, we create a knowledge graph (KG) over multiple documents with nodes symbolizing passages or document structures (e.g., pages/tables), and edges denoting the semantic/lexical similarity between passages or document structural relations. For graph traversal, we design an LLM-based graph traversal agent that navigates across nodes and gathers supporting passages assisting LLMs in MD-QA. The constructed graph serves as the global ruler that regulates the transitional space among passages and reduces retrieval latency. Concurrently, the graph traversal agent acts as a local navigator that gathers pertinent context to progressively approach the question and guarantee retrieval quality. Extensive experiments underscore the efficacy of KGP for MD-QA, signifying the potential of leveraging graphs in enhancing the prompt design and retrieval augmented generation for LLMs. Our code: https://github.com/YuWVandy/KG-LLM-MDQA.",
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 128,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.801417,
+      "bm25_score": 5.3677
+    },
+    {
+      "rank": 8,
+      "doi": "10.1038/s41746-024-01029-4",
+      "title": "Prompt engineering in consistency and reliability with the evidence-based guideline for LLMs",
+      "abstract": "The use of large language models (LLMs) in clinical medicine is currently thriving. Effectively transferring LLMs' pertinent theoretical knowledge from computer science to their application in clinical medicine is crucial. Prompt engineering has shown potential as an effective method in this regard. To explore the application of prompt engineering in LLMs and to examine the reliability of LLMs, different styles of prompts were designed and used to ask different LLMs about their agreement with the American Academy of Orthopedic Surgeons (AAOS) osteoarthritis (OA) evidence-based guidelines. Each question was asked 5 times. We compared the consistency of the findings with guidelines across different evidence levels for different prompts and assessed the reliability of different prompts by asking the same question 5 times. gpt-4-Web with ROT prompting had the highest overall consistency (62.9%) and a significant performance for strong recommendations, with a total consistency of 77.5%. The reliability of the different LLMs for different prompts was not stable (Fleiss kappa ranged from -0.002 to 0.984). This study revealed that different prompts had variable effects across various models, and the gpt-4-Web with ROT prompt was the most consistent. An appropriate prompt could improve the accuracy of responses to professional medical questions.",
+      "year": 2024,
+      "venue": "npj Digital Medicine",
+      "citation_count": 343,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.770046,
+      "bm25_score": 1.847
+    },
+    {
+      "rank": 9,
+      "doi": "10.1145/3491102.3517582",
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "abstract": "Although large language models (LLMs) have demonstrated impressive potential on simple tasks, their breadth of scope, lack of transparency, and insufficient controllability can make them less effective when assisting humans on more complex tasks. In response, we introduce the concept of Chaining LLM steps together, where the output of one step becomes the input for the next, thus aggregating the gains per step. We first define a set of LLM primitive operations useful for Chain construction, then present an interactive system where users can modify these Chains, along with their intermediate results, in a modular way. In a 20-person user study, we found that Chaining not only improved the quality of task outcomes, but also significantly enhanced system transparency, controllability, and sense of collaboration. Additionally, we saw that users developed new ways of interacting with LLMs through Chains: they leveraged sub-tasks to calibrate model expectations, compared and contrasted alternative strategies by observing parallel downstream effects, and debugged unexpected model outputs by “unit-testing” sub-components of a Chain. In two case studies, we further explore how LLM Chains may be used in future applications.",
+      "year": 2022,
+      "venue": "CHI Conference on Human Factors in Computing Systems",
+      "citation_count": 446,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.750964,
+      "bm25_score": 1.2315
+    },
+    {
+      "rank": 10,
+      "doi": "10.1093/jamia/ocad256",
+      "title": "Evaluating the ChatGPT family of models for biomedical reasoning and classification",
+      "abstract": "OBJECTIVE: Large language models (LLMs) have shown impressive ability in biomedical question-answering, but have not been adequately investigated for more specific biomedical applications. This study investigates ChatGPT family of models (GPT-3.5, GPT-4) in biomedical tasks beyond question-answering. MATERIALS AND METHODS: We evaluated model performance with 11 122 samples for two fundamental tasks in the biomedical domain-classification (n = 8676) and reasoning (n = 2446). The first task involves classifying health advice in scientific literature, while the second task is detecting causal relations in biomedical literature. We used 20% of the dataset for prompt development, including zero- and few-shot settings with and without chain-of-thought (CoT). We then evaluated the best prompts from each setting on the remaining dataset, comparing them to models using simple features (BoW with logistic regression) and fine-tuned BioBERT models. RESULTS: Fine-tuning BioBERT produced the best classification (F1: 0.800-0.902) and reasoning (F1: 0.851) results. Among LLM approaches, few-shot CoT achieved the best classification (F1: 0.671-0.770) and reasoning (F1: 0.682) results, comparable to the BoW model (F1: 0.602-0.753 and 0.675 for classification and reasoning, respectively). It took 78 h to obtain the best LLM results, compared to 0.078 and 0.008 h for the top-performing BioBERT and BoW models, respectively. DISCUSSION: The simple BoW model performed similarly to the most complex LLM prompting. Prompt engineering required significant investment. CONCLUSION: Despite the excitement around viral ChatGPT, fine-tuning for two fundamental biomedical natural language processing tasks remained the best strategy.",
+      "year": 2024,
+      "venue": "Journal of the American Medical Informatics Association",
+      "citation_count": 73,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.719274,
+      "bm25_score": 5.9374
+    },
+    {
+      "rank": 11,
+      "doi": "10.18653/v1/2021.acl-long.295",
+      "title": "Making Pre-trained Language Models Better Few-shot Learners",
+      "abstract": "Tianyu Gao, Adam Fisch, Danqi Chen. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021.",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 1244,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.696354,
+      "bm25_score": 1.7119
+    },
+    {
+      "rank": 12,
+      "doi": "10.18653/v1/2022.emnlp-main.616",
+      "title": "Few-shot Learning with Multilingual Generative Language Models",
+      "abstract": "Xi Victoria Lin, Todor Mihaylov, Mikel Artetxe, Tianlu Wang, Shuohui Chen, Daniel Simig, Myle Ott, Naman Goyal, Shruti Bhosale, Jingfei Du, Ramakanth Pasunuru, Sam Shleifer, Punit Singh Koura, Vishrav Chaudhary, Brian O’Horo, Jeff Wang, Luke Zettlemoyer, Zornitsa Kozareva, Mona Diab, Veselin Stoyanov, Xian Li. Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2022.",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 117,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.667578,
+      "bm25_score": 1.4957
+    },
+    {
+      "rank": 13,
+      "doi": "10.2196/50638",
+      "title": "Prompt Engineering as an Important Emerging Skill for Medical Professionals: Tutorial",
+      "abstract": "Prompt engineering is a relatively new field of research that refers to the practice of designing, refining, and implementing prompts or instructions that guide the output of large language models (LLMs) to help in various tasks. With the emergence of LLMs, the most popular one being ChatGPT that has attracted the attention of over a 100 million users in only 2 months, artificial intelligence (AI), especially generative AI, has become accessible for the masses. This is an unprecedented paradigm shift not only because of the use of AI becoming more widespread but also due to the possible implications of LLMs in health care. As more patients and medical professionals use AI-based tools, LLMs being the most popular representatives of that group, it seems inevitable to address the challenge to improve this skill. This paper summarizes the current state of research about prompt engineering and, at the same time, aims at providing practical recommendations for the wide range of health care professionals to improve their interactions with LLMs.",
+      "year": 2023,
+      "venue": "Journal of Medical Internet Research",
+      "citation_count": 676,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.656058,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 14,
+      "doi": "10.1038/s41586-023-06291-2",
+      "title": "Large language models encode clinical knowledge",
+      "abstract": "Abstract Large language models (LLMs) have demonstrated impressive capabilities, but the bar for clinical applications is high. Attempts to assess the clinical knowledge of models typically rely on automated evaluations based on limited benchmarks. Here, to address these limitations, we present MultiMedQA, a benchmark combining six existing medical question answering datasets spanning professional medicine, research and consumer queries and a new dataset of medical questions searched online, HealthSearchQA. We propose a human evaluation framework for model answers along multiple axes including factuality, comprehension, reasoning, possible harm and bias. In addition, we evaluate Pathways Language Model 1 (PaLM, a 540-billion parameter LLM) and its instruction-tuned variant, Flan-PaLM 2 on MultiMedQA. Using a combination of prompting strategies, Flan-PaLM achieves state-of-the-art accuracy on every MultiMedQA multiple-choice dataset (MedQA 3 , MedMCQA 4 , PubMedQA 5 and Measuring Massive Multitask Language Understanding (MMLU) clinical topics 6 ), including 67.6% accuracy on MedQA (US Medical Licensing Exam-style questions), surpassing the prior state of the art by more than 17%. However, human evaluation reveals key gaps. To resolve this, we introduce instruction prompt tuning, a parameter-efficient approach for aligning LLMs to new domains using a few exemplars. The resulting model, Med-PaLM, performs encouragingly, but remains inferior to clinicians. We show that comprehension, knowledge recall and reasoning improve with model scale and instruction prompt tuning, suggesting the potential utility of LLMs in medicine. Our human evaluations reveal limitations of today’s models, reinforcing the importance of both evaluation frameworks and method development in creating safe, helpful LLMs for clinical applications.",
+      "year": 2023,
+      "venue": "Nature",
+      "citation_count": 3278,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.629765,
+      "bm25_score": 3.4559
+    },
+    {
+      "rank": 15,
+      "doi": "10.18653/v1/2023.nlrse-1.7",
+      "title": "Knowledge-Augmented Language Model Prompting for Zero-Shot Knowledge Graph Question Answering",
+      "abstract": "Large Language Models (LLMs) are capable of performing zero-shot closed-book question answering tasks, based on their internal knowledge stored in parameters during pre-training. However, such internalized knowledge might be insufficient and incorrect, which could lead LLMs to generate factually wrong answers. Furthermore, fine-tuning LLMs to update their knowledge is expensive. To this end, we propose to augment the knowledge directly in the input of LLMs. Specifically, we first retrieve the relevant facts to the input question from the knowledge graph based on semantic similarities between the question and its associated facts. After that, we prepend the retrieved facts to the input question in the form of the prompt, which is then forwarded to LLMs to generate the answer. Our framework, Knowledge-Augmented language model PromptING (KAPING), requires no model training, thus completely zero-shot. We validate the performance of our KAPING framework on the knowledge graph question answering task, that aims to answer the user’s question based on facts over a knowledge graph, on which ours outperforms relevant zero-shot baselines by up to 48% in average, across multiple LLMs of various sizes.",
+      "year": 2023,
+      "venue": "Proceedings of the 1st Workshop on Natural Language Reasoning and Structured Explanations (NLRSE)",
+      "citation_count": 92,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "proceedings-article",
+      "orig_rank": 26,
+      "v4_score": 0.612652,
+      "bm25_score": 5.0663
+    },
+    {
+      "rank": 16,
+      "doi": "10.18653/v1/2022.naacl-main.420",
+      "title": "Template-free Prompt Tuning for Few-shot NER",
+      "abstract": "Ruotian Ma, Xin Zhou, Tao Gui, Yiding Tan, Linyang Li, Qi Zhang, Xuanjing Huang. Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 2022.",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+      "citation_count": 110,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.595452,
+      "bm25_score": 1.7028
+    },
+    {
+      "rank": 17,
+      "doi": "10.18653/v1/2023.acl-long.385",
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "abstract": "Question answering over knowledge bases is considered a difficult problem due to the challenge of generalizing to a wide variety of possible natural language questions. Additionally, the heterogeneity of knowledge base schema items between different knowledge bases often necessitates specialized training for different knowledge base question-answering (KBQA) datasets. To handle questions over diverse KBQA datasets with a unified training-free framework, we propose KB-BINDER, which for the first time enables few-shot in-context learning over KBQA tasks. Firstly, KB-BINDER leverages large language models like Codex to generate logical forms as the draft for a specific question by imitating a few demonstrations. Secondly, KB-BINDER grounds on the knowledge base to bind the generated draft to an executable one with BM25 score matching. The experimental results on four public heterogeneous KBQA datasets show that KB-BINDER can achieve a strong performance with only a few in-context demonstrations. Especially on GraphQA and 3-hop MetaQA, KB-BINDER can even outperform the state-of-the-art trained models. On GrailQA and WebQSP, our model is also on par with other fully-trained models. We believe KB-BINDER can serve as an important baseline for future research. We plan to release all the code and data. Our code is available at https://github.com/ltl3A87/KB-BINDER.",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 59,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 0.547872,
+      "bm25_score": 5.2706
+    },
+    {
+      "rank": 18,
+      "doi": "10.1162/coli.2007.33.1.41",
+      "title": "Question Answering in Restricted Domains: An Overview",
+      "abstract": "Automated question answering has been a topic of research and development since the earliest AI applications. Computing power has increased since the first such systems were developed, and the general methodology has changed from the use of hand-encoded knowledge bases about simple domains to the use of text collections as the main knowledge source over more complex domains. Still, many research issues remain. The focus of this article is on the use of restricted domains for automated question answering. The article contains a historical perspective on question answering over restricted domains and an overview of the current methods and applications used in restricted domains. A main characteristic of question answering in restricted domains is the integration of domain-specific information that is either developed for question answering or that has been developed for other purposes. We explore the main methods developed to leverage this domain-specific information.",
+      "year": 2007,
+      "venue": "Computational Linguistics",
+      "citation_count": 201,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.517958,
+      "bm25_score": 6.7913
+    },
+    {
+      "rank": 19,
+      "doi": "10.1609/aaai.v38i17.29823",
+      "title": "FlexKBQA: A Flexible LLM-Powered Framework for Few-Shot Knowledge Base Question Answering",
+      "abstract": "Knowledge base question answering (KBQA) is a critical yet challenging task due to the vast number of entities within knowledge bases and the diversity of natural language questions posed by users. Unfortunately, the performance of most KBQA models tends to decline significantly in real-world scenarios where high-quality annotated data is insufficient. To mitigate the burden associated with manual annotation, we introduce FlexKBQA by utilizing Large Language Models (LLMs) as program translators for addressing the challenges inherent in the few-shot KBQA task. Specifically, FlexKBQA leverages automated algorithms to sample diverse programs, such as SPARQL queries, from the knowledge base, which are subsequently converted into natural language questions via LLMs. This synthetic dataset facilitates training a specialized lightweight model for the KB. Additionally, to reduce the barriers of distribution shift between synthetic data and real user questions, FlexKBQA introduces an executionguided self-training method to iterative leverage unlabeled user questions. Furthermore, we explore harnessing the inherent reasoning capability of LLMs to enhance the entire framework. Consequently, FlexKBQA delivers substantial flexibility, encompassing data annotation, deployment, and being domain agnostic. Through extensive experiments on GrailQA, WebQSP, and KQA Pro, we observe that under the few-shot even the more challenging zero-shot scenarios, FlexKBQA achieves impressive results with a few annotations, surpassing all previous baselines and even approaching the performance of supervised models, achieving a remarkable 93% performance relative to the fully-supervised models. We posit that FlexKBQA represents a significant advancement towards exploring better integration of large and lightweight models. Code is available at https://github.com/leezythu/FlexKBQA.",
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 69,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.504778,
+      "bm25_score": 4.5936
+    },
+    {
+      "rank": 20,
+      "doi": "10.3390/app13095783",
+      "title": "ChatGPT for Education and Research: Opportunities, Threats, and Strategies",
+      "abstract": "In recent years, the rise of advanced artificial intelligence technologies has had a profound impact on many fields, including education and research. One such technology is ChatGPT, a powerful large language model developed by OpenAI. This technology offers exciting opportunities for students and educators, including personalized feedback, increased accessibility, interactive conversations, lesson preparation, evaluation, and new ways to teach complex concepts. However, ChatGPT poses different threats to the traditional education and research system, including the possibility of cheating on online exams, human-like text generation, diminished critical thinking skills, and difficulties in evaluating information generated by ChatGPT. This study explores the potential opportunities and threats that ChatGPT poses to overall education from the perspective of students and educators. Furthermore, for programming learning, we explore how ChatGPT helps students improve their programming skills. To demonstrate this, we conducted different coding-related experiments with ChatGPT, including code generation from problem descriptions, pseudocode generation of algorithms from texts, and code correction. The generated codes are validated with an online judge system to evaluate their accuracy. In addition, we conducted several surveys with students and teachers to find out how ChatGPT supports programming learning and teaching. Finally, we present the survey results and analysis.",
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_count": 919,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.494377,
+      "bm25_score": 1.2069
+    },
+    {
+      "rank": 21,
+      "doi": "10.18653/v1/2021.acl-long.316",
+      "title": "Generation-Augmented Retrieval for Open-Domain Question Answering",
+      "abstract": "Yuning Mao, Pengcheng He, Xiaodong Liu, Yelong Shen, Jianfeng Gao, Jiawei Han, Weizhu Chen. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021.",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 142,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.456462,
+      "bm25_score": 3.9469
+    },
+    {
+      "rank": 22,
+      "doi": "10.18653/v1/2023.acl-long.147",
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "abstract": "Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, Ee-Peng Lim. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2023.",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 267,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.425146,
+      "bm25_score": 2.1356
+    },
+    {
+      "rank": 23,
+      "doi": "10.1016/j.lindif.2023.102274",
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_count": 5330,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.414441,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 24,
+      "doi": "10.1109/cvpr52688.2022.00886",
+      "title": "Pushing the Limits of Simple Pipelines for Few-Shot Learning: External Data and Fine-Tuning Make a Difference",
+      "abstract": "Few-shot learning (FSL) is an important and topical problem in computer vision that has motivated extensive research into numerous methods spanning from sophisticated metalearning methods to simple transfer learning baselines. We seek to push the limits of a simple-but-effective pipeline for real-worldfew-shot image classification in practice. To this end, we explore few-shot learning from the perspective of neural architecture, as well as a three stage pipeline of pre-training on external data, meta-training with labelled few-shot tasks, and task-specific fine-tuning on unseen tasks. We investigate questions such as: ① How pre-training on external data benefits FSL? ② How state of the art transformer architectures can be exploited? and ③ How to best exploit finetuning? Ultimately, we show that a simple transformer-based pipeline yields surprisingly good performance on standard benchmarks such as Mini-ImageNet, CIFAR-FS, CDFSL and Meta-Dataset. Our code is available at https://hushell.github.io/pmf.",
+      "year": 2022,
+      "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "citation_count": 167,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.249198,
+      "bm25_score": 3.3431
+    },
+    {
+      "rank": 25,
+      "doi": "10.1038/s41591-024-03423-7",
+      "title": "Toward expert-level medical question answering with large language models",
+      "abstract": "Large language models (LLMs) have shown promise in medical question answering, with Med-PaLM being the first to exceed a 'passing' score in United States Medical Licensing Examination style questions. However, challenges remain in long-form medical question answering and handling real-world workflows. Here, we present Med-PaLM 2, which bridges these gaps with a combination of base LLM improvements, medical domain fine-tuning and new strategies for improving reasoning and grounding through ensemble refinement and chain of retrieval. Med-PaLM 2 scores up to 86.5% on the MedQA dataset, improving upon Med-PaLM by over 19%, and demonstrates dramatic performance increases across MedMCQA, PubMedQA and MMLU clinical topics datasets. Our detailed human evaluations framework shows that physicians prefer Med-PaLM 2 answers to those from other physicians on eight of nine clinical axes. Med-PaLM 2 also demonstrates significant improvements over its predecessor across all evaluation metrics, particularly on new adversarial datasets designed to probe LLM limitations (P < 0.001). In a pilot study using real-world medical questions, specialists preferred Med-PaLM 2 answers to generalist physician answers 65% of the time. While specialist answers were still preferred overall, both specialists and generalists rated Med-PaLM 2 to be as safe as physician answers, demonstrating its growing potential in real-world medical applications.",
+      "year": 2025,
+      "venue": "Nature Medicine",
+      "citation_count": 756,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.243984,
+      "bm25_score": 4.4964
+    },
+    {
+      "rank": 26,
+      "doi": "10.1186/s40537-021-00492-0",
+      "title": "Text Data Augmentation for Deep Learning",
+      "abstract": "Natural Language Processing (NLP) is one of the most captivating applications of Deep Learning. In this survey, we consider how the Data Augmentation training strategy can aid in its development. We begin with the major motifs of Data Augmentation summarized into strengthening local decision boundaries, brute force training, causality and counterfactual examples, and the distinction between meaning and form. We follow these motifs with a concrete list of augmentation frameworks that have been developed for text data. Deep Learning generally struggles with the measurement of generalization and characterization of overfitting. We highlight studies that cover how augmentations can construct test sets for generalization. NLP is at an early stage in applying Data Augmentation compared to Computer Vision. We highlight the key differences and promising ideas that have yet to be tested in NLP. For the sake of practical implementation, we describe tools that facilitate Data Augmentation such as the use of consistency regularization, controllers, and offline and online augmentation pipelines, to preview a few. Finally, we discuss interesting topics around Data Augmentation in NLP such as task-specific augmentations, the use of prior knowledge in self-supervised learning versus Data Augmentation, intersections with transfer and multi-task learning, and ideas for AI-GAs (AI-Generating Algorithms). We hope this paper inspires further research interest in Text Data Augmentation.",
+      "year": 2021,
+      "venue": "Journal Of Big Data",
+      "citation_count": 1680,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.194435,
+      "bm25_score": 1.6256
+    },
+    {
+      "rank": 27,
+      "doi": "10.1016/j.patter.2024.100943",
+      "title": "Can large language models reason about medical questions?",
+      "abstract": "Although large language models often produce impressive outputs, it remains unclear how they perform in real-world scenarios requiring strong reasoning skills and expert domain knowledge. We set out to investigate whether closed- and open-source models (GPT-3.5, Llama 2, etc.) can be applied to answer and reason about difficult real-world-based questions. We focus on three popular medical benchmarks (MedQA-US Medical Licensing Examination [USMLE], MedMCQA, and PubMedQA) and multiple prompting scenarios: chain of thought (CoT; think step by step), few shot, and retrieval augmentation. Based on an expert annotation of the generated CoTs, we found that InstructGPT can often read, reason, and recall expert knowledge. Last, by leveraging advances in prompt engineering (few-shot and ensemble methods), we demonstrated that GPT-3.5 not only yields calibrated predictive distributions but also reaches the passing score on three datasets: MedQA-USMLE (60.2%), MedMCQA (62.7%), and PubMedQA (78.2%). Open-source models are closing the gap: Llama 2 70B also passed the MedQA-USMLE with 62.5% accuracy.",
+      "year": 2024,
+      "venue": "Patterns",
+      "citation_count": 263,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.175887,
+      "bm25_score": 3.6881
+    },
+    {
+      "rank": 28,
+      "doi": "10.18653/v1/2022.emnlp-main.130",
+      "title": "Large language models are few-shot clinical information extractors",
+      "abstract": "A long-running goal of the clinical NLP community is the extraction of important variables trapped in clinical notes. However, roadblocks have included dataset shift from the general domain and a lack of public clinical corpora and annotations. In this work, we show that large language models, such as InstructGPT (Ouyang et al., 2022), perform well at zero- and few-shot information extraction from clinical text despite not being trained specifically for the clinical domain. Whereas text classification and generation performance have already been studied extensively in such models, here we additionally demonstrate how to leverage them to tackle a diverse set of NLP tasks which require more structured outputs, including span identification, token-level sequence classification, and relation extraction. Further, due to the dearth of available data to evaluate these systems, we introduce new datasets for benchmarking few-shot clinical information extraction based on a manual re-annotation of the CASI dataset (Moon et al., 2014) for new tasks. On the clinical extraction tasks we studied, the GPT-3 systems significantly outperform existing zero- and few-shot baselines.",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 298,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.106587,
+      "bm25_score": 3.722
+    },
+    {
+      "rank": 29,
+      "doi": "10.2196/55318",
+      "title": "An Empirical Evaluation of Prompting Strategies for Large Language Models in Zero-Shot Clinical Natural Language Processing: Algorithm Development and Validation Study",
+      "abstract": "BACKGROUND: Large language models (LLMs) have shown remarkable capabilities in natural language processing (NLP), especially in domains where labeled data are scarce or expensive, such as the clinical domain. However, to unlock the clinical knowledge hidden in these LLMs, we need to design effective prompts that can guide them to perform specific clinical NLP tasks without any task-specific training data. This is known as in-context learning, which is an art and science that requires understanding the strengths and weaknesses of different LLMs and prompt engineering approaches. OBJECTIVE: The objective of this study is to assess the effectiveness of various prompt engineering techniques, including 2 newly introduced types-heuristic and ensemble prompts, for zero-shot and few-shot clinical information extraction using pretrained language models. METHODS: This comprehensive experimental study evaluated different prompt types (simple prefix, simple cloze, chain of thought, anticipatory, heuristic, and ensemble) across 5 clinical NLP tasks: clinical sense disambiguation, biomedical evidence extraction, coreference resolution, medication status extraction, and medication attribute extraction. The performance of these prompts was assessed using 3 state-of-the-art language models: GPT-3.5 (OpenAI), Gemini (Google), and LLaMA-2 (Meta). The study contrasted zero-shot with few-shot prompting and explored the effectiveness of ensemble approaches. RESULTS: The study revealed that task-specific prompt tailoring is vital for the high performance of LLMs for zero-shot clinical NLP. In clinical sense disambiguation, GPT-3.5 achieved an accuracy of 0.96 with heuristic prompts and 0.94 in biomedical evidence extraction. Heuristic prompts, alongside chain of thought prompts, were highly effective across tasks. Few-shot prompting improved performance in complex scenarios, and ensemble approaches capitalized on multiple prompt strengths. GPT-3.5 consistently outperformed Gemini and LLaM",
+      "year": 2024,
+      "venue": "JMIR Medical Informatics",
+      "citation_count": 169,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.050218,
+      "bm25_score": 6.6746
+    },
+    {
+      "rank": 30,
+      "doi": "10.1038/s41586-024-07421-0",
+      "title": "Detecting hallucinations in large language models using semantic entropy",
+      "abstract": "Abstract Large language model (LLM) systems, such as ChatGPT 1 or Gemini 2 , can show impressive reasoning and question-answering capabilities but often ‘hallucinate’ false outputs and unsubstantiated answers 3,4 . Answering unreliably or without the necessary information prevents adoption in diverse fields, with problems including fabrication of legal precedents 5 or untrue facts in news articles 6 and even posing a risk to human life in medical domains such as radiology 7 . Encouraging truthfulness through supervision or reinforcement has been only partially successful 8 . Researchers need a general method for detecting hallucinations in LLMs that works even with new and unseen questions to which humans might not know the answer. Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations—confabulations—which are arbitrary and incorrect generations. Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words. Our method works across datasets and tasks without a priori knowledge of the task, requires no task-specific data and robustly generalizes to new tasks not seen before. By detecting when a prompt is likely to produce a confabulation, our method helps users understand when they must take extra care with LLMs and opens up new possibilities for using LLMs that are otherwise prevented by their unreliability.",
+      "year": 2024,
+      "venue": "Nature",
+      "citation_count": 653,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.005545,
+      "bm25_score": 3.2639
+    }
+  ]
+}

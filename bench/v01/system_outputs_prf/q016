@@ -1,0 +1,552 @@
+{
+  "query_id": "q016",
+  "query": "labor economics gender wage gap empirical evidence",
+  "topic_bucket": "econ",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-12T13:05:56",
+  "config": "v4-prf",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.2307/2070285",
+      "title": "The Economics of Women, Men, and Work.",
+      "abstract": "Chapter 1 Introduction What Economics Is About Uses of Economic Theory The Scope of Economics Individuals, Families, and Households A Note on Terminology Outline of the Book Appendix: A Review of Supply and Demand in the Labor Market Chapter 2 Women and Men: Historical Perspectives The Source of Gender Differences: Nature versus Nurture-The Ongoing Debate Factors Influencing Women's Relative Status Women's Roles and Economic Development The U.S. Experience Chapter 3 The Family as an Economic Unit: Theoretical Perspectives The Simple Neoclassical Model: Specialization and Exchange Disadvantages of Specialization Advantages of Families Beyond Specialization Transaction Cost and Bargaining Approaches Appendix: Specialization and Exchange: A Graphical Analysis Chapter 4 The Family as an Economic Unit: Evidence Time Spent in Nonmarket Work Estimating the Value of Nonmarket Production The American Family in the Twenty-First Century Chapter 5 The Labor Force: Definitions and Trends The Labor Force: Some Definitions Trends in Labor Force Participation Trends in Labor Force Attachment of Women Trends in Hours Worked Trends in Gender Differences in Unemployment Chapter 6 The Labor Supply Decision The Labor Supply Decision Some Applications of the Theory: Taxes, Child Care Costs, and Labor Supply Analyzing the Long-term Growth in Women's Labor Force Participation Recent Trends in Women's Labor Force Participation: Has the Engine of Growth Stalled? Analyzing Trends in Men's Labor Force Participation Black and White Participation Differentials: Serious Employment Problems for Black Men Appendix: The Income and Substitution Effects: A Closer Look Chapter 7 Evidence on Gender Differences in Labor Market Outcomes Gender Differences in Occupations The Gender Pay Ratio Gender Differences in Union Membership Gender Differences in Self-Employment Gender Differences in Nonstandard Work Chapter 8 Gender Differences in Educational Attainment: Theory and Evidence Chapter Highlights Supply ",
+      "year": 1987,
+      "venue": "Contemporary Sociology A Journal of Reviews",
+      "citation_count": 990,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 22.310895,
+      "bm25_score": 5.7735
+    },
+    {
+      "rank": 2,
+      "doi": "10.1257/jel.20160995",
+      "title": "The Gender Wage Gap: Extent, Trends, and Explanations",
+      "abstract": "Using Panel Study of Income Dynamics (PSID) microdata over the 1980–2010 period, we provide new empirical evidence on the extent of and trends in the gender wage gap, which declined considerably during this time. By 2010, conventional human capital variables taken together explained little of the gender wage gap, while gender differences in occupation and industry continued to be important. Moreover, the gender pay gap declined much more slowly at the top of the wage distribution than at the middle or bottom and by 2010 was noticeably higher at the top. We then survey the literature to identify what has been learned about the explanations for the gap. We conclude that many of the traditional explanations continue to have salience. Although human-capital factors are now relatively unimportant in the aggregate, women's work force interruptions and shorter hours remain significant in high-skilled occupations, possibly due to compensating differentials. Gender differences in occupations and industries, as well as differences in gender roles and the gender division of labor remain important, and research based on experimental evidence strongly suggests that discrimination cannot be discounted. Psychological attributes or noncognitive skills comprise one of the newer explanations for gender differences in outcomes. Our effort to assess the quantitative evidence on the importance of these factors suggests that they account for a small to moderate portion of the gender pay gap, considerably smaller than, say, occupation and industry effects, though they appear to modestly contribute to these differences. ( JEL I26, J16, J24, J31, J71)",
+      "year": 2017,
+      "venue": "Journal of Economic Literature",
+      "citation_count": 2935,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 17.480936,
+      "bm25_score": 9.0094
+    },
+    {
+      "rank": 3,
+      "doi": "10.1257/jel.20161309",
+      "title": "Experimental Research on Labor Market Discrimination",
+      "abstract": "Understanding whether labor market discrimination explains inferior labor market outcomes for many groups has drawn the attention of labor economists for decades— at least since the publication of Gary Becker’s The Economics of Discrimination in 1957. The decades of research on discrimination in labor markets began with a regression-based “decomposition” approach, asking whether raw wage or earnings differences between groups—which might constitute prima facie evidence of discrimination—were in fact attributable to other productivity-related factors. Subsequent research—responding in large part to limitations of the regression-based approach—moved on to other approaches, such as using firm-level data to estimate both marginal productivity and wage differentials. In recent years, however, there has been substantial growth in experimental research on labor market discrimination—although the earliest experiments were done decades ago. Some experimental research on labor market discrimination takes place in the lab. But far more of it is done in the field, which makes this particular area of experimental research unique relative to the explosion of experimental economic research more generally. This paper surveys the full range of experimental literature on labor market discrimination, places it in the context of the broader research literature on labor market discrimination, discusses the experimental literature from many different perspectives (empirical, theoretical, and policy), and reviews both what this literature has taught us thus far, and what remains to be done. (JEL C93, J14, J15, J16, J23, J41, J71)",
+      "year": 2018,
+      "venue": "Journal of Economic Literature",
+      "citation_count": 537,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 14.240844,
+      "bm25_score": 5.335
+    },
+    {
+      "rank": 4,
+      "doi": "10.1353/dem.2006.0003",
+      "title": "Gender-specific trends in the value of education and the emerging gender gap in college completion",
+      "abstract": "Analysis of March Current Population Survey data from 1964 through 2002 shows that white women overtook white men in their rates of college completion and that this phenomenon occurred during a period in which women's standard-of-living gains from college completion grew at a faster rate than those for men. We assess whether these trends are related to changes in the value of education for men and women in terms of earnings returns to higher education, the probability of getting and staying married, education-related differences in family standard of living, and insurance against living in poverty. Although returns to a college education in the form of earnings remained higher for women than for men over the entire period, trends in these returns do not provide a plausible explanation for gender-specific trends in college completion. But when broader measures of material well-being are taken into account, women's returns to higher education appear to have risen faster than those of men.",
+      "year": 2006,
+      "venue": "Demography",
+      "citation_count": 475,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 8.838325,
+      "bm25_score": 2.8064
+    },
+    {
+      "rank": 5,
+      "doi": "10.1111/j.1467-9361.2004.00230.x",
+      "title": "International Trade and Gender Wage Discrimination: Evidence from East Asia",
+      "abstract": "Abstract The paper explores how competition from international trade affects gender wage discrimination in two open economies. According to neoclassical theory, if discrimination is costly, then increased industry competitiveness from international trade lessens the incentive for employers to discriminate against women. This effect should be stronger in concentrated sectors, where employers can use excess profits to cover the costs of discrimination. Alternatively, increased international trade may reduce women's bargaining power to achieve wage gains. Results for Taiwan and Korea indicate that, in contrast to neoclassical theory, competition from foreign trade in concentrated industries is positively associated with wage discrimination against women.",
+      "year": 2004,
+      "venue": "Review of Development Economics",
+      "citation_count": 248,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 8.512085,
+      "bm25_score": 3.629
+    },
+    {
+      "rank": 6,
+      "doi": "10.2307/2675569",
+      "title": "Is Anyone Doing the Housework? Trends in the Gender Division of Household Labor",
+      "abstract": "Time-diary data from representative samples ofAmerican adults show thatthenumber ofoverall hours ofdomestic labor (excluding child care andshopping) has continued to decline steadily and predictably since 1965. This finding is mainly due to dramatic declines among women (both in and out of thepaidlabor market), whohave cuttheir housework hours almostin halfsince the 1960s: abouthalfof women's 12-hour-perweek decline can beaccounted for by compositional shifts -such as increased labor force participation, later marriage, andfewer children. In contrast, men's housework time has almost doubled during thisperiod (to thepoint where men were responsible for a third of housework in the 1990s), and only about 15% of theirfive-hour-perweek increase can be attributed to compositional factors. Parallel results on gender differences in housework were obtained from the National Survey of Families and Households estimate data, even though these produce figures 50% higher than diary data. Regression results examiningfactors related to wives' and husbands' housework hours show more support for the time-availability and relative-resource models of household production thanfor thegender perspective, although there issome support for the latter perspective aswell.",
+      "year": 2000,
+      "venue": "Social Forces",
+      "citation_count": 1046,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 7.347737,
+      "bm25_score": 1.6051
+    },
+    {
+      "rank": 7,
+      "doi": "10.1111/j.1468-232x.2007.00479.x",
+      "title": "New Evidence on Gender Differences in Promotion Rates: An Empirical Analysis of a Sample of New Hires",
+      "abstract": "Using a large sample of establishments drawn from the Multi‐City Study of Urban Inequality employer survey, we studied gender differences in promotion rates and in the wage gains attached to promotions. Several unique features of our data distinguish our analysis from the previous literature on this topic. First, we have information on the wage increases attached to promotions, and relatively few studies on gender differences have considered promotions and wage increases together. Second, our data include job‐specific worker performance ratings, allowing us to control for performance and ability more precisely than through commonly used skill indicators such as educational attainment or tenure. Third, in addition to standard information on occupation and industry, we have data on a number of other firm characteristics, enabling us to control for these variables while still relying on a broad, representative sample, as opposed to a single firm or a similarly narrowly defined population. Our results indicate that women have lower probabilities of promotion and expected promotion than men do but that there is essentially no gender difference in wage growth with or without promotions.",
+      "year": 2007,
+      "venue": "Industrial Relations A Journal of Economy and Society",
+      "citation_count": 318,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 7.332551,
+      "bm25_score": 4.7102
+    },
+    {
+      "rank": 8,
+      "doi": "10.1257/jep.12.2.63",
+      "title": "Evidence on Discrimination in Employment: Codes of Color, Codes of Gender",
+      "abstract": "There is substantial racial and gender disparity in the American economy. As we will demonstrate, discriminatory treatment within the labor market is a major cause of this inequality. Yet, there appear to have been particular periods in which racial minorities, and then women, experienced substantial reductions in economic disparity and discrimination. Some questions remain: Why did the movement toward racial equality stagnate after the mid-1970s? What factors are most responsible for the remaining gender inequality? What is the role of the competitive process in elimination or reproduction of discrimination in employment? How successful has the passage of federal antidiscrimination legislation in the 1960s been in producing an equal opportunity environment where job applicants are now evaluated on their qualifications? To give away the answer at the outset, discrimination by race has diminished somewhat, and discrimination by gender has diminished substantially; neither employment discrimination by race or by gender is close to ending. The Civil Rights Act of 1964 and subsequent related legislation has purged American society of the most overt forms of discrimination, while discriminatory practices have continued in more covert and subtle forms. Furthermore, racial discrimination is masked and rationalized by widely-held presumptions of black inferiority.",
+      "year": 1998,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 533,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 7.13981,
+      "bm25_score": 2.3527
+    },
+    {
+      "rank": 9,
+      "doi": "10.1257/089533006776526111",
+      "title": "Some Uses of Happiness Data in Economics",
+      "abstract": "Happiness research is based on the idea that it is fruitful to study empirical measures of individual welfare. The most common is the answer to a simple well-being question such as “Are you Happy?” Hundreds of thousands of individuals have been asked this question, in many countries and over many years. Researchers have begun to use these data to tackle a variety of important questions in economics. Some require strong assumptions concerning interpersonal comparisons of utility, but others make only mild assumptions in this regard. They range from microeconomic questions, such as the way income and utility are connected, to macroeconomic questions such as the tradeoff between inflation and unemployment, including large areas in political economy. Public policy is another area where progress using happiness data is taking place. Given the central role of utility notions in economic theory, we argue that the use of happiness data in empirical research should be given serious consideration.",
+      "year": 2006,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 902,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 6.96141,
+      "bm25_score": 4.4934
+    },
+    {
+      "rank": 10,
+      "doi": "10.1353/jhr.2008.0017",
+      "title": "The Economics and Psychology of Personality Traits",
+      "abstract": "This paper explores the interface between personality psychology and economics. We examine the predictive power of personality, and the stability of personality traits over the life cycle. We develop simple analytical frameworks for interpreting the evidence in personality psychology and suggest promising avenues for future research.",
+      "year": 2008,
+      "venue": "The Journal of Human Resources",
+      "citation_count": 1048,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 6.920361,
+      "bm25_score": 4.4464
+    },
+    {
+      "rank": 11,
+      "doi": "10.1257/app.20180010",
+      "title": "Children and Gender Inequality: Evidence from Denmark",
+      "abstract": "Using Danish administrative data, we study the impacts of children on gender inequality in the labor market. The arrival of children creates a long-run gender gap in earnings of around 20 percent driven by hours worked, participation, and wage rates. We identify mechanisms driving these “child penalties” in terms of occupation, sector, and firm choices. We find that the fraction of gender inequality caused by child penalties has featured a dramatic increase over the last three to four decades. Finally, we show that child penalties are transmitted through generations, from parents to daughters, suggesting an influence of childhood environment on gender identity. (JEL D63, J13, J16, J22, J31, J71)",
+      "year": 2019,
+      "venue": "American Economic Journal Applied Economics",
+      "citation_count": 964,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 6.861604,
+      "bm25_score": 5.9385
+    },
+    {
+      "rank": 12,
+      "doi": "10.1146/annurev-economics-080614-115329",
+      "title": "The Evolution of Gender Gaps in Industrialized Countries",
+      "abstract": "Women in developed economies have made major advancements in labor markets throughout the past century, but remaining gender differences in pay and employment seem remarkably persistent. This article documents long-run trends in female employment, working hours, and relative wages for a wide cross section of developed economies. It reviews existing work on the factors driving gender convergence, and novel perspectives on remaining gender gaps. Finally, the article emphasizes the interplay between gender trends and the evolution of the industry structure. Based on a shift-share decomposition, it shows that the growth in the service share can explain at least half of the overall variation in female hours, both over time and across countries.",
+      "year": 2016,
+      "venue": "Annual Review of Economics",
+      "citation_count": 338,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 6.690785,
+      "bm25_score": 1.7682
+    },
+    {
+      "rank": 13,
+      "doi": "10.1287/mnsc.2018.3093",
+      "title": "Algorithmic Bias? An Empirical Study of Apparent Gender-Based Discrimination in the Display of STEM Career Ads",
+      "abstract": "We explore data from a field test of how an algorithm delivered ads promoting job opportunities in the science, technology, engineering and math fields. This ad was explicitly intended to be gender neutral in its delivery. Empirically, however, fewer women saw the ad than men. This happened because younger women are a prized demographic and are more expensive to show ads to. An algorithm that simply optimizes cost-effectiveness in ad delivery will deliver ads that were intended to be gender neutral in an apparently discriminatory way, because of crowding out. We show that this empirical regularity extends to other major digital platforms. This paper was accepted by Joshua Gans, business strategy.",
+      "year": 2019,
+      "venue": "Management Science",
+      "citation_count": 816,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 6.380934,
+      "bm25_score": 3.1614
+    },
+    {
+      "rank": 14,
+      "doi": "10.1146/annurev-economics-080315-015041",
+      "title": "The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade",
+      "abstract": "China's emergence as a great economic power has induced an epochal shift in patterns of world trade. Simultaneously, it has challenged much of the received empirical wisdom about how labor markets adjust to trade shocks. Alongside the heralded consumer benefits of expanded trade are substantial adjustment costs and distributional consequences. These impacts are most visible in the local labor markets in which the industries exposed to foreign competition are concentrated. Adjustment in local labor markets is remarkably slow, with wages and labor-force participation rates remaining depressed and unemployment rates remaining elevated for at least a full decade after the China trade shock commences. Exposed workers experience greater job churning and reduced lifetime income. At the national level, employment has fallen in the US industries more exposed to import competition, as expected, but offsetting employment gains in other industries have yet to materialize. Better understanding when and where trade is costly, and how and why it may be beneficial, is a key item on the research agenda for trade and labor economists.",
+      "year": 2016,
+      "venue": "Annual Review of Economics",
+      "citation_count": 1278,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 6.199778,
+      "bm25_score": 2.4138
+    },
+    {
+      "rank": 15,
+      "doi": "10.1162/003355300554881",
+      "title": "Economics and Identity*",
+      "abstract": "This paper considers how identity, a person's sense of self, affects economic outcomes. We incorporate the psychology and sociology of identity into an economic model of behavior. In the utility function we propose, identity is associated with different social categories and how people in these categories should behave. We then construct a simple game-theoretic model showing how identity can affect individual interactions. The paper adapts these models to gender discrimination in the workplace, the economics of poverty and social exclusion, and the household division of labor. In each case, the inclusion of identity substantively changes conclusions of previous economic analysis.",
+      "year": 2000,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 5608,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 6.015157,
+      "bm25_score": 4.1536
+    },
+    {
+      "rank": 16,
+      "doi": "10.1257/aer.103.6.2121",
+      "title": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+      "abstract": "We analyze the effect of rising Chinese import competition between 1990 and 2007 on US local labor markets, exploiting cross-market variation in import exposure stemming from initial differences in industry specialization and instrumenting for US imports using changes in Chinese imports by other high-income countries. Rising imports cause higher unemployment, lower labor force participation, and reduced wages in local labor markets that house import-competing manufacturing industries. In our main specification, import competition explains one-quarter of the contemporaneous aggregate decline in US manufacturing employment. Transfer benefits payments for unemployment, disability, retirement, and healthcare also rise sharply in more trade-exposed labor markets. (JEL E24, F14, F16, J23, J31, L60, O47, R12, R23)",
+      "year": 2013,
+      "venue": "American Economic Review",
+      "citation_count": 4352,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 4.996352,
+      "bm25_score": 1.1065
+    },
+    {
+      "rank": 17,
+      "doi": "10.1093/qje/qjz014",
+      "title": "The Effect of Minimum Wages on Low-Wage Jobs*",
+      "abstract": "Abstract We estimate the effect of minimum wages on low-wage jobs using 138 prominent state-level minimum wage changes between 1979 and 2016 in the United States using a difference-in-differences approach. We first estimate the effect of the minimum wage increase on employment changes by wage bins throughout the hourly wage distribution. We then focus on the bottom part of the wage distribution and compare the number of excess jobs paying at or slightly above the new minimum wage to the missing jobs paying below it to infer the employment effect. We find that the overall number of low-wage jobs remained essentially unchanged over the five years following the increase. At the same time, the direct effect of the minimum wage on average earnings was amplified by modest wage spillovers at the bottom of the wage distribution. Our estimates by detailed demographic groups show that the lack of job loss is not explained by labor-labor substitution at the bottom of the wage distribution. We also find no evidence of disemployment when we consider higher levels of minimum wages. However, we do find some evidence of reduced employment in tradeable sectors. We also show how decomposing the overall employment effect by wage bins allows a transparent way of assessing the plausibility of estimates.",
+      "year": 2019,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 2427,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 4.781794,
+      "bm25_score": 3.8651
+    },
+    {
+      "rank": 18,
+      "doi": "10.1086/685449",
+      "title": "Minimum Wage Shocks, Employment Flows, and Labor Market Frictions",
+      "abstract": "We provide the first estimates of the effects of minimum wages on employment flows in the US labor market, identifying the impact by using policy discontinuities at state borders. We find that minimum wages have a sizable negative effect on employment flows but not on stocks. Separations and accessions fall among affected workers, especially those with low tenure. We do not find changes in the duration of nonemployment for separations or hires. This evidence is consistent with search models with endogenous separations.",
+      "year": 2016,
+      "venue": "Journal of Labor Economics",
+      "citation_count": 339,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 4.652659,
+      "bm25_score": 3.2567
+    },
+    {
+      "rank": 19,
+      "doi": "10.1093/qje/qjx022",
+      "title": "The Growing Importance of Social Skills in the Labor Market*",
+      "abstract": "Abstract The labor market increasingly rewards social skills. Between 1980 and 2012, jobs requiring high levels of social interaction grew by nearly 12 percentage points as a share of the U.S. labor force. Math-intensive but less social jobs—including many STEM occupations—shrank by 3.3 percentage points over the same period. Employment and wage growth were particularly strong for jobs requiring high levels of both math skill and social skills. To understand these patterns, I develop a model of team production where workers “trade tasks” to exploit their comparative advantage. In the model, social skills reduce coordination costs, allowing workers to specialize and work together more efficiently. The model generates predictions about sorting and the relative returns to skill across occupations, which I investigate using data from the NLSY79 and the NLSY97. Using a comparable set of skill measures and covariates across survey waves, I find that the labor market return to social skills was much greater in the 2000s than in the mid-1980s and 1990s.",
+      "year": 2017,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 1620,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 4.602269,
+      "bm25_score": 1.8386
+    },
+    {
+      "rank": 20,
+      "doi": "10.1093/qje/qju009",
+      "title": "Gender, Competitiveness, and Career Choices *",
+      "abstract": "Abstract Gender differences in competitiveness have been hypothesized as a potential explanation for gender differences in education and labor market outcomes. We examine the predictive power of a standard laboratory experimental measure of competitiveness for the later important choice of academic track of secondary school students in the Netherlands. Although boys and girls display similar levels of academic ability, boys choose substantially more prestigious academic tracks, where more prestigious tracks are more math- and science-intensive. Our experimental measure shows that boys are also substantially more competitive than girls. We find that competitiveness is strongly positively correlated with choosing more prestigious academic tracks even conditional on academic ability. Most important, we find that the gender difference in competitiveness accounts for a substantial portion (about 20%) of the gender difference in track choice.",
+      "year": 2014,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 805,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 4.150902,
+      "bm25_score": 1.7058
+    },
+    {
+      "rank": 21,
+      "doi": "10.1086/683847",
+      "title": "Aggregate Effects of Gender Gaps in the Labor Market: A Quantitative Estimate",
+      "abstract": "This paper examines the quantitative effects of gender gaps in entrepreneurship and workforce participation. We simulate an occupational choice model with heterogeneous agents in entrepreneurial ability. Gender gaps in entrepreneurship affect negatively both income and aggregate productivity, since they reduce the entrepreneurs’ average talent. Specifically, the expected income loss from excluding 5 percent of women is 2.5 percent, while the loss is 10 percent if they are all employers. We find that gender gaps cause an average income loss of 15 percent in the OECD, 40 percent of which is due to entrepreneurship gaps. Extending the model to developing countries, we obtain substantially higher losses, with significant variation across regions.",
+      "year": 2016,
+      "venue": "Journal of Human Capital",
+      "citation_count": 261,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 3.732918,
+      "bm25_score": 1.7184
+    },
+    {
+      "rank": 22,
+      "doi": "10.1080/135457097338799",
+      "title": "''Bargaining'' and Gender Relations: Within and Beyond the Household",
+      "abstract": "Highlighting the problems posed by a \"unitary\" conceptualization of the household, a number of economists have in recent years proposed alternative models. These models, especially those embodying the bargaining approach, provide a useful framework for analyzing gender relations and throw some light on how gender asymmetries are constructed and contested. At the same time, the models have paid inadequate or no attention to some critical aspects of intrahousehold gender dynamics, such as: what factors (especially qualitative ones) affect bargaining power? What is the role of social norms and social perceptions in the bargaining process and how might these factors themselves be bargained over? Are women less motivated than men by self-interest and might this affect bargaining outcomes? Most discussions on bargaining also say little about gender relations beyond the household, and about the links between extrahousehold and intrahousehold bargaining power. This paper spells out the nature of these complexities and their importance in determining the outcomes of intrahousehold dynamics. It also extends the bargaining approach beyond the household to the interlinked arenas of the market, the community, and the State.",
+      "year": 1997,
+      "venue": "Feminist Economics",
+      "citation_count": 1663,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 2.762928,
+      "bm25_score": 1.0684
+    },
+    {
+      "rank": 23,
+      "doi": "10.1177/0003122411425170",
+      "title": "Revisiting the Gender Gap in Time-Use Patterns",
+      "abstract": "This study suggests that multitasking constitutes an important source of gender inequality, which can help explain previous findings that mothers feel more burdened and stressed than do fathers even when they have relatively similar workloads. Using data from the 500 Family Study, including surveys and the Experience Sampling Method, the study examines activities parents simultaneously engage in and how they feel when multitasking. We find that mothers spend 10 more hours a week multitasking compared to fathers and that these additional hours are mainly related to time spent on housework and childcare. For mothers, multitasking activities at home and in public are associated with an increase in negative emotions, stress, psychological distress, and work-family conflict. By contrast, fathers’ multitasking at home involves less housework and childcare and is not a negative experience. We also find several similarities by gender. Mothers’ and fathers’ multitasking in the company of a spouse or children are positive experiences, whereas multitasking at work, although associated with an increased sense of productivity, is perceived as a negative experience.",
+      "year": 2011,
+      "venue": "American Sociological Review",
+      "citation_count": 404,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 2.737035,
+      "bm25_score": 2.737
+    },
+    {
+      "rank": 24,
+      "doi": "10.1007/s00148-006-0128-1",
+      "title": "Ceilings or floors? Gender wage gaps by education in Spain",
+      "abstract": "",
+      "year": 2007,
+      "venue": "Journal of Population Economics",
+      "citation_count": 277,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 2.548849,
+      "bm25_score": 2.5488
+    },
+    {
+      "rank": 25,
+      "doi": "10.1016/j.labeco.2013.01.003",
+      "title": "Gender wage gaps, ‘sticky floors’ and ‘glass ceilings’ in Europe",
+      "abstract": "",
+      "year": 2013,
+      "venue": "Labour Economics",
+      "citation_count": 269,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 2.52976,
+      "bm25_score": 2.5298
+    },
+    {
+      "rank": 26,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades.",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2209,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 2.472281,
+      "bm25_score": 2.4723
+    },
+    {
+      "rank": 27,
+      "doi": "10.1257/jep.15.2.103",
+      "title": "New Evidence and Perspectives on Mergers",
+      "abstract": "As in previous decades, merger activity clusters by industry during the 1990s. One particular kind of industry shock, deregulation, becomes a dominant factor, accountings for nearly half of the merger activity since the late 1980s. In contrast to the 1980s, mergers in the 1990s are mostly stock swaps, and hostile takeovers virtually disappear. Over our 1973 to 1998 sample period, the announcement-period stock market response to mergers is positive for the combined merging parties, suggesting that mergers create value on behalf of shareholders. Consistent with that, we find evidence of improved operating performance following mergers, relative to industry peers.",
+      "year": 2001,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2725,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 2.395937,
+      "bm25_score": 1.4354
+    },
+    {
+      "rank": 28,
+      "doi": "10.1093/qje/qjr013",
+      "title": "Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax Records",
+      "abstract": "We show that the effects of taxes on labor supply are shaped by interactions between adjustment costs for workers and hours constraints set by firms. We develop a model in which firms post job offers characterized by an hours requirement and workers pay search costs to find jobs. We present evidence supporting three predictions of this model by analyzing bunching at kinks using Danish tax records. First, larger kinks generate larger taxable income elasticities. Second, kinks that apply to a larger group of workers generate larger elasticities. Third, the distribution of job offers is tailored to match workers' aggregate tax preferences in equilibrium. Our results suggest that macro elasticities may be substantially larger than the estimates obtained using standard microeconometric methods.",
+      "year": 2011,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 788,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 2.145916,
+      "bm25_score": 2.1459
+    },
+    {
+      "rank": 29,
+      "doi": "10.1093/qje/qjt006",
+      "title": "Workplace Heterogeneity and the Rise of West German Wage Inequality*",
+      "abstract": "Abstract We study the role of establishment-specific wage premiums in generating recent increases in West German wage inequality. Models with additive fixed effects for workers and establishments are fit into four subintervals spanning the period from 1985 to 2009. We show that these models provide a good approximation to the wage structure and can explain nearly all of the dramatic rise in West German wage inequality. Our estimates suggest that the increasing dispersion of West German wages has arisen from a combination of rising heterogeneity between workers, rising dispersion in the wage premiums at different establishments, and increasing assortativeness in the assignment of workers to plants. In contrast, the idiosyncratic job-match component of wage variation is small and stable over time. Decomposing changes in mean wages between different education groups, occupations, and industries, we find that increasing plant-level heterogeneity and rising assortativeness in the assignment of workers to establishments explain a large share of the rise in inequality along all three dimensions.",
+      "year": 2013,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 1319,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 1.840765,
+      "bm25_score": 1.8408
+    },
+    {
+      "rank": 30,
+      "doi": "10.1002/jae.788",
+      "title": "Counterfactual decomposition of changes in wage distributions using quantile regression",
+      "abstract": "Abstract We propose a method to decompose the changes in the wage distribution over a period of time in several factors contributing to those changes. The method is based on the estimation of marginal wage distributions consistent with a conditional distribution estimated by quantile regression as well as with any hypothesized distribution for the covariates. Comparing the marginal distributions implied by different distributions for the covariates, one is then able to perform counterfactual exercises. The proposed methodology enables the identification of the sources of the increased wage inequality observed in most countries. Specifically, it decomposes the changes in the wage distribution over a period of time into several factors contributing to those changes, namely by discriminating between changes in the characteristics of the working population and changes in the returns to these characteristics. We apply this methodology to Portuguese data for the period 1986–1995, and find that the observed increase in educational levels contributed decisively towards greater wage inequality. Copyright © 2005 John Wiley &amp; Sons, Ltd.",
+      "year": 2005,
+      "venue": "Journal of Applied Econometrics",
+      "citation_count": 1425,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 1.797354,
+      "bm25_score": 1.7974
+    }
+  ]
+}

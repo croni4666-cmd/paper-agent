@@ -1,0 +1,613 @@
+{
+  "query_id": "q011",
+  "query": "federated learning privacy guarantees in healthcare",
+  "topic_bucket": "ml",
+  "source": "pub",
+  "generated_at": "2026-07-13T14:38:23",
+  "config": "v4-random-recency-strict",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1145/3533708",
+      "title": "Federated Learning for Healthcare Domain - Pipeline, Applications and Challenges",
+      "abstract": "Federated learning is the process of developing machine learning models over datasets distributed across data centers such as hospitals, clinical research labs, and mobile devices while preventing data leakage. This survey examines previous research and studies on federated learning in the healthcare sector across a range of use cases and applications. Our survey shows what challenges, methods, and applications a practitioner should be aware of in the topic of federated learning. This paper aims to lay out existing research and list the possibilities of federated learning for healthcare industries.",
+      "year": 2022,
+      "venue": "ACM Transactions on Computing for Healthcare",
+      "citation_count": 187,
+      "engines_found_in": [
+        "openalex",
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.976206,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 22,
+      "bm25_score": 1.5238
+    },
+    {
+      "rank": 2,
+      "doi": "10.1109/jiot.2022.3201117",
+      "title": "Trustworthy Federated Learning via Blockchain",
+      "abstract": "The safety-critical scenarios of artificial intelligence (AI), such as autonomous driving, Internet of Things, smart healthcare, etc., have raised critical requirements of trustworthy AI to guarantee the privacy and security with reliable decisions. As a nascent branch for trustworthy AI, federated learning (FL) has been regarded as a promising privacy preserving framework for training a global AI model over collaborative devices. However, security challenges still exist in the FL framework, e.g., Byzantine attacks from malicious devices, and model tampering attacks from malicious server, which will degrade or destroy the accuracy of trained global AI model. In this article, we shall propose a decentralized blockchain-based FL (B-FL) architecture by using a secure global aggregation algorithm to resist malicious devices, and deploying a practical Byzantine fault tolerance consensus protocol with high effectiveness and low energy consumption among multiple edge servers to prevent model tampering from the malicious server. However, to implement B-FL system at the network edge, multiple rounds of cross-validation in blockchain consensus protocol will induce long training latency. We thus formulate a network optimization problem that jointly considers bandwidth and power allocation for the minimization of long-term average training latency consisting of progressive learning rounds. We further propose to transform the network optimization problem as a Markov decision process and leverage the deep reinforcement learning (DRL)-based algorithm to provide high system performance with low computational complexity. Simulation results demonstrate that B-FL can resist malicious attacks from edge devices and servers, and the training latency of B-FL can be significantly reduced by the DRL-based algorithm compared with the baseline algorithms.",
+      "year": 2022,
+      "venue": "IEEE Internet of Things Journal",
+      "citation_count": 110,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.930816,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 28,
+      "bm25_score": 0.9099
+    },
+    {
+      "rank": 3,
+      "doi": "10.1109/mnet.011.2000045",
+      "title": "Federated Machine Learning for Intelligent IoT via Reconfigurable Intelligent Surface",
+      "abstract": "Intelligent Internet of Things (IoT) will be transformative with the advancement of artificial intelligence and high-dimensional data analysis, shifting from \"connected things\" to \"connected intelligence.\" This shall unleash the full potential of intelligent IoT in a plethora of exciting applications, such as self-driving cars, unmanned aerial vehicles, healthcare, robotics, and supply chain finance. These applications drive the need to develop revolutionary computation, communication, and artificial intelligence technologies that can make low-latency decisions with massive realtime data. To this end, federated machine learning, as a disruptive technology, has emerged to distill intelligence from the data at the network edge, while guaranteeing device privacy and data security. However, the limited communication bandwidth is a key bottleneck of model aggregation for federated machine learning over radio channels. In this article, we shall develop an overthe- air computation-based communication-efficient federated machine learning framework for intelligent IoT networks via exploiting the waveform superposition property of a multi-access channel. Reconfigurable intelligent surface is further leveraged to reduce the model aggregation error via enhancing the signal strength by reconfiguring the wireless propagation environments.",
+      "year": 2020,
+      "venue": "IEEE Network",
+      "citation_count": 195,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.929881,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 20,
+      "bm25_score": 1.0158
+    },
+    {
+      "rank": 4,
+      "doi": "10.1038/s41746-020-00323-1",
+      "title": "The future of digital health with federated learning",
+      "abstract": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data, which is collected in huge volumes by modern healthcare systems. Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data. However, without access to sufficient data, ML will be prevented from reaching its full potential and, ultimately, from making the transition from research to clinical practice. This paper considers key factors contributing to this issue, explores how federated learning (FL) may provide a solution for the future of digital health and highlights the challenges and considerations that need to be addressed.",
+      "year": 2020,
+      "venue": "npj Digital Medicine",
+      "citation_count": 2603,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.903929,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 1,
+      "bm25_score": 1.2231
+    },
+    {
+      "rank": 5,
+      "doi": "10.1016/j.comcom.2022.09.012",
+      "title": "Federated Learning for intrusion detection system: Concepts, challenges and future directions",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Computer Communications",
+      "citation_count": 403,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.898981,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 8,
+      "bm25_score": 0.226
+    },
+    {
+      "rank": 6,
+      "doi": "10.1109/ojcs.2020.2992630",
+      "title": "Federated Learning for Vehicular Internet of Things: Recent Advances and Open Issues",
+      "abstract": "Federated learning (FL) is a distributed machine learning approach that can achieve the purpose of collaborative learning from a large amount of data that belong to different parties without sharing the raw data among the data owners. FL can sufficiently utilize the computing capabilities of multiple learning agents to improve the learning efficiency while providing a better privacy solution for the data owners. FL attracts tremendous interests from a large number of industries due to growing privacy concerns. Future vehicular Internet of Things (IoT) systems, such as cooperative autonomous driving and intelligent transport systems (ITS), feature a large number of devices and privacy-sensitive data where the communication, computing, and storage resources must be efficiently utilized. FL could be a promising approach to solve these existing challenges. In this paper, we first conduct a brief survey of existing studies on FL and its use in wireless IoT. Then we discuss the significance and technical challenges of applying FL in vehicular IoT, and point out future research directions.",
+      "year": 2020,
+      "venue": "IEEE Open Journal of the Computer Society",
+      "citation_count": 387,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.898925,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 11,
+      "bm25_score": 0.5782
+    },
+    {
+      "rank": 7,
+      "doi": "10.1109/tkde.2024.3352628",
+      "title": "Vertical Federated Learning: Concepts, Advances, and Challenges",
+      "abstract": "Vertical Federated Learning (VFL) is a federated learning setting where multiple parties with different features about the same set of users jointly train machine learning models without exposing their raw data or model parameters. Motivated by the rapid growth in VFL research and real-world applications, we provide a comprehensive review of the concept and algorithms of VFL, as well as current advances and challenges in various aspects, including effectiveness, efficiency, and privacy. We provide an exhaustive categorization for VFL settings and privacy-preserving protocols and comprehensively analyze the privacy attacks and defense strategies for each protocol. In the end, we propose a unified framework, termed VFLow, which considers the VFL problem under communication, computation, privacy, as well as effectiveness and fairness constraints. Finally, we review the most recent advances in industrial applications, highlighting open challenges and future directions for VFL.",
+      "year": 2024,
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "citation_count": 308,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.884135,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 16,
+      "bm25_score": 0.6486
+    },
+    {
+      "rank": 8,
+      "doi": "10.1038/s41467-023-38569-4",
+      "title": "Decentralized federated learning through proxy model sharing",
+      "abstract": "Institutions in highly regulated domains such as finance and healthcare often have restrictive rules around data sharing. Federated learning is a distributed learning framework that enables multi-institutional collaborations on decentralized data with improved protection for each collaborator's data privacy. In this paper, we propose a communication-efficient scheme for decentralized federated learning called ProxyFL, or proxy-based federated learning. Each participant in ProxyFL maintains two models, a private model, and a publicly shared proxy model designed to protect the participant's privacy. Proxy models allow efficient information exchange among participants without the need of a centralized server. The proposed method eliminates a significant limitation of canonical federated learning by allowing model heterogeneity; each participant can have a private model with any architecture. Furthermore, our protocol for communication by proxy leads to stronger privacy guarantees using differential privacy analysis. Experiments on popular image datasets, and a cancer diagnostic problem using high-quality gigapixel histology whole slide images, show that ProxyFL can outperform existing alternatives with much less communication overhead and stronger privacy.",
+      "year": 2023,
+      "venue": "Nature Communications",
+      "citation_count": 144,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.881416,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 24,
+      "bm25_score": 3.1278
+    },
+    {
+      "rank": 9,
+      "doi": "10.1038/s41746-021-00489-2",
+      "title": "Privacy-first health research with federated learning",
+      "abstract": "Privacy protection is paramount in conducting health research. However, studies often rely on data stored in a centralized repository, where analysis is done with full access to the sensitive underlying content. Recent advances in federated learning enable building complex machine-learned models that are trained in a distributed fashion. These techniques facilitate the calculation of research study endpoints such that private data never leaves a given device or healthcare system. We show-on a diverse set of single and multi-site health studies-that federated models can achieve similar accuracy, precision, and generalizability, and lead to the same interpretation as standard centralized statistical models while achieving considerably stronger privacy protections and without significantly raising computational costs. This work is the first to apply modern and general federated learning methods that explicitly incorporate differential privacy to clinical and epidemiological research-across a spectrum of units of federation, model architectures, complexity of learning tasks and diseases. As a result, it enables health research participants to remain in control of their data and still contribute to advancing science-aspects that used to be at odds with each other.",
+      "year": 2021,
+      "venue": "npj Digital Medicine",
+      "citation_count": 190,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.864606,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 21,
+      "bm25_score": 1.2262
+    },
+    {
+      "rank": 10,
+      "doi": "10.1109/access.2023.3301162",
+      "title": "Advancing Federated Learning Through Novel Mechanism for Privacy Preservation in Healthcare Applications",
+      "abstract": "",
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_count": 86,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.864064,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 30,
+      "bm25_score": 1.7814
+    },
+    {
+      "rank": 11,
+      "doi": "10.1016/j.patcog.2024.110424",
+      "title": "Federated learning for medical image analysis: A survey",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Pattern Recognition",
+      "citation_count": 399,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.860703,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 10,
+      "bm25_score": 0.2314
+    },
+    {
+      "rank": 12,
+      "doi": "10.1038/s42256-020-0186-1",
+      "title": "Secure, privacy-preserving and federated machine learning in medical imaging",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Nature Machine Intelligence",
+      "citation_count": 1348,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.834595,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 3,
+      "bm25_score": 0.6286
+    },
+    {
+      "rank": 13,
+      "doi": "10.3390/app12199901",
+      "title": "Privacy and Security in Federated Learning: A Survey",
+      "abstract": "In recent years, privacy concerns have become a serious issue for companies wishing to protect economic models and comply with end-user expectations. In the same vein, some countries now impose, by law, constraints on data use and protection. Such context thus encourages machine learning to evolve from a centralized data and computation approach to decentralized approaches. Specifically, Federated Learning (FL) has been recently developed as a solution to improve privacy, relying on local data to train local models, which collaborate to update a global model that improves generalization behaviors. However, by definition, no computer system is entirely safe. Security issues, such as data poisoning and adversarial attack, can introduce bias in the model predictions. In addition, it has recently been shown that the reconstruction of private raw data is still possible. This paper presents a comprehensive study concerning various privacy and security issues related to federated learning. Then, we identify the state-of-the-art approaches that aim to counteract these problems. Findings from our study confirm that the current major security threats are poisoning, backdoor, and Generative Adversarial Network (GAN)-based attacks, while inference-based attacks are the most critical to the privacy of FL. Finally, we identify ongoing research directions on the topic. This paper could be used as a reference to promote cybersecurity-related research on designing FL-based solutions for alleviating future challenges.",
+      "year": 2022,
+      "venue": "Applied Sciences",
+      "citation_count": 146,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.810772,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 23,
+      "bm25_score": 0.6118
+    },
+    {
+      "rank": 14,
+      "doi": "10.1109/tce.2023.3315415",
+      "title": "Blockchain-Based Federated Learning Technique for Privacy Preservation and Security of Smart Electronic Health Records",
+      "abstract": "This study introduces a blockchain-based lightweight encryption strategy with federated learning to address the scalability and trust concerns of electronic health records (EHR). After implementing lightweight encryption, the EHR data is stored in a decentralized cloud system. The importance of protecting the privacy and security of distant patients’ health records is explored. Now that stakeholders have a secure portal and cloud data is inaccessible, assaults on electronic healthcare records should decrease. The study guarantees full encryption throughout the whole conversation with federated learning. Deprived of the essential for a trusted third party, the system sets up active smart contracts at runtime between the sensor and the data user to facilitate the transfer of EHR data. To ensure that the data is private between the owner and user during the contract’s execution, it employs a very effective proxy re-encryption mechanism with federated learning. To examine the performance of the proposed system, it has been built and deployed on an Ethereum-based testbed. It is observed that the PSNR and MSE of the proposed model are 39 (1.07×) and 229.6 (1.02×) respectively. The entropy of the image is assessed to be 7.8 for the proposed model. This is also compared with existing algorithms and proved to be a secured model.",
+      "year": 2023,
+      "venue": "IEEE Transactions on Consumer Electronics",
+      "citation_count": 107,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.802235,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 29,
+      "bm25_score": 2.9393
+    },
+    {
+      "rank": 15,
+      "doi": "10.1109/access.2022.3151670",
+      "title": "Differential Privacy for Deep and Federated Learning: A Survey",
+      "abstract": "Users’ privacy is vulnerable at all stages of the deep learning process. Sensitive information of users may be disclosed during data collection, during training, or even after releasing the trained learning model. Differential privacy (DP) is one of the main approaches proven to ensure strong privacy protection in data analysis. DP protects the users’ privacy by adding noise to the original dataset or the learning parameters. Thus, an attacker could not retrieve the sensitive information of an individual involved in the training dataset. In this survey paper, we analyze and present the main ideas based on DP to guarantee users’ privacy in deep and federated learning. In addition, we illustrate all types of probability distributions that satisfy the DP mechanism, with their properties and use cases. Furthermore, we bridge the gap in the literature by providing a comprehensive overview of the different variants of DP, highlighting their advantages and limitations. Our study reveals the gap between theory and application, accuracy, and robustness of DP. Finally, we provide several open problems and future research directions.",
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citation_count": 399,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.796122,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 9,
+      "bm25_score": 0.6617
+    },
+    {
+      "rank": 16,
+      "doi": "10.1109/access.2021.3118642",
+      "title": "Federated Deep Learning for Cyber Security in the Internet of Things: Concepts, Applications, and Experimental Analysis",
+      "abstract": "In this article, we present a comprehensive study with an experimental analysis of federated deep learning approaches for cyber security in the Internet of Things (IoT) applications. Specifically, we first provide a review of the federated learning-based security and privacy systems for several types of IoT applications, including, Industrial IoT, Edge Computing, Internet of Drones, Internet of Healthcare Things, Internet of Vehicles, etc. Second, the use of federated learning with blockchain and malware/intrusion detection systems for IoT applications is discussed. Then, we review the vulnerabilities in federated learning-based security and privacy systems. Finally, we provide an experimental analysis of federated deep learning with three deep learning approaches, namely, Recurrent Neural Network (RNN), Convolutional Neural Network (CNN), and Deep Neural Network (DNN). For each deep learning model, we study the performance of centralized and federated learning under three new real IoT traffic datasets, namely, the Bot-IoT dataset, the MQTTset dataset, and the TON_IoT dataset. The goal of this article is to provide important information on federated deep learning approaches with emerging technologies for cyber security. In addition, it demonstrates that federated deep learning approaches outperform the classic/centralized versions of machine learning (non-federated learning) in assuring the privacy of IoT device data and provide the higher accuracy in detecting attacks.",
+      "year": 2021,
+      "venue": "IEEE Access",
+      "citation_count": 312,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.780116,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 15,
+      "bm25_score": 1.15
+    },
+    {
+      "rank": 17,
+      "doi": "10.1016/j.comcom.2021.02.014",
+      "title": "Privacy preserving distributed machine learning with federated learning",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Computer Communications",
+      "citation_count": 140,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.736564,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 26,
+      "bm25_score": 0.6494
+    },
+    {
+      "rank": 18,
+      "doi": "10.1145/3412357",
+      "title": "Federated Learning in a Medical Context: A Systematic Literature Review",
+      "abstract": "Data privacy is a very important issue. Especially in fields like medicine, it is paramount to abide by the existing privacy regulations to preserve patients’ anonymity. However, data is required for research and training machine learning models that could help gain insight into complex correlations or personalised treatments that may otherwise stay undiscovered. Those models generally scale with the amount of data available, but the current situation often prohibits building large databases across sites. So it would be beneficial to be able to combine similar or related data from different sites all over the world while still preserving data privacy. Federated learning has been proposed as a solution for this, because it relies on the sharing of machine learning models, instead of the raw data itself. That means private data never leaves the site or device it was collected on. Federated learning is an emerging research area, and many domains have been identified for the application of those methods. This systematic literature review provides an extensive look at the concept of and research into federated learning and its applicability for confidential healthcare datasets.",
+      "year": 2021,
+      "venue": "ACM Transactions on Internet Technology",
+      "citation_count": 273,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.620662,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 18,
+      "bm25_score": 1.2357
+    },
+    {
+      "rank": 19,
+      "doi": "10.1109/tnnls.2022.3160699",
+      "title": "Towards Personalized Federated Learning",
+      "abstract": "In parallel with the rapid adoption of artificial intelligence (AI) empowered by advances in AI research, there has been growing awareness and concerns of data privacy. Recent significant developments in the data regulation landscape have prompted a seismic shift in interest toward privacy-preserving AI. This has contributed to the popularity of Federated Learning (FL), the leading paradigm for the training of machine learning models on data silos in a privacy-preserving manner. In this survey, we explore the domain of personalized FL (PFL) to address the fundamental challenges of FL on heterogeneous data, a universal characteristic inherent in all real-world datasets. We analyze the key motivations for PFL and present a unique taxonomy of PFL techniques categorized according to the key challenges and personalization strategies in PFL. We highlight their key ideas, challenges, opportunities, and envision promising future trajectories of research toward a new PFL architectural design, realistic PFL benchmarking, and trustworthy PFL approaches.",
+      "year": 2022,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "citation_count": 1019,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.58251,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 4,
+      "bm25_score": 0.5812
+    },
+    {
+      "rank": 20,
+      "doi": "10.1007/s41666-020-00082-4",
+      "title": "Federated Learning for Healthcare Informatics",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Journal of Healthcare Informatics Research",
+      "citation_count": 1413,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.54559,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 2,
+      "bm25_score": 1.4544
+    },
+    {
+      "rank": 21,
+      "doi": "10.1038/s41467-022-30714-9",
+      "title": "A federated graph neural network framework for privacy-preserving personalization",
+      "abstract": "Graph neural network (GNN) is effective in modeling high-order interactions and has been widely used in various personalized applications such as recommendation. However, mainstream personalization methods rely on centralized GNN learning on global graphs, which have considerable privacy risks due to the privacy-sensitive nature of user data. Here, we present a federated GNN framework named FedPerGNN for both effective and privacy-preserving personalization. Through a privacy-preserving model update method, we can collaboratively train GNN models based on decentralized graphs inferred from local data. To further exploit graph information beyond local interactions, we introduce a privacy-preserving graph expansion protocol to incorporate high-order information under privacy protection. Experimental results on six datasets for personalization in different scenarios show that FedPerGNN achieves 4.0% ~ 9.6% lower errors than the state-of-the-art federated personalization methods under good privacy protection. FedPerGNN provides a promising direction to mining decentralized graph data in a privacy-preserving manner for responsible and intelligent personalization.",
+      "year": 2022,
+      "venue": "Nature Communications",
+      "citation_count": 280,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.406377,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 17,
+      "bm25_score": 0.6621
+    },
+    {
+      "rank": 22,
+      "doi": "10.1109/tbdata.2022.3190835",
+      "title": "Privacy-Preserving Aggregation in Federated Learning: A Survey",
+      "abstract": "Over the recent years, with the increasing adoption of Federated Learning (FL) algorithms and growing concerns over personal data privacy, Privacy-Preserving Federated Learning (PPFL) has attracted tremendous attention from both academia and industry. Practical PPFL typically allows multiple participants to individually train their machine learning models, which are then aggregated to construct a global model in a privacy-preserving manner. As such, Privacy-Preserving Aggregation (PPAgg) as the key protocol in PPFL has received substantial research interest. This survey aims to fill the gap between a large number of studies on PPFL, where PPAgg is adopted to provide a privacy guarantee, and the lack of a comprehensive survey on the PPAgg protocols applied in FL systems. This survey reviews the PPAgg protocols proposed to address privacy and security issues in FL systems. The focus is placed on the construction of PPAgg protocols with an extensive analysis of the advantages and disadvantages of these selected PPAgg protocols and solutions. Additionally, we discuss the open-source FL frameworks that support PPAgg. Finally, we highlight significant challenges and future research directions for applying PPAgg to FL systems and the combination of PPAgg with other technologies for further security improvement.",
+      "year": 2022,
+      "venue": "IEEE Transactions on Big Data",
+      "citation_count": 121,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.332185,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 27,
+      "bm25_score": 0.6711
+    },
+    {
+      "rank": 23,
+      "doi": "10.1038/s42256-021-00337-8",
+      "title": "End-to-end privacy preserving deep learning on multi-institutional medical imaging",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Nature Machine Intelligence",
+      "citation_count": 477,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.308258,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 7,
+      "bm25_score": 0.4778
+    },
+    {
+      "rank": 24,
+      "doi": "10.1016/j.icte.2023.02.007",
+      "title": "Digitization of healthcare sector: A study on privacy and security concerns",
+      "abstract": "The digital revolution has taken business sectors to a new height through the advancement of technology. The healthcare sector also embraced digital technology to facilitate technological change from mechanical and analogue electronic devices to the digital technology that is available today. The common use of digital technology in the healthcare sector includes searching medical knowledge resources, monitoring quality patient care and improving clinical support. The article presents the impact of technology in healthcare along with the privacy and security concerns related to technology use in healthcare.",
+      "year": 2023,
+      "venue": "ICT Express",
+      "citation_count": 328,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.24953,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 13,
+      "bm25_score": 1.7905
+    },
+    {
+      "rank": 25,
+      "doi": "10.1007/s10586-022-03658-4",
+      "title": "Federated learning-based AI approaches in smart healthcare: concepts, taxonomies, challenges and open issues",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Cluster Computing",
+      "citation_count": 366,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.210077,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 12,
+      "bm25_score": 1.3655
+    },
+    {
+      "rank": 26,
+      "doi": "10.1109/access.2021.3075203",
+      "title": "Vulnerabilities in Federated Learning",
+      "abstract": "With more regulations tackling the protection of users’ privacy-sensitive data in recent years, access to such data has become increasingly restricted. A new decentralized training paradigm, known as Federated Learning (FL), enables multiple clients located at different geographical locations to learn a machine learning model collaboratively without sharing their data. While FL has recently emerged as a promising solution to preserve users’ privacy, this new paradigm’s potential security implications may hinder its widespread adoption. The existing FL protocols exhibit new unique vulnerabilities that adversaries can exploit to compromise the trained model. FL is often preferred in learning environments where security and privacy are the key concerns. Therefore, it is crucial to raise awareness of the consequences resulting from the new threats to FL systems. To date, the security of traditional machine learning systems has been widely examined. However, many open challenges and complex questions are still surrounding FL security. In this paper, we bridge the gap in FL literature by providing a comprehensive survey of the unique security vulnerabilities exposed by the FL ecosystem. We highlight the vulnerabilities sources, key attacks on FL, defenses, as well as their unique challenges, and discuss promising future research directions towards more robust FL.",
+      "year": 2021,
+      "venue": "IEEE Access",
+      "citation_count": 230,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.154553,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 19,
+      "bm25_score": 0.5448
+    },
+    {
+      "rank": 27,
+      "doi": "10.1109/access.2020.3013541",
+      "title": "Federated Learning: A Survey on Enabling Technologies, Protocols, and Applications",
+      "abstract": "This paper provides a comprehensive study of Federated Learning (FL) with an emphasis on enabling software and hardware platforms, protocols, real-life applications and use-cases. FL can be applicable to multiple domains but applying it to different industries has its own set of obstacles. FL is known as collaborative learning, where algorithm(s) get trained across multiple devices or servers with decentralized data samples without having to exchange the actual data. This approach is radically different from other more established techniques such as getting the data samples uploaded to servers or having data in some form of distributed infrastructure. FL on the other hand generates more robust models without sharing data, leading to privacy-preserved solutions with higher security and access privileges to data. This paper starts by providing an overview of FL. Then, it gives an overview of technical details that pertain to FL enabling technologies, protocols, and applications. Compared to other survey papers in the field, our objective is to provide a more thorough summary of the most relevant protocols, platforms, and real-life use-cases of FL to enable data scientists to build better privacy-preserving solutions for industries in critical need of FL. We also provide an overview of key challenges presented in the recent literature and provide a summary of related research work. Moreover, we explore both the challenges and advantages of FL and present detailed service use-cases to illustrate how different architectures and protocols that use FL can fit together to deliver desired results.",
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_count": 706,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.148094,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 5,
+      "bm25_score": 0.432
+    },
+    {
+      "rank": 28,
+      "doi": "10.1609/aaai.v36i8.20819",
+      "title": "FedProto: Federated Prototype Learning across Heterogeneous Clients",
+      "abstract": "Heterogeneity across clients in federated learning (FL) usually hinders the optimization convergence and generalization performance when the aggregation of clients' knowledge occurs in the gradient space. For example, clients may differ in terms of data distribution, network latency, input/output space, and/or model architecture, which can easily lead to the misalignment of their local gradients. To improve the tolerance to heterogeneity, we propose a novel federated prototype learning (FedProto) framework in which the clients and server communicate the abstract class prototypes instead of the gradients. FedProto aggregates the local prototypes collected from different clients, and then sends the global prototypes back to all clients to regularize the training of local models. The training on each client aims to minimize the classification error on the local data while keeping the resulting local prototypes sufficiently close to the corresponding global ones. Moreover, we provide a theoretical analysis to the convergence rate of FedProto under non-convex objectives. In experiments, we propose a benchmark setting tailored for heterogeneous FL, with FedProto outperforming several recent FL approaches on multiple datasets.",
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 649,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.127446,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 6,
+      "bm25_score": 0.2075
+    },
+    {
+      "rank": 29,
+      "doi": "10.1038/s41598-022-05539-7",
+      "title": "Federated learning and differential privacy for medical image analysis",
+      "abstract": "The artificial intelligence revolution has been spurred forward by the availability of large-scale datasets. In contrast, the paucity of large-scale medical datasets hinders the application of machine learning in healthcare. The lack of publicly available multi-centric and diverse datasets mainly stems from confidentiality and privacy concerns around sharing medical data. To demonstrate a feasible path forward in medical image imaging, we conduct a case study of applying a differentially private federated learning framework for analysis of histopathology images, the largest and perhaps most complex medical images. We study the effects of IID and non-IID distributions along with the number of healthcare providers, i.e., hospitals and clinics, and the individual dataset sizes, using The Cancer Genome Atlas (TCGA) dataset, a public repository, to simulate a distributed environment. We empirically compare the performance of private, distributed training to conventional training and demonstrate that distributed training can achieve similar performance with strong privacy guarantees. We also study the effect of different source domains for histopathology images by evaluating the performance using external validation. Our work indicates that differentially private federated learning is a viable and reliable framework for the collaborative development of machine learning models in medical image analysis.",
+      "year": 2022,
+      "venue": "Scientific Reports",
+      "citation_count": 324,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.102794,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 14,
+      "bm25_score": 3.2469
+    },
+    {
+      "rank": 30,
+      "doi": "10.1109/jbhi.2022.3185673",
+      "title": "Handling Privacy-Sensitive Medical Data With Federated Learning: Challenges and Future Directions",
+      "abstract": "Recent medical applications are largely dominated by the application of Machine Learning (ML) models to assist expert decisions, leading to disruptive innovations in radiology, pathology, genomics, and hence modern healthcare systems in general. Despite the profitable usage of AI-based algorithms, these data-driven methods are facing issues such as the scarcity and privacy of user data, as well as the difficulty of institutions exchanging medical information. With insufficient data, ML is prevented from reaching its full potential, which is only possible if the database consists of the full spectrum of possible anatomies, pathologies, and input data types. To solve these issues, Federated Learning (FL) appeared as a valuable approach in the medical field, allowing patient data to stay where it is generated. Since an FL setting allows many clients to collaboratively train a model while keeping training data decentralized, it can protect privacy-sensitive medical data. However, FL is still unable to deliver all its promises and meets the more stringent requirements (e.g., latency, security) of a healthcare system based on multiple Internet of Medical Things (IoMT). For example, although no data are shared among the participants by definition in FL systems, some security risks are still present and can be considered as vulnerabilities from multiple aspects. This paper sheds light upon the emerging deployment of FL, provides a broad overview of current approaches and existing challenges, and outlines several directions of future work that are relevant to solving existing problems in federated healthcare, with a particular focus on security and privacy issues.",
+      "year": 2022,
+      "venue": "IEEE Journal of Biomedical and Health Informatics",
+      "citation_count": 141,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.024786,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 25,
+      "bm25_score": 1.501
+    }
+  ]
+}

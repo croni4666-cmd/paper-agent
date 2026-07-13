@@ -1,0 +1,552 @@
+{
+  "query_id": "q014",
+  "query": "inequality and intergenerational mobility in education",
+  "topic_bucket": "econ",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:04:58",
+  "config": "v4-random",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1016/s0140-6736(96)07226-1",
+      "title": "Socioeconomic inequalities in morbidity and mortality in western Europe",
+      "abstract": "",
+      "year": 1997,
+      "venue": "The Lancet",
+      "citation_count": 1035,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.902806,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 2,
+      "doi": "10.2139/ssrn.2314815",
+      "title": "Income Inequality, Equality of Opportunity, and Intergenerational Mobility",
+      "abstract": "",
+      "year": 2013,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 207,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.901181,
+      "bm25_score": 0.8621
+    },
+    {
+      "rank": 3,
+      "doi": "10.1080/00036846.2015.1031877",
+      "title": "Social mobility and inequality in urban China: understanding the role of intergenerational transmission of education",
+      "abstract": "China’s rapid economic growth since the late 1980s has been accompanied by great economic and social transformations, which have resulted in a sharp increase in income inequality. This article contributes to the literature of social mobility in China by examining the impact of parental education on the education of their children. Using the 1990 and 2000 Chinese Population Censuses, we employ nonparametric estimation strategies to provide a systematic investigation of intergenerational transmission of education in urban China. We find evidence of increasing parents–children educational correlations. Our results raise concerns regarding economic inequality in urban China as high intergenerational persistence of education is expected to be a barrier to equal opportunities in children’s education attainments and their future labour market outcomes.",
+      "year": 2015,
+      "venue": "Applied Economics",
+      "citation_count": 33,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 0.849738,
+      "bm25_score": 1.6323
+    },
+    {
+      "rank": 4,
+      "doi": "10.1353/eco.2001.0010",
+      "title": "Intergenerational Mobility in Latin America",
+      "abstract": "High inequality has long been regarded as one of the main problems facing Latin American countries. To understand better the determinants of inequality and to help guide thinking about policy options, it is useful to know whether inequality mainly reflects low intergenerational mobility or whether it is driven by differences in individual characteristics that arise independently of family background. In this paper we use five household surveys with questions about parental socioeconomic characteristics for adults, and a set of 112 standard household surveys to examine the intergenerational transmission of schooling and occupational status in Latin America and the United States. We find that intergenerational mobility is much higher in the United States than in Latin America, that there are sizable differences in mobility within Latin America, and that mobility in Latin America is strongly associated with schooling levels and expenditures on education.",
+      "year": 2001,
+      "venue": "Economía",
+      "citation_count": 112,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.818423,
+      "bm25_score": 1.2324
+    },
+    {
+      "rank": 5,
+      "doi": "10.1016/j.jdeveco.2018.05.016",
+      "title": "Educational inequality and intergenerational mobility in Latin America: A new database",
+      "abstract": "",
+      "year": 2018,
+      "venue": "Journal of Development Economics",
+      "citation_count": 190,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.796025,
+      "bm25_score": 0.8429
+    },
+    {
+      "rank": 6,
+      "doi": "10.1007/s10887-007-9019-x",
+      "title": "Inequality and mobility",
+      "abstract": "",
+      "year": 2007,
+      "venue": "Journal of Economic Growth",
+      "citation_count": 112,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.751138,
+      "bm25_score": 0.625
+    },
+    {
+      "rank": 7,
+      "doi": "10.1111/j.1749-124x.2013.12013.x",
+      "title": "Inequality in Intergenerational Mobility of Education in China",
+      "abstract": "Abstract This paper investigates trends in intergenerational patterns of educational attainment of those born in China between 1941 and 1990. Employing the 2008 Rural–Urban Migration in China and Indonesia Survey, we find that intergenerational correlation is lower in rural and migrant than in urban populations. The higher mobility observed in rural and migrant populations stems from the fact that the majority of these children complete only junior high school, with some children in the youngest cohorts moving down the education ladder relative to their parents. In contrast, urban children seem to at least maintain their parents’ education level. The persistence of intergenerational transmission of education at high levels in urban areas combined with some mobility, upward or downward, in rural areas is likely to aggravate China's rural–urban disparity. Policies should focus more on the underlying gaps in education opportunities and the improvement in education of the rural and migrant populations.",
+      "year": 2013,
+      "venue": "China & World Economy",
+      "citation_count": 99,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.672796,
+      "bm25_score": 1.5098
+    },
+    {
+      "rank": 8,
+      "doi": "10.1162/003355397555145",
+      "title": "How Much does Sorting Increase Inequality?",
+      "abstract": "Some commentators argue that increased sorting into internally homogeneous neighborhoods, schools, and marriages is radically polarizing society. Calibration of a formal model, however, suggests that the steady-state standard deviation of education would increase only 1.7 percent if the correlation between neighbors' education doubled, and would fall only 1.6 percent if educational sorting by neighborhood disappeared. The steady-state standard deviation of education would grow 1 percent if the correlation between spouses' education increased from 0.6 to 0.8. In fact, marital and neighborhood sorting have been stable, or even decreasing historically. Sorting has somewhat more significant effects on intergenerational mobility than on inequality.",
+      "year": 1997,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 275,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.654706,
+      "bm25_score": 1.4051
+    },
+    {
+      "rank": 9,
+      "doi": "10.1016/J.CHIECO.2015.12.009",
+      "title": "The impact of education on income inequality and intergenerational mobility",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 142,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 19,
+      "v4_score": 0.632941,
+      "bm25_score": 1.6473
+    },
+    {
+      "rank": 10,
+      "doi": "10.1093/qje/qjz042",
+      "title": "Race and Economic Opportunity in the United States: an Intergenerational Perspective*",
+      "abstract": "Abstract We study the sources of racial disparities in income using anonymized longitudinal data covering nearly the entire U.S. population from 1989 to 2015. We document three results. First, black Americans and American Indians have much lower rates of upward mobility and higher rates of downward mobility than whites, leading to persistent disparities across generations. Conditional on parent income, the black-white income gap is driven by differences in wages and employment rates between black and white men; there are no such differences between black and white women. Hispanic Americans have rates of intergenerational mobility more similar to whites than blacks, leading the Hispanic-white income gap to shrink across generations. Second, differences in parental marital status, education, and wealth explain little of the black-white income gap conditional on parent income. Third, the black-white gap persists even among boys who grow up in the same neighborhood. Controlling for parental income, black boys have lower incomes in adulthood than white boys in 99% of Census tracts. The few areas with small black-white gaps tend to be low-poverty neighborhoods with low levels of racial bias among whites and high rates of father presence among blacks. Black males who move to such neighborhoods earlier in childhood have significantly better outcomes. However, less than 5% of black children grow up in such areas. Our findings suggest that reducing the black-white income gap will require efforts whose impacts cross neighborhood and class lines and increase upward mobility specifically for black men.",
+      "year": 2019,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 799,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.615515,
+      "bm25_score": 0.6012
+    },
+    {
+      "rank": 11,
+      "doi": "10.1177/0003122416684777",
+      "title": "An Immigrant Paradox? Contextual Attainment and Intergenerational Educational Mobility",
+      "abstract": "Numerous studies have revealed a seemingly paradoxical pattern in which, despite cultural differences, unfamiliarity with the educational system, and possible language difficulties, children of immigrants outperform their peers with native-born parents in the U.S. educational system. We problematize the notion of an immigrant paradox in education by broadening our conceptualization of social class background, and introducing the concept of contextual attainment to capture the geographic and historical contexts in which education is completed. Analyzing nationally representative longitudinal survey data combined with international educational data, we show that, for immigrant parents, contextual attainments vary between and within countries of origin and often diverge from post-migration socioeconomic statuses. Parental contextual attainment helps explain why, net of standard family socioeconomic status measures, most groups of immigrants’ children complete more years of schooling than do White Americans with native-born parents. Moreover, considering parental contextual attainment leads to a rethinking of intergenerational educational mobility patterns for adults with immigrant parents. We argue that contextual attainment captures the noneconomic benefits of higher class background that help explain how intergenerational educational inequalities are reproduced.",
+      "year": 2017,
+      "venue": "American Sociological Review",
+      "citation_count": 325,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.579985,
+      "bm25_score": 0.8788
+    },
+    {
+      "rank": 12,
+      "doi": "10.1093/esr/jcn026",
+      "title": "Persistent Inequality in Educational Attainment and its Institutional Context",
+      "abstract": "Research has repeatedly shown that educational opportunities are distributed unevenly in all countries. Therefore, the question is not whether family background and educational outcomes are related but to what degree they are related. This latter question then invites a comparative perspective. That is, does social inequality in education differ across time and countries? If yes, which institutional characteristics can explain differences in educational inequality? Educational inequality is conceptualized as the association between individuals’ and their parents’ highest educational level attained. Intergenerational educational mobility processes are analysed for 20 industrialized nations by means of log-linear and log-multiplicative models. The results show that the degree of educational mobility has remained stable across the second half of the 20th century in virtually all countries. However, nations differ widely in the extent to which parents’ education influences their children's educational attainment. The degree of educational inequality is associated with the institutional structure of national education systems. Rigid systems with dead-end educational pathways appear to be a hindrance to the equalization of educational opportunities, especially if the sorting of students occurs early in the educational career. This association is not mediated by other institutional characteristics included in this analysis that do not exert notable influences on educational mobility.",
+      "year": 2008,
+      "venue": "European Sociological Review",
+      "citation_count": 568,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.547937,
+      "bm25_score": 1.2434
+    },
+    {
+      "rank": 13,
+      "doi": "10.1016/j.chieco.2015.12.009",
+      "title": "The impact of education on income inequality and intergenerational mobility",
+      "abstract": "",
+      "year": 2015,
+      "venue": "China Economic Review",
+      "citation_count": 144,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.515452,
+      "bm25_score": 1.6473
+    },
+    {
+      "rank": 14,
+      "doi": "10.1177/0003122419885094",
+      "title": "The Relation between Inequality and Intergenerational Class Mobility in 39 Countries",
+      "abstract": "We study the relationship between inter-class inequality and intergenerational class mobility across 39 countries. Previous research on the relationship between economic inequality and class mobility remains inconclusive, as studies have confounded intra- with between-class economic inequalities. We propose that between-class inequality across multiple dimensions accounts for the inverse relationship between inequality and mobility: the larger the resource distance between classes, the less likely it is that mobility from one to the other will occur. We consider inequality in terms of between-class differences in three areas—education, wages, and income—and in a composite measure. Building on sociological mobility theory, we argue that cross-country variation in mobility results, in part, from families adapting to different levels of between-class inequality. Consistent with this hypothesis, we find a negative correlation between inter-class inequality and social fluidity, with between-class inequality being a better predictor of mobility chances than conventional distributional measures. We also find that the resource distance between classes is negatively related to the strength of their intergenerational association for some off-diagonal origin and destination (OD) class combinations.",
+      "year": 2019,
+      "venue": "American Sociological Review",
+      "citation_count": 55,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 28,
+      "v4_score": 0.475136,
+      "bm25_score": 1.2073
+    },
+    {
+      "rank": 15,
+      "doi": "10.1146/annurev-soc-071811-145521",
+      "title": "Intergenerational Mobility and Inequality: The Latin American Case",
+      "abstract": "Prompted by new data and a renewed concern about equality of opportunity, the study of intergenerational mobility has flourished in Latin America in the past decade. Although analysis is still restricted to a handful of countries, one conclusion appears clear: Intergenerational income mobility is weaker in Latin America than in industrial countries and is characterized by “persistence at the top,” a pattern consistent with the high levels of economic concentration in the region. However, social class mobility in Latin America does not differ from that in the industrialized world. This essay reviews two generations of mobility research since the 1960s, takes stock of current findings on economic and class mobility in Latin America, examines the linkages between mobility and macro-level factors, and engages a new literature on equality of opportunity. I suggest that the comparative understanding of mobility in Latin America can inform and inspire research in the industrialized world.",
+      "year": 2014,
+      "venue": "Annual Review of Sociology",
+      "citation_count": 215,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.473186,
+      "bm25_score": 0.7063
+    },
+    {
+      "rank": 16,
+      "doi": "10.1016/s0169-7218(11)02414-2",
+      "title": "Recent Developments in Intergenerational Mobility",
+      "abstract": "",
+      "year": 2010,
+      "venue": "Handbook of labour economics",
+      "citation_count": 261,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.464988,
+      "bm25_score": 0.5437
+    },
+    {
+      "rank": 17,
+      "doi": "10.1093/sf/sov075",
+      "title": "Income Inequality, Intergenerational Mobility, and the Great Gatsby Curve: Is Education the Key?",
+      "abstract": "It is widely believed that countries with greater levels of income inequality also have lower levels of intergenerational mobility. This relationship, known as the Great Gatsby Curve (GGC), has been prominently cited by high-ranking public policymakers, bestselling authors, and Nobel Prize–winning academics. Yet, relatively little cross-national work has empirically examined the mechanisms thought to underpin the GGC—particularly with regard to the role of educational attainment. This paper uses the cross-nationally comparable Programme for International Assessment of Adult Competencies (PIAAC) data set to shed new light on this issue. We find that income inequality is associated with several key components of the intergenerational transmission process—including access to higher education, the financial returns on education, and the residual effect of parental education upon labor-market earnings. Thus, consistent with theoretical models, we find that educational attainment is an important driver of the relationship between intergenerational mobility and income inequality. We hence conclude that unequal access to financial resources plays a central role in the intergenerational transmission of advantage.",
+      "year": 2015,
+      "venue": "Social Forces",
+      "citation_count": 238,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.44216,
+      "bm25_score": 1.4938
+    },
+    {
+      "rank": 18,
+      "doi": "10.1257/0002828043052213",
+      "title": "Intergenerational Persistence of Earnings: The Role of Early and College Education",
+      "abstract": "Recent empirical evidence from the United States indicates a high degree of persistence in earnings across generations. Designing effective public policies to increase social mobility requires identifying and measuring the major sources of persistence and inequality in earnings. We provide a quantitative model of intergenerational human capital transmission that focuses on three sources: innate ability, early education, and college education. We find that approximately one-half of the intergenerational correlation in earnings is accounted for by parental investment in education, in particular early education. We show that these results have important implications for education policy.",
+      "year": 2004,
+      "venue": "American Economic Review",
+      "citation_count": 351,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.429888,
+      "bm25_score": 1.5237
+    },
+    {
+      "rank": 19,
+      "doi": "10.1093/sf/sou092",
+      "title": "Income Inequality and Intergenerational Income Mobility in the United States",
+      "abstract": "Is there a relationship between family income inequality and income mobility across generations in the United States? As family income inequality rose in the United States, parental resources available for improving children's health, education, and care diverged. The amount and rate of divergence also varied across US states. Researchers and policy analysts have expressed concern that relatively high inequality might be accompanied by relatively low mobility, tightening the connection between individuals' incomes during childhood and adulthood. Using data from the Panel Study of Income Dynamics, the National Longitudinal Survey of Youth, and various government sources, this paper exploits state and cohort variation to estimate the relationship between inequality and mobility. Results provide very little support for the hypothesis that inequality shapes mobility in the United States. The inequality children experienced during youth had no robust association with their economic mobility as adults. Formal analysis reveals that offsetting effects could underlie this result. In theory, mobility-enhancing forces may counterbalance mobility-reducing effects. In practice, the results suggest that in the US context, the intergenerational transmission of income may not be very responsive to changes in inequality.",
+      "year": 2014,
+      "venue": "Social Forces",
+      "citation_count": 123,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.335188,
+      "bm25_score": 1.1606
+    },
+    {
+      "rank": 20,
+      "doi": "10.1257/jep.8.4.145",
+      "title": "Intergenerational Transfers and the Accumulation of Wealth",
+      "abstract": "This paper uses household data to provide direct estimates of intergenerational transfers as a source of wealth. The authors distinguish between intended transfers (for example, gifts to other households) and possibly unintended transfers (bequests) and estimate that intended transfers account for at least 20 percent of net worth. Thus, a significant portion of the U.S. wealth cannot be explained by the life-cycle model, even when the model is augmented to allow for bequests. Estimated bequests can account for an additional 31 percent of net worth. The authors also show that transfers among living people are about half as large as bequests.",
+      "year": 1994,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 605,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.30095,
+      "bm25_score": 0.2197
+    },
+    {
+      "rank": 21,
+      "doi": "10.1353/sof.2006.0108",
+      "title": "Education and the Inequalities of Place",
+      "abstract": "Students living in inner city and rural areas of the United States exhibit lower educational achievement and a higher likelihood of dropping out of high school than do their suburban counterparts. Educational research and policy has tended to neglect these inequalities or, at best, focus on one type but not the other. In this article, we integrate literatures on spatial stratification and educational outcomes, and offer a framework in which resources influential for achievement/attainment are viewed as embedded within, and varying across, inner city, rural and suburban places. We draw from the National Educational Longitudinal Survey and the Common Core of Data, and employ hierarchical linear and hierarchical logistic modeling techniques to test our arguments. Results reveal inner city and rural disadvantages in both family and school resources. These resource inequalities translate into important educational investments at both family and school levels, and help explain deficits in attainment and standardized achievement. We conclude by discussing the implications of our approach and findings for analyses of educational stratification specifically and spatial patterning of inequality more generally.",
+      "year": 2006,
+      "venue": "Social Forces",
+      "citation_count": 365,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.286914,
+      "bm25_score": 0.495
+    },
+    {
+      "rank": 22,
+      "doi": "10.1016/J.RED.2015.07.006",
+      "title": "Public education financing, earnings inequality, and intergenerational mobility ☆",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 57,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 0.244843,
+      "bm25_score": 1.6287
+    },
+    {
+      "rank": 23,
+      "doi": "10.1006/ssre.1997.0598",
+      "title": "Differential Fertility, Intergenerational Educational Mobility, and Racial Inequality",
+      "abstract": "",
+      "year": 1997,
+      "venue": "Social Science Research",
+      "citation_count": 90,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.224641,
+      "bm25_score": 0.8524
+    },
+    {
+      "rank": 24,
+      "doi": "10.1016/j.worlddev.2020.105115",
+      "title": "Inequality of opportunity, inequality of income and economic growth",
+      "abstract": "",
+      "year": 2020,
+      "venue": "World Development",
+      "citation_count": 226,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.213701,
+      "bm25_score": 0.3944
+    },
+    {
+      "rank": 25,
+      "doi": "10.1016/j.jdeveco.2014.05.007",
+      "title": "Intergenerational mobility and interpersonal inequality in an African economy",
+      "abstract": "How much economic mobility is there across generations in a poor, primarily rural, economy? How much do intergenerational linkages contribute to current inequality? We address these questions using original survey data on Senegal that include a sub-household measure of consumption for cells within the household. While intergenerational linkages are evident, we find a relatively high degree of mobility across generations, associated with the shift from farm to non-farm sectors and greater economic activity of women. Male-dominated bequests of land and housing bring little gain to consumption and play little role in explaining inequality, though they have important effects on sector of activity. Inheritance of non-land assets and the education and occupation of parents (especially the mother) and their choices about children's schooling are more important to adult welfare than property inheritance. Significant gender inequality in consumption is evident, though it is almost entirely explicable in terms of factors such as education and (non-land) inheritance. There are a number of other pronounced gender differences, with intergenerational linkages appearing through the mother rather than the father.",
+      "year": 2014,
+      "venue": "Journal of Development Economics",
+      "citation_count": 76,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.19913,
+      "bm25_score": 1.2677
+    },
+    {
+      "rank": 26,
+      "doi": "10.1093/oxrep/grw030",
+      "title": "Higher education, career opportunities, and intergenerational inequality",
+      "abstract": "The UK government has expressed a desire to increase social mobility, with policies to help achieve this aim focused on reducing inequalities in educational attainment. This paper draws together established and new information about the contribution that higher education can make to social mobility using a life-course approach, considering differences by family background in terms of university attendance and achievement, as well as occupation and earnings following graduation. We find substantial socio-economic differences at each stage. Young people from poorer backgrounds are, on average, less likely to go to university than their richer peers. Even among the selected group who do go to university, they are less likely to attend the highest status institutions, less likely to graduate, and less likely to achieve the highest degree classes. These differences in degree outcomes contribute to the lower average earnings of graduates from poorer families, but earnings differentials go well beyond those driven purely by degree attainment or institution attended. The evidence strongly suggests that, even after taking these factors into account, graduates from affluent families are more likely to obtain a professional job and to see higher earnings growth in the labour market. We discuss the implications of these findings for the prospects of higher education as a route to greater social mobility.",
+      "year": 2016,
+      "venue": "Oxford Review of Economic Policy",
+      "citation_count": 162,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.169691,
+      "bm25_score": 1.0275
+    },
+    {
+      "rank": 27,
+      "doi": "10.1016/J.JDEVECO.2018.05.016",
+      "title": "Educational inequality and intergenerational mobility in Latin America: A new database",
+      "abstract": "",
+      "year": 2017,
+      "venue": "Journal of Development Economics",
+      "citation_count": 148,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "orig_rank": 17,
+      "v4_score": 0.084796,
+      "bm25_score": 0.8429
+    },
+    {
+      "rank": 28,
+      "doi": "",
+      "title": "The Great Gatsby Curve in China: Cross-Sectional Inequality and Intergenerational Mobility∗",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 31,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 0.072828,
+      "bm25_score": 0.8336
+    },
+    {
+      "rank": 29,
+      "doi": "10.1016/j.red.2015.07.006",
+      "title": "Public education financing, earnings inequality, and intergenerational mobility",
+      "abstract": "",
+      "year": 2015,
+      "venue": "Review of Economic Dynamics",
+      "citation_count": 69,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.024425,
+      "bm25_score": 1.6287
+    },
+    {
+      "rank": 30,
+      "doi": "10.1111/j.1467-6419.2011.00690.x",
+      "title": "CROSS‐COUNTRY RANKINGS IN INTERGENERATIONAL MOBILITY: A COMPARISON OF APPROACHES FROM ECONOMICS AND SOCIOLOGY",
+      "abstract": "Abstract This paper summarizes research on the relative level of intergenerational mobility – whether classified by income, education or social class. The literatures on education and income mobility reveal a similar ranking with South America, other developing nations, southern European countries and France tending to have rather limited mobility although the Nordic countries exhibit strong mobility. Estimates of mobility based on social class point to rather different patterns, and we demonstrate that these differences are most likely generated by intergenerational earnings persistence within social classes. The second part of the paper looks for explanations for the differences in earnings and education persistence and finds that mobility is negatively correlated with inequality and the return to education but positively correlated with a nation's education spending.",
+      "year": 2011,
+      "venue": "Journal of Economic Surveys",
+      "citation_count": 453,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.000406,
+      "bm25_score": 1.5593
+    }
+  ]
+}

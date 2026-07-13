@@ -1,0 +1,3032 @@
+{
+  "_meta": {
+    "version": "v0.1-batch1",
+    "labeled_by": "Mavis (MiniMax LLM)",
+    "labeled_at": "2026-07-10T20:55:00",
+    "method": "title + abstract + venue + year for each paper; abstract enriched from OpenAlex for ~85% of candidates",
+    "rubric": "2=directly relevant (matches query topic + level + scope); 1=marginal (topic adjacent OR level wrong OR scope right but topic wrong); 0=irrelevant (off-topic or wrong level+topic)",
+    "queries_covered": [
+      "q001",
+      "q002",
+      "q003",
+      "q004",
+      "q005"
+    ]
+  },
+  "labels": {
+    "q001": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "ChatGPT LLM-in-education broad survey; no K-12 specific evidence in title, likely covers all levels"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "Explicitly higher ed, broad AI in teaching"
+      },
+      "10.3102/00346543068002179": {
+        "label": 0,
+        "reason": "1998, no AI, scientific discovery learning with simulations"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "Systematic review explicitly in higher ed, 2016-2022"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "Personalized Federated Learning ML method, no education"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "Broad AI-in-education sustainability review; mentions schools AND universities, level mixed"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 0,
+        "reason": "Human-in-the-loop ML methodology, no education"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "AI literacy in classroom (could be K-12), but pedagogy/AI literacy, not tutoring outcomes"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "Explicitly higher ed, GenAI / ChatGPT in higher education"
+      },
+      "10.1111/j.1551-6709.2012.01245.x": {
+        "label": 0,
+        "reason": "Knowledge-Learning-Instruction cognitive science framework, no AI tutoring"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "AI on learner-instructor interaction in online learning, level unclear, not outcomes"
+      },
+      "10.1007/s11423-023-10203-6": {
+        "label": 0,
+        "reason": "Teacher AI digital competencies, not student learning outcomes"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 0,
+        "reason": "Chinese EFL university students, writing skills, not K-12 outcomes"
+      },
+      "10.1186/s41039-018-0078-8": {
+        "label": 0,
+        "reason": "Kahoot gamification in IS course, NZ university, not AI tutoring"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "Meta-analysis of 24 RCTs on AI chatbots' effects on student learning outcomes; directly on topic"
+      },
+      "10.1186/s41239-023-00425-2": {
+        "label": 0,
+        "reason": "University ENL students, AI feedback on writing, not K-12 outcomes"
+      },
+      "10.1080/2331186x.2023.2236469": {
+        "label": 0,
+        "reason": "EFL teachers' perspective on AI writing tools, not student outcomes"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 0,
+        "reason": "University EFL students, English learning achievement, not K-12"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "AI assistance on student agency; relevant topic but agency ≠ learning outcomes"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "Explicitly Ghanaian higher ed, undergraduate chatbot study"
+      },
+      "10.1109/access.2022.3193938": {
+        "label": 1,
+        "reason": "AI-based personalized e-learning systems, methodology, level unclear"
+      },
+      "10.1186/s41239-022-00372-4": {
+        "label": 0,
+        "reason": "Online engineering course, higher ed, learning analytics not AI tutoring"
+      },
+      "10.1186/s41239-023-00406-5": {
+        "label": 1,
+        "reason": "AI for self-regulated online learning, level unclear, SRL not outcomes"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 2,
+        "reason": "Classic adaptive ITS for math; K-12 math context typical; directly on topic"
+      },
+      "10.3390/electronics13183762": {
+        "label": 1,
+        "reason": "AI e-learning systematic review 85 studies, level mixed, includes K-12 possibly"
+      },
+      "10.1001/jamanetworkopen.2021.49008": {
+        "label": 0,
+        "reason": "Medical students, surgical simulation, higher ed"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "Too broad, low-impact journal, no specific evidence"
+      },
+      "10.3390/su16073034": {
+        "label": 0,
+        "reason": "Software engineering college (higher ed), GenAI personalized learning"
+      },
+      "10.1207/s15326985ep4004_7": {
+        "label": 1,
+        "reason": "Pre-AI metacognitive tutoring research; classic ITS lit, level unclear"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "Moroccan higher ed institutions, ChatGPT learning outcomes, wrong level"
+      }
+    },
+    "q002": {
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "Import competition (trade), not automation, no gender"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "Automation + labor (Acemoglu/Restrepo), but no gender dimension"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "Social skills in labor market, no automation, no gender wage"
+      },
+      "10.1111/apps.12241": {
+        "label": 0,
+        "reason": "Work design, no gender wage gap, no automation focus"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "Trade and wages, not automation, no gender"
+      },
+      "10.1257/app.2.4.1": {
+        "label": 0,
+        "reason": "Trade liberalization in India, not automation, no gender"
+      },
+      "10.3390/econometrics6020028": {
+        "label": 0,
+        "reason": "Wage decomposition methodology, no automation, no gender"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "Robots/automation in German labor market, no gender dimension in abstract"
+      },
+      "10.3390/su12072809": {
+        "label": 0,
+        "reason": "Fashion industry sustainability, off-topic"
+      },
+      "10.1257/jep.15.1.165": {
+        "label": 0,
+        "reason": "Insider-outsider labor theory, no automation, no gender"
+      },
+      "10.1257/aeri.20180010": {
+        "label": 0,
+        "reason": "Trade shocks, gender, but trade not automation"
+      },
+      "10.1177/1069072718774002": {
+        "label": 0,
+        "reason": "Psychology of working framework, not automation, not gender wage"
+      },
+      "10.1093/pnasnexus/pgae191": {
+        "label": 1,
+        "reason": "GenAI on socioeconomic inequalities; covers work/health/education broadly, may touch gender"
+      },
+      "10.1162/rest_a_00234": {
+        "label": 0,
+        "reason": "High-skill consumption spillovers, no automation, no gender"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 0,
+        "reason": "Fertility decline, labor market polarization, no gender wage gap mechanism"
+      },
+      "10.1353/eca.2014.0015": {
+        "label": 0,
+        "reason": "Labor force participation, not wage gap, no automation"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "ChatGPT impact on labor market, occupational analysis, no gender dimension"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "Automation technologies and employment review, no gender focus"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "Automation political behavior, no gender wage focus"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 0,
+        "reason": "Automation and job satisfaction, no gender wage"
+      },
+      "10.1111/ecca.12184": {
+        "label": 0,
+        "reason": "Postgraduate wage premium, no automation, no gender"
+      },
+      "10.1016/j.jebo.2020.07.014": {
+        "label": 2,
+        "reason": "DIRECTLY Robots/computers and gender wage gap"
+      },
+      "10.1037/e686432011-001": {
+        "label": 1,
+        "reason": "Gender segregation and wage gap, no automation"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "AI exposure on labor markets, no gender focus"
+      },
+      "10.1017/psrm.2018.64": {
+        "label": 0,
+        "reason": "Labor market inequality + mass politics, no gender wage"
+      },
+      "10.5089/9798400204340.006": {
+        "label": 0,
+        "reason": "Labor market tightness, no gender, no automation"
+      },
+      "10.1093/oxrep/graa051": {
+        "label": 2,
+        "reason": "DIRECTLY technological advances and gender wage gap, two-country study"
+      },
+      "10.1111/j.1467-9914.2007.00378.x": {
+        "label": 0,
+        "reason": "Gender wage gap in Turkey, no automation"
+      },
+      "10.5089/9781498303743.001": {
+        "label": 2,
+        "reason": "DIRECTLY Automation and female employment (gender displacement risk)"
+      },
+      "10.1093/qje/qjae005": {
+        "label": 1,
+        "reason": "Automation of telephone operation (female jobs), historical, relevant to gender + automation"
+      }
+    },
+    "q003": {
+      "10.1038/s41592-019-0686-2": {
+        "label": 0,
+        "reason": "SciPy library paper, not VQ for retrieval"
+      },
+      "10.1145/3326362": {
+        "label": 0,
+        "reason": "Dynamic graph CNN for point clouds, not document VQ"
+      },
+      "10.1145/276698.276876": {
+        "label": 1,
+        "reason": "Approximate nearest neighbors foundations, related to retrieval but no VQ"
+      },
+      "10.1007/s11263-019-01247-4": {
+        "label": 0,
+        "reason": "Object detection survey, not retrieval"
+      },
+      "10.1186/s40537-014-0007-7": {
+        "label": 0,
+        "reason": "Deep learning big data, not retrieval"
+      },
+      "10.1016/j.neucom.2019.10.118": {
+        "label": 0,
+        "reason": "SVM survey, not retrieval"
+      },
+      "10.18653/v1/2022.naacl-main.272": {
+        "label": 1,
+        "reason": "ColBERTv2 (duplicate of #14, late interaction retrieval)"
+      },
+      "10.1006/jvci.1999.0413": {
+        "label": 1,
+        "reason": "Image retrieval 1999, old, no VQ"
+      },
+      "10.3390/rs71114680": {
+        "label": 0,
+        "reason": "Remote sensing CNN scene classification, not VQ for retrieval"
+      },
+      "10.1609/aaai.v28i1.8952": {
+        "label": 1,
+        "reason": "Supervised hashing for image retrieval, not document VQ"
+      },
+      "10.1609/aaai.v31i1.10958": {
+        "label": 0,
+        "reason": "SummaRuNNer extractive summarization, not retrieval"
+      },
+      "10.1109/cvpr.2016.572": {
+        "label": 0,
+        "reason": "NetVLAD place recognition, not document"
+      },
+      "10.1109/cvpr42600.2020.00877": {
+        "label": 0,
+        "reason": "ActBERT video-text, not VQ for retrieval"
+      },
+      "10.1109/cvpr.2009.5206529": {
+        "label": 0,
+        "reason": "Local geometry for object retrieval, not VQ for document"
+      },
+      "10.1145/3394486.3403305": {
+        "label": 1,
+        "reason": "Embedding-based retrieval at Facebook, not VQ"
+      },
+      "10.1109/tip.2016.2564638": {
+        "label": 0,
+        "reason": "Cross-modal hashing, not VQ for document"
+      },
+      "10.1109/tmm.2018.2832602": {
+        "label": 0,
+        "reason": "Predicting visual features from text, not VQ retrieval"
+      },
+      "10.18653/v1/2021.naacl-main.241": {
+        "label": 1,
+        "reason": "COIL exact lexical match, document retrieval but no VQ"
+      },
+      "10.24963/ijcai.2018/396": {
+        "label": 0,
+        "reason": "Unsupervised deep hashing, cross-modal, not VQ for document"
+      },
+      "10.1109/cvpr.2019.00523": {
+        "label": 0,
+        "reason": "Zero-shot sketch-based image retrieval, not VQ"
+      },
+      "10.1111/cogs.12047": {
+        "label": 0,
+        "reason": "Optimization quantization in cognitive science, not VQ for retrieval"
+      },
+      "10.18653/v1/2022.acl-long.203": {
+        "label": 1,
+        "reason": "Dense passage retrieval, not VQ specifically"
+      },
+      "10.1109/access.2023.3295776": {
+        "label": 1,
+        "reason": "Information retrieval survey, broad, may cover VQ"
+      },
+      "10.5121/iju.2012.3202": {
+        "label": 0,
+        "reason": "Content-based video retrieval, not document VQ"
+      },
+      "10.1007/978-3-030-01177-2_12": {
+        "label": 1,
+        "reason": "Legal document retrieval with embeddings, document but not VQ"
+      },
+      "10.1007/s10278-012-9495-1": {
+        "label": 0,
+        "reason": "Medical image CBIR, not VQ for document"
+      },
+      "10.1007/s10916-016-0659-2": {
+        "label": 2,
+        "reason": "DIRECTLY Medical image retrieval using VQ (closest analog to document VQ)"
+      },
+      "10.1109/icdar.2013.114": {
+        "label": 1,
+        "reason": "Fisher Vector for writer retrieval, VQ-adjacent, document"
+      },
+      "10.1145/3488560.3498443": {
+        "label": 2,
+        "reason": "DIRECTLY Product Quantization for dense retrieval (RepCONC) - core VQ for document retrieval"
+      }
+    },
+    "q004": {
+      "10.1023/a:1022623210503": {
+        "label": 0,
+        "reason": "Learning Bayesian networks (1995), not BSTS"
+      },
+      "10.1093/aje/kwn164": {
+        "label": 0,
+        "reason": "Inverse probability weighting for marginal structural models, not BSTS"
+      },
+      "10.1214/09-ss057": {
+        "label": 1,
+        "reason": "Causal inference overview (Pearl), foundational, may mention BSTS but core is broader"
+      },
+      "10.1007/bf00994016": {
+        "label": 0,
+        "reason": "Learning Bayesian networks, not BSTS"
+      },
+      "10.1007/s10994-006-6889-7": {
+        "label": 0,
+        "reason": "MMHC Bayesian network structure learning, not BSTS"
+      },
+      "10.1364/josaa.20.001434": {
+        "label": 0,
+        "reason": "Hierarchical Bayesian inference in visual cortex, neuroscience, not BSTS for causal"
+      },
+      "10.1017/psrm.2014.7": {
+        "label": 0,
+        "reason": "Fixed/random effects for panel data, not BSTS"
+      },
+      "10.1186/s13717-016-0063-3": {
+        "label": 0,
+        "reason": "Structural equation modeling in ecology, not BSTS"
+      },
+      "10.1093/scan/nsw154": {
+        "label": 0,
+        "reason": "Constructed emotion theory, neuroscience, not BSTS"
+      },
+      "10.1038/s43586-020-00001-2": {
+        "label": 1,
+        "reason": "Bayesian statistics and modelling primer, broad, may cover BSTS"
+      },
+      "10.1080/00273171.2018.1454823": {
+        "label": 0,
+        "reason": "Gaussian graphical model, not BSTS"
+      },
+      "10.1109/jproc.2021.3058954": {
+        "label": 1,
+        "reason": "Causal representation learning, related to causal inference but not BSTS specifically"
+      },
+      "10.1214/14-aoas788": {
+        "label": 2,
+        "reason": "DIRECTLY BSTS for causal impact (Brodersen 2015) - canonical BSTS causal paper"
+      },
+      "10.1214/ss/1009211805": {
+        "label": 0,
+        "reason": "Confounding and collapsibility, no BSTS"
+      },
+      "10.1017/pan.2016.2": {
+        "label": 1,
+        "reason": "Generalized synthetic control, related to causal time series but not BSTS specifically"
+      },
+      "10.1126/sciadv.aau4996": {
+        "label": 1,
+        "reason": "Causal inference for large nonlinear time series, related but not BSTS specifically"
+      },
+      "10.1016/j.neuroimage.2009.11.015": {
+        "label": 0,
+        "reason": "Dynamic causal modeling for fMRI, not BSTS"
+      },
+      "10.3389/fnhum.2015.00001": {
+        "label": 0,
+        "reason": "Causal reasoning with forces (cognitive), not BSTS"
+      },
+      "10.1371/journal.pcbi.1000709": {
+        "label": 0,
+        "reason": "Comparing DCM families, neuroscience, not BSTS"
+      },
+      "10.1890/es12-00048.1": {
+        "label": 0,
+        "reason": "SEM implementation, not BSTS"
+      },
+      "10.1145/3444944": {
+        "label": 1,
+        "reason": "Causal inference survey (TKDD), may cover BSTS but broad"
+      },
+      "10.1162/neco_a_00999": {
+        "label": 0,
+        "reason": "Active inference, curiosity, not BSTS"
+      },
+      "10.1016/j.neuroimage.2009.08.065": {
+        "label": 0,
+        "reason": "Causal inference problems for fMRI, not BSTS"
+      },
+      "10.1214/19-ba1195": {
+        "label": 1,
+        "reason": "Bayesian Causal Forest (BCF), related Bayesian causal but not BSTS specifically"
+      },
+      "10.1214/12-ba703": {
+        "label": 0,
+        "reason": "Variational inference for variable selection, not BSTS"
+      },
+      "10.1093/ije/dyw114": {
+        "label": 1,
+        "reason": "Causal inference in epidemiology, may use BSTS but broad"
+      },
+      "10.1073/pnas.1510479113": {
+        "label": 1,
+        "reason": "Causal inference in econ/marketing, may use BSTS but broader"
+      },
+      "10.1086/525638": {
+        "label": 0,
+        "reason": "Interventions and causal inference (philosophy), not BSTS"
+      },
+      "10.1016/j.tranpol.2021.01.013": {
+        "label": 2,
+        "reason": "DIRECTLY BSTS for COVID-19 transportation impact, exact application"
+      }
+    },
+    "q005": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "Economics and identity, not UBI labor supply"
+      },
+      "10.1257/jel.47.1.5": {
+        "label": 0,
+        "reason": "Econometrics of program evaluation, not UBI"
+      },
+      "10.2307/2329018": {
+        "label": 0,
+        "reason": "Modern industrial revolution, exit, not UBI"
+      },
+      "10.1257/jep.10.4.139": {
+        "label": 0,
+        "reason": "Bargaining in marriage, not UBI"
+      },
+      "10.3389/fenrg.2021.743114": {
+        "label": 0,
+        "reason": "Sustainable energy transition, not UBI"
+      },
+      "10.1257/jep.7.1.133": {
+        "label": 0,
+        "reason": "Human development in poor countries, not UBI"
+      },
+      "10.1080/1369118x.2017.1294194": {
+        "label": 0,
+        "reason": "Platform labor gendered/racialized, not UBI"
+      },
+      "10.1257/jep.27.3.3": {
+        "label": 0,
+        "reason": "Top 1 percent, not UBI"
+      },
+      "10.2307/2534657": {
+        "label": 0,
+        "reason": "Earnings instability, not UBI"
+      },
+      "10.1257/pol.6.1.230": {
+        "label": 0,
+        "reason": "Top labor income taxation, not UBI"
+      },
+      "10.1257/jep.9.3.83": {
+        "label": 0,
+        "reason": "Consumption insurance, not UBI"
+      },
+      "10.1007/s12571-021-01246-9": {
+        "label": 0,
+        "reason": "Fisheries and aquaculture, not UBI"
+      },
+      "10.1186/s12960-017-0187-2": {
+        "label": 0,
+        "reason": "Health workforce labor projections, not UBI"
+      },
+      "10.1093/qje/qjt001": {
+        "label": 0,
+        "reason": "Job placement assistance, not UBI"
+      },
+      "10.1002/pam.21676": {
+        "label": 0,
+        "reason": "California paid family leave, not UBI"
+      },
+      "10.1093/wber/lhv003": {
+        "label": 0,
+        "reason": "Female labor force in India, not UBI"
+      },
+      "10.1257/jep.32.4.201": {
+        "label": 2,
+        "reason": "DIRECTLY UBI vs targeted transfers for anti-poverty (Haslag)"
+      },
+      "10.1257/jep.30.4.3": {
+        "label": 0,
+        "reason": "Immigrants and productivity, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030237": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in US and advanced countries (Hoynes/Rothstein)"
+      },
+      "10.1257/000282805775014425": {
+        "label": 0,
+        "reason": "Child labor regulation macro, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030229": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in developing world (Banerjee et al)"
+      },
+      "10.1186/s40176-018-0131-9": {
+        "label": 2,
+        "reason": "DIRECTLY cash transfers and adult labor market outcomes (Banerjee et al IZA)"
+      },
+      "10.3386/w9168": {
+        "label": 1,
+        "reason": "Welfare programs and labor supply (Moffitt), related to UBI discussion but not UBI specifically"
+      },
+      "10.3368/jhr.58.3.1217-9240r4": {
+        "label": 0,
+        "reason": "Health and labor supply near retirement, not UBI"
+      },
+      "10.1016/j.socec.2007.08.007": {
+        "label": 2,
+        "reason": "DIRECTLY unconditional basic income and labor supply (lottery pilot)"
+      },
+      "10.1007/s11158-020-09487-9": {
+        "label": 1,
+        "reason": "UBI and domination philosophy, not labor supply evidence"
+      },
+      "10.1016/j.jpubeco.2023.104881": {
+        "label": 2,
+        "reason": "DIRECTLY quantitative evaluation of UBI"
+      },
+      "10.2139/ssrn.3938983": {
+        "label": 2,
+        "reason": "DIRECTLY Child Tax Credit expansion and labor supply (UBI-adjacent)"
+      },
+      "10.1002/pam.22455": {
+        "label": 2,
+        "reason": "DIRECTLY universal cash transfers and labor market outcomes"
+      },
+      "10.2202/1932-0183.1100": {
+        "label": 1,
+        "reason": "UBI and labor contract philosophy, not labor supply empirics"
+      }
+    },
+    "q006": {
+      "10.1609/aaai.v35i12.17325": {
+        "label": 1,
+        "reason": "Long-sequence Transformer (Informer), but time-series not documents"
+      },
+      "10.18653/v1/2021.acl-long.353": {
+        "label": 0,
+        "reason": "Prefix-tuning continuous prompts, not long-context attention"
+      },
+      "10.1038/s41467-020-17591-w": {
+        "label": 0,
+        "reason": "Earthquake transformer, seismic not NLP"
+      },
+      "10.1162/tacl_a_00638": {
+        "label": 2,
+        "reason": "DIRECTLY Lost in the Middle - long context LM attention degradation paper"
+      },
+      "10.18653/v1/2020.emnlp-main.523": {
+        "label": 0,
+        "reason": "LUKE entity representations, not long-context attention"
+      },
+      "10.1609/aaai.v36i3.20158": {
+        "label": 0,
+        "reason": "Anchor DETR object detection, not NLP"
+      },
+      "10.1145/3485447.3512217": {
+        "label": 0,
+        "reason": "ET-BERT encrypted traffic, not long-doc"
+      },
+      "10.3390/su7010988": {
+        "label": 0,
+        "reason": "Soil biology, off-topic (interesting - 'degradation' in title matched but content unrelated)"
+      },
+      "10.1609/aaai.v37i11.26538": {
+        "label": 0,
+        "reason": "TrOCR text recognition, not long-context attention"
+      },
+      "10.18653/v1/2023.findings-emnlp.936": {
+        "label": 1,
+        "reason": "RWKV RNN-Transformer alternative, related to long-context"
+      },
+      "10.18653/v1/p18-1117": {
+        "label": 1,
+        "reason": "Context-aware NMT, document-level, not attention degradation"
+      },
+      "10.1609/aaai.v34i07.6903": {
+        "label": 0,
+        "reason": "Decoupled attention for OCR, not long-doc"
+      },
+      "10.5194/wes-1-1-2016": {
+        "label": 0,
+        "reason": "Wind energy long-term research, off-topic"
+      },
+      "10.18653/v1/d18-1325": {
+        "label": 1,
+        "reason": "Document-level NMT hierarchical attention, related to long context"
+      },
+      "10.3390/rs14122861": {
+        "label": 0,
+        "reason": "Satellite imagery YOLO, not NLP long-doc"
+      },
+      "10.18653/v1/2022.findings-naacl.55": {
+        "label": 2,
+        "reason": "DIRECTLY LongT5 long-input Transformer with TGlobal attention"
+      },
+      "10.1016/j.apenergy.2022.120565": {
+        "label": 0,
+        "reason": "Wind forecasting Transformer, not long-doc NLP"
+      },
+      "10.48550/arxiv.2507.02259": {
+        "label": 2,
+        "reason": "DIRECTLY MemAgent long-context LLM memory agent"
+      },
+      "10.4067/s0718-95162010000100004": {
+        "label": 0,
+        "reason": "Organic pollutant degradation, chemistry, not NLP"
+      },
+      "10.18653/v1/2020.findings-emnlp.232": {
+        "label": 2,
+        "reason": "DIRECTLY BlockBERT block sparse attention for long documents"
+      },
+      "10.1145/3533767.3534367": {
+        "label": 0,
+        "reason": "Binary code similarity (jTrans), not document"
+      },
+      "10.1093/jamia/ocac225": {
+        "label": 2,
+        "reason": "DIRECTLY long clinical text + transformer memory degradation"
+      },
+      "10.3390/s23052385": {
+        "label": 0,
+        "reason": "Vision transformer image restoration, not NLP"
+      },
+      "10.18653/v1/2025.acl-long.127": {
+        "label": 2,
+        "reason": "DIRECTLY long context finetuning/inference encoder (ModernBERT-style)"
+      },
+      "10.1145/3579371.3589057": {
+        "label": 1,
+        "reason": "FACT efficient Transformer, related to attention but not long-doc degradation"
+      },
+      "10.48550/arxiv.2402.16617": {
+        "label": 2,
+        "reason": "DIRECTLY long-context LLM with parallel encoding (CEPE)"
+      },
+      "10.18653/v1/2024.acl-long.91": {
+        "label": 2,
+        "reason": "DIRECTLY LongLLMLingua LLM long context prompt compression"
+      },
+      "10.1007/s11633-024-1393-8": {
+        "label": 0,
+        "reason": "Hierarchical attention vision transformer, not NLP"
+      },
+      "10.18653/v1/2020.emnlp-main.211": {
+        "label": 1,
+        "reason": "Pruning Transformer attention heads, related but not long-doc"
+      },
+      "10.18653/v1/2020.emnlp-main.57": {
+        "label": 2,
+        "reason": "DIRECTLY PAIR pre-trained transformers for long text generation"
+      }
+    },
+    "q007": {
+      "10.1016/s0140": {
+        "label": 1,
+        "reason": "DOI broken, title='Home visits' but abstract about UK agricultural emissions reduction; OpenAlex metadata corruption"
+      },
+      "10.1073/pnas.1116437108": {
+        "label": 1,
+        "reason": "Sustainable agriculture intensification, food demand focus not climate adaptation"
+      },
+      "10.1073/pnas.1701762114": {
+        "label": 1,
+        "reason": "Temperature impacts on yields, not adaptation specifically"
+      },
+      "10.1146/annurev-environ-020411-130608": {
+        "label": 2,
+        "reason": "DIRECTLY Climate Change and Food Systems review"
+      },
+      "10.1073/pnas.1222463110": {
+        "label": 2,
+        "reason": "DIRECTLY agricultural risks of climate change (GGCM intercomparison)"
+      },
+      "10.1038/nclimate2153": {
+        "label": 2,
+        "reason": "DIRECTLY meta-analysis of crop yield under climate change and adaptation"
+      },
+      "10.1073/pnas.0701890104": {
+        "label": 2,
+        "reason": "DIRECTLY adapting agriculture to climate change"
+      },
+      "10.1016/j.gloenvcha.2009.01.002": {
+        "label": 2,
+        "reason": "DIRECTLY farmers' adaptation methods to climate change (Ethiopia)"
+      },
+      "10.1007/s11356-022-19718-6": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts/adaptation/mitigation review"
+      },
+      "10.1088/1748-9326/5/1/014010": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts on African agriculture"
+      },
+      "10.1016/s1161-0301(02)00004-7": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and European agricultural productivity"
+      },
+      "10.1016/j.crm.2017.02.001": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and livestock impacts/adaptation/mitigation"
+      },
+      "10.1007/s13593-015-0285-2": {
+        "label": 2,
+        "reason": "DIRECTLY agroecology and climate-resilient farming systems"
+      },
+      "10.1016/j.eja.2010.11.003": {
+        "label": 2,
+        "reason": "DIRECTLY European crop production adaptation to climate change"
+      },
+      "10.1016/j.envsci.2008.11.002": {
+        "label": 2,
+        "reason": "DIRECTLY adaptation to climate change in Ethiopia and South Africa"
+      },
+      "10.1073/pnas.1222474110": {
+        "label": 2,
+        "reason": "DIRECTLY irrigation water + climate + agriculture"
+      },
+      "10.1023/a:1015862228270": {
+        "label": 2,
+        "reason": "DIRECTLY adaptation options in agriculture typology"
+      },
+      "10.1098/rstb.2005.1744": {
+        "label": 2,
+        "reason": "DIRECTLY socio-economic + climate impacts on agriculture 1990-2080"
+      },
+      "10.1257/pol.20130025": {
+        "label": 2,
+        "reason": "DIRECTLY US agriculture + climate adaptation (Burke et al)"
+      },
+      "10.1016/j.jenvman.2012.10.036": {
+        "label": 2,
+        "reason": "DIRECTLY adapting agriculture to climate change in Kenya"
+      },
+      "10.1073/pnas.1222465110": {
+        "label": 2,
+        "reason": "DIRECTLY climate change agriculture economic responses"
+      },
+      "10.1073/pnas.1210127110": {
+        "label": 1,
+        "reason": "Wine + climate change, conservation focus not agriculture adaptation"
+      },
+      "10.1098/rstb.2013.0089": {
+        "label": 2,
+        "reason": "DIRECTLY smallholder farmers + climate change + adaptation Madagascar"
+      },
+      "10.1007/s10668-019-00414-4": {
+        "label": 2,
+        "reason": "DIRECTLY South Asia agriculture + climate adaptation options"
+      },
+      "10.3389/fpls.2022.925548": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts on Asia agriculture"
+      },
+      "10.1016/j.jenvp.2020.101408": {
+        "label": 1,
+        "reason": "Predicting mitigation/adaptation behaviors, agriculture but psychology focus"
+      },
+      "10.1016/j.landusepol.2017.10.023": {
+        "label": 2,
+        "reason": "DIRECTLY farmers' adaptation to climate change Vietnam"
+      },
+      "10.1038/s41586-025-09085-w": {
+        "label": 2,
+        "reason": "DIRECTLY Nature 2025 global agriculture + climate adaptation"
+      },
+      "10.1111/jac.12415": {
+        "label": 2,
+        "reason": "DIRECTLY rice + climate change + adaptation Asian Mega deltas"
+      }
+    },
+    "q008": {
+      "10.1093/bioinformatics/bty294": {
+        "label": 1,
+        "reason": "GCN for polypharmacy side effects, related to drug interactions not repurposing"
+      },
+      "10.1093/bioinformatics/btaa921": {
+        "label": 1,
+        "reason": "GNN for drug-target binding (GraphDTA), mentions repurposing but DTI focus"
+      },
+      "10.1007/s10462-023-10465-9": {
+        "label": 0,
+        "reason": "Knowledge graphs survey, not GNN drug repurposing"
+      },
+      "10.1038/s41597-023-01960-3": {
+        "label": 1,
+        "reason": "KG for precision medicine, not GNN drug repurposing"
+      },
+      "10.1016/j.asoc.2020.106691": {
+        "label": 0,
+        "reason": "EfficientNet COVID diagnosis, CNN not GNN drug repurposing"
+      },
+      "10.1038/s43586-024-00294-7": {
+        "label": 1,
+        "reason": "GNN methods primer, not drug repurposing"
+      },
+      "10.1039/c9sc04336e": {
+        "label": 1,
+        "reason": "deepDTnet for target ID, drug repurposing related but DL not GNN"
+      },
+      "10.1371/journal.pcbi.1005690": {
+        "label": 0,
+        "reason": "TopologyNet biomolecular properties, not drug repurposing"
+      },
+      "10.1093/bib/bbab159": {
+        "label": 2,
+        "reason": "DIRECTLY graph ML for drug discovery + repurposing review"
+      },
+      "10.1038/s41467-021-27137-3": {
+        "label": 2,
+        "reason": "DIRECTLY KGE_NFM KG + recommendation for DTI drug repurposing"
+      },
+      "10.24963/ijcai.2018/468": {
+        "label": 1,
+        "reason": "DTI prediction deep learning, not GNN drug repurposing"
+      },
+      "10.1039/c9sc03414e": {
+        "label": 1,
+        "reason": "DEEPScreen CNN for DTI, not GNN drug repurposing"
+      },
+      "10.1093/bioinformatics/btz600": {
+        "label": 1,
+        "reason": "KG embeddings for protein drug targets, not GNN drug repurposing"
+      },
+      "10.1038/s42256-020-00285-9": {
+        "label": 1,
+        "reason": "DL framework COVID drug repurposing, not GNN specifically"
+      },
+      "10.1016/j.jbi.2021.103696": {
+        "label": 1,
+        "reason": "KG completion for COVID drug repurposing, not GNN"
+      },
+      "10.1038/s41591-024-03233-x": {
+        "label": 2,
+        "reason": "DIRECTLY TxGNN graph foundation model for zero-shot drug repurposing"
+      },
+      "10.1038/s41597-023-01974-x": {
+        "label": 0,
+        "reason": "GNN explainability, not drug repurposing"
+      },
+      "10.1038/s41467-021-27138-2": {
+        "label": 1,
+        "reason": "NeDRex network medicine for drug repurposing, not GNN specifically"
+      },
+      "10.1038/s41401-022-00996-2": {
+        "label": 1,
+        "reason": "DrugRep virtual screening, not GNN drug repurposing"
+      },
+      "10.1038/s41467-023-39301-y": {
+        "label": 1,
+        "reason": "Biomedical KG drug repurposing (multi-layer GBA), not GNN"
+      },
+      "10.3390/cancers15102705": {
+        "label": 0,
+        "reason": "Hybrid quantum NN for drug response, not GNN drug repurposing"
+      },
+      "10.18653/v1/2021.naacl-demos.8": {
+        "label": 1,
+        "reason": "COVID-19 literature KG + drug repurposing, NLP not GNN"
+      },
+      "10.1093/bib/bbad431": {
+        "label": 2,
+        "reason": "DIRECTLY DRAGNN weighted local info GNN for drug repositioning"
+      },
+      "10.1371/journal.pcbi.1010812": {
+        "label": 1,
+        "reason": "GNN for DDI prediction, not drug repurposing"
+      },
+      "10.1093/bib/bbac578": {
+        "label": 1,
+        "reason": "Heterogeneous GNN for DTI, not drug repurposing"
+      },
+      "10.1038/s41598-021-02353-5": {
+        "label": 2,
+        "reason": "DIRECTLY GNN + COVID drug repurposing (Sci Rep)"
+      },
+      "10.1016/j.compbiomed.2022.105992": {
+        "label": 2,
+        "reason": "DIRECTLY computational drug repurposing using GNN"
+      },
+      "10.1093/bioinformatics/btab191": {
+        "label": 2,
+        "reason": "DIRECTLY GraphRepur GNN for breast cancer drug repurposing"
+      },
+      "10.21203/rs.3.rs-114758/v1": {
+        "label": 2,
+        "reason": "DIRECTLY GNN for COVID drug repurposing (preprint)"
+      },
+      "10.1109/jbhi.2023.3328337": {
+        "label": 2,
+        "reason": "DIRECTLY AntiViralDL GNN + self-supervised for antiviral drug repurposing"
+      }
+    },
+    "q009": {
+      "10.1136/bmj.n2061": {
+        "label": 1,
+        "reason": "MRC complex interventions framework, related but not digital health specific"
+      },
+      "10.1136/bmj.i5239": {
+        "label": 1,
+        "reason": "CONSORT pilot trial reporting, not digital health RCT design"
+      },
+      "10.1161/cir.0b013e31823ba622": {
+        "label": 0,
+        "reason": "ACCF/AHA PCI cardiology guideline, off-topic"
+      },
+      "10.1016/s0140-6736(24)01296-0": {
+        "label": 0,
+        "reason": "Dementia prevention Lancet 2024, not digital intervention RCT"
+      },
+      "10.1038/s41746-018-0029-1": {
+        "label": 0,
+        "reason": "Deep learning with EHR, not RCT digital intervention design"
+      },
+      "10.1007/s12160-016-9830-8": {
+        "label": 2,
+        "reason": "DIRECTLY JITAI mobile health design principles"
+      },
+      "10.1016/j.amepre.2016.06.015": {
+        "label": 1,
+        "reason": "Digital behavior change engagement, not RCT design"
+      },
+      "10.1097/aln.0b013e3181fcbfd9": {
+        "label": 0,
+        "reason": "Preoperative fasting anesthesiology guideline, off-topic"
+      },
+      "10.2196/jmir.7126": {
+        "label": 2,
+        "reason": "DIRECTLY digital interventions development/evaluation workshop recommendations"
+      },
+      "10.1002/wps.20673": {
+        "label": 2,
+        "reason": "DIRECTLY meta-analysis of 66 RCTs of app-supported smartphone interventions"
+      },
+      "10.1016/s2215-0366(14)70312-8": {
+        "label": 0,
+        "reason": "Mental health schools, not digital RCT design"
+      },
+      "10.1136/bmj.i1174": {
+        "label": 2,
+        "reason": "DIRECTLY mHealth evidence reporting checklist (mERA)"
+      },
+      "10.1542/peds.2013-3219": {
+        "label": 1,
+        "reason": "FITKids RCT physical activity, not digital intervention"
+      },
+      "10.2196/jmir.1909": {
+        "label": 2,
+        "reason": "DIRECTLY mobile phone telemonitoring heart failure RCT"
+      },
+      "10.1001/jama.2021.14075": {
+        "label": 1,
+        "reason": "AGReMA mediation reporting, not digital RCT design"
+      },
+      "10.1038/s44159-021-00003-1": {
+        "label": 1,
+        "reason": "Accessible digital mental health, not RCT design specifically"
+      },
+      "10.1176/appi.ps.201600541": {
+        "label": 1,
+        "reason": "Digital mental health research problems, not RCT design"
+      },
+      "10.1016/s2589-7500(20)30017-0": {
+        "label": 2,
+        "reason": "DIRECTLY STARS-ADHD digital therapeutic RCT (Lancet Digital Health)"
+      },
+      "10.1016/j.heliyon.2021.e07014": {
+        "label": 1,
+        "reason": "AI writing assistant RCT in higher ed, digital but not health"
+      },
+      "10.1186/1472-6963-6-30": {
+        "label": 0,
+        "reason": "Heart failure self-management (non-digital), not digital RCT design"
+      },
+      "10.1002/cncr.30172": {
+        "label": 2,
+        "reason": "DIRECTLY telehealth internet exercise breast cancer RCT"
+      },
+      "10.2196/mhealth.3882": {
+        "label": 2,
+        "reason": "DIRECTLY mHealth diabetes self-management 1-year RCT"
+      },
+      "10.1002/jcsm.12201": {
+        "label": 0,
+        "reason": "Multimodal cachexia cancer intervention, not digital"
+      },
+      "10.2196/jmir.3510": {
+        "label": 2,
+        "reason": "DIRECTLY web-based intervention rheumatoid arthritis RCT"
+      },
+      "10.2196/16460": {
+        "label": 1,
+        "reason": "Digital peer support mental health review, not RCT design"
+      },
+      "10.2196/jmir.4391": {
+        "label": 2,
+        "reason": "DIRECTLY eHealth/mHealth trial methodology for behavioral interventions"
+      },
+      "10.1002/wps.20614": {
+        "label": 0,
+        "reason": "Pharmacological + non-pharm schizophrenia physical health, not digital"
+      },
+      "10.1159/000490574": {
+        "label": 1,
+        "reason": "Psychological intervention trial recommendations, not digital"
+      },
+      "10.1186/s12966-016-0362-1": {
+        "label": 1,
+        "reason": "Behavioral SSB reduction intervention RCT, not digital"
+      }
+    },
+    "q010": {
+      "10.1038/s41562-021-01079-8": {
+        "label": 1,
+        "reason": "OxCGRT pandemic policy database, not trust/compliance focus"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "ChatGPT multidisciplinary perspectives, off-topic"
+      },
+      "10.1016/j.ijinfomgt.2022.102542": {
+        "label": 0,
+        "reason": "Metaverse perspectives, off-topic"
+      },
+      "10.1007/s10479-020-03640-6": {
+        "label": 0,
+        "reason": "Viable supply chain COVID, not trust/policy compliance"
+      },
+      "10.1016/j.jpubeco.2020.104316": {
+        "label": 2,
+        "reason": "DIRECTLY trust and compliance to public health policies COVID"
+      },
+      "10.1007/s10916-020-01596-5": {
+        "label": 0,
+        "reason": "Telemedicine COVID, not trust/policy compliance"
+      },
+      "10.1371/journal.pone.0249596": {
+        "label": 1,
+        "reason": "Partisanship + COVID health behavior, related but not institutional trust focus"
+      },
+      "10.1007/s11077-020-09381-4": {
+        "label": 1,
+        "reason": "COVID-19 policy sciences, not trust specifically"
+      },
+      "10.1016/s0140-6736(15)00946-0": {
+        "label": 1,
+        "reason": "Ebola Harvard-LSHTM panel, pandemic response but not trust/compliance focus"
+      },
+      "10.1080/14494035.2020.1787628": {
+        "label": 1,
+        "reason": "Mobilizing policy capacity COVID, related to state responses but not trust"
+      },
+      "10.1080/13548506.2020.1772988": {
+        "label": 2,
+        "reason": "DIRECTLY compliance COVID + trust in science"
+      },
+      "10.15585/mmwr.rr6601a1": {
+        "label": 0,
+        "reason": "CDC pandemic influenza community mitigation, not trust/policy"
+      },
+      "10.1186/1471-2458-11-575": {
+        "label": 2,
+        "reason": "DIRECTLY government trust + H1N1 protective measures Netherlands"
+      },
+      "10.1016/j.ijinfomgt.2020.102180": {
+        "label": 1,
+        "reason": "Agile governance COVID, not trust/compliance focus"
+      },
+      "10.1038/s41562-021-01181-x": {
+        "label": 1,
+        "reason": "Worldwide adherence COVID, not institutional trust focus"
+      },
+      "10.1038/s41562-020-0909-7": {
+        "label": 0,
+        "reason": "CoronaNet government response dataset, not trust"
+      },
+      "10.1017/iop.2020.48": {
+        "label": 0,
+        "reason": "Pandemics I-O psychology, not institutional trust"
+      },
+      "10.1017/s0033291721001306": {
+        "label": 2,
+        "reason": "DIRECTLY trust in government COVID + health behavior compliance"
+      },
+      "10.34172/aim.2020.02": {
+        "label": 1,
+        "reason": "COVID Iran health policy, country case study not trust focus"
+      },
+      "10.30636/jbpa.32.172": {
+        "label": 2,
+        "reason": "DIRECTLY trust in democratic institutions during COVID lockdown (Denmark)"
+      },
+      "10.1016/j.healthpol.2020.06.009": {
+        "label": 2,
+        "reason": "DIRECTLY public sentiment + trust + COVID containment policies EU"
+      },
+      "10.1007/s00148-021-00848-z": {
+        "label": 2,
+        "reason": "DIRECTLY stay-at-home orders + trust + social distancing"
+      },
+      "10.1093/eurpub/ckaa181": {
+        "label": 2,
+        "reason": "DIRECTLY public trust + COVID policy legitimacy"
+      },
+      "10.3389/fpsyt.2020.00821": {
+        "label": 1,
+        "reason": "COVID psychological responses Greece, related to compliance but psychology focus"
+      },
+      "10.1371/journal.pone.0252892": {
+        "label": 2,
+        "reason": "DIRECTLY trust + compliance 9 countries COVID"
+      },
+      "10.1016/j.hlpt.2020.08.021": {
+        "label": 0,
+        "reason": "COVID Ireland response, country case study no trust focus"
+      },
+      "10.1098/rsos.200589": {
+        "label": 2,
+        "reason": "DIRECTLY COVIDiSTRESS global trust + compliance 48 countries"
+      },
+      "10.1371/journal.pone.0240644": {
+        "label": 1,
+        "reason": "Healthcare confidence + mobility COVID, related to compliance but not institutional trust"
+      },
+      "10.2147/rmhp.s278774": {
+        "label": 2,
+        "reason": "DIRECTLY public trust + COVID compliance 102k individuals 102 countries"
+      },
+      "10.1371/journal.pone.0049806": {
+        "label": 2,
+        "reason": "DIRECTLY trust in institutions + H1N1 pandemic Switzerland"
+      }
+    },
+    "q011": {
+      "10.1038/s41746-020-00323-1": {
+        "label": 2,
+        "reason": "DIRECTLY future of digital health with FL"
+      },
+      "10.1007/s41666-020-00082-4": {
+        "label": 2,
+        "reason": "DIRECTLY FL for healthcare informatics"
+      },
+      "10.1038/s42256-020-0186-1": {
+        "label": 2,
+        "reason": "DIRECTLY secure privacy-preserving FL in medical imaging"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 1,
+        "reason": "Personalized FL survey, not healthcare specific"
+      },
+      "10.1109/access.2020.3013541": {
+        "label": 1,
+        "reason": "FL survey enabling technologies, not healthcare privacy"
+      },
+      "10.1609/aaai.v36i8.20819": {
+        "label": 1,
+        "reason": "FedProto heterogeneous clients, not healthcare"
+      },
+      "10.1038/s42256-021-00337-8": {
+        "label": 2,
+        "reason": "DIRECTLY end-to-end privacy preserving DL on multi-institutional medical imaging"
+      },
+      "10.1016/j.comcom.2022.09.012": {
+        "label": 0,
+        "reason": "FL for intrusion detection, not healthcare"
+      },
+      "10.1109/access.2022.3151670": {
+        "label": 1,
+        "reason": "Differential privacy for FL survey, not healthcare specific"
+      },
+      "10.1016/j.patcog.2024.110424": {
+        "label": 2,
+        "reason": "DIRECTLY FL for medical image analysis survey"
+      },
+      "10.1109/ojcs.2020.2992630": {
+        "label": 0,
+        "reason": "FL for vehicular IoT, not healthcare"
+      },
+      "10.1007/s10586-022-03658-4": {
+        "label": 2,
+        "reason": "DIRECTLY FL-based AI in smart healthcare"
+      },
+      "10.1016/j.icte.2023.02.007": {
+        "label": 1,
+        "reason": "Healthcare privacy/security, not FL"
+      },
+      "10.1038/s41598-022-05539-7": {
+        "label": 2,
+        "reason": "DIRECTLY FL + differential privacy for medical image analysis"
+      },
+      "10.1109/access.2021.3118642": {
+        "label": 0,
+        "reason": "FL cybersecurity IoT, not healthcare"
+      },
+      "10.1109/tkde.2024.3352628": {
+        "label": 1,
+        "reason": "Vertical FL, not healthcare specific"
+      },
+      "10.1038/s41467-022-30714-9": {
+        "label": 1,
+        "reason": "Federated GNN privacy personalization, not healthcare"
+      },
+      "10.1145/3412357": {
+        "label": 2,
+        "reason": "DIRECTLY FL in medical context systematic literature review"
+      },
+      "10.1109/access.2021.3075203": {
+        "label": 1,
+        "reason": "FL vulnerabilities survey, not healthcare"
+      },
+      "10.1109/mnet.011.2000045": {
+        "label": 0,
+        "reason": "FL IoT reconfigurable, mentions healthcare but general"
+      },
+      "10.1038/s41746-021-00489-2": {
+        "label": 2,
+        "reason": "DIRECTLY privacy-first health research with FL"
+      },
+      "10.1145/3533708": {
+        "label": 2,
+        "reason": "DIRECTLY FL for healthcare domain pipeline"
+      },
+      "10.3390/app12199901": {
+        "label": 1,
+        "reason": "FL privacy security survey, not healthcare"
+      },
+      "10.1038/s41467-023-38569-4": {
+        "label": 1,
+        "reason": "Decentralized FL proxy, mentions healthcare+finance, not specific"
+      },
+      "10.1109/jbhi.2022.3185673": {
+        "label": 2,
+        "reason": "DIRECTLY privacy-sensitive medical data with FL challenges"
+      },
+      "10.1016/j.comcom.2021.02.014": {
+        "label": 1,
+        "reason": "Privacy preserving distributed ML FL, not healthcare"
+      },
+      "10.1109/tbdata.2022.3190835": {
+        "label": 1,
+        "reason": "Privacy-preserving aggregation FL survey, not healthcare"
+      },
+      "10.1109/jiot.2022.3201117": {
+        "label": 1,
+        "reason": "Trustworthy FL blockchain, mentions healthcare but general"
+      },
+      "10.1109/tce.2023.3315415": {
+        "label": 2,
+        "reason": "DIRECTLY blockchain + FL + EHR privacy preservation"
+      },
+      "10.1109/access.2023.3301162": {
+        "label": 2,
+        "reason": "DIRECTLY advancing FL through privacy preservation in healthcare"
+      }
+    },
+    "q012": {
+      "10.1016/j.gloenvcha.2016.05.009": {
+        "label": 1,
+        "reason": "SSPs overview, not specifically carbon pricing OECD"
+      },
+      "10.1257/0895330042162430": {
+        "label": 0,
+        "reason": "Capital Asset Pricing Model finance, off-topic"
+      },
+      "10.3390/su12135488": {
+        "label": 0,
+        "reason": "Food security developing, not OECD carbon pricing"
+      },
+      "10.5194/acp-17-8681-2017": {
+        "label": 0,
+        "reason": "Global PM emissions, not carbon pricing"
+      },
+      "10.1016/j.cpa.2019.102097": {
+        "label": 0,
+        "reason": "ESG cost of debt EU, not carbon pricing"
+      },
+      "10.1016/j.ecolecon.2015.03.020": {
+        "label": 1,
+        "reason": "Carbon pricing + banking/monetary policy, not OECD specific"
+      },
+      "10.7916/d8-w2nc-4103": {
+        "label": 2,
+        "reason": "DIRECTLY High-Level Commission on Carbon Prices (Stiglitz/Stern)"
+      },
+      "10.1016/j.erss.2019.02.001": {
+        "label": 1,
+        "reason": "Household climate policies, related to carbon pricing but focus households"
+      },
+      "10.1016/j.jclepro.2019.01.282": {
+        "label": 0,
+        "reason": "FDI CO2 MENA, not OECD carbon pricing"
+      },
+      "10.1016/j.fuel.2023.127776": {
+        "label": 0,
+        "reason": "CCUS technologies, not carbon pricing"
+      },
+      "10.1257/jep.26.4.27": {
+        "label": 0,
+        "reason": "Contingent valuation, not carbon pricing"
+      },
+      "10.1073/pnas.1918128117": {
+        "label": 2,
+        "reason": "DIRECTLY EU ETS reduced CO2 emissions despite low prices (OECD)"
+      },
+      "10.1002/wcc.462": {
+        "label": 1,
+        "reason": "Carbon pricing 7 reasons + political economy, not OECD effectiveness"
+      },
+      "10.1146/annurev.energy.27.122001.083444": {
+        "label": 0,
+        "reason": "Renewable energy developing, not OECD carbon pricing"
+      },
+      "10.5194/bg-9-1845-2012": {
+        "label": 0,
+        "reason": "CO2 emissions fossil-fuel accounting, not carbon pricing"
+      },
+      "10.2307/3146894": {
+        "label": 0,
+        "reason": "Conservation payments, not carbon pricing"
+      },
+      "10.1080/14693062.2018.1492897": {
+        "label": 2,
+        "reason": "DIRECTLY carbon taxes + ETS performance 2005-2015 (OECD)"
+      },
+      "10.1016/j.oneear.2021.10.002": {
+        "label": 0,
+        "reason": "CCS at end of lost decade, not carbon pricing"
+      },
+      "10.1038/s41558-021-01250-z": {
+        "label": 1,
+        "reason": "Border carbon adjustments, related to carbon pricing OECD"
+      },
+      "10.1016/j.enpol.2018.06.020": {
+        "label": 1,
+        "reason": "Carbon pricing + deep decarbonisation, not OECD effectiveness"
+      },
+      "10.1007/s10018-016-0144-7": {
+        "label": 1,
+        "reason": "Carbon taxes acceptability survey, not OECD effectiveness"
+      },
+      "10.5089/9781513595405.001": {
+        "label": 1,
+        "reason": "Fossil fuel subsidies, opposite of carbon pricing but related"
+      },
+      "10.1016/j.jeem.2010.04.004": {
+        "label": 1,
+        "reason": "Carbon markets + innovation, not OECD effectiveness"
+      },
+      "10.1016/j.eneco.2023.106642": {
+        "label": 1,
+        "reason": "Energy transition OECD, not carbon pricing specifically"
+      },
+      "10.1007/s11356-022-23185-4": {
+        "label": 0,
+        "reason": "FDI CO2 BRICS, not OECD carbon pricing"
+      },
+      "10.1016/j.envsci.2010.10.010": {
+        "label": 1,
+        "reason": "Copenhagen Accord abatement costs + carbon prices"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Social cost of carbon UK, not OECD effectiveness"
+      },
+      "10.1016/j.eneco.2023.107198": {
+        "label": 1,
+        "reason": "Environmental policy OECD renewables, not carbon pricing effectiveness"
+      },
+      "10.1007/s10640-021-00594-6": {
+        "label": 2,
+        "reason": "DIRECTLY carbon pricing + low-carbon innovation + deep decarbonisation controversies"
+      },
+      "10.1007/s10640-021-00548-y": {
+        "label": 1,
+        "reason": "Trade in carbon and carbon tariffs, related to carbon pricing"
+      }
+    },
+    "q013": {
+      "10.1126/science.abj8754": {
+        "label": 2,
+        "reason": "DIRECTLY three-track NN for protein structure prediction (RoseTTAFold), transformer-adjacent"
+      },
+      "10.1038/s41587-021-01156-3": {
+        "label": 1,
+        "reason": "SignalP 6.0 protein language model, signal peptides not structure"
+      },
+      "10.1093/nar/gkae1010": {
+        "label": 0,
+        "reason": "UniProt 2025 database, not structure prediction"
+      },
+      "10.1038/s41592-021-01252-x": {
+        "label": 0,
+        "reason": "Enformer gene expression, not protein structure"
+      },
+      "10.1038/s41592-019-0598-1": {
+        "label": 1,
+        "reason": "Rational protein engineering, not structure prediction"
+      },
+      "10.1038/s41586-023-06139-9": {
+        "label": 0,
+        "reason": "Transfer learning network biology, not protein structure"
+      },
+      "10.1093/bioinformatics/btac020": {
+        "label": 1,
+        "reason": "ProteinBERT, not structure prediction specifically"
+      },
+      "10.1093/nar/gkae1082": {
+        "label": 0,
+        "reason": "InterPro 2025 protein classification, not structure"
+      },
+      "10.1038/s41467-022-32007-7": {
+        "label": 1,
+        "reason": "ProtGPT2 protein design, not structure"
+      },
+      "10.1093/nar/gkac278": {
+        "label": 0,
+        "reason": "DeepLoc 2.0 subcellular localization, not structure"
+      },
+      "10.1038/s41586-024-08328-6": {
+        "label": 0,
+        "reason": "Tabular foundation model, not protein"
+      },
+      "10.1186/s12859-019-3220-8": {
+        "label": 1,
+        "reason": "Language of life transfer learning, not structure specifically"
+      },
+      "10.1093/bioinformatics/btaa880": {
+        "label": 0,
+        "reason": "MolTrans DTI prediction, not protein structure"
+      },
+      "10.1093/bioinformatics/btaa524": {
+        "label": 0,
+        "reason": "TransformerCPI compound-protein interaction, not structure"
+      },
+      "10.1038/s41588-023-01465-0": {
+        "label": 1,
+        "reason": "ESM1b variant effects, related to protein LM not structure specifically"
+      },
+      "10.1038/s41587-022-01432-w": {
+        "label": 2,
+        "reason": "DIRECTLY single-sequence protein structure prediction using LM"
+      },
+      "10.1093/nar/gkac439": {
+        "label": 1,
+        "reason": "NetSurfP-3.0 protein structural features, related but not transformer-based"
+      },
+      "10.1093/nar/gkab354": {
+        "label": 1,
+        "reason": "PredictProtein, classic tool not transformer"
+      },
+      "10.1016/j.ccell.2023.08.002": {
+        "label": 0,
+        "reason": "Transformer biomarker CRC histology, not protein"
+      },
+      "10.1038/s41598-022-12201-9": {
+        "label": 0,
+        "reason": "PPI graph NN, not structure prediction"
+      },
+      "10.1038/s41598-020-79682-4": {
+        "label": 1,
+        "reason": "Transformer de novo drug generation, not structure"
+      },
+      "10.1038/s41467-023-42528-4": {
+        "label": 1,
+        "reason": "trRosettaRNA RNA structure, not protein"
+      },
+      "10.1038/s41524-023-01016-5": {
+        "label": 0,
+        "reason": "TransPolymer, not protein"
+      },
+      "10.1038/s43588-022-00373-3": {
+        "label": 2,
+        "reason": "DIRECTLY single-sequence protein structure prediction with supervised transformer"
+      },
+      "10.1093/bib/bbab564": {
+        "label": 1,
+        "reason": "AlphaFold2-aware protein-DNA binding, not structure prediction"
+      },
+      "10.1101/2021.07.31.454572": {
+        "label": 2,
+        "reason": "DIRECTLY protein LM embeddings for alignment-free structure prediction"
+      },
+      "10.34133/research.0240": {
+        "label": 0,
+        "reason": "Transformer PPI sites, not structure"
+      },
+      "10.1093/bioinformatics/btad718": {
+        "label": 1,
+        "reason": "DeepProSite binding site using ESMFold, related to structure"
+      },
+      "10.1021/acs.jcim.2c00060": {
+        "label": 0,
+        "reason": "DPI prediction STAMP-DPI, not structure"
+      },
+      "10.1093/bioinformatics/btad208": {
+        "label": 1,
+        "reason": "Protein function transformers EGNN, not structure specifically"
+      }
+    },
+    "q014": {
+      "10.1016/s0140-6736(96)07226-1": {
+        "label": 0,
+        "reason": "Socioeconomic inequalities morbidity, health not education mobility"
+      },
+      "10.1093/qje/qjz042": {
+        "label": 1,
+        "reason": "Race and economic opportunity US, intergenerational but not education focus"
+      },
+      "10.1257/jep.8.4.145": {
+        "label": 0,
+        "reason": "Intergenerational wealth transfers, not education mobility"
+      },
+      "10.1093/esr/jcn026": {
+        "label": 2,
+        "reason": "DIRECTLY persistent inequality in educational attainment + institutional context"
+      },
+      "10.1111/j.1467-6419.2011.00690.x": {
+        "label": 1,
+        "reason": "Cross-country mobility rankings, mentions education but main focus income"
+      },
+      "10.1353/sof.2006.0108": {
+        "label": 2,
+        "reason": "DIRECTLY education + inequalities of place (spatial stratification)"
+      },
+      "10.1257/0002828043052213": {
+        "label": 2,
+        "reason": "DIRECTLY intergenerational persistence of earnings + early/college education"
+      },
+      "10.1177/0003122416684777": {
+        "label": 2,
+        "reason": "DIRECTLY immigrant paradox + contextual attainment + intergenerational educational mobility"
+      },
+      "10.1162/003355397555145": {
+        "label": 1,
+        "reason": "How much sorting increases inequality, not specifically education mobility"
+      },
+      "10.1016/s0169-7218(11)02414-2": {
+        "label": 1,
+        "reason": "Recent developments intergenerational mobility, may cover education"
+      },
+      "10.1093/sf/sov075": {
+        "label": 2,
+        "reason": "DIRECTLY Great Gatsby Curve + income inequality + intergenerational mobility + education as key"
+      },
+      "10.1016/j.worlddev.2020.105115": {
+        "label": 0,
+        "reason": "Inequality of opportunity + income, not education mobility"
+      },
+      "10.1146/annurev-soc-071811-145521": {
+        "label": 1,
+        "reason": "Intergenerational mobility Latin America, not education focus specifically"
+      },
+      "10.2139/ssrn.2314815": {
+        "label": 1,
+        "reason": "Income inequality + opportunity + mobility, not education focus"
+      },
+      "10.1016/j.jdeveco.2018.05.016": {
+        "label": 2,
+        "reason": "DIRECTLY educational inequality + intergenerational mobility Latin America database"
+      },
+      "10.1093/oxrep/grw030": {
+        "label": 2,
+        "reason": "DIRECTLY higher education + career opportunities + intergenerational inequality"
+      },
+      "10.1016/j.chieco.2015.12.009": {
+        "label": 2,
+        "reason": "DIRECTLY education + income inequality + intergenerational mobility"
+      },
+      "10.1093/sf/sou092": {
+        "label": 0,
+        "reason": "Income inequality + income mobility US, not education"
+      },
+      "10.1353/eco.2001.0010": {
+        "label": 1,
+        "reason": "Intergenerational mobility Latin America, not education focus"
+      },
+      "10.1007/s10887-007-9019-x": {
+        "label": 1,
+        "reason": "Inequality + mobility, not education focus"
+      },
+      "10.1111/j.1749-124x.2013.12013.x": {
+        "label": 2,
+        "reason": "DIRECTLY inequality in intergenerational mobility of education in China"
+      },
+      "10.1006/ssre.1997.0598": {
+        "label": 2,
+        "reason": "DIRECTLY differential fertility + intergenerational educational mobility + racial"
+      },
+      "10.1016/j.jdeveco.2014.05.007": {
+        "label": 1,
+        "reason": "Intergenerational mobility African economy, not education focus"
+      },
+      "10.1016/j.red.2015.07.006": {
+        "label": 2,
+        "reason": "DIRECTLY public education financing + earnings inequality + intergenerational mobility"
+      },
+      "10.1177/0003122419885094": {
+        "label": 0,
+        "reason": "Inequality + intergenerational class mobility 39 countries, not education"
+      },
+      "10.1080/00036846.2015.1031877": {
+        "label": 2,
+        "reason": "DIRECTLY social mobility + inequality + intergenerational transmission of education in urban China"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Great Gatsby Curve China, not education specifically"
+      }
+    },
+    "q015": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "ChatGPT LLM in education, not few-shot prompting QA"
+      },
+      "10.1038/s41586-023-06291-2": {
+        "label": 2,
+        "reason": "DIRECTLY Med-PaLM clinical knowledge + multi-benchmark medical QA"
+      },
+      "10.1186/s40537-021-00492-0": {
+        "label": 0,
+        "reason": "Text data augmentation, not few-shot prompting"
+      },
+      "10.18653/v1/2021.acl-long.295": {
+        "label": 1,
+        "reason": "Pre-trained LMs better few-shot learners, not specifically prompting for QA"
+      },
+      "10.3390/app13095783": {
+        "label": 0,
+        "reason": "ChatGPT for education and research, not few-shot QA"
+      },
+      "10.1038/s41591-024-03423-7": {
+        "label": 2,
+        "reason": "DIRECTLY expert-level medical QA with LLMs (Med-PaLM 2)"
+      },
+      "10.2196/50638": {
+        "label": 2,
+        "reason": "DIRECTLY prompt engineering as emerging skill for medical professionals"
+      },
+      "10.1038/s41586-024-07421-0": {
+        "label": 1,
+        "reason": "Detecting hallucinations in LLMs, not few-shot prompting"
+      },
+      "10.1145/3491102.3517582": {
+        "label": 2,
+        "reason": "DIRECTLY AI Chains transparent and controllable human-AI interaction chaining LLM prompts"
+      },
+      "10.1038/s41746-024-01029-4": {
+        "label": 2,
+        "reason": "DIRECTLY prompt engineering in consistency and reliability with evidence-based guideline for LLMs"
+      },
+      "10.18653/v1/2022.emnlp-main.130": {
+        "label": 2,
+        "reason": "DIRECTLY LLMs are few-shot clinical information extractors"
+      },
+      "10.18653/v1/2023.acl-long.147": {
+        "label": 1,
+        "reason": "Plan-and-Solve Prompting zero-shot CoT, related but not few-shot QA"
+      },
+      "10.1016/j.patter.2024.100943": {
+        "label": 2,
+        "reason": "DIRECTLY LLMs reason about medical questions + prompting scenarios (CoT, few-shot)"
+      },
+      "10.18653/v1/2022.acl-long.576": {
+        "label": 1,
+        "reason": "Pre-trained Prompt Tuning for few-shot, related but not QA"
+      },
+      "10.1162/coli.2007.33.1.41": {
+        "label": 1,
+        "reason": "QA in restricted domains, related but old and not prompting"
+      },
+      "10.2196/55318": {
+        "label": 2,
+        "reason": "DIRECTLY empirical evaluation of prompting strategies for LLMs in zero-shot clinical NLP"
+      },
+      "10.1109/cvpr52688.2022.00886": {
+        "label": 0,
+        "reason": "Few-shot learning in CV, not LLM prompting"
+      },
+      "10.18653/v1/2024.naacl-long.228": {
+        "label": 1,
+        "reason": "Role-Play Prompting zero-shot, not few-shot QA"
+      },
+      "10.18653/v1/2021.acl-long.316": {
+        "label": 1,
+        "reason": "Generation-Augmented Retrieval Open-Domain QA, not few-shot prompting"
+      },
+      "10.1609/aaai.v38i17.29889": {
+        "label": 2,
+        "reason": "DIRECTLY Knowledge Graph Prompting for Multi-Document QA"
+      },
+      "10.18653/v1/2022.emnlp-main.616": {
+        "label": 1,
+        "reason": "Few-shot multilingual generative LMs, not specifically domain QA"
+      },
+      "10.1007/s10115-022-01744-y": {
+        "label": 1,
+        "reason": "Conversational QA survey, not few-shot prompting"
+      },
+      "10.18653/v1/2022.naacl-main.420": {
+        "label": 1,
+        "reason": "Template-free Prompt Tuning for few-shot NER, not QA"
+      },
+      "10.18653/v1/2023.findings-emnlp.710": {
+        "label": 1,
+        "reason": "LLM few-shot IE reranker, not domain QA prompting"
+      },
+      "10.1038/s41598-024-64827-6": {
+        "label": 2,
+        "reason": "DIRECTLY OpenMedLM prompt engineering outperforms fine-tuning in medical QA"
+      },
+      "10.18653/v1/2023.nlrse-1.7": {
+        "label": 2,
+        "reason": "DIRECTLY Knowledge-Augmented LM Prompting for zero-shot KGQA"
+      },
+      "10.1093/jamia/ocad256": {
+        "label": 1,
+        "reason": "ChatGPT family biomedical reasoning, not few-shot prompting strategies"
+      },
+      "10.1609/aaai.v38i17.29823": {
+        "label": 2,
+        "reason": "DIRECTLY FlexKBQA LLM-powered few-shot KBQA framework"
+      },
+      "10.48550/arxiv.2305.12586": {
+        "label": 2,
+        "reason": "DIRECTLY enhancing few-shot Text-to-SQL prompt design strategies"
+      },
+      "10.18653/v1/2023.acl-long.385": {
+        "label": 2,
+        "reason": "DIRECTLY few-shot in-context learning on KBQA"
+      }
+    },
+    "q016": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "Economics and identity, not gender wage empirics"
+      },
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "China syndrome import competition, not gender wage"
+      },
+      "10.1257/jel.20160995": {
+        "label": 2,
+        "reason": "DIRECTLY gender wage gap extent trends explanations (PSID empirical)"
+      },
+      "10.1257/jep.15.2.103": {
+        "label": 0,
+        "reason": "Mergers evidence, off-topic"
+      },
+      "10.1093/qje/qjz014": {
+        "label": 1,
+        "reason": "Minimum wage low-wage jobs, not gender specific"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 0,
+        "reason": "Automation new tasks, not gender wage empirics"
+      },
+      "10.1080/135457097338799": {
+        "label": 2,
+        "reason": "DIRECTLY bargaining + gender relations (within and beyond household)"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "Social skills labor market, not gender wage"
+      },
+      "10.1002/jae.788": {
+        "label": 1,
+        "reason": "Counterfactual wage decomposition, not gender-specific empirical"
+      },
+      "10.1093/qje/qjt006": {
+        "label": 1,
+        "reason": "West German wage inequality, not gender focus"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "China shock labor-market adjustment, not gender wage"
+      },
+      "10.1353/jhr.2008.0017": {
+        "label": 0,
+        "reason": "Personality traits, not gender wage empirics"
+      },
+      "10.2307/2675569": {
+        "label": 1,
+        "reason": "Housework gender division, related but not labor market wage empirics"
+      },
+      "10.2307/2070285": {
+        "label": 2,
+        "reason": "DIRECTLY Economics of Women Men and Work (textbook)"
+      },
+      "10.1257/app.20180010": {
+        "label": 2,
+        "reason": "DIRECTLY children and gender inequality in labor market Denmark (child penalties)"
+      },
+      "10.1257/089533006776526111": {
+        "label": 0,
+        "reason": "Happiness data, not gender wage"
+      },
+      "10.1287/mnsc.2018.3093": {
+        "label": 2,
+        "reason": "DIRECTLY algorithmic bias gender-based ad discrimination empirical (STEM)"
+      },
+      "10.1093/qje/qju009": {
+        "label": 2,
+        "reason": "DIRECTLY gender competitiveness + career choices labor market"
+      },
+      "10.1093/qje/qjr013": {
+        "label": 0,
+        "reason": "Adjustment costs Danish tax records labor supply, not gender wage"
+      },
+      "10.1257/jel.20161309": {
+        "label": 2,
+        "reason": "DIRECTLY experimental research on labor market discrimination"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 2,
+        "reason": "DIRECTLY discrimination in employment codes of color and gender"
+      },
+      "10.1353/dem.2006.0003": {
+        "label": 1,
+        "reason": "Gender-specific trends in value of education, related but not labor wage"
+      },
+      "10.1177/0003122411425170": {
+        "label": 1,
+        "reason": "Gender gap time-use patterns, related but not labor market wage"
+      },
+      "10.1086/685449": {
+        "label": 0,
+        "reason": "Minimum wage shocks employment flows, not gender"
+      },
+      "10.1146/annurev-economics-080614-115329": {
+        "label": 2,
+        "reason": "DIRECTLY evolution of gender gaps in industrialized countries"
+      },
+      "10.1111/j.1468-232x.2007.00479.x": {
+        "label": 2,
+        "reason": "DIRECTLY gender differences in promotion rates empirical"
+      },
+      "10.1007/s00148-006-0128-1": {
+        "label": 2,
+        "reason": "DIRECTLY gender wage gaps by education in Spain"
+      },
+      "10.1016/j.labeco.2013.01.003": {
+        "label": 2,
+        "reason": "DIRECTLY gender wage gaps sticky floors and glass ceilings in Europe"
+      },
+      "10.1086/683847": {
+        "label": 2,
+        "reason": "DIRECTLY aggregate effects of gender gaps in the labor market OECD"
+      },
+      "10.1111/j.1467-9361.2004.00230.x": {
+        "label": 2,
+        "reason": "DIRECTLY international trade and gender wage discrimination East Asia"
+      }
+    },
+    "q017": {
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "AI multidisciplinary perspectives, not industrial manufacturing specifically"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "Automation new tasks, not manufacturing specifically"
+      },
+      "10.1108/josm-04-2018-0119": {
+        "label": 0,
+        "reason": "Service robots frontline, not manufacturing"
+      },
+      "10.1016/j.cirp.2016.05.004": {
+        "label": 1,
+        "reason": "Additive manufacturing, not AI"
+      },
+      "10.1257/jep.23.3.125": {
+        "label": 0,
+        "reason": "Two-sided markets, off-topic"
+      },
+      "10.5430/ijfr.v9n2p90": {
+        "label": 1,
+        "reason": "Fourth Industrial Revolution, related to AI in industry"
+      },
+      "10.1016/j.hrmr.2022.100899": {
+        "label": 0,
+        "reason": "AI capability framework HRM, not manufacturing"
+      },
+      "10.1016/j.ijpe.2019.107599": {
+        "label": 2,
+        "reason": "DIRECTLY big data analytics AI + manufacturing operational performance"
+      },
+      "10.1109/access.2020.3042874": {
+        "label": 2,
+        "reason": "DIRECTLY Industrial AI in Industry 4.0 + manufacturing"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "Wrong kind of AI + labour demand, not manufacturing productivity"
+      },
+      "10.1002/mar.21619": {
+        "label": 0,
+        "reason": "AI marketing systematic review, not manufacturing"
+      },
+      "10.1108/ijopm-02-2012-0086": {
+        "label": 1,
+        "reason": "Servitization of manufacturing, not AI specifically"
+      },
+      "10.1177/1042258720934581": {
+        "label": 0,
+        "reason": "AI entrepreneurship, not manufacturing productivity"
+      },
+      "10.1016/j.respol.2022.104555": {
+        "label": 2,
+        "reason": "DIRECTLY AI + industrial innovation German firm-level data"
+      },
+      "10.1109/access.2021.3102227": {
+        "label": 0,
+        "reason": "Big Data AI precision agriculture, not manufacturing"
+      },
+      "10.1108/jtf-07-2019-0065": {
+        "label": 0,
+        "reason": "AI tourism, not manufacturing"
+      },
+      "10.1016/j.jebo.2023.05.008": {
+        "label": 2,
+        "reason": "DIRECTLY AI + firm-level productivity (German firms)"
+      },
+      "10.1080/21681015.2021.1950227": {
+        "label": 1,
+        "reason": "Sustainable industrial Industry 4.0, not AI productivity gains specifically"
+      },
+      "10.3390/ai1020008": {
+        "label": 0,
+        "reason": "AI vs IA future philosophical, not manufacturing"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 2,
+        "reason": "DIRECTLY AI + labor productivity (Eurasian Economic Review)"
+      },
+      "10.1257/jep.31.2.165": {
+        "label": 0,
+        "reason": "Productivity slowdown mismeasurement, not AI manufacturing"
+      },
+      "10.1016/j.heliyon.2023.e22601": {
+        "label": 0,
+        "reason": "Digital agriculture, not manufacturing"
+      },
+      "10.1257/aer.20191277": {
+        "label": 0,
+        "reason": "High-tech clusters productivity inventors, not AI manufacturing"
+      },
+      "10.1016/j.cirp.2020.05.006": {
+        "label": 0,
+        "reason": "Additive manufacturing framework, not AI"
+      },
+      "10.1080/00207543.2023.2179859": {
+        "label": 2,
+        "reason": "DIRECTLY AI-driven supply chain resilience Vietnamese manufacturing SMEs"
+      },
+      "10.1086/654303": {
+        "label": 0,
+        "reason": "Technology productivity slowdown, not AI manufacturing"
+      },
+      "10.1016/j.jfineco.2013.02.011": {
+        "label": 0,
+        "reason": "Productivity restructuring takeovers, not AI manufacturing"
+      },
+      "10.3390/su15118934": {
+        "label": 2,
+        "reason": "DIRECTLY AI-Driven Productivity Gains (firm-level manufacturing data)"
+      },
+      "10.1007/s13563-019-00172-9": {
+        "label": 0,
+        "reason": "Mining productivity 4IR, not manufacturing AI"
+      }
+    },
+    "q018": {
+      "10.1186/s40537-021-00444-8": {
+        "label": 0,
+        "reason": "Deep learning review, not education outcomes"
+      },
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "ChatGPT LLM in education, not outcomes focus"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "AI multidisciplinary, not education outcomes"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "ChatGPT multidisciplinary, not education outcomes"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 1,
+        "reason": "Students voices GenAI in higher ed, perceptions not outcomes"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "AI in higher ed, not outcomes"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "ChatGPT in education, not outcomes"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "AI in higher ed state of field, not outcomes"
+      },
+      "10.1186/s41239-023-00408-3": {
+        "label": 1,
+        "reason": "AI policy education framework, not outcomes"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 1,
+        "reason": "Ethics of AI in Education, not outcomes"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "Future of Education AI ChatGPT, not outcomes"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "AI in education challenges sustainable, not outcomes"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "Revolutionizing education ChatGPT overview, not outcomes"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "AI literacy in classroom, not outcomes"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "GenAI Higher Education, not outcomes"
+      },
+      "10.37074/jalt.2023.6.1.17": {
+        "label": 0,
+        "reason": "ChatGPT in higher ed academic integrity, not outcomes"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "GenAI education practices, not outcomes"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "AI learner-instructor interaction online, not outcomes"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 1,
+        "reason": "ChatGPT EFL writing, not K-12 outcomes"
+      },
+      "10.1007/s10639-021-10831-6": {
+        "label": 1,
+        "reason": "Student-AI collaboration K-12, not outcomes"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "DIRECTLY meta-analysis of 24 RCTs on AI chatbots + student learning outcomes"
+      },
+      "10.3390/info15100596": {
+        "label": 0,
+        "reason": "AI assistant personalized learning higher ed, not outcomes"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 1,
+        "reason": "AI language instruction EFL achievement, not K-12 outcomes"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "AI assistance on student agency, agency not outcomes"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "Chatbot Ghanaian higher ed, not K-12 outcomes"
+      },
+      "10.1016/j.caeai.2023.100197": {
+        "label": 0,
+        "reason": "GenAI higher ed future, not outcomes"
+      },
+      "10.3390/app13116716": {
+        "label": 0,
+        "reason": "AI international students higher ed, not outcomes"
+      },
+      "10.3390/educsci15030343": {
+        "label": 1,
+        "reason": "AI academic development, not outcomes"
+      },
+      "10.2139/ssrn.4638365": {
+        "label": 1,
+        "reason": "Education 4.0 5.0 AI personalized, not outcomes"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "ChatGPT Moroccan higher ed outcomes, but topic right and K-12 wrong level"
+      }
+    },
+    "q019": {
+      "10.1186/s41239-019-0171-0": {
+        "label": 0,
+        "reason": "AI in higher ed systematic review, not ITS specifically"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "AI teaching higher ed, not ITS"
+      },
+      "10.1109/comst.2020.2970550": {
+        "label": 0,
+        "reason": "Edge computing deep learning survey, not ITS"
+      },
+      "10.1002/ett.4150": {
+        "label": 0,
+        "reason": "Network IDS ML DL, not ITS"
+      },
+      "10.3390/app9204396": {
+        "label": 0,
+        "reason": "IDS ML DL survey, not ITS"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "Personalized FL, not ITS"
+      },
+      "10.1002/inf2.12028": {
+        "label": 0,
+        "reason": "ML materials science, not ITS"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 0,
+        "reason": "Human-in-loop ML, not ITS"
+      },
+      "10.1186/s40537-020-00318-5": {
+        "label": 0,
+        "reason": "Cybersecurity data science, not ITS"
+      },
+      "10.1007/s40593-016-0105-0": {
+        "label": 2,
+        "reason": "DIRECTLY Stupid Tutoring Systems Intelligent Humans (ITS critique)"
+      },
+      "10.1186/s40561-019-0089-y": {
+        "label": 2,
+        "reason": "DIRECTLY personalized adaptive learning in smart learning environment"
+      },
+      "10.1515/jaiscr-2017-0004": {
+        "label": 2,
+        "reason": "DIRECTLY AI techniques for adaptive educational systems survey"
+      },
+      "10.1002/(sici)1097-4571(199504)46:3<194::aid-asi4>3.0.co;2-s": {
+        "label": 0,
+        "reason": "ML for IR 1995, not ITS"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 2,
+        "reason": "DIRECTLY Multimedia Adaptive Tutoring System for Mathematics"
+      },
+      "10.1007/s40593-015-0089-1": {
+        "label": 2,
+        "reason": "DIRECTLY help seeking with ITS research"
+      },
+      "10.3758/s13428-012-0258-1": {
+        "label": 2,
+        "reason": "DIRECTLY NLP in intelligent writing strategy tutoring system"
+      },
+      "10.1007/s10639-022-11479-6": {
+        "label": 1,
+        "reason": "Intelligent e-learning systems, related to ITS"
+      },
+      "10.1145/3027385.3027451": {
+        "label": 2,
+        "reason": "DIRECTLY intelligent tutors as teachers aides"
+      },
+      "10.1609/aimag.v34i3.2484": {
+        "label": 2,
+        "reason": "DIRECTLY data-driven ITS development optimization"
+      },
+      "10.1016/j.compedu.2011.11.001": {
+        "label": 2,
+        "reason": "DIRECTLY conversational ITS predicting learning styles"
+      },
+      "10.1007/s10639-022-11305-z": {
+        "label": 2,
+        "reason": "DIRECTLY AI-powered ITS for English learning secondary students"
+      },
+      "10.1111/j.1365-2729.2010.00368.x": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive item-based learning environments IRT (ITS)"
+      },
+      "10.1007/s40593-015-0088-2": {
+        "label": 2,
+        "reason": "DIRECTLY Example-Tracing Tutors ITS development"
+      },
+      "10.1007/s40593-013-0001-9": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive intelligent support for peer tutoring in algebra"
+      },
+      "10.4236/ce.2020.116069": {
+        "label": 2,
+        "reason": "DIRECTLY effects of ITS on personalized learning"
+      },
+      "10.3233/irg-2004-14(3-4)07": {
+        "label": 2,
+        "reason": "DIRECTLY ITS for Entity Relationship Modelling (KERMIT CBM)"
+      },
+      "10.1016/j.sbspro.2010.03.641": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive ITS for e-learning systems"
+      },
+      "10.1016/j.compedu.2013.09.014": {
+        "label": 2,
+        "reason": "DIRECTLY adaptation algorithm for intelligent NLP tutoring system"
+      },
+      "10.1186/s40594-018-0110-y": {
+        "label": 2,
+        "reason": "DIRECTLY ElectronixTutor intelligent tutoring system for electronics"
+      },
+      "10.1007/11774303_52": {
+        "label": 2,
+        "reason": "DIRECTLY comparison of ML methods for intelligent tutoring systems"
+      }
+    },
+    "q020": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "ChatGPT for good, broad LLM in education not higher ed performance study"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "ChatGPT multidisciplinary, not higher ed student performance study"
+      },
+      "10.1371/journal.pdig.0000198": {
+        "label": 0,
+        "reason": "ChatGPT USMLE medical ed, not higher ed student performance"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 2,
+        "reason": "DIRECTLY students voices on GenAI in higher ed (Hong Kong survey)"
+      },
+      "10.37074/jalt.2023.6.1.9": {
+        "label": 1,
+        "reason": "ChatGPT in higher ed assessment, not student performance study"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "ChatGPT in education, not higher ed student performance study"
+      },
+      "10.1186/s40561-023-00237-x": {
+        "label": 1,
+        "reason": "ChatGPT in education case study, not student performance"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 1,
+        "reason": "AI in higher ed state of field, not ChatGPT performance"
+      },
+      "10.1080/14703297.2023.2195846": {
+        "label": 1,
+        "reason": "SWOT ChatGPT education, not higher ed student performance"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 1,
+        "reason": "Science Education ChatGPT, not higher ed student performance"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "Future Education AI ChatGPT, not higher ed performance study"
+      },
+      "10.3390/app13095783": {
+        "label": 1,
+        "reason": "ChatGPT Education Research opportunities, not higher ed performance"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "Revolutionizing education ChatGPT overview, not performance study"
+      },
+      "10.3390/educsci13090856": {
+        "label": 1,
+        "reason": "GenAI Higher Education, not ChatGPT performance study"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "GenAI education practices ChatGPT, not higher ed performance study"
+      },
+      "10.1080/10494820.2023.2209881": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT acceptance and use in higher education students"
+      },
+      "10.12669/pjms.39.2.7653": {
+        "label": 0,
+        "reason": "ChatGPT medical education, not higher ed student performance"
+      },
+      "10.3350/cmh.2023.0089": {
+        "label": 0,
+        "reason": "ChatGPT cirrhosis HCC clinical, not higher ed student performance"
+      },
+      "10.30935/cedtech/13036": {
+        "label": 1,
+        "reason": "ChatGPT in education strategies, not higher ed student performance"
+      },
+      "10.1002/ase.2270": {
+        "label": 0,
+        "reason": "ChatGPT medical education anatomy, not higher ed student performance"
+      },
+      "10.37074/jalt.2023.6.1.29": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT in higher education benefits challenges"
+      },
+      "10.1016/j.xops.2023.100324": {
+        "label": 0,
+        "reason": "ChatGPT Ophthalmology medical, not higher ed student performance"
+      },
+      "10.37074/jalt.2023.6.1.22": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT universities scholars and PhD students"
+      },
+      "10.1007/s10755-023-09686-1": {
+        "label": 2,
+        "reason": "DIRECTLY students acceptance of ChatGPT in higher education (Polish)"
+      },
+      "10.3991/ijet.v18i17.39019": {
+        "label": 2,
+        "reason": "DIRECTLY university students perception of ChatGPT in education"
+      },
+      "10.7821/naer.2023.7.1458": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT at university as tool for complex thinking (Spanish students)"
+      },
+      "10.1038/s41598-024-52549-8": {
+        "label": 2,
+        "reason": "DIRECTLY multinational study on ChatGPT usage by Arab university students"
+      },
+      "10.1080/2331186x.2023.2210461": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT student performance evaluation in higher education (case study)"
+      },
+      "10.1007/s10639-024-12949-9": {
+        "label": 2,
+        "reason": "DIRECTLY GenAI technologies impact on learning performance in higher education"
+      }
+    },
+    "q021": {
+      "10.1257/aer.103.6.2121": {
+        "label": 1,
+        "reason": "China Syndrome import competition, not automation displacement specifically"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "AI multidisciplinary, not manufacturing displacement"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "DIRECTLY Automation and New Tasks (Acemoglu/Restrepo) framework"
+      },
+      "10.1093/qje/qjaa004": {
+        "label": 0,
+        "reason": "Labor share superstar firms, not displacement"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "Wages Set in Beijing, trade not automation"
+      },
+      "10.1093/qje/qju026": {
+        "label": 1,
+        "reason": "Trade Adjustment worker-level, trade not automation"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 2,
+        "reason": "DIRECTLY robots + displacement in German manufacturing"
+      },
+      "10.1016/j.cie.2019.106195": {
+        "label": 0,
+        "reason": "AR intelligent manufacturing, not displacement"
+      },
+      "10.28945/5078": {
+        "label": 1,
+        "reason": "AI + worker skills upskilling, not manufacturing displacement specifically"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "DIRECTLY automation labor share-displacing cross-country empirical"
+      },
+      "10.1108/ijm-01-2021-0052": {
+        "label": 0,
+        "reason": "AI HRM team level, not manufacturing displacement"
+      },
+      "10.1109/access.2020.3029847": {
+        "label": 0,
+        "reason": "IoT empirical, not displacement"
+      },
+      "10.1038/s41586-022-04988-4": {
+        "label": 0,
+        "reason": "Aerial additive manufacturing, not displacement"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "AI Automation Work (Acemoglu/Restrepo), not manufacturing empirical"
+      },
+      "10.1016/j.respol.2018.06.008": {
+        "label": 1,
+        "reason": "Technology + employment patenting firms, not displacement specifically"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "Automation + employment structural change, not manufacturing displacement"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 2,
+        "reason": "DIRECTLY automation technologies + employment review 102 publications"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "Automation political behavior, not manufacturing displacement"
+      },
+      "10.5089/9781484311042.001": {
+        "label": 0,
+        "reason": "Why labor smaller share IMF, not displacement"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "Automation + job satisfaction, not manufacturing displacement"
+      },
+      "10.1111/ntwe.12240": {
+        "label": 0,
+        "reason": "Automation future of work SST, theoretical not empirical"
+      },
+      "10.1257/jep.30.2.179": {
+        "label": 2,
+        "reason": "DIRECTLY manufacturing employment decline empirical housing bubble"
+      },
+      "10.1177/2041386621992105": {
+        "label": 1,
+        "reason": "Aging-and-Tech Job Vulnerability, not displacement specifically"
+      },
+      "10.1017/psrm.2021.43": {
+        "label": 1,
+        "reason": "Misattributed blame globalization automation, not displacement"
+      },
+      "10.1007/s43621-025-01201-0": {
+        "label": 0,
+        "reason": "Industry 5.0 sustainable manufacturing, not displacement"
+      },
+      "10.1016/j.jebo.2022.05.025": {
+        "label": 1,
+        "reason": "Automation job polarisation structural change, not displacement specifically"
+      },
+      "10.1016/j.chieco.2018.07.008": {
+        "label": 1,
+        "reason": "Automation + inequality China, not displacement"
+      },
+      "10.1016/j.jfineco.2022.11.003": {
+        "label": 2,
+        "reason": "DIRECTLY automation + displacement of labor by capital asset pricing empirical"
+      },
+      "10.4018/ijkm.2016100103": {
+        "label": 1,
+        "reason": "Participative knowledge management manufacturing, not displacement"
+      },
+      "10.1016/j.jeoa.2023.100476": {
+        "label": 1,
+        "reason": "Automation + aging, not displacement specifically"
+      }
+    },
+    "q022": {
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "Automation + new tasks, not ML polarization specifically"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "Social skills labor market, not ML polarization"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "China Shock labor market adjustment, not ML"
+      },
+      "10.1257/aer.20170011": {
+        "label": 0,
+        "reason": "Importing political polarization, not ML"
+      },
+      "10.1086/718327": {
+        "label": 2,
+        "reason": "DIRECTLY AI + labor markets empirical (related to polarization)"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "PNAS toward understanding AI labor, related to polarization"
+      },
+      "10.1257/jep.23.1.167": {
+        "label": 0,
+        "reason": "Microfinance meets market, off-topic"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "Labor markets robots Germany, related to polarization"
+      },
+      "[no-DOI]": {
+        "label": 0,
+        "reason": "EDUCAUSE 2020 Horizon Report, not labor polarization"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 1,
+        "reason": "AI + labor productivity, not polarization"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "Rise of Machines automation, related to polarization"
+      },
+      "10.1093/jeg/lby011": {
+        "label": 0,
+        "reason": "Regional economic polarization, not labor market specifically"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 1,
+        "reason": "Great Recession polarization fertility, related"
+      },
+      "10.17705/1cais.04319": {
+        "label": 0,
+        "reason": "ML RPA Blockchains BPM, not labor polarization"
+      },
+      "10.17323/2500-2597.2017.4.6.8": {
+        "label": 1,
+        "reason": "Industry 4.0 labor market challenges, related"
+      },
+      "10.1257/mac.20150258": {
+        "label": 2,
+        "reason": "DIRECTLY job polarization + structural change"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "Economics ChatGPT labor market, not polarization"
+      },
+      "10.1007/s13194-018-0213-9": {
+        "label": 0,
+        "reason": "Scientific polarization, not labor"
+      },
+      "10.1007/s11186-020-09409-x": {
+        "label": 0,
+        "reason": "Loops ladders social/ML, not labor"
+      },
+      "10.1109/tte.2021.3129479": {
+        "label": 0,
+        "reason": "ML battery health, off-topic"
+      },
+      "10.1371/journal.pone.0235502": {
+        "label": 0,
+        "reason": "Bias human ML algorithm, not labor polarization"
+      },
+      "10.1155/2019/5941096": {
+        "label": 0,
+        "reason": "ML recommendation hotels, not labor"
+      },
+      "10.3386/w11986": {
+        "label": 2,
+        "reason": "DIRECTLY polarization US labor market (Autor et al)"
+      },
+      "10.1353/eca.2016.0015": {
+        "label": 1,
+        "reason": "Declining fluidity US labor, related"
+      },
+      "10.5771/0935-9915-2017-3-298": {
+        "label": 1,
+        "reason": "Gig digitalization labor, related"
+      },
+      "10.2139/ssrn.4527336": {
+        "label": 1,
+        "reason": "GenAI employment online labor, not polarization"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "AI labor market exposure IMF, related"
+      },
+      "10.5089/9781484361900.001": {
+        "label": 2,
+        "reason": "DIRECTLY routinization + labor market polarization 85 countries"
+      },
+      "10.1186/s43593-025-00085-x": {
+        "label": 0,
+        "reason": "ML nanophotonics, off-topic"
+      },
+      "10.1086/718497": {
+        "label": 0,
+        "reason": "ML minimum wages methodology, not polarization"
+      }
+    },
+    "q023": {
+      "10.1093/ejcts/ezu366": {
+        "label": 0,
+        "reason": "ESC/EACTS myocardial revascularization, off-topic"
+      },
+      "10.61969/jai.1337500": {
+        "label": 0,
+        "reason": "ChatGPT in education, not adaptive technology RCT"
+      },
+      "10.3390/ijerph20043407": {
+        "label": 0,
+        "reason": "Digital transformation healthcare, not education RCT"
+      },
+      "10.1210/endrev/bnac022": {
+        "label": 0,
+        "reason": "Automated insulin delivery clinical, off-topic"
+      },
+      "10.1257/aer.20171112": {
+        "label": 2,
+        "reason": "DIRECTLY Disrupting Education tech-aided instruction RCT lottery India"
+      },
+      "10.3389/frobt.2018.00081": {
+        "label": 1,
+        "reason": "Immersive VR education, not adaptive technology RCT"
+      },
+      "10.2196/rehab.6376": {
+        "label": 0,
+        "reason": "Dementia technologies, off-topic"
+      },
+      "10.2196/jmir.5257": {
+        "label": 0,
+        "reason": "Personalized telehealth, not adaptive learning RCT"
+      },
+      "10.1038/s41591-024-02902-1": {
+        "label": 0,
+        "reason": "Causal ML treatment, not education RCT"
+      },
+      "10.1111/bjet.12467": {
+        "label": 1,
+        "reason": "Serious games higher ed, not personalized adaptive RCT"
+      },
+      "10.1145/2803173": {
+        "label": 0,
+        "reason": "Self-care technologies HCI, not adaptive learning"
+      },
+      "10.3390/electronics13183762": {
+        "label": 2,
+        "reason": "DIRECTLY AI e-learning + personalized + adaptive review 85 studies"
+      },
+      "10.1016/j.heliyon.2024.e39630": {
+        "label": 2,
+        "reason": "DIRECTLY personalized adaptive learning higher ed + impact on academic performance"
+      },
+      "10.3389/fpsyg.2022.971044": {
+        "label": 0,
+        "reason": "AI compassion healthcare, off-topic"
+      },
+      "10.1111/bjet.13116": {
+        "label": 2,
+        "reason": "DIRECTLY tech-supported personalized learning LMIC meta-analysis 16 RCTs"
+      },
+      "10.1186/s41239-024-00447-4": {
+        "label": 1,
+        "reason": "ChatGPT blended learning SRL HOTS, not adaptive tech RCT"
+      },
+      "10.3390/su16020781": {
+        "label": 0,
+        "reason": "AI education inequality, not RCT adaptive"
+      },
+      "10.3390/su17031133": {
+        "label": 1,
+        "reason": "Adaptive learning engagement digital literacy, not RCT specifically"
+      },
+      "10.1002/cpt.59": {
+        "label": 0,
+        "reason": "Adaptive licensing pathways pharma, off-topic"
+      },
+      "10.3389/feduc.2020.00147": {
+        "label": 0,
+        "reason": "Embodied design mathematics, not RCT adaptive"
+      },
+      "10.1257/jel.20191507": {
+        "label": 1,
+        "reason": "Upgrading education technology insights, not adaptive RCT specifically"
+      },
+      "10.3390/electronics12071550": {
+        "label": 0,
+        "reason": "Emerging technologies distance education, not RCT"
+      },
+      "10.3389/fpsyg.2023.1255594": {
+        "label": 2,
+        "reason": "DIRECTLY AI-based language learning RCT Duolingo 93 students"
+      },
+      "10.3389/fpsyg.2021.644587": {
+        "label": 0,
+        "reason": "Dementia assistive tech, off-topic"
+      },
+      "10.1007/s43621-025-01094-z": {
+        "label": 2,
+        "reason": "DIRECTLY LLM personalized learning systematic review"
+      },
+      "10.1111/mbe.12302": {
+        "label": 0,
+        "reason": "Mobile neuroimaging educational neuroscience, off-topic"
+      },
+      "10.1038/s41598-025-97652-6": {
+        "label": 2,
+        "reason": "DIRECTLY AI tutoring outperforms active learning RCT in college students"
+      },
+      "10.1186/s40561-016-0038-y": {
+        "label": 2,
+        "reason": "DIRECTLY next generation adaptive learning systems"
+      },
+      "10.1007/s11423-024-10345-1": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive learning + NLP for improved personalization"
+      },
+      "10.30935/cedtech/16108": {
+        "label": 2,
+        "reason": "DIRECTLY AI personalized learning pedagogical review"
+      }
+    },
+    "q024": {
+      "10.1257/aer.20160696": {
+        "label": 2,
+        "reason": "DIRECTLY Race between Man and Machine AER (Acemoglu/Restrepo)"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "DIRECTLY Automation and New Tasks JEP (Acemoglu/Restrepo)"
+      },
+      "[no-DOI]": {
+        "label": 2,
+        "reason": "NBER WP version of Acemoglu/Restrepo task model"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "AI Automation Work (Acemoglu/Restrepo) chapter, no abstract"
+      },
+      "10.1086/718327": {
+        "label": 1,
+        "reason": "AI Jobs Online Vacancies, related to task model"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "PNAS toward AI labor, related"
+      },
+      "10.1145/3531146.3533088": {
+        "label": 0,
+        "reason": "Taxonomy risks language models, not Acemoglu"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "Wrong kind of AI labour demand, related"
+      },
+      "10.3386/w24421": {
+        "label": 1,
+        "reason": "Demographics and Automation (Acemoglu/Restrepo), no abstract"
+      },
+      "10.3982/ecta19815": {
+        "label": 2,
+        "reason": "DIRECTLY Tasks Automation Wage Inequality Econometrica (Acemoglu/Restrepo)"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "Labor markets robots (Acemoglu/Restrepo related), Germany"
+      },
+      "10.3386/w25682": {
+        "label": 1,
+        "reason": "Wrong kind of AI working paper version"
+      },
+      "10.1257/aer.p20171101": {
+        "label": 1,
+        "reason": "Secular Stagnation Aging (Acemoglu/Restrepo), related"
+      },
+      "10.3386/w24196": {
+        "label": 1,
+        "reason": "AI Automation Work (Acemoglu/Restrepo NBER chapter), no abstract"
+      },
+      "10.1093/restud/rdab031": {
+        "label": 1,
+        "reason": "Demographics Automation RESTUD (Acemoglu/Restrepo), no abstract"
+      },
+      "10.1016/j.respol.2019.03.010": {
+        "label": 0,
+        "reason": "Digitalization job creation destruction, not Acemoglu model"
+      },
+      "10.3386/w28920": {
+        "label": 2,
+        "reason": "Tasks Automation Wage Inequality SSRN (Acemoglu/Restrepo)"
+      },
+      "10.3386/w24871": {
+        "label": 2,
+        "reason": "Is Automation Labor Share-Displacing (Acemoglu/Restrepo)"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "Is Automation Labor Share-Displacing BPEA (Acemoglu/Restrepo)"
+      },
+      "10.2139/ssrn.2781320": {
+        "label": 2,
+        "reason": "Race Machine Man SSRN (Acemoglu/Restrepo)"
+      },
+      "10.1093/epolic/eiaa001": {
+        "label": 1,
+        "reason": "Automation + jobs when technology boosts employment, related"
+      },
+      "10.1086/697242": {
+        "label": 2,
+        "reason": "DIRECTLY Low-Skill and High-Skill Automation (Acemoglu/Restrepo) task-based model"
+      },
+      "10.7208/chicago/9780226613475.003.0008": {
+        "label": 2,
+        "reason": "AI Automation Work (Acemoglu/Restrepo) book chapter"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "Rise of Machines automation income inequality, related"
+      },
+      "10.1108/jaar-10-2020-0201": {
+        "label": 0,
+        "reason": "AI accounting profession, not Acemoglu"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "Automation employment structural change, related"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "Automation technologies employment review, related"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "Automation political behavior, not Acemoglu"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "Automation + job satisfaction, related"
+      },
+      "10.2139/ssrn.2935003": {
+        "label": 1,
+        "reason": "Automation Jobs when technology boosts employment, related"
+      }
+    },
+    "q025": {
+      "10.1016/j.inffus.2019.12.012": {
+        "label": 0,
+        "reason": "XAI concepts, not education bias"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "AI multidisciplinary, not education bias"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "ChatGPT multidisciplinary, not education bias"
+      },
+      "10.1007/s11023-018-9482-5": {
+        "label": 1,
+        "reason": "AI4People ethical framework, not education specifically"
+      },
+      "10.1007/s11747-019-00696-0": {
+        "label": 0,
+        "reason": "AI marketing, not education bias"
+      },
+      "10.1080/14703297.2023.2190148": {
+        "label": 1,
+        "reason": "ChatGPT academic integrity, not gender/race bias specifically"
+      },
+      "10.1007/s11023-020-09517-8": {
+        "label": 0,
+        "reason": "AI ethics guidelines evaluation, not education"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 0,
+        "reason": "Science education ChatGPT, not bias"
+      },
+      "10.1108/lhtn-01-2023-0009": {
+        "label": 0,
+        "reason": "ChatGPT academia libraries, not bias"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 2,
+        "reason": "DIRECTLY ethics of AI in education, bias core concern"
+      },
+      "10.1145/3351095.3372873": {
+        "label": 0,
+        "reason": "AI accountability gap, not education"
+      },
+      "10.1007/s10639-022-11316-w": {
+        "label": 2,
+        "reason": "DIRECTLY ethical principles for AI in education, bias addressed"
+      },
+      "10.1002/widm.1356": {
+        "label": 1,
+        "reason": "Bias data-driven AI systems, not education specifically"
+      },
+      "10.1257/app.20180010": {
+        "label": 0,
+        "reason": "Children gender inequality Denmark, not AI in education"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "New Era AI Education, not bias specifically"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "AI ChatGPT educational settings, not bias specifically"
+      },
+      "10.1109/access.2023.3300381": {
+        "label": 0,
+        "reason": "ChatGPT cybersecurity, not education bias"
+      },
+      "10.1080/17439884.2020.1798995": {
+        "label": 1,
+        "reason": "Historical threads AI in education, not bias specifically"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 1,
+        "reason": "Discrimination employment color gender, not AI in education"
+      },
+      "10.1016/s2589-7500(22)00063-2": {
+        "label": 1,
+        "reason": "AI race detection medical imaging, but medical not education"
+      },
+      "10.1001/amajethics.2019.167": {
+        "label": 1,
+        "reason": "AI healthcare disparities, but healthcare not education"
+      },
+      "10.1093/jopart/muac007": {
+        "label": 1,
+        "reason": "Human-AI public sector automation bias, not education"
+      },
+      "10.1007/s43681-022-00209-w": {
+        "label": 0,
+        "reason": "Uselessness of AI ethics, not education"
+      },
+      "10.1111/ejed.12532": {
+        "label": 1,
+        "reason": "Future AI education cautionary, not bias specifically"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "Role AI in Education, too broad low quality"
+      },
+      "10.1145/3624720": {
+        "label": 1,
+        "reason": "Computing education GenAI, not bias"
+      },
+      "10.3390/socsci12080435": {
+        "label": 2,
+        "reason": "DIRECTLY ChatGPT gender bias cautionary tale"
+      },
+      "10.1038/s41598-024-55686-2": {
+        "label": 1,
+        "reason": "Bias AI-generated content news, not education"
+      },
+      "10.1001/jamanetworkopen.2020.11044": {
+        "label": 0,
+        "reason": "Gender race heart failure clinical, not AI education"
+      },
+      "10.1007/s00146-023-01675-4": {
+        "label": 1,
+        "reason": "Gender bias AI general, not education"
+      }
+    }
+  }
+}

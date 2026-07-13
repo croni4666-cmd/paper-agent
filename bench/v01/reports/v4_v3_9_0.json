@@ -1,0 +1,92 @@
+{
+  "version": "v3.9.0-pre",
+  "labels": "G:\\minimax - workspace\\Paper agent\\bench\\v01\\labels.json",
+  "table": {
+    "original": {
+      "recall@5_mean": 0.0708925296925297,
+      "recall@10_mean": 0.18242148027411184,
+      "recall@20_mean": 0.5090513533250375,
+      "precision@10_mean": 0.18,
+      "ndcg@10_mean": 0.3618015019964063,
+      "map@10_mean": 0.08873668430335097,
+      "success@10_mean": 0.76
+    },
+    "random": {
+      "recall@5_mean": 0.10824221860011334,
+      "recall@10_mean": 0.32064540021382126,
+      "recall@20_mean": 0.601790522927365,
+      "precision@10_mean": 0.3,
+      "ndcg@10_mean": 0.4862206718072749,
+      "map@10_mean": 0.169355007558579,
+      "success@10_mean": 0.88
+    },
+    "bm25": {
+      "recall@5_mean": 0.3877718795824059,
+      "recall@10_mean": 0.6115230021440548,
+      "recall@20_mean": 0.8649367100735522,
+      "precision@10_mean": 0.472,
+      "ndcg@10_mean": 0.7023419318821306,
+      "map@10_mean": 0.46569792768959434,
+      "success@10_mean": 1.0
+    },
+    "biencoder": {
+      "recall@5_mean": 0.4592351624983204,
+      "recall@10_mean": 0.689614625140941,
+      "recall@20_mean": 0.9074613129560498,
+      "precision@10_mean": 0.528,
+      "ndcg@10_mean": 0.8164227465667839,
+      "map@10_mean": 0.5749459435626102,
+      "success@10_mean": 1.0
+    },
+    "combined": {
+      "recall@5_mean": 0.42826835153150944,
+      "recall@10_mean": 0.7217437848701006,
+      "recall@20_mean": 0.9259828896249949,
+      "precision@10_mean": 0.544,
+      "ndcg@10_mean": 0.790286818229852,
+      "map@10_mean": 0.5831358906525573,
+      "success@10_mean": 1.0
+    },
+    "prf": {
+      "recall@5_mean": 0.3881296679928259,
+      "recall@10_mean": 0.5952983729720571,
+      "recall@20_mean": 0.8732206927575349,
+      "precision@10_mean": 0.456,
+      "ndcg@10_mean": 0.7041850908841325,
+      "map@10_mean": 0.49771507936507936,
+      "success@10_mean": 0.96
+    }
+  },
+  "invariants": {
+    "passed": 6,
+    "failed": 0,
+    "log": [
+      "[PASS] all_4_conditions_complete: all 4 present",
+      "[PASS] all_metrics_valid_floats: all 4 conditions have float recall@10_mean",
+      "[PASS] random_recall10_around_0.20: recall@10_mean=0.321, expected 0.10-0.35",
+      "[PASS] bm25_beats_original_by_2x: bm25=0.612, original=0.182",
+      "[PASS] combined_not_much_worse_than_bm25: combined=0.722, bm25=0.612, delta=+0.110",
+      "[PASS] prf_not_much_worse_than_bm25: prf=0.595, bm25=0.612, delta=-0.016"
+    ]
+  },
+  "audit": [
+    "## Verified (real data, end-to-end)",
+    "- All 4 v4 conditions ran on 25 queries (no crashes, no empty outputs)",
+    "- BM25 recall@10 = 0.612 on labels.json labels",
+    "- Combined recall@10 = 0.722",
+    "- PRF recall@10 = 0.595",
+    "- Random ablation recall@10 = 0.321 (sanity ~0.20)",
+    "\n## Unverified (caveats)",
+    "- All labels are Mavis (LLM) preliminary — user spot-check not yet done",
+    "- Lift is on 25 queries, n=25 is small for significance testing",
+    "- 25 queries span heterogeneous topics; per-query lift may vary widely",
+    "- Combined condition uses alpha=0.5; not grid-searched",
+    "- PRF uses top-5 BM25 docs, 8 expansion terms; not tuned",
+    "\n## Hollow (known gaps)",
+    "- 50 queries total in queries.json, only first 25 evaluated (q026-q050 not run)",
+    "- Bi-encoder model (all-MiniLM-L6-v2) is English-only; not ideal for some non-English queries",
+    "- No LLM-based rerank (cross-encoder was rejected because of HF download blocks)",
+    "- Combined score uses min-max normalization per query, not cross-query z-score",
+    "- No second-pass rerank; combined is a single linear combination"
+  ]
+}
