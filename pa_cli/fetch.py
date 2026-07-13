@@ -18,6 +18,7 @@ Channels (in priority order):
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -191,7 +192,11 @@ def channel_scihub_mirror(doi: str) -> dict:
                 url = mm.group(1)
                 if url.startswith("//"): url = "https:" + url
                 elif url.startswith("/"): url = m.rstrip("/") + url
-                s2, body2, _, _ = http_get(url, timeout=30)
+                # Bug fix (2026-07-13): reject non-URL strings like "back", "self", "top"
+                # that the regex catches from data-url attributes
+                if not (url.startswith("http://") or url.startswith("https://")):
+                    continue
+                s2, body2, _, _ = http_get(url, timeout=30, proxy=os.environ.get("HTTP_PROXY"))
                 if s2 == 200 and is_pdf(body2):
                     return {"status": "success", "stage": "scihub",
                             "mirror": m, "iframe_url": url, "size": len(body2)}
@@ -205,10 +210,17 @@ def channel_playwright_pdf(url: str, out_path: Path, max_wait: int = 25) -> dict
     except ImportError:
         return {"status": "skip", "reason": "playwright-not-installed"}
     try:
+        # Read proxy from env (CN users: HTTP_PROXY=http://127.0.0.1:7897)
+        # Bug fix (2026-07-13): chromium needs explicit --proxy-server flag
+        # because its proxy config is independent of Python's urllib ProxyHandler
+        proxy = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")
+        launch_args = ["--no-sandbox", "--disable-blink-features=AutomationControlled"]
+        if proxy:
+            launch_args.append(f"--proxy-server={proxy}")
         with sync_playwright() as pw:
             browser = pw.chromium.launch(
                 headless=True,
-                args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
+                args=launch_args,
             )
             ctx = browser.new_context(
                 user_agent="paper-agent/3.2 (Mavis)",
