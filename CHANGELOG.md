@@ -9,6 +9,49 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.5.3] - 2026-07-13 (patch — Layer 7 full-text rerank runs on 8 auto-downloaded PDFs)
+
+Per user request "playwright 为何失败" + post-bug-fix retry, ran Layer 7 (full-text deep rerank) on the 8 PDFs we have.
+
+### Files added (2)
+- `test_output/_run_layer7_8candidates.py` — Layer 7 runner (simplified, no query)
+- `test_output/_run_layer7_full.py` — Layer 7 runner (with query → meaningful BM25)
+- `~/.paper-agent/deep_rerank/deep_rerank_layer7_full.json` — output with full-text features
+
+### Layer 7 result (8 candidates with full text)
+
+| qid | pdf | words | BM25 (vs query) |
+|---|---|---:|---:|
+| q001 | 10_1016_j_compedu_2023_104967.pdf | 7,238 | 18.56 |
+| q001 | 10_58631_injurity_v2i3_52.pdf | 3,761 | 20.30 |
+| q002 | 10_1016_j_jebo_2020_07_014_scihub.pdf | 8,312 | 14.19 |
+| q002 | 10_1111_j_1467-9914_2007_00378_x_scihub.pdf | 8,069 | 13.28 |
+| q003 | 10_1007_978-3-030-01177-2_12.pdf | 6,883 | 10.23 |
+| q003 | 10_1109_cvpr_2009_5206529.pdf | 5,556 | 9.34 |
+| q003 | 10_18653_v1_2021_naacl-main_241.pdf | 7,059 | 10.60 |
+| q003 | 10_1109_icdar_2013_114_scihub.pdf | 4,053 | 8.65 |
+
+**Observation**: BM25 on full text is meaningfully different from BM25 on abstract.
+- q001 (AI tutoring K-12) has highest BM25 (~20) because full text matches query terms tightly
+- q003 (vector quantized) has lower BM25 (~10) because these are CS papers, less direct relevance
+
+### 3-tier honest audit (per `MEMORY.md` discipline)
+- ✅ **Verified architecture**: PyMuPDF extracts full text from all 8 PDFs (100% success)
+- ⚠️ **Re-rank lift not measured**: would need to re-fit LTR with full-text features, then compare to abstract-only baseline
+- ❌ **NOT a 'finding'**: this is verification of Layer 7 framework, not a measured lift
+
+### To complete Layer 7 (re-rank)
+- Re-fit LTR ([P0-6]) with 12 features (8 existing + 4 new: fulltext_bm25, fulltext_cross_encoder, fulltext_citation_density, fulltext_venue_score)
+- Compare to v3.9.2 LTR (which only had 8 abstract features)
+- Run on the 7 manually-downloaded papers too (when user provides them)
+
+### Status
+- 8/15 PDFs have full text (Layer 7 can run on these)
+- 7/15 PDFs still need manual download (user action)
+- Layer 7 framework fully functional
+
+---
+
 ## [3.9.5.2] - 2026-07-13 (patch — pa fetch bug fixes + retry succeeded for 3/10 papers)
 
 Per user feedback "playwright 为何失败？ 你应该没用 clash 端口吧" — discovered 2 bugs in `pa_cli/fetch.py`:
