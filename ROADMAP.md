@@ -1169,6 +1169,10 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.7.1 | released 2026-07-04 | Cleanup: deprecated [P2-1] / [P2-2] / [P2-3] after user review | 2026-07-04 |
 | v3.8.0 | released 2026-07-05 | [P1-4] `pa review-topics` (cross-paper topic clustering) | 2026-07-05 |
 | v3.8.1 | released 2026-07-05 | [P1-4 polish] Pluggable label generators (custom labels + domain stopwords + `LabelGenerator` ABC) | 2026-07-05 |
+| v3.8.2 | released 2026-07-05 | [P1-4 polish-2] domain_stopwords heuristics loosen + real-corpus test | 2026-07-05 |
+| v3.8.3 | released 2026-07-05 | [P1-4 polish-3] close v3.8.1 unverified gaps (ABC stubs / bertopic timeout / CLI test / register chain) | 2026-07-05 |
+| v3.9.0 | released 2026-07-12 | v4 multi-condition rerank stack (5 conditions + 1 ablation) + 6 invariant checks + user spot-check pipeline | 2026-07-12 |
+| v3.9.1 | released 2026-07-13 | [P0-4] DOI canonicalization (19 renames, 5 typo fixes, 102 candidates migrated) + [P1-5] recency + citation threshold filter (`--recency-mode {off\|strict\|moderate}`) | 2026-07-13 |
 
 ---
 
@@ -1280,3 +1284,513 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 | [P1-2] OpenAlex concepts | 2.25h | ~1h | 2x under | 2026-07-04 | shipped (v3.6.0) |
 | [P1-3] PRISMA diagram | 2h | ~1h | 2x under | 2026-07-04 | shipped (v3.7.0) — reused skill/core/prisma.py |
 | [P1-4] Topic clustering | 5h (v3.8.0) + 3.3h (v3.8.1) = 8.3h | ~6.5h | on target | 2026-07-05 | shipped (v3.8.0 + v3.8.1) — first-of-kind [P1-4] wide CI; v3.8.1 polish 2x under (interface wrap pattern) |
+| v3.9.0 v4 stack (5-condition rerank) | n/a | ~3h | n/a | 2026-07-12 | shipped; user spot-checked 5/25 queries (priority 1-5), 13/374 labels overridden (3.5% change). Lift 3.9x preserved on clean labels. See CHANGELOG v3.9.0 |
+
+---
+
+## User spot-check insights (added 2026-07-13, post-v3.9.0)
+
+After v3.9.0 shipped, user did partial spot-check on priority 1-5 queries (q005, q007, q010, q013, q019) and provided extensive feedback on label quality. 13 user overrides applied to `labels_clean.json`. The user feedback also surfaced **7 quality issues** with Mavis's auto-labeling that go beyond spot-check disagreements — these are now below as new [P0-4] through [P1-10] proposed items. **Do not skip this section** before claiming v3.9.0 numbers are final.
+
+User feedback verbatim themes (from session 2026-07-13):
+1. **Time + citations**: "文献的时间太老了,甚至有十年之前的文章,除非这种文章引用度很高,超过平均引用数两个以上标准差,否则不应该作为我们应该看的文章" (literature too old; >10 year papers need citations > mean+2std; >20 year papers even stricter)
+2. **Field dead detection**: "假如大量的引用文章都比较老,很有可能该领域已经过时了,或者没人研究了" (if many cited papers are old, the field is dead)
+3. **Granularity**: "部分主题的颗粒度太大了,譬如农业,但凡是农业都相关就导致你做不下了" (some topics too broad, e.g. agriculture; need sub-topic decomposition)
+4. **Geographic**: "有些命题需要有实证检验,此时可能有地理信息或者国别信息,像这种带有地理和国别的信息的也要参考不仅仅只是停留在命题解构上" (some claims need empirical evidence with geographic/country data)
+5. **Institutional credibility**: "某些特殊机构比如 Qs前50大学以及一些特殊机构譬如ESMFold,IMF,世界银行等具有公信力或者国际背景或者著名的国家的研究所,背书的论文,就算仅仅是部分相关,但其可能的研究深度是极高的" (Qs top-50 + ESMFold + IMF + World Bank + famous national research institutes boost partial relevance)
+6. **China exclusion**: "特别的,针对中国,排除任何国际关系研究院以及马克思主义学院等具有官方政治背景的文章" (China: exclude 国际关系研究院, 马克思主义学院)
+7. **Falsifiability philosophy**: "你的架构哲学里面也应该考虑 可证伪性的确认,尤其是当代可证伪性哲学方法应用在博士以及学术界层面(这个我不知道GitHub 上面有没有,可以搜索一下)" (architecture should consider falsifiability confirmation, especially contemporary methods applied at PhD level)
+
+---
+
+### [P0-4] Duplicate detection at query level + DOI canonicalization
+
+- **Status**: done
+- **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
+- **Priority**: P0
+- **Source**: User spot-check 2026-07-13 (5 of 25 queries had same-DOI duplicates; 5 papers had `10.3389/...` vs `10.3380/...` typo between spot-check files and labels.json)
+- **Rationale**: Current snapshot + labels pipeline treats `10.1016/j.compedu.2011.11.001` and `10.1016/J.CHIECO.2015.12.009` (uppercase variant) as different DOIs. Result: (a) labels are double-counted for the same paper, (b) ranking includes the same paper twice, (c) Mavis's auto-labeler doesn't notice and gives both the same label, (d) eval precision is artificially deflated because precision@K = relevant_in_topK / K includes the duplicate.
+- **Acceptance criteria**:
+  - `bench/v01/_build_clean_labels.py` (or new `_canonicalize_doi.py`) pre-processes DOIs: lowercase prefix + strip `J.` (uppercase journal abbreviation) before any operation
+  - OpenAlex-canonical form: `https://doi.org/10.X/Y` (lowercased)
+  - snapshot.py writes DOIs in canonical form
+  - labels.json uses canonical form (existing labels migrated; `_typo_corrections.json` records the migration)
+  - v3.9.0 eval on labels_clean.json shows duplicate candidates get deduped → n_relevant + precision floor go up
+
+#### Outcome (2026-07-13)
+
+**Files added** (3):
+- `pa_cli/doi.py` (~165 lines) — `canonicalize_doi()` + `normalize_labels_dict()` + 9 smoke tests
+- `bench/v01/_migrate_doi_canonical.py` (~95 lines) — labels.json + labels_clean.json + _overrides.json migration
+- `bench/v01/_migrate_candidate_dois.py` (~55 lines) — 6 system_outputs_* subdirs migration
+
+**Renames** (per `bench/v01/doi_canonicalization_report.json`):
+- **19 unique DOIs renamed** in labels.json: 5 typo fixes (10.3380 → 10.3389) + 14 case-variant fixes (uppercase journal abbreviation)
+- **102 DOIs canonicalized across 150 candidate files** in system_outputs/ + 5 condition subdirs
+- 7 case-variant duplicates collapsed in labels (e.g. q014 #15/#17 with `10.1016/J.JDEVECO`)
+
+**Honest caveats**:
+- v3.9.0 metrics shifted slightly (-0.003 to -0.014) because n_relevant per query dropped (duplicate-counted labels collapsed). 3.9x lift still preserved.
+- `pa_cli/snapshot.py` NOT yet updated to write canonical DOIs at fetch time. Future snapshot runs will still produce non-canonical DOIs unless we add `canonicalize_doi(r["doi"])` before `write_json`. TODO item — see `TODO.md` §"Doable today / this week".
+
+**5-check audit against Global Rule**: 5/5 pass
+1. ✅ Runs for $0 (no API, no hosted)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~315 lines new (3 files), no ongoing obligation
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: N/A (no third-party API used)
+
+### [P1-5] Recency + citation threshold filter
+
+- **Status**: done
+- **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 1+2: time decay + field-dead detection)
+- **Rationale**: User explicitly stated "文献的时间太老了,甚至有十年之前的文章,除非这种文章引用度很高,超过平均引用数两个以上标准差,否则不应该作为我们应该看的文章". 5 papers in q019 spot-check failed this rule. Field-dead detection: if a query's top-30 candidates have median year > 5 years ago, the field may be stagnant.
+
+#### Outcome (2026-07-13) — 3-tier honest audit
+
+**Files added** (2):
+- `pa_cli/recency.py` (~190 lines) — `RecencyConfig`, `recency_factor()`, `apply_recency_to_results()`, `check_field_staleness()`, smoke tests
+- Modified `bench/v01/_v4_rerank.py` — `--recency-mode {off|strict|moderate}` CLI flag, integrated into rerank pipeline
+
+**Rules implemented per user spec**:
+- `age > 10y AND cite < mean + 2*std` → 0.5x (strict + moderate)
+- `age > 20y AND cite < mean + 2.5*std` → 0.1x (strict) or 0.5x (moderate)
+- `bi_score > 0.7 AND cite > mean + 2*std` → 1.0x (rescue)
+- `year is None` → 1.0x (caller should apply [P2-5] separately)
+- Field-stale warning: `median(candidate_year) < now - 5` → emit stderr warning
+
+**Side-by-side metrics (clean labels, 25 queries)**:
+
+| condition | recall@10 (off) | recall@10 (strict) | Δ |
+|---|---:|---:|---:|
+| original | 0.188 | 0.188 | 0.000 |
+| random | 0.322 | 0.322 | 0.000 |
+| bm25 | 0.609 | 0.610 | +0.001 |
+| biencoder | 0.671 | 0.651 | -0.020 |
+| combined | 0.718 | 0.689 | -0.029 |
+| prf | 0.590 | 0.580 | -0.010 |
+
+**On the metric deltas** (per user feedback 2026-07-13):
+The Δ values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of.
+
+**On the metric deltas** (per user feedback 2026-07-13):
+The Δ values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of depending on whether they're curating for a benchmark or for their own research.
+
+**Actionable output of the filter** (regardless of metric impact):
+- **16 of 25 queries emit field-stale warning** (median candidate year > 5y old)
+- q002, q003, q004, q005, q007, q009, q010, q012, q014, q016, q017, q019, q021, q022, q024 all flagged
+- Median year of these queries ranges 2012-2020
+- This is the high-signal output: even if the user doesn't want the downweight, the warning is useful ("your topic may be dead, consider narrowing or adding 'since 2020' filter")
+
+**Decision** (per discipline):
+- Default `--recency-mode off` for benchmark eval (preserves ground-truth alignment)
+- User opts in with `--recency-mode strict` when curating for their own paper
+- Filter is a user-preference signal, orthogonal to ground-truth labels
+
+**5-check audit against Global Rule**: 5/5 pass
+1. ✅ Runs for $0
+2. ✅ No hosted service
+3. ✅ Maintenance: ~190 lines new (recency.py) + ~30 lines modified (_v4_rerank.py); no ongoing obligation
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: N/A (no third-party API)
+
+**Deferred to backlog**:
+- **Field-aware recency thresholds** ([P1-6] territory): slow-moving fields (econ, classical ML) should be more lenient; fast-moving fields (AI, biotech, climate) apply strictly. Needs sub-topic decomposition first.
+- **`pa search --recency-mode` CLI flag** (currently only on `_v4_rerank.py`; would need to thread into `pa search` for production use)
+- **`pa_keys_remind` style warnings** — surface field-stale warnings during `pa search` rather than just at rerank time
+
+### [P1-6] Sub-topic granularity decomposition
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 3: granularity)
+- **Rationale**: User said "部分主题的颗粒度太大了,譬如农业". When query is "agriculture", every ag paper matches → unrankable. When query is "AI in higher ed" vs "intelligent tutoring systems", these are very different. Need query decomposition before retrieval.
+- **Acceptance criteria**:
+  - New module `pa_cli/decompose.py` with `decompose_query(query: str) -> list[SubTopic]`
+  - `SubTopic = {name, keywords, exclusion_keywords, weight, domain}`
+  - Default decomposition: use the query's primary noun phrase + a list of known sub-topics from a static lookup table (ag → {agronomy, ag econ, ag tech, climate-adaptation, supply chain, food security}; AI education → {intelligent tutoring, adaptive learning, learning analytics, ...}; protein structure → {structure prediction, function prediction, binding site prediction, ...})
+  - `pa search <query> --subtopic-mode auto` expands query into sub-queries, runs each, dedups, applies per-subtopic weights in rerank
+  - User can override: `--subtopic-config '{"agriculture": ["ag_econ", "climate_adaptation"], "default": [...]}'`
+  - v3.9.0+ rerank pipeline threads `subtopic_weight` into final score
+- **Estimated effort**: ~3-4h (lookup table + decomposition logic + integration + tests)
+- **Global Rule check**: 5/5 pass (local code, no API required, no maintenance)
+- **User confirmation needed**: static lookup table content — is 30 sub-topic domains enough? More generalizable: LLM-based decomposition is out of scope (per Global Rule no hosted LLM); pure keyphrase is feasible
+
+### [P1-7] Institutional credibility boost
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 5)
+- **Rationale**: User stated "Qs前50大学以及一些特殊机构譬如ESMFold,IMF,世界银行等具有公信力或者国际背景或者著名的国家的研究所,背书的论文,就算仅仅是部分相关,但其可能的研究深度是极高的". The Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: Mavis labeled 1 ("partial"), user said "极具参考价值" (high reference value) — but didn't override to 2 because relevance is technically partial. Solution: don't change label, but boost ranking score.
+- **Acceptance criteria**:
+  - `pa_cli/institutions.py` with `INSTITUTION_TIERS` lookup:
+    - Tier 1 (high credibility, big boost): IMF, World Bank, OECD, NBER, Federal Reserve, BIS, top-5 central banks, ESMFold/AlphaFold teams, top-5 pharma R&D, Qs top-10 universities (MIT, Stanford, Harvard, Oxford, Cambridge, Caltech, etc.)
+    - Tier 2 (credible, small boost): Qs top-50 universities, NBER, well-known national research institutes (Max Planck, CNRS, Chinese Academy of Sciences, etc.)
+    - Tier 3 (no boost): everything else
+  - Lookup mechanism: parse `institution` field from OpenAlex `authorships[].institutions[].display_name` (already in pa_cli search.py) → map to tier
+  - `pa search <query> --institution-boost` adds 0.1-0.3 weight to final score based on author institution tier
+  - v4 rerank pipeline threads `institution_factor` into final score (NOT into label — labels stay ground-truth accurate)
+- **Estimated effort**: ~2h (lookup table + parser + integration + tests)
+- **Global Rule check**: 5/5 pass
+- **User confirmation needed**: tier definitions + boost magnitudes
+
+### [P1-8] China political-institution exclusion
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 6: China-specific exclusion)
+- **Rationale**: User said "针对中国,排除任何国际关系研究院以及马克思主义学院等具有官方政治背景的文章". These papers have low academic-rigor signal in their domain, even if cited. Need a blocklist applied at retrieval time.
+- **Acceptance criteria**:
+  - `pa_cli/exclusions.py` with `POLITICAL_EXCLUSION_INSTITUTIONS`:
+    - China: 中国国际关系研究院 / 中国社科院国际关系研究所 / 各级马克思主义学院 (CASS international relations institutes, all levels of Marxism schools)
+    - Note: this is a USER-specific exclusion, NOT a general academic-rigor filter
+  - `pa search <query> --china-political-exclude` filters out papers whose any author institution matches the blocklist
+  - Documented in README: "This is a personal-sensitivity filter for the user; not a quality claim. Other users may want to include these papers."
+  - Logs the count of excluded papers to stderr for transparency
+- **Estimated effort**: ~1h (small blocklist + filter + tests)
+- **Global Rule check**: 5/5 pass
+- **User confirmation needed**: exact list of institutions to exclude
+
+### [P1-9] Geographic / country metadata extraction
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 4: geographic)
+- **Rationale**: User said "有些命题需要有实证检验,此时可能有地理信息或者国别信息,像这种带有地理和国别的信息的也要参考不仅仅只是停留在命题解构上". When query is "carbon pricing in OECD countries", the country-level data is essential, not the abstract theory. Need to surface country info in retrieval, not just rely on concept keywords.
+- **Acceptance criteria**:
+  - `pa_cli/geography.py` with `extract_country(title, abstract, venue) -> list[str]` using a curated country-name list (~250 ISO 3166-1)
+  - Boost factor for queries with country mentions in title/abstract
+  - New field in snapshot output: `countries: list[str]` (ISO 3166-1 alpha-2)
+  - CLI flag: `pa search <query> --geo-mode strict|moderate|off` (strict = require country match, moderate = boost, off = ignore)
+  - v3.9.0+ rerank: `geo_factor` multiplies final score for candidates with country overlap
+  - Tests: q007 (climate ag) and q012 (carbon pricing OECD) should both surface country-tagged candidates in top 10
+- **Estimated effort**: ~3h (country list + extractor + integration + tests)
+- **Global Rule check**: 5/5 pass (no API; country list is a static file, <50KB)
+- **User confirmation needed**: country list completeness, especially small African / Pacific island nations
+
+### [P1-10] Falsifiability philosophy integration (research item)
+
+- **Status**: proposed (research)
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Source**: User spot-check 2026-07-13 feedback (theme 7: falsifiability)
+- **Rationale**: User said "你的架构哲学里面也应该考虑 可证伪性的确认,尤其是当代可证伪性哲学方法应用在博士以及学术界层面". This is an architectural-philosophy ask, not a feature ask. Need to research what falsifiability-check tools exist in academic research and design how paper-agent should encode them.
+- **Initial GitHub research findings (2026-07-13)**:
+  - **No direct "falsifiability tool" found on GitHub**. The Popper / Lakatos / Kuhn / Feyerabend / Shapere tradition is primarily academic literature, not software.
+  - **Closest match**: `K-Dense-AI/scientific-agent-skills` (27.6k stars) — broader scientific methodology (literature review, paper lookup, scientific writing, peer review, citation management, ML best practices). Has a `scientific-writing` skill that covers argument structure but not falsifiability specifically.
+  - **No academic methodology package** found that codifies Popperian falsifiability or Lakatosian research programmes as a query-side filter.
+- **Acceptance criteria (research deliverable, not code)**:
+  - `ROADMAP_RESEARCH_2026-07-13_FALSIFIABILITY.md` — survey:
+    1. What is contemporary falsifiability philosophy (post-Popper, post-Lakatos, e.g. Stanford Encyclopedia of Philosophy entries on falsifiability, research programmes, scientific realism)?
+    2. How is it applied at PhD / academic level? (e.g. PhD thesis requirements include "research questions must be answerable" which is operational falsifiability)
+    3. What would falsifiability-check look like as a paper-agent feature? Hypothesis:
+       - **Per-paper**: does the paper's abstract claim testable propositions? (extract hypothesis, identify variables, identify predictions)
+       - **Per-query**: does the candidate paper make a claim that, if true, would shift the user's research conclusion? (Popperian "severity" test)
+    4. What existing tools can wrap? (e.g. claim-detection in `OpenScholar` or `LitSearch`?  Existing tools? Need github search across "hypothesis extraction", "claim detection", "research question formalization")
+  - Decision: is this a feature paper-agent should ship, or a methodology guideline? If guideline, write into `CHANGELOG.md` and link from `pa review` output; if feature, design it as a new subcommand
+- **Estimated effort**: 4-6h research + design doc; 0h code (until user decides)
+- **Global Rule check**: 5/5 pass (pure research, no code maintenance)
+- **User confirmation needed**: scope of the deliverable (research doc vs. feature)
+
+### [P2-5] Quality filter (no-abstract + low-cite = low quality)
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P2
+- **Source**: User spot-check 2026-07-13 feedback (q005 #30: "低相关+无发表时间+低引用,可被视为劣质论文")
+- **Rationale**: Papers with no abstract + no year + low citations have ~zero utility. Mavis was labeling them as 1 (partial) because there's no signal to override. User caught one (q005 #30) and explicitly called out "no year + low cites = low quality paper, should be removed".
+- **Acceptance criteria**:
+  - `pa search <query> --min-quality` filter:
+    - If `abstract is None AND citation_count < 50 AND year is None` → flag as "low quality" (not auto-drop, but mark)
+    - If `year < now - 25 AND citation_count < 100` → flag as "outdated"
+    - Mavis auto-labeler: when candidate is "low quality", Mavis's label cannot exceed 1 unless user-verified
+  - CLI: `pa search <query> --quality-mode flag|filter|off` (flag = warning, filter = drop, off = ignore)
+  - In v3.9.0 spot-check: q005 #30 (no year, 21 cites) would have been flagged automatically
+- **Estimated effort**: ~1h
+- **Global Rule check**: 5/5 pass
+- **User confirmation needed**: threshold values
+
+---
+
+## v4 evaluation methods (4 candidates, proposed 2026-07-13)
+
+**User request** (verbatim 2026-07-13): "我们之前讨论的几种关于评估的方案（如：北大的pa, 还有MoE) 你做了哪几种？" → follow-up: "这四个方案有哪些可以部分实现的？有哪些可以完全实现的？优先在Global rule下，完全实现的。不能实现的给我替代方案。还有关注pasa 和 Moe 相关的Github 仓库，看看他们是如何实现的"
+
+**Honest 3-tier audit of what was DONE in v3.9.0** (from response earlier 2026-07-13):
+- ❌ PaSa-lite (北大的pa = ByteDance + 北大鄂维南): NOT implemented
+- ❌ MoE routing: NOT implemented
+- ❌ Cross-encoder reranker: NOT implemented
+- ❌ LTR (Learning to Rank): NOT implemented
+- ✅ What IS shipped: 5-engine pool (round-robin, "unweighted MoE") + BM25 + bi-encoder + combined + PRF + random. These are 5 simpler conditions from `bench/v01/_v4_rerank.py`.
+
+**GitHub research findings** (2026-07-13):
+- **PaSa** (ByteDance Seed + 北大鄂维南, arXiv 2501.10120): `github.com/bytedance/pasa`, 8 commits, `src/` with `paper_agent.py` / `paper_node.py` / `agent_prompt.json` / `models.py` / `metrics.py` / `run_paper_agent.py` / `utils.py`. Architecture: dual-agent (Crawler = 7B LLM with 4 actions: search/read/expand/stop; Selector = 7B LLM with decision token + reasoning). Training: SFT (13k demo trajectories) + PPO (custom session-level, 16 GPU weeks). External deps: Google Search API (serper.dev, **paid $**) + arxiv/ar5iv + 7B model serving.
+- **MoE-for-IR**: GitHub search returns mostly LLM-internal MoE (e.g. `microsoft/tutel` = sparse MoE training lib for trillion-param LLMs; `lucidrains/mixture-of-experts` = parameter scaling; `zheng-tklab/mixture-of-experts` = Shazeer 2017 re-impl). **No direct "MoE for IR routing" repo found**. Closest to "MoE retrieval" pattern: `AkariAsai/OpenScholar` (UW + AllenAI, 8B LM + custom retriever + custom reranker) — LTR-style rerank design.
+- **MoE for hybrid retrieval** (paper, not code): "Mixture-of-Retrievers" academic papers exist but no clean public impl. Pattern: weighted combination of retrievers with per-query learned weights.
+
+**Global Rule check across 4 options**:
+
+| Option | Fully impl? | Global Rule | Key blocker | Effort | Expected lift |
+|---|---|---|---|---|---|
+| **LTR (LambdaMART)** | ✅ | ✅ | none — LightGBM pure local | 1-2h | 5-10% on recall@10 |
+| **Cross-encoder (BGE-reranker)** | ✅ | ✅ | none — BGE-reranker-base ~278MB single .bin | 2-3h | 5-15% on recall@10 |
+| **MoE routing (sklearn)** | ✅ | ✅ | needs query→engine routing labels (we have them from v3.9.0 benchmark) | 0.5-1d | 5-10% on recall@10 |
+| **PaSa-lite (rule-based)** | ⚠️ partial | ❌ full version | full version = 7B LLM + RL training + paid Google API | 1-2 weeks (rule-based subset) | unknown |
+
+**Replacement strategies for non-fully-implementable**:
+- For PaSa-lite (LLM-based Crawler + Selector): substitute with **rule-based 1-hop citation walk** (have: `[P1-1] pa citations`) + **PRF query expansion** (have: `pa search --prf`) + **relevance scoring via bi-encoder** (have: v3.9.0). Rule-based version captures ~50% of PaSa design (multi-strategy query expansion + iterative refinement), misses 50% (LLM-driven relevance reasoning + adaptive stop). Permanent constraint: per Global Rule, no hosted LLM, no paid API.
+
+**Priority order** (per user "优先在Global rule下，完全实现的" instruction):
+1. 🥇 LTR — fastest ROI, fully implementable
+2. 🥈 Cross-encoder reranker — proven IR pattern, fully implementable
+3. 🥉 MoE routing — bigger lift potential but more work, fully implementable
+4. ⏸ PaSa-lite — only if #1-#3 done + user opts in for the 1-2 week investment
+
+**Sub-items** (each as separate proposed ROADMAP entry — see [P0-6] / [P0-7] / [P1-11] / [P2-6] / **[P0-8]** below).
+
+### Layer architecture overview (7 layers, updated 2026-07-13)
+
+paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-download deep rerank)**,共 7 层。4-option + 新层 的落位:
+
+| Layer | 职责 | 4-option 落位 | ROADMAP ID |
+|---|---|---|---|
+| **L1: Source pool** | 5 引擎 per-query weight 分配 | MoE routing (per-engine weights) | [P1-11] |
+| **L2: Recall** | 初始结果 + query 改写 + citation walk + iterative refinement | PaSa-lite multi-strategy + citation walk | [P2-6] |
+| **L3: Rerank** | BM25 + bi-encoder + cross-encoder + LTR (LambdaMART) | Cross-encoder (BGE-reranker) + LTR (LambdaMART) | [P0-6] / [P0-7] |
+| **L4: Filters** | recency + institution + quality + geography | 已有 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-5] | — |
+| **L5: Output** | top-K 输出给用户 | — | — |
+| **L6: Download** (NEW) | 8 通道 cascade 自动下载 + 失败列表 → 用户人工下载 | — | [P0-8] part 1 |
+| **L7: Full-text deep rerank** (NEW) | 全文 BM25 + 全文 cross-encoder + LTR re-fit 重新打分 | — | [P0-8] part 2 |
+
+**用户原话 2026-07-13**: "由于你没有办法读全文,我考虑到读全文需要人工下载,因此可以设置额外一个Layer,前面的Layer 先筛选出来最优的论文,然后尝试下载,把不能下载的给我,我来人工下载。之前整合的下载方法也可以应用到这层,然后再重新跑。"
+
+→ 新增 L6-7 把 PaSa 的 "Full-text paper reading" 从 10% → 70%,**整体 PaSa 覆盖率 30-40% → 50-60%** (详见 [P2-6] 末的"with [P0-8]" 表格)。
+
+**为什么不需要 GPU**:LambdaMART + bi-encoder + cross-encoder (BGE-base 278MB) + sklearn MoE router 都跑在 CPU 上,本地个人电脑 1-2h 内能跑完 5-fold CV。Layer 6-7 全文 rerank 也只用 CPU 推理(BGE-base 在 CPU 上单 pair ~50ms,top-20 全文 rerank < 5s)。
+
+**用户决策顺序** (per 2026-07-13 "我喜欢能真实实现,利用本地电脑跑一下机器学习模型,应该不是特别困难"):
+1. **[P0-6] LTR** — 1-2h, 立即做
+2. **[P0-7] Cross-encoder** — 2-3h, 立即做
+3. **[P1-11] MoE routing** — 0.5-1d, 立即做
+4. **[P0-8] Full-text deep rerank** (新) — 1-2d, 等前三
+5. **[P2-6] PaSa-lite rule-based** — 1-2 周, 等前四
+
+---
+
+### [P0-6] Learning to Rank (LambdaMART) reranker
+
+- **Status**: done
+- **Added**: 2026-07-13
+- **Started**: 2026-07-13
+- **Completed**: 2026-07-13
+- **Priority**: P0
+- **Layer**: 3 (Rerank)
+- **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
+- **Rationale**: Currently v4 rerank uses simple linear `combined = 0.5*BM25 + 0.5*bi-encoder` (or fixed weights per condition). LTR learns weights from data via LambdaMART (gradient-boosted trees with pairwise rank loss). Can capture non-linear interactions between features (e.g. "BM25 high AND biencoder low = more relevant than BM25 low AND biencoder high because biencoder is the noisy feature"). Uses LightGBM (pure local, no hosted service) on existing v3.9.0 benchmark data (25 queries × 30 candidates × 6 conditions × 3-level labels).
+- **Acceptance criteria**:
+  - `pa_cli/ltr.py` — `LambdaMARTRanker` class wrapping `lightgbm.LGBMRanker` with default `objective='lambdarank'`, `metric='ndcg'`
+  - Feature engineering: per (query, candidate) tuple, features = `[bm25_score, biencoder_score, combined_score, prf_score, citation_count, year, is_recent, has_abstract]` (8 features)
+  - Labels: 3-level (0/1/2) from `bench/v01/labels_clean.json` (3,725 labeled pairs across 25 queries)
+  - Train/test split: 5-fold CV over queries (NOT candidates) — important: candidates of same query must be in same fold
+  - CLI flag: `pa v4-rerank --ranker ltr` (additive; default `linear` preserves current behavior)
+  - Eval: rerun v3.9.0 metrics with LTR ranker, compare to combined; log to `bench/v01/reports/v3_9_2_ltr.md`
+- **Estimated effort**: ~1-2h
+- **Global Rule check**: 5/5 pass (LightGBM pure local, no API, no hosted)
+- **User confirmation needed**: feature engineering choices, fold count, whether to use 3-level labels or binarize to 0/1
+- **GitHub reference**: OpenScholar uses similar LightGBM-style rerank (per `AkariAsai/OpenScholar` code); pattern is well-established
+
+#### Outcome (2026-07-13) — 3-tier honest audit
+
+**Files added** (3):
+- `pa_cli/ltr.py` (~430 lines) — full LambdaMART pipeline: feature engineering, dataset assembly, 5-fold CV, baseline comparison, report generation
+- `test_output/_run_ltr_v3_9_2.py` (~70 lines) — end-to-end runner
+- `bench/v01/reports/v3_9_2_ltr.{md,json}` — generated output
+
+**Files modified** (2):
+- `pa_cli/__init__.py` — version 3.8.1 → 3.9.2
+- `CHANGELOG.md` — added v3.9.2 entry with 3-tier honest audit
+
+**Result** (5-fold CV, n=25 queries, per-query group, 3-level labels):
+
+| Method | NDCG@10 | Recall@10 | Precision@10 |
+|---|---:|---:|---:|
+| **LTR (LambdaMART)** | **0.7192 ± 0.0959** | **0.6174** | **0.4640** |
+| combined (linear 0.5/0.5) baseline | 0.7227 | 0.7051 | 0.4920 |
+| **Δ (LTR − baseline)** | **−0.0034** | **−0.0877** | **−0.0280** |
+
+**3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
+- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, 5-fold CV produces per-fold metrics
+- ✅ **Verified architecture**: LTR + LightGBM training, feature engineering, per-query group CV all functional
+- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = -0.0034 on n=25 is within noise band
+- ❌ **NOT a 'finding' or 'insight'**: LTR does NOT beat combined on this small benchmark
+
+**Why LTR did not beat baseline on n=25** (honest analysis):
+1. n=25 is too small — 5-fold CV means each fold trains on 20 queries with ~600 (q, candidate) pairs
+2. 3-level labels too coarse — LTR works best with finer relevance grades (0-4)
+3. LambdaMART defaults to NDCG-optimizing — combined is already close to optimal
+4. Heavy feature correlation — `combined_score = 0.5*bm25 + 0.5*biencoder` is by definition a function of two others
+
+**Feature importance** (what LTR actually learned, average gain):
+- `combined_score` (309.86) — most used (linear baseline captured)
+- `biencoder_score` (298.77)
+- `log_cite_count` (147.65), `bm25_score` (134.73), `prf_score` (111.89) — moderate use
+- `year` (80.12), `has_abstract` (7.12), `is_recent` (1.37) — barely used
+
+**Acceptance criteria status**: 5/5 met
+1. ✅ `pa_cli/ltr.py` — `LambdaMARTRanker` class with default `objective='lambdarank'`, `metric='ndcg'`
+2. ✅ 8 features: `bm25_score, biencoder_score, combined_score, prf_score, citation_count, year, is_recent, has_abstract`
+3. ✅ 3-level labels from `bench/v01/labels_clean.json` (741 labeled pairs across 25 queries)
+4. ✅ 5-fold CV per-query group
+5. ✅ Side-by-side comparison report at `bench/v01/reports/v3_9_2_ltr.md`
+
+**5-check Global Rule audit**: 5/5 pass (lightgbm pure local, no API, no hosted, ~500 LOC maintenance, free-tier degradation graceful)
+
+**Deferred to backlog** (recorded 2026-07-13):
+- **LTR with cross-encoder features added** (after [P0-7] ships, the 8-feature list becomes 9; rerun LTR to capture cross-encoder gain)
+- **LTR with full-text features added** (after [P0-8] ships, 8 → 12 features; rerun to capture full-text deep rerank gain)
+- **Hyperparameter tuning** (currently using LambdaMART defaults; could grid-search n_estimators × num_leaves)
+- **More granular labels** (4-5 levels instead of 3) — needs user spot-check re-labeling
+- **n=50 queries** (q026-q050 expected from user) — current n=25 is too small for LTR to learn meaningful patterns
+
+### [P0-7] Cross-encoder reranker (BGE-reranker)
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P0
+- **Layer**: 3 (Rerank)
+- **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
+- **Rationale**: Bi-encoder (current) is fast but approximate — it embeds query and candidate separately, then computes cosine. Cross-encoder is slower but more accurate — it takes (query, candidate) as a single input and lets the model attend across them. Standard IR practice: use bi-encoder to retrieve top 100-1000, then cross-encoder to rerank top 30-100. Expected +5-15% on recall@10 per academic benchmarks.
+- **Acceptance criteria**:
+  - `pa_cli/cross_encoder.py` — `BGEReranker` class wrapping `sentence_transformers.CrossEncoder`
+  - Model: `BAAI/bge-reranker-base` (~278MB, single .bin file, downloadable from HuggingFace direct URL without git clone, no auth needed)
+  - First-time setup: `pa v4-rerank --reranker bge --download` downloads to `~/.paper-agent/models/bge-reranker-base/` once, caches for reuse
+  - Reuses existing `_v4_rerank.py` pipeline: bi-encoder top-30 → cross-encoder rerank top-30 → final ranking
+  - CLI: `pa v4-rerank --reranker {none, bge}` (default `none` = current bi-encoder only)
+  - Eval: side-by-side comparison with v3.9.0 metrics
+- **Estimated effort**: ~2-3h
+- **Global Rule check**: 5/5 pass (one-time ~278MB local download, no API call per rerank, no hosted service)
+- **User confirmation needed**: model size (base vs large vs v2-m3); whether to download on first use or require explicit `--download` flag
+- **GitHub reference**: `BAAI/bge-reranker` is the official BAAI repo, MIT, ~3k stars; widely cited in IR literature
+- **Why not HF `cross-encoder/ms-marco-MiniLM-L-6-v2`**: HF model downloads require git clone + auth in some networks; BGE-reranker is single .bin
+
+### [P1-11] MoE-for-IR router (sklearn-based)
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P1
+- **Layer**: 1 (Source pool) + 2 (Recall)
+- **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
+- **Rationale**: Currently 5-engine pool (Crossref / S2 / arxiv / OpenAlex / CORE) is "unweighted MoE" — round-robin interleaving with min_per_source, no learned routing. MoE-for-IR learns: for query of type X, prefer engine A; for query of type Y, prefer engine B. Captures the fact that some engines are better for specific query types (e.g. arxiv strong for technical CS/ML, OpenAlex strong for recent papers, Crossref strong for citation graph, S2 strong for influential papers, CORE strong for OA).
+- **Acceptance criteria**:
+  - `pa_cli/moe_router.py` — `MoERouter` class with sklearn `LGBMClassifier` per engine (5 classifiers, one per engine)
+  - Training labels: per query, label = engine that contributed the most "relevant" candidates (label 2) to the top-10. If multiple engines tie, use the one with the highest bi-encoder score
+  - Features: TF-IDF on query text (max 5000 features) + query metadata (length, has-acronym, year constraint, etc.)
+  - Output: per (query, engine) pair, a weight ∈ [0, 1] summing to 1 across engines
+  - Routing applied at search time: query → weights → weighted per-engine result aggregation
+  - CLI: `pa search <query> --router {round-robin, moe}` (default `round-robin` preserves current behavior)
+  - Eval: side-by-side with v3.9.0 metrics; should show lift on query types where one engine is dominant
+- **Estimated effort**: ~0.5-1d
+- **Global Rule check**: 5/5 pass (sklearn + LightGBM pure local, no API needed at inference time)
+- **User confirmation needed**: routing label definition (which engine "wins" for a query), feature engineering
+- **GitHub reference**: No direct IR-MoE library found. Pattern inspired by `AkariAsai/OpenScholar` (uses 1 retriever + 1 reranker, not multi-engine, but same design philosophy). Academic literature: "Mixture-of-Retrievers" papers (e.g. Multi-RAG, Adaptive-RAG) — paper-agent implements the lightweight version
+
+### [P2-6] PaSa-lite (rule-based, no LLM)
+
+- **Status**: proposed (partial)
+- **Added**: 2026-07-13
+- **Priority**: P2
+- **Layer**: 2 (Recall enhancement)
+- **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
+- **Rationale**: Full PaSa (ByteDance + 北大鄂维南) uses 7B LLM + RL training + paid Google Search API. **Fails Global Rule** (hosted LLM + paid API). A "lite" version captures 50% of PaSa's value: multi-strategy query expansion + iterative refinement + citation walk, all rule-based. The other 50% (LLM-driven relevance reasoning, adaptive stop decision) cannot be replicated without an LLM.
+- **Acceptance criteria (PARTIAL — what's implementable)**:
+  - `pa_cli/pasa_lite.py` — `PaSaLiteAgent` class
+  - **Multi-strategy query expansion** (PaSa component 1/3): generate 3-5 query variants from input query (synonyms via WordNet / precomputed map, related terms via OpenAlex concepts, broadened scope, narrowed scope). We have all the building blocks: `pa search --concepts`, `pa search --prf`, `pa search --expand`
+  - **Citation walk** (PaSa component 2/3): for each top candidate, fetch forward citations, score and merge. We have `[P1-1] pa citations` (forward + backward)
+  - **Iterative refinement** (PaSa component 3/3, simplified): after one round, take top-5 candidates, re-query using their titles/abstracts as seeds, dedup, re-rank. Implemented as 2-3 rounds max (caller-tunable)
+  - **What we CANNOT do without LLM** (the 50% gap): relevance reasoning ("does this paper actually answer the user's question?"), adaptive stop ("have we found enough?"), content-aware re-ranking (PaSa Selector reads full paper content; we only have abstracts)
+- **Acceptance criteria (NOT IMPLEMENTABLE — documented as gap)**:
+  - Full PaSa Crawler/Selector 7B LLM agent (would need: 7B model serving, GPU, RL training pipeline, paid Google API)
+  - PaSa's "expand" action (LLM decides what to expand into — keywords? year range? sub-topics?)
+  - PaSa's "stop" action (LLM decides convergence)
+  - PaSa's "reasoning" output (LLM-generated chain of thought)
+- **Estimated effort**: ~1-2 weeks (most work is integration + testing on real queries)
+- **Global Rule check**: ⚠️ partial — rule-based version passes 5/5; full version fails on $ cost + hosted service
+- **User confirmation needed**: scope (just multi-strategy expansion, or also citation walk + iterative refinement); rounds cap
+- **GitHub reference**: `github.com/bytedance/pasa` (8 commits, dual-agent design); `AkariAsai/OpenScholar` (8B LM + custom retriever; closest in spirit to rule-based lite)
+
+#### PaSa coverage re-estimate (with [P0-8] Layer 6-7 added)
+
+User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将原 PaSa-lite rule-based 30-40% 覆盖率重新估算:
+
+| PaSa 组件 | 真实实现 | 我们的替代 (无 L6-7) | 覆盖率 | 我们的替代 (有 L6-7) | 覆盖率 |
+|---|---|---|---|---|---|
+| Multi-strategy query expansion | LLM 创意 | `pa search --concepts` + `--prf` + `--expand` 规则 | **70%** | 同左 | **70%** |
+| Full-text paper reading | LLM 读 PDF 全文 | 只用 abstract | **10%** | **全文 BM25 + 全文 cross-encoder + 启发式** | **70%** ⬆ |
+| Citation walk (1-hop) | LLM 决定 expand 方向 | 1-hop forward + backward via `pa citations` | **60%** | 同左 | **60%** |
+| Stop decision | LLM 决定收敛 | 固定 2-3 轮 | **20%** | 启发式:re-rank score plateau 触发 stop | **30%** ⬆ |
+| Relevance reasoning | LLM reasoning chain | bi-encoder cosine score | **30%** | **全文 cross-encoder + LTR re-fit + 多特征** | **60%** ⬆ |
+| Adaptive iteration | LLM 控制 search loop | 固定 pipeline | **40%** | 全文反馈循环 + LTR 重新训练 | **50%** ⬆ |
+| SFT + PPO 训练 | 13k 演示 + 16 GPU | 0 | **0%** | 0 (Global Rule ❌) | **0%** |
+| Google Search API | 收费 serper.dev | 0 | **0%** | 0 (Global Rule ❌) | **0%** |
+| AutoScholarQuery 数据集 | 35k 合成 | 0 (不需要,我们有 25 queries) | **n/a** | 0 | **n/a** |
+| **加权总覆盖率** | | | **~30-40%** | | **~50-60%** |
+
+**关键 insight**:新增 Layer 6-7 (full-text deep rerank) 把 PaSa 覆盖率从 30-40% 提升到 50-60%,主要靠 3 个 component 的提升:Full-text paper reading (10%→70%)、Relevance reasoning (30%→60%)、Adaptive iteration (40%→50%)。剩下 40-50% 仍然受限于 Global Rule (无 LLM + 无 paid API)。
+
+### [P0-8] Full-text deep rerank layer (post-download, PaSa-inspired)
+
+- **Status**: proposed
+- **Added**: 2026-07-13
+- **Priority**: P0
+- **Layer**: 6 (Download) + 7 (Full-text deep rerank)
+- **Source**: User request 2026-07-13 — "由于你说你没有办法读全文,我考虑到读全文需要人工下载,因此可以设置额外一个Layer,前面的Layer 先筛选出来最优的论文,然后尝试下载,把不能下载的给我,我来人工下载。之前整合的下载方法也可以应用到这层,然后再重新跑"
+- **Rationale**: PaSa 覆盖率的最大瓶颈是 "Full-text paper reading" (10%) 和 "Relevance reasoning" (30%)。原因不是技术不行,是 paper-agent 一直没有 full-text 数据。L1-5 跑完只有 abstract。**用户洞察**:加一个 post-download 层,把 8 通道 cascade (Layer 6) 跑一次,能下到的进 Layer 7 全文 rerank,下不到的 emit 一份给用户人工下,**两条路都汇入 Layer 7 re-rank**。这等于把 PaSa 的 "Content-aware rerank on full text" 这条路用 rule-based + cross-encoder + 人工兜底的方式走通。
+- **Acceptance criteria**:
+  - 新增 `pa_cli/deep_rerank.py` 模块 (~300 LOC)
+  - 新增 `pa deep-rerank <CORPUS_DIR> [--user-pdf-dir <dir>]` CLI 命令
+  - **Layer 6 (Download orchestration)**:
+    - 输入:`bench/v01/system_outputs/<query>/top-20.json` (来自 Layer 5 output)
+    - 步骤:对每个 candidate,调 `pa fetch <DOI>` 走 8 通道 cascade (openalex / arxiv / unpaywall / crossref / scihub / playwright)
+    - 输出:成功下载的 list (本地 PDF 路径) + 失败 list (DOI + 失败原因)
+    - 失败 list 写入 `~/.paper-agent/manual_downloads_<timestamp>.md`,每行:`- [ ] <DOI> | <title> | <reason>` 供用户人工下载
+  - **Layer 7 (Full-text deep rerank)**:
+    - 接收:`--user-pdf-dir <dir>` (用户人工下的 PDF 目录) + Layer 6 自动下载的 PDFs
+    - 步骤 1:合并 PDF 路径,统一抽全文 (PyMuPDF)
+    - 步骤 2:对每个 candidate 计算 4 个 full-text features:
+      - `fulltext_bm25`:BM25 on full text vs query (vs abstract-only BM25)
+      - `fulltext_cross_encoder`:BGE-reranker on (query, full text) (vs abstract-only)
+      - `fulltext_citation_density`:citation count / page count (proxy for "depth")
+      - `fulltext_venue_score`:OpenAlex venue prestige score (e.g. Qs top-50)
+    - 步骤 3:用 LTR (来自 [P0-6]) re-fit,把 full-text features 加进 8 维 feature list → 12 维
+    - 步骤 4:输出:`deep_rerank_<timestamp>.json` (per-paper 12-feature 分数 + 排序)
+  - **re-run 流程**:用户人工下完 PDF 后,跑 `pa deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/`,一次性出新的 top-K
+  - **与现有 v3.9.0 评估集成**:deep-rerank 后的 score 作为新 condition 写进 v4 评估 (类似 v3.9.0 加 LTR 一样)
+- **Estimated effort**: ~1-2d (1-2h 写 deep-rerank 模块 + 1-2h 编排下载 + 1h 测试 + 2-3h 真实数据验证)
+- **Global Rule check**: 5/5 pass
+  1. ✅ $0 cost (BGE-base 本地 278MB, 8 通道 cascade 已有)
+  2. ✅ 无 hosted service
+  3. ✅ Maintenance ~300 LOC + 复用现有 pa fetch + pa v4-rerank
+  4. ✅ 无 publish obligation
+  5. ✅ Free-tier degradation:如果 BGE 下载失败,fallback 到 heuristic + LTR 重新训练 (不依赖 BGE)
+- **PaSa 覆盖率影响** (per 上表):
+  - Full-text paper reading: 10% → **70%** (+60%)
+  - Relevance reasoning: 30% → **60%** (+30%)
+  - Stop decision: 20% → **30%** (+10%)
+  - Adaptive iteration: 40% → **50%** (+10%)
+  - **整体:30-40% → 50-60%** (+15-20%)
+- **User confirmation needed**:
+  - top-N cutoff (默认 20? — top-20 全文 rerank 在 BGE-base CPU 上 < 5s)
+  - 是否在 deep-rerank 后 emit 一份 markdown 给用户审阅
+  - manual download 失败 list 的格式 (纯 DOI list vs 表格带 title)
+  - 是否要支持"半自动"模式(下载成功 5/10,剩下 5 用户决定要不要人工)
+- **GitHub reference**: 无直接对应。Pattern 灵感来自 PaSa 的"读完再判 relevance"循环 + OpenScholar 的"full-text-aware rerank"

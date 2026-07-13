@@ -7,6 +7,177 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+---
+
+## [3.9.2] - 2026-07-13 (minor — [P0-6] LTR (LambdaMART) reranker + Layer 3 architecture)
+
+Implements ROADMAP [P0-6] (added 2026-07-13, completed same day in v3.9.2). Per user request 2026-07-13: "我喜欢能真实实现,利用本地电脑跑一下机器学习模型,应该不是特别困难."
+
+**New module** (`pa_cli/ltr.py`, ~430 lines):
+- `LTRConfig` dataclass — LambdaMART hyperparameters (objective, metric, n_estimators, learning_rate, num_leaves, label_gain=[0,1,3])
+- `build_features_one(candidate, bm25_norm)` — extract 8-dim feature vector: `[bm25_score, biencoder_score, combined_score, prf_score, log_cite_count, year, is_recent, has_abstract]`
+- `assemble_dataset(bench_dir)` — merge candidates across 6 v3.9.0 conditions, join with `labels_clean.json`, return `{qid: [{doi, features, label, has_label}, ...]}`
+- `to_xyg(dataset)` — convert to (X, y, group, query_ids) for LightGBM (per-query group)
+- `train_lambdamart(X, y, group, config)` — single ranker trainer
+- `kfold_cv(X, y, group, query_ids, n_folds=5)` — k-fold over queries (candidates of same query stay in same fold)
+- `ndcg_at_k`, `recall_at_k`, `precision_at_k` — per-query metrics
+- `eval_combined_baseline(X, y, group)` — score against the linear `0.5*bm25_norm + 0.5*biencoder` baseline
+- `generate_report(cv, baseline, dataset, config)` — markdown report
+- `run_ltr_pipeline(bench_dir, config)` — end-to-end orchestration
+
+**Pipeline runner** (`test_output/_run_ltr_v3_9_2.py`, ~70 lines):
+- Runs `run_ltr_pipeline` on `bench/v01/`
+- Writes markdown report to `bench/v01/reports/v3_9_2_ltr.md`
+- Writes raw JSON to `bench/v01/reports/v3_9_2_ltr.json`
+
+**Result** (5-fold CV, n=25 queries, per-query group, 3-level labels):
+
+| Method | NDCG@10 | Recall@10 | Precision@10 |
+|---|---:|---:|---:|
+| **LTR (LambdaMART)** | **0.7192 ± 0.0959** | **0.6174** | **0.4640** |
+| combined (linear 0.5/0.5) baseline | 0.7227 | 0.7051 | 0.4920 |
+| **Δ (LTR − baseline)** | **−0.0034** | **−0.0877** | **−0.0280** |
+
+**Feature importance (gain) — what LTR actually learned**:
+- `combined_score` (309.86) — most used (linear baseline captured)
+- `biencoder_score` (298.77) — second most
+- `log_cite_count` (147.65) — moderate use
+- `bm25_score` (134.73) — moderate use
+- `prf_score` (111.89) — moderate use
+- `year` (80.12) — modest use
+- `has_abstract` (7.12) — almost unused
+- `is_recent` (1.37) — almost unused
+
+**3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
+- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, 5-fold CV produces per-fold metrics, report generated
+- ✅ **Verified architecture**: LTR + LightGBM training, feature engineering, per-query group CV all functional
+- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = -0.0034 on n=25 is within noise band; Δ Recall@10 = -0.0877 is larger but no significance test
+- ❌ **NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal. LTR does NOT beat combined on this small benchmark.
+
+**Why LTR did not beat baseline on n=25** (honest analysis):
+1. **n=25 is too small for LTR to learn meaningful patterns** — 5-fold CV means each fold trains on 20 queries with ~600 (q, candidate) pairs
+2. **3-level labels too coarse** — LTR works best with finer relevance grades (e.g. 0-4); 0/1/2 reduces signal
+3. **LambdaMART defaults to NDCG-optimizing** — but the baseline `combined` is already close to optimal for these features
+4. **The 8 features have heavy correlation** — `combined_score = 0.5*bm25_norm + 0.5*biencoder` is by definition a function of two others, so LTR sees collinear inputs and may overfit
+
+**Recommendation** (per ROADMAP discipline):
+- ✅ LTR architecture ships in v3.9.2 as a working `pa_cli.ltr` module
+- ✅ Available for production use as a more expressive ranker once we have more queries
+- ❌ Do NOT claim LTR "beats baseline" on this benchmark
+- 📌 Next: n=50+ queries (q026-q050 expected from user) will give LTR the data volume it needs
+
+**5-check Global Rule audit**: 5/5 pass
+1. ✅ Runs for $0 (lightgbm + numpy + pandas pure local)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~430 LOC new in pa_cli/ltr.py, ~70 LOC runner
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: no third-party API used
+
+**Layer architecture** (per user 2026-07-13 request "归类到合适的layer里"):
+- LTR sits at **Layer 3 (Rerank)** — final stage after bi-encoder scoring
+- Will be preceded by `[P0-7] Cross-encoder` and followed by `[P0-8] Full-text deep rerank` (Layer 6-7)
+
+---
+
+## [3.9.1] - 2026-07-13 (patch — P0-4 DOI canonicalization + P1-5 recency filter)
+
+### Fixed — [P0-4] DOI canonicalization at query level
+
+Implements ROADMAP [P0-4]. User spot-check 2026-07-13 revealed:
+- 7 case-variant duplicates in labels (e.g. `10.1016/j.chieco.2015.12.009` vs `10.1016/J.CHIECO.2015.12.009` were 2 separate entries)
+- 5 typo'd Frontiers DOIs (`10.3380/...` should be `10.3389/...`) in labels.json + spot-check files
+- 17 non-canonical DOIs in candidate pool (system_outputs/*)
+
+**New module** (`pa_cli/doi.py`, ~165 lines):
+- `canonicalize_doi(doi) -> str` — applies: (1) strip whitespace, (2) apply KNOWN_TYPO_FIXES, (3) lowercase prefix + journal, (4) strip uppercase `J.` from journal abbreviation
+- `normalize_labels_dict(labels) -> (new_labels, rename_map)` — auto-detects single-query vs full-labels shape, applies canonicalization, dedupes by max-label-on-collision
+- 9 smoke test cases (all PASS)
+
+**Migration scripts** (run 2026-07-13, in-place):
+- `bench/v01/_migrate_doi_canonical.py` — labels.json + labels_clean.json + _overrides.json
+- `bench/v01/_migrate_candidate_dois.py` — all 6 system_outputs_* subdirs (150 files total)
+
+**Result** (per `bench/v01/doi_canonicalization_report.json`):
+- 19 unique DOIs renamed in labels.json (748 → 741 keys after dedup)
+- 102 DOIs canonicalized across 150 candidate files
+- 5 typo'd Frontiers DOIs fixed (10.3380 → 10.3389)
+- 14 case-variant renames (J.CHIECO → j.chieco, etc.)
+
+**Side effect on v3.9.0 metrics** (honest audit):
+- Combined recall@10: 0.721 → 0.718 (-0.003; n_relevant dropped from dedup of duplicate labels)
+- Biencoder recall@10: 0.685 → 0.671 (-0.014; same)
+- 3.9x lift preserved
+- **Interpretation**: the metrics went down slightly because n_relevant (denominator) changed. This is **not a degradation of the architecture** — it's a correction of double-counting. The 3.9x lift is on canonical DOIs.
+
+### Added — [P1-5] Recency + citation threshold filter
+
+Implements ROADMAP [P1-5]. User's explicit rule (verbatim 2026-07-13):
+> "文献的时间太老了,甚至有十年之前的文章,除非这种文章引用度很高,超过平均引用数两个以上标准差,否则不应该作为我们应该看的文章。假如大量的引用文章都比较老,很有可能该领域已经过时了,或者没人研究了。"
+
+**New module** (`pa_cli/recency.py`, ~190 lines):
+- `RecencyConfig` dataclass: `mode`, `old_threshold=10y`, `ancient_threshold=20y`, `cite_std_multiplier_old=2.0`, `cite_std_multiplier_ancient=2.5`, `bi_escape_threshold=0.7`, `downweight_old=0.5`, `downweight_ancient=0.1`, `field_stale_median_year=5`
+- `recency_factor(year, citation_count, bi_score, query_citation_stats, config) -> (multiplier, reason)`
+- `compute_citation_stats(candidates)` — mean / std / median of cite_count
+- `check_field_staleness(candidates, config) -> warning_str | None` — emits user-rule-formatted warning when median year > N years old
+- `apply_recency_to_results(results, bi_scores, config) -> (new_results, field_warning)` — applies factor to v4_score
+
+**CLI flag** on `bench/v01/_v4_rerank.py`:
+- `--recency-mode {off|strict|moderate}` (default: `off` — backward compatible)
+- `strict`: 0.1x for ancient + low-cite
+- `moderate`: 0.5x for ancient + low-cite (same as old)
+- `off`: skip (v3.9.0 behavior)
+
+**Side-by-side metrics** (clean labels, 25 queries):
+
+| condition | recall@10 (off) | recall@10 (strict) | Δ | ndcg@10 (off) | ndcg@10 (strict) | Δ |
+|---|---:|---:|---:|---:|---:|---:|
+| original | 0.188 | 0.188 | 0.000 | 0.364 | 0.364 | 0.000 |
+| random | 0.322 | 0.322 | 0.000 | 0.487 | 0.489 | +0.002 |
+| bm25 | 0.609 | 0.610 | +0.001 | 0.703 | 0.711 | +0.008 |
+| biencoder | 0.671 | 0.651 | -0.020 | 0.800 | 0.786 | -0.014 |
+| combined | 0.718 | 0.689 | -0.029 | 0.787 | 0.778 | -0.009 |
+| prf | 0.590 | 0.580 | -0.010 | 0.696 | 0.697 | +0.001 |
+
+**On the metric deltas** (per user feedback 2026-07-13):
+The Δ values are within the noise band of n=25 (no significance test run, no holdout). User explicitly stated: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance, and the recency filter is a separate axis the user can opt in or out of depending on whether they're curating for a benchmark or for their own research.
+
+**Field-stale warnings emitted** (16 of 25 queries):
+- q002, q003, q004, q005, q007, q009, q010, q012, q014, q016, q017, q019, q021, q022, q024 all flagged
+- Median year of these queries ranges 2012-2020; field is mature/declining per user rule
+- This is the **actionable output** of the filter: even if the user doesn't want the downweight, the field-stale warning is useful ("your topic may be dead, consider narrowing or adding 'since 2020' filter")
+
+### New ROADMAP outcomes
+
+- [P0-4] status: `done` (2026-07-13)
+- [P1-5] status: `done` (2026-07-13) — but with caveat that filter HURTS benchmark metrics; see TODO.md §"Honest finding" for decision rationale
+
+### 5-check audit against Global Rule
+
+1. ✅ Runs for $0 (no API, no hosted)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~410 lines new (3 files), no ongoing obligation
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: N/A (no third-party API used)
+
+### What we learned (committed to memory)
+
+- **Honest metric shifts from data fix**: P0-4's metric drop is a feature, not a bug — duplicate-counted n_relevant was always wrong. The "improved" 0.718 is the real lift; 0.721 was artifact of double-counting.
+- **Don't overclaim n=25 metric deltas**: P1-5's strict mode showed -0.029 on combined recall@10. With n=25 and no significance test, this is noise — the recency filter is a user-preference signal, not a label correction. User feedback 2026-07-13: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Recorded as discipline: no "useful negative result" claims on n<100 benchmark data.
+- **Field-stale warning has high signal**: 16/25 queries warned. This is the actionable output of [P1-5] — even users who don't want the downweight can act on the warning ("your topic may be dead, consider narrowing or adding 'since 2020' filter").
+- **Local-only philosophy check ([P1-10]) is research, not feature**: see TODO.md §5 for Popper/Lakatos/Feyerabend/Shapere overview + GitHub search results + design draft. No code yet; awaiting user feedback on scope.
+
+### Deferred to backlog
+
+- Update `pa_cli/snapshot.py` to write canonical DOIs at fetch time (~30 min)
+- Add `--recency-mode` to `_v4_run_all.py` for batch eval (~15 min)
+- Field-aware recency thresholds ([P1-6] sub-topic decomposition prerequisite)
+- `pa search --recency-mode` CLI flag (currently only on bench/v01/_v4_rerank.py)
+- `pa review-falsifiability` subcommand ([P1-10] research deliverable, see TODO.md §5)
+
+---
+
+## [3.9.0] - 2026-07-12 (v4 rerank stack + 2026-07-13 user spot-check)
+
 > **Roadmap discipline** (added 2026-07-04): every release entry below
 > references which roadmap item IDs from `ROADMAP.md` it implements. The
 > roadmap is the single source of truth for paper-agent's evolution —
@@ -403,6 +574,154 @@ to "match if not in `_COMMON_ENGLISH`" which is the safe direction).
   加 ### Modified YYYY-MM-DD 子节" — this CHANGELOG entry is the Modified
   record; `ROADMAP.md [P1-4]` already has the audit subsection documenting
   these gaps.
+
+---
+
+## [3.9.0] - 2026-07-12 (v4 rerank stack + 2026-07-13 user spot-check)
+
+### Added — v4 multi-condition rerank stack
+
+Implements a benchmark-driven evaluation of 5 retrieval strategies + 1 ablation,
+on 25 queries × 30 candidates from the existing `pa search` snapshot. The v4
+stack answers "does paper-agent's `original` (citation-count) ordering actually
+beat the alternatives?" The answer turned out to be "no — citation count is a
+negative signal; semantic bi-encoder alone is the strongest single condition;
+combined (0.5×BM25 + 0.5×bi-encoder) edges out bi-encoder alone by 5%."
+
+**New code** (`bench/v01/`):
+- `_v4_rerank.py` (~250 lines) — 5 conditions: `bm25`, `biencoder` (all-MiniLM-L6-v2 cached locally), `combined` (0.5/0.5 with min-max per-query normalization), `prf` (Rocchio BM25 with top-5 + 8 expansion terms), `random` (ablation). Writes `system_outputs_<condition>/qNNN.json`.
+- `_v4_run_all.py` (~280 lines) — end-to-end runner. 4 sub-steps: rerank all conditions → eval each → side-by-side table → 6 invariant checks. Audit at end (verified / unverified / hollow).
+- `_gen_spot_check.py` (~80 lines) — generates per-query markdown files with title + abstract + Mavis label for user spot-check.
+- `_build_clean_labels.py` (~210 lines, added 2026-07-13) — parses user spot-check markdown files, applies overrides, writes `labels_clean.json` + `_overrides.json` audit log.
+- `eval.py` (existing, used unchanged) — recall@K, precision@K, NDCG@K, MAP@K, success@K.
+
+**Five conditions compared**:
+- `original` — citation count ordering (the `pa search` baseline) — recall@10 0.185
+- `random` — random shuffle (ablation) — recall@10 0.323 (random > original = citation count is negative signal)
+- `bm25` — pure BM25 lexical — recall@10 0.613
+- `biencoder` — `sentence-transformers/all-MiniLM-L6-v2` cosine similarity — recall@10 0.685
+- `combined` — 0.5·BM25 + 0.5·biencoder (alpha=0.5) — recall@10 0.721 (best)
+- `prf` — pseudo-relevance feedback (Rocchio) using top-5 BM25 docs to expand query — recall@10 0.590
+
+**Three accidental discoveries** (recorded per honest-three-tier ritual):
+- **Random > Original**: 0.323 > 0.185. Citation count is a **negative signal** in this benchmark. High-cited papers are older, more general, less query-specific.
+- **Bi-encoder > BM25** (0.685 > 0.613). Semantic similarity beats lexical match by 12% on academic search.
+- **PRF underperforms** (-0.023 vs BM25). Term expansion dilutes precise term matching; future direction is concept expansion, not term expansion.
+
+**E2E invariant checks** (6/6 PASS on Mavis labels):
+- `all_4_conditions_complete`: all 4 v4 conditions produced outputs
+- `all_metrics_valid_floats`: all recall/precision/ndcg are floats
+- `random_recall10_around_0.20`: recall@10=0.321, expected 0.10-0.35 (sanity)
+- `bm25_beats_original_by_2x`: bm25=0.612, original=0.185 (3.4x)
+- `combined_not_much_worse_than_bm25`: combined=0.722, bm25=0.612, delta=+0.110
+- `prf_not_much_worse_than_bm25`: prf=0.595, bm25=0.612, delta=-0.016
+
+### Verified — 2026-07-13 user spot-check on 5 priority queries
+
+After the v3.9.0 ship, user did a partial spot-check on 5 priority queries
+(q005 UBI, q007 climate ag, q010 institutional trust, q013 protein structure,
+q019 intelligent tutoring). The remaining 20 queries were "no objection =
+trust Mavis" per the user's protocol.
+
+**Overrides applied**: 13 of 374 candidate labels (3.5% change) — see
+`bench/v01/spot_check/_overrides.json` for the full audit log.
+
+| Query | n_relevant (Mavis → Clean) | Top user rationale |
+|---|---:|---|
+| q005 (UBI) | 8 → 6 | Cash transfers ≠ UBI (concept disambiguation); quantitative UBI without abstract → 1 not 2 |
+| q007 (climate ag) | 25 → 22 | Ag practice papers (e.g. agroecology, irrigation) ≠ ag econ papers; one 2002 typology paper → 0 |
+| q010 (trust pandemic) | 12 → 13 | Mobilizing Policy Capacity → 2; pandemic fatigue → 0; CoronaNet dataset → 1 (valuable reference material) |
+| q013 (protein structure) | 4 → 4 | "Uses ESMFold" ≠ "is structure prediction" (binding site classifier); sequence LM ≠ structure LM |
+| q019 (ITS) | 19 → 17 | "Stupid Tutoring Systems" 2016 → 1 (no abstract, no AI); 2014 multimedia tutoring → 1 (pre-LLM); human-in-loop ML → 1 |
+
+**Clean labels re-run metrics** (`bench/v01/labels_clean.json`):
+- Combined recall@10: 0.722 → 0.721 (-0.001, preserved)
+- Combined precision@10: 0.544 → 0.532 (-0.012, Mavis was over-labeling)
+- Combined ndcg@10: 0.790 → 0.785 (-0.005, preserved)
+- 3.9x lift over original preserved
+
+**Honest three-tier audit** (`bench/v01/reports/v3_9_0_clean.md`):
+
+- ✅ **Verified** (real data, end-to-end):
+  - 4 v4 conditions + 2 ablations ran on 25 queries × 30 candidates = 750 scoring decisions
+  - 3.9x lift over original preserved on user-verified labels
+  - All 6 E2E invariant checks still PASS on clean labels
+  - 13 user overrides applied cleanly to labels_clean.json; 5 DOI mismatches (10.3389 vs 10.3380 typo) surfaced for system-level fix
+
+- ⚠️ **Unverified**:
+  - 20/25 queries were "no objection" — if 30%+ of Mavis labels are wrong in those, lift numbers shift. Spot-check only covers 5 priority queries
+  - PRF underperforms; concept-expansion direction untried
+  - Bi-encoder all-MiniLM-L6-v2 is English-only; fine for this 25-query set (all EN)
+  - n=25 small for significance testing; combined vs biencoder delta is +0.036 — could be noise
+
+- ❌ **Hollow / Known gaps** (per honest audit):
+  - **No holdout set**: 25 queries seen during alpha-tuning. Phase 1.5 (split into train/test) deferred.
+  - **No Phase 1.6 (q026-q050)**: 25 of 50 benchmark queries evaluated. Other 25 are user-placeholder slots.
+  - **No alpha grid search**: combined uses alpha=0.5 only. Phase 6.5 (0.3/0.4/0.5/0.6/0.7) deferred.
+  - **No cross-encoder / LLM rerank**: cross-encoder rejected because HF download blocks. LLM rerank rejected per Global Rule (no hosted LLM).
+  - **3.5% label noise is real, not zero**: 13 cases where Mavis was wrong means lift numbers in priority 6-25 are likely over-stated by ~0.02-0.05
+  - **5 DOI mismatches in spot-check vs labels.json** (10.3389 vs 10.3380, q001/q009/q018) — labels.json has data drift, needs canonicalization (now [P0-4] in ROADMAP)
+
+### New ROADMAP items from user spot-check (added 2026-07-13, see ROADMAP.md "User spot-check insights" section)
+
+7 new proposed items based on user's 7 feedback themes:
+
+| Item | Priority | What it does | Status |
+|---|---|---|---|
+| [P0-4] Duplicate detection + DOI canonicalization | P0 | Lowercase prefix + strip `J.` for case-variants; data drift fix | proposed |
+| [P1-5] Recency + citation threshold filter | P1 | >10 year papers need citations > mean+2std; field-dead warning | proposed |
+| [P1-6] Sub-topic granularity decomposition | P1 | "agriculture" → {ag_econ, climate_adaptation, ...}; query expansion + per-subtopic weight | proposed |
+| [P1-7] Institutional credibility boost | P1 | Qs top-50 + ESMFold + IMF + World Bank + famous research institutes → +0.1-0.3 final score (NOT label change) | proposed |
+| [P1-8] China political-institution exclusion | P1 | Block 中国国际关系研究院 + 各级马克思主义学院 (user-sensitivity filter) | proposed |
+| [P1-9] Geographic / country metadata extraction | P1 | ISO 3166-1 country tag on each candidate; boost factor when query has country mentions | proposed |
+| [P1-10] Falsifiability philosophy integration | P1 (research) | No direct tool on GitHub; closest = `K-Dense-AI/scientific-agent-skills` 27.6k stars. Research deliverable: ROADMAP_RESEARCH_2026-07-13_FALSIFIABILITY.md | proposed (research) |
+| [P2-5] Quality filter (no-abstract + low-cite = low quality) | P2 | flag / drop candidates with no abstract + no year + cite < 50 | proposed |
+
+**User confirmation needed for each** (per ROADMAP discipline). My recommended next step: start [P0-4] (data drift fix, 1h, low risk) and [P1-5] (recency rule, 2h, matches user's explicit "10 year / 2 std" rule). Defer [P1-6..P1-10] until user confirms lookup table content / scope.
+
+### Files added (this release)
+
+- `bench/v01/_v4_rerank.py` (~250 lines)
+- `bench/v01/_v4_run_all.py` (~280 lines)
+- `bench/v01/_gen_spot_check.py` (~80 lines)
+- `bench/v01/_build_clean_labels.py` (~210 lines)
+- `bench/v01/system_outputs_bm25/q*.json` × 25
+- `bench/v01/system_outputs_biencoder/q*.json` × 25
+- `bench/v01/system_outputs_combined/q*.json` × 25
+- `bench/v01/system_outputs_prf/q*.json` × 25
+- `bench/v01/system_outputs_random/q*.json` × 25
+- `bench/v01/spot_check/SPOT_CHECK_q*.md` × 25
+- `bench/v01/spot_check/SPOT_CHECK_INDEX.md`
+- `bench/v01/spot_check/_overrides.json` (audit log)
+- `bench/v01/labels_clean.json` (Mavis + 13 user overrides)
+- `bench/v01/reports/v3_9_0_clean.md` (clean-label side-by-side)
+- `bench/v01/reports/v3_9_0_clean.json` (clean-label full metrics)
+
+### 5-check audit against Global Rule
+
+1. ✅ Runs for $0 (BM25 / sentence-transformers / cache are all free + local)
+2. ✅ No hosted service (all local computation)
+3. ✅ Single-hobbyist maintenance: ~820 lines new in `bench/v01/`, no ongoing obligation
+4. ✅ No "must publish" obligation
+5. ✅ Free-tier degradation: if HF download for `all-MiniLM-L6-v2` blocks, `biencoder` condition returns 0.0 scores and the rerank falls back to BM25-only behavior (acceptable degradation per HF offline + v3.8.3's 60s timeout pattern)
+
+### What we learned (and committed to memory)
+
+- **"Mock data PASS" ≠ "real-world works"** — the 25-query benchmark gave consistent numbers, but user spot-check found 3.5% label noise in priority 1-5. Re-validated; v4 architecture is robust to label noise (lift preserved at 3.9x)
+- **Citation count is a negative signal on academic search** (random > original by 75%) — this is a surprising finding that breaks the assumption "more cited = more relevant". Worth a follow-up paper if it generalizes
+- **Bi-encoder alone is strong** — the +0.036 lift from BM25+biencoder over biencoder alone may not survive n>50. Need holdout validation (Phase 1.5) before claiming combined is the winner
+- **5-condition ablation is fast** — ~3h total work (1h write, 2h run + verify). For future "does X work" questions, this template scales
+- **User spot-check is high-leverage** — 13 overrides came from 30-60 min of user time. Phase 1.6 (q026-q050) + 5 more queries spot-checked would close the "Mavis is right for priority 6-25" assumption
+- **Honest three-tier audit works** — surfaced 5 hollow claims + 3 unverified claims in the v3.9.0 CHANGELOG. Per-discipline: ship the verified, defer the unverified, document the hollow
+
+### Deferred to backlog
+
+- **Phase 1.5**: holdout validation (split 25 queries into 15 train / 10 test, re-derive alpha on holdout)
+- **Phase 1.6**: evaluate q026-q050 (the 25 user-placeholder slots, once user fills them)
+- **Phase 6.5**: alpha grid search (combined uses 0.5 only; should try 0.3 / 0.4 / 0.6 / 0.7)
+- **Cross-encoder rerank**: deferred (HF download blocks; LLM rerank rejected per Global Rule)
+- **Citation graph features**: OpenAlex `cited_by_count` is broken as a signal but `referenced_works` (forward citation graph) is unused
+- **User spot-check on q001-q004, q006, q008, q009, q011-q012, q014-q018, q020-q025** (20 queries, ~1-2 hours user time, would close the "n=25 of 25" claim)
 
 ---
 
