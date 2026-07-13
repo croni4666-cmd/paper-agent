@@ -1,0 +1,582 @@
+{
+  "query_id": "q020",
+  "query": "ChatGPT in higher education student performance study",
+  "topic_bucket": "edu_ai",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-12T13:05:22",
+  "config": "v4-biencoder",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.30935/cedtech/13036",
+      "title": "ChatGPT in education: Strategies for responsible implementation",
+      "abstract": "Since the launch of ChatGPT for public use, educators have expressed a variety of concerns about its integration into educational settings. This paper has been written to provide an in-depth examination of these issues and explore the potential use of ChatGPT in educational contexts. Specifically, it aims to (i) present an argument in favor of incorporating ChatGPT into education and (ii) provide educators with a set of strategies and techniques to ensure responsible and successful implementation of ChatGPT in teaching or research. By doing so, this paper aims to promote a more informed discussion around the use of ChatGPT in education.",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_count": 583,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.689877,
+      "bm25_score": 0.3422,
+      "biencoder_score": 0.6899
+    },
+    {
+      "rank": 2,
+      "doi": "10.3991/ijet.v18i17.39019",
+      "title": "The Perception by University Students of the Use of ChatGPT in Education",
+      "abstract": "ChatGPT, a generative language model recently created by OpenAI, has drawn a lot of criticism from people all around the world. ChatGPT illustrates both potential opportunities and challenges in education. This study aims to investigate how university students perceive using ChatGPT for learning, including benefits, barriers, and potential solutions. To determine how students felt about using ChatGPT in their learning, a questionnaire was distributed to 200 students via an online survey, and 30 students participated in semi-structured interviews. The research results showed that, in general, students had a favorable opinion of ChatGPT’s application. The benefits of ChatGPT, according to students, included saving time, providing information in various areas, providing personalized tutoring and feedback, and illuminating ideas in writing. Also, several barriers to using ChatGPT were recognized, and some solutions were suggested for improvement of using ChatGPT in education. The most concerning issues for students while using ChatGPT were inability to assess the quality and reliability of sources, inability to cite sources accurately, and inability to replace words and use idioms accurately. To address these concerns, some potential solutions can be implemented; for example, verifying ChatGPT’s responses with reliable sources; using ChatGPT as a reference source or a consultant tool; providing guidelines for use; and promoting academic integrity to ensure ethical uses of ChatGPT in an academic context.",
+      "year": 2023,
+      "venue": "International Journal of Emerging Technologies in Learning (iJET)",
+      "citation_count": 265,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.63376,
+      "bm25_score": 0.7438,
+      "biencoder_score": 0.6338
+    },
+    {
+      "rank": 3,
+      "doi": "10.1038/s41598-024-52549-8",
+      "title": "A multinational study on the factors influencing university students’ attitudes and usage of ChatGPT",
+      "abstract": "Artificial intelligence models, like ChatGPT, have the potential to revolutionize higher education when implemented properly. This study aimed to investigate the factors influencing university students' attitudes and usage of ChatGPT in Arab countries. The survey instrument \"TAME-ChatGPT\" was administered to 2240 participants from Iraq, Kuwait, Egypt, Lebanon, and Jordan. Of those, 46.8% heard of ChatGPT, and 52.6% used it before the study. The results indicated that a positive attitude and usage of ChatGPT were determined by factors like ease of use, positive attitude towards technology, social influence, perceived usefulness, behavioral/cognitive influences, low perceived risks, and low anxiety. Confirmatory factor analysis indicated the adequacy of the \"TAME-ChatGPT\" constructs. Multivariate analysis demonstrated that the attitude towards ChatGPT usage was significantly influenced by country of residence, age, university type, and recent academic performance. This study validated \"TAME-ChatGPT\" as a useful tool for assessing ChatGPT adoption among university students. The successful integration of ChatGPT in higher education relies on the perceived ease of use, perceived usefulness, positive attitude towards technology, social influence, behavioral/cognitive elements, low anxiety, and minimal perceived risks. Policies for ChatGPT adoption in higher education should be tailored to individual contexts, considering the variations in student attitudes observed in this study.",
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_count": 243,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.604043,
+      "bm25_score": 4.5708,
+      "biencoder_score": 0.604
+    },
+    {
+      "rank": 4,
+      "doi": "10.37074/jalt.2023.6.1.29",
+      "title": "The role of ChatGPT in higher education: Benefits, challenges, and future research directions",
+      "abstract": "This paper examines the potential benefits and challenges of using the generative AI model, ChatGPT, in higher education, in the backdrop of the constructivist theory of learning. This perspective-type study presents five benefits of ChatGPT: the potential to facilitate adaptive learning, provide personalised feedback, support research and data analysis, offer automated administrative services, and aid in developing innovative assessments. Additionally, the paper identifies five challenges: academic integrity concerns, reliability issues, inability to evaluate and reinforce graduate skill sets, limitations in assessing learning outcomes, and potential biases and falsified information in information processing. The paper argues that tertiary educators and students must exercise caution when using ChatGPT for academic purposes to ensure its ethical, reliable, and effective use. To achieve this, the paper proposes various propositions, such as prioritising education on the responsible and ethical use of ChatGPT, devising new assessment strategies, addressing bias and falsified information, and including AI literacy as part of graduate skills. By balancing the potential benefits and challenges, ChatGPT can enhance students’ learning experiences in higher education.",
+      "year": 2023,
+      "venue": "Journal of Applied Learning & Teaching",
+      "citation_count": 530,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.593857,
+      "bm25_score": 1.9266,
+      "biencoder_score": 0.5939
+    },
+    {
+      "rank": 5,
+      "doi": "10.1080/14703297.2023.2195846",
+      "title": "A SWOT analysis of ChatGPT: Implications for educational practice and research",
+      "abstract": "ChatGPT is an AI tool that has sparked debates about its potential implications for education. We used the SWOT analysis framework to outline ChatGPT’s strengths and weaknesses and to discuss its opportunities for and threats to education. The strengths include using a sophisticated natural language model to generate plausible answers, self-improving capability, and providing personalised and real-time responses. As such, ChatGPT can increase access to information, facilitate personalised and complex learning, and decrease teaching workload, thereby making key processes and tasks more efficient. The weaknesses are a lack of deep understanding, difficulty in evaluating the quality of responses, a risk of bias and discrimination, and a lack of higher-order thinking skills. Threats to education include a lack of understanding of the context, threatening academic integrity, perpetuating discrimination in education, democratising plagiarism, and declining high-order cognitive skills. We provide agenda for educational practice and research in times of ChatGPT.",
+      "year": 2023,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_count": 1194,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.59085,
+      "bm25_score": 1.0755,
+      "biencoder_score": 0.5908
+    },
+    {
+      "rank": 6,
+      "doi": "10.1016/j.lindif.2023.102274",
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_count": 5330,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.582828,
+      "bm25_score": 0.291,
+      "biencoder_score": 0.5828
+    },
+    {
+      "rank": 7,
+      "doi": "10.1007/s10755-023-09686-1",
+      "title": "Students’ Acceptance of ChatGPT in Higher Education: An Extended Unified Theory of Acceptance and Use of Technology",
+      "abstract": "Abstract AI-powered chat technology is an emerging topic worldwide, particularly in areas such as education, research, writing, publishing, and authorship. This study aims to explore the factors driving students' acceptance of ChatGPT in higher education. The study employs the unified theory of acceptance and use of technology (UTAUT2) theoretical model, with an extension of Personal innovativeness, to verify the Behavioral intention and Use behavior of ChatGPT by students. The study uses data from a sample of 503 Polish state university students. The PLS-SEM method is utilized to test the model. Results indicate that Habit has the most significant impact (0.339) on Behavioral intention, followed by Performance expectancy (0.260), and Hedonic motivation (0.187). Behavioral intention has the most significant effect (0.424) on Use behavior, followed by Habit (0.255) and Facilitating conditions (0.188). The model explains 72.8% of the Behavioral intention and 54.7% of the Use behavior variance. While the study is limited by the sample size and selection, it is expected to be a starting point for more research on ChatGPT-like technology in university education, given that this is a recently introduced technology.",
+      "year": 2023,
+      "venue": "Innovative Higher Education",
+      "citation_count": 381,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.572765,
+      "bm25_score": 3.2046,
+      "biencoder_score": 0.5728
+    },
+    {
+      "rank": 8,
+      "doi": "10.7821/naer.2023.7.1458",
+      "title": "Use of ChatGPT at University as a Tool for Complex Thinking: Students’ Perceived Usefulness",
+      "abstract": "Abstract Artificial intelligence (AI) and AI-based chatbots, such as ChatGPT, are transforming the approach to education. In particular, ChatGPT’s potential to process large amounts of data and learn from user interactions makes it a beneficial resource for students, albeit with some reluctance from some teachers. This study aimed to explore the acceptance of ChatGPT by university students. The researchers administered an online survey to 400 Spanish university students aged 18–64 ( M = 21.80; SD = 6.40). The results of the methodological approach based on the UTAUT2 model for technology adoption showed that: 1) gender was not a determining variable in any construct while the experience of use was a factor conditioning a higher score on all constructs; 2) experience, performance expectancy, hedonic motivation, price value, and habit were influential in behavioral intention to use ChatGPT; 3) facilitating conditions, habit, and behavioral intention were conditioning factors in user behavior. Finally, this report discusses the findings and practical implications of the work and recommends some good uses for ChatGPT.",
+      "year": 2023,
+      "venue": "Journal of New Approaches in Educational Research",
+      "citation_count": 256,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.562019,
+      "bm25_score": 2.5767,
+      "biencoder_score": 0.562
+    },
+    {
+      "rank": 9,
+      "doi": "10.1080/2331186x.2023.2210461",
+      "title": "Time to Revisit Existing Student’s Performance Evaluation Approach in Higher Education Sector in a New Era of ChatGPT — A Case Study",
+      "abstract": "Artificial intelligence-based tools are rapidly revolutionizing the field of higher education, yet to be explored in terms of their impact on existing higher education institutions’ (HEIs) practices adopted for continuous learning improvement, given the sparsity of the literature and empirical experiments in undergraduate degree programs. After the entry of ChatGPT -a conversational artificial intelligence (AI) tool that uses a deep learning model to generate human-like text response based on provided input—it has become crucial for HEIs to be exposed to the implications of AI-based tools on students’ learning outcomes, commonly measured using an assessment-based approach to improve program quality, teaching effectiveness, and other learning support. An empirical study has been conducted to test the ChatGPT capability of solving a variety of assignments (from different level courses of undergraduate degree programs) to compare its performance with the highest scored student(s). Further, the ChatGPT-generated assignments were tested using the best-known tools for plagiarism detection to determine whether they could pass the academic integrity tests, including Turnitin, GPTZero, and Copyleaks. The study reported the limitations of the Bot and highlighted the implications of the newly launched AI-based ChatGPT in academia, which calls for HEIs’ managers and regulators to revisit their existing practices used to monitor students’ learning progress and improve their educational programs.",
+      "year": 2023,
+      "venue": "Cogent Education",
+      "citation_count": 234,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.560282,
+      "bm25_score": 5.4222,
+      "biencoder_score": 0.5603
+    },
+    {
+      "rank": 10,
+      "doi": "10.1080/2331186X.2023.2210461",
+      "title": "Time to Revisit Existing Student’s Performance Evaluation Approach in Higher Education Sector in a New Era of ChatGPT — A Case Study",
+      "abstract": "Artificial intelligence-based tools are rapidly revolutionizing the field of higher education, yet to be explored in terms of their impact on existing higher education institutions’ (HEIs) practices adopted for continuous learning improvement, given the sparsity of the literature and empirical experiments in undergraduate degree programs. After the entry of ChatGPT -a conversational artificial intelligence (AI) tool that uses a deep learning model to generate human-like text response based on provided input—it has become crucial for HEIs to be exposed to the implications of AI-based tools on students’ learning outcomes, commonly measured using an assessment-based approach to improve program quality, teaching effectiveness, and other learning support. An empirical study has been conducted to test the ChatGPT capability of solving a variety of assignments (from different level courses of undergraduate degree programs) to compare its performance with the highest scored student(s). Further, the ChatGPT-generated assignments were tested using the best-known tools for plagiarism detection to determine whether they could pass the academic integrity tests, including Turnitin, GPTZero, and Copyleaks. The study reported the limitations of the Bot and highlighted the implications of the newly launched AI-based ChatGPT in academia, which calls for HEIs’ managers and regulators to revisit their existing practices used to monitor students’ learning progress and improve their educational programs.",
+      "year": 2023,
+      "venue": "Cogent Education",
+      "citation_count": 190,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.560282,
+      "bm25_score": 5.4222,
+      "biencoder_score": 0.5603
+    },
+    {
+      "rank": 11,
+      "doi": "10.1080/10494820.2023.2209881",
+      "title": "To use or not to use ChatGPT in higher education? A study of students’ acceptance and use of technology",
+      "abstract": "ChatGPT is an AI tool that assisted in writing, learning, solving assessments and could do so in a conversational way. The purpose of the study was to develop a model that examined the predictors of adoption and use of ChatGPT among higher education students. The proposed model was based on a previous theory of technology adoption. Seven predictors were selected to build a model that predicted the behavioral intention and use behavior of ChatGPT. The partial-least squares method of structural equation modeling was used for data analysis. The model was found to be reliable and valid, and the results were based on a self-reported data of 534 students from a Polish state university. Nine out of ten proposed hypotheses were confirmed by the results. Habit was found to be the best predictor of behavioral intention, followed by performance expectancy and hedonic motivation. The dominant determinant of use behavior was behavioral intention, followed by personal innovativeness. The research highlighted the need for further examination of how AI tools could be adopted in learning and teaching.",
+      "year": 2023,
+      "venue": "Interactive Learning Environments",
+      "citation_count": 711,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.557847,
+      "bm25_score": 3.1488,
+      "biencoder_score": 0.5578
+    },
+    {
+      "rank": 12,
+      "doi": "10.37074/jalt.2023.6.1.9",
+      "title": "ChatGPT: Bullshit spewer or the end of traditional assessments in higher education?",
+      "abstract": "ChatGPT is the world’s most advanced chatbot thus far. Unlike other chatbots, it can create impressive prose within seconds, and it has created much hype and doomsday predictions when it comes to student assessment in higher education and a host of other matters. ChatGPT is a state-of-the-art language model (a variant of OpenAI’s Generative Pretrained Transformer (GPT) language model) designed to generate text that can be indistinguishable from text written by humans. It can engage in conversation with users in a seemingly natural and intuitive way. In this article, we briefly tell the story of OpenAI, the organisation behind ChatGPT. We highlight the fundamental change from a not-for-profit organisation to a commercial business model. In terms of our methods, we conducted an extensive literature review and experimented with this artificial intelligence (AI) software. Our literature review shows our review to be amongst the first peer-reviewed academic journal articles to explore ChatGPT and its relevance for higher education (especially assessment, learning and teaching). After a description of ChatGPT’s functionality and a summary of its strengths and limitations, we focus on the technology’s implications for higher education and discuss what is the future of learning, teaching and assessment in higher education in the context of AI chatbots such as ChatGPT. We position ChatGPT in the context of current Artificial Intelligence in Education (AIEd) research, discuss student-facing, teacher-facing and system-facing applications, and analyse opportunities and threats. We conclude the article with recommendations for students, teachers and higher education institutions. Many of them focus on assessment.",
+      "year": 2023,
+      "venue": "Journal of Applied Learning & Teaching",
+      "citation_count": 1692,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.535361,
+      "bm25_score": 3.5164,
+      "biencoder_score": 0.5354
+    },
+    {
+      "rank": 13,
+      "doi": "10.1186/s40561-023-00237-x",
+      "title": "What if the devil is my guardian angel: ChatGPT as a case study of using chatbots in education",
+      "abstract": "Abstract Artificial Intelligence (AI) technologies have been progressing constantly and being more visible in different aspects of our lives. One recent phenomenon is ChatGPT, a chatbot with a conversational artificial intelligence interface that was developed by OpenAI. As one of the most advanced artificial intelligence applications, ChatGPT has drawn much public attention across the globe. In this regard, this study examines ChatGPT in education, among early adopters, through a qualitative instrumental case study. Conducted in three stages, the first stage of the study reveals that the public discourse in social media is generally positive and there is enthusiasm regarding its use in educational settings. However, there are also voices who are approaching cautiously using ChatGPT in educational settings. The second stage of the study examines the case of ChatGPT through lenses of educational transformation, response quality, usefulness, personality and emotion, and ethics. In the third and final stage of the study, the investigation of user experiences through ten educational scenarios revealed various issues, including cheating, honesty and truthfulness of ChatGPT, privacy misleading, and manipulation. The findings of this study provide several research directions that should be considered to ensure a safe and responsible adoption of chatbots, specifically ChatGPT, in education.",
+      "year": 2023,
+      "venue": "Smart Learning Environments",
+      "citation_count": 1621,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.531277,
+      "bm25_score": 1.252,
+      "biencoder_score": 0.5313
+    },
+    {
+      "rank": 14,
+      "doi": "10.37074/jalt.2023.6.1.22",
+      "title": "What ChatGPT means for universities: Perceptions of scholars and students",
+      "abstract": "This study investigates the implications of ChatGPT, an AI-powered language model, for students and universities by examining the perceptions of scholars and students. The responses of seven scholars and 14 PhD students from four countries – Turkey, Sweden, Canada and Australia – are analysed using a thematic content analysis approach. Nine key themes emerge from the findings. According to their frequency of recurrence, these themes are: “Evolution of learning and education systems”, “changing role of educators”, “impact on assessment and evaluation”, “ethical and social considerations”, “future of work and employability”, “personalized learning”, “digital literacy and AI integration”, “AI as an extension of the human brain”, and “importance of human characteristics”. The potential benefits of AI in education as well as the challenges and barriers that may arise from its integration are discussed in the context of existing literature. Based on these findings, suggestions for future research include further exploration of the ethical implications of AI for education, the development of strategies to manage privacy concerns, and the investigation of how educational institutions can best prepare for the integration of AI technologies. The paper concludes by emphasizing the importance of understanding the potential opportunities and challenges associated with AI in higher education and the need for continued research in this area.",
+      "year": 2023,
+      "venue": "Journal of Applied Learning & Teaching",
+      "citation_count": 408,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.529888,
+      "bm25_score": 1.4157,
+      "biencoder_score": 0.5299
+    },
+    {
+      "rank": 15,
+      "doi": "10.12669/pjms.39.2.7653",
+      "title": "ChatGPT - Reshaping medical education and clinical management",
+      "abstract": "Artificial Intelligence is no more the talk of the fiction read in novels or seen in movies. It has been making inroads slowly and gradually in medical education and clinical management of patients apart from all other walks of life. Recently, chatbots particularly ChatGPT, were developed and trained, using a huge amount of textual data from the internet. This has made a significant impact on our approach in medical science. Though there are benefits of this new technology, a lot of caution is required for its use. doi: https://doi.org/10.12669/pjms.39.2.7653 How to cite this: Khan RA, Jawaid M, Khan AR, Sajjad M. ChatGPT - Reshaping medical education and clinical management. Pak J Med Sci. 2023;39(2):605-607. doi: https://doi.org/10.12669/pjms.39.2.7653 This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/3.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.",
+      "year": 2023,
+      "venue": "Pakistan Journal of Medical Sciences",
+      "citation_count": 648,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.52057,
+      "bm25_score": 0.2841,
+      "biencoder_score": 0.5206
+    },
+    {
+      "rank": 16,
+      "doi": "10.3390/app13095783",
+      "title": "ChatGPT for Education and Research: Opportunities, Threats, and Strategies",
+      "abstract": "In recent years, the rise of advanced artificial intelligence technologies has had a profound impact on many fields, including education and research. One such technology is ChatGPT, a powerful large language model developed by OpenAI. This technology offers exciting opportunities for students and educators, including personalized feedback, increased accessibility, interactive conversations, lesson preparation, evaluation, and new ways to teach complex concepts. However, ChatGPT poses different threats to the traditional education and research system, including the possibility of cheating on online exams, human-like text generation, diminished critical thinking skills, and difficulties in evaluating information generated by ChatGPT. This study explores the potential opportunities and threats that ChatGPT poses to overall education from the perspective of students and educators. Furthermore, for programming learning, we explore how ChatGPT helps students improve their programming skills. To demonstrate this, we conducted different coding-related experiments with ChatGPT, including code generation from problem descriptions, pseudocode generation of algorithms from texts, and code correction. The generated codes are validated with an online judge system to evaluate their accuracy. In addition, we conducted several surveys with students and teachers to find out how ChatGPT supports programming learning and teaching. Finally, we present the survey results and analysis.",
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_count": 919,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.520279,
+      "bm25_score": 0.7606,
+      "biencoder_score": 0.5203
+    },
+    {
+      "rank": 17,
+      "doi": "10.61969/jai.1337500",
+      "title": "Education in the Era of Generative Artificial Intelligence (AI): Understanding the Potential Benefits of ChatGPT in Promoting Teaching and Learning",
+      "abstract": "Since its maiden release into the public domain on November 30, 2022, ChatGPT garnered more than one million subscribers within a week. The generative AI tool ⎼ChatGPT took the world by surprise with it sophisticated capacity to carry out remarkably complex tasks. The extraordinary abilities of ChatGPT to perform complex tasks within the field of education has caused mixed feelings among educators, as this advancement in AI seems to revolutionize existing educational praxis. This is an exploratory study that synthesizes recent extant literature to offer some potential benefits and drawbacks of ChatGPT in promoting teaching and learning. Benefits of ChatGPT include but are not limited to promotion of personalized and interactive learning, generating prompts for formative assessment activities that provide ongoing feedback to inform teaching and learning etc. The paper also highlights some inherent limitations in the ChatGPT such as generating wrong information, biases in data training, which may augment existing biases, privacy issues etc. The study offers recommendations on how ChatGPT could be leveraged to maximize teaching and learning. Policy makers, researchers, educators and technology experts could work together and start conversations on how these evolving generative AI tools could be used safely and constructively to improve education and support students’ learning.",
+      "year": 2023,
+      "venue": "Journal of AI",
+      "citation_count": 1634,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.487607,
+      "bm25_score": 0.9318,
+      "biencoder_score": 0.4876
+    },
+    {
+      "rank": 18,
+      "doi": "10.1371/journal.pdig.0000198",
+      "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+      "abstract": "We evaluated the performance of a large language model called ChatGPT on the United States Medical Licensing Exam (USMLE), which consists of three exams: Step 1, Step 2CK, and Step 3. ChatGPT performed at or near the passing threshold for all three exams without any specialized training or reinforcement. Additionally, ChatGPT demonstrated a high level of concordance and insight in its explanations. These results suggest that large language models may have the potential to assist with medical education, and potentially, clinical decision-making.",
+      "year": 2023,
+      "venue": "PLOS Digital Health",
+      "citation_count": 3612,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.486885,
+      "bm25_score": 2.1405,
+      "biencoder_score": 0.4869
+    },
+    {
+      "rank": 19,
+      "doi": "10.1002/ase.2270",
+      "title": "The rise of <scp>ChatGPT</scp>: Exploring its potential in medical education",
+      "abstract": "The integration of artificial intelligence (AI) into medical education has the potential to revolutionize the way students learn about biomedical sciences. Large language models, such as ChatGPT, can serve as virtual teaching assistants, providing students with detailed and relevant information and perhaps eventually interactive simulations. ChatGPT has the potential to increase student engagement and enhance student learning, though research is needed to confirm this. The challenges and limitations of ChatGPT must also be considered, including ethical issues and potentially harmful effects. It is crucial for medical educators to keep pace with technology's rapidly changing landscape and consider the implications for curriculum design, assessment strategies, and teaching methods. Continued research and evaluation are necessary to ensure the optimal integration of AI-based learning tools into medical education.",
+      "year": 2023,
+      "venue": "Anatomical Sciences Education",
+      "citation_count": 581,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.463812,
+      "bm25_score": 2.5194,
+      "biencoder_score": 0.4638
+    },
+    {
+      "rank": 20,
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "abstract": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offering multi-disciplinary insight into some of these, this article brings together 43 contributions from experts in fields such as computer science, marketing, information systems, education, policy, hospitality and tourism, management, publishing, and nursing. The contributors acknowledge ChatGPT’s capabilities to enhance productivity and suggest that it is likely to offer significant gains in the banking, hospitality and tourism, and information technology industries, and enhance business activities, such as management and marketing. Nevertheless, they also consider its limitations, disruptions to practices, threats to privacy and security, and consequences of biases, misuse, and misinformation. However, opinion is split on whether ChatGPT’s use should be restricted or legislated. Drawing on these contributions, the article identifies questions requiring further research across three thematic areas: knowledge, transparency, and ethics; digital transformation of organisations and societies; and teaching, learning, and scholarly research. The avenues for further research include: identifying skills, resources, and capabilities needed to handle generative AI; examining biases of generative AI attributable to training datasets and processes; exploring business and societal contexts best suited for generative AI implementation; determining optimal combinations of human and generative AI for various tasks; identifying ways to assess accuracy of text produced by generative AI; and uncovering the ethical and legal issues in using generative AI across different contexts.",
+      "year": 2023,
+      "venue": "International Journal of Information Management",
+      "citation_count": 3781,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.442965,
+      "bm25_score": 0.2055,
+      "biencoder_score": 0.443
+    },
+    {
+      "rank": 21,
+      "doi": "10.30935/cedtech/13152",
+      "title": "Revolutionizing education with AI: Exploring the transformative potential of ChatGPT",
+      "abstract": "Artificial intelligence (AI) introduces new tools to the educational environment with the potential to transform conventional teaching and learning processes. This study offers a comprehensive overview of AI technologies, their potential applications in education, and the difficulties involved. Chatbots and related algorithms that can simulate human interactions and generate human-like text based on input from natural language are discussed. In addition to the advantages of cutting-edge chatbots like ChatGPT, their use in education raises important ethical and practical challenges. The authors aim to provide insightful information on how AI may be successfully incorporated into the educational setting to benefit teachers and students, while promoting responsible and ethical use.",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_count": 880,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.442728,
+      "bm25_score": 0.8476,
+      "biencoder_score": 0.4427
+    },
+    {
+      "rank": 22,
+      "doi": "10.3390/educsci13090856",
+      "title": "Challenges and Opportunities of Generative AI for Higher Education as Explained by ChatGPT",
+      "abstract": "ChatGPT is revolutionizing the field of higher education by leveraging deep learning models to generate human-like content. However, its integration into academic settings raises concerns regarding academic integrity, plagiarism detection, and the potential impact on critical thinking skills. This article presents a study that adopts a thing ethnography approach to understand ChatGPT’s perspective on the challenges and opportunities it represents for higher education. The research explores the potential benefits and limitations of ChatGPT, as well as mitigation strategies for addressing the identified challenges. Findings emphasize the urgent need for clear policies, guidelines, and frameworks to responsibly integrate ChatGPT in higher education. It also highlights the need for empirical research to understand user experiences and perceptions. The findings provide insights that can guide future research efforts in understanding the implications of ChatGPT and similar Artificial Intelligence (AI) systems in higher education. The study concludes by highlighting the importance of thing ethnography as an innovative approach for engaging with intelligent AI systems and calls for further research to explore best practices and strategies in utilizing Generative AI for educational purposes.",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_count": 769,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.436308,
+      "bm25_score": 2.3286,
+      "biencoder_score": 0.4363
+    },
+    {
+      "rank": 23,
+      "doi": "10.1007/s10956-023-10039-y",
+      "title": "Examining Science Education in ChatGPT: An Exploratory Study of Generative Artificial Intelligence",
+      "abstract": "Abstract The advent of generative artificial intelligence (AI) offers transformative potential in the field of education. The study explores three main areas: (1) How did ChatGPT answer questions related to science education? (2) What are some ways educators could utilise ChatGPT in their science pedagogy? and (3) How has ChatGPT been utilised in this study, and what are my reflections about its use as a research tool? This exploratory research applies a self-study methodology to investigate the technology. Impressively, ChatGPT’s output often aligned with key themes in the research. However, as it currently stands, ChatGPT runs the risk of positioning itself as the ultimate epistemic authority, where a single truth is assumed without a proper grounding in evidence or presented with sufficient qualifications. Key ethical concerns associated with AI include its potential environmental impact, issues related to content moderation, and the risk of copyright infringement. It is important for educators to model responsible use of ChatGPT, prioritise critical thinking, and be clear about expectations. ChatGPT is likely to be a useful tool for educators designing science units, rubrics, and quizzes. Educators should critically evaluate any AI-generated resource and adapt it to their specific teaching contexts. ChatGPT was used as a research tool for assistance with editing and to experiment with making the research narrative clearer. The intention of the paper is to act as a catalyst for a broader conversation about the use of generative AI in science education.",
+      "year": 2023,
+      "venue": "Journal of Science Education and Technology",
+      "citation_count": 1158,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.425546,
+      "bm25_score": 1.123,
+      "biencoder_score": 0.4255
+    },
+    {
+      "rank": 24,
+      "doi": "10.3350/cmh.2023.0089",
+      "title": "Assessing the performance of ChatGPT in answering questions regarding cirrhosis and hepatocellular carcinoma",
+      "abstract": "BACKGROUND/AIMS: Patients with cirrhosis and hepatocellular carcinoma (HCC) require extensive and personalized care to improve outcomes. ChatGPT (Generative Pre-trained Transformer), a large language model, holds the potential to provide professional yet patient-friendly support. We aimed to examine the accuracy and reproducibility of ChatGPT in answering questions regarding knowledge, management, and emotional support for cirrhosis and HCC. METHODS: ChatGPT's responses to 164 questions were independently graded by two transplant hepatologists and resolved by a third reviewer. The performance of ChatGPT was also assessed using two published questionnaires and 26 questions formulated from the quality measures of cirrhosis management. Finally, its emotional support capacity was tested. RESULTS: We showed that ChatGPT regurgitated extensive knowledge of cirrhosis (79.1% correct) and HCC (74.0% correct), but only small proportions (47.3% in cirrhosis, 41.1% in HCC) were labeled as comprehensive. The performance was better in basic knowledge, lifestyle, and treatment than in the domains of diagnosis and preventive medicine. For the quality measures, the model answered 76.9% of questions correctly but failed to specify decision-making cut-offs and treatment durations. ChatGPT lacked knowledge of regional guidelines variations, such as HCC screening criteria. However, it provided practical and multifaceted advice to patients and caregivers regarding the next steps and adjusting to a new diagnosis. CONCLUSION: We analyzed the areas of robustness and limitations of ChatGPT's responses on the management of cirrhosis and HCC and relevant emotional support. ChatGPT may have a role as an adjunct informational tool for patients and physicians to improve outcomes.",
+      "year": 2023,
+      "venue": "Clinical and Molecular Hepatology",
+      "citation_count": 629,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.414719,
+      "bm25_score": 1.8267,
+      "biencoder_score": 0.4147
+    },
+    {
+      "rank": 25,
+      "doi": "10.1016/j.xops.2023.100324",
+      "title": "Evaluating the Performance of ChatGPT in Ophthalmology",
+      "abstract": "PurposeFoundation models are a novel type of artificial intelligence algorithms, in which models are pretrained at scale on unannotated data and fine-tuned for a myriad of downstream tasks, such as generating text. This study assessed the accuracy of ChatGPT, a large language model (LLM), in the ophthalmology question-answering space.DesignEvaluation of diagnostic test or technology.ParticipantsChatGPT is a publicly available LLM.MethodsWe tested 2 versions of ChatGPT (January 9 “legacy” and ChatGPT Plus) on 2 popular multiple choice question banks commonly used to prepare for the high-stakes Ophthalmic Knowledge Assessment Program (OKAP) examination. We generated two 260-question simulated exams from the Basic and Clinical Science Course (BCSC) Self-Assessment Program and the OphthoQuestions online question bank. We carried out logistic regression to determine the effect of the examination section, cognitive level, and difficulty index on answer accuracy. We also performed a post hoc analysis using Tukey’s test to decide if there were meaningful differences between the tested subspecialties.Main Outcome MeasuresWe reported the accuracy of ChatGPT for each examination section in percentage correct by comparing ChatGPT’s outputs with the answer key provided by the question banks. We presented logistic regression results with a likelihood ratio (LR) chi-square. We considered differences between examination sections statistically significant at a P value of < 0.05.ResultsThe legacy model achieved 55.8% accuracy on the BCSC set and 42.7% on the OphthoQuestions set. With ChatGPT Plus, accuracy increased to 59.4% ± 0.6% and 49.2% ± 1.0%, respectively. Accuracy improved with easier questions when controlling for the examination section and cognitive level. Logistic regression analysis of the legacy model showed that the examination section (LR, 27.57; P = 0.006) followed by question difficulty (LR, 24.05; P < 0.001) were most predictive of ChatGPT’s answer accuracy. Althou",
+      "year": 2023,
+      "venue": "Ophthalmology Science",
+      "citation_count": 498,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.411871,
+      "bm25_score": 1.3836,
+      "biencoder_score": 0.4119
+    },
+    {
+      "rank": 26,
+      "doi": "10.1080/10494820.2023.2253861",
+      "title": "The impact of Generative AI (GenAI) on practices, policies and research direction in education: a case of ChatGPT and Midjourney",
+      "abstract": "Generative artificial intelligence (GenAI) tools have become increasingly accessible and have impacted school education in numerous ways. However, most of the discussions occur in higher education. In schools, teachers’ perspectives are crucial for making sense of innovative technologies. Accordingly, this qualitative study aims to investigate how GenAI changes our school education from the perspectives of teachers and leaders. It used four domains – learning, teaching, assessment, and administration – as the initial framework suggested in a systematic literature review study on AI in education. The participants were 88 school teachers and leaders of different backgrounds. They completed a survey and joined a focus group to share how ChatGPT and Midjounery had a GenAI effect on school education. Thematic analysis identified four main themes and 12 subthemes. The findings provide three suggestions for practices: know-it-all attitude, new prerequisite knowledge, interdisciplinary teaching, and three implications for policy: new assessment, AI education, and professional standards. They also further suggest six future research directions for GenAI in education.",
+      "year": 2023,
+      "venue": "Interactive Learning Environments",
+      "citation_count": 715,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.38165,
+      "bm25_score": 1.6612,
+      "biencoder_score": 0.3816
+    },
+    {
+      "rank": 27,
+      "doi": "10.1186/s41239-023-00411-8",
+      "title": "Students’ voices on generative AI: perceptions, benefits, and challenges in higher education",
+      "abstract": "Abstract This study explores university students’ perceptions of generative AI (GenAI) technologies, such as ChatGPT, in higher education, focusing on familiarity, their willingness to engage, potential benefits and challenges, and effective integration. A survey of 399 undergraduate and postgraduate students from various disciplines in Hong Kong revealed a generally positive attitude towards GenAI in teaching and learning. Students recognized the potential for personalized learning support, writing and brainstorming assistance, and research and analysis capabilities. However, concerns about accuracy, privacy, ethical issues, and the impact on personal development, career prospects, and societal values were also expressed. According to John Biggs’ 3P model, student perceptions significantly influence learning approaches and outcomes. By understanding students’ perceptions, educators and policymakers can tailor GenAI technologies to address needs and concerns while promoting effective learning outcomes. Insights from this study can inform policy development around the integration of GenAI technologies into higher education. By understanding students’ perceptions and addressing their concerns, policymakers can create well-informed guidelines and strategies for the responsible and effective implementation of GenAI tools, ultimately enhancing teaching and learning experiences in higher education.",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 1851,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.363751,
+      "bm25_score": 3.4802,
+      "biencoder_score": 0.3638
+    },
+    {
+      "rank": 28,
+      "doi": "10.3390/educsci13070692",
+      "title": "Shaping the Future of Education: Exploring the Potential and Consequences of AI and ChatGPT in Educational Settings",
+      "abstract": "Over the last decade, technological advancements, especially artificial intelligence (AI), have significantly transformed educational practices. Recently, the development and adoption of Generative Pre-trained Transformers (GPT), particularly OpenAI’s ChatGPT, has sparked considerable interest. The unprecedented capabilities of these models, such as generating humanlike text and facilitating automated conversations, have broad implications in various sectors, including education and health. Despite their immense potential, concerns regarding their widespread use and opacity have been raised within the scientific community. ChatGPT, the latest version of the GPT series, has displayed remarkable proficiency, passed the US bar law exam, and amassed over a million subscribers shortly after its launch. However, its impact on the education sector has elicited mixed reactions, with some educators heralding it as a progressive step and others raising alarms over its potential to reduce analytical skills and promote misconduct. This paper aims to delve into these discussions, exploring the potential and problems associated with applying advanced AI models in education. It builds on extant literature and contributes to understanding how these technologies reshape educational norms in the “new AI gold rush” era.",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_count": 937,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.358528,
+      "bm25_score": 0.2894,
+      "biencoder_score": 0.3585
+    },
+    {
+      "rank": 29,
+      "doi": "10.1186/s41239-023-00392-8",
+      "title": "Artificial intelligence in higher education: the state of the field",
+      "abstract": "Abstract This systematic review provides unique findings with an up-to-date examination of artificial intelligence (AI) in higher education (HE) from 2016 to 2022. Using PRISMA principles and protocol, 138 articles were identified for a full examination. Using a priori, and grounded coding, the data from the 138 articles were extracted, analyzed, and coded. The findings of this study show that in 2021 and 2022, publications rose nearly two to three times the number of previous years. With this rapid rise in the number of AIEd HE publications, new trends have emerged. The findings show that research was conducted in six of the seven continents of the world. The trend has shifted from the US to China leading in the number of publications. Another new trend is in the researcher affiliation as prior studies showed a lack of researchers from departments of education. This has now changed to be the most dominant department. Undergraduate students were the most studied students at 72%. Similar to the findings of other studies, language learning was the most common subject domain. This included writing, reading, and vocabulary acquisition. In examination of who the AIEd was intended for 72% of the studies focused on students, 17% instructors, and 11% managers. In answering the overarching question of how AIEd was used in HE, grounded coding was used. Five usage codes emerged from the data: (1) Assessment/Evaluation, (2) Predicting, (3) AI Assistant, (4) Intelligent Tutoring System (ITS), and (5) Managing Student Learning. This systematic review revealed gaps in the literature to be used as a springboard for future researchers, including new tools, such as Chat GPT.",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 1414,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.32285,
+      "bm25_score": 2.6964,
+      "biencoder_score": 0.3229
+    },
+    {
+      "rank": 30,
+      "doi": "10.1007/s10639-024-12949-9",
+      "title": "Exploring the impact of generative AI-based technologies on learning performance through self-efficacy, fairness & ethics, creativity, and trust in higher education",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "citation_count": 177,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 30,
+      "v4_score": 0.234875,
+      "bm25_score": 3.0522,
+      "biencoder_score": 0.2349
+    }
+  ]
+}

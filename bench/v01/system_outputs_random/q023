@@ -1,0 +1,553 @@
+{
+  "query_id": "q023",
+  "query": "personalized learning adaptive educational technology RCT",
+  "topic_bucket": "edu_ai",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-12T13:04:58",
+  "config": "v4-random",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.3390/ijerph20043407",
+      "title": "Digital Transformation in Healthcare: Technology Acceptance and Its Applications",
+      "abstract": "Technological innovation has become an integral aspect of our daily life, such as wearable and information technology, virtual reality and the Internet of Things which have contributed to transforming healthcare business and operations. Patients will now have a broader range and more mindful healthcare choices and experience a new era of healthcare with a patient-centric culture. Digital transformation determines personal and institutional health care. This paper aims to analyse the changes taking place in the field of healthcare due to digital transformation. For this purpose, a systematic bibliographic review is performed, utilising Scopus, Science Direct and PubMed databases from 2008 to 2021. Our methodology is based on the approach by Wester and Watson, which classify the related articles based on a concept-centric method and an ad hoc classification system which identify the categories used to describe areas of literature. The search was made during August 2022 and identified 5847 papers, of which 321 fulfilled the inclusion criteria for further process. Finally, by removing and adding additional studies, we ended with 287 articles grouped into five themes: information technology in health, the educational impact of e-health, the acceptance of e-health, telemedicine and security issues.",
+      "year": 2023,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "citation_count": 848,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.993918,
+      "bm25_score": 1.4361
+    },
+    {
+      "rank": 2,
+      "doi": "10.1016/j.heliyon.2024.e39630",
+      "title": "Personalized adaptive learning in higher education: A scoping review of key characteristics and impact on academic performance and engagement",
+      "abstract": "Introduction: Higher education institutions face persistent challenges of student retention and academic progress. Personalized adaptive learning has the potential to address these issues as it leverages educational technology to tailor learning pathways according to individual student needs. Objective: To elucidate the key characteristics of personalized adaptive learning in higher education and its impact on academic performance and engagement. Methods: The Joanna Briggs Institute scoping review methodology was followed. Key international databases were searched to retrieve articles. The titles and abstracts of selected studies were imported into Covidence. Peer-reviewed journal articles, theses, and dissertations focusing on undergraduate students engaged in personalized adaptive learning, published between 2012 and 2024 were included. Data was extracted and charted in Covidence. Results were summarised through a narrative synthesis and visually presented in a PRISMA-ScR flow diagram. Results: This review included 69 eligible studies. The findings reveal insights into the multifaceted nature of personalized adaptive learning, which include platforms, implementation strategies, perceived strengths and limitations by instructors and students. Pre-knowledge quizzes were reported as the most common indicator for activating adaptive content delivery, and McGraw-Hill's Connect LearnSmart and Moodle were the most utilized adaptive platforms. Improved academic performance was reported by 41 of the studies (n = 41, 59 %), and 25 studies (n = 25, 36 %) indicated increased student engagement. Conclusion: This study highlights the potential of personalized adaptive learning to positively impact academic performance, student engagement and learning, despite technological limitations. Further research is encouraged to address technological challenges, build on strengths and refine implementation and application of personalized adaptive learning in higher education.",
+      "year": 2024,
+      "venue": "Heliyon",
+      "citation_count": 235,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "orig_rank": 13,
+      "v4_score": 0.990031,
+      "bm25_score": 6.5451
+    },
+    {
+      "rank": 3,
+      "doi": "10.3390/su17031133",
+      "title": "The Impact of Adaptive Learning Technologies, Personalized Feedback, and Interactive AI Tools on Student Engagement: The Moderating Role of Digital Literacy",
+      "abstract": "Using adaptive learning technologies, personalized feedback, and interactive AI tools, this study investigates how these tools affect student engagement and what the mediating role of individuals’ digital literacy is at the same time. The study will target 500 students from different faculties such as science, engineering, humanities, and social sciences. With the changing trends in educational technology, it is important to know if these tools allow students to interact with learning materials. Through this study, we explore how adaptive learning technologies, which adapt content to students’ progress, are influenced by student motivation and participation during the learning process using AI tools that provide real-time feedback and interaction. Also, digital literacy is presented as a moderating factor that may either accelerate or impede the effectiveness of these tools. These findings demonstrate that more adaptive learning technologies, which have organized feedback, and interactive AI tools help improve student engagement. Additionally, students with higher levels of digital literacy are more involved with digital tools. This research recognizes that teachers should incorporate these technologies into their courses in such a manner as it synergizes with student’s digital capabilities to reap the benefits of technology on students’ engagement and learning outcomes.",
+      "year": 2025,
+      "venue": "Sustainability",
+      "citation_count": 190,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 18,
+      "v4_score": 0.94759,
+      "bm25_score": 6.0184
+    },
+    {
+      "rank": 4,
+      "doi": "10.3390/electronics13183762",
+      "title": "Leveraging AI in E-Learning: Personalized Learning and Adaptive Assessment through Cognitive Neuropsychology—A Systematic Analysis",
+      "abstract": "This paper reviews the literature on integrating AI in e-learning, from the viewpoint of cognitive neuropsychology, for Personalized Learning (PL) and Adaptive Assessment (AA). This review follows the PRISMA systematic review methodology and synthesizes the results of 85 studies that were selected from an initial pool of 818 records across several databases. The results indicate that AI can improve students’ performance, engagement, and motivation; at the same time, some challenges like bias and discrimination should be noted. The review covers the historic development of AI in education, its theoretical grounding, and its practical applications within PL and AA with high promise and ethical issues of AI-powered educational systems. Future directions are empirical validation of effectiveness and equity, development of algorithms that reduce bias, and exploration of ethical implications regarding data privacy. The review identifies the transformative potential of AI in developing personalized and adaptive learning (AL) environments, thus, it advocates continued development and exploration as a means to improve educational outcomes.",
+      "year": 2024,
+      "venue": "Electronics",
+      "citation_count": 257,
+      "engines_found_in": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.860167,
+      "bm25_score": 5.8971
+    },
+    {
+      "rank": 5,
+      "doi": "10.2196/rehab.6376",
+      "title": "Technologies to Support Community-Dwelling Persons With Dementia: A Position Paper on Issues Regarding Development, Usability, Effectiveness and Cost-Effectiveness, Deployment, and Ethics",
+      "abstract": "BACKGROUND: With the expected increase in the numbers of persons with dementia, providing timely, adequate, and affordable care and support is challenging. Assistive and health technologies may be a valuable contribution in dementia care, but new challenges may emerge. OBJECTIVE: The aim of our study was to review the state of the art of technologies for persons with dementia regarding issues on development, usability, effectiveness and cost-effectiveness, deployment, and ethics in 3 fields of application of technologies: (1) support with managing everyday life, (2) support with participating in pleasurable and meaningful activities, and (3) support with dementia health and social care provision. The study also aimed to identify gaps in the evidence and challenges for future research. METHODS: Reviews of literature and expert opinions were used in our study. Literature searches were conducted on usability, effectiveness and cost-effectiveness, and ethics using PubMed, Embase, CINAHL, and PsycINFO databases with no time limit. Selection criteria in our selected technology fields were reviews in English for community-dwelling persons with dementia. Regarding deployment issues, searches were done in Health Technology Assessment databases. RESULTS: According to our results, persons with dementia want to be included in the development of technologies; there is little research on the usability of assistive technologies; various benefits are reported but are mainly based on low-quality studies; barriers to deployment of technologies in dementia care were identified, and ethical issues were raised by researchers but often not studied. Many challenges remain such as including the target group more often in development, performing more high-quality studies on usability and effectiveness and cost-effectiveness, creating and having access to high-quality datasets on existing technologies to enable adequate deployment of technologies in dementia care, and ensuring that ethical i",
+      "year": 2017,
+      "venue": "JMIR Rehabilitation and Assistive Technologies",
+      "citation_count": 361,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.790741,
+      "bm25_score": 0.5922
+    },
+    {
+      "rank": 6,
+      "doi": "10.1257/aer.20171112",
+      "title": "Disrupting Education? Experimental Evidence on Technology-Aided Instruction in India",
+      "abstract": "We study the impact of a personalized technology-aided after-school instruction program in middle-school grades in urban India using a lottery that provided winners with free access to the program. Lottery winners scored 0.37 σ higher in math and 0.23 σ higher in Hindi over just a 4.5-month period. IV estimates suggest that attending the program for 90 days would increase math and Hindi test scores by 0.6 σ and 0.39 σ respectively. We find similar absolute test score gains for all students, but much greater relative gains for academically-weaker students. Our results suggest that well-designed, technology-aided instruction programs can sharply improve productivity in delivering education. (JEL I21, I26, I28, J24, O15)",
+      "year": 2019,
+      "venue": "American Economic Review",
+      "citation_count": 398,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.764443,
+      "bm25_score": 2.0483
+    },
+    {
+      "rank": 7,
+      "doi": "10.3390/su16020781",
+      "title": "Artificial Intelligence Alone Will Not Democratise Education: On Educational Inequality, Techno-Solutionism and Inclusive Tools",
+      "abstract": "Artificial Intelligence (AI) in Education claims to have the potential for building personalised curricula, as well as bringing opportunities for democratising education and creating a renaissance of new ways of teaching and learning. Millions of students are starting to benefit from the use of these technologies, but millions more around the world are not, due to the digital divide and deep pre-existing social and educational inequalities. If this trend continues, the first large-scale delivery of AI in Education could lead to greater educational inequality, along with a global misallocation of educational resources motivated by the current techno-solutionist narrative, which proposes technological solutions as a quick and flawless way to solve complex real-world problems. This work focuses on posing questions about the future of AI in Education, intending to initiate the pressing conversation that could set the right foundations (e.g., inclusion and diversity) for a new generation of education that is permeated with AI technology. The main goal of our opinion piece is to conceptualise a sustainable, large-scale and inclusive AI for the education ecosystem that facilitates equitable, high-quality lifelong learning opportunities for all. The contribution starts by synthesising how AI might change how we learn and teach, focusing on the case of personalised learning companions and assistive technology for disability. Then, we move on to discuss some socio-technical features that will be crucial to avoiding the perils of these AI systems worldwide (and perhaps ensuring their success by leveraging more inclusive education). This work also discusses the potential of using AI together with free, participatory and democratic resources, such as Wikipedia, Open Educational Resources and open-source tools. We emphasise the need for collectively designing human-centred, transparent, interactive and collaborative AI-based algorithms that empower and give complete agency to sta",
+      "year": 2024,
+      "venue": "Sustainability",
+      "citation_count": 197,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.740089,
+      "bm25_score": 2.2875
+    },
+    {
+      "rank": 8,
+      "doi": "10.30935/cedtech/16108",
+      "title": "Personalized learning through AI: Pedagogical approaches and critical insights",
+      "abstract": "In this analysis, we review artificial intelligence (AI)-supported personalized learning (PL) systems, with an emphasis on pedagogical approaches and implementation challenges. We searched the Web of Science and Scopus databases. After the preliminary review, we examined 30 publications in detail. ChatGPT and machine learning technologies are among the most often utilized tools; studies show that general education and language learning account for the majority of AI applications in the field of education. Supported by particular learning approaches stressing student characteristics and expectations, the results show that automated feedback systems and adaptive content distribution define AI’s educational responsibilities mostly. The study notes major difficulties in three areas: technical constraints and data privacy concerns; educational and pragmatic barriers. Although curriculum integration and teacher preparation are considered major concerns, pedagogical challenges come first above technology integration. The results also underline the need for thorough professional development activities for teachers and AI tools for especially targeted instruction. The study shows that the efficient application of AI-enabled PL requires a comprehensive strategy addressing technological, pedagogical, and ethical issues all at once. These results help to describe the current state of AI in education and provide ideas for future developments as well as techniques for its use.",
+      "year": 2025,
+      "venue": "Contemporary Educational Technology",
+      "citation_count": 64,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 30,
+      "v4_score": 0.706956,
+      "bm25_score": 4.8309
+    },
+    {
+      "rank": 9,
+      "doi": "10.1257/jel.20191507",
+      "title": "Upgrading Education with Technology: Insights from Experimental Research",
+      "abstract": "In recent years, there has been widespread interest around the potential for technology to transform learning. As investment in education technology continues to grow, students, parents, and teachers face a seemingly endless array of education technologies from which to choose—from digital personalized learning platforms to online courses to text message reminders to submit financial aid forms. Amid the excitement, it is important to step back and understand how technology can help—or in some cases hinder—learning. This review article synthesizes and discusses rigorous evidence on the effectiveness of technology-based approaches to education in developed countries and outlines areas for future inquiry. In particular, we examine randomized controlled trials and regression discontinuity studies across the following categories of education technology: (i) access to technology, (ii) computer-assisted learning, (iii) technology-enabled behavioral interventions in education, and (iv) online learning. We hope this synthesis will advance academic understanding of how technology can improve education, outline key areas for new experimental research, and help drive improvements to the policies, programs, and structures that contribute to successful teaching and learning. (JEL H52, H75, I20, O33)",
+      "year": 2020,
+      "venue": "Journal of Economic Literature",
+      "citation_count": 183,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.660428,
+      "bm25_score": 2.7721
+    },
+    {
+      "rank": 10,
+      "doi": "10.1111/bjet.13116",
+      "title": "The effectiveness of technology‐supported personalised learning in low‐ and middle‐income countries: A meta‐analysis",
+      "abstract": "Abstract Digital technology offers the potential to address educational challenges in resource‐poor settings. This meta‐analysis examines the impact of students' use of technology that personalises and adapts to learning level in low‐ and middle‐income countries. Following a systematic search for research between 2007 and 2020, 16 randomised controlled trials were identified in five countries. Studies involved 53,029 learners aged 6–15 years. Coding examined learning domain (mathematics and literacy); personalisation level and delivery; technology use; and intervention duration and intensity. Overall, technology‐supported personalised learning was found to have a statistically significant—if moderate—positive effect size of 0.18 on learning ( p = 0.001). Meta‐regression reveals how more personalised approaches which adapt or adjust to learners' level led to significantly greater impact (an effect size of 0.35) than those only linking to learners' interests or providing personalised feedback, support, and/or assessment. Avenues for future research include investigating cost implications, optimum programme length, and teachers' role in making personalised learning with technology effective. Practitioner notes What is already known about this topic? Promoting personalised learning is an established aim of educators. Using technology to support personalised learning in low‐ and middle‐income countries (LMICs) could play an important role in ensuring more inclusive and equitable access to education, particularly in the aftermath of COVID‐19. There is currently no rigorous overview of evidence on the effectiveness of using technology to enable personalised learning in LMICs. What this paper adds? The meta‐analysis is the first to evaluate the effectiveness of technology‐supported personalised learning in improving learning outcomes for school‐aged children in LMICs. Technology‐supported personalised learning has a statistically significant, positive effect on learning out",
+      "year": 2021,
+      "venue": "British Journal of Educational Technology",
+      "citation_count": 216,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.621027,
+      "bm25_score": 2.2819
+    },
+    {
+      "rank": 11,
+      "doi": "10.1186/s41239-024-00447-4",
+      "title": "Empowering ChatGPT with guidance mechanism in blended learning: effect of self-regulated learning, higher-order thinking skills, and knowledge construction",
+      "abstract": "Abstract In the evolving landscape of higher education, challenges such as the COVID-19 pandemic have underscored the necessity for innovative teaching methodologies. These challenges have catalyzed the integration of technology into education, particularly in blended learning environments, to bolster self-regulated learning (SRL) and higher-order thinking skills (HOTS). However, increased autonomy in blended learning can lead to learning disruptions if issues are not promptly addressed. In this context, OpenAI's ChatGPT, known for its extensive knowledge base and immediate feedback capability, emerges as a significant educational resource. Nonetheless, there are concerns that students might become excessively dependent on such tools, potentially hindering their development of HOTS. To address these concerns, this study introduces the Guidance-based ChatGPT-assisted Learning Aid (GCLA). This approach modifies the use of ChatGPT in educational settings by encouraging students to attempt problem-solving independently before seeking ChatGPT assistance. When engaged, the GCLA provides guidance through hints rather than direct answers, fostering an environment conducive to the development of SRL and HOTS. A randomized controlled trial (RCT) was employed to examine the impact of the GCLA compared to traditional ChatGPT use in a foundational chemistry course within a blended learning setting. This study involved 61 undergraduate students from a university in Taiwan. The findings reveal that the GCLA enhances SRL, HOTS, and knowledge construction compared to traditional ChatGPT use. These results directly align with the research objective to improve learning outcomes through providing guidance rather than answers by ChatGPT. In conclusion, the introduction of the GCLA has not only facilitated more effective learning experiences in blended learning environments but also ensured that students engage more actively in their educational journey. The implications of this study hi",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 212,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.609631,
+      "bm25_score": 4.2217
+    },
+    {
+      "rank": 12,
+      "doi": "10.3389/frobt.2018.00081",
+      "title": "Immersive VR and Education: Embodied Design Principles That Include Gesture and Hand Controls",
+      "abstract": "This article explores relevant applications of educational theory for the design of immersive virtual reality (VR). Two unique attributes associated with VR position the technology to positively affect education: 1) the sensation of presence, and 2) the embodied affordances of gesture and manipulation in the 3rd dimension. These are referred to as the two profound affordances of VR. The primary focus of this article is on the embodiment afforded by gesture and 3D for learning. The new generation of hand controllers induces embodiment and agency via meaningful and congruent movements with the content to be learned. Several examples of gesture-rich lessons are presented. The final section includes an extensive set of design principles for immersive VR in education, and finishes with the Necessary Nine which are hypothesized to optimize the pedagogy within a lesson.",
+      "year": 2018,
+      "venue": "Frontiers in Robotics and AI",
+      "citation_count": 378,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.606318,
+      "bm25_score": 1.7596
+    },
+    {
+      "rank": 13,
+      "doi": "10.1038/s41598-025-97652-6",
+      "title": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting",
+      "abstract": "Advances in generative artificial intelligence show great potential for improving education. Yet little is known about how this new technology should be used and how effective it can be compared to current best practices. Here we report a randomized, controlled trial measuring college students' learning and their perceptions when content is presented through an AI-powered tutor compared with an active learning class. The novel design of the custom AI tutor is informed by the same pedagogical best practices as employed in the in-class lessons. We find that students learn significantly more in less time when using the AI tutor, compared with the in-class active learning. They also feel more engaged and more motivated. These findings offer empirical evidence for the efficacy of a widely accessible AI-powered pedagogy in significantly enhancing learning outcomes, presenting a compelling case for its broad adoption in learning environments.",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_count": 81,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.593811,
+      "bm25_score": 4.7494
+    },
+    {
+      "rank": 14,
+      "doi": "10.1093/ejcts/ezu366",
+      "title": "2014 ESC/EACTS Guidelines on myocardial revascularization",
+      "abstract": "National Cardiac Societies document reviewers: listed in Addenda The content of these European Society of Cardiology (ESC) and European Association for Cardio-Thoracic Surgery (EACTS) Guidelines has been published for personal and educational use only. No commercial use is authorized. No part of the ESC Guidelines may be translated or reproduced in any form without written permission from the ESC. Permission can be obtained upon submission of a written request to Oxford University Press, the publisher of the European Heart Journal and the party authorized to handle such permissions on behalf of the ESC. Other ESC entities having participated in the development of this document: Associations: Acute Cardiovascular Care Association (ACCA), European Association for Cardiovascular Prevention &amp;amp; Rehabilitation (EACPR), European Association of Cardiovascular Imaging (EACVI), European Heart Rhythm Association (EHRA), Heart Failure Association of the ESC (HFA). Working groups: Working Group on Cardiac Cellular Electrophysiology, Working Group on Cardiovascular Magnetic Resonance, Working Group on Cardiovascular Pharmacology and Drug Therapy, Working Group on Cardiovascular Surgery, Working Group on Coronary Pathophysiology and Microcirculation, Working Group on Nuclear Cardiology and Cardiac Computed Tomography, Working Group on Peripheral Circulation, Working Group on Thrombosis, Working Group on Valvular Heart Disease. Councils: Council for Cardiology Practice, Council on Cardiovascular Primary Care, Council on Cardiovascular Nursing and Allied Professions. Disclaimer 2014: The ESC/EACTS Guidelines represent the views of the ESC and of the EACTS and were produced after careful consideration of the scientific and medical knowledge and the evidence available at the time of their dating. The ESC and the EACTS are not responsible in the event of any contradiction, discrepancy and/or ambiguity between the ESC/EACTS Guidelines and any other official recommendations or gui",
+      "year": 2014,
+      "venue": "European Journal of Cardio-Thoracic Surgery",
+      "citation_count": 4208,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.56284,
+      "bm25_score": 0.5439
+    },
+    {
+      "rank": 15,
+      "doi": "10.1038/s41591-024-02902-1",
+      "title": "Causal machine learning for predicting treatment outcomes",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Nature Medicine",
+      "citation_count": 268,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.522573,
+      "bm25_score": 0.6435
+    },
+    {
+      "rank": 16,
+      "doi": "10.1111/bjet.12467",
+      "title": "Essential features of serious games design in higher education: Linking learning attributes to game mechanics",
+      "abstract": "Abstract This paper consolidates evidence and material from a range of specialist and disciplinary fields to provide an evidence‐based review and synthesis on the design and use of serious games in higher education. Search terms identified 165 papers reporting conceptual and empirical evidence on how learning attributes and game mechanics may be planned, designed and implemented by university teachers interested in using games, which are integrated into lesson plans and orchestrated as part of a learning sequence at any scale. The findings outline the potential of classifying the links between learning attributes and game mechanics as a means to scaffold teachers’ understanding of how to perpetuate learning in optimal ways while enhancing the in‐game learning experience. The findings of this paper provide a foundation for describing methods, frames and discourse around experiences of design and use of serious games, linked to methodological limitations and recommendations for further research in this area.",
+      "year": 2016,
+      "venue": "British Journal of Educational Technology",
+      "citation_count": 267,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.450514,
+      "bm25_score": 0.7592
+    },
+    {
+      "rank": 17,
+      "doi": "10.1111/mbe.12302",
+      "title": "Opportunities and Limitations of Mobile Neuroimaging Technologies in Educational Neuroscience",
+      "abstract": "As the field of educational neuroscience continues to grow, questions have emerged regarding the ecological validity and applicability of this research to educational practice. Recent advances in mobile neuroimaging technologies have made it possible to conduct neuroscientific studies directly in naturalistic learning environments. We propose that embedding mobile neuroimaging research in a cycle (Matusz, Dikker, Huth, & Perrodin, 2019), involving lab-based, seminaturalistic, and fully naturalistic experiments, is well suited for addressing educational questions. With this review, we take a cautious approach, by discussing the valuable insights that can be gained from mobile neuroimaging technology, including electroencephalography and functional near-infrared spectroscopy, as well as the challenges posed by bringing neuroscientific methods into the classroom. Research paradigms used alongside mobile neuroimaging technology vary considerably. To illustrate this point, studies are discussed with increasingly naturalistic designs. We conclude with several ethical considerations that should be taken into account in this unique area of research.",
+      "year": 2021,
+      "venue": "Mind Brain and Education",
+      "citation_count": 91,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.450504,
+      "bm25_score": 2.3386
+    },
+    {
+      "rank": 18,
+      "doi": "10.1145/2803173",
+      "title": "Self-Care Technologies in HCI",
+      "abstract": "Many studies show that self-care technologies can support patients with chronic conditions and their carers in understanding the ill body and increasing control of their condition. However, many of these studies have largely privileged a medical perspective and thus overlooked how patients and carers integrate self-care into their daily lives and mediate their conditions through technology. In this review, we focus on how patients and carers use and experience self-care technology through a Human-Computer Interaction (HCI) lens. We analyse studies of self-care published in key HCI journals and conferences using the Grounded Theory Literature Review (GTLR) method and identify research trends and design tensions. We then draw out opportunities for advancing HCI research in self-care, namely, focusing further on patients' everyday life experience, considering existing collaborations in self-care, and increasing the influence on medical research and practice around self-care technology.",
+      "year": 2015,
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "citation_count": 259,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.442721,
+      "bm25_score": 0.8234
+    },
+    {
+      "rank": 19,
+      "doi": "10.3389/fpsyg.2022.971044",
+      "title": "Artificial intelligence technologies and compassion in healthcare: A systematic scoping review",
+      "abstract": "Background Advances in artificial intelligence (AI) technologies, together with the availability of big data in society, creates uncertainties about how these developments will affect healthcare systems worldwide. Compassion is essential for high-quality healthcare and research shows how prosocial caring behaviors benefit human health and societies. However, the possible association between AI technologies and compassion is under conceptualized and underexplored. Objectives The aim of this scoping review is to provide a comprehensive depth and a balanced perspective of the emerging topic of AI technologies and compassion, to inform future research and practice. The review questions were: How is compassion discussed in relation to AI technologies in healthcare? How are AI technologies being used to enhance compassion in healthcare? What are the gaps in current knowledge and unexplored potential? What are the key areas where AI technologies could support compassion in healthcare? Materials and methods A systematic scoping review following five steps of Joanna Briggs Institute methodology. Presentation of the scoping review conforms with PRISMA-ScR (Preferred Reporting Items for Systematic reviews and Meta-Analyses extension for Scoping Reviews). Eligibility criteria were defined according to 3 concept constructs (AI technologies, compassion, healthcare) developed from the literature and informed by medical subject headings (MeSH) and key words for the electronic searches. Sources of evidence were Web of Science and PubMed databases, articles published in English language 2011–2022. Articles were screened by title/abstract using inclusion/exclusion criteria. Data extracted (author, date of publication, type of article, aim/context of healthcare, key relevant findings, country) was charted using data tables. Thematic analysis used an inductive-deductive approach to generate code categories from the review questions and the data. A multidisciplinary team assessed themes ",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_count": 225,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.30538,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "10.61969/jai.1337500",
+      "title": "Education in the Era of Generative Artificial Intelligence (AI): Understanding the Potential Benefits of ChatGPT in Promoting Teaching and Learning",
+      "abstract": "Since its maiden release into the public domain on November 30, 2022, ChatGPT garnered more than one million subscribers within a week. The generative AI tool ⎼ChatGPT took the world by surprise with it sophisticated capacity to carry out remarkably complex tasks. The extraordinary abilities of ChatGPT to perform complex tasks within the field of education has caused mixed feelings among educators, as this advancement in AI seems to revolutionize existing educational praxis. This is an exploratory study that synthesizes recent extant literature to offer some potential benefits and drawbacks of ChatGPT in promoting teaching and learning. Benefits of ChatGPT include but are not limited to promotion of personalized and interactive learning, generating prompts for formative assessment activities that provide ongoing feedback to inform teaching and learning etc. The paper also highlights some inherent limitations in the ChatGPT such as generating wrong information, biases in data training, which may augment existing biases, privacy issues etc. The study offers recommendations on how ChatGPT could be leveraged to maximize teaching and learning. Policy makers, researchers, educators and technology experts could work together and start conversations on how these evolving generative AI tools could be used safely and constructively to improve education and support students’ learning.",
+      "year": 2023,
+      "venue": "Journal of AI",
+      "citation_count": 1634,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.303836,
+      "bm25_score": 2.7592
+    },
+    {
+      "rank": 21,
+      "doi": "10.1186/s40561-016-0038-y",
+      "title": "A possible future for next generation adaptive learning systems",
+      "abstract": "Recent advances in big data, learning analytics, and scalable architectures present new opportunities to redesign adaptive learning systems. This paper is part directional and part speculative. We sketch a possible future for designing next generation adaptive learning systems based on new developments in learning science and data science.",
+      "year": 2016,
+      "venue": "Smart Learning Environments",
+      "citation_count": 67,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.291259,
+      "bm25_score": 3.6705
+    },
+    {
+      "rank": 22,
+      "doi": "10.1007/s11423-024-10345-1",
+      "title": "Taking adaptive learning in educational settings to the next level: leveraging natural language processing for improved personalization",
+      "abstract": "Abstract Educational technology plays an increasingly significant role in supporting Self-Regulated Learning (SRL), while the importance of Adaptive Learning Technology (ALT) grows due to its ability to provide personalized support for learners. Despite recognizing the potential of ALT to be influential in SRL, effectively addressing pedagogical concerns about using ALT to enhance students’ SRL remains an ongoing challenge. Consequently, learners can develop perceptions that ALT is not customized to their specific needs, resulting in critical or dismissive attitudes towards such systems. This study therefore explores the potential of combining Natural Language Processing (NLP) to enhance real-time contextual adaptive learning within an ALT to support learners’ SRL. In addressing this question, our approach consisted of two steps. Initially, we focused on developing an ALT that incorporates learners’ needs. Subsequently, we explored the potential of NLP to capture pertinent learner information essential for providing adaptive support in SRL. In order to ensure direct applicability to pedagogical practice, we engaged in a one-year co-design phase with a high school. Qualitative data was collected to evaluate the implementation of the ALT and to check complementary possibilities to enhance SRL by potentially adding NLP. Our findings indicate that the learning technology we developed has been well-received and implemented in practice. However, there is potential for further development, particularly in terms of providing adaptive support for students. It is evident that a meaningful integration of NLP and ALT holds substantial promise for future enhancements, enabling sustainable support for learners SRL.",
+      "year": 2024,
+      "venue": "Educational technology research and development",
+      "citation_count": 67,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.231476,
+      "bm25_score": 5.742
+    },
+    {
+      "rank": 23,
+      "doi": "10.2196/jmir.5257",
+      "title": "Personalized Telehealth in the Future: A Global Research Agenda",
+      "abstract": "As telehealth plays an even greater role in global health care delivery, it will be increasingly important to develop a strong evidence base of successful, innovative telehealth solutions that can lead to scalable and sustainable telehealth programs. This paper has two aims: (1) to describe the challenges of promoting telehealth implementation to advance adoption and (2) to present a global research agenda for personalized telehealth within chronic disease management. Using evidence from the United States and the European Union, this paper provides a global overview of the current state of telehealth services and benefits, presents fundamental principles that must be addressed to advance the status quo, and provides a framework for current and future research initiatives within telehealth for personalized care, treatment, and prevention. A broad, multinational research agenda can provide a uniform framework for identifying and rapidly replicating best practices, while concurrently fostering global collaboration in the development and rigorous testing of new and emerging telehealth technologies. In this paper, the members of the Transatlantic Telehealth Research Network offer a 12-point research agenda for future telehealth applications within chronic disease management.",
+      "year": 2016,
+      "venue": "Journal of Medical Internet Research",
+      "citation_count": 324,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.225687,
+      "bm25_score": 1.705
+    },
+    {
+      "rank": 24,
+      "doi": "10.3389/feduc.2020.00147",
+      "title": "The Future of Embodied Design for Mathematics Teaching and Learning",
+      "abstract": "A rising epistemological paradigm in the cognitive sciences—embodied cognition—has been stimulating innovative approaches, among educational researchers, to the design and analysis of STEM teaching and learning. The paradigm promotes theorizations of cognitive activity as grounded, or even constituted, in goal-oriented multimodal sensorimotor phenomenology. Conceptual learning, per these theories, could emanate from, or be triggered by, experiences of enacting or witnessing particular movement forms, even before these movements are explicitly signified as illustrating target content. Putting these theories to practice, new types of learning environments are being explored that utilize interactive technologies to initially foster student enactment of conceptually oriented movement forms and only then formalize these gestures and actions in disciplinary formats and language. In turn, new research instruments, such as multimodal learning analytics, now enable researchers to aggregate, integrate, model, and represent students’ physical movements, eye-gaze paths, and verbal–gestural utterance so as to track and evaluate emerging conceptual capacity. We—a cohort of cognitive scientists and design-based researchers of embodied mathematics—survey a set of empirically validated frameworks and principles for enhancing mathematics teaching and learning as dialogic multimodal activity, and we synthetize a set of principles for educational practice.",
+      "year": 2020,
+      "venue": "Frontiers in Education",
+      "citation_count": 185,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.211025,
+      "bm25_score": 1.6516
+    },
+    {
+      "rank": 25,
+      "doi": "10.1002/cpt.59",
+      "title": "From adaptive licensing to adaptive pathways: Delivering a flexible life‐span approach to bring new drugs to patients",
+      "abstract": "The concept of adaptive licensing (AL) has met with considerable interest. Yet some remain skeptical about its feasibility. Others argue that the focus and name of AL should be broadened. Against this background of ongoing debate, we examine the environmental changes that will likely make adaptive pathways the preferred approach in the future. The key drivers include: growing patient demand for timely access to promising therapies, emerging science leading to fragmentation of treatment populations, rising payer influence on product accessibility, and pressure on pharma/investors to ensure sustainability of drug development. We also discuss a number of environmental changes that will enable an adaptive paradigm. A life-span approach to bringing innovation to patients is expected to help address the perceived access vs. evidence trade-off, help de-risk drug development, and lead to better outcomes for patients.",
+      "year": 2015,
+      "venue": "Clinical Pharmacology & Therapeutics",
+      "citation_count": 187,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.207788,
+      "bm25_score": 2.8616
+    },
+    {
+      "rank": 26,
+      "doi": "10.3389/fpsyg.2023.1255594",
+      "title": "Artificial intelligence-based language learning: illuminating the impact on speaking skills and self-regulation in Chinese EFL context",
+      "abstract": "Introduction: This study investigated the effectiveness of artificial intelligence-based instruction in improving second language (L2) speaking skills and speaking self-regulation in a natural setting. The research was conducted with 93 Chinese English as a foreign language (EFL) students, randomly assigned to either an experimental group receiving AI-based instruction or a control group receiving traditional instruction. Methods: The AI-based instruction leveraged the Duolingo application, incorporating natural language processing technology, interactive exercises, personalized feedback, and speech recognition technology. Pre- and post-tests were conducted to assess L2 speaking skills and self-regulation abilities. Results: The results of the study demonstrated that the experimental group, which received AI-based instruction, exhibited significantly greater improvement in L2 speaking skills compared to the control group. Moreover, participants in the experimental group reported higher levels of self-regulation. Discussion: These findings suggest that AI-based instruction effectively enhances L2 speaking skills and fosters self-regulatory processes among language learners, highlighting the potential of AI technology to optimize language learning experiences and promote learners' autonomy and metacognitive strategies in the speaking domain. However, further research is needed to explore the long-term effects and specific mechanisms underlying these observed improvements.",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_count": 147,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.173814,
+      "bm25_score": 2.1948
+    },
+    {
+      "rank": 27,
+      "doi": "10.3390/electronics12071550",
+      "title": "The Influence of Emerging Technologies on Distance Education",
+      "abstract": "Recently, during the COVID-19 pandemic, distance education became mainstream. Many students were not prepared for this situation—they lacked equipment or were not even connected to the Internet. Schools and government institutions had to react quickly to allow students to learn remotely. They had to provide students with equipment (e.g., computers, tablets, and goggles) but also provide them with access to the Internet and other necessary tools. On the other hand, teachers were trying to adopt new technologies in the teaching process to enable more interactivity, mitigate feelings of isolation and disconnection, and enhance student engagement. New technologies, including Virtual Reality (VR), Augmented Reality (AR), Mixed Reality (MR), Extended Reality (XR, so-called Metaverse), Big Data, Blockchain, and Free Space Optics (FSO) changed learning, teaching, and assessing. Despite that, some tools were implemented fast, and the COVID-19 pandemic was the trigger for this process; most of these technologies will be used further, even in classroom teaching in both schools and universities. This paper presents a concise review of the emerging technologies applied in distance education. The main emphasis was placed on their influence on the efficiency of the learning process and their psychological impact on users. It turned out that both students and teachers were satisfied with remote learning, while in the case of undergraduate children and high-school students, parents very often expressed their dissatisfaction. The limitation of the availability of remote learning is related to access to stable Internet and computer equipment, which turned out to be a rarity. In the current social context, the obtained results provided valuable insights into factors affecting the acceptance and emerging technologies applied in distance education. Finally, this paper suggests a research direction for the development of effective remote learning techniques.",
+      "year": 2023,
+      "venue": "Electronics",
+      "citation_count": 148,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.157057,
+      "bm25_score": 0.6661
+    },
+    {
+      "rank": 28,
+      "doi": "10.1210/endrev/bnac022",
+      "title": "Consensus Recommendations for the Use of Automated Insulin Delivery Technologies in Clinical Practice",
+      "abstract": "The significant and growing global prevalence of diabetes continues to challenge people with diabetes (PwD), healthcare providers, and payers. While maintaining near-normal glucose levels has been shown to prevent or delay the progression of the long-term complications of diabetes, a significant proportion of PwD are not attaining their glycemic goals. During the past 6 years, we have seen tremendous advances in automated insulin delivery (AID) technologies. Numerous randomized controlled trials and real-world studies have shown that the use of AID systems is safe and effective in helping PwD achieve their long-term glycemic goals while reducing hypoglycemia risk. Thus, AID systems have recently become an integral part of diabetes management. However, recommendations for using AID systems in clinical settings have been lacking. Such guided recommendations are critical for AID success and acceptance. All clinicians working with PwD need to become familiar with the available systems in order to eliminate disparities in diabetes quality of care. This report provides much-needed guidance for clinicians who are interested in utilizing AIDs and presents a comprehensive listing of the evidence payers should consider when determining eligibility criteria for AID insurance coverage.",
+      "year": 2022,
+      "venue": "Endocrine Reviews",
+      "citation_count": 405,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.118452,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 29,
+      "doi": "10.3389/fpsyg.2021.644587",
+      "title": "Assistive Technologies in Dementia Care: An Updated Analysis of the Literature",
+      "abstract": "Objectives: Technology can assist and support both people with dementia (PWD) and caregivers. Recently, technology has begun to embed remote components. Timely with respect to the pandemic, the present work reviews the most recent literature on technology in dementia contexts together with the newest studies about technological support published until October 2020. The final aim is to provide a synthesis of the timeliest evidence upon which clinical and non-clinical decision-makers can rely to make choices about technology in the case of further pandemic waves. Methods: A review of reviews was performed alongside a review of the studies run during the first pandemic wave. PsycInfo, CINAHL, and PubMed-online were the databases inspected for relevant papers published from January 2010. Results: The search identified 420 articles, 30 of which were reviews and nine of which were new studies meeting the inclusion criteria. Studies were first sorted according to the target population, then summarized thematically in a narrative synthesis. The studies targeting technologies for PWD were categorized as follows: monitoring and security purposes, sustaining daily life, and therapeutic interventions. Each category showed potential benefits. Differently, the interventions for caregivers were classified as informative, psycho-education programs, psychosocial-supportive, therapeutic, and cognitive/physical training. Benefits to mental health, skills learning, and social aspects emerged. Conclusions: The evidence shows that technology is well-accepted and can support PWD and caregivers to bypass physical and environmental problems both during regular times and during future pandemic waves. Nevertheless, the lack of a common methodological background is revealed by this analysis. Further and more standardized research is necessary to improve the implementation of technologies in everyday life while respecting the necessary personalization.",
+      "year": 2021,
+      "venue": "Frontiers in Psychology",
+      "citation_count": 122,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.075065,
+      "bm25_score": 1.1538
+    },
+    {
+      "rank": 30,
+      "doi": "10.1007/s43621-025-01094-z",
+      "title": "The role of large language models in personalized learning: a systematic review of educational impact",
+      "abstract": "The rapid evolution of technology has significantly transformed the educational landscape, with the advent of Large Language Models (LLMs) introducing new possibilities for personalized learning. This systematic review examines the educational impact of LLM-based learning systems compared to traditional educational approaches, focusing on six critical research questions. These questions explore the effectiveness of LLMs in enhancing student engagement, emotional and social development, real-time progress monitoring, and their role in creating fair and rigorous examination environments. Furthermore, the review addresses challenges such as ethical considerations, privacy concerns, and the extent to which LLMs can simulate real-world teaching experiences. A total of 55 studies, published between 2020 and 2024, were systematically analyzed to explore the impact of Large Language Models (LLMs) on educational outcomes, including emotional, social, and academic development. These studies included a combination of peer-reviewed articles, conference papers, and journal publications, which were selected through a set of predetermined inclusion and exclusion criteria. Quality assessment criteria ensured the inclusion of high-quality research focusing on the application of LLM-based AI technology in education. The review also highlights key challenges and limitations, including issues of accessibility, ethical dilemmas, and the integration of AI into traditional education systems. Findings underscore the potential of LLMs to revolutionize education through personalized learning, while also addressing the critical need for rigorous evaluation and ethical deployment to ensure equitable and effective outcomes.",
+      "year": 2025,
+      "venue": "Discover Sustainability",
+      "citation_count": 116,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 25,
+      "v4_score": 0.002676,
+      "bm25_score": 3.9935
+    }
+  ]
+}

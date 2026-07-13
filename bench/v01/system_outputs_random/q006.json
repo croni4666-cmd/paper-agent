@@ -1,0 +1,612 @@
+{
+  "query_id": "q006",
+  "query": "long-context transformer attention degradation on long documents",
+  "topic_bucket": "ml",
+  "source": "pub",
+  "generated_at": "2026-07-13T14:38:23",
+  "config": "v4-random-recency-strict",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1609/aaai.v35i12.17325",
+      "title": "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting",
+      "abstract": "Many real-world applications require the prediction of long sequence time-series, such as electricity consumption planning. Long sequence time-series forecasting (LSTF) demands a high prediction capacity of the model, which is the ability to capture precise long-range dependency coupling between output and input efficiently. Recent studies have shown the potential of Transformer to increase the prediction capacity. However, there are several severe issues with Transformer that prevent it from being directly applicable to LSTF, including quadratic time complexity, high memory usage, and inherent limitation of the encoder-decoder architecture. To address these issues, we design an efficient transformer-based model for LSTF, named Informer, with three distinctive characteristics: (i) a ProbSparse self-attention mechanism, which achieves O(L log L) in time complexity and memory usage, and has comparable performance on sequences' dependency alignment. (ii) the self-attention distilling highlights dominating attention by halving cascading layer input, and efficiently handles extreme long input sequences. (iii) the generative style decoder, while conceptually simple, predicts the long time-series sequences at one forward operation rather than a step-by-step way, which drastically improves the inference speed of long-sequence predictions. Extensive experiments on four large-scale datasets demonstrate that Informer significantly outperforms existing methods and provides a new solution to the LSTF problem.",
+      "year": 2021,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 6162,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.995149,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 1,
+      "bm25_score": 4.5685
+    },
+    {
+      "rank": 2,
+      "doi": "10.1145/3533767.3534367",
+      "title": "jTrans: jump-aware transformer for binary code similarity detection",
+      "abstract": "Binary code similarity detection (BCSD) has important applications in various fields such as vulnerabilities detection, software component analysis, and reverse engineering. Recent studies have shown that deep neural networks (DNNs) can comprehend instructions or control-flow graphs (CFG) of binary code and support BCSD. In this study, we propose a novel Transformer-based approach, namely jTrans, to learn representations of binary code. It is the first solution that embeds control flow information of binary code into Transformer-based language models, by using a novel jump-aware representation of the analyzed binaries and a newly-designed pre-training task. Additionally, we release to the community a newly-created large dataset of binaries, BinaryCorp, which is the most diverse to date. Evaluation results show that jTrans outperforms state-of-the-art (SOTA) approaches on this more challenging dataset by 30.5% (i.e., from 32.0% to 62.5%). In a real-world task of known vulnerability searching, jTrans achieves a recall that is 2X higher than existing SOTA baselines.",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 146,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.935514,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 21,
+      "bm25_score": 1.0499
+    },
+    {
+      "rank": 3,
+      "doi": "10.18653/v1/d18-1325",
+      "title": "Document-Level Neural Machine Translation with Hierarchical Attention Networks",
+      "abstract": "Neural Machine Translation (NMT) can be improved by including document-level contextual information. For this purpose, we propose a hierarchical attention model to capture the context in a structured and dynamic manner. The model is integrated in the original NMT architecture as another level of abstraction, conditioning on the NMT model's own previous hidden states. Experiments show that hierarchical attention significantly improves the BLEU score over a strong NMT baseline with the state-of-the-art in context-aware methods, and that both the encoder and decoder benefit from context in complementary ways.",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 276,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.90542,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 14,
+      "bm25_score": 3.6281
+    },
+    {
+      "rank": 4,
+      "doi": "10.3390/rs14122861",
+      "title": "Swin-Transformer-Enabled YOLOv5 with Attention Mechanism for Small Object Detection on Satellite Images",
+      "abstract": "Object detection has made tremendous progress in natural images over the last decade. However, the results are hardly satisfactory when the natural image object detection algorithm is directly applied to satellite images. This is due to the intrinsic differences in the scale and orientation of objects generated by the bird’s-eye perspective of satellite photographs. Moreover, the background of satellite images is complex and the object area is small; as a result, small objects tend to be missing due to the challenge of feature extraction. Dense objects overlap and occlusion also affects the detection performance. Although the self-attention mechanism was introduced to detect small objects, the computational complexity increased with the image’s resolution. We modified the general one-stage detector YOLOv5 to adapt the satellite images to resolve the above problems. First, new feature fusion layers and a prediction head are added from the shallow layer for small object detection for the first time because it can maximally preserve the feature information. Second, the original convolutional prediction heads are replaced with Swin Transformer Prediction Heads (SPHs) for the first time. SPH represents an advanced self-attention mechanism whose shifted window design can reduce the computational complexity to linearity. Finally, Normalization-based Attention Modules (NAMs) are integrated into YOLOv5 to improve attention performance in a normalized way. The improved YOLOv5 is termed SPH-YOLOv5. It is evaluated on the NWPU-VHR10 dataset and DOTA dataset, which are widely used for satellite image object detection evaluations. Compared with the basal YOLOv5, SPH-YOLOv5 improves the mean Average Precision (mAP) by 0.071 on the DOTA dataset.",
+      "year": 2022,
+      "venue": "Remote Sensing",
+      "citation_count": 213,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.859635,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 15,
+      "bm25_score": 1.6625
+    },
+    {
+      "rank": 5,
+      "doi": "10.1145/3579371.3589057",
+      "title": "FACT: FFN-Attention Co-optimized Transformer Architecture with Eager Correlation Prediction",
+      "abstract": "Transformer model is becoming prevalent in various AI applications with its outstanding performance. However, the high cost of computation and memory footprint make its inference inefficient. We discover that among the three main computation modules in a Transformer model (QKV generation, attention computation, FFN), it is the QKV generation and FFN that contribute to the most power cost. While the attention computation, focused by most previous works, only has decent power share when dealing with extremely long inputs. Therefore, in this paper, we propose FACT, an efficient algorithm-hardware co-design optimizing all three modules of Transformer. We first propose an eager prediction algorithm which predicts the attention matrix before QKV generation. It further detects the unnecessary computation in QKV generation and assigns mixed-precision FFN with the predicted attention, which helps improve the throughput. Further, we propose FACT accelerator to efficiently support eager prediction with three designs. It avoids the large overhead of prediction by using log-based add-only operations for prediction. It eliminates the latency of prediction through an out-of-order scheduler that makes the eager prediction and computation work in full pipeline. It additionally avoids memory access conflict in the mixed-precision FFN with a novel diagonal storage pattern. Experiments on 22 benchmarks show that our FACT improves the throughput of the whole Transformer by 3.59× on the geomean average. It achieves an enviable 47.64× and 278.1× energy saving when computing attention, compared to previous attention-optimization-only SOTA works ELSA and Sanger. Further, FACT achieves an energy efficiency of 4388 GOPS/W performing the whole Transformer layer on average, which is 94.98× higher than Nvidia V100 GPU.",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 98,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.807497,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 25,
+      "bm25_score": 3.1778
+    },
+    {
+      "rank": 6,
+      "doi": "10.18653/v1/2025.acl-long.127",
+      "title": "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference",
+      "abstract": "Benjamin Warner, Antoine Chaffin, Benjamin Clavié, Orion Weller, Oskar Hallström, Said Taghadouini, Alexis Gallagher, Raja Biswas, Faisal Ladhak, Tom Aarsen, Griffin Thomas Adams, Jeremy Howard, Iacopo Poli. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+      "year": 2025,
+      "venue": "",
+      "citation_count": 129,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.784619,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 24,
+      "bm25_score": 4.3298
+    },
+    {
+      "rank": 7,
+      "doi": "10.48550/arxiv.2507.02259",
+      "title": "MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent",
+      "abstract": "Despite improvements by length extrapolation, efficient attention and memory modules, handling infinitely long documents with linear complexity without performance degradation during extrapolation remains the ultimate challenge in long-text processing. We directly optimize for long-text tasks in an end-to-end fashion and introduce a novel agent workflow, MemAgent, which reads text in segments and updates the memory using an overwrite strategy. We extend the DAPO algorithm to facilitate training via independent-context multi-conversation generation. MemAgent has demonstrated superb long-context capabilities, being able to extrapolate from an 8K context trained on 32K text to a 3.5M QA task with performance loss &lt; 5% and achieves 95%+ in 512K RULER test.",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 180,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "v4_score": 0.668978,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 18,
+      "bm25_score": 11.0132
+    },
+    {
+      "rank": 8,
+      "doi": "10.18653/v1/2021.acl-long.353",
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "abstract": "Xiang Lisa Li, Percy Liang. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021.",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 2215,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.649878,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 2,
+      "bm25_score": 2.1058
+    },
+    {
+      "rank": 9,
+      "doi": "10.1609/aaai.v34i07.6903",
+      "title": "Decoupled Attention Network for Text Recognition",
+      "abstract": "Text recognition has attracted considerable research interests because of its various applications. The cutting-edge text recognition methods are based on attention mechanisms. However, most of attention methods usually suffer from serious alignment problem due to its recurrency alignment operation, where the alignment relies on historical decoding results. To remedy this issue, we propose a decoupled attention network (DAN), which decouples the alignment operation from using historical decoding results. DAN is an effective, flexible and robust end-to-end text recognizer, which consists of three components: 1) a feature encoder that extracts visual features from the input image; 2) a convolutional alignment module that performs the alignment operation based on visual features from the encoder; and 3) a decoupled text decoder that makes final prediction by jointly using the feature map and attention maps. Experimental results show that DAN achieves state-of-the-art performance on multiple text recognition tasks, including offline handwritten text recognition and regular/irregular scene text recognition. Codes will be released.1",
+      "year": 2020,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 304,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.631103,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 12,
+      "bm25_score": 0.992
+    },
+    {
+      "rank": 10,
+      "doi": "10.1093/jamia/ocac225",
+      "title": "A comparative study of pretrained language models for long clinical text",
+      "abstract": "OBJECTIVE: Clinical knowledge-enriched transformer models (eg, ClinicalBERT) have state-of-the-art results on clinical natural language processing (NLP) tasks. One of the core limitations of these transformer models is the substantial memory consumption due to their full self-attention mechanism, which leads to the performance degradation in long clinical texts. To overcome this, we propose to leverage long-sequence transformer models (eg, Longformer and BigBird), which extend the maximum input sequence length from 512 to 4096, to enhance the ability to model long-term dependencies in long clinical texts. MATERIALS AND METHODS: Inspired by the success of long-sequence transformer models and the fact that clinical notes are mostly long, we introduce 2 domain-enriched language models, Clinical-Longformer and Clinical-BigBird, which are pretrained on a large-scale clinical corpus. We evaluate both language models using 10 baseline tasks including named entity recognition, question answering, natural language inference, and document classification tasks. RESULTS: The results demonstrate that Clinical-Longformer and Clinical-BigBird consistently and significantly outperform ClinicalBERT and other short-sequence transformers in all 10 downstream tasks and achieve new state-of-the-art results. DISCUSSION: Our pretrained language models provide the bedrock for clinical NLP using long texts. We have made our source code available at https://github.com/luoyuanlab/Clinical-Longformer, and the pretrained models available for public download at: https://huggingface.co/yikuan8/Clinical-Longformer. CONCLUSION: This study demonstrates that clinical knowledge-enriched long-sequence transformers are able to learn long-term dependencies in long clinical text. Our methods can also inspire the development of other domain-enriched long-sequence transformers.",
+      "year": 2022,
+      "venue": "Journal of the American Medical Informatics Association",
+      "citation_count": 139,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.571043,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 22,
+      "bm25_score": 5.7896
+    },
+    {
+      "rank": 11,
+      "doi": "10.1162/tacl_a_00638",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "abstract": "Abstract While recent language models have the ability to take long contexts as input, relatively little is known about how well they use longer context. We analyze the performance of language models on two tasks that require identifying relevant information in their input contexts: multi-document question answering and key-value retrieval. We find that performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts. In particular, we observe that performance is often highest when relevant information occurs at the beginning or end of the input context, and significantly degrades when models must access relevant information in the middle of long contexts, even for explicitly long-context models. Our analysis provides a better understanding of how language models use their input context and provides new evaluation protocols for future long-context language models.",
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "citation_count": 957,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.517576,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 4,
+      "bm25_score": 5.5497
+    },
+    {
+      "rank": 12,
+      "doi": "10.3390/s23052385",
+      "title": "Vision Transformers in Image Restoration: A Survey",
+      "abstract": "The Vision Transformer (ViT) architecture has been remarkably successful in image restoration. For a while, Convolutional Neural Networks (CNN) predominated in most computer vision tasks. Now, both CNN and ViT are efficient approaches that demonstrate powerful capabilities to restore a better version of an image given in a low-quality format. In this study, the efficiency of ViT in image restoration is studied extensively. The ViT architectures are classified for every task of image restoration. Seven image restoration tasks are considered: Image Super-Resolution, Image Denoising, General Image Enhancement, JPEG Compression Artifact Reduction, Image Deblurring, Removing Adverse Weather Conditions, and Image Dehazing. The outcomes, the advantages, the limitations, and the possible areas for future research are detailed. Overall, it is noted that incorporating ViT in the new architectures for image restoration is becoming a rule. This is due to some advantages compared to CNN, such as better efficiency, especially when more data are fed to the network, robustness in feature extraction, and a better feature learning approach that sees better the variances and characteristics of the input. Nevertheless, some drawbacks exist, such as the need for more data to show the benefits of ViT over CNN, the increased computational cost due to the complexity of the self-attention block, a more challenging training process, and the lack of interpretability. These drawbacks represent the future research direction that should be targeted to increase the efficiency of ViT in the image restoration domain.",
+      "year": 2023,
+      "venue": "Sensors",
+      "citation_count": 133,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.472671,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 23,
+      "bm25_score": 0.9928
+    },
+    {
+      "rank": 13,
+      "doi": "10.18653/v1/2020.emnlp-main.57",
+      "title": "PAIR: Planning and Iterative Refinement in Pre-trained Transformers for Long Text Generation",
+      "abstract": "Pre-trained Transformers have enabled impressive breakthroughs in generating long and fluent text, yet their outputs are often \"rambling\" without coherently arranged content.",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 44,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.467025,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 30,
+      "bm25_score": 2.6291
+    },
+    {
+      "rank": 14,
+      "doi": "10.1038/s41467-020-17591-w",
+      "title": "Earthquake transformer—an attentive deep-learning model for simultaneous earthquake detection and phase picking",
+      "abstract": "Earthquake signal detection and seismic phase picking are challenging tasks in the processing of noisy data and the monitoring of microearthquakes. Here we present a global deep-learning model for simultaneous earthquake detection and phase picking. Performing these two related tasks in tandem improves model performance in each individual task by combining information in phases and in the full waveform of earthquake signals by using a hierarchical attention mechanism. We show that our model outperforms previous deep-learning and traditional phase-picking and detection algorithms. Applying our model to 5 weeks of continuous data recorded during 2000 Tottori earthquakes in Japan, we were able to detect and locate two times more earthquakes using only a portion (less than 1/3) of seismic stations. Our model picks P and S phases with precision close to manual picks by human analysts; however, its high efficiency and higher sensitivity can result in detecting and characterizing more and smaller events.",
+      "year": 2020,
+      "venue": "Nature Communications",
+      "citation_count": 1082,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.4381,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 3,
+      "bm25_score": 1.1843
+    },
+    {
+      "rank": 15,
+      "doi": "10.1007/s11633-024-1393-8",
+      "title": "Vision Transformers with Hierarchical Attention",
+      "abstract": "Abstract This paper tackles the high computational/space complexity associated with multi-head self-attention (MHSA) in vanilla vision transformers. To this end, we propose hierarchical MHSA (H-MHSA), a novel approach that computes sell-attention in a hierarchical fashion. Specifically, we first divide the input image into patches as commonly done, and each patch is viewed as a token. Then, the proposed H-MHSA learns token relationships within local patches, serving as local relationship modeling. Then, the small patches are merged into larger ones, and H-MHSA models the global dependencies for the small number of the merged tokens. At last, the local and global attentive features are aggregated to obtain features with powerful representation capacity. Since we only calculate attention for a limited number of tokens at each step, the computational load is reduced dramatically. Hence, H-MHSA can efficiently model global relationships among tokens without sacrificing fine-grained information. With the H-MHSA module incorporated, we build a family of hierarchical-attention-based transformer networks, namely HAT-Net. To demonstrate the superiority of HAT-Net in scene understanding, we conduct extensive experiments on fundamental vision tasks, including image classification, semantic segmentation, object detection and instance segmentation. Therefore, HAT-Net provides a new perspective for vision transformers. Code and pretrained models are available at https://github.com/yun-liu/HAT-Net .",
+      "year": 2024,
+      "venue": "Machine Intelligence Research",
+      "citation_count": 53,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.431051,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 28,
+      "bm25_score": 1.4858
+    },
+    {
+      "rank": 16,
+      "doi": "10.18653/v1/2020.emnlp-main.211",
+      "title": "Losing Heads in the Lottery: Pruning Transformer Attention in Neural Machine Translation",
+      "abstract": "The attention mechanism is the crucial component of the transformer architecture. Recent research shows that most attention heads are not confident in their decisions and can be pruned after training. However, removing them before training a model results in lower quality. In this paper, we apply the lottery ticket hypothesis to prune heads in the early stages of training, instead of doing so on a fully converged model. Our experiments on machine translation show that it is possible to remove up to three-quarters of all attention heads from a transformer-big model with an average -0.1 change in BLEU for TurkishEnglish. The pruned model is 1.5 times as fast at inference, albeit at the cost of longer training. The method is complementary to other approaches, such as teacher-student, with our EnglishGerman student losing 0.2 BLEU at 75% encoder attention sparsity.",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 50,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.423579,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 29,
+      "bm25_score": 2.1521
+    },
+    {
+      "rank": 17,
+      "doi": "10.1145/3485447.3512217",
+      "title": "ET-BERT: A Contextualized Datagram Representation with Pre-training Transformers for Encrypted Traffic Classification",
+      "abstract": "Encrypted traffic classification requires discriminative and robust traffic representation captured from content-invisible and imbalanced traffic data for accurate classification, which is challenging but indispensable to achieve network security and network management. The major limitation of existing solutions is that they highly rely on the deep features, which are overly dependent on data size and hard to generalize on unseen data. How to leverage the open-domain unlabeled traffic data to learn representation with strong generalization ability remains a key challenge. In this paper, we propose a new traffic representation model called Encrypted Traffic Bidirectional Encoder Representations from Transformer (ET-BERT), which pre-trains deep contextualized datagram-level representation from large-scale unlabeled data. The pre-trained model can be fine-tuned on a small number of task-specific labeled data and achieves state-of-the-art performance across five encrypted traffic classification tasks, remarkably pushing the F1 of ISCX-VPN-Service to 98.9% (5.2%↑), Cross-Platform (Android) to 92.5% (5.4%↑), CSTNET-TLS 1.3 to 97.4% (10.0%↑). Notably, we provide explanation of the empirically powerful pre-training model by analyzing the randomness of ciphers. It gives us insights in understanding the boundary of classification ability over encrypted traffic. The code is available at: https://github.com/linwhitehat/ET-BERT.",
+      "year": 2022,
+      "venue": "Proceedings of the ACM Web Conference 2022",
+      "citation_count": 452,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.338086,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 7,
+      "bm25_score": 0.5531
+    },
+    {
+      "rank": 18,
+      "doi": "10.3390/su7010988",
+      "title": "Understanding and Enhancing Soil Biological Health: The Solution for Reversing Soil Degradation",
+      "abstract": "Our objective is to provide an optimistic strategy for reversing soil degradation by increasing public and private research efforts to understand the role of soil biology, particularly microbiology, on the health of our world’s soils. We begin by defining soil quality/soil health (which we consider to be interchangeable terms), characterizing healthy soil resources, and relating the significance of soil health to agroecosystems and their functions. We examine how soil biology influences soil health and how biological properties and processes contribute to sustainability of agriculture and ecosystem services. We continue by examining what can be done to manipulate soil biology to: (i) increase nutrient availability for production of high yielding, high quality crops; (ii) protect crops from pests, pathogens, weeds; and (iii) manage other factors limiting production, provision of ecosystem services, and resilience to stresses like droughts. Next we look to the future by asking what needs to be known about soil biology that is not currently recognized or fully understood and how these needs could be addressed using emerging research tools. We conclude, based on our perceptions of how new knowledge regarding soil biology will help make agriculture more sustainable and productive, by recommending research emphases that should receive first priority through enhanced public and private research in order to reverse the trajectory toward global soil degradation.",
+      "year": 2015,
+      "venue": "Sustainability",
+      "citation_count": 434,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.294154,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=11y,cite=434<mean+2.0σ)",
+      "orig_rank": 8,
+      "bm25_score": 3.0014
+    },
+    {
+      "rank": 19,
+      "doi": "10.1016/j.apenergy.2022.120565",
+      "title": "Spatio-temporal wind speed forecasting using graph networks and novel Transformer architectures",
+      "abstract": "To improve the security and reliability of wind energy production, short-term forecasting has become of utmost importance. This study focuses on multi-step spatio-temporal wind speed forecasting for the Norwegian continental shelf. In particular, the study considers 14 offshore measurement stations and aims to leverage spatial dependencies through the relative physical location of different stations to improve local wind forecasts and simultaneously output different forecasts for each of the 14 locations. Our multi-step forecasting models produce either 10-minute, 1- or 4-hour forecasts, with 10-minute resolution, meaning that the models produce more informative time series for predicted future trends. A graph neural network (GNN) architecture was used to extract spatial dependencies, with different update functions to learn temporal correlations. These update functions were implemented using different neural network architectures. One such architecture, the Transformer, has become increasingly popular for sequence modelling in recent years. Various alterations have been proposed to better facilitate time series forecasting, of which this study focused on the Informer, LogSparse Transformer and Autoformer. This is the first time the LogSparse Transformer and Autoformer have been applied to wind forecasting and the first time any of these or the Informer have been formulated in a spatio-temporal setting for wind forecasting. By comparing against spatio-temporal Long Short-Term Memory (LSTM) and Multi-Layer Perceptron (MLP) models, the study showed that the models using the altered Transformer architectures as update functions in GNNs were able to outperform these. Furthermore, we propose the Fast Fourier Transformer (FFTransformer), which is a novel Transformer architecture based on signal decomposition and consists of two separate streams that analyse the trend and periodic components separately. The FFTransformer and Autoformer were found to achieve superior result",
+      "year": 2022,
+      "venue": "Applied Energy",
+      "citation_count": 183,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.238005,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 17,
+      "bm25_score": 2.2333
+    },
+    {
+      "rank": 20,
+      "doi": "10.1609/aaai.v37i11.26538",
+      "title": "TrOCR: Transformer-Based Optical Character Recognition with Pre-trained Models",
+      "abstract": "Text recognition is a long-standing research problem for document digitalization. Existing approaches are usually built based on CNN for image understanding and RNN for char-level text generation. In addition, another language model is usually needed to improve the overall accuracy as a post-processing step. In this paper, we propose an end-to-end text recognition approach with pre-trained image Transformer and text Transformer models, namely TrOCR, which leverages the Transformer architecture for both image understanding and wordpiece-level text generation. The TrOCR model is simple but effective, and can be pre-trained with large-scale synthetic data and fine-tuned with human-labeled datasets. Experiments show that the TrOCR model outperforms the current state-of-the-art models on the printed, handwritten and scene text recognition tasks. The TrOCR models and code are publicly available at https://aka.ms/trocr.",
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 391,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.230115,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 9,
+      "bm25_score": 2.6254
+    },
+    {
+      "rank": 21,
+      "doi": "10.5194/wes-1-1-2016",
+      "title": "Long-term research challenges in wind energy – a research agenda by the European Academy of Wind Energy",
+      "abstract": "Abstract. The European Academy of Wind Energy (eawe), representing universities and institutes with a significant wind energy programme in 14 countries, has discussed the long-term research challenges in wind energy. In contrast to research agendas addressing short- to medium-term research activities, this eawe document takes a longer-term perspective, addressing the scientific knowledge base that is required to develop wind energy beyond the applications of today and tomorrow. In other words, this long-term research agenda is driven by problems and curiosity, addressing basic research and fundamental knowledge in 11 research areas, ranging from physics and design to environmental and societal aspects. Because of the very nature of this initiative, this document does not intend to be permanent or complete. It shows the vision of the experts of the eawe, but other views may be possible. We sincerely hope that it will spur an even more intensive discussion worldwide within the wind energy community.",
+      "year": 2016,
+      "venue": "Wind energy science",
+      "citation_count": 297,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.228942,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 13,
+      "bm25_score": 2.3568
+    },
+    {
+      "rank": 22,
+      "doi": "10.1609/aaai.v36i3.20158",
+      "title": "Anchor DETR: Query Design for Transformer-Based Detector",
+      "abstract": "In this paper, we propose a novel query design for the transformer-based object detection. In previous transformer-based detectors, the object queries are a set of learned embeddings. However, each learned embedding does not have an explicit physical meaning and we cannot explain where it will focus on. It is difficult to optimize as the prediction slot of each object query does not have a specific mode. In other words, each object query will not focus on a specific region. To solve these problems, in our query design, object queries are based on anchor points, which are widely used in CNN-based detectors. So each object query focuses on the objects near the anchor point. Moreover, our query design can predict multiple objects at one position to solve the difficulty: ``one region, multiple objects''. In addition, we design an attention variant, which can reduce the memory cost while achieving similar or better performance than the standard attention in DETR. Thanks to the query design and the attention variant, the proposed detector that we called Anchor DETR, can achieve better performance and run faster than the DETR with 10x fewer training epochs. For example, it achieves 44.2 AP with 19 FPS on the MSCOCO dataset when using the ResNet50-DC5 feature for training 50 epochs. Extensive experiments on the MSCOCO benchmark prove the effectiveness of the proposed methods. Code is available at https://github.com/megvii-research/AnchorDETR.",
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_count": 458,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.224697,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 6,
+      "bm25_score": 1.7733
+    },
+    {
+      "rank": 23,
+      "doi": "10.18653/v1/2023.findings-emnlp.936",
+      "title": "RWKV: Reinventing RNNs for the Transformer Era",
+      "abstract": "Bo Peng, Eric Alcaide, Quentin Anthony, Alon Albalak, Samuel Arcadinho, Stella Biderman, Huanqi Cao, Xin Cheng, Michael Chung, Leon Derczynski, Xingjian Du, Matteo Grella, Kranthi Gv, Xuzheng He, Haowen Hou, Przemyslaw Kazienko, Jan Kocon, Jiaming Kong, Bartłomiej Koptyra, Hayden Lau, Jiaju Lin, Krishna Sri Ipsit Mantri, Ferdinand Mom, Atsushi Saito, Guangyu Song, Xiangru Tang, Johan Wind, Stanisław Woźniak, Zhenyuan Zhang, Qinghua Zhou, Jian Zhu, Rui-Jie Zhu. Findings of the Association for Computational Linguistics: EMNLP 2023. 2023.",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 310,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.220217,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 10,
+      "bm25_score": 0.7397
+    },
+    {
+      "rank": 24,
+      "doi": "10.48550/arxiv.2402.16617",
+      "title": "Long-Context Language Modeling with Parallel Context Encoding",
+      "abstract": "Extending large language models (LLMs) to process longer inputs is crucial for a wide range of applications. However, the substantial computational cost of transformers and limited generalization of positional encoding restrict the size of their context window. We introduce Context Expansion with Parallel Encoding (CEPE), a framework that can be applied to any existing decoder-only LLMs to extend their context window. CEPE employs a small encoder to process long inputs chunk by chunk, enabling the frozen decoder to utilize additional contexts via cross-attention. CEPE is efficient, generalizable, and versatile: trained with 8K-token documents, it extends the context window of LLAMA-2 to 128K tokens, offering 10x the throughput with only 1/6 of the memory. CEPE yields strong performance on language modeling and in-context learning. CEPE also excels in retrieval-augmented applications, while existing long-context models degenerate with retrieved contexts. We further introduce a CEPE variant that can extend the context window of instruction-tuned models using only unlabeled data, and showcase its effectiveness on LLAMA-2-CHAT, leading to a strong instruction-following model that can leverage very long contexts on downstream tasks.",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "citation_count": 94,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "v4_score": 0.19041,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 26,
+      "bm25_score": 8.3227
+    },
+    {
+      "rank": 25,
+      "doi": "10.18653/v1/2020.findings-emnlp.232",
+      "title": "Blockwise Self-Attention for Long Document Understanding",
+      "abstract": "We present BlockBERT, a lightweight and efficient BERT model for better modeling longdistance dependencies. Our model extends BERT by introducing sparse block structures into the attention matrix to reduce both memory consumption and training/inference time, which also enables attention heads to capture either short-or long-range contextual information. We conduct experiments on language model pre-training and several benchmark question answering datasets with various paragraph lengths. BlockBERT uses 18.7-36.1% less memory and 12.0-25.1% less time to learn the model. During testing, BlockBERT saves 27.8% inference time, while having comparable and sometimes better prediction accuracy, compared to an advanced BERT-based model, RoBERTa.",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 150,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.132312,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 20,
+      "bm25_score": 3.0658
+    },
+    {
+      "rank": 26,
+      "doi": "10.18653/v1/2020.emnlp-main.523",
+      "title": "LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention",
+      "abstract": "Entity representations are useful in natural language tasks involving entities. In this paper, we propose new pretrained contextualized representations of words and entities based on the bidirectional transformer The proposed model treats words and entities in a given text as independent tokens, and outputs contextualized representations of them. Our model is trained using a new pretraining task based on the masked language model of BERT (Devlin et al., 2019). The task involves predicting randomly masked words and entities in a large entity-annotated corpus retrieved from Wikipedia. We also propose an entity-aware self-attention mechanism that is an extension of the self-attention mechanism of the transformer, and considers the types of tokens (words or entities) when computing attention scores. The proposed model achieves impressive empirical performance on a wide range of entity-related tasks. In particular, it obtains state-of-the-art results on five well-known datasets: Open Entity (entity typing), TACRED (relation classification), CoNLL-2003 (named entity recognition), ReCoRD (cloze-style question answering), and SQuAD 1.1 (extractive question answering). Our source code and pretrained representations are available at",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 567,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.121004,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 5,
+      "bm25_score": 1.7832
+    },
+    {
+      "rank": 27,
+      "doi": "10.4067/s0718-95162010000100004",
+      "title": "BIOLOGICAL ASPECTS INVOLVED IN THE DEGRADATION OF ORGANIC POLLUTANTS",
+      "abstract": "Worldwide use of pesticide has increased dramatically during the last two decades. As a consequence, pesticide residues and their transformation products are frequently found in groundwater and surface waters. This review summarizes information about polycyclic aromatic hydrocarbons (PAHs), polychlorinated biphenyls (PCBs), some chlorophenols; it mainly empathizes on pesticides, their incorporation into the environment, microorganisms involved in their degradation and, some physicochemical aspects of pesticides behavior in soils. Details about residues of pesticides in groundwater and superficial water found in some foreign countries and in Chile are reported, as well. The fungal degradation of organic pollutants (xenobiotics) is considered as an effective method to remove these pollutants from the environment by a process which is currently known as bioremediation. Therefore, the degradation of pesticides by soil microorganisms with particular attention to white-rot fungi is also addressed. Finally, a simple and effective system (biobed) to minimize environmental contamination from pesticide manipulation, especially when filling the spraying equipment, a typical point source of contamination, is presented here.",
+      "year": 2010,
+      "venue": "Journal of soil science and plant nutrition",
+      "citation_count": 179,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.107118,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=16y,cite=179<mean+2.0σ)",
+      "orig_rank": 19,
+      "bm25_score": 4.0607
+    },
+    {
+      "rank": 28,
+      "doi": "10.18653/v1/2024.acl-long.91",
+      "title": "LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression",
+      "abstract": "Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": "",
+      "citation_count": 70,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.096931,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 27,
+      "bm25_score": 4.6299
+    },
+    {
+      "rank": 29,
+      "doi": "10.18653/v1/p18-1117",
+      "title": "Context-Aware Neural Machine Translation Learns Anaphora Resolution",
+      "abstract": "Standard machine translation systems process sentences in isolation and hence ignore extra-sentential information, even though extended context can both prevent mistakes in ambiguous cases and improve translation coherence. We introduce a context-aware neural machine translation model designed in such way that the flow of information from the extended context to the translation model can be controlled and analyzed. We experiment with an English-Russian subtitles dataset, and observe that much of what is captured by our model deals with improving pronoun translation. We measure correspondences between induced attention distributions and coreference relations and observe that the model implicitly captures anaphora. It is consistent with gains for sentences where pronouns need to be gendered in translation. Beside improvements in anaphoric cases, the model also improves in overall BLEU, both over its context-agnostic version (+0.7) and over simple concatenation of the context and source sentences (+0.6).",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 307,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.070993,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 11,
+      "bm25_score": 3.4418
+    },
+    {
+      "rank": 30,
+      "doi": "10.18653/v1/2022.findings-naacl.55",
+      "title": "LongT5: Efficient Text-To-Text Transformer for Long Sequences",
+      "abstract": "Recent work has shown that either (1) increasing the input length or (2) increasing model size can improve the performance of Transformer-based neural models. In this paper, we present LongT5, a new model that explores the effects of scaling both the input length and model size at the same time. Specifically, we integrate attention ideas from long-input transformers (ETC), and adopt pretraining strategies from summarization pretraining (PEGASUS) into the scalable T5 architecture. The result is a new attention mechanism we call Transient Global (TGlobal), which mimics ETC's local/global attention mechanism, but without requiring additional side-inputs. We are able to achieve state-ofthe-art results on several summarization and question answering tasks, as well as outperform the original T5 models on these tasks. We have open sourced our architecture and training code, as well as our pre-trained model checkpoints.",
+      "year": 2022,
+      "venue": "Findings of the Association for Computational Linguistics: NAACL 2022",
+      "citation_count": 211,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.070857,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 16,
+      "bm25_score": 3.9149
+    }
+  ]
+}

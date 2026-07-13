@@ -1,0 +1,552 @@
+{
+  "query_id": "q002",
+  "query": "automation impact on labor market gender wage gap",
+  "topic_bucket": "econ",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:04:58",
+  "config": "v4-random",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1111/apps.12241",
+      "title": "Automation, Algorithms, and Beyond: Why Work Design Matters More Than Ever in a Digital World",
+      "abstract": "Abstract We propose a central role for work design in understanding the effects of digital technologies. We give examples of how new technologies can—depending on various factors—positively and negatively affect job resources (autonomy/control, skill use, job feedback, relational aspects) and job demands (e.g., performance monitoring), with consequences for employee well‐being, safety, and performance. We identify four intervention strategies. First, work design choices need to be proactively considered during technology implementation, consistent with the sociotechnical systems principle of joint optimization. Second, human‐centred design principles should be explicitly considered in the design and procurement of new technologies. Third, organizationally oriented intervention strategies need to be supported by macro‐level policies. Fourth, there is a need to go beyond a focus on upskilling employees to help them adapt to technology change, to also focus on training employees, as well as other stakeholders, in work design and related topics. Finally, we identify directions for moving the field forward, including new research questions (e.g., job autonomy in the context of machine learning; understanding designers’ work design mindsets; investigating how job crafting applies to technology); a reorientation of methods (e.g., interdisciplinary, intervention studies); and steps for achieving practical impact.",
+      "year": 2019,
+      "venue": "Applied Psychology",
+      "citation_count": 787,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.973116,
+      "bm25_score": 1.9203
+    },
+    {
+      "rank": 2,
+      "doi": "10.5089/9798400254802.001",
+      "title": "Labor Market Exposure to AI: Cross-country Differences and Distributional Implications",
+      "abstract": "This paper examines the impact of Artificial Intelligence (AI) on labor markets in both Advanced Economies (AEs) and Emerging Markets (EMs). We propose an extension to a standard measure of AI exposure, accounting for AI's potential as either a complement or a substitute for labor, where complementarity reflects lower risks of job displacement. We analyze worker-level microdata from 2 AEs (US and UK) and 4 EMs (Brazil, Colombia, India, and South Africa), revealing substantial variations in unadjusted AI exposure across countries. AEs face higher exposure than EMs due to a higher employment share in professional and managerial occupations. However, when accounting for potential complementarity, differences in exposure across countries are more muted. Within countries, common patterns emerge in AEs and EMs. Women and highly educated workers face greater occupational exposure to AI, at both high and low complementarity. Workers in the upper tail of the earnings distribution are more likely to be in occupations with high exposure but also high potential complementarity.",
+      "year": 2023,
+      "venue": "IMF Working Paper",
+      "citation_count": 58,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.936655,
+      "bm25_score": 2.037
+    },
+    {
+      "rank": 3,
+      "doi": "10.3390/su12072809",
+      "title": "Trends in the Fashion Industry. The Perception of Sustainability and Circular Economy: A Gender/Generation Quantitative Approach",
+      "abstract": "The significant changes which have occurred in the competitive scenario in which fashion companies operate, combined with deep transformation in the lifestyles of final consumers, translate into the need to redefine the business models. Starting from a general overview of the emerging trends today affecting the fashion industry, the paper will devote particular attention to the analysis of the most important phenomena that are influencing this market and the drivers for long-lasting competitiveness: sustainability and attention to the so-called circular economy. According to the literature, from the consumer behavior’s point of view, the younger generations are paying growing attention to these issues. In light of these considerations, this paper aimed to analyze how sustainability and circular economy principles are influencing the perception of the fashion world among the new generations of consumers. After mapping the emerging trends in the fashion industry and analyzing the role of sustainability from both the demand and supply side, this paper presents the results of a survey conducted through an anonymous questionnaire made in collaboration with Insubria University. The results of the survey describe the students’ behaviour as regards fashion’s emerging trends, with particular attention to sustainability issues and the application of circular economy principles. The survey results were analyzed from both a descriptive and quantitative point of view with the aim to check the different perceptions as regards sustainable fashion and circular economy in fashion, focusing mainly on the so-called Generation Z. The results of the analysis proved to be consistent with the theoretical framework and confirm the relevance of sustainability issues in the fashion industry today in driving the demand of Generation Z, by considering a gender perspective. Moreover, the circular economy is descriptively analyzed with the aim to understand the relevance of the different facets ",
+      "year": 2020,
+      "venue": "Sustainability",
+      "citation_count": 509,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.861707,
+      "bm25_score": 1.9245
+    },
+    {
+      "rank": 4,
+      "doi": "10.3390/econometrics6020028",
+      "title": "Decomposing Wage Distributions Using Recentered Influence Function Regressions",
+      "abstract": "This paper provides a detailed exposition of an extension of the Oaxaca-Blinder decomposition method that can be applied to various distributional measures. The two-stage procedure first divides distributional changes into a wage structure effect and a composition effect using a reweighting method. Second, the two components are further divided into the contribution of each explanatory variable using recentered influence function (RIF) regressions. We illustrate the practical aspects of the procedure by analyzing how the polarization of U.S. male wages between the late 1980s and the mid 2010s was affected by factors such as de-unionization, education, occupations, and industry changes.",
+      "year": 2018,
+      "venue": "Econometrics",
+      "citation_count": 638,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.829405,
+      "bm25_score": 2.0392
+    },
+    {
+      "rank": 5,
+      "doi": "10.1257/aer.103.6.2121",
+      "title": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+      "abstract": "We analyze the effect of rising Chinese import competition between 1990 and 2007 on US local labor markets, exploiting cross-market variation in import exposure stemming from initial differences in industry specialization and instrumenting for US imports using changes in Chinese imports by other high-income countries. Rising imports cause higher unemployment, lower labor force participation, and reduced wages in local labor markets that house import-competing manufacturing industries. In our main specification, import competition explains one-quarter of the contemporaneous aggregate decline in US manufacturing employment. Transfer benefits payments for unemployment, disability, retirement, and healthcare also rise sharply in more trade-exposed labor markets. (JEL E24, F14, F16, J23, J31, L60, O47, R12, R23)",
+      "year": 2013,
+      "venue": "American Economic Review",
+      "citation_count": 4352,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.807128,
+      "bm25_score": 1.3419
+    },
+    {
+      "rank": 6,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades.",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2209,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.729732,
+      "bm25_score": 3.1697
+    },
+    {
+      "rank": 7,
+      "doi": "10.1111/j.1467-9914.2007.00378.x",
+      "title": "The Gender Wage Gap in the Turkish Labor Market",
+      "abstract": "<jats:p><jats:bold>Abstract. </jats:bold> This paper examines the sources of the gender wage gap in the Turkish labor market by using matched employer–employee data and the standard wage regression estimations as well as the Oaxaca decomposition method. The extensive number of variables in the data set enables a thorough quantitative analysis of the role of various individual‐ as well as firm‐related factors leading to wage differentials between men and women, namely human capital endowments inc",
+      "year": 2007,
+      "venue": "LABOUR",
+      "citation_count": 40,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 28,
+      "v4_score": 0.729127,
+      "bm25_score": 9.0935
+    },
+    {
+      "rank": 8,
+      "doi": "10.1257/aeri.20180010",
+      "title": "When Work Disappears: Manufacturing Decline and the Falling Marriage Market Value of Young Men",
+      "abstract": "We exploit the gender-specific components of large-scale labor demand shocks stemming from rising international manufacturing competition to test how shifts in the relative economic stature of young men versus young women affected marriage, fertility, and children’s living circumstances during 1990–2014. On average, trade shocks differentially reduce employment and earnings of young adult males. Consistent with Becker’s model of household specialization, shocks to males’ relative earnings reduce marriage and fertility. Consistent with prominent sociological accounts, these shocks heighten male idleness and premature mortality, and raise the share of mothers who are unwed and the share of children living in below-poverty, single-headed households. (JEL F16, J12, J13, J16, J23, J31, L60)",
+      "year": 2019,
+      "venue": "American Economic Review Insights",
+      "citation_count": 478,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.704572,
+      "bm25_score": 2.2869
+    },
+    {
+      "rank": 9,
+      "doi": "10.1017/psrm.2018.64",
+      "title": "How Labor Market Inequality Transforms Mass Politics",
+      "abstract": "Abstract Why do left parties lose vote shares in times of economic crisis and hardship? Why do right-wing governments implement seemingly left-wing policies, such as labor market activation? Why is representation becoming more and more unequal? And why do workers vote for right-wing populist parties? Several political science theories propose meaningful and important answers to these key questions for comparative politics, focusing on identity politics, programmatic convergence of parties or exogenous constraints. However, there is an additional and distinct approach to all of the questions above, which emphasizes socio-structural transformations in the labor market: most of the processes above can be understood with reference to increasing labor market inequality and its political implications. The relevance and explanatory power of labor market inequality for mass politics have not been fully acknowledged in comparative political science and this is the reason for this symposium. Labor market inequality affects political preferences and behavior, electoral politics, representation, and government strategies. The main purpose of our symposium is to make broader comparative politics research aware of the crucial structural changes that labor markets have undergone in the advanced capitalist democracies of the OECD, and of the tremendous implications these changes have had for politics.",
+      "year": 2019,
+      "venue": "Political Science Research and Methods",
+      "citation_count": 56,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.648035,
+      "bm25_score": 1.5181
+    },
+    {
+      "rank": 10,
+      "doi": "10.1146/annurev-polisci-051120-104535",
+      "title": "Automation, Digitalization, and Artificial Intelligence in the Workplace: Implications for Political Behavior",
+      "abstract": "New technologies have been a key driver of labor market change in recent decades. There are renewed concerns that technological developments in areas such as robotics and artificial intelligence will destroy jobs and create political upheaval. This article reviews the vibrant debate about the economic consequences of recent technological change and then discusses research about how digitalization may affect political participation, vote choice, and policy preferences. It is increasingly well established that routine workers have been the main losers of recent technological change and disproportionately support populist parties. However, at the same time, digitalization also creates a large group of economic winners who support the political status quo. The mechanisms connecting technology-related workplace risks to political behavior and policy demands are less well understood. Voters may fail to fully comprehend the relative importance of different causes of structural economic change and misattribute blame to other factors. We conclude with a list of pressing research questions.",
+      "year": 2022,
+      "venue": "Annual Review of Political Science",
+      "citation_count": 149,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.635684,
+      "bm25_score": 1.8923
+    },
+    {
+      "rank": 11,
+      "doi": "10.1093/jeea/jvab012",
+      "title": "The Adjustment of Labor Markets to Robots",
+      "abstract": "Abstract We use detailed administrative data to study the adjustment of local labor markets to industrial robots in Germany. Robot exposure, as predicted by a shift-share variable, is associated with displacement effects in manufacturing, but those are fully offset by new jobs in services. The incidence mostly falls on young workers just entering the labor force. Automation is related to more stable employment within firms for incumbents, and this is driven by workers taking over new tasks in their original plants. Several measures indicate that those new jobs are of higher quality than the previous ones. Young workers also adapt their educational choices, and substitute away from vocational training towards colleges and universities. Finally, industrial robots have benefited workers in occupations with complementary tasks, such as managers or technical scientists.",
+      "year": 2021,
+      "venue": "Journal of the European Economic Association",
+      "citation_count": 519,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.61852,
+      "bm25_score": 1.9853
+    },
+    {
+      "rank": 12,
+      "doi": "10.5089/9798400204340.006",
+      "title": "Labor Market Tightness in Advanced Economies",
+      "abstract": "Two years after the onset of the COVID-19 pandemic, a puzzle has emerged in several advanced economies: unfilled job vacancies have increased sharply even though employment has yet to fully recover. This note sheds light on three contributing factors, namely barriers to returning to work, changing worker preferences away from certain types of jobs, and sectoral and occupational job mismatch. The note also assesses the impact of labor market tightness on wage growth, showing that it has so far been large for lowpay jobs but milder overall. Bringing disadvantaged groups of workers into the labor force, including by controlling the pandemic itself, would ease labor market pressures while amplifying the recovery and making it more inclusive.",
+      "year": 2022,
+      "venue": "IMF staff discussion note",
+      "citation_count": 48,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.609131,
+      "bm25_score": 4.0339
+    },
+    {
+      "rank": 13,
+      "doi": "10.1257/jep.15.1.165",
+      "title": "Insiders versus Outsiders",
+      "abstract": "he insider-outsider theory examines the behavior of economic agents in markets where some participants have more privileged positions than others. Incumbent workers in the labor market, the \"insiders,\" often enjoy more favorable employment opportunities than the \"outsiders.\" The reason for this disparity is that firms incur labor turnover costs when they replace insiders by outsiders. In practice, the distinction between insiders and outsiders is a matter of degree.",
+      "year": 2001,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 490,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.577352,
+      "bm25_score": 1.2052
+    },
+    {
+      "rank": 14,
+      "doi": "10.1257/app.2.4.1",
+      "title": "Factor Immobility and Regional Impacts of Trade Liberalization: Evidence on Poverty from India",
+      "abstract": "This paper uses the 1991 Indian trade liberalization to measure the impact of trade liberalization on poverty, and to examine the mechanisms underpinning this impact. Variation in sectoral composition across districts and liberalization intensity across production sectors allows a difference-in-difference approach. Rural districts, in which production sectors more exposed to liberalization were concentrated, experienced slower decline in poverty and lower consumption growth. The impact of liberalization was most pronounced among the least geographically mobile at the bottom of the income distribution, and in Indian states where inflexible labor laws impeded factor reallocation across sectors. (JEL F13, I32, O15, O18, O19, O24)",
+      "year": 2010,
+      "venue": "American Economic Journal Applied Economics",
+      "citation_count": 666,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.552041,
+      "bm25_score": 2.3726
+    },
+    {
+      "rank": 15,
+      "doi": "10.1093/qje/qjx022",
+      "title": "The Growing Importance of Social Skills in the Labor Market*",
+      "abstract": "Abstract The labor market increasingly rewards social skills. Between 1980 and 2012, jobs requiring high levels of social interaction grew by nearly 12 percentage points as a share of the U.S. labor force. Math-intensive but less social jobs—including many STEM occupations—shrank by 3.3 percentage points over the same period. Employment and wage growth were particularly strong for jobs requiring high levels of both math skill and social skills. To understand these patterns, I develop a model of team production where workers “trade tasks” to exploit their comparative advantage. In the model, social skills reduce coordination costs, allowing workers to specialize and work together more efficiently. The model generates predictions about sorting and the relative returns to skill across occupations, which I investigate using data from the NLSY79 and the NLSY97. Using a comparable set of skill measures and covariates across survey waves, I find that the labor market return to social skills was much greater in the 2000s than in the mid-1980s and 1990s.",
+      "year": 2017,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 1620,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.536228,
+      "bm25_score": 2.5391
+    },
+    {
+      "rank": 16,
+      "doi": "10.1093/qje/qjae005",
+      "title": "Answering the Call of Automation: How the Labor Market Adjusted to Mechanizing Telephone Operation",
+      "abstract": "Abstract In the early 1900s, telephone operation was among the most common jobs for American women, and telephone operators were ubiquitous. Between 1920 and 1940, AT&amp;T undertook one of the largest automation investments in modern history, replacing operators with mechanical switching technology in over half of the U.S. telephone network. Using variation across U.S. cities in the timing of adoption, we study how this wave of automation affected the labor market for young women. Although automation eliminated most of these jobs, it did not reduce future cohorts’ overall employment: the decline in operators was counteracted by employment growth in middle-skill clerical jobs and lower-skill service jobs, including new categories of work. Using a new genealogy-based census-linking method, we show that incumbent telephone operators were most affected, and a decade later more likely to be in lower-paying occupations or no longer working.",
+      "year": 2024,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_count": 35,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 0.379455,
+      "bm25_score": 3.258
+    },
+    {
+      "rank": 17,
+      "doi": "10.1257/jep.9.3.15",
+      "title": "Are Your Wages Set in Beijing?",
+      "abstract": "The economic troubles of less-skilled workers in the United States. and OECD-Europe during a period of rising manufacturing imports from third world countries has created a debate about whether, in a global economy, wages or employment are determined by the global rather than domestic labor-market conditions. One side argues that trade is all that matters; another side, that trade does not matter at all. The author rejects these polar views; empirical analysis has found modest but real trade effects in displacement of less-skilled labor and declines in the price of goods produced by low-skilled workers.",
+      "year": 1995,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 750,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.378534,
+      "bm25_score": 1.1075
+    },
+    {
+      "rank": 18,
+      "doi": "10.1111/ecca.12184",
+      "title": "The Rising Postgraduate Wage Premium",
+      "abstract": "Despite post‐college degree holders now making up nearly 15% of the US adult workforce, studies of their labour market performance remain sparse. This is surprising given that they are the most educated group in the labour force and as, over time, they have done significantly better than all other education groups. We show a significant rise over time in the postgraduate wage premium, reflecting an increased relative demand due to their superior skill sets and occupational status. The increase in the demand for postgraduates is a key factor behind rising wage inequality within the increasingly heterogeneous college graduate workforce.",
+      "year": 2016,
+      "venue": "Economica",
+      "citation_count": 92,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.370181,
+      "bm25_score": 2.7869
+    },
+    {
+      "rank": 19,
+      "doi": "10.1371/journal.pone.0242929",
+      "title": "Automation, workers’ skills and job satisfaction",
+      "abstract": "When industrial robots are adopted by firms in a local labor market, some workers are displaced and become unemployed. Other workers that are not directly affected by automation may however fear that these new technologies might replace their working tasks in the future. This fear of a possible future replacement is important because it negatively affects workers' job satisfaction at present. This paper studies the extent to which automation affects workers' job satisfaction, and whether this effect differs for high- versus low-skilled workers. The empirical analysis uses microdata for several thousand workers in Norway from the Working Life Barometer survey for the period 2016-2019, combined with information on the introduction of industrial robots in Norway from the International Federation of Robotics. Our identification strategy exploits variation in the pace of introduction of industrial robots in Norwegian regions and industries since 2007 to instrument workers' fear of replacement. The results indicate that automation in industrial firms in recent years have induced 40% of the workers that are currently in employment to fear that their work might be replaced by a smart machine in the future. Such fear of future replacement does negatively affect workers' job satisfaction at present. This negative effect is driven by low-skilled workers, which are those carrying out routine-based tasks, and who are therefore more exposed to the risks of automation.",
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "citation_count": 136,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.364832,
+      "bm25_score": 2.805
+    },
+    {
+      "rank": 20,
+      "doi": "10.1162/rest_a_00234",
+      "title": "Spillovers from High-Skill Consumption to Low-Skill Labor Markets",
+      "abstract": "The least-skilled workforce in the United States is disproportionally employed in the provision of time-intensive services that can be thought of as market substitutes for home production activities. At the same time, skilled workers, with their high opportunity cost of time, spend a larger fraction of their budget in these services. Given the skill asymmetry between consumers and providers in this market, product demand shifts—such as those arising when relative skilled wages increase—should boost relative labor demand for the least-skilled workforce. We estimate that this channel may explain one-third of the growth of employment of noncollege workers in low-skill services in the 1990s.",
+      "year": 2011,
+      "venue": "The Review of Economics and Statistics",
+      "citation_count": 230,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.289388,
+      "bm25_score": 1.2326
+    },
+    {
+      "rank": 21,
+      "doi": "10.1016/j.techfore.2023.122448",
+      "title": "Automation technologies and their impact on employment: A review, synthesis and future research agenda",
+      "abstract": "This paper aims to review prior studies investigating how automation technologies affect employment. Our structured systematic review resulted in 102 publications recovered from Web of Science, Scopus and hand searching. The literature investigating how automation technologies affect employment is extremely complex and detailed, given that the impact of automation is evaluated at different levels of analysis (i.e., global, international, continental, country, regional, labour market, industry, firm, occupational, worker, and work activities) by adopting alternative methods (i.e., estimating the probability of automation or the net impact of employment) and, for some levels of analysis, the impact of each specific type of automation technology is evaluated. Moreover, the results are often inconsistent and inconclusive since only few clear results emerge and the impact of automation technologies is unclear for many levels of analysis. Research gaps and future research agenda are identified and discussed based on previous evidence.",
+      "year": 2023,
+      "venue": "Technological Forecasting and Social Change",
+      "citation_count": 157,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.277974,
+      "bm25_score": 4.8687
+    },
+    {
+      "rank": 22,
+      "doi": "10.1037/e686432011-001",
+      "title": "Separate and Not Equal? Gender Segregation in the Labor Market and the Gender Wage Gap",
+      "abstract": "Occupational gender segregation is a strong feature of the US labor market. While some occupations have become increasingly integrated over time, others remain highly dominated by either men or women. Our analysis of trends in overall gender segregation shows that, after a considerable move towards more integrated occupations in the 1970s and 1980s, progress has completely stalled since the mid 1990s. Occupational segregation is a concern to policy makers for two reasons: it is inefficient economically, preventing able people from moving into occupations where they could perform well and that would satisfy them more than the ones open to them. And occupational segregation is a major cause for the persistent wage gap. Our analysis confirms that average earnings tend to be lower the higher the percentage of female workers in an occupation, and that this relationship is strongest for the most highly skilled occupations, such as medicine or law. Yet this is also a strong feature of jobs requiring little formal education and experience, increasing the likelihood of very low earnings for women working in female-dominated, low-skilled occupations such as childcare.",
+      "year": 2010,
+      "venue": "PsycEXTRA Dataset",
+      "citation_count": 63,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dataset",
+      "orig_rank": 23,
+      "v4_score": 0.266978,
+      "bm25_score": 7.6525
+    },
+    {
+      "rank": 23,
+      "doi": "10.1353/eca.2014.0015",
+      "title": "Labor Force Participation: Recent Developments and Future Prospects",
+      "abstract": "Since 2007, the labor force participation rate has fallen from about 66 percent to about 63 percent. The sources of this decline have been widely debated among academics and policymakers, with some arguing that the participation rate is depressed due to weak labor demand while others argue that the decline was inevitable due to structural forces such as the aging of the population. In this paper, we use a variety of approaches to assess reasons for the decline in participation. Although these approaches yield somewhat different estimates of the extent to which the recent decline in participation reflects cyclical weakness rather than structural factors, our overall assessment is that much of the decline is structural in nature. As a result, while we believe some of the participation rate’s current low level is indicative of labor market slack, we do not expect the rate to substantially increase from current levels as labor market conditions continue to improve.",
+      "year": 2014,
+      "venue": "Brookings Papers on Economic Activity",
+      "citation_count": 178,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.232791,
+      "bm25_score": 1.3331
+    },
+    {
+      "rank": 24,
+      "doi": "10.1093/pnasnexus/pgae191",
+      "title": "The impact of generative artificial intelligence on socioeconomic inequalities and policy making",
+      "abstract": "Abstract Generative artificial intelligence (AI) has the potential to both exacerbate and ameliorate existing socioeconomic inequalities. In this article, we provide a state-of-the-art interdisciplinary overview of the potential impacts of generative AI on (mis)information and three information-intensive domains: work, education, and healthcare. Our goal is to highlight how generative AI could worsen existing inequalities while illuminating how AI may help mitigate pervasive social problems. In the information domain, generative AI can democratize content creation and access but may dramatically expand the production and proliferation of misinformation. In the workplace, it can boost productivity and create new jobs, but the benefits will likely be distributed unevenly. In education, it offers personalized learning, but may widen the digital divide. In healthcare, it might improve diagnostics and accessibility, but could deepen pre-existing inequalities. In each section, we cover a specific topic, evaluate existing research, identify critical gaps, and recommend research directions, including explicit trade-offs that complicate the derivation of a priori hypotheses. We conclude with a section highlighting the role of policymaking to maximize generative AI's potential to reduce inequalities while mitigating its harmful effects. We discuss strengths and weaknesses of existing policy frameworks in the European Union, the United States, and the United Kingdom, observing that each fails to fully confront the socioeconomic challenges we have identified. We propose several concrete policies that could promote shared prosperity through the advancement of generative AI. This article emphasizes the need for interdisciplinary collaborations to understand and address the complex challenges of generative AI.",
+      "year": 2024,
+      "venue": "PNAS Nexus",
+      "citation_count": 300,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.227898,
+      "bm25_score": 0.8483
+    },
+    {
+      "rank": 25,
+      "doi": "10.1016/j.jebo.2020.07.014",
+      "title": "Robots, computers, and the gender wage gap",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Journal of Economic Behavior & Organization",
+      "citation_count": 67,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.209507,
+      "bm25_score": 7.7799
+    },
+    {
+      "rank": 26,
+      "doi": "10.1093/oxrep/graa051",
+      "title": "Do technological advances reduce the gender wage gap?",
+      "abstract": "Abstract Gender wage gaps in developed economies have narrowed substantially in past decades: these changes are driven by institutional, cultural, and economic factors. A key economic driver shaping modern labour markets is technological change, yet there is a paucity of evidence on its direct impact on gender wage disparities. We study this question by considering how men and women are differentially exposed to the structural employment and wage changes across occupations associated with advancing technology, and how this has impacted gender wage gaps since the mid-1980s for two countries, Portugal and the United States. Our findings suggest that while women have generally been less exposed to the automation of work, this has not always led to declining gender wage gaps: at times, women have transitioned to jobs where wage levels or wage growth were lower. Non-technological changes appear at least as important in understanding the evolution of the gender wage gap.",
+      "year": 2020,
+      "venue": "Oxford Review of Economic Policy",
+      "citation_count": 44,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.171139,
+      "bm25_score": 10.375
+    },
+    {
+      "rank": 27,
+      "doi": "10.5089/9781498303743.001",
+      "title": "Is Technology Widening the Gender Gap? Automation and the Future of Female Employment",
+      "abstract": "Using individual level data on task composition at work for 30 advanced and emerging economies, we find that women, on average, perform more routine tasks than men-tasks that are more prone to automation. To quantify the impact on jobs, we relate data on task composition at work to occupation level estimates of probability of automation, controlling for a rich set of individual characteristics (e.g., education, age, literacy and numeracy skills). Our results indicate that female workers are at a significantly higher risk for displacement by automation than male workers, with 11 percent of the female workforce at high risk of being automated given the current state of technology, albeit with significant cross-country heterogeneity. The probability of automation is lower for younger cohorts of women, and for those in managerial positions.",
+      "year": 2019,
+      "venue": "IMF Working Paper",
+      "citation_count": 35,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 0.163402,
+      "bm25_score": 6.9242
+    },
+    {
+      "rank": 28,
+      "doi": "10.1108/jebde-10-2023-0021",
+      "title": "Economics of ChatGPT: a labor market view on the occupational impact of artificial intelligence",
+      "abstract": "Purpose The study investigates the influence of ChatGPT on the labor market dynamics, aiming to provide a structured understanding of the changes induced by generative AI technologies. Design/methodology/approach An analysis of existing literature serves as the foundation for understanding the impact, while the supply and demand model helps assess the effects of ChatGPT. A text-mining approach is utilized to analyze the International Standard Occupation Classification, identifying occupations most susceptible to disruption by ChatGPT. Findings The study reveals that 32.8% of occupations could be fully impacted by ChatGPT, while 36.5% might experience a partial impact and 30.7% are likely to remain unaffected. Research limitations/implications While this study offers insights into the potential influence of ChatGPT and other generative AI services on the labor market, it is essential to note that these findings represent potential implications rather than realized labor market effects. Further research is needed to track actual changes in employment patterns and job market dynamics where these AI services are widely adopted. Originality/value This paper contributes to the field by systematically categorizing the level of impact on different occupations, providing a nuanced perspective on the short- and long-term implications of ChatGPT and similar generative AI services on the labor market.",
+      "year": 2023,
+      "venue": "Journal of Electronic Business & Digital Economics",
+      "citation_count": 157,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.101001,
+      "bm25_score": 3.2806
+    },
+    {
+      "rank": 29,
+      "doi": "10.1007/s13524-019-00790-6",
+      "title": "Beyond the Great Recession: Labor Market Polarization and Ongoing Fertility Decline in the United States",
+      "abstract": "In the years since the Great Recession, social scientists have anticipated that economic recovery in the United States, characterized by gains in employment and median household income, would augur a reversal of declining fertility trends. However, the expected post-recession rebound in fertility rates has yet to materialize. In this study, I propose an economic explanation for why fertility rates have continued to decline regardless of improvements in conventional economic indicators. I argue that ongoing structural changes in U.S. labor markets have prolonged the financial uncertainty that leads women and couples to delay or forgo childbearing. Combining statistical and survey data with restricted-use vital registration records, I examine how cyclical and structural changes in metropolitan-area labor markets were associated with changes in total fertility rates (TFRs) across racial/ethnic groups from the early 1990s to the present day, with a particular focus on the 2006-2014 period. The findings suggest that changes in industry composition-specifically, the loss of manufacturing and other goods-producing businesses-have a larger effect on TFRs than changes in the unemployment rate for all racial/ethnic groups. Because structural changes in labor markets are more likely to be sustained over time-in contrast to unemployment rates, which fluctuate with economic cycles-further reductions in unemployment are unlikely to reverse declining fertility trends.",
+      "year": 2019,
+      "venue": "Demography",
+      "citation_count": 193,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.079792,
+      "bm25_score": 0.9939
+    },
+    {
+      "rank": 30,
+      "doi": "10.1177/1069072718774002",
+      "title": "Expanding the Impact of the Psychology of Working: Engaging Psychology in the Struggle for Decent Work and Human Rights",
+      "abstract": "Building on new developments in the psychology of working framework (PWF) and psychology of working theory (PWT), this article proposes a rationale and research agenda for applied psychologists and career development professionals to contribute to the many challenges related to human rights and decent work. Recent and ongoing changes in the world are contributing to a significant loss of decent work, including a rise of unemployment, underemployment, and precarious work across the globe. By failing to satisfy human needs for economic survival, social connection, and self-determination, the loss of decent work undermines individual and societal well-being, particularly for marginalized groups and those without highly marketable skills. Informed by innovations in the PWF/PWT, we offer exemplary research agendas that focus on examining the psychological meaning and impact of economic and social protections, balancing caregiving work and market work, making work more just, and enhancing individual capacities for coping and adapting to changes in the world of work. These examples are intended to stimulate new ideas and initiatives for psychological research that will inform and enhance efforts pertaining to work as a human right.",
+      "year": 2018,
+      "venue": "Journal of Career Assessment",
+      "citation_count": 309,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.045824,
+      "bm25_score": 1.787
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "v0.1-sample",
+  "schema_doc": "Demo labels for testing eval.py — not real ground truth.",
+  "labels": {
+    "demo_q001": {
+      "10.1000/sample-1": {"label": 2, "reason": "directly tests the intervention", "labeled_by": "user", "labeled_at": "2026-07-06T11:00:00"},
+      "10.1000/sample-2": {"label": 0, "reason": "image classification, off-topic", "labeled_by": "user", "labeled_at": "2026-07-06T11:00:00"},
+      "10.1000/sample-3": {"label": 2, "reason": "RCT on adaptive learning in target population", "labeled_by": "user", "labeled_at": "2026-07-06T11:00:00"},
+      "10.1000/sample-4": {"label": 0, "reason": "agriculture, off-topic", "labeled_by": "user", "labeled_at": "2026-07-06T11:00:00"},
+      "10.1000/sample-5": {"label": 1, "reason": "related but higher-ed not high school", "labeled_by": "user", "labeled_at": "2026-07-06T11:00:00"}
+    }
+  }
+}

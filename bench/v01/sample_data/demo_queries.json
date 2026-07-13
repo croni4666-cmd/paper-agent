@@ -1,0 +1,14 @@
+{
+  "version": "v0.1-sample",
+  "queries": [
+    {
+      "id": "demo_q001",
+      "query": "automated tutoring systems for high school math",
+      "topic_bucket": "edu_ai",
+      "source": "sample",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": ["10.1000/sample-1", "10.1000/sample-3"],
+      "notes": "Sample query for testing eval.py; not part of real benchmark"
+    }
+  ]
+}

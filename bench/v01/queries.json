@@ -1,0 +1,456 @@
+{
+  "version": "v0.1",
+  "schema_doc": "queries.json — 50 research questions spanning econ, ML/AI, biomedical, social, cross-disciplinary. Mix: 15 public + 10 v3.8.3-variant + 25 user-provided.",
+  "queries": [
+    {
+      "id": "q001",
+      "query": "AI tutoring systems and their effect on K-12 student learning outcomes",
+      "topic_bucket": "edu_ai",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "RealScholarQuery-style: educational technology + LLM/AI tutoring"
+    },
+    {
+      "id": "q002",
+      "query": "automation impact on labor market gender wage gap",
+      "topic_bucket": "econ",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Labor econ + automation; cross-domain"
+    },
+    {
+      "id": "q003",
+      "query": "vector quantized representations for document retrieval",
+      "topic_bucket": "ml",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "ML retrieval; technical jargon expected"
+    },
+    {
+      "id": "q004",
+      "query": "Bayesian structural time series for causal inference",
+      "topic_bucket": "ml",
+      "source": "pub",
+      "difficulty_hint": "methodology",
+      "expected_relevant_dois": [],
+      "notes": "Methodology-focused query"
+    },
+    {
+      "id": "q005",
+      "query": "effects of universal basic income on labor supply",
+      "topic_bucket": "econ",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Public policy econ"
+    },
+    {
+      "id": "q006",
+      "query": "long-context transformer attention degradation on long documents",
+      "topic_bucket": "ml",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "NLP / long context"
+    },
+    {
+      "id": "q007",
+      "query": "climate change adaptation in agricultural production",
+      "topic_bucket": "social",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Climate econ / ag econ"
+    },
+    {
+      "id": "q008",
+      "query": "drug repurposing using graph neural networks",
+      "topic_bucket": "bio",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "Biomed ML"
+    },
+    {
+      "id": "q009",
+      "query": "randomized controlled trial designs for digital health interventions",
+      "topic_bucket": "bio",
+      "source": "pub",
+      "difficulty_hint": "methodology",
+      "expected_relevant_dois": [],
+      "notes": "Clinical methodology"
+    },
+    {
+      "id": "q010",
+      "query": "institutional trust and policy compliance in pandemic responses",
+      "topic_bucket": "social",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Poli sci / sociology"
+    },
+    {
+      "id": "q011",
+      "query": "federated learning privacy guarantees in healthcare",
+      "topic_bucket": "ml",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "Privacy + ML + health"
+    },
+    {
+      "id": "q012",
+      "query": "carbon pricing effectiveness in OECD countries",
+      "topic_bucket": "econ",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Environmental econ"
+    },
+    {
+      "id": "q013",
+      "query": "transformer-based protein structure prediction methods",
+      "topic_bucket": "bio",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "Bio + ML"
+    },
+    {
+      "id": "q014",
+      "query": "inequality and intergenerational mobility in education",
+      "topic_bucket": "econ",
+      "source": "pub",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Education econ"
+    },
+    {
+      "id": "q015",
+      "query": "few-shot prompting strategies for domain-specific question answering",
+      "topic_bucket": "ml",
+      "source": "pub",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "NLP prompting"
+    },
+    {
+      "id": "q016",
+      "query": "labor economics gender wage gap empirical evidence",
+      "topic_bucket": "econ",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": ["10.1093/qje/qjy014"],
+      "notes": "Topic 1 variant — direct from v3.8.3 real-corpus test"
+    },
+    {
+      "id": "q017",
+      "query": "industrial economics AI productivity gains in manufacturing",
+      "topic_bucket": "cross",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Topic 2 variant"
+    },
+    {
+      "id": "q018",
+      "query": "AI education impact on student learning outcomes",
+      "topic_bucket": "edu_ai",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Topic 3 variant — known precision weakness (deep-learning review pollution)"
+    },
+    {
+      "id": "q019",
+      "query": "intelligent tutoring systems adaptive learning algorithms",
+      "topic_bucket": "edu_ai",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "technical",
+      "expected_relevant_dois": [],
+      "notes": "More specific than q018 — should narrow results"
+    },
+    {
+      "id": "q020",
+      "query": "ChatGPT in higher education student performance study",
+      "topic_bucket": "edu_ai",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Recent (2023-2024) framing"
+    },
+    {
+      "id": "q021",
+      "query": "automation displacement manufacturing workers empirical",
+      "topic_bucket": "econ",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Topic 2 narrower variant"
+    },
+    {
+      "id": "q022",
+      "query": "machine learning labor market polarization",
+      "topic_bucket": "cross",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Cross-domain econ + ML"
+    },
+    {
+      "id": "q023",
+      "query": "personalized learning adaptive educational technology RCT",
+      "topic_bucket": "edu_ai",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "methodology",
+      "expected_relevant_dois": [],
+      "notes": "Methodology + edu_ai"
+    },
+    {
+      "id": "q024",
+      "query": "Acemoglu Restrepo automation tasks model",
+      "topic_bucket": "econ",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "rare_terms",
+      "expected_relevant_dois": ["10.1257/jep.33.2.3", "10.1093/restud/rdx081"],
+      "notes": "Specific author + model name — should find 2-3 canonical papers"
+    },
+    {
+      "id": "q025",
+      "query": "AI bias in education gender race",
+      "topic_bucket": "edu_ai",
+      "source": "v3.8.3_variant",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "AI fairness + education"
+    },
+    {
+      "id": "q026",
+      "query": "[USER-PROVIDED SLOT 1: replace with your real research question]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text with your actual research question. Aim for 25 such slots."
+    },
+    {
+      "id": "q027",
+      "query": "[USER-PROVIDED SLOT 2: replace with your real research question]",
+      "topic_bucket": "ml",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q028",
+      "query": "[USER-PROVIDED SLOT 3]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q029",
+      "query": "[USER-PROVIDED SLOT 4]",
+      "topic_bucket": "cross",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q030",
+      "query": "[USER-PROVIDED SLOT 5]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q031",
+      "query": "[USER-PROVIDED SLOT 6]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q032",
+      "query": "[USER-PROVIDED SLOT 7]",
+      "topic_bucket": "ml",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q033",
+      "query": "[USER-PROVIDED SLOT 8]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q034",
+      "query": "[USER-PROVIDED SLOT 9]",
+      "topic_bucket": "cross",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q035",
+      "query": "[USER-PROVIDED SLOT 10]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q036",
+      "query": "[USER-PROVIDED SLOT 11]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q037",
+      "query": "[USER-PROVIDED SLOT 12]",
+      "topic_bucket": "ml",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q038",
+      "query": "[USER-PROVIDED SLOT 13]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q039",
+      "query": "[USER-PROVIDED SLOT 14]",
+      "topic_bucket": "cross",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q040",
+      "query": "[USER-PROVIDED SLOT 15]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q041",
+      "query": "[USER-PROVIDED SLOT 16]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q042",
+      "query": "[USER-PROVIDED SLOT 17]",
+      "topic_bucket": "ml",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q043",
+      "query": "[USER-PROVIDED SLOT 18]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q044",
+      "query": "[USER-PROVIDED SLOT 19]",
+      "topic_bucket": "cross",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q045",
+      "query": "[USER-PROVIDED SLOT 20]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q046",
+      "query": "[USER-PROVIDED SLOT 21]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q047",
+      "query": "[USER-PROVIDED SLOT 22]",
+      "topic_bucket": "ml",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q048",
+      "query": "[USER-PROVIDED SLOT 23]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q049",
+      "query": "[USER-PROVIDED SLOT 24]",
+      "topic_bucket": "cross",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    },
+    {
+      "id": "q050",
+      "query": "[USER-PROVIDED SLOT 25]",
+      "topic_bucket": "econ",
+      "source": "user",
+      "difficulty_hint": "broad",
+      "expected_relevant_dois": [],
+      "notes": "Replace placeholder text."
+    }
+  ]
+}

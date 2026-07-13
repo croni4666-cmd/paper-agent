@@ -1,0 +1,613 @@
+{
+  "query_id": "q017",
+  "query": "industrial economics AI productivity gains in manufacturing",
+  "topic_bucket": "cross",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-13T14:38:23",
+  "config": "v4-random-recency-strict",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1108/josm-04-2018-0119",
+      "title": "Brave new world: service robots in the frontline",
+      "abstract": "Purpose The service sector is at an inflection point with regard to productivity gains and service industrialization similar to the industrial revolution in manufacturing that started in the eighteenth century. Robotics in combination with rapidly improving technologies like artificial intelligence (AI), mobile, cloud, big data and biometrics will bring opportunities for a wide range of innovations that have the potential to dramatically change service industries. The purpose of this paper is to explore the potential role service robots will play in the future and to advance a research agenda for service researchers. Design/methodology/approach This paper uses a conceptual approach that is rooted in the service, robotics and AI literature. Findings The contribution of this paper is threefold. First, it provides a definition of service robots, describes their key attributes, contrasts their features and capabilities with those of frontline employees, and provides an understanding for which types of service tasks robots will dominate and where humans will dominate. Second, this paper examines consumer perceptions, beliefs and behaviors as related to service robots, and advances the service robot acceptance model. Third, it provides an overview of the ethical questions surrounding robot-delivered services at the individual, market and societal level. Practical implications This paper helps service organizations and their management, service robot innovators, programmers and developers, and policymakers better understand the implications of a ubiquitous deployment of service robots. Originality/value This is the first conceptual paper that systematically examines key dimensions of robot-delivered frontline service and explores how these will differ in the future.",
+      "year": 2018,
+      "venue": "Journal of Service Management",
+      "citation_count": 1660,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "v4_score": 0.853448,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 5,
+      "bm25_score": 4.2067
+    },
+    {
+      "rank": 2,
+      "doi": "10.1016/j.cirp.2016.05.004",
+      "title": "Design for Additive Manufacturing: Trends, opportunities, considerations, and constraints",
+      "abstract": "",
+      "year": 2016,
+      "venue": "CIRP Annals",
+      "citation_count": 1942,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.753475,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 4,
+      "bm25_score": 1.4319
+    },
+    {
+      "rank": 3,
+      "doi": "10.1016/j.hrmr.2022.100899",
+      "title": "Unlocking the value of artificial intelligence in human resource management through AI capability framework",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Human Resource Management Review",
+      "citation_count": 820,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.747516,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 8,
+      "bm25_score": 1.1591
+    },
+    {
+      "rank": 4,
+      "doi": "10.1109/access.2021.3102227",
+      "title": "Big Data and AI Revolution in Precision Agriculture: Survey and Challenges",
+      "abstract": "Sustainable agricultural development is a significant solution with fast population development through the use of information and communication (ICT) in precision agriculture, which produced new methods for making cultivation further productive, proficient, well-regulated while preserving the climate. Big data (machine learning, deep learning, etc.) is amongst the vital technologies of ICT employed in precision agriculture for their huge data analytical capabilities to abstract significant information and to assist agricultural practitioners to comprehend well farming practices and take precise decisions. The main goal of this article is to acquire an awareness of the Big Data latest applications in smart agriculture and be acquainted with related social and financial challenges to be concentrated on. This article features data creation methods, accessibility of technology, accessibility of devices, software tools, and data analytic methods, and appropriate applications of big data in precision agriculture. Besides, there are still a few challenges that come across the widespread implementation of big data technology in agriculture.",
+      "year": 2021,
+      "venue": "IEEE Access",
+      "citation_count": 402,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.679142,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 16,
+      "bm25_score": 0.6507
+    },
+    {
+      "rank": 5,
+      "doi": "10.1080/00207543.2023.2179859",
+      "title": "Artificial intelligence-driven supply chain resilience in Vietnamese manufacturing small- and medium-sized enterprises",
+      "abstract": "Despite the exponential growth of artificial intelligence (AI) research in operations, supply chain, and productions management literature, empirical insights on how organisational behavioural mechanisms at the human–technology interface will facilitate AI adoption in small- and medium-sized enterprises (SMEs), and subsequent impact of the adoption on sustainable practices and supply chain resilience (SCR) is under-researched. To bridge these gaps, we integrate resource orchestration and knowledge-based view theoretical perspectives to develop a novel structural model examining antecedents to SCR and AI adoption, considering AI adoption as a pivot for facilitating SCR. The structural equation modelling technique was employed on the data collected from 280 Vietnamese manufacturing SMEs’ operations managers. Our results demonstrate that leadership will drive AI adoption by creating a data-driven, digital and conducive culture, and strengthening employee skills and competencies. Furthermore, AI adoption positively influences CE practices, SC agility and risk management, which will help to achieve SCR. For managers, the importance of internal organisational employee-centric mechanisms to create value from AI adoption without impeding business value is highlighted. We reveal the enablers that will help in transforming SMEs to become resilient by deriving appropriate responses to unprecedented disruptions through data-driven decision-making leveraging AI adoption.",
+      "year": 2023,
+      "venue": "International Journal of Production Research",
+      "citation_count": 273,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.64275,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 26,
+      "bm25_score": 2.3865
+    },
+    {
+      "rank": 6,
+      "doi": "10.1007/s40821-020-00172-8",
+      "title": "The impact of artificial intelligence on labor productivity",
+      "abstract": "Abstract Recent evidence indicates an upsurge in artificial intelligence and robotics (AI) patenting activities in the latest years, suggesting that solutions based on AI technologies might have started to exert an effect on the economy. We test this hypothesis using a worldwide sample of 5257 companies having filed at least a patent related to the field of AI between 2000 and 2016. Our analysis shows that, once controlling for other patenting activities, AI patent applications generate an extra-positive effect on companies’ labor productivity. The effect concentrates on SMEs and services industries, suggesting that the ability to quickly readjust and introduce AI-based applications in the production process is an important determinant of the impact of AI observed to date.",
+      "year": 2021,
+      "venue": "Eurasian Economic Review",
+      "citation_count": 311,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.622257,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 21,
+      "bm25_score": 2.7012
+    },
+    {
+      "rank": 7,
+      "doi": "10.1109/access.2020.3042874",
+      "title": "Industrial Artificial Intelligence in Industry 4.0 - Systematic Review, Challenges and Outlook",
+      "abstract": "The advent of the Industry 4.0 initiative has made it so that manufacturing environments are becoming more and more dynamic, connected but also inherently more complex, with additional inter-dependencies, uncertainties and large volumes of data being generated. Recent advances in Industrial Artificial Intelligence have showcased the potential of this technology to assist manufacturers in tackling the challenges associated with this digital transformation of Cyber-Physical Systems, through its data-driven predictive analytics and capacity to assist decision-making in highly complex, non-linear and often multistage environments. However, the industrial adoption of such solutions is still relatively low beyond the experimental pilot stage, as real environments provide unique and difficult challenges for which organizations are still unprepared. The aim of this paper is thus two-fold. First, a systematic review of current Industrial Artificial Intelligence literature is presented, focusing on its application in real manufacturing environments to identify the main enabling technologies and core design principles. Then, a set of key challenges and opportunities to be addressed by future research efforts are formulated along with a conceptual framework to bridge the gap between research in this field and the manufacturing industry, with the goal of promoting industrial adoption through a successful transition towards a digitized and data-driven company-wide culture. This paper is among the first to provide a clear definition and holistic view of Industrial Artificial Intelligence in the Industry 4.0 landscape, identifying and analysing its fundamental building blocks and ongoing trends. Its findings are expected to assist and empower researchers and manufacturers alike to better understand the requirements and steps necessary for a successful transition into Industry 4.0 supported by AI, as well as the challenges that may arise during this process.",
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_count": 656,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.603253,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 10,
+      "bm25_score": 3.5751
+    },
+    {
+      "rank": 8,
+      "doi": "10.1257/aer.20191277",
+      "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors",
+      "abstract": "The high-tech sector is concentrated in a small number of cities. The ten largest clusters in computer science, semiconductors, and biology account for 69 percent, 77 percent, and 59 percent of all US inventors, respectively. Using longitudinal data on 109,846 inventors, I find that geographical agglomeration results in significant productivity gains. When an inventor moves to a city with a large cluster of inventors in the same field, she experiences a sizable increase in the number and quality of patents produced. The presence of significant productivity externalities implies that the agglomeration of inventors generates large gains in the aggregate amount of innovation produced in the United States. (JEL D62, J24, L60, O31, 034, R32)",
+      "year": 2021,
+      "venue": "American Economic Review",
+      "citation_count": 284,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.564392,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 24,
+      "bm25_score": 3.8371
+    },
+    {
+      "rank": 9,
+      "doi": "10.1016/j.ijpe.2019.107599",
+      "title": "Big data analytics and artificial intelligence pathway to operational performance under the effects of entrepreneurial orientation and environmental dynamism: A study of manufacturing organisations",
+      "abstract": "",
+      "year": 2019,
+      "venue": "International Journal of Production Economics",
+      "citation_count": 810,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.546132,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 9,
+      "bm25_score": 1.3317
+    },
+    {
+      "rank": 10,
+      "doi": "10.1257/jep.23.3.125",
+      "title": "The Economics of Two-Sided Markets",
+      "abstract": "Broadly speaking, a two-sided market is one in which 1) two sets of agents interact through an intermediary or platform, and 2) the decisions of each set of agents affects the outcomes of the other set of agents, typically through an externality. In the case of a video game system, the intermediary is the console producer—Sony in the scenario above—while the two sets of agents are consumers and video game developers. Neither consumers nor game developers will be interested in the PlayStation if the other party is not. Similarly, a successful payment card requires both consumer usage and merchant acceptance, where both consumers and merchants value each others' participation. Many more products fit into this paradigm, such as search engines, newspapers, and almost any advertiser-supported media (examples in which consumers typically negatively value, rather than positively value, the participation of the other side), as well as most software or title-based operating systems and consumer electronics. This paper seeks to explain what two-sided markets are and why they interest economists. I discuss the strategies that firms typically consider, and I highlight a number of puzzling outcomes from the perspective of the economics of two-sided markets. Finally, I consider the implications for public policy, particularly antitrust and regulatory policy, where there have been a number of recent issues involving media, computer operating systems, and payment cards.",
+      "year": 2009,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 1262,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.476715,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=17y,cite=1262<mean+2.0σ)",
+      "orig_rank": 6,
+      "bm25_score": 3.7134
+    },
+    {
+      "rank": 11,
+      "doi": "10.1080/21681015.2021.1950227",
+      "title": "Sustainable industrial and operation engineering trends and challenges Toward Industry 4.0: a data driven analysis",
+      "abstract": "This study supplies contributions to the existing literature with a state-of-the-art bibliometric review of sustainable industrial and operation engineering as the field moves toward Industry 4.0, and guidance for future studies and practical achievements. Although industrial and operation engineering is being promoted forward to sustainability, the systematization of the knowledge that forms firms’ manufacturing and operations and encompasses their wide concepts and abundant complementary elements is still absent. This study aims to analyze contemporary sustainable industrial and operations engineering in Industry 4.0 context. The bibliometric analysis and fuzzy Delphi method are proposed. Resulting in a total of 30 indicators that are criticized and clustered into eight study groups, including lean manufacturing in Industry 4.0, cyber-physical production system, big data-driven and smart communications, safety and security, artificial intelligence for sustainability, the circular economy in a digital environment, business intelligence and virtual reality, and environmental sustainability.",
+      "year": 2021,
+      "venue": "Journal of Industrial and Production Engineering",
+      "citation_count": 332,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.46739,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 19,
+      "bm25_score": 3.1189
+    },
+    {
+      "rank": 12,
+      "doi": "10.5430/ijfr.v9n2p90",
+      "title": "The Fourth Industrial Revolution: Opportunities and Challenges",
+      "abstract": "The fourth industrial revolution, a term coined by Klaus Schwab, founder and executive chairman of the World Economic Forum, describes a world where individuals move between digital domains and offline reality with the use of connected technology to enable and manage their lives. (Miller 2015, 3) The first industrial revolution changed our lives and economy from an agrarian and handicraft economy to one dominated by industry and machine manufacturing. Oil and electricity facilitated mass production in the second industrial revolution. In the third industrial revolution, information technology was used to automate production. Although each industrial revolution is often considered a separate event, together they can be better understood as a series of events building upon innovations of the previous revolution and leading to more advanced forms of production. This article discusses the major features of the four industrial revolutions, the opportunities of the fourth industrial revolution, and the challenges of the fourth industrial revolution.",
+      "year": 2018,
+      "venue": "International Journal of Financial Research",
+      "citation_count": 1114,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.419021,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 7,
+      "bm25_score": 3.1456
+    },
+    {
+      "rank": 13,
+      "doi": "10.1108/jtf-07-2019-0065",
+      "title": "Impact of AI and robotics in the tourism sector: a critical insight",
+      "abstract": "Purpose The purpose of the present article is to highlight the role of Artificial Intelligence (AI) and Robotics in the tourism industry. The various technologies being integrated to improve the service and customer experience in tourism. The expected changes and challenges in tourism in the future are focused in this paper. Design/methodology/approach A systematic study on the emerging technologies of AI and Robotics applied in the tourism sector is presented in the form of a viewpoint. Findings AI certainly enhances tourism experiential services however cannot surpass the human touch which is an essential determinant of experiential tourism. AI acts as an effective complementary dimension to the future of tourism. With the emergence of artificial travel intelligence, it is simpler to make travel arrangements. AI offers travel services that are automated, customized and insightful. AI allows travelers to learn about their behaviors, interests to inclinations and provide a personalized experience. Gone are the days to consult a travel agent, meet him physically and indulge in an endless chain of troubling phone calls to inquire about travel arrangements. Practical implications Tourism marketing to see a positive and improved change that will enhance the tourists’ overall experience due to the application of AI and Robotics. New emerging technologies like chatbots, virtual reality, language translators, etc. can be effectively applied in Travel, Tourism &amp; Hospitality industry. Originality/value The present viewpoint discusses the application and role of AI and Robotics with the help of relevant industry examples and theory. The present paper highlights the different technologies being used and will be used in the future.",
+      "year": 2020,
+      "venue": "Journal of Tourism Futures",
+      "citation_count": 364,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.404317,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 17,
+      "bm25_score": 1.386
+    },
+    {
+      "rank": 14,
+      "doi": "10.1016/j.heliyon.2023.e22601",
+      "title": "Application of digital technologies for ensuring agricultural productivity",
+      "abstract": "Over the decades, agri-food security has become one of the most critical concerns in the world. Sustainable agri-food production technologies have been reliable in mitigating poverty caused by high demands for food. Recently, the applications of agri-food system technologies have been meaningfully changing the worldwide scene due to both external strengths and internal forces. Digital agriculture (DA) is a pioneering technology helping to meet the growing global demand for sustainable food production. Integrating different sub-branches of DA technologies such as artificial intelligence, automation and robotics, sensors, Internet of Things (IoT) and data analytics into agriculture practices to reduce waste, optimize farming inputs and enhance crop production. This can help shift from tedious operations to continuously automated processes, resulting in increasing agricultural production by enabling the traceability of products and processes. The application of DA provides agri-food producers with accurate and real-time observations regarding different features influencing their productivity, such as plant health, soil quality, weather conditions, and pest and disease pressure. Analyzing the results achieved by DA can help agricultural producers and scholars make better decisions to increase yields, improve efficiency, reduce costs, and manage resources. The core focus of the current work is to clarify the benefits of some sub-branches of DA in increasing agricultural production efficiency, discuss the challenges of practical DA in the field, and highlight the future perspectives of DA. This review paper can open new directions to speed up the DA application on the farm and link traditional agriculture with modern farming technologies.",
+      "year": 2023,
+      "venue": "Heliyon",
+      "citation_count": 285,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.39402,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 23,
+      "bm25_score": 0.9482
+    },
+    {
+      "rank": 15,
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "abstract": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities within a wide range of industrial, intellectual and social applications. The pace of change for this new AI technological age is staggering, with new breakthroughs in algorithmic machine learning and autonomous decision-making, engendering new opportunities for continued innovation. The impact of AI could be significant, with industries ranging from: finance, healthcare, manufacturing, retail, supply chain, logistics and utilities, all potentially disrupted by the onset of AI technologies. The study brings together the collective insight from a number of leading expert contributors to highlight the significant opportunities, realistic assessment of impact, challenges and potential research agenda posed by the rapid emergence of AI within a number of domains: business and management, government, public sector, and science and technology. This research offers significant and timely insight to AI technology and its impact on the future of industry and society in general, whilst recognising the societal and industrial influence on pace and direction of AI development.",
+      "year": 2019,
+      "venue": "International Journal of Information Management",
+      "citation_count": 4093,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.380381,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 1,
+      "bm25_score": 3.7172
+    },
+    {
+      "rank": 16,
+      "doi": "10.1007/s13563-019-00172-9",
+      "title": "Mining productivity and the fourth industrial revolution",
+      "abstract": "Rising productivity, alongside exploration, is the principal means by which mining can combat resource depletion. Over the past one hundred and fifty years, the mining industry has been remarkably successful in growing its productivity. However, since 2000, there are signs of a slowdown. Some aspects of this are clearly cyclical but there are increasing concerns that some of the underlying, longer term, factors which have kept productivity growing in the past are losing their force. Key amongst these factors are the physical contributions that the second industrial revolution, beginning in the late nineteenth century, brought to mining, most notably in the form of larger equipment operating in larger mines. There is much discussion in the industry around the arrival of a fourth industrial revolution and how this might ‘disrupt’ the sector and deliver a new boost to productivity through the promotion of intelligent mining but thus far there is little the evidence of such a boost. In its absence, the mining industry faces the prospect of rising costs as grades fall and waste volumes grow.",
+      "year": 2019,
+      "venue": "Mineral Economics",
+      "citation_count": 82,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.379104,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 30,
+      "bm25_score": 3.3276
+    },
+    {
+      "rank": 17,
+      "doi": "10.1108/josm-04-2018-0119",
+      "title": "Brave new world: service robots in the frontline",
+      "abstract": "Purpose The service sector is at an inflection point with regard to productivity gains and service industrialization similar to the industrial revolution in manufacturing that started in the eighteenth century. Robotics in combination with rapidly improving technologies like artificial intelligence (AI), mobile, cloud, big data and biometrics will bring opportunities for a wide range of innovations that have the potential to dramatically change service industries. The purpose of this paper is to explore the potential role service robots will play in the future and to advance a research agenda for service researchers. Design/methodology/approach This paper uses a conceptual approach that is rooted in the service, robotics and AI literature. Findings The contribution of this paper is threefold. First, it provides a definition of service robots, describes their key attributes, contrasts their features and capabilities with those of frontline employees, and provides an understanding for which types of service tasks robots will dominate and where humans will dominate. Second, this paper examines consumer perceptions, beliefs and behaviors as related to service robots, and advances the service robot acceptance model. Third, it provides an overview of the ethical questions surrounding robot-delivered services at the individual, market and societal level. Practical implications This paper helps service organizations and their management, service robot innovators, programmers and developers, and policymakers better understand the implications of a ubiquitous deployment of service robots. Originality/value This is the first conceptual paper that systematically examines key dimensions of robot-delivered frontline service and explores how these will differ in the future.",
+      "year": 2018,
+      "venue": "Journal of service management",
+      "citation_count": 2119,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.351759,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 3,
+      "bm25_score": 4.2067
+    },
+    {
+      "rank": 18,
+      "doi": "10.1016/j.respol.2022.104555",
+      "title": "Artificial intelligence and industrial innovation: Evidence from German firm-level data",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Research Policy",
+      "citation_count": 433,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.33613,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 15,
+      "bm25_score": 1.8371
+    },
+    {
+      "rank": 19,
+      "doi": "10.1016/j.jfineco.2013.02.011",
+      "title": "Productivity, restructuring, and the gains from takeovers",
+      "abstract": "",
+      "year": 2013,
+      "venue": "Journal of Financial Economics",
+      "citation_count": 121,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "v4_score": 0.230849,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=13y,cite=121<mean+2.0σ)",
+      "orig_rank": 28,
+      "bm25_score": 4.2179
+    },
+    {
+      "rank": 20,
+      "doi": "10.1093/cjres/rsz022",
+      "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
+      "abstract": "Abstract Artificial intelligence (AI) is set to influence every aspect of our lives, not least the way production is organised. AI, as a technology platform, can automate tasks previously performed by labour or create new tasks and activities in which humans can be productively employed. Recent technological change has been biased towards automation, with insufficient focus on creating new tasks where labour can be productively employed. The consequences of this choice have been stagnating labour demand, declining labour share in national income, rising inequality and lowering productivity growth. The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
+      "year": 2019,
+      "venue": "Cambridge Journal of Regions Economy and Society",
+      "citation_count": 575,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.220539,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 11,
+      "bm25_score": 2.2772
+    },
+    {
+      "rank": 21,
+      "doi": "10.1002/mar.21619",
+      "title": "AI in marketing, consumer research and psychology: A systematic literature review and research agenda",
+      "abstract": "Abstract This study is the first to provide an integrated view on the body of knowledge of artificial intelligence (AI) published in the marketing, consumer research, and psychology literature. By leveraging a systematic literature review using a data‐driven approach and quantitative methodology (including bibliographic coupling), this study provides an overview of the emerging intellectual structure of AI research in the three bodies of literature examined. We identified eight topical clusters: (1) memory and computational logic; (2) decision making and cognitive processes; (3) neural networks; (4) machine learning and linguistic analysis; (5) social media and text mining; (6) social media content analytics; (7) technology acceptance and adoption; and (8) big data and robots. Furthermore, we identified a total of 412 theoretical lenses used in these studies with the most frequently used being: (1) the unified theory of acceptance and use of technology; (2) game theory; (3) theory of mind; (4) theory of planned behavior; (5) computational theories; (6) behavioral reasoning theory; (7) decision theories; and (8) evolutionary theory. Finally, we propose a research agenda to advance the scholarly debate on AI in the three literatures studied with an emphasis on cross‐fertilization of theories used across fields, and neglected research topics.",
+      "year": 2021,
+      "venue": "Psychology and Marketing",
+      "citation_count": 556,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.219422,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 12,
+      "bm25_score": 1.183
+    },
+    {
+      "rank": 22,
+      "doi": "10.1108/ijopm-02-2012-0086",
+      "title": "Servitization of the manufacturing firm",
+      "abstract": "Purpose: This paper aims to explore practices and technologies successfully servitised manufacturers employ in the delivery of advanced services. Design/methodology/approach: A case study methodology is applied across four manufacturing organisations successful in servitization. Through interviews with personnel across host manufacturers, their partners, and key customers, extensive data are collected about service delivery systems. Analyses identify convergence in their practices and technologies. Findings: Six distinct technologies and practices are revealed: facilities and their location, micro-vertical integration and supplier relationships, information and communication technologies (ICTs), performance measurement and value demonstration, people deployment and their skills, and business processes and customer relationships. These are then combined in an integrative framework that illustrates how operations are configured to successfully deliver advanced services. Research limitations/implications: The analyses are reductive and rationalising. Future studies could identify other technologies and practices. Case study as a method is inherently limited in the extent to which findings can be generalised. Practical implications: Awareness and interest in servitization is growing, yet adoption of a servitization strategy requires particular organisational capabilities on the part of the manufacturer. This study identifies technologies and practices that underpin these capabilities. Originality/value: This paper contributes to the understanding of the servitization process and, in particular, the implications to broader operations of the firm.",
+      "year": 2013,
+      "venue": "International Journal of Operations & Production Management",
+      "citation_count": 542,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.217918,
+      "recency_factor": 0.5,
+      "recency_reason": "recency:old(age=13y,cite=542<mean+2.0σ)",
+      "orig_rank": 13,
+      "bm25_score": 1.0531
+    },
+    {
+      "rank": 23,
+      "doi": "10.1016/j.jebo.2023.05.008",
+      "title": "Artificial intelligence and firm-level productivity",
+      "abstract": "Artificial Intelligence (AI) is often regarded as the next general-purpose technology with a rapid, penetrating, and far-reaching use over a broad number of industrial sectors. The main feature of new general-purpose technology is to enable new ways of production that may increase productivity. However, to date, only a few studies have investigated the likely productivity effects of AI at the firm-level, presumably due to limited data availability. We exploit unique survey data on firms’ adoption of AI technology and estimate its productivity effects with a sample of German firms. We employ both a cross-sectional dataset and a panel database. To address the potential endogeneity of AI adoption, we also implement IV estimators. We find positive and significant associations between the use of AI and firm productivity. This finding holds for different measures of AI usage, i.e., an indicator variable of AI adoption, and the intensity with which firms use AI methods in their business processes.",
+      "year": 2023,
+      "venue": "Journal of Economic Behavior & Organization",
+      "citation_count": 343,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.165045,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 18,
+      "bm25_score": 4.0788
+    },
+    {
+      "rank": 24,
+      "doi": "10.3390/ai1020008",
+      "title": "Artificial Intelligence (AI) or Intelligence Augmentation (IA): What Is the Future?",
+      "abstract": "Artificial intelligence (AI) is a rapidly growing technological phenomenon that all industries wish to exploit to benefit from efficiency gains and cost reductions. At the macrolevel, AI appears to be capable of replacing humans by undertaking intelligent tasks that were once limited to the human mind. However, another school of thought suggests that instead of being a replacement for the human mind, AI can be used for intelligence augmentation (IA). Accordingly, our research seeks to address these different views, their implications, and potential risks in an age of increased artificial awareness. We show that the ultimate goal of humankind is to achieve IA through the exploitation of AI. Moreover, we articulate the urgent need for ethical frameworks that define how AI should be used to trigger the next level of IA.",
+      "year": 2020,
+      "venue": "AI",
+      "citation_count": 332,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.127628,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 20,
+      "bm25_score": 3.0995
+    },
+    {
+      "rank": 25,
+      "doi": "10.3390/su15118934",
+      "title": "AI-Driven Productivity Gains: Artificial Intelligence and Firm Productivity",
+      "abstract": "<jats:p>Artificial intelligence is profoundly influencing various facets of our lives, indicating its potential to significantly impact sustainability. Nevertheless, capturing the productivity gains stemming from artificial intelligence in macro-level data poses challenges, leading to the question of whether artificial intelligence is reminiscent of the “Solow paradox”. This study employs micro-level manufacturing data to investigate the impact of artificial intelligence on firms’ productivity. ",
+      "year": null,
+      "venue": "Sustainability",
+      "citation_count": 92,
+      "engines_found_in": [
+        "crossref",
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "v4_score": 0.050285,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:no-year",
+      "orig_rank": 29,
+      "bm25_score": 6.2737
+    },
+    {
+      "rank": 26,
+      "doi": "10.1177/1042258720934581",
+      "title": "Artificial Intelligence and Entrepreneurship: Implications for Venture Creation in the Fourth Industrial Revolution",
+      "abstract": "This article explores the ways artificial intelligence (AI) may impact new venture processes, practices and outcomes. We examine how such technology will augment and replace tasks associated with idea production, selling, and scaling. These changes entail new ways of working, and we consider implications for the organizational design of entrepreneurial ventures. While AI can enhance entrepreneurial activities, liabilities stem from this technological leverage. We advance a research agenda that draws attention towards negative social and economic implications of AI, particularly for more traditional small firms at risk of disintermediation in an AI economy.",
+      "year": 2020,
+      "venue": "Entrepreneurship Theory and Practice",
+      "citation_count": 476,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.029025,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 14,
+      "bm25_score": 2.5864
+    },
+    {
+      "rank": 27,
+      "doi": "10.1016/j.cirp.2020.05.006",
+      "title": "Design for additive manufacturing: Framework and methodology",
+      "abstract": "",
+      "year": 2020,
+      "venue": "CIRP Annals",
+      "citation_count": 284,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.027102,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 25,
+      "bm25_score": 1.4537
+    },
+    {
+      "rank": 28,
+      "doi": "10.1257/jep.31.2.165",
+      "title": "Challenges to Mismeasurement Explanations for the US Productivity Slowdown",
+      "abstract": "The United States has been experiencing a slowdown in measured labor productivity growth since 2004. A number of commentators and researchers have suggested that this slowdown is at least in part illusory because real output data have failed to capture the new and better products of the past decade. I conduct four disparate analyses, each of which offers empirical challenges to this “mismeasurement hypothesis.” First, the productivity slowdown has occurred in dozens of countries, and its size is unrelated to measures of the countries' consumption or production intensities of information and communication technologies (ICTs, the type of goods most often cited as sources of mismeasurement). Second, estimates from the existing research literature of the surplus created by internet-linked digital technologies fall far short of the $3 trillion or more of “missing output” resulting from the productivity growth slowdown. Third, if measurement problems were to account for even a modest share of this missing output, the properly measured output and productivity growth rates of industries that produce and service ICTs would have to have been multiples of their measured growth in the data. Fourth, while measured gross domestic income has been on average higher than measured gross domestic product since 2004—perhaps indicating workers are being paid to make products that are given away for free or at highly discounted prices—this trend actually began before the productivity slowdown and moreover reflects unusually high capital income rather than labor income (i.e., profits are unusually high). In combination, these complementary facets of evidence suggest that the reasonable prima facie case for the mismeasurement hypothesis faces real hurdles when confronted with the data.",
+      "year": 2017,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 289,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.026966,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 22,
+      "bm25_score": 1.505
+    },
+    {
+      "rank": 29,
+      "doi": "10.1086/654303",
+      "title": "Can Technology Improvements Cause Productivity Slowdowns?",
+      "abstract": "We explore two channels through which increases in the rate of investment-specific technological change can lead to decreases in measured productivity growth. The first channel is learning; with an increase in the rate of adoption more resources are devoted to new technologies where experience is low. As a result, labor productivity and TFP growth fall temporarily. Second, if the unmeasured quality of final outputs depends significantly on capital input, then declines in productivity growth will be recorded as the growth rate of capital goes up. We document the recent productivity slowdown in the United States and elsewhere and discuss evidence suggesting that an increase in the rate of investment-specific technological change may have occurred at about the same time as the slowdown began. We then use a simple, parameterized vintage capital model in order to gauge the potential importance of this phenomenon for productivity measurements.",
+      "year": 1996,
+      "venue": "NBER Macroeconomics Annual",
+      "citation_count": 221,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.01357,
+      "recency_factor": 0.1,
+      "recency_reason": "recency:ancient(age=30y,cite=221<mean+2.5σ)",
+      "orig_rank": 27,
+      "bm25_score": 1.6823
+    },
+    {
+      "rank": 30,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades.",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2209,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "v4_score": 0.005896,
+      "recency_factor": 1.0,
+      "recency_reason": "recency:fresh",
+      "orig_rank": 2,
+      "bm25_score": 1.8155
+    }
+  ]
+}

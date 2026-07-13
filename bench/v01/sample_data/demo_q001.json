@@ -1,0 +1,51 @@
+{
+  "version": "v0.1-sample",
+  "config": "demo-baseline",
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1000/sample-1",
+      "title": "Effects of AI tutoring on algebra learning outcomes in high school",
+      "year": 2023,
+      "citation_count": 85,
+      "engines_found_in": ["openalex", "semanticscholar"],
+      "score": 0.92
+    },
+    {
+      "rank": 2,
+      "doi": "10.1000/sample-2",
+      "title": "Machine learning benchmarks for image classification",
+      "year": 2022,
+      "citation_count": 410,
+      "engines_found_in": ["openalex"],
+      "score": 0.81
+    },
+    {
+      "rank": 3,
+      "doi": "10.1000/sample-3",
+      "title": "Personalized math instruction: an RCT of adaptive learning systems",
+      "year": 2024,
+      "citation_count": 12,
+      "engines_found_in": ["core", "openalex"],
+      "score": 0.78
+    },
+    {
+      "rank": 4,
+      "doi": "10.1000/sample-4",
+      "title": "Climate change impacts on agricultural productivity",
+      "year": 2021,
+      "citation_count": 220,
+      "engines_found_in": ["semanticscholar"],
+      "score": 0.74
+    },
+    {
+      "rank": 5,
+      "doi": "10.1000/sample-5",
+      "title": "Adaptive learning in higher education: a meta-analysis",
+      "year": 2023,
+      "citation_count": 33,
+      "engines_found_in": ["openalex", "semanticscholar"],
+      "score": 0.70
+    }
+  ]
+}
