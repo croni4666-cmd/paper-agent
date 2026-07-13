@@ -9,6 +9,82 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.3] - 2026-07-13 (minor — [P0-7] Cross-encoder (BGE-reranker) + Layer 3 architecture)
+
+Implements ROADMAP [P0-7] (added 2026-07-13, completed same day in v3.9.3).
+
+**New module** (`pa_cli/cross_encoder.py`, ~250 lines):
+- `setup_hf_endpoint()` — set HF_ENDPOINT env var (defaults to https://huggingface.co; CN users can set to https://hf-mirror.com)
+- `ensure_model_downloaded(cache_dir, prefer_endpoint)` — auto-download BAAI/bge-reranker-base (~1.06 GB safetensors) with multi-endpoint fallback (HF → CN mirror)
+- `is_model_downloaded(cache_dir)` — check if all required files present
+- `BGEReranker` class:
+  - `__init__(model_path, max_length=512, auto_download=True)` — wraps sentence_transformers.CrossEncoder
+  - `score(query, candidate_text)` — single pair score
+  - `score_batch(query, candidates)` — batch scoring
+  - `rerank(query, candidates, text_extractor, top_k)` — re-sort candidates by cross-encoder score (desc)
+
+**Network setup** (CN users — used for first-time download):
+- Default HuggingFace endpoint may be slow/blocked
+- Set `HF_ENDPOINT=https://hf-mirror.com` env var for Chinese mirror
+- Or set `HTTP_PROXY=http://127.0.0.1:7897` (clash default port 7897 found via `Get-NetTCPConnection` on 127.0.0.1)
+- Download via `curl.exe -L -C - --proxy http://127.0.0.1:7897` (works when Python urllib fails)
+
+**Pipeline runner** (`test_output/_run_cross_encoder_v3_9_3.py`, ~200 lines):
+- Loads v3.9.0 biencoder top-30 candidates per query
+- Cross-encoder reranks each query's 30 candidates
+- Computes NDCG@10 / Recall@10 / Precision@10
+- Side-by-side report vs biencoder-only baseline
+
+**Result** (n=25 v3.9.0 queries, paired comparison):
+
+| Method | NDCG@10 | Recall@10 | Precision@10 |
+|---|---:|---:|---:|
+| biencoder (v3.9.0 baseline) | 0.7205 | 0.6683 | 0.4680 |
+| bge-rerank (v3.9.3 new) | 0.6928 | 0.6569 | 0.4560 |
+| **Δ (bge − biencoder)** | **−0.0277** | **−0.0114** | **−0.0120** |
+
+**Per-query breakdown reveals high variance** (mean hides the story):
+- 11 queries improved by BGE (q004 +0.32, q007 +0.32, q015 +0.25, q022 +0.16, q006 +0.15, q024 +0.15, q008 +0.13, q003 +0.10, q020 +0.04, q021 +0.04, q025 +0.02)
+- 14 queries hurt by BGE (q002 −0.42, q012 −0.39, q019 −0.30, q013 −0.24, q005 −0.22, q001 −0.19, q010 −0.19, q016 −0.16, q009 −0.09, q017 −0.08, q018 −0.06, q023 −0.02, q014 −0.02, q011 −0.00)
+- Variance σ ≈ 0.20 across queries
+
+**3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
+- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, model loaded from local cache
+- ✅ **Verified architecture**: BGE-reranker inference works, smoke test passed (irrelevant=0.00, K-12 AI=0.95)
+- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = −0.0277 on n=25 is within noise band; per-query σ ≈ 0.20 reveals high variance
+- ❌ **NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal
+
+**Why cross-encoder didn't beat bi-encoder on n=25** (honest analysis):
+1. **n=25 too small**: high per-query variance (σ ≈ 0.20) drowns out the average effect
+2. **BGE trained on MS MARCO + CMedQA**: bi-encoder `all-MiniLM-L6-v2` is a strong academic sentence encoder; gap is small
+3. **Per-query failure mode**: 14/25 queries hurt (some severely, e.g. q002 -0.42); could be label noise, query ambiguity, or model mismatch
+4. **No significance test**: this is a single point estimate on n=25
+
+**Smoke test verification** (sanity check):
+- Query: "AI tutoring systems in K-12 education"
+- AI + education: scores 0.019, 0.038, **0.954** (K-12 AI tutoring — perfect match)
+- Frog species / climate change: scores 0.000 each (irrelevant → 0)
+- ✅ Cross-encoder is working correctly; the failure is at the metric-aggregate level, not at the model level
+
+**5-check Global Rule audit**: 5/5 pass
+1. ✅ Runs for $0 (one-time 1.06 GB local download via clash proxy, no per-call API)
+2. ✅ No hosted service
+3. ✅ Maintenance: ~250 LOC new in pa_cli/cross_encoder.py
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: if BGE download fails, system falls back to bi-encoder-only rerank
+
+**Layer architecture**: Cross-encoder sits at **Layer 3 (Rerank)** as the second-stage reranker after bi-encoder.
+Pipeline: `bi-encoder top-30 → BGE-rerank → final top-K`
+
+**Deferred to backlog** (recorded 2026-07-13):
+- **Per-query variance analysis**: 14/25 queries hurt — investigate why (label noise? query type? BGE weak on academic content?)
+- **Re-run with n=50+ queries** (q026-q050 expected) to confirm Δ is noise, not real
+- **Try BGE-reranker-large** (1.7 GB) for higher accuracy
+- **BGE-reranker-v2-m3** (multilingual) for non-English queries
+- **Hybrid rerank**: combine BGE score with original biencoder score (e.g. 0.5*bge + 0.5*biencoder)
+
+---
+
 ## [3.9.2] - 2026-07-13 (minor — [P0-6] LTR (LambdaMART) reranker + Layer 3 architecture)
 
 Implements ROADMAP [P0-6] (added 2026-07-13, completed same day in v3.9.2). Per user request 2026-07-13: "我喜欢能真实实现,利用本地电脑跑一下机器学习模型,应该不是特别困难."
