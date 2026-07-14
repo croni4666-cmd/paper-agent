@@ -1,5 +1,11 @@
 # v3.9.7.2 n=50 — 3-tier Honest Audit
 
+> **SUPERSEDED by v3.9.7.3** (2026-07-15). The "labels缺口" diagnosis below was WRONG.
+> The real cause of n=25 results in v3.9.7.2 was a code bug in `pa_cli/moe_router.py:202`
+> and `pa_cli/ltr.py:165` that skipped `.json` files. See
+> `bench/v01/reports/v3_9_7_3_three_tier.md` §1 for the corrected analysis.
+> This file is kept for audit trail.
+
 > Generated 2026-07-14 by hand. Continuation of HANDOFF_v3_9_7_2.md work.
 > Reads all numbers directly from `bench/v01/reports/v3_9_7_2_*.{json,md}`.
 
@@ -109,6 +115,7 @@ Source: `bench/v01/reports/v3_9_2_ltr.json` (re-run with n=50 combined → same 
 
 ### ⚠️ Caveats
 1. **n=50 nominal, n=25 actual** for every metric that requires labels. The "n=50" in filenames is a pipeline-level claim, not a statistical claim.
+   - **CORRECTION 2026-07-15**: The "n=25 actual" was caused by a code bug (see header above), not by missing labels. After fixing the bug + adding auto labels, the true n=47 MoE / n=48 BGE / n=50 LTR results are in v3.9.7.3.
 2. **Search API drift between v3.9.7.1 and v3.9.7.2** causes all n=25 metrics to shift by 0.01-0.04. Cross-version "comparisons" are not method comparisons; they are API-state comparisons.
 3. **No significance test for LTR delta** of +0.0096. Per memory, n<100 metric deltas are noise.
 4. **MoE class imbalance unchanged** — same 24/25 openalex ratio; class_weight='balanced' doesn't add new positive examples; only changes per-class weights, not the data.

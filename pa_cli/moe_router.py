@@ -197,11 +197,20 @@ def assemble_dataset(
     queries = []
     query_texts = []
     labels = []
+    seen_qids = set()  # v3.9.7.3: dedupe no-ext + .json duplicates
 
-    for qfile in sorted((bench_dir / source_condition).iterdir()):
-        if not qfile.is_file() or qfile.suffix != "":
+    # v3.9.7.3: prefer .json (newer v4_rerank n=50 schema) over no-ext (legacy v3.9.0 era)
+    # Process .json files first, then fall back to no-ext only if no .json exists
+    files_sorted = sorted((bench_dir / source_condition).iterdir(), key=lambda p: (p.suffix != ".json", p.name))
+    for qfile in files_sorted:
+        if not qfile.is_file() or qfile.suffix not in [".json", ""]:
             continue
         qid = qfile.stem
+        # Skip if already have a .json version for this qid
+        if qid in seen_qids:
+            continue
+        seen_qids.add(qid)
+
         obj = json.loads(qfile.read_text(encoding="utf-8"))
         q_text = obj.get("query", "")
         cands = obj.get("results", [])

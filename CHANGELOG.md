@@ -252,6 +252,77 @@ powershell -ExecutionPolicy Bypass -File "C:\Users\DengN\.mavis\bin\Add-PaperAge
 
 ---
 
+## [3.9.7.3] - 2026-07-15 (n=50 real evaluation + auto labels + bug fix)
+
+Continuation session (2026-07-15 00:14) following v3.9.7.2.
+**First true n=50 evaluation of paper-agent with statistical power.**
+Three major changes: (1) A2 auto-labeling of q026-q050, (2) bug fix in
+`pa_cli/moe_router.py:202` and `pa_cli/ltr.py:165` that was skipping `.json` files,
+(3) n=50 mixed labels for MoE / BGE / LTR.
+
+### What was done
+
+**1. Bug fix in `pa_cli/moe_router.py` + `pa_cli/ltr.py`**:
+- Before v3.9.7.3: `qfile.suffix != ""` skipped `.json` files
+- After v3.9.7.3: accept both `.json` and no-extension, dedupe preferring `.json`
+- **Effect**: v3.9.7.2's n=50 numbers were actually n=25 because the bug
+  skipped all 50 newly-created `.json` files. I mis-diagnosed in v3.9.7.2
+  three-tier report as "labels缺口". The real cause was code, not labels.
+- Verified: `assemble_dataset` now finds 47 unique qids (vs 25 before)
+
+**2. A2 auto-labeling (q026-q050)**:
+- Per user choice 2026-07-15 00:14: A2 (hybrid keyword + BGE tie-breaker)
+- Method: 0.5*BM25(keyword, title+abstract) + 0.5*BGE/biencoder score
+- Per-query L2/L1/L0 thresholds based on `difficulty_hint` (broad=10/12, technical=5/8, methodology=6/9, rare_terms=3/5)
+- Output: `bench/v01/labels_q026_q050_auto.json` (522 pairs)
+- L2 rate 26.8% (auto) vs 27.8% (real) — distribution roughly matches
+- Honest caveat: NOT expert-validated; suitable for method comparison only
+
+**3. n=50 mixed labels**:
+- `bench/v01/labels_n50_mixed.json`: q001-q025 (real) + q026-q050 (auto)
+- 1263 total pairs across 50 queries
+- 47 queries have L2 in top-10 (q041-q043 have L2=0 in auto, system returns no highly relevant candidates)
+
+**4. True n=50 evaluation results**:
+
+| Method | v3.9.7.1 n=25 (fake) | v3.9.7.3 n=48-50 (real) | Honest reading |
+|---|---:|---:|---|
+| MoE macro F1 | 0.889 | 0.609 | n=25 was 24/1 class distribution, n=47 is 24/20/3 (true crossref + arxiv) |
+| BGE NDCG@10 (Δ vs bi-encoder) | -0.028 (n.s.) | **-0.1064 (p=0.0008)** | **BGE significantly worse than bi-encoder** |
+| LTR NDCG@10 | 0.7192 | 0.7806 | Higher n. |
+| combined baseline NDCG@10 | 0.7227 | 0.8141 | (also rises — auto labels inflate both) |
+| Δ LTR - baseline | -0.0034 | **-0.0335** | **LTR loses to baseline in true n=50** |
+
+**5. Three honest findings**:
+- ✅ MoE is real, 0.61 macro F1 > random 0.20
+- ✅ BGE-reranker is significantly worse than bi-encoder (p=0.0008) — deprecate from default
+- ✅ LTR loses to combined baseline in n=50 (Δ = -0.0335) — investigate simpler ranking
+
+**6. v3.9.7.2 three-tier report correction**:
+- The "labels缺口" diagnosis was wrong
+- Real cause: code bug that skipped `.json` files
+- Updated v3.9.7.2 report header to "SUPERSEDED by v3.9.7.3"
+
+### Files
+
+- `bench/v01/labels_q026_q050_auto.json` (new, 522 auto labels)
+- `bench/v01/labels_n50_mixed.json` (new, n=50 merged)
+- `bench/v01/labels_clean.json.real.bak` (backup during swap, can delete)
+- `bench/v01/reports/v3_9_7_3_moe_router_n50.{json,md}` (n=47)
+- `bench/v01/reports/v3_9_7_3_cross_encoder_n50.json` (n=48)
+- `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.{json,md}` (n=48, first sig result)
+- `bench/v01/reports/v3_9_7_3_ltr_n50.json` (n=50)
+- `bench/v01/reports/v3_9_7_3_three_tier.md` (audit)
+- `bench/v01/reports/v3_9_7_2_n50_three_tier.md` (updated header: SUPERSEDED)
+- `pa_cli/moe_router.py:202` (bug fix)
+- `pa_cli/ltr.py:165` (bug fix)
+- `test_output/_auto_label_q026_q050.py` (A2 implementation)
+- `test_output/_run_n50_v3973.py`, `_run_cross_encoder_n50_v3973.py`,
+  `_run_cross_encoder_wilcoxon_n50_v3973.py`, `_run_ltr_n50_v3973.py` (n=50 runners)
+- `test_output/_inspect_moe_dataset.py`, `_inspect_q026_*.py`, `_diff_ltr.py` (diagnostics)
+
+---
+
 ## [3.9.7.2] - 2026-07-14 (n=50 expansion — v4_rerank is real n=50; MoE/CE/LTR are n=25 due to missing labels)
 
 Continuation session (2026-07-14 23:50) of WIP [3.9.7.2]. Resumed from

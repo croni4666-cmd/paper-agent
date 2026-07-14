@@ -1,0 +1,5162 @@
+{
+  "version": "v3.9.7.3-n50-mixed",
+  "n_queries": 50,
+  "labels": {
+    "q001": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3102/00346543068002179": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1551-6709.2012.01245.x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11423-023-10203-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 0,
+        "reason": "Chinese EFL university students, writing skills, not K-12 outcomes"
+      },
+      "10.1186/s41039-018-0078-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00425-2": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/2331186x.2023.2236469": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 0,
+        "reason": "University EFL students, English learning achievement, not K-12"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2022.3193938": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00372-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00406-5": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics13183762": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jamanetworkopen.2021.49008": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su16073034": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1207/s15326985ep4004_7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q002": {
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/apps.12241": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.2.4.1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/econometrics6020028": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su12072809": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.15.1.165": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aeri.20180010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/1069072718774002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/pnasnexus/pgae191": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/rest_a_00234": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2014.0015": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ecca.12184": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2020.07.014": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1037/e686432011-001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2018.64": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400204340.006": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/oxrep/graa051": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-9914.2007.00378.x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781498303743.001": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjae005": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q003": {
+      "10.1038/s41592-019-0686-2": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3326362": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/276698.276876": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11263-019-01247-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40537-014-0007-7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neucom.2019.10.118": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.naacl-main.272": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1006/jvci.1999.0413": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/rs71114680": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v28i1.8952": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v31i1.10958": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2016.572": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr42600.2020.00877": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2009.5206529": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3394486.3403305": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tip.2016.2564638": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tmm.2018.2832602": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.naacl-main.241": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.24963/ijcai.2018/396": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2019.00523": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/cogs.12047": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.acl-long.203": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3295776": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5121/iju.2012.3202": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/978-3-030-01177-2_12": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10278-012-9495-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10916-016-0659-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/icdar.2013.114": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3488560.3498443": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q004": {
+      "10.1023/a:1022623210503": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/aje/kwn164": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/09-ss057": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/bf00994016": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10994-006-6889-7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1364/josaa.20.001434": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2014.7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s13717-016-0063-3": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/scan/nsw154": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43586-020-00001-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00273171.2018.1454823": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jproc.2021.3058954": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/14-aoas788": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/ss/1009211805": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/pan.2016.2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1126/sciadv.aau4996": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neuroimage.2009.11.015": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fnhum.2015.00001": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1000709": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1890/es12-00048.1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3444944": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/neco_a_00999": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neuroimage.2009.08.065": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/19-ba1195": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/12-ba703": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/ije/dyw114": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1510479113": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/525638": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.tranpol.2021.01.013": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q005": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "Economics and identity, not UBI labor supply"
+      },
+      "10.1257/jel.47.1.5": {
+        "label": 0,
+        "reason": "Econometrics of program evaluation, not UBI"
+      },
+      "10.2307/2329018": {
+        "label": 0,
+        "reason": "Modern industrial revolution, exit, not UBI"
+      },
+      "10.1257/jep.10.4.139": {
+        "label": 0,
+        "reason": "Bargaining in marriage, not UBI"
+      },
+      "10.3389/fenrg.2021.743114": {
+        "label": 0,
+        "reason": "Sustainable energy transition, not UBI"
+      },
+      "10.1257/jep.7.1.133": {
+        "label": 0,
+        "reason": "Human development in poor countries, not UBI"
+      },
+      "10.1080/1369118x.2017.1294194": {
+        "label": 0,
+        "reason": "Platform labor gendered/racialized, not UBI"
+      },
+      "10.1257/jep.27.3.3": {
+        "label": 0,
+        "reason": "Top 1 percent, not UBI"
+      },
+      "10.2307/2534657": {
+        "label": 0,
+        "reason": "Earnings instability, not UBI"
+      },
+      "10.1257/pol.6.1.230": {
+        "label": 0,
+        "reason": "Top labor income taxation, not UBI"
+      },
+      "10.1257/jep.9.3.83": {
+        "label": 0,
+        "reason": "Consumption insurance, not UBI"
+      },
+      "10.1007/s12571-021-01246-9": {
+        "label": 0,
+        "reason": "Fisheries and aquaculture, not UBI"
+      },
+      "10.1186/s12960-017-0187-2": {
+        "label": 0,
+        "reason": "Health workforce labor projections, not UBI"
+      },
+      "10.1093/qje/qjt001": {
+        "label": 0,
+        "reason": "Job placement assistance, not UBI"
+      },
+      "10.1002/pam.21676": {
+        "label": 0,
+        "reason": "California paid family leave, not UBI"
+      },
+      "10.1093/wber/lhv003": {
+        "label": 0,
+        "reason": "Female labor force in India, not UBI"
+      },
+      "10.1257/jep.32.4.201": {
+        "label": 2,
+        "reason": "DIRECTLY UBI vs targeted transfers for anti-poverty (Haslag)"
+      },
+      "10.1257/jep.30.4.3": {
+        "label": 0,
+        "reason": "Immigrants and productivity, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030237": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in US and advanced countries (Hoynes/Rothstein)"
+      },
+      "10.1257/000282805775014425": {
+        "label": 0,
+        "reason": "Child labor regulation macro, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030229": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in developing world (Banerjee et al)"
+      },
+      "10.1186/s40176-018-0131-9": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 非严格相关，转移支付和UBI 的概念并不完全相同"
+      },
+      "10.3386/w9168": {
+        "label": 1,
+        "reason": "Welfare programs and labor supply (Moffitt), related to UBI discussion but not UBI specifically"
+      },
+      "10.3368/jhr.58.3.1217-9240r4": {
+        "label": 0,
+        "reason": "Health and labor supply near retirement, not UBI"
+      },
+      "10.1016/j.socec.2007.08.007": {
+        "label": 2,
+        "reason": "DIRECTLY unconditional basic income and labor supply (lottery pilot)"
+      },
+      "10.1007/s11158-020-09487-9": {
+        "label": 1,
+        "reason": "UBI and domination philosophy, not labor supply evidence"
+      },
+      "10.1016/j.jpubeco.2023.104881": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 部分命中，labor 的部分因为缺乏abstract 不知道是否涉及到"
+      },
+      "10.2139/ssrn.3938983": {
+        "label": 2,
+        "reason": "DIRECTLY Child Tax Credit expansion and labor supply (UBI-adjacent)"
+      },
+      "10.1002/pam.22455": {
+        "label": 2,
+        "reason": "DIRECTLY universal cash transfers and labor market outcomes"
+      },
+      "10.2202/1932-0183.1100": {
+        "label": 1,
+        "reason": "UBI and labor contract philosophy, not labor supply empirics"
+      }
+    },
+    "q006": {
+      "10.1609/aaai.v35i12.17325": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.353": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-020-17591-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/tacl_a_00638": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.523": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v36i3.20158": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3485447.3512217": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su7010988": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v37i11.26538": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.findings-emnlp.936": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/p18-1117": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v34i07.6903": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/wes-1-1-2016": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/d18-1325": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/rs14122861": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.findings-naacl.55": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.apenergy.2022.120565": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2507.02259": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.4067/s0718-95162010000100004": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.findings-emnlp.232": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3533767.3534367": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jamia/ocac225": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/s23052385": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2025.acl-long.127": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3579371.3589057": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2402.16617": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2024.acl-long.91": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11633-024-1393-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.211": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.57": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q007": {
+      "10.1016/s0140": {
+        "label": 1,
+        "reason": "DOI broken, title='Home visits' but abstract about UK agricultural emissions reduction; OpenAlex metadata corruption"
+      },
+      "10.1073/pnas.1116437108": {
+        "label": 1,
+        "reason": "Sustainable agriculture intensification, food demand focus not climate adaptation"
+      },
+      "10.1073/pnas.1701762114": {
+        "label": 1,
+        "reason": "Temperature impacts on yields, not adaptation specifically"
+      },
+      "10.1146/annurev-environ-020411-130608": {
+        "label": 2,
+        "reason": "DIRECTLY Climate Change and Food Systems review"
+      },
+      "10.1073/pnas.1222463110": {
+        "label": 2,
+        "reason": "DIRECTLY agricultural risks of climate change (GGCM intercomparison)"
+      },
+      "10.1038/nclimate2153": {
+        "label": 2,
+        "reason": "DIRECTLY meta-analysis of crop yield under climate change and adaptation"
+      },
+      "10.1073/pnas.0701890104": {
+        "label": 2,
+        "reason": "DIRECTLY adapting agriculture to climate change"
+      },
+      "10.1016/j.gloenvcha.2009.01.002": {
+        "label": 2,
+        "reason": "DIRECTLY farmers' adaptation methods to climate change (Ethiopia)"
+      },
+      "10.1007/s11356-022-19718-6": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts/adaptation/mitigation review"
+      },
+      "10.1088/1748-9326/5/1/014010": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts on African agriculture"
+      },
+      "10.1016/s1161-0301(02)00004-7": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and European agricultural productivity"
+      },
+      "10.1016/j.crm.2017.02.001": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and livestock impacts/adaptation/mitigation"
+      },
+      "10.1007/s13593-015-0285-2": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 典型的非经济学论文，可以参考它的季候变化应对方案原因，但实质上却是农业论文"
+      },
+      "10.1016/j.eja.2010.11.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.envsci.2008.11.002": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1222474110": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 非经济论文，而是农业实践论文"
+      },
+      "10.1023/a:1015862228270": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 看杂志名称很有可能是纯种植方法"
+      },
+      "10.1098/rstb.2005.1744": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/pol.20130025": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jenvman.2012.10.036": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1222465110": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1210127110": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1098/rstb.2013.0089": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10668-019-00414-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpls.2022.925548": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jenvp.2020.101408": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.landusepol.2017.10.023": {
+        "label": 2,
+        "reason": "USER NOTE: 第 27 和 28 大概率是重复论文，应该予以剔除一篇"
+      },
+      "10.1038/s41586-025-09085-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/jac.12415": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q008": {
+      "10.1093/bioinformatics/bty294": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btaa921": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10462-023-10465-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41597-023-01960-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.asoc.2020.106691": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43586-024-00294-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1039/c9sc04336e": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1005690": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbab159": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-021-27137-3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.24963/ijcai.2018/468": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1039/c9sc03414e": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btz600": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-020-00285-9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jbi.2021.103696": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-03233-x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41597-023-01974-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-021-27138-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41401-022-00996-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-39301-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/cancers15102705": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.naacl-demos.8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbad431": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1010812": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbac578": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-021-02353-5": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.compbiomed.2022.105992": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btab191": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.21203/rs.3.rs-114758/v1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jbhi.2023.3328337": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q009": {
+      "10.1136/bmj.n2061": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1136/bmj.i5239": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1161/cir.0b013e31823ba622": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0140-6736(24)01296-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-018-0029-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s12160-016-9830-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.amepre.2016.06.015": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1097/aln.0b013e3181fcbfd9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.7126": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wps.20673": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2215-0366(14)70312-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1136/bmj.i1174": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1542/peds.2013-3219": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.1909": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jama.2021.14075": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s44159-021-00003-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1176/appi.ps.201600541": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2589-7500(20)30017-0": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2021.e07014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/1472-6963-6-30": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/cncr.30172": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/mhealth.3882": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/jcsm.12201": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.3510": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/16460": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.4391": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wps.20614": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1159/000490574": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s12966-016-0362-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q010": {
+      "10.1038/s41562-021-01079-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2022.102542": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10479-020-03640-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jpubeco.2020.104316": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10916-020-01596-5": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0249596": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11077-020-09381-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0140-6736(15)00946-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14494035.2020.1787628": {
+        "label": 2,
+        "reason": "USER OVERRIDE: 我认为国家应对策略包含多个层面，一定也包含政策和信任，故而可以拿来参考"
+      },
+      "10.1080/13548506.2020.1772988": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.15585/mmwr.rr6601a1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/1471-2458-11-575": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2020.102180": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41562-021-01181-x": {
+        "label": 0,
+        "reason": "USER OVERRIDE: ---"
+      },
+      "10.1038/s41562-020-0909-7": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 政府应对数据集是很好的研究材料，尤其是它可能是政策或者信任事件的前件"
+      },
+      "10.1017/iop.2020.48": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/s0033291721001306": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.34172/aim.2020.02": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30636/jbpa.32.172": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.healthpol.2020.06.009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00148-021-00848-z": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/eurpub/ckaa181": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyt.2020.00821": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0252892": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.hlpt.2020.08.021": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1098/rsos.200589": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0240644": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2147/rmhp.s278774": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0049806": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q011": {
+      "10.1038/s41746-020-00323-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s41666-020-00082-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-020-0186-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3013541": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v36i8.20819": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-021-00337-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.comcom.2022.09.012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2022.3151670": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.patcog.2024.110424": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/ojcs.2020.2992630": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10586-022-03658-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.icte.2023.02.007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-022-05539-7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3118642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tkde.2024.3352628": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-022-30714-9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3412357": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3075203": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/mnet.011.2000045": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-021-00489-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3533708": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app12199901": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-38569-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jbhi.2022.3185673": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.comcom.2021.02.014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tbdata.2022.3190835": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jiot.2022.3201117": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tce.2023.3315415": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3301162": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q012": {
+      "10.1016/j.gloenvcha.2016.05.009": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/0895330042162430": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su12135488": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/acp-17-8681-2017": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cpa.2019.102097": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ecolecon.2015.03.020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7916/d8-w2nc-4103": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.erss.2019.02.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jclepro.2019.01.282": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.fuel.2023.127776": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.26.4.27": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1918128117": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wcc.462": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev.energy.27.122001.083444": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/bg-9-1845-2012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/3146894": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14693062.2018.1492897": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.oneear.2021.10.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41558-021-01250-z": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.enpol.2018.06.020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10018-016-0144-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781513595405.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jeem.2010.04.004": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eneco.2023.106642": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11356-022-23185-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.envsci.2010.10.010": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Social cost of carbon UK, not OECD effectiveness"
+      },
+      "10.1016/j.eneco.2023.107198": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10640-021-00594-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10640-021-00548-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q013": {
+      "10.1126/science.abj8754": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41587-021-01156-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkae1010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41592-021-01252-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41592-019-0598-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-023-06139-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btac020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkae1082": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-022-32007-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkac278": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-024-08328-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s12859-019-3220-8": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 序列预测而非结构预测"
+      },
+      "10.1093/bioinformatics/btaa880": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btaa524": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41588-023-01465-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41587-022-01432-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkac439": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkab354": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ccell.2023.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-022-12201-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-020-79682-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-42528-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41524-023-01016-5": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43588-022-00373-3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbab564": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1101/2021.07.31.454572": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.34133/research.0240": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btad718": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 1. 如果是“结构预测”论文（比如 AlphaFold2, ESMFold 团队自己写的论文）\n\n- **输入：** 氨基酸序列。\n- **最终输出（Output）：** 几千个原子的 $X, Y, Z$ **三维坐标（连续数值）**。\n- **Loss 函数：** FAPE Loss（结构对齐误差）或坐标点之间的均方误差（MSE）。\n- **技术核心：** 在解决极其复杂的“物理折叠”和“几何等"
+      },
+      "10.1021/acs.jcim.2c00060": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btad208": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q014": {
+      "10.1016/s0140-6736(96)07226-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjz042": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.8.4.145": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/esr/jcn026": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-6419.2011.00690.x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/sof.2006.0108": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/0002828043052213": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122416684777": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/003355397555145": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0169-7218(11)02414-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/sf/sov075": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.worlddev.2020.105115": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-soc-071811-145521": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2314815": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jdeveco.2018.05.016": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/oxrep/grw030": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.chieco.2015.12.009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/sf/sou092": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eco.2001.0010": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10887-007-9019-x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1749-124x.2013.12013.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1006/ssre.1997.0598": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jdeveco.2014.05.007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.red.2015.07.006": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122419885094": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00036846.2015.1031877": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Great Gatsby Curve China, not education specifically"
+      }
+    },
+    "q015": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-023-06291-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40537-021-00492-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.295": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13095783": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-03423-7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/50638": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-024-07421-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3491102.3517582": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-024-01029-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.emnlp-main.130": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.acl-long.147": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.patter.2024.100943": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.acl-long.576": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/coli.2007.33.1.41": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/55318": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr52688.2022.00886": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2024.naacl-long.228": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.316": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v38i17.29889": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.emnlp-main.616": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10115-022-01744-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.naacl-main.420": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.findings-emnlp.710": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-64827-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.nlrse-1.7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jamia/ocad256": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v38i17.29823": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2305.12586": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.acl-long.385": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q016": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20160995": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.15.2.103": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjz014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/135457097338799": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/jae.788": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjt006": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/jhr.2008.0017": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/2675569": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/2070285": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.20180010": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/089533006776526111": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1287/mnsc.2018.3093": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qju009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjr013": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20161309": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/dem.2006.0003": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122411425170": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/685449": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080614-115329": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1468-232x.2007.00479.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00148-006-0128-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.labeco.2013.01.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/683847": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-9361.2004.00230.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q017": {
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/josm-04-2018-0119": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cirp.2016.05.004": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.23.3.125": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5430/ijfr.v9n2p90": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.hrmr.2022.100899": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijpe.2019.107599": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3042874": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/mar.21619": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/ijopm-02-2012-0086": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/1042258720934581": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2022.104555": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3102227": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jtf-07-2019-0065": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2023.05.008": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/21681015.2021.1950227": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/ai1020008": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.31.2.165": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2023.e22601": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20191277": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cirp.2020.05.006": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00207543.2023.2179859": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/654303": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jfineco.2013.02.011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su15118934": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13563-019-00172-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q018": {
+      "10.1186/s40537-021-00444-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00408-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "AI in education challenges sustainable, not outcomes"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.17": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 1,
+        "reason": "ChatGPT EFL writing, not K-12 outcomes"
+      },
+      "10.1007/s10639-021-10831-6": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/info15100596": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 1,
+        "reason": "AI language instruction EFL achievement, not K-12 outcomes"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.caeai.2023.100197": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13116716": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci15030343": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.4638365": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q019": {
+      "10.1186/s41239-019-0171-0": {
+        "label": 0,
+        "reason": "AI in higher ed systematic review, not ITS specifically"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "AI teaching higher ed, not ITS"
+      },
+      "10.1109/comst.2020.2970550": {
+        "label": 0,
+        "reason": "Edge computing deep learning survey, not ITS"
+      },
+      "10.1002/ett.4150": {
+        "label": 0,
+        "reason": "Network IDS ML DL, not ITS"
+      },
+      "10.3390/app9204396": {
+        "label": 0,
+        "reason": "IDS ML DL survey, not ITS"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "Personalized FL, not ITS"
+      },
+      "10.1002/inf2.12028": {
+        "label": 0,
+        "reason": "ML materials science, not ITS"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 并非强相关，但智能导师系统中应该设法区分人主导还是机器主导。"
+      },
+      "10.1186/s40537-020-00318-5": {
+        "label": 0,
+        "reason": "Cybersecurity data science, not ITS"
+      },
+      "10.1007/s40593-016-0105-0": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 2016年的论文，虽然没有摘要，但大概率没提到人工智能对于教育的影响，对于我们的主题Intelligent Tutoring System，虽然可以拿来做参考，但事实上参考材料也有点老。估计智能用作如何优质的设计智能导师系统的参考。"
+      },
+      "10.1186/s40561-019-0089-y": {
+        "label": 2,
+        "reason": "DIRECTLY personalized adaptive learning in smart learning environment"
+      },
+      "10.1515/jaiscr-2017-0004": {
+        "label": 2,
+        "reason": "DIRECTLY AI techniques for adaptive educational systems survey"
+      },
+      "10.1002/(sici)1097-4571(199504)46:3<194::aid-asi4>3.0.co;2-s": {
+        "label": 0,
+        "reason": "ML for IR 1995, not ITS"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 多媒体教学 和我们的主题Intelligent Tutoring System关系有，但不涉及到人工智能，它属于大语言模型前的产物。可以拿来嵌套设计，但不是完全命中。另外，还是太老了。"
+      },
+      "10.1007/s40593-015-0089-1": {
+        "label": 2,
+        "reason": "DIRECTLY help seeking with ITS research"
+      },
+      "10.3758/s13428-012-0258-1": {
+        "label": 2,
+        "reason": "DIRECTLY NLP in intelligent writing strategy tutoring system"
+      },
+      "10.1007/s10639-022-11479-6": {
+        "label": 1,
+        "reason": "Intelligent e-learning systems, related to ITS"
+      },
+      "10.1145/3027385.3027451": {
+        "label": 2,
+        "reason": "DIRECTLY intelligent tutors as teachers aides"
+      },
+      "10.1609/aimag.v34i3.2484": {
+        "label": 2,
+        "reason": "DIRECTLY data-driven ITS development optimization"
+      },
+      "10.1016/j.compedu.2011.11.001": {
+        "label": 2,
+        "reason": "DIRECTLY conversational ITS predicting learning styles"
+      },
+      "10.1007/s10639-022-11305-z": {
+        "label": 2,
+        "reason": "DIRECTLY AI-powered ITS for English learning secondary students"
+      },
+      "10.1111/j.1365-2729.2010.00368.x": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive item-based learning environments IRT (ITS)"
+      },
+      "10.1007/s40593-015-0088-2": {
+        "label": 2,
+        "reason": "DIRECTLY Example-Tracing Tutors ITS development"
+      },
+      "10.1007/s40593-013-0001-9": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive intelligent support for peer tutoring in algebra"
+      },
+      "10.4236/ce.2020.116069": {
+        "label": 2,
+        "reason": "DIRECTLY effects of ITS on personalized learning"
+      },
+      "10.3233/irg-2004-14(3-4)07": {
+        "label": 2,
+        "reason": "DIRECTLY ITS for Entity Relationship Modelling (KERMIT CBM)"
+      },
+      "10.1016/j.sbspro.2010.03.641": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive ITS for e-learning systems"
+      },
+      "10.1016/j.compedu.2013.09.014": {
+        "label": 2,
+        "reason": "DIRECTLY adaptation algorithm for intelligent NLP tutoring system"
+      },
+      "10.1186/s40594-018-0110-y": {
+        "label": 2,
+        "reason": "DIRECTLY ElectronixTutor intelligent tutoring system for electronics"
+      },
+      "10.1007/11774303_52": {
+        "label": 2,
+        "reason": "DIRECTLY comparison of ML methods for intelligent tutoring systems"
+      }
+    },
+    "q020": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pdig.0000198": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40561-023-00237-x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14703297.2023.2195846": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13095783": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2209881": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.12669/pjms.39.2.7653": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3350/cmh.2023.0089": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/13036": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/ase.2270": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.29": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.xops.2023.100324": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.22": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10755-023-09686-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3991/ijet.v18i17.39019": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7821/naer.2023.7.1458": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-52549-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/2331186x.2023.2210461": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10639-024-12949-9": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q021": {
+      "10.1257/aer.103.6.2121": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjaa004": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qju026": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cie.2019.106195": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.28945/5078": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/ijm-01-2021-0052": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3029847": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-022-04988-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2018.06.008": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781484311042.001": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ntwe.12240": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.30.2.179": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/2041386621992105": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2021.43": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43621-025-01201-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2022.05.025": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.chieco.2018.07.008": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jfineco.2022.11.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.4018/ijkm.2016100103": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jeoa.2023.100476": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q022": {
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20170011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718327": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.23.1.167": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 0,
+        "reason": "EDUCAUSE 2020 Horizon Report, not labor polarization"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeg/lby011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.17705/1cais.04319": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.17323/2500-2597.2017.4.6.8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20150258": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13194-018-0213-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11186-020-09409-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tte.2021.3129479": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0235502": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1155/2019/5941096": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w11986": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2016.0015": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5771/0935-9915-2017-3-298": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.4527336": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781484361900.001": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s43593-025-00085-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718497": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q023": {
+      "10.1093/ejcts/ezu366": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/ijerph20043407": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1210/endrev/bnac022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20171112": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/frobt.2018.00081": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/rehab.6376": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.5257": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-02902-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.12467": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/2803173": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics13183762": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2024.e39630": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2022.971044": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13116": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00447-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su16020781": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su17031133": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/cpt.59": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/feduc.2020.00147": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20191507": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics12071550": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1255594": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2021.644587": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43621-025-01094-z": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/mbe.12302": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-025-97652-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40561-016-0038-y": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11423-024-10345-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/16108": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q024": {
+      "10.1257/aer.20160696": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 2,
+        "reason": "NBER WP version of Acemoglu/Restrepo task model"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718327": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3531146.3533088": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24421": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3982/ecta19815": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w25682": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.p20171101": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24196": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/restud/rdab031": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2019.03.010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w28920": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24871": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2781320": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/epolic/eiaa001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/697242": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7208/chicago/9780226613475.003.0008": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jaar-10-2020-0201": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2935003": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q025": {
+      "10.1016/j.inffus.2019.12.012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11023-018-9482-5": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11747-019-00696-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14703297.2023.2190148": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11023-020-09517-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/lhtn-01-2023-0009": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3351095.3372873": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10639-022-11316-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/widm.1356": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.20180010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3300381": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/17439884.2020.1798995": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2589-7500(22)00063-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/amajethics.2019.167": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jopart/muac007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43681-022-00209-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ejed.12532": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3624720": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/socsci12080435": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-55686-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jamanetworkopen.2020.11044": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00146-023-01675-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q026": {
+      "10.64658/gscr.20251230.067bf": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/19; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=technical; tier=L2"
+      },
+      "10.64658/gscr.20251230.ab329": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/19; bm25_norm=0.500; bge_norm=0.815; combined=0.658; difficulty=technical; tier=L1"
+      },
+      "10.1360/csb2011-56-30-2446": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/19; bm25_norm=0.500; bge_norm=0.807; combined=0.654; difficulty=technical; tier=L1"
+      },
+      "10.64658/gscr.20251020.e9913": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/19; bm25_norm=0.500; bge_norm=0.799; combined=0.649; difficulty=technical; tier=L1"
+      },
+      "10.18686/zhfnc.v1i2.71": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/19; bm25_norm=0.500; bge_norm=0.746; combined=0.623; difficulty=technical; tier=L1"
+      },
+      "10.31219/osf.io/hn6sz_v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/19; bm25_norm=0.500; bge_norm=0.728; combined=0.614; difficulty=technical; tier=L1"
+      },
+      "10.69979/3029-2700.24.8.040": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/19; bm25_norm=0.500; bge_norm=0.704; combined=0.602; difficulty=technical; tier=L0"
+      },
+      "10.63887/etr.2025.1.5.13": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/19; bm25_norm=0.500; bge_norm=0.669; combined=0.585; difficulty=technical; tier=L0"
+      },
+      "10.5376/pr.cn.2014.03.0002": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/19; bm25_norm=0.500; bge_norm=0.574; combined=0.537; difficulty=technical; tier=L0"
+      },
+      "10.12677/biphy.2022.102004": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/19; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=technical; tier=L0"
+      }
+    },
+    "q027": {
+      "10.70693/hj0141": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/20; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=technical; tier=L2"
+      },
+      "10.67328/bt1896": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/20; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=technical; tier=L2"
+      },
+      "10.64216/3080-1516.26.06.082": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/20; bm25_norm=0.500; bge_norm=0.974; combined=0.737; difficulty=technical; tier=L2"
+      },
+      "10.1360/csb1985-30-24-1898": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/20; bm25_norm=0.500; bge_norm=0.814; combined=0.657; difficulty=technical; tier=L1"
+      },
+      "10.37155/2717-5650-0603-29": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/20; bm25_norm=0.500; bge_norm=0.743; combined=0.622; difficulty=technical; tier=L1"
+      },
+      "10.1142/9789814285063": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/20; bm25_norm=0.500; bge_norm=0.689; combined=0.594; difficulty=technical; tier=L1"
+      },
+      "10.31219/osf.io/zfhta_v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/20; bm25_norm=0.500; bge_norm=0.663; combined=0.581; difficulty=technical; tier=L0"
+      },
+      "10.32629/er.v1i3.1497": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/20; bm25_norm=0.500; bge_norm=0.643; combined=0.571; difficulty=technical; tier=L0"
+      },
+      "10.61654/zzjkwz0439": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/20; bm25_norm=0.500; bge_norm=0.608; combined=0.554; difficulty=technical; tier=L0"
+      },
+      "10.32629/ej.v8i11.3081": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/20; bm25_norm=0.500; bge_norm=0.501; combined=0.500; difficulty=technical; tier=L0"
+      }
+    },
+    "q028": {
+      "10.37155/2661-4766-0206-3": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/18; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=rare_terms; tier=L2"
+      },
+      "10.37155/2661-4766-0706-45": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/18; bm25_norm=0.500; bge_norm=0.967; combined=0.734; difficulty=rare_terms; tier=L2"
+      },
+      "10.37155/2661-4766-0202-8": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/18; bm25_norm=0.500; bge_norm=0.825; combined=0.662; difficulty=rare_terms; tier=L2"
+      },
+      "10.62022/fmr.issn3006-0036.2024.03.006": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=4/18; bm25_norm=0.500; bge_norm=0.819; combined=0.660; difficulty=rare_terms; tier=L1"
+      },
+      "10.1089/ct.2020;32.110-113": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=5/18; bm25_norm=0.500; bge_norm=0.818; combined=0.659; difficulty=rare_terms; tier=L1"
+      },
+      "10.62022/fetr.issn3006-001x.2024.01.022": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/18; bm25_norm=0.500; bge_norm=0.755; combined=0.628; difficulty=rare_terms; tier=L1"
+      },
+      "10.37155/2661-4766-0601-29": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/18; bm25_norm=0.500; bge_norm=0.701; combined=0.601; difficulty=rare_terms; tier=L1"
+      },
+      "10.22541/au.167706009.92155472/v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/18; bm25_norm=0.500; bge_norm=0.617; combined=0.559; difficulty=rare_terms; tier=L1"
+      },
+      "10.1360/sspma-2026-0351": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=9/18; bm25_norm=0.500; bge_norm=0.548; combined=0.524; difficulty=rare_terms; tier=L0"
+      },
+      "10.62177/fapad.v1i1.938": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=10/18; bm25_norm=0.500; bge_norm=0.304; combined=0.402; difficulty=rare_terms; tier=L0"
+      },
+      "10.7498/aps.75.20260701": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=11/18; bm25_norm=0.500; bge_norm=0.115; combined=0.308; difficulty=rare_terms; tier=L0"
+      },
+      "10.3724/cbls.2026096": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=12/18; bm25_norm=0.500; bge_norm=0.110; combined=0.305; difficulty=rare_terms; tier=L0"
+      },
+      "10.3724/bnsfc-2026-0089": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=13/18; bm25_norm=0.500; bge_norm=0.107; combined=0.303; difficulty=rare_terms; tier=L0"
+      },
+      "10.3724/sp.j.1123.2025.10005": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/18; bm25_norm=0.500; bge_norm=0.082; combined=0.291; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/md.2026.161018": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/18; bm25_norm=0.500; bge_norm=0.055; combined=0.278; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/ssv-2026-0031": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/18; bm25_norm=0.500; bge_norm=0.025; combined=0.262; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/ssc-2026-0108": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/18; bm25_norm=0.500; bge_norm=0.019; combined=0.260; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/csb-2026-0406": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/18; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q029": {
+      "10.1007/978-3-032-13562-9_23": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/21; bm25_norm=1.000; bge_norm=0.174; combined=0.587; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2203.08975v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/21; bm25_norm=0.760; bge_norm=0.265; combined=0.513; difficulty=methodology; tier=L2"
+      },
+      "10.18356/22203583-2021-3-12": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/21; bm25_norm=0.000; bge_norm=1.000; combined=0.500; difficulty=methodology; tier=L2"
+      },
+      "10.70693/fw083": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/21; bm25_norm=0.000; bge_norm=0.965; combined=0.483; difficulty=methodology; tier=L2"
+      },
+      "10.58911/bdic.co.202512.01": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/21; bm25_norm=0.000; bge_norm=0.928; combined=0.464; difficulty=methodology; tier=L2"
+      },
+      "10.2139/ssrn.4933318": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/21; bm25_norm=0.000; bge_norm=0.794; combined=0.397; difficulty=methodology; tier=L2"
+      },
+      "10.61369/eti.4768": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/21; bm25_norm=0.000; bge_norm=0.676; combined=0.338; difficulty=methodology; tier=L1"
+      },
+      "10.1007/s10458-010-9154-1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/21; bm25_norm=0.296; bge_norm=0.362; combined=0.329; difficulty=methodology; tier=L1"
+      },
+      "10.61369/est.8707": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/21; bm25_norm=0.000; bge_norm=0.612; combined=0.306; difficulty=methodology; tier=L1"
+      },
+      "10.32629/er.v1i5.1571": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=10/21; bm25_norm=0.000; bge_norm=0.584; combined=0.292; difficulty=methodology; tier=L1"
+      },
+      "arXiv:2605.21404v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/21; bm25_norm=0.222; bge_norm=0.339; combined=0.280; difficulty=methodology; tier=L1"
+      },
+      "10.33142/sca.v8i9.17966": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/21; bm25_norm=0.000; bge_norm=0.522; combined=0.261; difficulty=methodology; tier=L1"
+      },
+      "10.33142/sca.v5i4.6710": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/21; bm25_norm=0.000; bge_norm=0.506; combined=0.253; difficulty=methodology; tier=L1"
+      },
+      "10.61369/eti.8429": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/21; bm25_norm=0.000; bge_norm=0.441; combined=0.221; difficulty=methodology; tier=L1"
+      },
+      "arXiv:2512.24957v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/21; bm25_norm=0.000; bge_norm=0.426; combined=0.213; difficulty=methodology; tier=L1"
+      },
+      "10.1145/3652988.3673918": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/21; bm25_norm=0.296; bge_norm=0.000; combined=0.148; difficulty=methodology; tier=L0"
+      },
+      "10.18653/v1/2026.acl-long.1765": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/21; bm25_norm=0.000; bge_norm=0.224; combined=0.112; difficulty=methodology; tier=L0"
+      },
+      "arXiv:0205016v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/21; bm25_norm=0.000; bge_norm=0.220; combined=0.110; difficulty=methodology; tier=L0"
+      },
+      "10.18653/v1/2026.findings-acl.1831": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/21; bm25_norm=0.000; bge_norm=0.184; combined=0.092; difficulty=methodology; tier=L0"
+      },
+      "10.1145/3786167.3788406": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/21; bm25_norm=0.000; bge_norm=0.176; combined=0.088; difficulty=methodology; tier=L0"
+      },
+      "10.1007/978-3-030-01713-2_22": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/21; bm25_norm=0.000; bge_norm=0.169; combined=0.085; difficulty=methodology; tier=L0"
+      },
+      "arXiv:0309395v2": {
+        "label": 0,
+        "reason": "auto: A2 - placeholder/withdrawn"
+      }
+    },
+    "q030": {
+      "10.37155/2705-0653-0603-10": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.500; bge_norm=0.946; combined=0.723; difficulty=technical; tier=L2"
+      },
+      "10.37155/2705-0653-0605-42": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.500; bge_norm=0.922; combined=0.711; difficulty=technical; tier=L2"
+      },
+      "10.64216/3080-1494.26.04.041": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.500; bge_norm=0.910; combined=0.705; difficulty=technical; tier=L2"
+      },
+      "10.69979/3029-2735.25.10.043": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.500; bge_norm=0.801; combined=0.650; difficulty=technical; tier=L1"
+      },
+      "10.37155/2717-5561-0703-10": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.500; bge_norm=0.783; combined=0.642; difficulty=technical; tier=L1"
+      },
+      "10.36012/sde.v1i3.471": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.500; bge_norm=0.752; combined=0.626; difficulty=technical; tier=L1"
+      },
+      "10.66128/jiee202601.12": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.500; bge_norm=0.705; combined=0.603; difficulty=technical; tier=L1"
+      },
+      "10.70693/rwsk.v2i6.516": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.500; bge_norm=0.642; combined=0.571; difficulty=technical; tier=L1"
+      },
+      "10.62177/aper.v2i3.1482": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.500; bge_norm=0.635; combined=0.568; difficulty=technical; tier=L0"
+      },
+      "10.65196/sc2fqx71": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.500; bge_norm=0.601; combined=0.550; difficulty=technical; tier=L0"
+      },
+      "10.62662/kxwxz0210024": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.500; bge_norm=0.545; combined=0.523; difficulty=technical; tier=L0"
+      },
+      "10.32629/jief.v2i1.451": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.500; bge_norm=0.539; combined=0.520; difficulty=technical; tier=L0"
+      },
+      "10.32629/ej.v8i11.3113": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.500; bge_norm=0.536; combined=0.518; difficulty=technical; tier=L0"
+      },
+      "10.36012/sde.v3i1.2864": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.500; bge_norm=0.522; combined=0.511; difficulty=technical; tier=L0"
+      },
+      "10.62662/kxwxz01010004": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.500; bge_norm=0.348; combined=0.424; difficulty=technical; tier=L0"
+      },
+      "10.1177/00081256231202266": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.500; bge_norm=0.111; combined=0.306; difficulty=technical; tier=L0"
+      },
+      "10.1128/spectrum.01370-25": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.500; bge_norm=0.020; combined=0.260; difficulty=technical; tier=L0"
+      },
+      "10.1360/ssi-2025-0329": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.500; bge_norm=0.002; combined=0.251; difficulty=technical; tier=L0"
+      },
+      "10.1177/18681034231186441": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=technical; tier=L0"
+      }
+    },
+    "q031": {
+      "arXiv:1911.09879v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/20; bm25_norm=0.760; bge_norm=0.685; combined=0.723; difficulty=methodology; tier=L2"
+      },
+      "10.1145/3441452": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/20; bm25_norm=0.760; bge_norm=0.625; combined=0.693; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2412.15373v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/20; bm25_norm=0.846; bge_norm=0.467; combined=0.657; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2108.08464v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/20; bm25_norm=1.000; bge_norm=0.090; combined=0.545; difficulty=methodology; tier=L2"
+      },
+      "arXiv:1810.12171v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/20; bm25_norm=0.691; bge_norm=0.365; combined=0.528; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2606.07575v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/20; bm25_norm=0.776; bge_norm=0.234; combined=0.505; difficulty=methodology; tier=L2"
+      },
+      "10.69979/3029-2700.25.02.078": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/20; bm25_norm=0.000; bge_norm=1.000; combined=0.500; difficulty=methodology; tier=L1"
+      },
+      "10.37155/2717-5251-0710-22": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/20; bm25_norm=0.000; bge_norm=0.969; combined=0.485; difficulty=methodology; tier=L1"
+      },
+      "10.37155/2717-5197-0607-2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/20; bm25_norm=0.000; bge_norm=0.887; combined=0.443; difficulty=methodology; tier=L1"
+      },
+      "10.37155/2717-5197-0707-18": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=10/20; bm25_norm=0.000; bge_norm=0.887; combined=0.443; difficulty=methodology; tier=L1"
+      },
+      "10.37155/2811-0609-0315-35": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/20; bm25_norm=0.000; bge_norm=0.844; combined=0.422; difficulty=methodology; tier=L1"
+      },
+      "10.54254/3049-5660/1/2024002": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/20; bm25_norm=0.000; bge_norm=0.772; combined=0.386; difficulty=methodology; tier=L1"
+      },
+      "10.61369/asds.12185": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/20; bm25_norm=0.000; bge_norm=0.734; combined=0.367; difficulty=methodology; tier=L1"
+      },
+      "10.32629/jpm.v7i5.8906": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/20; bm25_norm=0.000; bge_norm=0.674; combined=0.337; difficulty=methodology; tier=L1"
+      },
+      "10.61654/zzjzjdjcyzj04121": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/20; bm25_norm=0.000; bge_norm=0.611; combined=0.306; difficulty=methodology; tier=L1"
+      },
+      "10.12677/ecl.2025.1461726": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/20; bm25_norm=0.000; bge_norm=0.322; combined=0.161; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2505.23542v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/20; bm25_norm=0.000; bge_norm=0.319; combined=0.160; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2604.07718v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/20; bm25_norm=0.000; bge_norm=0.263; combined=0.132; difficulty=methodology; tier=L0"
+      },
+      "arXiv:0505465v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/20; bm25_norm=0.000; bge_norm=0.048; combined=0.024; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2008.02717v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/20; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=methodology; tier=L0"
+      }
+    },
+    "q032": {
+      "10.37155/2717-5170-0607-6": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/13; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=broad; tier=L2"
+      },
+      "10.1360/zf2010-40-suppl-104": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/13; bm25_norm=0.500; bge_norm=0.902; combined=0.701; difficulty=broad; tier=L2"
+      },
+      "10.64216/3080-1494.26.07.032": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/13; bm25_norm=0.500; bge_norm=0.735; combined=0.618; difficulty=broad; tier=L2"
+      },
+      "10.64216/3080-1494.26.03.096": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/13; bm25_norm=0.500; bge_norm=0.724; combined=0.612; difficulty=broad; tier=L2"
+      },
+      "10.70693/rwsk.v1i5.954": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/13; bm25_norm=0.500; bge_norm=0.653; combined=0.576; difficulty=broad; tier=L2"
+      },
+      "10.32629/er.v9i5.7095": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/13; bm25_norm=0.500; bge_norm=0.553; combined=0.527; difficulty=broad; tier=L2"
+      },
+      "10.32629/gmsm.v3i4.837": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/13; bm25_norm=0.500; bge_norm=0.487; combined=0.494; difficulty=broad; tier=L2"
+      },
+      "10.64216/3080-1494.25.10.029": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/13; bm25_norm=0.500; bge_norm=0.464; combined=0.482; difficulty=broad; tier=L2"
+      },
+      "10.69979/3029-2700.25.02.045": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/13; bm25_norm=0.500; bge_norm=0.457; combined=0.479; difficulty=broad; tier=L2"
+      },
+      "10.55375/jssc.2024.4.1.1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/13; bm25_norm=0.500; bge_norm=0.289; combined=0.395; difficulty=broad; tier=L1"
+      },
+      "10.5281/zenodo.4604023": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/13; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=broad; tier=L1"
+      }
+    },
+    "q033": {
+      "10.1787/51825505-en": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/30; bm25_norm=1.000; bge_norm=0.760; combined=0.880; difficulty=broad; tier=L2"
+      },
+      "10.66038/iderj-25-001": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=0.918; bge_norm=0.761; combined=0.839; difficulty=broad; tier=L2"
+      },
+      "10.66038/iderj-25-005": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.918; bge_norm=0.761; combined=0.839; difficulty=broad; tier=L2"
+      },
+      "10.32469/10355/104941": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.520; bge_norm=1.000; combined=0.760; difficulty=broad; tier=L2"
+      },
+      "10.4337/9781800372375.00012": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.836; bge_norm=0.579; combined=0.708; difficulty=broad; tier=L2"
+      },
+      "arXiv:2212.02119v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.769; bge_norm=0.617; combined=0.693; difficulty=broad; tier=L2"
+      },
+      "10.1057/s41599-024-04172-1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.637; bge_norm=0.724; combined=0.681; difficulty=broad; tier=L2"
+      },
+      "arXiv:1803.07509v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.751; bge_norm=0.586; combined=0.668; difficulty=broad; tier=L2"
+      },
+      "10.1109/TPWRS.2022.3164628": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.809; bge_norm=0.402; combined=0.606; difficulty=broad; tier=L2"
+      },
+      "arXiv:2001.02863v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.652; bge_norm=0.533; combined=0.593; difficulty=broad; tier=L1"
+      },
+      "10.1111/issr.12212": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.688; bge_norm=0.491; combined=0.589; difficulty=broad; tier=L1"
+      },
+      "10.4337/9781800372375.00007": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.574; bge_norm=0.585; combined=0.579; difficulty=broad; tier=L1"
+      },
+      "10.4337/9781800372375.00008": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.574; bge_norm=0.563; combined=0.568; difficulty=broad; tier=L1"
+      },
+      "10.62823/mgm/9789349468719/13": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.445; bge_norm=0.592; combined=0.519; difficulty=broad; tier=L1"
+      },
+      "10.5040/9798881813406.ch-2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.737; bge_norm=0.291; combined=0.514; difficulty=broad; tier=L1"
+      },
+      "arXiv:1402.5300v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.585; bge_norm=0.354; combined=0.469; difficulty=broad; tier=L1"
+      },
+      "10.1787/9a816d0e-en": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.435; bge_norm=0.451; combined=0.443; difficulty=broad; tier=L1"
+      },
+      "10.1007/978-3-540-87781-3_40": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.761; bge_norm=0.045; combined=0.403; difficulty=broad; tier=L1"
+      },
+      "10.5771/0935-9915-2017-3-298": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.169; bge_norm=0.628; combined=0.398; difficulty=broad; tier=L1"
+      },
+      "arXiv:2606.19975v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.337; bge_norm=0.365; combined=0.351; difficulty=broad; tier=L1"
+      },
+      "10.1145/3624981": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.442; bge_norm=0.194; combined=0.318; difficulty=broad; tier=L0"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.314; bge_norm=0.279; combined=0.297; difficulty=broad; tier=L0"
+      },
+      "10.1515/npf-2020-0016": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.347; bge_norm=0.225; combined=0.286; difficulty=broad; tier=L0"
+      },
+      "10.1109/TSMCA.2011.2132707": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.324; bge_norm=0.134; combined=0.229; difficulty=broad; tier=L0"
+      },
+      "10.1007/978-3-319-77332-2_13": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.294; bge_norm=0.086; combined=0.190; difficulty=broad; tier=L0"
+      },
+      "10.6092/issn.1971-8853/12221": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.207; bge_norm=0.172; combined=0.189; difficulty=broad; tier=L0"
+      },
+      "10.1109/TCSS.2022.3140779": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.244; bge_norm=0.000; combined=0.122; difficulty=broad; tier=L0"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.225; combined=0.113; difficulty=broad; tier=L0"
+      }
+    },
+    "q034": {
+      "10.2139/ssrn.2990902": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/30; bm25_norm=1.000; bge_norm=0.722; combined=0.861; difficulty=broad; tier=L2"
+      },
+      "10.1007/978-3-031-37755-6_9": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=0.899; bge_norm=0.754; combined=0.826; difficulty=broad; tier=L2"
+      },
+      "10.1057/9781137478757.0007": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.224; bge_norm=1.000; combined=0.612; difficulty=broad; tier=L2"
+      },
+      "10.1057/9781137478757_2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.224; bge_norm=1.000; combined=0.612; difficulty=broad; tier=L2"
+      },
+      "10.1163/2468-1733_shafr_sim280020462": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.333; bge_norm=0.703; combined=0.518; difficulty=broad; tier=L2"
+      },
+      "10.1787/888932349536": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.399; bge_norm=0.634; combined=0.517; difficulty=broad; tier=L2"
+      },
+      "arXiv:2407.02183v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.235; bge_norm=0.732; combined=0.483; difficulty=broad; tier=L2"
+      },
+      "10.4324/9780203108253-14": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.434; bge_norm=0.531; combined=0.483; difficulty=broad; tier=L2"
+      },
+      "arXiv:1808.01499v3": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.356; bge_norm=0.587; combined=0.471; difficulty=broad; tier=L2"
+      },
+      "10.1111/dech.12570": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.449; bge_norm=0.446; combined=0.448; difficulty=broad; tier=L2"
+      },
+      "arXiv:2512.05063v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.388; bge_norm=0.465; combined=0.426; difficulty=broad; tier=L1"
+      },
+      "10.1057/9781137478757.0011": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.000; bge_norm=0.824; combined=0.412; difficulty=broad; tier=L1"
+      },
+      "arXiv:2305.12318v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.407; bge_norm=0.350; combined=0.378; difficulty=broad; tier=L1"
+      },
+      "arXiv:1209.6369v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.375; bge_norm=0.376; combined=0.376; difficulty=broad; tier=L1"
+      },
+      "10.1057/9781137478757.0006": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.184; bge_norm=0.552; combined=0.368; difficulty=broad; tier=L1"
+      },
+      "10.2307/2534694": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.000; bge_norm=0.681; combined=0.341; difficulty=broad; tier=L1"
+      },
+      "arXiv:2101.06478v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.288; bge_norm=0.393; combined=0.340; difficulty=broad; tier=L1"
+      },
+      "10.4324/9781003415510-3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.000; bge_norm=0.673; combined=0.337; difficulty=broad; tier=L1"
+      },
+      "10.3386/w10481": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.184; bge_norm=0.435; combined=0.309; difficulty=broad; tier=L1"
+      },
+      "10.3390/socsci11110522": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.141; bge_norm=0.427; combined=0.284; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.985843": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.173; bge_norm=0.366; combined=0.270; difficulty=broad; tier=L1"
+      },
+      "10.1080/13608746.2018.1433478": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.221; bge_norm=0.290; combined=0.256; difficulty=broad; tier=L1"
+      },
+      "arXiv:1607.04153v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.137; bge_norm=0.334; combined=0.236; difficulty=broad; tier=L0"
+      },
+      "arXiv:2407.08986v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.000; bge_norm=0.449; combined=0.224; difficulty=broad; tier=L0"
+      },
+      "10.1109/TechDebt52882.2021.00017": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.145; bge_norm=0.274; combined=0.210; difficulty=broad; tier=L0"
+      },
+      "10.1257/jep.27.3.3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.000; bge_norm=0.309; combined=0.155; difficulty=broad; tier=L0"
+      },
+      "10.1080/02665433.2013.874299": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.000; bge_norm=0.214; combined=0.107; difficulty=broad; tier=L0"
+      },
+      "10.1353/eca.2004.0018": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.000; bge_norm=0.204; combined=0.102; difficulty=broad; tier=L0"
+      },
+      "10.1086/230786": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.085; combined=0.042; difficulty=broad; tier=L0"
+      },
+      "10.1016/s0140-6736(13)62407-1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=broad; tier=L0"
+      }
+    },
+    "q035": {
+      "10.1103/PhysRevC.107.L041301": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/21; bm25_norm=1.000; bge_norm=0.519; combined=0.760; difficulty=broad; tier=L2"
+      },
+      "arXiv:2102.10886v4": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/21; bm25_norm=0.782; bge_norm=0.440; combined=0.611; difficulty=broad; tier=L2"
+      },
+      "10.69979/3029-2735.24.11.023": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/21; bm25_norm=0.000; bge_norm=1.000; combined=0.500; difficulty=broad; tier=L2"
+      },
+      "10.64216/3080-1508.26.04.057": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/21; bm25_norm=0.000; bge_norm=0.991; combined=0.496; difficulty=broad; tier=L2"
+      },
+      "10.64216/3080-1494.25.11.018": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/21; bm25_norm=0.000; bge_norm=0.975; combined=0.488; difficulty=broad; tier=L2"
+      },
+      "10.69979/3029-2700.25.10.098": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/21; bm25_norm=0.000; bge_norm=0.948; combined=0.474; difficulty=broad; tier=L2"
+      },
+      "10.63887/jerp.2025.1.7.53": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/21; bm25_norm=0.000; bge_norm=0.898; combined=0.449; difficulty=broad; tier=L2"
+      },
+      "arXiv:2605.12078v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/21; bm25_norm=0.692; bge_norm=0.184; combined=0.438; difficulty=broad; tier=L2"
+      },
+      "10.32629/mef.v8i19.17331": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/21; bm25_norm=0.000; bge_norm=0.842; combined=0.421; difficulty=broad; tier=L2"
+      },
+      "10.26549/jxffcxysj.v4i7.6955": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/21; bm25_norm=0.000; bge_norm=0.695; combined=0.347; difficulty=broad; tier=L2"
+      },
+      "10.70695/aa1202502a14": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/21; bm25_norm=0.000; bge_norm=0.649; combined=0.324; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.5023664": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/21; bm25_norm=0.000; bge_norm=0.391; combined=0.196; difficulty=broad; tier=L1"
+      },
+      "10.1109/IROS60139.2025.11247141": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/21; bm25_norm=0.000; bge_norm=0.319; combined=0.159; difficulty=broad; tier=L1"
+      },
+      "10.12677/sa.2025.145135": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/21; bm25_norm=0.000; bge_norm=0.256; combined=0.128; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevD.101.035004": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/21; bm25_norm=0.000; bge_norm=0.234; combined=0.117; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevD.97.055045": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/21; bm25_norm=0.000; bge_norm=0.181; combined=0.091; difficulty=broad; tier=L1"
+      },
+      "10.1016/j.eswa.2021.115245": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/21; bm25_norm=0.000; bge_norm=0.141; combined=0.071; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevE.89.052707": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/21; bm25_norm=0.000; bge_norm=0.090; combined=0.045; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevD.108.034026": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/21; bm25_norm=0.000; bge_norm=0.052; combined=0.026; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevD.109.054033": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/21; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=broad; tier=L1"
+      }
+    },
+    "q036": {
+      "10.1201/9781003462897-4": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/30; bm25_norm=1.000; bge_norm=0.888; combined=0.944; difficulty=broad; tier=L2"
+      },
+      "10.4337/9781800883512.00012": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=1.000; bge_norm=0.661; combined=0.830; difficulty=broad; tier=L2"
+      },
+      "arXiv:1002.2486v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.955; bge_norm=0.679; combined=0.817; difficulty=broad; tier=L2"
+      },
+      "10.1257/aer.20190388": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.708; bge_norm=0.825; combined=0.767; difficulty=broad; tier=L2"
+      },
+      "arXiv:2511.03142v4": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.486; bge_norm=1.000; combined=0.743; difficulty=broad; tier=L2"
+      },
+      "10.1201/9781003462897-6": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.615; bge_norm=0.669; combined=0.642; difficulty=broad; tier=L2"
+      },
+      "10.1201/9781003462897-5": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.615; bge_norm=0.662; combined=0.639; difficulty=broad; tier=L2"
+      },
+      "10.4324/9781003161875-16": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.675; bge_norm=0.531; combined=0.603; difficulty=broad; tier=L2"
+      },
+      "arXiv:2103.13234v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.410; bge_norm=0.760; combined=0.585; difficulty=broad; tier=L2"
+      },
+      "10.1145/3563657.3595982": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.460; bge_norm=0.699; combined=0.579; difficulty=broad; tier=L2"
+      },
+      "arXiv:2511.00273v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.595; bge_norm=0.393; combined=0.494; difficulty=broad; tier=L1"
+      },
+      "10.17323/1726-3247-2023-5-11-53": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.506; bge_norm=0.467; combined=0.487; difficulty=broad; tier=L1"
+      },
+      "arXiv:1710.05204v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.432; bge_norm=0.523; combined=0.478; difficulty=broad; tier=L1"
+      },
+      "10.1007/s11628-020-00432-7": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.331; bge_norm=0.623; combined=0.477; difficulty=broad; tier=L1"
+      },
+      "arXiv:2606.19975v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.453; bge_norm=0.419; combined=0.436; difficulty=broad; tier=L1"
+      },
+      "arXiv:1508.00310v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.458; bge_norm=0.353; combined=0.405; difficulty=broad; tier=L1"
+      },
+      "10.5040/9798881813406.ch-4": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.375; bge_norm=0.408; combined=0.392; difficulty=broad; tier=L1"
+      },
+      "10.5771/9781538173749": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.358; bge_norm=0.419; combined=0.389; difficulty=broad; tier=L1"
+      },
+      "10.21314/JOP.2019.229": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.458; bge_norm=0.288; combined=0.373; difficulty=broad; tier=L1"
+      },
+      "10.5040/9798881813406.ch-7": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.492; bge_norm=0.176; combined=0.334; difficulty=broad; tier=L1"
+      },
+      "10.5040/9798881813406.ch-6": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.426; bge_norm=0.209; combined=0.317; difficulty=broad; tier=L1"
+      },
+      "10.1145/3613904.3642614": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.249; bge_norm=0.164; combined=0.207; difficulty=broad; tier=L1"
+      },
+      "10.1007/s10669-020-09776-x": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.000; bge_norm=0.299; combined=0.150; difficulty=broad; tier=L0"
+      },
+      "10.1146/annurev-economics-081523-013750": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.000; bge_norm=0.297; combined=0.148; difficulty=broad; tier=L0"
+      },
+      "10.1146/annurev-economics-022020-032512": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.000; bge_norm=0.230; combined=0.115; difficulty=broad; tier=L0"
+      },
+      "10.1257/jep.37.4.23": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.000; bge_norm=0.189; combined=0.095; difficulty=broad; tier=L0"
+      },
+      "10.5040/9798881813406.ch-2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.000; bge_norm=0.183; combined=0.091; difficulty=broad; tier=L0"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.000; bge_norm=0.151; combined=0.075; difficulty=broad; tier=L0"
+      },
+      "10.1111/1748-8583.12524": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.112; combined=0.056; difficulty=broad; tier=L0"
+      },
+      "10.1016/j.gloenvcha.2018.08.006": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=broad; tier=L0"
+      }
+    },
+    "q037": {
+      "10.1016/0147-1767(83)90042-1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/30; bm25_norm=0.755; bge_norm=0.812; combined=0.783; difficulty=methodology; tier=L2"
+      },
+      "10.2307/j.ctv301gpm.12": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=0.720; bge_norm=0.739; combined=0.730; difficulty=methodology; tier=L2"
+      },
+      "10.2307/j.ctt9qh7sf.11": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=1.000; bge_norm=0.424; combined=0.712; difficulty=methodology; tier=L2"
+      },
+      "10.1057/9781137478757.0009": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.598; bge_norm=0.695; combined=0.647; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2203.12318v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.663; bge_norm=0.622; combined=0.642; difficulty=methodology; tier=L2"
+      },
+      "10.1057/9781137478757.0007": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.333; bge_norm=0.822; combined=0.578; difficulty=methodology; tier=L2"
+      },
+      "10.1177/1940161217740695": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.551; bge_norm=0.547; combined=0.549; difficulty=methodology; tier=L1"
+      },
+      "10.31979/etd.uddu-u757": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.000; bge_norm=1.000; combined=0.500; difficulty=methodology; tier=L1"
+      },
+      "10.2307/j.ctv301gpm.7": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.518; bge_norm=0.433; combined=0.475; difficulty=methodology; tier=L1"
+      },
+      "10.3390/socsci11110522": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.358; bge_norm=0.581; combined=0.469; difficulty=methodology; tier=L1"
+      },
+      "arXiv:2603.09997v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.522; bge_norm=0.380; combined=0.451; difficulty=methodology; tier=L1"
+      },
+      "10.1515/9780691187365-010": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.477; bge_norm=0.284; combined=0.381; difficulty=methodology; tier=L1"
+      },
+      "10.4324/9781003415510-3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.000; bge_norm=0.675; combined=0.337; difficulty=methodology; tier=L1"
+      },
+      "10.1515/9780691187365-005": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.269; bge_norm=0.358; combined=0.314; difficulty=methodology; tier=L1"
+      },
+      "10.5089/9798400203640.001": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.406; bge_norm=0.198; combined=0.302; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2203.04740v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.000; bge_norm=0.573; combined=0.286; difficulty=methodology; tier=L0"
+      },
+      "10.3390/smartcities5030040": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.269; bge_norm=0.265; combined=0.267; difficulty=methodology; tier=L0"
+      },
+      "10.1111/puar.13607": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.000; bge_norm=0.516; combined=0.258; difficulty=methodology; tier=L0"
+      },
+      "arXiv:1311.4606v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.000; bge_norm=0.432; combined=0.216; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2203.06015v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.000; bge_norm=0.414; combined=0.207; difficulty=methodology; tier=L0"
+      },
+      "10.5089/9781513567723.001": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.000; bge_norm=0.324; combined=0.162; difficulty=methodology; tier=L0"
+      },
+      "10.1609/icwsm.v18i1.31366": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.000; bge_norm=0.305; combined=0.153; difficulty=methodology; tier=L0"
+      },
+      "10.1109/TSMCA.2011.2132707": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.000; bge_norm=0.238; combined=0.119; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2008.08370v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.000; bge_norm=0.215; combined=0.108; difficulty=methodology; tier=L0"
+      },
+      "arXiv:2004.06774v4": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.000; bge_norm=0.124; combined=0.062; difficulty=methodology; tier=L0"
+      },
+      "10.2307/j.ctt9qh7sf.12": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.034; combined=0.017; difficulty=methodology; tier=L0"
+      },
+      "10.1086/300123": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=methodology; tier=L0"
+      }
+    },
+    "q038": {
+      "10.5281/zenodo.19193739": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/32; bm25_norm=0.730; bge_norm=0.893; combined=0.811; difficulty=broad; tier=L2"
+      },
+      "10.1145/3613905.3650948": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/32; bm25_norm=0.533; bge_norm=1.000; combined=0.767; difficulty=broad; tier=L2"
+      },
+      "10.1007/s43681-025-00664-1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/32; bm25_norm=0.595; bge_norm=0.883; combined=0.739; difficulty=broad; tier=L2"
+      },
+      "10.21638/11701/spbu31.2022.26": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/32; bm25_norm=1.000; bge_norm=0.352; combined=0.676; difficulty=broad; tier=L2"
+      },
+      "10.48550/arXiv.2503.04740": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/32; bm25_norm=0.427; bge_norm=0.798; combined=0.612; difficulty=broad; tier=L2"
+      },
+      "arXiv:2603.09020v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/32; bm25_norm=0.391; bge_norm=0.667; combined=0.529; difficulty=broad; tier=L2"
+      },
+      "10.48550/arXiv.2509.15090": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/32; bm25_norm=0.442; bge_norm=0.532; combined=0.487; difficulty=broad; tier=L2"
+      },
+      "arXiv:2202.04977v3": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/32; bm25_norm=0.339; bge_norm=0.600; combined=0.469; difficulty=broad; tier=L2"
+      },
+      "10.69979/3029-2735.26.02.115": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/32; bm25_norm=0.000; bge_norm=0.922; combined=0.461; difficulty=broad; tier=L2"
+      },
+      "10.69979/3029-2735.25.10.073": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/32; bm25_norm=0.000; bge_norm=0.882; combined=0.441; difficulty=broad; tier=L2"
+      },
+      "arXiv:2504.14689v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/32; bm25_norm=0.309; bge_norm=0.545; combined=0.427; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.6285358": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/32; bm25_norm=0.309; bge_norm=0.495; combined=0.402; difficulty=broad; tier=L1"
+      },
+      "10.69979/3029-2735.25.2.081": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/32; bm25_norm=0.000; bge_norm=0.799; combined=0.399; difficulty=broad; tier=L1"
+      },
+      "10.65967/siss.v44i2.138": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/32; bm25_norm=0.365; bge_norm=0.429; combined=0.397; difficulty=broad; tier=L1"
+      },
+      "10.1145/3643834.3661517": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/32; bm25_norm=0.360; bge_norm=0.375; combined=0.367; difficulty=broad; tier=L1"
+      },
+      "arXiv:2504.16770v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/32; bm25_norm=0.348; bge_norm=0.387; combined=0.367; difficulty=broad; tier=L1"
+      },
+      "10.1360/csb2015-60-30-2806": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/32; bm25_norm=0.000; bge_norm=0.673; combined=0.337; difficulty=broad; tier=L1"
+      },
+      "arXiv:1904.03285v4": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/32; bm25_norm=0.323; bge_norm=0.319; combined=0.321; difficulty=broad; tier=L1"
+      },
+      "10.54254/3050-2187/1/2024002": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/32; bm25_norm=0.157; bge_norm=0.466; combined=0.312; difficulty=broad; tier=L1"
+      },
+      "10.32629/mef.v8i18.16927": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/32; bm25_norm=0.000; bge_norm=0.583; combined=0.291; difficulty=broad; tier=L1"
+      },
+      "10.32629/mef.v8i19.17377": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/32; bm25_norm=0.085; bge_norm=0.487; combined=0.286; difficulty=broad; tier=L1"
+      },
+      "arXiv:2207.14140v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=22/32; bm25_norm=0.421; bge_norm=0.140; combined=0.280; difficulty=broad; tier=L1"
+      },
+      "10.1007/s00182-012-0345-7": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/32; bm25_norm=0.469; bge_norm=0.074; combined=0.271; difficulty=broad; tier=L0"
+      },
+      "10.14218/mrp.2015.032": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/32; bm25_norm=0.000; bge_norm=0.470; combined=0.235; difficulty=broad; tier=L0"
+      },
+      "10.1108/jkm-05-2025-0652": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/32; bm25_norm=0.123; bge_norm=0.336; combined=0.229; difficulty=broad; tier=L0"
+      },
+      "10.65655/9ahzce09": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/32; bm25_norm=0.113; bge_norm=0.263; combined=0.188; difficulty=broad; tier=L0"
+      },
+      "10.48550/arXiv.2505.12923": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/32; bm25_norm=0.000; bge_norm=0.326; combined=0.163; difficulty=broad; tier=L0"
+      },
+      "10.48550/arXiv.2503.17688": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/32; bm25_norm=0.000; bge_norm=0.324; combined=0.162; difficulty=broad; tier=L0"
+      },
+      "10.48550/arXiv.2508.13960": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/32; bm25_norm=0.000; bge_norm=0.261; combined=0.130; difficulty=broad; tier=L0"
+      },
+      "10.1289/ehp.1204c5": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/32; bm25_norm=0.000; bge_norm=0.243; combined=0.121; difficulty=broad; tier=L0"
+      }
+    },
+    "q039": {
+      "10.14218/mrp.2021.020": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/10; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=rare_terms; tier=L2"
+      },
+      "10.32629/er.v2i7.1908": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/10; bm25_norm=0.500; bge_norm=0.821; combined=0.661; difficulty=rare_terms; tier=L2"
+      },
+      "10.61362/evfa3227": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/10; bm25_norm=0.500; bge_norm=0.739; combined=0.619; difficulty=rare_terms; tier=L2"
+      },
+      "10.58911/bdic.s002.v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=4/10; bm25_norm=0.500; bge_norm=0.559; combined=0.529; difficulty=rare_terms; tier=L1"
+      },
+      "10.69979/3029-2700.25.05.091": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=5/10; bm25_norm=0.500; bge_norm=0.518; combined=0.509; difficulty=rare_terms; tier=L1"
+      },
+      "10.70693/rwsk.v2i1.176": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/10; bm25_norm=0.500; bge_norm=0.489; combined=0.494; difficulty=rare_terms; tier=L1"
+      },
+      "10.5840/wcp22200816874": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/10; bm25_norm=0.500; bge_norm=0.381; combined=0.440; difficulty=rare_terms; tier=L1"
+      },
+      "10.64216/3080-1486.26.03.076": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/10; bm25_norm=0.500; bge_norm=0.324; combined=0.412; difficulty=rare_terms; tier=L1"
+      },
+      "10.32629/er.v2i9.2044": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=9/10; bm25_norm=0.500; bge_norm=0.234; combined=0.367; difficulty=rare_terms; tier=L0"
+      },
+      "10.63887/fss.2025.1.5.36": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=10/10; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q040": {
+      "10.1016/j.healthpol.2024.105076": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=0.689; bge_norm=0.986; combined=0.837; difficulty=broad; tier=L2"
+      },
+      "10.5353/th_b5320304": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.653; bge_norm=0.992; combined=0.822; difficulty=broad; tier=L2"
+      },
+      "10.1016/j.healthpol.2012.05.011": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.625; bge_norm=1.000; combined=0.813; difficulty=broad; tier=L2"
+      },
+      "10.2174/0115734013391479250811112757": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.670; bge_norm=0.902; combined=0.786; difficulty=broad; tier=L2"
+      },
+      "10.1016/j.orcp.2011.08.108": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.700; bge_norm=0.810; combined=0.755; difficulty=broad; tier=L2"
+      },
+      "10.1542/peds.2012-1628d": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.678; bge_norm=0.819; combined=0.749; difficulty=broad; tier=L2"
+      },
+      "10.1080/10410236.2024.2440534": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.608; bge_norm=0.820; combined=0.714; difficulty=broad; tier=L2"
+      },
+      "10.1186/s12889-023-15828-z": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.538; bge_norm=0.802; combined=0.670; difficulty=broad; tier=L1"
+      },
+      "10.31525/ct1-nct04025060": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.473; bge_norm=0.788; combined=0.631; difficulty=broad; tier=L1"
+      },
+      "10.1016/j.orcp.2010.09.118": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.473; bge_norm=0.766; combined=0.620; difficulty=broad; tier=L1"
+      },
+      "arXiv:2404.09960v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.216; bge_norm=0.568; combined=0.392; difficulty=broad; tier=L1"
+      },
+      "arXiv:2006.15285v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.310; bge_norm=0.424; combined=0.367; difficulty=broad; tier=L1"
+      },
+      "10.1515/fhep-2017-0031": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.286; bge_norm=0.394; combined=0.340; difficulty=broad; tier=L1"
+      },
+      "10.1088/1475-7516/2021/01/058": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.498; bge_norm=0.103; combined=0.300; difficulty=broad; tier=L0"
+      },
+      "arXiv:2411.18628v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.000; bge_norm=0.474; combined=0.237; difficulty=broad; tier=L0"
+      },
+      "10.1080/23288604.2024.2387138": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.389; bge_norm=0.027; combined=0.208; difficulty=broad; tier=L0"
+      },
+      "arXiv:1710.07763v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.155; bge_norm=0.179; combined=0.167; difficulty=broad; tier=L0"
+      },
+      "arXiv:2307.11211v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.231; bge_norm=0.062; combined=0.147; difficulty=broad; tier=L0"
+      },
+      "arXiv:2606.20868v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.165; combined=0.083; difficulty=broad; tier=L0"
+      },
+      "arXiv:1702.02461v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=broad; tier=L0"
+      }
+    },
+    "q041": {
+      "10.5582/irdr.2017.01057": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/39; bm25_norm=0.753; bge_norm=0.928; combined=0.840; difficulty=rare_terms; tier=L2"
+      },
+      "10.1016/j.jhep.2011.11.007": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=4/39; bm25_norm=0.664; bge_norm=0.836; combined=0.750; difficulty=rare_terms; tier=L1"
+      },
+      "10.1016/S0140-6736(07)60196-2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=5/39; bm25_norm=0.263; bge_norm=1.000; combined=0.631; difficulty=rare_terms; tier=L1"
+      },
+      "10.1002/cld.986": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=10/39; bm25_norm=0.202; bge_norm=0.784; combined=0.493; difficulty=rare_terms; tier=L0"
+      },
+      "10.1016/0002-9343(56)90066-3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=11/39; bm25_norm=0.223; bge_norm=0.748; combined=0.486; difficulty=rare_terms; tier=L0"
+      },
+      "10.36922/gpd.7503": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=13/39; bm25_norm=0.185; bge_norm=0.700; combined=0.442; difficulty=rare_terms; tier=L0"
+      },
+      "10.1016/j.nbd.2026.107495": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/39; bm25_norm=0.171; bge_norm=0.652; combined=0.411; difficulty=rare_terms; tier=L0"
+      },
+      "10.1038/s41419-021-03397-1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/39; bm25_norm=0.164; bge_norm=0.630; combined=0.397; difficulty=rare_terms; tier=L0"
+      },
+      "10.1016/j.nbd.2024.106692": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/39; bm25_norm=0.185; bge_norm=0.600; combined=0.393; difficulty=rare_terms; tier=L0"
+      },
+      "10.2147/NDT.S443278": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/39; bm25_norm=0.158; bge_norm=0.582; combined=0.370; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2808.25.05.031": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/39; bm25_norm=0.000; bge_norm=0.689; combined=0.344; difficulty=rare_terms; tier=L0"
+      },
+      "10.37155/2717-5650-0302-29": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/39; bm25_norm=0.000; bge_norm=0.619; combined=0.309; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2306.12520v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=22/39; bm25_norm=0.399; bge_norm=0.173; combined=0.286; difficulty=rare_terms; tier=L0"
+      },
+      "10.61654/zzjkwz0163": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/39; bm25_norm=0.000; bge_norm=0.514; combined=0.257; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2203.09096v5": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/39; bm25_norm=0.399; bge_norm=0.099; combined=0.249; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2700.24.6.040": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/39; bm25_norm=0.000; bge_norm=0.479; combined=0.240; difficulty=rare_terms; tier=L0"
+      },
+      "10.64216/3104-9656.25.02.027": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/39; bm25_norm=0.000; bge_norm=0.468; combined=0.234; difficulty=rare_terms; tier=L0"
+      },
+      "10.63887/mhr.2025.1.3.5": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/39; bm25_norm=0.000; bge_norm=0.457; combined=0.229; difficulty=rare_terms; tier=L0"
+      },
+      "10.61654/zzyskx0504": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/39; bm25_norm=0.000; bge_norm=0.433; combined=0.217; difficulty=rare_terms; tier=L0"
+      },
+      "10.63779/qrkd5560": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/39; bm25_norm=0.000; bge_norm=0.418; combined=0.209; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2309.14256v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/39; bm25_norm=0.391; bge_norm=0.024; combined=0.207; difficulty=rare_terms; tier=L0"
+      },
+      "10.7815/ijorcs.26.2012.051": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=31/39; bm25_norm=0.066; bge_norm=0.272; combined=0.169; difficulty=rare_terms; tier=L0"
+      },
+      "10.63779/tkqu8560": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=32/39; bm25_norm=0.000; bge_norm=0.289; combined=0.145; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/ns.2023.122031": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=33/39; bm25_norm=0.057; bge_norm=0.188; combined=0.123; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1611.00953v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=34/39; bm25_norm=0.070; bge_norm=0.140; combined=0.105; difficulty=rare_terms; tier=L0"
+      },
+      "10.1177/13872877251415019": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=35/39; bm25_norm=0.057; bge_norm=0.117; combined=0.087; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2509.21735v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=36/39; bm25_norm=0.049; bge_norm=0.083; combined=0.066; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2506.00662v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=37/39; bm25_norm=0.051; bge_norm=0.053; combined=0.052; difficulty=rare_terms; tier=L0"
+      },
+      "10.3389/fnins.2019.00509": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=38/39; bm25_norm=0.053; bge_norm=0.039; combined=0.046; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2402.12205v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=39/39; bm25_norm=0.041; bge_norm=0.000; combined=0.021; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q042": {
+      "10.12677/tcm.2023.1210436": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.483; bge_norm=0.910; combined=0.697; difficulty=rare_terms; tier=L1"
+      },
+      "10.12677/acm.2025.1541062": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.408; bge_norm=0.814; combined=0.611; difficulty=rare_terms; tier=L1"
+      },
+      "10.12677/acm.2021.114277": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.547; bge_norm=0.603; combined=0.575; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/acm.2024.142519": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.319; bge_norm=0.799; combined=0.559; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/acm.2025.153801": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.331; bge_norm=0.579; combined=0.455; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/jcpm.2024.33099": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.022; bge_norm=0.748; combined=0.385; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/acm.2023.133606": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.032; bge_norm=0.666; combined=0.349; difficulty=rare_terms; tier=L0"
+      },
+      "10.64658/gscr.20251226.f01e2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.000; bge_norm=0.613; combined=0.306; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/acm.2021.119591": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.026; bge_norm=0.512; combined=0.269; difficulty=rare_terms; tier=L0"
+      },
+      "10.1103/ps3r-wf84": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.038; bge_norm=0.353; combined=0.196; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1810.10902v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.041; bge_norm=0.337; combined=0.189; difficulty=rare_terms; tier=L0"
+      },
+      "10.1109/ISIT57864.2024.10619479": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.032; bge_norm=0.268; combined=0.150; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1501.04732v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.000; bge_norm=0.273; combined=0.137; difficulty=rare_terms; tier=L0"
+      },
+      "10.1088/1367-2630/ad9828": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.034; bge_norm=0.203; combined=0.118; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1505.07390v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.036; bge_norm=0.191; combined=0.113; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1903.07464v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.034; bge_norm=0.182; combined=0.108; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2205.02341v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.036; bge_norm=0.123; combined=0.079; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1306.0498v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.030; bge_norm=0.109; combined=0.070; difficulty=rare_terms; tier=L0"
+      },
+      "10.1109/JSAC.2020.2968997.": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.036; bge_norm=0.060; combined=0.048; difficulty=rare_terms; tier=L0"
+      },
+      "10.35633/inmateh-71-38": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q043": {
+      "10.12677/acm.2023.13112388": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=4/28; bm25_norm=0.788; bge_norm=0.799; combined=0.793; difficulty=rare_terms; tier=L1"
+      },
+      "arXiv:2305.10216v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=9/28; bm25_norm=0.791; bge_norm=0.544; combined=0.668; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/hjbm.2025.155094": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=11/28; bm25_norm=0.193; bge_norm=0.920; combined=0.557; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2306.01818v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=12/28; bm25_norm=0.203; bge_norm=0.643; combined=0.423; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2308.02029v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=13/28; bm25_norm=0.150; bge_norm=0.646; combined=0.398; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2004.00480v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/28; bm25_norm=0.150; bge_norm=0.581; combined=0.365; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2504.10338v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/28; bm25_norm=0.162; bge_norm=0.563; combined=0.363; difficulty=rare_terms; tier=L0"
+      },
+      "10.1088/0953-8984/16/7/009": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/28; bm25_norm=0.438; bge_norm=0.073; combined=0.256; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/zb1994-24-2-171": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/28; bm25_norm=0.000; bge_norm=0.511; combined=0.256; difficulty=rare_terms; tier=L0"
+      },
+      "10.1109/JQE.2017.2788415": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/28; bm25_norm=0.380; bge_norm=0.124; combined=0.252; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:0512014v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/28; bm25_norm=0.380; bge_norm=0.092; combined=0.236; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2808.26.04.049": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/28; bm25_norm=0.000; bge_norm=0.459; combined=0.230; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2808.26.04.038": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/28; bm25_norm=0.000; bge_norm=0.437; combined=0.218; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/csb2002-47-19-1494": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=22/28; bm25_norm=0.000; bge_norm=0.433; combined=0.216; difficulty=rare_terms; tier=L0"
+      },
+      "10.1360/csb1993-38-8-698": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/28; bm25_norm=0.000; bge_norm=0.373; combined=0.187; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2808.24.11.041": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/28; bm25_norm=0.000; bge_norm=0.361; combined=0.180; difficulty=rare_terms; tier=L0"
+      },
+      "10.36012/pmr.v2i2.1812": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/28; bm25_norm=0.000; bge_norm=0.303; combined=0.152; difficulty=rare_terms; tier=L0"
+      },
+      "10.61654/zzyskx0217": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/28; bm25_norm=0.000; bge_norm=0.285; combined=0.143; difficulty=rare_terms; tier=L0"
+      },
+      "10.1051/0004-6361:20021074": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/28; bm25_norm=0.000; bge_norm=0.162; combined=0.081; difficulty=rare_terms; tier=L0"
+      },
+      "10.1051/0004-6361:20034203": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/28; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q044": {
+      "arXiv:2305.03642v3": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/20; bm25_norm=1.000; bge_norm=0.712; combined=0.856; difficulty=rare_terms; tier=L2"
+      },
+      "10.1021/acs.jpcb.7b11928": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/20; bm25_norm=0.583; bge_norm=1.000; combined=0.792; difficulty=rare_terms; tier=L2"
+      },
+      "10.12677/acm.2024.1441052": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/20; bm25_norm=0.613; bge_norm=0.752; combined=0.683; difficulty=rare_terms; tier=L2"
+      },
+      "arXiv:2602.16033v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=4/20; bm25_norm=0.864; bge_norm=0.464; combined=0.664; difficulty=rare_terms; tier=L1"
+      },
+      "arXiv:2404.14353v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=5/20; bm25_norm=0.530; bge_norm=0.737; combined=0.634; difficulty=rare_terms; tier=L1"
+      },
+      "10.1016/j.nutos.2024.09.013": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/20; bm25_norm=0.577; bge_norm=0.543; combined=0.560; difficulty=rare_terms; tier=L1"
+      },
+      "arXiv:2312.11226v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/20; bm25_norm=0.427; bge_norm=0.581; combined=0.504; difficulty=rare_terms; tier=L1"
+      },
+      "arXiv:2410.17245v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/20; bm25_norm=0.408; bge_norm=0.278; combined=0.343; difficulty=rare_terms; tier=L1"
+      },
+      "arXiv:2603.02204v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=9/20; bm25_norm=0.350; bge_norm=0.259; combined=0.304; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:2111.05070v4": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=10/20; bm25_norm=0.386; bge_norm=0.108; combined=0.247; difficulty=rare_terms; tier=L0"
+      },
+      "10.69979/3029-2808.24.6.045": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=11/20; bm25_norm=0.000; bge_norm=0.327; combined=0.164; difficulty=rare_terms; tier=L0"
+      },
+      "10.37155/2717-5693-0401-6": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=12/20; bm25_norm=0.000; bge_norm=0.267; combined=0.134; difficulty=rare_terms; tier=L0"
+      },
+      "10.26549/jxffcxysj.v2i8.2813": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=13/20; bm25_norm=0.000; bge_norm=0.265; combined=0.133; difficulty=rare_terms; tier=L0"
+      },
+      "10.12677/ap.2019.92043": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/20; bm25_norm=0.000; bge_norm=0.249; combined=0.125; difficulty=rare_terms; tier=L0"
+      },
+      "10.18686/bd.v2i6.1419": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/20; bm25_norm=0.000; bge_norm=0.172; combined=0.086; difficulty=rare_terms; tier=L0"
+      },
+      "10.37155/2661-4766-0705-27": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/20; bm25_norm=0.000; bge_norm=0.166; combined=0.083; difficulty=rare_terms; tier=L0"
+      },
+      "10.67328/bt0566": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/20; bm25_norm=0.000; bge_norm=0.142; combined=0.071; difficulty=rare_terms; tier=L0"
+      },
+      "10.61369/edtr.7844": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/20; bm25_norm=0.000; bge_norm=0.121; combined=0.060; difficulty=rare_terms; tier=L0"
+      },
+      "10.52288/jbi.26636204.2019.07.02": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/20; bm25_norm=0.000; bge_norm=0.048; combined=0.024; difficulty=rare_terms; tier=L0"
+      },
+      "arXiv:1804.01708v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/20; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=rare_terms; tier=L0"
+      }
+    },
+    "q045": {
+      "10.64628/ab.snkyrjt56": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/21; bm25_norm=1.000; bge_norm=1.000; combined=1.000; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2305.11425v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/21; bm25_norm=0.685; bge_norm=0.984; combined=0.835; difficulty=methodology; tier=L2"
+      },
+      "10.12677/acm.2026.162588": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/21; bm25_norm=0.415; bge_norm=0.959; combined=0.687; difficulty=methodology; tier=L2"
+      },
+      "10.12677/hjfns.2019.82015": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/21; bm25_norm=0.491; bge_norm=0.407; combined=0.449; difficulty=methodology; tier=L2"
+      },
+      "10.37155/2717-5669-0503-54": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/21; bm25_norm=0.000; bge_norm=0.670; combined=0.335; difficulty=methodology; tier=L2"
+      },
+      "arXiv:2112.09839v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/21; bm25_norm=0.100; bge_norm=0.547; combined=0.324; difficulty=methodology; tier=L2"
+      },
+      "10.4018/IJGBL.2021040104": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/21; bm25_norm=0.100; bge_norm=0.546; combined=0.323; difficulty=methodology; tier=L1"
+      },
+      "arXiv:1705.07632v3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/21; bm25_norm=0.100; bge_norm=0.448; combined=0.274; difficulty=methodology; tier=L1"
+      },
+      "arXiv:1706.04062v4": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/21; bm25_norm=0.100; bge_norm=0.447; combined=0.274; difficulty=methodology; tier=L1"
+      },
+      "10.18402/resci.2016.04.20": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=10/21; bm25_norm=0.000; bge_norm=0.530; combined=0.265; difficulty=methodology; tier=L1"
+      },
+      "arXiv:1502.03302v2": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/21; bm25_norm=0.090; bge_norm=0.403; combined=0.246; difficulty=methodology; tier=L1"
+      },
+      "arXiv:2306.09527v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/21; bm25_norm=0.105; bge_norm=0.344; combined=0.225; difficulty=methodology; tier=L1"
+      },
+      "arXiv:2412.09936v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/21; bm25_norm=0.082; bge_norm=0.305; combined=0.193; difficulty=methodology; tier=L1"
+      },
+      "10.1007/s12220-019-00178-3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/21; bm25_norm=0.308; bge_norm=0.076; combined=0.192; difficulty=methodology; tier=L1"
+      },
+      "10.18686/zhfnc.v1i2.83": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/21; bm25_norm=0.000; bge_norm=0.260; combined=0.130; difficulty=methodology; tier=L0"
+      },
+      "10.64083/sse2520705": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/21; bm25_norm=0.000; bge_norm=0.187; combined=0.094; difficulty=methodology; tier=L0"
+      },
+      "10.63887/fns.2025.1.8.30": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/21; bm25_norm=0.000; bge_norm=0.149; combined=0.075; difficulty=methodology; tier=L0"
+      },
+      "10.31219/osf.io/xt8rs": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/21; bm25_norm=0.000; bge_norm=0.139; combined=0.069; difficulty=methodology; tier=L0"
+      },
+      "10.37155/2717-5669-0502-35": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/21; bm25_norm=0.000; bge_norm=0.093; combined=0.046; difficulty=methodology; tier=L0"
+      },
+      "10.1140/epjb/e2007-00238-8": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=21/21; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=methodology; tier=L0"
+      }
+    },
+    "q046": {
+      "10.7210/jrsj.41.40": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/29; bm25_norm=1.000; bge_norm=1.000; combined=1.000; difficulty=technical; tier=L2"
+      },
+      "10.1080/03601277.2026.2674881": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/29; bm25_norm=0.726; bge_norm=0.673; combined=0.700; difficulty=technical; tier=L2"
+      },
+      "10.1109/RO-MAN57019.2023.10309617": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/29; bm25_norm=0.403; bge_norm=0.850; combined=0.626; difficulty=technical; tier=L2"
+      },
+      "arXiv:2007.12506v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/29; bm25_norm=0.388; bge_norm=0.630; combined=0.509; difficulty=technical; tier=L2"
+      },
+      "10.20944/preprints202505.0616.v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/29; bm25_norm=0.327; bge_norm=0.634; combined=0.481; difficulty=technical; tier=L2"
+      },
+      "10.1002/ijop.12351": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=6/29; bm25_norm=0.212; bge_norm=0.531; combined=0.371; difficulty=technical; tier=L1"
+      },
+      "10.14282/2198-0411-gcrp-3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/29; bm25_norm=0.181; bge_norm=0.491; combined=0.336; difficulty=technical; tier=L1"
+      },
+      "10.17000/kspr.20.2.201306.169": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=8/29; bm25_norm=0.249; bge_norm=0.405; combined=0.327; difficulty=technical; tier=L1"
+      },
+      "arXiv:2510.06788v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/29; bm25_norm=0.131; bge_norm=0.445; combined=0.288; difficulty=technical; tier=L1"
+      },
+      "10.4324/9780203167410-17": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=10/29; bm25_norm=0.132; bge_norm=0.441; combined=0.286; difficulty=technical; tier=L1"
+      },
+      "10.4324/9780203167410-22": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/29; bm25_norm=0.132; bge_norm=0.406; combined=0.269; difficulty=technical; tier=L1"
+      },
+      "10.1093/ssjj/6.2.199": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/29; bm25_norm=0.117; bge_norm=0.412; combined=0.265; difficulty=technical; tier=L1"
+      },
+      "10.1145/3757689": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/29; bm25_norm=0.106; bge_norm=0.417; combined=0.262; difficulty=technical; tier=L1"
+      },
+      "arXiv:1511.02429v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=14/29; bm25_norm=0.220; bge_norm=0.299; combined=0.259; difficulty=technical; tier=L0"
+      },
+      "10.1108/14636690410549534": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=15/29; bm25_norm=0.081; bge_norm=0.377; combined=0.229; difficulty=technical; tier=L0"
+      },
+      "10.1007/s10846-026-02417-6": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/29; bm25_norm=0.285; bge_norm=0.166; combined=0.226; difficulty=technical; tier=L0"
+      },
+      "10.1109/TSMCA.2011.2132707": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/29; bm25_norm=0.226; bge_norm=0.179; combined=0.203; difficulty=technical; tier=L0"
+      },
+      "arXiv:2505.03835v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/29; bm25_norm=0.117; bge_norm=0.269; combined=0.193; difficulty=technical; tier=L0"
+      },
+      "arXiv:1011.5186v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/29; bm25_norm=0.342; bge_norm=0.039; combined=0.191; difficulty=technical; tier=L0"
+      },
+      "10.1057/s41599-023-02221-9": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/29; bm25_norm=0.000; bge_norm=0.367; combined=0.183; difficulty=technical; tier=L0"
+      },
+      "10.21742/ajlpa.2017.1.2.03": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=22/29; bm25_norm=0.122; bge_norm=0.227; combined=0.174; difficulty=technical; tier=L0"
+      },
+      "arXiv:0808.0650v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/29; bm25_norm=0.000; bge_norm=0.172; combined=0.086; difficulty=technical; tier=L0"
+      },
+      "10.1098/rsos.200411": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/29; bm25_norm=0.000; bge_norm=0.167; combined=0.084; difficulty=technical; tier=L0"
+      },
+      "10.31203/aepa.2017.14.4.001": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/29; bm25_norm=0.050; bge_norm=0.115; combined=0.083; difficulty=technical; tier=L0"
+      },
+      "10.4236/jbbs.2020.101004": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/29; bm25_norm=0.000; bge_norm=0.139; combined=0.070; difficulty=technical; tier=L0"
+      },
+      "10.26092/elib/4762": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/29; bm25_norm=0.000; bge_norm=0.122; combined=0.061; difficulty=technical; tier=L0"
+      },
+      "10.64828/conf-111-2026-2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/29; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=technical; tier=L0"
+      }
+    },
+    "q047": {
+      "10.69979/3029-2735.25.11.068": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/20; bm25_norm=0.500; bge_norm=1.000; combined=0.750; difficulty=methodology; tier=L2"
+      },
+      "10.4016/35543.01": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/20; bm25_norm=0.500; bge_norm=0.942; combined=0.721; difficulty=methodology; tier=L2"
+      },
+      "10.1360/zb2001-31-3-240": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=7/20; bm25_norm=0.500; bge_norm=0.865; combined=0.682; difficulty=methodology; tier=L1"
+      },
+      "10.64216/3080-1516.26.04.076": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=9/20; bm25_norm=0.500; bge_norm=0.820; combined=0.660; difficulty=methodology; tier=L1"
+      },
+      "10.63887/fss.2025.1.6.75": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/20; bm25_norm=0.500; bge_norm=0.738; combined=0.619; difficulty=methodology; tier=L1"
+      },
+      "10.32629/eces.v8i1.19634": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=16/20; bm25_norm=0.500; bge_norm=0.585; combined=0.542; difficulty=methodology; tier=L0"
+      },
+      "10.63887/ssrp.2025.1.4.18": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=17/20; bm25_norm=0.500; bge_norm=0.566; combined=0.533; difficulty=methodology; tier=L0"
+      },
+      "10.33142/9798963341278": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=18/20; bm25_norm=0.500; bge_norm=0.536; combined=0.518; difficulty=methodology; tier=L0"
+      },
+      "10.12677/isl.2026.102051": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=19/20; bm25_norm=0.500; bge_norm=0.415; combined=0.458; difficulty=methodology; tier=L0"
+      },
+      "10.12677/ap.2024.142115": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=20/20; bm25_norm=0.500; bge_norm=0.000; combined=0.250; difficulty=methodology; tier=L0"
+      }
+    },
+    "q048": {
+      "arXiv:2410.09948v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/20; bm25_norm=1.000; bge_norm=0.499; combined=0.749; difficulty=broad; tier=L2"
+      },
+      "arXiv:2601.16592v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/20; bm25_norm=0.693; bge_norm=0.368; combined=0.530; difficulty=broad; tier=L2"
+      },
+      "10.61654/zzgjsc0408": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/20; bm25_norm=0.000; bge_norm=1.000; combined=0.500; difficulty=broad; tier=L2"
+      },
+      "arXiv:1711.02958v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/20; bm25_norm=0.637; bge_norm=0.317; combined=0.477; difficulty=broad; tier=L2"
+      },
+      "10.4992/pacjpa.88.0_is-022": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/20; bm25_norm=0.000; bge_norm=0.945; combined=0.472; difficulty=broad; tier=L2"
+      },
+      "10.16874/jslckc.2019..52.006": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/20; bm25_norm=0.000; bge_norm=0.916; combined=0.458; difficulty=broad; tier=L2"
+      },
+      "10.3861/kenko.85.4_i": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/20; bm25_norm=0.000; bge_norm=0.906; combined=0.453; difficulty=broad; tier=L2"
+      },
+      "arXiv:2504.02714v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/20; bm25_norm=0.653; bge_norm=0.222; combined=0.437; difficulty=broad; tier=L2"
+      },
+      "10.3866/pku.dxhx20150632": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/20; bm25_norm=0.000; bge_norm=0.841; combined=0.420; difficulty=broad; tier=L2"
+      },
+      "10.64216/3104-9672.25.04.016": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/20; bm25_norm=0.000; bge_norm=0.816; combined=0.408; difficulty=broad; tier=L2"
+      },
+      "10.1016/j.physletb.2011.05.010": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/20; bm25_norm=0.595; bge_norm=0.215; combined=0.405; difficulty=broad; tier=L1"
+      },
+      "10.4992/pacjpa.89.0_26": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/20; bm25_norm=0.000; bge_norm=0.786; combined=0.393; difficulty=broad; tier=L1"
+      },
+      "10.1111/bjd.20458": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/20; bm25_norm=0.000; bge_norm=0.764; combined=0.382; difficulty=broad; tier=L1"
+      },
+      "10.1103/PhysRevC.107.L041301": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/20; bm25_norm=0.741; bge_norm=0.000; combined=0.370; difficulty=broad; tier=L1"
+      },
+      "10.64216/3080-1486.25.11.018": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/20; bm25_norm=0.000; bge_norm=0.732; combined=0.366; difficulty=broad; tier=L1"
+      },
+      "10.18356/9789211545265c056": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/20; bm25_norm=0.000; bge_norm=0.697; combined=0.349; difficulty=broad; tier=L1"
+      },
+      "arXiv:2102.10886v4": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/20; bm25_norm=0.526; bge_norm=0.125; combined=0.326; difficulty=broad; tier=L1"
+      },
+      "arXiv:9806002v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/20; bm25_norm=0.000; bge_norm=0.157; combined=0.078; difficulty=broad; tier=L1"
+      },
+      "10.1109/IROS60139.2025.11247141": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/20; bm25_norm=0.000; bge_norm=0.029; combined=0.015; difficulty=broad; tier=L1"
+      },
+      "10.1016/j.nimb.2023.05.018": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/20; bm25_norm=0.000; bge_norm=0.021; combined=0.010; difficulty=broad; tier=L1"
+      }
+    },
+    "q049": {
+      "10.2139/ssrn.1655108": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=1/30; bm25_norm=1.000; bge_norm=1.000; combined=1.000; difficulty=broad; tier=L2"
+      },
+      "10.2139/ssrn.1656793": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=1.000; bge_norm=1.000; combined=1.000; difficulty=broad; tier=L2"
+      },
+      "10.1596/1813-9450-2102": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.840; bge_norm=0.832; combined=0.836; difficulty=broad; tier=L2"
+      },
+      "10.1787/c2c1d276-en": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.455; bge_norm=0.748; combined=0.602; difficulty=broad; tier=L2"
+      },
+      "arXiv:2505.08083v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=5/30; bm25_norm=0.356; bge_norm=0.767; combined=0.561; difficulty=broad; tier=L2"
+      },
+      "arXiv:2410.03017v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=6/30; bm25_norm=0.655; bge_norm=0.456; combined=0.555; difficulty=broad; tier=L2"
+      },
+      "10.2139/ssrn.5518178": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.610; bge_norm=0.494; combined=0.552; difficulty=broad; tier=L2"
+      },
+      "arXiv:2104.01266v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.427; bge_norm=0.625; combined=0.526; difficulty=broad; tier=L2"
+      },
+      "arXiv:2009.11100v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.371; bge_norm=0.659; combined=0.515; difficulty=broad; tier=L2"
+      },
+      "10.2139/ssrn.5327285": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.554; bge_norm=0.411; combined=0.483; difficulty=broad; tier=L2"
+      },
+      "arXiv:2502.16613v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.260; bge_norm=0.697; combined=0.478; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.5303111": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.530; bge_norm=0.427; combined=0.478; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.6348618": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=13/30; bm25_norm=0.411; bge_norm=0.530; combined=0.470; difficulty=broad; tier=L1"
+      },
+      "arXiv:2510.19196v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.371; bge_norm=0.561; combined=0.466; difficulty=broad; tier=L1"
+      },
+      "10.1016/j.caeai.2025.100402": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=15/30; bm25_norm=0.250; bge_norm=0.533; combined=0.392; difficulty=broad; tier=L1"
+      },
+      "10.2139/ssrn.6667599": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=16/30; bm25_norm=0.411; bge_norm=0.343; combined=0.377; difficulty=broad; tier=L1"
+      },
+      "10.62486/latia2025249": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.095; bge_norm=0.629; combined=0.362; difficulty=broad; tier=L1"
+      },
+      "10.58429/pgjsrt.v2n3a152": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.099; bge_norm=0.523; combined=0.311; difficulty=broad; tier=L1"
+      },
+      "arXiv:1603.06024v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.231; bge_norm=0.312; combined=0.271; difficulty=broad; tier=L1"
+      },
+      "10.61093/bel.8(2).107-127.2024": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=20/30; bm25_norm=0.079; bge_norm=0.438; combined=0.259; difficulty=broad; tier=L1"
+      },
+      "10.1007/s10639-025-13585-7": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=21/30; bm25_norm=0.000; bge_norm=0.515; combined=0.257; difficulty=broad; tier=L1"
+      },
+      "10.3390/systems13080664": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=22/30; bm25_norm=0.000; bge_norm=0.510; combined=0.255; difficulty=broad; tier=L1"
+      },
+      "10.1080/0144929x.2025.2500451": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=23/30; bm25_norm=0.095; bge_norm=0.356; combined=0.226; difficulty=broad; tier=L0"
+      },
+      "10.1145/3375627.3375804": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.104; bge_norm=0.339; combined=0.222; difficulty=broad; tier=L0"
+      },
+      "10.1093/pnasnexus/pgae191": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.000; bge_norm=0.426; combined=0.213; difficulty=broad; tier=L0"
+      },
+      "arXiv:2603.28944v2": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.114; bge_norm=0.302; combined=0.208; difficulty=broad; tier=L0"
+      },
+      "arXiv:2601.16513v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.114; bge_norm=0.234; combined=0.174; difficulty=broad; tier=L0"
+      },
+      "10.9734/ajarr/2024/v18i1596": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.099; bge_norm=0.203; combined=0.151; difficulty=broad; tier=L0"
+      },
+      "10.1787/34a2c306-en": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.218; combined=0.109; difficulty=broad; tier=L0"
+      },
+      "arXiv:2501.02842v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.000; combined=0.000; difficulty=broad; tier=L0"
+      }
+    },
+    "q050": {
+      "10.11151/eds1951.21.177": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=2/30; bm25_norm=0.906; bge_norm=0.904; combined=0.905; difficulty=broad; tier=L2"
+      },
+      "10.12677/ass.2016.52030": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=3/30; bm25_norm=0.771; bge_norm=0.916; combined=0.843; difficulty=broad; tier=L2"
+      },
+      "arXiv:2002.08901v1": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=4/30; bm25_norm=0.644; bge_norm=1.000; combined=0.822; difficulty=broad; tier=L2"
+      },
+      "10.1016/j.inffus.2022.11.031": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=7/30; bm25_norm=0.735; bge_norm=0.616; combined=0.676; difficulty=broad; tier=L2"
+      },
+      "arXiv:2307.10513v2": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=8/30; bm25_norm=0.317; bge_norm=0.933; combined=0.625; difficulty=broad; tier=L2"
+      },
+      "10.70693/rwsk.v2i4.400": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=9/30; bm25_norm=0.669; bge_norm=0.579; combined=0.624; difficulty=broad; tier=L2"
+      },
+      "10.70693/rwsk.v2i1.174": {
+        "label": 2,
+        "reason": "auto: A2 hybrid; rank=10/30; bm25_norm=0.629; bge_norm=0.607; combined=0.618; difficulty=broad; tier=L2"
+      },
+      "arXiv:2507.19218v3": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=11/30; bm25_norm=0.702; bge_norm=0.481; combined=0.591; difficulty=broad; tier=L1"
+      },
+      "10.3389/fpsyt.2022.810057": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=12/30; bm25_norm=0.314; bge_norm=0.786; combined=0.550; difficulty=broad; tier=L1"
+      },
+      "10.12677/wls.2022.104085": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=14/30; bm25_norm=0.447; bge_norm=0.620; combined=0.534; difficulty=broad; tier=L1"
+      },
+      "10.70693/rwsk.v1i7.1188": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=17/30; bm25_norm=0.468; bge_norm=0.461; combined=0.464; difficulty=broad; tier=L1"
+      },
+      "10.65285/rwyshkx.v2i2.023": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=18/30; bm25_norm=0.000; bge_norm=0.859; combined=0.430; difficulty=broad; tier=L1"
+      },
+      "arXiv:2008.07738v1": {
+        "label": 1,
+        "reason": "auto: A2 hybrid; rank=19/30; bm25_norm=0.302; bge_norm=0.533; combined=0.417; difficulty=broad; tier=L1"
+      },
+      "10.18356/d97f80aa-zh": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=24/30; bm25_norm=0.000; bge_norm=0.604; combined=0.302; difficulty=broad; tier=L0"
+      },
+      "10.2307/jj.8595646.130": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=25/30; bm25_norm=0.000; bge_norm=0.533; combined=0.266; difficulty=broad; tier=L0"
+      },
+      "arXiv:2110.10780v3": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=26/30; bm25_norm=0.000; bge_norm=0.429; combined=0.214; difficulty=broad; tier=L0"
+      },
+      "arXiv:2003.05870v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=27/30; bm25_norm=0.287; bge_norm=0.000; combined=0.144; difficulty=broad; tier=L0"
+      },
+      "arXiv:2311.11482v9": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=28/30; bm25_norm=0.000; bge_norm=0.194; combined=0.097; difficulty=broad; tier=L0"
+      },
+      "arXiv:2009.01672v1": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=29/30; bm25_norm=0.000; bge_norm=0.126; combined=0.063; difficulty=broad; tier=L0"
+      },
+      "10.52926/jpmjpr2461": {
+        "label": 0,
+        "reason": "auto: A2 hybrid; rank=30/30; bm25_norm=0.000; bge_norm=0.083; combined=0.042; difficulty=broad; tier=L0"
+      }
+    }
+  },
+  "label_source": {
+    "q001-q025": "v3.9.0 era USER hand-labeled (real ground truth, ~741 pairs)",
+    "q026-q050": "v3.9.7.3 AUTO-labeled (A2 hybrid, ~600 pairs; NOT expert-validated)"
+  }
+}
