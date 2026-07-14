@@ -1,0 +1,466 @@
+{
+  "query_id": "q037",
+  "query": "economic decline induced psychological change and behavioral shift comparative Japan lost decades and Mexico crisis social trust",
+  "generated_at": "2026-07-14T23:31:39",
+  "config": "v3.9.0-baseline-n50",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1086/300123",
+      "title": "The Global Traffic in Human Organs",
+      "abstract": "",
+      "year": 2000,
+      "venue": "Current Anthropology",
+      "citation_count": 715,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.3390/smartcities5030040",
+      "title": "The Metaverse as a Virtual Form of Smart Cities: Opportunities and Challenges for Environmental, Economic, and Social Sustainability in Urban Futures",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Smart Cities",
+      "citation_count": 646,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.1177/1940161217740695",
+      "title": "Caught in the Nexus: A Comparative and Longitudinal Analysis of Public Trust in the Press",
+      "abstract": "",
+      "year": 2017,
+      "venue": "The International Journal of Press/Politics",
+      "citation_count": 467,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "Public Accountability: Performance Measurement, The Extended State, And The Search For Trust",
+      "abstract": "",
+      "year": 2011,
+      "venue": "University of New Hampshire Scholars Repository (University of New Hampshire at Manchester)",
+      "citation_count": 81,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 5,
+      "doi": "10.5089/9798400203640.001",
+      "title": "Tackling Legal Impediments to Women’s Economic Empowerment",
+      "abstract": "",
+      "year": 2022,
+      "venue": "IMF Working Paper",
+      "citation_count": 61,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 6,
+      "doi": "",
+      "title": "Integrative Assessment of Mitigation, Impacts, and Adaptation to Climate Change",
+      "abstract": "",
+      "year": 1994,
+      "venue": "IIASA PURE (International Institute of Applied Systems Analysis)",
+      "citation_count": 61,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 7,
+      "doi": "",
+      "title": "Social-Republican Property",
+      "abstract": "",
+      "year": 1992,
+      "venue": "eYLS (Yale Law School)",
+      "citation_count": 50,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1016/0147-1767(83)90042-1",
+      "title": "Value change in Japan",
+      "abstract": "",
+      "year": 1983,
+      "venue": "International Journal of Intercultural Relations",
+      "citation_count": 32,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 9,
+      "doi": "10.5089/9781513567723.001",
+      "title": "Social Repercussions of Pandemics",
+      "abstract": "",
+      "year": 2021,
+      "venue": "IMF Working Paper",
+      "citation_count": 30,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1111/puar.13607",
+      "title": "Social inclusion, social exclusion, and the role of leaders in avoiding—or promoting—societal collapse",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Public Administration Review",
+      "citation_count": 26,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 11,
+      "doi": "10.4324/9781003415510-3",
+      "title": "Lost Decades",
+      "abstract": "",
+      "year": 2023,
+      "venue": "The Crisis in Pro Baseball and Japan’s Lost Decade",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 12,
+      "doi": "10.31979/etd.uddu-u757",
+      "title": "Lost Decades of Japan",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dissertation"
+    },
+    {
+      "rank": 13,
+      "doi": "10.2307/j.ctv301gpm.7",
+      "title": "Negotiating the Economic Miracle:",
+      "abstract": "",
+      "year": null,
+      "venue": "In Gold We Trust",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 14,
+      "doi": "10.2307/j.ctv301gpm.12",
+      "title": "Between Development and Decline:",
+      "abstract": "",
+      "year": null,
+      "venue": "In Gold We Trust",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 15,
+      "doi": "10.1515/9780691187365-005",
+      "title": "CHAPTER 2. Negotiating the Economic Miracle: Valenza Po's Jewelry Industry in the Decades after World War II",
+      "abstract": "",
+      "year": 2007,
+      "venue": "In Gold We Trust",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 16,
+      "doi": "10.2307/j.ctt9qh7sf.12",
+      "title": "TARGETED ASSISTANCE:",
+      "abstract": "",
+      "year": null,
+      "venue": "Workers and Welfare",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 17,
+      "doi": "10.1057/9781137478757.0009",
+      "title": "Long Waves of Prosperity and Decline",
+      "abstract": "",
+      "year": null,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 18,
+      "doi": "10.1515/9780691187365-010",
+      "title": "CHAPTER 7.  Between Development and Decline: Jewelry Work from an International Perspective",
+      "abstract": "",
+      "year": 2007,
+      "venue": "In Gold We Trust",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 19,
+      "doi": "10.2307/j.ctt9qh7sf.11",
+      "title": "PARADIGM SHIFT:",
+      "abstract": "",
+      "year": null,
+      "venue": "Workers and Welfare",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 20,
+      "doi": "10.1057/9781137478757.0007",
+      "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
+      "abstract": "",
+      "year": null,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 21,
+      "doi": "arXiv:2203.04740v1",
+      "title": "Trust levels in social networks",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 22,
+      "doi": "10.1609/icwsm.v18i1.31366",
+      "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 23,
+      "doi": "10.3390/socsci11110522",
+      "title": "The Impact of National Culture on Innovation A Comparative Analysis between Developed and Developing Nations during the Pre and Post Crisis Period 2007_2021",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 24,
+      "doi": "arXiv:2203.12318v1",
+      "title": "Trust and Reliance in XAI -- Distinguishing Between Attitudinal and Behavioral Measures",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 25,
+      "doi": "10.1109/TSMCA.2011.2132707",
+      "title": "Multidimensional Social Network in the Social Recommender System",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 26,
+      "doi": "arXiv:2203.06015v1",
+      "title": "Comparing Global Tourism Flows Measured by Official Census and Social Sensing",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 27,
+      "doi": "arXiv:2004.06774v4",
+      "title": "CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 28,
+      "doi": "arXiv:2603.09997v1",
+      "title": "Empathy Is Not What Changed: Clinical Assessment of Psychological Safety Across GPT Model Generations",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 29,
+      "doi": "arXiv:1311.4606v1",
+      "title": "A Trust Model Based Analysis of Social Networks",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 30,
+      "doi": "arXiv:2008.08370v2",
+      "title": "Coordinated Behavior on Social Media in 2019 UK General Election",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    }
+  ]
+}

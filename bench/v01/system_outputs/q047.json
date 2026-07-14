@@ -1,0 +1,316 @@
+{
+  "query_id": "q047",
+  "query": "恋爱综艺节目或者二次元擦边手机游戏 (包括男性和女性) 会促进婚恋吗？机理研究 媒体是否有效 情感分析",
+  "generated_at": "2026-07-14T23:31:39",
+  "config": "v3.9.0-baseline-n50",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 20,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.63887/fss.2025.1.6.75",
+      "title": "乙女游戏中的具身嵌入与人机情感生成机制——以“恋与深空”为例",
+      "abstract": "<jats:p>本文以“恋与深空”为例，探讨乙女游戏中如何通过具身体验构成人机的情感生成机制。从技术层面的身体嵌入（如陀螺仪、动作捕捉、触觉反馈）与叙事维度的具身化策略（如拟真表演、触觉模拟）的研究，探讨玩家在互动中获得的沉浸感与亲密真实。这样的共同机制下多感官的参与强化了玩家的代入感，也在潜移默化中重塑玩家的情感认知路径，进而揭示具身体验在乙女游戏中建构情感链接的重要作用。</jats:p>",
+      "year": null,
+      "venue": "社会科学前沿",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.12677/ap.2024.142115",
+      "title": "Does Tracing Enhance Multimedia Learning? A Meta-Analysis",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Advances in Psychology",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.12677/isl.2026.102051",
+      "title": "A Study on the Emotional Consumption of Female Groups in Love Simulation Games",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Interdisciplinary Science Letters",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 4,
+      "doi": "10.4016/35543.01",
+      "title": "国外综艺节目性感女嘉宾",
+      "abstract": "",
+      "year": 2011,
+      "venue": "SciVee",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dataset"
+    },
+    {
+      "rank": 5,
+      "doi": "10.69979/3029-2735.25.11.068",
+      "title": "乙女游戏中虚拟恋爱关系的建构研究",
+      "abstract": "",
+      "year": 2025,
+      "venue": "智慧教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 6,
+      "doi": "10.1360/zb2001-31-3-240",
+      "title": "有机磷化合物高效液相色谱保留和手性识别机理的研究",
+      "abstract": "",
+      "year": null,
+      "venue": "Science in China Series B-Chemistry (in Chinese)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 7,
+      "doi": "10.64216/3080-1516.26.04.076",
+      "title": "综合艺术课程促进流动儿童艺术与社会性发展的研究分析",
+      "abstract": "",
+      "year": 2026,
+      "venue": "当代教育与艺术",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.33142/9798963341278",
+      "title": "新媒体时代网络舆情传播机制分析与治理研究",
+      "abstract": "<jats:p>本书立足新媒体时代网络舆情的复杂生态，构建了“理论—形态—机制—治理”的完整研究框架。开篇阐释网络舆情的基础理论与核心要素，剖析新媒体环境下其独特特点。随后系统梳理网站、即时通信、移动短视频等主流传播形态。本书重点探究舆情传播的动力机制，包括路径、跨平台特性、虚拟社区扩散规律及生命周期特征，并分析突发事件、大众心理等关键诱因与生成演变逻辑。最后围绕实践应用，系统论述舆情监测预警、应对策略、引导体系构建，以及政府治理创新与AI技术应用，结合舆情图谱构建与生态治理，为新媒体时代网络舆情治理提供理论支撑与实践方案。</jats:p>",
+      "year": 2026,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "edited-book"
+    },
+    {
+      "rank": 9,
+      "doi": "10.63887/ssrp.2025.1.4.18",
+      "title": "船舶轮机管理和养护的有效措施分析",
+      "abstract": "<jats:p>船舶轮机作为船舶动力系统的核心，其管理与养护水平会直接影响船舶安全性。船舶运行环境较为复杂，在实际运转过程中，轮机正常运行是一项基础性工作。针对于船舶轮机管理与养护工作来讲，有效开展这项工作可以提高船舶设备运行效率，进而为相关企业带来更多经济效益。基于此，本文主要分析船舶轮机管理和养护的有效措施，希望可以提升航运企业综合竞争力。</jats:p>",
+      "year": null,
+      "venue": "社会科学研究与实践",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 10,
+      "doi": "10.32629/eces.v8i1.19634",
+      "title": "以角色游戏为载体促进幼儿社会性发展的实践研究",
+      "abstract": "<jats:p>在游戏本位学习已成为国际学前教育共识的背景下,角色游戏作为幼儿最喜爱的活动形式之一,其蕴含的社会性教育价值备受关注。本文以皮亚杰及维果茨基的发展理论为支撑,结合幼儿年龄特点,系统论述角色游戏与社会性发展的内在关联,并重点从环境创设、情节引导、教师支持、家园协同四个维度,构建以角色游戏为载体促进幼儿社会性发展的实践体系。本研究旨在为一线教师提供可操作、可复制的实践框架,推动“在游戏中学习,在游戏中发展”教育理念的真正落地。</jats:p>",
+      "year": null,
+      "venue": "幼儿教育科学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 11,
+      "doi": "",
+      "title": "本、あり〼。vol.5：「 女性と宇宙」",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 12,
+      "doi": "",
+      "title": "化学と歩む : チャレンジした女性たちからチャレンジする女性たちへ : 展示パネル",
+      "abstract": "",
+      "year": 2011,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 13,
+      "doi": "",
+      "title": "ボランティア女性教育情報センターだよりNo.94「コロナ禍の不況は『女性不況』ー影響は女性に集中ー」",
+      "abstract": "",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 14,
+      "doi": "",
+      "title": "女性の実業教育のはじまり : チャレンジした女性たち : 展示パネル",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 15,
+      "doi": "",
+      "title": "建築と歩む : チャレンジした女性たちからチャレンジする女性たちへ",
+      "abstract": "",
+      "year": 2012,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 16,
+      "doi": "",
+      "title": "女性の歩みを受け継ぐ 女性アーカイブセンター10周年展　パネル",
+      "abstract": "",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 17,
+      "doi": "",
+      "title": "女性の高等教育の黎明 : チャレンジした女性たち : 展示パネル",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 18,
+      "doi": "",
+      "title": "ボランティア女性教育情報センターだよりNo.100「特集：女性アーカイブセンター所蔵展示 国際女性年から50年展 どこまで進んだ？日本のジェンダー平等ーキーワードで振り返る50年ー」",
+      "abstract": "",
+      "year": 2024,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 19,
+      "doi": "",
+      "title": "女性とスポーツ展～チャレンジした女性たちからチャレンジする女性たちへ～展示パネル",
+      "abstract": "",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    },
+    {
+      "rank": 20,
+      "doi": "",
+      "title": "ボランティア女性教育情報センターだよりNo.90「女性アーカイブセンター所蔵展示 ベアテ・シロタ・ゴードン展～日本国憲法に男女平等の思いを込めて～」",
+      "abstract": "",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": ""
+    }
+  ]
+}

@@ -252,6 +252,59 @@ powershell -ExecutionPolicy Bypass -File "C:\Users\DengN\.mavis\bin\Add-PaperAge
 
 ---
 
+## [3.9.7.2] - 2026-07-14 (WIP — n=50 user queries + system_outputs batch, awaiting v4_rerank)
+
+Per user "先走 A" (2026-07-14 22:30), the Option A pipeline was partially completed before
+session was archived due to length. This entry documents what was done and what remains.
+
+### What was done
+
+**1. queries.json n=50 update**:
+- `bench/v01/queries.json`: q001-q050 (50 queries, 25 user batch q026-q050 added)
+- Backup: `bench/v01/queries.json.bak-2026-07-14`
+- q026-q050 v3 contents (per `test_output/q026-q050-draft-v3.md`):
+  - 7 queries commonality-extended to international (q033, q034, q036, q037, q040, q046, q049)
+  - 2 queries kept China-specific per user instruction (q032 东数西算, q047 综艺二次元)
+  - 16 queries keep original Chinese (q026-q031, q035, q038, q039, q041-q045, q048, q050)
+- difficulty_hint distribution: technical 4 / rare_terms 6 / methodology 5 / broad 10
+
+**2. system_outputs n=50 batch**:
+- `test_output/_gen_system_outputs_n50.py` — batch generator
+- `bench/v01/system_outputs/q026.json` to `q050.json` (25 files)
+- Each: top-10-39 candidates per query, schema-converted from new pa_cli search output
+  to old snapshot.py schema (added query_id, generated_at, config; renamed found_by → engines_found_in; added rank)
+- 20 successful + 5 SKIP (q026-q030 generated earlier in same script run)
+- Note: `demo-api-key` EXPIRED warning in pa search output, but search still works
+  (only 3 of 5 engines active: crossref, openalex, arxiv; semanticscholar + core disabled)
+- Same state as v3.9.0 n=25 baseline was generated in (5 engine total, but in practice 3 active)
+
+### What remains (handoff to next session)
+
+- [ ] Run `python bench/v01/_v4_rerank.py --condition {bm25,biencoder,combined,prf,random}` for n=50
+      (5 commands, each ~1-2 min, total 5-10 min)
+- [ ] Run `python test_output/_run_n50_v3972.py` for MoE v3.9.7.2 n=50 (5-fold CV)
+- [ ] Run `python test_output/_run_cross_encoder_wilcoxon_n50.py` for Wilcoxon n=50
+      (NEW file needed, reuse v3.9.7.1 logic but with n=50 cross-encoder data)
+- [ ] Re-run LTR [P0-6] n=50: `python test_output/_run_ltr_v3_9_2.py` with n=50 features
+- [ ] Write 3-tier honest report at `bench/v01/reports/v3_9_7_2_n50_three_tier.md`
+- [ ] Commit v3.9.7.2 final results + update ROADMAP
+- [ ] Plan CNKI [P0-9] implementation (user has proxy cookies, can implement next session)
+
+### Files
+- `bench/v01/queries.json` (modified)
+- `bench/v01/queries.json.bak-2026-07-14` (backup, can be deleted after verification)
+- `bench/v01/system_outputs/q026.json` to `q050.json` (25 new files)
+- `test_output/_gen_system_outputs_n50.py` (batch generator)
+- `test_output/_parse_v3_to_queries.py` (queries.json parser)
+- `test_output/_run_n50_v3972.py` (MoE n=50 runner, ready to run)
+
+### Backward-compat note
+- n=50 cross-encoder output (v3.9.3 style) is NOT yet generated
+- v3.9.7.1 Wilcoxon n=25 numbers still apply until n=50 cross-encoder re-run
+- MoE n=50 will produce different numbers than v3.9.7.1 n=25 (more queries = different fold splits)
+
+---
+
 ## [3.9.5.4] - 2026-07-13 (patch — http_get env var fallback + per-channel proxy audit)
 
 Per user question "除了playwright 之外，其他是否需要 clash 端口？":
