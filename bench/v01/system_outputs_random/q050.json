@@ -1,0 +1,556 @@
+{
+  "query_id": "q050",
+  "query": "当前社会形态是否比 20 世纪带给人们更多精神疾病 (mental illness prevalence 1990-2020 cohort meta)",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.70693/rwsk.v2i1.174",
+      "title": "19世纪下半叶至20世纪初里海——伏尔加河流域渔业工人卫生医疗体系的探讨",
+      "abstract": "<jats:p>19世纪下半叶至20世纪初期，尽管俄国存在官方批准的卫生规章，但渔业工人实际上无法获得专业医疗服务，相关职责被转嫁给私人渔业资本家。卫生监管失效源于医疗人员配置不足、卫生辖区幅员辽阔而交通设施匮乏导致卫生医师巡查困难、渔猎业管理局与地方行政机关及渔业资本家间的官僚协调障碍等因素。同时，阿斯特拉罕省特殊的地理环境与自然气候条件，叠加卫生医疗体系的缺陷，致使各类流行病大规模蔓延。由于缺乏国家免费医疗保障体系与专业医务人员，传染病防控机制形同虚设，最终造成渔业工人死亡率居高不下。因此，渔业工人卫生医疗体系的建立符合俄国当时的社会需要。本文主要探讨的是这一时期里海-伏尔加河流域渔业工人卫生医疗保健体系的形成。</jats:p>",
+      "year": null,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.98444,
+      "bm25_score": 3.4172
+    },
+    {
+      "rank": 2,
+      "doi": "arXiv:2307.10513v2",
+      "title": "Technology in Association With Mental Health: Meta-ethnography",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 0.966268,
+      "bm25_score": 3.4365
+    },
+    {
+      "rank": 3,
+      "doi": "10.12677/ass.2016.52030",
+      "title": "Development of the Mental Illness Attitude and Stereotype Questionnaire—Preliminary Study",
+      "abstract": "",
+      "year": 2016,
+      "venue": "Advances in Social Sciences",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.94713,
+      "bm25_score": 2.1565
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "The age of anxiety? It depends where you look: changes in STAI trait anxiety, 1970–2010",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 28,
+      "v4_score": 0.946413,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 5,
+      "doi": "",
+      "title": "Epidemiology and heritability of Major Depressive Disorder, stratified by age of onset, sex, and illness course in Generation Scotland:Scottish Family Health Study (GS:SFHS)",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 25,
+      "v4_score": 0.905306,
+      "bm25_score": 0.8167
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:2008.07738v1",
+      "title": "Usable Security for ML Systems in Mental Health: A Framework",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.874117,
+      "bm25_score": 0.8929
+    },
+    {
+      "rank": 7,
+      "doi": "",
+      "title": "Smoking cessation advice for people with serious mental illness",
+      "abstract": "",
+      "year": 2012,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 0.851166,
+      "bm25_score": 2.2826
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:2507.19218v3",
+      "title": "Technological folie à deux: Feedback Loops Between AI Chatbots and Mental Illness",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.845892,
+      "bm25_score": 1.942
+    },
+    {
+      "rank": 9,
+      "doi": "10.52926/jpmjpr2461",
+      "title": "",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "grant",
+      "orig_rank": 3,
+      "v4_score": 0.835113,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "arXiv:2110.10780v3",
+      "title": "An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C)",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.816891,
+      "bm25_score": 1.6457
+    },
+    {
+      "rank": 11,
+      "doi": "10.65285/rwyshkx.v2i2.023",
+      "title": "精神生态视域下《紫木槿》中康比丽的精神重建之路研究",
+      "abstract": "<jats:p>当前，在生态批评研究领域，“精神生态”已然成为探讨人类精神失衡问题的重要理论框架。在《紫木槿》中，奇玛曼达·恩戈兹·阿迪契讲述了 15 岁少女康比丽在专制父亲与政治动荡的双重阴影下，通过信仰、爱与自我觉醒，最终挣脱束缚、走向自由的故事。本文以精神生态为视角，探析康比丽从精神失衡到实现精神重建的发展过程。这一过程，深受其回归自然、建立互助的人际关系，以及找回自我主体性等多重因素的深刻影响。通过解析康比丽的成长路径，也为文学批评中关于人类精神创伤的疗愈研究提供了新的阐释维度。</jats:p>",
+      "year": 2026,
+      "venue": "人文与社会科学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.808624,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2002.08901v1",
+      "title": "Identifying physical health comorbidities in a cohort of individuals with severe mental illness: An application of SemEHR",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.801259,
+      "bm25_score": 4.0416
+    },
+    {
+      "rank": 13,
+      "doi": "",
+      "title": "Estimating the prevalence of chronic medical co-morbidities in the seriously mentally ill in primary care: a modelling framework",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 23,
+      "v4_score": 0.763117,
+      "bm25_score": 2.4081
+    },
+    {
+      "rank": 14,
+      "doi": "arXiv:2009.01672v1",
+      "title": "Yet Meta Learning Can Adapt Fast, It Can Also Break Easily",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.641179,
+      "bm25_score": 2.2134
+    },
+    {
+      "rank": 15,
+      "doi": "10.3389/fpsyt.2022.810057",
+      "title": "Financial technologies (FinTech) for mental health: The potential of objective financial data to better understand the relationships between financial behavior and mental health",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.554541,
+      "bm25_score": 0.8865
+    },
+    {
+      "rank": 16,
+      "doi": "10.70693/rwsk.v2i4.400",
+      "title": "20世纪上半叶新加坡胶商的”传承”交替",
+      "abstract": "<jats:p>20世纪初，殖民者向东南亚引入橡胶种子之后，马来亚（今西马来西亚地区）和荷属东印度（今印度尼西亚）迅速成为世界主要橡胶产地。新加坡作为东南亚橡胶输往欧洲消费国的必经之路，凭借自由港政策大力发展橡胶转口贸易，橡胶业迅速发展。最初橡胶经营者以欧洲人为主，直到第一次世界大战之后，华人胶商人数才逐渐增多。当时新加坡橡胶业的经营者们凭借族亲、姻亲、乡亲的关系紧密联络，交织成胶商网络，一代接一代地推动新加坡橡胶业向前发展。</jats:p>",
+      "year": null,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.52746,
+      "bm25_score": 3.7358
+    },
+    {
+      "rank": 17,
+      "doi": "10.2307/jj.8595646.130",
+      "title": "我们是比她更孤独的人",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Writing Woman Anthology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 2,
+      "v4_score": 0.469016,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "10.11151/eds1951.21.177",
+      "title": "SOCIAL CLASS AND MENTAL ILLNESS",
+      "abstract": "",
+      "year": 1966,
+      "venue": "The Journal of Educational Sociology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.46168,
+      "bm25_score": 2.7681
+    },
+    {
+      "rank": 19,
+      "doi": "",
+      "title": "Epidemiology of childhood anxiety: longitudinal perspectives",
+      "abstract": "",
+      "year": 2011,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 0.451128,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "",
+      "title": "Prediction of depression in European general practice attendees: the PREDICT study",
+      "abstract": "",
+      "year": 2006,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 0.437473,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 21,
+      "doi": "10.12677/wls.2022.104085",
+      "title": "Subject Alienation in a Morbid Society—Illness Narrative in A Rose for Emily",
+      "abstract": "",
+      "year": 2022,
+      "venue": "World Literature Studies",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.381872,
+      "bm25_score": 1.313
+    },
+    {
+      "rank": 22,
+      "doi": "10.70693/rwsk.v1i7.1188",
+      "title": "19世纪末20世纪初在美华人反歧视抗争研究",
+      "abstract": "<jats:p>1882年5月6日，美国国会正式通过《关于实施与中国人有关的某些条约条款的法令》的排华法案，这一官方表态使得民间原已存在的排华情绪迅速膨胀，继而掀起了美国社会长达半个多世纪的排华浪潮，美国华人群体也因此饱受种族歧视和排挤。面对层出不穷的歧视性条例和暴力排华事件，部分华人不堪忍受选择离开美国，部分华人则选择继续留在北美大地。为了维护自身的合法权益，在美华人群体采取了多种手段同不利的社会环境进行了顽强的斗争，尽管最终没能直接推动美国排华法案的废除，但华人的不懈斗争也使得美国政府排华目的最终破产，为华人融入美国主流社会奠定了基础。</jats:p>",
+      "year": null,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.367841,
+      "bm25_score": 2.653
+    },
+    {
+      "rank": 23,
+      "doi": "",
+      "title": "Training Mental Health Nurses to Assess the Physical Health Needs of Mental Health Service Users: A Pre- and Post-test Analysis",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 22,
+      "v4_score": 0.285063,
+      "bm25_score": 0.913
+    },
+    {
+      "rank": 24,
+      "doi": "10.18356/d97f80aa-zh",
+      "title": "减少21世纪人类发展不平等的政策：我们有一个选择",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Human Development Report (Chinese Version)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 8,
+      "v4_score": 0.281772,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 25,
+      "doi": "",
+      "title": "Did female prisoners with mental disorders receive psychiatric treatment before imprisonment?",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 24,
+      "v4_score": 0.272791,
+      "bm25_score": 0.7994
+    },
+    {
+      "rank": 26,
+      "doi": "10.1016/j.inffus.2022.11.031",
+      "title": "Emotion fusion for mental illness detection from social media: A survey",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.250003,
+      "bm25_score": 2.1565
+    },
+    {
+      "rank": 27,
+      "doi": "",
+      "title": "Life course effects of anthropometric change among Singapore youth from 1990 to 2011",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 29,
+      "v4_score": 0.222038,
+      "bm25_score": 2.7674
+    },
+    {
+      "rank": 28,
+      "doi": "",
+      "title": "Facilitating knowledge of mental health nurses to undertake physical health interventions: a pre-test/post-test evaluation",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 26,
+      "v4_score": 0.147349,
+      "bm25_score": 0.6336
+    },
+    {
+      "rank": 29,
+      "doi": "arXiv:2003.05870v1",
+      "title": "Natural Language Interaction to Facilitate Mental Models of Remote Robots",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.138399,
+      "bm25_score": 0.8435
+    },
+    {
+      "rank": 30,
+      "doi": "arXiv:2311.11482v9",
+      "title": "Meta Prompting for AI Systems",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.10259,
+      "bm25_score": 2.8411
+    }
+  ]
+}

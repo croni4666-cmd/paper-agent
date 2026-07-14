@@ -1,0 +1,376 @@
+{
+  "query_id": "q044",
+  "query": "糖前期患者的阻止发展以及回退策略 (prediabetes reversal interventions lifestyle metformin RCT)",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 20,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "arXiv:2404.14353v1",
+      "title": "Electroporation-mediated Metformin for effective anticancer treatment of triple-negative breast cancer cells",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 0.905923,
+      "bm25_score": 1.5322
+    },
+    {
+      "rank": 2,
+      "doi": "10.1021/acs.jpcb.7b11928",
+      "title": "Towards Understanding the Structure, Dynamics and Bio-activity of Diabetic Drug Metformin",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.818949,
+      "bm25_score": 1.7213
+    },
+    {
+      "rank": 3,
+      "doi": "arXiv:2410.17245v1",
+      "title": "Towards Reliable Evaluation of Behavior Steering Interventions in LLMs",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.815037,
+      "bm25_score": 1.2361
+    },
+    {
+      "rank": 4,
+      "doi": "arXiv:2603.02204v2",
+      "title": "Partial Causal Structure Learning for Valid Selective Conformal Inference under Interventions",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.760215,
+      "bm25_score": 1.0206
+    },
+    {
+      "rank": 5,
+      "doi": "arXiv:2305.03642v3",
+      "title": "Jointly Extracting Interventions, Outcomes, and Findings from RCT Reports with LLMs",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.727379,
+      "bm25_score": 2.9892
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:2312.11226v1",
+      "title": "CDRH Seeks Public Comment: Digital Health Technologies for Detecting Prediabetes and Undiagnosed Type 2 Diabetes",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.602399,
+      "bm25_score": 1.2228
+    },
+    {
+      "rank": 7,
+      "doi": "10.52288/jbi.26636204.2019.07.02",
+      "title": "福建省出口跨境电子商务的现状及发展研究 —以“一带一路”背景下在泰国的发展策略为例",
+      "abstract": "<jats:p>福建省是“一带一路”中“21世纪海上丝绸之路”的起点，也是“21世纪海上丝绸之路”的核心区。泰国闽籍华人一方面与当地社会高度融合，另一方面又与祖籍国保持着千丝万缕的关系，我们应继续发挥泰国闽籍华人的优势地位，在建设“一带一路”中充分发挥他们的桥梁作用。本研究以泰国作为目标市场国，探究福建省出口跨境电子商务发展策略。本研究对福建和泰国的跨境电商发展现状进行分析，并结合“一带一路”的优惠政策，为福建省出口跨境电商提供发展策略。</jats:p>",
+      "year": 2019,
+      "venue": "商业创新期刊",
+      "citation_count": 8,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.588871,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "10.12677/acm.2024.1441052",
+      "title": "Research Progress on the Relationship and Pathogenesis between Obesity and Prediabetes",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.523963,
+      "bm25_score": 1.6531
+    },
+    {
+      "rank": 9,
+      "doi": "10.61369/edtr.7844",
+      "title": "人口发展新趋势对学前教育的影响及应对策略",
+      "abstract": "<jats:p>随着我国人口结构和生育政策的调整，学前教育迎来了新的发展机遇与挑战。本文通过对当前人口发展新趋势的剖析，识别出影响学前教育的主要因素，在此基础上，采用文献综述与实地调研相结合的方式，深入探讨了这些因素对学前教育资源配置、教育质量以及教育公平性的具体影响。研究发现，为有效应对人口发展新趋势对学前教育的挑战，需从优化资源配置、提升教师专业素养，以及强化家庭与社区教育环境的协同合作等方面着手。最后，文章针对性地提出了相应的政策建议，旨在为学前教育的可持续发展提供策略支持。</jats:p>",
+      "year": null,
+      "venue": "Educational Theory Observation",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.510483,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "10.26549/jxffcxysj.v2i8.2813",
+      "title": "浅谈新时期幼儿园学前教育的发展策略",
+      "abstract": "<jats:p>随着社会的不断进步与飞速发展，人们的生活水平也在日益提高，同时人们也越来越注重教育事业的发展。在此背景下，幼儿园学前教育也正在慢慢的转变，对于幼儿教师也提出了更高的要求。为了有效的促进幼儿园教育事业的发展，中国就必须更加注重幼儿园学前教育，建立完善的师资力量，进而提高幼儿学前教育的水平，进一步促进幼儿学前教育事业的发展。</jats:p>",
+      "year": null,
+      "venue": "教学方法创新与实践",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.509952,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 11,
+      "doi": "10.18686/bd.v2i6.1419",
+      "title": "探析建筑项目工程开发前期策划的问题及其策略",
+      "abstract": "<jats:p>建筑项目工程开发的前期策划是从全局战略的角度出发,通过收集信息和多方的调查研究,确定项目目标,对项目进行准确的市场定位,并通过对项目进行详细的经济论证,从而制定出正确的决策等一系列工作。为了充分发挥建筑项目工程开发前期策划的作用,本文阐述了建筑项目工程开发的主要特征以及建筑项目工程开发前期策划的重要性,对建筑项目工程开发前期策划存在的主要问题及其策略进行了探讨分析。</jats:p>",
+      "year": null,
+      "venue": "建筑发展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.395767,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "10.1016/j.nutos.2024.09.013",
+      "title": "Prediabetes detection in unconstrained conditions using wearable sensors",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.349375,
+      "bm25_score": 1.6531
+    },
+    {
+      "rank": 13,
+      "doi": "10.12677/ap.2019.92043",
+      "title": "Developmental Delay’s Risk Factors and Early Intervention Strategies: Taking Early Treatment in Macau as an Example",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Advances in Psychology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.339513,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 14,
+      "doi": "10.37155/2661-4766-0705-27",
+      "title": "泌尿结石患者术后并发症的预防与管理策略",
+      "abstract": "",
+      "year": 2025,
+      "venue": "临床医学前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.333069,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "10.69979/3029-2808.24.6.045",
+      "title": "妊娠期糖尿病患者发生甲状腺功能减退症的影响因素分析及对妊娠结局的影响",
+      "abstract": "",
+      "year": 2024,
+      "venue": "医学研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.310275,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "arXiv:1804.01708v3",
+      "title": "Markerless Inside-Out Tracking for Interventional Applications",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.236269,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:2111.05070v4",
+      "title": "Universal Lower Bound for Learning Causal DAGs with Atomic Interventions",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.197272,
+      "bm25_score": 1.1548
+    },
+    {
+      "rank": 18,
+      "doi": "10.37155/2717-5693-0401-6",
+      "title": "社区慢性病管理对糖尿病前期患者糖代谢指标的改善作用",
+      "abstract": "",
+      "year": 2023,
+      "venue": "内科诊疗与进展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.168133,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "arXiv:2602.16033v1",
+      "title": "Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.146444,
+      "bm25_score": 2.4968
+    },
+    {
+      "rank": 20,
+      "doi": "10.67328/bt0566",
+      "title": "颅脑术后患者并发症临床护理防控策略",
+      "abstract": "",
+      "year": 2026,
+      "venue": "数据期刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.114027,
+      "bm25_score": 0.0
+    }
+  ]
+}

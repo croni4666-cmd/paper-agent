@@ -1,0 +1,538 @@
+{
+  "query_id": "q046",
+  "query": "aging society companion robot social attachment rejection comparative Japan South Korea Europe",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 29,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "arXiv:2510.06788v1",
+      "title": "Unpacking Discourses on Childbirth and Parenthood in Popular Social Media Platforms Across China, Japan, and South Korea",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 0.899127,
+      "bm25_score": 4.1736
+    },
+    {
+      "rank": 2,
+      "doi": "10.4324/9780203167410-22",
+      "title": "Children’s Rights in Japan, South Korea and Taiwan – Comparative Aspects",
+      "abstract": "",
+      "year": 2003,
+      "venue": "Human Rights in Japan, South Korea and Taiwan",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 12,
+      "v4_score": 0.895877,
+      "bm25_score": 4.7711
+    },
+    {
+      "rank": 3,
+      "doi": "10.1002/ijop.12351",
+      "title": "Social Psychology",
+      "abstract": "",
+      "year": 2016,
+      "venue": "International Journal of Psychology",
+      "citation_count": 7,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.86425,
+      "bm25_score": 1.871
+    },
+    {
+      "rank": 4,
+      "doi": "10.4236/jbbs.2020.101004",
+      "title": "The Interdependent Coexistence of the Rational Civilizations: The Mental Origin of Civilizations",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Journal of Behavioral and Brain Science",
+      "citation_count": 3,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.855293,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 5,
+      "doi": "10.1108/14636690410549534",
+      "title": "Mobile communications: Europe, Japan and South Korea in a comparative perspective",
+      "abstract": "<jats:p>This paper has two interrelated purposes. One is to provide an empirical overview of the developments of new mobile systems and services in Europe, Japan, and South Korea. The other is to examine the discussions regarding the possible explanations for the present lead that East Asia has in new mobile developments. The motivation for making a comparative analysis of mobile developments in Europe, Japan and South Korea is the fact that Japan and South Korea have taken the lead within mobil",
+      "year": 2004,
+      "venue": "info",
+      "citation_count": 22,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.831697,
+      "bm25_score": 5.9348
+    },
+    {
+      "rank": 6,
+      "doi": "10.7210/jrsj.41.40",
+      "title": "Social Robot as Companion Species",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Journal of the Robotics Society of Japan",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 14,
+      "v4_score": 0.809816,
+      "bm25_score": 8.8968
+    },
+    {
+      "rank": 7,
+      "doi": "10.4324/9780203167410-17",
+      "title": "Patients’ Rights in Japan, South Korea and Taiwan – Comparative Aspects",
+      "abstract": "",
+      "year": 2003,
+      "venue": "Human Rights in Japan, South Korea and Taiwan",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 11,
+      "v4_score": 0.791818,
+      "bm25_score": 4.7711
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:1511.02429v1",
+      "title": "A Micro-foundation of Social Capital in Evolving Social Networks",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 23,
+      "v4_score": 0.714316,
+      "bm25_score": 1.9554
+    },
+    {
+      "rank": 9,
+      "doi": "10.31203/aepa.2017.14.4.001",
+      "title": "Comparative Analysis of Internal Control System in USA, Japan and Korea",
+      "abstract": "<jats:p>The internal control system is an essential process to maintain and manage an organization. It helps an organization achieve its goal by containing risks that might affect its accomplishment of the goal. The system is considered increasingly important as it is a fundamental procedure to protect a company’s asset by detecting and preventing irregularities and malpractices.\r\nThis research compares and analyzes laws and regulations pertaining to internal control systems in the U.S., Japan, ",
+      "year": 2017,
+      "venue": "Asia Europe Perspective Association",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.651837,
+      "bm25_score": 1.653
+    },
+    {
+      "rank": 10,
+      "doi": "10.14282/2198-0411-gcrp-3",
+      "title": "New Alterities and Emerging Cultures of Social Interaction",
+      "abstract": "",
+      "year": 2013,
+      "venue": "DuEPublico (University of Duisburg-Essen)",
+      "citation_count": 2,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.615008,
+      "bm25_score": 1.546
+    },
+    {
+      "rank": 11,
+      "doi": "10.20944/preprints202505.0616.v1",
+      "title": "Comparative Review of Smart Housing Strategies for Aging Population in South Korea and the United Kingdom",
+      "abstract": "<jats:p>As populations age globally, governments face mounting challenges in reconfiguring healthcare and housing systems to support aging-in-place. This study offers a comparative analysis of South Korea and the United Kingdom, examining how each country integrates digital technologies, such as Artificial Intelligence, telecare, and smart housing systems, into their aging strategies. South Korea employs a centralized, technology-driven approach that prioritizes national rollout of AI-enabled sm",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 10,
+      "v4_score": 0.554316,
+      "bm25_score": 4.4396
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2007.12506v1",
+      "title": "Mind Your Manners! A Dataset and A Continual Learning Approach for Assessing Social Appropriateness of Robot Actions",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 29,
+      "v4_score": 0.522748,
+      "bm25_score": 3.3657
+    },
+    {
+      "rank": 13,
+      "doi": "10.17000/kspr.20.2.201306.169",
+      "title": "A Comparative Analysis of Childcare Expansion and Social Investment in Sweden, France, Germany, the UK, Japan and South Korea",
+      "abstract": "",
+      "year": 2013,
+      "venue": "Korea Social Policy Review",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.507068,
+      "bm25_score": 5.1622
+    },
+    {
+      "rank": 14,
+      "doi": "arXiv:1011.5186v1",
+      "title": "Archaeo-Astronomy in Society: Supporting Citizenship in Schools Across Europe",
+      "abstract": "",
+      "year": 2010,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 24,
+      "v4_score": 0.504549,
+      "bm25_score": 5.7314
+    },
+    {
+      "rank": 15,
+      "doi": "",
+      "title": "Echoes From the Other Side: Gender, Space, and Psyche in Contemporary Japanese Genre Fiction",
+      "abstract": "",
+      "year": 2015,
+      "venue": "CU Scholar (University of Colorado Boulder)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.475629,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "10.21742/ajlpa.2017.1.2.03",
+      "title": "Comparative Study on an Education System for collaborative Governance in Disaster Management: Focused on Korea, the U.S. and Japan",
+      "abstract": "",
+      "year": 2017,
+      "venue": "Asia-pacific Journal of Law, Politics and Administration",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.462712,
+      "bm25_score": 3.1008
+    },
+    {
+      "rank": 17,
+      "doi": "10.1057/s41599-023-02221-9",
+      "title": "Using SOR framework to explore the driving factors of older adults smartphone use behavior",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_count": 94,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.451914,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "10.1080/03601277.2026.2674881",
+      "title": "High school students’ perceptions of an aging society and future images: A comparative study of Japan and South Korea",
+      "abstract": "",
+      "year": null,
+      "venue": "Educational Gerontology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 13,
+      "v4_score": 0.449734,
+      "bm25_score": 9.1005
+    },
+    {
+      "rank": 19,
+      "doi": "10.1098/rsos.200411",
+      "title": "Self induced class stratification in competitive societies of agents: Nash stability in the presence of envy",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 28,
+      "v4_score": 0.439422,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "10.1145/3757689",
+      "title": "Understanding Digital Gifting Through Messengers Across Cultures: A Comparative Study of University Students in South Korea, China, and Japan",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 27,
+      "v4_score": 0.437758,
+      "bm25_score": 3.7283
+    },
+    {
+      "rank": 21,
+      "doi": "10.1109/RO-MAN57019.2023.10309617",
+      "title": "Social Robots As Companions for Lonely Hearts: The Role of Anthropomorphism and Robot Appearance",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 0.343438,
+      "bm25_score": 3.6243
+    },
+    {
+      "rank": 22,
+      "doi": "10.1007/s10846-026-02417-6",
+      "title": "Towards Hyper-realistic Robot Heads: A Review",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Journal of Intelligent & Robotic Systems",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.321527,
+      "bm25_score": 2.5505
+    },
+    {
+      "rank": 23,
+      "doi": "10.1109/TSMCA.2011.2132707",
+      "title": "Multidimensional Social Network in the Social Recommender System",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 26,
+      "v4_score": 0.247744,
+      "bm25_score": 2.0107
+    },
+    {
+      "rank": 24,
+      "doi": "arXiv:0808.0650v1",
+      "title": "Summary of the 3rd International Workshop on a Far Detector in Korea for the J-PARC Beam",
+      "abstract": "",
+      "year": 2008,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 25,
+      "v4_score": 0.172559,
+      "bm25_score": 0.9498
+    },
+    {
+      "rank": 25,
+      "doi": "10.64828/conf-111-2026-2",
+      "title": "REPRESENTATION OF EMOTIONS IN CONTEMPORARY ENGLISH DISCOURSE",
+      "abstract": "",
+      "year": 2026,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.150861,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 26,
+      "doi": "arXiv:2505.03835v2",
+      "title": "The Shift Towards Preprints in AI Policy Research: A Comparative Study of Preprint Trends in the U.S., Europe, and South Korea",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.103502,
+      "bm25_score": 5.1093
+    },
+    {
+      "rank": 27,
+      "doi": "",
+      "title": "Gendered Aspects of Migration: Law and the Female Migrant",
+      "abstract": "",
+      "year": 1998,
+      "venue": "Hastings international and comparative law review",
+      "citation_count": 12,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.076731,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 28,
+      "doi": "10.26092/elib/4762",
+      "title": "Critical Sociolinguistics in a Modern World: Proceedings of the 1st Kansai Sociolinguistics Colloquium",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Media (https://www.suub.uni-bremen.de/)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.061874,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 29,
+      "doi": "10.1093/ssjj/6.2.199",
+      "title": "Educational Aspirations and the Warming-up/Cooling-down Process: A Comparative Study between Japan and South Korea",
+      "abstract": "",
+      "year": 2003,
+      "venue": "Social Science Japan Journal",
+      "citation_count": 23,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.05689,
+      "bm25_score": 3.9766
+    }
+  ]
+}

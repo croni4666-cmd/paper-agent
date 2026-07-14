@@ -1,0 +1,271 @@
+{
+  "version": "v3.9.7.2",
+  "n_queries": 25,
+  "config": {
+    "n_estimators": 50,
+    "learning_rate": 0.05,
+    "num_leaves": 7,
+    "min_data_in_leaf": 3,
+    "max_features": 5000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "random_state": 42,
+    "verbose": -1,
+    "class_weight": "balanced",
+    "report_balanced_metrics": true
+  },
+  "label_distribution": {
+    "arxiv": 0,
+    "openalex": 24,
+    "s2": 0,
+    "crossref": 1,
+    "core": 0
+  },
+  "cv_aggregate": {
+    "mean_accuracy": 0.96,
+    "std_accuracy": 0.07999999999999999,
+    "mean_balanced_accuracy": 0.9,
+    "std_balanced_accuracy": 0.2,
+    "mean_macro_f1": 0.888888888888889,
+    "std_macro_f1": 0.22222222222222224
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 20,
+      "n_test": 5,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": null,
+        "core": null
+      }
+    },
+    {
+      "fold": 1,
+      "n_train": 20,
+      "n_test": 5,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": null,
+        "core": null
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 20,
+      "n_test": 5,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": null,
+        "core": null
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 20,
+      "n_test": 5,
+      "accuracy": 0.8,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.4444444444444444,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8888888888888888,
+          "support": 4
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": 0.0,
+        "core": null
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 20,
+      "n_test": 5,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": null,
+        "core": null
+      }
+    }
+  ]
+}

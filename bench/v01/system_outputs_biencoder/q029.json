@@ -1,0 +1,434 @@
+{
+  "query_id": "q029",
+  "query": "我们自己做的 paper agent 如何提升其效能，采用哪些模型",
+  "generated_at": "2026-07-14T23:52:17",
+  "config": "v4-biencoder-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 2,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 22,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.18356/22203583-2021-3-12",
+      "title": "观点: 我们最爱的电视节目屋如何评价我们的",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Jiaokewen zuzhi xinshi",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.607787,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6078
+    },
+    {
+      "rank": 2,
+      "doi": "10.70693/fw083",
+      "title": "叙事护理在宫颈癌同步放化疗患者自我效能提升中的应用​",
+      "abstract": "",
+      "year": 2026,
+      "venue": "数据期刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.587435,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5874
+    },
+    {
+      "rank": 3,
+      "doi": "10.58911/bdic.co.202512.01",
+      "title": "我们设计的实验（验证某一运动项目能否提高心肺功能）应该包含哪些步骤和要素？",
+      "abstract": "",
+      "year": 2025,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report",
+      "orig_rank": 1,
+      "v4_score": 0.565869,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5659
+    },
+    {
+      "rank": 4,
+      "doi": "10.2139/ssrn.4933318",
+      "title": "工作自主性如何影响员工创新绩效?--有调节的链式中介模型",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 8,
+      "v4_score": 0.487565,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4876
+    },
+    {
+      "rank": 5,
+      "doi": "10.61369/eti.4768",
+      "title": "小学高段学生学业自我效能感的家校提升策略",
+      "abstract": "<jats:p>针对小学高段学生易发生勤奋对自卑的心理发展冲突，自我效能感较低，本论文研究了学业自我效能感的现状，梳理出学生发展策略。通过学生问卷、教师问卷、家长问卷和访谈、观察等方式了解研究对象的学业自我效能感现状。通过数据分析出目前三方存在的问题与调整点位。通过各项策略的探索与实施，形成教师与家庭联合生态网，帮助学生提升学业自我效能感的发展水平。</jats:p>",
+      "year": null,
+      "venue": "Education and Teaching Innovation",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.418919,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4189
+    },
+    {
+      "rank": 6,
+      "doi": "10.61369/est.8707",
+      "title": "体操训练对大学生自我效能感和团队合作能力的提升作用",
+      "abstract": "<jats:p>本文综述了体操训练对大学生自我效能感和团队合作能力的提升作用。通过对近年来相关文献的系统回顾，总结了体操训练在提高大学生心理素质和社会适应能力方面的研究成果。研究发现，体操训练能够显著提升大学生的自我效能感，增强他们的自信心和应对挑战的能力。同时，体操训练还促进了团队合作精神的培养，提高了学生的沟通协调能力和集体荣誉感。本文为高校体育教育提供了理论依据。</jats:p>",
+      "year": null,
+      "venue": "Educational Science Theory",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.381662,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3817
+    },
+    {
+      "rank": 7,
+      "doi": "10.32629/er.v1i5.1571",
+      "title": "如何提升初中德育工作的有效性",
+      "abstract": "<jats:p>德育工作最常指政治思想和道德品质的教育,确保能够提高学生群体的道德思想,让其能够成为有理想、有道德的公民,并形成正确的人生价值观,实现全面健康的发展。由于初中生正处于青春期,活泼好动,思想积极,使得德育工作难度提升,难以营造良好班风。基于此,本文就对提升初中德育工作的有效性对策展开探究,以期为初中德育工作提供参考依据。</jats:p>",
+      "year": null,
+      "venue": "教育研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.365295,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3653
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:0309395v2",
+      "title": "This paper has been withdrawn",
+      "abstract": "",
+      "year": 2003,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.362175,
+      "bm25_score": 3.8741,
+      "biencoder_score": 0.3622
+    },
+    {
+      "rank": 9,
+      "doi": "10.33142/sca.v8i9.17966",
+      "title": "利用机器学习提升自动化运维效率的模型构建与应用",
+      "abstract": "<jats:p>随着信息技术的持续发展和应用场景的不断扩展，自动化运维成为提升系统效率与稳定性的关键技术。本研究聚焦于机器学习技术在自动化运维中的应用，通过构建有效的模型，旨在显著提升运维效率。首先，文中分析了当前自动化运维面临的主要挑战，包括复杂系统的实时监控、故障预测及其自动化处理等问题。在此基础上，提出了一个综合利用机器学习的多层次模型架构，该架构集成了数据预处理、特征选择、故障检测与分类，以及自动化响应等多个模块。实验部分，通过构建实验环境，运用真实世界的运维数据对模型进行训练与测试。结果表明，该模型在故障检测精度和响应时间上均得到了显著提升，自动化处理成功率提高了30%，有效减少了人工介入。研究不仅展示了机器学习在自动运维中的有效性，也为未来自动化运维系统的优化提供了有力的技术支持和理论依据。</jats:p>",
+      "year": null,
+      "venue": "智能城市应用",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.329255,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3293
+    },
+    {
+      "rank": 10,
+      "doi": "10.33142/sca.v5i4.6710",
+      "title": "浅谈如何做好农村公路提档升级项目设计工作",
+      "abstract": "<jats:p>农村的道路是农村地区至关重要的公共交通设施，在农业产出的服务、变更农民日常生活、增强生产收入等方面，发挥着决定性的作用。因此，相关部门更加重视农村道路的改革和实施，进一步提高农村道路的水平，这不仅有利于农村经济规划的推进，也有利于中国城镇化的规划。本篇文章主要对农村公路改造项目的设计进行分析，探讨加强农村公路实施质量的措施，从而促进农村公路规划的进一步完善。</jats:p>",
+      "year": null,
+      "venue": "智能城市应用",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.319534,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3195
+    },
+    {
+      "rank": 11,
+      "doi": "10.61369/eti.8429",
+      "title": "AI 数字素养提升对医学生自主学习效果的影响\n—— 基于自我决定理论的支持模型构建与实证研究",
+      "abstract": "<jats:p>近年来，随着人工智能（AI）技术的飞速发展，数字素养在现代教育中变得至关重要，尤其是在医学生的教育中。具备较高的AI 数字素养可以显著增强学生的自主学习能力，这一能力对于他们掌握复杂的医学知识和培养终身学习的素养至关重要。然而，许多医学生在使用AI 工具过程中仍面临诸多挑战，特别是在自主性、胜任感和归属感方面，影响了他们的学习效果。本研究基于自我决定理论（Self-Determination Theory, SDT），探讨AI 数字素养提升对医学生自主学习效果的影响机制。为此，本研究提出了以下研究问题：AI 数字素养的提升如何影响医学生的自主学习效果？自我决定理论在AI 数字素养与自主学习效果之间的关系中起到怎样的调节作用？本采用混合方法的研究设计，包括问卷调查和深度访谈，对300名医学生的数据进行了分析。研究结果显示，AI 数字素养与自主学习效果之间存在显著的正相关关系；提升AI 数字素养可以通过增强自主性和胜任感，进而促进学习效果。</jats:p>",
+      "year": null,
+      "venue": "Education and Teaching Innovation",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.28193,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2819
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2512.24957v2",
+      "title": "AMAP Agentic Planning Technical Report",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 0.27326,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2733
+    },
+    {
+      "rank": 13,
+      "doi": "10.1007/s10458-010-9154-1",
+      "title": "A mechanism for discovering semantic relationships among agent communication protocols",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.235795,
+      "bm25_score": 1.2242,
+      "biencoder_score": 0.2358
+    },
+    {
+      "rank": 14,
+      "doi": "arXiv:2605.21404v1",
+      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 0.222128,
+      "bm25_score": 0.8762,
+      "biencoder_score": 0.2221
+    },
+    {
+      "rank": 15,
+      "doi": "arXiv:2203.08975v2",
+      "title": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.179246,
+      "bm25_score": 1.3109,
+      "biencoder_score": 0.1792
+    },
+    {
+      "rank": 16,
+      "doi": "10.18653/v1/2026.acl-long.1765",
+      "title": "TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice",
+      "abstract": "",
+      "year": 2026,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.155066,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1551
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:0205016v1",
+      "title": "From Alife Agents to a Kingdom of N Queens",
+      "abstract": "",
+      "year": 2002,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.153183,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1532
+    },
+    {
+      "rank": 18,
+      "doi": "10.18653/v1/2026.findings-acl.1831",
+      "title": "PsyChain: A Collaborative Chain-of-Agents Framework for Generating Personalized and Professional Counseling Dialogues",
+      "abstract": "",
+      "year": 2026,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.132032,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.132
+    },
+    {
+      "rank": 19,
+      "doi": "10.1145/3786167.3788406",
+      "title": "SWEnergy: An Empirical Study on Energy Efficiency in Agentic Issue Resolution Frameworks with SLMs",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.127625,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1276
+    },
+    {
+      "rank": 20,
+      "doi": "10.1007/978-3-032-13562-9_23",
+      "title": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.126089,
+      "bm25_score": 0.8366,
+      "biencoder_score": 0.1261
+    },
+    {
+      "rank": 21,
+      "doi": "10.1007/978-3-030-01713-2_22",
+      "title": "How game complexity affects the playing behavior of synthetic agents",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.123304,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1233
+    },
+    {
+      "rank": 22,
+      "doi": "10.1145/3652988.3673918",
+      "title": "Focus Agent: LLM-Powered Virtual Focus Group",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.024664,
+      "bm25_score": 1.3109,
+      "biencoder_score": 0.0247
+    }
+  ]
+}

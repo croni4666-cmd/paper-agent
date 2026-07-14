@@ -1,0 +1,376 @@
+{
+  "query_id": "q027",
+  "query": "数据处理中对于文本的情绪连续性与媒体刺激物之间的关系 (譬如：如何提取两者的特征，证明它们的因果关系)",
+  "generated_at": "2026-07-14T23:53:06",
+  "config": "v4-prf-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 20,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.32629/er.v1i3.1497",
+      "title": "试析如何正确处理经济发展与改善民生的关系",
+      "abstract": "<jats:p>当前,国内外经济发展发生了非常大的变化,我国的经济发展水平正在不断提高,人们的生活质量也在不断完善。与经济高速增长的阶段相比,如今我国社会生产力发展水平有了较为明显的提升,这对于我国尽早实现小康社会有着十分积极的意义。</jats:p>",
+      "year": null,
+      "venue": "教育研究",
+      "citation_count": 4,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 2.618374,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 2,
+      "doi": "10.32629/ej.v8i11.3081",
+      "title": "基于文本分析的证据探究企业漂绿与政府补助的关系",
+      "abstract": "<jats:p>本文以2012—2021年中国沪深A股上市公司为研究样本,采用文本分析技术分析企业漂绿指标对政府环保补助的内在影响机理。研究发现,企业漂绿行为对政府环保补助的获取具有促进作用,并且该结论在一系列稳健性检验后依然成立。进一步研究发现,地区工业化程度和企业环境违规事件对漂绿与政府补助的关系存在调节效应。此外,本研究还为政策制定提供了启示,建议政府强化对企业环保信息的实质性核查,以防范企业漂绿行为并提升补助配置效率。</jats:p>",
+      "year": null,
+      "venue": "经济学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 2.005092,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 3,
+      "doi": "10.61654/zzjkwz0439",
+      "title": "基于循证证据的针对性护理对胎膜早破患者不良心理情绪的影响分析",
+      "abstract": "<jats:p>目的:探讨基于循证证据的针对性护理对胎膜早破患者焦虑、抑郁等不良心理情绪的干预效果。方法:选取2025年2月—2026年2月我院收治的150例胎膜早破患者,采用随机数字表法分为对照组(75例,常规产科护理)与观察组(75例,循证证据指导下的针对性护理)。采用焦虑自评量表(SAS)、抑郁自评量表(SDS)评估护理前后心理状态,比较两组评分差异及护理满意度。结果:护理前两组SAS、SDS评分无统计学差异(P&gt;0.05);护理后观察组SAS、SDS评分均显著低于对照组(P&lt;0.05),护理满意度高于对照组(P&lt;0.05)。结论:基于循证证据的针对性护理可有效改善胎膜早破患者不良心理情绪,提升护理质量与患者满意度。</jats:p>",
+      "year": null,
+      "venue": "健康文摘",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.72736,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 4,
+      "doi": "10.37155/2717-5650-0603-29",
+      "title": "情绪智力在临床护士心理弹性与人文关怀品质关系中的中介作用体会",
+      "abstract": "",
+      "year": 2025,
+      "venue": "国际护理与健康",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 5,
+      "doi": "10.1142/9789814285063",
+      "title": "台湾未来发展情境论：二十一世纪两岸关系与中华文明的再出发",
+      "abstract": "",
+      "year": 2000,
+      "venue": "台湾未来发展情境论：二十一世纪两岸关系与中华文明的再出发",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 3,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 6,
+      "doi": "10.31219/osf.io/zfhta_v1",
+      "title": "随机性在决定论框架中的角色：因果关系的时间连续性",
+      "abstract": "<p>在决定论框架下，因果关系必须沿着时间的流动逐步传递，过去的状态不能绕过当前时刻直接影响未来。本文探讨了在存在随机性的情况下，这一因果结构是否仍然成立。我们证明，即使当前时刻的状态对未来的决定具有随机性，过去的信息仍然不能透过当前状态直接影响未来，而必须通过当前状态这一“过滤层”进行传递。基于数学建模，我们建立了随机演化的迭代模型，表明决定论可以兼容随机性，但随机性不破坏因果关系的时间连续性。</p>",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 4,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 7,
+      "doi": "10.70693/hj0141",
+      "title": "人文关怀护理对血液透析患者负性情绪的改善效果观察",
+      "abstract": "",
+      "year": 2026,
+      "venue": "数据期刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "10.67328/bt1896",
+      "title": "人文关怀护理对血液透析患者负性情绪的改善效果观察",
+      "abstract": "",
+      "year": 2026,
+      "venue": "数据期刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 9,
+      "doi": "10.1360/csb1985-30-24-1898",
+      "title": "海洋体系中稀土元素的富集系数与停留时间的相关性研究",
+      "abstract": "",
+      "year": 1985,
+      "venue": "Chinese Science Bulletin",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "10.64216/3080-1516.26.06.082",
+      "title": "如何处理好长笛教学中音乐表现与演奏技术的关系",
+      "abstract": "",
+      "year": 2026,
+      "venue": "当代教育与艺术",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 11,
+      "doi": "",
+      "title": "Local Public Goods Provision in the Post-Agricultural Tax Era in Rural China",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 11,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "",
+      "title": "力学的两种定义及其与物理学的关系",
+      "abstract": "",
+      "year": 1996,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 12,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 13,
+      "doi": "",
+      "title": "Auto-focus technology and its application based on image processing",
+      "abstract": "",
+      "year": 2009,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 13,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 14,
+      "doi": "",
+      "title": "一名刻苦、勇敢的科学工作者是如何做出惊世成就的",
+      "abstract": "",
+      "year": 2012,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 14,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "",
+      "title": "基因表达数据分析中的特征基因提取",
+      "abstract": "",
+      "year": 2008,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 15,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "",
+      "title": "ECFA之后的两岸政治关系走向",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 16,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "",
+      "title": "如何与控制欲强的人相处",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 17,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "",
+      "title": "角点与线段特征提取的关键技术及应用研究",
+      "abstract": "",
+      "year": 2006,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 18,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "",
+      "title": "一种易变山羊草的咖啡因提取物及其提取方法与应用",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 19,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "",
+      "title": "基于脑电和近红外信号的特征提取方法",
+      "abstract": "",
+      "year": 2017,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 20,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}

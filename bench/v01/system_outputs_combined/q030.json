@@ -1,0 +1,586 @@
+{
+  "query_id": "q030",
+  "query": "表格基础模型的教育应用 (如何降低经济学学生学习数据分析的难度)",
+  "generated_at": "2026-07-14T23:52:54",
+  "config": "v4-combined-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "",
+      "title": "在哈佛医学院做实习医师的点滴感触",
+      "abstract": "",
+      "year": 2013,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 29,
+      "v4_score": 0.75,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.8551
+    },
+    {
+      "rank": 2,
+      "doi": "",
+      "title": "学习困难学生的认知因素分析",
+      "abstract": "",
+      "year": 1995,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 22,
+      "v4_score": 0.749891,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.855
+    },
+    {
+      "rank": 3,
+      "doi": "10.37155/2705-0653-0603-10",
+      "title": "浅析小学数学教学中如何提升学生的学习能力与素养",
+      "abstract": "",
+      "year": 2024,
+      "venue": "教育理论与应用",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.72282,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.8126
+    },
+    {
+      "rank": 4,
+      "doi": "10.37155/2705-0653-0605-42",
+      "title": "基于数学模型思想的小学数学应用题教学研究",
+      "abstract": "",
+      "year": 2024,
+      "venue": "教育理论与应用",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 13,
+      "v4_score": 0.711076,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.7943
+    },
+    {
+      "rank": 5,
+      "doi": "10.64216/3080-1494.26.04.041",
+      "title": "基于学习行为数据的在线课程预警模型构建与应用初探",
+      "abstract": "",
+      "year": 2026,
+      "venue": "东方教育学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.704749,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.7844
+    },
+    {
+      "rank": 6,
+      "doi": "",
+      "title": "对举重生物力学分析中数据平滑方法的研究",
+      "abstract": "",
+      "year": 1983,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 24,
+      "v4_score": 0.674589,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.7372
+    },
+    {
+      "rank": 7,
+      "doi": "",
+      "title": "脑动静脉畸形出血因素中的血液动力学分析",
+      "abstract": "",
+      "year": 2001,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 0.667916,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.7268
+    },
+    {
+      "rank": 8,
+      "doi": "10.69979/3029-2735.25.10.043",
+      "title": "高等数学中导数在经济学中的简单应用分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "智慧教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 12,
+      "v4_score": 0.650281,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6992
+    },
+    {
+      "rank": 9,
+      "doi": "10.37155/2717-5561-0703-10",
+      "title": "经典文学作品在大学语文教学中的应用",
+      "abstract": "",
+      "year": 2026,
+      "venue": "现代教育探索",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.641638,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6857
+    },
+    {
+      "rank": 10,
+      "doi": "",
+      "title": "民族预科生数学认识信念的调查分析",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 0.629926,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6674
+    },
+    {
+      "rank": 11,
+      "doi": "10.36012/sde.v1i3.471",
+      "title": "基于大数据的学生综合数据分析研究及应用",
+      "abstract": "<jats:p>大数据技术的进步迅速且有利于大家学习工作与生活，值得应用推广。论文利用大数据分析学生综合特征，研究学生综合测评引进大数据技术的概率与措施，同时提出了需要注意的相关缺陷不足。</jats:p>",
+      "year": null,
+      "venue": "教育科学发展",
+      "citation_count": 33,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.625764,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6609
+    },
+    {
+      "rank": 12,
+      "doi": "10.66128/jiee202601.12",
+      "title": "基于五步教学流程的数学建模案例常态化融入高等数学教学的探索与实践",
+      "abstract": "",
+      "year": 2026,
+      "venue": "教育交叉探索杂志",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.602685,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6248
+    },
+    {
+      "rank": 13,
+      "doi": "10.70693/rwsk.v2i6.516",
+      "title": "高职院校教师能力清单制定的难点与策略研究",
+      "abstract": "",
+      "year": 2026,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 1,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.571197,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5755
+    },
+    {
+      "rank": 14,
+      "doi": "10.62177/aper.v2i3.1482",
+      "title": "人工智能在数学教学中的应用研究",
+      "abstract": "",
+      "year": 2026,
+      "venue": "亚太教育研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.567661,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.57
+    },
+    {
+      "rank": 15,
+      "doi": "",
+      "title": "我国高校家庭经济困难学生认定政策发展研究",
+      "abstract": "",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 26,
+      "v4_score": 0.561129,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5598
+    },
+    {
+      "rank": 16,
+      "doi": "10.65196/sc2fqx71",
+      "title": "“生成式AI+钢琴教育”场景构建：从乐谱生成到即兴创作的教学应用",
+      "abstract": "",
+      "year": 2026,
+      "venue": "教育发展探索",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.550251,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5428
+    },
+    {
+      "rank": 17,
+      "doi": "",
+      "title": "教育社会化理论与《政治经济学》课程的教学",
+      "abstract": "",
+      "year": 2005,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 28,
+      "v4_score": 0.532485,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.515
+    },
+    {
+      "rank": 18,
+      "doi": "10.62662/kxwxz0210024",
+      "title": "基于BOPPPS模型的参与式学习在高校金课建设中的应用分析",
+      "abstract": "",
+      "year": null,
+      "venue": "教育科学文献",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.522521,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4994
+    },
+    {
+      "rank": 19,
+      "doi": "10.32629/jief.v2i1.451",
+      "title": "合作学习模式在初中八年级数学教学中的应用分析",
+      "abstract": "<jats:p>在科教兴国的教育战略影响下，初中教育开始重视提高学校的教学效率和教学质量，力求能够培养出高素质的人才。在新课改政策的影响下，初中数学开始引进新型的数学学习方法，将合作式学习模式应用在了数学课堂中，提高了初中数学学习的质量和效率。本文深入分析了在初中数学学习过程中使用合作式学习模式的应用于分析，力求能够提升初中生的数学综合水平。</jats:p>",
+      "year": null,
+      "venue": "国际教育论坛",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.519618,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4949
+    },
+    {
+      "rank": 20,
+      "doi": "10.32629/ej.v8i11.3113",
+      "title": "基于因子分析和机器学习的生物医药公司价值预测模型",
+      "abstract": "<jats:p>高质量发展是未来建设与经济发展必须贯彻的发展理念。本文选取我国461家生物医药上市公司作为研究对象,基于因子分析利用机器学习算法对生物医药公司构造价值预测模型。实证结果表明：营收规模与成长和综合盈利能力为影响价值分类的主要因子。三种机器学习算法中,多分类逻辑回归综合表现最优,测试准确率达到0.985,XGBoost次之；该研究中“因子分析+逻辑回归”模型的预测效果最优。为生物医药公司高质量发展提供参考。</jats:p>",
+      "year": null,
+      "venue": "经济学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 11,
+      "v4_score": 0.517813,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.492
+    },
+    {
+      "rank": 21,
+      "doi": "10.36012/sde.v3i1.2864",
+      "title": "基于模版的小学数学典型应用题生成",
+      "abstract": "<jats:p>小学数学是 K12 教育的主要内容之一，在日常教学活动中往往起着至关重要的作用。而数学应用题是对数学概念、数学知识、计算技能和句子理解的综合应用，对于数学应用题学习困难的学生，学生在课本中典型的问题类型上的学习也不能满足所有学生的需求。在这种情况下，自动生成应用题的需求变得至关重要。如果及时发现学生学习困难，则为学生提供额外训练来学习和解决问题，本研究通过语义规则和句式模版生成数学应用题、解析表达式和答案，目的是生成一组相似的问题，使学习者能够回忆关联问题的语义性质，培养学生的逻辑思维能力和提升学生的解题能力。</jats:p>",
+      "year": null,
+      "venue": "教育科学发展",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.510902,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4812
+    },
+    {
+      "rank": 22,
+      "doi": "",
+      "title": "山地环境与生态文明建设——中国地理学会2013年学术年会·西南片区会议论文集",
+      "abstract": "",
+      "year": 2013,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.424138,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3456
+    },
+    {
+      "rank": 23,
+      "doi": "10.62662/kxwxz01010004",
+      "title": "数据挖掘与学习分析在智慧课堂中的应用研究",
+      "abstract": "<jats:p>在智慧课堂中运用数据挖掘与学习分析，可改变智慧课堂教育发展格局。未来阶段，应用智慧课堂教学模式，需要从大数据信息化角度做好教育体系完善，以数据挖掘、学习分析为基本载体，开发智慧课堂教学新模式，从根本上提高智慧课堂教学的综合教育水平。</jats:p>",
+      "year": null,
+      "venue": "教育科学文献",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 14,
+      "v4_score": 0.42412,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3455
+    },
+    {
+      "rank": 24,
+      "doi": "",
+      "title": "Towards Sustainability: Environmental Education in China - A German Strategy for Chinese Schools?",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 25,
+      "v4_score": 0.333611,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.204
+    },
+    {
+      "rank": 25,
+      "doi": "10.1177/00081256231202266",
+      "title": "From Buzzword to Biz World: R <scp>ealizing</scp> B <scp>lockchain’s</scp> P <scp>otential in the</scp> I <scp>nternational</scp> B <scp>usiness</scp> C <scp>ontext</scp>",
+      "abstract": "",
+      "year": 2023,
+      "venue": "California Management Review",
+      "citation_count": 12,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.305588,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1602
+    },
+    {
+      "rank": 26,
+      "doi": "",
+      "title": "Discovering Chinese economic history from footnotes : the living tale of a private merchant archive (1800-1850)",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 23,
+      "v4_score": 0.27688,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1153
+    },
+    {
+      "rank": 27,
+      "doi": "10.1128/spectrum.01370-25",
+      "title": "Prevalence and distribution patterns of drug resistance in <i>Mycobacterium tuberculosis</i> to first-line antituberculosis drugs in Urumqi, China",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Microbiology Spectrum",
+      "citation_count": 1,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.259851,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0886
+    },
+    {
+      "rank": 28,
+      "doi": "",
+      "title": "Local Public Goods Provision in the Post-Agricultural Tax Era in Rural China",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 0.258967,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0872
+    },
+    {
+      "rank": 29,
+      "doi": "10.1360/ssi-2025-0329",
+      "title": "Behavioral analysis of contributors in China's open-source software ecosystem",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Scientia Sinica Informationis",
+      "citation_count": 1,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.250729,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0744
+    },
+    {
+      "rank": 30,
+      "doi": "10.1177/18681034231186441",
+      "title": "Foreign Investment, State Capitalism, and National Development in Borneo: Rethinking Brunei–China Economic Relations",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Journal of Current Southeast Asian Affairs",
+      "citation_count": 9,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.25,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0732
+    }
+  ]
+}

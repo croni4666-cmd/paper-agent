@@ -1,0 +1,556 @@
+{
+  "query_id": "q040",
+  "query": "sugar-sweetened beverage (SSB) consumption health effects obesity Chinese cohort, China bubble tea brand case studies",
+  "generated_at": "2026-07-14T23:51:44",
+  "config": "v4-bm25-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1088/1475-7516/2021/01/058",
+      "title": "Bubble wall velocity: heavy physics effects",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 7.038858,
+      "bm25_score": 7.0389
+    },
+    {
+      "rank": 2,
+      "doi": "arXiv:2411.18628v1",
+      "title": "Cohort profile: the Northwest China Real-world and Population-based Cohort",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 6.387228,
+      "bm25_score": 6.3872
+    },
+    {
+      "rank": 3,
+      "doi": "",
+      "title": "The Effects of a Sugar-Sweetened Beverage Tax: Consumption, Calorie Intake, Obesity, and Tax Burden by Income",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 29,
+      "v4_score": 5.96285,
+      "bm25_score": 5.9628
+    },
+    {
+      "rank": 4,
+      "doi": "arXiv:2006.15285v1",
+      "title": "Promoting the Research of Health Behavior Change in Chinese HCI Community",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 5.535145,
+      "bm25_score": 5.5351
+    },
+    {
+      "rank": 5,
+      "doi": "10.1016/j.orcp.2011.08.108",
+      "title": "Sugar-sweetened beverage consumption and risk of obesity in Australian children: Could dietary salt be contributing to sugar-sweetened beverage consumption?",
+      "abstract": "",
+      "year": 2011,
+      "venue": "Obesity Research &amp; Clinical Practice",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 4.169258,
+      "bm25_score": 4.1693
+    },
+    {
+      "rank": 6,
+      "doi": "10.1016/j.healthpol.2024.105076",
+      "title": "Economic Evaluations of Obesity-Targeted Sugar-Sweetened Beverage (SSB) Taxes–A Review to Identify Methodological Issues",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Health Policy",
+      "citation_count": 7,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 4.109987,
+      "bm25_score": 4.11
+    },
+    {
+      "rank": 7,
+      "doi": "10.1542/peds.2012-1628d",
+      "title": "Dietary Salt Intake, Sugar-Sweetened Beverage Consumption, and Obesity Risk",
+      "abstract": "",
+      "year": 2013,
+      "venue": "PEDIATRICS",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 4.030005,
+      "bm25_score": 4.03
+    },
+    {
+      "rank": 8,
+      "doi": "10.1515/fhep-2017-0031",
+      "title": "Short-Run Health Consequences of Retirement and Pension Benefits: Evidence from China",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 4.009757,
+      "bm25_score": 4.0098
+    },
+    {
+      "rank": 9,
+      "doi": "10.5353/th_b5320304",
+      "title": "A systematic review of the impact of sugar-sweetened beverage consumption on children and adolescent obesity",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dissertation",
+      "orig_rank": 6,
+      "v4_score": 3.882685,
+      "bm25_score": 3.8827
+    },
+    {
+      "rank": 10,
+      "doi": "10.2174/0115734013391479250811112757",
+      "title": "Sweet Taste Preference, Sugar-Sweetened Beverage (SSB) Consumption, and Obesity in Elementary School Children",
+      "abstract": "<jats:sec>\n                    <jats:title>Introduction:</jats:title>\n                    <jats:p>Childhood obesity results from an imbalance between energy intake and\nexpenditure, often exacerbated by high consumption of energy-dense foods and sugary beverages.\nThis study aimed to examine the relationship between sweet taste preference, sugar-sweetened\nbeverage (SSB) consumption, and obesity among elementary school children in Indonesia, particularly\nwithin the structured environment of a full-",
+      "year": 2025,
+      "venue": "Current Nutrition &amp; Food Science",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 3.787041,
+      "bm25_score": 3.787
+    },
+    {
+      "rank": 11,
+      "doi": "10.1016/j.healthpol.2012.05.011",
+      "title": "International application of sugar-sweetened beverage (SSB) taxation in obesity reduction: Factors that may influence policy effectiveness in country-specific contexts",
+      "abstract": "",
+      "year": 2012,
+      "venue": "Health Policy",
+      "citation_count": 85,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 3.740335,
+      "bm25_score": 3.7403
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2307.11211v1",
+      "title": "The Effect of Epidemiological Cohort Creation on the Machine Learning Prediction of Homelessness and Police Interaction Outcomes Using Administrative Health Care Data",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 3.724336,
+      "bm25_score": 3.7243
+    },
+    {
+      "rank": 13,
+      "doi": "",
+      "title": "Sugar-sweetened-beverage tax. A strategic public health measure for oral health?",
+      "abstract": "",
+      "year": 2025,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 26,
+      "v4_score": 3.671418,
+      "bm25_score": 3.6714
+    },
+    {
+      "rank": 14,
+      "doi": "10.1080/10410236.2024.2440534",
+      "title": "Does Character–Audience Matching Increase the Persuasive Impact of Anti-Sugar-Sweetened-Beverage (SSB) Consumption Messages?",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Health Communication",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 3.629076,
+      "bm25_score": 3.6291
+    },
+    {
+      "rank": 15,
+      "doi": "arXiv:2606.20868v1",
+      "title": "Can LLMs Reason About Brand Ownership? An Empirical Study of Domain Attribution Intelligence",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 3.493502,
+      "bm25_score": 3.4935
+    },
+    {
+      "rank": 16,
+      "doi": "",
+      "title": "Results of the structural model for sugar-sweetened beverage (SSB) taxes.",
+      "abstract": "",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 3.310145,
+      "bm25_score": 3.3101
+    },
+    {
+      "rank": 17,
+      "doi": "10.1186/s12889-023-15828-z",
+      "title": "Sugar-sweetened beverage consumption among pregnant women attending general and teaching hospitals in Ibadan, Nigeria",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Sugar-sweetened beverages (SSBs) have become a global health concern because of their adverse health effects and their association with the obesity pandemic. It has not received much attention in sub-Saharan Africa, including Nigeria, especially among pregnant women. The pattern, frequency and factors associated with SSBs among pregnant women in Ibadan, Nigeria, were investigated.</jats:p></jats:sec><jats:sec><",
+      "year": null,
+      "venue": "BMC Public Health",
+      "citation_count": 6,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 3.157006,
+      "bm25_score": 3.157
+    },
+    {
+      "rank": 18,
+      "doi": "arXiv:1710.07763v1",
+      "title": "Modeling the Annual Growth Rate of Electricity Consumption of China in the 21st Century: Trends and Prediction",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 3.072817,
+      "bm25_score": 3.0728
+    },
+    {
+      "rank": 19,
+      "doi": "",
+      "title": "Difference-in-differences of likelihood of high sugar-sweetened beverage (SSB) consumption<sup>a</sup> pre- and post-tax implementation between San Francisco and San José (n = 1,443).",
+      "abstract": "",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 2.872142,
+      "bm25_score": 2.8721
+    },
+    {
+      "rank": 20,
+      "doi": "10.1016/j.orcp.2010.09.118",
+      "title": "Sugar sweetened beverage consumption in Australian children",
+      "abstract": "",
+      "year": 2010,
+      "venue": "Obesity Research &amp; Clinical Practice",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 2.799446,
+      "bm25_score": 2.7994
+    },
+    {
+      "rank": 21,
+      "doi": "10.31525/ct1-nct04025060",
+      "title": "Reducing Sugar-sweetened Beverage Consumption Among Children",
+      "abstract": "",
+      "year": null,
+      "venue": "Case Medical Research",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 2.684505,
+      "bm25_score": 2.6845
+    },
+    {
+      "rank": 22,
+      "doi": "",
+      "title": "Kajian Stres Remaja Terhadap Frekuensi Konsumsi Sugar-sweetened beverage (SSB) Selama Pandemi Covid -19.",
+      "abstract": "",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 22,
+      "v4_score": 2.676736,
+      "bm25_score": 2.6767
+    },
+    {
+      "rank": 23,
+      "doi": "",
+      "title": "Sugar Sweetened Beverage Consumption in Auckland Primary School Children",
+      "abstract": "",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 24,
+      "v4_score": 2.578631,
+      "bm25_score": 2.5786
+    },
+    {
+      "rank": 24,
+      "doi": "arXiv:1702.02461v1",
+      "title": "Who Will Win Practical Artificial Intelligence? AI Engineerings in China",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 2.401816,
+      "bm25_score": 2.4018
+    },
+    {
+      "rank": 25,
+      "doi": "10.1080/23288604.2024.2387138",
+      "title": "The Digital Transformation in Health: How AI Can Improve the Performance of Health Systems",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 2.297719,
+      "bm25_score": 2.2977
+    },
+    {
+      "rank": 26,
+      "doi": "",
+      "title": "Substantial decline in sugar-sweetened beverage consumption among California&amp;rsquo;s children and adolescents",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 23,
+      "v4_score": 2.227266,
+      "bm25_score": 2.2273
+    },
+    {
+      "rank": 27,
+      "doi": "",
+      "title": "Am J Health Promot",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 25,
+      "v4_score": 2.19989,
+      "bm25_score": 2.1999
+    },
+    {
+      "rank": 28,
+      "doi": "",
+      "title": "A qualitative study of adolescent views of sugar sweetened beverage taxes",
+      "abstract": "",
+      "year": 2015,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 1.544063,
+      "bm25_score": 1.5441
+    },
+    {
+      "rank": 29,
+      "doi": "",
+      "title": "A systematic scoping review evaluating sugar-sweetened beverage taxation from a systems perspective",
+      "abstract": "",
+      "year": 2023,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 28,
+      "v4_score": 1.431174,
+      "bm25_score": 1.4312
+    },
+    {
+      "rank": 30,
+      "doi": "arXiv:2404.09960v1",
+      "title": "Pseudo P-values for Assessing Covariate Balance in a Finite Study Population with Application to the California Sugar Sweetened Beverage Tax Study",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 1.210011,
+      "bm25_score": 1.21
+    }
+  ]
+}

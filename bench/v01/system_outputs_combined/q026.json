@@ -1,0 +1,377 @@
+{
+  "query_id": "q026",
+  "query": "自然语言处理中对于细致情绪状态的划分，以及情绪转换矩阵 (譬如：羡慕转化成嫉妒再转化成生气等等)",
+  "generated_at": "2026-07-14T23:52:52",
+  "config": "v4-combined-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 19,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.64658/gscr.20251230.067bf",
+      "title": "基于跨理论模型护理1例双相情感障碍合并再生障碍性贫血患者的案例分析",
+      "abstract": "",
+      "year": null,
+      "venue": "中西医转化医学临床病案成果数据库",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.75,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.7157
+    },
+    {
+      "rank": 2,
+      "doi": "",
+      "title": "生物质化学链气化制取合成气模拟研究",
+      "abstract": "",
+      "year": 2011,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 18,
+      "v4_score": 0.712865,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6672
+    },
+    {
+      "rank": 3,
+      "doi": "",
+      "title": "催化剂及合成气转化法",
+      "abstract": "",
+      "year": 2009,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 12,
+      "v4_score": 0.686953,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6334
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "一种用于合成气转化的磷化物催化剂和制备方法及其应用",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 14,
+      "v4_score": 0.677094,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6205
+    },
+    {
+      "rank": 5,
+      "doi": "",
+      "title": "催化裂化干气制乙苯气相烷基化与液相烷基转化优化组合成套技术",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 15,
+      "v4_score": 0.666211,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6063
+    },
+    {
+      "rank": 6,
+      "doi": "10.64658/gscr.20251230.ab329",
+      "title": "1例多复方感冒药联用致药物性肝炎的识别、危急值处理与转诊案例",
+      "abstract": "",
+      "year": null,
+      "venue": "中西医转化医学临床病案成果数据库",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.657529,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5949
+    },
+    {
+      "rank": 7,
+      "doi": "10.1360/csb2011-56-30-2446",
+      "title": "高等植物生长发育中同化物的转移",
+      "abstract": "",
+      "year": 2011,
+      "venue": "Chinese Science Bulletin",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.653693,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5899
+    },
+    {
+      "rank": 8,
+      "doi": "10.64658/gscr.20251020.e9913",
+      "title": "神经母细胞瘤伴多发转移1例的外周血细胞及骨髓象检查结果分析",
+      "abstract": "",
+      "year": null,
+      "venue": "中西医转化医学临床病案成果数据库",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.649502,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5844
+    },
+    {
+      "rank": 9,
+      "doi": "",
+      "title": "一种低碳烷烃与二氧化碳反应制合成气用催化剂及其应用",
+      "abstract": "",
+      "year": 1997,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 16,
+      "v4_score": 0.63346,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5635
+    },
+    {
+      "rank": 10,
+      "doi": "",
+      "title": "一种天然气或甲烷催化转化制合成气的方法",
+      "abstract": "",
+      "year": 2003,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 11,
+      "v4_score": 0.624644,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.552
+    },
+    {
+      "rank": 11,
+      "doi": "10.18686/zhfnc.v1i2.71",
+      "title": "实验性诱导营养不良对鸡脑部抑郁和情绪中等以及血液影响的生物化学作用",
+      "abstract": "<jats:p>背景：营养缺乏和营养不良会引起周期性嗜睡、情绪低落和贫血。因此，在本研究中，我们通过实验诱导鸡营养不良，以跟踪鸡的脑功能和贫血状况（血液指数）。材料和方法：本研究以两组60只一天龄的雏鸡为研究对象，这些雏鸡喂食商品开食料10天，然后平均分成两组，饲养6周。第一对照组在生长期和育成期饲喂商品生长料和育成料，而第二试验组在生长期和育成期持续饲喂黄玉米。所有雏鸡在六周内每周称重一次，以记录体重差异。每两周从每组的10只雏鸡中采集全血样和脑匀浆，以评估脑组织匀浆参数、白细胞计数差异、全血细胞计数和血液指数。结果：比较两组雏鸡的脑组织匀浆发现，缺食组的乙酰胆碱酯酶（AChE）和总抗氧化能力（TAC）在整个饲养过程中显著增加，而肿瘤坏死因子-α（TNF-α）在缺食组第二周和第四周后增加，第六周后两组无显著差异。对照组的谷胱甘肽过氧化物酶（GPx）和超氧化物歧化酶（SOD）在整个实验期间都明显增加，而全血细胞计数（CBC）和细胞差异计数显示，食物缺乏组的白细胞（WBCs）在整个实验期间都明显增加、嗜酸性粒细胞浓度在缺食组两周和四周后明显升高，六周后两组差异不明显；淋巴细胞在对照组第二",
+      "year": null,
+      "venue": "食品营养化学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.623028,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5499
+    },
+    {
+      "rank": 12,
+      "doi": "",
+      "title": "一氧化碳加氢合成乙醇乙醛等二碳含氧化合物催化剂",
+      "abstract": "",
+      "year": 1998,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 17,
+      "v4_score": 0.619908,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5458
+    },
+    {
+      "rank": 13,
+      "doi": "10.31219/osf.io/hn6sz_v1",
+      "title": "从悲哀到归责：情绪转化中的希望机制与责任转嫁",
+      "abstract": "<p>本文分析了人在遭遇悲哀、无助等负面情绪时，如何通过转化为愤怒并对他人进行追责，从而建构一种希望幻觉与象征性控制感的心理机制。文章指出，悲哀情绪虽更贴近事实，却因其不包含行动希望而被逃避；而愤怒则以归责为手段，将命运的责任外包于他者，从而重建一种“我仍能改变命运”的心理结构。追责不仅仅是一种情绪表达，更是建立社会性“情绪债权”与象征性仪式感的行为。最终，本文通过对比古代祭祀结构，提出追责仪式实质上是一种现代情绪祭祀，其中“指责对象”被神格化，并在主观经验中形成一种“神谱排序”的结构。</p>",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 4,
+      "v4_score": 0.614278,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5384
+    },
+    {
+      "rank": 14,
+      "doi": "",
+      "title": "由合成气转化为二甲醚反应用金属沸石催化剂",
+      "abstract": "",
+      "year": 1994,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 13,
+      "v4_score": 0.610302,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5333
+    },
+    {
+      "rank": 15,
+      "doi": "10.69979/3029-2700.24.8.040",
+      "title": "投资者情绪对企业投资水平的影响——基于数字化转型的调节效应",
+      "abstract": "",
+      "year": 2024,
+      "venue": "社会企业经济发展",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.602233,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5227
+    },
+    {
+      "rank": 16,
+      "doi": "10.63887/etr.2025.1.5.13",
+      "title": "小学英语教学中‘边缘生’成因分析及转化策略研究",
+      "abstract": "<jats:p>随着英语教育的不断发展，许多小学面临着“边缘生”的问题。这些学生通常在学习过程中存在学习动力不足、基础薄弱等问题，导致他们在课堂上表现落后于同龄学生。本文通过分析“边缘生”的成因，探讨了他们在英语学习中的困境及其背后的深层次原因，并提出了一些转化策略。研究认为，家庭因素、教师教学方法、学生自身差异等因素共同作用，导致了“边缘生”的出现。为此，本文建议通过多元化教学策略、个性化辅导、以及加强家庭与学校的合作来帮助这些学生克服学习困境，逐步提升其英语水平。</jats:p>",
+      "year": null,
+      "venue": "教育理论与研究",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.584507,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4996
+    },
+    {
+      "rank": 17,
+      "doi": "",
+      "title": "一种在移动床上进行汽油和液化气的催化转化方法",
+      "abstract": "",
+      "year": 2008,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 19,
+      "v4_score": 0.576306,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4889
+    },
+    {
+      "rank": 18,
+      "doi": "10.5376/pr.cn.2014.03.0002",
+      "title": "高、低心理弹性女性的日常情绪状态及情绪自我调节方式",
+      "abstract": "",
+      "year": null,
+      "venue": "心理学研究",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.536865,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4373
+    },
+    {
+      "rank": 19,
+      "doi": "10.12677/biphy.2022.102004",
+      "title": "Pseudo-Time Analysis of Single-Cell Transcriptome Data Based on Natural Language Processing",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Biophysics",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.25,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0627
+    }
+  ]
+}

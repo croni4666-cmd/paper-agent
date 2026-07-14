@@ -1,0 +1,376 @@
+{
+  "query_id": "q031",
+  "query": "新能源汽车销售与国际原油价格的 Granger 因果 / SVAR 检验",
+  "generated_at": "2026-07-14T23:53:06",
+  "config": "v4-prf-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 20,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "arXiv:2108.08464v1",
+      "title": "Svar: A Tiny C++ Header Brings Unified Interface for Multiple programming Languages",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 15.84741,
+      "bm25_score": 1.6371
+    },
+    {
+      "rank": 2,
+      "doi": "arXiv:2412.15373v1",
+      "title": "Granger Causality Detection with Kolmogorov-Arnold Networks",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 2.934181,
+      "bm25_score": 1.4671
+    },
+    {
+      "rank": 3,
+      "doi": "arXiv:1911.09879v2",
+      "title": "Economy Statistical Recurrent Units For Inferring Nonlinear Granger Causality",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 2.532238,
+      "bm25_score": 1.2661
+    },
+    {
+      "rank": 4,
+      "doi": "10.1145/3441452",
+      "title": "Variable-lag Granger Causality and Transfer Entropy for Time Series Analysis",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 2.369915,
+      "bm25_score": 1.185
+    },
+    {
+      "rank": 5,
+      "doi": "arXiv:1810.12171v1",
+      "title": "Causal Inference in Nonverbal Dyadic Communication with Relevant Interval Selection and Granger Causality",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 2.227149,
+      "bm25_score": 1.1136
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:2606.07575v1",
+      "title": "Forward-Looking Stress Testing Under Macro Scenarios: Stable SVaR Estimation Using a Hybrid GPR-HS Framework with SACS",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 1.130035,
+      "bm25_score": 1.13
+    },
+    {
+      "rank": 7,
+      "doi": "10.37155/2717-5197-0607-2",
+      "title": "汽车新能源与新能源汽车发展趋势分析",
+      "abstract": "",
+      "year": 2024,
+      "venue": "机械与电子控制工程",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "10.37155/2811-0609-0315-35",
+      "title": "汽车新能源与新能源汽车发展趋势",
+      "abstract": "",
+      "year": 2024,
+      "venue": "工程施工新技术",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 9,
+      "doi": "10.37155/2717-5197-0707-18",
+      "title": "汽车新能源与新能源汽车发展趋势分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "机械与电子控制工程",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "10.54254/3049-5660/1/2024002",
+      "title": "基于回归模型的中国新能源汽车销售量影响因素探究",
+      "abstract": "<jats:p>本文旨在探究影响中国新能源汽车销售量的主要因素，并构建多元线性回归模型进行分析。通过文献综述和结构分析，确定政策、技术、市场和社会观念等因素对新能源汽车发展的影响。利用中国统计年鉴和数据库数据，分析了2014年至2022年新能源汽车销售量与多个影响因素的关系，并使用Origin软件进行可视化处理。通过MATLAB建立多元线性回归模型，得到回归方程并进行拟合优度检验，结果表明模型拟合效果良好。进一步进行权重分析和灵敏度分析，发现充电桩数量、石油价格、限牌地区等因素对新能源汽车销售量影响显著，且模型具有较强的稳健性。研究结果表明，充电桩的普及对新能源汽车销售量的影响最为重要，其次是石油价格、限牌地区、疫情等因素。政策支持力度和补贴力度对销售量的影响相对较小。该研究为中国新能源汽车产业发展提供了参考依据，并为相关政策的制定提供理论支持。</jats:p>",
+      "year": null,
+      "venue": "计算与实验",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 11,
+      "doi": "10.61369/asds.12185",
+      "title": "AI大模型在新能源汽车境外销售检修中的信息检索与NLP 应用自动化驾驶标准化的研究",
+      "abstract": "<jats:p>本论文聚焦于 AI大模型在新能源汽车境外销售检修及自动化驾驶标准化方面的应用。阐述了当前新能源汽车境外业务拓展面临的挑战，分析 AI大模型如何助力解决销售检修环节的文本信息处理难题，以及在推动自动化驾驶标准化进程中的作用。通过研究，旨在为提升新能源汽车的全球竞争力、保障自动化驾驶安全规范发展提供理论与实践参考。</jats:p>",
+      "year": null,
+      "venue": "Applied Statistics and Data Science",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "10.69979/3029-2700.25.02.078",
+      "title": "汇率、国际原油价格对国内能源化工期货的影响",
+      "abstract": "",
+      "year": 2025,
+      "venue": "社会企业经济发展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 13,
+      "doi": "10.12677/ecl.2025.1461726",
+      "title": "Analysis of Sales Factors of New Energy Vehicles under the Background of Green—Taking BYD’s New Energy Vehicles as an Example",
+      "abstract": "",
+      "year": 2025,
+      "venue": "E-Commerce Letters",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 14,
+      "doi": "10.61654/zzjzjdjcyzj04121",
+      "title": "新能源汽车三电系统损伤鉴定研究",
+      "abstract": "<jats:p>三电系统作为新能源汽车的核心组成部分,直接决定车辆的动力性能、安全性能和使用寿命,其损伤情况不仅关系到车辆维修成本,更影响车辆后续行驶安全和二手交易价值。随着新能源汽车保有量的不断增加,碰撞、涉水、过载等引发的三电系统损伤事故频发,而三电系统结构复杂、技术含量高,其损伤鉴定难度远高于传统燃油车零部件。本文结合新能源汽车三电系统的结构特点,界定三电系统损伤鉴定的核心内涵与重要意义,分析常见损伤类型及成因,探讨当前损伤鉴定工作中存在的问题,提出针对性的优化路径,为规范三电系统损伤鉴定流程、提升鉴定准确性、保障相关主体合法权益提供理论参考和实践借鉴。</jats:p>",
+      "year": null,
+      "venue": "建筑监督检测与造价",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "10.32629/jpm.v7i5.8906",
+      "title": "电动汽车营销与新能源协同发展",
+      "abstract": "<jats:p>在“双碳”目标引领和能源结构转型的大背景下，电动汽车产业与新能源产业、微电网技术的融合发展，已成为推动绿色低碳发展的重要路径。本文立足电动汽车营销实践，结合新能源（光伏、风电等）开发利用与微电网技术的应用场景，剖析三者协同发展的内在逻辑与现存困境，探索基于新能源协同的电动汽车营销创新路径，实现电动汽车推广、新能源消纳与微电网优化的双向赋能。研究表明，电动汽车营销与新能源、微电网的协同发展，既能破解电动汽车充电续航痛点、压缩营销成本，又能促进新能源就地消纳、提升微电网运行效能，助力能源系统向清洁化、智能化转型。</jats:p>",
+      "year": null,
+      "venue": "工程管理",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "10.37155/2717-5251-0710-22",
+      "title": "新能源电力市场化交易的国际经验与中国实施路径",
+      "abstract": "",
+      "year": 2025,
+      "venue": "水利电力技术与应用",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:2008.02717v1",
+      "title": "Computation of a 30750-Bit Binary Field Discrete Logarithm",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "arXiv:0505465v1",
+      "title": "A flatness property for filtered D-modules",
+      "abstract": "",
+      "year": 2005,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "arXiv:2505.23542v3",
+      "title": "Large SVARs",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "arXiv:2604.07718v1",
+      "title": "Identification in (Endogenously) Nonlinear SVARs Is Easier Than You Think",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}
