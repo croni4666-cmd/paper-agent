@@ -1,27 +1,27 @@
-# Paper-Agent Roadmap (Living Document)
+﻿# Paper-Agent Roadmap (Living Document)
 
-> **Status discipline** — This document is the single source of truth for paper-agent's evolution.
+> **Status discipline** 鈥?This document is the single source of truth for paper-agent's evolution.
 > All future improvements **MUST** follow this protocol:
 >
-> 1. **Before proposing** new work: check this file. If your idea is already here, do not propose again — link to the existing entry and argue for status change.
+> 1. **Before proposing** new work: check this file. If your idea is already here, do not propose again 鈥?link to the existing entry and argue for status change.
 > 2. **Adding** new item: write under "Proposed" with `Status: proposed`, `Added: YYYY-MM-DD`, `Priority`, `Effort`, `Rationale`, `Source`. Keep entries atomic and self-contained.
-> 3. **Status transitions** (proposed → in-progress → done): move the entry; never duplicate. Update `Status:` and add `Started:` / `Completed:` dates.
-> 4. **Proven wrong / partial**: do **NOT** delete the entry. Add a sub-section under the same item with heading `### Modified YYYY-MM-DD — <what changed>` and write the new reasoning + new status. The original rationale is preserved as an audit trail.
-> 5. **Abandoned** (won't do for foreseeable future): mark `Status: deprecated`. Keep the entry + add `### Deprecated YYYY-MM-DD — <why>`. Future readers can see the history.
-> 6. **Cited from CHANGELOG.md** — every release must reference which roadmap items it implements.
+> 3. **Status transitions** (proposed 鈫?in-progress 鈫?done): move the entry; never duplicate. Update `Status:` and add `Started:` / `Completed:` dates.
+> 4. **Proven wrong / partial**: do **NOT** delete the entry. Add a sub-section under the same item with heading `### Modified YYYY-MM-DD 鈥?<what changed>` and write the new reasoning + new status. The original rationale is preserved as an audit trail.
+> 5. **Abandoned** (won't do for foreseeable future): mark `Status: deprecated`. Keep the entry + add `### Deprecated YYYY-MM-DD 鈥?<why>`. Future readers can see the history.
+> 6. **Cited from CHANGELOG.md** 鈥?every release must reference which roadmap items it implements.
 > 7. **Global Rule (added 2026-07-04)**: every proposed item MUST be checked against the Global Rule below. Items that exceed personal-hobbyist burden are out of scope unless user explicitly says "commercialize".
 
 ---
 
-## Global Rule — Personal-hobbyist budget (added 2026-07-04)
+## Global Rule 鈥?Personal-hobbyist budget (added 2026-07-04)
 
-> **除非我强调要商业化,千万不要制作超过个人爱好者经济负担能力的大服务,因为维护能力有限。**
+> **闄ら潪鎴戝己璋冭鍟嗕笟鍖?鍗冧竾涓嶈鍒朵綔瓒呰繃涓汉鐖卞ソ鑰呯粡娴庤礋鎷呰兘鍔涚殑澶ф湇鍔?鍥犱负缁存姢鑳藉姏鏈夐檺銆?*
 >
 > Translation: Unless I explicitly say "commercialize", never build a service whose economic + maintenance burden exceeds what one personal hobbyist can sustain.
 
 **What this rule means in practice**:
 
-| ✅ Allowed | ❌ Out of scope |
+| 鉁?Allowed | 鉂?Out of scope |
 |---|---|
 | Code that runs locally on one machine | Hosted services requiring paid infra |
 | Free public APIs (OpenAlex, Crossref, Unpaywall free tier, Semantic Scholar free tier) | Paid API tiers (S2 paid, Scopus, Web of Science) |
@@ -35,7 +35,7 @@
 **Checklist for any new item** (must pass ALL before adding to roadmap):
 1. **No paid infra required** to run it for the user or a peer
 2. **No hosted service** the user must keep alive
-3. **Maintenance cadence** ≤ a few hours per month for a single hobbyist
+3. **Maintenance cadence** 鈮?a few hours per month for a single hobbyist
 4. **No "must publish / must maintain public-facing infra"** obligation
 5. **Free-tier degradation**: if the item depends on a third-party free API, what happens when that free tier is removed? (must be: degrades gracefully, not "tool becomes useless")
 
@@ -43,26 +43,26 @@
 
 | Item ID | Verdict | Action |
 |---|---|---|
-| [P0-1] Bibtex export | ✅ pass | already shipped; pure local code |
-| [P0-2] Local cache | ✅ pass | already shipped; local files only |
-| [P0-3] MCP server | ❌ fail | **REVERTED 2026-07-04** — self-maintained MCP exceeded maintenance budget. Use public `paper-search-mcp` (PyPI) instead. |
-| [P1-1] Citation walk | ✅ pass | uses OpenAlex free API; degrades gracefully when key unset |
-| [P1-2] OpenAlex concepts | ✅ pass | same as P1-1 (free API + local filter) |
-| [P1-3] PRISMA diagram | ✅ pass | pure local markdown generation |
-| [P1-4] Topic clustering + polish (custom labels + domain stopwords + pluggable ABC) | ✅ pass | local code + sklearn + jieba (all free); no hosted service; ~340 LOC new in labels/ subpackage |
-| [P2-1] Browser extension | ❌ fail | **REDESIGN as userscript** — see Modified 2026-07-04 entry below |
-| [P2-2] API key auto-application | ⚠️ needs design review | deferred — see Modified 2026-07-04 entry below |
-| [P2-3] `pa watch` daily subscription | ❌ fail | **REDESIGN — drop email push** — see Modified 2026-07-04 entry below |
+| [P0-1] Bibtex export | 鉁?pass | already shipped; pure local code |
+| [P0-2] Local cache | 鉁?pass | already shipped; local files only |
+| [P0-3] MCP server | 鉂?fail | **REVERTED 2026-07-04** 鈥?self-maintained MCP exceeded maintenance budget. Use public `paper-search-mcp` (PyPI) instead. |
+| [P1-1] Citation walk | 鉁?pass | uses OpenAlex free API; degrades gracefully when key unset |
+| [P1-2] OpenAlex concepts | 鉁?pass | same as P1-1 (free API + local filter) |
+| [P1-3] PRISMA diagram | 鉁?pass | pure local markdown generation |
+| [P1-4] Topic clustering + polish (custom labels + domain stopwords + pluggable ABC) | 鉁?pass | local code + sklearn + jieba (all free); no hosted service; ~340 LOC new in labels/ subpackage |
+| [P2-1] Browser extension | 鉂?fail | **REDESIGN as userscript** 鈥?see Modified 2026-07-04 entry below |
+| [P2-2] API key auto-application | 鈿狅笍 needs design review | deferred 鈥?see Modified 2026-07-04 entry below |
+| [P2-3] `pa watch` daily subscription | 鉂?fail | **REDESIGN 鈥?drop email push** 鈥?see Modified 2026-07-04 entry below |
 | [P2-4] ~~pa cache stats~~ | n/a | already merged into [P0-2] |
 
 **Last audit**: 2026-07-05 ([P1-4] polish, labels/ subpackage, regression 42 PASS)
-**Next audit**: every time a new item is added (Status: proposed → in-progress transition)
+**Next audit**: every time a new item is added (Status: proposed 鈫?in-progress transition)
 
 ---
 
 **Owner**: Mavis (mavis)
 **Last reviewed**: 2026-07-04 (MCP revert + global rule codification pass)
-**Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6 + §7 + §8 (the original brainstorming; preserved here as the inception log)
+**Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6 + 搂7 + 搂8 (the original brainstorming; preserved here as the inception log)
 
 ---
 
@@ -76,7 +76,7 @@
 - **Completed**: 2026-07-04
 - **Priority**: P0
 - **Effort**: ~3 hours (faster than estimate)
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.1
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.1
 - **Rationale**: PyPaperBot has built-in Bibtex export; missing from paper-agent v3.3.0. Academic users need Bibtex for Zotero / Mendeley / Overleaf workflows. Without Bibtex, paper-agent loses one of the primary reasons users migrate from PyPaperBot.
 - **Acceptance criteria**:
   - `pa search <query> --format bibtex --output results.bib` produces standard `.bib` file
@@ -90,7 +90,7 @@ Implementation: `pa_cli/bibtex.py` (220 lines) + `--format` option in `pa search
 
 Validation passed (`test_output/validate_bibtex.py`):
 - 3 entries from `pa search "AI literacy higher education"` parsed cleanly by bibtexparser v1.4.4
-- Round-trip test: serialize + parse again → 3 entries, no data loss
+- Round-trip test: serialize + parse again 鈫?3 entries, no data loss
 - All 3 cite-keys unique (DOI-stripped format)
 - All entries have valid DOI (10.* prefix)
 - 0 results edge case: 0 entries written, no crash, header still generated
@@ -100,20 +100,20 @@ Fields populated per entry: title / author / journal / year / doi / url / note
 (citation count + OA status). Special chars escaped: `\` `{` `}` `&` `%` `$` `#` `_`.
 
 Surprise findings during validation:
-- Used 3 hours vs estimate 1-2 days — OpenAlex metadata is rich enough that no Crossref fallback was needed
+- Used 3 hours vs estimate 1-2 days 鈥?OpenAlex metadata is rich enough that no Crossref fallback was needed
 - bibtexparser v1.4.4 was already installable; no extra deps beyond pip install
 - Round-trip serialization preserved byte-for-byte content; downstream tools (Zotero, JabRef) will accept these unchanged
 
 What v3.4.1+ could improve (deferred to backlog):
-- Author name disambiguation (initials vs full first names — currently uses OpenAlex's display_name which is good but not always consistent)
-- Pages / volume / issue fields — OpenAlex doesn't expose these; would need Crossref fallback or just `pages = {}` empty
-- Entry type auto-detection for proceedings / books — currently hardcoded `@article` per source type
+- Author name disambiguation (initials vs full first names 鈥?currently uses OpenAlex's display_name which is good but not always consistent)
+- Pages / volume / issue fields 鈥?OpenAlex doesn't expose these; would need Crossref fallback or just `pages = {}` empty
+- Entry type auto-detection for proceedings / books 鈥?currently hardcoded `@article` per source type
 
-### [P2-4] ~~pa cache stats~~ — merged into [P0-2]
+### [P2-4] ~~pa cache stats~~ 鈥?merged into [P0-2]
 
-### Modified 2026-07-04 — merged into [P0-2] (already shipped)
+### Modified 2026-07-04 鈥?merged into [P0-2] (already shipped)
 
-[P2-4] was originally "pa cache stats" — descriptive single feature.
+[P2-4] was originally "pa cache stats" 鈥?descriptive single feature.
 Once [P0-2] shipped with `pa cache stats` as one of 5 admin subcommands,
 [P2-4] became functionally redundant (a strict subset of [P0-2]).
 Removed from active items to avoid double-tracking. Outcome: covered
@@ -130,12 +130,12 @@ be read as `[P0-2] Local cache, pa cache stats subcommand`.
 - **Added**: 2026-07-04
 - **Completed**: 2026-07-04
 - **Priority**: P0
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.2
-- **Rationale**: Same DOI re-fetched wastes bandwidth; iterative lit-review iteration needs to skip already-downloaded papers. Daily cron `pa-keys-daily-check` already wastes a probe per API per day — caching for 30 min saves 24x duplicate requests.
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.2
+- **Rationale**: Same DOI re-fetched wastes bandwidth; iterative lit-review iteration needs to skip already-downloaded papers. Daily cron `pa-keys-daily-check` already wastes a probe per API per day 鈥?caching for 30 min saves 24x duplicate requests.
 - **Acceptance criteria**:
   - `~/.paper-agent/cache/{doi_slug}.pdf` + `{doi_slug}.meta.json` (download timestamp, sha256, source channel)
   - `pa fetch <DOI>` checks cache first; if PDF magic valid + sha256 unchanged, return without re-downloading
-  - `pa keys check` caches 30 min — second invocation in same window skips HTTP probe
+  - `pa keys check` caches 30 min 鈥?second invocation in same window skips HTTP probe
   - `pa cache stats` shows size / count / oldest / newest
   - `pa cache clean --older-than 30d` removes cold entries
 
@@ -143,12 +143,12 @@ be read as `[P0-2] Local cache, pa cache stats subcommand`.
 
 | # | Description | Estimate | Actual | Notes |
 |---|---|---|---|---|
-| A | Add `pa_cli/cache.py` — PDF cache layer | 1h | ~1h | On target. DiskCache-style hash + JSON sidecar + _is_pdf magic check + corrupt-cleanup-on-mismatch. |
-| B | Integrate cache into `pa_cli/fetch.py` — early-return on hit, write-after-success | 0.5h | ~0.5h | On target. 6 cascade branches updated; `channel_playwright_pdf` re-reads file from disk to write cache. |
+| A | Add `pa_cli/cache.py` 鈥?PDF cache layer | 1h | ~1h | On target. DiskCache-style hash + JSON sidecar + _is_pdf magic check + corrupt-cleanup-on-mismatch. |
+| B | Integrate cache into `pa_cli/fetch.py` 鈥?early-return on hit, write-after-success | 0.5h | ~0.5h | On target. 6 cascade branches updated; `channel_playwright_pdf` re-reads file from disk to write cache. |
 | C | Add 30-min in-memory cache to `pa_cli/keys.py` `cmd_check()` | 0.5h | ~0.5h | On target. Used `PA_TEST` env var to bypass in unit tests. |
-| D | Add `pa cache {path,stats,clean,put,drop}` subcommand group + `--no-cache` flags | 0.5h | ~1h | 2x over. Discovered: (a) Windows encoding hell (had to add PYTHONIOENCODING=utf-8 to test subprocess); (b) `~/.paper-agent` not yet existing first run — removed unnecessary fallback. |
+| D | Add `pa cache {path,stats,clean,put,drop}` subcommand group + `--no-cache` flags | 0.5h | ~1h | 2x over. Discovered: (a) Windows encoding hell (had to add PYTHONIOENCODING=utf-8 to test subprocess); (b) `~/.paper-agent` not yet existing first run 鈥?removed unnecessary fallback. |
 | E | Add `--no-cache` flag to `pa fetch` and `pa keys check` | 0.25h | ~0.1h | Under. Click decorator + 2 line callsite changes. |
-| F | Validation (4 test scripts) | 0.5h | ~1h | 2x over. (a) `test_cache_integration.py` hung in subprocess because cascade reaches `playwright` channel which tries to launch real chromium — needed `channel_playwright_pdf` mock. (b) `PA_TEST=0` was still bypassing cache (truthy string). Fixed cache_get to use truthy-set. (c) `Path.home() / .paper-agent / cache` fallback mis-detection. |
+| F | Validation (4 test scripts) | 0.5h | ~1h | 2x over. (a) `test_cache_integration.py` hung in subprocess because cascade reaches `playwright` channel which tries to launch real chromium 鈥?needed `channel_playwright_pdf` mock. (b) `PA_TEST=0` was still bypassing cache (truthy string). Fixed cache_get to use truthy-set. (c) `Path.home() / .paper-agent / cache` fallback mis-detection. |
 | G | CHANGELOG + ROADMAP outcome | 0.25h | ~0.2h | On target. |
 | | **Total** | **3.5h** | **~5h** | **1.4x over** |
 
@@ -161,66 +161,66 @@ Both are isolated to the testing harness; production code is unchanged. For futu
 #### Outcome (2026-07-04)
 
 **Files added** (5):
-- `pa_cli/cache.py` (~210 lines) — `cache_get`, `cache_put`, `cache_remove`, `cache_stats`, `cache_clean`, `_doi_slug`, `get_cache_root`, plus `_is_pdf` magic check
-- `test_output/test_cache_smoke.py` — 6 sub-tests on cache module round-trip
-- `test_output/test_cache_integration.py` — `pa fetch` cache hit + bypass semantics
-- `test_output/test_keys_cache.py` — 30-min cache for `keys check`
-- `test_output/test_pa_cache_cli.py` — E2E for `pa cache` subcommand (path/stats/put/drop/clean)
-- `test_output/_run_all.py` — wrapper to run all 4 cache tests
+- `pa_cli/cache.py` (~210 lines) 鈥?`cache_get`, `cache_put`, `cache_remove`, `cache_stats`, `cache_clean`, `_doi_slug`, `get_cache_root`, plus `_is_pdf` magic check
+- `test_output/test_cache_smoke.py` 鈥?6 sub-tests on cache module round-trip
+- `test_output/test_cache_integration.py` 鈥?`pa fetch` cache hit + bypass semantics
+- `test_output/test_keys_cache.py` 鈥?30-min cache for `keys check`
+- `test_output/test_pa_cache_cli.py` 鈥?E2E for `pa cache` subcommand (path/stats/put/drop/clean)
+- `test_output/_run_all.py` 鈥?wrapper to run all 4 cache tests
 
 **Files modified** (3):
-- `pa_cli/fetch.py` — added `use_cache` param + cache check at function entry + cache write after each successful cascade (6 branches: openalex, arxiv, unpaywall, doi_redirect's HTML PDF + playwright_pdf fallback, scihub)
-- `pa_cli/keys.py` — added `_check_cache_{get,put,clear}` + integrated into `cmd_check()`; cache survives 30 min (configurable in code)
-- `pa_cli/cli.py` — added `--no-cache` flag to `fetch` and `keys check`; added `cache` subcommand group with 5 subcommands
+- `pa_cli/fetch.py` 鈥?added `use_cache` param + cache check at function entry + cache write after each successful cascade (6 branches: openalex, arxiv, unpaywall, doi_redirect's HTML PDF + playwright_pdf fallback, scihub)
+- `pa_cli/keys.py` 鈥?added `_check_cache_{get,put,clear}` + integrated into `cmd_check()`; cache survives 30 min (configurable in code)
+- `pa_cli/cli.py` 鈥?added `--no-cache` flag to `fetch` and `keys check`; added `cache` subcommand group with 5 subcommands
 
 **Tests passing** (4/4):
-- `test_cache_smoke.py` — 6/6 checks (miss, put/get roundtrip, corrupt cleanup, remove, stats, clean)
-- `test_cache_integration.py` — 2/2 (cache hit short-circuits in <0.5s; use_cache=False falls through to cascade)
-- `test_keys_cache.py` — 5/5 (cold cache probes, warm cache returns instantly, different service_id busts, same service_id reuses, manual clear invalidates)
-- `test_pa_cache_cli.py` — 6/6 (path resolves to ~/.paper-agent/cache, empty stats, put/stats/drop roundtrip, --all cleans, refusal on no-filter, --dry-run previews)
+- `test_cache_smoke.py` 鈥?6/6 checks (miss, put/get roundtrip, corrupt cleanup, remove, stats, clean)
+- `test_cache_integration.py` 鈥?2/2 (cache hit short-circuits in <0.5s; use_cache=False falls through to cascade)
+- `test_keys_cache.py` 鈥?5/5 (cold cache probes, warm cache returns instantly, different service_id busts, same service_id reuses, manual clear invalidates)
+- `test_pa_cache_cli.py` 鈥?6/6 (path resolves to ~/.paper-agent/cache, empty stats, put/stats/drop roundtrip, --all cleans, refusal on no-filter, --dry-run previews)
 
 **Acceptance criteria status**: 5/5 met
-1. ✅ `~/.paper-agent/cache/{doi_slug}.pdf` + sidecar meta (sha256, ts, channel, url, size)
-2. ✅ `pa fetch <DOI>` checks cache first; cascade skipped on hit (sub-second)
-3. ✅ `pa keys check` caches 30 min
-4. ✅ `pa cache stats` shows size/count/oldest/newest
-5. ✅ `pa cache clean --older-than 30d` removes cold entries
+1. 鉁?`~/.paper-agent/cache/{doi_slug}.pdf` + sidecar meta (sha256, ts, channel, url, size)
+2. 鉁?`pa fetch <DOI>` checks cache first; cascade skipped on hit (sub-second)
+3. 鉁?`pa keys check` caches 30 min
+4. 鉁?`pa cache stats` shows size/count/oldest/newest
+5. 鉁?`pa cache clean --older-than 30d` removes cold entries
 
 **Deferred to backlog** (recorded 2026-07-04):
 - **Atime-based LRU**: when cache count > N (e.g. 500), evict oldest-accessed. Current impl is FIFO by ts; for v3.5.0 most users won't hit the limit, and `pa cache clean --older-than` gives them manual control.
 - **Per-key size cap**: refuse to cache PDFs > 100MB (some books are larger). Not a [P0-2] blocker; deferred to "edge case pass" later.
 - **Cache hit rate metrics**: track cache hits per session for `pa audit`. Useful but not core to [P0-2].
-- **Legacy dirs cleanup**: 7 dirs (`arxiv_cache/`, `core_cache/`, etc.) from v3.0 `paper_fetcher.py` should be added to `.gitignore` (or deleted) — out of scope for [P0-2] but pollutes `git status`.
+- **Legacy dirs cleanup**: 7 dirs (`arxiv_cache/`, `core_cache/`, etc.) from v3.0 `paper_fetcher.py` should be added to `.gitignore` (or deleted) 鈥?out of scope for [P0-2] but pollutes `git status`.
 
 **Lesson for future estimates** (added 2026-07-04 to estimation methodology):
 - "cache layer" type items: estimate 3-5h with 1h buffer for Windows subprocess test setup.
-- Sub-task F (test infrastructure) for any cross-platform code should be ≥0.5h, often 1-1.5h due to encoding / mocking surprises.
+- Sub-task F (test infrastructure) for any cross-platform code should be 鈮?.5h, often 1-1.5h due to encoding / mocking surprises.
 
 #### Sub-task decomposition (estimated 2026-07-04 before work started)
 
 | # | Description | Estimate |
 |---|---|---|
-| A | Add `pa_cli/cache.py` — PDF cache layer: `cache_get(doi)` validates PDF magic + sha256 against sidecar; `cache_put(doi, body, channel)` writes `.pdf` + `.meta.json`; `cache_stats()` / `cache_clean(older_than_nd)` admin helpers. Default root: `~/.paper-agent/cache/` (overridable via `PA_CACHE_DIR` env var, fallback to `./pa_cache/` if HOME undefined) | 1h |
+| A | Add `pa_cli/cache.py` 鈥?PDF cache layer: `cache_get(doi)` validates PDF magic + sha256 against sidecar; `cache_put(doi, body, channel)` writes `.pdf` + `.meta.json`; `cache_stats()` / `cache_clean(older_than_nd)` admin helpers. Default root: `~/.paper-agent/cache/` (overridable via `PA_CACHE_DIR` env var, fallback to `./pa_cache/` if HOME undefined) | 1h |
 | B | Modify `pa_cli/fetch.py` `fetch_doi()`: cache check at start (return early with `via_channel="cache"`); after successful cascade, also `cache_put()` so next call hits cache | 0.5h |
 | C | Modify `pa_cli/keys.py`: in-memory 30-min cache for `keys_status()` output (single module-level dict with TTL check; reset if any test mode flag set) | 0.5h |
 | D | Add `pa cache stats` + `pa cache clean [--older-than Nd\|--all]` subcommands to `pa_cli/cli.py` | 0.5h |
-| E | Add `--no-cache` flag to `pa fetch` (bypass cache check, still writes to cache after success — opt-in to skip-but-record) | 0.25h |
-| F | Validation script `test_output/test_cache.py`: cache_miss→hit cycle, PDF magic validation, sha256 integrity, `cache_stats` returns expected counts, `cache_clean` removes old entries, `--no-cache` bypasses, 30-min keys cache works | 0.5h |
+| E | Add `--no-cache` flag to `pa fetch` (bypass cache check, still writes to cache after success 鈥?opt-in to skip-but-record) | 0.25h |
+| F | Validation script `test_output/test_cache.py`: cache_miss鈫抙it cycle, PDF magic validation, sha256 integrity, `cache_stats` returns expected counts, `cache_clean` removes old entries, `--no-cache` bypasses, 30-min keys cache works | 0.5h |
 | G | CHANGELOG v3.4.0 entry citing `[P0-2]` + ROADMAP Outcome subsection | 0.25h |
 | | **Total** | **3.5h** (~3-4h with overhead) |
 
-**Reference-class anchor**: [P0-1] Bibtex (3h actual, 4-8x under-estimate). Cache work shares few patterns (hash → file naming, JSON sidecar) so reuse 3h as anchor + 0.5h for fetch integration.
+**Reference-class anchor**: [P0-1] Bibtex (3h actual, 4-8x under-estimate). Cache work shares few patterns (hash 鈫?file naming, JSON sidecar) so reuse 3h as anchor + 0.5h for fetch integration.
 
 #### Existing state to leverage (discovered 2026-07-04 during scoping)
 
-- `skill/core/api_pool/cache.py` `DiskCache` exists with SHA-256 + TTL. Different domain (search results, not PDFs), so copy pattern only — don't import across package.
+- `skill/core/api_pool/cache.py` `DiskCache` exists with SHA-256 + TTL. Different domain (search results, not PDFs), so copy pattern only 鈥?don't import across package.
 - `pa_cli/fetch.py` `fetch_doi()` writes PDFs to `output_dir/{doi_slug}.pdf` but does NOT maintain cache. Sidecar `.meta.json` does not exist yet.
 - `pa_cli/keys.py` exists, has `keys_status()` function but no caching.
-- 7 legacy cache dirs (`arxiv_cache/`, `openalex_cache/`, etc.) from v3.0 `paper_fetcher.py` — NOT in `.gitignore`, polluting `git status`. **Out of scope for [P0-2]** but worth a separate `.gitignore` cleanup ticket post-implementation.
+- 7 legacy cache dirs (`arxiv_cache/`, `openalex_cache/`, etc.) from v3.0 `paper_fetcher.py` 鈥?NOT in `.gitignore`, polluting `git status`. **Out of scope for [P0-2]** but worth a separate `.gitignore` cleanup ticket post-implementation.
 
-### Modified 2026-07-04 — scope clarified (search-result vs PDF cache)
+### Modified 2026-07-04 鈥?scope clarified (search-result vs PDF cache)
 
-**Mistake caught**: my initial mental model confused two different caching concerns — search-result caching (across `pa search` calls) and PDF-download caching (across `pa fetch` calls). Original acceptance criteria here target **PDF-download cache**, which is the bigger win because:
+**Mistake caught**: my initial mental model confused two different caching concerns 鈥?search-result caching (across `pa search` calls) and PDF-download caching (across `pa fetch` calls). Original acceptance criteria here target **PDF-download cache**, which is the bigger win because:
 
 1. Same DOI might be re-fetched many times during lit-review iteration
 2. PDFs are 1-10 MB each, downloading them again is real waste
@@ -237,8 +237,8 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 - **Completed (initially)**: 2026-07-04
 - **Deprecated**: 2026-07-04
 - **Priority**: P0
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.3
-- **Rationale (original)**: User's strong preference for "one-time investment, long-term reuse" patterns. Claude Code / OpenCode / Cursor all support MCP; exposing `pa fetch / search / review / keys status` as MCP tools means agent sessions can call them inline without terminal-switching. Long-term leverage — install once, use across all future agent sessions.
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.3
+- **Rationale (original)**: User's strong preference for "one-time investment, long-term reuse" patterns. Claude Code / OpenCode / Cursor all support MCP; exposing `pa fetch / search / review / keys status` as MCP tools means agent sessions can call them inline without terminal-switching. Long-term leverage 鈥?install once, use across all future agent sessions.
 - **Acceptance criteria**:
   - `python -m pa_cli mcp-serve` runs as stdio JSON-RPC server
   - Exposes 4 tools: `pa_fetch(doi)`, `pa_search(query, year_min, year_max)`, `pa_review(corpus_dir)`, `pa_keys_status()`
@@ -250,9 +250,9 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 | # | Description | Estimate | Actual | Notes |
 |---|---|---|---|---|
 | A | Design tool schemas (JSON Schema for 4 tools) | 0.5h | ~0.2h | Under. Tool surface is bounded by existing pa_cli functions; minimal schema design work. |
-| B | Implement `pa_cli/mcp.py` — `mcp.Server`, 4 handlers, async `serve()` | 1.5h | ~1.0h | Under. Local imports keep module dep-light; stdio transport boilerplate is minimal. |
+| B | Implement `pa_cli/mcp.py` 鈥?`mcp.Server`, 4 handlers, async `serve()` | 1.5h | ~1.0h | Under. Local imports keep module dep-light; stdio transport boilerplate is minimal. |
 | C | Add `pa mcp-serve` subcommand | 0.25h | ~0.05h | Under. 7-line Click wrapper. |
-| D | E2E test (`test_mcp_e2e.py`) — in-process stdio client + 7 sub-tests | 1h | ~0.6h | Under. `mcp.ClientSession + stdio_client` make subprocess launching easy; pre-populated cache avoids network deps. |
+| D | E2E test (`test_mcp_e2e.py`) 鈥?in-process stdio client + 7 sub-tests | 1h | ~0.6h | Under. `mcp.ClientSession + stdio_client` make subprocess launching easy; pre-populated cache avoids network deps. |
 | E | Edge cases (errors, handoff propagation, no-keys scenarios) | 0.5h | ~0.1h | Under. Covered by sub-task D tests. |
 | F | CHANGELOG v3.6.0 + ROADMAP outcome + remove [P2-4] | 0.25h | ~0.2h | On target. |
 | | **Total** | **4h** | **~2.1h** | **2x under** |
@@ -266,25 +266,25 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 #### Outcome (2026-07-04)
 
 **Files added** (2):
-- `pa_cli/mcp.py` (~250 lines) — `mcp.Server` instance, 4 tool handlers, async `serve()`, structured error responses
-- `test_output/test_mcp_e2e.py` (~180 lines) — 7 sub-tests covering list_tools + 4 tool calls + cache-hit fetch + error paths
+- `pa_cli/mcp.py` (~250 lines) 鈥?`mcp.Server` instance, 4 tool handlers, async `serve()`, structured error responses
+- `test_output/test_mcp_e2e.py` (~180 lines) 鈥?7 sub-tests covering list_tools + 4 tool calls + cache-hit fetch + error paths
 
 **Files modified** (2):
-- `pa_cli/cli.py` — added `pa mcp-serve` Click subcommand (7 lines)
-- `test_output/test_full_regression.py` — added `A2. MCP server tests` section that wraps `test_mcp_e2e.py`
+- `pa_cli/cli.py` 鈥?added `pa mcp-serve` Click subcommand (7 lines)
+- `test_output/test_full_regression.py` 鈥?added `A2. MCP server tests` section that wraps `test_mcp_e2e.py`
 
 **Tests passing** (regression baseline):
 - `test_mcp_e2e.py`: 7/7 sub-tests
 - `test_full_regression.py`: now reports 36 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 29 PASS in v3.5.0)
 
 **Acceptance criteria status**: 4/4 met
-1. ✅ `python -m pa_cli mcp-serve` runs as stdio JSON-RPC server (and equivalent `pa mcp-serve` CLI)
-2. ✅ Exposes 4 tools with JSON Schema input validation
-3. ✅ All tool results are JSON-serialisable (verified: every text content is `json.dumps(..., ensure_ascii=False, indent=2)` over the existing function output)
-4. ✅ Errors structured:
-    - Unknown tool → `CallToolResult(isError=True, content=[TextContent(json)])`
-    - Tool exception → wrapped with `error: <ExceptionClass>, message, tool`
-    - Missing corpus_dir → returns structured dict `{error: "corpus_dir_not_found", ...}` (NOT MCP isError) so agent-specific recovery can inspect handoff fields
+1. 鉁?`python -m pa_cli mcp-serve` runs as stdio JSON-RPC server (and equivalent `pa mcp-serve` CLI)
+2. 鉁?Exposes 4 tools with JSON Schema input validation
+3. 鉁?All tool results are JSON-serialisable (verified: every text content is `json.dumps(..., ensure_ascii=False, indent=2)` over the existing function output)
+4. 鉁?Errors structured:
+    - Unknown tool 鈫?`CallToolResult(isError=True, content=[TextContent(json)])`
+    - Tool exception 鈫?wrapped with `error: <ExceptionClass>, message, tool`
+    - Missing corpus_dir 鈫?returns structured dict `{error: "corpus_dir_not_found", ...}` (NOT MCP isError) so agent-specific recovery can inspect handoff fields
     - Paper-agent v4 handoff propagation: `fetch_doi()` already surfaces `handoff.user_action_required`; that flows through MCP result JSON unchanged
 
 **MCP client config (example)**:
@@ -307,7 +307,7 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 - `pa mcp install` helper that auto-writes the JSON config block into the active MCP client's settings file (would close the "now I need to manually edit config" gap)
 
 **Lesson for future estimates** (added to estimation methodology):
-- For "wrap existing functions for new interface" type items (CLI → MCP, MCP → HTTP, CLI → REST): estimate 2-3h with smaller buffer. The bulk of work is interface plumbing, not new logic.
+- For "wrap existing functions for new interface" type items (CLI 鈫?MCP, MCP 鈫?HTTP, CLI 鈫?REST): estimate 2-3h with smaller buffer. The bulk of work is interface plumbing, not new logic.
 - For MCP / external-protocol integrations, a pre-installed SDK can shave ~10-15 min vs full feature estimate.
 
 #### Sub-task decomposition (estimated 2026-07-04 before work started)
@@ -315,53 +315,52 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 | # | Description | Estimate |
 |---|---|---|
 | A | Design MCP tool schema for 4 tools (pa_fetch / pa_search / pa_review / pa_keys_status). JSON Schema for input/output, structured error mapping | 0.5h |
-| B | Implement `pa_cli/mcp.py` — `mcp.Server` instance, register 4 tool handlers, async `serve()` using stdio transport, JSON-serialise all results | 1.5h |
-| C | Add `pa mcp-serve` subcommand to `pa_cli/cli.py` — Click wrapper + asyncio.run + handling KeyboardInterrupt on stdin close | 0.25h |
-| D | Validation — `test_output/test_mcp_e2e.py`: in-process stdio client launches `pa mcp-serve`, sends `initialize`, `tools/list`, `tools/call` for each of the 4 tools. Verify schemas + response contents | 1h |
-| E | Edge cases — empty search results, missing DOI, network errors, structured error responses (handoff path in pa_fetch surfaces as MCP error with `user_action_required` field) | 0.5h |
+| B | Implement `pa_cli/mcp.py` 鈥?`mcp.Server` instance, register 4 tool handlers, async `serve()` using stdio transport, JSON-serialise all results | 1.5h |
+| C | Add `pa mcp-serve` subcommand to `pa_cli/cli.py` 鈥?Click wrapper + asyncio.run + handling KeyboardInterrupt on stdin close | 0.25h |
+| D | Validation 鈥?`test_output/test_mcp_e2e.py`: in-process stdio client launches `pa mcp-serve`, sends `initialize`, `tools/list`, `tools/call` for each of the 4 tools. Verify schemas + response contents | 1h |
+| E | Edge cases 鈥?empty search results, missing DOI, network errors, structured error responses (handoff path in pa_fetch surfaces as MCP error with `user_action_required` field) | 0.5h |
 | F | CHANGELOG v3.6.0 + ROADMAP Outcome subsection + remove [P2-4] (now covered) | 0.25h |
 | | **Total** | **4h** (~3-5h with overhead) |
 
 **Reference-class anchor**:
 - [P0-1] Bibtex export: 3h actual, 4-8x under-estimate
 - [P0-2] Local cache: ~5h actual, 1.4x over-estimate
-- [P0-3] is first-of-kind (no prior MCP work) — wider ±100% confidence window
+- [P0-3] is first-of-kind (no prior MCP work) 鈥?wider 卤100% confidence window
 - Likely: faster than 4h due to lean tool surface (4 tools, all JSON-bounded)
 
 **Pre-existing infrastructure discovered 2026-07-04 during scoping**:
 - `mcp` Python SDK v1.27.2 already installed (Anthropic official, https://modelcontextprotocol.io)
 - Has `mcp.Server`, `mcp.server.stdio.stdio_server`, `mcp.types.{Tool,CallToolResult}`, `mcp.ClientSession` for in-process testing
-- NO install step needed — saves ~10 min vs original plan
+- NO install step needed 鈥?saves ~10 min vs original plan
 
 **Tools to expose** (final shapes, decided 2026-07-04):
-1. **`pa_fetch`** — args `{doi: str, output_dir?: str, proxy?: str, channels?: list[str], use_cache?: bool}` → returns fetch result dict (saved_as, via_channel, cache_hit, error/handoff)
-2. **`pa_search`** — args `{query: str, year_min?: int, year_max?: int, limit?: int, engine?: str, format?: "json"|"bibtex"}` → returns search result dict (results array, by_engine counts, bibtex text)
-3. **`pa_review`** — args `{corpus_dir: str, template?: str, word_count_min?: int}` → returns `{markdown: str, corpus_dir: str}` (markdown as string, never raw bytes)
-4. **`pa_keys_status`** — args `{}` → returns `{rows: list[dict], total: int, active: int, expiring: int, expired: int, missing: int}`
+1. **`pa_fetch`** 鈥?args `{doi: str, output_dir?: str, proxy?: str, channels?: list[str], use_cache?: bool}` 鈫?returns fetch result dict (saved_as, via_channel, cache_hit, error/handoff)
+2. **`pa_search`** 鈥?args `{query: str, year_min?: int, year_max?: int, limit?: int, engine?: str, format?: "json"|"bibtex"}` 鈫?returns search result dict (results array, by_engine counts, bibtex text)
+3. **`pa_review`** 鈥?args `{corpus_dir: str, template?: str, word_count_min?: int}` 鈫?returns `{markdown: str, corpus_dir: str}` (markdown as string, never raw bytes)
+4. **`pa_keys_status`** 鈥?args `{}` 鈫?returns `{rows: list[dict], total: int, active: int, expiring: int, expired: int, missing: int}`
 
 **Files to add/modify**:
 - NEW `pa_cli/mcp.py` (~150 lines)
-- MODIFY `pa_cli/cli.py` — add `pa mcp-serve` subcommand
-- NEW `test_output/test_mcp_e2e.py` — in-process client test
-- NEW `test_output/test_mcp_schemas.py` — JSON Schema validation for each tool
+- MODIFY `pa_cli/cli.py` 鈥?add `pa mcp-serve` subcommand
+- NEW `test_output/test_mcp_e2e.py` 鈥?in-process client test
+- NEW `test_output/test_mcp_schemas.py` 鈥?JSON Schema validation for each tool
 
-#### Outcome (YYYY-MM-DD — to be filled on completion)
+#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
 
 _(filled when work done)_
 
 ---
 
-### Modified 2026-07-04 — scope clarified (added sub-task breakdown)
+### Modified 2026-07-04 鈥?scope clarified (added sub-task breakdown)
 
 Original [P0-3] entry had 4 acceptance criteria at high level. This
 update adds the 6-task breakdown, tool schemas, and reference-class
 anchors. Acceptance criteria unchanged.
 
-### Deprecated 2026-07-04 — abandoned (MCP self-hosted)
+### Deprecated 2026-07-04 鈥?abandoned (MCP self-hosted)
 
 User explicitly walked back the [P0-3] MCP server the same day it shipped
-(v3.6.0 → reverted in v3.5.1). Reasons (all tied to the new Global Rule —
-"no services exceeding personal-hobbyist maintenance budget"):
+(v3.6.0 鈫?reverted in v3.5.1). Reasons (all tied to the new Global Rule 鈥?"no services exceeding personal-hobbyist maintenance budget"):
 
 1. **Self-maintenance burden**: every pa_cli feature change would need
    a paired MCP handler update. Schema drift + 5 hand-written JSON
@@ -381,7 +380,7 @@ User explicitly walked back the [P0-3] MCP server the same day it shipped
 
 **Audit trail preserved**: the original implementation (`pa_cli/mcp.py`,
 `test_mcp_e2e.py`, `pa mcp-serve` CLI subcommand, CHANGELOG v3.6.0 entry,
-ROADMAP [P0-3] outcome subsection) is recoverable via `git log` — see
+ROADMAP [P0-3] outcome subsection) is recoverable via `git log` 鈥?see
 commits `e82ff30` (the original `feat(mcp): v3.6.0` commit) and the
 revert commit (created in this same pass, 2026-07-04).
 
@@ -415,8 +414,8 @@ opts in. Until then, this entry stays `Status: deprecated`.
 - **Added**: 2026-07-04
 - **Completed**: 2026-07-04
 - **Priority**: P1
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.4
-- **Rationale**: Lit review requires both directions of citation traversal — papers that cite X (forward) and papers X cites (backward). Neither paper-agent v3.3.0 nor PyPaperBot offers this; OpenAlex provides `cited_by_count` + `referenced_works[]` natively, so the work is API surface + dedup + output formatting.
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.4
+- **Rationale**: Lit review requires both directions of citation traversal 鈥?papers that cite X (forward) and papers X cites (backward). Neither paper-agent v3.3.0 nor PyPaperBot offers this; OpenAlex provides `cited_by_count` + `referenced_works[]` natively, so the work is API surface + dedup + output formatting.
 - **Acceptance criteria**:
   - `pa citations <DOI> --direction forward [--save-bib]` outputs deduped JSON of citing papers
   - `pa citations <DOI> --direction backward` outputs referenced papers
@@ -426,11 +425,11 @@ opts in. Until then, this entry stays `Status: deprecated`.
 
 | # | Description | Estimate | Actual | Notes |
 |---|---|---|---|---|
-| A | `pa_cli/citations.py` — OpenAlex wrappers, cursor pagination, error handling | 1h | ~0.5h | On/under. Caught a URL bug (`&api_key=` vs `?api_key=`) on first probe + fixed in 5 min. |
-| B | Reuse `search._normalize_openalex` for shape consistency | 0.25h | ~0.05h | Under. Reuse was trivial — no new normalization code. |
+| A | `pa_cli/citations.py` 鈥?OpenAlex wrappers, cursor pagination, error handling | 1h | ~0.5h | On/under. Caught a URL bug (`&api_key=` vs `?api_key=`) on first probe + fixed in 5 min. |
+| B | Reuse `search._normalize_openalex` for shape consistency | 0.25h | ~0.05h | Under. Reuse was trivial 鈥?no new normalization code. |
 | C | Add `pa citations` subcommand | 0.5h | ~0.2h | On. Click decorator + JSON output + error exits. |
 | D | Add `pa_citations` MCP tool (5th tool) | 0.25h | ~0.05h | Under. 5-line wrapper around `citation_walk`. |
-| E | E2E test (`test_citations_e2e.py`) — 8 sub-tests using real OpenAlex | 0.5h | ~0.4h | On. Includes 1 fix to expected tool list in test_mcp_e2e.py (was 4, now 5). |
+| E | E2E test (`test_citations_e2e.py`) 鈥?8 sub-tests using real OpenAlex | 0.5h | ~0.4h | On. Includes 1 fix to expected tool list in test_mcp_e2e.py (was 4, now 5). |
 | F | CHANGELOG v3.7.0 + ROADMAP outcome | 0.25h | ~0.1h | On. |
 | | **Total** | **2.75h** | **~1.3h** | **2x under** |
 
@@ -443,29 +442,29 @@ opts in. Until then, this entry stays `Status: deprecated`.
 #### Outcome (2026-07-04)
 
 **Files added** (2):
-- `pa_cli/citations.py` (~150 lines) — `get_work_by_doi`, `get_citing`, `get_referenced`, `citation_walk`
-- `test_output/test_citations_e2e.py` (~190 lines) — 8 sub-tests using real OpenAlex API
+- `pa_cli/citations.py` (~150 lines) 鈥?`get_work_by_doi`, `get_citing`, `get_referenced`, `citation_walk`
+- `test_output/test_citations_e2e.py` (~190 lines) 鈥?8 sub-tests using real OpenAlex API
 
 **Files modified** (4):
-- `pa_cli/cli.py` — added `pa citations` Click subcommand
-- `pa_cli/mcp.py` — added `pa_citations` MCP tool (5th tool) + schema + handler
-- `test_output/test_full_regression.py` — added A3 section for citations
-- `test_output/test_mcp_e2e.py` — updated expected tool list (4 → 5)
+- `pa_cli/cli.py` 鈥?added `pa citations` Click subcommand
+- `pa_cli/mcp.py` 鈥?added `pa_citations` MCP tool (5th tool) + schema + handler
+- `test_output/test_full_regression.py` 鈥?added A3 section for citations
+- `test_output/test_mcp_e2e.py` 鈥?updated expected tool list (4 鈫?5)
 
 **Tests passing**:
 - `test_citations_e2e.py`: 8/8 sub-tests
 - `test_full_regression.py`: now 38 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 36 in v3.6.0)
 
 **Acceptance criteria status**: 3/3 met
-1. ✅ `pa citations <DOI> --direction forward [--save-bib]` outputs deduped JSON
-2. ✅ `pa citations <DOI> --direction backward` outputs referenced papers
-3. ✅ Cursor-paginated (forward); N+1 bounded (backward, capped by --limit)
+1. 鉁?`pa citations <DOI> --direction forward [--save-bib]` outputs deduped JSON
+2. 鉁?`pa citations <DOI> --direction backward` outputs referenced papers
+3. 鉁?Cursor-paginated (forward); N+1 bounded (backward, capped by --limit)
 
 **Key discovery** (recorded for future OpenAlex integration work):
 - `cites` filter accepts **only OpenAlex IDs** (W-prefixed), not DOIs in any form
 - Direct DOI URL in filter returns 0 results silently
-- Workflow: 2-step (DOI→ID via `/works/doi:<doi>`, then `/works?filter=cites:W<id>`)
-- `referenced_works[]` is already OpenAlex ID list — no DOI resolution needed for backward
+- Workflow: 2-step (DOI鈫扞D via `/works/doi:<doi>`, then `/works?filter=cites:W<id>`)
+- `referenced_works[]` is already OpenAlex ID list 鈥?no DOI resolution needed for backward
 
 **Deferred to backlog** (recorded 2026-07-04):
 - Multi-source citation walk (Crossref + Semantic Scholar `references` field for higher recall + dedup across sources)
@@ -477,11 +476,11 @@ opts in. Until then, this entry stays `Status: deprecated`.
 
 | # | Description | Estimate |
 |---|---|---|
-| A | `pa_cli/citations.py` — OpenAlex wrappers: `fetch_citing(doi, cursor, per_page)`, `fetch_referenced_doi(doi) -> list[DOI]`, cursor pagination loop with safety cap | 1h |
+| A | `pa_cli/citations.py` 鈥?OpenAlex wrappers: `fetch_citing(doi, cursor, per_page)`, `fetch_referenced_doi(doi) -> list[DOI]`, cursor pagination loop with safety cap | 1h |
 | B | Reuse `search._normalize_openalex` for output shape consistency; dedup by DOI in result list (in case OpenAlex returns dupes) | 0.25h |
 | C | Add `pa citations` subcommand: `pa citations <DOI> --direction forward\|backward [--limit N] [--save-bib path.bib]` | 0.5h |
 | D | Add `pa_citations` MCP tool to `pa_cli/mcp.py` (5th tool) | 0.25h |
-| E | Validation: `test_output/test_citations_e2e.py` — uses real OpenAlex API to fetch a known DOIs citations; verify forward + backward return sensible counts, dedup works, --save-bib produces valid BibTeX | 0.5h |
+| E | Validation: `test_output/test_citations_e2e.py` 鈥?uses real OpenAlex API to fetch a known DOIs citations; verify forward + backward return sensible counts, dedup works, --save-bib produces valid BibTeX | 0.5h |
 | F | CHANGELOG v3.7.0 + ROADMAP outcome | 0.25h |
 | | **Total** | **2.75h** (~3h) |
 
@@ -489,8 +488,8 @@ opts in. Until then, this entry stays `Status: deprecated`.
 - [P0-1] Bibtex: 3h actual (4-8x under)
 - [P0-2] Local cache: ~5h actual (1.4x over, mostly infra)
 - [P0-3] MCP: ~2.1h actual (2x under)
-- [P1-1] is API integration (not just wrap) — closer to "first-of-kind" CI ±100%
-- Anchoring on [P0-1] (similar "API surface + format + dedup" type) → estimate ~2-3h
+- [P1-1] is API integration (not just wrap) 鈥?closer to "first-of-kind" CI 卤100%
+- Anchoring on [P0-1] (similar "API surface + format + dedup" type) 鈫?estimate ~2-3h
 
 **OpenAlex API notes** (researched 2026-07-04):
 - Forward: `GET /works?filter=cites:<DOI-or-openalex-id>&cursor=<*>` returns works citing target; `meta.next_cursor` for pagination
@@ -500,7 +499,7 @@ opts in. Until then, this entry stays `Status: deprecated`.
 
 **Risk**: backward citation requires fetching each referenced work individually; a paper with 50 refs = 50 API calls. Cap at `--limit N` (default 100 forward, 50 backward) to bound.
 
-#### Outcome (YYYY-MM-DD — to be filled on completion)
+#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
 
 _(filled when work done)_
 
@@ -510,7 +509,7 @@ _(filled when work done)_
 - **Added**: 2026-07-04
 - **Completed**: 2026-07-04
 - **Priority**: P1
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.5
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.5
 - **Rationale**: Keyword search misses synonyms ("AI literacy" misses "generative AI fluency" / "ChatGPT competence"). OpenAlex's hierarchical concept IDs (e.g. C154945302 for AI Education) provide semantic scoping. OpenAlex's own benchmark shows +30% recall when concepts are used as filters.
 - **Acceptance criteria**:
   - `pa search "AI literacy" --concepts C154945302` filters by concept
@@ -521,10 +520,10 @@ _(filled when work done)_
 
 | # | Description | Estimate |
 |---|---|---|
-| A | `pa_cli/concepts.py` — `search_concepts(query, limit)` (text→IDs), `filter_works_by_concepts(works, ids, mode)` (filter helper), `resolve_concept_ids(names_or_ids, mode)` (mixed input parser) | 0.75h |
+| A | `pa_cli/concepts.py` 鈥?`search_concepts(query, limit)` (text鈫扞Ds), `filter_works_by_concepts(works, ids, mode)` (filter helper), `resolve_concept_ids(names_or_ids, mode)` (mixed input parser) | 0.75h |
 | B | Add `--concepts ID[,ID,...]` + `--concept-mode or\|and` flags to `pa search` in cli.py | 0.5h |
-| C | Add `--concept NAME` (singular, resolves text→ID via search_concepts) for ergonomics | 0.25h |
-| D | Validation — `test_output/test_concepts_e2e.py` (uses real OpenAlex): name→ID resolution works, multi-ID filter, AND vs OR semantics differ | 0.5h |
+| C | Add `--concept NAME` (singular, resolves text鈫扞D via search_concepts) for ergonomics | 0.25h |
+| D | Validation 鈥?`test_output/test_concepts_e2e.py` (uses real OpenAlex): name鈫扞D resolution works, multi-ID filter, AND vs OR semantics differ | 0.5h |
 | E | CHANGELOG v3.6.0 + ROADMAP outcome | 0.25h |
 | | **Total** | **2.25h** |
 
@@ -532,7 +531,7 @@ _(filled when work done)_
 
 **OpenAlex API notes** (researched 2026-07-04):
 - Concept lookup by ID: `GET /concepts/C<id>` returns full metadata
-- Name search: `GET /concepts?search=<text>&per-page=N` — multi-word works ("higher education" → 11 results), short/specific terms may return 0 (not in vocabulary as exact terms; users should try variations or supply IDs directly)
+- Name search: `GET /concepts?search=<text>&per-page=N` 鈥?multi-word works ("higher education" 鈫?11 results), short/specific terms may return 0 (not in vocabulary as exact terms; users should try variations or supply IDs directly)
 - Multi-concept work filter:
   - OR: `concepts.id:C1|C2` (pipe)
   - AND: `concepts.id:C1+concepts.id:C2` (separate filter expressions, joined with `+`)
@@ -541,32 +540,32 @@ _(filled when work done)_
 #### Outcome (2026-07-04)
 
 **Files added** (1):
-- `pa_cli/concepts.py` (~165 lines) — `search_concepts`, `resolve_concept_ids`, `build_concepts_filter`, `fetch_concept_metadata`, `is_concept_id`, `_api_key_suffix`, `_short_id`
+- `pa_cli/concepts.py` (~165 lines) 鈥?`search_concepts`, `resolve_concept_ids`, `build_concepts_filter`, `fetch_concept_metadata`, `is_concept_id`, `_api_key_suffix`, `_short_id`
 
 **Files modified** (3):
-- `pa_cli/cli.py` — `pa search` adds 3 new flags: `--concepts`, `--concept`, `--concept-mode`; CLI now resolves concepts + fetches metadata + prints warnings to stderr before invoking `run_search`
-- `pa_cli/search.py` — `run_search()` accepts `concepts_filter` param; `search_openalex()` accepts `concepts_filter` param and threads it into the OpenAlex API URL
-- `test_output/test_full_regression.py` — added A4 section that runs `test_concepts_e2e.py`
+- `pa_cli/cli.py` 鈥?`pa search` adds 3 new flags: `--concepts`, `--concept`, `--concept-mode`; CLI now resolves concepts + fetches metadata + prints warnings to stderr before invoking `run_search`
+- `pa_cli/search.py` 鈥?`run_search()` accepts `concepts_filter` param; `search_openalex()` accepts `concepts_filter` param and threads it into the OpenAlex API URL
+- `test_output/test_full_regression.py` 鈥?added A4 section that runs `test_concepts_e2e.py`
 
 **Files added (tests)** (1):
-- `test_output/test_concepts_e2e.py` (~180 lines) — 10 sub-tests, real OpenAlex API
+- `test_output/test_concepts_e2e.py` (~180 lines) 鈥?10 sub-tests, real OpenAlex API
 
 **Tests passing**:
 - `test_concepts_e2e.py`: 10/10 sub-tests
 - `test_full_regression.py`: now 39+ PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 35 in v3.5.1)
 
 **Acceptance criteria status**: 3/3 met
-1. ✅ `pa search "AI literacy" --concepts C154945302` filters by concept
-2. ✅ Multiple concept IDs supported (OR default; `--concept-mode and` for AND)
-3. ✅ Concept name auto-resolution (`--concept "machine learning"` → C119857082)
+1. 鉁?`pa search "AI literacy" --concepts C154945302` filters by concept
+2. 鉁?Multiple concept IDs supported (OR default; `--concept-mode and` for AND)
+3. 鉁?Concept name auto-resolution (`--concept "machine learning"` 鈫?C119857082)
 
 **Key OpenAlex API findings** (recorded for future integration work):
 - `concepts?search=<text>` does full-text search across concept names + descriptions
-- Multi-word queries work better than single words: "higher education"→11 results, "AI literacy"→0
+- Multi-word queries work better than single words: "higher education"鈫?1 results, "AI literacy"鈫?
 - Multi-concept filter syntax:
   - OR:  `concepts.id:C1|C2` (pipe separator in single filter expression)
   - AND: `concepts.id:C1+concepts.id:C2` (separate filter expressions joined with `+`)
-- All concept IDs use `C<digits>` format; OpenAlex returns full URL `https://openalex.org/C<digits>` everywhere — strip prefix when constructing filters
+- All concept IDs use `C<digits>` format; OpenAlex returns full URL `https://openalex.org/C<digits>` everywhere 鈥?strip prefix when constructing filters
 
 **Effort**:
 - Estimate: 2.25h, Actual: ~1h, Variance: ~2x under
@@ -580,29 +579,29 @@ _(filled when work done)_
 #### Outcome (2026-07-04)
 
 **Files added** (1):
-- `pa_cli/prisma.py` (~130 lines) — re-exports `skill.core.prisma.generate_mermaid` + `generate_markdown`; adds `derive_counts_from_corpus()`, `render_prisma()`, `parse_json_arg()`
+- `pa_cli/prisma.py` (~130 lines) 鈥?re-exports `skill.core.prisma.generate_mermaid` + `generate_markdown`; adds `derive_counts_from_corpus()`, `render_prisma()`, `parse_json_arg()`
 
 **Files modified** (3):
-- `pa_cli/cli.py` — adds `pa prisma` command (10 options) + adds `--with-prisma` flag to `pa review`; review integration auto-derives counts from corpus via `build_corpus_index`
-- `test_output/test_full_regression.py` — added A5 section that runs `test_prisma_e2e.py`; added `prisma --help` to --help surface check
-- `pa_cli/__init__.py` — version 3.6.0 → 3.7.0
+- `pa_cli/cli.py` 鈥?adds `pa prisma` command (10 options) + adds `--with-prisma` flag to `pa review`; review integration auto-derives counts from corpus via `build_corpus_index`
+- `test_output/test_full_regression.py` 鈥?added A5 section that runs `test_prisma_e2e.py`; added `prisma --help` to --help surface check
+- `pa_cli/__init__.py` 鈥?version 3.6.0 鈫?3.7.0
 
 **Files added (tests)** (1):
-- `test_output/test_prisma_e2e.py` (~150 lines) — 10 sub-tests, no network needed
+- `test_output/test_prisma_e2e.py` (~150 lines) 鈥?10 sub-tests, no network needed
 
 **Tests passing**:
 - `test_prisma_e2e.py`: 10/10 sub-tests
 - `test_full_regression.py`: now 49+ PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (up from 39 in v3.6.0)
 
-**Acceptance criteria status**: 4/4 met (1 partially — see note)
-1. ✅ `pa review --with-prisma` outputs a mermaid PRISMA block (auto-derived from corpus)
-2. ✅ Mermaid block renders on GitHub automatically (mermaid + `flowchart TD` syntax; standard GitHub action)
-3. ✅ Each stage shows count + auto-derived exclusion count (diffs between stages)
-4. ⚠️ Static PNG / SVG export **deferred** — would require `mermaid-cli` install (npm dep) which may breach Global Rule "no paid/hosted infra" + adds maintenance burden. Defer to backlog until user explicitly opts in.
+**Acceptance criteria status**: 4/4 met (1 partially 鈥?see note)
+1. 鉁?`pa review --with-prisma` outputs a mermaid PRISMA block (auto-derived from corpus)
+2. 鉁?Mermaid block renders on GitHub automatically (mermaid + `flowchart TD` syntax; standard GitHub action)
+3. 鉁?Each stage shows count + auto-derived exclusion count (diffs between stages)
+4. 鈿狅笍 Static PNG / SVG export **deferred** 鈥?would require `mermaid-cli` install (npm dep) which may breach Global Rule "no paid/hosted infra" + adds maintenance burden. Defer to backlog until user explicitly opts in.
 
 **Key implementation choice** (recorded for audit):
-- **Thin wrapper, not reimplementation** — `skill/core/prisma.py` (~150 lines, untracked in git) already had working `generate_mermaid()` + `generate_markdown()`. Wrote `pa_cli/prisma.py` (~130 lines) as a stable re-export boundary so pa_cli doesn't need to import from untracked skill/ paths.
-- This matches user's "一次性投入、长期复用" preference (one-time investment, long-term reuse): the existing skill code is the "investment"; pa_cli benefits without paying re-implementation cost.
+- **Thin wrapper, not reimplementation** 鈥?`skill/core/prisma.py` (~150 lines, untracked in git) already had working `generate_mermaid()` + `generate_markdown()`. Wrote `pa_cli/prisma.py` (~130 lines) as a stable re-export boundary so pa_cli doesn't need to import from untracked skill/ paths.
+- This matches user's "涓€娆℃€ф姇鍏ャ€侀暱鏈熷鐢? preference (one-time investment, long-term reuse): the existing skill code is the "investment"; pa_cli benefits without paying re-implementation cost.
 
 **Effort**:
 - Estimate: 2h, Actual: ~1h, Variance: ~2x under
@@ -620,8 +619,8 @@ _(filled when work done)_
 - **Added**: 2026-07-04
 - **Completed**: 2026-07-04
 - **Priority**: P1
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.6
-- **Rationale**: Systematic review journal submissions require PRISMA flow diagrams (identification → screening → eligibility → included). Manual construction is tedious; we have the data, just need to format.
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.6
+- **Rationale**: Systematic review journal submissions require PRISMA flow diagrams (identification 鈫?screening 鈫?eligibility 鈫?included). Manual construction is tedious; we have the data, just need to format.
 - **Acceptance criteria**:
   - `pa review` output includes a mermaid PRISMA block
   - GitHub renders automatically
@@ -632,25 +631,25 @@ _(filled when work done)_
 
 | # | Description | Estimate |
 |---|---|---|
-| A | `pa_cli/prisma.py` thin wrapper — re-export `skill.core.prisma.generate_mermaid` + `generate_markdown` so users don't need to import from skill/ | 0.25h |
-| B | Add `pa prisma` command to `pa_cli/cli.py` — accepts `--identified N --after-screening N --after-eligibility N --included N [--by-source json] [--pdf N] [--abstract N] [--excluded-reasons json]` + `-o` to write file | 0.5h |
+| A | `pa_cli/prisma.py` thin wrapper 鈥?re-export `skill.core.prisma.generate_mermaid` + `generate_markdown` so users don't need to import from skill/ | 0.25h |
+| B | Add `pa prisma` command to `pa_cli/cli.py` 鈥?accepts `--identified N --after-screening N --after-eligibility N --included N [--by-source json] [--pdf N] [--abstract N] [--excluded-reasons json]` + `-o` to write file | 0.5h |
 | C | Add PRISMA block to `pa review` output (auto-derive from corpus: identified=PDFs found, after-screening=full-text vs abstract-only, included=after-screening) | 0.5h |
-| D | Validation `test_output/test_prisma_e2e.py` — both standalone and review paths; verify mermaid block embedded; verify counts add up | 0.5h |
+| D | Validation `test_output/test_prisma_e2e.py` 鈥?both standalone and review paths; verify mermaid block embedded; verify counts add up | 0.5h |
 | E | CHANGELOG v3.7.0 + ROADMAP outcome | 0.25h |
 | | **Total** | **2h** |
 
-**Reference-class anchor**: [P1-1] citation walk = ~1.3h actual. [P1-2] concepts = ~1h actual. Both involved real-API work. P1-3 is **local-only** (no API calls) → faster.
+**Reference-class anchor**: [P1-1] citation walk = ~1.3h actual. [P1-2] concepts = ~1h actual. Both involved real-API work. P1-3 is **local-only** (no API calls) 鈫?faster.
 
 **Pre-existing infrastructure** (discovered 2026-07-04 during scoping):
-- `skill/core/prisma.py` already has `generate_mermaid(identified, after_screening, after_eligibility, included, by_source, pdf, abstract)` + `generate_markdown(...)` (~150 lines, untracked in git). No need to reimplement — `pa_cli/prisma.py` is a thin re-export wrapper.
+- `skill/core/prisma.py` already has `generate_mermaid(identified, after_screening, after_eligibility, included, by_source, pdf, abstract)` + `generate_markdown(...)` (~150 lines, untracked in git). No need to reimplement 鈥?`pa_cli/prisma.py` is a thin re-export wrapper.
 
 **Design decisions** (recorded 2026-07-04):
 - `pa prisma` is a **standalone** command (not just an internal helper). Users with PRISMA data from any source (Excel, manual, another tool) can use it.
-- `pa review` integrates PRISMA **at the top of the markdown** — auto-derives counts from corpus. No `--prisma-data` flag needed; we infer what we can.
-- Mermaid block is the primary output (GitHub renders automatically). PNG/SVG export deferred (requires `mermaid-cli` install, which would fail the Global Rule "no paid/hosted infra" — keeping local-only).
-- No auto-watching of citations for inclusion stage — that requires user review, not automatable.
+- `pa review` integrates PRISMA **at the top of the markdown** 鈥?auto-derives counts from corpus. No `--prisma-data` flag needed; we infer what we can.
+- Mermaid block is the primary output (GitHub renders automatically). PNG/SVG export deferred (requires `mermaid-cli` install, which would fail the Global Rule "no paid/hosted infra" 鈥?keeping local-only).
+- No auto-watching of citations for inclusion stage 鈥?that requires user review, not automatable.
 
-#### Outcome (YYYY-MM-DD — to be filled on completion)
+#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
 
 _(filled when work done)_
 
@@ -662,7 +661,7 @@ _(filled when work done)_
 - **Completed**: 2026-07-05
 - **Priority**: P1
 - **Effort**: ~5h (v3.8.0) + ~2h (v3.8.1 polish) = ~7h total
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.10 (lit-review synthesis prep)
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.10 (lit-review synthesis prep)
 - **Rationale**: Lit review synthesis requires per-paper topic clusters as
   input to LLM prompt-pack (`pa review-synthesize` in [P1-6]). User's own
   lit review workflow ([P1-4] audit, see `ROADMAP_RESEARCH_2026-07-05_P1-4.md`)
@@ -680,12 +679,12 @@ _(filled when work done)_
 
 | # | Description | Estimate | Actual | Notes |
 |---|---|---|---|---|
-| A | `pa_cli/topics.py` (~862 lines) — main module: extract_text dispatcher, build_corpus_index, cluster_topics, hand-roll + BERTopic paths | 2h | ~2h | On target. Existing v3.6 review.py patterns reused heavily. |
+| A | `pa_cli/topics.py` (~862 lines) 鈥?main module: extract_text dispatcher, build_corpus_index, cluster_topics, hand-roll + BERTopic paths | 2h | ~2h | On target. Existing v3.6 review.py patterns reused heavily. |
 | B | jieba CN tokenization + stopwords-iso upgrade (replaces 7-year-old gitee list) | 0.5h | ~0.3h | Under. Single-file swap. |
 | C | Two-method auto-fallback wiring (BERTopic lazy-import + hand-roll always-available) | 1h | ~1h | On target. Network timeout on real corpus (HF 5-min rule per paper-agent v4 principle) correctly surfaces to user, doesn't infinite-loop. |
 | D | `test_output/test_topics_e2e.py` (5 sub-tests + 1 BERTopic opt-in) + add to regression Section A6 | 0.5h | ~0.3h | Under. Used same mock-data pattern as citations_e2e. |
-| E | `ROADMAP_RESEARCH_2026-07-05_P1-4.md` — research doc explaining CoLRev / AHAM / LLM-Topic-Reduction audit | 0.5h | ~0.4h | On target. |
-| F | Real-data verification on user's `课件/ch1-econ-ppt` corpus (9 files, 7,392 words) — surfaced label-quality weakness | 0.5h | ~0.5h | On target. Direct user feedback prompted v3.8.1 polish. |
+| E | `ROADMAP_RESEARCH_2026-07-05_P1-4.md` 鈥?research doc explaining CoLRev / AHAM / LLM-Topic-Reduction audit | 0.5h | ~0.4h | On target. |
+| F | Real-data verification on user's `璇句欢/ch1-econ-ppt` corpus (9 files, 7,392 words) 鈥?surfaced label-quality weakness | 0.5h | ~0.5h | On target. Direct user feedback prompted v3.8.1 polish. |
 | | **v3.8.0 subtotal** | **5h** | **~4.5h** | on target |
 | G | **[v3.8.1 polish] `pa_cli/labels/` subpackage** (5 files, ~340 lines): `__init__.py` factory + lazy load, `base.py` ABC, `ctfidf.py` + `handroll.py` + `custom.py` + `domain_stopwords.py` | 1.5h | ~1h | Under. Heavy lift was the ABC + factory design (chose `__getattr__` lazy import for sub-ms startup). |
 | H | `cluster_topics()` kwargs: `label_method`, `custom_labels`, `domain_stopwords` (post-clustering overlay) | 0.5h | ~0.3h | Under. ~30 lines threading through existing functions. |
@@ -706,22 +705,22 @@ concepts 2x under). Speedups:
 - `pa_cli/topics.py` (~862 lines, NEW)
 - `pa_cli/data/cn_stopwords.txt` (794 lines, NEW; sourced from stopwords-iso/stopwords-zh MIT)
 - `test_output/test_topics_e2e.py` (~280 lines, 5+1 sub-tests, NEW)
-- `pa_cli/review.py` modified: build_corpus_index globs `.pdf/.md/.txt`, extract_text dispatches by suffix. Bug fix: pre-existing `return doi` early-return → assigned `doi = ...` then continued.
+- `pa_cli/review.py` modified: build_corpus_index globs `.pdf/.md/.txt`, extract_text dispatches by suffix. Bug fix: pre-existing `return doi` early-return 鈫?assigned `doi = ...` then continued.
 - `pa_cli/cli.py` modified: added `pa review-topics` subcommand
 - `test_output/test_full_regression.py` modified: added Section A6
 
 **v3.8.1 files** (this commit):
-- `pa_cli/labels/__init__.py` (NEW, ~190 lines) — factory + `__getattr__` lazy load + `register_label_generator()`
-- `pa_cli/labels/base.py` (NEW, ~30 lines) — `LabelGenerator` ABC
-- `pa_cli/labels/ctfidf.py` (NEW, ~50 lines) — `CTFIDFLabelGenerator`
-- `pa_cli/labels/handroll.py` (NEW, ~30 lines) — `HandrollLabelGenerator`
-- `pa_cli/labels/custom.py` (NEW, ~80 lines) — `CustomLabelGenerator` post-processor
-- `pa_cli/labels/domain_stopwords.py` (NEW, ~150 lines) — `extract_domain_stopwords` + heuristics + save/load
+- `pa_cli/labels/__init__.py` (NEW, ~190 lines) 鈥?factory + `__getattr__` lazy load + `register_label_generator()`
+- `pa_cli/labels/base.py` (NEW, ~30 lines) 鈥?`LabelGenerator` ABC
+- `pa_cli/labels/ctfidf.py` (NEW, ~50 lines) 鈥?`CTFIDFLabelGenerator`
+- `pa_cli/labels/handroll.py` (NEW, ~30 lines) 鈥?`HandrollLabelGenerator`
+- `pa_cli/labels/custom.py` (NEW, ~80 lines) 鈥?`CustomLabelGenerator` post-processor
+- `pa_cli/labels/domain_stopwords.py` (NEW, ~150 lines) 鈥?`extract_domain_stopwords` + heuristics + save/load
 - `pa_cli/topics.py` (modified): `cluster_topics()` accepts 3 new kwargs; topics.json schema adds 3 fields
 - `pa_cli/cli.py` (modified): 3 new CLI flags
 - `test_output/test_labels_e2e.py` (NEW, ~310 lines, 23 sub-tests)
 - `test_output/test_full_regression.py` (modified): added Section A7
-- `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md` (NEW) — research audit explaining the choice (custom_labels + domain_stopwords + pluggable ABC) over training a custom model
+- `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md` (NEW) 鈥?research audit explaining the choice (custom_labels + domain_stopwords + pluggable ABC) over training a custom model
 
 **Tests passing**:
 - `test_topics_e2e.py`: 5/5 PASS (1 BERTopic opt-in, skipped without `PA_TEST_BERTOPIC=1`)
@@ -731,55 +730,55 @@ concepts 2x under). Speedups:
   - +1 = labels e2e suite (v3.8.1)
 
 **Acceptance criteria status**: 7/7 met
-1. ✅ `pa review-topics <CORPUS_DIR>` outputs topics.json with cluster + label + keywords + filenames
-2. ✅ PDF + MD + TXT (DOCX skipped per user direction "只加 MD/TXT (不 docx)")
-3. ✅ BERTopic primary + hand-roll fallback (auto-fallback for n<5 or BERTopic unavailable)
-4. ✅ jieba CN tokenization + stopwords-iso (replaces 7-year-old gitee list)
-5. ✅ User can override any topic's label via `--custom-labels '{"1": "..."}'`
-6. ✅ Corpus-specific noise terms auto-mined + extendable via `--domain-stopwords-file`
-7. ✅ Pluggable `LabelGenerator` ABC + `register_label_generator()` for plugins
+1. 鉁?`pa review-topics <CORPUS_DIR>` outputs topics.json with cluster + label + keywords + filenames
+2. 鉁?PDF + MD + TXT (DOCX skipped per user direction "鍙姞 MD/TXT (涓?docx)")
+3. 鉁?BERTopic primary + hand-roll fallback (auto-fallback for n<5 or BERTopic unavailable)
+4. 鉁?jieba CN tokenization + stopwords-iso (replaces 7-year-old gitee list)
+5. 鉁?User can override any topic's label via `--custom-labels '{"1": "..."}'`
+6. 鉁?Corpus-specific noise terms auto-mined + extendable via `--domain-stopwords-file`
+7. 鉁?Pluggable `LabelGenerator` ABC + `register_label_generator()` for plugins
 
-**Real-data verification** (`G:\Minmax - workspace\课件\ch1-econ-ppt\`, 9 MD/TXT files):
+**Real-data verification** (`G:\Minmax - workspace\璇句欢\ch1-econ-ppt\`, 9 MD/TXT files):
 - v3.8.0 alone: Topic 1 = "ppt / ppt-prompt" with noise keywords `iphone`, `pptxgenjs`, `skill`
-- v3.8.1 with `--custom-labels '{"1": "PPT 设计文档", "2": "PPT 内容来源"}'`:
-  - Topic 1: "PPT 设计文档" (6 papers) ✅ clean human-readable
-  - Topic 2: "PPT 内容来源" (3 papers) ✅ clean human-readable
+- v3.8.1 with `--custom-labels '{"1": "PPT 璁捐鏂囨。", "2": "PPT 鍐呭鏉ユ簮"}'`:
+  - Topic 1: "PPT 璁捐鏂囨。" (6 papers) 鉁?clean human-readable
+  - Topic 2: "PPT 鍐呭鏉ユ簮" (3 papers) 鉁?clean human-readable
   - Noise keywords still extracted but no longer drive the human-visible topic name
 
 **5-check audit against Global Rule**: 5/5 pass (no $ cost, no hosted service, ~340 lines
-maintenance, no publish obligation, free-tier degradation graceful — see CHANGELOG v3.8.1
+maintenance, no publish obligation, free-tier degradation graceful 鈥?see CHANGELOG v3.8.1
 "5-check audit" section).
 
 **Deferred to backlog** (recorded for future items):
-- **LLM label generator** (`LLMLabelGenerator` subclass of `LabelGenerator`) — natural [P1-6] candidate. Plugs into the existing ABC without touching topics.py or cli.py.
-- **KeyBERTInspired representation** — community consensus helps at n≥50 (per `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md`); deferred until corpora grow.
-- **Document-level preprocessing** (drop "Tools used" / "References" sections from MD before clustering) — would push auto-mined stopwords quality higher. Cost: ~30 lines + a small config file.
+- **LLM label generator** (`LLMLabelGenerator` subclass of `LabelGenerator`) 鈥?natural [P1-6] candidate. Plugs into the existing ABC without touching topics.py or cli.py.
+- **KeyBERTInspired representation** 鈥?community consensus helps at n鈮?0 (per `ROADMAP_RESEARCH_2026-07-05_TOPIC-LABELS.md`); deferred until corpora grow.
+- **Document-level preprocessing** (drop "Tools used" / "References" sections from MD before clustering) 鈥?would push auto-mined stopwords quality higher. Cost: ~30 lines + a small config file.
 
 **Why this matters for user's planned RL research** (separate project at `G:\minimax - workspace\Paper agent experiments\MEMO.md`):
 - The `register_label_generator()` API + `__init__.py` docstring shows the exact 3-step path for plugging in a custom PIEClass / RL-trained generator: write a `LabelGenerator` subclass + `register_label_generator("name", cls)` + `pa review-topics <corpus> --label-method <name>`. No edits to topics.py or cli.py needed.
 - Once user's research produces a paper, the trained generator can be packaged as `pa-cli-labels-pieclass` PyPI plugin and consumed via entry_points (also documented in `labels/__init__.py`).
 
-### Modified 2026-07-05 — domain_stopwords heuristics too strict + end-to-end test missing
+### Modified 2026-07-05 鈥?domain_stopwords heuristics too strict + end-to-end test missing
 
-**Honest post-commit audit** (after user pressed "诚实说，你做的work 没有？"):
+**Honest post-commit audit** (after user pressed "璇氬疄璇达紝浣犲仛鐨剋ork 娌℃湁锛?):
 
 The v3.8.1 commit (7e61c3e) shipped two sub-features that, on reflection, are
 **partially functional** rather than fully working. Recording as Modified
-audit per discipline — original `Outcome` above is preserved as it was.
+audit per discipline 鈥?original `Outcome` above is preserved as it was.
 
-**Issue 1 — `extract_domain_stopwords` heuristics too narrow**:
+**Issue 1 鈥?`extract_domain_stopwords` heuristics too narrow**:
 The shipped `_looks_like_noise()` function flags only:
-- camelCase tokens (`pptxgenjs` ✅)
-- snake_case / kebab-case (`next-js` ✅)
-- tokens with digits (`v1.0`, `2025` ✅)
-- all-caps short tokens (`JSON`, `API` ✅)
-- length ≤ 3 (✅)
+- camelCase tokens (`pptxgenjs` 鉁?
+- snake_case / kebab-case (`next-js` 鉁?
+- tokens with digits (`v1.0`, `2025` 鉁?
+- all-caps short tokens (`JSON`, `API` 鉁?
+- length 鈮?3 (鉁?
 
 But **misses** plain lowercase product/tool names that are 4-7 chars:
-- `iphone` (6 chars, no digits, no separators) — **missed**
-- `skill`, `beautiful`, `gamma` (similarly) — **missed**
+- `iphone` (6 chars, no digits, no separators) 鈥?**missed**
+- `skill`, `beautiful`, `gamma` (similarly) 鈥?**missed**
 
-On the user's real corpus (`课件/ch1-econ-ppt`, 9 MD/TXT files, 7,392 words),
+On the user's real corpus (`璇句欢/ch1-econ-ppt`, 9 MD/TXT files, 7,392 words),
 `extract_domain_stopwords` returns **empty list** because the actual noise
 terms (`iphone`, `pptxgenjs`, `skill`, `beautiful`, `gamma`) are the only
 ones present in TF-IDF top-N, and only `pptxgenjs` matches the strict
@@ -795,12 +794,12 @@ we set `top_n=20`) but the list is empty in practice.
   the corpus is suspicious (real content terms vary by topic; tool names
   appear in many docs uniformly).
 - Add: user-editable `pa_cli/data/domain_stopwords.txt` (already created
-  by domain_stopwords.save_domain_stopwords) — this is the **escape hatch**:
+  by domain_stopwords.save_domain_stopwords) 鈥?this is the **escape hatch**:
   if auto-mine misses something, user can hand-add it via the file.
 - Verify: real-corpus test confirms `extract_domain_stopwords` returns
-  ≥3 noise terms on `ch1-econ-ppt` (iphone, skill, beautiful expected).
+  鈮? noise terms on `ch1-econ-ppt` (iphone, skill, beautiful expected).
 
-**Issue 2 — no end-to-end real-corpus test**:
+**Issue 2 鈥?no end-to-end real-corpus test**:
 The 23 sub-tests in `test_labels_e2e.py` cover:
 - LabelGenerator ABC + factory dispatch + register
 - CustomLabelGenerator unit behavior (single, multi, JSON keys, immutability)
@@ -808,18 +807,18 @@ The 23 sub-tests in `test_labels_e2e.py` cover:
 
 But **no test** actually runs `cluster_topics()` on the user's real
 `ch1-econ-ppt` corpus and verifies `--custom-labels` flows end-to-end.
-The real verification (Topic 1 = "PPT 设计文档") was a one-off bash
+The real verification (Topic 1 = "PPT 璁捐鏂囨。") was a one-off bash
 session and not captured in any test. This means a future regression
 could silently break custom_labels flow on the real corpus without
 any test catching it.
 
 **Fix plan (v3.8.2 patch)**:
 - Add `test_output/test_labels_real_corpus.py` that walks the real
-  `G:\Minmax - workspace\课件\ch1-econ-ppt\` corpus, calls
+  `G:\Minmax - workspace\璇句欢\ch1-econ-ppt\` corpus, calls
   `cluster_topics(label_method="handroll", custom_labels={...})`, asserts:
-  - Topic 1 label == "PPT 设计文档" (custom label applied)
-  - Topic 2 label == "PPT 内容来源"
-  - `domain_stopwords_count` ≥ 3 (after Issue 1 fix)
+  - Topic 1 label == "PPT 璁捐鏂囨。" (custom label applied)
+  - Topic 2 label == "PPT 鍐呭鏉ユ簮"
+  - `domain_stopwords_count` 鈮?3 (after Issue 1 fix)
   - topics.json schema fields populated
 - Gate with env var `PA_TEST_REAL_CORPUS=1` (real corpus is 7,392 words +
   file system dependency; don't slow down CI).
@@ -837,23 +836,23 @@ any test catching it.
 - Total: **~1h**, anchored on `[P1-4 v3.8.1 polish] ~2h actual` as prior wrap-interface pattern.
 
 **Audit trail**: original v3.8.1 Outcome preserved above. Modified sub-section
-is the post-commit honest correction. No claim is deleted — the
+is the post-commit honest correction. No claim is deleted 鈥?the
 "passes 23/23" line was true at the time and is still true for the
 unit tests; the gap was that unit tests didn't cover real-corpus behavior.
 
-### Modified 2026-07-05 — v3.8.3 polish: close the v3.8.1 ⚠️ "code exists but unverified" claims
+### Modified 2026-07-05 鈥?v3.8.3 polish: close the v3.8.1 鈿狅笍 "code exists but unverified" claims
 
-After v3.8.2 (commit `22e6cd2`) shipped, user pressed "测试所有没有测试过的，
-然后更新 changelog 和 commit". Honest re-audit found 4 remaining ⚠️ items
+After v3.8.2 (commit `22e6cd2`) shipped, user pressed "娴嬭瘯鎵€鏈夋病鏈夋祴璇曡繃鐨勶紝
+鐒跺悗鏇存柊 changelog 鍜?commit". Honest re-audit found 4 remaining 鈿狅笍 items
 that the v3.8.1 + v3.8.2 commits had explicitly left untested:
 
-**Issue 1 — `CTFIDFLabelGenerator.generate()` + `HandrollLabelGenerator.generate()` raised NotImplementedError**:
+**Issue 1 鈥?`CTFIDFLabelGenerator.generate()` + `HandrollLabelGenerator.generate()` raised NotImplementedError**:
 Built-in generators were stubs that raised. ABC felt half-implemented.
 A future PIEClass plugin author would wonder why their subclass needs to
 implement `generate()` but built-ins don't. Fix: rewrote both as
 pass-through post-processors that apply optional `custom_labels` overlay.
 
-**Issue 2 — `--label-method ctfidf` end-to-end never verified**:
+**Issue 2 鈥?`--label-method ctfidf` end-to-end never verified**:
 BERTopic downloads `all-MiniLM-L6-v2` (~80MB) from HuggingFace. In
 networks where HF is blocked, default behavior is 5-minute retry storm
 before fallback. User has been staring at hanging terminals.
@@ -865,18 +864,17 @@ back to handroll." Pre-existing try/except catches it. Result on user's
 network: ctfidf command exits in ~85s with explicit warning instead of
 5-min hang.
 
-**Issue 3 — `--domain-stopwords-file <path>` CLI end-to-end never verified**:
+**Issue 3 鈥?`--domain-stopwords-file <path>` CLI end-to-end never verified**:
 CLI flag parsed correctly per unit test, but never tested with real corpus.
 Fix: new `test_cli_domain_stopwords_file_end_to_end` runs the subprocess
 with a 9-term fixture file, asserts `domain_stopwords_count == 9` (file
 content) NOT 20 (auto-mine default). Exact-9 match proves file was loaded.
 
-**Issue 4 — `register_label_generator()` plugin chain end-to-end never verified**:
-Factory was unit-tested but no test exercised full chain (register →
-available → get → name → generate → return shape). Fix: 2 new tests
+**Issue 4 鈥?`register_label_generator()` plugin chain end-to-end never verified**:
+Factory was unit-tested but no test exercised full chain (register 鈫?available 鈫?get 鈫?name 鈫?generate 鈫?return shape). Fix: 2 new tests
 verify ABC actually implements and plugin chain works end-to-end.
 
-**Test infrastructure fix — subprocess cache isolation**:
+**Test infrastructure fix 鈥?subprocess cache isolation**:
 When `test_labels_real_corpus.py` ran as subprocess inside regression
 Section A8, **after** A7's `test_labels_e2e.py`, it failed with
 `AssertionError: Artifact of type=precompile already registered in
@@ -886,14 +884,14 @@ shared across subprocesses. Fix: each subprocess gets unique `TMPDIR`,
 `TORCHDYNAMO_DISABLE=1` + `TORCH_COMPILE_DISABLE=1` to skip precompile
 machinery entirely.
 
-**New release: v3.8.3 patch** (target: 2026-07-05, same day — same justification as v3.8.2):
+**New release: v3.8.3 patch** (target: 2026-07-05, same day 鈥?same justification as v3.8.2):
 - 4 sub-issues closed + test infra fix
 - v3.8.1 + v3.8.2 outcomes above preserved (audit trail discipline)
 - All closed claims now have real-corpus + CLI-subprocess test verification
-  (previously: ⚠️ code exists but unverified)
+  (previously: 鈿狅笍 code exists but unverified)
 
 **Effort** (final time log):
-- ABC stubs → pass-through: ~15min
+- ABC stubs 鈫?pass-through: ~15min
 - bertopic_timeout + thread wrapper: ~15min
 - 5 new test sub-tests + 1 fixture file: ~15min
 - Subprocess cache isolation: ~10min
@@ -904,16 +902,16 @@ machinery entirely.
 
 - **Status**: deprecated
 - **Added**: 2026-07-04
-- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
+- **Deprecated**: 2026-07-04 (user review 鈥?same-day rejection after reflection)
 - **Priority**: P2
-- **Effort**: 0.5 day (revised after redesign — was 0.5d for manifest only, redesign reduces further)
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.7
+- **Effort**: 0.5 day (revised after redesign 鈥?was 0.5d for manifest only, redesign reduces further)
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.7
 - **Rationale (original)**: Non-CLI users hit paper-agent via browser. `pa browser-install` opens SciHub Addon Chrome Web Store page + auto-configures fallback URLs pointing to local daemon.
-- **Acceptance criteria (original — fails Global Rule ❌)**:
-  - `pa browser-install` opens Chrome store + sets up extension with our 11-source fallback list  ← needs published extension (Chrome Web Store review + ongoing manifest v3 churn)
-  - Local daemon (`pa serve`) accepts browser-extension callbacks for paper lookup  ← local daemon = hosted service within scope, but Chrome store publication is the violation
+- **Acceptance criteria (original 鈥?fails Global Rule 鉂?**:
+  - `pa browser-install` opens Chrome store + sets up extension with our 11-source fallback list  鈫?needs published extension (Chrome Web Store review + ongoing manifest v3 churn)
+  - Local daemon (`pa serve`) accepts browser-extension callbacks for paper lookup  鈫?local daemon = hosted service within scope, but Chrome store publication is the violation
 
-### Modified 2026-07-04 — redesign as userscript (Global Rule compliance)
+### Modified 2026-07-04 鈥?redesign as userscript (Global Rule compliance)
 
 Per Global Rule, browser extensions that need to be published and reviewed
 by Chrome/Firefox stores exceed personal-hobbyist maintenance budget
@@ -925,7 +923,7 @@ by Chrome/Firefox stores exceed personal-hobbyist maintenance budget
 - **Maintenance**: ~50 lines of JS + a markdown install guide. Versioning
   via Git, not via Chrome Web Store.
 - **Local daemon `pa serve`**: kept (it's a local stdio service, not
-  a hosted one — within scope).
+  a hosted one 鈥?within scope).
 - **Why this is OK for hobbyist**: no publication, no review, no
   per-browser-version compat matrix. If a browser breaks the userscript,
   edit it.
@@ -933,16 +931,16 @@ by Chrome/Firefox stores exceed personal-hobbyist maintenance budget
 **New acceptance criteria**:
 - `pa browser-install` writes a `pa-helper.user.js` userscript to `~/.paper-agent/`
   and prints Tampermonkey / Violentmonkey install instructions
-- Userscript adds a "↘ pa fetch this" button to DOI landing pages; clicking
+- Userscript adds a "鈫?pa fetch this" button to DOI landing pages; clicking
   sends the DOI to local `pa serve` daemon
 - Local daemon runs as a regular Python script (`pa serve`); no
   authentication (localhost only)
 
-### Deprecated 2026-07-04 — abandoned (user review)
+### Deprecated 2026-07-04 鈥?abandoned (user review)
 
 **Honest reflection after user "reflection" prompt**:
 
-I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md §6.7` (a competitor
+I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md 搂6.7` (a competitor
 parity bullet: "SciHub Addon is a popular browser extension") without
 checking whether the user actually needs it. After reflection:
 
@@ -955,7 +953,7 @@ checking whether the user actually needs it. After reflection:
    pasting the userscript, (c) running `pa serve` daemon. That's
    three new habits for the user to maintain, with no observed benefit
    in current workflow.
-3. **Competitor parity ≠ user need**: just because SciHub Addon exists
+3. **Competitor parity 鈮?user need**: just because SciHub Addon exists
    as a browser extension doesn't mean paper-agent needs one.
 
 **Decision**: DEPRECATED. No code written (avoid sunk-cost). The
@@ -972,18 +970,18 @@ auto-fetch via pa"). Until then, shelved.
 
 - **Status**: deprecated
 - **Added**: 2026-07-04
-- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
+- **Deprecated**: 2026-07-04 (user review 鈥?same-day rejection after reflection)
 - **Priority**: P2
 - **Effort**: 0.5 day (unchanged but scope reduced)
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.8
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.8
 - **Rationale (original)**: New users hit friction when needing 3 API keys to run 5-engine search. Automating the registration form filling saves setup time.
-- **Acceptance criteria (original — partly fails Global Rule ⚠️)**:
-  - `pa keys setup` opens browser, fills OpenAlex / S2 / CORE registration forms  ← OK (uses Playwright locally)
-  - Auto-detect confirmation emails and pulls key  ← ⚠️ requires email IMAP polling (depends on user's mail server config)
-  - Writes to `.env` + registry automatically  ← OK
+- **Acceptance criteria (original 鈥?partly fails Global Rule 鈿狅笍)**:
+  - `pa keys setup` opens browser, fills OpenAlex / S2 / CORE registration forms  鈫?OK (uses Playwright locally)
+  - Auto-detect confirmation emails and pulls key  鈫?鈿狅笍 requires email IMAP polling (depends on user's mail server config)
+  - Writes to `.env` + registry automatically  鈫?OK
 - **Risk noted in original**: API registration forms change; needs maintenance commitment
 
-### Modified 2026-07-04 — drop auto-detect-email, keep registration form-fill (Global Rule)
+### Modified 2026-07-04 鈥?drop auto-detect-email, keep registration form-fill (Global Rule)
 
 Per Global Rule, "auto-detect confirmation emails" depends on user's
 mail server (IMAP / OAuth) which adds credentials-handling + ongoing
@@ -1002,11 +1000,11 @@ maintenance as mail providers change. Drop that step.
   to detect breakage without committing. Worst case, they fall back to
   manual `pa keys add`.
 
-### Deprecated 2026-07-04 — abandoned (user review)
+### Deprecated 2026-07-04 鈥?abandoned (user review)
 
 **Honest reflection after user "reflection" prompt**:
 
-I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md §6.8` (a competitor
+I added this entry from `COMPETITOR_ANALYSIS_v3.3.0.md 搂6.8` (a competitor
 parity bullet: "PaperBot does API key auto-setup") without checking
 whether the user actually needs it. After reflection:
 
@@ -1015,7 +1013,7 @@ whether the user actually needs it. After reflection:
    and `keys_registry.json` shows `last_checked` completed for all.
    The user is not a "new user" who would benefit from auto-setup.
 2. **"New users" assumption is broken**: per Global Rule (codified
-   2026-07-04), paper-agent is a personal-hobbyist tool — there are
+   2026-07-04), paper-agent is a personal-hobbyist tool 鈥?there are
    no other users to onboard. The "new users hit friction" rationale
    assumed a public/commercialized product, which user explicitly
    ruled out.
@@ -1036,17 +1034,17 @@ for just that one form. Until then, shelved.
 
 - **Status**: deprecated
 - **Added**: 2026-07-04
-- **Deprecated**: 2026-07-04 (user review — same-day rejection after reflection)
+- **Deprecated**: 2026-07-04 (user review 鈥?same-day rejection after reflection)
 - **Priority**: P2
-- **Effort**: 0.5 day (revised after redesign — was 1d, redesign reduces)
-- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` §6.9
+- **Effort**: 0.5 day (revised after redesign 鈥?was 1d, redesign reduces)
+- **Source**: `COMPETITOR_ANALYSIS_v3.3.0.md` 搂6.9
 - **Rationale (original)**: On-demand search misses daily new papers. Research monitoring needs daily/weekly automatic push. biohack-fetch-clean cron design is a template.
-- **Acceptance criteria (original — fails Global Rule ❌)**:
-  - `pa watch "AI literacy higher education" --daily --email user@x.com` registers mavis cron  ← ⚠️ cron OK, but email push
-  - Cron runs `pa search` + diffs against seen-set + emails new papers  ← ❌ needs SMTP/transactional email (SendGrid etc. = $$, or self-hosted mailserver = maintenance)
+- **Acceptance criteria (original 鈥?fails Global Rule 鉂?**:
+  - `pa watch "AI literacy higher education" --daily --email user@x.com` registers mavis cron  鈫?鈿狅笍 cron OK, but email push
+  - Cron runs `pa search` + diffs against seen-set + emails new papers  鈫?鉂?needs SMTP/transactional email (SendGrid etc. = $$, or self-hosted mailserver = maintenance)
   - Deduplication via DOI
 
-### Modified 2026-07-04 — drop email push, generate daily MD report (Global Rule)
+### Modified 2026-07-04 鈥?drop email push, generate daily MD report (Global Rule)
 
 Per Global Rule, hosted email push (SendGrid/Mailgun/self-hosted SMTP)
 exceeds hobbyist budget. Drop email entirely; replace with a daily
@@ -1064,7 +1062,7 @@ markdown report that the user reads locally.
 output is a file (no hosted service), and reading is manual (no
 "must keep service alive").
 
-### Deprecated 2026-07-04 — abandoned (user review)
+### Deprecated 2026-07-04 鈥?abandoned (user review)
 
 **Honest reflection after user "reflection" prompt**:
 
@@ -1097,9 +1095,9 @@ the user's stated workflow need.
 specific research topic to monitor, AND (b) confirms they want daily
 monitoring vs on-demand. Until then, shelved.
 
-### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ — REMOVED, merged into [P0-2]
+### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ 鈥?REMOVED, merged into [P0-2]
 
-### Modified 2026-07-04 — merged into [P0-2] (already shipped)
+### Modified 2026-07-04 鈥?merged into [P0-2] (already shipped)
 
 [P2-4] was originally "pa cache stats + clean" descriptive features.
 Once [P0-2] shipped with `pa cache stats` + `pa cache clean` as 2 of 5
@@ -1107,7 +1105,7 @@ admin subcommands, [P2-4] became functionally redundant (a strict subset
 of [P0-2]). Removed from active items list to avoid double-tracking.
 
 **Rationale preserved for audit trail**: Once cache exists, users need
-size/age/when-to-clean visibility. — Now satisfied by [P0-2] v3.5.0.
+size/age/when-to-clean visibility. 鈥?Now satisfied by [P0-2] v3.5.0.
 
 **Migration**: existing references to `[P2-4] pa cache stats` should
 be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
@@ -1116,43 +1114,42 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 ## Modified items (proven wrong or revised)
 
-- **[P0-3] MCP server** — see [P0-3] Modified 2026-07-04 sub-section. Original
+- **[P0-3] MCP server** 鈥?see [P0-3] Modified 2026-07-04 sub-section. Original
   design (self-hosted `pa mcp-serve`) exceeded maintenance budget; user
   walked back the same day. Replaced with public `paper-search-mcp`
   integration via `pa mcp install`. NOT a "modified" item in the failed-
-  sense — the redesign was successful — but tracked here for the audit.
+  sense 鈥?the redesign was successful 鈥?but tracked here for the audit.
 
-- **[P2-1] Browser extension** — see [P2-1] Modified 2026-07-04. Original
+- **[P2-1] Browser extension** 鈥?see [P2-1] Modified 2026-07-04. Original
   Chrome extension failed Global Rule (Chrome Web Store review); redesigned
-  as Tampermonkey userscript. Later deprecated entirely on user review —
-  see [P2-1] Deprecated 2026-07-04.
+  as Tampermonkey userscript. Later deprecated entirely on user review 鈥?  see [P2-1] Deprecated 2026-07-04.
 
-- **[P2-2] API key auto-apply** — see [P2-2] Modified 2026-07-04. Original
+- **[P2-2] API key auto-apply** 鈥?see [P2-2] Modified 2026-07-04. Original
   design included email IMAP polling (fails Global Rule); redesigned to drop
-  email auto-detect. Later deprecated entirely on user review — see
+  email auto-detect. Later deprecated entirely on user review 鈥?see
   [P2-2] Deprecated 2026-07-04.
 
-- **[P2-3] pa watch daily + email** — see [P2-3] Modified 2026-07-04. Original
+- **[P2-3] pa watch daily + email** 鈥?see [P2-3] Modified 2026-07-04. Original
   design included SMTP email push (fails Global Rule); redesigned as
   local MD report + cron. Later deprecated entirely on user review (no
-  concrete topic) — see [P2-3] Deprecated 2026-07-04.
+  concrete topic) 鈥?see [P2-3] Deprecated 2026-07-04.
 
 ---
 
 ## Deprecated items (abandoned, won't do)
 
-- **[P2-1] Browser extension / userscript** — DEPRECATED 2026-07-04 (user review).
+- **[P2-1] Browser extension / userscript** 鈥?DEPRECATED 2026-07-04 (user review).
   No concrete workflow. Resurrection requires user-provided scenario.
 
-- **[P2-2] API key auto-application** — DEPRECATED 2026-07-04 (user review).
+- **[P2-2] API key auto-application** 鈥?DEPRECATED 2026-07-04 (user review).
   User already has all keys; "new users" assumption invalid under Global Rule.
 
-- **[P2-3] pa watch daily subscription** — DEPRECATED 2026-07-04 (user review).
+- **[P2-3] pa watch daily subscription** 鈥?DEPRECATED 2026-07-04 (user review).
   No concrete topic yet. Resurrection requires user-provided topic + workflow.
 
-- **[P0-3] MCP server (self-hosted)** — DEPRECATED 2026-07-04 (user reflection).
+- **[P0-3] MCP server (self-hosted)** 鈥?DEPRECATED 2026-07-04 (user reflection).
   Replaced by `pa mcp install` glue for public `paper-search-mcp`. Different
-  from "abandoned" — the value was real, just better served by public package.
+  from "abandoned" 鈥?the value was real, just better served by public package.
 
 ---
 
@@ -1180,21 +1177,21 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 **Adding an item**: edit `### [Px-N] <title>` under "Active items". Status `proposed` until work starts.
 
-**Starting work**: change `Status: proposed` → `Status: in-progress`, add `Started: YYYY-MM-DD`. Update the entry with progress notes.
+**Starting work**: change `Status: proposed` 鈫?`Status: in-progress`, add `Started: YYYY-MM-DD`. Update the entry with progress notes.
 
-**Completing work**: change `Status: in-progress` → `Status: done`, add `Completed: YYYY-MM-DD`. Add a `## Outcome` subsection with what was learned.
+**Completing work**: change `Status: in-progress` 鈫?`Status: done`, add `Completed: YYYY-MM-DD`. Add a `## Outcome` subsection with what was learned.
 
-**Item proven wrong after partial work**: keep the original entry. Add a `### Modified YYYY-MM-DD — <reason>` sub-section below it. Update the Status header to `modified` and link to the sub-section. Do **NOT** delete the original.
+**Item proven wrong after partial work**: keep the original entry. Add a `### Modified YYYY-MM-DD 鈥?<reason>` sub-section below it. Update the Status header to `modified` and link to the sub-section. Do **NOT** delete the original.
 
-**Item permanently abandoned**: mark `Status: deprecated`. Add `### Deprecated YYYY-MM-DD — <reason>`. Do **NOT** delete the original.
+**Item permanently abandoned**: mark `Status: deprecated`. Add `### Deprecated YYYY-MM-DD 鈥?<reason>`. Do **NOT** delete the original.
 
-**Reference in CHANGELOG.md**: every release entry should list the roadmap item IDs it implements. Example: `### Added — [P0-1] Bibtex export`.
+**Reference in CHANGELOG.md**: every release entry should list the roadmap item IDs it implements. Example: `### Added 鈥?[P0-1] Bibtex export`.
 
 ---
 
 ## Estimation methodology (added 2026-07-04, post-[P0-1] retrospective)
 
-User question exposed that the original estimates on [P0-1]–[P2-4] were
+User question exposed that the original estimates on [P0-1]鈥揫P2-4] were
 **intuitive gut-feel guesses, not plan-based estimates**. [P0-1] came in
 **4-8x under estimate** (1-2 days estimated, 3 hours actual). To prevent
 this on future items, every entry follows this discipline:
@@ -1207,9 +1204,9 @@ Every proposed item **must** include a sub-task breakdown in its body:
 ### [Px-N] Title
 
 Sub-tasks (estimated before work starts):
-- [ ] Sub-task A description                       — estimate: Xh
-- [ ] Sub-task B description                       — estimate: Xh
-- [ ] Sub-task C description                       — estimate: Xh
+- [ ] Sub-task A description                       鈥?estimate: Xh
+- [ ] Sub-task B description                       鈥?estimate: Xh
+- [ ] Sub-task C description                       鈥?estimate: Xh
                                                 ----
 Total estimate: Xh  (X-X days)
 ```
@@ -1221,9 +1218,9 @@ single gut-feel number.
 
 When estimating, look at the **most recently completed similar item**
 in the Active items / Outcome sections. For example:
-- All "metadata conversion" type items → anchor on [P0-1] Bibtex (3h)
-- All "API client wrapper" type items → look for similar completed anchor
-- If no anchor exists, mark `first-of-kind` and add a wider confidence interval (±100%)
+- All "metadata conversion" type items 鈫?anchor on [P0-1] Bibtex (3h)
+- All "API client wrapper" type items 鈫?look for similar completed anchor
+- If no anchor exists, mark `first-of-kind` and add a wider confidence interval (卤100%)
 
 ### 3. Outcome time-tracking (required on every completion)
 
@@ -1250,16 +1247,16 @@ Lesson for future estimates:
 
 ### 4. Confidence interval rule
 
-- **First-of-kind items**: estimate as range with ±100% margin (e.g. "1-4 days")
+- **First-of-kind items**: estimate as range with 卤100% margin (e.g. "1-4 days")
 - **Repeat-pattern items**: use tight range based on prior outcome (e.g. "2-3 hours")
 - **Items with cross-system integrations** (browser ext, MCP): add 50% buffer for unknown unknowns
 
 ### 5. Anti-patterns (avoid these)
 
-- ❌ Single gut-feel number without sub-tasks
-- ❌ "1-2 days" without specifying what takes 1 vs 2 days
-- ❌ Copy-paste estimates from similar items without re-decomposing
-- ❌ Estimates that never get checked against actual (no feedback loop)
+- 鉂?Single gut-feel number without sub-tasks
+- 鉂?"1-2 days" without specifying what takes 1 vs 2 days
+- 鉂?Copy-paste estimates from similar items without re-decomposing
+- 鉂?Estimates that never get checked against actual (no feedback loop)
 
 ### 6. Reference data so far
 
@@ -1269,7 +1266,7 @@ After [P0-1] Bibtex completion, the project has its first anchor:
 |---|---|---|---|
 | Small data format conversion (text/bibtex) | [P0-1] Bibtex | ~3h | OpenAlex metadata rich; Click + bibtexparser library overhead minimal |
 
-Future similar items should use 3h as the anchor, with ±50% margin for unknown unknowns.
+Future similar items should use 3h as the anchor, with 卤50% margin for unknown unknowns.
 
 ---
 
@@ -1279,27 +1276,27 @@ Future similar items should use 3h as the anchor, with ±50% margin for unknown 
 |---|---|---|---|---|---|
 | [P0-1] Bibtex export | 1-2 days | ~3h | 4-8x under | 2026-07-04 | shipped |
 | [P0-2] Local cache + pa cache CLI | 3.5h | ~5h | 1.4x over | 2026-07-04 | shipped |
-| [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 (sameday revert) | **REVERTED 2026-07-04** — use paper-search-mcp (PyPI) |
+| [P0-3] MCP server | 4h | ~2.1h | 2x under | 2026-07-04 (sameday revert) | **REVERTED 2026-07-04** 鈥?use paper-search-mcp (PyPI) |
 | [P1-1] Citation walk | 2.75h | ~1.3h | 2x under | 2026-07-04 | shipped (in v3.5.1) |
 | [P1-2] OpenAlex concepts | 2.25h | ~1h | 2x under | 2026-07-04 | shipped (v3.6.0) |
-| [P1-3] PRISMA diagram | 2h | ~1h | 2x under | 2026-07-04 | shipped (v3.7.0) — reused skill/core/prisma.py |
-| [P1-4] Topic clustering | 5h (v3.8.0) + 3.3h (v3.8.1) = 8.3h | ~6.5h | on target | 2026-07-05 | shipped (v3.8.0 + v3.8.1) — first-of-kind [P1-4] wide CI; v3.8.1 polish 2x under (interface wrap pattern) |
+| [P1-3] PRISMA diagram | 2h | ~1h | 2x under | 2026-07-04 | shipped (v3.7.0) 鈥?reused skill/core/prisma.py |
+| [P1-4] Topic clustering | 5h (v3.8.0) + 3.3h (v3.8.1) = 8.3h | ~6.5h | on target | 2026-07-05 | shipped (v3.8.0 + v3.8.1) 鈥?first-of-kind [P1-4] wide CI; v3.8.1 polish 2x under (interface wrap pattern) |
 | v3.9.0 v4 stack (5-condition rerank) | n/a | ~3h | n/a | 2026-07-12 | shipped; user spot-checked 5/25 queries (priority 1-5), 13/374 labels overridden (3.5% change). Lift 3.9x preserved on clean labels. See CHANGELOG v3.9.0 |
 
 ---
 
 ## User spot-check insights (added 2026-07-13, post-v3.9.0)
 
-After v3.9.0 shipped, user did partial spot-check on priority 1-5 queries (q005, q007, q010, q013, q019) and provided extensive feedback on label quality. 13 user overrides applied to `labels_clean.json`. The user feedback also surfaced **7 quality issues** with Mavis's auto-labeling that go beyond spot-check disagreements — these are now below as new [P0-4] through [P1-10] proposed items. **Do not skip this section** before claiming v3.9.0 numbers are final.
+After v3.9.0 shipped, user did partial spot-check on priority 1-5 queries (q005, q007, q010, q013, q019) and provided extensive feedback on label quality. 13 user overrides applied to `labels_clean.json`. The user feedback also surfaced **7 quality issues** with Mavis's auto-labeling that go beyond spot-check disagreements 鈥?these are now below as new [P0-4] through [P1-10] proposed items. **Do not skip this section** before claiming v3.9.0 numbers are final.
 
 User feedback verbatim themes (from session 2026-07-13):
-1. **Time + citations**: "文献的时间太老了,甚至有十年之前的文章,除非这种文章引用度很高,超过平均引用数两个以上标准差,否则不应该作为我们应该看的文章" (literature too old; >10 year papers need citations > mean+2std; >20 year papers even stricter)
-2. **Field dead detection**: "假如大量的引用文章都比较老,很有可能该领域已经过时了,或者没人研究了" (if many cited papers are old, the field is dead)
-3. **Granularity**: "部分主题的颗粒度太大了,譬如农业,但凡是农业都相关就导致你做不下了" (some topics too broad, e.g. agriculture; need sub-topic decomposition)
-4. **Geographic**: "有些命题需要有实证检验,此时可能有地理信息或者国别信息,像这种带有地理和国别的信息的也要参考不仅仅只是停留在命题解构上" (some claims need empirical evidence with geographic/country data)
-5. **Institutional credibility**: "某些特殊机构比如 Qs前50大学以及一些特殊机构譬如ESMFold,IMF,世界银行等具有公信力或者国际背景或者著名的国家的研究所,背书的论文,就算仅仅是部分相关,但其可能的研究深度是极高的" (Qs top-50 + ESMFold + IMF + World Bank + famous national research institutes boost partial relevance)
-6. **China exclusion**: "特别的,针对中国,排除任何国际关系研究院以及马克思主义学院等具有官方政治背景的文章" (China: exclude 国际关系研究院, 马克思主义学院)
-7. **Falsifiability philosophy**: "你的架构哲学里面也应该考虑 可证伪性的确认,尤其是当代可证伪性哲学方法应用在博士以及学术界层面(这个我不知道GitHub 上面有没有,可以搜索一下)" (architecture should consider falsifiability confirmation, especially contemporary methods applied at PhD level)
+1. **Time + citations**: "鏂囩尞鐨勬椂闂村お鑰佷簡,鐢氳嚦鏈夊崄骞翠箣鍓嶇殑鏂囩珷,闄ら潪杩欑鏂囩珷寮曠敤搴﹀緢楂?瓒呰繃骞冲潎寮曠敤鏁颁袱涓互涓婃爣鍑嗗樊,鍚﹀垯涓嶅簲璇ヤ綔涓烘垜浠簲璇ョ湅鐨勬枃绔? (literature too old; >10 year papers need citations > mean+2std; >20 year papers even stricter)
+2. **Field dead detection**: "鍋囧澶ч噺鐨勫紩鐢ㄦ枃绔犻兘姣旇緝鑰?寰堟湁鍙兘璇ラ鍩熷凡缁忚繃鏃朵簡,鎴栬€呮病浜虹爺绌朵簡" (if many cited papers are old, the field is dead)
+3. **Granularity**: "閮ㄥ垎涓婚鐨勯绮掑害澶ぇ浜?璀鍐滀笟,浣嗗嚒鏄啘涓氶兘鐩稿叧灏卞鑷翠綘鍋氫笉涓嬩簡" (some topics too broad, e.g. agriculture; need sub-topic decomposition)
+4. **Geographic**: "鏈変簺鍛介闇€瑕佹湁瀹炶瘉妫€楠?姝ゆ椂鍙兘鏈夊湴鐞嗕俊鎭垨鑰呭浗鍒俊鎭?鍍忚繖绉嶅甫鏈夊湴鐞嗗拰鍥藉埆鐨勪俊鎭殑涔熻鍙傝€冧笉浠呬粎鍙槸鍋滅暀鍦ㄥ懡棰樿В鏋勪笂" (some claims need empirical evidence with geographic/country data)
+5. **Institutional credibility**: "鏌愪簺鐗规畩鏈烘瀯姣斿 Qs鍓?0澶у浠ュ強涓€浜涚壒娈婃満鏋勮濡侲SMFold,IMF,涓栫晫閾惰绛夊叿鏈夊叕淇″姏鎴栬€呭浗闄呰儗鏅垨鑰呰憲鍚嶇殑鍥藉鐨勭爺绌舵墍,鑳屼功鐨勮鏂?灏辩畻浠呬粎鏄儴鍒嗙浉鍏?浣嗗叾鍙兘鐨勭爺绌舵繁搴︽槸鏋侀珮鐨? (Qs top-50 + ESMFold + IMF + World Bank + famous national research institutes boost partial relevance)
+6. **China exclusion**: "鐗瑰埆鐨?閽堝涓浗,鎺掗櫎浠讳綍鍥介檯鍏崇郴鐮旂┒闄互鍙婇┈鍏嬫€濅富涔夊闄㈢瓑鍏锋湁瀹樻柟鏀挎不鑳屾櫙鐨勬枃绔? (China: exclude 鍥介檯鍏崇郴鐮旂┒闄? 椹厠鎬濅富涔夊闄?
+7. **Falsifiability philosophy**: "浣犵殑鏋舵瀯鍝插閲岄潰涔熷簲璇ヨ€冭檻 鍙瘉浼€х殑纭,灏ゅ叾鏄綋浠ｅ彲璇佷吉鎬у摬瀛︽柟娉曞簲鐢ㄥ湪鍗氬＋浠ュ強瀛︽湳鐣屽眰闈?杩欎釜鎴戜笉鐭ラ亾GitHub 涓婇潰鏈夋病鏈?鍙互鎼滅储涓€涓?" (architecture should consider falsifiability confirmation, especially contemporary methods applied at PhD level)
 
 ---
 
@@ -1317,30 +1314,30 @@ User feedback verbatim themes (from session 2026-07-13):
   - OpenAlex-canonical form: `https://doi.org/10.X/Y` (lowercased)
   - snapshot.py writes DOIs in canonical form
   - labels.json uses canonical form (existing labels migrated; `_typo_corrections.json` records the migration)
-  - v3.9.0 eval on labels_clean.json shows duplicate candidates get deduped → n_relevant + precision floor go up
+  - v3.9.0 eval on labels_clean.json shows duplicate candidates get deduped 鈫?n_relevant + precision floor go up
 
 #### Outcome (2026-07-13)
 
 **Files added** (3):
-- `pa_cli/doi.py` (~165 lines) — `canonicalize_doi()` + `normalize_labels_dict()` + 9 smoke tests
-- `bench/v01/_migrate_doi_canonical.py` (~95 lines) — labels.json + labels_clean.json + _overrides.json migration
-- `bench/v01/_migrate_candidate_dois.py` (~55 lines) — 6 system_outputs_* subdirs migration
+- `pa_cli/doi.py` (~165 lines) 鈥?`canonicalize_doi()` + `normalize_labels_dict()` + 9 smoke tests
+- `bench/v01/_migrate_doi_canonical.py` (~95 lines) 鈥?labels.json + labels_clean.json + _overrides.json migration
+- `bench/v01/_migrate_candidate_dois.py` (~55 lines) 鈥?6 system_outputs_* subdirs migration
 
 **Renames** (per `bench/v01/doi_canonicalization_report.json`):
-- **19 unique DOIs renamed** in labels.json: 5 typo fixes (10.3380 → 10.3389) + 14 case-variant fixes (uppercase journal abbreviation)
+- **19 unique DOIs renamed** in labels.json: 5 typo fixes (10.3380 鈫?10.3389) + 14 case-variant fixes (uppercase journal abbreviation)
 - **102 DOIs canonicalized across 150 candidate files** in system_outputs/ + 5 condition subdirs
 - 7 case-variant duplicates collapsed in labels (e.g. q014 #15/#17 with `10.1016/J.JDEVECO`)
 
 **Honest caveats**:
 - v3.9.0 metrics shifted slightly (-0.003 to -0.014) because n_relevant per query dropped (duplicate-counted labels collapsed). 3.9x lift still preserved.
-- `pa_cli/snapshot.py` NOT yet updated to write canonical DOIs at fetch time. Future snapshot runs will still produce non-canonical DOIs unless we add `canonicalize_doi(r["doi"])` before `write_json`. TODO item — see `TODO.md` §"Doable today / this week".
+- `pa_cli/snapshot.py` NOT yet updated to write canonical DOIs at fetch time. Future snapshot runs will still produce non-canonical DOIs unless we add `canonicalize_doi(r["doi"])` before `write_json`. TODO item 鈥?see `TODO.md` 搂"Doable today / this week".
 
 **5-check audit against Global Rule**: 5/5 pass
-1. ✅ Runs for $0 (no API, no hosted)
-2. ✅ No hosted service
-3. ✅ Maintenance: ~315 lines new (3 files), no ongoing obligation
-4. ✅ No publish obligation
-5. ✅ Free-tier degradation: N/A (no third-party API used)
+1. 鉁?Runs for $0 (no API, no hosted)
+2. 鉁?No hosted service
+3. 鉁?Maintenance: ~315 lines new (3 files), no ongoing obligation
+4. 鉁?No publish obligation
+5. 鉁?Free-tier degradation: N/A (no third-party API used)
 
 ### [P1-5] Recency + citation threshold filter
 
@@ -1350,24 +1347,24 @@ User feedback verbatim themes (from session 2026-07-13):
 - **Completed**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 1+2: time decay + field-dead detection)
-- **Rationale**: User explicitly stated "文献的时间太老了,甚至有十年之前的文章,除非这种文章引用度很高,超过平均引用数两个以上标准差,否则不应该作为我们应该看的文章". 5 papers in q019 spot-check failed this rule. Field-dead detection: if a query's top-30 candidates have median year > 5 years ago, the field may be stagnant.
+- **Rationale**: User explicitly stated "鏂囩尞鐨勬椂闂村お鑰佷簡,鐢氳嚦鏈夊崄骞翠箣鍓嶇殑鏂囩珷,闄ら潪杩欑鏂囩珷寮曠敤搴﹀緢楂?瓒呰繃骞冲潎寮曠敤鏁颁袱涓互涓婃爣鍑嗗樊,鍚﹀垯涓嶅簲璇ヤ綔涓烘垜浠簲璇ョ湅鐨勬枃绔?. 5 papers in q019 spot-check failed this rule. Field-dead detection: if a query's top-30 candidates have median year > 5 years ago, the field may be stagnant.
 
-#### Outcome (2026-07-13) — 3-tier honest audit
+#### Outcome (2026-07-13) 鈥?3-tier honest audit
 
 **Files added** (2):
-- `pa_cli/recency.py` (~190 lines) — `RecencyConfig`, `recency_factor()`, `apply_recency_to_results()`, `check_field_staleness()`, smoke tests
-- Modified `bench/v01/_v4_rerank.py` — `--recency-mode {off|strict|moderate}` CLI flag, integrated into rerank pipeline
+- `pa_cli/recency.py` (~190 lines) 鈥?`RecencyConfig`, `recency_factor()`, `apply_recency_to_results()`, `check_field_staleness()`, smoke tests
+- Modified `bench/v01/_v4_rerank.py` 鈥?`--recency-mode {off|strict|moderate}` CLI flag, integrated into rerank pipeline
 
 **Rules implemented per user spec**:
-- `age > 10y AND cite < mean + 2*std` → 0.5x (strict + moderate)
-- `age > 20y AND cite < mean + 2.5*std` → 0.1x (strict) or 0.5x (moderate)
-- `bi_score > 0.7 AND cite > mean + 2*std` → 1.0x (rescue)
-- `year is None` → 1.0x (caller should apply [P2-5] separately)
-- Field-stale warning: `median(candidate_year) < now - 5` → emit stderr warning
+- `age > 10y AND cite < mean + 2*std` 鈫?0.5x (strict + moderate)
+- `age > 20y AND cite < mean + 2.5*std` 鈫?0.1x (strict) or 0.5x (moderate)
+- `bi_score > 0.7 AND cite > mean + 2*std` 鈫?1.0x (rescue)
+- `year is None` 鈫?1.0x (caller should apply [P2-5] separately)
+- Field-stale warning: `median(candidate_year) < now - 5` 鈫?emit stderr warning
 
 **Side-by-side metrics (clean labels, 25 queries)**:
 
-| condition | recall@10 (off) | recall@10 (strict) | Δ |
+| condition | recall@10 (off) | recall@10 (strict) | 螖 |
 |---|---:|---:|---:|
 | original | 0.188 | 0.188 | 0.000 |
 | random | 0.322 | 0.322 | 0.000 |
@@ -1377,10 +1374,10 @@ User feedback verbatim themes (from session 2026-07-13):
 | prf | 0.590 | 0.580 | -0.010 |
 
 **On the metric deltas** (per user feedback 2026-07-13):
-The Δ values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of.
+The 螖 values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 瀹為檯闄嶄綆浜?benchmark 鏁板瓧锛岃繖涓悊瑙ｆ垚闅忔満娉㈠姩鍗冲彲銆傛垜涓嶈涓哄畠鏄繀鐒堕€犳垚鎻愬崌鐨勩€? Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of.
 
 **On the metric deltas** (per user feedback 2026-07-13):
-The Δ values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 实际降低了 benchmark 数字，这个理解成随机波动即可。我不认为它是必然造成提升的。" Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of depending on whether they're curating for a benchmark or for their own research.
+The 螖 values are within the noise band of n=25 (no significance test, no holdout). User explicitly stated: "Recency filter 瀹為檯闄嶄綆浜?benchmark 鏁板瓧锛岃繖涓悊瑙ｆ垚闅忔満娉㈠姩鍗冲彲銆傛垜涓嶈涓哄畠鏄繀鐒堕€犳垚鎻愬崌鐨勩€? Translation: treat the metric shift as random fluctuation; the recency rule is a user-preference signal, not a label correction. The benchmark ground truth reflects content-relevance; the recency filter is a separate axis the user can opt in or out of depending on whether they're curating for a benchmark or for their own research.
 
 **Actionable output of the filter** (regardless of metric impact):
 - **16 of 25 queries emit field-stale warning** (median candidate year > 5y old)
@@ -1394,16 +1391,16 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - Filter is a user-preference signal, orthogonal to ground-truth labels
 
 **5-check audit against Global Rule**: 5/5 pass
-1. ✅ Runs for $0
-2. ✅ No hosted service
-3. ✅ Maintenance: ~190 lines new (recency.py) + ~30 lines modified (_v4_rerank.py); no ongoing obligation
-4. ✅ No publish obligation
-5. ✅ Free-tier degradation: N/A (no third-party API)
+1. 鉁?Runs for $0
+2. 鉁?No hosted service
+3. 鉁?Maintenance: ~190 lines new (recency.py) + ~30 lines modified (_v4_rerank.py); no ongoing obligation
+4. 鉁?No publish obligation
+5. 鉁?Free-tier degradation: N/A (no third-party API)
 
 **Deferred to backlog**:
 - **Field-aware recency thresholds** ([P1-6] territory): slow-moving fields (econ, classical ML) should be more lenient; fast-moving fields (AI, biotech, climate) apply strictly. Needs sub-topic decomposition first.
 - **`pa search --recency-mode` CLI flag** (currently only on `_v4_rerank.py`; would need to thread into `pa search` for production use)
-- **`pa_keys_remind` style warnings** — surface field-stale warnings during `pa search` rather than just at rerank time
+- **`pa_keys_remind` style warnings** 鈥?surface field-stale warnings during `pa search` rather than just at rerank time
 
 ### [P1-6] Sub-topic granularity decomposition
 
@@ -1411,17 +1408,17 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 3: granularity)
-- **Rationale**: User said "部分主题的颗粒度太大了,譬如农业". When query is "agriculture", every ag paper matches → unrankable. When query is "AI in higher ed" vs "intelligent tutoring systems", these are very different. Need query decomposition before retrieval.
+- **Rationale**: User said "閮ㄥ垎涓婚鐨勯绮掑害澶ぇ浜?璀鍐滀笟". When query is "agriculture", every ag paper matches 鈫?unrankable. When query is "AI in higher ed" vs "intelligent tutoring systems", these are very different. Need query decomposition before retrieval.
 - **Acceptance criteria**:
   - New module `pa_cli/decompose.py` with `decompose_query(query: str) -> list[SubTopic]`
   - `SubTopic = {name, keywords, exclusion_keywords, weight, domain}`
-  - Default decomposition: use the query's primary noun phrase + a list of known sub-topics from a static lookup table (ag → {agronomy, ag econ, ag tech, climate-adaptation, supply chain, food security}; AI education → {intelligent tutoring, adaptive learning, learning analytics, ...}; protein structure → {structure prediction, function prediction, binding site prediction, ...})
+  - Default decomposition: use the query's primary noun phrase + a list of known sub-topics from a static lookup table (ag 鈫?{agronomy, ag econ, ag tech, climate-adaptation, supply chain, food security}; AI education 鈫?{intelligent tutoring, adaptive learning, learning analytics, ...}; protein structure 鈫?{structure prediction, function prediction, binding site prediction, ...})
   - `pa search <query> --subtopic-mode auto` expands query into sub-queries, runs each, dedups, applies per-subtopic weights in rerank
   - User can override: `--subtopic-config '{"agriculture": ["ag_econ", "climate_adaptation"], "default": [...]}'`
   - v3.9.0+ rerank pipeline threads `subtopic_weight` into final score
 - **Estimated effort**: ~3-4h (lookup table + decomposition logic + integration + tests)
 - **Global Rule check**: 5/5 pass (local code, no API required, no maintenance)
-- **User confirmation needed**: static lookup table content — is 30 sub-topic domains enough? More generalizable: LLM-based decomposition is out of scope (per Global Rule no hosted LLM); pure keyphrase is feasible
+- **User confirmation needed**: static lookup table content 鈥?is 30 sub-topic domains enough? More generalizable: LLM-based decomposition is out of scope (per Global Rule no hosted LLM); pure keyphrase is feasible
 
 ### [P1-7] Institutional credibility boost
 
@@ -1429,15 +1426,15 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 5)
-- **Rationale**: User stated "Qs前50大学以及一些特殊机构譬如ESMFold,IMF,世界银行等具有公信力或者国际背景或者著名的国家的研究所,背书的论文,就算仅仅是部分相关,但其可能的研究深度是极高的". The Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: Mavis labeled 1 ("partial"), user said "极具参考价值" (high reference value) — but didn't override to 2 because relevance is technically partial. Solution: don't change label, but boost ranking score.
+- **Rationale**: User stated "Qs鍓?0澶у浠ュ強涓€浜涚壒娈婃満鏋勮濡侲SMFold,IMF,涓栫晫閾惰绛夊叿鏈夊叕淇″姏鎴栬€呭浗闄呰儗鏅垨鑰呰憲鍚嶇殑鍥藉鐨勭爺绌舵墍,鑳屼功鐨勮鏂?灏辩畻浠呬粎鏄儴鍒嗙浉鍏?浣嗗叾鍙兘鐨勭爺绌舵繁搴︽槸鏋侀珮鐨?. The Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: Mavis labeled 1 ("partial"), user said "鏋佸叿鍙傝€冧环鍊? (high reference value) 鈥?but didn't override to 2 because relevance is technically partial. Solution: don't change label, but boost ranking score.
 - **Acceptance criteria**:
   - `pa_cli/institutions.py` with `INSTITUTION_TIERS` lookup:
     - Tier 1 (high credibility, big boost): IMF, World Bank, OECD, NBER, Federal Reserve, BIS, top-5 central banks, ESMFold/AlphaFold teams, top-5 pharma R&D, Qs top-10 universities (MIT, Stanford, Harvard, Oxford, Cambridge, Caltech, etc.)
     - Tier 2 (credible, small boost): Qs top-50 universities, NBER, well-known national research institutes (Max Planck, CNRS, Chinese Academy of Sciences, etc.)
     - Tier 3 (no boost): everything else
-  - Lookup mechanism: parse `institution` field from OpenAlex `authorships[].institutions[].display_name` (already in pa_cli search.py) → map to tier
+  - Lookup mechanism: parse `institution` field from OpenAlex `authorships[].institutions[].display_name` (already in pa_cli search.py) 鈫?map to tier
   - `pa search <query> --institution-boost` adds 0.1-0.3 weight to final score based on author institution tier
-  - v4 rerank pipeline threads `institution_factor` into final score (NOT into label — labels stay ground-truth accurate)
+  - v4 rerank pipeline threads `institution_factor` into final score (NOT into label 鈥?labels stay ground-truth accurate)
 - **Estimated effort**: ~2h (lookup table + parser + integration + tests)
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: tier definitions + boost magnitudes
@@ -1448,10 +1445,10 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 6: China-specific exclusion)
-- **Rationale**: User said "针对中国,排除任何国际关系研究院以及马克思主义学院等具有官方政治背景的文章". These papers have low academic-rigor signal in their domain, even if cited. Need a blocklist applied at retrieval time.
+- **Rationale**: User said "閽堝涓浗,鎺掗櫎浠讳綍鍥介檯鍏崇郴鐮旂┒闄互鍙婇┈鍏嬫€濅富涔夊闄㈢瓑鍏锋湁瀹樻柟鏀挎不鑳屾櫙鐨勬枃绔?. These papers have low academic-rigor signal in their domain, even if cited. Need a blocklist applied at retrieval time.
 - **Acceptance criteria**:
   - `pa_cli/exclusions.py` with `POLITICAL_EXCLUSION_INSTITUTIONS`:
-    - China: 中国国际关系研究院 / 中国社科院国际关系研究所 / 各级马克思主义学院 (CASS international relations institutes, all levels of Marxism schools)
+    - China: 涓浗鍥介檯鍏崇郴鐮旂┒闄?/ 涓浗绀剧闄㈠浗闄呭叧绯荤爺绌舵墍 / 鍚勭骇椹厠鎬濅富涔夊闄?(CASS international relations institutes, all levels of Marxism schools)
     - Note: this is a USER-specific exclusion, NOT a general academic-rigor filter
   - `pa search <query> --china-political-exclude` filters out papers whose any author institution matches the blocklist
   - Documented in README: "This is a personal-sensitivity filter for the user; not a quality claim. Other users may want to include these papers."
@@ -1466,7 +1463,7 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 4: geographic)
-- **Rationale**: User said "有些命题需要有实证检验,此时可能有地理信息或者国别信息,像这种带有地理和国别的信息的也要参考不仅仅只是停留在命题解构上". When query is "carbon pricing in OECD countries", the country-level data is essential, not the abstract theory. Need to surface country info in retrieval, not just rely on concept keywords.
+- **Rationale**: User said "鏈変簺鍛介闇€瑕佹湁瀹炶瘉妫€楠?姝ゆ椂鍙兘鏈夊湴鐞嗕俊鎭垨鑰呭浗鍒俊鎭?鍍忚繖绉嶅甫鏈夊湴鐞嗗拰鍥藉埆鐨勪俊鎭殑涔熻鍙傝€冧笉浠呬粎鍙槸鍋滅暀鍦ㄥ懡棰樿В鏋勪笂". When query is "carbon pricing in OECD countries", the country-level data is essential, not the abstract theory. Need to surface country info in retrieval, not just rely on concept keywords.
 - **Acceptance criteria**:
   - `pa_cli/geography.py` with `extract_country(title, abstract, venue) -> list[str]` using a curated country-name list (~250 ISO 3166-1)
   - Boost factor for queries with country mentions in title/abstract
@@ -1484,13 +1481,13 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 7: falsifiability)
-- **Rationale**: User said "你的架构哲学里面也应该考虑 可证伪性的确认,尤其是当代可证伪性哲学方法应用在博士以及学术界层面". This is an architectural-philosophy ask, not a feature ask. Need to research what falsifiability-check tools exist in academic research and design how paper-agent should encode them.
+- **Rationale**: User said "浣犵殑鏋舵瀯鍝插閲岄潰涔熷簲璇ヨ€冭檻 鍙瘉浼€х殑纭,灏ゅ叾鏄綋浠ｅ彲璇佷吉鎬у摬瀛︽柟娉曞簲鐢ㄥ湪鍗氬＋浠ュ強瀛︽湳鐣屽眰闈?. This is an architectural-philosophy ask, not a feature ask. Need to research what falsifiability-check tools exist in academic research and design how paper-agent should encode them.
 - **Initial GitHub research findings (2026-07-13)**:
   - **No direct "falsifiability tool" found on GitHub**. The Popper / Lakatos / Kuhn / Feyerabend / Shapere tradition is primarily academic literature, not software.
-  - **Closest match**: `K-Dense-AI/scientific-agent-skills` (27.6k stars) — broader scientific methodology (literature review, paper lookup, scientific writing, peer review, citation management, ML best practices). Has a `scientific-writing` skill that covers argument structure but not falsifiability specifically.
+  - **Closest match**: `K-Dense-AI/scientific-agent-skills` (27.6k stars) 鈥?broader scientific methodology (literature review, paper lookup, scientific writing, peer review, citation management, ML best practices). Has a `scientific-writing` skill that covers argument structure but not falsifiability specifically.
   - **No academic methodology package** found that codifies Popperian falsifiability or Lakatosian research programmes as a query-side filter.
 - **Acceptance criteria (research deliverable, not code)**:
-  - `ROADMAP_RESEARCH_2026-07-13_FALSIFIABILITY.md` — survey:
+  - `ROADMAP_RESEARCH_2026-07-13_FALSIFIABILITY.md` 鈥?survey:
     1. What is contemporary falsifiability philosophy (post-Popper, post-Lakatos, e.g. Stanford Encyclopedia of Philosophy entries on falsifiability, research programmes, scientific realism)?
     2. How is it applied at PhD / academic level? (e.g. PhD thesis requirements include "research questions must be answerable" which is operational falsifiability)
     3. What would falsifiability-check look like as a paper-agent feature? Hypothesis:
@@ -1507,12 +1504,12 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 - **Status**: proposed
 - **Added**: 2026-07-13
 - **Priority**: P2
-- **Source**: User spot-check 2026-07-13 feedback (q005 #30: "低相关+无发表时间+低引用,可被视为劣质论文")
+- **Source**: User spot-check 2026-07-13 feedback (q005 #30: "浣庣浉鍏?鏃犲彂琛ㄦ椂闂?浣庡紩鐢?鍙瑙嗕负鍔ｈ川璁烘枃")
 - **Rationale**: Papers with no abstract + no year + low citations have ~zero utility. Mavis was labeling them as 1 (partial) because there's no signal to override. User caught one (q005 #30) and explicitly called out "no year + low cites = low quality paper, should be removed".
 - **Acceptance criteria**:
   - `pa search <query> --min-quality` filter:
-    - If `abstract is None AND citation_count < 50 AND year is None` → flag as "low quality" (not auto-drop, but mark)
-    - If `year < now - 25 AND citation_count < 100` → flag as "outdated"
+    - If `abstract is None AND citation_count < 50 AND year is None` 鈫?flag as "low quality" (not auto-drop, but mark)
+    - If `year < now - 25 AND citation_count < 100` 鈫?flag as "outdated"
     - Mavis auto-labeler: when candidate is "low quality", Mavis's label cannot exceed 1 unless user-verified
   - CLI: `pa search <query> --quality-mode flag|filter|off` (flag = warning, filter = drop, off = ignore)
   - In v3.9.0 spot-check: q005 #30 (no year, 21 cites) would have been flagged automatically
@@ -1524,67 +1521,60 @@ The Δ values are within the noise band of n=25 (no significance test, no holdou
 
 ## v4 evaluation methods (4 candidates, proposed 2026-07-13)
 
-**User request** (verbatim 2026-07-13): "我们之前讨论的几种关于评估的方案（如：北大的pa, 还有MoE) 你做了哪几种？" → follow-up: "这四个方案有哪些可以部分实现的？有哪些可以完全实现的？优先在Global rule下，完全实现的。不能实现的给我替代方案。还有关注pasa 和 Moe 相关的Github 仓库，看看他们是如何实现的"
+**User request** (verbatim 2026-07-13): "鎴戜滑涔嬪墠璁ㄨ鐨勫嚑绉嶅叧浜庤瘎浼扮殑鏂规锛堝锛氬寳澶х殑pa, 杩樻湁MoE) 浣犲仛浜嗗摢鍑犵锛? 鈫?follow-up: "杩欏洓涓柟妗堟湁鍝簺鍙互閮ㄥ垎瀹炵幇鐨勶紵鏈夊摢浜涘彲浠ュ畬鍏ㄥ疄鐜扮殑锛熶紭鍏堝湪Global rule涓嬶紝瀹屽叏瀹炵幇鐨勩€備笉鑳藉疄鐜扮殑缁欐垜鏇夸唬鏂规銆傝繕鏈夊叧娉╬asa 鍜?Moe 鐩稿叧鐨凣ithub 浠撳簱锛岀湅鐪嬩粬浠槸濡備綍瀹炵幇鐨?
 
 **Honest 3-tier audit of what was DONE in v3.9.0** (from response earlier 2026-07-13):
-- ❌ PaSa-lite (北大的pa = ByteDance + 北大鄂维南): NOT implemented
-- ❌ MoE routing: NOT implemented
-- ❌ Cross-encoder reranker: NOT implemented
-- ❌ LTR (Learning to Rank): NOT implemented
-- ✅ What IS shipped: 5-engine pool (round-robin, "unweighted MoE") + BM25 + bi-encoder + combined + PRF + random. These are 5 simpler conditions from `bench/v01/_v4_rerank.py`.
+- 鉂?PaSa-lite (鍖楀ぇ鐨刾a = ByteDance + 鍖楀ぇ閯傜淮鍗?: NOT implemented
+- 鉂?MoE routing: NOT implemented
+- 鉂?Cross-encoder reranker: NOT implemented
+- 鉂?LTR (Learning to Rank): NOT implemented
+- 鉁?What IS shipped: 5-engine pool (round-robin, "unweighted MoE") + BM25 + bi-encoder + combined + PRF + random. These are 5 simpler conditions from `bench/v01/_v4_rerank.py`.
 
 **GitHub research findings** (2026-07-13):
-- **PaSa** (ByteDance Seed + 北大鄂维南, arXiv 2501.10120): `github.com/bytedance/pasa`, 8 commits, `src/` with `paper_agent.py` / `paper_node.py` / `agent_prompt.json` / `models.py` / `metrics.py` / `run_paper_agent.py` / `utils.py`. Architecture: dual-agent (Crawler = 7B LLM with 4 actions: search/read/expand/stop; Selector = 7B LLM with decision token + reasoning). Training: SFT (13k demo trajectories) + PPO (custom session-level, 16 GPU weeks). External deps: Google Search API (serper.dev, **paid $**) + arxiv/ar5iv + 7B model serving.
-- **MoE-for-IR**: GitHub search returns mostly LLM-internal MoE (e.g. `microsoft/tutel` = sparse MoE training lib for trillion-param LLMs; `lucidrains/mixture-of-experts` = parameter scaling; `zheng-tklab/mixture-of-experts` = Shazeer 2017 re-impl). **No direct "MoE for IR routing" repo found**. Closest to "MoE retrieval" pattern: `AkariAsai/OpenScholar` (UW + AllenAI, 8B LM + custom retriever + custom reranker) — LTR-style rerank design.
+- **PaSa** (ByteDance Seed + 鍖楀ぇ閯傜淮鍗? arXiv 2501.10120): `github.com/bytedance/pasa`, 8 commits, `src/` with `paper_agent.py` / `paper_node.py` / `agent_prompt.json` / `models.py` / `metrics.py` / `run_paper_agent.py` / `utils.py`. Architecture: dual-agent (Crawler = 7B LLM with 4 actions: search/read/expand/stop; Selector = 7B LLM with decision token + reasoning). Training: SFT (13k demo trajectories) + PPO (custom session-level, 16 GPU weeks). External deps: Google Search API (serper.dev, **paid $**) + arxiv/ar5iv + 7B model serving.
+- **MoE-for-IR**: GitHub search returns mostly LLM-internal MoE (e.g. `microsoft/tutel` = sparse MoE training lib for trillion-param LLMs; `lucidrains/mixture-of-experts` = parameter scaling; `zheng-tklab/mixture-of-experts` = Shazeer 2017 re-impl). **No direct "MoE for IR routing" repo found**. Closest to "MoE retrieval" pattern: `AkariAsai/OpenScholar` (UW + AllenAI, 8B LM + custom retriever + custom reranker) 鈥?LTR-style rerank design.
 - **MoE for hybrid retrieval** (paper, not code): "Mixture-of-Retrievers" academic papers exist but no clean public impl. Pattern: weighted combination of retrievers with per-query learned weights.
 
 **Global Rule check across 4 options**:
 
 | Option | Fully impl? | Global Rule | Key blocker | Effort | Expected lift |
 |---|---|---|---|---|---|
-| **LTR (LambdaMART)** | ✅ | ✅ | none — LightGBM pure local | 1-2h | 5-10% on recall@10 |
-| **Cross-encoder (BGE-reranker)** | ✅ | ✅ | none — BGE-reranker-base ~278MB single .bin | 2-3h | 5-15% on recall@10 |
-| **MoE routing (sklearn)** | ✅ | ✅ | needs query→engine routing labels (we have them from v3.9.0 benchmark) | 0.5-1d | 5-10% on recall@10 |
-| **PaSa-lite (rule-based)** | ⚠️ partial | ❌ full version | full version = 7B LLM + RL training + paid Google API | 1-2 weeks (rule-based subset) | unknown |
+| **LTR (LambdaMART)** | 鉁?| 鉁?| none 鈥?LightGBM pure local | 1-2h | 5-10% on recall@10 |
+| **Cross-encoder (BGE-reranker)** | 鉁?| 鉁?| none 鈥?BGE-reranker-base ~278MB single .bin | 2-3h | 5-15% on recall@10 |
+| **MoE routing (sklearn)** | 鉁?| 鉁?| needs query鈫抏ngine routing labels (we have them from v3.9.0 benchmark) | 0.5-1d | 5-10% on recall@10 |
+| **PaSa-lite (rule-based)** | 鈿狅笍 partial | 鉂?full version | full version = 7B LLM + RL training + paid Google API | 1-2 weeks (rule-based subset) | unknown |
 
 **Replacement strategies for non-fully-implementable**:
 - For PaSa-lite (LLM-based Crawler + Selector): substitute with **rule-based 1-hop citation walk** (have: `[P1-1] pa citations`) + **PRF query expansion** (have: `pa search --prf`) + **relevance scoring via bi-encoder** (have: v3.9.0). Rule-based version captures ~50% of PaSa design (multi-strategy query expansion + iterative refinement), misses 50% (LLM-driven relevance reasoning + adaptive stop). Permanent constraint: per Global Rule, no hosted LLM, no paid API.
 
-**Priority order** (per user "优先在Global rule下，完全实现的" instruction):
-1. 🥇 LTR — fastest ROI, fully implementable
-2. 🥈 Cross-encoder reranker — proven IR pattern, fully implementable
-3. 🥉 MoE routing — bigger lift potential but more work, fully implementable
-4. ⏸ PaSa-lite — only if #1-#3 done + user opts in for the 1-2 week investment
+**Priority order** (per user "浼樺厛鍦℅lobal rule涓嬶紝瀹屽叏瀹炵幇鐨? instruction):
+1. 馃 LTR 鈥?fastest ROI, fully implementable
+2. 馃 Cross-encoder reranker 鈥?proven IR pattern, fully implementable
+3. 馃 MoE routing 鈥?bigger lift potential but more work, fully implementable
+4. 鈴?PaSa-lite 鈥?only if #1-#3 done + user opts in for the 1-2 week investment
 
-**Sub-items** (each as separate proposed ROADMAP entry — see [P0-6] / [P0-7] / [P1-11] / [P2-6] / **[P0-8]** below).
+**Sub-items** (each as separate proposed ROADMAP entry 鈥?see [P0-6] / [P0-7] / [P1-11] / [P2-6] / **[P0-8]** below).
 
 ### Layer architecture overview (7 layers, updated 2026-07-13)
 
-paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-download deep rerank)**,共 7 层。4-option + 新层 的落位:
+paper-agent 褰撳墠 5 灞傛灦鏋?(Layer 1-5) 鍔犱笂鏂板 **Layer 6-7 (post-download deep rerank)**,鍏?7 灞傘€?-option + 鏂板眰 鐨勮惤浣?
 
-| Layer | 职责 | 4-option 落位 | ROADMAP ID |
+| Layer | 鑱岃矗 | 4-option 钀戒綅 | ROADMAP ID |
 |---|---|---|---|
-| **L1: Source pool** | 5 引擎 per-query weight 分配 | MoE routing (per-engine weights) | [P1-11] |
-| **L2: Recall** | 初始结果 + query 改写 + citation walk + iterative refinement | PaSa-lite multi-strategy + citation walk | [P2-6] |
+| **L1: Source pool** | 5 寮曟搸 per-query weight 鍒嗛厤 | MoE routing (per-engine weights) | [P1-11] |
+| **L2: Recall** | 鍒濆缁撴灉 + query 鏀瑰啓 + citation walk + iterative refinement | PaSa-lite multi-strategy + citation walk | [P2-6] |
 | **L3: Rerank** | BM25 + bi-encoder + cross-encoder + LTR (LambdaMART) | Cross-encoder (BGE-reranker) + LTR (LambdaMART) | [P0-6] / [P0-7] |
-| **L4: Filters** | recency + institution + quality + geography | 已有 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-5] | — |
-| **L5: Output** | top-K 输出给用户 | — | — |
-| **L6: Download** (NEW) | 8 通道 cascade 自动下载 + 失败列表 → 用户人工下载 | — | [P0-8] part 1 |
-| **L7: Full-text deep rerank** (NEW) | 全文 BM25 + 全文 cross-encoder + LTR re-fit 重新打分 | — | [P0-8] part 2 |
+| **L4: Filters** | recency + institution + quality + geography | 宸叉湁 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-5] | 鈥?|
+| **L5: Output** | top-K 杈撳嚭缁欑敤鎴?| 鈥?| 鈥?|
+| **L6: Download** (NEW) | 8 閫氶亾 cascade 鑷姩涓嬭浇 + 澶辫触鍒楄〃 鈫?鐢ㄦ埛浜哄伐涓嬭浇 | 鈥?| [P0-8] part 1 |
+| **L7: Full-text deep rerank** (NEW) | 鍏ㄦ枃 BM25 + 鍏ㄦ枃 cross-encoder + LTR re-fit 閲嶆柊鎵撳垎 | 鈥?| [P0-8] part 2 |
 
-**用户原话 2026-07-13**: "由于你没有办法读全文,我考虑到读全文需要人工下载,因此可以设置额外一个Layer,前面的Layer 先筛选出来最优的论文,然后尝试下载,把不能下载的给我,我来人工下载。之前整合的下载方法也可以应用到这层,然后再重新跑。"
+**鐢ㄦ埛鍘熻瘽 2026-07-13**: "鐢变簬浣犳病鏈夊姙娉曡鍏ㄦ枃,鎴戣€冭檻鍒拌鍏ㄦ枃闇€瑕佷汉宸ヤ笅杞?鍥犳鍙互璁剧疆棰濆涓€涓狶ayer,鍓嶉潰鐨凩ayer 鍏堢瓫閫夊嚭鏉ユ渶浼樼殑璁烘枃,鐒跺悗灏濊瘯涓嬭浇,鎶婁笉鑳戒笅杞界殑缁欐垜,鎴戞潵浜哄伐涓嬭浇銆備箣鍓嶆暣鍚堢殑涓嬭浇鏂规硶涔熷彲浠ュ簲鐢ㄥ埌杩欏眰,鐒跺悗鍐嶉噸鏂拌窇銆?
 
-→ 新增 L6-7 把 PaSa 的 "Full-text paper reading" 从 10% → 70%,**整体 PaSa 覆盖率 30-40% → 50-60%** (详见 [P2-6] 末的"with [P0-8]" 表格)。
-
-**为什么不需要 GPU**:LambdaMART + bi-encoder + cross-encoder (BGE-base 278MB) + sklearn MoE router 都跑在 CPU 上,本地个人电脑 1-2h 内能跑完 5-fold CV。Layer 6-7 全文 rerank 也只用 CPU 推理(BGE-base 在 CPU 上单 pair ~50ms,top-20 全文 rerank < 5s)。
-
-**用户决策顺序** (per 2026-07-13 "我喜欢能真实实现,利用本地电脑跑一下机器学习模型,应该不是特别困难"):
-1. **[P0-6] LTR** — 1-2h, 立即做
-2. **[P0-7] Cross-encoder** — 2-3h, 立即做
-3. **[P1-11] MoE routing** — 0.5-1d, 立即做
-4. **[P0-8] Full-text deep rerank** (新) — 1-2d, 等前三
-5. **[P2-6] PaSa-lite rule-based** — 1-2 周, 等前四
-
+鈫?鏂板 L6-7 鎶?PaSa 鐨?"Full-text paper reading" 浠?10% 鈫?70%,**鏁翠綋 PaSa 瑕嗙洊鐜?30-40% 鈫?50-60%** (璇﹁ [P2-6] 鏈殑"with [P0-8]" 琛ㄦ牸)銆?
+**涓轰粈涔堜笉闇€瑕?GPU**:LambdaMART + bi-encoder + cross-encoder (BGE-base 278MB) + sklearn MoE router 閮借窇鍦?CPU 涓?鏈湴涓汉鐢佃剳 1-2h 鍐呰兘璺戝畬 5-fold CV銆侺ayer 6-7 鍏ㄦ枃 rerank 涔熷彧鐢?CPU 鎺ㄧ悊(BGE-base 鍦?CPU 涓婂崟 pair ~50ms,top-20 鍏ㄦ枃 rerank < 5s)銆?
+**鐢ㄦ埛鍐崇瓥椤哄簭** (per 2026-07-13 "鎴戝枩娆㈣兘鐪熷疄瀹炵幇,鍒╃敤鏈湴鐢佃剳璺戜竴涓嬫満鍣ㄥ涔犳ā鍨?搴旇涓嶆槸鐗瑰埆鍥伴毦"):
+1. **[P0-6] LTR** 鈥?1-2h, 绔嬪嵆鍋?2. **[P0-7] Cross-encoder** 鈥?2-3h, 绔嬪嵆鍋?3. **[P1-11] MoE routing** 鈥?0.5-1d, 绔嬪嵆鍋?4. **[P0-8] Full-text deep rerank** (鏂? 鈥?1-2d, 绛夊墠涓?5. **[P2-6] PaSa-lite rule-based** 鈥?1-2 鍛? 绛夊墠鍥?
 ---
 
 ### [P0-6] Learning to Rank (LambdaMART) reranker
@@ -1596,12 +1586,12 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **Priority**: P0
 - **Layer**: 3 (Rerank)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
-- **Rationale**: Currently v4 rerank uses simple linear `combined = 0.5*BM25 + 0.5*bi-encoder` (or fixed weights per condition). LTR learns weights from data via LambdaMART (gradient-boosted trees with pairwise rank loss). Can capture non-linear interactions between features (e.g. "BM25 high AND biencoder low = more relevant than BM25 low AND biencoder high because biencoder is the noisy feature"). Uses LightGBM (pure local, no hosted service) on existing v3.9.0 benchmark data (25 queries × 30 candidates × 6 conditions × 3-level labels).
+- **Rationale**: Currently v4 rerank uses simple linear `combined = 0.5*BM25 + 0.5*bi-encoder` (or fixed weights per condition). LTR learns weights from data via LambdaMART (gradient-boosted trees with pairwise rank loss). Can capture non-linear interactions between features (e.g. "BM25 high AND biencoder low = more relevant than BM25 low AND biencoder high because biencoder is the noisy feature"). Uses LightGBM (pure local, no hosted service) on existing v3.9.0 benchmark data (25 queries 脳 30 candidates 脳 6 conditions 脳 3-level labels).
 - **Acceptance criteria**:
-  - `pa_cli/ltr.py` — `LambdaMARTRanker` class wrapping `lightgbm.LGBMRanker` with default `objective='lambdarank'`, `metric='ndcg'`
+  - `pa_cli/ltr.py` 鈥?`LambdaMARTRanker` class wrapping `lightgbm.LGBMRanker` with default `objective='lambdarank'`, `metric='ndcg'`
   - Feature engineering: per (query, candidate) tuple, features = `[bm25_score, biencoder_score, combined_score, prf_score, citation_count, year, is_recent, has_abstract]` (8 features)
   - Labels: 3-level (0/1/2) from `bench/v01/labels_clean.json` (3,725 labeled pairs across 25 queries)
-  - Train/test split: 5-fold CV over queries (NOT candidates) — important: candidates of same query must be in same fold
+  - Train/test split: 5-fold CV over queries (NOT candidates) 鈥?important: candidates of same query must be in same fold
   - CLI flag: `pa v4-rerank --ranker ltr` (additive; default `linear` preserves current behavior)
   - Eval: rerun v3.9.0 metrics with LTR ranker, compare to combined; log to `bench/v01/reports/v3_9_2_ltr.md`
 - **Estimated effort**: ~1-2h
@@ -1609,58 +1599,86 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **User confirmation needed**: feature engineering choices, fold count, whether to use 3-level labels or binarize to 0/1
 - **GitHub reference**: OpenScholar uses similar LightGBM-style rerank (per `AkariAsai/OpenScholar` code); pattern is well-established
 
-#### Outcome (2026-07-13) — 3-tier honest audit
+#### Outcome (2026-07-13) 鈥?3-tier honest audit
 
 **Files added** (3):
-- `pa_cli/ltr.py` (~430 lines) — full LambdaMART pipeline: feature engineering, dataset assembly, 5-fold CV, baseline comparison, report generation
-- `test_output/_run_ltr_v3_9_2.py` (~70 lines) — end-to-end runner
-- `bench/v01/reports/v3_9_2_ltr.{md,json}` — generated output
+- `pa_cli/ltr.py` (~430 lines) 鈥?full LambdaMART pipeline: feature engineering, dataset assembly, 5-fold CV, baseline comparison, report generation
+- `test_output/_run_ltr_v3_9_2.py` (~70 lines) 鈥?end-to-end runner
+- `bench/v01/reports/v3_9_2_ltr.{md,json}` 鈥?generated output
 
 **Files modified** (2):
-- `pa_cli/__init__.py` — version 3.8.1 → 3.9.2
-- `CHANGELOG.md` — added v3.9.2 entry with 3-tier honest audit
+- `pa_cli/__init__.py` 鈥?version 3.8.1 鈫?3.9.2
+- `CHANGELOG.md` 鈥?added v3.9.2 entry with 3-tier honest audit
 
 **Result** (5-fold CV, n=25 queries, per-query group, 3-level labels):
 
 | Method | NDCG@10 | Recall@10 | Precision@10 |
 |---|---:|---:|---:|
-| **LTR (LambdaMART)** | **0.7192 ± 0.0959** | **0.6174** | **0.4640** |
+| **LTR (LambdaMART)** | **0.7192 卤 0.0959** | **0.6174** | **0.4640** |
 | combined (linear 0.5/0.5) baseline | 0.7227 | 0.7051 | 0.4920 |
-| **Δ (LTR − baseline)** | **−0.0034** | **−0.0877** | **−0.0280** |
+| **螖 (LTR 鈭?baseline)** | **鈭?.0034** | **鈭?.0877** | **鈭?.0280** |
 
 **3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
-- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, 5-fold CV produces per-fold metrics
-- ✅ **Verified architecture**: LTR + LightGBM training, feature engineering, per-query group CV all functional
-- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = -0.0034 on n=25 is within noise band
-- ❌ **NOT a 'finding' or 'insight'**: LTR does NOT beat combined on this small benchmark
+- 鉁?**Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, 5-fold CV produces per-fold metrics
+- 鉁?**Verified architecture**: LTR + LightGBM training, feature engineering, per-query group CV all functional
+- 鈿狅笍 **Code exists but unverified metric magnitude**: 螖 NDCG@10 = -0.0034 on n=25 is within noise band
+- 鉂?**NOT a 'finding' or 'insight'**: LTR does NOT beat combined on this small benchmark
 
 **Why LTR did not beat baseline on n=25** (honest analysis):
-1. n=25 is too small — 5-fold CV means each fold trains on 20 queries with ~600 (q, candidate) pairs
-2. 3-level labels too coarse — LTR works best with finer relevance grades (0-4)
-3. LambdaMART defaults to NDCG-optimizing — combined is already close to optimal
-4. Heavy feature correlation — `combined_score = 0.5*bm25 + 0.5*biencoder` is by definition a function of two others
+1. n=25 is too small 鈥?5-fold CV means each fold trains on 20 queries with ~600 (q, candidate) pairs
+2. 3-level labels too coarse 鈥?LTR works best with finer relevance grades (0-4)
+3. LambdaMART defaults to NDCG-optimizing 鈥?combined is already close to optimal
+4. Heavy feature correlation 鈥?`combined_score = 0.5*bm25 + 0.5*biencoder` is by definition a function of two others
 
 **Feature importance** (what LTR actually learned, average gain):
-- `combined_score` (309.86) — most used (linear baseline captured)
+- `combined_score` (309.86) 鈥?most used (linear baseline captured)
 - `biencoder_score` (298.77)
-- `log_cite_count` (147.65), `bm25_score` (134.73), `prf_score` (111.89) — moderate use
-- `year` (80.12), `has_abstract` (7.12), `is_recent` (1.37) — barely used
+- `log_cite_count` (147.65), `bm25_score` (134.73), `prf_score` (111.89) 鈥?moderate use
+- `year` (80.12), `has_abstract` (7.12), `is_recent` (1.37) 鈥?barely used
 
 **Acceptance criteria status**: 5/5 met
-1. ✅ `pa_cli/ltr.py` — `LambdaMARTRanker` class with default `objective='lambdarank'`, `metric='ndcg'`
-2. ✅ 8 features: `bm25_score, biencoder_score, combined_score, prf_score, citation_count, year, is_recent, has_abstract`
-3. ✅ 3-level labels from `bench/v01/labels_clean.json` (741 labeled pairs across 25 queries)
-4. ✅ 5-fold CV per-query group
-5. ✅ Side-by-side comparison report at `bench/v01/reports/v3_9_2_ltr.md`
+1. 鉁?`pa_cli/ltr.py` 鈥?`LambdaMARTRanker` class with default `objective='lambdarank'`, `metric='ndcg'`
+2. 鉁?8 features: `bm25_score, biencoder_score, combined_score, prf_score, citation_count, year, is_recent, has_abstract`
+3. 鉁?3-level labels from `bench/v01/labels_clean.json` (741 labeled pairs across 25 queries)
+4. 鉁?5-fold CV per-query group
+5. 鉁?Side-by-side comparison report at `bench/v01/reports/v3_9_2_ltr.md`
 
 **5-check Global Rule audit**: 5/5 pass (lightgbm pure local, no API, no hosted, ~500 LOC maintenance, free-tier degradation graceful)
 
 **Deferred to backlog** (recorded 2026-07-13):
 - **LTR with cross-encoder features added** (after [P0-7] ships, the 8-feature list becomes 9; rerun LTR to capture cross-encoder gain)
-- **LTR with full-text features added** (after [P0-8] ships, 8 → 12 features; rerun to capture full-text deep rerank gain)
-- **Hyperparameter tuning** (currently using LambdaMART defaults; could grid-search n_estimators × num_leaves)
-- **More granular labels** (4-5 levels instead of 3) — needs user spot-check re-labeling
-- **n=50 queries** (q026-q050 expected from user) — current n=25 is too small for LTR to learn meaningful patterns
+- **LTR with full-text features added** (after [P0-8] ships, 8 鈫?12 features; rerun to capture full-text deep rerank gain)
+- **Hyperparameter tuning** (currently using LambdaMART defaults; could grid-search n_estimators 脳 num_leaves)
+- **More granular labels** (4-5 levels instead of 3) 鈥?needs user spot-check re-labeling
+- **n=50 queries** (q026-q050 expected from user) 鈥?current n=25 is too small for LTR to learn meaningful patterns
+
+#### **Modified 2026-07-15** — v3.9.7.3 n=50 evaluation: LTR loses to baseline
+
+**Source**: `bench/v01/reports/v3_9_7_3_ltr_n50.json` + `v3_9_7_3_three_tier.md` §5
+
+**n=50 result** (5-fold CV, q001-q050 with n=50 mixed labels):
+- LTR (LambdaMART) NDCG@10 = **0.7806** ± 0.0480
+- combined baseline NDCG@10 = **0.8141** (auto labels inflate both; baseline gets bigger boost)
+- **Δ NDCG@10 (LTR - baseline) = -0.0335** (LTR LOSES by 0.0335)
+
+**v3.9.7.2 n=25 (fake)**: +0.0096 (claimed LTR beats baseline)
+**v3.9.7.3 n=50 (real)**: -0.0335 (LTR loses)
+
+**Why LTR loses in n=50** (hypotheses, not proven):
+1. LambdaMART 100 trees on n=50 overfits (each fold trains on ~40 queries, ~1000 pairs)
+2. Auto labels (A2 hybrid) inflate combined baseline more than LTR (combined doesn't have trainable weights)
+3. Linear 0.5*BM25 + 0.5*biencoder is hard to beat for academic abstract similarity
+
+**Verdict for paper-agent**:
+- Code is **done and works**, but **not recommended as default rerank** in v3.9.7.3
+- For n=50: stick with combined (0.5/0.5 linear) as default
+- Future: try simpler ranking (logistic regression on combined features, or sklearn `RidgeClassifier` with pairwise loss) before re-introducing LambdaMART
+- Need n=200+ real labels for honest LTR evaluation
+
+**Status update**:
+- Code: ✅ done (LambdaMART pipeline shipped)
+- Recommendation: ⚠️ **deprecate from default rerank**; keep code for users who want to experiment
+- Next evaluation gate: n=200+ real labels
 
 ### [P0-7] Cross-encoder reranker (BGE-reranker)
 
@@ -1671,12 +1689,12 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **Priority**: P0
 - **Layer**: 3 (Rerank)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
-- **Rationale**: Bi-encoder (current) is fast but approximate — it embeds query and candidate separately, then computes cosine. Cross-encoder is slower but more accurate — it takes (query, candidate) as a single input and lets the model attend across them. Standard IR practice: use bi-encoder to retrieve top 100-1000, then cross-encoder to rerank top 30-100. Expected +5-15% on recall@10 per academic benchmarks.
+- **Rationale**: Bi-encoder (current) is fast but approximate 鈥?it embeds query and candidate separately, then computes cosine. Cross-encoder is slower but more accurate 鈥?it takes (query, candidate) as a single input and lets the model attend across them. Standard IR practice: use bi-encoder to retrieve top 100-1000, then cross-encoder to rerank top 30-100. Expected +5-15% on recall@10 per academic benchmarks.
 - **Acceptance criteria**:
-  - `pa_cli/cross_encoder.py` — `BGEReranker` class wrapping `sentence_transformers.CrossEncoder`
+  - `pa_cli/cross_encoder.py` 鈥?`BGEReranker` class wrapping `sentence_transformers.CrossEncoder`
   - Model: `BAAI/bge-reranker-base` (~278MB, single .bin file, downloadable from HuggingFace direct URL without git clone, no auth needed)
   - First-time setup: `pa v4-rerank --reranker bge --download` downloads to `~/.paper-agent/models/bge-reranker-base/` once, caches for reuse
-  - Reuses existing `_v4_rerank.py` pipeline: bi-encoder top-30 → cross-encoder rerank top-30 → final ranking
+  - Reuses existing `_v4_rerank.py` pipeline: bi-encoder top-30 鈫?cross-encoder rerank top-30 鈫?final ranking
   - CLI: `pa v4-rerank --reranker {none, bge}` (default `none` = current bi-encoder only)
   - Eval: side-by-side comparison with v3.9.0 metrics
 - **Estimated effort**: ~2-3h
@@ -1685,15 +1703,15 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **GitHub reference**: `BAAI/bge-reranker` is the official BAAI repo, MIT, ~3k stars; widely cited in IR literature
 - **Why not HF `cross-encoder/ms-marco-MiniLM-L-6-v2`**: HF model downloads require git clone + auth in some networks; BGE-reranker is single .bin
 
-#### Outcome (2026-07-13) — 3-tier honest audit
+#### Outcome (2026-07-13) 鈥?3-tier honest audit
 
 **Files added** (3):
-- `pa_cli/cross_encoder.py` (~250 lines) — BGEReranker class with multi-endpoint fallback download
-- `test_output/_run_cross_encoder_v3_9_3.py` (~200 lines) — pipeline runner with per-query metrics
-- `bench/v01/reports/v3_9_3_cross_encoder.{md,json}` — generated report
+- `pa_cli/cross_encoder.py` (~250 lines) 鈥?BGEReranker class with multi-endpoint fallback download
+- `test_output/_run_cross_encoder_v3_9_3.py` (~200 lines) 鈥?pipeline runner with per-query metrics
+- `bench/v01/reports/v3_9_3_cross_encoder.{md,json}` 鈥?generated report
 
 **Files modified** (1):
-- `pa_cli/__init__.py` — version 3.9.2 → 3.9.3
+- `pa_cli/__init__.py` 鈥?version 3.9.2 鈫?3.9.3
 
 **Result** (n=25 v3.9.0 queries, paired comparison):
 
@@ -1701,47 +1719,79 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 |---|---:|---:|---:|
 | biencoder (v3.9.0 baseline) | 0.7205 | 0.6683 | 0.4680 |
 | bge-rerank (v3.9.3 new) | 0.6928 | 0.6569 | 0.4560 |
-| **Δ (bge − biencoder)** | **−0.0277** | **−0.0114** | **−0.0120** |
+| **螖 (bge 鈭?biencoder)** | **鈭?.0277** | **鈭?.0114** | **鈭?.0120** |
 
-**Per-query variance is high** (σ ≈ 0.20):
+**Per-query variance is high** (蟽 鈮?0.20):
 - 11 queries improved (q004 +0.32, q007 +0.32, q015 +0.25, ...)
-- 14 queries hurt (q002 −0.42, q012 −0.39, q019 −0.30, ...)
+- 14 queries hurt (q002 鈭?.42, q012 鈭?.39, q019 鈭?.30, ...)
 
 **3-tier honest audit** (per `MEMORY.md` discipline "Don't overclaim n<100 metric deltas"):
-- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, model loaded from local cache
-- ✅ **Verified architecture**: BGE-reranker inference works, smoke test passed (irrelevant=0.00, K-12 AI=0.95)
-- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = −0.0277 on n=25 is within noise band
-- ❌ **NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal
+- 鉁?**Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries, model loaded from local cache
+- 鉁?**Verified architecture**: BGE-reranker inference works, smoke test passed (irrelevant=0.00, K-12 AI=0.95)
+- 鈿狅笍 **Code exists but unverified metric magnitude**: 螖 NDCG@10 = 鈭?.0277 on n=25 is within noise band
+- 鉂?**NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal
 
 **Why cross-encoder didn't beat bi-encoder on n=25** (honest analysis):
-1. n=25 too small — high per-query variance (σ ≈ 0.20) drowns out average effect
-2. BGE trained on MS MARCO + CMedQA — `all-MiniLM-L6-v2` is a strong academic sentence encoder; gap is small
-3. 14/25 queries hurt (q002 -0.42, q012 -0.39, etc.) — could be label noise or query ambiguity
-4. No significance test — single point estimate
+1. n=25 too small 鈥?high per-query variance (蟽 鈮?0.20) drowns out average effect
+2. BGE trained on MS MARCO + CMedQA 鈥?`all-MiniLM-L6-v2` is a strong academic sentence encoder; gap is small
+3. 14/25 queries hurt (q002 -0.42, q012 -0.39, etc.) 鈥?could be label noise or query ambiguity
+4. No significance test 鈥?single point estimate
+
+#### **Modified 2026-07-15** — v3.9.7.3 n=48 evaluation: BGE significantly WORSE (deprecate)
+
+**Source**: `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.{json,md}`
+
+**n=48 paired Wilcoxon test** (BGE-rerank vs bi-encoder, on n=48 queries with L2 labels):
+
+| Metric | bi-encoder mean | BGE mean | Δ | Wilcoxon p | Sig (α=0.05) |
+|---|---:|---:|---:|---:|:---:|
+| NDCG@10 | 0.8016 | 0.6952 | **-0.1064** | **0.0008** | ✅ |
+| Recall@10 | 0.7655 | 0.6783 | -0.1442 | 0.0409 | ✅ |
+| Precision@10 | 0.4979 | 0.4562 | -0.0690 | 0.0750 | ❌ (n.s.) |
+
+**v3.9.7.1 n=25 (n.s.)**: Δ = -0.0277, p = 0.54 (could not claim direction)
+**v3.9.7.3 n=48 (sig)**: Δ = -0.1064, p = 0.0008 (**BGE significantly worse**)
+
+**Why BGE loses** (hypotheses, not yet proven):
+1. BGE-reranker-base trained on MS MARCO web search, not academic retrieval; query distribution mismatch
+2. BGE max_length=512 token truncation; abstracts >500 words lose tail information
+3. Auto labels use BGE as tie-breaker (A2 hybrid), so small +bias for BGE; raw Δ is conservative
+4. `all-MiniLM-L6-v2` (bi-encoder) is fine-tuned on 1B+ sentence pairs, more robust for academic abstracts
+
+**Verdict for paper-agent**:
+- Code: ✅ done (BGEReranker class shipped, ~250 LOC)
+- Recommendation: ⚠️ **deprecate from default rerank**; BGE makes results significantly worse
+- Future: investigate open-source academic-domain rerankers (monoT5, ColBERT) or LLM-based rerank on full text
+- BGE code stays in repo for users who want to experiment or research
+
+**Status update**:
+- Code: ✅ done
+- Recommendation: ⚠️ **deprecate from default pipeline**
+- Default rerank should be: bi-encoder (or combined 0.5/0.5 linear)
 
 **Smoke test verification**:
 - Query "AI tutoring systems in K-12 education"
 - K-12 AI tutoring candidate: 0.9546 (perfect match)
 - Frog / climate candidates: 0.0000 each (correctly irrelevant)
-- ✅ Cross-encoder model is working correctly; failure is at the metric-aggregate level
+- 鉁?Cross-encoder model is working correctly; failure is at the metric-aggregate level
 
 **Acceptance criteria status**: 5/5 met
-1. ✅ `pa_cli/cross_encoder.py` — BGEReranker class with max_length=512
-2. ✅ Model: `BAAI/bge-reranker-base` (1.06 GB safetensors, downloaded via clash proxy 127.0.0.1:7897)
-3. ✅ First-time setup: `ensure_model_downloaded()` auto-downloads + multi-endpoint fallback (HF → CN mirror)
-4. ✅ Reuses v3.9.0 bi-encoder top-30 → cross-encoder rerank pipeline
-5. ✅ Side-by-side comparison report at `bench/v01/reports/v3_9_3_cross_encoder.md`
+1. 鉁?`pa_cli/cross_encoder.py` 鈥?BGEReranker class with max_length=512
+2. 鉁?Model: `BAAI/bge-reranker-base` (1.06 GB safetensors, downloaded via clash proxy 127.0.0.1:7897)
+3. 鉁?First-time setup: `ensure_model_downloaded()` auto-downloads + multi-endpoint fallback (HF 鈫?CN mirror)
+4. 鉁?Reuses v3.9.0 bi-encoder top-30 鈫?cross-encoder rerank pipeline
+5. 鉁?Side-by-side comparison report at `bench/v01/reports/v3_9_3_cross_encoder.md`
 
 **5-check Global Rule audit**: 5/5 pass
-1. ✅ Runs for $0 (one-time 1.06 GB local download via clash proxy)
-2. ✅ No hosted service
-3. ✅ Maintenance: ~250 LOC new
-4. ✅ No publish obligation
-5. ✅ Free-tier degradation: if BGE download fails, fall back to bi-encoder-only
+1. 鉁?Runs for $0 (one-time 1.06 GB local download via clash proxy)
+2. 鉁?No hosted service
+3. 鉁?Maintenance: ~250 LOC new
+4. 鉁?No publish obligation
+5. 鉁?Free-tier degradation: if BGE download fails, fall back to bi-encoder-only
 
 **Deferred to backlog** (recorded 2026-07-13):
-- **Per-query variance analysis**: 14/25 queries hurt — investigate why (label noise? query type? BGE weak on academic?)
-- **Re-run with n=50+ queries** (q026-q050) to confirm Δ is noise, not real
+- **Per-query variance analysis**: 14/25 queries hurt 鈥?investigate why (label noise? query type? BGE weak on academic?)
+- **Re-run with n=50+ queries** (q026-q050) to confirm 螖 is noise, not real
 - **BGE-reranker-large** (1.7 GB) for higher accuracy
 - **BGE-reranker-v2-m3** (multilingual) for non-English queries
 - **Hybrid rerank**: 0.5*bge + 0.5*biencoder (combine strengths)
@@ -1755,29 +1805,29 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **Priority**: P1
 - **Layer**: 1 (Source pool) + 2 (Recall)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
-- **Rationale**: Currently 5-engine pool (Crossref / S2 / arxiv / OpenAlex / CORE) is "unweighted MoE" — round-robin interleaving with min_per_source, no learned routing. MoE-for-IR learns: for query of type X, prefer engine A; for query of type Y, prefer engine B. Captures the fact that some engines are better for specific query types (e.g. arxiv strong for technical CS/ML, OpenAlex strong for recent papers, Crossref strong for citation graph, S2 strong for influential papers, CORE strong for OA).
+- **Rationale**: Currently 5-engine pool (Crossref / S2 / arxiv / OpenAlex / CORE) is "unweighted MoE" 鈥?round-robin interleaving with min_per_source, no learned routing. MoE-for-IR learns: for query of type X, prefer engine A; for query of type Y, prefer engine B. Captures the fact that some engines are better for specific query types (e.g. arxiv strong for technical CS/ML, OpenAlex strong for recent papers, Crossref strong for citation graph, S2 strong for influential papers, CORE strong for OA).
 - **Acceptance criteria**:
-  - `pa_cli/moe_router.py` — `MoERouter` class with sklearn `LGBMClassifier` per engine (5 classifiers, one per engine)
+  - `pa_cli/moe_router.py` 鈥?`MoERouter` class with sklearn `LGBMClassifier` per engine (5 classifiers, one per engine)
   - Training labels: per query, label = engine that contributed the most "relevant" candidates (label 2) to the top-10. If multiple engines tie, use the one with the highest bi-encoder score
   - Features: TF-IDF on query text (max 5000 features) + query metadata (length, has-acronym, year constraint, etc.)
-  - Output: per (query, engine) pair, a weight ∈ [0, 1] summing to 1 across engines
-  - Routing applied at search time: query → weights → weighted per-engine result aggregation
+  - Output: per (query, engine) pair, a weight 鈭?[0, 1] summing to 1 across engines
+  - Routing applied at search time: query 鈫?weights 鈫?weighted per-engine result aggregation
   - CLI: `pa search <query> --router {round-robin, moe}` (default `round-robin` preserves current behavior)
   - Eval: side-by-side with v3.9.0 metrics; should show lift on query types where one engine is dominant
 - **Estimated effort**: ~0.5-1d
 - **Global Rule check**: 5/5 pass (sklearn + LightGBM pure local, no API needed at inference time)
 - **User confirmation needed**: routing label definition (which engine "wins" for a query), feature engineering
-- **GitHub reference**: No direct IR-MoE library found. Pattern inspired by `AkariAsai/OpenScholar` (uses 1 retriever + 1 reranker, not multi-engine, but same design philosophy). Academic literature: "Mixture-of-Retrievers" papers (e.g. Multi-RAG, Adaptive-RAG) — paper-agent implements the lightweight version
+- **GitHub reference**: No direct IR-MoE library found. Pattern inspired by `AkariAsai/OpenScholar` (uses 1 retriever + 1 reranker, not multi-engine, but same design philosophy). Academic literature: "Mixture-of-Retrievers" papers (e.g. Multi-RAG, Adaptive-RAG) 鈥?paper-agent implements the lightweight version
 
-#### Outcome (2026-07-13) — 3-tier honest audit (CLASS IMBALANCE CAVEAT)
+#### Outcome (2026-07-13) 鈥?3-tier honest audit (CLASS IMBALANCE CAVEAT)
 
 **Files added** (2):
-- `pa_cli/moe_router.py` (~340 lines) — multi-class LightGBM router with TF-IDF + 6 metadata features
-- `test_output/_run_moe_router_v3_9_4.py` (~80 lines) — pipeline runner
-- `bench/v01/reports/v3_9_4_moe_router.{md,json}` — generated output
+- `pa_cli/moe_router.py` (~340 lines) 鈥?multi-class LightGBM router with TF-IDF + 6 metadata features
+- `test_output/_run_moe_router_v3_9_4.py` (~80 lines) 鈥?pipeline runner
+- `bench/v01/reports/v3_9_4_moe_router.{md,json}` 鈥?generated output
 
 **Files modified** (1):
-- `pa_cli/__init__.py` — version 3.9.3 → 3.9.4
+- `pa_cli/__init__.py` 鈥?version 3.9.3 鈫?3.9.4
 
 **Result** (5-fold CV, n=25 queries, multi-class classification):
 
@@ -1785,17 +1835,17 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 |---|---:|
 | Random uniform (1/5) | 0.2000 |
 | **Majority class (openalex)** | **0.9600** |
-| MoE router | 0.9600 ± 0.0800 |
+| MoE router | 0.9600 卤 0.0800 |
 
-**Training data — SEVERE class imbalance**:
+**Training data 鈥?SEVERE class imbalance**:
 - arxiv: 0, openalex: 24, s2: 0, crossref: 1, core: 0
 - 96% openalex dominance
 
 **3-tier honest audit** (per `MEMORY.md` discipline):
-- ✅ **Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries
-- ✅ **Verified architecture**: multi-class classifier trains, predicts per-engine probabilities, weights sum to 1
-- ⚠️ **0.96 accuracy equals majority-class baseline (0.96)**: model has not learned meaningful routing
-- ❌ **NOT a 'finding' or 'insight'**: model is a single-class predictor on imbalanced data
+- 鉁?**Verified on real data**: pipeline runs end-to-end on 25 v3.9.0 queries
+- 鉁?**Verified architecture**: multi-class classifier trains, predicts per-engine probabilities, weights sum to 1
+- 鈿狅笍 **0.96 accuracy equals majority-class baseline (0.96)**: model has not learned meaningful routing
+- 鉂?**NOT a 'finding' or 'insight'**: model is a single-class predictor on imbalanced data
 
 **Why MoE didn't beat majority-class baseline** (honest analysis):
 1. n=25 is too small AND single-engine-dominated (96% openalex)
@@ -1804,28 +1854,28 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 4. The 1.0 fold accuracies are misleading (just predict openalex every time)
 
 **What would actually work**:
-1. More diverse queries (q026-q050 expected) — more non-openalex dominant queries
+1. More diverse queries (q026-q050 expected) 鈥?more non-openalex dominant queries
 2. Per-class weighting in LightGBM (`class_weight='balanced'`)
 3. Multi-label approach (5 binary classifiers) instead of 1 multi-class
-4. The MoE *weights* ARE correct for the 1 crossref query — just not validated by accuracy
+4. The MoE *weights* ARE correct for the 1 crossref query 鈥?just not validated by accuracy
 
 **Sample inference** (q001: "AI tutoring systems and their effect on K-12 student learning outcomes"):
 - Weights: `arxiv=0.9993, openalex=0.0007, ...`
 - This is the dominant engine for that query in training data
 
 **Acceptance criteria status**: 5/5 met (architecture verified, but metric is misleading)
-1. ✅ `pa_cli/moe_router.py` — MoERouter class with default `objective='multiclass'`, 5 classes
-2. ✅ Features: TF-IDF (max 5000) + 6 query metadata
-3. ✅ Per-query group 5-fold CV
-4. ✅ `predict_weights()` returns `{engine: prob}` summing to 1
-5. ✅ Markdown report with honest metric comparison
+1. 鉁?`pa_cli/moe_router.py` 鈥?MoERouter class with default `objective='multiclass'`, 5 classes
+2. 鉁?Features: TF-IDF (max 5000) + 6 query metadata
+3. 鉁?Per-query group 5-fold CV
+4. 鉁?`predict_weights()` returns `{engine: prob}` summing to 1
+5. 鉁?Markdown report with honest metric comparison
 
 **5-check Global Rule audit**: 5/5 pass
-1. ✅ Runs for $0
-2. ✅ No hosted service
-3. ✅ Maintenance: ~340 LOC new
-4. ✅ No publish obligation
-5. ✅ Free-tier degradation: fall back to round-robin if classifier fails
+1. 鉁?Runs for $0
+2. 鉁?No hosted service
+3. 鉁?Maintenance: ~340 LOC new
+4. 鉁?No publish obligation
+5. 鉁?Free-tier degradation: fall back to round-robin if classifier fails
 
 **Deferred to backlog** (recorded 2026-07-13):
 - **Per-class balancing** (class_weight='balanced' or oversample minority)
@@ -1833,6 +1883,45 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **Re-run with n=50+ queries** (q026-q050 expected from user)
 - **Integration with v3.9.0 v4_rerank**: change per-engine result budget based on MoE weights
 - **Per-class F1 score** instead of accuracy (more honest for imbalanced data)
+
+#### **Modified 2026-07-15** — v3.9.7.3 n=47 evaluation: real numbers, MoE works (not as good as n=25 said)
+
+**Source**: `bench/v01/reports/v3_9_7_3_moe_router_n50.json` + `v3_9_7_3_three_tier.md` §3
+
+**Bug fix also in this session**: `pa_cli/moe_router.py:202` had `qfile.suffix != ""` that skipped `.json` files. Fixed in v3.9.7.3.
+
+**n=47 result** (5-fold CV, q001-q050 with n=50 mixed labels, q041-q043 auto L2=0 skipped):
+
+| Metric | n=25 (v3.9.7.1) | n=47 (v3.9.7.3) | Δ |
+|---|---:|---:|---:|
+| Mean accuracy | 0.96 | 0.74 | -0.22 |
+| Mean balanced accuracy | 0.90 | 0.76 | -0.14 |
+| **Mean macro F1** | **0.889** (fake) | **0.609** (real) | **-0.28** |
+| Label distribution | {openalex: 24, crossref: 1} | {openalex: 24, **crossref: 20**, arxiv: 3} | true 24/20/3 |
+
+**Per-fold** (n=47):
+- fold 0: acc=0.90, macro_f1=0.87
+- fold 1: acc=0.60, macro_f1=0.44
+- fold 2: acc=0.89, macro_f1=0.63
+- fold 3: acc=0.56, macro_f1=0.53
+- fold 4: acc=0.78, macro_f1=0.57
+
+**Honest reading**:
+- ✅ MoE is real and works: 0.61 macro F1 > 0.20 random baseline (5-class)
+- ❌ n=25 number 0.89 was fake — model just predicted openalex 96% of the time
+- The true class distribution (24/20/3) reveals what paper-agent actually returns: heavy crossref + openalex
+- MoE predictions still biased toward openalex (majority class)
+
+**Verdict for paper-agent**:
+- Code: ✅ done
+- Recommendation: ✅ **keep as feature**, but don't claim "MoE is 0.89"
+- Honest number: 0.61 macro F1 on n=47 (true distribution)
+- Use case: when per-query engine weights matter (e.g., q031 dominant arxiv gets arxiv-weighted search)
+
+**Status update**:
+- Code: ✅ done
+- Recommendation: ✅ keep in pipeline as engine weight predictor
+- Next: integration with v3.9.0 v4_rerank (change per-engine result budget)
 
 ### [P2-6] PaSa-lite (rule-based, no LLM)
 
@@ -1843,42 +1932,41 @@ paper-agent 当前 5 层架构 (Layer 1-5) 加上新增 **Layer 6-7 (post-downlo
 - **Priority**: P2
 - **Layer**: 2 (Recall enhancement)
 - **Source**: User request 2026-07-13 (4-option v4 evaluation assessment)
-- **Rationale**: Full PaSa (ByteDance + 北大鄂维南) uses 7B LLM + RL training + paid Google Search API. **Fails Global Rule** (hosted LLM + paid API). A "lite" version captures 50% of PaSa's value: multi-strategy query expansion + iterative refinement + citation walk, all rule-based. The other 50% (LLM-driven relevance reasoning, adaptive stop decision) cannot be replicated without an LLM.
-- **Acceptance criteria (PARTIAL — what's implementable)**:
-  - `pa_cli/pasa_lite.py` — `PaSaLiteAgent` class
+- **Rationale**: Full PaSa (ByteDance + 鍖楀ぇ閯傜淮鍗? uses 7B LLM + RL training + paid Google Search API. **Fails Global Rule** (hosted LLM + paid API). A "lite" version captures 50% of PaSa's value: multi-strategy query expansion + iterative refinement + citation walk, all rule-based. The other 50% (LLM-driven relevance reasoning, adaptive stop decision) cannot be replicated without an LLM.
+- **Acceptance criteria (PARTIAL 鈥?what's implementable)**:
+  - `pa_cli/pasa_lite.py` 鈥?`PaSaLiteAgent` class
   - **Multi-strategy query expansion** (PaSa component 1/3): generate 3-5 query variants from input query (synonyms via WordNet / precomputed map, related terms via OpenAlex concepts, broadened scope, narrowed scope). We have all the building blocks: `pa search --concepts`, `pa search --prf`, `pa search --expand`
   - **Citation walk** (PaSa component 2/3): for each top candidate, fetch forward citations, score and merge. We have `[P1-1] pa citations` (forward + backward)
   - **Iterative refinement** (PaSa component 3/3, simplified): after one round, take top-5 candidates, re-query using their titles/abstracts as seeds, dedup, re-rank. Implemented as 2-3 rounds max (caller-tunable)
   - **What we CANNOT do without LLM** (the 50% gap): relevance reasoning ("does this paper actually answer the user's question?"), adaptive stop ("have we found enough?"), content-aware re-ranking (PaSa Selector reads full paper content; we only have abstracts)
-- **Acceptance criteria (NOT IMPLEMENTABLE — documented as gap)**:
+- **Acceptance criteria (NOT IMPLEMENTABLE 鈥?documented as gap)**:
   - Full PaSa Crawler/Selector 7B LLM agent (would need: 7B model serving, GPU, RL training pipeline, paid Google API)
-  - PaSa's "expand" action (LLM decides what to expand into — keywords? year range? sub-topics?)
+  - PaSa's "expand" action (LLM decides what to expand into 鈥?keywords? year range? sub-topics?)
   - PaSa's "stop" action (LLM decides convergence)
   - PaSa's "reasoning" output (LLM-generated chain of thought)
 - **Estimated effort**: ~1-2 weeks (most work is integration + testing on real queries)
-- **Global Rule check**: ⚠️ partial — rule-based version passes 5/5; full version fails on $ cost + hosted service
+- **Global Rule check**: 鈿狅笍 partial 鈥?rule-based version passes 5/5; full version fails on $ cost + hosted service
 - **User confirmation needed**: scope (just multi-strategy expansion, or also citation walk + iterative refinement); rounds cap
 - **GitHub reference**: `github.com/bytedance/pasa` (8 commits, dual-agent design); `AkariAsai/OpenScholar` (8B LM + custom retriever; closest in spirit to rule-based lite)
 
 #### PaSa coverage re-estimate (with [P0-8] Layer 6-7 added)
 
-User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将原 PaSa-lite rule-based 30-40% 覆盖率重新估算:
+User 2026-07-13 鎻愬嚭鏂板 Layer 6-7 (post-download full-text deep rerank),灏嗗師 PaSa-lite rule-based 30-40% 瑕嗙洊鐜囬噸鏂颁及绠?
 
-| PaSa 组件 | 真实实现 | 我们的替代 (无 L6-7) | 覆盖率 | 我们的替代 (有 L6-7) | 覆盖率 |
+| PaSa 缁勪欢 | 鐪熷疄瀹炵幇 | 鎴戜滑鐨勬浛浠?(鏃?L6-7) | 瑕嗙洊鐜?| 鎴戜滑鐨勬浛浠?(鏈?L6-7) | 瑕嗙洊鐜?|
 |---|---|---|---|---|---|
-| Multi-strategy query expansion | LLM 创意 | `pa search --concepts` + `--prf` + `--expand` 规则 | **70%** | 同左 | **70%** |
-| Full-text paper reading | LLM 读 PDF 全文 | 只用 abstract | **10%** | **全文 BM25 + 全文 cross-encoder + 启发式** | **70%** ⬆ |
-| Citation walk (1-hop) | LLM 决定 expand 方向 | 1-hop forward + backward via `pa citations` | **60%** | 同左 | **60%** |
-| Stop decision | LLM 决定收敛 | 固定 2-3 轮 | **20%** | 启发式:re-rank score plateau 触发 stop | **30%** ⬆ |
-| Relevance reasoning | LLM reasoning chain | bi-encoder cosine score | **30%** | **全文 cross-encoder + LTR re-fit + 多特征** | **60%** ⬆ |
-| Adaptive iteration | LLM 控制 search loop | 固定 pipeline | **40%** | 全文反馈循环 + LTR 重新训练 | **50%** ⬆ |
-| SFT + PPO 训练 | 13k 演示 + 16 GPU | 0 | **0%** | 0 (Global Rule ❌) | **0%** |
-| Google Search API | 收费 serper.dev | 0 | **0%** | 0 (Global Rule ❌) | **0%** |
-| AutoScholarQuery 数据集 | 35k 合成 | 0 (不需要,我们有 25 queries) | **n/a** | 0 | **n/a** |
-| **加权总覆盖率** | | | **~30-40%** | | **~50-60%** |
+| Multi-strategy query expansion | LLM 鍒涙剰 | `pa search --concepts` + `--prf` + `--expand` 瑙勫垯 | **70%** | 鍚屽乏 | **70%** |
+| Full-text paper reading | LLM 璇?PDF 鍏ㄦ枃 | 鍙敤 abstract | **10%** | **鍏ㄦ枃 BM25 + 鍏ㄦ枃 cross-encoder + 鍚彂寮?* | **70%** 猬?|
+| Citation walk (1-hop) | LLM 鍐冲畾 expand 鏂瑰悜 | 1-hop forward + backward via `pa citations` | **60%** | 鍚屽乏 | **60%** |
+| Stop decision | LLM 鍐冲畾鏀舵暃 | 鍥哄畾 2-3 杞?| **20%** | 鍚彂寮?re-rank score plateau 瑙﹀彂 stop | **30%** 猬?|
+| Relevance reasoning | LLM reasoning chain | bi-encoder cosine score | **30%** | **鍏ㄦ枃 cross-encoder + LTR re-fit + 澶氱壒寰?* | **60%** 猬?|
+| Adaptive iteration | LLM 鎺у埗 search loop | 鍥哄畾 pipeline | **40%** | 鍏ㄦ枃鍙嶉寰幆 + LTR 閲嶆柊璁粌 | **50%** 猬?|
+| SFT + PPO 璁粌 | 13k 婕旂ず + 16 GPU | 0 | **0%** | 0 (Global Rule 鉂? | **0%** |
+| Google Search API | 鏀惰垂 serper.dev | 0 | **0%** | 0 (Global Rule 鉂? | **0%** |
+| AutoScholarQuery 鏁版嵁闆?| 35k 鍚堟垚 | 0 (涓嶉渶瑕?鎴戜滑鏈?25 queries) | **n/a** | 0 | **n/a** |
+| **鍔犳潈鎬昏鐩栫巼** | | | **~30-40%** | | **~50-60%** |
 
-**关键 insight**:新增 Layer 6-7 (full-text deep rerank) 把 PaSa 覆盖率从 30-40% 提升到 50-60%,主要靠 3 个 component 的提升:Full-text paper reading (10%→70%)、Relevance reasoning (30%→60%)、Adaptive iteration (40%→50%)。剩下 40-50% 仍然受限于 Global Rule (无 LLM + 无 paid API)。
-
+**鍏抽敭 insight**:鏂板 Layer 6-7 (full-text deep rerank) 鎶?PaSa 瑕嗙洊鐜囦粠 30-40% 鎻愬崌鍒?50-60%,涓昏闈?3 涓?component 鐨勬彁鍗?Full-text paper reading (10%鈫?0%)銆丷elevance reasoning (30%鈫?0%)銆丄daptive iteration (40%鈫?0%)銆傚墿涓?40-50% 浠嶇劧鍙楅檺浜?Global Rule (鏃?LLM + 鏃?paid API)銆?
 ### [P0-8] Full-text deep rerank layer (post-download, PaSa-inspired)
 
 - **Status**: done
@@ -1887,53 +1975,49 @@ User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将
 - **Completed**: 2026-07-13
 - **Priority**: P0
 - **Layer**: 6 (Download) + 7 (Full-text deep rerank)
-- **Source**: User request 2026-07-13 — "由于你说你没有办法读全文,我考虑到读全文需要人工下载,因此可以设置额外一个Layer,前面的Layer 先筛选出来最优的论文,然后尝试下载,把不能下载的给我,我来人工下载。之前整合的下载方法也可以应用到这层,然后再重新跑"
-- **Rationale**: PaSa 覆盖率的最大瓶颈是 "Full-text paper reading" (10%) 和 "Relevance reasoning" (30%)。原因不是技术不行,是 paper-agent 一直没有 full-text 数据。L1-5 跑完只有 abstract。**用户洞察**:加一个 post-download 层,把 8 通道 cascade (Layer 6) 跑一次,能下到的进 Layer 7 全文 rerank,下不到的 emit 一份给用户人工下,**两条路都汇入 Layer 7 re-rank**。这等于把 PaSa 的 "Content-aware rerank on full text" 这条路用 rule-based + cross-encoder + 人工兜底的方式走通。
-- **Acceptance criteria**:
-  - 新增 `pa_cli/deep_rerank.py` 模块 (~300 LOC)
-  - 新增 `pa deep-rerank <CORPUS_DIR> [--user-pdf-dir <dir>]` CLI 命令
+- **Source**: User request 2026-07-13 鈥?"鐢变簬浣犺浣犳病鏈夊姙娉曡鍏ㄦ枃,鎴戣€冭檻鍒拌鍏ㄦ枃闇€瑕佷汉宸ヤ笅杞?鍥犳鍙互璁剧疆棰濆涓€涓狶ayer,鍓嶉潰鐨凩ayer 鍏堢瓫閫夊嚭鏉ユ渶浼樼殑璁烘枃,鐒跺悗灏濊瘯涓嬭浇,鎶婁笉鑳戒笅杞界殑缁欐垜,鎴戞潵浜哄伐涓嬭浇銆備箣鍓嶆暣鍚堢殑涓嬭浇鏂规硶涔熷彲浠ュ簲鐢ㄥ埌杩欏眰,鐒跺悗鍐嶉噸鏂拌窇"
+- **Rationale**: PaSa 瑕嗙洊鐜囩殑鏈€澶х摱棰堟槸 "Full-text paper reading" (10%) 鍜?"Relevance reasoning" (30%)銆傚師鍥犱笉鏄妧鏈笉琛?鏄?paper-agent 涓€鐩存病鏈?full-text 鏁版嵁銆侺1-5 璺戝畬鍙湁 abstract銆?*鐢ㄦ埛娲炲療**:鍔犱竴涓?post-download 灞?鎶?8 閫氶亾 cascade (Layer 6) 璺戜竴娆?鑳戒笅鍒扮殑杩?Layer 7 鍏ㄦ枃 rerank,涓嬩笉鍒扮殑 emit 涓€浠界粰鐢ㄦ埛浜哄伐涓?**涓ゆ潯璺兘姹囧叆 Layer 7 re-rank**銆傝繖绛変簬鎶?PaSa 鐨?"Content-aware rerank on full text" 杩欐潯璺敤 rule-based + cross-encoder + 浜哄伐鍏滃簳鐨勬柟寮忚蛋閫氥€?- **Acceptance criteria**:
+  - 鏂板 `pa_cli/deep_rerank.py` 妯″潡 (~300 LOC)
+  - 鏂板 `pa deep-rerank <CORPUS_DIR> [--user-pdf-dir <dir>]` CLI 鍛戒护
   - **Layer 6 (Download orchestration)**:
-    - 输入:`bench/v01/system_outputs/<query>/top-20.json` (来自 Layer 5 output)
-    - 步骤:对每个 candidate,调 `pa fetch <DOI>` 走 8 通道 cascade (openalex / arxiv / unpaywall / crossref / scihub / playwright)
-    - 输出:成功下载的 list (本地 PDF 路径) + 失败 list (DOI + 失败原因)
-    - 失败 list 写入 `~/.paper-agent/manual_downloads_<timestamp>.md`,每行:`- [ ] <DOI> | <title> | <reason>` 供用户人工下载
-  - **Layer 7 (Full-text deep rerank)**:
-    - 接收:`--user-pdf-dir <dir>` (用户人工下的 PDF 目录) + Layer 6 自动下载的 PDFs
-    - 步骤 1:合并 PDF 路径,统一抽全文 (PyMuPDF)
-    - 步骤 2:对每个 candidate 计算 4 个 full-text features:
+    - 杈撳叆:`bench/v01/system_outputs/<query>/top-20.json` (鏉ヨ嚜 Layer 5 output)
+    - 姝ラ:瀵规瘡涓?candidate,璋?`pa fetch <DOI>` 璧?8 閫氶亾 cascade (openalex / arxiv / unpaywall / crossref / scihub / playwright)
+    - 杈撳嚭:鎴愬姛涓嬭浇鐨?list (鏈湴 PDF 璺緞) + 澶辫触 list (DOI + 澶辫触鍘熷洜)
+    - 澶辫触 list 鍐欏叆 `~/.paper-agent/manual_downloads_<timestamp>.md`,姣忚:`- [ ] <DOI> | <title> | <reason>` 渚涚敤鎴蜂汉宸ヤ笅杞?  - **Layer 7 (Full-text deep rerank)**:
+    - 鎺ユ敹:`--user-pdf-dir <dir>` (鐢ㄦ埛浜哄伐涓嬬殑 PDF 鐩綍) + Layer 6 鑷姩涓嬭浇鐨?PDFs
+    - 姝ラ 1:鍚堝苟 PDF 璺緞,缁熶竴鎶藉叏鏂?(PyMuPDF)
+    - 姝ラ 2:瀵规瘡涓?candidate 璁＄畻 4 涓?full-text features:
       - `fulltext_bm25`:BM25 on full text vs query (vs abstract-only BM25)
       - `fulltext_cross_encoder`:BGE-reranker on (query, full text) (vs abstract-only)
       - `fulltext_citation_density`:citation count / page count (proxy for "depth")
       - `fulltext_venue_score`:OpenAlex venue prestige score (e.g. Qs top-50)
-    - 步骤 3:用 LTR (来自 [P0-6]) re-fit,把 full-text features 加进 8 维 feature list → 12 维
-    - 步骤 4:输出:`deep_rerank_<timestamp>.json` (per-paper 12-feature 分数 + 排序)
-  - **re-run 流程**:用户人工下完 PDF 后,跑 `pa deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/`,一次性出新的 top-K
-  - **与现有 v3.9.0 评估集成**:deep-rerank 后的 score 作为新 condition 写进 v4 评估 (类似 v3.9.0 加 LTR 一样)
-- **Estimated effort**: ~1-2d (1-2h 写 deep-rerank 模块 + 1-2h 编排下载 + 1h 测试 + 2-3h 真实数据验证)
+    - 姝ラ 3:鐢?LTR (鏉ヨ嚜 [P0-6]) re-fit,鎶?full-text features 鍔犺繘 8 缁?feature list 鈫?12 缁?    - 姝ラ 4:杈撳嚭:`deep_rerank_<timestamp>.json` (per-paper 12-feature 鍒嗘暟 + 鎺掑簭)
+  - **re-run 娴佺▼**:鐢ㄦ埛浜哄伐涓嬪畬 PDF 鍚?璺?`pa deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/`,涓€娆℃€у嚭鏂扮殑 top-K
+  - **涓庣幇鏈?v3.9.0 璇勪及闆嗘垚**:deep-rerank 鍚庣殑 score 浣滀负鏂?condition 鍐欒繘 v4 璇勪及 (绫讳技 v3.9.0 鍔?LTR 涓€鏍?
+- **Estimated effort**: ~1-2d (1-2h 鍐?deep-rerank 妯″潡 + 1-2h 缂栨帓涓嬭浇 + 1h 娴嬭瘯 + 2-3h 鐪熷疄鏁版嵁楠岃瘉)
 - **Global Rule check**: 5/5 pass
-  1. ✅ $0 cost (BGE-base 本地 278MB, 8 通道 cascade 已有)
-  2. ✅ 无 hosted service
-  3. ✅ Maintenance ~300 LOC + 复用现有 pa fetch + pa v4-rerank
-  4. ✅ 无 publish obligation
-  5. ✅ Free-tier degradation:如果 BGE 下载失败,fallback 到 heuristic + LTR 重新训练 (不依赖 BGE)
-- **PaSa 覆盖率影响** (per 上表):
-  - Full-text paper reading: 10% → **70%** (+60%)
-  - Relevance reasoning: 30% → **60%** (+30%)
-  - Stop decision: 20% → **30%** (+10%)
-  - Adaptive iteration: 40% → **50%** (+10%)
-  - **整体:30-40% → 50-60%** (+15-20%)
+  1. 鉁?$0 cost (BGE-base 鏈湴 278MB, 8 閫氶亾 cascade 宸叉湁)
+  2. 鉁?鏃?hosted service
+  3. 鉁?Maintenance ~300 LOC + 澶嶇敤鐜版湁 pa fetch + pa v4-rerank
+  4. 鉁?鏃?publish obligation
+  5. 鉁?Free-tier degradation:濡傛灉 BGE 涓嬭浇澶辫触,fallback 鍒?heuristic + LTR 閲嶆柊璁粌 (涓嶄緷璧?BGE)
+- **PaSa 瑕嗙洊鐜囧奖鍝?* (per 涓婅〃):
+  - Full-text paper reading: 10% 鈫?**70%** (+60%)
+  - Relevance reasoning: 30% 鈫?**60%** (+30%)
+  - Stop decision: 20% 鈫?**30%** (+10%)
+  - Adaptive iteration: 40% 鈫?**50%** (+10%)
+  - **鏁翠綋:30-40% 鈫?50-60%** (+15-20%)
 - **User confirmation needed**:
-  - top-N cutoff (默认 20? — top-20 全文 rerank 在 BGE-base CPU 上 < 5s)
-  - 是否在 deep-rerank 后 emit 一份 markdown 给用户审阅
-  - manual download 失败 list 的格式 (纯 DOI list vs 表格带 title)
-  - 是否要支持"半自动"模式(下载成功 5/10,剩下 5 用户决定要不要人工)
-- **GitHub reference**: 无直接对应。Pattern 灵感来自 PaSa 的"读完再判 relevance"循环 + OpenScholar 的"full-text-aware rerank"
+  - top-N cutoff (榛樿 20? 鈥?top-20 鍏ㄦ枃 rerank 鍦?BGE-base CPU 涓?< 5s)
+  - 鏄惁鍦?deep-rerank 鍚?emit 涓€浠?markdown 缁欑敤鎴峰闃?  - manual download 澶辫触 list 鐨勬牸寮?(绾?DOI list vs 琛ㄦ牸甯?title)
+  - 鏄惁瑕佹敮鎸?鍗婅嚜鍔?妯″紡(涓嬭浇鎴愬姛 5/10,鍓╀笅 5 鐢ㄦ埛鍐冲畾瑕佷笉瑕佷汉宸?
+- **GitHub reference**: 鏃犵洿鎺ュ搴斻€侾attern 鐏垫劅鏉ヨ嚜 PaSa 鐨?璇诲畬鍐嶅垽 relevance"寰幆 + OpenScholar 鐨?full-text-aware rerank"
 
 #### **BLOCKED pending user input** (recorded 2026-07-13):
 
 **Q026-Q050: 25 more labeled queries from user.**
-- User said 2026-07-13: "我需要时间提交，等明天给你"
-- 25 → 50 queries would unblock re-running:
+- User said 2026-07-13: "鎴戦渶瑕佹椂闂存彁浜わ紝绛夋槑澶╃粰浣?
+- 25 鈫?50 queries would unblock re-running:
   - LTR ([P0-6]) with proper n=50 sample size
   - MoE router ([P1-11]) with class diversity (openalex currently 96%)
   - Cross-encoder ([P0-7]) with statistical significance test
@@ -1947,19 +2031,19 @@ User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将
 
 ---
 
-#### 2026-07-14 status: v3.9.7 patch — Layer 7 query lookup + user-PDF slug match + A/B/C substitute audit
+#### 2026-07-14 status: v3.9.7 patch 鈥?Layer 7 query lookup + user-PDF slug match + A/B/C substitute audit
 
-Per user "重试 / 走 A+B / 把你能做的先跑" (2026-07-14 11:46), closed two
-silent Layer 7 bugs that v3.9.5 → v3.9.6 shipped with.
+Per user "閲嶈瘯 / 璧?A+B / 鎶婁綘鑳藉仛鐨勫厛璺? (2026-07-14 11:46), closed two
+silent Layer 7 bugs that v3.9.5 鈫?v3.9.6 shipped with.
 
-**Bug fix 1 — `stage2_fulltext_rerank` query lookup**:
-- Before v3.9.7: `query=""` hardcoded in `compute_fulltext_features` call → `fulltext_bm25` was
+**Bug fix 1 鈥?`stage2_fulltext_rerank` query lookup**:
+- Before v3.9.7: `query=""` hardcoded in `compute_fulltext_features` call 鈫?`fulltext_bm25` was
   always 0.0 in `deep_rerank_<ts>.json`
 - After v3.9.7: added `_load_queries_lookup(bench_dir)` helper that reads `bench/v01/queries.json`
   and passes real query text to BM25
-- Verified: Layer 7 BM25 now 8.65–20.70 (real), matches v3.9.5.3 external-script range 8.65–20.30 within ±0.5
+- Verified: Layer 7 BM25 now 8.65鈥?0.70 (real), matches v3.9.5.3 external-script range 8.65鈥?0.30 within 卤0.5
 
-**Bug fix 2 — user-PDF filename convention**:
+**Bug fix 2 鈥?user-PDF filename convention**:
 - Before v3.9.7: 6 user-downloaded PDFs in `manual_pdfs/` named `q001_10.1001_jamanetworkopen.2021.49008.pdf`
   - `stage2_fulltext_rerank` lookup: `user_pdfs[doi_slug]` where `doi_slug = doi.replace("/", "_").replace(".", "_")`
   - **None of the 6 user PDFs were ever read by Layer 7** (slug mismatch bug)
@@ -1967,39 +2051,254 @@ silent Layer 7 bugs that v3.9.5 → v3.9.6 shipped with.
   - All 6 q00X + A 2014 substitute are now consumed by Layer 7 (16/16 candidates with full text)
 
 **A/B/C substitute honest audit** (per CHANGELOG v3.9.7 + 3-tier report `v3_9_7_three_tier_audit.md`):
-- **A — Hegewisch & Hartmann 2014** (706 KB) — ✅ User manual download, real PDF
-  - Renamed → `10_1037_e686432011-001.pdf` to substitute for missing Hegewisch 2010 paper
-  - BM25=11.65 (lower than q002 peer range 13.28–14.79); 2014 is a continuation paper, not 2010 verbatim
+- **A 鈥?Hegewisch & Hartmann 2014** (706 KB) 鈥?鉁?User manual download, real PDF
+  - Renamed 鈫?`10_1037_e686432011-001.pdf` to substitute for missing Hegewisch 2010 paper
+  - BM25=11.65 (lower than q002 peer range 13.28鈥?4.79); 2014 is a continuation paper, not 2010 verbatim
   - Caveat: BM25 likely biased down by 2-3; re-rank lift is conservative estimate
-- **B — Liepmann & Hegewisch 2025** (SSRN `10.2139/ssrn.5858331` / ILO `10.54394/ygcl5095`) — ❌ NOT in `manual_pdfs/`
+- **B 鈥?Liepmann & Hegewisch 2025** (SSRN `10.2139/ssrn.5858331` / ILO `10.54394/ygcl5095`) 鈥?鉂?NOT in `manual_pdfs/`
   - SSRN blocked by Incapsula; user manual save produced 5.7 KB Cloudflare HTML, not real PDF
   - 8-channel cascade fails on Altcha/Incapsula + click-to-download (see agent memory `expect_download` blind spot)
   - Did not contribute to Layer 7; for future: needs SSRN/ILO as 6th-7th search engine in v3.9.0 candidate pool
-- **C — IWPR #C395 (Hegewisch 2012)** (132 KB) — ✅ Auto curl + clash proxy
+- **C 鈥?IWPR #C395 (Hegewisch 2012)** (132 KB) 鈥?鉁?Auto curl + clash proxy
   - Saved to `manual_pdfs/iwpr_alt_C395_hegewisch2012.pdf`
-  - IWPR uses internal numbering #C395, not a DOI → `stage2_fulltext_rerank` cannot map to any `manual_needed` entry
+  - IWPR uses internal numbering #C395, not a DOI 鈫?`stage2_fulltext_rerank` cannot map to any `manual_needed` entry
   - Not consumed by Layer 7; for future: needs `doi_alias_map.json` (~1-hour patch)
 
 **v3.9.7 still BLOCKED on**:
-- q026-q050 user-provided queries (still missing, blocks n=50 re-evaluations)
+- q026-q050 user-provided queries (still missing, blocks n=50 re-evaluations) — **DONE 2026-07-15 via A2 auto-labeling**
 - Re-fit LTR with 12 features (8 existing + 4 full-text) to measure actual re-rank lift
 - Implementation of `fulltext_cross_encoder`, `fulltext_citation_density`, `fulltext_venue_score`
   features (all currently return 0.0)
 - BGE-reranker on full text (current code uses 2000 char limit; needs chunk-aggregate for true full-text)
+  - **Additionally** 2026-07-15: BGE-reranker at abstract-level was significantly worse than bi-encoder
+    (p=0.0008 in n=48 paired test). May want to skip BGE on full text too, or try monoT5/ColBERT instead.
+
+#### **Modified 2026-07-15** — n=50 evaluation: 3 of 4 fulltext features still placeholders
+
+Source: same v3.9.7.3 evaluation; no LTR re-fit with 12 features done yet.
+
+Current status:
+- ✅ `fulltext_bm25`: working (Layer 7 BM25 = 8.65-20.70 on real candidates)
+- ❌ `fulltext_cross_encoder`: returns 0.0 (not implemented)
+- ❌ `fulltext_citation_density`: returns 0.0 (not implemented; would need Crossref + page count)
+- ❌ `fulltext_venue_score`: returns 0.0 (not implemented; would need OpenAlex venue prestige)
+
+LTR re-fit with 12 features (8 + 4 full-text) has NOT been done. Current LTR still uses 8 features only.
+Until those 3 features are real, Layer 7's lift measurement is incomplete.
+
+**Verdict for paper-agent**:
+- Code: ✅ done for Layer 6 (download) + Layer 7 (BM25); partial for Layer 7 (3/4 features)
+- Recommendation: implement the 3 missing features before claiming "Layer 7 lift" is real
+- Priority: low (depends on whether Layer 6+7 actually adds value over Layer 5)
 
 **Files**:
 - Modified: `pa_cli/deep_rerank.py` (~30 LOC, query lookup fix)
-- Modified: `pa_cli/__init__.py` (version 3.9.6 → 3.9.7)
+- Modified: `pa_cli/__init__.py` (version 3.9.6 鈫?3.9.7)
 - Modified: `CHANGELOG.md` (v3.9.7 entry)
 - Created: `bench/v01/reports/v3_9_7_deep_rerank_layer7.md` (frame report)
 - Created: `bench/v01/reports/v3_9_7_layer7_output.json` (full stage2 JSON)
 - Created: `bench/v01/reports/v3_9_7_three_tier_audit.md` (3-tier honest audit)
-- Created: `test_output/_run_stage2_only_v397.py` (reconstruction script — skips stage1 fetch cascade)
+- Created: `test_output/_run_stage2_only_v397.py` (reconstruction script 鈥?skips stage1 fetch cascade)
 - Renamed: 6 user PDFs in `manual_pdfs/` to canonical doi_slug format
-- Renamed: A 2014 (`Occupational_Segregation_and_the_Gender_Wage_Gap-A_Job_Half_Done.pdf` → `10_1037_e686432011-001.pdf`)
+- Renamed: A 2014 (`Occupational_Segregation_and_the_Gender_Wage_Gap-A_Job_Half_Done.pdf` 鈫?`10_1037_e686432011-001.pdf`)
 - Trashed: 7 placeholder files in `manual_pdfs/` (Cloudflare HTML / 222-byte UNT URL placeholders)
 - Trashed: 2 BM25=0 v3.9.7 first-run reports (kept only the BM25-real one)
 
 ---
 
 #### 2026-07-13 status: [P0-6] LTR, [P0-7] Cross-encoder, [P1-11] MoE router SHIPPED
+---
+
+### [P0-9] CNKI 6th search engine (中文 paper 收录, cookies + playwright)
+
+- **Status**: proposed (waiting user)
+- **Added**: 2026-07-14
+- **Source**: User request 2026-07-14 22:23 — "关于 CNKI，我有渠道，并且你不能用 clash 端口访问它，我可以给你一个 playwright 的方案，你抓 cookies 来维持访问"
+- **Rationale**: 当前 v3.9.0 candidate pool 用 5 个英文 search engine (openalex / s2 / crossref / arxiv / core)。中文 specific paper 收录率 = 0%。User 提供 CNKI 渠道 + cookies 维护方案, **可让 v3.9.0 candidate pool 真正多语种**。
+- **User-confirmed design decisions** (v3 2026-07-14 23:00):
+  1. 中文 query 共通性扩展到 international, 中国特色保留 (q032 东数西算, q047 综艺二次元)
+  2. CNKI cookies 由 user 维护, Mavis 通过 playwright 复用
+  3. **不能用 clash 端口** (CNKI 国内站, 不需要翻墙, 且可能被 CNKI 反爬检测到 proxy 流量)
+  4. **CNKI 通过 user 的"其他代理"进入** (2026-07-14 23:00 update) — 不是直连 CNKI, 而是通过类似校园 VPN / EZproxy / 机构图书馆代理 进入。**架构影响**:
+     - Mavis 端的 playwright 仍然连 CNKI hostname (`www.cnki.net`), 不需要知道代理 server 地址
+     - Cookies 在代理登录后导出, 包含代理站点的 session token, 有效复用
+     - **风险**: 代理登录 session 通常 4-8 小时短过期, 每天需要 user 重 export (vs CNKI 直连 cookies 7-30 天)
+  5. **只接入 CNKI, 不接 万方/维普** (2026-07-14 23:00 update) — User 没 万方/维普 渠道
+- **Acceptance criteria**:
+  - `pa_cli/cnki_channel.py` (~300 LOC) — CNKI 6th search engine module
+    - `CNKIClient` class: `search(query, top_k=10) -> list[SearchResult]`
+    - cookies 加载: `~/.paper-agent/cookies/cnki.json` (user 维护, 代理 session cookies)
+    - 复用 v3.9.5 v3.9.5.2 已有的 playwright 框架 (`page.context.add_cookies`)
+    - 复用 `pa_cli/fetch.py` 8-channel cascade 模式 (cnki 作为 9th channel)
+  - **search endpoint**: CNKI 高级检索 `https://www.cnki.net/KNS/brief/default_result.aspx`
+    - POST form: `txt=$query`, `sort=desc`, 排序 by relevance / cited count
+    - 处理 redirect + JS challenge (CNKI 偶发)
+    - result 解析: HTML table → `{title, authors, abstract, cnki_url, year, journal}`
+  - **cookie 维护** (per user "通过其他代理" setup):
+    - `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (~50 LOC)
+    - User 在 Chrome / Edge 登录代理入口 → 跳转 CNKI 后, 该 script 用 playwright + 已登录 chrome profile, 导出 cookies 到 `~/.paper-agent/cookies/cnki.json`
+    - **cookie 有效期**: 4-8 小时 (代理 session 短过期, vs CNKI 直连 7-30 天)
+    - **维护频率**: 每天 user 重跑一次 export script (or 设置 Windows 任务计划自动跑)
+  - **fallback**: cookies 过期 / CNKI 反爬检测 → 返回 `"cnki_failed_reason: proxy_session_expired"`, 提示 user 重 export
+- **Estimated effort**: 1-2 days
+  - 4h: 写 `cnki_channel.py` (search + parse + 复用 fetch.py 框架)
+  - 2h: 写 `Export-CNKICookies.ps1` (cookies 导出 via playwright + chrome profile)
+  - 2h: 测试 on 5-10 个真实 query (包括 q032 东数西算, q047 综艺二次元)
+  - 2h: 集成到 v3.9.0 v4_rerank 的 5 → 6 engine pool
+  - 2h: 文档 + ROADMAP outcome
+- **Global Rule check**: 5/5 pass
+  1. ✅ $0 cost (CNKI 订阅 + 代理 都在 user 侧, Mavis 不收费)
+  2. ✅ No hosted service (cookies 本地, playwright 本地, 不经过 clash proxy)
+  3. ✅ Maintenance ~300 LOC + 复用现有 fetch.py 框架
+  4. ✅ No publish obligation
+  5. ✅ Free-tier degradation: cookies 过期 → fallback to 5 英文 engine (no regression)
+- **GitHub reference**: 暂无直接对应
+  - `cnsoldiers/cnki-spider` (~500 stars, 2018 last commit) — 老 CNKI 爬虫, 没 cookies 维护, 没代理路由
+  - `https://github.com/cnki-team/cnki-api` — 官方 API 但已停服
+  - user-confirmed approach: 自建 + 代理 cookies 维护
+- **User confirmation needed**:
+  - [ ] 代理类型 (校园 VPN / EZproxy / 机构图书馆代理 / 其他) — 不同代理 cookies 维护方式略不同
+  - [ ] 代理登录 session 实际过期时间 (测试 1 次 export 后多久需要重 export)
+  - [ ] cookies 维护自动化 (用 Windows 任务计划每日自动跑, 还是 user 手动)
+  - [ ] CNKI 检索 query 是否需要 query 转换 (中文 query → CNKI 关键词, 英文 query → CNKI English 关键词)
+  - [ ] CNKI 高级检索需要哪些 fields (主题 / 标题 / 摘要 / 全文)?
+- **Integration plan** (后续步骤):
+  1. User 提供代理入口 + CNKI 账号 + 首次 cookies 导出
+  2. 写 `cnki_channel.py` + `Export-CNKICookies.ps1` (2 天)
+  3. v3.9.0 v4_rerank 5 → 6 engine
+  4. n=50 v4_rerank re-run, 看 candidate pool 中文 paper 占比
+  5. MoE class diversity 真正 work (openalex 80% → 60-70%, cnki 10-20%)
+
+#### **Modified 2026-07-15** — v3.9.7.3 confirm: CNKI is now the highest-leverage move
+
+**Source**: v3.9.7.3 MoE n=47 label distribution
+
+Per v3.9.7.3, the true class distribution of paper-agent on n=47 queries is:
+- openalex 24 (51%)
+- **crossref 20 (43%)** — much higher than expected
+- arxiv 3 (6%)
+- s2 0, core 0 (engines disabled due to expired demo API key)
+
+**Chinese paper coverage: 0%** (none of the 24 openalex / 20 crossref / 3 arxiv candidates for q026-q050 are CNKI-only papers).
+
+**If CNKI is added (5 → 6 engine)**:
+- Chinese queries (q026, q027, q028, q030, q032, q039, q047) would get CNKI-specific candidates
+- MoE class distribution: openalex 50% → 30-40%, crossref 43% → 25-30%, **CNKI 15-25%**, arxiv 6% → 5%
+- New evaluation: A2 auto labels for Chinese queries currently mark most as L0 because system can't find Chinese papers; CNKI would give them real L2 candidates
+
+**CNKI implementation is now the highest-leverage move** because:
+1. Coverage 0% → 15-25% candidate lift (vs 0.61 → 0.65 macro F1 for MoE incremental)
+2. Chinese-language research is a real user need (user 2026-07-14 message: "中文 specific paper 收录率 = 0%")
+3. No statistical noise issue: candidate presence is binary
+4. Honest labels still work (Chinese papers have DOIs, can be labeled same as English)
+
+**User action needed before implementation**:
+- [ ] Provide 代理入口 URL + 登录方式 (校园 VPN / EZproxy / 机构图书馆)
+- [ ] Test 1 cookie export → measure session 过期时间
+- [ ] Decide cookie 维护 cadence (手动 daily vs 任务计划自动)
+
+---
+
+### [P0-10] n=50 mixed labels + A2 auto-labeling pipeline (added 2026-07-15)
+
+- **Status**: done
+- **Added**: 2026-07-15
+- **Source**: v3.9.7.3 user request "labels 你帮我做"
+- **Rationale**: paper-agent 评估 stuck 在 n=25 假象 (24/1 class distribution, BGE/LTR 看不出真实方向). 扩到 n=50 才有统计 power (Wilcoxon n=48 终于显著).
+- **Acceptance criteria**:
+  - ✅ `test_output/_auto_label_q026_q050.py` — A2 hybrid (BM25 keyword + BGE/biencoder tie-breaker)
+  - ✅ `bench/v01/labels_q026_q050_auto.json` — 522 auto labels
+  - ✅ `bench/v01/labels_n50_mixed.json` — n=50 merged (25 real + 25 auto)
+  - ✅ per-difficulty L2/L1/L0 thresholds: broad=10/12, technical=5/8, methodology=6/9, rare_terms=3/5
+  - ✅ L2 rate auto (26.8%) ≈ real (27.8%) — distribution aligned
+- **Honest caveats** (重要):
+  - ⚠️ **NOT expert-validated** — auto labels from model scores, not from reading abstracts
+  - ⚠️ **Circularity** — BGE used as auto-label tie-breaker, slightly inflates BGE-vs-biencoder comparison
+  - ✅ **USEFUL for method comparison** — same labels used for baseline and candidate, so relative ordering is meaningful
+  - ❌ **NOT useful for "X% better than expert" claims**
+- **Files**:
+  - `bench/v01/labels_q026_q050_auto.json` (522 pairs, 25 queries)
+  - `bench/v01/labels_n50_mixed.json` (1263 pairs, 50 queries)
+  - `test_output/_auto_label_q026_q050.py` (~250 LOC)
+- **Bug fix in this commit** (discovered while building this):
+  - `pa_cli/moe_router.py:202` and `pa_cli/ltr.py:165`: `qfile.suffix != ""` was skipping `.json` files
+  - Fix: accept both `.json` and no-ext, dedupe preferring `.json`
+  - Effect: v3.9.7.2 was reporting n=25 because all 50 new .json files were skipped
+
+**Status update**:
+- Code: ✅ done
+- Recommendation: ✅ use as default for method-comparison evaluations
+- Next: n=100 / n=200 expansion (needs more real or auto labels)
+
+---
+
+### [P0-11] Deprecate BGE-rerank + LTR from default pipeline (added 2026-07-15)
+
+- **Status**: done (deprecation decision)
+- **Added**: 2026-07-15
+- **Source**: v3.9.7.3 n=48 paired Wilcoxon (BGE) + n=50 LTR loses to baseline
+- **Rationale**: v3.9.7.3 真实 n=50 评估发现:
+  1. BGE-rerank **significantly worse** than bi-encoder (NDCG@10 Δ = -0.1064, **p = 0.0008**)
+  2. LTR (LambdaMART) **loses to** simple linear combined baseline (Δ = -0.0335)
+  3. MoE 真实 macro F1 = 0.61 (not 0.89 as n=25 fake suggested)
+- **Action items**:
+  - [x] Code: BGE + LTR 代码保留 (in pa_cli/cross_encoder.py + pa_cli/ltr.py), 供 research 使用
+  - [x] Decision: 从 default rerank pipeline 移除 BGE + LTR
+  - [x] Default rerank: combined (0.5*BM25 + 0.5*biencoder linear) — simplest, no overfit, NDCG@10 = 0.814
+  - [ ] 更新 `pa search` / `pa v4-rerank` CLI flags — 当前 `--ranker ltr` / `--reranker bge` 仍可用 (just not recommended)
+  - [ ] 文档: README/CHANGELOG 标注 "BGE + LTR are research-only, default = combined"
+- **5-check Global Rule audit**: 5/5 pass (no new code, just deprecation decision)
+- **Files**:
+  - `CHANGELOG.md` (v3.9.7.3 entry documents deprecation)
+  - `bench/v01/reports/v3_9_7_3_three_tier.md` (§6 lists actionable next steps)
+  - `ROADMAP.md` ([P0-6] + [P0-7] updated with v3.9.7.3 numbers)
+
+**Status update**:
+- Decision: ✅ deprecated from default
+- Code: ✅ kept for research
+- Default: `combined` (0.5/0.5 linear)
+
+---
+
+### [P1-12] 3 of 4 fulltext features (added 2026-07-15)
+
+- **Status**: proposed
+- **Added**: 2026-07-15
+- **Source**: v3.9.7.3 audit of [P0-8] Layer 7 partial implementation
+- **Rationale**: Layer 7 currently has only 1 of 4 fulltext features working (`fulltext_bm25`); 3 features return 0.0 placeholder. Until implemented, Layer 7 lift measurement is incomplete.
+- **Acceptance criteria**:
+  - `fulltext_cross_encoder`: BGE-reranker on (query, full text) — but BGE abstract-level already loses (per [P0-7] deprecation). Alternative: try monoT5 or ColBERT for full-text rerank
+  - `fulltext_citation_density`: citation_count / page_count (proxy for "depth"); needs Crossref + PyMuPDF page count
+  - `fulltext_venue_score`: OpenAlex venue prestige score (e.g. Qs top-50); needs OpenAlex venue query
+  - LTR re-fit with 12 features (8 + 4 full-text) — measure Layer 7 lift on n=50
+- **Estimated effort**: 1-2 days
+  - 4h: implement `fulltext_citation_density` (Crossref + page count)
+  - 4h: implement `fulltext_venue_score` (OpenAlex venue prestige lookup)
+  - 4h: implement `fulltext_cross_encoder` OR alternative (monoT5/ColBERT)
+  - 2h: LTR re-fit with 12 features, compare to 8-feature baseline
+- **Global Rule check**: 5/5 pass (all local computation, no hosted)
+- **Dependency**: needs Layer 6 PDF download working (~16/16 candidates per [P0-8] outcome)
+- **Honest framing**: even with all 4 features, n<100 LTR lifts are noise. Use n=50 mixed labels + holdout for honest measurement.
+
+---
+
+### [P1-13] n=50 → n=100 → n=200 label expansion (added 2026-07-15)
+
+- **Status**: proposed
+- **Added**: 2026-07-15
+- **Source**: v3.9.7.3 limit — n=48-50 still in n<100 noise zone per memory discipline
+- **Rationale**: 当前 n=50 (25 real + 25 auto) 是 评估 ceiling. 真 n>100 才能:
+  1. Detect effect size ≥0.03 (vs current ≥0.05)
+  2. Train LTR without overfit (n=50 5-fold = 40 train; n=200 5-fold = 160 train)
+  3. Have enough per-engine queries to evaluate MoE per-class F1
+- **Acceptance criteria**:
+  - n=100: 50 more queries (q051-q100), mix of:
+    - 25 expert-labeled (user manual review 30 sec/query)
+    - 25 A2 auto-labeled (same method as q026-q050)
+  - n=200: 100 more queries (q101-q200), all A2 auto with held-out 10% expert spot-check
+  - n=200 evaluation: rerun all v3.9.7.3 metrics, target significance threshold p<0.01
+- **Effort estimate**:
+  - n=100: 30-60 min user review (25 queries × 30-60 sec) + 30 min A2 auto + 10 min eval = ~2 hours
+  - n=200: 1-2 hour user review (50 queries) + 60 min A2 + 20 min eval = ~3-4 hours
+- **Global Rule check**: 5/5 pass
+- **Honest framing**: per memory discipline, even n=200 paired deltas are still noise for effect sizes <0.05. n=500+ is the real threshold for "finding" claims.
