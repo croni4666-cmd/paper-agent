@@ -162,7 +162,8 @@ def assemble_dataset(
         if not cond_dir.is_dir():
             continue
         for qfile in sorted(cond_dir.iterdir()):
-            if not qfile.is_file() or qfile.suffix != "":
+            # v3.9.7.3: accept both .json (current schema) and no-ext (legacy v3.9.0 era)
+            if not qfile.is_file() or qfile.suffix not in [".json", ""]:
                 continue
             qid = qfile.stem  # e.g. "q001"
             if not qid.startswith("q"):

@@ -1,0 +1,52 @@
+{
+  "version": "v3.9.7.3",
+  "config": {
+    "objective": "lambdarank",
+    "metric": "ndcg",
+    "n_estimators": 100,
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 5,
+    "feature_fraction": 0.9,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 5,
+    "label_gain": [
+      0,
+      1,
+      3
+    ],
+    "random_state": 42,
+    "verbose": -1
+  },
+  "n_queries": 50,
+  "n_labeled_pairs": 1258,
+  "n_folds": 5,
+  "cv_aggregate": {
+    "mean_ndcg_at_10": 0.7806357608831211,
+    "std_ndcg_at_10": 0.048021451105479736,
+    "mean_recall_at_10": 0.731123608417726,
+    "std_recall_at_10": 0.07893556081493305,
+    "mean_precision_at_10": 0.492,
+    "std_precision_at_10": 0.025612496949731407
+  },
+  "baseline_aggregate": {
+    "mean_ndcg_at_10": 0.8141140380979658,
+    "mean_recall_at_10": 0.7860112763053938,
+    "mean_precision_at_10": 0.51
+  },
+  "feature_importance": {
+    "bm25_score": 201.99378357455134,
+    "biencoder_score": 593.3999827791006,
+    "combined_score": 617.172966678813,
+    "prf_score": 164.56367006339133,
+    "log_cite_count": 233.32155048511922,
+    "year": 106.76159577853977,
+    "is_recent": 2.415450618416071,
+    "has_abstract": 22.553276289999484
+  },
+  "delta_ndcg_at_10": -0.03347827721484464,
+  "delta_recall_at_10": -0.05488766788766786,
+  "delta_precision_at_10": -0.018000000000000016,
+  "label_source": "n50_mixed (q001-q025 real + q026-q050 A2 auto)",
+  "note": "BGE feature importance may be inflated due to A2 auto-label circularity. Combined baseline unaffected (uses BM25 + biencoder only)."
+}

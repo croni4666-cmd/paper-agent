@@ -1,0 +1,276 @@
+{
+  "version": "v3.9.7.3",
+  "n_queries": 47,
+  "config": {
+    "n_estimators": 50,
+    "learning_rate": 0.05,
+    "num_leaves": 7,
+    "min_data_in_leaf": 3,
+    "max_features": 5000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "random_state": 42,
+    "verbose": -1,
+    "class_weight": "balanced",
+    "report_balanced_metrics": true
+  },
+  "label_distribution": {
+    "arxiv": 3,
+    "openalex": 24,
+    "s2": 0,
+    "crossref": 20,
+    "core": 0
+  },
+  "cv_aggregate": {
+    "mean_accuracy": 0.7444444444444445,
+    "std_accuracy": 0.14332902663641864,
+    "mean_balanced_accuracy": 0.7575,
+    "std_balanced_accuracy": 0.14917364974343753,
+    "mean_macro_f1": 0.6087542087542087,
+    "std_macro_f1": 0.14224351947468622
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 37,
+      "n_test": 10,
+      "accuracy": 0.9,
+      "balanced_accuracy": 0.9375,
+      "macro_f1": 0.8666666666666667,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 2
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.9333333333333333,
+          "support": 8
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": null,
+        "crossref": 0.875,
+        "core": null
+      }
+    },
+    {
+      "fold": 1,
+      "n_train": 37,
+      "n_test": 10,
+      "accuracy": 0.6,
+      "balanced_accuracy": 0.5333333333333333,
+      "macro_f1": 0.4444444444444444,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "openalex": {
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 3
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": 0.0,
+        "openalex": 0.6,
+        "s2": null,
+        "crossref": 1.0,
+        "core": null
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 38,
+      "n_test": 9,
+      "accuracy": 0.8888888888888888,
+      "balanced_accuracy": 0.9,
+      "macro_f1": 0.6296296296296297,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 0.8,
+        "s2": null,
+        "crossref": 1.0,
+        "core": null
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 38,
+      "n_test": 9,
+      "accuracy": 0.5555555555555556,
+      "balanced_accuracy": 0.6666666666666666,
+      "macro_f1": 0.5333333333333333,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 1
+        },
+        "openalex": {
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6,
+          "support": 6
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 2
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": 1.0,
+        "openalex": 0.5,
+        "s2": null,
+        "crossref": 0.5,
+        "core": null
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 38,
+      "n_test": 9,
+      "accuracy": 0.7777777777777778,
+      "balanced_accuracy": 0.75,
+      "macro_f1": 0.5696969696969697,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "support": 6
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 3
+        },
+        "core": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 0.8333333333333334,
+        "s2": null,
+        "crossref": 0.6666666666666666,
+        "core": null
+      }
+    }
+  ],
+  "note": "n=50 mixed labels: q001-q025 from v3.9.0 user era, q026-q050 from v3.9.7.3 A2 auto-labeling (keyword + BGE/biencoder tie-breaker). Auto labels are NOT expert-validated; treat as method-comparison tool only.",
+  "label_source": {
+    "q001-q025": "v3.9.0 era USER hand-labeled (real ground truth, ~741 pairs)",
+    "q026-q050": "v3.9.7.3 AUTO-labeled (A2 hybrid, ~600 pairs; NOT expert-validated)"
+  }
+}
