@@ -6,7 +6,7 @@ after 5 minutes of Cloudflare challenge failure, stop iterating and surface a
 reliable Cloudflare bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.7.1"
+__version__ = "3.9.7.2"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 

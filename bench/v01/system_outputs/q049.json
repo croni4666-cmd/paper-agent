@@ -1,0 +1,466 @@
+{
+  "query_id": "q049",
+  "query": "AI tutor K-12 teacher displacement employment evidence cross-country",
+  "generated_at": "2026-07-14T23:31:39",
+  "config": "v3.9.0-baseline-n50",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1093/pnasnexus/pgae191",
+      "title": "The impact of generative artificial intelligence on socioeconomic inequalities and policy making",
+      "abstract": "",
+      "year": 2024,
+      "venue": "PNAS Nexus",
+      "citation_count": 300,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.1145/3375627.3375804",
+      "title": "What's Next for AI Ethics, Policy, and Governance? A Global Overview",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Proceedings of the AAAI/ACM Conference on AI Ethics and Society",
+      "citation_count": 170,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.9734/ajarr/2024/v18i1596",
+      "title": "Proliferation of AI Tools: A Multifaceted Evaluation of User Perceptions and Emerging Trend",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Asian Journal of Advanced Research and Reports",
+      "citation_count": 79,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 4,
+      "doi": "10.61093/bel.8(2).107-127.2024",
+      "title": "Clarifying Ethical Dilemmas in Sharpening Students’ Artificial Intelligence Proficiency: Dispelling Myths About Using AI Tools in Higher Education",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Business Ethics and Leadership",
+      "citation_count": 34,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 5,
+      "doi": "10.58429/pgjsrt.v2n3a152",
+      "title": "Converging perspectives: Assessing AI readiness and utilization in Philippine higher education",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Polaris Global Journal of Scholarly Research and Trends",
+      "citation_count": 28,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 6,
+      "doi": "10.1080/0144929x.2025.2500451",
+      "title": "Bridging the gap: inequalities that divide those who can and cannot create sustainable outcomes with AI",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Behaviour and Information Technology",
+      "citation_count": 27,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 7,
+      "doi": "10.3390/systems13080664",
+      "title": "From Perception to Practice: Artificial Intelligence as a Pathway to Enhancing Digital Literacy in Higher Education Teaching",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Systems",
+      "citation_count": 19,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1007/s10639-025-13585-7",
+      "title": "Are university teachers ready for generative artificial intelligence? Unpacking faculty anxiety in the ChatGPT era",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_count": 18,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 9,
+      "doi": "10.1787/c2c1d276-en",
+      "title": "Artificial intelligence and employment",
+      "abstract": "",
+      "year": 2021,
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "citation_count": 13,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1787/34a2c306-en",
+      "title": "Working during COVID-19",
+      "abstract": "",
+      "year": 2020,
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "citation_count": 12,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report"
+    },
+    {
+      "rank": 11,
+      "doi": "10.1016/j.caeai.2025.100402",
+      "title": "A cross-country analysis of self-determination and continuance use intention of AI tools in business education: Does instructor support matter?",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Computers and Education Artificial Intelligence",
+      "citation_count": 7,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 12,
+      "doi": "10.1596/1813-9450-2102",
+      "title": "Self-Employment and Labor Turnover: Cross-Country Evidence",
+      "abstract": "",
+      "year": 1999,
+      "venue": "Policy Research Working Papers",
+      "citation_count": 4,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book"
+    },
+    {
+      "rank": 13,
+      "doi": "10.62486/latia2025249",
+      "title": "AI Integration in Education: A Correlational Study on Attitudes, Perceptions and Anxiety Among Pre-Service Teachers",
+      "abstract": "",
+      "year": 2025,
+      "venue": "LatIA",
+      "citation_count": 3,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 14,
+      "doi": "10.2139/ssrn.5303111",
+      "title": "Generative AI as a Global Productivity Equalizer: Evidence from Cross-Country Experiments",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content"
+    },
+    {
+      "rank": 15,
+      "doi": "10.2139/ssrn.6667599",
+      "title": "Technological Embeddedness and the Employment Effects of Innovation: Cross-Country Evidence",
+      "abstract": "<jats:p>Drawing on 65,701 firms across 131 countries, this paper examines how the employment effects of innovation vary with the technological contents of innovation. Using a dictionary-based text mining approach, two ordinal indicators are constructed to capture the degree of technology embeddedness within product and process innovation. The findings reveal that employment effects differ systematically by innovation type, technological embeddedness, and development context. Process innovation w",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content"
+    },
+    {
+      "rank": 16,
+      "doi": "10.2139/ssrn.5518178",
+      "title": "Democracy and AI Acceptance: Cross-Country Evidence",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content"
+    },
+    {
+      "rank": 17,
+      "doi": "10.2139/ssrn.6348618",
+      "title": "Minimum Wage and Employment Stickiness: Cross-Country Evidence",
+      "abstract": "<jats:p>We investigate whether increases in minimum wages reduce employment stickiness. Using a crosscountry panel dataset of statutory minimum wage changes, we find that increases in minimum wages are associated with a reduction in employment stickiness. Subsample analyses further show that our result is more pronounced among low-technology firms, financially distressed firms, and firms with low cash liquidity. Moreover, our result is stronger when minimum wage growth exceeds inflation and in c",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content"
+    },
+    {
+      "rank": 18,
+      "doi": "10.2139/ssrn.1655108",
+      "title": "Cross-Country Evidence on Teacher Performance Pay",
+      "abstract": "",
+      "year": null,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 19,
+      "doi": "10.2139/ssrn.1656793",
+      "title": "Cross-Country Evidence on Teacher Performance Pay",
+      "abstract": "",
+      "year": null,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 20,
+      "doi": "10.2139/ssrn.5327285",
+      "title": "Understanding Trust in AI as an Information Source: Cross-Country Evidence",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content"
+    },
+    {
+      "rank": 21,
+      "doi": "arXiv:2009.11100v1",
+      "title": "Engaging Teachers to Co-Design Integrated AI Curriculum for K-12 Classrooms",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 22,
+      "doi": "arXiv:2410.03017v2",
+      "title": "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 23,
+      "doi": "arXiv:2603.28944v2",
+      "title": "Faith in AI can narrow the futures individuals consider",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 24,
+      "doi": "arXiv:2104.01266v2",
+      "title": "Designing for human-AI complementarity in K-12 education",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 25,
+      "doi": "arXiv:2501.02842v1",
+      "title": "Foundations of GenIR",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 26,
+      "doi": "arXiv:2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 27,
+      "doi": "arXiv:2510.19196v1",
+      "title": "Integration of AI in STEM Education, Addressing Ethical Challenges in K-12 Settings",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 28,
+      "doi": "arXiv:2502.16613v1",
+      "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 29,
+      "doi": "arXiv:2505.08083v1",
+      "title": "LLMs to Support K-12 Teachers in Culturally Relevant Pedagogy: An AI Literacy Example",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 30,
+      "doi": "arXiv:1603.06024v1",
+      "title": "Connecting Three Pivotal Concepts in K-12 Science State Standards and Maps of Conceptual Growth to Research in Physics Education",
+      "abstract": "",
+      "year": 2016,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    }
+  ]
+}

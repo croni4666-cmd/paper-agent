@@ -1,0 +1,466 @@
+{
+  "query_id": "q034",
+  "query": "low GDP growth + aging + debt crisis combined policy response paths comparative Japan lost decades and current China",
+  "generated_at": "2026-07-14T23:31:39",
+  "config": "v3.9.0-baseline-n50",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.3386/w10481",
+      "title": "Institutions as the Fundamental Cause of Long-Run Growth",
+      "abstract": "",
+      "year": 2004,
+      "venue": "National Bureau of Economic Research",
+      "citation_count": 2032,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 2,
+      "doi": "10.2307/2534694",
+      "title": "It's Baaack: Japan's Slump and the Return of the Liquidity Trap",
+      "abstract": "",
+      "year": 1998,
+      "venue": "Brookings Papers on Economic Activity",
+      "citation_count": 1777,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 3,
+      "doi": "10.1086/230786",
+      "title": "Recombinant Property in East European Capitalism",
+      "abstract": "",
+      "year": 1996,
+      "venue": "American Journal of Sociology",
+      "citation_count": 979,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 4,
+      "doi": "10.2139/ssrn.985843",
+      "title": "Good Capitalism, Bad Capitalism, and the Economics of Growth and Prosperity",
+      "abstract": "",
+      "year": 2007,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 843,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 5,
+      "doi": "10.1257/jep.27.3.3",
+      "title": "The Top 1 Percent in International and Historical Perspective",
+      "abstract": "",
+      "year": 2013,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 836,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 6,
+      "doi": "10.1353/eca.2004.0018",
+      "title": "Ending Africa's Poverty Trap",
+      "abstract": "",
+      "year": 2004,
+      "venue": "Brookings Papers on Economic Activity",
+      "citation_count": 764,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 7,
+      "doi": "10.1016/s0140-6736(13)62407-1",
+      "title": "The political origins of health inequity: prospects for change",
+      "abstract": "",
+      "year": 2014,
+      "venue": "The Lancet",
+      "citation_count": 680,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 8,
+      "doi": "10.1111/dech.12570",
+      "title": "Industrial Policy in the 21st Century",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Development and Change",
+      "citation_count": 439,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 9,
+      "doi": "10.1080/02665433.2013.874299",
+      "title": "Taking path dependence seriously: an historical institutionalist research agenda in planning history",
+      "abstract": "",
+      "year": 2014,
+      "venue": "Planning Perspectives",
+      "citation_count": 299,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 10,
+      "doi": "10.1080/13608746.2018.1433478",
+      "title": "The Italian Welfare State in the Crisis: Learning to Adjust?",
+      "abstract": "",
+      "year": 2018,
+      "venue": "South European Society & Politics",
+      "citation_count": 84,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article"
+    },
+    {
+      "rank": 11,
+      "doi": "10.1163/2468-1733_shafr_sim280020462",
+      "title": "Lost Decades: The Making of America's Debt Crisis and the Long Recovery",
+      "abstract": "",
+      "year": null,
+      "venue": "The SHAFR Guide Online",
+      "citation_count": 11,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dataset"
+    },
+    {
+      "rank": 12,
+      "doi": "10.2139/ssrn.2990902",
+      "title": "GDP Growth, Private Debt and Monetary Policy",
+      "abstract": "",
+      "year": null,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 3,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article"
+    },
+    {
+      "rank": 13,
+      "doi": "10.1007/978-3-031-37755-6_9",
+      "title": "Government Debt-to-GDP Ratio, Investment Growth and Employment Growth, and Their Response to High Nominal GDP Growth Regimes",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Fiscal Policy Shocks and Macroeconomic Growth in South Africa",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 14,
+      "doi": "10.1057/9781137478757.0007",
+      "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
+      "abstract": "",
+      "year": null,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 15,
+      "doi": "10.1787/888932349536",
+      "title": "Figure 1.1. Comparison of pre-1997 crisis and years preceding the current downturn (a) CPI inflation, current account balance and fiscal balance, (b) Total external debt (percentage of GDP), (c) Short-term external debt (percentage of GDP)",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "component"
+    },
+    {
+      "rank": 16,
+      "doi": "10.1057/9781137478757_2",
+      "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
+      "abstract": "",
+      "year": 2015,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 17,
+      "doi": "10.4324/9781003415510-3",
+      "title": "Lost Decades",
+      "abstract": "",
+      "year": 2023,
+      "venue": "The Crisis in Pro Baseball and Japan’s Lost Decade",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 18,
+      "doi": "10.1057/9781137478757.0011",
+      "title": "Taiwan's Lost Decades",
+      "abstract": "",
+      "year": null,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 19,
+      "doi": "10.1057/9781137478757.0006",
+      "title": "Excessive Credits and the Lost Decades in Growth Performance",
+      "abstract": "",
+      "year": null,
+      "venue": "Lost Decades in Growth Performance",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 20,
+      "doi": "10.4324/9780203108253-14",
+      "title": "The second crisis: from private debt to public debt",
+      "abstract": "",
+      "year": 2013,
+      "venue": "Public Policy beyond the Financial Crisis",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter"
+    },
+    {
+      "rank": 21,
+      "doi": "arXiv:1808.01499v3",
+      "title": "Optimal Control of Debt-to-GDP Ratio in an N-state Regime Switching Economy",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 22,
+      "doi": "10.1109/TechDebt52882.2021.00017",
+      "title": "Business-Driven Technical Debt Prioritization: An Industrial Case Study",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 23,
+      "doi": "arXiv:1607.04153v3",
+      "title": "On the Optimal Management of Public Debt: a Singular Stochastic Control Problem",
+      "abstract": "",
+      "year": 2016,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 24,
+      "doi": "arXiv:2101.06478v1",
+      "title": "GDP Forecasting using Payments Transaction Data",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 25,
+      "doi": "10.3390/socsci11110522",
+      "title": "The Impact of National Culture on Innovation A Comparative Analysis between Developed and Developing Nations during the Pre and Post Crisis Period 2007_2021",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 26,
+      "doi": "arXiv:2407.02183v1",
+      "title": "How do financial variables impact public debt growth in China? An empirical study based on Markov regime-switching model",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 27,
+      "doi": "arXiv:2407.08986v1",
+      "title": "Exploring Generative AI Policies in Higher Education: A Comparative Perspective from China, Japan, Mongolia, and the USA",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 28,
+      "doi": "arXiv:1209.6369v1",
+      "title": "The European debt crisis: Defaults and market equilibrium",
+      "abstract": "",
+      "year": 2012,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 29,
+      "doi": "arXiv:2305.12318v1",
+      "title": "The Federal Reserve's Response to the Global Financial Crisis and Its Long-Term Impact: An Interrupted Time-Series Natural Experimental Analysis",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    },
+    {
+      "rank": 30,
+      "doi": "arXiv:2512.05063v2",
+      "title": "Debt, Growth, and the Carbon Lock-In",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint"
+    }
+  ]
+}

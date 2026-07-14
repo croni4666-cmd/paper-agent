@@ -1,6 +1,6 @@
 {
-  "version": "v0.1",
-  "schema_doc": "queries.json — 50 research questions spanning econ, ML/AI, biomedical, social, cross-disciplinary. Mix: 15 public + 10 v3.8.3-variant + 25 user-provided.",
+  "version": "v0.1+user-batch-q026-q050-2026-07-14",
+  "schema_doc": "queries.json — 50 research questions spanning econ, ML/AI, biomedical, social, cross-disciplinary. Mix: 15 public + 10 v3.8.3-variant + 25 user-provided. | n=50 (q001-q050, 25 user + 25 user)",
   "queries": [
     {
       "id": "q001",
@@ -143,7 +143,9 @@
       "topic_bucket": "econ",
       "source": "v3.8.3_variant",
       "difficulty_hint": "broad",
-      "expected_relevant_dois": ["10.1093/qje/qjy014"],
+      "expected_relevant_dois": [
+        "10.1093/qje/qjy014"
+      ],
       "notes": "Topic 1 variant — direct from v3.8.3 real-corpus test"
     },
     {
@@ -215,7 +217,10 @@
       "topic_bucket": "econ",
       "source": "v3.8.3_variant",
       "difficulty_hint": "rare_terms",
-      "expected_relevant_dois": ["10.1257/jep.33.2.3", "10.1093/restud/rdx081"],
+      "expected_relevant_dois": [
+        "10.1257/jep.33.2.3",
+        "10.1093/restud/rdx081"
+      ],
       "notes": "Specific author + model name — should find 2-3 canonical papers"
     },
     {
@@ -229,228 +234,228 @@
     },
     {
       "id": "q026",
-      "query": "[USER-PROVIDED SLOT 1: replace with your real research question]",
-      "topic_bucket": "econ",
+      "query": "自然语言处理中对于细致情绪状态的划分，以及情绪转换矩阵 (譬如：羡慕转化成嫉妒再转化成生气等等)",
+      "topic_bucket": "ml",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "technical",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text with your actual research question. Aim for 25 such slots."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q027",
-      "query": "[USER-PROVIDED SLOT 2: replace with your real research question]",
+      "query": "数据处理中对于文本的情绪连续性与媒体刺激物之间的关系 (譬如：如何提取两者的特征，证明它们的因果关系)",
       "topic_bucket": "ml",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "technical",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q028",
-      "query": "[USER-PROVIDED SLOT 3]",
-      "topic_bucket": "econ",
+      "query": "珀尔的因果图的相关前沿研究",
+      "topic_bucket": "ml",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q029",
-      "query": "[USER-PROVIDED SLOT 4]",
-      "topic_bucket": "cross",
+      "query": "我们自己做的 paper agent 如何提升其效能，采用哪些模型",
+      "topic_bucket": "ml",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "methodology",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q030",
-      "query": "[USER-PROVIDED SLOT 5]",
-      "topic_bucket": "econ",
+      "query": "表格基础模型的教育应用 (如何降低经济学学生学习数据分析的难度)",
+      "topic_bucket": "ml",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "technical",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q031",
-      "query": "[USER-PROVIDED SLOT 6]",
+      "query": "新能源汽车销售与国际原油价格的 Granger 因果 / SVAR 检验",
       "topic_bucket": "econ",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "methodology",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q032",
-      "query": "[USER-PROVIDED SLOT 7]",
-      "topic_bucket": "ml",
+      "query": "东数西算当前实行情况如何？究竟有多少互联网企业使用这种方案？东数东算的条件成熟吗？",
+      "topic_bucket": "econ",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q033",
-      "query": "[USER-PROVIDED SLOT 8]",
+      "query": "gig economy workforce growth impact on social insurance systems comparative OECD and China",
       "topic_bucket": "econ",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q034",
-      "query": "[USER-PROVIDED SLOT 9]",
-      "topic_bucket": "cross",
+      "query": "low GDP growth + aging + debt crisis combined policy response paths comparative Japan lost decades and current China",
+      "topic_bucket": "econ",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q035",
-      "query": "[USER-PROVIDED SLOT 10]",
+      "query": "人工智能究竟是取代劳动力造成大量失业，还是最终会产生大量新的工作岗位 (Acemoglu Restrepo anchor)",
       "topic_bucket": "econ",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q036",
-      "query": "[USER-PROVIDED SLOT 11]",
-      "topic_bucket": "econ",
+      "query": "gig economy worker consumption behavior savings rate risk preference cross-country",
+      "topic_bucket": "cross",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q037",
-      "query": "[USER-PROVIDED SLOT 12]",
-      "topic_bucket": "ml",
+      "query": "economic decline induced psychological change and behavioral shift comparative Japan lost decades and Mexico crisis social trust",
+      "topic_bucket": "cross",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "methodology",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q038",
-      "query": "[USER-PROVIDED SLOT 13]",
-      "topic_bucket": "econ",
+      "query": "终极意义上，人工智能是否会永久改变人类价值观的改变 (AI alignment human values game theory anchor)",
+      "topic_bucket": "cross",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q039",
-      "query": "[USER-PROVIDED SLOT 14]",
+      "query": "北美基督教是否真的褪色了？马克思韦伯的工作伦理是否仍然支撑当前的美国社会？",
       "topic_bucket": "cross",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q040",
-      "query": "[USER-PROVIDED SLOT 15]",
-      "topic_bucket": "econ",
+      "query": "sugar-sweetened beverage (SSB) consumption health effects obesity Chinese cohort, China bubble tea brand case studies",
+      "topic_bucket": "cross",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q041",
-      "query": "[USER-PROVIDED SLOT 16]",
-      "topic_bucket": "econ",
+      "query": "肝豆状核性变的研究综述以及患者生存概率追溯 (Wilson's disease)",
+      "topic_bucket": "bio",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q042",
-      "query": "[USER-PROVIDED SLOT 17]",
-      "topic_bucket": "ml",
+      "query": "干燥综合症的原因以及干燥综合症如何保养 (Sjögren's syndrome)",
+      "topic_bucket": "bio",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q043",
-      "query": "[USER-PROVIDED SLOT 18]",
-      "topic_bucket": "econ",
+      "query": "地中海贫血因子携带者对于身体的影响 (thalassemia trait carrier)",
+      "topic_bucket": "bio",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q044",
-      "query": "[USER-PROVIDED SLOT 19]",
-      "topic_bucket": "cross",
+      "query": "糖前期患者的阻止发展以及回退策略 (prediabetes reversal interventions lifestyle metformin RCT)",
+      "topic_bucket": "bio",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "rare_terms",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q045",
-      "query": "[USER-PROVIDED SLOT 20]",
-      "topic_bucket": "econ",
+      "query": "减肥食谱以及断食科学性综述 (intermittent fasting vs calorie restriction weight loss RCT)",
+      "topic_bucket": "bio",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "methodology",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q046",
-      "query": "[USER-PROVIDED SLOT 21]",
-      "topic_bucket": "econ",
+      "query": "aging society companion robot social attachment rejection comparative Japan South Korea Europe",
+      "topic_bucket": "social",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "technical",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q047",
-      "query": "[USER-PROVIDED SLOT 22]",
-      "topic_bucket": "ml",
+      "query": "恋爱综艺节目或者二次元擦边手机游戏 (包括男性和女性) 会促进婚恋吗？机理研究 媒体是否有效 情感分析",
+      "topic_bucket": "social",
       "source": "user",
-      "difficulty_hint": "broad",
+      "difficulty_hint": "methodology",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q048",
-      "query": "[USER-PROVIDED SLOT 23]",
-      "topic_bucket": "econ",
+      "query": "全民基本收入是否会滋生懒汉心理 (UBI Finland Kenya experiment anchor)",
+      "topic_bucket": "social",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q049",
-      "query": "[USER-PROVIDED SLOT 24]",
-      "topic_bucket": "cross",
+      "query": "AI tutor K-12 teacher displacement employment evidence cross-country",
+      "topic_bucket": "social",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     },
     {
       "id": "q050",
-      "query": "[USER-PROVIDED SLOT 25]",
-      "topic_bucket": "econ",
+      "query": "当前社会形态是否比 20 世纪带给人们更多精神疾病 (mental illness prevalence 1990-2020 cohort meta)",
+      "topic_bucket": "social",
       "source": "user",
       "difficulty_hint": "broad",
       "expected_relevant_dois": [],
-      "notes": "Replace placeholder text."
+      "notes": "(q026-q050 batch by user 2026-07-14, v3 commonality extension; CNKI integration pending [P0-9])"
     }
   ]
 }
