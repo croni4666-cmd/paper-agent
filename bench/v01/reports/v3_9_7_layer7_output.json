@@ -1,0 +1,304 @@
+{
+  "per_candidate": [
+    {
+      "qid": "q001",
+      "doi": "10.1007/s40593-014-0023-y",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_1007_s40593-014-0023-y.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7575,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 19.991067081281955,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7575.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q001",
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_1016_j_compedu_2023_104967.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7238,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 18.555553870442413,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7238.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q001",
+      "doi": "10.58631/injurity.v2i3.52",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_58631_injurity_v2i3_52.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 27600,
+        "fulltext_length_words": 3761,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 20.298872108523486,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 3761.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1007/978-3-030-01177-2.12",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1007_978-3-030-01177-2_12.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 41971,
+        "fulltext_length_words": 6883,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 10.23387135099707,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 6883.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1109/cvpr.2009.5206529",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1109_cvpr_2009_5206529.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 33874,
+        "fulltext_length_words": 5556,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 9.34049645876297,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 5556.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q003",
+      "doi": "10.18653/v1.2021.naacl-main.241",
+      "title": "(reconstructed from cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_18653_v1_2021_naacl-main_241.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 44324,
+        "fulltext_length_words": 7059,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 10.598235988734725,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7059.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1016/j.jebo.2020.07.014.scihub",
+      "title": "(reconstructed from manual_retry cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1016_j_jebo_2020_07_014_scihub.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 8312,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 14.18992507206575,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 8312.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1111/j.1467-9914.2007.00378.x.scihub",
+      "title": "(reconstructed from manual_retry cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1111_j_1467-9914_2007_00378_x_scihub.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 8069,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 13.281207098048394,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 8069.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1109/icdar.2013.114.scihub",
+      "title": "(reconstructed from manual_retry cache)",
+      "source": "auto",
+      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q003\\10_1109_icdar_2013_114_scihub.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 24373,
+        "fulltext_length_words": 4053,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 8.646017804261552,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 4053.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q001",
+      "doi": "10.1186/s41239-021-00292-9",
+      "title": "The impact of artificial intelligence on learner–instructor interaction",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1186_s41239-021-00292-9.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7597,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 18.03416841010166,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7597.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q001",
+      "doi": "10.1001/jamanetworkopen.2021.49008",
+      "title": "Effect of AI Tutoring vs Expert Instruction",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1001_jamanetworkopen_2021_49008.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7078,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 18.241991490292794,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7078.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q001",
+      "doi": "10.3390/su151612451",
+      "title": "New Era of Artificial Intelligence in Education",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_3390_su151612451.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7330,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 20.70096664987675,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7330.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1093/oxrep/graa051",
+      "title": "Do technological advances reduce the gender wage gap",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1093_oxrep_graa051.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7611,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 14.787129112774382,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7611.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q002",
+      "doi": "10.5089/9781498303743.001",
+      "title": "Is Technology Widening the Gender Gap?",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_5089_9781498303743_001.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7096,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 13.724606350940071,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7096.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q002",
+      "doi": "10.1037/e686432011-001",
+      "title": "Separate and Not Equal? Gender Segregation",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1037_e686432011-001.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 50000,
+        "fulltext_length_words": 7559,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 11.64825329811633,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7559.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    },
+    {
+      "qid": "q003",
+      "doi": "10.1145/3488560.3498443",
+      "title": "Learning Discrete Representations via Constrained Clustering",
+      "source": "user_manual",
+      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1145_3488560_3498443.pdf",
+      "fulltext_extracted": true,
+      "fulltext_features": {
+        "fulltext_length_chars": 49111,
+        "fulltext_length_words": 7326,
+        "abstract_length_words": 0,
+        "fulltext_bm25": 11.89435359149319,
+        "abstract_bm25": 0.0,
+        "fulltext_to_abstract_ratio": 7326.0,
+        "fulltext_citation_density": 0.0,
+        "fulltext_venue_score": 0.0
+      }
+    }
+  ],
+  "stage1_summary": {
+    "n_queries": 5,
+    "top_k_per_query": 10,
+    "n_total_candidates": 24,
+    "n_auto_downloaded": 9,
+    "n_manual_needed": 15,
+    "auto_pct": 37.5
+  },
+  "manual_downloads_md": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_downloads_v397_reconstructed.md",
+  "user_pdf_dir": "C:\\Users\\DengN\\Downloads\\manual_pdfs",
+  "n_fulltext_extracted": 16,
+  "n_total_candidates": 16
+}
