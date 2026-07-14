@@ -1947,4 +1947,59 @@ User 2026-07-13 提出新增 Layer 6-7 (post-download full-text deep rerank),将
 
 ---
 
+#### 2026-07-14 status: v3.9.7 patch — Layer 7 query lookup + user-PDF slug match + A/B/C substitute audit
+
+Per user "重试 / 走 A+B / 把你能做的先跑" (2026-07-14 11:46), closed two
+silent Layer 7 bugs that v3.9.5 → v3.9.6 shipped with.
+
+**Bug fix 1 — `stage2_fulltext_rerank` query lookup**:
+- Before v3.9.7: `query=""` hardcoded in `compute_fulltext_features` call → `fulltext_bm25` was
+  always 0.0 in `deep_rerank_<ts>.json`
+- After v3.9.7: added `_load_queries_lookup(bench_dir)` helper that reads `bench/v01/queries.json`
+  and passes real query text to BM25
+- Verified: Layer 7 BM25 now 8.65–20.70 (real), matches v3.9.5.3 external-script range 8.65–20.30 within ±0.5
+
+**Bug fix 2 — user-PDF filename convention**:
+- Before v3.9.7: 6 user-downloaded PDFs in `manual_pdfs/` named `q001_10.1001_jamanetworkopen.2021.49008.pdf`
+  - `stage2_fulltext_rerank` lookup: `user_pdfs[doi_slug]` where `doi_slug = doi.replace("/", "_").replace(".", "_")`
+  - **None of the 6 user PDFs were ever read by Layer 7** (slug mismatch bug)
+- After v3.9.7: 6 user PDFs renamed to canonical `10_<...>.pdf` format
+  - All 6 q00X + A 2014 substitute are now consumed by Layer 7 (16/16 candidates with full text)
+
+**A/B/C substitute honest audit** (per CHANGELOG v3.9.7 + 3-tier report `v3_9_7_three_tier_audit.md`):
+- **A — Hegewisch & Hartmann 2014** (706 KB) — ✅ User manual download, real PDF
+  - Renamed → `10_1037_e686432011-001.pdf` to substitute for missing Hegewisch 2010 paper
+  - BM25=11.65 (lower than q002 peer range 13.28–14.79); 2014 is a continuation paper, not 2010 verbatim
+  - Caveat: BM25 likely biased down by 2-3; re-rank lift is conservative estimate
+- **B — Liepmann & Hegewisch 2025** (SSRN `10.2139/ssrn.5858331` / ILO `10.54394/ygcl5095`) — ❌ NOT in `manual_pdfs/`
+  - SSRN blocked by Incapsula; user manual save produced 5.7 KB Cloudflare HTML, not real PDF
+  - 8-channel cascade fails on Altcha/Incapsula + click-to-download (see agent memory `expect_download` blind spot)
+  - Did not contribute to Layer 7; for future: needs SSRN/ILO as 6th-7th search engine in v3.9.0 candidate pool
+- **C — IWPR #C395 (Hegewisch 2012)** (132 KB) — ✅ Auto curl + clash proxy
+  - Saved to `manual_pdfs/iwpr_alt_C395_hegewisch2012.pdf`
+  - IWPR uses internal numbering #C395, not a DOI → `stage2_fulltext_rerank` cannot map to any `manual_needed` entry
+  - Not consumed by Layer 7; for future: needs `doi_alias_map.json` (~1-hour patch)
+
+**v3.9.7 still BLOCKED on**:
+- q026-q050 user-provided queries (still missing, blocks n=50 re-evaluations)
+- Re-fit LTR with 12 features (8 existing + 4 full-text) to measure actual re-rank lift
+- Implementation of `fulltext_cross_encoder`, `fulltext_citation_density`, `fulltext_venue_score`
+  features (all currently return 0.0)
+- BGE-reranker on full text (current code uses 2000 char limit; needs chunk-aggregate for true full-text)
+
+**Files**:
+- Modified: `pa_cli/deep_rerank.py` (~30 LOC, query lookup fix)
+- Modified: `pa_cli/__init__.py` (version 3.9.6 → 3.9.7)
+- Modified: `CHANGELOG.md` (v3.9.7 entry)
+- Created: `bench/v01/reports/v3_9_7_deep_rerank_layer7.md` (frame report)
+- Created: `bench/v01/reports/v3_9_7_layer7_output.json` (full stage2 JSON)
+- Created: `bench/v01/reports/v3_9_7_three_tier_audit.md` (3-tier honest audit)
+- Created: `test_output/_run_stage2_only_v397.py` (reconstruction script — skips stage1 fetch cascade)
+- Renamed: 6 user PDFs in `manual_pdfs/` to canonical doi_slug format
+- Renamed: A 2014 (`Occupational_Segregation_and_the_Gender_Wage_Gap-A_Job_Half_Done.pdf` → `10_1037_e686432011-001.pdf`)
+- Trashed: 7 placeholder files in `manual_pdfs/` (Cloudflare HTML / 222-byte UNT URL placeholders)
+- Trashed: 2 BM25=0 v3.9.7 first-run reports (kept only the BM25-real one)
+
+---
+
 #### 2026-07-13 status: [P0-6] LTR, [P0-7] Cross-encoder, [P1-11] MoE router SHIPPED

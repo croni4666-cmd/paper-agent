@@ -319,6 +319,29 @@ def _simple_bm25(query: str, text: str, k1: float = 1.5, b: float = 0.75) -> flo
     return score
 
 
+def _load_queries_lookup(bench_dir: Optional[Path] = None) -> dict:
+    """Load queries.json and return {qid: query_text} dict.
+
+    Tries bench_dir/queries.json first, then walks up to find it.
+    """
+    candidates = []
+    if bench_dir is not None:
+        candidates.append(bench_dir / "queries.json")
+        candidates.append(bench_dir.parent / "queries.json")
+    # fallback: relative to this file's repo
+    repo_root = Path(__file__).resolve().parent.parent
+    candidates.append(repo_root / "bench" / "v01" / "queries.json")
+    for c in candidates:
+        if c.exists():
+            try:
+                obj = json.loads(c.read_text(encoding="utf-8"))
+                qs = obj.get("queries", [])
+                return {q["id"]: q.get("query", "") for q in qs if "id" in q}
+            except Exception:
+                continue
+    return {}
+
+
 def stage2_fulltext_rerank(
     stage1_result: dict,
     user_pdf_dir: Optional[Path],
@@ -342,6 +365,10 @@ def stage2_fulltext_rerank(
         print("[Layer 7] PyMuPDF not installed; install with: pip install pymupdf")
         print("[Layer 7] Skipping full-text feature extraction")
 
+    # v3.9.7: load queries so BM25 is computed against actual query text, not "".
+    # This is the Layer 7 honest metric — fulltext_bm25 was hardcoded 0 in v3.9.5+.
+    queries_lookup = _load_queries_lookup()
+
     auto_pdfs = stage1_result["auto_downloaded"]
     user_pdfs = {}
     if user_pdf_dir and user_pdf_dir.exists():
@@ -353,8 +380,9 @@ def stage2_fulltext_rerank(
     for entry in auto_pdfs:
         saved_as = Path(entry["saved_as"])
         fulltext = extract_fulltext(saved_as) if saved_as.exists() else None
+        q_text = queries_lookup.get(entry["qid"], "")
         ft_features = compute_fulltext_features(
-            query="",  # query is in qid, would need lookup
+            query=q_text,
             fulltext=fulltext or "",
             abstract="",
             citation_count=0,  # would need lookup from labels_data
@@ -378,8 +406,9 @@ def stage2_fulltext_rerank(
         if doi_slug in user_pdfs:
             pdf = user_pdfs[doi_slug]
             fulltext = extract_fulltext(pdf)
+            q_text = queries_lookup.get(entry["qid"], "")
             ft_features = compute_fulltext_features(
-                query="",
+                query=q_text,
                 fulltext=fulltext or "",
                 abstract="",
                 citation_count=0,
