@@ -1,0 +1,586 @@
+{
+  "query_id": "q033",
+  "query": "gig economy workforce growth impact on social insurance systems comparative OECD and China",
+  "generated_at": "2026-07-14T23:52:55",
+  "config": "v4-combined-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.66038/iderj-25-001",
+      "title": "Examining the Gig Economy and Clean Energy Impact on Economic Growth and Welfare in OECD Countries",
+      "abstract": "",
+      "year": null,
+      "venue": "Institutions and Development Research Journal",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.880384,
+      "bm25_score": 6.9003,
+      "biencoder_score": 0.5202
+    },
+    {
+      "rank": 2,
+      "doi": "10.66038/iderj-25-005",
+      "title": "Examining the Gig Economy and Clean Energy Impact on Economic Growth and Welfare in OECD Countries",
+      "abstract": "",
+      "year": null,
+      "venue": "Institutions and Development Research Journal",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 19,
+      "v4_score": 0.880384,
+      "bm25_score": 6.9003,
+      "biencoder_score": 0.5202
+    },
+    {
+      "rank": 3,
+      "doi": "10.1057/s41599-024-04172-1",
+      "title": "The widening gender wage gap in the gig economy in China: the impact of digitalisation",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_count": 15,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.754855,
+      "bm25_score": 5.4187,
+      "biencoder_score": 0.4969
+    },
+    {
+      "rank": 4,
+      "doi": "arXiv:1803.07509v2",
+      "title": "Workforce migration and its economic implications: A perspective from social media in China",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 23,
+      "v4_score": 0.732366,
+      "bm25_score": 6.0616,
+      "biencoder_score": 0.4084
+    },
+    {
+      "rank": 5,
+      "doi": "10.1787/51825505-en",
+      "title": "The Impact of the Growth of the Sharing and Gig Economy on VAT/GST Policy and Administration",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 9,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "monograph",
+      "orig_rank": 11,
+      "v4_score": 0.723409,
+      "bm25_score": 4.738,
+      "biencoder_score": 0.5198
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:2001.02863v1",
+      "title": "China's First Workforce Skill Taxonomy",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 29,
+      "v4_score": 0.688132,
+      "bm25_score": 5.8189,
+      "biencoder_score": 0.3742
+    },
+    {
+      "rank": 7,
+      "doi": "10.32469/10355/104941",
+      "title": "The gig economy and social insurance systems : public opinion, policy analysis, and policy design",
+      "abstract": "<jats:p xml:lang=\"en\">My dissertation focuses on the mismatch of the current welfare system designed for the traditional employment model with the increase in new forms of employment. With technological advancements, the labor market has seen an increase in non-standard workers. Despite the increase of new precarious workers from the technology transformation, we know less about how to align the labor market change with the social welfare system, and how the politics of welfare policy about the ",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dissertation",
+      "orig_rank": 16,
+      "v4_score": 0.67164,
+      "bm25_score": 2.3687,
+      "biencoder_score": 0.6734
+    },
+    {
+      "rank": 8,
+      "doi": "10.4337/9781800372375.00012",
+      "title": "Conclusion: The rise and growth of the gig economy. Challenges and opportunities for social dialogue and decent work",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Social Dialogue in the Gig Economy",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 12,
+      "v4_score": 0.577074,
+      "bm25_score": 3.9657,
+      "biencoder_score": 0.404
+    },
+    {
+      "rank": 9,
+      "doi": "arXiv:2212.02119v1",
+      "title": "Digital leisure and the gig economy: a two-sector model of growth",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 24,
+      "v4_score": 0.559952,
+      "bm25_score": 3.4676,
+      "biencoder_score": 0.4283
+    },
+    {
+      "rank": 10,
+      "doi": "",
+      "title": "The impact of new technologies on the labour market and the social economy",
+      "abstract": "",
+      "year": 2017,
+      "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
+      "citation_count": 55,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.528456,
+      "bm25_score": 3.4901,
+      "biencoder_score": 0.3859
+    },
+    {
+      "rank": 11,
+      "doi": "10.4337/9781800372375.00007",
+      "title": "The gig economy and social partnership in Germany: towards a German Model 4.0?",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Social Dialogue in the Gig Economy",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 18,
+      "v4_score": 0.489237,
+      "bm25_score": 2.7156,
+      "biencoder_score": 0.4075
+    },
+    {
+      "rank": 12,
+      "doi": "10.1111/issr.12212",
+      "title": "Social protection systems and the future of work: Ensuring social security for digital platform workers",
+      "abstract": "",
+      "year": 2019,
+      "venue": "International Social Security Review",
+      "citation_count": 126,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.481431,
+      "bm25_score": 3.2581,
+      "biencoder_score": 0.3471
+    },
+    {
+      "rank": 13,
+      "doi": "10.1109/TPWRS.2022.3164628",
+      "title": "A Novel Mutual Insurance Model for Hedging Against Cyber Risks in Power Systems Deploying Smart Technologies",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 0.479623,
+      "bm25_score": 3.8449,
+      "biencoder_score": 0.2903
+    },
+    {
+      "rank": 14,
+      "doi": "10.4337/9781800372375.00008",
+      "title": "Social partnership and the rise of the gig economy in Greece: continuity or discontinuity?",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Social Dialogue in the Gig Economy",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 13,
+      "v4_score": 0.478099,
+      "bm25_score": 2.7156,
+      "biencoder_score": 0.3932
+    },
+    {
+      "rank": 15,
+      "doi": "10.62823/mgm/9789349468719/13",
+      "title": "Impact of Social Media on the Gig Economy",
+      "abstract": "<jats:p>Social media has reshaped the landscape of the gig economy by influencing how independent workers find work, build credibility, collaborate, and advocate for better working conditions. Through platforms such as Facebook, Instagram, WhatsApp, and LinkedIn, gig workers promote services, engage with clients, and form support networks. However, these platforms also raise concerns around data surveillance, algorithmic control, digital exclusion, and reputational dependence. International inst",
+      "year": null,
+      "venue": "Unlocking the Gig Economy in India",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 20,
+      "v4_score": 0.446509,
+      "bm25_score": 2.0789,
+      "biencoder_score": 0.4119
+    },
+    {
+      "rank": 16,
+      "doi": "10.5040/9798881813406.ch-2",
+      "title": "Governing the Workforce",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Digital Working Lives",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "other",
+      "orig_rank": 14,
+      "v4_score": 0.396214,
+      "bm25_score": 3.4629,
+      "biencoder_score": 0.2189
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:1402.5300v2",
+      "title": "Purchasing Life Insurance to Reach a Bequest Goal",
+      "abstract": "",
+      "year": 2014,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 30,
+      "v4_score": 0.377152,
+      "bm25_score": 2.7623,
+      "biencoder_score": 0.2596
+    },
+    {
+      "rank": 18,
+      "doi": "10.1787/9a816d0e-en",
+      "title": "Jeremias Prassl on the gig economy",
+      "abstract": "",
+      "year": null,
+      "venue": "OECD Podcasts",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "dataset",
+      "orig_rank": 17,
+      "v4_score": 0.373847,
+      "bm25_score": 2.0471,
+      "biencoder_score": 0.3217
+    },
+    {
+      "rank": 19,
+      "doi": "10.5771/0935-9915-2017-3-298",
+      "title": "How Big is the Gig? Assessing the Preliminary Evidence on the Effects of Digitalization on the Labor Market",
+      "abstract": "",
+      "year": 2017,
+      "venue": "management revue",
+      "citation_count": 83,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.371745,
+      "bm25_score": 0.8003,
+      "biencoder_score": 0.4348
+    },
+    {
+      "rank": 20,
+      "doi": "arXiv:2606.19975v1",
+      "title": "The Algorithmic-Human Manager: AI, Apps, and Workers in the Indian Gig Economy",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 28,
+      "v4_score": 0.298445,
+      "bm25_score": 1.5976,
+      "biencoder_score": 0.2668
+    },
+    {
+      "rank": 21,
+      "doi": "10.1007/978-3-540-87781-3_40",
+      "title": "Social Recommendations within the Multimedia Sharing Systems",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 25,
+      "v4_score": 0.283008,
+      "bm25_score": 3.5942,
+      "biencoder_score": 0.0617
+    },
+    {
+      "rank": 22,
+      "doi": "",
+      "title": "Platform-Living: Theorizing life, work, and ethical living after the gig economy",
+      "abstract": "",
+      "year": 2020,
+      "venue": "eScholarship (California Digital Library)",
+      "citation_count": 11,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.282599,
+      "bm25_score": 1.5304,
+      "biencoder_score": 0.2528
+    },
+    {
+      "rank": 23,
+      "doi": "10.1145/3624981",
+      "title": "Post-growth Human–Computer Interaction",
+      "abstract": "",
+      "year": 2023,
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "citation_count": 90,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.248007,
+      "bm25_score": 2.0837,
+      "biencoder_score": 0.1571
+    },
+    {
+      "rank": 24,
+      "doi": "10.1016/j.techfore.2023.122448",
+      "title": "Automation technologies and their impact on employment: A review, synthesis and future research agenda",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Technological Forecasting and Social Change",
+      "citation_count": 158,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.242752,
+      "bm25_score": 1.4227,
+      "biencoder_score": 0.2117
+    },
+    {
+      "rank": 25,
+      "doi": "10.1515/npf-2020-0016",
+      "title": "The Impact of Neoliberalism on Civil Society and Nonprofit Advocacy",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Nonprofit Policy Forum",
+      "citation_count": 58,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.231076,
+      "bm25_score": 1.6386,
+      "biencoder_score": 0.1767
+    },
+    {
+      "rank": 26,
+      "doi": "10.1109/TSMCA.2011.2132707",
+      "title": "Multidimensional Social Network in the Social Recommender System",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 0.177762,
+      "bm25_score": 1.5269,
+      "biencoder_score": 0.1188
+    },
+    {
+      "rank": 27,
+      "doi": "10.6092/issn.1971-8853/12221",
+      "title": "Algorithmic Management in the Platform Economy",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Warwick Research Archive Portal (University of Warwick)",
+      "citation_count": 68,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.156541,
+      "bm25_score": 0.9766,
+      "biencoder_score": 0.1427
+    },
+    {
+      "rank": 28,
+      "doi": "10.1007/978-3-319-77332-2_13",
+      "title": "Measuring social spam and the effect of bots on information diffusion in social media",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 26,
+      "v4_score": 0.143394,
+      "bm25_score": 1.3872,
+      "biencoder_score": 0.0877
+    },
+    {
+      "rank": 29,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2214,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.112673,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1771
+    },
+    {
+      "rank": 30,
+      "doi": "10.1109/TCSS.2022.3140779",
+      "title": "Modeling Influencer Marketing Campaigns in Social Networks",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 27,
+      "v4_score": 0.083345,
+      "bm25_score": 1.1502,
+      "biencoder_score": 0.0328
+    }
+  ]
+}

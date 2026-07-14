@@ -1,0 +1,586 @@
+{
+  "query_id": "q036",
+  "query": "gig economy worker consumption behavior savings rate risk preference cross-country",
+  "generated_at": "2026-07-14T23:52:19",
+  "config": "v4-biencoder-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "arXiv:2511.03142v4",
+      "title": "A Theory of Saving under Risk Preference Dynamics",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 29,
+      "v4_score": 0.577589,
+      "bm25_score": 5.4517,
+      "biencoder_score": 0.5776
+    },
+    {
+      "rank": 2,
+      "doi": "10.1201/9781003462897-4",
+      "title": "Worker Well-being and Safety in the Gig Economy",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Worker Well-being, Human Factors and the Gig Economy",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 14,
+      "v4_score": 0.51847,
+      "bm25_score": 4.07,
+      "biencoder_score": 0.5185
+    },
+    {
+      "rank": 3,
+      "doi": "10.1257/aer.20190388",
+      "title": "Job Displacement Insurance and (the Lack of) Consumption-Smoothing",
+      "abstract": "",
+      "year": 2021,
+      "venue": "American Economic Review",
+      "citation_count": 104,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.485068,
+      "bm25_score": 2.8849,
+      "biencoder_score": 0.4851
+    },
+    {
+      "rank": 4,
+      "doi": "arXiv:2103.13234v1",
+      "title": "Evolutionary Dynamics of Gig Economy Labor Strategies under Technology, Policy and Market Influence",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 24,
+      "v4_score": 0.45054,
+      "bm25_score": 1.6765,
+      "biencoder_score": 0.4505
+    },
+    {
+      "rank": 5,
+      "doi": "10.1145/3563657.3595982",
+      "title": "Navigating Multi-Stakeholder Incentives and Preferences: Co-Designing Alternatives for the Future of Gig Worker Well-Being",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 23,
+      "v4_score": 0.418483,
+      "bm25_score": 1.8825,
+      "biencoder_score": 0.4185
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:1002.2486v1",
+      "title": "Optimal consumption and investment with bounded downside risk measures for logarithmic utility functions",
+      "abstract": "",
+      "year": 2010,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 25,
+      "v4_score": 0.40784,
+      "bm25_score": 3.904,
+      "biencoder_score": 0.4078
+    },
+    {
+      "rank": 7,
+      "doi": "10.1201/9781003462897-6",
+      "title": "Ageing and Well-being in the Gig Economy",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Worker Well-being, Human Factors and the Gig Economy",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 17,
+      "v4_score": 0.402416,
+      "bm25_score": 2.5014,
+      "biencoder_score": 0.4024
+    },
+    {
+      "rank": 8,
+      "doi": "10.1201/9781003462897-5",
+      "title": "Social Reproduction in (and of) the Gig Economy",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Worker Well-being, Human Factors and the Gig Economy",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 16,
+      "v4_score": 0.399098,
+      "bm25_score": 2.5014,
+      "biencoder_score": 0.3991
+    },
+    {
+      "rank": 9,
+      "doi": "10.4337/9781800883512.00012",
+      "title": "The law and worker voice in the gig economy",
+      "abstract": "",
+      "year": 2022,
+      "venue": "A Research Agenda for the Gig Economy and Society",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 19,
+      "v4_score": 0.398204,
+      "bm25_score": 4.07,
+      "biencoder_score": 0.3982
+    },
+    {
+      "rank": 10,
+      "doi": "10.1007/s11628-020-00432-7",
+      "title": "The role of customers in the gig economy: how perceptions of working conditions and service quality influence the use and recommendation of food delivery services",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Service Business",
+      "citation_count": 87,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.378159,
+      "bm25_score": 1.3568,
+      "biencoder_score": 0.3782
+    },
+    {
+      "rank": 11,
+      "doi": "10.4324/9781003161875-16",
+      "title": "Worker solidarity among gig and precarious workers",
+      "abstract": "",
+      "year": 2022,
+      "venue": "The Routledge Handbook of the Gig Economy",
+      "citation_count": 8,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 11,
+      "v4_score": 0.329872,
+      "bm25_score": 2.5786,
+      "biencoder_score": 0.3299
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:1710.05204v2",
+      "title": "Sequential Design and Spatial Modeling for Portfolio Tail Risk Measurement",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 0.325474,
+      "bm25_score": 1.764,
+      "biencoder_score": 0.3255
+    },
+    {
+      "rank": 13,
+      "doi": "10.17323/1726-3247-2023-5-11-53",
+      "title": "Theorizing Digital Platforms: A Conceptual Framework for the Gig Economy",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Journal of Economic Sociology",
+      "citation_count": 6,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.295797,
+      "bm25_score": 2.0658,
+      "biencoder_score": 0.2958
+    },
+    {
+      "rank": 14,
+      "doi": "10.5771/9781538173749",
+      "title": "Digital Working Lives",
+      "abstract": "<p>Recent innovations in digital technologies are fundamentally transforming the world of work. A digital gig economy is emerging that threatens to displace traditional labour relations based on legally regulated labour contracts. Companies like Uber, Deliveroo, or Amazon Mechanical Turk rely increasingly on ‘independent contractors’ who earn piece-rate wages by completing tasks sent to them via their smartphones. This development understandably pushes workers to desire more autonomy, but what w",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 21,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "monograph",
+      "orig_rank": 10,
+      "v4_score": 0.270647,
+      "bm25_score": 1.4308,
+      "biencoder_score": 0.2706
+    },
+    {
+      "rank": 15,
+      "doi": "arXiv:2606.19975v1",
+      "title": "The Algorithmic-Human Manager: AI, Apps, and Workers in the Indian Gig Economy",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 0.270629,
+      "bm25_score": 1.8509,
+      "biencoder_score": 0.2706
+    },
+    {
+      "rank": 16,
+      "doi": "10.5040/9798881813406.ch-4",
+      "title": "Alienation in the Platform Economy",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Digital Working Lives",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "other",
+      "orig_rank": 20,
+      "v4_score": 0.264736,
+      "bm25_score": 1.5219,
+      "biencoder_score": 0.2647
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:2511.00273v2",
+      "title": "Understanding, Challenging, and Demystifying Perceptions of Gig Worker Vulnerabilities",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 30,
+      "v4_score": 0.256793,
+      "bm25_score": 2.4289,
+      "biencoder_score": 0.2568
+    },
+    {
+      "rank": 18,
+      "doi": "arXiv:1508.00310v2",
+      "title": "Statistical Emulators for Pricing and Hedging Longevity Risk Products",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 28,
+      "v4_score": 0.23528,
+      "bm25_score": 1.8664,
+      "biencoder_score": 0.2353
+    },
+    {
+      "rank": 19,
+      "doi": "10.1007/s10669-020-09776-x",
+      "title": "Bouncing forward: a resilience approach to dealing with COVID-19 and future systemic shocks",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Environment Systems & Decisions",
+      "citation_count": 622,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.207058,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2071
+    },
+    {
+      "rank": 20,
+      "doi": "10.1146/annurev-economics-081523-013750",
+      "title": "Fertility in High-Income Countries: Trends, Patterns, Determinants, and Consequences",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Annual Review of Economics",
+      "citation_count": 32,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.205851,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2059
+    },
+    {
+      "rank": 21,
+      "doi": "10.21314/JOP.2019.229",
+      "title": "On the Selection of Loss Severity Distributions to Model Operational Risk",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 27,
+      "v4_score": 0.201326,
+      "bm25_score": 1.8664,
+      "biencoder_score": 0.2013
+    },
+    {
+      "rank": 22,
+      "doi": "10.1146/annurev-economics-022020-032512",
+      "title": "Alternative Work Arrangements",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Annual Review of Economics",
+      "citation_count": 164,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.170428,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1704
+    },
+    {
+      "rank": 23,
+      "doi": "10.5040/9798881813406.ch-6",
+      "title": "Worker Autonomy as Collective Self-Valorization?",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Digital Working Lives",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "other",
+      "orig_rank": 18,
+      "v4_score": 0.159286,
+      "bm25_score": 1.7329,
+      "biencoder_score": 0.1593
+    },
+    {
+      "rank": 24,
+      "doi": "10.1257/jep.37.4.23",
+      "title": "The Evolution of Work from Home",
+      "abstract": "",
+      "year": 2023,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 309,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.148958,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.149
+    },
+    {
+      "rank": 25,
+      "doi": "10.5040/9798881813406.ch-2",
+      "title": "Governing the Workforce",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Digital Working Lives",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "other",
+      "orig_rank": 13,
+      "v4_score": 0.145581,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1456
+    },
+    {
+      "rank": 26,
+      "doi": "10.5040/9798881813406.ch-7",
+      "title": "Worker Autonomy as Conviviality",
+      "abstract": "",
+      "year": 2022,
+      "venue": "Digital Working Lives",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "other",
+      "orig_rank": 15,
+      "v4_score": 0.142199,
+      "bm25_score": 1.9949,
+      "biencoder_score": 0.1422
+    },
+    {
+      "rank": 27,
+      "doi": "10.1145/3613904.3642614",
+      "title": "Designing Sousveillance Tools for Gig Workers",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 26,
+      "v4_score": 0.135352,
+      "bm25_score": 1.0151,
+      "biencoder_score": 0.1354
+    },
+    {
+      "rank": 28,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "",
+      "year": 2019,
+      "venue": "The Journal of Economic Perspectives",
+      "citation_count": 2214,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.128612,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1286
+    },
+    {
+      "rank": 29,
+      "doi": "10.1111/1748-8583.12524",
+      "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Human Resource Management Journal",
+      "citation_count": 779,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.107861,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1079
+    },
+    {
+      "rank": 30,
+      "doi": "10.1016/j.gloenvcha.2018.08.006",
+      "title": "Middle-range theories of land system change",
+      "abstract": "",
+      "year": 2018,
+      "venue": "Global Environmental Change",
+      "citation_count": 567,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.048881,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0489
+    }
+  ]
+}

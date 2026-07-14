@@ -1,0 +1,556 @@
+{
+  "query_id": "q042",
+  "query": "干燥综合症的原因以及干燥综合症如何保养 (Sjögren's syndrome)",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.12677/acm.2023.133606",
+      "title": "A Case of Sjogren’s Syndrome Misdiagnosed as Intractable Hypokalemia",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.776836,
+      "bm25_score": 0.1862
+    },
+    {
+      "rank": 2,
+      "doi": "10.1103/ps3r-wf84",
+      "title": "Adaptive Syndrome Extraction",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.754943,
+      "bm25_score": 0.2253
+    },
+    {
+      "rank": 3,
+      "doi": "10.12677/acm.2025.153801",
+      "title": "Autoimmune Hepatitis-Primary Biliary Cholangitis Overlap Syndrome with Sjögren Syndrome: A Case Report",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.721596,
+      "bm25_score": 1.952
+    },
+    {
+      "rank": 4,
+      "doi": "10.1088/1367-2630/ad9828",
+      "title": "Calibration of syndrome measurements in a single experiment",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.678486,
+      "bm25_score": 0.1976
+    },
+    {
+      "rank": 5,
+      "doi": "10.12677/acm.2021.119591",
+      "title": "A Case of Sjogren’s Syndrome during Pregnancy with Hypokalemia as the First Symptom Misdiagnosed as Hyperemesis Gravidarum",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.673969,
+      "bm25_score": 0.1444
+    },
+    {
+      "rank": 6,
+      "doi": "",
+      "title": "Effect of cevimeline hydrocholoride on dental caries-related micro-organisms in patients with Sjogren's syndrome",
+      "abstract": "",
+      "year": 2009,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 0.667133,
+      "bm25_score": 0.1444
+    },
+    {
+      "rank": 7,
+      "doi": "arXiv:1501.04732v1",
+      "title": "Strabismic syndromes and syndromic strabismus - a brief review",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 0.661939,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "10.64658/gscr.20251226.f01e2",
+      "title": "1例干燥综合征合并肾小管酸中毒致危重型低钾血症的中西医结合救治病案报告",
+      "abstract": "",
+      "year": null,
+      "venue": "中西医转化医学临床病案成果数据库",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.617838,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 9,
+      "doi": "",
+      "title": "The Diagnosis and Treatment of Sjögren's Syndrome.",
+      "abstract": "",
+      "year": 2017,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 24,
+      "v4_score": 0.599325,
+      "bm25_score": 2.6964
+    },
+    {
+      "rank": 10,
+      "doi": "10.12677/tcm.2023.1210436",
+      "title": "Case Examples and Diagnosis and Treatment Experience of Sjogren’s Syndrome and Its Complications",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Traditional Chinese Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.567594,
+      "bm25_score": 0.1669
+    },
+    {
+      "rank": 11,
+      "doi": "arXiv:1306.0498v3",
+      "title": "Syndrome Measurement Order for the [[7,1,3]] Quantum Error Correction Code",
+      "abstract": "",
+      "year": 2013,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.486633,
+      "bm25_score": 0.176
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2205.02341v1",
+      "title": "Soft Syndrome Decoding of Quantum LDPC Codes for Joint Correction of Data and Syndrome Errors",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.485662,
+      "bm25_score": 0.2111
+    },
+    {
+      "rank": 13,
+      "doi": "arXiv:1810.10902v1",
+      "title": "Learning from the Syndrome",
+      "abstract": "",
+      "year": 2018,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.442044,
+      "bm25_score": 0.2422
+    },
+    {
+      "rank": 14,
+      "doi": "10.1109/JSAC.2020.2968997.",
+      "title": "Quantum Data-Syndrome Codes",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.429914,
+      "bm25_score": 0.2105
+    },
+    {
+      "rank": 15,
+      "doi": "",
+      "title": "Immunoglobulin variable-region gene mutational lineage tree analysis: application to autoimmune diseases",
+      "abstract": "",
+      "year": 2006,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 23,
+      "v4_score": 0.395263,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "10.35633/inmateh-71-38",
+      "title": "HOT AIR DRYING, IMPACT OF INFRARED DRYING, AND COMBINED HOT AIR-INFRARED DRYING ON ALFALFA DRYING QUALITY AND PERFORMANCE",
+      "abstract": "<jats:p>This study analyzes the drying of alfalfa using hot air, infrared and combined drying techniques. Different temperatures, radiation heights, radiation power and wind speed are used as control factors, and drying time, color, crude protein and specific energy consumption are used as evaluation indicators. After assigning weights to each indicator, the comprehensive evaluation index is calculated. The comprehensive evaluation index of alfalfa drying after combined drying is between 1.00 an",
+      "year": 2023,
+      "venue": "INMATEH Agricultural Engineering",
+      "citation_count": 5,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.370053,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "",
+      "title": "Pulmonary manifestations of Sjögren's syndrome",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 30,
+      "v4_score": 0.328122,
+      "bm25_score": 2.6964
+    },
+    {
+      "rank": 18,
+      "doi": "",
+      "title": "Eligibility for clinical trials in primary Sjögren's syndrome: lessons from the UK Primary Sjögren's Syndrome Registry.",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 26,
+      "v4_score": 0.301419,
+      "bm25_score": 2.6222
+    },
+    {
+      "rank": 19,
+      "doi": "10.1109/ISIT57864.2024.10619479",
+      "title": "Robust Syndrome Extraction via BCH Encoding",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.283246,
+      "bm25_score": 0.1862
+    },
+    {
+      "rank": 20,
+      "doi": "arXiv:1505.07390v1",
+      "title": "Syndrome Measurement Strategies for the [[7,1,3]] Code",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.273167,
+      "bm25_score": 0.2105
+    },
+    {
+      "rank": 21,
+      "doi": "10.12677/acm.2025.1541062",
+      "title": "Research Progress on Serological Markers of Primary Sjögren’s Syndrome",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.272103,
+      "bm25_score": 2.277
+    },
+    {
+      "rank": 22,
+      "doi": "",
+      "title": "Cytokines in Sjögren's syndrome",
+      "abstract": "",
+      "year": 2009,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 29,
+      "v4_score": 0.25552,
+      "bm25_score": 2.8729
+    },
+    {
+      "rank": 23,
+      "doi": "",
+      "title": "Criteria for Sjögren's syndrome.",
+      "abstract": "",
+      "year": 2016,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 0.211234,
+      "bm25_score": 2.8729
+    },
+    {
+      "rank": 24,
+      "doi": "10.12677/acm.2024.142519",
+      "title": "Report of 3 Cases of SjÖgren’s Syndrome with Central Nervous System Damage as the First Symptom and Review of the Literature",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.15741,
+      "bm25_score": 1.8082
+    },
+    {
+      "rank": 25,
+      "doi": "",
+      "title": "Sjögren's Syndrome: Terminology",
+      "abstract": "",
+      "year": 1995,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 28,
+      "v4_score": 0.137235,
+      "bm25_score": 2.8729
+    },
+    {
+      "rank": 26,
+      "doi": "arXiv:1903.07464v2",
+      "title": "Ternary Syndrome Decoding with Large Weight",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.113818,
+      "bm25_score": 0.1976
+    },
+    {
+      "rank": 27,
+      "doi": "10.12677/jcpm.2024.33099",
+      "title": "The Application of Nourishing Yin and Clearing Heat in Primary Sjogren’s Syndrome Was Analyzed Based on the Theory of “Dryness Leads to Dryness”",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Journal of Clinical Personalized Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.084957,
+      "bm25_score": 0.1273
+    },
+    {
+      "rank": 28,
+      "doi": "10.12677/acm.2021.114277",
+      "title": "Severe Hypokalaemia Due to Renal Tubular Acidosis in a Patient with Sjogren’s Syndrome",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.052609,
+      "bm25_score": 0.1586
+    },
+    {
+      "rank": 29,
+      "doi": "",
+      "title": "Primary Sjögren's syndrome: case report",
+      "abstract": "",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 22,
+      "v4_score": 0.045417,
+      "bm25_score": 2.5405
+    },
+    {
+      "rank": 30,
+      "doi": "",
+      "title": "An antigen-driven B-cell response within the salivary glands of patients with Sjögren’s syndrome",
+      "abstract": "",
+      "year": 2002,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 25,
+      "v4_score": 0.007687,
+      "bm25_score": 1.9705
+    }
+  ]
+}

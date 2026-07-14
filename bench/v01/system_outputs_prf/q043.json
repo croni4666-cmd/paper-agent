@@ -1,0 +1,520 @@
+{
+  "query_id": "q043",
+  "query": "地中海贫血因子携带者对于身体的影响 (thalassemia trait carrier)",
+  "generated_at": "2026-07-14T23:53:06",
+  "config": "v4-prf-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 10
+  },
+  "dedup_count": 28,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "",
+      "title": "Frequency of beta thalassemia trait and carrier in Gorgan, Iran",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 14.494433,
+      "bm25_score": 3.6262
+    },
+    {
+      "rank": 2,
+      "doi": "",
+      "title": "Carrier detection for beta-thalassemia trait in general Pakistani population: A way forward",
+      "abstract": "",
+      "year": 2012,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 24,
+      "v4_score": 14.205665,
+      "bm25_score": 3.0774
+    },
+    {
+      "rank": 3,
+      "doi": "arXiv:2306.01818v1",
+      "title": "Beta Thalassemia Carriers detection empowered federated Learning",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 4.416213,
+      "bm25_score": 0.7358
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "Alpha‐globin gene triplication and its effect in beta‐thalassemia carrier, sickle cell trait, and healthy individual",
+      "abstract": "",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 28,
+      "v4_score": 3.731035,
+      "bm25_score": 2.6728
+    },
+    {
+      "rank": 5,
+      "doi": "",
+      "title": "Premarital screening of beta-thalassemia trait in the province of Denizli, Turkey",
+      "abstract": "",
+      "year": 2000,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 27,
+      "v4_score": 3.279328,
+      "bm25_score": 1.9242
+    },
+    {
+      "rank": 6,
+      "doi": "",
+      "title": "Prevalence of Beta Thalassemia Trait among Antenatal Women Attending a Tertiary Care Centre",
+      "abstract": "",
+      "year": 2020,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 26,
+      "v4_score": 2.806835,
+      "bm25_score": 1.647
+    },
+    {
+      "rank": 7,
+      "doi": "",
+      "title": "Prevalence and Distribution of Thalassemia Trait Screening",
+      "abstract": "",
+      "year": 2017,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 22,
+      "v4_score": 2.313707,
+      "bm25_score": 2.3137
+    },
+    {
+      "rank": 8,
+      "doi": "",
+      "title": "Frekuensi Trait Thalassemia-B Di Maumere, Flores",
+      "abstract": "",
+      "year": 1993,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 23,
+      "v4_score": 2.167468,
+      "bm25_score": 2.1675
+    },
+    {
+      "rank": 9,
+      "doi": "",
+      "title": "FREKUENSI TRAIT THALASSEMIA-b DI AMBON, MALUKI",
+      "abstract": "",
+      "year": 1994,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 25,
+      "v4_score": 2.167468,
+      "bm25_score": 2.1675
+    },
+    {
+      "rank": 10,
+      "doi": "arXiv:2308.02029v3",
+      "title": "Deep Maxout Network-based Feature Fusion and Political Tangent Search Optimizer enabled Transfer Learning for Thalassemia Detection",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 2.019914,
+      "bm25_score": 0.4987
+    },
+    {
+      "rank": 11,
+      "doi": "10.1088/0953-8984/16/7/009",
+      "title": "Measurements of Composite Fermion Conductivity Dependence on Carrier Density",
+      "abstract": "",
+      "year": 2005,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 1.587573,
+      "bm25_score": 1.5876
+    },
+    {
+      "rank": 12,
+      "doi": "10.1360/zb1994-24-2-171",
+      "title": "羟基脲(HU)治疗&amp;beta;-地中海贫血的研究&amp;mdash;&amp;mdash;HU对珠蛋白基因表达的影响",
+      "abstract": "",
+      "year": 1994,
+      "venue": "Science in China Series B-Chemistry, Life Sciences &amp; Earth Sciences (in Chinese)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 1.355103,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 13,
+      "doi": "10.1109/JQE.2017.2788415",
+      "title": "Stochastic differential equation model for spontaneous emission and carrier noise in semiconductor lasers",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 1.347292,
+      "bm25_score": 1.3473
+    },
+    {
+      "rank": 14,
+      "doi": "arXiv:0512014v1",
+      "title": "A Game-Theoretic Approach to Energy-Efficient Power Control in Multi-Carrier CDMA Systems",
+      "abstract": "",
+      "year": 2005,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 1.282585,
+      "bm25_score": 1.2826
+    },
+    {
+      "rank": 15,
+      "doi": "10.12677/hjbm.2025.155094",
+      "title": "Analysis of Thalassemia Gene Carrying Status in 2734 People of Childbearing Age",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Hans Journal of Biomedicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.657635,
+      "bm25_score": 0.6576
+    },
+    {
+      "rank": 16,
+      "doi": "arXiv:2504.10338v1",
+      "title": "Classifying Copy Number Variations Using State Space Modeling of Targeted Sequencing Data: A Case Study in Thalassemia",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.519601,
+      "bm25_score": 0.5196
+    },
+    {
+      "rank": 17,
+      "doi": "arXiv:2305.10216v1",
+      "title": "CHMMOTv1 -- Cardiac and Hepatic Multi-Echo (T2*) MRI Images and Clinical Dataset for Iron Overload on Thalassemia Patients",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.519601,
+      "bm25_score": 0.5196
+    },
+    {
+      "rank": 18,
+      "doi": "arXiv:2004.00480v1",
+      "title": "Novel Meta-Heuristic Model for Discrimination between Iron Deficiency Anemia and B-Thalassemia with CBC Indices Based on Dynamic Harmony Search",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.479355,
+      "bm25_score": 0.4794
+    },
+    {
+      "rank": 19,
+      "doi": "10.69979/3029-2808.24.11.041",
+      "title": "活血化瘀中药介导的血管衰老对心血管疾病的影响",
+      "abstract": "",
+      "year": 2024,
+      "venue": "医学研究",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "10.1360/csb1993-38-8-698",
+      "title": "LiF晶体中OH~-离子的浓度对色心的影响",
+      "abstract": "",
+      "year": 1993,
+      "venue": "Chinese Science Bulletin",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 21,
+      "doi": "10.36012/pmr.v2i2.1812",
+      "title": "抗焦虑治疗对高血压患者血压的影响",
+      "abstract": "<jats:p>目的:为了调查抗焦虑治疗对高血压患者血压的影响。方法:收集神经内科高血 压患者 50 例，分别给予评分(焦虑自评量表 SAS);然后随机分成两组，分别为对照组和治 疗组，分别给予抗焦虑治疗、必要的心理疏导和一般降压治疗。测量治疗前后 24 小时平均 血压、白昼平均血压、夜间平均血压。结果:对照组的 24 小时平均血压、白昼平均血压、夜间 平均血压均明显高于治疗组，并且 8 周后治疗组的血压值明显低于对照组。结论:伴有焦虑 情绪的高血压患者加用抗焦虑治疗既能改善焦虑情绪，又能增加降压药物的疗效，同时能 减轻血管内皮功能的损伤。单纯的降压治疗方法降压效果不理想，抗焦虑治疗和必要的心 理疏导是有效的正确降压方法。</jats:p>",
+      "year": null,
+      "venue": "实用医学研究",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 22,
+      "doi": "10.69979/3029-2808.26.04.049",
+      "title": "连续性护理干预对有机磷农药中毒血液灌流患者的效果以及对血浆细胞因子指标的影响",
+      "abstract": "",
+      "year": 2026,
+      "venue": "医学研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 23,
+      "doi": "10.12677/acm.2023.13112388",
+      "title": "Factors Influencing the Efficacy and Safety of Thalidomide in the Treatment of Transfusion-Dependent Thalassaemia",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 24,
+      "doi": "10.69979/3029-2808.26.04.038",
+      "title": "黄芪当归汤辅助疗法对气血亏虚型肾性贫血患者血红蛋白的影响",
+      "abstract": "",
+      "year": 2026,
+      "venue": "医学研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 25,
+      "doi": "10.61654/zzyskx0217",
+      "title": "一体化保温方案、ERAS手术室护理联合应用于肾结石患者手术中对于术中低体温的影响",
+      "abstract": "<jats:p>目的:探究肾结石患者手术治疗期间联合应用一体化保温方案、ERAS手术室护理所取效果,评估对术中低体温的预防效果。方法:研究开始时间为2023年1月,结束于2025年3月,选择在上述时间段内择期采取手术治疗的肾结石患者60例为研究对象,根据随机数字表法分组处理,纳入对照组的30例患者采用常规护理,观察组则应用一体化保温方案+ERAS手术室护理,统计术中低体温等并发症发生率,对比两组患者不同时间点体温变化、围术期指标。结果:观察组术中低体温等并发症发生率较低于对照组(P&lt;0.05);术前,就两组患者体表温度测定,数值对比未见明显差异(P&gt;0.05),术中、术后不同时间段,对两组患者体表温度测定,观察组较对照组偏高,组间对比差异可见(P&lt;0.05);分析入组对象围术期指标,观察组各指标测定数值较同期对照组偏低(P&lt;0.05)。结论:肾结石患者采取手术治疗的同时辅以一体化保温方案、ERAS手术室护理对于术中低体温预防效果理想,可加速患者术后康复进程,通过稳定体表温度减轻生理应激反应,可借鉴。</jats:p>",
+      "year": null,
+      "venue": "养生科学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 26,
+      "doi": "10.1360/csb2002-47-19-1494",
+      "title": "血管内皮生长因子对小鼠胚胎植入过程中基质金属蛋白酶的影响",
+      "abstract": "",
+      "year": null,
+      "venue": "Chinese Science Bulletin",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 27,
+      "doi": "10.1051/0004-6361:20021074",
+      "title": "Asteroseismology and calibration of alpha Cen binary system",
+      "abstract": "",
+      "year": 2002,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 28,
+      "doi": "10.1051/0004-6361:20034203",
+      "title": "Analysis of alpha Centauri AB including seismic constraints",
+      "abstract": "",
+      "year": 2004,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}

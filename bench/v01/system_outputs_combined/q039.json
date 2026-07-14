@@ -1,0 +1,206 @@
+{
+  "query_id": "q039",
+  "query": "北美基督教是否真的褪色了？马克思韦伯的工作伦理是否仍然支撑当前的美国社会？",
+  "generated_at": "2026-07-14T23:52:57",
+  "config": "v4-combined-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 10,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.14218/mrp.2021.020",
+      "title": "完美的“科学假设”是国自然成功的第一步",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Medical Research &amp; Publication",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.75,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6773
+    },
+    {
+      "rank": 2,
+      "doi": "10.32629/er.v2i7.1908",
+      "title": "论真善美之中的美——从康德美学反思中国现代社会审美消费主义",
+      "abstract": "<jats:p>康德美学中认为美是一种纯粹愉悦,美的本源既不是客观的形式或神的理念,是出自居于人的理性能力与知性能力之间的审美判断力。本文即从康德的美学视角出发,反观中国自21世纪以来的审美消费主义,对社会中于消费、媒体等方面出现过的审美消费主义浪潮进行批判、反思,在总结其浮躁社会消费审美主义背后的深层原因上,对正向引导、树立社会消费审美主义提出一己之见。</jats:p>",
+      "year": null,
+      "venue": "教育研究",
+      "citation_count": 4,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.660576,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6072
+    },
+    {
+      "rank": 3,
+      "doi": "10.61362/evfa3227",
+      "title": "【经济史探索】宗教文化是否会影响社会的经济增长？",
+      "abstract": "",
+      "year": null,
+      "venue": "Was Weber Wrong?",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report-component",
+      "orig_rank": 4,
+      "v4_score": 0.61941,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.575
+    },
+    {
+      "rank": 4,
+      "doi": "10.58911/bdic.s002.v2",
+      "title": "探究式学习是否是“当局者迷、旁观者清”的",
+      "abstract": "",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report",
+      "orig_rank": 5,
+      "v4_score": 0.529384,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5044
+    },
+    {
+      "rank": 5,
+      "doi": "10.69979/3029-2700.25.05.091",
+      "title": "作为什么样的个体才能克服虚无主义：尼采、韦伯与马克思的价值主体",
+      "abstract": "",
+      "year": 2025,
+      "venue": "社会企业经济发展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.508849,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4883
+    },
+    {
+      "rank": 6,
+      "doi": "10.70693/rwsk.v2i1.176",
+      "title": "马克思主义需要观指导下当代青年工作的实践路径探析",
+      "abstract": "<jats:p>马克思主义需要观为社会中独立个体需求的演进至新阶段奠定了坚实的理论基础，并为其创新发展、螺旋式上升创造了有利条件。从人的本质属性出发，个体需求与社会实践紧密相连；这种植根于人类社会实践的需求，作为思想意识与精神层面的上层建筑，不仅对经济基础产生相应的反作用，还在人类社会的持续发展及稳定中展现出不可小觑的理论导向价值。在中国式现代化建设的进程中，青年工作的成效直接关系到党和国家发展计划的实施效果。在新时代背景下，深入理解和把握马克思主义需要观，将其理论精髓应用于青年工作实践，是实现马克思主义需要观现实意义的重要途径。通过理论与实践的紧密结合，为马克思主义需要观于当代社会的应用赋能有力支撑与依据。</jats:p>",
+      "year": null,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.494453,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.477
+    },
+    {
+      "rank": 7,
+      "doi": "10.5840/wcp22200816874",
+      "title": "马 克 思 哲 学 是 劳 动 哲 学 ─对当代中国哲学主流的反思",
+      "abstract": "",
+      "year": null,
+      "venue": "Proceedings of the XXII World Congress of Philosophy",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 3,
+      "v4_score": 0.440294,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4346
+    },
+    {
+      "rank": 8,
+      "doi": "10.64216/3080-1486.26.03.076",
+      "title": "从斯珀伯的马克思传记谈当代西方回归历史语境中马克思真实形象与错位",
+      "abstract": "",
+      "year": 2026,
+      "venue": "社会经济导刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.411904,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4123
+    },
+    {
+      "rank": 9,
+      "doi": "10.32629/er.v2i9.2044",
+      "title": "新时代教学中国特色社会主义思想是当代中国的马克思主义",
+      "abstract": "<jats:p>新时代教学中国特色社会主义思想逐步形成和发展,是马克思主义中国化昀新成果,也是当代中国的马克思主义。与时俱进是马克思主义的重要理论品格,新时代教学特色社会主义延续并传承了马克思主义思想,同马克思主义的基本立场、基本观点、基本方法和未来发展方向具有一致性。在推进新时代中国特色社会主义伟大事业的进程中,新时代教学中国特色社会主义思想将为决胜全面建成小康社会、夺取新时代中国特色社会主义伟大胜利、实现中华民族伟大复兴的中国梦保驾护航。</jats:p>",
+      "year": null,
+      "venue": "教育研究",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.366841,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.377
+    },
+    {
+      "rank": 10,
+      "doi": "10.63887/fss.2025.1.5.36",
+      "title": "论马克思主义科学技术观在指导当代科技伦理问题中的意义",
+      "abstract": "<jats:p>本文深入探讨了马克思主义科学技术观在当代科技伦理中的关键作用。马克思主义科学技术观视科学技术为推动社会进步的重要力量，主张科技应服务于人类的全面发展与社会的公平正义。在当今科技迅猛发展的背景下前沿领域不仅带来了技术突破，也引发了深刻的哲学和伦理问题。这些问题挑战了传统的伦理观念，需要借助马克思主义科学技术观提供的理论框架来审视和解决。马克思主义强调科技发展的社会性和历史性，主张在享受科技便利的同时，关注其潜在的负面影响，确保科技进步与社会发展相协调。文章呼吁通过加强科技伦理教育和提高公众意识，利用马克思主义科学技术观指导科技发展，以实现科技与人类社会的和谐共生，推动人类文明的进步与发展。</jats:p>",
+      "year": null,
+      "venue": "社会科学前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.25,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2855
+    }
+  ]
+}

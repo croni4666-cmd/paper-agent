@@ -45,5 +45,9 @@
   },
   "delta_ndcg_at_10": 0.009621136382522377,
   "delta_recall_at_10": -0.04228571428571426,
-  "delta_precision_at_10": -0.024000000000000077
+  "delta_precision_at_10": -0.024000000000000077,
+  "version": "v3.9.7.2",
+  "note": "n=50 nominal / n=25 actual (only q001-q025 have L2 labels; q026-q050 skipped)",
+  "n_queries_in_combined": 50,
+  "n_labeled_queries": 25
 }

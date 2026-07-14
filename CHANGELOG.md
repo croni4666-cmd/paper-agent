@@ -252,10 +252,59 @@ powershell -ExecutionPolicy Bypass -File "C:\Users\DengN\.mavis\bin\Add-PaperAge
 
 ---
 
-## [3.9.7.2] - 2026-07-14 (WIP — n=50 user queries + system_outputs batch, awaiting v4_rerank)
+## [3.9.7.2] - 2026-07-14 (n=50 expansion — v4_rerank is real n=50; MoE/CE/LTR are n=25 due to missing labels)
 
-Per user "先走 A" (2026-07-14 22:30), the Option A pipeline was partially completed before
-session was archived due to length. This entry documents what was done and what remains.
+Continuation session (2026-07-14 23:50) of WIP [3.9.7.2]. Resumed from
+`test_output/HANDOFF_v3_9_7_2.md`. v4_rerank pipeline ran on n=50; all label-dependent
+steps (MoE, BGE-rerank metrics, LTR, Wilcoxon) ran on n=25 because `labels_clean.json`
+only covers q001-q025. See `bench/v01/reports/v3_9_7_2_n50_three_tier.md` for honest
+audit.
+
+### What was done this session
+
+**1. v4_rerank n=50 (REAL n=50)**:
+- Ran `bench/v01/_v4_rerank.py --condition {bm25,biencoder,combined,prf,random}` for all 5 conditions
+- 50 .json files per condition, total 250 new files in `bench/v01/system_outputs_*/`
+- Time: ~5-8 min total (1-2 min/condition)
+- Cleaned up 25 no-extension legacy files (v3.9.0 era), restored via `git restore` after spotting
+  accidental deletion in `git status`
+
+**2. MoE router n=50 (NOMINAL n=50, ACTUAL n=25)**:
+- `python test_output/_run_n50_v3972.py` ran end-to-end on 50 combined files
+- `assemble_dataset` skipped q026-q050 (no L2 labels → no dominant engine)
+- Result: `mean_macro_f1 = 0.889` (identical to v3.9.7.1 n=25)
+- File carries `note` field documenting n=50 nominal / n=25 actual
+
+**3. Cross-encoder (BGE-reranker) n=50 (NOMINAL n=50, ACTUAL n=25)**:
+- New script `test_output/_run_cross_encoder_n50.py` — BGE rerank on 50 candidate sets
+- Biencoder mean NDCG@10 = 0.7572 (was 0.7205 in v3.9.7.1, +0.0367 search API drift)
+- BGE mean NDCG@10 = 0.7192 (was 0.6928 in v3.9.7.1, +0.0264 search API drift)
+- Δ NDCG@10 (BGE − biencoder) = -0.0380 (was -0.0277 in v3.9.7.1)
+- All 3 Wilcoxon paired tests still NOT significant (p > 0.35)
+
+**4. LTR (LambdaMART) n=50 (NOMINAL n=50, ACTUAL n=25)**:
+- `python test_output/_run_ltr_v3_9_2.py` re-ran with n=50 candidate pool
+- LTR NDCG@10 = 0.7323 ± 0.0800 (was 0.7192 in v3.9.2, +0.0131)
+- combined baseline NDCG@10 = 0.7227 (unchanged)
+- Δ NDCG@10 (LTR − baseline) = +0.0096 (was -0.0034 in v3.9.2)
+- All n<100 paired deltas per memory discipline: noise, not finding
+
+**5. Cleanup**:
+- Renamed misnamed `v3_9_7_2_moe_router_n50.{json,md}` (which was actually v3.9.7.1 n=25 data)
+  → `v3_9_7_2_moe_router_n25_mislabeled.{json,md}` for honest lineage
+
+**6. Three-tier honest report**:
+- `bench/v01/reports/v3_9_7_2_n50_three_tier.md` documents:
+  - ✅ Verified: all 4 pipelines (v4_rerank, MoE, BGE, LTR) run on n=50 candidate pool
+  - ⚠️ Caveat: every label-dependent metric is still n=25; "n=50" is pipeline-level, not statistical
+  - ❌ NOT findings: search API drift ≠ method change; n<100 deltas = noise
+  - Search API drift causes +0.02-0.04 metric shifts across versions; not interpretable as method comparisons
+
+### What was done in prior session (WIP continuation)
+
+**1. queries.json n=50 update**:
+- `bench/v01/queries.json`: q001-q050 (50 queries, 25 user batch q026-q050 added)
+- Backup: `bench/v01/queries.json.bak-2026-07-14`
 
 ### What was done
 
@@ -278,30 +327,43 @@ session was archived due to length. This entry documents what was done and what 
   (only 3 of 5 engines active: crossref, openalex, arxiv; semanticscholar + core disabled)
 - Same state as v3.9.0 n=25 baseline was generated in (5 engine total, but in practice 3 active)
 
-### What remains (handoff to next session)
+### What was done in prior session (handoff completed in continuation)
 
-- [ ] Run `python bench/v01/_v4_rerank.py --condition {bm25,biencoder,combined,prf,random}` for n=50
-      (5 commands, each ~1-2 min, total 5-10 min)
-- [ ] Run `python test_output/_run_n50_v3972.py` for MoE v3.9.7.2 n=50 (5-fold CV)
-- [ ] Run `python test_output/_run_cross_encoder_wilcoxon_n50.py` for Wilcoxon n=50
-      (NEW file needed, reuse v3.9.7.1 logic but with n=50 cross-encoder data)
-- [ ] Re-run LTR [P0-6] n=50: `python test_output/_run_ltr_v3_9_2.py` with n=50 features
-- [ ] Write 3-tier honest report at `bench/v01/reports/v3_9_7_2_n50_three_tier.md`
-- [ ] Commit v3.9.7.2 final results + update ROADMAP
-- [ ] Plan CNKI [P0-9] implementation (user has proxy cookies, can implement next session)
+- [x] Run `python bench/v01/_v4_rerank.py --condition {bm25,biencoder,combined,prf,random}` for n=50
+      (5 commands completed, 250 new files in `bench/v01/system_outputs_*/`)
+- [x] Run `python test_output/_run_n50_v3972.py` for MoE v3.9.7.2 n=50 (5-fold CV; n=25 actual)
+- [x] Run `python test_output/_run_cross_encoder_wilcoxon_n50.py` for Wilcoxon n=50
+      (NEW file, n=25 actual; p > 0.35 for all 3 metrics)
+- [x] Re-run LTR [P0-6] n=50: `python test_output/_run_ltr_v3_9_2.py` (n=25 actual; NDCG@10 = 0.7323)
+- [x] Write 3-tier honest report at `bench/v01/reports/v3_9_7_2_n50_three_tier.md`
+- [x] (Pending) Commit v3.9.7.2 final results + update ROADMAP
+- [ ] Plan CNKI [P0-9] implementation (user has proxy cookies; deferred to next session)
 
-### Files
+### Backward-compat note (added by continuation session)
+- v3.9.7.2 CHANGELOG entry was originally written as "WIP" by archived session
+- Continuation session updated to "n=50 expansion" with honest "n=50 nominal, n=25 actual" framing
+- Cross-version metric deltas (v3.9.7.1 vs v3.9.7.2) are NOT method comparisons; they are
+  search API drift artifacts (biencoder candidates regenerated by v4_rerank n=50)
+
+### Files (cumulative across both sessions)
 - `bench/v01/queries.json` (modified)
 - `bench/v01/queries.json.bak-2026-07-14` (backup, can be deleted after verification)
 - `bench/v01/system_outputs/q026.json` to `q050.json` (25 new files)
-- `test_output/_gen_system_outputs_n50.py` (batch generator)
+- `test_output/_gen_system_outputs_n50.py` (batch generator, prior session)
 - `test_output/_parse_v3_to_queries.py` (queries.json parser)
-- `test_output/_run_n50_v3972.py` (MoE n=50 runner, ready to run)
+- `test_output/_run_n50_v3972.py` (MoE n=50 runner, executed in continuation session)
+- `test_output/_run_cross_encoder_n50.py` (BGE on n=50 candidate sets, NEW in continuation session)
+- `test_output/_run_cross_encoder_wilcoxon_n50.py` (Wilcoxon n=25 paired, NEW in continuation session)
+- `bench/v01/reports/v3_9_7_2_*.{json,md}` (7 new reports in continuation session)
+- `bench/v01/reports/v3_9_7_2_n50_three_tier.md` (3-tier honest audit, NEW in continuation session)
+- `bench/v01/system_outputs_*/q026-q050.json` (250 new files from v4_rerank n=50 in continuation session)
 
-### Backward-compat note
-- n=50 cross-encoder output (v3.9.3 style) is NOT yet generated
-- v3.9.7.1 Wilcoxon n=25 numbers still apply until n=50 cross-encoder re-run
-- MoE n=50 will produce different numbers than v3.9.7.1 n=25 (more queries = different fold splits)
+### Backward-compat note (updated by continuation session)
+- n=50 cross-encoder output (v3.9.3 style) IS now generated (v3_9_7_2_cross_encoder_n50.json)
+- v3.9.7.1 Wilcoxon n=25 numbers still apply for the v3.9.7.1 era; v3.9.7.2 has its own
+  paired Wilcoxon on the same 25 queries but with new biencoder candidates (search API drift)
+- MoE n=50 produced SAME numbers as v3.9.7.1 n=25 (mean_macro_f1 = 0.889) because the
+  pipeline correctly skipped q026-q050 (no L2 labels → no dominant engine determination)
 
 ---
 

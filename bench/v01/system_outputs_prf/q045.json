@@ -1,0 +1,394 @@
+{
+  "query_id": "q045",
+  "query": "减肥食谱以及断食科学性综述 (intermittent fasting vs calorie restriction weight loss RCT)",
+  "generated_at": "2026-07-14T23:53:06",
+  "config": "v4-prf-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 1
+  },
+  "dedup_count": 21,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.64628/ab.snkyrjt56",
+      "title": "Intermittent fasting and calorie counting about equal for weight loss – new study",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 7,
+      "v4_score": 15.555504,
+      "bm25_score": 7.0334
+    },
+    {
+      "rank": 2,
+      "doi": "arXiv:2305.11425v2",
+      "title": "Neurotrophic Effects of Intermittent Fasting, Calorie Restriction and Exercise: A Review and Annotated Bibliography",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 12.347558,
+      "bm25_score": 5.3081
+    },
+    {
+      "rank": 3,
+      "doi": "10.12677/hjfns.2019.82015",
+      "title": "Seaweed Active Substances and Their Effects on Weight Loss and Lipid Reduction",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Hans Journal of Food and Nutrition Science",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 5.532606,
+      "bm25_score": 3.889
+    },
+    {
+      "rank": 4,
+      "doi": "10.12677/acm.2026.162588",
+      "title": "Research Progress on the Effects and Mechanisms of Intermittent Fasting \non Obesity and Metabolic Syndrome",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Advances in Clinical Medicine",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 4.636369,
+      "bm25_score": 3.0909
+    },
+    {
+      "rank": 5,
+      "doi": "",
+      "title": "Effectiveness of physical exercise in patients with prediabetes on glucemic control: protocol for a systematic review",
+      "abstract": "",
+      "year": 2021,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 3.450546,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 6,
+      "doi": "10.1007/s12220-019-00178-3",
+      "title": "The restriction operator on Bergman spaces",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 2.606958,
+      "bm25_score": 2.607
+    },
+    {
+      "rank": 7,
+      "doi": "arXiv:2306.09527v1",
+      "title": "Leveraging Human Salience to Improve Calorie Estimation",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.860122,
+      "bm25_score": 0.8601
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:2112.09839v1",
+      "title": "Calorie Aware Automatic Meal Kit Generation from an Image",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.801772,
+      "bm25_score": 0.8018
+    },
+    {
+      "rank": 9,
+      "doi": "10.4018/IJGBL.2021040104",
+      "title": "Learning Daily Calorie Intake Standard using a Mobile Game",
+      "abstract": "",
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.750836,
+      "bm25_score": 0.7508
+    },
+    {
+      "rank": 10,
+      "doi": "arXiv:1705.07632v3",
+      "title": "Computer vision-based food calorie estimation: dataset, method, and experiment",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.705985,
+      "bm25_score": 0.706
+    },
+    {
+      "rank": 11,
+      "doi": "arXiv:1706.04062v4",
+      "title": "Deep Learning-Based Food Calorie Estimation Method in Dietary Assessment",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.705985,
+      "bm25_score": 0.706
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:1502.03302v2",
+      "title": "Using Distance Estimation and Deep Learning to Simplify Calibration in Food Calorie Measurement",
+      "abstract": "",
+      "year": 2015,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.66619,
+      "bm25_score": 0.6662
+    },
+    {
+      "rank": 13,
+      "doi": "arXiv:2412.09936v1",
+      "title": "CaLoRAify: Calorie Estimation with Visual-Text Pairing and LoRA-Driven Visual Language Models",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.630643,
+      "bm25_score": 0.6306
+    },
+    {
+      "rank": 14,
+      "doi": "10.18402/resci.2016.04.20",
+      "title": "中国主要粮食生产的化肥削减潜力及其碳减排效应",
+      "abstract": "",
+      "year": 2016,
+      "venue": "资源科学",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "10.37155/2717-5669-0503-54",
+      "title": "学生食品安全及预防食物中毒对策分析",
+      "abstract": "",
+      "year": 2024,
+      "venue": "国际全科医学",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "10.63887/fns.2025.1.8.30",
+      "title": "土壤水力性质及其联系综述",
+      "abstract": "<jats:p>为实现高效农业的可持续发展并提升土壤水力性质在各领域的应用效果，本文基于文献检索，对土壤水力性质的应用、研究方法进行了综述分析，总结了土壤水力性质间的内在联系，为利用不同模型求解水力性质提供了更多可能性。分析发现，近年来研究热点主要集中在土壤水力性质的影响因素和土壤改良方面，未来应加强对土壤水分运移及入渗过程的深入研究。</jats:p>",
+      "year": null,
+      "venue": "自然科学前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "10.31219/osf.io/xt8rs",
+      "title": "挪威的科学预算削减了 2022 年的威胁，以及新出现的理性问题",
+      "abstract": "<p>看起来挪威的研究机构在获得科学资金方面正面临一场巨变。由于这些规则和法规的突然修订，许多人一直担心未来国家科学活动的未来。</p>",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 6,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "10.18686/zhfnc.v1i2.83",
+      "title": "关于“木瓜蛋白酶作为食品嫩化剂用于埃塞俄比亚食品加工的范围和机遇”的综述",
+      "abstract": "<jats:p>食品保鲜的基本目标是在储存过程中限制微生物的发展，从而延长保质期并降低食物中毒的风险。水果和蔬菜是人类饮食的重要补充，因为它们含有维持健康所需的维生素、矿物质和纤维。木瓜含有一种被称为木瓜蛋白酶的蛋白质分解酶，这种酶可用于各种食品加工程序，以分解蛋白质。本综述旨在仔细研究木瓜蛋白酶的提取方法，采用研磨和超声波提取技术，并确定木瓜蛋白酶作为防腐剂在未来研究中的应用。由于木瓜果实中含有半胱氨酸蛋白酶，因此可作为药理学和医学的重要工具。木瓜种子、果实和果实中都含有木瓜碱，这是一种生物碱，味道苦涩，具有强效的心脏抑制作用。食品保鲜的主要目的是保持食品的营养价值，同时还能保持其外观和延长其保质期。由于木瓜广受欢迎，且具有很高的食用价值和营养价值，因此有必要在水果中添加最佳的保鲜酶。酵素已发展成为众多行业的重要工具，其中最主要的是食品和动物饲料、生物燃料、洗涤剂、纺织品、纸浆和造纸。</jats:p>",
+      "year": null,
+      "venue": "食品营养化学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "10.64083/sse2520705",
+      "title": "社会性科学议题教学研究的系统性文献综述",
+      "abstract": "<jats:p>社会性科学议题(SSI)教学作为连接科学教育与社会责任的重要桥梁,近年来在理论与实践领域备受关注。本研究采用系统性文献综述方法,遵循PRISMA框架,对中英文数据库中的96篇实证研究进行编码分析,聚焦SSI教学的研究设计、实施模式、评估体系及实践挑战。研究发现SSI教学在促进学生核心素养发展方面展现出多维度的实践成效,但教学实施中面临课程设计碎片化、教师跨学科能力不足等挑战,亟需构建\"教学方法-任务设计-环境资源-教师发展\"四维协同生态,实现从课堂创新向社会参与的范式跃迁。</jats:p>",
+      "year": null,
+      "venue": "社会科学与教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "10.37155/2717-5669-0502-35",
+      "title": "以家庭成员为主导的孤独症早期诊断方法和干预方法综述",
+      "abstract": "",
+      "year": 2024,
+      "venue": "国际全科医学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 21,
+      "doi": "10.1140/epjb/e2007-00238-8",
+      "title": "Linear response in aging glassy systems, intermittency and the Poisson statistics of record fluctuations",
+      "abstract": "",
+      "year": 2006,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}

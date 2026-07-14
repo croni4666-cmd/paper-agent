@@ -1,0 +1,263 @@
+{
+  "query_id": "q032",
+  "query": "东数西算当前实行情况如何？究竟有多少互联网企业使用这种方案？东数东算的条件成熟吗？",
+  "generated_at": "2026-07-14T23:52:55",
+  "config": "v4-combined-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 3,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 13,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.37155/2717-5170-0607-6",
+      "title": "基于工业互联网环境下的大数据技术应用研究",
+      "abstract": "",
+      "year": 2024,
+      "venue": "电子通信与计算机科学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.75,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5989
+    },
+    {
+      "rank": 2,
+      "doi": "10.1360/zf2010-40-suppl-104",
+      "title": "面向精细农业的高维数据本征维数估计方法研究进展",
+      "abstract": "",
+      "year": 2010,
+      "venue": "SCIENTIA SINICA Informationis",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.701128,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.552
+    },
+    {
+      "rank": 3,
+      "doi": "10.64216/3080-1494.26.07.032",
+      "title": "利用信息技术激发学生兴趣实现数学作业减负的策略研究",
+      "abstract": "",
+      "year": 2026,
+      "venue": "东方教育学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.61774,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4721
+    },
+    {
+      "rank": 4,
+      "doi": "10.64216/3080-1494.26.03.096",
+      "title": "少数民族中的图像学如何用符号学的原理进行更好的信息传播",
+      "abstract": "",
+      "year": 2026,
+      "venue": "东方教育学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.611916,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4665
+    },
+    {
+      "rank": 5,
+      "doi": "10.70693/rwsk.v1i5.954",
+      "title": "东西方“互联网+大健康”行业发展模式探讨",
+      "abstract": "<jats:p>目的 探讨中国与美国在“互联网+医疗健康”领域的发展模式差异，总结可借鉴的经验。方法 采用文献分析与案例对比法，从政策导向、技术创新、资源分配等维度比较两国发展路径。结果 中国以政府主导推动全民健康覆盖，重点解决医疗资源不均问题；美国依赖市场资本与技术创新，聚焦个性化医疗。两国均面临数据安全、行业标准化等挑战。结论 发展中国家需结合国情优化政策支持、技术创新及支付体系，推动“互联网+大健康”可持续发展。</jats:p>",
+      "year": null,
+      "venue": "人文与社会科学学刊",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.576268,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4324
+    },
+    {
+      "rank": 6,
+      "doi": "10.32629/er.v9i5.7095",
+      "title": "西北地区少数民族在东北城市的语言使用状况调查",
+      "abstract": "<jats:p>在当代中国社会经济持续蓬勃发展的大背景下，各民族之间的人口流动规模不断扩大，流动模式也日趋多元化。其中，西北地区少数民族群体向东北城市的迁移与定居现象尤为引人注目，且呈现出日益显著的趋势。而语言作为社会交往与文化认同的核心载体，其使用模式的转变深刻折射出社会、文化、技术及心理层面的复杂变迁。它不仅仅是沟通工具的演变，更是社会动态和文化认同的晴雨表。本研究以现居住在哈尔滨市的西北地区少数民族居民为研究对象，通过问卷与访谈的方式，调查该族群体分别在家庭、工作、教育与社交场景中的普通话与母语使用情况，并探讨不同职业、代际、教育背景下语言选择的差异的原因。研究旨在揭示该群体在语言适应过程中所面临的挑战与策略，并为城市民族融合政策的制定提供实证支持与建议。</jats:p>",
+      "year": null,
+      "venue": "教育研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.526562,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3847
+    },
+    {
+      "rank": 7,
+      "doi": "10.32629/gmsm.v3i4.837",
+      "title": "一种实用的浅孔爆破孔网参数计算方法",
+      "abstract": "<jats:p>由于我公司承揽矿山爆破作业较多,钻孔机械各异,浅孔爆破孔网参数差异很大,如没有一套简便易用的浅孔爆破参数计算方法,仅靠爆破员经验装填炮孔,极易产生不可控的飞散物。笔者试图寻找一种较为通用且简便的浅孔爆破孔网参数计算方法,在查询大量资料未果后,笔者摸索出一套从抵抗线入手的浅孔爆破参数计算方法,并能通过电子表格快速得出本次爆破不同深度炮孔的装药量,通过工程验证,该方法在孔径小于150mm的浅孔爆破中,具有良好的指导意义。</jats:p>",
+      "year": null,
+      "venue": "地矿测绘",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.493676,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3532
+    },
+    {
+      "rank": 8,
+      "doi": "",
+      "title": "ファインダイニングにおける価値伝達の構造 ~ミシュラン三つ星レストランを対象としたエンコード戦略と読解パターンの分析~",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Institutional Repositories DataBase (IRDB)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.483165,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3431
+    },
+    {
+      "rank": 9,
+      "doi": "10.64216/3080-1494.25.10.029",
+      "title": "MATLAB软件在“应用数学”课程教学优化的实践",
+      "abstract": "",
+      "year": 2025,
+      "venue": "东方教育学刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.482036,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.342
+    },
+    {
+      "rank": 10,
+      "doi": "10.69979/3029-2700.25.02.045",
+      "title": "互联网使用频率对青少年的影响——基于CGSS2021数据的实证分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "社会企业经济发展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.47871,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3388
+    },
+    {
+      "rank": 11,
+      "doi": "10.55375/jssc.2024.4.1.1",
+      "title": "大湾区数据跨境流动下数据分级分类保护的法治进路",
+      "abstract": "<jats:p>本文基于当下粤港澳大湾区数据跨境流通的数据分级办法错位、基于形式和内容的数据分类模式缺失和基于分级分类的数据监管机制不完善的现状，对当前粤港澳在数据分级分类保护的理念衔接、数据分级分类保护的制度规范以及对数据分级分类保护的实践效果进行系统检视。本文提出，应当从大湾区数据保护需要，参照内地与港澳先进法治经验，提出顶层设计擘画分级分类规范体系、强化分级定级、完善分类覆盖和构筑数据融合开放的法治保障体系，进而为数据跨境流通营造更加安全保障的湾区环境，以法治护航大湾区数据跨境流动。</jats:p>",
+      "year": 2024,
+      "venue": "社会科学与计算研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.39457,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2582
+    },
+    {
+      "rank": 12,
+      "doi": "",
+      "title": "民間における手形割引の法的性質と対応措置 ──民事，刑事の交錯する観点からの考察──",
+      "abstract": "",
+      "year": 2016,
+      "venue": "Institutional Repositories DataBase (IRDB)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.348844,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2144
+    },
+    {
+      "rank": 13,
+      "doi": "10.5281/zenodo.4604023",
+      "title": "ESPnet2 pretrained model, Emiru Tsunoo/aishell_asr_train_asr_streaming_transformer_raw_zh_char_sp_valid.acc.ave, fs=16k, lang=zh",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.25,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.1196
+    }
+  ]
+}

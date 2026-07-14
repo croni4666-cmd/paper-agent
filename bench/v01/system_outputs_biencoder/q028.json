@@ -1,0 +1,358 @@
+{
+  "query_id": "q028",
+  "query": "珀尔的因果图的相关前沿研究",
+  "generated_at": "2026-07-14T23:52:16",
+  "config": "v4-biencoder-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 8,
+    "arxiv": 0,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 18,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.37155/2661-4766-0206-3",
+      "title": "糖尿病与眼表螨虫感染的相关研究进展",
+      "abstract": "",
+      "year": 2020,
+      "venue": "临床医学前沿",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.829354,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.8294
+    },
+    {
+      "rank": 2,
+      "doi": "10.37155/2661-4766-0706-45",
+      "title": "偏头痛患者疼痛发作与睡眠质量的相关性研究",
+      "abstract": "",
+      "year": 2025,
+      "venue": "临床医学前沿",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.800768,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.8008
+    },
+    {
+      "rank": 3,
+      "doi": "10.37155/2661-4766-0202-8",
+      "title": "小儿腹腔镜手术气腹相关并发症的发生原因及预防研究",
+      "abstract": "",
+      "year": 2020,
+      "venue": "临床医学前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.676451,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6765
+    },
+    {
+      "rank": 4,
+      "doi": "10.62022/fmr.issn3006-0036.2024.03.006",
+      "title": "牙周炎对2型糖尿病及其相关生化指标的影响",
+      "abstract": "",
+      "year": 2024,
+      "venue": "医学研究前沿",
+      "citation_count": 4,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.671777,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6718
+    },
+    {
+      "rank": 5,
+      "doi": "10.1089/ct.2020;32.110-113",
+      "title": "孟德尔随机化研究解出甲状腺功能与肾脏功能相关性中的因果顺序之谜",
+      "abstract": "",
+      "year": 2020,
+      "venue": "Clinical Thyroidology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.670881,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6709
+    },
+    {
+      "rank": 6,
+      "doi": "10.62022/fetr.issn3006-001x.2024.01.022",
+      "title": "基于知识图谱的高校教学资料管理模型及相关算法研究",
+      "abstract": "",
+      "year": 2024,
+      "venue": "教育教学研究前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.615788,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.6158
+    },
+    {
+      "rank": 7,
+      "doi": "10.37155/2661-4766-0601-29",
+      "title": "人文关怀在精神科护理中的应用效果研究",
+      "abstract": "",
+      "year": 2024,
+      "venue": "临床医学前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.568445,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5684
+    },
+    {
+      "rank": 8,
+      "doi": "10.22541/au.167706009.92155472/v1",
+      "title": "肠道菌群与 COVID-2019 之间的因果关系：一项孟德尔随机化研究",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 9,
+      "v4_score": 0.495128,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4951
+    },
+    {
+      "rank": 9,
+      "doi": "10.1360/sspma-2026-0351",
+      "title": "开放式微腔系统中的光与物质相互作用研究进展",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Zhongguo kexue. Wulixue Lixue Tianwenxue",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.435001,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.435
+    },
+    {
+      "rank": 10,
+      "doi": "10.62177/fapad.v1i1.938",
+      "title": "基于图像学视角的《荷花水鸟图》研究",
+      "abstract": "<jats:p>本文是针对清代画家朱耷《荷花水鸟图》的个案分析，首先肯定了这副作品的真实性，并从图像学的视角研究此作品，在前图像志的层次，《荷花水鸟图》画面构成元素较少但表现的内容却极其丰富；在图像志的层面，《荷花水鸟图》的画面背后充斥着强烈的孤独感，展现出八大山人与世隔绝的愿望；在图像学层次，《荷花水鸟图》充满了道、禅两家的哲理思想，更是八大山人人生态度的展现。</jats:p>",
+      "year": null,
+      "venue": "亚太艺术与设计前沿",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.221525,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2215
+    },
+    {
+      "rank": 11,
+      "doi": "10.7498/aps.75.20260701",
+      "title": "Quantum many-body physics in polarized Fermi gases",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Acta Physica Sinica",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.056879,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0569
+    },
+    {
+      "rank": 12,
+      "doi": "10.3724/cbls.2026096",
+      "title": "Advances in anti-aging and age-related disease drug discovery based on artificial intelligence and multi-omics",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Shengming kexue",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.052701,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0527
+    },
+    {
+      "rank": 13,
+      "doi": "10.3724/bnsfc-2026-0089",
+      "title": "Solution-phase Synthesis and Quantum Coherence Tuning of Carbon-based Quantum Magnets",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Bulletin of National Natural Science Foundation of China",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.049488,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0495
+    },
+    {
+      "rank": 14,
+      "doi": "10.3724/sp.j.1123.2025.10005",
+      "title": "Case-based teaching with both positive and negative examples in undergraduate analytical chemistry laboratory： determination of six nitrogen-containing pesticides in environmental samples by solid-phase microextraction-high performance liquid chromatography",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Chinese Journal of Chromatography",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.02816,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0282
+    },
+    {
+      "rank": 15,
+      "doi": "10.12677/md.2026.161018",
+      "title": "Causal Association between Immune Cell Phenotypes and Preeclampsia: A Two-Sample Mendelian Randomization Study",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Medical  Diagnosis",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.004379,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0044
+    },
+    {
+      "rank": 16,
+      "doi": "10.1360/ssv-2026-0031",
+      "title": "The physiological roles of H2S-mediated protein persulfidation in plants: A tiny spark, a mighty mark",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Scientia Sinica Vitae",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": -0.022052,
+      "bm25_score": 0.0,
+      "biencoder_score": -0.0221
+    },
+    {
+      "rank": 17,
+      "doi": "10.1360/ssc-2026-0108",
+      "title": "Recent Progress in Infrared Quantum Dots for Photodetectors and Neuromorphic Applications",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Scientia Sinica Chimica",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": -0.026812,
+      "bm25_score": 0.0,
+      "biencoder_score": -0.0268
+    },
+    {
+      "rank": 18,
+      "doi": "10.1360/csb-2026-0406",
+      "title": "Synthesis of Strained Rings through Silver-Catalyzed Cycloaddition",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Chinese Science Bulletin (Chinese Version)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": -0.043708,
+      "bm25_score": 0.0,
+      "biencoder_score": -0.0437
+    }
+  ]
+}

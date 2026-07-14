@@ -1,0 +1,757 @@
+{
+  "query_id": "q041",
+  "query": "肝豆状核性变的研究综述以及患者生存概率追溯 (Wilson's disease)",
+  "generated_at": "2026-07-14T23:52:21",
+  "config": "v4-biencoder-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "core": 10
+  },
+  "dedup_count": 39,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1016/S0140-6736(07)60196-2",
+      "title": "Wilson's disease",
+      "abstract": "",
+      "year": 2007,
+      "venue": "The Lancet",
+      "citation_count": 843,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "orig_rank": 2,
+      "v4_score": 0.77474,
+      "bm25_score": 1.5407,
+      "biencoder_score": 0.7747
+    },
+    {
+      "rank": 2,
+      "doi": "",
+      "title": "Wilson's disease",
+      "abstract": "",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 34,
+      "v4_score": 0.77474,
+      "bm25_score": 1.5407,
+      "biencoder_score": 0.7747
+    },
+    {
+      "rank": 3,
+      "doi": "",
+      "title": "Wilson's disease: Current status",
+      "abstract": "",
+      "year": 1992,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 35,
+      "v4_score": 0.745594,
+      "bm25_score": 1.315,
+      "biencoder_score": 0.7456
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "Wilson's disease - clinical picture, factors influencing disease progression, treatment methods",
+      "abstract": "",
+      "year": 2024,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 39,
+      "v4_score": 0.737478,
+      "bm25_score": 1.0423,
+      "biencoder_score": 0.7375
+    },
+    {
+      "rank": 5,
+      "doi": "10.5582/irdr.2017.01057",
+      "title": "Epidemiology, diagnosis, and treatment of Wilson's disease.",
+      "abstract": "",
+      "year": 2017,
+      "venue": "Intractable & Rare Diseases Research",
+      "citation_count": 83,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "orig_rank": 5,
+      "v4_score": 0.722471,
+      "bm25_score": 1.2252,
+      "biencoder_score": 0.7225
+    },
+    {
+      "rank": 6,
+      "doi": "",
+      "title": "Neurologic Wilson's disease",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 32,
+      "v4_score": 0.711551,
+      "bm25_score": 1.4189,
+      "biencoder_score": 0.7116
+    },
+    {
+      "rank": 7,
+      "doi": "",
+      "title": "Wilson's Disease and Monoamines",
+      "abstract": "",
+      "year": 1978,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 36,
+      "v4_score": 0.664432,
+      "bm25_score": 1.4189,
+      "biencoder_score": 0.6644
+    },
+    {
+      "rank": 8,
+      "doi": "10.1016/j.jhep.2011.11.007",
+      "title": "EASL Clinical Practice Guidelines: Wilson's disease.",
+      "abstract": "",
+      "year": 2012,
+      "venue": "Journal of Hepatology",
+      "citation_count": 997,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 1,
+      "v4_score": 0.656004,
+      "bm25_score": 1.147,
+      "biencoder_score": 0.656
+    },
+    {
+      "rank": 9,
+      "doi": "10.1002/cld.986",
+      "title": "Wilson’s Disease and Iron Overload: Pathophysiology and Therapeutic Implications",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Clinical Liver Disease",
+      "citation_count": 27,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "Review",
+      "orig_rank": 6,
+      "v4_score": 0.618178,
+      "bm25_score": 1.0781,
+      "biencoder_score": 0.6182
+    },
+    {
+      "rank": 10,
+      "doi": "10.1016/0002-9343(56)90066-3",
+      "title": "Penicillamine, a new oral therapy for Wilson's disease.",
+      "abstract": "",
+      "year": 1956,
+      "venue": "American Journal of Medicine",
+      "citation_count": 683,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 3,
+      "v4_score": 0.59261,
+      "bm25_score": 1.147,
+      "biencoder_score": 0.5926
+    },
+    {
+      "rank": 11,
+      "doi": "",
+      "title": "Intrahepatocellular Localization of Copper in Wilson's Disease",
+      "abstract": "",
+      "year": 1993,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 31,
+      "v4_score": 0.571087,
+      "bm25_score": 1.2252,
+      "biencoder_score": 0.5711
+    },
+    {
+      "rank": 12,
+      "doi": "10.36922/gpd.7503",
+      "title": "Identifying regulatory variants in Indian Wilson’s disease patients with missing heritability",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Gene &amp; Protein in Disease",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.557484,
+      "bm25_score": 0.9625,
+      "biencoder_score": 0.5575
+    },
+    {
+      "rank": 13,
+      "doi": "",
+      "title": "Hepatocellular carcinoma in a non-cirrhotic patient with Wilson's disease",
+      "abstract": "",
+      "year": 2013,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 33,
+      "v4_score": 0.555143,
+      "bm25_score": 1.0781,
+      "biencoder_score": 0.5551
+    },
+    {
+      "rank": 14,
+      "doi": "10.69979/3029-2808.25.05.031",
+      "title": "综合护理干预对慢性荨麻疹患者负性情绪及生活质量的影响",
+      "abstract": "",
+      "year": 2025,
+      "venue": "医学研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 13,
+      "v4_score": 0.549358,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.5494
+    },
+    {
+      "rank": 15,
+      "doi": "10.1016/j.nbd.2026.107495",
+      "title": "Transcriptomic profiles link heterogeneous brain structural deviation to neurological subtypes in Wilson's disease.",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Neurobiology of Disease",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 30,
+      "v4_score": 0.522562,
+      "bm25_score": 0.8693,
+      "biencoder_score": 0.5226
+    },
+    {
+      "rank": 16,
+      "doi": "",
+      "title": "HFE gene mutations and Wilson's disease in Sardinia",
+      "abstract": "",
+      "year": 2010,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 38,
+      "v4_score": 0.516062,
+      "bm25_score": 1.147,
+      "biencoder_score": 0.5161
+    },
+    {
+      "rank": 17,
+      "doi": "10.1038/s41419-021-03397-1",
+      "title": "Inhibiting NLRP3 inflammasome activation prevents copper-induced neuropathology in a murine model of Wilson’s disease",
+      "abstract": "",
+      "year": 2021,
+      "venue": "Cell Death and Disease",
+      "citation_count": 89,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 4,
+      "v4_score": 0.506669,
+      "bm25_score": 0.8291,
+      "biencoder_score": 0.5067
+    },
+    {
+      "rank": 18,
+      "doi": "10.37155/2717-5650-0302-29",
+      "title": "研究心理护理干预对慢性肝病患者治疗效果及生存质量的改善",
+      "abstract": "",
+      "year": 2022,
+      "venue": "国际护理与健康",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 17,
+      "v4_score": 0.49865,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4987
+    },
+    {
+      "rank": 19,
+      "doi": "",
+      "title": "A Case to Tear One's Hair Out: Trichotillomania in Wilson's Disease",
+      "abstract": "",
+      "year": 2022,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 37,
+      "v4_score": 0.485627,
+      "bm25_score": 1.017,
+      "biencoder_score": 0.4856
+    },
+    {
+      "rank": 20,
+      "doi": "10.1016/j.nbd.2024.106692",
+      "title": "Altered cortical functional networks in Wilson's disease: A resting-state electroencephalogram study.",
+      "abstract": "",
+      "year": 2024,
+      "venue": "Neurobiology of Disease",
+      "citation_count": 3,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 8,
+      "v4_score": 0.48536,
+      "bm25_score": 0.9135,
+      "biencoder_score": 0.4854
+    },
+    {
+      "rank": 21,
+      "doi": "10.2147/NDT.S443278",
+      "title": "Ferulic Acid Activates SIRT1-Mediated Ferroptosis Signaling Pathway to Improve Cognition Dysfunction in Wilson’s Disease",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Neuropsychiatric Disease and Treatment",
+      "citation_count": 17,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 7,
+      "v4_score": 0.472461,
+      "bm25_score": 0.7925,
+      "biencoder_score": 0.4725
+    },
+    {
+      "rank": 22,
+      "doi": "10.61654/zzjkwz0163",
+      "title": "急诊护理对急性肠梗阻患者生存率的影响研究",
+      "abstract": "<jats:p>目的:为了研究急诊护理对急性肠梗阻患者生存率的影响。方法:本研究选择了64例急性肠梗阻患者,分为参照组(32例,接受常规护理)和实验组(32例,接受急诊护理)。对两组患者护理前后的生活质量、术后康复效果、并发症发生情况进行对比分析。结果:护理后,实验组患者的生理功能、社会功能、躯体功能、精神健康的评分均明显高于参照组,P值均＜0.05。在术后康复效果方面,实验组的肠道功能恢复时间、下床活动时间、术后肛门排气时间、进食时间以及住院时间均低于参照组,P值＜0.05。在并发症发生情况对比方面,实验组的切口开裂、腹腔感染、吻合口开裂、功能性胃肠疾病的发生率均低于参照组,P值＜0.05。结论:急诊护理可以显著提高急性肠梗阻患者的生活质量,加快术后康复,减少并发症的发生率,提高患者的生存率。</jats:p>",
+      "year": null,
+      "venue": "健康文摘",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 12,
+      "v4_score": 0.423079,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.4231
+    },
+    {
+      "rank": 23,
+      "doi": "10.69979/3029-2700.24.6.040",
+      "title": "高管团队异质性概念、维度、测量以及结果变量的研究综述",
+      "abstract": "",
+      "year": 2024,
+      "venue": "社会企业经济发展",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 11,
+      "v4_score": 0.397961,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.398
+    },
+    {
+      "rank": 24,
+      "doi": "10.64216/3104-9656.25.02.027",
+      "title": "根本原因分析法在降低创伤骨科患者院内跌倒发生率中的应用综述",
+      "abstract": "",
+      "year": 2025,
+      "venue": "医学实践与研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 16,
+      "v4_score": 0.389833,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3898
+    },
+    {
+      "rank": 25,
+      "doi": "10.63887/mhr.2025.1.3.5",
+      "title": "骨髓增生异常综合征患者铁过载状态对造血功能及生存质量的影响机制研究",
+      "abstract": "<jats:p>骨髓增生异常综合征是一类造血干细胞克隆性疾病，具有发病率高、异质性强及向急性白血病转化风险大的特点。患者在疾病过程中常因严重贫血而长期接受红细胞输注，这在改善临床症状的同时，却带来体内铁负荷逐渐积累的问题。铁过载不仅是单纯的代谢异常，更是影响患者造血功能、加速病情进展并显著降低生存质量的重要因素。铁过载通过自由基生成、氧化应激反应和炎症反应，导致造血干细胞功能障碍与骨髓微环境破坏，同时引发心脏、肝脏、内分泌系统等多器官损伤。本文在梳理铁过载形成机制的基础上，系统探讨其对造血功能及生存质量的影响途径，结合现有研究提出防治策略与未来方向。结果显示，早期监测铁负荷并进行去铁治疗，有助于延缓病情进展和改善患者生活质量。未来应加强对铁代谢分子机制的研究，发展精准化和个体化的管理方案，以提高MDS患者的总体预后。</jats:p>",
+      "year": null,
+      "venue": "医药卫生研究",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.382042,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.382
+    },
+    {
+      "rank": 26,
+      "doi": "10.61654/zzyskx0504",
+      "title": "咽喉益生菌改善慢性咽炎患者生活质量及症状评分的临床研究",
+      "abstract": "<jats:p>目的:探讨咽喉益生菌改善慢性咽炎患者生活质量及症状评分的临床研究。方法:选取本院2024年7月-2025年7月收治的80例慢性咽炎患者,采用随机数字表法分为B组与A组,各40例。A组患者采用常规药物治疗,B组患者在常规药物治疗基础上加用咽喉益生菌干预,对比两组患者的临床症状评分、生活质量评分、炎症因子水平。结果:治疗4周后,两组各项症状评分及总分均较治疗前显著降低(P＜0.05),且B组的咽部异物感评分、咽干评分、咽痛评分、咳嗽评分及总评分,均显著低于A组(P＜0.05)。治疗4周后,两组各维度得分及总分均较治疗前显著升高(P＜0.05),且B组的生理功能、心理状态、社会交往及总分,均明显高于A组(P＜0.05)。治疗4周后,两组血清IL-6、TNF-α水平均较治疗前显著降低(P＜0.05),且观察组的IL-6、TNF-α均显著低于对照组(P＜0.05)。结论:在慢性咽炎常规治疗基础上加用咽喉益生菌,可通过调节咽喉部微生态平衡、抑制局部炎症反应,显著调节咽部黏膜的免疫细胞活性,减轻患者临床症状,提升生活质量。</jats:p>",
+      "year": null,
+      "venue": "养生科学",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.364531,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3645
+    },
+    {
+      "rank": 27,
+      "doi": "10.63779/qrkd5560",
+      "title": "综合康复训练护理对急性脊髓炎患者活动能力、生存质量的影响",
+      "abstract": "<jats:p>目的:实施综合康复训练护理,探究其对急性脊髓炎患者整体活动功能等机体康复的实际影响及价值。方法:选取在我院进行治疗的急性脊髓炎患者(样本纳入例数:80例;纳入时间:2023年7月至2024年7月),随机数字抽签法将患者分为对照、观察两个组,观察例数高度一致。分别实施常规护理干预、综合康复训练护理干预。对比分析不同护理模式对患者活动能力、生存质量、神经功能的运用作用及价值。结果:与对照组(常规护理干预)相比,观察组(综合康复训练护理)的活动能力各指标评分均高于对照组(P&lt;0.05);生存质量各指标水平评分均更高(P&lt;0.05);神经功能各指标评分均优于对照组(P&lt;0.05)。结论:实施综合康复训练护理干预具有一定实际应用价值及护理合理性、创新性,其可有效提升患者活动能力,优化生存质量,改善神经功能各指标数据,为患者康复提供一定支持干预。</jats:p>",
+      "year": null,
+      "venue": "医药产业研究",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.353771,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.3538
+    },
+    {
+      "rank": 28,
+      "doi": "10.63779/tkqu8560",
+      "title": "以患者为中心的个性化护理对门诊分诊护理质量,患者情绪及护患纠纷的影响",
+      "abstract": "<jats:p>目的:探究以患者为中心的个性化护理在门诊分诊护理质量、患者情绪及护患纠纷等方面的影响。方法:选择两组各33例患者,对照组接受常规护理,观察组接受以患者为中心的个性化护理。结果:观察组护理后的SDS评分(41.49±1.39)和SAS评分(40.52±2.24)均明显低于护理前和对照组护理后(对照组护理后SDS评分为45.50±1.95,SAS评分为44.62±2.43)。同时观察组预检分诊、挂号、候诊、缴费时间均明显低于对照组。观察组在就诊环境、护士形象、护理专业性及服务态度等服务满意度方面评分也明显高于对照组。而观察组护理纠纷总发生率为3.03%,对照组为21.21%,显著低于对照组。结论:以患者为中心的个性化护理能有效改善患者情绪,提高护理质量和服务满意度,减少护患纠纷,对提升门诊分诊护理的整体水平具有重要意义。</jats:p>",
+      "year": null,
+      "venue": "医药产业研究",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 18,
+      "v4_score": 0.260475,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2605
+    },
+    {
+      "rank": 29,
+      "doi": "10.7815/ijorcs.26.2012.051",
+      "title": "Ontology Based Information Extraction for Disease Intelligence",
+      "abstract": "",
+      "year": 2012,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 25,
+      "v4_score": 0.24817,
+      "bm25_score": 0.3414,
+      "biencoder_score": 0.2482
+    },
+    {
+      "rank": 30,
+      "doi": "10.12677/ns.2023.122031",
+      "title": "Scope of Research on Symptom Cluster in Patients with Chronic Obstructive Pulmonary Disease",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Nursing Science",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 14,
+      "v4_score": 0.18719,
+      "bm25_score": 0.2865,
+      "biencoder_score": 0.1872
+    },
+    {
+      "rank": 31,
+      "doi": "arXiv:2306.12520v1",
+      "title": "Bayesian inference and role of astrocytes in amyloid-beta dynamics with modelling of Alzheimer's disease using clinical data",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 0.176155,
+      "bm25_score": 0.2359,
+      "biencoder_score": 0.1762
+    },
+    {
+      "rank": 32,
+      "doi": "arXiv:1611.00953v2",
+      "title": "High-dimensional regression over disease subgroups",
+      "abstract": "",
+      "year": 2016,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 0.15256,
+      "bm25_score": 0.3414,
+      "biencoder_score": 0.1526
+    },
+    {
+      "rank": 33,
+      "doi": "10.1177/13872877251415019",
+      "title": "How reproducible are data-driven subtypes of Alzheimer's disease atrophy?",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.135357,
+      "bm25_score": 0.3027,
+      "biencoder_score": 0.1354
+    },
+    {
+      "rank": 34,
+      "doi": "arXiv:2203.09096v5",
+      "title": "DeepAD: A Robust Deep Learning Model of Alzheimer's Disease Progression for Real-World Clinical Applications",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 24,
+      "v4_score": 0.122986,
+      "bm25_score": 0.2468,
+      "biencoder_score": 0.123
+    },
+    {
+      "rank": 35,
+      "doi": "arXiv:2509.21735v3",
+      "title": "Spatio-Temporal Graph Deep Learning with Stochastic Differential Equations for Uncovering Alzheimer's Disease Progression",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 27,
+      "v4_score": 0.110805,
+      "bm25_score": 0.2468,
+      "biencoder_score": 0.1108
+    },
+    {
+      "rank": 36,
+      "doi": "arXiv:2506.00662v1",
+      "title": "Uncertainty-Aware Genomic Classification of Alzheimer's Disease: A Transformer-Based Ensemble Approach with Monte Carlo Dropout",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 26,
+      "v4_score": 0.089792,
+      "bm25_score": 0.2359,
+      "biencoder_score": 0.0898
+    },
+    {
+      "rank": 37,
+      "doi": "10.3389/fnins.2019.00509",
+      "title": "Diagnosis of Alzheimer's Disease via Multi-modality 3D Convolutional Neural Network",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 23,
+      "v4_score": 0.079357,
+      "bm25_score": 0.2719,
+      "biencoder_score": 0.0794
+    },
+    {
+      "rank": 38,
+      "doi": "arXiv:2309.14256v1",
+      "title": "A Weighted Prognostic Covariate Adjustment Method for Efficient and Powerful Treatment Effect Inferences in Randomized Controlled Trials",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 28,
+      "v4_score": 0.068497,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0685
+    },
+    {
+      "rank": 39,
+      "doi": "arXiv:2402.12205v1",
+      "title": "Self-organized clustering, prediction, and superposition of long-term cognitive decline from short-term individual cognitive test scores in Alzheimer's disease",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.051077,
+      "bm25_score": 0.2005,
+      "biencoder_score": 0.0511
+    }
+  ]
+}

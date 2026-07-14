@@ -1,0 +1,376 @@
+{
+  "query_id": "q048",
+  "query": "全民基本收入是否会滋生懒汉心理 (UBI Finland Kenya experiment anchor)",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 20,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.3866/pku.dxhx20150632",
+      "title": "第13届全国大学化学教学研讨会纪要",
+      "abstract": "",
+      "year": 2015,
+      "venue": "University Chemistry",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.967697,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 2,
+      "doi": "10.1111/bjd.20458",
+      "title": "心理压力是否会使带状疱疹 (蛇盘疮) 的风险增加?",
+      "abstract": "",
+      "year": 2021,
+      "venue": "British Journal of Dermatology",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.938002,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 3,
+      "doi": "10.1016/j.physletb.2011.05.010",
+      "title": "Search for stable hadronising squarks and gluinos with the ATLAS experiment at the LHC",
+      "abstract": "",
+      "year": 2011,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 0.828959,
+      "bm25_score": 1.6566
+    },
+    {
+      "rank": 4,
+      "doi": "10.18356/9789211545265c056",
+      "title": "朝鲜民主主义人民共和国局势",
+      "abstract": "",
+      "year": 2025,
+      "venue": "安全理事会报告",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 9,
+      "v4_score": 0.813185,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 5,
+      "doi": "10.61654/zzgjsc0408",
+      "title": "践行人本理念 办好民生实事全力以赴推进暖心关爱落地见效",
+      "abstract": "",
+      "year": null,
+      "venue": "国际市场",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.791662,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 6,
+      "doi": "arXiv:2601.16592v1",
+      "title": "Integrating Meteorological and Operational Data: A Novel Approach to Understanding Railway Delays in Finland",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.738775,
+      "bm25_score": 1.7973
+    },
+    {
+      "rank": 7,
+      "doi": "10.3861/kenko.85.4_i",
+      "title": "理事会報告：「日本民族衛生学会」と国民優生法",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Japanese Journal of Health and Human Ecology",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.69848,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:2504.02714v1",
+      "title": "Impact of a Blockchain-based Universal Basic Income Pilot: The case of Circles UBI currency",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.685414,
+      "bm25_score": 1.6915
+    },
+    {
+      "rank": 9,
+      "doi": "10.4992/pacjpa.89.0_26",
+      "title": "&lt;b&gt;【日本心理学諸学会連合・日本心理学会連携企画】&lt;/b&gt;Linking Clinical Psychology and Basic Psychology",
+      "abstract": "",
+      "year": 2025,
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.670116,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "10.1109/IROS60139.2025.11247141",
+      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.646025,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 11,
+      "doi": "10.16874/jslckc.2019..52.006",
+      "title": "汉硕留学生学习动机、基本心理需要、 学习性投入的关系",
+      "abstract": "",
+      "year": 2019,
+      "venue": "The Journal of Study on Language and Culture of Korea and China",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.595041,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "10.1016/j.nimb.2023.05.018",
+      "title": "Mean range bunching of exotic nuclei produced by in-flight fragmentation and fission -- Stopped-beam experiments with increased efficiency",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.526393,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 13,
+      "doi": "arXiv:1711.02958v1",
+      "title": "Search for hidden-photon dark matter with the FUNK experiment",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.423406,
+      "bm25_score": 1.7841
+    },
+    {
+      "rank": 14,
+      "doi": "10.64216/3080-1486.25.11.018",
+      "title": "农村电商扶持政策是否有效促进农民增收——基于中部地区实证分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "社会经济导刊",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.391958,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "10.64216/3104-9672.25.04.016",
+      "title": "农业保险对农民收入影响机理及路径分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "全球文化探索",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.376679,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "arXiv:9806002v1",
+      "title": "Recent Results from E866 at BNL",
+      "abstract": "",
+      "year": 1998,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.362598,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 17,
+      "doi": "10.1103/PhysRevC.107.L041301",
+      "title": "Anchor-based optimization of energy density functionals",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.361828,
+      "bm25_score": 1.933
+    },
+    {
+      "rank": 18,
+      "doi": "10.4992/pacjpa.88.0_is-022",
+      "title": "【日本心理学会 死生心理学研究会・日本心理学会連携企画】　多様な研究領域からケアと死生を考える　死生心理学研究の展開（10）",
+      "abstract": "",
+      "year": 2024,
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.309582,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "arXiv:2410.09948v1",
+      "title": "State of NLP in Kenya: A Survey",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.214193,
+      "bm25_score": 2.8768
+    },
+    {
+      "rank": 20,
+      "doi": "arXiv:2102.10886v4",
+      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.180263,
+      "bm25_score": 1.4494
+    }
+  ]
+}

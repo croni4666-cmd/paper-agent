@@ -14,13 +14,13 @@
 
 | Method | NDCG@10 | Recall@10 | Precision@10 |
 |---|---:|---:|---:|
-| **LTR (LambdaMART)** | **0.7192 ± 0.0959** | **0.6174** | **0.4640** |
+| **LTR (LambdaMART)** | **0.7323 ± 0.0800** | **0.6628** | **0.4680** |
 | combined (linear 0.5/0.5) | 0.7227 | 0.7051 | 0.4920 |
-| **Δ (LTR − baseline)** | **-0.0034** | **-0.0877** | **-0.0280** |
+| **Δ (LTR − baseline)** | **+0.0096** | **-0.0423** | **-0.0240** |
 
 ## Honest interpretation (per memory discipline)
 
-**Δ NDCG@10 = -0.0034** on n=25 queries, n<100 deltas, no significance test, no holdout. 
+**Δ NDCG@10 = +0.0096** on n=25 queries, n<100 deltas, no significance test, no holdout. 
 Per `MEMORY.md` discipline 'Don't overclaim n<100 metric deltas':
 - This delta is within the noise band of n=25 with no statistical test.
 - It is NOT a 'finding' or 'insight' — it's a single point estimate.
@@ -33,42 +33,42 @@ Per `MEMORY.md` discipline 'Don't overclaim n<100 metric deltas':
 
 | Fold | n_train_q | n_test_q | NDCG@10 | Recall@10 | Precision@10 |
 |---:|---:|---:|---:|---:|---:|
-| 0 | 20 | 5 | 0.7760 | 0.6491 | 0.6400 |
-| 1 | 20 | 5 | 0.7099 | 0.3770 | 0.4400 |
-| 2 | 20 | 5 | 0.5362 | 0.5941 | 0.3000 |
-| 3 | 20 | 5 | 0.7863 | 0.7399 | 0.4000 |
-| 4 | 20 | 5 | 0.7878 | 0.7267 | 0.5400 |
+| 0 | 20 | 5 | 0.7955 | 0.6777 | 0.6600 |
+| 1 | 20 | 5 | 0.7180 | 0.5839 | 0.4600 |
+| 2 | 20 | 5 | 0.5819 | 0.5941 | 0.3000 |
+| 3 | 20 | 5 | 0.7775 | 0.7352 | 0.4000 |
+| 4 | 20 | 5 | 0.7886 | 0.7233 | 0.5200 |
 
 ## Feature importance (gain)
 
 | Feature | Avg gain |
 |---|---:|
-| `combined_score` | 309.86 |
-| `biencoder_score` | 298.77 |
-| `log_cite_count` | 147.65 |
-| `bm25_score` | 134.73 |
-| `prf_score` | 111.89 |
-| `year` | 80.12 |
-| `has_abstract` | 7.12 |
-| `is_recent` | 1.37 |
+| `combined_score` | 325.88 |
+| `biencoder_score` | 282.89 |
+| `log_cite_count` | 169.33 |
+| `bm25_score` | 152.82 |
+| `year` | 87.53 |
+| `prf_score` | 58.59 |
+| `has_abstract` | 7.33 |
+| `is_recent` | 1.78 |
 
 ## Per-query LTR vs baseline (top 5 best, top 5 worst)
 
 | Query | LTR NDCG@10 | Baseline NDCG@10 | Δ |
 |---|---:|---:|---:|
-| q012 | 0.8982 | 0.6831 | **+0.2152** |
+| q013 | 0.6831 | 0.4086 | **+0.2744** |
 | q010 | 1.0000 | 0.7889 | **+0.2111** |
-| q025 | 0.6503 | 0.5477 | **+0.1026** |
-| q009 | 0.6769 | 0.5914 | **+0.0855** |
-| q013 | 0.4844 | 0.4086 | **+0.0758** |
+| q012 | 0.8693 | 0.6831 | **+0.1862** |
+| q001 | 0.5072 | 0.3820 | **+0.1252** |
+| q009 | 0.6910 | 0.5914 | **+0.0996** |
 
 | Query | LTR NDCG@10 | Baseline NDCG@10 | Δ |
 |---|---:|---:|---:|
-| q022 | 0.3027 | 0.4179 | -0.1152 |
-| q005 | 0.7442 | 0.8741 | -0.1298 |
-| q020 | 0.6483 | 0.7968 | -0.1485 |
-| q004 | 0.5394 | 0.7861 | -0.2467 |
-| q006 | 0.7120 | 0.9594 | -0.2474 |
+| q024 | 0.6668 | 0.7472 | -0.0804 |
+| q022 | 0.2839 | 0.4179 | -0.1340 |
+| q006 | 0.8022 | 0.9594 | -0.1572 |
+| q014 | 0.6436 | 0.8167 | -0.1731 |
+| q004 | 0.5551 | 0.7861 | -0.2310 |
 
 ## Configuration
 
@@ -93,7 +93,7 @@ LTRConfig(
 
 - ✅ **Verified on real data**: code runs end-to-end on 25 v3.9.0 queries, 5-fold CV produces per-fold metrics, report generated.
 - ✅ **Verified architecture**: LTR + LightGBM training pipeline, feature engineering, per-query group CV all functional.
-- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = -0.0034 on n=25, no significance test, no holdout.
+- ⚠️ **Code exists but unverified metric magnitude**: Δ NDCG@10 = +0.0096 on n=25, no significance test, no holdout.
 - ❌ **NOT a 'finding' or 'insight'**: per memory discipline, single point estimates on n<100 are noise, not signal.
 
 ## 5-check Global Rule audit

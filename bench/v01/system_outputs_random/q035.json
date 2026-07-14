@@ -1,0 +1,394 @@
+{
+  "query_id": "q035",
+  "query": "人工智能究竟是取代劳动力造成大量失业，还是最终会产生大量新的工作岗位 (Acemoglu Restrepo anchor)",
+  "generated_at": "2026-07-14T23:53:09",
+  "config": "v4-random-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "core": 1
+  },
+  "dedup_count": 21,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.69979/3029-2700.25.10.098",
+      "title": "生成式人工智能，是“进化”还是“惰化”——基于结构方程模型的路径分析",
+      "abstract": "",
+      "year": 2025,
+      "venue": "社会企业经济发展",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 1,
+      "v4_score": 0.96727,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 2,
+      "doi": "10.1103/PhysRevD.97.055045",
+      "title": "Vector Boson Fusion in the Inert Doublet Model",
+      "abstract": "",
+      "year": 2017,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 12,
+      "v4_score": 0.940292,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 3,
+      "doi": "10.1016/j.eswa.2021.115245",
+      "title": "On Clustering Categories of Categorical Predictors in Generalized Linear Models",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 0.915256,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 4,
+      "doi": "10.1103/PhysRevE.89.052707",
+      "title": "Spatiotemporal Dynamics of Calcium-Driven Cardiac Alternans",
+      "abstract": "",
+      "year": 2014,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 0.884235,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 5,
+      "doi": "",
+      "title": "Evaluar la alternativa de disposición del papel higiénico al sistema de drenaje hidrosanitario",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 21,
+      "v4_score": 0.823855,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 6,
+      "doi": "10.1103/PhysRevD.101.035004",
+      "title": "Dirac neutrino mass generation from Majorana messenger",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 11,
+      "v4_score": 0.822417,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 7,
+      "doi": "10.69979/3029-2735.24.11.023",
+      "title": "新质生产力视域下人工智能赋能大学生高质量学习路径探究",
+      "abstract": "",
+      "year": 2024,
+      "venue": "智慧教育",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.804588,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 8,
+      "doi": "10.32629/mef.v8i19.17331",
+      "title": "新工科背景下工程管理专业人才智能建造能力高质量发展研究",
+      "abstract": "<jats:p>随着新工科建设的深入推进与建筑产业智能化的加速转型,工程管理人才能力结构与传统培养模式之间出现“结构性失配”。为推动人才能力高质量发展,通过工程管理专业人才培养的现状与核心问题诊断,提出“五位一体”的系统化教改路径,并在实践层面设计了与之配套的模块化课程体系、产教融合平台及双向流动师资机制。研究结果表明,该体系框架与实施路径不仅为工程管理专业的转型升级提供了理论依据与实践指南,而且对构建开放协同的新型教育生态、支撑建筑产业可持续发展具有重要参考价值。</jats:p>",
+      "year": null,
+      "venue": "现代教育论坛",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 4,
+      "v4_score": 0.790682,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 9,
+      "doi": "10.2139/ssrn.5023664",
+      "title": "Artificial Intelligence Enables New Quality Productivity: The Dual Moderating Role of \"Quality and Quantity\" from Innovation人工智能使能新的质量生产力：创新中“质与量”的双重调节作用",
+      "abstract": "",
+      "year": null,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "posted-content",
+      "orig_rank": 8,
+      "v4_score": 0.672828,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 10,
+      "doi": "10.26549/jxffcxysj.v4i7.6955",
+      "title": "工程造价专业人才培养中“最后一公里”岗位对接能力的提升研究探索",
+      "abstract": "",
+      "year": null,
+      "venue": "教学方法创新与实践",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.672341,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 11,
+      "doi": "10.64216/3080-1508.26.04.057",
+      "title": "基于智能制造技术的工业自动化生产线智能化改造研究",
+      "abstract": "",
+      "year": 2026,
+      "venue": "工程技术论坛",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.58456,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2605.12078v1",
+      "title": "Property-Level Reconstructability of Agent Decisions: An Anchor-Level Pilot Across Vendor SDK Adapter Regimes",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 0.561407,
+      "bm25_score": 1.3266
+    },
+    {
+      "rank": 13,
+      "doi": "10.70695/aa1202502a14",
+      "title": "AI-Empowered Digital Intelligence Transformation of Human Resources: Pathways to New Quality Productivity in Advanced Manufacturing Industry",
+      "abstract": "<jats:p>工业 4.0 驱动的制造生态系统要求 HR 战略发生范式转变，优先考虑敏捷性而不是传统的管理模式。本研究调查了由新兴技术驱动的数字智能如何重新定义 HR 实践以培养“新的质量生产力”，该指标强调运营效率、创新能力和可持续增长。通过综合人工智能、大数据分析和 IoT 系统，该研究展示了核心 HR 职能（包括人才发展、绩效优化和组织决策）如何与智能制造环境不断变化的需求保持一致。利用来自制造企业的经验证据和生产力基准数据，该分析确定了三个关键途径：先发制人解决技能短缺问题的 AI 驱动的预测性人才分析、加速员工能力发展的个性化学习平台，以及增强运营响应能力的动态决策支持工具。研究结果表明，数字化转型的 HR 系统实现了双重成果：管理效率低下现象减少了 30-40%，生产质量指标得到了可衡量的改进。具体来说，组织报告说，在精密制造产量、能源优化工作流程和加快产品部署周期等关键领域，收益提高了 15-25%。该研究进一步研究了实施障碍，包括员工对以数据为中心的工作流程的适应以及算法透明度方面的治理挑战。这些见解为寻求利用人机协作作为可持续工业发展基石的制造业领导者提供了可作的指",
+      "year": null,
+      "venue": "Innovative Applications of AI",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 0.536572,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 14,
+      "doi": "10.12677/sa.2025.145135",
+      "title": "Job Creation or Substitution? The Impact of Intelligentization on China’s Manufacturing Employment Market",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Statistics and Application",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 7,
+      "v4_score": 0.454786,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 15,
+      "doi": "10.64216/3080-1494.25.11.018",
+      "title": "生成式人工智能驱动高职大数据与会计专业教学转型的探索研究",
+      "abstract": "",
+      "year": 2025,
+      "venue": "东方教育学刊",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 3,
+      "v4_score": 0.365775,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 16,
+      "doi": "10.1103/PhysRevC.107.L041301",
+      "title": "Anchor-based optimization of energy density functionals",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 14,
+      "v4_score": 0.233822,
+      "bm25_score": 1.9646
+    },
+    {
+      "rank": 17,
+      "doi": "10.1103/PhysRevD.109.054033",
+      "title": "Cold and dense perturbative QCD in a very strong magnetic background",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 0.221367,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 18,
+      "doi": "10.1109/IROS60139.2025.11247141",
+      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 13,
+      "v4_score": 0.108346,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 19,
+      "doi": "10.1103/PhysRevD.108.034026",
+      "title": "Hot perturbative QCD in a very strong magnetic background",
+      "abstract": "",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 0.063217,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 20,
+      "doi": "arXiv:2102.10886v4",
+      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
+      "abstract": "",
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 15,
+      "v4_score": 0.025025,
+      "bm25_score": 1.5411
+    },
+    {
+      "rank": 21,
+      "doi": "10.63887/jerp.2025.1.7.53",
+      "title": "人工智能驱动下大学生思政工作者的能力转型与培养体系构建",
+      "abstract": "<jats:p>在人工智能深度重塑教育生态的时代背景下，本研究聚焦高校思想政治教育工作者的能力转型路径及其培养体系构建。伴随AI技术与教育场景的深度耦合，智能对话系统对传统价值引领范式形成冲击，数据安全与隐私保护面临严峻考验，这些变革给大学生思想政治教育工作带来全新挑战。深入探讨思政工作者能力转型，对于主动适应技术革新、提升立德树人成效具有重要的现实意义。文章从强化数字技术应用能力、推动多学科知识整合等维度切入，系统提出优化课程体系设计、搭建实践创新平台等培养策略，旨在推动思政工作者专业能力的迭代升级，切实增强思想政治教育的精准性与实效性，为新时代高素质人才培养提供坚实保障。</jats:p>",
+      "year": null,
+      "venue": "教育研究与实践",
+      "citation_count": 1,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.013919,
+      "bm25_score": 0.0
+    }
+  ]
+}

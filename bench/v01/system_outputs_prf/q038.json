@@ -1,0 +1,592 @@
+{
+  "query_id": "q038",
+  "query": "终极意义上，人工智能是否会永久改变人类价值观的改变 (AI alignment human values game theory anchor)",
+  "generated_at": "2026-07-14T23:53:06",
+  "config": "v4-prf-recency-off",
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "core": 2
+  },
+  "dedup_count": 32,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.21638/11701/spbu31.2022.26",
+      "title": "Dynamic Structure in Four-strategy Game: Theory and Experiment",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 19,
+      "v4_score": 22.878362,
+      "bm25_score": 5.8707
+    },
+    {
+      "rank": 2,
+      "doi": "10.5281/zenodo.19193739",
+      "title": "Maximizing the efficiency of human feedback in AI alignment: a comparative analysis",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 1,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 7,
+      "v4_score": 13.715464,
+      "bm25_score": 4.0556
+    },
+    {
+      "rank": 3,
+      "doi": "10.1007/s43681-025-00664-1",
+      "title": "Aligning with ideal values: a proposal for anchoring AI in moral expertise",
+      "abstract": "",
+      "year": 2025,
+      "venue": "AI and Ethics",
+      "citation_count": 4,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 4,
+      "v4_score": 3.475008,
+      "bm25_score": 3.475
+    },
+    {
+      "rank": 4,
+      "doi": "10.1145/3613905.3650948",
+      "title": "Designing for Human-Agent Alignment: Understanding what humans want from their agents",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 18,
+      "v4_score": 3.10278,
+      "bm25_score": 3.1028
+    },
+    {
+      "rank": 5,
+      "doi": "10.1007/s00182-012-0345-7",
+      "title": "Optimal strategies for a game on amenable semigroups",
+      "abstract": "",
+      "year": 2011,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 21,
+      "v4_score": 2.783016,
+      "bm25_score": 2.783
+    },
+    {
+      "rank": 6,
+      "doi": "10.48550/arXiv.2509.15090",
+      "title": "Emergent Alignment via Competition",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 5,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 2,
+      "v4_score": 2.639043,
+      "bm25_score": 2.639
+    },
+    {
+      "rank": 7,
+      "doi": "10.48550/arXiv.2503.04740",
+      "title": "PRISM: Perspective Reasoning for Integrated Synthesis and Mediation as a Multi-Perspective Framework for AI Alignment",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 4,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 3,
+      "v4_score": 2.467536,
+      "bm25_score": 2.4675
+    },
+    {
+      "rank": 8,
+      "doi": "arXiv:2207.14140v1",
+      "title": "Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 22,
+      "v4_score": 2.337321,
+      "bm25_score": 2.3373
+    },
+    {
+      "rank": 9,
+      "doi": "arXiv:2603.09020v1",
+      "title": "AI Phenomenology for Understanding Human-AI Experiences Across Eras",
+      "abstract": "",
+      "year": 2026,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 23,
+      "v4_score": 2.304195,
+      "bm25_score": 2.3042
+    },
+    {
+      "rank": 10,
+      "doi": "10.1145/3643834.3661517",
+      "title": "Towards Feature Engineering with Human and AI's Knowledge: Understanding Data Science Practitioners' Perceptions in Human&AI-Assisted Feature Engineering Design",
+      "abstract": "",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 25,
+      "v4_score": 2.087444,
+      "bm25_score": 2.0874
+    },
+    {
+      "rank": 11,
+      "doi": "arXiv:2504.16770v1",
+      "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 16,
+      "v4_score": 2.026659,
+      "bm25_score": 2.0267
+    },
+    {
+      "rank": 12,
+      "doi": "arXiv:2202.04977v3",
+      "title": "Needs-aware Artificial Intelligence: AI that 'serves [human] needs'",
+      "abstract": "",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 20,
+      "v4_score": 1.980073,
+      "bm25_score": 1.9801
+    },
+    {
+      "rank": 13,
+      "doi": "arXiv:1904.03285v4",
+      "title": "Can You Explain That? Lucid Explanations Help Human-AI Collaborative Image Retrieval",
+      "abstract": "",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 24,
+      "v4_score": 1.879728,
+      "bm25_score": 1.8797
+    },
+    {
+      "rank": 14,
+      "doi": "10.65967/siss.v44i2.138",
+      "title": "Can Generative AI Improve Corporate Values, Employee Perceptions, and Organizational Practices? A Human-Centric Case Study of Project Management SMEs in Indonesia",
+      "abstract": "<jats:p>This study investigates the growing role of generative AI tools, particularly ChatGPT, in the context of Indonesian SMEs, with a focus on their influence on SMEs values, employee perceptions, and organizational practices. Adopting a mixed-methods approach, the study combines a literature review, two industry workshops, and a survey involving 52 professionals from various sectors. The analysis integrates thematic interpretation of qualitative data with an exploratory quantitative assessme",
+      "year": null,
+      "venue": "Studies in Science of Science",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 12,
+      "v4_score": 1.876369,
+      "bm25_score": 1.8764
+    },
+    {
+      "rank": 15,
+      "doi": "arXiv:2504.14689v1",
+      "title": "Designing AI Systems that Augment Human Performed vs. Demonstrated Critical Thinking",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_count": 0,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "score": 0.0,
+      "source": "arxiv",
+      "type": "preprint",
+      "orig_rank": 17,
+      "v4_score": 1.789063,
+      "bm25_score": 1.7891
+    },
+    {
+      "rank": 16,
+      "doi": "10.2139/ssrn.6285358",
+      "title": "Unusual Intelligence as Frontier: Cognitive Singularity as the Human Response to Redefined AI Singularity",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Social Science Research Network",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 26,
+      "v4_score": 1.789063,
+      "bm25_score": 1.7891
+    },
+    {
+      "rank": 17,
+      "doi": "10.54254/3050-2187/1/2024002",
+      "title": "技术赋能到价值创造：以人工智能技术驱动视频类课程教学改革",
+      "abstract": "<jats:p>人工智能（AI）技术正不断深化其在教育领域的应用，尤其在短视频课程教学中扮演着推动教学革新的关键角色。利用智能视频分析、自适应学习系统和虚拟助教等先进工具，AI显著增强了个性化学习体验，提高了学生的参与度，并为教师的教学工作提供了高效支持。通过机器学习算法优化内容推荐、自然语言处理技术增强互动交流以及计算机视觉技术分析学习行为，AI不仅使得教学内容更贴合学生需求，也为教育者带来了实时反馈和数据驱动的决策依据。这些技术的综合运用，标志着教育改革正朝着更加智能化和个性化的方向迈进，为打造一个高度互动且效率更高的学习环境提供了可能。</jats:p>",
+      "year": null,
+      "venue": "时代技术",
+      "citation_count": 2,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 6,
+      "v4_score": 1.411383,
+      "bm25_score": 1.4114
+    },
+    {
+      "rank": 18,
+      "doi": "10.32629/mef.v8i19.17377",
+      "title": "人工智能背景下材料类课程教学成效评价的改革与实践",
+      "abstract": "<jats:p>在教育智能化浪潮的推动下,材料类课程的教学评价正在发生深层变革,本文依托人工智能技术,对材料课程的知识学习、实验行为与应用能力展开系统考察,构建多维度成效评价框架。研究以真实教学场景为根基,围绕课程特性梳理AI介入的合理路径,并结合典型教学环节开展实践检验,结果显示,评价过程更为透明,学生状态呈现更为精准,教师调控更具力度,研究期望为材料类课程的教学革新提供可借鉴的路径,引发更多面向一线课堂的思考。</jats:p>",
+      "year": null,
+      "venue": "现代教育论坛",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 13,
+      "v4_score": 1.073793,
+      "bm25_score": 1.0738
+    },
+    {
+      "rank": 19,
+      "doi": "10.1108/jkm-05-2025-0652",
+      "title": "How generative AI reshapes the knowledge creation process: a case study from the perspective of trust",
+      "abstract": "",
+      "year": 2026,
+      "venue": "Journal of Knowledge Management",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 28,
+      "v4_score": 0.678519,
+      "bm25_score": 0.6785
+    },
+    {
+      "rank": 20,
+      "doi": "10.65655/9ahzce09",
+      "title": "AI-Powered Multilingual Degrees in Higher Education: Postcolonial Insights on Linguistic Justice and Disruptive Innovation",
+      "abstract": "",
+      "year": 2025,
+      "venue": "Open Journal of AI, Ethics &amp; Society (ISSN: 3105-3076)",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 27,
+      "v4_score": 0.648671,
+      "bm25_score": 0.6487
+    },
+    {
+      "rank": 21,
+      "doi": "10.48550/arXiv.2505.12923",
+      "title": "The Traitors: Deception and Trust in Multi-Agent Language Model Simulations",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 28,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 1,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 22,
+      "doi": "10.32629/mef.v8i18.16927",
+      "title": "人工智能赋能高校思政课教学改革的价值与策略研究",
+      "abstract": "<jats:p>本文聚焦人工智能时代高校思政课教学改革的现实需求,基于人工智能技术对传统思政课教学模式带来的冲击,分析人工智能应用在资源拓展、模式创新、精准教学与评价优化等方面的重要价值,提出构建思政课教师队伍与人工智能的人机协同机制、打造数据驱动的考核评价机制、建设智能化教学平台、开发智能教学工具等方面的实施策略,以推动人工智能与思政课教学的深度融合,增强思政课的时代性与实效性。</jats:p>",
+      "year": null,
+      "venue": "现代教育论坛",
+      "citation_count": 3,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 5,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 23,
+      "doi": "10.69979/3029-2735.25.10.073",
+      "title": "人工智能时代下人类生命意义的探讨",
+      "abstract": "",
+      "year": 2025,
+      "venue": "智慧教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 8,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 24,
+      "doi": "10.14218/mrp.2015.032",
+      "title": "改造人类基因的年代是否到来？",
+      "abstract": "",
+      "year": 2015,
+      "venue": "Medical Research &amp; Publication",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 9,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 25,
+      "doi": "10.69979/3029-2735.25.2.081",
+      "title": "人工智能时代美育教育的场景重构与价值创新：技术赋能下的教学变革与人文反思",
+      "abstract": "",
+      "year": 2025,
+      "venue": "智慧教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 26,
+      "doi": "10.1360/csb2015-60-30-2806",
+      "title": "保护人类健康是应对全球变化的核心任务和终极目标",
+      "abstract": "",
+      "year": 2015,
+      "venue": "Chinese Science Bulletin",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 11,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 27,
+      "doi": "10.69979/3029-2735.26.02.115",
+      "title": "基于人工智能技术的《复变函数与积分变换》课程育人的探索",
+      "abstract": "",
+      "year": 2026,
+      "venue": "智慧教育",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 14,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 28,
+      "doi": "10.1289/ehp.1204c5",
+      "title": "室内游泳是否能改变男孩体内的激素?",
+      "abstract": "",
+      "year": null,
+      "venue": "Environmental Health Perspectives",
+      "citation_count": 0,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 29,
+      "doi": "10.48550/arXiv.2503.17688",
+      "title": "Intelligence Sequencing and the Path-Dependence of Intelligence Evolution: AGI-First vs. DCI-First as Irreversible Attractors",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 29,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 30,
+      "doi": "10.48550/arXiv.2508.13960",
+      "title": "A Mechanism for Mutual Fairness in Cooperative Games with Replicable Resources - Extended Version",
+      "abstract": "",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "citation_count": 0,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "orig_rank": 30,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 31,
+      "doi": "",
+      "title": "Knowledge and Management Models for Sustainable Growth",
+      "abstract": "",
+      "year": 2014,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 31,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    },
+    {
+      "rank": 32,
+      "doi": "",
+      "title": "\"In dreams begins responsibility\" - choice, evidence, and change. Conference Introduction and Abstracts, 16th International Conference, 8-10 September, Manchester, UK",
+      "abstract": "",
+      "year": 2009,
+      "venue": "",
+      "citation_count": 0,
+      "engines_found_in": [
+        "core"
+      ],
+      "score": 0.0,
+      "source": "core",
+      "type": "",
+      "orig_rank": 32,
+      "v4_score": 0.0,
+      "bm25_score": 0.0
+    }
+  ]
+}
