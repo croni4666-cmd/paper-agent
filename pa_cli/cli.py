@@ -747,6 +747,116 @@ def mcp_serve():
     sys.exit(1)
 
 
+# =============== CNKI subcommand group (P0-9, added 2026-07-15) ===============
+
+@main.group()
+def cnki():
+    """CNKI 6th search engine (Chinese papers, optional).
+
+    Per ROADMAP [P0-9] (added 2026-07-14, skeleton in v3.9.7.3):
+    - Adds Chinese-paper coverage (0% → ~15-25% on Chinese queries)
+    - User-maintained cookies (4-8h proxy session TTL)
+    - NOT through clash proxy (CNKI 国内站, user 用"其他代理")
+
+    Subcommands: status / setup / search
+    """
+
+
+@cnki.command("status")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def cnki_status(as_json):
+    """Check CNKI channel readiness (cookies, playwright, TTL)."""
+    from .cnki_channel import status_report
+    s = status_report()
+    if as_json:
+        click.echo(json.dumps(s, indent=2, ensure_ascii=False))
+        return
+    marker = "[OK]" if s["ready_for_search"] else "[WARN]"
+    click.echo(f"{marker} CNKI channel status (v{s['version']})")
+    click.echo(f"  cookies_path:           {s['cookies_path']}")
+    click.echo(f"  cookies_exist:          {s['cookies_exist']}")
+    if s["cookie_age_hours"] is not None:
+        click.echo(f"  cookie_age_hours:       {s['cookie_age_hours']:.1f}h "
+                   f"(max {s['max_cookie_age_hours']:.1f}h)")
+    else:
+        click.echo(f"  cookie_age_hours:       (no file)")
+    click.echo(f"  n_cookies:              {s['n_cookies']}")
+    click.echo(f"  playwright_installed:   {s['playwright_installed']}")
+    click.echo(f"  search_implemented:     {s['search_implemented']} (skeleton in v3.9.7.3)")
+    click.echo()
+    if not s["ready_for_search"]:
+        click.echo(f"[pa-cnki] {s['next_action']}", err=True)
+    else:
+        click.echo("[pa-cnki] ready (cookies fresh + playwright installed)", err=True)
+
+
+@cnki.command("setup")
+def cnki_setup():
+    """Print CNKI setup instructions (proxy + cookies + Export script).
+
+    Per ROADMAP [P0-9] "User confirmation needed" list:
+    - 代理类型 (校园 VPN / EZproxy / 机构图书馆代理)
+    - 代理登录 session 实际过期时间
+    - cookies 维护自动化
+    """
+    click.echo("[pa-cnki] Setup instructions for CNKI 6th engine")
+    click.echo()
+    click.echo("STEP 1: Provide proxy access")
+    click.echo("  - 校园 VPN / EZproxy / 机构图书馆代理")
+    click.echo("  - 必须能访问 CNKI hostname (www.cnki.net)")
+    click.echo("  - 不能走 clash (CNKI 反爬可能检测到 proxy 流量)")
+    click.echo()
+    click.echo("STEP 2: Manual cookies export (one-time setup)")
+    click.echo("  - 用 Chrome / Edge 登录代理入口")
+    click.echo("  - 跳转 CNKI 后, 跑 Export-CNKICookies.ps1 (待写)")
+    click.echo("  - script 导出 cookies 到:")
+    click.echo("    C:\\Users\\DengN\\.paper-agent\\cookies\\cnki.json")
+    click.echo()
+    click.echo("STEP 3: Verify")
+    click.echo("  $ pa cnki status")
+    click.echo("  $ pa search \"东数西算\" --engine cnki")
+    click.echo()
+    click.echo("Cookie TTL: 4-8 hours (proxy session)")
+    click.echo("  - 每天 user 重跑一次 export script")
+    click.echo("  - 或设置 Windows 任务计划每日自动跑 (TODO)")
+    click.echo()
+    click.echo("Per ROADMAP [P0-9] status: skeleton code ready (v3.9.7.3)")
+    click.echo("Real playwright + HTML parser will be wired in after you provide proxy + cookies.")
+
+
+@cnki.command("search")
+@click.argument("query")
+@click.option("--limit", type=int, default=10, show_default=True,
+              help="Max results to return")
+@click.option("--year-min", type=int, default=None)
+@click.option("--year-max", type=int, default=None)
+@click.option("--format", "out_format", default="json", show_default=True,
+              type=click.Choice(["json", "summary"]))
+def cnki_search(query, limit, year_min, year_max, out_format):
+    """Search CNKI directly (skeleton — returns placeholder until wired).
+
+    v3.9.7.3 skeleton: returns 1 placeholder result + clear error if cookies
+    missing. After user provides proxy + cookies + Export script, real search
+    will return 10+ Chinese papers per query.
+    """
+    from .cnki_channel import CNKIClient, CNKIError
+    try:
+        client = CNKIClient().load()
+    except CNKIError as e:
+        click.echo(f"[pa-cnki] {e}", err=True)
+        click.echo(f"  Hint: {e.hint}", err=True)
+        click.echo(f"  Run `pa cnki setup` for instructions.", err=True)
+        sys.exit(2)
+    results = client.search(query, year_min=year_min, year_max=year_max, limit=limit)
+    if out_format == "summary":
+        click.echo(f"Found {len(results)} placeholder result(s) from CNKI skeleton")
+        for r in results:
+            click.echo(f"  - {r.get('title', '?')[:80]}")
+            click.echo(f"    abstract: {r.get('abstract', '')[:120]}...")
+    else:
+        click.echo(json.dumps(results, indent=2, ensure_ascii=False))
+
+
 @main.command()
 @click.argument("doi")
 @click.option("--direction", "direction",

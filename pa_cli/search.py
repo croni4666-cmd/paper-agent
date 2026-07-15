@@ -1,9 +1,12 @@
 """
-pa_cli.search — 5-engine academic paper search.
+pa_cli.search — 5+1-engine academic paper search.
 
-Engines: Crossref, Semantic Scholar, arXiv, OpenAlex, CORE.
+Engines: Crossref, Semantic Scholar, arXiv, OpenAlex, CORE, CNKI (optional).
 Wraps the existing paper-agent v3.1 SearchPool pattern. Falls back gracefully
 on per-engine failure.
+
+CNKI (added v3.9.7.3): 6th engine for Chinese papers, gated on cookies file
+existence. See pa_cli.cnki_channel for setup details.
 """
 
 import json
@@ -242,7 +245,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                        - OR:  "concepts.id:C1|C2"
                        - AND: "concepts.id:C1+concepts.id:C2"
     """
-    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "core"]
+    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "core", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     by_engine: Dict[str, List[Dict]] = {}
     funcs = {
@@ -252,6 +255,13 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "semanticscholar": search_semanticscholar,
         "core": search_core,
     }
+    # CNKI is optional — only include if cookies exist (avoid hard-fail on first run)
+    if "cnki" in engines and not _try_import_cnki():
+        # Graceful skip: CNKI not configured yet; engines stays valid
+        engines = [e for e in engines if e != "cnki"]
+    elif "cnki" in engines:
+        from .cnki_channel import search_cnki
+        funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
             continue
@@ -294,3 +304,24 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "dedup_count": len(unified),
         "results": unified,
     }
+
+
+def _try_import_cnki() -> bool:
+    """Return True if CNKI channel can be used (cookies + playwright available).
+
+    Per v3.9.7.3 design: CNKI is optional. If cookies file missing OR
+    playwright not installed, gracefully skip CNKI from the engine pool
+    (downgrade to 5 English engines without raising).
+    """
+    try:
+        from . import cnki_channel
+    except ImportError:
+        return False
+    if not cnki_channel.cookies_exist():
+        return False
+    try:
+        import playwright  # noqa: F401
+    except ImportError:
+        return False
+    # All preconditions met
+    return True
