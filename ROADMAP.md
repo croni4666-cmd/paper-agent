@@ -2156,20 +2156,39 @@ Until those 3 features are real, Layer 7's lift measurement is incomplete.
   - `cnsoldiers/cnki-spider` (~500 stars, 2018 last commit) — 老 CNKI 爬虫, 没 cookies 维护, 没代理路由
   - `https://github.com/cnki-team/cnki-api` — 官方 API 但已停服
   - user-confirmed approach: 自建 + 代理 cookies 维护
-- **User confirmation needed**:
-  - [ ] 代理类型 (校园 VPN / EZproxy / 机构图书馆代理 / 其他) — 不同代理 cookies 维护方式略不同
-  - [ ] 代理登录 session 实际过期时间 (测试 1 次 export 后多久需要重 export)
-  - [ ] cookies 维护自动化 (用 Windows 任务计划每日自动跑, 还是 user 手动)
-  - [ ] CNKI 检索 query 是否需要 query 转换 (中文 query → CNKI 关键词, 英文 query → CNKI English 关键词)
-  - [ ] CNKI 高级检索需要哪些 fields (主题 / 标题 / 摘要 / 全文)?
-- **Integration plan** (后续步骤):
-  1. User 提供代理入口 + CNKI 账号 + 首次 cookies 导出
-  2. 写 `cnki_channel.py` + `Export-CNKICookies.ps1` (2 天)
-  3. v3.9.0 v4_rerank 5 → 6 engine
-  4. n=50 v4_rerank re-run, 看 candidate pool 中文 paper 占比
-  5. MoE class diversity 真正 work (openalex 80% → 60-70%, cnki 10-20%)
+- **User confirmation needed** (DONE 2026-07-15 via xueshu789.com / Export-CNKICookies.ps1):
+  - [x] 代理类型 — **xueshu789.com** (学术数据库导航/代理,login 后跳 CNKI)
+  - [x] 代理登录 session 实际过期时间 — **measured 2026-07-15**: PHPSESSID expires 2026-07-15 03:21 UTC (~5h after export at 22:21 local)
+  - [x] cookies 维护自动化 — 暂时 user 手动 (per ROADMAP [P0-9] 4-8h TTL, daily re-export); Windows 任务计划 deferred
+  - [ ] CNKI 检索 query 是否需要 query 转换 — **deferred to Plan 3** (real search wiring)
+  - [ ] CNKI 高级检索需要哪些 fields — **deferred to Plan 3**
+- **Integration plan** (DONE/PENDING 2026-07-15):
+  1. [x] User 提供代理入口 (xueshu789.com) + 首次 cookies 导出 (DONE 2026-07-15)
+  2. [x] 写 `cnki_channel.py` skeleton + `Export-CNKICookies.ps1` (DONE 2026-07-15)
+  3. [ ] v3.9.0 v4_rerank 5 → 6 engine integration (PENDING; deferred to Plan 3)
+  4. [ ] n=50 v4_rerank re-run, 看 candidate pool 中文 paper 占比 (PENDING; depends on Plan 3)
+  5. [ ] MoE class diversity 真正 work (openalex 80% → 60-70%, cnki 10-20%) (PENDING; depends on Plan 3)
 
-#### **Modified 2026-07-15** — v3.9.7.3 confirm: CNKI is now the highest-leverage move
+#### **Modified 2026-07-15 (Plan 2 done)** — Cookies exported successfully
+
+**Source**: `C:\Users\DengN\.paper-agent\cookies\cnki.json` (4 cookies, fresh 2026-07-15 22:21 local time)
+
+**What was done**:
+- `pa_cli/cnki_channel.py` skeleton written (commit `c4b228e`)
+- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` written (commits `832c392` + `8a4f81f` + `caf87f2` + `a0ca001`)
+- User successfully ran script in playwright-controlled Chromium (no Chrome dependency)
+- 4 cookies captured: PHPSESSID (proxy session, 5h TTL), user (1y), entrys (1d), expires (1d)
+- `pa cnki status` now reports `ready (cookies fresh + playwright installed)`
+
+**What remains** (deferred to Plan 3):
+- `CNKIClient.search()` still returns 1 placeholder result; needs real
+  playwright + HTML parser + pagination wiring
+- CNKI query field selection (主题/标题/摘要/全文) — needs Plan 3 design
+- v3.9.0 v4_rerank 5 → 6 engine integration (paper-agent pipeline level)
+- n=50 v4_rerank re-run with CNKI to measure Chinese paper coverage lift
+- MoE class diversity uplift (openalex 80% → 60-70%, cnki 10-20%)
+
+**Estimated Plan 3 effort**: 1-2 days (playwright + HTML parse + pagination + captcha handling)
 
 **Source**: v3.9.7.3 MoE n=47 label distribution
 
