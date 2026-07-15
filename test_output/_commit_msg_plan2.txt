@@ -1,0 +1,58 @@
+feat(cnki): Export-CNKICookies.ps1 — Plan 2 cookies export script (v3.9.7.4)
+
+Per ROADMAP [P0-9] "User confirmation needed" + "Integration plan" step 1:
+- User provides proxy access + CNKI account
+- Writes cookies export script for daily/automated CNKI session maintenance
+- 4-8h proxy session TTL means this script may be run daily
+
+## File: C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1
+
+**Workflow** (per [P0-9] cookie maintenance design):
+1. Quit Chrome completely (Chrome single-user-data-dir lock)
+2. Launch Chrome with `--remote-debugging-port=9222`
+3. In Chrome: log in to your proxy → navigate to www.cnki.net (any page)
+4. Run this script → exports `.cnki.net` cookies to `~/.paper-agent/cookies/cnki.json`
+5. Verify with `pa cnki status` + `pa search "东数西算" --engine cnki`
+
+**Implementation details**:
+- PowerShell 5.1+ compatible (uses `Invoke-WebRequest` for Chrome CDP check)
+- Auto-checks Python + playwright availability
+- Auto-checks Chrome debug port reachability (4-step recovery if not)
+- Uses `playwright.chromium.connect_over_cdp()` (Playwright bundled Chromium works;
+  tested with Edge 150.0.4078.65 via CDP — Chrome should also work since both
+  are Chromium-based and CDP is standard)
+- Filters cookies by `cnki.net` domain substring
+- Saves in Playwright `context.add_cookies()` JSON format (matches what
+  `pa_cli/cnki_channel.py.load_cookies()` reads)
+- In-process temp file (`%TEMP%\_pa_export_cnki_cookies.py`) generated + cleaned up
+  on exit, to avoid PowerShell interpolation issues with Python quotes / `{}` / f-strings
+- Graceful exit codes: 0=success, 1=python/playwright missing, 2=Chrome unreachable,
+  3=no CNKI cookies found, 4=playwright CDP error
+
+**Smoke test (2026-07-15, partial)**:
+- Step 1 (Python + playwright): PASS
+- Step 2 (Chrome at 9222): PASS (Edge 150.0.4078.65 reachable)
+- Step 3 (CDP connect + filter cnki.net): PASS (no cnki.net cookies found because
+  Edge was navigated to baidu.com, not cnki.net)
+- Exit code 3 reported with clear hint: "Make sure Chrome is logged in to CNKI via your proxy"
+- Temp file cleaned up on exit
+- Step 4 (real CNKI cookies): NOT TESTED (user hasn't provided proxy access yet)
+
+**User next actions to complete CNKI integration**:
+- [ ] Provide 代理入口 URL (校园 VPN / EZproxy / 机构图书馆代理)
+- [ ] Provide login credentials (账号密码 / 校园卡 / SSO)
+- [ ] Run Export-CNKICookies.ps1 once after logging in to CNKI via proxy
+- [ ] Verify with `pa cnki status` — should show cookies_exist=True, cookie_age_hours ~0
+
+**After user provides cookies**:
+- Next session: wire real `CNKIClient.search()` (currently returns placeholder)
+  in `pa_cli/cnki_channel.py` (~1-2 day effort: playwright navigation + HTML parse
+  + pagination + captcha detection)
+
+## Global Rule audit (5/5 pass)
+
+1. ✅ $0 cost (PowerShell built-in + Python + playwright already installed)
+2. ✅ No hosted service (script runs locally)
+3. ✅ Maintenance ~200 LOC PS1 (mostly comments + error handling; 30 LOC real work)
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: Chrome not installed → clear error with download URL
