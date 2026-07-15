@@ -782,7 +782,7 @@ def cnki_status(as_json):
         click.echo(f"  cookie_age_hours:       (no file)")
     click.echo(f"  n_cookies:              {s['n_cookies']}")
     click.echo(f"  playwright_installed:   {s['playwright_installed']}")
-    click.echo(f"  search_implemented:     {s['search_implemented']} (skeleton in v3.9.7.3)")
+    click.echo(f"  search_implemented:     {s['search_implemented']} (real wiring in v3.9.7.4)")
     click.echo()
     if not s["ready_for_search"]:
         click.echo(f"[pa-cnki] {s['next_action']}", err=True)
@@ -827,32 +827,57 @@ def cnki_setup():
 @cnki.command("search")
 @click.argument("query")
 @click.option("--limit", type=int, default=10, show_default=True,
-              help="Max results to return")
-@click.option("--year-min", type=int, default=None)
-@click.option("--year-max", type=int, default=None)
-@click.option("--format", "out_format", default="json", show_default=True,
+              help="Max results to return (1-100)")
+@click.option("--year-min", type=int, default=None,
+              help="Earliest year filter (CNKI may not honor in simple search)")
+@click.option("--year-max", type=int, default=None,
+              help="Latest year filter (CNKI may not honor in simple search)")
+@click.option("--field", "field", default="subject", show_default=True,
+              type=click.Choice(["subject", "title", "keyword", "tka", "abstract",
+                                 "fulltext", "author", "affiliation"]),
+              help="Search field")
+@click.option("--db", "db", default="all", show_default=True,
+              type=click.Choice(["all", "journal", "thesis", "book", "conference",
+                                 "newspaper", "almanac", "patent", "standard",
+                                 "law", "achievement"]),
+              help="CNKI database to search")
+@click.option("--format", "out_format", default="summary", show_default=True,
               type=click.Choice(["json", "summary"]))
-def cnki_search(query, limit, year_min, year_max, out_format):
-    """Search CNKI directly (skeleton — returns placeholder until wired).
+def cnki_search(query, limit, year_min, year_max, field, db, out_format):
+    """Search CNKI directly (v3.9.7.4 real search).
 
-    v3.9.7.3 skeleton: returns 1 placeholder result + clear error if cookies
-    missing. After user provides proxy + cookies + Export script, real search
-    will return 10+ Chinese papers per query.
+    Examples:
+        pa cnki search "东数西算"
+        pa cnki search "保险精算" --field title --limit 5
+        pa cnki search "深度学习" --db journal --limit 10
     """
-    from .cnki_channel import CNKIClient, CNKIError
-    try:
-        client = CNKIClient().load()
-    except CNKIError as e:
-        click.echo(f"[pa-cnki] {e}", err=True)
-        click.echo(f"  Hint: {e.hint}", err=True)
-        click.echo(f"  Run `pa cnki setup` for instructions.", err=True)
+    from .cnki_channel import search_cnki
+    results = search_cnki(query, year_min=year_min, year_max=year_max,
+                         limit=limit, field=field, db=db)
+    if not results:
+        click.echo("[pa-cnki] No results returned", err=True)
+        sys.exit(1)
+    # If first result is an error dict, surface it
+    if "error" in results[0]:
+        click.echo(f"[pa-cnki] {results[0]['error']}: {results[0].get('message', '')}",
+                  err=True)
+        if results[0].get("hint"):
+            click.echo(f"  Hint: {results[0]['hint']}", err=True)
         sys.exit(2)
-    results = client.search(query, year_min=year_min, year_max=year_max, limit=limit)
     if out_format == "summary":
-        click.echo(f"Found {len(results)} placeholder result(s) from CNKI skeleton")
-        for r in results:
-            click.echo(f"  - {r.get('title', '?')[:80]}")
-            click.echo(f"    abstract: {r.get('abstract', '')[:120]}...")
+        click.echo(f"Found {len(results)} results for query: {query!r}")
+        click.echo(f"  field={field}, db={db}, limit={limit}")
+        click.echo()
+        for i, r in enumerate(results):
+            click.echo(f"[{i+1}] {r.get('title', '?')[:60]}")
+            click.echo(f"    venue: {r.get('venue', '?')}, year: {r.get('year', '?')}, "
+                      f"type: {r.get('type', '?')}, db_type: {r.get('db_type', '?')}")
+            authors = r.get('authors', [])
+            if authors:
+                click.echo(f"    authors: {', '.join(authors[:3])}"
+                          + (" ..." if len(authors) > 3 else ""))
+            click.echo(f"    cnki_url: {r.get('cnki_url', '?')[:100]}")
+            click.echo()
     else:
         click.echo(json.dumps(results, indent=2, ensure_ascii=False))
 

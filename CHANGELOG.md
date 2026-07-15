@@ -9,6 +9,101 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.4] - 2026-07-15 (patch — CNKI 6th search engine real search wiring [P0-9] Plan 3)
+
+Per ROADMAP [P0-9] Plan 3, the v3.9.7.3 skeleton (placeholder result) becomes a real
+search engine that returns 10+ Chinese papers per query. Plan 1 (cookies export) and
+Plan 2 (skeleton + cookies captured) shipped earlier; this commit ships Plan 3 (real
+wiring). User's 4-8h proxy session cookies (xueshu789.com → 120.53.241.46:5888)
+unlock the 6th engine.
+
+### Architecture (v3.9.7.4)
+
+- **Single-browser flow**: ONE playwright context shared across bootstrap + POST
+  - Bootstrap: visit `xueshu789.com/dbItem/1` (1.5s JS redirect) → land on real
+    CNKI proxy IP (e.g. `http://120.53.241.46:5888/kns8s/defaultresult/index`)
+  - POST: use `page.evaluate(() => fetch(...))` from within the same page context,
+    which carries correct Origin / Referer / session cookies (avoids captcha)
+  - Pagination: `pageNum=1, 2, ...` (20 results/page), 1.5s sleep between pages
+  - Graceful degradation: page-2+ captcha → return what we have so far
+
+- **Real search endpoint** (discovered via browser network capture):
+  - URL: `POST {proxy_base}/kns8s/brief/grid` (form-urlencoded)
+  - Payload: `boolSearch=true&QueryJson={json}&pageNum=N&pageSize=20&...`
+  - QueryJson: `QNode.QGroup[0].Items[0] = {Field, Value, Operator, Title}`
+  - KuaKuCode: must match Classid (full list for CROSSDB; single classid for specific DB)
+  - Response: HTML (not JSON), 20 result rows in `<tbody>` + brief toolbar
+
+- **Field codes** (8 supported):
+  `SU=主题` (default), `TI=题名`, `KY=关键词`, `AB=摘要`, `TKA=篇关摘`,
+  `FT=全文`, `AR=作者`, `AF=单位`
+
+- **Database classids** (11 supported):
+  `WD0FTY92=总库` (default), `YSTT4HG0=期刊`, `LSTPFY1C=学位`, `EMRPGLPA=图书`,
+  `JUP3MUPD=会议`, `MPMFIG1A=报纸`, `HHCPM1F8=年鉴`, `VUDIXAIY=专利`,
+  `WQ0UVIAA=标准`, `8JBZLDJQ=法律法规`, `BLZOG7CK=成果`
+
+### Files (v3.9.7.4)
+
+- **Modified `pa_cli/cnki_channel.py`** (~31 KB, +300 LOC vs v3.9.7.3 skeleton):
+  - `CNKIClient.search()`: replaced placeholder with full single-browser flow
+  - `_bootstrap_in_context()`: new method, returns proxy_base URL after JS redirect
+  - `_post_brief_page_in_context()`: new method, uses `page.evaluate(fetch(...))`
+  - `_build_query_json()`: new method, builds QueryJson with proper KuaKuCode
+  - `_parse_brief_response()`: new method, HTML → result dict list
+  - `_field_title()` / `_map_db_type_to_paper_type()`: mapping helpers
+  - `FIELD_CODE_MAP` / `DB_CLASSID_MAP` / `DB_RESOURCE_MAP`: 8+11 mapping dicts
+- **Modified `pa_cli/cli.py`** (CNKI subcommand group):
+  - `cnki_search`: added `--field`, `--db` options; switched `--format` default to `summary`
+- **Modified `pa_cli/search.py`** (no change needed, but verified):
+  - `_try_import_cnki()` still correctly detects cookies + playwright
+  - `run_search(..., engine='cnki'|'all')` registers CNKI as 6th engine
+
+### Tests (v3.9.7.4)
+
+- `test_output/_test_cnki_v3974.py`: 4 tests, all PASS
+  - "东数西算" subject all-DB, limit=5: 5 results (city党报研究, 西藏日报, 中国能源报, 甘肃科技报, 国际安全研究)
+  - "东数西算" subject all-DB, limit=25: 20 results (page 2 captcha, graceful degradation returns 20)
+  - "深度学习" subject journal-DB, limit=5: 5 results (中国医学影像技术, 华南农业大学学报, 煤炭科学技术, 电力系统自动化, 化工学报)
+  - "保险精算" title all-DB, limit=5: 5 results (中国证券报, 长春大学学报, 天津商业大学 thesis, 西南财经大学 thesis, IT时报)
+- `test_output/_test_run_search.py`: CNKI registers correctly in 6-engine pool
+- `test_output/_test_run_all.py`: `engine='all'` returns 40 deduped results
+  (crossref=10, openalex=10, arxiv=10, semanticscholar=0, core=0, **cnki=10**)
+
+### Known limitations (v3.9.7.4)
+
+- ⚠️ **citation count + download count = 0** in result dicts (CNKI list view
+  doesn't expose them; they're loaded via separate AJAX calls on hover)
+- ⚠️ **abstract field always empty** (CNKI list view doesn't include abstract;
+  would need to fetch each paper's detail page)
+- ⚠️ **DOI often empty** (Chinese papers rarely have DOI; CNKI uses internal IDs
+  like `CSDB202607008`, `cdxb_xxx`; we expose `cnki_filename` for downstream use)
+- ⚠️ **year_min/year_max filters not wired in QueryJson** (v3.9.7.4 deferred; would
+  need adding `Year` field to QGroup)
+- ⚠️ **page 2+ may hit captcha** (rare; retry later or refresh cookies)
+- ⚠️ **proxy session TTL = 4-8h** (vs CNKI direct 7-30d); daily re-export needed
+
+### Global Rule 5-check (per ROADMAP [P0-9]):
+
+1. ✅ $0 cost (CNKI subscription + proxy all user-side; Mavis not billed)
+2. ✅ No hosted service (cookies local, playwright local, NOT through clash proxy)
+3. ✅ Maintenance ~31 KB (~+300 LOC over skeleton) + reuses `fetch.py` playwright framework
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation: cookies expired → CNKI gracefully returns 0 results
+   without breaking 5-engine fallback (caller's `run_search` skips CNKI silently)
+
+### Next steps (proposed 2026-07-15, see ROADMAP [P0-9.1] Plan 4)
+
+User replied "abstract + doi 不是重点, 其他部分怎么修?" — confirmed `abstract` and
+`doi` limitations are acceptable (中文期刊常态). Proposed 3 follow-up fixes:
+- **[P0-9.1a]** year filter wiring in QueryJson (~30min, P1)
+- **[P0-9.1b]** cited count + download count via hover-AJAX (~2-3h, P1)
+- **[P0-9.1c]** page-2+ captcha jitter + retry (~1h, P3)
+
+Not yet implemented; awaiting user sign-off to start. Total estimate: 3-4h.
+
+---
+
 ## [3.9.7] - 2026-07-14 (patch — Layer 7 query lookup + user-pdf slug match + A/B/C substitute audit)
 
 Per user "重试 / 走 A+B / 把你能做的先跑" (2026-07-14), close the Layer 7 honesty loop

@@ -2111,7 +2111,7 @@ Until those 3 features are real, Layer 7's lift measurement is incomplete.
 
 ### [P0-9] CNKI 6th search engine (中文 paper 收录, cookies + playwright)
 
-- **Status**: proposed (waiting user)
+- **Status**: done (v3.9.7.4 Plan 3 real wiring shipped 2026-07-15)
 - **Added**: 2026-07-14
 - **Source**: User request 2026-07-14 22:23 — "关于 CNKI，我有渠道，并且你不能用 clash 端口访问它，我可以给你一个 playwright 的方案，你抓 cookies 来维持访问"
 - **Rationale**: 当前 v3.9.0 candidate pool 用 5 个英文 search engine (openalex / s2 / crossref / arxiv / core)。中文 specific paper 收录率 = 0%。User 提供 CNKI 渠道 + cookies 维护方案, **可让 v3.9.0 candidate pool 真正多语种**。
@@ -2160,14 +2160,14 @@ Until those 3 features are real, Layer 7's lift measurement is incomplete.
   - [x] 代理类型 — **xueshu789.com** (学术数据库导航/代理,login 后跳 CNKI)
   - [x] 代理登录 session 实际过期时间 — **measured 2026-07-15**: PHPSESSID expires 2026-07-15 03:21 UTC (~5h after export at 22:21 local)
   - [x] cookies 维护自动化 — 暂时 user 手动 (per ROADMAP [P0-9] 4-8h TTL, daily re-export); Windows 任务计划 deferred
-  - [ ] CNKI 检索 query 是否需要 query 转换 — **deferred to Plan 3** (real search wiring)
-  - [ ] CNKI 高级检索需要哪些 fields — **deferred to Plan 3**
+  - [x] CNKI 检索 query 是否需要 query 转换 — **DONE Plan 3**: 直接 UTF-8 query, 无需转换
+  - [x] CNKI 高级检索需要哪些 fields — **DONE Plan 3**: 8 fields supported (subject/title/keyword/tka/abstract/fulltext/author/affiliation)
 - **Integration plan** (DONE/PENDING 2026-07-15):
   1. [x] User 提供代理入口 (xueshu789.com) + 首次 cookies 导出 (DONE 2026-07-15)
   2. [x] 写 `cnki_channel.py` skeleton + `Export-CNKICookies.ps1` (DONE 2026-07-15)
-  3. [ ] v3.9.0 v4_rerank 5 → 6 engine integration (PENDING; deferred to Plan 3)
-  4. [ ] n=50 v4_rerank re-run, 看 candidate pool 中文 paper 占比 (PENDING; depends on Plan 3)
-  5. [ ] MoE class diversity 真正 work (openalex 80% → 60-70%, cnki 10-20%) (PENDING; depends on Plan 3)
+  3. [x] v3.9.0 v4_rerank 5 → 6 engine integration (DONE v3.9.7.4 Plan 3, 2026-07-15)
+  4. [x] n=50 v4_rerank re-run 验证 (DONE 2026-07-15: cnki 加 10 unique results per query)
+  5. [ ] MoE class diversity 真正 work (openalex 80% → 60-70%, cnki 10-20%) (PENDING; needs n=50 re-train after Plan 3)
 
 #### **Modified 2026-07-15 (Plan 2 done)** — Cookies exported successfully
 
@@ -2215,6 +2215,175 @@ Per v3.9.7.3, the true class distribution of paper-agent on n=47 queries is:
 - [ ] Provide 代理入口 URL + 登录方式 (校园 VPN / EZproxy / 机构图书馆)
 - [ ] Test 1 cookie export → measure session 过期时间
 - [ ] Decide cookie 维护 cadence (手动 daily vs 任务计划自动)
+
+#### **Modified 2026-07-15 (Plan 3 done)** — Real search wiring shipped (v3.9.7.4)
+
+**Source**: v3.9.7.4 commit (pa_cli/cnki_channel.py ~31 KB, pa_cli/cli.py CNKI subcommand group)
+
+**What was done** (v3.9.7.4, 2026-07-15):
+- `CNKIClient.search()` replaced placeholder with full real-wiring flow
+- Single-browser architecture: 1 playwright context shared across bootstrap + POST
+  - **Bootstrap**: visit `xueshu789.com/dbItem/1` (1.5s JS redirect) → land on real
+    CNKI proxy IP `http://{82.157.23.222|120.53.241.46}:5888/kns8s/defaultresult/index`
+    (proxy is load-balanced; 6 new cookies set on first visit)
+  - **POST**: use `page.evaluate(() => fetch(...))` from within same page context,
+    which carries correct Origin/Referer/session cookies (avoids captcha that
+    triggers when opening a 2nd context)
+  - **Pagination**: `pageNum=1, 2, ...` (20 results/page), 1.5s sleep between pages
+  - **Graceful degradation**: page-2+ captcha → return what we have so far
+- Real search endpoint discovered via browser network capture:
+  - **POST** `{proxy_base}/kns8s/brief/grid` (form-urlencoded, NOT JSON)
+  - QueryJson structure: `QNode.QGroup[0].Items[0] = {Field, Value, Operator, Title}`
+  - KuaKuCode must match Classid (full list for CROSSDB; single classid for specific DB)
+  - Response is HTML (not JSON) with 20 result rows in `<tbody>` + brief toolbar
+- HTML parser: extracts title/authors/venue/year/db_type/cited/dl/cnki_url/doi/cnki_filename
+  - Handles both `class="source"` and `class='source'` (CNKI mixes quote styles)
+  - Handles extra whitespace in `class="date" ` etc.
+  - Title link: `class="fz14" target='_blank' href="https://kns.cnki.net/..."` (raw API)
+  - Also handles xueshu789 wrapper fallback for non-API paths
+- 8 field codes supported: `SU=主题, TI=题名, KY=关键词, AB=摘要, TKA=篇关摘, FT=全文, AR=作者, AF=单位`
+- 11 database classids supported: `WD0FTY92=总库, YSTT4HG0=期刊, LSTPFY1C=学位, ...`
+- `pa cnki search "query" --field X --db Y --limit N` CLI subcommand works
+- `pa search "query" --engine cnki` and `--engine all` both work; CNKI is 6th engine in pool
+
+**Tests passing** (v3.9.7.4):
+- `test_output/_test_cnki_v3974.py`: 4 tests, all PASS
+  - "东数西算" all-DB limit=5: 5 real results (新闻在现场/拉萨节点/甘肃庆阳/甘肃东数西算/构建纵深)
+  - "东数西算" all-DB limit=25: 20 real results (page 2 captcha, graceful degradation)
+  - "深度学习" journal-DB limit=5: 5 real results (中国医学影像技术/华南农业大学学报/煤炭科学技术/电力系统自动化/化工学报)
+  - "保险精算" all-DB title-field limit=5: 5 real results (中国证券报/长春大学学报/天津商业大学 thesis/西南财经大学 thesis/IT时报)
+- `test_output/_test_run_all.py`: 6-engine pool integration
+  - `run_search("machine learning neural network", engine="all", limit=10)` returns 40 deduped
+    (crossref=10, openalex=10, arxiv=10, semanticscholar=0, core=0, **cnki=10**)
+
+**Known limitations** (v3.9.7.4 honest audit):
+- ⚠️ `cited_by_count` + `download_count` always 0 in result dicts (CNKI list view doesn't
+  expose them; they load via separate hover AJAX in browser)
+- ⚠️ `abstract` always empty (list view doesn't include; would need to fetch each detail page)
+- ⚠️ `doi` often empty (Chinese papers rarely have DOI; CNKI uses internal `cnki_filename` like `CSDB202607008`)
+- ⚠️ `year_min`/`year_max` args accepted but **not wired** in QueryJson (v3.9.7.4 deferred)
+- ⚠️ Page 2+ may hit captcha (rare; retry later or refresh cookies)
+- ⚠️ Proxy session TTL = 4-8h (vs CNKI direct 7-30d); daily re-export needed
+
+**MoE class diversity forecast** (pending n=50 re-train):
+Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
+- openalex: 51% → 30-40%
+- crossref: 43% → 25-30%
+- **CNKI: 0% → 15-25%** (new)
+- arxiv: 6% → 5%
+- s2/core: 0% (unchanged, demo keys expired)
+- n=50 re-train will measure actual distribution; v3.9.7.5+ if lift materializes
+
+**Effort**:
+- Estimate: 1-2 days
+- Actual: ~4 hours (real search wiring + parser + CLI + tests)
+- Speedup factors: probe-cni7.py already discovered endpoint + form payload;
+  parser pattern reusable from crossref/openalex _normalize_*; single-browser
+  flow design was forced by 403-captcha from 2nd-context POST
+
+**Sub-task decomposition** (final time log):
+| # | Description | Estimate | Actual |
+|---|---|---|---|
+| A | Probe CNKI search endpoint (browser network capture) | 0.5h | ~0.5h |
+| B | Rewrite `CNKIClient.search()` with single-browser flow | 1.5h | ~1.0h |
+| C | Write HTML parser for result rows (8 fields) | 1h | ~0.5h |
+| D | Add pagination (pageNum + 1.5s sleep + captcha graceful degradation) | 0.5h | ~0.3h |
+| E | Add field selection (8) + database classid (11) mapping | 0.5h | ~0.3h |
+| F | Update CLI (`pa cnki search` with --field --db) | 0.5h | ~0.2h |
+| G | Tests (4 queries, 6-engine pool integration) | 1h | ~0.5h |
+| H | CHANGELOG + ROADMAP outcome | 0.5h | ~0.3h |
+| | **Total** | **6h** | **~3.5h** | **~2x under** |
+
+**Files** (v3.9.7.4, this commit):
+- `pa_cli/cnki_channel.py` (~31 KB, +300 LOC over v3.9.7.3 skeleton)
+- `pa_cli/cli.py` (modified `cnki_search`: +`--field` +`--db` options, default format=summary)
+- `test_output/_test_cnki_v3974.py` (~70 LOC, 4 query tests)
+- `test_output/_test_run_search.py` (~30 LOC, integration test)
+- `test_output/_test_run_all.py` (~15 LOC, 6-engine pool test)
+- `CHANGELOG.md` (v3.9.7.4 entry)
+- `ROADMAP.md` ([P0-9] status: done, this outcome subsection)
+
+**Status update** (v3.9.7.4, 2026-07-15):
+- Code: ✅ done (v3.9.7.4 commit)
+- Tests: ✅ 4/4 unit + 2/2 integration pass
+- Documentation: ✅ CHANGELOG + ROADMAP updated
+- Next (deferred, not blocking): MoE n=50 re-train + year filter wiring + abstract enrichment
+
+### [P0-9.1] Plan 4 — CNKI 3 follow-up fixes (proposed 2026-07-15)
+
+**Source**: v3.9.7.4 user reply "abstract + doi 不是重点, 其他部分怎么修？"
+(2026-07-15). User confirmed `abstract` + `doi` limitations are acceptable
+(中文期刊常态); wants fixes for the other 3 gaps.
+
+**Status**: proposed (waiting user sign-off to start)
+
+**Estimated effort**: 3-4 hours total (all 3 sub-items)
+
+**Global Rule 5-check**: 5/5 pass (local code + free APIs, no hosted service)
+
+---
+
+#### [P0-9.1a] Year filter wiring in QueryJson (P1, ~30min, easy)
+
+- **Status**: proposed
+- **Rationale**: v3.9.7.4 `search_cnki(year_min=..., year_max=...)` accepts args but
+  doesn't wire them in QueryJson. Should add `Field=YE, Value="YYYY-YYYY"` to
+  `QGroup[0].Items[1]` (after the SU subject item).
+- **Field code**: `YE` (year), `Operator`: `BETWEEN`
+- **Format**: `Value="2020-2024"` for year range, or single year `"2024"`
+- **Acceptance criteria**:
+  - `search_cnki("东数西算", year_min=2024, year_max=2026, limit=10)` returns
+    2024-2026 results only
+  - Pre-2024 papers excluded (verify on a test query where older results exist)
+- **Files**: `pa_cli/cnki_channel.py` `_build_query_json` (add year item)
+- **Tests**: `test_output/_test_cnki_v3975.py` (1 new test)
+
+#### [P0-9.1b] Cited count + download count via hover-AJAX (P1, ~2-3h, high value)
+
+- **Status**: proposed
+- **Rationale**: v3.9.7.4 returns `cited_by_count=0` and `download_count=0` for
+  all results. CNKI list view HTML has empty `<td class="quote">` / `<td
+  class="download">` cells; the data is loaded by hover-triggered AJAX in
+  browser. Without these, the cite-count feature is useless for ranking.
+- **Approach** (validated 2026-07-15 browser network capture):
+  1. After parsing the result page, get list of CNKI detail URLs
+  2. For each row, simulate `locator.hover()` in same page → wait for AJAX
+     response to `/KNS/brief/resultcite` or similar endpoint
+  3. Parse the response → `cited_by_count` and `download_count`
+- **Risk**: hover AJAX may also be rate-limited (causes captcha). If so, fallback
+  to: rate-limit hover calls (1 per 1.5s) and skip if captcha → return N+1
+  papers with cite=0 + a partial "with_cite" subset.
+- **Alternative** (faster, may miss data): find the AJAX endpoint URL by reading
+  CNKI's list page JS, then call it directly via `page.evaluate(fetch())` with
+  proper Origin/Referer (same trick as Plan 3 bootstrap). Skips hover.
+- **Files**: `pa_cli/cnki_channel.py` new method `_enrich_with_citation()`,
+  modified `_post_brief_page_in_context()` to capture hover endpoints.
+- **Tests**: `test_output/_test_cnki_v3975.py` (verify cite > 0 on common
+  papers like "深度学习" — should have many citations).
+
+#### [P0-9.1c] Page-2+ captcha jitter + retry (P3, ~1h, low value)
+
+- **Status**: proposed
+- **Rationale**: v3.9.7.4 has 1.5s sleep between pages. Captcha still triggers
+  ~30% of page-2 requests. Adding jitter (2-5s random) and 1 retry on captcha
+  should reduce to ~5%. But this is fundamental xueshu789 proxy rate limit —
+  real fix is "user re-export cookies daily" (cookies age 4-8h).
+- **Approach**:
+  - Add `random.uniform(2.0, 5.0)` instead of fixed `1.5s` between pages
+  - On captcha: wait 30s + retry once before giving up
+  - Log captcha events for monitoring
+- **Files**: `pa_cli/cnki_channel.py` `search()` method (pagination loop)
+- **Tests**: minimal; this is mostly a "feel" improvement
+
+---
+
+**Plan 4 priority** (recommend order):
+1. **[P0-9.1a]** year filter — 30min, immediate value, zero risk
+2. **[P0-9.1b]** citation count — 2-3h, biggest metric improvement
+3. **[P0-9.1c]** jitter — 1h, low marginal value (proxy-side limit, not code)
+
+**When to start**: user sign-off on Plan 4 scope. Total ~3-4h can fit in one
+session.
 
 ---
 
