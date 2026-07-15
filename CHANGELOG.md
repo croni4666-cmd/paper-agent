@@ -9,6 +9,76 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.6] - 2026-07-15 (patch — CNKI cite/dl [P0-9.1b] close-out, doc-only, 0 LOC change)
+
+This is a **documentation-only** release. No code change. Purpose: close out
+ROADMAP [P0-9.1b] (cite/dl enrichment) with a final honest verdict after
+exhausting the hobbyist-compatible paths.
+
+### Honored — User request "选项B, 做完之后按你的想法走"
+
+Per user 2026-07-15:
+> 选项B做完之后,再按你的想法走
+
+User picked B (probe legacy search.cnki.net / .com.cn) before Mavis's
+recommended fallback. Probe was completed; B's path was also dead. Now
+applying Mavis's recommendation (option A: accept limitations + honest audit).
+
+### Probe B result (legacy endpoints)
+
+| Endpoint | Status | Verdict |
+|---|---|---|
+| `https://search.cnki.com.cn/Search.aspx?q=...&rank=citeNumber&cluster=all&p=0` | HTTP 404, title="404 Not Found", HTML 148 bytes | **DEAD** (last live 2017-2018 era) |
+| `https://search.cnki.net/search.aspx?q=...&rank=citeNumber&cluster=all` | Playwright "Download is starting" — non-DOM response | **NOT RENDERABLE** (likely 302 to kns or captcha stream) |
+
+Combined with the v3.9.7.5 finding (new `multi-statusex` CORS-blocked, detail
+page captcha), the **complete path landscape** is:
+
+1. ❌ New `multi-statusex` endpoint → CORS preflight block
+2. ❌ Old `search.cnki.com.cn` → 404 dead
+3. ❌ Old `search.cnki.net` → non-DOM response
+4. ❌ Detail page → captcha (requires paid solver, fails Global Rule)
+5. ❌ xueshu789 mirror of multi-statusex → not available
+
+### Deprecated — [P0-9.1b] Citation count + download count
+
+**Status**: deprecated (per ROADMAP protocol section 5). **NOT faked working.**
+
+The `cited_by_count` and `download_count` fields in CNKI result dicts will
+remain `None` indefinitely under the current architecture. This is documented
+in:
+- `pa_cli/cnki_channel.py` module docstring (v3.9.7.6 close-out section)
+- `pa_cli/cnki_channel.py` `search()` docstring
+- `pa cnki_status` CLI output
+- `ROADMAP.md` [P0-9.1b] entry (status: deprecated)
+
+**Resurrection criterion** (for discipline record): only revisit if
+(a) CNKI removes CORS restriction on multi-statusex, (b) xueshu789 starts
+mirroring multi-statusex, or (c) the user opts in to a paid captcha solver.
+Until any of (a)/(b)/(c) is true, this entry stays `Status: deprecated`.
+
+### Files (v3.9.7.6)
+
+- `pa_cli/cnki_channel.py`: 0 LOC changed. Module docstring + `status_report()` version string updated
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.5"` → `"3.9.7.6"`
+- `ROADMAP.md` [P0-9.1b] status: deferred → deprecated
+- `test_output/_probe_old_search.py` (new, ~150 LOC): bootstrap xueshu789 + probe 2 legacy endpoints
+- `test_output/_probe_old_search_report.md` (new): probe results
+- `test_output/_probe_old_search_search_cnki_com_cn.html` (new): 404 page raw HTML
+
+### Tests (v3.9.7.6)
+
+No new tests added (probe is a one-shot diagnostic, not a regression suite).
+Existing test counts unchanged: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE.
+
+### Three-tier audit (per discipline)
+
+- ❌ **What's broken / not working**: cite/dl still `None` in CNKI result dicts. Documented limitation.
+- ❓ **What's untested**: probe covered 2 legacy endpoints; did NOT try `search.cnki.net.cn` (typo of .com.cn) or any institutional EZproxy paths. Future Mavis work could expand probe coverage if resurrecting [P0-9.1b].
+- ✅ **What's working**: search() itself works (year filter, field selection, database selection, pagination, jitter+retry) — all v3.9.7.4 + v3.9.7.5 functionality preserved.
+
+---
+
 ## [3.9.7.5] - 2026-07-15 (patch — CNKI Plan 4: year filter + jitter [P0-9.1] Plan 4)
 
 Per ROADMAP [P0-9.1], this ships the year filter wiring + page-2+ jitter+retry.

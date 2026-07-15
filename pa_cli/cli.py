@@ -782,7 +782,9 @@ def cnki_status(as_json):
         click.echo(f"  cookie_age_hours:       (no file)")
     click.echo(f"  n_cookies:              {s['n_cookies']}")
     click.echo(f"  playwright_installed:   {s['playwright_installed']}")
-    click.echo(f"  search_implemented:     {s['search_implemented']} (real wiring in v3.9.7.5 + year filter + jitter)")
+    click.echo(f"  search_implemented:     {s['search_implemented']} (v3.9.7.6 close-out: cite/dl deprecated, see ROADMAP [P0-9.1b])")
+    click.echo(f"  cite/dl:                None (deprecated per [P0-9.1b]; 5 paths blocked)")
+    click.echo(f"                          see CHANGELOG v3.9.7.6 for honest audit")
     click.echo()
     if not s["ready_for_search"]:
         click.echo(f"[pa-cnki] {s['next_action']}", err=True)
