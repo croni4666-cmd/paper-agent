@@ -1,0 +1,83 @@
+feat(cnki): Export-CNKICookies.ps1 supports multi-domain proxy cookies (v3.9.7.4)
+
+Per user 2026-07-15 10:14 providing 代理入口 https://www.xueshu789.com/dbList/1
+(returns "您还未登陆!" redirect, so user must login first then click CNKI link).
+
+## Discovery: proxy flows need multi-domain cookie capture
+
+Previous script version only captured `cnki.net` cookies via substring filter
+`"cnki.net"`. This works for direct CNKI users but FAILS for proxy users:
+- xueshu789.com (proxy) session cookies are on a DIFFERENT domain (e.g.
+  PHPSESSID on www.xueshu789.com)
+- cnki.net (target) session cookies (ECP_SESSIONID) are on cnki.net
+- BOTH sets are needed: Mavis visits xueshu789.com first, gets redirected to
+  CNKI, then cnki.net cookies are set
+
+## Fix: multi-substring filter + smart hint on zero-match
+
+Updated `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (10123 -> 12250 bytes):
+
+1. **DomainFilter now supports `|` separator**:
+   - Default: `"cnki"` (matches cnki.net only, for direct CNKI users)
+   - For proxy users: pass `-DomainFilter "cnki|xueshu"` to capture both
+     proxy and target cookies
+
+2. **Smart hint on zero-match**:
+   - When no cookies found, list ALL domains with cookies in Chrome
+   - Detect proxy-like keywords (xueshu, ezproxy, proxy, vpn, lib, edu)
+   - Suggest the right `-DomainFilter` invocation
+
+3. **Pass script name via env var** to Python subprocess (avoids PS
+   interpolation issues with `$MyInvocation.MyCommand.Name`)
+
+## Smoke test (2026-07-15, partial)
+
+Tested with Edge 150.0.4078.65 visiting https://www.xueshu789.com/:
+
+| Command | Exit | Result |
+|---|---|---|
+| `pwsh Export-CNKICookies.ps1` (default "cnki" filter) | 3 | 0 cookies (filter wrong) |
+| `pwsh Export-CNKICookies.ps1 -DomainFilter "cnki\|xueshu"` | 0 | 1 cookie: `PHPSESSID` on `www.xueshu789.com` (expires 2026-07-15 03:16 UTC, ~6h from run) |
+| `pwsh Export-CNKICookies.ps1` (no cookies, xueshu present) | 3 | Smart hint: "[hint] Detected proxy cookies on related domain. Try: `Export-CNKICookies.ps1 -DomainFilter 'cnki\|xueshu'`" |
+
+## User next actions to complete CNKI integration
+
+1. **Launch Chrome with debug port**:
+   ```
+   chrome.exe --remote-debugging-port=9222
+   ```
+2. **In Chrome, do the full flow**:
+   - Visit https://www.xueshu789.com/ → log in with your credentials
+   - Navigate to /dbList/1 → click the CNKI link → land on cnki.net
+   - Visit at least 1 search result page so cookies stick
+3. **Run script with proxy-aware filter**:
+   ```
+   pwsh C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1 -DomainFilter "cnki|xueshu"
+   ```
+4. **Verify**:
+   ```
+   pa cnki status
+   ```
+   Should show `cookies_exist=True`, `n_cookies>=1`, `cookie_age_hours~0`,
+   `playwright_installed=True`, `ready_for_search=True`.
+5. **Send me a "cookies ready" signal** (you can mention in chat, or just
+   tell me to check via `pa cnki status` myself)
+
+## Then I wire real CNKI search (next session, Plan 3)
+
+After user confirms cookies are valid:
+- `pa_cli/cnki_channel.py.CNKIClient.search()` (currently returns 1 placeholder)
+  will be replaced with real playwright + HTML parser (~1-2 day effort):
+  - Launch headless chromium with cookies pre-loaded
+  - Navigate to https://www.xueshu789.com/dbList/1 (proxy hop start)
+  - Click CNKI link, follow redirect
+  - Wait for search results table
+  - Parse HTML: title, authors, abstract, year, journal, cnki_url
+  - Paginate (page=2, 3, ...) up to `limit` results
+  - Return normalized list (matches other engines' schema)
+
+## Files
+
+- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (modified, multi-substring
+  filter + smart hint)
+- `test_output/_commit_msg_plan2_proxy.txt` (this file)
