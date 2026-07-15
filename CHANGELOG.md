@@ -16,34 +16,39 @@ not writing/formatting) + asked for B+→A upgrade assessment. After 5-layer
 GitHub due diligence (4 web searches covering 9 candidates) + AMiner API
 verification, committed the research findings to ROADMAP.md.
 
+### v3.9.7.9 follow-up (user pushback 2026-07-15 18:00)
+
+User corrections applied:
+1. **"写作是 Mavis 的活"** — Revised earlier framing that was wrong. Split:
+   prose = Mavis (user's chosen LLM); scaffold + typeset = paper-agent (`pa
+   build` / `pa scaffold` with pandoc). ROADMAP "Writing pipeline" section
+   replaces earlier "Lit review WRITING research" section.
+2. **"ML/DL 本地不是不可行, 是数据太少"** — Corrected verdict. The
+   v3.9.7.0-7.2 failures were a data problem, not absolute. [P3-1] long-term
+   track added: opportunistic judgement collection via `pa judge` command,
+   re-probe when n>=500. Not abandoned, just deferred.
+3. **"AMiner 拍板"** — [P1-7] promoted to in-progress, 4-6h effort.
+
 ### Added (docs only)
 
-- **ROADMAP "Lit review WRITING research"** section — 5-layer evaluation of
-  9 GitHub candidates (pandoc, Manubot, citation-js, gpt_academic, 纸研社,
-  paper-red, etc.) for the missing writing/formatting layer. Verdict:
-  - **pandoc + pandoc-citeproc + Manubot pattern** is the hobbyist-OK stack
-  - **GB/T 7714** is one CSL file away
-  - **LLM-based writing tools** (gpt_academic / 纸研社 / paper-red) violate
-    Global Rule (paid/hosted LLM)
-  - **Real bottleneck isn't formatting** — it's prose quality, structurally
-    blocked by Global Rule
-- **ROADMAP "B+ → A level upgrade assessment"** section — honest 3-tier
-  analysis of user's 3 proposed paths:
-  - **(a) ML/DL local** — NOT viable (data ceiling, n=50 noise; custom
-    training needs n>500 + GPU maintenance)
-  - **(b) Taobao 万方/维普 VPN** — ethical grey; institutional resale is
-    what user ruled out, personal VIP is recurring paid dep (Global Rule
-    violation); +15-25pp CN if user opts in
-  - **(c) More engines** — AMiner is the real opportunity (+10-15pp CN,
-    public API, free); English engines at ceiling
-  - **Combined verdict**: A level NOT achievable under hobbyist budget;
-    A- achievable with [P1-7] AMiner + user's optional Taobao VIP
+- **ROADMAP "Writing pipeline"** section (replaces "Lit review WRITING research") —
+  revised split: Mavis does prose, paper-agent does scaffold + typeset.
+  pandoc + Manubot pattern is the right format pipeline. GB/T 7714 is one
+  CSL file away. Honest 3-tier table of what `pa build` gets right vs not.
+- **ROADMAP "B+ → A level upgrade assessment"** section — Path (a) ML/DL
+  verdict **corrected** from "NOT viable" to "deferred, data problem not
+  absolute"; Path (b) and (c) unchanged from prior assessment.
 - **ROADMAP "What paper-agent can't do"** added 3 writing-related rows
-- **ROADMAP Tier 1 #6 [P2-5] `pa build` manuscript pipeline** —
-  `pa build corpus/ --csl chinese-gb7714-2005-numeric.csl --out
-  manuscript.pdf` bridges search → manuscript gap, 2-4h effort
-- **ROADMAP Tier 1 #7 [P1-7] AMiner engine** — 7th search engine, 4-6h
-  effort, +10-15pp Chinese cite coverage
+- **ROADMAP Tier 1 #6 [P2-5]** — revised scope: `pa build` (pandoc
+  typeset) + `pa scaffold` (outline template) only, no LLM integration.
+  2-4h effort.
+- **ROADMAP Tier 1 #7 [P1-7]** — promoted to in-progress (user sign-off).
+  AMiner engine, 4-6h effort, +10-15pp Chinese cite coverage.
+- **ROADMAP Tier 5 long-term [P3-1]** — ML/DL data collection track. Add
+  `pa judge` command + sqlite storage. Re-probe when n>=100/200/500.
+- **ROADMAP Tier 5 long-term #14** — local small LLM rerank (Qwen 1.5B /
+  MiniCPM 2B / Phi-3 / Jamba Reasoning 3B). Deferred: only revisit if
+  Mavis itself becomes unavailable.
 
 ### Three-tier audit (per discipline, honest reporting)
 
@@ -51,16 +56,18 @@ verification, committed the research findings to ROADMAP.md.
 |---|---|---|
 | Paper-agent can produce a formatted manuscript PDF | ❌ false | no `pa build` command yet; only `pa search --format bibtex` |
 | pandoc + Manubot pattern works for Chinese lit review | ✅ true | Nature Biotech 2025 used Manubot for full manuscript pipeline |
-| gpt_academic / 纸研社 / paper-red are usable | ❌ no (for us) | all require hosted LLM API → Global Rule violation |
+| gpt_academic / 纸研社 / paper-red are usable | ❌ no (for us) | all require hosted LLM API; Mavis already covers this role |
 | AMiner can lift Chinese coverage 10-15pp | ⚠️ estimated | open.aminer.cn public API exists, free; lift is a projection, not measured |
 | B+ → A is achievable under hobbyist budget | ❌ no | terminal limitations (CNKI cite/dl, Chinese tldr) require paid SaaS or inst access |
 | B+ → A- is achievable with AMiner | ⚠️ estimated | +10-15pp CN brings us closer to A-; not yet shipped |
+| ML/DL rerank can work with n>=500 | ⚠️ unproven | v3.9.7.0-7.2 failed at n=50; need to re-test at n=500 |
+| Writing prose is paper-agent's job | ❌ wrong (corrected) | prose = Mavis (user's choice); paper-agent = scaffold + typeset |
+| Writing formatting/scaffold is paper-agent's job | ✅ true | [P2-5] `pa build` + `pa scaffold` covers this |
 
 ### No code change in this release
 
-This is a docs-only release. The two new Tier 1 items [P1-7] and [P2-5] are
-**proposed** but not started. User has not yet confirmed which to take
-first. Awaiting sign-off.
+This is still docs-only. [P1-7] AMiner is in-progress per user sign-off;
+[P2-5] `pa build` is proposed and user has not yet asked to start it.
 
 ---
 

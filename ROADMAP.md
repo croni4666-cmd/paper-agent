@@ -1268,15 +1268,17 @@ candidates in priority order, with effort and 5-check Global Rule audit.
    Effort: 30min.
 5. **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
    (S2 cite often stale / unavailable for older papers). Effort: 30min.
-6. **[P2-5] `pa build` — manuscript pipeline (pandoc + Manubot pattern)** —
-   `pa build corpus/ --csl chinese-gb7714-2005-numeric.csl --out manuscript.pdf`
-   takes Bibtex + markdown skeleton → produces formatted PDF/DOCX/HTML.
-   Bridges the "search returns Bibtex" → "manuscript ready" gap.
-   See "Lit review WRITING research" section above. Effort: 2-4h.
-7. **[P1-7] AMiner engine (Tsinghua/Zhipu, open.aminer.cn)** — 7th search
+6. **[P1-7] AMiner engine (Tsinghua/Zhipu, open.aminer.cn)** — 7th search
    engine. 3.3 亿论文 Chinese coverage, public API, free. Same pattern as
    `pa_cli/cnki_channel.py`. Expected lift: +10-15pp Chinese cite coverage.
-   See "B+ → A level upgrade assessment" Path (c) above. Effort: 4-6h.
+   See "B+ → A level upgrade assessment" Path (c) above. **Status: approved
+   by user 2026-07-15; in-progress 2026-07-15.** Effort: 4-6h.
+7. **[P2-5] `pa build` + `pa scaffold` — manuscript pipeline (pandoc + Manubot
+   pattern)** — see "Writing pipeline" section. Bridges "search returns Bibtex"
+   → "manuscript ready" gap. **Status: revised 2026-07-15 per user pushback** —
+   writing prose is Mavis's job (user's explicit choice), pa build only handles
+   scaffold (outline template + transition prompts) + typeset (pandoc).
+   Effort: 2-4h.
 
 ### Tier 2: Medium (0.5-1 day each)
 
@@ -1300,6 +1302,46 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 12. **Cross-language unified ranking** — single ranking that combines EN + CN results
     semantically (vs current separate-engine dedup). Effort: 1-2 weeks; uncertain lift.
 
+### Tier 5: Long-term (revised per user pushback 2026-07-15)
+
+**13. [P3-1] ML/DL rerank model — data collection track** —
+    User 2026-07-15 pushback: "ML/DL 本地 不是不可行, 而是数据太少的原因,
+    想办法增加数据量或许能够改变 (但这是长期工程, 我需要不断在实干中采集数据才行)".
+
+    **Status: long-term, not started**. Conditions to resume:
+    - n >= 500 labeled query→relevance pairs collected from real 课题 use
+    - Human effort: ~30 min per query × 500 = ~250 hours = impractical to do upfront
+    - Realistic: opportunistic collection, save any judgement call as a labelled example
+
+    **What to do now (deferred, not abandoned)**:
+    - **Add a `pa judge` command** that captures user feedback on search results
+      (e.g., `--mark-relevant DOI --mark-irrelevant DOI`) → build labelled dataset
+      as side-effect of normal use
+    - **Store judgement in a local `judgements.sqlite`** (not committed to git)
+    - **Monitor dataset size**: when n crosses 100, 200, 500 thresholds,
+      re-run LTR / BGE cross-encoder / MoE probes (paper-agent has all the
+      evaluation code in `pa_cli/bench/v01/`)
+    - **No new model training until n>=500** (per memory discipline: n<100 is noise)
+
+    **Realistic timeline**: 6-12 months of opportunistic collection
+    to reach n=500 if user does 课题 2-3 times per week.
+
+    **Why this is not "deprecated"**: the architecture (bi-encoder + linear
+    combined) is already in code. Re-running with n=500 is mechanical. The
+    blocker is data, not code. If user manages to get to n=500, the
+    rerank work has real chance of working — it just hasn't been proved yet.
+
+    Effort: 1-2h to add `pa judge` command + sqlite storage. Re-probe cost:
+    ~1d to re-run LTR / BGE / MoE when n>=500.
+
+14. **Local small LLM rerank** (Qwen 1.5B / MiniCPM 2B / Phi-3 / Jamba Reasoning 3B
+    on CPU) — would let paper-agent run an LLM locally without hosted API.
+    Models exist (e.g. Jamba 3B, 30亿参数, M3 MacBook 40 tok/s, Apache 2.0).
+    **Still fails Global Rule 3** (maintenance burden: model download,
+    update, integrate; even if "free" the user has to keep it on disk and
+    deal with model rot). **Status: deferred** — only revisit if Mavis itself
+    becomes unavailable.
+
 ### Tier 4: Blocked (explicit "won't do" per Global Rule)
 
 - Captcha solver (paid SaaS, fails Global Rule)
@@ -1321,7 +1363,74 @@ If the goal is "validate the 课题 work is rigorous":
 
 ---
 
-## Lit review WRITING research (added 2026-07-15, post-v3.9.7.9)
+## Writing pipeline (added 2026-07-15, post-v3.9.7.9 — revised per user pushback)
+
+User pushback 2026-07-15: "剩下把段落连起来写顺的是Mavis的活,不是我的活。如果我能用Chatgpt 我还会用你吗？重新反思一下GitHub 上面有没有现成的skill 可以集成过来,如果没有再自己写。"
+
+This corrects the earlier framing ("写作是用户自己的活" — wrong). The real split:
+- **Prose generation** (段与段连起来 / 风格 / 语调) = **Mavis's job** (user's explicit choice,
+  already uses me; won't switch to ChatGPT or other hosted LLM)
+- **Scaffold + typeset** (大纲骨架 / 段间过渡提示 / GB/T 7714 排版 / pandoc PDF) =
+  **paper-agent's job** (`pa build` + `pa scaffold`)
+
+### Candidate GitHub skills — re-evaluated after user pushback
+
+| Candidate | Verdict | Why |
+|---|---|---|
+| `binary-husky/gpt_academic` (68K★) | ❌ NO | requires LLM API key; Mavis already covers this role |
+| `Abnerla/AI_paper` (纸研社) | ❌ NO | LLM API + AIGC detection; Mavis covers this role |
+| `Alpha-Innovator/SurveyForge` (arXiv:2503.04629) | ❌ NO | uses hosted LLM; outline + memory + RAG pattern is interesting but no skill to wrap |
+| `zhuwq0/sciwxzs` (R + DeepSeek) | ❌ NO | R-only, depends on DeepSeek API; violates Global Rule |
+| `K-Dense-AI/scientific-agent-skills` (cited in [P1-10]) | ⚠️ partial | general scientific skills; could integrate but not lit-review-specific |
+| `yanlin-cheng/skill-thesis-writer` (6 commits) | ❌ NO | too small, not safe to depend on |
+| `qinky1234-sys/chinese-academic-paper-skill` (41 commits) | ⚠️ partial | Codex/Cline skill — depends on LLM API which user won't use |
+| **Manubot pattern** (greenelab, used in Nature Biotech 2025) | ✅ YES | local markdown → PDF/HTML/DOCX, GB/T 7714 via CSL, **no LLM needed for typeset** |
+| **pandoc + pandoc-citeproc** | ✅ YES | local, BSD-3, GB/T 7714 is one CSL file away |
+| **Mavis itself** (MiniMax-M3) | ✅ YES | user's chosen LLM; already does prose, polish, style; we just need to capture output → pa build |
+
+### Revised split (Mavis does prose; paper-agent does scaffold + typeset)
+
+```
+User's flow (revised):
+1. user runs `pa search "topic" --enrich-top 20 --format bibtex --out refs.bib`
+2. user pastes refs.bib into Mavis chat, asks for lit review skeleton
+3. Mavis outputs markdown skeleton (with [cite: bibtex-key] placeholders, narrative prose)
+4. user runs `pa build refs.bib --skeleton manuscript.md --csl chinese-gb7714-2005-numeric.csl --out manuscript.pdf`
+5. pandoc + XeLaTeX produces GB/T 7714-formatted PDF
+```
+
+`pa build` is the new artifact: takes (a) Bibtex, (b) markdown skeleton with
+`[cite:key]` placeholders, (c) CSL style, (d) optional LaTeX template →
+produces (e) manuscript.pdf / .docx / .html.
+
+### [P2-5] implementation sketch
+
+- `pa_cli/build.py` (~80 LOC): pandoc subprocess wrapper
+- `pa_cli/scaffold.py` (~60 LOC): generate outline skeleton from topic clusters
+  (`pa review-topics --format skeleton`) — no LLM, just topic names + cluster labels
+  + paper titles into a markdown outline with `[cite: doi_or_key]` hints
+- `pa build` CLI: takes `refs.bib` + `--skeleton` + `--csl` + `--out` → pandoc
+- Default csl: `chinese-gb7714-2005-numeric.csl` (downloaded from CSL repo, 5KB)
+- Default template: simple XeLaTeX with 字号/页边距/标题级别
+- Test: round-trip 5 papers → 1-page lit review PDF
+
+### Honest 3-tier assessment of this approach
+
+| What this gets right | What it doesn't get right |
+|---|---|
+| ✅ Formats GB/T 7714 perfectly (mechanical, no LLM) | ❌ Mavis prose quality still 100% depends on user's prompt engineering |
+| ✅ Bridges search → manuscript gap | ❌ No auto-generated narrative (user must write or paste Mavis output) |
+| ✅ Hobbyist-OK (pandoc + LaTeX, no hosted dep) | ❌ Doesn't solve "段落连写" — that remains Mavis + user craft |
+| ✅ Reproducible (same Bibtex + skeleton = same PDF) | ❌ No style transfer (can't say "make it sound like X journal") |
+| ✅ Free, local, 2-4h implementation | ❌ Limited Chinese font handling on Windows (need XeLaTeX + CJK font) |
+
+**Verdict**: this is the right architecture. It does the mechanical work (formatting)
+locally, leaves the creative work (prose) to Mavis where it belongs, and respects
+the user's actual constraints (no hosted LLM except Mavis).
+
+---
+
+
 
 User noted: "我们还缺一块, 当前一直集中在搜索以及确保论文命中率, 还有一块内容即如何写出漂亮的文献综述, 具备可读性以及能直接用在真实的论文中包含文字风格, 排版, 语调等等都没做。"
 
@@ -1388,19 +1497,36 @@ paths: (a) ML/DL local, (b) Taobao 万方/维普 VPN, (c) more engines.
 
 A "B+ tier academic search tool" for mixed-language research.
 
-### Path (a): ML/DL 本地 — **NOT viable**
+### Path (a): ML/DL 本地 — **revised 2026-07-15 per user pushback**
 
-Already proven in [P0-8] + n=50 probes v3.9.7.0-7.2:
-- **BGE cross-encoder rerank**: n=48, **-0.1064 (sig WORSE)** than round-robin (p=0.0008)
-- **LambdaMART LTR**: n=50, **-0.0335** vs linear combined
-- **MoE routing**: n=47, **same as round-robin** (no lift)
-- **Custom training**: needs n>100 labelled queries; current n=50 is statistical noise
-- **Self-hosted 7B LLM for rerank**: would need GPU (8h/episode to host) → fails Global Rule (personal-hobbyist burden)
+Original v3.9.7.9 verdict: "NOT viable". User 2026-07-15 pushback:
+"ML/DL 本地 不是不可行, 而是数据太少的原因, 想办法增加数据量或许能够改变".
 
-**Honest verdict**: the rerank model ceiling is a **data problem, not a
-compute problem**. More local compute does not help. A grade ML/DL approach
-would require: (i) n>500 labelled queries, (ii) production training pipeline,
-(iii) GPU maintenance — all Global Rule violations.
+**Corrected verdict**: the v3.9.7.0-7.2 failures were a **data problem**,
+not a compute or model problem. The data ceiling is real but not absolute.
+
+- **BGE cross-encoder rerank**: n=48, **-0.1064 (sig WORSE)** than round-robin
+  → fails at n=50, but no reason to think it'd fail at n=500
+- **LambdaMART LTR**: n=50, -0.0335 → same
+- **MoE routing**: n=47, same as round-robin → same
+- **Why n=50 fails**: per memory discipline, n<100 is statistical noise. Even a
+  signal that exists in the data gets drowned out by sampling variance at n=50.
+- **Why n=500 might work**: standard ML practice says LTR / rerank needs
+  n>=500 labelled pairs for stable parameter estimation. n=50 is one-tenth of
+  that. User is correct to call out the data ceiling.
+
+**Realistic path forward (deferred, long-term)**:
+- Add `pa judge` command to capture user feedback as side-effect of normal use
+- Re-run probes when n crosses 100, 200, 500 thresholds
+- No new code required; existing `pa_cli/bench/v01/` evaluation framework can
+  re-run automatically once dataset is large enough
+- Timeline: 6-12 months opportunistic collection (user's pace, not new project work)
+- See ROADMAP [P3-1] for implementation details
+
+**Still NOT viable in the short-term**:
+- 7B+ LLM self-hosted (fails Global Rule 3: maintenance burden)
+- Captcha solver (fails Global Rule 1: paid)
+- Custom training pipeline (fails Global Rule 5: "must maintain" infra)
 
 ### Path (b): Taobao 万方/维普 VPN — **ethical grey, partial lift**
 
