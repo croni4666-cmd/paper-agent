@@ -1,0 +1,895 @@
+{
+  "query": "长期护理保险 人口老龄化",
+  "year_min": 2022,
+  "year_max": 2024,
+  "by_engine": {
+    "crossref": 20,
+    "openalex": 3,
+    "arxiv": 0,
+    "semanticscholar": 20,
+    "core": 0,
+    "cnki": 1
+  },
+  "dedup_count": 43,
+  "enrich_top": 10,
+  "results": [
+    {
+      "doi": "10.1177/00081256231202266",
+      "title": "From Buzzword to Biz World: R <scp>ealizing</scp> B <scp>lockchain’s</scp> P <scp>otential in the</scp> I <scp>nternational</scp> B <scp>usiness</scp> C <scp>ontext</scp>",
+      "authors": [
+        "Du Juan",
+        "Bo Bernhard Nielsen",
+        "Catherine Welch"
+      ],
+      "venue": "California Management Review",
+      "year": 2023,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gw.alipayobjects.com/os/bmw-prod/22c09247-b5e5-466b-8b83-32e919aad970.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "Initially making its name as the backbone technology of Bitcoin, blockchain has been referred to as a distributed ledger, public database, Internet of value, digital infrastructure, network, and platform. Compared with fluctuating cryptocurrency and non-fungible token (NFT) markets, applications of blockchain technology in more diverse business scenarios have received less attention. By analyzing 16 international business use cases under eight categories of blockchain-based solutions, this article offers a contextualized understanding of the potential for blockchain to become a general-purpose technology (GPT). It discusses how the extensiveness, evolvability, and enabling (3Es) aspects of blockchain influence the value, vision, and viability (3Vs) required for successful real-world applications. The article discusses how firms can draw on lessons from failed cases and good practices of existing cases to enhance the 3Vs for blockchain adoption.",
+      "tldr": "How the extensiveness, evolvability, and enabling aspects of blockchain influence the value, vision, and viability (3Vs) required for successful real-world applications is discussed.",
+      "reference_count": 40
+    },
+    {
+      "doi": "10.55375/jssc.2023.3.3",
+      "arxiv_id": "",
+      "title": "结构重塑：老龄化背景下社区老龄居民参与治理模式探索",
+      "authors": [
+        "浩忠 钟",
+        "立宏 刘"
+      ],
+      "venue": "社会科学与计算研究",
+      "year": 2023,
+      "cited_by_count": 12,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": null,
+      "is_oa": true,
+      "oa_url": "https://qingpress.com/fs/Upload/Enclosures/a461ec98-4919-4ae3-a9e4-968276bf8ab1.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "人口老龄化是我国社会发展的一大趋势，同时也是今后较长时间的基本国情。社区覆盖老年人口主要生活半径，老龄社区治理逐渐成为社会治理的主题。但伴随着人口老龄化程度的不断加深，我国老年居民参与社区治理面临诸多困境掣肘，居民参与意识浅薄、议事结果空心化、激励机制消极化和制度保障不健全等影响老龄社区的治理效能。通过柔性治理，优化重塑理念维度、渠道维度、集体行动维度和法治完善维度等多维治理结构，可以进一步提高老龄化背景下居民参与社区治理效能，推动新时代中国特色老龄社会治理。"
+    },
+    {
+      "doi": "10.1177/18681034231186441",
+      "title": "Foreign Investment, State Capitalism, and National Development in Borneo: Rethinking Brunei–China Economic Relations",
+      "authors": [
+        "Guanie Lim",
+        "Chang Yau Hoon",
+        "Kaili Zhao"
+      ],
+      "venue": "Journal of Current Southeast Asian Affairs",
+      "year": 2023,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://qccdata.qichacha.com/ReportData/PDF/84ea5c56bc97fafdee3f7b0b65fff278.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "Faced with dwindling oil and gas reserves, Brunei has been hard-pressed to diversify its reliance on hydrocarbon. China has emerged as an attractive prospect to the Brunei government, especially since the launch of the Belt and Road Initiative. This article analyses a few major Chinese projects in Brunei and postulates three interrelated arguments. Firstly, Chinese investors have targeted Brunei's natural resources and fiscal incentives. These firms have minimal interest in the Sultanate's small domestic market as they eye the export sector. Secondly, these projects have been orchestrated by China's provincially-owned state-owned enterprises (SOE) and private firms, instead of centrally- controlled SOEs. State support has generally been channelled to these projects in an at-arm's length manner. Thirdly, while Brunei is relatively skilled in attracting Chinese investors to further its own political economic goals, at least in the short-run, it is uncertain whether such capital exports have helped in ameliorating the structural limits of the country’s economy.",
+      "reference_count": 73
+    },
+    {
+      "doi": "10.37155/2717-5650-0502-5",
+      "title": "老年病护理中人性化护理的应用研究",
+      "authors": [
+        "莲, 薛"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2023,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.61369/mrp.10714",
+      "title": "吸烟对中国老年人认知功能的影响",
+      "authors": [
+        "吉宝 邓",
+        "永杰 王",
+        "小宁 霍",
+        "小龙 杨",
+        "亚菊 李",
+        "鹤群 李",
+        "寅清 徐",
+        "浩忠 郑"
+      ],
+      "venue": "Medical Research and Practice",
+      "year": 2024,
+      "cited_by_count": 4,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "认知障碍的患病率随着年龄的增加也在增加，而目前在吸烟是否是认知障碍危险因素的研究中存在着不一致，我国已有3亿多的吸烟人群，因此本文就从吸烟变量、人口学特征、及潜在机制和病理变化方面探讨了吸烟对认知障碍的影响。吸烟和认知障碍人群的人口学特征方面是存在相互影响，尤其是年龄和APOE 4基因与吸烟具有协同作用。在吸烟的变量方面，发现长期吸烟史认知障碍一个危险因素，且累积吸烟量与认知障碍呈正相关，而短期吸烟史认知障碍的一个保护因素。吸烟导致认知障碍的机制主要是氧化应激，此外还有其他潜在机制，吸烟也会导致大脑AD相关的病理改变进而加重认知障碍。"
+    },
+    {
+      "doi": "10.69979/3029-2700.24.11.028",
+      "title": "数字化和老龄化背景下老年人数字权益保护",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.12677/aam.2022.116394",
+      "title": "Research on the Influence of Population Aging on Endowment Insurance Fund and Countermeasures",
+      "authors": [
+        "杨, 悦"
+      ],
+      "venue": "Advances in Applied Mathematics",
+      "year": 2022,
+      "cited_by_count": 3,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "The rapid development of population aging restricts the further development of my country’s old-age insurance system. My country’s huge elderly population has a certain impact on the management of my",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.12677/ar.2023.104154",
+      "title": "Based on Marxist Population Theory to Solve China’s Population Aging Problem",
+      "authors": [
+        "马, 国强"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 3,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.69979/3029-2700.24.12.001",
+      "arxiv_id": "",
+      "title": "人口老龄化对家庭金融资产配置的影响",
+      "authors": [
+        "邓诗雨 李雅茹，李婉莹，肖思宇，顾苏蓉"
+      ],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.12677/ar.2024.113103",
+      "title": "The Practical Enlightenment of Marxist Population Theory to the Aging of Chinese Population",
+      "authors": [
+        "张, 佳佳"
+      ],
+      "venue": "Aging Research",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "The aging of population is the product of the social and economic development to a certain stage, is the inevitable trend of social development",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.11817/j.issn.1672-7347.2024.240025",
+      "arxiv_id": "",
+      "title": "肥胖与阿尔茨海默病的相关性及其作用机制（英文）",
+      "authors": [
+        "Tenglin Zhang",
+        "Ping Wang",
+        "Ruonan Li",
+        "Ying Wang",
+        "Shuxun Yan"
+      ],
+      "venue": "Zhong nan da xue xue bao. Yi xue ban = Journal of Central South University. Medical sciences",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 73,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.33142/mem.v3i2.6309",
+      "arxiv_id": "",
+      "title": "医疗器械企业成本管理存在的问题及应对措施",
+      "authors": [
+        "琪 王"
+      ],
+      "venue": "现代经济管理",
+      "year": 2022,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.33142/mem.v3i2.6309",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.69979/3029-2700.24.6.041",
+      "arxiv_id": "",
+      "title": "人口老龄化、遮蔽效应与地方债务",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.12677/sd.2022.126179",
+      "title": "Research on China’s Long-Term Care Insurance Supervision under the Background of Population Aging",
+      "authors": [
+        "罗, 宏宇"
+      ],
+      "venue": "Sustainable   Development",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ass.2022.1110588",
+      "title": "An Empirical Study of the Demand for Long-Term Care Insurance for China’s Aging Population",
+      "authors": [
+        "辛, 凯琪"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2024.116408",
+      "title": "The Role of Long-Term Care Insurance in Addressing the Medical Care Needs of Aging",
+      "authors": [
+        "赵, 甜"
+      ],
+      "venue": "Aging Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.102041",
+      "title": "Exploration of Multi-Subject Cooperation Paths of Long-Term Care Services under the Aging of Population",
+      "authors": [
+        "张, 宵倩"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.103118",
+      "title": "Under the Background of Aging, My Country’s Pilot Cities Have Long-Term Nursing Insurance Development Dilemma and Countermeasures",
+      "authors": [
+        "杨, 如意"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.104243",
+      "title": "The Balanced Development Path of Long-Term Care Insurance System under the Perspective of Population Aging—Based on ISM Model",
+      "authors": [
+        "李, 佳容"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 27,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ap.2023.1311615",
+      "title": "The Psychological Impact of Positive Psychology on the Aging Population in the Context of Aging",
+      "authors": [
+        "马, 国强"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.103060",
+      "title": "Study on the Long-Term Balanced Development Path of Individual Pension System from the Perspective of Population Aging—Based on the ISM Model",
+      "authors": [
+        "王, 安宁"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2022.125046",
+      "title": "Research on the Long-Term Care Insurance Model in China",
+      "authors": [
+        "罗, 丹"
+      ],
+      "venue": "Finance",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.104153",
+      "title": "Research on the Legal Risks of Elderly Care Institutions under the Background of Population Aging",
+      "authors": [
+        "魏, 宽"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2024.112039",
+      "title": "The Enlightenment of Marxist Population Theory on China’s Response to Population Aging",
+      "authors": [
+        "孙, 祥森"
+      ],
+      "venue": "Aging Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.104172",
+      "title": "Modernization and Population Aging",
+      "authors": [
+        "聂, 开蓉"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/sd.2022.125148",
+      "title": "German Long-Term Care Insurance Financing Methods and Enlightenment",
+      "authors": [
+        "何, 磊"
+      ],
+      "venue": "Sustainable   Development",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 22,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2024.113106",
+      "title": "Analysis of Population Aging in China from the Perspective of Marxist Population Theory",
+      "authors": [
+        "张, 万龙"
+      ],
+      "venue": "Aging Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ar.2023.102042",
+      "title": "Current Situation and Countermeasure of Population Aging in Dali",
+      "authors": [
+        "李, 芸雅"
+      ],
+      "venue": "Aging Research",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.11817/j.issn.1672-7347.2024.230420",
+      "arxiv_id": "",
+      "title": "运动游戏在老年人健康干预中的应用进展",
+      "authors": [
+        "Xi Chen",
+        "Hongting Ning",
+        "Shuang Wu",
+        "Lina Wu",
+        "Dian Jiang",
+        "Yifei Chen",
+        "Zeng Cao",
+        "Hui Feng"
+      ],
+      "venue": "Zhong nan da xue xue bao. Yi xue ban = Journal of Central South University. Medical sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 39,
+      "tldr": "There is a need to accelerate the development and application of exergames in the field of health interventions for the elderly in China, with a rapidly growing demand for health interventions for the elderly.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There is a need to accelerate the development and application of exergames in the field of health interventions for the elderly in China, with a rapidly growing demand for health interventions for the elderly."
+    },
+    {
+      "doi": "10.61369/se.6306",
+      "arxiv_id": "",
+      "title": "计划生育政策与社会经济发展的关系",
+      "authors": [
+        "秀丽 花"
+      ],
+      "venue": "Sociedad y Economía",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3760/cma.j.cn121090-20230718-00012",
+      "arxiv_id": "",
+      "title": "慢性淋巴细胞白血病中B细胞受体同型模式的生物学特征和临床意义",
+      "authors": [
+        "彤璐 Tonglu 邱 Qiu",
+        "建勇 Jianyong 李 Li",
+        "奕. Y. 夏 Xia"
+      ],
+      "venue": "Zhonghua xue ye xue za zhi = Zhonghua xueyexue zazhi",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The definition, distribution, biological characteristics, and clinical significance of clonality patterns of the BCR in CLL are summarized.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The definition, distribution, biological characteristics, and clinical significance of clonality patterns of the BCR in CLL are summarized."
+    },
+    {
+      "doi": "10.61369/se.8497",
+      "arxiv_id": "",
+      "title": "基于人口老龄化的线下社交活动平台建设构思",
+      "authors": [
+        "轶晖 赵",
+        "策 刘",
+        "思屏 董"
+      ],
+      "venue": "Sociedad y Economía",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.33142/fme.v5i5.14120",
+      "arxiv_id": "",
+      "title": "适应人口老龄化趋势的《老年社会工作实务》课程教学改革探索",
+      "authors": [
+        "旭君 刘",
+        "蓉 金"
+      ],
+      "venue": "现代教育前沿",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.33142/fme.v5i5.14120",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.69979/3029-2700.24.3.027",
+      "arxiv_id": "",
+      "title": "乡村振兴背景下长期护理保险制度构建的困境及法律对策",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/er.6760",
+      "arxiv_id": "",
+      "title": "浅谈锦州老龄化问题",
+      "authors": [
+        "琼 吴"
+      ],
+      "venue": "Economics Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.61369/er.6760",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/ada.9897",
+      "arxiv_id": "",
+      "title": "基于室内安全设计原则的老龄化设计探究",
+      "authors": [
+        "媛 陶"
+      ],
+      "venue": "Architectural Design and Application",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/mrp.6478",
+      "arxiv_id": "",
+      "title": "老年护理中的慢性病管理：综合干预对健康改善的影响",
+      "authors": [
+        "平 张"
+      ],
+      "venue": "Medical Research and Practice",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.33142/ec.v7i11.14251",
+      "arxiv_id": "",
+      "title": "建筑设计中的适老化设计与无障碍环境建设",
+      "authors": [
+        "显豪 郭"
+      ],
+      "venue": "工程建设",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.33142/ec.v7i11.14251",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/eti.7290",
+      "arxiv_id": "",
+      "title": "“终身学习”背景下鄂州市老年人线上课程资源的构建与幸福感增进研究",
+      "authors": [
+        "吟 张"
+      ],
+      "venue": "Education and Teaching Innovation",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.51600/isr.2024.4.3.1",
+      "arxiv_id": "",
+      "title": "重庆社区老年人居住运动环境与中医体质交互作用研究",
+      "authors": [
+        "Wei Zhang",
+        "Zhenwei Tang"
+      ],
+      "venue": "Asia Social Science Academy",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/ada.2024030003",
+      "arxiv_id": "",
+      "title": "浅析莫兰迪色系在适老化居住空间中的应用",
+      "authors": [
+        "佳 宋"
+      ],
+      "venue": "Architectural Design and Application",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/etr.9460",
+      "arxiv_id": "",
+      "title": "新时代养老服务人才供给困境与应对策略",
+      "authors": [
+        "园园 王",
+        "瑞艳 许"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/etr.9579",
+      "arxiv_id": "",
+      "title": "高职护生老年护理就业意愿的影响因素研究进展",
+      "authors": [
+        "珊雄彬 资",
+        "蜀喆 陈"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    }
+  ]
+}

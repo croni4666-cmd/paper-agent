@@ -1,0 +1,526 @@
+{
+  "query": "数字普惠金融 家庭消费",
+  "year_min": 2022,
+  "year_max": 2024,
+  "by_engine": {
+    "crossref": 20,
+    "openalex": 3,
+    "arxiv": 0,
+    "semanticscholar": 7,
+    "core": 0,
+    "cnki": 1
+  },
+  "dedup_count": 26,
+  "enrich_top": 10,
+  "results": [
+    {
+      "doi": "10.61369/ied.6992",
+      "title": "数字普惠金融对农村金融市场结构的影响研究",
+      "authors": [
+        "李, 小舟",
+        "吕, 晓晴",
+        "魏, 淑航"
+      ],
+      "venue": "International Economy and Development",
+      "year": null,
+      "cited_by_count": 27,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在乡村振兴战略中，推动农村地区金融市场发展是重中之重，农村地区金融市场发展有助于促进农村金融活力，激发农村地区市场发展动力，从而为实现乡村振兴打下坚实的金融发展基础。而数字普惠金融在农村金融市场中的融入成为一项重要举措，通过数字普惠金融可以充分利用数字技术，降低农村金融领域发展成本、提升发展效率，进而打破传统农村金融服务模式的困境，为农村金融领域发展注入源源不断的活力。所以在论文中分析和研究的数字普惠金融对农村金融市场结构的影响，且提出了促进农村数字普惠金融发展的对策，用以抛砖引玉。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {}
+    },
+    {
+      "doi": "10.61369/se.6786",
+      "title": "数字普惠金融发展对居民消费差异的影响研究",
+      "authors": [
+        "周, 超"
+      ],
+      "venue": "Society and Economy",
+      "year": null,
+      "cited_by_count": 15,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着数字普惠金融的不断发展，中国南北地区居民的消费水平都得到了显著的改善，由于地域差异日益明显，这种改善的效果也不尽相同。数字普惠金融为区域经济发展的提供重要支柱，它不仅促进了居民消费的增长，而且还有助于改善经济结构，推动经济社会的可持续发展。</jats:p>",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "_enrichment": {}
+    },
+    {
+      "doi": "10.1177/00081256231202266",
+      "title": "From Buzzword to Biz World: R <scp>ealizing</scp> B <scp>lockchain’s</scp> P <scp>otential in the</scp> I <scp>nternational</scp> B <scp>usiness</scp> C <scp>ontext</scp>",
+      "authors": [
+        "Du Juan",
+        "Bo Bernhard Nielsen",
+        "Catherine Welch"
+      ],
+      "venue": "California Management Review",
+      "year": 2023,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gw.alipayobjects.com/os/bmw-prod/22c09247-b5e5-466b-8b83-32e919aad970.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "Initially making its name as the backbone technology of Bitcoin, blockchain has been referred to as a distributed ledger, public database, Internet of value, digital infrastructure, network, and platform. Compared with fluctuating cryptocurrency and non-fungible token (NFT) markets, applications of blockchain technology in more diverse business scenarios have received less attention. By analyzing 16 international business use cases under eight categories of blockchain-based solutions, this article offers a contextualized understanding of the potential for blockchain to become a general-purpose technology (GPT). It discusses how the extensiveness, evolvability, and enabling (3Es) aspects of blockchain influence the value, vision, and viability (3Vs) required for successful real-world applications. The article discusses how firms can draw on lessons from failed cases and good practices of existing cases to enhance the 3Vs for blockchain adoption.",
+      "tldr": "How the extensiveness, evolvability, and enabling aspects of blockchain influence the value, vision, and viability (3Vs) required for successful real-world applications is discussed.",
+      "reference_count": 40
+    },
+    {
+      "doi": "10.1177/18681034231186441",
+      "title": "Foreign Investment, State Capitalism, and National Development in Borneo: Rethinking Brunei–China Economic Relations",
+      "authors": [
+        "Guanie Lim",
+        "Chang Yau Hoon",
+        "Kaili Zhao"
+      ],
+      "venue": "Journal of Current Southeast Asian Affairs",
+      "year": 2023,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://qccdata.qichacha.com/ReportData/PDF/84ea5c56bc97fafdee3f7b0b65fff278.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "Faced with dwindling oil and gas reserves, Brunei has been hard-pressed to diversify its reliance on hydrocarbon. China has emerged as an attractive prospect to the Brunei government, especially since the launch of the Belt and Road Initiative. This article analyses a few major Chinese projects in Brunei and postulates three interrelated arguments. Firstly, Chinese investors have targeted Brunei's natural resources and fiscal incentives. These firms have minimal interest in the Sultanate's small domestic market as they eye the export sector. Secondly, these projects have been orchestrated by China's provincially-owned state-owned enterprises (SOE) and private firms, instead of centrally- controlled SOEs. State support has generally been channelled to these projects in an at-arm's length manner. Thirdly, while Brunei is relatively skilled in attracting Chinese investors to further its own political economic goals, at least in the short-run, it is uncertain whether such capital exports have helped in ameliorating the structural limits of the country’s economy.",
+      "reference_count": 73
+    },
+    {
+      "doi": "10.55375/jonef.2023.3.4",
+      "arxiv_id": "",
+      "title": "数字金融对安徽专精特新企业高质量发展的影响效用及机制研究",
+      "authors": [
+        "承晔 俞",
+        "迎滢 吕",
+        "传浩 段",
+        "楠 郑",
+        "殷茵 顾"
+      ],
+      "venue": "新经济与金融研究",
+      "year": 2023,
+      "cited_by_count": 7,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://qingpress.com/fs/Upload/Enclosures/8a6da3cf-c9dc-4f04-bc78-43f5e02d6f54.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "abstract": "本文基于2015-2021年安徽省专精特新上市企业的数据以及北京大学发布的数字普惠金融指数，利用DEA模型对安徽省专精特新企业高质量发展的效率进行静态与动态分析。本文检验了数字金融对安徽装精特新企业高质量发展的促进作用，并对不同成长性企业进行了异质性分析和中介效应检验。研究发现：(1)专精特新企业高质量发展在近些年均处于上升态势，但在2019-2020年发生了一定的下降，发展效率的提升主要是规模的增长所带来的，技术进步带来的影响非常有限；(2)数字金融能够促进高质量发展，并且对于高成长性的企业的促进作用更强；(3)数字金融能够通过促进企业创新以及缓解企业融资约束这两个中介作用来促进专精特新企业的高质量发展。本文的研究结论能够为数字金融的发展优化及实现我国专精特新企业高质量发展提供经验证据和政策启示。"
+    },
+    {
+      "doi": "10.12677/aam.2022.118558",
+      "title": "The Impact of Digital Inclusive Finance on Residents’ Consumption Level—An Empirical Study Based on Provincial Panel Data",
+      "authors": [
+        "王, 晶"
+      ],
+      "venue": "Advances in Applied Mathematics",
+      "year": 2022,
+      "cited_by_count": 4,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {}
+    },
+    {
+      "doi": "10.12677/aam.2022.118638",
+      "title": "Digital Inclusive Finance, Digital Transformation of Enterprises and Financing Constraints",
+      "authors": [
+        "郭, 慧晶"
+      ],
+      "venue": "Advances in Applied Mathematics",
+      "year": 2022,
+      "cited_by_count": 3,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "This paper selects the listed companies in China’s Shanghai and Shenzhen stock markets from 2011 to 2021 as samples, and empirically studies the role of digital transformation of enterprises in the relationship between digital inclusive financial and financing constraints. The results show that digital inclusive finance is conducive to improving the level of digital transformation of enterprises, and digital transformation of enterprises plays an intermediary role in the financing constraints faced by digital inclusive finance and enterprises. Improving the level of digital trans-郭慧晶",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "tldr": "The results show that digital inclusive finance is conducive to improving the level of digital transformation of enterprises, and digital transformation of enterprises plays an intermediary role in the financing constraints faced by digital inclusive finance and enterprises."
+    },
+    {
+      "doi": "10.12677/fin.2023.135105",
+      "title": "Study on the Mechanism and Effect of Digital Inclusive Finance Influencing the Residents’ Consumption Upgrading in Yunnan",
+      "authors": [
+        "李, 玲"
+      ],
+      "venue": "Finance",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "Based on panel data from Yunnan Province from 2011 to 2021, this paper uses a model which incorporates fixed effects and mediation effects to investigate the relationship between digital financial inclusion and consumption upgrading. The results indicate that the development of digital financial inclusion in Yunnan is beneficial to consumption upgrading and exhibits significant re-李玲，刘方",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      },
+      "tldr": "The results indicate that the development of digital financial inclusion in Yunnan is beneficial to consumption upgrading and exhibits significant re-consumption upgrading."
+    },
+    {
+      "doi": "10.12677/fin.2023.133040",
+      "title": "Inclusive Finance Index and Urban-Rural Consumption Gap —Based on the Intermediary Effect Model and Threshold Effect Model",
+      "authors": [
+        "于, 亚敏"
+      ],
+      "venue": "Finance",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 16,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.69979/3029-2700.24.12.002",
+      "title": "数字普惠金融在家庭金融资产配置中的作用",
+      "authors": [
+        "刘捷，彭宇航，莫晓梅，林欣, 付誉"
+      ],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "_enrichment": {
+        "s2_doi": true
+      }
+    },
+    {
+      "doi": "10.12677/ass.2024.132124",
+      "title": "A Study of the Impact of Digital Inclusive Finance on the Property Income of Rural Low-Income Households",
+      "authors": [
+        "王, 一航"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.18306/dlkxjz.2024.10.009",
+      "title": "Effects of digital financial inclusion on promoting household tourism consumption and mechanism",
+      "authors": [
+        "Lijun Ma",
+        "Hao Zhang",
+        "Xin Liu"
+      ],
+      "venue": "地理科学进展",
+      "year": 2024,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.progressingeography.com/CN/PDF/10.18306/dlkxjz.2024.10.009",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.12677/ass.2024.13111064",
+      "title": "Study on the Impact of Digital Inclusive Finance Development on the Consumption Level of Low-Income Households",
+      "authors": [
+        "董, 委楗"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.1341158",
+      "title": "Digital Financial Inclusion, Family Entrepreneurship and Income Disparity",
+      "authors": [
+        "丁, 晨光"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 42,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.69979/3029-2700.24.2.012",
+      "title": "数字普惠金融驱动农村消费扩容升级：理论逻辑、现实 挑战与实践路径",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.4060/cb2109zh",
+      "title": "新冠肺炎疫情下的数字金融行业及其普惠性",
+      "authors": [],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.1341329",
+      "title": "How Does Digital Financial Inclusion Affect Rural Household Debt Leverage Ratio?",
+      "authors": [
+        "潘, 晶晶"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 23,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2024.144133",
+      "title": "The Impact of Digital Inclusive Finance on the Diversity of Asset Allocation in Rural Households",
+      "authors": [
+        "于, 珑玥"
+      ],
+      "venue": "Finance",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2024.142068",
+      "title": "Does Digital Inclusive Financing Promote “Capacity Expansion and Quality Improvement” of Household Consumption?—Evidence from Provincial Panel Data",
+      "authors": [
+        "王, 志红"
+      ],
+      "venue": "Finance",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 22,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.133587",
+      "title": "Digital Inclusive Finance, Industrial Structure and Economic Development",
+      "authors": [
+        "金, 方婷"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ass.2023.124222",
+      "title": "An Analysis of the Causes of the Digital Divide in the Development of Rural Digital Inclusive Finance and Its Resolution",
+      "authors": [
+        "项, 楠"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.36527/kcsss.22.4.10",
+      "title": "Research on the Impact of Digital Inclusive Finance on the Consumption Level of Urban Residents in Three Northeastern Provinces",
+      "authors": [
+        "Guang-yi, Jin",
+        "Jiao-yang, Wang",
+        "Hui-jing, Shi"
+      ],
+      "venue": "Korean-Chinese Social Science Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.62836/jem.v1n1.0163",
+      "title": "中国数字普惠金融时空格局动态演化及驱动力分析",
+      "authors": [
+        "金莹",
+        "王征兵"
+      ],
+      "venue": "环球经济与管理杂志",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>金莹1,2，王征兵1,*\n1.西北农林科技大学经济管理学院，陕西杨凌；\n2.甘肃农业大学财经学院，甘肃兰州\n摘要：基于2011—2020年全国大陆31个省域层面数字普惠金融发展指数，运用探索性空间数据分析法、Kernel密度估计、趋势面和地理加权回归（GWR）模型，探究中国数字普惠金融的时空格局、演进趋势及驱动因素。研究发现：①中国省域数字普惠金融发展整体存在明显的空间集聚性，在增速方面表现为“西部较快、中东部缓慢”的态势；②省域间数字普惠金融具有显著的空间自相关性，聚类方式以低低、高高集聚区为主；③东、中、西部整体差异较大，长期趋于稳态收敛发展；④数字普惠金融的发展离不开经济发展水平、传统金融发展水平、第三产业发展水平、政府干预程度、互联网发展水平、收入水平、人口密度和受教育水平等因素的影响，但影响方向和程度在不同年份、不同区域差异性明显。最后，依据实证结论提出相关政策启示，以期促进各地区数字普惠金融的协同发展。</jats:p>",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://cn.sgsci.org/finance/article/download/163/173"
+    },
+    {
+      "doi": "10.12677/ecl.2024.133902",
+      "title": "The Supporting Effect of Digital Inclusive Finance on Digital Agricultural Supply Chain Finance",
+      "authors": [
+        "李, 黄燕菲"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 23,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.69979/3029-2700.24.5.003",
+      "arxiv_id": "",
+      "title": "数字普惠金融对黑龙江省农业经济韧性的影响研究——基于政府支持力度的中介效应",
+      "authors": [
+        "李梅 贾任菲"
+      ],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Research on the Influence of the Development Level of Digital Inclusive Finance on the Social and Economic Income Gap Between Urban and Rural Groups in Guizhou Province under the Background of Introducing Money into Guizhou Province",
+      "authors": [
+        "Kairui Yang",
+        "Hongmei Zhang",
+        "引金入黔背景下贵州省数字普惠金融发展水平对城乡 群体社会经济收入差距影响研究 杨凯睿",
+        "，张红梅"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 3,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    }
+  ]
+}
