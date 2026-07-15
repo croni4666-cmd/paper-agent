@@ -1179,6 +1179,10 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.8.3 | released 2026-07-05 | [P1-4 polish-3] close v3.8.1 unverified gaps (ABC stubs / bertopic timeout / CLI test / register chain) | 2026-07-05 |
 | v3.9.0 | released 2026-07-12 | v4 multi-condition rerank stack (5 conditions + 1 ablation) + 6 invariant checks + user spot-check pipeline | 2026-07-12 |
 | v3.9.1 | released 2026-07-13 | [P0-4] DOI canonicalization (19 renames, 5 typo fixes, 102 candidates migrated) + [P1-5] recency + citation threshold filter (`--recency-mode {off\|strict\|moderate}`) | 2026-07-13 |
+| v3.9.7.4 | released 2026-07-15 | [P0-9] CNKI Plan 3 real search wiring (single-browser flow + brief/grid POST) | 2026-07-15 |
+| v3.9.7.5 | released 2026-07-15 | [P0-9.1] Plan 4 year filter wiring + page-2+ jitter/captcha retry (2/3 sub-items done) | 2026-07-15 |
+| v3.9.7.6 | released 2026-07-15 | [P0-9.1b] close-out: 5 CNKI cite/dl paths probed, all blocked, [P0-9.1b] deprecated (doc-only) | 2026-07-15 |
+| v3.9.7.7 | released 2026-07-15 | S2 enrichment fields (influential_cite/reference_count/tldr) + crossref references-count + tldr→abstract fallback (with placeholder filter). Boosted English-query cite 21%→47%, abstract 6%→21%; Chinese queries plateau at 21% (S2 has shallow entries for Chinese papers) | 2026-07-15 |
 
 ---
 
@@ -2412,6 +2416,102 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 - Total time: ~1.5h actual (vs 3-4h estimate — citation count investigation
   took 1h but was honestly abandoned; v3.9.7.6 close-out was ~30min probe
   + doc-only edits)
+
+---
+
+### [P0-12] Quality research workflow — Chinese/English split decision (smoke-test-driven, 2026-07-15)
+
+- **Status**: proposed
+- **Added**: 2026-07-15
+- **Source**: User request 2026-07-15 "需要确保高质量的信息"; smoke test on
+  2 queries (Chinese: "金融科技 风险承担", English: "transformer attention")
+  via `pa search --year-min 2020 --year-max 2024 --limit 20`.
+
+- **Background — what the smoke test revealed**:
+  - 71 unique Chinese-query results, 72 unique English-query results
+  - Cite coverage: 21% (CN) vs 47% (EN)
+  - Abstract coverage: 6% (CN) vs 21% (EN)
+  - 28% of Chinese-query results come from CNKI alone (cite/abstract blocked per [P0-9.1b])
+  - For Chinese papers in 4 English engines: S2 has "shallow" entries (title + basic cite only);
+    `influential_cite_count`, `reference_count`, `tldr` are 0 for most Chinese papers
+  - v3.9.7.7 added S2 enrichment fields + tldr→abstract fallback: real boost for English
+    queries (cite 21%→47%, abstract 6%→21%), but plateau for Chinese queries (21%→21%)
+
+- **Verdict — workflow split** (per user "按你的建议走" 2026-07-15):
+  - **Chinese papers** → user uses **CNKI website directly** (with xueshu789 cookies);
+    paper-agent's CNKI engine handles bulk search but lacks cite/abstract
+  - **English papers** → use paper-agent's 6-engine pool; v3.9.7.7 enrichment
+    fields give 47% cite / 21% abstract
+  - **Mixed / bilingual queries** → paper-agent `pa search --engine all`
+    gives recall; user then manually enriches Chinese-only results via CNKI
+
+- **What this means for [P0-9] integration**:
+  - v3.9.7.7 already done (S2 enrichment + dedup + tldr fallback)
+  - Future improvements: not more S2 fields (already at limit); not Baidu Scholar
+    (no public API); not 万方数据 (captcha + paid)
+  - The 21% Chinese-query cite plateau is **terminal** under hobbyist budget
+
+- **Acceptance criteria (workflow, not code)**:
+  - For each user query, document whether it goes via paper-agent (English/cite-needed)
+    or CNKI website (Chinese-only/fast-browse)
+  - `pa review` (lit review synthesis) should note the limitation in markdown output
+    so user knows which papers lack cite data
+  - If user finds a real workflow need for Chinese cite (e.g. "must filter by cite count
+    for 金融科技 query"), revisit [P0-9.1b] (still deprecated; only reopen per
+    resurrection criterion)
+
+- **Estimated effort**: ~0 LOC (workflow decision, not code)
+- **Files**: `CHANGELOG.md` v3.9.7.7 documents the honest verdict
+- **User confirmation needed**: scope — is the workflow split acceptable, or does
+  user need cite coverage for Chinese queries that would force re-opening [P0-9.1b]?
+
+---
+
+### [P0-13] S2 enrichment fields wiring (v3.9.7.7 done)
+
+- **Status**: done (v3.9.7.7, 2026-07-15)
+- **Added**: 2026-07-15
+- **Source**: [P0-12] smoke test finding (English queries needed more cite/abstract)
+
+- **What was done** (v3.9.7.7, 2026-07-15):
+  - S2: added `influentialCitationCount`, `referenceCount`, `tldr` to fields param + result mapper
+  - Crossref: added `references-count` to select param + result mapper
+  - `run_search` dedup: extended merge loop from 3 to 9 fields (`cited_by_count`,
+    `is_oa`, `oa_url`, `tldr`, `abstract`, `venue`, `authors`,
+    `influential_cite_count`, `reference_count`, `doi`, `arxiv_id`)
+  - tldr → abstract fallback with placeholder filter (4 known S2 placeholder prefixes)
+
+- **Smoke test result** (v3.9.7.7, year 2020-2024, limit 20/engine):
+  - English query "transformer attention": cite 21%→47%, abstract 6%→21%,
+    influential_cite 0%→15%, tldr 0%→11% — meaningful improvement
+  - Chinese query "金融科技 风险承担": 21%→21% (no change) — S2 has shallow
+    Chinese entries regardless of fields param
+
+- **Honest 3-tier audit**:
+  - ✅ Verified: 4 audit scripts pass, S2 fields work for English
+  - ⚠️ Caveat: S2 returns placeholder tldr ("It's time to dust off the gloves...")
+    for papers without real tldr; placeholder filter blocks these (3/3 in smoke
+    test were placeholders, correctly skipped)
+  - ❌ Honest limit: Chinese-papers S2 entries are "shallow" — no amount of
+    field requests will fix this. Documented in [P0-12].
+
+- **Files modified** (~30 LOC net):
+  - `pa_cli/search.py`: 3 functions modified (`search_crossref`, `search_semanticscholar`,
+    `run_search`)
+  - `pa_cli/__init__.py`: version 3.9.7.6 → 3.9.7.7
+  - `test_output/_smoke_audit_*.py` (3 new audit scripts)
+  - `test_output/_smoke_search_v3977*.json` (3 new smoke test JSON snapshots)
+  - `test_output/_smoke_search_en_20260715_*.json` (1 new English smoke test JSON)
+
+- **5-check Global Rule audit**: 5/5 pass
+  - $0 cost (S2 free, Crossref free, both same call)
+  - No hosted service
+  - Maintenance: ~30 LOC new, no ongoing obligation
+  - No publish obligation
+  - Free-tier degradation: works for English even if S2 API key expires
+    (Crossref picks up cite; S2 fields become 0, tldr fallback doesn't fire)
+
+---
 
 **Sub-task decomposition (final time log)**:
 | # | Description | Estimate | Actual |

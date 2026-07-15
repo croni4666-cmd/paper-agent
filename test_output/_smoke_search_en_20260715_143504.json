@@ -1,0 +1,1561 @@
+{
+  "query": "transformer attention mechanism",
+  "year_min": 2020,
+  "year_max": 2024,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 15,
+    "arxiv": 15,
+    "semanticscholar": 15,
+    "core": 0,
+    "cnki": 15
+  },
+  "dedup_count": 72,
+  "results": [
+    {
+      "doi": "10.1609/aaai.v35i12.17325",
+      "title": "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting",
+      "authors": [
+        "Haoyi Zhou",
+        "Shanghang Zhang",
+        "Jieqi Peng",
+        "Shuai Zhang",
+        "Jianxin Li",
+        "Hui Xiong",
+        "Wancai Zhang"
+      ],
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "year": 2021,
+      "cited_by_count": 6185,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/17325/17132",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/cvpr46437.2021.00681",
+      "title": "Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers",
+      "authors": [
+        "Sixiao Zheng",
+        "Jiachen Lu",
+        "Hengshuang Zhao",
+        "Xiatian Zhu",
+        "Zekun Luo",
+        "Yabiao Wang",
+        "Yanwei Fu",
+        "Jianfeng Feng",
+        "Tao Xiang",
+        "Philip H. S. Torr",
+        "Li Zhang"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 3541,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1609/aaai.v37i9.26317",
+      "title": "Are Transformers Effective for Time Series Forecasting?",
+      "authors": [
+        "Ailing Zeng",
+        "Muxi Chen",
+        "Lei Zhang",
+        "Qiang Xu"
+      ],
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "year": 2023,
+      "cited_by_count": 2656,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26317/26089",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s41095-022-0271-y",
+      "title": "Attention mechanisms in computer vision: A survey",
+      "authors": [
+        "Meng-Hao Guo",
+        "Tian-Xing Xu",
+        "Jiangjiang Liu",
+        "Zheng-Ning Liu",
+        "Peng-Tao Jiang",
+        "Tai‐Jiang Mu",
+        "Song–Hai Zhang",
+        "Ralph R. Martin",
+        "Ming‐Ming Cheng",
+        "Shi‐Min Hu"
+      ],
+      "venue": "Computational Visual Media",
+      "year": 2022,
+      "cited_by_count": 2387,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s41095-022-0271-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s41095-022-0274-8",
+      "title": "PVT v2: Improved baselines with pyramid vision transformer",
+      "authors": [
+        "Wenhai Wang",
+        "Enze Xie",
+        "Xiang Li",
+        "Deng-Ping Fan",
+        "Kaitao Song",
+        "Ding Liang",
+        "Tong Lü",
+        "Ping Luo",
+        "Ling Shao"
+      ],
+      "venue": "Computational Visual Media",
+      "year": 2022,
+      "cited_by_count": 2202,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s41095-022-0274-8.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/iccvw54120.2021.00312",
+      "title": "TPH-YOLOv5: Improved YOLOv5 Based on Transformer Prediction Head for Object Detection on Drone-captured Scenarios",
+      "authors": [
+        "Xingkui Zhu",
+        "Shuchang Lyu",
+        "Xu Wang",
+        "Qi Zhao"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 2069,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.01181",
+      "title": "CSWin Transformer: A General Vision Transformer Backbone with Cross-Shaped Windows",
+      "authors": [
+        "Xiaoyi Dong",
+        "Jianmin Bao",
+        "Dongdong Chen",
+        "Weiming Zhang",
+        "Nenghai Yu",
+        "Lu Yuan",
+        "Dong Chen",
+        "Baining Guo"
+      ],
+      "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "year": 2022,
+      "cited_by_count": 1240,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.21437/interspeech.2021-698",
+      "title": "AST: Audio Spectrogram Transformer",
+      "authors": [
+        "Yuan Gong",
+        "Yu-An Chung",
+        "James Glass"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 1002,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ymssp.2021.108616",
+      "title": "A novel time–frequency Transformer based on self–attention mechanism and its application in fault diagnosis of rolling bearings",
+      "authors": [
+        "Yifei Ding",
+        "Minping Jia",
+        "Qiuhua Miao",
+        "Yudong Cao"
+      ],
+      "venue": "Mechanical Systems and Signal Processing",
+      "year": 2021,
+      "cited_by_count": 509,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/2104.09079",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/cvpr52729.2023.00599",
+      "title": "Neighborhood Attention Transformer",
+      "authors": [
+        "Ali Hassani",
+        "Steven Walton",
+        "Jiachen Li",
+        "Shen Li",
+        "Humphrey Shi"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 415,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.aei.2023.102007",
+      "title": "DenseSPH-YOLOv5: An automated damage detection model based on DenseNet and Swin-Transformer prediction head-enabled YOLOv5 with attention mechanism",
+      "authors": [
+        "Arunabha M. Roy",
+        "Jayabrata Bhaduri"
+      ],
+      "venue": "Advanced Engineering Informatics",
+      "year": 2023,
+      "cited_by_count": 251,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 2,
+      "reference_count": 106
+    },
+    {
+      "doi": "10.3390/rs14122861",
+      "title": "Swin-Transformer-Enabled YOLOv5 with Attention Mechanism for Small Object Detection on Satellite Images",
+      "authors": [
+        "Hang Gong",
+        "Tingkui Mu",
+        "Qiuxia Li",
+        "Haishan Dai",
+        "Chunlai Li",
+        "Zhiping He",
+        "Wenjing Wang",
+        "Feng Han",
+        "Abudusalamu Tuniyazi",
+        "Haoyang Li",
+        "Xuechan Lang",
+        "Zhiyuan Li",
+        "Bin Wang"
+      ],
+      "venue": "Remote Sensing",
+      "year": 2022,
+      "cited_by_count": 213,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-4292/14/12/2861/pdf?version=1655281056",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.neunet.2023.11.018",
+      "title": "AttentionMGT-DTA: A multi-modal drug-target affinity prediction using graph transformer and attention mechanism",
+      "authors": [
+        "Hongjie Wu",
+        "Junkai Liu",
+        "Tengsheng Jiang",
+        "Quan Zou",
+        "Shujie Qi",
+        "Zhiming Cui",
+        "Prayag Tiwari",
+        "Yijie Ding"
+      ],
+      "venue": "Neural Networks",
+      "year": 2023,
+      "cited_by_count": 153,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.neunet.2023.11.018",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.knosys.2024.111507",
+      "title": "Transformer-based multivariate time series anomaly detection using inter-variable attention mechanism",
+      "authors": [
+        "Hyeongwon Kang",
+        "Pilsung Kang",
+        "Pilsung Kang"
+      ],
+      "venue": "Knowledge-Based Systems",
+      "year": 2024,
+      "cited_by_count": 125,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "reference_count": 29
+    },
+    {
+      "doi": "10.1109/tim.2022.3181933",
+      "title": "Convolutional Transformer: An Enhanced Attention Mechanism Architecture for Remaining Useful Life Estimation of Bearings",
+      "authors": [
+        "Yifei Ding",
+        "Minping Jia"
+      ],
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "year": 2022,
+      "cited_by_count": 109,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3389/fpls.2023.1323301",
+      "arxiv_id": "",
+      "title": "YOLOV5-CBAM-C3TR: an optimized model based on transformer module and attention mechanism for apple leaf disease detection",
+      "authors": [
+        "Meng Lv",
+        "Wen-Hao Su"
+      ],
+      "venue": "Frontiers in Plant Science",
+      "year": 2024,
+      "cited_by_count": 64,
+      "influential_cite_count": 2,
+      "reference_count": 42,
+      "tldr": "The YOLOV5-CBAM-C3TR model proposed in this paper has been applied to the detection of apple leaf diseases for the first time, and also showed strong recognition ability in identifying similar diseases, which is expected to promote the further development of disease detection technology.",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpls.2023.1323301/pdf?isPublishedV2=False",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The YOLOV5-CBAM-C3TR model proposed in this paper has been applied to the detection of apple leaf diseases for the first time, and also showed strong recognition ability in identifying similar diseases, which is expected to promote the further development of disease detection technology."
+    },
+    {
+      "doi": "10.1016/j.enggeo.2024.107446",
+      "arxiv_id": "",
+      "title": "LiteTransNet: An interpretable approach for landslide displacement prediction using transformer model with attention mechanism",
+      "authors": [
+        "Qi Ge",
+        "Jin Li",
+        "Xiaohong Wang",
+        "Yiyan Deng",
+        "Keying Zhang",
+        "Hongyue Sun"
+      ],
+      "venue": "Engineering Geology",
+      "year": 2024,
+      "cited_by_count": 64,
+      "influential_cite_count": 3,
+      "reference_count": 48,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s00521-023-08687-7",
+      "arxiv_id": "",
+      "title": "An abstractive text summarization technique using transformer model with self-attention mechanism",
+      "authors": [
+        "Sandeep Kumar",
+        "A. Solanki"
+      ],
+      "venue": "Neural computing & applications (Print)",
+      "year": 2023,
+      "cited_by_count": 62,
+      "influential_cite_count": 1,
+      "reference_count": 89,
+      "tldr": "The self-attention mechanism is added to the transformer to solve the problem of coreference in text and makes the system to understand the text better, which improves the performance of text summarization.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The self-attention mechanism is added to the transformer to solve the problem of coreference in text and makes the system to understand the text better, which improves the performance of text summarization."
+    },
+    {
+      "doi": "10.1186/s12864-024-09985-7",
+      "arxiv_id": "",
+      "title": "A semi-supervised approach for the integration of multi-omics data based on transformer multi-head self-attention mechanism and graph convolutional networks",
+      "authors": [
+        "Jiahui Wang",
+        "N. Liao",
+        "Xiaofei Du",
+        "Qingfeng Chen",
+        "Bizhong Wei"
+      ],
+      "venue": "BMC Genomics",
+      "year": 2024,
+      "cited_by_count": 59,
+      "influential_cite_count": 1,
+      "reference_count": 76,
+      "tldr": "A novel multi-omics integrative method MOSEGCN, based on the Transformer multi-head self-attention mechanism and Graph Convolutional Networks, which explores the significant relationship information among different omics and within each omics' latent features to further enhance the accuracy of complex disease classification.",
+      "is_oa": true,
+      "oa_url": "https://bmcgenomics.biomedcentral.com/counter/pdf/10.1186/s12864-024-09985-7",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A novel multi-omics integrative method MOSEGCN, based on the Transformer multi-head self-attention mechanism and Graph Convolutional Networks, which explores the significant relationship information among different omics and within each omics' latent features to further enhance the accuracy of complex disease classification."
+    },
+    {
+      "doi": "10.1016/j.specom.2025.103242",
+      "arxiv_id": "2403.04743",
+      "title": "Speech Emotion Recognition via CNN-Transformer and multidimensional attention mechanism",
+      "authors": [
+        "Xiaoyu Tang",
+        "Jiazheng Huang",
+        "Yixing Lin",
+        "Ting Dang",
+        "Jintao Cheng"
+      ],
+      "venue": "Speech Communication",
+      "year": 2024,
+      "cited_by_count": 51,
+      "influential_cite_count": 3,
+      "reference_count": 75,
+      "tldr": "A Speech Emotion Recognition network based on CNN-Transformer and multi-dimensional attention mechanisms is proposed, which significantly improves the performance over the state-of-the-art methods.",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/pdf/2403.04743",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A Speech Emotion Recognition network based on CNN-Transformer and multi-dimensional attention mechanisms is proposed, which significantly improves the performance over the state-of-the-art methods."
+    },
+    {
+      "doi": "10.3390/rs16071180",
+      "arxiv_id": "",
+      "title": "A Novel Transformer Network with a CNN-Enhanced Cross-Attention Mechanism for Hyperspectral Image Classification",
+      "authors": [
+        "Xinyu Wang",
+        "Le Sun",
+        "Chuhan Lu",
+        "Baozhu Li"
+      ],
+      "venue": "Remote Sensing",
+      "year": 2024,
+      "cited_by_count": 38,
+      "influential_cite_count": 1,
+      "reference_count": 40,
+      "tldr": "A novel transformer network with a CNN-enhanced cross-attention (TNCCA) mechanism for HSI classification that utilizes different scales of HSI input data to extract shallow spatial–spectral features using a multi-scale 3D and 2D hybrid convolutional neural network.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-4292/16/7/1180/pdf?version=1711625917",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A novel transformer network with a CNN-enhanced cross-attention (TNCCA) mechanism for HSI classification that utilizes different scales of HSI input data to extract shallow spatial–spectral features using a multi-scale 3D and 2D hybrid convolutional neural network."
+    },
+    {
+      "doi": "10.1038/s41598-024-72019-5",
+      "title": "A PV cell defect detector combined with transformer and attention mechanism",
+      "authors": [
+        "Lang, Du",
+        "Lv, Zhenzhen"
+      ],
+      "venue": "Scientific Reports",
+      "year": null,
+      "cited_by_count": 31,
+      "reference_count": 50,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "This paper presents a novel PV defect detection algorithm that leverages the YOLO architecture, integrating an attention mechanism and the Transformer module, and introduces a polarized self-attention mechanism in the feature extraction stage, enabling separate extraction of spatial and semantic features of PV modules.",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1038/s41598-024-72019-5",
+      "tldr": "This paper presents a novel PV defect detection algorithm that leverages the YOLO architecture, integrating an attention mechanism and the Transformer module, and introduces a polarized self-attention mechanism in the feature extraction stage, enabling separate extraction of spatial and semantic features of PV modules.",
+      "influential_cite_count": 1
+    },
+    {
+      "doi": "10.1109/TIM.2024.3472805",
+      "arxiv_id": "",
+      "title": "AD-YOLO: A Real-Time YOLO Network With Swin Transformer and Attention Mechanism for Airport Scene Detection",
+      "authors": [
+        "Wentao Zhou",
+        "Chengtao Cai",
+        "Chenming Li",
+        "Hao Xu",
+        "Haochen Shi"
+      ],
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "year": 2024,
+      "cited_by_count": 28,
+      "influential_cite_count": 0,
+      "reference_count": 57,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/electronics13020407",
+      "arxiv_id": "",
+      "title": "Nonintrusive Load Monitoring (NILM) Using a Deep Learning Model with a Transformer-Based Attention Mechanism and Temporal Pooling",
+      "authors": [
+        "Mohammad Irani Azad",
+        "Roozbeh Rajabi",
+        "A. Estebsari"
+      ],
+      "venue": "Electronics",
+      "year": 2024,
+      "cited_by_count": 26,
+      "influential_cite_count": 2,
+      "reference_count": 33,
+      "tldr": "A deep learning model based on an attention mechanism, temporal pooling, residual connections, and transformers, offering a comprehensive solution for NILM while effectively capturing appliance-specific energy usage in a household is proposed.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2079-9292/13/2/407/pdf?version=1705577947",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A deep learning model based on an attention mechanism, temporal pooling, residual connections, and transformers, offering a comprehensive solution for NILM while effectively capturing appliance-specific energy usage in a household is proposed."
+    },
+    {
+      "doi": "10.5244/c.35.86",
+      "title": "PS-Transformer: Learning Sparse Photometric Stereo Network using Self-Attention Mechanism",
+      "authors": [
+        "Ikehata, Satoshi"
+      ],
+      "venue": "Proceedings of the British Machine Vision Conference 2021",
+      "year": null,
+      "cited_by_count": 13,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.3389/fphys.2023.1239453",
+      "title": "Human behavior recognition based on sparse transformer with channel attention mechanism",
+      "authors": [
+        "Cao, Keyan",
+        "Wang, Mingrui"
+      ],
+      "venue": "Frontiers in Physiology",
+      "year": null,
+      "cited_by_count": 12,
+      "reference_count": 41,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Human activity recognition (HAR) has recently become a popular research field in the wearable sensor technology scene. By analyzing the human behavior data, some disease risks or potential health issues can be detected, and patients’ rehabilitation progress can be evaluated. With the excellent performance of Transformer in natural language processing and visual tasks, researchers have begun to focus on its application in time series. The Transformer model models long-term dependencies be",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.3390/info13050250",
+      "title": "LAS-Transformer: An Enhanced Transformer Based on the Local Attention Mechanism for Speech Recognition",
+      "authors": [
+        "Fu, Pengbin",
+        "Liu, Daxing",
+        "Yang, Huirong"
+      ],
+      "venue": "Information",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Recently, Transformer-based models have shown promising results in automatic speech recognition (ASR), outperforming models based on recurrent neural networks (RNNs) and convolutional neural networks (CNNs). However, directly applying a Transformer to the ASR task does not exploit the correlation among speech frames effectively, leaving the model trapped in a sub-optimal solution. To this end, we propose a local attention Transformer model for speech recognition that combines the high co",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ailsci.2021.100021",
+      "arxiv_id": "",
+      "title": "Dealing with a Data-limited Regime: Combining Transfer Learning And Transformer Attention Mechanism to Increase Aqueous Solubility Prediction Performance",
+      "authors": [
+        "Magdalena Wiercioch",
+        "J. Kirchmair"
+      ],
+      "venue": "Artificial Intelligence in the Life Sciences",
+      "year": 2021,
+      "cited_by_count": 11,
+      "influential_cite_count": 1,
+      "reference_count": 44,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.ailsci.2021.100021",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.21437/interspeech.2022-10066",
+      "title": "Improving Transformer-based Conversational ASR by Inter-Sentential Attention Mechanism",
+      "authors": [
+        "Wei, Kun",
+        "Guo, Pengcheng",
+        "Jiang, Ning"
+      ],
+      "venue": "Interspeech 2022",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1109/ijcnn54540.2023.10191462",
+      "title": "Dense Attention: A Densely Connected Attention Mechanism for Vision Transformer",
+      "authors": [
+        "Li, Nannan",
+        "Chen, Yaran",
+        "Zhao, Dongbin"
+      ],
+      "venue": "2023 International Joint Conference on Neural Networks (IJCNN)",
+      "year": 2023,
+      "cited_by_count": 8,
+      "reference_count": 36,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.3390/sym15101947",
+      "title": "Transformer with Hybrid Attention Mechanism for Stereo Endoscopic Video Super Resolution",
+      "authors": [
+        "Zhang, Tianyi",
+        "Yang, Jie"
+      ],
+      "venue": "Symmetry",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 31,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>With stereo cameras becoming widely used in invasive surgery systems, stereo endoscopic images provide important depth information for delicate surgical tasks. However, the small size of sensors and their limited lighting conditions lead to low-quality and low-resolution endoscopic images and videos. In this paper, we propose a stereo endoscopic video super-resolution method using transformer with a hybrid attention mechanism named HA-VSR. Stereo video SR aims to reconstruct high-resolut",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1080/1206212X.2023.2263254",
+      "arxiv_id": "",
+      "title": "Multiple paddy disease recognition methods based on deformable transformer attention mechanism in complex scenarios",
+      "authors": [
+        "Xinyu Zhang",
+        "Hang Dong",
+        "Liang Gong",
+        "Xin Cheng",
+        "Zhenghui Ge",
+        "Liangchao Guo"
+      ],
+      "venue": "International Journal of Computer Applications",
+      "year": 2023,
+      "cited_by_count": 4,
+      "influential_cite_count": 1,
+      "reference_count": 35,
+      "tldr": "A precise object detection framework to address the challenges of severe overlap, multi-disease detection, morphological irregularities,Multi-scale object classification, and complex scenarios in real-world environments in paddy disease detection is proposed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A precise object detection framework to address the challenges of severe overlap, multi-disease detection, morphological irregularities,Multi-scale object classification, and complex scenarios in real-world environments in paddy disease detection is proposed."
+    },
+    {
+      "doi": "10.1109/ISCTech63666.2024.10845546",
+      "arxiv_id": "",
+      "title": "A fine-grained image classification method utilizing the Transformer's attention mechanism combined with feature fusion",
+      "authors": [
+        "Jiayun Li",
+        "Yuhang Yang",
+        "Hui Long",
+        "Shaojun Qiu"
+      ],
+      "venue": "2024 12th International Conference on Information Systems and Computing Technology (ISCTech)",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.5220/0012014800003633",
+      "title": "Combining Transformer and Reverse Attention Mechanism for Polyp Segmentation",
+      "authors": [
+        "Lin, Jianzhuang",
+        "Yang, Wenzhong",
+        "Tan, Sixiang"
+      ],
+      "venue": "Proceedings of the 4th International Conference on Biotechnology and Biomedicine",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.31224/2476",
+      "title": "Generalized Attention Mechanism and Relative Position for Transformer",
+      "authors": [
+        "Pandya, Raja Vikram"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.22541/au.169769165.55793181/v1",
+      "title": "Revolutionizing Wireless Traffic Usage Forecasting: Transformer with Attention Mechanism",
+      "authors": [
+        "Uppalaiah, Bandu",
+        "Reddy, D. Mallikarjuna",
+        "Srilath, A."
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Revolutionizing wireless traffic forecasting empowers proactive resource\nallocation, optimizing network performance and ensuring efficient\nutilization of resources in dynamic wireless environments. real-time\ntraffic data from a business network with There are 470 APs.), this\nresearch provides a thorough examination of the temporal and\ngeographical dynamics of network traffic. Time series data forecasting\nis given a new spin with the help of machine learning models built on\nthe Transforme",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.21203/rs.3.rs-3545247/v1",
+      "title": "Easy attention: A simple self-attention mechanism for transformer-based time-series reconstruction and prediction",
+      "authors": [
+        "Vinuesa, Ricardo",
+        "Sanchis-Agudo, Marcial",
+        "Wang, Yuning",
+        "Guastoni, Luca",
+        "Duraisamy, Karthik"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>To improve the robustness of transformer neural networks used for temporal-dynamics prediction of chaotic systems, we propose a novel attention mechanism called easy attention which we\ndemonstrate in time-series reconstruction and prediction. As a consequence of the fact that self attention only makes use of the inner product of queries and keys, it is demonstrated that the keys, queries and softmax are not necessary for obtaining the attention score required t",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.21203/rs.3.rs-3741963/v1",
+      "title": "Improving Sentiment Analysis in Online Course Reviews with BERT and Transformer Attention Mechanism",
+      "authors": [
+        "Meem, Raisa Fairooz",
+        "Hasan, Khandaker Tabin"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>In the field of text mining, sentiment analysis has grown significantly in importance for understanding user reactions. This knowledge contributes to improving several features of given goods or services. Considering its adequacy, sentiment analysis can play a significant role in the educational field, where student input is essential for enhancing curricula and recommending courses, resources, and other elements. Likewise, because of the higher accuracy and de",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.4793561",
+      "title": "Adt: Based on Effective Attention Mechanism and Dual Channel Transformer Feature Aggregator Person Re-Identification",
+      "authors": [
+        "Lu, Jian",
+        "Zhang, Kaibing",
+        "Chen, Xiaogai"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 52,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.4609431",
+      "title": "Novel Approach Based on Transformer with Attention Mechanism for Text Summarization",
+      "authors": [
+        "Gamal, Mostafa",
+        "Hamed, Hesham F. A.",
+        "Salam, Mustafa Abdul",
+        "Sweidan, Sara"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.21203/rs.3.rs-4712422/v1",
+      "title": "Remote Sensing Image Change Detection based on Swin Transformer and Cross-Attention Mechanism",
+      "authors": [
+        "Yan, Weidong",
+        "Cao, Li",
+        "Yan, Pei",
+        "Zhu, Chaosheng",
+        "wang, Mengtian"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>With the advancement of Vision Transformer (ViT) in remote sensing image change detection, the most popular feature extraction methods involve using pre-trained ResNet or VGG networks. However, due to differences between the pre-trained datasets and remote sensing datasets, using ResNet or VGG as the backbone network does not yield optimal change detection results.  Furthermore, current methods fall short in delivering comprehensive change detection regions and",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "arXiv:2206.03003v2",
+      "arxiv_id": "2206.03003v2",
+      "title": "Transformer-based Personalized Attention Mechanism for Medical Images with Clinical Records",
+      "authors": [
+        "Yusuke Takagi",
+        "Noriaki Hashimoto",
+        "Hiroki Masuda",
+        "Hiroaki Miyoshi",
+        "Koichi Ohshima",
+        "Hidekata Hontani",
+        "Ichiro Takeuchi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.03003v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2209.15001v3",
+      "arxiv_id": "2209.15001v3",
+      "title": "Dilated Neighborhood Attention Transformer",
+      "authors": [
+        "Ali Hassani",
+        "Humphrey Shi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.15001v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2002.00741v1",
+      "arxiv_id": "2002.00741v1",
+      "title": "Déjà vu: A Contextualized Temporal Attention Mechanism for Sequential Recommendation",
+      "authors": [
+        "Jibang Wu",
+        "Renqin Cai",
+        "Hongning Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.00741v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2605.26355v1",
+      "arxiv_id": "2605.26355v1",
+      "title": "Energy-Gated Attention and Wavelet Positional Encoding: Complementary Inductive Biases for Transformer Attention",
+      "authors": [
+        "Athanasios Zeris"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.26355v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2309.01692v1",
+      "arxiv_id": "2309.01692v1",
+      "title": "Mask-Attention-Free Transformer for 3D Instance Segmentation",
+      "authors": [
+        "Xin Lai",
+        "Yuhui Yuan",
+        "Ruihang Chu",
+        "Yukang Chen",
+        "Han Hu",
+        "Jiaya Jia"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.01692v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2402.04563v1",
+      "arxiv_id": "2402.04563v1",
+      "title": "Attention Guided CAM: Visual Explanations of Vision Transformer Guided by Self-Attention",
+      "authors": [
+        "Saebom Leem",
+        "Hyunseok Seo"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.04563v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:1809.04281v3",
+      "arxiv_id": "1809.04281v3",
+      "title": "Music Transformer",
+      "authors": [
+        "Cheng-Zhi Anna Huang",
+        "Ashish Vaswani",
+        "Jakob Uszkoreit",
+        "Noam Shazeer",
+        "Ian Simon",
+        "Curtis Hawthorne",
+        "Andrew M. Dai",
+        "Matthew D. Hoffman",
+        "Monica Dinculescu",
+        "Douglas Eck"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1809.04281v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2409.17625v3",
+      "arxiv_id": "2409.17625v3",
+      "title": "Benign Overfitting in Token Selection of Attention Mechanism",
+      "authors": [
+        "Keitaro Sakamoto",
+        "Issei Sato"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.17625v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2305.11403v5",
+      "arxiv_id": "2305.11403v5",
+      "title": "Efficient Mixed Transformer for Single Image Super-Resolution",
+      "authors": [
+        "Ling Zheng",
+        "Jinchen Zhu",
+        "Jinpeng Shi",
+        "Shizhuang Weng"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.11403v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2307.13365v3",
+      "arxiv_id": "2307.13365v3",
+      "title": "Pay Attention to What You Need",
+      "authors": [
+        "Yifei Gao",
+        "Shaohong Chen",
+        "Lei Wang",
+        "Ruiting Dai",
+        "Ziyun Zhang",
+        "Kerui Ren",
+        "Jiaji Wu",
+        "Jun Cheng"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.13365v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2503.02130v2",
+      "arxiv_id": "2503.02130v2",
+      "title": "Forgetting Transformer: Softmax Attention with a Forget Gate",
+      "authors": [
+        "Zhixuan Lin",
+        "Evgenii Nikishin",
+        "Xu Owen He",
+        "Aaron Courville"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.02130v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2411.12502v4",
+      "arxiv_id": "2411.12502v4",
+      "title": "Transformer Neural Processes - Kernel Regression",
+      "authors": [
+        "Daniel Jenson",
+        "Jhonathan Navott",
+        "Mengyan Zhang",
+        "Makkunda Sharma",
+        "Elizaveta Semenova",
+        "Seth Flaxman"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.12502v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2404.05657v1",
+      "arxiv_id": "2404.05657v1",
+      "title": "MLP Can Be A Good Transformer Learner",
+      "authors": [
+        "Sihao Lin",
+        "Pumeng Lyu",
+        "Dongrui Liu",
+        "Tao Tang",
+        "Xiaodan Liang",
+        "Andy Song",
+        "Xiaojun Chang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.05657v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2303.15105v1",
+      "arxiv_id": "2303.15105v1",
+      "title": "Vision Transformer with Quadrangle Attention",
+      "authors": [
+        "Qiming Zhang",
+        "Jing Zhang",
+        "Yufei Xu",
+        "Dacheng Tao"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.15105v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1007/978-981-16-0550-5_5",
+      "arxiv_id": "2107.12614v1",
+      "title": "Design and Analysis of a Robotic Lizard using Five-Bar Mechanism",
+      "authors": [
+        "Rajashekhar V S",
+        "Dinakar Raj C K",
+        "Vishwesh S",
+        "Selva Perumal E",
+        "Nirmal Kumar M"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.12614v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1109/CYBERCOM63683.2024.10803175",
+      "arxiv_id": "",
+      "title": "ST-DAAE: An Enhanced Swin Transformer Attention Mechanism for Leaf Disease Classification",
+      "authors": [
+        "Madhavi",
+        "T. Singh",
+        "Shailendra Pratap Singh"
+      ],
+      "venue": "2024 International Conference on Cybernation and Computation (CYBERCOM)",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "title": "Two-stage photovoltaic power forecasting method with an optimized transformer",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A1sWjlZHtCBWGPw4gAnjmoXcWOJdO_SPJypWLq4PnnX70O3q4a87yC4MfEKf_BZw_iDqPmchY9Cc0getloJDepFNtYAxrdQubMvlVtTcXIcEqvbYQ-GkPreuRCUvnLo6cxppv_TMHwYxJEfWgPzr4MbcEwjdfoAnbBZZ8uX7NPTMw==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Yanhong Ma"
+      ],
+      "venue": "Global Energy Interconnection",
+      "date_str": "2024-12-15",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "GEIN202406010",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于Swin-Transformer和时空融合注意力机制的ENSO预测",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3JpYAYh5WFAgUL4mGDbj2Yua723KjMvdm34izZ8L7nDSkcbTeFpXqEoEIWjfTw3FGws-lWLczagqNDLPLa-JtBnz4e71mfH0lmbYLSr45dwZZGwhWLKArqH4-8Srfw3W6I6OK7Reg_6KYtrb0F3UFYdi08YoC_G64QxMP81jZqww==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "张霄智"
+      ],
+      "venue": "海洋学报",
+      "date_str": "2024-12-15",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "SEAC202412009",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于机器学习的图像模式识别关键技术研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3xnZ03vTOcSJ2LUDeO3zhV3IhkJ1f2x5rSiLh6IA8Vj78j8ALDkIJvDQBUV9g0ul1wVplkL2bJJ0L3AqmaPsMUwwt6MQI_hdMYLBWhcpFLj1erxOTUuu_Vt2Eu2WntE8fIgQ8Dh6RoTipHEauxeGbZP6LaPJlBXoDmGUjuKxqQjShM4514Ao2G&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "赵小艇"
+      ],
+      "venue": "北京交通大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "博士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025579045.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于光谱空间特征提取与模型优化的高光谱图像分类",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3xnZ03vTOcSJ2LUDeO3zhV3IhkJ1f2x5rSiLh6IA8Vj4r2fwC3DHT6drJFY1f1l__wGXAG2R5n3JEfVrg8Lr3AKhNS08pjgtMawWoF3SAK_WXowR5lJfkL-vYgbC4jPrnhQeI7YoIrwdGVWkXR9qCFz0mRYsXSdJfJ2_VHvJwq1MS31iUUayUe&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Tahir Arshad"
+      ],
+      "venue": "哈尔滨工业大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "博士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025734218.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "Transformer in Civil Engineering Defect Detection: A survey Transformer in Civil Engineering Defect Detection: A survey",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3xnZ03vTOcSJ2LUDeO3zhV3eyEgK4ah1egFG2xM-USXBlvNv3dt5OTVvGLOs_6pK0uap-OYlBNXT9gHngIrNQ5Y63sun6FwVxkT7lakmJ3k0q5doCsFsizYJY0KV9ParWZzX0MRl_pYG_SXoL8A-Zkfhoi80wXh1mz2Q93F03GSw==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Jinyuan Zhang"
+      ],
+      "venue": "Journal of Traffic and Transportation Engineering(English Edition)",
+      "date_str": "2024-11-13 14:30",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "JTTE20241111002",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "Design and Research of an Intelligent Verification Method for Vehicle Defrosting Performance Based on Machine Vision",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0UltjKGkNX7EdrTdE6Uw4NBuDe9Rtyy1XK4VympsN3b10MRz5FSIPVC4iVxeBbZgizRbkGcuO5FMZCQ9YOrw4kp-9F4AP3yQ5TLu0DowiCZd6Zg41cOo9OUun8gKPKjheZhXFb0_LAHn2rh1MJpCTLzbd-L_xRwhV90WOPCoFCClgbx_gS0MXL&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Zhang Yunbo"
+      ],
+      "venue": "第三十一届中国汽车工程学会年会论文集（4）",
+      "date_str": "2024-11-11",
+      "year": 2024,
+      "db_type": "中国会议",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "JXGY202411004019",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "雨天条件下基于Transformer网络的激光雷达传感器多目标鲁棒检测",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3SE3NwYbtbhxKrkJngechf1BVnksjwfyTISf2iH1A4R6cq-QqValufsHETUjag1YCZTbjsAx-_r4G4ET4e0phQ2Xvd09NjBqrf7vxf-FV-YrsE_zdfiRgqpCzl5npz6XiEpPvfTFqb8e-ndjQmMiUBltKs_8qvqSRB6m0zFFW8zDxuqR1bbgs3&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Mohamed Ahmed Sayed Mohamed Elatfi"
+      ],
+      "venue": "长安大学",
+      "date_str": "2024-10-09",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025881462.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于WGAN-GP和高效卷积块注意力机制IPOA-ICNN的变压器故障诊断",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3SE3NwYbtbhxKrkJngechfub6nuZCTgQd_y5NsYlwyKC9aTFDyTxSICY3bdbNQsDbBxcm9O8J1ZbM9wpMv2_qdCe6n2vw3bj8-l37qb9dZuI5jiDbn08cDHUbnPZUvZPWWco3fON9GUKHx4wD-inaUzLTrV1FIxRXUUSpSrWwc8g==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "鲍克勤"
+      ],
+      "venue": "水电能源科学",
+      "date_str": "2024-09-03 12:35",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "SDNY202410042",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于Transformer的时间序列预测算法研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0mDo07kYTk078_nSdg8CDdmssu1ZDTE0gl-7T67K4SfQDSFW-76aFCfl4fdhBnz_md72bVL_CTlCqYGBvkjhH2YboQN50EkdNEOj5FN0bSEUnFh_CfrFWkQrGo9ozDRIWjgKrMIuG4FNJze9v7f9pK8Bvj_I_1sfP_KLpB8QfbNkhA6NNOwYMu&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "罗洪翠"
+      ],
+      "venue": "北京交通大学",
+      "date_str": "2024-09-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1024941285.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "RViT: Robust Fusion Vision Transformer with Variational Hierarchical Denoising Process for Image Classification",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3hKroih5dEDscaGzLtAMLKm2FjT74Qj6edzVU2t0xxehs2Zi4NIg2UIdOH6Xtw3T0L0H0Cr54c4-QoWa3y2oYEjIQTR04ES20LY3DnGHu3pR8G3i0VbkkUXaSSHKZKGiWl1GAWfUj2N901wpdAQdxwMJUk_kQE9yJkqPlouoD72Q==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Zhenghong Lin"
+      ],
+      "venue": "Guidance,Navigation and Control",
+      "date_str": "2024-08-31",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "ZDDH202403010",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "Anomaly Detection of Copper Melting Process Data Based on Anomaly Transformer",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3hKroih5dEDscaGzLtAMLKaRJDMBO1dvt8Z8VDE668KUnas8h1ardm8U8RDwkI1RhHndMaUAqsL0eVsFxUM1itLboAe78eU-bZ5f2mWIut0ZwgzdCsxrpxAOTgIi4pF7R5XDhM_7rK6h_ZqWe_CKgX5jA-UGRjqqEUQ9DMsXru0oOvA7iV8huF&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Junjia Zhang"
+      ],
+      "venue": "第43届中国控制会议论文集（6）",
+      "date_str": "2024-07-28",
+      "year": 2024,
+      "db_type": "中国会议",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "KZLL202407006094",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于双重注意力变换模型的分布式屋顶光伏变电站级日前功率预测",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3E580sYH86W6psQP_hFXx6vEyio3R1zZRmdXQmvtUyPq74p5KcHCYUjUmfRLKc5YlaQ8-miXg6CwFY0S5FvZrObdA7gGFEkFzX08-KOo_hFnxNW4Q_peUZNC44evssdANqnREtF0NhrCHxukw6VJpvmtVyscTpMmAz-AvCbNls0w==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "王光华"
+      ],
+      "venue": "全球能源互联网",
+      "date_str": "2024-07-25",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "QNYW202404004",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "DMA-Trans: A Difference Metric Attention with Position Distancebased Weighting for Transformer in Data Sequence Modeling of Industrial Processes",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0BcqmYA7se--JRGlxJroTk7RJMgYfbuc2c7OjJyNj3QvsRKSWKAbn0oR3eErMSnaxSk6Kt0piqlrIFtkkjMVflCgcCIdOhK3ROiT3XuMNY_upgQCGxveCd2ZYjUgapw4mqEfyxrcClEfxqFbKF1ZDk_LTiGHXvJR1Y3up-ZSoC5WvjF4l6DWyy&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "Ziyi Yang"
+      ],
+      "venue": "第35届中国过程控制会议论文集",
+      "date_str": "2024-07-25",
+      "year": 2024,
+      "db_type": "中国会议",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "GCKZ202407001098",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于DenseNet-201和Transformer的面部表情识别",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A1nvNhLyIvPTAstv_IyVUQ808QoqoY-QJud9bFIcm7BADsZg3Sd4Y_wlY4EmQgXi_9TQtT5CJQzAYLSHanGbbkopOeNLYSyoHe6FJcuMuoltTa9e1anzht7PB4SeXXEN6f8j2wQNaogDTY1x4gIFzPpDwkCzuY0IxRuD1jz_2_liaxO3S1xVQV_&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "何三"
+      ],
+      "venue": "中南大学",
+      "date_str": "2024-07-06",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1026246741.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "基于Transformer的睡眠呼吸暂停综合征检测方法研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3cs69bdKKakw0AUuXxT8SJ-Rx5qkQWcUMHs_uZqxHjrOuo1179uni8CXce1YOGDbTexgloT9xCegGfrNHZehOkUSyLX_0irOPJ98PUm9y8A8yJFrqU8qlydW2H9U5awcjIHJ-ywLtdIqpnUp85kKtTUjm-jj1wFMa9ZJ_gj9leoLasYrVZ7I-E&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "李成建"
+      ],
+      "venue": "西安理工大学",
+      "date_str": "2024-06-30",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1024533253.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    }
+  ]
+}
