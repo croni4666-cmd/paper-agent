@@ -9,6 +9,97 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.5] - 2026-07-15 (patch — CNKI Plan 4: year filter + jitter [P0-9.1] Plan 4)
+
+Per ROADMAP [P0-9.1], this ships the year filter wiring + page-2+ jitter+retry.
+Citation count enrichment (originally [P0-9.1b]) was blocked by CORS and is
+honestly deferred (see "Deferred" below).
+
+### Added — [P0-9.1a] Year filter wiring in QueryJson
+
+`search_cnki(year_min=..., year_max=...)` now actually filters by publication
+year. The recipe (validated 2026-07-15 via probe + 6-scenario test):
+- `Field=PT, Operator=GT, Value=YYYY/01/01` (greater than start of year_min)
+- `Field=PT, Operator=LT, Value=YYYY/12/31` (less than end of year_max)
+- Format `YYYY/MM/DD` or `YYYYMMDD` confirmed working; `YYYY-MM-DD` triggers KbaseSQL 500
+- Operators: GT/LT work; EQ/GTE/LTE all return `非法逻辑操作符`
+- QGroup[0].Items[1] and Items[2] (after SU)
+
+**Tests** (`test_output/_test_year_v3975.py`, 6 scenarios, all PASS):
+- `year_min=2024, year_max=2024` → all 2024 results
+- `year_min=2020, year_max=2024` → all ≤2024 results
+- `year_max=2024` only → all 2024 results
+- `year_min=2025, year_max=2026` → all 2025-2026 results
+- `year_min=2020` only → all ≥2020 results
+- baseline (no filter) → 345,830 results
+
+### Added — [P0-9.1c] Page-2+ jitter + captcha retry
+
+`search_cnki(limit > 20)` pagination now uses **jittered** 2.0-5.0s sleep
+between pages (was 1.5s fixed in v3.9.7.4). Plus **1 retry on captcha** with
+30s wait (cookies might be re-validated by xueshu789).
+
+### Files (v3.9.7.5)
+
+- `pa_cli/cnki_channel.py` (~32 KB, +50 LOC over v3.9.7.4):
+  - `_build_query_json()`: now adds `PT` items when year_min/year_max provided
+  - `search()`: `random.uniform(2000, 5000)` sleep + captcha retry loop
+  - `status_report()`: version bump to `v3.9.7.5-real-search-plus-year-filter`
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.5"`
+- `pa_cli/cli.py`: cnki_status now references v3.9.7.5
+- `test_output/_test_year_v3975.py` (~50 LOC, 6 year-filter scenarios)
+- `ROADMAP.md` ([P0-9.1] status: done — see outcome below)
+
+### Tests (v3.9.7.5)
+
+- `_test_year_v3975.py`: 6/6 year-filter scenarios PASS
+- `_plan3_final.py`: 5/5 end-to-end smoke tests still PASS
+- Full regression: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (unchanged)
+
+### Deferred — [P0-9.1b] Citation count + download count
+
+**Status**: BLOCKED by CORS, honestly deferred (NOT faked working).
+
+What we tried (all failed with same root cause):
+1. **Endpoint `/kns8s/brief/resource`** (same-origin, found via brief.js
+   reverse-engineering): only returns `resource/title/product` enrichment,
+   not cite/dl counts. Different endpoint entirely.
+2. **Endpoint `https://kns.cnki.net/docpre/v2/api/inner/multi-statusex`** (the
+   endpoint the page auto-fires for cite counts): returns 403 Forbidden from
+   Python; `Failed to fetch` from page.evaluate (CORS preflight block).
+   Server does not return CORS headers that allow cross-origin POST.
+3. **Per-paper detail page fetch** (alternative approach): detail page
+   returns "安全验证" (captcha challenge) instead of content. Captcha
+   requires solving — out of scope for hobbyist maintenance.
+
+The cite/dl cells in `brief/grid` response are intentionally empty
+(`<td class="quote"></td>`, `<td class="download"></td>`); CNKI loads them
+via JavaScript AJAX that we cannot reproduce without either:
+- Solving the captcha (requires captcha solver = paid SaaS, fails Global Rule)
+- Mirroring the multi-statusex endpoint on the proxy (requires xueshu789
+  cooperation — out of our control)
+- A different proxy/cookies setup (out of scope)
+
+**Honest impact**: `cited_by_count` and `download_count` remain 0 in result
+dicts (same as v3.9.7.4). This is a real limitation but not worse than
+before. Users can still rank CNKI results by relevance (FFD), recency
+(sortField=PT sortType=DESC), or title/year/year.
+
+**Future path** (recorded in ROADMAP [P0-9.1] as `deferred`): if user gets
+a captcha solver or xueshu789 mirrors multi-statusex, [P0-9.1b] can be
+revisited. ~2-3h of code on top of the v3.9.7.4 multi-statusex discovery
+in `test_output/_probe_multistatus*.py`.
+
+### Global Rule 5-check (per ROADMAP [P0-9.1]):
+
+1. ✅ $0 cost (year filter is just different QueryJson; jitter is just sleep)
+2. ✅ No hosted service (cookies local, playwright local)
+3. ✅ Maintenance +50 LOC; cite/dl deferred (avoids captcha-solver dependency)
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation unchanged from v3.9.7.4
+
+---
+
 ## [3.9.7.4] - 2026-07-15 (patch — CNKI 6th search engine real search wiring [P0-9] Plan 3)
 
 Per ROADMAP [P0-9] Plan 3, the v3.9.7.3 skeleton (placeholder result) becomes a real

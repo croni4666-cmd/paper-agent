@@ -1,0 +1,88 @@
+feat(cnki): v3.9.7.5 — Plan 4 year filter + jitter [P0-9.1] (2/3 done, cite/dl deferred)
+
+Per ROADMAP [P0-9.1], this ships 2 of 3 sub-items. Citation count enrichment
+[P0-9.1b] was investigated for ~1h and honestly deferred — endpoint is
+CORS-blocked, captcha-solving required for alternatives.
+
+## Added — [P0-9.1a] Year filter wiring (DONE)
+
+`search_cnki(year_min=..., year_max=...)` now actually filters by publication
+year. Recipe (validated via 6-scenario test 2026-07-15):
+- `Field=PT, Operator=GT, Value=YYYY/01/01` (greater than start of year_min)
+- `Field=PT, Operator=LT, Value=YYYY/12/31` (less than end of year_max)
+- Format `YYYY/MM/DD` or `YYYYMMDD` confirmed working
+- Operators: GT/LT work; EQ/GTE/LTE all return `非法逻辑操作符`
+
+**Test scenarios** (test_output/_test_year_v3975.py, all PASS):
+- year_min=2024, year_max=2024 → all 2024
+- year_min=2020, year_max=2024 → all ≤2024
+- year_max=2024 only → all 2024
+- year_min=2025, year_max=2026 → all 2025-2026
+- year_min=2020 only → all ≥2020
+- baseline (no filter) → 345,830
+
+## Added — [P0-9.1c] Page-2+ jitter + captcha retry (DONE)
+
+`search_cnki(limit > 20)` pagination:
+- Sleep: 1.5s fixed → `random.uniform(2000, 5000)` ms (jitter)
+- On captcha: 1 retry with 30s wait (cookies may re-validate)
+- Graceful degradation: if retry fails, return what we have so far
+
+## Deferred — [P0-9.1b] Citation count + download count (HONEST)
+
+**NOT faked working.** All 3 approaches failed due to CORS / captcha:
+1. `/kns8s/brief/resource` (same-origin, found via brief.js reverse-eng) —
+   only returns `resource/title/product` enrichment, NOT cite/dl
+2. `https://kns.cnki.net/docpre/v2/api/inner/multi-statusex` (actual cite
+   endpoint, found via browser network capture) — 403 from Python;
+   `Failed to fetch` from page.evaluate (CORS preflight block)
+3. Per-paper detail page fetch — returns "安全验证" captcha; solving
+   requires paid SaaS (fails Global Rule)
+
+**Honest impact**: `cited_by_count` and `download_count` remain 0 (same as
+v3.9.7.4). No regression; just no improvement on this dimension.
+
+**Future path** (documented in ROADMAP [P0-9.1b] "When to revisit"):
+- User gets captcha solver access, OR
+- xueshu789 mirrors multi-statusex locally
+
+## Files (v3.9.7.5)
+
+- `pa_cli/cnki_channel.py` (~32 KB, +50 LOC over v3.9.7.4):
+  - `_build_query_json()`: PT items when year_min/year_max provided
+  - `search()`: jittered sleep + captcha retry loop
+  - `status_report()`: version → `v3.9.7.5-real-search-plus-year-filter`
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.5"`
+- `pa_cli/cli.py`: cnki_status references v3.9.7.5
+- `CHANGELOG.md` (v3.9.7.5 entry + 3.9.7.4 entry preserved)
+- `ROADMAP.md` ([P0-9.1] status: 2/3 done; [P0-9.1b] deferred)
+
+## Tests (v3.9.7.5)
+
+- test_output/_test_year_v3975.py: 6/6 year-filter scenarios PASS
+- test_output/_plan3_final.py: 5/5 end-to-end smoke tests still PASS
+- Full regression: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE (unchanged)
+
+## Global Rule 5-check (per ROADMAP [P0-9.1]):
+
+1. ✅ $0 cost (year filter is just different QueryJson; jitter is just sleep)
+2. ✅ No hosted service
+3. ✅ Maintenance +50 LOC; cite/dl deferred (avoids captcha-solver dep)
+4. ✅ No publish obligation
+5. ✅ Free-tier degradation unchanged from v3.9.7.4
+
+## Effort
+
+- Estimate: 3-4h (all 3 sub-items)
+- Actual: ~2h (year filter 1h + cite/dl probe 1h + jitter 20min + docs 15min)
+- 2x under; [P0-9.1b] was honestly abandoned after 1h probe (CORS is hard blocker)
+
+## Probe artifacts (archived to test_output/_probe_archived/ for future reuse)
+
+- _probe_year*.py (8+ variants tested for year filter recipe)
+- _probe_multistatus*.py (5 attempts to call cite endpoint)
+- _probe_cite_data.py (HTML scrape attempt for cite data)
+- _probe_detail*.py (per-paper detail page attempt, hit captcha)
+- _probe_brief_resource.py (same-origin endpoint exploration)
+- _probe_advsearch.html, _probe_brief_quote.html, _probe_cite_data.html
+- _grep_*.py (brief.js reverse-engineering for endpoint discovery)

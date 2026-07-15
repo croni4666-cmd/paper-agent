@@ -45,6 +45,7 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote, unquote
+import random
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -305,19 +306,33 @@ class CNKIClient:
                 for page_num in range(1, max_pages + 1):
                     if len(all_results) >= limit:
                         break
-                    # Add small delay between pages to avoid rate-limit captcha
+                    # Add jittered delay between pages to avoid rate-limit captcha
+                    # (v3.9.7.5: was 1.5s fixed, now 2.0-5.0s random)
                     if page_num > 1:
-                        page.wait_for_timeout(1500)
-                    try:
-                        html = self._post_brief_page_in_context(
-                            ctx, page, proxy_base, query_json, page_num
-                        )
-                    except CNKIError as e:
-                        # Captcha on page 2+: graceful degradation — return what we have
-                        if e.code in (E_CAPTCHA, E_BLOCKED) and all_results:
-                            break
-                        else:
-                            raise
+                        page.wait_for_timeout(int(random.uniform(2000, 5000)))
+                    # Try page, with captcha retry (1 retry after 30s wait)
+                    captcha_retries = 0
+                    while True:
+                        try:
+                            html = self._post_brief_page_in_context(
+                                ctx, page, proxy_base, query_json, page_num
+                            )
+                            break  # success
+                        except CNKIError as e:
+                            if e.code in (E_CAPTCHA, E_BLOCKED):
+                                if captcha_retries < 1 and all_results:
+                                    # Retry once after 30s wait (cookies might be re-validated)
+                                    captcha_retries += 1
+                                    page.wait_for_timeout(30_000)
+                                    continue
+                                else:
+                                    # First page captcha OR already retried: graceful degradation
+                                    if all_results:
+                                        return all_results[:limit]
+                                    else:
+                                        return [{"error": e.code, "message": e.message, "hint": e.hint}]
+                            else:
+                                raise
                     page_results = self._parse_brief_response(html)
                     if not page_results:
                         break  # no more results
@@ -443,6 +458,14 @@ class CNKIClient:
         KuaKuCode must match Classid:
         - For 总库 (CROSSDB + WD0FTY92): use the full default list
         - For specific DB (e.g. journal=YSTT4HG0): use just that classid
+
+        Year filter (v3.9.7.5): adds `Field=PT` (publication time) items to
+        QGroup[0].Items. Recipe (validated 2026-07-15 probe):
+        - year_min=2020, year_max=2024 → 2 items: PT GT 2020/01/01 + PT LT 2024/12/31
+        - year_min=2024 only        → 1 item: PT GT 2024/01/01
+        - year_max=2024 only        → 1 item: PT LT 2024/12/31
+        Format `YYYY/MM/DD` (or `YYYYMMDD`) confirmed working; `YYYY-MM-DD` triggers
+        KbaseSQL error. Operators: GT/LT work; EQ/GTE/LTE all return 非法逻辑操作符.
         """
         qgroup_item = {
             "Field": field_code,
@@ -451,6 +474,26 @@ class CNKIClient:
             "Logic": 0,
             "Title": self._field_title(field_code),
         }
+        items = [qgroup_item]
+
+        # Year filter items (PT = publication time)
+        if year_min is not None:
+            items.append({
+                "Field": "PT",
+                "Value": f"{int(year_min)}/01/01",
+                "Operator": "GT",   # greater than (after start of year)
+                "Logic": 0,
+                "Title": "发表时间",
+            })
+        if year_max is not None:
+            items.append({
+                "Field": "PT",
+                "Value": f"{int(year_max)}/12/31",
+                "Operator": "LT",   # less than (before end of year)
+                "Logic": 0,
+                "Title": "发表时间",
+            })
+
         # KuaKuCode matches Classid
         if db_classid == "WD0FTY92":
             kua_ku_code = DEFAULT_CHECKED_DB  # full list for cross-DB search
@@ -466,7 +509,7 @@ class CNKIClient:
                     "Key": "Subject",
                     "Title": "",
                     "Logic": 0,
-                    "Items": [qgroup_item],
+                    "Items": items,
                     "ChildItems": [],
                 }],
             },
@@ -723,7 +766,7 @@ def status_report() -> Dict[str, Any]:
         "cookies_fresh": exists and age is not None and age < 4.0,
         "playwright_installed": has_playwright,
         "ready_for_search": exists and age is not None and age < 4.0 and has_playwright,
-        "version": "v3.9.7.4-real-search",
+        "version": "v3.9.7.5-real-search-plus-year-filter",
         "search_implemented": True,
         "search_endpoint": f"POST {CNKI_BRIEF_GRID_PATH} (via xueshu789.com redirect)",
         "supported_fields": list(FIELD_CODE_MAP.keys()),

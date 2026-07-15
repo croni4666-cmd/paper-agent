@@ -782,7 +782,7 @@ def cnki_status(as_json):
         click.echo(f"  cookie_age_hours:       (no file)")
     click.echo(f"  n_cookies:              {s['n_cookies']}")
     click.echo(f"  playwright_installed:   {s['playwright_installed']}")
-    click.echo(f"  search_implemented:     {s['search_implemented']} (real wiring in v3.9.7.4)")
+    click.echo(f"  search_implemented:     {s['search_implemented']} (real wiring in v3.9.7.5 + year filter + jitter)")
     click.echo()
     if not s["ready_for_search"]:
         click.echo(f"[pa-cnki] {s['next_action']}", err=True)
