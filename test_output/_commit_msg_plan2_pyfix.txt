@@ -1,0 +1,52 @@
+fix(cnki): Export-CNKICookies.ps1 auto-detects Python with playwright installed
+
+User 2026-07-15 10:27 reported failure: `python` on PATH resolves to
+`C:\Users\DengN\miniconda3\python.exe` which has NO playwright installed.
+The real playwright is at `C:\Users\DengN\AppData\Local\Programs\Python\Python312\python.exe`.
+
+## Fix: try-multiple-pythons + use first one that imports playwright
+
+Updated Step 1 in `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1`:
+
+1. Candidate pythons (in order):
+   - `py` (Windows Python Launcher)
+   - `python` (PATH)
+   - `$env:LOCALAPPDATA\Programs\Python\Python312\python.exe` (this machine)
+   - `$env:LOCALAPPDATA\Programs\Python\Python311\python.exe`
+   - `C:\Python312\python.exe` (system-level install)
+   - `C:\Python311\python.exe`
+   - `$env:LOCALAPPDATA\Programs\Python\Launcher\py.exe`
+2. For each candidate, run `<exe> -c "import playwright"` — keep first that
+   exits with code 0
+3. Use that python for all subsequent calls (chromium check + Python script run)
+4. If none found, exit 1 with diagnostic listing all searched paths and
+   fix instructions
+
+Also fixed:
+- Changed all subsequent `python $pythonScriptPath` to `& $pythonExe $pythonScriptPath`
+- Fixed PowerShell parse error from `$HOME\AppData...` (used `Join-Path` instead)
+- Updated exit-code error messages to use `$pythonExe` instead of generic "python"
+
+## Smoke test (2026-07-15, headless via stdin pipe)
+
+```
+[Export-CNKICookies] Finding Python with playwright...
+  OK python (with playwright): C:\Users\DengN\AppData\Local\Programs\Python\Launcher\py.exe
+  OK playwright chromium
+[Export-CNKICookies] Will launch Chromium for you to log in...
+  ...
+  launching playwright Chromium (open-source, NOT Google Chrome)...
+  navigating to https://www.xueshu789.com/ ...
+  >>> ACTION NEEDED <<<
+  ...
+```
+
+Successfully launches Chromium + navigates to xueshu789.com + shows
+ACTION_NEEDED prompt. User can now log in interactively.
+
+## Note for user
+
+The script handles multi-Python systems (e.g., miniconda + python.org install
+side-by-side) by trying each until one with playwright is found. This is a
+common Windows dev setup; the same approach may be needed for other paper-agent
+scripts in the future if user installs paper-agent in a non-default Python.
