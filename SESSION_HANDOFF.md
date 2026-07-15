@@ -125,25 +125,46 @@ A2 quality before doing n=100.
 
 ## Plan 2 — Export-CNKICookies.ps1 (next session work)
 
-**Goal**: PowerShell script that exports CNKI cookies from user's logged-in
-Chrome to `~/.paper-agent/cookies/cnki.json` (the file `pa_cli/cnki_channel.py`
-reads from).
+**Goal**: PowerShell script that exports CNKI cookies from a playwright-controlled
+Chromium session to `~/.paper-agent/cookies/cnki.json`.
 
 **Path**: `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (per ROADMAP [P0-9])
 
-**Design**:
-1. Check playwright Python module installed
-2. Launch Chromium (or use user's existing Chrome with remote-debugging-port)
-3. Navigate to cnki.net (user must be logged in via proxy)
-4. Extract cookies for `.cnki.net` domain
-5. Save to `~/.paper-agent/cookies/cnki.json` (Playwright `context.add_cookies()` format)
-6. Print: "CNKI cookies exported. N cookies. Run `pa cnki status` to verify."
+**Design** (v3.9.7.4 final, REWRITTEN 2026-07-15):
+- **Uses playwright bundled Chromium** (open-source, NOT Google Chrome) per
+  user preference "永远用 Chromium (open-source), 反感 Chrome"
+- `pw.chromium.launch_persistent_context(user_data_dir=..., headless=False)`
+  launches a controlled Chromium window with a persistent profile
+- Auto-navigates to `https://www.xueshu789.com/` (proxy entry)
+- Prompts user in terminal: "log in to proxy, click CNKI link, press Enter"
+- Extracts cookies matching `DomainFilter` (default `"cnki|xueshu"` to
+  capture BOTH proxy session and target site cookies)
+- Saves to `~/.paper-agent/cookies/cnki.json` in Playwright format
+- Profile persists at `~/.paper-agent/chrome-profile/` so subsequent runs
+  skip re-login (only re-navigate if proxy session expired)
 
-**Estimated effort**: 30-60 min
+**Initial design v1 (deprecated, replaced 2026-07-15)**: asked user to launch
+Chrome with `--remote-debugging-port=9222` and use CDP attach. User pushed
+back: "反感 Chrome, 永远用 Chromium". Rewritten to playwright controlled
+browser path (no Chrome dependency).
 
-**Files to add**:
-- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (~50 LOC)
-- Possibly `test_output/_test_export_cnki_cookies.ps1` (smoke test)
+**Smoke test** (2026-07-15):
+- Deps check (Python 3.12.10, playwright ✓, playwright chromium ✓)
+- launch_persistent_context successfully opens browser
+- xueshu789.com navigation works (PHPSESSID cookie set)
+- Cookie extraction logic in place (filter by multi-substring domain)
+- Real user-interaction test requires user action (login + click CNKI)
+
+**Estimated effort to wire Plan 3 (real CNKI search)**: 1-2 day
+- Replace placeholder in `pa_cli/cnki_channel.py.CNKIClient.search()` with
+  real playwright + HTML parser
+- Uses same launch_persistent_context pattern as Export script
+- Filter cookies by `cnki.net` domain (proxy session handled by persistent
+  profile, not re-exported each call)
+
+**Files to add/modify**:
+- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (✅ done, REWRITTEN 2026-07-15)
+- `pa_cli/cnki_channel.py` (NEXT: wire real search)
 
 ## Useful commands for fresh sessions
 

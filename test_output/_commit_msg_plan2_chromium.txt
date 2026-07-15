@@ -1,0 +1,64 @@
+feat(cnki): Export-CNKICookies.ps1 REWRITTEN to use playwright bundled Chromium (v3.9.7.4)
+
+User 2026-07-15 10:20: "不是,你怎么又要我用 chrome,我不是让你只用 chromium 吗"
+
+Per user memory:
+- "永远用 Chromium (open-source), 反感 Chrome (Google stable)"
+- "用 `npx playwright install chromium` (playwright bundled) 或 `playwright.chromium.launch()` 即可"
+
+v3.9.7.4 initial Plan 2 implementation required user to launch Google Chrome
+with `--remote-debugging-port=9222` and use CDP attach. This violated the
+user's browser preference.
+
+## Fix: rewrite to use playwright controlled Chromium
+
+`C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (10123 -> 11914 bytes):
+
+OLD flow (Chrome debug port):
+  1. User quits Chrome, launches with `--remote-debugging-port=9222`
+  2. User logs in to proxy in Chrome
+  3. Script uses `playwright.chromium.connect_over_cdp()` to attach
+
+NEW flow (playwright controlled):
+  1. Script auto-launches playwright Chromium via `launch_persistent_context`
+     (uses bundled Chromium, NOT Google Chrome)
+  2. Script navigates to https://www.xueshu789.com/
+  3. Script shows ">>> ACTION NEEDED <<<" prompt in terminal
+  4. User logs in to proxy in the playwright-controlled window
+  5. User clicks CNKI link, visits 1 search result
+  6. User presses Enter in terminal
+  7. Script extracts cookies, saves, closes browser
+
+**Bonus features** of rewrite:
+- Profile persistence: `~/.paper-agent/chrome-profile/` keeps cookies, so
+  subsequent runs (after 4-8h proxy TTL expiry) reuse the profile. User only
+  needs to re-navigate, not re-login (unless proxy session fully expired)
+- No more "single Chrome process per user-data-dir" problem
+- No more "Chrome must be already running" assumption
+
+**Verified**:
+- `python -m playwright install chromium` (already installed; user has this from v3.9.0)
+- Smoke test: deps check pass, launch_persistent_context opens browser,
+  xueshu789.com navigation works (PHPSESSID cookie set)
+- Real user-interaction test requires user action (login + click CNKI)
+
+**DomainFilter default updated to `"cnki|xueshu"`** to capture BOTH proxy
+session cookies (on xueshu789.com) and target site cookies (on cnki.net).
+Multi-substring OR filter (using `|` separator) — required for proxy flow.
+
+## Files
+
+Modified:
+- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (rewritten: 10123 -> 11914 bytes)
+- `SESSION_HANDOFF.md` (Plan 2 section updated to reflect new approach)
+
+## Plan 3 still pending (after user has cookies)
+
+User action required:
+1. `pwsh C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1`
+2. In playwright-controlled Chromium: log in to xueshu789.com, click CNKI
+3. Press Enter in terminal
+4. Verify: `pa cnki status` should show `ready_for_search: True`
+
+After user confirms cookies work, Plan 3 (wire real CNKI search in
+`pa_cli/cnki_channel.py.CNKIClient.search()`) can start — 1-2 day effort.
