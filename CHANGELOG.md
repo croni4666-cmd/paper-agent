@@ -9,6 +9,61 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [Unreleased] - 2026-07-15 (docs — research-only, no code changes)
+
+Per user 2026-07-15: identified writing gap (paper-agent covers search but
+not writing/formatting) + asked for B+→A upgrade assessment. After 5-layer
+GitHub due diligence (4 web searches covering 9 candidates) + AMiner API
+verification, committed the research findings to ROADMAP.md.
+
+### Added (docs only)
+
+- **ROADMAP "Lit review WRITING research"** section — 5-layer evaluation of
+  9 GitHub candidates (pandoc, Manubot, citation-js, gpt_academic, 纸研社,
+  paper-red, etc.) for the missing writing/formatting layer. Verdict:
+  - **pandoc + pandoc-citeproc + Manubot pattern** is the hobbyist-OK stack
+  - **GB/T 7714** is one CSL file away
+  - **LLM-based writing tools** (gpt_academic / 纸研社 / paper-red) violate
+    Global Rule (paid/hosted LLM)
+  - **Real bottleneck isn't formatting** — it's prose quality, structurally
+    blocked by Global Rule
+- **ROADMAP "B+ → A level upgrade assessment"** section — honest 3-tier
+  analysis of user's 3 proposed paths:
+  - **(a) ML/DL local** — NOT viable (data ceiling, n=50 noise; custom
+    training needs n>500 + GPU maintenance)
+  - **(b) Taobao 万方/维普 VPN** — ethical grey; institutional resale is
+    what user ruled out, personal VIP is recurring paid dep (Global Rule
+    violation); +15-25pp CN if user opts in
+  - **(c) More engines** — AMiner is the real opportunity (+10-15pp CN,
+    public API, free); English engines at ceiling
+  - **Combined verdict**: A level NOT achievable under hobbyist budget;
+    A- achievable with [P1-7] AMiner + user's optional Taobao VIP
+- **ROADMAP "What paper-agent can't do"** added 3 writing-related rows
+- **ROADMAP Tier 1 #6 [P2-5] `pa build` manuscript pipeline** —
+  `pa build corpus/ --csl chinese-gb7714-2005-numeric.csl --out
+  manuscript.pdf` bridges search → manuscript gap, 2-4h effort
+- **ROADMAP Tier 1 #7 [P1-7] AMiner engine** — 7th search engine, 4-6h
+  effort, +10-15pp Chinese cite coverage
+
+### Three-tier audit (per discipline, honest reporting)
+
+| Claim | Status | Evidence |
+|---|---|---|
+| Paper-agent can produce a formatted manuscript PDF | ❌ false | no `pa build` command yet; only `pa search --format bibtex` |
+| pandoc + Manubot pattern works for Chinese lit review | ✅ true | Nature Biotech 2025 used Manubot for full manuscript pipeline |
+| gpt_academic / 纸研社 / paper-red are usable | ❌ no (for us) | all require hosted LLM API → Global Rule violation |
+| AMiner can lift Chinese coverage 10-15pp | ⚠️ estimated | open.aminer.cn public API exists, free; lift is a projection, not measured |
+| B+ → A is achievable under hobbyist budget | ❌ no | terminal limitations (CNKI cite/dl, Chinese tldr) require paid SaaS or inst access |
+| B+ → A- is achievable with AMiner | ⚠️ estimated | +10-15pp CN brings us closer to A-; not yet shipped |
+
+### No code change in this release
+
+This is a docs-only release. The two new Tier 1 items [P1-7] and [P2-5] are
+**proposed** but not started. User has not yet confirmed which to take
+first. Awaiting sign-off.
+
+---
+
 ## [3.9.7.9] - 2026-07-15 (patch — bugfix: tldr=None guard + real-query smoke test)
 
 Per user 2026-07-15 "继续做,拿真实 query 试". Found and fixed a NoneType

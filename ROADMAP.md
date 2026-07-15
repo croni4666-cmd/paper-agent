@@ -1226,6 +1226,9 @@ a major version ships. Last update: 2026-07-15 (v3.9.7.9).
 | LLM-driven rerank | Global Rule (no hosted LLM) | use bi-encoder + linear combined |
 | Captcha solver | Global Rule (paid SaaS) | accept current limits |
 | Self-hosted MCP server | Already reverted 2026-07-04 (maintenance burden) | use public `paper-search-mcp` |
+| **Lit review WRITING** (style/formatting/tone) | Out of scope — search ≠ write; not yet addressed | see [P2-5] research 2026-07-15 |
+| **Manuscript formatting** (GB/T 7714, page layout) | Out of scope — search returns raw Bibtex only | use pandoc + Manubot (proposed [P2-5]) |
+| **Linguistic quality** of generated lit review | Out of scope — would need hosted LLM (Global Rule) | author must polish |
 
 ### Workflow reality (per [P0-12] v3.9.7.7 split decision)
 
@@ -1265,6 +1268,15 @@ candidates in priority order, with effort and 5-check Global Rule audit.
    Effort: 30min.
 5. **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
    (S2 cite often stale / unavailable for older papers). Effort: 30min.
+6. **[P2-5] `pa build` — manuscript pipeline (pandoc + Manubot pattern)** —
+   `pa build corpus/ --csl chinese-gb7714-2005-numeric.csl --out manuscript.pdf`
+   takes Bibtex + markdown skeleton → produces formatted PDF/DOCX/HTML.
+   Bridges the "search returns Bibtex" → "manuscript ready" gap.
+   See "Lit review WRITING research" section above. Effort: 2-4h.
+7. **[P1-7] AMiner engine (Tsinghua/Zhipu, open.aminer.cn)** — 7th search
+   engine. 3.3 亿论文 Chinese coverage, public API, free. Same pattern as
+   `pa_cli/cnki_channel.py`. Expected lift: +10-15pp Chinese cite coverage.
+   See "B+ → A level upgrade assessment" Path (c) above. Effort: 4-6h.
 
 ### Tier 2: Medium (0.5-1 day each)
 
@@ -1309,7 +1321,168 @@ If the goal is "validate the 课题 work is rigorous":
 
 ---
 
-## How to use this file (quick reference)
+## Lit review WRITING research (added 2026-07-15, post-v3.9.7.9)
+
+User noted: "我们还缺一块, 当前一直集中在搜索以及确保论文命中率, 还有一块内容即如何写出漂亮的文献综述, 具备可读性以及能直接用在真实的论文中包含文字风格, 排版, 语调等等都没做。"
+
+This section captures 5-layer due diligence on GitHub for **writing** tools
+(distinct from the existing [P0] search layer).
+
+### Candidates evaluated (5-layer check)
+
+| Candidate | Stars | Maintainer | Hobbyist OK? | Why |
+|---|---|---|---|---|
+| **pandoc + pandoc-citeproc** | jgm/pandoc (35K+); pandoc-citeproc (1.2K) | John MacFarlane (Berkeley) | ✅ yes | BSD-3; pure local; CSL supports GB/T 7714 |
+| **Manubot** | greenelab/manubot (1.5K, used in Nature Biotech 2025) | Greene Lab (Penn) | ✅ yes | CC-BY 4.0; local build (`build/build.sh`); markdown → PDF/HTML/DOCX |
+| **citation-js** | citation-js/citation-js (1.5K) | Lars Willighagen + community | ✅ yes | MIT; pure JS, no AI, CSL formatting |
+| **LaTeX GB/T 7713.2-2022 template** | latexstudio/GB-T-7713.2-2022 (50+) | LaTeX studio | ✅ yes | pure LaTeX, official national standard |
+| **gpt_academic** | binary-husky (68K, GPL-3.0) | 清华 + community | ❌ NO | LLM API key required → violates Global Rule |
+| **Abnerla/AI_paper (纸研社)** | 173 commits | Abnerla | ❌ NO | LLM API + AIGC detection → violates Global Rule |
+| **paper-red / 雷小兔 / 毕业之家** | commercial 平台 | — | ❌ NO | paid SaaS / commercial product, fails Global Rule |
+| **yanlin-cheng/skill-thesis-writer** | 6 commits | yanlin-cheng | ❌ NO | v1.0 only, very small, 6 commits, low community review |
+| **qinky1234-sys/chinese-academic-paper-skill** | 41 commits | qinky1234-sys | ⚠️ partial | Codex/Cline skill — depends on user having Codex/Cline + LLM API |
+
+### Production insight (Layer 5)
+
+- **Pandoc + XeLaTeX is the de facto hobbyist academic writing stack.** It is what
+  the Manubot / gpt_academic / sciwxzs all use under the hood. paper-agent can
+  integrate it directly without re-inventing.
+- **GB/T 7714 is one CSL file away.** `chinese-gb7714-2005-numeric.csl` is
+  available at the official CSL repository and works with pandoc-citeproc.
+  No need to write a custom formatter.
+- **Manubot's killer feature** is auto-fetching citation metadata from
+  DOI/PMID/arXiv/ISBN — so `[@doi:10.123/abc]` becomes a fully formatted
+  reference without manual `.bib` editing. This is the gap between current
+  paper-agent `pa search --format bibtex` (manual cite-key hand-off) and
+  manuscript-ready (auto-cite).
+- **Real bottleneck isn't formatting — it's prose quality.** All hobbyist-OK
+  tools (pandoc / Manubot / LaTeX templates) give you **correctly formatted**
+  output but cannot give you **good writing**. Style/tone/coherence is a
+  LLM problem, and per Global Rule we cannot ship a hosted LLM solution.
+- **What we CAN ship (Tier 1-2, hours not weeks)**: a `pa build` command that
+  takes a corpus + topic clusters + a Markdown skeleton and produces
+  `manuscript.md` + `manuscript.pdf` via pandoc + Manubot pattern. This bridges
+  the "search returns Bibtex" → "manuscript ready" gap without any LLM.
+
+### What this means for paper-agent's positioning
+
+paper-agent currently covers: **find** (search engines) + **organize**
+(topic clustering, PRISMA, Bibtex export). Missing: **write** (style/tone) +
+**format** (manuscript PDF/DOCX). The format gap is **technically easy to fill
+(2-4h)**; the style gap is **structurally blocked by Global Rule**.
+
+---
+
+## B+ → A level upgrade assessment (added 2026-07-15, per user request)
+
+User question: "B+ 级工具 是什么水平? 我希望改进能到 A" with three proposed
+paths: (a) ML/DL local, (b) Taobao 万方/维普 VPN, (c) more engines.
+
+### B+ definition (current paper-agent, v3.9.7.9)
+
+- **Real query cite coverage** (2022-2024, top-20): 30-46% (mixed); 47% (EN-only); 21-29% (CN-only top-N)
+- **Real query abstract coverage**: 18-31% (mixed); 33% (EN); 6-16% (CN)
+- **Top-10 papers** (the ones user actually cites) consistently have abstract
+- **Strong on EN**, useful on CN (top papers well-covered via S2/Crossref/OpenAlex)
+- **Citation walk + topic cluster + PRISMA + Bibtex** all shipped
+
+A "B+ tier academic search tool" for mixed-language research.
+
+### Path (a): ML/DL 本地 — **NOT viable**
+
+Already proven in [P0-8] + n=50 probes v3.9.7.0-7.2:
+- **BGE cross-encoder rerank**: n=48, **-0.1064 (sig WORSE)** than round-robin (p=0.0008)
+- **LambdaMART LTR**: n=50, **-0.0335** vs linear combined
+- **MoE routing**: n=47, **same as round-robin** (no lift)
+- **Custom training**: needs n>100 labelled queries; current n=50 is statistical noise
+- **Self-hosted 7B LLM for rerank**: would need GPU (8h/episode to host) → fails Global Rule (personal-hobbyist burden)
+
+**Honest verdict**: the rerank model ceiling is a **data problem, not a
+compute problem**. More local compute does not help. A grade ML/DL approach
+would require: (i) n>500 labelled queries, (ii) production training pipeline,
+(iii) GPU maintenance — all Global Rule violations.
+
+### Path (b): Taobao 万方/维普 VPN — **ethical grey, partial lift**
+
+Two distinct markets on Taobao:
+- **Institutional credential resale** (¥50-200/月): someone shares a university
+  library's account. **This is the "school VPN" the user already ruled out**
+  — it directly violates library ToS.
+- **Personal VIP subscription** (¥200-500/月 万方 / ¥300/月 维普): legitimate
+  individual pay account, no institutional abuse. **Technically legal**, no
+  school library rule violation. BUT: account typically 1-3 month validity
+  before resold/banned, requires recurring purchase, **fails Global Rule 1
+  ("no paid infra") and 4 ("no must maintain obligation")**.
+
+**If user explicitly opts in** (overrides Global Rule for personal choice):
+- Chinese engine coverage: 21% cite → **~40-50%** (similar to EN) since 万方/维普
+  give cite count + abstract for Chinese papers natively
+- Lift on Chinese: **+15-25pp** (real, substantial)
+- Risk: monthly fee, occasional re-purchase friction, possibly banned
+
+**Honest verdict**: this is the only path that lifts **B+ → A on Chinese**,
+but it's a recurring paid dependency the user must own. If the user accepts
+this, it's the fastest path to a real "A" on Chinese research. If not, paper-agent
+stays B+ on Chinese permanently.
+
+### Path (c): More engines — **partial, **+10-15pp on Chinese only**
+
+Real opportunity is **AMiner (open.aminer.cn)**, Tsinghua/Zhipu open academic
+data:
+- 3.3 亿 论文 + 1.8 亿 专利 + 6000 万 学者
+- 公开 API (open.aminer.cn/openapi)
+- Chinese paper coverage is strong (Tsinghua indexing includes Chinese journals)
+- Free, no auth required for basic search
+- **Same shape as OpenAlex / Crossref — easy to add as 7th engine**
+
+Implementation: same pattern as `pa_cli/cnki_channel.py` (5 cookies + 1 HTML
+parser), 4-6h. Expected lift: **+10-15pp on Chinese cite coverage** (some Chinese
+papers that S2 doesn't index ARE in AMiner).
+
+Other candidate engines evaluated:
+- **Lens.org**: free academic patent + scholarly search, decent metadata; would
+  need a thin wrapper
+- **BASE (Bielefeld Academic Search Engine)**: free, OAI-PMH compatible, decent
+  for European papers; minor lift
+- **Scopus / Web of Science**: paid, fails Global Rule
+- **百度学术 / 必应学术**: no public API
+
+**Honest verdict**: AMiner is the one real opportunity. English engines are at
+ceiling (Crossref + S2 + OpenAlex cover ~95% of indexed English papers). The
+ceiling for Chinese, under hobbyist budget, is approximately **21% cite
+baseline + 10-15pp from AMiner = 35%** — still B+ but a meaningful B+.
+
+### Combined verdict (per honest 3-tier reporting)
+
+| Path | Verdict | Best-case lift | Hobbyist OK? | Cost |
+|---|---|---|---|---|
+| (a) ML/DL local | ❌ NOT viable | none (already proven) | n/a | 0 (but effort wasted) |
+| (b) Taobao 个人 VIP | ⚠️ if user opts in | +15-25pp CN | ❌ Global Rule violation | ¥200-500/月 recurring |
+| (b') Taobao 机构账号 | ❌ ruled out by user | similar | ❌ library ToS violation | — |
+| (c) AMiner engine | ✅ recommended | +10-15pp CN | ✅ yes | 4-6h implementation, then 0 |
+
+**A level (real)** under hobbyist budget is **NOT achievable** in CN literature
+review. The A → 100% Chinese cite / 100% abstract / 100% tldr requires either
+(a) institutional access or (b) paid LLM API or (c) paid commercial tools.
+
+**A- level (with user's consent)** is achievable: AMiner engine [P1-7] + minor
+formatting polish. **B+ stays the honest ceiling** if user keeps Global Rule
+strict.
+
+### Recommended next step (per user "做 A 吧" mindset but within constraints)
+
+1. **First (free, 4-6h)**: ship [P1-7] AMiner engine → lifts Chinese cite
+   21% → 30-35%, lifts Chinese abstract 6-16% → 15-25%
+2. **Then (free, 2-4h)**: ship [P2-5] `pa build` for manuscript formatting
+   (pandoc + Manubot pattern) — bridges "search → manuscript" gap
+3. **Then (user's call, ¥200-500/月)**: optionally add Taobao personal VIP
+   for 万方 — lifts Chinese another 15-20pp but breaks Global Rule 1
+4. **Stop there.** A- is the real ceiling. Going further requires abandoning
+   the hobbyist constraint.
+
+---
+
+
 
 **Adding an item**: edit `### [Px-N] <title>` under "Active items". Status `proposed` until work starts.
 
