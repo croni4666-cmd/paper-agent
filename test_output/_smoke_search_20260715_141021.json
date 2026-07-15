@@ -1,0 +1,1321 @@
+{
+  "query": "金融科技 风险承担",
+  "year_min": 2020,
+  "year_max": 2024,
+  "by_engine": {
+    "crossref": 20,
+    "openalex": 14,
+    "arxiv": 0,
+    "semanticscholar": 20,
+    "core": 0,
+    "cnki": 20
+  },
+  "dedup_count": 71,
+  "results": [
+    {
+      "doi": "10.1177/00081256231202266",
+      "title": "From Buzzword to Biz World: R <scp>ealizing</scp> B <scp>lockchain’s</scp> P <scp>otential in the</scp> I <scp>nternational</scp> B <scp>usiness</scp> C <scp>ontext</scp>",
+      "authors": [
+        "Du Juan",
+        "Bo Bernhard Nielsen",
+        "Catherine Welch"
+      ],
+      "venue": "California Management Review",
+      "year": 2023,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gw.alipayobjects.com/os/bmw-prod/22c09247-b5e5-466b-8b83-32e919aad970.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.69979/3029-2700.24.2.011",
+      "arxiv_id": "",
+      "title": "金融科技赋能农村金融高质量发展的实现路径研究",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 11,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1177/18681034231186441",
+      "title": "Foreign Investment, State Capitalism, and National Development in Borneo: Rethinking Brunei–China Economic Relations",
+      "authors": [
+        "Guanie Lim",
+        "Chang Yau Hoon",
+        "Kaili Zhao"
+      ],
+      "venue": "Journal of Current Southeast Asian Affairs",
+      "year": 2023,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://qccdata.qichacha.com/ReportData/PDF/84ea5c56bc97fafdee3f7b0b65fff278.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.52288/jbi.26636204.2021.10.06",
+      "title": "科技金融视角下民生银行小微金融风险管理之管见",
+      "authors": [
+        "金, 能斗"
+      ],
+      "venue": "商业创新期刊",
+      "year": 2021,
+      "cited_by_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>自2008年民生银行开展小微金融业务以来，历经以商贷通为主、融资服务方便快捷的“小微1.0”向通过结算、提升作业效率和综合服务配套体验的“小微2.0”、以及“科技+数据”驱动的“小微3.0”新模式转变的三个主要阶段，并逐步形成一套可持续的小微金融服务体系。本文在梳理民生银行小微金融业务模式、产品销售、信贷授信流程、贷后管理的基础上，以降低融资成本和金融服务门槛、有效风险管理作为研究视角，从民生银行风险管理的现状、存在的问题、风险管理理念的构建、风险管理机构设置、风险的识别、风险管理流程等方面着手分析，并提出借助大数据、人工智能等科学技术提升风险控制能力，优化小微金融风险管理体系，营造普惠金融生态圈等方面的策略建议。对现阶段疫情冲击下运用现代信息科学技术手段赋能小微金融，缓解小微企业“融资难、融资贵”、普惠金融“最后一公里”、推动金融业数字化转型发展等有一定的借鉴意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.54254/3049-7825/1/2024008",
+      "arxiv_id": "",
+      "title": "中小商业银行发展科技金融的路径探索",
+      "authors": [
+        "驰翔 张"
+      ],
+      "venue": "人文社会发展",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.26549/cjygl.v4i5.4284",
+      "arxiv_id": "",
+      "title": "基于城市大数据平台背景下金融科技助推金融改革与发展",
+      "authors": [
+        "文菁 黄",
+        "靖 张",
+        "砾苑 王",
+        "昕乐 赵"
+      ],
+      "venue": "财经与管理",
+      "year": 2020,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.26549/cjygl.v4i5.4284",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.33142/mem.v4i1.8760",
+      "title": "金融科技应用的风险防控研究",
+      "authors": [
+        "石, 班超"
+      ],
+      "venue": "现代经济管理",
+      "year": null,
+      "cited_by_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>当代社会，已进入了全球化工业建设革命浪潮，在该背景下，金融科技逐渐出现在人们视野，并成为了全球各国的研究热点。金融科技的开发和应用在推动社会发展进步的同时，也带来了一些风险，为了能够充分发挥金融科技作用优势，就需要相关领域关注金融科技应用风险防控。文中便以此为核心展开研究，探讨金融科技应用风险的基本特点，结合实际情况分析金融科技应用存在的主要风险，并提出有效的风险防控建议，以期为行业实践提供参考。</jats:p>",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://journals.viserdata.com/index.php/mem/article/download/8760/8686"
+    },
+    {
+      "doi": "10.62989/jemr2024.1.4.25",
+      "title": "金融科技对商业银行风险管理的冲击与应对策略",
+      "authors": [
+        "姚金一, 姚金一"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2024,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.133697",
+      "title": "Research on the Impact of Financial Technology on Credit Risk in Commercial Banks",
+      "authors": [
+        "曾, 海鑫"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.69979/3041-0673.24.12.014",
+      "title": "智慧农业环境下的农产品供应链金融风险评估模型研究",
+      "authors": [
+        "郑文涛，张世奇, 褚馨筠"
+      ],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/orf.2023.136640",
+      "title": "The Impact of Fintech on the Risk-Taking of China’s Commercial Banks",
+      "authors": [
+        "陈, 士纬"
+      ],
+      "venue": "Operations Research and Fuzziology",
+      "year": 2023,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.133828",
+      "title": "Research on the Influence of Enterprise Financialization on Enterprise Risk-Taking Level",
+      "authors": [
+        "王, 奥"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.133526",
+      "title": "Research on the Impact of Digital Finance on Commercial Banks’ Risk-Taking",
+      "authors": [
+        "吴, 颖"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/sa.2024.133074",
+      "title": "The Impact of Fintech on P2P Lending Risk and Credit Scoring",
+      "authors": [
+        "赵, 雨"
+      ],
+      "venue": "Statistics and Application",
+      "year": 2024,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "绿色金融之于商业银行风险承担是“双刃剑”吗——基于中国银行业的准自然实验研究",
+      "authors": [
+        "邵传林",
+        "闫永生"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 1,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.69979/3041-0673.24.11.054",
+      "title": "供应链金融与中小企业绩效——基于风险承担水平的调节效应分析",
+      "authors": [
+        "闫宇聪, 雷宇飞"
+      ],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.1341475",
+      "title": "Research on the Influence of Financial Technology on the Risk-Taking of Rural Commercial Banks in China",
+      "authors": [
+        "邹, 俊涛"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/ecl.2024.1341695",
+      "title": "How Financial Technology Affects Monetary Policy and Banks’ Risk Bearing Channels—Research Based on DLM Model",
+      "authors": [
+        "李, 国森"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/sd.2024.143070",
+      "title": "Climate Change, Financial Literacy and Risk Taking of Banks",
+      "authors": [
+        "尹, 笛"
+      ],
+      "venue": "Sustainable   Development",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2024.145165",
+      "title": "Study on the Impact of Digital Finance on the Risk-Taking Level of Commercial Banks",
+      "authors": [
+        "戴, 常瑜"
+      ],
+      "venue": "Finance",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.69979/3041-0673.24.12.048",
+      "title": "基于气象大数据的农业金融风险预警系统设计",
+      "authors": [
+        "张琳，张世奇, 张思妍"
+      ],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/orf.2024.141014",
+      "title": "Fintech Risk Contagion Mechanism under the New Association Network",
+      "authors": [
+        "王, 悦"
+      ],
+      "venue": "Operations Research and Fuzziology",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.5089/9798400273070.082",
+      "title": "全球金融稳定报告, 2024 年 4 月",
+      "authors": [],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2024.144148",
+      "title": "Research on the Impact of Financial Technology on the Liquidity Risk of Commercial Banks",
+      "authors": [
+        "宫, 迪"
+      ],
+      "venue": "Finance",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.12677/fin.2023.131012",
+      "title": "Research on the Influence of Digital Finance on Commercial Banks’ Risk-Taking—Evidence from Chinese 160 Commercial Banks",
+      "authors": [
+        "郭, 楚雯"
+      ],
+      "venue": "Finance",
+      "year": 2023,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.61369/se.8992",
+      "title": "金融法律监管对金融风险控制的作用研究",
+      "authors": [
+        "岳, 永平"
+      ],
+      "venue": "Society and Economy",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在现代化社会发展中，金融经济已然成为国民经济中的核心部分，其发展态势直接影响着国家整体经济发展。而随着经济全球化趋势的不断加强，金融经济领域中的竞争也越来越激烈，如何在竞争激烈的市场环境中，实现风险的有效控制，促进金融经济稳定发展，已成为各金融机构首要思考的问题。金融法律监管作为金融风险控制的重要手段，对于金融风险的有效规避和防范具有重要作用。本文简单阐述了金融风险的概念及其特点，对金融法律监管在金融风险控制中的作用进行了分析，并在此基础上，探讨了金融法律监管完善的有效策略，以供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "金融科技对普惠金融“悖论”的影响——基于中国银行业风险承担水平的证据",
+      "authors": [
+        "龚晓叶",
+        "李颖"
+      ],
+      "venue": "证券市场导报",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.4119410",
+      "title": "去中心化金融的监管研究 (Research on the Regulation of Decentralized Finance)",
+      "authors": [
+        "Cong Jiang"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.2139/ssrn.4119410",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "小程度与少量的共现构式",
+      "authors": [
+        "衛国 時"
+      ],
+      "venue": "Institutional Repositories DataBase (IRDB)",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://aue.repo.nii.ac.jp/record/8706/files/gaikoku56121.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.46830/wrirpt.19.00101",
+      "title": "Action Plans and Policy Recommendations on Vehicle Grid Integration in China",
+      "authors": [
+        "Lulu Xue",
+        "Liu Jian",
+        "Wang Ying",
+        "Liu Xiaoshi",
+        "Xiong Ying"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://files.wri.org/d8/s3fs-public/2022-01/action-plans-policy-recommendations-vehicle-grid-integration-china_0.pdf?VersionId=N_9qVIMgzvUb132BB_px9MhP7pikbk12",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.4430974",
+      "title": "ESPnet2 pretrained model, kamo-naoyuki/hkust_asr_train_asr_transformer2_raw_zh_char_batch_bins20000000_ctc_confignore_nan_gradtrue_sp_valid.acc.ave, fs=16k, lang=zh",
+      "authors": [
+        "kamo-naoyuki"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2021,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://zenodo.org/record/4430974",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.4604023",
+      "title": "ESPnet2 pretrained model, Emiru Tsunoo/aishell_asr_train_asr_streaming_transformer_raw_zh_char_sp_valid.acc.ave, fs=16k, lang=zh",
+      "authors": [
+        "Emiru Tsunoo"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2021,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://zenodo.org/record/4604023",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7193963",
+      "title": "B5 Doomsday Solution Coordinates of Fujian Quanzhou/China: Anti-Manhattan Grating Project and Aba shel kulam of Israel",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7193963",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7206173",
+      "title": "Race of 7 Days and Doomsday Solution Coordinates of Fujian Quanzhou/China: Anti-Manhattan Grating Project and Aba shel kulam of Israel",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7206173",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7193886",
+      "title": "B5 末日三解的座標:中國福建泉州之反曼哈頓光柵計畫、全地君王就職和天命正義國建立",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7193886",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7206082",
+      "title": "B5 生死7天和末日三解座標:中國福建泉州之反曼哈頓光柵計畫、全地君王就職和天命正義國建立",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7206082",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7194054",
+      "title": "B5 末日三解的座標:中國福建泉州之反曼哈頓光柵計畫、全地君王就職和天命正義國建立",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7194054",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5281/zenodo.7194026",
+      "title": "B5 Race of 7 Day And Doomsday Solution Coordinates of Fujian Quanzhou/China: Anti-Manhattan Grating Project and Aba shel kulam of Israel",
+      "authors": [
+        "Henry Hill"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.5281/zenodo.7194026",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.61369/er.12096",
+      "arxiv_id": "",
+      "title": "基于同态加密的金融科技平台多机构联合风控模型与数据主权博弈分析",
+      "authors": [
+        "文蔚 吴"
+      ],
+      "venue": "Economics Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.61369/er.12096",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.53106/9789575118433",
+      "arxiv_id": "",
+      "title": "當代金融市場",
+      "authors": [
+        "謝劍平 謝劍平"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.19622/J.CNKI.CN36-1005/F.2021.08.005",
+      "arxiv_id": "",
+      "title": "金融科技、监管政策与P2P平台风险——基于信用风险和流动性风险视角",
+      "authors": [
+        "张茂军",
+        "张邺丹"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/er.8267",
+      "arxiv_id": "",
+      "title": "绿色金融视域下融合人工智能的金融科技发展路径分析",
+      "authors": [
+        "天佑 曹"
+      ],
+      "venue": "Economics Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/eti.4771",
+      "arxiv_id": "",
+      "title": "“思政”+“实验”双驱动模式下金融科技人才培养路径探索与研究",
+      "authors": [
+        "静 卢",
+        "川 林",
+        "夏 刘"
+      ],
+      "venue": "Education and Teaching Innovation",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.53106/207873752023010026001",
+      "arxiv_id": "",
+      "title": "金融科技運用在信託業務與落實普惠金融之監理探索－以區塊鏈／分散式中心化技術為核心",
+      "authors": [
+        "林盟翔 林盟翔"
+      ],
+      "venue": "中正財經法學",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/ied.2024110014",
+      "arxiv_id": "",
+      "title": "基于金融科技背景下国有银行人力资源配置的研究——以中国银行为例",
+      "authors": [
+        "涵 张"
+      ],
+      "venue": "International Economy and Development",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "金融资产投资、杠杆率与企业风险承担——基于非金融企业的视角",
+      "authors": [
+        "肖崎",
+        "廖鸿燕"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "非金融企业“去杠杆”与风险承担",
+      "authors": [
+        "汪 娟 周达勇"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/ied.9210",
+      "arxiv_id": "",
+      "title": "金融科技与保险业高质量发展的困境与对策",
+      "authors": [
+        "思维 王",
+        "玉琪 邓"
+      ],
+      "venue": "International Economy and Development",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.61369/edtr.6638",
+      "arxiv_id": "",
+      "title": "数字金融背景下金融科技专业实验教学改革研究与探索",
+      "authors": [
+        "静 卢",
+        "川 林",
+        "浩淼 翟"
+      ],
+      "venue": "Educational Theory Observation",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.11959/J.ISSN.2096-6652.202024",
+      "arxiv_id": "",
+      "title": "智能化金融科技创新监管工具：理念、平台框架和展望",
+      "authors": [
+        "柴洪峰",
+        "王帅",
+        "涂晓军",
+        "孙权",
+        "马小峰",
+        "吴杰",
+        "才华",
+        "郑晓龙",
+        "王飞跃"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.53106/172717627908",
+      "arxiv_id": "",
+      "title": "金融科技治理──理論與實踐探索",
+      "authors": [
+        "陳起行 陳起行"
+      ],
+      "venue": "月旦民商法雜誌",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "title": "金融科技发展对商业银行风险承担的影响",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A2oQ-uyFRse13uHO3UXR_GewfyKwV9WW2F6WXfJ4sgsWsrvbBrwiWtNtN0TxIi_mlUkdDa7SiTT-OzYHonT-yVptHsHACBc1D_bk_xLIgp4KF0lJg33kJOIZMxIaGgWu1Ka-lrxMMArgxP6PWb75iyeUOimEWlqTYlwQooLZtPlCQ==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "郭宜淳"
+      ],
+      "venue": "科技和产业",
+      "date_str": "2024-12-25",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "CYYK202424012",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对银行金融稳定的影响",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3Ya986D8XTAPISrAsqyrUw6vDRtXUPXaO0vdNNs2FzuT_MYN0WAfN-KdhLuBdGdMu6lVH3aQ_NM3WKRttEDCoBtgBOlxOuq-kyBPBP0gUu2u36AOMVi4Sh7AAl_KSoJnnWeRWSjWQU5tHh2ty3Qf7m9PpaJHXRP3xlnhSJUorRzw==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "黄家祥"
+      ],
+      "venue": "时代经贸",
+      "date_str": "2024-12-24",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "SDMJ202412013",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对企业数字化转型的影响与机制研究——基于“金融—经济”结构匹配视角的经验证据",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A2DRNAiW5BNYyLnWeiP6KiC6usq1v3pc44gVUaRKRtxzbsajrHAmu6dOLWLv8PgmSgjMfaa2Ytle91vDVwV7FFUQ6rdBcRnaLgVw-ssZWjTP2BfInQewBssdmGq-NrpHle-IM8iBkss_WagEjulwOsnIcbF_PSUD2ui06OMyltXXA==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "任玎"
+      ],
+      "venue": "人文杂志",
+      "date_str": "2024-12-15",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "RWZZ202412009",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对商业银行信用风险的影响效应及异质性研究——基于商业银行面板数据的实证分析",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0ffsFBhf9Oex6mE-WDimdqYQMqVHEFotYQpSviWMW7Sa2JRf0JF4mBRkQVueDfqPoxxFb-FVp0BQEzvI56HkOQ55i6jHuVY6dng-8_oVcG_2fyroooJ8ysnzhTEBlGVNfa1_nM3ZW0mQZ836zG1tlfhBTErkyopUS4e3jFyDZyqg==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "唐艳"
+      ],
+      "venue": "怀化学院学报",
+      "date_str": "2024-12-11 09:41",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "HUAI202405013",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技合作对我国商业银行风险承担的研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3FDex2weYtrbdZ_miWSkjTJxMkCmh-o-32bTVuDTz1WPhcCkx5zPEMe-Y8n02t6hlvLBZ_9UoQybjTieLhYOCXz16-hhlXE8qu6qNhRRc1_-WKLgsGy3F9hLERd5smz2oCrMzstGmWE8NyOkSLxI6NhrY6hw0BLj4RFgjJQNHIl4nBVVpcTDdv&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "刘海韵"
+      ],
+      "venue": "浙江大学",
+      "date_str": "2024-12-06",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025357447.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "我国商业银行个人贷款对银行风险承担的影响",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0bBdGwtbkDF53xJqgNF0UfNO7R6iLL4htjxhVVPzn6sT9FhUNbiWsJAFt89hb-RiA4aManK2IHkyiJGcvKSmUVJU5rY5fL5-yJ7YD1-dgMe9DXSRbXzfihPkIPbSl2LwglG-7VIjbM1aUM3sLSHaKL0bNfU0lF9zOw5hqr6xljfWP4DobeJ-S3&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "邵诗雨"
+      ],
+      "venue": "东北财经大学",
+      "date_str": "2024-12-05",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025008719.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "中国商业银行数字化发展机制研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3e4eo-FCOLJjrADyNI1Jtiz8Oyr2cDcjE6PD_jHO76VH4yxnJp9d8sQfevIPW83W3CRQpi3CH5bnr5nYA83zIdwvIiR6l8C-3MLJBmX-xQyoNhCfJJFKyMHAsC4gFIaduROSNBL6CFaU84BUI0-fVDPoU90M3haPULJXj0pNbhC0UADSnXZLMG&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "王莉莉"
+      ],
+      "venue": "四川大学",
+      "date_str": "2024-12-03",
+      "year": 2024,
+      "db_type": "博士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025269494.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对银行流动性创造的影响及其经济韧性提升效应",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0v1bVlwJ74Lar71i45b8WMKGki4TAayzg6OhdQ6MsImyqf6LT8r_5S41yHTBdSyOLoXpOW8MaAvqoSmovmBicxFkGk3i6iYkzC4P8a1ZAG4XNb8SpTtNmsWlH55pEZAW2ifAMvJaRff5tHr73PZ3MKg1bvPf3OcmABYm3fAEMCUZxwNbghb8dJ&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "王祺琦"
+      ],
+      "venue": "浙江财经大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "博士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025806291.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技发展加剧还是降低了银行流动性风险？",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3vrEHI-5sqjbuGWok2tC_1MN9rH37kKJkXh8Pd2KdOBGSXwGzvrXIKCI3jUPCzju5Brdf1YXX1Fhq0GCblCtJeRoOGb_Dl1SeX8jrbyl3u8VLJclD5vI7l8mOrNtB7dDlq5GXv2btRFtxtr5J9BFZkWRf1a66pdKPPcSeNeJkbAjp5DN-3_Bk3&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "马文阳"
+      ],
+      "venue": "浙江财经大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025806213.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "市场竞争视角下金融科技对银行信用风险承担的影响机制研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A17I02kh3JsxszcSapIQezOKoQBH3vp9g_OqhwI0wK5i-Zb6an23S2zV8Y_rfSiZfo80hiUcVLehBlfIBecV_nVDptd7rVFQI5CwegBa7pzVvKYS8q6rDxJlKOZ3_D1Z52qQ46IjCCgKEBdrPmOV4b-izzIdNDf1JY4iCY1ZzosvnyD4fuiFEol&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "吴瑞洁"
+      ],
+      "venue": "浙江财经大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025806284.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对中国商业银行风险承担的影响研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A17I02kh3JsxszcSapIQezOKoQBH3vp9g_OqhwI0wK5i1pihq3wQR9v4v06ckAxxTkjTrgL2WRk6khzp134ajxXq-RZkpQ7AaUNqN3D1xAKVikYrfkcVLte5E0vzjbwgtrGdWMQzPvEEFu4IpYtgVMQno4W3WHJn-Gdhmt_hRvaMrpCSd0aAYdu&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "王洪阳"
+      ],
+      "venue": "东北财经大学",
+      "date_str": "2024-12-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025008748.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对借贷便利工具有效性的影响——基于小微企业融资视角",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0mS-7MdtkJiYR8fAEwbYFQFKxrcM_I5DXpxUmzWoLAYUgaFnmqtbwlWFmUNkE4Ntj2Vu3N9cx9E5nh6TMc2b2y7tSOfec8itSOkAxc9BR41fZvpqvSmn-oJ7TsSJyAn7tMSxaPmnJg55qB0O4g8eGBinhYCcuCIYlUfq1X4CA4uA==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "刘银双"
+      ],
+      "venue": "金融理论与实践",
+      "date_str": "2024-11-19 14:42",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "JRLS202410001",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技如何影响企业风险承担能力?",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0kPdDij-TS_HMTz7TzYVEerdicRpENrK_wzLxSWMVP83SFc4aUdFJjf__Dc0I4tEez2Vq1fr9M1Ot2i38sA2rY3m6PSB-ACiStEby7sq5DDmJQK0j0-L1YUizeHylqb8R7pbBTlGoNAE1xs73rY7Fru7QVyKC9eyeGMk0ILKu2UA==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "林炳华"
+      ],
+      "venue": "福州大学学报(哲学社会科学版)",
+      "date_str": "2024-11-15",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "FZDS202406007",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "正规金融与非正规金融双重视角下金融科技对中小微企业融资的影响研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A1JGbHooL6JKfYh1cEewh8o2BR51qP1d74CnQVxjk75teNQChKmDengtFd9SEhuAFowtPjswGGY89xMfpaOQYMZxvtbxpNHM7I-ldmBrVWkDA6FqCV0OSF9_OtBC1nEGxurW2_1IEfMzXQ4z7nTbUGubg9zaqv14yw9-WyoGjWukQ==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "袁留闯"
+      ],
+      "venue": "湖南大学",
+      "date_str": "2024-11-12",
+      "year": 2024,
+      "db_type": "博士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1026283059.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "“金融科技-实体经济”匹配与企业绿色转型",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A35lE90MebL-2rLP3djTS31NVxQG_iGcEtskDccYi9v-YvDPP5wp9HrkZUsUHwoynoI2yPfYdv6g8HffgtB5IT2fo-oh-UTtadho7EqbW_7wjG-vQLh9gD40GevaCEPNpMUKY7V2IeXzKGl3cvrlBJmwdnMKVdEuCT1sm70cgPVQQ==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "徐斯旸"
+      ],
+      "venue": "财贸经济",
+      "date_str": "2024-11-04 14:45",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "CMJJ202411004",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "金融科技对上市银行风险承担的影响研究——基于中间业务与信贷业务的作用",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A0sGhQUuAH6aFcVOZ0DnMSQ2Wu5zmtlUIOWToPeHQXT5e29mH7xXr4HXyOYdYGTCLliJPXUWjCNgDz43u5RfuiGJxJwR6vUo8vKsASKa7aKRKOWylVMwrWbmmBJsnuGlcQD26bAnObOUwZ7RknHlxjM1ykcvdwo-Zf4mW9bTO_QOA==&uniplatform=NZKPT&language=CHS",
+      "authors": [],
+      "venue": "对外经济贸易大学",
+      "date_str": "2024-11-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025048984.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "数字普惠金融对上市城商银行信用风险影响的实证研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3WZaR83YRE1DoUizPRt1bSld_5uX0iAn3Q-r80WNN9_nusS6UD8gk8AY5HKH3owdI_zmt1dFhe74EwVzZw8knc3a80FKGt9b29ayDfm7_0jf0QKJt41fOGNJgMLeUhGoo3FjDIM7RUh5PqDiIUEI9UtaNAdkkKVV5T7eV60Ja9vA==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "谭橙"
+      ],
+      "venue": "对外经济贸易大学",
+      "date_str": "2024-11-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025048881.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "科创企业风险承担对融资可得性的影响研究",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3WZaR83YRE1DoUizPRt1bSld_5uX0iAn3Q-r80WNN9_tlhTSkLwBMIHyYKxNlTFB58iiNs_hrCBZBwgD8E5uaE9z7j6O8wJV0Tk8X8hz4x7He12UH9qZB7HVIH2zb2IctHEosnoO4esTJpDD13RtQ9FlOxwHYaZhgYhlxo9hrmQzF3zeghwjwM&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "田烁楠"
+      ],
+      "venue": "东北财经大学",
+      "date_str": "2024-11-01",
+      "year": 2024,
+      "db_type": "硕士",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "1025009680.nh",
+      "source": "cnki",
+      "abstract": "",
+      "type": "thesis",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "浅议新经济形态下商业银行组织变革与展望",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A3hYVGr8qZ93JI6Sbxc2Rq7ycKdjC2hGWe9htvP3xw-yG2Tmu2a1lBDnaouFzYeVLXaPXXPC_MWEPXbW9VLAmfBRxEW9DB6_hhGzv9fbxBbcO0YhVkMk-Kbig2OcorMzWDviDPRqedXnwKtCtnvz6prweq0TIEd_QWN5pa_ZwkJUw==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "蔡宁伟"
+      ],
+      "venue": "中国银行业",
+      "date_str": "2024-10-30",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "ZGBK202410014",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    },
+    {
+      "title": "政府引导基金能引导企业双元创新正向跃迁吗？",
+      "cnki_url": "https://kns.cnki.net/kcms2/article/abstract?v=hiwAvoCB7A1rPUJ1x2-S06101-ItV6tZDMRwvfxDtPXBReVduBqwZKzaJbGwNX7Hinvdq6baUix-buf6UKFkYDdhvu1q3wu67Ryxcg8RcJJ28APjSqs5KtlHTxwiJx-NCVOYpO5ZKCqHbWs7bIajH73tumCUIsP8izCN17CppKSC6b-U6h9u5g==&uniplatform=NZKPT&language=CHS",
+      "authors": [
+        "谢家智"
+      ],
+      "venue": "南昌大学学报(人文社会科学版)",
+      "date_str": "2024-10-20",
+      "year": 2024,
+      "db_type": "期刊",
+      "cited_by_count": 0,
+      "download_count": 0,
+      "cnki_filename": "NCDS202405007",
+      "source": "cnki",
+      "abstract": "",
+      "type": "journal",
+      "found_by": [
+        "cnki"
+      ]
+    }
+  ]
+}

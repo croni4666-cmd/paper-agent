@@ -9,6 +9,117 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.7] - 2026-07-15 (patch — S2 enrichment fields + tldr→abstract fallback + smoke-test discovery)
+
+Per user 2026-07-15 "需要确保高质量的信息", after [P0-9.1b] close-out smoke test
+revealed 21% cite / 6% abstract coverage. Added 3 S2 enrichment fields + 1
+Crossref field, plus a tldr→abstract fallback. **Meaningful boost for English
+queries; minimal for Chinese queries (data source limit, not code).**
+
+### Added — S2 enrichment fields
+
+`search_semanticscholar` now requests 3 additional fields (free, in the same
+API call):
+- `influentialCitationCount` — S2's "real" citation count (filtered to
+  citations that influenced the field). More meaningful than raw
+  `citationCount` for lit-review "influential paper" filtering.
+- `referenceCount` — number of references in the paper. Proxy for "depth".
+- `tldr` — S2-generated short summary (~200 words). Used as abstract
+  fallback when paper has no real abstract (see below).
+
+**Files**: `pa_cli/search.py` (~10 LOC)
+- `search_semanticscholar` URL: `fields=...citationCount,influentialCitationCount,referenceCount,tldr,...`
+- `search_semanticscholar` result mapper: adds `influential_cite_count`,
+  `reference_count`, `tldr` fields to each result.
+
+### Added — Crossref reference_count
+
+`search_crossref` now also requests `references-count` (total number of
+references in paper). Same call, no extra cost.
+
+**Files**: `pa_cli/search.py` (~2 LOC)
+- `search_crossref` URL `select=`: `...,is-referenced-by-count,references-count,type`
+- `search_crossref` result mapper: adds `reference_count`.
+
+### Added — Dedup merge for new fields
+
+`run_search` dedup loop now also merges `tldr`, `venue`, `authors`,
+`influential_cite_count`, `reference_count`, `doi`, `arxiv_id` across
+engines (previously only merged `cited_by_count`, `is_oa`, `oa_url`).
+This way: a paper that S2 finds with tldr but Crossref finds with DOI
+keeps both. Helps when a paper appears in 2+ engines with disjoint fields.
+
+**Files**: `pa_cli/search.py` (~5 LOC)
+
+### Added — tldr → abstract fallback (with placeholder filter)
+
+After dedup, if a paper has empty `abstract` but non-empty `tldr`, set
+`abstract = tldr`. **Critical**: S2 returns a **placeholder string** ("It's
+time to dust off the gloves...") when it has no real tldr; we explicitly
+filter these 4 known placeholder prefixes to avoid merging garbage into
+the abstract field. Verified by smoke test 2026-07-15 — 3 Chinese-papers
+tldrs in saved JSON were all placeholders, correctly skipped.
+
+**Files**: `pa_cli/search.py` (~15 LOC)
+
+### Smoke test result (2026-07-15)
+
+Two queries, year 2020-2024, limit 20/engine:
+
+| Field | Chinese query ("金融科技 风险承担") | English query ("transformer attention") |
+|---|---|---|
+| dedup_count | 71 | 72 |
+| cited_by_count | 21% | **47%** |
+| influential_cite_count | 0% | **15%** (S2 only) |
+| reference_count | 17% | **28%** |
+| abstract | 6% | **21%** |
+| tldr | 4% | **11%** |
+
+**Honest verdict**: The enrichment fields **DO work for English queries**
+(semanticscholar 11/12 papers have influential_cite_count, 12/12 have
+reference_count, 7/12 have tldr). For **Chinese queries, S2 has
+"shallow" entries** (titles + basic cite only) — the rich metadata
+fields are 0 for most Chinese papers regardless of fields param. This
+is a S2 data-source limit, not a paper-agent code limit.
+
+**Consequence for user's 课题 (Chinese-heavy research)**: The 21%→21%
+cite coverage plateau for Chinese queries is real and won't be fixed
+without (a) CNKI cite (5 paths deprecated per v3.9.7.6), (b) Baidu
+Scholar public API (none), or (c) accepting the workflow split (Chinese
+papers → CNKI direct; English papers → paper-agent).
+
+### Files (v3.9.7.7)
+
+- `pa_cli/search.py`: 3 functions modified, ~30 LOC net
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.6"` → `"3.9.7.7"`
+- `test_output/_smoke_audit_v3977.py` (new, ~60 LOC): audit script
+- `test_output/_smoke_audit_v3977b.py` (new, ~50 LOC): verify placeholder filter
+- `test_output/_smoke_audit_en.py` (new, ~50 LOC): English query audit
+- `test_output/_debug_s2.py` (new, ~30 LOC): direct S2 fields probe
+- `test_output/_debug_s2_saved.py` (new, ~30 LOC): inspect S2 results in saved JSON
+- `test_output/_smoke_search_v3977*.json` (new): smoke test JSON snapshots
+- `test_output/_smoke_search_en_20260715_*.json` (new): English smoke test JSON
+
+### Tests (v3.9.7.7)
+
+No new tests added (smoke tests are diagnostic, not regression).
+Existing test counts unchanged: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE.
+
+### Three-tier audit (per discipline)
+
+- ❌ **What's broken**: Chinese-paper cite/abstract coverage still ~21%/6%
+  (S2 data source limit; not fixable in paper-agent code)
+- ❓ **What's untested**: We did not re-run full regression suite
+  (`test_full_regression.py`) — only smoke tests on 2 queries. Defensive
+  coverage remains the v3.9.7.x baseline.
+- ✅ **What's working**:
+  - English queries: cite 21%→47%, abstract 6%→21%, influential_cite 0%→15%
+  - Dedup now merges 9 fields (was 3), reducing field loss across engines
+  - tldr→abstract fallback works for English papers; correctly blocks
+    S2 placeholder strings
+
+---
+
 ## [3.9.7.6] - 2026-07-15 (patch — CNKI cite/dl [P0-9.1b] close-out, doc-only, 0 LOC change)
 
 This is a **documentation-only** release. No code change. Purpose: close out

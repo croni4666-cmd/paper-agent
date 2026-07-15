@@ -47,7 +47,7 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
         fq = f"&filter=from-pub-date:{ymin},until-pub-date:{ymax}"
     url = (f"https://api.crossref.org/works?query.bibliographic={quote(query)}"
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
-           f"container-title,published-print,is-referenced-by-count,type")
+           f"container-title,published-print,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
     if s != 200:
         return []
@@ -69,6 +69,7 @@ def _normalize_crossref(it: dict) -> dict:
         "venue": (it.get("container-title") or [""])[0] if it.get("container-title") else "",
         "year": year,
         "cited_by_count": it.get("is-referenced-by-count", 0),
+        "reference_count": it.get("references-count", 0),
         "type": it.get("type", ""),
         "source": "crossref",
         "abstract": it.get("abstract", "")[:500] if it.get("abstract") else "",
@@ -165,7 +166,7 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={quote(query)}&limit={min(limit, 100)}"
     if year_min or year_max:
         url += f"&year={year_min or ''}-{year_max or ''}"
-    url += "&fields=title,authors,venue,year,citationCount,externalIds,openAccessPdf,publicationTypes"
+    url += "&fields=title,authors,venue,year,citationCount,influentialCitationCount,referenceCount,tldr,externalIds,openAccessPdf,publicationTypes"
     headers = {}
     api_key = os.environ.get("S2_API_KEY")
     if api_key:
@@ -177,6 +178,7 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     for it in (data.get("data") or []):
         ext = it.get("externalIds") or {}
         oa = it.get("openAccessPdf") or {}
+        tldr_obj = it.get("tldr") or {}
         results.append({
             "doi": ext.get("DOI", ""),
             "arxiv_id": ext.get("ArXiv", ""),
@@ -185,6 +187,9 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
             "venue": it.get("venue", ""),
             "year": it.get("year"),
             "cited_by_count": it.get("citationCount", 0),
+            "influential_cite_count": it.get("influentialCitationCount", 0),
+            "reference_count": it.get("referenceCount", 0),
+            "tldr": tldr_obj.get("text", "") if isinstance(tldr_obj, dict) else "",
             "is_oa": bool(oa.get("url")),
             "oa_url": oa.get("url"),
             "source": "semanticscholar",
@@ -290,10 +295,27 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             else:
                 if eng not in seen[key]["found_by"]:
                     seen[key]["found_by"].append(eng)
-                # Merge citation count (prefer highest)
-                for c in ("cited_by_count", "is_oa", "oa_url"):
+                # Merge citation count + abstract + enrichment fields (prefer non-empty)
+                for c in ("cited_by_count", "is_oa", "oa_url", "tldr", "abstract",
+                          "venue", "authors", "influential_cite_count", "reference_count",
+                          "doi", "arxiv_id"):
                     if not seen[key].get(c) and p.get(c):
                         seen[key][c] = p[c]
+
+    # tldr → abstract fallback: if abstract still empty after merge but tldr present,
+    # use tldr — BUT only if it's a real tldr (not S2's "no tldr" placeholder).
+    # Known S2 placeholder strings: "It's time to dust off the gloves..."
+    S2_TLDR_PLACEHOLDERS = (
+        "It's time to dust off the gloves",
+        "It\u2019s time to dust off the gloves",
+        "It's time to dust off the sledgehammers",
+        "It\u2019s time to dust off the sledgehammers",
+    )
+    for r in seen.values():
+        tldr = r.get("tldr", "")
+        if (not r.get("abstract") and tldr
+                and not any(tldr.startswith(p) for p in S2_TLDR_PLACEHOLDERS)):
+            r["abstract"] = tldr
 
     unified = sorted(seen.values(), key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
     return {
