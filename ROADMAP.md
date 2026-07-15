@@ -1151,6 +1151,15 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
   Replaced by `pa mcp install` glue for public `paper-search-mcp`. Different
   from "abandoned" 鈥?the value was real, just better served by public package.
 
+- **[P0-9.1b] CNKI cite/dl enrichment** 鈥?DEPRECATED 2026-07-15 (v3.9.7.6 close-out).
+  All 5 hobbyist-compatible paths to CNKI cite/dl are blocked (new `multi-statusex`
+  CORS; old search.cnki.com.cn HTTP 404; old search.cnki.net non-DOM response;
+  detail page captcha needs paid solver; xueshu789 doesn't mirror multi-statusex).
+  Resurrection requires (a) CNKI removing CORS, (b) xueshu789 mirroring
+  multi-statusex, or (c) user opting in to paid captcha solver. Until any of
+  these is true, `cited_by_count` and `download_count` remain `None` in CNKI
+  result dicts. See `test_output/_probe_old_search.py` for probe evidence.
+
 ---
 
 ## Versioned roadmap summary
@@ -2315,14 +2324,14 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 (2026-07-15). User confirmed `abstract` + `doi` limitations are acceptable
 (中文期刊常态); wants fixes for the other 3 gaps.
 
-**Status**: 2/3 done (v3.9.7.5, 2026-07-15); 1 deferred (cite/dl blocked by CORS)
+**Status**: 3/3 done (v3.9.7.5 + v3.9.7.6, 2026-07-15); 1 sub-item [P0-9.1b] deprecated per v3.9.7.6 close-out
 
 **Completed (v3.9.7.5)**:
 - ✅ [P0-9.1a] Year filter wiring — `search_cnki(year_min=2024, year_max=2024)` works
 - ✅ [P0-9.1c] Page-2+ jitter + captcha retry — `random.uniform(2000, 5000)` + 1 retry
 
-**Deferred (recorded in CHANGELOG v3.9.7.5 "Deferred" section)**:
-- ⚠️ [P0-9.1b] Citation count + download count — **BLOCKED by CORS**
+**Deprecated (recorded in CHANGELOG v3.9.7.6 "Deprecated" section)**:
+- 🗄️ [P0-9.1b] Citation count + download count — see v3.9.7.6 close-out below; **5 paths all blocked** under hobbyist budget
 
 ---
 
@@ -2347,11 +2356,15 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 - **Files**: `pa_cli/cnki_channel.py` `_build_query_json` (~30 LOC)
 - **Tests**: `test_output/_test_year_v3975.py` (6 scenarios, all PASS)
 
-#### [P0-9.1b] Cited count + download count — DEFERRED (CORS blocked)
+#### [P0-9.1b] Cited count + download count — DEPRECATED 2026-07-15 (v3.9.7.6 close-out)
 
-- **Status**: deferred (NOT faked working)
+- **Status**: deprecated (per ROADMAP protocol section 5; NOT faked working)
 - **Added**: 2026-07-15
-- **Reason for deferral**: All 3 approaches failed due to CORS / captcha:
+- **Started**: 2026-07-15
+- **Deprecated**: 2026-07-15 (v3.9.7.6 close-out)
+- **Reason for deprecation**: All 5 hobbyist-compatible paths to CNKI cite/dl are blocked.
+  Original 3 reasons (CORS / captcha / same-origin resource endpoint) recorded in
+  v3.9.7.5; 2 more paths probed in v3.9.7.6 per user "选项B":
   1. **`/kns8s/brief/resource`** (same-origin, found via brief.js reverse-eng):
      only returns `resource/title/product` enrichment, NOT cite/dl counts
   2. **`https://kns.cnki.net/docpre/v2/api/inner/multi-statusex`** (the actual
@@ -2359,14 +2372,22 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
      from Python; `Failed to fetch` from page.evaluate (CORS preflight block).
      Server does not return CORS headers.
   3. **Per-paper detail page fetch**: returns "安全验证" captcha page; solving
-     captcha requires paid SaaS (fails Global Rule).
-- **Honest impact**: `cited_by_count` and `download_count` remain 0 in result
-  dicts (same as v3.9.7.4). No regression; just no improvement.
-- **Future path** (if user provides captcha solver or xueshu789 mirrors
-  multi-statusex): ~2-3h to wire up; probe scripts already documented in
-  `test_output/_probe_multistatus*.py`.
-- **When to revisit**: User gets captcha solver access OR xueshu789 mirrors
-  the multi-statusex endpoint locally.
+     requires paid SaaS (fails Global Rule "no paid infra").
+  4. **`https://search.cnki.com.cn/Search.aspx?q=...&rank=citeNumber&p=0`**
+     (pre-2017 endpoint, per `liuyifei/CNKICrawler` + `Davidchent/David` README):
+     **HTTP 404**, page title "404 Not Found", HTML 148 bytes. **DEAD** since
+     2017-2018. Probed 2026-07-15 in `test_output/_probe_old_search.py`.
+  5. **`https://search.cnki.net/search.aspx?q=...&rank=citeNumber&cluster=all`**
+     (post-2017 endpoint, per CSDN 2018-2019 教程): Playwright reports
+     "Download is starting" instead of rendering. Server appears to redirect /
+     stream a non-HTML response (likely to kns.cnki.net or captcha). Cannot
+     extract cite/dl. Probed 2026-07-15 in `test_output/_probe_old_search.py`.
+- **Honest impact**: `cited_by_count` and `download_count` remain `None` in
+  CNKI result dicts (per v3.9.7.4/v3.9.7.5). No regression; just no improvement.
+- **Resurrection criterion**: only revisit if (a) CNKI removes CORS restriction
+  on multi-statusex, (b) xueshu789 starts mirroring multi-statusex, or (c) user
+  opts in to a paid captcha solver. Until any of (a)/(b)/(c) is true, this
+  entry stays `Status: deprecated`.
 
 #### [P0-9.1c] Page-2+ captcha jitter + retry — DONE 2026-07-15 (v3.9.7.5)
 
@@ -2384,11 +2405,13 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 
 ---
 
-**Plan 4 outcome (2026-07-15)**:
+**Plan 4 outcome (2026-07-15 + v3.9.7.6 close-out)**:
 - 2/3 sub-items done in v3.9.7.5
-- 1 sub-item [P0-9.1b] honestly deferred due to CORS (documented)
+- 1 sub-item [P0-9.1b] honestly deprecated in v3.9.7.6 after exhausting
+  2 more hobbyist-compatible paths (legacy search.cnki.net + .com.cn)
 - Total time: ~1.5h actual (vs 3-4h estimate — citation count investigation
-  took 1h but was honestly abandoned)
+  took 1h but was honestly abandoned; v3.9.7.6 close-out was ~30min probe
+  + doc-only edits)
 
 **Sub-task decomposition (final time log)**:
 | # | Description | Estimate | Actual |

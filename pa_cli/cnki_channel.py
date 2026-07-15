@@ -1,4 +1,4 @@
-"""pa_cli/cnki_channel.py — CNKI 6th search engine (v3.9.7.4 real search).
+"""pa_cli/cnki_channel.py — CNKI 6th search engine (v3.9.7.6 close-out).
 
 Per ROADMAP [P0-9] (added 2026-07-14, user-confirmed design 2026-07-14):
   - 中文 paper 收录 (CNKI = China National Knowledge Infrastructure)
@@ -6,7 +6,51 @@ Per ROADMAP [P0-9] (added 2026-07-14, user-confirmed design 2026-07-14):
   - 通过 xueshu789.com 代理入口 → 实际跳转 `120.53.241.46:5888` (or other load-balanced IP)
   - **NOT** through clash proxy (CNKI 国内站)
 
-**v3.9.7.4 real search wiring** (this commit, 2026-07-15):
+**v3.9.7.6 close-out** (2026-07-15, doc-only, 0 LOC change):
+  - Closes [P0-9.1b] (cite/dl enrichment) with final honest verdict
+  - Adds 1 extra probe path before declaring "no free path exists"
+  - See "v3.9.7.6 close-out" section below
+
+**v3.9.7.6 close-out** — final probe of legacy search.cnki.net / .com.cn
+(per user 2026-07-15 "选项B, 做完之后按你的想法走"):
+
+  - Test setup (`test_output/_probe_old_search.py`, ~150 LOC):
+    * Bootstrap via xueshu789 (same v3.9.7.5 single-browser flow)
+    * Probe 2 endpoints with cookies loaded:
+      1. `https://search.cnki.net/search.aspx?q=...&rank=citeNumber&cluster=all`
+         (post-2017 endpoint, per CSDN 2018-2019 教程)
+      2. `https://search.cnki.com.cn/Search.aspx?q=...&rank=citeNumber&cluster=all&p=0`
+         (pre-2017 endpoint, per `liuyifei/CNKICrawler` + `Davidchent/David` README)
+    * For each endpoint: record HTTP status, landed URL, HTML length,
+      indicators (被引/下载/cite/dl/captcha/登录) count, save raw HTML
+
+  - Result:
+    1. `search.cnki.com.cn` → **HTTP 404**, page title "404 Not Found",
+       HTML 148 bytes, no content. **DEAD** (last live 2017-2018 era).
+    2. `search.cnki.net` → Playwright reports "Download is starting" instead of
+       rendering. Server appears to redirect / stream a non-HTML response (likely
+       redirecting to kns.cnki.net or serving a captcha page that's not navigable
+       as DOM). Cannot extract cite/dl.
+
+  - Verdict: **All 3 paths to CNKI cite/dl are blocked** under hobbyist budget:
+    1. New interface `multi-statusex` endpoint → CORS preflight (recorded v3.9.7.5)
+    2. Old `search.cnki.com.cn` → 404 dead
+    3. Old `search.cnki.net` → download/non-DOM redirect
+    4. Detail page captcha → paid solver (fails Global Rule)
+    5. xueshu789 mirror of multi-statusex → not available (would need to maintain
+       our own proxy, fails "no hosted service" rule)
+
+  - Consequence: `cited_by_count` and `download_count` remain `None` in the
+    CNKI result dict. Documented in the search() docstring + the CLI help text
+    + this module docstring. **NOT faked working** (per three-tier audit
+    discipline recorded in MEMORY.md).
+
+  - Future path: if a hobbyist-compatible source emerges (e.g. xueshu789 starts
+    mirroring multi-statusex, or CNKI removes CORS restriction), reopen
+    [P0-9.1b] per ROADMAP protocol. ~2-3h of code on top of the multi-statusex
+    discovery in `test_output/_probe_multistatus*.py` (v3.9.7.5 work).
+
+**v3.9.7.4 real search wiring** (2026-07-15):
   - Step A: Bootstrap via `https://www.xueshu789.com/dbItem/1` (1.5s JS redirect)
   - Step B: Real CNKI proxy IP discovered from redirect (e.g. 120.53.241.46:5888)
   - Step C: POST to `/kns8s/brief/grid` with QueryJson form payload
@@ -766,7 +810,7 @@ def status_report() -> Dict[str, Any]:
         "cookies_fresh": exists and age is not None and age < 4.0,
         "playwright_installed": has_playwright,
         "ready_for_search": exists and age is not None and age < 4.0 and has_playwright,
-        "version": "v3.9.7.5-real-search-plus-year-filter",
+        "version": "v3.9.7.6-cite-dl-deprecated-honest-audit",
         "search_implemented": True,
         "search_endpoint": f"POST {CNKI_BRIEF_GRID_PATH} (via xueshu789.com redirect)",
         "supported_fields": list(FIELD_CODE_MAP.keys()),
