@@ -139,6 +139,10 @@ def stage1_download_orchestration(
                         "saved_as": result["saved_as"],
                         "via_channel": result.get("via_channel", ""),
                         "size_bytes": Path(result["saved_as"]).stat().st_size,
+                        # v3.9.7.3: include metadata for fulltext_citation_density + venue_score
+                        "citation_count": c.get("cited_by_count", 0) or 0,
+                        "year": c.get("year"),
+                        "venue": c.get("venue", "") or "",
                     })
                     print(f"OK ({result.get('via_channel', '?')})")
                 else:
@@ -236,21 +240,23 @@ def extract_fulltext(pdf_path: Path, max_chars: int = 50000) -> Optional[str]:
                   but we want more for BM25)
 
     Returns:
-        extracted text, or None if PyMuPDF not installed or PDF read failed
+        (extracted_text, page_count) tuple, or (None, 0) if PyMuPDF not
+        installed or PDF read failed.
     """
     if not _HAS_PYMUPDF:
-        return None
+        return None, 0
     try:
         doc = fitz.open(str(pdf_path))
+        page_count = doc.page_count
         texts = []
         for page in doc:
             texts.append(page.get_text())
             if sum(len(t) for t in texts) > max_chars:
                 break
         doc.close()
-        return " ".join(texts)[:max_chars]
+        return " ".join(texts)[:max_chars], page_count
     except Exception as e:
-        return None
+        return None, 0
 
 
 def compute_fulltext_features(
@@ -271,7 +277,7 @@ def compute_fulltext_features(
           "fulltext_bm25": float,  # BM25 on full text vs query
           "fulltext_cross_encoder": float,  # BGE-rerank score (if computed)
           "fulltext_citation_density": float,  # citations per page
-          "fulltext_venue_score": float,  # placeholder
+          "fulltext_venue_score": float,  # OpenAlex venue prestige (0-1 normalized)
         }
     """
     fulltext_len = len(fulltext) if fulltext else 0
@@ -285,6 +291,9 @@ def compute_fulltext_features(
     # Citation density
     cite_density = citation_count / max(1, page_count) if page_count > 0 else 0.0
 
+    # Venue prestige (OpenAlex lookup; v3.9.7.3 added)
+    venue_score = _openalex_venue_prestige(venue) if venue else 0.0
+
     return {
         "fulltext_length_chars": fulltext_len,
         "fulltext_length_words": fulltext_words,
@@ -293,7 +302,7 @@ def compute_fulltext_features(
         "abstract_bm25": abstract_bm25,
         "fulltext_to_abstract_ratio": fulltext_words / max(1, abstract_words),
         "fulltext_citation_density": round(cite_density, 4),
-        "fulltext_venue_score": 0.0,  # placeholder — see [P1-7] institution credibility boost
+        "fulltext_venue_score": round(venue_score, 4),
     }
 
 
@@ -317,6 +326,71 @@ def _simple_bm25(query: str, text: str, k1: float = 1.5, b: float = 0.75) -> flo
             denominator = tf + k1 * (1 - b + b * text_len / avg_dl)
             score += idf * (numerator / denominator)
     return score
+
+
+# ──────────────────────────────────────────────────────────────────────
+# OpenAlex venue prestige (v3.9.7.3 — fulltext_venue_score implementation)
+# ──────────────────────────────────────────────────────────────────────
+
+# In-process cache to avoid repeated OpenAlex calls for the same venue
+_VENUE_PRESTIGE_CACHE: dict[str, float] = {}
+
+
+def _openalex_venue_prestige(venue_name: str) -> float:
+    """Look up venue prestige score from OpenAlex (0..1 normalized).
+
+    Algorithm (v3.9.7.3, simple):
+      1. Search OpenAlex /venues for the venue name
+      2. Take the top match's `works_count` and `cited_by_count`
+      3. prestige = min(1.0, sqrt(works_count / 1e5) * 0.5 + sqrt(cited / 1e7) * 0.5)
+         (sqrt dampens extreme outliers; works_count + cited_by_count equally weighted)
+      4. Cache result in _VENUE_PRESTIGE_CACHE
+
+    Per ROADMAP [P0-9] / [P1-7] "institution credibility boost":
+    - This is a simple proxy, NOT a rigorous journal ranking (no SJR/JIF integration)
+    - OpenAlex API is free, no key required
+    - Cache means per-venue cost ~0 after first lookup
+    - If OpenAlex call fails (network / rate limit), return 0.0 (graceful degradation)
+
+    Returns:
+        float in [0, 1] — higher = more prestigious venue
+    """
+    if not venue_name or not venue_name.strip():
+        return 0.0
+    v = venue_name.strip()
+    if v in _VENUE_PRESTIGE_CACHE:
+        return _VENUE_PRESTIGE_CACHE[v]
+    try:
+        import requests
+        # OpenAlex: /sources endpoint (venues are a subset of sources)
+        # /venues returns 404 since 2024; use /sources
+        url = f"https://api.openalex.org/sources?search={requests.utils.quote(v)}&per_page=1"
+        s, data = http_get_json(url) if 'http_get_json' in dir() else _http_get_json_simple(url)
+        if s != 200 or not data.get("results"):
+            _VENUE_PRESTIGE_CACHE[v] = 0.0
+            return 0.0
+        top = data["results"][0]
+        works_count = top.get("works_count", 0) or 0
+        cited_by_count = top.get("cited_by_count", 0) or 0
+        # prestige: sqrt damped, equal weight on volume and impact
+        import math
+        volume_score = math.sqrt(min(works_count, 1_000_000) / 1_000_000)  # cap at 1M works
+        impact_score = math.sqrt(min(cited_by_count, 100_000_000) / 100_000_000)  # cap at 100M cites
+        prestige = round(0.5 * volume_score + 0.5 * impact_score, 4)
+        _VENUE_PRESTIGE_CACHE[v] = prestige
+        return prestige
+    except Exception:
+        _VENUE_PRESTIGE_CACHE[v] = 0.0
+        return 0.0
+
+
+def _http_get_json_simple(url: str, timeout: int = 5):
+    """Lightweight JSON GET helper (separate from pa_cli.fetch.http_get_json
+    to avoid cross-module coupling in deep_rerank.py).
+    """
+    import requests
+    s = requests.get(url, timeout=timeout, headers={"User-Agent": "paper-agent/3.9.7.3 (Mavis)"})
+    return s.status_code, (s.json() if s.text else {})
 
 
 def _load_queries_lookup(bench_dir: Optional[Path] = None) -> dict:
@@ -379,16 +453,16 @@ def stage2_fulltext_rerank(
     per_candidate = []
     for entry in auto_pdfs:
         saved_as = Path(entry["saved_as"])
-        fulltext = extract_fulltext(saved_as) if saved_as.exists() else None
+        fulltext, page_count = extract_fulltext(saved_as) if saved_as.exists() else (None, 0)
         q_text = queries_lookup.get(entry["qid"], "")
         ft_features = compute_fulltext_features(
             query=q_text,
             fulltext=fulltext or "",
             abstract="",
-            citation_count=0,  # would need lookup from labels_data
-            year=None,
-            page_count=0,  # would need PDF page count
-            venue="",
+            citation_count=entry.get("citation_count", 0) or 0,
+            year=entry.get("year"),
+            page_count=page_count,
+            venue=entry.get("venue", ""),
         )
         per_candidate.append({
             "qid": entry["qid"],
@@ -405,15 +479,15 @@ def stage2_fulltext_rerank(
         doi_slug = entry["doi"].replace("/", "_").replace(".", "_")
         if doi_slug in user_pdfs:
             pdf = user_pdfs[doi_slug]
-            fulltext = extract_fulltext(pdf)
+            fulltext, page_count = extract_fulltext(pdf)
             q_text = queries_lookup.get(entry["qid"], "")
             ft_features = compute_fulltext_features(
                 query=q_text,
                 fulltext=fulltext or "",
                 abstract="",
-                citation_count=0,
+                citation_count=0,  # manual entry doesn't carry citation_count; could look up by DOI later
                 year=None,
-                page_count=0,
+                page_count=page_count,
                 venue="",
             )
             per_candidate.append({
