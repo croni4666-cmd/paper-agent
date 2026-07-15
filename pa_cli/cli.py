@@ -262,7 +262,8 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
 @click.option("--limit", type=int, default=50, show_default=True,
               help="Max results per engine")
 @click.option("--engine", default="all", show_default=True,
-              help="all / crossref,openalex,arxiv,semanticscholar,core (comma-separated)")
+              help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,core "
+                   "(comma-separated; default 'all' = first 6; 'core' = explicit CORE-only)")
 @click.option("--format", "out_format", default="json", show_default=True,
               type=click.Choice(["json", "bibtex"]),
               help="Output format: json (default) or bibtex")
@@ -284,7 +285,7 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
            concept_ids, concept_names, concept_mode, enrich_top, quiet):
-    """5-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / CORE).
+    """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
       --concepts C1,C2         direct concept IDs (OR by default)

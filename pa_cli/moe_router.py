@@ -49,7 +49,9 @@ except ImportError:
 
 
 # 5 engines (in priority order used by v3.9.0 v4_rerank round-robin)
-ENGINES = ["arxiv", "openalex", "s2", "crossref", "core"]
+# v3.9.8.2 (2026-07-15): CORE removed — OpenAlex already indexes CORE's repos,
+# so the marginal coverage was <5%. Use OpenAlex for what CORE used to add.
+ENGINES = ["arxiv", "openalex", "s2", "crossref", "aminer"]
 
 
 def check_deps() -> None:
