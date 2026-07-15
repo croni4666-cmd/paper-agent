@@ -1188,6 +1188,127 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 ---
 
+## Current capability snapshot (added 2026-07-15, post-v3.9.7.9)
+
+This is the "what paper-agent can do today" reference. Updated whenever
+a major version ships. Last update: 2026-07-15 (v3.9.7.9).
+
+### What paper-agent can do today (v3.9.7.9)
+
+| Capability | Status | Quality (typical) | Where |
+|---|---|---|---|
+| Multi-engine search | ✅ done | 6 engines: CNKI + Crossref/OpenAlex/S2/arXiv/CORE | `pa search` |
+| Year filter | ✅ done | exact (CNKI: PT field; EN: pub_year) | `--year-min/max` |
+| Field filter | ✅ done | 8 fields (SU/TI/KY/TKA/AB/FT/AR/AF) | `--field` |
+| DB filter (CNKI) | ✅ done | 11 DBs (all/journal/thesis/...) | `--db` |
+| Recency threshold | ✅ done | moderate / strict / off | `--recency-mode` |
+| Top-N deep enrichment | ✅ done | EN 47% cite; CN 30-46% cite (real query) | `--enrich-top N` |
+| Dedup | ✅ done | merge 9 fields per-DOI | `run_search` |
+| MoE routing | ⚠️ done but no lift | n=47 same as round-robin | `--router moe` |
+| Cross-encoder rerank | ❌ deprecated | n=48 BGE -0.1064 p=0.0008 (sig worse) | not exposed |
+| LTR LambdaMART | ❌ deprecated | n=50 -0.0335 (loses to linear) | not exposed |
+| Citation walk | ✅ done | OpenAlex forward/backward | `pa citations` |
+| PRISMA diagram | ✅ done | local mermaid, 0 deps | `pa prisma` |
+| Topic clustering | ✅ done | hand-roll + BERTopic | `pa review-topics` |
+| Bibtex export | ✅ done | round-trip safe | `pa search --format bibtex` |
+| LLM topic labels | ✅ done | custom + domain stopwords | `pa review-topics` |
+| Fetch PDF (8-channel) | ✅ done | ~16/16 candidates per query | `pa fetch` |
+| MCP integration | ✅ done | uses public `paper-search-mcp` | `pa mcp install` |
+
+### What paper-agent can't do (terminal limitations per [P0-9.1b] v3.9.7.6 close-out + smoke test v3.9.7.7-7.9)
+
+| Limitation | Reason | Workaround |
+|---|---|---|
+| CNKI cite/dl count | 5 paths blocked: CORS / captcha / 404 / non-DOM / proxy-mirror | CNKI website manual lookup |
+| Chinese paper tldr/inf_cite | S2 has "shallow entries" for Chinese papers (data source limit) | English papers mostly OK |
+| Chinese paper abstract | CNKI list view empty + detail page captcha | CNKI website manual |
+| Fulltext deep rerank (3/4 features) | [P0-8] Layer 7 partial: 1/4 features working | accept current; fulltext_bm25 works |
+| LLM-driven rerank | Global Rule (no hosted LLM) | use bi-encoder + linear combined |
+| Captcha solver | Global Rule (paid SaaS) | accept current limits |
+| Self-hosted MCP server | Already reverted 2026-07-04 (maintenance burden) | use public `paper-search-mcp` |
+
+### Workflow reality (per [P0-12] v3.9.7.7 split decision)
+
+For 课题 / lit review workflow (per real-query smoke test 2026-07-15):
+- **English paper query** → paper-agent 6-engine pool, cite 47% / abstract 33% / tldr 24% / inf 28%
+- **Chinese paper query** → paper-agent 6-engine pool, cite 30-46% / abstract 16-31% / tldr 4-12% (top-10 much better)
+- **Mixed / bilingual** → paper-agent gives recall; user enriches Chinese-only results via CNKI website manually
+- **Top-10 papers** (the ones user actually reads) consistently have abstract (>=80%)
+
+### Capability level summary (honest 3-tier)
+
+- ✅ **Strong** (production-quality): multi-engine search, year/field/DB filter, dedup,
+  top-N deep enrichment, PRISMA, topic clustering, bibtex, citation walk
+- ⚠️ **Mediocre** (works but limited lift): MoE routing, recency filter, fulltext BM25 (1/4 Layer 7 features)
+- ❌ **Weak / blocked** (won't improve under hobbyist budget): CNKI cite/dl, Chinese tldr/inf_cite, LLM rerank, fulltext deep rerank (3/4 features)
+
+**Overall verdict**: paper-agent is a **B+ tier academic search tool** for mixed-language
+research. Strong on English, useful on Chinese (top papers well-covered), and the
+remaining gaps are hobbyist-budget ceilings that require either paid SaaS or self-hosted
+LLM to fix — both ruled out by Global Rule.
+
+---
+
+## Future improvement candidates (post-v3.9.7.9)
+
+The roadmap above has the active items. This section lists concrete next-step
+candidates in priority order, with effort and 5-check Global Rule audit.
+
+### Tier 1: Easy (1-2h each, low risk)
+
+1. **`--enrich-top-min-cites` filter** — skip S2 deep lookups for papers with 0
+   cite (saves ~12s per query when many low-cite papers in top-N). Effort: 30min.
+2. **OpenAlex-by-title fallback** for crossref-by-title 0-hit case — improves
+   Chinese cite coverage another 5-10pp. Effort: 1h.
+3. **CLI sort options** — `--sort-by {cite|year|relevance}`. Effort: 30min.
+4. **Per-source filter** — `--source cnki,openalex` (only show certain engine results).
+   Effort: 30min.
+5. **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
+   (S2 cite often stale / unavailable for older papers). Effort: 30min.
+
+### Tier 2: Medium (0.5-1 day each)
+
+6. **Phase 1.5 holdout validation** — re-split 50 queries into 15 train / 10 test,
+   re-derive LTR/MoE alpha on holdout, confirm v3.9.0 numbers survive. Effort: 1d.
+7. **Simpler rerank alternative** — RidgeClassifier / logistic regression on combined
+   features (instead of LambdaMART) for 8-feature rerank. Effort: 4h.
+8. **n=200 evaluation** — per memory discipline `n<100 is noise`; expand 25 real +
+   25 A2 auto + 150 new queries for proper statistical power. Effort: 2-3d.
+9. **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
+   (fulltext_citation_density, fulltext_venue_score, fulltext_cross_encoder).
+   Effort: 1-2d (mostly local computation).
+
+### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
+
+10. **Self-hosted LLM rerank** — would need local 7B model + GPU. **Fails Global Rule**
+    (hosted LLM not allowed; "self-hosted" still counts as personal-hobbyist overhead).
+11. **CNKI cite/dl recovery** — would need paid captcha solver or xueshu789 mirror
+    of multi-statusex endpoint. **Fails Global Rule** (paid SaaS not allowed;
+    xueshu789 mirror unavailable per v3.9.7.6 5-path probe).
+12. **Cross-language unified ranking** — single ranking that combines EN + CN results
+    semantically (vs current separate-engine dedup). Effort: 1-2 weeks; uncertain lift.
+
+### Tier 4: Blocked (explicit "won't do" per Global Rule)
+
+- Captcha solver (paid SaaS, fails Global Rule)
+- Self-hosted MCP server (already reverted 2026-07-04)
+- Custom rerank model training (fails Global Rule)
+- Browser extension for production users (fails Global Rule)
+
+### Recommended next step (if user wants to continue)
+
+If the goal is "make paper-agent better for 课题":
+- **Tier 1 #1** (`--enrich-top-min-cites`): 30 min, ~10s speedup per query
+- **Tier 1 #2** (OpenAlex-by-title fallback): 1h, +5-10pp Chinese cite
+- **Tier 2 #6** (Phase 1.5 holdout): 1d, validates existing LTR/MoE numbers
+
+If the goal is "validate the 课题 work is rigorous":
+- Skip the engineering and use what we have (real query 30-46% cite is good enough)
+- Spot-check 5-10 of your own queries and tell me if any are missing critical papers
+- If yes, expand engine pool or query variations; if no, stop engineering
+
+---
+
 ## How to use this file (quick reference)
 
 **Adding an item**: edit `### [Px-N] <title>` under "Active items". Status `proposed` until work starts.
