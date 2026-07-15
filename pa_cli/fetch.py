@@ -110,9 +110,13 @@ def _build_opener() -> "urllib.request.OpenerDirector":
 
 
 def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60) -> Tuple[int, bytes]:
-    """Returns (status_code, body_bytes). Auto-decode gzip/deflate if present.
+    """Returns (status_code, body_bytes). Auto-decode gzip/deflate/br if present.
 
     v3.9.8.2: supports HTTPS_PROXY/HTTP_PROXY env vars (clash on 7897/7899).
+    v3.9.8.2 also: now handles brotli (Content-Encoding: br) — Unpaywall returns
+    brotli when client sends 'Accept-Encoding: gzip, deflate, br' (which UA_BROWSER
+    does). Without brotli decode, body looks like binary garbage starting with
+    0x1b 0x4b (brotli magic) and json.loads() fails.
     """
     final_headers = {**COMMON_HEADERS, **(headers or {})}
     opener = _build_opener()
@@ -120,7 +124,7 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
         req = ur.Request(url, headers=final_headers)
         resp = opener.open(req, timeout=timeout)
         body = resp.read()
-        # Handle gzip / deflate
+        # Handle gzip / deflate / br (brotli)
         ce = resp.headers.get("Content-Encoding", "")
         if ce == "gzip":
             import gzip
@@ -128,6 +132,12 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
         elif ce == "deflate":
             import zlib
             body = zlib.decompress(body)
+        elif ce == "br":
+            try:
+                import brotli
+                body = brotli.decompress(body)
+            except ImportError:
+                pass  # If brotli not installed, return raw (will JSON-fail)
         return resp.status, body
     except urllib.error.HTTPError as e:
         try:
@@ -139,6 +149,12 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
             elif ce == "deflate":
                 import zlib
                 body = zlib.decompress(body)
+            elif ce == "br":
+                try:
+                    import brotli
+                    body = brotli.decompress(body)
+                except ImportError:
+                    pass
             return e.code, body
         except Exception:
             return e.code, b""
