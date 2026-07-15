@@ -149,9 +149,13 @@ DEFAULT_REGISTRY = {
         "name": "CORE.ac.uk",
         "env_var": "CORE_API_KEY",
         "service_url": "https://api.core.ac.uk/v3/search/works?q=test&limit=1",
-        "tier": "free",
+        "tier": "free (no key needed for low-volume use)",
         "expires": None,
-        "notes": "CORE v3 API key for higher rate limit. Free tier, no expiry reported.",
+        "notes": "v3.9.8.2: CORE v3 API key is OPTIONAL — no-key mode works. Key only "
+                 "raises rate limit. Use `?api_key=` query param if set (NOT Bearer header). "
+                 "v3.9.8.1: removed from default 'all' engine list — OpenAlex already "
+                 "indexes CORE's repos, marginal coverage was <5%. Available via "
+                 "`pa search --engine core` for explicit use.",
         "last_checked": None,
         "last_used": None,
     },

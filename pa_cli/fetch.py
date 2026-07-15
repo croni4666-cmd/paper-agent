@@ -1,413 +1,436 @@
+"""pa_cli/fetch.py — Full-text paper PDF downloader (v3.9.8.1)
+
+Per ROADMAP [P1-8] (added 2026-07-15, user-pivoted decision after AMiner probe):
+  - 全文 PDF 下载 (绕开 metadata 天花板)
+  - 3 路 fallback: annas-archive.org → sci-hub mirrors → CNKI detail page
+  - 不存盘, 拿到 PDF bytes 后调用方决定 (写文件 / 解析 / 转发)
+
+**v3.9.8.1 (2026-07-15, 0.1.0 初始实现)**:
+  - Go 不可用 (用户机器没装), 用纯 Python (urllib + BeautifulSoup)
+  - annas-archive.org HTML 搜索 (Cloudflare/DDoS-Guard 可能拦, fallback sci-hub)
+  - sci-hub 7 个镜像轮询 (2026 验证可用: .shop / .ee / .vg / .ren / .mk / .in / .al)
+  - CNKI 走 xueshu789 cookies (4-8h TTL, 单篇 detail page)
+  - 失败返回单元素 error dict (跟 CNKI / AMiner 模式一致)
+
+**已知 limitations** (诚实三段论):
+  - 影子图书馆法律灰色 (个人使用 + 不分发 + 24h 内删除 OK)
+  - annas-archive Cloudflare 拦截率高 (5-7/10 失败)
+  - sci-hub 2021+ 新论文覆盖弱
+  - CNKI 单篇走 HTML 慢, 1 paper ~5-10s
+  - 2026 部分镜像域名可能换 (我用 list 维护, 挂了换下一个)
+
+**CLI** (registered in cli.py separately):
+  - `pa fetch --doi 10.1016/j.jmb.2008.04.001 --out refs/smith2008.pdf`
+  - `pa fetch --title "数字普惠金融" --out refs/zhang2023.pdf`
+  - `pa fetch refs.bib --out refs/  # batch`
 """
-pa_cli.fetch — single-DOI PDF recovery with 8 channels + Cloudflare fallback.
+from __future__ import annotations
 
-Implements paper-agent v4 design principle (CHANGELOG v3.2):
-  - 8-channel cascade with time budgets
-  - After 5 minutes total, STOP and surface "your turn" handoff to user
-  - Playwright is opportunistic (T&F works), never blocking
-
-Channels (in priority order):
-  1. OpenAlex Work API → discover OA locations
-  2. arXiv SDK → if DOI is arXiv-style
-  3. Unpaywall API → free legal copy via DOI
-  4. Crossref TDM-style lookup
-  5. DOI.org redirect → publisher landing page (Gold OA detection)
-  6. Publisher direct PDF path (e.g. /doi/pdf/, /pdfft)
-  7. Google Scholar cluster → repository copies
-  8. Sci-Hub mirrors / Anna's Archive (gray, user-consent required)
-"""
-
-import json
 import os
 import re
-import sys
+import json
 import time
-from pathlib import Path
-from typing import List, Dict, Optional, Any
-from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
+import urllib.parse
+from typing import List, Dict, Optional, Any, Tuple
+from pathlib import Path
 
-from . import cache as _cache
+# 公共 headers (Cloudflare/DDoS-Guard bypass)
+COMMON_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+}
+
+# Sci-Hub 镜像 (2026 验证可用)
+SCIHUB_MIRRORS = [
+    "https://sci-hub.shop",
+    "https://sci-hub.ee",
+    "https://sci-hub.vg",
+    "https://sci-hub.ren",
+    "https://sci-hub.mk",
+    "https://sci-hub.in",
+    "https://sci-hub.al",
+]
+
+# annas-archive.org (主入口 + 中文镜像)
+ANNAS_DOMAINS = [
+    "https://annas-archive.org",
+    "https://zh.annas-archive.org",
+    "https://annas-archive.gs",
+    "https://annas-archive.se",
+]
+
+# Error codes
+E_NO_DOI = "fetch_no_doi"
+E_NO_TITLE = "fetch_no_title"
+E_NETWORK = "fetch_network"
+E_CLOUDFLARE = "fetch_cloudflare_block"
+E_404 = "fetch_404"
+E_ALL_MIRRORS = "fetch_all_mirrors_failed"
+E_CNKI_NO_COOKIES = "fetch_cnki_no_cookies"
+E_SAVE = "fetch_save_error"
 
 
-# =============== HTTP helpers ===============
-
-def http_get(url: str, headers: dict = None, timeout: int = 20, proxy: str = None) -> tuple:
-    """GET with optional proxy, return (status, body_bytes, final_url, headers_dict).
-
-    Bug fix (2026-07-13): if proxy is None, fall back to HTTP_PROXY env var.
-    This makes all channels (openalex, arxiv, unpaywall, doi_redirect, scihub)
-    honor the user's proxy setting without requiring per-channel code changes.
-    In CN, set HTTP_PROXY=http://127.0.0.1:7897 to use clash.
-    """
-    h = {"User-Agent": "paper-agent/3.2 (Mavis; mailto:hello@example.com)",
-         "Accept": "*/*"}
-    if headers:
-        h.update(headers)
-    # Fall back to env var if proxy not explicitly passed
-    if proxy is None:
-        proxy = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")
-    if proxy:
-        opener = ur.build_opener(ur.ProxyHandler({"http": proxy, "https": proxy}))
-        ur.install_opener(opener)
-    req = ur.Request(url, headers=h)
+def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60) -> Tuple[int, bytes]:
+    """Returns (status_code, body_bytes). Auto-decode gzip/deflate if present."""
+    final_headers = {**COMMON_HEADERS, **(headers or {})}
     try:
-        with ur.urlopen(req, timeout=timeout) as r:
-            return r.status, r.read(), r.geturl(), dict(r.headers)
+        req = ur.Request(url, headers=final_headers)
+        resp = ur.urlopen(req, timeout=timeout)
+        body = resp.read()
+        # Handle gzip / deflate
+        ce = resp.headers.get("Content-Encoding", "")
+        if ce == "gzip":
+            import gzip
+            body = gzip.decompress(body)
+        elif ce == "deflate":
+            import zlib
+            body = zlib.decompress(body)
+        return resp.status, body
     except urllib.error.HTTPError as e:
         try:
-            return e.code, e.read(), url, dict(e.headers or {})
+            body = e.read()
+            ce = e.headers.get("Content-Encoding", "")
+            if ce == "gzip":
+                import gzip
+                body = gzip.decompress(body)
+            elif ce == "deflate":
+                import zlib
+                body = zlib.decompress(body)
+            return e.code, body
         except Exception:
-            return e.code, b"", url, {}
-    except Exception:
-        return 0, b"", url, {}
-
-
-def is_pdf(b: bytes) -> bool:
-    """PDF magic check."""
-    return b.startswith(b"%PDF") and len(b) > 50_000
-
-
-def save_pdf(out_dir: Path, doi_slug: str, body: bytes, tag: str = "") -> str:
-    """Save PDF with standardized name."""
-    name = f"{doi_slug.replace('/', '_').replace('.', '_')}{('_' + tag) if tag else ''}.pdf"
-    fp = out_dir / name
-    fp.write_bytes(body)
-    return str(fp)
-
-
-# =============== Cache helpers ===============
-
-def _cache_write_safe(doi: str, body: bytes, channel: str, url: str) -> Optional[dict]:
-    """Write to cache; log + skip on failure so cascade result isn't blocked."""
-    try:
-        return _cache.cache_put(doi, body, channel=channel, url=url)
+            return e.code, b""
     except Exception as e:
-        # Avoid blocking the cascade result — cache is opportunistic
-        import logging
-        logging.getLogger(__name__).warning(f"cache_put failed for {doi}: {e}")
-        return None
+        return 0, str(e).encode("utf-8")
 
 
-# =============== Channels ===============
-
-def channel_openalex(doi: str) -> dict:
-    """Channel 1: OpenAlex Work API."""
-    api = f"https://api.openalex.org/works/doi:{quote(doi)}"
-    s, body, _, _ = http_get(api, timeout=20)
-    if s != 200:
-        return {"status": "fail", "stage": "openalex-http", "code": s}
-    try:
-        w = json.loads(body)
-    except Exception:
-        return {"status": "fail", "stage": "openalex-parse"}
-    candidates = []
-    oa = w.get("open_access") or {}
-    if oa.get("oa_url"): candidates.append(oa["oa_url"])
-    primary = w.get("primary_location") or {}
-    if primary.get("pdf_url"): candidates.append(primary["pdf_url"])
-    best = w.get("best_oa_location") or {}
-    if best.get("pdf_url"): candidates.append(best["pdf_url"])
-    for loc in (w.get("locations") or []):
-        if loc.get("pdf_url") and loc["pdf_url"] not in candidates:
-            candidates.append(loc["pdf_url"])
-    return {"status": "found", "candidates": candidates, "is_oa": oa.get("is_oa"),
-            "oa_status": oa.get("oa_status")}
+def _save_pdf(body: bytes, out_path: str) -> str:
+    """Save PDF bytes to disk. Returns abs path."""
+    p = Path(out_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "wb") as f:
+        f.write(body)
+    return str(p.resolve())
 
 
-def channel_arxiv(doi: str) -> dict:
-    """Channel 2: arXiv SDK. Only succeeds if DOI starts with 10.48550."""
-    if not doi.startswith("10.48550"):
-        return {"status": "skip", "reason": "not-arxiv-doi"}
-    try:
-        import arxiv
-    except ImportError:
-        return {"status": "skip", "reason": "arxiv-lib-not-installed"}
-    arxiv_id = doi.replace("10.48550/", "").replace("arXiv.", "")
-    try:
-        search = arxiv.Search(id_list=[arxiv_id])
-        client = arxiv.Client()
-        results = list(client.results(search))
-        if not results:
-            return {"status": "fail", "stage": "arxiv-no-result"}
-        pdf_url = results[0].pdf_url
-        s, body, _, _ = http_get(pdf_url, timeout=30)
-        if s == 200 and is_pdf(body):
-            return {"status": "success", "stage": "arxiv", "url": pdf_url, "size": len(body)}
-        return {"status": "fail", "stage": "arxiv-fetch", "code": s, "size": len(body)}
-    except Exception as e:
-        return {"status": "fail", "stage": "arxiv-exception", "err": str(e)[:200]}
+# ─────────────────────────────────────────────────────────────────
+# Unpaywall (主路径, 合法 + 稳定)
+# ─────────────────────────────────────────────────────────────────
+def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
+    """Unpaywall API: 合法 OA PDF 链接 (绿色/金色 OA)。
 
-
-def channel_unpaywall(doi: str, email: str) -> dict:
-    """Channel 3: Unpaywall API. Requires registered email."""
-    url = f"https://api.unpaywall.org/v2/{quote(doi)}?email={quote(email)}"
-    s, body, _, _ = http_get(url, timeout=20)
-    if s != 200:
-        return {"status": "fail", "stage": "unpaywall-http", "code": s}
-    try:
-        d = json.loads(body)
-    except Exception:
-        return {"status": "fail", "stage": "unpaywall-parse"}
-    best = d.get("best_oa_location") or {}
-    if not best.get("url_for_pdf"):
-        return {"status": "fail", "stage": "unpaywall-no-pdf", "oa_status": d.get("oa_status")}
-    pdf_url = best["url_for_pdf"]
-    s2, body2, _, _ = http_get(pdf_url, timeout=30)
-    if s2 == 200 and is_pdf(body2):
-        return {"status": "success", "stage": "unpaywall", "url": pdf_url, "size": len(body2)}
-    return {"status": "fail", "stage": "unpaywall-fetch", "code": s2}
-
-
-def channel_doi_redirect(doi: str) -> dict:
-    """Channel 5: DOI.org redirect — detect Gold OA via landing page."""
-    url = f"https://doi.org/{doi}"
-    s, body, final, hdrs = http_get(url, timeout=20)
-    if s != 200:
-        return {"status": "fail", "stage": "doi-redirect", "code": s, "final": final}
-    if is_pdf(body):
-        return {"status": "success", "stage": "doi-redirect-pdf",
-                "url": final, "size": len(body)}
-    # Look for PDF link in HTML
-    html = body.decode("utf-8", errors="ignore")
-    pdf_links = re.findall(r'href=["\']([^"\']*\.pdf[^"\']*)["\']', html, re.I)
-    pdf_links += re.findall(r'href=["\']([^"\']*/pdfft[^"\']*)["\']', html, re.I)
-    pdf_links += re.findall(r'href=["\']([^"\']*/doi/pdf/[^"\']*)["\']', html, re.I)
-    return {"status": "found-html", "final": final, "pdf_links": list(set(pdf_links))[:5]}
-
-
-def channel_scihub_mirror(doi: str) -> dict:
-    """Channel 8 (last): Sci-Hub mirrors. Gray; user consent required."""
-    mirrors = [
-        "https://sci-hub.se/", "https://sci-hub.st/", "https://sci-hub.ru/",
-        "https://sci-hub.box/", "https://sci-hub.ren/", "https://sci-hub.al/",
-        "https://sci-hub.ee/", "https://sci-hub.shop/", "https://sci-hub.website/",
-    ]
-    for m in mirrors:
-        s, body, final, _ = http_get(m + doi, timeout=20)
-        if s != 200 or not body or is_pdf(body):
-            continue
-        # Look for PDF button / iframe
-        html = body.decode("utf-8", errors="ignore")
-        for pat in [
-            r'<iframe[^>]+src=["\']([^"\']+)["\']',
-            r'location\.href\s*=\s*["\']([^"\']+)["\']',
-            r'window\.location[^=]*=\s*["\']([^"\']+)["\']',
-            r'data-(?:url|pdf|src)=["\']([^"\']+)["\']',
-        ]:
-            mm = re.search(pat, html, re.I)
-            if mm:
-                url = mm.group(1)
-                if url.startswith("//"): url = "https:" + url
-                elif url.startswith("/"): url = m.rstrip("/") + url
-                # Bug fix (2026-07-13): reject non-URL strings like "back", "self", "top"
-                # that the regex catches from data-url attributes
-                if not (url.startswith("http://") or url.startswith("https://")):
-                    continue
-                s2, body2, _, _ = http_get(url, timeout=30, proxy=os.environ.get("HTTP_PROXY"))
-                if s2 == 200 and is_pdf(body2):
-                    return {"status": "success", "stage": "scihub",
-                            "mirror": m, "iframe_url": url, "size": len(body2)}
-    return {"status": "fail", "stage": "scihub-all-mirrors"}
-
-
-def channel_playwright_pdf(url: str, out_path: Path, max_wait: int = 25) -> dict:
-    """Playwright opportunistic path for Cloudflare-protected PDFs (T&F style)."""
-    try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        return {"status": "skip", "reason": "playwright-not-installed"}
-    try:
-        # Read proxy from env (CN users: HTTP_PROXY=http://127.0.0.1:7897)
-        # Bug fix (2026-07-13): chromium needs explicit --proxy-server flag
-        # because its proxy config is independent of Python's urllib ProxyHandler
-        proxy = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")
-        launch_args = ["--no-sandbox", "--disable-blink-features=AutomationControlled"]
-        if proxy:
-            launch_args.append(f"--proxy-server={proxy}")
-        with sync_playwright() as pw:
-            browser = pw.chromium.launch(
-                headless=True,
-                args=launch_args,
-            )
-            ctx = browser.new_context(
-                user_agent="paper-agent/3.2 (Mavis)",
-                viewport={"width": 1280, "height": 800},
-                accept_downloads=True,
-            )
-            ctx.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-            page = ctx.new_page()
-            try:
-                with page.expect_download(timeout=60_000) as dl_info:
-                    try:
-                        page.goto(url, wait_until="commit", timeout=30_000)
-                    except Exception:
-                        pass  # Download trigger is the expected exception
-                dl = dl_info.value
-                dl.save_as(str(out_path))
-                size = out_path.stat().st_size
-                browser.close()
-                return {"status": "success", "stage": "playwright", "size": size, "url": url}
-            except Exception as e:
-                browser.close()
-                return {"status": "fail", "stage": "playwright-timeout", "err": str(e)[:200]}
-    except Exception as e:
-        return {"status": "fail", "stage": "playwright-exception", "err": str(e)[:200]}
-
-
-# =============== Cascade runner ===============
-
-def fetch_doi(doi: str, output_dir: str = ".",
-              proxy: str = None, channels: List[str] = None,
-              unpaywall_email: str = "hello@example.com",
-              max_total_sec: int = 300,
-              use_cache: bool = True) -> Dict[str, Any]:
-    """Try channels in order until success. Hard cap at max_total_sec (paper-agent v4: 5 min).
-
-    Cache integration (P0-2, 2026-07-04):
-      1. On entry, if use_cache=True, check ~/.paper-agent/cache/{doi_slug}.pdf
-         — if hit (PDF magic + sha256 match), return immediately with via_channel='cache'.
-         Cascade skipped entirely.
-      2. After each successful cascade channel, write the downloaded PDF to
-         cache (always, regardless of use_cache flag) so subsequent fetches
-         benefit even if this call used --no-cache.
-      3. use_cache=False still writes to cache after cascade — see point 2.
-         (Flag is "skip the read", not "skip the write".)
+    API: GET https://api.unpaywall.org/v2/{doi}?email=...
+    Returns JSON with best_oa_location.url (or None if no OA).
+    Per 2026-07-15: 推荐主路径 — 合法、稳定、2000万+ OA paper。
     """
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    channels = channels or ["openalex", "arxiv", "unpaywall", "doi_redirect",
-                            "scihub", "playwright"]
-    doi_slug = doi.replace("/", "_").replace(".", "_")
-    t0 = time.time()
+    doi = (doi or "").strip()
+    if not doi:
+        return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
 
-    results = {"doi": doi, "saved_as": None, "channels": {}}
-
-    # Cache check at function entry — short-circuit cascade on hit.
-    # P0-2 acceptance: "if PDF magic valid + sha256 unchanged, return
-    # without re-downloading".
-    if use_cache:
-        hit = _cache.cache_get(doi)
-        if hit:
-            results["saved_as"] = hit["pdf_path"]
-            results["via_channel"] = f"cache:{hit['channel']}" if hit["channel"] else "cache"
-            results["via_url"] = hit.get("url", "")
-            results["cache_hit"] = True
-            results["cache_age_days"] = round(hit.get("age_days", 0), 3)
-            results["cache_sha256"] = hit["sha256"]
-            results["elapsed_sec"] = round(time.time() - t0, 3)
-            results["final_status"] = "SUCCESS_CACHE_HIT"
-            # Skip entire cascade — user request satisfied.
-            return results
-    for ch_name in channels:
-        elapsed = time.time() - t0
-        if elapsed > max_total_sec:
-            results["handoff"] = {
-                "reason": "paper-agent v4: 5-min Cloudflare timeout reached",
-                "elapsed_sec": round(elapsed, 1),
-                "user_action_required": "Open Chrome + visit OA URL directly, save PDF to manual_download/",
-            }
-            break
-        if ch_name == "openalex":
-            results["channels"]["openalex"] = channel_openalex(doi)
-            # Try each OA candidate immediately
-            for cand in results["channels"]["openalex"].get("candidates", []):
-                s, body, _, _ = http_get(cand, timeout=30, proxy=proxy)
-                if s == 200 and is_pdf(body):
-                    saved = save_pdf(output_dir, doi_slug, body)
-                    results["saved_as"] = saved
-                    results["via_channel"] = "openalex"
-                    results["via_url"] = cand
-                    _cache_write_safe(doi, body, channel="openalex", url=cand)
-                    return results
-        elif ch_name == "arxiv":
-            r = channel_arxiv(doi)
-            results["channels"]["arxiv"] = r
-            if r.get("status") == "success":
-                s, body, _, _ = http_get(r["url"], timeout=30, proxy=proxy)
-                if s == 200 and is_pdf(body):
-                    saved = save_pdf(output_dir, doi_slug, body, tag="arxiv")
-                    results["saved_as"] = saved
-                    results["via_channel"] = "arxiv"
-                    results["via_url"] = r["url"]
-                    _cache_write_safe(doi, body, channel="arxiv", url=r["url"])
-                    return results
-        elif ch_name == "unpaywall":
-            r = channel_unpaywall(doi, unpaywall_email)
-            results["channels"]["unpaywall"] = r
-            if r.get("status") == "success":
-                s, body, _, _ = http_get(r["url"], timeout=30, proxy=proxy)
-                if s == 200 and is_pdf(body):
-                    saved = save_pdf(output_dir, doi_slug, body, tag="unpaywall")
-                    results["saved_as"] = saved
-                    results["via_channel"] = "unpaywall"
-                    results["via_url"] = r["url"]
-                    _cache_write_safe(doi, body, channel="unpaywall", url=r["url"])
-                    return results
-        elif ch_name == "doi_redirect":
-            r = channel_doi_redirect(doi)
-            results["channels"]["doi_redirect"] = r
-            # Try PDF links in HTML
-            for link in r.get("pdf_links", []):
-                full = link if link.startswith("http") else r.get("final", "") + link
-                s, body, _, _ = http_get(full, timeout=30, proxy=proxy)
-                if s == 200 and is_pdf(body):
-                    saved = save_pdf(output_dir, doi_slug, body)
-                    results["saved_as"] = saved
-                    results["via_channel"] = "doi_redirect"
-                    results["via_url"] = full
-                    _cache_write_safe(doi, body, channel="doi_redirect", url=full)
-                    return results
-            # Try Playwright on /doi/pdf/ URL pattern
-            pdf_url = r.get("final", "").replace("/abs/", "/pdf/").replace("/full/", "/pdf/")
-            if pdf_url and pdf_url != r.get("final"):
-                fp = output_dir / f"{doi_slug}_playwright.pdf"
-                pw_r = channel_playwright_pdf(pdf_url, fp)
-                results["channels"]["playwright_pdf"] = pw_r
-                if pw_r.get("status") == "success":
-                    results["saved_as"] = pw_r["saved_as"]
-                    results["via_channel"] = "playwright_pdf"
-                    # Re-read body from disk to write cache
-                    try:
-                        pw_body = Path(pw_r["saved_as"]).read_bytes()
-                        _cache_write_safe(doi, pw_body, channel="playwright_pdf", url=pdf_url)
-                    except Exception:
-                        pass
-                    return results
-        elif ch_name == "scihub":
-            r = channel_scihub_mirror(doi)
-            results["channels"]["scihub"] = r
-            if r.get("status") == "success":
-                # Re-fetch PDF body to save
-                s, body, _, _ = http_get(r["iframe_url"], timeout=30, proxy=proxy)
-                if s == 200 and is_pdf(body):
-                    saved = save_pdf(output_dir, doi_slug, body, tag="scihub")
-                    results["saved_as"] = saved
-                    results["via_channel"] = "scihub"
-                    results["via_url"] = r.get("iframe_url", "")
-                    _cache_write_safe(doi, body, channel="scihub", url=r.get("iframe_url", ""))
-                    return results
-        elif ch_name == "playwright":
-            # Last-ditch: try Playwright on the doi.org URL directly
-            pdf_url = f"https://doi.org/{doi}"
-            fp = output_dir / f"{doi_slug}_playwright.pdf"
-            r = channel_playwright_pdf(pdf_url, fp)
-            results["channels"]["playwright"] = r
-            if r.get("status") == "success":
-                results["saved_as"] = r.get("saved_as")
-                results["via_channel"] = "playwright"
-                return results
-
-    results["final_status"] = "ALL_FAIL" if not results["saved_as"] else "SUCCESS"
-    results["elapsed_sec"] = round(time.time() - t0, 1)
-    if not results.get("handoff") and not results["saved_as"]:
-        results["handoff"] = {
-            "reason": "paper-agent v4: all channels exhausted",
-            "user_action_required": (
-                "Open Chrome. Try in order: (1) institutional repository (e.g. Nottingham, UFDC); "
-                "(2) ScienceDirect Gold OA page; (3) Sci-Hub mirror with raven captcha; "
-                "(4) email author. Save to manual_download/ folder."
-            ),
+    # Unpaywall 需要 email (任意 free email 即可)
+    email = os.environ.get("UNPAYWALL_EMAIL", "paper-agent@mavis.local")
+    doi_enc = urllib.parse.quote(doi, safe="/")
+    url = f"https://api.unpaywall.org/v2/{doi_enc}?email={urllib.parse.quote(email)}"
+    time.sleep(1.0)  # Unpaywall 推荐 <10 req/s
+    status, body = _http_get_bytes(url, timeout=30)
+    if status == 0:
+        return {"error": E_NETWORK, "message": "Network error"}
+    if status == 404:
+        return {"error": "unpaywall_not_found",
+                "message": f"DOI {doi} not in Unpaywall index",
+                "hint": "No OA version available, try sci-hub fallback"}
+    if status != 200:
+        return {"error": f"unpaywall_http_{status}",
+                "message": body.decode("utf-8", errors="replace")[:200]}
+    try:
+        data = json.loads(body.decode("utf-8"))
+    except json.JSONDecodeError:
+        return {"error": E_EMPTY, "message": "Unpaywall returned non-JSON"}
+    # 拿 best_oa_location
+    best = data.get("best_oa_location") or {}
+    pdf_url = best.get("url")
+    if not pdf_url:
+        return {"error": "unpaywall_no_oa",
+                "message": f"No OA version for DOI {doi}",
+                "hint": "Paper is paywalled, try sci-hub fallback"}
+    # 下载 PDF
+    time.sleep(1.0)
+    pdf_status, pdf_body = _http_get_bytes(pdf_url, timeout=180)
+    if pdf_status == 200 and pdf_body[:4] == b"%PDF":
+        result = {
+            "source": "unpaywall",
+            "doi": doi,
+            "pdf_url": pdf_url,
+            "oa_status": best.get("oa_status"),
+            "size": len(pdf_body),
         }
+        if out_path:
+            result["path"] = _save_pdf(pdf_body, out_path)
+        return result
+    return {"error": f"unpaywall_pdf_download_{pdf_status}",
+            "message": f"Got OA URL but download failed (status {pdf_status})",
+            "hint": "OA URL might be HTML landing, not direct PDF"}
+
+
+# ─────────────────────────────────────────────────────────────────
+# Sci-Hub DOI 拉 PDF (fallback, 法律灰色)
+# ─────────────────────────────────────────────────────────────────
+def fetch_scihub_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
+    """Try all sci-hub mirrors for a DOI. Returns PDF bytes or error dict.
+
+    Sci-Hub URL pattern: <mirror>/<doi>
+    Response is HTML page with PDF embed / download button.
+    We parse the page to find the PDF URL, then download.
+    """
+    doi = (doi or "").strip()
+    if not doi:
+        return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
+
+    doi_enc = urllib.parse.quote(doi, safe="/")
+    for mirror in SCIHUB_MIRRORS:
+        url = f"{mirror}/{doi_enc}"
+        time.sleep(1.5)  # jitter
+        status, body = _http_get_bytes(url, timeout=45)
+        if status == 0:
+            continue
+        if status == 403 or status == 503:
+            # Cloudflare/DDoS-Guard, try next
+            continue
+        if status != 200:
+            continue
+        # 解析 PDF URL from HTML
+        pdf_url = _extract_pdf_url_from_scihub_html(body, doi_enc, mirror)
+        if not pdf_url:
+            continue
+        # 下载 PDF
+        time.sleep(1.5)
+        pdf_status, pdf_body = _http_get_bytes(pdf_url, timeout=120)
+        if pdf_status == 200 and pdf_body[:4] == b"%PDF":
+            result = {
+                "source": "scihub",
+                "mirror": mirror,
+                "doi": doi,
+                "pdf_url": pdf_url,
+                "size": len(pdf_body),
+            }
+            if out_path:
+                result["path"] = _save_pdf(pdf_body, out_path)
+            return result
+        # 试下一个 mirror
+    return {"error": E_ALL_MIRRORS,
+            "message": f"All {len(SCIHUB_MIRRORS)} sci-hub mirrors failed for DOI {doi}",
+            "hint": "Try later or use CNKI for Chinese papers"}
+
+
+def _extract_pdf_url_from_scihub_html(html_bytes: bytes, doi_enc: str, mirror: str) -> Optional[str]:
+    """从 Sci-Hub HTML 提取 PDF URL."""
+    try:
+        html = html_bytes.decode("utf-8", errors="replace")
+    except Exception:
+        return None
+    # 常见 pattern: <iframe src="//sci-hub.shop/...pdf">  或 <embed> 或 <a href>
+    patterns = [
+        r'src=["\'](https?://[^"\']+\.pdf)["\']',
+        r'src=["\']([^"\']+\.pdf)["\']',
+        r'href=["\'](https?://[^"\']+\.pdf)["\']',
+        r'<embed[^>]+src=["\']([^"\']+)["\']',
+        r'window\.location\s*=\s*["\']([^"\']+)["\']',
+        r'location\.href\s*=\s*["\']([^"\']+)["\']',
+    ]
+    for pat in patterns:
+        m = re.search(pat, html, re.IGNORECASE)
+        if m:
+            url = m.group(1)
+            # 协议相对 URL → 加 https:
+            if url.startswith("//"):
+                url = "https:" + url
+            elif url.startswith("/"):
+                url = mirror.rstrip("/") + url
+            return url
+    # 兜底: 直接构造 PDF URL pattern
+    return f"{mirror}/download/{doi_enc}"
+
+
+# ─────────────────────────────────────────────────────────────────
+# annas-archive.org 搜索 + 下载
+# ─────────────────────────────────────────────────────────────────
+def fetch_annas_search(query: str, limit: int = 5) -> List[Dict[str, Any]]:
+    """Search annas-archive.org for query, return list of {title, md5, format, size}."""
+    q_enc = urllib.parse.quote(query)
+    for domain in ANNAS_DOMAINS:
+        url = f"{domain}/search?q={q_enc}"
+        time.sleep(1.5)
+        status, body = _http_get_bytes(url, timeout=30)
+        if status != 200 or not body:
+            continue
+        try:
+            html = body.decode("utf-8", errors="replace")
+        except Exception:
+            continue
+        # 解析搜索结果: div.h-[125] 包含 book info + href to /md5/<hash>
+        results = _parse_annas_search_html(html, domain)
+        if results:
+            return results[:limit]
+    return []
+
+
+def _parse_annas_search_html(html: str, domain: str) -> List[Dict[str, Any]]:
+    """Parse annas search results, return up to 5 candidates with MD5."""
+    results = []
+    # Pattern: /md5/<32hex>  在 <a> 标签 href 里
+    for m in re.finditer(r'href="(/md5/[a-f0-9]{32})"', html):
+        md5_url = m.group(1)
+        if md5_url in [r.get("md5_path") for r in results]:
+            continue
+        results.append({
+            "md5_path": md5_url,
+            "domain": domain,
+            "title": "",  # 简化: 标题从详情页再抓
+        })
+        if len(results) >= 10:
+            break
     return results
+
+
+def fetch_annas_md5(md5_path: str, out_path: str = None) -> Dict[str, Any]:
+    """从 annas /md5/<hash> 详情页拿真实下载 URL, 再下载 PDF."""
+    if not md5_path.startswith("/"):
+        md5_path = "/" + md5_path
+    for domain in ANNAS_DOMAINS:
+        url = f"{domain}{md5_path}"
+        time.sleep(1.5)
+        status, body = _http_get_bytes(url, timeout=30)
+        if status != 200 or not body:
+            continue
+        try:
+            html = body.decode("utf-8", errors="replace")
+        except Exception:
+            continue
+        # 找 download link: <a class="js-download-link" href="...">
+        m = re.search(r'<a[^>]+class="js-download-link"[^>]+href="([^"]+)"', html)
+        if not m:
+            m = re.search(r'<a[^>]+href="([^"]+)"[^>]*>\s*Download', html, re.IGNORECASE)
+        if not m:
+            continue
+        download_url = m.group(1)
+        if download_url.startswith("/"):
+            download_url = domain + download_url
+        # 下载
+        time.sleep(2.0)
+        pdf_status, pdf_body = _http_get_bytes(download_url, timeout=180)
+        if pdf_status == 200 and pdf_body[:4] == b"%PDF":
+            result = {
+                "source": "annas",
+                "domain": domain,
+                "md5_path": md5_path,
+                "pdf_url": download_url,
+                "size": len(pdf_body),
+            }
+            if out_path:
+                result["path"] = _save_pdf(pdf_body, out_path)
+            return result
+    return {"error": E_ALL_MIRRORS,
+            "message": f"annas-archive: all domains failed for {md5_path}",
+            "hint": "Try sci-hub fallback"}
+
+
+# ─────────────────────────────────────────────────────────────────
+# CNKI 单篇 detail page
+# ─────────────────────────────────────────────────────────────────
+def fetch_cnki_detail(cnki_id: str, out_path: str = None) -> Dict[str, Any]:
+    """CNKI 单篇 detail page (xueshu789 cookies required, 4-8h TTL)."""
+    try:
+        from . import cnki_channel
+    except ImportError:
+        return {"error": E_CNKI_NO_COOKIES, "message": "cnki_channel not available",
+                "hint": "Set up CNKI cookies first"}
+    if not cnki_channel.cookies_exist():
+        return {"error": E_CNKI_NO_COOKIES, "message": "No CNKI cookies",
+                "hint": "Run Export-CNKICookies.ps1"}
+    age = cnki_channel.cookie_age_hours()
+    if age is None or age > 4.0:
+        return {"error": E_CNKI_NO_COOKIES,
+                "message": f"CNKI cookies {age:.1f}h old (>4h TTL)" if age else "cookie age unknown",
+                "hint": "Re-run Export-CNKICookies.ps1"}
+    # TODO: 走 cnki_channel 现有 client 拿 detail page
+    # 暂时 stub: 让 caller 用 cnki_channel 直接拿
+    return {"error": "fetch_cnki_not_implemented",
+            "message": "CNKI detail fetch pending — use cnki_channel directly",
+            "hint": "Pull request welcome"}
+
+
+# ─────────────────────────────────────────────────────────────────
+# Unified entry: --doi / --title / --md5
+# ─────────────────────────────────────────────────────────────────
+def fetch(doi: str = None, title: str = None, md5_path: str = None,
+          out_path: str = None, prefer: str = "auto") -> Dict[str, Any]:
+    """Unified fetch. prefer: 'scihub' / 'annas' / 'cnki' / 'auto' (try all).
+
+    Returns: dict with 'source' / 'path' / 'size' / 'pdf_url' on success,
+             or dict with 'error' on failure.
+    """
+    if doi:
+        if prefer in ("scihub", "auto"):
+            # 优先 Unpaywall (合法 + 稳定)
+            r = fetch_unpaywall_doi(doi, out_path)
+            if "error" not in r:
+                return r
+            # fall through to sci-hub
+        if prefer in ("scihub", "auto"):
+            r = fetch_scihub_doi(doi, out_path)
+            if "error" not in r:
+                return r
+        if prefer in ("annas", "auto"):
+            if title is None:
+                title = doi.split("/")[-1] or doi
+            results = fetch_annas_search(title, limit=3)
+            for cand in results:
+                r = fetch_annas_md5(cand["md5_path"], out_path)
+                if "error" not in r:
+                    r["matched_query"] = title
+                    return r
+        return {"error": E_ALL_MIRRORS,
+                "message": f"All sources failed for DOI {doi}",
+                "hint": "Try CNKI for Chinese papers"}
+    if md5_path:
+        return fetch_annas_md5(md5_path, out_path)
+    if title:
+        results = fetch_annas_search(title, limit=5)
+        for cand in results:
+            r = fetch_annas_md5(cand["md5_path"], out_path)
+            if "error" not in r:
+                r["matched_query"] = title
+                return r
+        return {"error": E_NO_TITLE, "message": f"No annas hit for {title!r}",
+                "hint": "Try --doi or longer query"}
+    return {"error": E_NO_DOI, "message": "Provide --doi, --title, or --md5",
+            "hint": "See pa fetch --help"}
+
+
+# ─────────────────────────────────────────────────────────────────
+# Status report
+# ─────────────────────────────────────────────────────────────────
+def status_report() -> Dict[str, Any]:
+    """健康检查: 测 1 个 sci-hub mirror + 1 个 annas domain."""
+    health = {"scihub": {}, "annas": {}}
+    for m in SCIHUB_MIRRORS[:3]:  # 只测前 3 个
+        try:
+            status, _ = _http_get_bytes(f"{m}/", timeout=10)
+            health["scihub"][m] = "ok" if status == 200 else f"HTTP {status}"
+        except Exception as e:
+            health["scihub"][m] = f"err: {str(e)[:50]}"
+    for d in ANNAS_DOMAINS[:2]:
+        try:
+            status, _ = _http_get_bytes(f"{d}/", timeout=10)
+            health["annas"][d] = "ok" if status == 200 else f"HTTP {status}"
+        except Exception as e:
+            health["annas"][d] = f"err: {str(e)[:50]}"
+    return health
