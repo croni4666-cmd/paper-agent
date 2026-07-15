@@ -79,12 +79,46 @@ E_CNKI_NO_COOKIES = "fetch_cnki_no_cookies"
 E_SAVE = "fetch_save_error"
 
 
+def _get_proxy_dict() -> Dict[str, str]:
+    """Read proxy from env vars. Supports HTTP_PROXY / HTTPS_PROXY / ALL_PROXY.
+
+    v3.9.8.2 (2026-07-15): paper-agent's pa fetch was tested WITHOUT proxy and
+    all GFW-blocked services (annas, sci-hub) failed. After user reminded about
+    clash on 127.0.0.1:7897, we made proxy config auto-detect from env vars.
+    Standard Windows-side clash-verge uses 7897 (HTTP) + 7899 (SOCKS5).
+    """
+    p = (os.environ.get("HTTPS_PROXY")
+         or os.environ.get("HTTP_PROXY")
+         or os.environ.get("ALL_PROXY")
+         or os.environ.get("https_proxy")
+         or os.environ.get("http_proxy")
+         or os.environ.get("all_proxy")
+         or "").strip()
+    if not p:
+        return {}
+    if not p.startswith(("http://", "https://", "socks5://", "socks5h://")):
+        p = "http://" + p
+    return {"http": p, "https": p}
+
+
+def _build_opener() -> "urllib.request.OpenerDirector":
+    """Build urllib opener with proxy support (cached)."""
+    proxies = _get_proxy_dict()
+    if proxies:
+        return ur.build_opener(ur.ProxyHandler(proxies))
+    return ur.build_opener()
+
+
 def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60) -> Tuple[int, bytes]:
-    """Returns (status_code, body_bytes). Auto-decode gzip/deflate if present."""
+    """Returns (status_code, body_bytes). Auto-decode gzip/deflate if present.
+
+    v3.9.8.2: supports HTTPS_PROXY/HTTP_PROXY env vars (clash on 7897/7899).
+    """
     final_headers = {**COMMON_HEADERS, **(headers or {})}
+    opener = _build_opener()
     try:
         req = ur.Request(url, headers=final_headers)
-        resp = ur.urlopen(req, timeout=timeout)
+        resp = opener.open(req, timeout=timeout)
         body = resp.read()
         # Handle gzip / deflate
         ce = resp.headers.get("Content-Encoding", "")
@@ -130,13 +164,23 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     API: GET https://api.unpaywall.org/v2/{doi}?email=...
     Returns JSON with best_oa_location.url (or None if no OA).
     Per 2026-07-15: 推荐主路径 — 合法、稳定、2000万+ OA paper。
+
+    v3.9.8.2 重要: Unpaywall 反 bot — 必须用 **在该网站注册过的真邮箱**,
+    否则服务端返 200 OK + 1041 字节 zlib/CF 反爬页 (HTTP 200 但 body 不是 JSON)。
+    注册地址: https://api.unpaywall.org/register
+    设置: $env:UNPAYWALL_EMAIL = "<your-registered-email>"
     """
     doi = (doi or "").strip()
     if not doi:
         return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
 
-    # Unpaywall 需要 email (任意 free email 即可)
-    email = os.environ.get("UNPAYWALL_EMAIL", "paper-agent@mavis.local")
+    # Unpaywall 邮箱必须注册过 (v3.9.8.2 验证: 假邮箱返 1041B CF 反爬页)
+    email = os.environ.get("UNPAYWALL_EMAIL", "").strip()
+    if not email:
+        return {"error": "unpaywall_no_email",
+                "message": "UNPAYWALL_EMAIL env var is empty",
+                "hint": "Register at https://api.unpaywall.org/register, "
+                        "then `setx UNPAYWALL_EMAIL \"your@email.com\"`"}
     doi_enc = urllib.parse.quote(doi, safe="/")
     url = f"https://api.unpaywall.org/v2/{doi_enc}?email={urllib.parse.quote(email)}"
     time.sleep(1.0)  # Unpaywall 推荐 <10 req/s
@@ -147,13 +191,27 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         return {"error": "unpaywall_not_found",
                 "message": f"DOI {doi} not in Unpaywall index",
                 "hint": "No OA version available, try sci-hub fallback"}
+    if status == 422:
+        # v3.9.8.2: 422 = "Please use your own email address" (Unpaywall 拒了陌生邮箱)
+        return {"error": "unpaywall_email_invalid",
+                "message": f"Unpaywall rejected UNPAYWALL_EMAIL={email!r} (HTTP 422)",
+                "hint": "Either email is fake OR not registered. "
+                        f"Register {email} at https://api.unpaywall.org/register "
+                        "or use a different email that's already registered."}
     if status != 200:
         return {"error": f"unpaywall_http_{status}",
-                "message": body.decode("utf-8", errors="replace")[:200]}
+                "message": body.decode("utf-8", errors="replace")[:200],
+                "hint": "If body mentions 'email', see unpaywall_email_invalid fix above."}
+    # v3.9.8.2: Unpaywall returns 1041B zlib/CF page for unknown email (HTTP 200)
+    # Detect by checking JSON parse failure + small body
     try:
         data = json.loads(body.decode("utf-8"))
-    except json.JSONDecodeError:
-        return {"error": E_EMPTY, "message": "Unpaywall returned non-JSON"}
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return {"error": "unpaywall_email_invalid",
+                "message": f"Got HTTP 200 but body is {len(body)}B non-JSON "
+                           "(likely Unpaywall CF anti-bot for unknown email)",
+                "hint": f"Register {email} at https://api.unpaywall.org/register, "
+                        "or use a different UNPAYWALL_EMAIL that's already registered"}
     # 拿 best_oa_location
     best = data.get("best_oa_location") or {}
     pdf_url = best.get("url")
