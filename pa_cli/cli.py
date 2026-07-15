@@ -277,9 +277,13 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
 @click.option("--concept-mode", "concept_mode", default="or", show_default=True,
               type=click.Choice(["or", "and"]),
               help="How to combine multiple concepts: or (any) or and (all)")
+@click.option("--enrich-top", "enrich_top", default=0, show_default=True,
+              help="Top-N deep enrichment (v3.9.7.8): second-hop lookups via "
+                   "S2 paper/DOI + Crossref by title for top-N results. "
+                   "0 = off (default). Adds ~12s for N=10 (S2 1 RPS free).")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, quiet):
+           concept_ids, concept_names, concept_mode, enrich_top, quiet):
     """5-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / CORE).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -326,7 +330,8 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                    f"concepts={resolved_ids or 'none'} mode={concept_mode if resolved_ids else 'n/a'} "
                    f"format={out_format}", err=True)
     results = run_search(query, year_min, year_max, limit, engine,
-                         concepts_filter=concepts_filter or None)
+                         concepts_filter=concepts_filter or None,
+                         enrich_top=enrich_top)
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta

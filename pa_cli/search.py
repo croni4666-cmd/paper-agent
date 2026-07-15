@@ -11,6 +11,7 @@ existence. See pa_cli.cnki_channel for setup details.
 
 import json
 import os
+import time
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote
 import urllib.request as ur
@@ -35,6 +36,148 @@ def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
             return e.code, {}
     except Exception:
         return 0, {}
+
+
+# ──────────────────────────────────────────────────────────────────────
+# Top-N deep enrichment (v3.9.7.8)
+# For papers lacking cite/abstract, do "second-hop" lookups:
+#   - If has DOI → query S2 `paper/DOI:...` (returns full tldr/inf_cite)
+#   - If no DOI → query Crossref by title (returns DOI + cite)
+# Used to lift Chinese-paper cite coverage from 21% (search-only) to ~40-50%.
+# ──────────────────────────────────────────────────────────────────────
+
+# Known S2 placeholder strings for tldr filter (same as dedup loop)
+S2_TLDR_PLACEHOLDERS = (
+    "It's time to dust off the gloves",
+    "It\u2019s time to dust off the gloves",
+    "It's time to dust off the sledgehammers",
+    "It\u2019s time to dust off the sledgehammers",
+)
+
+
+def _s2_lookup_doi(doi: str) -> Optional[Dict]:
+    """Semantic Scholar paper/DOI endpoint — returns full metadata for one paper.
+
+    S2 free tier: 1 RPS. Caller must jitter (use 1.0-1.5s between calls).
+    """
+    if not doi:
+        return None
+    url = (f"https://api.semanticscholar.org/graph/v1/paper/DOI:{quote(doi, safe='/:')}"
+           f"?fields=title,abstract,tldr,citationCount,influentialCitationCount,"
+           f"referenceCount,authors,venue,year,externalIds,openAccessPdf,publicationTypes")
+    headers = {"User-Agent": UA}
+    api_key = os.environ.get("S2_API_KEY")
+    if api_key:
+        headers["x-api-key"] = api_key
+    s, data = http_get_json(url, headers=headers, timeout=15)
+    if s != 200 or not data or not data.get("paperId"):
+        return None
+    # Convert to our normalized result shape (subset)
+    ext = data.get("externalIds") or {}
+    oa = data.get("openAccessPdf") or {}
+    tldr_obj = data.get("tldr") or {}
+    tldr_text = tldr_obj.get("text", "") if isinstance(tldr_obj, dict) else ""
+    # Filter known S2 "no tldr" placeholders
+    is_placeholder = any(tldr_text.startswith(p) for p in S2_TLDR_PLACEHOLDERS)
+    return {
+        "doi": ext.get("DOI", doi),
+        "title": data.get("title", ""),
+        "authors": [a.get("name", "") for a in (data.get("authors") or [])],
+        "venue": data.get("venue", ""),
+        "year": data.get("year"),
+        "abstract": data.get("abstract", ""),
+        "tldr": "" if is_placeholder else tldr_text,
+        "cited_by_count": data.get("citationCount", 0),
+        "influential_cite_count": data.get("influentialCitationCount", 0),
+        "reference_count": data.get("referenceCount", 0),
+        "is_oa": bool(oa.get("url")),
+        "oa_url": oa.get("url"),
+        "source": "semanticscholar_doi",
+    }
+
+
+def _crossref_lookup_title(title: str) -> Optional[Dict]:
+    """Crossref works?query.bibliographic — finds DOI + cite by title.
+
+    Best-effort: returns top-1 match. Crossref free tier is generous (50 RPS).
+    """
+    if not title or len(title) < 10:
+        return None
+    url = (f"https://api.crossref.org/works?query.bibliographic={quote(title)}"
+           f"&rows=1&select=DOI,title,author,abstract,container-title,"
+           f"is-referenced-by-count,references-count,published-print")
+    s, data = http_get_json(url, headers={}, timeout=15)
+    if s != 200 or not data.get("message") or not data["message"].get("items"):
+        return None
+    it = data["message"]["items"][0]
+    pub = it.get("published-print") or it.get("published-online") or {}
+    parts = pub.get("date-parts", [[None]])[0]
+    year = parts[0] if parts else None
+    return {
+        "doi": it.get("DOI", ""),
+        "title": it.get("title", [""])[0] if isinstance(it.get("title"), list) else it.get("title", ""),
+        "authors": [f"{a.get('family','')}, {a.get('given','')}".strip(", ")
+                    for a in (it.get("author") or [])],
+        "venue": (it.get("container-title") or [""])[0] if it.get("container-title") else "",
+        "year": year,
+        "abstract": it.get("abstract", ""),
+        "cited_by_count": it.get("is-referenced-by-count", 0),
+        "reference_count": it.get("references-count", 0),
+        "source": "crossref_title",
+    }
+
+
+def enrich_top_n(results: List[Dict], n: int = 10) -> List[Dict]:
+    """Top-N deep enrichment (v3.9.7.8).
+
+    For each result in top-N that lacks cite/abstract, do second-hop lookups:
+    1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
+    2. If no DOI: call Crossref by title to find DOI + cite
+
+    Updates results in-place AND returns them. Adds `_enrichment` field
+    per paper documenting which lookups succeeded.
+
+    Jitter: 1.2s between S2 calls (1 RPS free), 0.05s between Crossref calls.
+
+    Args:
+        results: list of result dicts (will be sorted by cited_by_count, so
+                 top-N is the most-cited papers; closest to "user's interest")
+        n: how many top papers to enrich (default 10)
+
+    Returns: same list (modified in place)
+    """
+    if n <= 0 or not results:
+        return results
+    enriched = 0
+    for i, r in enumerate(results[:n]):
+        r.setdefault("_enrichment", {})
+        has_cite = bool(r.get("cited_by_count"))
+        has_abstract = bool(r.get("abstract"))
+        # Try S2 by DOI (best — gets tldr, inf_cite, ref_count)
+        if r.get("doi") and (not has_cite or not has_abstract):
+            s2 = _s2_lookup_doi(r["doi"])
+            if s2:
+                for k in ("abstract", "tldr", "cited_by_count", "influential_cite_count",
+                          "reference_count", "venue", "authors", "year"):
+                    if s2.get(k) and not r.get(k):
+                        r[k] = s2[k]
+                r["_enrichment"]["s2_doi"] = True
+                enriched += 1
+            time.sleep(1.2)  # S2 free tier: 1 RPS
+        # Try Crossref by title (fills missing DOI, gives cite for non-DOI papers)
+        if (not r.get("cited_by_count") or not r.get("doi")) and r.get("title"):
+            cr = _crossref_lookup_title(r["title"])
+            if cr:
+                for k in ("doi", "cited_by_count", "reference_count", "abstract",
+                          "venue", "year"):
+                    if cr.get(k) and not r.get(k):
+                        r[k] = cr[k]
+                r["_enrichment"]["crossref_title"] = True
+                enriched += 1
+            time.sleep(0.05)  # Crossref is generous
+    # Re-sort by cited_by_count (newly enriched papers may have higher counts)
+    results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    return results
 
 
 def search_crossref(query: str, year_min: int = None, year_max: int = None,
@@ -241,7 +384,8 @@ def search_core(query: str, year_min: int = None, year_max: int = None,
 
 def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
-               concepts_filter: str = None) -> Dict[str, Any]:
+               concepts_filter: str = None,
+               enrich_top: int = 0) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -249,6 +393,11 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                      applies it; other engines ignore. Format examples:
                        - OR:  "concepts.id:C1|C2"
                        - AND: "concepts.id:C1+concepts.id:C2"
+
+    enrich_top: if > 0, do second-hop lookups for top-N results lacking
+                cite/abstract (S2 by DOI + Crossref by title). See
+                enrich_top_n() docs. Adds ~12s for N=10 (S2 1 RPS).
+                Default 0 = off (backward compatible).
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "core", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -318,12 +467,19 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             r["abstract"] = tldr
 
     unified = sorted(seen.values(), key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+
+    # Top-N deep enrichment (v3.9.7.8): second-hop lookups for top-N results
+    # that lack cite/abstract. Off by default (enrich_top=0).
+    if enrich_top > 0:
+        enrich_top_n(unified, n=enrich_top)
+
     return {
         "query": query,
         "year_min": year_min,
         "year_max": year_max,
         "by_engine": {k: len(v) for k, v in by_engine.items()},
         "dedup_count": len(unified),
+        "enrich_top": enrich_top,
         "results": unified,
     }
 

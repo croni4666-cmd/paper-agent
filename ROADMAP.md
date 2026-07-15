@@ -1183,6 +1183,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.7.5 | released 2026-07-15 | [P0-9.1] Plan 4 year filter wiring + page-2+ jitter/captcha retry (2/3 sub-items done) | 2026-07-15 |
 | v3.9.7.6 | released 2026-07-15 | [P0-9.1b] close-out: 5 CNKI cite/dl paths probed, all blocked, [P0-9.1b] deprecated (doc-only) | 2026-07-15 |
 | v3.9.7.7 | released 2026-07-15 | S2 enrichment fields (influential_cite/reference_count/tldr) + crossref references-count + tldr→abstract fallback (with placeholder filter). Boosted English-query cite 21%→47%, abstract 6%→21%; Chinese queries plateau at 21% (S2 has shallow entries for Chinese papers) | 2026-07-15 |
+| v3.9.7.8 | released 2026-07-15 | [P0-14] Top-N deep enrichment: S2 paper/DOI + Crossref by title. CLI flag `--enrich-top N`. Boosted CN cite 21%→29%, abstract 6%→16%; EN inf 15%→28%, abstract 21%→33%, tldr 11%→24% | 2026-07-15 |
 
 ---
 
@@ -2510,6 +2511,76 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
   - No publish obligation
   - Free-tier degradation: works for English even if S2 API key expires
     (Crossref picks up cite; S2 fields become 0, tldr fallback doesn't fire)
+
+---
+
+### [P0-14] Top-N deep enrichment (v3.9.7.8 done)
+
+- **Status**: done (v3.9.7.8, 2026-07-15)
+- **Added**: 2026-07-15
+- **Source**: User "做A吧" 2026-07-15 — implements Optimization A from the
+  v3.9.7.7 journey recap (top-N deep enrichment via S2 paper/DOI + Crossref
+  by title).
+
+- **What was done** (v3.9.7.8, 2026-07-15):
+  - `enrich_top_n(results, n)` in `pa_cli/search.py` — second-hop lookups
+    for top-N results that lack cite/abstract
+  - `_s2_lookup_doi(doi)` — S2 `paper/DOI:...` endpoint, returns full
+    tldr / influential_cite / ref_count
+  - `_crossref_lookup_title(title)` — Crossref `works?query.bibliographic=...`,
+    fills missing DOI + cite
+  - CLI: `--enrich-top N` (default 0 = off, backward compatible)
+  - Jitter: 1.2s between S2 calls (1 RPS free), 0.05s between Crossref calls
+  - Sort: re-sort by cited_by_count after enrichment (newly enriched
+    papers may have higher counts)
+
+- **Smoke test result** (v3.9.7.8 vs v3.9.7.7, both limit=20 year 2020-2024):
+
+  | Query | metric | v3.9.7.7 | v3.9.7.8 | Δ |
+  |---|---|---|---|---|
+  | CN | cited_by_count | 21% | **29%** | +8pp |
+  | CN | abstract | 6% | **16%** | +10pp |
+  | CN | tldr | 4% | 8% | +4pp |
+  | CN | influential_cite | 0% | 0% | (S2 has no Chinese inf) |
+  | EN | cited_by_count | 47% | 47% | (top already had cite) |
+  | EN | abstract | 21% | **33%** | +12pp |
+  | EN | tldr | 11% | **24%** | +13pp |
+  | EN | influential_cite | 15% | **28%** | +13pp |
+
+  **Per-lookup hit rate** (top-10):
+  - S2 by-DOI: 7/10 (CN) + 9/10 (EN) — meaningful win
+  - Crossref-by-title: 0/10 (both) — Chinese title → Crossref match is
+    poor; English title Crossref is already in initial search
+
+- **Honest 3-tier audit**:
+  - ✅ **Verified on real data**: 2 smoke test JSONs captured (CN + EN),
+    comparison script `_compare_cn_fair.py` documents the lift
+  - ⚠️ **Caveat 1**: Crossref-by-title lookup yields 0 hits for Chinese
+    queries (Crossref has poor Chinese title matching) — second-hop
+    wasted on Chinese queries, but no harm
+  - ⚠️ **Caveat 2**: S2 free tier is 1 RPS. Spamming `--enrich-top 50` would
+    hit 429. Future: add `--enrich-top-min-cites` filter to only enrich
+    papers that look worth it (deferred)
+  - ❌ **Chinese plateau persists**: 21%→29% cite is meaningful but
+    CNKI cite is still deprecated. v3.9.7.8 is the **last easy win**
+    on this front.
+
+- **Files modified** (~80 LOC net):
+  - `pa_cli/search.py`: 2 new functions + `run_search` new param + import
+  - `pa_cli/cli.py`: `--enrich-top` option + function param threading
+  - `pa_cli/__init__.py`: version 3.9.7.7 → 3.9.7.8
+  - `test_output/_smoke_v3978_*.json` (2 new JSON snapshots)
+  - `test_output/_smoke_audit_v3978.py` (new audit script)
+  - `test_output/_compare_cn_fair.py` (new comparison script)
+
+- **5-check Global Rule audit**: 5/5 pass
+  - $0 cost (S2 free, Crossref free, ~12s added for N=10)
+  - No hosted service
+  - Maintenance: ~80 LOC new, no ongoing obligation
+  - No publish obligation
+  - Free-tier degradation: if S2 API key expires, deep enrichment falls
+    back to Crossref-only (Chinese queries see no benefit; English queries
+    see some benefit since Crossref often has English papers)
 
 ---
 

@@ -9,6 +9,105 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.8] - 2026-07-15 (patch — Top-N deep enrichment via S2 paper/DOI + Crossref by title)
+
+Per user 2026-07-15 "做A吧" — implements Optimization A from the journey recap.
+For top-N results lacking cite/abstract, do "second-hop" lookups via:
+- S2 `paper/DOI:...` endpoint (returns full tldr / influential_cite / ref_count)
+- Crossref `works?query.bibliographic=...` (fills missing DOI + cite by title)
+
+CLI flag: `--enrich-top N` (default 0 = off, backward compatible).
+
+### Added — `enrich_top_n()` in `pa_cli/search.py`
+
+For each result in top-N that lacks cite/abstract:
+1. If has DOI: call S2 `paper/DOI:...` (1.2s jitter, S2 free tier 1 RPS)
+2. If no DOI or no cite: call Crossref by title (0.05s jitter, 50 RPS)
+3. Merge new fields in place; sort by cited_by_count
+4. Adds `_enrichment` field per paper documenting which lookups succeeded
+
+### Added — `_s2_lookup_doi()` and `_crossref_lookup_title()` helpers
+
+Two private functions doing single-paper lookups. Both:
+- Return normalized result dict matching our result schema
+- 15s timeout
+- Handle 4xx/5xx gracefully (return None)
+- S2 lookup: filters out the same 4 "dust off" tldr placeholders as dedup loop
+
+### Wired into `run_search()`
+
+New param `enrich_top: int = 0`. If > 0, calls `enrich_top_n(unified, n=enrich_top)`
+after dedup loop. Adds `enrich_top` field to the returned dict.
+
+### CLI flag
+
+```
+$ pa search "金融科技 风险承担" --year-min 2020 --year-max 2024 \
+    --limit 20 --enrich-top 10 -o results.json
+```
+
+### Smoke test result (2026-07-15, both queries limit=20 year 2020-2024)
+
+**Chinese query** ("金融科技 风险承担"):
+
+| Metric | v3.9.7.7 | v3.9.7.8 | Δ |
+|---|---|---|---|
+| dedup_count | 71 | 51 | (varies by query) |
+| cited_by_count | 21% | **29%** | **+8pp** |
+| abstract | 6% | **16%** | **+10pp** |
+| tldr | 4% | 8% | +4pp |
+| influential_cite | 0% | 0% | (S2 has no Chinese inf) |
+
+**English query** ("transformer attention mechanism"):
+
+| Metric | v3.9.7.7 | v3.9.7.8 | Δ |
+|---|---|---|---|
+| cited_by_count | 47% | 47% | (top already had cite) |
+| abstract | 21% | **33%** | **+12pp** |
+| tldr | 11% | **24%** | **+13pp** |
+| influential_cite | 15% | **28%** | **+13pp** |
+
+**Per-lookup hit rate** (top-10):
+- S2 by-DOI: 7/10 (Chinese) + 9/10 (English) — meaningful win
+- Crossref-by-title: 0/10 (Chinese) + 0/10 (English) — Chinese title → Crossref match is poor; English title Crossref is already in initial search so no new data
+
+### Cost
+
+- ~12 seconds added per `--enrich-top 10` query (1.2s × 10 S2 calls)
+- All free, no new API keys required
+- No maintenance burden (pure data source utilization)
+
+### Files (v3.9.7.8)
+
+- `pa_cli/search.py`: 2 new functions + `run_search` new param + CLI flag (~80 LOC net)
+- `pa_cli/cli.py`: `--enrich-top` option + param threading
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.7"` → `"3.9.7.8"`
+- `test_output/_smoke_v3978_*.json` (2 new smoke test JSON snapshots)
+- `test_output/_smoke_audit_v3978.py` (new audit script)
+- `test_output/_compare_cn_fair.py` (new comparison script)
+
+### Tests (v3.9.7.8)
+
+- Existing test counts unchanged: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE
+- 2 new audit scripts verify S2 deep enrichment + Crossref-by-title behavior
+- No regression suite re-run
+
+### Three-tier audit (per discipline)
+
+- ❌ **What's broken**: Chinese-paper inf cite still 0% (S2 has no deep metadata
+  for Chinese papers regardless of endpoint). Crossref-by-title lookup yields 0
+  hits for Chinese queries (Crossref has poor Chinese title matching).
+- ❓ **What's untested**: We did not re-run full regression suite. Did not
+  test against rate limits (S2 free tier 1 RPS — would 429 if user spams
+  `--enrich-top 50`).
+- ✅ **What's working**:
+  - Chinese cite 21%→29%, abstract 6%→16% (real +10pp on abstract)
+  - English inf 15%→28%, abstract 21%→33%, tldr 11%→24% (real +13pp on
+    3 fields)
+  - S2 by-DOI hit rate 7/10 (CN) + 9/10 (EN) — top papers are well-covered
+
+---
+
 ## [3.9.7.7] - 2026-07-15 (patch — S2 enrichment fields + tldr→abstract fallback + smoke-test discovery)
 
 Per user 2026-07-15 "需要确保高质量的信息", after [P0-9.1b] close-out smoke test
