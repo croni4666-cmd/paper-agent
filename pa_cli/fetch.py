@@ -420,25 +420,224 @@ def fetch_annas_md5(md5_path: str, out_path: str = None) -> Dict[str, Any]:
 # CNKI 单篇 detail page
 # ─────────────────────────────────────────────────────────────────
 def fetch_cnki_detail(cnki_id: str, out_path: str = None) -> Dict[str, Any]:
-    """CNKI 单篇 detail page (xueshu789 cookies required, 4-8h TTL)."""
+    """CNKI 单篇 PDF download (xueshu789 cookies required, 4-8h TTL).
+
+    v3.9.8.3 实装 (2026-07-15):
+      1. Check cookies fresh (< 4h)
+      2. Bootstrap via xueshu789 (same pattern as CNKIClient.search)
+      3. If cnki_id looks like a DOI: search for it, get cnki_url
+      4. page.goto(cnki_url) detail page (try proxy IP domain first, fallback to kns.cnki.net)
+      5. Find PDF download link in detail HTML
+      6. Trigger page.expect_download() and save to out_path
+
+    KNOWN LIMITATIONS (verified 2026-07-15 E2E):
+      - 2-cookie sessions (only PHPSESSID + user) are insufficient for detail page access.
+        v3.9.7.4 used 4 cookies (PHPSESSID + user + entrys + expires); the 2-cookie
+        minimal set triggers kns.cnki.net's anti-bot Vue SPA (安全验证 page).
+      - Real CNKI downloads go through bar.cnki.net/bar/download/order (paid order
+        system, requires institutional subscription OR CAPTCHA per-download). Out of
+        hobbyist scope.
+      - xueshu789 proxy IP (120.53.241.46:5888) only proxies search (/kns8s/brief/grid)
+        and brief navigation; not detail page or download.
+      - Result: fetch_cnki_detail() works for SEARCH-side metadata only; PDF download
+        remains blocked unless user has full cookies + bar.cnki.net access.
+
+    Args:
+        cnki_id: either a CNKI internal filename (e.g. "CSDB202607008") OR a DOI
+                 (e.g. "10.3969/j.issn.1003-9031.2022.04.008"). If DOI, will search first.
+        out_path: optional path to save PDF (else return bytes)
+    """
     try:
         from . import cnki_channel
     except ImportError:
         return {"error": E_CNKI_NO_COOKIES, "message": "cnki_channel not available",
                 "hint": "Set up CNKI cookies first"}
     if not cnki_channel.cookies_exist():
-        return {"error": E_CNKI_NO_COOKIES, "message": "No CNKI cookies",
+        return {"error": E_CNKI_NO_COOKIES, "message": "No CNKI cookies file",
                 "hint": "Run Export-CNKICookies.ps1"}
     age = cnki_channel.cookie_age_hours()
     if age is None or age > 4.0:
         return {"error": E_CNKI_NO_COOKIES,
                 "message": f"CNKI cookies {age:.1f}h old (>4h TTL)" if age else "cookie age unknown",
                 "hint": "Re-run Export-CNKICookies.ps1"}
-    # TODO: 走 cnki_channel 现有 client 拿 detail page
-    # 暂时 stub: 让 caller 用 cnki_channel 直接拿
-    return {"error": "fetch_cnki_not_implemented",
-            "message": "CNKI detail fetch pending — use cnki_channel directly",
-            "hint": "Pull request welcome"}
+
+    # If cnki_id is a DOI, search for the matching paper first
+    cnki_url = None
+    cnki_filename = None
+    if "10." in cnki_id and "/" in cnki_id:
+        # Looks like a DOI — search for it
+        # We need proxy_base, but CNKIClient.search opens a new browser.
+        # Simpler: search for the DOI substring, get the first match's cnki_url.
+        try:
+            from playwright.sync_api import sync_playwright
+            client = cnki_channel.CNKIClient()
+            client.load()
+            with sync_playwright() as pw:
+                browser = pw.chromium.launch(
+                    headless=True,
+                    args=['--no-sandbox', '--disable-blink-features=AutomationControlled'],
+                )
+                ctx = browser.new_context(
+                    user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                "Chrome/120.0.0.0 Safari/537.36"),
+                    accept_downloads=True,
+                )
+                ctx.add_cookies(client._cookies)
+                page = ctx.new_page()
+                try:
+                    proxy_base = client._bootstrap_in_context(ctx, page)
+                    # Search by DOI field (CNKI field code SU=主题, but DOI is not searchable
+                    # via SU; we use FT=全文 for fulltext search)
+                    query_json = client._build_query_json(
+                        cnki_id, "FT", "WD0FTY92", "CROSSDB", None, None)
+                    html = client._post_brief_page_in_context(
+                        ctx, page, proxy_base, query_json, 1)
+                    results = client._parse_brief_response(html)
+                    for r in results:
+                        if r.get("doi") and cnki_id.lower() in r["doi"].lower():
+                            cnki_url = r.get("cnki_url")
+                            cnki_filename = r.get("cnki_filename")
+                            break
+                    if not cnki_url and results:
+                        # Fallback: take first result
+                        cnki_url = results[0].get("cnki_url")
+                        cnki_filename = results[0].get("cnki_filename")
+                finally:
+                    try:
+                        browser.close()
+                    except Exception:
+                        pass
+        except Exception as e:
+            return {"error": "fetch_cnki_search_failed",
+                    "message": f"DOI search failed: {str(e)[:200]}",
+                    "hint": "Try passing cnki_filename directly instead of DOI"}
+        if not cnki_url:
+            return {"error": "fetch_cnki_not_found",
+                    "message": f"DOI {cnki_id} not found in CNKI",
+                    "hint": "CNKI may not have this paper, or cookies need refresh"}
+    else:
+        # Treat as cnki_filename
+        cnki_filename = cnki_id
+        cnki_url = f"https://kns.cnki.net/kcms2/article/abstract?v={cnki_filename}"
+
+    # Now visit detail page and find PDF link
+    try:
+        from playwright.sync_api import sync_playwright
+        client = cnki_channel.CNKIClient()
+        if not client._cookies:
+            client.load()
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(
+                headless=True,
+                args=['--no-sandbox', '--disable-blink-features=AutomationControlled'],
+            )
+            ctx = browser.new_context(
+                user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                            "AppleWebKit/537.36 (KHTML, like Gecko) "
+                            "Chrome/120.0.0.0 Safari/537.36"),
+                accept_downloads=True,
+            )
+            ctx.add_cookies(client._cookies)
+            page = ctx.new_page()
+            try:
+                proxy_base = client._bootstrap_in_context(ctx, page)
+                # Visit detail page
+                # v3.9.8.3 fix: ALWAYS reconstruct on proxy_base (kns.cnki.net
+                # domain has anti-bot security check that rejects xueshu789
+                # cookies — see debug/last_cnki_detail.html after first run).
+                detail_url = None
+                if cnki_url:
+                    if "kns.cnki.net" in cnki_url:
+                        # Reconstruct on proxy IP
+                        # E.g. https://kns.cnki.net/kcms2/article/abstract?v=X
+                        #   → http://{proxy}/kcms2/article/abstract?v=X
+                        path = cnki_url.split("kns.cnki.net", 1)[1]
+                        detail_url = f"{proxy_base.rstrip('/')}{path}"
+                    elif cnki_url.startswith("http"):
+                        detail_url = cnki_url
+                    else:
+                        detail_url = f"{proxy_base.rstrip('/')}/{cnki_url.lstrip('/')}"
+                page.goto(detail_url, timeout=30_000, wait_until="domcontentloaded")
+                # Find PDF/Caj download link in detail page
+                # Common patterns: /kcms2/article/vvip/{filename}, /kns8s/download, etc.
+                pdf_url = None
+                html = page.content()
+                # Save HTML for debugging (overwritten on each call)
+                try:
+                    debug_path = Path(os.path.expanduser("~")) / ".paper-agent" / "debug" / "last_cnki_detail.html"
+                    debug_path.parent.mkdir(parents=True, exist_ok=True)
+                    debug_path.write_text(html, encoding="utf-8")
+                except Exception:
+                    pass
+                # Try vvip link
+                import re as _re
+                m = _re.search(r'href=["\']([^"\']*vvip[^"\']+)', html, _re.IGNORECASE)
+                if m:
+                    pdf_url = m.group(1)
+                # Try download link
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']*download[^"\']+)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try explicit PDF link
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']+\.pdf[^"\']*)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try Caj link (CNKI proprietary format)
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']*caj[^"\']*)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try kns.cnki.net direct download path
+                if not pdf_url:
+                    m = _re.search(r'["\']([^"\']*(?:kcms2|kns8s)[^"\']*(?:download|file|article/abstract)[^"\']*)',
+                                    html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                if not pdf_url:
+                    return {"error": "fetch_cnki_no_pdf_link",
+                            "message": f"Detail page ({detail_url}) loaded but no PDF link found",
+                            "hint": f"Detail HTML saved to {debug_path}. Inspect for download link."}
+                # Resolve relative URL
+                if pdf_url.startswith("/"):
+                    pdf_url = f"{proxy_base.rstrip('/')}{pdf_url}"
+                elif not pdf_url.startswith("http"):
+                    pdf_url = f"{proxy_base.rstrip('/')}/{pdf_url.lstrip('/')}"
+                # Trigger download
+                with page.expect_download(timeout=30_000) as dl_info:
+                    # Use the same page (cookies + proxy context preserved)
+                    page.goto(pdf_url, timeout=30_000, wait_until="domcontentloaded")
+                download = dl_info.value
+                # Save to out_path
+                if out_path:
+                    from pathlib import Path as _P
+                    p = _P(out_path)
+                    p.parent.mkdir(parents=True, exist_ok=True)
+                    download.save_as(str(p))
+                    saved_path = str(p.resolve())
+                else:
+                    # Save to temp file
+                    import tempfile
+                    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
+                    download.save_as(tmp.name)
+                    saved_path = tmp.name
+                return {"source": "cnki",
+                        "cnki_filename": cnki_filename,
+                        "cnki_url": cnki_url,
+                        "pdf_url": pdf_url,
+                        "path": saved_path,
+                        "size": _P(saved_path).stat().st_size if out_path else None}
+            finally:
+                try:
+                    browser.close()
+                except Exception:
+                    pass
+    except Exception as e:
+        return {"error": "fetch_cnki_failed",
+                "message": str(e)[:300],
+                "hint": "Check cookies freshness, network, or paper access permissions"}
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -452,6 +651,15 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
              or dict with 'error' on failure.
     """
     if doi:
+        # v3.9.8.3: Chinese journal DOI heuristic — try CNKI first to save 4 fallback calls
+        # CN style DOI like 10.3969/j.issn.XXXX-XXXX or 10.16525/j.cnki.XXXX
+        is_cn_journal = (doi.startswith("10.3969/") or doi.startswith("10.16525/")
+                          or "/j.cnki." in doi or "/j.issn." in doi)
+        if is_cn_journal and prefer in ("cnki", "auto"):
+            r = fetch_cnki_detail(doi, out_path)
+            if "error" not in r:
+                return r
+            # Fall through to other paths if CNKI fails
         if prefer in ("scihub", "auto"):
             # 优先 Unpaywall (合法 + 稳定)
             r = fetch_unpaywall_doi(doi, out_path)
