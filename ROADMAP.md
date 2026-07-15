@@ -1184,6 +1184,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.7.6 | released 2026-07-15 | [P0-9.1b] close-out: 5 CNKI cite/dl paths probed, all blocked, [P0-9.1b] deprecated (doc-only) | 2026-07-15 |
 | v3.9.7.7 | released 2026-07-15 | S2 enrichment fields (influential_cite/reference_count/tldr) + crossref references-count + tldr→abstract fallback (with placeholder filter). Boosted English-query cite 21%→47%, abstract 6%→21%; Chinese queries plateau at 21% (S2 has shallow entries for Chinese papers) | 2026-07-15 |
 | v3.9.7.8 | released 2026-07-15 | [P0-14] Top-N deep enrichment: S2 paper/DOI + Crossref by title. CLI flag `--enrich-top N`. Boosted CN cite 21%→29%, abstract 6%→16%; EN inf 15%→28%, abstract 21%→33%, tldr 11%→24% | 2026-07-15 |
+| v3.9.7.9 | released 2026-07-15 | Bugfix: tldr=None guard in `_s2_lookup_doi` + dedup loop. Real-query smoke test on 3 academic queries shows cite 30-46% (vs demo query's 21% — correction to "21% plateau" framing) | 2026-07-15 |
 
 ---
 

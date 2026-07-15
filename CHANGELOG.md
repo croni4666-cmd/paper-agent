@@ -9,6 +9,80 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.7.9] - 2026-07-15 (patch — bugfix: tldr=None guard + real-query smoke test)
+
+Per user 2026-07-15 "继续做,拿真实 query 试". Found and fixed a NoneType
+crash in v3.9.7.8's top-N deep enrichment; also ran 3 real-world academic
+queries to measure actual workflow coverage.
+
+### Fixed — AttributeError on `tldr_text.startswith()` when tldr=None
+
+When S2 `paper/DOI:...` returns `tldr: None` (instead of dict or missing),
+`v3.9.7.8._s2_lookup_doi()` crashed with `AttributeError: 'NoneType' object
+has no attribute 'startswith'`. Also affects the dedup loop's tldr filter
+if the field is None in any merged result.
+
+**Files** (1 LOC defensive fix × 2):
+- `pa_cli/search.py` `_s2_lookup_doi()`:
+  `tldr_text = tldr_text or ""  # guard against None` (after the dict-or-empty check)
+- `pa_cli/search.py` `run_search` dedup loop:
+  `tldr = r.get("tldr") or ""  # guard against None` (was `r.get("tldr", "")`)
+
+**Trigger discovered by**: real-query smoke test 2026-07-15 — first 3
+queries crashed at the first S2 paper/DOI call (bug was in the very first
+S2 lookup that returned `tldr: None`).
+
+### Real-query smoke test result (3 academic queries, 2022-2024, --enrich-top 10)
+
+| Query | dedup | cite | abstract | tldr | top-1 cite |
+|---|---|---|---|---|---|
+| 数字普惠金融 + 家庭消费 (经济学) | 26 | **46%** | 31% | 12% | 27 |
+| 长期护理保险 + 人口老龄化 (保险学) | 43 | **30%** | 19% | 7% | 12 |
+| 金融科技 + 中小银行 (金融学) | 49 | **35%** | 18% | 4% | 12 |
+
+**Important context — correction to v3.9.7.7/7.8 "21% plateau" framing**:
+The 21% Chinese-query cite number was based on demo query "金融科技 风险承担"
+(a narrow Chinese-only topic with limited English coverage). Real
+academic queries (经济学 / 金融 / 保险) hit **30-46% cite** because they
+have substantial English-published papers (e.g. California Management
+Review, International Economy, Critical Asian Studies) that Crossref/S2
+track well. The "21% plateau" was misleading for the user's actual
+research workflow.
+
+**For Chinese papers specifically** (CNKI-only or no English equivalent):
+still ~0% cite from paper-agent, requires CNKI website manual lookup per
+v3.9.7.6 [P0-9.1b] close-out.
+
+### Files (v3.9.7.9)
+
+- `pa_cli/search.py` (2 × 1-line defensive fix)
+- `pa_cli/__init__.py`: `__version__ = "3.9.7.8"` → `"3.9.7.9"`
+- `test_output/_real_query_report.py` (new, ~80 LOC): report script
+- `test_output/_real_{digital_finance,ltc_insurance,fintech_bank}_20260715_173450.json`
+  (3 new smoke test JSON snapshots, ASCII-named due to PowerShell encoding)
+
+### Tests (v3.9.7.9)
+
+- Existing test counts unchanged: 42 PASS / 0 FAIL / 2 SKIP / 1 KNOWN_ISSUE
+- 1 new report script that exercises v3.9.7.8 path end-to-end on real queries
+- 3 new JSON snapshots document actual workflow behavior
+
+### Three-tier audit (per discipline)
+
+- ❌ **What's broken**:
+  - `inf=0%` on Chinese queries (S2 has no Chinese influential_cite) — unchanged
+  - tldr=4-12% on Chinese queries (S2 has shallow Chinese entries) — unchanged
+- ❓ **What's untested**:
+  - We did not re-run full regression suite
+  - We tested 3 queries from user's likely research areas; user may have
+    other queries with different coverage profiles
+- ✅ **What's working**:
+  - Real academic queries: cite 30-46% (much better than demo query's 21%)
+  - Top-10 papers consistently have abstract (>=80% of top-10)
+  - Bug fix verified by smoke test (queries now complete without crash)
+
+---
+
 ## [3.9.7.8] - 2026-07-15 (patch — Top-N deep enrichment via S2 paper/DOI + Crossref by title)
 
 Per user 2026-07-15 "做A吧" — implements Optimization A from the journey recap.

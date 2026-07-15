@@ -77,6 +77,7 @@ def _s2_lookup_doi(doi: str) -> Optional[Dict]:
     oa = data.get("openAccessPdf") or {}
     tldr_obj = data.get("tldr") or {}
     tldr_text = tldr_obj.get("text", "") if isinstance(tldr_obj, dict) else ""
+    tldr_text = tldr_text or ""  # guard against None
     # Filter known S2 "no tldr" placeholders
     is_placeholder = any(tldr_text.startswith(p) for p in S2_TLDR_PLACEHOLDERS)
     return {
@@ -461,7 +462,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "It\u2019s time to dust off the sledgehammers",
     )
     for r in seen.values():
-        tldr = r.get("tldr", "")
+        tldr = r.get("tldr") or ""  # guard against None
         if (not r.get("abstract") and tldr
                 and not any(tldr.startswith(p) for p in S2_TLDR_PLACEHOLDERS)):
             r["abstract"] = tldr
