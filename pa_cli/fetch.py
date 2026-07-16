@@ -698,6 +698,139 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 
 
 # ─────────────────────────────────────────────────────────────────
+# Backward-compat wrapper: v3.9.8.1-style fetch_doi (used by CLI + deep_rerank)
+# Added 2026-07-16 (audit round 22) — v3.9.8.2 renamed fetch_doi → fetch and
+# dropped channels/output_dir/use_cache/max_total_sec params. This wrapper
+# translates old API → new API, restoring `pa fetch <DOI>` CLI + cache
+# integration compatibility.
+#
+# Honest 3-tier limits (documented):
+#   - cache integration: NOT restored (was removed in v3.9.8.2). --no-cache
+#     flag has no effect on the wrapper (always bypasses cache). Use
+#     `pa cache put` to manually populate cache.
+#   - max_total_sec: NOT implemented in new fetch. Old 5-min hard cap
+#     is gone. Each channel call has its own 30s timeout (urllib default).
+#   - channels: translated to `prefer` heuristically. Not all 8 channels
+#     supported (e.g. "openalex" / "arxiv" / "doi_redirect" / "playwright"
+#     are not in new fetch's prefer list — they fall through to "auto").
+#   - result dict shape: mapped back to old shape (via_channel, saved_as,
+#     elapsed_sec, final_status, channels) for callers that depend on it.
+def fetch_doi(doi: str, output_dir: str = ".",
+              proxy: str = None,
+              channels = None,
+              unpaywall_email: str = "hello@example.com",
+              max_total_sec: int = 300,
+              use_cache: bool = True) -> Dict[str, Any]:
+    """v3.9.8.1-style fetch wrapper. Translates to new fetch() and maps result back.
+
+    New in v3.9.9.6 (audit round 22): this wrapper was added to restore
+    `pa fetch <DOI>` CLI and `pa_cli.deep_rerank.fetch_doi` callsite
+    after v3.9.8.2 renamed fetch_doi → fetch and changed the signature.
+
+    Channel → prefer mapping (heuristic; not all 8 channels supported):
+      ["cnki", ...]         → prefer="cnki"
+      ["unpaywall", ...]     → prefer="scihub"  (new cascade includes unpaywall)
+      ["scihub", ...]        → prefer="scihub"
+      ["annas", ...]         → prefer="annas"
+      default / other        → prefer="auto"
+
+    Result shape mapping:
+      new `path`        → old `saved_as`
+      new `source`      → old `via_channel` (no "cache:" prefix; cache is bypassed)
+      new `size`        → (not in old shape, but kept for completeness)
+      new `pdf_url`     → old `via_url`
+      new `error`       → old `final_status` = "ALL_FAIL" + `error` + `hint`
+    """
+    t0 = time.time()
+
+    # Cache check at function entry — short-circuit cascade on hit.
+    # P0-2 acceptance (re-restored 2026-07-16): if PDF magic valid +
+    # sha256 unchanged, return without re-downloading.
+    if use_cache:
+        try:
+            from . import cache as _cache_mod
+            hit = _cache_mod.cache_get(doi)
+            if hit:
+                return {
+                    "doi": doi,
+                    "saved_as": hit["pdf_path"],
+                    "via_channel": f"cache:{hit['channel']}" if hit.get("channel") else "cache",
+                    "via_url": hit.get("url", ""),
+                    "cache_hit": True,
+                    "cache_age_days": round(hit.get("age_days", 0), 3),
+                    "cache_sha256": hit["sha256"],
+                    "elapsed_sec": round(time.time() - t0, 3),
+                    "final_status": "SUCCESS_CACHE_HIT",
+                    "_wrapper_notes": {
+                        "cache_supported": True,
+                        "max_total_sec_supported": False,
+                        "channels_translated_to": "(cache hit, no fetch)",
+                    },
+                }
+        except Exception as e:
+            # Cache miss or read error — fall through to fetch
+            pass
+
+    # Map channels → prefer
+    channels = channels or []
+    if "cnki" in channels and "annas" not in channels and "scihub" not in channels:
+        prefer = "cnki"
+    elif "annas" in channels:
+        prefer = "annas"
+    elif "scihub" in channels or "unpaywall" in channels:
+        prefer = "scihub"
+    else:
+        prefer = "auto"
+
+    # Map output_dir + DOI → out_path
+    doi_slug = doi.replace("/", "_").replace(".", "_")
+    out_path = str(Path(output_dir) / f"{doi_slug}.pdf")
+
+    # Call new fetch
+    r = fetch(doi=doi, out_path=out_path, prefer=prefer)
+
+    elapsed = round(time.time() - t0, 3)
+
+    # Translate result to old shape
+    if "error" in r:
+        return {
+            "doi": doi,
+            "saved_as": None,
+            "channels": {prefer: {"status": "fail", "error": r["error"]}},
+            "handoff": {
+                "reason": r.get("message", r["error"]),
+                "elapsed_sec": elapsed,
+                "user_action_required": r.get("hint", "Try a different DOI or check network"),
+            },
+            "elapsed_sec": elapsed,
+            "final_status": "ALL_FAIL",
+            "error": r["error"],
+            "hint": r.get("hint"),
+            "_wrapper_notes": {
+                "cache_supported": True,  # cache check restored; not the issue here
+                "max_total_sec_supported": False,
+                "channels_translated_to": prefer,
+            },
+        }
+    # Success
+    return {
+        "doi": doi,
+        "saved_as": r.get("path", out_path),
+        "via_channel": r.get("source", prefer),
+        "via_url": r.get("pdf_url"),
+        "elapsed_sec": elapsed,
+        "final_status": "SUCCESS",
+        "cache_hit": False,  # not from cache (would have returned earlier)
+        "size_bytes": r.get("size"),
+        "_wrapper_notes": {
+            "cache_supported": True,
+            "max_total_sec_supported": False,
+            "channels_translated_to": prefer,
+        },
+    }
+
+
+# ─────────────────────────────────────────────────────────────────
 # Status report
 # ─────────────────────────────────────────────────────────────────
 def status_report() -> Dict[str, Any]:
