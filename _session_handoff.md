@@ -11,7 +11,7 @@ paper-agent v3.9.8.4 (latest commit):
 
 | Dimension | Status | Notes |
 |---|---|---|
-| **Search (6 engines)** | ✅ Production | crossref + openalex + arxiv + semanticscholar + aminer + cnki |
+| **Search (7 engines)** | ✅ Production | crossref + openalex + arxiv + semanticscholar + aminer + cnki (CORE moved to `--engine core` explicit-only since v3.9.8.2) |
 | **CNKI search** | ✅ Works (v3.9.7.4+) | xueshu789 cookies required, 4h TTL |
 | **AMiner Chinese coverage** | ✅ +10.9pp cite lift on Chinese queries (verified v3.9.8.0) |
 | **Fetch (Unpaywall)** | ✅ Works (v3.9.8.2: brotli fix) | Email `developers@unpaywall.org` works; `paper-agent@mavis.local` does not |
@@ -44,6 +44,11 @@ Plus today's v3.9.8.4 commits (untracked log):
 - `test_output/_example_guide.md` (4/6 found mixed DOI+title example)
 - `Export-CNKICookies.ps1` (manual 4-cookie export)
 - `export_cnki_cookies.py` (automated 2-cookie export — DEPRECATED, use manual)
+
+**Post-handoff commits (new session `mvs_b4f54847...` on 2026-07-16):**
+- `eff49c5` docs(roadmap/changelog): sync to v3.9.8.4 — close doc-drift from 8.0-8.4 work
+  - ROADMAP.md: added v3.9.8.0-8.4 rows; capability snapshot 7 engines + fetch-batch; [P1-7] AMiner marked DONE
+  - CHANGELOG.md: added [3.9.8.4] top section; promoted 2 [Unreleased] → [3.9.8.2]/[3.9.8.3]
 
 ## 3. Key file paths
 
@@ -98,3 +103,45 @@ Then:
 - "Continue with [P3-1] pa judge" → start relevance labels
 - "Run pa fetch-batch for my real corpus" → need a list of titles/DOIs
 - "Test the new cookie export" → may need fresh cookies if 4h TTL expired
+
+## 8. Post-handoff actions (new session, 2026-07-16)
+
+After inheriting this handoff into session `mvs_b4f54847...`, the new session
+did the following doc-drift cleanup (committed as `eff49c5`):
+
+**ROADMAP.md (3 edits, 0 LOC code change)**:
+- Added v3.9.8.0/8.1/8.2/8.3/8.4 rows to "Versioned roadmap summary" table
+  (8.0 = AMiner engine; 8.1 = Unpaywall brotli intermediate; 8.2 = proxy +
+  CORE honest re-eval; 8.3 = CNKI fetch honest eval; 8.4 = `pa fetch-batch`)
+- Updated "Current capability snapshot" header to v3.9.8.4
+  - Multi-engine search: 6 → 7 engines
+  - Fetch PDF row: "8-channel" → "8-channel + proxy"
+  - Added "CNKI fetch-batch guide" row
+- "Future improvement candidates" header: post-v3.9.7.9 → post-v3.9.8.4
+- [P1-7] AMiner marked ✅ DONE in v3.9.8.0 (was "in-progress")
+
+**CHANGELOG.md (3 edits, 0 LOC code change)**:
+- Added new `[3.9.8.4] - 2026-07-16` section at top covering pa fetch-batch
+  + ROADMAP sync + session handoff doc
+- Promoted `[Unreleased] - 2026-07-15 (CNKI fetch ...)` → `[3.9.8.3]`
+- Promoted `[Unreleased] - 2026-07-15 (CORE cleanup ...)` → `[3.9.8.2]`
+
+**Honest caveat noted in new session (2026-07-16 09:55)**:
+- v3.9.8.0 (AMiner) and v3.9.8.1 (Unpaywall brotli) have no separate git
+  commits; the 8.2 commits `acca2a8` / `a242af8` / `5e3c41b` likely include
+  the 8.0/8.1 work (commit messages don't carry those version labels). If
+  you need exact per-version commit pointers, run
+  `git log --all --grep="aminer\|AMiner"` and `--grep="unpaywall\|Unpaywall"`
+  and check the date range 2026-07-15 19:00-22:00.
+
+## 9. Next session priorities (refreshed 2026-07-16)
+
+Same as §5, but with priority call:
+1. **[P2-5] pa build** (2-4h) — biggest user-visible win, fill the
+   "search→manuscript" gap. Recommended next if user asks "做 A 吧".
+2. **[P3-1] pa judge** (1-2h) — opportunistic data collection; re-probe
+   ML/DL rerank when n≥500.
+3. **Working tree cleanup** (30 min) — `pa.py` / `agent.py` /
+   `paper_fetcher.py` / `strip_legacy.py` (v1/v2 era) plus 50+
+   `test_output/_*.log/.txt` scratch files. User-noted flag, not urgent.
+4. **aminer-30day-eval cron** (auto, 2026-08-14) — decides AMiner API renewal.
