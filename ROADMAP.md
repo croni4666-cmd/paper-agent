@@ -1240,6 +1240,8 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.9 | released 2026-07-16 | [P2-5] `pa build` + `pa scaffold` manuscript typeset pipeline (pandoc + GB/T 7714 CSL). New files `pa_cli/build.py` (~265 LOC) + `pa_cli/scaffold.py` (~330 LOC) + bundled `chinese-gb7714-2005-numeric.csl` (15.4 KB). 10/10 unit tests pass. HTML/DOCX/GFM e2e verified; PDF requires xelatex (NOT installed on dev machine, pa build will print install hint) | 2026-07-16 |
 | v3.9.9.1 | released 2026-07-16 | [P3-1] `pa judge` relevance judgement collection (sqlite + 6 subcommands). New file `pa_cli/judge.py` (~420 LOC). 17/17 unit + CLI tests pass. Schema: `(query, paper_key) UNIQUE`, 3-level relevance (0/1/2) matching bench/v01 rubric. Stats prints n hint (<100 noise / 100-499 small / >=500 ready). Bench-format import/export for LTR pipeline compat. Re-probe ML/DL rerank still future work (need n>=500 first) | 2026-07-16 |
 | v3.9.9.2 | released 2026-07-16 | Working tree cleanup (item 3 in handoff Section 9). **Critical fix**: back-filled missing git commit for v3.9.8.0 AMiner engine (`pa_cli/aminer_channel.py`) + `pa_cli/data/cn_stopwords.txt` — both were USED BY CODE but never committed. **Cleanup**: trashed 4.1 MB / 32 files (v1/v2 era top-level + 7 cache dirs + 6/25 old results + Chinese drafts). **`.gitignore`** updated for cache dirs + test_output scratch patterns. Visible untracked: 197 → 115 | 2026-07-16 |
+| v3.9.9.3 | released 2026-07-16 | ROADMAP self-audit round 1 (6 defects fixed): A-tier acceptance criteria added; [P-N] ID naming convention rule 8 added; sub-task decomposition on [P2-7..13]; tier section reordering (Tier 4/5 swap); test counts in snapshot; capability-snapshot identity clarification block. Defects #3 (AMiner git gap), #7 (can't-do mix), M1/M3 deferred. **Doc-only release** | 2026-07-16 |
+| v3.9.9.4 | released 2026-07-16 | ROADMAP self-audit rounds 2-7 (16 more issues found + fixed): tier leading numbers dropped (I-4), [P2-5] Quality filter renumbered to [P2-14] (R3-1), retroactive [P1-14..18] IDs for 5 pre-naming items (R3-3), CHANGELOG [P2-5]→[P2-14] sync (R6-1), sub-task naming drift documented in ID convention (R7-1). **Doc-only release** | 2026-07-16 |
 
 ---
 
@@ -1285,8 +1287,8 @@ a major version ships. Last update: 2026-07-16 (v3.9.9.1).
 | LLM-driven rerank | Global Rule (no hosted LLM) | use bi-encoder + linear combined |
 | Captcha solver | Global Rule (paid SaaS) | accept current limits |
 | Self-hosted MCP server | Already reverted 2026-07-04 (maintenance burden) | use public `paper-search-mcp` |
-| **Lit review WRITING** (style/formatting/tone) | Out of scope — search ≠ write; not yet addressed | see [P2-5] research 2026-07-15 |
-| **Manuscript formatting** (GB/T 7714, page layout) | Out of scope — search returns raw Bibtex only | use pandoc + Manubot (proposed [P2-5]) |
+| **Lit review WRITING** (style/formatting/tone) | Out of scope — search ≠ write; not yet addressed | see "Writing pipeline" section below (replaces earlier 2026-07-15 "Lit review WRITING research" notes) |
+| **Manuscript formatting** (GB/T 7714, page layout) | Out of scope — search returns raw Bibtex only | use `pa build` + `pa scaffold` ([P2-5], shipped v3.9.9; pandoc + GB/T 7714 CSL) |
 | **Linguistic quality** of generated lit review | Out of scope — would need hosted LLM (Global Rule) | author must polish |
 
 ### Workflow reality (per [P0-12] v3.9.7.7 split decision)
@@ -1446,13 +1448,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 
 ### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
 
-10. **Self-hosted LLM rerank** — would need local 7B model + GPU. **Fails Global Rule**
-    (hosted LLM not allowed; "self-hosted" still counts as personal-hobbyist overhead).
-11. **CNKI cite/dl recovery** — would need paid captcha solver or xueshu789 mirror
-    of multi-statusex endpoint. **Fails Global Rule** (paid SaaS not allowed;
-    xueshu789 mirror unavailable per v3.9.7.6 5-path probe).
-12. **Cross-language unified ranking** — single ranking that combines EN + CN results
-    semantically (vs current separate-engine dedup). Effort: 1-2 weeks; uncertain lift.
+- **Self-hosted LLM rerank** — would need local 7B model + GPU. **Fails Global Rule**
+  (hosted LLM not allowed; "self-hosted" still counts as personal-hobbyist overhead).
+- **CNKI cite/dl recovery** — would need paid captcha solver or xueshu789 mirror
+  of multi-statusex endpoint. **Fails Global Rule** (paid SaaS not allowed;
+  xueshu789 mirror unavailable per v3.9.7.6 5-path probe).
+- **Cross-language unified ranking** — single ranking that combines EN + CN results
+  semantically (vs current separate-engine dedup). Effort: 1-2 weeks; uncertain lift.
 
 ### Tier 4: Blocked (explicit "won't do" per Global Rule)
 
@@ -1463,45 +1465,45 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 
 ### Tier 5: Long-term (revised per user pushback 2026-07-15)
 
-**13. ~~[P3-1] ML/DL rerank model — data collection track~~** —
-    User 2026-07-15 pushback: "ML/DL 本地 不是不可行, 而是数据太少的原因,
-    想办法增加数据量或许能够改变 (但这是长期工程, 我需要不断在实干中采集数据才行)".
+- **~~[P3-1] ML/DL rerank model — data collection track~~** —
+  User 2026-07-15 pushback: "ML/DL 本地 不是不可行, 而是数据太少的原因,
+  想办法增加数据量或许能够改变 (但这是长期工程, 我需要不断在实干中采集数据才行)".
 
-    **Status: data collection INFRASTRUCTURE ✅ DONE in v3.9.9.1** (released
-    2026-07-16). `pa judge` command + sqlite storage + bench-format import/
-    export all shipped. 17/17 tests pass. 6 subcommands: add/bulk/list/
-    stats/export/import. Re-probe ML/DL rerank at n>=500 still future work
-    (need to accumulate data first via opportunistic collection).
+  **Status: data collection INFRASTRUCTURE ✅ DONE in v3.9.9.1** (released
+  2026-07-16). `pa judge` command + sqlite storage + bench-format import/
+  export all shipped. 17/17 tests pass. 6 subcommands: add/bulk/list/
+  stats/export/import. Re-probe ML/DL rerank at n>=500 still future work
+  (need to accumulate data first via opportunistic collection).
 
-    **What changed in v3.9.9.1**:
-    - ✅ `pa judge add` / `bulk` / `list` / `stats` / `export` / `import`
-    - ✅ SQLite storage at `~/.paper-agent/judgements.sqlite`
-    - ✅ 3-level relevance (0/1/2) matching bench/v01/labels.json
-    - ✅ Bench-format import/export for LTR pipeline compat
-    - ⏳ Data accumulation: opportunistic, 6-12 months realistic to n=500
+  **What changed in v3.9.9.1**:
+  - ✅ `pa judge add` / `bulk` / `list` / `stats` / `export` / `import`
+  - ✅ SQLite storage at `~/.paper-agent/judgements.sqlite`
+  - ✅ 3-level relevance (0/1/2) matching bench/v01/labels.json
+  - ✅ Bench-format import/export for LTR pipeline compat
+  - ⏳ Data accumulation: opportunistic, 6-12 months realistic to n=500
 
-    **Conditions to resume ML/DL re-probe**:
-    - n >= 500 labeled query→relevance pairs
-    - Use `pa judge stats` to monitor; prints hint when threshold crossed
+  **Conditions to resume ML/DL re-probe**:
+  - n >= 500 labeled query→relevance pairs
+  - Use `pa judge stats` to monitor; prints hint when threshold crossed
 
-    **Realistic timeline**: 6-12 months of opportunistic collection
-    to reach n=500 if user does 课题 2-3 times per week.
+  **Realistic timeline**: 6-12 months of opportunistic collection
+  to reach n=500 if user does 课题 2-3 times per week.
 
-    **Why this is not "deprecated"**: the architecture (bi-encoder + linear
-    combined) is already in code. Re-running with n=500 is mechanical. The
-    blocker is data, not code. If user manages to get to n=500, the
-    rerank work has real chance of working — it just hasn't been proved yet.
+  **Why this is not "deprecated"**: the architecture (bi-encoder + linear
+  combined) is already in code. Re-running with n=500 is mechanical. The
+  blocker is data, not code. If user manages to get to n=500, the
+  rerank work has real chance of working — it just hasn't been proved yet.
 
-    Effort: 1-2h to add `pa judge` command + sqlite storage. Re-probe cost:
-    ~1d to re-run LTR / BGE / MoE when n>=500.
+  Effort: 1-2h to add `pa judge` command + sqlite storage. Re-probe cost:
+  ~1d to re-run LTR / BGE / MoE when n>=500.
 
-14. **Local small LLM rerank** (Qwen 1.5B / MiniCPM 2B / Phi-3 / Jamba Reasoning 3B
-    on CPU) — would let paper-agent run an LLM locally without hosted API.
-    Models exist (e.g. Jamba 3B, 30亿参数, M3 MacBook 40 tok/s, Apache 2.0).
-    **Still fails Global Rule 3** (maintenance burden: model download,
-    update, integrate; even if "free" the user has to keep it on disk and
-    deal with model rot). **Status: deferred** — only revisit if Mavis itself
-    becomes unavailable.
+- **Local small LLM rerank** (Qwen 1.5B / MiniCPM 2B / Phi-3 / Jamba Reasoning 3B
+  on CPU) — would let paper-agent run an LLM locally without hosted API.
+  Models exist (e.g. Jamba 3B, 30亿参数, M3 MacBook 40 tok/s, Apache 2.0).
+  **Still fails Global Rule 3** (maintenance burden: model download,
+  update, integrate; even if "free" the user has to keep it on disk and
+  deal with model rot). **Status: deferred** — only revisit if Mavis itself
+  becomes unavailable.
 
 - **`[P2-13] README.md` (top-level user-facing doc)** — **Status: deferred**
   (per user 2026-07-16: "if not blocking LLM understanding, defer").
@@ -1518,8 +1520,8 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 ### Recommended next step (if user wants to continue)
 
 If the goal is "make paper-agent better for 课题":
-- **`--enrich-top-min-cites` filter**: 30 min, ~10s speedup per query
-- **OpenAlex-by-title fallback**: 1h, +5-10pp Chinese cite
+- **`[P1-14] --enrich-top-min-cites` filter**: 30 min, ~10s speedup per query
+- **`[P1-15] OpenAlex-by-title fallback`**: 1h, +5-10pp Chinese cite
 - **Phase 1.5 holdout validation**: 1d, validates existing LTR/MoE numbers
 
 If the goal is "validate the 课题 work is rigorous":
@@ -2265,7 +2267,7 @@ paper-agent 褰撳墠 5 灞傛灦鏋?(Layer 1-5) 鍔犱笂鏂板 **Layer 6-7 
 | **L1: Source pool** | 5 寮曟搸 per-query weight 鍒嗛厤 | MoE routing (per-engine weights) | [P1-11] |
 | **L2: Recall** | 鍒濆缁撴灉 + query 鏀瑰啓 + citation walk + iterative refinement | PaSa-lite multi-strategy + citation walk | [P2-6] |
 | **L3: Rerank** | BM25 + bi-encoder + cross-encoder + LTR (LambdaMART) | Cross-encoder (BGE-reranker) + LTR (LambdaMART) | [P0-6] / [P0-7] |
-| **L4: Filters** | recency + institution + quality + geography | 宸叉湁 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-5] | 鈥?|
+| **L4: Filters** | recency + institution + quality + geography | 宸叉湁 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-14] | 鈥?|
 | **L5: Output** | top-K 杈撳嚭缁欑敤鎴?| 鈥?| 鈥?|
 | **L6: Download** (NEW) | 8 閫氶亾 cascade 鑷姩涓嬭浇 + 澶辫触鍒楄〃 鈫?鐢ㄦ埛浜哄伐涓嬭浇 | 鈥?| [P0-8] part 1 |
 | **L7: Full-text deep rerank** (NEW) | 鍏ㄦ枃 BM25 + 鍏ㄦ枃 cross-encoder + LTR re-fit 閲嶆柊鎵撳垎 | 鈥?| [P0-8] part 2 |
