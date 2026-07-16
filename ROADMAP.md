@@ -1690,7 +1690,8 @@ not a compute or model problem. The data ceiling is real but not absolute.
   that. User is correct to call out the data ceiling.
 
 **Realistic path forward (deferred, long-term)**:
-- Add `pa judge` command to capture user feedback as side-effect of normal use
+- Use `pa judge` command (shipped v3.9.9.1) to capture user feedback as side-effect
+  of normal use
 - Re-run probes when n crosses 100, 200, 500 thresholds
 - No new code required; existing `pa_cli/bench/v01/` evaluation framework can
   re-run automatically once dataset is large enough
