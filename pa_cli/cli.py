@@ -946,5 +946,62 @@ def citations(doi, direction, limit, save_bib_path, output, quiet):
         click.echo(f"[pa] saved BibTeX ({result['count']} entries) to {save_bib_path}", err=True)
 
 
+@main.command()
+@click.option("-i", "--input", "input_file", required=True,
+              type=click.Path(exists=True, dir_okay=False),
+              help="Text file with one query per line (DOI or title)")
+@click.option("-o", "--output", default="batch_download_guide.md",
+              type=click.Path(dir_okay=False),
+              help="Output markdown guide (default: ./batch_download_guide.md)")
+@click.option("--year-min", type=int, default=None,
+              help="Filter: min publication year")
+@click.option("--year-max", type=int, default=None,
+              help="Filter: max publication year")
+@click.option("--quiet", is_flag=True, help="Suppress per-paper progress output")
+def fetch_batch(input_file, output, year_min, year_max, quiet):
+    """Generate a batch download guide for CNKI PDF (semi-automated, v3.9.8.3).
+
+    Input: a text file with one query per line. Each line can be either:
+      - a DOI (e.g. 10.3969/j.issn.1003-9031.2022.04.008)
+      - a title  (e.g. 数字普惠金融对经济高质量发展的影响)
+
+    Output: a markdown guide with:
+      - Per-paper table (title, DOI, year, found status, xueshu789 search URL)
+      - An Edge console JS snippet that auto-scrapes doDownload URLs from
+        xueshu789 search result pages
+      - Step-by-step instructions for user (the actual PDF download must be
+        done in user's real Edge browser to bypass bar.cnki.net vLevel=5
+        CAPTCHA)
+
+    Honest limitation: paper-agent cannot auto-download CNKI PDFs because
+    bar.cnki.net detects all non-real-browser automation and triggers
+    vLevel=5 CAPTCHA. This tool's value is in:
+      1. Validating that DOIs exist (skip non-existent papers)
+      2. Generating per-paper search URLs for xueshu789
+      3. Providing the Edge console snippet for batch doDownload URL extraction
+    User's manual Edge workflow is the only working path (verified 2026-07-15).
+    """
+    from pathlib import Path
+    from .batch_fetch import generate_guide
+
+    input_path = Path(input_file)
+    output_path = Path(output)
+    queries = [line.strip() for line in input_path.read_text(encoding="utf-8").splitlines()
+               if line.strip() and not line.strip().startswith("#")]
+    if not queries:
+        click.echo("[pa] no queries in input file", err=True)
+        sys.exit(1)
+    if not quiet:
+        click.echo(f"[pa] {len(queries)} queries from {input_file}", err=True)
+    summary = generate_guide(queries, output_path,
+                            year_min=year_min, year_max=year_max)
+    if not quiet:
+        click.echo(f"[pa] {summary['n_found']}/{summary['n_total']} papers metadata found", err=True)
+        click.echo(f"[pa] {summary['n_not_found']} not found (likely Chinese-only, not in OpenAlex/Crossref)", err=True)
+        click.echo(f"[pa] guide saved to {summary['output']}", err=True)
+        click.echo("", err=True)
+        click.echo("[pa] Next: open the guide and follow the Edge workflow", err=True)
+
+
 if __name__ == "__main__":
     main()
