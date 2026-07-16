@@ -2319,7 +2319,7 @@ The Δ values are within the noise band of n=25 (no significance test run, no ho
 
 ---
 
-## [3.9.0] - 2026-07-12 (v4 rerank stack + 2026-07-13 user spot-check)
+## Cross-version discipline notes (apply to all v3.7.0+ entries below)
 
 > **Roadmap discipline** (added 2026-07-04): every release entry below
 > references which roadmap item IDs from `ROADMAP.md` it implements. The
