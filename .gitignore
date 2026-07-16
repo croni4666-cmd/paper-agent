@@ -9,9 +9,33 @@ __pycache__/
 **/__pycache__/
 *.pyc
 
+# Per-engine cache directories (v3.0 paper_fetcher.py era, 2026-06-25 removed)
+# Per ROADMAP [P0-2]: 7 dirs from v3.0 paper_fetcher.py
+arxiv_cache/
+core_cache/
+doaj_cache/
+eric_cache/
+openalex_cache/
+semanticscholar_cache/
+downloaded_pdfs/
+
+# Per-key cache subdir in user home (per ROADMAP [P0-2])
+.paper-agent/cache/
+
 # Results (large output directories)
 results/
 results_*/
+
+# test_output scratch (prefixed with _ = internal scratch, not for commit)
+# Per cleanup 2026-07-16: 50+ `_*.log/.txt/.py` files in test_output/ are
+# debug scratch / commit message drafts. Kept on disk, not tracked.
+test_output/_*.log
+test_output/_*.txt
+test_output/_*.sqlite
+# Note: test_output/_test_*.py and test_output/_demo_* are kept; they're
+# the actual e2e tests and sample output.
+# Note: test_output/_debug_*.py/.html are NOT auto-ignored (some are
+# useful artifacts). Add specific patterns if they grow.
 
 # OS files
 .DS_Store
