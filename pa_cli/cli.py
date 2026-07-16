@@ -1005,3 +1005,135 @@ def fetch_batch(input_file, output, year_min, year_max, quiet):
 
 if __name__ == "__main__":
     main()
+
+
+# =============== [P2-5] build + scaffold subcommands ===============
+# Appended at end of file (rather than inserted in middle) to minimize diff
+# against v3.9.8.4 baseline. Both are part of v3.9.9 release.
+
+@main.command()
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--skeleton", "skeleton_file", required=True,
+              type=click.Path(exists=True, dir_okay=False),
+              help="Markdown skeleton with [@bibkey] or [cite: bibkey] placeholders")
+@click.option("-o", "--output", required=True, type=click.Path(dir_okay=False),
+              help="Output file. Suffix determines format: .html / .docx / .pdf / .tex / .md")
+@click.option("--csl", "csl_file", default=None,
+              type=click.Path(exists=True, dir_okay=False),
+              help="Citation style (CSL). Default: bundled chinese-gb7714-2005-numeric.csl")
+@click.option("--format", "out_format", default=None,
+              help="Override format detection (html / docx / pdf / tex / md / epub / odt / rtf)")
+@click.option("--pdf-engine", default=None,
+              help="Force a specific PDF engine (xelatex / pdflatex / lualatex / weasyprint). "
+                   "Auto-detected by default. xelatex is best for CJK (Chinese).")
+@click.option("--pandoc-arg", "extra_args", multiple=True,
+              help="Passthrough extra pandoc CLI arg (repeatable, e.g. --pandoc-arg=-V --pandoc-arg=geometry:margin=2cm)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def build(bibtex_file, skeleton_file, output, csl_file, out_format,
+          pdf_engine, extra_args, quiet):
+    """[P2-5] Typeset manuscript from Bibtex + markdown skeleton via pandoc.
+
+    Per ROADMAP "Writing pipeline": paper-agent handles scaffold + typeset;
+    prose is Mavis's job. This command is the typeset half.
+
+    Typical flow:
+      1. pa search "topic" --format bibtex --out refs.bib
+      2. (optionally) pa scaffold refs.bib --out skeleton.md
+      3. (user / Mavis) fill in prose between [cite: key] placeholders
+      4. pa build refs.bib --skeleton manuscript.md --out manuscript.html
+
+    Output formats and required engines:
+      .html / .docx / .tex / .md / .epub / .odt / .rtf  -> no engine needed
+      .pdf                                                -> xelatex / pdflatex / weasyprint
+                                                            (xelatex recommended for CJK)
+
+    Examples:
+      pa build refs.bib --skeleton ms.md --out ms.html
+      pa build refs.bib --skeleton ms.md --out ms.pdf
+      pa build refs.bib --skeleton ms.md --out ms.pdf --pdf-engine xelatex
+      pa build refs.bib --skeleton ms.md --csl my-style.csl --out ms.docx
+    """
+    from .build import build as _build, DEFAULT_CSL
+    bib_path = Path(bibtex_file)
+    skel_path = Path(skeleton_file)
+    out_path = Path(output)
+    csl_path = Path(csl_file) if csl_file else DEFAULT_CSL
+    fmt = out_format
+    extras = list(extra_args) if extra_args else None
+    if not quiet:
+        click.echo(f"[pa build] bib={bib_path.name} skeleton={skel_path.name} "
+                   f"csl={csl_path.name if csl_path else 'default'}",
+                   err=True)
+    try:
+        result = _build(
+            bibtex_path=bib_path,
+            skeleton_path=skel_path,
+            output_path=out_path,
+            csl_path=csl_path,
+            output_format=fmt,
+            pdf_engine=pdf_engine,
+            extra_args=extras,
+            quiet=quiet,
+        )
+    except Exception as e:
+        click.echo(f"[pa build] FAILED: {e}", err=True)
+        sys.exit(2)
+    if not quiet:
+        click.echo(f"[pa build] saved {result}", err=True)
+
+
+@main.command()
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--group-by", default="year", show_default=True,
+              type=click.Choice(["year", "topic", "author", "none"]),
+              help="How to section the skeleton: by publication year, by topic cluster, "
+                   "by first author, or no grouping (one big list)")
+@click.option("--topics", "topics_file", default=None,
+              type=click.Path(exists=True, dir_okay=False),
+              help="topics.json from `pa review-topics` (required if --group-by topic)")
+@click.option("--title", default="文献综述", show_default=True,
+              help="Top-level skeleton title (markdown H1)")
+@click.option("-o", "--output", default=None, type=click.Path(dir_okay=False),
+              help="Output file (else stdout)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def scaffold(bibtex_file, group_by, topics_file, title, output, quiet):
+    """[P2-5] Generate markdown outline skeleton from Bibtex.
+
+    Per ROADMAP "Writing pipeline": this is the scaffold half. Outputs:
+      - Section headings (H1 / H2 / H3)
+      - Per-paper [@bibkey] cite placeholders
+      - Inline `> prompt: ...` blocks that tell Mavis (or the user) what
+        kind of paragraph to write for each section
+
+    The output is NOT prose. It's an outline + breadcrumb prompts. Fill in
+    the prose, then run `pa build` to typeset the result.
+
+    Examples:
+      pa scaffold refs.bib > skeleton.md
+      pa scaffold refs.bib --group-by year --out skeleton.md
+      pa scaffold refs.bib --group-by topic --topics topics.json --out skeleton.md
+      pa scaffold refs.bib --group-by author --title "数字普惠金融综述" --out skel.md
+    """
+    from .scaffold import scaffold as _scaffold
+    bib_path = Path(bibtex_file)
+    out_path = Path(output) if output else None
+    topics_path = Path(topics_file) if topics_file else None
+    if not quiet:
+        click.echo(f"[pa scaffold] bib={bib_path.name} group_by={group_by} "
+                   f"topics={topics_path.name if topics_path else 'N/A'}",
+                   err=True)
+    try:
+        md = _scaffold(
+            bibtex_path=bib_path,
+            group_by=group_by,
+            topics_path=topics_path,
+            title=title,
+            output_path=out_path,
+        )
+    except Exception as e:
+        click.echo(f"[pa scaffold] FAILED: {e}", err=True)
+        sys.exit(2)
+    if not out_path:
+        click.echo(md)
+    elif not quiet:
+        click.echo(f"[pa scaffold] saved {out_path}", err=True)
