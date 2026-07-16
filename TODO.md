@@ -256,6 +256,67 @@ before moving, verify line counts after).
 re-grep for "v3.9.5", "v3.9.6", "v3.9.7", "[3.5.1]", "[3.6.0]" after
 each move to verify no broken cross-refs.
 
+### 🔴 [P0-8] deep_rerank.py is broken (audit round 22, 2026-07-16)
+
+> **Status in ROADMAP**: was `done` (2026-07-13), now `broken` (revised
+> 2026-07-16). 25/26 pa_cli modules import cleanly; `pa_cli.deep_rerank`
+> is the only one with a broken import.
+
+**Root cause**:
+- v3.9.8.2 (commit `acca2a8`, 2026-07-15 19:53) renamed
+  `pa_cli.fetch.fetch_doi(doi, output_dir, channels, max_total_sec, use_cache)`
+  → `pa_cli.fetch.fetch(doi, title, md5_path, out_path, prefer)`.
+- `pa_cli/deep_rerank.py:52` still has
+  `from pa_cli.fetch import fetch_doi` → ImportError on module load.
+
+**Gaps**:
+- `pa deep-rerank` CLI command **was never wired up** (acceptance
+  criteria said "新增 `pa deep-rerank <CORPUS_DIR>...` CLI" but no
+  `@main.command()` for it exists). So even if the import is fixed,
+  the feature is still uncallable.
+- `test_output/_run_deep_rerank_v3_9_5.py` and
+  `test_output/_run_deep_rerank_v397.py` both import
+  `pa_cli.deep_rerank` — they would fail at import.
+
+**Three options**:
+
+1. **Fix the code** (~1-2h, HIGH RISK):
+   - Update `pa_cli/deep_rerank.py:52` to use new `fetch` API
+   - Update call site at `pa_cli/deep_rerank.py:127` to match new
+     signature (no `output_dir`/`channels`/`use_cache` — use
+     `out_path` + manual loop)
+   - Add `pa deep-rerank` CLI wrapper in `pa_cli/cli.py`
+   - Re-run import smoke test to verify
+   - Risk: requires understanding both the old and new `fetch` API
+     plus the multi-channel cascade logic; might surface more bugs
+     that have been silently broken since v3.9.8.2
+
+2. **Delete dead code** (~5 min, LOW RISK):
+   - If no plan to actually use Layer 7 deep rerank in the next
+     课题 iteration (current roadmap shows [P1-12] 3 of 4 fulltext
+     features as "proposed" not "in-progress")
+   - Delete: `pa_cli/deep_rerank.py` + 2 stale test files
+     (`_run_deep_rerank_v3_9_5.py`, `_run_deep_rerank_v397.py`) +
+     any other deep_rerank references
+   - Update ROADMAP [P0-8] Status to `deprecated`
+   - Update capability snapshot to remove "1/4 Layer 7 features
+     working" (was the only partial implementation)
+
+3. **Mark TODO, defer** (0 min, current state):
+   - ROADMAP [P0-8] Status = `broken` (done above)
+   - This TODO entry documents the issue
+   - Fix when [P1-12] 3-of-4 fulltext features is actually started
+     (expected to be 1-2d effort per the [P1-12] estimate)
+   - Lowest risk, no code change
+
+**Recommendation**: Option 3 (current state) — feature isn't on the
+near-term roadmap, and the fix touches the multi-channel fetch cascade
+which is high-risk. Re-evaluate when starting [P1-12].
+
+**Detect in CI**: `test_output/_import_smoke.py` now catches this
+(fails if `pa_cli.deep_rerank` doesn't import). Run as part of
+regression.
+
 ---
 
 ## 📚 Reference
