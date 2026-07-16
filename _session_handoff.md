@@ -65,14 +65,14 @@ Plus today's v3.9.8.4 commits (untracked log):
 |---|---|
 | `G:\minimax - workspace\Paper agent\pa_cli\search.py` | 6-engine search (~600 LOC) |
 | `G:\minimax - workspace\Paper agent\pa_cli\fetch.py` | Fetch (Unpaywall + cnki + scihub + annas) (~750 LOC) |
-| `G:\minimax - workspace\Paper agent\pa_cli\cnki_channel.py` | CNKI search + bootstrap (~700 LOC) |
-| `G:\minimax - workspace\Paper agent\pa_cli\aminer_channel.py` | AMiner 7th engine (~270 LOC) |
-| `G:\minimax - workspace\Paper agent\pa_cli\batch_fetch.py` | NEW v3.9.8.4 batch guide generator (~280 LOC) |
+| `G:\minimax - workspace\Paper agent\pa_cli\cnki_channel.py` | CNKI search + bootstrap (~835 LOC) |
+| `G:\minimax - workspace\Paper agent\pa_cli\aminer_channel.py` | AMiner 7th engine (~240 LOC) |
+| `G:\minimax - workspace\Paper agent\pa_cli\batch_fetch.py` | NEW v3.9.8.4 batch guide generator (~340 LOC) |
 | `G:\minimax - workspace\Paper agent\pa_cli\cli.py` | Click CLI (entry point) |
 | `G:\minimax - workspace\Paper agent\Export-CNKICookies.ps1` | Manual 4-cookie export |
 | `C:\Users\DengN\.paper-agent\cookies\cnki.json` | CNKI cookies (4 cookies, fresh = <4h) |
 | `C:\Users\DengN\.paper-agent\debug\last_cnki_detail.html` | Last fetch debug HTML |
-| `G:\minimax - workspace\Paper agent\ROADMAP.md` | 3389-line project roadmap (was 2554 in v3.9.8.4; grew via 7 self-audit rounds) |
+| `G:\minimax - workspace\Paper agent\ROADMAP.md` | 3465-line project roadmap (was 2554 in v3.9.8.4; grew via 17 audit rounds: 1-7 in v3.9.9.3-9.4, 8-14 in v3.9.9.5-9.6, 15-17 in current session) |
 | `G:\minimax - workspace\Paper agent\CHANGELOG.md` | All release notes |
 | `G:\minimax - workspace\Paper agent\_session_handoff.md` | **This file** |
 
@@ -235,7 +235,7 @@ ran 9 rounds of ROADMAP self-audit per user instruction "一直审查到没有
   not "just check the changed parts". The handoff Section 5/9 drift was
   not visible in the changed parts; only a fresh sweep caught it.
 
-**Net ROADMAP growth**: 2554 (v3.9.8.4) → 3399 (post-9-rounds).
+**Net ROADMAP growth**: 2554 (v3.9.8.4) → 3465 (post-17-rounds).
 Most of the growth is meta-documentation (A-tier criteria, ID convention,
 audit history) — not content bloat.
 
