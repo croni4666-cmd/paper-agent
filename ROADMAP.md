@@ -2183,7 +2183,15 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 - **Global Rule check**: 5/5 pass (local code, no API required, no maintenance)
 - **User confirmation needed**: static lookup table content 鈥?is 30 sub-topic domains enough? More generalizable: LLM-based decomposition is out of scope (per Global Rule no hosted LLM); pure keyphrase is feasible
 
-### [P1-7] Institutional credibility boost
+### [P1-19] Institutional credibility boost (renumbered 2026-07-16, was [P1-7] — ID collision with shipped AMiner engine)
+
+> **ID renumber note (2026-07-16)**: this item was originally labeled `[P1-7]`
+> but the `[P1-7]` ID is now firmly used for the **AMiner engine** (shipped
+> v3.9.8.0, referenced 5+ times in versioned summary + B+ → A section +
+> "Recommended next step"). To avoid breaking those references, this item
+> is now `[P1-19]`. **Note**: `[P1-19]` is the next available P1 ID after
+> `[P1-18] Year-aware enrichment skip` (retroactively assigned in
+> [3.9.9.3] round-3 audit).
 
 - **Status**: proposed
 - **Added**: 2026-07-13
@@ -2333,7 +2341,7 @@ paper-agent 褰撳墠 5 灞傛灦鏋?(Layer 1-5) 鍔犱笂鏂板 **Layer 6-7 
 | **L1: Source pool** | 5 寮曟搸 per-query weight 鍒嗛厤 | MoE routing (per-engine weights) | [P1-11] |
 | **L2: Recall** | 鍒濆缁撴灉 + query 鏀瑰啓 + citation walk + iterative refinement | PaSa-lite multi-strategy + citation walk | [P2-6] |
 | **L3: Rerank** | BM25 + bi-encoder + cross-encoder + LTR (LambdaMART) | Cross-encoder (BGE-reranker) + LTR (LambdaMART) | [P0-6] / [P0-7] |
-| **L4: Filters** | recency + institution + quality + geography | 宸叉湁 [P1-5] / [P1-7] / [P1-8] / [P1-9] / [P2-14] | 鈥?|
+| **L4: Filters** | recency + institution + quality + geography | 宸叉湁 [P1-5] / [P1-19] / [P1-8] / [P1-9] / [P2-14] | 鈥?|
 | **L5: Output** | top-K 杈撳嚭缁欑敤鎴?| 鈥?| 鈥?|
 | **L6: Download** (NEW) | 8 閫氶亾 cascade 鑷姩涓嬭浇 + 澶辫触鍒楄〃 鈫?鐢ㄦ埛浜哄伐涓嬭浇 | 鈥?| [P0-8] part 1 |
 | **L7: Full-text deep rerank** (NEW) | 鍏ㄦ枃 BM25 + 鍏ㄦ枃 cross-encoder + LTR re-fit 閲嶆柊鎵撳垎 | 鈥?| [P0-8] part 2 |
