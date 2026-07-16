@@ -283,6 +283,30 @@ def sort_results(results: List[Dict], sort_by: str = "cite") -> List[Dict]:
         return list(results)
 
 
+def filter_by_source(results: List[Dict], source_filter: List[str] = None) -> List[Dict]:
+    """[P1-17] Post-filter unified results to only show those from specified
+    engines. Use case: query many engines, but only display certain ones
+    (e.g., to compare CNKI vs OpenAlex coverage side-by-side).
+
+    source_filter: list of base engine names like
+        ["openalex", "crossref", "cnki", "arxiv", "aminer", "semanticscholar", "core"]
+        If None or empty, no filter (all results returned).
+    Matching: a result matches if its `source` field starts with any filter
+        entry. So "openalex" matches both "openalex" and "openalex_title"
+        (the [P1-15] fallback). "crossref" matches "crossref" and "crossref_title".
+
+    Returns: NEW list (does not mutate input).
+    """
+    if not source_filter:
+        return list(results)
+    sf = [s.strip().lower() for s in source_filter if s.strip()]
+    if not sf:
+        return list(results)
+    return [r for r in results if any(
+        (r.get("source") or "").lower().startswith(prefix) for prefix in sf
+    )]
+
+
 def search_crossref(query: str, year_min: int = None, year_max: int = None,
                     limit: int = 50) -> List[Dict]:
     """Crossref API: best for DOI-rich, peer-reviewed papers."""
@@ -505,7 +529,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                concepts_filter: str = None,
                enrich_top: int = 0,
                enrich_top_min_cites: int = 1,
-               sort_by: str = "cite") -> Dict[str, Any]:
+               sort_by: str = "cite",
+               source_filter: List[str] = None) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -524,6 +549,10 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                 Set to 0 to restore v3.9.7.8 behavior (try all).
     sort_by: [P1-16] sort criterion for unified results.
              "cite" (default), "year", or "relevance". See sort_results().
+    source_filter: [P1-17] post-filter results to only show those from
+             specified engines (e.g. ["openalex", "cnki"]). None/empty =
+             no filter (default). See filter_by_source() for matching
+             semantics. Use case: query many engines, display subset.
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -616,6 +645,15 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     elif sort_by != "cite":
         # Even without enrichment, ensure final sort matches user request
         unified = sort_results(unified, sort_by=sort_by)
+
+    # [P1-17] Post-filter by source if requested (after sort + dedup, before return)
+    if source_filter:
+        pre_count = len(unified)
+        unified = filter_by_source(unified, source_filter=source_filter)
+        post_count = len(unified)
+        if pre_count != post_count:
+            print(f"  [P1-17] filter_by_source: {pre_count} -> {post_count} "
+                  f"(kept only: {','.join(source_filter)})", file=sys.stderr)
 
     return {
         "query": query,

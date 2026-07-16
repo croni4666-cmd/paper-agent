@@ -200,6 +200,40 @@ short title, HTTP error.
 - `ROADMAP.md` ([P1-15] marked DONE; versioned table v3.9.9.8 row)
 - `CHANGELOG.md` (this entry)
 
+---
+
+## [3.9.9.9] - 2026-07-16 ([P1-17] --source per-engine post-filter)
+
+### v3.9.9.9 -- [P1-17] ship (2026-07-16 18:00)
+
+**Feature**: New `--source` CLI flag to post-filter unified results by
+engine source. Use case: query all engines, but only display certain ones
+(e.g., compare CNKI vs OpenAlex coverage side-by-side in a single search).
+
+**CLI**: `--source openalex,cnki` (comma-separated; default no filter)
+- `run_search()` accepts `source_filter: List[str] = None`
+- New `filter_by_source(results, source_filter)` helper (~10 LOC)
+
+**Matching semantics**: prefix matching on `result["source"]` field
+- `--source openalex` matches both `openalex` (from search_openalex) and
+  `openalex_title` (from [P1-15] fallback enrichment)
+- `--source crossref` matches both `crossref` and `crossref_title`
+- Case-insensitive (filter is lowercased before matching)
+- Stderr line: `[P1-17] filter_by_source: N -> M (kept only: openalex,cnki)`
+  when filter actually reduces the result count
+
+**Tests**: 9/9 unit tests pass in `test_output/_test_filter_by_source.py`
+covering: no-filter, single-source, multiple-sources, prefix-matching-
+openalex, prefix-matching-crossref, case-insensitive, unknown-source,
+whitespace-strip, no-mutation.
+
+**Files changed**:
+- `pa_cli/search.py` (~20 LOC: `filter_by_source` + `run_search` plumbing)
+- `pa_cli/cli.py` (new `--source` option + comma split)
+- `pa_cli/__init__.py` (version bump 3.9.9.8 → 3.9.9.9)
+- `test_output/_test_filter_by_source.py` (NEW, 9 unit tests)
+- `ROADMAP.md` ([P1-17] marked DONE; versioned table v3.9.9.9 row)
+
     (since v3.9.9.5 is latest; added note explaining feature vs
     doc-only distinction)
 

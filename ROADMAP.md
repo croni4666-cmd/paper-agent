@@ -1285,6 +1285,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.9.6 | released 2026-07-16 | ROADMAP self-audit rounds 8-14 (18 issues found + fixed; supersedes [3.9.9.5] which had wrong audit count): added rounds 11-13 (3+1+2 issues — B+/A AMiner section staleness, [3.9.9.4] verdict staleness, [P0-12] 6-engine pool staleness, snapshot Last update clarification); added round 14 (3 issues — Round 2 audit count was wrong in CHANGELOG and handoff; totals off by 2-3; [3.9.9.5] promoted to [3.9.9.6] to consolidate). **Total across 14 audit rounds**: 45 found, 37 fixed (8 deferred to [P2-13] / future passes). **Doc-only release** | 2026-07-16 |
 | v3.9.9.7 | released 2026-07-16 | **[P1-14] `--enrich-top-min-cites` filter + [P1-16] CLI sort options** shipped: `enrich_top_n()` skips S2 deep lookup when `cited_by_count < min_cites` (default 1 = skip 0-cite papers; saves ~12s/query per S2 shallow-entry lesson from v3.9.7.7). `--enrich-top-min-cites` CLI flag (default 1; set 0 to restore v3.9.7.8 behavior). `_enrichment.s2_doi_skipped` records skip reason. **Also [P1-16]**: new `sort_results()` helper + `--sort-by {cite\|year\|relevance}` CLI flag (default `cite` = backward compat); `enrich_top_n()` got `resort_by` param. **Also**: `pa fetch` backward-compat wrapper (fetch_doi) restores ~20h of CLI breakage from v3.9.8.2 refactor. 11/11 new unit tests pass; 26/26 pa_cli modules import OK | 2026-07-16 |
 | v3.9.9.8 | released 2026-07-16 | **[P1-15] OpenAlex-by-title fallback** shipped: new `_openalex_lookup_title()` function + `enrich_top_n()` calls it as fallback when `_crossref_lookup_title()` returns 0 hits. OpenAlex has better Chinese coverage than Crossref (per v3.9.7.5 lessons), expected +5-10pp on Chinese cite. Fields filled: `doi`, `cited_by_count`, `abstract`, `venue`, `year` (skips already-set fields). `_enrichment.openalex_title` records the fallback. 8/8 unit tests pass | 2026-07-16 |
+| v3.9.9.9 | released 2026-07-16 | **[P1-17] `--source` per-engine post-filter** shipped: new `filter_by_source()` + `--source` CLI flag (comma-separated engine names). Prefix matching: `--source openalex` matches both `openalex` and `openalex_title` ([P1-15] fallback); `--source crossref` matches both `crossref` and `crossref_title`. Use case: query all engines, display subset (e.g., compare CNKI vs OpenAlex coverage side-by-side). Stderr line shows pre/post count when filter applied. 9/9 unit tests pass | 2026-07-16 |
 
 ---
 
@@ -1402,9 +1403,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   `--sort-by` CLI flag with `cite` (default, backward compat) / `year` / `relevance`.
   `enrich_top_n()` got `resort_by` param to keep re-sort consistent with
   user choice. 7/7 unit tests pass.
-- **`[P1-17] Per-source filter`** (retroactively assigned 2026-07-16)
+- ~~**`[P1-17] Per-source filter`**~~ (retroactively assigned 2026-07-16)
   — `--source cnki,openalex` (only show certain engine results).
   Effort: 30min.
+  — ✅ **DONE in v3.9.9.9** (released 2026-07-16). New `filter_by_source()` +
+  `--source` CLI flag. Comma-separated engine names. Prefix matching so
+  `--source openalex` matches both `openalex` and `openalex_title` ([P1-15]
+  fallback). Use case: query all engines, display subset. 9/9 unit tests pass.
 - **`[P1-18] Year-aware enrichment skip`** (retroactively assigned 2026-07-16)
   — skip enrichment for papers > 10 years old
   (S2 cite often stale / unavailable for older papers). Effort: 30min.
