@@ -30,6 +30,15 @@
 >        (e.g. `[P0-9.1a]`, `[P0-9.1b]`, `[P0-9.1c]` — established pattern for
 >        the v3.9.7.5 CNKI year-filter ticket). Sub-task IDs are unique
 >        within a parent; they are NOT first-class ROADMAP items.
+>    - **Historical naming drift (note)**: v3.9.7.1 CHANGELOG used a
+>      different sub-task format — `[P0-7.1]`, `[P1-11.1]` (parent + `.1`
+>      digit, not letter). These IDs are still referenced in CHANGELOG but
+>      do NOT appear in the current ROADMAP. If you encounter them:
+>        - `[P0-7.1]` = first sub-task of `[P0-7] Cross-encoder reranker` (v3.9.7.1)
+>        - `[P1-11.1]` = first sub-task of `[P1-11] MoE router` (v3.9.7.1)
+>      The current `[P0-9.1a/b/c]` pattern was adopted from v3.9.7.5
+>      onwards. Both formats remain valid for historical commits; new
+>      sub-tasks should use the letter-suffix pattern.
 
 ---
 
