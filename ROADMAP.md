@@ -10,6 +10,23 @@
 > 5. **Abandoned** (won't do for foreseeable future): mark `Status: deprecated`. Keep the entry + add `### Deprecated YYYY-MM-DD 鈥?<why>`. Future readers can see the history.
 > 6. **Cited from CHANGELOG.md** 鈥?every release must reference which roadmap items it implements.
 > 7. **Global Rule (added 2026-07-04)**: every proposed item MUST be checked against the Global Rule below. Items that exceed personal-hobbyist burden are out of scope unless user explicitly says "commercialize".
+> 8. **ID naming convention (added 2026-07-16)** — every item uses `[Pn-m]` notation
+>    with a clear category prefix. **This is paper-agent's "ticket system"** (no external
+>    issue tracker; this ROADMAP IS the tracker):
+>      - **`[P0-N]`** = core infra (search, fetch, cache, infrastructure)
+>        Example: `[P0-1] Bibtex export`, `[P0-2] Local cache`
+>      - **`[P1-N]`** = search quality (recall, precision, MoE routing, rerank)
+>        Example: `[P1-1] Citation walk`, `[P1-4] Topic clustering`
+>      - **`[P2-N]`** = user-facing productivity (scaffold, judge, new CLIs, workflow)
+>        Example: `[P2-5] pa build + pa scaffold`, `[P2-7] pa cite-check`
+>      - **`[P3-N]`** = long-term bets (ML/DL rerank, anything needs n>=500 or >6h)
+>        Example: `[P3-1] ML/DL rerank data collection`
+>    **Rules**:
+>      - Deprecated items keep their ID but get `### Deprecated YYYY-MM-DD` subsection.
+>      - Don't reuse deprecated numbers.
+>      - When a feature ships, the ID moves from "Active items" to "Versioned roadmap summary"
+>        in the CHANGELOG reference.
+>      - Sub-tasks under a ticket (e.g. `[P0-2] v3.5.0 sub-task A/B/C/...`) use the parent's ID.
 
 ---
 
@@ -1262,6 +1279,16 @@ research. Strong on English, useful on Chinese (top papers well-covered), and th
 remaining gaps are hobbyist-budget ceilings that require either paid SaaS or self-hosted
 LLM to fix — both ruled out by Global Rule.
 
+**Tests**: 27 unit + CLI tests across 2 new modules (pa build 10 + pa judge 17).
+Total test count + per-version breakdown lives in `CHANGELOG.md` (this snapshot is
+a status reference, not a test report — see [CHANGELOG.md](CHANGELOG.md) for release
+notes & detailed test counts per version).
+
+**What this section IS and ISN'T**:
+- ✅ IS: a forward-looking status snapshot — "what paper-agent can do today"
+- ❌ IS NOT: a plan or roadmap — for that, see "Future improvement candidates" below
+- ❌ IS NOT: a release log — for that, see `CHANGELOG.md`
+
 ---
 
 ## Future improvement candidates (post-v3.9.8.4)
@@ -1292,27 +1319,47 @@ candidates in priority order, with effort and 5-check Global Rule audit.
    build wraps pandoc with bundled GB/T 7714 numeric CSL. **Honest limit**:
    PDF output needs xelatex (not installed on dev machine, install MiKTeX);
    HTML/DOCX/GFM work out of the box. 10/10 unit tests pass.
-8. **`[P2-6] pa cite-check` `--skeleton ms.md --bib refs.bib`** — Pre-build
+8. **`[P2-7] pa cite-check` `--skeleton ms.md --bib refs.bib`** — Pre-build
    validator. Scans a markdown skeleton, extracts every `[@bibkey]`
    placeholder, cross-references against the Bibtex, reports missing
    keys + typo'd keys + orphan cites (in bibtex but never cited).
    **Solves**: today, `pa build` failure with "undefined reference" gives
    you the wrong key but not the file/line — this gives a clean
    per-key report. Effort: 1h. ⭐⭐⭐
-9. **`[P2-7] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
+   **Sub-task decomposition**:
+   - A. extract `[@key]` placeholders from skeleton (regex on `[@\w\-:.]+`) — 15min
+   - B. parse keys from `.bib` (reuse `pa_cli/scaffold.py:parse_bibtex`) — 10min
+   - C. cross-ref: missing / typo'd / orphan buckets + suggest fix for typos — 20min
+   - D. CLI wire + 1 e2e test + help text — 15min
+9. **`[P2-8] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
    — Exports Bibtex (+ optional pa judge data) to a systematic-review-ready
    CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.
    Pluggable into Notion / Excel / RevMan / Covidence for formal screening.
    Reuses `pa judge` sqlite + `pa scaffold` bibtex parser. Effort: 1.5h. ⭐⭐⭐
-10. **`[P2-8] pa search-saved` `list/run/add/del/edit`** — Named search
+   **Sub-task decomposition**:
+   - A. build `screening_dict` per DOI (title+authors+year+venue+doi+abstract) — 30min
+   - B. join with `pa judge` data on (query, paper_key) — 20min
+   - C. CSV writer (handle quoting, encoding, optional `pd.DataFrame.to_excel`) — 20min
+   - D. CLI wire + 1 e2e test — 20min
+10. **`[P2-9] pa search-saved` `list/run/add/del/edit`** — Named search
     presets with parameter snapshots. Stores in
     `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`
     re-runs without retyping `--engine --year-min --limit`. Workaround
     for now: shell alias. Effort: 1h. ⭐⭐
-11. **`[P2-9] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
+    **Sub-task decomposition**:
+    - A. JSON schema for saved search (name + all flags as dict) — 15min
+    - B. CRUD functions (read / write / list / delete) — 20min
+    - C. CLI subcommands (5 of them) + 1 e2e test — 25min
+11. **`[P2-10] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
     dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
     cross-DOI merge + same-arxiv-ID cross-venue merge. Catches
     near-duplicates where default DOI-only dedup misses. Effort: 1.5h. ⭐⭐
+    **Sub-task decomposition**:
+    - A. `fuzzy_title_match()` using `difflib.SequenceMatcher` (no new dep) — 20min
+    - B. `same_author_year()` check (normalize author list + year) — 20min
+    - C. `same_arxiv_id()` check (extract arxiv id from various fields) — 15min
+    - D. merge logic: dedup key priority (DOI > arxiv-id > fuzzy title) — 20min
+    - E. CLI wire + 1 e2e test (corpus with known near-duplicates) — 15min
 
 ### Tier 2: Medium (0.5-1 day each)
 
@@ -1325,7 +1372,7 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 9. **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
    (fulltext_citation_density, fulltext_venue_score, fulltext_cross_encoder).
    Effort: 1-2d (mostly local computation).
-10. **`[P2-10] pa fetch-pdf-batch` `<bibtex>` `--out ./pdfs/`** — Complements
+10. **`[P2-11] pa fetch-pdf-batch` `<bibtex>` `--out ./pdfs/`** — Complements
     `pa fetch-batch` (CNKI semi-automated). This walks every Bibtex entry
     through the 8 fetch channels in priority order: Unpaywall → OpenAlex
     OA → CORE → arXiv → Sci-Hub (fallback) → ... Downloads to
@@ -1334,7 +1381,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     **Honest limits**: 7 Sci-Hub mirrors all dead (v3.9.7.6 verified);
     bar.cnki.net CAPTCHA still blocks CN papers (consistent with
     v3.9.8.3); Net effect: ~3-4 channels actually deliver for English.
-11. **`[P2-11] pa project` `init/list/status/corpus-search/corpus-merge`** —
+    **Sub-task decomposition**:
+    - A. `load_bibtex()` reuse from `pa_cli/scaffold.py` — 5min
+    - B. wrap `pa_cli/fetch.py:fetch()` with retry/timeout per channel — 45min
+    - C. per-entry orchestrator: try channels in priority order, save first success — 1h
+    - D. failure report (`failed_downloads.md` with reason per entry) — 30min
+    - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min
+11. **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
     Multi-corpus management. Each 课题 = one project at
     `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
     data + cross-corpus dedup. **Solves**: today all your 课题
@@ -1342,6 +1395,20 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     and one judge DB; this separates them. Effort: 6h. ⭐⭐⭐
     **Honest limit**: 6h is optimistic — first-time "project-level"
     management usually runs 8-10h. Skip until you have 3+ active 课题.
+    **Sub-task decomposition**:
+    - A. project layout spec (`projects/<slug>/refs.bib` + `judges.sqlite` + `meta.json`) — 30min
+    - B. `init` (create skeleton) / `list` (read all) / `status` (n_papers, n_labels per project) — 1.5h
+    - C. `corpus-search` (re-execute a saved search scoped to one project) — 1h
+    - D. `corpus-merge` (cross-corpus dedup + optional merge to a meta-corpus) — 2h
+    - E. CLI wire + 1 e2e test (init 2 projects, merge them) — 1h
+12. **`[P2-13] README.md` (top-level user-facing doc)** — Per user
+    request 2026-07-16 (deferred to "not blocking LLM understanding").
+    5 sections: 1-line pitch, 5-step quick start, core workflow
+    diagram, links to ROADMAP/CHANGELOG/troubleshooting, known
+    limitations. **Target reader**: humans landing on the repo,
+    not LLMs (which already have CHANGELOG + ROADMAP + handoff).
+    Effort: 2h. ⭐⭐ (low priority — defer until new human contributors
+    actually need it).
 
 ### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
 
@@ -1352,6 +1419,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     xueshu789 mirror unavailable per v3.9.7.6 5-path probe).
 12. **Cross-language unified ranking** — single ranking that combines EN + CN results
     semantically (vs current separate-engine dedup). Effort: 1-2 weeks; uncertain lift.
+
+### Tier 4: Blocked (explicit "won't do" per Global Rule)
+
+- Captcha solver (paid SaaS, fails Global Rule)
+- Self-hosted MCP server (already reverted 2026-07-04)
+- Custom rerank model training (fails Global Rule)
+- Browser extension for production users (fails Global Rule)
 
 ### Tier 5: Long-term (revised per user pushback 2026-07-15)
 
@@ -1394,13 +1468,6 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     update, integrate; even if "free" the user has to keep it on disk and
     deal with model rot). **Status: deferred** — only revisit if Mavis itself
     becomes unavailable.
-
-### Tier 4: Blocked (explicit "won't do" per Global Rule)
-
-- Captcha solver (paid SaaS, fails Global Rule)
-- Self-hosted MCP server (already reverted 2026-07-04)
-- Custom rerank model training (fails Global Rule)
-- Browser extension for production users (fails Global Rule)
 
 ### Recommended next step (if user wants to continue)
 
@@ -1658,6 +1725,67 @@ strict.
    for 万方 — lifts Chinese another 15-20pp but breaks Global Rule 1
 4. **Stop there.** A- is the real ceiling. Going further requires abandoning
    the hobbyist constraint.
+
+---
+
+
+
+## A-tier acceptance criteria (added 2026-07-16, per self-audit)
+
+> **Purpose**: B+ → A- → A is rhetorical without measurable criteria. This section
+> defines the metrics. If a future user says "做 A 吧" or "我们 A 了吗", point here.
+>
+> **Methodology**: metrics are derived from v3.9.7.7-7.9 real-query smoke tests on
+> 3 academic queries (数字普惠金融 + 家庭消费 / 长期护理保险 + 人口老龄化 /
+> 金融科技 + 中小银行). All numbers below assume a similar 课题 mix.
+
+### Coverage metrics (per-corpus, on 20-paper top-N after search)
+
+| Metric | B+ (today, v3.9.9.1) | A- target | A target (stretches Global Rule) |
+|---|---|---|---|
+| **English 课题**: cite% (papers with citation count > 0) | ~47% | ≥ 60% | ≥ 75% (needs LLM rerank) |
+| **English 课题**: abstract% (top-10) | ~80% | ≥ 90% | ≥ 95% |
+| **English 课题**: tldr% (top-10) | ~24% | ≥ 35% | ≥ 50% (needs LLM-extracted) |
+| **Chinese 课题**: cite% (top-20) | ~30-46% | ≥ 55% | ≥ 70% (needs AMiner+CNKI cite) |
+| **Chinese 课题**: abstract% (top-10) | ~80% | ≥ 90% | ≥ 95% |
+| **Chinese 课题**: cite per top-10 | ~17 | ≥ 25 | ≥ 40 |
+
+### Workflow metrics (user-side time per task)
+
+| Task | B+ (today) | A- target | A target |
+|---|---|---|---|
+| Search → 20-paper Bibtex | 5-10 min | 3-5 min | 1-2 min (saved searches) |
+| Screen 20 papers for relevance | 30-40 min | 15-20 min (`pa judge` bulk) | 5-10 min (auto-suggested relevance) |
+| Write skeleton + fill prose | 4-6 h (manual) | 2-3 h (`pa build` + Mavis prose) | 1 h (pa build + auto-cite-check) |
+| **Total per 20-paper lit review** | **~6-8 h** | **~2-3 h** | **~1 h** |
+
+### User-subjective metric (the real test)
+
+> **A-tier met iff**: for a typical 课题, the user can complete a 20-paper lit
+> review in **≤ 1/3 the time** they'd spend with ChatGPT alone. If `paper-agent +
+> Mavis` is <2x faster than `ChatGPT alone`, A-tier not met.
+
+### Known ceilings (these block A regardless of effort)
+
+- CNKI cite/dl count: anti-bot blocks all non-real-browser automation
+- Chinese paper tldr / influential-cite: S2 has shallow entries for Chinese
+- LLM-driven rerank: violates Global Rule
+- Fulltext deep rerank: 3/4 Layer 7 features at 0.0, blocked by missing fulltext corpus
+
+These are documented in the "What paper-agent can't do" section above; they're
+HARD limits, not aspirational targets.
+
+### How to measure (eval harness)
+
+For each A-tier push, run a smoke test on 3 real 课题 (mix of EN+CN):
+1. `pa search <topic> --format bibtex --enrich-top 20 -o test.bib` — measure
+   coverage: cite%, abstract%, tldr%
+2. `pa judge bulk test.bib --query <topic> --relevance 1` + manual spot-check
+   on 5-10 papers — measure workflow time
+3. `pa build test.bib --skeleton manuscript.md --out manuscript.html` + paste
+   to Mavis for prose — measure end-to-end
+
+Numbers go in CHANGELOG (not ROADMAP — this is a one-time metric, not a status).
 
 ---
 

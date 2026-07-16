@@ -65,6 +65,64 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
+## [3.9.9.3] - 2026-07-16 (ROADMAP self-audit: 6 defects fixed)
+
+Per user request 2026-07-16 11:05: write the 6 new extensions into
+ROADMAP, then critically analyze. Analysis surfaced 7 concrete
+defects + 3 meta-defects. User selected defects #1+#2+#4+#5+#6+#M2
+for immediate fix. This release closes those 6.
+
+**Defect #1 — A-tier acceptance criteria missing (fixed)**:
+Added new "A-tier acceptance criteria" section with measurable targets
+for coverage metrics (cite%/abstract%/tldr% per language) + workflow
+metrics (search/screen/write time) + user-subjective metric
+("A-tier iff paper-agent+Mavis is ≥3x faster than ChatGPT alone").
+Methodology: 3 real 课题 mix (数字普惠金融 / 长期护理保险 / 金融科技).
+
+**Defect #2 — [P-N] ID naming convention missing (fixed)**:
+Added rule 8 to the "Status discipline" block at the top of ROADMAP.
+P0=core infra, P1=search quality, P2=user-facing productivity,
+P3=long-term bets. **Discovered during this fix**: my earlier
+extension additions used [P2-6..11] which collided with existing
+[P2-6] PaSa-lite (v3.9.6). Renumbered new items to [P2-7..13].
+
+**Defect #4 — Future candidates' effort estimates unsourced (fixed)**:
+Added sub-task decomposition to all 6 new items ([P2-7] through
+[P2-13]), in the same style as [P0-1/2/3] retro. Each new item now
+has A/B/C/D/E sub-tasks with per-step time estimates.
+
+**Defect #5 — Tier numbering inconsistent (fixed)**:
+Reordered section: now Tier 1 → 2 → 3 → 4 (Blocked) → 5 (Long-term).
+Previously Tier 4 (Blocked) was after Tier 5 (Long-term), which
+violated "more-likely-first" reading order.
+
+**Defect #6 — Test counts not in ROADMAP (fixed)**:
+Added "**Tests**: 27 unit + CLI tests across 2 new modules (pa build
+10 + pa judge 17)" line at the end of Capability snapshot. Detail
+lives in CHANGELOG (per-version breakdown).
+
+**Defect #M2 — Capability snapshot dual identity (fixed)**:
+Added explicit "What this section IS and ISN'T" block at the end of
+Capability snapshot, making clear: ✅ IS forward-looking status,
+❌ IS NOT plan (that's "Future improvement candidates" below),
+❌ IS NOT release log (that's CHANGELOG.md).
+
+**Defect #3 (deferred to process ticket)**:
+AMiner git gap (v3.9.8.0 ship but no commit) is now caught by
+the [P2-13] README ticket (which will need a "Files added:" check
+in any release). User chose not to add a commit-template change.
+
+**Defect #7 (deferred)**:
+"What paper-agent can't do" ❌ bucket still mixes BLOCKED and
+DEFERRED. Will split in a future pass.
+
+**Defects M1, M3 (deferred to [P2-13] / future)**:
+- M1: ROADMAP is single file; split at 2000-line mark
+- M3: README.md — added as [P2-13] ticket (2h, ⭐⭐ low priority,
+  user-confirmed not blocking LLM understanding of project)
+
+---
+
 ## [3.9.9.2] - 2026-07-16 (working tree cleanup + AMiner git-gap fix)
 
 ### v3.9.9.2 -- commit missing v3.9.8.0 AMiner engine (2026-07-16 10:32)
