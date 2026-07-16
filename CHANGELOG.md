@@ -234,6 +234,38 @@ whitespace-strip, no-mutation.
 - `test_output/_test_filter_by_source.py` (NEW, 9 unit tests)
 - `ROADMAP.md` ([P1-17] marked DONE; versioned table v3.9.9.9 row)
 
+---
+
+## [3.9.9.10] - 2026-07-16 ([P1-18] --enrich-max-age-years year-aware skip)
+
+### v3.9.9.10 -- [P1-18] ship (2026-07-16 18:30)
+
+**Feature**: `enrich_top_n()` now skips ALL enrichment (S2 + Crossref +
+OpenAlex fallback) for papers older than `max_age_years` (default 10).
+S2 cite often stale/unavailable for older papers; Crossref rarely adds
+missing fields for pre-2010 papers since OpenAlex/Crossref already
+covered them in the initial search.
+
+**CLI**: `--enrich-max-age-years 10` (default 10; set 0 to disable)
+
+**Implementation**:
+- `enrich_top_n()` accepts `max_age_years: int = 10` parameter
+- Current year hardcoded to 2026 (no datetime import needed for testability)
+- Boundary: 2016 paper in 2026 (=10y) is NOT skipped (strict `>` check)
+- `_enrichment.enrichment_skipped = "year<{YEAR}"` records reason
+- Stats line extended: `[P1-14/18] enrich_top_n: enriched X, skipped_low_cite Y, skipped_old Z (year<{Y}) of top-N`
+
+**Tests**: 8/8 unit tests pass in `test_output/_test_max_age_years.py`
+covering: old-skipped, new-enriched, None-year-proceeds, max_age=0-disables,
+5y-threshold, 10y-boundary-not-skipped, mixed-old-and-new, min_cites-combination.
+
+**Files changed**:
+- `pa_cli/search.py` (~30 LOC: `max_age_years` param + check in enrich loop)
+- `pa_cli/cli.py` (new `--enrich-max-age-years` option)
+- `pa_cli/__init__.py` (version bump 3.9.9.9 → 3.9.9.10)
+- `test_output/_test_max_age_years.py` (NEW, 8 unit tests)
+- `ROADMAP.md` ([P1-18] marked DONE; versioned table v3.9.9.10 row)
+
     (since v3.9.9.5 is latest; added note explaining feature vs
     doc-only distinction)
 

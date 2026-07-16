@@ -171,9 +171,9 @@ def _openalex_lookup_title(title: str) -> Optional[Dict]:
 
 
 def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
-                 resort_by: str = "cite") -> List[Dict]:
+                 resort_by: str = "cite", max_age_years: int = 10) -> List[Dict]:
     """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites + [P1-16] resort_by
-    + [P1-15] OpenAlex-by-title fallback added 2026-07-16).
+    + [P1-15] OpenAlex-by-title fallback + [P1-18] max_age_years added 2026-07-16).
 
     For each result in top-N that lacks cite/abstract, do second-hop lookups:
     1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
@@ -199,6 +199,12 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
             "cite" (default) — cited_by_count desc; backward compat.
             "year" — year desc (newest first; None/0 at end).
             "relevance" — keep natural engine order (no re-sort).
+        max_age_years: [P1-18] skip ALL enrichment (S2 + Crossref + OpenAlex
+            fallback) for papers older than this many years (default 10).
+            Per [P1-18] ROADMAP: S2 cite often stale/unavailable for older
+            papers (e.g., pre-2015 in 2026); Crossref usually has older
+            coverage but extra lookup rarely adds value. Set to 0 to
+            disable age-based skip and enrich all papers.
 
     Returns: same list (modified in place)
     """
@@ -206,10 +212,22 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
         return results
     enriched = 0
     skipped_low_cite = 0
+    skipped_old = 0
+    current_year = 2026  # hardcoded; no datetime import needed for testability
     for i, r in enumerate(results[:n]):
         r.setdefault("_enrichment", {})
         has_cite = bool(r.get("cited_by_count"))
         has_abstract = bool(r.get("abstract"))
+        # [P1-18] Year-aware skip: if paper is older than max_age_years, skip
+        # ALL enrichment (S2 + Crossref + OpenAlex). S2 cite often stale for
+        # older papers; Crossref is faster but rarely adds missing fields
+        # for pre-2010 papers since OpenAlex/Crossref already covered them.
+        year = r.get("year")
+        is_old = (max_age_years > 0 and year and (current_year - year) > max_age_years)
+        if is_old:
+            r["_enrichment"]["enrichment_skipped"] = f"year<{current_year - max_age_years}"
+            skipped_old += 1
+            continue
         # Try S2 by DOI (best — gets tldr, inf_cite, ref_count)
         # [P1-14] skip S2 if paper has cited_by_count < min_cites (saves ~12s/query
         # when many 0-cite papers in top-N; S2 returns shallow entry for 0-cite per
@@ -258,10 +276,14 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
         results.sort(key=lambda x: x.get("year") or 0, reverse=True)
     # resort_by == "relevance" → keep natural order, no re-sort
     # [P1-14] print enrichment stats (stdout; CLI can grep/pipe)
-    if min_cites > 0 and skipped_low_cite:
-        print(f"  [P1-14] enrich_top_n: enriched {enriched}, "
-              f"skipped {skipped_low_cite} (cited_by_count<{min_cites}) "
-              f"of top-{n}", file=sys.stderr)
+    if (min_cites > 0 and skipped_low_cite) or (max_age_years > 0 and skipped_old):
+        parts = [f"enriched {enriched}"]
+        if min_cites > 0 and skipped_low_cite:
+            parts.append(f"skipped_low_cite {skipped_low_cite}")
+        if max_age_years > 0 and skipped_old:
+            parts.append(f"skipped_old {skipped_old} (year<{current_year - max_age_years})")
+        print(f"  [P1-14/18] enrich_top_n: {', '.join(parts)} of top-{n}",
+              file=sys.stderr)
     return results
 
 
@@ -530,7 +552,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                enrich_top: int = 0,
                enrich_top_min_cites: int = 1,
                sort_by: str = "cite",
-               source_filter: List[str] = None) -> Dict[str, Any]:
+               source_filter: List[str] = None,
+               enrich_max_age_years: int = 10) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -553,6 +576,11 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
              specified engines (e.g. ["openalex", "cnki"]). None/empty =
              no filter (default). See filter_by_source() for matching
              semantics. Use case: query many engines, display subset.
+    enrich_max_age_years: [P1-18] skip ALL enrichment for papers older
+             than this many years (default 10). S2 cite often stale/
+             unavailable for older papers; Crossref rarely adds missing
+             fields for pre-2010 papers. Set to 0 to disable and enrich
+             all papers regardless of age.
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -641,7 +669,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     # that lack cite/abstract. Off by default (enrich_top=0).
     if enrich_top > 0:
         enrich_top_n(unified, n=enrich_top, min_cites=enrich_top_min_cites,
-                     resort_by=sort_by)
+                     resort_by=sort_by, max_age_years=enrich_max_age_years)
     elif sort_by != "cite":
         # Even without enrichment, ensure final sort matches user request
         unified = sort_results(unified, sort_by=sort_by)
