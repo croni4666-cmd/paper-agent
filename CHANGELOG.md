@@ -65,6 +65,71 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
+## [3.9.9.1] - 2026-07-16 ([P3-1] `pa judge` relevance judgement collection)
+
+### v3.9.9.1 -- pa judge (2026-07-16 10:24)
+
+Per ROADMAP "Tier 5 long-term" (post-v3.9.7.9, revised per user pushback
+2026-07-15): v3.9.7.0-7.2 ML/DL local rerank failed at n=50 (data
+problem, not absolute). User pushback: "ML/DL 本地不是不可行, 是数据太少".
+Corrected verdict: re-probe when n >= 500.
+
+This release ships the data-collection track. Storage in a local SQLite DB;
+CLI for adding single/bulk judgements, listing, stats, and bench-format
+import/export (compatible with the existing LTR pipeline).
+
+**Storage**: `~/.paper-agent/judgements.sqlite` (override with `PA_JUDGE_DB` env var)
+
+**Schema**:
+```
+judgements (id, query, paper_key, paper_title, relevance, reason,
+            source, created_at, updated_at,
+            UNIQUE(query, paper_key))
+```
+
+**Relevance scale** (matches existing bench/v01/labels.json rubric):
+- `0` = irrelevant  (off-topic, or wrong level+topic)
+- `1` = marginal    (topic adjacent OR level wrong OR scope right but topic wrong)
+- `2` = relevant    (matches query topic + level + scope)
+
+**New CLI commands** (6 subcommands under `pa judge`):
+- `pa judge add --query ... --key ... --relevance {0,1,2} [--title] [--reason] [--source] [--db]`
+- `pa judge bulk <bibtex> --query ... --relevance {0,1,2} [--reason] [--db]`
+- `pa judge list [--query] [--relevance] [--limit] [--format table|json|jsonl]`
+- `pa judge stats [--query]` (prints n hint: <100 = noise, 100-499 = small, >=500 = ready)
+- `pa judge export -o <path> [--format jsonl|bench-json]` (LTR pipeline compat)
+- `pa judge import <bench.json>` (bench/v01/labels.json shape)
+
+**Files**:
+- `pa_cli/judge.py` (~420 LOC, NEW)
+- `pa_cli/cli.py` (+~200 LOC, registered `pa judge` group + 6 subcommands)
+- `test_output/_test_pa_judge.py` (17 unit + CLI tests)
+- `test_output/_demo_judgements_bench.json` (sample bench-format export)
+
+**Test result**: 17/17 pass
+- Core: add, upsert, list filter, stats, bulk, validation
+- IO: bench import, invalid-relevance skip, export round-trip, JSONL export
+- CLI: subcommand registration + add/bulk/stats via Click runner
+
+**Honest 3-tier verification**:
+| What | Status | Evidence |
+|---|---|---|
+| Single/bulk add + list + stats + export + import | ✅ | 17/17 tests pass; real CLI run added 3 judgements, stats correct, bench-format round-trips |
+| Schema enforces `(query, paper_key)` UNIQUE | ✅ | upsert_overwrite test verifies re-adding updates same row, not creates new |
+| Relevance validation (must be 0/1/2) | ✅ | add_invalid_relevance test |
+| Bench/v01/labels.json import compatible | ✅ | export_bench_format_round_trip test + real CLI run |
+| Re-probe ML/DL rerank at n>=500 | ❌ future work | need to accumulate data first |
+| Concurrent write safety | ⚠️ untested | SQLite serialises by default; fine for single-user hobbyist workflow |
+
+**Typical user flow**:
+1. `pa search "topic" --format bibtex --out refs.bib`
+2. `pa judge bulk refs.bib --query "topic" --relevance 1` (rough first pass)
+3. `pa judge add ...` (per-paper refinement)
+4. `pa judge stats` (track n; ready when n >= 500)
+5. `pa judge export -o bench_labels.json --format bench-json` (LTR pipeline input)
+
+---
+
 ## [3.9.9] - 2026-07-16 ([P2-5] `pa build` + `pa scaffold` manuscript typeset pipeline)
 
 ### v3.9.9 -- pa build + pa scaffold (2026-07-16 10:12)
