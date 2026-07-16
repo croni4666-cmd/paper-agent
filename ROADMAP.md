@@ -1191,15 +1191,16 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.8.3 | released 2026-07-15 | CNKI fetch real test + 2-cookie vs 4-cookie limit. Confirmed `bar.cnki.net/bar/download/order` blocked by `vLevel=5` CAPTCHA (anti-bot final defense). `fetch_cnki_detail()` upgraded from stub to real playwright flow; CN-style DOI heuristic (10.3969/10.16525/j.cnki/j.issn) routes to CNKI first | 2026-07-15 |
 | v3.9.8.4 | released 2026-07-16 | `pa fetch-batch` semi-automated CNKI guide (per-paper xueshu789 search URL + Edge console JS snippet for batch doDownload extraction). New file `pa_cli/batch_fetch.py` (~280 LOC). Real-corpus test 5/5 found, 4/5 with DOI. `Export-CNKICookies.ps1` + session handoff doc | 2026-07-16 |
 | v3.9.9 | released 2026-07-16 | [P2-5] `pa build` + `pa scaffold` manuscript typeset pipeline (pandoc + GB/T 7714 CSL). New files `pa_cli/build.py` (~265 LOC) + `pa_cli/scaffold.py` (~330 LOC) + bundled `chinese-gb7714-2005-numeric.csl` (15.4 KB). 10/10 unit tests pass. HTML/DOCX/GFM e2e verified; PDF requires xelatex (NOT installed on dev machine, pa build will print install hint) | 2026-07-16 |
+| v3.9.9.1 | released 2026-07-16 | [P3-1] `pa judge` relevance judgement collection (sqlite + 6 subcommands). New file `pa_cli/judge.py` (~420 LOC). 17/17 unit + CLI tests pass. Schema: `(query, paper_key) UNIQUE`, 3-level relevance (0/1/2) matching bench/v01 rubric. Stats prints n hint (<100 noise / 100-499 small / >=500 ready). Bench-format import/export for LTR pipeline compat. Re-probe ML/DL rerank still future work (need n>=500 first) | 2026-07-16 |
 
 ---
 
-## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-16 to v3.9.9)
+## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-16 to v3.9.9.1)
 
 This is the "what paper-agent can do today" reference. Updated whenever
-a major version ships. Last update: 2026-07-16 (v3.9.9).
+a major version ships. Last update: 2026-07-16 (v3.9.9.1).
 
-### What paper-agent can do today (v3.9.9)
+### What paper-agent can do today (v3.9.9.1)
 
 | Capability | Status | Quality (typical) | Where |
 |---|---|---|---|
@@ -1220,8 +1221,9 @@ a major version ships. Last update: 2026-07-16 (v3.9.9).
 | LLM topic labels | ✅ done | custom + domain stopwords | `pa review-topics` |
 | Fetch PDF (8-channel + proxy) | ✅ done | ~16/16 candidates per query, auto-detect clash/system proxy | `pa fetch` |
 | CNKI fetch-batch guide | ✅ done (v3.9.8.4) | per-paper xueshu789 URL + Edge console JS for batch doDownload; 5/5 found, 4/5 with DOI in real test | `pa fetch-batch -i input.txt -o guide.md` |
-| **Manuscript scaffold (v3.9.9)** | ✅ done | markdown outline + per-paper `[@bibkey]` cite hints + `> prompt:` blocks for Mavis. Group by year/topic/author | `pa scaffold refs.bib` |
-| **Manuscript typeset (v3.9.9)** | ✅ done | pandoc + bundled GB/T 7714 numeric CSL. HTML/DOCX/MD/GFM/EPUB/ODT/RTF/TEX work out of the box; PDF needs xelatex (NOT installed on dev machine, pa build will print install hint) | `pa build refs.bib --skeleton ms.md --out ms.html` |
+| Manuscript scaffold | ✅ done (v3.9.9) | markdown outline + per-paper `[@bibkey]` cite hints + `> prompt:` blocks for Mavis. Group by year/topic/author | `pa scaffold refs.bib` |
+| Manuscript typeset | ✅ done (v3.9.9) | pandoc + bundled GB/T 7714 numeric CSL. HTML/DOCX/MD/GFM/EPUB/ODT/RTF/TEX work out of the box; PDF needs xelatex (NOT installed on dev machine, pa build will print install hint) | `pa build refs.bib --skeleton ms.md --out ms.html` |
+| **Relevance judgement collection (v3.9.9.1)** | ✅ done | sqlite storage with `(query, paper_key) UNIQUE`, 3-level relevance (0/1/2), 6 CLI subcommands (add/bulk/list/stats/export/import). Bench/v01 format compat. Re-probe ML/DL rerank future work (need n>=500) | `pa judge add/bulk/list/stats/export/import` |
 | MCP integration | ✅ done | uses public `paper-search-mcp` | `pa mcp install` |
 
 ### What paper-agent can't do (terminal limitations per [P0-9.1b] v3.9.7.6 close-out + smoke test v3.9.7.7-7.9)
@@ -1314,24 +1316,26 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 
 ### Tier 5: Long-term (revised per user pushback 2026-07-15)
 
-**13. [P3-1] ML/DL rerank model — data collection track** —
+**13. ~~[P3-1] ML/DL rerank model — data collection track~~** —
     User 2026-07-15 pushback: "ML/DL 本地 不是不可行, 而是数据太少的原因,
     想办法增加数据量或许能够改变 (但这是长期工程, 我需要不断在实干中采集数据才行)".
 
-    **Status: long-term, not started**. Conditions to resume:
-    - n >= 500 labeled query→relevance pairs collected from real 课题 use
-    - Human effort: ~30 min per query × 500 = ~250 hours = impractical to do upfront
-    - Realistic: opportunistic collection, save any judgement call as a labelled example
+    **Status: data collection INFRASTRUCTURE ✅ DONE in v3.9.9.1** (released
+    2026-07-16). `pa judge` command + sqlite storage + bench-format import/
+    export all shipped. 17/17 tests pass. 6 subcommands: add/bulk/list/
+    stats/export/import. Re-probe ML/DL rerank at n>=500 still future work
+    (need to accumulate data first via opportunistic collection).
 
-    **What to do now (deferred, not abandoned)**:
-    - **Add a `pa judge` command** that captures user feedback on search results
-      (e.g., `--mark-relevant DOI --mark-irrelevant DOI`) → build labelled dataset
-      as side-effect of normal use
-    - **Store judgement in a local `judgements.sqlite`** (not committed to git)
-    - **Monitor dataset size**: when n crosses 100, 200, 500 thresholds,
-      re-run LTR / BGE cross-encoder / MoE probes (paper-agent has all the
-      evaluation code in `pa_cli/bench/v01/`)
-    - **No new model training until n>=500** (per memory discipline: n<100 is noise)
+    **What changed in v3.9.9.1**:
+    - ✅ `pa judge add` / `bulk` / `list` / `stats` / `export` / `import`
+    - ✅ SQLite storage at `~/.paper-agent/judgements.sqlite`
+    - ✅ 3-level relevance (0/1/2) matching bench/v01/labels.json
+    - ✅ Bench-format import/export for LTR pipeline compat
+    - ⏳ Data accumulation: opportunistic, 6-12 months realistic to n=500
+
+    **Conditions to resume ML/DL re-probe**:
+    - n >= 500 labeled query→relevance pairs
+    - Use `pa judge stats` to monitor; prints hint when threshold crossed
 
     **Realistic timeline**: 6-12 months of opportunistic collection
     to reach n=500 if user does 课题 2-3 times per week.
