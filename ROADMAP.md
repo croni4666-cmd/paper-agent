@@ -3151,8 +3151,8 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 - **Verdict — workflow split** (per user "按你的建议走" 2026-07-15):
   - **Chinese papers** → user uses **CNKI website directly** (with xueshu789 cookies);
     paper-agent's CNKI engine handles bulk search but lacks cite/abstract
-  - **English papers** → use paper-agent's 6-engine pool; v3.9.7.7 enrichment
-    fields give 47% cite / 21% abstract
+  - **English papers** → use paper-agent's 7-engine pool (post-AMiner v3.9.8.0);
+    v3.9.7.7 enrichment fields give 47% cite / 21% abstract
   - **Mixed / bilingual queries** → paper-agent `pa search --engine all`
     gives recall; user then manually enriches Chinese-only results via CNKI
 
