@@ -144,14 +144,42 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
     }
 
 
+def _openalex_lookup_title(title: str) -> Optional[Dict]:
+    """[P1-15] OpenAlex works?search={title} — fallback for Crossref-by-title
+    0-hit case. Better Chinese coverage than Crossref per v3.9.7.5 lessons.
+
+    Returns same shape as _crossref_lookup_title() so the caller can use
+    either result interchangeably.
+
+    Best-effort: returns top-1 match. OpenAlex free tier is generous (no
+    rate limit when no api_key; 5 RPS with polite pool key).
+
+    Note: OpenAlex uses `cited_by_count` natively (not is-referenced-by-count
+    like Crossref) so the field is consistent with the rest of the codebase.
+    """
+    if not title or len(title) < 10:
+        return None
+    url = (f"https://api.openalex.org/works?search={quote(title)}&per_page=1"
+           f"&filter=type:article")
+    api_key = os.environ.get("OPENALEX_API_KEY")
+    if api_key:
+        url += f"&api_key={api_key}"
+    s, data = http_get_json(url, headers={}, timeout=15)
+    if s != 200 or not data.get("results"):
+        return None
+    return _normalize_openalex(data["results"][0])
+
+
 def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
                  resort_by: str = "cite") -> List[Dict]:
     """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites + [P1-16] resort_by
-    added 2026-07-16).
+    + [P1-15] OpenAlex-by-title fallback added 2026-07-16).
 
     For each result in top-N that lacks cite/abstract, do second-hop lookups:
     1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
     2. If no DOI: call Crossref by title to find DOI + cite
+    3. [P1-15] If Crossref 0-hit: call OpenAlex by title (better Chinese
+       coverage than Crossref per v3.9.7.5 lessons; lifts Chinese cite +5-10pp)
 
     Updates results in-place AND returns them. Adds `_enrichment` field
     per paper documenting which lookups succeeded.
@@ -210,7 +238,18 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
                         r[k] = cr[k]
                 r["_enrichment"]["crossref_title"] = True
                 enriched += 1
-            time.sleep(0.05)  # Crossref is generous
+            else:
+                # [P1-15] Fallback: OpenAlex-by-title for Chinese papers that
+                # Crossref-by-title misses (per v3.9.7.5 lesson: OpenAlex has
+                # better CN coverage than Crossref for the same query).
+                oa = _openalex_lookup_title(r["title"])
+                if oa:
+                    for k in ("doi", "cited_by_count", "abstract", "venue", "year"):
+                        if oa.get(k) and not r.get(k):
+                            r[k] = oa[k]
+                    r["_enrichment"]["openalex_title"] = True
+                    enriched += 1
+            time.sleep(0.05)  # Crossref is generous; OpenAlex too
     # [P1-16] Re-sort by user-chosen criterion (newly enriched papers may
     # have higher counts, so cite-sorted re-rank is important)
     if resort_by == "cite":

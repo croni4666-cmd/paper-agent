@@ -170,6 +170,36 @@ in `_wrapper_notes` (honest 3-tier — no time-budget enforcement).
 - `test_output/test_cache_integration.py` (rewritten, 2 tests pass)
 - `ROADMAP.md` ([P1-14] and [P1-16] marked DONE; versioned table v3.9.9.7)
 
+---
+
+## [3.9.9.8] - 2026-07-16 ([P1-15] OpenAlex-by-title fallback)
+
+### v3.9.9.8 -- [P1-15] ship (2026-07-16 17:50)
+
+**Feature**: When `_crossref_lookup_title()` returns 0 hits, fall back to
+`_openalex_lookup_title()` to fill DOI + cite + year + venue. OpenAlex has
+better Chinese coverage than Crossref (per v3.9.7.5 lessons: many CN
+papers that Crossref misses are indexed in OpenAlex). Expected +5-10pp
+on Chinese cite coverage.
+
+**Implementation**:
+- New `_openalex_lookup_title(title)` function (~25 LOC) in `pa_cli/search.py`
+- `enrich_top_n()` modified: when Crossref returns None, call OpenAlex
+  as fallback. Fields filled: `doi`, `cited_by_count`, `abstract`, `venue`,
+  `year` (each only if not already set, to preserve user-supplied data).
+- `_enrichment.openalex_title = True` records the fallback path.
+
+**Tests**: 8/8 unit tests pass in `test_output/_test_openalex_title_fallback.py`
+covering: Crossref-hit-skips-OpenAlex, Crossref-0hit-uses-OpenAlex,
+both-0hit, only-missing-fields-filled, OpenAlex normalization, 0 results,
+short title, HTTP error.
+
+**Files changed**:
+- `pa_cli/search.py` (~30 LOC: new `_openalex_lookup_title` + `enrich_top_n` modification)
+- `test_output/_test_openalex_title_fallback.py` (NEW, 8 unit tests)
+- `ROADMAP.md` ([P1-15] marked DONE; versioned table v3.9.9.8 row)
+- `CHANGELOG.md` (this entry)
+
     (since v3.9.9.5 is latest; added note explaining feature vs
     doc-only distinction)
 
