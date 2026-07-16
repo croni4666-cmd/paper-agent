@@ -1,13 +1,20 @@
-# Session Handoff — paper-agent 增强计划 (v3.9.8.4)
+# Session Handoff — paper-agent 增强计划 (originally v3.9.8.4, now v3.9.9.6)
 
-**Date**: 2026-07-16 09:19
+**Date**: 2026-07-16 09:19 (original handoff) → 2026-07-16 12:40 (current)
 **From session**: mvs_6bb48cb3cb1e4e5b9bc5625f1a5b3da9
 **Reason for handoff**: User experiencing intermittent 内部服务器错误 (mavis
 daemon 3.0.48/3.0.49 known bug; watchdog monitors at C:\Users\DengN\.mavis\bin\Watch-Mavis.ps1)
 
+> **Audit trail note (2026-07-16 12:40)**: handoff originally captured
+> v3.9.8.4; the new session progressed through 3.9.9 / 3.9.9.1 (pa judge)
+> / 3.9.9.2 (cleanup) / 3.9.9.3-9.6 (14 audit rounds, doc-only). The
+> capability snapshot below was incrementally updated as new features
+> shipped; it now reflects v3.9.9.1 (last feature release) — see
+> audit history table in Section 10 for the full release timeline.
+
 ## 1. Project state — current capability snapshot
 
-paper-agent v3.9.8.4 (latest commit):
+paper-agent v3.9.9.6 (latest release; last feature shipped v3.9.9.1):
 
 | Dimension | Status | Notes |
 |---|---|---|
