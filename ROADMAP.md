@@ -1280,9 +1280,7 @@ remaining gaps are hobbyist-budget ceilings that require either paid SaaS or sel
 LLM to fix — both ruled out by Global Rule.
 
 **Tests**: 27 unit + CLI tests across 2 new modules (pa build 10 + pa judge 17).
-Total test count + per-version breakdown lives in `CHANGELOG.md` (this snapshot is
-a status reference, not a test report — see [CHANGELOG.md](CHANGELOG.md) for release
-notes & detailed test counts per version).
+This is a status snapshot, not a release log.
 
 **What this section IS and ISN'T**:
 - ✅ IS: a forward-looking status snapshot — "what paper-agent can do today"
@@ -1298,117 +1296,117 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 
 ### Tier 1: Easy (1-2h each, low risk)
 
-1. **`--enrich-top-min-cites` filter** — skip S2 deep lookups for papers with 0
-   cite (saves ~12s per query when many low-cite papers in top-N). Effort: 30min.
-2. **OpenAlex-by-title fallback** for crossref-by-title 0-hit case — improves
-   Chinese cite coverage another 5-10pp. Effort: 1h.
-3. **CLI sort options** — `--sort-by {cite|year|relevance}`. Effort: 30min.
-4. **Per-source filter** — `--source cnki,openalex` (only show certain engine results).
-   Effort: 30min.
-5. **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
-   (S2 cite often stale / unavailable for older papers). Effort: 30min.
-6. ~~[P1-7] AMiner engine (Tsinghua/Zhipu, open.aminer.cn)~~ — ✅ **DONE in
-   v3.9.8.0** (released 2026-07-15). 7th search engine, 3.3 亿论文 Chinese
-   coverage, public API, free. **+10.9pp Chinese cite lift verified** (real
-   queries: 21% baseline → 30-46% post-AMiner). AMiner 30-day eval cron
-   (`aminer-30day-eval`) will run 2026-08-14 to decide API renewal.
-7. ~~[P2-5] `pa build` + `pa scaffold` — manuscript pipeline (pandoc + Manubot
-   pattern)~~ — ✅ **DONE in v3.9.9** (released 2026-07-16). Bridges
-   "search returns Bibtex" → "manuscript ready" gap. Scaffold renders
-   outline + per-paper `[@bibkey]` cite hints + prompt blocks for Mavis;
-   build wraps pandoc with bundled GB/T 7714 numeric CSL. **Honest limit**:
-   PDF output needs xelatex (not installed on dev machine, install MiKTeX);
-   HTML/DOCX/GFM work out of the box. 10/10 unit tests pass.
-8. **`[P2-7] pa cite-check` `--skeleton ms.md --bib refs.bib`** — Pre-build
-   validator. Scans a markdown skeleton, extracts every `[@bibkey]`
-   placeholder, cross-references against the Bibtex, reports missing
-   keys + typo'd keys + orphan cites (in bibtex but never cited).
-   **Solves**: today, `pa build` failure with "undefined reference" gives
-   you the wrong key but not the file/line — this gives a clean
-   per-key report. Effort: 1h. ⭐⭐⭐
-   **Sub-task decomposition**:
-   - A. extract `[@key]` placeholders from skeleton (regex on `[@\w\-:.]+`) — 15min
-   - B. parse keys from `.bib` (reuse `pa_cli/scaffold.py:parse_bibtex`) — 10min
-   - C. cross-ref: missing / typo'd / orphan buckets + suggest fix for typos — 20min
-   - D. CLI wire + 1 e2e test + help text — 15min
-9. **`[P2-8] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
-   — Exports Bibtex (+ optional pa judge data) to a systematic-review-ready
-   CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.
-   Pluggable into Notion / Excel / RevMan / Covidence for formal screening.
-   Reuses `pa judge` sqlite + `pa scaffold` bibtex parser. Effort: 1.5h. ⭐⭐⭐
-   **Sub-task decomposition**:
-   - A. build `screening_dict` per DOI (title+authors+year+venue+doi+abstract) — 30min
-   - B. join with `pa judge` data on (query, paper_key) — 20min
-   - C. CSV writer (handle quoting, encoding, optional `pd.DataFrame.to_excel`) — 20min
-   - D. CLI wire + 1 e2e test — 20min
-10. **`[P2-9] pa search-saved` `list/run/add/del/edit`** — Named search
-    presets with parameter snapshots. Stores in
-    `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`
-    re-runs without retyping `--engine --year-min --limit`. Workaround
-    for now: shell alias. Effort: 1h. ⭐⭐
-    **Sub-task decomposition**:
-    - A. JSON schema for saved search (name + all flags as dict) — 15min
-    - B. CRUD functions (read / write / list / delete) — 20min
-    - C. CLI subcommands (5 of them) + 1 e2e test — 25min
-11. **`[P2-10] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
-    dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
-    cross-DOI merge + same-arxiv-ID cross-venue merge. Catches
-    near-duplicates where default DOI-only dedup misses. Effort: 1.5h. ⭐⭐
-    **Sub-task decomposition**:
-    - A. `fuzzy_title_match()` using `difflib.SequenceMatcher` (no new dep) — 20min
-    - B. `same_author_year()` check (normalize author list + year) — 20min
-    - C. `same_arxiv_id()` check (extract arxiv id from various fields) — 15min
-    - D. merge logic: dedup key priority (DOI > arxiv-id > fuzzy title) — 20min
-    - E. CLI wire + 1 e2e test (corpus with known near-duplicates) — 15min
+> **Reading convention**: items in this tier are listed in **priority order**
+> but **refer to them by their `[P-N]` ID**, not the position number. Some
+> pre-naming items (top of list) don't have `[P-N]` IDs yet — those predate
+> the ID convention added 2026-07-16.
+
+- **`--enrich-top-min-cites` filter** — skip S2 deep lookups for papers with 0
+  cite (saves ~12s per query when many low-cite papers in top-N). Effort: 30min.
+- **OpenAlex-by-title fallback** for crossref-by-title 0-hit case — improves
+  Chinese cite coverage another 5-10pp. Effort: 1h.
+- **CLI sort options** — `--sort-by {cite|year|relevance}`. Effort: 30min.
+- **Per-source filter** — `--source cnki,openalex` (only show certain engine results).
+  Effort: 30min.
+- **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
+  (S2 cite often stale / unavailable for older papers). Effort: 30min.
+- ~~`[P1-7] AMiner engine` (Tsinghua/Zhipu, open.aminer.cn)~~ — ✅ **DONE in
+  v3.9.8.0** (released 2026-07-15). 7th search engine, 3.3 亿论文 Chinese
+  coverage, public API, free. **+10.9pp Chinese cite lift verified** (real
+  queries: 21% baseline → 30-46% post-AMiner). AMiner 30-day eval cron
+  (`aminer-30day-eval`) will run 2026-08-14 to decide API renewal.
+- ~~`[P2-5] pa build` + `pa scaffold` — manuscript pipeline (pandoc + Manubot
+  pattern)~~ — ✅ **DONE in v3.9.9** (released 2026-07-16). Bridges
+  "search returns Bibtex" → "manuscript ready" gap. Scaffold renders
+  outline + per-paper `[@bibkey]` cite hints + prompt blocks for Mavis;
+  build wraps pandoc with bundled GB/T 7714 numeric CSL. **Honest limit**:
+  PDF output needs xelatex (not installed on dev machine, install MiKTeX);
+  HTML/DOCX/GFM work out of the box. 10/10 unit tests pass.
+- **`[P2-7] pa cite-check` `--skeleton ms.md --bib refs.bib`** — Pre-build
+  validator. Scans a markdown skeleton, extracts every `[@bibkey]`
+  placeholder, cross-references against the Bibtex, reports missing
+  keys + typo'd keys + orphan cites (in bibtex but never cited).
+  **Solves**: today, `pa build` failure with "undefined reference" gives
+  you the wrong key but not the file/line — this gives a clean
+  per-key report. Effort: 1h. ⭐⭐⭐
+  **Sub-task decomposition**:
+  - A. extract `[@key]` placeholders from skeleton (regex on `[@\w\-:.]+`) — 15min
+  - B. parse keys from `.bib` (reuse `pa_cli/scaffold.py:parse_bibtex`) — 10min
+  - C. cross-ref: missing / typo'd / orphan buckets + suggest fix for typos — 20min
+  - D. CLI wire + 1 e2e test + help text — 15min
+- **`[P2-8] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
+  — Exports Bibtex (+ optional pa judge data) to a systematic-review-ready
+  CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.
+  Pluggable into Notion / Excel / RevMan / Covidence for formal screening.
+  Reuses `pa judge` sqlite + `pa scaffold` bibtex parser. Effort: 1.5h. ⭐⭐⭐
+  **Sub-task decomposition**:
+  - A. build `screening_dict` per DOI (title+authors+year+venue+doi+abstract) — 30min
+  - B. join with `pa judge` data on (query, paper_key) — 20min
+  - C. CSV writer (handle quoting, encoding, optional `pd.DataFrame.to_excel`) — 20min
+  - D. CLI wire + 1 e2e test — 20min
+- **`[P2-9] pa search-saved` `list/run/add/del/edit`** — Named search
+  presets with parameter snapshots. Stores in
+  `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`
+  re-runs without retyping `--engine --year-min --limit`. Workaround
+  for now: shell alias. Effort: 1h. ⭐⭐
+  **Sub-task decomposition**:
+  - A. JSON schema for saved search (name + all flags as dict) — 15min
+  - B. CRUD functions (read / write / list / delete) — 20min
+  - C. CLI subcommands (5 of them) + 1 e2e test — 25min
+- **`[P2-10] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
+  dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
+  cross-DOI merge + same-arxiv-ID cross-venue merge. Catches
+  near-duplicates where default DOI-only dedup misses. Effort: 1.5h. ⭐⭐
+  **Sub-task decomposition**:
+  - A. `fuzzy_title_match()` using `difflib.SequenceMatcher` (no new dep) — 20min
+  - B. `same_author_year()` check (normalize author list + year) — 20min
+  - C. `same_arxiv_id()` check (extract arxiv id from various fields) — 15min
+  - D. merge logic: dedup key priority (DOI > arxiv-id > fuzzy title) — 20min
+  - E. CLI wire + 1 e2e test (corpus with known near-duplicates) — 15min
 
 ### Tier 2: Medium (0.5-1 day each)
 
-6. **Phase 1.5 holdout validation** — re-split 50 queries into 15 train / 10 test,
-   re-derive LTR/MoE alpha on holdout, confirm v3.9.0 numbers survive. Effort: 1d.
-7. **Simpler rerank alternative** — RidgeClassifier / logistic regression on combined
-   features (instead of LambdaMART) for 8-feature rerank. Effort: 4h.
-8. **n=200 evaluation** — per memory discipline `n<100 is noise`; expand 25 real +
-   25 A2 auto + 150 new queries for proper statistical power. Effort: 2-3d.
-9. **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
-   (fulltext_citation_density, fulltext_venue_score, fulltext_cross_encoder).
-   Effort: 1-2d (mostly local computation).
-10. **`[P2-11] pa fetch-pdf-batch` `<bibtex>` `--out ./pdfs/`** — Complements
-    `pa fetch-batch` (CNKI semi-automated). This walks every Bibtex entry
-    through the 8 fetch channels in priority order: Unpaywall → OpenAlex
-    OA → CORE → arXiv → Sci-Hub (fallback) → ... Downloads to
-    `pdfs/{key}.pdf`, lists what failed and why. **Solves**: today you
-    have to `pa fetch <doi>` one at a time. Effort: 4h. ⭐⭐⭐
-    **Honest limits**: 7 Sci-Hub mirrors all dead (v3.9.7.6 verified);
-    bar.cnki.net CAPTCHA still blocks CN papers (consistent with
-    v3.9.8.3); Net effect: ~3-4 channels actually deliver for English.
-    **Sub-task decomposition**:
-    - A. `load_bibtex()` reuse from `pa_cli/scaffold.py` — 5min
-    - B. wrap `pa_cli/fetch.py:fetch()` with retry/timeout per channel — 45min
-    - C. per-entry orchestrator: try channels in priority order, save first success — 1h
-    - D. failure report (`failed_downloads.md` with reason per entry) — 30min
-    - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min
-11. **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
-    Multi-corpus management. Each 课题 = one project at
-    `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
-    data + cross-corpus dedup. **Solves**: today all your 课题
-    (数字普惠金融 / 长期护理保险 / 金融科技) share one giant `refs.bib`
-    and one judge DB; this separates them. Effort: 6h. ⭐⭐⭐
-    **Honest limit**: 6h is optimistic — first-time "project-level"
-    management usually runs 8-10h. Skip until you have 3+ active 课题.
-    **Sub-task decomposition**:
-    - A. project layout spec (`projects/<slug>/refs.bib` + `judges.sqlite` + `meta.json`) — 30min
-    - B. `init` (create skeleton) / `list` (read all) / `status` (n_papers, n_labels per project) — 1.5h
-    - C. `corpus-search` (re-execute a saved search scoped to one project) — 1h
-    - D. `corpus-merge` (cross-corpus dedup + optional merge to a meta-corpus) — 2h
-    - E. CLI wire + 1 e2e test (init 2 projects, merge them) — 1h
-12. **`[P2-13] README.md` (top-level user-facing doc)** — Per user
-    request 2026-07-16 (deferred to "not blocking LLM understanding").
-    5 sections: 1-line pitch, 5-step quick start, core workflow
-    diagram, links to ROADMAP/CHANGELOG/troubleshooting, known
-    limitations. **Target reader**: humans landing on the repo,
-    not LLMs (which already have CHANGELOG + ROADMAP + handoff).
-    Effort: 2h. ⭐⭐ (low priority — defer until new human contributors
-    actually need it).
+> **Reading convention**: same as Tier 1 — refer to items by `[P-N]` ID.
+
+- **Phase 1.5 holdout validation** — re-split 50 queries into 15 train / 10 test,
+  re-derive LTR/MoE alpha on holdout, confirm v3.9.0 numbers survive. Effort: 1d.
+- **Simpler rerank alternative** — RidgeClassifier / logistic regression on combined
+  features (instead of LambdaMART) for 8-feature rerank. Effort: 4h.
+- **n=200 evaluation** — per memory discipline `n<100 is noise`; expand 25 real +
+  25 A2 auto + 150 new queries for proper statistical power. Effort: 2-3d.
+- **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
+  (fulltext_citation_density, fulltext_venue_score, fulltext_cross_encoder).
+  Effort: 1-2d (mostly local computation).
+- **`[P2-11] pa fetch-pdf-batch` `<bibtex>` `--out ./pdfs/`** — Complements
+  `pa fetch-batch` (CNKI semi-automated). This walks every Bibtex entry
+  through the 8 fetch channels in priority order: Unpaywall → OpenAlex
+  OA → CORE → arXiv → Sci-Hub (fallback) → ... Downloads to
+  `pdfs/{key}.pdf`, lists what failed and why. **Solves**: today you
+  have to `pa fetch <doi>` one at a time. Effort: 4h. ⭐⭐⭐
+  **Honest limits**: 7 Sci-Hub mirrors all dead (v3.9.7.6 verified);
+  bar.cnki.net CAPTCHA still blocks CN papers (consistent with
+  v3.9.8.3); Net effect: ~3-4 channels actually deliver for English.
+  **Sub-task decomposition** (totals 4h):
+  - A. `load_bibtex()` reuse from `pa_cli/scaffold.py` — 5min
+  - B. wrap `pa_cli/fetch.py:fetch()` with retry/timeout per channel — 45min
+  - C. per-entry orchestrator: try channels in priority order, save first success — 1h
+  - D. failure report (`failed_downloads.md` with reason per entry) — 30min
+  - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min
+  - F. real-corpus smoke test (5-10 paper mix) + edge-case error reporting polish — 60min
+- **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
+  Multi-corpus management. Each 课题 = one project at
+  `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
+  data + cross-corpus dedup. **Solves**: today all your 课题
+  (数字普惠金融 / 长期护理保险 / 金融科技) share one giant `refs.bib`
+  and one judge DB; this separates them. Effort: 6h. ⭐⭐⭐
+  **Honest limit**: 6h is optimistic — first-time "project-level"
+  management usually runs 8-10h. Skip until you have 3+ active 课题.
+  **Sub-task decomposition**:
+  - A. project layout spec (`projects/<slug>/refs.bib` + `judges.sqlite` + `meta.json`) — 30min
+  - B. `init` (create skeleton) / `list` (read all) / `status` (n_papers, n_labels per project) — 1.5h
+  - C. `corpus-search` (re-execute a saved search scoped to one project) — 1h
+  - D. `corpus-merge` (cross-corpus dedup + optional merge to a meta-corpus) — 2h
+  - E. CLI wire + 1 e2e test (init 2 projects, merge them) — 1h
 
 ### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
 
@@ -1469,12 +1467,23 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     deal with model rot). **Status: deferred** — only revisit if Mavis itself
     becomes unavailable.
 
+- **`[P2-13] README.md` (top-level user-facing doc)** — **Status: deferred**
+  (per user 2026-07-16: "if not blocking LLM understanding, defer").
+  Top-level README with 5 sections: 1-line pitch, 5-step quick start,
+  core workflow diagram, links to ROADMAP/CHANGELOG/troubleshooting,
+  known limitations. **Target reader**: humans landing on the repo, not
+  LLMs (which already have CHANGELOG + ROADMAP + handoff).
+  Effort: 2h. ⭐⭐ (low priority — defer until new human contributors
+  actually need it). When this happens, the [P3-1] rerank trigger check
+  ("does the [P2-13] README's 'Files added' section match git log?")
+  can also be wired in to catch future AMiner-style git gaps.
+
 ### Recommended next step (if user wants to continue)
 
 If the goal is "make paper-agent better for 课题":
-- **Tier 1 #1** (`--enrich-top-min-cites`): 30 min, ~10s speedup per query
-- **Tier 1 #2** (OpenAlex-by-title fallback): 1h, +5-10pp Chinese cite
-- **Tier 2 #6** (Phase 1.5 holdout): 1d, validates existing LTR/MoE numbers
+- **`--enrich-top-min-cites` filter**: 30 min, ~10s speedup per query
+- **OpenAlex-by-title fallback**: 1h, +5-10pp Chinese cite
+- **Phase 1.5 holdout validation**: 1d, validates existing LTR/MoE numbers
 
 If the goal is "validate the 课题 work is rigorous":
 - Skip the engineering and use what we have (real query 30-46% cite is good enough)
@@ -1741,14 +1750,21 @@ strict.
 
 ### Coverage metrics (per-corpus, on 20-paper top-N after search)
 
-| Metric | B+ (today, v3.9.9.1) | A- target | A target (stretches Global Rule) |
-|---|---|---|---|
-| **English 课题**: cite% (papers with citation count > 0) | ~47% | ≥ 60% | ≥ 75% (needs LLM rerank) |
-| **English 课题**: abstract% (top-10) | ~80% | ≥ 90% | ≥ 95% |
-| **English 课题**: tldr% (top-10) | ~24% | ≥ 35% | ≥ 50% (needs LLM-extracted) |
-| **Chinese 课题**: cite% (top-20) | ~30-46% | ≥ 55% | ≥ 70% (needs AMiner+CNKI cite) |
-| **Chinese 课题**: abstract% (top-10) | ~80% | ≥ 90% | ≥ 95% |
-| **Chinese 课题**: cite per top-10 | ~17 | ≥ 25 | ≥ 40 |
+**Important distinction**: "top-10" = the papers you actually read
+(high recall on a few), "top-20/all" = full recall across the candidate
+pool (lower because deep papers often have weaker metadata). The two
+metrics can differ by 2-5x and were conflated in earlier revisions.
+
+| Metric | Scope | B+ (today, v3.9.9.1) | A- target | A target (stretches Global Rule) |
+|---|---|---|---|---|
+| **English 课题**: cite% (papers with citation count > 0) | top-20 | ~47% | ≥ 60% | ≥ 75% (needs LLM rerank) |
+| **English 课题**: abstract% (the papers you actually read) | **top-10** | ~80% | ≥ 90% | ≥ 95% |
+| **English 课题**: abstract% (full recall) | top-20 | ~33% | ≥ 45% | ≥ 60% |
+| **English 课题**: tldr% (the papers you actually read) | **top-10** | ~24% | ≥ 35% | ≥ 50% (needs LLM-extracted) |
+| **Chinese 课题**: cite% (top-20) | top-20 | ~30-46% | ≥ 55% | ≥ 70% (needs AMiner+CNKI cite) |
+| **Chinese 课题**: abstract% (the papers you actually read) | **top-10** | ~80% | ≥ 90% | ≥ 95% |
+| **Chinese 课题**: abstract% (full recall) | top-20 | ~16-31% | ≥ 35% | ≥ 50% |
+| **Chinese 课题**: cite per top-10 (raw count) | top-10 | ~17 | ≥ 25 | ≥ 40 |
 
 ### Workflow metrics (user-side time per task)
 
