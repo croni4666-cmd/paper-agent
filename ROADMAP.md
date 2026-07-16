@@ -26,7 +26,10 @@
 >      - Don't reuse deprecated numbers.
 >      - When a feature ships, the ID moves from "Active items" to "Versioned roadmap summary"
 >        in the CHANGELOG reference.
->      - Sub-tasks under a ticket (e.g. `[P0-2] v3.5.0 sub-task A/B/C/...`) use the parent's ID.
+>      - Sub-tasks under a ticket use the parent's ID + a letter suffix
+>        (e.g. `[P0-9.1a]`, `[P0-9.1b]`, `[P0-9.1c]` — established pattern for
+>        the v3.9.7.5 CNKI year-filter ticket). Sub-task IDs are unique
+>        within a parent; they are NOT first-class ROADMAP items.
 
 ---
 
@@ -1151,6 +1154,24 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
   local MD report + cron. Later deprecated entirely on user review (no
   concrete topic) 鈥?see [P2-3] Deprecated 2026-07-04.
 
+- **[P2-5] Quality filter (no-abstract + low-cite)** — ID renumbered
+  to `[P2-14]` on 2026-07-16. The `[P2-5]` ID was reassigned to
+  `pa build + pa scaffold` (shipped in v3.9.9). The Quality filter ticket
+  itself is unchanged; only the ID was migrated to avoid collision.
+  See "[P2-14] Quality filter" in Active items for the full text.
+
+- **[P0-9.1] CNKI Plan 4** — sub-task IDs follow letter-suffix convention
+  (`[P0-9.1a]`, `[P0-9.1b]`, `[P0-9.1c]`). This convention was formalized
+  in the ID naming rule 2026-07-16 (Round 3 audit) after being in use
+  informally since v3.9.7.5.
+
+- **ROADMAP self-audit rounds (2026-07-16)** — three rounds of
+  self-audit caught and fixed: 5 self-audit defects (round 1), 5
+  round-2 audit issues, and 6 round-3 issues. See CHANGELOG
+  `[3.9.9.3]` for the consolidated list. The ROADMAP grew ~260
+  lines net as a result; no content was deleted, only clarified
+  or expanded.
+
 ---
 
 ## Deprecated items (abandoned, won't do)
@@ -1297,18 +1318,24 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 ### Tier 1: Easy (1-2h each, low risk)
 
 > **Reading convention**: items in this tier are listed in **priority order**
-> but **refer to them by their `[P-N]` ID**, not the position number. Some
-> pre-naming items (top of list) don't have `[P-N]` IDs yet — those predate
-> the ID convention added 2026-07-16.
+> but **refer to them by their `[P-N]` ID**, not the position number. [P-N]
+> IDs were retroactively assigned 2026-07-16 to the 5 pre-naming items at
+> the top of the list (new IDs in the [P1-14..18] range — see notes
+> below each item).
 
-- **`--enrich-top-min-cites` filter** — skip S2 deep lookups for papers with 0
+- **`[P1-14] --enrich-top-min-cites` filter** (retroactively assigned 2026-07-16)
+  — skip S2 deep lookups for papers with 0
   cite (saves ~12s per query when many low-cite papers in top-N). Effort: 30min.
-- **OpenAlex-by-title fallback** for crossref-by-title 0-hit case — improves
+- **`[P1-15] OpenAlex-by-title fallback`** (retroactively assigned 2026-07-16)
+  for crossref-by-title 0-hit case — improves
   Chinese cite coverage another 5-10pp. Effort: 1h.
-- **CLI sort options** — `--sort-by {cite|year|relevance}`. Effort: 30min.
-- **Per-source filter** — `--source cnki,openalex` (only show certain engine results).
+- **`[P1-16] CLI sort options`** (retroactively assigned 2026-07-16)
+  — `--sort-by {cite|year|relevance}`. Effort: 30min.
+- **`[P1-17] Per-source filter`** (retroactively assigned 2026-07-16)
+  — `--source cnki,openalex` (only show certain engine results).
   Effort: 30min.
-- **Year-aware enrichment skip** — skip enrichment for papers > 10 years old
+- **`[P1-18] Year-aware enrichment skip`** (retroactively assigned 2026-07-16)
+  — skip enrichment for papers > 10 years old
   (S2 cite often stale / unavailable for older papers). Effort: 30min.
 - ~~`[P1-7] AMiner engine` (Tsinghua/Zhipu, open.aminer.cn)~~ — ✅ **DONE in
   v3.9.8.0** (released 2026-07-15). 7th search engine, 3.3 亿论文 Chinese
@@ -1744,9 +1771,25 @@ strict.
 > **Purpose**: B+ → A- → A is rhetorical without measurable criteria. This section
 > defines the metrics. If a future user says "做 A 吧" or "我们 A 了吗", point here.
 >
+> **Important framing** (avoids contradiction with "B+ → A 升级评估" above):
+> - The "B+ → A 升级评估" section argues that **A-tier is NOT achievable
+>   under strict Global Rule** (because CNKI cite/dl, Chinese tldr, and
+>   LLM-driven rerank are blocked by hobbyist constraints).
+> - **This section defines A-tier as a STRETCH TARGET**, not an achievability
+>   claim. The A target numbers tell you **how close you are** to A if the
+>   Global Rule were relaxed, and **how much gap remains** when one of the
+>   current blocks gets lifted (e.g. a future AMiner+CNKI cite data source,
+>   a future local LLM rerank that fits the Global Rule).
+> - **A- is the realistic ceiling** for hobbyist-compliant development.
+>   A is "what B+ would look like if every hobbyist block were removed".
+>
 > **Methodology**: metrics are derived from v3.9.7.7-7.9 real-query smoke tests on
 > 3 academic queries (数字普惠金融 + 家庭消费 / 长期护理保险 + 人口老龄化 /
 > 金融科技 + 中小银行). All numbers below assume a similar 课题 mix.
+> **Honest caveat**: the 3.9.7-7.9 numbers were on a narrow demo query (金融科技
+> 风险承担). A new measurement run on the 3 课题 mix is required before these
+> numbers are treated as the real B+ baseline (current smoke test was on demo
+> topics; the 30-46% cite range is a "ballpark" not a verified baseline).
 
 ### Coverage metrics (per-corpus, on 20-paper top-N after search)
 
@@ -1796,8 +1839,11 @@ HARD limits, not aspirational targets.
 For each A-tier push, run a smoke test on 3 real 课题 (mix of EN+CN):
 1. `pa search <topic> --format bibtex --enrich-top 20 -o test.bib` — measure
    coverage: cite%, abstract%, tldr%
-2. `pa judge bulk test.bib --query <topic> --relevance 1` + manual spot-check
+2. `pa judge bulk test.bib --query <topic> --relevance 2` + manual spot-check
    on 5-10 papers — measure workflow time
+   (`--relevance 2` = "relevant" per the 3-level scheme 0/1/2; using
+   2 as a placeholder default for first-pass bulk labelling. Refine
+   per-paper with `pa judge add` to set 0 or 1 for non-relevant ones.)
 3. `pa build test.bib --skeleton manuscript.md --out manuscript.html` + paste
    to Mavis for prose — measure end-to-end
 
@@ -2131,7 +2177,13 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 - **Global Rule check**: 5/5 pass (pure research, no code maintenance)
 - **User confirmation needed**: scope of the deliverable (research doc vs. feature)
 
-### [P2-5] Quality filter (no-abstract + low-cite = low quality)
+### [P2-14] Quality filter (no-abstract + low-cite = low quality) (renumbered 2026-07-16, was [P2-5])
+
+> **ID renumber note (2026-07-16)**: this item was originally labeled [P2-5]
+> but the [P2-5] ID was reassigned to `pa build + pa scaffold` (shipped in
+> v3.9.9). To avoid collision, this item is now `[P2-14]`. Cross-references
+> in CHANGELOG or commit messages from before 2026-07-16 may still use
+> the old [P2-5] ID — when in doubt, grep for the title.
 
 - **Status**: proposed
 - **Added**: 2026-07-13
