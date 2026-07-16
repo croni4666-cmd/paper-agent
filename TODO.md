@@ -317,6 +317,30 @@ which is high-risk. Re-evaluate when starting [P1-12].
 (fails if `pa_cli.deep_rerank` doesn't import). Run as part of
 regression.
 
+### 🟡 [P0-2] test_cache_integration.py is broken (audit round 22, 2026-07-16)
+
+> **Status**: regression test FAIL (silent since v3.9.8.2 / 2026-07-15).
+> Same root cause as [P0-8] deep_rerank — v3.9.8.2 removed
+> `from . import cache as _cache` from `pa_cli/fetch.py`.
+
+**Symptom**:
+```
+AttributeError: module 'pa_cli.fetch' has no attribute '_cache'
+```
+The test does `patch.object(fetch._cache, "get_cache_root", ...)` to
+redirect cache root, but `fetch._cache` no longer exists.
+
+**Fix** (LOW risk): update the 3 test references to use the new
+pattern. Either:
+- Import `pa_cli.cache` directly and patch that: `with
+  patch.object(pa_cli.cache, "get_cache_root", ...)`
+- Or use `monkeypatch` (pytest) instead of `unittest.mock.patch.object`
+
+**Detection**: `test_output/test_full_regression.py` section A logs
+`[FAIL] test_cache_integration.py (rc=1)` but no one reads it.
+
+**Estimated effort**: 5 min.
+
 ---
 
 ## 📚 Reference
