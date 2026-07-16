@@ -1137,3 +1137,200 @@ def scaffold(bibtex_file, group_by, topics_file, title, output, quiet):
         click.echo(md)
     elif not quiet:
         click.echo(f"[pa scaffold] saved {out_path}", err=True)
+
+
+# =============== [P3-1] judge subcommand ===============
+# Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
+# long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL
+# rerank when n >= 500.
+
+@main.group()
+def judge():
+    """[P3-1] Collect relevance judgements for future ML/DL rerank.
+
+    Per ROADMAP "Tier 5 long-term" (post-v3.9.7.9): v3.9.7.0-7.2 ML/DL
+    local rerank failed at n=50 (data problem, not absolute). This is the
+    data-collection track. Re-probe when n >= 500.
+
+    Relevance scale (matches bench/v01/labels.json):
+      0 = irrelevant  (off-topic, or wrong level+topic)
+      1 = marginal    (topic adjacent OR level wrong OR scope right but topic wrong)
+      2 = relevant    (matches query topic + level + scope)
+
+    Subcommands: add / bulk / list / stats / export / import
+    """
+
+
+@judge.command("add")
+@click.option("--query", required=True, help="Query string or query_id (e.g. 'q001')")
+@click.option("--key", "paper_key", required=True,
+              help="Paper identifier (DOI, bibtex key, or OpenAlex ID)")
+@click.option("--relevance", required=True,
+              type=click.Choice([0, 1, 2]),
+              help="0=irrelevant, 1=marginal, 2=relevant")
+@click.option("--title", "paper_title", default=None,
+              help="Optional paper title for display")
+@click.option("--reason", default=None, help="Why this label (e.g. 'matches topic + K-12')")
+@click.option("--source", default="manual", show_default=True,
+              help="Provenance tag: manual / mavis-auto / bulk-bibtex / import")
+@click.option("--db", "db_path", default=None,
+              type=click.Path(dir_okay=False),
+              help=f"Override DB path (default: ~/.paper-agent/judgements.sqlite)")
+def judge_add(query, paper_key, relevance, paper_title, reason, source, db_path):
+    """Add a single relevance judgement."""
+    from .judge import add as _add, RELEVANCE_LABELS
+    try:
+        rid = _add(
+            query=query,
+            paper_key=paper_key,
+            relevance=relevance,
+            paper_title=paper_title,
+            reason=reason,
+            source=source,
+            db_path=Path(db_path) if db_path else None,
+        )
+    except Exception as e:
+        click.echo(f"[pa judge] FAILED: {e}", err=True)
+        sys.exit(2)
+    click.echo(f"[pa judge] added id={rid} "
+               f"query={query!r} key={paper_key!r} "
+               f"relevance={relevance}({RELEVANCE_LABELS[relevance]})",
+               err=True)
+
+
+@judge.command("bulk")
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--query", required=True, help="Query string for all papers in this batch")
+@click.option("--relevance", required=True,
+              type=click.Choice([0, 1, 2]),
+              help="Relevance label to apply to ALL papers (use `add` for per-paper labels)")
+@click.option("--reason", default=None,
+              help="Optional single reason for the whole batch")
+@click.option("--source", default="bulk-bibtex", show_default=True)
+@click.option("--db", "db_path", default=None, type=click.Path(dir_okay=False))
+@click.option("--quiet", is_flag=True, help="Suppress per-paper output")
+def judge_bulk(bibtex_file, query, relevance, reason, source, db_path, quiet):
+    """Bulk-add judgements for every entry in a .bib file.
+
+    All entries get the same relevance label. Use `pa judge add` for
+    per-paper labels. Use this for large-scale 'I have a corpus, all
+    papers are X-relevant' workflows.
+    """
+    from .scaffold import load_bibtex
+    from .judge import add_bulk, RELEVANCE_LABELS
+    entries = load_bibtex(Path(bibtex_file))
+    items = []
+    for e in entries:
+        items.append((e["key"], e.get("title"), relevance, reason))
+    db = Path(db_path) if db_path else None
+    n_added, n_updated, n_skipped = add_bulk(query, items, source=source, db_path=db)
+    if not quiet:
+        click.echo(f"[pa judge bulk] {len(items)} entries from {bibtex_file}", err=True)
+    click.echo(
+        f"[pa judge bulk] added={n_added} updated={n_updated} skipped={n_skipped} "
+        f"relevance={relevance}({RELEVANCE_LABELS[relevance]}) query={query!r}",
+        err=True,
+    )
+
+
+@judge.command("list")
+@click.option("--query", default=None, help="Filter by query")
+@click.option("--relevance", default=None,
+              type=click.Choice([0, 1, 2]), help="Filter by relevance")
+@click.option("--limit", type=int, default=50, show_default=True)
+@click.option("--db", "db_path", default=None, type=click.Path(dir_okay=False))
+@click.option("--format", "out_format", default="table", show_default=True,
+              type=click.Choice(["table", "json", "jsonl"]),
+              help="Output format")
+def judge_list(query, relevance, limit, db_path, out_format):
+    """List judgements, optionally filtered."""
+    from .judge import list_judgements, RELEVANCE_LABELS
+    db = Path(db_path) if db_path else None
+    rows = list_judgements(query=query, relevance=relevance, limit=limit, db_path=db)
+    if out_format == "json":
+        click.echo(json.dumps([dict(r) for r in rows], ensure_ascii=False, indent=2))
+    elif out_format == "jsonl":
+        for r in rows:
+            click.echo(json.dumps(dict(r), ensure_ascii=False))
+    else:
+        if not rows:
+            click.echo("(no judgements match filter)", err=True)
+            return
+        click.echo(f"{'id':>4s}  {'query':30s}  {'paper_key':40s}  {'rel':>3s}  source", err=False)
+        click.echo("-" * 110)
+        for r in rows:
+            q = (r["query"] or "")[:28]
+            k = (r["paper_key"] or "")[:38]
+            click.echo(
+                f"{r['id']:>4d}  {q:30s}  {k:40s}  {r['relevance']:>3d}  {r['source']}"
+            )
+        click.echo(f"\n{len(rows)} row(s) shown (use --limit for more)", err=True)
+
+
+@judge.command("stats")
+@click.option("--query", default=None, help="Stats for one query (else aggregate over all)")
+@click.option("--db", "db_path", default=None, type=click.Path(dir_okay=False))
+def judge_stats(query, db_path):
+    """Show n_relevant / n_marginal / n_irrelevant + per-query breakdown."""
+    from .judge import stats as _stats
+    db = Path(db_path) if db_path else None
+    s = _stats(query=query, db_path=db)
+    click.echo(f"Total judgements: {s['n_total']}")
+    click.echo(f"  irrelevant (0): {s['n_irrelevant']}")
+    click.echo(f"  marginal   (1): {s['n_marginal']}")
+    click.echo(f"  relevant   (2): {s['n_relevant']}")
+    click.echo(f"  queries:        {s['n_queries']}")
+    if s["queries"] and not query:
+        click.echo("\nTop queries by n:")
+        for q, n in s["queries"][:20]:
+            click.echo(f"  {n:>5d}  {q[:80]}")
+    # Honest signal: when do we have enough to re-probe ML/DL?
+    if s["n_total"] < 100:
+        click.echo(f"\n[hint] n={s['n_total']} is below the noise threshold (100). "
+                   f"Keep labelling; re-probe ML/DL when n>=500.", err=True)
+    elif s["n_total"] < 500:
+        click.echo(f"\n[hint] n={s['n_total']} is informative but small. "
+                   f"Re-probe ML/DL rerank at n>=500 for statistical power.", err=True)
+    else:
+        click.echo(f"\n[hint] n={s['n_total']} >= 500. Ready to re-probe ML/DL rerank.",
+                   err=True)
+
+
+@judge.command("export")
+@click.option("-o", "--output", required=True, type=click.Path(dir_okay=False),
+              help="Output file path (.jsonl or .json)")
+@click.option("--format", "out_format", default=None,
+              type=click.Choice(["jsonl", "bench-json"]),
+              help="Output format (auto-detect from suffix if not set)")
+@click.option("--db", "db_path", default=None, type=click.Path(dir_okay=False))
+def judge_export(output, out_format, db_path):
+    """Export judgements. Default: JSONL. Use --format bench-json for
+    compatibility with bench/v01/labels.json (LTR pipeline input)."""
+    from .judge import export_jsonl, export_bench_format
+    out = Path(output)
+    if out_format is None:
+        out_format = "jsonl" if out.suffix == ".jsonl" else "bench-json"
+    db = Path(db_path) if db_path else None
+    if out_format == "jsonl":
+        n = export_jsonl(out, db_path=db)
+    else:
+        n_queries = export_bench_format(out, db_path=db)
+        n = n_queries
+    click.echo(f"[pa judge export] {n} {'queries' if out_format == 'bench-json' else 'rows'} -> {out}",
+               err=True)
+
+
+@judge.command("import")
+@click.argument("input_path", type=click.Path(exists=True, dir_okay=False))
+@click.option("--source", default="import", show_default=True,
+              help="Provenance tag for all imported rows")
+@click.option("--db", "db_path", default=None, type=click.Path(dir_okay=False))
+def judge_import(input_path, source, db_path):
+    """Import from bench/v01/labels.json (or any compatible JSON)."""
+    from .judge import import_bench_format
+    n_added, n_updated, n_skipped = import_bench_format(
+        Path(input_path), db_path=Path(db_path) if db_path else None,
+        default_source=source,
+    )
+    click.echo(f"[pa judge import] {input_path}", err=True)
+    click.echo(f"  added={n_added} updated={n_updated} skipped={n_skipped}", err=True)
