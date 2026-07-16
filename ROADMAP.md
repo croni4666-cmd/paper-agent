@@ -1292,6 +1292,27 @@ candidates in priority order, with effort and 5-check Global Rule audit.
    build wraps pandoc with bundled GB/T 7714 numeric CSL. **Honest limit**:
    PDF output needs xelatex (not installed on dev machine, install MiKTeX);
    HTML/DOCX/GFM work out of the box. 10/10 unit tests pass.
+8. **`[P2-6] pa cite-check` `--skeleton ms.md --bib refs.bib`** — Pre-build
+   validator. Scans a markdown skeleton, extracts every `[@bibkey]`
+   placeholder, cross-references against the Bibtex, reports missing
+   keys + typo'd keys + orphan cites (in bibtex but never cited).
+   **Solves**: today, `pa build` failure with "undefined reference" gives
+   you the wrong key but not the file/line — this gives a clean
+   per-key report. Effort: 1h. ⭐⭐⭐
+9. **`[P2-7] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
+   — Exports Bibtex (+ optional pa judge data) to a systematic-review-ready
+   CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.
+   Pluggable into Notion / Excel / RevMan / Covidence for formal screening.
+   Reuses `pa judge` sqlite + `pa scaffold` bibtex parser. Effort: 1.5h. ⭐⭐⭐
+10. **`[P2-8] pa search-saved` `list/run/add/del/edit`** — Named search
+    presets with parameter snapshots. Stores in
+    `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`
+    re-runs without retyping `--engine --year-min --limit`. Workaround
+    for now: shell alias. Effort: 1h. ⭐⭐
+11. **`[P2-9] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
+    dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
+    cross-DOI merge + same-arxiv-ID cross-venue merge. Catches
+    near-duplicates where default DOI-only dedup misses. Effort: 1.5h. ⭐⭐
 
 ### Tier 2: Medium (0.5-1 day each)
 
@@ -1304,6 +1325,23 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 9. **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
    (fulltext_citation_density, fulltext_venue_score, fulltext_cross_encoder).
    Effort: 1-2d (mostly local computation).
+10. **`[P2-10] pa fetch-pdf-batch` `<bibtex>` `--out ./pdfs/`** — Complements
+    `pa fetch-batch` (CNKI semi-automated). This walks every Bibtex entry
+    through the 8 fetch channels in priority order: Unpaywall → OpenAlex
+    OA → CORE → arXiv → Sci-Hub (fallback) → ... Downloads to
+    `pdfs/{key}.pdf`, lists what failed and why. **Solves**: today you
+    have to `pa fetch <doi>` one at a time. Effort: 4h. ⭐⭐⭐
+    **Honest limits**: 7 Sci-Hub mirrors all dead (v3.9.7.6 verified);
+    bar.cnki.net CAPTCHA still blocks CN papers (consistent with
+    v3.9.8.3); Net effect: ~3-4 channels actually deliver for English.
+11. **`[P2-11] pa project` `init/list/status/corpus-search/corpus-merge`** —
+    Multi-corpus management. Each 课题 = one project at
+    `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
+    data + cross-corpus dedup. **Solves**: today all your 课题
+    (数字普惠金融 / 长期护理保险 / 金融科技) share one giant `refs.bib`
+    and one judge DB; this separates them. Effort: 6h. ⭐⭐⭐
+    **Honest limit**: 6h is optimistic — first-time "project-level"
+    management usually runs 8-10h. Skip until you have 3+ active 课题.
 
 ### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
 
