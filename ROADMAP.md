@@ -1294,9 +1294,10 @@ a major version ships. Last update: 2026-07-16 (v3.9.9.1).
 
 ### Workflow reality (per [P0-12] v3.9.7.7 split decision)
 
-For 课题 / lit review workflow (per real-query smoke test 2026-07-15):
-- **English paper query** → paper-agent 6-engine pool, cite 47% / abstract 33% / tldr 24% / inf 28%
-- **Chinese paper query** → paper-agent 6-engine pool, cite 30-46% / abstract 16-31% / tldr 4-12% (top-10 much better)
+For 课题 / lit review workflow (per real-query smoke test 2026-07-15,
+re-measured post-AMiner 2026-07-16):
+- **English paper query** → paper-agent 7-engine pool (CNKI+AMiner+Crossref+OpenAlex+S2+arXiv), cite 47% / abstract 33% / tldr 24% / inf 28%
+- **Chinese paper query** → paper-agent 7-engine pool, cite 30-46% / abstract 16-31% / tldr 4-12% (top-10 much better; pre-AMiner was 21% / 6-16% / <5%)
 - **Mixed / bilingual** → paper-agent gives recall; user enriches Chinese-only results via CNKI website manually
 - **Top-10 papers** (the ones user actually reads) consistently have abstract (>=80%)
 
@@ -1786,13 +1787,18 @@ strict.
 
 ### Recommended next step (per user "做 A 吧" mindset but within constraints)
 
-1. **First (free, 4-6h)**: ship [P1-7] AMiner engine → lifts Chinese cite
-   21% → 30-35%, lifts Chinese abstract 6-16% → 15-25%
-2. **Then (free, 2-4h)**: ship [P2-5] `pa build` for manuscript formatting
-   (pandoc + Manubot pattern) — bridges "search → manuscript" gap
-3. **Then (user's call, ¥200-500/月)**: optionally add Taobao personal VIP
+1. **Done (free, ~5h actual)**: [P1-7] AMiner engine shipped v3.9.8.0 —
+   lifted Chinese cite 21% → 30-46% (verified on real queries)
+2. **Done (free, ~2h actual)**: [P2-5] `pa build` + `pa scaffold` shipped
+   v3.9.9 — bridges "search → manuscript" gap (pandoc + GB/T 7714 CSL)
+3. **Open (user's call, ¥200-500/月)**: optionally add Taobao personal VIP
    for 万方 — lifts Chinese another 15-20pp but breaks Global Rule 1
-4. **Stop there.** A- is the real ceiling. Going further requires abandoning
+4. **Next free-tier moves** (if user wants to push B+ → A- without paid infra):
+   - [P1-14] --enrich-top-min-cites filter (30 min)
+   - [P1-15] OpenAlex-by-title fallback for Chinese (1h, +5-10pp)
+   - [P2-7] pa cite-check (1h, prevents build errors)
+   - [P2-8] pa export-screening (1.5h, systematic review workflow)
+5. **Stop there.** A- is the real ceiling. Going further requires abandoning
    the hobbyist constraint.
 
 ---
