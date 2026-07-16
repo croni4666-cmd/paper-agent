@@ -137,6 +137,15 @@ records skip reason on each affected paper.
 **Tests**: 4/4 unit tests pass in `test_output/_test_enrich_top_min_cites.py`
 covering min_cites=0/1/5 thresholds + no-DOI edge case.
 
+**[P1-16] CLI sort options** (same release):
+- New `sort_results(results, sort_by)` helper in `pa_cli/search.py`
+- `enrich_top_n()` got `resort_by` param to keep re-sort consistent
+- New CLI flag `--sort-by {cite|year|relevance}` (default `cite` = backward compat)
+- `cite` (default): cited_by_count desc — v3.9.7.8 compat
+- `year`: year desc (newest first; None/0 at end)
+- `relevance`: keep natural engine order (no sort)
+- 7/7 unit tests pass in `test_output/_test_sort_results.py`
+
 **Bug fix (same release)**: `pa fetch` CLI was broken since v3.9.8.2
 refactor (renamed `fetch_doi` → `fetch`; CLI still imported old name).
 Added `fetch_doi()` backward-compat wrapper in `pa_cli/fetch.py` that
@@ -152,13 +161,14 @@ in `_wrapper_notes` (honest 3-tier — no time-budget enforcement).
   `fetch()` (not channels which were removed in v3.9.8.2). Both tests pass.
 
 **Files changed**:
-- `pa_cli/search.py` (~30 LOC change to `enrich_top_n` + `run_search`)
-- `pa_cli/cli.py` (new --enrich-top-min-cites option)
+- `pa_cli/search.py` (~50 LOC: enrich_top_n + run_search + new sort_results)
+- `pa_cli/cli.py` (new --enrich-top-min-cites + --sort-by options)
 - `pa_cli/fetch.py` (~60 LOC `fetch_doi` wrapper)
 - `pa_cli/__init__.py` (version bump 3.9.9.6 → 3.9.9.7)
 - `test_output/_test_enrich_top_min_cites.py` (NEW, 4 unit tests)
+- `test_output/_test_sort_results.py` (NEW, 7 unit tests)
 - `test_output/test_cache_integration.py` (rewritten, 2 tests pass)
-- `ROADMAP.md` ([P1-14] marked DONE; updated versioned table)
+- `ROADMAP.md` ([P1-14] and [P1-16] marked DONE; versioned table v3.9.9.7)
 
     (since v3.9.9.5 is latest; added note explaining feature vs
     doc-only distinction)

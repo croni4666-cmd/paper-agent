@@ -286,9 +286,13 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               help="[P1-14] Skip S2 lookup for papers with cited_by_count < this. "
                    "Default 1 = skip 0-cite papers (saves ~12s/query when many "
                    "low-cite papers in top-N). Set 0 to try all (v3.9.7.8 behavior).")
+@click.option("--sort-by", "sort_by", default="cite", show_default=True,
+              type=click.Choice(["cite", "year", "relevance"]),
+              help="[P1-16] Sort unified results. 'cite' (default) = most-cited first; "
+                   "'year' = newest first; 'relevance' = keep each engine's natural order.")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, quiet):
+           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, sort_by, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -337,7 +341,8 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
     results = run_search(query, year_min, year_max, limit, engine,
                          concepts_filter=concepts_filter or None,
                          enrich_top=enrich_top,
-                         enrich_top_min_cites=enrich_top_min_cites)
+                         enrich_top_min_cites=enrich_top_min_cites,
+                         sort_by=sort_by)
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta
