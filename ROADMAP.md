@@ -1647,6 +1647,10 @@ This section captures 5-layer due diligence on GitHub for **writing** tools
   takes a corpus + topic clusters + a Markdown skeleton and produces
   `manuscript.md` + `manuscript.pdf` via pandoc + Manubot pattern. This bridges
   the "search returns Bibtex" → "manuscript ready" gap without any LLM.
+  **Status update (2026-07-16)**: shipped in v3.9.9 as [P2-5]
+  `pa build + pa scaffold`. See `pa_cli/build.py` (~265 LOC) +
+  `pa_cli/scaffold.py` (~330 LOC) + bundled `chinese-gb7714-2005-numeric.csl`
+  for the actual implementation. 10/10 unit tests pass.
 
 ### What this means for paper-agent's positioning
 
@@ -1741,6 +1745,12 @@ Implementation: same pattern as `pa_cli/cnki_channel.py` (5 cookies + 1 HTML
 parser), 4-6h. Expected lift: **+10-15pp on Chinese cite coverage** (some Chinese
 papers that S2 doesn't index ARE in AMiner).
 
+**Status update (2026-07-16)**: shipped in v3.9.8.0 as [P1-7] AMiner
+7th search engine. `pa_cli/aminer_channel.py` (~270 LOC) added.
+**Actual lift verified**: +10.9pp Chinese cite (real queries: 21%
+baseline → 30-46% post-AMiner). 30-day eval cron (`aminer-30day-eval`)
+runs 2026-08-14 to decide API renewal.
+
 Other candidate engines evaluated:
 - **Lens.org**: free academic patent + scholarly search, decent metadata; would
   need a thin wrapper
@@ -1751,8 +1761,11 @@ Other candidate engines evaluated:
 
 **Honest verdict**: AMiner is the one real opportunity. English engines are at
 ceiling (Crossref + S2 + OpenAlex cover ~95% of indexed English papers). The
-ceiling for Chinese, under hobbyist budget, is approximately **21% cite
-baseline + 10-15pp from AMiner = 35%** — still B+ but a meaningful B+.
+ceiling for Chinese, under hobbyist budget, was estimated at **21% cite
+baseline + 10-15pp from AMiner = 35%** pre-v3.9.8.0. **Actual post-AMiner
+ceiling** (verified 2026-07-15): **30-46% cite** for Chinese queries —
+significantly better than the conservative estimate. Still B+ on Chinese
+but the B+ is meaningfully stronger.
 
 ### Combined verdict (per honest 3-tier reporting)
 
@@ -1761,7 +1774,7 @@ baseline + 10-15pp from AMiner = 35%** — still B+ but a meaningful B+.
 | (a) ML/DL local | ❌ NOT viable | none (already proven) | n/a | 0 (but effort wasted) |
 | (b) Taobao 个人 VIP | ⚠️ if user opts in | +15-25pp CN | ❌ Global Rule violation | ¥200-500/月 recurring |
 | (b') Taobao 机构账号 | ❌ ruled out by user | similar | ❌ library ToS violation | — |
-| (c) AMiner engine | ✅ recommended | +10-15pp CN | ✅ yes | 4-6h implementation, then 0 |
+| (c) AMiner engine | ✅ shipped v3.9.8.0 | +10-15pp CN (verified +10.9pp) | ✅ yes | done; 30-day eval cron 2026-08-14 |
 
 **A level (real)** under hobbyist budget is **NOT achievable** in CN literature
 review. The A → 100% Chinese cite / 100% abstract / 100% tldr requires either
