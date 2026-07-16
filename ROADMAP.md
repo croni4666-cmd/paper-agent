@@ -1501,9 +1501,10 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   known limitations. **Target reader**: humans landing on the repo, not
   LLMs (which already have CHANGELOG + ROADMAP + handoff).
   Effort: 2h. ⭐⭐ (low priority — defer until new human contributors
-  actually need it). When this happens, the [P3-1] rerank trigger check
-  ("does the [P2-13] README's 'Files added' section match git log?")
-  can also be wired in to catch future AMiner-style git gaps.
+  actually need it). When implemented, the README should also include a
+  "Files added in this version" section that cross-references git log
+  output, as a defense against future AMiner-style "shipped but not
+  committed" gaps (the bug that this round of self-audit caught).
 
 ### Recommended next step (if user wants to continue)
 
