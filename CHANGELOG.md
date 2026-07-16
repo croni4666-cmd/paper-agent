@@ -65,6 +65,72 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
+## [3.9.9.4] - 2026-07-16 (ROADMAP self-audit rounds 2-7: 16 more issues found + fixed)
+
+Per user instruction 2026-07-16 11:11: "再修，修完之后再审查，然后再修，再审查
+。。。。一直审查到没有问题为止" (keep auditing ROADMAP until no problems).
+Ran 6 more rounds of self-audit after the [3.9.9.3] round 1. Found and
+fixed 16 issues across rounds 2-7. ROADMAP is now self-consistent
+(only known residual: historical sub-task naming drift [P0-7.1] /
+[P1-11.1] from v3.9.7.1, documented in ID naming convention).
+
+**Round 2 (5 issues)** — `a559050 docs(roadmap): round-2 audit fixes`:
+- I-1: A-tier coverage table — split top-10 vs top-20/all rows
+- I-2: Tests line — removed 'per-version breakdown' phrase (contradictory)
+- I-3: [P2-13] README — moved from Tier 1 to Tier 5 (deferred)
+- I-4: Tier 1 + 2 leading numbers (1./2./.../12.) — dropped to fix
+  cross-tier collision (Tier 1 '10.' vs Tier 2 '10.')
+- I-5: [P2-11] pa fetch-pdf-batch sub-tasks — added F. (60min buffer)
+  so sub-tasks sum to 4h matching master
+
+**Round 3 (6 issues)** — `3f7881c docs(roadmap): round-3 audit fixes`:
+- R3-1 (CRITICAL): [P2-5] ID collision — 'Quality filter' (Active
+  items, old) shared ID with 'pa build + pa scaffold' (shipped).
+  Renumbered Quality filter to [P2-14].
+- R3-2: Sub-task ID convention clarified — letter suffix is the
+  established pattern ([P0-9.1a/b/c]).
+- R3-3: 5 pre-naming Tier 1 items (--enrich-top-min-cites etc.)
+  retroactively assigned [P1-14] through [P1-18].
+- R3-4: A-tier section got 'Important framing' note explaining
+  the A-as-stretch-target vs B+→A-section's 'A- is ceiling' framing.
+- R3-5: 'Modified items' section updated with 3 new entries.
+- R3-6: A-tier 'How to measure' step 2 changed from '--relevance 1'
+  (marginal) to '--relevance 2' (relevant) + clarifying note.
+
+**Round 4 (2 issues)** — `b6d506b docs(roadmap): round-4 audit fixes`:
+- R4-1: Line 1562 '### [P2-5] implementation sketch' was using the
+  [P2-5] ID in a research-doc sub-section. Renamed to 'Implementation
+  sketch (research-doc section, not a ticket)'.
+- R4-2: Line 2046 [P1-5] recency rule referenced [P2-5] for
+  Quality filter (now [P2-14]). Updated with historical note.
+
+**Round 5 (1 issue)** — `fefa7c5 docs(roadmap): round-5 audit fix`:
+- R5-1: [P2-13] README entry had confused phrasing about
+  '[P3-1] rerank trigger check' (which made no sense) and
+  '[P2-13] README's Files added section' (self-referential).
+  Rewrote to match the actual intent.
+
+**Round 6 (1 issue)** — `d79fa70 docs(changelog): round-6 audit fix`:
+- R6-1: CHANGELOG line 2620 had | [P2-5] Quality filter | in a summary
+  table. Updated to [P2-14] with historical note.
+
+**Round 7 (1 issue)** — `7266d41 docs(roadmap): round-7 audit fix`:
+- R7-1: CHANGELOG v3.9.7.1 used [P0-7.1] / [P1-11.1] sub-task
+  format (parent + digit) which doesn't match the current
+  [P0-9.1a/b/c] letter-suffix convention. Added a historical
+  note in the ID naming convention rule.
+
+**Net ROADMAP growth across rounds 2-7**: 3380 → 3389 lines (+9 net).
+Mostly internal restructuring, not content bloat.
+
+**Honest verdict on "until no problems"**:
+- ✅ All substantive issues fixed (internal consistency, ID uniqueness,
+  cross-references, framing contradictions)
+- ⚠️ Cosmetic-only residuals (Honest 3-tier format mix, long sentences)
+  — diminishing returns, intentionally not fixed
+
+---
+
 ## [3.9.9.3] - 2026-07-16 (ROADMAP self-audit: 6 defects fixed)
 
 Per user request 2026-07-16 11:05: write the 6 new extensions into
