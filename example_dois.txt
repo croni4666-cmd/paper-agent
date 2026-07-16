@@ -1,0 +1,19 @@
+# paper-agent fetch-batch input example
+# Format: one query per line (DOI or title)
+# Lines starting with # are skipped
+# For Chinese papers, title search via AMiner is more reliable than DOI
+# (since OpenAlex/Crossref don't cover Chinese journals like 10.3969/...)
+
+# Chinese DOIs (Crossref/OpenAlex 0 覆盖, 但能生成 xueshu789 search URL)
+10.3969/j.issn.1003-9031.2022.04.008
+10.16525/j.cnki.14-1362/n.2022.08.004
+
+# Chinese titles (AMiner search 拿 metadata, +1 find rate)
+数字普惠金融对经济高质量发展的影响
+数字金融发展与家庭消费碳排放
+
+# English DOIs (OpenAlex 命中)
+10.1038/nature12373
+
+# English titles
+Nanometre-scale thermometry in a living cell
