@@ -1,6 +1,6 @@
 # Paper-Agent TODO / Backlog (Living Document)
 
-> **Last updated**: 2026-07-13 14:32 (post v3.9.0 user spot-check, post P0-4 + P1-5 v3.9.1 patch)
+> **Last updated**: 2026-07-16 13:04 (post v3.9.9.6 audit, 17 rounds)
 > **Owner**: Mavis (mavis)
 > **Source of truth for forward work**: `ROADMAP.md` (formal status, audit trail) + this file (intentions + research / design notes)
 >
@@ -217,6 +217,44 @@ def score_falsifiability(title: str, abstract: str, citation_count: int = None,
 - v3.8.1 / v3.8.2 / v3.8.3 ROADMAP Modified sub-sections could be consolidated into a single "audit trail" appendix (low priority, not blocking)
 - The `_v01/_labeling/` directory still has some v3.8.0-era view files; could be cleaned up after Phase 7 commit
 - The `pa_keys_daily_check` cron already exists; the new `pa_watch_daily` from [P2-3] remains deprecated (no topic)
+
+### 🟠 CHANGELOG ordering issues (deferred from audit rounds 16-21, 2026-07-16)
+
+> **Why deferred**: each fix requires moving 50-150 lines of release content;
+> CHANGELOG is now 3681 lines and the historical blocks are heavily
+> referenced. High risk of breaking chronological references if moved wrong.
+> Cleanup-only, no content error. **Do in a quiet session** (not when
+> other CHANGELOG edits are pending).
+
+- **[3.6.0] duplicate entries** — L3117 has [P1-2] OpenAlex concepts
+  under "## [3.6.0]"; L3339 has [P0-3] MCP server under "## [3.6.0]".
+  Both are dated 2026-07-04. **Verdict**: there should be ONE
+  [3.6.0] entry that covers BOTH concepts and MCP (the MCP was later
+  reverted in [3.5.1]). Fix: merge the two sections, keep the [3.6.0]
+  header once, list both features under it.
+- **[3.5.1] duplicate entries** — L3170 has "follow-up commit" with
+  real-machine verification table; L3261 has "post-MCP-revert state"
+  with [P0-3] revert + [P1-1] + [P1-3] + [P2-4]. **Verdict**:
+  L3170's content is a follow-up addition to L3261's release. Fix:
+  rename L3170 header from "## [3.5.1]" to "## [3.5.1] follow-up:
+  pa mcp install integration" (sub-section of L3261), or merge them
+  into one [3.5.1] block.
+- **[3.9.6] out of order** — L1839 has "## [3.9.6]" between [3.9.5.1]
+  and [3.9.5]. Semver order requires [3.9.5.x] (all 4 patches) →
+  [3.9.6] → [3.9.7]. Fix: move the entire [3.9.6] block (L1839-1916,
+  ~80 lines) to AFTER the [3.9.5] block at L1917.
+- **[3.9.7.3] out of order** — L1453 has "## [3.9.7.3]" between
+  [3.9.7.1] (L1332) and [3.9.7.2] (L1524). Semver order is [3.9.7.1]
+  → [3.9.7.2] → [3.9.7.3]. Fix: move the [3.9.7.3] block (L1453-1522,
+  ~70 lines) to AFTER the [3.9.7.2] block at L1524.
+
+**Estimated total effort**: 30 min if done carefully (read each block
+before moving, verify line counts after).
+
+**Risk if done wrong**: cross-references like "see v3.9.5 below" or
+"replaces earlier X" may point to wrong sections after moves. Mitigation:
+re-grep for "v3.9.5", "v3.9.6", "v3.9.7", "[3.5.1]", "[3.6.0]" after
+each move to verify no broken cross-refs.
 
 ---
 
