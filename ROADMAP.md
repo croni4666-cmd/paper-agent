@@ -1559,7 +1559,13 @@ User's flow (revised):
 `[cite:key]` placeholders, (c) CSL style, (d) optional LaTeX template →
 produces (e) manuscript.pdf / .docx / .html.
 
-### [P2-5] implementation sketch
+### Implementation sketch (research-doc section, not a ticket)
+
+> **Note (2026-07-16)**: this sub-section is part of the "Writing pipeline"
+> research doc and is **not** the [P2-5] ticket. The [P2-5] ID refers to
+> `pa build + pa scaffold` (shipped v3.9.9). This sketch is historical
+> research material; for the actual implementation see `pa_cli/build.py`
+> and `pa_cli/scaffold.py` in the repo.
 
 - `pa_cli/build.py` (~80 LOC): pandoc subprocess wrapper
 - `pa_cli/scaffold.py` (~60 LOC): generate outline skeleton from topic clusters
@@ -2037,7 +2043,8 @@ User feedback verbatim themes (from session 2026-07-13):
 - `age > 10y AND cite < mean + 2*std` 鈫?0.5x (strict + moderate)
 - `age > 20y AND cite < mean + 2.5*std` 鈫?0.1x (strict) or 0.5x (moderate)
 - `bi_score > 0.7 AND cite > mean + 2*std` 鈫?1.0x (rescue)
-- `year is None` 鈫?1.0x (caller should apply [P2-5] separately)
+- `year is None` 鈫?1.0x (caller should apply [P2-14] separately; was [P2-5]
+  before the 2026-07-16 ID renumber)
 - Field-stale warning: `median(candidate_year) < now - 5` 鈫?emit stderr warning
 
 **Side-by-side metrics (clean labels, 25 queries)**:
