@@ -65,6 +65,68 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
+## [3.9.9.2] - 2026-07-16 (working tree cleanup + AMiner git-gap fix)
+
+### v3.9.9.2 -- commit missing v3.9.8.0 AMiner engine (2026-07-16 10:32)
+
+**Honest discovery**: during working tree cleanup, found 2 files that are
+USED BY CURRENT CODE but were never committed to git:
+
+1. `pa_cli/aminer_channel.py` (~9 KB, 270 LOC) — AMiner 7th search engine
+   - Referenced in `pa_cli/search.py:433` in the engines tuple
+   - ROADMAP version table claims v3.9.8.0 (2026-07-15) shipped this;
+     CHANGELOG same claim. But git log showed no commit for the file.
+2. `pa_cli/data/cn_stopwords.txt` — Chinese stopwords for topic clustering
+   - Referenced in `pa_cli/topics.py:178 _load_cn_stopwords()`
+
+**Likely cause**: the v3.9.8.0 work was done in a session that ended
+without a `git add`. Subsequent sessions picked up the working tree
+state but never back-filled the missing commit.
+
+**Fix**: `c2b5a08` adds both files to git. No code changes; the files
+are byte-for-byte what was already on disk and in use by the working CLI.
+
+**Implication for ROADMAP honesty**: the v3.9.8.0 "AMiner engine shipped"
+claim is now BACKED by a git commit, not just by a working-tree file.
+The version-table integrity is restored.
+
+### v3.9.9.2 -- working tree cleanup (2026-07-16 10:34)
+
+Per handoff Section 9 item 3 (user-noted flag, "not urgent but flagged"):
+
+**Trashed via mavis-trash (recoverable via Windows Recycle Bin)**:
+- v1/v2 era top-level files (5 files, 39 KB):
+  `pa.py`, `agent.py`, `agent2.py`, `paper_fetcher.py`, `strip_legacy.py`
+  (meta-irony: `strip_legacy.py` was a script to remove legacy code, itself
+  legacy)
+- 7 v3.0 cache dirs (~2.4 MB, mostly `downloaded_pdfs/` at 2 MB):
+  `arxiv_cache/`, `core_cache/`, `doaj_cache/`, `eric_cache/`,
+  `openalex_cache/`, `semanticscholar_cache/`, `downloaded_pdfs/`
+- Old result JSON/MD from prior 6/25 run (1.7 MB):
+  `pool_2026-06-25_*.json` (3 files), `screening_metadata.json`,
+  `screening_report_2026-06-25.md`, `search_manifest.yaml`,
+  `stage4_keywords.json`
+- mavis demo + Chinese drafts (53 KB):
+  `mavis_demo_v1.md`, `mavis_screening_v1.md`, `mavis_screening_v2.md`,
+  `OpenAlex_實證文獻總覽與清單.txt`, `專屬文獻綜述草稿.txt`,
+  `文獻綜述草稿.txt`, `高質量文獻總覽與下載清單.md`
+- Chinese-named old results (70 KB):
+  `初筛_文献综述_2026-06-25.json`, `终筛_细读_2026-06-25*.json`,
+  `终筛_细读_stage4_报告.md`
+
+**Total trashed**: 4.1 MB across 32 files/dirs
+
+**.gitignore updated** (`a0187f8`): added patterns for the 7 cache dirs
+and `test_output/_*.log/.txt/.sqlite` (auto-ignores ~80 more files).
+
+**Net result**: visible untracked went from 197 → 115 (-82). The 115
+remaining are mostly `bench/v01/` scratch, `skill/` (deprecated v3.0
+self-contained skill, large, would need separate decision), and
+`test_output/_debug_*.py/.html` + `_check_*.py` + `_explore_bench*.py`
+debug scripts. These need per-file judgment; not touched in this commit.
+
+---
+
 ## [3.9.9.1] - 2026-07-16 ([P3-1] `pa judge` relevance judgement collection)
 
 ### v3.9.9.1 -- pa judge (2026-07-16 10:24)
