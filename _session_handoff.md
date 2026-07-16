@@ -81,16 +81,30 @@ If new session needs to refetch: run `Export-CNKICookies.ps1` in Edge F12 consol
 
 ## 5. Open tasks (next session priorities)
 
+**Quick wins (30-60 min, do first)**:
+- **[P1-14] --enrich-top-min-cites filter** (30 min) — skip S2 for 0-cite papers, ~10s speedup
+- **[P1-15] OpenAlex-by-title fallback** (1h) — +5-10pp Chinese cite lift
+- **[P1-16] CLI sort options** (30 min) — `--sort-by {cite|year|relevance}`
+- **[P1-17] Per-source filter** (30 min) — `--source cnki,openalex`
+- **[P1-18] Year-aware enrichment skip** (30 min) — skip enrichment for >10y old papers
+
+**New CLI commands (1-6h, do after quick wins)**:
 1. **[P2-7] pa cite-check** (1h) — pre-build cite key validator (next-easy win)
 2. **[P2-8] pa export-screening** (1.5h) — Bibtex+judge → systematic review CSV
 3. **[P2-11] pa fetch-pdf-batch** (4h) — batch download via 8 fetch channels
 4. **[P2-12] pa project** (6h) — multi-corpus / multi-课题 management (defer until 3+ active 课题)
 5. **[P2-13] README.md** (2h) — top-level user-facing doc, **Status: deferred** (per user)
-6. **aminer-30day-eval cron** (auto, 2026-08-14) — decide AMiner renewal
+
+**Lower priority** (shell alias / current dedup is acceptable):
+- [P2-9] pa search-saved (1h) — only worth it if you re-type searches often
+- [P2-10] pa dedup-strict (1.5h) — only worth it if you've hit dedup misses
+
+**Auto (no work needed)**:
+- **aminer-30day-eval cron** (auto, 2026-08-14) — decides AMiner API renewal
 
 **Notes**:
-- [P2-9] pa search-saved (1h) and [P2-10] pa dedup-strict (1.5h) are also
-  in Tier 1 but lower priority than 7/8/11/12
+- [P1-14..18] retroactive IDs were assigned in ROADMAP audit round 3 (2026-07-16)
+  but not initially in this handoff — added in round 9 audit
 - [P2-5] pa build and [P3-1] pa judge are SHIPPED (not TODO); this handoff
   was originally written before those completed
 
@@ -146,21 +160,28 @@ did the following doc-drift cleanup (committed as `eff49c5`):
   `git log --all --grep="aminer\|AMiner"` and `--grep="unpaywall\|Unpaywall"`
   and check the date range 2026-07-15 19:00-22:00.
 
-## 9. Next session priorities (refreshed 2026-07-16)
+## 9. Next session priorities (refreshed 2026-07-16, post-audit)
 
-**Tier 1 (do soon, in this order)**:
+**Tier 1A — quick wins (30-60 min, do first)**:
+- **[P1-14] --enrich-top-min-cites filter** (30 min) — ~10s speedup per query
+- **[P1-15] OpenAlex-by-title fallback** (1h) — +5-10pp Chinese cite lift
+- **[P1-16] CLI sort options** (30 min) — `--sort-by {cite|year|relevance}`
+- **[P1-17] Per-source filter** (30 min) — `--source cnki,openalex`
+- **[P1-18] Year-aware enrichment skip** (30 min) — skip >10y old papers
+
+**Tier 1B — new CLI commands (1-6h, do after quick wins)**:
 1. **[P2-7] pa cite-check** (1h) — fastest win, prevents "undefined reference"
    build errors
 2. **[P2-8] pa export-screening** (1.5h) — for systematic review workflow
 3. **[P2-11] pa fetch-pdf-batch** (4h) — batch English paper download
-4. **[P2-13] README.md** — **Status: deferred** (per user 2026-07-16:
-   "if not blocking LLM understanding, defer"). Do when new human
-   contributors need onboarding.
 
 **Tier 2 (defer)**:
 - [P2-9] pa search-saved (1h) — shell alias is a fine workaround for now
 - [P2-10] pa dedup-strict (1.5h) — only useful if you've hit dedup misses
 - [P2-12] pa project (6h) — defer until 3+ active 课题
+- [P2-13] README.md (2h) — **Status: deferred** (per user 2026-07-16:
+  "if not blocking LLM understanding, defer"). Do when new human
+  contributors need onboarding.
 
 **Auto (no work needed)**:
 - **aminer-30day-eval cron** (2026-08-14) — decides AMiner API renewal
@@ -168,7 +189,7 @@ did the following doc-drift cleanup (committed as `eff49c5`):
 ## 10. ROADMAP self-audit history (2026-07-16)
 
 After the [P2-5] pa build + [P3-1] pa judge ship + working tree cleanup,
-ran 7 rounds of ROADMAP self-audit per user instruction "一直审查到没有
+ran 9 rounds of ROADMAP self-audit per user instruction "一直审查到没有
 问题为止". Results:
 
 | Round | Issues found | Issues fixed | Notable catches |
@@ -180,7 +201,9 @@ ran 7 rounds of ROADMAP self-audit per user instruction "一直审查到没有
 | 5 | 1 | 1 | [P2-13] entry typo ("[P3-1] rerank trigger check" was nonsense) |
 | 6 | 1 | 1 | CHANGELOG line 2620 had stale [P2-5] = Quality filter |
 | 7 | 1 | 1 | Historical sub-task naming drift [P0-7.1] / [P1-11.1] |
-| **Total** | **29** | **22** | |
+| 8 | 5 | 5 | L2268 stale [P2-5] (Quality filter ref); L1288 broken "research 2026-07-15" ref; Tier 3/5 still had leading numbers (10./11./12./13./14.) dropped for consistency |
+| 9 | 3 | 3 | Versioned summary table missing v3.9.9.3/v3.9.9.4 rows; "Recommended next step" section missing [P-N] IDs (rule 8 violation); handoff Section 5/9 missing [P1-14..18] priorities |
+| **Total** | **37** | **30** | |
 
 **Key patterns discovered (now documented in ROADMAP + memory)**:
 - ID collision is easy to miss because both old and new uses "look correct"
@@ -193,11 +216,22 @@ ran 7 rounds of ROADMAP self-audit per user instruction "一直审查到没有
   which is the natural stopping point. The user instruction "until no
   problems" is a heuristic; the right interpretation is "until issues per
   round ≤ 1 and the remaining ones are cosmetic".
+- After Round 7 declared "diminishing returns" prematurely, Round 8 found
+  5 more issues including one more [P2-5] ref — proves the heuristic was wrong.
+  Round 9 found 3 more including a doc-only drift in versioned summary
+  table. Both rounds have been "real work", not cosmetic.
+- Audit round scope discipline: each round should be a fresh full sweep,
+  not "just check the changed parts". The handoff Section 5/9 drift was
+  not visible in the changed parts; only a fresh sweep caught it.
 
-**Net ROADMAP growth**: 2554 (v3.9.8.4) → 3389 (post-7-rounds).
+**Net ROADMAP growth**: 2554 (v3.9.8.4) → 3399 (post-9-rounds).
 Most of the growth is meta-documentation (A-tier criteria, ID convention,
 audit history) — not content bloat.
 
-**Honest caveat**: at this point further audits find only cosmetic
-issues (Honest 3-tier format consistency, long sentence readability).
+**Honest verdict at end of Round 9**:
+- ✅ All substantive issues fixed (internal consistency, ID uniqueness,
+  cross-references, framing contradictions, versioned table sync, ID
+  convention enforcement)
+- ⚠️ Cosmetic-only residuals (Honest 3-tier format mix, long sentences)
+  — diminishing returns, intentionally not fixed
 The session reached diminishing returns at round 7.
