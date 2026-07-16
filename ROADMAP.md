@@ -374,9 +374,17 @@ The correct work plan is in the `Sub-task decomposition` table above. Acceptance
 - NEW `test_output/test_mcp_e2e.py` 鈥?in-process client test
 - NEW `test_output/test_mcp_schemas.py` 鈥?JSON Schema validation for each tool
 
-#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
+#### Outcome (N/A — deprecated 2026-07-04)
 
-_(filled when work done)_
+**Never implemented as planned**. Same-day revert per Global Rule audit
+(self-maintained MCP server exceeds personal-hobbyist maintenance budget).
+Use public `openags/paper-search-mcp` (PyPI, 22 free sources, MIT) via
+`pa mcp install` instead. See [P0-3] entry status line for full
+deprecation reasoning.
+
+The `test_mcp_schemas.py` file listed above was also never created.
+The `test_mcp_e2e.py` filename was later renamed to `test_mcp_setup.py`
+(current) per v3.5.1 MCP integration redesign.
 
 ---
 
@@ -528,9 +536,25 @@ opts in. Until then, this entry stays `Status: deprecated`.
 
 **Risk**: backward citation requires fetching each referenced work individually; a paper with 50 refs = 50 API calls. Cap at `--limit N` (default 100 forward, 50 backward) to bound.
 
-#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
+#### Outcome (2026-07-04) — filled retroactively in audit round 16
 
-_(filled when work done)_
+Shipped v3.5.1 (2026-07-04). Implementation: `pa_cli/citations.py`
+(~150 lines) — `get_work_by_doi`, `get_citing` (cursor-paginated),
+`get_referenced` (N+1 API calls per reference), `citation_walk` (top-level).
+CLI: `pa citations <DOI>` with `--direction forward|backward`, `--limit N`,
+`--save-bib path.bib`, `-o path.json`. MCP: `pa_citations` 5th tool
+(args: doi, direction, limit). Validation: `test_citations_e2e.py` 8/8
+sub-tests using real OpenAlex API.
+
+Key gotcha discovered: `cites` filter accepts only OpenAlex IDs (W-prefixed),
+not DOIs. 2-step lookup required (DOI → ID → filter by ID).
+
+**Honest limits (carried into [P0-12] / [P0-8])**:
+- 1-hop only (no recursive walk; deferred to [P0-8] L7)
+- Backward bounded by `--limit` (50 refs = 50 API calls)
+- OpenAlex 404 on missing works = empty result, no retry
+
+See CHANGELOG v3.5.1 for full implementation details.
 
 ### [P1-2] OpenAlex concepts semantic filtering
 
@@ -678,9 +702,24 @@ _(filled when work done)_
 - Mermaid block is the primary output (GitHub renders automatically). PNG/SVG export deferred (requires `mermaid-cli` install, which would fail the Global Rule "no paid/hosted infra" 鈥?keeping local-only).
 - No auto-watching of citations for inclusion stage 鈥?that requires user review, not automatable.
 
-#### Outcome (YYYY-MM-DD 鈥?to be filled on completion)
+#### Outcome (2026-07-04) — filled retroactively in audit round 16
 
-_(filled when work done)_
+Shipped v3.5.1 (2026-07-04). Implementation: `pa_cli/prisma.py`
+(~130 lines) re-exports `skill.core.prisma.generate_mermaid` +
+`generate_markdown` (thin wrapper; `skill/` is untracked so `pa_cli/` is
+the tracked boundary). Adds `derive_counts_from_corpus()` for
+`pa review` integration; `render_prisma()` top-level entry;
+`parse_json_arg()` helper.
+
+CLI: `pa prisma` (standalone, takes explicit counts) + `pa review
+--with-prisma` (auto-derives counts from corpus). Validation:
+`test_prisma_e2e.py` 10/10 sub-tests.
+
+**Honest limit** (per design decision above): PNG/SVG export deferred —
+would need `mermaid-cli` install which fails Global Rule. Mermaid
+markdown is the primary output (GitHub renders natively).
+
+See CHANGELOG v3.5.1 for full implementation details.
 
 ### [P1-4] Cross-paper topic clustering (`pa review-topics`)
 
