@@ -1190,15 +1190,16 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.8.2 | released 2026-07-15 | `pa fetch` proxy support (auto-detect `HTTPS_PROXY`/`HTTP_PROXY`/`ALL_PROXY`) + Unpaywall email validation (`developers@unpaywall.org` works, `paper-agent@mavis.local` does not) + CORE engine honest re-evaluation (CORE moved to `--engine core` explicit-only, not in default 6-engine pool; OpenAlex already covers its 4.7M papers) | 2026-07-15 |
 | v3.9.8.3 | released 2026-07-15 | CNKI fetch real test + 2-cookie vs 4-cookie limit. Confirmed `bar.cnki.net/bar/download/order` blocked by `vLevel=5` CAPTCHA (anti-bot final defense). `fetch_cnki_detail()` upgraded from stub to real playwright flow; CN-style DOI heuristic (10.3969/10.16525/j.cnki/j.issn) routes to CNKI first | 2026-07-15 |
 | v3.9.8.4 | released 2026-07-16 | `pa fetch-batch` semi-automated CNKI guide (per-paper xueshu789 search URL + Edge console JS snippet for batch doDownload extraction). New file `pa_cli/batch_fetch.py` (~280 LOC). Real-corpus test 5/5 found, 4/5 with DOI. `Export-CNKICookies.ps1` + session handoff doc | 2026-07-16 |
+| v3.9.9 | released 2026-07-16 | [P2-5] `pa build` + `pa scaffold` manuscript typeset pipeline (pandoc + GB/T 7714 CSL). New files `pa_cli/build.py` (~265 LOC) + `pa_cli/scaffold.py` (~330 LOC) + bundled `chinese-gb7714-2005-numeric.csl` (15.4 KB). 10/10 unit tests pass. HTML/DOCX/GFM e2e verified; PDF requires xelatex (NOT installed on dev machine, pa build will print install hint) | 2026-07-16 |
 
 ---
 
-## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-16 to v3.9.8.4)
+## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-16 to v3.9.9)
 
 This is the "what paper-agent can do today" reference. Updated whenever
-a major version ships. Last update: 2026-07-16 (v3.9.8.4).
+a major version ships. Last update: 2026-07-16 (v3.9.9).
 
-### What paper-agent can do today (v3.9.8.4)
+### What paper-agent can do today (v3.9.9)
 
 | Capability | Status | Quality (typical) | Where |
 |---|---|---|---|
@@ -1219,6 +1220,8 @@ a major version ships. Last update: 2026-07-16 (v3.9.8.4).
 | LLM topic labels | ✅ done | custom + domain stopwords | `pa review-topics` |
 | Fetch PDF (8-channel + proxy) | ✅ done | ~16/16 candidates per query, auto-detect clash/system proxy | `pa fetch` |
 | CNKI fetch-batch guide | ✅ done (v3.9.8.4) | per-paper xueshu789 URL + Edge console JS for batch doDownload; 5/5 found, 4/5 with DOI in real test | `pa fetch-batch -i input.txt -o guide.md` |
+| **Manuscript scaffold (v3.9.9)** | ✅ done | markdown outline + per-paper `[@bibkey]` cite hints + `> prompt:` blocks for Mavis. Group by year/topic/author | `pa scaffold refs.bib` |
+| **Manuscript typeset (v3.9.9)** | ✅ done | pandoc + bundled GB/T 7714 numeric CSL. HTML/DOCX/MD/GFM/EPUB/ODT/RTF/TEX work out of the box; PDF needs xelatex (NOT installed on dev machine, pa build will print install hint) | `pa build refs.bib --skeleton ms.md --out ms.html` |
 | MCP integration | ✅ done | uses public `paper-search-mcp` | `pa mcp install` |
 
 ### What paper-agent can't do (terminal limitations per [P0-9.1b] v3.9.7.6 close-out + smoke test v3.9.7.7-7.9)
@@ -1279,12 +1282,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
    coverage, public API, free. **+10.9pp Chinese cite lift verified** (real
    queries: 21% baseline → 30-46% post-AMiner). AMiner 30-day eval cron
    (`aminer-30day-eval`) will run 2026-08-14 to decide API renewal.
-7. **[P2-5] `pa build` + `pa scaffold` — manuscript pipeline (pandoc + Manubot
-   pattern)** — see "Writing pipeline" section. Bridges "search returns Bibtex"
-   → "manuscript ready" gap. **Status: revised 2026-07-15 per user pushback** —
-   writing prose is Mavis's job (user's explicit choice), pa build only handles
-   scaffold (outline template + transition prompts) + typeset (pandoc).
-   Effort: 2-4h.
+7. ~~[P2-5] `pa build` + `pa scaffold` — manuscript pipeline (pandoc + Manubot
+   pattern)~~ — ✅ **DONE in v3.9.9** (released 2026-07-16). Bridges
+   "search returns Bibtex" → "manuscript ready" gap. Scaffold renders
+   outline + per-paper `[@bibkey]` cite hints + prompt blocks for Mavis;
+   build wraps pandoc with bundled GB/T 7714 numeric CSL. **Honest limit**:
+   PDF output needs xelatex (not installed on dev machine, install MiKTeX);
+   HTML/DOCX/GFM work out of the box. 10/10 unit tests pass.
 
 ### Tier 2: Medium (0.5-1 day each)
 

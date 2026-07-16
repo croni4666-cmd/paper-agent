@@ -65,7 +65,70 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
-## [Unreleased] - 2026-07-15 (docs — research-only, no code changes)
+## [3.9.9] - 2026-07-16 ([P2-5] `pa build` + `pa scaffold` manuscript typeset pipeline)
+
+### v3.9.9 -- pa build + pa scaffold (2026-07-16 10:12)
+
+Per ROADMAP "Writing pipeline" (post-v3.9.7.9, revised per user pushback):
+prose = Mavis's job, scaffold + typeset = paper-agent's job. This release
+ships the scaffold + typeset half.
+
+**New CLI commands**:
+
+`pa scaffold refs.bib [--group-by {year,topic,author,none}] [--topics topics.json]`
+                     `[--title ...] [--output ...]`
+- Lightweight bibtex parser (no external deps)
+- Renders a markdown outline skeleton with:
+  - H1 title + 引言 / 结语 / 参考文献 sections
+  - Per-year / per-topic / per-author H2 grouping
+  - Per-paper H3 (title) + meta line (author · year · venue)
+  - `> prompt: ...` block per paper telling Mavis what to write,
+    including the `[@bibkey]` cite to copy into prose
+- Optional: pass `--topics topics.json` (from `pa review-topics`) to group
+  by topic cluster instead of year
+
+`pa build refs.bib --skeleton manuscript.md --output manuscript.{html,docx,pdf,tex,md,...}`
+                `[--csl path] [--format ...] [--pdf-engine xelatex|weasyprint|...]`
+- Wraps pandoc with built-in `--citeproc` + bundled `chinese-gb7714-2005-numeric.csl`
+- Auto-detects format from output suffix
+- Auto-detects best PDF engine (xelatex > lualatex > pdflatex > weasyprint)
+  if format is PDF; otherwise no engine needed
+- Prints actionable install hints if xelatex is missing (e.g. "Install MiKTeX")
+
+**Files**:
+- `pa_cli/build.py` (~265 LOC, NEW)
+- `pa_cli/scaffold.py` (~330 LOC, NEW)
+- `pa_cli/data/chinese-gb7714-2005-numeric.csl` (15.4 KB, NEW, MIT-style
+  license, downloaded from citation-style-language/styles official repo)
+- `pa_cli/cli.py` (+134 LOC, registered `build` + `scaffold` subcommands
+  appended after `fetch-batch` to minimize diff vs v3.9.8.4)
+- `test_output/_test_pa_build.py` (267 LOC, 10 unit tests, all pass)
+- `test_output/_demo_*.bib/.md/.html` (sample round-trip output)
+
+**Test result**: 10/10 pass
+- `test_parse_bibtex_count/fields` — bibtex parser
+- `test_scaffold_default_group_by_year/author/empty_bibtex` — skeleton rendering
+- `test_default_csl_exists` — bundled CSL sanity check
+- `test_pdf_engine_detection` — engine auto-detect
+- `test_e2e_{html,docx,gfm}` — full scaffold→build round-trip
+
+**Honest 3-tier verification**:
+| What | Status | Evidence |
+|---|---|---|
+| `pa scaffold` produces valid markdown | ✅ | 3 unit tests pass; sample output in `_demo_skeleton.md` |
+| `pa build` runs pandoc and produces file | ✅ | 3 e2e tests pass; HTML/DOCX/GFM output verified |
+| GB/T 7714 numeric cites resolve correctly | ✅ | e2e HTML test verifies [1] in-text + [1] Author... in bib |
+| xelatex PDF path works | ⚠️ NOT TESTED | xelatex not installed on dev machine; pa build will print install hint |
+| weasyprint PDF fallback | ⚠️ NOT TESTED | weasyprint IS installed but quality vs LaTeX is unknown |
+| LLM prose quality | ❌ OUT OF SCOPE | Mavis's job, by design (per user pushback 2026-07-15) |
+
+**Typical user flow** (per ROADMAP):
+1. `pa search "topic" --format bibtex --out refs.bib`
+2. (optional) `pa scaffold refs.bib --out skeleton.md`
+3. User pastes refs.bib + skeleton into Mavis chat, asks for lit review prose
+4. Mavis outputs markdown with `[@bibkey]` cites inline
+5. `pa build refs.bib --skeleton manuscript.md --out manuscript.html`
+6. (or `--out manuscript.pdf` after MiKTeX install)
 
 Per user 2026-07-15: identified writing gap (paper-agent covers search but
 not writing/formatting) + asked for B+→A upgrade assessment. After 5-layer
