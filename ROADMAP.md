@@ -2746,10 +2746,11 @@ User 2026-07-13 鎻愬嚭鏂板 Layer 6-7 (post-download full-text deep reran
 **鍏抽敭 insight**:鏂板 Layer 6-7 (full-text deep rerank) 鎶?PaSa 瑕嗙洊鐜囦粠 30-40% 鎻愬崌鍒?50-60%,涓昏闈?3 涓?component 鐨勬彁鍗?Full-text paper reading (10%鈫?0%)銆丷elevance reasoning (30%鈫?0%)銆丄daptive iteration (40%鈫?0%)銆傚墿涓?40-50% 浠嶇劧鍙楅檺浜?Global Rule (鏃?LLM + 鏃?paid API)銆?
 ### [P0-8] Full-text deep rerank layer (post-download, PaSa-inspired)
 
-- **Status**: done
+- **Status**: broken (revised 2026-07-16, was `done`)
 - **Added**: 2026-07-13
 - **Started**: 2026-07-13
 - **Completed**: 2026-07-13
+- **Broken since**: 2026-07-15 (v3.9.8.2 commit acca2a8 renamed `fetch_doi` → `fetch` in `pa_cli/fetch.py`; `pa_cli/deep_rerank.py:52` still imports the old name → import error)
 - **Priority**: P0
 - **Layer**: 6 (Download) + 7 (Full-text deep rerank)
 - **Source**: User request 2026-07-13 鈥?"鐢变簬浣犺浣犳病鏈夊姙娉曡鍏ㄦ枃,鎴戣€冭檻鍒拌鍏ㄦ枃闇€瑕佷汉宸ヤ笅杞?鍥犳鍙互璁剧疆棰濆涓€涓狶ayer,鍓嶉潰鐨凩ayer 鍏堢瓫閫夊嚭鏉ユ渶浼樼殑璁烘枃,鐒跺悗灏濊瘯涓嬭浇,鎶婁笉鑳戒笅杞界殑缁欐垜,鎴戞潵浜哄伐涓嬭浇銆備箣鍓嶆暣鍚堢殑涓嬭浇鏂规硶涔熷彲浠ュ簲鐢ㄥ埌杩欏眰,鐒跺悗鍐嶉噸鏂拌窇"
@@ -2884,6 +2885,63 @@ Until those 3 features are real, Layer 7's lift measurement is incomplete.
 ---
 
 #### 2026-07-13 status: [P0-6] LTR, [P0-7] Cross-encoder, [P1-11] MoE router SHIPPED
+
+---
+
+### Modified 2026-07-16 — broken import + missing CLI discovered (audit round 22)
+
+**What broke**: 2026-07-15 v3.9.8.2 commit `acca2a8` renamed
+`pa_cli.fetch.fetch_doi()` → `pa_cli.fetch.fetch()` (new signature:
+`fetch(doi, title, md5_path, out_path, prefer)`). However, **`pa_cli/deep_rerank.py:52`
+still imports the old `fetch_doi` name** — module import now fails.
+
+**Symptom** (caught by `test_output/_import_smoke.py`, added 2026-07-16):
+```
+ImportError: cannot import name 'fetch_doi' from 'pa_cli.fetch'
+```
+Result: `pa_cli.deep_rerank` is the only one of 26 pa_cli modules that
+fails to import. All other modules (ltr, cross_encoder, moe_router,
+cnki_channel, aminer_channel, batch_fetch, judge, build, scaffold,
+etc.) import cleanly.
+
+**Other gaps** (not in this audit but found in same sweep):
+- `pa deep-rerank` CLI command was **never wired up** (the
+  acceptance criteria said "新增 `pa deep-rerank <CORPUS_DIR>...` CLI
+  鍛戒护" but no `@main.command()` for `deep_rerank` exists in
+  `pa_cli/cli.py`). So even if the import were fixed, the feature
+  would still need a CLI wrapper to be callable.
+- `test_output/_run_deep_rerank_v3_9_5.py` also imports
+  `pa_cli.deep_rerank` and would fail to run.
+
+**Honest 3-tier**:
+- ✅ Verified before v3.9.8.2: module imported, `_run_deep_rerank_v397.py`
+  reports worked (BM25=8.65 feature, see 2026-07-14 status above)
+- ❌ Broken since v3.9.8.2 (2026-07-15): import fails, no CLI wrapper
+- ❌ No call sites in current usage (search / review / fetch paths
+  don't use deep_rerank), so the break is silent — `pa search` and
+  `pa review` still work
+
+**Status change**: `done` → `broken` (revised 2026-07-16).
+
+**Migration plan** (deferred to user decision — see TODO.md):
+- **Option A (fix code)**: Update `pa_cli/deep_rerank.py:52` to use
+  new `fetch(doi, out_path, prefer="auto")` API. Then update the
+  call site at `pa_cli/deep_rerank.py:127` to match new signature
+  (no `output_dir`, no `channels`, no `use_cache` — use `out_path`
+  and add manual loop if multi-channel cascade needed). Estimated
+  effort: 1-2h.
+- **Option B (delete dead code)**: If no plan to actually USE
+  deep_rerank in production workflow, just delete the file
+  (`pa_cli/deep_rerank.py` + the 3 old `_run_deep_rerank_v3*.py`
+  test files). Update ROADMAP to `deprecated`. Estimated effort: 5 min.
+- **Option C (mark TODO, defer)**: Leave as-is with `Status: broken`,
+  add to TODO.md, fix later when Layer 7 deep rerank is actually
+  needed for a 课题. Estimated effort: 0 now.
+
+**Recommended**: Option C (current state) — the feature isn't on the
+roadmap for the next 课题 iteration, and the fix requires API
+familiarity that wasn't on the original work plan.
+
 ---
 
 ### [P0-9] CNKI 6th search engine (中文 paper 收录, cookies + playwright)
