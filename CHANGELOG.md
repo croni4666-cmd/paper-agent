@@ -65,7 +65,91 @@ can rehydrate from this file and continue. Handoff captures:
 
 ---
 
+## [3.9.9.6] - 2026-07-16 (ROADMAP self-audit rounds 8-13: 15 more issues found + fixed)
+
+Per user catch 2026-07-16 11:38 ("我看你的todo list 还没做完"): the
+previous "audit clean" verdict at round 7 was premature. User pushed back
+correctly — the [3.9.9.4] claim of "diminishing returns" was wrong; more
+real issues existed. Re-audit (rounds 8-13):
+
+- **Round 8 (5 issues)** — `d1f2a6d`:
+  - R8-1: L2268 "Layer 4 Filters" table still referenced `[P2-5]` for
+    Quality filter (should be `[P2-14]`) — same class of bug as R3-1
+    that was supposedly fixed
+  - R8-2: L1288 "see [P2-5] research 2026-07-15" for Lit review WRITING
+    row — broken reference (that research section was REPLACED by
+    "Writing pipeline" section per CHANGELOG v3.9.7.9 follow-up)
+  - R8-3: Tier 3 still had leading numbers 10./11./12. (Round 2 I-4
+    dropped them in Tier 1/2 but missed Tier 3)
+  - R8-4: Tier 5 still had leading numbers 13./14. (same as R8-3)
+  - R8-5: L1289 "proposed [P2-5]" — now misleading since shipped
+    (cosmetic; collapsed into R8-2 fix)
+
+- **Round 9 (3 issues)** — `d1f2a6d` (same commit):
+  - R9-1: Versioned summary table missing v3.9.9.3 and v3.9.9.4 rows
+    (CHANGELOG had these but ROADMAP table didn't)
+  - R9-2: "Recommended next step" section missing [P-N] IDs
+    (violates rule 8 added in [3.9.9.3])
+  - R9-3: Handoff Section 5/9 missing [P1-14..18] quick-wins
+    (retroactive IDs assigned in [3.9.9.3] but handoff not updated)
+
+- **Round 10 (1 issue)** — `553c141`:
+  - R10-1: [P3-1] "Realistic path forward" said "Add `pa judge` command"
+    but pa judge shipped v3.9.9.1 — should be "Use `pa judge` (shipped)"
+
+- **Round 11 (3 issues)** — `6144b2a`:
+  - R11-1: "B+ → A" Path (c) AMiner section still said "4-6h
+    implementation" (AMiner shipped v3.9.8.0)
+  - R11-2: "Combined verdict" table still said "4-6h implementation"
+  - R11-3: "What we CAN ship" section had no status update
+    (pa build shipped v3.9.9)
+
+- **Round 12 (1 issue)** — `2950d9d`:
+  - R12-1: CHANGELOG [3.9.9.4] verdict "All substantive issues fixed"
+    was stale (contradicts [3.9.9.5])
+
+- **Round 13 (2 issues)** — `8b26ea9` + `6e785d5`:
+  - R13-1: [P0-12] "paper-agent's 6-engine pool" stale post-AMiner
+    (should be "7-engine pool")
+  - R13-2: Snapshot "Last update: v3.9.9.1" needed clarification
+    (since v3.9.9.5 is latest; added note explaining feature vs
+    doc-only distinction)
+
+- **Round 14 (3 issues)** — this commit (and the [3.9.9.5] promotion
+  to [3.9.9.6] for the consolidated audit count):
+  - R14-1: Round 2 audit count was wrong in CHANGELOG and handoff
+    (8/5 vs actual 10/5 per the a559050 commit's I-1 to I-10 list)
+  - R14-2: Handoff audit table totals off by 2-3 (rounds 1-9 said
+    37/30; corrected to 45/37 with rounds 1-13)
+  - R14-3: CHANGELOG [3.9.9.5] promoted to [3.9.9.6] to include
+    rounds 11-14 (and fix the audit count)
+
+**Total across rounds 8-14**: 18 issues found + fixed.
+**Total across all 14 audit rounds**: 45 issues found, 37 fixed (8
+deferred to [P2-13] / future passes).
+
+**Discipline correction (added to memory)**:
+- "Diminishing returns at 1 issue/round" was a wrong stopping heuristic.
+  Rounds 8-14 each found real (non-cosmetic) issues. The right stopping
+  point is "issues per round = 0 for 2 consecutive rounds", not "≤ 1".
+- "Audit round scope discipline": each round should be a fresh full sweep,
+  not "just check the changed parts". The handoff drift in R9-3 was not
+  visible in the changed parts of d1f2a6d; only a fresh sweep caught it.
+- "Audit count discipline": round counts must be derived from the actual
+  commit's fix list, not from a summary line (which can be wrong). R14
+  caught this — Round 2 summary said "8" but commit listed I-1 to I-10.
+
+**Honest verdict on rounds 8-14**: no premature stop this time. 7
+consecutive rounds of real (non-cosmetic) issues found. The user pushback
+"一直审查到没有问题为止" was the right call.
+
+---
+
 ## [3.9.9.5] - 2026-07-16 (ROADMAP self-audit rounds 8-10: 9 more issues found + fixed)
+
+**[3.9.9.5] is now SUPERSEDED by [3.9.9.6]**. The [3.9.9.6] release
+extends the audit count to include rounds 11-14 and corrects the
+Round 2 audit count. Keep this section for historical reference only.
 
 Per user catch 2026-07-16 11:38 ("我看你的todo list 还没做完"): the
 previous "audit clean" verdict at round 7 was premature. User pushed back
@@ -98,8 +182,8 @@ real issues existed. Re-audit:
     but pa judge shipped v3.9.9.1 — should be "Use `pa judge` (shipped)"
 
 **Total across rounds 8-10**: 9 issues found + fixed.
-**Total across all 10 audit rounds**: 38 issues found, 31 fixed (7
-deferred to [P2-13] / future passes).
+**Total across all 10 audit rounds** (per [3.9.9.5]): 38 issues found, 31 fixed.
+**Superseded by [3.9.9.6]**: actual count is 45 found, 37 fixed (rounds 1-14).
 
 **Discipline correction (added to memory)**:
 - "Diminishing returns at 1 issue/round" was a wrong stopping heuristic.

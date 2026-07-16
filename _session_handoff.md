@@ -195,7 +195,7 @@ ran 9 rounds of ROADMAP self-audit per user instruction "一直审查到没有
 | Round | Issues found | Issues fixed | Notable catches |
 |---|---|---|---|
 | 1 | 10 | 6 | A-tier metric missing; ID naming convention missing |
-| 2 | 8 | 5 | Tier number collisions (1./2./.../12. across tiers) |
+| 2 | 10 | 5 | Tier number collisions (1./2./.../12. across tiers); 5 deferred to rounds 3-5 (I-6/I-7/I-8/I-9/I-10) |
 | 3 | 6 | 6 | **[P2-5] ID collision** (pa build vs Quality filter) |
 | 4 | 2 | 2 | 3rd [P2-5] collision (research-doc sub-section) |
 | 5 | 1 | 1 | [P2-13] entry typo ("[P3-1] rerank trigger check" was nonsense) |
@@ -203,7 +203,11 @@ ran 9 rounds of ROADMAP self-audit per user instruction "一直审查到没有
 | 7 | 1 | 1 | Historical sub-task naming drift [P0-7.1] / [P1-11.1] |
 | 8 | 5 | 5 | L2268 stale [P2-5] (Quality filter ref); L1288 broken "research 2026-07-15" ref; Tier 3/5 still had leading numbers (10./11./12./13./14.) dropped for consistency |
 | 9 | 3 | 3 | Versioned summary table missing v3.9.9.3/v3.9.9.4 rows; "Recommended next step" section missing [P-N] IDs (rule 8 violation); handoff Section 5/9 missing [P1-14..18] priorities |
-| **Total** | **37** | **30** | |
+| 10 | 1 | 1 | [P3-1] "Add pa judge" → "Use pa judge (shipped)" (stale "we WILL add" framing) |
+| 11 | 3 | 3 | "B+ → A" AMiner section still says "4-6h implementation" (shipped v3.9.8.0); "Combined verdict" table still says "4-6h implementation"; "What we CAN ship" section had no status update |
+| 12 | 1 | 1 | CHANGELOG [3.9.9.4] verdict "All substantive issues fixed" was stale (contradicts [3.9.9.5]) |
+| 13 | 2 | 2 | [P0-12] "paper-agent's 6-engine pool" stale post-AMiner; snapshot "Last update: v3.9.9.1" needs clarification (since v3.9.9.5 is latest) |
+| **Total** | **45** | **37** | |
 
 **Key patterns discovered (now documented in ROADMAP + memory)**:
 - ID collision is easy to miss because both old and new uses "look correct"
