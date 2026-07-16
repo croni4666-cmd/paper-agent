@@ -2617,7 +2617,7 @@ trust Mavis" per the user's protocol.
 | [P1-8] China political-institution exclusion | P1 | Block 中国国际关系研究院 + 各级马克思主义学院 (user-sensitivity filter) | proposed |
 | [P1-9] Geographic / country metadata extraction | P1 | ISO 3166-1 country tag on each candidate; boost factor when query has country mentions | proposed |
 | [P1-10] Falsifiability philosophy integration | P1 (research) | No direct tool on GitHub; closest = `K-Dense-AI/scientific-agent-skills` 27.6k stars. Research deliverable: ROADMAP_RESEARCH_2026-07-13_FALSIFIABILITY.md | proposed (research) |
-| [P2-5] Quality filter (no-abstract + low-cite = low quality) | P2 | flag / drop candidates with no abstract + no year + cite < 50 | proposed |
+| [P2-14] Quality filter (no-abstract + low-cite = low quality) (was [P2-5] before 2026-07-16 ID renumber) | P2 | flag / drop candidates with no abstract + no year + cite < 50 | proposed |
 
 **User confirmation needed for each** (per ROADMAP discipline). My recommended next step: start [P0-4] (data drift fix, 1h, low risk) and [P1-5] (recency rule, 2h, matches user's explicit "10 year / 2 std" rule). Defer [P1-6..P1-10] until user confirms lookup table content / scope.
 
