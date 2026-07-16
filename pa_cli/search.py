@@ -144,8 +144,10 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
     }
 
 
-def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1) -> List[Dict]:
-    """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites added 2026-07-16).
+def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
+                 resort_by: str = "cite") -> List[Dict]:
+    """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites + [P1-16] resort_by
+    added 2026-07-16).
 
     For each result in top-N that lacks cite/abstract, do second-hop lookups:
     1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
@@ -165,6 +167,10 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1) -> List[D
             low-cite papers in top-N, S2 often returns shallow entry
             (no tldr/inf_cite) for 0-cite papers, costing ~1.2s × N
             for little gain. Set to 0 to restore v3.9.7.8 behavior (try all).
+        resort_by: [P1-16] re-sort criterion after enrichment.
+            "cite" (default) — cited_by_count desc; backward compat.
+            "year" — year desc (newest first; None/0 at end).
+            "relevance" — keep natural engine order (no re-sort).
 
     Returns: same list (modified in place)
     """
@@ -205,14 +211,37 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1) -> List[D
                 r["_enrichment"]["crossref_title"] = True
                 enriched += 1
             time.sleep(0.05)  # Crossref is generous
-    # Re-sort by cited_by_count (newly enriched papers may have higher counts)
-    results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    # [P1-16] Re-sort by user-chosen criterion (newly enriched papers may
+    # have higher counts, so cite-sorted re-rank is important)
+    if resort_by == "cite":
+        results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    elif resort_by == "year":
+        results.sort(key=lambda x: x.get("year") or 0, reverse=True)
+    # resort_by == "relevance" → keep natural order, no re-sort
     # [P1-14] print enrichment stats (stdout; CLI can grep/pipe)
     if min_cites > 0 and skipped_low_cite:
         print(f"  [P1-14] enrich_top_n: enriched {enriched}, "
               f"skipped {skipped_low_cite} (cited_by_count<{min_cites}) "
               f"of top-{n}", file=sys.stderr)
     return results
+
+
+def sort_results(results: List[Dict], sort_by: str = "cite") -> List[Dict]:
+    """[P1-16] Sort unified results by user-selected criterion.
+
+    cite (default): cited_by_count desc — v3.9.7.8 backward compat.
+    year: year desc (newest first; None/0 at end).
+    relevance: keep natural engine order (no sort) — preserves the
+              per-engine relevance ranking each engine returned.
+
+    Returns: NEW list (does not mutate input).
+    """
+    if sort_by == "cite":
+        return sorted(results, key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    elif sort_by == "year":
+        return sorted(results, key=lambda x: x.get("year") or 0, reverse=True)
+    else:  # "relevance" or unknown
+        return list(results)
 
 
 def search_crossref(query: str, year_min: int = None, year_max: int = None,
@@ -436,7 +465,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
                concepts_filter: str = None,
                enrich_top: int = 0,
-               enrich_top_min_cites: int = 1) -> Dict[str, Any]:
+               enrich_top_min_cites: int = 1,
+               sort_by: str = "cite") -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -453,6 +483,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                 cited_by_count < this threshold (default 1 = skip 0-cite).
                 Saves ~12s/query when many low-cite papers in top-N.
                 Set to 0 to restore v3.9.7.8 behavior (try all).
+    sort_by: [P1-16] sort criterion for unified results.
+             "cite" (default), "year", or "relevance". See sort_results().
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -535,12 +567,16 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                 and not any(tldr.startswith(p) for p in S2_TLDR_PLACEHOLDERS)):
             r["abstract"] = tldr
 
-    unified = sorted(seen.values(), key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    unified = sort_results(list(seen.values()), sort_by=sort_by)
 
     # Top-N deep enrichment (v3.9.7.8): second-hop lookups for top-N results
     # that lack cite/abstract. Off by default (enrich_top=0).
     if enrich_top > 0:
-        enrich_top_n(unified, n=enrich_top, min_cites=enrich_top_min_cites)
+        enrich_top_n(unified, n=enrich_top, min_cites=enrich_top_min_cites,
+                     resort_by=sort_by)
+    elif sort_by != "cite":
+        # Even without enrichment, ensure final sort matches user request
+        unified = sort_results(unified, sort_by=sort_by)
 
     return {
         "query": query,
