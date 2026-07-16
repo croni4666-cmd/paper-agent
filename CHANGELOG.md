@@ -170,10 +170,15 @@ fixed 16 issues across rounds 2-7. ROADMAP is now self-consistent
 Mostly internal restructuring, not content bloat.
 
 **Honest verdict on "until no problems"**:
-- ✅ All substantive issues fixed (internal consistency, ID uniqueness,
-  cross-references, framing contradictions)
+- ✅ All substantive issues **at the time of this release** fixed (rounds 1-7
+  cleared ID collisions, cross-references, framing contradictions, version
+  table, ID convention)
 - ⚠️ Cosmetic-only residuals (Honest 3-tier format mix, long sentences)
   — diminishing returns, intentionally not fixed
+- ⚠️ **This verdict was premature** — see [3.9.9.5] (rounds 8-10 found 9 more
+  real, non-cosmetic issues). The "diminishing returns" signal at 1 issue/
+  round was a wrong stopping heuristic. Right stopping point: 0 issues for
+  2 consecutive rounds.
 
 ---
 
