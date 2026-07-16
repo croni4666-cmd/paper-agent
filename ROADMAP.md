@@ -1284,6 +1284,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.9.5 | released 2026-07-16 | ROADMAP self-audit rounds 8-10 (9 more issues found + fixed): another stale [P2-5]→[P2-14] ref in Layer 4 table (R8-1); broken "see [P2-5] research 2026-07-15" ref replaced with "Writing pipeline" pointer (R8-2); Tier 3/5 leading numbers 10.-14. dropped for consistency (R8-3, R8-4); versioned summary table missing v3.9.9.3/v3.9.9.4 rows added (R9-1); "Recommended next step" section got [P-N] IDs per rule 8 (R9-2); handoff Section 5/9 got [P1-14..18] quick-wins (R9-3); [P3-1] "Add pa judge" → "Use pa judge (shipped)" (R10-1). **Discipline correction**: "≤ 1 issue/round = done" was wrong heuristic; rounds 8-10 each found real (non-cosmetic) issues. Right stopping point: 0 issues for 2 consecutive rounds. **Doc-only release** | 2026-07-16 |
 | v3.9.9.6 | released 2026-07-16 | ROADMAP self-audit rounds 8-14 (18 issues found + fixed; supersedes [3.9.9.5] which had wrong audit count): added rounds 11-13 (3+1+2 issues — B+/A AMiner section staleness, [3.9.9.4] verdict staleness, [P0-12] 6-engine pool staleness, snapshot Last update clarification); added round 14 (3 issues — Round 2 audit count was wrong in CHANGELOG and handoff; totals off by 2-3; [3.9.9.5] promoted to [3.9.9.6] to consolidate). **Total across 14 audit rounds**: 45 found, 37 fixed (8 deferred to [P2-13] / future passes). **Doc-only release** | 2026-07-16 |
 | v3.9.9.7 | released 2026-07-16 | **[P1-14] `--enrich-top-min-cites` filter + [P1-16] CLI sort options** shipped: `enrich_top_n()` skips S2 deep lookup when `cited_by_count < min_cites` (default 1 = skip 0-cite papers; saves ~12s/query per S2 shallow-entry lesson from v3.9.7.7). `--enrich-top-min-cites` CLI flag (default 1; set 0 to restore v3.9.7.8 behavior). `_enrichment.s2_doi_skipped` records skip reason. **Also [P1-16]**: new `sort_results()` helper + `--sort-by {cite\|year\|relevance}` CLI flag (default `cite` = backward compat); `enrich_top_n()` got `resort_by` param. **Also**: `pa fetch` backward-compat wrapper (fetch_doi) restores ~20h of CLI breakage from v3.9.8.2 refactor. 11/11 new unit tests pass; 26/26 pa_cli modules import OK | 2026-07-16 |
+| v3.9.9.8 | released 2026-07-16 | **[P1-15] OpenAlex-by-title fallback** shipped: new `_openalex_lookup_title()` function + `enrich_top_n()` calls it as fallback when `_crossref_lookup_title()` returns 0 hits. OpenAlex has better Chinese coverage than Crossref (per v3.9.7.5 lessons), expected +5-10pp on Chinese cite. Fields filled: `doi`, `cited_by_count`, `abstract`, `venue`, `year` (skips already-set fields). `_enrichment.openalex_title` records the fallback. 8/8 unit tests pass | 2026-07-16 |
 
 ---
 
@@ -1388,9 +1389,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   — ✅ **DONE in v3.9.9.7** (released 2026-07-16). `enrich_top_n(results, n, min_cites=1)`
   skips S2 lookup when `cited_by_count < min_cites`. CLI flag `--enrich-top-min-cites`
   default 1; set 0 to restore v3.9.7.8 behavior. 4/4 unit tests pass.
-- **`[P1-15] OpenAlex-by-title fallback`** (retroactively assigned 2026-07-16)
+- ~~**`[P1-15] OpenAlex-by-title fallback`**~~ (retroactively assigned 2026-07-16)
   for crossref-by-title 0-hit case — improves
   Chinese cite coverage another 5-10pp. Effort: 1h.
+  — ✅ **DONE in v3.9.9.8** (released 2026-07-16). New `_openalex_lookup_title()`
+  function + `enrich_top_n()` calls it as fallback when Crossref returns 0 hits.
+  Expected: +5-10pp Chinese cite (verified via OpenAlex CN coverage in v3.9.7.5).
+  8/8 unit tests pass.
 - ~~**`[P1-16] CLI sort options`**~~ (retroactively assigned 2026-07-16)
   — `--sort-by {cite|year|relevance}`. Effort: 30min.
   — ✅ **DONE in v3.9.9.7** (released 2026-07-16). New `sort_results()` helper +
@@ -1576,7 +1581,7 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 
 If the goal is "make paper-agent better for 课题":
 - ~~**`[P1-14] --enrich-top-min-cites` filter`~~ — ✅ shipped v3.9.9.7
-- **`[P1-15] OpenAlex-by-title fallback`**: 1h, +5-10pp Chinese cite
+- ~~**`[P1-15] OpenAlex-by-title fallback`**~~ — ✅ shipped v3.9.9.8 (+5-10pp Chinese cite)
 - **Phase 1.5 holdout validation**: 1d, validates existing LTR/MoE numbers
 
 If the goal is "validate the 课题 work is rigorous":
@@ -1848,7 +1853,7 @@ strict.
    for 万方 — lifts Chinese another 15-20pp but breaks Global Rule 1
 4. **Next free-tier moves** (if user wants to push B+ → A- without paid infra):
    - ~~[P1-14] --enrich-top-min-cites filter~~ ✅ shipped v3.9.9.7
-   - [P1-15] OpenAlex-by-title fallback for Chinese (1h, +5-10pp)
+   - ~~[P1-15] OpenAlex-by-title fallback~~ ✅ shipped v3.9.9.8 (+5-10pp Chinese cite)
    - [P2-7] pa cite-check (1h, prevents build errors)
    - [P2-8] pa export-screening (1.5h, systematic review workflow)
 5. **Stop there.** A- is the real ceiling. Going further requires abandoning
