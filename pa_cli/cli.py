@@ -290,9 +290,13 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               type=click.Choice(["cite", "year", "relevance"]),
               help="[P1-16] Sort unified results. 'cite' (default) = most-cited first; "
                    "'year' = newest first; 'relevance' = keep each engine's natural order.")
+@click.option("--source", "source_filter", default=None,
+              help="[P1-17] Post-filter results to only show those from specified engines. "
+                   "Comma-separated: e.g. 'openalex,cnki'. Matches 'source' field prefix "
+                   "(so 'openalex' also matches 'openalex_title' enrichment). Default = no filter.")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, sort_by, quiet):
+           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, sort_by, source_filter, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -338,11 +342,16 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
         click.echo(f"[pa] search query={query!r} years={year_min}-{year_max} "
                    f"concepts={resolved_ids or 'none'} mode={concept_mode if resolved_ids else 'n/a'} "
                    f"format={out_format}", err=True)
+    # [P1-17] Parse --source comma list
+    src_list = None
+    if source_filter:
+        src_list = [s.strip() for s in source_filter.split(",") if s.strip()]
     results = run_search(query, year_min, year_max, limit, engine,
                          concepts_filter=concepts_filter or None,
                          enrich_top=enrich_top,
                          enrich_top_min_cites=enrich_top_min_cites,
-                         sort_by=sort_by)
+                         sort_by=sort_by,
+                         source_filter=src_list)
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta
