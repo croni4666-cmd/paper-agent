@@ -9,6 +9,62 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.8.4] - 2026-07-16 (`pa fetch-batch` semi-automated CNKI guide + ROADMAP doc sync)
+
+### v3.9.8.4 -- pa fetch-batch (2026-07-16 09:17)
+
+After v3.9.8.3 confirmed `pa fetch` can't auto-download Chinese PDFs
+(bar.cnki.net vLevel=5 CAPTCHA), shipped a semi-automated workaround:
+`pa fetch-batch -i input.txt -o guide.md` generates per-paper xueshu789
+search URLs + an Edge console JS snippet for batch doDownload extraction.
+
+**New file**: `pa_cli/batch_fetch.py` (~280 LOC)
+
+**CLI**: `pa fetch-batch -i <input.txt> -o <guide.md>`
+- Input: one DOI or title per line
+- For each line: generate xueshu789 search URL, lookup CNKI doc_id,
+  output manual download instruction + Edge console JS snippet
+- Real-corpus test (5 papers, 数字普惠金融 + 家庭消费 topic): 5/5 found, 4/5 with DOI
+
+**Files**:
+- `pa_cli/batch_fetch.py` (NEW, ~280 LOC)
+- `pa_cli/cli.py` (added `fetch-batch` subcommand)
+- `example_dois.txt` (input format example)
+- `test_papers_real.txt` (real-corpus test input)
+- `test_output/_real_corpus_guide.md` (5/5 found output)
+- `test_output/_example_guide.md` (4/6 found mixed DOI+title example)
+- `Export-CNKICookies.ps1` (manual 4-cookie export — PowerShell)
+- `export_cnki_cookies.py` (auto 2-cookie export — DEPRECATED, use manual)
+
+### v3.9.8.4 -- ROADMAP doc sync (2026-07-16 09:50)
+
+ROADMAP.md had drifted behind CHANGELOG: "Versioned roadmap summary" table
+stopped at v3.9.7.9, "Current capability snapshot" was v3.9.7.9-only, and
+[P1-7] AMiner was still listed as in-progress in "Future improvement candidates".
+Docs-only fix (no code):
+
+- Added v3.9.8.0/8.1/8.2/8.3/8.4 rows to versioned summary table
+- Updated "Current capability snapshot" header to v3.9.8.4, 6→7 engines,
+  added `Fetch PDF (8-channel + proxy)` + `CNKI fetch-batch guide` rows
+- Renamed "Future improvement candidates" header from post-v3.9.7.9 → post-v3.9.8.4
+- Marked [P1-7] AMiner as ✅ DONE in v3.9.8.0 (was "in-progress")
+- Promoted CHANGELOG `[Unreleased] - 2026-07-15 (CNKI fetch ...)` → `[3.9.8.3]`
+- Promoted CHANGELOG `[Unreleased] - 2026-07-15 (CORE cleanup ...)` → `[3.9.8.2]`
+
+### v3.9.8.4 -- session handoff doc (2026-07-16 09:23)
+
+`Paper agent/_session_handoff.md` created for the mavis 3.0.48/3.0.49
+intermittent 5xx issue — when the daemon dies mid-session, a new session
+can rehydrate from this file and continue. Handoff captures:
+- v3.9.8.4 capability snapshot
+- 6 commits in current session
+- File paths
+- CNKI cookies state (PHPSESSID, user, entrys, expires — 4h TTL)
+- Open tasks ([P2-5] pa build, [P3-1] pa judge, aminer-30day-eval cron)
+- Honest capability limits (re-state)
+
+---
+
 ## [Unreleased] - 2026-07-15 (docs — research-only, no code changes)
 
 Per user 2026-07-15: identified writing gap (paper-agent covers search but
@@ -73,7 +129,7 @@ This is still docs-only. [P1-7] AMiner is in-progress per user sign-off;
 
 
 
-## [Unreleased] - 2026-07-15 (CNKI fetch honest evaluation + 2-cookie limit)
+## [3.9.8.3] - 2026-07-15 (CNKI fetch honest evaluation + 2-cookie limit)
 
 ### v3.9.8.3 -- CNKI fetch path real test (2026-07-15 22:42)
 
@@ -118,7 +174,7 @@ workflow is:
      (which has the proxy session cookies) and downloads from there
   3. Move on — paper-agent's value is in search, not in full-text fetch
 
-## [Unreleased] - 2026-07-15 (CORE cleanup + honest re-evaluation)
+## [3.9.8.2] - 2026-07-15 (CORE cleanup + honest re-evaluation)
 
 ### v3.9.8.2 -- CORE engine honest re-evaluation (2026-07-15 19:30)
 
