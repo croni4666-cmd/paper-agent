@@ -1286,6 +1286,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.9.7 | released 2026-07-16 | **[P1-14] `--enrich-top-min-cites` filter + [P1-16] CLI sort options** shipped: `enrich_top_n()` skips S2 deep lookup when `cited_by_count < min_cites` (default 1 = skip 0-cite papers; saves ~12s/query per S2 shallow-entry lesson from v3.9.7.7). `--enrich-top-min-cites` CLI flag (default 1; set 0 to restore v3.9.7.8 behavior). `_enrichment.s2_doi_skipped` records skip reason. **Also [P1-16]**: new `sort_results()` helper + `--sort-by {cite\|year\|relevance}` CLI flag (default `cite` = backward compat); `enrich_top_n()` got `resort_by` param. **Also**: `pa fetch` backward-compat wrapper (fetch_doi) restores ~20h of CLI breakage from v3.9.8.2 refactor. 11/11 new unit tests pass; 26/26 pa_cli modules import OK | 2026-07-16 |
 | v3.9.9.8 | released 2026-07-16 | **[P1-15] OpenAlex-by-title fallback** shipped: new `_openalex_lookup_title()` function + `enrich_top_n()` calls it as fallback when `_crossref_lookup_title()` returns 0 hits. OpenAlex has better Chinese coverage than Crossref (per v3.9.7.5 lessons), expected +5-10pp on Chinese cite. Fields filled: `doi`, `cited_by_count`, `abstract`, `venue`, `year` (skips already-set fields). `_enrichment.openalex_title` records the fallback. 8/8 unit tests pass | 2026-07-16 |
 | v3.9.9.9 | released 2026-07-16 | **[P1-17] `--source` per-engine post-filter** shipped: new `filter_by_source()` + `--source` CLI flag (comma-separated engine names). Prefix matching: `--source openalex` matches both `openalex` and `openalex_title` ([P1-15] fallback); `--source crossref` matches both `crossref` and `crossref_title`. Use case: query all engines, display subset (e.g., compare CNKI vs OpenAlex coverage side-by-side). Stderr line shows pre/post count when filter applied. 9/9 unit tests pass | 2026-07-16 |
+| v3.9.9.10 | released 2026-07-16 | **[P1-18] `--enrich-max-age-years` year-aware skip** shipped: `enrich_top_n(max_age_years=10)` skips ALL enrichment (S2 + Crossref + OpenAlex fallback) for papers older than 10 years. S2 cite often stale/unavailable for older papers; Crossref rarely adds missing fields for pre-2010 papers. CLI flag `--enrich-max-age-years` (default 10; set 0 to disable). Boundary: 2016 paper in 2026 (=10y) is NOT skipped (strict `>`). `_enrichment.enrichment_skipped = "year<2016"` records reason. Stats line `[P1-14/18] enrich_top_n: ... skipped_old N (year<YYYY) of top-N`. 8/8 unit tests pass | 2026-07-16 |
 
 ---
 
@@ -1410,9 +1411,13 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   `--source` CLI flag. Comma-separated engine names. Prefix matching so
   `--source openalex` matches both `openalex` and `openalex_title` ([P1-15]
   fallback). Use case: query all engines, display subset. 9/9 unit tests pass.
-- **`[P1-18] Year-aware enrichment skip`** (retroactively assigned 2026-07-16)
+- ~~**`[P1-18] Year-aware enrichment skip`**~~ (retroactively assigned 2026-07-16)
   — skip enrichment for papers > 10 years old
   (S2 cite often stale / unavailable for older papers). Effort: 30min.
+  — ✅ **DONE in v3.9.9.10** (released 2026-07-16). New `enrich_top_n(max_age_years=10)`
+  param + `--enrich-max-age-years` CLI flag. Skips ALL enrichment (S2 + Crossref
+  + OpenAlex fallback) for papers older than threshold. Stats line includes
+  `skipped_old` count. Set 0 to disable. 8/8 unit tests pass.
 - ~~`[P1-7] AMiner engine` (Tsinghua/Zhipu, open.aminer.cn)~~ — ✅ **DONE in
   v3.9.8.0** (released 2026-07-15). 7th search engine, 3.3 亿论文 Chinese
   coverage, public API, free. **+10.9pp Chinese cite lift verified** (real

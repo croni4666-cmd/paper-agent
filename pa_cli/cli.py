@@ -286,6 +286,11 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               help="[P1-14] Skip S2 lookup for papers with cited_by_count < this. "
                    "Default 1 = skip 0-cite papers (saves ~12s/query when many "
                    "low-cite papers in top-N). Set 0 to try all (v3.9.7.8 behavior).")
+@click.option("--enrich-max-age-years", "enrich_max_age_years", default=10, show_default=True,
+              help="[P1-18] Skip ALL enrichment for papers older than this many years. "
+                   "Default 10 (S2 cite often stale/unavailable for older papers; "
+                   "Crossref rarely adds missing fields for pre-2010 papers). "
+                   "Set 0 to enrich all papers regardless of age.")
 @click.option("--sort-by", "sort_by", default="cite", show_default=True,
               type=click.Choice(["cite", "year", "relevance"]),
               help="[P1-16] Sort unified results. 'cite' (default) = most-cited first; "
@@ -296,7 +301,8 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
                    "(so 'openalex' also matches 'openalex_title' enrichment). Default = no filter.")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, sort_by, source_filter, quiet):
+           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites,
+           enrich_max_age_years, sort_by, source_filter, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -351,7 +357,8 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                          enrich_top=enrich_top,
                          enrich_top_min_cites=enrich_top_min_cites,
                          sort_by=sort_by,
-                         source_filter=src_list)
+                         source_filter=src_list,
+                         enrich_max_age_years=enrich_max_age_years)
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta
