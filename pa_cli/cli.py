@@ -282,9 +282,13 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               help="Top-N deep enrichment (v3.9.7.8): second-hop lookups via "
                    "S2 paper/DOI + Crossref by title for top-N results. "
                    "0 = off (default). Adds ~12s for N=10 (S2 1 RPS free).")
+@click.option("--enrich-top-min-cites", "enrich_top_min_cites", default=1, show_default=True,
+              help="[P1-14] Skip S2 lookup for papers with cited_by_count < this. "
+                   "Default 1 = skip 0-cite papers (saves ~12s/query when many "
+                   "low-cite papers in top-N). Set 0 to try all (v3.9.7.8 behavior).")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top, quiet):
+           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -332,7 +336,8 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                    f"format={out_format}", err=True)
     results = run_search(query, year_min, year_max, limit, engine,
                          concepts_filter=concepts_filter or None,
-                         enrich_top=enrich_top)
+                         enrich_top=enrich_top,
+                         enrich_top_min_cites=enrich_top_min_cites)
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta

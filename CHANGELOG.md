@@ -112,6 +112,54 @@ real issues existed. Re-audit (rounds 8-13):
   - R13-1: [P0-12] "paper-agent's 6-engine pool" stale post-AMiner
     (should be "7-engine pool")
   - R13-2: Snapshot "Last update: v3.9.9.1" needed clarification
+
+---
+
+## [3.9.9.7] - 2026-07-16 ([P1-14] --enrich-top-min-cites + pa fetch backward-compat wrapper)
+
+### v3.9.9.7 -- [P1-14] ship + pa fetch restore (2026-07-16 16:30)
+
+**Feature**: [P1-14] `enrich_top_n()` now skips S2 deep lookup for papers
+with `cited_by_count < min_cites` (default 1 = skip 0-cite papers).
+Saves ~12s/query when many low-cite papers in top-N, per S2 shallow-entry
+lesson from v3.9.7.7 (Chinese papers return null tldr/inf_cite even
+when cited 0 times).
+
+**CLI flag**: `--enrich-top-min-cites` (default 1; set 0 to restore
+v3.9.7.8 behavior of trying all papers).
+
+**Per-paper metadata**: `_enrichment.s2_doi_skipped = "cited_by_count<{N}"`
+records skip reason on each affected paper.
+
+**Stderr stats line**: `pa search --enrich-top N` prints
+`[P1-14] enrich_top_n: enriched X, skipped Y (cited_by_count<1) of top-N`.
+
+**Tests**: 4/4 unit tests pass in `test_output/_test_enrich_top_min_cites.py`
+covering min_cites=0/1/5 thresholds + no-DOI edge case.
+
+**Bug fix (same release)**: `pa fetch` CLI was broken since v3.9.8.2
+refactor (renamed `fetch_doi` → `fetch`; CLI still imported old name).
+Added `fetch_doi()` backward-compat wrapper in `pa_cli/fetch.py` that
+translates old API (`channels`, `output_dir`, `max_total_sec`) to new
+API (`prefer`, `out_path`). Also re-adds cache check at function entry
+that was lost in refactor. `max_total_sec_supported: False` documented
+in `_wrapper_notes` (honest 3-tier — no time-budget enforcement).
+
+**Other fixes in same release**:
+- `pa_cli.deep_rerank` was broken import (`fetch_doi` reference);
+  wrapper fix resolves it. 26/26 pa_cli modules now import OK.
+- `test_output/test_cache_integration.py` rewritten to mock new
+  `fetch()` (not channels which were removed in v3.9.8.2). Both tests pass.
+
+**Files changed**:
+- `pa_cli/search.py` (~30 LOC change to `enrich_top_n` + `run_search`)
+- `pa_cli/cli.py` (new --enrich-top-min-cites option)
+- `pa_cli/fetch.py` (~60 LOC `fetch_doi` wrapper)
+- `pa_cli/__init__.py` (version bump 3.9.9.6 → 3.9.9.7)
+- `test_output/_test_enrich_top_min_cites.py` (NEW, 4 unit tests)
+- `test_output/test_cache_integration.py` (rewritten, 2 tests pass)
+- `ROADMAP.md` ([P1-14] marked DONE; updated versioned table)
+
     (since v3.9.9.5 is latest; added note explaining feature vs
     doc-only distinction)
 
