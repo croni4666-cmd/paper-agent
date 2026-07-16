@@ -1251,6 +1251,11 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 This is the "what paper-agent can do today" reference. Updated whenever
 a major version ships. Last update: 2026-07-16 (v3.9.9.1).
 
+> **Why "v3.9.9.1" and not "v3.9.9.5"?** v3.9.9.2 was a working-tree
+> cleanup; v3.9.9.3 / 3.9.9.4 / 3.9.9.5 were doc-only audit releases
+> (no new features). The capability snapshot only changes on FEATURE
+> releases, so v3.9.9.1 remains the correct "last update" reference.
+
 ### What paper-agent can do today (v3.9.9.1)
 
 | Capability | Status | Quality (typical) | Where |
