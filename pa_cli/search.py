@@ -20,6 +20,7 @@ existence. See pa_cli.cnki_channel for setup details.
 
 import json
 import os
+import sys
 import time
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote
@@ -143,8 +144,8 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
     }
 
 
-def enrich_top_n(results: List[Dict], n: int = 10) -> List[Dict]:
-    """Top-N deep enrichment (v3.9.7.8).
+def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1) -> List[Dict]:
+    """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites added 2026-07-16).
 
     For each result in top-N that lacks cite/abstract, do second-hop lookups:
     1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
@@ -159,27 +160,40 @@ def enrich_top_n(results: List[Dict], n: int = 10) -> List[Dict]:
         results: list of result dicts (will be sorted by cited_by_count, so
                  top-N is the most-cited papers; closest to "user's interest")
         n: how many top papers to enrich (default 10)
+        min_cites: skip S2 lookup for papers with cited_by_count < min_cites
+            (default 1 = skip 0-cite papers). Per [P1-14] ROADMAP: when many
+            low-cite papers in top-N, S2 often returns shallow entry
+            (no tldr/inf_cite) for 0-cite papers, costing ~1.2s × N
+            for little gain. Set to 0 to restore v3.9.7.8 behavior (try all).
 
     Returns: same list (modified in place)
     """
     if n <= 0 or not results:
         return results
     enriched = 0
+    skipped_low_cite = 0
     for i, r in enumerate(results[:n]):
         r.setdefault("_enrichment", {})
         has_cite = bool(r.get("cited_by_count"))
         has_abstract = bool(r.get("abstract"))
         # Try S2 by DOI (best — gets tldr, inf_cite, ref_count)
+        # [P1-14] skip S2 if paper has cited_by_count < min_cites (saves ~12s/query
+        # when many 0-cite papers in top-N; S2 returns shallow entry for 0-cite per
+        # v3.9.7.7 lesson learned on Chinese papers)
         if r.get("doi") and (not has_cite or not has_abstract):
-            s2 = _s2_lookup_doi(r["doi"])
-            if s2:
-                for k in ("abstract", "tldr", "cited_by_count", "influential_cite_count",
-                          "reference_count", "venue", "authors", "year"):
-                    if s2.get(k) and not r.get(k):
-                        r[k] = s2[k]
-                r["_enrichment"]["s2_doi"] = True
-                enriched += 1
-            time.sleep(1.2)  # S2 free tier: 1 RPS
+            if r.get("cited_by_count", 0) < min_cites:
+                r["_enrichment"]["s2_doi_skipped"] = f"cited_by_count<{min_cites}"
+                skipped_low_cite += 1
+            else:
+                s2 = _s2_lookup_doi(r["doi"])
+                if s2:
+                    for k in ("abstract", "tldr", "cited_by_count", "influential_cite_count",
+                              "reference_count", "venue", "authors", "year"):
+                        if s2.get(k) and not r.get(k):
+                            r[k] = s2[k]
+                    r["_enrichment"]["s2_doi"] = True
+                    enriched += 1
+                time.sleep(1.2)  # S2 free tier: 1 RPS
         # Try Crossref by title (fills missing DOI, gives cite for non-DOI papers)
         if (not r.get("cited_by_count") or not r.get("doi")) and r.get("title"):
             cr = _crossref_lookup_title(r["title"])
@@ -193,6 +207,11 @@ def enrich_top_n(results: List[Dict], n: int = 10) -> List[Dict]:
             time.sleep(0.05)  # Crossref is generous
     # Re-sort by cited_by_count (newly enriched papers may have higher counts)
     results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+    # [P1-14] print enrichment stats (stdout; CLI can grep/pipe)
+    if min_cites > 0 and skipped_low_cite:
+        print(f"  [P1-14] enrich_top_n: enriched {enriched}, "
+              f"skipped {skipped_low_cite} (cited_by_count<{min_cites}) "
+              f"of top-{n}", file=sys.stderr)
     return results
 
 
@@ -416,7 +435,8 @@ def search_core(query: str, year_min: int = None, year_max: int = None,
 def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
                concepts_filter: str = None,
-               enrich_top: int = 0) -> Dict[str, Any]:
+               enrich_top: int = 0,
+               enrich_top_min_cites: int = 1) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -429,6 +449,10 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                 cite/abstract (S2 by DOI + Crossref by title). See
                 enrich_top_n() docs. Adds ~12s for N=10 (S2 1 RPS).
                 Default 0 = off (backward compatible).
+    enrich_top_min_cites: [P1-14] skip S2 lookup for papers with
+                cited_by_count < this threshold (default 1 = skip 0-cite).
+                Saves ~12s/query when many low-cite papers in top-N.
+                Set to 0 to restore v3.9.7.8 behavior (try all).
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -516,7 +540,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     # Top-N deep enrichment (v3.9.7.8): second-hop lookups for top-N results
     # that lack cite/abstract. Off by default (enrich_top=0).
     if enrich_top > 0:
-        enrich_top_n(unified, n=enrich_top)
+        enrich_top_n(unified, n=enrich_top, min_cites=enrich_top_min_cites)
 
     return {
         "query": query,
