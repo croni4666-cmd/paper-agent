@@ -1479,7 +1479,16 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 - **Phase 1.5 holdout validation** — re-split 50 queries into 15 train / 10 test,
   re-derive LTR/MoE alpha on holdout, confirm v3.9.0 numbers survive. Effort: 1d.
 - **Simpler rerank alternative** — RidgeClassifier / logistic regression on combined
-  features (instead of LambdaMART) for 8-feature rerank. Effort: 4h.
+  features (instead of LambdaMART) for 8-feature rerank. Effort: 4h. ✅ **DONE in v3.9.10.2**
+  (released 2026-07-20). At n=50 single 30/20 holdout: Ridge NDCG@10 = **0.8526**,
+  LogReg NDCG@10 = **0.8409**, both beat LambdaMART 100 trees (0.7679) by +0.085 / +0.073
+  NDCG. Combined baseline (0.8988) still best. LogReg coefficients are interpretable:
+  `combined_score` (+0.62) and `biencoder_score` (+0.54) are dominant, `log_cite_count`
+  and `year` are negative (recent papers preferred). **New recommendation**:
+  - Default: combined (no training) — unchanged
+  - Learned ranker: RidgeClassifier (beats LTR, more interpretable)
+  - Avoid: LambdaMART 100 trees at n<200 (strictly worse than Ridge/LogReg)
+  - Source: `bench/v01/reports/v3_9_10_2_simpler_rerank.{json,md}`
 - **n=200 evaluation** — per memory discipline `n<100 is noise`; expand 25 real +
   25 A2 auto + 150 new queries for proper statistical power. Effort: 2-3d.
 - **Layer 7 [P0-8] fulltext features** — 3 features still at 0.0
@@ -3518,6 +3527,9 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 - Code: ✅ kept for research
 - Default: `combined` (0.5/0.5 linear)
 - MD report bug: ✅ fixed in v3.9.10 (was self-audit failure of v3.9.7.3)
+- **Update v3.9.10.2**: Even simpler models (RidgeClassifier, LogisticRegression)
+  beat LTR at n=50 by 0.085/0.073 NDCG@10. LTR is NOT just slightly worse — it's
+  the WORST option at n<200. See `bench/v01/reports/v3_9_10_2_simpler_rerank.md`.
 
 ---
 

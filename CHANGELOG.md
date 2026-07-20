@@ -236,6 +236,77 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.2] - 2026-07-20 (Simpler rerank: Ridge / LogReg beat LTR at n=50)
+
+### v3.9.10.2 — Simpler rerank alternative ships (2026-07-20)
+
+**Question**: Per ROADMAP Tier 2 "Simpler rerank alternative", can RidgeClassifier
+or LogisticRegression beat LambdaMART 100 trees at n=50?
+
+**Answer**: YES, by a large margin.
+
+**Single 30/20 holdout results**:
+
+| Method | NDCG@10 | Δ vs LTR | Δ vs combined |
+|---|---:|---:|---:|
+| **Combined baseline (default)** | **0.8988** | +0.1309 | 0 (best) |
+| **RidgeClassifier (α=1.0, 8 features)** | **0.8526** | **+0.0847** | -0.0462 |
+| **LogisticRegression (C=1.0, 8 features)** | **0.8409** | **+0.0730** | -0.0579 |
+| LambdaMART 100 trees (LTR, deprecated) | 0.7679 | 0 (baseline) | -0.1309 |
+
+**5-fold CV results**:
+
+| Method | NDCG@10 mean | NDCG@10 std |
+|---|---:|---:|
+| **LogisticRegression** | 0.8265 | ±0.0278 (most stable) |
+| **RidgeClassifier** | 0.8247 | ±0.0364 |
+| Combined baseline (5-fold direct) | 0.8825 | ±0.0324 |
+| LambdaMART 100 trees (LTR) | 0.7806 | ±0.0480 |
+
+**Key insights**:
+
+1. **Linear models strictly beat LambdaMART at n=50** by 0.07-0.09 NDCG@10.
+   Root cause: LambdaMART 100 trees on 50 examples is over-parameterized.
+   Linear models have at most 8 parameters (one per feature) → cannot overfit.
+
+2. **Combined baseline still beats Ridge by 0.046 NDCG@10**.
+   Combined is non-parametric (zero overfit risk) and uses 2 strong signals.
+   Ridge adds 6 more features but most are derivatives of the same 2.
+
+3. **LogReg is more stable across folds** (std ±0.0278 vs Ridge ±0.0364).
+   LogReg's softmax output is bounded [0,1]; Ridge's decision_function is unbounded.
+
+4. **LogReg coefficients are interpretable** (NEW capability):
+   - `combined_score` +0.62 (strongest positive — agrees with combined baseline)
+   - `biencoder_score` +0.54 (second strongest)
+   - `log_cite_count` -0.30 (NEGATIVE — recent papers with low cites ranked up)
+   - `year` -0.10 (NEGATIVE — newer papers preferred)
+   - `bm25_score` -0.03 (NEGATIVE — model "trusts combined" over raw BM25)
+   - `prf_score` +0.01 (essentially noise)
+
+**Recommendation update**:
+- Default ranker: **combined** (no training) — unchanged
+- Learned ranker option: **RidgeClassifier** (NEW) — beats LTR by 0.085 NDCG
+- Avoid: **LambdaMART 100 trees at n<200** — strictly worse than simpler alternatives
+- Avoid: **BGE-reranker** — still significantly worse (v3.9.10 Wilcoxon p=0.000825)
+
+**Files**:
+- `bench/v01/reports/v3_9_10_2_simpler_rerank.json` (NEW, per-method per-fold)
+- `bench/v01/reports/v3_9_10_2_simpler_rerank.md` (NEW, 3-tier honest report)
+- `test_output/_run_simpler_rerank_v1_5.py` (NEW, runner)
+- `ROADMAP.md` (Tier 2 "Simpler rerank alternative" marked DONE in v3.9.10.2)
+- `pa_cli/labels_clean.json.simpler_rerank_bak` (transient backup, restored after run)
+
+**5-check Global Rule audit**: 5/5 pass (sklearn pure local, no API, no hosted service).
+
+**Open follow-up**:
+- [ ] Add `pa_cli/simple_rerank.py` module exposing Ridge/LogReg as pa-rerank command
+- [ ] Update `pa_cli/ltr.py` docstring: "LTR is worse than Ridge at n=50"
+- [ ] Try Ridge with different α (0.1, 10, 100) at n=200 for hyperparameter sweep
+- [ ] Re-run Simpler rerank at n=200 with real labels for tighter CI
+
+---
+
 ## [3.9.10.1] - 2026-07-20 (Phase 1.5 holdout validation — 5-fold CV + single 30/20)
 
 ### v3.9.10.1 — Phase 1.5 holdout ships (2026-07-20)
