@@ -236,6 +236,81 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.5] - 2026-07-20 ([P2-9] pa search-saved named presets ships)
+
+### v3.9.10.5 — `pa search-saved` ships (2026-07-20)
+
+**Feature**: named search presets with parameter snapshots. Stores in
+`~/.paper-agent/saved_searches.json`. Re-run without retyping flags:
+
+**CLI** (5 subcommands):
+```
+pa search-saved add <name> --query "AI literacy" --year-min 2020 --engine openalex
+pa search-saved list
+pa search-saved run <name>           # re-runs the search with stored flags
+pa search-saved edit <name> --year-min 2024
+pa search-saved del <name>
+```
+
+**Implementation** (~190 LOC + 26 tests):
+- `pa_cli/search_saved.py` (NEW):
+  - `load_all(path)` / `save_all(data, path)` — JSON round-trip with atomic save
+  - `add(name, query, **flags)` — raises FileExistsError on duplicate
+  - `update(name, **flags)` — preserves unspecified flags
+  - `delete(name)` — returns bool (True if deleted)
+  - `get(name)` — returns None if not found
+  - `list_all(path)` — sorted by name with n_flags count
+  - `to_pa_args(name)` — converts stored entry to kwargs for `pa search`
+  - `validate_name(name)` — ASCII-only (re.ASCII flag, rejects Chinese/symbols)
+- `pa_cli/cli.py` — new `search-saved` Click group with 5 subcommands
+  - `add` accepts: --query, --year-min, --year-max, --engine, --limit,
+    --concepts, --concept, --concept-mode, --enrich-top, --enrich-top-min-cites,
+    --enrich-max-age-years, --sort-by, --source
+  - `edit` accepts subset: --query, --year-min, --year-max, --engine, --limit, --sort-by
+  - `run` calls `pa search` programmatically with stored flags
+
+**Tests**: 26/26 pass in `test_output/_test_search_saved.py`:
+- TestValidateName: 2 tests (ASCII only, rejects Unicode)
+- TestAdd: 5 tests (simple/with-flags/duplicate/invalid/persistence)
+- TestUpdate: 4 tests (existing/bump-timestamp/nonexistent/preserve-unspecified)
+- TestDelete: 2 tests (existing/nonexistent)
+- TestList: 3 tests (empty/sorted/n_flags count)
+- TestToPaArgs: 3 tests (excludes-timestamps/preserves/nonexistent)
+- TestPersistence: 2 tests (round-trip/concurrent)
+- TestCliSmoke: 5 tests (list/json/add/del/duplicate-exits-1)
+
+**Sub-task breakdown** (per ROADMAP spec):
+- A. JSON schema (15min) ✅
+- B. CRUD functions (20min) ✅
+- C. CLI subcommands + e2e (25min) ✅ (5 subcommands + 5 CLI smoke tests)
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (stdlib json + pathlib)
+- No hosted service
+- Maintenance: 1 new module + 1 CLI subcommand group (~250 LOC total)
+- No publish obligation
+- Free-tier degradation: ~/.paper-agent/ may not exist; auto-create on first use
+
+**Files changed**:
+- `pa_cli/search_saved.py` (NEW, ~190 LOC)
+- `pa_cli/cli.py` (search-saved subcommand group, +120 LOC)
+- `pa_cli/__init__.py` (version bump 3.9.10.4 → 3.9.10.5)
+- `test_output/_test_search_saved.py` (NEW, 26 tests)
+- `ROADMAP.md` ([P2-9] marked DONE in v3.9.10.5)
+- `CHANGELOG.md` (this entry)
+
+**Use case (real)**:
+- User runs daily: `pa search "数字普惠金融" --year-min 2020 --engine cnki,openalex --limit 30`
+- After 5 times, user types `pa search-saved add finlit --query "数字普惠金融" --year-min 2020 --engine cnki,openalex --limit 30`
+- Now daily: `pa search-saved run finlit`
+
+**Open follow-up (NOT in v3.9.10.5)**:
+- [ ] Add `pa search-saved show <name>` to print full entry details
+- [ ] Add `pa search-saved import/export` to share presets between machines
+- [ ] Add `pa search-saved tag` for grouping (e.g. `--tag weekly`)
+
+---
+
 ## [3.9.10.4] - 2026-07-20 ([P2-8] pa export-screening Bibtex→CSV ships)
 
 ### v3.9.10.4 — `pa export-screening` ships (2026-07-20)
