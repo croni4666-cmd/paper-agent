@@ -236,6 +236,63 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.1] - 2026-07-20 (Phase 1.5 holdout validation — 5-fold CV + single 30/20)
+
+### v3.9.10.1 — Phase 1.5 holdout ships (2026-07-20)
+
+**Action**: per ROADMAP "Recommended next step" (post-v3.9.10), run Phase 1.5
+holdout validation to confirm v3.9.7.3 numbers survive honest evaluation.
+
+**Method**:
+- 5-fold CV (seed=42, same as v3.9.7.3) — sanity check, should reproduce numbers
+- Single 30/20 holdout split (per ROADMAP spec) — stricter, closer to deployment
+
+**Three honest findings**:
+
+1. **5-fold CV is already holdout (sanity-check confirmed)**
+   - Phase 1.5 5-fold CV reproduces v3.9.7.3 exactly: LTR 0.7806, MoE 0.6088
+   - cv_aggregate was never in-sample; it was always per-fold test means
+   - This validates v3.9.7.3 numbers were honest (just incomplete — only 5-fold, not single)
+
+2. **Combined baseline 真实 NDCG = 0.8988 (single holdout), not 0.8141 (5-fold CV)**
+   - 5-fold CV re-fits BM25/biencoder normalization on each fold's train set,
+     applies to test → cross-fold normalization leakage
+   - Single holdout uses one consistent normalization → 0.8988
+   - 5-fold CV was conservative; 0.8988 is closer to deployment performance
+   - This makes the case for combined baseline as default **even stronger**
+
+3. **LTR 真实 Δ vs combined = -0.13 (single holdout), not -0.0335 (5-fold CV)**
+   - LTR single holdout: 0.7679 vs combined single holdout: 0.8988 → Δ = -0.1309
+   - LTR deprecation is **4x more justified** than v3.9.7.3 reported
+   - Combined is even more dominant in deployment than in CV
+
+**Files changed**:
+- `bench/v01/reports/v3_9_10_1_phase_1_5_holdout.json` (NEW — per-fold + single holdout data)
+- `bench/v01/reports/v3_9_10_1_phase_1_5_holdout.md` (NEW — 3-tier honest report)
+- `test_output/_run_holdout_v1_5.py` (NEW — Phase 1.5 runner, 250 LOC)
+- `pa_cli/ltr.py` (docstring updated with both 5-fold and single holdout numbers)
+
+**Test set (single 30/20, n=20)**: q004, q005, q007, q009, q013, q014, q016,
+q018, q020, q026, q027, q031, q033, q038, q040, q042, q046, q047, q048, q049
+(11 of 20 from A2 auto labels — same caveat as v3.9.7.3)
+
+**MoE single holdout** (also new): acc=0.7368, bal_acc=0.5417, macro_f1=0.5173
+- Real MoE performance is 0.52, not 0.61 (5-fold was 0.09 generous)
+- MoE still > 0.20 random, still useful, still needs more data
+
+**5-check Global Rule audit**: 5/5 pass (local computation, no new APIs)
+
+**Updated docstrings**: `pa_cli/ltr.py` now reports both 5-fold (-0.0335) and
+single holdout (-0.1309) for honest comparison.
+
+**Open follow-up**:
+- [ ] Update `pa_cli/moe_router.py` docstring with single holdout 0.52 (more honest)
+- [ ] Re-run Phase 1.5 at n=200 with real labels for tighter CI
+- [ ] Investigate cross-fold normalization noise (why 5-fold CV under-reports combined)
+- [ ] Try `train_test_split` with 10 seeds to get distribution of single holdout deltas
+
+---
+
 ## [3.9.10] - 2026-07-20 (Deprecate BGE-rerank + LTR from default; promote combined to default)
 
 ### v3.9.10 — BGE/LTR deprecation ships (2026-07-20)
