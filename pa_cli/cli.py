@@ -1165,6 +1165,47 @@ def scaffold(bibtex_file, group_by, topics_file, title, output, quiet):
         click.echo(f"[pa scaffold] saved {out_path}", err=True)
 
 
+# =============== [P2-7] cite-check subcommand ===============
+# Pre-build validator: scan markdown skeleton for [@key] placeholders, cross-ref
+# against Bibtex, report 3 buckets (missing / typo'd / orphan).
+# Solves user pain: today `pa build` failure with "undefined reference" gives
+# the wrong key but not the file/line.
+
+@main.command(name="cite-check")
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.argument("skeleton_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON (machine-readable)")
+@click.option("--strict", is_flag=True, help="Exit 1 if any missing or typo'd (CI-friendly)")
+def cite_check(bibtex_file, skeleton_file, as_json, strict):
+    """[P2-7] Pre-build validator: scan skeleton for [@key] placeholders.
+
+    Per ROADMAP [P2-7]: cross-references every `[@bibkey]` placeholder in a
+    markdown skeleton against a Bibtex file. Reports 3 buckets:
+      - [MISSING]  placeholder has no bib entry
+      - [TYPOED]   placeholder has a near match (edit distance 1-2)
+      - [ORPHAN]   bib entry is never cited in the skeleton
+
+    Use this BEFORE `pa build` to catch citation errors with line numbers,
+    not just "undefined reference" without context.
+
+    Examples:
+      pa cite-check refs.bib skeleton.md
+      pa cite-check refs.bib skeleton.md --json | jq .missing
+      pa cite-check refs.bib skeleton.md --strict  # exit 1 on missing/typo
+    """
+    from .cite_check import run_cite_check
+    bib_path = Path(bibtex_file)
+    skel_path = Path(skeleton_file)
+    try:
+        result, report = run_cite_check(bib_path, skel_path, output_json=as_json)
+    except Exception as e:
+        click.echo(f"[pa cite-check] FAILED: {e}", err=True)
+        sys.exit(2)
+    click.echo(report)
+    if strict and (result['missing'] or result['typoed']):
+        sys.exit(1)
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL
