@@ -1482,6 +1482,83 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
         click.echo(f"[pa dedup-strict] report: {rpt_path}", err=True)
 
 
+# =============== [P2-11] fetch-batch subcommand ===============
+# Batch PDF download from a Bibtex: walks each entry through fetch channels
+# in priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+
+@main.command(name="fetch-batch")
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--out-dir", required=True, type=click.Path(file_okay=False),
+              help="Directory to save PDFs (created if not exists)")
+@click.option("--max-total-sec", type=int, default=1800, show_default=True,
+              help="Global timeout for the whole batch (s)")
+@click.option("--skip-existing", is_flag=True,
+              help="Skip entries whose PDF already exists in out_dir")
+@click.option("--report", "report_file", default=None, type=click.Path(dir_okay=False),
+              help="Optional markdown failure report path")
+@click.option("--summary-json", default=None, type=click.Path(dir_okay=False),
+              help="Optional JSON summary path (for programmatic use)")
+@click.option("--quiet", is_flag=True, help="Suppress per-entry progress output")
+def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
+                summary_json, quiet):
+    """[P2-11] Batch PDF download from a Bibtex file.
+
+    Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in
+    priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+    Lists what failed and why.
+
+    Examples:
+      pa fetch-batch refs.bib --out-dir ./pdfs/
+      pa fetch-batch refs.bib --out-dir ./pdfs/ --skip-existing
+      pa fetch-batch refs.bib --out-dir ./pdfs/ --report failed.md
+    """
+    from .fetch_batch import run_fetch_batch, write_failure_report, write_summary_json
+    from pathlib import Path
+    bib_path = Path(bibtex_file)
+    out_path = Path(out_dir)
+    rpt_path = Path(report_file) if report_file else None
+    sum_path = Path(summary_json) if summary_json else None
+
+    def on_progress(i, n, result):
+        if not quiet:
+            status = "OK" if result.success else "FAIL"
+            print(f"  [{i}/{n}] {status} {result.key} ({result.elapsed_sec:.1f}s)",
+                  file=sys.stderr)
+
+    try:
+        summary = run_fetch_batch(
+            bib_path=bib_path,
+            out_dir=out_path,
+            max_total_sec=max_total_sec,
+            skip_existing=skip_existing,
+            progress_callback=on_progress,
+        )
+    except Exception as e:
+        click.echo(f"[pa fetch-batch] FAILED: {e}", err=True)
+        sys.exit(2)
+
+    click.echo(
+        f"[pa fetch-batch] total={summary.n_total} "
+        f"success={summary.n_success} failure={summary.n_failure} "
+        f"skipped={summary.n_skipped} "
+        f"size={summary.total_size_bytes // 1024} KB "
+        f"time={summary.total_elapsed_sec:.1f}s",
+        err=True,
+    )
+    if rpt_path:
+        n_failures = write_failure_report(summary, rpt_path, bib_path, out_path)
+        click.echo(f"[pa fetch-batch] report: {rpt_path} ({n_failures} failures)", err=True)
+    if sum_path:
+        write_summary_json(summary, sum_path, bib_path, out_path, max_total_sec)
+        click.echo(f"[pa fetch-batch] summary JSON: {sum_path}", err=True)
+    if summary.n_failure > 0 and not rpt_path and not quiet:
+        click.echo(
+            f"[pa fetch-batch] hint: {summary.n_failure} failures; "
+            f"use --report to save details",
+            err=True,
+        )
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL

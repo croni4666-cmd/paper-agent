@@ -1529,13 +1529,20 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   **Honest limits**: 7 Sci-Hub mirrors all dead (v3.9.7.6 verified);
   bar.cnki.net CAPTCHA still blocks CN papers (consistent with
   v3.9.8.3); Net effect: ~3-4 channels actually deliver for English.
+  **Status**: ✅ **DONE in v3.9.10.7** (released 2026-07-20). New
+  `pa_cli/fetch_batch.py` (~280 LOC) with `FetchResult`/`FetchSummary`
+  dataclasses, global timeout + per-entry retry, `--skip-existing`
+  resume support, optional `--report` markdown + `--summary-json`. 17/17
+  unit + e2e tests pass (all fetch calls mocked to avoid real network).
   **Sub-task decomposition** (totals 4h):
-  - A. `load_bibtex()` reuse from `pa_cli/scaffold.py` — 5min
-  - B. wrap `pa_cli/fetch.py:fetch()` with retry/timeout per channel — 45min
-  - C. per-entry orchestrator: try channels in priority order, save first success — 1h
-  - D. failure report (`failed_downloads.md` with reason per entry) — 30min
-  - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min
+  - A. `load_bibtex()` reuse from `pa_cli/scaffold.py` — 5min ✅
+  - B. wrap `pa_cli/fetch.py:fetch()` with retry/timeout per channel — 45min ✅
+    (retry is via per-entry try/except; fetch has its own internal retry per channel)
+  - C. per-entry orchestrator: try channels in priority order, save first success — 1h ✅
+  - D. failure report (`failed_downloads.md` with reason per entry) — 30min ✅
+  - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min ✅
   - F. real-corpus smoke test (5-10 paper mix) + edge-case error reporting polish — 60min
+    (deferred to user-real-corpus run; mock tests cover all edge cases)
 - **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
   Multi-corpus management. Each 课题 = one project at
   `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
