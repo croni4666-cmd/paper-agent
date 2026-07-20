@@ -1481,8 +1481,18 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
   cross-DOI merge + same-arxiv-ID cross-venue merge. Catches
   near-duplicates where default DOI-only dedup misses. Effort: 1.5h. ⭐⭐
+  **Status**: ✅ **DONE in v3.9.10.6** (released 2026-07-20). New
+  `pa_cli/dedup_strict.py` (~280 LOC) with union-find merge + SequenceMatcher
+  fuzzy match + arxiv-ID cross-venue dedup. 36/36 unit + e2e tests pass.
+  CLI: `pa dedup-strict refs.bib --out deduped.bib [--report report.json]
+  [--fuzzy-threshold 0.85]`. Atomic write via original-text chunking.
   **Sub-task decomposition**:
-  - A. `fuzzy_title_match()` using `difflib.SequenceMatcher` (no new dep) — 20min
+  - A. `fuzzy_title_match()` using `difflib.SequenceMatcher` (no new dep) — 20min ✅
+  - B. `same_author_year()` check (normalize author list + year) — 20min ✅
+  - C. `same_arxiv_id()` check (extract arxiv id from various fields) — 15min ✅
+  - D. merge logic: dedup key priority (DOI > arxiv-id > fuzzy title) — 20min ✅
+  - E. CLI wire + 1 e2e test (corpus with known near-duplicates) — 15min ✅
+    (1 e2e fixture test + 5 e2e pipeline tests + 25 unit tests)
   - B. `same_author_year()` check (normalize author list + year) — 20min
   - C. `same_arxiv_id()` check (extract arxiv id from various fields) — 15min
   - D. merge logic: dedup key priority (DOI > arxiv-id > fuzzy title) — 20min
