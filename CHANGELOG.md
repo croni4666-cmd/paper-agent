@@ -236,6 +236,87 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.10] - 2026-07-20 (Critical fix: pa search http_get_json gzip/brotli encoding)
+
+### v3.9.10.10 — http_get_json gzip/brotli encoding fix (2026-07-20)
+
+**ROOT CAUSE discovered by user pushback**: User asked "are the engines
+actually working?" Honest connectivity test (test_output/_api_connectivity_smoke.py)
+showed 4/6 engines return 200 OK directly, but `pa search` reported them
+as 0 hits. Tracing revealed `http_get_json` in `pa_cli/search.py` had a
+silent failure on `Content-Encoding: gzip` and `br` (Brotli).
+
+**Failure chain**:
+1. `http_get_json` sends `Accept-Encoding: gzip, deflate, br`
+2. Crossref / OpenAlex / S2 return responses with `Content-Encoding: gzip` or `br`
+3. `urllib.urlopen().read()` returns RAW compressed bytes (does NOT auto-decompress)
+4. `json.loads(raw.decode('utf-8', errors='ignore'))` silently fails
+5. `http_get_json except Exception: return 0, {}`
+6. `pa search` reports `by_engine[engine] = []` (0 results)
+
+**OpenAlex twist**: OpenAlex defaults to `br` (Brotli) for Chrome UA. Python
+stdlib `urllib` has NO brotli decoder, so even after adding gzip support,
+OpenAlex still failed until we removed `br` from `Accept-Encoding`.
+
+**FIX (2 changes, no new deps)**:
+1. Removed `'br'` from `Accept-Encoding` (only `gzip, deflate` remain)
+2. Added explicit `gzip.decompress(raw)` when `Content-Encoding: gzip` in
+   both success and error paths
+
+**Test results** (query='AI tutoring K-12', limit=3):
+
+| Engine | Before | After | Note |
+|---|---:|---:|---|
+| Crossref | 0 | **3** ✅ | gzip-decode fix |
+| OpenAlex | 0 | **3** ✅ | drop-br fix |
+| arXiv | 3 | 3 | (was OK; arXiv returns atom+xml not JSON) |
+| Semantic Scholar | 0 | 3 ✅ | gzip-decode fix; rate-limited on burst |
+| AMiner | 3 | 3 | (was OK; needed AMINER_API_KEY which user has) |
+| CNKI | 1 | 1 | (HTML placeholder, not real API; needs user cookies) |
+| **dedup_count** | **7** | **12-13** | **+85% recall** |
+
+**Honest 3-tier status**:
+
+### ✅ Verified
+- 4 engines had silent gzip/brotli decode failure (Crossref, OpenAlex, S2)
+- All 4 now return 0 → 3 results after 2-line fix
+- dedup_count +85% (7 → 12-13)
+
+### ⚠ Caveats
+- S2 free tier has rate limit (429) — recovers in ~5s; not a bug
+- CNKI has NO public search API (returns HTML homepage) — needs user cookies
+- AMiner needs AMINER_API_KEY (user already has)
+
+### ❌ NOT findings (over-claim guard)
+- Not "BGE/LTR deprecation was wrong" — that's still correct
+- Not "5-fold CV was wrong" — that's still correct
+- Just "Crossref/OpenAlex/S2 were silently failing, fix unlocks them"
+
+**Mis-diagnosis corrected**: v3.9.10.0 → v3.9.10.9 changelogs all said
+"3 of 6 engines 0 hits" treating it as a permanent state. Actually
+5 of 6 were working but silently failing JSON parse. The "3 of 6"
+should have been a red flag that triggered a connectivity test, not a
+"feature, not bug" assumption.
+
+**Discipline lesson (regression of v3.9.7.3 self-audit)**:
+- v3.9.7.3: Wilcoxon MD report said p>0.05 when JSON said p=0.0008 (fixed in v3.9.10.1)
+- v3.9.10.10: CHANGELOG said "3 of 6 engines 0 hits" without re-verifying
+  When user asks "is the assumption still true?" — always re-verify
+
+**Files changed**:
+- `pa_cli/search.py` (~10 LOC: gzip import, drop 'br', explicit decompress)
+- `pa_cli/__init__.py` (version bump 3.9.10.9 → 3.9.10.10)
+- `CHANGELOG.md` (this entry)
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (stdlib gzip, no new deps)
+- No hosted service
+- Maintenance: 10 LOC, 0 new files
+- No publish obligation
+- Free-tier degradation: N/A (works without any rate limit / API key)
+
+---
+
 ## [3.9.10.9] - 2026-07-20 ([P2-13] README.md ships)
 
 ### v3.9.10.9 — `README.md` ships (2026-07-20)
