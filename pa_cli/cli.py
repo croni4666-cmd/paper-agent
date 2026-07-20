@@ -1426,6 +1426,62 @@ def search_saved_run(name, output, quiet):
         sys.exit(2)
 
 
+# =============== [P2-10] dedup-strict subcommand ===============
+# Stricter dedup than default DOI-only: catches fuzzy title, same-author+year,
+# same-arxiv across venues. Uses difflib.SequenceMatcher (no new deps).
+
+@main.command(name="dedup-strict")
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("-o", "--output", "out_file", required=True, type=click.Path(dir_okay=False),
+              help="Output deduped Bibtex file")
+@click.option("--report", "report_file", default=None, type=click.Path(dir_okay=False),
+              help="Optional JSON report of duplicate groups (for review)")
+@click.option("--fuzzy-threshold", type=float, default=0.85, show_default=True,
+              help="SequenceMatcher ratio for title fuzzy match (0.0-1.0)")
+def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
+    """[P2-10] Stricter Bibtex dedup with fuzzy title matching.
+
+    Per ROADMAP [P2-10]: catches near-duplicates that default DOI-only
+    dedup misses:
+      - Fuzzy title match (difflib.SequenceMatcher ratio >= 0.85)
+      - Same first author + same year (cross-DOI merge)
+      - Same arxiv-ID (cross-venue merge)
+    Reuses pa_cli/scaffold.py:parse_bibtex for parsing.
+
+    Examples:
+      pa dedup-strict refs.bib --out deduped.bib
+      pa dedup-strict refs.bib --out deduped.bib --report dups.json
+      pa dedup-strict refs.bib --out deduped.bib --fuzzy-threshold 0.90
+    """
+    from .dedup_strict import run_dedup
+    bib_path = Path(bibtex_file)
+    out_path = Path(out_file)
+    rpt_path = Path(report_file) if report_file else None
+    if not 0.0 <= fuzzy_threshold <= 1.0:
+        click.echo(f"[pa dedup-strict] FAILED: --fuzzy-threshold must be in [0.0, 1.0]",
+                   err=True)
+        sys.exit(2)
+    try:
+        report = run_dedup(
+            bib_path=bib_path,
+            out_path=out_path,
+            report_path=rpt_path,
+            fuzzy_threshold=fuzzy_threshold,
+        )
+    except Exception as e:
+        click.echo(f"[pa dedup-strict] FAILED: {e}", err=True)
+        sys.exit(2)
+    click.echo(
+        f"[pa dedup-strict] total={report['n_total_entries']}, "
+        f"unique={report['n_unique_entries']}, "
+        f"removed={report['n_removed']} from {report['n_duplicate_groups']} dup groups, "
+        f"wrote {report['n_written']} → {report['out_path']}",
+        err=True,
+    )
+    if rpt_path:
+        click.echo(f"[pa dedup-strict] report: {rpt_path}", err=True)
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL

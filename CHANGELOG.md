@@ -236,6 +236,89 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.6] - 2026-07-20 ([P2-10] pa dedup-strict Bibtex fuzzy dedup ships)
+
+### v3.9.10.6 — `pa dedup-strict` ships (2026-07-20)
+
+**Feature**: stricter Bibtex dedup that catches near-duplicates that
+default DOI-only dedup misses.
+
+**3 dedup strategies** (union-find merge):
+1. **DOI exact match** (highest priority)
+2. **arXiv ID match** (cross-venue, e.g. NeurIPS proceedings + arXiv preprint)
+3. **Fuzzy title match** (difflib.SequenceMatcher ratio >= 0.85)
+4. (Heuristic) same first author + same year
+
+**CLI**:
+```
+pa dedup-strict refs.bib --out deduped.bib
+pa dedup-strict refs.bib --out deduped.bib --report dups.json
+pa dedup-strict refs.bib --out deduped.bib --fuzzy-threshold 0.90
+```
+
+**Implementation** (~280 LOC + 36 tests):
+- `pa_cli/dedup_strict.py` (NEW):
+  - `_normalize_title(s)` — lowercase + drop LaTeX/math + collapse whitespace
+  - `_normalize_author(s)` — split on ' and ', collapse 'Last, First' → 'lastfirst'
+  - `_extract_arxiv_id(e)` — match modern (2507.02259), old-style (math.AG/0501234), arXiv: prefix, journal field
+  - `fuzzy_title_match(t1, t2, threshold=0.85)` — SequenceMatcher wrapper
+  - `title_similarity(t1, t2)` — return ratio (0.0-1.0)
+  - `dedup_key(e)` — (doi, arxiv, normalized_title) 3-tuple
+  - `find_dup_groups(entries, fuzzy_threshold=0.85)` — union-find over all 3 keys
+  - `write_deduped_bibtex(groups, original_text, out)` — preserve original formatting
+  - `build_report(groups)` — JSON-serializable duplicate report
+  - `run_dedup(bib, out, report_path=None, fuzzy_threshold=0.85)` — full pipeline
+- `pa_cli/cli.py` (dedup-strict subcommand, +30 LOC, Click decorator)
+- `pa_cli/scaffold.py:load_bibtex` — REUSED for bib parsing
+
+**Tests**: 36/36 pass in `test_output/_test_dedup_strict.py`:
+- TestNormalizeTitle: 7 tests
+- TestNormalizeAuthor: 3 tests
+- TestExtractArxiv: 6 tests (modern/prefix/old/journal/versioned/none)
+- TestFuzzyTitleMatch: 5 tests
+- TestTitleSimilarity: 3 tests
+- TestFindDupGroups: 4 tests (DOI/fuzzy/unique/threshold)
+- TestWriteDedupedBibtex: 2 tests
+- TestBuildReport: 1 test
+- TestRunDedupE2E: 3 tests
+- TestRealE2E: 1 test (Attention is All You Need, arxiv + NeurIPS dedup)
+
+**Sub-task breakdown** (per ROADMAP spec):
+- A. fuzzy_title_match using SequenceMatcher (20min) ✅
+- B. same_author_year check (20min) ✅
+- C. same_arxiv_id check (15min) ✅
+- D. merge logic: dedup key priority DOI > arxiv > fuzzy title (20min) ✅
+- E. CLI wire + 1 e2e test (15min, 1 fixture + 5 e2e + 25 unit tests) ✅
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (Python stdlib difflib + re + union-find manual)
+- No hosted service
+- Maintenance: 1 new module + 1 CLI subcommand (~310 LOC total)
+- No publish obligation
+- Free-tier degradation: works on any .bib, no API needed
+
+**Files changed**:
+- `pa_cli/dedup_strict.py` (NEW, ~280 LOC)
+- `pa_cli/cli.py` (dedup-strict subcommand, +30 LOC)
+- `pa_cli/__init__.py` (version bump 3.9.10.5 → 3.9.10.6)
+- `test_output/_test_dedup_strict.py` (NEW, 36 tests)
+- `ROADMAP.md` ([P2-10] marked DONE in v3.9.10.6)
+- `CHANGELOG.md` (this entry)
+
+**Use case (real)**:
+- User has 200 papers in refs.bib, accumulated from multiple search sessions
+- 30 are near-duplicates (15 by DOI exact match, 10 by arxiv cross-venue, 5 by fuzzy title)
+- `pa dedup-strict refs.bib --out deduped.bib --report dups.json`
+- deduped.bib has 170 unique entries
+- dups.json shows 30 removed across 20 dup groups with reasons (DOI/arxiv/fuzzy)
+
+**Open follow-up (NOT in v3.9.10.6)**:
+- [ ] Add author+year heuristic as primary dedup key (currently only used as last-resort)
+- [ ] Add interactive merge mode: --interactive prompts user to pick primary
+- [ ] Add DOI canonicalization: strip URL prefix, lowercase, remove 'https://doi.org/'
+
+---
+
 ## [3.9.10.5] - 2026-07-20 ([P2-9] pa search-saved named presets ships)
 
 ### v3.9.10.5 — `pa search-saved` ships (2026-07-20)
