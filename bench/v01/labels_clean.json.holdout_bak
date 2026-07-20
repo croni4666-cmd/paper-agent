@@ -1,0 +1,3019 @@
+{
+  "version": "v0.1-clean",
+  "labels": {
+    "q001": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3102/00346543068002179": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1551-6709.2012.01245.x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11423-023-10203-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 0,
+        "reason": "Chinese EFL university students, writing skills, not K-12 outcomes"
+      },
+      "10.1186/s41039-018-0078-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00425-2": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/2331186x.2023.2236469": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 0,
+        "reason": "University EFL students, English learning achievement, not K-12"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2022.3193938": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00372-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00406-5": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics13183762": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jamanetworkopen.2021.49008": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su16073034": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1207/s15326985ep4004_7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q002": {
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/apps.12241": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.2.4.1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/econometrics6020028": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su12072809": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.15.1.165": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aeri.20180010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/1069072718774002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/pnasnexus/pgae191": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/rest_a_00234": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2014.0015": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ecca.12184": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2020.07.014": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1037/e686432011-001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2018.64": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400204340.006": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/oxrep/graa051": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-9914.2007.00378.x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781498303743.001": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjae005": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q003": {
+      "10.1038/s41592-019-0686-2": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3326362": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/276698.276876": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11263-019-01247-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40537-014-0007-7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neucom.2019.10.118": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.naacl-main.272": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1006/jvci.1999.0413": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/rs71114680": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v28i1.8952": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v31i1.10958": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2016.572": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr42600.2020.00877": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2009.5206529": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3394486.3403305": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tip.2016.2564638": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tmm.2018.2832602": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.naacl-main.241": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.24963/ijcai.2018/396": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr.2019.00523": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/cogs.12047": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.acl-long.203": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3295776": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5121/iju.2012.3202": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/978-3-030-01177-2_12": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10278-012-9495-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10916-016-0659-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/icdar.2013.114": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3488560.3498443": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q004": {
+      "10.1023/a:1022623210503": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/aje/kwn164": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/09-ss057": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/bf00994016": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10994-006-6889-7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1364/josaa.20.001434": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2014.7": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s13717-016-0063-3": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/scan/nsw154": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43586-020-00001-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00273171.2018.1454823": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jproc.2021.3058954": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/14-aoas788": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/ss/1009211805": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/pan.2016.2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1126/sciadv.aau4996": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neuroimage.2009.11.015": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fnhum.2015.00001": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1000709": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1890/es12-00048.1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3444944": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/neco_a_00999": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.neuroimage.2009.08.065": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/19-ba1195": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1214/12-ba703": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/ije/dyw114": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1510479113": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/525638": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.tranpol.2021.01.013": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q005": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "Economics and identity, not UBI labor supply"
+      },
+      "10.1257/jel.47.1.5": {
+        "label": 0,
+        "reason": "Econometrics of program evaluation, not UBI"
+      },
+      "10.2307/2329018": {
+        "label": 0,
+        "reason": "Modern industrial revolution, exit, not UBI"
+      },
+      "10.1257/jep.10.4.139": {
+        "label": 0,
+        "reason": "Bargaining in marriage, not UBI"
+      },
+      "10.3389/fenrg.2021.743114": {
+        "label": 0,
+        "reason": "Sustainable energy transition, not UBI"
+      },
+      "10.1257/jep.7.1.133": {
+        "label": 0,
+        "reason": "Human development in poor countries, not UBI"
+      },
+      "10.1080/1369118x.2017.1294194": {
+        "label": 0,
+        "reason": "Platform labor gendered/racialized, not UBI"
+      },
+      "10.1257/jep.27.3.3": {
+        "label": 0,
+        "reason": "Top 1 percent, not UBI"
+      },
+      "10.2307/2534657": {
+        "label": 0,
+        "reason": "Earnings instability, not UBI"
+      },
+      "10.1257/pol.6.1.230": {
+        "label": 0,
+        "reason": "Top labor income taxation, not UBI"
+      },
+      "10.1257/jep.9.3.83": {
+        "label": 0,
+        "reason": "Consumption insurance, not UBI"
+      },
+      "10.1007/s12571-021-01246-9": {
+        "label": 0,
+        "reason": "Fisheries and aquaculture, not UBI"
+      },
+      "10.1186/s12960-017-0187-2": {
+        "label": 0,
+        "reason": "Health workforce labor projections, not UBI"
+      },
+      "10.1093/qje/qjt001": {
+        "label": 0,
+        "reason": "Job placement assistance, not UBI"
+      },
+      "10.1002/pam.21676": {
+        "label": 0,
+        "reason": "California paid family leave, not UBI"
+      },
+      "10.1093/wber/lhv003": {
+        "label": 0,
+        "reason": "Female labor force in India, not UBI"
+      },
+      "10.1257/jep.32.4.201": {
+        "label": 2,
+        "reason": "DIRECTLY UBI vs targeted transfers for anti-poverty (Haslag)"
+      },
+      "10.1257/jep.30.4.3": {
+        "label": 0,
+        "reason": "Immigrants and productivity, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030237": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in US and advanced countries (Hoynes/Rothstein)"
+      },
+      "10.1257/000282805775014425": {
+        "label": 0,
+        "reason": "Child labor regulation macro, not UBI"
+      },
+      "10.1146/annurev-economics-080218-030229": {
+        "label": 2,
+        "reason": "DIRECTLY UBI in developing world (Banerjee et al)"
+      },
+      "10.1186/s40176-018-0131-9": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 非严格相关，转移支付和UBI 的概念并不完全相同"
+      },
+      "10.3386/w9168": {
+        "label": 1,
+        "reason": "Welfare programs and labor supply (Moffitt), related to UBI discussion but not UBI specifically"
+      },
+      "10.3368/jhr.58.3.1217-9240r4": {
+        "label": 0,
+        "reason": "Health and labor supply near retirement, not UBI"
+      },
+      "10.1016/j.socec.2007.08.007": {
+        "label": 2,
+        "reason": "DIRECTLY unconditional basic income and labor supply (lottery pilot)"
+      },
+      "10.1007/s11158-020-09487-9": {
+        "label": 1,
+        "reason": "UBI and domination philosophy, not labor supply evidence"
+      },
+      "10.1016/j.jpubeco.2023.104881": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 部分命中，labor 的部分因为缺乏abstract 不知道是否涉及到"
+      },
+      "10.2139/ssrn.3938983": {
+        "label": 2,
+        "reason": "DIRECTLY Child Tax Credit expansion and labor supply (UBI-adjacent)"
+      },
+      "10.1002/pam.22455": {
+        "label": 2,
+        "reason": "DIRECTLY universal cash transfers and labor market outcomes"
+      },
+      "10.2202/1932-0183.1100": {
+        "label": 1,
+        "reason": "UBI and labor contract philosophy, not labor supply empirics"
+      }
+    },
+    "q006": {
+      "10.1609/aaai.v35i12.17325": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.353": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-020-17591-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/tacl_a_00638": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.523": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v36i3.20158": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3485447.3512217": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su7010988": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v37i11.26538": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.findings-emnlp.936": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/p18-1117": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v34i07.6903": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/wes-1-1-2016": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/d18-1325": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/rs14122861": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.findings-naacl.55": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.apenergy.2022.120565": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2507.02259": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.4067/s0718-95162010000100004": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.findings-emnlp.232": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3533767.3534367": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jamia/ocac225": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/s23052385": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2025.acl-long.127": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3579371.3589057": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2402.16617": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2024.acl-long.91": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11633-024-1393-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.211": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2020.emnlp-main.57": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q007": {
+      "10.1016/s0140": {
+        "label": 1,
+        "reason": "DOI broken, title='Home visits' but abstract about UK agricultural emissions reduction; OpenAlex metadata corruption"
+      },
+      "10.1073/pnas.1116437108": {
+        "label": 1,
+        "reason": "Sustainable agriculture intensification, food demand focus not climate adaptation"
+      },
+      "10.1073/pnas.1701762114": {
+        "label": 1,
+        "reason": "Temperature impacts on yields, not adaptation specifically"
+      },
+      "10.1146/annurev-environ-020411-130608": {
+        "label": 2,
+        "reason": "DIRECTLY Climate Change and Food Systems review"
+      },
+      "10.1073/pnas.1222463110": {
+        "label": 2,
+        "reason": "DIRECTLY agricultural risks of climate change (GGCM intercomparison)"
+      },
+      "10.1038/nclimate2153": {
+        "label": 2,
+        "reason": "DIRECTLY meta-analysis of crop yield under climate change and adaptation"
+      },
+      "10.1073/pnas.0701890104": {
+        "label": 2,
+        "reason": "DIRECTLY adapting agriculture to climate change"
+      },
+      "10.1016/j.gloenvcha.2009.01.002": {
+        "label": 2,
+        "reason": "DIRECTLY farmers' adaptation methods to climate change (Ethiopia)"
+      },
+      "10.1007/s11356-022-19718-6": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts/adaptation/mitigation review"
+      },
+      "10.1088/1748-9326/5/1/014010": {
+        "label": 2,
+        "reason": "DIRECTLY climate change impacts on African agriculture"
+      },
+      "10.1016/s1161-0301(02)00004-7": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and European agricultural productivity"
+      },
+      "10.1016/j.crm.2017.02.001": {
+        "label": 2,
+        "reason": "DIRECTLY climate change and livestock impacts/adaptation/mitigation"
+      },
+      "10.1007/s13593-015-0285-2": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 典型的非经济学论文，可以参考它的季候变化应对方案原因，但实质上却是农业论文"
+      },
+      "10.1016/j.eja.2010.11.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.envsci.2008.11.002": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1222474110": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 非经济论文，而是农业实践论文"
+      },
+      "10.1023/a:1015862228270": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 看杂志名称很有可能是纯种植方法"
+      },
+      "10.1098/rstb.2005.1744": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/pol.20130025": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jenvman.2012.10.036": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1222465110": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1210127110": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1098/rstb.2013.0089": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10668-019-00414-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpls.2022.925548": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jenvp.2020.101408": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.landusepol.2017.10.023": {
+        "label": 2,
+        "reason": "USER NOTE: 第 27 和 28 大概率是重复论文，应该予以剔除一篇"
+      },
+      "10.1038/s41586-025-09085-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/jac.12415": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q008": {
+      "10.1093/bioinformatics/bty294": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btaa921": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10462-023-10465-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41597-023-01960-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.asoc.2020.106691": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43586-024-00294-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1039/c9sc04336e": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1005690": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbab159": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-021-27137-3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.24963/ijcai.2018/468": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1039/c9sc03414e": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btz600": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-020-00285-9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jbi.2021.103696": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-03233-x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41597-023-01974-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-021-27138-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41401-022-00996-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-39301-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/cancers15102705": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.naacl-demos.8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbad431": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pcbi.1010812": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbac578": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-021-02353-5": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.compbiomed.2022.105992": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btab191": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.21203/rs.3.rs-114758/v1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jbhi.2023.3328337": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q009": {
+      "10.1136/bmj.n2061": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1136/bmj.i5239": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1161/cir.0b013e31823ba622": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0140-6736(24)01296-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-018-0029-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s12160-016-9830-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.amepre.2016.06.015": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1097/aln.0b013e3181fcbfd9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.7126": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wps.20673": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2215-0366(14)70312-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1136/bmj.i1174": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1542/peds.2013-3219": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.1909": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jama.2021.14075": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s44159-021-00003-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1176/appi.ps.201600541": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2589-7500(20)30017-0": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2021.e07014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/1472-6963-6-30": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/cncr.30172": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/mhealth.3882": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/jcsm.12201": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.3510": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/16460": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.4391": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wps.20614": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1159/000490574": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s12966-016-0362-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q010": {
+      "10.1038/s41562-021-01079-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2022.102542": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10479-020-03640-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jpubeco.2020.104316": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10916-020-01596-5": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0249596": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11077-020-09381-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0140-6736(15)00946-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14494035.2020.1787628": {
+        "label": 2,
+        "reason": "USER OVERRIDE: 我认为国家应对策略包含多个层面，一定也包含政策和信任，故而可以拿来参考"
+      },
+      "10.1080/13548506.2020.1772988": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.15585/mmwr.rr6601a1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/1471-2458-11-575": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2020.102180": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41562-021-01181-x": {
+        "label": 0,
+        "reason": "USER OVERRIDE: ---"
+      },
+      "10.1038/s41562-020-0909-7": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 政府应对数据集是很好的研究材料，尤其是它可能是政策或者信任事件的前件"
+      },
+      "10.1017/iop.2020.48": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/s0033291721001306": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.34172/aim.2020.02": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30636/jbpa.32.172": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.healthpol.2020.06.009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00148-021-00848-z": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/eurpub/ckaa181": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyt.2020.00821": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0252892": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.hlpt.2020.08.021": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1098/rsos.200589": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0240644": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2147/rmhp.s278774": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0049806": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q011": {
+      "10.1038/s41746-020-00323-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s41666-020-00082-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-020-0186-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3013541": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v36i8.20819": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s42256-021-00337-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.comcom.2022.09.012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2022.3151670": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.patcog.2024.110424": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/ojcs.2020.2992630": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10586-022-03658-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.icte.2023.02.007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-022-05539-7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3118642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tkde.2024.3352628": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-022-30714-9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3412357": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3075203": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/mnet.011.2000045": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-021-00489-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3533708": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app12199901": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-38569-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jbhi.2022.3185673": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.comcom.2021.02.014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tbdata.2022.3190835": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/jiot.2022.3201117": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tce.2023.3315415": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3301162": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q012": {
+      "10.1016/j.gloenvcha.2016.05.009": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/0895330042162430": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su12135488": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/acp-17-8681-2017": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cpa.2019.102097": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ecolecon.2015.03.020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7916/d8-w2nc-4103": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.erss.2019.02.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jclepro.2019.01.282": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.fuel.2023.127776": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.26.4.27": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1918128117": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/wcc.462": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev.energy.27.122001.083444": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5194/bg-9-1845-2012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/3146894": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14693062.2018.1492897": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.oneear.2021.10.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41558-021-01250-z": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.enpol.2018.06.020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10018-016-0144-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781513595405.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jeem.2010.04.004": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eneco.2023.106642": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11356-022-23185-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.envsci.2010.10.010": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Social cost of carbon UK, not OECD effectiveness"
+      },
+      "10.1016/j.eneco.2023.107198": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10640-021-00594-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10640-021-00548-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q013": {
+      "10.1126/science.abj8754": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41587-021-01156-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkae1010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41592-021-01252-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41592-019-0598-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-023-06139-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btac020": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkae1082": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-022-32007-7": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkac278": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-024-08328-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s12859-019-3220-8": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 序列预测而非结构预测"
+      },
+      "10.1093/bioinformatics/btaa880": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btaa524": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41588-023-01465-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41587-022-01432-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkac439": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/nar/gkab354": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ccell.2023.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-022-12201-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-020-79682-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41467-023-42528-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41524-023-01016-5": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s43588-022-00373-3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bib/bbab564": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1101/2021.07.31.454572": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.34133/research.0240": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btad718": {
+        "label": 0,
+        "reason": "USER OVERRIDE: 1. 如果是“结构预测”论文（比如 AlphaFold2, ESMFold 团队自己写的论文）\n\n- **输入：** 氨基酸序列。\n- **最终输出（Output）：** 几千个原子的 $X, Y, Z$ **三维坐标（连续数值）**。\n- **Loss 函数：** FAPE Loss（结构对齐误差）或坐标点之间的均方误差（MSE）。\n- **技术核心：** 在解决极其复杂的“物理折叠”和“几何等"
+      },
+      "10.1021/acs.jcim.2c00060": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/bioinformatics/btad208": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q014": {
+      "10.1016/s0140-6736(96)07226-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjz042": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.8.4.145": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/esr/jcn026": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-6419.2011.00690.x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/sof.2006.0108": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/0002828043052213": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122416684777": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/003355397555145": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s0169-7218(11)02414-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/sf/sov075": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.worlddev.2020.105115": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-soc-071811-145521": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2314815": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jdeveco.2018.05.016": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/oxrep/grw030": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.chieco.2015.12.009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/sf/sou092": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eco.2001.0010": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10887-007-9019-x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1749-124x.2013.12013.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1006/ssre.1997.0598": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jdeveco.2014.05.007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.red.2015.07.006": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122419885094": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00036846.2015.1031877": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "Great Gatsby Curve China, not education specifically"
+      }
+    },
+    "q015": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-023-06291-2": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40537-021-00492-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.295": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13095783": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-03423-7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/50638": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-024-07421-0": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3491102.3517582": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41746-024-01029-4": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.emnlp-main.130": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.acl-long.147": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.patter.2024.100943": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.acl-long.576": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1162/coli.2007.33.1.41": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/55318": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/cvpr52688.2022.00886": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2024.naacl-long.228": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2021.acl-long.316": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v38i17.29889": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.emnlp-main.616": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10115-022-01744-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2022.naacl-main.420": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.findings-emnlp.710": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-64827-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.nlrse-1.7": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jamia/ocad256": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1609/aaai.v38i17.29823": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.48550/arxiv.2305.12586": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.18653/v1/2023.acl-long.385": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q016": {
+      "10.1162/003355300554881": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.103.6.2121": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20160995": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.15.2.103": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjz014": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/135457097338799": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/jae.788": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjt006": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/jhr.2008.0017": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/2675569": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2307/2070285": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.20180010": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/089533006776526111": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1287/mnsc.2018.3093": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qju009": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjr013": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20161309": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/dem.2006.0003": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/0003122411425170": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/685449": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080614-115329": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1468-232x.2007.00479.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00148-006-0128-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.labeco.2013.01.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/683847": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/j.1467-9361.2004.00230.x": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q017": {
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/josm-04-2018-0119": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cirp.2016.05.004": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.23.3.125": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5430/ijfr.v9n2p90": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.hrmr.2022.100899": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijpe.2019.107599": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3042874": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/mar.21619": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/ijopm-02-2012-0086": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/1042258720934581": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2022.104555": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2021.3102227": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jtf-07-2019-0065": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2023.05.008": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/21681015.2021.1950227": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/ai1020008": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.31.2.165": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2023.e22601": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20191277": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cirp.2020.05.006": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/00207543.2023.2179859": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/654303": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jfineco.2013.02.011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su15118934": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13563-019-00172-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q018": {
+      "10.1186/s40537-021-00444-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00408-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 1,
+        "reason": "AI in education challenges sustainable, not outcomes"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00448-3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.17": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-021-00292-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1260843": {
+        "label": 1,
+        "reason": "ChatGPT EFL writing, not K-12 outcomes"
+      },
+      "10.1007/s10639-021-10831-6": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13334": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/info15100596": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1261955": {
+        "label": 1,
+        "reason": "AI language instruction EFL achievement, not K-12 outcomes"
+      },
+      "10.1016/j.compedu.2023.104967": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-022-00362-6": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.caeai.2023.100197": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13116716": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci15030343": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.4638365": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.eswa.2023.121820": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q019": {
+      "10.1186/s41239-019-0171-0": {
+        "label": 0,
+        "reason": "AI in higher ed systematic review, not ITS specifically"
+      },
+      "10.1186/s41039-017-0062-8": {
+        "label": 0,
+        "reason": "AI teaching higher ed, not ITS"
+      },
+      "10.1109/comst.2020.2970550": {
+        "label": 0,
+        "reason": "Edge computing deep learning survey, not ITS"
+      },
+      "10.1002/ett.4150": {
+        "label": 0,
+        "reason": "Network IDS ML DL, not ITS"
+      },
+      "10.3390/app9204396": {
+        "label": 0,
+        "reason": "IDS ML DL survey, not ITS"
+      },
+      "10.1109/tnnls.2022.3160699": {
+        "label": 0,
+        "reason": "Personalized FL, not ITS"
+      },
+      "10.1002/inf2.12028": {
+        "label": 0,
+        "reason": "ML materials science, not ITS"
+      },
+      "10.1007/s10462-022-10246-w": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 并非强相关，但智能导师系统中应该设法区分人主导还是机器主导。"
+      },
+      "10.1186/s40537-020-00318-5": {
+        "label": 0,
+        "reason": "Cybersecurity data science, not ITS"
+      },
+      "10.1007/s40593-016-0105-0": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 2016年的论文，虽然没有摘要，但大概率没提到人工智能对于教育的影响，对于我们的主题Intelligent Tutoring System，虽然可以拿来做参考，但事实上参考材料也有点老。估计智能用作如何优质的设计智能导师系统的参考。"
+      },
+      "10.1186/s40561-019-0089-y": {
+        "label": 2,
+        "reason": "DIRECTLY personalized adaptive learning in smart learning environment"
+      },
+      "10.1515/jaiscr-2017-0004": {
+        "label": 2,
+        "reason": "DIRECTLY AI techniques for adaptive educational systems survey"
+      },
+      "10.1002/(sici)1097-4571(199504)46:3<194::aid-asi4>3.0.co;2-s": {
+        "label": 0,
+        "reason": "ML for IR 1995, not ITS"
+      },
+      "10.1007/s40593-014-0023-y": {
+        "label": 1,
+        "reason": "USER OVERRIDE: 多媒体教学 和我们的主题Intelligent Tutoring System关系有，但不涉及到人工智能，它属于大语言模型前的产物。可以拿来嵌套设计，但不是完全命中。另外，还是太老了。"
+      },
+      "10.1007/s40593-015-0089-1": {
+        "label": 2,
+        "reason": "DIRECTLY help seeking with ITS research"
+      },
+      "10.3758/s13428-012-0258-1": {
+        "label": 2,
+        "reason": "DIRECTLY NLP in intelligent writing strategy tutoring system"
+      },
+      "10.1007/s10639-022-11479-6": {
+        "label": 1,
+        "reason": "Intelligent e-learning systems, related to ITS"
+      },
+      "10.1145/3027385.3027451": {
+        "label": 2,
+        "reason": "DIRECTLY intelligent tutors as teachers aides"
+      },
+      "10.1609/aimag.v34i3.2484": {
+        "label": 2,
+        "reason": "DIRECTLY data-driven ITS development optimization"
+      },
+      "10.1016/j.compedu.2011.11.001": {
+        "label": 2,
+        "reason": "DIRECTLY conversational ITS predicting learning styles"
+      },
+      "10.1007/s10639-022-11305-z": {
+        "label": 2,
+        "reason": "DIRECTLY AI-powered ITS for English learning secondary students"
+      },
+      "10.1111/j.1365-2729.2010.00368.x": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive item-based learning environments IRT (ITS)"
+      },
+      "10.1007/s40593-015-0088-2": {
+        "label": 2,
+        "reason": "DIRECTLY Example-Tracing Tutors ITS development"
+      },
+      "10.1007/s40593-013-0001-9": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive intelligent support for peer tutoring in algebra"
+      },
+      "10.4236/ce.2020.116069": {
+        "label": 2,
+        "reason": "DIRECTLY effects of ITS on personalized learning"
+      },
+      "10.3233/irg-2004-14(3-4)07": {
+        "label": 2,
+        "reason": "DIRECTLY ITS for Entity Relationship Modelling (KERMIT CBM)"
+      },
+      "10.1016/j.sbspro.2010.03.641": {
+        "label": 2,
+        "reason": "DIRECTLY adaptive ITS for e-learning systems"
+      },
+      "10.1016/j.compedu.2013.09.014": {
+        "label": 2,
+        "reason": "DIRECTLY adaptation algorithm for intelligent NLP tutoring system"
+      },
+      "10.1186/s40594-018-0110-y": {
+        "label": 2,
+        "reason": "DIRECTLY ElectronixTutor intelligent tutoring system for electronics"
+      },
+      "10.1007/11774303_52": {
+        "label": 2,
+        "reason": "DIRECTLY comparison of ML methods for intelligent tutoring systems"
+      }
+    },
+    "q020": {
+      "10.1016/j.lindif.2023.102274": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pdig.0000198": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00411-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.9": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40561-023-00237-x": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-023-00392-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14703297.2023.2195846": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/app13095783": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/13152": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13090856": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2253861": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/10494820.2023.2209881": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.12669/pjms.39.2.7653": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3350/cmh.2023.0089": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/13036": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/ase.2270": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.29": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.xops.2023.100324": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.37074/jalt.2023.6.1.22": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10755-023-09686-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3991/ijet.v18i17.39019": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7821/naer.2023.7.1458": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-52549-8": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/2331186x.2023.2210461": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10639-024-12949-9": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q021": {
+      "10.1257/aer.103.6.2121": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjaa004": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.9.3.15": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qju026": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.cie.2019.106195": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.28945/5078": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/ijm-01-2021-0052": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2020.3029847": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41586-022-04988-4": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2018.06.008": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781484311042.001": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ntwe.12240": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.30.2.179": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1177/2041386621992105": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1017/psrm.2021.43": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43621-025-01201-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jebo.2022.05.025": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.chieco.2018.07.008": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jfineco.2022.11.003": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.4018/ijkm.2016100103": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.jeoa.2023.100476": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q022": {
+      "10.1257/jep.33.2.3": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/qje/qjx022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-economics-080315-015041": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20170011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718327": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.23.1.167": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 0,
+        "reason": "EDUCAUSE 2020 Horizon Report, not labor polarization"
+      },
+      "10.1007/s40821-020-00172-8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeg/lby011": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13524-019-00790-6": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.17705/1cais.04319": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.17323/2500-2597.2017.4.6.8": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20150258": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jebde-10-2023-0021": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s13194-018-0213-9": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11186-020-09409-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/tte.2021.3129479": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0235502": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1155/2019/5941096": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w11986": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2016.0015": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5771/0935-9915-2017-3-298": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.4527336": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9798400254802.001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.5089/9781484361900.001": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s43593-025-00085-x": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718497": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q023": {
+      "10.1093/ejcts/ezu366": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.61969/jai.1337500": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/ijerph20043407": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1210/endrev/bnac022": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.20171112": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/frobt.2018.00081": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/rehab.6376": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2196/jmir.5257": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41591-024-02902-1": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.12467": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/2803173": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics13183762": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.heliyon.2024.e39630": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2022.971044": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/bjet.13116": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s41239-024-00447-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su16020781": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su17031133": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/cpt.59": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/feduc.2020.00147": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jel.20191507": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/electronics12071550": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2023.1255594": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3389/fpsyg.2021.644587": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43621-025-01094-z": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/mbe.12302": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-025-97652-6": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1186/s40561-016-0038-y": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11423-024-10345-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.30935/cedtech/16108": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q024": {
+      "10.1257/aer.20160696": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.33.2.3": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "[no-DOI]": {
+        "label": 2,
+        "reason": "NBER WP version of Acemoglu/Restrepo task model"
+      },
+      "10.2139/ssrn.3098384": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/718327": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1073/pnas.1900949116": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3531146.3533088": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/cjres/rsz022": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24421": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3982/ecta19815": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jeea/jvab012": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w25682": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/aer.p20171101": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24196": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/restud/rdab031": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.respol.2019.03.010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w28920": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3386/w24871": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1353/eca.2018.0000": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2781320": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/epolic/eiaa001": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1086/697242": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.7208/chicago/9780226613475.003.0008": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/mac.20160164": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/jaar-10-2020-0201": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su10051661": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.techfore.2023.122448": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1146/annurev-polisci-051120-104535": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1371/journal.pone.0242929": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.2139/ssrn.2935003": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    },
+    "q025": {
+      "10.1016/j.inffus.2019.12.012": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2019.08.002": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/j.ijinfomgt.2023.102642": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11023-018-9482-5": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11747-019-00696-0": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/14703297.2023.2190148": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s11023-020-09517-8": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10956-023-10039-y": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1108/lhtn-01-2023-0009": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s40593-021-00239-1": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3351095.3372873": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s10639-022-11316-w": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1002/widm.1356": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/app.20180010": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/su151612451": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/educsci13070692": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1109/access.2023.3300381": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1080/17439884.2020.1798995": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1257/jep.12.2.63": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1016/s2589-7500(22)00063-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/amajethics.2019.167": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1093/jopart/muac007": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s43681-022-00209-w": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1111/ejed.12532": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.58631/injurity.v2i3.52": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1145/3624720": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.3390/socsci12080435": {
+        "label": 2,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1038/s41598-024-55686-2": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1001/jamanetworkopen.2020.11044": {
+        "label": 0,
+        "reason": "USER NOTE: ---"
+      },
+      "10.1007/s00146-023-01675-4": {
+        "label": 1,
+        "reason": "USER NOTE: ---"
+      }
+    }
+  }
+}

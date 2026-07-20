@@ -20,11 +20,17 @@ CONDITIONAL DEPRECATION 2026-07-20 (v3.9.10) — DO NOT USE FOR n < 200
 ================================================================================
 At n=50 with 100 trees, LTR LOSES to combined baseline:
 
-    LTR (LambdaMART 100 trees) NDCG@10 = 0.7806 ± 0.048
-    combined (0.5*BM25 + 0.5*bi-encoder) = 0.8141 (5-fold CV)
-    Δ NDCG@10 (LTR - baseline)          = -0.0335
+    v3.9.7.3 (5-fold CV, n=50):
+        LTR (LambdaMART 100 trees) NDCG@10 = 0.7806 ± 0.048
+        combined (0.5*BM25 + 0.5*bi-encoder) = 0.8141 (5-fold CV reported)
+        Δ NDCG@10 (LTR - baseline)            = -0.0335
 
-Source: bench/v01/reports/v3_9_7_3_ltr_n50.json (n=50 mixed labels).
+    v3.9.10.1 Phase 1.5 holdout (single 30/20 split, n=20 test):
+        LTR (LambdaMART 100 trees) NDCG@10 = 0.7679
+        combined (0.5*BM25 + 0.5*bi-encoder) = 0.8988
+        Δ NDCG@10 (LTR - baseline)            = -0.1309  ← 4x worse than 5-fold reported
+
+Source: bench/v01/reports/v3_9_10_1_phase_1_5_holdout.{json,md}.
 
 Root cause: 100 trees on n=50 overfits. Each tree sees only 10-15 queries per
 fold, so it learns noise on minor features (has_abstract, is_recent) rather than
