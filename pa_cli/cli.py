@@ -299,10 +299,17 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
               help="[P1-17] Post-filter results to only show those from specified engines. "
                    "Comma-separated: e.g. 'openalex,cnki'. Matches 'source' field prefix "
                    "(so 'openalex' also matches 'openalex_title' enrichment). Default = no filter.")
+@click.option("--quality-mode", "quality_mode", default="flag", show_default=True,
+              type=click.Choice(["flag", "filter", "off"]),
+              help="[P2-14] Quality filter mode. "
+                   "'flag' (default) = annotate each result with `quality_flag` "
+                   "('low_quality' if no-abstract+low-cite+no-year; 'outdated' if >25y+<100cites). "
+                   "'filter' = drop 'low_quality' results. "
+                   "'off' = no filter / no annotation.")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
            concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites,
-           enrich_max_age_years, sort_by, source_filter, quiet):
+           enrich_max_age_years, sort_by, source_filter, quality_mode, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
@@ -359,6 +366,16 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                          sort_by=sort_by,
                          source_filter=src_list,
                          enrich_max_age_years=enrich_max_age_years)
+    # [P2-14] Quality filter: flag/filter/off (default flag — annotates, doesn't drop)
+    from .quality_filter import apply_quality_filter, summarize_quality
+    pre_count = len(results.get("results", []))
+    apply_quality_filter(results.get("results", []), mode=quality_mode)
+    post_count = len(results.get("results", []))
+    if quality_mode != "off" and not quiet:
+        qs = summarize_quality(results.get("results", []))
+        click.echo(f"[pa] quality: {qs} (mode={quality_mode}, kept {post_count}/{pre_count})", err=True)
+    if quality_mode == "filter" and pre_count != post_count:
+        results["dedup_count"] = post_count  # update reported count
     # Augment with concept metadata so user sees what was applied
     if resolved_meta:
         results["applied_concepts"] = resolved_meta

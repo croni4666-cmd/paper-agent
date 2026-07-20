@@ -2291,6 +2291,33 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: tier definitions + boost magnitudes
 
+### [P1-20] S2 throttling for batch rebuild (added 2026-07-20)
+
+- **Status**: proposed
+- **Added**: 2026-07-20
+- **Priority**: P1
+- **Source**: v3.9.10.10 re-eval finding — pool coverage regressed 99.7% → 89.6% (-10.1%) because rebuild script excluded S2 to avoid 429. 35 of 100+ label=2 papers MISSING from new pool. S2 is the most relevance-aware engine; Crossref/OpenAlex are citation-heavy and dilute the pool without S2's relevance signal.
+- **Rationale**: S2 free tier has rate limit (~1 RPS, returns 429 on burst). My v3.9.10.10 rebuild script (`test_output/_rebuild_system_outputs_v3_9_10_10.py`) skipped S2 entirely to avoid the burst. The honest finding is: **without S2, the bigger pool from the gzip/brotli fix is WORSE, not better** (NDCG@10 0.81 → 0.15, Recall@10 0.84 → 0.25). The fix is correct; the rebuild strategy is the regression source.
+- **Acceptance criteria**:
+  - `pa search` (and batch rebuild) sends S2 requests at ≤1 RPS sustained
+  - On 429 response: back off (1s → 2s → 4s, max 30s), retry up to 3 times
+  - 50-query batch at 1 RPS = ~50s S2 wall time; total batch ~2-3min (with other engines)
+  - Re-run v3.9.10.10 rebuild WITH S2 throttled, re-eval n=50:
+    - Pool coverage ≥ 0.99 (back to v3.9.7.3 level)
+    - NDCG@10 ≥ 0.85 (better than v3.9.7.3 due to bigger pool + same-candidate ranking)
+- **Files**:
+  - `pa_cli/search.py` (add `_throttle_s2()` helper + retry/backoff in `search_semanticscholar()`)
+  - `test_output/_rebuild_system_outputs_v3_9_10_10.py` (add S2 back to engine list)
+  - `test_output/_re_eval_holdout_v3_9_10_10_v2.py` (re-run, verify regression reversed)
+- **Estimated effort**: ~1.5h (throttle helper + retry logic + re-run + re-eval)
+- **Global Rule check**: 5/5 pass
+  - $0 cost (free S2 API, just rate-limited)
+  - No hosted service
+  - Maintenance: ~30 LOC, 0 new files in production code
+  - No publish obligation
+  - Free-tier degradation: if S2 rate limits become worse, the throttle slows but doesn't break
+- **User confirmation needed**: none — the [P1-20] design is the only path to validate v3.9.10.10's fix
+
 ### [P1-8] China political-institution exclusion
 
 - **Status**: proposed
