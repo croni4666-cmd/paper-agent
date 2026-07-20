@@ -1544,19 +1544,29 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   - F. real-corpus smoke test (5-10 paper mix) + edge-case error reporting polish — 60min
     (deferred to user-real-corpus run; mock tests cover all edge cases)
 - **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
-  Multi-corpus management. Each 课题 = one project at
+  Multi-corpus management. Each research topic = one project at
   `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
-  data + cross-corpus dedup. **Solves**: today all your 课题
+  data + cross-corpus dedup. **Solves**: today all your research topics
   (数字普惠金融 / 长期护理保险 / 金融科技) share one giant `refs.bib`
   and one judge DB; this separates them. Effort: 6h. ⭐⭐⭐
   **Honest limit**: 6h is optimistic — first-time "project-level"
-  management usually runs 8-10h. Skip until you have 3+ active 课题.
+  management usually runs 8-10h. Skip until you have 3+ active topics.
+  **Status**: ⏳ **Phase 1 done in v3.9.10.8** (released 2026-07-20). Phase 2
+  (corpus-search / corpus-merge) **deferred — needs user input on corpus
+  names + which topics to manage**. Phase 1 ships:
+  - `pa_cli/project.py` (~280 LOC): init/list/status/corpus/rm
+  - `pa_cli/cli.py` (project subcommand group, +90 LOC, Click)
+  - Layout: `~/.paper-agent/projects/<slug>/{meta.json, refs.bib, judges.sqlite}`
+  - 26/26 unit + CLI smoke tests pass
   **Sub-task decomposition**:
-  - A. project layout spec (`projects/<slug>/refs.bib` + `judges.sqlite` + `meta.json`) — 30min
-  - B. `init` (create skeleton) / `list` (read all) / `status` (n_papers, n_labels per project) — 1.5h
-  - C. `corpus-search` (re-execute a saved search scoped to one project) — 1h
-  - D. `corpus-merge` (cross-corpus dedup + optional merge to a meta-corpus) — 2h
-  - E. CLI wire + 1 e2e test (init 2 projects, merge them) — 1h
+  - A. project layout spec (`projects/<slug>/refs.bib` + `judges.sqlite` + `meta.json`) — 30min ✅
+  - B. `init` (create skeleton) / `list` (read all) / `status` (n_papers, n_labels per project) — 1.5h ✅
+  - C. `corpus-search` (re-execute a saved search scoped to one project) — 1h ⏳
+    **deferred — needs user input on which saved searches to scope + corpus names**
+  - D. `corpus-merge` (cross-corpus dedup + optional merge to a meta-corpus) — 2h ⏳
+    **deferred — needs user input on which corpora to merge first**
+  - E. CLI wire + 1 e2e test (init 2 projects, merge them) — 1h ⏳
+    (e2e partial: Phase 1 tests cover init/list/status; Phase 2 needs corpus-search/merge tests)
 
 ### Tier 3: Hard (3+ days, requires new infrastructure or fails Global Rule)
 

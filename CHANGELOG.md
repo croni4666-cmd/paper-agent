@@ -236,6 +236,97 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.8] - 2026-07-20 ([P2-12] Phase 1 pa project per-topic corpora ships)
+
+### v3.9.10.8 — `pa project` Phase 1 ships (2026-07-20)
+
+**Phase 1 feature**: per-research-topic project management. Each topic
+= one project at `~/.paper-agent/projects/<slug>/`, holding its own
+refs.bib + judges.sqlite + cross-corpus dedup (Phase 2).
+
+**Phase 1 CLI subcommands** (5 of 7):
+```
+pa project init <slug> [--title "..."] [--description "..."]
+pa project list
+pa project status [slug]
+pa project corpus <slug>          # prints /home/.../projects/<slug>/refs.bib
+pa project rm <slug> [--force]    # --force overrides meta.json safety check
+```
+
+**Layout**:
+```
+~/.paper-agent/projects/<slug>/
+  meta.json         - project metadata (slug, title, created_at, description)
+  refs.bib          - per-project Bibtex (initially empty header)
+  judges.sqlite     - per-project pa judge data (initially empty schema)
+```
+
+**Phase 2 deferred** (needs user input):
+- `pa project corpus-search <slug>` - re-execute a saved search scoped
+- `pa project corpus-merge <slug1> <slug2>` - cross-corpus dedup
+
+**Implementation** (~280 LOC + 26 tests):
+- `pa_cli/project.py` (NEW):
+  - `validate_slug(slug)` - ASCII-only (re.ASCII flag, rejects Chinese)
+  - `project_dir/files(slug, root)` - path helpers
+  - `load_meta/save_meta` - JSON round-trip with atomic save
+  - `init_project(slug, title, description, root)` - create skeleton
+  - `list_projects(root)` - sorted by slug, skips invalid dirs
+  - `project_status(slug, root)` - n_papers (count bib entries) + n_labels (count judge rows)
+  - `remove_project(slug, root, force)` - safe removal with meta.json check
+- `pa_cli/cli.py` (project subcommand group, +90 LOC, Click)
+  - `init` with --title, --description, --root
+  - `list` with --json
+  - `status` with optional slug
+  - `corpus` prints refs.bib path (for piping)
+  - `rm` with --force + confirmation prompt
+
+**Tests**: 26/26 pass in `test_output/_test_project.py`:
+- TestValidateSlug: 2 tests (ASCII only, rejects Unicode)
+- TestInitProject: 7 tests (files/meta fields/default title/duplicate/invalid/sqlite/refs)
+- TestListProjects: 4 tests (empty/sorted/with-path/skips-invalid)
+- TestStatus: 5 tests (no-papers/with-papers/with-labels/nonexistent/paths)
+- TestRemoveProject: 4 tests (existing/nonexistent/refuses-without-meta/force)
+- TestCliSmoke: 4 tests (init/list/status/corpus via CLI)
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (stdlib json + sqlite3 + pathlib)
+- No hosted service
+- Maintenance: 1 new module + 1 CLI subcommand group (~370 LOC total)
+- No publish obligation
+- Free-tier degradation: ~/.paper-agent/ may not exist; auto-create on first init
+
+**Files changed**:
+- `pa_cli/project.py` (NEW, ~280 LOC)
+- `pa_cli/cli.py` (project subcommand group, +90 LOC)
+- `pa_cli/__init__.py` (version bump 3.9.10.7 → 3.9.10.8)
+- `test_output/_test_project.py` (NEW, 26 tests)
+- `ROADMAP.md` ([P2-12] Phase 1 marked DONE; Phase 2 marked deferred-needs-user-input)
+- `CHANGELOG.md` (this entry)
+
+**Why Phase 1 only (not full 6-10h)**:
+- ROADMAP honest limit: "first-time 'project-level' management usually runs 8-10h"
+- Phase 2 (corpus-search, corpus-merge) requires:
+  1. User to name 3+ active research topics (currently unknown to Mavis)
+  2. User to choose which saved searches to scope per project
+  3. Cross-corpus dedup heuristic (DOI / arxiv / fuzzy title)
+- Better to ship Phase 1 → user runs `pa project init` for 2-3 topics →
+  then Phase 2 can be designed with real corpus in hand
+
+**Use case (real)**:
+- User runs `pa project init digital-finance --title 'Digital Finance Review'`
+- User runs `pa project init elder-care --title 'Long-term Care Insurance'`
+- User runs `pa project init fintech --title 'Fintech'`
+- Each project has its own refs.bib + judges.sqlite
+- Cross-corpus dedup (Phase 2) can find "same paper cited in 2 topics"
+
+**Open follow-up (Phase 2 — needs user input)**:
+- [ ] pa project corpus-search <slug> [--save NAME] - re-execute saved search
+- [ ] pa project corpus-merge <slug1> <slug2> --into <target> - cross-corpus dedup
+- [ ] pa project import-csv <slug> <csv> - import screening decisions from pa export-screening
+
+---
+
 ## [3.9.10.7] - 2026-07-20 ([P2-11] pa fetch-batch batch PDF download ships)
 
 ### v3.9.10.7 — `pa fetch-batch` ships (2026-07-20)

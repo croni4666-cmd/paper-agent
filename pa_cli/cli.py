@@ -1559,6 +1559,149 @@ def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
         )
 
 
+# =============== [P2-12] project subcommand group ===============
+# Multi-corpus management for 课题. Phase 1: init/list/status/corpus/rm.
+# Phase 2 (deferred): corpus-search / corpus-merge.
+
+@main.group()
+def project():
+    """[P2-12] Manage per-topic project corpora (Phase 1: init/list/status/corpus/rm).
+
+    Per ROADMAP [P2-12]: each research topic = one project at
+    ~/.paper-agent/projects/<slug>/, holding its own refs.bib + judges.sqlite
+    + cross-corpus dedup (Phase 2).
+
+    Phase 1 subcommands:
+      init <slug> [--title "..."]  - create project skeleton
+      list                          - list all projects
+      status [slug]                 - show n_papers, n_labels
+      corpus [slug]                 - print path to refs.bib
+      rm <slug>                     - remove project
+
+    Phase 2 (deferred; needs user input on corpus names):
+      corpus-search <slug>          - re-execute saved search scoped
+      corpus-merge <slug1> <slug2>  - cross-corpus dedup
+    """
+    pass
+
+
+@project.command(name="init")
+@click.argument("slug")
+@click.option("--title", default="", help="Human-readable project title")
+@click.option("--description", default="", help="Long-form description (markdown ok)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default ~/.paper-agent/projects/ root")
+def project_init(slug, title, description, root_path):
+    """Create a new project (skeleton: meta.json, empty refs.bib, judges.sqlite)."""
+    from .project import init_project, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        meta = init_project(slug, title=title, description=description, root=root)
+    except (ValueError, FileExistsError) as e:
+        click.echo(f"[pa project init] FAILED: {e}", err=True)
+        sys.exit(1)
+    click.echo(f"[pa project init] created {slug!r} at {root / slug}/", err=True)
+    click.echo(f"  title: {meta['title']}", err=True)
+    click.echo(f"  meta:  {root / slug / 'meta.json'}", err=True)
+    click.echo(f"  refs:  {root / slug / 'refs.bib'}", err=True)
+    click.echo(f"  judges:{root / slug / 'judges.sqlite'}", err=True)
+
+
+@project.command(name="list")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+def project_list(as_json, root_path):
+    """List all projects."""
+    from .project import list_projects, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    projects = list_projects(root)
+    if as_json:
+        click.echo(json.dumps(projects, indent=2, ensure_ascii=False))
+        return
+    if not projects:
+        click.echo(f"(no projects; use `pa project init <slug>` to create one)")
+        return
+    click.echo(f"Projects ({len(projects)}) at {root}:")
+    click.echo("")
+    click.echo(f"  {'SLUG':<25s} {'TITLE':<35s}  CREATED")
+    click.echo(f"  {'-'*25} {'-'*35}  {'-'*19}")
+    for p in projects:
+        title = p.get('title', '')[:35]
+        created = p.get('created_at', '')[:19]
+        click.echo(f"  {p['slug']:<25s} {title:<35s}  {created}")
+
+
+@project.command(name="status")
+@click.argument("slug", required=False)
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+def project_status(slug, root_path):
+    """Show project status (n_papers, n_labels). If slug omitted, shows all."""
+    from .project import project_status as get_status, list_projects, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    if slug:
+        try:
+            s = get_status(slug, root)
+        except (ValueError, FileNotFoundError) as e:
+            click.echo(f"[pa project status] FAILED: {e}", err=True)
+            sys.exit(1)
+        click.echo(json.dumps(s, indent=2, ensure_ascii=False))
+    else:
+        # All projects
+        projects = list_projects(root)
+        if not projects:
+            click.echo("(no projects)")
+            return
+        for p in projects:
+            try:
+                s = get_status(p['slug'], root)
+                click.echo(
+                    f"  {s['slug']:<25s} papers={s['n_papers']:4d}  labels={s['n_labels']:4d}  "
+                    f"title={s['title']}",
+                    err=True,
+                )
+            except Exception as e:
+                click.echo(f"  {p['slug']:<25s} ERROR: {e}", err=True)
+
+
+@project.command(name="corpus")
+@click.argument("slug")
+def project_corpus(slug):
+    """Print path to project refs.bib (for piping to other tools)."""
+    from .project import project_files, DEFAULT_ROOT
+    files = project_files(slug, DEFAULT_ROOT)
+    if not files['dir'].exists():
+        click.echo(f"[pa project corpus] FAILED: project {slug!r} not found", err=True)
+        sys.exit(1)
+    click.echo(str(files['refs']))
+
+
+@project.command(name="rm")
+@click.argument("slug")
+@click.option("--force", is_flag=True, help="Remove even without meta.json")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.confirmation_option(prompt="Are you sure you want to delete this project?")
+def project_rm(slug, force, root_path):
+    """Remove a project (deletes refs.bib, judges.sqlite, meta.json, all files)."""
+    from .project import remove_project, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        if remove_project(slug, root, force=force):
+            click.echo(f"[pa project rm] removed {slug!r}", err=True)
+        else:
+            click.echo(f"[pa project rm] {slug!r} not found", err=True)
+            sys.exit(1)
+    except ValueError as e:
+        click.echo(f"[pa project rm] FAILED: {e}", err=True)
+        sys.exit(1)
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL
