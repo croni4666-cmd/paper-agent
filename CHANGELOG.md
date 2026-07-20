@@ -9,6 +9,106 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ---
 
+## [3.9.10.11] - 2026-07-20 ([P2-14] Quality filter + v3.9.10.10 honest re-eval finding)
+
+### v3.9.10.11 — [P2-14] Quality filter ships (2026-07-20)
+
+**Feature**: `pa search <q> --quality-mode flag|filter|off` annotates or
+drops low-quality papers from results. Source: user spot-check q005 #30
+"no year + low cites = low quality paper, should be removed".
+
+**Two flags** (priority: `low_quality` > `outdated`):
+- `low_quality`: abstract empty/missing + cited_by_count < 50 + year missing
+- `outdated`:    year < (now-25) + cited_by_count < 100
+
+**Modes** (CLI default = `flag` to be safe):
+- `flag`   = annotate each result with `quality_flag` field; don't drop
+- `filter` = drop `low_quality` results; keep `outdated` (annotated)
+- `off`    = no annotation, no filter (full backward compat)
+
+**Files**:
+- `pa_cli/quality_filter.py` (NEW, ~100 LOC, 3 functions: `flag_quality` /
+  `apply_quality_filter` / `summarize_quality`)
+- `pa_cli/cli.py` (added `--quality-mode` option + post-search call)
+- `test_output/_test_quality_filter.py` (13 tests, all PASS)
+
+**Example**:
+```
+$ pa search "AI tutoring K-12" --limit 30
+  [pa] quality: {'none': 23, 'low_quality': 4, 'outdated': 0} (mode=flag, kept 27/30)
+$ pa search "AI tutoring K-12" --limit 30 --quality-mode filter
+  [pa] quality: {'none': 23, 'low_quality': 4, 'outdated': 0} (mode=filter, kept 26/30)
+```
+
+**5-check Global Rule audit**: 5/5 pass (pure local code, no API, no
+maintenance, no publish obligation, degrades gracefully when year/cites
+missing — just doesn't flag).
+
+---
+
+### v3.9.10.11 — v3.9.10.10 re-eval honest 3-tier finding (2026-07-20)
+
+**Re-evaluated** v3.9.7.3 holdout n=50 with v3.9.10.10 fix (gzip/brotli
+in `pa_cli/search.py:39-66`). Full report:
+`bench/v01/reports/v3_9_10_10_re_eval_v2.md`.
+
+**Headline (mixed; not all positive)**:
+
+| Metric                  | v3.9.7.3  | v3.9.10.10 | Delta      |
+|-------------------------|----------:|-----------:|-----------:|
+| Mean pool size          |      27.4 |      162.5 | **+5.9x**  |
+| Pool coverage (label=2) |    0.9971 |     0.8960 | **-0.1012** |
+| NDCG@10 (combined)      |    0.8099 |     0.1547 | **-0.6552** |
+| Recall@10 (combined)    |    0.8374 |     0.2450 | **-0.5924** |
+| **Intersection NDCG@10** |  **0.8237** | **0.8087** | **-0.0150** |
+
+**3-tier honest summary**:
+- ✅ The fix in `pa_cli/search.py:39-66` is correct (intersection
+  NDCG@10 essentially unchanged at 0.82 vs 0.81)
+- ❌ Pool coverage DROPPED 10% (0.9971 → 0.8960) — 35 of 100+ label=2
+  papers in old pool are MISSING from new pool
+- ❌ NDCG@10 regressed 0.66 (0.81 → 0.15) — because new pool is
+  bigger (5.9x) and combined ranker dilutes the relevant ones
+
+**Root cause**: The rebuild script
+`test_output/_rebuild_system_outputs_v3_9_10_10.py` excluded S2 to
+avoid 429 rate limit. S2 was working in v3.9.7.3 (returned ~3
+results/query with high relevance). Without S2, Crossref/OpenAlex's
+citation-heavy ranking dilutes the pool.
+
+**Per-query rank win rate**: 2/50 new-better, 39/50 old-better, 9/50
+equal. New ranking is worse on 78% of queries.
+
+**Forward path (ROADMAP added)**: **[P1-20] S2 throttling for batch
+rebuild** — add S2 back with 1 RPS + retry/backoff. Re-run re-eval
+after [P1-20] lands. Estimated 1.5h to implement + verify.
+
+**Mis-diagnosis correction**: This re-eval also caught a SCHEMA bug
+in the first re-eval (`bench/v01/reports/v3_9_10_10_re_eval.json`)
+— the rebuild had skipped the `bench/v01/_v4_rerank.py` step that
+adds `bm25_score` / `biencoder_score` / `v4_score` fields. The first
+NDCG@10 of 0.30 was due to all scores being 0 (default). Fixed by
+adding rank field + running v4_rerank before re-eval (v2 report
+shows the corrected numbers).
+
+**Files**:
+- `bench/v01/reports/v3_9_10_10_re_eval_v2.md` (NEW, 200+ lines honest report)
+- `bench/v01/reports/v3_9_10_10_re_eval_v2.json` (NEW, machine-readable)
+- `test_output/_re_eval_holdout_v3_9_10_10_v2.py` (NEW, comprehensive re-eval)
+- `test_output/_analyze_label2_positions.py` (NEW, per-query position analysis)
+- `test_output/_add_rank_field.py` (NEW, helper to add rank field to v3.9.10.10 raw)
+- `ROADMAP.md` (added [P1-20] S2 throttling item)
+
+**Discipline lesson**:
+- v3.9.10.10 ships a real fix that should be a connectivity improvement
+- But "the fix" only matters if end-to-end relevance improves too
+- Honest 3-tier reporting caught a regression the optimistic
+  CHANGELOG would have hidden
+
+---
+
+---
+
 ## [3.9.8.4] - 2026-07-16 (`pa fetch-batch` semi-automated CNKI guide + ROADMAP doc sync)
 
 ### v3.9.8.4 -- pa fetch-batch (2026-07-16 09:17)
