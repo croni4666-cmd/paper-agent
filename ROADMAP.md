@@ -1469,10 +1469,14 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`
   re-runs without retyping `--engine --year-min --limit`. Workaround
   for now: shell alias. Effort: 1h. ⭐⭐
+  **Status**: ✅ **DONE in v3.9.10.5** (released 2026-07-20). New
+  `pa_cli/search_saved.py` (~190 LOC) + Click subcommand group with 5
+  subcommands (list/run/add/del/edit). 26/26 unit + CLI smoke tests pass.
+  Atomic save via temp file + rename. ASCII-only name validation (re.UNICODE off).
   **Sub-task decomposition**:
-  - A. JSON schema for saved search (name + all flags as dict) — 15min
-  - B. CRUD functions (read / write / list / delete) — 20min
-  - C. CLI subcommands (5 of them) + 1 e2e test — 25min
+  - A. JSON schema for saved search (name + all flags as dict) — 15min ✅
+  - B. CRUD functions (read / write / list / delete) — 20min ✅
+  - C. CLI subcommands (5 of them) + 1 e2e test — 25min ✅ (5 CLI smoke tests + 21 unit tests)
 - **`[P2-10] pa dedup-strict` `<bibtex>` `--out deduped.bib`** — Stricter
   dedup: fuzzy title match (Levenshtein ≤ 5) + same-author+year
   cross-DOI merge + same-arxiv-ID cross-venue merge. Catches

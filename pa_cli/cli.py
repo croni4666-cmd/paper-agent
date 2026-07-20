@@ -1260,6 +1260,172 @@ def export_screening(bibtex_file, out_file, judges_db, query, no_unrated):
     )
 
 
+# =============== [P2-9] search-saved subcommand group ===============
+# Named search presets with parameter snapshots. Re-run `pa search` without
+# retyping all the flags.
+
+@main.group()
+def search_saved():
+    """[P2-9] Manage named search presets (list/run/add/del/edit).
+
+    Per ROADMAP [P2-9]: stores named search presets at
+    ~/.paper-agent/saved_searches.json. Each preset is a dict of all
+    `pa search` flags. Re-run without retyping:
+        pa search-saved run <name>
+
+    Subcommands:
+      list                   - list all saved searches
+      run <name>             - re-run a saved search
+      add <name> --query Q   - create a new saved search
+      del <name>             - delete a saved search
+      edit <name> [flags]    - update an existing saved search
+    """
+    pass
+
+
+@search_saved.command(name="list")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def search_saved_list(as_json):
+    """List all saved searches."""
+    from .search_saved import list_all, DEFAULT_PATH
+    rows = list_all(DEFAULT_PATH)
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    if not rows:
+        click.echo(f"(no saved searches; use `pa search-saved add <name>` to create one)")
+        return
+    click.echo(f"Saved searches ({len(rows)}) at {DEFAULT_PATH}:")
+    click.echo("")
+    click.echo(f"  {'NAME':<30s} {'#FLAGS':>7s}  QUERY")
+    click.echo(f"  {'-'*30} {'-'*7}  {'-'*50}")
+    for r in rows:
+        q = r['query'][:50] if r['query'] else '(no query)'
+        click.echo(f"  {r['name']:<30s} {r['n_flags']:>7d}  {q}")
+
+
+@search_saved.command(name="add")
+@click.argument("name")
+@click.option("--query", required=True, help="Search query string")
+@click.option("--year-min", type=int, default=None)
+@click.option("--year-max", type=int, default=None)
+@click.option("--engine", default=None, help="Comma-separated engine list (default: all)")
+@click.option("--limit", type=int, default=None, help="Max results per engine (default: 50)")
+@click.option("--concepts", default=None, help="OpenAlex concept IDs, comma-separated")
+@click.option("--concept", default=None, help="Concept name(s) to resolve")
+@click.option("--concept-mode", default=None, type=click.Choice(["or", "and"]))
+@click.option("--enrich-top", type=int, default=None)
+@click.option("--enrich-top-min-cites", type=int, default=None)
+@click.option("--enrich-max-age-years", type=int, default=None)
+@click.option("--sort-by", default=None, type=click.Choice(["cite", "year", "relevance"]))
+@click.option("--source", default=None, help="Post-filter to specific engines")
+def search_saved_add(name, query, year_min, year_max, engine, limit, concepts,
+                     concept, concept_mode, enrich_top, enrich_top_min_cites,
+                     enrich_max_age_years, sort_by, source):
+    """Create a new saved search."""
+    from .search_saved import add, DEFAULT_PATH
+    flags = {
+        'year_min': year_min, 'year_max': year_max, 'engine': engine,
+        'limit': limit, 'concepts': concepts, 'concept': concept,
+        'concept_mode': concept_mode, 'enrich_top': enrich_top,
+        'enrich_top_min_cites': enrich_top_min_cites,
+        'enrich_max_age_years': enrich_max_age_years,
+        'sort_by': sort_by, 'source': source,
+    }
+    try:
+        entry = add(name, query, DEFAULT_PATH, **flags)
+    except (ValueError, FileExistsError) as e:
+        click.echo(f"[pa search-saved add] FAILED: {e}", err=True)
+        sys.exit(1)
+    click.echo(f"[pa search-saved add] saved {name!r} to {DEFAULT_PATH}", err=True)
+
+
+@search_saved.command(name="del")
+@click.argument("name")
+def search_saved_del(name):
+    """Delete a saved search."""
+    from .search_saved import delete, DEFAULT_PATH
+    if delete(name, DEFAULT_PATH):
+        click.echo(f"[pa search-saved del] deleted {name!r}", err=True)
+    else:
+        click.echo(f"[pa search-saved del] {name!r} not found", err=True)
+        sys.exit(1)
+
+
+@search_saved.command(name="edit")
+@click.argument("name")
+@click.option("--query", default=None, help="New query (replaces existing)")
+@click.option("--year-min", type=int, default=None)
+@click.option("--year-max", type=int, default=None)
+@click.option("--engine", default=None)
+@click.option("--limit", type=int, default=None)
+@click.option("--sort-by", default=None, type=click.Choice(["cite", "year", "relevance"]))
+def search_saved_edit(name, query, year_min, year_max, engine, limit, sort_by):
+    """Update an existing saved search (only specified flags change)."""
+    from .search_saved import update, DEFAULT_PATH
+    flags = {
+        'query': query, 'year_min': year_min, 'year_max': year_max,
+        'engine': engine, 'limit': limit, 'sort_by': sort_by,
+    }
+    try:
+        update(name, DEFAULT_PATH, **flags)
+    except (ValueError, KeyError) as e:
+        click.echo(f"[pa search-saved edit] FAILED: {e}", err=True)
+        sys.exit(1)
+    click.echo(f"[pa search-saved edit] updated {name!r}", err=True)
+
+
+@search_saved.command(name="run")
+@click.argument("name")
+@click.option("-o", "--output", default=None, type=click.Path(dir_okay=False),
+              help="Optional output file path (.json or .bib)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def search_saved_run(name, output, quiet):
+    """Re-run a saved search with its stored flags."""
+    from .search_saved import get, to_pa_args, DEFAULT_PATH
+    entry = get(name, DEFAULT_PATH)
+    if entry is None:
+        click.echo(f"[pa search-saved run] {name!r} not found", err=True)
+        sys.exit(1)
+    if not entry.get('query'):
+        click.echo(f"[pa search-saved run] {name!r} has no query field", err=True)
+        sys.exit(1)
+    # Call the search command programmatically
+    # We need to convert stored flags → kwargs for search() function
+    from .cli import search as search_cmd
+    args = to_pa_args(name, DEFAULT_PATH)
+    if not quiet:
+        click.echo(f"[pa search-saved run] {name!r}: query={args['query']!r}, "
+                   f"engine={args.get('engine', 'all')}, year_min={args.get('year_min')}, "
+                   f"year_max={args.get('year_max')}, limit={args.get('limit', 50)}",
+                   err=True)
+    try:
+        search_cmd(
+            query=args['query'],
+            year_min=args.get('year_min'),
+            year_max=args.get('year_max'),
+            limit=args.get('limit', 50),
+            engine=args.get('engine', 'all'),
+            out_format=args.get('format', 'json'),
+            output=output,
+            concept_ids=args.get('concepts'),
+            concept_names=args.get('concept'),
+            concept_mode=args.get('concept_mode', 'or'),
+            enrich_top=args.get('enrich_top', 0),
+            enrich_top_min_cites=args.get('enrich_top_min_cites', 1),
+            enrich_max_age_years=args.get('enrich_max_age_years', 10),
+            sort_by=args.get('sort_by', 'cite'),
+            source_filter=args.get('source'),
+            quiet=quiet,
+        )
+    except SystemExit as e:
+        # search() may call sys.exit on its own errors; re-raise to let click handle
+        raise
+    except Exception as e:
+        click.echo(f"[pa search-saved run] FAILED: {e}", err=True)
+        sys.exit(2)
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL
