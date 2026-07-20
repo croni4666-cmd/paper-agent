@@ -1,0 +1,53 @@
+{
+  "version": "v3.9.10.2-simpler-rerank",
+  "date": "2026-07-20T12:37:47.642165",
+  "method": "RidgeClassifier + LogisticRegression on 8 LTR features",
+  "n_queries": 50,
+  "n_labeled_pairs": 1258,
+  "features": [
+    "bm25_score",
+    "biencoder_score",
+    "combined_score",
+    "prf_score",
+    "log_cite_count",
+    "year",
+    "is_recent",
+    "has_abstract"
+  ],
+  "single_holdout": {
+    "method": "train_test_split seed=42 test_size=20",
+    "n_train": 30,
+    "n_test": 20,
+    "ridge_ndcg_at_10": 0.852597756319852,
+    "ridge_recall_at_10": 0.7808730158730159,
+    "ridge_precision_at_10": 0.52,
+    "logreg_ndcg_at_10": 0.8409377344071822,
+    "logreg_recall_at_10": 0.7658730158730159,
+    "logreg_precision_at_10": 0.505,
+    "combined_baseline_ndcg_at_10": 0.8987620951559625
+  },
+  "five_fold_cv": {
+    "ridge_ndcg_mean": 0.8247389614436411,
+    "ridge_ndcg_std": 0.03640183531798998,
+    "ridge_recall_mean": 0.7821223874165051,
+    "logreg_ndcg_mean": 0.8265448321326561,
+    "logreg_ndcg_std": 0.027784762187573073,
+    "logreg_recall_mean": 0.7749636572577749
+  },
+  "comparison_to_v3_9_10_1": {
+    "ltr_lambdamart_100_trees_single_holdout_ndcg": 0.7679,
+    "combined_baseline_single_holdout_ndcg": 0.8988,
+    "ltr_lambdamart_5fold_ndcg": 0.7806,
+    "combined_baseline_5fold_direct_ndcg": 0.8825
+  },
+  "logreg_coefficients_class2": {
+    "bm25_score": -0.03436002880334854,
+    "biencoder_score": 0.5362314581871033,
+    "combined_score": 0.616722583770752,
+    "prf_score": 0.01264311745762825,
+    "log_cite_count": -0.29999804496765137,
+    "year": -0.10276559740304947,
+    "is_recent": -0.019507430493831635,
+    "has_abstract": -0.052837811410427094
+  }
+}
