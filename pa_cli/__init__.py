@@ -1,18 +1,19 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.10.3 ([P2-7] `pa cite-check` pre-build validator shipped.
-See CHANGELOG [3.9.10.3] for full release notes including:
+Latest stable: v3.9.10.4 ([P2-8] `pa export-screening` Bibtex→CSV shipped.
+See CHANGELOG [3.9.10.4] for full release notes including:
   - v3.9.10: deprecate BGE/LTR from default, promote combined
   - v3.9.10.1: Phase 1.5 holdout validation (5-fold + single 30/20)
   - v3.9.10.2: Simpler rerank alternative (Ridge/LogReg beat LTR)
-  - v3.9.10.3: [P2-7] pa cite-check subcommand).
+  - v3.9.10.3: [P2-7] pa cite-check pre-build validator
+  - v3.9.10.4: [P2-8] pa export-screening Bibtex→CSV).
 Implements paper-agent v4 design principle: after 5 minutes of Cloudflare
 challenge failure, stop iterating and surface a "your turn" handoff to
 user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.10.3"
+__version__ = "3.9.10.4"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 

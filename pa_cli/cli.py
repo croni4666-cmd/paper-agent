@@ -1206,6 +1206,60 @@ def cite_check(bibtex_file, skeleton_file, as_json, strict):
         sys.exit(1)
 
 
+# =============== [P2-8] export-screening subcommand ===============
+# Bibtex (+ optional pa judge data) → systematic-review CSV ready for
+# Notion / Excel / RevMan / Covidence import.
+
+@main.command(name="export-screening")
+@click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--out", "out_file", required=True, type=click.Path(dir_okay=False),
+              help="Output CSV file path")
+@click.option("--judges", "judges_db", default=None, type=click.Path(exists=True, dir_okay=False),
+              help="Optional pa judge sqlite db (default: ~/.paper-agent/judgements.sqlite). "
+                   "If not given, only bib metadata is exported (relevance=empty).")
+@click.option("--query", default=None,
+              help="Filter to a single pa judge query (default: all queries)")
+@click.option("--no-unrated", is_flag=True,
+              help="Skip bib papers that have NO judge data (default: include them as empty rows)")
+def export_screening(bibtex_file, out_file, judges_db, query, no_unrated):
+    """[P2-8] Export Bibtex (+ optional judge data) to screening CSV.
+
+    Per ROADMAP [P2-8]: produces a CSV with one row per (paper, query) pair,
+    joined with bib metadata. Columns:
+      paper_key, query, relevance, reason, source,
+      title, authors, year, venue, doi, abstract, type, bib_url
+
+    Pluggable into Notion (csv import), Excel (utf-8), RevMan (CSV), or
+    Covidence (CSV). UTF-8 with BOM (utf-8-sig) for Excel compatibility.
+
+    Examples:
+      pa export-screening refs.bib --out screening.csv
+      pa export-screening refs.bib --out screening.csv --no-unrated
+      pa export-screening refs.bib --judges judgements.sqlite --query "AI literacy" --out lit.csv
+    """
+    from .export_screening import run_export_screening
+    bib_path = Path(bibtex_file)
+    out_path = Path(out_file)
+    judges_path = Path(judges_db) if judges_db else None
+    try:
+        result = run_export_screening(
+            bib_path=bib_path,
+            out_path=out_path,
+            judges_db=judges_path,
+            query=query,
+            include_unrated=not no_unrated,
+        )
+    except Exception as e:
+        click.echo(f"[pa export-screening] FAILED: {e}", err=True)
+        sys.exit(2)
+    click.echo(
+        f"[pa export-screening] bib={result['n_bib_papers']} papers, "
+        f"judge_rows={result['n_judge_rows']}, unrated={result['n_unrated']}, "
+        f"wrote {result['n_csv_rows']} rows → {result['out_path']}",
+        err=True,
+    )
+
+
 # =============== [P3-1] judge subcommand ===============
 # Relevance judgement collection for ML/DL rerank (per ROADMAP Tier 5
 # long-term). Stores in ~/.paper-agent/judgements.sqlite. Re-probe ML/DL
