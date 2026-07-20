@@ -23,6 +23,31 @@ Approach:
 - Sum of weights = 1, applied to per-engine result budget
 
 5-check Global Rule audit: 5/5 pass
+
+================================================================================
+PERFORMANCE NUMBERS (updated 2026-07-20 for v3.9.10)
+================================================================================
+- v3.9.4 (n=25, no class balancing):       accuracy 0.96, macro F1 0.20 (estimated)
+- v3.9.7.1 (n=25, balanced, 24/1 split):   accuracy 0.96, macro F1 0.889 (INFLATED)
+- v3.9.7.3 (n=47, balanced, 24/20/3 split): accuracy 0.74, macro F1 0.609 ← HONEST
+
+The v3.9.7.1 number (0.889) is a CLASS DISTRIBUTION ARTIFACT: 24 openalex + 1
+crossref + 0 arxiv + 0 s2 + 0 core. With class_weight='balanced', 4/5 folds
+got only openalex in test → trivially correct → macro F1 ≈ 1.0 on 4 folds.
+The 5th fold had 1 crossref → model predicted openalex → crossref F1 = 0.
+Mean = (4*1.0 + 0.44) / 5 = 0.89. This is "did the model not get distracted"
+not "did the model learn minority routing".
+
+The v3.9.7.3 number (0.609, n=47) is the HONEST one. With 20 crossref in
+training data, the model can actually attempt to learn crossref features,
+and macro F1 drops to 0.61 — still > 0.20 random but not "great".
+
+Source: bench/v01/reports/v3_9_7_3_moe_router_n50.json
+
+CONFIDENCE NOTE: 0.609 macro F1 is on n=47 with 3-engine-only (s2/core=0,
+arxiv=3). At n=100+ with all 5 engines reachable, this number is expected to
+change. Treat current number as a snapshot, not a final verdict.
+================================================================================
  1. $0 cost (sklearn + lightgbm pure local, no API)
  2. No hosted service
  3. Maintenance: ~250 LOC new
@@ -583,28 +608,31 @@ def generate_router_report(
         sup = int(np.mean([m["support"] for m in per_fold]))
         lines.append(f"| `{engine}` | {prec:.4f} | {rec:.4f} | {f1:.4f} | {sup} |")
     lines.append("")
-    lines.append("## v3.9.4 vs v3.9.7.1 — what class_weight='balanced' actually changed")
+    lines.append("## v3.9.4 vs v3.9.7.1 vs v3.9.7.3 — what class_weight='balanced' actually changed")
     lines.append("")
     lines.append("**On the surface** (mean over 5 folds):")
-    lines.append("- Accuracy: 0.96 (v3.9.4) = 0.96 (v3.9.7.1)  ← identical")
-    lines.append("- Balanced accuracy: 0.20 (v3.9.4) → **0.90 (v3.9.7.1)**  ← +0.70")
-    lines.append("- Macro F1: 0.20 (v3.9.4) → **0.89 (v3.9.7.1)**  ← +0.69")
+    lines.append("- Accuracy: 0.96 (v3.9.4) = 0.96 (v3.9.7.1) → 0.74 (v3.9.7.3, n=47)  ← -0.22 with real n=47 data")
+    lines.append("- Balanced accuracy: 0.20 (v3.9.4) → 0.90 (v3.9.7.1, n=25) → 0.76 (v3.9.7.3, n=47)")
+    lines.append("- Macro F1: 0.20 (v3.9.4) → 0.89 (v3.9.7.1, n=25) → **0.61 (v3.9.7.3, n=47)**  ← honest number is 0.61")
     lines.append("")
-    lines.append("**But the picture is more nuanced** (per-fold):")
-    lines.append("- 4/5 folds: macro_f1 = 1.0 (test set has only openalex, 4-class zero support)")
-    lines.append("- 1/5 folds (fold 3): macro_f1 = 0.44 (test set has 1 crossref, model predicts openalex)")
+    lines.append("**v3.9.7.3 (n=47 mixed labels, this is the real number)** — per-fold:")
+    lines.append("- fold 0: acc=0.90, macro_f1=0.87 (10 openalex + 0 crossref + 0 arxiv in test)")
+    lines.append("- fold 1: acc=0.60, macro_f1=0.44 (5 openalex + 3 crossref + 2 arxiv — arxiv F1=0)")
+    lines.append("- fold 2: acc=0.89, macro_f1=0.63 (5 openalex + 4 crossref + 0 arxiv)")
+    lines.append("- fold 3: acc=0.56, macro_f1=0.53 (6 openalex + 2 crossref + 1 arxiv)")
+    lines.append("- fold 4: acc=0.78, macro_f1=0.57 (6 openalex + 3 crossref + 0 arxiv)")
     lines.append("")
-    lines.append("**Honest verdict on v3.9.7.1** (3-tier):")
-    lines.append("- ✅ **Verified**: model no longer always predicts openalex — but this only matters if there's actually a minority class to predict. On the 4 folds with only openalex test samples, model is correct trivially.")
-    lines.append("- ⚠️ **Macro F1=0.89 is somewhat inflated**: 4/5 folds are degenerate (single class in test), so the 0.89 number is mostly 'did model avoid predicting wrong class on trivial folds' + 'fold 3 partial credit'")
-    lines.append("- ⚠️ **Minority class (crossref) recall = 0%**: when crossref is in test (1 of 5 folds), model still predicts openalex. The class_weight='balanced' gave it 25x weight in loss, but n=25 with 1 crossref is too small to learn a meaningful minority pattern.")
-    lines.append("- ❌ **NOT a 'finding' or 'insight'**: confirms that n=25 with severe class imbalance is fundamentally insufficient for a 5-class multi-class router. Need n=50+ with diverse queries (q026-q050) to test if MoE can actually learn minority class routing.")
+    lines.append("**Honest verdict on v3.9.7.3 (n=47, 3-engine-only)** — 3-tier:")
+    lines.append("- ✅ **Verified**: MoE works — 0.61 macro F1 > 0.20 random baseline. Real n=47 reveals actual capability.")
+    lines.append("- ⚠️ **Class distribution still imbalanced**: arxiv=3, openalex=24, crossref=20 (s2=0, core=0). The 'balanced' class_weight helps but cannot overcome 0-support classes (s2, core) — F1 still undefined for them.")
+    lines.append("- ⚠️ **arxiv underperforms**: with only 3 queries, arxiv F1=0 in folds where it's in test set (fold 1). n<100 means high variance per fold.")
+    lines.append("- ❌ **NOT a 'finding' or 'insight' about MoE superiority**: confirms that 3-engine-only (s2/core still disabled) limits MoE. Re-evaluate when s2 + core are reachable.")
     lines.append("")
     lines.append("**What we'd need to claim a real 'MoE works'** (per ROADMAP [P1-11] backlog):")
-    lines.append("1. q026-q050 user queries (currently 25 → 50, with more non-openalex dominant)")
-    lines.append("2. At least 5-10 queries per class (arxiv/s2/crossref/core each get ≥5)")
-    lines.append("3. Then re-run with class_weight='balanced' — if macro F1 > 0.7 on the 5+ per-class data, MoE is a real 'finding'")
-    lines.append("4. Otherwise, fall back to round-robin pool + per-class balanced sampling for low-frequency engines")
+    lines.append("1. ✅ q026-q050 user queries (n=50 done in v3.9.7.3, with 20 crossref + 3 arxiv + 24 openalex)")
+    lines.append("2. ⚠️ Still need 5-10 queries per class for arxiv (only 3) and we need s2/core to come back online (currently 0)")
+    lines.append("3. ✅ class_weight='balanced' applied — but macro F1=0.61, not 0.7 threshold")
+    lines.append("4. Open: round-robin pool + per-class balanced sampling for low-frequency engines")
     lines.append("")
 
     lines.append("## 3-tier honest audit (per MEMORY.md discipline)")

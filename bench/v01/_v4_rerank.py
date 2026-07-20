@@ -4,15 +4,28 @@ bench/v01/_v4_rerank.py — v4 multi-condition rerank stack.
 Conditions supported (CLI: --condition {bm25|biencoder|combined|prf|random}):
   - bm25        : pure BM25 (sanity check, matches _bm25_rerank.py)
   - biencoder   : pure bi-encoder cosine (sentence-transformers all-MiniLM-L6-v2, cached)
-  - combined    : 0.5 * BM25_norm + 0.5 * bi-encoder_norm
+  - combined    : 0.5 * BM25_norm + 0.5 * bi-encoder_norm  ← RECOMMENDED DEFAULT (v3.9.10)
   - prf         : pseudo-relevance feedback (Rocchio) using BM25 top-5 docs to expand query
   - random      : random shuffle (ablation baseline)
 
 For each query, take the 30 candidates from system_outputs/, rerank them per condition,
 write to system_outputs_<condition>/.  Then eval.py computes per-condition metrics.
 
+RECOMMENDED DEFAULT (v3.9.10):  --condition combined
+  - Source: bench/v01/reports/v3_9_7_3_action_plan.md
+  - combined NDCG@10 = 0.8141 (v3.9.7.3 5-fold CV) ≈ 0.8825 (direct, no train-fit norm noise)
+
+DEPRECATED METHODS (do not use as default, kept for comparison):
+  - BGE-reranker (in pa_cli/cross_encoder.py): Wilcoxon p=0.000825 sig. WORSE than
+    bi-encoder (Δ NDCG@10 = -0.1064, n=48). Trained on MS MARCO, not academic.
+  - LTR LambdaMART 100 trees (in pa_cli/ltr.py): Loses to combined baseline by
+    -0.0335 NDCG@10 at n=50 (overfit at small n). Re-evaluate at n>200.
+
 ROADMAP [P1-5] (v3.9.1, 2026-07-13): Added `--recency-mode` flag (strict|moderate|off).
 Applies user-defined rule: papers >10y old need cite > mean+2std; >20y need cite > mean+2.5std.
+
+ROADMAP [P0-?] (v3.9.10, 2026-07-20): combined condition promoted to default.
+See CHANGELOG [3.9.10] for BGE/LTR deprecation context.
 Older papers with high bi-encoder relevance can escape the downweight.
 
 HF offline mode forced: model is cached locally from v3.8.0. If you need to redownload,

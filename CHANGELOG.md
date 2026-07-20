@@ -236,6 +236,89 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10] - 2026-07-20 (Deprecate BGE-rerank + LTR from default; promote combined to default)
+
+### v3.9.10 — BGE/LTR deprecation ships (2026-07-20)
+
+**Decision (not new code)**: v3.9.7.3 n=50 evaluation showed two methods
+that should NOT be the default ranker:
+
+1. **BGE-reranker** — significantly WORSE than bi-encoder for academic
+   abstracts. Wilcoxon signed-rank test on n=48 paired:
+   - Δ NDCG@10 = -0.1064 (BGE loses by 10.6 pp)
+   - Wilcoxon p = 0.000825 (significant at α=0.05)
+   - 36/48 queries BGE loses, 12/48 wins
+   - Root cause: BGE-reranker-base trained on MS MARCO (English web search),
+     not academic. q026-q050 are Chinese → BGE has no fallback.
+   - True gap is LARGER than -0.1064 because A2 auto-labeling used BGE as
+     tie-breaker (small +bias for BGE).
+
+2. **LTR (LambdaMART 100 trees)** — loses to combined baseline at n=50:
+   - LTR NDCG@10 = 0.7806 ± 0.048
+   - combined baseline (0.5*BM25 + 0.5*bi-encoder) = 0.8141 (5-fold CV)
+   - Δ = -0.0335 (LTR loses to simple linear baseline)
+   - Root cause: 100 trees on n=50 overfits. Each tree sees 10-15 queries.
+   - Note: LTR uses only BM25 + biencoder + metadata, NOT BGE — so this
+     result is NOT contaminated by the A2 auto-label circularity.
+
+**New default**: `combined` (0.5*BM25_norm + 0.5*bi-encoder_norm), the simplest
+method that has no parameters, no overfit risk, and the best honest NDCG@10.
+
+**Code changes** (docstring-only, no new code paths):
+- `pa_cli/cross_encoder.py`: BGE marked DEPRECATED with Wilcoxon evidence
+- `pa_cli/ltr.py`: LTR marked CONDITIONALLY DEPRECATED for n<200
+- `pa_cli/moe_router.py`: macro F1 0.89 → 0.61 (honest number, n=47 mixed)
+- `bench/v01/_v4_rerank.py`: `combined` marked RECOMMENDED DEFAULT
+
+**Self-audit bug fixed in v3.9.10**: v3.9.7.3's own Wilcoxon MD report
+mis-stated p>0.05 (text said "not significant, n<100 noise") while the
+JSON showed p=0.000825 (highly significant). Caught and re-verified
+2026-07-20 via `test_output/_verify_wilcoxon_recompute.py`. The fix:
+- `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.md` rewritten
+  to correctly report the sig. negative result.
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (docstring updates only, no new code)
+- No hosted service
+- Maintenance: 1-line changes in 4 files
+- No publish obligation
+- Free-tier degradation: `pa search` does NOT use BGE/LTR, so no user-facing
+  behavior change
+
+**Files changed**:
+- `pa_cli/cross_encoder.py` (DEPRECATED docstring)
+- `pa_cli/ltr.py` (CONDITIONAL DEPRECATION docstring)
+- `pa_cli/moe_router.py` (0.89 → 0.61 honest numbers)
+- `bench/v01/_v4_rerank.py` (combined = RECOMMENDED DEFAULT)
+- `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.md` (MD bug fix)
+- `bench/v01/reports/v3_9_7_3_action_plan.md` (NEW — deprecation context)
+- `test_output/_verify_wilcoxon_recompute.py` (NEW — re-verify p=0.000825)
+- `test_output/_verify_combined_n50.py` (NEW — combined baseline recompute)
+- `test_output/_verify_combined_cv.py` (NEW — 5-fold CV baseline recompute)
+- `test_output/_inspect_combined_schema.py` (NEW — debug schema)
+- `test_output/_inspect_labels_format.py` (NEW — debug labels)
+- `ROADMAP.md` ([P0-11] updated to "shipped in v3.9.10" with full action items)
+- `CHANGELOG.md` (this entry)
+
+**Discipline lessons (added to memory)**:
+- Always verify summary text against raw JSON before shipping. v3.9.7.3
+  self-audit failed twice (v3.9.7.2 mis-diagnosis "labels缺口" was actually
+  code bug; v3.9.7.3 MD mis-stated p=0.000825 as "n.s."). Same failure
+  pattern in the same session.
+- BGE circularity in A2 auto-labeling: when the same model is used both
+  for label generation AND for evaluation, the evaluation is biased
+  in favor of that model. True gap is LARGER than reported.
+
+**Open follow-up (NOT in v3.9.10)**:
+- [ ] Quantify A2 auto-label circularity: re-run BGE Wilcoxon with BGE-excluded
+      tie-breaker. 1-2h controlled experiment. [ROADMAP [P0-11] open]
+- [ ] Investigate monoT5 / ColBERT / LLM-fulltext as BGE replacement.
+      Blocked on user priority input.
+- [ ] Re-evaluate LTR at n>200 with real labels. Blocked by [P1-13] label
+      expansion.
+
+---
+
 ## [3.9.9.10] - 2026-07-16 ([P1-18] --enrich-max-age-years year-aware skip)
 
 ### v3.9.9.10 -- [P1-18] ship (2026-07-16 18:30)
