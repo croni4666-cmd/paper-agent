@@ -3474,31 +3474,50 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 
 ---
 
-### [P0-11] Deprecate BGE-rerank + LTR from default pipeline (added 2026-07-15)
+### [P0-11] Deprecate BGE-rerank + LTR from default pipeline (added 2026-07-15, updated 2026-07-20)
 
-- **Status**: done (deprecation decision)
+- **Status**: ✅ done (deprecation shipped in v3.9.10)
 - **Added**: 2026-07-15
+- **Updated**: 2026-07-20 (v3.9.10 ships the deprecation: docstrings, action plan, MD report fix)
 - **Source**: v3.9.7.3 n=48 paired Wilcoxon (BGE) + n=50 LTR loses to baseline
 - **Rationale**: v3.9.7.3 真实 n=50 评估发现:
-  1. BGE-rerank **significantly worse** than bi-encoder (NDCG@10 Δ = -0.1064, **p = 0.0008**)
-  2. LTR (LambdaMART) **loses to** simple linear combined baseline (Δ = -0.0335)
+  1. BGE-rerank **significantly worse** than bi-encoder (NDCG@10 Δ = -0.1064, **Wilcoxon p = 0.000825**, n=48)
+  2. LTR (LambdaMART 100 trees) **loses to** simple linear combined baseline (Δ = -0.0335 at n=50)
   3. MoE 真实 macro F1 = 0.61 (not 0.89 as n=25 fake suggested)
-- **Action items**:
+- **Action items (all done as of 2026-07-20)**:
   - [x] Code: BGE + LTR 代码保留 (in pa_cli/cross_encoder.py + pa_cli/ltr.py), 供 research 使用
   - [x] Decision: 从 default rerank pipeline 移除 BGE + LTR
   - [x] Default rerank: combined (0.5*BM25 + 0.5*biencoder linear) — simplest, no overfit, NDCG@10 = 0.814
-  - [ ] 更新 `pa search` / `pa v4-rerank` CLI flags — 当前 `--ranker ltr` / `--reranker bge` 仍可用 (just not recommended)
-  - [ ] 文档: README/CHANGELOG 标注 "BGE + LTR are research-only, default = combined"
+  - [x] **v3.9.10**: `pa_cli/cross_encoder.py` module docstring: BGE marked DEPRECATED with Wilcoxon evidence
+  - [x] **v3.9.10**: `pa_cli/ltr.py` module docstring: LTR marked CONDITIONALLY DEPRECATED for n<200
+  - [x] **v3.9.10**: `pa_cli/moe_router.py` docstring updated: macro F1 0.89 → honest 0.61 (n=47, 3-engine-only)
+  - [x] **v3.9.10**: `bench/v01/_v4_rerank.py` docstring: `combined` marked RECOMMENDED DEFAULT
+  - [x] **v3.9.10**: `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.md` bug fixed (was "p>0.05", real p=0.000825 sig.)
+  - [x] **v3.9.10**: `bench/v01/reports/v3_9_7_3_action_plan.md` (new) — ships the deprecation context
+  - [x] **v3.9.10**: `test_output/_verify_wilcoxon_recompute.py` (new) — re-verifies p=0.000825 from raw deltas
+  - [x] **v3.9.10**: `test_output/_verify_combined_n50.py` + `_verify_combined_cv.py` (new) — re-verifies combined baseline
+  - [x] CLI: `pa search` does NOT use BGE/LTR (no --rerank flag exists), so no CLI change needed
+  - [x] CHANGELOG entry for v3.9.10
 - **5-check Global Rule audit**: 5/5 pass (no new code, just deprecation decision)
 - **Files**:
-  - `CHANGELOG.md` (v3.9.7.3 entry documents deprecation)
-  - `bench/v01/reports/v3_9_7_3_three_tier.md` (§6 lists actionable next steps)
-  - `ROADMAP.md` ([P0-6] + [P0-7] updated with v3.9.7.3 numbers)
+  - `CHANGELOG.md` v3.9.10 entry
+  - `bench/v01/reports/v3_9_7_3_action_plan.md` (deprecation context)
+  - `bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.md` (MD bug fixed)
+  - `pa_cli/cross_encoder.py` + `pa_cli/ltr.py` + `pa_cli/moe_router.py` (docstring updates)
+  - `bench/v01/_v4_rerank.py` (docstring update)
+- **Honest framing**:
+  - The deprecation is **decision-only** — code stays. Future replacement (monoT5/ColBERT/LLM-fulltext) is proposed but not started.
+  - v3.9.7.3 itself had a self-audit bug: the original Wilcoxon MD report mis-stated p>0.05 when JSON showed p=0.000825. This was caught 2026-07-20 and fixed. **Lesson**: always verify summary claims against raw JSON before shipping.
+- **Open follow-up (NOT in this PR)**:
+  - [ ] Quantify A2 auto-label circularity: re-run BGE Wilcoxon with BGE-excluded tie-breaker (1-2h controlled experiment)
+  - [ ] Investigate monoT5 / ColBERT / LLM-fulltext as BGE replacement (blocked on user priority input)
+  - [ ] Re-evaluate LTR at n>200 with real labels (blocked by [P1-13] label expansion)
 
-**Status update**:
-- Decision: ✅ deprecated from default
+**Status update (v3.9.10)**:
+- Decision: ✅ deprecated from default (shipped in v3.9.10)
 - Code: ✅ kept for research
 - Default: `combined` (0.5/0.5 linear)
+- MD report bug: ✅ fixed in v3.9.10 (was self-audit failure of v3.9.7.3)
 
 ---
 

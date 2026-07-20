@@ -18,6 +18,35 @@ Network fallback:
 - We test for this and fall back automatically
 
 5-check Global Rule audit: 5/5 pass
+
+================================================================================
+DEPRECATED 2026-07-20 (v3.9.10) — DO NOT USE AS DEFAULT RANKER
+================================================================================
+Wilcoxon signed-rank test on n=48 paired academic abstracts:
+
+    BGE-reranker vs bi-encoder (all-MiniLM-L6-v2):
+      Δ NDCG@10  = -0.1064  (BGE loses by 10.6 pp)
+      Wilcoxon p = 0.000825  (significant at α=0.05)
+      n_pos / n_neg = 12 / 36  (BGE wins 25% of queries, loses 75%)
+
+Source: bench/v01/reports/v3_9_7_3_cross_encoder_wilcoxon_n50.json (re-verified
+2026-07-20 via test_output/_verify_wilcoxon_recompute.py).
+
+Root cause: BGE-reranker-base is trained on MS MARCO (English web search).
+Academic abstracts differ in distribution: long research queries, technical jargon,
+research-relevance signal, multilingual (q026-q050 are Chinese).
+A2 auto-labeling for q026-q050 used BGE as tie-breaker → small +bias for BGE;
+the true gap is LARGER than -0.1064.
+
+Replacement path (not yet implemented, blocked on user input):
+  - monoT5 (academic reranker)
+  - ColBERT (late-interaction, academic-tuned)
+  - LLM-based full-text rerank (would need 8-32k context)
+
+DO NOT remove this code — keep for future academic-domain reranker comparison.
+For default ranker, use combined (0.5*BM25 + 0.5*bi-encoder) via
+bench/v01/_v4_rerank.py --condition combined.
+================================================================================
  1. $0 cost (one-time ~278MB local download, no per-call API)
  2. No hosted service
  3. Maintenance: ~250 LOC

@@ -14,6 +14,45 @@ Why LambdaMART:
 - Captures non-linear feature interactions (vs linear weighted combination)
 - LightGBM pure local, no hosted service, $0 cost, Global Rule 5/5 pass
 - Fast: 5-fold CV on 741 labeled pairs < 1 second on CPU
+
+================================================================================
+CONDITIONAL DEPRECATION 2026-07-20 (v3.9.10) — DO NOT USE FOR n < 200
+================================================================================
+At n=50 with 100 trees, LTR LOSES to combined baseline:
+
+    LTR (LambdaMART 100 trees) NDCG@10 = 0.7806 ± 0.048
+    combined (0.5*BM25 + 0.5*bi-encoder) = 0.8141 (5-fold CV)
+    Δ NDCG@10 (LTR - baseline)          = -0.0335
+
+Source: bench/v01/reports/v3_9_7_3_ltr_n50.json (n=50 mixed labels).
+
+Root cause: 100 trees on n=50 overfits. Each tree sees only 10-15 queries per
+fold, so it learns noise on minor features (has_abstract, is_recent) rather than
+generalizing. Combined baseline has no parameters → no overfit risk.
+
+Feature importance (LTR on n=50, total ≈ 2000):
+    combined_score   617  ← main signal
+    biencoder_score  593
+    log_cite_count   233
+    bm25_score       202
+    prf_score        165
+    year             107
+    has_abstract      23
+    is_recent          2
+
+Note: LTR uses only BM25 + biencoder + metadata — NOT BGE — so this LTR eval
+is NOT contaminated by the A2 auto-label circularity that biases BGE numbers up.
+
+RECOMMENDATION (v3.9.10):
+  - For n < 200: use combined baseline (0.5*BM25 + 0.5*bi-encoder). This is the
+    default in bench/v01/_v4_rerank.py --condition combined.
+  - For n >= 200: re-evaluate LambdaMART with 100-200 trees. May become competitive
+    once it has enough data to not overfit.
+  - Alternative to consider: shallow GBDT (num_leaves=7, n_estimators=20-50)
+    that may not overfit at n=50.
+
+DO NOT remove this code — keep for n>200 evaluation and for shallow GBDT variant.
+================================================================================
 """
 from __future__ import annotations
 
