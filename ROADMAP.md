@@ -1453,11 +1453,17 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.
   Pluggable into Notion / Excel / RevMan / Covidence for formal screening.
   Reuses `pa judge` sqlite + `pa scaffold` bibtex parser. Effort: 1.5h. ⭐⭐⭐
+  **Status**: ✅ **DONE in v3.9.10.4** (released 2026-07-20). New
+  `pa_cli/export_screening.py` (~190 LOC). 13 columns: `paper_key, query,
+  relevance, reason, source, title, authors, year, venue, doi, abstract,
+  type, bib_url`. CSV writer uses `utf-8-sig` (BOM for Excel) + `csv.QUOTE_MINIMAL`
+  for multiline fields. 26/26 unit + e2e tests pass. CLI subcommand
+  `pa export-screening BIBTEX --out CSV [--judges DB] [--query Q] [--no-unrated]`.
   **Sub-task decomposition**:
-  - A. build `screening_dict` per DOI (title+authors+year+venue+doi+abstract) — 30min
-  - B. join with `pa judge` data on (query, paper_key) — 20min
-  - C. CSV writer (handle quoting, encoding, optional `pd.DataFrame.to_excel`) — 20min
-  - D. CLI wire + 1 e2e test — 20min
+  - A. build `screening_dict` per DOI (title+authors+year+venue+doi+abstract) — 30min ✅
+  - B. join with `pa judge` data on (query, paper_key) — 20min ✅
+  - C. CSV writer (handle quoting, encoding, optional `pd.DataFrame.to_excel`) — 20min ✅
+  - D. CLI wire + 1 e2e test — 20min ✅ (5 e2e tests + 21 unit tests)
 - **`[P2-9] pa search-saved` `list/run/add/del/edit`** — Named search
   presets with parameter snapshots. Stores in
   `~/.paper-agent/saved_searches.json`. `pa search-saved run <name>`

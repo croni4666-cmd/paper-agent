@@ -236,6 +236,79 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.4] - 2026-07-20 ([P2-8] pa export-screening Bibtex→CSV ships)
+
+### v3.9.10.4 — `pa export-screening` ships (2026-07-20)
+
+**Feature**: Bibtex (+ optional pa judge data) → systematic-review-ready CSV.
+
+**13 CSV columns**:
+- `paper_key, query, relevance, reason, source` (pa judge data)
+- `title, authors, year, venue, doi, abstract, type, bib_url` (bib metadata)
+
+**Pluggable into**: Notion (csv import), Excel (utf-8 BOM), RevMan (CSV),
+Covidence (CSV). UTF-8 with BOM (`utf-8-sig`) for Excel compatibility.
+
+**CLI**:
+```
+pa export-screening refs.bib --out screening.csv
+pa export-screening refs.bib --out screening.csv --no-unrated
+pa export-screening refs.bib --judges judgements.sqlite --query "AI literacy" --out lit.csv
+```
+
+**Implementation** (~190 LOC + 26 tests):
+- `pa_cli/export_screening.py` (NEW):
+  - `build_screening_dict(bib_path)` — bib → {paper_key: {title, authors, year, venue, doi, abstract, type, bib_url}}
+  - `load_judgements(db_path, query=None)` — pa judge sqlite → list of dicts (sorted by relevance desc)
+  - `merge_with_bib(bib_dict, judge_rows, include_unrated=True)` — 3-input join
+  - `write_csv(rows, out_path)` — utf-8-sig + QUOTE_MINIMAL
+  - `run_export_screening(...)` — full pipeline
+- `pa_cli/cli.py` (export-screening subcommand, +40 LOC, Click decorator)
+- `pa_cli/scaffold.py:load_bibtex` — REUSED for bib parsing
+
+**Tests**: 26/26 pass in `test_output/_test_export_screening.py`:
+- TestBuildScreeningDict: 9 tests (titles, authors, year, venue, doi, bib_url, abstract, type)
+- TestLoadJudgements: 4 tests (all/filter/nonexistent/sort)
+- TestMergeWithBib: 3 tests (with/without unrated + inherit bib)
+- TestWriteCsv: 5 tests (header/13 cols/multiline/BOM/Chinese)
+- TestRunExportScreeningE2E: 5 tests (bib-only, with-all, filter, no-unrated, parseable)
+
+**Sub-task breakdown** (per ROADMAP spec):
+- A. build screening_dict per DOI (30min) ✅
+- B. join with pa judge data (20min) ✅
+- C. CSV writer (quoting, encoding) (20min) ✅
+- D. CLI wire + 1 e2e test (20min, 5 e2e tests + 21 unit tests) ✅
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (Python stdlib `csv` + `sqlite3` + reuse existing `load_bibtex`)
+- No hosted service
+- Maintenance: 1 new module + 1 CLI subcommand (~230 LOC total)
+- No publish obligation
+- Free-tier degradation: works on any .bib + optional .sqlite, no API needed
+
+**Files changed**:
+- `pa_cli/export_screening.py` (NEW, ~190 LOC)
+- `pa_cli/cli.py` (export-screening subcommand, +40 LOC)
+- `pa_cli/__init__.py` (version bump 3.9.10.3 → 3.9.10.4)
+- `test_output/_test_export_screening.py` (NEW, 26 tests)
+- `test_output/_e2e_export_screening.py` (NEW, real CLI e2e)
+- `ROADMAP.md` ([P2-8] marked DONE in v3.9.10.4)
+- `CHANGELOG.md` (this entry)
+
+**Use case (real)**:
+- User runs `pa judge` for query "AI literacy" on 50 papers
+- 30 papers get relevance labels (0/1/2), 20 are unrated
+- User runs `pa export-screening refs.bib --judges db --query "AI literacy" --out lit.csv`
+- Imports lit.csv into Notion/Excel for title/abstract screening with team
+- 50 rows, sorted by (relevance desc, paper_key), unrated at bottom with empty fields
+
+**Open follow-up (NOT in v3.9.10.4)**:
+- [ ] Add `--format xlsx` for direct Excel output (currently CSV only)
+- [ ] Add `--multi-query` flag to combine multiple queries' judgements into one CSV
+- [ ] Add CSV column for "screened" boolean (user marks it in Notion, re-imports)
+
+---
+
 ## [3.9.10.3] - 2026-07-20 ([P2-7] pa cite-check pre-build validator ships)
 
 ### v3.9.10.3 — `pa cite-check` ships (2026-07-20)
