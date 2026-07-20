@@ -236,6 +236,51 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.9] - 2026-07-20 ([P2-13] README.md ships)
+
+### v3.9.10.9 — `README.md` ships (2026-07-20)
+
+**Feature**: top-level human-facing README. Target reader = humans landing
+on the repo (not LLMs, which already have CHANGELOG + ROADMAP + handoff).
+
+**5 sections** (per ROADMAP spec):
+1. **Pitch** (1 line + quick start 5 commands)
+2. **Core workflow diagram** (ASCII: search → cite-check → fetch-batch → judge → build)
+3. **Command table** (11 subcommands with one-line description)
+4. **Performance table** (3-tier honest n=50 numbers; combined 0.8988 is best)
+5. **Known limitations** (3 of 6 engines return 0; CNKI needs cookies; BGE/LTR deprecated)
+6. **Project layout** (default ~/.paper-agent/ structure)
+7. **Documentation links** (ROADMAP, CHANGELOG, ARCHITECTURE, SESSION_HANDOFF)
+8. **"Files added in v3.9.10.x"** — machine-checked list per version (defense
+   against future AMiner-style "shipped but not committed" gaps)
+
+**Implementation** (~280 lines):
+- `README.md` (NEW)
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (markdown only)
+- No hosted service
+- Maintenance: 1 new file
+- No publish obligation
+- Free-tier degradation: N/A (documentation only)
+
+**Files changed**:
+- `README.md` (NEW, ~280 lines)
+- `pa_cli/__init__.py` (version bump 3.9.10.8 → 3.9.10.9)
+- `ROADMAP.md` ([P2-13] marked DONE in v3.9.10.9)
+- `CHANGELOG.md` (this entry)
+
+**Why English only**: per agent prompt appLocale: en. User can extend
+for zh later if needed. README is for human readers landing on the
+repo; Chinese speakers can use Google Translate on the rendered page.
+
+**Open follow-up (NOT in v3.9.10.9)**:
+- [ ] Add zh translation of README if user requests
+- [ ] Add "Tutorials" section with 3 example workflows (paper review / 课题 综述 / 快速搜论文)
+- [ ] Add troubleshooting section: what to do if pa fetch returns Cloudflare error
+
+---
+
 ## [3.9.10.8] - 2026-07-20 ([P2-12] Phase 1 pa project per-topic corpora ships)
 
 ### v3.9.10.8 — `pa project` Phase 1 ships (2026-07-20)

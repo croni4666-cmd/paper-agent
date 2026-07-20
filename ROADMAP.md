@@ -1638,6 +1638,12 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   "Files added in this version" section that cross-references git log
   output, as a defense against future AMiner-style "shipped but not
   committed" gaps (the bug that this round of self-audit caught).
+  **Status**: ✅ **DONE in v3.9.10.9** (released 2026-07-20). Top-level
+  `README.md` (NEW, ~280 lines). 5 sections: pitch, quick start, workflow
+  diagram, command table, performance table (3-tier honest numbers),
+  known limitations, project layout, documentation links, "Files added
+  in v3.9.10.x" cross-reference. **In English only** (per the agent
+  prompt's appLocale: en default; user can extend for zh later).
 
 ### Recommended next step (if user wants to continue)
 
