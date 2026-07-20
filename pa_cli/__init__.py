@@ -1,7 +1,7 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.10.9 ([P2-13] README.md ships.
-See CHANGELOG [3.9.10.9] for full release notes including:
+Latest stable: v3.9.10.10 (http_get_json gzip/brotli encoding fix.
+See CHANGELOG [3.9.10.10] for full release notes including:
   - v3.9.10: deprecate BGE/LTR from default, promote combined
   - v3.9.10.1: Phase 1.5 holdout validation (5-fold + single 30/20)
   - v3.9.10.2: Simpler rerank alternative (Ridge/LogReg beat LTR)
@@ -11,14 +11,17 @@ See CHANGELOG [3.9.10.9] for full release notes including:
   - v3.9.10.6: [P2-10] pa dedup-strict fuzzy + arxiv dedup
   - v3.9.10.7: [P2-11] pa fetch-batch batch PDF download
   - v3.9.10.8: [P2-12] Phase 1 pa project init/list/status/corpus/rm
-  - v3.9.10.9: [P2-13] README.md + version bump).
+  - v3.9.10.9: [P2-13] README.md + version bump
+  - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix — 4 engines
+    Crossref/OpenAlex/S2 silently failing JSON parse due to unhandled
+    Content-Encoding: gzip/br. Now actually return results.
 Implements paper-agent v4 design principle: after 5 minutes of Cloudflare
 challenge failure, stop iterating and surface a "your turn" handoff to
 user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.10.9"
+__version__ = "3.9.10.10"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 
