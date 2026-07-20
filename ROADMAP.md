@@ -1437,11 +1437,17 @@ candidates in priority order, with effort and 5-check Global Rule audit.
   **Solves**: today, `pa build` failure with "undefined reference" gives
   you the wrong key but not the file/line — this gives a clean
   per-key report. Effort: 1h. ⭐⭐⭐
+  **Status**: ✅ **DONE in v3.9.10.3** (released 2026-07-20). New
+  `pa_cli/cite_check.py` (~190 LOC) with `extract_cite_keys`, `cross_ref`,
+  `format_report`, `run_cite_check`. CLI subcommand `pa cite-check BIBTEX_FILE
+  SKELETON_FILE [--json] [--strict]`. 24/24 unit + e2e tests pass.
+  Edit-distance-1-or-2 typo detection with 3-suggestion cap.
+  See `pa_cli/cite_check.py` for full implementation.
   **Sub-task decomposition**:
-  - A. extract `[@key]` placeholders from skeleton (regex on `[@\w\-:.]+`) — 15min
-  - B. parse keys from `.bib` (reuse `pa_cli/scaffold.py:parse_bibtex`) — 10min
-  - C. cross-ref: missing / typo'd / orphan buckets + suggest fix for typos — 20min
-  - D. CLI wire + 1 e2e test + help text — 15min
+  - A. extract `[@key]` placeholders from skeleton (regex on `[@\w\-:.]+`) — 15min ✅
+  - B. parse keys from `.bib` (reuse `pa_cli/scaffold.py:parse_bibtex`) — 10min ✅
+  - C. cross-ref: missing / typo'd / orphan buckets + suggest fix for typos — 20min ✅
+  - D. CLI wire + 1 e2e test + help text — 15min ✅
 - **`[P2-8] pa export-screening` `--corpus refs.bib [--judges db.sqlite]` `--out screening.csv`**
   — Exports Bibtex (+ optional pa judge data) to a systematic-review-ready
   CSV: `title / authors / year / venue / doi / abstract / relevance_label / reason / source / query`.

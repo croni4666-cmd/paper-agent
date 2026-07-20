@@ -236,6 +236,83 @@ whitespace-strip, no-mutation.
 
 ---
 
+## [3.9.10.3] - 2026-07-20 ([P2-7] pa cite-check pre-build validator ships)
+
+### v3.9.10.3 — `pa cite-check` ships (2026-07-20)
+
+**Feature**: pre-build validator that scans a markdown skeleton for `[@bibkey]`
+placeholders, cross-references against a Bibtex file, and reports 3 buckets:
+- **[MISSING]**: placeholder has no bib entry
+- **[TYPOED]**: placeholder has a near match (edit distance 1-2) with fix suggestions
+- **[ORPHAN]**: bib entry is never cited in the skeleton
+
+**Solves user pain**: today, `pa build` failure with "undefined reference"
+gives you the wrong key but not the file/line. `pa cite-check` gives a clean
+per-key report with line numbers, BEFORE running `pa build`.
+
+**CLI**:
+```
+pa cite-check refs.bib skeleton.md
+pa cite-check refs.bib skeleton.md --json | jq .missing
+pa cite-check refs.bib skeleton.md --strict  # exit 1 on missing/typo
+```
+
+**Implementation** (190 LOC + 24 tests):
+- `pa_cli/cite_check.py` (NEW):
+  - `extract_cite_keys(text)` — regex on `[@\w\-:.]+`, returns [(key, line_no), ...]
+  - `cross_ref(placeholders, bib_keys)` — 3-bucket classification
+  - `_edit_distance_1_or_2(a, b)` — early-exit at distance 2 for typo detection
+  - `suggest_fix(typo_key, bib_keys, max_suggestions=3)` — top-N suggestions
+  - `format_report(result, skel_path, bib_path)` — human-readable text
+  - `run_cite_check(bib_path, skel_path, output_json=False)` — full pipeline
+- `pa_cli/cli.py` (`cite-check` subcommand added; uses Click decorator pattern)
+- `pa_cli/scaffold.py:parse_bibtex` — REUSED for bib parsing (no duplication)
+
+**Tests**: 24/24 pass in `test_output/_test_cite_check.py`:
+- TestExtractCiteKeys: 6 tests (simple/multiple/dash/page/line numbers/no key)
+- TestEditDistance: 5 tests (1/2/3/same string/too long)
+- TestSuggestFix: 3 tests (finds/no suggestion/max N)
+- TestCrossRef: 5 tests (clean/missing/typo/orphan/all three)
+- TestRunCiteCheckE2E: 3 tests (e2e text/JSON/clean)
+- TestFormatReport: 2 tests (clean report/with line numbers)
+
+**Sub-task breakdown** (per ROADMAP spec):
+- A. extract `[@key]` placeholders (15min) ✅
+- B. parse keys from `.bib` (10min, reuse parse_bibtex) ✅
+- C. cross-ref 3 buckets + typo fix suggestion (20min) ✅
+- D. CLI wire + 1 e2e test + help text (15min, 24 tests vs spec 1) ✅
+
+**5-check Global Rule audit**: 5/5 pass
+- $0 cost (pure stdlib `re` + `difflib` patterns + reuse existing parse_bibtex)
+- No hosted service
+- Maintenance: 1 new module + 1 CLI subcommand (~200 LOC total)
+- No publish obligation
+- Free-tier degradation: works on any .bib + .md, no API needed
+
+**Files changed**:
+- `pa_cli/cite_check.py` (NEW, ~190 LOC)
+- `pa_cli/cli.py` (cite-check subcommand, +35 LOC)
+- `pa_cli/__init__.py` (version bump 3.9.10.2 → 3.9.10.3)
+- `test_output/_test_cite_check.py` (NEW, 24 tests)
+- `test_output/fixtures/demo_refs.bib` (NEW, test fixture)
+- `test_output/fixtures/demo_skeleton.md` (NEW, test fixture)
+- `ROADMAP.md` ([P2-7] marked DONE in v3.9.10.3)
+- `CHANGELOG.md` (this entry)
+
+**Use case (real)**:
+- User writes skeleton with `[@smith2023ai]` but typo'd to `[@smtih2023ai]`
+- `pa cite-check refs.bib skeleton.md` reports:
+  - [TYPOED] line 11: `[@smtih2023ai]` <-- did you mean `[@smith2023ai]`?
+- User fixes typo before running `pa build`
+- No more "undefined reference" mystery
+
+**Open follow-up (NOT in v3.9.10.3)**:
+- [ ] Add similar pre-build check for `pa export-screening` ([P2-8])
+- [ ] Add typo-fix on a one-liner sed command for batch skeleton cleanup
+- [ ] Add `--threshold` option for edit distance (currently hardcoded to 1-2)
+
+---
+
 ## [3.9.10.2] - 2026-07-20 (Simpler rerank: Ridge / LogReg beat LTR at n=50)
 
 ### v3.9.10.2 — Simpler rerank alternative ships (2026-07-20)
