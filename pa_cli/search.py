@@ -23,6 +23,7 @@ import gzip
 import io
 import os
 import sys
+import threading
 import time
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote
@@ -465,9 +466,74 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     return results
 
 
+def _s2_throttle_lock() -> threading.Lock:
+    """Module-level lock to serialize S2 rate-limit state across calls."""
+    global _S2_LOCK
+    if _S2_LOCK is None:
+        _S2_LOCK = threading.Lock()
+    return _S2_LOCK
+
+
+_S2_LOCK: Optional[threading.Lock] = None
+_S2_LAST_CALL: float = 0.0
+_S2_MIN_INTERVAL: float = 1.1  # 1 RPS sustained (slightly > 1s for safety)
+_S2_MAX_RETRIES: int = 3
+_S2_BACKOFF_BASE: float = 1.0  # seconds
+_S2_BACKOFF_MAX: float = 30.0
+
+
+def _s2_throttle_wait() -> None:
+    """Sleep just enough to maintain 1 RPS on S2 free tier.
+
+    Module-level state: `_S2_LAST_CALL` is the timestamp of the last
+    `_s2_throttle_wait()` call. Thread-safe via `_S2_LOCK`.
+    """
+    global _S2_LAST_CALL
+    with _s2_throttle_lock():
+        now = time.time()
+        gap = now - _S2_LAST_CALL
+        if gap < _S2_MIN_INTERVAL:
+            time.sleep(_S2_MIN_INTERVAL - gap)
+        _S2_LAST_CALL = time.time()
+
+
+def _s2_request_with_retry(url: str, headers: dict) -> tuple:
+    """HTTP GET with S2-aware throttle + 429 backoff/retry.
+
+    Returns (status, body_dict). On exhausted retries, returns
+    (last_status, {}) so the caller can fall back gracefully.
+
+    Retry strategy: 1s -> 2s -> 4s -> ... capped at _S2_BACKOFF_MAX.
+    """
+    last_s = 0
+    for attempt in range(_S2_MAX_RETRIES + 1):
+        _s2_throttle_wait()
+        s, data = http_get_json(url, headers=headers)
+        last_s = s
+        if s == 200:
+            return s, data
+        if s == 429:
+            # Rate-limited: exponential backoff
+            backoff = min(_S2_BACKOFF_BASE * (2 ** attempt), _S2_BACKOFF_MAX)
+            print(f"  [S2] 429 rate-limited, backing off {backoff:.0f}s "
+                  f"(attempt {attempt+1}/{_S2_MAX_RETRIES+1})", file=sys.stderr)
+            time.sleep(backoff)
+            continue
+        # Non-429, non-200: don't retry (e.g. 400 bad request, 404 not found)
+        return s, {}
+    # Exhausted retries
+    return last_s, {}
+
+
 def search_semanticscholar(query: str, year_min: int = None, year_max: int = None,
                            limit: int = 50) -> List[Dict]:
-    """Semantic Scholar API. Best for citation-rich data."""
+    """Semantic Scholar API. Best for citation-rich data.
+
+    [P1-20] v3.9.10.11: 1 RPS throttle + 429 backoff/retry (max 3 retries,
+    exponential backoff 1s -> 2s -> 4s, capped at 30s). This lets the
+    S2 free tier be used in 50-query batch rebuilds without hitting
+    429 rate limits.
+    """
     url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={quote(query)}&limit={min(limit, 100)}"
     if year_min or year_max:
         url += f"&year={year_min or ''}-{year_max or ''}"
@@ -476,7 +542,7 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     api_key = os.environ.get("S2_API_KEY")
     if api_key:
         headers["x-api-key"] = api_key
-    s, data = http_get_json(url, headers=headers)
+    s, data = _s2_request_with_retry(url, headers=headers)
     if s != 200:
         return []
     results = []
