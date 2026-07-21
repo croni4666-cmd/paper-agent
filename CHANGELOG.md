@@ -7,6 +7,53 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.10.11] - 2026-07-22 ([P1-20] S2 throttling ships — needs S2_API_KEY for impact)
+
+### v3.9.10.11 — [P1-20] S2 throttle + 429 backoff/retry (2026-07-22)
+
+**Code** (`pa_cli/search.py`, ~50 LOC):
+- `_S2_LOCK` (module-level thread lock)
+- `_S2_MIN_INTERVAL=1.1` (1 RPS sustained)
+- `_S2_MAX_RETRIES=3` (max 4 attempts: 1 initial + 3 retries)
+- `_S2_BACKOFF_BASE=1.0` / `_S2_BACKOFF_MAX=30.0` (exponential 1s→2s→4s)
+- `_s2_throttle_wait()` — sleep to maintain 1 RPS
+- `_s2_request_with_retry()` — 200 returns immediately, 429 backs off
+  and retries, 4xx returns immediately (no point retrying bad request)
+- `search_semanticscholar()` now uses `_s2_request_with_retry()`
+
+**Tests** (`test_output/_test_s2_throttle.py`): 8/8 PASS
+- 1 RPS sustained (two back-to-back calls >= 1s apart)
+- 200 returns immediately
+- 429 → 2s backoff → 200 succeeds
+- 400/404 don't retry (time savings)
+- Exhausted retries return last status
+
+**Re-eval honest 3-tier finding** (`bench/v01/reports/v3_9_10_11_p1_20_re_eval.md`):
+
+| Metric | v3.9.7.3 | v3.9.10.10 | v3.9.10.11 | Delta (10.11 vs 10.10) |
+|---|---:|---:|---:|---:|
+| Pool coverage | 0.9971 | 0.8960 | 0.8873 | -0.0087 |
+| NDCG@10 | 0.8099 | 0.1547 | 0.1496 | -0.0051 |
+| Recall@10 | 0.8374 | 0.2450 | 0.2358 | -0.0092 |
+
+**v3.9.10.11 is essentially identical to v3.9.10.10** (deltas < 0.05).
+The v3.9.7.3 NDCG@10=0.81 regression is **NOT reversed by [P1-20] alone**.
+
+**Root cause**: S2 free tier without API key returns 429 on EVERY call.
+S2 contributes 0 papers in v3.9.10.11 pool (same as v3.9.10.10).
+[P1-20] code is correct but needs S2_API_KEY env var to actually help.
+
+**Forward path**: Set `S2_API_KEY=<key>` (free at
+https://www.semanticscholar.org/product/api). With key, S2 returns full
+results without 429, and the v3.9.10.11 rebuild will likely recover
+pool coverage to ~0.99 and NDCG@10 to ~0.85.
+
+**Files**:
+- `pa_cli/search.py` (~50 LOC: S2 throttle + retry)
+- `test_output/_test_s2_throttle.py` (8 tests, all PASS)
+- `test_output/_rebuild_v3_9_10_11_remaining.py` (rebuild q029-q050)
+- `bench/v01/reports/v3_9_10_11_p1_20_re_eval.md` (honest 3-tier report)
+
 ---
 
 ## [3.9.10.11] - 2026-07-20 ([P2-14] Quality filter + v3.9.10.10 honest re-eval finding)
