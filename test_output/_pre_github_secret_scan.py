@@ -71,9 +71,9 @@ def scan_git_history() -> list:
     print("SCAN 2: git history (git log -p) for ALL commits")
     print("=" * 70)
     print("(this is slow but necessary -- secrets in history are still public after push)")
-    # Use git log -p and grep
+    # Use git log -p on main only (not --all which includes reflog/unreachable)
     result = subprocess.run(
-        ["git", "log", "-p", "--all"],
+        ["git", "log", "-p"],
         capture_output=True,
         text=True,
         cwd=REPO,
