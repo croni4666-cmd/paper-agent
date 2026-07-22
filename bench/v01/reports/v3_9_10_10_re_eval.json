@@ -1,0 +1,20 @@
+{
+  "version": "v3.9.10.10-re-eval",
+  "n_queries_common": 50,
+  "v3_9_7_3_buggy": {
+    "combined_ndcg_at_10": 0.9113682381469727,
+    "combined_recall_at_10": 1.0,
+    "mean_candidates": 10.0,
+    "median_candidates": 10.0
+  },
+  "v3_9_10_10_fixed": {
+    "combined_ndcg_at_10": 0.41395993325298536,
+    "combined_recall_at_10": 1.0,
+    "mean_candidates": 10.0,
+    "median_candidates": 10.0
+  },
+  "delta": {
+    "ndcg_at_10": -0.4974083048939873,
+    "recall_at_10": 0.0
+  }
+}

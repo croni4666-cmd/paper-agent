@@ -1,0 +1,2979 @@
+{
+  "query": "AI education learning impact students",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 30,
+    "openalex": 30,
+    "arxiv": 30,
+    "semanticscholar": 30,
+    "core": 30
+  },
+  "dedup_count": 148,
+  "results": [
+    {
+      "doi": "10.1186/s40537-021-00444-8",
+      "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+      "authors": [
+        "Laith Alzubaidi",
+        "Jinglan Zhang",
+        "Amjad J. Humaidi",
+        "Ayad Q. Al-Dujaili",
+        "Ye Duan",
+        "Omran Al-Shamma",
+        "José Santamaría",
+        "Mohammed A. Fadhel",
+        "Muthana Al‐Amidie",
+        "Laith Farhan"
+      ],
+      "venue": "Journal Of Big Data",
+      "year": 2021,
+      "cited_by_count": 7586,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-021-00444-8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-019-0171-0",
+      "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
+      "authors": [
+        "Olaf Zawacki‐Richter",
+        "Victoria I. Marín",
+        "Melissa Bond",
+        "Franziska Gouverneur"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2019,
+      "cited_by_count": 5400,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/track/pdf/10.1186/s41239-019-0171-0",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.lindif.2023.102274",
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "authors": [
+        "Enkelejda Kasneci",
+        "Kathrin Seßler",
+        "Stefan Küchemann",
+        "Maria Bannert",
+        "Daryna Dementieva",
+        "Frank Fischer",
+        "Urs Gasser",
+        "Georg Groh",
+        "Stephan Günnemann",
+        "Eyke Hüllermeier",
+        "Stephan Krusche",
+        "Gitta Kutyniok",
+        "Tilman Michaeli",
+        "Claudia Nerdel",
+        "Jürgen Pfeffer",
+        "Oleksandra Poquet",
+        "Michael Sailer",
+        "Albrecht Schmidt",
+        "Tina Seidel",
+        "Matthias Stadler",
+        "J. Weller",
+        "Jochen Kühn",
+        "Gjergji Kasneci"
+      ],
+      "venue": "Learning and Individual Differences",
+      "year": 2023,
+      "cited_by_count": 5255,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://epub.ub.uni-muenchen.de/125071/1/ChatGPT_for_Good_v3.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Laurie Hughes",
+        "Elvira Ismagilova",
+        "Gert Aarts",
+        "Crispin Coombs",
+        "Tom Crick",
+        "Yanqing Duan",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Aled Eirug",
+        "Vassilis Galanos",
+        "P. Vigneswara Ilavarasan",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Arpan Kumar Kar",
+        "Hatice Kizgin",
+        "Bianca Kronemann",
+        "Banita Lal",
+        "Biagio Lucini",
+        "Rony Medaglia",
+        "Kenneth Le Meunier‐FitzHugh",
+        "Leslie Caroline Le Meunier-FitzHugh",
+        "Santosh K. Misra",
+        "Emmanuel Mogaji",
+        "Sujeet Kumar Sharma",
+        "Jang Bahadur Singh",
+        "Vishnupriya Raghavan",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Spyridon Samothrakis",
+        "Jak Spencer",
+        "Kuttimani Tamilmani",
+        "Annie Tubadji",
+        "Paul Walton",
+        "Michael D. Williams"
+      ],
+      "venue": "International Journal of Information Management",
+      "year": 2019,
+      "cited_by_count": 4071,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Nir Kshetri",
+        "Laurie Hughes",
+        "Emma Slade",
+        "Anand Jeyaraj",
+        "Arpan Kumar Kar",
+        "Abdullah M. Baabdullah",
+        "Alex Koohang",
+        "Vishnupriya Raghavan",
+        "Manju Ahuja",
+        "Hanaa Albanna",
+        "Mousa Ahmad Albashrawi",
+        "Adil S. Al-Busaidi",
+        "Janarthanan Balakrishnan",
+        "Yves Barlette",
+        "Sriparna Basu",
+        "Indranil Bose",
+        "Laurence Brooks",
+        "Dimitrios Buhalis",
+        "Lemuria Carter",
+        "Soumyadeb Chowdhury",
+        "Tom Crick",
+        "Scott W. Cunningham",
+        "Gareth H. Davies",
+        "Robert M. Davison",
+        "Rahul Dé",
+        "Denis Dennehy",
+        "Yanqing Duan",
+        "Rameshwar Dubey",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Carlos Flavián",
+        "Robin Gauld",
+        "Varun Grover",
+        "Mei‐Chih Hu",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Iris Junglas",
+        "Sangeeta Khorana",
+        "Sascha Kraus",
+        "Kai R. Larsen",
+        "Paul Latreille",
+        "Sven Laumer",
+        "Tegwen Malik",
+        "Abbas Mardani",
+        "Marcello Mariani",
+        "Sunil Mithas",
+        "Emmanuel Mogaji",
+        "Jeretta Horn Nord",
+        "Siobhán O’Connor",
+        "Fevzi Okumus",
+        "Margherita Pagani",
+        "Neeraj Pandey",
+        "Savvas Papagiannidis",
+        "Ilias O. Pappas",
+        "Nishith Pathak",
+        "Jan Pries‐Heje",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Sven‐Volker Rehm",
+        "Samuel Ribeiro‐Navarrete",
+        "Alexander Richter",
+        "Frantz Rowe",
+        "Suprateek Sarker",
+        "Bernd Carsten Stahl",
+        "Manoj Tiwari",
+        "Wil van der Aalst",
+        "Viswanath Venkatesh",
+        "Giampaolo Viglia",
+        "Michael Wade",
+        "Paul Walton",
+        "Jochen Wirtz",
+        "Ryan Wright"
+      ],
+      "venue": "International Journal of Information Management",
+      "year": 2023,
+      "cited_by_count": 3763,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0268401223000233/pdfft?md5=492895056a2fa29b1cb81876a1c57544&pid=1-s2.0-S0268401223000233-main.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1371/journal.pdig.0000198",
+      "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+      "authors": [
+        "Tiffany H. Kung",
+        "Morgan Cheatham",
+        "Arielle Medenilla",
+        "Czarina Sillos",
+        "Lorie De Leon",
+        "Camille Elepaño",
+        "Maria Madriaga",
+        "Rimel Aggabao",
+        "Giezel Diaz-Candido",
+        "James Maningo",
+        "Victor Tseng"
+      ],
+      "venue": "PLOS Digital Health",
+      "year": 2023,
+      "cited_by_count": 3599,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.plos.org/digitalhealth/article/file?id=10.1371/journal.pdig.0000198&type=printable",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-023-00411-8",
+      "title": "Students’ voices on generative AI: perceptions, benefits, and challenges in higher education",
+      "authors": [
+        "Cecilia Ka Yuk Chan",
+        "Wenjie Hu"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2023,
+      "cited_by_count": 1826,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00411-8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.61969/jai.1337500",
+      "title": "Education in the Era of Generative Artificial Intelligence (AI): Understanding the Potential Benefits of ChatGPT in Promoting Teaching and Learning",
+      "authors": [
+        "David Baidoo-Anu",
+        "Leticia Owusu Ansah"
+      ],
+      "venue": "Journal of AI",
+      "year": 2023,
+      "cited_by_count": 1621,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.61969/jai.1337500",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-023-00408-3",
+      "title": "A comprehensive AI policy education framework for university teaching and learning",
+      "authors": [
+        "Cecilia Ka Yuk Chan"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2023,
+      "cited_by_count": 1182,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00408-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s40593-021-00239-1",
+      "title": "Ethics of AI in Education: Towards a Community-Wide Framework",
+      "authors": [
+        "W. Holmes",
+        "Kaśka Porayska‐Pomsta",
+        "Ken Holstein",
+        "Emma Sutherland",
+        "Toby T. Baker",
+        "Simon Buckingham Shum",
+        "Olga C. Santos",
+        "Ma. Mercedes T. Rodrigo",
+        "Mutlu Cukurova",
+        "Ig Ibert Bittencourt",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "year": 2021,
+      "cited_by_count": 1087,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s40593-021-00239-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-022-11316-w",
+      "title": "Ethical principles for artificial intelligence in education",
+      "authors": [
+        "Andy Nguyen",
+        "Ha Ngan Ngo",
+        "Yvonne Hong",
+        "Belle Dang",
+        "Bich‐Phuong Thi Nguyen"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": 2022,
+      "cited_by_count": 1014,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-022-11316-w.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/su151612451",
+      "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
+      "authors": [
+        "Firuz Kamalov",
+        "David Santandreu Calonge",
+        "Ikhlaas Gurrib"
+      ],
+      "venue": "Sustainability",
+      "year": 2023,
+      "cited_by_count": 934,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/15/16/12451/pdf?version=1692181759",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Artificial intelligence in education : challenges and opportunities for sustainable development",
+      "authors": [
+        "Francesc Pedró",
+        "Miguel Subosa",
+        "Axel Rivas",
+        "Paula Valverde"
+      ],
+      "venue": "MINISTERIO DE EDUCACIÓN",
+      "year": 2019,
+      "cited_by_count": 904,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hdl.handle.net/20.500.12799/6533",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.4312418",
+      "title": "ChatGPT User Experience: Implications for Education",
+      "authors": [
+        "Xiaoming Zhaı"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": 2022,
+      "cited_by_count": 877,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.2139/ssrn.4312418",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.30935/cedtech/13152",
+      "title": "Revolutionizing education with AI: Exploring the transformative potential of ChatGPT",
+      "authors": [
+        "Tufan Adıgüzel",
+        "Mehmet Haldun Kaya",
+        "Fatih Kürşat Cansu"
+      ],
+      "venue": "Contemporary Educational Technology",
+      "year": 2023,
+      "cited_by_count": 875,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.cedtech.net/download/revolutionizing-education-with-ai-exploring-the-transformative-potential-of-chatgpt-13152.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-024-00448-3",
+      "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+      "authors": [
+        "Yoshija Walter"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2024,
+      "cited_by_count": 821,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-024-00448-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1609/aaai.v33i01.33019795",
+      "title": "Envisioning AI for K-12: What Should Every Child Know about AI?",
+      "authors": [
+        "David S. Touretzky",
+        "Christina Gardner‐McCune",
+        "Fred Martin",
+        "Deborah Seehorn"
+      ],
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "year": 2019,
+      "cited_by_count": 807,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI/article/download/5053/4926",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.37074/jalt.2023.6.1.17",
+      "title": "ChatGPT in higher education: Considerations for academic integrity and student learning",
+      "authors": [
+        "Miriam Sullivan",
+        "Andrew Kelly",
+        "Paul McLaughlan"
+      ],
+      "venue": "Journal of Applied Learning & Teaching",
+      "year": 2023,
+      "cited_by_count": 749,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/731/559",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3389/fpsyg.2023.1260843",
+      "title": "Enhancing academic writing skills and motivation: assessing the efficacy of ChatGPT in AI-assisted language learning for EFL students",
+      "authors": [
+        "Cuiping Song",
+        "Yanping Song"
+      ],
+      "venue": "Frontiers in Psychology",
+      "year": 2023,
+      "cited_by_count": 568,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1260843/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-021-10831-6",
+      "title": "Learning design to support student-AI collaboration: perspectives of leading teachers for AI in education",
+      "authors": [
+        "Jinhee Kim",
+        "Hyun-Kyung Lee",
+        "Young Hoan Cho"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": 2022,
+      "cited_by_count": 549,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-021-10831-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/info15100596",
+      "title": "Artificial Intelligence-Enabled Intelligent Assistant for Personalized and Adaptive Learning in Higher Education",
+      "authors": [
+        "Ramteja Sajja",
+        "Yusuf Sermet",
+        "Muhammed Cikmaz",
+        "David M. Cwiertny",
+        "İbrahim Demir"
+      ],
+      "venue": "Information",
+      "year": 2024,
+      "cited_by_count": 457,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.3390/info15100596",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3389/fpsyg.2023.1261955",
+      "title": "Artificial intelligence in language instruction: impact on English learning achievement, L2 motivation, and self-regulated learning",
+      "authors": [
+        "Ling Wei"
+      ],
+      "venue": "Frontiers in Psychology",
+      "year": 2023,
+      "cited_by_count": 434,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1261955/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1111/bjet.12861",
+      "title": "Designing educational technologies in the age of AI: A learning sciences‐driven approach",
+      "authors": [
+        "Rosemary Luckin",
+        "Mutlu Cukurova"
+      ],
+      "venue": "British Journal of Educational Technology",
+      "year": 2019,
+      "cited_by_count": 415,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjet.12861",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.37074/jalt.2023.6.1.23",
+      "title": "War of the chatbots: Bard, Bing Chat, ChatGPT, Ernie and beyond. The new AI gold rush and its impact on higher education",
+      "authors": [
+        "Jürgen Rudolph",
+        "Shannon Tan",
+        "Samson Tan"
+      ],
+      "venue": "Journal of Applied Learning & Teaching",
+      "year": 2023,
+      "cited_by_count": 408,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/771/577",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "Impact of AI assistance on student agency",
+      "authors": [
+        "Ali Darvishi",
+        "Hassan Khosravi",
+        "Shazia Sadiq",
+        "Dragan Gašević",
+        "George Siemens"
+      ],
+      "venue": "Computers & Education",
+      "year": 2023,
+      "cited_by_count": 394,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.compedu.2023.104967",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.caeai.2023.100197",
+      "title": "Future research recommendations for transforming higher education with generative AI",
+      "authors": [
+        "Thomas K. F. Chiu"
+      ],
+      "venue": "Computers and Education Artificial Intelligence",
+      "year": 2023,
+      "cited_by_count": 393,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1016/j.caeai.2023.100197",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-022-00362-6",
+      "title": "The impact of a virtual teaching assistant (chatbot) on students' learning in Ghanaian higher education",
+      "authors": [
+        "Harry Barton Essel",
+        "Dimitrios Vlachopoulos",
+        "Akosua Tachie-Menson",
+        "Esi Eduafua Johnson",
+        "Papa Kwame Baah"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2022,
+      "cited_by_count": 393,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-022-00362-6",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/app13116716",
+      "title": "Exploring the Potential Impact of Artificial Intelligence (AI) on International Students in Higher Education: Generative AI, Chatbots, Analytics, and International Student Success",
+      "authors": [
+        "Ting Wang",
+        "Brady Lund",
+        "Agostino Marengo",
+        "Alessandro Pagano",
+        "Nishith Reddy Mannuru",
+        "Zoë Abbie Teel",
+        "Jenny Pange"
+      ],
+      "venue": "Applied Sciences",
+      "year": 2023,
+      "cited_by_count": 371,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.3390/app13116716",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s40593-022-00293-3",
+      "title": "Integrating Ethics and Career Futures with Technical Learning to Promote AI Literacy for Middle School Students: An Exploratory Study",
+      "authors": [
+        "Helen Zhang",
+        "Irene Lee",
+        "Safinah Ali",
+        "Daniella DiPaola",
+        "Yihong Cheng",
+        "Cynthia Breazeal"
+      ],
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "year": 2022,
+      "cited_by_count": 344,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://dspace.mit.edu/bitstream/1721.1/152257/1/40593_2022_293_ReferencePDF.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/educsci15030343",
+      "title": "The Impact of Artificial Intelligence (AI) on Students’ Academic Development",
+      "authors": [
+        "Aniella Mihaela Vieriu",
+        "Gabriel Petrea"
+      ],
+      "venue": "Education Sciences",
+      "year": 2025,
+      "cited_by_count": 307,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7102/15/3/343/pdf?version=1741683430",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-024-12949-9",
+      "arxiv_id": "",
+      "title": "Exploring the impact of generative AI-based technologies on learning performance through self-efficacy, fairness & ethics, creativity, and trust in higher education",
+      "authors": [
+        "Muhammad Farrukh Shahzad",
+        "Shuo Xu",
+        "Hira Zahid"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2024,
+      "cited_by_count": 172,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/bs14100956",
+      "arxiv_id": "",
+      "title": "The Impact of AI Usage on University Students’ Willingness for Autonomous Learning",
+      "authors": [
+        "Ling Wang",
+        "Wenye Li"
+      ],
+      "venue": "Behavioral Science",
+      "year": 2024,
+      "cited_by_count": 79,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/bs15020165",
+      "arxiv_id": "",
+      "title": "Artificial Intelligence in Higher Education: The Impact of Need Satisfaction on Artificial Intelligence Literacy Mediated by Self-Regulated Learning Strategies",
+      "authors": [
+        "Kai Wang",
+        "Wencheng Cui",
+        "Xue Yuan"
+      ],
+      "venue": "Behavioral Science",
+      "year": 2025,
+      "cited_by_count": 59,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1111/ejed.12909",
+      "arxiv_id": "",
+      "title": "The Impact of AI on the Personal and Collaborative Learning Environments in Higher Education",
+      "authors": [
+        "M. M. Msambwa",
+        "Zhang Wen",
+        "Kangwa Daniel"
+      ],
+      "venue": "European Journal of Education",
+      "year": 2025,
+      "cited_by_count": 58,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1186/s43093-025-00459-0",
+      "arxiv_id": "",
+      "title": "Students' mindset to adopt AI chatbots for effectiveness of online learning in higher education",
+      "authors": [
+        "Muhammad Khalilur Rahman",
+        "Noor Azizi Ismail",
+        "Md Arafat Hossain",
+        "Mohammad Shahadat Hossen"
+      ],
+      "venue": "Future Business Journal",
+      "year": 2025,
+      "cited_by_count": 49,
+      "is_oa": true,
+      "oa_url": "https://fbj.springeropen.com/counter/pdf/10.1186/s43093-025-00459-0",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1344/der.2024.45.43-49",
+      "arxiv_id": "",
+      "title": "Impact of Digital Literacy, Use of AI tools and Peer Collaboration on AI Assisted Learning- Perceptions of the University students",
+      "authors": [
+        "G. V. Joseph",
+        "Athira P",
+        "Anit Thomas M",
+        "Dawn Jose",
+        "Therese V Roy",
+        "M. Prasad"
+      ],
+      "venue": "Digital Education Review",
+      "year": 2024,
+      "cited_by_count": 48,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1344/der.2024.45.43-49",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1111/medu.15746",
+      "arxiv_id": "",
+      "title": "The impact of generative AI on health professional education: A systematic review in the context of student learning",
+      "authors": [
+        "Thai Duong Pham",
+        "N. Karunaratne",
+        "Betty Exintaris",
+        "Danny Liu",
+        "Travis Lay",
+        "E. Yuriev",
+        "Angelina S Lim"
+      ],
+      "venue": "Medical Education",
+      "year": 2025,
+      "cited_by_count": 47,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1111/ejed.12749",
+      "arxiv_id": "",
+      "title": "Can ChatGPT Revolutionize Language Learning? Unveiling the Power of AI in Multilingual Education Through User Insights and Pedagogical Impact",
+      "authors": [
+        "Hao Yu",
+        "Yunyun Guo",
+        "Hailiang Yang",
+        "Weiyu Zhang",
+        "Yan Dong"
+      ],
+      "venue": "European Journal of Education",
+      "year": 2024,
+      "cited_by_count": 37,
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejed.12749",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-025-13401-2",
+      "arxiv_id": "",
+      "title": "Supporting english speaking practice in higher education: the impact of AI chatbot-integrated mobile-assisted blended learning framework",
+      "authors": [
+        "Qing Zhou",
+        "Harwati Hashim",
+        "Nur Ainil Sulaiman"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2025,
+      "cited_by_count": 29,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.59075/c35qa453",
+      "arxiv_id": "",
+      "title": "AI in Education: Personalized Learning Systems and Their Impact on Student Performance and Engagement",
+      "authors": [
+        "Dalya Saleem",
+        "Muhammad Umar Aziz",
+        "Dr. Muhammad Jawed Iqbal",
+        "Shahid Abbas"
+      ],
+      "venue": "The Critical Review of Social Sciences Studies",
+      "year": 2025,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_url": "https://thecrsss.com/index.php/Journal/article/download/328/382",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1186/s12909-025-07589-7",
+      "arxiv_id": "",
+      "title": "The combined impact of AI and VR on interdisciplinary learning and patient safety in healthcare education: a narrative review",
+      "authors": [
+        "Emmanuel Aoudi Chance"
+      ],
+      "venue": "BMC Medical Education",
+      "year": 2025,
+      "cited_by_count": 27,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s44366-025-0058-7",
+      "arxiv_id": "",
+      "title": "Evolution of Learning: Assessing the Transformative Impact of Generative AI on Higher Education",
+      "authors": [
+        "Stefanie Krause",
+        "Bhumi Hitesh Panchal",
+        "Nikhil Ubhe"
+      ],
+      "venue": "Frontiers of Digital Education",
+      "year": 2025,
+      "cited_by_count": 24,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1007/s44366-025-0058-7",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.35877/454ri.eduline2592",
+      "arxiv_id": "",
+      "title": "Exploring Generative AI Tools Frequency: Impacts on Attitude, Satisfaction, and Competency in Achieving Higher Education Learning Goals",
+      "authors": [
+        "M. Fakhri",
+        "A. S. Ahmar",
+        "Andika Isma",
+        "R. Rosidah",
+        "Della Fadhilatunisa"
+      ],
+      "venue": "EduLine Journal of Education and Learning Innovation",
+      "year": 2024,
+      "cited_by_count": 24,
+      "is_oa": true,
+      "oa_url": "https://jurnal.ahmar.id/index.php/eduline/article/download/2592/1737",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-024-12758-0",
+      "arxiv_id": "",
+      "title": "Impact of AIoT education program on digital and AI literacy of elementary school students",
+      "authors": [
+        "JiYeon Hong",
+        "Kwihoon Kim"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2024,
+      "cited_by_count": 23,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.58459/rptel.2025.20005",
+      "arxiv_id": "",
+      "title": "Student perceptions on the impact of AI on their teaching and learning experiences in higher education",
+      "authors": [
+        "Aisling Tierney",
+        "Peter Peasey",
+        "J. Gould"
+      ],
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "year": 2024,
+      "cited_by_count": 23,
+      "is_oa": true,
+      "oa_url": "https://rptel.apsce.net/index.php/RPTEL/article/download/2025-20005/2025-20005",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3389/fmed.2025.1610012",
+      "arxiv_id": "",
+      "title": "Evaluation of the impact of AI-driven personalized learning platform on medical students’ learning performance",
+      "authors": [
+        "Yajun Chen"
+      ],
+      "venue": "Frontiers in Medicine",
+      "year": 2025,
+      "cited_by_count": 22,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-025-13560-2",
+      "arxiv_id": "",
+      "title": "Advancing english language education: A mixed-methods analysis of AI-driven tools'impact on engagement, personalization, and learning outcomes",
+      "authors": [
+        "Jie Zhao"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2025,
+      "cited_by_count": 21,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-024-13235-4",
+      "arxiv_id": "",
+      "title": "AI in education: Evaluating the impact of moodle AI-powered chatbots and metacognitive teaching approaches on academic performance of higher Institution Business Education students",
+      "authors": [
+        "Huanhui Chen",
+        "Clinton Chidiebere Anyanwu"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2025,
+      "cited_by_count": 21,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1038/s41598-025-19118-z",
+      "arxiv_id": "",
+      "title": "Evaluating AI-Powered Applications for Enhancing Undergraduate Students’ Metacognitive Strategies, Self-Determined Motivation, and Social Learning in English Language Education",
+      "authors": [
+        "Yue Zhai",
+        "Behzad Nezakatgoo"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2025,
+      "cited_by_count": 18,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1038/s41598-025-95802-4",
+      "arxiv_id": "",
+      "title": "Development and effectiveness verification of AI education data sets based on constructivist learning principles for enhancing AI literacy",
+      "authors": [
+        "Seulki Kim",
+        "Tae-Young Kim",
+        "Kwihoon Kim"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2025,
+      "cited_by_count": 17,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1038/s41598-025-95802-4",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1186/s40561-025-00395-0",
+      "arxiv_id": "",
+      "title": "Students’ perceived impact of GenAI tools on learning and assessment in higher education: the role of individual AI competence",
+      "authors": [
+        "Joana Heil",
+        "Dirk Ifenthaler",
+        "Martin Cooper",
+        "M. L. Mascia",
+        "R. Conti",
+        "Maria Pietronilla Penna"
+      ],
+      "venue": "Smart Learning Environments",
+      "year": 2025,
+      "cited_by_count": 16,
+      "is_oa": true,
+      "oa_url": "https://slejournal.springeropen.com/counter/pdf/10.1186/s40561-025-00395-0",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1108/k-03-2024-0613",
+      "arxiv_id": "",
+      "title": "The impact of human-AIGC tools collaboration on the learning effect of college students: a key factor for future education?",
+      "authors": [
+        "Weiquan Yang",
+        "Zhaolin Lu",
+        "Zengrui Li",
+        "Yaling Cui",
+        "Lijin Dai",
+        "Yupeng Li",
+        "Xiaorui Ma",
+        "Huaibo Zhu"
+      ],
+      "venue": "Kybernetes",
+      "year": 2024,
+      "cited_by_count": 15,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/su17178059",
+      "arxiv_id": "",
+      "title": "Impact Pathways of AI-Supported Instruction on Learning Behaviors, Competence Development, and Academic Achievement in Engineering Education",
+      "authors": [
+        "Yu Wan",
+        "Rui Li",
+        "Wenjie Li",
+        "Hong-bo Du"
+      ],
+      "venue": "Sustainability",
+      "year": 2025,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2071-1050/17/17/8059/pdf?version=1757237945",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1080/10494820.2025.2530630",
+      "title": "The impact of AI-based visual designs on students’ AI literacy and attitudes toward AI",
+      "authors": [
+        "Akman, Emrah"
+      ],
+      "venue": "Interactive Learning Environments",
+      "year": 2025,
+      "cited_by_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-025-13394-y",
+      "title": "Integrating IBM Watson BEAT generative AI software into flute music learning: the impact of advanced AI tools on students’ learning strategies",
+      "authors": [
+        "Liu, Bin",
+        "Liao, Yuanyuan"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": null,
+      "cited_by_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1007/s10639-025-13646-x",
+      "arxiv_id": "",
+      "title": "The impact of AI-Based adaptive learning technologies on motivation and engagement of higher education students",
+      "authors": [
+        "Cong Zhou",
+        "Tefu Ren",
+        "Lin Lang"
+      ],
+      "venue": "Education and Information Technologies : Official Journal of the IFIP technical committee on Education",
+      "year": 2025,
+      "cited_by_count": 10,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/educsci15121696",
+      "arxiv_id": "",
+      "title": "Learning with Generative AI: An Empirical Study of Students in Higher Education",
+      "authors": [
+        "Golan Carmi"
+      ],
+      "venue": "Education sciences",
+      "year": 2025,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2227-7102/15/12/1696/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.54097/k7a37d11",
+      "title": "The Impact of AI-Assisted Teaching on Students' Learning and Psychology",
+      "authors": [
+        "Zhu, Yunyi"
+      ],
+      "venue": "Journal of Education, Humanities and Social Sciences",
+      "year": null,
+      "cited_by_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The integration of artificial intelligence (AI) in education has garnered significant attention, yet its implications on student outcomes require further exploration. This paper analyzes the impact of AI-assisted teaching on students' learning and psychological well-being. Through a comprehensive review of existing AI applications in education, including intelligent tutoring systems and educational chatbots, the study examines how these technologies influence academic performance and psy",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1111/ejed.12919",
+      "title": "Perceptions and Use of\n                    <scp>AI</scp>\n                    in Higher Education Students: Impact on Teaching, Learning, and Ethical Considerations",
+      "authors": [
+        "Medina‐Gual, Luis",
+        "Parejo, José‐Luis"
+      ],
+      "venue": "European Journal of Education",
+      "year": 2025,
+      "cited_by_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>ABSTRACT</jats:title>\n                  <jats:p>The present research explores AI's impact on education among Mexican undergraduate students through a non‐experimental, correlational, cross‐sectional study. A validated public questionnaire was distributed to 840 students via Google Forms from February to May 2024. Analysis revealed significant AI exposure and use patterns, primarily influenced by mass media and personal connections. Psychometric evaluations showed strong internal cons",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.52783/jisem.v10i12s.1943",
+      "arxiv_id": "",
+      "title": "Critical Analysis of the Impact of AI in Higher Education and Its Consequences on Students",
+      "authors": [
+        "Sheren Shafei",
+        "D. Mahmood"
+      ],
+      "venue": "Journal of Information Systems Engineering & Management",
+      "year": 2025,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_url": "https://jisem-journal.com/index.php/journal/article/download/1943/738",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.5220/0012693000003693",
+      "title": "The Impact of Structured Prompt-Driven Generative AI on Learning Data Analysis in Engineering Students",
+      "authors": [
+        "Garg, Ashish",
+        "Rajendran, Ramkumar"
+      ],
+      "venue": "Proceedings of the 16th International Conference on Computer Supported Education",
+      "year": 2024,
+      "cited_by_count": 6,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.55549/jeseh.840",
+      "arxiv_id": "",
+      "title": "The Impact of Generative AI Applications on Student Learning Outcomes in Science Education: A Systematic Review",
+      "authors": [
+        "Meryem Seda Gunsaldi",
+        "E. Guner",
+        "Musa Uckan",
+        "Kaan Bati"
+      ],
+      "venue": "Journal of Education in Science Environment and Health",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_url": "https://jeseh.net/index.php/jeseh/article/download/840/1418",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.52783/jier.v4i2.1019",
+      "title": "Next-Generation Education: The Impact of Generative AI on Learning",
+      "authors": [],
+      "venue": "Journal of Informatics Education and Research",
+      "year": null,
+      "cited_by_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1111/medu.15211",
+      "title": "Medical students learning about AI – with AI?",
+      "authors": [
+        "Müller, Manuel E. B.",
+        "Laupichler, Matthias C."
+      ],
+      "venue": "Medical Education",
+      "year": 2023,
+      "cited_by_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1109/IC4e65071.2025.11075295",
+      "arxiv_id": "",
+      "title": "AI Enhanced Education: Impacts on Students Engagement and Learning Outcomes in Tourism & Hospitality Education",
+      "authors": [
+        "M. Ruiz",
+        "J. P. Gecolea",
+        "L. B. Alcala",
+        "M. J. E. Gregana-Alcaraz",
+        "Antonio Niegas"
+      ],
+      "venue": "International Conference on E-Education, E-Business, E-Management, and E-Learning",
+      "year": 2025,
+      "cited_by_count": 4,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.4314/aujst.v5i1.8",
+      "title": "Impact of AI-Blended Learning and AI-Personalized Learning on Undergraduate  Biology Students' Attitude and Performance in Climate Change Education",
+      "authors": [
+        "Matazu, Suleiman Sa’adu"
+      ],
+      "venue": "Anchor University Journal of Science and Technology",
+      "year": null,
+      "cited_by_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study employed a quasi-experimental design to investigate the impact of AI-Blended Learning and AI-Personalized Learning on undergraduate biology students' attitudes and performance in climate change education. The research addressed two research questions and tests two corresponding null hypotheses. The population consists of 300 level undergraduate biology students at Federal University Gusau, with a sample size of 70 students selected through random sampling. Participants were di",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.32674/232w1188",
+      "title": "AI-enhanced language learning",
+      "authors": [
+        "Torkhani, Dina"
+      ],
+      "venue": "American Journal of STEM Education",
+      "year": null,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study was conducted to investigate the effectiveness of Talkpal.AI in improving fluency, pronunciation, vocabulary, and grammar among 40 pre-intermediate English as a Foreign Language (EFL) students in Kuwait. The participants were informed of the research objectives and implementation. A pretest-posttest design was used within a quasi-experimental design. Statistical analysis showed that students made significant improvements in posttest fluency, pronunciation, vocabulary, and gram",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.21428/8c225f6e.b1d05ed3",
+      "title": "How disruptive is AI in students’ academic writing in higher education?",
+      "authors": [
+        "Stanford, Jeff"
+      ],
+      "venue": "Studies in Technology Enhanced Learning",
+      "year": null,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4018/979-8-3693-8191-5.ch012",
+      "title": "Impact of AI on Student Learning and Teacher Outcomes in Education 5.0",
+      "authors": [
+        "Sabharwal, Dhruv",
+        "Mitra, Archan"
+      ],
+      "venue": "Advances in Educational Technologies and Instructional Design",
+      "year": 2024,
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>The role of Artificial Intelligence (AI) in Education 5. 0 is changing the paradigm of the student learning process and the teaching process as well. This chapter discusses the effects of AI on students and teachers for personalisation, student motivation and teacher practice. With the help of AI technologies, one gets better and more efficient educational process by providing better learning conditions and thus – making education more flexible. Teachers have less work load to handle or ",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-6",
+      "title": "AI's impact on business postgraduate learning in UK higher education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161",
+      "title": "Artificial Intelligence and Higher Education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-4",
+      "title": "Ethical and regulatory considerations in AI-driven education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-7",
+      "title": "Rethinking the future of AI in higher education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-1",
+      "title": "Artificial intelligence and higher education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-2",
+      "title": "Artificial intelligence in higher education",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1109/icdel65868.2025.11193606",
+      "title": "Impact of AI Education System Innovation on the usage Willingness of Higher Education Students",
+      "authors": [
+        "Wang, Zichen"
+      ],
+      "venue": "2025 International Conference on Distance Education and Learning (ICDEL)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-3",
+      "title": "Opportunities and challenges",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4324/9781003664161-5",
+      "title": "Research design and methodology",
+      "authors": [
+        "Beta, Katerina"
+      ],
+      "venue": "Artificial Intelligence and Higher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.59562/intec.v4i2.7728",
+      "title": "The Impact of AI-Based Learning Applications on Students  Self-Regulated Learning Using the Personalized Learning Method",
+      "authors": [
+        "Syarifah Suryana",
+        "Israwati Hamsar"
+      ],
+      "venue": "Information Technology Education Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study examines the impact of AI-based learning applications on students' self-regulated learning using the Personalized Learning method. The research employs an experimental design with two groups: the experimental group using AI-based applications and the control group following traditional learning methods. Data were collected through questionnaires, interviews, and learning outcome tests. The results show that AI-based applications significantly enhance students' self-regulated l",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.4018/979-8-3693-8191-5.ch005",
+      "title": "AI-Enhanced Peace Education",
+      "authors": [
+        "Arcinas, Myla"
+      ],
+      "venue": "Advances in Educational Technologies and Instructional Design",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>This chapter investigates the integration of artificial intelligence (AI) in higher education peace programs, examining its effects on student outcomes, engagement, and critical thinking. Employing a concurrent mixed-methods approach, the study collected data from 500 survey respondents and 50 interviewees across five institutions. Quantitative findings reveal significant improvements in learning outcomes, particularly in knowledge acquisition (d = 0.82) and critical thinking (d = 0.70),",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.70593/978-93-7185-270-8_3",
+      "title": "Impact of AI-Based Educational Tools on Students Engagement and Learning Outcomes",
+      "authors": [
+        "G, Muthupandi",
+        "K, Vimal",
+        "M, Arunkumar",
+        "R, Vikram"
+      ],
+      "venue": "Students Perspective of Artificial Intelligence Tools in Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1109/icdle63439.2024.00008",
+      "title": "The Impact of Digital Virtual AI Role Evaluation on College Students' Learning Satisfaction",
+      "authors": [
+        "He, Peng",
+        "Zeng, Lixia"
+      ],
+      "venue": "2024 15th International Conference on Distance Learning and Education (ICDLE)",
+      "year": 2024,
+      "cited_by_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.31949/jell.v9i2.16302",
+      "title": "Exploring the Impact of Generative AI Tools on English Writing Skills among English Education Exploring the Impact of Generative AI Tools on English Writing Skills among English Education Students",
+      "authors": [
+        "Putri Erito, Silvia Nanda",
+        "Wijayatiningsih, Testiana Deni"
+      ],
+      "venue": "Journal of English Language Learning",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The integration of generative artificial intelligence (AI) tools, such as ChatGPT, Grammarly, and QuillBot, has transformed the way students develop and refine their writing skills in higher education. This study aims to explore how English Education students at the University of Muhammadiyah Semarang (UNIMUS) perceive and utilize these tools to enhance their English writing competence. Using a qualitative research design, data were collected through an open-ended questionnaire distribut",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.54254/2753-7048/2026.zju31647",
+      "title": "A Study on the Impact of AI Intelligent Learning Tools on Students' Learning",
+      "authors": [
+        "Li, Jeremy ChenXuan"
+      ],
+      "venue": "Lecture Notes in Education Psychology and Public Media",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The introduction of artificial intelligence learning tools in educational environments highlights a noticeable gap between expected goals and actual impacts on student learning. This paper conducts a comprehensive analysis of 28 peer-reviewed studies published between 2018 and 2024, supplemented by direct classroom observations. Notably, the effectiveness of such tools appears to be more closely linked to how they are integrated into teaching practices rather than their technological com",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1201/9781003728801-9",
+      "title": "The Impact of Students Using AI Tools in Higher Education, Design, Innovation, and Learning Outcomes",
+      "authors": [
+        "Owusu, Eric",
+        "Kamegne, Yvonne",
+        "Debrah, Ralitsa Diana"
+      ],
+      "venue": "AI and Innovation in Human–Computer Interaction",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.52783/jier.v4i3.1409",
+      "title": "AI as a Contrivance in Education Sector: Exploring Its Impending Impact on Students’ Performance",
+      "authors": [],
+      "venue": "Journal of Informatics Education and Research",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.21203/rs.3.rs-4515034/v1",
+      "title": "Generative AI: A Case Study of ChatGPT’s Impact on University Students’ Learning Practices",
+      "authors": [
+        "Alnaim, Norah"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>Recently, technology has been widely integrated across the educational landscape. Artificial Intelligence (AI) tools have become essential components of students' learning practices, requiring an examination of the impact of each tool. The aim of this study is to investigate the impact of ChatGPT tool on university students’ learning practices. A quantitative online survey was adopted using cross-sectional design to collect the data from university students at ",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.11648/j.ijeedu.20251403.12",
+      "title": "The Impact of AI on Teachers’ Math Teaching and Students’ Learning from Diverse Socioeconomic Status",
+      "authors": [
+        "Wen, Dong"
+      ],
+      "venue": "International Journal of Elementary Education",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"en\">In recent years, with the continuous development of technology, AI technology has gradually improved and can be applied to various aspects of life and learning, especially in promoting continuous education reform, playing a crucial role. The impact of AI on mathematics education, particularly in terms of teaching strategies for primary and secondary school teachers and improving the mathematics performance of students from diverse socioeconomic status backgrounds, is explor",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "arXiv:2408.00025v3",
+      "arxiv_id": "2408.00025v3",
+      "title": "Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)",
+      "authors": [
+        "Supriya Manna",
+        "Niladri Sett"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2408.00025v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.31933/dijemss.v1i3.166",
+      "arxiv_id": "2006.09846v1",
+      "title": "Creating Experience value to build student satisfaction in higher education",
+      "authors": [
+        "Muji Gunarto",
+        "Ratih Hurriyati"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.09846v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:1303.0042v1",
+      "arxiv_id": "1303.0042v1",
+      "title": "Twelve Years of Education and Public Outreach with the Fermi Gamma-ray Space Telescope",
+      "authors": [
+        "Lynn Cominsky",
+        "Kevin McLin",
+        "Aurore Simonnet",
+        "the Fermi Education",
+        "Public Outreach Team"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0042v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.32374/AEJ.2023.3.1.049ra",
+      "arxiv_id": "2209.02852v1",
+      "title": "Effects of Popular Science Writing Instruction on General Education Student Attitudes Towards Science: A Case Study in Astronomy",
+      "authors": [
+        "Briley L. Lewis",
+        "K. Supriya",
+        "Graham H. Read",
+        "Kaitlin L. Ingraham Dixie",
+        "Rachel Kennison",
+        "Anthony R. Friscia"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.02852v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2504.17117v1",
+      "arxiv_id": "2504.17117v1",
+      "title": "AI for Accessible Education: Personalized Audio-Based Learning for Blind Students",
+      "authors": [
+        "Crystal Yang",
+        "Paul Taele"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.17117v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1080/27660400.2025.2535956",
+      "arxiv_id": "2504.08817v2",
+      "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+      "authors": [
+        "Takahiro Misawa",
+        "Ai Koizumi",
+        "Ryo Tamura",
+        "Kazuyoshi Yoshimi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2603.25932v1",
+      "arxiv_id": "2603.25932v1",
+      "title": "To Use or Not to Use: Investigating Student Perceptions of Faculty Generative AI Usage in Higher Education",
+      "authors": [
+        "Jie Gao",
+        "Jiayi Zhang",
+        "Dan Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.25932v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2510.24783v1",
+      "arxiv_id": "2510.24783v1",
+      "title": "AI & Data Competencies: Scaffolding holistic AI literacy in Higher Education",
+      "authors": [
+        "Kathleen Kennedy",
+        "Anuj Gupta"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.24783v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1016/j.caeai.2021.100014",
+      "arxiv_id": "2012.09015v2",
+      "title": "ColorShapeLinks: A board game AI competition for educators and students",
+      "authors": [
+        "Nuno Fachada"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.09015v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2509.25266v1",
+      "arxiv_id": "2509.25266v1",
+      "title": "Cognifying Education: Mapping AI's transformative role in emotional, creative, and collaborative learning",
+      "authors": [
+        "Mikael Gorsky",
+        "Ilya Levin"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.25266v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2407.16907v1",
+      "arxiv_id": "2407.16907v1",
+      "title": "Research on Education Big Data for Students Academic Performance Analysis based on Machine Learning",
+      "authors": [
+        "Chun Wang",
+        "Jiexiao Chen",
+        "Ziyang Xie",
+        "Jianke Zou"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.16907v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2509.21713v1",
+      "arxiv_id": "2509.21713v1",
+      "title": "Developing Strategies to Increase Capacity in AI Education",
+      "authors": [
+        "Noah Q. Cowit",
+        "Sri Yash Tadimalla",
+        "Stephanie T. Jones",
+        "Mary Lou Maher",
+        "Tracy Camp",
+        "Enrico Pontelli"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.21713v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2605.15380v1",
+      "arxiv_id": "2605.15380v1",
+      "title": "Eskwai for Students: Generative AI Assistant for Legal Education in Ghana",
+      "authors": [
+        "George Boateng",
+        "Philemon Badu",
+        "Patrick Agyeman-Budu",
+        "Samuel Ansah",
+        "Evans Atompoya",
+        "Evan Igwilo",
+        "Lord Baah",
+        "Frederick Abu-Bonsrah",
+        "Victor Wumbor-Apin Kumbol"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.15380v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1088/0031-9120/42/3/003",
+      "arxiv_id": "0608058v2",
+      "title": "Cinema, Fermi Problems, & General Education",
+      "authors": [
+        "C. J. Efthimiou",
+        "R. Llewellyn"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/physics/0608058v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2507.06878v1",
+      "arxiv_id": "2507.06878v1",
+      "title": "Do AI tutors empower or enslave learners? Toward a critical use of AI in education",
+      "authors": [
+        "Lucile Favero",
+        "Juan-Antonio Pérez-Ortiz",
+        "Tanja Käser",
+        "Nuria Oliver"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.06878v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1109/TE.2023.3241099",
+      "arxiv_id": "2407.07762v1",
+      "title": "Learning and Motivational Impact of Game-Based Learning: Comparing Face-to-Face and Online Formats on Computer Science Education",
+      "authors": [
+        "Daniel López-Fernández",
+        "Aldo Gordillo",
+        "Jennifer Pérez",
+        "Edmundo Tovar"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.07762v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2401.08659v2",
+      "arxiv_id": "2401.08659v2",
+      "title": "Generative AI and Its Educational Implications",
+      "authors": [
+        "Kacper Łodzikowski",
+        "Peter W. Foltz",
+        "John T. Behrens"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2401.08659v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2309.12320v1",
+      "arxiv_id": "2309.12320v1",
+      "title": "Use Scenarios & Practical Examples of AI Use in Education",
+      "authors": [
+        "Dara Cassidy",
+        "Yann-Aël Le Borgne",
+        "Francisco Bellas",
+        "Riina Vuorikari",
+        "Elise Rondin",
+        "Madhumalti Sharma",
+        "Jessica Niewint-Gori",
+        "Johanna Gröpler",
+        "Anne Gilleran",
+        "Lidija Kralj"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.12320v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2510.19196v1",
+      "arxiv_id": "2510.19196v1",
+      "title": "Integration of AI in STEM Education, Addressing Ethical Challenges in K-12 Settings",
+      "authors": [
+        "Shaouna Shoaib Lodhi",
+        "Shoaib Lodhi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.19196v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2606.20994v1",
+      "arxiv_id": "2606.20994v1",
+      "title": "Bridging Technical AI, Societal Impacts, and Workforce Competencies in AI Education",
+      "authors": [
+        "Narges Zare",
+        "Divya Ramesh",
+        "Cori Faklaris"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.20994v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2512.13730v1",
+      "arxiv_id": "2512.13730v1",
+      "title": "Exploring the Modular Integration of \"AI + Architecture\" Pedagogy in Undergraduate Design Education: A Case Study of Architectural Design III/IV Courses at Zhejiang University",
+      "authors": [
+        "Wang Jiaqi",
+        "Lan Yi",
+        "Chen Xiang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.13730v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1103/PhysRevPhysEducRes.15.020108",
+      "arxiv_id": "1807.06510v5",
+      "title": "Modernizing use of regression models in physics education research: a review of hierarchical linear modeling",
+      "authors": [
+        "Ben Van Dusen",
+        "Jayson Nissen"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1807.06510v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1145/3742901.3742909",
+      "arxiv_id": "2506.08467v2",
+      "title": "Rethinking Citation of AI Sources in Student-AI Collaboration within HCI Design Education",
+      "authors": [
+        "Prakash Shukla",
+        "Suchismita Naik",
+        "Ike Obi",
+        "Jessica Backus",
+        "Nancy Rasche",
+        "Paul Parsons"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.08467v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1119/perc.2025.pr.Moenter",
+      "arxiv_id": "2605.12609v1",
+      "title": "Power, Prescription, and Postpositivism: Considerations for collecting and representing neurodiversity demographic information in physics education research",
+      "authors": [
+        "Mason D. Moenter",
+        "George R. Keefe",
+        "Liam G. E. McDermott",
+        "Erin M. Scanlon"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.12609v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.3934/steme.2022014",
+      "arxiv_id": "2206.12149v1",
+      "title": "Inquiry-Based Mathematics Education: a call for reform in tertiary education seems unjustified",
+      "authors": [
+        "Tanya Evans",
+        "Heiko Dietrich"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.12149v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1103/PhysRevPhysEducRes.17.010116",
+      "arxiv_id": "2103.07336v1",
+      "title": "Investigating society's educational debts due to racism and sexism in student attitudes about physics using quantitative critical race theory",
+      "authors": [
+        "Jayson Nissen",
+        "Ian Her Many Horses",
+        "Ben Van Dusen"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.07336v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2604.01114v3",
+      "arxiv_id": "2604.01114v3",
+      "title": "Trust and Reliance on AI in Education: AI Literacy and Need for Cognition as Moderators",
+      "authors": [
+        "Griffin Pitts",
+        "Neha Rani",
+        "Weedguet Mildort"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.01114v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2501.02842v1",
+      "arxiv_id": "2501.02842v1",
+      "title": "Foundations of GenIR",
+      "authors": [
+        "Qingyao Ai",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02842v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2504.16770v1",
+      "arxiv_id": "2504.16770v1",
+      "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
+      "authors": [
+        "Chaeyeon Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.16770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "10.1109/TE.2024.3403913",
+      "arxiv_id": "2407.12355v1",
+      "title": "Are Educational Escape Rooms More Effective Than Traditional Lectures for Teaching Software Engineering? A Randomized Controlled Trial",
+      "authors": [
+        "Aldo Gordillo",
+        "Daniel López-Fernández"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.12355v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Educational leadership for international partnerships between New Zealand and east Asian Chinese higher education institutions",
+      "authors": [
+        "Ho, Ai-Hsin"
+      ],
+      "venue": "",
+      "year": 2009,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Unveiling higher education students’ experiences of using artificial intelligence: a cross-institutional qualitative study unveiling higher education students’ experiences of using artificial intelligence: a cross-institutional qualitative study",
+      "authors": [
+        "Budhathoki, T",
+        "Otermans, P",
+        "Zirar, A",
+        "McKay, J",
+        "Stan, I",
+        "Petrakieva, L"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI-enhanced education: bridging educational disparities",
+      "authors": [
+        "Ahmed, Zeinab E",
+        "Hassan Abdalla Hashim, Aisha",
+        "Saeed, Rashid A",
+        "Saeed, Mamoon M A"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://irep.iium.edu.my/112370/2/112370_AI-enhanced%20education_SCOPUS.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The Impact of Generative AI on Student Engagement and Ethics in Higher Education",
+      "authors": [
+        "Al Zaidy, Ahmed"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://www.jitcai.org/index.php/journal/article/download/The-Impact-of-Generative-AI-on-Student/4",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "I'm a chatbot, ask me anything: using ChatGPT to improve learning experiences",
+      "authors": [
+        "Otermans, P",
+        "Thomson, S",
+        "Baines, S",
+        "Pickard-Jones, B"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://bura.brunel.ac.uk/bitstream/2438/30718/1/FullText.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Game-Based Learning Can Enhance Students’ Understanding of AI Ethics",
+      "authors": [
+        "Koskinen, Antti",
+        "Lindstedt, Antero",
+        "Kiili, Kristian"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "M-learning and student engagement: Factors that support students' engagement in m-learning",
+      "authors": [
+        "Martin, Romana"
+      ],
+      "venue": "",
+      "year": 2011,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://researchrepository.murdoch.edu.au/9347/",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Students' AI-generated Images : Impact on Motivation, Learning and, Satisfaction",
+      "authors": [
+        "Omsén, Liv,",
+        "Berg, Cornelia,",
+        "Mozelius, Peter,",
+        "Berg, Cornelia",
+        "Omsén, Liv",
+        "Hansson, Henrik",
+        "Hansson, Henrik,",
+        "Mozelius, Peter"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "What factors influence learning of psychomotor skills by dental students?",
+      "authors": [
+        "Suksudaj, Nattira"
+      ],
+      "venue": "",
+      "year": 2010,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://hdl.handle.net/2440/63693",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI Integration Blueprint: Transforming Higher Education for the Age of Intelligence",
+      "authors": [
+        "Sidorkin, Alexander M."
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://journals.calstate.edu/ai-edu/article/download/5126/4162",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Students&rsquo; perception, attitudes, and readiness toward online learning in dental education in Saudi Arabia: a cohort study",
+      "authors": [
+        "Linjawi AI",
+        "Alfadda LS"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The impact of AI tools on students learning in higher education",
+      "authors": [
+        "Wickramasinghe, Nelum"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.theseus.fi/bitstream/10024/891617/2/Wickramasinghe_Nelum.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Important Messages from Students' Responsive Writing: s a big holloboleoos",
+      "authors": [
+        "Vanstone, Brooke"
+      ],
+      "venue": "",
+      "year": 2008,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI Literacy in Learning and Educational Technology",
+      "authors": [
+        "Shalpegin, Timofey",
+        "Whitehead, Ridwan",
+        "Nguyen, Andy",
+        "Lämsä, Joni"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://oulurepo.oulu.fi/bitstream/10024/54283/1/nbnfioulu-202502211772.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI and learning experiences of international students studying in the UK: an exploratory case study",
+      "authors": [
+        "Ghandour, Rajab",
+        "Haj Youssef, Moustafa",
+        "Arslan, Nihan"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://laur.lau.edu.lb:8443/xmlui/bitstream/10725/17603/1/AI.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Generative AI Panel Discussion: Fostering Critical Thinking with Generative AI (Future of Learning Week 2023)",
+      "authors": [
+        "Dr Alison De Kruiff",
+        "Dr Linus Tan",
+        "Dr Jane Connory",
+        "Dr Emily Wright",
+        "Associate Prof. Llew Mann",
+        "Prof. Simone Taffe"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The Impact of Generative AI in Personalized Learning on Students Learning Outcomes; Teachers Perception of Impact of AI in The 21st Century",
+      "authors": [
+        "Abdulsalam , Mercy Oziohu",
+        "Abdullahi , Michael Eneye",
+        "Ekele , Ojonugwa Abraham"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://oa.unij.co.uk/index.php/babcockUniJournalofeducation/article/download/59/57",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Impacts of generative AI on engineering and product design students' performance",
+      "authors": [
+        "Siena, L",
+        "Bathaei Javareshk, M",
+        "Watkins, M",
+        "Jobling, P"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://irep.ntu.ac.uk/id/eprint/52217/1/2204631_Siena.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI APPLICATION FOR LEARNING EXPERIENCE PERSONALISATION IN TEACHING VIETNAMESE LITERATURE IN SECONDARY GRADES: A CASE STUDY",
+      "authors": [
+        "Hoai Phuong, Tran",
+        "Le Thuc Anh, Pham"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://hnuejs.edu.vn/es/article/download/858/548",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Enhancing English Language Education: The Impact of AI Integration in the Classroom",
+      "authors": [
+        "Fattah, Hejar Ali",
+        "Shaban, Ahmad Abdulkareem",
+        "Shanmugam, Kalaiyarasi",
+        "Vadivel, Balachandran"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://theshillonga.com/index.php/jhed/article/download/70/66",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI-Assisted Learning with ChatGPT and Large Language Models: Implications for Higher Education",
+      "authors": [
+        "Björne, Jari",
+        "Laato, Samuli",
+        "Hamari, Juho",
+        "Morschheuser, Benedikt"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Students’ perceived impact of GenAI tools on learning and assessment in higher education: the role of individual AI competence",
+      "authors": [
+        "Cooper M.",
+        "Heil J.",
+        "Ifenthaler D.",
+        "Mascia M. L.",
+        "Penna M. P.",
+        "Conti R."
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI in the wild: How students are using generative AI in their learning",
+      "authors": [
+        "Lodge, Jason"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://ojs.aut.ac.nz/pjtel/article/download/176/123",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "An exploration of mediation in an intervention programme for educationally disadvantaged medical students",
+      "authors": [
+        "Badenhorst, Elmi"
+      ],
+      "venue": "",
+      "year": 2008,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Classroom structures, cultrally-derived values and students' motivational orientations: a comparative study of two types of primary schools in Hong Kong",
+      "authors": [
+        "Lui-Lau, Icy",
+        "Lui-Lau, I."
+      ],
+      "venue": "",
+      "year": 2001,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://etheses.dur.ac.uk/3844/1/3844_1405.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The Impact of AI-Based Learning on Academic Performance",
+      "authors": [
+        "de Sá Matos, Mariana Lopes",
+        "Silva Martins, Patricia",
+        "Nascimento Cunha, Maria",
+        "dos Santos Esteves, Maria Leonor"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://ai.ageditor.ar/index.php/ai/article/download/395/212",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "UMPSA Academics bring English and AI Learning to secondary school students in CSR Outreach at SMATAF",
+      "authors": [
+        "Noor Raha, Mohd Radzuan",
+        "Abdullah Adnan, Mohamed",
+        "Ezihaslinda, Ngah",
+        "Muhammad musab, Azmat Ali"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://umpir.ump.edu.my/id/eprint/45256/1/UMPSA%20Academics%20bring%20English%20and%20AI%20Learning%20to%20secondary%20school%20students%20in%20CSR%20Outreach%20at%20SMATAF.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI in creative education: opportunities and challenges for assessment",
+      "authors": [
+        "Butterworth, Roxane"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://research.uca.ac.uk/6202/1/AI%20in%20creative%20education.%20opportunities%20and%20challenges%20for%20assessment%20Juice%20Article%20RB%2012.09.23.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI-Driven Personalized Learning in Entrepreneurship Education",
+      "authors": [
+        "Ali, Syed Rizwan",
+        "Faraz, Muhammad",
+        "Uddin, Shaikh Zunain",
+        "Shuja, Talha Bin"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://journals.irapa.org/index.php/aessr/article/download/1003/482",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "AI in Education: The Impact of Reusable Learning Objects",
+      "authors": [
+        "Ngo, Jasmine V."
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://scholarworks.umass.edu/bitstreams/edeea709-e743-4d9d-965d-02eb6a54c28c/download",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    }
+  ]
+}

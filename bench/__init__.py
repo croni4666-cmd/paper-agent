@@ -1,0 +1,1 @@
+# bench package — paper-agent ground truth benchmark

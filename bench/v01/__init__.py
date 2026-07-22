@@ -1,0 +1,1 @@
+"""bench.v01 — paper-agent ground truth benchmark v0.1."""
