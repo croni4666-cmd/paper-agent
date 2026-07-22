@@ -1,466 +1,944 @@
 {
   "query_id": "q030",
   "query": "表格基础模型的教育应用 (如何降低经济学学生学习数据分析的难度)",
-  "generated_at": "2026-07-14T23:28:19",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 0,
-    "semanticscholar": 0,
-    "core": 10
+  "topic_bucket": "ml",
+  "source": "user",
+  "generated_at": "2026-07-22T11:27:58",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 51,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 1,
+    "aminer": 1,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
       "doi": "10.36012/sde.v1i3.471",
       "title": "基于大数据的学生综合数据分析研究及应用",
-      "abstract": "<jats:p>大数据技术的进步迅速且有利于大家学习工作与生活，值得应用推广。论文利用大数据分析学生综合特征，研究学生综合测评引进大数据技术的概率与措施，同时提出了需要注意的相关缺陷不足。</jats:p>",
-      "year": null,
+      "authors": [
+        "王, 益忠"
+      ],
       "venue": "教育科学发展",
-      "citation_count": 33,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 33,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大数据技术的进步迅速且有利于大家学习工作与生活，值得应用推广。论文利用大数据分析学生综合特征，研究学生综合测评引进大数据技术的概率与措施，同时提出了需要注意的相关缺陷不足。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 1
+    },
+    {
+      "doi": "10.32629/er.v2i8.1964",
+      "title": "基于大数据的大学生就业指导分析",
+      "authors": [
+        "王, 海珍"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 2,
-      "doi": "10.1177/00081256231202266",
-      "title": "From Buzzword to Biz World: R <scp>ealizing</scp> B <scp>lockchain’s</scp> P <scp>otential in the</scp> I <scp>nternational</scp> B <scp>usiness</scp> C <scp>ontext</scp>",
-      "abstract": "",
-      "year": 2023,
-      "venue": "California Management Review",
-      "citation_count": 12,
-      "engines_found_in": [
-        "openalex"
+      "abstract": "<jats:p>随着大数据技术的不断成熟,高等院校的服务、管理与教育工作在模式方法上有了更加大多元化的选择,在大学生就业指导方面有着巨大的应用潜力。因此,本文详细介绍了基于大数据的大学生就业指导工作模式,并就有关问题提出了相应的建议。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 2
     },
     {
-      "rank": 3,
-      "doi": "10.1177/18681034231186441",
-      "title": "Foreign Investment, State Capitalism, and National Development in Borneo: Rethinking Brunei–China Economic Relations",
-      "abstract": "",
-      "year": 2023,
-      "venue": "Journal of Current Southeast Asian Affairs",
-      "citation_count": 9,
-      "engines_found_in": [
-        "openalex"
+      "doi": "10.32629/er.v2i4.1763",
+      "title": "小学数学教学中如何培养学生的数学思维",
+      "authors": [
+        "张, 颖"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 10,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国教育事业的不断深入改革,素质教育的实行要求在小学数学课堂教学中要注重培养小学生的思维能力。一直以来,我国大多数小学生都习惯于按照老师所教的方法来思考问题,这对于学生兴趣、潜能的激发及创造思维的培养都是十分不利的。而加强对学生发散思维的培养,可以确保学生从单一的思维中解脱出来,逐渐克服定式思维,有益于学生的个性化及创造性发展。据此,本文探讨了小学数学教学中培养学生发散思维的具体策略。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 3
     },
     {
-      "rank": 4,
+      "doi": "10.26549/jxffcxysj.v3i10.5367",
+      "title": "互联网背景下混合式教学模式在经济法基础教学中的应用研究",
+      "authors": [
+        "何, 林",
+        "王, 砾苑",
+        "黄, 文菁",
+        "吴, 彤"
+      ],
+      "venue": "教学方法创新与实践",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>信息化的飞速发展，为各行业的发展都带来了机遇。随着互联网建设的深入发展，开始探求互联网和其他行业的融合，构建“互联网 +”时代。在互联网背景下，开始利用信息化的培养理念为当前大学生成长创设良好的成长空间，以便深化教学改革，推动学生的全面发展。在此背景下，混合式教育模式应运而生，从学生的实际需求出发，开展多样化的教学方式，构建高质量的课堂。论文以经济法基础教学为例，从混合教学法的特征、经济法基础教学的现状以及互联网背景下混合式教学模式在经济法基础教学中的应用策略三方面进行了详细阐述。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.63887/jerp.2025.1.7.43",
+      "title": "基于主题式学习的小学数学综合实践模块教学对策分析",
+      "authors": [
+        "王蕊"
+      ],
+      "venue": "教育研究与实践",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在目前教育改革背景之下，小学数学教学面临创新和发展双重需求。发展学生综合素质与实践能力已经成为当前教育的核心目标之一，而主题式学习这一新兴教学模式所具有的跨学科特点与生活化教学方法为小学数学教学带来了全新的理念与途径。如何将主题式学习有效的融入到小学数学教学中去，提升教学效果还是值得进一步研究的课题，文章旨在对小学数学综合实践模块主题式学习的运用进行探析，本文还讨论了相关教学对策，希望能对小学数学教学改革起到理论支持与实践指导的作用。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.32629/ej.v2i4.185",
+      "title": "基于大数据的市场营销分析",
+      "authors": [
+        "徐, 秦"
+      ],
+      "venue": "经济学",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在信息技术快速发展的新形势下,特别是在网络经济已经成为重要发展模式的历史背景下,如何利用大数据技术开展市场营销,需要引起企业的高度重视,因而应当对大数据时代市场营销问题进行研究。本文对此进行了研究,在简要分析大数据时代市场营销的机遇与挑战的基础上,重点提出了一些营销策略。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.32629/er.v3i6.2841",
+      "title": "学习行为的大数据分析对促进学生个性化学习的研究",
+      "authors": [
+        "虞, 陆平",
+        "厉, 向宁",
+        "刘, 亚楠",
+        "苏, 青云",
+        "赵, 爽"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在“互联网+”的大背景下,教育大数据研究和应用已经引起了教育部的高度重视,单一化的课堂教学已经无法满足学生学习多样化的需求。本文对“乐课网”平台中学生行为的数据进行深度分析,探讨课堂交互和课外学生自主学习的个性化“乐课”学习行为对学习效果的影响,对促进新型信息技术与学生个性化学习的深度融合具有借鉴意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.71411/jyyjx.2025.v1i6.585",
+      "title": "家庭教养方式对中学生学习适应能力的影响：基于中介效应的分析",
+      "authors": [
+        "王丽"
+      ],
+      "venue": "教育与教法",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究基于家庭系统理论与社会认知理论，构建“教养方式→中介变量→学习适应能力”的理论模型，系统探讨亲子沟通、学业自我效能感与情绪调节能力在家庭教养方式与中学生学习适应能力之间的链式中介机制。研究采用混合方法设计，对800名中学生及其家长进行配对问卷调查，并结合访谈与追踪数据，检验不同教养方式（权威型、专制型、放任型、忽视型）对学习适应的差异化影响路径，结果显示高学业自我效能感与强情绪调节能力存在链式中介作用。本研究揭示了家庭教养方式影响学习适应的复杂机制，为家庭教育干预与学校支持系统的优化提供了理论依据与实践建议。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.32629/er.v3i6.2874",
+      "title": "简析“数形结合”在小学低段数学教学中的应用",
+      "authors": [
+        "邹, 琴"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>数形结合属于现阶段小学数学教学的主要措施,这种措施能够满足现阶段小学生的认知规律,而且可以获得良好的教学效果。所以需要使用具体的图形来使得学生掌握抽象的概念。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.37155/2705-0653-0504-2",
+      "title": "以“安全教育”为核心的新生儿护理实习教学模式的应用研究",
+      "authors": [
+        "利, 何",
+        "卜平元"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.32629/jief.v2i8.2093",
+      "title": "导学式教学在小学数学教学中的应用分析",
+      "authors": [
+        "刘, 秋格"
+      ],
+      "venue": "国际教育论坛",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在如今阶段的教育改革背景下，导学教学法是一种较为新颖的教学模式，它的本质是引导学生自学求知，特点在引导，这种教学方法有利于激发学生的学习兴趣、提升教学质量、提高智力能力。本文主要研究了导学式教学在小学教育中的作用及应用分析。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 11
+    },
+    {
       "doi": "10.36012/sde.v3i1.2864",
       "title": "基于模版的小学数学典型应用题生成",
-      "abstract": "<jats:p>小学数学是 K12 教育的主要内容之一，在日常教学活动中往往起着至关重要的作用。而数学应用题是对数学概念、数学知识、计算技能和句子理解的综合应用，对于数学应用题学习困难的学生，学生在课本中典型的问题类型上的学习也不能满足所有学生的需求。在这种情况下，自动生成应用题的需求变得至关重要。如果及时发现学生学习困难，则为学生提供额外训练来学习和解决问题，本研究通过语义规则和句式模版生成数学应用题、解析表达式和答案，目的是生成一组相似的问题，使学习者能够回忆关联问题的语义性质，培养学生的逻辑思维能力和提升学生的解题能力。</jats:p>",
-      "year": null,
+      "authors": [
+        "褚, 文杰"
+      ],
       "venue": "教育科学发展",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>小学数学是 K12 教育的主要内容之一，在日常教学活动中往往起着至关重要的作用。而数学应用题是对数学概念、数学知识、计算技能和句子理解的综合应用，对于数学应用题学习困难的学生，学生在课本中典型的问题类型上的学习也不能满足所有学生的需求。在这种情况下，自动生成应用题的需求变得至关重要。如果及时发现学生学习困难，则为学生提供额外训练来学习和解决问题，本研究通过语义规则和句式模版生成数学应用题、解析表达式和答案，目的是生成一组相似的问题，使学习者能够回忆关联问题的语义性质，培养学生的逻辑思维能力和提升学生的解题能力。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 12
     },
     {
-      "rank": 5,
       "doi": "10.32629/jief.v2i1.451",
       "title": "合作学习模式在初中八年级数学教学中的应用分析",
-      "abstract": "<jats:p>在科教兴国的教育战略影响下，初中教育开始重视提高学校的教学效率和教学质量，力求能够培养出高素质的人才。在新课改政策的影响下，初中数学开始引进新型的数学学习方法，将合作式学习模式应用在了数学课堂中，提高了初中数学学习的质量和效率。本文深入分析了在初中数学学习过程中使用合作式学习模式的应用于分析，力求能够提升初中生的数学综合水平。</jats:p>",
-      "year": null,
+      "authors": [
+        "陶, 霞"
+      ],
       "venue": "国际教育论坛",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在科教兴国的教育战略影响下，初中教育开始重视提高学校的教学效率和教学质量，力求能够培养出高素质的人才。在新课改政策的影响下，初中数学开始引进新型的数学学习方法，将合作式学习模式应用在了数学课堂中，提高了初中数学学习的质量和效率。本文深入分析了在初中数学学习过程中使用合作式学习模式的应用于分析，力求能够提升初中生的数学综合水平。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 13
+    },
+    {
+      "doi": "10.37155/2705-0653-0601-34",
+      "title": "小学英语教育中合作学习教学模式的运用分析",
+      "authors": [
+        "杨青青"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 6,
-      "doi": "10.70693/rwsk.v2i6.516",
-      "title": "高职院校教师能力清单制定的难点与策略研究",
       "abstract": "",
-      "year": 2026,
-      "venue": "人文与社会科学学刊",
-      "citation_count": 1,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 14
     },
     {
-      "rank": 7,
-      "doi": "10.1128/spectrum.01370-25",
-      "title": "Prevalence and distribution patterns of drug resistance in <i>Mycobacterium tuberculosis</i> to first-line antituberculosis drugs in Urumqi, China",
+      "doi": "10.63887/je.2025.1.8.72",
+      "title": "基于学习分析的外语自主学习行为模式识别与评价模型研究",
+      "authors": [
+        "郭海燕"
+      ],
+      "venue": "教育学",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>基于某高校外语课程16周日志与考核数据，构建T/R/A/I/D/F六维指标，K-means识别四类行为：高投入-高互动、任务驱动-低互动、被动浏览、间歇-夜间。ANOVA/K–W显示四型在成绩、形成性、词汇增益与满意度差异显著（p</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.32629/er.v2i4.1775",
+      "title": "如何提高小学数学低段学生“解决问题”的能力",
+      "authors": [
+        "赵, 怡"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>数学教学过程当中解决问题是一大核心要素,是数学教学的昀终目标。为此,针对如何提高小学教学低段学生解决问题的能力进行探究有着非常重要的意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.32629/jief.v2i7.1944",
+      "title": "生活情境在小学数学教学中的应用分析",
+      "authors": [
+        "邓, 智慧"
+      ],
+      "venue": "国际教育论坛",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>新课程标准下要求小学数学教学活动的生活化发展，即学生能够将生活同数学知识相联系，利用数学知识来解决生活问题，提高数学的实践应用。另外是对于小学生而言，数学具有一定的抽象性和枯燥性，其学习的积极性和创造性不足，有时候无法理解数学课堂教学的重点所在，继而导致数学学习效率低下。由此可知去，在小学数学教学中运用生活化情境是小学教学的重要内容，也是提高小学数学教学质量和效率的重要渠道。基于此本文展开小学数学教学中生活情境的应用实践展开探究。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.36012/emr.v2i1.1038",
+      "title": "基于应用型人才培养的高校教育教学改革浅析",
+      "authors": [
+        "卢, 丽媛"
+      ],
+      "venue": "经济管理研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>产业结构的调整升级和社会分工的细化为大学教育带来了新的机遇和挑战，培养应用型人才已成为大学教育改革的重点。如何针对培养应用型人才的目标进行高校教育教学改革成为了高等院校需要思考的关键问题，论文就此展开相关论述。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.62836/jer.v3n5.0392",
+      "title": "基于大模型数据增强的课堂行为分析",
+      "authors": [
+        "曾建电",
+        "邹文成",
+        "王田"
+      ],
+      "venue": "教育学刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>曾建电1，邹文成2，王田1\n1.北京师范大学自然科学高等研究院，广东珠海；\n2.南京理工大学自动化学院，江苏南京\n摘要：课堂行为状态分析是教育智能化研究的重要方向，旨在通过自动化识别学生的学习行为，揭示其学习状态和参与度，为个性化教学和教育质量提升提供科学依据。然而，传统单模态方法在处理低分辨率图像或复杂背景时存在信息不足和噪声干扰的问题，难以全面捕捉学生行为特征。为此，本研究提出了一种基于多模态大模型的数据增强方法，结合图像和文本模态的联合建模，对学生课堂行为状态进行深入分析。实验结果表明，基于多模态大模型的数据增强方法在分类准确率和F1值指标上显著优于传统单模态方法，尤其在处理复杂背景和低分辨率图像时表现突出。本研究通过结合多模态大模型和特征融合技术，为课堂行为状态分析提供了一种高效、精准的解决方案，为智能教育研究提供了重要参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.62662/kxwxz0304026",
+      "title": "教育数字化背景下经济学教学模式的创新研究",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2025,
-      "venue": "Microbiology Spectrum",
-      "citation_count": 1,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 20
     },
     {
-      "rank": 8,
-      "doi": "10.1360/ssi-2025-0329",
-      "title": "Behavioral analysis of contributors in China's open-source software ecosystem",
+      "doi": "10.37155/2705-0653-0604-37",
+      "title": "中职数学课堂分层教学模式的构建探析",
+      "authors": [
+        "李秋燕"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2026,
-      "venue": "Scientia Sinica Informationis",
-      "citation_count": 1,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 21
     },
     {
-      "rank": 9,
       "doi": "10.37155/2705-0653-0603-10",
       "title": "浅析小学数学教学中如何提升学生的学习能力与素养",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "常学明"
+      ],
       "venue": "教育理论与应用",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 22
     },
     {
-      "rank": 10,
       "doi": "10.62662/kxwxz0210024",
       "title": "基于BOPPPS模型的参与式学习在高校金课建设中的应用分析",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "教育科学文献",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 23
     },
     {
-      "rank": 11,
       "doi": "10.32629/ej.v8i11.3113",
       "title": "基于因子分析和机器学习的生物医药公司价值预测模型",
-      "abstract": "<jats:p>高质量发展是未来建设与经济发展必须贯彻的发展理念。本文选取我国461家生物医药上市公司作为研究对象,基于因子分析利用机器学习算法对生物医药公司构造价值预测模型。实证结果表明：营收规模与成长和综合盈利能力为影响价值分类的主要因子。三种机器学习算法中,多分类逻辑回归综合表现最优,测试准确率达到0.985,XGBoost次之；该研究中“因子分析+逻辑回归”模型的预测效果最优。为生物医药公司高质量发展提供参考。</jats:p>",
-      "year": null,
+      "authors": [
+        "何, 群"
+      ],
       "venue": "经济学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>高质量发展是未来建设与经济发展必须贯彻的发展理念。本文选取我国461家生物医药上市公司作为研究对象,基于因子分析利用机器学习算法对生物医药公司构造价值预测模型。实证结果表明：营收规模与成长和综合盈利能力为影响价值分类的主要因子。三种机器学习算法中,多分类逻辑回归综合表现最优,测试准确率达到0.985,XGBoost次之；该研究中“因子分析+逻辑回归”模型的预测效果最优。为生物医药公司高质量发展提供参考。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 24
     },
     {
-      "rank": 12,
       "doi": "10.69979/3029-2735.25.10.043",
       "title": "高等数学中导数在经济学中的简单应用分析",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "智慧教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 25
     },
     {
-      "rank": 13,
       "doi": "10.37155/2705-0653-0605-42",
       "title": "基于数学模型思想的小学数学应用题教学研究",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "李博研"
+      ],
       "venue": "教育理论与应用",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 26
     },
     {
-      "rank": 14,
       "doi": "10.62662/kxwxz01010004",
       "title": "数据挖掘与学习分析在智慧课堂中的应用研究",
-      "abstract": "<jats:p>在智慧课堂中运用数据挖掘与学习分析，可改变智慧课堂教育发展格局。未来阶段，应用智慧课堂教学模式，需要从大数据信息化角度做好教育体系完善，以数据挖掘、学习分析为基本载体，开发智慧课堂教学新模式，从根本上提高智慧课堂教学的综合教育水平。</jats:p>",
-      "year": null,
+      "authors": [
+        "Xu, Wenzhi"
+      ],
       "venue": "教育科学文献",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在智慧课堂中运用数据挖掘与学习分析，可改变智慧课堂教育发展格局。未来阶段，应用智慧课堂教学模式，需要从大数据信息化角度做好教育体系完善，以数据挖掘、学习分析为基本载体，开发智慧课堂教学新模式，从根本上提高智慧课堂教学的综合教育水平。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 27
     },
     {
-      "rank": 15,
       "doi": "10.64216/3080-1494.26.04.041",
       "title": "基于学习行为数据的在线课程预警模型构建与应用初探",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "东方教育学刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 28
+    },
+    {
+      "doi": "10.37155/2705-0653-0601-11",
+      "title": "职业高中体育教学中如何提高学生的学习兴趣",
+      "authors": [
+        "樊明磊"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 16,
-      "doi": "10.66128/jiee202601.12",
-      "title": "基于五步教学流程的数学建模案例常态化融入高等数学教学的探索与实践",
       "abstract": "",
-      "year": 2026,
-      "venue": "教育交叉探索杂志",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 29
     },
     {
-      "rank": 17,
-      "doi": "10.62177/aper.v2i3.1482",
-      "title": "人工智能在数学教学中的应用研究",
+      "doi": "10.69979/3029-2735.26.03.103",
+      "title": "数学建模在社会调查数据分析中的应用",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2026,
-      "venue": "亚太教育研究",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 18,
-      "doi": "10.37155/2717-5561-0703-10",
-      "title": "经典文学作品在大学语文教学中的应用",
+      "doi": "10.64083/sse2521115",
+      "title": "区域应用型高校数字经济专业《西方经济学》课程思政的困境与突破—基于辽宁科技学院教学实践的反思",
+      "authors": [
+        "许, 婷婷"
+      ],
+      "venue": "社会科学与教育",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在数字经济成为区域经济转型的核心驱动力和课程思政深入推进的双重背景下,区域应用型本科院校数字经济专业西方经济学课程承担着培养服务地方数字经济发展的高素质应用型人才和落实德育根本任务的双重使命。本文以辽宁科技大学数字经济专业的教学实践为例,结合区域应用型本科院校\"立足本地,注重应用\"的办学定位,系统分析了该专业西方经济学课程思政教育面临的困境。在此基础上,提出有针对性的突破路径,为区域应用型本科院校同类专业课程思政教育建设提供实践参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.70693/fw148",
+      "title": "基于深度学习的LNG价格预测模型",
+      "authors": [
+        "赵腾"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2026,
-      "venue": "现代教育探索",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 32
     },
     {
-      "rank": 19,
-      "doi": "10.65196/sc2fqx71",
-      "title": "“生成式AI+钢琴教育”场景构建：从乐谱生成到即兴创作的教学应用",
+      "doi": "10.36012/sde.v2i5.2127",
+      "title": "如何激发学生学习数学的积极性",
+      "authors": [
+        "闫, 红霞"
+      ],
+      "venue": "教育科学发展",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>论文主要针对当前中国中职学校的学生对学习数学缺少积极性，找不到正确的学习方法等问题，做出的一些对策，从老师的角度出发，根据中职学校的教学特点，加强数学课堂和所学专业的联系，然后具体到教学的方法上提高学生学习数学的兴趣，希望能够帮助中职学生提高数学成绩，通过总体成绩的提高，让学生们步入更高的学府深造。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.62662/kxwxz0209013",
+      "title": "新质生产力驱动下基于关联主义学习理论的教师教育三重向度研究：为何、以何、如何",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2026,
-      "venue": "教育发展探索",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 34
     },
     {
-      "rank": 20,
+      "doi": "10.69979/3029-2735.25.3.028",
+      "title": "高等数学中导数的经济学应用",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.71411/jyyjx.2025.v1i8.977",
+      "title": "数学建模思想融入《经济应用数学》课程的教学改革研究",
+      "authors": [
+        "段璐灵",
+        "张桂芳"
+      ],
+      "venue": "教育与教法",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>面向数字经济背景下商科人才定量分析与决策支持能力培养需求，本文将数学建模思想系统融入《经济应用数学》课程教学。以OBE 理念为指导重构课程目标，建立“知识—案例—模型”递进式内容体系，精选市场均衡、投资组合、需求预测、风险测度等案例嵌入微积分、线性代数与概率统计教学；采用“案例驱动+任务导向”的建模化课堂，配套研讨式学习与小组协作的小建模任务；构建“过程性评价+终结性评价”多维考核体系，实现对学生知识、能力与素养的综合评价，为经管类基础数学课程应用导向改革提供可操作路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.33142/9798957334439",
+      "title": "An Economic Analysis of Basic Education Policy in China",
+      "authors": [
+        "QIU, Xiaojian"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "<jats:p>This monograph adopts an economic perspective to examine policies on school choice, education vouchers, student financial aid, paid tutoring by teachers, the balanced development of rural compulsory education, and education investment. Drawing from economic theory, the author proposes policy recommendations that are both original and innovative. The theoretical insights and research findings presented in this work are of considerable academic, theoretical, and practical significance, and",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.32629/er.v3i2.2457",
+      "title": "如何激发高职学生学习高数的兴趣",
+      "authors": [
+        "马, 强",
+        "罗, 文东"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>高等数学是高职院校工科类专业学生必修的一门公共基础课。最近几年以来,很多高职学院出现高职学生学习高等数学的积极性明显下降甚至出现抵触的现象。针对以上情况,本文从课前师生互动,课中注重效果,课后加强辅导等三个方面增强高职生学习高数的积极性和热情度。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.32629/jief.v2i7.1924",
+      "title": "如何激发小学生学习数学的主动性",
+      "authors": [
+        "陈, 桂彩",
+        "马, 善玖"
+      ],
+      "venue": "国际教育论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>《新课程标准》指出，学生的数学学习活动是一个生动活泼的、生动的富有个性的过程。在这个过程中，学生是学习的主人，教师是学生的组织者和引导者，教师除教给学生基本知识外，还要通过营造和谐师生关系、精心创设问题情境、鼓励他们大胆质疑、引导他们自主探究等方法，充分调动学生的一切非智力因素，和学生一起融入课堂，使课堂充满生机与活力，从而培养了学生学习数学的主动性，有效提高课堂教学质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.37155/2705-0653-0701-13",
+      "title": "高职数学教学中数学建模思想的应用策略探析",
+      "authors": [
+        "梁建平"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.70693/jyxb.v2i3.618",
+      "title": "学习场景驱动下大学生AI学习工具使用意愿研究——基于技术接受模型的实证分析",
+      "authors": [
+        "汪琪",
+        "章瑶",
+        "魏晨",
+        "陈宇"
+      ],
+      "venue": "中国现代教育学报",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着生成式人工智能的普及，大学生已成为其核心用户群体，AI工具深度融入学习场景。为探究学习场景驱动下大学生AI学习工具的使用意愿及影响机制，本研究整合技术接受模型与自我决定理论构建分析框架。采用文献研究法、问卷调查法与实证分析法，以474份有效问卷为样本，运用SPSS和PROCESS进行信效度检验、回归分析与中介效应检验。研究结果表明：1.智能交互性对感知有用性与感知易用性均有显著正向影响；2.趣味性学习体验仅对感知有用性有显著正向影响，对感知易用性影响不显著；3.感知有用性与感知易用性均显著正向影响使用态度，且使用态度对使用意愿的解释力最强；4.使用意愿显著正向影响；5.感知有用性在智能交互性与使用态度之间发挥部分中介效应，感知易用性在趣味性学习体验与使用态度之间亦发挥中介效应；6.不同年级大学生在感知有用性与使用意愿上呈现显著差异，大二学生得分最高，呈现\"大二峰值\"特征。本研究揭示了大学生AI学习工具使用意愿的认知与情感路径，为AI工具开发者、高校教育管理者及大学生自身提供了分层优化与针对性引导的实证依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.69979/3029-2735.25.1.032",
+      "title": "大学排球教学中如何培养学生的学习兴趣",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.69979/3029-2735.25.1.003",
+      "title": "数学实验在小学数学概念教学中的应用分析",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.62662/jjxk0105001",
+      "title": "交互式教育游戏在宏观经济学教学中的应用探索",
+      "authors": [],
+      "venue": "经济学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.69979/3029-2735.25.09.050",
+      "title": "基于决策树算法的学生学习行为数据分析研究",
+      "authors": [
+        "胡宁玉，覃晓玲, 胡玉兰"
+      ],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.70693/hj0117",
+      "title": "基于多学科协作的医疗失效模式与效应分析(HFMEA)在降低医院感染率方面的应用效果",
+      "authors": [
+        "王凤环"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.64216/3080-1494.26.01.069",
+      "title": "家庭经济困难学生的“心理贫困”问题及发展型资助育人模式探索",
+      "authors": [],
+      "venue": "东方教育学刊",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.37155/2705-0653-0706-8",
+      "title": "分层教学法在初中数学差异化教学中的应用分析",
+      "authors": [
+        "杨光远"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.65976/3080-0374.2026.07.010",
+      "title": "苏教版小学四年级数学分层作业在不同学习水平学生中的应用",
+      "authors": [
+        "黄, 洁云"
+      ],
+      "venue": "教育发展论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究探讨了分层作业在苏教版小学四年级数学教学中的应用,分析其对不同学习水平学生的影响。研究发现,分层作业能够有效提升学生的数学学习效果。基础学生通过基础型作业巩固概念,普通学生在拓展任务中提高计算与应用能力,拔尖学生则通过挑战任务发展逻辑思维和创新能力。课堂反馈和数据分析表明,分层作业能增强学生的学习兴趣,提高作业完成率和正确率。研究认为,合理的分层作业设计有助于促进数学教学的针对性与有效性。未来,可结合信息技术优化分层作业模式,以进一步提升小学数学教学质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.37155/2705-0653-0802-27",
+      "title": "基于深度学习的初中数学课前预习设计的有效方法探究",
+      "authors": [
+        "侯东校"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
       "doi": "",
+      "arxiv_id": "",
       "title": "山地环境与生态文明建设——中国地理学会2013年学术年会·西南片区会议论文集",
-      "abstract": "",
+      "authors": [
+        "中国地理学会西南地区代表处"
+      ],
+      "venue": "",
       "year": 2013,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Biodiversity soup:metabarcoding of arthropods for rapid biodiversity assessment and biomonitoring Douglas.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Local Public Goods Provision in the Post-Agricultural Tax Era in Rural China",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 22,
-      "doi": "",
-      "title": "学习困难学生的认知因素分析",
-      "abstract": "",
-      "year": 1995,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 23,
-      "doi": "",
-      "title": "Discovering Chinese economic history from footnotes : the living tale of a private merchant archive (1800-1850)",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 24,
-      "doi": "",
-      "title": "对举重生物力学分析中数据平滑方法的研究",
-      "abstract": "",
-      "year": 1983,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 25,
-      "doi": "",
-      "title": "Towards Sustainability: Environmental Education in China - A German Strategy for Chinese Schools?",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 26,
-      "doi": "",
-      "title": "我国高校家庭经济困难学生认定政策发展研究",
-      "abstract": "",
-      "year": 2018,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 27,
-      "doi": "",
-      "title": "民族预科生数学认识信念的调查分析",
-      "abstract": "",
-      "year": 2016,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 28,
-      "doi": "",
-      "title": "教育社会化理论与《政治经济学》课程的教学",
-      "abstract": "",
-      "year": 2005,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 29,
-      "doi": "",
-      "title": "在哈佛医学院做实习医师的点滴感触",
-      "abstract": "",
-      "year": 2013,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 30,
-      "doi": "",
-      "title": "脑动静脉畸形出血因素中的血液动力学分析",
-      "abstract": "",
-      "year": 2001,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "abstract": "Biodiversity soup:metabarcoding of arthropods for rapid biodiversity assessment and biomonitoring Douglas.",
+      "rank": 51
     }
   ]
 }

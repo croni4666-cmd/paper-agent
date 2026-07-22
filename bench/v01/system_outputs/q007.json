@@ -3,461 +3,5416 @@
   "query": "climate change adaptation in agricultural production",
   "topic_bucket": "social",
   "source": "pub",
-  "generated_at": "2026-07-10T20:57:14",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:21:14",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 236,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 47,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
       "doi": "10.1016/s0140",
       "title": "Home visits: a strategy to improve newborn survival - Authors' reply",
-      "abstract": "Agricultural food production and agriculturally-related change in land use substantially contribute to greenhouse-gas&#13;\\nemissions worldwide. Four-fifths of agricultural emissions arise from the livestock sector. Although livestock products&#13;\\nare a source of some essential nutrients, they provide large amounts of saturated fat, which is a known risk factor for&#13;\\ncardiovascular disease. We considered potential strategies for the agricultural sector to meet the target recommended by the UK Committee on Climate Change to reduce UK emissions from the concentrations recorded in 1990 by 80% by 2050, which would require a 50% reduction by 2030. With use of the UK as a case study, we identified that a&#13;\\ncombination of agricultural technological improvements and a 30% reduction in livestock production would be needed to meet this target; in the absence of good emissions data from Brazil, we assumed for illustrative purposes that the required reductions would be the same for our second case study in São Paulo city. We then used these data to model the potential benefits of reduced consumption of livestock products on the burden of ischaemic heart disease: disease burden would decrease by about 15% in the UK (equivalent to 2850 disability-adjusted life-years [DALYs] per million&#13;\\npopulation in 1 year) and 16% in São Paulo city (equivalent to 2180 DALYs per million population in 1 year). Although likely to yield benefits to health, such a strategy will probably encounter cultural, political, and commercial resistance, and face technical challenges. Coordinated intersectoral action is needed across agricultural, nutritional, public health,&#13;\\nand climate change communities worldwide to provide affordable, healthy, low-emission diets for all societies.",
-      "year": 2008,
+      "authors": [
+        "Barreto, Maurício Lima",
+        "Teixeira, M. Gloria",
+        "Bastos, Francisco Inácio Pinkusfeld Monteiro",
+        "Ximenes, Ricardo Arraes de Alencar",
+        "Barata, Rita de Cássia Barradas",
+        "Rodrigues, Laura C."
+      ],
       "venue": "LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas)",
-      "citation_count": 22561,
-      "engines_found_in": [
+      "year": 2008,
+      "cited_by_count": 22577,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.arca.fiocruz.br/handle/icict/2727",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 1
     },
     {
-      "rank": 2,
       "doi": "10.1073/pnas.1116437108",
       "title": "Global food demand and the sustainable intensification of agriculture",
-      "abstract": "Global food demand is increasing rapidly, as are the environmental impacts of agricultural expansion. Here, we project global demand for crop production in 2050 and evaluate the environmental impacts of alternative ways that this demand might be met. We find that per capita demand for crops, when measured as caloric or protein content of all crops combined, has been a similarly increasing function of per capita real income since 1960. This relationship forecasts a 100-110% increase in global crop demand from 2005 to 2050. Quantitative assessments show that the environmental impacts of meeting this demand depend on how global agriculture expands. If current trends of greater agricultural intensification in richer nations and greater land clearing (extensification) in poorer nations were to continue, ~1 billion ha of land would be cleared globally by 2050, with CO(2)-C equivalent greenhouse gas emissions reaching ~3 Gt y(-1) and N use ~250 Mt y(-1) by then. In contrast, if 2050 crop demand was met by moderate intensification focused on existing croplands of underyielding nations, adaptation and transfer of high-yielding technologies to these croplands, and global technological improvements, our analyses forecast land clearing of only ~0.2 billion ha, greenhouse gas emissions of ~1 Gt y(-1), and global N use of ~225 Mt y(-1). Efficient management practices could substantially lower nitrogen use. Attainment of high yields on existing croplands of underyielding nations is of great importance if global crop demand is to be met with minimal environmental impacts.",
-      "year": 2011,
+      "authors": [
+        "David Tilman",
+        "Christian Balzer",
+        "Jason Hill",
+        "Belinda L. Befort"
+      ],
       "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 7530,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 7560,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/108/50/20260.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 2
     },
     {
-      "rank": 3,
+      "doi": "10.1017/9781009157896",
+      "title": "Climate Change 2021 – the Physical Science Basis",
+      "authors": [
+        "Intergovernmental Panel on Climate Change (IPCC)"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e8aba53fda6d7f062c6b9f",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1016/j.gloenvcha.2014.04.002",
+      "title": "Changes in the Global Value of Ecosystem Services",
+      "authors": [
+        "Robert Costanza"
+      ],
+      "venue": "GLOBAL ENVIRONMENTAL CHANGE-HUMAN AND POLICY DIMENSIONS",
+      "year": 2021,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8eb31dabfae2eee514081",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1080/09669582.2020.1758708",
+      "title": "Pandemics, Tourism and Global Change: a Rapid Assessment of COVID-19",
+      "authors": [
+        "Stefan Gossling"
+      ],
+      "venue": "JOURNAL OF SUSTAINABLE TOURISM",
+      "year": 2021,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc704b8e8bf8c10452dc730",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.2307/2173276",
+      "title": "Evolution in Changing Environments.",
+      "authors": [
+        "JM SMITH"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b75fb1c45e57ce972b1dd",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1126/science.aai9214",
+      "title": "Biodiversity redistribution under climate change: Impacts on ecosystems and human well-being",
+      "authors": [
+        "GT Pecl",
+        "Miguel B. Araújo",
+        "Johann D. Bell",
+        "Julia L. Blanchard",
+        "Timothy C. Bonebrake",
+        "I‐Ching Chen",
+        "Thomas D. Clark",
+        "Robert K. Colwell",
+        "Finn Danielsen",
+        "Birgitta Evengård",
+        "Lorena Falconi",
+        "Simon Ferrier",
+        "SD Frusher",
+        "Raquel A. Garcia",
+        "Roger B. Griffis",
+        "Alistair J. Hobday",
+        "Charlene Janion‐Scheepers",
+        "Marta A. Jarzyna",
+        "Sarah Jennings",
+        "Jonathan Lenoir",
+        "Hlif I. Linnetved",
+        "Victoria Y. Martin",
+        "Phillipa C. McCormack",
+        "Jan McDonald",
+        "Nicola J. Mitchell",
+        "Tero Mustonen",
+        "John M. Pandolfi",
+        "Nathalie Pettorelli",
+        "Ekaterina Popova",
+        "Sharon A. Robinson",
+        "Brett R. Scheffers",
+        "Justine D. Shaw",
+        "Cascade J. B. Sorte",
+        "Jan M. Strugnell",
+        "Jennifer M. Sunday",
+        "Mao‐Ning Tuanmu",
+        "Adriana Vergés",
+        "Cecilia Villanueva",
+        "Thomas Wernberg",
+        "Erik Wapstra",
+        "Stephen E. Williams"
+      ],
+      "venue": "Science",
+      "year": 2017,
+      "cited_by_count": 3594,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://eprints.qut.edu.au/204738/1/68443168.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 7
+    },
+    {
       "doi": "10.1073/pnas.1701762114",
       "title": "Temperature increase reduces global yields of major crops in four independent estimates",
-      "abstract": "Significance Agricultural production is vulnerable to climate change. Understanding climate change, especially the temperature impacts, is critical if policymakers, agriculturalists, and crop breeders are to ensure global food security. Our study, by compiling extensive published results from four analytical methods, shows that independent methods consistently estimated negative temperature impacts on yields of four major crops at the global scale, generally underpinned by similar impacts at country and site scales. Multimethod analyses improved the confidence in assessments of future climate impacts on global major crops, with important implications for developing crop- and region-specific adaptation strategies to ensure future food supply of an increasing world population.",
-      "year": 2017,
+      "authors": [
+        "Chuang Zhao",
+        "Bing Liu",
+        "Shilong Piao",
+        "Xuhui Wang",
+        "David B. Lobell",
+        "Yao Huang",
+        "Mengtian Huang",
+        "Yitong Yao",
+        "Simona Bassu",
+        "Philippe Ciais",
+        "J. L. Durand",
+        "Joshua Elliott",
+        "Frank Ewert",
+        "Ivan A. Janssens",
+        "Tao Li",
+        "Erda Lin",
+        "Qiang Liu",
+        "Pierre Martre",
+        "Christoph Müller",
+        "Shushi Peng",
+        "Josep Peñuelas",
+        "Alex C. Ruane",
+        "Daniel Wallach",
+        "Tao Wang",
+        "Donghai Wu",
+        "Zhuo Liu",
+        "Yan Zhu",
+        "Zaichun Zhu",
+        "Senthold Asseng"
+      ],
       "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 3190,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 3210,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://ddd.uab.cat/record/181051",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 8
     },
     {
-      "rank": 4,
+      "doi": "10.48550/arxiv.2308.13111",
+      "title": "Bayesian Low-rank Adaptation for Large Language Models",
+      "authors": [
+        "Adam X. Yang"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64ec1b763fda6d7f0626f42f",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1145/3485128",
+      "title": "Tackling Climate Change with Machine Learning",
+      "authors": [
+        "David Rolnick"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d041b423a55acff47e6d809",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1017/9781009325844",
+      "title": "Climate Change 2022 – Impacts, Adaptation and Vulnerability",
+      "authors": [
+        "Intergovernmental Panel on Climate Change (IPCC)"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e8abdb3fda6d7f062c9ec0",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.11159/rtese23.163",
+      "title": "Climate Change Impacts on Global Food Security",
+      "authors": [
+        "Charles Lee"
+      ],
+      "venue": "International Conference of Recent Trends in Environmental Science and Engineering Proceedings of the 7th International Conference of Recent Trends in Environmental Science and Engineering (RTESE 2023)",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657936c2939a5f40820c57d4",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1200/jco.22.02776",
+      "title": "Interpreting the Significance of Changes in Health-Related Quality-of-life Scores.",
+      "authors": [
+        "D Osoba"
+      ],
+      "venue": "Journal of clinical oncology  official journal of the American Society of Clinical Oncology",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a3e477612ca648687c6baf",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1007/s11263-023-01891-x",
+      "title": "CLIP-Adapter: Better Vision-Language Models with Feature Adapters",
+      "authors": [
+        "Peng Gao"
+      ],
+      "venue": "International Journal of Computer Vision",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6164fcc15244ab9dcb24cfa7",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.48550/arxiv.2303.10512",
+      "title": "Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning.",
+      "authors": [
+        "Qingru Zhang"
+      ],
+      "venue": "ICLR 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63dcdb422c26941cf00b6543",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1017/9781009157964",
+      "title": "The Ocean and Cryosphere in a Changing Climate",
+      "authors": [
+        "Intergovernmental Panel on Climate Change (IPCC)"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e270c5aee126c0f7e66f6",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "",
+      "title": "Climate Change 2021 - The Physical Science Basis",
+      "authors": [
+        "Phil Lewis"
+      ],
+      "venue": "Climate Change and Law Collection",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65787f2b939a5f4082e695f5",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1093/biosci/biab079",
+      "title": "World Scientists' Warning of a Climate Emergency 2021",
+      "authors": [
+        "William J. Ripple"
+      ],
+      "venue": "BIOSCIENCE",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad351c45e57ce9e572d8",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1038/s41586-021-03392-8",
+      "title": "The Changing Landscape of Atherosclerosis",
+      "authors": [
+        "Peter Libby"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6082a135e4510cd7c8559e3d",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.48550/arxiv.2006.10726",
+      "title": "Tent: Fully Test-time Adaptation by Entropy Minimization",
+      "authors": [
+        "Dequan Wang"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eede0b791e0116a23aafece",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1145/3442381.3449802",
+      "title": "Graph Contrastive Learning with Adaptive Augmentation.",
+      "authors": [
+        "Yanqiao Zhu"
+      ],
+      "venue": "PROCEEDINGS OF THE WORLD WIDE WEB CONFERENCE 2021 (WWW 2021)",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f9a9af391e0114d7e7813ed",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1109/cvpr46437.2021.00400",
+      "title": "AdaBins: Depth Estimation Using Adaptive Bins",
+      "authors": [
+        "Shariq Farooq Bhat"
+      ],
+      "venue": "2021 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION, CVPR 2021",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc6121791e01189473819fc",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1016/b978-0-12-816013-8.00030-2",
+      "title": "1968 Evolution in Changing Environments",
+      "authors": [
+        "Laurence Mueller"
+      ],
+      "venue": "CONCEPTUAL BREAKTHROUGHS IN EVOLUTIONARY ECOLOGY",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bac281c45e57ce9dba63b",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.48550/arxiv.1908.03265",
+      "title": "On the Variance of the Adaptive Learning Rate and Beyond.",
+      "authors": [
+        "Liyuan Liu"
+      ],
+      "venue": "ICLR 2020",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d513ad13a55ac3e91dfe390",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1109/cvpr.2019.00503",
+      "title": "Contrastive Adaptation Network for Unsupervised Domain Adaptation",
+      "authors": [
+        "Guoliang Kang"
+      ],
+      "venue": "2019 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR 2019)",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c615f6fe1cd8eae1501b4c5",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1201/9780367816377-7",
+      "title": "Multivariate Adaptive Regression Splines",
+      "authors": [
+        "Brad Boehmke"
+      ],
+      "venue": "Hands-On Machine Learning with R",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62190da05aee126c0f51e65a",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/s10584-013-0905-2",
+      "title": "A new scenario framework for climate change research: the concept of shared socioeconomic pathways",
+      "authors": [
+        "Brian C. O’Neill",
+        "Elmar Kriegler",
+        "Keywan Riahi",
+        "Kristie L. Ebi",
+        "Stéphane Hallegatte",
+        "Timothy R. Carter",
+        "Ritu Mathur",
+        "Detlef P. van Vuuren"
+      ],
+      "venue": "Climatic Change",
+      "year": 2013,
+      "cited_by_count": 2763,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10584-013-0905-2.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 27
+    },
+    {
       "doi": "10.1146/annurev-environ-020411-130608",
       "title": "Climate Change and Food Systems",
-      "abstract": "Food systems contribute 19%–29% of global anthropogenic greenhouse gas (GHG) emissions, releasing 9,800–16,900 megatonnes of carbon dioxide equivalent (MtCO 2 e) in 2008. Agricultural production, including indirect emissions associated with land-cover change, contributes 80%–86% of total food system emissions, with significant regional variation. The impacts of global climate change on food systems are expected to be widespread, complex, geographically and temporally variable, and profoundly influenced by socioeconomic conditions. Historical statistical studies and integrated assessment models provide evidence that climate change will affect agricultural yields and earnings, food prices, reliability of delivery, food quality, and, notably, food safety. Low-income producers and consumers of food will be more vulnerable to climate change owing to their comparatively limited ability to invest in adaptive institutions and technologies under increasing climatic risks. Some synergies among food security, adaptation, and mitigation are feasible. But promising interventions, such as agricultural intensification or reductions in waste, will require careful management to distribute costs and benefits effectively.",
-      "year": 2012,
+      "authors": [
+        "Sonja Vermeulen",
+        "Bruce Campbell",
+        "John Ingram"
+      ],
       "venue": "Annual Review of Environment and Resources",
-      "citation_count": 2395,
-      "engines_found_in": [
+      "year": 2012,
+      "cited_by_count": 2405,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hdl.handle.net/10568/42116",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 28
     },
     {
-      "rank": 5,
       "doi": "10.1073/pnas.1222463110",
       "title": "Assessing agricultural risks of climate change in the 21st century in a global gridded crop model intercomparison",
-      "abstract": "Here we present the results from an intercomparison of multiple global gridded crop models (GGCMs) within the framework of the Agricultural Model Intercomparison and Improvement Project and the Inter-Sectoral Impacts Model Intercomparison Project. Results indicate strong negative effects of climate change, especially at higher levels of warming and at low latitudes; models that include explicit nitrogen stress project more severe impacts. Across seven GGCMs, five global climate models, and four representative concentration pathways, model agreement on direction of yield changes is found in many major agricultural regions at both low and high latitudes; however, reducing uncertainty in sign of response in mid-latitude regions remains a challenge. Uncertainties related to the representation of carbon dioxide, nitrogen, and high temperature effects demonstrated here show that further research is urgently needed to better understand effects of climate change on agricultural production and to devise targeted adaptation strategies.",
+      "authors": [
+        "Cynthia Rosenzweig",
+        "Joshua Elliott",
+        "Delphine Deryng",
+        "Alex C. Ruane",
+        "Christoph Müller",
+        "Almut Arneth",
+        "Kenneth J. Boote",
+        "Christian Folberth",
+        "Michael Glotter",
+        "Nikolay Khabarov",
+        "Kathleen Neumann",
+        "Franziska Piontek",
+        "Thomas A. M. Pugh",
+        "Erwin Schmid",
+        "Elke Stehfest",
+        "Hong Yang",
+        "James W. Jones"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
       "year": 2013,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 2329,
-      "engines_found_in": [
+      "cited_by_count": 2335,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/111/9/3268.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 29
     },
     {
-      "rank": 6,
-      "doi": "10.1038/nclimate2153",
-      "title": "A meta-analysis of crop yield under climate change and adaptation",
-      "abstract": "",
-      "year": 2014,
-      "venue": "Nature Climate Change",
-      "citation_count": 2283,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 7,
-      "doi": "10.1073/pnas.0701890104",
-      "title": "Adapting agriculture to climate change",
-      "abstract": "The strong trends in climate change already evident, the likelihood of further changes occurring, and the increasing scale of potential climate impacts give urgency to addressing agricultural adaptation more coherently. There are many potential adaptation options available for marginal change of existing agricultural systems, often variations of existing climate risk management. We show that implementation of these options is likely to have substantial benefits under moderate climate change for some cropping systems. However, there are limits to their effectiveness under more severe climate changes. Hence, more systemic changes in resource allocation need to be considered, such as targeted diversification of production systems and livelihoods. We argue that achieving increased adaptation action will necessitate integration of climate change-related issues with other risk factors, such as climate variability and market risk, and with other policy domains, such as sustainable development. Dealing with the many barriers to effective adaptation will require a comprehensive and dynamic policy approach covering a range of scales and issues, for example, from the understanding by farmers of change in risk profiles to the establishment of efficient markets that facilitate response strategies. Science, too, has to adapt. Multidisciplinary problems require multidisciplinary solutions, i.e., a focus on integrated rather than disciplinary science and a strengthening of the interface with decision makers. A crucial component of this approach is the implementation of adaptation assessment frameworks that are relevant, robust, and easily operated by all stakeholders, practitioners, policymakers, and scientists.",
-      "year": 2007,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 2110,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 8,
-      "doi": "10.1016/j.gloenvcha.2009.01.002",
-      "title": "Determinants of farmers’ choice of adaptation methods to climate change in the Nile Basin of Ethiopia",
-      "abstract": "",
-      "year": 2009,
-      "venue": "Global Environmental Change",
-      "citation_count": 1904,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 9,
       "doi": "10.1007/s11356-022-19718-6",
       "title": "A review of the global climate change impacts, adaptation, and sustainable mitigation measures",
-      "abstract": "",
+      "authors": [
+        "Kashif Abbass",
+        "Muhammad Qasim",
+        "Huaming Song",
+        "Muntasir Murshed",
+        "Haider Mahmood",
+        "Ijaz Younis"
+      ],
+      "venue": "Environmental Science and Pollution Research",
       "year": 2022,
-      "venue": "Environmental science and pollution research international",
-      "citation_count": 1856,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
-    },
-    {
-      "rank": 10,
-      "doi": "10.1088/1748-9326/5/1/014010",
-      "title": "Robust negative impacts of climate change on African agriculture",
-      "abstract": "There is widespread interest in the impacts of climate change on agriculture in Sub-Saharan Africa (SSA), and on the most effective investments to assist adaptation to these changes, yet the scientific basis for estimating production risks and prioritizing investments has been quite limited. Here we show that by combining historical crop production and weather data into a panel analysis, a robust model of yield response to climate change emerges for several key African crops. By mid-century, the mean estimates of aggregate production changes in SSA under our preferred model specification are −22, −17, −17, −18, and −8 % for maize, sorghum, millet, groundnut, and cassava, respectively. In all cases except cassava, there is a 95 % probability that damages exceed 7%, and a 5 % probability that they exceed 27%. Moreover, countries with the highest average yields have the largest projected yield losses, suggesting that well-fertilized modern seed varieties are more susceptible to heat related losses.",
-      "year": 2010,
-      "venue": "Environmental Research Letters",
-      "citation_count": 1481,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
+      "cited_by_count": 2222,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8978769",
       "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 11,
-      "doi": "10.1016/s1161-0301(02)00004-7",
-      "title": "Consequences of climate change for European agricultural productivity, land use and policy",
-      "abstract": "",
-      "year": 2002,
-      "venue": "European Journal of Agronomy",
-      "citation_count": 1462,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 12,
-      "doi": "10.1016/j.crm.2017.02.001",
-      "title": "Climate change and livestock: Impacts, adaptation, and mitigation",
-      "abstract": "Global demand for livestock products is expected to double by 2050, mainly due to improvement in the worldwide standard of living. Meanwhile, climate change is a threat to livestock production because of the impact on quality of feed crop and forage, water availability, animal and milk production, livestock diseases, animal reproduction, and biodiversity. This study reviews the global impacts of climate change on livestock production, the contribution of livestock production to climate change, and specific climate change adaptation and mitigation strategies in the livestock sector. Livestock production will be limited by climate variability as animal water consumption is expected to increase by a factor of three, demand for agricultural lands increase due to need for 70% growth in production, and food security concern since about one-third of the global cereal harvest is used for livestock feed. Meanwhile, the livestock sector contributes 14.5% of global greenhouse gas (GHG) emissions, driving further climate change. Consequently, the livestock sector will be a key player in the mitigation of GHG emissions and improving global food security. Therefore, in the transition to sustainable livestock production, there is a need for: a) assessments related to the use of adaptation and mitigation measures tailored to the location and livestock production system in use, and b) policies that support and facilitate the implementation of climate change adaptation and mitigation measures.",
-      "year": 2017,
-      "venue": "Climate Risk Management",
-      "citation_count": 1442,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 13,
-      "doi": "10.1007/s13593-015-0285-2",
-      "title": "Agroecology and the design of climate change-resilient farming systems",
-      "abstract": "",
-      "year": 2015,
-      "venue": "Agronomy for Sustainable Development",
-      "citation_count": 1371,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 14,
-      "doi": "10.1016/j.eja.2010.11.003",
-      "title": "Impacts and adaptation of European crop production systems to climate change",
-      "abstract": "",
-      "year": 2010,
-      "venue": "European Journal of Agronomy",
-      "citation_count": 1200,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 15,
-      "doi": "10.1016/j.envsci.2008.11.002",
-      "title": "Adaptation to climate change in Ethiopia and South Africa: options and constraints",
-      "abstract": "",
-      "year": 2009,
-      "venue": "Environmental Science & Policy",
-      "citation_count": 1180,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 16,
-      "doi": "10.1073/pnas.1222474110",
-      "title": "Constraints and potentials of future irrigation water availability on agricultural production under climate change",
-      "abstract": "We compare ensembles of water supply and demand projections from 10 global hydrological models and six global gridded crop models. These are produced as part of the Inter-Sectoral Impacts Model Intercomparison Project, with coordination from the Agricultural Model Intercomparison and Improvement Project, and driven by outputs of general circulation models run under representative concentration pathway 8.5 as part of the Fifth Coupled Model Intercomparison Project. Models project that direct climate impacts to maize, soybean, wheat, and rice involve losses of 400-1,400 Pcal (8-24% of present-day total) when CO2 fertilization effects are accounted for or 1,400-2,600 Pcal (24-43%) otherwise. Freshwater limitations in some irrigated regions (western United States; China; and West, South, and Central Asia) could necessitate the reversion of 20-60 Mha of cropland from irrigated to rainfed management by end-of-century, and a further loss of 600-2,900 Pcal of food production. In other regions (northern/eastern United States, parts of South America, much of Europe, and South East Asia) surplus water supply could in principle support a net increase in irrigation, although substantial investments in irrigation infrastructure would be required.",
-      "year": 2013,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 1169,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 17,
-      "doi": "10.1023/a:1015862228270",
-      "title": "Adaptation options in agriculture to climate change: a typology",
-      "abstract": "",
-      "year": 2002,
-      "venue": "Mitigation and Adaptation Strategies for Global Change",
-      "citation_count": 1082,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 18,
-      "doi": "10.1098/rstb.2005.1744",
-      "title": "Socio-economic and climate change impacts on agriculture: an integrated assessment, 1990–2080",
-      "abstract": "A comprehensive assessment of the impacts of climate change on agro-ecosystems over this century is developed, up to 2080 and at a global level, albeit with significant regional detail. To this end an integrated ecological-economic modelling framework is employed, encompassing climate scenarios, agro-ecological zoning information, socio-economic drivers, as well as world food trade dynamics. Specifically, global simulations are performed using the FAO/IIASA agro-ecological zone model, in conjunction with IIASAs global food system model, using climate variables from five different general circulation models, under four different socio-economic scenarios from the intergovernmental panel on climate change. First, impacts of different scenarios of climate change on bio-physical soil and crop growth determinants of yield are evaluated on a 5' X 5' latitude/longitude global grid; second, the extent of potential agricultural land and related potential crop production is computed. The detailed bio-physical results are then fed into an economic analysis, to assess how climate impacts may interact with alternative development pathways, and key trends expected over this century for food demand and production, and trade, as well as key composite indices such as risk of hunger and malnutrition, are computed. This modelling approach connects the relevant bio-physical and socio-economic variables within a unified and coherent framework to produce a global assessment of food production and security under climate change. The results from the study suggest that critical impact asymmetries due to both climate and socio-economic structures may deepen current production and consumption gaps between developed and developing world; it is suggested that adaptation of agricultural techniques will be central to limit potential damages under climate change.",
-      "year": 2005,
-      "venue": "Philosophical Transactions of the Royal Society B Biological Sciences",
-      "citation_count": 1052,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 19,
-      "doi": "10.1257/pol.20130025",
-      "title": "Adaptation to Climate Change: Evidence from US Agriculture",
-      "abstract": "Understanding the potential impacts of climate change on economic outcomes requires knowing how agents might adapt to a changing climate. We exploit large variation in recent temperature and precipitation trends to identify adaptation to climate change in US agriculture, and use this information to generate new estimates of the potential impact of future climate change on agricultural outcomes. Longer run adaptations appear to have mitigated less than half—and more likely none—of the large negative short-run impacts of extreme heat on productivity. Limited recent adaptation implies substantial losses under future climate change in the absence of countervailing investments. (JEL Q11, Q15, Q51, Q54)",
-      "year": 2016,
-      "venue": "American Economic Journal Economic Policy",
-      "citation_count": 881,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 20,
-      "doi": "10.1016/j.jenvman.2012.10.036",
-      "title": "Adapting agriculture to climate change in Kenya: Household strategies and determinants",
-      "abstract": "",
-      "year": 2012,
-      "venue": "Journal of Environmental Management",
-      "citation_count": 880,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 21,
-      "doi": "10.1073/pnas.1222465110",
-      "title": "Climate change effects on agriculture: Economic responses to biophysical shocks",
-      "abstract": "Agricultural production is sensitive to weather and thus directly affected by climate change. Plausible estimates of these climate change impacts require combined use of climate, crop, and economic models. Results from previous studies vary substantially due to differences in models, scenarios, and data. This paper is part of a collective effort to systematically integrate these three types of models. We focus on the economic component of the assessment, investigating how nine global economic models of agriculture represent endogenous responses to seven standardized climate change scenarios produced by two climate and five crop models. These responses include adjustments in yields, area, consumption, and international trade. We apply biophysical shocks derived from the Intergovernmental Panel on Climate Change's representative concentration pathway with end-of-century radiative forcing of 8.5 W/m(2). The mean biophysical yield effect with no incremental CO2 fertilization is a 17% reduction globally by 2050 relative to a scenario with unchanging climate. Endogenous economic responses reduce yield loss to 11%, increase area of major crops by 11%, and reduce consumption by 3%. Agricultural production, cropland area, trade, and prices show the greatest degree of variability in response to climate change, and consumption the lowest. The sources of these differences include model structure and specification; in particular, model assumptions about ease of land use conversion, intensification, and trade. This study identifies where models disagree on the relative responses to climate shocks and highlights research activities needed to improve the representation of agricultural adaptation responses to climate change.",
-      "year": 2013,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 825,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 22,
-      "doi": "10.1073/pnas.1210127110",
-      "title": "Climate change, wine, and conservation",
-      "abstract": "Climate change is expected to impact ecosystems directly, such as through shifting climatic controls on species ranges, and indirectly, for example through changes in human land use that may result in habitat loss. Shifting patterns of agricultural production in response to climate change have received little attention as a potential impact pathway for ecosystems. Wine grape production provides a good test case for measuring indirect impacts mediated by changes in agriculture, because viticulture is sensitive to climate and is concentrated in Mediterranean climate regions that are global biodiversity hotspots. Here we demonstrate that, on a global scale, the impacts of climate change on viticultural suitability are substantial, leading to possible conservation conflicts in land use and freshwater ecosystems. Area suitable for viticulture decreases 25% to 73% in major wine producing regions by 2050 in the higher RCP 8.5 concentration pathway and 19% to 62% in the lower RCP 4.5. Climate change may cause establishment of vineyards at higher elevations that will increase impacts on upland ecosystems and may lead to conversion of natural vegetation as production shifts to higher latitudes in areas such as western North America. Attempts to maintain wine grape productivity and quality in the face of warming may be associated with increased water use for irrigation and to cool grapes through misting or sprinkling, creating potential for freshwater conservation impacts. Agricultural adaptation and conservation efforts are needed that anticipate these multiple possible indirect effects.",
-      "year": 2013,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 797,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 23,
-      "doi": "10.1098/rstb.2013.0089",
-      "title": "Extreme vulnerability of smallholder farmers to agricultural risks and climate change in Madagascar",
-      "abstract": "Across the tropics, smallholder farmers already face numerous risks to agricultural production. Climate change is expected to disproportionately affect smallholder farmers and make their livelihoods even more precarious; however, there is limited information on their overall vulnerability and adaptation needs. We conducted surveys of 600 households in Madagascar to characterize the vulnerability of smallholder farmers, identify how farmers cope with risks and explore what strategies are needed to help them adapt to climate change. Malagasy farmers are particularly vulnerable to any shocks to their agricultural system owing to their high dependence on agriculture for their livelihoods, chronic food insecurity, physical isolation and lack of access to formal safety nets. Farmers are frequently exposed to pest and disease outbreaks and extreme weather events (particularly cyclones), which cause significant crop and income losses and exacerbate food insecurity. Although farmers use a variety of risk-coping strategies, these are insufficient to prevent them from remaining food insecure. Few farmers have adjusted their farming strategies in response to climate change, owing to limited resources and capacity. Urgent technical, financial and institutional support is needed to improve the agricultural production and food security of Malagasy farmers and make their livelihoods resilient to climate change.",
-      "year": 2014,
-      "venue": "Philosophical Transactions of the Royal Society B Biological Sciences",
-      "citation_count": 711,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 24,
-      "doi": "10.1007/s10668-019-00414-4",
-      "title": "Climate change and agriculture in South Asia: adaptation options in smallholder production systems",
-      "abstract": "Agriculture in South Asia is vulnerable to climate change. Therefore, adaptation measures are required to sustain agricultural productivity, to reduce vulnerability, and to enhance the resilience of the agricultural system to climate change. There are many adaptation practices in the production systems that have been proposed and tested for minimizing the effects of climate change. Some socioeconomic and political setup contributes to adaptation, while others may inhibit it. This paper presents a systematic review of the impacts of climate change on crop production and also the major options in the agricultural sector that are available for adaptation to climate change. One of the key conclusions is that agricultural practices that help climate change adaptation in agriculture are available, while the institutional setup to implement and disseminate those technical solutions is yet to be strengthened. Thus, it is important to examine how to bring the required institutional change, generate fund to invest on these changes, and design dynamic policies for long-term climate change adaptation in agriculture rather than a mere focus on agricultural technology. This is one of the areas where South Asian climate policies require reconsidering to avoid possible maladaptation in the long run.",
-      "year": 2019,
-      "venue": "Environment Development and Sustainability",
-      "citation_count": 699,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 25,
-      "doi": "10.3389/fpls.2022.925548",
-      "title": "Impact of climate change on agricultural production; Issues, challenges, and opportunities in Asia",
-      "abstract": "Agricultural production is under threat due to climate change in food insecure regions, especially in Asian countries. Various climate-driven extremes, i.e., drought, heat waves, erratic and intense rainfall patterns, storms, floods, and emerging insect pests have adversely affected the livelihood of the farmers. Future climatic predictions showed a significant increase in temperature, and erratic rainfall with higher intensity while variability exists in climatic patterns for climate extremes prediction. For mid-century (2040-2069), it is projected that there will be a rise of 2.8°C in maximum temperature and a 2.2°C in minimum temperature in Pakistan. To respond to the adverse effects of climate change scenarios, there is a need to optimize the climate-smart and resilient agricultural practices and technology for sustainable productivity. Therefore, a case study was carried out to quantify climate change effects on rice and wheat crops and to develop adaptation strategies for the rice-wheat cropping system during the mid-century (2040-2069) as these two crops have significant contributions to food production. For the quantification of adverse impacts of climate change in farmer fields, a multidisciplinary approach consisted of five climate models (GCMs), two crop models (DSSAT and APSIM) and an economic model [Trade-off Analysis, Minimum Data Model Approach (TOAMD)] was used in this case study. DSSAT predicted that there would be a yield reduction of 15.2% in rice and 14.1% in wheat and APSIM showed that there would be a yield reduction of 17.2% in rice and 12% in wheat. Adaptation technology, by modification in crop management like sowing time and density, nitrogen, and irrigation application have the potential to enhance the overall productivity and profitability of the rice-wheat cropping system under climate change scenarios. Moreover, this paper reviews current literature regarding adverse climate change impacts on agricultural productivity, associated main i",
-      "year": 2022,
-      "venue": "Frontiers in Plant Science",
-      "citation_count": 328,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
-    },
-    {
-      "rank": 26,
-      "doi": "10.1016/j.jenvp.2020.101408",
-      "title": "Predicting climate change mitigation and adaptation behaviors in agricultural production: A comparison of the theory of planned behavior and the Value-Belief-Norm Theory",
-      "abstract": "",
-      "year": 2020,
-      "venue": "Journal of Environmental Psychology",
-      "citation_count": 278,
-      "engines_found_in": [
+      "type": "article",
+      "found_by": [
         "openalex",
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "influential_cite_count": 35,
+      "reference_count": 225,
+      "rank": 30
     },
     {
-      "rank": 27,
-      "doi": "10.1016/j.landusepol.2017.10.023",
-      "title": "Determinants of farmers’ adaptation to climate change in agricultural production in the central region of Vietnam",
-      "abstract": "",
-      "year": 2017,
-      "venue": "Land Use Policy",
-      "citation_count": 264,
-      "engines_found_in": [
+      "doi": "10.1073/pnas.0701890104",
+      "title": "Adapting agriculture to climate change",
+      "authors": [
+        "Mark Howden",
+        "Jean‐François Soussana",
+        "Francesco N. Tubiello",
+        "Netra Chhetri",
+        "Michael Dunlop",
+        "Holger Meinke"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2007,
+      "cited_by_count": 2112,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://pure.iiasa.ac.at/id/eprint/8134/1/Adapting%20agriculture%20to%20climate%20change.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 31
     },
     {
-      "rank": 28,
+      "doi": "10.1016/j.gloenvcha.2009.01.002",
+      "title": "Determinants of farmers’ choice of adaptation methods to climate change in the Nile Basin of Ethiopia",
+      "authors": [
+        "Temesgen Deressa",
+        "Rashid Hassan",
+        "Claudia Ringler",
+        "Tekie Alemu",
+        "Mahmud Yesuf"
+      ],
+      "venue": "Global Environmental Change",
+      "year": 2009,
+      "cited_by_count": 1911,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0959378009000156",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.3390/plants8020034",
+      "title": "Impact of Climate Change on Crops Adaptation and Strategies to Tackle Its Outcome: A Review",
+      "authors": [
+        "Ali Raza",
+        "Ali Razzaq",
+        "Sundas Saher Mehmood",
+        "Xiling Zou",
+        "Xuekun Zhang",
+        "Yan Lv",
+        "Jinsong Xu"
+      ],
+      "venue": "Plants",
+      "year": 2019,
+      "cited_by_count": 1750,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2223-7747/8/2/34/pdf?version=1548840989",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1016/j.envsoft.2014.07.009",
+      "title": "APSIM – Evolution towards a new generation of agricultural systems simulation",
+      "authors": [
+        "Dean Holzworth",
+        "Neil Huth",
+        "Peter de Voil",
+        "Eric J. Zurcher",
+        "Neville I. Herrmann",
+        "Greg McLean",
+        "Karine Chenu",
+        "Erik van Oosterom",
+        "Val Snow",
+        "Chris Murphy",
+        "Andrew D. Moore",
+        "Hamish Brown",
+        "Jeremy Whish",
+        "S. Verrall",
+        "Justin Fainges",
+        "Lindsay W. Bell",
+        "Allan Peake",
+        "Perry Poulton",
+        "Zvi Hochman",
+        "Peter J. Thorburn",
+        "Donald S. Gaydon",
+        "Neal Dalgliesh",
+        "Daniel Rodrı́guez",
+        "Howard Cox",
+        "Scott Chapman",
+        "A. Doherty",
+        "Edmar Teixeira",
+        "Joanna Sharp",
+        "Rogerio Cichota",
+        "Iris Vogeler",
+        "Frank Yonghong Li",
+        "Enli Wang",
+        "Graeme Hammer",
+        "M. J. Robertson",
+        "John Dimes",
+        "Anthony Whitbread",
+        "James Hunt",
+        "Harm van Rees",
+        "Tim McClelland",
+        "Peter Carberry",
+        "J.N.G. Hargreaves",
+        "Neil D. MacLeod",
+        "C. K. McDonald",
+        "Justin Harsdorf",
+        "Sara Wedgwood",
+        "B. A. Keating"
+      ],
+      "venue": "Environmental Modelling & Software",
+      "year": 2014,
+      "cited_by_count": 1717,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1038/nature13809",
+      "title": "Productivity limits and potentials of the principles of conservation agriculture",
+      "authors": [
+        "Cameron M. Pittelkow",
+        "Xinqiang Liang",
+        "Bruce A. Linquist",
+        "Kees Jan van Groenigen",
+        "Juhwan Lee",
+        "Mark Lundy",
+        "Natasja van Gestel",
+        "Johan Six",
+        "Rodney T. Venterea",
+        "Chris van Kessel"
+      ],
+      "venue": "Nature",
+      "year": 2014,
+      "cited_by_count": 1644,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1088/1748-9326/5/1/014010",
+      "title": "Robust negative impacts of climate change on African agriculture",
+      "authors": [
+        "Wolfram Schlenker",
+        "David B. Lobell"
+      ],
+      "venue": "Environmental Research Letters",
+      "year": 2010,
+      "cited_by_count": 1485,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://iopscience.iop.org/article/10.1088/1748-9326/5/1/014010/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.3390/su13031318",
+      "title": "Impact of Climate Change on Agriculture and Its Mitigation Strategies: A Review",
+      "authors": [
+        "Gurdeep Singh Malhi",
+        "Manpreet Kaur",
+        "Prashant Kaushik"
+      ],
+      "venue": "Sustainability",
+      "year": 2021,
+      "cited_by_count": 1476,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/13/3/1318/pdf?version=1611822170",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1016/s1161-0301(02)00004-7",
+      "title": "Consequences of climate change for European agricultural productivity, land use and policy",
+      "authors": [
+        "Jørgen E. Olesen",
+        "Marco Bindi"
+      ],
+      "venue": "European Journal of Agronomy",
+      "year": 2002,
+      "cited_by_count": 1463,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1016/j.crm.2017.02.001",
+      "title": "Climate change and livestock: Impacts, adaptation, and mitigation",
+      "authors": [
+        "M. Melissa Rojas-Downing",
+        "A. Pouyan Nejadhashemi",
+        "Timothy M. Harrigan",
+        "Sean A. Woznicki"
+      ],
+      "venue": "Climate Risk Management",
+      "year": 2017,
+      "cited_by_count": 1446,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1016/j.crm.2017.02.001",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1007/s13593-015-0285-2",
+      "title": "Agroecology and the design of climate change-resilient farming systems",
+      "authors": [
+        "Miguel A. Altieri",
+        "Clara I. Nicholls",
+        "Alejandro Henao",
+        "Marcos Lana"
+      ],
+      "venue": "Agronomy for Sustainable Development",
+      "year": 2015,
+      "cited_by_count": 1381,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s13593-015-0285-2.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.3390/insects12050440",
+      "title": "The Impact of Climate Change on Agricultural Insect Pests",
+      "authors": [
+        "Sandra Skendžić",
+        "Monika Zovko",
+        "Ivana Pajač Živković",
+        "Vinko Lešić",
+        "Darija Lemić"
+      ],
+      "venue": "Insects",
+      "year": 2021,
+      "cited_by_count": 1373,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2075-4450/12/5/440/pdf?version=1620822800",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1016/j.eja.2010.11.003",
+      "title": "Impacts and adaptation of European crop production systems to climate change",
+      "authors": [
+        "Jørgen E. Olesen",
+        "Miroslav Trnka",
+        "Kurt Christian Kersebaum",
+        "A. O. Skjelvåg",
+        "Bernard Séguin",
+        "Pirjo Peltonen‐Sainio",
+        "Federica Rossi",
+        "Jerzy Kozyra",
+        "Fabio Micale"
+      ],
+      "venue": "European Journal of Agronomy",
+      "year": 2010,
+      "cited_by_count": 1202,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1016/j.envsci.2008.11.002",
+      "title": "Adaptation to climate change in Ethiopia and South Africa: options and constraints",
+      "authors": [
+        "Elizabeth Bryan",
+        "Temesgen Deressa",
+        "Glwadys Aymone Gbetibouo",
+        "Claudia Ringler"
+      ],
+      "venue": "Environmental Science & Policy",
+      "year": 2009,
+      "cited_by_count": 1184,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1073/pnas.1222474110",
+      "title": "Constraints and potentials of future irrigation water availability on agricultural production under climate change",
+      "authors": [
+        "Joshua Elliott",
+        "Delphine Deryng",
+        "Christoph Müller",
+        "Katja Frieler",
+        "Markus Konzmann",
+        "Dieter Gerten",
+        "Michael Glotter",
+        "Martina Flörke",
+        "Yoshihide Wada",
+        "Neil Best",
+        "Stephanie Eisner",
+        "B M Fekete",
+        "Christian Folberth",
+        "Ian Foster",
+        "Simon N. Gosling",
+        "Ingjerd Haddeland",
+        "Nikolay Khabarov",
+        "Fulco Ludwig",
+        "Yoshimitsu Masaki",
+        "Stefan Olin",
+        "Cynthia Rosenzweig",
+        "Alex C. Ruane",
+        "Yusuke Satoh",
+        "Erwin Schmid",
+        "Tobias Stacke",
+        "Qiuhong Tang",
+        "Dominik Wisser"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2013,
+      "cited_by_count": 1174,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/111/9/3239.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1023/a:1015862228270",
+      "title": "Adaptation options in agriculture to climate change: a typology",
+      "authors": [
+        "Barry Smit",
+        "Mark W. Skinner"
+      ],
+      "venue": "Mitigation and Adaptation Strategies for Global Change",
+      "year": 2002,
+      "cited_by_count": 1084,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1098/rstb.2005.1744",
+      "title": "Socio-economic and climate change impacts on agriculture: an integrated assessment, 1990–2080",
+      "authors": [
+        "Günther Fischer",
+        "Mahendra Shah",
+        "Francesco N. Tubiello",
+        "Harrij van Velhuizen"
+      ],
+      "venue": "Philosophical Transactions of the Royal Society B Biological Sciences",
+      "year": 2005,
+      "cited_by_count": 1053,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://pure.iiasa.ac.at/id/eprint/7836/1/RP-05-008.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1111/j.1523-1739.2009.01237.x",
+      "title": "The Melting Himalayas: Cascading Effects of Climate Change on Water, Biodiversity, and Livelihoods",
+      "authors": [
+        "Jianchu Xu",
+        "R. Edward Grumbine",
+        "A. B. Shrestha",
+        "Mats Eriksson",
+        "Xuefei Yang",
+        "Wang Yun",
+        "Andreas Wilkes"
+      ],
+      "venue": "Conservation Biology",
+      "year": 2009,
+      "cited_by_count": 999,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1016/j.jenvman.2012.10.036",
+      "title": "Adapting agriculture to climate change in Kenya: Household strategies and determinants",
+      "authors": [
+        "Elizabeth Bryan",
+        "Claudia Ringler",
+        "Barrack Okoba",
+        "Carla Roncoli",
+        "Silvia Silvestri",
+        "Mario Herrero"
+      ],
+      "venue": "Journal of Environmental Management",
+      "year": 2012,
+      "cited_by_count": 884,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1257/pol.20130025",
+      "title": "Adaptation to Climate Change: Evidence from US Agriculture",
+      "authors": [
+        "Marshall Burke",
+        "Kyle Emerick"
+      ],
+      "venue": "American Economic Journal Economic Policy",
+      "year": 2016,
+      "cited_by_count": 884,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/pol.20130025",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1073/pnas.1222465110",
+      "title": "Climate change effects on agriculture: Economic responses to biophysical shocks",
+      "authors": [
+        "Gerald C. Nelson",
+        "Hugo Valin",
+        "Ronald D. Sands",
+        "Peter Havlík",
+        "Helal Ahammad",
+        "Delphine Deryng",
+        "Joshua Elliott",
+        "Shinichiro Fujimori",
+        "Tomoko Hasegawa",
+        "Edwina Heyhoe",
+        "Page Kyle",
+        "Martin von Lampe",
+        "Hermann Lotze‐Campen",
+        "Daniel Mason-D’Croz",
+        "Hans van Meijl",
+        "Dominique van der Mensbrugghe",
+        "Christoph Müller",
+        "Alexander Popp",
+        "Richard Robertson",
+        "Sherman Robinson",
+        "Erwin Schmid",
+        "Christoph Schmitz",
+        "Andrzej Tabeau",
+        "Dirk Willenbockel"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2013,
+      "cited_by_count": 827,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/111/9/3274.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1073/pnas.1210127110",
+      "title": "Climate change, wine, and conservation",
+      "authors": [
+        "Lee Hannah",
+        "Patrick R. Roehrdanz",
+        "Makihiko Ikegami",
+        "Anderson V. Shepard",
+        "M. Rebecca Shaw",
+        "Gary Tabor",
+        "Zhi Lü",
+        "Pablo A. Marquet",
+        "Robert J. Hijmans"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2013,
+      "cited_by_count": 797,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/110/17/6907.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1007/s10584-013-0909-y",
+      "title": "The adaptation and mitigation potential of traditional agriculture in a changing climate",
+      "authors": [
+        "Miguel A. Altieri",
+        "Clara I. Nicholls"
+      ],
+      "venue": "Climatic Change",
+      "year": 2013,
+      "cited_by_count": 733,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1098/rstb.2013.0089",
+      "title": "Extreme vulnerability of smallholder farmers to agricultural risks and climate change in Madagascar",
+      "authors": [
+        "Célia A. Harvey",
+        "Zo Lalaina Rakotobe",
+        "Nalini S. Rao",
+        "Radhika Dave",
+        "Hery Razafimahatratra",
+        "Rivo Hasinandrianina Rabarijohn",
+        "Haingo Rajaofara",
+        "James L. MacKinnon"
+      ],
+      "venue": "Philosophical Transactions of the Royal Society B Biological Sciences",
+      "year": 2014,
+      "cited_by_count": 714,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://royalsocietypublishing.org/doi/pdf/10.1098/rstb.2013.0089",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1007/s10668-019-00414-4",
+      "title": "Climate change and agriculture in South Asia: adaptation options in smallholder production systems",
+      "authors": [
+        "Jeetendra Prakash Aryal",
+        "Tek B. Sapkota",
+        "Ritika Khurana",
+        "Arun Khatri‐Chhetri",
+        "Dil Bahadur Rahut",
+        "M. L. Jat"
+      ],
+      "venue": "Environment Development and Sustainability",
+      "year": 2019,
+      "cited_by_count": 703,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10668-019-00414-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 19,
+      "reference_count": 176,
+      "rank": 54
+    },
+    {
+      "doi": "10.3389/fmars.2017.00100",
+      "title": "Can Seaweed Farming Play a Role in Climate Change Mitigation and Adaptation?",
+      "authors": [
+        "Carlos M. Duarte",
+        "Jiaping Wu",
+        "Xi Xiao",
+        "Annette Bruhn",
+        "Dorte Krause‐Jensen"
+      ],
+      "venue": "Frontiers in Marine Science",
+      "year": 2017,
+      "cited_by_count": 660,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fmars.2017.00100/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.1016/j.fcr.2011.07.001",
+      "title": "Methodologies for simulating impacts of climate change on crop production",
+      "authors": [
+        "Jeffrey W. White",
+        "Gerrit Hoogenboom",
+        "Bruce A. Kimball",
+        "Gerard W. Wall"
+      ],
+      "venue": "Field Crops Research",
+      "year": 2011,
+      "cited_by_count": 607,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1016/j.media.2025.103547",
+      "title": "Medical SAM Adapter: Adapting Segment Anything Model for Medical Image Segmentation",
+      "authors": [
+        "Junde Wu"
+      ],
+      "venue": "Medical image analysis",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6448967571ac66d2cbd87675",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.4337/9781800885806.00046",
+      "title": "Climate Change in Africa",
+      "authors": [
+        "Camilla Toulmin"
+      ],
+      "venue": "Handbook of African Economic Development",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a4fdfad68f896efa84bb14",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "",
+      "title": "Weather and Climate Extreme Events in a Changing Climate",
+      "authors": [
+        "Hervé Douville"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b340543fda6d7f0669fe70",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "",
+      "title": "Climate Change 2022 - Mitigation of Climate Change",
+      "authors": [
+        "Stefano Schiavon"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578e069939a5f40827c5759",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1175/2023bamsstateoftheclimate.1",
+      "title": "State of the Climate in 2022",
+      "authors": [
+        "T. Boyer"
+      ],
+      "venue": "BULLETIN OF THE AMERICAN METEOROLOGICAL SOCIETY",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657931d4939a5f408203d7af",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.1111/j.1469-0691.2008.01978.x",
+      "title": "Changing Epidemiology of Systemic Fungal Infections",
+      "authors": [
+        "Cornelia Lass-Flörl"
+      ],
+      "venue": "Molecular aspects of medicine",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a35fb7602d9702c68ebe",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1093/oxfordhb/9780197519806.013.6",
+      "title": "Explaining Institutional Change",
+      "authors": [
+        "N. Emrah Aydinonat"
+      ],
+      "venue": "The Oxford Handbook of Philosophy of Political Science",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648cf528d68f896efa920385",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.4324/9781003365013-22",
+      "title": "Resilience, Adaptation, and Adaptability",
+      "authors": [
+        "Clément Lavigne"
+      ],
+      "venue": "Maritime Ports, Supply Chains and Logistics Corridors",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6579399c939a5f40821133f7",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.1109/iccvw60793.2023.00361",
+      "title": "SAM-Adapter: Adapting Segment Anything in Underperformed Scenes.",
+      "authors": [
+        "Tianrun Chen"
+      ],
+      "venue": "2023 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION WORKSHOPS, ICCVW",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "658d5082939a5f40824599d9",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.1016/b978-0-12-818464-6.00003-2",
+      "title": "Landslides in a Changing Climate",
+      "authors": [
+        "Matthias Jakob"
+      ],
+      "venue": "Landslide Hazards, Risks, and Disasters",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca402f5244ab9dcb2e5115",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.1016/j.rser.2022.112111",
+      "title": "Renewable Energy and Climate Change",
+      "authors": [
+        "A. G. Olabi"
+      ],
+      "venue": "RENEWABLE & SUSTAINABLE ENERGY REVIEWS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623004f25aee126c0f9d959a",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.1073/pnas.2108146119",
+      "title": "Climate Endgame: Exploring Catastrophic Climate Change Scenarios",
+      "authors": [
+        "Luke Kemp"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62e834df5aee126c0fb571b9",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.1017/9781009157988",
+      "title": "Climate Change and Land",
+      "authors": [
+        "Intergovernmental Panel on Climate Change"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d3888d68f896efabc3ad4",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "",
+      "title": "Climate Change 2022:Impacts, Adaptation and Vulnerability",
+      "authors": [
+        "Camille Parmesan"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657835e0939a5f408275c2c6",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1109/tgrs.2021.3095166",
+      "title": "Remote Sensing Image Change Detection with Transformers",
+      "authors": [
+        "Hao Chen"
+      ],
+      "venue": "IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "603e08c791e01129ef28fbdd",
+      "matched_phrase": "change",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.00706",
+      "title": "Continual Test-Time Domain Adaptation",
+      "authors": [
+        "Qin Wang"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6241273e5aee126c0f292c09",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "",
+      "title": "Weather and climate extreme events in a changing climate",
+      "authors": [
+        "m wehner"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6369d81703dc88000d518fad",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.48550/arxiv.2007.02931",
+      "title": "Adaptive Risk Minimization: Learning to Adapt to Domain Shift.",
+      "authors": [
+        "Marvin Mengxin Zhang"
+      ],
+      "venue": "NEURIPS 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f04606e91e0114d4aaa4c1c",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.48550/arxiv.2110.03374",
+      "title": "Model Adaptation: Historical Contrastive Learning for Unsupervised Domain Adaptation Without Source Data",
+      "authors": [
+        "Jiaxing Huang"
+      ],
+      "venue": "NEURIPS 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615fb6f15244ab9dcb9c3e75",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.1109/iccv48922.2021.00888",
+      "title": "Adaptive Adversarial Network for Source-free Domain Adaptation.",
+      "authors": [
+        "Haifeng Xia"
+      ],
+      "venue": "2021 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION (ICCV 2021)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "617b95fe6750f842fb7c54a7",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1007/978-3-030-42462-6_18",
+      "title": "Migration As Adaptation",
+      "authors": [
+        "Benjamin Schraven"
+      ],
+      "venue": "The Palgrave Handbook of Climate Resilient Societies",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e2c075aee126c0f8f0fe0",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.18653/v1/2021.findings-acl.121",
+      "title": "K-Adapter: Infusing Knowledge into Pre-Trained Models with Adapters",
+      "authors": [
+        "Ruize Wang"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a37c9bd68f896efa07f1ab",
+      "matched_phrase": "adaptation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.1126/science.1081056",
+      "title": "Abrupt Climate Change",
+      "authors": [
+        "RB Alley"
+      ],
+      "venue": "Geophysical Research Letters",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a50c3b612c6b12ab020541",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.1016/j.janxdis.2020.102263",
+      "title": "Climate Anxiety: Psychological Responses to Climate Change.",
+      "authors": [
+        "Susan Clayton"
+      ],
+      "venue": "Journal of Anxiety Disorders",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0449489fced0a24b38826b",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.3354/cr011019",
+      "title": "Effects of global climate change on world agriculture: an interpretive review",
+      "authors": [
+        "RM Adams",
+        "BH Hurd",
+        "Suzanne Lenhart",
+        "Neil Leary"
+      ],
+      "venue": "Climate Research",
+      "year": 1998,
+      "cited_by_count": 584,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.int-res.com/articles/cr/11/c011p019.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1016/j.envsci.2011.09.003",
+      "title": "Options for support to agriculture and food security under climate change",
+      "authors": [
+        "S. Vermeulen",
+        "Pramod Aggarwal",
+        "Andrew Ainslie",
+        "Chiara Angelone",
+        "Bruce Campbell",
+        "Andrew J. Challinor",
+        "James Hansen",
+        "John Ingram",
+        "Andy Jarvis",
+        "Patti Kristjanson",
+        "Charlotte Lau",
+        "Gerald C. Nelson",
+        "Philip K. Thornton",
+        "Eva Wollenberg"
+      ],
+      "venue": "Environmental Science & Policy",
+      "year": 2011,
+      "cited_by_count": 561,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1016/j.pbi.2019.12.006",
+      "title": "Climate change and the need for agricultural adaptation",
+      "authors": [
+        "Robyn Anderson",
+        "Philipp E. Bayer",
+        "David Edwards"
+      ],
+      "venue": "Current Opinion in Plant Biology",
+      "year": 2020,
+      "cited_by_count": 535,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://api.research-repository.uwa.edu.au/ws/files/104231153/AAM_climate_change.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "tldr": "There is a limit as to how far agriculture can adapt to the changing climate, and a political will to reduce the impact of burning of fossil fuels on the global climate is essential for long term food security.",
+      "influential_cite_count": 9,
+      "reference_count": 91,
+      "abstract": "There is a limit as to how far agriculture can adapt to the changing climate, and a political will to reduce the impact of burning of fossil fuels on the global climate is essential for long term food security.",
+      "rank": 83
+    },
+    {
+      "doi": "10.1177/0013916513503832",
+      "title": "Understanding Farmer Perspectives on Climate Change Adaptation and Mitigation",
+      "authors": [
+        "J. Gordon Arbuckle",
+        "Lois Wright Morton",
+        "Jon Hobbs"
+      ],
+      "venue": "Environment and Behavior",
+      "year": 2013,
+      "cited_by_count": 482,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1177/0013916513503832",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1017/s1742170510000116",
+      "title": "Organic agriculture and climate change",
+      "authors": [
+        "Nadia El‐Hage Scialabba",
+        "Maria Müller‐Lindenlauf"
+      ],
+      "venue": "Renewable Agriculture and Food Systems",
+      "year": 2010,
+      "cited_by_count": 434,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/74A590FA3F35A79A858336CF341F416C/S1742170510000116a.pdf/div-class-title-organic-agriculture-and-climate-change-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.3389/fpls.2022.925548",
+      "title": "Impact of climate change on agricultural production; Issues, challenges, and opportunities in Asia",
+      "authors": [
+        "Muhammad Habib ur Rahman",
+        "Ashfaq Ahmad",
+        "Ahsan Raza",
+        "Muhammad Hasnain",
+        "Hesham F. Alharby",
+        "Yahya Alzahrani",
+        "Atif A. Bamagoos",
+        "Khalid Rehman Hakeem",
+        "Saeed Ahmad",
+        "Wajid Nasim",
+        "Shafaqat Ali",
+        "Fatma Mansour",
+        "Ayman El Sabagh"
+      ],
+      "venue": "Frontiers in Plant Science",
+      "year": 2022,
+      "cited_by_count": 405,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpls.2022.925548/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 4,
+      "reference_count": 177,
+      "rank": 86
+    },
+    {
+      "doi": "10.1017/s0021859610000341",
+      "title": "Synergies between the mitigation of, and adaptation to, climate change in agriculture",
+      "authors": [
+        "Pete Smith",
+        "Jørgen E. Olesen"
+      ],
+      "venue": "The Journal of Agricultural Science",
+      "year": 2010,
+      "cited_by_count": 348,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/20FFDF69A92646BBE7390A2B54B10B58/S0021859610000341a.pdf/div-class-title-synergies-between-the-mitigation-of-and-adaptation-to-climate-change-in-agriculture-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1016/j.jenvp.2020.101408",
+      "title": "Predicting climate change mitigation and adaptation behaviors in agricultural production: A comparison of the theory of planned behavior and the Value-Belief-Norm Theory",
+      "authors": [
+        "Lu Zhang",
+        "Jorge Ruiz‐Menjivar",
+        "Biliang Luo",
+        "Zhihui Liang",
+        "Mickie E. Swisher"
+      ],
+      "venue": "Journal of Environmental Psychology",
+      "year": 2020,
+      "cited_by_count": 280,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 21,
+      "reference_count": 93,
+      "rank": 88
+    },
+    {
       "doi": "10.1016/j.landusepol.2017.10.023",
       "title": "Determinants of farmers’ adaptation to climate change in agricultural production in the central region of Vietnam",
-      "abstract": "",
-      "year": 2018,
+      "authors": [
+        "Thoai Quang Trinh",
+        "Roberto F. Rañola",
+        "Leni D. Camacho",
+        "Elisabeth Simelton"
+      ],
+      "venue": "Land Use Policy",
+      "year": 2017,
+      "cited_by_count": 265,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1016/J.LANDUSEPOL.2017.10.023",
+      "arxiv_id": "",
+      "title": "Determinants of farmers’ adaptation to climate change in agricultural production in the central region of Vietnam",
+      "authors": [
+        "T. Trinh",
+        "R. F. Rañola",
+        "L. Camacho",
+        "E. Simelton"
+      ],
       "venue": "",
-      "citation_count": 241,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 242,
+      "influential_cite_count": 11,
+      "reference_count": 43,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 90
     },
     {
-      "rank": 29,
       "doi": "10.1038/s41586-025-09085-w",
+      "arxiv_id": "",
       "title": "Impacts of climate change on global agriculture accounting for adaptation",
-      "abstract": "Climate change threatens global food systems1, but the extent to which adaptation will reduce losses remains unknown and controversial2. Even within the well-studied context of US agriculture, some analyses argue that adaptation will be widespread and climate damages small3,4, whereas others conclude that adaptation will be limited and losses severe5,6. Scenario-based analyses indicate that adaptation should have notable consequences on global agricultural productivity7–9, but there has been no systematic study of how extensively real-world producers actually adapt at the global scale. Here we empirically estimate the impact of global producer adaptations using longitudinal data on six staple crops spanning 12,658 regions, capturing two-thirds of global crop calories. We estimate that global production declines 5.5 × 1014 kcal annually per 1 °C global mean surface temperature (GMST) rise (120 kcal per person per day or 4.4% of recommended consumption per 1 °C; P < 0.001). We project that adaptation and income growth alleviate 23% of global losses in 2050 and 34% at the end of the century (6% and 12%, respectively; moderate-emissions scenario), but substantial residual losses remain for all staples except rice. In contrast to analyses of other outcomes that project the greatest damages to the global poor10,11, we find that global impacts are dominated by losses to modern-day breadbaskets with favourable climates and limited present adaptation, although losses in low-income regions losses are also substantial. These results indicate a scale of innovation, cropland expansion or further adaptation that might be necessary to ensure food security in a changing climate. Analysis of data on six stable crops, capturing two-thirds of global crop calories, allows estimation of agricultural impacts and the potential of global producer adaptations to reduce output losses owing to climate change.",
-      "year": 2025,
+      "authors": [
+        "A. Hultgren",
+        "T. Carleton",
+        "M. Delgado",
+        "Diana R. Gergel",
+        "Michael Greenstone",
+        "Trevor Houser",
+        "Solomon Hsiang",
+        "A. Jina",
+        "R. Kopp",
+        "S. Malevich",
+        "K. McCusker",
+        "T. Mayer",
+        "Ishan B. Nath",
+        "James Rising",
+        "Ashwin Rode",
+        "Jiacan Yuan"
+      ],
       "venue": "Nature",
-      "citation_count": 222,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 238,
+      "influential_cite_count": 11,
+      "reference_count": 107,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "rank": 91
     },
     {
-      "rank": 30,
+      "doi": "10.1186/s40066-016-0075-3",
+      "title": "Toward climate-smart agriculture in West Africa: a review of climate change impacts, adaptation strategies and policy developments for the livestock, fishery and crop production sectors",
+      "authors": [
+        "Robert B. Zougmoré",
+        "Samuel T. Partey",
+        "Mathieu Ouédraogo",
+        "Bamidele Oluwarotimi Omitoyin",
+        "Timothy S. Thomas",
+        "Augustine A. Ayantunde",
+        "Polly Ericksen",
+        "Mohammed Y. Said",
+        "Abdulai Jalloh"
+      ],
+      "venue": "Agriculture & Food Security",
+      "year": 2016,
+      "cited_by_count": 237,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://agricultureandfoodsecurity.biomedcentral.com/track/pdf/10.1186/s40066-016-0075-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1016/j.jenvman.2024.122536",
+      "arxiv_id": "",
+      "title": "Smallholder farmers' challenges and opportunities: Implications for agricultural production, environment and food security.",
+      "authors": [
+        "Van Touch",
+        "Daniel K. Y. Tan",
+        "B. Cook",
+        "De Li Liu",
+        "Rebecca Cross",
+        "T. Tran",
+        "Ariane Utomo",
+        "Sophea Yous",
+        "Clemens Grunbuhel",
+        "Annette Cowie"
+      ],
+      "venue": "Journal of Environmental Management",
+      "year": 2024,
+      "cited_by_count": 229,
+      "influential_cite_count": 4,
+      "reference_count": 101,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.jenvman.2024.122536",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.3390/cli11100202",
+      "arxiv_id": "",
+      "title": "Adaptation of Agriculture to Climate Change: A Scoping Review",
+      "authors": [
+        "Elena A. Grigorieva",
+        "Alexandra S. Livenets",
+        "E. Stelmakh"
+      ],
+      "venue": "Climate",
+      "year": 2023,
+      "cited_by_count": 205,
+      "influential_cite_count": 4,
+      "reference_count": 167,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2225-1154/11/10/202/pdf?version=1696644434",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1016/J.GFS.2014.05.002",
+      "arxiv_id": "",
+      "title": "Climate change adaptation in crop production: Beware of illusions",
+      "authors": [
+        "D. Lobell"
+      ],
+      "venue": "",
+      "year": 2014,
+      "cited_by_count": 195,
+      "influential_cite_count": 14,
+      "reference_count": 29,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 95
+    },
+    {
       "doi": "10.1111/jac.12415",
       "title": "Rice production and food security in Asian Mega deltas—A review on characteristics, vulnerabilities and agricultural adaptation options to cope with climate change",
-      "abstract": "Abstract Asian Mega deltas (AMDs) are among the world´s most important rice‐growing areas and vital for food security. This review describes the major environmental and agricultural characteristics as well as current and future threats to food production and livelihood, using three AMDs as examples, namely the Ganges–Brahmaputra delta in Bangladesh, the Ayeyarwady delta in Myanmar and the Mekong River delta in Vietnam. In addition, we analysed the most widely used agricultural adaptation methods in these areas. The major threat to agriculture is salinity intrusion and water scarcity, which consequently leads to a shortage of irrigation water and yield reduction. The most common applied agricultural adaptation strategies are the use of salt‐tolerant varieties and the adjustment of cropping calendars, as well as the use of water‐saving technologies. It was found that there are many concepts that address individual problems, but a comprehensive and integrated concept for delta regions to adapt to climate change is still missing.",
-      "year": 2020,
+      "authors": [
+        "Pia Schneider",
+        "Folkard Asch"
+      ],
       "venue": "Journal of Agronomy and Crop Science",
-      "citation_count": 190,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 192,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jac.12415",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 4,
+      "reference_count": 95,
+      "rank": 96
+    },
+    {
+      "doi": "10.1016/j.cub.2023.10.028",
+      "arxiv_id": "",
+      "title": "Enhancing climate change resilience in agricultural crops.",
+      "authors": [
+        "Yoselin Benitez-Alfonso",
+        "Beth K Soanes",
+        "S. Zimba",
+        "Besiana Sinanaj",
+        "Liam German",
+        "Vinay Sharma",
+        "Abhishek Bohra",
+        "Anastasia Kolesnikova",
+        "Jessica Dunn",
+        "Azahara C. Martín",
+        "M. Khashi u Rahman",
+        "Zaki Saati-Santamaría",
+        "P. García-Fraile",
+        "E. Ferreira",
+        "Leidivan A. Frazão",
+        "Wallace A. Cowling",
+        "K. Siddique",
+        "M. Pandey",
+        "M. Farooq",
+        "R. K. Varshney",
+        "Mark A. Chapman",
+        "C. Boesch",
+        "Agata Daszkowska-Golec",
+        "C. Foyer"
+      ],
+      "venue": "Current Biology",
+      "year": 2023,
+      "cited_by_count": 171,
+      "influential_cite_count": 1,
+      "reference_count": 204,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://www.cell.com/article/S096098222301429X/pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.3390/agronomy15030565",
+      "arxiv_id": "",
+      "title": "Towards Climate-Smart Agriculture: Strategies for Sustainable Agricultural Production, Food Security, and Greenhouse Gas Reduction",
+      "authors": [
+        "W. Kabato",
+        "Girma Tilahun Getnet",
+        "Tamirat Sinore",
+        "Attila Németh",
+        "Zoltán Molnár"
+      ],
+      "venue": "Agronomy",
+      "year": 2025,
+      "cited_by_count": 159,
+      "influential_cite_count": 4,
+      "reference_count": 163,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2073-4395/15/3/565/pdf?version=1740493899",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1017/wat.2024.16",
+      "arxiv_id": "",
+      "title": "Water scarcity: A global hindrance to sustainable development and agricultural production – A critical review of the impacts and adaptation strategies",
+      "authors": [
+        "Auindrila Biswas",
+        "Sourakanti Sarkar",
+        "Sumanta Das",
+        "Suman Dutta",
+        "Malini Roy Choudhury",
+        "Anmol Giri",
+        "Bimal Bera",
+        "Koushik Bag",
+        "Bishal Mukherjee",
+        "Koushik Banerjee",
+        "D. Gupta",
+        "D. Paul"
+      ],
+      "venue": "Cambridge Prisms: Water",
+      "year": 2025,
+      "cited_by_count": 159,
+      "influential_cite_count": 4,
+      "reference_count": 210,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1017/wat.2024.16",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1088/1748-9326/10/9/094021",
+      "title": "Livestock in a changing climate: production system transitions as an adaptation strategy for agriculture",
+      "authors": [
+        "Isabelle Weindl",
+        "Hermann Lotze‐Campen",
+        "Alexander Popp",
+        "Christoph Müller",
+        "Peter Havlík",
+        "Mario Herrero",
+        "Christoph Schmitz",
+        "Susanne Rolinski"
+      ],
+      "venue": "Environmental Research Letters",
+      "year": 2015,
+      "cited_by_count": 130,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://iopscience.iop.org/article/10.1088/1748-9326/10/9/094021/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
+      "rank": 100
+    },
+    {
+      "doi": "10.2307/1793062",
+      "title": "The Climate of London",
+      "authors": [
+        "T. J. Chandler"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656dfa9c939a5f40821f2ff2",
+      "matched_phrase": "climate",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1016/J.ECOLECON.2015.11.016",
+      "arxiv_id": "",
+      "title": "The effect of climate change and adaptation policy on agricultural production in Eastern Africa",
+      "authors": [
+        "G. Kahsay",
+        "L. Hansen"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 110,
+      "influential_cite_count": 9,
+      "reference_count": 99,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://econpapers.repec.org/scripts/redir.pf?u=http%3A%2F%2Fokonomi.foi.dk%2Fworkingpapers%2FWPpdf%2FWP2014%2FIFRO_WP_2014_08.pdf;h=repec:foi:wpaper:2014_08",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1016/j.ecolecon.2015.11.016",
+      "title": "The effect of climate change and adaptation policy on agricultural production in Eastern Africa",
+      "authors": [
+        "Goytom Abraha Kahsay",
+        "Lars Gårn Hansen"
+      ],
+      "venue": "Ecological Economics",
+      "year": 2015,
+      "cited_by_count": 107,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.3390/CLI5040085",
+      "arxiv_id": "",
+      "title": "The Role of Social Networks in Agricultural Adaptation to Climate Change: Implications for Sustainable Agriculture in Pakistan",
+      "authors": [
+        "M. Abid",
+        "G. Ngaruiya",
+        "J. Scheffran",
+        "Farhad Zulfiqar"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 103,
+      "influential_cite_count": 2,
+      "reference_count": 66,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2225-1154/5/4/85/pdf?version=1511449684",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1111/pce.15078",
+      "arxiv_id": "",
+      "title": "Climate change adaptation: Challenges for agricultural sustainability.",
+      "authors": [
+        "Krishan K. Verma",
+        "Xiu-peng Song",
+        "A. Kumari",
+        "M. Jagadesh",
+        "Santosh Kumar Singh",
+        "Rajan Bhatt",
+        "Munna Singh",
+        "Chandra Shekhar Seth",
+        "Yangrui Li"
+      ],
+      "venue": "Plant, Cell and Environment",
+      "year": 2024,
+      "cited_by_count": 101,
+      "influential_cite_count": 0,
+      "reference_count": 74,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1002/fsn3.70260",
+      "arxiv_id": "",
+      "title": "A Global Review of the Impacts of Climate Change and Variability on Agricultural Productivity and Farmers' Adaptation Strategies",
+      "authors": [
+        "Sintayehu Eshetu Abebaw"
+      ],
+      "venue": "Food Science & Nutrition",
+      "year": 2025,
+      "cited_by_count": 100,
+      "influential_cite_count": 3,
+      "reference_count": 101,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1016/j.heliyon.2024.e26103",
+      "arxiv_id": "",
+      "title": "Impact of climate change on agriculture and adaptation strategies in Ethiopia: A meta-analysis",
+      "authors": [
+        "Tamrat Sinore",
+        "Fei Wang"
+      ],
+      "venue": "Heliyon",
+      "year": 2024,
+      "cited_by_count": 95,
+      "influential_cite_count": 1,
+      "reference_count": 61,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.cell.com/article/S2405844024021340/pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.1016/j.jclepro.2015.10.060",
+      "title": "Floating agriculture: a potential cleaner production technique for climate change adaptation and sustainable community development in Bangladesh",
+      "authors": [
+        "Rubel Biswas Chowdhury",
+        "Graham Moore"
+      ],
+      "venue": "Journal of Cleaner Production",
+      "year": 2015,
+      "cited_by_count": 86,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://figshare.com/articles/journal_contribution/Floating_agriculture_a_potential_cleaner_production_technique_for_climate_change_adaptation_and_sustainable_community_development_in_Bangladesh/20758900",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.3390/atmos11060557",
+      "arxiv_id": "",
+      "title": "Smart Farming Techniques for Climate Change Adaptation in Cyprus",
+      "authors": [
+        "G. Adamides",
+        "Nikos Kalatzis",
+        "A. Stylianou",
+        "N. Marianos",
+        "F. Chatzipapadopoulos",
+        "Marianthi Giannakopoulou",
+        "G. Papadavid",
+        "V. Vassiliou",
+        "D. Neocleous"
+      ],
+      "venue": "Atmosphere",
+      "year": 2020,
+      "cited_by_count": 77,
+      "influential_cite_count": 1,
+      "reference_count": 47,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2073-4433/11/6/557/pdf?version=1591701210",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1016/J.LANDUSEPOL.2021.105601",
+      "arxiv_id": "",
+      "title": "An economic analysis of agricultural adaptation to climate change impacts in Sri Lanka: An endogenous switching regression analysis",
+      "authors": [
+        "Kanesh Suresh",
+        "U. Khanal",
+        "Clevo Wilson",
+        "Shunsuke Managi",
+        "Annette Quayle",
+        "S. Santhirakumar"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 66,
+      "influential_cite_count": 2,
+      "reference_count": 43,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1086/734725",
+      "arxiv_id": "",
+      "title": "Climate Change, The Food Problem, and the Challenge of Adaptation through Sectoral Reallocation",
+      "authors": [
+        "Ishan B. Nath"
+      ],
+      "venue": "Journal of Political Economy",
+      "year": 2025,
+      "cited_by_count": 45,
+      "influential_cite_count": 3,
+      "reference_count": 80,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://ageconsearch.umn.edu/record/333404",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.1007/s43621-025-01229-2",
+      "arxiv_id": "",
+      "title": "The multifaceted impact of climate change on agricultural productivity: a systematic literature review of SCOPUS-indexed studies (2015–2024)",
+      "authors": [
+        "Abdikarim Abdullahi Farah",
+        "Mohamud Ahmed Mohamed",
+        "O. Musse",
+        "B. A. Nor"
+      ],
+      "venue": "Discover Sustainability",
+      "year": 2025,
+      "cited_by_count": 45,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1007/s43621-025-01229-2",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.3390/AGRONOMY11030600",
+      "arxiv_id": "",
+      "title": "Farmers’ Climate Change Adaptation Strategies for Reducing the Risk of Rice Production: Evidence from Rajshahi District in Bangladesh",
+      "authors": [
+        "Shahjahan Ali",
+        "B. Ghosh",
+        "A. Osmani",
+        "E. Hossain",
+        "C. Fogarassy"
+      ],
+      "venue": "Agronomy",
+      "year": 2021,
+      "cited_by_count": 41,
+      "influential_cite_count": 0,
+      "reference_count": 64,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2073-4395/11/3/600/pdf?version=1616399563",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.9734/ijecc/2024/v14i44123",
+      "arxiv_id": "",
+      "title": "Impact of Climate Change on Global Agriculture: Challenges and Adaptation",
+      "authors": [
+        "Harshad A. Prajapati",
+        "Khushboo Yadav",
+        "Yamuna Hanamasagar",
+        "Margam Bharath Kumar",
+        "T. Khan",
+        "Ningaraj Belagalla",
+        "V. Thomas",
+        "Afshan Jabeen",
+        "G. Gomadhi",
+        "G. Malathi"
+      ],
+      "venue": "International Journal of Environment and Climate Change",
+      "year": 2024,
+      "cited_by_count": 41,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journalijecc.com/index.php/IJECC/article/download/4123/8121",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1177/03091333221093757",
+      "arxiv_id": "",
+      "title": "Declining honey production and beekeeper adaptation to climate change in Chile",
+      "authors": [
+        "Martina Gajardo-Rojas",
+        "A. Muñoz",
+        "J. Barichivich",
+        "Karin Klock-Barría",
+        "E. Gayo",
+        "F. Fontúrbel",
+        "Matías Olea",
+        "C. Lucas",
+        "Camilo Veas"
+      ],
+      "venue": "Progress in Physical Geography: Earth and Environment",
+      "year": 2022,
+      "cited_by_count": 39,
+      "influential_cite_count": 1,
+      "reference_count": 84,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.3390/ijerph17072522",
+      "arxiv_id": "",
+      "title": "Modeling Adaptation Strategies against Climate Change Impacts in Integrated Rice-Wheat Agricultural Production System of Pakistan",
+      "authors": [
+        "M. K. Anser",
+        "Tayyaba Hina",
+        "Shahzad Hameed",
+        "M. Nasir",
+        "I. Ahmad",
+        "M. A. R. Naseer"
+      ],
+      "venue": "International Journal of Environmental Research and Public Health",
+      "year": 2020,
+      "cited_by_count": 38,
+      "influential_cite_count": 2,
+      "reference_count": 88,
+      "tldr": "The results showed that the suggested adaptations could have a significant impact on the resilience of the atmospheric changes and there would be negative impacts of CC that would capitalize on livelihood and food security in the study area.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1660-4601/17/7/2522/pdf?version=1586256540",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results showed that the suggested adaptations could have a significant impact on the resilience of the atmospheric changes and there would be negative impacts of CC that would capitalize on livelihood and food security in the study area.",
+      "rank": 116
+    },
+    {
+      "doi": "10.1108/00214660880001217",
+      "title": "Modeling agricultural production risk and the adaptation to climate change",
+      "authors": [
+        "Finger, Robert",
+        "Schmid, Stéphanie"
+      ],
+      "venue": "Agricultural Finance Review",
+      "year": 2008,
+      "cited_by_count": 34,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>An approach that integrates biophysical simulations in an economic model is used to analyze the impact of climate change on Swiss corn and winter wheat production. Adaptation options such as changes in sowing dates, changes in production intensity, and the adoption of irrigation farming are considered in the model. By carrying out sensitivity analysis with different scenarios, we find farmers’ adaptation actions and crop yeilds to be very sensitive to both climate change and output price",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1016/j.jenvman.2024.121105",
+      "arxiv_id": "",
+      "title": "Motivating factors of farmers' adaptation behaviors to climate change in China: A meta-analysis.",
+      "authors": [
+        "Yingqian Huang",
+        "Hualou Long",
+        "Yanfeng Jiang",
+        "Dedong Feng",
+        "Zizhou Ma",
+        "Faisal Mumtaz"
+      ],
+      "venue": "Journal of Environmental Management",
+      "year": 2024,
+      "cited_by_count": 32,
+      "influential_cite_count": 0,
+      "reference_count": 122,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1002/wcc.520",
+      "title": "Transformational adaptation of agricultural systems to climate change",
+      "authors": [
+        "Panda, Architesh"
+      ],
+      "venue": "WIREs Climate Change",
+      "year": 2018,
+      "cited_by_count": 31,
+      "reference_count": 101,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study explores the increasing use of the concept of “transformational adaptation” (TA) in the context of agriculture, analyzing its conceptualization and applications. While TA is appealing as a concept that involves the implementation of adaptation actions in different ways through small adjustments from current technological and economic approaches, it also raises questions about the complexity of transforming agricultural systems. Although current scientific evidence finds some p",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1016/B978-0-12-811891-7.00003-7",
+      "arxiv_id": "",
+      "title": "Climate Change, Climate Extremes, and Global Food Production - Adaptation in the Agricultural Sector",
+      "authors": [
+        "E. Vogel",
+        "Rachelle Meyer"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 30,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.1007/978-3-319-23162-4_18",
+      "title": "Agricultural Adaptation and Climate Change Policy for Crop Production in Africa",
+      "authors": [
+        "Khan, Moin Ahmad",
+        "Akhtar, Mohd Sayeed"
+      ],
+      "venue": "Crop Production and Global Environmental Issues",
+      "year": 2015,
+      "cited_by_count": 24,
+      "reference_count": 293,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.5539/jas.v4n10p48",
+      "title": "Climate Change and Agricultural Production in South Africa: Impacts and Adaptation options",
+      "authors": [
+        "Maponya, Phokele",
+        "Mpandeli, Sylvester"
+      ],
+      "venue": "Journal of Agricultural Science",
+      "year": null,
+      "cited_by_count": 23,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "https://ccsenet.org/journal/index.php/jas/article/download/17014/13208",
+      "rank": 122
+    },
+    {
+      "doi": "10.1007/s10708-019-10077-3",
+      "arxiv_id": "",
+      "title": "Climate change effects on agricultural production: insights for adaptation strategy from the context of smallholder farmers in Dura catchment, northern Ethiopia",
+      "authors": [
+        "Gebreyesus Brhane Tesfahunegn",
+        "Teklebirhan Arefaine Gebru"
+      ],
+      "venue": "GeoJournal",
+      "year": 2019,
+      "cited_by_count": 22,
+      "influential_cite_count": 2,
+      "reference_count": 103,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.1007/s11027-024-10115-7",
+      "arxiv_id": "",
+      "title": "A systematic review of recent estimations of climate change impact on agriculture and adaptation strategies perspectives in Africa",
+      "authors": [
+        "Sita Kone",
+        "A. Balde",
+        "Pam Zahonogo",
+        "S. Sanfo"
+      ],
+      "venue": "Mitigation and Adaptation Strategies for Global Change",
+      "year": 2024,
+      "cited_by_count": 22,
+      "influential_cite_count": 0,
+      "reference_count": 136,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1016/j.soh.2025.100113",
+      "arxiv_id": "",
+      "title": "Multi-impacts of climate change and mitigation strategies in Nigeria: agricultural production and food security",
+      "authors": [
+        "Godspower Oke Omokaro"
+      ],
+      "venue": "Science in One Health",
+      "year": 2025,
+      "cited_by_count": 21,
+      "influential_cite_count": 0,
+      "reference_count": 115,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.9734/ijecc/2023/v13i113138",
+      "arxiv_id": "",
+      "title": "A Comprehensive Review on Climate Change Adaptation Strategies and Challenges in Agriculture",
+      "authors": [
+        "D. R. K. Saikanth",
+        "Sunil Kumar",
+        "M. Rani",
+        "Anant Sharma",
+        "Swapnil Srivastava",
+        "D. Vyas",
+        "G. Singh",
+        "Suneel Kumar"
+      ],
+      "venue": "International Journal of Environment and Climate Change",
+      "year": 2023,
+      "cited_by_count": 21,
+      "influential_cite_count": 2,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journalijecc.com/index.php/IJECC/article/download/3138/6182",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.3390/cli11060124",
+      "arxiv_id": "",
+      "title": "Climate Change Adaptation and the Agriculture–Food System in Myanmar",
+      "authors": [
+        "Aung Tun Oo",
+        "D. Boughton",
+        "N. Aung"
+      ],
+      "venue": "Climate",
+      "year": 2023,
+      "cited_by_count": 20,
+      "influential_cite_count": 3,
+      "reference_count": 48,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2225-1154/11/6/124/pdf?version=1686053153",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1016/b978-0-12-811891-7.00003-7",
+      "title": "Climate Change, Climate Extremes, and Global Food Production—Adaptation in the Agricultural Sector",
+      "authors": [
+        "Vogel, Elisabeth",
+        "Meyer, Rachelle"
+      ],
+      "venue": "Resilience",
+      "year": 2018,
+      "cited_by_count": 19,
+      "reference_count": 140,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.3389/fevo.2022.1019436",
+      "arxiv_id": "",
+      "title": "Climatic threshold of crop production and climate change adaptation: A case of winter wheat production in China",
+      "authors": [
+        "N. Huang",
+        "Yu Song",
+        "Jialin Wang",
+        "Ziyuan Zhang",
+        "Shangqian Ma",
+        "K. Jiang",
+        "Z. Pan"
+      ],
+      "venue": "Frontiers in Ecology and Evolution",
+      "year": 2022,
+      "cited_by_count": 17,
+      "influential_cite_count": 1,
+      "reference_count": 84,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3389/fevo.2022.1019436",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.3389/fclim.2025.1447783",
+      "title": "Farmers’ adaptation strategies to climate change on agricultural production in Arsi zone, Oromia National Regional State of Ethiopia",
+      "authors": [
+        "Dawid, Ibsa",
+        "Boka, Ephrem"
+      ],
+      "venue": "Frontiers in Climate",
+      "year": null,
+      "cited_by_count": 16,
+      "reference_count": 36,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Climate change has a greater influence on agricultural production due to the effects of floods, droughts, and crop pests. The objective of the study was to explore farmers’ perceptions of climate change, adaptation strategies, constraints to adaptation strategies, and identify factors affecting the choice of climate change that affect adaptation strategies for agricultural production. Data was collected from 303 households selected using a multistage sampling technique to collect data us",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3389/fclim.2025.1447783",
+      "influential_cite_count": 1,
+      "rank": 130
+    },
+    {
+      "doi": "10.3389/fclim.2025.1563176",
+      "arxiv_id": "",
+      "title": "Impacts of climate change and variability on rural livelihoods and adaptation strategies in Ethiopia: a review paper",
+      "authors": [
+        "Belay Daba",
+        "Tena Regasa",
+        "Siraj Mammo"
+      ],
+      "venue": "Frontiers in Climate",
+      "year": 2025,
+      "cited_by_count": 13,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3389/fclim.2025.1563176",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.1007/s10584-017-2096-8",
+      "title": "Empowerment, climate change adaptation, and agricultural production: evidence from Niger",
+      "authors": [
+        "Wouterse, Fleur"
+      ],
+      "venue": "Climatic Change",
+      "year": 2017,
+      "cited_by_count": 12,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "openalex",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10584-017-2096-8.pdf",
+      "rank": 132
+    },
+    {
+      "doi": "10.3389/fagro.2024.1428630",
+      "arxiv_id": "",
+      "title": "Exploring adaptation strategies for smallholder farmers in dryland farming systems and impact on pearl millet production under climate change in West Africa",
+      "authors": [
+        "F. Akinseye",
+        "Inoussa Zagre",
+        "Aliou Faye",
+        "J. Joseph",
+        "O. N. Worou",
+        "A. Whitbread"
+      ],
+      "venue": "Frontiers in Agronomy",
+      "year": 2024,
+      "cited_by_count": 11,
+      "influential_cite_count": 0,
+      "reference_count": 54,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/journals/agronomy/articles/10.3389/fagro.2024.1428630/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.3389/fclim.2025.1567674",
+      "arxiv_id": "",
+      "title": "Mapping the research landscape of livestock adaptation to climate change: a bibliometric review using Scopus database (1994–2023)",
+      "authors": [
+        "J. Z. Manyike",
+        "A. Taruvinga",
+        "B. Akinyemi"
+      ],
+      "venue": "Frontiers in Climate",
+      "year": 2025,
+      "cited_by_count": 11,
+      "influential_cite_count": 0,
+      "reference_count": 99,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2025.1567674/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.1007/978-3-031-14973-3_5",
+      "title": "Climate Change Impacts on Legume Crop Production and Adaptation Strategies",
+      "authors": [
+        "Ahmed, Mukhtar",
+        "Sameen, Aashir",
+        "Parveen, Hajra",
+        "Ullah, Muhammad Inaam",
+        "Fahad, Shah",
+        "Hayat, Rifat"
+      ],
+      "venue": "Global Agricultural Production: Resilience to Climate Change",
+      "year": 2022,
+      "cited_by_count": 7,
+      "reference_count": 113,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.3390/agriculture13020414",
+      "title": "Modeling the Adaptation of Agricultural Production to Climate Change",
+      "authors": [
+        "Xiao, Dengpan",
+        "Shi, Wenjiao"
+      ],
+      "venue": "Agriculture",
+      "year": null,
+      "cited_by_count": 7,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Climate change and its impacts on agricultural production and food security are a significant source of public concern around the world [...]</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.3389/fsufs.2025.1592542",
+      "arxiv_id": "",
+      "title": "Climate change and rice production in Sri Lanka: short-run vs. long-run symmetric and asymmetric effects",
+      "authors": [
+        "R. Valdivia",
+        "Józef Ober",
+        "B. Samarasinghe",
+        "Yuchun Zhu",
+        "N. R. Abeynayake",
+        "Xuemei Zeng",
+        "B. Mathavan",
+        "R. W. W. M. P. K. Wanninayake",
+        "Somaiya Rasheed",
+        "A. Bah"
+      ],
+      "venue": "Frontiers in Sustainable Food Systems",
+      "year": 2025,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3389/fsufs.2025.1592542",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1079/9781780642895.0253",
+      "title": "Agricultural adaptation to climate change: new approaches to knowledge and learning.",
+      "authors": [
+        "Ingram, J."
+      ],
+      "venue": "Climate change impact and adaptation in agricultural systems",
+      "year": 2014,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>This chapter focuses on knowledge needs for farm-level agricultural adaptation. Although there is a large literature exploring the many dimensions of, and barriers to, climate change adaptation, there has been little analysis of knowledge requirements for agricultural adaptation. This chapter therefore draws on relevant work in areas such as extension and innovation science and farmer decision making and behavioural research in the wider context of sustainable ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1007/978-3-319-49520-0_2",
+      "title": "Between Climate Reliance and Climate Resilience: Empirical Analysis of Climate Variability and Impact on Nigerian Agricultural Production",
+      "authors": [
+        "Olayide, Olawale Emmanuel",
+        "Tetteh, Isaac Kow"
+      ],
+      "venue": "Climate Change Management",
+      "year": 2017,
+      "cited_by_count": 5,
+      "reference_count": 39,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.4324/9781315149776-5",
+      "title": "Adaptation to climate change in sub-Saharan agriculture",
+      "authors": [
+        "Di Falco, Salvatore"
+      ],
+      "venue": "Agricultural Adaptation to Climate Change in Africa",
+      "year": 2018,
+      "cited_by_count": 5,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1007/978-3-319-25814-0_18",
+      "title": "Influence of Climate Change on Cocoyam Production in Aba Agricultural Zone of Abia State, Nigeria",
+      "authors": [
+        "Ifeanyi-obi, C. C.",
+        "Togun, A. O.",
+        "Lamboll, R."
+      ],
+      "venue": "Climate Change Management",
+      "year": 2016,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.9734/ijecc/2024/v14i84325",
+      "title": "Enhancing Agricultural Production through Climate Change Adaptation:  A Case of Bahi District, Tanzania",
+      "authors": [
+        "Ilomo, Frida M.",
+        "Lyimo, James G.",
+        "Mabhuye, Edmund B."
+      ],
+      "venue": "International Journal of Environment and Climate Change",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This article assesses climate change adaptation strategies' contribution to agricultural production in Chipanga A, Chikola and Kigwe villages, Bahi district, Tanzania. The article used a quantitative method. Primary data collection methods include household interviews and field observations. Secondary data are obtained through a literature review, and meteorological data (rainfall and temperature) are sourced from the Tanzania Meteorological Agency. The research incorporated interviews w",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.13031/cc.20152141364",
+      "title": "New Methods to Assess Climate Change Impacts, Vulnerability and Adaptation of Agricultural Production Systems: The experience of AgMIP Regional Integrated Assessments in Sub-Saharan Africa and South Asia",
+      "authors": [],
+      "venue": "ASABE 1st Climate Change Symposium: Adaptation and Mitigation",
+      "year": 2015,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.1079/9781780642895.0088",
+      "title": "UK fruit and vegetable production - impacts of climate change and opportunities for adaptation.",
+      "authors": [
+        "Collier, R.",
+        "Else, M. A."
+      ],
+      "venue": "Climate change impact and adaptation in agricultural systems",
+      "year": 2014,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>This chapter focuses on the impact of climate change on the production of apples, strawberries and the main types of vegetable grown in the UK. The importance of anticipating and adapting to climate change in order to deliver good yields of quality products is also discussed.</p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.69860/nobel.9786053359432.5",
+      "title": "The Impact of Drought on Agricultural Production and Agricultural Adaptation to Drought",
+      "authors": [
+        "Cuhadar, Muhammed"
+      ],
+      "venue": "Agricultural Economics and Climate Change",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 124,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>Drought is a significant natural disaster that seriously impacts agriculture and is becoming an increasingly prevalent issue worldwide. The effects of this disaster on agriculture present severe challenges both in terms of productivity and agricultural sustainability. Consequently, adaptation measures to combat drought are of great importance.</jats:p>\n          <jats:p>Drought can cause significant yield losses in agricultural production. The reduction or depletion of water resources le",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.3920/978-90-8686-873-5_3",
+      "title": "Chapter 3. Empowerment, climate change adaptation and agricultural production: evidence from Niger",
+      "authors": [
+        "Wouterse, Fleur"
+      ],
+      "venue": "Fostering transformation and growth in Niger's agricultural sector",
+      "year": 2018,
+      "cited_by_count": 2,
+      "reference_count": 51,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.62622/teiee.024.2.3.26-34",
+      "arxiv_id": "",
+      "title": "Exploring Potential Adaptation Strategies for Smallholder Farmers to Climate Change: A Case Study at Abala Abaya, Wolaita Zone, South Ethiopia",
+      "authors": [
+        "Merihun Mengistu",
+        "Mesfin Tebeje",
+        "A. Balta",
+        "Debalke Debala",
+        "Belete Limani"
+      ],
+      "venue": "Trends in Ecological and Indoor Environmental Engineering",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 1,
+      "reference_count": 34,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.teiee.net/pdf-195655-116165?filename=Exploring-Potential-Adapt.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.1079/9781780642895.0001",
+      "title": "Climate change impact and adaptation in agricultural systems - introduction.",
+      "authors": [
+        "Fuhrer, J.",
+        "Gregory, P. J."
+      ],
+      "venue": "Climate change impact and adaptation in agricultural systems",
+      "year": 2014,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>This chapter introduces the book 'Climate Change Impact and Adaptation in Agricultural Systems', which is comprised of fifteen chapters. The book provides insights into sensitivities and possible adaptive measures to climate change across a number of different production systems, ranging from intensive cropping and horticultural systems to mixed crop-livestock systems, to intensive livestock systems, and across regions ranging from humid temperate to dryland ar",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.1201/9781003404194-8",
+      "title": "Global Agricultural Production Under Climate Change by 2050",
+      "authors": [
+        "Haj-Amor, Zied",
+        "Kim, Dong-Gill",
+        "Bouri, Salem"
+      ],
+      "venue": "Sustainable Agriculture",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.4337/9781781000083.00013",
+      "title": "Climate change adaptation and agricultural and forestry law",
+      "authors": [
+        "Adler, Robert W"
+      ],
+      "venue": "Research Handbook on Climate Change Adaptation Law",
+      "year": 2013,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.9734/bpi/mono/978-93-5547-002-7/ch1",
+      "title": "Climate Change and Adaptation",
+      "authors": [
+        "Afroz, Rafia",
+        "Akhtar, Rulia"
+      ],
+      "venue": "Climate Change and Rice Production: Adaptation Strategies and Capacity",
+      "year": 2021,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.4337/9781784710644.00015",
+      "title": "Adaptation of agricultural trade and investment rules to climate change",
+      "authors": [
+        "Häberli, Christian"
+      ],
+      "venue": "Research Handbook on Climate Change and Agricultural Law",
+      "year": 2017,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.1007/978-94-007-4540-7_16",
+      "title": "Agricultural Adaptation Options: Production Technology, Insurance, Trade",
+      "authors": [
+        "Lotze-Campen, Hermann",
+        "Popp, Alexander"
+      ],
+      "venue": "Climate Change, Justice and Sustainability",
+      "year": 2012,
+      "cited_by_count": 1,
+      "reference_count": 15,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1007/978-3-031-14973-3_20",
+      "title": "Integrated Crop–Livestock System Case Study: Prospectus for Jordan’s Climate Change Adaptation",
+      "authors": [
+        "Hussain, Muhammad Iftikhar",
+        "Al-Dakheel, Abdullah J.",
+        "Ahmed, Mukhtar"
+      ],
+      "venue": "Global Agricultural Production: Resilience to Climate Change",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 21,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1007/978-3-642-38670-1_121",
+      "title": "Agricultural Extension and Adaptation Under the “New Normal” of Climate Change",
+      "authors": [
+        "Simpson, Brent M.",
+        "Burpee, Gaye"
+      ],
+      "venue": "Handbook of Climate Change Adaptation",
+      "year": 2015,
+      "cited_by_count": 1,
+      "reference_count": 59,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.1556/446.2024.00141",
+      "arxiv_id": "",
+      "title": "Effectiveness of higher education in Central European universities towards climate change adaptation in the agricultural sector: A comprehensive survey",
+      "authors": [
+        "J. Zsembeli",
+        "E. Kovács",
+        "E. Harsányi",
+        "Péter Balogh",
+        "Péter Czine",
+        "L. Huzsvai",
+        "M. Bihunová",
+        "J. Jobbágy",
+        "Hana Středová",
+        "Milan Skalicky",
+        "Andrzej Strużyński",
+        "R. Rolbiecki",
+        "C. Juhász"
+      ],
+      "venue": "Progress in Agricultural Engineering Sciences",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://akjournals.com/downloadpdf/view/journals/446/aop/article-10.1556-446.2024.00141/article-10.1556-446.2024.00141.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.47772/ijriss.2024.8120200",
+      "arxiv_id": "",
+      "title": "The Role of Climate Change in Shaping Maize Production Trends in India: A CAGR Analysis",
+      "authors": [
+        "D. J. Kumar",
+        "Dr. D. Shobana"
+      ],
+      "venue": "International journal of research and innovation in social science",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.18174/569432",
+      "title": "Modelling agricultural production under sustainable water management, climate change and agricultural adaptation",
+      "authors": [
+        "Droppers, Bram"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "10.9734/bpi/mono/978-93-5547-002-7/ch5",
+      "title": "Strategies to Stimulate Climate Change Adaptation in Malaysia’s Agricultural Sector",
+      "authors": [
+        "Afroz, Rafia",
+        "Akhtar, Rulia"
+      ],
+      "venue": "Climate Change and Rice Production: Adaptation Strategies and Capacity",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.4337/9781800371491.00013",
+      "title": "Climate change adaptation and agricultural and forestry law",
+      "authors": [],
+      "venue": "Climate change adaptation and water law",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.18356/bf92f387-en",
+      "title": "Annexes",
+      "authors": [],
+      "venue": "Tracking Adaptation in Agricultural Sectors",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.9734/bpi/mono/978-93-5547-002-7/ch0",
+      "title": "Climate Change and Rice Production: Adaptation Strategies and Capacity",
+      "authors": [
+        "Afroz, Rafia",
+        "Akhtar, Rulia"
+      ],
+      "venue": "Climate Change and Rice Production: Adaptation Strategies and Capacity",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.1201/9781003404194-12",
+      "title": "Agricultural Production in North America under Climate Change by 2050",
+      "authors": [
+        "Haj-Amor, Zied",
+        "Kim, Dong-Gill",
+        "Bouri, Salem"
+      ],
+      "venue": "Sustainable Agriculture",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.56669/efjd2359",
+      "title": "Framework for climate change adaptation of tropical fruits production in Indonesia",
+      "authors": [],
+      "venue": "Tropical Fruit Consortium 2025 (Vietnam) – Framework for climate change adaptation in tropical fruit production",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.56669/srgo3577",
+      "title": "Adaptation to climate change through sustainable water management in rice production",
+      "authors": [],
+      "venue": "Crop Resilience for Adaptation to Climate Change: Rice",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.4324/9781315149776-2",
+      "title": "Understanding adaptation to climate change",
+      "authors": [
+        "Berck, Peter"
+      ],
+      "venue": "Agricultural Adaptation to Climate Change in Africa",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.4337/9781849802239.00007",
+      "title": "The Role of Climate in Agricultural Production",
+      "authors": [
+        "Mendelsohn, Robert",
+        "Dinar, Ariel"
+      ],
+      "venue": "Climate Change and Agriculture",
+      "year": 2009,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.69860/nobel.9786053359432.8",
+      "title": "The Role of Agricultural Extension in Adaptation to Climate Change",
+      "authors": [
+        "Kocyigit, Ahmet Yesevi",
+        "Demiryurek, Kursat"
+      ],
+      "venue": "Agricultural Economics and Climate Change",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 27,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>Climate change is having profound and complex impacts on the agricultural sector, posing major risks to food security and sustainable agriculture. Agricultural extension services improve farmers’ capacity to adapt to climate change by increasing their knowledge and skills, and thus play a role in ensuring the sustainability of agricultural production and food security. In this study, the benefits of agricultural extension in teaching climate-smart agricultural techniques to farmers and i",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "10.18356/404b5a42-en",
+      "title": "Glossary",
+      "authors": [],
+      "venue": "Tracking Adaptation in Agricultural Sectors",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.4324/9780203723364-17",
+      "title": "Modeling Path Dependence in Agricultural Adaptation to Climate Variability and Change",
+      "authors": [],
+      "venue": "Geography of Climate Change",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1007/978-3-642-40455-9_121-1",
+      "title": "Agricultural Extension and Adaptation Under the “New Normal” of Climate Change",
+      "authors": [
+        "Simpson, Brent M.",
+        "Burpee, Gaye"
+      ],
+      "venue": "Handbook of Climate Change Adaptation",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 59,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.56669/kuin7243",
+      "title": "Climate change and animal production in Vietnam",
+      "authors": [],
+      "venue": "Mitigation of greenhouse grass and adaptation to climate change in livestock production system",
+      "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.13031/cc.20152093181",
+      "title": "Relationships between Livestock Production and Climate Change: Impacts, Adaptation, and Human Dimensions",
+      "authors": [],
+      "venue": "ASABE 1st Climate Change Symposium: Adaptation and Mitigation",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.56669/tmdp9749",
+      "title": "Framework for climate change adaptation in tropical fruits (Malaysia)",
+      "authors": [],
+      "venue": "Tropical Fruit Consortium 2025 (Vietnam) – Framework for climate change adaptation in tropical fruit production",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.13031/cc.20152095877",
+      "title": "“Intelligent Ensemble” Projections of Precipitation and Surface Radiation in support of Agricultural Climate Change Adaptation",
+      "authors": [],
+      "venue": "ASABE 1st Climate Change Symposium: Adaptation and Mitigation",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.56669/hhal3780",
+      "title": "Framework for climate change adaptation in tropical fruits - Japan",
+      "authors": [],
+      "venue": "Tropical Fruit Consortium 2025 (Vietnam) – Framework for climate change adaptation in tropical fruit production",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.9734/bpi/mono/978-93-5547-002-7/ch3",
+      "title": "Farmers’ Perceptions about Adaptation Practices to Climate Change and Barriers to Adaptation",
+      "authors": [
+        "Afroz, Rafia",
+        "Akhtar, Rulia"
+      ],
+      "venue": "Climate Change and Rice Production: Adaptation Strategies and Capacity",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.56669/nqks5637",
+      "title": "Framework for climate change adaptation in tropical fruits - Thailand",
+      "authors": [],
+      "venue": "Tropical Fruit Consortium 2025 (Vietnam) – Framework for climate change adaptation in tropical fruit production",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.56669/nslh4082",
+      "title": "Framework for climate change adaptation about kiwifruit in Korea",
+      "authors": [],
+      "venue": "Tropical Fruit Consortium 2025 (Vietnam) – Framework for climate change adaptation in tropical fruit production",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.13031/cc.20152123670",
+      "title": "Climate Change Impacts on U.S. Agricultural Total Factor Productivity",
+      "authors": [],
+      "venue": "ASABE 1st Climate Change Symposium: Adaptation and Mitigation",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "10.1007/978-3-319-49520-0_34",
+      "title": "Climate Change Adaptation Activities for Agricultural Development in Ethiopia: A Review of Potentials",
+      "authors": [
+        "Abate, Esubalew",
+        "Semie, Negussie",
+        "Ayenew, Berhanu"
+      ],
+      "venue": "Climate Change Management",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "10.1007/s40641-015-0009-3",
+      "arxiv_id": "1503.07557v1",
+      "title": "Precipitation extremes under climate change",
+      "authors": [
+        "Paul A. O'Gorman"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1503.07557v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2012.10386v1",
+      "arxiv_id": "2012.10386v1",
+      "title": "Future Climate Change Projections over the Indian Region",
+      "authors": [
+        "J. Sanjay",
+        "R. Krishnan",
+        "M. V. S. Ramarao",
+        "R. Mahesh",
+        "Bhupendra Bahadur Singh",
+        "Jayashri Patel",
+        "Sandip Ingle",
+        "Preethi Bhaskar",
+        "J. V. Revadekar",
+        "T. P. Sabin",
+        "M. Mujumdar"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.10386v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:2008.01035v1",
+      "arxiv_id": "2008.01035v1",
+      "title": "Invasive species, extreme fire risk, and toxin release under a changing climate",
+      "authors": [
+        "Kimberley Miner",
+        "Laura Meyerson",
+        ". Climate Change Institute",
+        "School of Earth",
+        "Climate Sciences",
+        "University of Maine",
+        " Orono",
+        "ME 04469 2. Department of Natural Resources Science",
+        "University of Rhode Island",
+        " Kingston",
+        "RI 02881"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.01035v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2409.18574v2",
+      "arxiv_id": "2409.18574v2",
+      "title": "Climate Adaptation with Reinforcement Learning: Experiments with Flooding and Transportation in Copenhagen",
+      "authors": [
+        "Miguel Costa",
+        "Morten W. Petersen",
+        "Arthur Vandervoort",
+        "Martin Drews",
+        "Karyn Morrissey",
+        "Francisco C. Pereira"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.18574v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "10.1002/wcc.930",
+      "arxiv_id": "2504.20056v1",
+      "title": "Fragility Modeling of Power Grid Infrastructure for Addressing Climate Change Risks and Adaptation",
+      "authors": [
+        "George Karagiannakis",
+        "Mathaios Panteli",
+        "Sotirios Argyroudis"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.20056v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.1175/JCLI-D-16-0892.1",
+      "arxiv_id": "1704.00563v1",
+      "title": "Impact of anthropogenic climate change on the East Asian summer monsoon",
+      "authors": [
+        "Claire Burke",
+        "Peter Stott"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1704.00563v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1007/s11027-005-9024-3",
+      "arxiv_id": "0512170v1",
+      "title": "Active Amplification of the Terrestrial Albedo to Mitigate Climate Change: An Exploratory Study",
+      "authors": [
+        "Robert M. Hamwey"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/physics/0512170v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:2012.00483v2",
+      "arxiv_id": "2012.00483v2",
+      "title": "ClimaText: A Dataset for Climate Change Topic Detection",
+      "authors": [
+        "Francesco S. Varini",
+        "Jordan Boyd-Graber",
+        "Massimiliano Ciaramita",
+        "Markus Leippold"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.00483v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.1038/s41558-021-01000-1",
+      "arxiv_id": "2007.10415v2",
+      "title": "The Historical Impact of Anthropogenic Climate Change on Global Agricultural Productivity",
+      "authors": [
+        "Ariel Ortiz-Bobea",
+        "Toby R. Ault",
+        "Carlos M. Carrillo",
+        "Robert G. Chambers",
+        "David B. Lobell"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.10415v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:2011.12443v1",
+      "arxiv_id": "2011.12443v1",
+      "title": "The Human Effect Requires Affect: Addressing Social-Psychological Factors of Climate Change with Machine Learning",
+      "authors": [
+        "Kyle Tilbury",
+        "Jesse Hoey"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.12443v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "10.1038/s41558-020-00963-x",
+      "arxiv_id": "2007.00239v1",
+      "title": "Zonally opposing shifts of the intertropical convergence zone in response to climate change",
+      "authors": [
+        "Antonios Mamalakis",
+        "James T. Randerson",
+        "Jin-Yi Yu",
+        "Michael S. Pritchard",
+        "Gudrun Magnusdottir",
+        "Padhraic Smyth",
+        "Paul A. Levine",
+        "Sungduk Yu",
+        "Efi Foufoula-Georgiou"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.00239v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:2305.00975v1",
+      "arxiv_id": "2305.00975v1",
+      "title": "Deep Ensembles to Improve Uncertainty Quantification of Statistical Downscaling Models under Climate Change Conditions",
+      "authors": [
+        "Jose González-Abad",
+        "Jorge Baño-Medina"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.00975v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2212.04478v1",
+      "arxiv_id": "2212.04478v1",
+      "title": "An Interpretable Model of Climate Change Using Correlative Learning",
+      "authors": [
+        "Charles Anderson",
+        "Jason Stock"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2212.04478v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:1906.03479v1",
+      "arxiv_id": "1906.03479v1",
+      "title": "Learning Radiative Transfer Models for Climate Change Applications in Imaging Spectroscopy",
+      "authors": [
+        "Shubhankar Deshpande",
+        "Brian D. Bue",
+        "David R. Thompson",
+        "Vijay Natraj",
+        "Mario Parente"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1906.03479v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "arXiv:2008.13726v1",
+      "arxiv_id": "2008.13726v1",
+      "title": "Reviewing climate change and agricultural market competitiveness",
+      "authors": [
+        "Bakhtmina Zia",
+        "Dr Muhammad Rafiq PhD Research Scholar",
+        "Institute of Management Sciences",
+        " Peshawar",
+        " Pakistan",
+        "Associate Professor",
+        "Institute of Management Sciences",
+        " Peshawar",
+        " Pakistan"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.13726v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2504.10031v1",
+      "arxiv_id": "2504.10031v1",
+      "title": "Using Reinforcement Learning to Integrate Subjective Wellbeing into Climate Adaptation Decision Making",
+      "authors": [
+        "Arthur Vandervoort",
+        "Miguel Costa",
+        "Morten W. Petersen",
+        "Martin Drews",
+        "Sonja Haustein",
+        "Karyn Morrissey",
+        "Francisco C. Pereira"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.10031v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "arXiv:2505.05508v1",
+      "arxiv_id": "2505.05508v1",
+      "title": "Global Agricultural Competitiveness Index (Gaci) in the Context of Climate Change: A Holistic Approach",
+      "authors": [
+        "Bakhtmina Zia"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.05508v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:2310.13916v2",
+      "arxiv_id": "2310.13916v2",
+      "title": "Southern Ocean Dynamics Under Climate Change: New Knowledge Through Physics-Guided Machine Learning",
+      "authors": [
+        "William Yik",
+        "Maike Sonnewald",
+        "Mariana C. A. Clare",
+        "Redouane Lguensat"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.13916v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "10.1007/s00382-012-1375-3",
+      "arxiv_id": "1111.5177v3",
+      "title": "A fractal climate response function can simulate global average temperature trends of the modern era and the past millennium",
+      "authors": [
+        "J. H. van Hateren"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1111.5177v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "arXiv:1912.02920v1",
+      "arxiv_id": "1912.02920v1",
+      "title": "Weathering Adaptation: Grid Infrastructure Planning in a Changing Climate",
+      "authors": [
+        "Anna M. Brockway",
+        "Laurel N. Dunn"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.02920v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 201
+    },
+    {
+      "doi": "arXiv:1910.10143v1",
+      "arxiv_id": "1910.10143v1",
+      "title": "Establishing an Evaluation Metric to Quantify Climate Change Image Realism",
+      "authors": [
+        "Sharon Zhou",
+        "Alexandra Luccioni",
+        "Gautier Cosne",
+        "Michael S. Bernstein",
+        "Yoshua Bengio"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1910.10143v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 202
+    },
+    {
+      "doi": "arXiv:2012.00614v2",
+      "arxiv_id": "2012.00614v2",
+      "title": "CLIMATE-FEVER: A Dataset for Verification of Real-World Climate Claims",
+      "authors": [
+        "Thomas Diggelmann",
+        "Jordan Boyd-Graber",
+        "Jannis Bulian",
+        "Massimiliano Ciaramita",
+        "Markus Leippold"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.00614v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 203
+    },
+    {
+      "doi": "arXiv:2509.18633v4",
+      "arxiv_id": "2509.18633v4",
+      "title": "Modelling Cascading Physical Climate Risk in Supply Chains with Adaptive Firms: A Spatial Agent-Based Framework",
+      "authors": [
+        "Yara Mohajerani"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.18633v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 204
+    },
+    {
+      "doi": "arXiv:2108.12267v1",
+      "arxiv_id": "2108.12267v1",
+      "title": "A review of effects of climate change on Agriculture in Africa",
+      "authors": [
+        "Samuel Asante Gyamerah",
+        "Dennis Ikpe"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.12267v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 205
+    },
+    {
+      "doi": "arXiv:2211.03179v1",
+      "arxiv_id": "2211.03179v1",
+      "title": "Personalizing Sustainable Agriculture with Causal Machine Learning",
+      "authors": [
+        "Georgios Giannarakis",
+        "Vasileios Sitokonstantinou",
+        "Roxanne Suzette Lorilla",
+        "Charalampos Kontoes"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.03179v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 206
+    },
+    {
+      "doi": "10.3389/fclim.2022.1042018",
+      "arxiv_id": "2205.00133v2",
+      "title": "Avoiding the \"Great Filter\": An Assessment of Climate Change Solutions and Combinations for Effective Implementation",
+      "authors": [
+        "Junze Zhang",
+        "Kerry Zhang",
+        "Mary Zhang",
+        "Jonathan H. Jiang",
+        "Philip E. Rosen",
+        "Kristen A. Fahy"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.00133v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 207
+    },
+    {
+      "doi": "arXiv:2305.04030v1",
+      "arxiv_id": "2305.04030v1",
+      "title": "\"The main message is that sustainability would help\" -- Reflections on takeaway messages of climate change data visualizations",
+      "authors": [
+        "Regina Schuster",
+        "Laura Koesten",
+        "Kathleen Gregory",
+        "Torsten Möller"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.04030v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 208
+    },
+    {
+      "doi": "arXiv:2310.03499v1",
+      "arxiv_id": "2310.03499v1",
+      "title": "IceCloudNet: Cirrus and mixed-phase cloud prediction from SEVIRI input learned from sparse supervision",
+      "authors": [
+        "Kai Jeggle",
+        "Mikolaj Czerkawski",
+        "Federico Serva",
+        "Bertrand Le Saux",
+        "David Neubauer",
+        "Ulrike Lohmann"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.03499v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 209
+    },
+    {
+      "doi": "arXiv:2011.12353v1",
+      "arxiv_id": "2011.12353v1",
+      "title": "FireSRnet: Geoscience-Driven Super-Resolution of Future Fire Risk from Climate Change",
+      "authors": [
+        "Tristan Ballard",
+        "Gopal Erinjippurath"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.12353v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 210
+    },
+    {
+      "doi": "arXiv:2003.01270v2",
+      "arxiv_id": "2003.01270v2",
+      "title": "Influence Of Climate Change On The Corn Yield In Ontario And Its Impact On Corn Farms Income At The 2068 Horizon",
+      "authors": [
+        "Antoine Kornprobst",
+        "Matt Davison"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.01270v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 211
+    },
+    {
+      "doi": "10.1260/0958-305X.24.3-4.455",
+      "arxiv_id": "1307.3706v1",
+      "title": "Solar and planetary oscillation control on climate change: hind-cast, forecast and a comparison with the CMIP5 GCMs",
+      "authors": [
+        "Nicola Scafetta"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1307.3706v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 212
+    },
+    {
+      "doi": "10.5065/D6K072N6",
+      "arxiv_id": "1809.00027v1",
+      "title": "Dimensionality-Reduction of Climate Data using Deep Autoencoders",
+      "authors": [
+        "J. A. Saenz",
+        "N. Lubbers",
+        "N. M. Urban"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1809.00027v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 213
+    },
+    {
+      "doi": "arXiv:2310.18703v1",
+      "arxiv_id": "2310.18703v1",
+      "title": "Detangling the role of climate in vegetation productivity with an explainable convolutional neural network",
+      "authors": [
+        "Ricardo Barros Lourenço",
+        "Michael J. Smith",
+        "Sylvia Smullin",
+        "Umangi Jain",
+        "Alemu Gonsamo",
+        "Arthur Ouaknine"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.18703v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 214
+    },
+    {
+      "doi": "arXiv:2305.01478v1",
+      "arxiv_id": "2305.01478v1",
+      "title": "Agricultural Policy in Ukraine",
+      "authors": [
+        "Oleg Nivievskyi",
+        "Pavlo Martyshev",
+        "Sergiy Kvasha"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.01478v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 215
+    },
+    {
+      "doi": "arXiv:1902.09204v2",
+      "arxiv_id": "1902.09204v2",
+      "title": "Climate Change and Agriculture: Subsistence Farmers' Response to Extreme Heat",
+      "authors": [
+        "Fernando M. Aragón",
+        "Francisco Oteiza",
+        "Juan Pablo Rud"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1902.09204v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 216
+    },
+    {
+      "doi": "10.1371/journal.pclm.0000277",
+      "arxiv_id": "2305.07529v1",
+      "title": "Hurricanes Increase Climate Change Conversations on Twitter",
+      "authors": [
+        "Maddalena Torricelli",
+        "Max Falkenberg",
+        "Alessandro Galeazzi",
+        "Fabiana Zollo",
+        "Walter Quattrociocchi",
+        "Andrea Baronchelli"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.07529v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 217
+    },
+    {
+      "doi": "arXiv:2012.10394v1",
+      "arxiv_id": "2012.10394v1",
+      "title": "Deep Learning for Climate Model Output Statistics",
+      "authors": [
+        "Michael Steininger",
+        "Daniel Abel",
+        "Katrin Ziegler",
+        "Anna Krause",
+        "Heiko Paeth",
+        "Andreas Hotho"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.10394v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 218
+    },
+    {
+      "doi": "arXiv:2312.12338v1",
+      "arxiv_id": "2312.12338v1",
+      "title": "Smart Connected Farms and Networked Farmers to Tackle Climate Challenges Impacting Agricultural Production",
+      "authors": [
+        "Behzad J. Balabaygloo",
+        "Barituka Bekee",
+        "Samuel W. Blair",
+        "Suzanne Fey",
+        "Fateme Fotouhi",
+        "Ashish Gupta",
+        "Kevin Menke",
+        "Anusha Vangala",
+        "Jorge C. M. Palomares",
+        "Aaron Prestholt",
+        "Vishesh K. Tanwar",
+        "Xu Tao",
+        "Matthew E. Carroll",
+        "Sajal Das",
+        "Gil Depaula",
+        "Peter Kyveryga",
+        "Soumik Sarkar",
+        "Michelle Segovia",
+        "Simone Sylvestri",
+        "Corinne Valdivia",
+        "Asheesh K. Singh"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.12338v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 219
+    },
+    {
+      "doi": "arXiv:2511.03243v1",
+      "arxiv_id": "2511.03243v1",
+      "title": "Climate Adaptation with Reinforcement Learning: Economic vs. Quality of Life Adaptation Pathways",
+      "authors": [
+        "Miguel Costa",
+        "Arthur Vandervoort",
+        "Martin Drews",
+        "Karyn Morrissey",
+        "Francisco C. Pereira"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.03243v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 220
+    },
+    {
+      "doi": "arXiv:1804.01554v3",
+      "arxiv_id": "1804.01554v3",
+      "title": "A Bayesian panel VAR model to analyze the impact of climate change on high-income economies",
+      "authors": [
+        "Florian Huber",
+        "Tamás Krisztin",
+        "Michael Pfarrhofer"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1804.01554v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 221
+    },
+    {
+      "doi": "arXiv:2409.19463v1",
+      "arxiv_id": "2409.19463v1",
+      "title": "Save the Farms: Nonlinear Impact of Climate Change on Banks' Agricultural Lending",
+      "authors": [
+        "Teng Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.19463v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 222
+    },
+    {
+      "doi": "arXiv:2307.13886v1",
+      "arxiv_id": "2307.13886v1",
+      "title": "Dynamic Grouping for Climate Change Negotiation: Facilitating Cooperation and Balancing Interests through Effective Strategies",
+      "authors": [
+        "Duo Zhang",
+        "Yuren Pang",
+        "Yu Qin"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.13886v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 223
+    },
+    {
+      "doi": "arXiv:2311.17107v1",
+      "arxiv_id": "2311.17107v1",
+      "title": "ClimateX: Do LLMs Accurately Assess Human Expert Confidence in Climate Statements?",
+      "authors": [
+        "Romain Lacombe",
+        "Kerrie Wu",
+        "Eddie Dilworth"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.17107v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 224
+    },
+    {
+      "doi": "arXiv:1811.09677v1",
+      "arxiv_id": "1811.09677v1",
+      "title": "Modeling of raining season onset and cessation of tropical rainfall for climate change adaptation in Agriculture",
+      "authors": [
+        "I. A. Fuwape",
+        "S. T. Ogunjo"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1811.09677v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 225
+    },
+    {
+      "doi": "arXiv:2603.26700v1",
+      "arxiv_id": "2603.26700v1",
+      "title": "Climate and ocean circulation changes toward a modern snowball Earth",
+      "authors": [
+        "Takashi Obase",
+        "Takanori Kodama",
+        "Takao Kawasaki",
+        "Sam Sherriff-Tadano",
+        "Daisuke Takasuka",
+        "Ayako Abe-Ouchi",
+        "Masakazu Fujii"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.26700v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 226
+    },
+    {
+      "doi": "10.1016/j.frl.2024.106374",
+      "arxiv_id": "2408.09669v2",
+      "title": "Contemporaneous and lagged spillovers between agriculture, crude oil, carbon emission allowance, and climate change",
+      "authors": [
+        "Yan-Hong Yang",
+        "Ying-Hui Shao",
+        "Wei-Xing Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2408.09669v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 227
+    },
+    {
+      "doi": "arXiv:2307.13893v1",
+      "arxiv_id": "2307.13893v1",
+      "title": "Dynamic Grouping for Climate Change Negotiation: Facilitating Cooperation and Balancing Interests through Effective Strategies",
+      "authors": [
+        "Yu Qin",
+        "Duo Zhang",
+        "Yuren Pang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.13893v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 228
+    },
+    {
+      "doi": "arXiv:2105.12044v1",
+      "arxiv_id": "2105.12044v1",
+      "title": "Climate, Agriculture and Food",
+      "authors": [
+        "Ariel Ortiz-Bobea"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.12044v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 229
+    },
+    {
+      "doi": "arXiv:2508.21666v2",
+      "arxiv_id": "2508.21666v2",
+      "title": "Harnessing IoT and Generative AI for Weather-Adaptive Learning in Climate Resilience Education",
+      "authors": [
+        "Imran S. A. Khan",
+        "Emmanuel G. Blanchard",
+        "Sébastien George"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.21666v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 230
+    },
+    {
+      "doi": "arXiv:2105.06386v1",
+      "arxiv_id": "2105.06386v1",
+      "title": "Loosely Conditioned Emulation of Global Climate Models With Generative Adversarial Networks",
+      "authors": [
+        "Alexis Ayala",
+        "Christopher Drazic",
+        "Brian Hutchinson",
+        "Ben Kravitz",
+        "Claudia Tebaldi"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.06386v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 231
+    },
+    {
+      "doi": "10.11628/ksppe.2025.28.5.559",
+      "arxiv_id": "",
+      "title": "Analysis of Constraints in Agricultural Production for Climate Change Adaptation in Thanh Phu District, Mekong Delta Vietnam",
+      "authors": [
+        "L. Hoa",
+        "P. T. Duy",
+        "N. Thùy"
+      ],
+      "venue": "Journal of people, plants, and environment",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 38,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://jppe.ppe.or.kr/upload/pdf/ksppe-2025-28-5-559.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 232
+    },
+    {
+      "doi": "10.9734/air/2024/v25i51137",
+      "arxiv_id": "",
+      "title": "Examining the Intersection of Agricultural Production, Farm Revenue, Gender Dynamics and Adaptation Strategies in the Face of Climate Change",
+      "authors": [
+        "Sneha Murugesan",
+        "S. B."
+      ],
+      "venue": "Advances in Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journalair.com/index.php/AIR/article/download/1137/2288",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 233
+    },
+    {
+      "doi": "10.31521/978-617-7149-94-0-60",
+      "arxiv_id": "",
+      "title": "Adaptation strategies of agricultural production in the conditions of post-war recovery and climate change (on the example of the Southern Steppe of Ukraine)",
+      "authors": [
+        "M. Fedorchuk",
+        "S. Shtanenko"
+      ],
+      "venue": "FOOD SECURITY OF UKRAINE IN THE CONDITIONS OF POST-WAR RECOVERY: GLOBAL AND NATIONAL DIMENSIONS INTERNATIONAL FORUM Proceedings of the international scientific-practical conference",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://dspace.mnau.edu.ua/jspui/bitstream/123456789/25930/1/PB_2026-185-186.pdf",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 234
+    },
+    {
+      "doi": "10.55041/ijsrem43632",
+      "arxiv_id": "",
+      "title": "Innovative AI and ML Solutions for Climate Change Adaptation: Addressing Challenges in Dairy Farming and Agriculture",
+      "authors": [
+        "K. Rahul",
+        "P. Anjaneyulu2",
+        "G. B. goud",
+        "G. Swathi"
+      ],
+      "venue": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This study uses are interdisciplinary approaches to improve farming practices sustainability and efficiency by examining improved solution arises from the fashion of agricultural science with the Artificial intelligence (AI) and Machine learning (ML).",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study uses are interdisciplinary approaches to improve farming practices sustainability and efficiency by examining improved solution arises from the fashion of agricultural science with the Artificial intelligence (AI) and Machine learning (ML).",
+      "rank": 235
+    },
+    {
+      "doi": "10.52686/9785605087878_288",
+      "arxiv_id": "",
+      "title": "MAIN DIRECTIONS OF ADAPTATION OF CROP PRODUCTION TO CLIMATE CHANGE",
+      "authors": [
+        "K. Ismagilov"
+      ],
+      "venue": "PROBLEMS OF SOIL FERTILITY IN MODERN AGRICULTURE",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 2,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://apk124.krasn.ru/en/storage/download/167208",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 236
     }
   ]
 }

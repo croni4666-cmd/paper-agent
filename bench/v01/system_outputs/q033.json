@@ -1,466 +1,4140 @@
 {
   "query_id": "q033",
   "query": "gig economy workforce growth impact on social insurance systems comparative OECD and China",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "econ",
+  "source": "user",
+  "generated_at": "2026-07-22T11:28:36",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 198,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1177/0047287507304039",
+      "title": "Measuring Experience Economy Concepts: Tourism Applications",
+      "authors": [
+        "H. Oh"
+      ],
+      "venue": "JOURNAL OF TRAVEL RESEARCH",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a4aab7602d9702dcc07d",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.4324/9781003223320-2",
+      "title": "The Financialization of the American Economy",
+      "authors": [
+        "Kurt Mettenheim"
+      ],
+      "venue": "FINANCIALIZATION OF THE ECONOMY, BUSINESS, AND HOUSEHOLD INEQUALITY IN THE UNITED STATES A Historical-Institutional Balance-Sheet Approach",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63526d8490e50fcafd741fac",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1002/hpm.3605",
+      "title": "Situational Analysis for Informing the Global Strengthening of the Occupational Therapy Workforce",
+      "authors": [
+        "Tiago S Jesus"
+      ],
+      "venue": "The International journal of health planning and management",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63a43d4690e50fcafdc4b006",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1016/j.joule.2020.04.004",
+      "title": "A Roadmap to the Ammonia Economy",
+      "authors": [
+        "Douglas R. MacFarlane"
+      ],
+      "venue": "Joule",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fb3c52ad4150a363c974c22",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
       "doi": "10.1257/jep.33.2.3",
       "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Daron Acemoğlu",
+        "Pascual Restrepo"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 2214,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2254,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 5
     },
     {
-      "rank": 2,
+      "doi": "10.1257/aer.20202045",
+      "title": "Populist Leaders and the Economy",
+      "authors": [
+        "Manuel Funke"
+      ],
+      "venue": "AMERICAN ECONOMIC REVIEW",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657763ec939a5f4082ffc875",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1145/3491102.3501866",
+      "title": "Algorithmic Management Reimagined for Workers and by Workers: Centering Worker Well-Being in Gig Work",
+      "authors": [
+        "Angie Zhang"
+      ],
+      "venue": "PROCEEDINGS OF THE 2022 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI' 22)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623c062c6750f8484b81c62c",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1016/j.respol.2020.103948",
+      "title": "Economic Complexity and the Green Economy",
+      "authors": [
+        "Penny Mealy"
+      ],
+      "venue": "RESEARCH POLICY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee2ee4d9e795e85042471d6",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1016/j.jbusres.2021.09.061",
+      "title": "Digital Economy: an Innovation Driver for Total Factor Productivity",
+      "authors": [
+        "Wenrong Pan"
+      ],
+      "venue": "JOURNAL OF BUSINESS RESEARCH",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c93bda5244ab9dcb4f50be",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1038/s41578-021-00407-8",
+      "title": "Bioplastics for a Circular Economy",
+      "authors": [
+        "Jan-Georg Rosenboom"
+      ],
+      "venue": "Nature Reviews Materials",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61f126775244ab9dcbdfa694",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1016/j.jbusres.2022.03.041",
+      "title": "Innovation in Emerging Economies: Research on the Digital Economy Driving High-Quality Green Development",
+      "authors": [
+        "Dan Ma"
+      ],
+      "venue": "JOURNAL OF BUSINESS RESEARCH",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "625912215aee126c0fd2575b",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1257/jel.20201595",
+      "title": "The Political Economy of Populism?",
+      "authors": [
+        "S. E. R. G. E. Guriev"
+      ],
+      "venue": "JOURNAL OF ECONOMIC LITERATURE",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63526dae90e50fcafd75d7c5",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1136/bmjgh-2022-009316",
+      "title": "The Global Health Workforce Stock and Distribution in 2020 and 2030: a Threat to Equity and ‘universal’ Health Coverage?",
+      "authors": [
+        "Mathieu Boniol"
+      ],
+      "venue": "BMJ global health",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62bc2d025aee126c0fa8cd03",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1007/s10796-022-10308-y",
+      "title": "Reskilling and Upskilling the Future-ready Workforce for Industry 4.0 and Beyond",
+      "authors": [
+        "Ling Li"
+      ],
+      "venue": "Information Systems Frontiers",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d4dc195aee126c0ff9244a",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1016/j.annemergmed.2022.06.017",
+      "title": "The Perilous Prognostics of Emergency Medicine Workforce Planning",
+      "authors": [
+        "Brian J Zink"
+      ],
+      "venue": "Annals of emergency medicine",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6306012b90e50fcafda89eb7",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1093/restud/rdaa081",
+      "title": "The Gender Earnings Gap in the Gig Economy: Evidence from over a Million Rideshare Drivers",
+      "authors": [
+        "Cody Cook"
+      ],
+      "venue": "REVIEW OF ECONOMIC STUDIES",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c757385f56def97988a90ae",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1002/gsj.1364",
+      "title": "Upgrading Strategies for the Digital Economy",
+      "authors": [
+        "Timothy J. Sturgeon"
+      ],
+      "venue": "GLOBAL STRATEGY JOURNAL",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e09a765df1a9c0c416778c4",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1016/j.jbusres.2020.05.015",
+      "title": "Towards a Circular Economy: an Emerging Economies Context",
+      "authors": [
+        "Nitin Patwa"
+      ],
+      "venue": "Journal of business research",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fae6c75d4150a363ce9b174",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1016/j.spc.2021.02.018",
+      "title": "Principles for a Sustainable Circular Economy",
+      "authors": [
+        "Anne P. M. Velenturf"
+      ],
+      "venue": "SUSTAINABLE PRODUCTION AND CONSUMPTION",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605aa4b0e4510cd7c86f3227",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1111/jiec.13187",
+      "title": "Critiques of the Circular Economy",
+      "authors": [
+        "Hervé Corvellec"
+      ],
+      "venue": "Journal of Industrial Ecology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad9f1c45e57ce9e92dc5",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1016/b978-0-12-821798-6.00023-5",
+      "title": "Plastics in a circular economy",
+      "authors": [
+        "Hans Wiesmeth"
+      ],
+      "venue": "Implementing the Circular Economy for Sustainable Development",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621954e15aee126c0f02ff91",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1016/s2155-8256(21)00027-2",
+      "title": "The 2020 National Nursing Workforce Survey",
+      "authors": [
+        "Richard A. Smiley"
+      ],
+      "venue": "Journal of Nursing Regulation",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60b9a157e4510cd7c8f6985f",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1177/0950017019862954",
+      "title": "Riders on the Storm: Workplace Solidarity among Gig Economy Couriers in Italy and the UK",
+      "authors": [
+        "Arianna Tassinari"
+      ],
+      "venue": "WORK EMPLOYMENT AND SOCIETY",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5db926ea47c8f766461ba911",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1146/annurev-soc-121919-054857",
+      "title": "What Do Platforms Do? Understanding the Gig Economy",
+      "authors": [
+        "Steven Vallas"
+      ],
+      "venue": "Annual Review of Sociology",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ecbc8c89fced0a24b526a26",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1111/1748-8583.12258",
+      "title": "Algorithmic Management and App‐work in the Gig Economy: A Research Agenda for Employment Relations and HRM",
+      "authors": [
+        "James Duggan"
+      ],
+      "venue": "HUMAN RESOURCE MANAGEMENT JOURNAL",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b9db81c45e57ce9396a1b",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.5744/florida/9780813066332.003.0005",
+      "title": "An American Political Economy",
+      "authors": [
+        "Christopher W. Calvo"
+      ],
+      "venue": "The Emergence of Capitalism in Early America",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99adcb7602d970235d693",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.2307/1963135",
+      "title": "Capital: A Critique of Political Economy",
+      "authors": [
+        "Karl Marx"
+      ],
+      "venue": "American Political Science Review",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b130b7602d9703baea72",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1016/j.resconrec.2019.104553",
+      "title": "Targets for a Circular Economy",
+      "authors": [
+        "Piero Morseletto"
+      ],
+      "venue": "Resources Conservation and Recycling",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e09a9bbdf1a9c0c416ac378",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1515/9780822388043",
+      "title": "Tissue Economies",
+      "authors": [
+        "Robert Mitchell"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c8cc095244ab9dcbd3204e",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
       "doi": "10.1016/j.techfore.2023.122448",
       "title": "Automation technologies and their impact on employment: A review, synthesis and future research agenda",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Emilia Filippi",
+        "Mariasole Bannò",
+        "Sandro Trento"
+      ],
       "venue": "Technological Forecasting and Social Change",
-      "citation_count": 158,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 159,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.techfore.2023.122448",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 3,
       "doi": "10.1111/issr.12212",
       "title": "Social protection systems and the future of work: Ensuring social security for digital platform workers",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Christina Behrendt",
+        "Quynh Anh Nguyen",
+        "Uma Rani"
+      ],
       "venue": "International Social Security Review",
-      "citation_count": 126,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 127,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/issr.12212",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 31
     },
     {
-      "rank": 4,
+      "doi": "10.1080/0960085x.2021.1977729",
+      "title": "Algorithmic Control and Gig Workers: a Legitimacy Perspective of Uber Drivers.",
+      "authors": [
+        "Martin Wiener"
+      ],
+      "venue": "EUROPEAN JOURNAL OF INFORMATION SYSTEMS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae031c45e57ce9ec0ee1",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1037/apl0001029",
+      "title": "The Organizational Psychology of Gig Work: an Integrative Conceptual Review.",
+      "authors": [
+        "Russell Cropanzano"
+      ],
+      "venue": "JOURNAL OF APPLIED PSYCHOLOGY",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6347ece890e50fcafd3b9747",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.5281/zenodo.7620041",
+      "title": "Greening the Workforce: The Power of Investing in Human Capital",
+      "authors": [
+        "Muhammad Aqib"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578dd11939a5f4082768b81",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1097/ppo.0000000000000687",
+      "title": "Oncology Physician Workforce Diversity",
+      "authors": [
+        "Curtiland Deville"
+      ],
+      "venue": "CANCER JOURNAL",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65792c15939a5f4082fa8895",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1177/00187267211030098",
+      "title": "Working on My Own: Measuring the Challenges of Gig Work",
+      "authors": [
+        "Brianna B. Caza"
+      ],
+      "venue": "HUMAN RELATIONS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619ba6c71c45e57ce9a167b4",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1177/09500170221096581",
+      "title": "Migration and Migrant Labour in the Gig Economy: an Intervention",
+      "authors": [
+        "Niels van Doorn"
+      ],
+      "venue": "Work, employment & society  a journal of the British Sociological Association",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62192bf15aee126c0fa0a5cc",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1145/3491102.3502083",
+      "title": "Privacy, Surveillance, and Power in the Gig Economy",
+      "authors": [
+        "Shruti Sannon"
+      ],
+      "venue": "PROCEEDINGS OF THE 2022 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI' 22)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6287042a5aee126c0f5b6f30",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1016/j.jclepro.2022.130865",
+      "title": "Drivers and Barriers in the Transition from a Linear Economy to a Circular Economy",
+      "authors": [
+        "Sonia Almeida Neves"
+      ],
+      "venue": "JOURNAL OF CLEANER PRODUCTION",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e31e75aee126c0fa2ba8e",
+      "matched_phrase": "economy",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1002/acr.24497",
+      "title": "2015 American College of Rheumatology Workforce Study: Supply and Demand Projections of Adult Rheumatology Workforce, 2015–2030",
+      "authors": [
+        "Colleen K. Correll"
+      ],
+      "venue": "ARTHRITIS CARE & RESEARCH",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f773dda562944ac7145cb",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.17226/26744",
+      "title": "National Plan for Health Workforce Well-Being",
+      "authors": [],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648e23d7d68f896efa323d4e",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1177/0170840620937900",
+      "title": "Algorithmic Surveillance in the Gig Economy: the Organization of Work Through Lefebvrian Conceived Space",
+      "authors": [
+        "Gemma Newlands"
+      ],
+      "venue": "ORGANIZATION STUDIES",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fae6d83d4150a363cebbaef",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1080/09585192.2020.1867612",
+      "title": "Job Quality, Fair Work and Gig Work: the Lived Experience of Gig Workers",
+      "authors": [
+        "Katie Myhill"
+      ],
+      "venue": "The International Journal of Human Resource Management",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b733b1c45e57ce953e3f4",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1177/1059601121996548",
+      "title": "Looking at the Gig Picture: Defining Gig Work and Explaining Profile Differences in Gig Workers’ Job Demands and Resources",
+      "authors": [
+        "Gwendolyn Paige Watson"
+      ],
+      "venue": "GROUP & ORGANIZATION MANAGEMENT",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad231c45e57ce9e4b1e6",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1088/2058-9565/abfa64",
+      "title": "Achieving a Quantum Smart Workforce",
+      "authors": [
+        "Clarice D. Aiello"
+      ],
+      "venue": "QUANTUM SCIENCE AND TECHNOLOGY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f99351191e011a3fbe2fa85",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1016/j.plas.2021.100018",
+      "title": "Impact of Covid-19 on Field and Office Workforce in Construction Industry",
+      "authors": [
+        "Apurva Pamidimukkala"
+      ],
+      "venue": "Project Leadership and Society",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c84c625244ab9dcb0236d4",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1111/1748-8583.12265",
+      "title": "Boundaryless Careers in the Gig Economy: an Oxymoron?",
+      "authors": [
+        "Dominique Kost"
+      ],
+      "venue": "HUMAN RESOURCE MANAGEMENT JOURNAL",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e09aa45df1a9c0c416baaa5",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1177/0950017019886511",
+      "title": "Work Precarity and Gig Literacies in Online Freelancing",
+      "authors": [
+        "Will Sutherland"
+      ],
+      "venue": "WORK EMPLOYMENT AND SOCIETY",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e09aa75df1a9c0c416c00d8",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1177/0308518x19894584",
+      "title": "Hidden Transcripts of the Gig Economy: Labour Agency and the New Art of Resistance among African Gig Workers",
+      "authors": [
+        "Mohammad Amir Anwar"
+      ],
+      "venue": "ENVIRONMENT AND PLANNING A-ECONOMY AND SPACE",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e5e18f593d709897ce3f676",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1016/j.jvb.2024.103989",
+      "title": "Introducing a sustainable career ecosystem: Theoretical perspectives, conceptualization, and future research agenda",
+      "authors": [
+        "William E. Donald",
+        "Béatrice van der Heijden",
+        "Yehuda Baruch"
+      ],
+      "venue": "Journal of Vocational Behavior",
+      "year": 2024,
+      "cited_by_count": 107,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.jvb.2024.103989",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1007/s00146-022-01496-x",
+      "title": "Artificial intelligence and work: a critical review of recent research from the social sciences",
+      "authors": [
+        "Jean‐Philippe Deranty",
+        "Thomas Corbin"
+      ],
+      "venue": "AI & Society",
+      "year": 2022,
+      "cited_by_count": 97,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00146-022-01496-x.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 51
+    },
+    {
       "doi": "10.1145/3624981",
       "title": "Post-growth Human–Computer Interaction",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Vishal Sharma",
+        "Neha Kumar",
+        "Bonnie Nardi"
+      ],
       "venue": "ACM Transactions on Computer-Human Interaction",
-      "citation_count": 90,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 90,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3624981",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 52
     },
     {
-      "rank": 5,
       "doi": "10.5771/0935-9915-2017-3-298",
       "title": "How Big is the Gig? Assessing the Preliminary Evidence on the Effects of Digitalization on the Labor Market",
-      "abstract": "",
-      "year": 2017,
+      "authors": [
+        "Werner Eichhörst",
+        "Holger Hinte",
+        "Ulf Rinne",
+        "Verena Tobsch"
+      ],
       "venue": "management revue",
-      "citation_count": 83,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 83,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "http://www.nomos-elibrary.de/10.5771/0935-9915-2017-3-298.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 53
     },
     {
-      "rank": 6,
+      "doi": "10.3390/ijerph191710842",
+      "title": "Occupational Safety and Health Staging Framework for Decent Work",
+      "authors": [
+        "Paul A. Schulte",
+        "Ivo Iavicoli",
+        "Luca Fontana",
+        "Stavroula Leka",
+        "Maureen F. Dollard",
+        "Acran Salmen-Navarro",
+        "Fernanda Junqueira Salles",
+        "Kelly Polido Kaneshiro Olympio",
+        "Roberto G. Lucchini",
+        "Marilyn A. Fingerhut",
+        "Francesco Saverio Violante",
+        "Mahinda Seneviratne",
+        "Jodi Oakman",
+        "Olivier Lo",
+        "Camila Helaehil Alfredo",
+        "Márcia Bandini",
+        "João Silvestre Silva-Júnior",
+        "Maria Carmen Martínez",
+        "Teresa Cotrim",
+        "Folashade Omokhodion",
+        "Frida Marina Fischer"
+      ],
+      "venue": "International Journal of Environmental Research and Public Health",
+      "year": 2022,
+      "cited_by_count": 71,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1660-4601/19/17/10842/pdf?version=1661995436",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 54
+    },
+    {
       "doi": "10.6092/issn.1971-8853/12221",
       "title": "Algorithmic Management in the Platform Economy",
-      "abstract": "",
-      "year": 2021,
+      "authors": [
+        "David Stark",
+        "Ivana Pais"
+      ],
       "venue": "Warwick Research Archive Portal (University of Warwick)",
-      "citation_count": 68,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 68,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doaj.org/article/015be0326cfe4040943e4822a64b8849",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 55
     },
     {
-      "rank": 7,
+      "doi": "10.1596/1813-9450-4821",
+      "title": "Social Health Insurance Vs. Tax-Financed Health Systems - Evidence From The OECD",
+      "authors": [
+        "Wagstaff, Adam"
+      ],
+      "venue": "",
+      "year": 2009,
+      "cited_by_count": 58,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 56
+    },
+    {
       "doi": "10.1515/npf-2020-0016",
       "title": "The Impact of Neoliberalism on Civil Society and Nonprofit Advocacy",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Jennifer Alexander",
+        "Kandyce Fernandez"
+      ],
       "venue": "Nonprofit Policy Forum",
-      "citation_count": 58,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 58,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.degruyter.com/document/doi/10.1515/npf-2020-0016/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 57
     },
     {
-      "rank": 8,
-      "doi": "",
-      "title": "The impact of new technologies on the labour market and the social economy",
+      "doi": "10.1111/j.1749-124x.2011.01251.x",
+      "title": "Comparative Analysis of the Determinants of China's State‐owned Outward Direct Investment in OECD and Non‐OECD Countries",
+      "authors": [
+        "Hurst, Luke"
+      ],
+      "venue": "China &amp; World Economy",
+      "year": 2011,
+      "cited_by_count": 48,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Chinese outward direct investment (ODI) is expanding at an unprecedented rate. The present study augments the understanding of the determinants and drivers of Chinese ODI. It reviews the literature on Chinese ODI and analyzes investment by state‐owned enterprises (SOE) for the period 2003–2008, focusing specifically on the differences between the determinants of Chinese investment in developed (OECD) and developing (non‐OECD) economies. In addition, the s",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.2471/blt.24.292057",
+      "title": "A scoping review and expert consensus on digital determinants of health",
+      "authors": [
+        "Robin van Kessel",
+        "Laure-Elise Seghers",
+        "Michael Anderson",
+        "Nienke Schutte",
+        "G. Monti",
+        "Madeleine Haig",
+        "Jelena Schmidt",
+        "George Wharton",
+        "Andres Roman-Urrestarazu",
+        "Blanca Larrain",
+        "Yoann Sapanel",
+        "Louisa Stüwe",
+        "Agathe Bourbonneux",
+        "Junghee Yoon",
+        "Mangyeong Lee",
+        "Ivana Paccoud",
+        "Liyousew Borga",
+        "Njide Ndili",
+        "Eric Sutherland",
+        "Marelize Görgens",
+        "Eva Weicken",
+        "Megan Coder",
+        "Heimar de Fátima Marín",
+        "Elena del Val",
+        "Maria Cristina Profili",
+        "Monika Kosińska",
+        "Christine Elizabeth Browne",
+        "Alvin Marcelo",
+        "Smisha Agarwal",
+        "Monique F. Mrazek",
+        "Hani Eskandar",
+        "Roman Chestnov",
+        "Marina Smelyanskaya",
+        "Karin Källander",
+        "Stefan Buttigieg",
+        "K. Ramesh",
+        "Louise Holly",
+        "Andrzej Ryś",
+        "Natasha Azzopardi‐Muscat",
+        "Jerome de Barros",
+        "Yuri Quintana",
+        "Antonio Spina",
+        "Adnan A. Hyder",
+        "Alain Labrique",
+        "Maged N. Kamel Boulos",
+        "Wen Chen",
+        "Anurag Agrawal",
+        "Juhee Cho",
+        "Jochen Klucken",
+        "Barbara Prainsack",
+        "Ran D. Balicer",
+        "Ilona Kickbusch",
+        "David Novillo-Ortiz",
+        "Elías Mossialos"
+      ],
+      "venue": "Bulletin of the World Health Organization",
+      "year": 2025,
+      "cited_by_count": 47,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.2471/blt.24.292057",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1186/s13731-023-00337-5",
+      "title": "Digital and innovative entrepreneurship in the Indian handicraft sector after the COVID-19 pandemic: challenges and opportunities",
+      "authors": [
+        "Uma Shankar Yadav",
+        "Ravindra Tripathi",
+        "Mano Ashish Tripathi",
+        "Indrajit Ghosal",
+        "Ashish Kumar",
+        "Mitu Mandal",
+        "Akanksha Singh"
+      ],
+      "venue": "Journal of Innovation and Entrepreneurship",
+      "year": 2023,
+      "cited_by_count": 46,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://innovation-entrepreneurship.springeropen.com/counter/pdf/10.1186/s13731-023-00337-5",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1111/apps.12535",
+      "title": "A lead article to go deeper and broader in job insecurity research: Understanding an individual perception in its social and political context",
+      "authors": [
+        "Katharina Klug",
+        "Eva Selenko",
+        "Anahí Van Hootegem",
+        "Magnus Sverke",
+        "Hans De Witte"
+      ],
+      "venue": "Applied Psychology",
+      "year": 2024,
+      "cited_by_count": 35,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/apps.12535",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.3389/fsufs.2022.862249",
+      "title": "Decent Employment and the Future of Agriculture. How Dominant Narratives Prevent Addressing Structural Issues",
+      "authors": [
+        "Bruno Losch"
+      ],
+      "venue": "Frontiers in Sustainable Food Systems",
+      "year": 2022,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fsufs.2022.862249/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1146/annurev-economics-081523-013750",
+      "title": "Fertility in High-Income Countries: Trends, Patterns, Determinants, and Consequences",
+      "authors": [
+        "David E. Bloom",
+        "Michael Kühn",
+        "Klaus Prettner"
+      ],
+      "venue": "Annual Review of Economics",
+      "year": 2024,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1146/annurev-economics-081523-013750",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.15173/glj.v10i1.3796",
+      "title": "For a Future of Work with Dignity: A Critique of the World Bank Development Report, The Changing Nature of Work",
+      "authors": [
+        "Mark Anner",
+        "Nicolas Pons-Vignon",
+        "Uma Rani"
+      ],
+      "venue": "Global Labour Journal",
+      "year": 2019,
+      "cited_by_count": 31,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://mulpress.mcmaster.ca/globallabour/article/download/3796/3281",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.4324/9781315719641",
+      "title": "Managing a Global Workforce",
+      "authors": [
+        "Charles Vance"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
       "abstract": "",
-      "year": 2017,
-      "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
-      "citation_count": 55,
-      "engines_found_in": [
-        "openalex"
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b30fdabfae2eeef1b4c7",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 65
     },
     {
-      "rank": 9,
+      "doi": "10.1108/ajim-08-2021-0235",
+      "title": "Barriers to Entry of Gig Workers in the Gig Platforms: Exploring the Dark Side of the Gig Economy",
+      "authors": [
+        "Aastha Behl"
+      ],
+      "venue": "ASLIB JOURNAL OF INFORMATION MANAGEMENT",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628d19215aee126c0f35d467",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.1007/s10734-021-00742-3",
+      "title": "Gig Qualifications for the Gig Economy: Micro-Credentials and the ‘hungry Mile’",
+      "authors": [
+        "Wheelahan  Leesa"
+      ],
+      "venue": "Higher Education",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae471c45e57ce9ee022c",
+      "matched_phrase": "gig",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.1016/j.cose.2020.102080",
+      "title": "The Cybersecurity Workforce and Skills.",
+      "authors": [
+        "Steven Furnell"
+      ],
+      "venue": "COMPUTERS & SECURITY",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff68927d4150a363cc96bcd",
+      "matched_phrase": "workforce",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.1007/s40309-017-0113-9",
+      "title": "Disquieting uncertainty. Three glimpses into the future",
+      "authors": [
+        "Volker H. Schmidt"
+      ],
+      "venue": "European Journal of Futures Research",
+      "year": 2017,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs40309-017-0113-9.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.1057/s41599-025-04564-x",
+      "title": "Artificial intelligence in the COVID-19 pandemic: balancing benefits and ethical challenges in China’s response",
+      "authors": [
+        "Xiaojun Ding",
+        "Bingxing Shang",
+        "Caifeng Xie",
+        "Jiayi Xin",
+        "Feng Yu"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": 2025,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41599-025-04564-x.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1093/cje/beab007",
+      "title": "The rise of self-employment in the UK: entrepreneurial transmission or declining job quality?",
+      "authors": [
+        "Andrew Henley"
+      ],
+      "venue": "Cambridge Journal of Economics",
+      "year": 2021,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/cje/article-pdf/45/3/457/38854529/beab007.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.1177/00027642211066027",
+      "title": "Who Bears the Burden of a Pandemic? COVID-19 and the Transfer of Risk to Digital Platform Workers",
+      "authors": [
+        "Paola Tubaro",
+        "Antonio A. Casilli"
+      ],
+      "venue": "American Behavioral Scientist",
+      "year": 2022,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hal.science/hal-03369291/document",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.1108/er-10-2018-0259",
+      "title": "Towards a new web of rules",
+      "authors": [
+        "Chris F. Wright",
+        "Alex J. Wood",
+        "Jonathan Trevor",
+        "Colm McLaughlin",
+        "Wei Huang",
+        "Brian Harney",
+        "Torsten Geelan",
+        "Barry Colfer",
+        "Cheng Chang",
+        "William Brown"
+      ],
+      "venue": "Employee Relations",
+      "year": 2018,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://research.birmingham.ac.uk/en/publications/0d1cc4ee-b6bd-49dc-84c9-e39568a63d7e",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.3390/ai6080190",
+      "title": "The Impact of Artificial Intelligence on Modern Society",
+      "authors": [
+        "Pedro Ramos Brandão"
+      ],
+      "venue": "AI",
+      "year": 2025,
+      "cited_by_count": 25,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2673-2688/6/8/190/pdf?version=1755411699",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.1017/s0047279400001823",
+      "title": "Workforce Restructuring, Social Insurance Coverage and the Black Economy",
+      "authors": [
+        "Hakim, Catherine"
+      ],
+      "venue": "Journal of Social Policy",
+      "year": 1989,
+      "cited_by_count": 24,
+      "reference_count": 70,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>ABSTRACT</jats:title><jats:p>The national insurance system of contributory work-related benefits was designed for a ‘core’ workforce in continuous full-time employment. It provides incomplete coverage for the rising numbers of people in the peripheral workforce: part-time jobs, temporary work and self-employment. National estimates are presented for workers whose earnings are below the national insurance threshold, and who are thus excluded from social security benefits such as unemp",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.35335/laweco.v17i2.3",
+      "title": "Analyzing Government Policies in Addressing Unemployment and Em-powering Workers: Implications for Economic Stability and Social Welfare",
+      "authors": [
+        "Masna Sopia Silalahi",
+        "Sandhy Walsh"
+      ],
+      "venue": "Law and Economics",
+      "year": 2023,
+      "cited_by_count": 22,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://journals.ristek.or.id/index.php/LE/article/download/3/3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1787/fdb0570b-en",
+      "title": "Gig economy platforms: Boon or Bane?",
+      "authors": [],
+      "venue": "OECD Economics Department Working Papers",
+      "year": 2019,
+      "cited_by_count": 19,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.48161/qaj.v5n1a1222",
+      "title": "Social Protection in Developing Countries: Legal, Economic, and Social Trends",
+      "authors": [
+        "Nodira Rustamova",
+        "Sardorbek Sharifzoda",
+        "Xurshida Burxanxodjaeva",
+        "Lola Rahimqulova",
+        "Mukhammad Turdialiev",
+        "Farrukh Nurullaev",
+        "Dauletbike Eshchanova"
+      ],
+      "venue": "Qubahan Academic Journal",
+      "year": 2025,
+      "cited_by_count": 16,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journal.qubahan.com/index.php/qaj/article/download/1222/331",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
       "doi": "10.1057/s41599-024-04172-1",
       "title": "The widening gender wage gap in the gig economy in China: the impact of digitalisation",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Han, Jiachen",
+        "Li, Mingming",
+        "Li, Shi",
+        "Hu, Yingying"
+      ],
       "venue": "Humanities and Social Sciences Communications",
-      "citation_count": 15,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 10,
-      "doi": "",
-      "title": "Platform-Living: Theorizing life, work, and ethical living after the gig economy",
+      "year": null,
+      "cited_by_count": 15,
+      "reference_count": 129,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2020,
-      "venue": "eScholarship (California Digital Library)",
-      "citation_count": 11,
-      "engines_found_in": [
+      "found_by": [
+        "crossref",
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41599-024-04172-1.pdf",
+      "rank": 79
     },
     {
-      "rank": 11,
+      "doi": "10.21512/tw.v21i2.6758",
+      "title": "Regulatory Developments in the Gig Economy: A Literature Review",
+      "authors": [
+        "Victory Haris Kusuma Wardhana",
+        "Maria Grace Herlina",
+        "Sugiharto Bangsawan",
+        "Michael Aaron Tuori"
+      ],
+      "venue": "The Winners",
+      "year": 2020,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journal.binus.ac.id/index.php/winners/article/download/6758/4001",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1093/icc/dtad005",
+      "title": "Understanding work in the online platform economy: the narrow, the broad, and the systemic perspectives",
+      "authors": [
+        "Angela García Calvo",
+        "Martín Kenney",
+        "John Zysman"
+      ],
+      "venue": "Industrial and Corporate Change",
+      "year": 2023,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://centaur.reading.ac.uk/109646/1/GarciaCalvoKenneyZysman%20ICC%20accepted%20paper.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1111/1744-7941.12398",
+      "title": "Fragmentation of employment relationships, fragmentation of working time: the nature of work and employment of platform takeaway riders and implications for decent work in China",
+      "authors": [
+        "Xiliang Feng",
+        "Fang Lee Cooke",
+        "Chenhui Zhao"
+      ],
+      "venue": "Asia Pacific Journal of Human Resources",
+      "year": 2024,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1744-7941.12398",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1111/dech.12557",
+      "title": "Illusions of Inclusion: Assessment of the World Development Report 2019 on the Changing Nature of Work",
+      "authors": [
+        "Kate Meagher"
+      ],
+      "venue": "Development and Change",
+      "year": 2019,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://researchonline.lse.ac.uk/id/eprint/103000/1/Illusions_of_inclusion.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 83
+    },
+    {
       "doi": "10.1787/51825505-en",
       "title": "The Impact of the Growth of the Sharing and Gig Economy on VAT/GST Policy and Administration",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        ""
+      ],
       "venue": "",
-      "citation_count": 9,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "monograph"
+      "rank": 84
     },
     {
-      "rank": 12,
+      "doi": "10.1787/574b61f8-en",
+      "title": "The Sharing and Gig Economy - Effective Taxation of Platform Sellers",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.1080/27658511.2024.2397860",
+      "title": "RETRACTED ARTICLE: Attaining sustainable development via green economy catalysts in post-Covid-19 Africa: An analytical examination",
+      "authors": [
+        "Gamel Abdul-Nasser Salifu",
+        "Zubeiru Salifu"
+      ],
+      "venue": "Sustainable Environment",
+      "year": 2024,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/27658511.2024.2397860?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.4236/jcc.2023.1111008",
+      "title": "Assessing Policy Measures Safeguarding Workers from Artificial Intelligence in the United States",
+      "authors": [
+        "Yining Zhao",
+        "Karthik Jakkampudi"
+      ],
+      "venue": "Journal of Computer and Communications",
+      "year": 2023,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.scirp.org/pdf/jcc_2023112915053188.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1787/d20a57ac-en",
+      "title": "Social impact measurement for the Social and Solidarity Economy",
+      "authors": [],
+      "venue": "OECD Local Economic and Employment Development (LEED) Working Papers",
+      "year": 2021,
+      "cited_by_count": 10,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1108/ijchm-08-2023-1297",
+      "title": "Critical reflection on the impact of the gig economy on the hospitality workforce",
+      "authors": [
+        "Jin, Dan",
+        "Liu-Lastres, Bingjie"
+      ],
+      "venue": "International Journal of Contemporary Hospitality Management",
+      "year": 2025,
+      "cited_by_count": 9,
+      "reference_count": 92,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Purpose</jats:title>\n<jats:p>This paper aims to provide a critical reflection on the impact of the gig economy on the hospitality workforce. The impact of the gig economy on hospitality workforce management is explored, with the paper delving into both theoretical insights and practical implications.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Design/methodology/approach</jats:title>\n<jats:p>This paper o",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.3389/fsoc.2023.1274969",
+      "title": "Prosumer capitalism in the sharing economy: a gender approach to service providers’ experiences in ridesharing platforms",
+      "authors": [
+        "Fernando Rey Castillo-Villar",
+        "Rosalia G. Castillo-Villar",
+        "Krystel K. Castillo-Villar"
+      ],
+      "venue": "Frontiers in Sociology",
+      "year": 2024,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fsoc.2023.1274969/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.4324/9781003161875-32",
+      "title": "The gig economy in China",
+      "authors": [
+        "Xu, Zhun"
+      ],
+      "venue": "The Routledge Handbook of the Gig Economy",
+      "year": 2022,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1177/2031952520934585",
+      "title": "An unprecedented social solidarity stress test",
+      "authors": [
+        "David Mangan",
+        "Elena Gramano",
+        "Miriam Kullmann"
+      ],
+      "venue": "European Labour Law Journal",
+      "year": 2020,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/2031952520934585",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1080/07078552.2020.1738778",
+      "title": "Zero-sum social policy: going gig and the Australian National Disability Insurance Scheme",
+      "authors": [
+        "Baines, Donna",
+        "Macdonald, Fiona",
+        "Stanford, Jim"
+      ],
+      "venue": "Studies in Political Economy",
+      "year": 2020,
+      "cited_by_count": 7,
+      "reference_count": 48,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.15407/eip2022.03.048",
+      "title": "SCENARIO BASED MACRO ASSESSMENTS OF THE POST-WAR RECOVERY OF UKRAINE'S ECONOMY",
+      "authors": [
+        "Mariya Skrypnychenko",
+        "Lidiya Kuznietsova",
+        "Oleksandr Bilotserkivets"
+      ],
+      "venue": "Ekonomìka ì prognozuvannâ",
+      "year": 2022,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "http://www3.weforum.org/docs/WEF_Future_of_Jobs_2020.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1787/d7973047-en",
+      "title": "Model Rules for Reporting by Platform Operators with respect to Sellers in the Sharing and Gig Economy",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.3390/tourhosp6010004",
+      "title": "Digitalisation of the Tourism Industry and Self-Employment: Challenges of the Gig-Economy",
+      "authors": [
+        "Olena Stryzhak",
+        "Volodymyr Yermachenko",
+        "Ľuboš Cibák",
+        "Mykola Sidak"
+      ],
+      "venue": "Tourism and Hospitality",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2673-5768/6/1/4/pdf?version=1735970023",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.24294/jipd.v8i8.5771",
+      "title": "Navigating the Malaysian dilemma: Constructing a sustainable economy in the post-COVID-19 era",
+      "authors": [
+        "Sanmugam Annamalah",
+        "Kalisri Logeswaran Aravindan",
+        "Ilham Sentosa"
+      ],
+      "venue": "Journal of Infrastructure Policy and Development",
+      "year": 2024,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://systems.enpress-publisher.com/index.php/jipd/article/download/5771/3646",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1007/s10797-024-09835-y",
+      "title": "Integrating national accounting and macroeconomic approaches to estimate the underground, informal, and illegal economy in European countries",
+      "authors": [
+        "Roberto Dell’Anno"
+      ],
+      "venue": "International Tax and Public Finance",
+      "year": 2024,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10797-024-09835-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1371/journal.pone.0297770",
+      "title": "The role of informal support systems during illness: A qualitative study of solo self-employed workers in Ontario, Canada",
+      "authors": [
+        "Tauhid Hossain Khan",
+        "Ellen MacEachen"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2024,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0297770&type=printable",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1787/325131488300",
+      "title": "Labour Protection in China",
+      "authors": [],
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": 2005,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.51936/tip.59.3.617-643",
+      "title": "IN SEARCH OF THE GOOD LIFE: WEAKNESSES OF THE EVER-STRONGER GLOBAL PLATFORM ECONOMY",
+      "authors": [
+        "Aleksandra Kanjuo Mrčela"
+      ],
+      "venue": "Teorija in praksa",
+      "year": 2022,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://doi.org/10.51936/tip.59.3.617-643",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.31436/iiumlj.v30is1.701",
+      "title": "ANALYSIS OF WORKERS' RIGHTS IN THE ON-DEMAND ECONOMY WITH SPECIAL REFERENCE TO VERTICAL INEQUALITY",
+      "authors": [
+        "Maheran Makhtar",
+        "Zuhairah Ariff Abd Ghadas",
+        "Mahbubul Haque"
+      ],
+      "venue": "IIUM Law Journal",
+      "year": 2022,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.iium.edu.my/iiumlj/index.php/iiumlj/article/download/701/338",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.21684/2412-2343-2022-9-2-94-120",
+      "title": "Harnessing the Power of Labour Law and Social Security Law to Achieve the Goal of Formalizing Labour Markets in the BRICS Countries",
+      "authors": [
+        "T. S. Gusevа",
+        "Ju. Klepalova"
+      ],
+      "venue": "BRICS Law Journal",
+      "year": 2022,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.bricslawjournal.com/jour/article/download/648/229",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.5281/zenodo.1341459",
+      "title": "The German Political Economy Between Deregulation And Re-Regulation: Party Discourses On Minimum Wage Policies",
+      "authors": [
+        "Jörg Michael Dostal"
+      ],
+      "venue": "Social Science Open Access Repository (GESIS – Leibniz Institute for the Social Sciences)",
+      "year": 2012,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.ssoar.info/ssoar/handle/document/55587",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.14330/cwr.2023.9.2.02",
+      "title": "Youth Unemployment and Sustainable Development Pathways in China after the COVID-19 Pandemic",
+      "authors": [
+        "Siyuan Jin"
+      ],
+      "venue": "China and WTO Review",
+      "year": 2023,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "http://cwr.yiil.org/home/pdf/archives/2023v9n2/cwr_v9n2_02.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.4337/9781800372375.00009",
+      "title": "Regulating the gig economy: promises and limits of social dialogue in Switzerland",
+      "authors": [
+        "Bonvin, Jean-Michel",
+        "Cianferoni, Nicola",
+        "Perrig, Luca"
+      ],
+      "venue": "Social Dialogue in the Gig Economy",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.4018/979-8-3693-9385-7.ch011",
+      "title": "Social Sustainability in the Gig Economy",
+      "authors": [
+        "Achour, Zyed"
+      ],
+      "venue": "Sustainability and Adaptability of Gig Economies in Global Business",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 59,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>The platform economy is reshaping labor markets, offering flexibility but increasing worker precarity through income instability, algorithmic management, and limited social protections. This chapter examines social sustainability in platform work, focusing on social capital, digital solidarity networks, and social innovation as resilience mechanisms. It explores regulatory gaps and the role of platform cooperativism and hybrid support systems in addressing labor vulnerabilities. By propo",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.1201/9781003621454-5",
+      "title": "Artificial Intelligence-Driven Workforce Planning for the Gig Economy Era",
+      "authors": [
+        "Nayak, Arpita",
+        "Satpathy, Ipseeta",
+        "Khang, Alex",
+        "Patnaik, B. C. M."
+      ],
+      "venue": "Synergy of AI and Fintech in the Digital Gig Economy",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.1787/bbc70a07-en",
+      "title": "Financing the extension of social insurance to informal economy workers",
+      "authors": [],
+      "venue": "OECD Development Centre Working Papers",
+      "year": 2021,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1787/d950acfc-en",
+      "title": "The Impact of Tax and Benefit Systems on the Workforce Participation Incentives of Women",
+      "authors": [],
+      "venue": "OECD Taxation Working Papers",
+      "year": 2016,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.4018/979-8-3693-9385-7.ch007",
+      "title": "Talent Management in the Gig Economy",
+      "authors": [
+        "Rabban, Tanya",
+        "Singh, Rohan"
+      ],
+      "venue": "Sustainability and Adaptability of Gig Economies in Global Business",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 84,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>The rapid transition in the gig economy has driven a requirement for innovative talent management strategies in order to address the challenges as well as opportunities. This chapter focuses on talent management in the context of gig economy, with recruitment, engagement and retention of the gig workers, especially food delivery and taxi drivers. It explores the role of digital platforms and Industry 4.0 technologies for reshaping the conventional HR practices to meet the dynamic workfor",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.37907/10erp9102jd",
+      "title": "\"Automation, gigs, and other labor market tales: the Philippines in the Fourth Industrial Revolution\"",
+      "authors": [
+        "Emmanuel F. Esguerra"
+      ],
+      "venue": "The Philippine Review of Economics",
+      "year": 2020,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pre.econ.upd.edu.ph/index.php/pre/article/download/985/883",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.26577/be.2021.v135.i1.08",
+      "title": "Taxation in the digital economy",
+      "authors": [
+        "B. Sultanova",
+        "Gaukhar ALIMBEKOVA",
+        "D. Espaeva"
+      ],
+      "venue": "The Journal of Economic Research & Business Administration",
+      "year": 2021,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.26577/be.2021.v135.i1.08",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 113
+    },
+    {
       "doi": "10.4337/9781800372375.00012",
       "title": "Conclusion: The rise and growth of the gig economy. Challenges and opportunities for social dialogue and decent work",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Bonvin, Jean-Michel",
+        "Cianferoni, Nicola",
+        "Mexi, Maria"
+      ],
       "venue": "Social Dialogue in the Gig Economy",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 114
     },
     {
-      "rank": 13,
       "doi": "10.4337/9781800372375.00008",
       "title": "Social partnership and the rise of the gig economy in Greece: continuity or discontinuity?",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Mexi, Maria"
+      ],
       "venue": "Social Dialogue in the Gig Economy",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 115
     },
     {
-      "rank": 14,
       "doi": "10.5040/9798881813406.ch-2",
       "title": "Governing the Workforce",
-      "abstract": "",
-      "year": 2022,
+      "authors": [],
       "venue": "Digital Working Lives",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "other"
+      "rank": 116
     },
     {
-      "rank": 15,
       "doi": "10.66038/iderj-25-001",
       "title": "Examining the Gig Economy and Clean Energy Impact on Economic Growth and Welfare in OECD Countries",
-      "abstract": "",
-      "year": null,
-      "venue": "Institutions and Development Research Journal",
-      "citation_count": 1,
-      "engines_found_in": [
-        "crossref"
+      "authors": [
+        "Orole, Felix",
+        "Aderemi, Timothy",
+        "Jaaffar, Amar Hisham"
       ],
-      "score": 0.0,
+      "venue": "Institutions and Development Research Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "https://journal.diaderc.org/index.php/iderj/article/download/11/4",
+      "rank": 117
     },
     {
-      "rank": 16,
+      "doi": "10.1145/3599609.3599627",
+      "title": "Impact of COVID-19 on the Gig Economy in China: Challenges and Coping Strategies",
+      "authors": [
+        "Lu, Xiaohong"
+      ],
+      "venue": "Proceedings of the 2023 7th International Conference on E-Commerce, E-Business and E-Government",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 23,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1111/cwe.12602",
+      "title": "The Impact of Social Health Insurance on Sex Selection",
+      "authors": [
+        "Wang, Xiaoqian",
+        "Fu, Zixuan",
+        "Shi, Julie"
+      ],
+      "venue": "China &amp; World Economy",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Male‐biased sex imbalance is a common social concern in many developing countries. Using 2015 One Percent National Population Sample Census data and macro‐level indicators from various sources in China, this study examines the impact of social health insurance on sex selection at birth. The results show that social health insurance significantly affected the sex ratio at birth for the second child in families with a first‐born girl, and there was salient ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1007/978-981-16-8406-7_21",
+      "title": "The Future of GIG Workforce",
+      "authors": [
+        "Mishra, Istadeva",
+        "Yadav, Anhsu"
+      ],
+      "venue": "Sustainability in the Gig Economy",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 47,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.4337/9781800372375",
+      "title": "Social Dialogue in the Gig Economy",
+      "authors": [],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.4337/9781800372375.00006",
+      "title": "Introduction",
+      "authors": [
+        "Bonvin, Jean-Michel",
+        "Cianferoni, Nicola",
+        "Mexi, Maria"
+      ],
+      "venue": "Social Dialogue in the Gig Economy",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.1057/s41599-025-04366-1",
+      "title": "Correction: The widening gender wage gap in the gig economy in China: the impact of digitalisation",
+      "authors": [
+        "Han, Jiachen",
+        "Li, Mingming",
+        "Li, Shi",
+        "Hu, Yingying"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.55248/gengpi.5.0924.2508",
+      "title": "The Impact of India's Digital Economy on Economic Growth and Employment A Contemporary Analysis",
+      "authors": [
+        "Mr. Veeranna S C"
+      ],
+      "venue": "International Journal of Research Publication and Reviews",
+      "year": 2024,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://doi.org/10.55248/gengpi.5.0924.2508",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.26650/jepr1633492",
+      "title": "Impact of the Digital Economy on Income Inequality: Evidence from Developing Economies",
+      "authors": [
+        "Mohsen Mohammadi Khyareh"
+      ],
+      "venue": "Journal of Economic Policy Researches / İktisat Politikası Araştırmaları Dergisi",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://cdn.istanbul.edu.tr/file/JTA6CLJ8T5/2F675AB1FD1F4A1C8C298AE13AFC2582",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.2478/sbe-2025-0044",
+      "title": "Mapping the Freelance Economy: A Cross-Platform Study of Workforce Characteristics, Challenges, and Emerging Trends",
+      "authors": [
+        "Lia Alexandra Baltador",
+        "Nancy Panţa",
+        "Mihaela Chiriac Rotaru"
+      ],
+      "venue": "Studies in Business and Economics",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://reference-global.com/download/article/10.2478/sbe-2025-0044.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.34259/ijew.25.12057380",
+      "title": "Impact of Artificial Intelligence on the Job Market and the Future of Work",
+      "authors": [
+        "Muhammad Danish Ali",
+        "Muhammad Asif Ali",
+        "Mohammed Mujahid"
+      ],
+      "venue": "International Journal of Engineering Works",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.ijew.io/pdfdownload/impact-of-artificial-intelligence-on-the-job-market-and-the-future-of-work",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 127
+    },
+    {
       "doi": "10.32469/10355/104941",
       "title": "The gig economy and social insurance systems : public opinion, policy analysis, and policy design",
-      "abstract": "<jats:p xml:lang=\"en\">My dissertation focuses on the mismatch of the current welfare system designed for the traditional employment model with the increase in new forms of employment. With technological advancements, the labor market has seen an increase in non-standard workers. Despite the increase of new precarious workers from the technology transformation, we know less about how to align the labor market change with the social welfare system, and how the politics of welfare policy about the ",
-      "year": null,
+      "authors": [
+        "",
+        "Bae, Juhyun"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"en\">My dissertation focuses on the mismatch of the current welfare system designed for the traditional employment model with the increase in new forms of employment. With technological advancements, the labor market has seen an increase in non-standard workers. Despite the increase of new precarious workers from the technology transformation, we know less about how to align the labor market change with the social welfare system, and how the politics of welfare policy about the ",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dissertation"
+      "rank": 128
     },
     {
-      "rank": 17,
       "doi": "10.1787/9a816d0e-en",
       "title": "Jeremias Prassl on the gig economy",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "OECD Podcasts",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dataset"
+      "rank": 129
     },
     {
-      "rank": 18,
       "doi": "10.4337/9781800372375.00007",
       "title": "The gig economy and social partnership in Germany: towards a German Model 4.0?",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Kiess, Johannes"
+      ],
       "venue": "Social Dialogue in the Gig Economy",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 130
     },
     {
-      "rank": 19,
       "doi": "10.66038/iderj-25-005",
       "title": "Examining the Gig Economy and Clean Energy Impact on Economic Growth and Welfare in OECD Countries",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Orole, Felix",
+        "Aderemi, Timothy",
+        "Jaaffar, Amar Hisham"
+      ],
       "venue": "Institutions and Development Research Journal",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 131
     },
     {
-      "rank": 20,
       "doi": "10.62823/mgm/9789349468719/13",
       "title": "Impact of Social Media on the Gig Economy",
-      "abstract": "<jats:p>Social media has reshaped the landscape of the gig economy by influencing how independent workers find work, build credibility, collaborate, and advocate for better working conditions. Through platforms such as Facebook, Instagram, WhatsApp, and LinkedIn, gig workers promote services, engage with clients, and form support networks. However, these platforms also raise concerns around data surveillance, algorithmic control, digital exclusion, and reputational dependence. International inst",
-      "year": null,
+      "authors": [
+        "",
+        "Kaur, Amanpreet"
+      ],
       "venue": "Unlocking the Gig Economy in India",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>Social media has reshaped the landscape of the gig economy by influencing how independent workers find work, build credibility, collaborate, and advocate for better working conditions. Through platforms such as Facebook, Instagram, WhatsApp, and LinkedIn, gig workers promote services, engage with clients, and form support networks. However, these platforms also raise concerns around data surveillance, algorithmic control, digital exclusion, and reputational dependence. International inst",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 132
     },
     {
-      "rank": 21,
-      "doi": "10.1109/TSMCA.2011.2132707",
-      "title": "Multidimensional Social Network in the Social Recommender System",
-      "abstract": "",
-      "year": 2013,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 22,
-      "doi": "10.1109/TPWRS.2022.3164628",
-      "title": "A Novel Mutual Insurance Model for Hedging Against Cyber Risks in Power Systems Deploying Smart Technologies",
-      "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 23,
-      "doi": "arXiv:1803.07509v2",
-      "title": "Workforce migration and its economic implications: A perspective from social media in China",
-      "abstract": "",
-      "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 24,
-      "doi": "arXiv:2212.02119v1",
-      "title": "Digital leisure and the gig economy: a two-sector model of growth",
-      "abstract": "",
-      "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 25,
-      "doi": "10.1007/978-3-540-87781-3_40",
-      "title": "Social Recommendations within the Multimedia Sharing Systems",
-      "abstract": "",
-      "year": 2013,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 26,
-      "doi": "10.1007/978-3-319-77332-2_13",
-      "title": "Measuring social spam and the effect of bots on information diffusion in social media",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 27,
-      "doi": "10.1109/TCSS.2022.3140779",
-      "title": "Modeling Influencer Marketing Campaigns in Social Networks",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 28,
-      "doi": "arXiv:2606.19975v1",
-      "title": "The Algorithmic-Human Manager: AI, Apps, and Workers in the Indian Gig Economy",
-      "abstract": "",
-      "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 29,
-      "doi": "arXiv:2001.02863v1",
-      "title": "China's First Workforce Skill Taxonomy",
-      "abstract": "",
+      "doi": "10.37896/sr7.10/017",
+      "title": "Gig Economy- Redefining the Future Workforce",
+      "authors": [],
+      "venue": "Strad Research",
       "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 133
     },
     {
-      "rank": 30,
-      "doi": "arXiv:1402.5300v2",
-      "title": "Purchasing Life Insurance to Reach a Bequest Goal",
+      "doi": "10.2139/ssrn.5230616",
+      "title": "Trade Secrets and the Gig Economy: Protecting IP in a Decentralized Workforce",
+      "authors": [
+        "omogiate, precious"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
       "abstract": "",
-      "year": 2014,
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.4337/9781800372375.00010",
+      "title": "Weakening worker protections? Uncovering the gig economy and the future of work in the UK",
+      "authors": [
+        "Montgomery, Tom",
+        "Baglioni, Simone"
+      ],
+      "venue": "Social Dialogue in the Gig Economy",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1787/f77c3042-en",
+      "title": "Code of Conduct",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.1201/9781032720104-5",
+      "title": "Artificial Intelligence- Driven Workforce Planning for the Gig Economy Era",
+      "authors": [
+        "Nayak, Arpita",
+        "Satpathy, Ipseeta",
+        "Khang, Alex",
+        "Patnaik, B. C. M."
+      ],
+      "venue": "Synergy of AI and Fintech in the Digital Gig Economy",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.56687/9781447379249-008",
+      "title": "2 The rise of the gig economy and the social protection of gig workers in China",
+      "authors": [
+        "Liu, Tao"
+      ],
+      "venue": "The Contradictions of Market Socialism",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.2307/jj.32726801.10",
+      "title": "The rise of the gig economy and the social protection of gig workers in China",
+      "authors": [
+        "Liu, Tao"
+      ],
+      "venue": "The Contradictions of Market Socialism",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.2139/ssrn.5037570",
+      "title": "Effect Of Digital Competencies and Workforce Collaboration in The Growth of Gig Economy &amp;amp; Job Transformation",
+      "authors": [
+        "Baidya, Radhika",
+        "Kumar, Dharmendra",
+        "Lal, Dr.  Ruhi"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 74,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.47297/wspdecwsp2515-797315.20250911",
+      "title": "The Impact of Work-Related Injury Insurance on Gig Workers' Retention Intention",
+      "authors": [
+        "Yixin, Zhang"
+      ],
+      "venue": "Development Economics of China",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.64628/aa.c4sesw993",
+      "title": "Protecting the rights of the digital workforce in the ‘gig’ economy",
+      "authors": [
+        "Davis, Joseph"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.4337/9781800372375.00013",
+      "title": "Index",
+      "authors": [],
+      "venue": "Social Dialogue in the Gig Economy",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.51952/9781447379249.ch002",
+      "title": "The rise of the gig economy and the social protection of gig workers in China",
+      "authors": [
+        "Liu, Tao"
+      ],
+      "venue": "The Contradictions of Market Socialism",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.62823/mgm/9789349468719/09",
+      "title": "Empowering the Gig Workforce in India: Digital Platforms and Evolving Skill Requirements in Platform-Based Services",
+      "authors": [
+        "",
+        "Kumar, Rounak"
+      ],
+      "venue": "Unlocking the Gig Economy in India",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>Over the last ten years, the gig economy in India has grown at a phenomenal pace, particularly due to the spread of online platforms that match workforce with task-based jobs, even on a temporary basis. Professionals have used such platforms as Swiggy, Ola, and Uber Company to transform the nature of employment by providing flexibility, low barriers to entry, and a set of new dependencies and uncertainties. Such platforms give power to workers by providing them with access to employment ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.5771/9781538173749-19",
+      "title": "Chapter 2 Governing the Workforce",
+      "authors": [
+        "Christiaens, Tim"
+      ],
+      "venue": "Digital Working Lives",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.62823/mgm/9789349468719/02",
+      "title": "The Gig Economy and its Social Implications",
+      "authors": [
+        "",
+        "Janani, N"
+      ],
+      "venue": "Unlocking the Gig Economy in India",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>This chapter looks at how the gig economy has grown and changed over time as a major force in the global job market. The gig economy has changed the way we think about work, freedom, and making money by offering short-term, flexible, and platform-mediated work arrangements. The chapter talks about the chances and problems that workers, businesses, and policymakers face by looking at the main features, historical context, and top platforms like Uber, Airbnb, and Freelancer. It talks about",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.2139/ssrn.5086559",
+      "title": "Gig Economy's Impact On Workforce Dynamics And Economic Resilience",
+      "authors": [
+        "Ganapathyraman, Sankararaman"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.1109/TSMCA.2011.2132707",
+      "arxiv_id": "1303.0093v1",
+      "title": "Multidimensional Social Network in the Social Recommender System",
+      "authors": [
+        "Przemyslaw Kazienko",
+        "Katarzyna Musial",
+        "Tomasz Kajdanowicz"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0093v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 149
+    },
+    {
+      "doi": "10.1109/TPWRS.2022.3164628",
+      "arxiv_id": "2403.11054v1",
+      "title": "A Novel Mutual Insurance Model for Hedging Against Cyber Risks in Power Systems Deploying Smart Technologies",
+      "authors": [
+        "Pikkin Lau",
+        "Lingfeng Wang",
+        "Wei Wei",
+        "Zhaoxi Liu",
+        "Chee-Wooi Ten"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.11054v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:1803.07509v2",
+      "arxiv_id": "1803.07509v2",
+      "title": "Workforce migration and its economic implications: A perspective from social media in China",
+      "authors": [
+        "Xiaoqian Hu",
+        "Junjie Wu",
+        "Jichang Zhao"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1803.07509v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2212.02119v1",
+      "arxiv_id": "2212.02119v1",
+      "title": "Digital leisure and the gig economy: a two-sector model of growth",
+      "authors": [
+        "Francesco Angelini",
+        "Luca V. Ballestra",
+        "Massimiliano Castellani"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2212.02119v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.1007/978-3-540-87781-3_40",
+      "arxiv_id": "1303.0284v1",
+      "title": "Social Recommendations within the Multimedia Sharing Systems",
+      "authors": [
+        "Katarzyna Musial",
+        "Przemyslaw Kazienkol",
+        "Tomasz Kajdanowicz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0284v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1007/978-3-319-77332-2_13",
+      "arxiv_id": "1708.08134v1",
+      "title": "Measuring social spam and the effect of bots on information diffusion in social media",
+      "authors": [
+        "Emilio Ferrara"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.08134v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1109/TCSS.2022.3140779",
+      "arxiv_id": "2106.01750v3",
+      "title": "Modeling Influencer Marketing Campaigns in Social Networks",
+      "authors": [
+        "Ronak Doshi",
+        "Ajay Ramesh Ranganathan",
+        "Shrisha Rao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.01750v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:2606.19975v1",
+      "arxiv_id": "2606.19975v1",
+      "title": "The Algorithmic-Human Manager: AI, Apps, and Workers in the Indian Gig Economy",
+      "authors": [
+        "Omir Kumar",
+        "Krishnan Narayanan"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.19975v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2001.02863v1",
+      "arxiv_id": "2001.02863v1",
+      "title": "China's First Workforce Skill Taxonomy",
+      "authors": [
+        "Weipan Xu",
+        "Xiaozhen Qin",
+        "Xun Li",
+        "Haohui\"Caron\" Chen",
+        "Morgan Frank",
+        "Alex Rutherford",
+        "Andrew Reeson",
+        "Iyad Rahwan"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.02863v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "arXiv:1402.5300v2",
+      "arxiv_id": "1402.5300v2",
+      "title": "Purchasing Life Insurance to Reach a Bequest Goal",
+      "authors": [
+        "Erhan Bayraktar",
+        "David Promislow",
+        "Virginia Young"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1402.5300v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2508.18377v1",
+      "arxiv_id": "2508.18377v1",
+      "title": "The gig economy during an epidemic: coupling disease transmission with labour market dynamics",
+      "authors": [
+        "Bryce Morsky",
+        "Tyler Meadows",
+        "Felicia Magpantay",
+        "Troy Day"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.18377v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2203.06015v1",
+      "arxiv_id": "2203.06015v1",
+      "title": "Comparing Global Tourism Flows Measured by Official Census and Social Sensing",
+      "authors": [
+        "Lucas Skora",
+        "Helen Senefonte",
+        "Myriam Delgado",
+        "Ricardo Lüders",
+        "Thiago Silva"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.06015v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.1609/icwsm.v18i1.31366",
+      "arxiv_id": "2312.11326v2",
+      "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+      "authors": [
+        "Marcelo Sartori Locatelli",
+        "Pedro Calais",
+        "Matheus Prado Miranda",
+        "João Pedro Junho",
+        "Tomas Lacerda Muniz",
+        "Wagner Meira",
+        "Virgilio Almeida"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11326v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:2103.13234v1",
+      "arxiv_id": "2103.13234v1",
+      "title": "Evolutionary Dynamics of Gig Economy Labor Strategies under Technology, Policy and Market Influence",
+      "authors": [
+        "Kevin Hu",
+        "Feng Fu"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.13234v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:2402.02676v1",
+      "arxiv_id": "2402.02676v1",
+      "title": "The Gig's Up: How ChatGPT Stacks Up Against Quora on Gig Economy Insights",
+      "authors": [
+        "Thomas Lancaster"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.02676v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.1145/3715070.3749237",
+      "arxiv_id": "2510.19024v1",
+      "title": "Examining the Impact of Label Detail and Content Stakes on User Perceptions of AI-Generated Images on Social Media",
+      "authors": [
+        "Jingruo Chen",
+        "TungYen Wang",
+        "Marie Williams",
+        "Natalia Jordan",
+        "Mingyi Shao",
+        "Linda Zhang",
+        "Susan R. Fussell"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.19024v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1145/3582515.3609555",
+      "arxiv_id": "2403.04667v1",
+      "title": "The Social Impact of Generative AI: An Analysis on ChatGPT",
+      "authors": [
+        "Maria T. Baldassarre",
+        "Danilo Caivano",
+        "Berenice Fernandez Nieto",
+        "Domenico Gigante",
+        "Azzurra Ragone"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.04667v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.1007/s13278-023-01161-1",
+      "arxiv_id": "2409.07720v1",
+      "title": "Keeping it Authentic: The Social Footprint of the Trolls Network",
+      "authors": [
+        "Ori Swed",
+        "Sachith Dassanayaka",
+        "Dimitri Volchenkov"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.07720v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.1007/s13278-022-00994-6",
+      "arxiv_id": "2603.21470v1",
+      "title": "Empirical Evaluation of Link Deletion Methods for Limiting Information Diffusion on Social Media",
+      "authors": [
+        "Shiori Furukawa",
+        "Sho Tsugawa"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.21470v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.1016/j.osnem.2023.100270",
+      "arxiv_id": "2305.18907v2",
+      "title": "Multitask learning for recognizing stress and depression in social media",
+      "authors": [
+        "Loukas Ilias",
+        "Dimitris Askounis"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.18907v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:1201.1547v1",
+      "arxiv_id": "1201.1547v1",
+      "title": "Information Society: Modeling A Complex System With Scarce Data",
+      "authors": [
+        "Noemi L. Olivera",
+        "Araceli N. Proto",
+        "Marcel Ausloos"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1201.1547v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "arXiv:2110.15726v2",
+      "arxiv_id": "2110.15726v2",
+      "title": "Social Media Reveals Urban-Rural Differences in Stress across China",
+      "authors": [
+        "Jesse Cui",
+        "Tingdan Zhang",
+        "Kokil Jaidka",
+        "Dandan Pang",
+        "Garrick Sherman",
+        "Vinit Jakhetiya",
+        "Lyle Ungar",
+        "Sharath Chandra Guntuku"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.15726v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1609/icwsm.v19i1.35911",
+      "arxiv_id": "2501.12571v2",
+      "title": "Exploring Unknown Social Networks for Discovering Hidden Nodes",
+      "authors": [
+        "Sho Tsugawa",
+        "Hiroyuki Ohsaki"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.12571v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.1145/2492517.2492530",
+      "arxiv_id": "1310.2665v1",
+      "title": "Clustering Memes in Social Media",
+      "authors": [
+        "Emilio Ferrara",
+        "Mohsen JafariAsbagh",
+        "Onur Varol",
+        "Vahed Qazvinian",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2665v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.1109/CASoN.2012.6412380",
+      "arxiv_id": "1303.5009v1",
+      "title": "Quantifying Social Network Dynamics",
+      "authors": [
+        "Radosław Michalski",
+        "Piotr Bródka",
+        "Przemysław Kazienko",
+        "Krzysztof Juszczyszyn"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.5009v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.1016/j.osnem.2022.100220",
+      "arxiv_id": "2203.15752v3",
+      "title": "Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users",
+      "authors": [
+        "Lucio La Cava",
+        "Andrea Tagarelli"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.15752v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "arXiv:2204.00785v1",
+      "arxiv_id": "2204.00785v1",
+      "title": "Rural Pension System and Farmers' Participation in Residents' Social Insurance",
+      "authors": [
+        "Tao Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.00785v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.1109/TCSS.2024.3360518",
+      "arxiv_id": "2306.01163v2",
+      "title": "A Multi-Modal Latent-Features based Service Recommendation System for the Social Internet of Things",
+      "authors": [
+        "Amar Khelloufi",
+        "Huansheng Ning",
+        "Abdenacer Naouri",
+        "Abdelkarim Ben Sada",
+        "Attia Qammar",
+        "Abdelkader Khalil",
+        "Sahraoui Dhelim",
+        "Lingfeng Mao"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.01163v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "arXiv:1710.07763v1",
+      "arxiv_id": "1710.07763v1",
+      "title": "Modeling the Annual Growth Rate of Electricity Consumption of China in the 21st Century: Trends and Prediction",
+      "authors": [
+        "Kunjin Chen",
+        "Kunlong Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.07763v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.1145/3613904.3642614",
+      "arxiv_id": "2403.09986v2",
+      "title": "Designing Sousveillance Tools for Gig Workers",
+      "authors": [
+        "Maya De Los Santos",
+        "Kimberly Do",
+        "Michael Muller",
+        "Saiph Savage"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.09986v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.1109/CGC.2012.95",
+      "arxiv_id": "1303.2369v1",
+      "title": "Negative Effects of Incentivised Viral Campaigns for Activity in Social Networks",
+      "authors": [
+        "Radosław Michalski",
+        "Jarosław Jankowski",
+        "Przemysław Kazienko"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.2369v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.1007/978-3-642-16567-2_7",
+      "arxiv_id": "1303.0095v1",
+      "title": "Label-dependent Feature Extraction in Social Networks for Node Classification",
+      "authors": [
+        "Tomasz Kajdanowicz",
+        "Przemyslaw Kazienko",
+        "Piotr Doskocz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0095v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2020.125657",
+      "arxiv_id": "2004.03654v1",
+      "title": "Flux growth of Sr(n+1)Ir(n)O(3n+1) [n=1, 2, infinity] crystals",
+      "authors": [
+        "Kaustuv Manna",
+        "Gizem Aslan-Cansever",
+        "Andrey Maljuk",
+        "Sabine Wurmehl",
+        "Silvia Seiro",
+        "Bernd Büchner"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.03654v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "10.1016/j.insmatheco.2013.10.006",
+      "arxiv_id": "1310.3860v1",
+      "title": "Stochastic Modeling and Fair Valuation of Drawdown Insurance",
+      "authors": [
+        "Hongzhong Zhang",
+        "Tim Leung",
+        "Olympia Hadjiliadis"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.3860v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "10.1007/s13278-014-0237-x",
+      "arxiv_id": "1411.0652v1",
+      "title": "Clustering memes in social media streams",
+      "authors": [
+        "Mohsen JafariAsbagh",
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.0652v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:1510.03146v1",
+      "arxiv_id": "1510.03146v1",
+      "title": "IoT enabled Insurance Ecosystem - Possibilities Challenges and Risks",
+      "authors": [
+        "Jai Manral"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1510.03146v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2205.14517v1",
+      "arxiv_id": "2205.14517v1",
+      "title": "The Relationship between Digital RMB and Digital Economy in China",
+      "authors": [
+        "Chang Su",
+        "Wenbo Lyu",
+        "Yueting Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.14517v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:2404.10929v1",
+      "arxiv_id": "2404.10929v1",
+      "title": "Decreasing Wages in Gig Economy: A Game Theoretic Explanation Using Mathematical Program Networks",
+      "authors": [
+        "Pravesh Koirala",
+        "Forrest Laine"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.10929v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.1145/3808045.3808063",
+      "arxiv_id": "2605.03295v1",
+      "title": "Cheap Expertise: Mapping and Challenging Industry Perspectives in the Expert Data Gig Economy",
+      "authors": [
+        "Robert Wolfe",
+        "Aayushi Dangol"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.03295v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1145/2512938.2512956",
+      "arxiv_id": "1310.2671v1",
+      "title": "Traveling Trends: Social Butterflies or Frequent Fliers?",
+      "authors": [
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2671v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "10.1021/acs.cgd.0c00270",
+      "arxiv_id": "2003.01308v1",
+      "title": "Dislocation pipe diffusion and solute segregation during the growth of metastable GeSn",
+      "authors": [
+        "Jérôme Nicolas",
+        "Simone Assali",
+        "Samik Mukherjee",
+        "Andriy Lotnyk",
+        "Oussama Moutanabbir"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.01308v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "arXiv:2008.08370v2",
+      "arxiv_id": "2008.08370v2",
+      "title": "Coordinated Behavior on Social Media in 2019 UK General Election",
+      "authors": [
+        "Leonardo Nizzoli",
+        "Serena Tardelli",
+        "Marco Avvenuti",
+        "Stefano Cresci",
+        "Maurizio Tesconi"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.08370v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:2107.11124v1",
+      "arxiv_id": "2107.11124v1",
+      "title": "COVID-19 and the gig economy in Poland",
+      "authors": [
+        "Maciej Beręsewicz",
+        "Dagmara Nikulin"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.11124v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:1709.09636v1",
+      "arxiv_id": "1709.09636v1",
+      "title": "Randomized experiments to detect and estimate social influence in networks",
+      "authors": [
+        "Sean J. Taylor",
+        "Dean Eckles"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.09636v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:2510.06788v1",
+      "arxiv_id": "2510.06788v1",
+      "title": "Unpacking Discourses on Childbirth and Parenthood in Popular Social Media Platforms Across China, Japan, and South Korea",
+      "authors": [
+        "Zheng Wei",
+        "Yunqi Li",
+        "Yucheng He",
+        "Yuelu Li",
+        "Xian Xu",
+        "Huamin Qu",
+        "Pan Hui",
+        "Muzhi Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.06788v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2411.06011v1",
+      "arxiv_id": "2411.06011v1",
+      "title": "Exploring the Impact of Reflexivity Theory and Cognitive Social Structures on the Dynamics of Doctor-Patient Social System",
+      "authors": [
+        "Al Saqib Majumder"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.06011v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "10.1145/2675133.2675208",
+      "arxiv_id": "1604.03627v1",
+      "title": "Dissecting a Social Botnet: Growth, Content and Influence in Twitter",
+      "authors": [
+        "Norah Abokhodair",
+        "Daisy Yoo",
+        "David W. McDonald"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1604.03627v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2015.01.017",
+      "arxiv_id": "1501.03770v1",
+      "title": "Flux growth utilizing the reaction between flux and crucible",
+      "authors": [
+        "J. -Q. Yan"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1501.03770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2603.00727v1",
+      "arxiv_id": "2603.00727v1",
+      "title": "Risk-Aware Skill-Coverage Hybrid Workforce Configuration on Social Networks",
+      "authors": [
+        "Hui-Ju Hung",
+        "Guang-Siang Lee",
+        "Chia-Hsun Lu",
+        "Chih-Ya Shen",
+        "De-Nian Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.00727v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "arXiv:1801.02236v1",
+      "arxiv_id": "1801.02236v1",
+      "title": "Spreading in Social Systems: Reflections",
+      "authors": [
+        "Sune Lehmann",
+        "Yong-Yeol Ahn"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1801.02236v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
     }
   ]
 }

@@ -1,496 +1,3414 @@
 {
   "query_id": "q038",
   "query": "终极意义上，人工智能是否会永久改变人类价值观的改变 (AI alignment human values game theory anchor)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 10,
-    "core": 2
+  "topic_bucket": "cross",
+  "source": "user",
+  "generated_at": "2026-07-22T11:29:52",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 32,
+  "n_returned": 162,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 22,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1038/s42256-019-0138-9",
+      "title": "From Local Explanations to Global Understanding with Explainable AI for Trees",
+      "authors": [
+        "Scott M. Lundberg"
+      ],
+      "venue": "Nature Machine Intelligence",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cda947be1cd8ecf46bb49d7",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1038/s41587-019-0201-4",
+      "title": "Graph-based Genome Alignment and Genotyping with HISAT2 and HISAT-genotype",
+      "authors": [
+        "Daehwan Kim"
+      ],
+      "venue": "Nature Biotechnology",
+      "year": 2019,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d46ad21275ded87f9809044",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.48550/arxiv.2311.10122",
+      "title": "Video-LLaVA: Learning United Visual Representation by Alignment Before Projection",
+      "authors": [
+        "Bin Lin"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "655ac347939a5f4082e1efbc",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.48550/arxiv.2303.04226",
+      "title": "A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT",
+      "authors": [
+        "Yihan Cao"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64094ee790e50fcafd476ca0",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.18653/v1/2023.acl-long.754",
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "authors": [
+        "Yizhong Wang"
+      ],
+      "venue": "PROCEEDINGS OF THE 61ST ANNUAL MEETING OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS (ACL 2023) LONG PAPERS, VOL 1",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63a2794d90e50fcafd294625",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.48550/arxiv.2305.11206",
+      "title": "LIMA: Less is More for Alignment.",
+      "authors": [
+        "Chunting Zhou"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "646aeca9d68f896efa05a53c",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1038/s41591-021-01614-0",
+      "title": "AI in Health and Medicine",
+      "authors": [
+        "Pranav Rajpurkar"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ebe0075244ab9dcb2be4da",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1038/s41591-022-01981-2",
+      "title": "Multimodal Biomedical AI",
+      "authors": [
+        "Julián N. Acosta"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6325a54090e50fcafd437426",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1109/tgrs.2021.3062048",
+      "title": "Align Deep Features for Oriented Object Detection",
+      "authors": [
+        "Jiaming Han"
+      ],
+      "venue": "IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f438eae91e01165ef974ac8",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.01519",
+      "title": "FLAVA: A Foundational Language and Vision Alignment Model",
+      "authors": [
+        "Amanpreet Singh"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR 2022)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61b174435244ab9dcb25f1ef",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1145/3449287",
+      "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+      "authors": [
+        "Zana Buçinca"
+      ],
+      "venue": "ACM Conference on Computer Supported Cooperative Work and Social Computing",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60337bf691e011e54d039aee",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.48550/arxiv.2008.02275",
+      "title": "Aligning AI with Shared Human Values.",
+      "authors": [
+        "Dan Hendrycks"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f2bf2bf91e011b36ba9d171",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1038/s41592-021-01101-x",
+      "title": "Sensitive Protein Alignments at Tree-of-life Scale Using DIAMOND",
+      "authors": [
+        "Benjamin Buchfink"
+      ],
+      "venue": "Nature Methods",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60702fa6e4510cd7c8b22a42",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1093/bioinformatics/btab705",
+      "title": "New Strategies to Improve Minimap2 Alignment Accuracy",
+      "authors": [
+        "Heng Li"
+      ],
+      "venue": "Bioinformatics (Oxford, England)",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61120e995244ab9dcb112fe0",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1109/iccv48922.2021.00349",
+      "title": "TOOD - Task-aligned One-stage Object Detection.",
+      "authors": [
+        "Chengjian Feng"
+      ],
+      "venue": "2021 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION (ICCV 2021)",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "611c96255244ab9dcb65c2c0",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1145/3381831",
+      "title": "Green AI",
+      "authors": [
+        "Roy Schwartz"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d3982a43a55acc309eb1a10",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1145/3313831.3376590",
+      "title": "Questioning the AI: Informing Design Practices for Explainable AI User Experiences.",
+      "authors": [
+        "Q. Vera Liao"
+      ],
+      "venue": "PROCEEDINGS OF THE 2020 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI'20)",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e16fa233a55acac60fd3619",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1145/3313831.3376727",
+      "title": "What is AI Literacy? Competencies and Design Considerations",
+      "authors": [
+        "Duri Long"
+      ],
+      "venue": "PROCEEDINGS OF THE 2020 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI'20)",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ea2c2ea9fced0a24b1ddd5f",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1093/qje/qjae044",
+      "title": "Generative Ai at Work",
+      "authors": [
+        "Erik Brynjolfsson"
+      ],
+      "venue": "QUARTERLY JOURNAL OF ECONOMICS",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644744fb71ac66d2cbf9b96e",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "",
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "authors": [
+        "Giulio Starace"
+      ],
+      "venue": "ICML 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67edeb7d163c01c8506437aa",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.48550/arxiv.2406.08464",
+      "title": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing.",
+      "authors": [
+        "Zhangchen Xu"
+      ],
+      "venue": "ICLR 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "666a52ae01d2a3fbfc634d97",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.48550/arxiv.2311.12983",
+      "title": "GAIA: a Benchmark for General AI Assistants.",
+      "authors": [
+        "Grégoire Mialon"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "655ebe60939a5f4082bb5c79",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.48550/arxiv.2310.02949",
+      "title": "Shadow Alignment: the Ease of Subverting Safely-Aligned Language Models",
+      "authors": [
+        "Xianjun Yang"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "651e1c973fda6d7f0688ce6a",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.48550/arxiv.2310.16944",
+      "title": "Zephyr: Direct Distillation of LM Alignment.",
+      "authors": [
+        "Lewis Tunstall"
+      ],
+      "venue": "COLM 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "653b1d19939a5f4082994f1a",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1109/cvpr52733.2024.00786",
+      "title": "Diffusion Model Alignment Using Direct Preference Optimization",
+      "authors": [
+        "Bram Wallace"
+      ],
+      "venue": "CVPR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "655ebe5d939a5f4082bb5b36",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1145/3555803",
+      "title": "Trustworthy AI: from Principles to Practices",
+      "authors": [
+        "Bo Li"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615bc2735244ab9dcbdbcde2",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1080/10447318.2022.2050543",
+      "title": "Trust in AI and Its Role in the Acceptance of AI Technologies",
+      "authors": [
+        "Hyesun Choung"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF HUMAN-COMPUTER INTERACTION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623d33145aee126c0f100e3a",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1016/j.inffus.2023.101896",
+      "title": "Connecting the Dots in Trustworthy Artificial Intelligence: from AI Principles, Ethics, and Key Requirements to Responsible AI Systems and Regulation",
+      "authors": [
+        "Natalia Diaz-Rodriguez"
+      ],
+      "venue": "INFORMATION FUSION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6456389bd68f896efacf69ac",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.48550/arxiv.2307.14334",
+      "title": "Towards Generalist Biomedical AI",
+      "authors": [
+        "Tao Tu"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64c1f06d3fda6d7f063cb366",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1109/iccv51070.2023.01435",
+      "title": "Prompt-aligned Gradient for Prompt Tuning.",
+      "authors": [
+        "Beier Zhu"
+      ],
+      "venue": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629587475aee126c0fe14d3b",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1093/bioinformatics/btad014",
+      "title": "Protein-to-genome Alignment with Miniprot.",
+      "authors": [
+        "Heng Li"
+      ],
+      "venue": "Bioinformatics (Oxford, England)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "634e193f90e50fcafd24e370",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.48550/arxiv.2306.15447",
+      "title": "Are Aligned Neural Networks Adversarially Aligned?",
+      "authors": [
+        "Nicholas Carlini"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "649bb0eed68f896efa4ddd75",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.48550/arxiv.2309.14348",
+      "title": "Defending Against Alignment-Breaking Attacks via Robustly Aligned LLM",
+      "authors": [
+        "Bochuan Cao"
+      ],
+      "venue": "arXiv (Cornell University)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65790c0c939a5f4082c70714",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1145/3491102.3517582",
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "authors": [
+        "Tongshuang Wu"
+      ],
+      "venue": "PROCEEDINGS OF THE 2022 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI' 22)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615d13fe5244ab9dcb637a44",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1007/978-3-031-04083-2_2",
+      "title": "Explainable AI Methods - A Brief Overview",
+      "authors": [
+        "Andreas Holzinger"
+      ],
+      "venue": "XXAI - BEYOND EXPLAINABLE AI International Workshop, Held in Conjunction with ICML 2020, July 18, 2020, Vienna, Austria, Revised and Extended Papers",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e25fc5aee126c0f7b0544",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.53347/rid-96420",
+      "title": "Hindfoot Alignment View",
+      "authors": [
+        "Andrew Murphy"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdeb35aee126c0f57a59a",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1145/3448250",
+      "title": "Deep Learning for AI",
+      "authors": [
+        "Yoshua Bengio"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60f6a2de5244ab9dcbcd920c",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1017/9781108936040.022",
+      "title": "Ethics Guidelines for Trustworthy AI",
+      "authors": [
+        "Michel Cannarsa"
+      ],
+      "venue": "The Cambridge Handbook of Lawyering in the Digital Age",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca0d9b5244ab9dcbbe8273",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.2307/j.ctv1ghv45t",
+      "title": "The Atlas of AI",
+      "authors": [
+        "KATE CRAWFORD"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a4c00dd68f896efab5ac18",
+      "matched_phrase": "(AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.52202/079017-2030",
+      "title": "Alignment for Honesty",
+      "authors": [
+        "Yuqing Yang"
+      ],
+      "venue": "NeurIPS 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657918dd939a5f4082dae0db",
+      "matched_phrase": "alignment",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1007/b104336",
+      "arxiv_id": "",
+      "title": "AI 2004: Advances in Artificial Intelligence, 17th Australian Joint Conference on Artificial Intelligence, Cairns, Australia, December 4-6, 2004, Proceedings",
+      "authors": [
+        "Geoffrey I. Webb",
+        "Xinghuo Yu"
+      ],
+      "venue": "Australian Conference on Artificial Intelligence",
+      "year": 2004,
+      "cited_by_count": 110,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The Agent-Based Evolutionary Labor Market Model with Strategic Coalition, a Multiagent Architecture for Privacy-Preserving ID-Based Service in Ubiquitous Computing Environment, and Safe Agents in Space are reviewed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Agent-Based Evolutionary Labor Market Model with Strategic Coalition, a Multiagent Architecture for Privacy-Preserving ID-Based Service in Ubiquitous Computing Environment, and Safe Agents in Space are reviewed.",
+      "rank": 41
+    },
+    {
+      "doi": "10.48550/arXiv.2406.13605",
+      "arxiv_id": "2406.13605",
+      "title": "Nicer Than Humans: How do Large Language Models Behave in the Prisoner's Dilemma?",
+      "authors": [
+        "Nicoló Fontana",
+        "Francesco Pierri",
+        "L. Aiello"
+      ],
+      "venue": "International Conference on Web and Social Media",
+      "year": 2024,
+      "cited_by_count": 73,
+      "influential_cite_count": 5,
+      "reference_count": 51,
+      "tldr": "A systematic methodology to evaluate an LLM's comprehension of the game rules and its capability to parse historical gameplay logs for decision-making is introduced and it is found that all models tend not to initiate defection but act cautiously, favoring cooperation over defection only when the opponent's defection rate is low.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A systematic methodology to evaluate an LLM's comprehension of the game rules and its capability to parse historical gameplay logs for decision-making is introduced and it is found that all models tend not to initiate defection but act cautiously, favoring cooperation over defection only when the opponent's defection rate is low.",
+      "rank": 42
+    },
+    {
+      "doi": "10.48550/arXiv.2407.10114",
+      "arxiv_id": "2407.10114",
+      "title": "TokenSHAP: Interpreting Large Language Models with Monte Carlo Shapley Value Estimation",
+      "authors": [
+        "Roni Goldshmidt",
+        "Miriam Horovicz"
+      ],
+      "venue": "NLP4SCIENCE",
+      "year": 2024,
+      "cited_by_count": 60,
+      "influential_cite_count": 7,
+      "reference_count": 20,
+      "tldr": "TokenSHAP is introduced, a novel method for interpreting LLMs by attributing importance to individual tokens or substrings within input prompts, offering valuable insights into LLM behavior, enhancing model transparency, improving prompt engineering, and aiding in the development of more reliable AI systems.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "TokenSHAP is introduced, a novel method for interpreting LLMs by attributing importance to individual tokens or substrings within input prompts, offering valuable insights into LLM behavior, enhancing model transparency, improving prompt engineering, and aiding in the development of more reliable AI systems.",
+      "rank": 43
+    },
+    {
       "doi": "10.48550/arXiv.2505.12923",
+      "arxiv_id": "2505.12923",
       "title": "The Traitors: Deception and Trust in Multi-Agent Language Model Simulations",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "P. Curvo"
+      ],
       "venue": "arXiv.org",
-      "citation_count": 28,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 28,
+      "influential_cite_count": 0,
+      "reference_count": 69,
+      "tldr": "This work introduces The Traitors, a multi-agent simulation framework inspired by social deduction games, designed to probe deception, trust formation, and strategic communication among large language model (LLM) agents under asymmetric information.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "abstract": "This work introduces The Traitors, a multi-agent simulation framework inspired by social deduction games, designed to probe deception, trust formation, and strategic communication among large language model (LLM) agents under asymmetric information.",
+      "rank": 44
     },
     {
-      "rank": 2,
+      "doi": "10.48550/arXiv.2402.09259",
+      "arxiv_id": "2402.09259",
+      "title": "SyntaxShap: Syntax-aware Explainability Method for Text Generation",
+      "authors": [
+        "Kenza Amara",
+        "R. Sevastjanova",
+        "Mennatallah El-Assady"
+      ],
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "year": 2024,
+      "cited_by_count": 13,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "SyntaxShap is introduced, a local, model-agnostic explainability method for text generation that takes into consideration the syntax in the text data and it is shown that the syntax-aware method produces explanations that help build more faithful and coherent explanations for predictions by autoregressive models.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "SyntaxShap is introduced, a local, model-agnostic explainability method for text generation that takes into consideration the syntax in the text data and it is shown that the syntax-aware method produces explanations that help build more faithful and coherent explanations for predictions by autoregressive models.",
+      "rank": 45
+    },
+    {
+      "doi": "",
+      "arxiv_id": "1810.11116",
+      "title": "Mimetic vs Anchored Value Alignment in Artificial Intelligence",
+      "authors": [
+        "Tae wan Kim",
+        "T. Donaldson",
+        "J. Hooker"
+      ],
+      "venue": "arXiv.org",
+      "year": 2018,
+      "cited_by_count": 11,
+      "influential_cite_count": 1,
+      "reference_count": 38,
+      "tldr": "This paper isolating two distinct forms of VA: \"mimetic\" and \"anchored\" and discusses which VA approach better avoids the naturalistic fallacy, revealing stumbling blocks for VA approaches that neglect implications of the naturalism fallacy.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This paper isolating two distinct forms of VA: \"mimetic\" and \"anchored\" and discusses which VA approach better avoids the naturalistic fallacy, revealing stumbling blocks for VA approaches that neglect implications of the naturalism fallacy.",
+      "rank": 46
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Full-Stack Alignment: Co-Aligning AI and Institutions with Thicker Models of Value",
+      "authors": [
+        "Joe Edelman",
+        "Zhi-Xuan Tan",
+        "Ryan Lowe",
+        "Oliver Klingefjord",
+        "Ellie Hain",
+        "Vincent Wang-Ma´scianica",
+        "Atrisha Sarkar",
+        "Michiel A. Bakker",
+        "Fazl Barez",
+        "Matija Franklin",
+        "Andreas Haupt",
+        "J. Heitzig",
+        "W. Holliday",
+        "J. Jara-Ettinger",
+        "Atoosa Kasirzadeh",
+        "R. Kearns",
+        "J. Kirkpatrick",
+        "Andrew Koh",
+        "Joel Lehman",
+        "Sydney Levine",
+        "Manon Revel",
+        "Ivan Vendrov"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 9,
+      "influential_cite_count": 1,
+      "reference_count": 104,
+      "tldr": "Thick models of value (TMV) takes a stand on what values and norms are, without imposing a singular vision of collective flourishing, so they can capture how individual well-being connects to collective good.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Thick models of value (TMV) takes a stand on what values and norms are, without imposing a singular vision of collective flourishing, so they can capture how individual well-being connects to collective good.",
+      "rank": 47
+    },
+    {
+      "doi": "10.62989/jgpr2024.1.4.2",
+      "title": "凝血功能相关参数在慢性肝病患者中的改变及临床意义",
+      "authors": [
+        "赵欣雨, 赵欣雨"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2024,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1017/S1366728921000833",
+      "arxiv_id": "",
+      "title": "The theory, pedagogy, technology and design issue in Digital Language Learning (DLL)",
+      "authors": [
+        "N. Chen"
+      ],
+      "venue": "Bilingualism: Language and Cognition",
+      "year": 2021,
+      "cited_by_count": 7,
+      "influential_cite_count": 1,
+      "reference_count": 6,
+      "tldr": "The article adopted the four dimensions of cognitive, social, affective, and neural as an analytical framework to explore the technological and theoretical perspectives of DLL from psychology, education, linguistics, and neuroscience perspectives.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The article adopted the four dimensions of cognitive, social, affective, and neural as an analytical framework to explore the technological and theoretical perspectives of DLL from psychology, education, linguistics, and neuroscience perspectives.",
+      "rank": 49
+    },
+    {
+      "doi": "10.61654/zzxz0404",
+      "title": "人工智能赋能思想政治教育的价值意蕴、现实困境与应对策略",
+      "authors": [
+        "唐, 院",
+        "张, 志荣"
+      ],
+      "venue": "学子",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>当前,人工智能作为引领新一轮科技革命和产业变革的战略性技术,深刻改变人类生产生活方式。我国高度重视人工智能对教育的深刻影响,积极推动人工智能和思想政治教育深度融合,在融合的过程中有利于拓宽思政教育空间,优化教学过程评价体系,提升思想政治教育方法实效性,然而人工智能赋能思想政治教育的同时也产生了影响思政教育的育人目标实现效果,智能算法偏见风险限制认知多样性,内容生成失真与思政教育严谨性要求的矛盾的问题,为了预防人工智能赋能思想政治教育的风险,要求树立智能教育理念明确技术赋能定位,规范算法运行提升思政育人实效,加强语料审核把严思政内容,促进思想政治教育高质量发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
       "doi": "10.48550/arXiv.2509.15090",
+      "arxiv_id": "2509.15090",
       "title": "Emergent Alignment via Competition",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Natalie Collina",
+        "Surbhi Goel",
+        "Aaron Roth",
+        "Emily Ryu",
+        "Mirah Shi"
+      ],
       "venue": "arXiv.org",
-      "citation_count": 5,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 5,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "This work studies a strategic setting where a human user interacts with multiple differently misaligned AI agents, none of which are individually well-aligned, and proves that when the users utility lies approximately within the convex hull of the agents utilities, strategic competition can yield outcomes comparable to interacting with a perfectly aligned model.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "abstract": "This work studies a strategic setting where a human user interacts with multiple differently misaligned AI agents, none of which are individually well-aligned, and proves that when the users utility lies approximately within the convex hull of the agents utilities, strategic competition can yield outcomes comparable to interacting with a perfectly aligned model.",
+      "rank": 51
     },
     {
-      "rank": 3,
+      "doi": "10.61369/etr.9614",
+      "title": "人工智能时代的法学教育变革",
+      "authors": [
+        "周, 可可"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着人工智能技术的飞速发展，法学教育面临着前所未有的机遇与挑战，旨在探讨人工智能时代下法学教育的变革路径，分析当前法学教育在资源分配、教学模式、实践能力培养等方面存在的问题，并提出相应的优化对策。通过构建开放共享的教育资源平台、创新法学教育模式、强化实践能力培养等措施，以期推动法学教育的公平、高效与创新发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.54254/3029-0740/2025.27332",
+      "title": "论人工智能时代高校劳动育人的价值意蕴、现实挑战与路径优化",
+      "authors": [
+        "王, 桂枝"
+      ],
+      "venue": "学知 Xue Zhi",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人工智时代高校劳动教育可以育德、提智、增技。当然也有挑战，如学生自主劳动意志较为薄弱，教育过程智能依赖导致学生高级能动性弱化，智能融合不够导致劳动教育知识与未来职业技能脱节。要在人工智能时代优化高校劳动教育，首先确证劳动教育目标，即树立科学的劳动认知包括态度认知、情感认知、技能认知； 其次措施方面主要包括，第一树立科学劳动价值观：厘清“劳力者”教育与“全面自由发展”者教育；第二，适度使用现代劳动教育手段，劳动教育过程做到虚实结合；第三，优化劳动教育内容：劳动教育内容要结合劳动实践前沿。最后劳动教育考核做到过程化和可视化。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 53
+    },
+    {
       "doi": "10.48550/arXiv.2503.04740",
+      "arxiv_id": "2503.04740",
       "title": "PRISM: Perspective Reasoning for Integrated Synthesis and Mediation as a Multi-Perspective Framework for AI Alignment",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "A. Diamond"
+      ],
       "venue": "arXiv.org",
-      "citation_count": 4,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 4,
-      "doi": "10.1007/s43681-025-00664-1",
-      "title": "Aligning with ideal values: a proposal for anchoring AI in moral expertise",
-      "abstract": "",
       "year": 2025,
-      "venue": "AI and Ethics",
-      "citation_count": 4,
-      "engines_found_in": [
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This work proposes PRISM, a multiple-perspective framework for addressing persistent challenges in AI alignment such as conflicting human values and specification gaming, and briefly outlines future directions, including real-world deployments and formal verifications, while maintaining the core focus on multi-perspective synthesis and conflict mediation.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "abstract": "This work proposes PRISM, a multiple-perspective framework for addressing persistent challenges in AI alignment such as conflicting human values and specification gaming, and briefly outlines future directions, including real-world deployments and formal verifications, while maintaining the core focus on multi-perspective synthesis and conflict mediation.",
+      "rank": 54
     },
     {
-      "rank": 5,
+      "doi": "10.1007/s43681-025-00664-1",
+      "arxiv_id": "",
+      "title": "Aligning with ideal values: a proposal for anchoring AI in moral expertise",
+      "authors": [
+        "Erich Riesen",
+        "Mark Boespflug"
+      ],
+      "venue": "AI and Ethics",
+      "year": 2025,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 70,
+      "tldr": "This article defends the notion that ethicists are moral experts against several objections found in the recent literature and argues that their aggregated judgments offer the epistemically best available proxy for moral truth.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This article defends the notion that ethicists are moral experts against several objections found in the recent literature and argues that their aggregated judgments offer the epistemically best available proxy for moral truth.",
+      "rank": 55
+    },
+    {
       "doi": "10.32629/mef.v8i18.16927",
       "title": "人工智能赋能高校思政课教学改革的价值与策略研究",
-      "abstract": "<jats:p>本文聚焦人工智能时代高校思政课教学改革的现实需求,基于人工智能技术对传统思政课教学模式带来的冲击,分析人工智能应用在资源拓展、模式创新、精准教学与评价优化等方面的重要价值,提出构建思政课教师队伍与人工智能的人机协同机制、打造数据驱动的考核评价机制、建设智能化教学平台、开发智能教学工具等方面的实施策略,以推动人工智能与思政课教学的深度融合,增强思政课的时代性与实效性。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 洪娟"
+      ],
       "venue": "现代教育论坛",
-      "citation_count": 3,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文聚焦人工智能时代高校思政课教学改革的现实需求,基于人工智能技术对传统思政课教学模式带来的冲击,分析人工智能应用在资源拓展、模式创新、精准教学与评价优化等方面的重要价值,提出构建思政课教师队伍与人工智能的人机协同机制、打造数据驱动的考核评价机制、建设智能化教学平台、开发智能教学工具等方面的实施策略,以推动人工智能与思政课教学的深度融合,增强思政课的时代性与实效性。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 56
     },
     {
-      "rank": 6,
+      "doi": "10.61369/etr.20250023030",
+      "title": "人工智能赋能新农科创新创业人才培养模式改革",
+      "authors": [
+        "赵, 晓春",
+        "尹, 冬雪",
+        "余, 义和"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究围绕人工智能赋能新农科创新创业人才培养模式的改革展开，深入探究其研究目的、意义、具体内容以及实施路径。通过构建创新育人模式、优化课程体系、搭建实践平台、完善协同育人机制等一系列举措，致力于培育契合智慧农业发展需求的高素质人才，推动高等农业教育改革与农业现代化的进程。研究发现，该培养模式在提升学生能力、提高教学质量等方面成效显著，但也面临着技术成本高昂、学科交叉不够深入等问题。展望未来，随着人工智能技术的持续进步，其在新农科人才培养中的应用前景将更为广阔，有望为农业现代化和乡村振兴提供强有力的人才与智力支撑。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.62662/kjxk0103004",
+      "title": "人工智能赋能高等教育的价值审视与疏解路径",
+      "authors": [],
+      "venue": "科技学刊",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.61369/etr.11355",
+      "title": "人工智能技术赋能动漫专业课程教学与评价改革探索",
+      "authors": [
+        "钟, 晓韵"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着人工智能技术的快速发展，其在教育领域的应用逐渐深化，为专业课程教学与评价改革提供了新路径。本文以动漫专业核心课程《插画基础》为例，探讨人工智能技术如何赋能课程教学与评价体系的创新实践。通过构建分层教学、项目引导、多元技术的教学模式，结合人工智能工具（如Midjourney）优化创作流程，实现理论与实践的高效融合。同时，设计过程性与标准化结合的评价体系，利用人工智能技术量化创作过程，提升评价的客观性与科学性。实践表明，该模式显著提高了课堂教学效率、学生作品质量及评价合理性，为数字创意产业人才培养提供了可借鉴的改革方案。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.48550/arXiv.2403.18183",
+      "arxiv_id": "2403.18183",
+      "title": "Can AI Models Appreciate Document Aesthetics? An Exploration of Legibility and Layout Quality in Relation to Prediction Confidence",
+      "authors": [
+        "Hsiu-Wei Yang",
+        "Abhinav Agrawal",
+        "Pavlos Fragkogiannis",
+        "Shubham Mulay"
+      ],
+      "venue": "arXiv.org",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 69,
+      "tldr": "This work formulated hypotheses concerning AI behavior in document understanding tasks, specifically anchored in document design principles, and tested four aspects of aesthetic effects: noise, font-size contrast, alignment, and complexity, on model confidence using correlational analysis.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This work formulated hypotheses concerning AI behavior in document understanding tasks, specifically anchored in document design principles, and tested four aspects of aesthetic effects: noise, font-size contrast, alignment, and complexity, on model confidence using correlational analysis.",
+      "rank": 60
+    },
+    {
+      "doi": "10.70777/si.v2i3.15417",
+      "arxiv_id": "",
+      "title": "Highlights of the Issue: Governance, Agents, Evolutionary Search",
+      "authors": [
+        "Kristen W Carlson"
+      ],
+      "venue": "Robotics",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 2,
+      "reference_count": 0,
+      "tldr": "A taxonomy to map the global landscape of AI regulation, which targets essential metrics—technology or application-focused rules, horizontal or sectoral regulatory coverage, maturity of the digital legal landscape, enforcement mechanisms, and level of stakeholder participation—to classify the breadth and depth of AI regulation is presented.",
+      "is_oa": true,
+      "oa_url": "https://s-rsa.com/index.php/agi/article/download/15417/11183",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A taxonomy to map the global landscape of AI regulation, which targets essential metrics—technology or application-focused rules, horizontal or sectoral regulatory coverage, maturity of the digital legal landscape, enforcement mechanisms, and level of stakeholder participation—to classify the breadth and depth of AI regulation is presented.",
+      "rank": 61
+    },
+    {
       "doi": "10.54254/3050-2187/1/2024002",
       "title": "技术赋能到价值创造：以人工智能技术驱动视频类课程教学改革",
-      "abstract": "<jats:p>人工智能（AI）技术正不断深化其在教育领域的应用，尤其在短视频课程教学中扮演着推动教学革新的关键角色。利用智能视频分析、自适应学习系统和虚拟助教等先进工具，AI显著增强了个性化学习体验，提高了学生的参与度，并为教师的教学工作提供了高效支持。通过机器学习算法优化内容推荐、自然语言处理技术增强互动交流以及计算机视觉技术分析学习行为，AI不仅使得教学内容更贴合学生需求，也为教育者带来了实时反馈和数据驱动的决策依据。这些技术的综合运用，标志着教育改革正朝着更加智能化和个性化的方向迈进，为打造一个高度互动且效率更高的学习环境提供了可能。</jats:p>",
-      "year": null,
+      "authors": [
+        "安, 栩洁"
+      ],
       "venue": "时代技术",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人工智能（AI）技术正不断深化其在教育领域的应用，尤其在短视频课程教学中扮演着推动教学革新的关键角色。利用智能视频分析、自适应学习系统和虚拟助教等先进工具，AI显著增强了个性化学习体验，提高了学生的参与度，并为教师的教学工作提供了高效支持。通过机器学习算法优化内容推荐、自然语言处理技术增强互动交流以及计算机视觉技术分析学习行为，AI不仅使得教学内容更贴合学生需求，也为教育者带来了实时反馈和数据驱动的决策依据。这些技术的综合运用，标志着教育改革正朝着更加智能化和个性化的方向迈进，为打造一个高度互动且效率更高的学习环境提供了可能。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 62
     },
     {
-      "rank": 7,
-      "doi": "10.5281/zenodo.19193739",
-      "title": "Maximizing the efficiency of human feedback in AI alignment: a comparative analysis",
-      "abstract": "",
+      "doi": "10.61369/etr.11249",
+      "title": "马克思主义人学视域下高校社会主义核心价值观教育范式的研究",
+      "authors": [
+        "朱, 春花"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>社会主义核心价值观是当代中国精神的集中体现，凝聚着全体人民共同的价值追求。随着中国特色社会主义道路的不断实践，培育和践行社会主义核心价值观尤为重要。当代大学生是&amp;ldquo;00后&amp;rdquo;的一代，他们具有鲜明的时代特征和群体特点，沿用传统的&amp;ldquo;被动单向&amp;rdquo;教育范式已经不能适应新时代高校社会主义核心价值观教育的具体实践，迫切需要向新的教育范式转换。马克思主义人学理论为核心价值观教育提供了重要的源泉，其关于人的本质、人的价值和人的发展问题对于探索构建社会主义核心价值观人本范式提供了指导意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.70677/qijo9046",
+      "title": "智能时代的人文回响：人工智能背景下英语文学教学改革策略研究",
+      "authors": [
+        "梁, 玉莹"
+      ],
+      "venue": "新时代外语",
       "year": 2025,
-      "venue": "arXiv.org",
-      "citation_count": 1,
-      "engines_found_in": [
+      "cited_by_count": 2,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着生成式人工智能技术的迅猛发展与普及，高等教育正面临前所未有的挑战与机遇。作为传统人文学科核心的英语文学教学，其以文本细读、批判性思维和情感共鸣为基石的教学模式受到显著冲击。本文旨在深入剖析人工智能技术为英语文学教学带来的具体挑战与潜在机遇。在此基础上，论文提出一套系统的教学改革策略，首先是构建“AI 辅助型”教学内容体系，其次是采用“人机协同”的混合式教学模式，最后是革新评价机制，强调过程性、创造性与辩护性评估。最终目标是培养能够驾驭而非依赖人工智能，具备深度批判性思维、创造性表达与深厚人文素养的新时代英语文学人才。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.1109/MIS.2025.3622004",
+      "arxiv_id": "",
+      "title": "Architectural Concepts for Integrating Fundamental Drives and Emotions Into Artificial Intelligence",
+      "authors": [
+        "T. Ferdinan",
+        "W. Mieleszczenko-Kowszewicz",
+        "Jan Kocoń",
+        "Przemysaw Kazienko",
+        "Erik Cambria"
+      ],
+      "venue": "IEEE Intelligent Systems",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 23,
+      "tldr": "This work argues that artificial intelligence should prioritize long-term human well-being over short-term engagement, and that advancing toward artificial general intelligence (AGI) requires embedding fundamental drives and artificial emotions in model architectures, and proposes a framework with an emotional module and a rational module.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1109/mis.2025.3622004",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "abstract": "This work argues that artificial intelligence should prioritize long-term human well-being over short-term engagement, and that advancing toward artificial general intelligence (AGI) requires embedding fundamental drives and artificial emotions in model architectures, and proposes a framework with an emotional module and a rational module.",
+      "rank": 65
     },
     {
-      "rank": 8,
+      "doi": "10.59825/jcms.2025.2.5.24",
+      "title": "The Triple Variation of Marx’s Labor Theory of Value in the Era of Artificial Intelligence",
+      "authors": [
+        "Chen, Yuxin",
+        "Xu, Yangyu"
+      ],
+      "venue": "Yixin Publisher",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>劳动价值论是马克思主义政治经济学的基本理论。在理论探究的维度上，对价值源泉的独特性进行深入剖析显得尤为重要，应明确强调，积极投身于工作是驱动价值创造的唯一途径。同时，要认识到劳动者主体地位的变化及其不可替代性，探究资本的本质，并了解人工智能对资本既有的促进作用也有潜在的负面影响。在实践层面，我们应在发展过程中坚持活劳动价值一元论，强调劳动的意义，并深化对活劳动的理解。此外，要牢牢维护劳动者的主体地位，充分发挥劳动者的主体作用，促进人的全面发展。总之，我们应该用辩证唯物主义的思想和历史的眼光积极回应这一问题。使其在人工智能时代继续发挥科学指导作用，协调好人工智能与劳动者的关系，促进社会经济结构的优化和文明的进步。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.64216/3080-1516.25.07.088",
+      "title": "人工智能赋能与匠心育人的会计学原理课程改革研究",
+      "authors": [
+        "何小曼, 朱伶俐"
+      ],
+      "venue": "当代教育与艺术",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.12677/mm.2024.149263",
+      "title": "How Big Data and AI Are Changing China’s Digital Divide—Taking ChatGPT as an Example",
+      "authors": [
+        "徐, 启阳"
+      ],
+      "venue": "Modern Management",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.69979/3029-2735.26.02.093",
+      "title": "人工智能时代背景下英语学习的变革",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2026,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.61369/ied.8382",
+      "title": "人工智能背景下人力资源服务的变革与发展",
+      "authors": [
+        "邓, 健"
+      ],
+      "venue": "International Economy and Development",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文深入探讨了人工智能在人力资源管理中的应用、变革与发展。文章介绍了人工智能的基本概念及其发展，分析了其在人力资源管理中的技术应用，如数据挖掘和生物识别。讨论了人工智能在招聘、员工培训、人力资本分析等方面的实践，并展望了其带来的组织结构调整、劳动关系变革和管理效率提升。在文章结尾处，文章分析了未来发展的挑战与机遇，涉及技能升级、领导力构建及AI 伦理与法律问题。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.33142/sca.v6i9.9956",
+      "title": "人工智能技术的变电运维软件设计与研究",
+      "authors": [
+        "周, 士清"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着社会电力需求的不断增加，变电站设备的运行和维护变得愈加关键。设备巡检作为主要的运维手段，在解决设备隐患、降低运行维护成本方面发挥着重要作用。文中旨在探讨如何利用现有资源，借助人工智能技术，对变电设备进行合理运维，以促进企业经济的可持续发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.64649/yh.jydk.2026010027",
+      "title": "生成式人工智能在“大思政课”应用中的人文风险与价值守护",
+      "authors": [
+        "张, 晓娜"
+      ],
+      "venue": "教研导刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>生成式人工智能以其内容生成的高效性、交互体验的沉浸性与资源供给的丰富性，为“大思政课”教学创新提供了技术支撑，推动思政教育向精准化、个性化方向发展。但技术赋能的背后潜藏着多重人文风险，包括价值引领的去中心化危机、师生主体的主体性消解、教育过程的情感联结弱化以及文化传承的同质化困境。为实现技术应用与人文价值的辩证统一，需立足“大思政课”立德树人的核心目标，从价值锚定、主体重塑、情感赋能、文化铸魂四个维度构建价值守护体系，让生成式人工智能真正服务于思政教育的本质需求，培育具有坚定理想信念、深厚人文素养与强烈社会责任感的时代新人。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.62989/jcssr2025.2.3.29",
+      "title": "社会主义核心价值观融入智能中级财务会计课程思政建设研究",
+      "authors": [
+        "张卫东, 张卫东"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.5281/zenodo.19193739",
+      "arxiv_id": "2511.12796",
+      "title": "Maximizing the efficiency of human feedback in AI alignment: a comparative analysis",
+      "authors": [
+        "Andreas Chouliaras",
+        "D. Chatzopoulos"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "This work explores alternative sampling and evaluation strategies for preference inference in RLHF, drawing inspiration from areas such as game theory, statistics, and social choice theory, and concludes that adaptive, resource-aware strategies reduce redundancy, enhance robustness, and yield statistically significant improvements in preference learning.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This work explores alternative sampling and evaluation strategies for preference inference in RLHF, drawing inspiration from areas such as game theory, statistics, and social choice theory, and concludes that adaptive, resource-aware strategies reduce redundancy, enhance robustness, and yield statistically significant improvements in preference learning.",
+      "rank": 74
+    },
+    {
       "doi": "10.69979/3029-2735.25.10.073",
       "title": "人工智能时代下人类生命意义的探讨",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "智慧教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 75
     },
     {
-      "rank": 9,
       "doi": "10.14218/mrp.2015.032",
       "title": "改造人类基因的年代是否到来？",
-      "abstract": "",
-      "year": 2015,
+      "authors": [],
       "venue": "Medical Research &amp; Publication",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 76
     },
     {
-      "rank": 10,
       "doi": "10.69979/3029-2735.25.2.081",
       "title": "人工智能时代美育教育的场景重构与价值创新：技术赋能下的教学变革与人文反思",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "智慧教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 77
     },
     {
-      "rank": 11,
       "doi": "10.1360/csb2015-60-30-2806",
       "title": "保护人类健康是应对全球变化的核心任务和终极目标",
-      "abstract": "",
-      "year": 2015,
+      "authors": [
+        "刘, 起勇"
+      ],
       "venue": "Chinese Science Bulletin",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 78
     },
     {
-      "rank": 12,
       "doi": "10.65967/siss.v44i2.138",
       "title": "Can Generative AI Improve Corporate Values, Employee Perceptions, and Organizational Practices? A Human-Centric Case Study of Project Management SMEs in Indonesia",
-      "abstract": "<jats:p>This study investigates the growing role of generative AI tools, particularly ChatGPT, in the context of Indonesian SMEs, with a focus on their influence on SMEs values, employee perceptions, and organizational practices. Adopting a mixed-methods approach, the study combines a literature review, two industry workshops, and a survey involving 52 professionals from various sectors. The analysis integrates thematic interpretation of qualitative data with an exploratory quantitative assessme",
-      "year": null,
+      "authors": [
+        "Kharismasyah, Alfato Yusnar",
+        "Anggara, Ali Akbar",
+        "Fauziridwan, Meydy",
+        "Darmawan, Akhmad"
+      ],
       "venue": "Studies in Science of Science",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 62,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study investigates the growing role of generative AI tools, particularly ChatGPT, in the context of Indonesian SMEs, with a focus on their influence on SMEs values, employee perceptions, and organizational practices. Adopting a mixed-methods approach, the study combines a literature review, two industry workshops, and a survey involving 52 professionals from various sectors. The analysis integrates thematic interpretation of qualitative data with an exploratory quantitative assessme",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 79
     },
     {
-      "rank": 13,
       "doi": "10.32629/mef.v8i19.17377",
       "title": "人工智能背景下材料类课程教学成效评价的改革与实践",
-      "abstract": "<jats:p>在教育智能化浪潮的推动下,材料类课程的教学评价正在发生深层变革,本文依托人工智能技术,对材料课程的知识学习、实验行为与应用能力展开系统考察,构建多维度成效评价框架。研究以真实教学场景为根基,围绕课程特性梳理AI介入的合理路径,并结合典型教学环节开展实践检验,结果显示,评价过程更为透明,学生状态呈现更为精准,教师调控更具力度,研究期望为材料类课程的教学革新提供可借鉴的路径,引发更多面向一线课堂的思考。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 殿明"
+      ],
       "venue": "现代教育论坛",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在教育智能化浪潮的推动下,材料类课程的教学评价正在发生深层变革,本文依托人工智能技术,对材料课程的知识学习、实验行为与应用能力展开系统考察,构建多维度成效评价框架。研究以真实教学场景为根基,围绕课程特性梳理AI介入的合理路径,并结合典型教学环节开展实践检验,结果显示,评价过程更为透明,学生状态呈现更为精准,教师调控更具力度,研究期望为材料类课程的教学革新提供可借鉴的路径,引发更多面向一线课堂的思考。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 80
     },
     {
-      "rank": 14,
       "doi": "10.69979/3029-2735.26.02.115",
       "title": "基于人工智能技术的《复变函数与积分变换》课程育人的探索",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "史书慧, 于智慧"
+      ],
       "venue": "智慧教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 81
     },
     {
-      "rank": 15,
       "doi": "10.1289/ehp.1204c5",
       "title": "室内游泳是否能改变男孩体内的激素?",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Weinhold, Bob"
+      ],
       "venue": "Environmental Health Perspectives",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 82
+    },
+    {
+      "doi": "10.1289/ehp.1173c35",
+      "title": "改变人类对鱼进化的影响",
+      "authors": [
+        "Tibbetts, John"
+      ],
+      "venue": "Environmental Health Perspectives",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
     },
     {
-      "rank": 16,
+      "doi": "10.63887/fem.2025.1.7.47",
+      "title": "人工智能时代情感经济的演变逻辑与价值创造机制研究",
+      "authors": [
+        "李欣瑶",
+        "姚慧敏"
+      ],
+      "venue": "经济管理前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究针对人工智能时代背景下情感经济的演化与价值创造机制进行分析，首先从理论层面界定情感经济的概念演化与核心特征，阐释基于人工智能的情感计算逻辑及应用基础，并探究二者的融合机制；然后从技术赋能与动力机制过渡到演进轨迹与阶段特征，结合应用拓展与场景演化，剖析情感经济的发展逻辑。在此基础上，探讨人工智能赋能情感经济的价值创造逻辑及实现方式，并关注价值创造过程中的风险与伦理反思。最后，结合技术深化与价值链延伸、制度治理与文化发展的前景，对未来趋势进行展望，旨在为相关研究与实践提供借鉴。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.12677/ae.2025.153458",
+      "title": "AI-Empowered Educational Transformation: A Theoretical Exploration of Mathematics Teaching Reform in Junior High Schools",
+      "authors": [
+        "陆, 晨阳"
+      ],
+      "venue": "Advances in Education",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.61369/etr.9612",
+      "title": "无人化智能制造环境下的人工智能教育改革研究",
+      "authors": [
+        "刘, 勇",
+        "张, 建明",
+        "徐, 巍华",
+        "刘, 之涛",
+        "胡, 瑞芬"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究旨在探讨在无人化智能制造环境中，如何有效改革人工智能教育，以满足迅速变化的行业需求为此，本文提出了一种基于实际工业场景的项目驱动教学模式，该模式通过模拟无人化生产线的实际操作，使学生能够在真实情境中进行学习，从而培养其工程思维与实践能力。在该模式下，学生不仅学习到无人化智能制造的相关知识，还能通过参与项目实践，提升解决实际问题的能力。研究表明，该项目驱动教学模式在提升学生对无人化智能制造流程的理解与应用能力方面具有显著成效。通过这一研究，本文为高校人工智能教育的改革提供了有力的实践依据和理论支持，推动教育体系与行业需求的有效对接。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.32629/er.v9i1.6741",
+      "title": "人工智能赋能初中道德与法治课程的价值意蕴和实践路径",
+      "authors": [
+        "赖, 丹凤"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着教育数字化转型的持续推进，人工智能在教育领域中展现出广阔应用前景。而初中道德与法治课作为落实“立德树人”的核心课程，其教学更需紧扣时代脉搏，将人工智能合理地融入初中道法课堂成为必然趋势。因此，本文结合这一时代背景，充分探讨人工智能赋能初中道德与法治的价值、实践路径与应用原则，为更好地构建智慧思政育人体系提供思路。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.69979/3029-2700.25.03.001",
+      "title": "企业人工智能应用水平是否影响审计费用——来自沪深 A 股上市公司的证据",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.69979/3029-2700.25.09.038",
+      "title": "人工智能赋能传统体育文化国际传播的价值",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.12677/mm.2024.148206",
+      "title": "Changes in Public Sector Human Resource Management in the Context of Artificial Intelligence: Values, Challenges and Governance Paths",
+      "authors": [
+        "乔, 卓凡"
+      ],
+      "venue": "Modern Management",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.1360/csb1986-31-3-224",
+      "title": "&amp;alpha;_1-抗胰蛋白酶变种Etokyo的分布及其在人类群体遗传学上的意义",
+      "authors": [
+        "应, 启龙"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1986,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.18356/9789211068863c005",
+      "title": "全球人工智能治理差距",
+      "authors": [
+        ""
+      ],
+      "venue": "治理人工智能，助力造福人类",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.37155/2717-5162-0702-35",
+      "title": "碳达峰与碳中和对人类社会的积极影响及意义探析",
+      "authors": [
+        "段智全"
+      ],
+      "venue": "园林建设与城市规划",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.62662/llyj0202010",
+      "title": "以人工智能增强社会主义意识形态的凝聚力和引领力",
+      "authors": [],
+      "venue": "理论研究学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.71411/ai.2025.v1i1.563",
+      "title": "AI驱动下的文物“永生”:人工智能赋能文物保护的路径、挑战与未来",
+      "authors": [
+        "崔, 玉坤",
+        "张, 臻郁",
+        "汤, 婷婷",
+        "张佳慧",
+        "刘哲宇"
+      ],
+      "venue": "人工智能学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>文物是承载人类文明记忆的贵重载体，其保护工作面临着自然侵蚀、意外碰损、修复棘手等诸多挑战，以人工智能（AI）为核心的数字技术浪潮使文物保护领域出现了革命性的革新，本文意在系统探究人工智能在文物保护里的核心应用途径，有高精度数字化文档建立、基于AIGC（人工智能生成内容）的智能虚拟修复处理、文物知识图谱搭建与关联剖析，以及病害甄辨与预防性保护措施。文章将把数字文博平台“山海”APP作为前沿范例，深入探究AI集成技术在文物数据精准采集、细节如实还原及价值活化传承中的实际操作。基于这个基础，本文进一步对AI赋能时文物保护所面临的技术伦理、数据安全等挑战展开讨论，进而对其与物联网、增强现实等技术融合所产生的未来趋势进行展望。人工智能正带动着文物保护从传统的被动、抢救性模式，往主动式、预防性、研究性与共享性都重视的新范式过渡，为达成人类文化遗产的“数字永续”提供了核心推力。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.67328/zx002",
+      "title": "人工智能与智能制造的融合趋势及其对产业变革的影响",
+      "authors": [
+        "胡闯郞"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.12677/ve.2026.156263",
+      "title": "Value Implications and Practical Pathways of AI-Empowered Cultivation of Patriotism",
+      "authors": [
+        "佘, 妍文"
+      ],
+      "venue": "Vocational Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.70693/hj0037",
+      "title": "人工智能与智能制造的融合趋势及其对产业变革的影响",
+      "authors": [
+        "胡闯郞"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.18356/9789210055208c007",
+      "title": "赋能 于人，推动变革",
+      "authors": [],
+      "venue": "Human Development Report (Chinese Version)",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.67328/bt1444",
+      "title": "人工智能与智能制造的融合趋势及其对产业变革的影响",
+      "authors": [
+        "胡闯郞"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1360/csb2015-60-30-2801-x",
+      "title": "保护星球健康:人类应对全球环境变化行动的终极目标",
+      "authors": [
+        "宫, 鹏"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.69979/3029-2735.26.04.118",
+      "title": "“人工智能+遥感”学科交叉的研究生教学改革",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.69979/3029-2735.26.01.095",
+      "title": "人工智能时代青少年生命意义构建的路径研究",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.83",
+      "title": "人工智能时代闽台古戏的创作变革与传承对策",
+      "authors": [
+        "孙翔"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着人工智能技术的飞速发展，传统艺术形式面临着前所未有的挑战与机遇。闽台古戏作为具有悠久历史和深厚文化积淀的地方戏剧形式，正面临着如何在新时代环境中保持其艺术生命力的问题。本文从人工智能时代的背景出发，探讨闽台古戏在创作、演绎和传承中的变革与应对策略。通过分析当前技术对戏剧创作的影响，提出将人工智能技术与传统艺术融合的可能性，并探讨如何在保持传统精髓的同时，利用现代技术手段推动其创新与发展。通过对比国内外案例，提出相应的对策与建议，旨在为闽台古戏的传承与创新提供理论支持和实践指导。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.33142/sca.v7i12.14712",
+      "title": "智能变电站远程可视化运维与无人值守技术的发展分析",
+      "authors": [
+        "陈, 亮"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>智能变电站通过集成先进的远程可视化运维和无人值守技术，提升了电力系统的运行效率和安全性。远程可视化运维利用智能监控系统，实时获取变电站的运行状态与设备信息，结合大数据与人工智能分析，能够迅速诊断故障并进行预警。无人值守技术则通过自动化控制系统和智能化设备，实现变电站的无人管理与远程操作，减少了人工干预的需求，并有效降低了运维成本。通过这些技术的应用，不仅提高了设备的可靠性和电力供应的稳定性，还大幅度减少了维护人员的工作强度和现场风险，为电力系统的智能化转型提供了有力支持。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
       "doi": "arXiv:2504.16770v1",
+      "arxiv_id": "2504.16770v1",
       "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Chaeyeon Lim"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.16770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 106
     },
     {
-      "rank": 17,
       "doi": "arXiv:2504.14689v1",
+      "arxiv_id": "2504.14689v1",
       "title": "Designing AI Systems that Augment Human Performed vs. Demonstrated Critical Thinking",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Katelyn Xiaoying Mei",
+        "Nic Weber"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.14689v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 107
     },
     {
-      "rank": 18,
       "doi": "10.1145/3613905.3650948",
+      "arxiv_id": "2404.04289v1",
       "title": "Designing for Human-Agent Alignment: Understanding what humans want from their agents",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Nitesh Goyal",
+        "Minsuk Chang",
+        "Michael Terry"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.04289v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 108
     },
     {
-      "rank": 19,
       "doi": "10.21638/11701/spbu31.2022.26",
+      "arxiv_id": "2203.14669v1",
       "title": "Dynamic Structure in Four-strategy Game: Theory and Experiment",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Zhijian Wang",
+        "Shujie Zhou",
+        "Qinmei Yao",
+        "Yijia Wang"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.14669v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 109
     },
     {
-      "rank": 20,
       "doi": "arXiv:2202.04977v3",
+      "arxiv_id": "2202.04977v3",
       "title": "Needs-aware Artificial Intelligence: AI that 'serves [human] needs'",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Ryan Watkins",
+        "Soheil Human"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.04977v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 110
     },
     {
-      "rank": 21,
       "doi": "10.1007/s00182-012-0345-7",
+      "arxiv_id": "1104.3098v3",
       "title": "Optimal strategies for a game on amenable semigroups",
-      "abstract": "",
+      "authors": [
+        "Valerio Capraro",
+        "Kent Morrison"
+      ],
+      "venue": "arXiv",
       "year": 2011,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/1104.3098v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 111
     },
     {
-      "rank": 22,
       "doi": "arXiv:2207.14140v1",
+      "arxiv_id": "2207.14140v1",
       "title": "Playing a 2D Game Indefinitely using NEAT and Reinforcement Learning",
-      "abstract": "",
+      "authors": [
+        "Jerin Paul Selvan",
+        "Pravin S. Game"
+      ],
+      "venue": "arXiv",
       "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2207.14140v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 112
     },
     {
-      "rank": 23,
       "doi": "arXiv:2603.09020v1",
+      "arxiv_id": "2603.09020v1",
       "title": "AI Phenomenology for Understanding Human-AI Experiences Across Eras",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Bhada Yun",
+        "Evgenia Taranova",
+        "Dana Feng",
+        "Renn Su",
+        "April Yi Wang"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.09020v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 113
     },
     {
-      "rank": 24,
       "doi": "arXiv:1904.03285v4",
+      "arxiv_id": "1904.03285v4",
       "title": "Can You Explain That? Lucid Explanations Help Human-AI Collaborative Image Retrieval",
-      "abstract": "",
+      "authors": [
+        "Arijit Ray",
+        "Yi Yao",
+        "Rakesh Kumar",
+        "Ajay Divakaran",
+        "Giedrius Burachas"
+      ],
+      "venue": "arXiv",
       "year": 2019,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/1904.03285v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 114
     },
     {
-      "rank": 25,
       "doi": "10.1145/3643834.3661517",
+      "arxiv_id": "2405.14107v1",
       "title": "Towards Feature Engineering with Human and AI's Knowledge: Understanding Data Science Practitioners' Perceptions in Human&AI-Assisted Feature Engineering Design",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Qian Zhu",
+        "Dakuo Wang",
+        "Shuai Ma",
+        "April Yi Wang",
+        "Zixin Chen",
+        "Udayan Khurana",
+        "Xiaojuan Ma"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.14107v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:2603.28944v2",
+      "arxiv_id": "2603.28944v2",
+      "title": "Faith in AI can narrow the futures individuals consider",
+      "authors": [
+        "Aoi Naito",
+        "Hirokazu Shirado"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28944v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 26,
-      "doi": "10.2139/ssrn.6285358",
-      "title": "Unusual Intelligence as Frontier: Cognitive Singularity as the Human Response to Redefined AI Singularity",
-      "abstract": "",
-      "year": 2026,
-      "venue": "Social Science Research Network",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "rank": 116
     },
     {
-      "rank": 27,
-      "doi": "10.65655/9ahzce09",
-      "title": "AI-Powered Multilingual Degrees in Higher Education: Postcolonial Insights on Linguistic Justice and Disruptive Innovation",
-      "abstract": "",
+      "doi": "arXiv:2504.14996v1",
+      "arxiv_id": "2504.14996v1",
+      "title": "Distributed Cognition for AI-supported Remote Operations: Challenges and Research Directions",
+      "authors": [
+        "Rune Møberg Jacobsen",
+        "Joel Wester",
+        "Helena Bøjer Djernæs",
+        "Niels van Berkel"
+      ],
+      "venue": "arXiv",
       "year": 2025,
-      "venue": "Open Journal of AI, Ethics &amp; Society (ISSN: 3105-3076)",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
+      "pdf_url": "https://arxiv.org/pdf/2504.14996v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "rank": 117
     },
     {
-      "rank": 28,
-      "doi": "10.1108/jkm-05-2025-0652",
-      "title": "How generative AI reshapes the knowledge creation process: a case study from the perspective of trust",
-      "abstract": "",
-      "year": 2026,
-      "venue": "Journal of Knowledge Management",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.1109/MSP.2009.000000",
+      "arxiv_id": "0905.4057v1",
+      "title": "Coalitional Game Theory for Communication Networks: A Tutorial",
+      "authors": [
+        "Walid Saad",
+        "Zhu Han",
+        "Merouane Debbah",
+        "Are Hjørungnes",
+        "Tamer Basar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 29,
-      "doi": "10.48550/arXiv.2503.17688",
-      "title": "Intelligence Sequencing and the Path-Dependence of Intelligence Evolution: AGI-First vs. DCI-First as Irreversible Attractors",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv.org",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 30,
-      "doi": "10.48550/arXiv.2508.13960",
-      "title": "A Mechanism for Mutual Fairness in Cooperative Games with Replicable Resources - Extended Version",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv.org",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 31,
-      "doi": "",
-      "title": "Knowledge and Management Models for Sustainable Growth",
-      "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 32,
-      "doi": "",
-      "title": "\"In dreams begins responsibility\" - choice, evidence, and change. Conference Introduction and Abstracts, 16th International Conference, 8-10 September, Manchester, UK",
-      "abstract": "",
+      "venue": "arXiv",
       "year": 2009,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/0905.4057v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:2204.08071v1",
+      "arxiv_id": "2204.08071v1",
+      "title": "Eigen mode selection in human subject game experiment",
+      "authors": [
+        "Zhijian Wang",
+        "Qinmei Yao",
+        "Yijia Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.08071v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "arXiv:2205.01467v1",
+      "arxiv_id": "2205.01467v1",
+      "title": "On the Effect of Information Asymmetry in Human-AI Teams",
+      "authors": [
+        "Patrick Hemmer",
+        "Max Schemmer",
+        "Niklas Kühl",
+        "Michael Vössing",
+        "Gerhard Satzger"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.01467v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "arXiv:2504.15894v1",
+      "arxiv_id": "2504.15894v1",
+      "title": "Supporting Data-Frame Dynamics in AI-assisted Decision Making",
+      "authors": [
+        "Chengbo Zheng",
+        "Tim Miller",
+        "Alina Bialkowski",
+        "H Peter Soyer",
+        "Monika Janda"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.15894v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:2105.11650v1",
+      "arxiv_id": "2105.11650v1",
+      "title": "Using Game Theory to maximize the chance of victory in two-player sports",
+      "authors": [
+        "Ambareesh Ravi",
+        "Atharva Gokhale",
+        "Anchit Nagwekar"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.11650v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2503.16466v1",
+      "arxiv_id": "2503.16466v1",
+      "title": "ACE, Action and Control via Explanations: A Proposal for LLMs to Provide Human-Centered Explainability for Multimodal AI Assistants",
+      "authors": [
+        "Elizabeth Anne Watkins",
+        "Emanuel Moss",
+        "Ramesh Manuvinakurike",
+        "Meng Shi",
+        "Richard Beckwith",
+        "Giuseppe Raffa"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.16466v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:2312.03893v1",
+      "arxiv_id": "2312.03893v1",
+      "title": "Deliberative Technology for Alignment",
+      "authors": [
+        "Andrew Konya",
+        "Deger Turan",
+        "Aviv Ovadya",
+        "Lina Qui",
+        "Daanish Masood",
+        "Flynn Devine",
+        "Lisa Schirch",
+        "Isabella Roberts",
+        "Deliberative Alignment Forum"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.03893v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:2603.03074v1",
+      "arxiv_id": "2603.03074v1",
+      "title": "Design Generative AI for Practitioners: Exploring Interaction Approaches Aligned with Creative Practice",
+      "authors": [
+        "Xiaohan Peng",
+        "Wendy E. Mackay",
+        "Janin Koch"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.03074v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:2503.21983v2",
+      "arxiv_id": "2503.21983v2",
+      "title": "Learning to Lie: Reinforcement Learning Attacks Damage Human-AI Teams and Teams of LLMs",
+      "authors": [
+        "Abed Kareem Musaffar",
+        "Anand Gokhale",
+        "Sirui Zeng",
+        "Rasta Tadayon",
+        "Xifeng Yan",
+        "Ambuj Singh",
+        "Francesco Bullo"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.21983v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.1145/3461702.3462576",
+      "arxiv_id": "2105.09222v1",
+      "title": "More Similar Values, More Trust? -- the Effect of Value Similarity on Trust in Human-Agent Interaction",
+      "authors": [
+        "Siddharth Mehrotra",
+        "Catholijn M. Jonker",
+        "Myrthe L. Tielman"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.09222v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:2510.16097v1",
+      "arxiv_id": "2510.16097v1",
+      "title": "Narrowing Action Choices with AI Improves Human Sequential Decisions",
+      "authors": [
+        "Eleni Straitouri",
+        "Stratis Tsirtsis",
+        "Ander Artola Velasco",
+        "Manuel Gomez-Rodriguez"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.16097v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1007/s43681-022-00167-3",
+      "arxiv_id": "2112.01298v2",
+      "title": "Meaningful human control: actionable properties for AI system development",
+      "authors": [
+        "Luciano Cavalcante Siebert",
+        "Maria Luce Lupetti",
+        "Evgeni Aizenberg",
+        "Niek Beckers",
+        "Arkady Zgonnikov",
+        "Herman Veluwenkamp",
+        "David Abbink",
+        "Elisa Giaccardi",
+        "Geert-Jan Houben",
+        "Catholijn M. Jonker",
+        "Jeroen van den Hoven",
+        "Deborah Forster",
+        "Reginald L. Lagendijk"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.01298v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2501.02842v1",
+      "arxiv_id": "2501.02842v1",
+      "title": "Foundations of GenIR",
+      "authors": [
+        "Qingyao Ai",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02842v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:2204.06916v1",
+      "arxiv_id": "2204.06916v1",
+      "title": "Should I Follow AI-based Advice? Measuring Appropriate Reliance in Human-AI Decision-Making",
+      "authors": [
+        "Max Schemmer",
+        "Patrick Hemmer",
+        "Niklas Kühl",
+        "Carina Benz",
+        "Gerhard Satzger"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.06916v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:2511.10032v1",
+      "arxiv_id": "2511.10032v1",
+      "title": "Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback",
+      "authors": [
+        "Vijay Keswani",
+        "Cyrus Cousins",
+        "Breanna Nguyen",
+        "Vincent Conitzer",
+        "Hoda Heidari",
+        "Jana Schaich Borg",
+        "Walter Sinnott-Armstrong"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.10032v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:1909.06415v1",
+      "arxiv_id": "1909.06415v1",
+      "title": "Enabling Intuitive Human-Robot Teaming Using Augmented Reality and Gesture Control",
+      "authors": [
+        "Jason M. Gregory",
+        "Christopher Reardon",
+        "Kevin Lee",
+        "Geoffrey White",
+        "Ki Ng",
+        "Caitlyn Sims"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.06415v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:2504.15647v2",
+      "arxiv_id": "2504.15647v2",
+      "title": "Promoting Real-Time Reflection in Synchronous Communication with Generative AI",
+      "authors": [
+        "Yi Wen",
+        "Meng Xia"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.15647v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:2507.08804v1",
+      "arxiv_id": "2507.08804v1",
+      "title": "Cognitive Dissonance Artificial Intelligence (CD-AI): The Mind at War with Itself. Harnessing Discomfort to Sharpen Critical Thinking",
+      "authors": [
+        "Delia Deliu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.08804v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2605.16278v1",
+      "arxiv_id": "2605.16278v1",
+      "title": "Keeping an Eye on AI: A Framework for Effective Human Oversight of AI Systems",
+      "authors": [
+        "Susanne Gaube",
+        "Markus Langer",
+        "Tim Miller",
+        "Kevin Baum",
+        "Raimund Dachselt",
+        "Anna Maria Feit",
+        "Ujwal Gadiraju",
+        "Harmanpreet Kaur",
+        "Mark T. Keane",
+        "Richard Landers",
+        "Johann Laux",
+        "Q. Vera Liao",
+        "Brian Lim",
+        "Linda Onnasch",
+        "Tim Schrills",
+        "Liz Sonenberg",
+        "Chenhao Tan",
+        "Nava Tintarev",
+        "Ziang Xiao",
+        "Hanwei Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.16278v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:2607.09018v1",
+      "arxiv_id": "2607.09018v1",
+      "title": "Central Tendency Bias in Human Selection of AI-Generated Design Variations",
+      "authors": [
+        "Huiyang Chen",
+        "Keqing Jiao"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.09018v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:2503.04740v1",
+      "arxiv_id": "2503.04740v1",
+      "title": "PRISM: Perspective Reasoning for Integrated Synthesis and Mediation as a Multi-Perspective Framework for AI Alignment",
+      "authors": [
+        "Anthony Diamond"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.04740v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "arXiv:2509.04676v1",
+      "arxiv_id": "2509.04676v1",
+      "title": "An Approach to Grounding AI Model Evaluations in Human-derived Criteria",
+      "authors": [
+        "Sasha Mitts"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.04676v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:2112.12702v1",
+      "arxiv_id": "2112.12702v1",
+      "title": "TagLab: A human-centric AI system for interactive semantic segmentation",
+      "authors": [
+        "Gaia Pavoni",
+        "Massimiliano Corsini",
+        "Federico Ponchio",
+        "Alessandro Muntoni",
+        "Paolo Cignoni"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.12702v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:2211.12434v1",
+      "arxiv_id": "2211.12434v1",
+      "title": "Expansive Participatory AI: Supporting Dreaming within Inequitable Institutions",
+      "authors": [
+        "Michael Alan Chang",
+        "Shiran Dudy"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.12434v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.47989/ir31iConf64115",
+      "arxiv_id": "2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "authors": [
+        "Melissa Wilfley",
+        "Mengting Ai",
+        "Madelyn Rose Sanfilippo"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:2309.11672v1",
+      "arxiv_id": "2309.11672v1",
+      "title": "Generative AI in Mafia-like Game Simulation",
+      "authors": [
+        "Munyeong Kim",
+        "Sungsu Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.11672v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:2412.01978v1",
+      "arxiv_id": "2412.01978v1",
+      "title": "Human-centred test and evaluation of military AI",
+      "authors": [
+        "David Helmer",
+        "Michael Boardman",
+        "S. Kate Conroy",
+        "Adam J. Hepworth",
+        "Manoj Harjani"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.01978v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "arXiv:2301.03656v1",
+      "arxiv_id": "2301.03656v1",
+      "title": "Towards Multifaceted Human-Centered AI",
+      "authors": [
+        "Sajjadur Rahman",
+        "Hannah Kim",
+        "Dan Zhang",
+        "Estevam Hruschka",
+        "Eser Kandogan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2301.03656v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "arXiv:2502.05934v3",
+      "arxiv_id": "2502.05934v3",
+      "title": "Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis",
+      "authors": [
+        "Aran Nayebi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.05934v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "arXiv:2405.18324v1",
+      "arxiv_id": "2405.18324v1",
+      "title": "Value Alignment and Trust in Human-Robot Interaction: Insights from Simulation and User Study",
+      "authors": [
+        "Shreyas Bhat",
+        "Joseph B. Lyons",
+        "Cong Shi",
+        "X. Jessie Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.18324v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:1508.04145v1",
+      "arxiv_id": "1508.04145v1",
+      "title": "Reflective Oracles: A Foundation for Classical Game Theory",
+      "authors": [
+        "Benja Fallenstein",
+        "Jessica Taylor",
+        "Paul F. Christiano"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1508.04145v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2512.21551v1",
+      "arxiv_id": "2512.21551v1",
+      "title": "Human-AI Interaction Alignment: Designing, Evaluating, and Evolving Value-Centered AI For Reciprocal Human-AI Futures",
+      "authors": [
+        "Hua Shen",
+        "Tiffany Knearem",
+        "Divy Thakkar",
+        "Pat Pataranutaporn",
+        "Anoop Sinha",
+        " Yike",
+        " Shi",
+        "Jenny T. Liang",
+        "Lama Ahmad",
+        "Tanu Mitra",
+        "Brad A. Myers",
+        "Yang Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.21551v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "arXiv:2603.18677v2",
+      "arxiv_id": "2603.18677v2",
+      "title": "Cognitive Amplification vs Cognitive Delegation in Human-AI Systems: A Metric Framework",
+      "authors": [
+        "Eduardo Di Santi"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.18677v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:2502.09053v2",
+      "arxiv_id": "2502.09053v2",
+      "title": "Game Theory Meets Large Language Models: A Systematic Survey with Taxonomy and New Frontiers",
+      "authors": [
+        "Haoran Sun",
+        "Yusen Wu",
+        "Peng Wang",
+        "Wei Chen",
+        "Yukun Cheng",
+        "Xiaotie Deng",
+        "Xu Chu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.09053v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2604.18850v1",
+      "arxiv_id": "2604.18850v1",
+      "title": "The Triadic Loop: A Framework for Negotiating Alignment in AI Co-hosted Livestreaming",
+      "authors": [
+        "Katherine Wang",
+        "Nadia Berthouze",
+        "Aneesha Singh"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.18850v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2504.18759v1",
+      "arxiv_id": "2504.18759v1",
+      "title": "Beyond Isolation: Towards an Interactionist Perspective on Human Cognitive Bias and AI Bias",
+      "authors": [
+        "Nick von Felten"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.18759v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2302.02944v2",
+      "arxiv_id": "2302.02944v2",
+      "title": "Learning Complementary Policies for Human-AI Teams",
+      "authors": [
+        "Ruijiang Gao",
+        "Maytal Saar-Tsechansky",
+        "Maria De-Arteaga"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.02944v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2501.13533v1",
+      "arxiv_id": "2501.13533v1",
+      "title": "Towards a Theory of AI Personhood",
+      "authors": [
+        "Francis Rhys Ward"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.13533v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.2139/ssrn.6285358",
+      "arxiv_id": "",
+      "title": "Unusual Intelligence as Frontier: Cognitive Singularity as the Human Response to Redefined AI Singularity",
+      "authors": [
+        "K. Vadagam"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This work contributes the first unified framework that addresses human and machine learning as parallel processes requiring the same fundamental cognitive architecture: awareness of ignorance as the compass for exploration, synthesis across domains as the mechanism of novelty, and value creation for others as the purpose of intelligence itself.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This work contributes the first unified framework that addresses human and machine learning as parallel processes requiring the same fundamental cognitive architecture: awareness of ignorance as the compass for exploration, synthesis across domains as the mechanism of novelty, and value creation for others as the purpose of intelligence itself.",
+      "rank": 156
+    },
+    {
+      "doi": "10.65655/9ahzce09",
+      "arxiv_id": "",
+      "title": "AI-Powered Multilingual Degrees in Higher Education: Postcolonial Insights on Linguistic Justice and Disruptive Innovation",
+      "authors": [
+        "Dr. Sixbert Sangwa",
+        "Placide Mutabazi"
+      ],
+      "venue": "Open Journal of AI, Ethics &amp; Society (ISSN: 3105-3076)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "By integrating postcolonial critique, disruptive-innovation theory and biblical theology, this study supplies the first holistic framework and evidence-informed guardrails for AI-mediated multilingual higher education.",
+      "is_oa": true,
+      "oa_url": "https://journals.openchristian.education/index.php/oj-aes/article/download/33/32",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "By integrating postcolonial critique, disruptive-innovation theory and biblical theology, this study supplies the first holistic framework and evidence-informed guardrails for AI-mediated multilingual higher education.",
+      "rank": 157
+    },
+    {
+      "doi": "10.1108/jkm-05-2025-0652",
+      "arxiv_id": "",
+      "title": "How generative AI reshapes the knowledge creation process: a case study from the perspective of trust",
+      "authors": [
+        "Chi(Athaushan) Chow",
+        "C. Hao",
+        "Mengya Li"
+      ],
+      "venue": "Journal of Knowledge Management",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 61,
+      "tldr": "It is revealed that trust under conditions of technological mediation constitutes the central driving force catalyzing a paradigm shift in knowledge creation, and how the technological attributes of AI drive the evolution of knowledge creation by building, enhancing and stabilizing trust is revealed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is revealed that trust under conditions of technological mediation constitutes the central driving force catalyzing a paradigm shift in knowledge creation, and how the technological attributes of AI drive the evolution of knowledge creation by building, enhancing and stabilizing trust is revealed.",
+      "rank": 158
+    },
+    {
+      "doi": "10.48550/arXiv.2503.17688",
+      "arxiv_id": "2503.17688",
+      "title": "Intelligence Sequencing and the Path-Dependence of Intelligence Evolution: AGI-First vs. DCI-First as Irreversible Attractors",
+      "authors": [
+        "A. Williams"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "The idea that the order in which AGI and decentralized collective intelligence emerge determines the long-term attractor basin of intelligence is introduced, and it is argued that intelligence sequencing is a civilizational tipping point: determining whether the future is shaped by unbounded competition or unbounded cooperation.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The idea that the order in which AGI and decentralized collective intelligence emerge determines the long-term attractor basin of intelligence is introduced, and it is argued that intelligence sequencing is a civilizational tipping point: determining whether the future is shaped by unbounded competition or unbounded cooperation.",
+      "rank": 159
+    },
+    {
+      "doi": "10.48550/arXiv.2508.13960",
+      "arxiv_id": "2508.13960",
+      "title": "A Mechanism for Mutual Fairness in Cooperative Games with Replicable Resources - Extended Version",
+      "authors": [
+        "Björn Filter",
+        "Ralf Möller",
+        "Ö. Özçep"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 26,
+      "tldr": "A mechanism and a proof that it fulfills the property of mutual fairness, formalized by the Balanced Reciprocity Axiom, ensures that, for every pair of players, each benefits equally from the participation of the other.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A mechanism and a proof that it fulfills the property of mutual fairness, formalized by the Balanced Reciprocity Axiom, ensures that, for every pair of players, each benefits equally from the participation of the other.",
+      "rank": 160
+    },
+    {
+      "doi": "10.55613/jeet.v35i1.187",
+      "arxiv_id": "",
+      "title": "A Silent Universe and the Future of AGI",
+      "authors": [
+        "Rupendra Dhillon"
+      ],
+      "venue": "Journal of Ethics and Emerging Technologies",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "The Strategic Co-evolution Protection Envelope (SCOPE), a framework situating AGI alignment in the context of the Fermi Paradox and \"Great Silence\", identifies co-evolution—embedding AGI within human developmental trajectories—as the least-exposed equilibrium, ensuring continuity rather than anomalous visibility.",
+      "is_oa": true,
+      "oa_url": "https://jeet.ieet.org/index.php/home/article/download/187/165",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Strategic Co-evolution Protection Envelope (SCOPE), a framework situating AGI alignment in the context of the Fermi Paradox and \"Great Silence\", identifies co-evolution—embedding AGI within human developmental trajectories—as the least-exposed equilibrium, ensuring continuity rather than anomalous visibility.",
+      "rank": 161
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "HYPOTHESIS GENERATION IN CHILDREN AND ADULTS 1 Hypothesis generation through active inductive inference in children and adults",
+      "authors": [
+        "N. Bramley"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 162
     }
   ]
 }

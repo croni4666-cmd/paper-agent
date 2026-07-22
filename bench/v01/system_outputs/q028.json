@@ -1,286 +1,1122 @@
 {
   "query_id": "q028",
   "query": "珀尔的因果图的相关前沿研究",
-  "generated_at": "2026-07-14T23:28:19",
-  "config": "v3.9.0-baseline-n50",
+  "topic_bucket": "ml",
+  "source": "user",
+  "generated_at": "2026-07-22T11:27:04",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 58,
+  "top_n": 50,
   "by_engine": {
-    "crossref": 10,
+    "crossref": 50,
     "openalex": 8,
     "arxiv": 0,
     "semanticscholar": 0,
-    "core": 0
+    "aminer": 1,
+    "cnki": 1
   },
-  "dedup_count": 18,
   "results": [
     {
-      "rank": 1,
+      "doi": "10.32629/fcmr.v2i2.2916",
+      "title": "患者对医生选择意愿的影响因素研究",
+      "authors": [
+        "王, 红军"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 27,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着人民生活水平的不断提高,我国人民日益增长的医疗需求与医疗资源配置不充分、不合理之间的矛盾日益突出。互联网技术的不断发展,充分推动了在线咨询行业的快速发展。利用该技术合理分配医疗资源,建立分级医疗服务体系,提高在线咨询平台的用户耐心,增加就诊人数,具有重要意义。当前,在网络医学领域中很少有从患者的角度去探讨关于患者如何选择医生的研究。基于此,我们不考虑短期不稳定的因素,而是研究患者选择医生的意愿的影响因素,并以此为基础收集相关数据做出如下分析。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.37155/2661-4766-0304-9",
+      "title": "拜糖平治疗社区糖尿病患者的临床效果研究",
+      "authors": [
+        "赵莉",
+        "莉, 赵"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2021,
+      "cited_by_count": 19,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.62022/fmr.issn3006-0036.2024.01.011",
+      "title": "肥胖与心血管疾病的关系及干预路径研究",
+      "authors": [
+        "沁妍, 赵",
+        "磊, 孙"
+      ],
+      "venue": "医学研究前沿",
+      "year": 2024,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 3
+    },
+    {
       "doi": "10.62022/fmr.issn3006-0036.2024.03.006",
       "title": "牙周炎对2型糖尿病及其相关生化指标的影响",
-      "abstract": "",
-      "year": 2024,
+      "authors": [],
       "venue": "医学研究前沿",
-      "citation_count": 4,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 4
     },
     {
-      "rank": 2,
+      "doi": "10.37155/2661-4766-0604-6",
+      "title": "HMW脂联素与2型糖尿病风险的相关性研究",
+      "authors": [
+        "李志军",
+        "马晓娜",
+        "李军强*"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.32629/fcmr.v2i2.2942",
+      "title": "基于知识图谱的解郁丸治疗失眠的作用机理研究",
+      "authors": [
+        "刘, 淑明",
+        "侯, 旭璨",
+        "任, 兴德",
+        "王, 耘"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>解郁丸是临床常用的抗抑郁方剂,在近年来的临床疗效研究中,被证明对失眠也具有一定的治疗作用,但具体机制并不清晰,本文将对其作用机制进行研究。利用Neo4j构建基于失眠和解郁丸作用机理的知识图谱；选择实体语法系统解析解郁丸治疗失眠的作用机制；对筛选获得的61个基因进行基因本体(GO)功能富集分析和基于京都基因与基因组百科全书(KEGG)通路富集分析,表明解郁丸主要是通过对昼夜睡眠周期、神经传导、消化系统、血液循环、免疫功能等生物过程的综合调节,达到治疗失眠的作用。研究结果指示,治疗失眠新药的研发可以从对神经系统、消化系统、内分泌系统的综合调节出发。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 6
+    },
+    {
       "doi": "10.37155/2661-4766-0206-3",
       "title": "糖尿病与眼表螨虫感染的相关研究进展",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "黄畅",
+        "李振豪",
+        "李思琪",
+        "符敏",
+        "李海量",
+        "易果果"
+      ],
       "venue": "临床医学前沿",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 7
     },
     {
-      "rank": 3,
+      "doi": "10.37155/2661-4766-0605-52",
+      "title": "影响胃镜检查质量的相关因素分析及对策",
+      "authors": [
+        "宋向燕"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.69979/3029-2808.25.05.055",
+      "title": "肿瘤患者PICC置管相关性血栓形成因素的研究进展",
+      "authors": [
+        "陈丽光, 褚焱虹"
+      ],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 9
+    },
+    {
       "doi": "10.37155/2661-4766-0706-45",
       "title": "偏头痛患者疼痛发作与睡眠质量的相关性研究",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "熊建伟"
+      ],
       "venue": "临床医学前沿",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 10
     },
     {
-      "rank": 4,
+      "doi": "10.64216/3104-9656.25.03.018",
+      "title": "认知障碍与虚弱之间的因果关系：孟德尔随机化研究",
+      "authors": [
+        "吴正文（通讯作者），王梓, 庞智方"
+      ],
+      "venue": "医学实践与研究",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.37155/2661-4766-0705-20",
+      "title": "内科老年住院患者日常体育锻炼与衰弱状态的相关性研究",
+      "authors": [
+        "韩, 婷"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.33142/fme.v1i2.2453",
+      "title": "思维导图在高中生物教学中的应用研究",
+      "authors": [
+        "玄, 燕"
+      ],
+      "venue": "现代教育前沿",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 13
+    },
+    {
       "doi": "10.62022/fetr.issn3006-001x.2024.01.022",
       "title": "基于知识图谱的高校教学资料管理模型及相关算法研究",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "廷云, 王",
+        "希, 万"
+      ],
       "venue": "教育教学研究前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 14
     },
     {
-      "rank": 5,
       "doi": "10.37155/2661-4766-0202-8",
       "title": "小儿腹腔镜手术气腹相关并发症的发生原因及预防研究",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "陈颖杰"
+      ],
       "venue": "临床医学前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 15
     },
     {
-      "rank": 6,
       "doi": "10.1089/ct.2020;32.110-113",
       "title": "孟德尔随机化研究解出甲状腺功能与肾脏功能相关性中的因果顺序之谜",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "关海霞",
+        "Rhee, Connie M."
+      ],
       "venue": "Clinical Thyroidology",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 16
     },
     {
-      "rank": 7,
       "doi": "10.62177/fapad.v1i1.938",
       "title": "基于图像学视角的《荷花水鸟图》研究",
-      "abstract": "<jats:p>本文是针对清代画家朱耷《荷花水鸟图》的个案分析，首先肯定了这副作品的真实性，并从图像学的视角研究此作品，在前图像志的层次，《荷花水鸟图》画面构成元素较少但表现的内容却极其丰富；在图像志的层面，《荷花水鸟图》的画面背后充斥着强烈的孤独感，展现出八大山人与世隔绝的愿望；在图像学层次，《荷花水鸟图》充满了道、禅两家的哲理思想，更是八大山人人生态度的展现。</jats:p>",
-      "year": null,
+      "authors": [
+        "陆子祎"
+      ],
       "venue": "亚太艺术与设计前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文是针对清代画家朱耷《荷花水鸟图》的个案分析，首先肯定了这副作品的真实性，并从图像学的视角研究此作品，在前图像志的层次，《荷花水鸟图》画面构成元素较少但表现的内容却极其丰富；在图像志的层面，《荷花水鸟图》的画面背后充斥着强烈的孤独感，展现出八大山人与世隔绝的愿望；在图像学层次，《荷花水鸟图》充满了道、禅两家的哲理思想，更是八大山人人生态度的展现。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 17
     },
     {
-      "rank": 8,
       "doi": "10.12677/md.2026.161018",
       "title": "Causal Association between Immune Cell Phenotypes and Preeclampsia: A Two-Sample Mendelian Randomization Study",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "梁, 唯聪"
+      ],
       "venue": "Medical  Diagnosis",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 18
     },
     {
-      "rank": 9,
       "doi": "10.22541/au.167706009.92155472/v1",
       "title": "肠道菌群与 COVID-2019 之间的因果关系：一项孟德尔随机化研究",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Liu, Deyang",
+        "Huang, Guoxin",
+        "Fang, Xiaolu",
+        "Zhao, Jianzhong",
+        "Qu, Gaojing",
+        "Pei, bin"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 19
     },
     {
-      "rank": 10,
+      "doi": "10.37155/2661-4766-0601-4",
+      "title": "护理流程图助力腹膜透析护理质量的效果研究",
+      "authors": [
+        "娜, 常",
+        "陈凤玲"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 20
+    },
+    {
       "doi": "10.37155/2661-4766-0601-29",
       "title": "人文关怀在精神科护理中的应用效果研究",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "王玉莹",
+        "赵艳艳"
+      ],
       "venue": "临床医学前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 21
     },
     {
-      "rank": 11,
+      "doi": "10.37155/2717-5316-0418-51",
+      "title": "影响颗粒分析试验成果的相关因素分析",
+      "authors": [
+        "彭安琪"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.37155/2661-4766-0601-42",
+      "title": "新生儿窒息的相关因素及产儿科结合治疗的临床观察",
+      "authors": [
+        "郭晓军"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.32629/er.v2i4.1780",
+      "title": "高考志愿填报相关影响因素的调查研究",
+      "authors": [
+        "宋, 美丽",
+        "韦, 国梁"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大学入学考试是中国教育制度的重要选拔性考试。在某种程度上,这是影响学生未来生活的重要转折点。高考志愿填报也是中国特色和高考系统的重要组成部分。六月份是每个考生家庭的重要时刻。所有的考生都要对考生的父母,亲戚和朋友都十分的管着考生的高考状况,收集所有类型的信息,昀终可以去上理想的大学。近年来,高考竞争异常激烈,大学入学志愿填报问题开始从实践向理论过渡。这篇论文以地方大学为例,探讨高考志愿填报相关影响的相关因素,以供相关人员参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.32629/fcmr.v8i1.19669",
+      "title": "衰老的双重及多重动因",
+      "authors": [
+        "王, 宗平"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人体的衰老是从细胞的衰弱开始的。细胞的衰弱、衰退、衰败和衰竭便是人体衰老的全过程。人体的衰老是形式,而细胞的衰竭过程才是内容。剖析人体细胞衰弱、衰退、衰败和衰竭的全过程,不仅可以帮助人们对健康加深程序化的认知,同时也可以同步了解中医微循环疗法在此过程中发挥能动化的积极作用,促进健康,延长生命,使有限的生命历程长时间的立足于尊严之上。随着对生命微观世界的深入并细致的洞悉观察,人体细胞从衰弱到衰竭存在着双重及多重动因。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.62022/fmr.issn3006-0036.2024.01.005",
+      "title": "影响青少年牙龈出血相关因素分析",
+      "authors": [
+        "语, 王",
+        "珉德, 陈"
+      ],
+      "venue": "医学研究前沿",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.17816/dd77311-51566",
+      "title": "图 4。基于研究结果的森林图，这些研究确定了对治疗有反应的骨转移中测量的扩散系数值的变化。",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.32629/fcmr.v8i1.19667",
+      "title": "加减归脾汤治疗肿瘤相关性失眠的 Meta 分析",
+      "authors": [
+        "恒, 志建",
+        "吴, 炳辰",
+        "朱, 伟",
+        "林, 钰欣"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：利用Meta分析方法证明加减归脾汤治疗肿瘤相关性失眠(Cancer-related insomnia,CRI)的临床疗效。方法：检索中文及英文数据库中关于归脾汤治疗CRI的RCT研究,以临床有效率、匹兹堡睡眠质量指数(Pittsburgh sleep quality index,PSQI)评分、中医证候积分等为结局指标,采用RevMan 5.4软件进行Meta分析,并得出结论。结果：初步检索到文献82篇,最终纳入7篇,统计患者共573例。Meta分析结果显示,相较于对照组,试验组加减归脾汤组治疗CRI的临床有效率为OR=2.70(95%CI:1.71~4.25,Z=4.29,P＜0 .001)；治疗后的PSQI评分为MD=-2 .16(95%CI:-3 .75~-0 .57,Z=2 .66,P=0 .008)；治疗后的中医证候积分为MD=-2 .16(95%CI:-2 .52~-1 .80,Z=11 .73,P＜0 .00001)；不良反应发生率为OR=0 .19(95%CI:0.09~0.41,Z=4.22,P＜0.0001)。提示试验组在上述各指标上均要优于对",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.63887/fss.2025.1.8.93",
+      "title": "汉字字体的图形化设计研究",
+      "authors": [
+        "杨梦雪"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>汉字作为记录历史、传播文化的重要载体，在信息传递与情感表达中具有不可替代的作用。在新媒体环境下，字体图形化设计需兼顾信息准确传播与美学价值呈现。本文通过剖析汉字的构造特点与演化脉络，结合优秀设计案例与历史文字图形化实践，深入探究汉字字体图形化的作用、方法及应用，旨在实现设计美感与实用功能的有机统一，为现代汉字图形化设计提供理论参考与实践路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.37155/2661-4766-0502-44",
+      "title": "普外科手术患者术后疼痛相关因素研究",
+      "authors": [
+        "波, 马",
+        "刘三在"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.17816/pavlovj79099-45805",
+      "title": "图 1研究组（n = 115）干预前后的 VWF 抗原。",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.37155/2661-4766-0703-24",
+      "title": "不同消毒技术对空气消毒效果及其影响因素的研究",
+      "authors": [
+        "斯郎格玛"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.12677/acm.2024.1441262",
+      "title": "Related Research on Risk Factors for Cerebral Hemorrhage after Thrombolysis",
+      "authors": [
+        "王, 振琪"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 35,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.12677/acm.2025.1572016",
+      "title": "Research Advances in Genes Related to Vestibular Migraine",
+      "authors": [
+        "康, 天娇"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 62,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.32629/fcmr.v2i1.909",
+      "title": "中药智能产业的ABCD与区块链的关键作用",
+      "authors": [
+        "曹, 婷婷",
+        "王, 耘"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>针对中药产业面临着资源高度分散、质量影响因素众多、难以实现连续自动化、需求个体差异明显等产业难题,作者团队通过信息化与中药产业的融合与应用研究,提出以人工智能-区块链-云计算-大数据(ABCD AI-Blockchain-Cloud Computing-Big Data)信息技术体系为核心的解决方案,并对相关技术方案进行了研究与探索,构建了中药智能产业技术框架。在此框架中,区块链技术对于实现企业间的合作、数据资源共享、促进中药智能产业的落地具有重要意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.12677/acm.2023.132187",
+      "title": "Mendelian Randomization Study of Causality between Benign Prostatic Hyperplasia and Erectile Dysfunction",
+      "authors": [
+        "张, 玉浩"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.17816/pavlovj79099-45806",
+      "title": "图 2研究组（n = 115）干预前后的 VWF 活动。",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.33142/ec.v7i10.13705",
+      "title": "建筑材料的检测中影响检测结果的关键因素的研究",
+      "authors": [
+        "陈, 龙"
+      ],
+      "venue": "工程建设",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>材质检测是保障工程质量的稳定性关键环节，但检测数据的精准度和稳定性受众多因素的作用。首先，筛查方式挑选和执行直接影响准确度，传统技术与创新技术适用程度必须进行比较评价。其次，实体固有属性，例如构成、构造和衰变过程量度值，对实验验证成效直接地产生影响。此外，观测指标，涵盖温度值、和有害物质相关参数，也引起观测数据变化。最后，评估专家水平和操作标准是确保评估结果准确度决定性因素。通过对众多关键指标的详细剖析，有助于建材的检测环节优化、规范化供应科学依据，以提升建筑项目整体品质。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.32629/hwr.v4i3.2861",
+      "title": "农村饮用水的不安全因素研究以及相关的优化对策",
+      "authors": [
+        "王, 晓飞"
+      ],
+      "venue": "水电水利",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>我国是一个人口大国,虽然地大物博,水资源总量排名较高,但是,人均水资源却只占世界人均水资源的20%。因此,近几年来,我国也逐渐的开始重视对饮用水水源的保护,致力于解决国民的饮水安全问题。基于此,文章就农村饮用水的不安全因素以及相关的优化措施方面进行了简单分析,希望对提高我国农村饮用水的安全性,促进我国的经济社会可持续发展等方面有所启示和帮助。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1360/zc2003-33-3-193",
+      "title": "多基因疾病相关基因定位的研究策略",
+      "authors": [],
+      "venue": "Science in China Series C-Life Sciences (in Chinese)",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.14218/mrp.2024.06141",
+      "title": "前沿解读：阿尔茨海默病的遗传基因找到了？",
+      "authors": [],
+      "venue": "Medical Research &amp; Publication",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1360/csb1993-38-6-556",
+      "title": "铷与基因表达的相关性研究",
+      "authors": [
+        "童, 永彭"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1993,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.5376/mpb.cn.2013.11.0010",
+      "title": "棉纤维发育及其相关基因的研究进展",
+      "authors": [
+        "张利媛"
+      ],
+      "venue": "分子植物育种",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.33142/fme.v6i3.15853",
+      "title": "双减政策的执行效果与对策研究",
+      "authors": [
+        "高, 雪"
+      ],
+      "venue": "现代教育前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着2021年“双减”政策的颁布，中国各地的学校积极响应政策号召，落实贯彻“双减”政策的教育思想，为中小学生减轻作业负担和学习压力，让学生有时间享受当前年龄段该有的生活和快乐。“双减”政策是教育领域的一大创新，是推动中国教育行业前进的动力，更是一项时代的挑战。但在一些地方，“双减”政策并未受到教师与家长的认可，执行效果欠佳，最后适得其反，加重了学生的学习压力。“双减”政策是一个持续的教育模式与思想改革，中小学教师需要寻找合适的执行对策，保证政策的执行效果，可谓任重而道远。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.33142/fme.v1i2.2352",
+      "title": "思维导图在高中生物教学中的应用研究",
+      "authors": [
+        "玄, 燕"
+      ],
+      "venue": "现代教育前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国新课程改革的不断推进以及素质教育的不断深化，给我国高中生物教育教学提出了更高的要求。基于此，本文通过对思维导图的含义进行调查，分析思维导图应用于高中生物教学的重要意义，重点研究其具体应用，以供相关人员参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.63887/tfet.2025.1.7.53",
+      "title": "高中生同伴支持、学业自我效能感与英语成绩的相关性研究综述",
+      "authors": [
+        "赵子怡",
+        "张志琴"
+      ],
+      "venue": "教育科技前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文梳理国内外关于高中生同伴支持、学业自我效能感与英语成绩的相关研究，聚焦核心概念界定、两两相关性及三者交互作用机制。研究表明，同伴支持不仅对英语成绩具有直接促进作用，还能通过提升学业自我效能感产生间接影响。文末指出国内研究不足：高中生专项实证研究匮乏、同伴支持维度划分模糊，并据此提出未来研究方向建议。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.33142/fme.v3i4.6646",
+      "title": "热身方式的变革对立定跳远成绩影响的效果研究",
+      "authors": [
+        "董, 旭",
+        "王, 智明"
+      ],
+      "venue": "现代教育前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>对比不同的热身方式对立定跳远成绩的影响，试图通过实验找出有利于提高立定跳远成绩的热身方式。结论：首先对于普通大学生来说，在立定跳远前尽可能进行充分热身，来达到获得很好的立定跳远成绩的目标。并建议在热身后3分钟左右进行立定跳远，在6分钟之内完成立定跳远。其次建议未来可以增加对热身的延时效应的关注及相关研究。最后根据热身的变革进展，进行牵拉时先静态，改善肌肉长度，再动态，拉长的肌肉容易发力，激活可能更有效，增加对牵拉方式的融合研究，对进一步建立起有效提升运动专项成绩的热身体系有重要意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.54254/2978-1736/2026.34728",
+      "title": "工作-生活平衡对员工幸福感的作用研究",
+      "authors": [
+        "关, 海洋"
+      ],
+      "venue": "经管前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在企业边界越来越模糊、工作节奏越来越快的今天，传统的工作和生活的界线正在逐渐淡化，员工在工作中所面对的角色冲突和时间压力越来越大。以资源保持和边界为基础，系统考察工作-生活平衡对员工福利的影响机理。工作-生活平衡对个体的主观福利和心理福利有明显相关作用，包括降低情绪损耗、提高心理自主性和提高角色整合能力。为企业优化人力资源管理实践，促进员工福利水平的提高提供理论基础和路径借鉴。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.56",
+      "title": "“平等之物”——鲍尔斯《上层林冠》的物本体书写研究",
+      "authors": [
+        "马苗苗"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在“物转向”的视角下，物质被赋予了施事能力，成为了具有能动性的实体，这一转变打破了传统上人类与物质之间的明确界限。这种叙事视点的迁移不仅深刻地重塑了我们对于物质世界的认知框架，还为我们重新解读和审视文学作品开辟了一个全新的维度。作为美国新一代后现代派小说的领军人物，理查德·鲍尔斯在《上层林冠》中深入讨论了树这一“平等之物”，他将“树”视为与人类平等的存在，以“树”观物，提倡万物平等，万物互联。本文将从“物的罗列”、“谨慎的拟人化”以及“互为聚焦”几个角度，即“平等之物”物性叙事策略，分析“树”作为非人类元素是如何解构人类中心主义的。同时，笔者认为文中提倡的的人与自然和谐共生的生态观与中国传统物质观念“以物观物”可以形成跨越时空的共鸣，传达出一种环境危机意识，促使我们反思人类与物质世界的关系。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.33142/sca.v6i1.8360",
+      "title": "建筑总图设计的方法及相关要点研究",
+      "authors": [
+        "刘, 亚飞"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>施工图设计阶段的总平面图是对方案设计的深化，主要体现项目经济技术指标、建筑与场地的布局关系、项目单体的基础信息等。在施工图设计前期，需对方案总平进行初步复核，主要针对该项目的土地出让协议、该地区相关的规划管理技术规定、不同功能建筑的设计规范、会议纪要等，对于不满足要求的应尽早提出并调整设计，从而保证后续各项单体工作有效开展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
       "doi": "10.1360/sspma-2026-0351",
       "title": "开放式微腔系统中的光与物质相互作用研究进展",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Qihua Xiong",
+        "Y. W. Wang",
+        "Guihan Wen",
+        "Yitong Li",
+        "Chengxi Luo",
+        "Baixu Xiang",
+        "Yifei Li"
+      ],
       "venue": "Zhongguo kexue. Wulixue Lixue Tianwenxue",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciengine.com/doi/pdf/9FAF63548C2A4394A4911604CA7F3B32",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 51
     },
     {
-      "rank": 12,
       "doi": "10.1360/ssv-2026-0031",
       "title": "The physiological roles of H2S-mediated protein persulfidation in plants: A tiny spark, a mighty mark",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Haiyan Cao",
+        "Zhuping Jin",
+        "Yanxi Pei"
+      ],
       "venue": "Scientia Sinica Vitae",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/AB2833C7CCC143109DA87788D663F26F",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 52
     },
     {
-      "rank": 13,
       "doi": "10.7498/aps.75.20260701",
       "title": "Quantum many-body physics in polarized Fermi gases",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "ZHENG Zhen",
+        "WU Yuan-Xi",
+        "YU Lang",
+        "WANG ZI-DAN"
+      ],
       "venue": "Acta Physica Sinica",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://wulixb.iphy.ac.cn/cn/article/pdf/preview/10.7498/aps.75.20260701.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 53
     },
     {
-      "rank": 14,
       "doi": "10.1360/ssc-2026-0108",
       "title": "Recent Progress in Infrared Quantum Dots for Photodetectors and Neuromorphic Applications",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Haoyuan Li",
+        "Kuilin Li",
+        "Qi Nie",
+        "Xiao Luo",
+        "Qi Zhang",
+        "Fucai Liu"
+      ],
       "venue": "Scientia Sinica Chimica",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/CF1CADEEECBF412282F13796744A5FA9",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 54
     },
     {
-      "rank": 15,
       "doi": "10.1360/csb-2026-0406",
       "title": "Synthesis of Strained Rings through Silver-Catalyzed Cycloaddition",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Wenjie Zhang",
+        "Xihe Bi"
+      ],
       "venue": "Chinese Science Bulletin (Chinese Version)",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/7533DE63EAA94B52841521D5AE2E4866",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 55
     },
     {
-      "rank": 16,
       "doi": "10.3724/bnsfc-2026-0089",
       "title": "Solution-phase Synthesis and Quantum Coherence Tuning of Carbon-based Quantum Magnets",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Zaiwei Zhang",
+        "ShangDa JIANG",
+        "Xinliang Feng",
+        "Junzhi Liu"
+      ],
       "venue": "Bulletin of National Natural Science Foundation of China",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/19173FBFE5894944829EBAD759C8F63F",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 56
     },
     {
-      "rank": 17,
       "doi": "10.3724/sp.j.1123.2025.10005",
       "title": "Case-based teaching with both positive and negative examples in undergraduate analytical chemistry laboratory： determination of six nitrogen-containing pesticides in environmental samples by solid-phase microextraction-high performance liquid chromatography",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Jie ZHANG",
+        "Xinzhong Zhang",
+        "Zhen Zhang",
+        "Jingwei LIU",
+        "Xuemei WANG"
+      ],
       "venue": "Chinese Journal of Chromatography",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/19A91EF2D1A943D8B0D40EC574DA7BDF",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 57
     },
     {
-      "rank": 18,
       "doi": "10.3724/cbls.2026096",
       "title": "Advances in anti-aging and age-related disease drug discovery based on artificial intelligence and multi-omics",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Yu-Tong CHEN",
+        "Zheng-Wei XIE"
+      ],
       "venue": "Shengming kexue",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/CA24EBFFD50346F0AB6DEFB939318436",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     }
   ]
 }

@@ -3,463 +3,5193 @@
   "query": "Acemoglu Restrepo automation tasks model",
   "topic_bucket": "econ",
   "source": "v3.8.3_variant",
-  "generated_at": "2026-07-10T21:14:41",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:26:16",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 238,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 49,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
-      "doi": "10.1257/aer.20160696",
-      "title": "The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment",
-      "abstract": "We examine the concerns that new technologies will render labor redundant in a framework in which tasks previously performed by labor can be automated and new versions of existing tasks, in which labor has a comparative advantage, can be created. In a static version where capital is fixed and technology is exogenous, automation reduces employment and the labor share, and may even reduce wages, while the creation of new tasks has the opposite effects. Our full model endogenizes capital accumulation and the direction of research toward automation and the creation of new tasks. If the long-run rental rate of capital relative to the wage is sufficiently low, the long-run equilibrium involves automation of all tasks. Otherwise, there exists a stable balanced growth path in which the two types of innovations go hand-in-hand. Stability is a consequence of the fact that automation reduces the cost of producing using labor, and thus discourages further automation and encourages the creation of new tasks. In an extension with heterogeneous skills, we show that inequality increases during transitions driven both by faster automation and the introduction of new tasks, and characterize the conditions under which inequality stabilizes in the long run. (JEL D63, E22, E23, E24, J24, O33, O41)",
-      "year": 2018,
-      "venue": "The American Economic Review",
-      "citation_count": 2412,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.52202/079017-1601",
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "authors": [
+        "John Yang"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "venue": "NeurIPS 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "66553ae801d2a3fbfc9f8c45",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
     },
     {
-      "rank": 2,
+      "doi": "10.1073/pnas.1921046117",
+      "title": "RepeatModeler2 for Automated Genomic Discovery of Transposable Element Families",
+      "authors": [
+        "Jullien M. Flynn"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e9ad0d19fced0a24b52f602",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1016/j.ifacol.2020.12.2122",
+      "title": "Ironies of Automation 4.0",
+      "authors": [
+        "Tania Hancke"
+      ],
+      "venue": "IFAC PAPERSONLINE",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b97431c45e57ce9ed9c22",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1007/978-3-030-05318-5_6",
+      "title": "Efficient and Robust Automated Machine Learning",
+      "authors": [
+        "Matthias Feurer"
+      ],
+      "venue": "Springer Series on Challenges in Machine Learning",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "599c7f07601a182cd28e4b4d",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1257/AER.20160696",
+      "arxiv_id": "",
+      "title": "The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
+      "venue": "The American Economic Review",
+      "year": 2018,
+      "cited_by_count": 2446,
+      "influential_cite_count": 160,
+      "reference_count": 247,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20160696",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1093/qje/qjaa004",
+      "title": "The Fall of the Labor Share and the Rise of Superstar Firms*",
+      "authors": [
+        "David Autor",
+        "David Dorn",
+        "Lawrence F. Katz",
+        "Christina Patterson",
+        "John Van Reenen"
+      ],
+      "venue": "The Quarterly Journal of Economics",
+      "year": 2020,
+      "cited_by_count": 2123,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/135/2/645/32994954/qjaa004.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 6
+    },
+    {
       "doi": "10.1257/jep.33.2.3",
       "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
-      "abstract": "<jats:p> We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a res",
-      "year": 2019,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "Journal of Economic Perspectives",
-      "citation_count": 2038,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2063,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a res",
+      "found_by": [
         "crossref",
         "openalex"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "is_oa": true,
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+      "rank": 7
     },
     {
-      "rank": 3,
       "doi": "",
+      "arxiv_id": "",
       "title": "NBER WORKING PAPER SERIES AUTOMATION AND NEW TASKS : HOW TECHNOLOGY DISPLACES AND REINSTATES LABOR",
-      "abstract": "",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
+      "venue": "",
       "year": 2019,
-      "venue": "",
-      "citation_count": 1966,
-      "engines_found_in": [
+      "cited_by_count": 2000,
+      "influential_cite_count": 114,
+      "reference_count": 22,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 8
     },
     {
-      "rank": 4,
-      "doi": "10.2139/ssrn.3098384",
+      "doi": "10.2139/SSRN.3098384",
+      "arxiv_id": "",
       "title": "Artificial Intelligence, Automation, and Work",
-      "abstract": "",
-      "year": 2018,
+      "authors": [
+        "D. Acemoğlu",
+        "D. Acemoğlu",
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
       "venue": "",
-      "citation_count": 1039,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 1054,
+      "influential_cite_count": 88,
+      "reference_count": 49,
+      "tldr": "A task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform and the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to counterbalance the impact of automation.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w24196",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "abstract": "A task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform and the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to counterbalance the impact of automation.",
+      "rank": 9
     },
     {
-      "rank": 5,
       "doi": "10.1086/718327",
       "title": "Artificial Intelligence and Jobs: Evidence from Online Vacancies",
-      "abstract": "We study the impact of artificial intelligence (AI) on labor markets using establishment-level data on the near universe of online vacancies in the United States from 2010 onward. There is rapid growth in AI-related vacancies over 2010–18 that is driven by establishments whose workers engage in tasks compatible with AI’s current capabilities. As these AI-exposed establishments adopt AI, they simultaneously reduce hiring in non-AI positions and change the skill requirements of remaining postings. While visible at the establishment level, the aggregate impacts of AI-labor substitution on employment and wage growth in more exposed occupations and industries is currently too small to be detectable.",
-      "year": 2022,
+      "authors": [
+        "Daron Acemoğlu",
+        "David Autor",
+        "Jonathon Hazell",
+        "Pascual Restrepo"
+      ],
       "venue": "Journal of Labor Economics",
-      "citation_count": 908,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 922,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://researchonline.lse.ac.uk/id/eprint/113325/1/AI_And_Jobs.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 10
     },
     {
-      "rank": 6,
       "doi": "10.1073/pnas.1900949116",
       "title": "Toward understanding the impact of artificial intelligence on labor",
-      "abstract": "Rapid advances in artificial intelligence (AI) and automation technologies have the potential to significantly disrupt labor markets. While AI and automation can augment the productivity of some workers, they can replace the work done by others and will likely transform almost all occupations at least to some degree. Rising automation is happening in a period of growing economic inequality, raising fears of mass technological unemployment and a renewed call for policy efforts to address the consequences of technological change. In this paper we discuss the barriers that inhibit scientists from measuring the effects of AI and automation on the future of work. These barriers include the lack of high-quality data about the nature of work (e.g., the dynamic requirements of occupations), lack of empirically informed models of key microlevel processes (e.g., skill substitution and human-machine complementarity), and insufficient understanding of how cognitive technologies interact with broader economic dynamics and institutional mechanisms (e.g., urban migration and international trade policy). Overcoming these barriers requires improvements in the longitudinal and spatial resolution of data, as well as refinements to data on workplace skills. These improvements will enable multidisciplinary research to quantitatively monitor and predict the complex evolution of work in tandem with technological progress. Finally, given the fundamental uncertainty in predicting technological change, we recommend developing a decision framework that focuses on resilience to unexpected scenarios in addition to general equilibrium behavior.",
-      "year": 2019,
+      "authors": [
+        "Morgan R. Frank",
+        "David Autor",
+        "James Bessen",
+        "Erik Brynjolfsson",
+        "Manuel Cebrián",
+        "David Deming",
+        "Maryann P. Feldman",
+        "Matthew Groh",
+        "José Lobo",
+        "Esteban Moro",
+        "Dashun Wang",
+        "Hyejin Youn",
+        "Iyad Rahwan"
+      ],
       "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 669,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 673,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.pnas.org/content/pnas/116/14/6531.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 11
     },
     {
-      "rank": 7,
-      "doi": "10.1145/3531146.3533088",
-      "title": "Taxonomy of Risks posed by Language Models",
-      "abstract": "Responsible innovation on large-scale Language Models (LMs) requires foresight into and in-depth understanding of the risks these models may pose. This paper develops a comprehensive taxonomy of ethical and social risks associated with LMs. We identify twenty-one risks, drawing on expertise and literature from computer science, linguistics, and the social sciences. We situate these risks in our taxonomy of six risk areas: I. Discrimination, Hate speech and Exclusion, II. Information Hazards, III. Misinformation Harms, IV. Malicious Uses, V. Human-Computer Interaction Harms, and VI. Environmental and Socioeconomic harms. For risks that have already been observed in LMs, the causal mechanism leading to harm, evidence of the risk, and approaches to risk mitigation are discussed. We further describe and analyse risks that have not yet been observed but are anticipated based on assessments of other language technologies, and situate these in the same taxonomy. We underscore that it is the responsibility of organizations to engage with the mitigations we discuss throughout the paper. We close by highlighting challenges and directions for further research on risk evaluation and mitigation with the goal of ensuring that language models are developed responsibly.",
+      "doi": "10.7189/jogh.08.020303",
+      "title": "Artificial intelligence, machine learning and health systems",
+      "authors": [
+        "Trishan Panch",
+        "Peter Szolovits",
+        "Rifat Atun"
+      ],
+      "venue": "Journal of Global Health",
+      "year": 2018,
+      "cited_by_count": 636,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.7189/jogh.08.020303",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1145/3636534.3649379",
+      "title": "AutoDroid: LLM-powered Task Automation in Android",
+      "authors": [
+        "Hao Wen"
+      ],
+      "venue": "PROCEEDINGS OF THE THIRTIETH INTERNATIONAL CONFERENCE ON MOBILE COMPUTING AND NETWORKING, ACM MOBICOM 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64eebe873fda6d7f067607d1",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.48550/arxiv.2309.15217",
+      "title": "Ragas: Automated Evaluation of Retrieval Augmented Generation",
+      "authors": [
+        "Shahul Es"
+      ],
+      "venue": "PROCEEDINGS OF THE 18TH CONFERENCE OF THE EUROPEAN CHAPTER OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS SYSTEM DEMONSTRATIONS",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6514e2043fda6d7f062dc8d3",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1109/icse48619.2023.00125",
+      "title": "Impact of Code Language Models on Automated Program Repair",
+      "authors": [
+        "Nan Jiang"
+      ],
+      "venue": "2023 IEEE/ACM 45TH INTERNATIONAL CONFERENCE ON SOFTWARE ENGINEERING, ICSE",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63e9aa5e90e50fcafd13360b",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.48550/arxiv.2304.14997",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability.",
+      "authors": [
+        "Arthur Conmy"
+      ],
+      "venue": "NeurIPS 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6456385bd68f896efacf2383",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.48550/arxiv.2305.03403",
+      "title": "Large Language Models for Automated Data Science: Introducing CAAFE for Context-Aware Automated Feature Engineering",
+      "authors": [
+        "Noah Hollmann"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6459ac58d68f896efa657f59",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1093/nar/gkad328",
+      "title": "Dbcan3: Automated Carbohydrate-Active Enzyme and Substrate Annotation.",
+      "authors": [
+        "Jinfang Zheng"
+      ],
+      "venue": "NUCLEIC ACIDS RESEARCH",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "647f1796d68f896efa17fb19",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.48550/arxiv.2201.12023",
+      "title": "Alpa: Automating Inter- and Intra-Operator Parallelism for Distributed Deep Learning",
+      "authors": [
+        "Lianmin Zheng"
+      ],
+      "venue": "PROCEEDINGS OF THE 16TH USENIX SYMPOSIUM ON OPERATING SYSTEMS DESIGN AND IMPLEMENTATION, OSDI 2022",
       "year": 2022,
-      "venue": "2022 ACM Conference on Fairness, Accountability, and Transparency",
-      "citation_count": 625,
-      "engines_found_in": [
-        "openalex"
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61f753205aee126c0f9c2174",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 19
     },
     {
-      "rank": 8,
+      "doi": "10.5465/amr.2018.0072",
+      "title": "ARTIFICIAL INTELLIGENCE AND MANAGEMENT: THE AUTOMATION-AUGMENTATION PARADOX",
+      "authors": [
+        "Sebastian Raisch"
+      ],
+      "venue": "ACADEMY OF MANAGEMENT REVIEW",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e7233e593d709897cfb5eb8",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.18653/v1/2021.acl-long.206",
+      "title": "Automated Concatenation of Embeddings for Structured Prediction",
+      "authors": [
+        "Xinyu Wang"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f85790c91e011ff3280967f",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.48550/arxiv.2106.07594",
+      "title": "Graph Contrastive Learning Automated",
+      "authors": [
+        "Yuning You"
+      ],
+      "venue": "INTERNATIONAL CONFERENCE ON MACHINE LEARNING, VOL 139",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60cae9e891e011b329374214",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.4324/9781003177616-13",
+      "title": "Human–Automation Interaction",
+      "authors": [
+        "Christopher D. Wickens"
+      ],
+      "venue": "Engineering Psychology and Human Performance",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac31ab5aee126c0f10158b",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1007/978-981-16-2233-5_11",
+      "title": "Automated Machine Learning",
+      "authors": [
+        "Chen Lei"
+      ],
+      "venue": "Cognitive Intelligence and Robotics Deep Learning and Practice with MindSpore",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65701992939a5f40828e5356",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1016/j.compind.2019.103162",
+      "title": "Robotic Process Automation: Contemporary Themes and Challenges",
+      "authors": [
+        "Rehan Syed"
+      ],
+      "venue": "COMPUTERS IN INDUSTRY",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e3fd986df1a9c0c41ecf373",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1073/pnas.1915768117",
+      "title": "Racial Disparities in Automated Speech Recognition.",
+      "authors": [
+        "Allison Koenecke"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e7b2d4793d709897c423476",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
       "doi": "10.1093/cjres/rsz022",
       "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
-      "abstract": "Abstract Artificial intelligence (AI) is set to influence every aspect of our lives, not least the way production is organised. AI, as a technology platform, can automate tasks previously performed by labour or create new tasks and activities in which humans can be productively employed. Recent technological change has been biased towards automation, with insufficient focus on creating new tasks where labour can be productively employed. The consequences of this choice have been stagnating labour demand, declining labour share in national income, rising inequality and lowering productivity growth. The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
-      "year": 2019,
+      "authors": [
+        "Daron Acemoğlu",
+        "Pascual Restrepo"
+      ],
       "venue": "Cambridge Journal of Regions Economy and Society",
-      "citation_count": 575,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 582,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/cjres/article-pdf/13/1/25/33213534/rsz022.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 27
     },
     {
-      "rank": 9,
-      "doi": "10.3386/w24421",
+      "doi": "10.3386/W24421",
+      "arxiv_id": "",
       "title": "Demographics and Automation",
-      "abstract": "We argue theoretically and document empirically that aging leads to greater (industrial) automation, and in particular, to more intensive use and development of robots. Using US data, we document that robots substitute for middle-aged workers (those between the ages of 36 and 55). We then show that demographic change-corresponding to an increasing ratio of older to middle-aged workers-is associated with greater adoption of robots and other automation technologies across countries and with more robotics-related activities across US commuting zones. We also provide evidence of more rapid development of automation technologies in countries undergoing greater demographic change. Our directed technological change model further predicts that the induced adoption of automation technology should be more pronounced in industries that rely more on middle-aged workers and those that present greater opportunities for automation. Both of these predictions receive support from country-industry variation in the adoption of robots. Our model also implies that the productivity implications of aging are ambiguous when technology responds to demographic change, but we should expect productivity to increase and labor share to decline relatively in industries that are most amenable to automation, and this is indeed the pattern we find in the data.",
-      "year": 2021,
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
       "venue": "The Review of Economic Studies",
-      "citation_count": 531,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 536,
+      "influential_cite_count": 30,
+      "reference_count": 68,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w24421",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 28
     },
     {
-      "rank": 10,
       "doi": "10.3982/ecta19815",
       "title": "Tasks, Automation, and the Rise in U.S. Wage Inequality",
-      "abstract": "<jats:p>We document that between 50% and 70% of changes in the U.S. wage structure over the last four decades are accounted for by relative wage declines of worker groups specialized in routine tasks in industries experiencing rapid automation. We develop a conceptual framework where tasks across industries are allocated to different types of labor and capital. Automation technologies expand the set of tasks performed by capital, displacing certain worker groups from jobs for which they have com",
-      "year": null,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "Econometrica",
-      "citation_count": 520,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 532,
+      "reference_count": 54,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>We document that between 50% and 70% of changes in the U.S. wage structure over the last four decades are accounted for by relative wage declines of worker groups specialized in routine tasks in industries experiencing rapid automation. We develop a conceptual framework where tasks across industries are allocated to different types of labor and capital. Automation technologies expand the set of tasks performed by capital, displacing certain worker groups from jobs for which they have com",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 29
     },
     {
-      "rank": 11,
       "doi": "10.1093/jeea/jvab012",
       "title": "The Adjustment of Labor Markets to Robots",
-      "abstract": "Abstract We use detailed administrative data to study the adjustment of local labor markets to industrial robots in Germany. Robot exposure, as predicted by a shift-share variable, is associated with displacement effects in manufacturing, but those are fully offset by new jobs in services. The incidence mostly falls on young workers just entering the labor force. Automation is related to more stable employment within firms for incumbents, and this is driven by workers taking over new tasks in their original plants. Several measures indicate that those new jobs are of higher quality than the previous ones. Young workers also adapt their educational choices, and substitute away from vocational training towards colleges and universities. Finally, industrial robots have benefited workers in occupations with complementary tasks, such as managers or technical scientists.",
-      "year": 2021,
+      "authors": [
+        "Wolfgang Dauth",
+        "Sebastian Findeisen",
+        "Jens Suedekum",
+        "Nicole Woessner"
+      ],
       "venue": "Journal of the European Economic Association",
-      "citation_count": 519,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 522,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://kops.uni-konstanz.de/server/api/core/bitstreams/1db5d40b-7c39-496f-b543-a8c3afe19f69/content",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 12,
-      "doi": "10.3386/w25682",
+      "doi": "10.3386/W25682",
+      "arxiv_id": "",
       "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
-      "abstract": "Artificial intelligence (AI) is set to influence every aspect of our lives, not least the way production is organised. AI, as a technology platform, can automate tasks previously performed by labour or create new tasks and activities in which humans can be productively employed. Recent technological change has been biased towards automation, with insufficient focus on creating new tasks where labour can be productively employed. The consequences of this choice have been stagnating labour demand, declining labour share in national income, rising inequality and lowering productivity growth. The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
-      "year": 2019,
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
       "venue": "Cambridge Journal of Regions, Economy and Society",
-      "citation_count": 509,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 514,
+      "influential_cite_count": 21,
+      "reference_count": 55,
+      "tldr": "The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
+      "is_oa": true,
+      "oa_url": "http://www.nber.org/papers/w25682.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "abstract": "The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
+      "rank": 31
     },
     {
-      "rank": 13,
-      "doi": "10.1257/aer.p20171101",
-      "title": "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation",
-      "abstract": "Several recent theories emphasize the negative effects of an aging population on economic growth, either because of the lower labor force participation and productivity of older workers or because aging will create an excess of savings over desired investment, leading to secular stagnation. We show that there is no such negative relationship in the data. If anything, countries experiencing more rapid aging have grown more in recent decades. We suggest that this counterintuitive finding might reflect the more rapid adoption of automation technologies in countries undergoing more pronounced demographic changes and provide evidence and theoretical underpinnings for this argument.",
-      "year": 2017,
-      "venue": "American Economic Review",
-      "citation_count": 492,
-      "engines_found_in": [
-        "openalex"
+      "doi": "10.3386/w23285",
+      "title": "Robots and Jobs: Evidence from US Labor Markets",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "venue": "",
+      "year": null,
+      "cited_by_count": 498,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
     },
     {
-      "rank": 14,
       "doi": "10.3386/w24196",
       "title": "Artificial Intelligence, Automation and Work",
-      "abstract": "We summarize a framework for the study of the implications of automation and AI on the demand for labor, wages, and employment. Our task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform. This displacement effect tends to reduce the demand for labor and wages. But it is counteracted by a productivity effect, resulting from the cost savings generated by automation, which increase the demand for labor in non-automated tasks. The productivity effect is complemented by additional capital accumulation and the deepening of automation (improvements of existing machinery), both of which further increase the demand for labor. These countervailing effects are incomplete. Even when they are strong, automation in-creases output per worker more than wages and reduce the share of labor in national income. The more powerful countervailing force against automation is the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to increase the labor share to counterbalance the impact of automation. Our framework also highlights the constraints and imperfections that slow down the adjustment of the economy and the labor market to automation and weaken the resulting productivity gains from this transformation: a mismatch between the skill requirements of new technologies, and the possibility that automation is being introduced at an excessive rate, possibly at the expense of other productivity-enhancing technologies.",
-      "year": null,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "",
-      "citation_count": 489,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 489,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report"
+      "rank": 33
     },
     {
-      "rank": 15,
+      "doi": "10.1177/1042258720934581",
+      "title": "Artificial Intelligence and Entrepreneurship: Implications for Venture Creation in the Fourth Industrial Revolution",
+      "authors": [
+        "Dominic Chalmers",
+        "Niall MacKenzie",
+        "Sara Carter"
+      ],
+      "venue": "Entrepreneurship Theory and Practice",
+      "year": 2020,
+      "cited_by_count": 481,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/1042258720934581",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 34
+    },
+    {
       "doi": "10.1093/restud/rdab031",
       "title": "Demographics and Automation",
-      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>We argue theoretically and document empirically that aging leads to greater (industrial) automation, because it creates a shortage of middle-aged workers specializing in manual production tasks. We show that demographic change is associated with greater adoption of robots and other automation technologies across countries and with more robotics-related activities across U.S. commuting zones. We also document more automation innovation in c",
-      "year": 2022,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "The Review of Economic Studies",
-      "citation_count": 457,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 465,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>We argue theoretically and document empirically that aging leads to greater (industrial) automation, because it creates a shortage of middle-aged workers specializing in manual production tasks. We show that demographic change is associated with greater adoption of robots and other automation technologies across countries and with more robotics-related activities across U.S. commuting zones. We also document more automation innovation in c",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 35
     },
     {
-      "rank": 16,
       "doi": "10.1016/j.respol.2019.03.010",
       "title": "Is this time different? How digitalization influences job creation and destruction",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Benjamin Balsmeier",
+        "Martin Woerter"
+      ],
       "venue": "Research Policy",
-      "citation_count": 455,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 457,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0048733319300733",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 36
     },
     {
-      "rank": 17,
-      "doi": "10.3386/w28920",
+      "doi": "10.3386/W28920",
+      "arxiv_id": "",
       "title": "Tasks, Automation, and the Rise in US Wage Inequality",
-      "abstract": "We document that between 50% and 70% of changes in the US wage structure over the last four decades are accounted for by the relative wage declines of worker groups specialized in routine tasks in industries experiencing rapid automation. We develop a conceptual framework where tasks across a number of industries are allocated to different types of labor and capital. Automation technologies expand the set of tasks performed by capital, displacing certain worker groups from employment opportunities for which they have comparative advantage. This framework yields a simple equation linking wage changes of a demographic group to the task displacement it experiences. We report robust evidence in favor of this relationship and show that regression models incorporating task displacement explain much of the changes in education differentials between 1980 and 2016. Our task displacement variable captures the effects of automation technologies (and to a lesser degree offshoring) rather than those of rising market power, markups or deunionization, which themselves do not appear to play a major role in US wage inequality. We also propose a methodology for evaluating the full general equilibrium effects of task displacement (which include induced changes in industry composition and ripple effects as tasks are reallocated across different groups). Our quantitative evaluation based on this methodology explains how major changes in wage inequality can go hand-in-hand with modest productivity gains.",
-      "year": 2021,
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
       "venue": "Social Science Research Network",
-      "citation_count": 424,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 434,
+      "influential_cite_count": 12,
+      "reference_count": 62,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w28920",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 37
     },
     {
-      "rank": 18,
+      "doi": "10.1257/aer.p20171101",
+      "title": "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "American Economic Review",
+      "year": 2017,
+      "cited_by_count": 425,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> Several recent theories emphasize the negative effects of an aging population on economic growth, either because of the lower labor force participation and productivity of older workers or because aging will create an excess of savings over desired investment, leading to secular stagnation. We show that there is no such negative relationship in the data. If anything, countries experiencing more rapid aging have grown more in recent decades. We suggest that this counterintuitive finding ",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.p20171101",
+      "rank": 38
+    },
+    {
       "doi": "10.3386/w24871",
+      "arxiv_id": "",
       "title": "Is Automation Labor-Displacing? Productivity Growth, Employment, and the Labor Share",
-      "abstract": "Many technological innovations replace workers with machines, but this capital-labor substitution need not reduce aggregate labor demand because it simultaneously induces four countervailing responses: own-industry output effects; cross-industry input-output effects; between-industry shifts; and final demand effects. We quantify these channels using four decades of harmonized cross-country and industry data, where we measure automation as industry-level movements in total factor productivity (TFP) that are common across countries. We find that automation displaces employment and reduces labor's share of value-added in the industries in which it originates (a direct effect). In the case of employment, these own-industry losses are reversed by indirect gains in customer industries and induced increases in aggregate demand. By contrast, own-industry labor share losses are not recouped elsewhere. Our framework can account for a substantial fraction of the reallocation of employment across industries and the aggregate fall in the labor share over the last three decades. It does not, however, explain",
-      "year": 2018,
+      "authors": [
+        "David H. Autor",
+        "A. Salomons"
+      ],
       "venue": "",
-      "citation_count": 394,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 397,
+      "influential_cite_count": 24,
+      "reference_count": 74,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w24871",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 39
     },
     {
-      "rank": 19,
       "doi": "10.1353/eca.2018.0000",
       "title": "Is Automation Labor Share-Displacing? Productivity Growth, Employment, and the Labor Share",
-      "abstract": "Many technological innovations replace workers with machines, but this capital-labor substitution need not reduce aggregate labor demand because it simultaneously induces four countervailing responses: own-industry output effects; cross-industry input-output effects; between-industry shifts; and final demand effects. We quantify these channels using four decades of harmonized cross-country and industry data, where we measure automation as industry-level movements in total factor productivity (TFP) that are common across countries. We find that automation displaces employment and reduces labor's share of value-added in the industries in which it originates (a direct effect). In the case of employment, these own-industry losses are reversed by indirect gains in customer industries and induced increases in aggregate demand. By contrast, own-industry labor share losses are not recouped elsewhere. Our framework can account for a substantial fraction of the reallocation of employment across industries and the aggregate fall in the labor share over the last three decades. It does not, however, explain why the labor share fell more rapidly during the 2000s",
-      "year": 2018,
+      "authors": [
+        "David Autor",
+        "David Autor",
+        "Anna Salomons",
+        "Anna Salomons"
+      ],
       "venue": "Brookings Papers on Economic Activity",
-      "citation_count": 365,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 365,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://muse.jhu.edu/pub/11/article/707704",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 40
     },
     {
-      "rank": 20,
-      "doi": "10.2139/ssrn.2781320",
+      "doi": "10.2139/SSRN.2781320",
+      "arxiv_id": "",
       "title": "The Race between Machine and Man: Implications of Technology for Growth, Factor Shares and Employment",
-      "abstract": "",
-      "year": 2017,
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
       "venue": "",
-      "citation_count": 316,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 315,
+      "influential_cite_count": 42,
+      "reference_count": 47,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w22252",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 41
     },
     {
-      "rank": 21,
       "doi": "10.1093/epolic/eiaa001",
       "title": "Automation and jobs: when technology boosts employment*",
-      "abstract": "SUMMARY Will new technologies cause industries to shed jobs, requiring novel policies to address mass unemployment? Sometimes productivity-enhancing technology increases industry employment instead. In manufacturing, jobs grew along with productivity for a century or more; only later did productivity gains bring declining employment. What changed? The elasticity of demand. Using data over two centuries for US textile, steel and auto industries, this paper shows that automation initially spurred job growth because demand was highly elastic. But demand later became satiated, leading to job losses. A simple model explains why this pattern might be common, suggesting that today’s technologies may cause some industries to decline and others to grow. Automation might not cause mass unemployment, but it may well require workers to make disruptive transitions to new industries, requiring new skills and occupations.",
-      "year": 2019,
+      "authors": [
+        "James Bessen"
+      ],
       "venue": "Economic Policy",
-      "citation_count": 301,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 305,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.bu.edu/context/faculty_scholarship/article/1809/filename/0/type/additional/viewcontent/Bessen_Automation_and_Jobs_WP.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 42
     },
     {
-      "rank": 22,
+      "doi": "10.1016/j.infoecopol.2019.05.001",
+      "title": "Exploring the impact of artificial Intelligence: Prediction versus judgment",
+      "authors": [
+        "Ajay Agrawal",
+        "Joshua S. Gans",
+        "Avi Goldfarb"
+      ],
+      "venue": "Information Economics and Policy",
+      "year": 2019,
+      "cited_by_count": 288,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://utoronto.scholaris.ca/bitstreams/ac1dad77-3301-4fa7-9305-098cec02d708/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 43
+    },
+    {
       "doi": "10.1086/697242",
       "title": "Low-Skill and High-Skill Automation",
-      "abstract": "We present a task-based model in which high- and low-skill workers compete against machines in the production of tasks. Low-skill (high-skill) automation corresponds to tasks performed by low-skill (high-skill) labor being taken over by capital. Automation displaces the type of labor it directly affects, depressing its wage. Through ripple effects, automation also affects the real wage of other workers. Counteracting these forces, automation creates a positive productivity effect, pushing up the price of all factors. Because capital adjusts to keep the interest rate constant, the productivity effect dominates in the long run. Finally, low-skill (high-skill) automation increases (reduces) wage inequality.",
-      "year": 2018,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "Journal of Human Capital",
-      "citation_count": 271,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 272,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref",
         "openalex",
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "is_oa": true,
+      "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/697242",
+      "influential_cite_count": 29,
+      "rank": 44
     },
     {
-      "rank": 23,
       "doi": "10.7208/chicago/9780226613475.003.0008",
       "title": "Artificial Intelligence, Automation, and Work",
-      "abstract": "We summarize a framework for the study of the implications of automation and AI on the demand for labor, wages, and employment.Our task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform.This displacement effect tends to reduce the demand for labor and wages.But it is counteracted by a productivity effect, resulting from the cost savings generated by automation, which increase the demand for labor in non-automated tasks.The productivity effect is complemented by additional capital accumulation and the deepening of automation (improvements of existing machinery), both of which further increase the demand for labor.These countervailing effects are incomplete.Even when they are strong, automation increases output per worker more than wages and reduce the share of labor in national income.The more powerful countervailing force against automation is the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to increase the labor share to counterbalance the impact of automation.Our framework also highlights the constraints and imperfections that slow down the adjustment of the economy and the labor market to automation and weaken the resulting productivity gains from this transformation: a mismatch between the skill requirements of new technologies, and the possibility that automation is being introduced at an excessive rate, possibly at the expense of other productivity-enhancing technologies.",
-      "year": 2019,
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
       "venue": "The Economics of Artificial Intelligence",
-      "citation_count": 253,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 256,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 45
     },
     {
-      "rank": 24,
       "doi": "10.1257/mac.20160164",
       "title": "The Rise of the Machines: Automation, Horizontal Innovation, and Income Inequality",
-      "abstract": "We build an endogenous growth model with automation (the replacement of low-skill workers with machines) and horizontal innovation (the creation of new products). Over time, the share of automation innovations endogenously increases through an increase in low-skill wages, leading to an increase in the skill premium and a decline in the labor share. We calibrate the model to the US economy and show that it quantitatively replicates the paths of the skill premium, the labor share, and labor productivity. Our model offers a new perspective on recent trends in the income distribution by showing that they can be explained endogenously. (JEL D31, E25, J24, J31, O33, O41)",
-      "year": 2021,
+      "authors": [
+        "David Hémous",
+        "Morten Olsen"
+      ],
       "venue": "American Economic Journal Macroeconomics",
-      "citation_count": 222,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 223,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/mac.20160164",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 46
     },
     {
-      "rank": 25,
+      "doi": "10.1016/j.labeco.2020.101885",
+      "title": "The rise of robots and the fall of routine jobs",
+      "authors": [
+        "Gaaitzen J. de Vries",
+        "Elisabetta Gentile",
+        "Sébastien Miroudot",
+        "Konstantin M. Wacker"
+      ],
+      "venue": "Labour Economics",
+      "year": 2020,
+      "cited_by_count": 208,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.labeco.2020.101885",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
       "doi": "10.1108/jaar-10-2020-0201",
       "title": "A profession in transition: actors, tasks and roles in AI-based accounting",
-      "abstract": "Purpose This article ties in with current debates on the digital transformation of society and the consequent work changes. Using an artificial intelligence (AI)-based accounting context, the focus of this paper is on actors, roles and tasks and related skills on an individual level. The authors look at the effect of AI-based “smart” technology on the workforce in the broader accounting profession taking an intrafirm perspective, yet acknowledging that the digital transformation encompasses a much larger field in the financial sector. Design/methodology/approach The authors conduct a Delphi study to identify the new roles and tasks in future accounting. In addition, the authors use expert workshops to clarify the related tasks and skills and determine whether either humans or AI-based technologies perform the roles or collaborate in professional accounting occupations. Findings The results show that tasks and skills for existing professional occupations in the broader acounting context will be subject to major changes in the next 10 years due to (AI based) digital technologies, while “core” roles and tasks will continue to exist in the future, some will not be performed by humans but by AI-based technology. For other “new” roles, humans will need to make informed use of digital technologies and, to some extent, collaborate with AI-based technology. Research limitations/implications The authors look at the effect of AI-based “smart” technology on the workforce in the broader accounting profession, taking an intrafirm perspective. Practical implications This article ties in with current debates on the digital transformation of society and the consequent work changes. Using an AI-based accounting context, the focus of this paper is on the new and adapted roles and tasks. Originality/value The comprehensive analysis based on the Delphi study and expert workshops provide ample innovative ground for future research on the impact of AI on organisations and society.",
-      "year": 2021,
+      "authors": [
+        "Susanne Leitner-Hanetseder",
+        "Othmar M. Lehner",
+        "Christoph Eisl",
+        "Carina Forstenlechner"
+      ],
       "venue": "Journal of Applied Accounting Research",
-      "citation_count": 201,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 202,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JAAR-10-2020-0201/full/pdf?title=a-profession-in-transition-actors-tasks-and-roles-in-ai-based-accounting",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 48
     },
     {
-      "rank": 26,
+      "doi": "10.3386/w20004",
+      "title": "Democracy Does Cause Growth",
+      "authors": [
+        "Acemoglu, Daron",
+        "Naidu, Suresh",
+        "Restrepo, Pascual",
+        "Robinson, James"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 196,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1093/epolic/eiae042",
+      "title": "The simple macroeconomics of AI",
+      "authors": [
+        "Daron Acemoğlu"
+      ],
+      "venue": "Economic Policy",
+      "year": 2024,
+      "cited_by_count": 191,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 50
+    },
+    {
       "doi": "10.3390/su10051661",
       "title": "The Impact of Automation on Employment: Just the Usual Structural Change?",
-      "abstract": "We study the projected impact of automation on employment in the forthcoming decade, both at the macro-level and in actual (types of) sectors. Hereto, we unite an evolutionary economic model of multisectoral structural change with labor economic theory. We thus get a comprehensive framework of how displacement of labor in sectors of application is compensated by intra- and intersectoral countervailing effects and notably mopped up by newly created, labor-intensive sectors. We use several reputable datasets with expert projections on employment in occupations affected by automation (and notably by the introduction of robotics and AI) to pinpoint which and how sectors and occupations face employment shifts. This reveals how potential job loss due to automation in “applying” sectors is counterbalanced by job creation in “making” sectors as well in complementary and quaternary, spillover sectors. Finally, we study several macro-level scenarios on employment and find that mankind is facing “the usual structural change” rather than the “end of work”. We provide recommendations on policy instruments that enhance the dynamic efficiency of structural change.",
-      "year": 2018,
+      "authors": [
+        "Ben Vermeulen",
+        "Jan Kesselhut",
+        "Andreas Pyka",
+        "Pier Paolo Saviotti"
+      ],
       "venue": "Sustainability",
-      "citation_count": 172,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 172,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/10/5/1661/pdf?version=1526901348",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 51
     },
     {
-      "rank": 27,
+      "doi": "10.3386/w16082",
+      "title": "Skills, Tasks and Technologies: Implications for Employment and Earnings",
+      "authors": [
+        "Acemoglu, Daron",
+        "Autor, David"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 160,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 52
+    },
+    {
       "doi": "10.1016/j.techfore.2023.122448",
       "title": "Automation technologies and their impact on employment: A review, synthesis and future research agenda",
-      "abstract": "This paper aims to review prior studies investigating how automation technologies affect employment. Our structured systematic review resulted in 102 publications recovered from Web of Science, Scopus and hand searching. The literature investigating how automation technologies affect employment is extremely complex and detailed, given that the impact of automation is evaluated at different levels of analysis (i.e., global, international, continental, country, regional, labour market, industry, firm, occupational, worker, and work activities) by adopting alternative methods (i.e., estimating the probability of automation or the net impact of employment) and, for some levels of analysis, the impact of each specific type of automation technology is evaluated. Moreover, the results are often inconsistent and inconclusive since only few clear results emerge and the impact of automation technologies is unclear for many levels of analysis. Research gaps and future research agenda are identified and discussed based on previous evidence.",
-      "year": 2023,
+      "authors": [
+        "Emilia Filippi",
+        "Mariasole Bannò",
+        "Sandro Trento"
+      ],
       "venue": "Technological Forecasting and Social Change",
-      "citation_count": 157,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 159,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.techfore.2023.122448",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 53
     },
     {
-      "rank": 28,
+      "doi": "10.3386/w22252",
+      "title": "The Race Between Machine and Man: Implications of Technology for Growth, Factor Shares and Employment",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 158,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 54
+    },
+    {
       "doi": "10.1146/annurev-polisci-051120-104535",
       "title": "Automation, Digitalization, and Artificial Intelligence in the Workplace: Implications for Political Behavior",
-      "abstract": "New technologies have been a key driver of labor market change in recent decades. There are renewed concerns that technological developments in areas such as robotics and artificial intelligence will destroy jobs and create political upheaval. This article reviews the vibrant debate about the economic consequences of recent technological change and then discusses research about how digitalization may affect political participation, vote choice, and policy preferences. It is increasingly well established that routine workers have been the main losers of recent technological change and disproportionately support populist parties. However, at the same time, digitalization also creates a large group of economic winners who support the political status quo. The mechanisms connecting technology-related workplace risks to political behavior and policy demands are less well understood. Voters may fail to fully comprehend the relative importance of different causes of structural economic change and misattribute blame to other factors. We conclude with a list of pressing research questions.",
-      "year": 2022,
+      "authors": [
+        "Aina Gallego",
+        "Thomas Kurer"
+      ],
       "venue": "Annual Review of Political Science",
-      "citation_count": 149,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 149,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-polisci-051120-104535",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 55
     },
     {
-      "rank": 29,
+      "doi": "10.1016/j.jbusres.2020.03.041",
+      "title": "The complexity of the intangible digital economy: an agent-based model",
+      "authors": [
+        "Filippo Bertani",
+        "Linda Ponta",
+        "Marco Raberto",
+        "Andrea Teglio",
+        "Silvano Cincotti"
+      ],
+      "venue": "Journal of Business Research",
+      "year": 2020,
+      "cited_by_count": 140,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0148296320301946",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 56
+    },
+    {
       "doi": "10.1371/journal.pone.0242929",
       "title": "Automation, workers’ skills and job satisfaction",
-      "abstract": "When industrial robots are adopted by firms in a local labor market, some workers are displaced and become unemployed. Other workers that are not directly affected by automation may however fear that these new technologies might replace their working tasks in the future. This fear of a possible future replacement is important because it negatively affects workers' job satisfaction at present. This paper studies the extent to which automation affects workers' job satisfaction, and whether this effect differs for high- versus low-skilled workers. The empirical analysis uses microdata for several thousand workers in Norway from the Working Life Barometer survey for the period 2016-2019, combined with information on the introduction of industrial robots in Norway from the International Federation of Robotics. Our identification strategy exploits variation in the pace of introduction of industrial robots in Norwegian regions and industries since 2007 to instrument workers' fear of replacement. The results indicate that automation in industrial firms in recent years have induced 40% of the workers that are currently in employment to fear that their work might be replaced by a smart machine in the future. Such fear of future replacement does negatively affect workers' job satisfaction at present. This negative effect is driven by low-skilled workers, which are those carrying out routine-based tasks, and who are therefore more exposed to the risks of automation.",
-      "year": 2020,
+      "authors": [
+        "Henrik Schwabe",
+        "Fulvio Castellacci"
+      ],
       "venue": "PLoS ONE",
-      "citation_count": 136,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 136,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0242929&type=printable",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 57
     },
     {
-      "rank": 30,
-      "doi": "10.2139/ssrn.2935003",
-      "title": "Automation and Jobs: When Technology Boosts Employment",
-      "abstract": "Will new technologies cause industries to shed jobs, requiring novel policies to address mass unemployment? Sometimes productivity-enhancing technology increases industry employment instead. In manufacturing, jobs grew along with productivity for a century or more; only later did productivity gains bring declining employment. What changed? The elasticity of demand. Using data over two centuries for US textile, steel, and auto industries, this paper shows that automation initially spurred job growth because demand was highly elastic. But demand later became satiated, leading to job losses. A simple model explains why this pattern might be common, suggesting that today’s technologies may cause some industries to decline and others to grow. Automation might not cause mass unemployment, but it may well require workers to make disruptive transitions to new industries, requiring new skills and occupations.",
+      "doi": "10.1257/pandp.20181020",
+      "title": "Modeling Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "AEA Papers and Proceedings",
       "year": 2018,
-      "venue": "SSRN Electronic Journal",
-      "citation_count": 131,
-      "engines_found_in": [
+      "cited_by_count": 133,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> Modeling automation as factor-augmenting technological change has unappealing implications. Instead, modeling it as the process of machines replacing tasks previously performed by labor is both descriptively realistic and leads to distinct and plausible predictions. In contrast to factor-augmenting technological change, the automation of tasks always reduces the labor share and can reduce the equilibrium wage (for realistic parameter values). This approach to automation underscores the ",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://dspace.mit.edu/bitstream/1721.1/125740/2/pandp.20181020.pdf",
+      "tldr": "It is argued that factor-augmenting technologies have a limited scope to reduce the demand for labor and relate the impact of technology on the labor share to the elasticity Modeling Automation misses a distinctive feature of automation.",
+      "influential_cite_count": 21,
+      "rank": 58
+    },
+    {
+      "doi": "10.1111/ntwe.12240",
+      "title": "Automation and the future of work: A social shaping of technology approach",
+      "authors": [
+        "Debra Howcroft",
+        "Phil Taylor"
+      ],
+      "venue": "New Technology Work and Employment",
+      "year": 2022,
+      "cited_by_count": 126,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ntwe.12240",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
+      "rank": 59
+    },
+    {
+      "doi": "10.1177/00187208211009995",
+      "title": "Trusting Automation: Designing for Responsivity and Resilience.",
+      "authors": [
+        "Erin K. Chiou"
+      ],
+      "venue": "HUMAN FACTORS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "608a873ce4510cd7c8633568",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1162/tacl_a_00454",
+      "title": "A Survey on Automated Fact-Checking",
+      "authors": [
+        "Zhijiang Guo"
+      ],
+      "venue": "TRANSACTIONS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "612857d75244ab9dcb5c77a1",
+      "matched_phrase": "automation",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.1177/14648849221122647",
+      "title": "Where exactly between utopia and dystopia? A framing analysis of AI and automation in US newspapers",
+      "authors": [
+        "Hannes Cools",
+        "Baldwin Van Gorp",
+        "Michaël Opgenhaffen"
+      ],
+      "venue": "Journalism",
+      "year": 2022,
+      "cited_by_count": 84,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://lirias.kuleuven.be/retrieve/3514c555-269d-435e-89b0-5bb85e0faecc",
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.3386/w24421",
+      "title": "Demographics and Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 83,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.3386/w28257",
+      "title": "AI and Jobs: Evidence from Online Vacancies",
+      "authors": [
+        "Acemoglu, Daron",
+        "Autor, David",
+        "Hazell, Jonathon",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 75,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.2139/ssrn.3670356",
+      "arxiv_id": "",
+      "title": "Robots and industrial labor: Evidence from Japan",
+      "authors": [
+        "R. Dekle"
+      ],
+      "venue": "Journal of the Japanese and international economies (Print)",
+      "year": 2020,
+      "cited_by_count": 68,
+      "influential_cite_count": 2,
+      "reference_count": 11,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.3386/w25682",
+      "title": "The Wrong Kind of AI? Artificial Intelligence and the Future of Labor Demand",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 67,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.5267/j.ijdns.2022.12.010",
+      "title": "Determinants of artificial intelligence adoption in SMEs: The mediating role of accounting automation",
+      "authors": [
+        "Awni Rawashdeh",
+        "Mashael Bakhit",
+        "Layla Abaalkhail"
+      ],
+      "venue": "International Journal of Data and Network Science",
+      "year": 2022,
+      "cited_by_count": 66,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.5267/j.ijdns.2022.12.010",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.1257/pandp.20201063",
+      "title": "Unpacking Skill Bias: Automation and New Tasks",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "AEA Papers and Proceedings",
+      "year": 2020,
+      "cited_by_count": 62,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> We extend the canonical model of skill-biased technical change by modeling the allocation of tasks to factors and allowing for automation and the creation of new tasks. In our model, factor prices depend on the set of tasks they perform. Automation can reduce real wages and generate sizable changes in inequality associated with small productivity gains. New tasks can increase or reduce inequality depending on whether they are performed by skilled or unskilled workers. Industry-level dat",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "http://www.nber.org/papers/w26681.pdf",
+      "rank": 68
+    },
+    {
+      "doi": "10.1007/s40821-020-00179-1",
+      "title": "Back to the past: the historical roots of labor-saving automation",
+      "authors": [
+        "Jacopo Staccioli",
+        "Maria Enrica Virgillito"
+      ],
+      "venue": "Eurasian Economic Review",
+      "year": 2021,
+      "cited_by_count": 62,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s40821-020-00179-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.1017/psrm.2021.43",
+      "title": "Misattributed blame? Attitudes toward globalization in the age of automation",
+      "authors": [
+        "Nicole Wu"
+      ],
+      "venue": "Political Science Research and Methods",
+      "year": 2021,
+      "cited_by_count": 60,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/29B08295CEAC4A4A89991E064D0284FF/S2049847021000431a.pdf/div-class-title-misattributed-blame-attitudes-toward-globalization-in-the-age-of-automation-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1017/s0047279421000519",
+      "title": "Social Investment, Redistribution or Basic Income? Exploring the Association Between Automation Risk and Welfare State Attitudes in Europe",
+      "authors": [
+        "Marius R. Busemeyer",
+        "Alexander H. J. Sahm"
+      ],
+      "venue": "Journal of Social Policy",
+      "year": 2021,
+      "cited_by_count": 60,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D2E2CBB340E131D9871C5981AC1365A0/S0047279421000519a.pdf/div-class-title-social-investment-redistribution-or-basic-income-exploring-the-association-between-automation-risk-and-welfare-state-attitudes-in-europe-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.3386/w32487",
+      "arxiv_id": "",
+      "title": "The Simple Macroeconomics of AI",
+      "authors": [
+        "D. Acemoğlu"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2024,
+      "cited_by_count": 57,
+      "influential_cite_count": 1,
+      "reference_count": 45,
+      "tldr": "It is found that AI advances are unlikely to increase inequality as much as previous automation technologies because their impact is more equally distributed across demographic groups, but there is also no evidence that AI will reduce labor income inequality, and AI is predicted to widen the gap between capital and labor income.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w32487",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is found that AI advances are unlikely to increase inequality as much as previous automation technologies because their impact is more equally distributed across demographic groups, but there is also no evidence that AI will reduce labor income inequality, and AI is predicted to widen the gap between capital and labor income.",
+      "rank": 72
+    },
+    {
+      "doi": "10.3386/w19746",
+      "title": "Democracy, Redistribution and Inequality",
+      "authors": [
+        "Acemoglu, Daron",
+        "Naidu, Suresh",
+        "Restrepo, Pascual",
+        "Robinson, James"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 55,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.1108/ejtd-03-2023-0045",
+      "title": "Automation, artificial intelligence and future skills needs: an Irish perspective",
+      "authors": [
+        "Raimunda Bukartaite",
+        "Daire Hooper"
+      ],
+      "venue": "European journal of training and development",
+      "year": 2023,
+      "cited_by_count": 55,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/EJTD-03-2023-0045/full/pdf?title=automation-artificial-intelligence-and-future-skills-needs-an-irish-perspective",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.3386/w28920",
+      "title": "Tasks, Automation, and the Rise in US Wage Inequality",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 52,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.3386/w26738",
+      "title": "Competing with Robots: Firm-Level Evidence from France",
+      "authors": [
+        "Acemoglu, Daron",
+        "LeLarge, Claire",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 51,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1098/rsif.2020.0898",
+      "title": "Occupational mobility and automation: a data-driven network model",
+      "authors": [
+        "R. Maria del Rio-Chanona",
+        "Penny Mealy",
+        "Mariano Beguerisse-Díaz",
+        "François Lafond",
+        "J. Doyne Farmer"
+      ],
+      "venue": "Journal of The Royal Society Interface",
+      "year": 2021,
+      "cited_by_count": 51,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1098/rsif.2020.0898",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.1016/j.jebo.2022.05.025",
+      "title": "Automation, Job Polarisation, and Structural Change",
+      "authors": [
+        "Luca Eduardo Fierro",
+        "Alessandro Caiani",
+        "Alberto Russo"
+      ],
+      "venue": "Journal of Economic Behavior & Organization",
+      "year": 2022,
+      "cited_by_count": 49,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hdl.handle.net/11566/315910",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.1016/j.labeco.2022.102146",
+      "title": "Explaining the Labor Share: Automation Vs Labor Market Institutions",
+      "authors": [
+        "Luís Guimarães",
+        "Pedro Mazeda Gil"
+      ],
+      "venue": "Labour Economics",
+      "year": 2022,
+      "cited_by_count": 46,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.labeco.2022.102146",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.3386/w25684",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 45,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.3386/w23077",
+      "title": "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 44,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.3386/w30659",
+      "title": "Automation and the Workforce: A Firm-Level View from the 2019 Annual Business Survey",
+      "authors": [
+        "Acemoglu, Daron",
+        "Anderson, Gary",
+        "Beede, David",
+        "Buffington, Cathy",
+        "Childress, Eric",
+        "Dinlersoz, Emin",
+        "Foster, Lucia",
+        "Goldschlag, Nathan",
+        "Haltiwanger, John",
+        "Kroff, Zachary",
+        "Restrepo, Pascual",
+        "Zolas, Nikolas"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 44,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.3386/w27052",
+      "title": "Does the US Tax Code Favor Automation?",
+      "authors": [
+        "Acemoglu, Daron",
+        "Manera, Andrea",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 42,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.2139/ssrn.4645082",
+      "arxiv_id": "",
+      "title": "Automation: Theory, Evidence, and Outlook",
+      "authors": [
+        "P. Restrepo"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2023,
+      "cited_by_count": 42,
+      "influential_cite_count": 2,
+      "reference_count": 66,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.24148/wp2020-19",
+      "title": "Can Pandemic-Induced Job Uncertainty Stimulate Automation?",
+      "authors": [
+        "Federal Reserve Bank of San Francisco",
+        "Sylvain Leduc",
+        "Zheng Liu",
+        "Federal Reserve Bank of San Francisco"
+      ],
+      "venue": "Federal Reserve Bank of San Francisco, Working Paper Series",
+      "year": 2020,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.frbsf.org/economic-research/files/wp2020-19.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.4236/ojbm.2021.95132",
+      "title": "AI, Automation and New Jobs",
+      "authors": [
+        "Jaures Badet"
+      ],
+      "venue": "Open Journal of Business and Management",
+      "year": 2021,
+      "cited_by_count": 37,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://www.scirp.org/journal/PaperDownload.aspx?paperID=112070",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.3389/frai.2022.867832",
+      "title": "Inclusive Growth in the Era of Automation and AI: How Can Taxation Help?",
+      "authors": [
+        "Rossana Merola"
+      ],
+      "venue": "Frontiers in Artificial Intelligence",
+      "year": 2022,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.867832/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.5089/9781498303743.001",
+      "title": "Is Technology Widening the Gender Gap? Automation and the Future of Female Employment",
+      "authors": [
+        "Mariya Brussevich",
+        "Era Dabla‐Norris",
+        "Salma Khalid"
+      ],
+      "venue": "IMF Working Paper",
+      "year": 2019,
+      "cited_by_count": 35,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/doc/IMF001/25869-9781498303743/25869-9781498303743/Other_formats/Source_PDF/25869-9781498313988.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1093/oep/gpae006",
+      "title": "Automation and taxation",
+      "authors": [
+        "Kerstin Hötte",
+        "Angelos Theodorakopoulos",
+        "Pantelis Koutroumpis"
+      ],
+      "venue": "Oxford Economic Papers",
+      "year": 2024,
+      "cited_by_count": 33,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/oep/advance-article-pdf/doi/10.1093/oep/gpae006/56991483/gpae006.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1353/eca.2020.0003",
+      "title": "Does the US Tax Code Favor Automation?",
+      "authors": [
+        "Acemoglu, Daron",
+        "Manera, Andrea",
+        "Restrepo, Pascual"
+      ],
+      "venue": "Brookings Papers on Economic Activity",
+      "year": 2020,
+      "cited_by_count": 32,
+      "reference_count": 93,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w27052",
+      "influential_cite_count": 9,
+      "rank": 90
+    },
+    {
+      "doi": "10.1007/s11127-020-00805-6",
+      "title": "Daron Acemoglu and James A. Robinson: the Narrow Corridor: States, Societies, and the Fate of Liberty",
+      "authors": [
+        "Randall G. Holcombe"
+      ],
+      "venue": "Uluslararası İlişkiler Dergisi",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ecbc7669fced0a24b502f80",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "",
+      "title": "El Giro Teológico. Nuevos Caminos De La Filosofía. Carlos Arboleda Mora & Carlos Enrique Restrepo.",
+      "authors": [
+        "Carlos  Arboleda Mora"
+      ],
+      "venue": "Escritos",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84352dabfae2eee9a1800",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.22456/2176-5456.71287",
+      "title": "COLÔNIAS DE POVOAMENTO VERSUS COLÔNIAS DE EXPLORAÇÃO: DE HEEREN A ACEMOGLU",
+      "authors": [
+        "Leonardo Monasterio"
+      ],
+      "venue": "Análise Econômica",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d85427dabfae2eee1b2d88",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "",
+      "title": "Ángela Restrepo Moreno y el hongo misterioso",
+      "authors": [
+        "Lisbeth Fog Corradine"
+      ],
+      "venue": "Boletín Cultural y Bibliográfico",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d9ed7b747c8f7664600655e",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "",
+      "title": "Instancias Inacabadas: Escritura Y Migración En Hot Sur De Laura Restrepo",
+      "authors": [
+        "Ángela González Echeverry"
+      ],
+      "venue": "Chasqui",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65ac4a4d939a5f40827281a2",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "",
+      "title": "Ética, Sociología Y Política. Diálogos Y Encuentros Entre Orlando Fals Borda Y Camilo Torres Restrepo.",
+      "authors": [
+        "Nicolás Armando Herrera Farfán"
+      ],
+      "venue": "Revista Kavilando",
+      "year": 2018,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d0b005a8607575390fbeeaf",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "",
+      "title": "Una retrospectiva visual de Pastor Restrepo Maya",
+      "authors": [
+        "Santiago Rueda Fajardo"
+      ],
+      "venue": "Boletín Cultural y Bibliográfico",
+      "year": 2017,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e5e184893d709897cdee764",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1111/meca.12141",
+      "title": "The Neoclassical Approach to Induced Technical Change: from Hicks to Acemoglu",
+      "authors": [
+        "Florian Brugger"
+      ],
+      "venue": "Metroeconomica",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c7567def56def97981b5a77",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.25100/lamanzanadeladiscordia.v1i1.1435",
+      "title": "Laura Restrepo, La Creación De Un Mundo Novelístico",
+      "authors": [
+        "Carmiña Navia Velasco"
+      ],
+      "venue": "La Manzana de la Discordia",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d85d82dabfae2eee61f02d",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.3386/W28579",
+      "arxiv_id": "",
+      "title": "Not a Typical Firm: The Joint Dynamics of Firms, Labor Shares, and Capital–Labor Substitution",
+      "authors": [
+        "Joachim Hubmer",
+        "P. Restrepo"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2021,
+      "cited_by_count": 29,
+      "influential_cite_count": 0,
+      "reference_count": 57,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w28579",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1016/j.jeoa.2023.100476",
+      "title": "Automation and aging: The impact on older workers in the workforce",
+      "authors": [
+        "Rosa Aísa",
+        "Josefina Cabeza",
+        "Jorge Martı́n"
+      ],
+      "venue": "The Journal of the Economics of Ageing",
+      "year": 2023,
+      "cited_by_count": 28,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S2212828X23000361",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.2139/ssrn.3098384",
+      "title": "Artificial Intelligence, Automation and Work",
+      "authors": [
+        "Acemoglu, Daron mname",
+        "Restrepo, Pascual mname"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 27,
+      "reference_count": 26,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1093/cjres/rsaa003",
+      "title": "No automation please, we’re British: technology and the prospects for work",
+      "authors": [
+        "David Spencer",
+        "Gary Slater"
+      ],
+      "venue": "Cambridge Journal of Regions Economy and Society",
+      "year": 2020,
+      "cited_by_count": 27,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://eprints.whiterose.ac.uk/id/eprint/159007/3/CJRES%20No%20automation%20please_Final_Oct%20%28submitted%29.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.2139/ssrn.3983906",
+      "arxiv_id": "",
+      "title": "Technology-Skill Complementarity and Labor Displacement: Evidence from Linking Two Centuries of Patents with Occupations",
+      "authors": [
+        "L. Kogan",
+        "D. Papanikolaou",
+        "Lawrence D. W. Schmidt",
+        "B. Seegmiller"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2021,
+      "cited_by_count": 27,
+      "influential_cite_count": 4,
+      "reference_count": 54,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1093/ej/ueaa044",
+      "title": "Training Requirements, Automation, and Job Polarisation",
+      "authors": [
+        "Andy Feng",
+        "Georg Graetz"
+      ],
+      "venue": "The Economic Journal",
+      "year": 2020,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/ej/article-pdf/130/631/2249/34111499/ueaa044.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1111/twec.13522",
+      "title": "Labour‐saving automation: A direct measure of occupational exposure",
+      "authors": [
+        "Fabio Montobbio",
+        "Jacopo Staccioli",
+        "Maria Enrica Virgillito",
+        "Marco Vivarelli"
+      ],
+      "venue": "World Economy",
+      "year": 2023,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/twec.13522",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1093/oep/gpab022",
+      "title": "Technological unemployment revisited: automation in a search and matching framework",
+      "authors": [
+        "Dario Cords",
+        "Klaus Prettner"
+      ],
+      "venue": "Oxford Economic Papers",
+      "year": 2021,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/10419/191611",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.3386/w30528",
+      "title": "Automation and Polarization",
+      "authors": [
+        "Acemoglu, Daron",
+        "Loebbing, Jonas"
+      ],
+      "venue": "Social Science Research Network",
+      "year": null,
+      "cited_by_count": 25,
+      "reference_count": 44,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3386/w30528",
+      "influential_cite_count": 1,
+      "rank": 108
+    },
+    {
+      "doi": "10.1002/joom.1268",
+      "title": "Reengineering professional services through automation, remote outsourcing, and task delegation",
+      "authors": [
+        "Scott E. Sampson",
+        "Rebecca Pires dos Santos"
+      ],
+      "venue": "Journal of Operations Management",
+      "year": 2023,
+      "cited_by_count": 24,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/joom.1268",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1016/j.red.2021.09.003",
+      "title": "Growth, automation, and the long-run share of labor",
+      "authors": [
+        "Debraj Ray",
+        "Dilip Mookherjee"
+      ],
+      "venue": "Review of Economic Dynamics",
+      "year": 2021,
+      "cited_by_count": 24,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://www.nber.org/papers/w26658.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1007/s10676-022-09639-w",
+      "title": "Automation, unemployment, and insurance",
+      "authors": [
+        "Tom Parr"
+      ],
+      "venue": "Ethics and Information Technology",
+      "year": 2022,
+      "cited_by_count": 23,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10676-022-09639-w.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Automation and New Tasks: The Implications of the Task Content of Production for Labor Demand",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 22,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.30658/hmc.2.10",
+      "title": "Automation Anxieties: Perceptions About Technological Automation and the Future of Pharmacy Work",
+      "authors": [
+        "Cameron W. Piercy",
+        "Angela N. Gist‐Mackey"
+      ],
+      "venue": "Human-Machine Communication",
+      "year": 2021,
+      "cited_by_count": 21,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1029&context=hmc",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.1007/s00191-022-00803-5",
+      "title": "Effects of technological change and automation on industry structure and (wage-)inequality: insights from a dynamic task-based model",
+      "authors": [
+        "Herbert Dawid",
+        "Michael Neugart"
+      ],
+      "venue": "Journal of Evolutionary Economics",
+      "year": 2022,
+      "cited_by_count": 21,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00191-022-00803-5.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.2139/ssrn.4859388",
+      "title": "Automation and Rent Dissipation: Implications for Wages, Inequality, and Productivity",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 20,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.30658/HMC.2.10",
+      "arxiv_id": "",
+      "title": "Automation Anxieties: Perceptions About Technological Automation and the Future of Pharmacy Work",
+      "authors": [
+        "Cameron W. Piercy",
+        "Angela N. Gist-Mackey"
+      ],
+      "venue": "Human-Machine Communication",
+      "year": 2021,
+      "cited_by_count": 20,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1029&context=hmc",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Technology, Vintage-Specific Human Capital, and Labor Displacement: Evidence from Linking Patents with Occupations∗",
+      "authors": [
+        "Lawrence D. W. Schmidt",
+        "B. Seegmiller"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 20,
+      "influential_cite_count": 0,
+      "reference_count": 64,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.2139/ssrn.2940245",
+      "title": "Robots and Jobs: Evidence from US Labor Markets",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 19,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Machines and Machinists: Importing Skill-Biased Technology∗",
+      "authors": [
+        "Miklós Koren",
+        "M. Csillag",
+        "János Köllő"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 19,
+      "influential_cite_count": 2,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.3386/w24119",
+      "title": "Low-Skill and High-Skill Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 15,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.3386/w32872",
+      "title": "Tasks At Work: Comparative Advantage, Technology and Labor Demand",
+      "authors": [
+        "Acemoglu, Daron",
+        "Kong, Fredric",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 14,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.1111/pirs.12635",
+      "title": "Reducing automation risk through career mobility: Where and for whom?",
+      "authors": [
+        "László Czaller",
+        "Rikard Eriksson",
+        "Balázs Lengyel"
+      ],
+      "venue": "Papers of the Regional Science Association",
+      "year": 2021,
+      "cited_by_count": 13,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/pirs.12635",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "THE WRONG KIND OF AI? ARTIFICIAL INTELLIGENCE AND THE FUTURE OF LABOR DEMAND",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo",
+        "Chris Ackerman",
+        "David Autor",
+        "E. Brynjolfsson",
+        "Stuart I. Feldman",
+        "Michael Piore",
+        "J. Poterba",
+        "H. Varian",
+        "Seymour Minsky",
+        "J. Papert",
+        "Herbert Mccarthy",
+        "Simon Allen",
+        "Newell"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 12,
+      "influential_cite_count": 1,
+      "reference_count": 35,
+      "tldr": "The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the \"right\" kind of AI with better economic and social outcomes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the \"right\" kind of AI with better economic and social outcomes.",
+      "rank": 123
+    },
+    {
+      "doi": "10.3386/w24321",
+      "title": "Modeling Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1093/ooec/odad082",
+      "title": "A task-based approach to inequality",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "Oxford Open Economics",
+      "year": 2024,
+      "cited_by_count": 11,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>This article reviews recent work on how automation and task displacement have contributed to labour share declines and inequality in the US labour market. We summarize the basic building blocks of a task-based framework in which a set of tasks is allocated between capital, skilled labour and unskilled labour. Automation, which corresponds to the use of new technologies expanding the set of tasks that can be performed by capital, always red",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/ooec/article-pdf/3/Supplement_1/i906/58618732/odad082.pdf",
+      "rank": 125
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Explaining the Rising Concentration of U.S. Industries: Superstars, Intangibles, Globalization or Barriers to Entry?",
+      "authors": [
+        "Matías Covarrubias",
+        "G. Gutiérrez",
+        "Thomas Philippon"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 65,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.3386/w26681",
+      "title": "Unpacking Skill Bias: Automation and New Tasks",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "AEA Papers and Proceedings",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 12,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "http://www.nber.org/papers/w26681.pdf",
+      "influential_cite_count": 5,
+      "rank": 127
+    },
+    {
+      "doi": "10.3386/w32536",
+      "title": "Automation and Rent Dissipation: Implications for Wages, Inequality, and Productivity",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1093/qje/qjag006",
+      "title": "Automation and Rent Dissipation: Implications for Wages, Inequality, and Productivity",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "The Quarterly Journal of Economics",
+      "year": 2026,
+      "cited_by_count": 8,
+      "reference_count": 66,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>This article studies the effects of automation in a task-based economy in which some jobs pay workers rents—wages above workers' outside options. We show that automation targets high-rent tasks, dissipating rents, amplifying wage losses, and reducing within-group wage dispersion in exposed groups. This form of rent dissipation is inefficient and offsets the productivity gains from automation. Using U.S. data from 1980 to 2016, we find e",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "NBER WORKING PAPER SERIES ANSWERING THE CALL OF AUTOMATION: HOW THE LABOR MARKET ADJUSTED TO THE MECHANIZATION OF TELEPHONE OPERATION",
+      "authors": [
+        "James Feigenbaum",
+        "Daniel P. Gross",
+        "Brian Beach",
+        "E. Glaeser",
+        "S. Greenstein",
+        "Walker Hanlon",
+        "Bill Kerr",
+        "Frank Levy",
+        "Daron Acemoglu",
+        "Claudia Goldin",
+        "D. Williamson",
+        "E. Crowley",
+        "J. Benedict",
+        "Yves Kertesz"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 8,
+      "influential_cite_count": 1,
+      "reference_count": 83,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Artificial Intelligence – impact on total factor productivity, e-commerce & fintech",
+      "authors": [
+        "M. D. Sorbo",
+        "T. Bassetti",
+        "Yari Borbon Galvez",
+        "Filippo Pavesi"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 76,
+      "tldr": "This study examines the impact of AI technologies on total factor productivity by analysing improvements in productivity by firms who have patented AI technologies, exploiting a novel dataset of AI patents at firm level to analyse whether the extent with which firms develop AI technologies positively affects productivity and wages.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study examines the impact of AI technologies on total factor productivity by analysing improvements in productivity by firms who have patented AI technologies, exploiting a novel dataset of AI patents at firm level to analyse whether the extent with which firms develop AI technologies positively affects productivity and wages.",
+      "rank": 131
+    },
+    {
+      "doi": "10.2139/ssrn.2411791",
+      "title": "Democracy Does Cause Growth",
+      "authors": [
+        "Acemoglu, Daron",
+        "Naidu, Suresh",
+        "Restrepo, Pascual",
+        "Robinson, James A."
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 44,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1080/09538259.2022.2037930",
+      "title": "In Praise of ‘general Laws’ of Capitalism: Notes from a Debate with Daron Acemoglu",
+      "authors": [
+        "Emiliano Brancaccio"
+      ],
+      "venue": "REVIEW OF POLITICAL ECONOMY",
+      "year": 2024,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdd075aee126c0f51954f",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.4324/9781003048145-18",
+      "title": "Carlos Lleras Restrepo, Cepalinos, and the Colombian Technocracy's Road to Pragmatism",
+      "authors": [
+        "Andrés Álvarez"
+      ],
+      "venue": "Histories of Solitude",
+      "year": 2024,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "660af6ff13fb2c6cf6bb8538",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.1080/00220388.2023.2197707",
+      "title": "The Expansive Corridor: Testing Acemoglu and Robinson (2019)",
+      "authors": [
+        "Ryan Murphy"
+      ],
+      "venue": "JOURNAL OF DEVELOPMENT STUDIES",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e309b5aee126c0f9e04a5",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1007/s00181-021-02110-7",
+      "title": "Machine Learning Approaches to Testing Institutional Hypotheses: the Case of Acemoglu, Johnson, and Robinson (2001)",
+      "authors": [
+        "Diallo  Boubacar"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae741c45e57ce9ef744d",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.1080/00213624.2021.1945885",
+      "title": "Institutions Without Culture: on Daron Acemoglu and James Robinson’s Theory of Economic Development",
+      "authors": [
+        "Joanna Dzionek-Kozlowska"
+      ],
+      "venue": "JOURNAL OF ECONOMIC ISSUES",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c7762c5244ab9dcbb3d036",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1257/jel.20201629",
+      "title": "\"Somewhere in the Middle You Can Survive\": Review of the Narrow Corridor by Daron Acemoglu and James Robinson",
+      "authors": [
+        "Avinash Dixit"
+      ],
+      "venue": "JOURNAL OF ECONOMIC LITERATURE",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627ce3415aee126c0f6bb6a2",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.25100/nc.v0i27.10569",
+      "title": "Camilo Restrepo, Un Cineasta Del Disenso",
+      "authors": [
+        "Diana Kuéllar"
+      ],
+      "venue": "Revista Nexus Comunicación",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac3fdd5aee126c0f78321a",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.2305/iucn.uk.2021-2.rlts.t21859a46912402.en",
+      "title": "Thunnus obesus: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a322e3d68f896efa66e2ba",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.2305/iucn.uk.2021-2.rlts.t21857a46624561.en",
+      "title": "Thunnus albacares: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a32328d68f896efa6790f4",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "",
+      "title": "Katsuwonus pelamis: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a324c7d68f896efa6a80d7",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "",
+      "title": "Xiphias gladius: Collette, B.B., Di Natale, A., Fox, W., Graves, J., Juan Jorda, M., Pohlot, B., Restrepo, V. &amp; Schratwieser, J.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656fa78d939a5f408218c522",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.32609/0042-8736-2020-1-145-156",
+      "title": "Between the Scylla of Despotism and the Charybdis of Social Norms (on the Book by D. Acemoglu and J. Robinson “narrow Corridor: States, Societies and the Fate of Freedom”)",
+      "authors": [
+        "Andrey E. Shastitko"
+      ],
+      "venue": "VOPROSY EKONOMIKI",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fe1eed87767f8fc9d700663",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1017/beq.2020.41",
+      "title": "The Narrow Corridor: States, Societies, and the Fate of Liberty, by Daron Acemoglu and James A. Robinson. New York: Penguin Press, 2019. 558 Pp.",
+      "authors": [
+        "Wayne Eastman"
+      ],
+      "venue": "Business Ethics Quarterly",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "600fe771d4150a363c2227dc",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.4000/configuracoes.10341",
+      "title": "ACEMOGLU, Daron; ROBINSON, James (2019), the Narrow Corridor. States, Societies, and the Fate of Libe",
+      "authors": [
+        "Henri Aaltonen"
+      ],
+      "venue": "Configurações",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621955975aee126c0f050db9",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1017/s1537592720001838",
+      "title": "The Narrow Corridor: States, Societies, and the Fate of Liberty. by Daron Acemoglu and James A. Robinson. New York: Penguin Press, 2019. 576p. $32.00 Cloth.",
+      "authors": [
+        "Sheri Berman"
+      ],
+      "venue": "Perspectives on Politics",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a61af6d68f896efad12c70",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.1080/02255189.2019.1682976",
+      "title": "Omission and Commission in the Development Economics of Daron Acemoglu and Esther Duflo",
+      "authors": [
+        "Robert Chernomas"
+      ],
+      "venue": "CANADIAN JOURNAL OF DEVELOPMENT STUDIES-REVUE CANADIENNE D ETUDES DU DEVELOPPEMENT",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5de0f62cdf1a9c0c415e0bdf",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.1108/jmh-07-2018-0034",
+      "title": "A Colombian Classic Management Thinker: Alejandro López Restrepo",
+      "authors": [
+        "Luis Antonio Orozco"
+      ],
+      "venue": "Journal of Management History",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d239ced107d4c64b469c",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.31577/EKONCAS.2020.09.02",
+      "arxiv_id": "",
+      "title": "Automation and Labor Demand in European Countries: A Task-based Approach to Wage Bill Decomposition",
+      "authors": [
+        "M. Lábaj",
+        "Materj Vitalos"
+      ],
+      "venue": "Ekonomický casopis",
+      "year": 2020,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 23,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.31577/ekoncas.2020.09.02",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.2139/ssrn.3123798",
+      "title": "Modeling Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.2139/ssrn.3138621",
+      "title": "Demographics and Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 16,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.2139/ssrn.2367088",
+      "title": "Democracy, Redistribution and Inequality",
+      "authors": [
+        "Acemoglu, Daron",
+        "Naidu, Suresh",
+        "Restrepo, Pascual",
+        "Robinson, James A."
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 46,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1257/mac.20230325",
+      "arxiv_id": "",
+      "title": "Not a Typical Firm: Capital–Labor Substitution and Firms' Labor Shares",
+      "authors": [
+        "Joachim Hubmer",
+        "P. Restrepo"
+      ],
+      "venue": "American Economic Journal: Macroeconomics",
+      "year": 2026,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 40,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "AND THE INEQUALITY”",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo",
+        "D. Acemoğlu"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 2,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Demographics and Robots",
+      "authors": [
+        "D. Acemoğlu",
+        "P. Restrepo"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 45,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.48550/arXiv.2604.00186",
+      "arxiv_id": "2604.00186",
+      "title": "Agentic AI and Occupational Displacement: A Multi-Regional Task Exposure Analysis of Emerging Labor Market Disruption",
+      "authors": [
+        "Ravi Gupta",
+        "Saket Kumar"
+      ],
+      "venue": "arXiv.org",
+      "year": 2026,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 29,
+      "tldr": "The Agentic Task Exposure (ATE) score is introduced, a composite measure computed algorithmically from O*NET task data using calibrated adoption parameters--not a regression estimate--incorporating AI capability scores, workflow coverage factors, and logistic adoption velocity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Agentic Task Exposure (ATE) score is introduced, a composite measure computed algorithmically from O*NET task data using calibrated adoption parameters--not a regression estimate--incorporating AI capability scores, workflow coverage factors, and logistic adoption velocity.",
+      "rank": 157
+    },
+    {
+      "doi": "10.2139/ssrn.3846685",
+      "arxiv_id": "",
+      "title": "The Race of Man and Machine: Implications of Technology When Abilities and Demand Constraints Matter",
+      "authors": [
+        "T. Gries",
+        "W. Naudé"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2021,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 22,
+      "tldr": "This paper provides an alternative endogenous growth model that replaces the assumption of a representative household with the premise of two groups of households with different preferences, and model AI as providing abilities, arguing that ‘abilities’ better characterises the nature of the services that AI provide, rather than tasks or skills.",
+      "is_oa": true,
+      "oa_url": "https://econpapers.repec.org/scripts/redir.pf?u=https%3A%2F%2Fdocs.iza.org%2Fdp14341.pdf;h=repec:iza:izadps:dp14341",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This paper provides an alternative endogenous growth model that replaces the assumption of a representative household with the premise of two groups of households with different preferences, and model AI as providing abilities, arguing that ‘abilities’ better characterises the nature of the services that AI provide, rather than tasks or skills.",
+      "rank": 158
+    },
+    {
+      "doi": "10.2139/ssrn.4306709",
+      "arxiv_id": "",
+      "title": "Optimal Gradualism",
+      "authors": [
+        "Nils Lehr",
+        "P. Restrepo"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2022,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 49,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.35188/UNU-WIDER/2021/941-9",
+      "arxiv_id": "",
+      "title": "Earnings inequality and the changing nature of work: Evidence from Labour Force Survey data of Bangladesh",
+      "authors": [
+        "S. H. Bidisha",
+        "Tanveer Mahmood",
+        "M. Rahman"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 61,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://hdl.handle.net/10419/229408",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Inequality and Specialization: the Growth of Low‐skill Service Jobs in the United States*",
+      "authors": [
+        "D. Acemoğlu",
+        "Kerwin Charles",
+        "L. Garicano",
+        "Lawrence F. Katz",
+        "J. Bernstein",
+        "Mark Doms",
+        "Ethan Lewis",
+        "Chinhui Juhn",
+        "David H. Autor",
+        "David Dorn"
+      ],
+      "venue": "",
+      "year": 2007,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 32,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.2139/ssrn.3866352",
+      "title": "Tasks, Automation, and the Rise in Us Wage Inequality",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.2139/ssrn.2899142",
+      "title": "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.2139/ssrn.3765910",
+      "title": "Ai and Jobs: Evidence from Online Vacancies",
+      "authors": [
+        "Acemoglu, Daron",
+        "Autor, David H.",
+        "Hazell, Jonathon",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1145/3640310.3674090",
+      "arxiv_id": "",
+      "title": "Extensions and Scalability Experiments of a Generic Model-Driven Architecture for Variability Model Reasoning",
+      "authors": [
+        "C. Restrepo",
+        "Jacques Robin",
+        "Raúl Mazo"
+      ],
+      "venue": "ACM/IEEE International Conference on Model Driven Engineering Languages and Systems",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": "This article adds the ability to reason on textual or hybrid VMLs, rather than only on diagrammatic VMLs, enhancing the versatility of the architecture on the input side and presents the results of scalability performance experiments of an implementation of this novel generic model-driven architecture.",
+      "is_oa": true,
+      "oa_url": "https://hal.science/hal-04812406/document",
+      "source": "semanticscholar",
+      "type": "Book",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This article adds the ability to reason on textual or hybrid VMLs, rather than only on diagrammatic VMLs, enhancing the versatility of the architecture on the input side and presents the results of scalability performance experiments of an implementation of this novel generic model-driven architecture.",
+      "rank": 165
+    },
+    {
+      "doi": "10.33571/RPOLITEC.V16N32A2",
+      "arxiv_id": "",
+      "title": "Análisis de un controlador adaptable con observador de estado por modos deslizantes para un modelo de tratamiento de diabetes tipo 1",
+      "authors": [
+        "J. D. Núñez-López",
+        "M. F. Villa-Tamayo",
+        "Juan Pablo Arango-Restrepo",
+        "Héctor Botero-Castro"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://revistas.elpoli.edu.co/index.php/pol/article/download/1735/1584",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.2139/ssrn.3522330",
+      "title": "Unpacking Skill Bias: Automation and New Tasks",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.2139/ssrn.3390283",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "10.2139/ssrn.3083552",
+      "title": "Low-Skill and High-Skill Automation",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 16,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.2139/ssrn.4936908",
+      "title": "Tasks at Work: Comparative Advantage, Technology and Labor Demand",
+      "authors": [
+        "Acemoglu, Daron",
+        "Kong, Fredric",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.3386/w35336",
+      "title": "Automation and Repression",
+      "authors": [
+        "Acemoglu, Daron",
+        "Gitmez, A. Arda",
+        "Shadmehr, Mehdi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.2139/ssrn.3535328",
+      "title": "Competing with Robots: Firm-Level Evidence from France",
+      "authors": [
+        "Acemoglu, Daron",
+        "Lelarge, Claire",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.2139/ssrn.4238255",
+      "title": "Automation and Polarization",
+      "authors": [
+        "Acemoglu, Daron",
+        "Loebbing, Jonas"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 32,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.2139/ssrn.3390282",
+      "title": "The Wrong Kind of Ai? Artificial Intelligence and the Future of Labor Demand",
+      "authors": [
+        "Acemoglu, Daron",
+        "Restrepo, Pascual"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1103/PhysRevD.97.055045",
+      "arxiv_id": "1709.09796v2",
+      "title": "Vector Boson Fusion in the Inert Doublet Model",
+      "authors": [
+        "Bhaskar Dutta",
+        "Guillermo Palacio",
+        "Jose D. Ruiz-Alvarez",
+        "Diego Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.09796v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:2509.24466v1",
+      "arxiv_id": "2509.24466v1",
+      "title": "Moravec's Paradox and Restrepo's Model: Limits of AGI Automation in Growth",
+      "authors": [
+        "Marc Bara"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.24466v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.1016/j.autcon.2021.104097",
+      "arxiv_id": "2011.03117v3",
+      "title": "IFC models for (semi)automating common planning checks for building permits",
+      "authors": [
+        "Francesca Noardo",
+        "Teng Wu",
+        "Ken Arroyo Ohori",
+        "Thomas Krijnen",
+        "Jantien Stoter"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.03117v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.1109/TASE.2025.3579720",
+      "arxiv_id": "2412.20867v2",
+      "title": "Holistic Construction Automation with Modular Robots: From High-Level Task Specification to Execution",
+      "authors": [
+        "Jonathan Külz",
+        "Michael Terzer",
+        "Marco Magri",
+        "Andrea Giusti",
+        "Matthias Althoff"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.20867v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.1109/ICRA55743.2025.11127817",
+      "arxiv_id": "2410.16445v3",
+      "title": "Automated Planning Domain Inference for Task and Motion Planning",
+      "authors": [
+        "Jinbang Huang",
+        "Allen Tao",
+        "Rozilyn Marco",
+        "Miroslav Bogdanovic",
+        "Jonathan Kelly",
+        "Florian Shkurti"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.16445v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.1103/PhysRevD.101.035004",
+      "arxiv_id": "1909.09574v3",
+      "title": "Dirac neutrino mass generation from Majorana messenger",
+      "authors": [
+        "Julián Calle",
+        "Diego Restrepo",
+        "Óscar Zapata"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.09574v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "10.1109/LRA.2020.2965855",
+      "arxiv_id": "2204.13926v1",
+      "title": "Cooperative Aerial-Ground Multi-Robot System for Automated Construction Tasks",
+      "authors": [
+        "Marko Krizmancic",
+        "Barbara Arbanas",
+        "Tamara Petrovic",
+        "Frano Petric",
+        "Stjepan Bogdan"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.13926v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:2308.15272v4",
+      "arxiv_id": "2308.15272v4",
+      "title": "AutoDroid: LLM-powered Task Automation in Android",
+      "authors": [
+        "Hao Wen",
+        "Yuanchun Li",
+        "Guohong Liu",
+        "Shanhui Zhao",
+        "Tao Yu",
+        "Toby Jia-Jun Li",
+        "Shiqi Jiang",
+        "Yunhao Liu",
+        "Yaqin Zhang",
+        "Yunxin Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.15272v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "10.1109/CASE59546.2024.10711718",
+      "arxiv_id": "2502.09417v1",
+      "title": "A Survey of Reinforcement Learning for Optimization in Automation",
+      "authors": [
+        "Ahmad Farooq",
+        "Kamran Iqbal"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.09417v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "10.1109/ICRA57147.2024.10610112",
+      "arxiv_id": "2309.06635v3",
+      "title": "Collaborative Dynamic 3D Scene Graphs for Automated Driving",
+      "authors": [
+        "Elias Greve",
+        "Martin Büchner",
+        "Niclas Vödisch",
+        "Wolfram Burgard",
+        "Abhinav Valada"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.06635v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "10.1109/ICCMA46720.2019.8988752",
+      "arxiv_id": "2009.12125v1",
+      "title": "Towards the Automation of a Chemical Sulphonation Process with Machine Learning",
+      "authors": [
+        "Enrique Garcia-Ceja",
+        "Åsmund Hugo",
+        "Brice Morin",
+        "Per-Olav Hansen",
+        "Espen Martinsen",
+        "An Ngoc Lam",
+        "Øystein Haugen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.12125v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "10.1109/ICRA57147.2024.10611586",
+      "arxiv_id": "2309.06611v3",
+      "title": "Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization",
+      "authors": [
+        "Jean-Pierre Busch",
+        "Lennart Reiher",
+        "Lutz Eckstein"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.06611v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.1109/LRA.2025.3632723",
+      "arxiv_id": "2507.00236v3",
+      "title": "Sim2Real Diffusion: Leveraging Foundation Vision Language Models for Adaptive Automated Driving",
+      "authors": [
+        "Chinmay Vilas Samak",
+        "Tanmay Vilas Samak",
+        "Bing Li",
+        "Venkat Krovi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.00236v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1016/j.autcon.2020.103257",
+      "arxiv_id": "2205.05518v2",
+      "title": "Building Automation System Data Integration with BIM: Data Structure and Supporting Case Study",
+      "authors": [
+        "Caroline Quinn",
+        "Ali Zargar Shabestari",
+        "Marin Litoiu",
+        "J. J. McArthur"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.05518v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:2401.16801v1",
+      "arxiv_id": "2401.16801v1",
+      "title": "Kinematic Optimization of a Robotic Arm for Automation Tasks with Human Demonstration",
+      "authors": [
+        "Inbar Meir",
+        "Avital Bechar",
+        "Avishai Sintov"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.16801v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.1109/LRA.2024.3474548",
+      "arxiv_id": "2406.02989v2",
+      "title": "Learning Semantic Traversability with Egocentric Video and Automated Annotation Strategy",
+      "authors": [
+        "Yunho Kim",
+        "Jeong Hyun Lee",
+        "Choongin Lee",
+        "Juhyeok Mun",
+        "Donghoon Youm",
+        "Jeongsoo Park",
+        "Jemin Hwangbo"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2406.02989v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "10.1109/LRA.2025.3643276",
+      "arxiv_id": "2511.23143v1",
+      "title": "Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications",
+      "authors": [
+        "Enrico Saccon",
+        "Davide De Martini",
+        "Matteo Saveriano",
+        "Edoardo Lamon",
+        "Luigi Palopoli",
+        "Marco Roveri"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.23143v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:2001.02639v2",
+      "arxiv_id": "2001.02639v2",
+      "title": "On the Evaluation of Intelligent Process Automation",
+      "authors": [
+        "Deborah Ferreira",
+        "Julia Rozanova",
+        "Krishna Dubba",
+        "Dell Zhang",
+        "Andre Freitas"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.02639v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "10.1109/MRA.2023.3328457",
+      "arxiv_id": "2301.09771v6",
+      "title": "Automation and AI Technology in Surface Mining With a Brief Introduction to Open-Pit Operations in the Pilbara",
+      "authors": [
+        "Raymond Leung",
+        "Andrew J Hill",
+        "Arman Melkumyan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2301.09771v6",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "10.1109/TASE.2017.2759814",
+      "arxiv_id": "2508.18400v1",
+      "title": "Efficient task and path planning for maintenance automation using a robot system",
+      "authors": [
+        "Christian Friedrich",
+        "Akos Csiszar",
+        "Armin Lechler",
+        "Alexander Verl"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.18400v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "10.1016/j.eswa.2021.115245",
+      "arxiv_id": "2110.10059v1",
+      "title": "On Clustering Categories of Categorical Predictors in Generalized Linear Models",
+      "authors": [
+        "Emilio Carrizosa",
+        "Marcela Galvis Restrepo",
+        "Dolores Romero Morales"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.10059v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "10.1103/PhysRevE.89.052707",
+      "arxiv_id": "1403.6727v2",
+      "title": "Spatiotemporal Dynamics of Calcium-Driven Cardiac Alternans",
+      "authors": [
+        "Per Sebastian Skardal",
+        "Alain Karma",
+        "Juan G. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1403.6727v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2303.12375v1",
+      "arxiv_id": "2303.12375v1",
+      "title": "Disturbance Injection under Partial Automation: Robust Imitation Learning for Long-horizon Tasks",
+      "authors": [
+        "Hirotaka Tahara",
+        "Hikaru Sasaki",
+        "Hanbit Oh",
+        "Edgar Anarossi",
+        "Takamitsu Matsubara"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.12375v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "arXiv:2407.15359v1",
+      "arxiv_id": "2407.15359v1",
+      "title": "UF-HOBI at \"Discharge Me!\": A Hybrid Solution for Discharge Summary Generation Through Prompt-based Tuning of GatorTronGPT Models",
+      "authors": [
+        "Mengxian Lyu",
+        "Cheng Peng",
+        "Daniel Paredes",
+        "Ziyi Chen",
+        "Aokun Chen",
+        "Jiang Bian",
+        "Yonghui Wu"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.15359v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:2605.04999v2",
+      "arxiv_id": "2605.04999v2",
+      "title": "A Tutorial for Evaluating Cure Model Appropriateness",
+      "authors": [
+        "A Tutorial for Evaluating Cure Model Appropriateness Geethanjalee Mudunkotuwa",
+        "Durbadal Ghosh",
+        "Subodh Selukar"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.04999v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "10.1103/PhysRevD.109.054033",
+      "arxiv_id": "2312.13952v2",
+      "title": "Cold and dense perturbative QCD in a very strong magnetic background",
+      "authors": [
+        "Eduardo S. Fraga",
+        "Letícia F. Palhares",
+        "Tulio E. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.13952v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "arXiv:2507.19570v1",
+      "arxiv_id": "2507.19570v1",
+      "title": "MCP4EDA: LLM-Powered Model Context Protocol RTL-to-GDSII Automation with Backend Aware Synthesis Optimization",
+      "authors": [
+        "Yiting Wang",
+        "Wanghao Ye",
+        "Yexiao He",
+        "Yiran Chen",
+        "Gang Qu",
+        "Ang Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.19570v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 201
+    },
+    {
+      "doi": "arXiv:2110.10841v1",
+      "arxiv_id": "2110.10841v1",
+      "title": "New advances in the automation of context-aware information selection and guided model assembly",
+      "authors": [
+        "Yasmine Ahmed",
+        "Adam A Butchy",
+        "Khaled Sayed",
+        "Cheryl Telmer",
+        "Natasa Miskov-Zivanov"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.10841v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 202
+    },
+    {
+      "doi": "arXiv:2409.11090v1",
+      "arxiv_id": "2409.11090v1",
+      "title": "Three Approaches to the Automation of Laser System Alignment and Their Resource Implications: A Case Study",
+      "authors": [
+        "David A. Robb",
+        "Donald Risbridger",
+        "Ben Mills",
+        "Ildar Rakhmatulin",
+        "Xianwen Kong",
+        "Mustafa Erden",
+        "M. J. Daniel Esser",
+        "Richard M. Carter",
+        "Mike J. Chantler"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.11090v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 203
+    },
+    {
+      "doi": "10.1109/ICRA40945.2020.9196778",
+      "arxiv_id": "1912.03509v2",
+      "title": "Driving Style Encoder: Situational Reward Adaptation for General-Purpose Planning in Automated Driving",
+      "authors": [
+        "Sascha Rosbach",
+        "Vinit James",
+        "Simon Großjohann",
+        "Silviu Homoceanu",
+        "Xing Li",
+        "Stefan Roth"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.03509v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 204
+    },
+    {
+      "doi": "10.1109/TASE.2025.3596540",
+      "arxiv_id": "2510.02679v1",
+      "title": "Automated Constraint Specification for Job Scheduling by Regulating Generative Model with Domain-Specific Representation",
+      "authors": [
+        "Yu-Zhe Shi",
+        "Qiao Xu",
+        "Yanjia Li",
+        "Mingchen Liu",
+        "Huamin Qu",
+        "Lecheng Ruan",
+        "Qining Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.02679v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 205
+    },
+    {
+      "doi": "10.1103/PhysRevD.108.034026",
+      "arxiv_id": "2303.12140v2",
+      "title": "Hot perturbative QCD in a very strong magnetic background",
+      "authors": [
+        "Eduardo S. Fraga",
+        "Letícia F. Palhares",
+        "Tulio E. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.12140v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 206
+    },
+    {
+      "doi": "arXiv:2311.18760v4",
+      "arxiv_id": "2311.18760v4",
+      "title": "TaskBench: Benchmarking Large Language Models for Task Automation",
+      "authors": [
+        "Yongliang Shen",
+        "Kaitao Song",
+        "Xu Tan",
+        "Wenqi Zhang",
+        "Kan Ren",
+        "Siyu Yuan",
+        "Weiming Lu",
+        "Dongsheng Li",
+        "Yueting Zhuang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.18760v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 207
+    },
+    {
+      "doi": "arXiv:2605.05127v1",
+      "arxiv_id": "2605.05127v1",
+      "title": "The Demand Externality of Automation",
+      "authors": [
+        "Erhan Bayraktar"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.05127v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 208
+    },
+    {
+      "doi": "arXiv:2306.01242v2",
+      "arxiv_id": "2306.01242v2",
+      "title": "Responsible Task Automation: Empowering Large Language Models as Responsible Task Automators",
+      "authors": [
+        "Zhizheng Zhang",
+        "Xiaoyi Zhang",
+        "Wenxuan Xie",
+        "Yan Lu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.01242v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 209
+    },
+    {
+      "doi": "arXiv:2001.01007v1",
+      "arxiv_id": "2001.01007v1",
+      "title": "Automated Discovery of Data Transformations for Robotic Process Automation",
+      "authors": [
+        "Volodymyr Leno",
+        "Marlon Dumas",
+        "Marcello La Rosa",
+        "Fabrizio Maria Maggi",
+        "Artem Polyvyanyy"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.01007v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 210
+    },
+    {
+      "doi": "arXiv:2007.01977v1",
+      "arxiv_id": "2007.01977v1",
+      "title": "Lale: Consistent Automated Machine Learning",
+      "authors": [
+        "Guillaume Baudart",
+        "Martin Hirzel",
+        "Kiran Kate",
+        "Parikshit Ram",
+        "Avraham Shinnar"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.01977v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 211
+    },
+    {
+      "doi": "arXiv:2307.07643v4",
+      "arxiv_id": "2307.07643v4",
+      "title": "Attention-Enhanced Co-Interactive Fusion Network (AECIF-Net) for Automated Structural Condition Assessment in Visual Inspection",
+      "authors": [
+        "Chenyu Zhang",
+        "Zhaozheng Yin",
+        "Ruwen Qin"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.07643v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 212
+    },
+    {
+      "doi": "10.1109/MRA.2022.3182892",
+      "arxiv_id": "2202.06123v3",
+      "title": "Models of human behavior for human-robot interaction and automated driving: How accurate do the models of human behavior need to be?",
+      "authors": [
+        "Gustav Markkula",
+        "Mehmet Dogar"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.06123v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 213
+    },
+    {
+      "doi": "arXiv:2001.02284v2",
+      "arxiv_id": "2001.02284v2",
+      "title": "Multipurpose Intelligent Process Automation via Conversational Assistant",
+      "authors": [
+        "Alena Moiseeva",
+        "Dietrich Trautmann",
+        "Michael Heimann",
+        "Hinrich Schütze"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.02284v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 214
+    },
+    {
+      "doi": "arXiv:2303.01448v1",
+      "arxiv_id": "2303.01448v1",
+      "title": "Co-Design of Topology, Scheduling, and Path Planning in Automated Warehouses",
+      "authors": [
+        "Christopher Leet",
+        "Chanwook Oh",
+        "Michele Lora",
+        "Sven Koenig",
+        "Pierluigi Nuzzo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.01448v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 215
+    },
+    {
+      "doi": "10.1109/TASE.2020.2965466",
+      "arxiv_id": "1810.12644v4",
+      "title": "The Responsibility Quantification (ResQu) Model of Human Interaction with Automation",
+      "authors": [
+        "Nir Douer",
+        "Joachim Meyer"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1810.12644v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 216
+    },
+    {
+      "doi": "arXiv:2302.05330v1",
+      "arxiv_id": "2302.05330v1",
+      "title": "Action Dynamics Task Graphs for Learning Plannable Representations of Procedural Tasks",
+      "authors": [
+        "Weichao Mao",
+        "Ruta Desai",
+        "Michael Louis Iuzzolino",
+        "Nitin Kamra"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.05330v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 217
+    },
+    {
+      "doi": "10.5479/ADS/bib/2008ivoa.spec.0325L",
+      "arxiv_id": "1111.2281v1",
+      "title": "IVOA Recommendation: Data Model for Astronomical DataSet Characterisation",
+      "authors": [
+        "Mireille Louys",
+        "Anita Richards",
+        "Francois Bonnarel",
+        "Alberto Micol",
+        "Igor Chilingarian",
+        "Jonathan McDowell",
+        "the IVOA Data Model Working Group"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1111.2281v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 218
+    },
+    {
+      "doi": "arXiv:1905.09654v1",
+      "arxiv_id": "1905.09654v1",
+      "title": "A ROS2 based communication architecture for control in collaborative and intelligent automation systems",
+      "authors": [
+        "Endre Erős",
+        "Martin Dahl",
+        "Kristofer Bengtsson",
+        "Atieh Hanna",
+        "Petter Falkman"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1905.09654v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 219
+    },
+    {
+      "doi": "arXiv:2504.07689v1",
+      "arxiv_id": "2504.07689v1",
+      "title": "Inequality at risk of automation? Gender differences in routine tasks intensity in developing country labor markets",
+      "authors": [
+        "Janneke Pieters",
+        "Ana Kujundzic",
+        "Rulof Burger",
+        "Joel Gondwe"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.07689v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 220
+    },
+    {
+      "doi": "arXiv:1809.07262v2",
+      "arxiv_id": "1809.07262v2",
+      "title": "A Novel Warehouse Multi-Robot Automation System with Semi-Complete and Computationally Efficient Path Planning and Adaptive Genetic Task Allocation Algorithms",
+      "authors": [
+        "Kam Fai Elvis Tsang",
+        "Yuqing Ni",
+        "Cheuk Fung Raphael Wong",
+        "Ling Shi"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1809.07262v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 221
+    },
+    {
+      "doi": "10.5194/gmd-11-4359-2018",
+      "arxiv_id": "1711.08552v2",
+      "title": "Thetis coastal ocean model: discontinuous Galerkin discretization for the three-dimensional hydrostatic equations",
+      "authors": [
+        "Tuomas Kärnä",
+        "Stephan C. Kramer",
+        "Lawrence Mitchell",
+        "David A. Ham",
+        "Matthew D. Piggott",
+        "António M. Baptista"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.08552v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 222
+    },
+    {
+      "doi": "10.1016/j.autcon.2020.103411",
+      "arxiv_id": "2003.07690v2",
+      "title": "A Unified Architecture for Data-Driven Metadata Tagging of Building Automation Systems",
+      "authors": [
+        "Sakshi Mishra",
+        "Andrew Glaws",
+        "Dylan Cutler",
+        "Stephen Frank",
+        "Muhammad Azam",
+        "Farzam Mohammadi",
+        "Jean-Simon Venne"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.07690v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 223
+    },
+    {
+      "doi": "10.1073/pnas.2405460121",
+      "arxiv_id": "2302.02083v7",
+      "title": "Evaluating Large Language Models in Theory of Mind Tasks",
+      "authors": [
+        "Michal Kosinski"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.02083v7",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 224
+    },
+    {
+      "doi": "10.48550/arXiv.2509.24466",
+      "arxiv_id": "2509.24466",
+      "title": "Moravec's Paradox and Restrepo's Model: Limits of AGI Automation in Growth",
+      "authors": [
+        "Marc Bara"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 8,
+      "tldr": "This note extends Restrepo (2025)'s model of economic growth under AGI by incorporating Moravec's Paradox by incorporating Moravec's Paradox, and shows that when physical tasks constitute economic bottlenecks with sufficiently high computational requirements, the labor share of income converges to a positive constant in the finite-compute regime.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This note extends Restrepo (2025)'s model of economic growth under AGI by incorporating Moravec's Paradox by incorporating Moravec's Paradox, and shows that when physical tasks constitute economic bottlenecks with sufficiently high computational requirements, the labor share of income converges to a positive constant in the finite-compute regime.",
+      "rank": 225
+    },
+    {
+      "doi": "10.65324/imb040",
+      "arxiv_id": "",
+      "title": "The Evolution of Automation in Journalism and PR: An Institutional Framework for PR-tech and the Reconfiguration of Work Tasks",
+      "authors": [
+        "A. Sokolov"
+      ],
+      "venue": "Issues of Media Business",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "The author concludes that the contemporary PR professional requires a dual competence: preserving the craft of the profession while acquiring the architectural thinking needed to design robust, auditable, and accountable automated communication stacks.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.65324/imb040",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The author concludes that the contemporary PR professional requires a dual competence: preserving the craft of the profession while acquiring the architectural thinking needed to design robust, auditable, and accountable automated communication stacks.",
+      "rank": 226
+    },
+    {
+      "doi": "10.57017/ajelg.v1.i1(1).05",
+      "arxiv_id": "",
+      "title": "Artificial Intelligence, Task Automation and Macro-Development: Modelling the Productivity – Welfare Trade-Offs in the Nigeria Economy",
+      "authors": [
+        "Paul Gabriel Ekpeyong"
+      ],
+      "venue": "Applied Journal of Economics, Law &amp; Governance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 33,
+      "tldr": "The study analyses the macroeconomic Implication of the adoption of generative artificial intelligence in Nigeria via a task-oriented thought framework and projects that AI has the capacity of increasing Nigeria TFP by 0.51% to 0.66%, which means that Nigeria GDP will increase by around 0.93% to 1.16%.",
+      "is_oa": true,
+      "oa_url": "https://ritha.eu/storage/1603/5_ajelg_EkpeyongPG.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The study analyses the macroeconomic Implication of the adoption of generative artificial intelligence in Nigeria via a task-oriented thought framework and projects that AI has the capacity of increasing Nigeria TFP by 0.51% to 0.66%, which means that Nigeria GDP will increase by around 0.93% to 1.16%.",
+      "rank": 227
+    },
+    {
+      "doi": "10.36871/ek.up.p.r.2026.05.12.033",
+      "arxiv_id": "",
+      "title": "ECONOMICS AND MANAGEMENT OF ENTERPRISES, COMPLEXES AND INDUSTRIES AUTOMATION, AMPLIFICATION, INTEGRATION, AND NEW ROLES: A TYPOLOGY OF THE IMPACT OF DIGITAL TECHNOLOGIES ON MANAGERIAL WORK",
+      "authors": [
+        "Natalya N. Trofimova"
+      ],
+      "venue": "EKONOMIKA I UPRAVLENIE: PROBLEMY, RESHENIYA",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The classification of digital technologies by their impact on humans is most suitable for personnel management purposes; however, it requires further refinement, taking into account the management level, the stage of the technology life cycle, the synergistic effect of the integrated implementation of technologies, and the forecasting of in-demand competencies.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The classification of digital technologies by their impact on humans is most suitable for personnel management purposes; however, it requires further refinement, taking into account the management level, the stage of the technology life cycle, the synergistic effect of the integrated implementation of technologies, and the forecasting of in-demand competencies.",
+      "rank": 228
+    },
+    {
+      "doi": "10.2139/SSRN.3823443",
+      "arxiv_id": "",
+      "title": "On the Effects of Automation Technologies and Increasing Market Concentration to the Labor Share",
+      "authors": [
+        "Berkay Akyapi"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 23,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 229
+    },
+    {
+      "doi": "10.1111/1475-5890.70019",
+      "arxiv_id": "",
+      "title": "Latent changes in the labour share",
+      "authors": [
+        "M. Goos",
+        "Ellen van't Klooster"
+      ],
+      "venue": "Fiscal studies",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 23,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1111/1475-5890.70019",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 230
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "NBER WORKING PAPER SERIES AUTOMATION AND THE WORKFORCE: A FIRM-LEVEL VIEW FROM THE 2019 ANNUAL BUSINESS SURVEY",
+      "authors": [
+        "Gary W. Anderson",
+        "David N. Beede",
+        "C. Buffington",
+        "Eric Childress",
+        "Emin Dinlersoz",
+        "Lucia Foster",
+        "Nathan Goldschlag",
+        "John C. Haltiwanger",
+        "Zachary Kroff",
+        "P. Restrepo",
+        "Nikolas J. Zolas"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": null,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 231
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Dynamic Contracting with a Forthcoming Technology of Automation",
+      "authors": [
+        "Vincent Tena"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 32,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 232
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Technological Change, Occupational Structures and Income Inequality in European Labor Markets",
+      "authors": [
+        "Koen van Ruijven"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 65,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 233
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Labour Shares and Import Competition: Is Increasing Import Exposure Driving Down Labour Shares?",
+      "authors": [
+        "D. Freeman"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 32,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 234
+    },
+    {
+      "doi": "10.1007/978-3-031-77623-6_40",
+      "title": "Daron Acemoglu (1967–)",
+      "authors": [
+        "Ufuk Akcigit"
+      ],
+      "venue": "The Palgrave Companion to MIT Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a43f89e0a96f8c83c4b63be",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 235
+    },
+    {
+      "doi": "10.2139/ssrn.5251518",
+      "title": "The Effect of New Technology on Labour Demand: Acemoglu and Beyond",
+      "authors": [
+        "Jonathan S. Aldred"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a441eae0a96f8c83c9b636c",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 236
+    },
+    {
+      "doi": "10.1177/14789299221090833",
+      "title": "Commissioned Book Review: Daron Acemoglu and James A Robinson,",
+      "authors": [
+        "Aron Hajnal"
+      ],
+      "venue": "Political Studies Review",
+      "year": 2023,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67da3134163c01c8503948ea",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 237
+    },
+    {
+      "doi": "10.5281/zenodo.4531369",
+      "title": "Replication Package: Demographics and Automation, by Acemoglu and Restrepo",
+      "authors": [
+        "Daron Acemoğlu"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b5e4ab3fda6d7f069eeea1",
+      "matched_phrase": "Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 238
     }
   ]
 }

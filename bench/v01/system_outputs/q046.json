@@ -1,451 +1,3254 @@
 {
   "query_id": "q046",
   "query": "aging society companion robot social attachment rejection comparative Japan South Korea Europe",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "social",
+  "source": "user",
+  "generated_at": "2026-07-22T11:31:41",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 29,
+  "n_returned": 160,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 10,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/j.tics.2012.04.005",
+      "title": "Memory Aging and Brain Maintenance.",
+      "authors": [
+        "Lars Nyberg"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF PSYCHOLOGY",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a4ae2d65ceb7cb02d5dec2",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1016/j.cell.2022.11.001",
+      "title": "Hallmarks of Aging: an Expanding Universe",
+      "authors": [
+        "Carlos López-Otín"
+      ],
+      "venue": "Cell",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63d107e690e50fcafdc35ba8",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1038/s41586-023-06221-2",
+      "title": "Scientific Discovery in the Age of Artificial Intelligence.",
+      "authors": [
+        "Hanchen Wang"
+      ],
+      "venue": "Nature",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64cb4fb63fda6d7f06fecb8b",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1016/b978-0-323-91617-2.00007-9",
+      "title": "The Hallmarks of Aging",
+      "authors": [
+        "Brian C. Gilmour"
+      ],
+      "venue": "Molecular, Cellular, and Metabolic Fundamentals of Human Aging",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656d77dc939a5f40828f6bb5",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1210/jc.2014-1498",
+      "title": "Pheochromocytoma and Paraganglioma: an Endocrine Society Clinical Practice Guideline",
+      "authors": [
+        "J. W. M. Lenders"
+      ],
+      "venue": "JOURNAL OF CLINICAL ENDOCRINOLOGY & METABOLISM",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a66ba465ce054aad672d74",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.48550/arxiv.2303.17760",
+      "title": "CAMEL: Communicative Agents for \"mind\" Exploration of Large Language Model Society",
+      "authors": [
+        "Guohao Li"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "642a43b890e50fcafd9b0319",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.3969/j.issn.1001-9677.2022.17.010",
+      "title": "Ageing Mechanisms in Lithium-ion Batteries",
+      "authors": [
+        "TANG Sheng-he"
+      ],
+      "venue": "Guangzhou Chemical Industry",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6357d85b90e50fcafdbf7624",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1093/eurheartj/ehac237",
+      "title": "2022 ESC/ERS Guidelines for the Diagnosis and Treatment of Pulmonary Hypertension Developed by the Task Force for the Diagnosis and Treatment of Pulmonary Hypertension of the European Society of Cardiology (ESC) and the European Respiratory Society (ERS). Endorsed by the International Society for Heart and Lung Transplantation (ISHLT) and the European Reference Network on Rare Respiratory Diseases (ERN-LUNG)",
+      "authors": [
+        "Marc Humbert"
+      ],
+      "venue": "EUROPEAN HEART JOURNAL",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "635272d890e50fcafd973359",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1007/978-3-030-12852-4_69-1",
+      "title": "Normal Cognitive Aging",
+      "authors": [
+        "Matthew C. Shake"
+      ],
+      "venue": "The Palgrave Encyclopedia of Critical Perspectives on Mental Health",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c883725244ab9dcb31c917",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.2307/j.ctv173f1g1",
+      "title": "Critical Transitions in Nature and Society",
+      "authors": [
+        "MARTEN SCHEFFER"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8c8dadabfae2eee64b3fd",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1148/radiol.232558",
+      "title": "Fleischner Society: Glossary of Terms for Thoracic Imaging.",
+      "authors": [
+        "Alexander A. Bankier"
+      ],
+      "venue": "RADIOLOGY",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65de4d9e13fb2c6cf61f3b48",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1007/s11427-023-2305-0",
+      "title": "Biomarkers of Aging.",
+      "authors": [
+        "Hainan Bao"
+      ],
+      "venue": "Science China Life Sciences",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644269e7ed329dcc6bbe0f47",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1007/s00105-023-05210-w",
+      "title": "Skin Aging Exposome",
+      "authors": [
+        "Jean Krutmann"
+      ],
+      "venue": "Dermatologie (Heidelberg, Germany)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e05a4e3fda6d7f06e7d49f",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1016/j.tig.2023.08.005",
+      "title": "The Evolution of Aging and Lifespan",
+      "authors": [
+        "Stacy Li"
+      ],
+      "venue": "TRENDS IN GENETICS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "650695833fda6d7f067b9971",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.4324/9781003320609-36",
+      "title": "Toward a Rational Society",
+      "authors": [
+        "Jurgen Habermas"
+      ],
+      "venue": "Social Theory Re-Wired",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99adcb7602d970235d216",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1016/j.ijhcs.2021.102601",
+      "title": "My Chatbot Companion - a Study of Human-Chatbot Relationships",
+      "authors": [
+        "Marita Skjuve"
+      ],
+      "venue": "INTERACTING WITH COMPUTERS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60362a38af79179a990074b8",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.3390/nursrep12030062",
+      "title": "Antipodean Perspectives-Aged Care Nursing and the Multifaceted Role of the Aged Care Nurse",
+      "authors": [
+        "Rajkumar Cheluvappa"
+      ],
+      "venue": "NURSING REPORTS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9ade9b7602d97037f3cf3",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1038/s41574-021-00626-7",
+      "title": "Mitochondrial and Metabolic Dysfunction in Ageing and Age-Related Diseases",
+      "authors": [
+        "João A. Amorim"
+      ],
+      "venue": "Nature Reviews Endocrinology",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62078f9b5aee126c0f87f673",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1038/s41556-022-00842-x",
+      "title": "Telomere Dysfunction in Ageing and Age-Related Diseases",
+      "authors": [
+        "Francesca Rossiello"
+      ],
+      "venue": "Nature Cell Biology",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "620cdb3d5aee126c0f27743e",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.7554/elife.78693",
+      "title": "The Aging Epigenome",
+      "authors": [
+        "Brandon L Pierce"
+      ],
+      "venue": "eLife",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "626bc43d5aee126c0f6ed784",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.2139/ssrn.4230227",
+      "title": "Images of Aging",
+      "authors": [
+        "Alan Gutterman"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "634f2e3e90e50fcafd6c5cfe",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1038/s41392-022-01211-8",
+      "title": "Epigenetic Regulation of Aging: Implications for Interventions of Aging and Diseases",
+      "authors": [
+        "Kang Wang"
+      ],
+      "venue": "Signal transduction and targeted therapy",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "636a331e90e50fcafd51adc2",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.20538/1682-0363-2022-2-186-194",
+      "title": "Mechanisms of Vascular Aging",
+      "authors": [
+        "E. M. Stakhneva"
+      ],
+      "venue": "BYULLETEN SIBIRSKOY MEDITSINY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "639c8f7c90e50fcafd473152",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1038/s41392-022-01251-0",
+      "title": "Aging and Aging-Related Diseases: from Molecular Mechanisms to Interventions and Treatments",
+      "authors": [
+        "Jun Guo"
+      ],
+      "venue": "SIGNAL TRANSDUCTION AND TARGETED THERAPY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "639d9d4e90e50fcafdf52e64",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1016/j.jsmc.2016.10.012",
+      "title": "Sleep, Health, and Society",
+      "authors": [
+        "Michael A. Grandner"
+      ],
+      "venue": "Sleep medicine clinics",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "607bac53e4510cd7c8a401ea",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1093/ehjqcco/qcac014",
+      "title": "European Society of Cardiology: Cardiovascular Disease Statistics 2021.",
+      "authors": [
+        "Adam Timmis"
+      ],
+      "venue": "EUROPEAN HEART JOURNAL",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61e002835244ab9dcb2716c7",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/s10311-022-01435-8",
+      "title": "Strategies to Achieve a Carbon Neutral Society: a Review",
+      "authors": [
+        "Chen  Lin"
+      ],
+      "venue": "Environmental Chemistry Letters",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "625e93f25aee126c0f9e20fa",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1007/978-3-658-37354-2_27",
+      "title": "The Rise of the Network Society",
+      "authors": [
+        "Ralf Spiller"
+      ],
+      "venue": "Schlüsselwerke Theorien (in) der Kommunikationswissenschaft",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648dc2c1d68f896efafbce7a",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1109/jsac.2021.3065072",
+      "title": "Age of Information: an Introduction and Survey",
+      "authors": [
+        "Roy D. Yates"
+      ],
+      "venue": "IEEE JOURNAL ON SELECTED AREAS IN COMMUNICATIONS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f15600a91e011d7db22399e",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1038/s41586-021-03547-7",
+      "title": "An Aged Immune System Drives Senescence and Ageing of Solid Organs",
+      "authors": [
+        "Matthew J. Yousefzadeh"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "609e4cc1e4510cd7c87608c0",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1038/d41586-021-02739-5",
+      "title": "Gene Therapy is Coming of Age.",
+      "authors": [
+        "Lauren Gravitz"
+      ],
+      "venue": "Scientific American",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "617a7ead5244ab9dcb31da56",
+      "matched_phrase": "aging",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.2307/j.ctv1qgnq9n",
+      "title": "Maya Society under Colonial Rule",
+      "authors": [
+        "Nancy M. Farriss"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8cca0dabfae2eee81a568",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1146/annurev-soc-090820-020800",
+      "title": "The Society of Algorithms",
+      "authors": [
+        "Jenna Burrell"
+      ],
+      "venue": "Annual Review of Sociology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619badd91c45e57ce9eac0e7",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1007/978-3-030-89201-2_7",
+      "title": "The World Risk Society As a Cosmopolitan Society?",
+      "authors": [
+        "Klaus Rasborg"
+      ],
+      "venue": "Ulrich Beck",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cde1c5aee126c0f54d0c9",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1208/s12248-021-00574-0",
+      "title": "Cancer Immunotherapy Update: FDA-Approved Checkpoint Inhibitors and Companion Diagnostics",
+      "authors": [
+        "Twomey  Julianne D."
+      ],
+      "venue": "The AAPS Journal",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60474c4cd3485cfff11522c9",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.2307/j.ctv1453m69",
+      "title": "The Society of the Spectacle",
+      "authors": [
+        "Guy Debord"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99b10b7602d97023a0eb3",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1093/jcr/ucaf040",
+      "title": "AI Companions Reduce Loneliness",
+      "authors": [
+        "Julian De Freitas"
+      ],
+      "venue": "JOURNAL OF CONSUMER RESEARCH",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "66a524b201d2a3fbfc60e5ef",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.4324/9781003529033",
+      "title": "Youth in a Changing Society",
+      "authors": [
+        "Fred Milson"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8bad2dabfae2eee2d9b26",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.4324/9780429282348",
+      "title": "The Companion to Development Studies",
+      "authors": [
+        "Emil Dauncey"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d88c08dabfae2eeebf34d0",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1515/9783111385341",
+      "title": "Transport Phenomena Data Companion",
+      "authors": [
+        "Camiel Janssen"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d88de9dabfae2eeecec6e1",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.2307/jj.5232956",
+      "title": "A Companion to the Cantos of Ezra Pound",
+      "authors": [
+        "Carroll F. Terrell"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d878d6dabfae2eee2c2f37",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.3390/plants12173033",
+      "title": "The Interplay Between Enucleated Sieve Elements and Companion Cells.",
+      "authors": [
+        "Angel J. Matilla"
+      ],
+      "venue": "PLANTS-BASEL",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64fb44983fda6d7f06a80b51",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1051/0004-6361/202142146",
+      "title": "Stellar and Substellar Companions from Gaia EDR3",
+      "authors": [
+        "Pierre Kervella"
+      ],
+      "venue": "ASTRONOMY & ASTROPHYSICS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "617b666d5244ab9dcbb69e65",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.4324/9781003000914",
+      "title": "The Routledge Companion to Drama in Education",
+      "authors": [
+        "Mary McAvoy"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdd125aee126c0f51b39d",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.3390/su13126567",
+      "title": "Society 5.0: A Japanese Concept for a Superintelligent Society",
+      "authors": [
+        "Carolina Narvaez Rojas"
+      ],
+      "venue": "SUSTAINABILITY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619baf851c45e57ce9fa6c55",
+      "matched_phrase": "society",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1080/00140139.2021.1959733",
+      "title": "The Burnout Companion to Study and Practice: a Critical Analysis",
+      "authors": [
+        "Sarah O'Sullivan"
+      ],
+      "venue": "ERGONOMICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad501c45e57ce9e67962",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
       "doi": "10.1057/s41599-023-02221-9",
       "title": "Using SOR framework to explore the driving factors of older adults smartphone use behavior",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Tianyang Huang"
+      ],
       "venue": "Humanities and Social Sciences Communications",
-      "citation_count": 94,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 94,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41599-023-02221-9.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 47
     },
     {
-      "rank": 2,
+      "doi": "10.4324/9781315637518",
+      "title": "The Routledge Companion to Media Fandom",
+      "authors": [
+        "Melissa A. Click"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b93e333fda6d7f06837b27",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "",
+      "title": "The Rise of AI Companions: Interaction with AI Companions and Psychological Well-being",
+      "authors": [
+        "Yutong Zhang"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6850cf72163c01c8506b3403",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.4324/9780203114261",
+      "title": "The Routledge Companion to Video Game Studies",
+      "authors": [
+        "Mark J. P. Wolf"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84c1edabfae2eeede73b0",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1017/9781009067713.005",
+      "title": "Companions in Guilt",
+      "authors": [
+        "Genia Schönbaumsfeld"
+      ],
+      "venue": "Kierkegaard's &lti&gtEither/Or&lt/i&gt",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791d46939a5f4082e17fb9",
+      "matched_phrase": "companion",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
       "doi": "10.1093/ssjj/6.2.199",
       "title": "Educational Aspirations and the Warming-up/Cooling-down Process: A Comparative Study between Japan and South Korea",
-      "abstract": "",
-      "year": 2003,
+      "authors": [
+        "Nakamura, T."
+      ],
       "venue": "Social Science Japan Journal",
-      "citation_count": 23,
-      "engines_found_in": [
+      "year": 2003,
+      "cited_by_count": 23,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 52
     },
     {
-      "rank": 3,
       "doi": "10.1108/14636690410549534",
       "title": "Mobile communications: Europe, Japan and South Korea in a comparative perspective",
-      "abstract": "<jats:p>This paper has two interrelated purposes. One is to provide an empirical overview of the developments of new mobile systems and services in Europe, Japan, and South Korea. The other is to examine the discussions regarding the possible explanations for the present lead that East Asia has in new mobile developments. The motivation for making a comparative analysis of mobile developments in Europe, Japan and South Korea is the fact that Japan and South Korea have taken the lead within mobil",
-      "year": 2004,
+      "authors": [
+        "Henten, Anders",
+        "Olesen, Henning",
+        "Saugstrup, Dan",
+        "Tan, Su‐En"
+      ],
       "venue": "info",
-      "citation_count": 22,
-      "engines_found_in": [
+      "year": 2004,
+      "cited_by_count": 22,
+      "reference_count": 23,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This paper has two interrelated purposes. One is to provide an empirical overview of the developments of new mobile systems and services in Europe, Japan, and South Korea. The other is to examine the discussions regarding the possible explanations for the present lead that East Asia has in new mobile developments. The motivation for making a comparative analysis of mobile developments in Europe, Japan and South Korea is the fact that Japan and South Korea have taken the lead within mobil",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 53
     },
     {
-      "rank": 4,
+      "doi": "10.3389/fpsyt.2024.1436273",
+      "title": "Ethical implications in using robots among older adults living with dementia",
+      "authors": [
+        "Blanca Deusdad"
+      ],
+      "venue": "Frontiers in Psychiatry",
+      "year": 2024,
+      "cited_by_count": 18,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://public-pages-files-2025.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1436273/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.4337/9781849802192.00016",
+      "title": "CSR Dynamics in South Korea and Japan: A Comparative Analysis",
+      "authors": [
+        "Choi, Seungho",
+        "Aguilera, Ruth V."
+      ],
+      "venue": "Corporate Social Responsibility",
+      "year": 2009,
+      "cited_by_count": 12,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 55
+    },
+    {
       "doi": "",
       "title": "Gendered Aspects of Migration: Law and the Female Migrant",
-      "abstract": "",
-      "year": 1998,
+      "authors": [
+        "Joan Fitzpartick",
+        "Katrina R. Kelly"
+      ],
       "venue": "Hastings international and comparative law review",
-      "citation_count": 12,
-      "engines_found_in": [
+      "year": 1998,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://repository.uchastings.edu/hastings_international_comparative_law_review/vol22/iss1/2",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 56
     },
     {
-      "rank": 5,
+      "doi": "10.3390/biomimetics8080609",
+      "title": "Living Lab-Based Service Interaction Design for a Companion Robot for Seniors in South Korea",
+      "authors": [
+        "Kwon, Ju Yeong",
+        "Ju, Da Young"
+      ],
+      "venue": "Biomimetics",
+      "year": null,
+      "cited_by_count": 7,
+      "reference_count": 41,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>A living lab is a valuable method for designing tangible and intangible service elements, ensuring a comprehensive user experience. Developing a digital companion service, which users may be unfamiliar with, requires observing user behavior in real-world environments and analyzing living and behavioral patterns. A living lab starts with understanding user characteristics and behaviors. Living lab methods have an impact on the accuracy and precision of service design. The number of senior",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
       "doi": "10.1002/ijop.12351",
       "title": "Social Psychology",
-      "abstract": "",
-      "year": 2016,
+      "authors": [],
       "venue": "International Journal of Psychology",
-      "citation_count": 7,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ijop.12351",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     },
     {
-      "rank": 6,
       "doi": "10.4236/jbbs.2020.101004",
       "title": "The Interdependent Coexistence of the Rational Civilizations: The Mental Origin of Civilizations",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Ding-Yu Chung"
+      ],
       "venue": "Journal of Behavioral and Brain Science",
-      "citation_count": 3,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://www.scirp.org/journal/PaperDownload.aspx?paperID=97946",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 59
     },
     {
-      "rank": 7,
-      "doi": "10.14282/2198-0411-gcrp-3",
-      "title": "New Alterities and Emerging Cultures of Social Interaction",
+      "doi": "10.5040/9781509906437.ch-008",
+      "title": "Comparative Competition Law : China, Japan and South Korea",
+      "authors": [],
+      "venue": "Hong Kong Competition Law",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
       "abstract": "",
-      "year": 2013,
-      "venue": "DuEPublico (University of Duisburg-Essen)",
-      "citation_count": 2,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 60
     },
     {
-      "rank": 8,
+      "doi": "10.1017/asjcl.2019.16",
+      "title": "Social Movements and Constitutionalism in Japan, South Korea, and Taiwan",
+      "authors": [
+        "BUI, Ngoc Son"
+      ],
+      "venue": "Asian Journal of Comparative Law",
+      "year": 2019,
+      "cited_by_count": 2,
+      "reference_count": 44,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>This article considers whether the academic inquiry of comparative constitutionalism in Japan, South Korea, and Taiwan may be further developed by a full consideration of the relevance of social movements. Integrating social movement theories into comparative constitutional law, this article argues that a more nuanced positive account of the creation and consolidation of constitutionalism in these East Asian polities must be situated within the engagement",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 61
+    },
+    {
       "doi": "10.17000/kspr.20.2.201306.169",
       "title": "A Comparative Analysis of Childcare Expansion and Social Investment in Sweden, France, Germany, the UK, Japan and South Korea",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "MI-YOUNG AN"
+      ],
       "venue": "Korea Social Policy Review",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 1,
+      "reference_count": 26,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 62
     },
     {
-      "rank": 9,
       "doi": "10.21742/ajlpa.2017.1.2.03",
       "title": "Comparative Study on an Education System for collaborative Governance in Disaster Management: Focused on Korea, the U.S. and Japan",
-      "abstract": "",
-      "year": 2017,
+      "authors": [
+        "",
+        "Yoo, Youngmi",
+        "Kim, S.",
+        "",
+        "Zhao, J.",
+        "",
+        "Kim, E.",
+        "",
+        "Lee, G.",
+        ""
+      ],
       "venue": "Asia-pacific Journal of Law, Politics and Administration",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 63
     },
     {
-      "rank": 10,
+      "doi": "10.20306/kces.2024.34.5.129",
+      "title": "Comparative Analysis of Dropout Prevention Policies in South Korea and Japan",
+      "authors": [
+        "",
+        "Ji, Miyoung",
+        "Lee, Hyeongju",
+        "Park, Changun"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>[Purpose] This study analyzes the 2023 dropout prevention policies in South Korea and Japan to inform South Korea's approach. It focuses on increasing dropout rates and the challenges faced by students without external support post-COVID-19.\r\n[Method] Using Kohn's (1989) classification, it categorizes policies into three areas: academic strategies, psychological support, and environmental improvements.\r\n[Results] South Korea prioritizes early identification and tailored support for at-ri",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.7746/jkros.2024.19.4.369",
+      "title": "The Role of Memory, Likeability and Attachment in Continuous Social Robot Interaction",
+      "authors": [
+        "Yoon, Heeyoon",
+        "Kim, Min-Gyu",
+        "Kim, SunKyoung"
+      ],
+      "venue": "Journal of Korea Robotics Society",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.18327/jias.2016.04.20.1.195",
+      "title": "A Comparative Study on BMDs of Israel, Japan and South Korea and Implications for South Korea",
+      "authors": [
+        "Park, Hwee Rhak"
+      ],
+      "venue": "Journal of international area studies",
+      "year": 2016,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.4324/9781315716299-29",
+      "title": "The Emergence of Social Media Politics in South Korea",
+      "authors": [
+        "Willnat, Lars",
+        "Min, Young"
+      ],
+      "venue": "The Routledge Companion to Social Media and Politics",
+      "year": 2015,
+      "cited_by_count": 1,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
       "doi": "10.20944/preprints202505.0616.v1",
       "title": "Comparative Review of Smart Housing Strategies for Aging Population in South Korea and the United Kingdom",
-      "abstract": "<jats:p>As populations age globally, governments face mounting challenges in reconfiguring healthcare and housing systems to support aging-in-place. This study offers a comparative analysis of South Korea and the United Kingdom, examining how each country integrates digital technologies, such as Artificial Intelligence, telecare, and smart housing systems, into their aging strategies. South Korea employs a centralized, technology-driven approach that prioritizes national rollout of AI-enabled sm",
-      "year": null,
+      "authors": [
+        "Jung, Suyee"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>As populations age globally, governments face mounting challenges in reconfiguring healthcare and housing systems to support aging-in-place. This study offers a comparative analysis of South Korea and the United Kingdom, examining how each country integrates digital technologies, such as Artificial Intelligence, telecare, and smart housing systems, into their aging strategies. South Korea employs a centralized, technology-driven approach that prioritizes national rollout of AI-enabled sm",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 68
     },
     {
-      "rank": 11,
       "doi": "10.4324/9780203167410-17",
       "title": "Patients’ Rights in Japan, South Korea and Taiwan – Comparative Aspects",
-      "abstract": "",
-      "year": 2003,
+      "authors": [],
       "venue": "Human Rights in Japan, South Korea and Taiwan",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2003,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 69
     },
     {
-      "rank": 12,
       "doi": "10.4324/9780203167410-22",
       "title": "Children’s Rights in Japan, South Korea and Taiwan – Comparative Aspects",
-      "abstract": "",
-      "year": 2003,
+      "authors": [],
       "venue": "Human Rights in Japan, South Korea and Taiwan",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2003,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 70
     },
     {
-      "rank": 13,
       "doi": "10.1080/03601277.2026.2674881",
       "title": "High school students’ perceptions of an aging society and future images: A comparative study of Japan and South Korea",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Kim, Ju Hyun",
+        "Sugii, Junko"
+      ],
       "venue": "Educational Gerontology",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 71
     },
     {
-      "rank": 14,
+      "doi": "10.4324/9781003712107-3",
+      "title": "Technological Progress in Aging Society in China, Japan, and South Korea",
+      "authors": [
+        "Yang, Yifan",
+        "Yu, Shuang"
+      ],
+      "venue": "Digital Transformation and Well-Aging Strategies in East Asia",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
       "doi": "10.7210/jrsj.41.40",
       "title": "Social Robot as Companion Species",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Katsuno, Hirofumi",
+        "White, Daniel"
+      ],
       "venue": "Journal of the Robotics Society of Japan",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 73
     },
     {
-      "rank": 15,
       "doi": "10.31203/aepa.2017.14.4.001",
       "title": "Comparative Analysis of Internal Control System in USA, Japan and Korea",
-      "abstract": "<jats:p>The internal control system is an essential process to maintain and manage an organization. It helps an organization achieve its goal by containing risks that might affect its accomplishment of the goal. The system is considered increasingly important as it is a fundamental procedure to protect a company’s asset by detecting and preventing irregularities and malpractices.\r\nThis research compares and analyzes laws and regulations pertaining to internal control systems in the U.S., Japan, ",
-      "year": 2017,
+      "authors": [
+        "",
+        "Park, Hyung-Geun",
+        "Lee, Jae-Choon"
+      ],
       "venue": "Asia Europe Perspective Association",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 26,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The internal control system is an essential process to maintain and manage an organization. It helps an organization achieve its goal by containing risks that might affect its accomplishment of the goal. The system is considered increasingly important as it is a fundamental procedure to protect a company’s asset by detecting and preventing irregularities and malpractices.\r\nThis research compares and analyzes laws and regulations pertaining to internal control systems in the U.S., Japan, ",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 74
     },
     {
-      "rank": 16,
+      "doi": "10.5353/th_b3195221",
+      "title": "A comparative study of political leadership in Japan and South Korea",
+      "authors": [
+        "Li, Wan-hay"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.20306/kces.2022.9.30.43",
+      "title": "Comparative Analysis of Public Alternative Schools in South Korea, USA, and Japan",
+      "authors": [
+        "",
+        "Kim, Jihyun",
+        "Kim, Ji Hye",
+        "Ahn, Eunkyung"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Purpose: This study aimed to explore the meaning of public alternative schools in the overall public education system and to draw implications for the public education system in Korea, by comparing public alternative schools in South Korea, the United States, and Japan.\r\nMethods: For this purpose, we analyzed the literature on public alternative schools in those three countries, focusing on their background, legal basis, operation status, and school practices. The analysis included publi",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.2139/ssrn.5245450",
+      "title": "Comparative Analysis of South Korea-Japan Trade Patterns Using the Gravity Model",
+      "authors": [
+        "Kwon, Sunhee"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 22,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.5353/th_b3195186",
+      "title": "A comparative study on the industrial policy in Japan and South Korea",
+      "authors": [
+        "Chan, Wai-keung, Timothy"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.14264/2668b6d",
+      "title": "Social Capital Determinants of Subjective Well-being in South Korea and Japan",
+      "authors": [
+        "",
+        "Small, Caroline"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.25236/ajhss.2022.050203",
+      "title": "A Comparative Study on the Inheritance of \"Intangible Cultural Heritage\" in China, Japan and South Korea",
+      "authors": [],
+      "venue": "Academic Journal of Humanities &amp; Social Sciences",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.20306/kces.2017.27.3.185",
+      "title": "Successful Aging and Work Activities during Elderly Period: Focused on the Case of Ogawanosho Oyakimura in Japan",
+      "authors": [
+        "",
+        "Jang, Ji-Eun"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.47405/aswj.v7i3.206",
+      "title": "The Aging and Retirement: A Comparative Study on the Pension Policy in South Korea and Indonesia",
+      "authors": [
+        "Hati, Getar",
+        "Pratama, Ari Lazuardi"
+      ],
+      "venue": "Asian Social Work Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The aging group in society faces challenging situations in most countries. This paper discusses comparing the aging challenge and pension policy to overcome the problems. As one of the most aging population countries globally, South Korea has become a good representative to learn about the aging context. Meanwhile, Indonesia as a populous country with a gradually growing aging population from year to year. The article analyses that even though South Korea and Indonesia have a similar thr",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.37704/kjje.2025.30.1.77",
+      "title": "A Comparative Study of Territorial Education in the Social Studies Curricula of Korea and Japan",
+      "authors": [
+        "",
+        "Yang, Byung-Il"
+      ],
+      "venue": "Korean journal of the Japan education",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究の目的は、韓国と日本の領土教育を比較することで、韓国の領土教育に現れた変化を明らかにすることである。この研究目的を達成するために、本研究では両国の国家水準の教育課程と教科書を比較する。本研究の結果は、以下の通りである。第一に、わが国の初等学校社会科におけるわが国の位置と領域に関する内容は日本に比べ、少ない。2022年改訂初等学校社会科教育課程は、韓国の領域と相対的な位置に関する内容を見つけることができなかった。第二に、韓国の初等学校社会科の独島の内容は継続して強調されている。これは日本の小学校社会科学習指導要領に独島内容が新たに登場する傾向に対する韓国社会科教育の反応であり、韓国の象徴的な主権活動の一部とみなすことができる。\r\n\r\nThis study examines changes in territorial education in Korea by comparing its approach to that of Japan. To achieve this objective, it analyses the national-level curri",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.17282/ethics.2017..56.189",
+      "title": "A Comparative Study on Moral Textbooks in South Korea and Japan",
+      "authors": [
+        "유병열",
+        "Son, Eun Hye"
+      ],
+      "venue": "KOREAN ELEMENTARY MORAL EDUCATION SOCIETY",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1057/9781137340986.0007",
+      "title": "Sustainable Development in Japan and South Korea",
+      "authors": [],
+      "venue": "Lessons in Sustainable Development from Japan and South Korea",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.14711/thesis-b556264",
+      "title": "Adoption of mobile communication standards : a comparative study of China, Japan, South Korea and Hong Kong",
+      "authors": [
+        "Mitsumori, Shiro"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.11126/stanford/9781503610255.003.0002",
+      "title": "Precarious Work in Comparative Perspective",
+      "authors": [
+        "Kalleberg, Arne L.",
+        "Hewison, Kevin",
+        "Shin, Kwang-Yeong"
+      ],
+      "venue": "Precarious Asia",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>The chapter presents our conceptualization of precarious work, which includes nonregular work, informal economy work, and self-employment. Precarious work results from the interplay between the dynamics of global and regional capitalism and the relations between the state, business, and labor in Japan, South Korea, and Indonesia. Who works in precarious jobs is also important, highlighting the importance of gender and social reproduction. The chapter outlines how the rise of precarious work c",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.20306/kces.2026.6.30.1",
+      "title": "A Comparative Analysis of Autonomous Curriculum Areas in the Elementary School Curricula of South Korea, China, and Japan",
+      "authors": [
+        "",
+        "Kim, Donghyun",
+        "Lee, Dongyub"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>[Purpose] This study aims to compare the structural patterns of autonomous curriculum areas in elementary schools across three East Asian countries—South Korea, China, and Japan—amidst the global trend of curriculum decentralization. Furthermore, it seeks to identify the governance dynamics between curriculum autonomy and state control as conceptualized by each nation.\r\n[Methods] Bereday’s (1964) four-step comparative methodology—description, interpretation, juxtaposition, and comparison",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.18327/ijfs.2016.04.20.1.195",
+      "title": "A Comparative Study on BMDs of Israel, Japan and South Korea and Implications for South Korea",
+      "authors": [
+        "Park, Hwee Rhak"
+      ],
+      "venue": "Journal of international area studies",
+      "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1017/9781108163606.008",
+      "title": "Introducing Jury Systems in South Korea and Spain",
+      "authors": [],
+      "venue": "Who Judges?",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.20306/kces.2022.3.31.177",
+      "title": "A Comparative Study on the Factors Influencing teacher self-efficacy in multicultural classrooms in South Korea and Japan",
+      "authors": [
+        "Jeong, Seongkyeong",
+        "Ki, hansol",
+        "Park, Hwanbo"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.11126/stanford/9781503610255.003.0003",
+      "title": "Japan, South Korea, and Indonesia",
+      "authors": [
+        "Kalleberg, Arne L.",
+        "Hewison, Kevin",
+        "Shin, Kwang-Yeong"
+      ],
+      "venue": "Precarious Asia",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>Chapter 2 offers an overview of the three countries included in this study: Japan, South Korea, and Indonesia. The patterns of economic development, political dynamics, and relationships with the global division of labor are summarized for the three countries up to the early 1990s. The three countries industrialized at different times, and such differences meant variation in terms of national state capacities to shape their domestic institutions and influence global forces. Recent information",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.9708/jksci.2014.19.12.329",
+      "title": "Comparative Research of Competitiveness and Influence Factors of Computer and Information Service Trade of South Korea, China and Japan",
+      "authors": [
+        "Rui, Liang",
+        "Liu, Zi-Yang"
+      ],
+      "venue": "Journal of the Korea Society of Computer and Information",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.20306/kces.2022.9.30.78",
+      "title": "A Comparative Study on Career-specific Teacher Training System in South Korea and Japan: Focusing on Seoul and Tokyo",
+      "authors": [
+        "",
+        "Lim, Joohyeon",
+        "Eom, Moonyoung",
+        "Park, Seungjong"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>[Purpose]The purpose of this study was to provide meaningful implications to South Korea by analyzing career-specific teacher training system in South Korea and Japan.\r\n[Methods]To this end, Seoul and Tokyo were selected as representatives of each country and related documents were analyzed. An analysis framework that set background of introduction, operating system, and program as comparative standards was used.\r\n[Results]The main findings were as follows. First, Both South Korea and Ja",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1007/978-981-16-2730-9_1",
+      "title": "Background of School Violence in Korea, Japan, and the U.S.",
+      "authors": [
+        "Han, Seunghee"
+      ],
+      "venue": "School Violence in South Korea",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 45,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.20306/kces.2022.32.4.75",
+      "title": "A Comparative Study on Career-specific Teacher Training System in South Korea and Japan: Focusing on Seoul and Tokyo",
+      "authors": [
+        "",
+        "Lim, Joohyeon",
+        "Eom, Moonyoung",
+        "Park, Seungjong"
+      ],
+      "venue": "Korean Comparative Education Society",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>[Purpose]The purpose of this study was to provide meaningful implications to South Korea by analyzing career-specific teacher training system in South Korea and Japan.\r\n[Methods]To this end, Seoul and Tokyo were selected as representatives of each country and related documents were analyzed. An analysis framework that set background of introduction, operating system, and program as comparative standards was used.\r\n[Results]The main findings were as follows. First, Both South Korea and Ja",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.56687/9781447352754-015",
+      "title": "The governance of social investment policies in comparative perspective: long-term care in England and South Korea",
+      "authors": [
+        "Lee, Jooha"
+      ],
+      "venue": "Welfare Reform and Social Investment Policy in Europe and East Asia",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1515/9780824844509-012",
+      "title": "Notes",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1515/9780824844509-014",
+      "title": "Contributors",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.4324/9781315716299-21",
+      "title": "Voicing Discontent in South Korea",
+      "authors": [
+        "Vergeer, Maurice",
+        "Park, Se Jung"
+      ],
+      "venue": "The Routledge Companion to Social Media and Politics",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.2139/ssrn.6243679",
+      "title": "Cyber Talent at a Crossroads in Japan: Public-Private Mobility Comparative Analysis between Japan, the United States, South Korea, and Singapore",
+      "authors": [
+        "Urakawa, Takashi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>This study examines how institutional, operational, financial, and cultural factors shape public-private mobility in the cybersecurity workforce in Japan, the United States, South Korea, and Singapore. Despite recent active cyber defense legislation, Japan continues to face a persistent shortage of cybersecurity personnel and lacks mechanisms enabling bidirectional movement between government, the Japan Self-Defense Forces (JSDF), and industry. Using a qualitative comparative case-study ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1515/9780824844509-013",
+      "title": "References",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1515/9780824844509-fm",
+      "title": "Frontmatter",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1515/9780824844509-toc",
+      "title": "Contents",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1515/9780824844509-015",
+      "title": "Index",
+      "authors": [],
+      "venue": "Marriage, Work, and Family Life in Comparative Perspective",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
       "doi": "10.1007/s10846-026-02417-6",
       "title": "Towards Hyper-realistic Robot Heads: A Review",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Naoya Itatani",
+        "Melissa Zavaglia"
+      ],
       "venue": "Journal of Intelligent & Robotic Systems",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10846-026-02417-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 106
     },
     {
-      "rank": 17,
+      "doi": "10.1016/j.actpsy.2026.107436",
+      "title": "Imaginary companions: A meta-analytic investigation on anthropomorphism and chronic loneliness",
+      "authors": [
+        "Anthony Durand",
+        "Laurent Bègue"
+      ],
+      "venue": "Acta Psychologica",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0001691826012370/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 107
+    },
+    {
       "doi": "",
-      "title": "Echoes From the Other Side: Gender, Space, and Psyche in Contemporary Japanese Genre Fiction",
-      "abstract": "",
-      "year": 2015,
-      "venue": "CU Scholar (University of Colorado Boulder)",
-      "citation_count": 0,
-      "engines_found_in": [
+      "title": "Vital Coasts, Mortal Oceans: The Pearl Button as Media Environmental Philosophy",
+      "authors": [
+        "Matthew Holtmeier"
+      ],
+      "venue": "Digital Commons - East Tennessee State University (East Tennessee State University)",
+      "year": 2019,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://dc.etsu.edu/etsu-works/7825",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 108
     },
     {
-      "rank": 18,
-      "doi": "10.64828/conf-111-2026-2",
-      "title": "REPRESENTATION OF EMOTIONS IN CONTEMPORARY ENGLISH DISCOURSE",
-      "abstract": "",
-      "year": 2026,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 19,
-      "doi": "10.26092/elib/4762",
-      "title": "Critical Sociolinguistics in a Modern World: Proceedings of the 1st Kansai Sociolinguistics Colloquium",
-      "abstract": "",
-      "year": 2026,
-      "venue": "Media (https://www.suub.uni-bremen.de/)",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 20,
-      "doi": "arXiv:2505.03835v2",
-      "title": "The Shift Towards Preprints in AI Policy Research: A Comparative Study of Preprint Trends in the U.S., Europe, and South Korea",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "arXiv:2510.06788v1",
-      "title": "Unpacking Discourses on Childbirth and Parenthood in Popular Social Media Platforms Across China, Japan, and South Korea",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 22,
-      "doi": "10.1109/RO-MAN57019.2023.10309617",
-      "title": "Social Robots As Companions for Lonely Hearts: The Role of Anthropomorphism and Robot Appearance",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 23,
-      "doi": "arXiv:1511.02429v1",
-      "title": "A Micro-foundation of Social Capital in Evolving Social Networks",
-      "abstract": "",
-      "year": 2015,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 24,
-      "doi": "arXiv:1011.5186v1",
-      "title": "Archaeo-Astronomy in Society: Supporting Citizenship in Schools Across Europe",
-      "abstract": "",
-      "year": 2010,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 25,
-      "doi": "arXiv:0808.0650v1",
-      "title": "Summary of the 3rd International Workshop on a Far Detector in Korea for the J-PARC Beam",
-      "abstract": "",
+      "doi": "10.1029/eost2008eo36",
+      "title": "Eos, Transactions, American Geophysical Union Volume 89, Number 36, 2 September 2008",
+      "authors": [],
+      "venue": "Eos",
       "year": 2008,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1029/eost2008EO36",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 109
     },
     {
-      "rank": 26,
-      "doi": "10.1109/TSMCA.2011.2132707",
-      "title": "Multidimensional Social Network in the Social Recommender System",
-      "abstract": "",
-      "year": 2013,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "",
+      "title": "『創価経営論集』（第50巻）全文",
+      "authors": [],
+      "venue": "Institutional Repositories DataBase (IRDB)",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://soka.repo.nii.ac.jp/record/2000733/files/sokakeieironsyu50_1_00.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 110
     },
     {
-      "rank": 27,
-      "doi": "10.1145/3757689",
-      "title": "Understanding Digital Gifting Through Messengers Across Cultures: A Comparative Study of University Students in South Korea, China, and Japan",
-      "abstract": "",
+      "doi": "arXiv:2505.03835v2",
+      "arxiv_id": "2505.03835v2",
+      "title": "The Shift Towards Preprints in AI Policy Research: A Comparative Study of Preprint Trends in the U.S., Europe, and South Korea",
+      "authors": [
+        "Simon Suh"
+      ],
+      "venue": "arXiv",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2505.03835v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 111
     },
     {
-      "rank": 28,
+      "doi": "arXiv:2510.06788v1",
+      "arxiv_id": "2510.06788v1",
+      "title": "Unpacking Discourses on Childbirth and Parenthood in Popular Social Media Platforms Across China, Japan, and South Korea",
+      "authors": [
+        "Zheng Wei",
+        "Yunqi Li",
+        "Yucheng He",
+        "Yuelu Li",
+        "Xian Xu",
+        "Huamin Qu",
+        "Pan Hui",
+        "Muzhi Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.06788v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1109/RO-MAN57019.2023.10309617",
+      "arxiv_id": "2306.02694v2",
+      "title": "Social Robots As Companions for Lonely Hearts: The Role of Anthropomorphism and Robot Appearance",
+      "authors": [
+        "Yoonwon Jung",
+        "Sowon Hahn"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.02694v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:1511.02429v1",
+      "arxiv_id": "1511.02429v1",
+      "title": "A Micro-foundation of Social Capital in Evolving Social Networks",
+      "authors": [
+        "Ahmed M. Alaa",
+        "Kartik Ahuja",
+        "Mihaela van der Schaar"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1511.02429v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:1011.5186v1",
+      "arxiv_id": "1011.5186v1",
+      "title": "Archaeo-Astronomy in Society: Supporting Citizenship in Schools Across Europe",
+      "authors": [
+        "D. Brown",
+        "L. Canas"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1011.5186v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:0808.0650v1",
+      "arxiv_id": "0808.0650v1",
+      "title": "Summary of the 3rd International Workshop on a Far Detector in Korea for the J-PARC Beam",
+      "authors": [
+        "T. Kajita",
+        "S. B. Kim",
+        "A. Rubbia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0808.0650v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1109/TSMCA.2011.2132707",
+      "arxiv_id": "1303.0093v1",
+      "title": "Multidimensional Social Network in the Social Recommender System",
+      "authors": [
+        "Przemyslaw Kazienko",
+        "Katarzyna Musial",
+        "Tomasz Kajdanowicz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0093v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1145/3757689",
+      "arxiv_id": "2509.16932v1",
+      "title": "Understanding Digital Gifting Through Messengers Across Cultures: A Comparative Study of University Students in South Korea, China, and Japan",
+      "authors": [
+        "YeEun Lee",
+        "Dakyeom Ahn",
+        "JungYu Kwon",
+        "SeungJi Lee",
+        "Hajin Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.16932v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
       "doi": "10.1098/rsos.200411",
+      "arxiv_id": "2005.11966v1",
       "title": "Self induced class stratification in competitive societies of agents: Nash stability in the presence of envy",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Claudius Gros"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.11966v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 119
     },
     {
-      "rank": 29,
       "doi": "arXiv:2007.12506v1",
+      "arxiv_id": "2007.12506v1",
       "title": "Mind Your Manners! A Dataset and A Continual Learning Approach for Assessing Social Appropriateness of Robot Actions",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Jonas Tjomsland",
+        "Sinan Kalkan",
+        "Hatice Gunes"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.12506v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 120
+    },
+    {
+      "doi": "10.1007/978-3-319-11973-1_36",
+      "arxiv_id": "1602.04529v1",
+      "title": "Socially Impaired Robots: Human Social Disorders and Robots' Socio-Emotional Intelligence",
+      "authors": [
+        "Jonathan Vitale",
+        "Mary-Anne Williams",
+        "Benjamin Johnston"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1602.04529v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.18564/jasss.5881",
+      "arxiv_id": "2601.06154v1",
+      "title": "BotSim: Mitigating The Formation Of Conspiratorial Societies with Useful Bots",
+      "authors": [
+        "Lynnette Hui Xian Ng",
+        "Kathleen M. Carley"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.06154v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2310.10161v1",
+      "arxiv_id": "2310.10161v1",
+      "title": "Public Perceptions of Fukushima Food Products in South Korea and Its dispute Resolution: A Comparative Study on East Asia",
+      "authors": [
+        "Young Chan Seo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.10161v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.1007/978-3-319-77332-2_13",
+      "arxiv_id": "1708.08134v1",
+      "title": "Measuring social spam and the effect of bots on information diffusion in social media",
+      "authors": [
+        "Emilio Ferrara"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.08134v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:2203.06015v1",
+      "arxiv_id": "2203.06015v1",
+      "title": "Comparing Global Tourism Flows Measured by Official Census and Social Sensing",
+      "authors": [
+        "Lucas Skora",
+        "Helen Senefonte",
+        "Myriam Delgado",
+        "Ricardo Lüders",
+        "Thiago Silva"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.06015v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.1145/3371382.3380737",
+      "arxiv_id": "2003.12569v1",
+      "title": "Avatar Work: Telework for Disabled People Unable to Go Outside by Using Avatar Robots \"OriHime-D\" and Its Verification",
+      "authors": [
+        "Kazuaki Takeuchi",
+        "Yoichi Yamazaki",
+        "Kentaro Yoshifuji"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.12569v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.1109/CASoN.2012.6412380",
+      "arxiv_id": "1303.5009v1",
+      "title": "Quantifying Social Network Dynamics",
+      "authors": [
+        "Radosław Michalski",
+        "Piotr Bródka",
+        "Przemysław Kazienko",
+        "Krzysztof Juszczyszyn"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.5009v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:2410.11085v1",
+      "arxiv_id": "2410.11085v1",
+      "title": "What Am I? Evaluating the Effect of Language Fluency and Task Competency on the Perception of a Social Robot",
+      "authors": [
+        "Shahira Ali",
+        "Haley N. Green",
+        "Tariq Iqbal"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.11085v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1016/j.osnem.2023.100270",
+      "arxiv_id": "2305.18907v2",
+      "title": "Multitask learning for recognizing stress and depression in social media",
+      "authors": [
+        "Loukas Ilias",
+        "Dimitris Askounis"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.18907v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.1007/s13278-023-01161-1",
+      "arxiv_id": "2409.07720v1",
+      "title": "Keeping it Authentic: The Social Footprint of the Trolls Network",
+      "authors": [
+        "Ori Swed",
+        "Sachith Dassanayaka",
+        "Dimitri Volchenkov"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.07720v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1016/j.isci.2021.103424",
+      "arxiv_id": "2106.14832v2",
+      "title": "The role of reciprocity in human-robot social influence",
+      "authors": [
+        "Joshua Zonca",
+        "Anna Folso",
+        "Alessandra Sciutti"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.14832v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:1512.01420v2",
+      "arxiv_id": "1512.01420v2",
+      "title": "A Comparative Study of Interdisciplinarity in Sciences in Brazil, South Korea, Turkey, and USA",
+      "authors": [
+        "Nazli Yurdakul",
+        "A. Nihat Berker"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1512.01420v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1007/s13278-022-00994-6",
+      "arxiv_id": "2603.21470v1",
+      "title": "Empirical Evaluation of Link Deletion Methods for Limiting Information Diffusion on Social Media",
+      "authors": [
+        "Shiori Furukawa",
+        "Sho Tsugawa"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.21470v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1007/978-3-540-87781-3_40",
+      "arxiv_id": "1303.0284v1",
+      "title": "Social Recommendations within the Multimedia Sharing Systems",
+      "authors": [
+        "Katarzyna Musial",
+        "Przemyslaw Kazienkol",
+        "Tomasz Kajdanowicz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0284v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.18564/jasss.4252",
+      "arxiv_id": "1907.07055v3",
+      "title": "Homophily as a Process Generating Social Networks: Insights from Social Distance Attachment Model",
+      "authors": [
+        "Szymon Talaga",
+        "Andrzej Nowak"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1907.07055v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1109/CGC.2012.95",
+      "arxiv_id": "1303.2369v1",
+      "title": "Negative Effects of Incentivised Viral Campaigns for Activity in Social Networks",
+      "authors": [
+        "Radosław Michalski",
+        "Jarosław Jankowski",
+        "Przemysław Kazienko"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.2369v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:2501.03420v1",
+      "arxiv_id": "2501.03420v1",
+      "title": "Designing Telepresence Robots to Support Place Attachment",
+      "authors": [
+        "Yaxin Hu",
+        "Anjun Zhu",
+        "Catalina L. Toma",
+        "Bilge Mutlu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.03420v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1609/icwsm.v19i1.35911",
+      "arxiv_id": "2501.12571v2",
+      "title": "Exploring Unknown Social Networks for Discovering Hidden Nodes",
+      "authors": [
+        "Sho Tsugawa",
+        "Hiroyuki Ohsaki"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.12571v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1145/2492517.2492530",
+      "arxiv_id": "1310.2665v1",
+      "title": "Clustering Memes in Social Media",
+      "authors": [
+        "Emilio Ferrara",
+        "Mohsen JafariAsbagh",
+        "Onur Varol",
+        "Vahed Qazvinian",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2665v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1109/HRI61500.2025.10973892",
+      "arxiv_id": "2501.02583v1",
+      "title": "Gaze Behavior During a Long-Term, In-Home, Social Robot Intervention for Children with ASD",
+      "authors": [
+        "Rebecca Ramnauth",
+        "Frederick Shic",
+        "Brian Scassellati"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02583v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1609/icwsm.v18i1.31366",
+      "arxiv_id": "2312.11326v2",
+      "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+      "authors": [
+        "Marcelo Sartori Locatelli",
+        "Pedro Calais",
+        "Matheus Prado Miranda",
+        "João Pedro Junho",
+        "Tomas Lacerda Muniz",
+        "Wagner Meira",
+        "Virgilio Almeida"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11326v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "arXiv:1201.1547v1",
+      "arxiv_id": "1201.1547v1",
+      "title": "Information Society: Modeling A Complex System With Scarce Data",
+      "authors": [
+        "Noemi L. Olivera",
+        "Araceli N. Proto",
+        "Marcel Ausloos"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1201.1547v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.1108/01439911211217125",
+      "arxiv_id": "1309.2086v1",
+      "title": "High-level robot programming based on CAD: dealing with unpredictable environments",
+      "authors": [
+        "Pedro Neto",
+        "Nuno Mendes",
+        "Ricardo Araújo",
+        "J. Norberto Pires",
+        "A. Paulo Moreira"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1309.2086v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:1206.3027v1",
+      "arxiv_id": "1206.3027v1",
+      "title": "Social Networks, Functional Differentiation of Society, and Data Protection",
+      "authors": [
+        "Jörg Pohle"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1206.3027v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1016/j.socnet.2017.10.001",
+      "arxiv_id": "1606.08103v2",
+      "title": "State power and elite autonomy in a networked civil society: The board interlocking of Chinese non-profits",
+      "authors": [
+        "Ji Ma",
+        "Simon DeDeo"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1606.08103v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1007/978-3-642-16567-2_7",
+      "arxiv_id": "1303.0095v1",
+      "title": "Label-dependent Feature Extraction in Social Networks for Node Classification",
+      "authors": [
+        "Tomasz Kajdanowicz",
+        "Przemyslaw Kazienko",
+        "Piotr Doskocz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0095v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1016/j.osnem.2022.100220",
+      "arxiv_id": "2203.15752v3",
+      "title": "Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users",
+      "authors": [
+        "Lucio La Cava",
+        "Andrea Tagarelli"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.15752v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.1007/s13278-014-0237-x",
+      "arxiv_id": "1411.0652v1",
+      "title": "Clustering memes in social media streams",
+      "authors": [
+        "Mohsen JafariAsbagh",
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.0652v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2008.05382v2",
+      "arxiv_id": "2008.05382v2",
+      "title": "Social Companion Robots to Reduce Isolation: A Perception Change Due to COVID-19",
+      "authors": [
+        "Moojan Ghafurian",
+        "Colin Ellard",
+        "Kerstin Dautenhahn"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.05382v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1145/2512938.2512956",
+      "arxiv_id": "1310.2671v1",
+      "title": "Traveling Trends: Social Butterflies or Frequent Fliers?",
+      "authors": [
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2671v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.1007/978-3-030-90525-5_30",
+      "arxiv_id": "2603.08810v1",
+      "title": "Age-Related Differences in the Perception of Eye-Gaze from a Social Robot",
+      "authors": [
+        "Lucas Morillo-Mendez",
+        "Martien G. S. Schrooten",
+        "Oscar Martinez Mozos"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.08810v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.3389/frobt.2024.1347538",
+      "arxiv_id": "2312.07214v3",
+      "title": "Exploring Large Language Models to Facilitate Variable Autonomy for Human-Robot Teaming",
+      "authors": [
+        "Younes Lakhnati",
+        "Max Pascher",
+        "Jens Gerken"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.07214v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.1109/RO-MAN57019.2023.10309629",
+      "arxiv_id": "2307.00841v1",
+      "title": "Advantages of Multimodal versus Verbal-Only Robot-to-Human Communication with an Anthropomorphic Robotic Mock Driver",
+      "authors": [
+        "Tim Schreiter",
+        "Lucas Morillo-Mendez",
+        "Ravi T. Chadalavada",
+        "Andrey Rudenko",
+        "Erik Billing",
+        "Martin Magnusson",
+        "Kai O. Arras",
+        "Achim J. Lilienthal"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.00841v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2607.00142v1",
+      "arxiv_id": "2607.00142v1",
+      "title": "Stop Pretending Social Robots Are Inevitable",
+      "authors": [
+        "Serge Thill"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.00142v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1109/TCSS.2022.3140779",
+      "arxiv_id": "2106.01750v3",
+      "title": "Modeling Influencer Marketing Campaigns in Social Networks",
+      "authors": [
+        "Ronak Doshi",
+        "Ajay Ramesh Ranganathan",
+        "Shrisha Rao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.01750v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:0511224v1",
+      "arxiv_id": "0511224v1",
+      "title": "Grouping in the stock markets of Japan and Korea",
+      "authors": [
+        "Woo-Sung Jung",
+        "Okyu Kwon",
+        "Taisei Kaizoji",
+        "Seungbyung Chae",
+        "Hie-Tae Moon"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/physics/0511224v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2008.08370v2",
+      "arxiv_id": "2008.08370v2",
+      "title": "Coordinated Behavior on Social Media in 2019 UK General Election",
+      "authors": [
+        "Leonardo Nizzoli",
+        "Serena Tardelli",
+        "Marco Avvenuti",
+        "Stefano Cresci",
+        "Maurizio Tesconi"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.08370v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1145/3715070.3749237",
+      "arxiv_id": "2510.19024v1",
+      "title": "Examining the Impact of Label Detail and Content Stakes on User Perceptions of AI-Generated Images on Social Media",
+      "authors": [
+        "Jingruo Chen",
+        "TungYen Wang",
+        "Marie Williams",
+        "Natalia Jordan",
+        "Mingyi Shao",
+        "Linda Zhang",
+        "Susan R. Fussell"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.19024v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:0911.4300v1",
+      "arxiv_id": "0911.4300v1",
+      "title": "Indicators for the Knowledge-based Economy: A Comparison between South Korea and The Netherlands",
+      "authors": [
+        "Han Woo Park",
+        "Loet Leydesdorff",
+        "Heung Deug Hong",
+        "Sung Jo Hung"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0911.4300v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2410.10550v1",
+      "arxiv_id": "2410.10550v1",
+      "title": "Users' Perception on Appropriateness of Robotic Coaching Assistant's Disclosure Behaviors",
+      "authors": [
+        "Atikkhan Faridkhan Nilgar",
+        "Manuel Dietrich",
+        "Kristof Van Laerhoven"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.10550v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
     }
   ]
 }

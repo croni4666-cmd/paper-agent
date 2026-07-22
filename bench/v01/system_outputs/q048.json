@@ -1,316 +1,3033 @@
 {
   "query_id": "q048",
   "query": "全民基本收入是否会滋生懒汉心理 (UBI Finland Kenya experiment anchor)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "social",
+  "source": "user",
+  "generated_at": "2026-07-22T11:32:12",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 20,
+  "n_returned": 144,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 4,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.3390/nu14142918",
+      "title": "Comparison of Five Oxidative Stress Biomarkers in Vegans and Omnivores from Germany and Finland",
+      "authors": [
+        "Stefan Dietrich"
+      ],
+      "venue": "Nutrients",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62e3bb3d5aee126c0f8217a5",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1002/gj.70287",
+      "title": "Synchronising Sustainability: Do Technological Advancement, Financial Development and Renewable Energy Matter in Finland?",
+      "authors": [
+        "Babatunde Sunday Eweade"
+      ],
+      "venue": "GEOLOGICAL JOURNAL",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08bc79be8eb7c4b531ec5",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.4324/9781315205274-14",
+      "title": "Historical Comparison of Construction Sectors in the US, Japan, Italy and Finland Using Input-Output Tables*",
+      "authors": [
+        "Ranko Bon"
+      ],
+      "venue": "Economic Structure and Maturity Collected Papers in Input-output Modelling and Applications",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8edcedabfae2eee61ab41",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1016/j.jclepro.2023.136127",
+      "title": "The Potency of Resource Efficiency and Environmental Technologies in Carbon Neutrality Target for Finland",
+      "authors": [
+        "Andrew Adewale Alola"
+      ],
+      "venue": "JOURNAL OF CLEANER PRODUCTION",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6401a9f490e50fcafdeebda7",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1038/s41598-022-19039-1",
+      "title": "Sex-specific Familial Aggregation of Cancers in Finland",
+      "authors": [
+        "Lauri J. Sipilä"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99b2bb7602d97023c3948",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1177/1403494820980264",
+      "title": "A Comparison of COVID-19 Epidemiological Indicators in Sweden, Norway, Denmark, and Finland",
+      "authors": [
+        "Erica A. Yarmol-Matusiak"
+      ],
+      "venue": "SCANDINAVIAN JOURNAL OF PUBLIC HEALTH",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff98667d4150a363cf4bca8",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1016/j.scitotenv.2021.145274",
+      "title": "The Detection and Stability of the SARS-CoV-2 RNA Biomarkers in Wastewater Influent in Helsinki, Finland",
+      "authors": [
+        "Anna-Maria Hokajarvi"
+      ],
+      "venue": "The Science of The Total Environment",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60168342ca531faf3e50df69",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1093/ije/dyab109",
+      "title": "Cohort Profile: 46 Years of Follow-Up of the Northern Finland Birth Cohort 1966 (NFBC1966)",
+      "authors": [
+        "Tanja Nordström"
+      ],
+      "venue": "International journal of epidemiology",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "612e07dd5244ab9dcb4f9fbb",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1016/j.ufug.2021.127257",
+      "title": "Outdoor Recreation and Nature’s Contribution to Well-Being in a Pandemic Situation - Case Turku, Finland",
+      "authors": [
+        "Nora Fagerholm"
+      ],
+      "venue": "URBAN FORESTRY & URBAN GREENING",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "613b36eb5244ab9dcba25020",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1111/1755-0998.13510",
+      "title": "A Molecular-Based Identification Resource for the Arthropods of Finland",
+      "authors": [
+        "Tomas Roslin"
+      ],
+      "venue": "Molecular ecology resources",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6153e35e5244ab9dcb3d40f2",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.3390/met10070972",
+      "title": "Toward a Fossil Free Future with HYBRIT: Development of Iron and Steelmaking Technology in Sweden and Finland",
+      "authors": [
+        "Martin Pei"
+      ],
+      "venue": "Metals",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc99d23d83c7e914a902cc9",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1111/gcb.15183",
+      "title": "Climate Change Induces Multiple Risks to Boreal Forests and Forestry in Finland: A Literature Review",
+      "authors": [
+        "Ari Venalainen"
+      ],
+      "venue": "GLOBAL CHANGE BIOLOGY",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e974823fda6d7f066cc08d",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "",
+      "title": "Finland: Health System Review.",
+      "authors": [
+        "I Keskimaki"
+      ],
+      "venue": "PubMed",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5da05a3847c8f766460574ca",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1017/s1682098325100040",
+      "title": "Historical Trajectories of Democratic Innovations in Finland",
+      "authors": [
+        "Marina Lindell"
+      ],
+      "venue": "EUROPEAN POLITICAL SCIENCE",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c809be8eb7c4b59a16d",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1145/3544548.3580704",
+      "title": "Ubi Edge: Authoring Edge-Based Opportunistic Tangible User Interfaces in Augmented Reality",
+      "authors": [
+        "Fengming He"
+      ],
+      "venue": "PROCEEDINGS OF THE 2023 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, CHI 2023",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644a34be582c1376bbccc296",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1109/jiot.2023.3243188",
+      "title": "Ubi-Asthma: Toward Ubiquitous Asthma Detection Using the Smartwatch.",
+      "authors": [
+        "Yuan Wu"
+      ],
+      "venue": "IEEE INTERNET OF THINGS JOURNAL",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d47e4d68f896efac58aa2",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1016/j.eswa.2022.116563",
+      "title": "UBIS: Unigram Bigram Importance Score for Feature Selection from Short Text",
+      "authors": [
+        "Muskan Garg"
+      ],
+      "venue": "EXPERT SYSTEMS WITH APPLICATIONS",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623001815aee126c0f929865",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1109/jiot.2022.3146942",
+      "title": "Ubi-Fatigue: Toward Ubiquitous Fatigue Detection Via Contactless Sensing",
+      "authors": [
+        "Jian Zhang"
+      ],
+      "venue": "IEEE INTERNET OF THINGS JOURNAL",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6230033e5aee126c0f983486",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1016/j.jinorgbio.2022.111871",
+      "title": "NMR of Paramagnetic Metalloproteins in Solution: Ubi Venire, Quo Vadis?",
+      "authors": [
+        "Ines B. Trindade"
+      ],
+      "venue": "Journal of Inorganic Biochemistry",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629745395aee126c0fdfae32",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1038/s41419-022-05341-3",
+      "title": "Inhibition of USP1 Activates ER Stress Through Ubi-protein Aggregation to Induce Autophagy and Apoptosis in HCC",
+      "authors": [
+        "Longhao Wang"
+      ],
+      "venue": "Cell Death & Disease",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "636f7a8c90e50fcafdd72cca",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1080/09669582.2020.1783276",
+      "title": "Sustainability Dimensions in Space Tourism: the Case of Finland",
+      "authors": [
+        "Annette Toivonen"
+      ],
+      "venue": "JOURNAL OF SUSTAINABLE TOURISM",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fae6f2ed4150a363ceec13e",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1080/14681366.2020.1868555",
+      "title": "Pedagogical Love in Finland and Australia: a Study of Refugee Children and Their Teachers",
+      "authors": [
+        "Mervi Kaukko"
+      ],
+      "venue": "PEDAGOGY CULTURE AND SOCIETY",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6037663dd3485cfff1d9ed5a",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1016/j.scitotenv.2022.154237",
+      "title": "The Occurrence, Distribution, and Risks of PFAS at AFFF-impacted Sites in Finland",
+      "authors": [
+        "Jussi Reinikainen"
+      ],
+      "venue": "The Science of the total environment",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623315d55aee126c0f438275",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1016/j.seta.2022.102272",
+      "title": "Energy Innovations and Pathway to Carbon Neutrality in Finland",
+      "authors": [
+        "Andrew Adewale Alola"
+      ],
+      "venue": "SUSTAINABLE ENERGY TECHNOLOGIES AND ASSESSMENTS",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6326317090e50fcafdf8595a",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.5771/9781538111543",
+      "title": "Historical Dictionary of Finland",
+      "authors": [
+        "Titus Hjelm"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d87319dabfae2eee039c9a",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1016/j.jclepro.2020.125607",
+      "title": "Drivers of Household Consumption Expenditure and Carbon Footprints in Finland",
+      "authors": [
+        "Marja Salo"
+      ],
+      "venue": "JOURNAL OF CLEANER PRODUCTION",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "600fe78dd4150a363c226a7d",
+      "matched_phrase": "Finland",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/s40620-020-00742-z",
+      "title": "Treatment of Metabolic Acidosis with Sodium Bicarbonate Delays Progression of Chronic Kidney Disease: the UBI Study",
+      "authors": [
+        "Biagio R. Di Iorio"
+      ],
+      "venue": "Journal of Nephrology",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5da05a3f47c8f76646057df4",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1016/j.ymeth.2020.08.003",
+      "title": "DeepTL-Ubi: a Novel Deep Transfer Learning Method for Effectively Predicting Ubiquitination Sites of Multiple Species.",
+      "authors": [
+        "Yu Liu"
+      ],
+      "venue": "Methods",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f37b3f59fced0a24b344501",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1183/13993003.03308-2020",
+      "title": "Pleural Diseases and COVID-19: Ubi Fumus, Ibi Ignis",
+      "authors": [
+        "Jose M. Porcel"
+      ],
+      "venue": "EUROPEAN RESPIRATORY JOURNAL",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f65dd169fced0a24b95af02",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.21107/agrovigor.v12i2.5741",
+      "title": "Ketahanan Empat Kultivar Ubi Kayu Terhadap Tetranychus Kanzawai Kishida (acari: Tetranychidae)",
+      "authors": [
+        "Sugeng Santoso"
+      ],
+      "venue": "Agrovigor Jurnal Agroekoteknologi",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8d32cdabfae2eeeb541d1",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "",
+      "title": "Energiatehokas laskenta Ubi-sovelluksissa",
+      "authors": [
+        "Jarmo Takala"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99a1ab7602d9702271909",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1145/3586183.3606793",
+      "title": "Ubi-TOUCH: Ubiquitous Tangible Object Utilization Through Consistent Hand-object Interaction in Augmented Reality",
+      "authors": [
+        "Rahul Jain"
+      ],
+      "venue": "UIST",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65451c19939a5f4082d4874f",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.14722/ndss.2022.24380",
+      "title": "Progressive Scrutiny: Incremental Detection of UBI Bugs in the Linux Kernel",
+      "authors": [
+        "Yizhuo Zhai"
+      ],
+      "venue": "NDSS",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e2ac15aee126c0f8a0f3f",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.3389/fpls.2022.884903",
+      "title": "A Caps-Ubi Model for Protein Ubiquitination Site Prediction.",
+      "authors": [
+        "Yin Luo"
+      ],
+      "venue": "FRONTIERS IN PLANT SCIENCE",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62a8669d5aee126c0f3b2e7f",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1515/bis-2021-0030",
+      "title": "The State of the UBI Debate: Mapping the Arguments for and Against UBI",
+      "authors": [
+        "Dominic Afscharian"
+      ],
+      "venue": "BASIC INCOME STUDIES",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d16a6f5aee126c0fcf53ed",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.53874/jmar.v8i0.167",
+      "title": "UBI-XGB: IDENTIFICATION OF UBIQUITIN PROTEINS USING MACHINE LEARNING MODEL",
+      "authors": [
+        "Sikandar Rahu"
+      ],
+      "venue": "Journal of Mountain Area Research",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578825e939a5f4082ebaf80",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.19028/jtep.08.3.97-104",
+      "title": "Komposisi Fisikokimia Tepung Ubi Kayu Dan Mocaf Dari Tiga Genotipe Ubi Kayu Hasil Pemuliaan",
+      "authors": [
+        "Nafilawati Wa ode"
+      ],
+      "venue": "Jurnal Keteknikan Pertanian",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62283ed45aee126c0fe0397f",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.38204/atrabis.v7i2.700",
+      "title": "Transformasi Bisnis Digital UMKM Bola Ubi Kopong Di Masa Pandemi Covid-19",
+      "authors": [
+        "Puji Pramesti"
+      ],
+      "venue": "ATRABIS Jurnal Administrasi Bisnis (e-Journal)",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6577d063939a5f4082575818",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.2307/j.ctvzgb78b.12",
+      "title": "Ubi Non Est Mulier, Ingemiscit Egens?",
+      "authors": [
+        "Eva-Maria Cersovsky"
+      ],
+      "venue": "Gender, Health, and Healing, 1250-1550",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0e2b2f9fced0a24baa66ff",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.19181/lsprr.2020.16.4.8",
+      "title": "Realization of the UBI Principles As an Answer to the COVID–19 Challenges",
+      "authors": [
+        "Aleksandr Zolotov"
+      ],
+      "venue": "Level of Life of the Population of the Regions of Russia",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621954475aee126c0f012775",
+      "matched_phrase": "(UBI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.55375/pabr.2023.2.2",
+      "title": "马基雅维利特质抑或策略？ ——基于全球范围大样本的实证分析",
+      "authors": [
+        "",
+        "王, 明璨"
+      ],
+      "venue": "心理学与行为研究",
+      "year": 2023,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>以“马基雅维利特质量表”(MACH-IV)、“10 项目人格量表”(TIPI)、常见社会人口学变量和其他校验项目构成的数据为基础，对马基雅维利特质进行大样本(n=35475)实证分析，以验证其核心预测变量和中介变量，并尝试性地回答马基雅维利主义是人格特质还是行为策略的问题。结果显示：相比其他人格维度，宜人性对马基雅维利特质具有显著负向预测作用且效应量最大，还中介了婚姻状态对马基雅维利特质的影响。此外，未发现教育程度对尽责性或马基雅维利特质的显著预测作用。综合而言，马基雅维利特质主要嵌于某一人格维度之中；同时，作为一种行为策略也受到环境因素和心理动力学因素的影响。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1080/10291954.2020.1735685",
+      "arxiv_id": "",
+      "title": "The case for a universal basic income in South Africa: A conceptual approach",
+      "authors": [
+        "Kerrie Sadiq",
+        "H. du Preez"
+      ],
+      "venue": "South African Journal of Accounting Research",
+      "year": 2020,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 80,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://repository.up.ac.za/bitstream/2263/87139/1/Sadiq_Case_2021.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 42
+    },
+    {
       "doi": "10.3866/pku.dxhx20150632",
       "title": "第13届全国大学化学教学研讨会纪要",
-      "abstract": "",
-      "year": 2015,
+      "authors": [
+        "会务组",
+        ""
+      ],
       "venue": "University Chemistry",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2015,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 43
     },
     {
-      "rank": 2,
       "doi": "10.3861/kenko.85.4_i",
       "title": "理事会報告：「日本民族衛生学会」と国民優生法",
-      "abstract": "",
-      "year": 2019,
+      "authors": [],
       "venue": "Japanese Journal of Health and Human Ecology",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 44
     },
     {
-      "rank": 3,
+      "doi": "10.5674/jjppp1983.1.41",
+      "title": "",
+      "authors": [],
+      "venue": "Japanese Journal of Physiological Psychology and Psychophysiology",
+      "year": 1983,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.32629/er.v2i10.2091",
+      "title": "基于积极心理学的初中生心理健康教育校本课程的实践与思考",
+      "authors": [
+        "褚, 容正"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为了有效的保障初中生的心理健康,本文将对开发初中心理健康校本课程的背景、课程的内容以及核心理念、课程的定位,实施与评估课程等方面的问题进行实践,对实施校本课程的成果进行总结,并且对其中存在的不足进行分析,争取能够不断完善校本课程。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.63887/fss.2025.1.8.74",
+      "title": "基于安全心理素养结构的航海类专业学生差异化培养路径研究",
+      "authors": [
+        "周娅"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>海上职业教育具有鲜明的高风险特征和复杂的心理环境特点，学生面临极端天气、突发事件和封闭空间集体生活等问题，其安全心理素养直接影响职业安全绩效和应急行为的稳定性。现行航海类专业教育体系中，安全心理素养的培养存在内容雷同、方法单一、评价滞后等问题，没有体现出学生个体差异和专业特点的内在规律。本项目围绕安全心理素养结构这一核心问题，从心理认知、情绪调节、意志品质和行为趋向四个方面，分析航海类院校学生的心理特点和差异根源，探索其差异化培养的逻辑和路径，以期为航海类学院构建符合职业心理特点的人才培养模式提供理论基础和指导。本项目提出，安全心理素养差异性表现为学生个人经历、职业认同、学习情境和文化背景等多方面因素共同作用的结果，基于结构视角的差异化培养可以促进学生心理安全意识内化和自律生成，为职业安全教育创新发展提供可持续的思考思路。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.63887/ssrp.2025.1.3.1",
+      "title": "我国居民收入、人口出生率与房价的动态 关系研究",
+      "authors": [
+        "陈娜"
+      ],
+      "venue": "社会科学研究与实践",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文基于1998—2022年的时间序列数据，通过单位根检验、协整检验、Granger因果检验以及脉冲响应分析等方法，对我国居民可支配收入、人口出生率与房价之间的动态关系进行了实证研究。研究结果表明：房价的波动主要受自身冲击的影响；居民可支配收入对房价的正向影响逐渐减弱，最终转为负向影响；人口出生率在短期内对房价上涨有较大正向影响，但长期来看存在负向影响。这些发现为理解房地产市场与宏观经济之间的复杂关系提供了新的视角，并为相关政策的制定提供了理论依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.12677/aam.2021.1011384",
+      "title": "Whether the Efficiency of Social Governance Can Improve Residents’ Happiness—Empirical Analysis Based on CGSS2015 Data",
+      "authors": [
+        "陈, 少艾"
+      ],
+      "venue": "Advances in Applied Mathematics",
+      "year": 2021,
+      "cited_by_count": 1,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.37155/2717-5316-0619-72",
+      "title": "土地综合整治是提高农民收入改善农业生产和农村生活环境的得力措施",
+      "authors": [
+        "郭美灵"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.47743/jopafl-2024-33-10",
+      "arxiv_id": "",
+      "title": "THE ECONOMICS OF UNIVERSAL BASIC INCOME",
+      "authors": [
+        "Csongor Csősz"
+      ],
+      "venue": "Journal of Public Administration, Finance and Law",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 3,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.47743/jopafl-2024-33-10",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 51
+    },
+    {
       "doi": "10.64216/3080-1486.25.11.018",
       "title": "农村电商扶持政策是否有效促进农民增收——基于中部地区实证分析",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "社会经济导刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 52
     },
     {
-      "rank": 4,
       "doi": "10.16874/jslckc.2019..52.006",
       "title": "汉硕留学生学习动机、基本心理需要、 学习性投入的关系",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "장려환",
+        "杨蓉蓉"
+      ],
       "venue": "The Journal of Study on Language and Culture of Korea and China",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 53
     },
     {
-      "rank": 5,
       "doi": "10.1111/bjd.20458",
       "title": "心理压力是否会使带状疱疹 (蛇盘疮) 的风险增加?",
-      "abstract": "",
-      "year": 2021,
+      "authors": [],
       "venue": "British Journal of Dermatology",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 54
     },
     {
-      "rank": 6,
       "doi": "10.4992/pacjpa.88.0_is-022",
       "title": "【日本心理学会 死生心理学研究会・日本心理学会連携企画】　多様な研究領域からケアと死生を考える　死生心理学研究の展開（10）",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "渡邉, 照美",
+        "河野, 由美",
+        "濱吉, 美穂",
+        "鈴木, 勝己",
+        "西村, ユミ",
+        "近藤（有田）, 恵",
+        "浦田, 悠",
+        "川島, 大輔",
+        ""
+      ],
       "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 7,
-      "doi": "10.64216/3104-9672.25.04.016",
-      "title": "农业保险对农民收入影响机理及路径分析",
       "abstract": "",
-      "year": 2025,
-      "venue": "全球文化探索",
-      "citation_count": 0,
-      "engines_found_in": [
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 55
     },
     {
-      "rank": 8,
       "doi": "10.61654/zzgjsc0408",
       "title": "践行人本理念 办好民生实事全力以赴推进暖心关爱落地见效",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "陈, 荟宇"
+      ],
       "venue": "国际市场",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 56
     },
     {
-      "rank": 9,
+      "doi": "10.64216/3104-9672.25.04.016",
+      "title": "农业保险对农民收入影响机理及路径分析",
+      "authors": [],
+      "venue": "全球文化探索",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
       "doi": "10.18356/9789211545265c056",
       "title": "朝鲜民主主义人民共和国局势",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "安全理事会报告",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 58
     },
     {
-      "rank": 10,
+      "doi": "10.4992/pacjpa.73.0_e_1am172",
+      "title": "Erratum：車いす移動時の安全性と快適性に関する生理心理学的検討[日本心理学会第73回大会1AM172]",
+      "authors": [],
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "year": 2009,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
       "doi": "10.4992/pacjpa.89.0_26",
       "title": "&lt;b&gt;【日本心理学諸学会連合・日本心理学会連携企画】&lt;/b&gt;Linking Clinical Psychology and Basic Psychology",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Abe, Tsuneyuki",
+        "Sawamiya, Youko",
+        "Omi, Yasuhiro",
+        "Kaneko, Shuhei",
+        "Shimada, Hironori",
+        "kawabata, Naoto",
+        "Tomiie, Tadaaki",
+        "Nojima, Kazuhiko",
+        "Karasawa, Kaori",
+        "Kanai, Atsuko"
+      ],
       "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 60
+    },
+    {
+      "doi": "10.5265/jcogpsy.230107",
+      "title": "2024年度日本認知心理学会と韓国認知生物心理学会の交流：韓国大会への若年研究者派遣事業・報告",
+      "authors": [
+        "日本認知心理学会国際交流委員会"
+      ],
+      "venue": "The Japanese Journal of Cognitive Psychology",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "10.1016/j.physletb.2011.05.010",
-      "title": "Search for stable hadronising squarks and gluinos with the ATLAS experiment at the LHC",
       "abstract": "",
-      "year": 2011,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 61
     },
     {
-      "rank": 12,
-      "doi": "arXiv:2601.16592v1",
-      "title": "Integrating Meteorological and Operational Data: A Novel Approach to Understanding Railway Delays in Finland",
-      "abstract": "",
-      "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "arXiv:2504.02714v1",
-      "title": "Impact of a Blockchain-based Universal Basic Income Pilot: The case of Circles UBI currency",
-      "abstract": "",
+      "doi": "10.18356/9789211545265c049",
+      "title": "不扩散/朝鲜民主主义人民共和国",
+      "authors": [],
+      "venue": "安全理事会报告",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 62
     },
     {
-      "rank": 14,
-      "doi": "10.1016/j.nimb.2023.05.018",
-      "title": "Mean range bunching of exotic nuclei produced by in-flight fragmentation and fission -- Stopped-beam experiments with increased efficiency",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 15,
-      "doi": "10.1109/IROS60139.2025.11247141",
-      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
-      "abstract": "",
+      "doi": "10.64216/3080-1486.25.07.039",
+      "title": "社会资本对民主治理的效用——基于《使民主运转起来》的分析",
+      "authors": [],
+      "venue": "社会经济导刊",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 63
     },
     {
-      "rank": 16,
-      "doi": "arXiv:1711.02958v1",
-      "title": "Search for hidden-photon dark matter with the FUNK experiment",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.5265/jcogpsy.21.111",
+      "title": "2022年度日本認知心理学会と韓国認知生物心理学会の交流：韓国大会への若手研究者派遣事業・報告",
+      "authors": [
+        "日本認知心理学会国際交流委員会"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 17,
-      "doi": "10.1103/PhysRevC.107.L041301",
-      "title": "Anchor-based optimization of energy density functionals",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 18,
-      "doi": "arXiv:9806002v1",
-      "title": "Recent Results from E866 at BNL",
-      "abstract": "",
-      "year": 1998,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 19,
-      "doi": "arXiv:2102.10886v4",
-      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 20,
-      "doi": "arXiv:2410.09948v1",
-      "title": "State of NLP in Kenya: A Survey",
-      "abstract": "",
+      "venue": "The Japanese Journal of Cognitive Psychology",
       "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.5265/jcogpsy.22.75",
+      "title": "2023年度日本認知心理学会と韓国認知生物心理学会の交流：韓国大会への若手研究者派遣事業・報告",
+      "authors": [
+        "日本認知心理学会国際交流委員会"
+      ],
+      "venue": "The Japanese Journal of Cognitive Psychology",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.1253/jjcsc.7.2_225",
+      "title": "心不全の病態学における生理学と分子生物学 : 種々の心血管作動性物質の病態生理学的役割を中心に : I循環器病学における生理学と分子生物学の融合(&lt;特集&gt;第63回日本循環器学会学術集会)",
+      "authors": [],
+      "venue": "Journal of JCS Cardiologists",
+      "year": 1999,
+      "cited_by_count": 0,
+      "reference_count": 41,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.2142/biophys.53._s21__1",
+      "title": "",
+      "authors": [],
+      "venue": "Seibutsu Butsuri",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.71411/rwxk.2025.v1i3.503",
+      "title": "碳排放权交易政策是否能促进企业全要素生产率增长——基于企业生命周期视角",
+      "authors": [
+        "何镔江"
+      ],
+      "venue": "人文学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文选取2009-2023年沪深A股上市公司作为研究样本，以碳排放权交易政策出台作为准自然实验，从企业生命周期视角出发，运用多期双重差分法研究该政策对企业全要素生产率的影响。结果表明：碳排放权交易政策对企业全要素生产率有促进作用，但对处于不同生命周期阶段的企业产生了异质性效果。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.1253/jjcsc.14.2_304",
+      "title": "慢性心不全治療における疾病管理(7.日本人の慢性心不全の特徴とそれに基づく治療戦略,&lt;特集&gt;第70回日本循環器学会学術集会)",
+      "authors": [],
+      "venue": "Journal of JCS Cardiologists",
+      "year": 2006,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.2142/biophys.53._s21__2",
+      "title": "",
+      "authors": [],
+      "venue": "Seibutsu Butsuri",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.18356/9789211545265c014",
+      "title": "关于行使否决权的特别报告",
+      "authors": [],
+      "venue": "安全理事会报告",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.2502/janip1944.26.41",
+      "title": "",
+      "authors": [],
+      "venue": "The Annual of Animal Psychology",
+      "year": 1976,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.2142/biophys.51._s31_",
+      "title": "",
+      "authors": [],
+      "venue": "Seibutsu Butsuri",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.63887/fss.2025.1.5.26",
+      "title": "基于民航“三个敬畏”精神来华留学生安全教育管理研究:以印尼留学生为例",
+      "authors": [
+        "高洁",
+        "路勇"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文以来华留学生中的印尼群体为研究对象，探讨民航“三个敬畏”（敬畏生命、敬畏规章、敬畏职责）精神融入其安全教育管理的可行性与实施路径，阐述民航“三个敬畏”精神对于提升留学生安全意识、规范安全行为的重要价值。通过具体实践策略的探讨，旨在为提高来华留学生安全教育管理水平，保障留学生在华学习生活安全提供有益参考，促进跨文化教育环境下安全管理工作的有效开展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.69979/3029-2735.26.05.088",
+      "title": "党的二十届三中全会精神融入“马克思主义基本原理”课的实践路径研究",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.18356/9789211545265c031",
+      "title": "武装冲突中保护平民",
+      "authors": [],
+      "venue": "安全理事会报告",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1253/jjcsc.6.2_327",
+      "title": "心臓ペーシング・電気生理学 第13回日本心臓ペーシング・電気生理学会学術大会(循環器学1998年の進歩)",
+      "authors": [],
+      "venue": "Journal of JCS Cardiologists",
+      "year": 1998,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.4992/pacjpa.87.0_is-020",
+      "title": "【日本心理学会 死生心理学研究会・日本心理学会連携企画】　死別と悲嘆研究の最前線　死生心理学研究の展開（8）",
+      "authors": [
+        "川島, 大輔",
+        "古賀, 佳樹",
+        "辻本, 耐",
+        "赤田, ちづる",
+        "建部, 智美",
+        "坂口, 幸弘",
+        "渡邉, 照美",
+        "近藤（有田）, 恵",
+        "浦田, 悠"
+      ],
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.2142/biophys.54.s27_2",
+      "title": "",
+      "authors": [],
+      "venue": "Seibutsu Butsuri",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.37155/2717-5251-0709-6",
+      "title": "水库移民心理重建与社会融入路径探索",
+      "authors": [
+        "陈纯静",
+        "会, 彭"
+      ],
+      "venue": "水利电力技术与应用",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1253/jjcsc.5.2_247",
+      "title": "心不全におけるナトリウム利尿ペプチドファミリーの病態生理学的意義 : 神経体液性調節機構と心不全(&lt;特集&gt;第61回日本循環器学会学術集会シンポジウム,パネルディスカッション)",
+      "authors": [],
+      "venue": "Journal of JCS Cardiologists",
+      "year": 1997,
+      "cited_by_count": 0,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.5674/jjppp1983.22.77",
+      "title": "",
+      "authors": [],
+      "venue": "Japanese Journal of Physiological Psychology and Psychophysiology",
+      "year": 2004,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.62662/kxwxz0303005",
+      "title": "基于心理资本理论的大学生职业生涯规划教育创新路径研究",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.2130/jjesp.br0014",
+      "title": "［書評］日本心理学会（監修），柿本敏克（著）『地球社会で生きるための心理学』（2025年，誠信書房）",
+      "authors": [
+        "竹橋, 洋毅"
+      ],
+      "venue": "THE JAPANESE JOURNAL OF EXPERIMENTAL SOCIAL PSYCHOLOGY",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.5674/jjppp1983.25.91",
+      "title": "",
+      "authors": [],
+      "venue": "Japanese Journal of Physiological Psychology and Psychophysiology",
+      "year": 2007,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.37155/2717-5642-0704-3",
+      "title": "基于核心功能适当下沉部分非税收入管理权限改革的思考",
+      "authors": [
+        "秦, 裕"
+      ],
+      "venue": "国际经济与管理",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.9749/jina.7.0_61",
+      "title": "Study on Physiological and Psycologcial Background of visual navigation Report No.1",
+      "authors": [
+        "Ara, I."
+      ],
+      "venue": "The Journal of the Nautical Society of Japan",
+      "year": 1952,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.5674/jjppp1983.24.83",
+      "title": "",
+      "authors": [],
+      "venue": "Japanese Journal of Physiological Psychology and Psychophysiology",
+      "year": 2006,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.5674/jjppp1983.21.61",
+      "title": "",
+      "authors": [],
+      "venue": "Japanese Journal of Physiological Psychology and Psychophysiology",
+      "year": 2003,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.4992/pacjpa.71.0_ws055",
+      "title": "日本心理学会環境心理研究会（日本環境心理学会準備委員会）企画学校環境への環境心理学的アプローチ",
+      "authors": [],
+      "venue": "The Proceedings of the Annual Convention of the Japanese Psychological Association",
+      "year": 2007,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.2142/biophys.50._s21_",
+      "title": "",
+      "authors": [],
+      "venue": "Seibutsu Butsuri",
+      "year": 2010,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.18356/9789211545265c028",
+      "title": "有关刚果民主共和国的局势",
+      "authors": [],
+      "venue": "安全理事会报告",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1016/j.physletb.2011.05.010",
+      "arxiv_id": "1103.1984v1",
+      "title": "Search for stable hadronising squarks and gluinos with the ATLAS experiment at the LHC",
+      "authors": [
+        "The ATLAS Experiment"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1103.1984v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 93
+    },
+    {
+      "doi": "arXiv:2601.16592v1",
+      "arxiv_id": "2601.16592v1",
+      "title": "Integrating Meteorological and Operational Data: A Novel Approach to Understanding Railway Delays in Finland",
+      "authors": [
+        "Vinicius Pozzobon Borin",
+        "Jean Michel de Souza Sant'Ana",
+        "Usama Raheel",
+        "Nurul Huda Mahmood"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16592v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "arXiv:2504.02714v1",
+      "arxiv_id": "2504.02714v1",
+      "title": "Impact of a Blockchain-based Universal Basic Income Pilot: The case of Circles UBI currency",
+      "authors": [
+        "Alessandro Longo",
+        "Teodoro Criscione",
+        "Julio Linares",
+        "Sowelu Avanzo"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.02714v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1016/j.nimb.2023.05.018",
+      "arxiv_id": "2306.09350v1",
+      "title": "Mean range bunching of exotic nuclei produced by in-flight fragmentation and fission -- Stopped-beam experiments with increased efficiency",
+      "authors": [
+        "Timo Dickel",
+        "Christine Hornung",
+        "Daler Amanbayev",
+        "Samuel Ayet San Andres",
+        "Soenke Beck",
+        "Julian Bergmann",
+        "Hans Geissel",
+        "Juergen Gerl",
+        "Magdalena Gorska",
+        "Lizzy Groef",
+        "Emma Haettner",
+        "Jan-Paul Hucka",
+        "Daria A. Kostyleva",
+        "Gabriella Kripko-Koncz",
+        "Ali Mollaebrahimi",
+        "Ivan Mukha",
+        "Stephane Pietri",
+        "Wolfgang R. Plaß",
+        "Zsolt Podolyak",
+        "Sivaji Purushothaman",
+        "Moritz Pascal Reiter",
+        "Heidi Roesch",
+        "Christoph Scheidenberger",
+        "Yoshiki K. Tanaka",
+        "Helmut Weick",
+        "Jianwei Zhao",
+        "Super-FRS Experiment Collaboration"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.09350v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1109/IROS60139.2025.11247141",
+      "arxiv_id": "2508.02544v1",
+      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
+      "authors": [
+        "Shintaro Inoue",
+        "Kento Kawaharazuka",
+        "Keita Yoneda",
+        "Sota Yuzaki",
+        "Yuta Sahara",
+        "Temma Suzuki",
+        "Kei Okada"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.02544v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "arXiv:1711.02958v1",
+      "arxiv_id": "1711.02958v1",
+      "title": "Search for hidden-photon dark matter with the FUNK experiment",
+      "authors": [
+        "FUNK Experiment",
+        " :",
+        "D. Veberič",
+        "A. Andrianavalomahefa",
+        "K. Daumiller",
+        "B. Döbrich",
+        "R. Engel",
+        "J. Jaeckel",
+        "M. Kowalski",
+        "A. Lindner",
+        "H. -J. Mathes",
+        "J. Redondo",
+        "M. Roth",
+        "T. Schwetz-Mangold",
+        "C. M. Schäfer",
+        "R. Ulrich"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.02958v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1103/PhysRevC.107.L041301",
+      "arxiv_id": "2302.10979v2",
+      "title": "Anchor-based optimization of energy density functionals",
+      "authors": [
+        "A. Taninah",
+        "A. V. Afanasjev"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.10979v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "arXiv:2607.13429v1",
+      "arxiv_id": "2607.13429v1",
+      "title": "Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment",
+      "authors": [
+        "Dwip Dalal",
+        "Shivansh Patel",
+        "Chahit Jain",
+        "Jeonghwan Kim",
+        "Utkarsh Mishra",
+        "Alex Baratian",
+        "Hyeonjeong Ha",
+        "Heng Ji",
+        "Svetlana Lazebnik",
+        "Unnat Jain"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.13429v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "arXiv:9806002v1",
+      "arxiv_id": "9806002v1",
+      "title": "Recent Results from E866 at BNL",
+      "authors": [
+        "C. Muentz",
+        "for Experiment E866",
+        "E802 Collaboration"
+      ],
+      "venue": "arXiv",
+      "year": 1998,
+      "pdf_url": "https://arxiv.org/pdf/nucl-ex/9806002v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "arXiv:2102.10886v4",
+      "arxiv_id": "2102.10886v4",
+      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
+      "authors": [
+        "Xinrong Guan",
+        "Qingqing Wu",
+        "Rui Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.10886v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "arXiv:2410.09948v1",
+      "arxiv_id": "2410.09948v1",
+      "title": "State of NLP in Kenya: A Survey",
+      "authors": [
+        "Cynthia Jayne Amol",
+        "Everlyn Asiko Chimoto",
+        "Rose Delilah Gesicho",
+        "Antony M. Gitau",
+        "Naome A. Etori",
+        "Caringtone Kinyanjui",
+        "Steven Ndung'u",
+        "Lawrence Moruye",
+        "Samson Otieno Ooko",
+        "Kavengi Kitonga",
+        "Brian Muhia",
+        "Catherine Gitau",
+        "Antony Ndolo",
+        "Lilian D. A. Wanzare",
+        "Albert Njoroge Kahira",
+        "Ronald Tombe"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.09948v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "arXiv:2305.03730v1",
+      "arxiv_id": "2305.03730v1",
+      "title": "A version of the simplex method for solving linear systems of inequalities and linear programming problems",
+      "authors": [
+        "Jaan Übi",
+        "Evald Übi"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.03730v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "arXiv:2010.12569v1",
+      "arxiv_id": "2010.12569v1",
+      "title": "Determinants of Financial Performance of Microfinance Banks in Kenya",
+      "authors": [
+        "King'ori S. Ngumo",
+        "Kioko W. Collins",
+        "Shikumo H. David"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.12569v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "arXiv:2605.12078v1",
+      "arxiv_id": "2605.12078v1",
+      "title": "Property-Level Reconstructability of Agent Decisions: An Anchor-Level Pilot Across Vendor SDK Adapter Regimes",
+      "authors": [
+        "Oleg Solozobov"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.12078v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1016/S0370-2693(99)00902-8",
+      "arxiv_id": "9906045v1",
+      "title": "Search for Rare and Forbidden Dilepton Decays of the D+, Ds, and D0 Charmed Mesons",
+      "authors": [
+        " Fermilab Experiment E791 Collaboration",
+        "E. M. Aitala"
+      ],
+      "venue": "arXiv",
+      "year": 1999,
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/9906045v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "arXiv:0405002v1",
+      "arxiv_id": "0405002v1",
+      "title": "Proposal to Perform a High-Statistics Neutrino Scattering Experiment Using a Fine-grained Detector",
+      "authors": [
+        " Minerva Collaboration"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/0405002v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2010.12550v1",
+      "arxiv_id": "2010.12550v1",
+      "title": "Determinants of Lending to Small and Medium Enterprises by Commercial Banks in Kenya",
+      "authors": [
+        "David Haritone Shikumo",
+        "Mwangi Mirie"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.12550v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1088/1674-1137/41/2/023002",
+      "arxiv_id": "1602.01733v4",
+      "title": "Letter of Intent: Jinping Neutrino Experiment",
+      "authors": [
+        "John F. Beacom",
+        "Shaomin Chen",
+        "Jianping Cheng",
+        "Sayed N. Doustimotlagh",
+        "Yuanning Gao",
+        "Shao-Feng Ge",
+        "Guanghua Gong",
+        "Hui Gong",
+        "Lei Guo",
+        "Ran Han",
+        "Xingtao Huang",
+        "Jianmin Li",
+        "Jin Li",
+        "Mohan Li",
+        "Xueqian Li",
+        "Guey-Lin Lin",
+        "Zuowei Liu",
+        "William McDonough",
+        "Jian Tang",
+        "Linyan Wan",
+        "Yuanqing Wang",
+        "Zhe Wang",
+        "Zongyi Wang",
+        "Hanyu Wei",
+        "Yufei Xi",
+        "Ye Xu",
+        "Zhenwei Yang",
+        "Chunfa Yao",
+        "Minfang Yeh",
+        "Qian Yue",
+        "Liming Zhang",
+        "Yang Zhang",
+        "Zhihong Zhao",
+        "Yangheng Zheng",
+        "Xiang Zhou",
+        "Xianglei Zhu",
+        "Kai Zuber"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1602.01733v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "arXiv:0410081v1",
+      "arxiv_id": "0410081v1",
+      "title": "Proposal for U.S. participation in Double-CHOOZ: A New theta-13 Experiment at the Chooz Reactor",
+      "authors": [
+        "S. Berridge",
+        "W. Bugg",
+        "J. Busenitz",
+        "S. Dazeley",
+        "G. Drake",
+        "Y. Efremenko",
+        "M. Goodman",
+        "J. Grudzinski",
+        "V. Guarino",
+        "G. Horton-Smith",
+        "Y. Kamyshkov",
+        "T. Kutter",
+        "C. Lane",
+        "J. LoSecco",
+        "R. McNeil",
+        "W. Metcalf",
+        "D. Reyna",
+        "I. Stancu",
+        "R. Svoboda",
+        "R. Talaga"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/0410081v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:1407.7801v1",
+      "arxiv_id": "1407.7801v1",
+      "title": "Optimizing control of HIV in Kenya",
+      "authors": [
+        "Brian Gerard Williams"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1407.7801v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "arXiv:1812.00469v2",
+      "arxiv_id": "1812.00469v2",
+      "title": "Anchor Box Optimization for Object Detection",
+      "authors": [
+        "Yuanyi Zhong",
+        "Jianfeng Wang",
+        "Jian Peng",
+        "Lei Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1812.00469v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2311.06628v1",
+      "arxiv_id": "2311.06628v1",
+      "title": "A decade of Density Functional Theory in Kenya",
+      "authors": [
+        "George S. Manyali"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.06628v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:1208.5438v1",
+      "arxiv_id": "1208.5438v1",
+      "title": "Data mining the MNC like internal co-opetition duality in a university context",
+      "authors": [
+        "Jaan Ubi",
+        "Innar Liiv",
+        "Evald Ubi",
+        "Leo Vohandu"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.5438v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:2405.16193v1",
+      "arxiv_id": "2405.16193v1",
+      "title": "Effect of Interest Payments on External Debt on Economic Growth in Kenya",
+      "authors": [
+        "Sammy Kemboi Chepkilot"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.16193v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1145/3706598.3713508",
+      "arxiv_id": "2502.05323v1",
+      "title": "Supporting Contraceptive Decision-Making in the Intermediated Pharmacy Setting in Kenya",
+      "authors": [
+        "Lisa Orii",
+        "Elizabeth K Harrington",
+        "Serah Gitome",
+        "Nelson Kiprotich Cheruiyot",
+        "Elizabeth Anne Bukusi",
+        "Sandy Cheng",
+        "Ariel Fu",
+        "Khushi Khandelwal",
+        "Shrimayee Narasimhan",
+        "Richard Anderson"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.05323v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:2502.10402v1",
+      "arxiv_id": "2502.10402v1",
+      "title": "Spatial modeling of mental health on outpatient morbidity in Kenya",
+      "authors": [
+        "Ndegwa Ruth wambui",
+        "Mwalili Samuel",
+        "Wamwea Charity"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.10402v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:2008.00622v1",
+      "arxiv_id": "2008.00622v1",
+      "title": "Anchor-Assisted Intelligent Reflecting Surface Channel Estimation for Multiuser Communications",
+      "authors": [
+        "Xinrong Guan",
+        "Qingqing Wu",
+        "Rui Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.00622v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1142/S0217751X25501647",
+      "arxiv_id": "2410.20323v1",
+      "title": "Probing charged lepton flavor violation in an economical muon on-target experiment",
+      "authors": [
+        "Leyun Gao",
+        "Zijian Wang",
+        "Cheng-en Liu",
+        "Jinning Li",
+        "Alim Ruzi",
+        "Qite Li",
+        "Chen Zhou",
+        "Qiang Li"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.20323v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.1142/9789814578745_0011",
+      "arxiv_id": "1402.3861v1",
+      "title": "Search for Neutrino Oscillations in Appearance Mode with the OPERA Experiment",
+      "authors": [
+        "T. A. Dzhatdoev",
+        "V. L. Troshina"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1402.3861v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:0905.2035v4",
+      "arxiv_id": "0905.2035v4",
+      "title": "Orientations of the Giant's Churches in Ostrobothnia, Finland",
+      "authors": [
+        "Marianna Ridderstad",
+        "Jari Okkonen"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0905.2035v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2503.23850v1",
+      "arxiv_id": "2503.23850v1",
+      "title": "Event-activity dependence of heavy-flavor production at the ALICE experiment",
+      "authors": [
+        "Robert Vertesi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.23850v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:2112.13849v3",
+      "arxiv_id": "2112.13849v3",
+      "title": "The Long-Run Impact of Electoral Violence on Health and Human Capital in Kenya",
+      "authors": [
+        "Roxana Gutiérrez-Romero"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.13849v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1103/PhysRevD.104.083039",
+      "arxiv_id": "2104.12784v2",
+      "title": "Relic neutrinos at accelerator experiments",
+      "authors": [
+        "Martin Bauer",
+        "Jack D. Shergold"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2104.12784v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.1016/j.physletb.2005.08.021",
+      "arxiv_id": "0502028v2",
+      "title": "Improved Spin Dependent Limits from the PICASSO Dark Matter Search Experiment",
+      "authors": [
+        " The PICASSO Collaboration",
+        "M. Barnabe-Heider",
+        "E. Behnke",
+        "K. Clark",
+        "M. Di Marco",
+        "P. Doane",
+        "W. Feighery",
+        "M. -H. Genest",
+        "R. Gornea",
+        "R. Guenette",
+        "S. Kanagalingam",
+        "C. B. Krauss",
+        "C. Leroy",
+        "L. Lessard",
+        "I. Levine",
+        "J. -P. Martin",
+        "C. Muthusi",
+        "A. J. Noble",
+        "R. Noulty",
+        "U. Wichoski",
+        "V. Zacek"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/0502028v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:2511.00660v1",
+      "arxiv_id": "2511.00660v1",
+      "title": "A rich life cycle model of labor supply in Finland",
+      "authors": [
+        "Antti J. Tanskanen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.00660v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:2602.18714v1",
+      "arxiv_id": "2602.18714v1",
+      "title": "Universal Basic Income with Time-Decaying Currency: Structural Effects on Essential Labor and Long-Term Formation",
+      "authors": [
+        "Hitoshi Yamada"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.18714v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "arXiv:0510031v2",
+      "arxiv_id": "0510031v2",
+      "title": "Latest results from the NA57 experiment",
+      "authors": [
+        "Giuseppe Eugenio Bruno"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/nucl-th/0510031v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2512.23387v2",
+      "arxiv_id": "2512.23387v2",
+      "title": "Prospects for detecting charged long-lived BSM particles at MoEDAL-MAPP experiment: A mini-review",
+      "authors": [
+        "Rafał Masełek",
+        "Kazuki Sakurai"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.23387v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:1202.2748v2",
+      "arxiv_id": "1202.2748v2",
+      "title": "Report on strangeness photoproduction experiments performed with the Neutral Kaon Spectrometer 2",
+      "authors": [
+        "B. Beckford",
+        "A. Chiba",
+        "D. Doi",
+        "J. Fujibayashi",
+        "T. Fujii",
+        "Y. Fujii",
+        "K. Futatsukawa",
+        "T. Gogami",
+        "O. Hashimoto",
+        "Y. C. Han",
+        "K. Hirose",
+        "S. Hirose",
+        "R. Honda",
+        "R. Honda",
+        "K. Hosomi",
+        "A. Iguchi",
+        "T. Ishikawa",
+        "H. Kanda",
+        "M. Kaneta",
+        "Y. Kaneko",
+        "S. Kato",
+        "D. Kawama",
+        "T. Kawasaki",
+        "C. Kimura",
+        "S. Kiyokawa",
+        "T. Koike",
+        "K. Maeda",
+        "K. Makabe",
+        "N. Maruyama",
+        "M. Matsubara",
+        "K. Miwa",
+        "Y. Miyagi",
+        "S. Nagao",
+        "S. N. Nakamura",
+        "A. Okuyama",
+        "K. Shirotori",
+        "K. Sugihara",
+        "K. Suzuki",
+        "T. Tamae",
+        "H. Tamura",
+        "N. Terada",
+        "K. Tsukada",
+        "K. Yagi",
+        "F. Yamamoto",
+        "T. O. Yamamoto",
+        "H. Yamazaki",
+        "Y. Yonemoto"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1202.2748v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:0702023v1",
+      "arxiv_id": "0702023v1",
+      "title": "Production and Detection of Axion-Like Particles in a HERA Dipole Magnet - Letter-of-Intent for the ALPS experiment -",
+      "authors": [
+        "Klaus Ehret",
+        "Maik Frede",
+        "Ernst-Axel Knabbe",
+        "Dietmar Kracht",
+        "Axel Lindner",
+        "Niels Meyer",
+        "Dieter Notz",
+        "Andreas Ringwald",
+        "Guenter Wiedemann"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/0702023v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:2303.04403v1",
+      "arxiv_id": "2303.04403v1",
+      "title": "Wind to start the washing machine? High-Resolution Wind Atlas for Finland",
+      "authors": [
+        "X. Yang",
+        "Y. Tian",
+        "I. Schicker",
+        "A. Jung"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.04403v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:1909.00134v1",
+      "arxiv_id": "1909.00134v1",
+      "title": "Scraping Social Media Photos Posted in Kenya and Elsewhere to Detect and Analyze Food Types",
+      "authors": [
+        "Kaihong Wang",
+        "Mona Jalal",
+        "Sankara Jefferson",
+        "Yi Zheng",
+        "Elaine O. Nsoesie",
+        "Margrit Betke"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.00134v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:1208.5243v1",
+      "arxiv_id": "1208.5243v1",
+      "title": "General Managers Role in Balancing Subsidiary Between Internal Competition and Knowledge Sharing",
+      "authors": [
+        "Jaan Ubi"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.5243v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1140/epja/i2014-14014-0",
+      "arxiv_id": "1311.6252v3",
+      "title": "An alternative explanation of the dibaryon suggested by experiments at the WASA facility at the FZ Julich Cooler synchrotron",
+      "authors": [
+        "D V Bugg"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1311.6252v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:1910.03448v1",
+      "arxiv_id": "1910.03448v1",
+      "title": "Online Surveys and Digital Demography in the Developing World: Facebook Users in Kenya",
+      "authors": [
+        "Katherine Hoffmann Pham",
+        "Francesco Rampazzo",
+        "Leah R. Rosenzweig"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1910.03448v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:2004.04081v2",
+      "arxiv_id": "2004.04081v2",
+      "title": "Satellite-based Prediction of Forage Conditions for Livestock in Northern Kenya",
+      "authors": [
+        "Andrew Hobbs",
+        "Stacey Svetlichnaya"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.04081v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1080/02664763.2026.2634794",
+      "arxiv_id": "2405.16885v3",
+      "title": "Hidden Markov modelling of spatio-temporal dynamics of measles in 1750-1850 Finland",
+      "authors": [
+        "Tiia-Maria Pasanen",
+        "Jouni Helske",
+        "Tarmo Ketola"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.16885v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1109/TSP.2009.2014812",
+      "arxiv_id": "0802.3563v2",
+      "title": "Distributed Sensor Localization in Random Environments using Minimal Number of Anchor Nodes",
+      "authors": [
+        "Usman A. Khan",
+        "Soummya Kar",
+        "Jose' M. F. Moura"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0802.3563v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:2507.14756v1",
+      "arxiv_id": "2507.14756v1",
+      "title": "Preventing an Extractive Green Hydrogen Industry: Risks and Benefits of Grid Expansion and Green Hydrogen in and for Kenya",
+      "authors": [
+        "Xi Xi",
+        "Boniface Kinyanjui",
+        "Daniel M. Kammen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.14756v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1111/ajae.12375",
+      "arxiv_id": "2111.08601v2",
+      "title": "Optimal index insurance and basis risk decomposition: an application to Kenya",
+      "authors": [
+        "Matthieu Stigler",
+        "David Lobell"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.08601v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.46482/ebyuiibfdergi.1789837",
+      "arxiv_id": "",
+      "title": "EVALUATING UNIVERSAL BASIC INCOME PILOT PROGRAMS: INSTITUTIONAL CONTEXTS, IMPACTS, AND POLICY IMPLICATIONS",
+      "authors": [
+        "Fatih Bahadır Haspolat",
+        "Ömer Demir"
+      ],
+      "venue": "Erzincan Binali Yıldırım Üniversitesi İktisadi ve İdari Bilimler Fakültesi Dergisi",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 18,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://dergipark.org.tr/tr/download/article-file/5268379",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.54254/2754-1169/2026.ld31635",
+      "arxiv_id": "",
+      "title": "Universal Basic Income and the Labour Market:A Microeconomic Analysis with Evidence from InternationalExperiments",
+      "authors": [
+        "Bofan Ren"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://aemps.ewapub.com/article/view/31635.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 144
     }
   ]
 }

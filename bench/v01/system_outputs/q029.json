@@ -1,346 +1,2973 @@
 {
   "query_id": "q029",
   "query": "我们自己做的 paper agent 如何提升其效能，采用哪些模型",
-  "generated_at": "2026-07-14T23:28:19",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 2,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "ml",
+  "source": "user",
+  "generated_at": "2026-07-22T11:27:19",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 22,
+  "n_returned": 140,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/j.jhin.2020.01.022",
+      "title": "Persistence of Coronaviruses on Inanimate Surfaces and Their Inactivation with Biocidal Agents",
+      "authors": [
+        "G Kampf"
+      ],
+      "venue": "The Journal of hospital infection",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8ed8d79fced0a24b745b6c",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.3758/s13428-017-0862-1",
+      "title": "Estimating Psychological Networks and Their Accuracy: A Tutorial Paper",
+      "authors": [
+        "Sacha Epskamp"
+      ],
+      "venue": "Behavior Research Methods",
+      "year": 2018,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5aff40efa2e6b1328d55a910",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1007/s11432-024-4222-0",
+      "title": "基于大语言模型的智能体:发展与未来展望",
+      "authors": [
+        "Zhiheng Xi"
+      ],
+      "venue": "Science China Information Sciences",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6503bec83fda6d7f067c775f",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.48550/arxiv.2205.06175",
+      "title": "A Generalist Agent.",
+      "authors": [
+        "Scott Reed"
+      ],
+      "venue": "TMLR 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627dbeda5aee126c0ff67bbc",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.48550/arxiv.2305.16291",
+      "title": "Voyager: an Open-Ended Embodied Agent with Large Language Models",
+      "authors": [
+        "Guanzhi Wang"
+      ],
+      "venue": "TMLR 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64702deed68f896efa5202ea",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.48550/arxiv.2307.07924",
+      "title": "ChatDev: Communicative Agents for Software Development",
+      "authors": [
+        "Chen Qian"
+      ],
+      "venue": "PROCEEDINGS OF THE 62ND ANNUAL MEETING OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, VOL 1 LONG PAPERS",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b60eaa3fda6d7f06eaea2a",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.48550/arxiv.2308.03688",
+      "title": "AgentBench: Evaluating LLMs As Agents.",
+      "authors": [
+        "Xiao Liu"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64d1bdf93fda6d7f06ec4af3",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1007/s11704-024-40231-1",
+      "title": "A Survey on Large Language Model Based Autonomous Agents",
+      "authors": [
+        "Lei Wang"
+      ],
+      "venue": "Frontiers of Computer Science",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e5849c3fda6d7f063af42e",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.52202/079017-1601",
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "authors": [
+        "John Yang"
+      ],
+      "venue": "NeurIPS 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "66553ae801d2a3fbfc9f8c45",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1145/3564269",
+      "title": "Conversational Agents in Therapeutic Interventions for Neurodevelopmental Disorders: A Survey",
+      "authors": [
+        "Fabio Catania"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61a98af75244ab9dcb95356e",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.48550/arxiv.2303.11366",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": [
+        "Noah Shinn"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "641a71f390e50fcafd71dbb3",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.48550/arxiv.2303.17760",
+      "title": "CAMEL: Communicative Agents for \"mind\" Exploration of Large Language Model Society",
+      "authors": [
+        "Guohao Li"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "642a43b890e50fcafd9b0319",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1145/3586183.3606763",
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "authors": [
+        "Joon Sung Park"
+      ],
+      "venue": "UIST",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64337e3190e50fcafd76ef32",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1007/s11192-020-03387-8",
+      "title": "A Tale of Two Databases: the Use of Web of Science and Scopus in Academic Papers.",
+      "authors": [
+        "Junwen Zhu"
+      ],
+      "venue": "Scientometrics",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e4129b13a55ac9f8f89e08d",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.4193/rhin20.600",
+      "title": "European Position Paper on Rhinosinusitis and Nasal Polyps 2020",
+      "authors": [
+        "Wytske J. Fokkens"
+      ],
+      "venue": "RHINOLOGY",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e4faa7d93d709897cea4b6b",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1038/s41566-018-0206-4",
+      "title": "Paper Electronics",
+      "authors": [
+        "Noriaki Horiuchi"
+      ],
+      "venue": "Nature Photonics",
+      "year": 2018,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0deb589fced0a24b84822a",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "",
+      "title": "AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery",
+      "authors": [
+        "Alexander Novikov"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6850cd6b163c01c85068cde3",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "",
+      "title": "Kimi K2: Open Agentic Intelligence.",
+      "authors": [
+        "Kimi Team"
+      ],
+      "venue": "CoRR",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68881b11163c01c850219dd3",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.48550/arxiv.2309.02427",
+      "title": "Cognitive Architectures for Language Agents.",
+      "authors": [
+        "Theodore Sumers"
+      ],
+      "venue": "TMLR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64f7fc4c3fda6d7f06f4303b",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1145/3626772.3657844",
+      "title": "On Generative Agents in Recommendation.",
+      "authors": [
+        "An Zhang"
+      ],
+      "venue": "SIGIR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "652dee7a939a5f4082b44778",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1109/cvpr52733.2024.01354",
+      "title": "CogAgent: A Visual Language Model for GUI Agents",
+      "authors": [
+        "Wenyi Hong"
+      ],
+      "venue": "CVPR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657bbe6e939a5f4082f24d13",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1038/s41586-022-05543-x",
+      "title": "Papers and Patents Are Becoming Less Disruptive over Time",
+      "authors": [
+        "Michael Park"
+      ],
+      "venue": "Nature",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63b69f3f65361062c150d8be",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1038/d41586-023-00107-z",
+      "title": "ChatGPT Listed As Author on Research Papers: Many Scientists Disapprove.",
+      "authors": [
+        "Chris Stokel-Walker"
+      ],
+      "venue": "Nature",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63cd131b90e50fcafd75372a",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1021/acs.chemrev.0c01335",
+      "title": "Microfluidic Paper-Based Analytical Devices: from Design to Applications.",
+      "authors": [
+        "Eka Noviana"
+      ],
+      "venue": "Chemical Reviews",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60c9d1c9e4510cd7c88d9305",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1016/j.jhep.2021.07.004",
+      "title": "Systemic Treatment of Hepatocellular Carcinoma: an EASL Position Paper",
+      "authors": [
+        "Jordi Bruix"
+      ],
+      "venue": "JOURNAL OF HEPATOLOGY",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60f008735244ab9dcb18bacb",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.15275/rusomj.2021.0106",
+      "title": "Cardiotoxicity in Chemotherapeutic Agents",
+      "authors": [
+        "Vitorino Modesto dos Santos"
+      ],
+      "venue": "RUSSIAN OPEN MEDICAL JOURNAL",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619badbf1c45e57ce9ea1380",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1201/9781315374727-12",
+      "title": "Chemopreventive Agents",
+      "authors": [
+        "David E. Thurston"
+      ],
+      "venue": "Chemistry and Pharmacology of Anticancer Drugs",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca0f675244ab9dcbcc185a",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.48550/arxiv.2004.14247",
+      "title": "White Paper on Broadband Connectivity in 6G",
+      "authors": [
+        "Nandana Rajatheva"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eaaa1d691e011fa9e15eaa5",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "",
+      "title": "HOW TO CITE THIS PAPER",
+      "authors": [
+        "Francisco Tomaz de Oliveira"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c86efc5244ab9dcbb9abe9",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.31979/2151-6014(2012).030105",
+      "title": "HOW IS THIS PAPER PHILOSOPHY?",
+      "authors": [
+        "Kristie Dotson"
+      ],
+      "venue": "تبين للدراسات الفكرية و الثقافية",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8c59cdabfae2eee4ae262",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "",
+      "title": "Agent-as-a-Judge: Evaluate Agents with Agents",
+      "authors": [
+        "Mingchen Zhuge"
+      ],
+      "venue": "ICML 2025",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "670f20c501d2a3fbfc2c25c2",
+      "matched_phrase": "agent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.21468/scipostphyscommrep.1",
+      "title": "Snowmass White Paper: the Cosmological Bootstrap",
+      "authors": [
+        "Daniel Baumann"
+      ],
+      "venue": "SciPost Physics Community Reports",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623155bb5aee126c0f2bac42",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.48550/arxiv.2404.01268",
+      "title": "Mapping the Increasing Use of LLMs in Scientific Papers",
+      "authors": [
+        "Weixin Liang"
+      ],
+      "venue": "COLM 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "660b872313fb2c6cf6ef646a",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.2307/jj.8501414",
+      "title": "Joint Statistical Papers",
+      "authors": [
+        "J. NEYMAN"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d90278dabfae2eeee09724",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.48175/ijarsct-8160",
+      "title": "Big Data Analytics: A Literature Review Paper",
+      "authors": [
+        "Miss. Pawar Sakshi"
+      ],
+      "venue": "International Journal of Advanced Research in Science, Communication and Technology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648cf6d9d68f896efa92dc4e",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "",
+      "title": "REVIEW PAPER ON WIRELESS SENSOR NETWORKS FOR AGRICULTURE",
+      "authors": [
+        "Rahul K. Satpute"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdab35aee126c0f4a044c",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.55041/ijsrem14243",
+      "title": "BIG DATA ANALYTICS: A LITERATURE REVIEW PAPER",
+      "authors": [
+        "IJSREM Journal"
+      ],
+      "venue": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c543c035d8759cb6e5d4fa",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1016/j.frl.2021.102520",
+      "title": "A bibliometric review of finance bibliometric papers",
+      "authors": [
+        "Ashraf Khan"
+      ],
+      "venue": "Finance Research Letters",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d1733f5aee126c0fde2b83",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1097/prs.0000000000009727",
+      "title": "How to Review a Paper",
+      "authors": [
+        "Kevin C. Chung"
+      ],
+      "venue": "Plastic &amp Reconstructive Surgery",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6387362d90e50fcafd1db2fa",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1515/ntrev-2021-0023",
+      "title": "Overview of Nanocellulose As Additives in Paper Processing and Paper Products",
+      "authors": [
+        "Ao Li"
+      ],
+      "venue": "Nanotechnology Reviews",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bacb61c45e57ce9e16619",
+      "matched_phrase": "paper",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.3724/sp.j.1041.2018.00907",
+      "title": "自强还是自嘲?名人代言如何提升社会化媒体广告的营销效果",
+      "authors": [
+        "HUANG, Minxue",
+        "YAO, Shunyu",
+        "LIU, Maohong"
+      ],
+      "venue": "Acta Psychologica Sinica",
+      "year": 2018,
+      "cited_by_count": 8,
+      "reference_count": 46,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.63887/cn.2025.1.7.2",
+      "title": "延续性护理干预在老年糖尿病足高危患者自我管理能力提升中的应用效果分析",
+      "authors": [
+        "谭晴晴"
+      ],
+      "venue": "临床与护理",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>糖尿病足作为糖尿病常见且严重的慢性并发症之一，严重影响患者生活质量，增加家庭与社会负担。高危患者若缺乏科学的自我管理能力，极易发展为足部溃疡甚至截肢。延续性护理干预通过系统化、个性化的护理服务，将院内护理延伸至家庭与社区，有效弥补传统护理模式中断层问题。该干预模式涵盖健康教育、足部护理指导、血糖监测监督、心理支持及定期随访等内容，帮助患者建立正确的疾病认知，提升自我监测与防护意识。通过医护团队、患者及其家庭的协同合作，强化患者在日常生活中的自我管理行为，如合理饮食、规律运动、足部清洁检查等。同时，延续性护理注重心理疏导与行为引导，增强患者治疗依从性与信心。实践表明，该模式不仅有助于降低足部并发症发生风险，还能显著改善患者的自我效能与生活质量。其核心在于构建持续、动态、全方位的照护体系，实现从急性期治疗到长期健康管理的平稳过渡，为糖尿病足高危人群提供科学、可行的护理路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.12677/ae.2024.143446",
+      "title": "Exploring the Influencing Factors of College Students’ Academic Self-Efficacy and Their Enhancement Strategies",
+      "authors": [
+        "朱, 婉迪"
+      ],
+      "venue": "Advances in Education",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 37,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.36012/sde.v2i5.2109",
+      "title": "儿童的学业自我效能感及其提高策略",
+      "authors": [
+        "路, 美玉",
+        "锁, 倩倩"
+      ],
+      "venue": "教育科学发展",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>儿童对未来的学业信心和信念会直接受到儿童学业自我效能感高低的影响。论文从学业自我效能感的概念、影响因素及如何提高儿童学业自我效能感的策略三个方面进行了论述，为儿童学业自我效能的培养提供理论基础和指导。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.32629/er.v3i5.2728",
+      "title": "如何利用英语对话提升初中英语口语教学效率",
+      "authors": [
+        "彭, 军艳"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>初中英语属于工具性学科范畴。因此,学生不仅需要学会英语知识,而且还要能够运用英语进行日常交流,运用英语进行情感的输出等等。为了有效提升初中生英语口语,初中英语口语老师们表示：对症下药,有效创造时机让学生开口说英语,锻炼学生英语口语是有效提高学生英语口语水平的措施。鉴于此,在初中英语教学中,英语会话对学生英语口语水平的提升有积极的帮助,以下是概括性提出的几点措施,以协助初中英语教师高效运用英语对话提升英语口语教学的效率。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.33142/nsr.v2i2.16983",
+      "title": "农业机械智能化在提升土地利用效率中的应用分析",
+      "authors": [
+        "段, 爱波"
+      ],
+      "venue": "自然科学研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国农业现代化进程的不断推进，农业机械的智能化应用逐渐成为提高农业生产效率、优化土地资源配置的关键手段。通过将传感器技术、北斗导航系统、人工智能算法等现代信息技术融入农业机械设备中，实现了农机作业的精准化、自动化与数据化，有效提高了土地利用率和作业效率。此文围绕农业机械智能化的核心技术与实际应用展开分析，探讨其在耕作、播种、施肥、收获等环节中提升土地利用效率的具体作用。同时，文中还分析了当前推广中存在的技术瓶颈和应用障碍，提出了相应的优化建议与发展方向，以期为我国农业可持续发展提供技术参考与路径支持。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
       "doi": "10.58911/bdic.co.202512.01",
       "title": "我们设计的实验（验证某一运动项目能否提高心肺功能）应该包含哪些步骤和要素？",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report"
+      "rank": 47
     },
     {
-      "rank": 2,
       "doi": "10.33142/sca.v8i9.17966",
       "title": "利用机器学习提升自动化运维效率的模型构建与应用",
-      "abstract": "<jats:p>随着信息技术的持续发展和应用场景的不断扩展，自动化运维成为提升系统效率与稳定性的关键技术。本研究聚焦于机器学习技术在自动化运维中的应用，通过构建有效的模型，旨在显著提升运维效率。首先，文中分析了当前自动化运维面临的主要挑战，包括复杂系统的实时监控、故障预测及其自动化处理等问题。在此基础上，提出了一个综合利用机器学习的多层次模型架构，该架构集成了数据预处理、特征选择、故障检测与分类，以及自动化响应等多个模块。实验部分，通过构建实验环境，运用真实世界的运维数据对模型进行训练与测试。结果表明，该模型在故障检测精度和响应时间上均得到了显著提升，自动化处理成功率提高了30%，有效减少了人工介入。研究不仅展示了机器学习在自动运维中的有效性，也为未来自动化运维系统的优化提供了有力的技术支持和理论依据。</jats:p>",
-      "year": null,
+      "authors": [
+        "白, 鑫"
+      ],
       "venue": "智能城市应用",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着信息技术的持续发展和应用场景的不断扩展，自动化运维成为提升系统效率与稳定性的关键技术。本研究聚焦于机器学习技术在自动化运维中的应用，通过构建有效的模型，旨在显著提升运维效率。首先，文中分析了当前自动化运维面临的主要挑战，包括复杂系统的实时监控、故障预测及其自动化处理等问题。在此基础上，提出了一个综合利用机器学习的多层次模型架构，该架构集成了数据预处理、特征选择、故障检测与分类，以及自动化响应等多个模块。实验部分，通过构建实验环境，运用真实世界的运维数据对模型进行训练与测试。结果表明，该模型在故障检测精度和响应时间上均得到了显著提升，自动化处理成功率提高了30%，有效减少了人工介入。研究不仅展示了机器学习在自动运维中的有效性，也为未来自动化运维系统的优化提供了有力的技术支持和理论依据。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 48
     },
     {
-      "rank": 3,
       "doi": "10.61369/eti.4768",
       "title": "小学高段学生学业自我效能感的家校提升策略",
-      "abstract": "<jats:p>针对小学高段学生易发生勤奋对自卑的心理发展冲突，自我效能感较低，本论文研究了学业自我效能感的现状，梳理出学生发展策略。通过学生问卷、教师问卷、家长问卷和访谈、观察等方式了解研究对象的学业自我效能感现状。通过数据分析出目前三方存在的问题与调整点位。通过各项策略的探索与实施，形成教师与家庭联合生态网，帮助学生提升学业自我效能感的发展水平。</jats:p>",
-      "year": null,
+      "authors": [
+        "何, 国堂",
+        "敬, 艳秋",
+        "王, 晓霞"
+      ],
       "venue": "Education and Teaching Innovation",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>针对小学高段学生易发生勤奋对自卑的心理发展冲突，自我效能感较低，本论文研究了学业自我效能感的现状，梳理出学生发展策略。通过学生问卷、教师问卷、家长问卷和访谈、观察等方式了解研究对象的学业自我效能感现状。通过数据分析出目前三方存在的问题与调整点位。通过各项策略的探索与实施，形成教师与家庭联合生态网，帮助学生提升学业自我效能感的发展水平。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 49
     },
     {
-      "rank": 4,
       "doi": "10.61369/est.8707",
       "title": "体操训练对大学生自我效能感和团队合作能力的提升作用",
-      "abstract": "<jats:p>本文综述了体操训练对大学生自我效能感和团队合作能力的提升作用。通过对近年来相关文献的系统回顾，总结了体操训练在提高大学生心理素质和社会适应能力方面的研究成果。研究发现，体操训练能够显著提升大学生的自我效能感，增强他们的自信心和应对挑战的能力。同时，体操训练还促进了团队合作精神的培养，提高了学生的沟通协调能力和集体荣誉感。本文为高校体育教育提供了理论依据。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 华",
+        "周, 俊"
+      ],
       "venue": "Educational Science Theory",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文综述了体操训练对大学生自我效能感和团队合作能力的提升作用。通过对近年来相关文献的系统回顾，总结了体操训练在提高大学生心理素质和社会适应能力方面的研究成果。研究发现，体操训练能够显著提升大学生的自我效能感，增强他们的自信心和应对挑战的能力。同时，体操训练还促进了团队合作精神的培养，提高了学生的沟通协调能力和集体荣誉感。本文为高校体育教育提供了理论依据。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 50
     },
     {
-      "rank": 5,
       "doi": "10.33142/sca.v5i4.6710",
       "title": "浅谈如何做好农村公路提档升级项目设计工作",
-      "abstract": "<jats:p>农村的道路是农村地区至关重要的公共交通设施，在农业产出的服务、变更农民日常生活、增强生产收入等方面，发挥着决定性的作用。因此，相关部门更加重视农村道路的改革和实施，进一步提高农村道路的水平，这不仅有利于农村经济规划的推进，也有利于中国城镇化的规划。本篇文章主要对农村公路改造项目的设计进行分析，探讨加强农村公路实施质量的措施，从而促进农村公路规划的进一步完善。</jats:p>",
-      "year": null,
+      "authors": [
+        "陶, 诗林"
+      ],
       "venue": "智能城市应用",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>农村的道路是农村地区至关重要的公共交通设施，在农业产出的服务、变更农民日常生活、增强生产收入等方面，发挥着决定性的作用。因此，相关部门更加重视农村道路的改革和实施，进一步提高农村道路的水平，这不仅有利于农村经济规划的推进，也有利于中国城镇化的规划。本篇文章主要对农村公路改造项目的设计进行分析，探讨加强农村公路实施质量的措施，从而促进农村公路规划的进一步完善。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 51
     },
     {
-      "rank": 6,
       "doi": "10.70693/fw083",
       "title": "叙事护理在宫颈癌同步放化疗患者自我效能提升中的应用​",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "莫棉兴"
+      ],
       "venue": "数据期刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 52
     },
     {
-      "rank": 7,
       "doi": "10.18356/22203583-2021-3-12",
       "title": "观点: 我们最爱的电视节目屋如何评价我们的",
-      "abstract": "",
-      "year": 2021,
+      "authors": [
+        ""
+      ],
       "venue": "Jiaokewen zuzhi xinshi",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 53
     },
     {
-      "rank": 8,
       "doi": "10.2139/ssrn.4933318",
       "title": "工作自主性如何影响员工创新绩效?--有调节的链式中介模型",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "He, Xinwen",
+        "Yuan, Long"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 54
     },
     {
-      "rank": 9,
       "doi": "10.61369/eti.8429",
       "title": "AI 数字素养提升对医学生自主学习效果的影响\n—— 基于自我决定理论的支持模型构建与实证研究",
-      "abstract": "<jats:p>近年来，随着人工智能（AI）技术的飞速发展，数字素养在现代教育中变得至关重要，尤其是在医学生的教育中。具备较高的AI 数字素养可以显著增强学生的自主学习能力，这一能力对于他们掌握复杂的医学知识和培养终身学习的素养至关重要。然而，许多医学生在使用AI 工具过程中仍面临诸多挑战，特别是在自主性、胜任感和归属感方面，影响了他们的学习效果。本研究基于自我决定理论（Self-Determination Theory, SDT），探讨AI 数字素养提升对医学生自主学习效果的影响机制。为此，本研究提出了以下研究问题：AI 数字素养的提升如何影响医学生的自主学习效果？自我决定理论在AI 数字素养与自主学习效果之间的关系中起到怎样的调节作用？本采用混合方法的研究设计，包括问卷调查和深度访谈，对300名医学生的数据进行了分析。研究结果显示，AI 数字素养与自主学习效果之间存在显著的正相关关系；提升AI 数字素养可以通过增强自主性和胜任感，进而促进学习效果。</jats:p>",
-      "year": null,
+      "authors": [
+        "高, 宇"
+      ],
       "venue": "Education and Teaching Innovation",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>近年来，随着人工智能（AI）技术的飞速发展，数字素养在现代教育中变得至关重要，尤其是在医学生的教育中。具备较高的AI 数字素养可以显著增强学生的自主学习能力，这一能力对于他们掌握复杂的医学知识和培养终身学习的素养至关重要。然而，许多医学生在使用AI 工具过程中仍面临诸多挑战，特别是在自主性、胜任感和归属感方面，影响了他们的学习效果。本研究基于自我决定理论（Self-Determination Theory, SDT），探讨AI 数字素养提升对医学生自主学习效果的影响机制。为此，本研究提出了以下研究问题：AI 数字素养的提升如何影响医学生的自主学习效果？自我决定理论在AI 数字素养与自主学习效果之间的关系中起到怎样的调节作用？本采用混合方法的研究设计，包括问卷调查和深度访谈，对300名医学生的数据进行了分析。研究结果显示，AI 数字素养与自主学习效果之间存在显著的正相关关系；提升AI 数字素养可以通过增强自主性和胜任感，进而促进学习效果。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 55
     },
     {
-      "rank": 10,
       "doi": "10.32629/er.v1i5.1571",
       "title": "如何提升初中德育工作的有效性",
-      "abstract": "<jats:p>德育工作最常指政治思想和道德品质的教育,确保能够提高学生群体的道德思想,让其能够成为有理想、有道德的公民,并形成正确的人生价值观,实现全面健康的发展。由于初中生正处于青春期,活泼好动,思想积极,使得德育工作难度提升,难以营造良好班风。基于此,本文就对提升初中德育工作的有效性对策展开探究,以期为初中德育工作提供参考依据。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 泽权"
+      ],
       "venue": "教育研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>德育工作最常指政治思想和道德品质的教育,确保能够提高学生群体的道德思想,让其能够成为有理想、有道德的公民,并形成正确的人生价值观,实现全面健康的发展。由于初中生正处于青春期,活泼好动,思想积极,使得德育工作难度提升,难以营造良好班风。基于此,本文就对提升初中德育工作的有效性对策展开探究,以期为初中德育工作提供参考依据。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 56
+    },
+    {
+      "doi": "10.37155/2717-5316-0706-29",
+      "title": "浅谈如何有效提升食品质量管理的对策",
+      "authors": [
+        "赵克斌"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
     },
     {
-      "rank": 11,
-      "doi": "10.18653/v1/2026.findings-acl.1831",
-      "title": "PsyChain: A Collaborative Chain-of-Agents Framework for Generating Personalized and Professional Counseling Dialogues",
-      "abstract": "",
+      "doi": "10.64216/3104-9702.26.03.048",
+      "title": "浅析如何做好业财融合提升企业运营质效",
+      "authors": [],
+      "venue": "教育科学理论研究",
       "year": 2026,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     },
     {
-      "rank": 12,
-      "doi": "10.18653/v1/2026.acl-long.1765",
-      "title": "TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice",
-      "abstract": "",
+      "doi": "10.67328/bt1085",
+      "title": "智能交通系统如何提升市政交通效率",
+      "authors": [
+        "喻志远"
+      ],
+      "venue": "数据期刊",
       "year": 2026,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "openalex"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 59
     },
     {
-      "rank": 13,
-      "doi": "arXiv:0309395v2",
-      "title": "This paper has been withdrawn",
-      "abstract": "",
-      "year": 2003,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.70693/hj0590",
+      "title": "智能交通系统如何提升市政交通效率",
+      "authors": [
+        "喻志远"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
     },
     {
-      "rank": 14,
-      "doi": "arXiv:2203.08975v2",
-      "title": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+      "doi": "10.37155/2717-5189-0520-63",
+      "title": "如何提升化工工艺节能降耗有效性的对策",
+      "authors": [
+        "张吉楼"
+      ],
+      "venue": "工程管理与技术探讨",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.37155/2717-5642-0701-6",
+      "title": "大型央企数智化审计平台的应用效能提升研究——基于模型落地实践",
+      "authors": [
+        "黄伟哲"
+      ],
+      "venue": "国际经济与管理",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.37155/3041-0827-0203-59",
+      "title": "智能化采矿设备在提升采矿效率中的作用研究",
+      "authors": [
+        "王昭舜"
+      ],
+      "venue": "工程技术与质量管理",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.67328/bt2332",
+      "title": "采矿工程中智能化设备的应用与生产效率提升研究",
+      "authors": [
+        "郭鹏兵"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.18686/bd.v2i9.1653",
+      "title": "论如何提升公路桥梁工程施工的有效性",
+      "authors": [
+        "刘, 俊宏"
+      ],
+      "venue": "建筑发展",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>近些年来我国经济得到快速发展,人们生活水平得到不断提高,高速公路发展也越来越快。本文主要详细的介绍了在施工过程中出现得一些问题,也分析了这些问题的发生的原因,并提出了针对性的措施,促进公路桥梁的质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.64083/ste2610305",
+      "title": "浅谈如何提升入河排污口整治效能",
+      "authors": [
+        "陈, 敏杰"
+      ],
+      "venue": "科学技术与教育",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文分析了入河排污口整治的现状与问题,指出自2019年以来生态环境部在环渤海、长江流域和黄河流域排污口排查整治中取得的成果及存在的整治标准不统一、技术与资金投入不足、监管机制不完善、公众参与度低等问题。针对性地提出了强化顶层设计、完善法律法规、制定技术标准、推进排查整治、集成管理平台等策略,并给出了加强资金保障、强化社会监督、推广试点经验等建议。同时,介绍了南京市鼓楼区、云南省异龙湖流域、汕尾市、太湖直湖港及浦东新区等地方实践经验,为入河排污口整治提供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.53106/222114112024011401004",
+      "title": "做自己或成為一分子？社會網絡對消費者效用的影響：代理人基模型之模擬應用",
+      "authors": [
+        "史邦其, 史邦其",
+        "白紀齡, 白紀齡",
+        "池秉聰, 池秉聰"
+      ],
+      "venue": "傳播研究與實踐",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>\n                        &lt;p&gt;本文探討社會網絡對消費者效用的影響，以代理人基模擬消費者於不同網絡型態的互動，重構Jager（2000）的模型並使用二維的效用函數。決策時間代表涉入程度，刻畫所有消費情境。模擬不同型態的社會網絡、密度、認知類型、總人數對個別消費效用的影響。並將效用函數拆解成個人與社會部份以捕捉影響主因。結果表明，任何社會網絡中，網絡愈疏散，消費者所獲得的效用愈高，原因為社會部份的效用稀釋減少；社群影響力下降，非純粹個人效用提升。檢視市場參與人數與社會網絡密度對消費者效用的影響後發現，若消費者身處適切的社會網絡，消費者效用提升。意即，較多的消費者於較疏散的網絡或較少的消費者於較密集的網絡，這二種社群環境對新進廠商相對有利，既存廠商優勢不明顯。&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;This study aims to examine the effect of social networks on consumer utility. An agent-based ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.64216/3080-1494.25.07.020",
+      "title": "基础教育音乐职前教师教学自我效能感的提升策略",
+      "authors": [],
+      "venue": "东方教育学刊",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.70693/hj0263",
+      "title": "采矿工程中智能化设备的应用与生产效率提升研究",
+      "authors": [
+        "郭鹏兵"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.5790/9789882205116-027",
+      "title": "如何提升克童中文阔言自能力:家;三角度",
+      "authors": [],
+      "venue": "兒童閱讀能力進展",
+      "year": 2005,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.18356/9789210016445c007",
+      "title": "哪些因素阻碍我们一起行动？",
+      "authors": [],
+      "venue": "Human Development Report (Chinese Version)",
       "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 71
     },
     {
-      "rank": 15,
-      "doi": "arXiv:0205016v1",
-      "title": "From Alife Agents to a Kingdom of N Queens",
-      "abstract": "",
-      "year": 2002,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.33142/sca.v8i12.18751",
+      "title": "招标代理机构在建筑工程管理中的作用及其提升策略",
+      "authors": [
+        "何, 卉"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国建筑行业的持续发展与工程项目规模的不断扩大，建筑工程管理的复杂性日益突出。招标代理机构作为连接项目业主与施工单位之间的桥梁，在建筑工程管理中发挥着不可或缺的作用。从项目招标策划、文件编制、投标评审核到合同签订，招标代理机构不仅提升了招标工作的规范性和透明度，促进了公平竞争，还有效降低了业主的管理成本与风险。与此同时，招标代理机构在加强信息公开、推动技术创新及完善管理流程等方面具有积极意义。随着行业发展及相关政策的逐步完善，招标代理机构亟需通过提升专业水平、加强团队建设、拓展服务内容、完善制度规范等策略，进一步增强自身的服务能力和市场竞争力。深入研究招标代理机构在建筑工程管理中的作用及其提升路径，不仅有助于工程项目管理水平的提高，也为建筑行业的健康有序发展提供坚实支撑，具有重要的现实意义和应用价值。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
     },
     {
-      "rank": 16,
-      "doi": "10.1007/978-3-032-13562-9_23",
-      "title": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
-      "abstract": "",
+      "doi": "10.37155/2717-5197-0701-34",
+      "title": "如何利用设备管理信息化提升特种设备管理效能探讨",
+      "authors": [
+        "柏, 高",
+        "王成玉"
+      ],
+      "venue": "机械与电子控制工程",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 73
     },
     {
-      "rank": 17,
-      "doi": "10.1007/s10458-010-9154-1",
-      "title": "A mechanism for discovering semantic relationships among agent communication protocols",
+      "doi": "10.69979/3029-2808.25.08.034",
+      "title": "肿瘤化疗患者PICC导管自我管理能力提升的健康教育模式构建",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.37155/2705-0653-0603-10",
+      "title": "浅析小学数学教学中如何提升学生的学习能力与素养",
+      "authors": [
+        "常学明"
+      ],
+      "venue": "教育理论与应用",
       "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 75
     },
     {
-      "rank": 18,
-      "doi": "10.1145/3652988.3673918",
-      "title": "Focus Agent: LLM-Powered Virtual Focus Group",
-      "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.37155/2717-557x-0607-27",
+      "title": "住建局如何提升廉租房政策的执行效率与效果",
+      "authors": [
+        "帅, 吕"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 19,
-      "doi": "10.1007/978-3-030-01713-2_22",
-      "title": "How game complexity affects the playing behavior of synthetic agents",
-      "abstract": "",
-      "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 20,
-      "doi": "10.1145/3786167.3788406",
-      "title": "SWEnergy: An Empirical Study on Energy Efficiency in Agentic Issue Resolution Frameworks with SLMs",
-      "abstract": "",
+      "venue": "城市建筑与发展",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 76
     },
     {
-      "rank": 21,
-      "doi": "arXiv:2512.24957v2",
-      "title": "AMAP Agentic Planning Technical Report",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.32629/er.v2i8.1978",
+      "title": "浅谈如何利用自然拼读法提高单词记忆效率",
+      "authors": [
+        "胡, 心婷"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>背诵英文单词,是学习英语的基础。但对于很多同学而言,记忆单词却成为了横亘在英语学习上的一座大山,背了便忘,犹如患上失忆症。其实,单词记忆效率是很多因素共同作用的结果,包括自然拼读法,音标,词根词缀联想记忆法等。除此以外,还要考虑艾宾浩斯遗忘曲线。本文讨论如何利用自然拼读法提高单词记忆效率。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 77
     },
     {
-      "rank": 22,
-      "doi": "arXiv:2605.21404v1",
-      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
-      "abstract": "",
+      "doi": "10.69979/3029-2808.26.05.010",
+      "title": "信息化健康宣教模式在眼科日间手术患者围术期自我管理能力提升中的作用",
+      "authors": [
+        "宁雪霞, 刘静利"
+      ],
+      "venue": "医学研究",
       "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.33142/sca.v8i4.15915",
+      "title": "如何利用信息化手段提升安全生产监管水平",
+      "authors": [
+        "杨, 寻护"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着科技的迅速进步，传统的安全生产监管方式，已无法应对日益复杂的生产环境。在高危行业中，频繁发生的事故不仅威胁着社会的稳定，也对人民的生命安全构成了严重风险。信息化技术的引入，如大数据分析与物联网监测，为实时数据采集和精准的风险预测，提供了强有力的支持，成为提升安全生产监管效能的关键工具。如何有效利用这些信息化手段，优化安全监管，已成为当前亟需解决的重要课题。通过信息化技术，潜在风险可被及时识别与预测，从而为决策者提供更加精准的预警和应对措施，有效保障人民的生命财产安全。随着技术的不断发展，信息化手段将更深入地融入各行各业，推动安全生产监管向更加智能化、精准化的方向发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.31219/osf.io/3kyna_v1",
+      "title": "预测错觉与认知巫术：为何我们以为自己改变了未来？",
+      "authors": [
+        "Yu, Xiaoyang"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>在高度复杂的系统环境中，人类对未来的理解建立于局部信息构成的预测模型之上。然而，当事件的发展与预测不符时，个体往往并非归因于预测误差，而是形成一种“未来被改变”的认知错觉。本文以系统论与信息论为基础，指出这一错觉源自系统节点的信息盲区，并揭示其与古典巫术逻辑之间的结构同构关系。我们将展示，这种“我改变了未来”的体验，实质上是一种模型更新过程被误识为路径更替的幻觉。文章特别引入“天气预报比喻”作为解释中枢，揭示预测模型与现实系统之间的本体论断裂。</p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.69979/3060-8767.26.02.006",
+      "title": "发电厂高能效电机的选型与能效提升路径研究",
+      "authors": [],
+      "venue": "当代水电科技",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.33142/sca.v2i2.329",
+      "title": "如何做好离退休老干部的思想政治工作",
+      "authors": [
+        "凌, 玲"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>离退休人员是党和国家的宝贵财富，在我国革命和社会主义建设中，他们为党和人民及新中国的建设奉献自已的力量，在各自的岗位上取得了不可磨灭的功绩，在我国社会政治生活中和社会主义建设中，具有十分重要的地位和作用，是党和国家政治、思想和文化的重要力量，认真好老干部管理工作，作为党的政工干部、老干部工作部门服务人员，准确把握老干部思想脉搏，落实老干部政治待遇、生活待遇。如何发挥更大效能，谈几点看法。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.37155/2717-5197-0405-28",
+      "title": "讨论如何提升化工工艺节能降耗有效性",
+      "authors": [
+        "磊, 于"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.64216/3104-9702.25.05.030",
+      "title": "探讨AI技术如何提升民歌传唱教育的效果",
+      "authors": [],
+      "venue": "教育科学理论研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.32629/acair.v4i1.19376",
+      "title": "基于升维认知与曲率收敛好奇心的机器人“自我”模型构建",
+      "authors": [
+        "刘, 亚非"
+      ],
+      "venue": "计算机与自主智能研究进展",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文旨在提出并阐述一种能够赋予机器人“我”这一内在参照点的认知架构。该架构的核心在于,通过从原始数据到“适应度”,再到“置信度”的连续升维过程,使机器人能够评估自身状态与决策的可靠性。面对已知世界,系统通过将新体验与已知决策模式对齐以实现高效决策；面对未知世界,当传统收敛无法对齐时,系统将启动基于逆向建模与组合创新的探索机制。此探索过程由一种新颖的“基于置信度曲率收敛的好奇心机制”驱动,该机制量化认知边界的不确定性,并引导探索资源向最能提升模型泛化能力的方向分配。本文详述了该模型的数学框架、核心算法流程,并通过概念性实验展望了其潜力,为构建具备持续自主进化能力的通用人工智能体提供了新的理论路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.32629/jief.v2i10.2326",
+      "title": "浅析如何提升高中生的语文写作能力",
+      "authors": [
+        "王, 海"
+      ],
+      "venue": "国际教育论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着高中语文的不断深入，写作在教学中占据很大的比重，写作也是语文知识的实践运用，传统机械式的写作套路限制了学生思维的发展，在教学中，教师应当注重对于学生写作思维的引导和培养，在知识技能的强化的基础上，进行思维情感态度的培养，这就要求教师不断创新、勇于探索，找到一种适应时代需求的教学模式。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.64216/3080-1516.26.03.009",
+      "title": "AI赋能三维模型制作效率提升路径",
+      "authors": [],
+      "venue": "当代教育与艺术",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.61369/etr.6368",
+      "title": "我国高校教育行政管理效率提升的路径研究",
+      "authors": [
+        "何, 艳"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文旨在探讨我国高校教育行政管理效率提升的路径。本文开篇先对这一领域的基本概念进行阐述，并分析目前高校行政管理面临的问题，这将为后续的研究提供一个现实的背景和出发点。接着，深入探讨导致高校教育行政管理效率低下的原因。最后，本文提出提升高校教育行政管理效率的路径探索。本研究旨在为我国高校教育行政管理提供有益的启示和借鉴，以期提高高校教育行政管理的效率和质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.37155/2717-5170-0611-23",
+      "title": "融媒体时代新闻采编人员采编能力的提升策略",
+      "authors": [
+        "何金龙"
+      ],
+      "venue": "电子通信与计算机科学",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.5040/9781350341616.ch-1",
+      "title": "我们自己的箭",
+      "authors": [],
+      "venue": "Bringing Forth the New",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "arXiv:0309395v2",
+      "arxiv_id": "0309395v2",
+      "title": "This paper has been withdrawn",
+      "authors": [
+        "This paper has been withdrawn"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2003,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0309395v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 91
+    },
+    {
+      "doi": "arXiv:2203.08975v2",
+      "arxiv_id": "2203.08975v2",
+      "title": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+      "authors": [
+        "Changxi Zhu",
+        "Mehdi Dastani",
+        "Shihan Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.08975v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "arXiv:0205016v1",
+      "arxiv_id": "0205016v1",
+      "title": "From Alife Agents to a Kingdom of N Queens",
+      "authors": [
+        "Jing Han",
+        "Jiming Liu",
+        "Qingsheng Cai"
+      ],
+      "venue": "arXiv",
+      "year": 2002,
+      "pdf_url": "https://arxiv.org/pdf/cs/0205016v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1007/978-3-032-13562-9_23",
+      "arxiv_id": "2510.13343v1",
+      "title": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+      "authors": [
+        "Shota Takayama",
+        "Katsuhide Fujita"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.13343v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1007/s10458-010-9154-1",
+      "arxiv_id": "2401.16216v1",
+      "title": "A mechanism for discovering semantic relationships among agent communication protocols",
+      "authors": [
+        "Idoia Berges",
+        "Jesús Bermúdez",
+        "Alfredo Goñi",
+        "Arantza Illarramendi"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.16216v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1145/3652988.3673918",
+      "arxiv_id": "2409.01907v1",
+      "title": "Focus Agent: LLM-Powered Virtual Focus Group",
+      "authors": [
+        "Taiyu Zhang",
+        "Xuesong Zhang",
+        "Robbe Cools",
+        "Adalberto L. Simeone"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.01907v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1007/978-3-030-01713-2_22",
+      "arxiv_id": "1807.02648v1",
+      "title": "How game complexity affects the playing behavior of synthetic agents",
+      "authors": [
+        "Chairi Kiourt",
+        "Dimitris Kalles",
+        "Panagiotis Kanellopoulos"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1807.02648v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1145/3786167.3788406",
+      "arxiv_id": "2512.09543v2",
+      "title": "SWEnergy: An Empirical Study on Energy Efficiency in Agentic Issue Resolution Frameworks with SLMs",
+      "authors": [
+        "Arihant Tripathy",
+        "Ch Pavan Harshit",
+        "Karthik Vaidhyanathan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.09543v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "arXiv:2512.24957v2",
+      "arxiv_id": "2512.24957v2",
+      "title": "AMAP Agentic Planning Technical Report",
+      "authors": [
+        " AMAP AI Agent Team",
+        "Yulan Hu",
+        "Xiangwen Zhang",
+        "Sheng Ouyang",
+        "Hao Yi",
+        "Lu Xu",
+        "Qinglin Lang",
+        "Lide Tan",
+        "Xiang Cheng",
+        "Tianchen Ye",
+        "Zhicong Li",
+        "Ge Chen",
+        "Wenjin Yang",
+        "Zheng Pan",
+        "Shaopan Xiong",
+        "Siran Yang",
+        "Ju Huang",
+        "Yan Zhang",
+        "Jiamang Wang",
+        "Yong Liu",
+        "Yinfeng Huang",
+        "Ning Wang",
+        "Tucheng Lin",
+        "Xin Li",
+        "Ning Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.24957v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "arXiv:2605.21404v1",
+      "arxiv_id": "2605.21404v1",
+      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
+      "authors": [
+        "Mahdi Naser Moghadasi",
+        "Faezeh Ghaderi"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.21404v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1007/s10458-025-09709-5",
+      "arxiv_id": "2412.06333v3",
+      "title": "Augmenting the action space with conventions to improve multi-agent cooperation in Hanabi",
+      "authors": [
+        "F. Bredell",
+        "H. A. Engelbrecht",
+        "J. C. Schoeman"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.06333v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1007/978-3-642-38859-0_10",
+      "arxiv_id": "1311.5108v1",
+      "title": "A Methodology to Engineer and Validate Dynamic Multi-level Multi-agent Based Simulations",
+      "authors": [
+        "Jean-Baptiste Soyez",
+        "Gildas Morvan",
+        "Daniel Dupont",
+        "Rochdi Merzouki"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1311.5108v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "arXiv:2606.04455v1",
+      "arxiv_id": "2606.04455v1",
+      "title": "The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?",
+      "authors": [
+        "Xinyu Lu",
+        "Tianshu Wang",
+        "Pengbo Wang",
+        "zujie wen",
+        "Zhiqiang Zhang",
+        "Jun Zhou",
+        "Boxi Cao",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Xianpei Han",
+        "Le Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.04455v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "arXiv:2508.00007v1",
+      "arxiv_id": "2508.00007v1",
+      "title": "Agent Network Protocol Technical White Paper",
+      "authors": [
+        "Gaowei Chang",
+        "Eidan Lin",
+        "Chengxuan Yuan",
+        "Rizhao Cai",
+        "Binbin Chen",
+        "Xuan Xie",
+        "Yin Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.00007v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "arXiv:2604.03350v1",
+      "arxiv_id": "2604.03350v1",
+      "title": "From Model-Based Screening to Data-Driven Surrogates: A Multi-Stage Workflow for Exploring Stochastic Agent-Based Models",
+      "authors": [
+        "Paul Saves",
+        "Matthieu Mastio",
+        "Nicolas Verstaevel",
+        "Benoit Gaudou"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.03350v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "arXiv:0706.1860v2",
+      "arxiv_id": "0706.1860v2",
+      "title": "FIPA-based Interoperable Agent Mobility Proposal",
+      "authors": [
+        "Jordi Cucurull",
+        "Ramon Marti",
+        "Sergi Robles",
+        "Joan Borrell",
+        "Guillermo Navarro"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0706.1860v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "arXiv:1007.0803v1",
+      "arxiv_id": "1007.0803v1",
+      "title": "Soft Control on Collective Behavior of a Group of Autonomous Agents by a Shill Agent",
+      "authors": [
+        "Jing Han",
+        "Ming Li",
+        "Lei Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1007.0803v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "arXiv:2603.28428v1",
+      "arxiv_id": "2603.28428v1",
+      "title": "Synergy: A Next-Generation General-Purpose Agent for Open Agentic Web",
+      "authors": [
+        "Xiaohang Nie",
+        "Zihan Guo",
+        "Kezhuo Yang",
+        "Zhichong Zheng",
+        "Bochen Ge",
+        "Shuai Pan",
+        "Zeyi Chen",
+        "Youling Xiang",
+        "Yu Zhang",
+        "Weiwen Liu",
+        "Yuanjian Zhou",
+        "Weinan Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28428v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2602.09084v2",
+      "arxiv_id": "2602.09084v2",
+      "title": "Agent Banana: High-Fidelity Image Editing with Agentic Thinking and Tooling",
+      "authors": [
+        "Ruijie Ye",
+        "Jiayi Zhang",
+        "Zhuoxin Liu",
+        "Zihao Zhu",
+        "Siyuan Yang",
+        "Li Li",
+        "Tianfu Fu",
+        "Franck Dernoncourt",
+        "Yue Zhao",
+        "Jiacheng Zhu",
+        "Ryan Rossi",
+        "Wenhao Chai",
+        "Zhengzhong Tu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.09084v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1007/978-3-031-56255-6_3",
+      "arxiv_id": "2303.14061v4",
+      "title": "Learning Reward Machines in Cooperative Multi-Agent Tasks",
+      "authors": [
+        "Leo Ardon",
+        "Daniel Furelos-Blanco",
+        "Alessandra Russo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.14061v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "arXiv:2606.09832v2",
+      "arxiv_id": "2606.09832v2",
+      "title": "Agentic Social Affordance Framework (ASAF): Agent Identity Design as a Collaboration Interface in Multi-Agent Systems",
+      "authors": [
+        "Meng-Han Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.09832v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:2602.15654v2",
+      "arxiv_id": "2602.15654v2",
+      "title": "Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections",
+      "authors": [
+        "Xianglin Yang",
+        "Yufei He",
+        "Shuo Ji",
+        "Bryan Hooi",
+        "Jin Song Dong"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.15654v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "arXiv:2604.12129v1",
+      "arxiv_id": "2604.12129v1",
+      "title": "Aethon: A Reference-Based Replication Primitive for Constant-Time Instantiation of Stateful AI Agents",
+      "authors": [
+        "Swanand Rao",
+        "Kiran Kashalkar",
+        "Parvathi Somashekar",
+        "Priya Krishnan"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.12129v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2511.14460v2",
+      "arxiv_id": "2511.14460v2",
+      "title": "Agent-R1: A Unified and Modular Framework for Agentic Reinforcement Learning",
+      "authors": [
+        "Mingyue Cheng",
+        "Shuo Yu",
+        "Daoyu Wang",
+        "Qingchuan Li",
+        "Xiaoyu Tao",
+        "Jie Ouyang",
+        "Yucong Luo",
+        "Yitong Zhou",
+        "Qi Liu",
+        "Enhong Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.14460v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1007/s10458-022-09548-8",
+      "arxiv_id": "2102.08370v2",
+      "title": "Quantifying the effects of environment and population diversity in multi-agent reinforcement learning",
+      "authors": [
+        "Kevin R. McKee",
+        "Joel Z. Leibo",
+        "Charlie Beattie",
+        "Richard Everett"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.08370v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:2603.29620v2",
+      "arxiv_id": "2603.29620v2",
+      "title": "Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis",
+      "authors": [
+        "Shuang Chen",
+        "Quanxin Shou",
+        "Hangting Chen",
+        "Yucheng Zhou",
+        "Kaituo Feng",
+        "Wenbo Hu",
+        "Yi-Fan Zhang",
+        "Yunlong Lin",
+        "Wenxuan Huang",
+        "Mingyang Song",
+        "Dasen Dai",
+        "Bolin Jiang",
+        "Manyuan Zhang",
+        "Shi-Xue Zhang",
+        "Zhengkai Jiang",
+        "Lucas Wang",
+        "Zhao Zhong",
+        "Yu Cheng",
+        "Nanyun Peng"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.29620v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "arXiv:2502.05986v2",
+      "arxiv_id": "2502.05986v2",
+      "title": "Preventing Rogue Agents Improves Multi-Agent Collaboration",
+      "authors": [
+        "Ohav Barbi",
+        "Ori Yoran",
+        "Mor Geva"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.05986v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:2201.04612v1",
+      "arxiv_id": "2201.04612v1",
+      "title": "Agent-Temporal Attention for Reward Redistribution in Episodic Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Baicen Xiao",
+        "Bhaskar Ramasubramanian",
+        "Radha Poovendran"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.04612v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:2605.27825v1",
+      "arxiv_id": "2605.27825v1",
+      "title": "MRMMIA: Membership Inference Attacks on Memory in Chat Agents",
+      "authors": [
+        "Kai Chen",
+        "Yan Pang",
+        "Tianhao Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.27825v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "arXiv:2508.02866v3",
+      "arxiv_id": "2508.02866v3",
+      "title": "PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows",
+      "authors": [
+        "Renan Souza",
+        "Amal Gueroudji",
+        "Stephen DeWitt",
+        "Daniel Rosendo",
+        "Tirthankar Ghosal",
+        "Robert Ross",
+        "Prasanna Balaprakash",
+        "Rafael Ferreira da Silva"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.02866v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "arXiv:2507.16853v1",
+      "arxiv_id": "2507.16853v1",
+      "title": "MobileUse: A GUI Agent with Hierarchical Reflection for Autonomous Mobile Operation",
+      "authors": [
+        "Ning Li",
+        "Xiangmou Qu",
+        "Jiamu Zhou",
+        "Jun Wang",
+        "Muning Wen",
+        "Kounianhua Du",
+        "Xingyu Lou",
+        "Qiuying Peng",
+        "Jun Wang",
+        "Weinan Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.16853v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:2603.13258v1",
+      "arxiv_id": "2603.13258v1",
+      "title": "Your Code Agent Can Grow Alongside You with Structured Memory",
+      "authors": [
+        "Yi-Xuan Deng",
+        "Xiaoqin Liu",
+        "Yi Zhang",
+        "Guo-Wei Yang",
+        "Shuojin Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.13258v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2402.11163v1",
+      "arxiv_id": "2402.11163v1",
+      "title": "KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph",
+      "authors": [
+        "Jinhao Jiang",
+        "Kun Zhou",
+        "Wayne Xin Zhao",
+        "Yang Song",
+        "Chen Zhu",
+        "Hengshu Zhu",
+        "Ji-Rong Wen"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.11163v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:2510.05158v1",
+      "arxiv_id": "2510.05158v1",
+      "title": "Lang-PINN: From Language to Physics-Informed Neural Networks via a Multi-Agent Framework",
+      "authors": [
+        "Xin He",
+        "Liangliang You",
+        "Hongduan Tian",
+        "Bo Han",
+        "Ivor Tsang",
+        "Yew-Soon Ong"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.05158v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1007/s10458-026-09732-0",
+      "arxiv_id": "2602.04518v1",
+      "title": "Learning the Value Systems of Agents with Preference-based and Inverse Reinforcement Learning",
+      "authors": [
+        "Andrés Holgado-Sánchez",
+        "Holger Billhardt",
+        "Alberto Fernández",
+        "Sascha Ossowski"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.04518v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:2606.26122v1",
+      "arxiv_id": "2606.26122v1",
+      "title": "DocArena: Turning Raw Documents into Controllable Training Environments for Document Search Agents",
+      "authors": [
+        "Jiamian Wang",
+        "Ruiyi Zhang",
+        "Tong Yu",
+        "Jing Shi",
+        "Samyadeep Basu",
+        "Rajiv Jain",
+        "Zhiqiang Tao",
+        "Tong Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.26122v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:2605.18747v1",
+      "arxiv_id": "2605.18747v1",
+      "title": "Code as Agent Harness",
+      "authors": [
+        "Xuying Ning",
+        "Katherine Tieu",
+        "Dongqi Fu",
+        "Tianxin Wei",
+        "Zihao Li",
+        "Yuanchen Bei",
+        "Jiaru Zou",
+        "Mengting Ai",
+        "Zhining Liu",
+        "Ting-Wei Li",
+        "Lingjie Chen",
+        "Yanjun Zhao",
+        "Ke Yang",
+        "Bingxuan Li",
+        "Cheng Qian",
+        "Gaotang Li",
+        "Xiao Lin",
+        "Zhichen Zeng",
+        "Ruizhong Qiu",
+        "Sirui Chen",
+        "Yifan Sun",
+        "Xiyuan Yang",
+        "Ruida Wang",
+        "Rui Pan",
+        "Chenyuan Yang",
+        "Dylan Zhang",
+        "Liri Fang",
+        "Zikun Cui",
+        "Yang Cao",
+        "Pan Chen",
+        "Dorothy Sun",
+        "Ren Chen",
+        "Mahesh Srinivasan",
+        "Nipun Mathur",
+        "Yinglong Xia",
+        "Hong Li",
+        "Hong Yan",
+        "Pan Lu",
+        "Lingming Zhang",
+        "Tong Zhang",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.18747v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1007/s10458-024-09649-6",
+      "arxiv_id": "2201.13448v4",
+      "title": "Warmth and competence in human-agent cooperation",
+      "authors": [
+        "Kevin R. McKee",
+        "Xuechunzi Bai",
+        "Susan T. Fiske"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.13448v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "arXiv:2402.11208v2",
+      "arxiv_id": "2402.11208v2",
+      "title": "Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents",
+      "authors": [
+        "Wenkai Yang",
+        "Xiaohan Bi",
+        "Yankai Lin",
+        "Sishuo Chen",
+        "Jie Zhou",
+        "Xu Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.11208v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:1410.4506v1",
+      "arxiv_id": "1410.4506v1",
+      "title": "Spectroscopic Needs for Calibration of LSST Photometric Redshifts",
+      "authors": [
+        "Samuel J. Schmidt",
+        "Jeffrey A. Newman",
+        "Alexandra Abate",
+        "the Spectroscopic Needs White Paper Team"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.4506v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:2606.08275v1",
+      "arxiv_id": "2606.08275v1",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "authors": [
+        "Jaineet Shah"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.08275v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.1145/3527188.3563921",
+      "arxiv_id": "2202.01077v2",
+      "title": "Experimental Investigation of Trust in Anthropomorphic Agents as Task Partners",
+      "authors": [
+        "Akihiro Maehigashi",
+        "Takahiro Tsumura",
+        "Seiji Yamada"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.01077v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:2509.24651v1",
+      "arxiv_id": "2509.24651v1",
+      "title": "\"Stop replacing salt with sugar!'': Towards Intuitive Human-Agent Teaching",
+      "authors": [
+        "Nikolaos Kondylidis",
+        "Andrea Rafanelli",
+        "Ilaria Tiddi",
+        "Annette ten Teije",
+        "Frank van Harmelen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.24651v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:2507.06396v1",
+      "arxiv_id": "2507.06396v1",
+      "title": "Representing Prompting Patterns with PDL: Compliance Agent Case Study",
+      "authors": [
+        "Mandana Vaziri",
+        "Louis Mandel",
+        "Yuji Watanabe",
+        "Hirokuni Kitahara",
+        "Martin Hirzel",
+        "Anca Sailer"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.06396v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:1901.03035v1",
+      "arxiv_id": "1901.03035v1",
+      "title": "Self-Monitoring Navigation Agent via Auxiliary Progress Estimation",
+      "authors": [
+        "Chih-Yao Ma",
+        "Jiasen Lu",
+        "Zuxuan Wu",
+        "Ghassan AlRegib",
+        "Zsolt Kira",
+        "Richard Socher",
+        "Caiming Xiong"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1901.03035v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2511.09710v3",
+      "arxiv_id": "2511.09710v3",
+      "title": "Echoing: Identity Failures when LLM Agents Talk to Each Other",
+      "authors": [
+        "Sarath Shekkizhar",
+        "Romain Cosentino",
+        "Adam Earle",
+        "Silvio Savarese"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.09710v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:1410.4498v1",
+      "arxiv_id": "1410.4498v1",
+      "title": "Spectroscopic Needs for Training of LSST Photometric Redshifts",
+      "authors": [
+        "Alexandra Abate",
+        "Jeffrey A. Newman",
+        "Samuel J. Schmidt",
+        "the Spectroscopic Needs White Paper team"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.4498v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:2311.10813v4",
+      "arxiv_id": "2311.10813v4",
+      "title": "A Language Agent for Autonomous Driving",
+      "authors": [
+        "Jiageng Mao",
+        "Junjie Ye",
+        "Yuxi Qian",
+        "Marco Pavone",
+        "Yue Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.10813v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "arXiv:2606.20515v2",
+      "arxiv_id": "2606.20515v2",
+      "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+      "authors": [
+        "Yalun Dai",
+        "Hao Li",
+        "Shulin Tian",
+        "Runmao Yao",
+        "Yuhao Dong",
+        "Fangzhou Hong",
+        "Zhaoxi Chen",
+        "Fangfu Liu",
+        "Baoliang Tian",
+        "Dingwen Zhang",
+        "Tao Wang",
+        "Kim-Hui Yap",
+        "Ziwei Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.20515v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:2606.24775v1",
+      "arxiv_id": "2606.24775v1",
+      "title": "Are We Ready For An Agent-Native Memory System?",
+      "authors": [
+        "Wei Zhou",
+        "Xuanhe Zhou",
+        "Shaokun Han",
+        "Hongming Xu",
+        "Guoliang Li",
+        "Zhiyu Li",
+        "Feiyu Xiong",
+        "Fan Wu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.24775v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
     }
   ]
 }
