@@ -1,0 +1,19 @@
+{
+  "version": "v0.1-china-institution-exclusion",
+  "source": "ROADMAP [P1-8] China political-institution exclusion",
+  "purpose": "Blocklist of Chinese political institutions to exclude from pa search results (user-specific filter, not general academic filter)",
+  "warning": "PERSONAL SENSITIVITY FILTER. Other users may want to include these. Logged to stderr for transparency.",
+  "merge_criterion": "When user adds a new institution during research, it takes effect immediately. No bulk-merge needed.",
+  "institutions": [],
+  "categories": {
+    "political-research-institute": "International relations / 马克思主义 research institutes under CASS",
+    "marxism-school": "马克思主义学院 (各级)",
+    "central-party-school": "中央党校 / 省委党校 / 市委党校",
+    "official-think-tank": "Official think tanks (e.g. 国务院发展研究中心, 中国社会科学院)"
+  },
+  "user_added_examples": [
+    "User can add: '中国社会科学院世界经济与政治研究所'",
+    "User can add: '中共中央党校'",
+    "User can add: '清华大学马克思主义学院'"
+  ]
+}
