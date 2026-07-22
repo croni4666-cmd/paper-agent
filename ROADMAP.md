@@ -140,6 +140,8 @@ What v3.4.1+ could improve (deferred to backlog):
 
 ### [P2-4] ~~pa cache stats~~ 鈥?merged into [P0-2]
 
+- **Status**: deprecated (merged into [P0-2] Local cache; 2026-07-04)
+
 ### Modified 2026-07-04 鈥?merged into [P0-2] (already shipped)
 
 [P2-4] was originally "pa cache stats" 鈥?descriptive single feature.
@@ -1164,6 +1166,8 @@ specific research topic to monitor, AND (b) confirms they want daily
 monitoring vs on-demand. Until then, shelved.
 
 ### [P2-4] ~~`pa cache stats` and `pa cache clean` subcommands~~ 鈥?REMOVED, merged into [P0-2]
+
+- **Status**: deprecated (merged into [P0-2] Local cache; 2026-07-04)
 
 ### Modified 2026-07-04 鈥?merged into [P0-2] (already shipped)
 
@@ -3760,7 +3764,7 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ### [P0-11] Deprecate BGE-rerank + LTR from default pipeline (added 2026-07-15, updated 2026-07-20)
 
-- **Status**: ✅ done (deprecation shipped in v3.9.10)
+- **Status**: done (deprecation shipped in v3.9.10)
 - **Added**: 2026-07-15
 - **Updated**: 2026-07-20 (v3.9.10 ships the deprecation: docstrings, action plan, MD report fix)
 - **Source**: v3.9.7.3 n=48 paired Wilcoxon (BGE) + n=50 LTR loses to baseline
