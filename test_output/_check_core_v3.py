@@ -35,13 +35,17 @@ for q in ["long-term care insurance", "数字普惠金融", "金融科技 风险
         print(f"  - {str(r2.get('title',''))[:60]} | year={r2.get('yearPublished')} | doi={r2.get('doi')}")
 
 print("\n=== With CORE_API_KEY env var (Bearer style) ===")
-os.environ["CORE_API_KEY"] = "<REDACTED-CORE-KEY>"
+# SECURITY: do NOT hardcode the key here. Read from env (.env auto-loaded
+# by pa_cli.search._load_dotenv). If not set, skip the key-based probes.
 KEY = os.environ.get("CORE_API_KEY", "")
-for q in ["long-term care insurance"]:
-    # Try Bearer
-    s, d = http_get_json(f"https://api.core.ac.uk/v3/search/works?q={ur.quote(q)}&limit=3",
-                         headers={"Authorization": f"Bearer {KEY}"})
-    print(f"Q={q!r} (Bearer): HTTP {s} | totalHits={d.get('totalHits')}")
-    # Try query param
-    s, d = http_get_json(f"https://api.core.ac.uk/v3/search/works?q={ur.quote(q)}&api_key={KEY}&limit=3")
-    print(f"Q={q!r} (?api_key=): HTTP {s} | totalHits={d.get('totalHits')}")
+if not KEY:
+    print("(CORE_API_KEY env var not set; skipping Bearer + ?api_key= probes)")
+else:
+    for q in ["long-term care insurance"]:
+        # Try Bearer
+        s, d = http_get_json(f"https://api.core.ac.uk/v3/search/works?q={ur.quote(q)}&limit=3",
+                             headers={"Authorization": f"Bearer {KEY}"})
+        print(f"Q={q!r} (Bearer): HTTP {s} | totalHits={d.get('totalHits')}")
+        # Try query param
+        s, d = http_get_json(f"https://api.core.ac.uk/v3/search/works?q={ur.quote(q)}&api_key={KEY}&limit=3")
+        print(f"Q={q!r} (?api_key=): HTTP {s} | totalHits={d.get('totalHits')}")
