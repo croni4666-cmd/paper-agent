@@ -7,6 +7,56 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.7.4-indep] - 2026-07-22 (12 MoE samples moved to independent files)
+
+### v3.9.7.4-indep — MoE sample refactor (Option B per user 2026-07-22)
+
+**Context**: 12 MoE training samples (q051-q062) were added in v3.9.7.4
+(commit 40ffd03) but caused macro F1 regression 0.609 → 0.41. Per the
+4-dim labels in `bench/moe-keyword-samples.md`, the samples are
+structurally correct but the 12-sample size is too small to lift
+macro F1 to the target 0.70-0.75.
+
+**Refactor** (commit 6d05547):
+- 12 samples moved out of main training data to independent files:
+  - `bench/v01/moe_keyword_samples_12.json` (labels)
+  - `bench/v01/system_outputs_combined_moe_samples_12/` (12 system_outputs)
+- `labels_clean.json` restored to v3.9.0 baseline (25 qids, q001-q025)
+- `system_outputs_combined/` restored to v3.9.0 baseline (50 files, q001-q050)
+- BOM stripped from `labels_clean.json` (legacy v3.9.0 issue)
+
+**Gated merger** (`test_output/_merge_moe_samples.py`):
+- Refuses to merge if `n_samples < 30` (currently 12, need 18+ more)
+- Refuses to merge if `aminer samples == 0` (currently 0, need China-local)
+- When conditions met: backs up + atomic-writes labels + system_outputs
+
+**Next steps for 12 samples to be useful** (per moe-keyword-samples.md §6):
+1. Add 18+ more keyword samples (4-dim labels: topic/method/data/industry)
+2. Add at least 1 aminer sample (e.g. 海宁经编/算力券 query)
+3. Run `python test_output/_merge_moe_samples.py` to merge
+4. Re-run MoE router; expect macro F1 0.70+ when conditions met
+
+**Why Option B (not Option A full rollback)**:
+- 12 samples are real verified literature (申报书 v9.12 实际引用)
+- 4-dim label structure is the template for next 申报书
+- Keeping them isolated preserves the work without polluting main data
+
+**Files**:
+- `bench/v01/moe_keyword_samples_12.json` (NEW)
+- `bench/v01/system_outputs_combined_moe_samples_12/` (NEW, 12 files)
+- `bench/v01/labels_clean.json` (restored)
+- `bench/v01/system_outputs_combined/` (restored)
+- `test_output/_extract_moe_samples_to_independent.py` (extraction utility)
+- `test_output/_merge_moe_samples.py` (gated merger)
+- `test_output/_strip_bom.py` (BOM removal utility)
+
+**MoE baseline verification** (post-restore):
+- n_queries: 25 (24 openalex + 1 crossref)
+- MoE pipeline runs end-to-end
+- BOM no longer blocks `json.loads`
+
+---
+
 ## [3.9.10.11] - 2026-07-22 ([P1-20] S2 throttling ships — needs S2_API_KEY for impact)
 
 ### v3.9.10.11 — [P1-20] S2 throttle + 429 backoff/retry (2026-07-22)
