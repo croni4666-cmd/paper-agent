@@ -7,6 +7,73 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.0] - 2026-07-22 (Stable release marker — code at natural ceiling)
+
+### v3.9.11.0 — Stable release marker (2026-07-22)
+
+This is a **MINOR bump to mark a stable release point**. No new features
+shipped; the bump is purely a versioning signal that paper-agent has
+reached a natural code-level ceiling per the discipline memory
+("n<100 is noise, samples need user data, fulltext features have 0 LTR
+importance at n=25").
+
+**What's "stable" in v3.9.11.0**:
+- All P0 priority code shipped (P0-1 .. P0-14, 14 items)
+- All P1 priority code shipped except 5 sample libraries (P1-1..5, P1-11, P1-18, P1-20)
+- All P2 priority code shipped (P2-5 .. P2-14, 10 items)
+- All test_output/ test scripts committed (50+ files)
+- All rebuild data + re-eval reports committed (54 files)
+- .gitignore cleaned (200+ line ruleset covering backup dirs, debug scripts, etc.)
+- Working tree clean (0 untracked files after 2026-07-22 final cleanup)
+
+**What is NOT done** (and won't be, per memory discipline):
+- 5 sample libraries waiting on user data:
+  - P1-6 (sub-topic granularity), P1-8 (china institution), P1-9 (country metadata),
+    P1-10 (falsifiability summary), P1-21 (MoE samples)
+- 2 blocked items chained to the libraries:
+  - P1-13 (n=50 → n=200 label expansion, waits on P1-6 / P1-21)
+  - P1-19 (institution credibility boost, waits on P1-8 / P1-9)
+- 2 modified items (honest partial implementations):
+  - P0-8 (3/4 fulltext features work; cross_encoder deferred to n>=100)
+  - P1-12 (same as P0-8 — may be merged in future cleanup)
+
+**3-tier honest finding (per 2026-07-22 audit)**:
+
+- ✅ Pass:
+  - 12-feature LTR pipeline works (v3.9.10.12 path A, n=25)
+  - LTR beats combined baseline by +0.033 NDCG@10
+  - 3 of 4 fulltext features have working computation
+  - _load_dotenv() makes S2 / CORE / OpenAlex / Unpaywall keys auto-load (v3.9.10.13)
+  - All previous P0-P2 priority code shipped and tested
+
+- ⚠️ Neutral:
+  - 12-feat = 8-feat (delta=0.0000) — fulltext features don't lift LTR at n=25
+  - +0.033 LTR lift is within ±0.05 noise threshold
+  - 5 sample libraries are scaffolds waiting for data
+
+- ❌ Fail:
+  - n=25 is below n>=100 noise threshold per memory discipline
+  - 2 of 4 fulltext features (fulltext_bm25, fulltext_cross_encoder) are 0
+    because no PDF fulltext in dataset
+  - Even 2 "working" fulltext features (citation_density, venue_score)
+    have 0 LTR importance — don't differentiate at n=25
+  - CHANGELOG still has 2 pre-existing duplicates (v3.5.1, v3.6.0) — now
+    demoted to ### subsections with merge notes (not full re-order)
+
+**Versioning rationale** (v3.9.10.13 → v3.9.11.0):
+- v3.9.10.13 was the last code-change version (PATCH-level bookkeeping fix)
+- v3.9.11.0 marks the transition from "iterating in v3.9.10.x" to
+  "stable in v3.9.11.x" — a common semver pattern for "we've reached
+  a stable point, future work is on top of this"
+- No new features, no new APIs, no breaking changes
+
+**Files**:
+- Modified: `pa_cli/__init__.py` (version 3.9.10.13 → 3.9.11.0)
+- Modified: `CHANGELOG.md` (this entry + merge 2 historical duplicates)
+- Modified: `.gitignore` (9 more patterns for working tree cleanup)
+
+---
+
 ## [3.9.10.13] - 2026-07-22 (_load_dotenv auto-load .env file)
 
 ### v3.9.10.13 — _load_dotenv() auto-load .env file (2026-07-22)
@@ -4550,7 +4617,15 @@ revert removed the maintenance surface; this commit restores
 
 ---
 
-## [3.5.1] - 2026-07-04 (post-MCP-revert state)
+**Note** (added 2026-07-22 cleanup): the v3.5.1 release had two
+`## [3.5.1]` headers (the follow-up at L4462 and the main revert
+entry below). The main revert entry is demoted to a `### v3.5.1`
+subsection and stays here. v3.5.1 was a same-day release: first the
+revert (below), then the follow-up MCP install/config (above). The
+chronological order is: v3.6.0 [P0-3] added → v3.5.1 main revert →
+v3.5.1 follow-up. Content of both `## [3.5.1]` headers is preserved.
+
+### v3.5.1 (continued) — post-MCP-revert state, [P0-3] revert + [P1-1] citation walk
 
 This release reflects the state of the codebase after the user-initiated
 rollback of the [P0-3] MCP server (originally shipped as v3.6.0, now
@@ -4628,11 +4703,16 @@ Implements all 3 acceptance criteria from `ROADMAP.md` [P1-1].
 
 ---
 
-## [3.6.0] - 2026-07-04
+**Note** (added 2026-07-22 cleanup): the original v3.6.0 release had two
+`## [3.6.0]` headers (one for [P1-2] OpenAlex concepts at L4409, one for
+[P0-3] MCP server below). The duplicate header is removed; [P0-3] MCP
+content stays here as a `### v3.6.0` subsection for chronological
+clarity (it was originally committed AFTER the v3.5.1 revert cycle began,
+so its position after the v3.5.1 entries is technically the commit
+order). [P0-3] MCP was later **reverted in v3.5.1** — see v3.5.1 main
+entry below.
 
-### Added — [P0-3] MCP server (`pa mcp-serve`, exposes 4 tools to any MCP client)
-
-Implements all 4 acceptance criteria from `ROADMAP.md` [P0-3].
+### v3.6.0 — [P0-3] MCP server (`pa mcp-serve`, exposes 4 tools to any MCP client)
 
 **New files**:
 - `pa_cli/mcp.py` (~250 lines) — `mcp.Server` instance, 4 tool handlers, async `serve()`, JSON-serialisable results, structured error responses. Wraps existing pa_cli Python functions; no logic duplication.
