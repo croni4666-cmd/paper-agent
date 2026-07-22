@@ -25,10 +25,47 @@ import os
 import sys
 import threading
 import time
+from pathlib import Path
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
+
+
+def _load_dotenv(path: Optional[Path] = None) -> None:
+    """Minimal .env loader (no python-dotenv dep). Sets keys into os.environ
+    only if not already set (so shell env wins).
+
+    Searches: --env-file CLI arg > $PAPER_AGENT_ENV_FILE > ./pa.env > ./.env
+    > <repo>/pa.env > <repo>/.env (whichever exists first).
+    """
+    if path is None:
+        for cand in (
+            os.environ.get("PAPER_AGENT_ENV_FILE"),
+            "pa.env", ".env",
+            str(Path(__file__).resolve().parents[1] / "pa.env"),
+            str(Path(__file__).resolve().parents[1] / ".env"),
+        ):
+            if cand and Path(cand).is_file():
+                path = Path(cand)
+                break
+    if path is None or not path.is_file():
+        return
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, _, v = line.partition("=")
+            k = k.strip()
+            v = v.strip().strip('"').strip("'")
+            # Don't overwrite shell env
+            os.environ.setdefault(k, v)
+    except Exception:
+        pass
+
+
+_load_dotenv()
 
 
 UA = "paper-agent/3.2 (Mavis; mailto:hello@example.com)"
