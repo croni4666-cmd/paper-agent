@@ -7,6 +7,53 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.10.13] - 2026-07-22 (_load_dotenv auto-load .env file)
+
+### v3.9.10.13 — _load_dotenv() auto-load .env file (2026-07-22)
+
+**Bug fix**: S2 (and CORE, OpenAlex, Unpaywall) API keys were in the repo's
+`.env` file but `os.environ.get("S2_API_KEY")` returned `None`. The
+`pa_cli/search.py` module never auto-loaded `.env`. This was a **silent bug**
+that made the v3.9.10.10 (gzip/brotli) fix and v3.9.10.11 ([P1-20] S2 throttle)
+**non-functional** in practice — S2 returned 0 papers because the throttle
+retry path used the wrong (empty) key.
+
+**Fix** (`pa_cli/search.py`, +37 LOC):
+- Added `_load_dotenv(path=None)` helper (no `python-dotenv` dependency)
+- Search order: `$PAPER_AGENT_ENV_FILE` > `./pa.env` > `./.env` >
+  `<repo>/pa.env` > `<repo>/.env` (whichever exists first)
+- `setdefault` semantics: existing shell env wins over `.env` (per 12-factor)
+- Skips `#` comments, blank lines, lines without `=`
+- Strips `"` and `'` quote wrappers from values
+- Silent failure: missing/unreadable file is no-op (no exception)
+
+**Auto-call**: `_load_dotenv()` is called at module import time (line 67),
+so any `pa` subcommand that imports `pa_cli.search` gets the env vars.
+
+**Tests** (`test_output/_test_load_dotenv.py`): 12/12 pass
+- `loads keys from .env file`
+- `setdefault: shell env wins over .env`
+- `ignores # comments and blank lines`
+- `unquotes double/single-quoted values`
+- `uses $PAPER_AGENT_ENV_FILE path when set`
+- `missing file is no-op`
+- `repo .env file loads S2_API_KEY` (real-world test)
+- `lines without = are silently ignored`
+
+**Impact**:
+- S2 returns 5 papers in 1.5s (was: 0 papers in 60s of wasted retries)
+- CORE/OpenAlex/Unpaywall API key auth is now automatic from `.env`
+- v3.9.10.10 re-eval pool coverage may recover further (was 0.8873 with
+  no S2; v3.9.10.11 with auto-loaded key should approach 0.99 again)
+
+**Files**:
+- Modified: `pa_cli/search.py` (+37 LOC: `_load_dotenv` helper + auto-call)
+- Created: `test_output/_test_load_dotenv.py` (12 tests, all PASS)
+- Modified: `pa_cli/__init__.py` (version 3.9.10.12 -> 3.9.10.13)
+- Modified: `CHANGELOG.md` (this entry)
+
+---
+
 ## [3.9.10.12] - 2026-07-22 ([P0-8] path A: 12-feature LTR baseline + honest 3-tier)
 
 ### v3.9.10.12 — [P0-8] path A: 12-feature LTR baseline + honest 3-tier finding (2026-07-22)
