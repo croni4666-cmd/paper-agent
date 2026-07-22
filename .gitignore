@@ -37,6 +37,92 @@ test_output/_*.sqlite
 # Note: test_output/_debug_*.py/.html are NOT auto-ignored (some are
 # useful artifacts). Add specific patterns if they grow.
 
+# Per 2026-07-22 cleanup: system_outputs backup dirs and snapshot dirs are
+# historical checkpoints (consume ~50MB). Kept on disk, not tracked.
+# Naming: anything matching these patterns is a pre-rebuild backup.
+bench/v01/system_outputs_combined.*/
+bench/v01/system_outputs_combined_v3_9_*/
+bench/v01/system_outputs_v3_9_*/
+# Per 2026-07-22 cleanup: old v4-combined format files in system_outputs/
+# (no .json extension; superseded by q001.json, q002.json, etc.)
+bench/v01/system_outputs/q0[!j]*
+bench/v01/system_outputs/q[1-9]*
+bench/v01/system_outputs/q[1-9][0-9]*
+
+# Per 2026-07-22 cleanup: root-level debug scratch and ad-hoc one-off scripts
+# (not part of the package). Kept on disk, not tracked.
+/count.py
+/debug*.py
+/merge_results.py
+/pa_search_fix.py
+/active_items.txt
+/all_results_consolidated.json
+/verified_top.json
+/verify_charnes*.py
+/verify_top.py
+/search_t*.json
+/search_topic*.json
+
+# Per 2026-07-22 cleanup: alternate skill structure (paper-agent v2) is
+# a parallel design, not part of the current code path. Kept on disk
+# as reference, not tracked.
+# (Uncomment if v2 becomes active: remove these lines)
+/skill/
+
+# Per 2026-07-22 cleanup: test_output scratch that is debug/clutter, not
+# the actual e2e tests or sample output. Patterns are specific; if you
+# have a useful script in test_output/, rename it to start with _test_ or
+# _demo_ to be tracked.
+test_output/_commit_msg_*.md
+test_output/_commit_msg_*.txt
+test_output/_brief.js
+test_output/_check_*.py
+test_output/_debug_*.html
+test_output/_debug_*.py
+test_output/_debug_*.cjs
+test_output/_inspect_adv*.py
+test_output/_trace_*.py
+test_output/_try_*.py
+test_output/_probe_archived/
+test_output/_fetch_e2e/
+test_output/_real_corpus_searches_2026-07-05/
+test_output/_git_head1_*.json
+test_output/_real_*.json
+test_output/_real_topics_*.json
+test_output/_test_*.pdf
+test_output/_test_search_*.json
+test_output/_demo_topics*.json
+test_output/_demo_topics_*.py
+test_output/_engine_debug.py
+test_output/_explore_bench*.py
+test_output/_fetch_*.py
+test_output/_grep_*.py
+test_output/_list_active_items.py
+test_output/_manual_download_URLs*.md
+test_output/_organize_and_search.py
+test_output/_quick_s2_test.py
+test_output/_rename_and_scholar.py
+test_output/_restore_labels.py
+test_output/_roadmap_status.py
+test_output/_run_*.py
+test_output/_test_*.py  # test files: tracked separately below
+# test_output/_test_*.py are tracked (the real e2e tests) -- un-ignore:
+!test_output/_test_*.py
+
+# Per 2026-07-22 cleanup: misc ad-hoc files at root level
+/active_items.txt
+/all_results_consolidated.json
+/count.py
+/debug*.py
+/merge_results.py
+/pa_search_fix.py
+/verified_top.json
+/verify_charnes*.py
+/verify_top.py
+/search_t*.json
+/search_topic*.json
+
+
 # OS files
 .DS_Store
 Thumbs.db

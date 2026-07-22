@@ -1,0 +1,305 @@
+{
+  "query": "AI tutoring K-12",
+  "year_min": null,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 5,
+    "openalex": 5,
+    "arxiv": 5,
+    "semanticscholar": 0,
+    "core": 0
+  },
+  "dedup_count": 15,
+  "results": [
+    {
+      "doi": "10.1016/j.inffus.2019.12.012",
+      "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+      "authors": [
+        "Alejandro Barredo Arrieta",
+        "Natalia Díaz-Rodríguez",
+        "Javier Del Ser",
+        "Adrien Bennetot",
+        "Siham Tabik",
+        "Alberto Barbado",
+        "Salvador García",
+        "Sergio Gil-López",
+        "Daniel Molina",
+        "Richard Benjamins",
+        "Raja Chatila",
+        "Francisco Herrera"
+      ],
+      "venue": "Information Fusion",
+      "year": 2019,
+      "cited_by_count": 9162,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/1910.10045",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1371/journal.pdig.0000198",
+      "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+      "authors": [
+        "Tiffany H. Kung",
+        "Morgan Cheatham",
+        "Arielle Medenilla",
+        "Czarina Sillos",
+        "Lorie De Leon",
+        "Camille Elepaño",
+        "Maria Madriaga",
+        "Rimel Aggabao",
+        "Giezel Diaz-Candido",
+        "James Maningo",
+        "Victor Tseng"
+      ],
+      "venue": "PLOS Digital Health",
+      "year": 2023,
+      "cited_by_count": 3620,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.plos.org/digitalhealth/article/file?id=10.1371/journal.pdig.0000198&type=printable",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s41239-023-00408-3",
+      "title": "A comprehensive AI policy education framework for university teaching and learning",
+      "authors": [
+        "Cecilia Ka Yuk Chan"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2023,
+      "cited_by_count": 1195,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00408-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1186/s40594-023-00418-7",
+      "title": "AI literacy in K-12: a systematic literature review",
+      "authors": [
+        "Lorena Casal Otero",
+        "Alejandro Catalá",
+        "Carmen Fernández-Morante",
+        "M. Taboada",
+        "Beatriz Cebreiro López",
+        "Senén Barro"
+      ],
+      "venue": "International Journal of STEM Education",
+      "year": 2023,
+      "cited_by_count": 549,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://stemeducationjournal.springeropen.com/counter/pdf/10.1186/s40594-023-00418-7",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1002/aaai.12058",
+      "title": "Designing for human–AI complementarity in K‐12 education",
+      "authors": [
+        "Kenneth Holstein",
+        "Vincent Aleven"
+      ],
+      "venue": "AI Magazine",
+      "year": 2022,
+      "cited_by_count": 123,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/aaai.12058",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.31219/osf.io/4ds7q",
+      "title": "Explainable AI for Intelligent Tutoring Systems",
+      "authors": [
+        "Karpouzis, Kostas"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 4,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>This paper investigates the significance of Explainable AI(XAI) in educational technologies, employing the iRead project as a case study. The iRead project, an adaptive learning technology designed to bolster language learning, demonstrates the pivotal role of explainability in fostering effective, trustworthy, and engaging learning environments. Its transparent design, which adapts to individual learners, exemplifies the additional importance of explainability in facilitating personalized in",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1080/14626269209408301",
+      "title": "eL: using AI in CALL",
+      "authors": [
+        "O'Brien, Paul"
+      ],
+      "venue": "Intelligent Tutoring Media",
+      "year": 1992,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1007/978-3-642-77202-3_19",
+      "title": "WIZDOM A Multiple-Purpose Language Tutoring System Based on AI Techniques",
+      "authors": [
+        "Handkel, Jürgen"
+      ],
+      "venue": "Intelligent Tutoring Systems for Foreign Language Learning",
+      "year": 1992,
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.3233/aic-1992-5411",
+      "title": "Intelligent Tutoring Systems 92",
+      "authors": [
+        "Del Soldato, Teresa"
+      ],
+      "venue": "AI Communications",
+      "year": 1992,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.14569/ijacsa.2021.0121295",
+      "title": "A Language Tutoring Tool based on AI and Paraphrase Detection",
+      "authors": [
+        "Basalamah, Anas"
+      ],
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "arXiv:2603.28944v2",
+      "arxiv_id": "2603.28944v2",
+      "title": "Faith in AI can narrow the futures individuals consider",
+      "authors": [
+        "Aoi Naito",
+        "Hirokazu Shirado"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28944v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2503.09748v1",
+      "arxiv_id": "2503.09748v1",
+      "title": "Advancing Education through Tutoring Systems: A Systematic Literature Review",
+      "authors": [
+        "Vincent Liu",
+        "Ehsan Latif",
+        "Xiaoming Zhai"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.09748v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2501.02842v1",
+      "arxiv_id": "2501.02842v1",
+      "title": "Foundations of GenIR",
+      "authors": [
+        "Qingyao Ai",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02842v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2104.01266v2",
+      "arxiv_id": "2104.01266v2",
+      "title": "Designing for human-AI complementarity in K-12 education",
+      "authors": [
+        "Kenneth Holstein",
+        "Vincent Aleven"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2104.01266v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    },
+    {
+      "doi": "arXiv:2601.16513v1",
+      "arxiv_id": "2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "authors": [
+        "Melissa Wilfley",
+        "Mengting Ai",
+        "Madelyn Rose Sanfilippo"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ]
+    }
+  ]
+}

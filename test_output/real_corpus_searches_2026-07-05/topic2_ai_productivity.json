@@ -1,0 +1,2284 @@
+{
+  "query": "industrial economics AI productivity gains",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 30,
+    "openalex": 30,
+    "arxiv": 0,
+    "semanticscholar": 30,
+    "core": 30
+  },
+  "dedup_count": 119,
+  "results": [
+    {
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Laurie Hughes",
+        "Elvira Ismagilova",
+        "Gert Aarts",
+        "Crispin Coombs",
+        "Tom Crick",
+        "Yanqing Duan",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Aled Eirug",
+        "Vassilis Galanos",
+        "P. Vigneswara Ilavarasan",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Arpan Kumar Kar",
+        "Hatice Kizgin",
+        "Bianca Kronemann",
+        "Banita Lal",
+        "Biagio Lucini",
+        "Rony Medaglia",
+        "Kenneth Le Meunier‐FitzHugh",
+        "Leslie Caroline Le Meunier-FitzHugh",
+        "Santosh K. Misra",
+        "Emmanuel Mogaji",
+        "Sujeet Kumar Sharma",
+        "Jang Bahadur Singh",
+        "Vishnupriya Raghavan",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Spyridon Samothrakis",
+        "Jak Spencer",
+        "Kuttimani Tamilmani",
+        "Annie Tubadji",
+        "Paul Walton",
+        "Michael D. Williams"
+      ],
+      "venue": "International Journal of Information Management",
+      "year": 2019,
+      "cited_by_count": 4071,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "authors": [
+        "Daron Acemoğlu",
+        "Pascual Restrepo"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2019,
+      "cited_by_count": 2202,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1108/josm-04-2018-0119",
+      "title": "Brave new world: service robots in the frontline",
+      "authors": [
+        "Jochen Wirtz",
+        "Paul G. Patterson",
+        "Werner H. Kunz",
+        "Thorsten Gruber",
+        "Vinh Nhat Lu",
+        "Stefanie Paluch",
+        "Antje Martins"
+      ],
+      "venue": "Journal of service management",
+      "year": 2018,
+      "cited_by_count": 2110,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JOSM-04-2018-0119/full/pdf?title=brave-new-world-service-robots-in-the-frontline",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5465/amr.2018.0072",
+      "title": "Artificial Intelligence and Management: The Automation–Augmentation Paradox",
+      "authors": [
+        "Sebastian Raisch",
+        "Sebastian Krakowski"
+      ],
+      "venue": "Academy of Management Review",
+      "year": 2021,
+      "cited_by_count": 1913,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.aom.org/doi/full/10.5465/amr.2018.0072",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.5430/ijfr.v9n2p90",
+      "title": "The Fourth Industrial Revolution: Opportunities and Challenges",
+      "authors": [
+        "Xu Min",
+        "Jeanne M. David",
+        "Suk Hi Kim"
+      ],
+      "venue": "International Journal of Financial Research",
+      "year": 2018,
+      "cited_by_count": 1111,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://www.sciedupress.com/journal/index.php/ijfr/article/download/13194/8136",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.hrmr.2022.100899",
+      "title": "Unlocking the value of artificial intelligence in human resource management through AI capability framework",
+      "authors": [
+        "Soumyadeb Chowdhury",
+        "Prasanta Kumar Dey",
+        "Sian Joel-Edgar",
+        "Sudeshna Bhattacharya",
+        "Oscar Rodríguez-Espíndola",
+        "Amélie Abadie",
+        "Linh Truong"
+      ],
+      "venue": "Human Resource Management Review",
+      "year": 2022,
+      "cited_by_count": 816,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://publications.aston.ac.uk/id/eprint/43663/1/HRMR_anonymous_Final.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1257/aer.20191330",
+      "title": "Nonrivalry and the Economics of Data",
+      "authors": [
+        "Charles I. Jones",
+        "Christopher Tonetti"
+      ],
+      "venue": "American Economic Review",
+      "year": 2020,
+      "cited_by_count": 803,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20191330",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/access.2020.3042874",
+      "title": "Industrial Artificial Intelligence in Industry 4.0 - Systematic Review, Challenges and Outlook",
+      "authors": [
+        "Ricardo Silva Peres",
+        "Xiaodong Jia",
+        "Jay Lee",
+        "Keyi Sun",
+        "Armando Walter Colombo",
+        "José Barata"
+      ],
+      "venue": "IEEE Access",
+      "year": 2020,
+      "cited_by_count": 655,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09285283.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s11423-023-10203-6",
+      "title": "Teachers’ AI digital competencies and twenty-first century skills in the post-pandemic world",
+      "authors": [
+        "Davy Tsz Kit Ng",
+        "Jac Ka Lok Leung",
+        "Jiahong Su",
+        "Chi Wui Ng",
+        "Samuel Kai Wah Chu"
+      ],
+      "venue": "Educational Technology Research and Development",
+      "year": 2023,
+      "cited_by_count": 586,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11423-023-10203-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1093/cjres/rsz022",
+      "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
+      "authors": [
+        "Daron Acemoğlu",
+        "Pascual Restrepo"
+      ],
+      "venue": "Cambridge Journal of Regions Economy and Society",
+      "year": 2019,
+      "cited_by_count": 570,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/cjres/article-pdf/13/1/25/33213534/rsz022.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1002/mar.21619",
+      "title": "AI in marketing, consumer research and psychology: A systematic literature review and research agenda",
+      "authors": [
+        "Marcello M. Mariani",
+        "Rodrigo Perez‐Vega",
+        "Jochen Wirtz"
+      ],
+      "venue": "Psychology and Marketing",
+      "year": 2021,
+      "cited_by_count": 553,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/mar.21619",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1177/1042258720934581",
+      "title": "Artificial Intelligence and Entrepreneurship: Implications for Venture Creation in the Fourth Industrial Revolution",
+      "authors": [
+        "Dominic Chalmers",
+        "Niall MacKenzie",
+        "Sara Carter"
+      ],
+      "venue": "Entrepreneurship Theory and Practice",
+      "year": 2020,
+      "cited_by_count": 474,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/1042258720934581",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.respol.2022.104555",
+      "title": "Artificial intelligence and industrial innovation: Evidence from German firm-level data",
+      "authors": [
+        "Christian Rammer",
+        "Gastón P. Fernández",
+        "Dirk Czarnitzki"
+      ],
+      "venue": "Research Policy",
+      "year": 2022,
+      "cited_by_count": 432,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://lirias.kuleuven.be/bitstream/20.500.12942/693698/2/2022-04-12%20-%20AI_Innovation_ResPol_lirias_version.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1145/3359552",
+      "title": "Some simple economics of the blockchain",
+      "authors": [
+        "Christian Catalini",
+        "Joshua S. Gans"
+      ],
+      "venue": "Communications of the ACM",
+      "year": 2020,
+      "cited_by_count": 413,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3359552",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1109/access.2021.3102227",
+      "title": "Big Data and AI Revolution in Precision Agriculture: Survey and Challenges",
+      "authors": [
+        "Showkat Ahmad Bhat",
+        "Nen-Fu Huang"
+      ],
+      "venue": "IEEE Access",
+      "year": 2021,
+      "cited_by_count": 401,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09505674.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "Impact of AI assistance on student agency",
+      "authors": [
+        "Ali Darvishi",
+        "Hassan Khosravi",
+        "Shazia Sadiq",
+        "Dragan Gašević",
+        "George Siemens"
+      ],
+      "venue": "Computers & Education",
+      "year": 2023,
+      "cited_by_count": 394,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.compedu.2023.104967",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1108/jtf-07-2019-0065",
+      "title": "Impact of AI and robotics in the tourism sector: a critical insight",
+      "authors": [
+        "Samala Nagaraj",
+        "Bharath Shashanka Katkam",
+        "Raja Shekhar Bellamkonda",
+        "Raul V. Rodriguez"
+      ],
+      "venue": "Journal of Tourism Futures",
+      "year": 2020,
+      "cited_by_count": 363,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JTF-07-2019-0065/full/pdf?title=impact-of-ai-and-robotics-in-the-tourism-sector-a-critical-insight",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jebo.2023.05.008",
+      "title": "Artificial intelligence and firm-level productivity",
+      "authors": [
+        "Dirk Czarnitzki",
+        "Gastón P. Fernández",
+        "Christian Rammer"
+      ],
+      "venue": "Journal of Economic Behavior & Organization",
+      "year": 2023,
+      "cited_by_count": 338,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.jebo.2023.05.008",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/ai1020008",
+      "title": "Artificial Intelligence (AI) or Intelligence Augmentation (IA): What Is the Future?",
+      "authors": [
+        "Hossein Hassani",
+        "Emmanuel Sirimal Silva",
+        "Stephane Unger",
+        "Maedeh TajMazinani",
+        "Stephen Mac Feely"
+      ],
+      "venue": "AI",
+      "year": 2020,
+      "cited_by_count": 332,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2673-2688/1/2/8/pdf?version=1586695841",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.technovation.2023.102747",
+      "title": "Worker and workplace Artificial Intelligence (AI) coexistence: Emerging themes and research agenda",
+      "authors": [
+        "Araz Zirar",
+        "Syed Imran Ali",
+        "Nazrul Islam"
+      ],
+      "venue": "Technovation",
+      "year": 2023,
+      "cited_by_count": 325,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.technovation.2023.102747",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1007/s40821-020-00172-8",
+      "title": "The impact of artificial intelligence on labor productivity",
+      "authors": [
+        "Giacomo Damioli",
+        "Vincent Van Roy",
+        "Dániel Vértesy"
+      ],
+      "venue": "Eurasian Economic Review",
+      "year": 2021,
+      "cited_by_count": 308,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s40821-020-00172-8.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1257/aer.20191277",
+      "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors",
+      "authors": [
+        "Enrico Moretti"
+      ],
+      "venue": "American Economic Review",
+      "year": 2021,
+      "cited_by_count": 284,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20191277",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.heliyon.2023.e22601",
+      "title": "Application of digital technologies for ensuring agricultural productivity",
+      "authors": [
+        "Rambod Abiri",
+        "Nastaran Rizan",
+        "Siva K. Balasundram",
+        "Arash Bayat Shahbazi",
+        "Hazandy Abdul Hamid"
+      ],
+      "venue": "Heliyon",
+      "year": 2023,
+      "cited_by_count": 284,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://www.cell.com/article/S2405844023098092/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1111/ejed.12532",
+      "title": "The future of <scp>AI</scp> and education: Some cautionary notes",
+      "authors": [
+        "Neil Selwyn"
+      ],
+      "venue": "European Journal of Education",
+      "year": 2022,
+      "cited_by_count": 282,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejed.12532",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/su16031166",
+      "title": "Enhancing Work Productivity through Generative Artificial Intelligence: A Comprehensive Literature Review",
+      "authors": [
+        "Humaid Al Naqbi",
+        "Zied Bahroun",
+        "Vian Ahmed"
+      ],
+      "venue": "Sustainability",
+      "year": 2024,
+      "cited_by_count": 260,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/16/3/1166/pdf?version=1706610296",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1108/reps-11-2019-0145",
+      "title": "Digital transformation, development and productivity in developing countries: is artificial intelligence a curse or a blessing?",
+      "authors": [
+        "Heidi Aly"
+      ],
+      "venue": "Seikei ronsō/Review of economics and political science",
+      "year": 2020,
+      "cited_by_count": 226,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/REPS-11-2019-0145/full/pdf?title=digital-transformation-development-and-productivity-in-developing-countries-is-artificial-intelligence-a-curse-or-a-blessing",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.eneco.2017.11.021",
+      "title": "Factor market distortion correction, resource reallocation and potential productivity gains: An empirical study on China's heavy industry sector",
+      "authors": [
+        "Yang, Mian",
+        "Yang, Fuxia",
+        "Sun, Chuanwang"
+      ],
+      "venue": "Energy Economics",
+      "year": 2018,
+      "cited_by_count": 184,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1108/jebde-10-2023-0021",
+      "title": "Economics of ChatGPT: a labor market view on the occupational impact of artificial intelligence",
+      "authors": [
+        "Ali Zarifhonarvar"
+      ],
+      "venue": "Journal of Electronic Business & Digital Economics",
+      "year": 2023,
+      "cited_by_count": 157,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JEBDE-10-2023-0021/full/pdf?title=economics-of-chatgpt-a-labor-market-view-on-the-occupational-impact-of-artificial-intelligence",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1108/jtf-03-2020-0032",
+      "title": "AI redefining the hospitality industry",
+      "authors": [
+        "Huub Ruël",
+        "Esther Njoku"
+      ],
+      "venue": "Journal of Tourism Futures",
+      "year": 2020,
+      "cited_by_count": 139,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JTF-03-2020-0032/full/pdf?title=ai-redefining-the-hospitality-industry",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.3390/su15118934",
+      "title": "AI-Driven Productivity Gains: Artificial Intelligence and Firm Productivity",
+      "authors": [
+        "Gao, Xueyuan",
+        "Feng, Hua"
+      ],
+      "venue": "Sustainability",
+      "year": null,
+      "cited_by_count": 90,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Artificial intelligence is profoundly influencing various facets of our lives, indicating its potential to significantly impact sustainability. Nevertheless, capturing the productivity gains stemming from artificial intelligence in macro-level data poses challenges, leading to the question of whether artificial intelligence is reminiscent of the “Solow paradox”. This study employs micro-level manufacturing data to investigate the impact of artificial intelligence on firms’ productivity. ",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2071-1050/15/11/8934/pdf?version=1685611544"
+    },
+    {
+      "doi": "10.1007/s13563-019-00172-9",
+      "title": "Mining productivity and the fourth industrial revolution",
+      "authors": [
+        "David Humphreys"
+      ],
+      "venue": "Mineral Economics",
+      "year": 2019,
+      "cited_by_count": 82,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s13563-019-00172-9.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jinteco.2017.10.003",
+      "title": "Restoring the product variety and pro-competitive gains from trade with heterogeneous firms and bounded productivity",
+      "authors": [
+        "Feenstra, Robert C."
+      ],
+      "venue": "Journal of International Economics",
+      "year": 2018,
+      "cited_by_count": 78,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jinteco.2021.103456",
+      "title": "Quantifying productivity gains from foreign investment",
+      "authors": [
+        "Fons-Rosen, Christian",
+        "Kalemli-Ozcan, Sebnem",
+        "Sørensen, Bent E.",
+        "Villegas-Sanchez, Carolina",
+        "Volosovych, Vadym"
+      ],
+      "venue": "Journal of International Economics",
+      "year": 2021,
+      "cited_by_count": 69,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.24136/oc.3183",
+      "arxiv_id": "",
+      "title": "Digital twin-based cyber-physical manufacturing systems, extended reality metaverse enterprise and production management algorithms, and Internet of Things financial and labor market technologies in generative artificial intelligence economics",
+      "authors": [
+        "George Lăzăroiu",
+        "Tom Gedeon",
+        "Elżbieta Rogalska",
+        "Katarína Valášková",
+        "Marek Nagy",
+        "Hussam Musa",
+        "Katarína Zvaríková",
+        "Miloš Poliak",
+        "Jakub Horák",
+        "R. Crețoiu",
+        "T. Krulický",
+        "Luminița Ionescu",
+        "C. Popa",
+        "L. Hurloiu",
+        "F. Nistor",
+        "L. Avram",
+        "Viorica Braga"
+      ],
+      "venue": "Oeconomia Copernicana",
+      "year": 2024,
+      "cited_by_count": 41,
+      "is_oa": true,
+      "oa_url": "https://oeconomia.pl/index.php/oc/article/download/3183/2332",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.51594/ijmer.v6i7.1260",
+      "arxiv_id": "",
+      "title": "Integrating technology, market strategies, and strategic management in agricultural economics for enhanced productivity",
+      "authors": [
+        "Eyitayo Raji",
+        "Tochukwu Ignatius Ijomah",
+        "Osemeike Gloria Eyieyien"
+      ],
+      "venue": "International Journal of Management &amp; Entrepreneurship Research",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.51594/ijmer.v6i7.1260",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/analytics4010007",
+      "arxiv_id": "",
+      "title": "Towards Visual Analytics for Explainable AI in Industrial Applications",
+      "authors": [
+        "Kostiantyn Kucher",
+        "E. Zohrevandi",
+        "Carl A. L. Westin"
+      ],
+      "venue": "Analytics",
+      "year": 2025,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2813-2203/4/1/7/pdf?version=1739352836",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1080/00213624.2024.2344434",
+      "arxiv_id": "",
+      "title": "Artificial Intelligence and the Productivity-Pay Gap in the USA: Industrial Insights and the Revival of Heterodox Ideas",
+      "authors": [
+        "Kosta Josifidis",
+        "Novica Supic"
+      ],
+      "venue": "Journal of Economic Issues",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.7441/joc.2024.03.09",
+      "arxiv_id": "",
+      "title": "Evaluating the Impact of AI Research on Industry Productivity: A Dynamic Qualitative Comparative Analysis Approach",
+      "authors": [
+        "Yuyan Luo",
+        "Ziwei Yang",
+        "Yilin Ren",
+        "M. Škare",
+        "Yong Qin"
+      ],
+      "venue": "Journal of Competitiveness",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.7441/joc.2024.03.09",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1080/00036846.2022.2120179",
+      "title": "Winners and losers of the productivity gains of the American agricultural sector",
+      "authors": [
+        "Brea-Solís, Humberto",
+        "Grifell-Tatjé, Emili"
+      ],
+      "venue": "Applied Economics",
+      "year": 2023,
+      "cited_by_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ecolecon.2025.108778",
+      "title": "Labour productivity gains or offshoring? Implications for post-growth proposals on the future of work",
+      "authors": [
+        "Godé, Lukas",
+        "Mair, Simon",
+        "Gómez-Baggethun, Erik"
+      ],
+      "venue": "Ecological Economics",
+      "year": 2026,
+      "cited_by_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1787/ba9d00be-en",
+      "title": "Digital technology adoption, productivity gains in adopting firms and sectoral spill-overs: Firm-level evidence from Estonia",
+      "authors": [],
+      "venue": "OECD Economics Department Working Papers",
+      "year": 2020,
+      "cited_by_count": 4,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1080/13527266.2025.2525913",
+      "title": "Strategising with generative AI: Productivity gains in social media marketing",
+      "authors": [
+        "Gastmann, Joel",
+        "Bastos, Marco"
+      ],
+      "venue": "Journal of Marketing Communications",
+      "year": null,
+      "cited_by_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1117/12.3052252",
+      "arxiv_id": "",
+      "title": "AI-powered end-to-end product lifecycle: UX-centric human-in-the-loop system boosting reviewer productivity by 82% and accelerating decision-making via real-time anomaly detection and data refinement with GPU-accelerated computer vision, edge computing, and scalable cloud",
+      "authors": [
+        "Kiarash Ahi",
+        "S. Mansour",
+        "Stewart Wu",
+        "G. Fenger",
+        "Anirudh Shreekantha Ayya",
+        "Juli Opitz",
+        "Nacer Zine El Abidine",
+        "Hosam Hatem",
+        "Amr Essam",
+        "Ahmed El Dessouki",
+        "Satya Sriram",
+        "Sayani Biswas",
+        "Samir Bhamidipati",
+        "Mark Pereira",
+        "M. Fekry",
+        "Rana Fawzi",
+        "Hesham Samir",
+        "Muhammed Damsas Nalakath",
+        "O. Mabrouk"
+      ],
+      "venue": "Advanced Lithography",
+      "year": 2025,
+      "cited_by_count": 4,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.5220/0012736200003708",
+      "arxiv_id": "",
+      "title": "Generative AI for Productivity in Industry and Education",
+      "authors": [
+        "Ferenc Héjja",
+        "Tamás Bartók",
+        "Roy Dakroub",
+        "G. Kocsis"
+      ],
+      "venue": "International Conference on Complex Information Systems",
+      "year": 2024,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.5220/0012736200003708",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.3756558",
+      "arxiv_id": "2012.14503",
+      "title": "Growth, Development, and Structural Change at the Firm-Level: The Example of the PR China",
+      "authors": [
+        "T. Heinrich",
+        "Jangho Yang",
+        "Shuanping Dai"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2020,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.2139/ssrn.3756558",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/en18195138",
+      "arxiv_id": "",
+      "title": "The Impact of Novel Artificial Intelligence Methods on Energy Productivity, Industrial Transformation and Digitalization Within the Framework of Energy Economics, Efficiency and Sustainability",
+      "authors": [
+        "Izabela Rojek",
+        "D. Mikołajewski",
+        "P. Prokopowicz"
+      ],
+      "venue": "Energies",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1996-1073/18/19/5138/pdf?version=1758899812",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.21428/cb6ab371.d923f490",
+      "title": "Productivity on Patrol: Measuring Efficiency Gains from AI-Assisted Police Reports with a Global Malmquist Index",
+      "authors": [
+        "Alda, Erik"
+      ],
+      "venue": "CrimRxiv",
+      "year": null,
+      "cited_by_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.34190/ecie.19.1.2468",
+      "arxiv_id": "",
+      "title": "Exploring the potential of AI to increase productivity in small marketing teams",
+      "authors": [
+        "Aniko Szenftner",
+        "Stefan Stumpp",
+        "Tobias Knopf"
+      ],
+      "venue": "European Conference on Innovation and Entrepreneurship",
+      "year": 2024,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_url": "https://papers.academic-conferences.org/index.php/ecie/article/download/2468/2460",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.21428/cb6ab371.d1adb83b",
+      "title": "Boosting Police Productivity with AI? An Assessment of Productivity and Efficiency Gains in Report Writing",
+      "authors": [
+        "Alda, Erik",
+        "Tobar, Felipe Salazar"
+      ],
+      "venue": "CrimRxiv",
+      "year": null,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1016/j.iref.2026.104898",
+      "title": "Rewiring industrial futures: The role of AI-enabled digital twins in energy productivity transitions",
+      "authors": [
+        "He, Yugang"
+      ],
+      "venue": "International Review of Economics &amp; Finance",
+      "year": 2026,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.36880/c14.02655",
+      "title": "The Productivity and Profitability Gains of the Top Turkish Industrial Enterprises from the Global Value Chains Participation",
+      "authors": [
+        "Altun, Abdullah",
+        "Turan, Taner",
+        "Yanıkkaya, Halit"
+      ],
+      "venue": "International Conference on Eurasian Economies",
+      "year": 2022,
+      "cited_by_count": 1,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "<jats:p>We first calculate the global value chains (GVCs) participation indices from the Full Eora data of the Eora Global Supply Chain Database by employing advanced calculations methodologies. Then, we examine the productivity and profitability effects of various GVC participation measures by using the dataset on top 1000 Turkish industrial enterprises. We use OLS and fixed effects estimates in our analysis. We actually utilize the weighted OLS and fixed effects estimations to cope with the va",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.62802/vk8h9g79",
+      "title": "The Role of AI in Transforming Labor Markets: Productivity Gains Versus Job Displacement",
+      "authors": [
+        "Güngör, Defne"
+      ],
+      "venue": "Next Generation Journal for The Young Researchers",
+      "year": null,
+      "cited_by_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Artificial Intelligence (AI) is reshaping labor markets globally, acting as a dual-edged force of transformation. While it promises unprecedented productivity gains and economic growth, it simultaneously raises concerns about job displacement and workforce polarization. This research examines the role of AI in transforming labor markets, analyzing its impact across industries and demographic groups. By evaluating case studies and leveraging econometric modeling, the study highlights the ",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "2605.01160",
+      "title": "The Productivity-Reliability Paradox: Specification-Driven Governance for AI-Augmented Software Development",
+      "authors": [
+        "Sabry E. Farrag"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 1,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1109/ICACCM61117.2024.11059129",
+      "arxiv_id": "",
+      "title": "Improvement of Industrial Supply Chain with the Application of AI",
+      "authors": [
+        "Prince Tyagi",
+        "P. Rajendran",
+        "Sirish Kumar Narra",
+        "Sudharsan Vaidhun Bhaskar",
+        "Om Goel",
+        "Arpit Jain"
+      ],
+      "venue": "2024 International Conference on Advances in Computing, Communication and Materials (ICACCM)",
+      "year": 2024,
+      "cited_by_count": 1,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1002/wer.70250",
+      "arxiv_id": "",
+      "title": "Advancing Solar Water Desalination Using Recycled Al Waste Films and AI Optimization: An Eco‐Industrial Synergy",
+      "authors": [
+        "G. Balachandran",
+        "Petchithai Velladurai",
+        "Muthu Eshwaran Ramachandran",
+        "Indhuja Rajendran"
+      ],
+      "venue": "Water environment research",
+      "year": 2026,
+      "cited_by_count": 1,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.4135/9789354792861.n4",
+      "title": "Assisting Learners Beyond Productivity Gains",
+      "authors": [],
+      "venue": "AI Revolution in HRM: The New Scorecard",
+      "year": 2021,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.54394/00034342",
+      "title": "The aggregation paradox of AI",
+      "authors": [
+        "",
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "<jats:p>This research brief examines why strong productivity gains from artificial intelligence (AI) observed at the task and individual worker level have not yet translated into measurable productivity growth at the firm, sectoral or macroeconomic level. It reviews emerging evidence on AI adoption, diffusion and workplace transformation, while exploring the economic and institutional conditions that shape how productivity gains scale across the economy.</jats:p>",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.5316597",
+      "title": "Strategising with Generative AI: Productivity Gains in Social Media Marketing",
+      "authors": [
+        "Gastmann, Joel",
+        "Bastos, Marco T."
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.5541678",
+      "title": "BitCoin; AI: Do Implied Productivity Gains Support Valuation?",
+      "authors": [
+        "Van Erlach, Julian"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.6469283",
+      "title": "The Infrastructure Multiplier Why AI Productivity Gains Compound at the Top and Stall at the Median",
+      "authors": [
+        "Hill, Brenn"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>AI coding tools produce a well-documented effect at the individual level: they compress the skill distribution, raising the performance floor while leaving the ceiling largely unchanged. Brynjolfsson et al. (2025) found bottom-quartile workers improved 36% while top-quartile workers showed no significant change. Cui et al. (2024) found junior developers gained 27-39% while seniors gained 8-13%. Yet at the organizational level, the pattern diverges: CircleCI reports the top 5% of engineer",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2307/j.ctv1mvw8s5.23",
+      "title": "REDUCING INEQUALITY AS INDUSTRIAL POLICY:",
+      "authors": [
+        "Pemberton, Ed"
+      ],
+      "venue": "The Political Economy of Industrial Strategy in the UK",
+      "year": 2021,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.4853677",
+      "title": "Diverse Impacts of Ai Investments on Productivity Gains: Effects of Industry and Innovation Characteristics",
+      "authors": [
+        "PARK, GANGMIN",
+        "Yi, Sangyoon",
+        "Kim, Junyoun"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.6676299",
+      "title": "From Hype to Output: How AI Investment Translates to Real Productivity Gains",
+      "authors": [
+        "Wyonch, Rosalie"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>&lt;ul&gt;\n &lt;li&gt;&lt;span&gt;Artificial intelligence has renewed optimism about improving Canada’s long-standing productivity problem, but history shows that general-purpose technologies often take decades to produce measurable economy-wide gains. Early adoption typically produces modest improvements as firms experiment and invest in complementary assets such as data, skills, and organizational changes.&lt;/span&gt;&lt;/li&gt;\n &lt;li&gt;&lt;span&gt;Canada performs reasonably well i",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.6589819",
+      "title": "From 1h a day to +1% productivity Why AI Saves You an Hour and Your Company Gains Nothing",
+      "authors": [
+        "Rivaton, Robin"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Generative AI produces real and measurable gains at the level of individual tasks. Yet those gains do not automatically translate into firm-level or economy-wide productivity growth. This paper argues that the missing link is organizational plasticity, approximated through four structural axes: legibility, modularity, routing substitutability, and redesign authority. These axes are proxied using existing management surveys and combined into a composite framework that captures a firm's ca",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.64628/aai.7kptmprtx",
+      "title": "Industries most exposed to AI are not only seeing productivity gains but jobs and wage growth too",
+      "authors": [
+        "Makridis, Christos"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.64628/aa.dy6tw3sqw",
+      "title": "Does AI really boost productivity at work? Research shows gains don’t come cheap or easy",
+      "authors": [
+        "Goldenfein, Jake",
+        "Yang, Fan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.2139/ssrn.6444199",
+      "title": "Governing the AI Productivity Promise Organizational Capital, Governance Quality, and the Capture of AI-Assisted Development Gains A Working Paper on AI Governance as Intangible Capital",
+      "authors": [
+        "Moskaluk, Donald"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The question is not whether AI will increase productivity. The evidence now shows that it will. The question is whether individual organizations and teams will capture those gains-or consume them in recovery, rework, and ungoverned autonomous action.</jats:p>",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jdeveco.2026.103830",
+      "title": "Quality upgrading and productivity gains from domestic market access changes in India",
+      "authors": [
+        "Kong, Sang Hoon"
+      ],
+      "venue": "Journal of Development Economics",
+      "year": 2026,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.5210/spir.v2024i0.15342",
+      "title": "Generative AI In Marketing: Productivity Gains and Work Automation",
+      "authors": [
+        "Gastman, Joel",
+        "Toledobastos, Marco Bastos"
+      ],
+      "venue": "AoIR Selected Papers of Internet Research",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study explores the use of ChatGPT for social media marketing strategies and its potential impact on employment. We take stock of the literature on productivity gain and the automation of work to unpack the role of AI in devising social media marketing strategies. To this end, we carried out in-depth, semi-structured interviews with 20 social media professionals who informed a follow-up experiment using ChatGPT to generate social media marketing strategies for two companies. The resu",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.70924/f83n6wqz/9kkhfvkc",
+      "title": "The Economic Impact of Digital Twins in Architecture: Quantifying Productivity Gains, Reduced Rework, and Lifecycle Cost Savings",
+      "authors": [
+        "Vikam, Manan"
+      ],
+      "venue": "Global Business &amp; Economics Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Digital twin (DT) technology is rapidly transforming the architecture, engineering, and construction (AEC) industry, promising significant economic benefits across project lifecycles. This paper systematically examines the economic impact of digital twins in architecture, with a focus on quantifying productivity gains, reductions in rework, and lifecycle cost savings. Drawing on recent literature, industry case studies, and aggregate data, the analysis reveals that digital twins can achi",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1162/rest.a.266",
+      "title": "Decomposing the Within-Firm Productivity Gains from Trade: Evidence from India",
+      "authors": [
+        "Orr, Scott",
+        "Tabari, Mokhtar"
+      ],
+      "venue": "Review of Economics and Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>We develop a decomposition of firm-level revenue-based TFP growth into six margins: i) mean quantity-based TFP growth, ii) mean growth in demand shifters, iii) intensive margin specialization effects, iv) scope effects, v) product adding effects, and vi) product dropping effects. We then estimate and decompose firm-level revenue-based TFP gains generated by increased Chinese import competition and input access using Indian manufacturing da",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.1080/02692171.2023.2210513",
+      "title": "Core product competence and productivity gains: the role of foreign ownership",
+      "authors": [
+        "Mei, Jen-Chung"
+      ],
+      "venue": "International Review of Applied Economics",
+      "year": 2023,
+      "cited_by_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ]
+    },
+    {
+      "doi": "10.62422/978-81-968539-6-9-005",
+      "arxiv_id": "",
+      "title": "Robots and AI",
+      "authors": [
+        "D. S. L. Ing"
+      ],
+      "venue": "Abstracts of the 5th World Conference on Business, Management, Finance, Economics and Marketing",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://eurasiaconferences.com/storage/attachment/5o1stlC87v6mxLIozlbuTHC6VCDaWNFVQfGWEyzt.pdf",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.22158/jepf.v11n3p225",
+      "arxiv_id": "",
+      "title": "How Artificial Intelligence Empowers Regional Low-Carbon Transformation—From the Dual Perspectives of “Carbon Reduction” and “Efficiency Enhancement”",
+      "authors": [
+        "Xifeng Jiang"
+      ],
+      "venue": "Journal of Economics and Public Finance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://www.scholink.org/ojs/index.php/jepf/article/download/56529/12351",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.56557/jet/2026/v11i110590",
+      "arxiv_id": "",
+      "title": "Robotics and Automation in Industry 4.0: Trends, Workforce Implications, and Economic Perspectives",
+      "authors": [
+        "Efe Okparabenyo",
+        "Elizabeth Ogar",
+        "Emmanuel Chibuikem Ngwoke",
+        "Noel Bizamporo",
+        "O. Oluwadare",
+        "Uchechi Precious Dike",
+        "Jacob Miracle Godswill"
+      ],
+      "venue": "Journal of economics and trade",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.56557/jet/2026/v11i110590",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.65655/36x7jz74",
+      "arxiv_id": "",
+      "title": "Generative AI, productivity, and inequality in the Global South",
+      "authors": [
+        "Dr. Sixbert Sangwa",
+        "Simeon Nsabiyumva"
+      ],
+      "venue": "Open Journal of AI, Ethics &amp; Society (ISSN: 3105-3076)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://journals.openchristian.education/index.php/oj-aes/article/download/1/62",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.63056/acad.004.03.0622",
+      "arxiv_id": "",
+      "title": "Artificial Intelligence as an Engine of Economic Productivity and Industrial Competitiveness in the Fourth Industrial Revolution",
+      "authors": [
+        "Misbah Bibi",
+        "Iqra Kanwal",
+        "S. Shabbir"
+      ],
+      "venue": "ACADEMIA International Journal for Social Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://academia.edu.pk/index.php/Journals/article/download/622/1043",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.55529/jpome.51.155.164",
+      "arxiv_id": "",
+      "title": "The economics of smart manufacturing: productivity, costs, and competitive advantage",
+      "authors": [
+        "Prof. Tareq N. Hashem"
+      ],
+      "venue": "Journal of Production, Operations Management and Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://journal.hmjournals.com/index.php/JPOME/article/download/6403/4202",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "",
+      "arxiv_id": "2508.09634",
+      "title": "Artificial Intelligence, Domain AI Readiness, and Firm Productivity",
+      "authors": [
+        "Sipeng Zeng",
+        "Xiaoning Wang",
+        "Tianshu Sun"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.48550/arXiv.2508.16714",
+      "arxiv_id": "2508.16714",
+      "title": "AI Product Value Assessment Model: An Interdisciplinary Integration Based on Information Theory, Economics, and Psychology",
+      "authors": [
+        "Yu yang"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.54254/2754-1169/2026.bl34568",
+      "arxiv_id": "",
+      "title": "Generative AI, Digital Infrastructure, and Firm Productivity: A Task-to-Firm Conversion Framework for Chinese Firms",
+      "authors": [
+        "Jinliang Mai"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.54660/.ijmrge.2026.7.3.829-834",
+      "arxiv_id": "",
+      "title": "Does AI Enhance or Replace Human Productivity? Evidence from Service and Manufacturing Sectors",
+      "authors": [
+        "Vo Phuoc Tai"
+      ],
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/su18126086",
+      "arxiv_id": "",
+      "title": "Economics of AI and Sustainability in Industry 5.0: Quest for Entrepreneurial and Organizational Intelligence Under Creative Destruction",
+      "authors": [
+        "Artie Ng",
+        "C. Cheung"
+      ],
+      "venue": "Sustainability",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2071-1050/18/12/6086/pdf?version=1781319507",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.3390/su17156891",
+      "arxiv_id": "",
+      "title": "Climate-Regulating Industrial Ecosystems: An AI-Optimised Framework for Green Infrastructure Performance",
+      "authors": [
+        "Shamima Rahman",
+        "Ali Ahsan",
+        "Nazrul Islam Pramanik"
+      ],
+      "venue": "Sustainability",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1109/IIPEM65914.2025.11548238",
+      "arxiv_id": "",
+      "title": "AI-Powered Circular Economy: Towards More Sustainable and Efficient Industrial Operations",
+      "authors": [
+        "Ankit Garg",
+        "Sarjue Pandita",
+        "Parth Balyan",
+        "Dr. R. Srikala",
+        "Divya Prakash",
+        "Dr. Neha Verma"
+      ],
+      "venue": "2025 International Conference on Intelligent & Innovative Practices in Engineering & Management (IIPEM)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.69739/jebc.v2i2.1333",
+      "arxiv_id": "",
+      "title": "How Artificial Intelligence Is Reshaping Labor Productivity: A Narrative Review of Theoretical Perspectives and Emerging Empirical Evidence",
+      "authors": [
+        "Adeyemi Olatunbosun",
+        "Damilola Ayodele Ojo",
+        "N. A. Eboh",
+        "Ada Ukwa",
+        "Taofeek Saka Jimoh"
+      ],
+      "venue": "Journal of Economics, Business, and Commerce",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://journals.stecab.com/index.php/jebc/article/download/1333/584",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.58567/jea04040007",
+      "arxiv_id": "",
+      "title": "A Progress Report on the Economics of Artificial Intelligence: Impacts, Challenges, and Future Directions",
+      "authors": [
+        "Alexander Steinmetz"
+      ],
+      "venue": "Journal of Economic Analysis",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://www.anserpress.org/journal/jea/4/4/126/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.1109/AECE67531.2025.11386636",
+      "arxiv_id": "",
+      "title": "Impact of Artificial Intelligence on Economics based on Labor Market View with use of ChatGPT",
+      "authors": [
+        "Manan Garg",
+        "Jamshid Pardaev",
+        "Janibek Sauxanov",
+        "Sultonmakhmud Polvanov",
+        "Raghav Garg",
+        "Sahil Gupta"
+      ],
+      "venue": "2025 5th International Conference on Advancement in Electronics & Communication Engineering (AECE)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "10.30574/wjarr.2024.23.3.2900",
+      "arxiv_id": "",
+      "title": "The convergence of the fourth industrial revolution and mixed reality: Transforming agricultural economics in developing nations and retail experiences in the U.S.",
+      "authors": [
+        "Jimmy Kato",
+        "Doreen Kitakufe",
+        "Jennifer Muhindo"
+      ],
+      "venue": "World Journal of Advanced Research and Reviews",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://wjarr.com/sites/default/files/WJARR-2024-2900.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Productivity in manufacturing: measurement and interpretation",
+      "authors": [
+        "Paula Barnes"
+      ],
+      "venue": "",
+      "year": 2013,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://apo.org.au/sites/all/modules/pubdlcnt/pubdlcnt.php?nid=37054&file=http://apo.org.au/files/Resource/manufacturing.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Learning and Foreign Technology Spillover in Thailand: Empirical Evidence on Productivity Dynamics",
+      "authors": [
+        "Jørn Rattsø",
+        "Hildegunn Ekroll Stokke"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.nopecjournal.org/NOPEC_2003_a03.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Learning by Doing, Trade in Capital Goods and Growth",
+      "authors": [
+        "Olivier, Jacques",
+        "Goh, Ai-Ting"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://sites.uclouvain.be/econ/DP/IRES/2001-2.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Are Oligarchs Productive? Theory and Evidence",
+      "authors": [
+        "Grygorenko, Yegor",
+        "Gorodnichenko, Yuriy"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://ftp.iza.org/dp3282.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Free trade and protection of intellectual property rights : can we have one without the other?",
+      "authors": [
+        "GOH, Ai-Ting",
+        "OLIVIER, Jacques"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.hec.fr/var/fre/storage/original/application/cba394038d982ba8f5753ba2da2d14bf.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Trading Away Wide Brands for Cheap Brands",
+      "authors": [
+        "Swati Dhingra"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://cep.lse.ac.uk/pubs/download/dp1103.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Unmasking the Porter hypothesis: Environmental innovations and firm-profitability",
+      "authors": [
+        "Rexhäuser, Sascha",
+        "Rammer, Christian"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://econstor.eu/bitstream/10419/45805/1/661858553.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "FDI and Growth in East Asia: Lessons for Indonesia",
+      "authors": [
+        "Lipsey, Robert E.",
+        "Sjöholm, Fredrik"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.ifn.se/wfiles/wp/wp852.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Capital Structure and Regulation in U.S. Local Telephony: An Exploratory Econometric Study",
+      "authors": [
+        "Marcelo Resende"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.cesifo-group.de/portal/page/portal/DocBase_Content/WP/WP-CESifo_Working_Papers/wp-cesifo-2009/wp-cesifo-2009-06/cesifo1_wp2681.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Geographic labour mobility: research report",
+      "authors": [],
+      "venue": "",
+      "year": 2014,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://apo.org.au/sites/all/modules/pubdlcnt/pubdlcnt.php?nid=39582&file=http://apo.org.au/files/Resource/labour-mobility.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Energy only, capacity market and security of supply. A stochastic equilibrium analysis",
+      "authors": [
+        "EHRENMANN, Andreas",
+        "SMEERS, Yves"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.uclouvain.be/cps/ucl/doc/core/documents/coreDP2008_7.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Uneven growth between interdependent economies: an evolutionary view on technology gaps, trade and growth.",
+      "authors": [
+        "Verspagen, Hubertus Henricus Gerardus"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://arno.unimaas.nl/show.cgi?fid=6498",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Optimal unemployment insurance : a guide to the literature",
+      "authors": [
+        "Karni, Edi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www-wds.worldbank.org/servlet/WDSContentServer/WDSP/IB/2000/04/24/000094946_00040805510382/Rendered/PDF/multi_page.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Acquisitions and mergers in Saudi Arabia : reasons and effects",
+      "authors": [
+        "Alarfaj, Abdulmohsen H."
+      ],
+      "venue": "",
+      "year": 2013,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Social protection performance in the European Union: comparison and convergence",
+      "authors": [
+        "COELLI, Tim",
+        "PESTIEAU, Pierre",
+        "LEFEBVRE, Mathieu"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.uclouvain.be/cps/ucl/doc/core/documents/coreDP2008_12.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Heterogeneity in Panel Data: Are There Stable Production Functions?",
+      "authors": [
+        "Zvi Griliches",
+        "Jacques Mairesse"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.nber.org/papers/w2619.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Poverty and policy",
+      "authors": [
+        "Ravallion, Martin",
+        "Lipton, Michael"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www-wds.worldbank.org/servlet/WDSContentServer/WDSP/IB/1993/04/01/000009265_3961004152028/Rendered/PDF/multi0page.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Determinants and consequences of foreign direct investment in services",
+      "authors": [
+        "Lindemann, Henrike"
+      ],
+      "venue": "",
+      "year": 2012,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "https://edoc.ub.uni-muenchen.de/14369/1/Lindemann_Henrike.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Quality Differentiation, Vertical Disintegration and The Labour Market Effects of Intra-Industry Trade",
+      "authors": [
+        "Giuseppe Celi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www3.unisa.it/uploads/2551/86_dp.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The impact of foreign direct investment in UK manufacturing, 1974-1995",
+      "authors": [
+        "Robinson, Catherine"
+      ],
+      "venue": "",
+      "year": 2004,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://etheses.dur.ac.uk/1734/1/1734.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Equilibria in markets with non-convexities and a solution to the missing money phenomenon in energy markets",
+      "authors": [
+        "MURATORE, Gabriella"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.uclouvain.be/cps/ucl/doc/core/documents/coreDP2008_6.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Introducing unemployment insurance to developing countries",
+      "authors": [
+        "Vodopivec, Milan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www-wds.worldbank.org/servlet/WDSContentServer/WDSP/IB/2009/07/01/000333037_20090701001309/Rendered/PDF/491700NWP0Unem10Box338943B01PUBLIC1.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "With a little help from abroad: the effect of low-skilled immigration on the female labor supply",
+      "authors": [
+        "Sauro Mocetti",
+        "Guglielmo Barone"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.bancaditalia.it/pubblicazioni/econo/temidi/td10/td766_10/en_td_766_10/en_tema_766.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Asset and liability management in the developing countries : modern financial techniques - a primer",
+      "authors": [
+        "Masuoka, Toshiya"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www-wds.worldbank.org/servlet/WDSContentServer/WDSP/IB/1990/06/01/000009265_3960930002512/Rendered/PDF/multi_page.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Identities in conflict: decision-making and control in employee-owned and controlled organisations",
+      "authors": [
+        "Summers, Juliette"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://wrap.warwick.ac.uk/3038/1/WRAP_THESIS_Summers_2002.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "WP 100 - Low wages in the retail industry in the Netherlands",
+      "authors": [
+        "Maarten Klaveren"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://www.uva-aias.net/uploaded_files/publications/WP100-VanKlaveren.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "A system dynamics approach to chain/network analysis in the primary industry sector: Case studies of beef, dairy, and amaranth in the developing world",
+      "authors": [
+        "Rich, Karl M",
+        "Fleming, Euan",
+        "Dizyee, Kanar Hassan Hamza",
+        "Baker, Derek",
+        "Burrow, Heather M"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "Tax competition and its implications for Southern Africa",
+      "authors": [
+        "Robinson, Zurika Clausen"
+      ],
+      "venue": "",
+      "year": 2002,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The Path to HRD: An Investigation of Training and\n\nDevelopment Practices in the Libyan Manufacturing\n\nSector in 21st Century",
+      "authors": [
+        "Abdulrahim, Abdulslam"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": null,
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    },
+    {
+      "doi": "",
+      "title": "The alignment between performance measurement and strategy in central government agencies",
+      "authors": [
+        "Pongatichat, Panupak"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_url": "http://wrap.warwick.ac.uk/2601/1/WRAP_THESIS_Pongatichat_2005.pdf",
+      "source": "core",
+      "type": "",
+      "found_by": [
+        "core"
+      ]
+    }
+  ]
+}
