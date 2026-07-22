@@ -1,301 +1,938 @@
 {
   "query_id": "q026",
   "query": "自然语言处理中对于细致情绪状态的划分，以及情绪转换矩阵 (譬如：羡慕转化成嫉妒再转化成生气等等)",
-  "generated_at": "2026-07-14T23:28:19",
-  "config": "v3.9.0-baseline-n50",
+  "topic_bucket": "ml",
+  "source": "user",
+  "generated_at": "2026-07-22T11:26:44",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 50,
+  "top_n": 50,
   "by_engine": {
-    "crossref": 10,
+    "crossref": 50,
     "openalex": 0,
     "arxiv": 0,
     "semanticscholar": 0,
-    "core": 10
+    "aminer": 1,
+    "cnki": 1
   },
-  "dedup_count": 19,
   "results": [
     {
-      "rank": 1,
+      "doi": "10.33142/mem.v4i3.10020",
+      "title": "数字技术应用于社会治理智能化转型的政策分析——以生成式AI应用为例*",
+      "authors": [
+        "王, 劭逸",
+        "胡, 仁华"
+      ],
+      "venue": "现代经济管理",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人工智能在社会治理智能化转型的领域内大有可为，妥善应用人工智能技术，将在社会治理中发挥着巨大的建设性作用。因此，社会治理体系的智能化转型尤为迫切，如何使用数字技术助推社会治理的智能化转型？以生成式人工智能——ChatGPT作为研究切入点，分析在社会治理智能转型进程中，人工智能所发挥的建设作用，并分析技术应用于社会治理智能化转型时面临的困境与政策建议，为丰富社会治理智能化转型的研究提供多元的切入视角，拓宽社会治理领域的研究面向。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.37155/2717-5650-0404-23",
+      "title": "心理护理对抑郁症患者情绪及自我接纳的影响研究",
+      "authors": [
+        "李成祥"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2023,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.32629/eep.v3i8.955",
+      "title": "环境保护科技成果转化存在问题及对策研究",
+      "authors": [
+        "段, 圣青"
+      ],
+      "venue": "生态环境与保护",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>环境保护关系国计民生,是新世纪以来备受关注的一项课题,其中存在一定的困难,但也不乏解决之道。本文聚焦环境保护科技成果转化,分析了科技成果转化过程中存在的问题和困难,指出了克服这些困难、最终提高科技成果转化效益的方法,希望能够为相关领域从业者提供理论指导。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 3
+    },
+    {
       "doi": "10.5376/pr.cn.2014.03.0002",
       "title": "高、低心理弹性女性的日常情绪状态及情绪自我调节方式",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "席居哲"
+      ],
       "venue": "心理学研究",
-      "citation_count": 2,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 2,
-      "doi": "10.63887/etr.2025.1.5.13",
-      "title": "小学英语教学中‘边缘生’成因分析及转化策略研究",
-      "abstract": "<jats:p>随着英语教育的不断发展，许多小学面临着“边缘生”的问题。这些学生通常在学习过程中存在学习动力不足、基础薄弱等问题，导致他们在课堂上表现落后于同龄学生。本文通过分析“边缘生”的成因，探讨了他们在英语学习中的困境及其背后的深层次原因，并提出了一些转化策略。研究认为，家庭因素、教师教学方法、学生自身差异等因素共同作用，导致了“边缘生”的出现。为此，本文建议通过多元化教学策略、个性化辅导、以及加强家庭与学校的合作来帮助这些学生克服学习困境，逐步提升其英语水平。</jats:p>",
       "year": null,
-      "venue": "教育理论与研究",
-      "citation_count": 1,
-      "engines_found_in": [
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 4
     },
     {
-      "rank": 3,
+      "doi": "10.32629/gmsm.v3i4.775",
+      "title": "基于GIS和转移矩阵的土地利用变化分析",
+      "authors": [
+        "黄, 丽霞"
+      ],
+      "venue": "地矿测绘",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>土地利用变化分析是自然资源管理的重要依据,在GIS技术的支持下,采用相关软件,将最新形成的第三次国土调查成果与2016年第二次全国土地变更调查成果进行对比分析,运用土地利用转移矩阵和土地利用动态度、土地变化强度等指标对研究区土地利用的空间变化进行研究,结果表明：4年间,研究区土地利用类型之间的相互转换比较明显,其中种植园用地的变化最大,土地利用动态度达到234.09%,土地变化强度为2.14%,该结果可为当地的有关部门对自然资源进行合理配置与管理提供数据支撑。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.37155/2717-5650-0602-8",
+      "title": "心内科护理中情绪支持对患者心理状态的影响分析",
+      "authors": [
+        "颖, 安"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1360/csb1995-40-12-1140",
+      "title": "表皮生长因子对辐射转化的小鼠成纤维细胞细胞周期的调节作用",
+      "authors": [
+        "童, 坦君"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1995,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 7
+    },
+    {
       "doi": "10.69979/3029-2700.24.8.040",
       "title": "投资者情绪对企业投资水平的影响——基于数字化转型的调节效应",
-      "abstract": "",
-      "year": 2024,
+      "authors": [],
       "venue": "社会企业经济发展",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 8
     },
     {
-      "rank": 4,
+      "doi": "10.63887/etr.2025.1.5.13",
+      "title": "小学英语教学中‘边缘生’成因分析及转化策略研究",
+      "authors": [
+        "裴颖"
+      ],
+      "venue": "教育理论与研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着英语教育的不断发展，许多小学面临着“边缘生”的问题。这些学生通常在学习过程中存在学习动力不足、基础薄弱等问题，导致他们在课堂上表现落后于同龄学生。本文通过分析“边缘生”的成因，探讨了他们在英语学习中的困境及其背后的深层次原因，并提出了一些转化策略。研究认为，家庭因素、教师教学方法、学生自身差异等因素共同作用，导致了“边缘生”的出现。为此，本文建议通过多元化教学策略、个性化辅导、以及加强家庭与学校的合作来帮助这些学生克服学习困境，逐步提升其英语水平。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1360/csb1984-29-7-446",
+      "title": "时变人口系统偏微分方程混合问题转化成边值问题解的等价变换",
+      "authors": [
+        "王, 浣尘"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1984,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1360/n072017-00379",
+      "title": "海洋环境中甲烷的生物转化及其对气候变化的影响",
+      "authors": [
+        "牛, 明杨",
+        "梁, 文悦",
+        "王, 风平"
+      ],
+      "venue": "SCIENTIA SINICA Terrae",
+      "year": 2018,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.64658/gscr.20260514.f236f",
+      "title": "1例双相情感障碍缓解期社区规范化管理病案报告",
+      "authors": [
+        "杨, 德光"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 12
+    },
+    {
       "doi": "10.31219/osf.io/hn6sz_v1",
       "title": "从悲哀到归责：情绪转化中的希望机制与责任转嫁",
-      "abstract": "<p>本文分析了人在遭遇悲哀、无助等负面情绪时，如何通过转化为愤怒并对他人进行追责，从而建构一种希望幻觉与象征性控制感的心理机制。文章指出，悲哀情绪虽更贴近事实，却因其不包含行动希望而被逃避；而愤怒则以归责为手段，将命运的责任外包于他者，从而重建一种“我仍能改变命运”的心理结构。追责不仅仅是一种情绪表达，更是建立社会性“情绪债权”与象征性仪式感的行为。最终，本文通过对比古代祭祀结构，提出追责仪式实质上是一种现代情绪祭祀，其中“指责对象”被神格化，并在主观经验中形成一种“神谱排序”的结构。</p>",
-      "year": null,
+      "authors": [
+        "Yu, Xiaoyang"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>本文分析了人在遭遇悲哀、无助等负面情绪时，如何通过转化为愤怒并对他人进行追责，从而建构一种希望幻觉与象征性控制感的心理机制。文章指出，悲哀情绪虽更贴近事实，却因其不包含行动希望而被逃避；而愤怒则以归责为手段，将命运的责任外包于他者，从而重建一种“我仍能改变命运”的心理结构。追责不仅仅是一种情绪表达，更是建立社会性“情绪债权”与象征性仪式感的行为。最终，本文通过对比古代祭祀结构，提出追责仪式实质上是一种现代情绪祭祀，其中“指责对象”被神格化，并在主观经验中形成一种“神谱排序”的结构。</p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 13
     },
     {
-      "rank": 5,
       "doi": "10.64658/gscr.20251230.067bf",
       "title": "基于跨理论模型护理1例双相情感障碍合并再生障碍性贫血患者的案例分析",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "郑, 友霞"
+      ],
       "venue": "中西医转化医学临床病案成果数据库",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 14
     },
     {
-      "rank": 6,
       "doi": "10.18686/zhfnc.v1i2.71",
       "title": "实验性诱导营养不良对鸡脑部抑郁和情绪中等以及血液影响的生物化学作用",
-      "abstract": "<jats:p>背景：营养缺乏和营养不良会引起周期性嗜睡、情绪低落和贫血。因此，在本研究中，我们通过实验诱导鸡营养不良，以跟踪鸡的脑功能和贫血状况（血液指数）。材料和方法：本研究以两组60只一天龄的雏鸡为研究对象，这些雏鸡喂食商品开食料10天，然后平均分成两组，饲养6周。第一对照组在生长期和育成期饲喂商品生长料和育成料，而第二试验组在生长期和育成期持续饲喂黄玉米。所有雏鸡在六周内每周称重一次，以记录体重差异。每两周从每组的10只雏鸡中采集全血样和脑匀浆，以评估脑组织匀浆参数、白细胞计数差异、全血细胞计数和血液指数。结果：比较两组雏鸡的脑组织匀浆发现，缺食组的乙酰胆碱酯酶（AChE）和总抗氧化能力（TAC）在整个饲养过程中显著增加，而肿瘤坏死因子-α（TNF-α）在缺食组第二周和第四周后增加，第六周后两组无显著差异。对照组的谷胱甘肽过氧化物酶（GPx）和超氧化物歧化酶（SOD）在整个实验期间都明显增加，而全血细胞计数（CBC）和细胞差异计数显示，食物缺乏组的白细胞（WBCs）在整个实验期间都明显增加、嗜酸性粒细胞浓度在缺食组两周和四周后明显升高，六周后两组差异不明显；淋巴细胞在对照组第二",
-      "year": null,
+      "authors": [
+        "Mohammed, Alaa",
+        "Desouky, Afaf",
+        "Mohammed, Raafat R.",
+        "Abdel-Maksoud, Hussein"
+      ],
       "venue": "食品营养化学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>背景：营养缺乏和营养不良会引起周期性嗜睡、情绪低落和贫血。因此，在本研究中，我们通过实验诱导鸡营养不良，以跟踪鸡的脑功能和贫血状况（血液指数）。材料和方法：本研究以两组60只一天龄的雏鸡为研究对象，这些雏鸡喂食商品开食料10天，然后平均分成两组，饲养6周。第一对照组在生长期和育成期饲喂商品生长料和育成料，而第二试验组在生长期和育成期持续饲喂黄玉米。所有雏鸡在六周内每周称重一次，以记录体重差异。每两周从每组的10只雏鸡中采集全血样和脑匀浆，以评估脑组织匀浆参数、白细胞计数差异、全血细胞计数和血液指数。结果：比较两组雏鸡的脑组织匀浆发现，缺食组的乙酰胆碱酯酶（AChE）和总抗氧化能力（TAC）在整个饲养过程中显著增加，而肿瘤坏死因子-α（TNF-α）在缺食组第二周和第四周后增加，第六周后两组无显著差异。对照组的谷胱甘肽过氧化物酶（GPx）和超氧化物歧化酶（SOD）在整个实验期间都明显增加，而全血细胞计数（CBC）和细胞差异计数显示，食物缺乏组的白细胞（WBCs）在整个实验期间都明显增加、嗜酸性粒细胞浓度在缺食组两周和四周后明显升高，六周后两组差异不明显；淋巴细胞在对照组第二",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 15
     },
     {
-      "rank": 7,
       "doi": "10.12677/biphy.2022.102004",
       "title": "Pseudo-Time Analysis of Single-Cell Transcriptome Data Based on Natural Language Processing",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "卢, 雨儿"
+      ],
       "venue": "Biophysics",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 16
     },
     {
-      "rank": 8,
       "doi": "10.1360/csb2011-56-30-2446",
       "title": "高等植物生长发育中同化物的转移",
-      "abstract": "",
-      "year": 2011,
+      "authors": [
+        "娄, 成后",
+        "张, 蜀秋"
+      ],
       "venue": "Chinese Science Bulletin",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 17
     },
     {
-      "rank": 9,
       "doi": "10.64658/gscr.20251020.e9913",
       "title": "神经母细胞瘤伴多发转移1例的外周血细胞及骨髓象检查结果分析",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "李, 永康"
+      ],
       "venue": "中西医转化医学临床病案成果数据库",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 18
     },
     {
-      "rank": 10,
       "doi": "10.64658/gscr.20251230.ab329",
       "title": "1例多复方感冒药联用致药物性肝炎的识别、危急值处理与转诊案例",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "蔡, 岳韶"
+      ],
       "venue": "中西医转化医学临床病案成果数据库",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 19
+    },
+    {
+      "doi": "10.54254/3029-0740/2025.30727",
+      "title": "家长情绪支持与儿童英语学习兴趣转化研究",
+      "authors": [
+        "黄, 淼",
+        "于, 清洋",
+        "戚, 晓娟"
+      ],
+      "venue": "学知 Xue Zhi",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "<jats:p>依托个案研究方法，聚焦两名儿童及其家庭，追踪探究家长情绪支持对英语学习兴趣的影响机制。多源数据（深度访谈及学习日志）分析发现，家长情绪支持主要由情绪环境的创设与回应、价值建构与自主促进三个维度构成，三者相互促进，共同作用于儿童对英语学习的控制感与价值感，从而推动其兴趣由情境兴趣向个体兴趣动态转化。研究揭示了家长情绪支持协同驱动儿童英语学习兴趣动态发展的维度和具体作用机制，并为家庭教育提供了实践启示。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 20
     },
     {
-      "rank": 11,
-      "doi": "",
-      "title": "一种天然气或甲烷催化转化制合成气的方法",
-      "abstract": "",
-      "year": 2003,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.63779/tkqu8560",
+      "title": "以患者为中心的个性化护理对门诊分诊护理质量,患者情绪及护患纠纷的影响",
+      "authors": [
+        "珊珊, 康"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "医药产业研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探究以患者为中心的个性化护理在门诊分诊护理质量、患者情绪及护患纠纷等方面的影响。方法:选择两组各33例患者,对照组接受常规护理,观察组接受以患者为中心的个性化护理。结果:观察组护理后的SDS评分(41.49±1.39)和SAS评分(40.52±2.24)均明显低于护理前和对照组护理后(对照组护理后SDS评分为45.50±1.95,SAS评分为44.62±2.43)。同时观察组预检分诊、挂号、候诊、缴费时间均明显低于对照组。观察组在就诊环境、护士形象、护理专业性及服务态度等服务满意度方面评分也明显高于对照组。而观察组护理纠纷总发生率为3.03%,对照组为21.21%,显著低于对照组。结论:以患者为中心的个性化护理能有效改善患者情绪,提高护理质量和服务满意度,减少护患纠纷,对提升门诊分诊护理的整体水平具有重要意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 21
     },
     {
-      "rank": 12,
-      "doi": "",
-      "title": "催化剂及合成气转化法",
-      "abstract": "",
-      "year": 2009,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.37155/2717-5669-0504-53",
+      "title": "肢体语言沟通在小儿护理中的应用效果及对焦虑、抑郁情绪的影响分析",
+      "authors": [
+        "许玲玲"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "国际全科医学",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
     },
     {
-      "rank": 13,
-      "doi": "",
-      "title": "由合成气转化为二甲醚反应用金属沸石催化剂",
-      "abstract": "",
-      "year": 1994,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.64658/gscr.20250827.51999",
+      "title": "5例脑卒中后语言-吞咽障碍的中医综合康复病案分析",
+      "authors": [
+        "吴, 静静"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
     },
     {
-      "rank": 14,
-      "doi": "",
-      "title": "一种用于合成气转化的磷化物催化剂和制备方法及其应用",
-      "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.61369/asds.11924",
+      "title": "基于 AI的图书馆数据分析与服务优化：自然语言转 SQL的创新实践",
+      "authors": [
+        "王, 璇",
+        "刘, 若歆",
+        "侯, 新宇"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Applied Statistics and Data Science",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文介绍了基于人工智能（AI）的图书馆数据分析方法，该方法能够将图书馆工作人员的自然语言查询转化为 SQL查询语句，实现对现有图书馆数据的便捷分析。通过该系统，工作人员无需专业的数据库知识即可快速获取所需信息，从而优化图书馆数据服务与管理。实验结果表明，该方法能够显著提升数据分析效率，为智慧图书馆建设提供了一种实用的解决方案，是中国传媒大学图书馆在积极推进人工智能与各学科融合的背景下的一次有益尝试，旨在提升图书馆服务的智能化水平。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
     },
     {
-      "rank": 15,
-      "doi": "",
-      "title": "催化裂化干气制乙苯气相烷基化与液相烷基转化优化组合成套技术",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.64658/gscr.20251017.c8306",
+      "title": "1例围产期分裂情感障碍合并急性尿潴留的治疗与护理管理个案分析",
+      "authors": [
+        "龙, 洁"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
     },
     {
-      "rank": 16,
-      "doi": "",
-      "title": "一种低碳烷烃与二氧化碳反应制合成气用催化剂及其应用",
-      "abstract": "",
-      "year": 1997,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.37155/2717-5669-0605-27",
+      "title": "探究人文关怀及心理护理对乳腺癌术后脑转移患者神经功能及情绪的影响",
+      "authors": [
+        "高鹏丽"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "国际全科医学",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
     },
     {
-      "rank": 17,
-      "doi": "",
-      "title": "一氧化碳加氢合成乙醇乙醛等二碳含氧化合物催化剂",
-      "abstract": "",
-      "year": 1998,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.64658/gscr.20250826.0d387",
+      "title": "一例支气管异物成功取出并脱机成功的护理体会",
+      "authors": [
+        "杨, 燕明"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
     },
     {
-      "rank": 18,
-      "doi": "",
-      "title": "生物质化学链气化制取合成气模拟研究",
-      "abstract": "",
-      "year": 2011,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.67328/zxc003",
+      "title": "故事的重塑：学生心理问题的叙事转向与整合干预  ——基于合理情绪疗法与叙事疗法的协同应用",
+      "authors": [
+        "李刚"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
     },
     {
-      "rank": 19,
-      "doi": "",
-      "title": "一种在移动床上进行汽油和液化气的催化转化方法",
-      "abstract": "",
-      "year": 2008,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.64658/gscr.20251216.ac0cc",
+      "title": "1例精神分裂症患者的社区综合管理与病情稳定维持实践报告",
+      "authors": [
+        "周, 丽"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.12677/ap.2024.144265",
+      "title": "The Effect of Negative Emotion Compartmentalisation on Depressed Mood: The Mediating Role of Cognitive Emotion Regulation Strategies",
+      "authors": [
+        "秦, 发财"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 48,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.80",
+      "title": "基层治理中政策空转成因与精细化治理对策研究",
+      "authors": [
+        "刘思彤"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>基层治理的政策空转问题一直困扰各级政府有效运行与社会治理效率。文章在阐述政策空转内涵及产生原因的基础上，通过分析政策空转对基层治理效率产生的不利影响，探索以精细化治理为解决路径的可行性。本文从优化政策设计、强化基层政府能力建设、促进社会参与以及健全政策评估反馈机制等方面提出可行性对策建议。精细化治理注重数据支持，资源合理配置与精准执行，能有效回应基层治理所面临的复杂性与多样性问题。本研究为基层治理精细化发展提供理论依据与实践路径，更具现实意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.67328/bt1878",
+      "title": "基于合理情绪疗法的护理干预在抑郁症患者中的应用及对HAMA、HAMD评分的影响",
+      "authors": [
+        "宋扣兄"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.64658/gscr.20251127.86955",
+      "title": "中西医护理对1例心脏瓣膜病术后患者的康复护理分析",
+      "authors": [
+        "李, 静冬"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.63887/je.2025.1.7.23",
+      "title": "大学生自然联结对短视频成瘾的影响：情绪调节的调节效应",
+      "authors": [
+        "刘文莉",
+        "刘红亚",
+        "邹柳城"
+      ],
+      "venue": "教育学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>探讨大学生自然联结对短视频成瘾的影响及情绪调节的调节作用，为预防和干预大学生短视频成瘾提供理论与实证依据。方法：采用自然联结、短视频成瘾及情绪调节量表开展问卷调查，对相关数据进行统计学分析。结果：自然联结与短视频成瘾显著负相关（r=-0.10，p</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.64658/gscr.20260527.b71e0",
+      "title": "1例双侧断肢再植术患者的围手术期护理的病案分析",
+      "authors": [
+        "吕, 格芳"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.61369/est.7631",
+      "title": "任务驱动下的高中物理前概念转化策略—— 以“力的合成与分解”为例",
+      "authors": [
+        "陈, 丹蕾",
+        "桂, 维玲"
+      ],
+      "venue": "Educational Science Theory",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>通过提出实际生活情境问题引发学生的认知冲突与探究动机，教师由此提供实验探究的指导，帮助学生主动建构知识。任务驱动下的学生将该探究过程内化成一套合理的科学知识生成逻辑，而不单单只是填鸭式的陈述性记忆。教师充分识别学生的前概念和需要具备的相关知识，这是设计导入课程的主要抓手。本研究围绕于讲授&amp;ldquo;力的合成与分解&amp;rdquo;前学生要做足哪些准备为出发点，设计了新课前的导入性探究实验，为学生充分理解新的科学规律奠定基础。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.12677/ml.2023.119565",
+      "title": "Study on Personal Pronouns Based on Transformation-Generative Grammar Theory—A Case Study of Personal Pronouns in English and French",
+      "authors": [
+        "裴, 雨婷"
+      ],
+      "venue": "Modern Linguistics",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.69979/3041-0673.24.3.047",
+      "title": "细化护理对慢性化脓性中耳炎患者负性情绪应用效果观察",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.37155/2717-5189-0707-60",
+      "title": "高校科技成果转化现状和对策分析",
+      "authors": [
+        "刘俊泽"
+      ],
+      "venue": "工程管理与技术探讨",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.64658/gscr.20251030.29757",
+      "title": "一例社区高血压患者不同剂量血管紧张素转换酶抑制剂类药物对血压控制的个案分析",
+      "authors": [
+        "唐, 雪生"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.5376/mpb.cn.2015.13.0010",
+      "title": "叶酸生物合成途径中调控基因<i>folB</i>表达载体的构建及在大豆中的转化",
+      "authors": [
+        "张原宇"
+      ],
+      "venue": "分子植物育种",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.64658/gscr.20251113.fb34e",
+      "title": "关于1例肾病综合征合并支气管肺炎患儿的临床分析",
+      "authors": [
+        "曹, 丹丹"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.64658/gscr.20251020.0a48b",
+      "title": "1例艾滋病合并巨细胞病毒感染及重度贫血患者的护理个案分析",
+      "authors": [
+        "袁, 婷"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.64658/gscr.20251027.15dbf",
+      "title": "1例以急性腹痛为首发症状的肝右叶巨大血管瘤伴扭转的影像诊断思路",
+      "authors": [
+        "吴, 亚伟"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.12677/ml.2026.142175",
+      "title": "The Generative Mechanism and Transformation Methods of Verbal Humor in Mo Yan’s Novels",
+      "authors": [
+        "戴, 雅宁"
+      ],
+      "venue": "Modern Linguistics",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.64658/gscr.20250822.34589",
+      "title": "1例认知障碍伴中度巨幼红细胞性贫血患者的护理分析",
+      "authors": [
+        "朱, 伟勤"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.3724/sp.j.1042.2026.0097",
+      "title": "自主语言转换中的双语控制机制",
+      "authors": [
+        "ZHUANG, Binyuan",
+        "YANG, Jing"
+      ],
+      "venue": "Advances in Psychological Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 69,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.54254/3029-0740/2026.33810",
+      "title": "《岛屿的厝》（节选）中文化传递与语言转换的英译",
+      "authors": [
+        "王, 逸霄"
+      ],
+      "venue": "学知 Xue Zhi",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在地域文学外译的背景下，本文以《大厝雨暝》英译本为研究对象，探讨文化传递与语言转换的策略。通过分析发现，译者主要采用直译与意译、异化与归化相结合的方法处理文化负载词。虽然在闽南饮食、建筑等物质文化传递上效果显著，但部分方言词汇（如“甘梅粉”）及隐喻逻辑存在信息丢失。结论指出，译者需在英语形合规范与闽南文化意合特质间寻找平衡，通过语境补充与表达优化提升译文质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.12677/ass.2022.116339",
+      "title": "The Effect of Encoding State under Embodied Emotion on Emotional Word Recognition",
+      "authors": [
+        "赵, 奥东"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 16,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.37155/2717-5162-0801-25",
+      "title": "人工林向天然林转化过程中的生态修复路径探讨",
+      "authors": [
+        "康, 武"
+      ],
+      "venue": "园林建设与城市规划",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
     }
   ]
 }

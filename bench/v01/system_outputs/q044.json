@@ -1,316 +1,3664 @@
 {
   "query_id": "q044",
   "query": "糖前期患者的阻止发展以及回退策略 (prediabetes reversal interventions lifestyle metformin RCT)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "bio",
+  "source": "user",
+  "generated_at": "2026-07-22T11:31:15",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 20,
+  "n_returned": 166,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 26,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1103/physrevb.110.134524",
+      "title": "Time-reversal Symmetry Breaking Superconductivity in CaSb2",
+      "authors": [
+        "M. Oudah"
+      ],
+      "venue": "PHYSICAL REVIEW B",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6510edb83fda6d7f06b90d86",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1200/jco.22.02774",
+      "title": "Folfiri Followed by Folfox6 or the Reverse Sequence in Advanced Colorectal Cancer: A Randomized Gercor Study",
+      "authors": [
+        "Christophe Tournigand"
+      ],
+      "venue": "Journal of clinical oncology  official journal of the American Society of Clinical Oncology",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a58369612c6b12ab1f8836",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.00951",
+      "title": "Anomaly Detection Via Reverse Distillation from One-Class Embedding",
+      "authors": [
+        "Hanqiu Deng"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61f20d665244ab9dcb8bf0c0",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1007/978-3-030-59725-2_26",
+      "title": "PraNet: Parallel Reverse Attention Network for Polyp Segmentation",
+      "authors": [
+        "Deng-Ping Fan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ef3247091e0110c353da50f",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1016/s1369-5274(00)00119-3",
+      "title": "Reverse Vaccinology",
+      "authors": [
+        "Emanuele Andreano"
+      ],
+      "venue": "Nature reviews Microbiology",
+      "year": 2026,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e997c6b7602d9701fb55fe",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1038/s41586-020-2403-9",
+      "title": "Senolytic CAR T Cells Reverse Senescence-Associated Pathologies.",
+      "authors": [
+        "Corina Amor"
+      ],
+      "venue": "Nature",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eede2979fced0a24b77c21c",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1109/tdsc.2022.3217661",
+      "title": "Secret-to-Image Reversible Transformation for Generative Steganography",
+      "authors": [
+        "Zhili Zhou"
+      ],
+      "venue": "IEEE TRANSACTIONS ON DEPENDABLE AND SECURE COMPUTING",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623004305aee126c0f9b3793",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1038/s41586-021-04327-z",
+      "title": "Time-reversal Symmetry-Breaking Charge Order in a Kagome Superconductor.",
+      "authors": [
+        "C. Mielke III"
+      ],
+      "venue": "Nature",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60da7b2091e0112af847e923",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1186/s12943-022-01530-y",
+      "title": "Ferroptosis in Cancer Therapy: a Novel Approach to Reversing Drug Resistance",
+      "authors": [
+        "Zhang  Chen"
+      ],
+      "venue": "Molecular Cancer",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "620b85465aee126c0fab978c",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1001/jama.2021.12531",
+      "title": "Screening for Prediabetes and Type 2 Diabetes: US Preventive Services Task Force Recommendation Statement.",
+      "authors": [
+        "Karina W Davidson"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61261eea5244ab9dcb1a88cf",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1002/adma.202100187",
+      "title": "Surface‐Preferred Crystal Plane for a Stable and Reversible Zinc Anode",
+      "authors": [
+        "Miao Zhou"
+      ],
+      "venue": "Advanced materials (Deerfield Beach, Fla)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "607c0421e4510cd7c8333eb5",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1038/s41565-021-00905-4",
+      "title": "Fluorinated Interphase Enables Reversible Aqueous Zinc Battery Chemistries",
+      "authors": [
+        "Longsheng Cao"
+      ],
+      "venue": "Nature Nanotechnology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "609baa83e4510cd7c87826fe",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.53347/rid-86140",
+      "title": "Scapular Notching in Reverse Shoulder Arthroplasty",
+      "authors": [
+        "Yahya Baba"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c6eb855244ab9dcbbf5e50",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1016/j.cmet.2020.06.011",
+      "title": "The Gut Microbiota in Prediabetes and Diabetes: A Population-Based Cross-Sectional Study.",
+      "authors": [
+        "Hao Wu"
+      ],
+      "venue": "Cell Metabolism",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0c310c9fced0a24bd05f09",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1038/s41560-020-0674-x",
+      "title": "Realizing High Zinc Reversibility in Rechargeable Batteries",
+      "authors": [
+        "Lin Ma"
+      ],
+      "venue": "Nature Energy",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fd5616f8cdecd4daa16bbfd",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1596/978-1-4648-1602-4",
+      "title": "Poverty and Shared Prosperity 2020 : Reversals of Fortune",
+      "authors": [],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a5e091d68f896efa8c9de3",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.2337/dci19-0014",
+      "title": "Nutrition Therapy for Adults with Diabetes or Prediabetes: A Consensus Report.",
+      "authors": [
+        "Alison B Evert"
+      ],
+      "venue": "Diabetes care",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cbaf3dce1cd8e71eee4114d",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1186/s40842-019-0080-0",
+      "title": "Global Epidemiology of Prediabetes - Present and Future Perspectives",
+      "authors": [
+        "Ulrike Hostalek"
+      ],
+      "venue": "Clinical Diabetes and Endocrinology",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cdd3620e1cd8e4730b2b79c",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1038/s41586-019-1236-x",
+      "title": "Longitudinal Multi-Omics of Host–microbe Dynamics in Prediabetes",
+      "authors": [
+        "Wenyu Zhou"
+      ],
+      "venue": "Nature",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cf126b73a55ac315b5ef3ef",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1007/s00125-018-4550-1",
+      "title": "Aberrant Intestinal Microbiota in Individuals with Prediabetes",
+      "authors": [
+        "Kristine H. Allin"
+      ],
+      "venue": "Diabetologia",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f76dfda562944ac705f3f",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1016/j.jacc.2018.03.002",
+      "title": "Canakinumab In Prediabetes",
+      "authors": [
+        "Seema Kang"
+      ],
+      "venue": "LANCET DIABETES & ENDOCRINOLOGY",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b74341c45e57ce95eea0b",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1016/b978-0-12-812019-4.00002-7",
+      "title": "Prediabetes",
+      "authors": [
+        "Alok K. Gupta"
+      ],
+      "venue": "Nutritional and Therapeutic Interventions for Diabetes and Metabolic Syndrome",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656d4858939a5f4082729a50",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1201/9781003403791-6",
+      "title": "Reversible Data Hiding",
+      "authors": [
+        "Shaiju Panchikkil"
+      ],
+      "venue": "Blockchain and Digital Twin Enabled IoT Networks",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65fa4f3713fb2c6cf67d7f8f",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1001/jama.2023.4063",
+      "title": "Diagnosis and Management of Prediabetes: A Review.",
+      "authors": [
+        "Justin B. Echouffo-Tcheugui"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6436912e3ffde11539705a52",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.2337/dc22-2376",
+      "title": "Global Prevalence of Prediabetes",
+      "authors": [
+        "Mary R. R. Rooney"
+      ],
+      "venue": "DIABETES CARE",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af684f3fda6d7f063b637e",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1007/978-981-99-6633-2_5",
+      "title": "Reversed Halo Sign",
+      "authors": [
+        "Kyung Soo Lee"
+      ],
+      "venue": "Radiology Illustrated Radiology Illustrated Chest Radiology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d82a2adabfae2eeef72536",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1257/aer.20190150",
+      "title": "The Reversal Interest Rate",
+      "authors": [
+        "Joseph Abadi"
+      ],
+      "venue": "AMERICAN ECONOMIC REVIEW",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64aa51bed68f896efa15c3b6",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1007/978-3-031-26058-2_45",
+      "title": "Anticoagulants and Their Reversal",
+      "authors": [
+        "Gidon Ellis"
+      ],
+      "venue": "Imaging and Technology in Urology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65792710939a5f4082f1f826",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1210/clinem/dgac303",
+      "title": "Isocaloric-restricted Mediterranean Diet and Chinese Diets High or Low in Plants in Adults with Prediabetes",
+      "authors": [
+        "Yaogan Luo"
+      ],
+      "venue": "The Journal of clinical endocrinology and metabolism",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b83fb7602d97043fd7f9",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1016/j.bcp.2009.11.002",
+      "title": "Influence of Ageism on Physical Activity Prescription for Prediabetes Management",
+      "authors": [
+        "Jason Lei"
+      ],
+      "venue": "Journal of Aging and Physical Activity",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b97cb7602d970456acbf",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1016/j.amepre.2021.10.020",
+      "title": "Interventions for Reversing Prediabetes: A Systematic Review and Meta-Analysis",
+      "authors": [
+        "Karla Galaviz"
+      ],
+      "venue": "AMERICAN JOURNAL OF PREVENTIVE MEDICINE",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "620b85465aee126c0fab98d0",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.01056",
+      "title": "Reversible Vision Transformers",
+      "authors": [
+        "Karttikeya Mangalam"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "634eb16990e50fcafdcba47c",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1146/annurev-publhealth-090419-102644",
+      "title": "Prediabetes and What It Means: the Epidemiological Evidence",
+      "authors": [
+        "Justin B. Echouffo-Tcheugui"
+      ],
+      "venue": "Annual Review of Public Health",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5feb017ed4150a363c1facee",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1111/dom.14388",
+      "title": "Prediabetes and the Risk of Heart Failure: A Meta‐analysis",
+      "authors": [
+        "Xiaoyan Cai"
+      ],
+      "venue": "Diabetes, obesity & metabolism",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605f0d01e4510cd7c84c5560",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1177/00220345211009449",
+      "title": "Gut Microbiota May Mediate the Influence of Periodontitis on Prediabetes",
+      "authors": [
+        "L. Li"
+      ],
+      "venue": "JOURNAL OF DENTAL RESEARCH",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6087e1dee4510cd7c80d61e0",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.3390/ijms22084108",
+      "title": "The Mechanisms of the Development of Atherosclerosis in Prediabetes",
+      "authors": [
+        "Yin Liang"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "608d29dfe4510cd7c8c4ac51",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1111/dom.14490",
+      "title": "Association Between Prediabetes and Adverse Outcomes in Heart Failure",
+      "authors": [
+        "Linlin Mai"
+      ],
+      "venue": "DIABETES OBESITY & METABOLISM",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60e57d735244ab9dcb8c6d9c",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1002/9783527809080.cataz14368",
+      "title": "Reverse Micelles",
+      "authors": [
+        "P.S. Sears"
+      ],
+      "venue": "Catalysis from A to Z",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c748755244ab9dcbd88d70",
+      "matched_phrase": "reversal",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.7326/M18-1605",
+      "arxiv_id": "",
+      "title": "Long-term Weight Loss with Metformin or Lifestyle Intervention in the Diabetes Prevention Program Outcomes Study",
+      "authors": [
+        "J. Apolzan",
+        "E. Venditti",
+        "S. Edelstein",
+        "W. Knowler",
+        "D. Dabelea",
+        "E. Boyko",
+        "X. Pi-Sunyer",
+        "R. Kalyani",
+        "P. Franks",
+        "P. Srikanthan",
+        "K. Gadde"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 2019,
+      "cited_by_count": 123,
+      "influential_cite_count": 4,
+      "reference_count": 52,
+      "tldr": "Differences in LTWL maintenance by original intervention group among participants who achieved clinically significant weight loss of at least 5% at 1 year are compared and baseline factors that predicted maintenance of weight loss for up to 15 years are examined.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc6829283?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Differences in LTWL maintenance by original intervention group among participants who achieved clinically significant weight loss of at least 5% at 1 year are compared and baseline factors that predicted maintenance of weight loss for up to 15 years are examined.",
+      "rank": 39
+    },
+    {
+      "doi": "10.1001/jama.2021.10403",
+      "arxiv_id": "",
+      "title": "Screening for Prediabetes and Type 2 Diabetes: Updated Evidence Report and Systematic Review for the US Preventive Services Task Force.",
+      "authors": [
+        "D. Jonas",
+        "Karen Crotty",
+        "Jonathan D. Y. Yun",
+        "J. Middleton",
+        "C. Feltner",
+        "S. Taylor-Phillips",
+        "Colleen Barclay",
+        "Andrea Dotson",
+        "Claire E Baker",
+        "Casey P Balio",
+        "Christiane Voisin",
+        "R. Harris"
+      ],
+      "venue": "Journal of the American Medical Association (JAMA)",
+      "year": 2021,
+      "cited_by_count": 80,
+      "influential_cite_count": 2,
+      "reference_count": 105,
+      "tldr": "The evidence on screening for prediabetes and diabetes found no significant mortality benefit but had insufficient data to assess other health outcomes; evidence on harms of screening was limited.",
+      "is_oa": true,
+      "oa_url": "https://jamanetwork.com/journals/jama/articlepdf/2783415/jama_jonas_2021_us_210014_1629733302.09334.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The evidence on screening for prediabetes and diabetes found no significant mortality benefit but had insufficient data to assess other health outcomes; evidence on harms of screening was limited.",
+      "rank": 40
+    },
+    {
+      "doi": "10.1016/j.amepre.2017.01.008",
+      "arxiv_id": "",
+      "title": "PREVENT-DM Comparative Effectiveness Trial of Lifestyle Intervention and Metformin",
+      "authors": [
+        "M. O’Brien",
+        "Alberly Perez",
+        "Adam B. Scanlan",
+        "V. Alos",
+        "R. Whitaker",
+        "G. Foster",
+        "R. Ackermann",
+        "J. Ciolino",
+        "C. Homko"
+      ],
+      "venue": "American Journal of Preventive Medicine",
+      "year": 2017,
+      "cited_by_count": 65,
+      "influential_cite_count": 4,
+      "reference_count": 41,
+      "tldr": "In the first comparative effectiveness trial of diabetes prevention treatments, a 12-month ILI produced significantly greater weight loss than metformin and standard care among Latinas with prediabetes, suggesting that ILI delivered by promotoras is an effective strategy for preventing diabetes in this high-risk group, which may be superior to metformin.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc5438762?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "In the first comparative effectiveness trial of diabetes prevention treatments, a 12-month ILI produced significantly greater weight loss than metformin and standard care among Latinas with prediabetes, suggesting that ILI delivered by promotoras is an effective strategy for preventing diabetes in this high-risk group, which may be superior to metformin.",
+      "rank": 41
+    },
+    {
+      "doi": "10.1007/s40265-020-01393-x",
+      "arxiv_id": "",
+      "title": "Pharmacological Management of Glucose Dysregulation in Patients Treated with Second-Generation Antipsychotics",
+      "authors": [
+        "S. Cernea",
+        "L. Dima",
+        "C. Correll",
+        "P. Manu"
+      ],
+      "venue": "Drugs",
+      "year": 2020,
+      "cited_by_count": 56,
+      "influential_cite_count": 3,
+      "reference_count": 178,
+      "tldr": null,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1111/1753-0407.12112",
+      "title": "Urinary albumin : creatinine ratio predicts prediabetes progression to diabetes and reversal to normoglycemia: Role of associated insulin resistance, inflammatory cytokines and low vitamin <scp>D</scp> (尿白蛋白:肌酐比值预测糖尿病前期进展为糖尿病以及逆转到正常血糖的能力：相关的胰岛素抵抗、炎性细胞因子以及低维生素D水平的作用)",
+      "authors": [
+        "Dutta, Deep",
+        "Choudhuri, Subhadip",
+        "Mondal, Samim Ali",
+        "Mukherjee, Satinath",
+        "Chowdhury, Subhankar"
+      ],
+      "venue": "Journal of Diabetes",
+      "year": 2014,
+      "cited_by_count": 44,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>The relationship between albumin : creatinine ratio (<jats:styled-content style=\"fixed-case\">ACR</jats:styled-content>), insulin resistance (<jats:styled-content style=\"fixed-case\">IR</jats:styled-content>), cytokines, dyslipidemia, and 25‐hydroxy vitamin <jats:styled-content style=\"fixed-case\">D</jats:styled-content> (25‐<jats:styled-content style=\"fixed-case\">OHD</jats:styled-content>) in individuals with pre",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1186/1471-2458-10-575",
+      "arxiv_id": "",
+      "title": "Researching Effective Strategies to Improve Insulin Sensitivity in Children and Teenagers - RESIST. A randomised control trial investigating the effects of two different diets on insulin sensitivity in young people with insulin resistance and/or pre-diabetes.",
+      "authors": [
+        "S. Garnett",
+        "L. Baur",
+        "M. Noakes",
+        "K. Steinbeck",
+        "H. Woodhead",
+        "S. Burrell",
+        "K. Chisholm",
+        "C. Broderick",
+        "R. Parker",
+        "Sukanya De",
+        "S. Shrinivasan",
+        "L. Hopley",
+        "G. Hendrie",
+        "G. Ambler",
+        "M. Kohn",
+        "C. Cowell"
+      ],
+      "venue": "BMC Public Health",
+      "year": 2010,
+      "cited_by_count": 37,
+      "influential_cite_count": 0,
+      "reference_count": 53,
+      "tldr": "This research study is the first trial designed to provide much needed data on the effective dietary management for adolescents with clinical insulin resistance, and may assist in preventing metabolic complications, type 2 diabetes and early cardiovascular disease.",
+      "is_oa": true,
+      "oa_url": "https://bmcpublichealth.biomedcentral.com/counter/pdf/10.1186/1471-2458-10-575",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This research study is the first trial designed to provide much needed data on the effective dietary management for adolescents with clinical insulin resistance, and may assist in preventing metabolic complications, type 2 diabetes and early cardiovascular disease.",
+      "rank": 44
+    },
+    {
+      "doi": "10.1016/j.diabres.2022.109980",
+      "title": "Management of Dyslipidemia and Atherosclerotic Cardiovascular Risk in Prediabetes.",
+      "authors": [
+        "Joao Sergio Neves"
+      ],
+      "venue": "Diabetes Research and Clinical Practice",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c4fe815aee126c0fafde43",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1016/j.ecl.2021.05.002",
+      "title": "Screening for Diabetes and Prediabetes",
+      "authors": [
+        "Daisy Duan"
+      ],
+      "venue": "Endocrinology and metabolism clinics of North America",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6124cdf55244ab9dcb94a144",
+      "matched_phrase": "(prediabetes",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.2337/dc23-ad09",
+      "arxiv_id": "",
+      "title": "Addendum. 4. Comprehensive Medical Evaluation and Assessment of Comorbidities: Standards of Care in Diabetes-2023. Diabetes Care 2023;46(Suppl. 1):S49-S67.",
+      "authors": [
+        "Nuha A. ElSayed",
+        "G. Aleppo",
+        "V. Aroda",
+        "Raveendhara R. Bannuru",
+        "F. Brown",
+        "Dennis Bruemmer",
+        "B. Collins",
+        "Kenneth Cusi",
+        "M. Hilliard",
+        "Diana M. Isaacs",
+        "Eric L. Johnson",
+        "S. Kahan",
+        "K. Khunti",
+        "Jose Leon",
+        "S. Lyons",
+        "M. L. Perry",
+        "P. Prahalad",
+        "R. Pratley",
+        "J. Seley",
+        "R. Stanton",
+        "R. Gabbay"
+      ],
+      "venue": "Diabetes Care",
+      "year": 2023,
+      "cited_by_count": 27,
+      "influential_cite_count": 2,
+      "reference_count": 0,
+      "tldr": null,
+      "is_oa": true,
+      "oa_url": "https://diabetesjournals.org/care/article-pdf/doi/10.2337/dc23-ad09/726393/dc23ad09.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1001/jama.2022.7957",
+      "arxiv_id": "",
+      "title": "Screening for Prediabetes and Type 2 Diabetes in Children and Adolescents: Evidence Report and Systematic Review for the US Preventive Services Task Force.",
+      "authors": [
+        "D. Jonas",
+        "Emily B. Vander Schaaf",
+        "Sean Riley",
+        "Bianca A. Allison",
+        "J. Middleton",
+        "Claire E Baker",
+        "Rania Ali",
+        "Christiane Voisin",
+        "E. Leblanc"
+      ],
+      "venue": "Journal of the American Medical Association (JAMA)",
+      "year": 2022,
+      "cited_by_count": 24,
+      "influential_cite_count": 1,
+      "reference_count": 32,
+      "tldr": "For youths with prediabetes or recently diagnosed (not screen-detected) diabetes, the only eligible trials reported few health outcomes and found no difference between groups, although evidence was limited by substantial imprecision and a duration of follow-up likely insufficient to assess health outcomes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "For youths with prediabetes or recently diagnosed (not screen-detected) diabetes, the only eligible trials reported few health outcomes and found no difference between groups, although evidence was limited by substantial imprecision and a duration of follow-up likely insufficient to assess health outcomes.",
+      "rank": 48
+    },
+    {
+      "doi": "10.1111/j.1600-0447.2012.01906.x",
+      "arxiv_id": "",
+      "title": "Considering metformin in cardiometabolic protection in psychosis",
+      "authors": [
+        "J. Curtis",
+        "H. Newall",
+        "N. Myles",
+        "D. Shiers",
+        "Katherine Samaras",
+        "Katherine Samaras"
+      ],
+      "venue": "Acta Psychiatrica Scandinavica",
+      "year": 2012,
+      "cited_by_count": 21,
+      "influential_cite_count": 0,
+      "reference_count": 5,
+      "tldr": "It is suggested that metformin in concert with a structured, supervised lifestyle programme could be considered in the severely mentally ill when antipsychotic agents are initiated or in antipsychotics recipients who are overweight, obese or have elevated cardiometabolic risk factors.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is suggested that metformin in concert with a structured, supervised lifestyle programme could be considered in the severely mentally ill when antipsychotic agents are initiated or in antipsychotics recipients who are overweight, obese or have elevated cardiometabolic risk factors.",
+      "rank": 49
+    },
+    {
+      "doi": "10.61369/mrp.2250",
+      "title": "慢性阻塞性肺疾病患者的家庭护理策略",
+      "authors": [
+        "高, 建玲",
+        "李, 治辉"
+      ],
+      "venue": "Medical Research and Practice",
+      "year": null,
+      "cited_by_count": 20,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：探究慢性阻塞性肺疾病患者的家庭护理策略。方法：选取2022.09-2023.09本院接诊的68例慢阻肺患者，使用数字分组法划分组别，完成后分别命名为对比组（34例）、探究组（34例）。对比组采取常规护理，探究组加入家庭护理，比较两种模式的应用效果。结果：探究组家庭支持及生活质量评分更高，肺功能指标及运动耐力测试结果更优，呼吸困难及健康损害评分均更低，患者满意度（97.06%）相较于对比组（85.29%）更高，再入院率（5.88%）相较于对比组（26.47%）更低，（P&lt;0.05）。结论：针对慢阻肺患者，强化家庭护理能够有利于患者肺功能的改善，控制病情对机体的损伤，进而达到优化生活质量的效果，同时获得患者的广泛认可。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1186/s13098-024-01504-8",
+      "arxiv_id": "",
+      "title": "Metformin plus lifestyle interventions versus lifestyle interventions alone for the delay or prevention of type 2 diabetes in individuals with prediabetes: a meta-analysis of randomized controlled trials",
+      "authors": [
+        "B. Amer",
+        "M. S. Abdelgalil",
+        "Abdullah Ashraf Hamad",
+        "K. Abdelsayed",
+        "Ahmed Elaraby",
+        "A. Abozaid",
+        "M. Abd-Elgawad"
+      ],
+      "venue": "Diabetology & Metabolic Syndrome",
+      "year": 2024,
+      "cited_by_count": 14,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "It is suggested that adding metformin to lifestyle interventions may improve glycemic control in individuals with prediabetes and reduce their risk of progression to diabetes, compared to lifestyle interventions alone.",
+      "is_oa": true,
+      "oa_url": "https://dmsjournal.biomedcentral.com/counter/pdf/10.1186/s13098-024-01504-8",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is suggested that adding metformin to lifestyle interventions may improve glycemic control in individuals with prediabetes and reduce their risk of progression to diabetes, compared to lifestyle interventions alone.",
+      "rank": 51
+    },
+    {
+      "doi": "10.1007/s11892-010-0170-y",
+      "arxiv_id": "",
+      "title": "Should the Metabolic Syndrome Patient with Prediabetes Be Offered Pharmacotherapy?",
+      "authors": [
+        "Shannon D. Sullivan",
+        "R. Ratner"
+      ],
+      "venue": "Current Diabetes Reports",
+      "year": 2011,
+      "cited_by_count": 14,
+      "influential_cite_count": 0,
+      "reference_count": 53,
+      "tldr": "It is recommended that prediabetic patients undergo intensive lifestyle intervention, with the addition of pharmacotherapy based on the presence of specific features of the metabolic syndrome, for diabetes prevention.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is recommended that prediabetic patients undergo intensive lifestyle intervention, with the addition of pharmacotherapy based on the presence of specific features of the metabolic syndrome, for diabetes prevention.",
+      "rank": 52
+    },
+    {
+      "doi": "10.2196/63975",
+      "arxiv_id": "",
+      "title": "Effectiveness of Different Intervention Modes in Lifestyle Intervention for the Prevention of Type 2 Diabetes and the Reversion to Normoglycemia in Adults With Prediabetes: Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "authors": [
+        "Yachen Wang",
+        "X. Chai",
+        "Yueqing Wang",
+        "Xuejun Yin",
+        "Xinying Huang",
+        "Q. Gong",
+        "Juan Zhang",
+        "Ruitai Shao",
+        "Guangwei Li"
+      ],
+      "venue": "Journal of Medical Internet Research",
+      "year": 2025,
+      "cited_by_count": 12,
+      "influential_cite_count": 1,
+      "reference_count": 77,
+      "tldr": "Face-to-face interventions have consistently demonstrated promising effectiveness in both reductions in T2DM incidence and reversion to normoglycemia in adults with prediabetes, but the effectiveness of digital health interventions in these areas has not been sufficiently proven.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Face-to-face interventions have consistently demonstrated promising effectiveness in both reductions in T2DM incidence and reversion to normoglycemia in adults with prediabetes, but the effectiveness of digital health interventions in these areas has not been sufficiently proven.",
+      "rank": 53
+    },
+    {
+      "doi": "10.1111/dom.14529",
+      "arxiv_id": "",
+      "title": "Do lifestyle interventions reduce diabetes incidence in people with isolated impaired fasting glucose?",
+      "authors": [
+        "T. Sathish",
+        "R. Tapp",
+        "J. Shaw"
+      ],
+      "venue": "Diabetes, obesity and metabolism",
+      "year": 2021,
+      "cited_by_count": 12,
+      "influential_cite_count": 0,
+      "reference_count": 18,
+      "tldr": "This study's findings add to the existing literature that lifestyle interventions are effective in reducing diabetes incidence in people with IGT, regardless of the presence of IFG, and suggest that it is crucial to examine the effectiveness of lifestyle interventions in those with isolated IFG.",
+      "is_oa": true,
+      "oa_url": "http://minerva-access.unimelb.edu.au/bitstreams/c7e32722-3f47-515f-a9b0-cce8381ffb82/download",
+      "source": "semanticscholar",
+      "type": "LettersAndComments",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study's findings add to the existing literature that lifestyle interventions are effective in reducing diabetes incidence in people with IGT, regardless of the presence of IFG, and suggest that it is crucial to examine the effectiveness of lifestyle interventions in those with isolated IFG.",
+      "rank": 54
+    },
+    {
+      "doi": "10.1177/1741826711421689",
+      "arxiv_id": "",
+      "title": "Prevention of diabetes and cardiovascular disease among prediabetic individuals: lifestyle versus drug interventions",
+      "authors": [
+        "F. Hu"
+      ],
+      "venue": "European Journal of Cardiovascular Prevention & Rehabilitation",
+      "year": 2011,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "A meta-analysis of prospective, randomized controlled trials that evaluated the effects of lifestyle intervention or pharmacological treatment on diabetes prevention among individuals with IGT and/or IFG confirmed earlier data showing the superiority of lifestyle interventions over drug-based treatment for diabetes Prevention among prediabetic individuals.",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/eurjpc/article-pdf/18/6/810/34293858/eurjpc0810.pdf",
+      "source": "semanticscholar",
+      "type": "LettersAndComments",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A meta-analysis of prospective, randomized controlled trials that evaluated the effects of lifestyle intervention or pharmacological treatment on diabetes prevention among individuals with IGT and/or IFG confirmed earlier data showing the superiority of lifestyle interventions over drug-based treatment for diabetes Prevention among prediabetic individuals.",
+      "rank": 55
+    },
+    {
       "doi": "10.52288/jbi.26636204.2019.07.02",
       "title": "福建省出口跨境电子商务的现状及发展研究 —以“一带一路”背景下在泰国的发展策略为例",
-      "abstract": "<jats:p>福建省是“一带一路”中“21世纪海上丝绸之路”的起点，也是“21世纪海上丝绸之路”的核心区。泰国闽籍华人一方面与当地社会高度融合，另一方面又与祖籍国保持着千丝万缕的关系，我们应继续发挥泰国闽籍华人的优势地位，在建设“一带一路”中充分发挥他们的桥梁作用。本研究以泰国作为目标市场国，探究福建省出口跨境电子商务发展策略。本研究对福建和泰国的跨境电商发展现状进行分析，并结合“一带一路”的优惠政策，为福建省出口跨境电商提供发展策略。</jats:p>",
-      "year": 2019,
+      "authors": [
+        "李, 铭伟",
+        "谢, 德鑫"
+      ],
       "venue": "商业创新期刊",
-      "citation_count": 8,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>福建省是“一带一路”中“21世纪海上丝绸之路”的起点，也是“21世纪海上丝绸之路”的核心区。泰国闽籍华人一方面与当地社会高度融合，另一方面又与祖籍国保持着千丝万缕的关系，我们应继续发挥泰国闽籍华人的优势地位，在建设“一带一路”中充分发挥他们的桥梁作用。本研究以泰国作为目标市场国，探究福建省出口跨境电子商务发展策略。本研究对福建和泰国的跨境电商发展现状进行分析，并结合“一带一路”的优惠政策，为福建省出口跨境电商提供发展策略。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 56
     },
     {
-      "rank": 2,
+      "doi": "10.3390/jcm14144947",
+      "arxiv_id": "",
+      "title": "Metformin’s Overall Effectiveness and Combined Action with Lifestyle Interventions in Preventing Type-2 Diabetes Mellitus in High-Risk Metformin-Naïve Patients: An Updated Systematic Review and Meta-Analysis of Published RCTs",
+      "authors": [
+        "Georgios I Tsironikos",
+        "V. Tsolaki",
+        "George E. Zakynthinos",
+        "Vasiliki Rammou",
+        "Despoina Kyprianidou",
+        "Thomas Antonogiannis",
+        "E. Zakynthinos",
+        "Alexandra Bargiota"
+      ],
+      "venue": "Journal of Clinical Medicine",
+      "year": 2025,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 66,
+      "tldr": "A 1700 mg dose of metformin daily is effective in preventing T2DM, especially in Caucasians, in women over 60 years, in prediabetes, and independent of obesity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A 1700 mg dose of metformin daily is effective in preventing T2DM, especially in Caucasians, in women over 60 years, in prediabetes, and independent of obesity.",
+      "rank": 57
+    },
+    {
+      "doi": "10.3390/endocrines3030045",
+      "arxiv_id": "",
+      "title": "The Progression of Prediabetes to Type 2 Diabetes in Children and Adolescents in the United States: Current Challenges and Solutions",
+      "authors": [
+        "B. U. Nwosu"
+      ],
+      "venue": "Endocrines",
+      "year": 2022,
+      "cited_by_count": 8,
+      "influential_cite_count": 3,
+      "reference_count": 45,
+      "tldr": "The finding that this reversal is associated with reduced insulin resistance (IR) and not with decreased body weight is novel and provides the foundation for trialing investigational products that may protect β-cells and reduce IR and/or body weight.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2673-396X/3/3/45/pdf?version=1662036263",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The finding that this reversal is associated with reduced insulin resistance (IR) and not with decreased body weight is novel and provides the foundation for trialing investigational products that may protect β-cells and reduce IR and/or body weight.",
+      "rank": 58
+    },
+    {
+      "doi": "10.61369/mrp.8016",
+      "title": "鼻息肉患者鼻内镜术后复发的危险因素分析及防治策略研究",
+      "authors": [
+        "李, 东伟"
+      ],
+      "venue": "Medical Research and Practice",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：分析鼻息肉患者鼻内镜术后复发的危险因素，并总结防治措施。方法：随机选择254例在我院接受鼻内镜手术治疗的鼻息肉患者。术后一年对患者实施随访，以患者疾病是否复发分为复发组和非复发组，分别有68例和186例。对患者术后疾病复发的影响因素进行因素单因素和多因素分析，并总结防治措施。结果：254例患者中疾病复发有68例，复发率是26.7%。影响鼻息肉患者鼻内镜术后复发的因素包括年龄、病程、吸烟史、糖尿病、合并变应性鼻炎、嗜酸性粒细胞型鼻息肉、Lund-Mackay 评分、术后综合治疗等因素，（P＜0.05）。病程、吸烟史、嗜酸性粒细胞型鼻息肉、PE积分、术后综合治疗是影响鼻息肉患者鼻内镜术后复发的独立危险因素。结论：多种因素都会导致鼻息肉患者鼻内镜术后复发，包括长期吸烟、嗜酸性粒细胞病理类型、术前PE积分显著上升、术后未接受综合治疗等。因此，临床应综合分析患者的实际情况，通过制定科学合理的手术方案、术后患者戒烟并接受综合治疗能够有效预防疾病的复发。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.18686/bd.v1i7.495",
+      "title": "简议一带一路战略下推进建筑业发展的策略",
+      "authors": [
+        "宁, 善娜"
+      ],
+      "venue": "建筑发展",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>&lt;p&gt;在“一带一路”战略下，为了促进建筑业的发展，必须采取有针对性的策略，在人、财、物等各个方面加大投入，同时更好地融入、服务“一带一路”，基于此，本文概述了一带一路，简述了一带一路及其对建筑业发展的意义，对一带一路战略下推进建筑业发展的策略进行了论述分析。&lt;/p&gt;</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1016/j.cct.2022.107007",
+      "arxiv_id": "",
+      "title": "A randomized controlled trial of a shared decision making intervention for diabetes prevention for women with a history of gestational diabetes mellitus: The Gestational diabetes Risk Attenuation for New Diabetes (GRAND study)",
+      "authors": [
+        "Ruth Madievsky",
+        "Amanda Vu",
+        "Felicia Cheng",
+        "Janet S. Chon",
+        "Norman Turk",
+        "Ashley Krueger",
+        "Jacob Krong",
+        "Richard Maranon",
+        "Sandra Liu",
+        "C.S. Han",
+        "K. Norris",
+        "C. Mangione",
+        "J. Pagé",
+        "Samuel C. Thomas",
+        "K. Duru",
+        "Tannaz Moin"
+      ],
+      "venue": "Contemporary Clinical Trials",
+      "year": 2022,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 47,
+      "tldr": "This is the first RCT to examine the effectiveness of SDM on weight loss, lifestyle change and/or metformin use, and other patient-reported outcomes in participants with a GDM history at risk of developing diabetes.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.cct.2022.107007",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This is the first RCT to examine the effectiveness of SDM on weight loss, lifestyle change and/or metformin use, and other patient-reported outcomes in participants with a GDM history at risk of developing diabetes.",
+      "rank": 61
+    },
+    {
+      "doi": "10.7326/ACPJC-2017-166-8-041",
+      "arxiv_id": "",
+      "title": "Review: HbA1c has low accuracy for prediabetes; lifestyle programs and metformin reduce progression to T2DM",
+      "authors": [
+        "D. Maki"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 2017,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "For detecting prediabetes, hemoglobin A1c has limited sensitivity and specificity, and FBG has high specificity but low sensitivity, and the review suggests that in patients diagnosed with predi diabetes, lifestyle interventions or metformin can reduce progression to type 2 diabetes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "LettersAndComments",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "For detecting prediabetes, hemoglobin A1c has limited sensitivity and specificity, and FBG has high specificity but low sensitivity, and the review suggests that in patients diagnosed with predi diabetes, lifestyle interventions or metformin can reduce progression to type 2 diabetes.",
+      "rank": 62
+    },
+    {
+      "doi": "10.63887/fss.2025.1.8.8",
+      "title": "以法治建设厚植新质生产力发展沃土的策略和路径研究",
+      "authors": [
+        "毛丹",
+        "吴兴生"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国经济进入高质量发展阶段，新质生产力的培育与发展成为推动经济转型升级的关键。法治建设作为营商环境的核心要素，对于厚植新质生产力发展沃土具有基础性作用。本文基于河源市企业全生命周期服务视角，探讨法治建设与新质生产力发展的内在联系，分析当前河源企业服务中存在的法治困境，提出以“法务咨询+全过程合同审核+纠纷调解+仲裁处理+裁决执行”为主线的“法律+人力资源+财税+金融+垫资”五位⼀体赋能方案。通过构建⼀站式、嵌入式、闭环式的企业服务新生态，为河源企业降低合规风险、提升经营效率、专注创新发展提供法治保障。研究表明，该⼀体化服务模式能有效解决传统服务分散化、碎片化问题，结合河源本地产业特色和政策环境，为新质生产力发展创造良好的法治环境和制度保障。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.4239/wjd.v16.i1.98804",
+      "arxiv_id": "",
+      "title": "Prediabetes and atrial fibrillation risk stratification, phenotyping, and possible reversal to normoglycemia",
+      "authors": [
+        "H. Mirghani"
+      ],
+      "venue": "World Journal of Diabetes",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 23,
+      "tldr": "Real-world randomized controlled trials to assess major adverse cardiac or cerebrovascular event risk reduction and reversal/prevention of type 2 diabetes among patients are needed to determine the proper interventions.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Editorial",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Real-world randomized controlled trials to assess major adverse cardiac or cerebrovascular event risk reduction and reversal/prevention of type 2 diabetes among patients are needed to determine the proper interventions.",
+      "rank": 64
+    },
+    {
       "doi": "10.12677/acm.2024.1441052",
       "title": "Research Progress on the Relationship and Pathogenesis between Obesity and Prediabetes",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "詹, 哲莉"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 39,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 65
     },
     {
-      "rank": 3,
+      "doi": "10.32629/ffcr.v4i2.19987",
+      "title": "个体化饮食干预对妊娠期糖尿病患者血糖控制及母婴结局的影响",
+      "authors": [
+        "黄, 江峥"
+      ],
+      "venue": "临床医学前沿论坛",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：探讨个体化饮食干预对妊娠期糖尿病患者血糖控制效果及母婴结局的影响,为临床妊娠期糖尿病管理提供实践参考。方法：选取我院门诊2022年1月—2023年12月收治的妊娠期糖尿病患者120例,采用随机数字表法分为观察组(60例)与对照组(60例)。对照组给予常规饮食健康指导,观察组实施个体化饮食干预,基于患者孕周、体重指数、血糖水平、饮食偏好及胎儿发育情况制定专属饮食方案,干预至分娩。对比两组患者干预前后空腹血糖、餐后2h血糖水平,以及血糖控制达标率、母婴不良结局发生率。结果：干预后,观察组空腹血糖(4.62±0.45)mmol/L、餐后2h血糖(6.35±0.58)mmol/L,均显著低于对照组的(5.38±0.52)mmol/L、(7.42±0.65)mmol/L(P＜0.05)；观察组血糖控制达标率88.3%,高于对照组的66.7%(P＜0.05)。母婴结局方面,观察组早产、巨大儿、新生儿低血糖发生率分别为3.3%、5.0%、1.7%,均显著低于对照组的13.3%、16.7%、10.0%(P＜0.05)；两组妊娠期高血压、胎儿宫内窘迫发生率对比无统计学差异(P＞0.",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.37155/2717-5189-0304-15",
+      "title": "基于海洋工程装备及高技术船舶的发展策略探讨",
+      "authors": [
+        "吴钧",
+        "吴钧"
+      ],
+      "venue": "工程管理与技术探讨",
+      "year": 2021,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.33142/jscs.v5i3.16957",
+      "title": "华佗五禽戏与虚拟现实技术融合发展的策略及前景展望",
+      "authors": [
+        "陈, 雪晴",
+        "李, 昊",
+        "刘, 海莲"
+      ],
+      "venue": "体能科学",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>华佗五禽戏作为中国传统养生功法之一，融合了中医理论与仿生运动的理念，具有显著的健身、康复和文化价值。然而，在现代社会，其传承与推广面临受众局限、教学方式单一等问题。虚拟现实（VR）技术凭借沉浸性、交互性和智能化优势特点，为传统体育文化的创新传播提供了新的可能性。本研究探讨华佗五禽戏与VR技术融合发展的策略及前景，通过文献研究、专家访谈以及实地考察等方法，提出“文化数字化+科技赋能”的融合路径。在技术层面，需构建基于动作捕捉和三维建模的VR五禽戏训练系统；在内容层面，设计游戏化、个性化的学习模式，增强用户参与感；在推广层面，探索“VR+健康”应用场景。研究认为，这一融合不仅能够提升华佗五禽戏的习练效果和传播广度，还能推动中医养生文化的现代化转型，并为数字健康产业开辟新的市场空间。未来需进一步优化技术适配性，平衡传统性与创新性，以实现文化价值与商业价值的双赢局面。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.69979/3041-0673.25.02.027",
+      "title": "新能源汽车动力电池回收发展策略研究——以淮安为例",
+      "authors": [
+        "崔杰, 吴思佳"
+      ],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.49",
+      "title": "长春方言发展现状及保护策略",
+      "authors": [
+        "国清华"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>长春方言作为东北官话吉长方言长哈小片的重要代表，承载着长春地区独特的历史文化记忆。本文通过对长春方言发展现状的深入调研，分析其在语音、词汇、语法等方面的特点及当前面临的传承困境，如使用人口减少、语言环境改变等问题。基于此，从教育、文化传播、技术手段等多维度提出针对性的保护策略，旨在唤起社会对长春方言的关注，推动其传承与发展，维护语言文化的多样性。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1016/j.dsx.2025.103303",
+      "arxiv_id": "",
+      "title": "Interventions for prediabetes: an umbrella review of systematic reviews and meta-analyses of randomized controlled trials.",
+      "authors": [
+        "N. Veronese",
+        "S. Maggi",
+        "Cristina Giussani",
+        "Matteo Bianchini",
+        "Hend Alfadul",
+        "Shaun Sabico",
+        "N. Al-Daghri",
+        "Lee Smith",
+        "D. Pizzol",
+        "F. Limongi",
+        "J. Demurtas",
+        "A. Bartolini",
+        "M. Zanetti"
+      ],
+      "venue": "Diabetes & metabolic syndrome",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "Findings underscore the value of a multidimensional and personalized approach to prediabetes management, emphasizing evidence-based pharmacological options alongside behavioral and digital health strategies.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.dsx.2025.103303",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings underscore the value of a multidimensional and personalized approach to prediabetes management, emphasizing evidence-based pharmacological options alongside behavioral and digital health strategies.",
+      "rank": 71
+    },
+    {
       "doi": "10.18686/bd.v2i6.1419",
       "title": "探析建筑项目工程开发前期策划的问题及其策略",
-      "abstract": "<jats:p>建筑项目工程开发的前期策划是从全局战略的角度出发,通过收集信息和多方的调查研究,确定项目目标,对项目进行准确的市场定位,并通过对项目进行详细的经济论证,从而制定出正确的决策等一系列工作。为了充分发挥建筑项目工程开发前期策划的作用,本文阐述了建筑项目工程开发的主要特征以及建筑项目工程开发前期策划的重要性,对建筑项目工程开发前期策划存在的主要问题及其策略进行了探讨分析。</jats:p>",
-      "year": null,
+      "authors": [
+        "占, 丰镜"
+      ],
       "venue": "建筑发展",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>建筑项目工程开发的前期策划是从全局战略的角度出发,通过收集信息和多方的调查研究,确定项目目标,对项目进行准确的市场定位,并通过对项目进行详细的经济论证,从而制定出正确的决策等一系列工作。为了充分发挥建筑项目工程开发前期策划的作用,本文阐述了建筑项目工程开发的主要特征以及建筑项目工程开发前期策划的重要性,对建筑项目工程开发前期策划存在的主要问题及其策略进行了探讨分析。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 72
     },
     {
-      "rank": 4,
       "doi": "10.69979/3029-2808.24.6.045",
       "title": "妊娠期糖尿病患者发生甲状腺功能减退症的影响因素分析及对妊娠结局的影响",
-      "abstract": "",
-      "year": 2024,
+      "authors": [],
       "venue": "医学研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 73
     },
     {
-      "rank": 5,
       "doi": "10.12677/ap.2019.92043",
       "title": "Developmental Delay’s Risk Factors and Early Intervention Strategies: Taking Early Treatment in Macau as an Example",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "董, 志文"
+      ],
       "venue": "Advances in Psychology",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 35,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 6,
-      "doi": "10.37155/2661-4766-0705-27",
-      "title": "泌尿结石患者术后并发症的预防与管理策略",
       "abstract": "",
-      "year": 2025,
-      "venue": "临床医学前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 74
     },
     {
-      "rank": 7,
       "doi": "10.37155/2717-5693-0401-6",
       "title": "社区慢性病管理对糖尿病前期患者糖代谢指标的改善作用",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "王亚萍"
+      ],
       "venue": "内科诊疗与进展",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 75
     },
     {
-      "rank": 8,
+      "doi": "10.37155/2661-4766-0705-27",
+      "title": "泌尿结石患者术后并发症的预防与管理策略",
+      "authors": [
+        "刘现义"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
       "doi": "10.61369/edtr.7844",
       "title": "人口发展新趋势对学前教育的影响及应对策略",
-      "abstract": "<jats:p>随着我国人口结构和生育政策的调整，学前教育迎来了新的发展机遇与挑战。本文通过对当前人口发展新趋势的剖析，识别出影响学前教育的主要因素，在此基础上，采用文献综述与实地调研相结合的方式，深入探讨了这些因素对学前教育资源配置、教育质量以及教育公平性的具体影响。研究发现，为有效应对人口发展新趋势对学前教育的挑战，需从优化资源配置、提升教师专业素养，以及强化家庭与社区教育环境的协同合作等方面着手。最后，文章针对性地提出了相应的政策建议，旨在为学前教育的可持续发展提供策略支持。</jats:p>",
-      "year": null,
+      "authors": [
+        "范, 晓洁"
+      ],
       "venue": "Educational Theory Observation",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国人口结构和生育政策的调整，学前教育迎来了新的发展机遇与挑战。本文通过对当前人口发展新趋势的剖析，识别出影响学前教育的主要因素，在此基础上，采用文献综述与实地调研相结合的方式，深入探讨了这些因素对学前教育资源配置、教育质量以及教育公平性的具体影响。研究发现，为有效应对人口发展新趋势对学前教育的挑战，需从优化资源配置、提升教师专业素养，以及强化家庭与社区教育环境的协同合作等方面着手。最后，文章针对性地提出了相应的政策建议，旨在为学前教育的可持续发展提供策略支持。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 77
     },
     {
-      "rank": 9,
       "doi": "10.67328/bt0566",
       "title": "颅脑术后患者并发症临床护理防控策略",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "吴敏"
+      ],
       "venue": "数据期刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 78
     },
     {
-      "rank": 10,
       "doi": "10.26549/jxffcxysj.v2i8.2813",
       "title": "浅谈新时期幼儿园学前教育的发展策略",
-      "abstract": "<jats:p>随着社会的不断进步与飞速发展，人们的生活水平也在日益提高，同时人们也越来越注重教育事业的发展。在此背景下，幼儿园学前教育也正在慢慢的转变，对于幼儿教师也提出了更高的要求。为了有效的促进幼儿园教育事业的发展，中国就必须更加注重幼儿园学前教育，建立完善的师资力量，进而提高幼儿学前教育的水平，进一步促进幼儿学前教育事业的发展。</jats:p>",
-      "year": null,
+      "authors": [
+        "王, 维华"
+      ],
       "venue": "教学方法创新与实践",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着社会的不断进步与飞速发展，人们的生活水平也在日益提高，同时人们也越来越注重教育事业的发展。在此背景下，幼儿园学前教育也正在慢慢的转变，对于幼儿教师也提出了更高的要求。为了有效的促进幼儿园教育事业的发展，中国就必须更加注重幼儿园学前教育，建立完善的师资力量，进而提高幼儿学前教育的水平，进一步促进幼儿学前教育事业的发展。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 79
+    },
+    {
+      "doi": "10.37155/2811-0617-0301-13",
+      "title": "山药的种植技术以及发展前景探索",
+      "authors": [
+        "帆, 张"
+      ],
+      "venue": "农业科技与发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
     },
     {
-      "rank": 11,
+      "doi": "10.67328/bt1459",
+      "title": "医疗器械创新驱动发展政策及企业策略研究",
+      "authors": [
+        "梁永生"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.37155/2811-0617-0401-21",
+      "title": "山药的种植技术以及发展前景探索",
+      "authors": [
+        "聂廷梅"
+      ],
+      "venue": "农业科技与发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.70693/hj0051",
+      "title": "医疗器械创新驱动发展政策及企业策略研究",
+      "authors": [
+        "梁永生"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.70693/fw508",
+      "title": "1例行诱导透析期间患者发生医源性假性动脉瘤的原因及护理对策",
+      "authors": [
+        "路永霞"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.12677/acm.2026.1672599",
+      "title": "Research Progress and Intervention Strategies for Depression-Anxiety Comorbidity in Elderly Diabetic Patients",
+      "authors": [
+        "陈, 海燕"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 62,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.70976/j.1672-7851.dw250032",
+      "title": "糖尿病足风险分级护理策略在高危患者中的应用及效果评价",
+      "authors": [
+        "刘, 彩红"
+      ],
+      "venue": "Clinical Journal of Diabetes World",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.69979/3029-2700.24.3.045",
+      "title": "数智化背景下的消费者行为及品牌营销策略研究",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.37155/2811-0617-0306-2",
+      "title": "奶山羊患乳房炎的主要原因及常用治疗策略探讨",
+      "authors": [
+        "王德玉"
+      ],
+      "venue": "农业科技与发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.37155/2661-4766-0801-31",
+      "title": "不同血压控制策略对县级医院老年原发性高血压患者血压达标率及波动性的观察研究",
+      "authors": [
+        "马海荣"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.67328/bt1884",
+      "title": "癫痫患者抗癫痫药物治疗依从性与复发风险的相关性及护理对策",
+      "authors": [
+        "王美"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.67328/bt2268",
+      "title": "现代建筑与可持续发展的策略研究",
+      "authors": [
+        "李萍"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.69979/3041-0673.24.8.015",
+      "title": "农药包装废弃物存在的问题及改进策略——以齐河县为例",
+      "authors": [
+        "冉璐, 谯英康"
+      ],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.37155/2717-557x-0403-9",
+      "title": "建筑设计中新技术以及新材料的实施策略",
+      "authors": [
+        "钱靖茹",
+        "徐高婷"
+      ],
+      "venue": "城市建筑与发展",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.37155/2717-5251-0620-25",
+      "title": "大中型水库移民后期扶持发展的现状及策略探究",
+      "authors": [
+        "薛志邦"
+      ],
+      "venue": "水利电力技术与应用",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.37155/2661-4766-0604-48",
+      "title": "动态血压监测对子痫前期患者发病情况及病情严重程度的预测价值",
+      "authors": [
+        "宋彩丽"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.69979/3029-2700.25.11.049",
+      "title": "市域产教联合体运营机制的创新发展策略——以青岛市为例",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.52288/mice.27069273.2020.03.10",
+      "title": "基于O2O模式的旅游电子商务发展策略探析",
+      "authors": [
+        "邱, 碧珍"
+      ],
+      "venue": "会展前瞻",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>实行O2O电子商务给旅游业带来诸多的利益，O2O模式正日益成为旅游行业转型升级的重要途径。旅游企业O2O电子商务发展策略包括自主开发、入驻第三方平台或采用自主开发和入驻第三方平台两者相结合的方式。每种模式各有各自的适用特点，旅游企业应根据自身情况选择合适的模式，同时要注意线上与线下协同发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.37155/2717-557x-0624-44",
+      "title": "林业生态建设及林下经济产业发展的策略",
+      "authors": [
+        "陈锦忠"
+      ],
+      "venue": "城市建筑与发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.67328/bt0616",
+      "title": "危重症患者静脉炎高危因素的临床筛查与早期干预策略",
+      "authors": [
+        "靳静"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.12677/acm.2024.14123106",
+      "title": "Advances in Perioperative Management of Cataract and Postoperative Complications in Patients with Diabetes Mellitus",
+      "authors": [
+        "华, 思茵"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 52,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.37155/2717-557x-0524-24",
+      "title": "浅析新时期建筑工程经济管理存在的风险及防范策略",
+      "authors": [
+        "张玮学"
+      ],
+      "venue": "城市建筑与发展",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.67328/bt1586",
+      "title": "糖尿病患者降糖药物的用药情况及用药指导研究",
+      "authors": [
+        "吕宝文"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.37155/2661-4766-0706-23",
+      "title": "慢性肾脏病患者心血管疾病危险因素及干预策略的临床研究",
+      "authors": [
+        "常　敏",
+        "王晋宁"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.65113/jiaoyu1044",
+      "title": "人工智能的发展对计算机专业人才培养影响探析及应用策略",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.64649/yh.shfzykjcx.2025050018",
+      "title": "社会工作机构的发展困境及对策—以H市为例",
+      "authors": [
+        "罗, 强",
+        "郁, 楚倩"
+      ],
+      "venue": "社会发展与科技创新",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在社会进步与社会工作专业兴起的背景下，H市社会工作机构发展加快，但当前主要依赖政府购买服务维持运转。通过走访调查发现，这些机构面临政策缺位、社会认同度低、专业性不足、筹资困难及内部建设紊乱等困境。对此，需政府、社会工作机构与社工队伍建立良好互动，完善内部机制、提升队伍专业性，共同营造有利发展的社会氛围，以推动H市社会工作机构可持续发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.67328/bt2289",
+      "title": "老年髋部骨折患者围手术期谵妄预防的护理策略探讨",
+      "authors": [
+        "刘冰冰"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.12677/jcpm.2026.52159",
+      "title": "Research Progress on the Psychological Health Status and Intervention Strategies for Infertile Patients during Treatment",
+      "authors": [
+        "邓, 佳欣"
+      ],
+      "venue": "Journal of Clinical Personalized Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.63887/cn.2025.1.2.13",
+      "title": "冠心病共病患者健康促进行为影响因素及干预策略的研究进展",
+      "authors": [
+        "浦浓花"
+      ],
+      "venue": "临床与护理",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>冠心病患者的共病状态严重影响生活质量和预后，冠心病共病患者健康行为方式在病情转归及后期自我管理过程中起重要作用。本文就冠心病共病患者健康促进行为影响因素及干预策略进行综述，对提高冠心病共病患者健康行为管理水平的干预方案提出建议，以期为冠心病共病患者健康行为管理提供借鉴。本文将探讨冠心病共病患者的健康促进行为影响因素以及干预策略，希望为医生和医务人员提供有用的参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.12677/acm.2026.1672527",
+      "title": "Research Progress on Sleep Disturbances and Intervention Strategies in \nPerioperative Patients",
+      "authors": [
+        "唐, 林莉"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 75,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
       "doi": "arXiv:2404.14353v1",
+      "arxiv_id": "2404.14353v1",
       "title": "Electroporation-mediated Metformin for effective anticancer treatment of triple-negative breast cancer cells",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Praveen Sahu",
+        "Ignacio G. Camarillo",
+        "Pragatheiswar Giri",
+        "Raji Sundararajan"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.14353v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 110
     },
     {
-      "rank": 12,
       "doi": "10.1016/j.nutos.2024.09.013",
+      "arxiv_id": "2410.02692v1",
       "title": "Prediabetes detection in unconstrained conditions using wearable sensors",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Dimitra Tatli",
+        "Vasileios Papapanagiotou",
+        "Aris Liakos",
+        "Apostolos Tsapas",
+        "Anastasios Delopoulos"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.02692v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 111
     },
     {
-      "rank": 13,
       "doi": "arXiv:2305.03642v3",
+      "arxiv_id": "2305.03642v3",
       "title": "Jointly Extracting Interventions, Outcomes, and Findings from RCT Reports with LLMs",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Somin Wadhwa",
+        "Jay DeYoung",
+        "Benjamin Nye",
+        "Silvio Amir",
+        "Byron C. Wallace"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.03642v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 112
     },
     {
-      "rank": 14,
       "doi": "10.1021/acs.jpcb.7b11928",
+      "arxiv_id": "1802.02516v1",
       "title": "Towards Understanding the Structure, Dynamics and Bio-activity of Diabetic Drug Metformin",
-      "abstract": "",
-      "year": 2018,
+      "authors": [
+        "Sayantan Mondal",
+        "Rudra N Samajdar",
+        "Saumyak Mukherjee",
+        "Aninda J Bhattacharyya",
+        "Biman Bagchi"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.02516v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 113
     },
     {
-      "rank": 15,
       "doi": "arXiv:2410.17245v1",
+      "arxiv_id": "2410.17245v1",
       "title": "Towards Reliable Evaluation of Behavior Steering Interventions in LLMs",
-      "abstract": "",
+      "authors": [
+        "Itamar Pres",
+        "Laura Ruis",
+        "Ekdeep Singh Lubana",
+        "David Krueger"
+      ],
+      "venue": "arXiv",
       "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2410.17245v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 114
     },
     {
-      "rank": 16,
       "doi": "arXiv:1804.01708v3",
+      "arxiv_id": "1804.01708v3",
       "title": "Markerless Inside-Out Tracking for Interventional Applications",
-      "abstract": "",
+      "authors": [
+        "Benjamin Busam",
+        "Patrick Ruhkamp",
+        "Salvatore Virga",
+        "Beatrice Lentes",
+        "Julia Rackerseder",
+        "Nassir Navab",
+        "Christoph Hennersperger"
+      ],
+      "venue": "arXiv",
       "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/1804.01708v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 115
     },
     {
-      "rank": 17,
       "doi": "arXiv:2602.16033v1",
+      "arxiv_id": "2602.16033v1",
       "title": "Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Ruiwei Xiao",
+        "Runlong Ye",
+        "Xinying Hou",
+        "Jessica Wen",
+        "Harsh Kumar",
+        "Michael Liut",
+        "John Stamper"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.16033v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 116
     },
     {
-      "rank": 18,
       "doi": "arXiv:2111.05070v4",
+      "arxiv_id": "2111.05070v4",
       "title": "Universal Lower Bound for Learning Causal DAGs with Atomic Interventions",
-      "abstract": "",
+      "authors": [
+        "Vibhor Porwal",
+        "Piyush Srivastava",
+        "Gaurav Sinha"
+      ],
+      "venue": "arXiv",
       "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2111.05070v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 117
     },
     {
-      "rank": 19,
       "doi": "arXiv:2312.11226v1",
+      "arxiv_id": "2312.11226v1",
       "title": "CDRH Seeks Public Comment: Digital Health Technologies for Detecting Prediabetes and Undiagnosed Type 2 Diabetes",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Manuel Cossio"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11226v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 118
     },
     {
-      "rank": 20,
       "doi": "arXiv:2603.02204v2",
+      "arxiv_id": "2603.02204v2",
       "title": "Partial Causal Structure Learning for Valid Selective Conformal Inference under Interventions",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "Amir Asiaee",
+        "Kavey Aryan",
+        "James P. Long"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.02204v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 119
+    },
+    {
+      "doi": "10.1103/PhysRevX.5.041034",
+      "arxiv_id": "1401.3736v2",
+      "title": "`Gauging' time reversal symmetry in tensor network states",
+      "authors": [
+        "Xie Chen",
+        "Ashvin Vishwanath"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1401.3736v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.1186/s13362-020-00091-3",
+      "arxiv_id": "2004.09471v3",
+      "title": "Beyond just \"flattening the curve\": Optimal control of epidemics with purely non-pharmaceutical interventions",
+      "authors": [
+        "Markus Kantner",
+        "Thomas Koprucki"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.09471v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:2605.01052v1",
+      "arxiv_id": "2605.01052v1",
+      "title": "Entropic Reciprocity in Time-Reversed Young Interferometry",
+      "authors": [
+        "Jianming Wen"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.01052v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:1811.10993v1",
+      "arxiv_id": "1811.10993v1",
+      "title": "Analysis of the problem of intervention control in the economy on the basis of solving the problem of tuning",
+      "authors": [
+        "Peter Shnurkov",
+        "Daniil Novikov"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1811.10993v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:2506.12567v1",
+      "arxiv_id": "2506.12567v1",
+      "title": "Maximal Speed of Glucose Change Significantly Distinguishes Prediabetes from Diabetes",
+      "authors": [
+        "Dandan Wang",
+        "Xiaoyan Chen",
+        "Jingxiang Lin",
+        "Teng Zhang",
+        "Lianyi Huang",
+        "Dongliang Leng",
+        "Xiaohua Douglas Zhang",
+        "Gang Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.12567v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:2507.04373v1",
+      "arxiv_id": "2507.04373v1",
+      "title": "Hierarchical Reinforcement Learning with Targeted Causal Interventions",
+      "authors": [
+        "Sadegh Khorasani",
+        "Saber Salehkaleybar",
+        "Negar Kiyavash",
+        "Matthias Grossglauser"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.04373v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.1002/bimj.70011",
+      "arxiv_id": "2311.17547v1",
+      "title": "Risk-based decision making: estimands for sequential prediction under interventions",
+      "authors": [
+        "Kim Luijken",
+        "Paweł Morzywołek",
+        "Wouter van Amsterdam",
+        "Giovanni Cinà",
+        "Jeroen Hoogland",
+        "Ruth Keogh",
+        "Jesse Krijthe",
+        "Sara Magliacane",
+        "Thijs van Ommen",
+        "Niels Peek",
+        "Hein Putter",
+        "Maarten van Smeden",
+        "Matthew Sperrin",
+        "Junfeng Wang",
+        "Daniala Weir",
+        "Vanessa Didelez",
+        "Nan van Geloven"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.17547v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:2311.07468v3",
+      "arxiv_id": "2311.07468v3",
+      "title": "An Analysis and Mitigation of the Reversal Curse",
+      "authors": [
+        "Ang Lv",
+        "Kaiyi Zhang",
+        "Shufang Xie",
+        "Quan Tu",
+        "Yuhan Chen",
+        "Ji-Rong Wen",
+        "Rui Yan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.07468v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1093/bib/bbac487",
+      "arxiv_id": "2206.09693v1",
+      "title": "PhaTYP: Predicting the lifestyle for bacteriophages using BERT",
+      "authors": [
+        "Jiayu Shang",
+        "Xubo Tang",
+        "Yanni Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.09693v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "arXiv:2204.01103v2",
+      "arxiv_id": "2204.01103v2",
+      "title": "Characterizing Urban Lifestyle Signatures Using Motif Properties in Network of Places",
+      "authors": [
+        "Junwei Ma",
+        "Bo Li",
+        "Ali Mostafavi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.01103v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2606.28261v1",
+      "arxiv_id": "2606.28261v1",
+      "title": "Habitual lifestyle timing explains circadian timing, but daily lifestyle changes do not, in free-living humans across 2000 days",
+      "authors": [
+        "Billy C. Smith",
+        "Zeel Pansara",
+        "Rosanne H. Timmerman",
+        "Emmanuel Molefi",
+        "Tiago Da Silva Costa",
+        "Christopher Thornton",
+        "Lucas G. S. França",
+        "Rachel E. Stirling",
+        "Sarah E. Heaps",
+        "Philippa J. Karoly",
+        "Mario Leocadio-Miguel",
+        "Peter N. Taylor",
+        "Karoline Leiberg",
+        "Yujiang Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.28261v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:2309.14581v2",
+      "arxiv_id": "2309.14581v2",
+      "title": "Assessing Utility of Differential Privacy for RCTs",
+      "authors": [
+        "Kaitlyn R. Webb",
+        "Soumya Mukherjee",
+        "Aratrika Mustafi",
+        "Aleksandra Slavković",
+        "Lars Vilhuber"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.14581v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:1803.08258v1",
+      "arxiv_id": "1803.08258v1",
+      "title": "Reversion of Quantum Walks via interventions on coin space",
+      "authors": [
+        "Mahesh N. Jayakody",
+        "Asiri Nanayakkara"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1803.08258v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:2011.12102v1",
+      "arxiv_id": "2011.12102v1",
+      "title": "Do You Live a Healthy Life? Analyzing Lifestyle by Visual Life Logging",
+      "authors": [
+        "Qing Gao",
+        "Mingtao Pei",
+        "Hongyu Shen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.12102v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:2510.26807v1",
+      "arxiv_id": "2510.26807v1",
+      "title": "Diabetes Lifestyle Medicine Treatment Assistance Using Reinforcement Learning",
+      "authors": [
+        "Yuhan Tang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.26807v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.1109/20.489915",
+      "arxiv_id": "9505084v1",
+      "title": "MAGNETISATION REVERSAL AND DOMAIN STRUCTURE IN THIN MAGNETIC FILMS: THEORY AND COMPUTER SIMULATION",
+      "authors": [
+        "U. Nowak"
+      ],
+      "venue": "arXiv",
+      "year": 1995,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/9505084v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2207.03589v2",
+      "arxiv_id": "2207.03589v2",
+      "title": "Lifestyle Pattern Analysis Unveils Recovery Trajectories of Communities Impacted by Disasters",
+      "authors": [
+        "Natalie Coleman",
+        "Chenyue Liu",
+        "Yiqing Zhao",
+        "Ali Mostafavi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.03589v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:1110.5504v3",
+      "arxiv_id": "1110.5504v3",
+      "title": "Centrifugal force reversal from the perspective of rigidly rotating observer",
+      "authors": [
+        "Giorgi Dalakishvili"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1110.5504v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:1808.00178v1",
+      "arxiv_id": "1808.00178v1",
+      "title": "Real-time image-based instrument classification for laparoscopic surgery",
+      "authors": [
+        "Sebastian Bodenstedt",
+        "Antonia Ohnemus",
+        "Darko Katic",
+        "Anna-Laura Wekerle",
+        "Martin Wagner",
+        "Hannes Kenngott",
+        "Beat Müller-Stich",
+        "Rüdiger Dillmann",
+        "Stefanie Speidel"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1808.00178v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "arXiv:2407.07277v1",
+      "arxiv_id": "2407.07277v1",
+      "title": "Lifestyle-Informed Personalized Blood Biomarker Prediction via Novel Representation Learning",
+      "authors": [
+        "A. Ali Heydari",
+        "Naghmeh Rezaei",
+        "Javier L. Prieto",
+        "Shwetak N. Patel",
+        "Ahmed A. Metwally"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.07277v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:2306.17478v3",
+      "arxiv_id": "2306.17478v3",
+      "title": "Improving Precision of RCT-Based CATE Estimation using Data Borrowing with Double Calibration",
+      "authors": [
+        "Amir Asiaee",
+        "Chiara Di Gravio",
+        "Cole Beck",
+        "Yuting Mei",
+        "Samhita Pal",
+        "Jared D. Huling"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.17478v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:2307.15176v3",
+      "arxiv_id": "2307.15176v3",
+      "title": "RCT Rejection Sampling for Causal Estimation Evaluation",
+      "authors": [
+        "Katherine A. Keith",
+        "Sergey Feldman",
+        "David Jurgens",
+        "Jonathan Bragg",
+        "Rohit Bhattacharya"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.15176v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1016/j.apenergy.2022.119109",
+      "arxiv_id": "2204.10770v1",
+      "title": "Constructing dynamic residential energy lifestyles using Latent Dirichlet Allocation",
+      "authors": [
+        "Xiao Chen",
+        "Chad Zanocco",
+        "June Flora",
+        "Ram Rajagopal"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.10770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:1005.0158v1",
+      "arxiv_id": "1005.0158v1",
+      "title": "Elastic Time Reversal Mirror Experiment in a Mesoscopic Natural Medium at the Low Noise Underground Laboratory of Rustrel, France",
+      "authors": [
+        "Stephane Gaffet",
+        "Tony Monfret",
+        "Guy Senechal",
+        "Dominique Rousset",
+        "Hermann Zeyen",
+        "Michel Auguste",
+        "Daniel Boyer",
+        "Alain Cavaillou"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1005.0158v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:2101.09244v2",
+      "arxiv_id": "2101.09244v2",
+      "title": "Extracting Lifestyle Factors for Alzheimer's Disease from Clinical Notes Using Deep Learning with Weak Supervision",
+      "authors": [
+        "Zitao Shen",
+        "Yoonkwon Yi",
+        "Anusha Bompelli",
+        "Fang Yu",
+        "Yanshan Wang",
+        "Rui Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2101.09244v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "arXiv:2201.06517v1",
+      "arxiv_id": "2201.06517v1",
+      "title": "Demographic Confounding Causes Extreme Instances of Lifestyle Politics on Facebook",
+      "authors": [
+        "Alexander Ruch",
+        "Yujia Zhang",
+        "Michael Macy"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.06517v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "arXiv:2406.17993v2",
+      "arxiv_id": "2406.17993v2",
+      "title": "Anatomizing Societal Recovery at the Microscale: Heterogeneity in Household Lifestyle Activities Rebounding after Disasters",
+      "authors": [
+        "Natalie Coleman",
+        "Chenyue Liu",
+        "Ali Mostafavi"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2406.17993v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "arXiv:2410.09643v1",
+      "arxiv_id": "2410.09643v1",
+      "title": "Multimodal Physical Activity Forecasting in Free-Living Clinical Settings: Hunting Opportunities for Just-in-Time Interventions",
+      "authors": [
+        "Abdullah Mamun",
+        "Krista S. Leonard",
+        "Megan E. Petrov",
+        "Matthew P. Buman",
+        "Hassan Ghasemzadeh"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.09643v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:2205.02143v2",
+      "arxiv_id": "2205.02143v2",
+      "title": "Estimating Complier Average Causal Effects for Clustered RCTs When the Treatment Affects the Service Population",
+      "authors": [
+        "Peter Z. Schochet"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.02143v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2504.15618v1",
+      "arxiv_id": "2504.15618v1",
+      "title": "We Are What We Buy: Extracting urban lifestyles using large-scale delivery records",
+      "authors": [
+        "Minjin Lee",
+        "Hokyun Kim",
+        "Bogang Jun",
+        "Jaehyuk Park"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.15618v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "arXiv:2110.00889v1",
+      "arxiv_id": "2110.00889v1",
+      "title": "A Minimal Intervention Definition of Reverse Engineering a Neural Circuit",
+      "authors": [
+        "Keerthana Gurushankar",
+        "Pulkit Grover"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.00889v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.1214/16-AOAS1001",
+      "arxiv_id": "1610.06943v1",
+      "title": "Sensitivity analysis for an unobserved moderator in RCT-to-target-population generalization of treatment effects",
+      "authors": [
+        "Trang Quynh Nguyen",
+        "Cyrus Ebnesajjad",
+        "Stephen R. Cole",
+        "Elizabeth A. Stuart"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1610.06943v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2606.31694v1",
+      "arxiv_id": "2606.31694v1",
+      "title": "RCT: A Robot-Collected Touch-Vision-Language Dataset for Tactile Generalization",
+      "authors": [
+        "Jingbo He",
+        "Michael Färber",
+        "Roberto Calandra"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.31694v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2103.14493v1",
+      "arxiv_id": "2103.14493v1",
+      "title": "RCT: Resource Constrained Training for Edge AI",
+      "authors": [
+        "Tian Huang",
+        "Tao Luo",
+        "Ming Yan",
+        "Joey Tianyi Zhou",
+        "Rick Goh"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.14493v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1088/1367-2630/17/7/075002",
+      "arxiv_id": "1406.7182v2",
+      "title": "Testing Time Reversal Symmetry in Artificial Atoms",
+      "authors": [
+        "Frederico Brito",
+        "Francisco Rouxinol",
+        "M. D. LaHaye",
+        "Amir O. Caldeira"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1406.7182v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2511.03986v1",
+      "arxiv_id": "2511.03986v1",
+      "title": "Use of Continuous Glucose Monitoring with Machine Learning to Identify Metabolic Subphenotypes and Inform Precision Lifestyle Changes",
+      "authors": [
+        "Ahmed A. Metwally",
+        "Heyjun Park",
+        "Yue Wu",
+        "Tracey McLaughlin",
+        "Michael P. Snyder"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.03986v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:2003.10963v1",
+      "arxiv_id": "2003.10963v1",
+      "title": "CHD Risk Minimization through Lifestyle Control: Machine Learning Gateway",
+      "authors": [
+        "Xi He",
+        "B Rajeswari Matam",
+        "Srikanth Bellary",
+        "Goutam Ghosh",
+        "Amit K Chattopadhyay"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.10963v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2006.10884v1",
+      "arxiv_id": "2006.10884v1",
+      "title": "N=1 Modelling of Lifestyle Impact on SleepPerformance",
+      "authors": [
+        "Dhruv Upadhyay",
+        "Vaibhav Pandey",
+        "Nitish Nag",
+        "Ramesh Jain"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.10884v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "arXiv:2201.06556v1",
+      "arxiv_id": "2201.06556v1",
+      "title": "Millions of Co-purchases and Reviews Reveal the Spread of Polarization and Lifestyle Politics across Online Markets",
+      "authors": [
+        "Alexander Ruch",
+        "Ari Decter-Frain",
+        "Raghav Batra"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.06556v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:1710.03268v1",
+      "arxiv_id": "1710.03268v1",
+      "title": "Considerations of automated machine learning in clinical metabolic profiling: Altered homocysteine plasma concentration associated with metformin exposure",
+      "authors": [
+        "Alena Orlenko",
+        "Jason H. Moore",
+        "Patryk Orzechowski",
+        "Randal S. Olson",
+        "Junmei Cairns",
+        "Pedro J. Caraballo",
+        "Richard M. Weinshilboum",
+        "Liewei Wang",
+        "Matthew K. Breitenstein"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.03268v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.55552/ijim.2025.61010",
+      "arxiv_id": "",
+      "title": "Reversal of Insulin Resistance and Metabolic Syndrome through an Integrative Ayurvedic Lifestyle Protocol: A Case Report",
+      "authors": [
+        "K. B",
+        "K. P"
+      ],
+      "venue": "International journal of Indian medicine",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This case demonstrates successful reversal of insulin resistance and metabolic imbalance through an integrative Ayurvedic lifestyle approach, warranting further validation in controlled clinical studies.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This case demonstrates successful reversal of insulin resistance and metabolic imbalance through an integrative Ayurvedic lifestyle approach, warranting further validation in controlled clinical studies.",
+      "rank": 160
+    },
+    {
+      "doi": "10.2337/dci25-0032",
+      "arxiv_id": "",
+      "title": "Analysis of Long-term Follow-up of a Randomized Clinical Trial With Departures From Assigned Treatments: Estimation of Metformin Effects on Diabetes and Its Complications in the Diabetes Prevention Program Outcomes Study.",
+      "authors": [
+        "W. Knowler",
+        "Qing Pan",
+        "Shiyu Shu",
+        "M. Tripputi",
+        "D. Dabelea",
+        "Sharon L Edelstein",
+        "S. E. Kahn",
+        "Shihchen Kuo",
+        "J.A. Luchsinger",
+        "Vallabh O. Shah",
+        "A. Wallia",
+        "M. Temprosa"
+      ],
+      "venue": "Diabetes Care",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Using statistical methods to evaluate whether use of metformin for prediabetes confers continued benefits after diabetes diagnosis did not substantially change the conclusions from those of the simpler intention-to-treat analysis that did not account for treatment changes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Using statistical methods to evaluate whether use of metformin for prediabetes confers continued benefits after diabetes diagnosis did not substantially change the conclusions from those of the simpler intention-to-treat analysis that did not account for treatment changes.",
+      "rank": 161
+    },
+    {
+      "doi": "10.2337/db20-836-p",
+      "arxiv_id": "",
+      "title": "836-P: The Effect of Intensive Lifestyle Modification Compared with Metformin Interventions on Fasting Blood Glucose: A Systematic Review and Meta-analysis of Randomized Controlled Trials",
+      "authors": [
+        "M. Kucab",
+        "Terence Boateng",
+        "Ian Young",
+        "E. Gucciardi"
+      ],
+      "venue": "Diabetes",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Although the analysis showed a statistical benefit of ILM compared to metformin, it is concluded that the clinical significance in FBG is comparable for supporting both interventions and appropriate cost-effective interventions should be considered to reduce the economic burden on society.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Although the analysis showed a statistical benefit of ILM compared to metformin, it is concluded that the clinical significance in FBG is comparable for supporting both interventions and appropriate cost-effective interventions should be considered to reduce the economic burden on society.",
+      "rank": 162
+    },
+    {
+      "doi": "10.31435/ijitss.1(49).2026.4584",
+      "arxiv_id": "",
+      "title": "INTERVENTIONS TARGETING IMPAIRED FASTING GLUCOSE: A COMPREHENSIVE REVIEW OF STRATEGIES TO PREVENT TYPE 2 DIABETES",
+      "authors": [
+        "Marzena Swojnóg",
+        "Zuzanna Dobrakowska",
+        "Radosław Swędrak",
+        "Jakub Klepacz"
+      ],
+      "venue": "International Journal of Innovative Technologies in Social Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "The analysis confirms that ILI, focused on diet, physical activity, and achieving moderate weight loss, remains the most efficacious long-term strategy, demonstrating superior and sustained T2D risk reduction.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.31435/ijitss.1(49).2026.4584",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The analysis confirms that ILI, focused on diet, physical activity, and achieving moderate weight loss, remains the most efficacious long-term strategy, demonstrating superior and sustained T2D risk reduction.",
+      "rank": 163
+    },
+    {
+      "doi": "10.2337/db22-908-p",
+      "arxiv_id": "",
+      "title": "908-P: Shared Decision-Making for Diabetes Prevention: 24-and 36-Month Results from the Prediabetes Informed Decision and Education (PRIDE) Trial",
+      "authors": [
+        "O. K. Duru",
+        "Tannaz Moin",
+        "Norman Turk",
+        "Chih-yun Tseng",
+        "K. Norris",
+        "C. Mangione"
+      ],
+      "venue": "Diabetes",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "An intervention with a single SDM session increased engagement in evidence-based diabetes prevention, resulting in weight loss that was largely maintained for three years, suggesting Prediabetes SDM is a promising approach to enhance prevention among patients at increased diabetes risk.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "An intervention with a single SDM session increased engagement in evidence-based diabetes prevention, resulting in weight loss that was largely maintained for three years, suggesting Prediabetes SDM is a promising approach to enhance prevention among patients at increased diabetes risk.",
+      "rank": 164
+    },
+    {
+      "doi": "10.2337/db25-300-or",
+      "arxiv_id": "",
+      "title": "300-OR: Mechanisms of Behavior Change in Diabetes Prevention—Evidence from a Randomized Trial in Women with a History of Gestational Diabetes",
+      "authors": [
+        "Lauren E. Wisk",
+        "T. Tibbe",
+        "Richard Maranon",
+        "Amanda Moss",
+        "Ruth Madievsky",
+        "Sandra Liu",
+        "Samuel C. Thomas",
+        "Jessica Page",
+        "Wendy M. Andrews",
+        "Jacob Krong",
+        "Carol M. Mangione",
+        "O. Kenrik Duru",
+        "Tannaz Moin"
+      ],
+      "venue": "Diabetes",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This study found that SDM bolsters women’s commitment to engage in diabetes prevention health behavior changes, which independently improves core outcomes and should be used to enhance engagement in evidence-based strategies to lower diabetes risk among high-risk groups.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study found that SDM bolsters women’s commitment to engage in diabetes prevention health behavior changes, which independently improves core outcomes and should be used to enhance engagement in evidence-based strategies to lower diabetes risk among high-risk groups.",
+      "rank": 165
+    },
+    {
+      "doi": "10.2337/db26-1640-p",
+      "arxiv_id": "",
+      "title": "1640-P: A Randomized Trial of Shared-Decision Making for Type 2 Diabetes Prevention in Women with a History of Gestational Diabetes",
+      "authors": [
+        "O. Duru",
+        "T. Tibbe",
+        "Lauren E. Wisk",
+        "Christina S. Han",
+        "Amanda Moss",
+        "Felicia Cheng",
+        "Janet S. Chon",
+        "Jacob Krong",
+        "Sandra Liu",
+        "Allyson Malone",
+        "Richard Maranon",
+        "Carol M. Mangione",
+        "Keith C. Norris",
+        "Jessica Page",
+        "Samuel C. Thomas",
+        "Tannaz Moin"
+      ],
+      "venue": "Diabetes",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The authors' RCT of a shared decision-making intervention for T2DM prevention for women with overweight/obesity, prediabetes and a history of gestational diabetes mellitus showed a non-significant trend toward achieving ≥5% weight, but SDM increased the likelihood of participation in evidence-based prevention options which hold promise to reduce diabetes risk.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The authors' RCT of a shared decision-making intervention for T2DM prevention for women with overweight/obesity, prediabetes and a history of gestational diabetes mellitus showed a non-significant trend toward achieving ≥5% weight, but SDM increased the likelihood of participation in evidence-based prevention options which hold promise to reduce diabetes risk.",
+      "rank": 166
     }
   ]
 }

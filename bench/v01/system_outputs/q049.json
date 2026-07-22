@@ -1,466 +1,4237 @@
 {
   "query_id": "q049",
   "query": "AI tutor K-12 teacher displacement employment evidence cross-country",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "social",
+  "source": "user",
+  "generated_at": "2026-07-22T11:32:28",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 200,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1038/s42256-019-0138-9",
+      "title": "From Local Explanations to Global Understanding with Explainable AI for Trees",
+      "authors": [
+        "Scott M. Lundberg"
+      ],
+      "venue": "Nature Machine Intelligence",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cda947be1cd8ecf46bb49d7",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.48550/arxiv.2303.04226",
+      "title": "A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT",
+      "authors": [
+        "Yihan Cao"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64094ee790e50fcafd476ca0",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1038/s41591-021-01614-0",
+      "title": "AI in Health and Medicine",
+      "authors": [
+        "Pranav Rajpurkar"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ebe0075244ab9dcb2be4da",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1038/s41591-022-01981-2",
+      "title": "Multimodal Biomedical AI",
+      "authors": [
+        "Julián N. Acosta"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6325a54090e50fcafd437426",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1145/3449287",
+      "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+      "authors": [
+        "Zana Buçinca"
+      ],
+      "venue": "ACM Conference on Computer Supported Cooperative Work and Social Computing",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60337bf691e011e54d039aee",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1093/qje/qjae044",
+      "title": "Generative Ai at Work",
+      "authors": [
+        "Erik Brynjolfsson"
+      ],
+      "venue": "QUARTERLY JOURNAL OF ECONOMICS",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644744fb71ac66d2cbf9b96e",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "",
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "authors": [
+        "Giulio Starace"
+      ],
+      "venue": "ICML 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67edeb7d163c01c8506437aa",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.48550/arxiv.2311.12983",
+      "title": "GAIA: a Benchmark for General AI Assistants.",
+      "authors": [
+        "Grégoire Mialon"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "655ebe60939a5f4082bb5c79",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1145/3555803",
+      "title": "Trustworthy AI: from Principles to Practices",
+      "authors": [
+        "Bo Li"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615bc2735244ab9dcbdbcde2",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1080/10447318.2022.2050543",
+      "title": "Trust in AI and Its Role in the Acceptance of AI Technologies",
+      "authors": [
+        "Hyesun Choung"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF HUMAN-COMPUTER INTERACTION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623d33145aee126c0f100e3a",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1016/j.inffus.2023.101896",
+      "title": "Connecting the Dots in Trustworthy Artificial Intelligence: from AI Principles, Ethics, and Key Requirements to Responsible AI Systems and Regulation",
+      "authors": [
+        "Natalia Diaz-Rodriguez"
+      ],
+      "venue": "INFORMATION FUSION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6456389bd68f896efacf69ac",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.48550/arxiv.2307.14334",
+      "title": "Towards Generalist Biomedical AI",
+      "authors": [
+        "Tao Tu"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64c1f06d3fda6d7f063cb366",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1145/3491102.3517582",
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "authors": [
+        "Tongshuang Wu"
+      ],
+      "venue": "PROCEEDINGS OF THE 2022 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI' 22)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615d13fe5244ab9dcb637a44",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1007/978-3-031-04083-2_2",
+      "title": "Explainable AI Methods - A Brief Overview",
+      "authors": [
+        "Andreas Holzinger"
+      ],
+      "venue": "XXAI - BEYOND EXPLAINABLE AI International Workshop, Held in Conjunction with ICML 2020, July 18, 2020, Vienna, Austria, Revised and Extended Papers",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e25fc5aee126c0f7b0544",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1145/3448250",
+      "title": "Deep Learning for AI",
+      "authors": [
+        "Yoshua Bengio"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60f6a2de5244ab9dcbcd920c",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1017/9781108936040.022",
+      "title": "Ethics Guidelines for Trustworthy AI",
+      "authors": [
+        "Michel Cannarsa"
+      ],
+      "venue": "The Cambridge Handbook of Lawyering in the Digital Age",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca0d9b5244ab9dcbbe8273",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.2307/j.ctv1ghv45t",
+      "title": "The Atlas of AI",
+      "authors": [
+        "KATE CRAWFORD"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a4c00dd68f896efab5ac18",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1145/3411764.3445377",
+      "title": "Engaging Teachers to Co-Design Integrated AI Curriculum for K-12 Classrooms",
+      "authors": [
+        "Phoebe Lin"
+      ],
+      "venue": "CHI '21 PROCEEDINGS OF THE 2021 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f6c6fe891e0119671e858cd",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
       "doi": "10.1093/pnasnexus/pgae191",
       "title": "The impact of generative artificial intelligence on socioeconomic inequalities and policy making",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Valerio Capraro",
+        "Austin Lentsch",
+        "Daron Acemoğlu",
+        "Selin Akgün",
+        "Aisel Akhmedova",
+        "Ennio Bilancini",
+        "Jean‐François Bonnefon",
+        "Pablo Brañas‐Garza",
+        "Luigi Butera",
+        "Karen M. Douglas",
+        "Jim A. C. Everett",
+        "Gerd Gigerenzer",
+        "Christine Greenhow",
+        "Daniel A. Hashimoto",
+        "Julianne Holt‐Lunstad",
+        "Jolanda Jetten",
+        "Simon Johnson",
+        "Werner H. Kunz",
+        "Chiara Longoni",
+        "Pete Lunn",
+        "Simone Natale",
+        "Stefanie Paluch",
+        "Iyad Rahwan",
+        "Neil Selwyn",
+        "Vivek Singh",
+        "Siddharth Suri",
+        "Jennifer Sutcliffe",
+        "Joe Tomlinson",
+        "Sander van der Linden",
+        "Paul A. M. Van Lange",
+        "Friederike Wall",
+        "Jay Joseph Van Bavel",
+        "Riccardo Viale"
+      ],
       "venue": "PNAS Nexus",
-      "citation_count": 300,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 306,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://academic.oup.com/pnasnexus/article-pdf/3/6/pgae191/58184311/pgae191.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 19
     },
     {
-      "rank": 2,
-      "doi": "10.1145/3375627.3375804",
-      "title": "What's Next for AI Ethics, Policy, and Governance? A Global Overview",
+      "doi": "10.1016/j.labeco.2004.02.010",
+      "title": "Cross-country differences in self-employment rates: the role of institutions",
+      "authors": [
+        "Torrini, Roberto"
+      ],
+      "venue": "Labour Economics",
+      "year": 2005,
+      "cited_by_count": 174,
+      "reference_count": 43,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2020,
-      "venue": "Proceedings of the AAAI/ACM Conference on AI Ethics and Society",
-      "citation_count": 170,
-      "engines_found_in": [
-        "openalex"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 20
     },
     {
-      "rank": 3,
+      "doi": "10.1007/s10639-026-14030-z",
+      "title": "Beyond Tutoring: a Child-Centered AI Framework for Embodied Construction in Culturally-Grounded Steam Education",
+      "authors": [
+        "Wuwen Zhang"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a09b3b80a96f8c83cfa0930",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1007/s10758-025-09938-3",
+      "title": "Assessing Computational Thinking Skills in K–12 Education: A Systematic Review",
+      "authors": [
+        "Yimei Zhang"
+      ],
+      "venue": "Technology, Knowledge and Learning",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69ed33d49be8eb7c4b8d2172",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1007/s10763-025-10590-7",
+      "title": "Mathematical Argumentative Writing in K–12 Education: A Systematic Literature Review",
+      "authors": [
+        "Timothy H. Lehmann"
+      ],
+      "venue": "International Journal of Science and Mathematics Education",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68ac0825163c01c850a25ff8",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1145/3613905.3651122",
+      "title": "Empowering Personalized Learning Through a Conversation-based Tutoring System with Student Modeling",
+      "authors": [
+        "Minju Park"
+      ],
+      "venue": "EXTENDED ABSTRACTS OF THE 2024 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, CHI 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65fce64113fb2c6cf68eb45a",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.18653/v1/2024.emnlp-main.37",
+      "title": "Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems",
+      "authors": [
+        "Zhengyuan Liu"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "661743ea13fb2c6cf6439e2c",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.18653/v1/2023.findings-emnlp.372",
+      "title": "MathDial: A Dialogue Tutoring Dataset with Rich Pedagogical Properties Grounded in Math Reasoning Problems.",
+      "authors": [
+        "Jakub Macina"
+      ],
+      "venue": "EMNLP 2023",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "646edc9cd68f896efaddaa64",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1186/s40561-023-00260-y",
+      "title": "Artificial Intelligence in Intelligent Tutoring Systems Toward Sustainable Education: a Systematic Review.",
+      "authors": [
+        "Chien-Chang Lin"
+      ],
+      "venue": "Smart Learning Environments",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "650960b33fda6d7f0678fa59",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1007/978-3-319-17461-7_31",
+      "title": "Blended Learning Research in Higher Education and K-12 Settings",
+      "authors": [
+        "Lisa R. Halverson"
+      ],
+      "venue": "Learning, Design, and Technology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621867df5aee126c0faa6ef2",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1016/j.caeai.2023.100131",
+      "title": "Ethical Principles for Artificial Intelligence in K-12 Education",
+      "authors": [
+        "Catherine Adams"
+      ],
+      "venue": "COMPUTERS AND EDUCATION ARTIFICIAL INTELLIGENCE",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63e8807d90e50fcafd6bb714",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1186/s40594-023-00418-7",
+      "title": "AI Literacy in K-12: a Systematic Literature Review",
+      "authors": [
+        "Lorena Casal-Otero"
+      ],
+      "venue": "International Journal of STEM Education",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "647f1900d68f896efa1bc62b",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.46328/ijonse.161",
+      "title": "The Impact of COVID-19 Pandemic on Primary, Secondary, and K-12 Education: A Systematic Review",
+      "authors": [
+        "Georgios Lampropoulos"
+      ],
+      "venue": "International Journal on Studies in Education",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657944f4939a5f408222bec2",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1109/cvprw56347.2022.00398",
+      "title": "Pose Tutor: an Explainable System for Pose Correction in the Wild",
+      "authors": [
+        "Bhat Dittakavi"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION WORKSHOPS, CVPRW 2022",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "632832ff90e50fcafdbf8cd0",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.3102/0013189x211057904",
+      "title": "A Revaluation of Computational Thinking in K–12 Education: Moving Toward Computational Literacies",
+      "authors": [
+        "Yasmin B. Kafai"
+      ],
+      "venue": "EDUCATIONAL RESEARCHER",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c90af15244ab9dcb37ef3e",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1109/access.2022.3179356",
+      "title": "Artificial Intelligence Applications in K-12 Education: A Systematic Literature Review",
+      "authors": [
+        "M. O. S. T. A. F. A. ZAFARI"
+      ],
+      "venue": "IEEE ACCESS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d16da45aee126c0fd50f13",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1016/j.ijer.2022.102008",
+      "title": "Computer Science Education and K-12 Students’ Computational Thinking: A Systematic Review",
+      "authors": [
+        "Sang Joon Lee"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF EDUCATIONAL RESEARCH",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62f6038990e50fcafdf979eb",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1016/j.artint.2021.103503",
+      "title": "Toward Personalized XAI: A Case Study in Intelligent Tutoring Systems",
+      "authors": [
+        "Cristina Conati"
+      ],
+      "venue": "ARTIFICIAL INTELLIGENCE",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5df0be543a55ac84bd7f4929",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1145/3408877.3432526",
+      "title": "A Tutoring System to Learn Code Refactoring",
+      "authors": [
+        "Hieke Keuning"
+      ],
+      "venue": "Proceedings of the 52nd ACM Technical Symposium on Computer Science Education",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60702e9591e01191cb6f1cd1",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1145/3411764.3445283",
+      "title": "AdapTutAR: an Adaptive Tutoring System for Machine Tasks in Augmented Reality",
+      "authors": [
+        "Gaoping Huang"
+      ],
+      "venue": "CHI '21 PROCEEDINGS OF THE 2021 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60a4e58991e011f4291ce301",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1111/bjet.13114",
+      "title": "Learning with Technology During Emergencies: A Systematic Review of K-12 Education.",
+      "authors": [
+        "Helen Crompton"
+      ],
+      "venue": "British Journal of Educational Technology",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "610132785244ab9dcbece35a",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1186/s40594-021-00294-z",
+      "title": "Equity-Oriented Conceptual Framework for K-12 STEM Literacy",
+      "authors": [
+        "Jackson  Christa"
+      ],
+      "venue": "International Journal of STEM Education",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad761c45e57ce9e7c9ab",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1007/s11528-021-00637-1",
+      "title": "A Holistic Approach to the Design of Artificial Intelligence (AI) Education for K-12 Schools",
+      "authors": [
+        "Chiu  Thomas K. F."
+      ],
+      "venue": "TechTrends",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bafcb1c45e57ce9fd86bf",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1108/jrit-10-2020-0055",
+      "title": "K-12 Teachers’ Remote Teaching Self-Efficacy During the Pandemic",
+      "authors": [
+        "Victoria Cardullo"
+      ],
+      "venue": "Journal of Research in Innovative Teaching & Learning",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac52755aee126c0f01be3a",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.3389/frai.2022.832736",
+      "title": "Artificial Intelligence and Employment: New Cross-Country Evidence",
+      "authors": [
+        "Georgieff, Alexandre",
+        "Hyee, Raphaela"
+      ],
+      "venue": "Frontiers in Artificial Intelligence",
+      "year": null,
+      "cited_by_count": 101,
+      "reference_count": 38,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Recent years have seen impressive advances in artificial intelligence (AI) and this has stoked renewed concern about the impact of technological progress on the labor market, including on worker displacement. This paper looks at the possible links between AI and employment in a cross-country context. It adapts the <jats:italic>AI occupational impact measure</jats:italic> developed by Felten, Raj and Seamans—an indicator measuring the degree to which occupations rely on abilities in which",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1111/joes.12422",
+      "title": "A review on the economics of artificial intelligence",
+      "authors": [
+        "Yingying Lu",
+        "Yixiao Zhou"
+      ],
+      "venue": "Journal of Economic Surveys",
+      "year": 2021,
+      "cited_by_count": 98,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://openresearch-repository.anu.edu.au/bitstreams/22561f47-bdc7-44de-b8c0-cf1a37539b24/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 44
+    },
+    {
       "doi": "10.9734/ajarr/2024/v18i1596",
       "title": "Proliferation of AI Tools: A Multifaceted Evaluation of User Perceptions and Emerging Trend",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Yewande Alice Marquis",
+        "Tunbosun Oyewale Oladoyinbo",
+        "Samuel Oladiipo Olabanji",
+        "Oluwaseun Oladeji Olaniyi",
+        "Samson Abidemi Ajayi"
+      ],
       "venue": "Asian Journal of Advanced Research and Reports",
-      "citation_count": 79,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 79,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journalajarr.com/index.php/AJARR/article/download/596/1184",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 45
     },
     {
-      "rank": 4,
+      "doi": "10.1016/j.econedurev.2010.12.008",
+      "title": "Cross-country evidence on teacher performance pay",
+      "authors": [
+        "Woessmann, Ludger"
+      ],
+      "venue": "Economics of Education Review",
+      "year": 2011,
+      "cited_by_count": 77,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "",
+      "title": "The Algorithmic Divide and Equality in the Age of Artificial Intelligence",
+      "authors": [
+        "Peter K. Yu"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 50,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://scholarship.law.tamu.edu/facscholar/1439",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.5089/9798400268588.001",
+      "title": "The Economic Impacts and the Regulation of AI: A Review of the Academic Literature and Policy Actions",
+      "authors": [
+        "Mariarosaria Comunale",
+        "Andrea Manera"
+      ],
+      "venue": "IMF Working Paper",
+      "year": 2024,
+      "cited_by_count": 46,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/001/2024/065/001.2024.issue-065-en.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.64818/pijmess.3107.4626.0001",
+      "title": "Future of Higher Education through Technology Prediction and Forecasting",
+      "authors": [
+        "P. S. Aithal",
+        "N. Suthanthira Vanitha",
+        "Shubhrajyotsna Aithal"
+      ],
+      "venue": "Poornaprajna International Journal of Management Education & Social Science (PIJMESS)",
+      "year": 2024,
+      "cited_by_count": 38,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://poornaprajnapublication.com/index.php/pijmess/article/download/2/2/272",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 49
+    },
+    {
       "doi": "10.61093/bel.8(2).107-127.2024",
       "title": "Clarifying Ethical Dilemmas in Sharpening Students’ Artificial Intelligence Proficiency: Dispelling Myths About Using AI Tools in Higher Education",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Bahaudin G. Mujtaba"
+      ],
       "venue": "Business Ethics and Leadership",
-      "citation_count": 34,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://armgpublishing.com/wp-content/uploads/2024/07/BEL_8_2_2024_8.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 50
     },
     {
-      "rank": 5,
+      "doi": "10.22367/jem.2024.46.19",
+      "title": "Leveraging artificial intelligence to meet the sustainable development goals",
+      "authors": [
+        "Ewa Ziemba",
+        "Cong Doanh Duong",
+        "Joanna Ejdys",
+        "María Alejandra González-Pérez",
+        "Universidad EAFIT, Colombia",
+        "Rūta Kazlauskaitė",
+        "Paweł Korzyński",
+        "Grzegorz Mazurek",
+        "Joanna Paliszkiewicz",
+        "Jelena Stankevičienė",
+        "Krzysztof Wach"
+      ],
+      "venue": "Journal of Economics and Management",
+      "year": 2024,
+      "cited_by_count": 31,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.22367/jem.2024.46.19",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1108/tldr-10-2025-0054",
+      "title": "The Effects of Peer Tutoring on the Acquisition of New Operants for Tutors, Tutees and Observers",
+      "authors": [
+        "Yifei Sun"
+      ],
+      "venue": "TIZARD LEARNING DISABILITY REVIEW",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08b249be8eb7c4b4d9048",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.55104/frdc_0219",
+      "title": "A Responsabilidade Civil Do Tutor",
+      "authors": [
+        "Agerson Tabosa Pinto"
+      ],
+      "venue": "Fundamentos romanísticos del Derecho contemporáneo",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d88897dabfae2eeea29646",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1145/3627673.3679665",
+      "title": "Empowering Private Tutoring by Chaining Large Language Models",
+      "authors": [
+        "Yulin Chen"
+      ],
+      "venue": "PROCEEDINGS OF THE 33RD ACM INTERNATIONAL CONFERENCE ON INFORMATION AND KNOWLEDGE MANAGEMENT, CIKM 2024",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6507b3e03fda6d7f06799a2d",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.18653/v1/2023.eacl-main.173",
+      "title": "Opportunities and Challenges in Neural Dialog Tutoring.",
+      "authors": [
+        "Jakub Macina"
+      ],
+      "venue": "17TH CONFERENCE OF THE EUROPEAN CHAPTER OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, EACL 2023",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63d340e890e50fcafd9106d3",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.1186/s41239-023-00434-1",
+      "title": "Students’ Perceptions of Using ChatGPT in a Physics Class As a Virtual Tutor",
+      "authors": [
+        "Lu Ding"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65852e23939a5f40824af972",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1145/3544548.3580777",
+      "title": "Uncovering Privacy and Security Challenges in K-12 Schools",
+      "authors": [
+        "Jake Chanenson"
+      ],
+      "venue": "PROCEEDINGS OF THE 2023 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, CHI 2023",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644a34be582c1376bbccc4ca",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.1007/s40593-023-00358-x",
+      "title": "K-12 Education in the Age of AI: A Call to Action for K-12 AI Literacy",
+      "authors": [
+        "Ning Wang"
+      ],
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64d4e4e23fda6d7f060dd279",
+      "matched_phrase": "K-12",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.1109/access.2022.3166261",
+      "title": "A Parametrized Comparative Analysis of Performance Between Proposed Adaptive and Personalized Tutoring System “seis Tutor” with Existing Online Tutoring System",
+      "authors": [
+        "Ninni Singh"
+      ],
+      "venue": "IEEE Access",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdcf85aee126c0f5163b1",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1080/13540602.2021.2019700",
+      "title": "Teachers As Tutors, and Tutors As Teachers: Blurring Professional Boundaries in Changing Eras",
+      "authors": [
+        "Mark Bray"
+      ],
+      "venue": "TEACHERS AND TEACHING",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e31615aee126c0fa0f24c",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1080/10494820.2019.1583674",
+      "title": "Identifying and Exploring the Effects of Different Types of Tutor Questions in Individual Online Synchronous Tutoring in Mathematics",
+      "authors": [
+        "Stefan Hrastinski"
+      ],
+      "venue": "INTERACTIVE LEARNING ENVIRONMENTS",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d1c3ced107d4c6463d07",
+      "matched_phrase": "tutor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
       "doi": "10.58429/pgjsrt.v2n3a152",
       "title": "Converging perspectives: Assessing AI readiness and utilization in Philippine higher education",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Lynard Bobby L. Asirit",
+        "Jocelyn H. Hua"
+      ],
       "venue": "Polaris Global Journal of Scholarly Research and Trends",
-      "citation_count": 28,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 28,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://pgjsrt.com/pgjsrt/index.php/qaj/article/download/152/76",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 62
     },
     {
-      "rank": 6,
+      "doi": "10.17161/foec.v40i1.6863",
+      "title": "School Violence and Disruption Revisited: Equity and Safety in the School House",
+      "authors": [
+        "Matthew J. Mayer",
+        "Peter E. Leone"
+      ],
+      "venue": "Focus on Exceptional Children",
+      "year": 2007,
+      "cited_by_count": 28,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://journals.ku.edu/focusXchild/article/download/6863/6217",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 63
+    },
+    {
       "doi": "10.1080/0144929x.2025.2500451",
       "title": "Bridging the gap: inequalities that divide those who can and cannot create sustainable outcomes with AI",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Teresa Hammerschmidt",
+        "Katharina Stolz",
+        "Oliver Posegga"
+      ],
       "venue": "Behaviour and Information Technology",
-      "citation_count": 27,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 27,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/0144929X.2025.2500451?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 64
     },
     {
-      "rank": 7,
+      "doi": "10.3390/ai6080190",
+      "title": "The Impact of Artificial Intelligence on Modern Society",
+      "authors": [
+        "Pedro Ramos Brandão"
+      ],
+      "venue": "AI",
+      "year": 2025,
+      "cited_by_count": 25,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2673-2688/6/8/190/pdf?version=1755411699",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.1109/taffc.2023.3278707",
+      "title": "Automatic Context-Aware Inference of Engagement in HMI: A Survey",
+      "authors": [
+        "Hanan Salam",
+        "Oya Çeliktutan",
+        "Hatice Güneş",
+        "Mohamed Chétouani"
+      ],
+      "venue": "IEEE Transactions on Affective Computing",
+      "year": 2023,
+      "cited_by_count": 25,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/5165369/5520654/10136823.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 66
+    },
+    {
       "doi": "10.3390/systems13080664",
       "title": "From Perception to Practice: Artificial Intelligence as a Pathway to Enhancing Digital Literacy in Higher Education Teaching",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Zhili Zuo",
+        "Yanqi Luo",
+        "Shiyu Yan",
+        "Lisheng Jiang"
+      ],
       "venue": "Systems",
-      "citation_count": 19,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 20,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2079-8954/13/8/664/pdf?version=1754449639",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 67
     },
     {
-      "rank": 8,
       "doi": "10.1007/s10639-025-13585-7",
       "title": "Are university teachers ready for generative artificial intelligence? Unpacking faculty anxiety in the ChatGPT era",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Domingo Verano Tacoronte",
+        "Alicia Bolívar-Cruz",
+        "Silvia Sosa Cabrera"
+      ],
       "venue": "Education and Information Technologies",
-      "citation_count": 18,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 18,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-025-13585-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 68
     },
     {
-      "rank": 9,
+      "doi": "10.1007/bf00889157",
+      "title": "Family organization and the wage labor transition in a Tamang community of Nepal",
+      "authors": [
+        "Thomas Fricke",
+        "Arland Thornton",
+        "Dilli Ram Dahal"
+      ],
+      "venue": "Human Ecology",
+      "year": 1990,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hdl.handle.net/2027.42/44484",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.48161/qaj.v5n3a1698",
+      "title": "Innovating Human Capital Development: The Role of Education, Law, and Economics Through Digital Transformation",
+      "authors": [
+        "Sardor Mamanazarov",
+        "Maksuda Khajiyeva",
+        "Дилфуза Абдуллаева",
+        "Govkherjan Yuldasheva",
+        "Roza Azkhodjaeva",
+        "Abdurashid Pirnazarov",
+        "Nilufar Xamedova"
+      ],
+      "venue": "Qubahan Academic Journal",
+      "year": 2025,
+      "cited_by_count": 14,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journal.qubahan.com/index.php/qaj/article/download/1698/426",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
       "doi": "10.1787/c2c1d276-en",
       "title": "Artificial intelligence and employment",
-      "abstract": "",
-      "year": 2021,
+      "authors": [],
       "venue": "OECD Social, Employment and Migration Working Papers",
-      "citation_count": 13,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 13,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report"
+      "rank": 71
     },
     {
-      "rank": 10,
       "doi": "10.1787/34a2c306-en",
       "title": "Working during COVID-19",
-      "abstract": "",
-      "year": 2020,
+      "authors": [],
       "venue": "OECD Social, Employment and Migration Working Papers",
-      "citation_count": 12,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 12,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report"
+      "rank": 72
     },
     {
-      "rank": 11,
+      "doi": "10.3390/admsci14100253",
+      "title": "Why Do Swiss HR Departments Dislike Algorithms in Their Recruitment Process? An Empirical Analysis",
+      "authors": [
+        "Guillaume Revillod"
+      ],
+      "venue": "Administrative Sciences",
+      "year": 2024,
+      "cited_by_count": 10,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-3387/14/10/253/pdf?version=1728482567",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.1109/tts.2024.3476041",
+      "title": "The Future of Work in the Age of Automation: Proceedings of a Workshop on Norbert Wiener’s 21st Century Legacy",
+      "authors": [
+        "Heather A. Love",
+        "Greg Adamson",
+        "Mallory James",
+        "Jason Lajoie",
+        "Iven Mareels",
+        "Zach Pearl",
+        "Daniel Schiff",
+        "Ketra Schmitt",
+        "Thirumala Arohi",
+        "John Buchanan",
+        "Stéphanie Camaréna",
+        "Marten Kaevats",
+        "Jeremy Reynolds",
+        "Pedro H. Albuquerque",
+        "John C. Havens",
+        "Davis Chacón‐Hurtado",
+        "Sucheta Lahiri",
+        "Ayşe Öcal",
+        "Alexi Orchard",
+        "Michael Rigby",
+        "Rebecca Sherlock",
+        "Victor Sundararaj",
+        "Qin Zhu"
+      ],
+      "venue": "IEEE Transactions on Technology and Society",
+      "year": 2024,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1109/tts.2024.3476041",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.3390/app15073886",
+      "title": "Transforming Education in the AI Era: A Technology–Organization–Environment Framework Inquiry into Public Discourse",
+      "authors": [
+        "Jinqiao Zhou",
+        "Hongfeng Zhang"
+      ],
+      "venue": "Applied Sciences",
+      "year": 2025,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-3417/15/7/3886/pdf?version=1743579616",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.21428/4b58ebd1.0e834dbb",
+      "title": "Algorithmic Bias and Its Implications: How to Maintain Ethics through AI Governance",
+      "authors": [
+        "Ruby Isley"
+      ],
+      "venue": "N Y U American Public Policy Review",
+      "year": 2022,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://nyuappr.pubpub.org/pub/61cuny79/download/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1371/journal.pmed.1003512",
+      "title": "Psychological distress, resettlement stress, and lower school engagement among Arabic-speaking refugee parents in Sydney, Australia: A cross-sectional cohort study",
+      "authors": [
+        "Jess Baker",
+        "Derrick Silove",
+        "Deserae Horswood",
+        "Afaf Al-Shammari",
+        "Mohammed Mohsin",
+        "Susan Rees",
+        "Valsamma Eapen"
+      ],
+      "venue": "PLoS Medicine",
+      "year": 2021,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1371/journal.pmed.1003512",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.5120/ijca2024923998",
+      "title": "The Impact of ChatGPT on Higher Education",
+      "authors": [
+        "Niraj Kumar",
+        "Aditya Bansal",
+        "A. Arpita",
+        "Monika Arya",
+        "Rashmi Shekhar"
+      ],
+      "venue": "International Journal of Computer Applications",
+      "year": 2024,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.5120/ijca2024923998",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
       "doi": "10.1016/j.caeai.2025.100402",
       "title": "A cross-country analysis of self-determination and continuance use intention of AI tools in business education: Does instructor support matter?",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Egena Ode",
+        "Rabake Nana",
+        "Irene O. Boro",
+        "Darius Ngutor Ikyanyon"
+      ],
       "venue": "Computers and Education Artificial Intelligence",
-      "citation_count": 7,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1016/j.caeai.2025.100402",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 79
     },
     {
-      "rank": 12,
+      "doi": "10.1080/13504850500358942",
+      "title": "Cross-country analysis of high employment-generating industries",
+      "authors": [
+        "Valadkhani, Abbas"
+      ],
+      "venue": "Applied Economics Letters",
+      "year": 2005,
+      "cited_by_count": 6,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.5089/9781484350393.001",
+      "title": "On the Impact of Structural Reforms on Output and Employment",
+      "authors": [
+        "Antoun de Almeida, Luiza",
+        "Balasundharam, Vybhavi"
+      ],
+      "venue": "IMF Working Papers",
+      "year": 2018,
+      "cited_by_count": 6,
+      "reference_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This paper analyzes the effects of selected structural reforms on output and employment in the short and medium term. It uses a comprehensive cross-country firm-level dataset covering both advanced and emerging market economies over the period 2003-2014. In line with previous studies, it finds that structural reforms have in general a positive impact on output and employment in the medium term. Furthermore, the paper also assesses whether the impact of structural reforms varies with firm",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1177/14779714251315288",
+      "title": "Upskilling and reskilling in the United Arab Emirates: Future-proofing careers with AI skills",
+      "authors": [
+        "David Santandreu Calonge",
+        "Firuz Kamalov",
+        "Pablo Medina Aguerrebere",
+        "Leisa Hassock",
+        "Linda Smail",
+        "Dima Yousef",
+        "Dimple R. Thadani",
+        "Theresa Kwong",
+        "Nadia Abdulla"
+      ],
+      "venue": "Journal of Adult and Continuing Education",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/14779714251315288?download=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.48009/2_iis_2024_104",
+      "title": "ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING: USAGE AND IMPACTS ON FUTURE HIGHER EDUCATION",
+      "authors": [],
+      "venue": "Issues in Information Systems",
+      "year": 2024,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.48009/2_iis_2024_104",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.1017/dap.2025.10011",
+      "title": "The future of learning or the future of dividing? Exploring the impact of generative artificial intelligence on higher education",
+      "authors": [
+        "Wilson Wong",
+        "Angela Aristidou",
+        "Konstantin Felix Scheuermann"
+      ],
+      "venue": "Data & Policy",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D280C279FFEC3A78662F3DA86A3E4DA0/S2632324925100114a.pdf/div-class-title-the-future-of-learning-or-the-future-of-dividing-exploring-the-impact-of-general-artificial-intelligence-on-higher-education-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.26803/ijlter.23.11.8",
+      "title": "Integrating 4IR Technologies into Higher Education in South Africa: Opportunities, Challenges, and Strategies",
+      "authors": [
+        "Olutoyin Olaitan",
+        "Smitha Vijayalekshmi",
+        "Divya Vinoth Kumar"
+      ],
+      "venue": "International Journal of Learning Teaching and Educational Research",
+      "year": 2024,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.ijlter.org/index.php/ijlter/article/download/10920/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.3390/su151310297",
+      "title": "Characterisation of Youth Entrepreneurship in Medellín-Colombia Using Machine Learning",
+      "authors": [
+        "Adelaida Ojeda-Beltrán",
+        "Andrés Solano-Barliza",
+        "Wilson Arrubla-Hoyos",
+        "Danny Daniel Ortega",
+        "Dora Cama-Pinto",
+        "Juan A. Holgado-Terriza",
+        "Miguel Damas",
+        "Gilberto Toscano-Vanegas",
+        "Alejandro Cama-Pinto"
+      ],
+      "venue": "Sustainability",
+      "year": 2023,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/15/13/10297/pdf?version=1688029680",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1787/5k913gcn5bf3-en",
+      "title": "The Role of Institutions and Firm Heterogeneity for Labour Market Adjustment",
+      "authors": [],
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": 2012,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1145/3761820",
+      "title": "Leveraging Generative AI for Public Service Innovation: A Path to Smart Government in Indonesia",
+      "authors": [
+        "Andry Alamsyah",
+        "Hary Aryfiyanto"
+      ],
+      "venue": "Digital Government Research and Practice",
+      "year": 2025,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3761820",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.7433/s123.2024.06",
+      "title": "Artificial intelligence in personal development from cradle to grave: a comprehensive review of HRD literature",
+      "authors": [
+        "Francesco Laviola",
+        "Nicola Cucari",
+        "HARRY NOVIC"
+      ],
+      "venue": "Sinergie Italian Journal of Management",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://ojs.sijm.it/index.php/sinergie/article/download/1826/963/5705",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.7916/d8-qfyk-kp13",
+      "title": "Exploring the use of Artificial Intelligent Systems in STEM Classrooms",
+      "authors": [
+        "Emmanuel A. Kornyo"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.7916/d8-qfyk-kp13",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 90
+    },
+    {
       "doi": "10.1596/1813-9450-2102",
       "title": "Self-Employment and Labor Turnover: Cross-Country Evidence",
-      "abstract": "",
-      "year": 1999,
+      "authors": [
+        "Maloney, William F."
+      ],
       "venue": "Policy Research Working Papers",
-      "citation_count": 4,
-      "engines_found_in": [
+      "year": 1999,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book"
+      "rank": 91
     },
     {
-      "rank": 13,
-      "doi": "10.62486/latia2025249",
-      "title": "AI Integration in Education: A Correlational Study on Attitudes, Perceptions and Anxiety Among Pre-Service Teachers",
-      "abstract": "",
+      "doi": "10.1016/j.tate.2025.105253",
+      "title": "Teachers’ perceptions of value-sensitive AI in education: A case study of AI tutor",
+      "authors": [
+        "Shen, Yuan",
+        "Le, Huixiao",
+        "Wang, Zhanghan",
+        "Wang, Qiong"
+      ],
+      "venue": "Teaching and Teacher Education",
       "year": 2025,
-      "venue": "LatIA",
-      "citation_count": 3,
-      "engines_found_in": [
+      "cited_by_count": 4,
+      "reference_count": 67,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1007/s42979-022-01538-7",
+      "title": "Think Twice: First for Tech, Then for Ed",
+      "authors": [
+        "Panos Photopoulos",
+        "Dimos Triantis"
+      ],
+      "venue": "SN Computer Science",
+      "year": 2022,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s42979-022-01538-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 93
     },
     {
-      "rank": 14,
+      "doi": "10.54394/djzo2716",
+      "title": "Cross country review",
+      "authors": [
+        "O'Higgins, Niall",
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "<jats:p>This Brief reviews and compares the findings of the Briefs on the seven countries - Ethiopia, Ghana, Kenya, Nigeria, Rwanda, Senegal and Uganda summarising the current situation of youth employment, the school-to-work transition (SWT) through the lens of the ILO’s SWT indicators. It also discusses the main features of youth employment policy initiatives in the countries and some of the main issues and challenges identified in the Briefs.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1002/soej.12373",
+      "title": "Cross‐Country Evidence on Labor Market Institutions and Young Adult Employment through the Financial Crisis",
+      "authors": [
+        "Clemens, Jeffrey"
+      ],
+      "venue": "Southern Economic Journal",
+      "year": 2019,
+      "cited_by_count": 3,
+      "reference_count": 56,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>I develop and analyze a set of cross‐country facts regarding employment and wage setting institutions over the decade surrounding the 2008 financial crisis. Among long‐industrialized countries, young adult employment declined more than prime age employment over this time period. I show that differences in countries' wage setting institutions strongly predict variations in the magnitude of declines in young adult employment. Both unconditionally and conditional on changes in macroeconomic",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1787/ebc2debe-en",
+      "title": "Digital technology diffusion in the age of AI",
+      "authors": [
+        "Calvino, Flavio",
+        "Costa, Hélder",
+        "Haerle, Daniel"
+      ],
+      "venue": "OECD Science, Technology and Industry Working Papers",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1787/5kmbqvstc09x-en",
+      "title": "Institutional Determinants of Worker Flows",
+      "authors": [],
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": 2010,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.3390/educsci15111455",
+      "title": "Toward a Coherent AI Literacy Pathway in Technology Education: Bibliometric Synthesis and Cross-Sectional Assessment",
+      "authors": [
+        "Denis Rupnik",
+        "Stanislav Avsec"
+      ],
+      "venue": "Education Sciences",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7102/15/11/1455/pdf?version=1761994629",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.62486/latia2025249",
+      "title": "AI Integration in Education: A Correlational Study on Attitudes, Perceptions and Anxiety Among Pre-Service Teachers",
+      "authors": [
+        "Aprillette C. Devanadera"
+      ],
+      "venue": "LatIA",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://latia.ageditor.uy/index.php/latia/article/download/249/317",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.62486/latia2025246",
+      "title": "Artificial Intelligence as the Call of the Times: Attitudes of Higher Education Teachers across Gender, Generational Cohorts, and Length of Service in the Context of Education 5,0",
+      "authors": [
+        "Alexandhrea Hiedie Dumagay",
+        "Arayana F. Kunting",
+        "Ericson O. Alieto",
+        "Kharylle Schyaneid T. Kenoh",
+        "Rochard T. Tarroza",
+        "Richard M. Rillo",
+        "Eduard M. Riparip",
+        "Lesly Ann C. Jacinto",
+        "Lovelle Diocess S. Lauzon",
+        "Edison B. Estigoy",
+        "Christopher Iris Francisco",
+        "Dolores O. San Juan"
+      ],
+      "venue": "LatIA",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://latia.ageditor.uy/index.php/latia/article/download/246/320",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1136/bmjopen-2024-091355",
+      "title": "Sexual health and healthy relationships for Further Education (SaFE) in Wales and England: results from a pilot cluster randomised controlled trial",
+      "authors": [
+        "Rhys Williams‐Thomas",
+        "Julia Townson",
+        "Ruth Lewis",
+        "Lauren Copeland",
+        "Jason Madan",
+        "G. J. Meléndez‐Torres",
+        "Fiona Lugg‐Widger",
+        "Philip Pallmann",
+        "Muhammad Riaz",
+        "Rachel Brown",
+        "Chris Bonell",
+        "Gemma Morgan",
+        "James White",
+        "Honor Young"
+      ],
+      "venue": "BMJ Open",
+      "year": 2024,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://bmjopen.bmj.com/content/bmjopen/14/12/e091355.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "",
+      "title": "L1 Literacy And Its Implications For Leslla Immigrant Women In Canada",
+      "authors": [
+        "Theresa Wall"
+      ],
+      "venue": "Digital Commons - Hamline (Hamline University)",
+      "year": 2017,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://digitalcommons.hamline.edu/hse_all/4400",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.33182/ml.v5i1.59",
+      "title": "Cross-country Employment Propensity of Finnish Migrants: Evidence from Linked  Register Data",
+      "authors": [
+        "Saarela, Jan",
+        "Finnäs, Fjalar"
+      ],
+      "venue": "MIGRATION LETTERS",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This paper explores how individual employment propensity interrelates across countries and time, using data that link population registers from Sweden and Finland. Migrants are observed before emigration, after emigration, and in a follow-up in cases both where they were still living in the host country and if they had return migrated. The interrelation is found to be strong, suggesting that migrants’ employment problems need not necessarily be due to failures in integration policies or ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1787/326844f0-en",
+      "title": "Fertility, employment and family policy",
+      "authors": [],
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.2139/ssrn.2161231",
+      "title": "Do Firms Demand Temporary Workers When They Face Workload Fluctuation? Cross-Country Firm-Level Evidence on the Conditioning Effect of Employment Protection",
+      "authors": [
+        "Dräger, Vanessa",
+        "Marx, Paul"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.26481/dis.20191031mf",
+      "title": "Skill matching and outcomes",
+      "authors": [
+        "Fregin"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.51867/aqssr.2.2.9",
+      "title": "Digital Learning in the Age of Artificial Intelligence: Insights from Selected Higher Learning Institutions in Tanzania",
+      "authors": [
+        "Marystela Baynit",
+        "Cosmas Mnyanyi",
+        "Mohamed Salum Msoroka"
+      ],
+      "venue": "African Quarterly Social Science Review",
+      "year": 2025,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://quarterlyreview.net/ojs/index.php/aqssr/article/download/95/65",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.32674/96t36095",
+      "title": "Artificial intelligence for inclusive and sustainable international education",
+      "authors": [
+        "Benjamin Duke"
+      ],
+      "venue": "Journal of International Students",
+      "year": 2026,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.ojed.org/jis/article/download/8713/3807",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.53555/kuey.v30i6.6013",
+      "title": "Artificial Intelligence: A Double-Edged Sword For The Education And Environment Of The Global Market",
+      "authors": [
+        "Qanita Imtiaz"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://kuey.net/index.php/kuey/article/download/6013/4330",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 109
+    },
+    {
       "doi": "10.2139/ssrn.5303111",
       "title": "Generative AI as a Global Productivity Equalizer: Evidence from Cross-Country Experiments",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Bjerkan-Wade, Benjamin"
+      ],
       "venue": "",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 110
     },
     {
-      "rank": 15,
+      "doi": "10.4337/9781782548072.00017",
+      "title": "Growth in forced displacement: cross-country, sub-national and household evidence on potential determinants",
+      "authors": [
+        "Ibáñez, Ana María"
+      ],
+      "venue": "International Handbook on Migration and Economic Development",
+      "year": 2014,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.21511/pmf.14(4).2025.05",
+      "title": "Can AI readiness and strong institutions curb AML risk? Cross-country evidence from panel data",
+      "authors": [
+        "Kirichok, Oxana",
+        "Hurochkina, Viktoriia",
+        "Zhanseitova, Gulnara",
+        "Dudchenko, Viktoria",
+        "Rubanov, Pavlo",
+        "Babaiev, Denys",
+        "Lyeonov, Serhiy"
+      ],
+      "venue": "Public and Municipal Finance",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Type of the article: Research ArticleAbstractAs emphasized by the FATF, IMF, and World Bank, technological readiness and institutional quality are increasingly decisive in shaping AML effectiveness. By mitigating money-laundering vulnerabilities, strengthening AI readiness, and enhancing institutional quality, tax collection efficiency can be improved and fiscal leakages reduced. These improvements expand the fiscal space available for national budgets, strengthening the financial founda",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1787/73c095f6-en",
+      "title": "AI and Employment",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.5089/9781451860474.001.a001",
+      "title": "Inequality, Poverty, and Growth: Cross-Country Evidence",
+      "authors": [
+        "Iradian, Garbis"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1787/888933487252",
+      "title": "Figure 2.5. Cross-country relationship between female employment rates and total fertility rates (1980 and 2014)",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.5089/9781451846676.001.a001",
+      "title": "When is Growth Pro-Poor? Cross-Country Evidence",
+      "authors": [
+        "Kraay, Aart"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.55993/hegp.1788343",
+      "title": "A Framework for Responsible AI in Higher Education",
+      "authors": [
+        "Hatice Bilgin"
+      ],
+      "venue": "Higher Education Governance and Policy",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://dergipark.org.tr/en/download/article-file/5261384",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1017/s0958344025000023",
+      "title": "Crisis-prompted online language teaching: a qualitative inquiry into autonomy among teachers in refugee settings",
+      "authors": [
+        "Koula Charitonos",
+        "Betul Khalil",
+        "T Ross",
+        "Cindy Bonfini-Hotlosz",
+        "Miki Aristorenas",
+        "Ben Webster"
+      ],
+      "venue": "ReCALL",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/A477DCB9762C4A5D080F298B6EE970BF/S0958344025000023a.pdf/div-class-title-crisis-prompted-online-language-teaching-a-qualitative-inquiry-into-autonomy-among-teachers-in-refugee-settings-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.36948/ijfmr.2025.v07i03.45549",
+      "title": "She, the Algorithm, and the Invisible Hand: Re-imagining Economic Paradigms in the Age of Feminist AI",
+      "authors": [
+        "Priyant Banerjee",
+        "Monalisa Hati",
+        "Rushabh Dorage",
+        "Sahil Singh",
+        "Vishwa Jadhav"
+      ],
+      "venue": "International Journal For Multidisciplinary Research",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.ijfmr.com/papers/2025/3/45549.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.14254/1795-6889.2026.22-1.8",
+      "title": "Generation Z and artificial intelligence: Usage patterns and delegation boundaries",
+      "authors": [
+        "Adam P. Balcerzak",
+        "Marek Zinecker",
+        "Jiří Mičánek"
+      ],
+      "venue": "Human Technology",
+      "year": 2026,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.14254/1795-6889.2026.22-1.8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.22329/jtl.v19i4.9790",
+      "title": "Perceptions of Artificial Intelligence among Philippine Undergraduate Students: Examining Instrument Construct and Demographic Influences on Knowledge and Beliefs",
+      "authors": [
+        "Julius Ceasar Hortelano",
+        "Shella Salamia"
+      ],
+      "venue": "Journal of Teaching and Learning",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://jtl.uwindsor.ca/index.php/jtl/article/download/9790/6114",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.24191/jeesr.v27i1.009",
+      "title": "Engineering Malaysia’s Competitive Edge: Prompt Engineering as Critical Skill for Future Workforce Development",
+      "authors": [
+        "Fairul Nazmie Osman",
+        "Ihsan Mohd Yassin",
+        "Rahimi Baharom",
+        "Mohd Azri Abdul Aziz",
+        "Mohd Nasir Taib"
+      ],
+      "venue": "Journal of Electrical & Electronic Systems Research",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://ir.uitm.edu.my/id/eprint/126260/1/126260.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.28945/5625",
+      "title": "Educators’ Perspectives on DeepSeek in ELT: A Qualitative Case Study of Pedagogical Potentials and Pitfalls in Chinese Higher Education",
+      "authors": [
+        "Mengjia Zhu",
+        "Nurul Ashikin Izhar",
+        "Claudia Racquel Xervaser"
+      ],
+      "venue": "Journal of Information Technology Education Research",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.jite.org/documents/Vol24/JITE-Rv24Art032Zhu12125.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.7441/joc.2025.04.13",
+      "title": "University professors’ level of performance in the use of artificial intelligence",
+      "authors": [],
+      "venue": "Journal of Competitiveness",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.7441/joc.2025.04.13",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1136/bmjopen-2025-105550",
+      "title": "Training refugee and asylum-seeking doctors: a cohort study of the UK REACHE programme",
+      "authors": [
+        "Aaron Drovandi",
+        "Samuel Barrett",
+        "Jouher Kallingal",
+        "Aisha Awan"
+      ],
+      "venue": "BMJ Open",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://bmjopen.bmj.com/content/bmjopen/15/11/e105550.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 125
+    },
+    {
       "doi": "10.2139/ssrn.6667599",
       "title": "Technological Embeddedness and the Employment Effects of Innovation: Cross-Country Evidence",
-      "abstract": "<jats:p>Drawing on 65,701 firms across 131 countries, this paper examines how the employment effects of innovation vary with the technological contents of innovation. Using a dictionary-based text mining approach, two ordinal indicators are constructed to capture the degree of technology embeddedness within product and process innovation. The findings reveal that employment effects differ systematically by innovation type, technological embeddedness, and development context. Process innovation w",
-      "year": null,
+      "authors": [
+        "Hou, Jun"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 43,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Drawing on 65,701 firms across 131 countries, this paper examines how the employment effects of innovation vary with the technological contents of innovation. Using a dictionary-based text mining approach, two ordinal indicators are constructed to capture the degree of technology embeddedness within product and process innovation. The findings reveal that employment effects differ systematically by innovation type, technological embeddedness, and development context. Process innovation w",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 126
     },
     {
-      "rank": 16,
       "doi": "10.2139/ssrn.5518178",
       "title": "Democracy and AI Acceptance: Cross-Country Evidence",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Kiss, Hubert Janos",
+        "Rosa-Garcia, Alfonso"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 127
     },
     {
-      "rank": 17,
       "doi": "10.2139/ssrn.6348618",
       "title": "Minimum Wage and Employment Stickiness: Cross-Country Evidence",
-      "abstract": "<jats:p>We investigate whether increases in minimum wages reduce employment stickiness. Using a crosscountry panel dataset of statutory minimum wage changes, we find that increases in minimum wages are associated with a reduction in employment stickiness. Subsample analyses further show that our result is more pronounced among low-technology firms, financially distressed firms, and firms with low cash liquidity. Moreover, our result is stronger when minimum wage growth exceeds inflation and in c",
-      "year": null,
+      "authors": [
+        "Cho, Sun-ae",
+        "Jung, Boochun",
+        "Kim, Sangil",
+        "Park, David"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>We investigate whether increases in minimum wages reduce employment stickiness. Using a crosscountry panel dataset of statutory minimum wage changes, we find that increases in minimum wages are associated with a reduction in employment stickiness. Subsample analyses further show that our result is more pronounced among low-technology firms, financially distressed firms, and firms with low cash liquidity. Moreover, our result is stronger when minimum wage growth exceeds inflation and in c",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 128
     },
     {
-      "rank": 18,
       "doi": "10.2139/ssrn.1655108",
       "title": "Cross-Country Evidence on Teacher Performance Pay",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Woessmann, Ludger"
+      ],
       "venue": "SSRN Electronic Journal",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 129
     },
     {
-      "rank": 19,
       "doi": "10.2139/ssrn.1656793",
       "title": "Cross-Country Evidence on Teacher Performance Pay",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Woessmann, Ludger"
+      ],
       "venue": "SSRN Electronic Journal",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 130
     },
     {
-      "rank": 20,
       "doi": "10.2139/ssrn.5327285",
       "title": "Understanding Trust in AI as an Information Source: Cross-Country Evidence",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Hazra, Sanchaita",
+        "Serra-Garcia, Marta"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 131
+    },
+    {
+      "doi": "10.2139/ssrn.5583523",
+      "title": "Who Accepts AI Labor Displacement? Cross-National Evidence on Trust, Social Benefits, and Cultural Contexts",
+      "authors": [
+        "ZHOU, YUSHU",
+        "Du, Tianshu"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 86,
+      "type": "posted-content",
       "source": "crossref",
-      "type": "posted-content"
-    },
-    {
-      "rank": 21,
-      "doi": "arXiv:2009.11100v1",
-      "title": "Engaging Teachers to Co-Design Integrated AI Curriculum for K-12 Classrooms",
       "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 132
     },
     {
-      "rank": 22,
-      "doi": "arXiv:2410.03017v2",
-      "title": "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise",
+      "doi": "10.1787/888933780302",
+      "title": "Figure 1.8. Cross-country regression of policy determinants of employment",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 133
     },
     {
-      "rank": 23,
-      "doi": "arXiv:2603.28944v2",
-      "title": "Faith in AI can narrow the futures individuals consider",
-      "abstract": "",
+      "doi": "10.2139/ssrn.6927344",
+      "title": "AI Labor-Displacement News and the Reallocation of Coder Employment",
+      "authors": [
+        "Guinea, Laurentiu"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 42,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Debate about the labor-market effects of generative AI has focused on whether employment is declining in highly exposed occupations. This paper asks a different question: when AI labor-displacement news rises, where is employment reallocated within those occupations? We study coding-intensive occupations, a natural laboratory because computer programming is one of the most prominent applications of large language models and because coders are employed across a wide range of sectors. We c",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.21125/inted.2026.1614",
+      "title": "AI AS A CROSS DISCIPLINE TUTOR",
+      "authors": [
+        "Briskin, Jessica",
+        "Gregg, Andrea"
+      ],
+      "venue": "INTED Proceedings",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 135
     },
     {
-      "rank": 24,
-      "doi": "arXiv:2104.01266v2",
-      "title": "Designing for human-AI complementarity in K-12 education",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.1111/ecca.70042",
+      "title": "Unpacking the link between service sector and female employment: cross‐country evidence",
+      "authors": [
+        "Coskun, Sena",
+        "Sengul, Gonul"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 25,
-      "doi": "arXiv:2501.02842v1",
-      "title": "Foundations of GenIR",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 26,
-      "doi": "arXiv:2601.16513v1",
-      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
-      "abstract": "",
+      "venue": "Economica",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 26,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>This paper documents significant cross‐country variation in the strength of the service sector pulling women into the market work. We find the composition of the service sector to be the crucial driver of this heterogeneity. Specifically, a larger public administration sector is associated with lower elasticity, while a higher female share within business services has a positive association. The relationship between female share within ",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 136
     },
     {
-      "rank": 27,
-      "doi": "arXiv:2510.19196v1",
-      "title": "Integration of AI in STEM Education, Addressing Ethical Challenges in K-12 Settings",
+      "doi": "10.1787/888933567141",
+      "title": "Figure 3.12. Employment rates by age group in specific cohorts, cross-country averages",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
       "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 137
     },
     {
-      "rank": 28,
-      "doi": "arXiv:2502.16613v1",
-      "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+      "doi": "10.1787/888934192889",
+      "title": "Figure 11.5. Cross-country AI skills penetration, 2015-19",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
       "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 138
     },
     {
-      "rank": 29,
-      "doi": "arXiv:2505.08083v1",
-      "title": "LLMs to Support K-12 Teachers in Culturally Relevant Pedagogy: An AI Literacy Example",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.1787/eadbbcbf-en",
+      "title": "Who climbs the income ladder?",
+      "authors": [
+        "Königs, Sebastian",
+        "Terrero-Dávila, Javier"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
     },
     {
-      "rank": 30,
-      "doi": "arXiv:1603.06024v1",
-      "title": "Connecting Three Pivotal Concepts in K-12 Science State Standards and Maps of Conceptual Growth to Research in Physics Education",
+      "doi": "10.12968/prtu.2012.1.12.57",
+      "title": "TextHelp Fluency Tutor",
+      "authors": [
+        "David, Anthony"
+      ],
+      "venue": "Primary Teacher Update",
+      "year": 2012,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.53443/anadoluibfd.1770304",
+      "title": "EARLY CHILDHOOD EDUCATION AND WOMEN’S EMPLOYMENT: CROSS-COUNTRY EVIDENCE FROM OECD PANEL DATA",
+      "authors": [
+        "Dolu, Aslı"
+      ],
+      "venue": "Anadolu Üniversitesi İktisadi ve İdari Bilimler Fakültesi Dergisi",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"en\">This study explores the association between policies on early childhood education and women’s participation in the labor market across OECD countries during the period 2000–2023, employing panel data methods. The key explanatory factor is the gross enrollment ratio in early childhood education. The results indicate that expanding opportunities for early childhood education is linked to a notable increase in female labor force participation. These findings remain stable acro",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.5353/th_b4786953",
+      "title": "Banking procyclicality : cross country evidence",
+      "authors": [
+        "Wong, Tak-chuen"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.55640/gjhss/volume05issue05-03",
+      "title": "Auditors’ Cognitive Interpretation of Fraud Signals and Professional Judgment Quality: Cross-Country Experimental Evidence",
+      "authors": [
+        "Lotfy, Amin ElSayed Ahmed"
+      ],
+      "venue": "Global Journal of Humanities and Social Sciences",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Purpose\n\nThis study examines how auditors cognitively interpret fraud signals and how such interpretation shapes professional judgment quality. Rather than focusing on the mere presence of fraud cues or procedural compliance, the study positions cognitive interpretation as the core mechanism through which fraud signals are transformed into diagnostic audit judgments.\n\nMethodology, Design, and Approach\n\nThe study adopts a multi-condition, cross-country experimental design involving practi",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.70675/0cd5c91ez7a45z4225za583z394e03d4903d",
+      "title": "Essays on emigration, remittances, and employment in the source country : evidence from Mexico",
+      "authors": [
+        "",
+        "Viseth, Arina"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:title>Essais sur l’émigration, les transferts de fonds des travailleurs migrants et l’emploi au pays source : le cas du Mexique</jats:title>\n                <jats:p xml:lang=\"fr\">This dissertation contributes to the emerging empirical literature on the developmental impact of international migration in the source developing economy. Given the policy priority placed on job creation and the emphasis on wage impacts in recent work, the focus here is on the consequences of emigration on the ex",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.2139/ssrn.7003871",
+      "title": "AI Compute Import Dependence and Dollar Invoicing: Cross-Country Evidence for a Compute-Dollar Association",
+      "authors": [
+        "Uddin, Mohammad Nasir",
+        "Orpita, Rahnuma Tabassum",
+        "Bhuiyan, Eklachur Rahman",
+        "Anik, Asaduzzaman"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 16,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>​ We construct the AI Compute Import Dependence (ACID) index — the first systematic country-level measure of AI compute trade dependence on the United States — covering 182 countries over 2015–2023 (mean ACID = 0.106, range 0–0.934). We document a cross-country association between ACID and the dollar invoicing share of imports across 119 countries (β = 56.2 percentage points per unit ACID, p = 0.014), robust to bilateral US trade controls, eurozone membership, outlier removal, and Africa",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1515/9780824887841-014",
+      "title": "12",
+      "authors": [],
+      "venue": "Country Teacher",
+      "year": 1984,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1016/j.tate.2026.105595",
+      "title": "Drivers, pedagogical uses, and barriers of teachers’ AI adoption: Cross-national evidence from TALIS 2024",
+      "authors": [
+        "Lei, Yaxian",
+        "Lu, Zhenjie",
+        "Deng, Yunkai"
+      ],
+      "venue": "Teaching and Teacher Education",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 48,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.1007/978-3-319-29850-4_2",
+      "title": "Product Innovation, Credit Constraints, and Trade Credit: Evidence from a Cross-Country Study",
+      "authors": [
+        "Nielen, Sebastian"
+      ],
+      "venue": "Contributions to Management Science",
       "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 36,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.6027/9789289351911-8-en",
+      "title": "Cross-country comparison of salary, employment and reasons for fishermen exit",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.2139/ssrn.4815571",
+      "title": "Ai and Employment: Empirical Evidence of China",
+      "authors": [
+        "Liu, Tailin",
+        "Dong, Xinzhe"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:2009.11100v1",
+      "arxiv_id": "2009.11100v1",
+      "title": "Engaging Teachers to Co-Design Integrated AI Curriculum for K-12 Classrooms",
+      "authors": [
+        "Jessica Van Brummelen",
+        "Phoebe Lin"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.11100v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2410.03017v2",
+      "arxiv_id": "2410.03017v2",
+      "title": "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise",
+      "authors": [
+        "Rose E. Wang",
+        "Ana T. Ribeiro",
+        "Carly D. Robinson",
+        "Susanna Loeb",
+        "Dora Demszky"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.03017v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2104.01266v2",
+      "arxiv_id": "2104.01266v2",
+      "title": "Designing for human-AI complementarity in K-12 education",
+      "authors": [
+        "Kenneth Holstein",
+        "Vincent Aleven"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2104.01266v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2603.28944v2",
+      "arxiv_id": "2603.28944v2",
+      "title": "Faith in AI can narrow the futures individuals consider",
+      "authors": [
+        "Aoi Naito",
+        "Hirokazu Shirado"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28944v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2501.02842v1",
+      "arxiv_id": "2501.02842v1",
+      "title": "Foundations of GenIR",
+      "authors": [
+        "Qingyao Ai",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02842v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.47989/ir31iConf64115",
+      "arxiv_id": "2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "authors": [
+        "Melissa Wilfley",
+        "Mengting Ai",
+        "Madelyn Rose Sanfilippo"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2510.19196v1",
+      "arxiv_id": "2510.19196v1",
+      "title": "Integration of AI in STEM Education, Addressing Ethical Challenges in K-12 Settings",
+      "authors": [
+        "Shaouna Shoaib Lodhi",
+        "Shoaib Lodhi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.19196v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "arXiv:2502.16613v1",
+      "arxiv_id": "2502.16613v1",
+      "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+      "authors": [
+        "Adit Gupta",
+        "Christopher MacLellan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.16613v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2505.08083v1",
+      "arxiv_id": "2505.08083v1",
+      "title": "LLMs to Support K-12 Teachers in Culturally Relevant Pedagogy: An AI Literacy Example",
+      "authors": [
+        "Jiayi Wang",
+        "Ruiwei Xiao",
+        "Xinying Hou",
+        "Hanqi Li",
+        "Ying Jui Tseng",
+        "John Stamper",
+        "Ken Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.08083v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:1603.06024v1",
+      "arxiv_id": "1603.06024v1",
+      "title": "Connecting Three Pivotal Concepts in K-12 Science State Standards and Maps of Conceptual Growth to Research in Physics Education",
+      "authors": [
+        "Chandralekha Singh",
+        "Christian D. Schunn"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1603.06024v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "arXiv:2605.16648v1",
+      "arxiv_id": "2605.16648v1",
+      "title": "Psychological Mechanisms of Generative AI Discontinuance Intention among Chinese K-12 Teachers",
+      "authors": [
+        "Yiran Du",
+        "Qian Chen",
+        "Huimin He"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.16648v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:2401.03238v1",
+      "arxiv_id": "2401.03238v1",
+      "title": "Using Large Language Models to Assess Tutors' Performance in Reacting to Students Making Math Errors",
+      "authors": [
+        "Sanjit Kakarla",
+        "Danielle Thomas",
+        "Jionghao Lin",
+        "Shivang Gupta",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.03238v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:2402.14594v1",
+      "arxiv_id": "2402.14594v1",
+      "title": "Improving Assessment of Tutoring Practices using Retrieval-Augmented Generation",
+      "authors": [
+        "Zifei FeiFei Han",
+        "Jionghao Lin",
+        "Ashish Gurung",
+        "Danielle R. Thomas",
+        "Eason Chen",
+        "Conrad Borchers",
+        "Shivang Gupta",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.14594v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "arXiv:2603.10773v1",
+      "arxiv_id": "2603.10773v1",
+      "title": "AI-Generated Rubric Interfaces: K-12 Teachers' Perceptions and Practices",
+      "authors": [
+        "Bahare Riahi",
+        "Sayali Patukale",
+        "Joy Niranjan",
+        "Yogya Koneru",
+        "Tiffany Barnes",
+        "Veronica Cateté"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.10773v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1145/3706598.3713646",
+      "arxiv_id": "2502.17855v1",
+      "title": "Exploring K-12 Physical Education Teachers' Perspectives on Opportunities and Challenges of AI Integration Through Ideation Workshops",
+      "authors": [
+        "Dakyeom Ahn",
+        "Hajin Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.17855v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "arXiv:2605.17857v1",
+      "arxiv_id": "2605.17857v1",
+      "title": "Towards SocratiCode: Designing a Generative AI-Based Programming Tutor for K-12 Students through a 4-Week Participatory Design Study",
+      "authors": [
+        "Cassandra Lucas",
+        "Anshul Bihani",
+        "Rohini Kukka",
+        "Chun-Hua Tsai",
+        "Jaydeb Sarker",
+        "Mia Mohammad Imran"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.17857v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "arXiv:2503.08003v1",
+      "arxiv_id": "2503.08003v1",
+      "title": "How Can Video Generative AI Transform K-12 Education? Examining Teachers' Perspectives through TPACK and TAM",
+      "authors": [
+        "Unggi Lee",
+        "Yeil Jeong",
+        "Seungha Kim",
+        "Yoorim Son",
+        "Gyuri Byun",
+        "Hyeoncheol Kim",
+        "Cheolil Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.08003v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:2607.05406v1",
+      "arxiv_id": "2607.05406v1",
+      "title": "A Guiding Framework for K-12 Teachers in Creating AI-powered Learning Technologies through Vibe Coding",
+      "authors": [
+        "Yukyeong Song",
+        "Seoyeon Choi",
+        "Jinhee Kim",
+        "Yeongje Kim",
+        "Lauren Weisberg",
+        "Jewoong Moon"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.05406v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "10.1145/3816972",
+      "arxiv_id": "2607.01506v1",
+      "title": "Mind the Trust Gap: Identifying (Mis)alignments in Teacher-Student Views Toward Control and Agency in K-12 Classroom AI",
+      "authors": [
+        "Tomohiro Nagashima",
+        "Lisa Siegrist",
+        "Niklas Scholz",
+        "Shintaro Sato",
+        "Martina Vincoli",
+        "Man Su"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.01506v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "arXiv:2607.04282v1",
+      "arxiv_id": "2607.04282v1",
+      "title": "The New Shape of Search: How Conversational AI Recomposes Information Seeking",
+      "authors": [
+        "Michael Iannelli",
+        "Alan Ai"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.04282v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1002/aaai.12113",
+      "arxiv_id": "2308.12400v1",
+      "title": "Towards The Ultimate Brain: Exploring Scientific Discovery with ChatGPT AI",
+      "authors": [
+        "Gerardo Adesso"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.12400v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.1080/27660400.2025.2535956",
+      "arxiv_id": "2504.08817v2",
+      "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+      "authors": [
+        "Takahiro Misawa",
+        "Ai Koizumi",
+        "Ryo Tamura",
+        "Kazuyoshi Yoshimi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.1007/s43681-022-00167-3",
+      "arxiv_id": "2112.01298v2",
+      "title": "Meaningful human control: actionable properties for AI system development",
+      "authors": [
+        "Luciano Cavalcante Siebert",
+        "Maria Luce Lupetti",
+        "Evgeni Aizenberg",
+        "Niek Beckers",
+        "Arkady Zgonnikov",
+        "Herman Veluwenkamp",
+        "David Abbink",
+        "Elisa Giaccardi",
+        "Geert-Jan Houben",
+        "Catholijn M. Jonker",
+        "Jeroen van den Hoven",
+        "Deborah Forster",
+        "Reginald L. Lagendijk"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.01298v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "arXiv:2408.00025v3",
+      "arxiv_id": "2408.00025v3",
+      "title": "Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)",
+      "authors": [
+        "Supriya Manna",
+        "Niladri Sett"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2408.00025v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1007/s43681-024-00585-5",
+      "arxiv_id": "2401.15284v6",
+      "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+      "authors": [
+        "Zhicheng Lin"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.15284v6",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:2606.20713v1",
+      "arxiv_id": "2606.20713v1",
+      "title": "FairTutor: Equity-Aware Pedagogical LLM Routing for Budget-Constrained AI Tutoring",
+      "authors": [
+        "Qingyang Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.20713v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "arXiv:2504.16770v1",
+      "arxiv_id": "2504.16770v1",
+      "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
+      "authors": [
+        "Chaeyeon Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.16770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2605.08486v1",
+      "arxiv_id": "2605.08486v1",
+      "title": "Teachers' Perceived Benefits and Risks of AI Across Fifty-Five Countries: An Audit of LLM Alignment and Steerability",
+      "authors": [
+        "Yan Tao",
+        "Olga Viberg",
+        "Deepak Varuvel Dennison",
+        "Zhikun Wu",
+        "René F. Kizilcec"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.08486v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2211.12434v1",
+      "arxiv_id": "2211.12434v1",
+      "title": "Expansive Participatory AI: Supporting Dreaming within Inequitable Institutions",
+      "authors": [
+        "Michael Alan Chang",
+        "Shiran Dudy"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.12434v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2508.05156v1",
+      "arxiv_id": "2508.05156v1",
+      "title": "AI Conversational Tutors in Foreign Language Learning: A Mixed-Methods Evaluation Study",
+      "authors": [
+        "Nikolaos Avouris"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.05156v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2504.15894v1",
+      "arxiv_id": "2504.15894v1",
+      "title": "Supporting Data-Frame Dynamics in AI-assisted Decision Making",
+      "authors": [
+        "Chengbo Zheng",
+        "Tim Miller",
+        "Alina Bialkowski",
+        "H Peter Soyer",
+        "Monika Janda"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.15894v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:2504.13903v1",
+      "arxiv_id": "2504.13903v1",
+      "title": "From Teacher to Colleague: How Coding Experience Shapes Developer Perceptions of AI Tools",
+      "authors": [
+        "Ilya Zakharov",
+        "Ekaterina Koshchenko",
+        "Agnia Sergeyuk"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.13903v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2607.10647v1",
+      "arxiv_id": "2607.10647v1",
+      "title": "Knowledge Distillation for Automated AI Tutor Evaluation",
+      "authors": [
+        "Tahmid Al Hannan",
+        "Diego Garcia",
+        "Alex Njoroge",
+        "Suha Al Juboori",
+        "Tarek Sakakini"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.10647v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:2504.09138v1",
+      "arxiv_id": "2504.09138v1",
+      "title": "White-Box AI Model: Next Frontier of Wireless Communications",
+      "authors": [
+        "Jiayao Yang",
+        "Jiayi Zhang",
+        "Bokai Xu",
+        "Jiakang Zheng",
+        "Zhilong Liu",
+        "Ziheng Liu",
+        "Dusit Niyato",
+        "Mérouane Debbah",
+        "Zhu Han",
+        "Bo Ai"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.09138v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2509.11056v2",
+      "arxiv_id": "2509.11056v2",
+      "title": "BERT4beam: Large AI Model Enabled Generalized Beamforming Optimization",
+      "authors": [
+        "Yuhang Li",
+        "Yang Lu",
+        "Wei Chen",
+        "Bo Ai",
+        "Zhiguo Ding"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.11056v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:1806.02666v1",
+      "arxiv_id": "1806.02666v1",
+      "title": "NiCE Teacher Workshop: Engaging K-12 Teachers in the Development of Curricular Materials That Utilize Complex Networks Concepts",
+      "authors": [
+        "Emma K. Towlson",
+        "Lori Sheetz",
+        "Ralucca Gera",
+        "Jon Roginski",
+        "Catherine Cramer",
+        "Stephen Uzzo",
+        "Hiroki Sayama"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1806.02666v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "arXiv:2604.16738v1",
+      "arxiv_id": "2604.16738v1",
+      "title": "Teacher-Authored Prompts for Configuring Student-AI Dialogue: K-12 Classroom Implementation",
+      "authors": [
+        "Alex Liu",
+        "Min Sun",
+        "Lief Esbenshade",
+        "Victor Tian",
+        "Zachary Zhang",
+        "Kevin He"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.16738v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1103/4bj4-4fpy",
+      "arxiv_id": "2512.15072v2",
+      "title": "Quantum batteries in coherent Ising machine",
+      "authors": [
+        "Jin-Tian Zhang",
+        "Shuang-Quan Ma",
+        "Jing-Yi-Ran Jin",
+        "Tao Liu",
+        "Qing Ai"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.15072v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:2602.07142v2",
+      "arxiv_id": "2602.07142v2",
+      "title": "Exploring Teachers' Perspectives on Using Conversational AI Agents for Group Collaboration",
+      "authors": [
+        "Prerna Ravi",
+        "Carúmey Stevens",
+        "Beatriz Flamia Azevedo",
+        "Jasmine David",
+        "Brandon Hanks",
+        "Hal Abelson",
+        "Grace Lin",
+        "Emma Anderson"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.07142v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.1145/3644815.3644952",
+      "arxiv_id": "2311.18252v3",
+      "title": "Privacy and Copyright Protection in Generative AI: A Lifecycle Perspective",
+      "authors": [
+        "Dawen Zhang",
+        "Boming Xia",
+        "Yue Liu",
+        "Xiwei Xu",
+        "Thong Hoang",
+        "Zhenchang Xing",
+        "Mark Staples",
+        "Qinghua Lu",
+        "Liming Zhu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.18252v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "10.21300/23.1.2023.2",
+      "arxiv_id": "2206.03217v2",
+      "title": "A Perspective on K-12 AI Education",
+      "authors": [
+        "Nathan Wang",
+        "Paul Tonko",
+        "Nikil Ragav",
+        "Michael Chungyoun",
+        "Jonathan Plucker"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.03217v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:2507.16110v1",
+      "arxiv_id": "2507.16110v1",
+      "title": "Expert-Guided LLM Reasoning for Battery Discovery: From AI-Driven Hypothesis to Synthesis and Characterization",
+      "authors": [
+        "Shengchao Liu",
+        "Hannan Xu",
+        "Yan Ai",
+        "Huanxin Li",
+        "Yoshua Bengio",
+        "Harry Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.16110v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:2309.13060v1",
+      "arxiv_id": "2309.13060v1",
+      "title": "Implementing Learning Principles with a Personal AI Tutor: A Case Study",
+      "authors": [
+        "Ambroise Baillifard",
+        "Maxime Gabella",
+        "Pamela Banta Lavenex",
+        "Corinna S. Martarelli"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.13060v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2504.14689v1",
+      "arxiv_id": "2504.14689v1",
+      "title": "Designing AI Systems that Augment Human Performed vs. Demonstrated Critical Thinking",
+      "authors": [
+        "Katelyn Xiaoying Mei",
+        "Nic Weber"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.14689v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:2412.03292v1",
+      "arxiv_id": "2412.03292v1",
+      "title": "DMP_AI: An AI-Aided K-12 System for Teaching and Learning in Diverse Schools",
+      "authors": [
+        "Zhen-Qun Yang",
+        "Jiannong Cao",
+        "Xiaoyin Li",
+        "Kaile Wang",
+        "Xinzhe Zheng",
+        "Kai Cheung Franky Poon",
+        "Daniel Lai"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.03292v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "arXiv:2602.17448v1",
+      "arxiv_id": "2602.17448v1",
+      "title": "Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with AI Tutors",
+      "authors": [
+        "Michael Tompkins",
+        "Nihaarika Agarwal",
+        "Ananta Soneji",
+        "Robert Wasinger",
+        "Connor Nelson",
+        "Kevin Leach",
+        "Rakibul Hasan",
+        "Adam Doupé",
+        "Daniel Votipka",
+        "Yan Shoshitaishvili",
+        "Jaron Mink"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.17448v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2405.13065v1",
+      "arxiv_id": "2405.13065v1",
+      "title": "Exploring Teachers' Perception of Artificial Intelligence: The Socio-emotional Deficiency as Opportunities and Challenges in Human-AI Complementarity in K-12 Education",
+      "authors": [
+        "Soon-young Oh",
+        "Yongsu Ahn"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.13065v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "arXiv:2512.11931v1",
+      "arxiv_id": "2512.11931v1",
+      "title": "Mapping AI Risk Mitigations: Evidence Scan and Preliminary AI Risk Mitigation Taxonomy",
+      "authors": [
+        "Alexander K. Saeri",
+        "Sophia Lloyd George",
+        "Jess Graham",
+        "Clelia D. Lacarriere",
+        "Peter Slattery",
+        "Michael Noetel",
+        "Neil Thompson"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.11931v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "10.1145/3657604.3664694",
+      "arxiv_id": "2405.14713v1",
+      "title": "Towards Educator-Driven Tutor Authoring: Generative AI Approaches for Creating Intelligent Tutor Interfaces",
+      "authors": [
+        "Tommaso Calo",
+        "Christopher J. MacLellan"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.14713v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "arXiv:2009.10228v1",
+      "arxiv_id": "2009.10228v1",
+      "title": "Designing AI Learning Experiences for K-12: Emerging Works, Future Opportunities and a Design Framework",
+      "authors": [
+        "Xiaofei Zhou",
+        "Jessica Van Brummelen",
+        "Phoebe Lin"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.10228v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
     }
   ]
 }

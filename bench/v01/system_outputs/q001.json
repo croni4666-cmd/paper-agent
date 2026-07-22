@@ -3,460 +3,4375 @@
   "query": "AI tutoring systems and their effect on K-12 student learning outcomes",
   "topic_bucket": "edu_ai",
   "source": "pub",
-  "generated_at": "2026-07-10T20:42:13",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:18:51",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 201,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 2,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
       "doi": "10.1016/j.lindif.2023.102274",
       "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Enkelejda Kasneci",
+        "Kathrin Seßler",
+        "Stefan Küchemann",
+        "Maria Bannert",
+        "Daryna Dementieva",
+        "Frank Fischer",
+        "Urs Gasser",
+        "Georg Groh",
+        "Stephan Günnemann",
+        "Eyke Hüllermeier",
+        "Stephan Krusche",
+        "Gitta Kutyniok",
+        "Tilman Michaeli",
+        "Claudia Nerdel",
+        "Jürgen Pfeffer",
+        "Oleksandra Poquet",
+        "Michael Sailer",
+        "Albrecht Schmidt",
+        "Tina Seidel",
+        "Matthias Stadler",
+        "J. Weller",
+        "Jochen Kühn",
+        "Gjergji Kasneci"
+      ],
       "venue": "Learning and Individual Differences",
-      "citation_count": 5330,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 5500,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://epub.ub.uni-muenchen.de/125071/1/ChatGPT_for_Good_v3.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 1
     },
     {
-      "rank": 2,
+      "doi": "10.1016/j.jml.2023.104479",
+      "title": "Human Memory: A Proposed System and Its Control Processes",
+      "authors": [
+        "R. C. Atkinson"
+      ],
+      "venue": "JOURNAL OF MEMORY AND LANGUAGE",
+      "year": 2024,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c791fca4895d9cbc6211f78",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1093/neuonc/noab106",
+      "title": "The 2021 WHO Classification of Tumors of the Central Nervous System: a Summary",
+      "authors": [
+        "David N. Louis"
+      ],
+      "venue": "NEURO-ONCOLOGY",
+      "year": 2021,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60dc438c1e8bd4ede2dee1f0",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1109/access.2020.2988510",
+      "title": "Artificial Intelligence in Education: A Review",
+      "authors": [
+        "Lijia Chen",
+        "Pingping Chen",
+        "Zhijian Lin"
+      ],
+      "venue": "IEEE Access",
+      "year": 2020,
+      "cited_by_count": 3568,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09069875.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.2514/4.861550",
+      "title": "Analytical Mechanics of Space Systems",
+      "authors": [
+        "Hanspeter Schaub"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8446cdabfae2eeea2943a",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1111/j.1527-2001.2007.tb01156.x",
+      "title": "Heterosexualism and the Colonial / Modern Gender System",
+      "authors": [
+        "María Lugones"
+      ],
+      "venue": "The Latinx Philosophy Reader",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b8e1b7602d97044c389f",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.48550/arxiv.2303.04226",
+      "title": "A Comprehensive Survey of AI-Generated Content (AIGC): A History of Generative AI from GAN to ChatGPT",
+      "authors": [
+        "Yihan Cao"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64094ee790e50fcafd476ca0",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1037/h0041823",
+      "title": "Drives and the C.N.S. (conceptual Nervous System).",
+      "authors": [
+        "DO HEBB"
+      ],
+      "venue": "Brain Physiology and Psychology",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a573e5612c6b12ab1bf5bd",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1145/3535101",
+      "title": "Graph Neural Networks in Recommender Systems: A Survey",
+      "authors": [
+        "Shiwen Wu"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fa3f85191e011a6939b81e7",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.2307/jj.2711690",
+      "title": "The Higher Education System",
+      "authors": [
+        "BURTON R. CLARK"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca4a505244ab9dcb7869a4",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1002/9783527696277",
+      "title": "Charge and Energy Transfer Dynamics in Molecular Systems",
+      "authors": [
+        "Oliver Kühn"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6494a818d68f896efac6c683",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1038/s41591-021-01614-0",
+      "title": "AI in Health and Medicine",
+      "authors": [
+        "Pranav Rajpurkar"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ebe0075244ab9dcb2be4da",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1038/s41591-022-01981-2",
+      "title": "Multimodal Biomedical AI",
+      "authors": [
+        "Julián N. Acosta"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6325a54090e50fcafd437426",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1002/wcms.1606",
+      "title": "Software Update: the ORCA Program System—version 5.0",
+      "authors": [
+        "Frank Neese"
+      ],
+      "venue": "WILEY INTERDISCIPLINARY REVIEWS-COMPUTATIONAL MOLECULAR SCIENCE",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62300a305aee126c0fac851d",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1007/978-3-030-95092-7_4",
+      "title": "Positive Linear Systems",
+      "authors": [
+        "Andrea Bacciotti"
+      ],
+      "venue": "Mathematical Engineering Discrete Dynamics",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac0c395aee126c0ff6a6e4",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1145/3449287",
+      "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+      "authors": [
+        "Zana Buçinca"
+      ],
+      "venue": "ACM Conference on Computer Supported Cooperative Work and Social Computing",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60337bf691e011e54d039aee",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1145/361011.361061",
+      "title": "The UNIX Time-Sharing System",
+      "authors": [
+        "Dennis Ritchie"
+      ],
+      "venue": "IDEAS THAT CREATED THE FUTURE Classic Papers of Computer Science",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5390877f20f70186a0d3016f",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1186/s12909-023-04698-z",
+      "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+      "authors": [
+        "Shuroug A. Alowais",
+        "Sahar S. Alghamdi",
+        "Nada Alsuhebany",
+        "Tariq Alqahtani",
+        "Abdulrahman Alshaya",
+        "Sumaya N. Almohareb",
+        "Atheer Aldairem",
+        "Mohammed Alrashed",
+        "Khalid Bin Saleh",
+        "Hisham A. Badreldin",
+        "Majed S. Al Yami",
+        "Shmeylan Al Harbi",
+        "Abdulkareem Albekairy"
+      ],
+      "venue": "BMC Medical Education",
+      "year": 2023,
+      "cited_by_count": 2884,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://bmcmededuc.biomedcentral.com/counter/pdf/10.1186/s12909-023-04698-z",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 18
+    },
+    {
       "doi": "10.1186/s41039-017-0062-8",
       "title": "Exploring the impact of artificial intelligence on teaching and learning in higher education",
-      "abstract": "This paper explores the phenomena of the emergence of the use of artificial intelligence in teaching and learning in higher education. It investigates educational implications of emerging technologies on the way students learn and how institutions teach and evolve. Recent technological advancements and the increasing speed of adopting new technologies in higher education are explored in order to predict the future nature of higher education in a world where artificial intelligence is part of the fabric of our universities. We pinpoint some challenges for institutions of higher education and student learning in the adoption of these technologies for teaching, learning, student support, and administration and explore further directions for research.",
-      "year": 2017,
+      "authors": [
+        "Ştefan Popenici",
+        "Sharon Kerr"
+      ],
       "venue": "Research and Practice in Technology Enhanced Learning",
-      "citation_count": 1791,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 1809,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://telrp.springeropen.com/track/pdf/10.1186/s41039-017-0062-8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 19
     },
     {
-      "rank": 3,
       "doi": "10.3102/00346543068002179",
       "title": "Scientific Discovery Learning with Computer Simulations of Conceptual Domains",
-      "abstract": "Scientific discovery learning is a highly self-directed and constructivistic form of learning. A computer simulation is a type of computer-based environment that is well suited for discovery learning, the main task of the learner being to infer, through experimentation, characteristics of the model underlying the simulation. In this article we give a review of the observed effectiveness and efficiency of discovery learning in simulation environments together with problems that learners may encounter in discovery learning, and we discuss how simulations may be combined with instructional support in order to overcome these problems.",
-      "year": 1998,
+      "authors": [
+        "Ton de Jong",
+        "Wouter van Joolingen"
+      ],
       "venue": "Review of Educational Research",
-      "citation_count": 1549,
-      "engines_found_in": [
+      "year": 1998,
+      "cited_by_count": 1550,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://telearn.hal.science/hal-00190680/document",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 20
     },
     {
-      "rank": 4,
       "doi": "10.1186/s41239-023-00392-8",
       "title": "Artificial intelligence in higher education: the state of the field",
-      "abstract": "Abstract This systematic review provides unique findings with an up-to-date examination of artificial intelligence (AI) in higher education (HE) from 2016 to 2022. Using PRISMA principles and protocol, 138 articles were identified for a full examination. Using a priori, and grounded coding, the data from the 138 articles were extracted, analyzed, and coded. The findings of this study show that in 2021 and 2022, publications rose nearly two to three times the number of previous years. With this rapid rise in the number of AIEd HE publications, new trends have emerged. The findings show that research was conducted in six of the seven continents of the world. The trend has shifted from the US to China leading in the number of publications. Another new trend is in the researcher affiliation as prior studies showed a lack of researchers from departments of education. This has now changed to be the most dominant department. Undergraduate students were the most studied students at 72%. Similar to the findings of other studies, language learning was the most common subject domain. This included writing, reading, and vocabulary acquisition. In examination of who the AIEd was intended for 72% of the studies focused on students, 17% instructors, and 11% managers. In answering the overarching question of how AIEd was used in HE, grounded coding was used. Five usage codes emerged from the data: (1) Assessment/Evaluation, (2) Predicting, (3) AI Assistant, (4) Intelligent Tutoring System (ITS), and (5) Managing Student Learning. This systematic review revealed gaps in the literature to be used as a springboard for future researchers, including new tools, such as Chat GPT.",
-      "year": 2023,
+      "authors": [
+        "Helen Crompton",
+        "Diane Burke"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 1414,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 1458,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00392-8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 21
     },
     {
-      "rank": 5,
+      "doi": "10.1007/s43681-021-00096-7",
+      "title": "Artificial intelligence in education: Addressing ethical challenges in K-12 settings",
+      "authors": [
+        "Selin Akgün",
+        "Christine Greenhow"
+      ],
+      "venue": "AI and Ethics",
+      "year": 2021,
+      "cited_by_count": 1252,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-021-00096-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1155/2021/8812542",
+      "title": "A Review of Artificial Intelligence (AI) in Education from 2010 to 2020",
+      "authors": [
+        "Xuesong Zhai",
+        "Xiaoyan Chu",
+        "Ching Sing Chai",
+        "Morris Siu–Yung Jong",
+        "Andreja Istenič Starčič",
+        "Michael Spector",
+        "Jia‐Bao Liu",
+        "Yuan Jing",
+        "Yan Li"
+      ],
+      "venue": "Complexity",
+      "year": 2021,
+      "cited_by_count": 1166,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://downloads.hindawi.com/journals/complexity/2021/8812542.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 23
+    },
+    {
       "doi": "10.1109/tnnls.2022.3160699",
       "title": "Towards Personalized Federated Learning",
-      "abstract": "In parallel with the rapid adoption of artificial intelligence (AI) empowered by advances in AI research, there has been growing awareness and concerns of data privacy. Recent significant developments in the data regulation landscape have prompted a seismic shift in interest toward privacy-preserving AI. This has contributed to the popularity of Federated Learning (FL), the leading paradigm for the training of machine learning models on data silos in a privacy-preserving manner. In this survey, we explore the domain of personalized FL (PFL) to address the fundamental challenges of FL on heterogeneous data, a universal characteristic inherent in all real-world datasets. We analyze the key motivations for PFL and present a unique taxonomy of PFL techniques categorized according to the key challenges and personalization strategies in PFL. We highlight their key ideas, challenges, opportunities, and envision promising future trajectories of research toward a new PFL architectural design, realistic PFL benchmarking, and trustworthy PFL approaches.",
-      "year": 2022,
+      "authors": [
+        "Alysa Ziying Tan",
+        "Han Yu",
+        "Lizhen Cui",
+        "Qiang Yang"
+      ],
       "venue": "IEEE Transactions on Neural Networks and Learning Systems",
-      "citation_count": 1019,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 1048,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/2103.00710",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 24
     },
     {
-      "rank": 6,
+      "doi": "10.1002/widm.1355",
+      "title": "Educational data mining and learning analytics: An updated survey",
+      "authors": [
+        "Cristóbal Romero",
+        "Sebastián Ventura"
+      ],
+      "venue": "Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery",
+      "year": 2020,
+      "cited_by_count": 999,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/2402.07956",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 25
+    },
+    {
       "doi": "10.3390/su151612451",
       "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
-      "abstract": "The recent high performance of ChatGPT on several standardized academic tests has thrust the topic of artificial intelligence (AI) into the mainstream conversation about the future of education. As deep learning is poised to shift the teaching paradigm, it is essential to have a clear understanding of its effects on the current education system to ensure sustainable development and deployment of AI-driven technologies at schools and universities. This research aims to investigate the potential impact of AI on education through review and analysis of the existing literature across three major axes: applications, advantages, and challenges. Our review focuses on the use of artificial intelligence in collaborative teacher–student learning, intelligent tutoring systems, automated assessment, and personalized learning. We also report on the potential negative aspects, ethical issues, and possible future routes for AI implementation in education. Ultimately, we find that the only way forward is to embrace the new technology, while implementing guardrails to prevent its abuse.",
-      "year": 2023,
+      "authors": [
+        "Firuz Kamalov",
+        "David Santandreu Calonge",
+        "Ikhlaas Gurrib"
+      ],
       "venue": "Sustainability",
-      "citation_count": 940,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 952,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/15/16/12451/pdf?version=1692181759",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 26
     },
     {
-      "rank": 7,
+      "doi": "10.3390/educsci13070692",
+      "title": "Shaping the Future of Education: Exploring the Potential and Consequences of AI and ChatGPT in Educational Settings",
+      "authors": [
+        "Simone Grassini"
+      ],
+      "venue": "Education Sciences",
+      "year": 2023,
+      "cited_by_count": 950,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7102/13/7/692/pdf?version=1688728852",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 27
+    },
+    {
       "doi": "10.1007/s10462-022-10246-w",
       "title": "Human-in-the-loop machine learning: a state of the art",
-      "abstract": "Abstract Researchers are defining new types of interactions between humans and machine learning algorithms generically called human-in-the-loop machine learning. Depending on who is in control of the learning process, we can identify: active learning, in which the system remains in control; interactive machine learning, in which there is a closer interaction between users and learning systems; and machine teaching, where human domain experts have control over the learning process. Aside from control, humans can also be involved in the learning process in other ways. In curriculum learning human domain experts try to impose some structure on the examples presented to improve the learning; in explainable AI the focus is on the ability of the model to explain to humans why a given solution was chosen. This collaboration between AI models and humans should not be limited only to the learning process; if we go further, we can see other terms that arise such as Usable and Useful AI. In this paper we review the state of the art of the techniques involved in the new forms of relationship between humans and ML algorithms. Our contribution is not merely listing the different approaches, but to provide definitions clarifying confusing, varied and sometimes contradictory terms; to elucidate and determine the boundaries between the different methods; and to correlate all the techniques searching for the connections and influences between them.",
-      "year": 2022,
+      "authors": [
+        "Eduardo Mosqueira-Rey",
+        "Elena Hernández-Pereira",
+        "David Alonso-Ríos",
+        "José Bobes-Bascarán",
+        "Ángel Fernández-Leal"
+      ],
       "venue": "Artificial Intelligence Review",
-      "citation_count": 870,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 886,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10462-022-10246-w.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 28
     },
     {
-      "rank": 8,
       "doi": "10.1186/s41239-024-00448-3",
       "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
-      "abstract": "Abstract The present discussion examines the transformative impact of Artificial Intelligence (AI) in educational settings, focusing on the necessity for AI literacy, prompt engineering proficiency, and enhanced critical thinking skills. The introduction of AI into education marks a significant departure from conventional teaching methods, offering personalized learning and support for diverse educational requirements, including students with special needs. However, this integration presents challenges, including the need for comprehensive educator training and curriculum adaptation to align with societal structures. AI literacy is identified as crucial, encompassing an understanding of AI technologies and their broader societal impacts. Prompt engineering is highlighted as a key skill for eliciting specific responses from AI systems, thereby enriching educational experiences and promoting critical thinking. There is detailed analysis of strategies for embedding these skills within educational curricula and pedagogical practices. This is discussed through a case-study based on a Swiss university and a narrative literature review, followed by practical suggestions of how to implement AI in the classroom.",
-      "year": 2024,
+      "authors": [
+        "Yoshija Walter"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 831,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 866,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-024-00448-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 29
     },
     {
-      "rank": 9,
       "doi": "10.3390/educsci13090856",
       "title": "Challenges and Opportunities of Generative AI for Higher Education as Explained by ChatGPT",
-      "abstract": "ChatGPT is revolutionizing the field of higher education by leveraging deep learning models to generate human-like content. However, its integration into academic settings raises concerns regarding academic integrity, plagiarism detection, and the potential impact on critical thinking skills. This article presents a study that adopts a thing ethnography approach to understand ChatGPT’s perspective on the challenges and opportunities it represents for higher education. The research explores the potential benefits and limitations of ChatGPT, as well as mitigation strategies for addressing the identified challenges. Findings emphasize the urgent need for clear policies, guidelines, and frameworks to responsibly integrate ChatGPT in higher education. It also highlights the need for empirical research to understand user experiences and perceptions. The findings provide insights that can guide future research efforts in understanding the implications of ChatGPT and similar Artificial Intelligence (AI) systems in higher education. The study concludes by highlighting the importance of thing ethnography as an innovative approach for engaging with intelligent AI systems and calls for further research to explore best practices and strategies in utilizing Generative AI for educational purposes.",
-      "year": 2023,
+      "authors": [
+        "Rosario Michel‐Villarreal",
+        "Eliseo Luis Vilalta-perdomo",
+        "David Ernesto Salinas-Navarro",
+        "Ricardo Thierry-Aguilera",
+        "Flor Silvestre Gerardou"
+      ],
       "venue": "Education Sciences",
-      "citation_count": 769,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 778,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7102/13/9/856/pdf?version=1692771591",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 10,
       "doi": "10.1111/j.1551-6709.2012.01245.x",
       "title": "The Knowledge‐Learning‐Instruction Framework: Bridging the Science‐Practice Chasm to Enhance Robust Student Learning",
-      "abstract": "Despite the accumulation of substantial cognitive science research relevant to education, there remains confusion and controversy in the application of research to educational practice. In support of a more systematic approach, we describe the Knowledge-Learning-Instruction (KLI) framework. KLI promotes the emergence of instructional principles of high potential for generality, while explicitly identifying constraints of and opportunities for detailed analysis of the knowledge students may acquire in courses. Drawing on research across domains of science, math, and language learning, we illustrate the analyses of knowledge, learning, and instructional events that the KLI framework affords. We present a set of three coordinated taxonomies of knowledge, learning, and instruction. For example, we identify three broad classes of learning events (LEs): (a) memory and fluency processes, (b) induction and refinement processes, and (c) understanding and sense-making processes, and we show how these can lead to different knowledge changes and constraints on optimal instructional choices.",
-      "year": 2012,
+      "authors": [
+        "Kenneth R. Koedinger",
+        "Albert T. Corbett",
+        "Charles A. Perfetti"
+      ],
       "venue": "Cognitive Science",
-      "citation_count": 737,
-      "engines_found_in": [
+      "year": 2012,
+      "cited_by_count": 739,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://figshare.com/articles/The_knowledge-learning-instruction_framework_bridging_the_science-practice_chasm_to_enhance_robust_student_learning_/6470522",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 31
     },
     {
-      "rank": 11,
+      "doi": "10.1080/10494820.2023.2253861",
+      "title": "The impact of Generative AI (GenAI) on practices, policies and research direction in education: a case of ChatGPT and Midjourney",
+      "authors": [
+        "Thomas K. F. Chiu"
+      ],
+      "venue": "Interactive Learning Environments",
+      "year": 2023,
+      "cited_by_count": 730,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/10494820.2023.2253861?download=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 32
+    },
+    {
       "doi": "10.1186/s41239-021-00292-9",
       "title": "The impact of artificial intelligence on learner–instructor interaction in online learning",
-      "abstract": "Artificial intelligence (AI) systems offer effective support for online learning and teaching, including personalizing learning for students, automating instructors' routine tasks, and powering adaptive assessments. However, while the opportunities for AI are promising, the impact of AI systems on the culture of, norms in, and expectations about interactions between students and instructors are still elusive. In online learning, learner-instructor interaction (inter alia, communication, support, and presence) has a profound impact on students' satisfaction and learning outcomes. Thus, identifying how students and instructors perceive the impact of AI systems on their interaction is important to identify any gaps, challenges, or barriers preventing AI systems from achieving their intended potential and risking the safety of these interactions. To address this need for forward-looking decisions, we used Speed Dating with storyboards to analyze the authentic voices of 12 students and 11 instructors on diverse use cases of possible AI systems in online learning. Findings show that participants envision adopting AI systems in online learning can enable personalized learner-instructor interaction at scale but at the risk of violating social boundaries. Although AI systems have been positively recognized for improving the quantity and quality of communication, for providing just-in-time, personalized support for large-scale settings, and for improving the feeling of connection, there were concerns about responsibility, agency, and surveillance issues. These findings have implications for the design of AI systems to ensure explainability, human-in-the-loop, and careful data collection and presentation. Overall, contributions of this study include the design of AI system storyboards which are technically feasible and positively support learner-instructor interaction, capturing students' and instructors' concerns of AI systems through Speed Dating, and suggesting practical im",
-      "year": 2021,
+      "authors": [
+        "Kyoungwon Seo",
+        "Joice Tang",
+        "Ido Roll",
+        "Sidney Fels",
+        "Dongwook Yoon"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 715,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 721,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/track/pdf/10.1186/s41239-021-00292-9",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 33
     },
     {
-      "rank": 12,
+      "doi": "10.3390/soc15010006",
+      "title": "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",
+      "authors": [
+        "Michael Gerlich"
+      ],
+      "venue": "Societies",
+      "year": 2025,
+      "cited_by_count": 717,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2075-4698/15/1/6/pdf?version=1735907439",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 34
+    },
+    {
       "doi": "10.1007/s11423-023-10203-6",
       "title": "Teachers’ AI digital competencies and twenty-first century skills in the post-pandemic world",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Davy Tsz Kit Ng",
+        "Jac Ka Lok Leung",
+        "Jiahong Su",
+        "Chi Wui Ng",
+        "Samuel Kai Wah Chu"
+      ],
       "venue": "Educational Technology Research and Development",
-      "citation_count": 598,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 608,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11423-023-10203-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 35
     },
     {
-      "rank": 13,
+      "doi": "10.1093/qje/qjae044",
+      "title": "Generative Ai at Work",
+      "authors": [
+        "Erik Brynjolfsson"
+      ],
+      "venue": "QUARTERLY JOURNAL OF ECONOMICS",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "644744fb71ac66d2cbf9b96e",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "",
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "authors": [
+        "Giulio Starace"
+      ],
+      "venue": "ICML 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67edeb7d163c01c8506437aa",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.48550/arxiv.2311.12983",
+      "title": "GAIA: a Benchmark for General AI Assistants.",
+      "authors": [
+        "Grégoire Mialon"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "655ebe60939a5f4082bb5c79",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1145/3555803",
+      "title": "Trustworthy AI: from Principles to Practices",
+      "authors": [
+        "Bo Li"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615bc2735244ab9dcbdbcde2",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1080/10447318.2022.2050543",
+      "title": "Trust in AI and Its Role in the Acceptance of AI Technologies",
+      "authors": [
+        "Hyesun Choung"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF HUMAN-COMPUTER INTERACTION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623d33145aee126c0f100e3a",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1016/j.inffus.2023.101896",
+      "title": "Connecting the Dots in Trustworthy Artificial Intelligence: from AI Principles, Ethics, and Key Requirements to Responsible AI Systems and Regulation",
+      "authors": [
+        "Natalia Diaz-Rodriguez"
+      ],
+      "venue": "INFORMATION FUSION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6456389bd68f896efacf69ac",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.48550/arxiv.2307.14334",
+      "title": "Towards Generalist Biomedical AI",
+      "authors": [
+        "Tao Tu"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64c1f06d3fda6d7f063cb366",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1007/978-981-99-8277-6",
+      "title": "Stochastic Approximation: A Dynamical Systems Viewpoint",
+      "authors": [
+        "Vivek S. Borkar"
+      ],
+      "venue": "Texts and Readings in Mathematics",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d89d87dabfae2eee4a902f",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.48550/arxiv.2305.05065",
+      "title": "Recommender Systems with Generative Retrieval.",
+      "authors": [
+        "Shashank Rajput"
+      ],
+      "venue": "NeurIPS 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "645c5e3fd68f896efa22c5db",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1016/j.berh.2022.101814",
+      "title": "Systemic Lupus Erythematosus.",
+      "authors": [
+        "Yoshiya Tanaka"
+      ],
+      "venue": "Best practice & research Clinical rheumatology",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af68863fda6d7f063b8d1a",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1007/978-3-031-24628-9_28",
+      "title": "Recommender Systems",
+      "authors": [
+        "Shuai Zhang"
+      ],
+      "venue": "Springer eBooks",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578d8df939a5f40826fc54d",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1201/9781003435006-13",
+      "title": "Systemic Interventions",
+      "authors": [
+        "Bernard Amadei"
+      ],
+      "venue": "Navigating the Complexity Across the Peace–Sustainability–Climate Security Nexus",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657938e2939a5f40820ffdfb",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1145/3491102.3517582",
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "authors": [
+        "Tongshuang Wu"
+      ],
+      "venue": "PROCEEDINGS OF THE 2022 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI' 22)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615d13fe5244ab9dcb637a44",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1007/978-3-031-04083-2_2",
+      "title": "Explainable AI Methods - A Brief Overview",
+      "authors": [
+        "Andreas Holzinger"
+      ],
+      "venue": "XXAI - BEYOND EXPLAINABLE AI International Workshop, Held in Conjunction with ICML 2020, July 18, 2020, Vienna, Austria, Revised and Extended Papers",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e25fc5aee126c0f7b0544",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1145/3448250",
+      "title": "Deep Learning for AI",
+      "authors": [
+        "Yoshua Bengio"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60f6a2de5244ab9dcbcd920c",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1017/9781108936040.022",
+      "title": "Ethics Guidelines for Trustworthy AI",
+      "authors": [
+        "Michel Cannarsa"
+      ],
+      "venue": "The Cambridge Handbook of Lawyering in the Digital Age",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca0d9b5244ab9dcbbe8273",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.2307/j.ctv1ghv45t",
+      "title": "The Atlas of AI",
+      "authors": [
+        "KATE CRAWFORD"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a4c00dd68f896efab5ac18",
+      "matched_phrase": "AI",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1109/twc.2020.3037595",
+      "title": "Fluid Antenna Systems",
+      "authors": [
+        "Kai-Kit Wong"
+      ],
+      "venue": "IEEE TRANSACTIONS ON WIRELESS COMMUNICATIONS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ecce8ec91e0119170395b4b",
+      "matched_phrase": "systems",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
       "doi": "10.3389/fpsyg.2023.1260843",
       "title": "Enhancing academic writing skills and motivation: assessing the efficacy of ChatGPT in AI-assisted language learning for EFL students",
-      "abstract": "Introduction: This mixed-methods study evaluates the impact of AI-assisted language learning on Chinese English as a Foreign Language (EFL) students' writing skills and writing motivation. As artificial intelligence (AI) becomes more prevalent in educational settings, understanding its effects on language learning outcomes is crucial. Methods: The study employs a comprehensive approach, combining quantitative and qualitative methods. The quantitative phase utilizes a pre-test and post-test design to assess writing skills. Fifty EFL students, matched for proficiency, are randomly assigned to experimental (AI-assisted instruction via ChatGPT) or control (traditional instruction) groups. Writing samples are evaluated using established scoring rubrics. Concurrently, semi-structured interviews are conducted with a subset of participants to explore writing motivation and experiences with AI-assisted learning. Results: Quantitative analysis reveals significant improvements in both writing skills and motivation among students who received AI-assisted instruction compared to the control group. The experimental group demonstrates enhanced proficiency in various aspects of writing, including organization, coherence, grammar, and vocabulary. Qualitative findings showcase diverse perspectives, ranging from recognition of AI's innovative instructional role and its positive influence on writing skills and motivation to concerns about contextual accuracy and over-reliance. Participants also reflect on the long-term impact and sustainability of AI-assisted instruction, emphasizing the need for ongoing development and adaptation of AI tools. Discussion: The nuanced findings offer a comprehensive understanding of AI's transformative potential in education. These insights have practical implications for practitioners and researchers, emphasizing the benefits, challenges, and the evolving nature of AI's role in language instruction.",
-      "year": 2023,
+      "authors": [
+        "Cuiping Song",
+        "Yanping Song"
+      ],
       "venue": "Frontiers in Psychology",
-      "citation_count": 576,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 587,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1260843/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 54
     },
     {
-      "rank": 14,
       "doi": "10.1186/s41039-018-0078-8",
       "title": "Students’ perception of Kahoot!’s influence on teaching and learning",
-      "abstract": "Technology is being increasingly integrated into teaching environments in view of enhancing students’ engagement and motivation. In particular, game-based student response systems have been found to foster students’ engagement, enhance classroom dynamics and improve overall students’ learning experience. This article presents outcomes of research that examined students’ experience using a game-based student response system, Kahoot!, in an Information Systems Strategy and Governance course at a research-intensive teaching university in New Zealand. We conducted semi-structured interviews with students to learn about the extent to which Kahoot! influence classroom dynamics, motivation and students’ learning process. Key findings revealed that Kahoot! enriched the quality of student learning in the classroom, with the highest influence reported on classroom dynamics, engagement, motivation and improved learning experience. Our findings also suggest that the use of educational games in the classroom is likely to minimise distractions, thereby improving the quality of teaching and learning beyond what is provided in conventional classrooms. Other factors that contributed to students’ enhanced learning included the creation and integration of appropriate content in Kahoot!, providing students with timely feedback, and game-play (gamification) strategies.",
-      "year": 2018,
+      "authors": [
+        "Sherlock A. Licorish",
+        "Helen Owen",
+        "Ben Kei Daniel",
+        "Jade Li George"
+      ],
       "venue": "Research and Practice in Technology Enhanced Learning",
-      "citation_count": 510,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 512,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://telrp.springeropen.com/counter/pdf/10.1186/s41039-018-0078-8",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 55
     },
     {
-      "rank": 15,
       "doi": "10.1111/bjet.13334",
       "title": "Do <scp>AI</scp> chatbots improve students learning outcomes? Evidence from a meta‐analysis",
-      "abstract": "Abstract Artificial intelligence (AI) chatbots are gaining increasing popularity in education. Due to their increasing popularity, many empirical studies have been devoted to exploring the effects of AI chatbots on students' learning outcomes. The proliferation of experimental studies has highlighted the need to summarize and synthesize the inconsistent findings about the effects of AI chatbots on students' learning outcomes. However, few reviews focused on the meta‐analysis of the effects of AI chatbots on students' learning outcomes. The present study performed a meta‐analysis of 24 randomized studies utilizing Stata software (version 14). The main goal of the current study was to meta‐analytically examine the effects of AI chatbots on students' learning outcomes and the moderating effects of educational levels and intervention duration. The results indicated that AI chatbots had a large effect on students' learning outcomes. Moreover, AI chatbots had a greater effect on students in higher education, compared to those in primary education and secondary education. In addition, short interventions were found to have a stronger effect on students' learning outcomes than long interventions. It could be explained by the argument that the novelty effects of AI chatbots could improve learning outcomes in short interventions, but it has worn off in the long interventions. Future designers and educators should make attempt to increase students' learning outcomes by equipping AI chatbots with human‐like avatars, gamification elements and emotional intelligence. Practitioner notes What is already known about this topic In recent years, artificial intelligence (AI) chatbots have been gaining increasing popularity in education. Studies undertaken so far have provided conflicting evidence concerning the effects of AI chatbots on students' learning outcomes. There has remained a paucity of meta‐analyses synthesizing the contradictory findings about the effects of AI chatbots on ",
-      "year": 2023,
+      "authors": [
+        "Rong Wu",
+        "Zhonggen Yu"
+      ],
       "venue": "British Journal of Educational Technology",
-      "citation_count": 484,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 488,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjet.13334",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 56
     },
     {
-      "rank": 16,
       "doi": "10.1186/s41239-023-00425-2",
       "title": "AI-generated feedback on writing: insights into efficacy and ENL student preference",
-      "abstract": "Abstract The question of how generative AI tools, such as large language models and chatbots, can be leveraged ethically and effectively in education is ongoing. Given the critical role that writing plays in learning and assessment within educational institutions, it is of growing importance for educators to make thoughtful and informed decisions as to how and in what capacity generative AI tools should be leveraged to assist in the development of students’ writing skills. This paper reports on two longitudinal studies. Study 1 examined learning outcomes of 48 university English as a new language (ENL) learners in a six-week long repeated measures quasi experimental design where the experimental group received writing feedback generated from ChatGPT (GPT-4) and the control group received feedback from their human tutor. Study 2 analyzed the perceptions of a different group of 43 ENLs who received feedback from both ChatGPT and their tutor. Results of study 1 showed no difference in learning outcomes between the two groups. Study 2 results revealed a near even split in preference for AI-generated or human-generated feedback, with clear advantages to both forms of feedback apparent from the data. The main implication of these studies is that the use of AI-generated feedback can likely be incorporated into ENL essay evaluation without affecting learning outcomes, although we recommend a blended approach that utilizes the strengths of both forms of feedback. The main contribution of this paper is in addressing generative AI as an automatic essay evaluator while incorporating learner perspectives.",
-      "year": 2023,
+      "authors": [
+        "Juan Escalante",
+        "Austin Pack",
+        "Alex Barrett"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 474,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 486,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00425-2",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 57
     },
     {
-      "rank": 17,
       "doi": "10.1080/2331186x.2023.2236469",
       "title": "The impact of AI writing tools on the content and organization of students’ writing: EFL teachers’ perspective",
-      "abstract": "The primary objective of this study was to examine the range of available Artificial Intelligence (AI) writing tools and assess their influence on student writing, particularly in terms of content and organization, as perceived by English as a Foreign Language (EFL) teachers. Utilizing a qualitative approach, the research was constructed within a case study design. The data was collected via semi-structured interviews, targeting information about the diversity of AI writing tools and their impact on students” writing quality. The study gathered data from four EFL teachers across three distinct universities in Indonesia, shedding light on the variety of AI writing tools used in their classrooms. These included applications like Quillbot, WordTune, Jenni, Chat-GPT, Paperpal, Copy.ai, and Essay Writer. Furthermore, these teachers unanimously agreed that the AI writing tools positively improved their students’ writing quality, particularly enhancing the quality of their content and organization. The findings of this study imply that integrating AI writing tools can prove beneficial in elevating the quality of EFL student writing. In response to this study’s limitations, recommendations for future research were also addressed.",
-      "year": 2023,
+      "authors": [
+        "Marzuki Marzuki",
+        "Utami Widiati",
+        "Diyenti Rusdin",
+        "Darwin Darwin",
+        "Inda Indrawati"
+      ],
       "venue": "Cogent Education",
-      "citation_count": 453,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 462,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/2331186X.2023.2236469?needAccess=true&role=button",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     },
     {
-      "rank": 18,
       "doi": "10.3389/fpsyg.2023.1261955",
       "title": "Artificial intelligence in language instruction: impact on English learning achievement, L2 motivation, and self-regulated learning",
-      "abstract": "Introduction: This mixed methods study examines the effects of AI-mediated language instruction on English learning achievement, L2 motivation, and self-regulated learning among English as a Foreign Language (EFL) learners. It addresses the increasing interest in AI-driven educational technologies and their potential to revolutionize language instruction. Methods: Two intact classes, consisting of a total of 60 university students, participated in this study. The experimental group received AI-mediated instruction, while the control group received traditional language instruction. Pre-tests and post-tests were administered to evaluate English learning achievement across various domains, including grammar, vocabulary, reading comprehension, and writing skills. Additionally, self-report questionnaires were employed to assess L2 motivation and self-regulated learning. Results: Quantitative analysis revealed that the experimental group achieved significantly higher English learning outcomes in all assessed areas compared to the control group. Furthermore, they exhibited greater L2 motivation and more extensive utilization of self-regulated learning strategies. These results suggest that AI-mediated instruction positively impacts English learning achievement, L2 motivation, and self-regulated learning. Discussion: Qualitative analysis of semi-structured interviews with 14 students from the experimental group shed light on the transformative effects of the AI platform. It was found to enhance engagement and offer personalized learning experiences, ultimately boosting motivation and fostering self-regulated learning. These findings emphasize the potential of AI-mediated language instruction to improve language learning outcomes, motivate learners, and promote autonomy. Conclusion: This study contributes to evidence-based language pedagogy, offering valuable insights to educators and researchers interested in incorporating AI-powered platforms into language classrooms. The ",
-      "year": 2023,
+      "authors": [
+        "Ling Wei"
+      ],
       "venue": "Frontiers in Psychology",
-      "citation_count": 438,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 441,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1261955/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 59
     },
     {
-      "rank": 19,
+      "doi": "10.1257/jep.10.4.31",
+      "title": "School Resources and Student Outcomes: An Overview of the Literature and New Evidence from North and South Carolina",
+      "authors": [
+        "David Card",
+        "Alan B Krueger"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 1996,
+      "cited_by_count": 421,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.10.4.31",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.37074/jalt.2023.6.1.22",
+      "title": "What ChatGPT means for universities: Perceptions of scholars and students",
+      "authors": [
+        "Mehmet Fırat"
+      ],
+      "venue": "Journal of Applied Learning & Teaching",
+      "year": 2023,
+      "cited_by_count": 412,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/769/575",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 61
+    },
+    {
       "doi": "10.1016/j.compedu.2023.104967",
       "title": "Impact of AI assistance on student agency",
-      "abstract": "AI-powered learning technologies are increasingly being used to automate and scaffold learning activities (e.g., personalised reminders for completing tasks, automated real-time feedback for improving writing, or recommendations for when and what to study). While the prevailing view is that these technologies generally have a positive effect on student learning, their impact on students’ agency and ability to self-regulate their learning is under-explored. Do students learn from the regular, detailed and personalised feedback provided by AI systems, and will they continue to exhibit similar behaviour in the absence of assistance? Or do they instead continue to rely on AI assistance without learning from it? To contribute to filling this research gap, we conducted a randomised controlled experiment that explored the impact of AI assistance on student agency in the context of peer feedback. With 1625 students across 10 courses, an experiment was conducted using peer review. During the initial four-week period, students were guided by AI features that utilised techniques such as rule-based suggestion detection, semantic similarity, and comparison with previous comments made by the reviewer to enhance their submissions if the feedback provided was deemed insufficiently detailed or general in nature. Over the following four weeks, students were divided into four different groups: control (AI) received prompts, (NR) received no prompts, (SR) received self-monitoring checklists in place of AI prompts, and (SAI) had access to both AI prompts and self-monitoring checklists. Results of the experiment suggest that students tended to rely on rather than learn from AI assistance. If AI assistance was removed, self-regulated strategies could help in filling in the gap but were not as effective as AI assistance. Results also showed that hybrid human-AI approaches that complement AI assistance with self-regulated strategies (SAI) were not more effective than AI assistance on its ow",
-      "year": 2023,
+      "authors": [
+        "Ali Darvishi",
+        "Hassan Khosravi",
+        "Shazia Sadiq",
+        "Dragan Gašević",
+        "George Siemens"
+      ],
       "venue": "Computers & Education",
-      "citation_count": 398,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 406,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.compedu.2023.104967",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 62
     },
     {
-      "rank": 20,
       "doi": "10.1186/s41239-022-00362-6",
       "title": "The impact of a virtual teaching assistant (chatbot) on students' learning in Ghanaian higher education",
-      "abstract": "Abstract Chatbot usage is evolving rapidly in various fields, including higher education. The present study’s purpose is to discuss the effect of a virtual teaching assistant (chatbot) that automatically responds to a student’s question. A pretest–posttest design was implemented, with the 68 participating undergraduate students being randomly allocated to scenarios representing a 2 × 2 design (experimental and control cohorts). Data was garnered utilizing an academic achievement test and focus groups, which allowed more in depth analysis of the students’ experience with the chatbot. The results of the study demonstrated that the students who interacted with the chatbot performed better academically comparing to those who interacted with the course instructor. Besides, the focus group data garnered from the experimental cohort illustrated that they were confident about the chatbot’s integration into the course. The present study essentially focused on the learning of the experimental cohort and their view regarding interaction with the chatbot. This study contributes the emerging artificial intelligence (AI) chatbot literature to improve student academic performance. To our knowledge, this is the first study in Ghana to integrate a chatbot to engage undergraduate students. This study provides critical information on the use and development of virtual teaching assistants using a zero-coding technique, which is the most suitable approach for organizations with limited financial and human resources.",
-      "year": 2022,
+      "authors": [
+        "Harry Barton Essel",
+        "Dimitrios Vlachopoulos",
+        "Akosua Tachie-Menson",
+        "Esi Eduafua Johnson",
+        "Papa Kwame Baah"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 395,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 400,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-022-00362-6",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 63
     },
     {
-      "rank": 21,
       "doi": "10.1109/access.2022.3193938",
       "title": "AI-Based Personalized E-Learning Systems: Issues, Challenges, and Solutions",
-      "abstract": "A personalized e-learning system is effective in imparting enhanced learning to its users. As compared to a conventional e-learning system, which provides similar contents to each learner, a personalized learning system provides specific learning contents and assessments to the learners. Personalization is based on Artificial Intelligence (AI) based techniques in which appropriate contents for each learner are determined using the level of comprehension of the learner and the preferred modes of learning. This paper presents requirements and challenges for a personalized e-learning system. The paper is focused in elaborating four research questions, which are related to identifying key factors of personalized education, elaborating on state of the art research in the domain, utilizing benefits of AI in personalized education, and determining future research directions. The paper utilizes an extensive survey of current research papers in answering these questions. It provides a comprehensive review of existing solutions in offering personalized e-learning solutions. It also elaborates on different learning models and learning theories, which are significant in providing personalized education. It proposes an efficient framework, which can offer personalized e-learning to each learner and identifies significant directions for future research. The paper is beneficial for academicians and researchers in understanding the requirements of such a system, comprehending its methodologies, and identifying challenges which are needed to be addressed.",
-      "year": 2022,
+      "authors": [
+        "Mir Murtaza",
+        "Yamna Ahmed",
+        "Jawwad Ahmed Shamsi",
+        "Fahad Sherwani",
+        "Mariam Usman"
+      ],
       "venue": "IEEE Access",
-      "citation_count": 343,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 352,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09840390.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 64
     },
     {
-      "rank": 22,
+      "doi": "10.1038/s42256-021-00417-9",
+      "title": "AI-generated characters for supporting personalized learning and well-being",
+      "authors": [
+        "Pat Pataranutaporn",
+        "Valdemar Danry",
+        "Joanne Leong",
+        "Parinya Punpongsanon",
+        "Dan Novy",
+        "Pattie Maes",
+        "Misha Sra"
+      ],
+      "venue": "Nature Machine Intelligence",
+      "year": 2021,
+      "cited_by_count": 345,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.nature.com/articles/s42256-021-00417-9.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 65
+    },
+    {
       "doi": "10.1186/s41239-022-00372-4",
       "title": "Integration of artificial intelligence performance prediction and learning analytics to improve student learning in online engineering course",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Fan Ouyang",
+        "Mian Wu",
+        "Luyi Zheng",
+        "Liyin Zhang",
+        "Pengcheng Jiao"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 337,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 341,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-022-00372-4",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 66
     },
     {
-      "rank": 23,
       "doi": "10.1186/s41239-023-00406-5",
       "title": "Supporting students’ self-regulated learning in online learning using artificial intelligence applications",
-      "abstract": "Abstract Self-regulated learning (SRL) is crucial for helping students attain high academic performance and achieve their learning objectives in the online learning context. However, learners often face challenges in properly applying SRL in online learning environments. Recent developments in artificial intelligence (AI) applications have shown promise in supporting learners’ self-regulation in online learning by measuring and augmenting SRL, but research in this area is still in its early stages. The purpose of this study is to explore students’ perceptions of the use of AI applications to support SRL and to identify the pedagogical and psychological aspects that they perceive as necessary for effective utilization of those AI applications. To explore this, a speed dating method using storyboards was employed as an exploratory design method. The study involved the development of 10 AI application storyboards to identify the phases and areas of SRL, and semi-structured interviews were conducted with 16 university students from various majors. The results indicated that learners perceived AI applications as useful for supporting metacognitive, cognitive, and behavioral regulation across different SRL areas, but not for regulating motivation. Next, regarding the use of AI applications to support SRL, learners requested consideration of three pedagogical and psychological aspects: learner identity, learner activeness, and learner position. The findings of this study offer practical implications for the design of AI applications in online learning, with the aim of supporting students’ SRL.",
-      "year": 2023,
+      "authors": [
+        "Sung-Hee Jin",
+        "Kowoon Im",
+        "Mina Yoo",
+        "Ido Roll",
+        "Kyoungwon Seo"
+      ],
       "venue": "International Journal of Educational Technology in Higher Education",
-      "citation_count": 275,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 278,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00406-5",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 67
     },
     {
-      "rank": 24,
-      "doi": "10.1007/s40593-014-0023-y",
-      "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
-      "abstract": "",
-      "year": 2014,
+      "doi": "10.1007/s40593-014-0029-5",
+      "title": "AutoTutor and Family: A Review of 17 Years of Natural Language Tutoring",
+      "authors": [
+        "Benjamin D. Nye",
+        "Arthur C. Graesser",
+        "Xiangen Hu"
+      ],
       "venue": "International Journal of Artificial Intelligence in Education",
-      "citation_count": 260,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 273,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs40593-014-0029-5.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 68
     },
     {
-      "rank": 25,
       "doi": "10.3390/electronics13183762",
       "title": "Leveraging AI in E-Learning: Personalized Learning and Adaptive Assessment through Cognitive Neuropsychology—A Systematic Analysis",
-      "abstract": "This paper reviews the literature on integrating AI in e-learning, from the viewpoint of cognitive neuropsychology, for Personalized Learning (PL) and Adaptive Assessment (AA). This review follows the PRISMA systematic review methodology and synthesizes the results of 85 studies that were selected from an initial pool of 818 records across several databases. The results indicate that AI can improve students’ performance, engagement, and motivation; at the same time, some challenges like bias and discrimination should be noted. The review covers the historic development of AI in education, its theoretical grounding, and its practical applications within PL and AA with high promise and ethical issues of AI-powered educational systems. Future directions are empirical validation of effectiveness and equity, development of algorithms that reduce bias, and exploration of ethical implications regarding data privacy. The review identifies the transformative potential of AI in developing personalized and adaptive learning (AL) environments, thus, it advocates continued development and exploration as a means to improve educational outcomes.",
-      "year": 2024,
+      "authors": [
+        "Constantinos Halkiopoulos",
+        "Evgenia Gkintoni"
+      ],
       "venue": "Electronics",
-      "citation_count": 257,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 267,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2079-9292/13/18/3762/pdf?version=1726988994",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 69
     },
     {
-      "rank": 26,
+      "doi": "10.1007/s40593-014-0023-y",
+      "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
+      "authors": [
+        "Ivon Arroyo",
+        "Beverly Park Woolf",
+        "Winslow Burelson",
+        "Kasia Müldner",
+        "Dovan Rai",
+        "Minghui Tai"
+      ],
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "year": 2014,
+      "cited_by_count": 261,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s40593-014-0023-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
       "doi": "10.1001/jamanetworkopen.2021.49008",
       "title": "Effect of Artificial Intelligence Tutoring vs Expert Instruction on Learning Simulated Surgical Skills Among Medical Students",
-      "abstract": "Importance: To better understand the emerging role of artificial intelligence (AI) in surgical training, efficacy of AI tutoring systems, such as the Virtual Operative Assistant (VOA), must be tested and compared with conventional approaches. Objective: To determine how VOA and remote expert instruction compare in learners' skill acquisition, affective, and cognitive outcomes during surgical simulation training. Design, Setting, and Participants: This instructor-blinded randomized clinical trial included medical students (undergraduate years 0-2) from 4 institutions in Canada during a single simulation training at McGill Neurosurgical Simulation and Artificial Intelligence Learning Centre, Montreal, Canada. Cross-sectional data were collected from January to April 2021. Analysis was conducted based on intention-to-treat. Data were analyzed from April to June 2021. Interventions: The interventions included 5 feedback sessions, 5 minutes each, during a single 75-minute training, including 5 practice sessions followed by 1 realistic virtual reality brain tumor resection. The 3 intervention arms included 2 treatment groups, AI audiovisual metric-based feedback (VOA group) and synchronous verbal scripted debriefing and instruction from a remote expert (instructor group), and a control group that received no feedback. Main Outcomes and Measures: The coprimary outcomes were change in procedural performance, quantified as Expertise Score by a validated assessment algorithm (Intelligent Continuous Expertise Monitoring System [ICEMS]; range, -1.00 to 1.00) for each practice resection, and learning and retention, measured from performance in realistic resections by ICEMS and blinded Objective Structured Assessment of Technical Skills (OSATS; range 1-7). Secondary outcomes included strength of emotions before, during, and after the intervention and cognitive load after intervention, measured in self-reports. Results: A total of 70 medical students (41 [59%] women and 29 [41%] m",
-      "year": 2022,
+      "authors": [
+        "Ali M. Fazlollahi",
+        "Mohamad Bakhaidar",
+        "Ahmad Alsayegh",
+        "Recai Yilmaz",
+        "Alexander Winkler-Schwartz",
+        "Nykan Mirchi",
+        "Ian Langleben",
+        "Nicole Ledwos",
+        "Abdulrahman J. Sabbagh",
+        "Khalid Bajunaid",
+        "Jason M. Harley",
+        "Rolando F. Del Maestro"
+      ],
       "venue": "JAMA Network Open",
-      "citation_count": 256,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 257,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2789268/fazlollahi_2022_oi_211346_1644628736.68454.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 71
     },
     {
-      "rank": 27,
       "doi": "10.58631/injurity.v2i3.52",
       "title": "Role of AI in Education",
-      "abstract": "Artificial intelligence (AI) has the potential to revolutionize the way we learn and teach, making it more personalized, engaging, and efficient. AI in education refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to enhance the learning experience. It involves the use of algorithms that analyze data, identify patterns, and make predictions, enabling educators to personalize learning for each student. The potential benefits of using AI in education are significant. Personalized learning, one of the most significant advantages of AI in education, can lead to better student outcomes, as students can learn at their own pace and in a way that suits their learning style. Intelligent tutoring systems, chatbots, and automated grading and assessment can increase efficiency, save teachers' time, and provide more accurate and consistent feedback. However, there are also challenges associated with using AI in education. Privacy and security concerns, lack of trust, cost, and potential bias are some of the challenges that need to be addressed. Ethical considerations such as ensuring accessibility, transparency, and fairness in AI-based education systems also need to be taken into account. Despite these challenges, the potential of AI in education is immense. AI can provide better data analysis, enabling educators to make data-driven decisions. In this review we described role of AI in management, promotion of education which describe the effect of AI in education sector",
-      "year": 2023,
+      "authors": [
+        "Alexandara Harry",
+        "Sayudin Sayudin"
+      ],
       "venue": "Interdiciplinary Journal and Hummanity (INJURITY)",
-      "citation_count": 241,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 252,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://injurity.pusatpublikasi.id/index.php/inj/article/download/52/81",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 72
     },
     {
-      "rank": 28,
+      "doi": "10.1109/access.2021.3097962",
+      "title": "Teaching Machine Learning in K–12 Classroom: Pedagogical and Technological Trajectories for Artificial Intelligence Education",
+      "authors": [
+        "Matti Tedre",
+        "Tapani Toivonen",
+        "Juho Kahila",
+        "Henriikka Vartiainen",
+        "Teemu Valtonen",
+        "Ilkka Jormanainen",
+        "Arnold Pears"
+      ],
+      "venue": "IEEE Access",
+      "year": 2021,
+      "cited_by_count": 252,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09490241.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.1111/ejed.12527",
+      "title": "Towards hybrid <scp>human‐AI</scp> learning technologies",
+      "authors": [
+        "Inge Molenaar"
+      ],
+      "venue": "European Journal of Education",
+      "year": 2022,
+      "cited_by_count": 246,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejed.12527",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.1080/09588221.2024.2310288",
+      "title": "Exploring AI-mediated informal digital learning of English (AI-IDLE): a mixed-method investigation of Chinese EFL learners’ AI adoption and experiences",
+      "authors": [
+        "Guangxiang Liu",
+        "Ron Darvin",
+        "Chaojun Ma"
+      ],
+      "venue": "Computer Assisted Language Learning",
+      "year": 2024,
+      "cited_by_count": 237,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/09588221.2024.2310288?download=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 75
+    },
+    {
       "doi": "10.3390/su16073034",
       "title": "Generative AI for Customizable Learning Experiences",
-      "abstract": "The introduction of accessible generative artificial intelligence opens promising opportunities for the implementation of personalized learning methods in any educational environment. Personalized learning has been conceptualized for a long time, but it has only recently become realistic and truly achievable. In this paper, we propose an affordable and sustainable approach toward personalizing learning materials as part of the complete educational process. We have created a tool within a pre-existing learning management system at a software engineering college that automatically generates learning materials based on the learning outcomes provided by the professor for a particular class. The learning materials were composed in three distinct styles, the initial one being the traditional professor style and the other two variations adopting a pop-culture influence, namely Batman and Wednesday Addams. Each lesson, besides being delivered in three different formats, contained automatically generated multiple-choice questions that students could use to check their progress. This paper contains complete instructions for developing such a tool with the help of large language models using OpenAI’s API and an analysis of the preliminary experiment of its usage performed with the help of 20 college students studying software engineering at a European university. Participation in the study was optional and on voluntary basis. Each student’s tool usage was quantified, and two questionnaires were conducted: one immediately after subject completion and another 6 months later to assess both immediate and long-term effects, perceptions, and preferences. The results indicate that students found the multiple variants of the learning materials really engaging. While predominantly utilizing the traditional variant of the learning materials, they found this approach inspiring, would recommend it to other students, and would like to see it more in classes. The most popular feature were t",
-      "year": 2024,
+      "authors": [
+        "Ivica Pesovski",
+        "Ricardo Santos",
+        "Roberto Henriques",
+        "Vladimir Trajkovik"
+      ],
       "venue": "Sustainability",
-      "citation_count": 226,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 228,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/16/7/3034/pdf?version=1712310661",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 76
     },
     {
-      "rank": 29,
+      "doi": "10.1007/s11257-006-9012-7",
+      "title": "The impact of learning styles on student grouping for collaborative learning: a case study",
+      "authors": [
+        "Enrique Alfonseca",
+        "Rosa M. Carro",
+        "Estefanía Martín",
+        "Álvaro Ortigosa",
+        "Pedro Paredes"
+      ],
+      "venue": "User Modeling and User-Adapted Interaction",
+      "year": 2006,
+      "cited_by_count": 205,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11257-006-9012-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
       "doi": "10.1207/s15326985ep4004_7",
       "title": "Fostering the Intelligent Novice: Learning From Errors With Metacognitive Tutoring",
-      "abstract": "This article explores 2 important aspects of metacognition: (a) how students monitor their ongoing performance to detect and correct errors and (b) how students reflect on those errors to learn from them. Although many instructional theories have advocated providing students with immediate feedback on errors, some researchers have argued that immediate feedback eliminates the opportunity for students to practice monitoring for and learning from errors. Thus, they advocate delayed feedback. This article provides evidence that this line of reason is flawed and suggests that rather than focusing on the timing of feedback, instructional designers should focus on the \"model of desired performance\" with respect to which feedback is provided. Instead of delaying feedback, we suggest broadening our model of correct behavior or desired performance to include some kinds of incorrect, but reasonable behaviors. This article explores the effects of providing feedback on the basis of a so-called intelligent novice cognitive model. A system based on an intelligent novice model allows students to make certain reasonable errors, and provides guidance through the exercise of error detection and correction skills. There are two pedagogical motivations for feedback based on an intelligent novice model. First, jobs today not only require ready-made expertise for dealing with known problems, but also intelligence to address novel situation where nominal experts are thrown back to the state of a novice. Second, the opportunity to reason about the causes and consequences of errors may allow students to form a better model of the behavior of domain operators. Results show that students receiving intelligent novice feedback acquire a deeper conceptual understanding of domain principles and demonstrate better transfer and retention of skills over time.",
-      "year": 2005,
+      "authors": [
+        "Santosh Mathan",
+        "Kenneth R. Koedinger"
+      ],
       "venue": "Educational Psychologist",
-      "citation_count": 197,
-      "engines_found_in": [
+      "year": 2005,
+      "cited_by_count": 198,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/abs/10.1207/s15326985ep4004_7",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 78
     },
     {
-      "rank": 30,
+      "doi": "10.3389/fpsyg.2022.813632",
+      "title": "Lessons Learned and Future Directions of MetaTutor: Leveraging Multichannel Data to Scaffold Self-Regulated Learning With an Intelligent Tutoring System",
+      "authors": [
+        "Roger Azevedo",
+        "François Bouchet",
+        "Melissa Duffy",
+        "Jason M. Harley",
+        "Michelle Taub",
+        "Gregory Trevors",
+        "Elizabeth B. Cloude",
+        "Daryn A. Dever",
+        "Megan Wiedbusch",
+        "Franz Wortha",
+        "Rebeca Cerezo"
+      ],
+      "venue": "Frontiers in Psychology",
+      "year": 2022,
+      "cited_by_count": 192,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.813632/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
       "doi": "10.1016/j.eswa.2023.121820",
       "title": "From chatting to self-educating: Can AI tools boost student learning outcomes?",
-      "abstract": "Artificial intelligence (AI) has the power to revolutionize the field of education by enhancing teaching and learning experiences , improving student outcomes, and streamlining administrative tasks. The current study seeks to address the role of ChatGPT in enhancing students' learning outcomes. A sample of Moroccan higher education institutions (HEIs) students was collected through an online questionnaire using a convenience sampling method. The gathered data were processed through partial least squares technique. The findings reveal that output quality influence on perceived usefulness, ChatGPT use, and student satisfaction. Similarly, social influence significantly influences on perceived usefulness and ChatGPT use. The perceived ease of use significantly influence on perceived usefulness and student satisfaction. In addition, the ChatGPT perceived usefulness positively influence ChatGPT use, and students' satisfaction, leading to enhance individual impact. These outcomes provide a number of useful recommendations and implications for HEIs' managers to consider regarding how they might take action to renovate teaching practices in today's digital age.",
-      "year": 2024,
+      "authors": [
+        "Boubker, Omar"
+      ],
       "venue": "Expert Systems with Applications",
-      "citation_count": 156,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 159,
+      "reference_count": 79,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 80
+    },
+    {
+      "doi": "10.1007/s10639-022-11305-z",
+      "title": "Understanding secondary students’ continuance intention to adopt AI-powered intelligent tutoring system for English learning",
+      "authors": [
+        "Aohua Ni",
+        "Alan Cheung"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": 2022,
+      "cited_by_count": 145,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9463967",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1002/aaai.12058",
+      "title": "Designing for human–AI complementarity in K‐12 education",
+      "authors": [
+        "Kenneth Holstein",
+        "Vincent Aleven"
+      ],
+      "venue": "AI Magazine",
+      "year": 2022,
+      "cited_by_count": 125,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/aaai.12058",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1145/3613905.3651122",
+      "arxiv_id": "2403.14071v1",
+      "title": "Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling",
+      "authors": [
+        "Minju Park",
+        "Sojung Kim",
+        "Seunghyun Lee",
+        "Soonwoo Kwon",
+        "Kyuseok Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.14071v1",
+      "cited_by_count": 125,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv",
+        "aminer"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.1007/s10639-026-14030-z",
+      "title": "Beyond Tutoring: a Child-Centered AI Framework for Embodied Construction in Culturally-Grounded Steam Education",
+      "authors": [
+        "Wuwen Zhang"
+      ],
+      "venue": "Education and Information Technologies",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a09b3b80a96f8c83cfa0930",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.18653/v1/2024.emnlp-main.37",
+      "title": "Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems",
+      "authors": [
+        "Zhengyuan Liu"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "661743ea13fb2c6cf6439e2c",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.18653/v1/2023.findings-emnlp.372",
+      "title": "MathDial: A Dialogue Tutoring Dataset with Rich Pedagogical Properties Grounded in Math Reasoning Problems.",
+      "authors": [
+        "Jakub Macina"
+      ],
+      "venue": "EMNLP 2023",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "646edc9cd68f896efaddaa64",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1186/s40561-023-00260-y",
+      "title": "Artificial Intelligence in Intelligent Tutoring Systems Toward Sustainable Education: a Systematic Review.",
+      "authors": [
+        "Chien-Chang Lin"
+      ],
+      "venue": "Smart Learning Environments",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "650960b33fda6d7f0678fa59",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1109/cvprw56347.2022.00398",
+      "title": "Pose Tutor: an Explainable System for Pose Correction in the Wild",
+      "authors": [
+        "Bhat Dittakavi"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION WORKSHOPS, CVPRW 2022",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "632832ff90e50fcafdbf8cd0",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1016/j.artint.2021.103503",
+      "title": "Toward Personalized XAI: A Case Study in Intelligent Tutoring Systems",
+      "authors": [
+        "Cristina Conati"
+      ],
+      "venue": "ARTIFICIAL INTELLIGENCE",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5df0be543a55ac84bd7f4929",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1145/3408877.3432526",
+      "title": "A Tutoring System to Learn Code Refactoring",
+      "authors": [
+        "Hieke Keuning"
+      ],
+      "venue": "Proceedings of the 52nd ACM Technical Symposium on Computer Science Education",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60702e9591e01191cb6f1cd1",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.1145/3411764.3445283",
+      "title": "AdapTutAR: an Adaptive Tutoring System for Machine Tasks in Augmented Reality",
+      "authors": [
+        "Gaoping Huang"
+      ],
+      "venue": "CHI '21 PROCEEDINGS OF THE 2021 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60a4e58991e011f4291ce301",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1186/s40594-018-0110-y",
+      "title": "ElectronixTutor: an intelligent tutoring system with multiple learning resources for electronics",
+      "authors": [
+        "Arthur C. Graesser",
+        "Xiangen Hu",
+        "Benjamin D. Nye",
+        "Kurt VanLehn",
+        "Rohit Kumar",
+        "Cristina Heffernan",
+        "Neil T. Heffernan",
+        "Beverly Park Woolf",
+        "Andrew M. Olney",
+        "Vasile Rus",
+        "Frank Andrasik",
+        "Philip I. Pavlik",
+        "Zhiqiang Cai",
+        "Jon Wetzel",
+        "Brent Morgan",
+        "Andrew Hampton",
+        "Anne Lippert",
+        "Lijia Wang",
+        "Qinyu Cheng",
+        "Joseph E. Vinson",
+        "Craig Kelly",
+        "Cadarrius McGlown",
+        "Charvi A. Majmudar",
+        "Bashir I. Morshed",
+        "Whitney Baer"
+      ],
+      "venue": "International Journal of STEM Education",
+      "year": 2018,
+      "cited_by_count": 92,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://stemeducationjournal.springeropen.com/track/pdf/10.1186/s40594-018-0110-y",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1080/13611267.2012.678974",
+      "title": "Doctoral Advising or Mentoring? Effects on Student Outcomes",
+      "authors": [
+        "Lunsford, Laura"
+      ],
+      "venue": "Mentoring &amp; Tutoring: Partnership in Learning",
+      "year": 2012,
+      "cited_by_count": 78,
+      "reference_count": 39,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1109/access.2020.2972167",
+      "title": "Individualized AI Tutor Based on Developmental Learning Networks",
+      "authors": [
+        "Woo-Hyun Kim",
+        "Jong-Hwan Kim"
+      ],
+      "venue": "IEEE Access",
+      "year": 2020,
+      "cited_by_count": 69,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/08985177.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1108/tldr-10-2025-0054",
+      "title": "The Effects of Peer Tutoring on the Acquisition of New Operants for Tutors, Tutees and Observers",
+      "authors": [
+        "Yifei Sun"
+      ],
+      "venue": "TIZARD LEARNING DISABILITY REVIEW",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08b249be8eb7c4b4d9048",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.55104/frdc_0219",
+      "title": "A Responsabilidade Civil Do Tutor",
+      "authors": [
+        "Agerson Tabosa Pinto"
+      ],
+      "venue": "Fundamentos romanísticos del Derecho contemporáneo",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d88897dabfae2eeea29646",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1145/3627673.3679665",
+      "title": "Empowering Private Tutoring by Chaining Large Language Models",
+      "authors": [
+        "Yulin Chen"
+      ],
+      "venue": "PROCEEDINGS OF THE 33RD ACM INTERNATIONAL CONFERENCE ON INFORMATION AND KNOWLEDGE MANAGEMENT, CIKM 2024",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6507b3e03fda6d7f06799a2d",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.18653/v1/2023.eacl-main.173",
+      "title": "Opportunities and Challenges in Neural Dialog Tutoring.",
+      "authors": [
+        "Jakub Macina"
+      ],
+      "venue": "17TH CONFERENCE OF THE EUROPEAN CHAPTER OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, EACL 2023",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63d340e890e50fcafd9106d3",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1186/s41239-023-00434-1",
+      "title": "Students’ Perceptions of Using ChatGPT in a Physics Class As a Virtual Tutor",
+      "authors": [
+        "Lu Ding"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65852e23939a5f40824af972",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1109/access.2022.3166261",
+      "title": "A Parametrized Comparative Analysis of Performance Between Proposed Adaptive and Personalized Tutoring System “seis Tutor” with Existing Online Tutoring System",
+      "authors": [
+        "Ninni Singh"
+      ],
+      "venue": "IEEE Access",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdcf85aee126c0f5163b1",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1080/13540602.2021.2019700",
+      "title": "Teachers As Tutors, and Tutors As Teachers: Blurring Professional Boundaries in Changing Eras",
+      "authors": [
+        "Mark Bray"
+      ],
+      "venue": "TEACHERS AND TEACHING",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e31615aee126c0fa0f24c",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1080/10494820.2019.1583674",
+      "title": "Identifying and Exploring the Effects of Different Types of Tutor Questions in Individual Online Synchronous Tutoring in Mathematics",
+      "authors": [
+        "Stefan Hrastinski"
+      ],
+      "venue": "INTERACTIVE LEARNING ENVIRONMENTS",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d1c3ced107d4c6463d07",
+      "matched_phrase": "tutoring",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.3233/aic-190624",
+      "title": "Intelligent tutoring system to improve learning outcomes",
+      "authors": [
+        "Durães, Dalila",
+        "Toala, Rámon",
+        "Gonçalves, Filipe",
+        "Novais, Paulo"
+      ],
+      "venue": "AI Communications",
+      "year": 2019,
+      "cited_by_count": 17,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1080/030910042000275918",
+      "title": "Mentoring the mentors: student teachers' contributions to the middle school classroom",
+      "authors": [
+        "Grisham *, Dana L.",
+        "Ferguson, Janet L.",
+        "Brink, Beverly"
+      ],
+      "venue": "Mentoring &amp; Tutoring: Partnership in Learning",
+      "year": 2004,
+      "cited_by_count": 17,
+      "reference_count": 23,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1080/13611267.2011.543568",
+      "title": "The Effect of Access to an Online Tutorial Service on College Algebra Student Outcomes",
+      "authors": [
+        "Kersaint, Gladis",
+        "Dogbey, James",
+        "Barber, Jeff",
+        "Kephart, David"
+      ],
+      "venue": "Mentoring &amp; Tutoring: Partnership in Learning",
+      "year": 2011,
+      "cited_by_count": 13,
+      "reference_count": 60,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1080/13611260120111978",
+      "title": "Helping Primary Student Teachers Understand Pupils' Learning: Exploring the student‐mentor interaction",
+      "authors": [
+        "Braund, Martin"
+      ],
+      "venue": "Mentoring &amp; Tutoring: Partnership in Learning",
+      "year": 2001,
+      "cited_by_count": 9,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1007/978-3-642-77202-3_10",
+      "title": "The Use of Explanation-Based Learning for Modelling Student Behavior in Foreign Language Tutoring",
+      "authors": [
+        "Tasso, Carlo",
+        "Fum, Danilo",
+        "Giangrandi, Paolo"
+      ],
+      "venue": "Intelligent Tutoring Systems for Foreign Language Learning",
+      "year": 1992,
+      "cited_by_count": 7,
+      "reference_count": 17,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.63544/ijss.v4i3.150",
+      "arxiv_id": "",
+      "title": "The Future Classroom: Integrating AI and Social Media for Adaptive Learning",
+      "authors": [
+        "Mansoor Masih",
+        "S. Suleman",
+        "Muhammad Hayat Khan",
+        "Dr. Zahid Hussain Sahito",
+        "D. Shahid"
+      ],
+      "venue": "Inverge Journal of Social Sciences",
+      "year": 2025,
+      "cited_by_count": 6,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "The study concluded that AI and social media, when integrated thoughtfully, could promote personalized, engaging, and collaborative learning environments, and underscored the need to address concerns related to data privacy, overreliance on AI, and digital equity, particularly for students from low-income backgrounds.",
+      "is_oa": true,
+      "oa_url": "https://invergejournals.com/index.php/ijss/article/download/150/292",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The study concluded that AI and social media, when integrated thoughtfully, could promote personalized, engaging, and collaborative learning environments, and underscored the need to address concerns related to data privacy, overreliance on AI, and digital equity, particularly for students from low-income backgrounds.",
+      "rank": 108
+    },
+    {
+      "doi": "10.2139/ssrn.4897241",
+      "title": "The Impact of AI-Driven Personalized Learning and Intelligent Tutoring Systems on Student Engagement and Academic Achievement: Ethical Implications and the Digital Divide",
+      "authors": [
+        "Swargiary, Khritish"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.22214/ijraset.2024.62879",
+      "title": "AI-Powered Personalised Learning Plans for Intelligent Tutoring Systems",
+      "authors": [
+        "Shah, Tanvi"
+      ],
+      "venue": "International Journal for Research in Applied Science and Engineering Technology",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Abstract: Intelligent Tutoring Systems (ITS) are a promising way to personalize and adapt learning. They use educational theory and artificial intelligence to give students individualized instruction and support. This study examines the practical aspects of ITS implementation, emphasizing important factors, difficulties, and recommended procedures. The paper begins by outlining the design concepts that guide the deployment of ITS, highlighting the significance of personalized learning, p",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.4018/978-1-61692-008-1.ch011",
+      "title": "Student Modeling in an Intelligent Tutoring System",
+      "authors": [
+        "Feng, Mingyu",
+        "Heffernan, Neil",
+        "Koedinger, Kenneth"
+      ],
+      "venue": "Intelligent Tutoring Systems in E-Learning Environments",
+      "year": 2011,
+      "cited_by_count": 4,
+      "reference_count": 91,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>Student modeling and cognitively diagnostic assessment are important issues that need to be addressed for the development and successful application of intelligent tutoring systems (its). Its needs the construction of complex models to represent the skills that students are using and their knowledge states, and practitioners want cognitively diagnostic information at a finer grained level. This chapter reviews our effort on modeling student’s knowledge in the ASSISTment project. Intellig",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.56059/jl4d.v12i1.1367",
+      "title": "A Review of Virtual Tutoring Systems and Student Performance Analysis Using GPT-3",
+      "authors": [
+        "Prathigadapa, Sireesha",
+        "Salwani Binti Mohd Daud"
+      ],
+      "venue": "Journal of Learning for Development",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In contemporary education, accurately predicting student performance and delivering prompt feedback is paramount for fostering a comprehensive grasp of academic progress. Consequently, educators must adapt their teaching methodologies to optimize learning outcomes. To tackle this challenge, researchers have proposed and implemented diverse alternative and advanced strategies. This study conducts a systematic review of prior research endeavors centered on virtual tutoring and learning env",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.21275/sr241119221041",
+      "title": "AI - Driven Pedagogies: Enhancing Student Engagement and Learning Outcomes in Higher Education",
+      "authors": [
+        "Saraswat, Deeksha"
+      ],
+      "venue": "International Journal of Science and Research (IJSR)",
+      "year": 2024,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.1109/icelie.2012.6471140",
+      "title": "Bayesian based student knowledge modeling in intelligent tutoring systems",
+      "authors": [
+        "Khodeir, Nabila",
+        "Wanas, Nayer",
+        "Hegazy, Nadia",
+        "Darwish, Nevin"
+      ],
+      "venue": "2012 6th IEEE International Conference on E-Learning in Industrial Electronics (ICELIE)",
+      "year": 2012,
+      "cited_by_count": 3,
+      "reference_count": 11,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.21203/rs.3.rs-4276591/v1",
+      "title": "Navigating the Future of Learning: A Systematic Review of AI-Driven Intelligent Tutoring Systems (ITS) in K-12 Education",
+      "authors": [
+        "Charland, Patrick",
+        "Létourneau, Angélique",
+        "Martineau, Marion Deslandes",
+        "Boasen, Jared",
+        "Léger, Pierre-Majorique"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>The use of artificial intelligence in education (AIEd) has grown exponentially in the last decade, particularly using intelligent tutoring systems (ITSs). Despite the increased use of ITSs and their promise to improve learning, their real educational value remains unclear. Therefore, this systematic review aims to identify which experimental designs are currently used to evaluate the effects of ITSs and what are the effects of ITSs on K-12 students' learning an",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.48009/4_iis_2025_120",
+      "title": "The Effectiveness of AI-Driven Tools in Improving Student Learning Outcomes Compared to Traditional Methods",
+      "authors": [],
+      "venue": "Issues In Information Systems",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1007/978-3-642-30950-2_65",
+      "title": "Relating Student Performance to Action Outcomes and Context in a Choice-Rich Learning Environment",
+      "authors": [
+        "Segedy, James R.",
+        "Kinnebrew, John S.",
+        "Biswas, Gautam"
+      ],
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2012,
+      "cited_by_count": 2,
+      "reference_count": 5,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1080/0968465940020206",
+      "title": "Student Tutoring and Student Mentoring",
+      "authors": [
+        "Hughes, John C."
+      ],
+      "venue": "Mentoring &amp; Tutoring: Partnership in Learning",
+      "year": 1994,
+      "cited_by_count": 1,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1007/978-3-642-77202-3_19",
+      "title": "WIZDOM A Multiple-Purpose Language Tutoring System Based on AI Techniques",
+      "authors": [
+        "Handkel, Jürgen"
+      ],
+      "venue": "Intelligent Tutoring Systems for Foreign Language Learning",
+      "year": 1992,
+      "cited_by_count": 1,
+      "reference_count": 7,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.17951/ai.2016.16.1.1",
+      "title": "Recommending learning material in Intelligent Tutoring Systems",
+      "authors": [
+        "Bernacki, Jarosław"
+      ],
+      "venue": "Annales Universitatis Mariae Curie-Sklodowska, sectio AI – Informatica",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>&lt;p&gt;Nowadays, intelligent e-learning systems which can adapt to learner's needs and preferences, became very popular. Many studies have demonstrated that such systems can increase the eects of learning. However, providing adaptability requires consideration of many factors. The main problems concern user modeling and personalization, collaborative learning, determining and modifying learning senarios, analyzing learner's learning styles. Determining the optimal learning scenario ada",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.1109/icicat62666.2024.10923307",
+      "title": "AI-Assisted Tutoring Systems: Improving Engagement and Learning Outcomes in Elementary Education",
+      "authors": [
+        "Umirova, Svetlana",
+        "Mahmadiev, Shavkatjon",
+        "Zuparov, Talat",
+        "Yuldashev, Aziz",
+        "Abdullayev, Abdulla",
+        "Sobirova, Nazira"
+      ],
+      "venue": "2024 International Conference on IoT, Communication and Automation Technology (ICICAT)",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 46,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.36987/jes.v12i4.7431",
+      "title": "AI-SCIENCE LEARNING WITH A DEEP LEARNING APPROACH TO IMPROVE INCLUSIVE STUDENT LEARNING OUTCOMES",
+      "authors": [
+        "Sari, Siti Mayang",
+        "Fidawati, Fidawati",
+        "Zahraini, Zahraini",
+        "Akmaluddin, Akmaluddin"
+      ],
+      "venue": "JURNAL EDUSCIENCE",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Purpose - This study aimed to investigate the effectiveness of implementing AI-based science learning integrated with a deep learning approach in improving the academic achievement of inclusive students. This study also evaluated the impact of deep learning strategies on inclusive students' conceptual understanding, engagement, and critical thinking skills in science learning.Methodology – This study uses a quantitative approach with 25 elementary school students, including inclusive stu",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.56975/ijvra.v4i6.708452",
+      "title": "Impact of AI Tutoring Systems on  Student Learning Outcomes",
+      "authors": [
+        "verma, Shikha",
+        "Hina Goyal, Dr"
+      ],
+      "venue": "International Journal of Versatile Research and Analysis",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.63056/acad.004.03.0805",
+      "title": "Enhancing Learning Outcomes through AI-Based Tutoring Systems: A Study on Student Motivation and Academic Achievement",
+      "authors": [
+        "Pervaiz, Zeeshan",
+        "Bakar, Abu",
+        "Saddique, Sohail"
+      ],
+      "venue": "ACADEMIA International Journal for Social Sciences",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Purpose: To determine whether an artificial intelligence (AI)-based tutoring system (AITS) is more effective in terms of academic success and motivation, as well as to investigate causative influences of motivation. Techniques: It was a pre-registered randomised trial in 24 classes (N=602; Grade 7-10), with assignment to AITS or business-as-usual either at the student or class level. The intervention provided adaptive sequencing, stepwise feedback, mastery thresholds, and spaced review i",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.22488/okstate.25.100628",
+      "title": "AI-powered tutoring: An interdisciplinary approach to enhancing college student learning outcomes",
+      "authors": [
+        "Zhang, Jie",
+        "Fonseca-Llorca, Laura",
+        "Davies, Liam",
+        "Mitra, Sandeep",
+        "Yu, Ning"
+      ],
+      "venue": "Curriculum and Teaching Dialogue",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.71443/9789349552746-06",
+      "title": "AI-Powered Intelligent Tutoring Systems for Enhancing Student Engagement in Higher Education",
+      "authors": [
+        "Dharanika, S",
+        "S, Lakshminarayanan"
+      ],
+      "venue": "Artificial Intelligence, Machine Learning, and Cloud Computing in Higher Education: Intelligent Learning Systems, Analytics, and Digital Transformation",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<jats:p>The integration of Artificial Intelligence (AI) into Intelligent Tutoring Systems (ITS) has revolutionized higher education by enhancing student engagement, personalizing learning experiences, and fostering collaborative problem-solving. AI-powered ITS utilize advanced machine learning algorithms, natural language processing, and data analytics to adapt content to individual learning needs, ensuring that students receive tailored instruction that promotes active learning and long-term re",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.22437/bio.v7i3.13543",
+      "title": "Pengaruh Model Pembelajaran Discovery Learning dipadukan Model Peer Tutoring Terhadap Hasil Belajar Biologi Peserta Didik",
+      "authors": [
+        "Lalin, Marlin Makdalena",
+        "Namakule, Umar",
+        "Elly, Sovian S"
+      ],
+      "venue": "BIODIK",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Based on observations from a biology teacher at SMA Negeri 17 Central Maluku. The data obtained that the results of learning biology are still partly below the average, based on the results of observations it turns out that teaching and learning activities look boring and most students do not pay attention to the teacher's explanation and are cool to talk with their classmates. The purpose of this study was to determine the effect of discovery learning learning models combined with peer ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.24124/2000/bpgub114",
+      "title": "An adolescent student with fetal alcohol effect and learning disabilities:  Tutoring in written language.",
+      "authors": [
+        "Johnson, Carol Linda"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.59075/jssa.v3i3.324",
+      "title": "Enhancing Student Learning and Engagement Through AI-Powered Tutoring Systems",
+      "authors": [
+        "Dr. Tanzeela Urooj",
+        "Dr. Tahira Rafiq",
+        "Dr. Farah Fida"
+      ],
+      "venue": "Journal for Social Science Archives",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The use of Artificial Intelligence (AI) in education has revolutionized student learning, instructional methods, and resource management inside institutions. AI-powered tutoring systems (AIPTS) have developed as effective instruments for providing individualized feedback, adaptive learning paths, and large-scale interactive participation. This research examines the function of AIPTS in improving learning outcomes and student engagement in higher education, specifically within the setting",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.21125/iceri.2025.2292",
+      "title": "KEY FUNCTIONALITIES OF PERSONALIZED AI TUTORING SYSTEMS THAT BOOST LEARNING OUTCOMES IN HIGHER EDUCATION",
+      "authors": [
+        "Jony, Akinul Islam",
+        "Lara Navarra, Pablo",
+        "Serradell-López, Enric"
+      ],
+      "venue": "ICERI Proceedings",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1109/access.2025.3626473/mm1",
+      "title": "A Systematic Literature Review of AI-Driven Intelligent Tutoring Systems in Engineering Education: Emphasizing Personalization, Feedback, and Student Monitoring_supp1-3626473.pdf",
+      "authors": [
+        "Pinto, Rui"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.55248/gengpi.6.0325.1290",
+      "title": "Implications of ChatGPT as AI Tutoring System on Student Learning Outcome",
+      "authors": [
+        "Ama, Amiel Cerdan G.",
+        "Caragan, Mark Daven Paul G.",
+        "Collantes, Angel R.",
+        "Melicio, Ma. Daniela Jane G.",
+        "Mole, Cristine Joyce B."
+      ],
+      "venue": "International Journal of Research Publication and Reviews",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1145/3785022.3785024",
+      "title": "Who Benefits from Using Intelligent Tutoring Systems, and How Much Use is Optimal? Examining the Effects of School Socioeconomic Status and Intelligent Tutoring System Use on Student Mathematics Learning Outcomes in Australian High Schools",
+      "authors": [
+        "Hannan, Brody",
+        "Bokhove, Christian"
+      ],
+      "venue": "Proceedings of the LAK26: 16th International Learning Analytics and Knowledge Conference",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 47,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.65470/resnova.9788169011105.15",
+      "title": "AI-Powered Auto-Grading Mechanism for Efficient and Transparent Evaluation of Student Learning Outcomes",
+      "authors": [
+        "Mohammed, Zakiuddin",
+        "Gawli, Palomi Sandeep"
+      ],
+      "venue": "AI, ML, and IoT-Enabled Smart Education Systems: Data-Driven Frameworks for Enhancing Student Learning, Wellbeing, and Academic Innovation in Higher Education",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.2139/ssrn.5992341",
+      "title": "AI Tutoring Enhances Student Learning Without Crowding Out Reading Effort",
+      "authors": [
+        "Fischer, Mira",
+        "Rau, Holger Andreas",
+        "Rilke, Rainer Michael"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.5220/0006884202520256",
+      "title": "Effect of Student Motivation on Student Learning Outcomes in Economics Lesson",
+      "authors": [
+        "Nuriansyah, Fazar"
+      ],
+      "venue": "Proceedings of the 2nd International Conference on Economic Education and Entrepreneurship",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.48175/ijarsct-11200c",
+      "title": "How AI Tools Improve Physics Education Outcomes: A Review of Intelligent Tutoring, Adaptive Learning, and Student Engagement",
+      "authors": [
+        "Atul Kumar Pandey, Vishalakshi Singh",
+        "Rajesh Kumar Verma, Pushpender Kumar Gangwar"
+      ],
+      "venue": "International Journal of Advanced Research in Science Communication and Technology",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The AI's (Artificial Intelligence) growing success offers new possibilities for teaching and learning in science education; particularly with regard to educational physics, as this subject encompasses a plethora of complex concepts to understand. This article provides an overview of previous research conducted regarding AI implementation within the realm of physics education and divides several subcategories. These classifications encompass three major types of AI tools used in physics e",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.6007/ijarbss/v15-i8/25810",
+      "title": "Enhancing Learning in Data Analytics through AI Tutoring Systems: A Student-Centered Evaluation",
+      "authors": [
+        "Soomro, Hira",
+        "Daud, Hanita",
+        "Zainuddin, Nooraini",
+        "Abdul Khalid, Haniza"
+      ],
+      "venue": "International Journal of Academic Research in Business and Social Sciences",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.51169/ideguru.v5i2.164",
+      "title": "APPLICATION OF PEER TUTORING LEARNING TO INCREASE MOTIVATION AND STUDENT LEARNING OUTCOMES IN CHEMISTRY SUBJECTS",
+      "authors": [
+        "Winarti, Sri"
+      ],
+      "venue": "Ideguru: Jurnal Karya Ilmiah Guru",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The aim of this research was to determnine the steps of applying peer tutoring in increasing student motivation and learning outcomes, applying peer tutoring learning steps in increasing student motivation and learning outcomes. This research is a class action research (CAR) consisting of two cycles, and each cycle consists of three meetings. These subjects of this study were students of class X MIPA1 of 1 Senior High School Turi consisting of 10 male students and 24 female students. Thi",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.55041/isjem05140",
+      "title": "A Complete Analysis of the Effects of AI Tutoring Tools on Student Learning Outcomes",
+      "authors": [
+        "",
+        "Shingate, Sarika",
+        "Nawale, Shilpa"
+      ],
+      "venue": "International Scientific Journal of Engineering and Management",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Abstract:\n\nTutoring tools that use artificial intelligence (AI) have transformed the way users learn by offering customized instruction and instant feedback. With an emphasis on involvement, academic performance, logical thinking, and possible challenges, this study examines how AI tutoring tools affect student-learning outcomes. The paper gives a detailed look at the benefits and drawbacks of using AI in schools by combining new research with actual data.\n\n Keywords: Artificial Intellig",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.65470/resnova.9788169011105.05",
+      "title": "AI-Integrated Feedback and Assessment Systems for Continuous Improvement in Teaching and Learning Outcomes",
+      "authors": [
+        "Reddy, Dhananjaya",
+        "D, Kokila"
+      ],
+      "venue": "AI, ML, and IoT-Enabled Smart Education Systems: Data-Driven Frameworks for Enhancing Student Learning, Wellbeing, and Academic Innovation in Higher Education",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.2139/ssrn.6358419",
+      "title": "AI-Assisted Tools for Teachers to Support Student Wellbeing and Learning Outcomes",
+      "authors": [
+        "McCall, Andrei"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>The integration of artificial intelligence (AI) into education presents promising opportunities to support teachers in enhancing student wellbeing and improving learning outcomes. This paper examines AI-assisted tools that help educators monitor student engagement, identify early signs of stress or academic difficulties, and provide personalized interventions. By leveraging data from attendance, behavior tracking, academic performance, and social-emotional indicators, AI systems can prov",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.18196/ftl.v11i1.29229",
+      "title": "Peer Tutoring Model in Enhancing Student Learning Outcomes at the Educational Action Research",
+      "authors": [
+        "Ishaka, Humaira"
+      ],
+      "venue": "Journal of Foreign Language Teaching and Learning",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: There has been a limited use of engaging, student-centered instructional strategies in Educational Research courses. Conventional lecture-based approaches often restrict students’ active participation and hinder the development of research literacy and collaborative learning skills. To address this issue, this study examines peer tutoring as an alternative instructional approach to support active learning and conceptual understanding.\nObjective: The main objective of this stu",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.65500/computics-2026-003",
+      "title": "AI-Based Tutoring Systems for Deaf and Hard-of-Hearing Learners: A Systematic Review of Computational Architectures, Adaptive Mechanisms, and Meta-Analysis of Learning Outcomes",
+      "authors": [
+        "Amiruzzaman, Stefanie",
+        "Amiruzzaman, Md"
+      ],
+      "venue": "Impact in Computics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 33,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Children who are Deaf or hard of hearing (DHH) often experience educational challenges that may affect their academic achievement. Artificial intelligence (AI)-based tutoring systems have been proposed to address some of these challenges, but evidence regarding their effectiveness remains limited. This study presents a systematic review and meta-analysis of AI-based tutoring systems developed for DHH learners. The review followed PRISMA 2020 guidelines and searched five databases: Web of",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.56975/jaafr.v4i6.511443",
+      "title": "STUDENT DEPENDENCE ON AI AND ITS EFFECT ON LEARNING OUTCOMES",
+      "authors": [
+        "Vipul M Gaikwad, Mr",
+        "U Honshette, Vikrant"
+      ],
+      "venue": "JOURNAL OF ADVANCE AND FUTURE RESEARCH",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.18260/1-2-1153-45666",
+      "title": "Student Stress and Learning Outcomes: Effect of Deploying Single-Item Student Check-in on Student Learning Outcomes",
+      "authors": [
+        "Ng, Ean H.",
+        "Kittelman, Sage",
+        "Natarajan, Ganapathy",
+        "Calvo-Amodio, Javier"
+      ],
+      "venue": "2024 PNW Section Annual Meeting Proceedings",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.31274/cc-20251215-1",
+      "title": "The Impact of AI-Driven Personalized Learning Platforms on Student Outcomes: A Comprehensive Review",
+      "authors": [
+        "Nair, Manasi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.22161/ijtle.4.3.2",
+      "title": "The Impact of AI on Student Engagement and Learning Outcomes",
+      "authors": [
+        "Johri, Dr. Manjari",
+        "Yadav, Dr. Rohit"
+      ],
+      "venue": "International Journal of Teaching, Learning and Education",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Artificial Intelligence (AI) and Machine Learning have become essential to education in the current scenario. Perceived as the mythical Frankenstein, it has emerged as a tool to enhance the students' learning experience. This paper aims to delineate the graph of AI from its inception to its transformative potential in augmenting processes across diverse areas. Education is one of the key sectors which AI has hugely impacted. There are speculations that it could erode the critical thinkin",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.65470/resnova.9788169011105.09",
+      "title": "AI-Driven Decision Support System for Enhancing Student Career Guidance, Employability, and Placement Outcomes",
+      "authors": [
+        "Sekhar, B. Chandra",
+        "Sharma, P.D."
+      ],
+      "venue": "AI, ML, and IoT-Enabled Smart Education Systems: Data-Driven Frameworks for Enhancing Student Learning, Wellbeing, and Academic Innovation in Higher Education",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.22158/fet.v6n4p41",
+      "title": "The Effect of Parental Tutoring on Student Learning Achievement",
+      "authors": [
+        "Siti Khumairoh, Iswan"
+      ],
+      "venue": "Frontiers in Education Technology",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Research entitled The Effect of Parental Tutoring on Student Learning Achievement. This research is motivated by the very important role of parents in accompanying their children, the quality of time that parents and children have can be used to build togetherness between family members. Researchers used quantitative survey research methods, with researchers’ data collection methods using questionnaires, interviews and documentation. The sample used was 90 students at Peninggilan I State",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.14293/ffl26.000036.v1",
+      "title": "Reimagining Student Engagement through Intelligent Systems: A Human–AI Collaborative Model for Creative Learning Environments",
+      "authors": [
+        "Foster, Matthew Robert",
+        "Soussi, Dr Imene"
+      ],
+      "venue": "Reimagining Student Engagement through Intelligent Systems: A Human–AI Collaborative Model for Creative Learning Environments",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2503.09748v1",
+      "arxiv_id": "2503.09748v1",
+      "title": "Advancing Education through Tutoring Systems: A Systematic Literature Review",
+      "authors": [
+        "Vincent Liu",
+        "Ehsan Latif",
+        "Xiaoming Zhai"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.09748v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2401.03238v1",
+      "arxiv_id": "2401.03238v1",
+      "title": "Using Large Language Models to Assess Tutors' Performance in Reacting to Students Making Math Errors",
+      "authors": [
+        "Sanjit Kakarla",
+        "Danielle Thomas",
+        "Jionghao Lin",
+        "Shivang Gupta",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.03238v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2511.04997v1",
+      "arxiv_id": "2511.04997v1",
+      "title": "Do intelligent tutoring systems benefit K-12 students? A meta-analysis and evaluation of heterogeneity of treatment effects in the U.S",
+      "authors": [
+        "Walter L. Leite",
+        "Huibin Zhang",
+        "Shibani Rana",
+        "Yide Hao",
+        "Amber D. Hatch",
+        "Lingchen Kong",
+        "Huan Kuang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.04997v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2507.06910v1",
+      "arxiv_id": "2507.06910v1",
+      "title": "Exploring LLMs for Predicting Tutor Strategy and Student Outcomes in Dialogues",
+      "authors": [
+        "Fareya Ikram",
+        "Alexander Scarlatos",
+        "Andrew Lan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.06910v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.1119/perc.2016.pr.085",
+      "arxiv_id": "1607.07121v4",
+      "title": "The Impact of Learning Assistants on Inequities in Physics Student Outcomes",
+      "authors": [
+        "Ben Van Dusen",
+        "Jada-Simone S. White",
+        "Edward Roualdes"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1607.07121v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.1119/perc.2015.pr.081",
+      "arxiv_id": "1509.05358v1",
+      "title": "Learning Assistant Supported Student Outcomes (LASSO) study initial findings",
+      "authors": [
+        "Ben Van Dusen",
+        "Laurie Langdon",
+        "Valerie Otero"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1509.05358v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1145/3636555.3636896",
+      "arxiv_id": "2312.11274v3",
+      "title": "Improving Student Learning with Hybrid Human-AI Tutoring: A Three-Study Quasi-Experimental Investigation",
+      "authors": [
+        "Danielle R. Thomas",
+        "Jionghao Lin",
+        "Erin Gatz",
+        "Ashish Gurung",
+        "Shivang Gupta",
+        "Kole Norberg",
+        "Stephen E. Fancsali",
+        "Vincent Aleven",
+        "Lee Branstetter",
+        "Emma Brunskill",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11274v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2104.01266v2",
+      "arxiv_id": "2104.01266v2",
+      "title": "Designing for human-AI complementarity in K-12 education",
+      "authors": [
+        "Kenneth Holstein",
+        "Vincent Aleven"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2104.01266v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2605.11155v1",
+      "arxiv_id": "2605.11155v1",
+      "title": "Improving Hybrid Human-AI Tutoring by Differentiating Human Tutor Roles Based on Student Needs",
+      "authors": [
+        "Ashish Gurung",
+        "Ge Gao",
+        "Jordan Gutterman",
+        "Danielle R. Thomas",
+        "Shivang Gupta",
+        "Lee Branstetter",
+        "Emma Brunskill",
+        "Vincent Aleven",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.11155v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "arXiv:2603.28944v2",
+      "arxiv_id": "2603.28944v2",
+      "title": "Faith in AI can narrow the futures individuals consider",
+      "authors": [
+        "Aoi Naito",
+        "Hirokazu Shirado"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28944v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:1909.04749v2",
+      "arxiv_id": "1909.04749v2",
+      "title": "Visual Analytics of Student Learning Behaviors on K-12 Mathematics E-learning Platforms",
+      "authors": [
+        "Meng Xia",
+        "Huan Wei",
+        "Min Xu",
+        "Leo Yu Ho Lo",
+        "Yong Wang",
+        "Rong Zhang",
+        "Huamin Qu"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.04749v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:2510.19196v1",
+      "arxiv_id": "2510.19196v1",
+      "title": "Integration of AI in STEM Education, Addressing Ethical Challenges in K-12 Settings",
+      "authors": [
+        "Shaouna Shoaib Lodhi",
+        "Shoaib Lodhi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.19196v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "arXiv:2605.17857v1",
+      "arxiv_id": "2605.17857v1",
+      "title": "Towards SocratiCode: Designing a Generative AI-Based Programming Tutor for K-12 Students through a 4-Week Participatory Design Study",
+      "authors": [
+        "Cassandra Lucas",
+        "Anshul Bihani",
+        "Rohini Kukka",
+        "Chun-Hua Tsai",
+        "Jaydeb Sarker",
+        "Mia Mohammad Imran"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.17857v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1016/j.knosys.2026.116067",
+      "arxiv_id": "2601.00360v3",
+      "title": "Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems",
+      "authors": [
+        "Jamiu Idowu",
+        "Ahmed Almasoud",
+        "Ayman Alfahid"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.00360v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "arXiv:2501.02842v1",
+      "arxiv_id": "2501.02842v1",
+      "title": "Foundations of GenIR",
+      "authors": [
+        "Qingyao Ai",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.02842v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "arXiv:2009.08976v1",
+      "arxiv_id": "2009.08976v1",
+      "title": "AI-Driven Interface Design for Intelligent Tutoring System Improves Student Engagement",
+      "authors": [
+        "Byungsoo Kim",
+        "Hongseok Suh",
+        "Jaewe Heo",
+        "Youngduck Choi"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.08976v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:2505.01563v1",
+      "arxiv_id": "2505.01563v1",
+      "title": "TutorGym: A Testbed for Evaluating AI Agents as Tutors and Students",
+      "authors": [
+        "Daniel Weitekamp",
+        "Momin N. Siddiqui",
+        "Christopher J. MacLellan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.01563v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:2504.17117v1",
+      "arxiv_id": "2504.17117v1",
+      "title": "AI for Accessible Education: Personalized Audio-Based Learning for Blind Students",
+      "authors": [
+        "Crystal Yang",
+        "Paul Taele"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.17117v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "arXiv:2604.16366v1",
+      "arxiv_id": "2604.16366v1",
+      "title": "Decoding AI Tutor Effects for Educational Measurement: Temporal, Multi-Outcome, and Behavior-Cognitive Analysis",
+      "authors": [
+        "Yiyao Yang",
+        "Yasemin Gulbahar"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.16366v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "arXiv:2606.20713v1",
+      "arxiv_id": "2606.20713v1",
+      "title": "FairTutor: Equity-Aware Pedagogical LLM Routing for Budget-Constrained AI Tutoring",
+      "authors": [
+        "Qingyang Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.20713v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "arXiv:2508.05156v1",
+      "arxiv_id": "2508.05156v1",
+      "title": "AI Conversational Tutors in Foreign Language Learning: A Mixed-Methods Evaluation Study",
+      "authors": [
+        "Nikolaos Avouris"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.05156v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "arXiv:2512.23633v1",
+      "arxiv_id": "2512.23633v1",
+      "title": "AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms",
+      "authors": [
+        " LearnLM Team",
+        " Eedi",
+        " :",
+        "Albert Wang",
+        "Aliya Rysbek",
+        "Andrea Huber",
+        "Anjali Nambiar",
+        "Anna Kenolty",
+        "Ben Caulfield",
+        "Beth Lilley-Draper",
+        "Bibi Groot",
+        "Brian Veprek",
+        "Chelsea Burdett",
+        "Claire Willis",
+        "Craig Barton",
+        "Digory Smith",
+        "George Mu",
+        "Harriet Walters",
+        "Irina Jurenka",
+        "Iris Hulls",
+        "James Stalley-Moores",
+        "Jonathan Caton",
+        "Julia Wilkowski",
+        "Kaiz Alarakyia",
+        "Kevin R. McKee",
+        "Liam McCafferty",
+        "Lucy Dalton",
+        "Markus Kunesch",
+        "Pauline Malubay",
+        "Rachel Kidson",
+        "Rich Wells",
+        "Sam Wheeler",
+        "Sara Wiltberger",
+        "Shakir Mohamed",
+        "Simon Woodhead",
+        "Vasco Brazão"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.23633v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "arXiv:2502.20354v1",
+      "arxiv_id": "2502.20354v1",
+      "title": "Towards Responsible AI in Education: Hybrid Recommendation System for K-12 Students Case Study",
+      "authors": [
+        "Nazarii Drushchak",
+        "Vladyslava Tyshchenko",
+        "Nataliya Polyakovska"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.20354v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1007/978-3-031-98414-3_18",
+      "arxiv_id": "2503.06424v2",
+      "title": "Training LLM-based Tutors to Improve Student Learning Outcomes in Dialogues",
+      "authors": [
+        "Alexander Scarlatos",
+        "Naiming Liu",
+        "Jaewook Lee",
+        "Richard Baraniuk",
+        "Andrew Lan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.06424v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:2003.09670v2",
+      "arxiv_id": "2003.09670v2",
+      "title": "Identifying At-Risk K-12 Students in Multimodal Online Environments: A Machine Learning Approach",
+      "authors": [
+        "Hang Li",
+        "Wenbiao Ding",
+        "Zitao Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.09670v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.47989/ir31iConf64115",
+      "arxiv_id": "2601.16513v1",
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "authors": [
+        "Melissa Wilfley",
+        "Mengting Ai",
+        "Madelyn Rose Sanfilippo"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2605.05648v1",
+      "arxiv_id": "2605.05648v1",
+      "title": "The Missing Evaluation Axis: What 10,000 Student Submissions Reveal About AI Tutor Effectiveness",
+      "authors": [
+        "Rose Niousha",
+        "Samantha Boatright Smith",
+        "Bita Akram",
+        "Peter Brusilovsky",
+        "Arto Hellas",
+        "Juho Leinonen",
+        "John DeNero",
+        "Narges Norouzi"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.05648v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2605.29240v1",
+      "arxiv_id": "2605.29240v1",
+      "title": "Surfacing Isolated Learners with Outcome-Independent Mediation of Feedback between Teachers and Students Using AI",
+      "authors": [
+        "Junsoo Park",
+        "Youssef Medhat",
+        "Htet Phyo Wai",
+        "Ploy Thajchayapong",
+        "Ashok K. Goel"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.29240v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2007.01135v1",
+      "arxiv_id": "2007.01135v1",
+      "title": "Student-Teacher Curriculum Learning via Reinforcement Learning: Predicting Hospital Inpatient Admission Location",
+      "authors": [
+        "Rasheed el-Bouri",
+        "David Eyre",
+        "Peter Watkinson",
+        "Tingting Zhu",
+        "David Clifton"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.01135v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2508.13962v2",
+      "arxiv_id": "2508.13962v2",
+      "title": "Learning to Use AI for Learning: Teaching Responsible Use of AI Chatbot to K-12 Students Through an AI Literacy Module",
+      "authors": [
+        "Ruiwei Xiao",
+        "Xinying Hou",
+        "Ying-Jui Tseng",
+        "Hsuan Nieu",
+        "Guanze Liao",
+        "John Stamper",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.13962v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "10.1145/3706468.3706484",
+      "arxiv_id": "2412.10568v1",
+      "title": "How Learner Control and Explainable Learning Analytics on Skill Mastery Shape Student Desires to Finish and Avoid Loss in Tutored Practice",
+      "authors": [
+        "Conrad Borchers",
+        "Jeroen Ooge",
+        "Cindy Peng",
+        "Vincent Aleven"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.10568v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2009.11100v1",
+      "arxiv_id": "2009.11100v1",
+      "title": "Engaging Teachers to Co-Design Integrated AI Curriculum for K-12 Classrooms",
+      "authors": [
+        "Jessica Van Brummelen",
+        "Phoebe Lin"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.11100v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:2607.08952v1",
+      "arxiv_id": "2607.08952v1",
+      "title": "Micro-level AI Feedback Features and Student Responses in Consecutive LLM Tutoring Interactions",
+      "authors": [
+        "Shayla Sharmin",
+        "Mohammad Fahim Abrar",
+        "Roghayeh Leila Barmaki"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.08952v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2412.03292v1",
+      "arxiv_id": "2412.03292v1",
+      "title": "DMP_AI: An AI-Aided K-12 System for Teaching and Learning in Diverse Schools",
+      "authors": [
+        "Zhen-Qun Yang",
+        "Jiannong Cao",
+        "Xiaoyin Li",
+        "Kaile Wang",
+        "Xinzhe Zheng",
+        "Kai Cheung Franky Poon",
+        "Daniel Lai"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.03292v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:2007.08476v1",
+      "arxiv_id": "2007.08476v1",
+      "title": "Accessible Computer Science for K-12 Students with Hearing Impairments",
+      "authors": [
+        "Meenakshi Das",
+        "Daniela Marghitu",
+        "Fatemeh Jamshidi",
+        "Mahender Mandala",
+        "Ayanna Howard"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.08476v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.1007/s43681-022-00167-3",
+      "arxiv_id": "2112.01298v2",
+      "title": "Meaningful human control: actionable properties for AI system development",
+      "authors": [
+        "Luciano Cavalcante Siebert",
+        "Maria Luce Lupetti",
+        "Evgeni Aizenberg",
+        "Niek Beckers",
+        "Arkady Zgonnikov",
+        "Herman Veluwenkamp",
+        "David Abbink",
+        "Elisa Giaccardi",
+        "Geert-Jan Houben",
+        "Catholijn M. Jonker",
+        "Jeroen van den Hoven",
+        "Deborah Forster",
+        "Reginald L. Lagendijk"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.01298v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1007/s10994-023-06351-8",
+      "arxiv_id": "2205.10250v2",
+      "title": "Explanatory machine learning for sequential human teaching",
+      "authors": [
+        "Lun Ai",
+        "Johannes Langer",
+        "Stephen H. Muggleton",
+        "Ute Schmid"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.10250v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "10.1007/s10639-025-13855-4",
+      "arxiv_id": "2605.20431v1",
+      "title": "Multi-Week, In-Class Deployments of Telepresence Robots With Four Homebound K-12 Students: Benefits, Challenges, and Recommendations",
+      "authors": [
+        "Matthew Rueben",
+        "Rhianna Lee",
+        "Thomas R. Groechel",
+        "Hengzhi Chen",
+        "Haemi Lee",
+        "Gisele Ragusa",
+        "Maja J. Matarić"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.20431v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "arXiv:2602.19303v1",
+      "arxiv_id": "2602.19303v1",
+      "title": "The Path to Conversational AI Tutors: Integrating Tutoring Best Practices and Targeted Technologies to Produce Scalable AI Agents",
+      "authors": [
+        "Kirk Vanacore",
+        "Ryan S. Baker",
+        "Avery H. Closser",
+        "Jeremy Roschelle"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.19303v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:2502.16613v1",
+      "arxiv_id": "2502.16613v1",
+      "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+      "authors": [
+        "Adit Gupta",
+        "Christopher MacLellan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.16613v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "10.1145/3748522.3779779",
+      "arxiv_id": "2512.04115v1",
+      "title": "Artificial Intelligence Competence of K-12 Students Shapes Their AI Risk Perception: A Co-occurrence Network Analysis",
+      "authors": [
+        "Ville Heilala",
+        "Pieta Sikström",
+        "Mika Setälä",
+        "Tommi Kärkkäinen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.04115v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "10.1145/3636555.3636923",
+      "arxiv_id": "2601.05082v1",
+      "title": "Exploring Student Expectations and Confidence in Learning Analytics",
+      "authors": [
+        "Hayk Asatryan",
+        "Basile Tousside",
+        "Janis Mohr",
+        "Malte Neugebauer",
+        "Hildo Bijl",
+        "Paul Spiegelberg",
+        "Claudia Frohn-Schauf",
+        "Jörg Frochte"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.05082v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2309.13060v1",
+      "arxiv_id": "2309.13060v1",
+      "title": "Implementing Learning Principles with a Personal AI Tutor: A Case Study",
+      "authors": [
+        "Ambroise Baillifard",
+        "Maxime Gabella",
+        "Pamela Banta Lavenex",
+        "Corinna S. Martarelli"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.13060v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:2602.24036v1",
+      "arxiv_id": "2602.24036v1",
+      "title": "Designing AI Tutors for Interest-Based Learning: Insights from Human Instructors",
+      "authors": [
+        "Abhishek Kulkarni",
+        "Sharon Lynn Chu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.24036v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "10.1145/3816972",
+      "arxiv_id": "2607.01506v1",
+      "title": "Mind the Trust Gap: Identifying (Mis)alignments in Teacher-Student Views Toward Control and Agency in K-12 Classroom AI",
+      "authors": [
+        "Tomohiro Nagashima",
+        "Lisa Siegrist",
+        "Niklas Scholz",
+        "Shintaro Sato",
+        "Martina Vincoli",
+        "Man Su"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.01506v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2504.16770v1",
+      "arxiv_id": "2504.16770v1",
+      "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
+      "authors": [
+        "Chaeyeon Lim"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.16770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "10.1145/3706468.3706531",
+      "arxiv_id": "2412.11255v1",
+      "title": "Do Tutors Learn from Equity Training and Can Generative AI Assess It?",
+      "authors": [
+        "Danielle R. Thomas",
+        "Conrad Borchers",
+        "Sanjit Kakarla",
+        "Jionghao Lin",
+        "Shambhavi Bhushan",
+        "Boyuan Guo",
+        "Erin Gatz",
+        "Kenneth R. Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.11255v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:2602.17448v1",
+      "arxiv_id": "2602.17448v1",
+      "title": "Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with AI Tutors",
+      "authors": [
+        "Michael Tompkins",
+        "Nihaarika Agarwal",
+        "Ananta Soneji",
+        "Robert Wasinger",
+        "Connor Nelson",
+        "Kevin Leach",
+        "Rakibul Hasan",
+        "Adam Doupé",
+        "Daniel Votipka",
+        "Yan Shoshitaishvili",
+        "Jaron Mink"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.17448v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "arXiv:2502.10395v1",
+      "arxiv_id": "2502.10395v1",
+      "title": "An Integrated Platform for Studying Learning with Intelligent Tutoring Systems: CTAT+TutorShop",
+      "authors": [
+        "Vincent Aleven",
+        "Conrad Borchers",
+        "Yun Huang",
+        "Tomohiro Nagashima",
+        "Bruce McLaren",
+        "Paulo Carvalho",
+        "Octav Popescu",
+        "Jonathan Sewall",
+        "Kenneth Koedinger"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.10395v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "An Analysis of Student Learning Gains After Interacting with AutoTutor",
+      "authors": [
+        "N. Person",
+        "Roger Kreuz",
+        "A. Graesser",
+        "S. Rajan",
+        "Bianca Klettke",
+        "V. Pomeroy",
+        "L. Bautista",
+        "Kristen E. Link"
+      ],
+      "venue": "",
+      "year": 2002,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "The pedagogical effectiveness of two versions of AutoTutor was assessed in two student learning outcome studies and suggest that AutoT tutor was an effective pedagological tool.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The pedagogical effectiveness of two versions of AutoTutor was assessed in two student learning outcome studies and suggest that AutoT tutor was an effective pedagological tool.",
+      "rank": 201
     }
   ]
 }

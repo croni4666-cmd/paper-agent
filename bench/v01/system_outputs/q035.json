@@ -1,331 +1,2857 @@
 {
   "query_id": "q035",
   "query": "人工智能究竟是取代劳动力造成大量失业，还是最终会产生大量新的工作岗位 (Acemoglu Restrepo anchor)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 1
+  "topic_bucket": "econ",
+  "source": "user",
+  "generated_at": "2026-07-22T11:29:05",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 21,
+  "n_returned": 141,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 1,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1007/s11127-020-00805-6",
+      "title": "Daron Acemoglu and James A. Robinson: the Narrow Corridor: States, Societies, and the Fate of Liberty",
+      "authors": [
+        "Randall G. Holcombe"
+      ],
+      "venue": "Uluslararası İlişkiler Dergisi",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ecbc7669fced0a24b502f80",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "",
+      "title": "El Giro Teológico. Nuevos Caminos De La Filosofía. Carlos Arboleda Mora & Carlos Enrique Restrepo.",
+      "authors": [
+        "Carlos  Arboleda Mora"
+      ],
+      "venue": "Escritos",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84352dabfae2eee9a1800",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.22456/2176-5456.71287",
+      "title": "COLÔNIAS DE POVOAMENTO VERSUS COLÔNIAS DE EXPLORAÇÃO: DE HEEREN A ACEMOGLU",
+      "authors": [
+        "Leonardo Monasterio"
+      ],
+      "venue": "Análise Econômica",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d85427dabfae2eee1b2d88",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "",
+      "title": "Ángela Restrepo Moreno y el hongo misterioso",
+      "authors": [
+        "Lisbeth Fog Corradine"
+      ],
+      "venue": "Boletín Cultural y Bibliográfico",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d9ed7b747c8f7664600655e",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "",
+      "title": "Instancias Inacabadas: Escritura Y Migración En Hot Sur De Laura Restrepo",
+      "authors": [
+        "Ángela González Echeverry"
+      ],
+      "venue": "Chasqui",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65ac4a4d939a5f40827281a2",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "",
+      "title": "Ética, Sociología Y Política. Diálogos Y Encuentros Entre Orlando Fals Borda Y Camilo Torres Restrepo.",
+      "authors": [
+        "Nicolás Armando Herrera Farfán"
+      ],
+      "venue": "Revista Kavilando",
+      "year": 2018,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d0b005a8607575390fbeeaf",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "",
+      "title": "Una retrospectiva visual de Pastor Restrepo Maya",
+      "authors": [
+        "Santiago Rueda Fajardo"
+      ],
+      "venue": "Boletín Cultural y Bibliográfico",
+      "year": 2017,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e5e184893d709897cdee764",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1111/meca.12141",
+      "title": "The Neoclassical Approach to Induced Technical Change: from Hicks to Acemoglu",
+      "authors": [
+        "Florian Brugger"
+      ],
+      "venue": "Metroeconomica",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c7567def56def97981b5a77",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.25100/lamanzanadeladiscordia.v1i1.1435",
+      "title": "Laura Restrepo, La Creación De Un Mundo Novelístico",
+      "authors": [
+        "Carmiña Navia Velasco"
+      ],
+      "venue": "La Manzana de la Discordia",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d85d82dabfae2eee61f02d",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "",
+      "title": "ACADÉMICO DE NÚMERO. GUSTAVO RESTREPO URIBE (1931- 2016)",
+      "authors": [
+        "Alfredo Jácome Roca"
+      ],
+      "venue": "Medicina",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2c5aeced107d4c61ca236",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "",
+      "title": "Back on Withdrawal in Criminal Law. A Purpose of the Four Rules on the Acceptance of Restrepo Ramos",
+      "authors": [
+        "Diego Araque Moreno"
+      ],
+      "venue": "DERECHO PENAL Y CRIMINOLOGIA",
+      "year": 2016,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5db92abc47c8f766462114bc",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "",
+      "title": "Quince preguntas a Ángela María Restrepo Gutiérrez",
+      "authors": [
+        "artes la revista"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8782fdabfae2eee27d35c",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "",
+      "title": "Álbaro Restrepo: el bailarín alquimista",
+      "authors": [
+        "claudia arbelaez piedrahita"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8a465dabfae2eee7f4fe5",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "",
+      "title": "IS WAGE COMPRESSION A NECESSARY CONDITION FOR FIRM-FINANCED GENERAL TRAINING? A Comment on Acemoglu and Pischke",
+      "authors": [
+        "Alison L Booth"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9aa23b7602d970338ef7c",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "",
+      "title": "Chapter 11: Comments on Acemoglu",
+      "authors": [
+        "Timothy Besley"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9ab32b7602d97034c0266",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "",
+      "title": "Settler Mortality, Colonisation Strategies and Institutional Creation: A Qualitative Recourse to Acemoglu, Johnson and Robinson's (2001) Quantitative Treatise1",
+      "authors": [
+        "Christie Viljoen"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9affab7602d9703a51d81",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.11144/javeriana.10554.8188",
+      "title": "El Loco Y Su Locura En Dulce Compañía Y Delirio De Laura Restrepo",
+      "authors": [
+        "Nelly Vargas Camargo"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a08e0bd68f896efa8e0662",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "",
+      "title": "Mecanismos De Regulación Social En La Informalidad, El Caso De Los Talleres De Zapatería Del Barrio El Restrepo",
+      "authors": [
+        "Mejía"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b467583fda6d7f06de3824",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "",
+      "title": "Homenaje a Luis Antonio Restrepo Arango",
+      "authors": [
+        "Ortíz Mesa"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b585ff3fda6d7f0633f56b",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.61369/etr.11351",
+      "title": "新质生产力赋能智慧养老产业高质量发展的路径探究",
+      "authors": [
+        "刘, 政"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 24,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>新质生产力是新时代背景下各个行业、各个领域实现高质量发展的重要驱动力，指向具有区别于传统经济方式和生产力路径的，具备高科技、高效能、高质量特征的先进生产力质态，越来越成为各个产业升级转型的重要方向，同样是促进养老产业朝着智能化高质量发展的关键力量。我国人口老龄化进程不断加快，对养老产业提出新的要求和挑战，一方面，养老产业面临新质生产力赋能带来的机遇，另一方面，养老产业面临需求多样化、个性化、智能化的挑战。新质生产力打破传统养老产业模式的束缚，引入现代化高新技术和智能化管理手段，为养老产业实现智慧化发展注入新动能。本文将在此背景下，以新质生产力为切入点，以养老产业智慧化发展为落脚点，探索新质生产力在实现养老产业智慧化发展上的必要性和可行性，进而深入分析相关路径，以期通过新质生产力助力实现智慧养老产业实现高质量发展，为其他研究者提供理论参考和实践借鉴。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.69979/3041-0673.25.02.054",
+      "title": "生成式人工智能创作物的著作权保护研究",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 22,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.54254/3050-2160/2025.21523",
+      "title": "新质生产力视域下人工智能赋能大学生就业监测反馈机制的路径",
+      "authors": [
+        "杨, 子豪"
+      ],
+      "venue": "公众与政策",
+      "year": null,
+      "cited_by_count": 16,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>新质生产力是代表新技术、创造新价值、适应新产业、重塑新动能的新型生产力。新质生产力视域下，就业结构出现新的变化，对大学生的专业素养提出新的要求，给大学生的择业与教育带来更多机遇与挑战。人工智能在大学生就业监测反馈机制中的应用有着预测和指导的积极意义，能够创新就业监测反馈机制，帮助高校、就业指导教师、大学生及时掌握新质生产力发展动态中就业市场的发展情况和趋势，并给出参考建议和解决方案，提升学生就业效率和质量，实现教育与就业的更优衔接。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1163/22136746-01401004",
+      "title": "非正规就业中的女工自组织与劳工力量—以嘉兴服装业的合作生产队为例",
+      "authors": [],
+      "venue": "Rural China",
+      "year": 2017,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In China and beyond, garment industries are often dominated by female informal laborers. Existing studies on female informal workers have focused on describing the poor working conditions such as low wages, high risk, lack of job security, and gender segmentation, and analyzing the reasons behind them. However, there is little discussion on the associational power of these informal workers. Based on surveys and field studies in the garment industries in the Yangtze River Delta conducted ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1080/09538259.2022.2037930",
+      "title": "In Praise of ‘general Laws’ of Capitalism: Notes from a Debate with Daron Acemoglu",
+      "authors": [
+        "Emiliano Brancaccio"
+      ],
+      "venue": "REVIEW OF POLITICAL ECONOMY",
+      "year": 2024,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdd075aee126c0f51954f",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.4324/9781003048145-18",
+      "title": "Carlos Lleras Restrepo, Cepalinos, and the Colombian Technocracy's Road to Pragmatism",
+      "authors": [
+        "Andrés Álvarez"
+      ],
+      "venue": "Histories of Solitude",
+      "year": 2024,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "660af6ff13fb2c6cf6bb8538",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1080/00220388.2023.2197707",
+      "title": "The Expansive Corridor: Testing Acemoglu and Robinson (2019)",
+      "authors": [
+        "Ryan Murphy"
+      ],
+      "venue": "JOURNAL OF DEVELOPMENT STUDIES",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e309b5aee126c0f9e04a5",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/s00181-021-02110-7",
+      "title": "Machine Learning Approaches to Testing Institutional Hypotheses: the Case of Acemoglu, Johnson, and Robinson (2001)",
+      "authors": [
+        "Diallo  Boubacar"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae741c45e57ce9ef744d",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1080/00213624.2021.1945885",
+      "title": "Institutions Without Culture: on Daron Acemoglu and James Robinson’s Theory of Economic Development",
+      "authors": [
+        "Joanna Dzionek-Kozlowska"
+      ],
+      "venue": "JOURNAL OF ECONOMIC ISSUES",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c7762c5244ab9dcbb3d036",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1257/jel.20201629",
+      "title": "\"Somewhere in the Middle You Can Survive\": Review of the Narrow Corridor by Daron Acemoglu and James Robinson",
+      "authors": [
+        "Avinash Dixit"
+      ],
+      "venue": "JOURNAL OF ECONOMIC LITERATURE",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627ce3415aee126c0f6bb6a2",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.25100/nc.v0i27.10569",
+      "title": "Camilo Restrepo, Un Cineasta Del Disenso",
+      "authors": [
+        "Diana Kuéllar"
+      ],
+      "venue": "Revista Nexus Comunicación",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac3fdd5aee126c0f78321a",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.2305/iucn.uk.2021-2.rlts.t21859a46912402.en",
+      "title": "Thunnus obesus: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a322e3d68f896efa66e2ba",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.2305/iucn.uk.2021-2.rlts.t21857a46624561.en",
+      "title": "Thunnus albacares: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a32328d68f896efa6790f4",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "",
+      "title": "Katsuwonus pelamis: Collette, B.B., Boustany, A., Fox, W., Graves, J., Juan Jorda, M. &amp; Restrepo, V.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a324c7d68f896efa6a80d7",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "",
+      "title": "Xiphias gladius: Collette, B.B., Di Natale, A., Fox, W., Graves, J., Juan Jorda, M., Pohlot, B., Restrepo, V. &amp; Schratwieser, J.",
+      "authors": [],
+      "venue": "IUCN Red List of Threatened Species",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656fa78d939a5f408218c522",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.32609/0042-8736-2020-1-145-156",
+      "title": "Between the Scylla of Despotism and the Charybdis of Social Norms (on the Book by D. Acemoglu and J. Robinson “narrow Corridor: States, Societies and the Fate of Freedom”)",
+      "authors": [
+        "Andrey E. Shastitko"
+      ],
+      "venue": "VOPROSY EKONOMIKI",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fe1eed87767f8fc9d700663",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1017/beq.2020.41",
+      "title": "The Narrow Corridor: States, Societies, and the Fate of Liberty, by Daron Acemoglu and James A. Robinson. New York: Penguin Press, 2019. 558 Pp.",
+      "authors": [
+        "Wayne Eastman"
+      ],
+      "venue": "Business Ethics Quarterly",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "600fe771d4150a363c2227dc",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.4000/configuracoes.10341",
+      "title": "ACEMOGLU, Daron; ROBINSON, James (2019), the Narrow Corridor. States, Societies, and the Fate of Libe",
+      "authors": [
+        "Henri Aaltonen"
+      ],
+      "venue": "Configurações",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621955975aee126c0f050db9",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1017/s1537592720001838",
+      "title": "The Narrow Corridor: States, Societies, and the Fate of Liberty. by Daron Acemoglu and James A. Robinson. New York: Penguin Press, 2019. 576p. $32.00 Cloth.",
+      "authors": [
+        "Sheri Berman"
+      ],
+      "venue": "Perspectives on Politics",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a61af6d68f896efad12c70",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1080/02255189.2019.1682976",
+      "title": "Omission and Commission in the Development Economics of Daron Acemoglu and Esther Duflo",
+      "authors": [
+        "Robert Chernomas"
+      ],
+      "venue": "CANADIAN JOURNAL OF DEVELOPMENT STUDIES-REVUE CANADIENNE D ETUDES DU DEVELOPPEMENT",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5de0f62cdf1a9c0c415e0bdf",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1108/jmh-07-2018-0034",
+      "title": "A Colombian Classic Management Thinker: Alejandro López Restrepo",
+      "authors": [
+        "Luis Antonio Orozco"
+      ],
+      "venue": "Journal of Management History",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d239ced107d4c64b469c",
+      "matched_phrase": "Restrepo",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.3724/j.issn.1671-4342.20250062",
+      "title": "构建开放包容创新生态 推动人工智能产业高质量发展",
+      "authors": [
+        "陈, 茜",
+        "赵, 宇"
+      ],
+      "venue": "Modern Science",
+      "year": 2025,
+      "cited_by_count": 3,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.69979/3041-0673.24.7.025",
+      "title": "生成式人工智能的知识产权侵权及其救济考量",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2024,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.3724/j.issn.1671-4342.20250083",
+      "title": "推动我国人工智能产业高质量发展的思考",
+      "authors": [
+        "邓, 元慧"
+      ],
+      "venue": "Modern Science",
+      "year": 2025,
+      "cited_by_count": 3,
+      "reference_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.70693/rwsk.v2i1.160",
+      "title": "大学生感知的人工智能焦虑与就业压力的关系：一项交叉滞后分析",
+      "authors": [
+        "沙成成",
+        "王 林"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>研究探讨了大学生人工智能焦虑与就业压力的时间序列关系。对185名高职大学生两波次的数据收集，构建了大学生人工智能焦虑与就业压力交叉滞后模型。分析结果显示，AI焦虑本身具有显著的时间稳定性，并且对就业压力具有显著的时间效应。而就业压力虽然具有显著的时间稳定性，但对AI焦虑不具备显著的时间效应。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.70693/rwsk.v1i4.920",
+      "title": "双重视角下人工智能驱动先进制造业高质量发展研究",
+      "authors": [
+        "卜谊榕"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文从创新生态系统与数据要素视角，探究人工智能驱动先进制造业高质量发展的协同机制及实践路径。数据要素通过 “资源化 — 产品化 — 资本化” 三级跃迁重构制造业价值链，创新生态系统依托政府引导、链主企业主导、高校科研支撑的协同网络，推动技术创新与产业化。双要素协同模式通过算法优化资源、数据激活生态、主体协同破瓶颈，为制造业高端化、智能化、绿色化发展提供理论与实施框架。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
       "doi": "10.69979/3029-2700.25.10.098",
       "title": "生成式人工智能，是“进化”还是“惰化”——基于结构方程模型的路径分析",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "杨赟, 邵文轩"
+      ],
       "venue": "社会企业经济发展",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 46
     },
     {
-      "rank": 2,
       "doi": "10.69979/3029-2735.24.11.023",
       "title": "新质生产力视域下人工智能赋能大学生高质量学习路径探究",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "吴靖怡，梁绣琳，林惠莹，潘紫晴, 黄海燕"
+      ],
       "venue": "智慧教育",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 47
     },
     {
-      "rank": 3,
+      "doi": "10.64155/gbads.v1i3.100004",
+      "title": "生成式人工智能赋能大学生创新创业教育的机制与优化路径研究",
+      "authors": [
+        "周, 海欣",
+        "李, 小青",
+        "陈, 梦婷"
+      ],
+      "venue": "Journal of Greater Bay Area Development Studies 大湾区发展研究",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>生成式人工智能（Generative Artificial Intelligence, GenAI）的快速发展正深刻影响高等教育的教学理念与实践模式。作为高等教育改革的重要组成部分，大学生创新创业教育面临知识更新滞后、实践资源不足与个性化指导缺乏等困境。生成式AI的引入为创新创业教育注入了新的活力，其智能生成、知识整合与情境模拟功能有效拓展了教学边界。本文基于教育技术与创新创业理论，系统分析了生成式AI赋能创新创业教育的三重机制：知识创新赋能、能力培养赋能与生态协同赋能。在此基础上，指出当前应用中存在技术与伦理风险、教育体系适应性不足、制度治理滞后以及学生主体意识弱化等现实挑战。为此，提出强化顶层设计与伦理规范、提升教师AI素养、完善创新生态、增强学生批判意识及建立持续评估机制等优化路径。研究认为，生成式AI赋能创新创业教育应坚持“技术向善”与“以人为本”的原则，实现技术应用与教育目标的协同发展，为高校构建智能化、开放性与可持续的创新创业教育体系提供理论依据与实践参考。The rapid development of Generative Artificial Inte",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.18356/22203583-2023-4-4",
+      "title": "萨尔· 可汗： “我认为人工智能是一种补充工具，而且是一种非常强大的工具。”",
+      "authors": [
+        "",
+        ""
+      ],
+      "venue": "Jiaokewen zuzhi xinshi",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
       "doi": "10.64216/3080-1494.25.11.018",
       "title": "生成式人工智能驱动高职大数据与会计专业教学转型的探索研究",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "东方教育学刊",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 50
     },
     {
-      "rank": 4,
       "doi": "10.32629/mef.v8i19.17331",
       "title": "新工科背景下工程管理专业人才智能建造能力高质量发展研究",
-      "abstract": "<jats:p>随着新工科建设的深入推进与建筑产业智能化的加速转型,工程管理人才能力结构与传统培养模式之间出现“结构性失配”。为推动人才能力高质量发展,通过工程管理专业人才培养的现状与核心问题诊断,提出“五位一体”的系统化教改路径,并在实践层面设计了与之配套的模块化课程体系、产教融合平台及双向流动师资机制。研究结果表明,该体系框架与实施路径不仅为工程管理专业的转型升级提供了理论依据与实践指南,而且对构建开放协同的新型教育生态、支撑建筑产业可持续发展具有重要参考价值。</jats:p>",
-      "year": null,
+      "authors": [
+        "张, 煜帆",
+        "方, 媛",
+        "郑, 瑞芸"
+      ],
       "venue": "现代教育论坛",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着新工科建设的深入推进与建筑产业智能化的加速转型,工程管理人才能力结构与传统培养模式之间出现“结构性失配”。为推动人才能力高质量发展,通过工程管理专业人才培养的现状与核心问题诊断,提出“五位一体”的系统化教改路径,并在实践层面设计了与之配套的模块化课程体系、产教融合平台及双向流动师资机制。研究结果表明,该体系框架与实施路径不仅为工程管理专业的转型升级提供了理论依据与实践指南,而且对构建开放协同的新型教育生态、支撑建筑产业可持续发展具有重要参考价值。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 51
     },
     {
-      "rank": 5,
       "doi": "10.63887/jerp.2025.1.7.53",
       "title": "人工智能驱动下大学生思政工作者的能力转型与培养体系构建",
-      "abstract": "<jats:p>在人工智能深度重塑教育生态的时代背景下，本研究聚焦高校思想政治教育工作者的能力转型路径及其培养体系构建。伴随AI技术与教育场景的深度耦合，智能对话系统对传统价值引领范式形成冲击，数据安全与隐私保护面临严峻考验，这些变革给大学生思想政治教育工作带来全新挑战。深入探讨思政工作者能力转型，对于主动适应技术革新、提升立德树人成效具有重要的现实意义。文章从强化数字技术应用能力、推动多学科知识整合等维度切入，系统提出优化课程体系设计、搭建实践创新平台等培养策略，旨在推动思政工作者专业能力的迭代升级，切实增强思想政治教育的精准性与实效性，为新时代高素质人才培养提供坚实保障。</jats:p>",
-      "year": null,
+      "authors": [
+        "陈文静"
+      ],
       "venue": "教育研究与实践",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在人工智能深度重塑教育生态的时代背景下，本研究聚焦高校思想政治教育工作者的能力转型路径及其培养体系构建。伴随AI技术与教育场景的深度耦合，智能对话系统对传统价值引领范式形成冲击，数据安全与隐私保护面临严峻考验，这些变革给大学生思想政治教育工作带来全新挑战。深入探讨思政工作者能力转型，对于主动适应技术革新、提升立德树人成效具有重要的现实意义。文章从强化数字技术应用能力、推动多学科知识整合等维度切入，系统提出优化课程体系设计、搭建实践创新平台等培养策略，旨在推动思政工作者专业能力的迭代升级，切实增强思想政治教育的精准性与实效性，为新时代高素质人才培养提供坚实保障。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 52
     },
     {
-      "rank": 6,
+      "doi": "10.69979/3029-2700.25.12.030",
+      "title": "人工智能驱动的企业人力资源管理创新研究",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.64216/3080-1516.25.04.046",
+      "title": "新质生产力视域下大数据赋能大学生劳动教育实施路径研究",
+      "authors": [],
+      "venue": "当代教育与艺术",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.61369/etr.6407",
+      "title": "基于生成式人工智能的大学生自主学习能力提升研究",
+      "authors": [
+        "付, 园园",
+        "王, 栋梁"
+      ],
+      "venue": "Educational Theory and Research",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着网络信息技术的快速发展，生成式人工智能（Generative Artificial Intelligence, GAI）作为一种前沿技术，正逐渐渗透到教育领域，为大学生的自主学习能力提升提供了新的可能性。本研究旨在探讨基于生成式人工智能对大学生自主学习能力的影响及其潜在机制。本文首先梳理了自主学习能力及其重要性，强调了其在现代教育中的关键角色。接着，通过系统综述生成式人工智能在教育领域中的应用现状，揭示了它在个性化学习、创造性思维培养等方面的潜力。最后，针对大学生自主学习能力的提升，探讨了生成式人工智能技术在个性化学习路径设计、智能化反馈与引导等方面的具体应用策略。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.70693/cjst.v1i4.1768",
+      "title": "生成式人工智能素养量表（GLAT）研究述评",
+      "authors": [
+        "林俊毅",
+        "龚雪霏",
+        "武 珍"
+      ],
+      "venue": "中国科学与技术学报",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>摘要：生成式人工智能的快速发展对素养评估提出新挑战。现有研究多依赖自陈式量表，且缺乏跨文化验证。基于此，本研究采用CiteSpace工具与文献计量方法，对2021-2025年间中英文文献进行可视化与定性分析。结果表明：研究理论基础从“信息素养”向“AI素养”演进；热点聚焦于“学评融合”“人机协同”等主题；现有量表虽形成“认知-技能-情感-伦理”四维结构，但存在跨文化等值性验证不足、评估缺乏标准化等问题。本研究提出“认知-技能-情感-伦理-评估-跨文化”六维度量表，为跨文化场景下的量表设计提供理论支撑。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.63887/ssrp.2025.1.9.12",
+      "title": "新质生产力背景下大学生就业能力提升研究",
+      "authors": [
+        "成雨珂"
+      ],
+      "venue": "社会科学研究与实践",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在新时代环境下，大学生就业能力不仅与个人职业发展、就业质量存在密切联系，同时也直接关系到新质生产力的发展效果。众所周知，大学生作为新质生产力发展的重要力量，其对大学生的就业能力提出了更高要求。基于此，本文先具体阐述新质生产力的概念、特点及其对大学生就业能力的要求，随后深入剖析大学生就业能力发展存在的问题，最后从构建数字化课程体系、搭建职业发展生态系统等方面出发，提出几点提升大学生就业能力的有效对策，以供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.70677/zytg2137",
+      "title": "基于产出导向法的生成式人工智能赋能大学英语教学改革与实践—以“跨文化交际”课程为例",
+      "authors": [
+        "宋, 会存",
+        "侯, 平英",
+        "叶, 青"
+      ],
+      "venue": "新时代外语",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大学英语“跨文化交际”课程教学长期面临教师经验不足、学生实践不足与个性化指导不足三大挑战。本研究以产出导向法（POA）为理论框架，构建生成式人工智能（GAI）赋能的教学模式，重点探讨GAI在POA“驱动—促成—评价”循环中的应用路径，以期为智能技术支持的教学创新提供实践参考。研究采用混合方法，通过教学实验与主题分析展开。量化数据显示，在跨文化剧本创作各维度上，GAI-POA模式下学生的成绩均高于对照组。质性分析发现，GAI作为创造性合作伙伴，在灵感启发、语言支架与文化视角模拟方面提供了全过程支持，有效缓解了实践与指导不足之困。研究表明，GAI赋能能够有效提升教学效能，但需警惕学生的技术依赖与输出内容“AI化”倾向。未来教学应处理好教师主导、学生主体与技术辅助的关系，从工具使用转向数字素养培育，以确保教学目标的实现。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.37155/2811-0625-0413-28",
+      "title": "新能源发电企业安全生产管理体系的构建与实践",
+      "authors": [
+        "王是琦"
+      ],
+      "venue": "现代工程项目管理",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.64649/yh.jydk.issn3080-2660.202606014",
+      "title": "生成式人工智能对大学生自主学习的影响研究",
+      "authors": [
+        "李, 可欣"
+      ],
+      "venue": "教研导刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>生成式人工智能的加速发展引发了大学生自主学习方式的变革，在带来降低自主学习门槛、提高自主学习效率、优化自主学习方式以及拓展学习思维边界等新机遇的同时，也造成大学生自主学习能力结构性缺失、虚假入门现象、加剧认知阶层分化等新危机。基于此，本文从学生本身和外部环境影响双重视角探讨行之有效的生成式人工智能在自主学习中的规范性使用路径，包括明确需求、找准时机；学会提问、内化成果；建立外部支持机制。现阶段，生成式人工智能在大学生群体中应用广泛，尽管在利用过程中存在浅层化应用倾向，部分学生仍表示生成式人工智能对其自主学习起到了实质性的辅助作用，也普遍表达了对以高校为代表的外部力量提供相应支持的期待与诉求。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.62662/kxwxz0208008",
+      "title": "人工智能发展对大学生就业影响的调查研究",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 61
+    },
+    {
       "doi": "10.70695/aa1202502a14",
       "title": "AI-Empowered Digital Intelligence Transformation of Human Resources: Pathways to New Quality Productivity in Advanced Manufacturing Industry",
-      "abstract": "<jats:p>工业 4.0 驱动的制造生态系统要求 HR 战略发生范式转变，优先考虑敏捷性而不是传统的管理模式。本研究调查了由新兴技术驱动的数字智能如何重新定义 HR 实践以培养“新的质量生产力”，该指标强调运营效率、创新能力和可持续增长。通过综合人工智能、大数据分析和 IoT 系统，该研究展示了核心 HR 职能（包括人才发展、绩效优化和组织决策）如何与智能制造环境不断变化的需求保持一致。利用来自制造企业的经验证据和生产力基准数据，该分析确定了三个关键途径：先发制人解决技能短缺问题的 AI 驱动的预测性人才分析、加速员工能力发展的个性化学习平台，以及增强运营响应能力的动态决策支持工具。研究结果表明，数字化转型的 HR 系统实现了双重成果：管理效率低下现象减少了 30-40%，生产质量指标得到了可衡量的改进。具体来说，组织报告说，在精密制造产量、能源优化工作流程和加快产品部署周期等关键领域，收益提高了 15-25%。该研究进一步研究了实施障碍，包括员工对以数据为中心的工作流程的适应以及算法透明度方面的治理挑战。这些见解为寻求利用人机协作作为可持续工业发展基石的制造业领导者提供了可作的指",
-      "year": null,
+      "authors": [
+        "Lei, Jianqiang",
+        "Dong, Zhiling"
+      ],
       "venue": "Innovative Applications of AI",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>工业 4.0 驱动的制造生态系统要求 HR 战略发生范式转变，优先考虑敏捷性而不是传统的管理模式。本研究调查了由新兴技术驱动的数字智能如何重新定义 HR 实践以培养“新的质量生产力”，该指标强调运营效率、创新能力和可持续增长。通过综合人工智能、大数据分析和 IoT 系统，该研究展示了核心 HR 职能（包括人才发展、绩效优化和组织决策）如何与智能制造环境不断变化的需求保持一致。利用来自制造企业的经验证据和生产力基准数据，该分析确定了三个关键途径：先发制人解决技能短缺问题的 AI 驱动的预测性人才分析、加速员工能力发展的个性化学习平台，以及增强运营响应能力的动态决策支持工具。研究结果表明，数字化转型的 HR 系统实现了双重成果：管理效率低下现象减少了 30-40%，生产质量指标得到了可衡量的改进。具体来说，组织报告说，在精密制造产量、能源优化工作流程和加快产品部署周期等关键领域，收益提高了 15-25%。该研究进一步研究了实施障碍，包括员工对以数据为中心的工作流程的适应以及算法透明度方面的治理挑战。这些见解为寻求利用人机协作作为可持续工业发展基石的制造业领导者提供了可作的指",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 62
     },
     {
-      "rank": 7,
       "doi": "10.12677/sa.2025.145135",
       "title": "Job Creation or Substitution? The Impact of Intelligentization on China’s Manufacturing Employment Market",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "冯, 成伟"
+      ],
       "venue": "Statistics and Application",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 63
     },
     {
-      "rank": 8,
       "doi": "10.2139/ssrn.5023664",
       "title": "Artificial Intelligence Enables New Quality Productivity: The Dual Moderating Role of \"Quality and Quantity\" from Innovation人工智能使能新的质量生产力：创新中“质与量”的双重调节作用",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Aishan, Wumaierjiang",
+        "Wentao, Wei",
+        "魏, 文涛"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 64
     },
     {
-      "rank": 9,
       "doi": "10.26549/jxffcxysj.v4i7.6955",
       "title": "工程造价专业人才培养中“最后一公里”岗位对接能力的提升研究探索",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "莫, 智莉"
+      ],
       "venue": "教学方法创新与实践",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 65
     },
     {
-      "rank": 10,
       "doi": "10.64216/3080-1508.26.04.057",
       "title": "基于智能制造技术的工业自动化生产线智能化改造研究",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "工程技术论坛",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 66
+    },
+    {
+      "doi": "10.65976/3080-0374.2026.08.031",
+      "title": "人工智能时代大学生就业能力提升路径研究",
+      "authors": [
+        "徐, 中强"
+      ],
+      "venue": "教育发展论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "10.1103/PhysRevD.101.035004",
-      "title": "Dirac neutrino mass generation from Majorana messenger",
-      "abstract": "",
-      "year": 2019,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "abstract": "<jats:p>随着人工智能技术的快速发展,大学生就业市场正经历系统性重塑,既面临跨界发展的新机遇,也承受传统岗位被替代的压力。本文系统分析了人工智能对大学生就业的双重影响:一方面拓展了新兴就业领域、提升了工作效率、促进个性化职业发展;另一方面也带来了技术迭代加快、人机协作能力要求提升、职业不确定性增强等挑战。针对当前大学生在知识结构、实践能力和职业素养方面存在的不足,文章构建了政府、高校、企业和学生四维联动的就业能力提升路径,以期通过多方协同、系统推进,助力大学生适应人工智能时代的职场变革,实现更高质量就业与全面发展。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 67
     },
     {
-      "rank": 12,
-      "doi": "10.1103/PhysRevD.97.055045",
-      "title": "Vector Boson Fusion in the Inert Doublet Model",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.12677/ae.2026.165838",
+      "title": "Empowerment or Disempowerment? The Impact of Artificial Intelligence Technology on College Students’ Learning Ability",
+      "authors": [
+        "李, 强"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "10.1109/IROS60139.2025.11247141",
-      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 14,
-      "doi": "10.1103/PhysRevC.107.L041301",
-      "title": "Anchor-based optimization of energy density functionals",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 15,
-      "doi": "arXiv:2102.10886v4",
-      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 16,
-      "doi": "10.1103/PhysRevE.89.052707",
-      "title": "Spatiotemporal Dynamics of Calcium-Driven Cardiac Alternans",
-      "abstract": "",
-      "year": 2014,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 17,
-      "doi": "arXiv:2605.12078v1",
-      "title": "Property-Level Reconstructability of Agent Decisions: An Anchor-Level Pilot Across Vendor SDK Adapter Regimes",
-      "abstract": "",
+      "venue": "Advances in Education",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 68
     },
     {
-      "rank": 18,
-      "doi": "10.1016/j.eswa.2021.115245",
-      "title": "On Clustering Categories of Categorical Predictors in Generalized Linear Models",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.32629/er.v9i5.7085",
+      "title": "人工智能时代大学生就业困难的原因与解决思路",
+      "authors": [
+        "钟, 新周",
+        "孙, 艳敏"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大学生就业不仅影响个人生存，更涉及社会稳定。目前大学生就业已进入硬技能打底、软技能突围与AI能力加持的时代，把握不住人工智能的大势，就业愈发困难。本文从社会因素、高校教育、家庭资源以及大学生自身，对大学生就业困难进行了分析。只要加强政策引导、强化高校教学改革、家长破除认知误区以及大学生提高自身能力，大学生就业困难就能够得到解决。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
     },
     {
-      "rank": 19,
-      "doi": "10.1103/PhysRevD.109.054033",
-      "title": "Cold and dense perturbative QCD in a very strong magnetic background",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.70695/iaai202504a13",
+      "title": "Embodied Intelligent Mobile Operation Robots For Industrial Scenarios",
+      "authors": [
+        "Zhao, Weifeng"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "Innovative Applications of AI",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In industrial scenarios with multiple workstations and processes, traditional rule-based control and small-scale policy networks are prone to performance degradation when tasks are expanded and equipment varies. Therefore, this study developed an embodied intelligent mobile operation platform. This platform unifies the observation -action interface of the mobile chassis, robotic arm, and multimodal sensors. An industrial-grade large-scale model was also designed, integrating vision, poin",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
     },
     {
-      "rank": 20,
-      "doi": "10.1103/PhysRevD.108.034026",
-      "title": "Hot perturbative QCD in a very strong magnetic background",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.64649/yh.shfzykjcx.2026030020",
+      "title": "生成式人工智能赋能体育赛事内容生产研究",
+      "authors": [
+        "杨, 雯婷"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "社会发展与科技创新",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着生成式人工智能技术的快速发展，多媒体内容的生产方式正在发生深刻变化，体育赛事相关内容的生产也随之进入智能化转型阶段。相较于传统内容生产模式，生成式人工智能在文案生成、素材整合、脚本辅助和多平台适配等方面具有明显优势，能够在一定程度上提升体育赛事内容生产的时效性、丰富性与精准性。但与此同时，体育赛事内容生产具有较强的真实性、专业性与公共传播属性，生成式人工智能的应用也面临事实偏差、内容同质化、主体能力弱化及规范边界不清等现实问题。基于此，本文立足体育赛事内容生产场景，分析生成式人工智能的主要赋能表现，并在此基础上探讨其应用中的现实问题与优化路径，以期为体育赛事内容生产创新提供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 71
     },
     {
-      "rank": 21,
-      "doi": "",
-      "title": "Evaluar la alternativa de disposición del papel higiénico al sistema de drenaje hidrosanitario",
+      "doi": "10.64216/3080-1516.25.10.055",
+      "title": "新质生产力智慧农业赋能劳动教育的创新模式研究",
+      "authors": [
+        "陈美玲，王哲诚，郑正, 丁慧霞"
+      ],
+      "venue": "当代教育与艺术",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2014,
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.69979/3029-2700.26.05.081",
+      "title": "论人工智能生成作品的著作权归属",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.64216/3080-1486.26.05.009",
+      "title": "人工智能工具辅助大学生专业课程学习成效与反馈研究",
+      "authors": [
+        "潘佳艺, 向璐瑶"
+      ],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.64649/yh.jydk.2026020047",
+      "title": "人工智能赋能高校大学生管理创新的策略探究",
+      "authors": [
+        "宁, 卫勇"
+      ],
+      "venue": "教研导刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>文章探讨人工智能在高校大学生管理创新中的应用路径与实施策略，结合当前人工智能技术发展趋势与高校学生管理实际，系统分析人工智能在学生管理领域的独特优势，精准剖析当前高校大学生管理工作面临的现实困境，从精准化管理、个性化服务、智能决策支持、高效沟通互动及管理队伍建设五个核心维度，提出具有可操作性的创新策略，旨在借助人工智能技术破解管理难题、提升管理效能与质量，助力学生全面发展，为高校学生管理工作的现代化转型提供理论参考与实践借鉴。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.65976/3080-0374.2026.08.025",
+      "title": "新质生产力驱动下大数据专业\"数智工坊\"实践育人体系的构建与教学探索",
+      "authors": [
+        "郑, 杭",
+        "安, 源"
+      ],
+      "venue": "教育发展论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>新质生产力把数据当作关键生产要素,这对大数据人才的数据思维、场景融合、价值转化能力提出了全新的要求。当下大数据专业实践教学存在着与产业相脱节、真实数据项目欠缺、数字帮助不够等问题,因此本文建立了以\"数智工坊\"作为载体的实践育人模式。此模式以OBE理念作为指导,依靠教育数字化平台提供支撑,借助\"数据要素项目簇\"来驱动,形成了\"认知—训练—创新—服务\"四阶递进的实践链,还引入了AI双师、挑战式学习等策略,达成了教学过程的智能化与个性化。以大数据分析与应用综合实践课程作为例子展开实证,结果表明学生数据工程能力与产业适配度得到了提高,为培育适应新质生产力的复合型数据人才提供了创新范式。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.65113/keji1027",
+      "title": "人工智能驱动下的智能制造与能源设备创新——电气工程的协同发展路径",
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 77
+    },
+    {
+      "doi": "10.62177/apss.v1i3.497",
+      "title": "人工智能驱动下中国-东盟产业创新生态系统构建路径研究",
+      "authors": [
+        "吴再峰"
+      ],
+      "venue": "亚太社会科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在数字经济与区域一体化深度融合的时代背景下，人工智能正成为中国-东盟产业合作升级的核心驱动力。本研究面向中国-东盟人工智能领域深度合作的未来远景，按照“现状剖析-问题解构-破解路径”的逻辑结构，从产业联动、数字赋能、技术支撑和制度保障四维层面剖析了人工智能驱动下中国-东盟产业创新生态系统的发展现状，全面解构了创新资源配置失衡、区域参与梯度分化、技术能力层级悬殊、政策法规协调缺位等四大结构性障碍，进而针对性地提出了以人工智能为牵引的“经济-政策-科技-产业区域”四维协同路径，为推动双方构建协同联动的产业创新体系提供参考。本研究为深化中国-东盟人工智能合作、构建高效协同的区域产业创新生态系统提供了理论新视角和实践路径，对打造更紧密的中国-东盟命运共同体具有重要参考价值。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.33142/sca.v3i9.3295",
+      "title": "智能制造技术在工业自动化生产线中的应用探究",
+      "authors": [
+        "俞, 海洋"
+      ],
+      "venue": "智能城市应用",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>智能制造技术是一项多元化复杂制造技术，是未来制造行业的发展趋势。它的出现对传统工业的发展起到立竿见影的成效。文中以智能制造技术在工业自动化生产线的应用为主要研究对象，针对智能制造技术的应用成效进行多方面、多层次、多维度的阐述和分析，结合笔者在工业自动化生产线领域的科研经验，提出一系列行之有效的应用建议，助力相关从业人员给予力所能及的帮助和支持。仅供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.64216/3080-1486.26.03.054",
+      "title": "人工智能对女性就业质量的影响研究",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.69979/3041-0673.26.03.105",
+      "title": "人工智能驱动的计算机技术创新及产业应用研究",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.69979/3029-2735.25.11.047",
+      "title": "人工智能时代下研究生创新能力培养模式的理论与实践研究",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.37155/2811-0609-0418-57",
+      "title": "林业高质量发展与新质生产力的耦合协调关系研究",
+      "authors": [
+        "盖旭升"
+      ],
+      "venue": "工程施工新技术",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.69979/3029-2700.25.01.017",
+      "title": "人工智能生成艺术：人机协同的“创造”系统",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.12677/sd.2025.156167",
+      "title": "Research on the Role Mechanism of New Quality Productivity Empowering the High-Quality Development of Ten Emerging Industries in Anhui Province in the Age of Digital Intelligence",
+      "authors": [
+        "王, 重阳"
+      ],
+      "venue": "Sustainable   Development",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.64155/gbads.v1i4.100002",
+      "title": "生成式人工智能赋能大学生职业规划的机制与路径研究",
+      "authors": [
+        "钟, 嘉仪",
+        "李, 小青",
+        "方, 韵诗"
+      ],
+      "venue": "Journal of Greater Bay Area Development Studies 大湾区发展研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>当前我国高校毕业生就业市场结构性矛盾日益突出，传统职业规划模式因信息滞后与个性化不足，难以有效支持大学生的就业决策。本文以生成式人工智能（Generative AI）为研究对象，探讨其在职业规划中的赋能机制及对就业决策效能的影响。研究基于文献综述与典型案例分析，归纳生成式AI在职业规划中的三类功能：数据分析、场景模拟与内容生成。结果表明，生成式AI能够通过实时数据挖掘与岗位匹配，缓解岗位供需失衡与考研避业现象；通过虚拟场景实训提升学生的实践经验积累；通过可视化内容生成促进学生薪资与岗位期望的理性调整。典型企业、高校与政府案例显示，该技术显著提升大学生的就业决策清晰度与匹配度。然而，算法偏见、数据隐私及过度依赖等问题仍需警惕。研究最后提出政府、高校与学生三方协同的优化路径，为构建“技术赋能+人文引导”的职业规划新模式提供参考。At present, the structural contradictions in China’s college graduate employment market have become increasingly prominent. T",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1103/PhysRevD.101.035004",
+      "arxiv_id": "1909.09574v3",
+      "title": "Dirac neutrino mass generation from Majorana messenger",
+      "authors": [
+        "Julián Calle",
+        "Diego Restrepo",
+        "Óscar Zapata"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.09574v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1103/PhysRevD.97.055045",
+      "arxiv_id": "1709.09796v2",
+      "title": "Vector Boson Fusion in the Inert Doublet Model",
+      "authors": [
+        "Bhaskar Dutta",
+        "Guillermo Palacio",
+        "Jose D. Ruiz-Alvarez",
+        "Diego Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.09796v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1109/IROS60139.2025.11247141",
+      "arxiv_id": "2508.02544v1",
+      "title": "An RGB-D Camera-Based Multi-Small Flying Anchors Control for Wire-Driven Robots Connecting to the Environment",
+      "authors": [
+        "Shintaro Inoue",
+        "Kento Kawaharazuka",
+        "Keita Yoneda",
+        "Sota Yuzaki",
+        "Yuta Sahara",
+        "Temma Suzuki",
+        "Kei Okada"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.02544v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1103/PhysRevC.107.L041301",
+      "arxiv_id": "2302.10979v2",
+      "title": "Anchor-based optimization of energy density functionals",
+      "authors": [
+        "A. Taninah",
+        "A. V. Afanasjev"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.10979v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "arXiv:2607.13429v1",
+      "arxiv_id": "2607.13429v1",
+      "title": "Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment",
+      "authors": [
+        "Dwip Dalal",
+        "Shivansh Patel",
+        "Chahit Jain",
+        "Jeonghwan Kim",
+        "Utkarsh Mishra",
+        "Alex Baratian",
+        "Hyeonjeong Ha",
+        "Heng Ji",
+        "Svetlana Lazebnik",
+        "Unnat Jain"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.13429v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "arXiv:2102.10886v4",
+      "arxiv_id": "2102.10886v4",
+      "title": "Anchor-Assisted Channel Estimation for Intelligent Reflecting Surface Aided Multiuser Communication",
+      "authors": [
+        "Xinrong Guan",
+        "Qingqing Wu",
+        "Rui Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.10886v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1103/PhysRevE.89.052707",
+      "arxiv_id": "1403.6727v2",
+      "title": "Spatiotemporal Dynamics of Calcium-Driven Cardiac Alternans",
+      "authors": [
+        "Per Sebastian Skardal",
+        "Alain Karma",
+        "Juan G. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1403.6727v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "arXiv:2605.12078v1",
+      "arxiv_id": "2605.12078v1",
+      "title": "Property-Level Reconstructability of Agent Decisions: An Anchor-Level Pilot Across Vendor SDK Adapter Regimes",
+      "authors": [
+        "Oleg Solozobov"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.12078v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1016/j.eswa.2021.115245",
+      "arxiv_id": "2110.10059v1",
+      "title": "On Clustering Categories of Categorical Predictors in Generalized Linear Models",
+      "authors": [
+        "Emilio Carrizosa",
+        "Marcela Galvis Restrepo",
+        "Dolores Romero Morales"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.10059v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1103/PhysRevD.109.054033",
+      "arxiv_id": "2312.13952v2",
+      "title": "Cold and dense perturbative QCD in a very strong magnetic background",
+      "authors": [
+        "Eduardo S. Fraga",
+        "Letícia F. Palhares",
+        "Tulio E. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.13952v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1103/PhysRevD.108.034026",
+      "arxiv_id": "2303.12140v2",
+      "title": "Hot perturbative QCD in a very strong magnetic background",
+      "authors": [
+        "Eduardo S. Fraga",
+        "Letícia F. Palhares",
+        "Tulio E. Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.12140v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "arXiv:2008.00622v1",
+      "arxiv_id": "2008.00622v1",
+      "title": "Anchor-Assisted Intelligent Reflecting Surface Channel Estimation for Multiuser Communications",
+      "authors": [
+        "Xinrong Guan",
+        "Qingqing Wu",
+        "Rui Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.00622v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "arXiv:2509.24466v1",
+      "arxiv_id": "2509.24466v1",
+      "title": "Moravec's Paradox and Restrepo's Model: Limits of AGI Automation in Growth",
+      "authors": [
+        "Marc Bara"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.24466v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1109/TSP.2009.2014812",
+      "arxiv_id": "0802.3563v2",
+      "title": "Distributed Sensor Localization in Random Environments using Minimal Number of Anchor Nodes",
+      "authors": [
+        "Usman A. Khan",
+        "Soummya Kar",
+        "Jose' M. F. Moura"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0802.3563v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "arXiv:1711.07777v1",
+      "arxiv_id": "1711.07777v1",
+      "title": "Towards a Magnetically Actuated Laser Scanner for Endoscopic Microsurgeries",
+      "authors": [
+        "Alperen Acemoglu",
+        "Nikhil Deshpande",
+        "Leonardo S. Mattos"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.07777v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "arXiv:2402.15688v2",
+      "arxiv_id": "2402.15688v2",
+      "title": "Anchor-free Clustering based on Anchor Graph Factorization",
+      "authors": [
+        "Shikun Mei",
+        "Fangfang Li",
+        "Quanxue Gao",
+        "Ming Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.15688v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "arXiv:1812.00469v2",
+      "arxiv_id": "1812.00469v2",
+      "title": "Anchor Box Optimization for Object Detection",
+      "authors": [
+        "Yuanyi Zhong",
+        "Jianfeng Wang",
+        "Jian Peng",
+        "Lei Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1812.00469v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "arXiv:2606.06233v1",
+      "arxiv_id": "2606.06233v1",
+      "title": "Anchor PCA",
+      "authors": [
+        "Benedikt Seiter",
+        "Anya Fries",
+        "Julius von Kügelgen",
+        "Jonas Peters"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.06233v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "arXiv:2211.00826v2",
+      "arxiv_id": "2211.00826v2",
+      "title": "TSAA: A Two-Stage Anchor Assignment Method towards Anchor Drift in Crowded Object Detection",
+      "authors": [
+        "Li Xiang",
+        "He Miao",
+        "Luo Haibo",
+        "Yang Huiyuan",
+        "Xiao Jiajie"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.00826v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "arXiv:2506.07290v1",
+      "arxiv_id": "2506.07290v1",
+      "title": "Stochastic Moving Anchor Algorithms and a Popov's Scheme with Moving Anchor",
+      "authors": [
+        "James Alcala",
+        "Yat Tin Chow",
+        "Mahesh Sunkula"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.07290v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1016/j.cviu.2022.103445",
+      "arxiv_id": "2104.00432v3",
+      "title": "Anchor Pruning for Object Detection",
+      "authors": [
+        "Maxim Bonnaerens",
+        "Matthias Freiberger",
+        "Joni Dambre"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2104.00432v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.3390/e25060939",
+      "arxiv_id": "2205.12364v2",
+      "title": "Correspondence Between the Energy Equipartition Theorem in Classical Mechanics and its Phase-Space Formulation in Quantum Mechanics",
+      "authors": [
+        "Esteban Marulanda",
+        "Alejandro Restrepo",
+        "Johans Restrepo"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.12364v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2603.16848v1",
+      "arxiv_id": "2603.16848v1",
+      "title": "Mediocrity is the key for LLM as a Judge Anchor Selection",
+      "authors": [
+        "Shachar Don-Yehiya",
+        "Asaf Yehudai",
+        "Leshem Choshen",
+        "Omri Abend"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.16848v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "arXiv:2105.14086v2",
+      "arxiv_id": "2105.14086v2",
+      "title": "Augmenting Anchors by the Detector Itself",
+      "authors": [
+        "Xiaopei Wan",
+        "Guoqiu Li",
+        "Yujiu Yang",
+        "Zhenhua Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.14086v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "arXiv:2304.00771v2",
+      "arxiv_id": "2304.00771v2",
+      "title": "Continuous-time Analysis of Anchor Acceleration",
+      "authors": [
+        "Jaewook J. Suh",
+        "Jisun Park",
+        "Ernest K. Ryu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2304.00771v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:1807.00980v2",
+      "arxiv_id": "1807.00980v2",
+      "title": "MetaAnchor: Learning to Detect Objects with Customized Anchors",
+      "authors": [
+        "Tong Yang",
+        "Xiangyu Zhang",
+        "Zeming Li",
+        "Wenqiang Zhang",
+        "Jian Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1807.00980v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "arXiv:2508.16802v1",
+      "arxiv_id": "2508.16802v1",
+      "title": "Anchor-MoE: A Mean-Anchored Mixture of Experts For Probabilistic Regression",
+      "authors": [
+        "Baozhuo Su",
+        "Zhengxian Qu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.16802v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.1109/TIP.2018.2886790",
+      "arxiv_id": "1805.03363v1",
+      "title": "Anchor Cascade for Efficient Face Detection",
+      "authors": [
+        "Baosheng Yu",
+        "Dacheng Tao"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1805.03363v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:1303.4085v1",
+      "arxiv_id": "1303.4085v1",
+      "title": "Sparsity-Exploiting Anchor Placement for Localization in Sensor Networks",
+      "authors": [
+        "Sundeep Prabhakar Chepuri",
+        "Geert Leus",
+        "Alle-Jan van der Veen"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.4085v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:1911.12448v2",
+      "arxiv_id": "1911.12448v2",
+      "title": "Soft Anchor-Point Object Detection",
+      "authors": [
+        "Chenchen Zhu",
+        "Fangyi Chen",
+        "Zhiqiang Shen",
+        "Marios Savvides"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.12448v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.24963/ijcai.2019/298",
+      "arxiv_id": "1906.07318v3",
+      "title": "Deep Active Learning for Anchor User Prediction",
+      "authors": [
+        "Anfeng Cheng",
+        "Chuan Zhou",
+        "Hong Yang",
+        "Jia Wu",
+        "Lei Li",
+        "Jianlong Tan",
+        "Li Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1906.07318v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:2304.00761v1",
+      "arxiv_id": "2304.00761v1",
+      "title": "Learning Anchor Transformations for 3D Garment Animation",
+      "authors": [
+        "Fang Zhao",
+        "Zekun Li",
+        "Shaoli Huang",
+        "Junwu Weng",
+        "Tianfei Zhou",
+        "Guo-Sen Xie",
+        "Jue Wang",
+        "Ying Shan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2304.00761v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:1802.09058v1",
+      "arxiv_id": "1802.09058v1",
+      "title": "Seeing Small Faces from Robust Anchor's Perspective",
+      "authors": [
+        "Chenchen Zhu",
+        "Ran Tao",
+        "Khoa Luu",
+        "Marios Savvides"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.09058v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "arXiv:2605.28181v1",
+      "arxiv_id": "2605.28181v1",
+      "title": "When Confidence Misleads: Suffix Anchoring and Anchor-Proximity Confidence Modulation for Diffusion Language Models",
+      "authors": [
+        "Jungwon Park",
+        "Jimyeong Kim",
+        "Jungmin Ko",
+        "Nojun Kwak",
+        "Wonjong Rhee"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.28181v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.1007/s11222-022-10097-z",
+      "arxiv_id": "2101.08224v5",
+      "title": "Distributional Anchor Regression",
+      "authors": [
+        "Lucas Kook",
+        "Beate Sick",
+        "Peter Bühlmann"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2101.08224v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.1609/aaai.v39i20.35401",
+      "arxiv_id": "2503.12427v1",
+      "title": "Towards Learnable Anchor for Deep Multi-View Clustering",
+      "authors": [
+        "Bocheng Wang",
+        "Chusheng Zeng",
+        "Mulin Chen",
+        "Xuelong Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.12427v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2409.16904v1",
+      "arxiv_id": "2409.16904v1",
+      "title": "Discriminative Anchor Learning for Efficient Multi-view Clustering",
+      "authors": [
+        "Yalan Qin",
+        "Nan Pu",
+        "Hanzhou Wu",
+        "Nicu Sebe"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.16904v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:2308.11381v2",
+      "arxiv_id": "2308.11381v2",
+      "title": "DALNet: A Rail Detection Network Based on Dynamic Anchor Line",
+      "authors": [
+        "Zichen Yu",
+        "Quanli Liu",
+        "Wei Wang",
+        "Liyong Zhang",
+        "Xiaoguang Zhao"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.11381v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:2006.07560v1",
+      "arxiv_id": "2006.07560v1",
+      "title": "Accurate Anchor Free Tracking",
+      "authors": [
+        "Shengyun Peng",
+        "Yunxuan Yu",
+        "Kun Wang",
+        "Lei He"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.07560v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:1907.04919v1",
+      "arxiv_id": "1907.04919v1",
+      "title": "Interactive Topic Modeling with Anchor Words",
+      "authors": [
+        "Sanjoy Dasgupta",
+        "Stefanos Poulis",
+        "Christopher Tosh"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1907.04919v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:1908.07262v2",
+      "arxiv_id": "1908.07262v2",
+      "title": "A Neural Virtual Anchor Synthesizer based on Seq2Seq and GAN Models",
+      "authors": [
+        "Zipeng Wang",
+        "Zhaoxiang Liu",
+        "Zezhou Chen",
+        "Huan Hu",
+        "Shiguo Lian"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1908.07262v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:2311.06965v2",
+      "arxiv_id": "2311.06965v2",
+      "title": "Anchor Data Augmentation",
+      "authors": [
+        "Nora Schneider",
+        "Shirin Goshtasbpour",
+        "Fernando Perez-Cruz"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.06965v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "arXiv:2008.08523v1",
+      "arxiv_id": "2008.08523v1",
+      "title": "Scene Text Detection with Selected Anchor",
+      "authors": [
+        "Anna Zhu",
+        "Hang Du",
+        "Shengwu Xiong"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.08523v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:1412.2857v1",
+      "arxiv_id": "1412.2857v1",
+      "title": "Analysis of Maximum Likelihood and Mahalanobis Distance for Identifying Cheating Anchor Nodes",
+      "authors": [
+        "Jeril Kuriakose",
+        "Amruth V.",
+        "Sandesh A. G.",
+        "Jampu Venkata Naveenbabu",
+        "Mohammed Shahid",
+        "Ashish Shetty"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1412.2857v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:2503.07476v1",
+      "arxiv_id": "2503.07476v1",
+      "title": "SOGS: Second-Order Anchor for Advanced 3D Gaussian Splatting",
+      "authors": [
+        "Jiahui Zhang",
+        "Fangneng Zhan",
+        "Ling Shao",
+        "Shijian Lu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.07476v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:1411.5465v1",
+      "arxiv_id": "1411.5465v1",
+      "title": "Identifying Cheating Anchor Nodes using Maximum Likelihood and Mahalanobis Distance",
+      "authors": [
+        "Jeril Kuriakose",
+        "V. Amruth",
+        "Swathy Nandhini",
+        "V. Abhilash"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.5465v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:1506.05164v1",
+      "arxiv_id": "1506.05164v1",
+      "title": "Partial Network Alignment with Anchor Meta Path and Truncated Generic Stable Matching",
+      "authors": [
+        "Jiawei Zhang",
+        "Weixiang Shao",
+        "Senzhang Wang",
+        "Xiangnan Kong",
+        "Philip S. Yu"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1506.05164v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:1912.02252v1",
+      "arxiv_id": "1912.02252v1",
+      "title": "Multiple Anchor Learning for Visual Object Detection",
+      "authors": [
+        "Wei Ke",
+        "Tianliang Zhang",
+        "Zeyi Huang",
+        "Qixiang Ye",
+        "Jianzhuang Liu",
+        "Dong Huang"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.02252v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:1905.06109v1",
+      "arxiv_id": "1905.06109v1",
+      "title": "A New Anchor Word Selection Method for the Separable Topic Discovery",
+      "authors": [
+        "Kun He",
+        "Wu Wang",
+        "Xiaosen Wang",
+        "John E. Hopcroft"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1905.06109v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2606.19494v1",
+      "arxiv_id": "2606.19494v1",
+      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
+      "authors": [
+        "Apurba Pokharel",
+        "Ram Dantu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.19494v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.65324/imb040",
+      "arxiv_id": "",
+      "title": "The Evolution of Automation in Journalism and PR: An Institutional Framework for PR-tech and the Reconfiguration of Work Tasks",
+      "authors": [
+        "A. Sokolov"
+      ],
+      "venue": "Issues of Media Business",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "The author concludes that the contemporary PR professional requires a dual competence: preserving the craft of the profession while acquiring the architectural thinking needed to design robust, auditable, and accountable automated communication stacks.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.65324/imb040",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The author concludes that the contemporary PR professional requires a dual competence: preserving the craft of the profession while acquiring the architectural thinking needed to design robust, auditable, and accountable automated communication stacks.",
+      "rank": 137
+    },
+    {
+      "doi": "10.1007/978-3-031-77623-6_40",
+      "title": "Daron Acemoglu (1967–)",
+      "authors": [
+        "Ufuk Akcigit"
+      ],
+      "venue": "The Palgrave Companion to MIT Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a43f89e0a96f8c83c4b63be",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.2139/ssrn.5251518",
+      "title": "The Effect of New Technology on Labour Demand: Acemoglu and Beyond",
+      "authors": [
+        "Jonathan S. Aldred"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a441eae0a96f8c83c9b636c",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1177/14789299221090833",
+      "title": "Commissioned Book Review: Daron Acemoglu and James A Robinson,",
+      "authors": [
+        "Aron Hajnal"
+      ],
+      "venue": "Political Studies Review",
+      "year": 2023,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67da3134163c01c8503948ea",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.5281/zenodo.4531369",
+      "title": "Replication Package: Demographics and Automation, by Acemoglu and Restrepo",
+      "authors": [
+        "Daron Acemoğlu"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b5e4ab3fda6d7f069eeea1",
+      "matched_phrase": "(Acemoglu",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 141
     }
   ]
 }

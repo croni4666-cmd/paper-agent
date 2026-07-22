@@ -1,331 +1,3936 @@
 {
   "query_id": "q045",
   "query": "减肥食谱以及断食科学性综述 (intermittent fasting vs calorie restriction weight loss RCT)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 1
+  "topic_bucket": "bio",
+  "source": "user",
+  "generated_at": "2026-07-22T11:31:27",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 21,
+  "n_returned": 179,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 40,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1109/tro.2022.3141876",
+      "title": "FAST-LIO2: Fast Direct LiDAR-inertial Odometry",
+      "authors": [
+        "Chunran Zheng"
+      ],
+      "venue": "IEEE TRANSACTIONS ON ROBOTICS",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60efca705244ab9dcbe23f0c",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.48550/arxiv.2211.17192",
+      "title": "Fast Inference from Transformers Via Speculative Decoding",
+      "authors": [
+        "Yaniv Leviathan"
+      ],
+      "venue": "ICML 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63881b9290e50fcafd3db395",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.00555",
+      "title": "Toward Fast, Flexible, and Robust Low-Light Image Enhancement.",
+      "authors": [
+        "Long Ma"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR 2022)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62620f1d5aee126c0f686da2",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.48550/arxiv.2006.04558",
+      "title": "FastSpeech 2: Fast and High-Quality End-to-End Text to Speech",
+      "authors": [
+        "Yi Ren"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5edf5dd891e011bc656def05",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1109/iccv48922.2021.00363",
+      "title": "Conditional DETR for Fast Training Convergence.",
+      "authors": [
+        "Depu Meng"
+      ],
+      "venue": "2021 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION (ICCV 2021)",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6119e0c75244ab9dcb852e44",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "",
+      "title": "SOLOv2: Dynamic and Fast Instance Segmentation",
+      "authors": [
+        "Xinlong Wang"
+      ],
+      "venue": "ADVANCES IN NEURAL INFORMATION PROCESSING SYSTEMS 33, NEURIPS 2020",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e79da4491e0115bb1157c86",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.48550/arxiv.2006.16236",
+      "title": "Transformers Are RNNs: Fast Autoregressive Transformers with Linear Attention",
+      "authors": [
+        "Angelos Katharopoulos"
+      ],
+      "venue": "INTERNATIONAL CONFERENCE ON MACHINE LEARNING, VOL 119",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ede0553e06a4c1b26a83ff5",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1038/s41587-023-01773-0",
+      "title": "Fast and Accurate Protein Structure Search with Foldseek",
+      "authors": [
+        "Michel van Kempen"
+      ],
+      "venue": "Nature Biotechnology",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6204b12c5aee126c0f93d936",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1007/978-981-97-9251-1_3",
+      "title": "Thinking Fast and Slow",
+      "authors": [
+        "Tshilidzi Marwala"
+      ],
+      "venue": "The Balancing Problem in the Governance of Artificial Intelligence",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "673453e001d2a3fbfcfd50a1",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1001/jama.2023.10598",
+      "title": "Continuous Vs Intermittent Meropenem Administration in Critically Ill Patients with Sepsis: the MERCY Randomized Clinical Trial.",
+      "authors": [
+        "Giacomo Monti"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af6e8c3fda6d7f06409356",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.3390/nu15234915",
+      "title": "Intermittent Fasting on Neurologic Diseases: Potential Role of Gut Microbiota",
+      "authors": [
+        "Mingke Guo"
+      ],
+      "venue": "NUTRIENTS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65733bdc939a5f4082baf425",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1007/978-3-030-26050-7_345-1",
+      "title": "Very Fast Simulated Reannealing",
+      "authors": [
+        "Dionissios T. Hristopulos"
+      ],
+      "venue": "Encyclopedia of Earth Sciences Series Encyclopedia of Mathematical Geosciences",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623009835aee126c0faa7223",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1109/cvpr52729.2023.00021",
+      "title": "HexPlane: A Fast Representation for Dynamic Scenes.",
+      "authors": [
+        "Ang Cao"
+      ],
+      "venue": "CVPR 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63f322ea90e50fcafdf3d43c",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1097/mcc.0000000000000960",
+      "title": "Intermittent Feeding and Circadian Rhythm in Critical Illness",
+      "authors": [
+        "Imre W. K. Kouw"
+      ],
+      "venue": "Current opinion in critical care",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578c1e7939a5f40824fc82a",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.48550/arxiv.2110.11309",
+      "title": "Fast Model Editing at Scale",
+      "authors": [
+        "Eric Mitchell"
+      ],
+      "venue": "ICLR 2022",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61722be25244ab9dcb6f0dae",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1109/tro.2020.3033695",
+      "title": "TEASER: Fast and Certifiable Point Cloud Registration",
+      "authors": [
+        "Heng Yang"
+      ],
+      "venue": "IEEE TRANSACTIONS ON ROBOTICS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e296ede3a55ac6ad1e44dea",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1109/lra.2021.3064227",
+      "title": "FAST-LIO: A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter",
+      "authors": [
+        "Wei Xu"
+      ],
+      "venue": "IEEE ROBOTICS AND AUTOMATION LETTERS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f8d5ff091e0116f3d44db0c",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.18653/v1/2021.emnlp-main.160",
+      "title": "Fast WordPiece Tokenization",
+      "authors": [
+        "Xinying Song"
+      ],
+      "venue": "2021 CONFERENCE ON EMPIRICAL METHODS IN NATURAL LANGUAGE PROCESSING (EMNLP 2021)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fef160f91e0113b265a0159",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.22331/q-2021-07-06-497",
+      "title": "Stim: a Fast Stabilizer Circuit Simulator",
+      "authors": [
+        "Craig Gidney"
+      ],
+      "venue": "QUANTUM",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6040ad0791e011a0653f0692",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1038/s41586-021-03544-w",
+      "title": "A Graph Placement Methodology for Fast Chip Design",
+      "authors": [
+        "Azalia Mirhoseini"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60c33dd0e4510cd7c82e6a09",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1016/j.sysarc.2020.101859",
+      "title": "A Survey of Techniques for Intermittent Computing",
+      "authors": [
+        "Sumanth Umesh"
+      ],
+      "venue": "Journal of Systems Architecture",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "599c7aad601a182cd26d41eb",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1056/nejmc2001176",
+      "title": "Effects of Intermittent Fasting on Health, Aging, and Disease.",
+      "authors": [
+        "Rafael de Cabo"
+      ],
+      "venue": "The New England journal of medicine",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8ecffd9fced0a24b7245dc",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1056/nejmoa1913147",
+      "title": "Phase 3 Trial of RNAi Therapeutic Givosiran for Acute Intermittent Porphyria",
+      "authors": [
+        "M. Balwani"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee356979fced0a24b91c68b",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1056/nejmc2026458",
+      "title": "Givosiran for Acute Intermittent Porphyria. Reply.",
+      "authors": [
+        "Manisha Balwani"
+      ],
+      "venue": "NEW ENGLAND JOURNAL OF MEDICINE",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fd56c4a8cdecd4daa2344ad",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "",
+      "title": "Fast Fourier Convolution",
+      "authors": [
+        "Lu Chi"
+      ],
+      "venue": "NeurIPS",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f7fdd328de39f0828397c80",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1038/s43017-020-0039-9",
+      "title": "The Environmental Price of Fast Fashion",
+      "authors": [
+        "Kirsi Niinimäki"
+      ],
+      "venue": "Nature Reviews Earth & Environment",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b706e1c45e57ce936c940",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1016/j.trsl.2014.05.013",
+      "arxiv_id": "",
+      "title": "Intermittent fasting vs daily calorie restriction for type 2 diabetes prevention: a review of human findings.",
+      "authors": [
+        "Adrienne R Barnosky",
+        "K. Hoddy",
+        "T. Unterman",
+        "K. Varady"
+      ],
+      "venue": "Translational Research: The Journal of Laboratory and Clinical Medicine",
+      "year": 2014,
+      "cited_by_count": 280,
+      "influential_cite_count": 7,
+      "reference_count": 39,
+      "tldr": "Preliminary findings show promise for the use of IF and ADF as alternatives to CR for weight loss and type 2 diabetes risk reduction in overweight and obese populations, but more research is required before solid conclusions can be reached.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Preliminary findings show promise for the use of IF and ADF as alternatives to CR for weight loss and type 2 diabetes risk reduction in overweight and obese populations, but more research is required before solid conclusions can be reached.",
+      "rank": 27
+    },
+    {
+      "doi": "10.1186/1475-2891-11-98",
+      "title": "Intermittent fasting combined with calorie restriction is effective for weight loss and cardio-protection in obese women",
+      "authors": [
+        "Klempel, Monica C",
+        "Kroeger, Cynthia M",
+        "Bhutani, Surabhi",
+        "Trepanowski, John F",
+        "Varady, Krista A"
+      ],
+      "venue": "Nutrition Journal",
+      "year": 2012,
+      "cited_by_count": 170,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Intermittent fasting (IF; severe restriction 1 d/week) facilitates weight loss and improves coronary heart disease (CHD) risk indicators. The degree to which weight loss can be enhanced if IF is combined with calorie restriction (CR) and liquid meals, remains unknown.</jats:p></jats:sec><jats:sec><jats:title>Objective</jats:title><jats:p>This study examined the effects of IF plus CR (with or without a liquid di",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1016/j.msard.2018.05.002",
+      "arxiv_id": "",
+      "title": "Effect of intermittent vs. daily calorie restriction on changes in weight and patient-reported outcomes in people with multiple sclerosis",
+      "authors": [
+        "K. Fitzgerald",
+        "Diane Vizthum",
+        "Bobbie J. Henry-Barron",
+        "A. Schweitzer",
+        "S. Cassard",
+        "E. Kossoff",
+        "A. Hartman",
+        "D. Kapogiannis",
+        "Patrick Sullivan",
+        "D. Baer",
+        "M. Mattson",
+        "L. Appel",
+        "E. Mowry"
+      ],
+      "venue": "Multiple Sclerosis and Related Disorders",
+      "year": 2018,
+      "cited_by_count": 137,
+      "influential_cite_count": 8,
+      "reference_count": 23,
+      "tldr": "CR diets are a safe/feasible way to achieve weight loss in people with MS and may be associated with improved emotional health.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc6107078?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "CR diets are a safe/feasible way to achieve weight loss in people with MS and may be associated with improved emotional health.",
+      "rank": 29
+    },
+    {
+      "doi": "10.1016/j.actamat.2024.120646",
+      "title": "Acoustic Profiling of Intermittent Plasticity",
+      "authors": [
+        "Mostafa M. Omar"
+      ],
+      "venue": "ACTA MATERIALIA",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "675e9003ae8580e7ff5e7de4",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1186/s40691-023-00337-9",
+      "title": "(Un)sustainable Transitions Towards Fast and Ultra-Fast Fashion",
+      "authors": [
+        "Tulin Dzhengiz"
+      ],
+      "venue": "Fashion and Textiles",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "647446c2d68f896efad3ff91",
+      "matched_phrase": "fasting",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1186/s12889-022-12908-4",
+      "title": "Considering Intermittent Fasting among Saudis: Insights into Practices",
+      "authors": [
+        "Alnasser  Aroub"
+      ],
+      "venue": "BMC Public Health",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a5dbb7602d9702f0860e",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1109/ipsn54338.2022.00044",
+      "title": "The Case for Approximate Intermittent Computing",
+      "authors": [
+        "Fulvio Bambusi"
+      ],
+      "venue": "2022 21ST ACM/IEEE INTERNATIONAL CONFERENCE ON INFORMATION PROCESSING IN SENSOR NETWORKS (IPSN 2022)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619c5bbf5244ab9dcbf22193",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1038/s41574-022-00638-x",
+      "title": "Clinical Application of Intermittent Fasting for Weight Loss: Progress and Future Directions",
+      "authors": [
+        "Krista A. Varady"
+      ],
+      "venue": "Nature Reviews Endocrinology",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621764cf5aee126c0ff2440f",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.3390/nu14030631",
+      "title": "Intermittent Fasting and Metabolic Health",
+      "authors": [
+        "Izzah Vasim"
+      ],
+      "venue": "NUTRIENTS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "622dcd7f5aee126c0f1e7a94",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.3322/caac.21694",
+      "title": "Intermittent Fasting in the Prevention and Treatment of Cancer",
+      "authors": [
+        "Katherine K Clifton"
+      ],
+      "venue": "CA a cancer journal for clinicians",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61164be35244ab9dcbde44eb",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1146/annurev-nutr-052020-041327",
+      "title": "Cardiometabolic Benefits of Intermittent Fasting",
+      "authors": [
+        "Krista A Varady"
+      ],
+      "venue": "Annual review of nutrition",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6166b83d5244ab9dcbde54b0",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1021/acs.estlett.1c00173",
+      "title": "Intermittency of Large Methane Emitters in the Permian Basin",
+      "authors": [
+        "Daniel H. Cusworth"
+      ],
+      "venue": "ENVIRONMENTAL SCIENCE & TECHNOLOGY LETTERS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619badef1c45e57ce9eb5cb3",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1257/aer.20181346",
+      "title": "Unwatched Pollution: the Effect of Intermittent Monitoring on Air Quality",
+      "authors": [
+        "Eric Yongchen Zou"
+      ],
+      "venue": "AMERICAN ECONOMIC REVIEW",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619baf3b1c45e57ce9f7896e",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1093/med/9780190655341.003.0014",
+      "title": "Intermittent Versus Continuous Androgen Deprivation in Prostate Cancer",
+      "authors": [
+        "Niranjan Sathianathen"
+      ],
+      "venue": "50 Studies Every Urologist Should Know",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac4c0c5aee126c0fd9b506",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1002/14651858.cd005262.pub4",
+      "title": "Pentoxifylline for Intermittent Claudication.",
+      "authors": [
+        "Cathryn Broderick"
+      ],
+      "venue": "Cochrane Database of Systematic Reviews",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a4881d65ce31bc877df0d3",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1145/3373376.3378464",
+      "title": "Reliable Timekeeping for Intermittent Computing",
+      "authors": [
+        "Jasper de Winkel"
+      ],
+      "venue": "TWENTY-FIFTH INTERNATIONAL CONFERENCE ON ARCHITECTURAL SUPPORT FOR PROGRAMMING LANGUAGES AND OPERATING SYSTEMS (ASPLOS XXV)",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e6cae3493d709897ccff2e7",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.3390/nu13041302",
+      "arxiv_id": "",
+      "title": "Effects of Calorie Restriction on Health Span and Insulin Resistance: Classic Calorie Restriction Diet vs. Ketosis-Inducing Diet",
+      "authors": [
+        "A. Napoleão",
+        "L. Fernandes",
+        "C. Miranda",
+        "Ana Paula Marum"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 89,
+      "influential_cite_count": 2,
+      "reference_count": 145,
+      "tldr": "Calorie restriction effects on human beings were evaluated, comparing the benefits and risks of different CR diets: classic CR vs. ketosis-inducing diets, including intermittent fasting (IF), classic ketogenic diet (CKD), fasting mimicking diet (FMD), very-low-calorie ketogenic Diet (VLCKD) and Spanish ketogenic Mediterranean diet (SKMD).",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/13/4/1302/pdf?version=1618720594",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Calorie restriction effects on human beings were evaluated, comparing the benefits and risks of different CR diets: classic CR vs. ketosis-inducing diets, including intermittent fasting (IF), classic ketogenic diet (CKD), fasting mimicking diet (FMD), very-low-calorie ketogenic Diet (VLCKD) and Spanish ketogenic Mediterranean diet (SKMD).",
+      "rank": 43
+    },
+    {
+      "doi": "10.3390/nu14091781",
+      "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss?",
+      "authors": [
+        "Zhang, Qing",
+        "Zhang, Caishun",
+        "Wang, Haidan",
+        "Ma, Zhengye",
+        "Liu, Defeng",
+        "Guan, Xiaohan",
+        "Liu, Yixin",
+        "Fu, Yanwen",
+        "Cui, Mingxuan",
+        "Dong, Jing"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 45,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>We conducted a systematic review and meta-analysis of randomized clinical trials and pilot trial studies to compare the effectiveness of intermittent fasting (IF) and continuous calorie restriction (CCR) in overweight and obese people. The parameters included body mass index (BMI), body weight, and other metabolism-related indicators. A systematic search in PubMed, Embase, Cochrane Library, and Web of Science was conducted up to January 2022. Standardized mean differences (SMDs) with 95%",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1111/imj.2_14295",
+      "arxiv_id": "",
+      "title": "AETIOLOGY AND DIFFERENTIATING CHARACTERISTICS OF PRIMARY VS. SECONDARY THROMBOCYTOSIS – THE CLOT THICKENS",
+      "authors": [
+        "B. Corley",
+        "Christina Khouri",
+        "Lorène Théaude",
+        "Philippa",
+        "Hawke",
+        "R. Hall",
+        "M. Weatherall",
+        "J. Krebs",
+        "J. Fairley",
+        "Ling Zhang",
+        "N. Glassford",
+        "Rinaldo",
+        "Bellomo",
+        "Nathan Klose",
+        "S. Boyle",
+        "J. Niemann"
+      ],
+      "venue": "Internal medicine journal (Print)",
+      "year": 2019,
+      "cited_by_count": 40,
+      "influential_cite_count": 1,
+      "reference_count": 10,
+      "tldr": "This work has shown that an attenuation in adaptive thermogenesis with intermittent fasting may promote more effective weight loss during dietary energy restriction, particularly during the first few weeks of starting an energy restricted diet.",
+      "is_oa": true,
+      "oa_url": "https://www.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/imj.2_14295",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This work has shown that an attenuation in adaptive thermogenesis with intermittent fasting may promote more effective weight loss during dietary energy restriction, particularly during the first few weeks of starting an energy restricted diet.",
+      "rank": 45
+    },
+    {
+      "doi": "10.1016/j.jand.2022.09.013",
+      "arxiv_id": "",
+      "title": "The Effects of Isocaloric Intermittent Fasting vs. Daily Caloric Restriction on Weight loss and Metabolic Risk Factors for Non-communicable Chronic Diseases: A Systematic Review of Randomized Controlled or Comparative Trials.",
+      "authors": [
+        "Armin Ezzati",
+        "S. Rosenkranz",
+        "J. Phelan",
+        "Cindy Logan"
+      ],
+      "venue": "Journal of the Academy of Nutrition and Dietetics",
+      "year": 2022,
+      "cited_by_count": 37,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Very limited evidence suggests that IF may be more effective vs. DCR for fat loss and insulin sensitivity, but conclusions cannot be drawn based on the current evidence.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Very limited evidence suggests that IF may be more effective vs. DCR for fat loss and insulin sensitivity, but conclusions cannot be drawn based on the current evidence.",
+      "rank": 46
+    },
+    {
+      "doi": "10.11124/jbisrir-2015-2363",
+      "arxiv_id": "",
+      "title": "Intermittent fasting interventions for the treatment of overweight and obesity in adults aged 18 years and over: a systematic review protocol",
+      "authors": [
+        "L. Jane",
+        "G. Atkinson",
+        "Victoria Jaime",
+        "S. Hamilton",
+        "Gillian Waller",
+        "Samantha M. Harrison"
+      ],
+      "venue": "The JBI Database of Systematic Reviews and Implementation Reports",
+      "year": 2015,
+      "cited_by_count": 33,
+      "influential_cite_count": 4,
+      "reference_count": 11,
+      "tldr": "Intermittent fasting (IF), also known as alternate day fasting (ADF), periodic fasting or intermittent energy restriction (IER), is a relatively new dietary approach to weight management that involves interspersing normal daily caloric intake with a short period of severe calorie restriction/fasting.",
+      "is_oa": true,
+      "oa_url": "https://research.tees.ac.uk/files/6460937/578564.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Intermittent fasting (IF), also known as alternate day fasting (ADF), periodic fasting or intermittent energy restriction (IER), is a relatively new dietary approach to weight management that involves interspersing normal daily caloric intake with a short period of severe calorie restriction/fasting.",
+      "rank": 47
+    },
+    {
+      "doi": "10.1007/s00222-023-01185-6",
+      "title": "An Intermittent Onsager Theorem",
+      "authors": [
+        "Matthew Novack"
+      ],
+      "venue": "Inventiones mathematicae",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623d33155aee126c0f10116b",
+      "matched_phrase": "(intermittent",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1186/s12986-019-0388-x",
+      "arxiv_id": "",
+      "title": "Comparison of glycemic improvement between intermittent calorie restriction and continuous calorie restriction in diabetic mice",
+      "authors": [
+        "Siying Wei",
+        "Jingyu Zhao",
+        "Meijuan Bai",
+        "Chenchen Li",
+        "Lingling Zhang",
+        "Yan Chen"
+      ],
+      "venue": "Nutrition and Metabolism",
+      "year": 2019,
+      "cited_by_count": 25,
+      "influential_cite_count": 0,
+      "reference_count": 20,
+      "tldr": "This study indicated that both intermittent CR and continuous CR can lower fasting blood glucose level in the diabetic mice, while intermittent CR is better than the latter in improving glucose homeostasis in db/db mice.",
+      "is_oa": true,
+      "oa_url": "https://nutritionandmetabolism.biomedcentral.com/track/pdf/10.1186/s12986-019-0388-x",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study indicated that both intermittent CR and continuous CR can lower fasting blood glucose level in the diabetic mice, while intermittent CR is better than the latter in improving glucose homeostasis in db/db mice.",
+      "rank": 49
+    },
+    {
+      "doi": "10.1007/s12325-018-0746-5",
+      "arxiv_id": "",
+      "title": "Intermittent Fasting (Alternate Day Fasting) in Healthy, Non-obese Adults: Protocol for a Cohort Trial with an Embedded Randomized Controlled Pilot Trial",
+      "authors": [
+        "N. Tripolt",
+        "Slaven Stekovic",
+        "F. Aberer",
+        "Jasmin Url",
+        "P. Pferschy",
+        "S. Schröder",
+        "N. Verheyen",
+        "A. Schmidt",
+        "E. Kolesnik",
+        "Sophie H. Narath",
+        "R. Riedl",
+        "B. Obermayer-Pietsch",
+        "T. Pieber",
+        "F. Madeo",
+        "H. Sourij"
+      ],
+      "venue": "Advances in Therapy",
+      "year": 2018,
+      "cited_by_count": 24,
+      "influential_cite_count": 0,
+      "reference_count": 62,
+      "tldr": "This investigation should gain in-depth mechanistic insights into the concept of ADF and form the basis for larger subsequent cohort recruitment and consecutive intervention studies.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s12325-018-0746-5.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This investigation should gain in-depth mechanistic insights into the concept of ADF and form the basis for larger subsequent cohort recruitment and consecutive intervention studies.",
+      "rank": 50
+    },
+    {
+      "doi": "10.3390/nu14224870",
+      "arxiv_id": "",
+      "title": "Investigating the Effectiveness of Very Low-Calorie Diets and Low-Fat Vegan Diets on Weight and Glycemic Markers in Type 2 Diabetes Mellitus: A Systematic Review and Meta-Analysis",
+      "authors": [
+        "A. Kashyap",
+        "Alexander Mackay",
+        "B. Carter",
+        "C. Fyfe",
+        "A. Johnstone",
+        "P. Myint"
+      ],
+      "venue": "Nutrients",
+      "year": 2022,
+      "cited_by_count": 21,
+      "influential_cite_count": 1,
+      "reference_count": 65,
+      "tldr": "VLCD diet intervention is associated with improvement in glycaemia control in patients with Type 2 Diabetes and both diets suggested a trend towards improved weight loss and anthropometric markers vs. control.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/14/22/4870/pdf?version=1669090373",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "VLCD diet intervention is associated with improvement in glycaemia control in patients with Type 2 Diabetes and both diets suggested a trend towards improved weight loss and anthropometric markers vs. control.",
+      "rank": 51
+    },
+    {
+      "doi": "10.3390/ijerph15061166",
+      "arxiv_id": "",
+      "title": "Effect of Intermittent Energy Restriction on Flow Mediated Dilatation, a Measure of Endothelial Function: A Short Report",
+      "authors": [
+        "M. Headland",
+        "P. Clifton",
+        "J. Keogh"
+      ],
+      "venue": "International Journal of Environmental Research and Public Health",
+      "year": 2018,
+      "cited_by_count": 21,
+      "influential_cite_count": 3,
+      "reference_count": 39,
+      "tldr": "Endothelial function, as measured by flow mediated dilatation, was not altered by two consecutive very low energy intake days, and further investigations assessing the impact in specific population groups as well as different testing conditions would be beneficial.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1660-4601/15/6/1166/pdf?version=1528108215",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Endothelial function, as measured by flow mediated dilatation, was not altered by two consecutive very low energy intake days, and further investigations assessing the impact in specific population groups as well as different testing conditions would be beneficial.",
+      "rank": 52
+    },
+    {
+      "doi": "10.3390/nu14224734",
+      "arxiv_id": "",
+      "title": "Effects of an Intermittent Fasting 5:2 Plus Program on Body Weight in Chinese Adults with Overweight or Obesity: A Pilot Study",
+      "authors": [
+        "Junren Kang",
+        "Xiaodong Shi",
+        "Jiajun Fu",
+        "Hailong Li",
+        "En-ling Ma",
+        "Wei Chen"
+      ],
+      "venue": "Nutrients",
+      "year": 2022,
+      "cited_by_count": 11,
+      "influential_cite_count": 0,
+      "reference_count": 48,
+      "tldr": "The intermittent fasting 5:2 plus program more effectively led to weight loss than daily calorie restriction in the short-term in Chinese patients with overweight or obesity.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/14/22/4734/pdf?version=1668594549",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The intermittent fasting 5:2 plus program more effectively led to weight loss than daily calorie restriction in the short-term in Chinese patients with overweight or obesity.",
+      "rank": 53
+    },
+    {
+      "doi": "10.3389/fnut.2023.1174293",
+      "arxiv_id": "",
+      "title": "Alternate-day modified fasting diet improves weight loss, subjective sleep quality and daytime dysfunction in women with obesity or overweight: a randomized, controlled trial",
+      "authors": [
+        "S. Hooshiar",
+        "A. Yazdani",
+        "S. Jafarnejad"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2023,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 48,
+      "tldr": "The results suggested that an ADMF could be a beneficial diet for controlling body weight and BMI and significantly improved SSQ and daytime dysfunction in women with overweight or obesity.",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fnut.2023.1174293/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results suggested that an ADMF could be a beneficial diet for controlling body weight and BMI and significantly improved SSQ and daytime dysfunction in women with overweight or obesity.",
+      "rank": 54
+    },
+    {
+      "doi": "10.1016/j.numecd.2024.103805",
+      "arxiv_id": "",
+      "title": "Is isocaloric intermittent fasting superior to calorie restriction? A systematic review and meta-analysis of RCTs.",
+      "authors": [
+        "M. Hamsho",
+        "W. Shkorfu",
+        "Y. Ranneh",
+        "Abdulmannan Fadel"
+      ],
+      "venue": "NMCD. Nutrition Metabolism and Cardiovascular Diseases",
+      "year": 2024,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "IF may be an effective alternative to CR but is not superior to CR in enhancing human health, and future studies should focus on conducting longitudinal randomized trials comparing IF and CR in different populations, age groups, and IF patterns.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "IF may be an effective alternative to CR but is not superior to CR in enhancing human health, and future studies should focus on conducting longitudinal randomized trials comparing IF and CR in different populations, age groups, and IF patterns.",
+      "rank": 55
+    },
+    {
+      "doi": "10.3389/fnut.2025.1664412",
+      "arxiv_id": "",
+      "title": "Effects of time-restricted eating on body composition and metabolic parameters in overweight and obese women: a systematic review and meta-analysis",
+      "authors": [
+        "Shi-yi Chen",
+        "Xiaotian Zhang",
+        "J. Kortas",
+        "Haitao Liu"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2025,
+      "cited_by_count": 8,
+      "influential_cite_count": 1,
+      "reference_count": 76,
+      "tldr": "TRE demonstrates a favorable safety profile and better adherence, supporting its clinical feasibility, and is effective in reducing body weight and lowering fasting insulin in overweight and obese women, without negatively affecting lean body mass.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "TRE demonstrates a favorable safety profile and better adherence, supporting its clinical feasibility, and is effective in reducing body weight and lowering fasting insulin in overweight and obese women, without negatively affecting lean body mass.",
+      "rank": 56
+    },
+    {
+      "doi": "10.3390/endocrines3040052",
+      "arxiv_id": "",
+      "title": "Are the Modern Diets for the Treatment of Obesity Better than the Classical Ones?",
+      "authors": [
+        "C. Koliaki",
+        "N. Katsilambros"
+      ],
+      "venue": "Endocrines",
+      "year": 2022,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 123,
+      "tldr": "The aim of the present review is to summarize the current state of evidence regarding the effects of these two popular modern diets, namely intermittent fasting and ketogenic diets, and to provide a concise update on their effects on body weight and cardiometabolic risk factors.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2673-396X/3/4/52/pdf?version=1666935115",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The aim of the present review is to summarize the current state of evidence regarding the effects of these two popular modern diets, namely intermittent fasting and ketogenic diets, and to provide a concise update on their effects on body weight and cardiometabolic risk factors.",
+      "rank": 57
+    },
+    {
+      "doi": "10.31497/zrzyxb.20180244",
+      "title": "国外食物系统研究综述及借鉴",
+      "authors": [
+        "郭华",
+        "Hua, GUO",
+        "王灵恩",
+        "Ling-en, WANG"
+      ],
+      "venue": "自然资源学报",
+      "year": 2018,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.3390/nu17121992",
+      "arxiv_id": "",
+      "title": "Effects of Intermittent Fasting and Calorie Restriction on Exercise Performance: A Systematic Review and Meta-Analysis",
+      "authors": [
+        "F. Kazeminasab",
+        "Fatemeh Sharafifard",
+        "Ali Bahrami Kerchi",
+        "Reza Bagheri",
+        "R. Carteri",
+        "R. Kirwan",
+        "Heitor O. Santos",
+        "F. Dutheil"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 116,
+      "tldr": "The findings from this meta-analysis suggest that weight loss induced by IF and CR combined with exercise does not necessarily result in reduced physical performance and can be effectively integrated into exercise training without negatively impacting most measures of physical performance, while significantly enhancing weight loss and adiposity-related outcomes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The findings from this meta-analysis suggest that weight loss induced by IF and CR combined with exercise does not necessarily result in reduced physical performance and can be effectively integrated into exercise training without negatively impacting most measures of physical performance, while significantly enhancing weight loss and adiposity-related outcomes.",
+      "rank": 59
+    },
+    {
+      "doi": "10.7326/0003-4819-160-12-201406170-02002",
+      "arxiv_id": "",
+      "title": "In patients at high CV risk, a Mediterranean diet plus olive oil reduced diabetes more than advising a low-fat diet",
+      "authors": [
+        "Ashley E. Jensen",
+        "Scott E. Sherman"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 2014,
+      "cited_by_count": 5,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "In patients at high risk for cardiovascular disease, a Mediterranean diet plus extra-virgin olive oil reduced new-onset diabetes compared with advice to follow a low-fat diet, and the benefits of the Med diet plus EVOO cannot be explained by weight loss alone.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "LettersAndComments",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "In patients at high risk for cardiovascular disease, a Mediterranean diet plus extra-virgin olive oil reduced new-onset diabetes compared with advice to follow a low-fat diet, and the benefits of the Med diet plus EVOO cannot be explained by weight loss alone.",
+      "rank": 60
+    },
+    {
+      "doi": "10.18306/dlkxjz.2017.04.012",
+      "title": "国内外旅游食物消费研究综述",
+      "authors": [
+        "王灵恩",
+        "Ling'en, WANG",
+        "王磊",
+        "钟林生",
+        "成升魁",
+        "Lei, WANG",
+        "Linsheng, ZHONG",
+        "Shengkui, CHENG"
+      ],
+      "venue": "地理科学进展",
+      "year": 2017,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 61
+    },
+    {
       "doi": "10.12677/hjfns.2019.82015",
       "title": "Seaweed Active Substances and Their Effects on Weight Loss and Lipid Reduction",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "范, 素琴"
+      ],
       "venue": "Hans Journal of Food and Nutrition Science",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 62
     },
     {
-      "rank": 2,
+      "doi": "10.32629/as.v3i1.1762",
+      "title": "液相色谱在食品检测中的运用",
+      "authors": [
+        "李, 州霞"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>从液相色谱自身角度来说,其具备进样量小、精准度高、操作便利等特点,在检测活动中应用广泛。本文就结合液相色谱基本内容及食品安全问题产生原因,重点探究液相色谱在食品检测中的运用,具体如下。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.12677/ap.2017.73034",
+      "title": "Research Review on Attentional Bias to Food Cue of Restrained Eaters",
+      "authors": [
+        "段, 涤非"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2017,
+      "cited_by_count": 2,
+      "reference_count": 52,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.1002/14651858.CD015610.pub2",
+      "arxiv_id": "",
+      "title": "Intermittent fasting for adults with overweight or obesity.",
+      "authors": [
+        "L. Garegnani",
+        "Gisela Oltra",
+        "D. Ivaldi",
+        "M. A. Burgos",
+        "Paola J Andrenacci",
+        "Sabrina Rico",
+        "Melinda Boyd",
+        "Diane Radler",
+        "C. E. Escobar Liquitay",
+        "Eva Madrid"
+      ],
+      "venue": "Cochrane Database of Systematic Reviews",
+      "year": 2026,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 108,
+      "tldr": "The benefits and harms of intermittent fasting versus regular dietary advice, no intervention or waiting list for adults with overweight or obesity, with or without associated comorbid conditions are evaluated.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The benefits and harms of intermittent fasting versus regular dietary advice, no intervention or waiting list for adults with overweight or obesity, with or without associated comorbid conditions are evaluated.",
+      "rank": 65
+    },
+    {
       "doi": "10.18402/resci.2016.04.20",
       "title": "中国主要粮食生产的化肥削减潜力及其碳减排效应",
-      "abstract": "",
-      "year": 2016,
+      "authors": [
+        "张灿强",
+        "Canqiang, ZHANG",
+        "王莉",
+        "华春林",
+        "金书秦",
+        "刘鹏涛",
+        "Li, WANG",
+        "Chunlin, HUA",
+        "Shuqin, JIN",
+        "Pengtao, LIU"
+      ],
       "venue": "资源科学",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 66
     },
     {
-      "rank": 3,
       "doi": "10.37155/2717-5669-0503-54",
       "title": "学生食品安全及预防食物中毒对策分析",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "胡博宇"
+      ],
       "venue": "国际全科医学",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 67
     },
     {
-      "rank": 4,
+      "doi": "10.62662/kxwxz0212039",
+      "title": "大学生自主学习量化评价研究综述及展望",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.12677/hjfns.2021.104038",
+      "title": "Review of Food Allergen Label Management and Detection",
+      "authors": [
+        "金, 萍"
+      ],
+      "venue": "Hans Journal of Food and Nutrition Science",
+      "year": 2021,
+      "cited_by_count": 1,
+      "reference_count": 41,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.32629/as.v9i2.3743",
+      "title": "空间偏移拉曼光谱分析技术及其在食品次表层检测中的应用",
+      "authors": [
+        "黄, 桂军",
+        "赖, 丽琼"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>空间偏移拉曼光谱SORS是一种能穿透包装或表皮,无损检测食品内部成分的技术,解决了传统方法只能看表层的难题。空间偏移拉曼光谱(spat ially off sect ros copy,sors)是Ｍatousek为了克服复杂分层样品的测量缺陷提出的一种新型拉曼光谱分析技术。将激光入射位置和探测器采集位置区分开,有效抑制表层物质的拉曼信号和荧光干扰,通常这些干扰会掩盖传统后向散射拉曼光谱中更深层的较弱信号,最终获取比传统拉曼光谱检测深两个数量级的物质光谱信息。相比近红外和荧光光谱层析成像、断层扫描等深层探测技术,sors在获取深层信息的同时保留了拉曼光谱的高化学特异性,具有更高的应用潜力。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.18402/resci.2016.05.05",
+      "title": "国际粮食价格对中国粮食价格的非对称性影响研究",
+      "authors": [
+        "彭佳颖",
+        "Jiaying, PENG",
+        "谢锐",
+        "赖明勇",
+        "Rui, XIE",
+        "Mingyong, LAI"
+      ],
+      "venue": "资源科学",
+      "year": 2016,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "intermittent fasting vs continuous caloric restriction for weight and body composition changes in humans",
+      "authors": [
+        "Germán Pertusa"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 167,
+      "tldr": "The IF dietary approach has achieved significant weight loss and body composition improvements, whereas the CR approach has not produced any significant changes in weight or body composition.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The IF dietary approach has achieved significant weight loss and body composition improvements, whereas the CR approach has not produced any significant changes in weight or body composition.",
+      "rank": 72
+    },
+    {
+      "doi": "10.33015/dominican.edu/2020.pas.12",
+      "arxiv_id": "",
+      "title": "Benefits of Intermittent Fasting: A Systematic Review of Randomized Clinical Trials",
+      "authors": [
+        "Kavisha N. Abeyasekera"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "Even a 5-10-week period of IMF can reduce systolic blood pressure levels, total lipid profile and inflammatory markers, and IMF long term stabilizes cardiac risk factors (lipids, BP) while further decreasing HA1c levels and weight loss.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Even a 5-10-week period of IMF can reduce systolic blood pressure levels, total lipid profile and inflammatory markers, and IMF long term stabilizes cardiac risk factors (lipids, BP) while further decreasing HA1c levels and weight loss.",
+      "rank": 73
+    },
+    {
+      "doi": "10.1097/01.hjh.0000523753.87770.90",
+      "arxiv_id": "",
+      "title": "[LB.02.28] HIGH PROTEIN INTERMITTENT FASTING INCREASES SERUM POLYCHLORINATED BIPHENYLS AND DECREASES OXIDATIVE STRESS IN OBESE ADULTS",
+      "authors": [
+        "F. He",
+        "L. Zuo",
+        "W. Emery",
+        "P. Arciero"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "A 12-week high-protein intermittent fasting diet effectively induced weight loss, mobilized stored PCBs by increasing circulating level of PCBs as well as favorably altered redox status and demonstrated an advantage in preventing weight relapse in the absence of elevated oxidative stress induced by increased PCBs compared to traditional heart heathy diet.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A 12-week high-protein intermittent fasting diet effectively induced weight loss, mobilized stored PCBs by increasing circulating level of PCBs as well as favorably altered redox status and demonstrated an advantage in preventing weight relapse in the absence of elevated oxidative stress induced by increased PCBs compared to traditional heart heathy diet.",
+      "rank": 74
+    },
+    {
+      "doi": "10.1210/JS.2019-SAT-LB022",
+      "arxiv_id": "",
+      "title": "SAT-LB022 Effects of Intermittent Versus Continuous Phentermine Therapy on Weight Reduction and Inflammatory Markers in Obese Non-diabetic Patients",
+      "authors": [
+        "S. Chai",
+        "N. Mustafa"
+      ],
+      "venue": "Journal of the Endocrine Society",
+      "year": 2019,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Intermittent phentermine therapy is as effective as conventional daily Phentermine treatment in promoting weight reduction while having similar side effect profile, and both regimes reduced the prevalence of insulin resistance and showed no difference in reduction of the proportion of subjects with high cardiovascular risk.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1210/js.2019-sat-lb022",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Intermittent phentermine therapy is as effective as conventional daily Phentermine treatment in promoting weight reduction while having similar side effect profile, and both regimes reduced the prevalence of insulin resistance and showed no difference in reduction of the proportion of subjects with high cardiovascular risk.",
+      "rank": 75
+    },
+    {
+      "doi": "10.1210/jendso/bvab048.016",
+      "arxiv_id": "",
+      "title": "Effect of Time-Restricted Feeding on Body Weight and Cardiometabolic Risks: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "authors": [
+        "Darin Ruanpeng",
+        "S. Upala",
+        "A. Sanguankeo"
+      ],
+      "venue": "Journal of the Endocrine Society",
+      "year": 2021,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "These findings support TRF as an effective lifestyle intervention for weight loss and cardiometabolic risks in individuals with overweight or obesity with study duration of at least 8 weeks.",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/jes/article-pdf/5/Supplement_1/A8/37200053/bvab048.016.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "These findings support TRF as an effective lifestyle intervention for weight loss and cardiometabolic risks in individuals with overweight or obesity with study duration of at least 8 weeks.",
+      "rank": 76
+    },
+    {
       "doi": "10.12677/acm.2026.162588",
       "title": "Research Progress on the Effects and Mechanisms of Intermittent Fasting \non Obesity and Metabolic Syndrome",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "孙, 瑞阳"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 77
     },
     {
-      "rank": 5,
       "doi": "10.63887/fns.2025.1.8.30",
       "title": "土壤水力性质及其联系综述",
-      "abstract": "<jats:p>为实现高效农业的可持续发展并提升土壤水力性质在各领域的应用效果，本文基于文献检索，对土壤水力性质的应用、研究方法进行了综述分析，总结了土壤水力性质间的内在联系，为利用不同模型求解水力性质提供了更多可能性。分析发现，近年来研究热点主要集中在土壤水力性质的影响因素和土壤改良方面，未来应加强对土壤水分运移及入渗过程的深入研究。</jats:p>",
-      "year": null,
+      "authors": [
+        "刘新高"
+      ],
       "venue": "自然科学前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为实现高效农业的可持续发展并提升土壤水力性质在各领域的应用效果，本文基于文献检索，对土壤水力性质的应用、研究方法进行了综述分析，总结了土壤水力性质间的内在联系，为利用不同模型求解水力性质提供了更多可能性。分析发现，近年来研究热点主要集中在土壤水力性质的影响因素和土壤改良方面，未来应加强对土壤水分运移及入渗过程的深入研究。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 78
     },
     {
-      "rank": 6,
       "doi": "10.31219/osf.io/xt8rs",
       "title": "挪威的科学预算削减了 2022 年的威胁，以及新出现的理性问题",
-      "abstract": "<p>看起来挪威的研究机构在获得科学资金方面正面临一场巨变。由于这些规则和法规的突然修订，许多人一直担心未来国家科学活动的未来。</p>",
-      "year": null,
+      "authors": [
+        "Ants, Sri"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>看起来挪威的研究机构在获得科学资金方面正面临一场巨变。由于这些规则和法规的突然修订，许多人一直担心未来国家科学活动的未来。</p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 79
     },
     {
-      "rank": 7,
       "doi": "10.64628/ab.snkyrjt56",
       "title": "Intermittent fasting and calorie counting about equal for weight loss – new study",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Clayton, David"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 80
     },
     {
-      "rank": 8,
       "doi": "10.18686/zhfnc.v1i2.83",
       "title": "关于“木瓜蛋白酶作为食品嫩化剂用于埃塞俄比亚食品加工的范围和机遇”的综述",
-      "abstract": "<jats:p>食品保鲜的基本目标是在储存过程中限制微生物的发展，从而延长保质期并降低食物中毒的风险。水果和蔬菜是人类饮食的重要补充，因为它们含有维持健康所需的维生素、矿物质和纤维。木瓜含有一种被称为木瓜蛋白酶的蛋白质分解酶，这种酶可用于各种食品加工程序，以分解蛋白质。本综述旨在仔细研究木瓜蛋白酶的提取方法，采用研磨和超声波提取技术，并确定木瓜蛋白酶作为防腐剂在未来研究中的应用。由于木瓜果实中含有半胱氨酸蛋白酶，因此可作为药理学和医学的重要工具。木瓜种子、果实和果实中都含有木瓜碱，这是一种生物碱，味道苦涩，具有强效的心脏抑制作用。食品保鲜的主要目的是保持食品的营养价值，同时还能保持其外观和延长其保质期。由于木瓜广受欢迎，且具有很高的食用价值和营养价值，因此有必要在水果中添加最佳的保鲜酶。酵素已发展成为众多行业的重要工具，其中最主要的是食品和动物饲料、生物燃料、洗涤剂、纺织品、纸浆和造纸。</jats:p>",
-      "year": null,
+      "authors": [
+        "Tilinti, Birhanu Zeleke"
+      ],
       "venue": "食品营养化学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>食品保鲜的基本目标是在储存过程中限制微生物的发展，从而延长保质期并降低食物中毒的风险。水果和蔬菜是人类饮食的重要补充，因为它们含有维持健康所需的维生素、矿物质和纤维。木瓜含有一种被称为木瓜蛋白酶的蛋白质分解酶，这种酶可用于各种食品加工程序，以分解蛋白质。本综述旨在仔细研究木瓜蛋白酶的提取方法，采用研磨和超声波提取技术，并确定木瓜蛋白酶作为防腐剂在未来研究中的应用。由于木瓜果实中含有半胱氨酸蛋白酶，因此可作为药理学和医学的重要工具。木瓜种子、果实和果实中都含有木瓜碱，这是一种生物碱，味道苦涩，具有强效的心脏抑制作用。食品保鲜的主要目的是保持食品的营养价值，同时还能保持其外观和延长其保质期。由于木瓜广受欢迎，且具有很高的食用价值和营养价值，因此有必要在水果中添加最佳的保鲜酶。酵素已发展成为众多行业的重要工具，其中最主要的是食品和动物饲料、生物燃料、洗涤剂、纺织品、纸浆和造纸。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 81
     },
     {
-      "rank": 9,
       "doi": "10.64083/sse2520705",
       "title": "社会性科学议题教学研究的系统性文献综述",
-      "abstract": "<jats:p>社会性科学议题(SSI)教学作为连接科学教育与社会责任的重要桥梁,近年来在理论与实践领域备受关注。本研究采用系统性文献综述方法,遵循PRISMA框架,对中英文数据库中的96篇实证研究进行编码分析,聚焦SSI教学的研究设计、实施模式、评估体系及实践挑战。研究发现SSI教学在促进学生核心素养发展方面展现出多维度的实践成效,但教学实施中面临课程设计碎片化、教师跨学科能力不足等挑战,亟需构建\"教学方法-任务设计-环境资源-教师发展\"四维协同生态,实现从课堂创新向社会参与的范式跃迁。</jats:p>",
-      "year": null,
+      "authors": [
+        "郭, 聪慧"
+      ],
       "venue": "社会科学与教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>社会性科学议题(SSI)教学作为连接科学教育与社会责任的重要桥梁,近年来在理论与实践领域备受关注。本研究采用系统性文献综述方法,遵循PRISMA框架,对中英文数据库中的96篇实证研究进行编码分析,聚焦SSI教学的研究设计、实施模式、评估体系及实践挑战。研究发现SSI教学在促进学生核心素养发展方面展现出多维度的实践成效,但教学实施中面临课程设计碎片化、教师跨学科能力不足等挑战,亟需构建\"教学方法-任务设计-环境资源-教师发展\"四维协同生态,实现从课堂创新向社会参与的范式跃迁。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 82
     },
     {
-      "rank": 10,
       "doi": "10.37155/2717-5669-0502-35",
       "title": "以家庭成员为主导的孤独症早期诊断方法和干预方法综述",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "杰, 庞"
+      ],
       "venue": "国际全科医学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 83
+    },
+    {
+      "doi": "10.69979/3029-2808.25.11.067",
+      "title": "功能性膳食纤维食品对肥胖人群体重管理及血脂代谢的干预作用",
+      "authors": [
+        "谢文平，朱旭，陈颖, 汪爱玉"
+      ],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "arXiv:2305.11425v2",
-      "title": "Neurotrophic Effects of Intermittent Fasting, Calorie Restriction and Exercise: A Review and Annotated Bibliography",
       "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 84
     },
     {
-      "rank": 12,
-      "doi": "arXiv:2412.09936v1",
-      "title": "CaLoRAify: Calorie Estimation with Visual-Text Pairing and LoRA-Driven Visual Language Models",
-      "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.18686/zhfnc.v2i1.173",
+      "title": "探索非洲香蕉生产促进粮食安全和经济增长—简要综述",
+      "authors": [
+        "Olufemi, Owolade Samuel"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "10.1007/s12220-019-00178-3",
-      "title": "The restriction operator on Bergman spaces",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "venue": "食品营养化学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>粮食危机是一个严重的全球性问题，但在非洲却更为明显，解决起来也更具挑战性。数百万非洲人饱受饥饿和营养不良之苦。粮食安全计划是人类生存的重要组成部分，而要实现这一点，就必须随时向人们提供营养和安全的食物。一个丰衣足食的社会不仅需要强有力的政策框架，还需要进行体制改革，以促进生产并使农业对年轻人更具吸引力。在此背景下，香蕉作物的可持续生产可在非洲粮食安全和促进经济增长方面发挥关键作用。香蕉在全世界人类营养中占有重要地位，是许多人食用的主食水果。香蕉是矿物质、维生素和碳水化合物的储存库，被视为能量储备。它通过出口获得外汇收入的前景广阔。随着非洲人口的持续增长，粮食需求也随之增加，这就要求对其农业生产系统进行彻底改革。可以利用土地和人力资本资源。据估计，非洲用于香蕉生产的可耕地面积约为5000万公顷，超过60%的人口年龄在25岁以下。非洲可以通过大量生产香蕉来满足当地需求和出口，从而建立一个体面的社会，摆脱饥饿的负担，实现经济繁荣。如果利用得当，香蕉作为粮食安全和经济繁荣的良方具有巨大的潜力。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 85
     },
     {
-      "rank": 14,
-      "doi": "arXiv:1705.07632v3",
-      "title": "Computer vision-based food calorie estimation: dataset, method, and experiment",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.32629/as.v8i12.3498",
+      "title": "不同肥料对水稻生长及土壤特性影响的综合研究",
+      "authors": [
+        "凌, 乐庆",
+        "贾, 振刚"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 15,
-      "doi": "10.1140/epjb/e2007-00238-8",
-      "title": "Linear response in aging glassy systems, intermittency and the Poisson statistics of record fluctuations",
-      "abstract": "",
-      "year": 2006,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究通过田间试验比较了化学肥料、有机肥、生物肥及其复配对水稻生长和土壤特性的影响。结果表明,有机无机复配施肥增产效果最佳,产量达7856kg/hm²,增产18.9%。有机肥处理水稻株高98.5cm,叶绿素含量52.8SPAD值,根系活力提高34.7%。土壤方面,有机肥显著改善土壤结构,有机质含量提升46.8%,容重降至1.18g/cm³,孔隙度增至54.7%,并缓解土壤酸化。微生物活性分析显示,有机肥处理细菌数量增加1.3倍,脲酶活性提升67.2%,多样性指数达3.42。研究认为,有机无机合理配施既保障水稻增产又改善土壤健康,为可持续农业发展提供技术支撑。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 86
     },
     {
-      "rank": 16,
-      "doi": "arXiv:1502.03302v2",
-      "title": "Using Distance Estimation and Deep Learning to Simplify Calibration in Food Calorie Measurement",
-      "abstract": "",
-      "year": 2015,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.33142/jscs.v4i2.12426",
+      "title": "延迟性肌肉酸痛的预防及恢复研究综述",
+      "authors": [
+        "刘, 波",
+        "廖, 金玉",
+        "胡, 华东"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 17,
-      "doi": "arXiv:2306.09527v1",
-      "title": "Leveraging Human Salience to Improve Calorie Estimation",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "venue": "体能科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本综述旨在对国内外学者在延迟性肌肉酸痛领域的研究进行梳理。通过检索知网、Web of Science、PubMed等学术数据库，收集相关文献资料并进行阅读，对延迟性肌肉酸痛的产生原因、机理以及恢复手段和预防方法进行综合总结。研究发现延迟性肌肉酸痛的预防与治疗方面，多个研究结果表明口服镇痛药或非甾体抗炎药、冰敷、按摩、针灸等方法能够有效缓解疼痛，促进恢复。本综述对先前的恢复方法进行了总结，旨在为今后的研究提供参考方向。值得注意的是，关于延迟性肌肉酸痛的更多恢复方法仍需要学者们进行深入研究。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 87
     },
     {
-      "rank": 18,
-      "doi": "arXiv:2112.09839v1",
-      "title": "Calorie Aware Automatic Meal Kit Generation from an Image",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.1186/isrctn31465600",
+      "title": "Continuous vs. intermittent energy restriction and weight loss",
+      "authors": [
+        "Capehorn, Matthew"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 19,
-      "doi": "10.4018/IJGBL.2021040104",
-      "title": "Learning Daily Calorie Intake Standard using a Mobile Game",
+      "venue": "http://isrctn.org/&gt;",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
       "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 88
     },
     {
-      "rank": 20,
-      "doi": "arXiv:1706.04062v4",
-      "title": "Deep Learning-Based Food Calorie Estimation Method in Dietary Assessment",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Effectiveness of physical exercise in patients with prediabetes on glucemic control: protocol for a systematic review",
-      "abstract": "",
-      "year": 2021,
+      "doi": "10.4060/cb8959zh",
+      "title": "联合国粮食及农业组织关于亚洲及太平洋地区减少粮食损失和浪费的区域战略",
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 89
+    },
+    {
+      "doi": "10.3390/books978-3-03943-838-9",
+      "title": "The Effect of Calorie Restriction and Intermittent Fasting on Health and Disease",
+      "authors": [],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.2468/jbes.50.134",
+      "title": "",
+      "authors": [],
+      "venue": "Nihon Kikan Shokudoka Gakkai Kaiho",
+      "year": 1999,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.32629/as.v9i2.3711",
+      "title": "水稻栽培技术及化肥减量增效技术探索",
+      "authors": [
+        "付, 开萍"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文聚焦水稻栽培技术与化肥减量增效技术,阐述传统栽培技术要点与现存问题,剖析化肥过量使用的危害及减量增效的必要性。介绍测土配方施肥、有机肥替代化肥、侧深施肥等关键技术,分析技术集成模式与配套措施,探讨技术推广应用成效与挑战,旨在为水稻绿色高效生产提供理论支持与实践指导。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.64083/ste2610310",
+      "title": "宁夏地区沙质土公路工程特性及固化技术应用研究综述",
+      "authors": [
+        "任, 启欣"
+      ],
+      "venue": "科学技术与教育",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>宁夏位于我国西北内陆,属温带大陆性气候,生态环境本底脆弱,土地沙化问题突出。区内沙质土资源分布广泛,主要集中分布于平罗县东部、中卫市北部腾格里沙漠边缘、灵武市白芨滩及瓷窑堡、盐池县高沙窝—苏步井—哈巴湖周边、红寺堡周边以及黄河冲积平原的芦草湖一带。该类土壤具有结构松散、黏聚力低、抗剪强度差及水稳定性不良等显著工程缺陷,难以直接用于公路等基础设施的结构层。同时,部分地区传统筑路材料如天然砂砾、水泥等供应短缺,加之远距离运输成本高昂,严重制约了当地交通建设与发展。因此,将储量丰富的沙质土通过固化技术转化为合格的工程材料,已成为推动宁夏及类似地区实现绿色、可持续发展的重要课题。本文系统综述了宁夏沙质土的分布与工程特性,重点探讨适用于沙质土改良的固化剂种类及其作用机理,并梳理相关固化技术与工程应用现状。文章指出,目前针对湿陷性黄土的固化技术已取得显著进展并形成地方标准,然而针对本地沙质土的系统性固化研究及其在公开学术期刊上的案例报道仍较为缺乏,今后应加强面向区域特点的本土化、定制化固化材料与技术研发。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1016/b978-0-12-824005-2.00009-9",
+      "title": "Fasting, intermittent fasting, time-restricted feeding, calorie restriction: Facts or fads?",
+      "authors": [
+        "Visioli, Francesco"
+      ],
+      "venue": "Human Nutrition",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 121,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1111/jhn.70137/v2/review1",
+      "title": "Review for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1111/jhn.70137/v1/review2",
+      "title": "Review for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1097/ebp.0000000000001108",
+      "title": "Is intermittent fasting more effective than daily calorie restriction for weight loss in otherwise healthy overweight adults?",
+      "authors": [
+        "Smith, Meagan",
+        "Beard, Rebecca",
+        "Gray, Harrison",
+        "Hughes, Jonathan",
+        "Wininger, Brittany"
+      ],
+      "venue": "Evidence-Based Practice",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "Diets using intermittent eating schedules in obese or overweight adults are as effective but not more effective for losing weight or maintaining weight loss when compared with continuous daily calorie restriction.",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "tldr": "Diets using intermittent eating schedules in obese or overweight adults are as effective but not more effective for losing weight or maintaining weight loss when compared with continuous daily calorie restriction.",
+      "rank": 97
+    },
+    {
+      "doi": "10.5796/electrochemistry.71.599",
+      "title": "腐食科学と防食工学との連携",
+      "authors": [],
+      "venue": "Electrochemistry",
+      "year": 2003,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.12677/ap.2021.119230",
+      "title": "Watch out for Overcorrecting—The Definition and Research Review of Orthorexia Nervosa",
+      "authors": [
+        "李, 丹阳"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.12677/hjfns.2023.122010",
+      "title": "A Review of the Scientific Basis for Optional Ingredients in Infant Formula",
+      "authors": [
+        "褚, 浩辰"
+      ],
+      "venue": "Hans Journal of Food and Nutrition Science",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 60,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.37155/2705-0653-0705-58",
+      "title": "基于“双减”背景下的学科作业设计的研究以小学英语跨学科综合性作业设计实践为例",
+      "authors": [
+        "夏有福",
+        "桂亚萍",
+        "贾　琪",
+        "李阿兰",
+        "张晨芮",
+        "吴　景"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.3323/jcorr1954.20.2_59",
+      "title": "",
+      "authors": [],
+      "venue": "CORROSION ENGINEERING DIGEST",
+      "year": 1971,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1111/jhn.70137/v1/review1",
+      "title": "Review for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1111/jhn.70137/v2/review2",
+      "title": "Review for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1111/jhn.70137/v1/decision1",
+      "title": "Decision letter for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1111/jhn.70137/v3/decision1",
+      "title": "Decision letter for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1111/jhn.70137/v2/decision1",
+      "title": "Decision letter for \"Impact of Achieved Weight Loss by Intermittent Fasting Plus Early Time‐Restricted Eating and Calorie Restriction on Systemic and Adipose Tissue Markers of Inflammation in Adults at Risk of Type 2 Diabetes: An Exploratory Sub‐Study\"",
+      "authors": [],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.32629/as.v9i3.3759",
+      "title": "金银花药食两用绿色种植技术及安全性评价",
+      "authors": [
+        "牛, 茜",
+        "依, 光香",
+        "牛, 明镇",
+        "邓, 少文",
+        "普, 秋锦"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为促进云南省西双版纳州金银花产业提质增效及提升当地食品药品安全保障水平,对当地的金银花绿色生产技术以及安全性评价进行研究有着现实意义；本文依托当地的亚热带气候优势,结合试验研究,系统开展了当地金银花绿色生产的栽培品种优选、土壤改良等关键环节的技术研究。测定不同种植模式下的产值及主要活性成分含量并进行国标规定的成品安全性检测,结果显示该绿色种植方案可改善作物生长状态,减少化肥投入,在保障产量的同时不影响品质,保证了食用安全。该研究有利于推动当地金银花绿色生产技术和质量安全控制措施的应用推广,对促进药食同源类产业健康发展具有一定的指导意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.63887/fns.2025.1.9.7",
+      "title": "水泥物理性能检测方法的创新研究及其对工程质量的影响综述",
+      "authors": [
+        "胡松廷"
+      ],
+      "venue": "自然科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>物理性能检测是把控水泥质量的关键环节，传统检测方法存在效率低、精度有限、主观性强等局限。本文围绕水泥物理性能检测方法展开综述，首先明确凝结时间、安定性、强度、细度及需水量等核心检测指标的工程意义；随后系统梳理自动化检测、无损检测、智能化检测等创新方法的研究进展，对比分析各方法的技术特点与应用场景；深入探讨检测方法创新对工程质量控制的影响，包括提升质量管控效率、保障结构安全耐久性、优化施工组织等方面；最后指出当前检测方法在多性能协同检测、复杂环境适应性、标准化体系等方面存在的挑战，并对微型化检测设备、多传感融合技术、数字孪生驱动的检测模式等未来发展方向进行展望，为水泥质量检测技术升级与工程质量提升提供理论参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.71411/smn.2025.v1i1.885",
+      "title": "饮食中糖盐摄入剂量与高血压、高血糖患病风险的相关性综述",
+      "authors": [
+        "何, 何洁",
+        "王, 王琦",
+        "罗, 罗博洋",
+        "王, 王烁然",
+        "单, 单馨蕊",
+        "涂, 涂爽"
+      ],
+      "venue": "医学与护理",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 35,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国慢性病防控形势日益严峻，“健康中国2030”战略与“三减三健”专项行动深入推进，探索饮食因素与代谢性疾病的关联机制、构建科学饮食指导体系迫在眉睫。本综述聚焦国民糖盐摄入现状与高血压、高血糖高发的公共卫生问题，紧扣减盐减糖政策要求，系统梳理糖盐摄入剂量与两类疾病患病风险的相关性，明确其在政策落地与学术研究交叉领域的定位。依托循证医学证据揭示糖盐过量摄入对代谢性疾病的影响机制，既为居民个性化饮食干预提供科学依据，也为慢性病防控政策优化、健康膳食指南修订提供支撑，强化对“三减三健”行动的实践指导价值，为代谢性疾病的防控提供可参考、可推广的实践路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.12677/ap.2017.77119",
+      "title": "The Review of Food-Related Attention Bias and Train",
+      "authors": [
+        "李, 欣航"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 27,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.12677/aac.2026.162012",
+      "title": "Advances in Detection Methods for Illegally Added Substances in Weight Loss Food and Drug Products",
+      "authors": [
+        "谭, 成"
+      ],
+      "venue": "Advances in Analytical Chemistry",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.14218/mrp.2015.059",
+      "title": "Lancet Diabetes Endocrinol：什么样的饮食对于减肥来说是最好的？",
+      "authors": [],
+      "venue": "Medical Research &amp; Publication",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2305.11425v2",
+      "arxiv_id": "2305.11425v2",
+      "title": "Neurotrophic Effects of Intermittent Fasting, Calorie Restriction and Exercise: A Review and Annotated Bibliography",
+      "authors": [
+        "Eric Mayor"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.11425v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:2412.09936v1",
+      "arxiv_id": "2412.09936v1",
+      "title": "CaLoRAify: Calorie Estimation with Visual-Text Pairing and LoRA-Driven Visual Language Models",
+      "authors": [
+        "Dongyu Yao",
+        "Keling Yao",
+        "Junhong Zhou",
+        "Yinghao Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.09936v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.1007/s12220-019-00178-3",
+      "arxiv_id": "1711.09438v2",
+      "title": "The restriction operator on Bergman spaces",
+      "authors": [
+        "Debraj Chakrabarti",
+        "Sonmez Sahutoglu"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.09438v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "arXiv:1705.07632v3",
+      "arxiv_id": "1705.07632v3",
+      "title": "Computer vision-based food calorie estimation: dataset, method, and experiment",
+      "authors": [
+        "Yanchao Liang",
+        "Jianhua Li"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.07632v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1140/epjb/e2007-00238-8",
+      "arxiv_id": "0611749v2",
+      "title": "Linear response in aging glassy systems, intermittency and the Poisson statistics of record fluctuations",
+      "authors": [
+        "Paolo Sibani"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0611749v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:1502.03302v2",
+      "arxiv_id": "1502.03302v2",
+      "title": "Using Distance Estimation and Deep Learning to Simplify Calibration in Food Calorie Measurement",
+      "authors": [
+        "Pallavi Kuhad",
+        "Abdulsalam Yassine",
+        "Shervin Shirmohammadi"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1502.03302v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "arXiv:2306.09527v1",
+      "arxiv_id": "2306.09527v1",
+      "title": "Leveraging Human Salience to Improve Calorie Estimation",
+      "authors": [
+        "Katherine R. Dearstyne",
+        "Alberto D. Rodriguez"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.09527v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "arXiv:2112.09839v1",
+      "arxiv_id": "2112.09839v1",
+      "title": "Calorie Aware Automatic Meal Kit Generation from an Image",
+      "authors": [
+        "Ahmad Babaeian Jelodar",
+        "Yu Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.09839v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.4018/IJGBL.2021040104",
+      "arxiv_id": "2009.05802v3",
+      "title": "Learning Daily Calorie Intake Standard using a Mobile Game",
+      "authors": [
+        "Anik Das",
+        "Sumaiya Amin",
+        "Muhammad Ashad Kabir",
+        "Md. Sabir Hossain",
+        "Mohammad Mainul Islam"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.05802v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:1706.04062v4",
+      "arxiv_id": "1706.04062v4",
+      "title": "Deep Learning-Based Food Calorie Estimation Method in Dietary Assessment",
+      "authors": [
+        "Yanchao Liang",
+        "Jianhua Li"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.04062v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.1103/PhysRevB.59.13328",
+      "arxiv_id": "9805128v1",
+      "title": "Observing the Berry phase in diffusive conductors: Necessary conditions for adiabaticity",
+      "authors": [
+        "Daniel Loss",
+        "Herbert Schoeller",
+        "Paul M. Goldbart"
+      ],
+      "venue": "arXiv",
+      "year": 1998,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/9805128v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:1802.03852v1",
+      "arxiv_id": "1802.03852v1",
+      "title": "A Personalized Method for Calorie Consumption Assessment",
+      "authors": [
+        "Yunshi Liu",
+        "Pujana Paliyawan",
+        "Takahiro Kusano",
+        "Tomohiro Harada",
+        "Ruck Thawonmas"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.03852v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:1408.5348v1",
+      "arxiv_id": "1408.5348v1",
+      "title": "Bat Algorithm is Better Than Intermittent Search Strategy",
+      "authors": [
+        "Xin-She Yang",
+        "Suash Deb",
+        "Simon Fong"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1408.5348v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.1103/PhysRevB.90.235311",
+      "arxiv_id": "1405.7618v2",
+      "title": "Single-spin manipulation in a double quantum dot in the field of a micromagnet",
+      "authors": [
+        "Stefano Chesi",
+        "Ying-Dan Wang",
+        "Jun Yoneda",
+        "Tomohiro Otsuka",
+        "Seigo Tarucha",
+        "Daniel Loss"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1405.7618v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1103/PhysRevB.71.035318",
+      "arxiv_id": "0405525v1",
+      "title": "Rigorous Born Approximation and beyond for the Spin-Boson Model",
+      "authors": [
+        "D. P. DiVincenzo",
+        "D. Loss"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0405525v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "arXiv:2509.01415v1",
+      "arxiv_id": "2509.01415v1",
+      "title": "Bangladeshi Street Food Calorie Estimation Using Improved YOLOv8 and Regression Model",
+      "authors": [
+        "Aparup Dhar",
+        "MD Tamim Hossain",
+        "Pritom Barua"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.01415v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2011.01082v1",
+      "arxiv_id": "2011.01082v1",
+      "title": "Multi-Task Learning for Calorie Prediction on a Novel Large-Scale Recipe Dataset Enriched with Nutritional Information",
+      "authors": [
+        "Robin Ruede",
+        "Verena Heusser",
+        "Lukas Frank",
+        "Alina Roitberg",
+        "Monica Haurilet",
+        "Rainer Stiefelhagen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.01082v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:2203.14197v1",
+      "arxiv_id": "2203.14197v1",
+      "title": "Long-Tailed Recognition via Weight Balancing",
+      "authors": [
+        "Shaden Alshammari",
+        "Yu-Xiong Wang",
+        "Deva Ramanan",
+        "Shu Kong"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.14197v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:1104.0560v3",
+      "arxiv_id": "1104.0560v3",
+      "title": "On restriction of roots on affine T-varieties",
+      "authors": [
+        "Polina Yu. Kotenkova"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1104.0560v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:2511.11705v1",
+      "arxiv_id": "2511.11705v1",
+      "title": "Multimodal ML: Quantifying the Improvement of Calorie Estimation Through Image-Text Pairs",
+      "authors": [
+        "Arya Narang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.11705v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:2411.14635v2",
+      "arxiv_id": "2411.14635v2",
+      "title": "Modelling Loss of Complexity in Intermittent Time Series and its Application",
+      "authors": [
+        "Jie Li",
+        "Jian Zhang",
+        "Samantha L. Winter",
+        "Mark Burnley"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.14635v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:1812.11952v4",
+      "arxiv_id": "1812.11952v4",
+      "title": "On weight complexes, pure functors, and detecting weights",
+      "authors": [
+        "Mikhail V. Bondarko"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1812.11952v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1007/s00013-021-01604-1",
+      "arxiv_id": "1809.09611v3",
+      "title": "A variational restriction theorem",
+      "authors": [
+        "Vjekoslav Kovač",
+        "Diogo Oliveira e Silva"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1809.09611v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:2105.10886v1",
+      "arxiv_id": "2105.10886v1",
+      "title": "VS-Net: Voting with Segmentation for Visual Localization",
+      "authors": [
+        "Zhaoyang Huang",
+        "Han Zhou",
+        "Yijin Li",
+        "Bangbang Yang",
+        "Yan Xu",
+        "Xiaowei Zhou",
+        "Hujun Bao",
+        "Guofeng Zhang",
+        "Hongsheng Li"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.10886v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:2606.18457v1",
+      "arxiv_id": "2606.18457v1",
+      "title": "Task-Restricted Symmetries in Recurrent Weight Space",
+      "authors": [
+        "Simon Dräger"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.18457v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "arXiv:2208.04369v1",
+      "arxiv_id": "2208.04369v1",
+      "title": "Understanding Weight Similarity of Neural Networks via Chain Normalization Rule and Hypothesis-Training-Testing",
+      "authors": [
+        "Guangcong Wang",
+        "Guangrun Wang",
+        "Wenqi Liang",
+        "Jianhuang Lai"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.04369v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:2410.20994v2",
+      "arxiv_id": "2410.20994v2",
+      "title": "Improved polynomial rates of memory loss for nonstationary intermittent dynamical systems",
+      "authors": [
+        "A. Korepanov",
+        "J. Leppänen"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.20994v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:2412.14896v2",
+      "arxiv_id": "2412.14896v2",
+      "title": "$L^2$ restriction estimates from the Fourier spectrum",
+      "authors": [
+        "Marc Carnovale",
+        "Jonathan M. Fraser",
+        "Ana E. de Orellana"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.14896v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "arXiv:1806.08152v1",
+      "arxiv_id": "1806.08152v1",
+      "title": "CaloriNet: From silhouettes to calorie estimation in private environments",
+      "authors": [
+        "Alessandro Masullo",
+        "Tilo Burghardt",
+        "Dima Damen",
+        "Sion Hannuna",
+        "Victor Ponce-López",
+        "Majid Mirmehdi"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1806.08152v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:2510.27204v1",
+      "arxiv_id": "2510.27204v1",
+      "title": "Functional Analysis of Loss-development Patterns in P&C Insurance",
+      "authors": [
+        "Arthur Charpentier",
+        "Qiheng Guo",
+        "Mike Ludkovski"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.27204v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.1214/16-AOAS1001",
+      "arxiv_id": "1610.06943v1",
+      "title": "Sensitivity analysis for an unobserved moderator in RCT-to-target-population generalization of treatment effects",
+      "authors": [
+        "Trang Quynh Nguyen",
+        "Cyrus Ebnesajjad",
+        "Stephen R. Cole",
+        "Elizabeth A. Stuart"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1610.06943v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1007/s00220-021-04071-5",
+      "arxiv_id": "2007.07616v2",
+      "title": "Loss of memory and moment bounds for nonstationary intermittent dynamical systems",
+      "authors": [
+        "Alexey Korepanov",
+        "Juho Leppänen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.07616v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "arXiv:1904.03601v2",
+      "arxiv_id": "1904.03601v2",
+      "title": "VoiceID Loss: Speech Enhancement for Speaker Verification",
+      "authors": [
+        "Suwon Shon",
+        "Hao Tang",
+        "James Glass"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1904.03601v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "arXiv:2103.14493v1",
+      "arxiv_id": "2103.14493v1",
+      "title": "RCT: Resource Constrained Training for Edge AI",
+      "authors": [
+        "Tian Huang",
+        "Tao Luo",
+        "Ming Yan",
+        "Joey Tianyi Zhou",
+        "Rick Goh"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.14493v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:2303.08253v2",
+      "arxiv_id": "2303.08253v2",
+      "title": "R2 Loss: Range Restriction Loss for Model Compression and Quantization",
+      "authors": [
+        "Arnav Kundu",
+        "Chungkuk Yoo",
+        "Srijan Mishra",
+        "Minsik Cho",
+        "Saurabh Adya"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.08253v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:1901.05555v1",
+      "arxiv_id": "1901.05555v1",
+      "title": "Class-Balanced Loss Based on Effective Number of Samples",
+      "authors": [
+        "Yin Cui",
+        "Menglin Jia",
+        "Tsung-Yi Lin",
+        "Yang Song",
+        "Serge Belongie"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1901.05555v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1088/0004-637X/786/1/53",
+      "arxiv_id": "1411.3473v1",
+      "title": "Radial evolution of intermittency of density fluctuations in the fast solar wind",
+      "authors": [
+        "R. Bruno",
+        "D. Telloni",
+        "L. Primavera",
+        "E. Pietropaolo",
+        "R. D'Amicis",
+        "L. Sorriso-Valvo",
+        "V. Carbone",
+        "F. Malara",
+        "P. Veltri"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.3473v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:2306.17478v3",
+      "arxiv_id": "2306.17478v3",
+      "title": "Improving Precision of RCT-Based CATE Estimation using Data Borrowing with Double Calibration",
+      "authors": [
+        "Amir Asiaee",
+        "Chiara Di Gravio",
+        "Cole Beck",
+        "Yuting Mei",
+        "Samhita Pal",
+        "Jared D. Huling"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.17478v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2503.08038v2",
+      "arxiv_id": "2503.08038v2",
+      "title": "Generalized Kullback-Leibler Divergence Loss",
+      "authors": [
+        "Jiequan Cui",
+        "Beier Zhu",
+        "Qingshan Xu",
+        "Zhuotao Tian",
+        "Xiaojuan Qi",
+        "Bei Yu",
+        "Hanwang Zhang",
+        "Richang Hong"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.08038v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2407.01704v1",
+      "arxiv_id": "2407.01704v1",
+      "title": "Weight Clipping for Deep Continual and Reinforcement Learning",
+      "authors": [
+        "Mohamed Elsayed",
+        "Qingfeng Lan",
+        "Clare Lyle",
+        "A. Rupam Mahmood"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.01704v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:1909.12819v3",
+      "arxiv_id": "1909.12819v3",
+      "title": "On perfectly generated weight structures and adjacent $t$-structures",
+      "authors": [
+        "Mikhail V. Bondarko"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.12819v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2409.11193v1",
+      "arxiv_id": "2409.11193v1",
+      "title": "Existence of an extremal function of Sobolev critical embedding with an $α$-homogeneous weight",
+      "authors": [
+        "Petr Gurka",
+        "Daniel Hauer"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.11193v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:1712.09913v3",
+      "arxiv_id": "1712.09913v3",
+      "title": "Visualizing the Loss Landscape of Neural Nets",
+      "authors": [
+        "Hao Li",
+        "Zheng Xu",
+        "Gavin Taylor",
+        "Christoph Studer",
+        "Tom Goldstein"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1712.09913v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2307.15176v3",
+      "arxiv_id": "2307.15176v3",
+      "title": "RCT Rejection Sampling for Causal Estimation Evaluation",
+      "authors": [
+        "Katherine A. Keith",
+        "Sergey Feldman",
+        "David Jurgens",
+        "Jonathan Bragg",
+        "Rohit Bhattacharya"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.15176v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "arXiv:0506394v3",
+      "arxiv_id": "0506394v3",
+      "title": "Restrictions of the Laplace-Beltrami eigenfunctions to submanifolds",
+      "authors": [
+        "N. Burq",
+        "P. Gerard",
+        "N. Tzvetkov"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/math/0506394v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "10.1145/3395363.3397379",
+      "arxiv_id": "2010.05584v1",
+      "title": "Data Loss Detector: Automatically Revealing Data Loss Bugs in Android Apps",
+      "authors": [
+        "Oliviero Riganelli",
+        "Simone Paolo Mottadelli",
+        "Claudio Rota",
+        "Daniela Micucci",
+        "Leonardo Mariani"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.05584v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.1088/2041-8205/814/2/L19",
+      "arxiv_id": "1608.06446v1",
+      "title": "Evolution of Intermittency in the Slow and Fast Solar Wind Beyond the Ecliptic Plane",
+      "authors": [
+        "Anna Wawrzaszek",
+        "Marius Echim",
+        "Wiesław M. Macek",
+        "Roberto Bruno"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1608.06446v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "arXiv:2409.12802v1",
+      "arxiv_id": "2409.12802v1",
+      "title": "Minkowski difference weight formulas",
+      "authors": [
+        "G. Krishna Teja"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.12802v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:2312.14178v1",
+      "arxiv_id": "2312.14178v1",
+      "title": "Drude weight in presence of nonlocal potentials",
+      "authors": [
+        "Raffaele Resta"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.14178v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:2306.12526v2",
+      "arxiv_id": "2306.12526v2",
+      "title": "Quantum Weight Enumerators for Real Codes with $X$ and $Z$ Exactly Transversal",
+      "authors": [
+        "Eric Kubischta",
+        "Ian Teixeira",
+        "J. Maxwell Silvester"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.12526v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.33024/hjk.v19i11.1861",
+      "arxiv_id": "",
+      "title": "Efek komparatif intermittent fasting dan continuous calorie restriction pada berat badan dan hasil metabolisme pada orang dewasa yang kelebihan berat badan dan obesitas",
+      "authors": [
+        "Fatih Darmawansyah",
+        "Fawwaz Fathur Rahman",
+        "Daniel Ananda Pangihutan Sirait"
+      ],
+      "venue": "HOLISTIK JURNAL KESEHATAN",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 20,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://e-jurnal.iphorr.com/index.php/hjk/article/download/1861/2883",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1210/jendso/bvaf149.1028",
+      "arxiv_id": "",
+      "title": "OR19-08 Intermittent versus Time-Restricted or Continuous Calorie Restriction for the Management of Obesity with Type 2 Diabetes: A Randomized Clinical Trial",
+      "authors": [
+        "Haohao Zhang",
+        "Zhenghe Zhu",
+        "Bo Qiao",
+        "Wangting Li",
+        "Meng Wu"
+      ],
+      "venue": "Journal of the Endocrine Society",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "IER demonstrated greater advantages in reducing fasting blood glucose, improving insulin sensitivity, lowering triglycerides and enhancing patient adherence, compared to TRE and CER, which all effectively improved HbA1c levels in patients with obesity and type 2 diabetes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "IER demonstrated greater advantages in reducing fasting blood glucose, improving insulin sensitivity, lowering triglycerides and enhancing patient adherence, compared to TRE and CER, which all effectively improved HbA1c levels in patients with obesity and type 2 diabetes.",
+      "rank": 165
+    },
+    {
+      "doi": "10.2337/db25-1910-lb",
+      "arxiv_id": "",
+      "title": "1910-LB: Effects of a 6-Month Lifestyle Intervention for Type 2 Diabetes Featuring Intermittent Energy Restriction or Time-Restricted Eating on Glucose Tolerance and Body Weight",
+      "authors": [
+        "Felicia Steger",
+        "Kristine Grdinovac",
+        "Joseph Donnelly",
+        "Corby K. Martin",
+        "John M Miles",
+        "Robert Montgomery",
+        "Lauren Clark",
+        "John P. Thyfault"
+      ],
+      "venue": "Diabetes",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "TRE+ER and IER both led to statistically significant and clinically relevant improvements in HbA1c, glucose AUC, and body weight and future studies should compare these strategies to standard-of-care diabetes education and treatment.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "TRE+ER and IER both led to statistically significant and clinically relevant improvements in HbA1c, glucose AUC, and body weight and future studies should compare these strategies to standard-of-care diabetes education and treatment.",
+      "rank": 166
+    },
+    {
+      "doi": "10.3390/nu18111799",
+      "arxiv_id": "",
+      "title": "Age-Specific Analysis of the Effects of Intermittent Fasting on Body Composition and Cardiometabolic Markers in Healthy Adults and Individuals with Overweight or Obesity: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "authors": [
+        "Kaijun Xing",
+        "Ruihan Liu",
+        "Sheng Peng",
+        "Xuanxuan Zi",
+        "Linxi Lian",
+        "Bowen Yang",
+        "Yangyang Cen",
+        "Yichao Li",
+        "Yi Zhao",
+        "Yannan Zhang"
+      ],
+      "venue": "Nutrients",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 91,
+      "tldr": "IF is an effective weight-management tool, but elicits distinct, age-specific metabolic trajectories that face critical risks of lean mass depletion, necessitating a combined “IF+” strategy (adequate protein and resistance training).",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/nu18111799",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "IF is an effective weight-management tool, but elicits distinct, age-specific metabolic trajectories that face critical risks of lean mass depletion, necessitating a combined “IF+” strategy (adequate protein and resistance training).",
+      "rank": 167
+    },
+    {
+      "doi": "10.5604/01.3001.0013.2067",
+      "arxiv_id": "",
+      "title": "Physiological and Therapeutic Outcomes of Intermittent Fasting versus Calorie-Restriction Diet in Patients suffering from Metabolic Syndrome",
+      "authors": [
+        "Doreen Micallef"
+      ],
+      "venue": "MCAST Journal of Applied Research & Practice",
+      "year": 2019,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The intermittent fasting diet was associated with statistically significant improvements in four out of the six parameters measured and associated with metabolic syndrome and gave better weight loss outcomes than did the conventional calorie restriction diet when compared to the baseline weight after the conclusion of the 12-week programme.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The intermittent fasting diet was associated with statistically significant improvements in four out of the six parameters measured and associated with metabolic syndrome and gave better weight loss outcomes than did the conventional calorie restriction diet when compared to the baseline weight after the conclusion of the 12-week programme.",
+      "rank": 168
+    },
+    {
+      "doi": "10.2337/db22-547-p",
+      "arxiv_id": "",
+      "title": "547-P: Changes in Body Weight and Glucoregulatory Markers by Eight-Hour Time-Restricted Eating vs. Daily Calorie Restriction: A 6-Month Randomized Controlled Trial",
+      "authors": [
+        "S. Cienfuegos",
+        "Shuhao Lin",
+        "K. Gabel",
+        "Mara McStay",
+        "Andrea Mulas",
+        "K. Varady"
+      ],
+      "venue": "Diabetes",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The findings suggest that TRE does not produce greater weight loss than traditional dieting (CR) over 6-months and show that neither diet had any beneficial effect on body composition of markers of glucoregulation, versus controls, in adults with obesity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The findings suggest that TRE does not produce greater weight loss than traditional dieting (CR) over 6-months and show that neither diet had any beneficial effect on body composition of markers of glucoregulation, versus controls, in adults with obesity.",
+      "rank": 169
+    },
+    {
+      "doi": "10.1097/ebp.0000000000000856",
+      "arxiv_id": "",
+      "title": "Is intermittent energy restriction as effective for weight loss as continuous energy restriction in overweight and obese, otherwise healthy adults?",
+      "authors": [
+        "S. Deppe",
+        "C. Wicks"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 3,
+      "tldr": "Limitations included a higher than expected dropout rate, and alternate day fasting participants tended to convert eating patterns de facto into daily calorie restriction as the trial progressed, making the study less generalizable.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Limitations included a higher than expected dropout rate, and alternate day fasting participants tended to convert eating patterns de facto into daily calorie restriction as the trial progressed, making the study less generalizable.",
+      "rank": 170
+    },
+    {
+      "doi": "10.2337/db22-1418-p",
+      "arxiv_id": "",
+      "title": "1418-P: Effect of Eight-Hour Time-Restricted Eating vs. Daily Calorie Restriction on Cardiovascular Disease Risk Factors in Adults with Obesity",
+      "authors": [
+        "Shuhao Lin",
+        "S. Cienfuegos",
+        "K. Gabel",
+        "M. Ezpeleta",
+        "K. Varady",
+        "Kaitlin Chakos",
+        "Mara McStay",
+        "Andrea Mulas"
+      ],
+      "venue": "Diabetes",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "While TRE did not produce significant weight loss, the diet did lower diastolic blood pressure, and preliminary findings suggest CR may produce greater weight loss compared to TRE over 6-months.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "While TRE did not produce significant weight loss, the diet did lower diastolic blood pressure, and preliminary findings suggest CR may produce greater weight loss compared to TRE over 6-months.",
+      "rank": 171
+    },
+    {
+      "doi": "10.1161/circ.142.suppl_3.14607",
+      "arxiv_id": "",
+      "title": "Abstract 14607: Randomized Controlled Trial of Once-Per-Week Intermittent Fasting for the Reduction of Low-Density Lipoprotein Cholesterol",
+      "authors": [
+        "Ciera L Bartholomew",
+        "J. Muhlestein",
+        "H. May",
+        "V. Le",
+        "O. Galenko",
+        "K. Garrett",
+        "Cherie Brunker",
+        "R. Hopkins",
+        "Kristin Konery",
+        "Jeffrey L. Anderson",
+        "J. Carlquist",
+        "K. Knowlton",
+        "B. Bailey",
+        "B. Horne"
+      ],
+      "venue": "Circulation",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "A once-per-week IF regimen did not reduce LDL-C compared to control, but HOMA-IR was significantly reduced, suggesting this more sustainable IF regimen may reduce some chronic cardiometabolic disease risks.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A once-per-week IF regimen did not reduce LDL-C compared to control, but HOMA-IR was significantly reduced, suggesting this more sustainable IF regimen may reduce some chronic cardiometabolic disease risks.",
+      "rank": 172
+    },
+    {
+      "doi": "10.1038/s41574-020-00434-5",
+      "arxiv_id": "",
+      "title": "How effective is time-restricted eating for weight loss?",
+      "authors": [
+        "C. Greenhill"
+      ],
+      "venue": "Nature Reviews Endocrinology",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "It was found that timerestricted eating did not have a significant effect on weight loss or a range of metabolic parameters, and no significant changes were observed in most of the metabolic parameters in the two groups.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It was found that timerestricted eating did not have a significant effect on weight loss or a range of metabolic parameters, and no significant changes were observed in most of the metabolic parameters in the two groups.",
+      "rank": 173
+    },
+    {
+      "doi": "10.36948/ijfmr.2025.v07i03.46465",
+      "arxiv_id": "",
+      "title": "Optimising Dietary Interventions for MASLD: A Nutritional Perspective on Liver Heath",
+      "authors": [
+        "S. Lamba",
+        "Bhavana S"
+      ],
+      "venue": "International Journal For Multidisciplinary Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 59,
+      "tldr": "Diverse diets (Mediterranean, green-Mediterranean, low-carbohydrate high-protein, intermittent fasting) can each induce clinically meaningful steatosis regression, largely via weight loss, but consensus is lacking on the optimal diet pattern.",
+      "is_oa": true,
+      "oa_url": "https://www.ijfmr.com/papers/2025/3/46465.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Diverse diets (Mediterranean, green-Mediterranean, low-carbohydrate high-protein, intermittent fasting) can each induce clinically meaningful steatosis regression, largely via weight loss, but consensus is lacking on the optimal diet pattern.",
+      "rank": 174
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Intermittent fasting differentially affects glucose , lipid and protein metabolism . 7",
+      "authors": [
+        "M. Soeters",
+        "Nicolette M. Lammers",
+        "P. F. Dubbelhuis",
+        "M. Ackermans",
+        "C. Jonkers-Schuitema",
+        "E. Fliers",
+        "P. Hans",
+        "Sauerwein",
+        "M. Serlie"
+      ],
+      "venue": "",
+      "year": 2008,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "IF increases peripheral, but not hepatic insulin sensitivity and tends to increase the anti-lipolytic effect of insulin, which may provide in a simple tool to improve insulin sensitivity in subjects with insulin resistance.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "IF increases peripheral, but not hepatic insulin sensitivity and tends to increase the anti-lipolytic effect of insulin, which may provide in a simple tool to improve insulin sensitivity in subjects with insulin resistance.",
+      "rank": 175
+    },
+    {
+      "doi": "10.1097/ebp.0000000000000608",
+      "arxiv_id": "",
+      "title": "Are low-carbohydrate diets more effective than standard carbohydrate diets in lowering cardiovascular risk factors such as blood pressure, cholesterol, and fasting glucose?",
+      "authors": [
+        "M. U. Ahmed",
+        "Jessica Weng",
+        "Shantie Harkisoon"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 3,
+      "tldr": "A2016 meta-analysis of 11 randomized controlled trials (RCTs) analyzed the effects of lowcarbohydrate diets versus low-fat diets on cardiovascular risk and found no significant difference was found in mean weight loss between the two diets at three to six months or one to two years.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A2016 meta-analysis of 11 randomized controlled trials (RCTs) analyzed the effects of lowcarbohydrate diets versus low-fat diets on cardiovascular risk and found no significant difference was found in mean weight loss between the two diets at three to six months or one to two years.",
+      "rank": 176
+    },
+    {
+      "doi": "10.1097/EBP.0000000000000975",
+      "arxiv_id": "",
+      "title": "What is the best diagnostic imaging for acute appendicitis in children?",
+      "authors": [
+        "Zachary J Bevis",
+        "S. Bishop",
+        "J. Fernandes",
+        "Collin Hu",
+        "B. Killian"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "Adherence to the intermittentEnergy restriction diet was superior to continuous energy restriction diet during the study; however only 58% of intermittent energy restriction participants planned to continue the diet following study termination compared with 85% in the continuousEnergy restriction group.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Adherence to the intermittentEnergy restriction diet was superior to continuous energy restriction diet during the study; however only 58% of intermittent energy restriction participants planned to continue the diet following study termination compared with 85% in the continuousEnergy restriction group.",
+      "rank": 177
+    },
+    {
+      "doi": "10.32474/ADO.2018.01.000105",
+      "arxiv_id": "",
+      "title": "Diet, Obesity and Diabetes",
+      "authors": [
+        "G. Tomkin",
+        "D. Owens"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "This trial demonstrates a feasible method of treating obesity at very little cost in a community setting and concludes that there should be careful consideration of the medical complications of surgery in their decision making.",
+      "is_oa": true,
+      "oa_url": "https://lupinepublishers.com/diabetes-obesity-journal/pdf/ADO.MS.ID.000105.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This trial demonstrates a feasible method of treating obesity at very little cost in a community setting and concludes that there should be careful consideration of the medical complications of surgery in their decision making.",
+      "rank": 178
+    },
+    {
+      "doi": "10.1210/jendso/bvaa046.1468",
+      "arxiv_id": "",
+      "title": "SUN-542 The Effect of Energy Deprivation on Metabolic Hormone Responses to Meals",
+      "authors": [
+        "S. Shekhar",
+        "Helen Leka",
+        "Anne E Kim",
+        "Bona Purse",
+        "Katie R Hersch",
+        "Christopher McGee",
+        "John A McGrath",
+        "A. Smith‐Ryan",
+        "J. Hall"
+      ],
+      "venue": "Journal of the Endocrine Society",
+      "year": 2020,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "These studies indicate that although fasting glucose and insulin are unaffected by short-term caloric restriction, the insulin response to glucose is attenuated even when adjusting for meal-related calories.",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/jes/article-pdf/4/Supplement_1/SUN-542/33186024/bvaa046.1468.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "These studies indicate that although fasting glucose and insulin are unaffected by short-term caloric restriction, the insulin response to glucose is attenuated even when adjusting for meal-related calories.",
+      "rank": 179
     }
   ]
 }

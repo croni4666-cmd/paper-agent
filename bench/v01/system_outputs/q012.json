@@ -3,460 +3,5304 @@
   "query": "carbon pricing effectiveness in OECD countries",
   "topic_bucket": "econ",
   "source": "pub",
-  "generated_at": "2026-07-10T21:02:34",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:22:41",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 246,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
       "doi": "10.1016/j.gloenvcha.2016.05.009",
       "title": "The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications: An overview",
-      "abstract": "This paper presents the overview of the Shared Socioeconomic Pathways (SSPs) and their energy, land use, and emissions implications. The SSPs are part of a new scenario framework, established by the climate change research community in order to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The pathways were developed over the last years as a joint community effort and describe plausible major global developments that together would lead in the future to different challenges for mitigation and adaptation to climate change. The SSPs are based on five narratives describing alternative socio-economic developments, including sustainable development, regional rivalry, inequality, fossil-fueled development, and middle-of-the-road development. The long-term demographic and economic projections of the SSPs depict a wide uncertainty range consistent with the scenario literature. A multi-model approach was used for the elaboration of the energy, land-use and the emissions trajectories of SSP-based scenarios. The baseline scenarios lead to global energy consumption of 400–1200 EJ in 2100, and feature vastly different land-use dynamics, ranging from a possible reduction in cropland area up to a massive expansion by more than 700 million hectares by 2100. The associated annual CO2 emissions of the baseline scenarios range from about 25 GtCO2 to more than 120 GtCO2 per year by 2100. With respect to mitigation, we find that associated costs strongly depend on three factors: (1) the policy assumptions, (2) the socio-economic narrative, and (3) the stringency of the target. The carbon price for reaching the target of 2.6 W/m2 that is consistent with a temperature change limit of 2 °C, differs in our analysis thus by about a factor of three across the SSP marker scenarios. Moreover, many models could not reach this target from the SSPs with high mitigation challenges. While the SSPs were designed to represent different mitig",
-      "year": 2016,
+      "authors": [
+        "Keywan Riahi",
+        "Detlef P. van Vuuren",
+        "Elmar Kriegler",
+        "Jae Edmonds",
+        "Brian C. O’Neill",
+        "Shinichiro Fujimori",
+        "Nico Bauer",
+        "Katherine Calvin",
+        "Rob Dellink",
+        "Oliver Fricko",
+        "Wolfgang Lutz",
+        "Alexander Popp",
+        "Jesús Crespo Cuaresma",
+        "Samir KC",
+        "Marian Leimbach",
+        "Leiwen Jiang",
+        "Tom Kram",
+        "Shilpa Rao",
+        "Johannes Emmerling",
+        "Kristie L. Ebi",
+        "Tomoko Hasegawa",
+        "Peter Havlík",
+        "Florian Humpenöder",
+        "Lara Aleluia Da Silva",
+        "Steve Smith",
+        "Elke Stehfest",
+        "Valentina Bosetti",
+        "Jiyong Eom",
+        "David Gernaat",
+        "Toshihiko Masui",
+        "Joeri Rogelj",
+        "Jessica Strefler",
+        "Laurent Drouet",
+        "Volker Krey",
+        "Gunnar Luderer",
+        "Mathijs Harmsen",
+        "Kiyoshi Takahashi",
+        "Lavinia Baumstark",
+        "Jonathan Doelman",
+        "Mikiko Kainuma",
+        "Zbigniew Klimont",
+        "Giacomo Marangoni",
+        "Hermann Lotze‐Campen",
+        "Michael Obersteiner",
+        "Andrzej Tabeau",
+        "Massimo Tavoni"
+      ],
       "venue": "Global Environmental Change",
-      "citation_count": 6533,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 6567,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/am/pii/S0959378016300681?via%3Dihub",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 1
     },
     {
-      "rank": 2,
+      "doi": "10.1086/226425",
+      "title": "Some Effects of Proportions on Group Life - Skewed Sex-Ratios and Responses to Token Women",
+      "authors": [
+        "RM KANTER"
+      ],
+      "venue": "Women and Symbolic Interaction",
+      "year": 2024,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9aa08b7602d970337133d",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1093/biomet/asac054",
+      "title": "The Central Role of the Propensity Score in Observational Studies for Causal Effects",
+      "authors": [
+        "P. R. Rosenbaum"
+      ],
+      "venue": "BIOMETRIKA",
+      "year": 2023,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9bbd4b7602d9704822e3a",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1056/nejmc2035374",
+      "title": "Effect of Hydroxychloroquine in Hospitalized Patients with Covid-19.",
+      "authors": [
+        "Peter Horby"
+      ],
+      "venue": "NEW ENGLAND JOURNAL OF MEDICINE",
+      "year": 2021,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f8188e79fced0a24b161653",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1109/jqe.1987.1073206",
+      "title": "Electrooptical Effects in Silicon",
+      "authors": [
+        "Richard A. Soref"
+      ],
+      "venue": "IEEE JOURNAL OF QUANTUM ELECTRONICS",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "557ec8f26fee0fe990cac5f4",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1257/aer.20181169",
+      "title": "Two-way Fixed Effects and Differences-in-differences with Heterogeneous Treatment Effects: a Survey",
+      "authors": [
+        "Clement de Chaisemartin"
+      ],
+      "venue": "ECONOMETRICS JOURNAL",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cb9a1e2e1cd8e83b6739471",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1056/nejmoa2024816",
+      "title": "Effects of Dapagliflozin on Hospitalizations in Patients with Chronic Kidney Disease",
+      "authors": [
+        "Akihiko Koshino"
+      ],
+      "venue": "NEJM evidence",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f6dc20d9fced0a24bb1b3be",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.5194/essd-14-1917-2022",
+      "title": "Global Carbon Budget 2021",
+      "authors": [
+        "Pierre Friedlingstein"
+      ],
+      "venue": "EARTH SYSTEM SCIENCE DATA",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c9b2725244ab9dcb48c388",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1201/9781003217114-17",
+      "title": "Applications of Carbon Nanotubes in Drug Delivery",
+      "authors": [
+        "Zhenxu Yang"
+      ],
+      "venue": "Advanced Porous Biomaterials for Drug Delivery Applications",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6345a63290e50fcafde85311",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.5194/essd-14-4811-2022",
+      "title": "Global Carbon Budget 2022",
+      "authors": [
+        "Pierre Friedlingstein"
+      ],
+      "venue": "EARTH SYSTEM SCIENCE DATA",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d5928d68f896efacedc27",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1016/j.abb.2022.109228",
+      "title": "Reprint Of: Biological Effects of the Superoxide Radical",
+      "authors": [
+        "Irwin Fridovich"
+      ],
+      "venue": "ARCHIVES OF BIOCHEMISTRY AND BIOPHYSICS",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a466172401bde6691b9477",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.26440/ihrj/0510.01486",
+      "title": "Curcumin: A Review of Its’ Effects on Human Health",
+      "authors": [
+        "Sanjana Seth"
+      ],
+      "venue": "International Healthcare Research Journal",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e2d0f5aee126c0f92bd75",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1139/dsa-2021-0031",
+      "title": "Aerodynamics Effect of Holes in UAV Wings Modified for VTOL Capability",
+      "authors": [
+        "Laith S. Sawaqed"
+      ],
+      "venue": "DRONE SYSTEMS AND APPLICATIONS",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d171505aee126c0fdadece",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1016/j.jfineco.2021.05.008",
+      "title": "Do Investors Care about Carbon Risk?",
+      "authors": [
+        "Patrick Bolton"
+      ],
+      "venue": "JOURNAL OF FINANCIAL ECONOMICS",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c9fcc35244ab9dcb456953",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1016/j.jeconom.2020.09.006",
+      "title": "Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects",
+      "authors": [
+        "Liyang Sun"
+      ],
+      "venue": "JOURNAL OF ECONOMETRICS",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2cd28ced107d4c62d13f4",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1073/pnas.2023301118",
+      "title": "The Echo Chamber Effect on Social Media",
+      "authors": [
+        "Matteo Cinelli"
+      ],
+      "venue": "PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60377d6ad3485cfff1f26e48",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1007/978-3-030-71921-0_7",
+      "title": "Fixed and Random-Effects Models for Meta-Analysis",
+      "authors": [
+        "Ravisha Srinivasjois"
+      ],
+      "venue": "Principles and Practice of Systematic Reviews and Meta-Analysis",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac3b3c5aee126c0f58e94e",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.4018/978-1-7998-7607-6.ch002",
+      "title": "Building Effective Blended Learning Programs",
+      "authors": [
+        "Harvey Singh"
+      ],
+      "venue": "Advances in Educational Technologies and Instructional Design Book Series",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "647a1097d68f896efa5c7cd1",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1021/cr5006167",
+      "title": "Chemistry of Atmospheric Brown Carbon.",
+      "authors": [
+        "Alexander Laskin"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a6bae465ce054aad730a1b",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1021/acscentsci.0c01306",
+      "title": "Carbon Dots: A New Type of Carbon-Based Nanomaterial with Wide Applications",
+      "authors": [
+        "Junjun Liu"
+      ],
+      "venue": "ACS CENTRAL SCIENCE",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5feda210d4150a363c30c7b8",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.5194/essd-12-3269-2020",
+      "title": "Global Carbon Budget 2020",
+      "authors": [
+        "Pierre Friedlingstein"
+      ],
+      "venue": "EARTH SYSTEM SCIENCE DATA",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff6895bd4150a363cc9e9e0",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
       "doi": "10.1257/0895330042162430",
       "title": "The Capital Asset Pricing Model: Theory and Evidence",
-      "abstract": "The capital asset pricing model (CAPM) of William Sharpe (1964) and John Lintner (1965) marks the birth of asset pricing theory (resulting in a Nobel Prize for Sharpe in 1990). Before their breakthrough, there were no asset pricing models built from first principles about the nature of tastes and investment opportunities and with clear testable predictions about risk and return. Four decades later, the CAPM is still widely used in applications, such as estimating the cost of equity capital for firms and evaluating the performance of managed portfolios. And it is the centerpiece, indeed often the only asset pricing model taught in MBA level investment courses. The attraction of the CAPM is its powerfully simple logic and intuitively pleasing predictions about how to measure risk and about the relation between expected return and risk. Unfortunately, perhaps because of its simplicity, the empirical record of the model is poor - poor enough to invalidate the way it is used in applications. The model's empirical problems may reflect true failings. (It is, after all, just a model.) But they may also be due to shortcomings of the empirical tests, most notably, poor proxies for the market portfolio of invested wealth, which plays a central role in the model's predictions. We argue, however, that if the market proxy problem invalidates tests of the model, it also invalidates most applications, which typically borrow the market proxies used in empirical tests. For perspective on the CAPM's predictions about risk and expected return, we begin with a brief summary of its logic. We then review the history of empirical work on the model and what it says about shortcomings of the CAPM that pose challenges to be explained by more complicated models.",
-      "year": 2004,
+      "authors": [
+        "Eugene F. Fama",
+        "Kenneth R. French"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 1929,
-      "engines_found_in": [
+      "year": 2004,
+      "cited_by_count": 1932,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/0895330042162430",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 22
     },
     {
-      "rank": 3,
+      "doi": "10.3390/su14084792",
+      "title": "A Global Assessment: Can Renewable Energy Replace Fossil Fuels by 2050?",
+      "authors": [
+        "Jerry L. Holechek",
+        "Hatim M. E. Geli",
+        "Mohammed N. Sawalhah",
+        "Raul Valdéz"
+      ],
+      "venue": "Sustainability",
+      "year": 2022,
+      "cited_by_count": 1362,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/14/8/4792/pdf?version=1650101696",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1016/j.apenergy.2020.114848",
+      "title": "Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070",
+      "authors": [
+        "Jeffrey Rissman",
+        "Chris Bataille",
+        "Eric Masanet",
+        "Nate Aden",
+        "William R. Morrow",
+        "Nan Zhou",
+        "Neal Elliott",
+        "Rebecca Dell",
+        "Niko Heeren",
+        "Brigitta Huckestein",
+        "Joe Cresko",
+        "Sabbie A. Miller",
+        "Joyashree Roy",
+        "Paul S. Fennell",
+        "Betty Cremmins",
+        "Thomas Koch Blank",
+        "David Hone",
+        "Ellen D. Williams",
+        "Stéphane de la Rue du Can",
+        "Bill Sisson",
+        "Mike Williams",
+        "John Katzenberger",
+        "Dallas Burtraw",
+        "Girish Sethi",
+        "Ping He",
+        "David T. Danielson",
+        "Hongyou Lu",
+        "Tom Lorber",
+        "Jens Dinkel",
+        "Jonas Helseth"
+      ],
+      "venue": "Applied Energy",
+      "year": 2020,
+      "cited_by_count": 1009,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.apenergy.2020.114848",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 24
+    },
+    {
       "doi": "10.3390/su12135488",
       "title": "The Role of Agriculture in Ensuring Food Security in Developing Countries: Considerations in the Context of the Problem of Sustainable Food Production",
-      "abstract": "Ensuring food security has become an issue of key importance to countries with different degrees of economic development, while the agricultural sector plays a strategic role in improving food availability. The aim of this paper is to identify relationships between the undernourishment scale and selected characteristics describing the agricultural sector within identified clusters of developing countries. Typological groups of countries were separated using Ward’s method. It results from the analyses that the greatest problems with maintaining food security are observed in the developing countries with a high share of agriculture in their Gross Domestic Product (GDP), adverse conditions hindering agricultural production and deficient infrastructure. Based on research results desirable and tailored strategies for food security improvement in individual clusters were developed. Promoting investments in agricultural infrastructure and extension services along with adopting measures aimed at increasing the households’ purchasing power, especially those in rural areas, appear to be key drivers for improving both food availability and food access. The paper focuses not only on identifying the reasons of undernourishment, but also contributes to recognition of the most effective ways to solve the hunger problem under a country’s unique conditions. It offers a comprehensive perspective for the policy formulation in various areas world-wide, which may be of interest to scholars and policy makers.",
-      "year": 2020,
+      "authors": [
+        "Karolina Pawlak",
+        "Małgorzata Kołodziejczak"
+      ],
       "venue": "Sustainability",
-      "citation_count": 947,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 950,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/12/13/5488/pdf?version=1594186755",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 25
     },
     {
-      "rank": 4,
       "doi": "10.5194/acp-17-8681-2017",
       "title": "Global anthropogenic emissions of particulate matter including black carbon",
-      "abstract": "Abstract. This paper presents a comprehensive assessment of historical (1990–2010) global anthropogenic particulate matter (PM) emissions including the consistent and harmonized calculation of mass-based size distribution (PM1, PM2. 5, PM10), as well as primary carbonaceous aerosols including black carbon (BC) and organic carbon (OC). The estimates were developed with the integrated assessment model GAINS, where source- and region-specific technology characteristics are explicitly included. This assessment includes a number of previously unaccounted or often misallocated emission sources, i.e. kerosene lamps, gas flaring, diesel generators, refuse burning; some of them were reported in the past for selected regions or in the context of a particular pollutant or sector but not included as part of a total estimate. Spatially, emissions were calculated for 172 source regions (as well as international shipping), presented for 25 global regions, and allocated to 0.5° × 0.5° longitude–latitude grids. No independent estimates of emissions from forest fires and savannah burning are provided and neither windblown dust nor unpaved roads emissions are included. We estimate that global emissions of PM have not changed significantly between 1990 and 2010, showing a strong decoupling from the global increase in energy consumption and, consequently, CO2 emissions, but there are significantly different regional trends, with a particularly strong increase in East Asia and Africa and a strong decline in Europe, North America, and the Pacific region. This in turn resulted in important changes in the spatial pattern of PM burden, e.g. European, North American, and Pacific contributions to global emissions dropped from nearly 30 % in 1990 to well below 15 % in 2010, while Asia's contribution grew from just over 50 % to nearly two-thirds of the global total in 2010. For all PM species considered, Asian sources represented over 60 % of the global anthropogenic total, and residential combu",
-      "year": 2017,
+      "authors": [
+        "Zbigniew Klimont",
+        "Kaarle Kupiainen",
+        "C. Heyes",
+        "Pallav Purohit",
+        "J. Cofała",
+        "Peter Rafaj",
+        "Jens Borken",
+        "Wolfgang Schöpp"
+      ],
       "venue": "Atmospheric chemistry and physics",
-      "citation_count": 900,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 902,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.atmos-chem-phys.net/17/8681/2017/acp-17-8681-2017.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 26
     },
     {
-      "rank": 5,
       "doi": "10.1016/j.cpa.2019.102097",
       "title": "ESG practices and the cost of debt: Evidence from EU countries",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Yasser Eliwa",
+        "Ahmed Aboud",
+        "Ahmed Saleh"
+      ],
       "venue": "Critical Perspectives on Accounting",
-      "citation_count": 867,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 871,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://bura.brunel.ac.uk/bitstream/2438/26135/1/FullText.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 27
     },
     {
-      "rank": 6,
       "doi": "10.1016/j.ecolecon.2015.03.020",
       "title": "Beyond carbon pricing: The role of banking and monetary policy in financing the transition to a low-carbon economy",
-      "abstract": "It is widely acknowledged that introducing a price on carbon represents a crucial precondition for filling the current gap in low-carbon investment. However, as this paper argues, carbon pricing in itself may not be sufficient. This is due to the existence of market failures in the process of creation and allocation of credit that may lead commercial banks the most important source of external finance for firms not to respond as expected to price signals. Under certain economic conditions, banks would shy away from lending to low-carbon activities even in the presence of a carbon price. This possibility calls for the implementation of additional policies not based on prices. In particular, the paper discusses the potential role of monetary policies and macroprudential financial regulation: modifying the incentives and constraints that banks face when deciding their lending strategy through, for instance, a differentiation of reserve requirements according to the destination of lending may fruitfully expand credit creation directed towards low-carbon sectors. This seems to be especially feasible in emerging economies, where the central banking framework usually allows for a stronger public control on credit allocation and a wider range of monetary policy instruments than the sole interest rate. (C) 2015 Elsevier B.V. All rights reserved.",
-      "year": 2016,
+      "authors": [
+        "Emanuele Campiglio"
+      ],
       "venue": "Archivio istituzionale della ricerca (Alma Mater Studiorum Università di Bologna)",
-      "citation_count": 762,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 767,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 28
     },
     {
-      "rank": 7,
       "doi": "10.7916/d8-w2nc-4103",
       "title": "Report of the High-Level Commission on Carbon Prices",
-      "abstract": "The purpose of this Commission is to explore explicit carbon-pricing options and levels that would induce the change in behaviors— particularly in those driving the investments in infrastructure, technology, and equipment—needed to deliver on the temperature objective of the Paris Agreement, in a way that fosters economic growth and development, as expressed in the Sustainable Development Goals (SDGs). This report does not focus on the estimation and evaluation of the climate change impacts that would be avoided by reducing carbon emissions. While the Commission also covers other policies relevant and important to carbon-pricing design and delivery on the Paris agreement, its primary focus is on pricing. This report has been prepared based on the Commission’s assessment of the available evidence and literature as well as on its members’ judgment, developed through their extensive international policy experience. While the commissioners are in broad agreement on the overall thrust of the arguments presented in the report, they may not necessarily support every single assertion and conclusion.",
-      "year": 2017,
+      "authors": [
+        "Joseph E. Stiglitz",
+        "Nicholas Stern",
+        "Duan, Maosheng",
+        "Edenhofer, Ottmar",
+        "Giraud, Gaël",
+        "Heal, Geoffrey M.",
+        "La Rovere, Emilio Lèbre",
+        "Morris, Adele",
+        "Moyer, Elisabeth",
+        "Pangestu, Mari",
+        "Shukla, Priyadarshi R.",
+        "Sokona, Youba",
+        "Winkler, Harald"
+      ],
       "venue": "",
-      "citation_count": 640,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 639,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doi.org/10.7916/d8-w2nc-4103",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 29
     },
     {
-      "rank": 8,
       "doi": "10.1016/j.erss.2019.02.001",
       "title": "It starts at home? Climate policies targeting household consumption and behavioral decisions are key to low-carbon futures",
-      "abstract": "Through their consumption behavior, households are responsible for 72% of global greenhouse gas emissions. Thus, they are key actors in reaching the 1.5 °C goal under the Paris Agreement. However, the possible contribution and position of households in climate policies is neither well understood, nor do households receive sufficiently high priority in current climate policy strategies. This paper investigates how behavioral change can achieve a substantial reduction in greenhouse gas emissions in European high-income countries. It uses theoretical thinking and some core results from the HOPE research project, which investigated household preferences for reducing emissions in four European cities in France, Germany, Norway and Sweden. The paper makes five major points: First, car and plane mobility, meat and dairy consumption, as well as heating are the most dominant components of household footprints. Second, household living situations (demographics, size of home) greatly influence the household potential to reduce their footprint, even more than country or city location. Third, household decisions can be sequential and temporally dynamic, shifting through different phases such as childhood, adulthood, and illness. Fourth, short term voluntary efforts will not be sufficient by themselves to reach the drastic reductions needed to achieve the 1.5 °C goal; instead, households need a regulatory framework supporting their behavioral changes. Fifth, there is a mismatch between the roles and responsibilities conveyed by current climate policies and household perceptions of responsibility. We then conclude with further recommendations for research and policy.",
-      "year": 2019,
+      "authors": [
+        "Ghislain Dubois",
+        "Benjamin K. Sovacool",
+        "Carlo Aall",
+        "Maria Nilsson",
+        "Carine Barbier",
+        "Alina Herrmann",
+        "Sébastien Bruyère",
+        "Camilla Andersson",
+        "Bore Sköld",
+        "Franck Nadaud",
+        "Florian Dorner",
+        "Karen Richardsen Moberg",
+        "Jean Paul Ceron",
+        "Helen Fischer",
+        "Dorothee Amelung",
+        "Marta Baltruszewicz",
+        "Jeremy Fischer",
+        "Françoise Bénévise",
+        "Valérie R. Louis",
+        "Rainer Sauerborn"
+      ],
       "venue": "Energy Research & Social Science",
-      "citation_count": 607,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 610,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.erss.2019.02.001",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 9,
       "doi": "10.1016/j.jclepro.2019.01.282",
       "title": "Foreign direct Investment–CO2 emissions nexus in Middle East and North African countries: Importance of biomass energy consumption",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Muhammad Shahbaz",
+        "Daniel Balsalobre‐Lorente",
+        "Avik Sinha"
+      ],
       "venue": "Journal of Cleaner Production",
-      "citation_count": 604,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 607,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://mpra.ub.uni-muenchen.de/91729/1/MPRA_paper_91729.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 31
     },
     {
-      "rank": 10,
+      "doi": "10.4209/aaqr.2005.06.0006",
+      "title": "Summary of Organic and Elemental Carbon/Black Carbon Analysis Methods and Intercomparisons",
+      "authors": [
+        "John G. Watson"
+      ],
+      "venue": "Aerosol and Air Quality Research",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c755382f56def9798619038",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1080/14697688.2015.1099717",
+      "title": "Pricing under Rough Volatility",
+      "authors": [
+        "Christian Bayer"
+      ],
+      "venue": "ROUGH VOLATILITY",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b01ddabfae2eeeda1ed4",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1287/mnsc.2023.4695",
+      "title": "Deep Learning in Asset Pricing",
+      "authors": [
+        "Luyang Chen"
+      ],
+      "venue": "MANAGEMENT SCIENCE",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ca33495e1cd8eb56aa55329",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1111/0022-1082.00144",
+      "title": "Expected Return, Realized Return, and Asset Pricing Tests",
+      "authors": [
+        "Edwin J. Elton"
+      ],
+      "venue": "Annals of Operations Research",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619baf071c45e57ce9f4dd3d",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1016/b978-0-323-90800-9.00053-6",
+      "title": "The Jahn-Teller Effects",
+      "authors": [
+        "I.B. Bersuker"
+      ],
+      "venue": "Encyclopedia of Condensed Matter Physics",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8c624dabfae2eee4effd9",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1037/met0000499",
+      "title": "Effect Size Guidelines for Cross-Lagged Effects.",
+      "authors": [
+        "Ulrich Orth"
+      ],
+      "venue": "PSYCHOLOGICAL METHODS",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62b596ea5aee126c0f49d9a5",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1145/3575693.3575754",
+      "title": "Carbon Explorer: A Holistic Framework for Designing Carbon Aware Datacenters",
+      "authors": [
+        "Bilge Acun"
+      ],
+      "venue": "PROCEEDINGS OF THE 28TH ACM INTERNATIONAL CONFERENCE ON ARCHITECTURAL SUPPORT FOR PROGRAMMING LANGUAGES AND OPERATING SYSTEMS, VOL 2, ASPLOS 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6426ed4990e50fcafd447668",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1038/s41586-023-06042-3",
+      "title": "Microbial Carbon Use Efficiency Promotes Global Soil Carbon Storage.",
+      "authors": [
+        "Feng Tao"
+      ],
+      "venue": "Nature",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "646effb6d68f896efaea4f9a",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1002/anie.202112835",
+      "title": "Green Carbon Science: Efficient Carbon Resource Processing, Utilization, and Recycling Towards Carbon Neutrality",
+      "authors": [
+        "Mingyuan He"
+      ],
+      "venue": "Angewandte Chemie (International ed in English)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61bdbbea5244ab9dcb1d6d42",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1016/b978-0-12-819723-3.00112-8",
+      "title": "Carbon Based Supercapacitors",
+      "authors": [
+        "Sajjad Hussain"
+      ],
+      "venue": "Encyclopedia of Energy Storage",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c95a9a5244ab9dcb0d63fb",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1016/j.eng.2021.12.018",
+      "title": "Policy and Management of Carbon Peaking and Carbon Neutrality: A Literature Review",
+      "authors": [
+        "Yi-Ming Wei"
+      ],
+      "venue": "ENGINEERING",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cdcde5aee126c0f510bd6",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1016/j.apenergy.2022.118664",
+      "title": "Low Carbon Optimal Operation of Integrated Energy System Based on Carbon Capture Technology, LCA Carbon Emissions and Ladder-Type Carbon Trading",
+      "authors": [
+        "Rutian Wang"
+      ],
+      "venue": "APPLIED ENERGY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627ce0115aee126c0f602799",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1007/s11427-021-2045-5",
+      "title": "Terrestrial Carbon Sinks in China and Around the World and Their Contribution to Carbon Neutrality",
+      "authors": [
+        "Yuanhe Yang"
+      ],
+      "venue": "Science China Life Sciences",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628d2d505aee126c0f578c54",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1016/j.frl.2021.102097",
+      "title": "Is Non-Fungible Token Pricing Driven by Cryptocurrencies?",
+      "authors": [
+        "Michael Dowling"
+      ],
+      "venue": "FINANCE RESEARCH LETTERS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60b9a6f6e4510cd7c800486c",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1016/j.frl.2021.102096",
+      "title": "Fertile LAND: Pricing Non-Fungible Tokens",
+      "authors": [
+        "Michael Dowling"
+      ],
+      "venue": "FINANCE RESEARCH LETTERS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60b9a72ce4510cd7c800d423",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1146/annurev-financial-111620-014802",
+      "title": "The Pricing and Ownership of US Green Bonds",
+      "authors": [
+        "Malcolm Baker"
+      ],
+      "venue": "ANNUAL REVIEW OF FINANCIAL ECONOMICS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6218c7e65aee126c0fa923fd",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1093/rfs/hhab137",
+      "title": "What Moves Stock Prices? the Roles of News, Noise, and Information",
+      "authors": [
+        "Jonathan Brogaard"
+      ],
+      "venue": "REVIEW OF FINANCIAL STUDIES",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62284d285aee126c0f293037",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1007/978-981-16-8341-1_31",
+      "title": "Effect of Biodiesel on Engine Performance and Emissions",
+      "authors": [
+        "Anna Raj Singh"
+      ],
+      "venue": "ADVANCEMENT IN MATERIALS, MANUFACTURING AND ENERGY ENGINEERING, VOL. II, ICAMME 2021",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628d23305aee126c0f46b168",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1016/b978-0-12-821996-6.00016-6",
+      "title": "Applications of Carbon Nanotubes",
+      "authors": [
+        "Zahra Shariatinia"
+      ],
+      "venue": "Handbook of Carbon-Based Nanomaterials",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b9bfb1c45e57ce925140f",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.2139/ssrn.3204420",
+      "title": "Carbon Tail Risk",
+      "authors": [
+        "Emirhan Ilhan"
+      ],
+      "venue": "REVIEW OF FINANCIAL STUDIES",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbbb91c45e57ce97cf306",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1016/j.xinn.2021.100180",
+      "title": "Technologies and Perspectives for Achieving Carbon Neutrality",
+      "authors": [
+        "Fang Wang"
+      ],
+      "venue": "The Innovation",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61b1ddf85244ab9dcb8739d2",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1038/s43017-021-00244-x",
+      "title": "Challenges and opportunities for carbon neutrality in China",
+      "authors": [
+        "Zhu Liu"
+      ],
+      "venue": "Nature Reviews Earth & Environment",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627ce28b5aee126c0f690bf6",
+      "matched_phrase": "carbon",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1016/j.jeconom.2020.07.009",
+      "title": "Autoencoder Asset Pricing Models",
+      "authors": [
+        "Shihao Gu"
+      ],
+      "venue": "JOURNAL OF ECONOMETRICS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "603768ced3485cfff1ddbf20",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.1596/978-1-4648-1728-1",
+      "title": "State and Trends of Carbon Pricing 2021",
+      "authors": [],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a3d698d68f896efa9cd589",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.4324/9781003042990-4",
+      "title": "Effective Reflective Practice",
+      "authors": [
+        "Lynn Uyen Tran"
+      ],
+      "venue": "Reflecting on Practice for STEM Educators",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac45095aee126c0fa02bc4",
+      "matched_phrase": "effectiveness",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
       "doi": "10.1016/j.fuel.2023.127776",
       "title": "Current status of carbon capture, utilization, and storage technologies in the global economy: A survey of technical assessment",
-      "abstract": "The latest tremendously rapid expansion of the energy and industrial sector has led to a sharp increase in stationary sources of CO2. Consequently, a lot of concerns have been raised about the prevention of global warming and the achievement of climate mitigation strategies by 2050 with a low-carbon and sustainable future. In view of this, the current state of various aspects of carbon capture, utilization, and storage (CCUS) technologies in general technical assessment were concisely reviewed and discussed. We concentrated on precisely identifying the technology readiness level (TRL), which is beneficial to specifically defining the maturity for each key element of the CCUS system with a commercialization direction paths. In addition, we especially presented and emphasized the importance of CO2 capture types from flue gases and CO2 separation methods. Then, we determined valuable data from the largest R&D projects at various scales. This paper provides a critical review of the literature related to challenges of the CCUS system that must be overcome to raise many low TRL technologies and facilitate their implementation on a commercial scale. Finally, our work aims to guide the further scaling up and establishment of worldwide CO2 emission reduction projects.",
-      "year": 2023,
+      "authors": [
+        "Bartosz Dziejarski",
+        "Renata Krzyżyńska",
+        "Klas Andersson"
+      ],
       "venue": "Fuel",
-      "citation_count": 583,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 586,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0016236123003897-ga1_lrg.jpg",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 57
     },
     {
-      "rank": 11,
       "doi": "10.1257/jep.26.4.27",
       "title": "Contingent Valuation: A Practical Alternative when Prices Aren't Available",
-      "abstract": "A person may be willing to make an economic tradeoff to assure that a wilderness area or scenic resource is protected even if neither that person nor (perhaps) anyone else will actually visit this area. This tradeoff is commonly labeled “passive use value.” Contingent valuation studies ask questions that help to reveal the monetary tradeoff each person would make concerning the value of goods or services. Such surveys are a practical alternative approach for eliciting the value of public goods, including those with passive use considerations. First I discuss the Exxon Valdez oil spill of March 1989, focusing on why it is important to measure monetary tradeoffs for goods where passive use considerations loom large. Although discussions of contingent valuation often focus on whether the method is sufficiently reliable for use in assessing natural resource damages in lawsuits, it is important to remember that most estimates from contingent valuation studies are used in benefit–cost assessments, not natural resource damage assessments. Those working on benefit–cost analysis have long recognized that goods and impacts that cannot be quantified are valued, implicitly, by giving them a limitless value when government regulations preclude certain activities, or giving them a value of zero by leaving certain consequences out of the analysis. Contingent valuation offers a practical alternative for reducing the use of either of these extreme choices. I put forward an affirmative case for contingent valuation and address a number of the concerns that have arisen.",
-      "year": 2012,
+      "authors": [
+        "Richard T. Carson"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 542,
-      "engines_found_in": [
+      "year": 2012,
+      "cited_by_count": 545,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.26.4.27",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     },
     {
-      "rank": 12,
       "doi": "10.1073/pnas.1918128117",
       "title": "The European Union Emissions Trading System reduced CO <sub>2</sub> emissions despite low prices",
-      "abstract": "International carbon markets are an appealing and increasingly popular tool to regulate carbon emissions. By putting a price on carbon, carbon markets reshape incentives faced by firms and reduce the value of emissions. How effective are carbon markets? Observers have tended to infer their effectiveness from market prices. The general belief is that a carbon market needs a high price in order to reduce emissions. As a result, many observers remain skeptical of initiatives such as the European Union Emissions Trading System (EU ETS), whose price remained low (compared to the social cost of carbon). In this paper, we assess whether the EU ETS reduced [Formula: see text] emissions despite low prices. We motivate our study by documenting that a carbon market can be effective if it is a credible institution that can plausibly become more stringent in the future. In such a case, firms might cut emissions even though market prices are low. In fact, low prices can be a signal that the demand for carbon permits weakens. Thus, low prices are compatible with successful carbon markets. To assess whether the EU ETS reduced carbon emissions even as permits were cheap, we estimate counterfactual carbon emissions using an original sectoral emissions dataset. We find that the EU ETS saved about 1.2 billion tons of [Formula: see text] between 2008 and 2016 (3.8%) relative to a world without carbon markets, or almost half of what EU governments promised to reduce under their Kyoto Protocol commitments. Emission reductions in sectors covered under the EU ETS were higher.",
-      "year": 2020,
+      "authors": [
+        "Patrick Bayer",
+        "Michaël Aklin"
+      ],
       "venue": "Proceedings of the National Academy of Sciences",
-      "citation_count": 509,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 516,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.pnas.org/content/pnas/117/16/8804.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 59
     },
     {
-      "rank": 13,
+      "doi": "10.1080/23322039.2017.1379239",
+      "title": "Effect of economic growth on CO<sub>2</sub> emission in developing countries: Evidence from a dynamic panel threshold model",
+      "authors": [
+        "Goodness C. Aye",
+        "Prosper Ebruvwiyo Edoja"
+      ],
+      "venue": "Cogent Economics & Finance",
+      "year": 2017,
+      "cited_by_count": 512,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/23322039.2017.1379239?needAccess=true&role=button",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 60
+    },
+    {
       "doi": "10.1002/wcc.462",
       "title": "Carbon pricing in climate policy: seven reasons, complementary instruments, and political economy considerations",
-      "abstract": "Carbon pricing is a recurrent theme in debates on climate policy. Discarded at the 2009 COP in Copenhagen, it remained part of deliberations for a climate agreement in subsequent years. As there is still much misunderstanding about the many reasons to implement a global carbon price, ideological resistance against it prospers. Here, we present the main arguments for carbon pricing, to stimulate a fair and well‐informed discussion about it. These include considerations that have received little attention so far. We stress that a main reason to use carbon pricing is environmental effectiveness at a relatively low cost, which in turn contributes to enhance social and political acceptability of climate policy. This includes the property that corrected prices stimulate rapid environmental innovations. These arguments are underappreciated in the public debate, where pricing is frequently downplayed and the erroneous view that innovation policies are sufficient is widespread. Carbon pricing and technology policies are, though, largely complementary and thus are both needed for effective climate policy. We also comment on the complementarity of other instruments to carbon pricing. We further discuss distributional consequences of carbon pricing and present suggestions on how to address these. Other political economy issues that receive attention are lobbying, co‐benefits, international policy coordination, motivational crowding in/out, and long‐term commitment. The overview ends with reflections on implementing a global carbon price, whether through a carbon tax or emissions trading. The discussion goes beyond traditional arguments from environmental economics by including relevant insights from energy research and innovation studies as well. WIREs Clim Change 2017, 8:e462. doi: 10.1002/wcc.462 This article is categorized under: Climate Economics &gt; Economics of Mitigation",
-      "year": 2017,
+      "authors": [
+        "Andrea Baranzini",
+        "Jeroen C.J.M. van den Bergh",
+        "Stefano Carattini",
+        "Richard B. Howarth",
+        "Emilio Padilla",
+        "Jordi Roca Jusmet"
+      ],
       "venue": "Wiley Interdisciplinary Reviews Climate Change",
-      "citation_count": 470,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 471,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.462",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 61
     },
     {
-      "rank": 14,
       "doi": "10.1146/annurev.energy.27.122001.083444",
       "title": "Renewable Energy Markets in Developing Countries",
-      "abstract": "▪ Abstract Renewable energy is shifting from the fringe to the mainstream of sustainable development. Past donor efforts achieved modest results but often were not sustained or replicated, which leads now to greater market orientation. Markets for rural household lighting with solar home systems, biogas, and small hydro power have expanded through rural entrepreneurship, government programs, and donor assistance, serving millions of households. Applications in agriculture, small industry, and social services are emerging. Public programs resulted in 220 million improved biomass cook stoves. Three percent of power generation capacity is largely small hydro and biomass power, with rapid growth of wind power. Experience suggests the need for technical know-how transfer, new replicable business models, credit for rural households and entrepreneurs, regulatory frameworks and financing for private power developers, market facilitation organizations, donor assistance aimed at expanding sustainable markets, smarter subsidies, and greater attention to social benefits and income generation.",
-      "year": 2002,
+      "authors": [
+        "Eric Martinot",
+        "Akanksha Chaurey",
+        "D. Lew",
+        "José Roberto Moreira",
+        "Njeri Wamukonya"
+      ],
       "venue": "Annual Review of Energy and the Environment",
-      "citation_count": 459,
-      "engines_found_in": [
+      "year": 2002,
+      "cited_by_count": 459,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://orbit.dtu.dk/en/publications/renewable-energy-markets-in-developing-countries(c1d635bb-0fc3-4cc2-ac24-6781dae598a4).html",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 62
     },
     {
-      "rank": 15,
+      "doi": "10.1007/s13593-013-0156-7",
+      "title": "Strawberry fields forever? Urban agriculture in developed countries: a review",
+      "authors": [
+        "Hoi-Fei Mok",
+        "Virginia G. Williamson",
+        "James Grove",
+        "Kristal Burry",
+        "Fiona Barker",
+        "Andrew J. Hamilton"
+      ],
+      "venue": "Agronomy for Sustainable Development",
+      "year": 2013,
+      "cited_by_count": 437,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs13593-013-0156-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.1016/j.eneco.2018.11.031",
+      "title": "Does corporate R&amp;D investment affect firm environmental performance? Evidence from G-6 countries",
+      "authors": [
+        "Md. Samsul Alam",
+        "Muhammad Atif",
+        "Chu Chien-Chi",
+        "Uğur Soytaş"
+      ],
+      "venue": "Energy Economics",
+      "year": 2018,
+      "cited_by_count": 427,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/10072/387026",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 64
+    },
+    {
       "doi": "10.5194/bg-9-1845-2012",
       "title": "A synthesis of carbon dioxide emissions from fossil-fuel combustion",
-      "abstract": "Abstract. This synthesis discusses the emissions of carbon dioxide from fossil-fuel combustion and cement production. While much is known about these emissions, there is still much that is unknown about the details surrounding these emissions. This synthesis explores our knowledge of these emissions in terms of why there is concern about them; how they are calculated; the major global efforts on inventorying them; their global, regional, and national totals at different spatial and temporal scales; how they are distributed on global grids (i.e., maps); how they are transported in models; and the uncertainties associated with these different aspects of the emissions. The magnitude of emissions from the combustion of fossil fuels has been almost continuously increasing with time since fossil fuels were first used by humans. Despite events in some nations specifically designed to reduce emissions, or which have had emissions reduction as a byproduct of other events, global total emissions continue their general increase with time. Global total fossil-fuel carbon dioxide emissions are known to within 10 % uncertainty (95 % confidence interval). Uncertainty on individual national total fossil-fuel carbon dioxide emissions range from a few percent to more than 50 %. This manuscript concludes that carbon dioxide emissions from fossil-fuel combustion continue to increase with time and that while much is known about the overall characteristics of these emissions, much is still to be learned about the detailed characteristics of these emissions.",
-      "year": 2012,
+      "authors": [
+        "R. J. Andres",
+        "T. A. Boden",
+        "François‐Marie Bréon",
+        "Philippe Ciais",
+        "Steven J. Davis",
+        "Darin J. Erickson",
+        "Jay Sterling Gregg",
+        "A. R. Jacobson",
+        "Gregg Marland",
+        "J. B. Miller",
+        "Tomohiro Oda",
+        "J. G. J. Olivier",
+        "Michael Raupach",
+        "P. J. Rayner",
+        "K. Treanton"
+      ],
       "venue": "Biogeosciences",
-      "citation_count": 413,
-      "engines_found_in": [
+      "year": 2012,
+      "cited_by_count": 414,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://bg.copernicus.org/articles/9/1845/2012/bg-9-1845-2012.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 65
     },
     {
-      "rank": 16,
+      "doi": "10.1016/j.ijpe.2023.108790",
+      "title": "Dynamic digital capabilities and supply chain resilience: The role of government effectiveness",
+      "authors": [
+        "Rameshwar Dubey",
+        "David Bryde",
+        "Yogesh K. Dwivedi",
+        "Gary Graham",
+        "Cyril Foropon",
+        "Θάνος Παπαδόπουλος"
+      ],
+      "venue": "International Journal of Production Economics",
+      "year": 2023,
+      "cited_by_count": 409,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.ijpe.2023.108790",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 66
+    },
+    {
       "doi": "10.2307/3146894",
       "title": "The Cost-Effectiveness of Conservation Payments",
-      "abstract": "<i>International donors invest billions of dollars to conserve ecosystems in low-income nations. The most common investments aim to encourage commercial activities, such as ecotourism, that indirectly generate ecosystem protection as a joint product. We demonstrate that paying for ecosystem protection directly can be far more cost-effective. Although direct-payment initiatives have imposing institutional requirements, we argue that all conservation initiatives face similar challenges. Thus conservation practitioners would be well advised to implement the first-best direct-payment approach, rather than a second-best policy option. An empirical example illustrates the spectacular cost savings that can be realized by direct-payment initiatives.</i> (JEL H21, Q28)",
-      "year": 2002,
+      "authors": [
+        "Paul J. Ferraro",
+        "R. David Simpson"
+      ],
       "venue": "Land Economics",
-      "citation_count": 403,
-      "engines_found_in": [
+      "year": 2002,
+      "cited_by_count": 403,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://le.uwpress.org/content/wple/78/3/339.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 67
     },
     {
-      "rank": 17,
       "doi": "10.1080/14693062.2018.1492897",
       "title": "Carbon taxes and greenhouse gas emissions trading systems: what have we learned?",
-      "abstract": "Systematic evidence relating to the performance of carbon pricing – carbon taxes and greenhouse gas (GHG) emissions trading systems (ETSs) – is sparse. In 2015, 17 ETSs were operational in 55 jurisdictions while 18 jurisdictions collected a carbon tax. The papers in this special thematic section review the performance of many of these instruments over the 2005–2015 period. The performance of existing carbon taxes and GHG ETSs can help policy makers make informed choices about whether to introduce these instruments and to improve their design. The purpose of carbon pricing instruments is to reduce GHG emissions cost effectively. Assessing their performance is difficult because emissions are also affected by other policies and exogenous factors such as economic conditions. Carbon taxes in Europe prior to 2008 and in British Columbia reduced emissions from business-as-usual but actual emissions continued to rise. Since 2008 emissions subject to European carbon taxes have declined, but in most countries, other mitigation policies have probably contributed more to the reductions than the carbon taxes. Emissions subject to ETSs, with the exception of four systems without emissions caps, have declined. The ETSs contributed to the emissions reductions, but their share of the overall reduction is not known. Most tax rates are low relative to levels thought to be needed to achieve climate change objectives. Few jurisdictions regularly adjust their tax rates. All ETSs have accumulated surplus allowances and implemented measures to reduce these surpluses. The largest ETSs now specify annual reductions in their emissions cap several years into the future. Emissions trading system allowance prices are generally lower than the tax rates.Key policy insights Theoretical discussions usually portray carbon taxes and GHG ETSs as alternatives. In practice, a jurisdiction often implements both instruments to address emissions by different sources.Designs of ETSs have evolved based on exp",
-      "year": 2018,
+      "authors": [
+        "Erik Haites"
+      ],
       "venue": "Climate Policy",
-      "citation_count": 343,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 343,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/14693062.2018.1492897?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 68
     },
     {
-      "rank": 18,
+      "doi": "10.1080/01441640903189304",
+      "title": "Equity Effects of Road Pricing: A Review",
+      "authors": [
+        "David Levinson"
+      ],
+      "venue": "Transport Reviews",
+      "year": 2009,
+      "cited_by_count": 308,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://conservancy.umn.edu/bitstreams/e94ebd40-6391-4843-ba22-583bd6defbed/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
       "doi": "10.1016/j.oneear.2021.10.002",
       "title": "Carbon capture and storage at the end of a lost decade",
-      "abstract": "Following the landmark 2015 United Nations Paris Agreement, a growing number of countries are committing to the transition to net-zero emissions. Carbon capture and storage (CCS) has been consistently heralded to directly address emissions from the energy and industrial sectors and forms a significant component of plans to reach net-zero. However, despite the critical importance of the technology and substantial research and development to date, CCS deployment has been slow. This review examines deployment efforts over the last decade. We reveal that facility deployment must increase dramatically from current levels, and much work remains to maximize storage of CO2 in vast subsurface reserves. Using current rates of deployment, CO2 storage capacity by 2050 is projected to be around 700 million tons per year, just 10% of what is required. Meeting the net-zero targets via CCS ambitions seems unlikely unless worldwide coordinated efforts and rapid changes in policy take place.",
-      "year": 2021,
+      "authors": [
+        "Emma Martin-Roberts",
+        "Vivian Scott",
+        "Stephanie Flude",
+        "Gareth Johnson",
+        "R. Stuart Haszeldine",
+        "Stuart Gilfillan"
+      ],
       "venue": "One Earth",
-      "citation_count": 305,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 307,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "http://www.cell.com/article/S2590332221005418/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 70
     },
     {
-      "rank": 19,
+      "doi": "10.2307/3147147",
+      "title": "Estimating Leakage from Forest Carbon Sequestration Programs",
+      "authors": [
+        "Brian C. Murray",
+        "Bruce A. McCarl",
+        "Heng‐Chi Lee"
+      ],
+      "venue": "Land Economics",
+      "year": 2004,
+      "cited_by_count": 284,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://le.uwpress.org/content/wple/80/1/109.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
       "doi": "10.1038/s41558-021-01250-z",
       "title": "Potential impacts and challenges of border carbon adjustments",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Christoph Böhringer",
+        "Carolyn Fischer",
+        "Knut Einar Rosendahl",
+        "Thomas F. Rutherford"
+      ],
       "venue": "Nature Climate Change",
-      "citation_count": 273,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 274,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nature.com/articles/s41558-021-01250-z.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 72
     },
     {
-      "rank": 20,
       "doi": "10.1016/j.enpol.2018.06.020",
       "title": "Carbon pricing and deep decarbonisation",
-      "abstract": "Experts frequently point to carbon pricing as the most cost-effective tool for reducing greenhouse gas emissions. Empirical studies show that carbon pricing can successfully incentivise incremental emissions reductions. But meeting temperature targets within defined timelines as agreed under the Paris Agreement requires more than incremental improvements: it requires achieving net zero emissions within a few decades. To date, there is little evidence that carbon pricing has produced deep emission reductions, even at high prices. While much steeper carbon prices may deliver greater abatement, political economy constraints render their feasibility doubtful. An approach with multiple instruments, including technology mandates and targeted support for innovation, is indispensable to avoid path dependencies and lock-in of long-lived, high-carbon assets. We argue that carbon pricing serves several important purposes in such an instrument mix, but also that the global commitment to deep decarbonisation requires acknowledging the vital role of instruments other than carbon pricing.",
-      "year": 2018,
+      "authors": [
+        "Endre Tvinnereim",
+        "Michael Mehling"
+      ],
       "venue": "Energy Policy",
-      "citation_count": 251,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 251,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.enpol.2018.06.020",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 73
     },
     {
-      "rank": 21,
+      "doi": "10.1016/j.rser.2019.109569",
+      "title": "The cultural barriers to a low-carbon future: A review of six mobility and energy transitions across 28 countries",
+      "authors": [
+        "Benjamin K. Sovacool",
+        "Steve Griffiths"
+      ],
+      "venue": "Renewable and Sustainable Energy Reviews",
+      "year": 2019,
+      "cited_by_count": 237,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1364032119307774-fx1_lrg.jpg",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
       "doi": "10.1007/s10018-016-0144-7",
       "title": "Effectiveness, Earmarking, and Labeling: Testing the Acceptability of Carbon Taxes with Survey Data",
-      "abstract": "This paper analyzes the drivers of carbon taxes acceptability with survey data and a randomized labeling treatment. Based on a sample of more than 300individuals, it assesses the effect on acceptability of specific policy designs and individuals’ perceptions of carbon taxes advantages and disadvantages. We find that the lack of perception of primary and ancillary benefits is one of the main barriers to the acceptability of carbon taxes. In addition, policy design matters for acceptability and in particular earmarking fiscal revenues for environmental purposes can lead to larger support. We also find an effect of labeling, comparing the wording ‘‘climate contribution’’ with ‘‘carbon tax’’. We argue that proper policy design coupled with effective communication on the effects of carbon taxes may lead to a substantial improvement in acceptability.",
-      "year": 2016,
+      "authors": [
+        "Barranzini, Andrea",
+        "Stefano Carattini"
+      ],
       "venue": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
-      "citation_count": 236,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 236,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://eprints.lse.ac.uk/65212/1/Carattini_Effectiveness%20earmarking%20_2016.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 75
     },
     {
-      "rank": 22,
+      "doi": "10.1002/wcc.438",
+      "title": "Consumption‐based carbon accounting: does it have a future?",
+      "authors": [
+        "Stavros Afionis",
+        "Marco Sakai",
+        "Kate Scott",
+        "John Barrett",
+        "Andy Gouldson"
+      ],
+      "venue": "Wiley Interdisciplinary Reviews Climate Change",
+      "year": 2016,
+      "cited_by_count": 230,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.438",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.3389/fclim.2021.710546",
+      "title": "The Role of Blue Carbon in Climate Change Mitigation and Carbon Stock Conservation",
+      "authors": [
+        "Nathalie Hilmi",
+        "Ralph Chami",
+        "Michael Sutherland",
+        "Jason M. Hall‐Spencer",
+        "Lara Lebleu",
+        "María Belén Benítez",
+        "Lisa A. Levin"
+      ],
+      "venue": "Frontiers in Climate",
+      "year": 2021,
+      "cited_by_count": 212,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fclim.2021.710546/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.1093/reep/rey020",
+      "title": "Developing Guidance for Implementing Border Carbon Adjustments: Lessons, Cautions, and Research Needs from the Literature",
+      "authors": [
+        "Aaron Cosbey",
+        "Susanne Droege",
+        "Carolyn Fischer",
+        "Clayton Munnings"
+      ],
+      "venue": "Review of Environmental Economics and Policy",
+      "year": 2018,
+      "cited_by_count": 207,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://research.vu.nl/ws/files/121699526/reep_rey020_Developing_Guidance_for_Implementing_Border_Carbon_Adjustments.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
       "doi": "10.5089/9781513595405.001",
       "title": "Still Not Getting Energy Prices Right: A Global and Country Update of Fossil Fuel Subsidies",
-      "abstract": "This paper provides a comprehensive global, regional, and country-level update of: (i) efficient fossil fuel prices to reflect supply and environmental costs; and (ii) subsidies implied by charging below efficient fuel prices. The methodology improves over previous IMF analyses through more sophisticated estimation of costs and impacts of reform. Globally, fossil fuel subsidies were $5.9 trillion in 2020 or about 6.8 percent of GDP and are expected to rise to 7.4 percent of GDP in 2025. Just 8 percent of the 2020 subsidy reflects undercharging for supply costs (explicit subsidies) and 92 percent for undercharging for environmental costs and foregone consumption taxes (implicit subsidies). Efficient fuel pricing in 2025 would reduce global carbon dioxide global carbon dioxide emissions 36 percent below baseline levels, which is in line with keeping global warming to 1.5 degrees, while raising revenues worth 3.8 percent of global GDP and preventing 0.9 million local air pollution deaths per year. Accompanying spreadsheets provide detailed results for 191 countries.",
-      "year": 2021,
+      "authors": [
+        "Ian Parry",
+        "Simon Black",
+        "Nate Vernon"
+      ],
       "venue": "IMF Working Paper",
-      "citation_count": 205,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 204,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/001/2021/236/001.2021.issue-236-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 79
     },
     {
-      "rank": 23,
+      "doi": "10.1038/srep00479",
+      "title": "Carbon Emission Flow in Networks",
+      "authors": [
+        "Chongqing Kang",
+        "Tianrui Zhou",
+        "Qixin Chen",
+        "Qianyao Xu",
+        "Qing Xia",
+        "Zhen Ji"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2012,
+      "cited_by_count": 204,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/srep00479.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1002/wcc.681",
+      "title": "The effect of carbon pricing on technological change for full energy decarbonization: A review of empirical ex‐post evidence",
+      "authors": [
+        "Johan Lilliestam",
+        "Anthony Patt",
+        "Germán Bersalli"
+      ],
+      "venue": "Wiley Interdisciplinary Reviews Climate Change",
+      "year": 2020,
+      "cited_by_count": 189,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.681",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
       "doi": "10.1016/j.jeem.2010.04.004",
       "title": "Carbon markets and technological innovation",
-      "abstract": "",
-      "year": 2010,
+      "authors": [
+        "Thomas A. Weber",
+        "Karsten Neuhoff"
+      ],
       "venue": "Journal of Environmental Economics and Management",
-      "citation_count": 181,
-      "engines_found_in": [
+      "year": 2010,
+      "cited_by_count": 183,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0095069610000604",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 82
     },
     {
-      "rank": 24,
+      "doi": "10.3390/su12208680",
+      "title": "Exploring the Role of Carbon Taxation Policies on CO2 Emissions: Contextual Evidence from Tax Implementation and Non-Implementation European Countries",
+      "authors": [
+        "Assaad Ghazouani",
+        "Wanjun Xia",
+        "Mehdi Ben Jebli",
+        "Umer Shahzad"
+      ],
+      "venue": "Sustainability",
+      "year": 2020,
+      "cited_by_count": 179,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/12/20/8680/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.1016/j.enpol.2006.01.036",
+      "title": "Forestry and the carbon market response to stabilize climate",
+      "authors": [
+        "Massimo Tavoni",
+        "Brent Sohngen",
+        "Valentina Bosetti"
+      ],
+      "venue": "Energy Policy",
+      "year": 2007,
+      "cited_by_count": 172,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0301421507002364",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1146/annurev-environ-120820-053625",
+      "title": "Carbon Leakage, Consumption, and Trade",
+      "authors": [
+        "Michael Grubb",
+        "Nino David Jordan",
+        "Edgar G. Hertwich",
+        "Karsten Neuhoff",
+        "Kasturi Das",
+        "Kaushik Ranjan Bandyopadhyay",
+        "Harro van Asselt",
+        "Misato Sato",
+        "Ranran Wang",
+        "William A. Pizer",
+        "Hyungna Oh"
+      ],
+      "venue": "Annual Review of Environment and Resources",
+      "year": 2022,
+      "cited_by_count": 163,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://doi.org/10.1146/annurev-environ-120820-053625",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.1016/j.jeem.2020.102405",
+      "arxiv_id": "",
+      "title": "Effectiveness of climate policies: Carbon pricing vs. subsidizing renewables",
+      "authors": [
+        "K. Gugler",
+        "Adhurim Haxhimusa",
+        "Mario Liebensteiner"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 152,
+      "influential_cite_count": 1,
+      "reference_count": 57,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.jeem.2020.102405",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 86
+    },
+    {
       "doi": "10.1016/j.eneco.2023.106642",
       "title": "How social imbalance and governance quality shape policy directives for energy transition in the OECD countries?",
-      "abstract": "In line with the COP26 Summit objectives, this paper develops a policy framework to achieve energy transition by considering the social imbalances and regulatory effectiveness. A new energy transition index is proposed. It is an output-side indicator based on the energy ladder hypothesis. This index enables to apprehend the energy transition scenario in any country by capturing (a) the transition to a cleaner energy source, and (b) the transition to more energy efficient sources. Using the two-step System GMM approach and data for 37 OECD countries over the 2000–2019 period, the dynamic and extreme marginal impacts of energy transition drivers with respect to estimates of the model parameters are analyzed. The results show that the social imbalance dampens the positive impacts of energy transition drivers, whereas governance quality helps in augmenting those impacts. The outcomes, drawn from a scenario-based policy design approach, are particularly helpful in advancing potential policy discourse. They have important practical implications for the development of the SDG-oriented policy framework, with special focus on the attainment of the SDG 7 and 13.",
-      "year": 2023,
+      "authors": [
+        "Avik Sinha",
+        "Stelios Bekiros",
+        "N. Hussain",
+        "Duc Khuong Nguyen",
+        "Sana Akbar Khan"
+      ],
       "venue": "Energy Economics",
-      "citation_count": 140,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 141,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0140988323001408-ga1_lrg.jpg",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 87
     },
     {
-      "rank": 25,
       "doi": "10.1007/s11356-022-23185-4",
       "title": "How do foreign direct investment flows affect carbon emissions in BRICS countries? Revisiting the pollution haven hypothesis using bilateral FDI flows from OECD to BRICS countries",
-      "abstract": "Foreign direct investment (FDI) flows from developed to developing countries may increase carbon emissions in developing countries as developing countries are seen as pollution havens due to their lenient environmental regulations. On the other hand, FDI flows from the developed world may improve management practices and advanced technologies in developing countries, and an increase in FDI flows reduces carbon emissions. Most of the existing studies examine the relationship between FDI flows and carbon emissions by using aggregate FDI flows; however, this paper contributes to the literature by analyzing the impact of FDI flows on carbon emissions in Brazil, Russia, India, China, and South Africa (BRICS) between 1993 and 2012 using bilateral FDI flows from eleven OECD countries. According to our empirical results, from which OECD country FDI flows to BRICS countries matters for carbon emissions in BRICS countries. Our results confirm that FDI flows to BRICS countries from Denmark and the UK increase carbon emissions in BRICS countries, confirming the pollution haven hypothesis. On the other hand, FDI that flows from France, Germany, and Italy reduced carbon emissions in the BRICS countries, confirming the pollution halo effect. FDI flows from Austria, Finland, Japan, Netherlands, Portugal, and Switzerland have no significant impact on carbon emissions in BRICS countries. The BRICS countries should promote clean FDI flows by reducing environmental damages, and investing countries should be rated based on their environmental damage in the host countries.",
-      "year": 2022,
+      "authors": [
+        "Nicholas Apergis",
+        "Mehmet Pinar",
+        "Emre Unlu"
+      ],
       "venue": "Environmental Science and Pollution Research",
-      "citation_count": 137,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 139,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11356-022-23185-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 88
     },
     {
-      "rank": 26,
       "doi": "10.1016/j.envsci.2010.10.010",
       "title": "The Copenhagen Accord: abatement costs and carbon prices resulting from the submissions",
-      "abstract": "",
-      "year": 2010,
+      "authors": [
+        "Michel den Elzen",
+        "Andries F. Hof",
+        "Angelica Mendoza Beltrán",
+        "Giacomo Grassi",
+        "Mark Roelfsema",
+        "Bas van Ruijven",
+        "Jasper van Vliet",
+        "Detlef P. van Vuuren"
+      ],
       "venue": "Environmental Science & Policy",
-      "citation_count": 130,
-      "engines_found_in": [
+      "year": 2010,
+      "cited_by_count": 130,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S1462901110001401",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 89
     },
     {
-      "rank": 27,
-      "doi": "",
-      "title": "The Social Cost of Carbon and the Shadow Price of Carbon: what they are, and how to use them in economic appraisal in the UK",
+      "doi": "10.1145/3391403.3399476",
+      "title": "Driver Surge Pricing",
+      "authors": [
+        "Nikhil Garg"
+      ],
+      "venue": "MANAGEMENT SCIENCE",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
       "abstract": "",
-      "year": 2007,
-      "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
-      "citation_count": 125,
-      "engines_found_in": [
-        "openalex"
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce3ce05e1cd8e512a5bf6b4",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 90
     },
     {
-      "rank": 28,
+      "doi": "10.1016/j.jbankfin.2021.106180",
+      "title": "The Pricing of Carbon Risk in Syndicated Loans: Which Risks Are Priced and Why?",
+      "authors": [
+        "Torsten Ehlers"
+      ],
+      "venue": "JOURNAL OF BANKING & FINANCE",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c722375244ab9dcb3da2f9",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1145/3477495.3532043",
+      "title": "Price DOES Matter!: Modeling Price and Interest Preferences in Session-based Recommendation",
+      "authors": [
+        "Xiaokun Zhang"
+      ],
+      "venue": "PROCEEDINGS OF THE 45TH INTERNATIONAL ACM SIGIR CONFERENCE ON RESEARCH AND DEVELOPMENT IN INFORMATION RETRIEVAL (SIGIR '22)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6279c9c65aee126c0fdae4e7",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1142/13054",
+      "title": "Price Theory and Applications",
+      "authors": [
+        "Steven E Landsburg"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a0d1f6d68f896efabb184b",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1016/j.eneco.2020.105016",
+      "title": "Does Weather, or Energy Prices, Affect Carbon Prices?",
+      "authors": [
+        "Jonathan A. Batten"
+      ],
+      "venue": "ENERGY ECONOMICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff68bd1d4150a363cd07888",
+      "matched_phrase": "pricing",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1787/tpg-2017-en",
+      "title": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2017",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations",
+      "year": 2017,
+      "cited_by_count": 123,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1038/s41467-024-48512-w",
+      "arxiv_id": "",
+      "title": "Systematic review and meta-analysis of ex-post evaluations on the effectiveness of carbon pricing",
+      "authors": [
+        "Niklas Döbbeling-Hildebrandt",
+        "Klaas Miersch",
+        "Tarun M. Khanna",
+        "Marion Bachelet",
+        "Stephan B. Bruns",
+        "M. Callaghan",
+        "O. Edenhofer",
+        "C. Flachsland",
+        "P. Forster",
+        "Matthias Kalkuhl",
+        "Nicolas Koch",
+        "W. Lamb",
+        "N. Ohlendorf",
+        "J. Steckel",
+        "J. Minx"
+      ],
+      "venue": "Nature Communications",
+      "year": 2024,
+      "cited_by_count": 123,
+      "influential_cite_count": 3,
+      "reference_count": 104,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41467-024-48512-w.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 96
+    },
+    {
       "doi": "10.1016/j.eneco.2023.107198",
       "title": "Does increasing environmental policy stringency enhance renewable energy consumption in OECD countries?",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Mahmoud Hassan",
+        "Marc Kouzez",
+        "Ji‐Yong Lee",
+        "Badreddine Msolli",
+        "Hatem Rjiba"
+      ],
       "venue": "Energy Economics",
-      "citation_count": 111,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 113,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://hal.science/hal-04350282v1/document",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 97
     },
     {
-      "rank": 29,
+      "doi": "10.1093/rfs/hhad097",
+      "title": "The Effect of Carbon Pricing on Firm Emissions: Evidence from the Swedish CO2 Tax",
+      "authors": [
+        "Gustav Martinsson",
+        "László Sajtos",
+        "Per Strömberg",
+        "Christian Thomann"
+      ],
+      "venue": "Review of Financial Studies",
+      "year": 2024,
+      "cited_by_count": 111,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/rfs/advance-article-pdf/doi/10.1093/rfs/hhad097/56164623/hhad097.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1787/0e655865-en",
+      "title": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2022",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations",
+      "year": 2022,
+      "cited_by_count": 98,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
       "doi": "10.1007/s10640-021-00594-6",
       "title": "Impact of Carbon Pricing on Low-Carbon Innovation and Deep Decarbonisation: Controversies and Path Forward",
-      "abstract": "Abstract There is an ongoing discussion about the effectiveness of carbon pricing, with a strong division between optimists and pessimists. A recent review study by Lilliestam, Patt and Bersalli (2021) of the impact of carbon pricing on low-carbon innovation and deep carbonization concludes that there is no evidence for such an impact. We evaluate this study and identify various shortcomings of it, which together cast strong doubts on its main conclusion. Instead, we conclude, based on the studies reviewed by the authors and additional, overlooked literature, that carbon pricing has had a small but positive and significant effect on low-carbon innovation. Our evaluation provides lessons for undertaking a systematic and objective review of research on this topic. Since the main goal of carbon pricing is changing choices by firms and consumers that affect carbon emissions, we also point the reader towards recent evidence for the broader effectiveness of carbon pricing.",
-      "year": 2021,
+      "authors": [
+        "Jeroen C.J.M. van den Bergh",
+        "Ivan Savin"
+      ],
       "venue": "Environmental and Resource Economics",
-      "citation_count": 84,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 87,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10640-021-00594-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 100
     },
     {
-      "rank": 30,
       "doi": "10.1007/s10640-021-00548-y",
       "title": "Trade in Carbon and Carbon Tariffs",
-      "abstract": "Abstract Carbon-based import tariffs are proposed as a policy measure to reduce carbon leakage and increase the global cost-effectiveness of unilateral CO 2 emission pricing. We investigate the case for carbon tariffs. For our assessment, we combine multi-region input–output and computable general equilibrium analyses based on data from the World Input–Output Database for the period 2000–2014. The multi-region input–output analysis confirms that carbon embodied in trade has increased during this period, but trade flows from Non-OECD to OECD countries became less important in relative terms since the 2007–2008 financial crisis. The computable general equilibrium analysis suggests that carbon tariffs’ efficacy in combating leakage increases in periods when trade in carbon increases. However, its potential to improve the global-cost effectiveness of unilateral emission pricing remains modest. On the other hand, we find that the potential of carbon tariffs to shift the economic burden of CO 2 emission reduction from abating developed regions to non-abating developing regions increases sharply between 2000 and 2007, but declines after the financial crisis.",
-      "year": 2021,
+      "authors": [
+        "Christoph Böhringer",
+        "Jan Schneider",
+        "Emmanuel Asane-Otoo"
+      ],
       "venue": "Environmental and Resource Economics",
-      "citation_count": 75,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 76,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10640-021-00548-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 2,
+      "reference_count": 48,
+      "rank": 101
+    },
+    {
+      "doi": "10.1016/j.enpol.2021.112419",
+      "title": "Designing flexible regulations to mitigate climate change: A cross-country comparative policy analysis",
+      "authors": [
+        "Ekaterina Rhodes",
+        "William A. Scott",
+        "Mark Jaccard"
+      ],
+      "venue": "Energy Policy",
+      "year": 2021,
+      "cited_by_count": 75,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
+      "rank": 102
+    },
+    {
+      "doi": "10.1016/j.gr.2023.03.002",
+      "title": "Toward fostering environmental innovation in OECD countries: Do fiscal decentralization, carbon pricing, and renewable energy investments matter?",
+      "authors": [
+        "Abbas, Shujaat",
+        "Ahmed, Zahoor",
+        "Sinha, Avik",
+        "Mariev, Oleg",
+        "Mahmood, Faisal"
+      ],
+      "venue": "Gondwana Research",
+      "year": 2024,
+      "cited_by_count": 67,
+      "reference_count": 63,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1016/J.RSER.2021.111348",
+      "arxiv_id": "",
+      "title": "Evaluation on the effectiveness of energy policies – Evidence from the carbon reductions in 25 countries",
+      "authors": [
+        "T. Kiss",
+        "Steve Popovics"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 63,
+      "influential_cite_count": 0,
+      "reference_count": 34,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.rser.2021.111348",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.3390/systems11060307",
+      "title": "Do Environmental Taxes Affect Carbon Dioxide Emissions in OECD Countries? Evidence from the Dynamic Panel Threshold Model",
+      "authors": [
+        "Abdullah Sultan Al Shammre",
+        "Adel Benhamed",
+        "Ousama Ben‐Salha",
+        "Zied Jaidi"
+      ],
+      "venue": "Systems",
+      "year": 2023,
+      "cited_by_count": 61,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2079-8954/11/6/307/pdf?version=1686735927",
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 3,
+      "reference_count": 68,
+      "rank": 105
+    },
+    {
+      "doi": "10.1016/j.esr.2024.101462",
+      "title": "Energy innovation investment and renewable energy in OECD countries",
+      "authors": [
+        "Eric Evans Osei Opoku",
+        "Alex O. Acheampong",
+        "Kingsley E. Dogah",
+        "Isaac Koomson"
+      ],
+      "venue": "Energy Strategy Reviews",
+      "year": 2024,
+      "cited_by_count": 59,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1016/j.esr.2024.101462",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1016/j.jenvman.2024.121784",
+      "arxiv_id": "",
+      "title": "Carbon pricing policies and renewable energy development: Analysis based on cross-country panel data.",
+      "authors": [
+        "Lang Xu",
+        "Jun Yang"
+      ],
+      "venue": "Journal of Environmental Management",
+      "year": 2024,
+      "cited_by_count": 54,
+      "influential_cite_count": 0,
+      "reference_count": 37,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.1787/0e8e24f5-en",
+      "title": "Effective Carbon Rates 2021",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": null,
+      "cited_by_count": 39,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.1787/9789264260115-en",
+      "title": "Effective Carbon Rates",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": 2016,
+      "cited_by_count": 36,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1787/560806166428",
+      "title": "Enhancing the Effectiveness of Active Labour Market Policies",
+      "authors": [],
+      "venue": "OECD Labour Market and Social Policy Occasional Papers",
+      "year": 1996,
+      "cited_by_count": 34,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1787/9789264305304-en",
+      "title": "Effective Carbon Rates 2018",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": null,
+      "cited_by_count": 33,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.1787/tpg-2009-en",
+      "title": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2009",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations",
+      "year": 2009,
+      "cited_by_count": 26,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1515/ael-2021-0026",
+      "arxiv_id": "",
+      "title": "Transfer Pricing Audit Challenges and Dispute Resolution Effectiveness in Developing Countries with Specific Focus on Zimbabwe",
+      "authors": [
+        "Favourate Sebele Mpofu",
+        "Eukeria Mashiri",
+        "Patrick Korera"
+      ],
+      "venue": "Accounting, Economics, and Law ? A Convivium",
+      "year": 2021,
+      "cited_by_count": 25,
+      "influential_cite_count": 0,
+      "reference_count": 108,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.degruyter.com/document/doi/10.1515/ael-2021-0026/pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.1080/14693062.2021.1981212",
+      "arxiv_id": "",
+      "title": "Economic and social effectiveness of carbon pricing schemes to meet Brazilian NDC targets",
+      "authors": [
+        "W. Wills",
+        "E. L. La Rovere",
+        "Carolina Grottera",
+        "G. Naspolini",
+        "Gaëlle Le Treut",
+        "F. Ghersi",
+        "J. Lefèvre",
+        "C. Dubeux"
+      ],
+      "venue": "Climate Policy",
+      "year": 2021,
+      "cited_by_count": 25,
+      "influential_cite_count": 2,
+      "reference_count": 95,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://hal.archives-ouvertes.fr/hal-03500923/file/Wills%20et%20al.%202021.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1787/b84d5b36-en",
+      "title": "Effective Carbon Rates 2023",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": null,
+      "cited_by_count": 22,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.3934/environsci.20220012",
+      "arxiv_id": "",
+      "title": "Carbon tax as the most appropriate carbon pricing mechanism for developing countries and strategies to design an effective policy",
+      "authors": [
+        "Izlawanie Muhammad"
+      ],
+      "venue": "AIMS Environmental Science",
+      "year": 2022,
+      "cited_by_count": 15,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3934/environsci.20220012",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1787/e9778969-en",
+      "title": "Pricing Greenhouse Gas Emissions",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": null,
+      "cited_by_count": 14,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1016/s1366-7017(99)00012-4",
+      "title": "Recent developments in the pricing of water services in OECD countries",
+      "authors": [
+        "Jones, T"
+      ],
+      "venue": "Water Policy",
+      "year": 2000,
+      "cited_by_count": 12,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1007/s11356-022-21279-7",
+      "arxiv_id": "",
+      "title": "The role of information communication technologies on carbon emissions in OECD countries: new evidence from method of moments quantile approach",
+      "authors": [
+        "F. Yilmaz",
+        "Peyman Uysal"
+      ],
+      "venue": "Environmental science and pollution research international",
+      "year": 2022,
+      "cited_by_count": 11,
+      "influential_cite_count": 1,
+      "reference_count": 157,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.3390/atmos16070836",
+      "arxiv_id": "",
+      "title": "Carbon Pricing Strategies and Policies for a Unified Global Carbon Market",
+      "authors": [
+        "Mohammad Imran Azizi",
+        "Xize Xu",
+        "Xuehui Duan",
+        "Haotian Qin",
+        "Bin Xu"
+      ],
+      "venue": "Atmosphere",
+      "year": 2025,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2073-4433/16/7/836/pdf?version=1752118691",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.3390/en18051030",
+      "arxiv_id": "",
+      "title": "Does Carbon Pricing Matter? Evidence from a Global Sample",
+      "authors": [
+        "Khalid S. Al-Abdulqader",
+        "Abdul-Jalil Ibrahim",
+        "Jingkai Ong",
+        "Ahmed A. Khalifa"
+      ],
+      "venue": "Energies",
+      "year": 2025,
+      "cited_by_count": 10,
+      "influential_cite_count": 2,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1996-1073/18/5/1030/pdf?version=1740052120",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.3390/su16198573",
+      "arxiv_id": "",
+      "title": "Social Cost of Carbon as an International Benchmark to Drive Countries’ Carbon Pricing during the Transition",
+      "authors": [
+        "Andrea Molocchi",
+        "Giulio Mela"
+      ],
+      "venue": "Sustainability",
+      "year": 2024,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/su16198573",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.1787/218402763872",
+      "title": "Minimum-Income Benefits in OECD Countries",
+      "authors": [],
+      "venue": "OECD Social, Employment and Migration Working Papers",
+      "year": 2010,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.3390/su162310542",
+      "arxiv_id": "",
+      "title": "Analyzing the Effectiveness of Carbon Pricing Instruments in Reducing Carbon Emissions in Major Asian Economies",
+      "authors": [
+        "Aaron Finley",
+        "Wei He",
+        "Hui Huang",
+        "C. Hon"
+      ],
+      "venue": "Sustainability",
+      "year": 2024,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2071-1050/16/23/10542/pdf?version=1733044620",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1007/s40258-023-00867-9",
+      "arxiv_id": "",
+      "title": "A Review of Current Approaches to Evaluating and Reimbursing New Medicines in a Subset of OECD Countries",
+      "authors": [
+        "N. Zozaya",
+        "Javier Villaseca",
+        "Irene Fernández",
+        "F. Abdalla",
+        "Benito Cadenas-Noreña",
+        "Miguel Ángel Calleja",
+        "Pedro Gómez-Pajuelo",
+        "Jorge Mestre-Ferrándiz",
+        "J. Oliva-Moreno",
+        "J. L. Trillo",
+        "Á. Hidalgo-Vega"
+      ],
+      "venue": "Applied Health Economics and Health Policy",
+      "year": 2024,
+      "cited_by_count": 8,
+      "influential_cite_count": 1,
+      "reference_count": 125,
+      "tldr": "Most analysed countries show a trend towards value-based approaches that consider value for money to society, but also other economic, clinical, and humanistic criteria, but also other economic, clinical, and humanistic criteria.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Most analysed countries show a trend towards value-based approaches that consider value for money to society, but also other economic, clinical, and humanistic criteria, but also other economic, clinical, and humanistic criteria.",
+      "rank": 125
+    },
+    {
+      "doi": "10.1787/b44c74e6-en",
+      "title": "Pricing Greenhouse Gas Emissions 2024",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": 2024,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.1787/91ad6a1e-en",
+      "title": "Carbon pricing design: Effectiveness, efficiency and feasibility",
+      "authors": [
+        "Florens Flues",
+        "K. V. Dender"
+      ],
+      "venue": "OECD Taxation Working Papers",
+      "year": 2020,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.oecd-ilibrary.org/deliver/91ad6a1e-en.pdf?itemId=%2Fcontent%2Fpaper%2F91ad6a1e-en&mimeType=pdf",
+      "influential_cite_count": 1,
+      "rank": 127
+    },
+    {
+      "doi": "10.1787/a5a5d71f-en",
+      "title": "Effective Carbon Rates 2025",
+      "authors": [
+        ""
+      ],
+      "venue": "OECD Series on Carbon Pricing and Energy Taxation",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1787/9789264118881-en",
+      "title": "Carbon Pricing, Power Markets and the Competitiveness of Nuclear Power",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": 2011,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.1007/s13132-024-02370-5",
+      "arxiv_id": "",
+      "title": "Government Effectiveness, Solar Energy, and CO2 Emissions in OECD Countries: A Panel Quantile Regression Approach",
+      "authors": [
+        "Taner Güney",
+        "Ersin Nail Sağdıç"
+      ],
+      "venue": "Journal of the Knowledge Economy",
+      "year": 2024,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 77,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1080/13504851.2022.2138812",
+      "arxiv_id": "",
+      "title": "Carbon pricing or non-pricing for developing countries? A dual-track strategy for decarbonization in China",
+      "authors": [
+        "Han Zhang",
+        "Jixian Meng",
+        "King Ning Yau"
+      ],
+      "venue": "Applied Economics Letters",
+      "year": 2022,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 20,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.1787/355505224723",
+      "title": "Enhancing the Effectiveness of Public Spending",
+      "authors": [],
+      "venue": "OECD Economics Department Working Papers",
+      "year": 2004,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1787/3cb265e4-en",
+      "title": "The use of revenues from carbon pricing",
+      "authors": [],
+      "venue": "OECD Taxation Working Papers",
+      "year": 2019,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1038/s44168-025-00238-1",
+      "arxiv_id": "",
+      "title": "How governments address climate change through carbon pricing intensity",
+      "authors": [
+        "Lisa Klagges"
+      ],
+      "venue": "npj Climate Action",
+      "year": 2025,
+      "cited_by_count": 5,
+      "influential_cite_count": 0,
+      "reference_count": 95,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s44168-025-00238-1.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.19088/ictd.2024.033",
+      "title": "Unsuccessful Implementation of the OECD Transfer Pricing Guidelines in Low-Income Countries: The Case of Ethiopia",
+      "authors": [
+        "Tilahun, Nathanael",
+        "Yihdego, Abebe G."
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "<jats:p>This policy brief is extracted from a full-fledged research report financed by the International Centre for Tax and Development through the Ethiopian Tax Research Network and published in the British Tax Review, Issue 2, 2023. Much international technical assistance is directed towards increasing the capacity of tax authorities in low-income countries to understand and effectively implement the OECD Transfer Pricing Guidelines and thus retain their fair share of revenue from the transnat",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1111/caje.12753",
+      "arxiv_id": "",
+      "title": "How protective are border carbon taxes for Canadian industry? The critical role of US emissions pricing",
+      "authors": [
+        "Christoph Böhringer",
+        "Thomas F. Rutherford",
+        "Eric Stewart"
+      ],
+      "venue": "Canadian Journal of Economics/Revue canadienne d'économique",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 22,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.1108/jeas-05-2024-0161",
+      "arxiv_id": "",
+      "title": "Carbon omission and financial market sustainability via government effectiveness: a cross-culture comparison of OECD and Asian emerging economies",
+      "authors": [
+        "Saqib Muneer",
+        "Awwad Saad Alshammari",
+        "K. M. Alshammary",
+        "Muhammad Waris"
+      ],
+      "venue": "Journal of economic and administrative sciences",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 99,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1080/21606544.2026.2633696",
+      "arxiv_id": "",
+      "title": "Does environmental regulation restrict the level of carbon emissions? Evidence from the OECD countries",
+      "authors": [
+        "Shreya Pal",
+        "M. Mahalik",
+        "Hrushikesh Mallick",
+        "Gupteswar Patel"
+      ],
+      "venue": "Journal of Environmental Economics and Policy",
+      "year": 2026,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 126,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1088/1748-9326/ad9f84",
+      "arxiv_id": "",
+      "title": "Expert views on carbon pricing in the developing world",
+      "authors": [
+        "Michael Lerner",
+        "Federica Genovese",
+        "Alexander Gard-Murray",
+        "Katja Biedenkopf",
+        "Danae Kyriakopoulou",
+        "Andrés Olarte-Peña",
+        "S. Okullo",
+        "Marcos Castro",
+        "H. Gadde"
+      ],
+      "venue": "Environmental Research Letters",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 38,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1088/1748-9326/ad9f84",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1051/e3sconf/202342404005",
+      "arxiv_id": "",
+      "title": "A Comparative Study of Carbon Pricing Policies in China and the Scandinavian Countries: Lessons for Effective Climate Change Mitigation with a Focus on Sweden",
+      "authors": [
+        "Wanli Ma"
+      ],
+      "venue": "E3S Web of Conferences",
+      "year": 2023,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 21,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.e3s-conferences.org/articles/e3sconf/pdf/2023/61/e3sconf_icree2023_04005.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1787/388107063305",
+      "title": "6.18. Cable Internet pricing trends in OECD countries, January 2005",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.59403/52zc3h",
+      "title": "The UN Practical Manual on Transfer Pricing for Developing Countries: Should It Depart from the OECD Transfer Pricing Guidelines?",
+      "authors": [
+        "Ablet, L.G."
+      ],
+      "venue": "International Transfer Pricing Journal",
+      "year": 2012,
+      "cited_by_count": 2,
+      "reference_count": 164,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This article will address the issue of transfer pricing regulations in developing countries and, more particularly, the development of the United Nations Transfer Pricing Manual for use by developing countries. The main focus is on whether the UN Manual should depart from the OECD Transfer Pricing Guidelines.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.1787/f79a75ab-en",
+      "title": "Carbon pricing and competitiveness",
+      "authors": [],
+      "venue": "OECD Environment Working Papers",
+      "year": 2019,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.5220/0008928500050013",
+      "title": "Effectiveness of R&amp;D Expenditures Supporting Innovation: A Case Study of OECD Countries",
+      "authors": [
+        "Prokop, Viktor",
+        "Stejskal, Jan",
+        "Hajek, Petr"
+      ],
+      "venue": "Proceedings of the 1st International Conference on IT, Communication and Technology for Better Life",
+      "year": 2019,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1787/5km975t0cfr8-en",
+      "title": "Towards Global Carbon Pricing",
+      "authors": [
+        "Dellink, Rob",
+        "Jamet, Stéphanie",
+        "Chateau, Jean",
+        "Duval, Romain"
+      ],
+      "venue": "OECD Environment Working Papers",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1007/s10666-025-10064-8",
+      "arxiv_id": "",
+      "title": "Toward a Sustainable Green Energy Transition: The Role of Low-Carbon Technology Trade and Investment in Industrial Production Technologies",
+      "authors": [
+        "Shujaat Abbas"
+      ],
+      "venue": "Environmental Modelling and Assessment",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.3390/economies14010012",
+      "arxiv_id": "",
+      "title": "Policy Instruments Against Climate Change: A Panel Data Analysis of Carbon Taxation and Emissions Trading in OECD Countries",
+      "authors": [
+        "Nergis Feride Kaplan Donmez"
+      ],
+      "venue": "Economies",
+      "year": 2026,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2227-7099/14/1/12/pdf?version=1767443034",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.1080/17565529.2025.2506758",
+      "arxiv_id": "",
+      "title": "A review of carbon-pricing studies for developing countries",
+      "authors": [
+        "Jeroen C.J.M. van den Bergh",
+        "Stefan Drews"
+      ],
+      "venue": "Climate and Development",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 164,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.1051/E3SCONF/202126504022",
+      "arxiv_id": "",
+      "title": "Convergence of the carbon intensity of the economies of the Asia-Pacific and non-OECD countries to the level of the OECD countries",
+      "authors": [
+        "I. Filimonova",
+        "I. Provornaya",
+        "V. Nemov",
+        "A. Komarova",
+        "Y. Dzyuba"
+      ],
+      "venue": "E3S Web of Conferences",
+      "year": 2021,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 12,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.e3s-conferences.org/articles/e3sconf/pdf/2021/41/e3sconf_apeem2021_04022.pdf",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.6007/ijarems/v11-i2/13031",
+      "arxiv_id": "",
+      "title": "The Effects of Taxes, Inflation and Government Effectiveness on House Real Price in OECD Countries: A Panel Data Study",
+      "authors": [
+        "Maryam Yousefinejad",
+        "J. Othman",
+        "A. Kassim",
+        "Aimi Anuar",
+        "Noorasiah Sulaiman"
+      ],
+      "venue": "International Journal of Academic Research in Economics and Management Sciences",
+      "year": 2022,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://hrmars.com/papers_submitted/13031/the-effects-of-taxes-inflation-and-government-effectiveness-on-house-real-price-in-oecd-countries-a-panel-data-study.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.2139/ssrn.4489827",
+      "arxiv_id": "",
+      "title": "Can Omitted Carbon Abatement Explain Productivity Stagnation? Quantile Shadow-Price Fisher Index Applied to OECD Countries",
+      "authors": [
+        "Sheng Dai",
+        "Timo Kuosmanen",
+        "Xun Zhou"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2023,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://eprints.whiterose.ac.uk/200920/1/SSRN_id4489827.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.1787/8f030bcc-en",
+      "title": "Carbon pricing and COVID-19",
+      "authors": [],
+      "venue": "OECD Environment Working Papers",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.21203/rs.3.rs-3131634/v1",
+      "title": "Effectiveness of Carbon Pricing Policy: The Case of Nordic Countries",
+      "authors": [
+        "TANIL, Eyüp",
+        "Karakaş, Mehmet",
+        "Kalabak, Ali Yasin"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 37,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>Carbon taxation has become prominent as an effective policy tool in combating global climate change in today's world. This study aims to investigate the impact of carbon pricing on carbon emissions and carbon footprint (CF), focusing on the Nordic countries, which were the first to implement carbon taxation, using panel data analysis method between 1992 and 2021. The econometric tests applied in the study are as follows, in order: cross-section dependence tests",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1787/c74b9d1c-en",
+      "title": "Carbon Pricing in Times of COVID-19",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1787/5k8x7gx58r0t-en",
+      "title": "Towards Consistent and Effective Carbon Pricing in Germany?",
+      "authors": [],
+      "venue": "OECD Environment Working Papers",
+      "year": 2012,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.1596/22641",
+      "title": "The FASTER Principles for Successful Carbon Pricing: An Approach Based on Initial Experience",
+      "authors": [
+        "",
+        ""
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.32479/ijeep.19320",
+      "arxiv_id": "",
+      "title": "Adopting Indirect Carbon Pricing Strategies for Indonesia: Insights from Global Practices Using a Bibliometrics and Systematic Literature Review",
+      "authors": [
+        "A. Adityawarman",
+        "N. Samawi",
+        "Sekar Ayu Citrowati",
+        "Teodoro Marcos Mota",
+        "Marcelino Freitas Naikosou",
+        "Utjok W R Siagian"
+      ],
+      "venue": "International Journal of Energy Economics and Policy",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://econjournals.com/index.php/ijeep/article/download/19320/8969",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1002/bse.4271",
+      "arxiv_id": "",
+      "title": "Measures for Energy Efficiency and Shadow Pricing in the Manufacturing Sector of EU Countries",
+      "authors": [
+        "T. Baležentis",
+        "Dalia Štreimikienė",
+        "Zhiyang Shen"
+      ],
+      "venue": "Business Strategy and the Environment",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 38,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "10.1080/13504509.2025.2595677",
+      "arxiv_id": "",
+      "title": "Decoding renewable shift: a threshold analysis of environmental policy strategies and innovative technologies in OECD countries",
+      "authors": [
+        "Shujaat Abbas"
+      ],
+      "venue": "International Journal of Sustainable Development &amp; World Ecology",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 31,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.1057/s41272-023-00449-3",
+      "arxiv_id": "",
+      "title": "Does carbon pricing matter? An exploratory study based on international data",
+      "authors": [
+        "Praveen Kumar"
+      ],
+      "venue": "Journal of Revenue and Pricing Management",
+      "year": 2023,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 48,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.1787/888933889210",
+      "title": "Figure 3.3. Australia lags behind most OECD countries in pricing carbon",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.1787/100645627805",
+      "title": "6.17. DSL pricing trends in OECD countries, 2002-2004",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.1787/bd7105c0-en",
+      "title": "Energy Investment and Carbon Pricing in Emerging Markets",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.1787/888933300447",
+      "title": "Figure 3.4. The effectiveness of unemployment insurance provisions, OECD countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1787/05b80588-en",
+      "title": "OECD Series on Carbon Pricing and Energy Taxation",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-series",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.1787/888933649943",
+      "title": "Figure 1.20. Government effectiveness perception index in Latin American countries and the OECD, 2015",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.59403/2fajhya",
+      "title": "2010 OECD Transfer Pricing Guidelines: Comments on the Impact in Andean Countries",
+      "authors": [
+        "Castro Jurado, S.",
+        "Del Rio, M."
+      ],
+      "venue": "International Transfer Pricing Journal",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In July 2010,  an updated version of the OECD Transfer Pricing Guidelines was released. This article considers the impact of the changes in the Andean countries.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.1787/0e89cecb-en",
+      "title": "Enhancing the Effectiveness of External Support in Building Tax Capacity in Developing Countries",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "10.1787/888933296597",
+      "title": "Figure 2. 2. The carbon tax¹ in OECD and seven partner countries²",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.1787/888932765788",
+      "title": "Figure 14. Effective tax rates on carbon in OECD countries: Thumbnail profiles",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1787/888932790450",
+      "title": "Figure 1.8. Carbon price dispersion across OECD countries and within France, 2010-Q4",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.1787/287622362584",
+      "title": "2. Gross agricultural greenhouse gas emissions in carbon dioxide equivalent for selected OECD countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.1787/888932765807",
+      "title": "Figure 15. Average effective tax rates on CO2 and carbon efficiency in OECD countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.1787/888934267939",
+      "title": "Figure 5. Relative to many other OECD Europe countries, effective carbon rates are low",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1787/888933087553",
+      "title": "Figure 3.4. Taxation of energy on a carbon content basis in selected OECD countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.18356/9789210023047c011",
+      "title": "Ex ante assessment of carbon pricing impacts in developing countries",
+      "authors": [
+        ""
+      ],
+      "venue": "Carbon Pricing: A Development and Trade Reality Check",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.1787/888932855411",
+      "title": "Figure 19. The relationship between government effectiveness and expenditure is broadly in line with that in other OECD countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.2139/ssrn.4844684",
+      "title": "Do Carbon Taxes Increase Inflation? Evidence from OECD Countries",
+      "authors": [
+        "Eyvaz-Zada, Eltun",
+        "Paczos, Wojtek"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 22,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.1021/acs.est.5c02550.s001",
+      "title": "Post-subsidy Era: Potential for Carbon Pricing in Industrial Fisheries among Global Major Fishing Countries",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.1163/9789004322714_cclc_2018-0051-017",
+      "title": "Statement on the effectiveness of carbon pricing in Canada",
+      "authors": [],
+      "venue": "Climate Change and Law Collection",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "10.2139/ssrn.6049014",
+      "title": "Carbon Pricing in Aviation: Comparative Effectiveness of ETS vs. CORSIA",
+      "authors": [
+        "Dave, Kush"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Aviation has been a growing source of greenhouse gas emission, and recent years have seen the development of market-based measures to address its global climate impact (Kumar et al., 2025). The European Union's Emissions Trading System (ETS) and the International Civil Aviation Organization's Carbon Offsetting and Reduction Scheme for International Aviation (CORSIA) represent two distinct approaches to carbon pricing in the sector. Existing research shows that the ETS has achieved modest",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "10.1002/9783527830978.ch6",
+      "arxiv_id": "2109.13918v1",
+      "title": "Toxicity of Carbon Nanomaterials",
+      "authors": [
+        "Arpita Adhikari",
+        "Joydip Sengupta"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.13918v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "10.1002/pssb.200669200",
+      "arxiv_id": "0602636v1",
+      "title": "Encapsulating C59N azafullerene derivatives inside single-wall carbon nanotubes",
+      "authors": [
+        "F. Simon",
+        "H. Kuzmany",
+        "J. Bernardi",
+        "F. Hauke",
+        "A. Hirsch"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0602636v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "10.1016/j.carbon.2017.03.030",
+      "arxiv_id": "1703.03758v1",
+      "title": "Structural characterization of carbon nanotubes via the vibrational density of states",
+      "authors": [
+        "Albert J. Pool",
+        "Sandeep K. Jain",
+        "Gerard T. Barkema"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1703.03758v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "10.1016/j.carbon.2023.118605",
+      "arxiv_id": "2512.04880v1",
+      "title": "Controlling Carbon Nanostructure Synthesis in Thermal Plasma Jet: Correlation of Process Parameters, Plasma Characteristics, and Product Morphology",
+      "authors": [
+        "Taki Aissou",
+        "Jerome Menneveux",
+        "Fanny Casteignau",
+        "Nadi Braidy",
+        "Jocelyn Veilleux"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.04880v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:2503.22463v2",
+      "arxiv_id": "2503.22463v2",
+      "title": "Stability of Zipf's law and occult spatial dependence effects: A study on the OECD countries",
+      "authors": [
+        "Rolf Bergs",
+        "Uwe Neumann"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.22463v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.1007/978-3-319-70614-6_71-1",
+      "arxiv_id": "2511.15467v1",
+      "title": "Experimental and Theoretical Aspects of the Fragmentation of Carbon's Single and Multi-Walled Nanotubes",
+      "authors": [
+        "Sumera Javeed",
+        "Shoaib Ahmad"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.15467v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "arXiv:1906.06483v1",
+      "arxiv_id": "1906.06483v1",
+      "title": "Option Pricing via Multi-path Autoregressive Monte Carlo Approach",
+      "authors": [
+        "Wei-Cheng Chen",
+        "Wei-Ho Chung"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1906.06483v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:1307.5540v2",
+      "arxiv_id": "1307.5540v2",
+      "title": "On the Pricing of Storable Commodities",
+      "authors": [
+        "Dorje C. Brody",
+        "Lane P. Hughston",
+        "Xun Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1307.5540v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.3847/1538-4365/228/2/19",
+      "arxiv_id": "1705.01233v1",
+      "title": "Exploring the SDSS Dataset with Linked Scatter Plots: I. EMP, CEMP, and CV Stars",
+      "authors": [
+        "Duane F. Carbon",
+        "Christopher Henze",
+        "Bron C. Nelson"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.01233v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:1307.2493v1",
+      "arxiv_id": "1307.2493v1",
+      "title": "On model-independent pricing/hedging using shortfall risk and quantiles",
+      "authors": [
+        "Erhan Bayraktar",
+        "Zhou Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1307.2493v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:2207.01558v1",
+      "arxiv_id": "2207.01558v1",
+      "title": "Quantum Computation for Pricing Caps using the LIBOR Market Model",
+      "authors": [
+        "Hao Tang",
+        "Wenxun Wu",
+        "Xian-Min Jin"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.01558v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:1604.05406v3",
+      "arxiv_id": "1604.05406v3",
+      "title": "Gap Risk KVA and Repo Pricing: An Economic Capital Approach in the Black-Scholes-Merton Framework",
+      "authors": [
+        "Wujiang Lou"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1604.05406v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2005.12600v9",
+      "arxiv_id": "2005.12600v9",
+      "title": "The Race between Technology and Woman: Changes in Relative Wages and Labor Shares in OECD Countries",
+      "authors": [
+        "Hiroya Taniguchi",
+        "Ken Yamada"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.12600v9",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "10.1371/journal.pone.0136767",
+      "arxiv_id": "1501.04992v2",
+      "title": "Interactions between financial and environmental networks in OECD countries",
+      "authors": [
+        "Franco Ruzzenenti",
+        "Andreas Joseph",
+        "Elisa Ticci",
+        "Pietro Vozzella",
+        "Giampaolo Gabbi"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1501.04992v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "10.1145/2663492",
+      "arxiv_id": "1507.02132v1",
+      "title": "Economic Viability of Paris Metro Pricing for Digital Services",
+      "authors": [
+        "Chi-Kin Chau",
+        "Qian Wang",
+        "Dah-Ming Chiu"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1507.02132v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "10.24988/ije.1472312",
+      "arxiv_id": "2512.00785v3",
+      "title": "Comparative Analysis of OECD Countries Based on Energy Trilemma Index: A Clustering Approach",
+      "authors": [
+        "Emre Akusta"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.00785v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "10.1016/B978-0-12-821381-0.00017-X",
+      "arxiv_id": "2004.11629v1",
+      "title": "Application of carbon nanomaterials in the electronic industry",
+      "authors": [
+        "Joydip Sengupta"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.11629v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:0701650v2",
+      "arxiv_id": "0701650v2",
+      "title": "Pricing Options in Incomplete Equity Markets via the Instantaneous Sharpe Ratio",
+      "authors": [
+        "Erhan Bayraktar",
+        "Virginia R. Young"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/math/0701650v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "10.1016/j.cartre.2020.100019",
+      "arxiv_id": "2012.15101v1",
+      "title": "Carbon Nanomaterials to Combat Virus: A perspective in view of COVID-19",
+      "authors": [
+        "Joydip Sengupta",
+        "Chaudhery Mustansar Hussain"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.15101v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "10.1016/j.apenergy.2021.117040",
+      "arxiv_id": "2012.00375v1",
+      "title": "The effect of price-based demand response on carbon emissions in European electricity markets: The importance of adequate carbon prices",
+      "authors": [
+        "Markus Fleschutz",
+        "Markus Bohlayer",
+        "Marco Braun",
+        "Gregor Henze",
+        "Michael D. Murphy"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.00375v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 201
+    },
+    {
+      "doi": "arXiv:0409447v1",
+      "arxiv_id": "0409447v1",
+      "title": "Searching for a magnetic proximity effect in magnetite-carbon structures",
+      "authors": [
+        "R. Höhne",
+        "M. Ziese",
+        "P. Esquinazi"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0409447v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 202
+    },
+    {
+      "doi": "arXiv:1903.04850v1",
+      "arxiv_id": "1903.04850v1",
+      "title": "Narrowband IoT: An Appropriate Solution for Developing Countries",
+      "authors": [
+        "Sudhir K. Routray",
+        "Habib Mohammed Hussein"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1903.04850v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 203
+    },
+    {
+      "doi": "arXiv:2105.05669v1",
+      "arxiv_id": "2105.05669v1",
+      "title": "Carbon Leakage in a European Power System with Inhomogeneous Carbon Prices",
+      "authors": [
+        "Markus Schlott",
+        "Omar El Sayed",
+        "Mariia Bilousova",
+        "Fabian Hofmann",
+        "Alexander Kies",
+        "Horst Stöcker"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.05669v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 204
+    },
+    {
+      "doi": "arXiv:1410.7453v2",
+      "arxiv_id": "1410.7453v2",
+      "title": "GMWB Riders in a Binomial Framework - Pricing, Hedging, and Diversification of Mortality Risk",
+      "authors": [
+        "Cody B. Hyndman",
+        "Menachem Wenger"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.7453v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 205
+    },
+    {
+      "doi": "arXiv:2312.15535v1",
+      "arxiv_id": "2312.15535v1",
+      "title": "Forecasting exports in selected OECD countries and Iran using MLP Artificial Neural Network",
+      "authors": [
+        "Soheila Khajoui",
+        "Saeid Dehyadegari",
+        "Sayyed Abdolmajid Jalaee"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.15535v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 206
+    },
+    {
+      "doi": "arXiv:2404.09467v5",
+      "arxiv_id": "2404.09467v5",
+      "title": "The Role of Carbon Pricing in Food Inflation: Evidence from Canadian Provinces",
+      "authors": [
+        "Jiansong Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.09467v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 207
+    },
+    {
+      "doi": "arXiv:2501.17490v2",
+      "arxiv_id": "2501.17490v2",
+      "title": "Pricing Carbon Allowance Options on Futures: Insights from High-Frequency Data",
+      "authors": [
+        "Simone Serafini",
+        "Giacomo Bormetti"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.17490v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 208
+    },
+    {
+      "doi": "arXiv:1711.07119v1",
+      "arxiv_id": "1711.07119v1",
+      "title": "Atomic and electronic structures of stable linear carbon chains on Ag-nanoparticles",
+      "authors": [
+        "D. W. Boukhvalov",
+        "I. S. Zhidkov",
+        "E. Z. Kurmaev",
+        "E. Fazio",
+        "S. O. Cholakh",
+        "L. D'Urso"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.07119v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 209
+    },
+    {
+      "doi": "arXiv:0607180v1",
+      "arxiv_id": "0607180v1",
+      "title": "How Do Output Growth Rate Distributions Look Like? Some Time-Series Evidence on OECD Countries",
+      "authors": [
+        "Giorgio Fagiolo",
+        "Mauro Napoletano",
+        "Andrea Roventini"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/physics/0607180v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 210
+    },
+    {
+      "doi": "arXiv:2510.11360v1",
+      "arxiv_id": "2510.11360v1",
+      "title": "A mathematical model for pricing perishable goods for quick-commerce applications",
+      "authors": [
+        "Milon Bhattacharya"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.11360v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 211
+    },
+    {
+      "doi": "arXiv:0911.3789v5",
+      "arxiv_id": "0911.3789v5",
+      "title": "On the Existence of Consistent Price Systems",
+      "authors": [
+        "Erhan Bayraktar",
+        "Mikko S. Pakkanen",
+        "Hasanjan Sayit"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0911.3789v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 212
+    },
+    {
+      "doi": "arXiv:1510.04370v1",
+      "arxiv_id": "1510.04370v1",
+      "title": "Extending the Black-Scholes Option Pricing Theory to Account for an Option Market Maker's Funding Costs",
+      "authors": [
+        "Wujiang Lou"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1510.04370v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 213
+    },
+    {
+      "doi": "10.1021/acs.nanolett.8b01681",
+      "arxiv_id": "1711.04753v2",
+      "title": "Carbon nanotube chirality determines properties of encapsulated linear carbon chain",
+      "authors": [
+        "Sebastian Heeg",
+        "Lei Shi",
+        "Lisa V. Poulikakos",
+        "Thomas Pichler",
+        "Lukas Novotny"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.04753v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 214
+    },
+    {
+      "doi": "arXiv:1605.01471v2",
+      "arxiv_id": "1605.01471v2",
+      "title": "The unexpected thermal conductivity from graphene disk, carbon nanocone to carbon nanotube",
+      "authors": [
+        "Dengke Ma",
+        "Han Meng",
+        "Xiaoman Wang",
+        "Nuo Yang",
+        "Xing Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.01471v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 215
+    },
+    {
+      "doi": "arXiv:0701702v1",
+      "arxiv_id": "0701702v1",
+      "title": "Carbon Based Superconductors",
+      "authors": [
+        "Reinhard K. Kremer",
+        "Jun Sung Kim",
+        "Arndt Simon"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0701702v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 216
+    },
+    {
+      "doi": "10.1017/nie.2025.10066",
+      "arxiv_id": "2402.03800v1",
+      "title": "Effects of carbon pricing and other climate policies on CO2 emissions",
+      "authors": [
+        "Emanuel Kohlscheen",
+        "Richhild Moessner",
+        "Elod Takats"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.03800v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 217
+    },
+    {
+      "doi": "arXiv:0605131v1",
+      "arxiv_id": "0605131v1",
+      "title": "Bologna and the Cooperation with Developing Countries",
+      "authors": [
+        "Giorgio Giacomelli"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/physics/0605131v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 218
+    },
+    {
+      "doi": "arXiv:1912.03260v1",
+      "arxiv_id": "1912.03260v1",
+      "title": "Catalytic Formation of Narrow Nb Nanowires inside Carbon Nanotubes",
+      "authors": [
+        "Dan Liu",
+        "David Tomanek"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.03260v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 219
+    },
+    {
+      "doi": "arXiv:2402.01648v1",
+      "arxiv_id": "2402.01648v1",
+      "title": "Forecasting Imports in OECD Member Countries and Iran by Using Neural Network Algorithms of LSTM",
+      "authors": [
+        "Soheila Khajoui",
+        "Saeid Dehyadegari",
+        "Sayyed Abdolmajid Jalaee"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.01648v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 220
+    },
+    {
+      "doi": "arXiv:2509.10795v1",
+      "arxiv_id": "2509.10795v1",
+      "title": "The impact on health system expenditure in Australia and OECD countries from accelerated NCD mortality decline through prevention or treatment strategies to achieve Sustainable Development Goal Target 3.4",
+      "authors": [
+        "Bibha Dhungel",
+        "Jingjing Yang",
+        "Tim Wilson",
+        "Samantha Grimshaw",
+        "Emily Bourke",
+        "Stephanie Khuu",
+        "Tony Blakely"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.10795v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 221
+    },
+    {
+      "doi": "arXiv:1212.4894v3",
+      "arxiv_id": "1212.4894v3",
+      "title": "On controller-stopper problems with jumps and their applications to indifference pricing of American options",
+      "authors": [
+        "Erhan Bayraktar",
+        "Zhou Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1212.4894v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 222
+    },
+    {
+      "doi": "arXiv:1512.07340v1",
+      "arxiv_id": "1512.07340v1",
+      "title": "Liability-side Pricing of Swaps and Coherent CVA and FVA by Regression/Simulation",
+      "authors": [
+        "Wujiang Lou"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1512.07340v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 223
+    },
+    {
+      "doi": "arXiv:2512.06887v1",
+      "arxiv_id": "2512.06887v1",
+      "title": "Effectiveness of Carbon Pricing and Compensation Instruments: An Umbrella Review of the Empirical Evidence",
+      "authors": [
+        "Ricardo Alonzo Fernández Salguero"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.06887v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 224
+    },
+    {
+      "doi": "arXiv:2404.00203v3",
+      "arxiv_id": "2404.00203v3",
+      "title": "No-Regret Learning for Stackelberg Equilibrium Computation in Newsvendor Pricing Games",
+      "authors": [
+        "Larkin Liu",
+        "Yuming Rong"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.00203v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 225
+    },
+    {
+      "doi": "arXiv:1511.01584v1",
+      "arxiv_id": "1511.01584v1",
+      "title": "Thermal conductivity of a new carbon nanotube analogue: the diamond nanothread",
+      "authors": [
+        "Haifei Zhan",
+        "Gang Zhang",
+        "Yingyan Zhang",
+        "V. B. C. Tan",
+        "John M. Bell",
+        "Yuantong Gu"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1511.01584v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 226
+    },
+    {
+      "doi": "arXiv:0704.1680v1",
+      "arxiv_id": "0704.1680v1",
+      "title": "Carbon Nanotube Thin Film Field Emitting Diode: Understanding the System Response Based on Multiphysics Modeling",
+      "authors": [
+        "N. Sinha",
+        "D. Roy Mahapatra",
+        "J. T. W. Yeow",
+        "R. V. N. Melnik",
+        "D. A. Jaffray"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0704.1680v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 227
+    },
+    {
+      "doi": "arXiv:2105.11756v1",
+      "arxiv_id": "2105.11756v1",
+      "title": "Environmental Kuznets Curve & Effectiveness of International Policies: Evidence from Cross Country Carbon Emission Analysis",
+      "authors": [
+        "Elvan Ece Satici",
+        "Bayram Cakir"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2105.11756v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 228
+    },
+    {
+      "doi": "arXiv:1211.2814v1",
+      "arxiv_id": "1211.2814v1",
+      "title": "Primordial origins of Earth's carbon",
+      "authors": [
+        "Bernard Marty",
+        "Conel M. O'D. Alexander",
+        "Sean N. Raymond"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1211.2814v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 229
+    },
+    {
+      "doi": "10.1002/wilm.10972",
+      "arxiv_id": "2602.14354v1",
+      "title": "Application of Quasi Monte Carlo and Global Sensitivity Analysis to Option Pricing and Greeks",
+      "authors": [
+        "Stefano Scoleri",
+        "Marco Bianchetti",
+        "Sergei Kucherenko"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.14354v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 230
+    },
+    {
+      "doi": "arXiv:2108.02286v1",
+      "arxiv_id": "2108.02286v1",
+      "title": "Organic Carbon Cycle in the Atmosphere of Venus",
+      "authors": [
+        "Jan Spacek"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.02286v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 231
+    },
+    {
+      "doi": "10.3280/epe2026oa22889",
+      "arxiv_id": "",
+      "title": "The impact of environmental tax and emission trading system on environmental quality in OECD countries",
+      "authors": [
+        "Saoussen Aguir Bargaoui",
+        "Wejden Fatnassi"
+      ],
+      "venue": "ECONOMICS AND POLICY OF ENERGY AND THE ENVIRONMENT",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 39,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 232
+    },
+    {
+      "doi": "10.1108/baj-04-2024-0016",
+      "arxiv_id": "",
+      "title": "Empirical study on the effect of carbon tax on GHG emissions in select nations",
+      "authors": [
+        "Ajay Kumar"
+      ],
+      "venue": "Business Analyst Journal",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 32,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1108/baj-04-2024-0016",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 233
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "OECD Multilingual Summaries Effective Carbon Prices Summary in English",
+      "authors": [],
+      "venue": "",
+      "year": 2013,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 234
+    },
+    {
+      "doi": "10.1017/s1355770x25000129",
+      "arxiv_id": "",
+      "title": "Public unacceptability of carbon pricing, perceived costs and effectiveness of policy",
+      "authors": [
+        "Yang Liu",
+        "Jie Yang",
+        "Xin-Yang Zheng"
+      ],
+      "venue": "Environment and Development Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 34,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 235
+    },
+    {
+      "doi": "10.28992/ijsam.v8i2.1005",
+      "arxiv_id": "",
+      "title": "The Role of Carbon Pricing Policy on ESG Performance in Asia Countries",
+      "authors": [
+        "Inten Meutia",
+        "Zulnaidi Yaacob",
+        "Hasni Yusrianti",
+        "S. F. Kartasari"
+      ],
+      "venue": "Indonesian Journal of Sustainability Accounting and Management",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://ijsam.org/index.php/ijsam/article/download/1005/223",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 236
+    },
+    {
+      "doi": "10.46647/ijetms.2025.v09i06.007",
+      "arxiv_id": "",
+      "title": "Carbon Pricing and Industrial Competitiveness: Cross-Country Panel Analysis",
+      "authors": [
+        "Dr. Pritish Chandra Vaish"
+      ],
+      "venue": "International Journal of Engineering Technology and Management Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://ijetms.in/ojs/index.php/ijetms/article/download/20/20",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 237
+    },
+    {
+      "doi": "10.15575/jpkp.v3i1.38488",
+      "arxiv_id": "",
+      "title": "Development of Carbon Pricing Policies for Creating a Low-Carbon Economy: A Systematic Literature Review Using PRISMA",
+      "authors": [
+        "Anisa Oktaviani Ranteala",
+        "Rifqi Firdaus",
+        "M. Nur"
+      ],
+      "venue": "Jurnal Perpajakan dan Keuangan Publik",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journal.uinsgd.ac.id/index.php/jpkp/article/download/38488/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 238
+    },
+    {
+      "doi": "10.58567/jea05040001",
+      "arxiv_id": "",
+      "title": "Income Thresholds and Distributional Effects in African Carbon Pricing: A Multi-Method Approach Toward Climate Resilient and Sustainable Society",
+      "authors": [
+        "Kyei Emmanuel Yeboah",
+        "Seidu Abdulai Jamatutu",
+        "S. Gawusu",
+        "Maxwell Wahabu Manpaya",
+        "Bo Feng"
+      ],
+      "venue": "Journal of Economic Analysis",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 40,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.58567/jea05040001",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 239
+    },
+    {
+      "doi": "10.2139/ssrn.6566060",
+      "arxiv_id": "",
+      "title": "Carbon Pricing as a Driver of Development in Africa: Lessons from South Africa",
+      "authors": [
+        "D. Adebayo"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 240
+    },
+    {
+      "doi": "10.1177/0958305x251410136",
+      "arxiv_id": "",
+      "title": "Green finance and carbon intensity in OECD economies–Mediating roles of industrial structure upgrading and green technology innovation",
+      "authors": [
+        "Jiajia Yang",
+        "Wei Deng",
+        "Saira Kharuddin"
+      ],
+      "venue": "Energy &amp; Environment",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 87,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 241
+    },
+    {
+      "doi": "10.1108/meq-03-2025-0168",
+      "arxiv_id": "",
+      "title": "Eco-labeling, carbon pricing, and CO2 emissions in the construction sector: a panel data approach for EU-27 countries and Türkiye",
+      "authors": [
+        "Mustafa Engin Türkarslan"
+      ],
+      "venue": "Management of environmental quality",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 242
+    },
+    {
+      "doi": "10.1111/rego.70157",
+      "arxiv_id": "",
+      "title": "Why Do Eastern African Countries Comply With\n OECD\n Tax Norms? How Network Effects Shape Policy Transfer in Anti‐Profit Shifting Governance",
+      "authors": [
+        "Cassandra Vet",
+        "A. G. Yihdego"
+      ],
+      "venue": "Regulation &amp; Governance",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 70,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 243
+    },
+    {
+      "doi": "10.61978/moneta.v3i3.928",
+      "arxiv_id": "",
+      "title": "Carbon Pricing as a Climate Policy Instrument: Global Lessons, Challenges, and Future Directions",
+      "authors": [
+        "Hilman Rismanto",
+        "Putri Catur Ayu Lestari"
+      ],
+      "venue": "Moneta : Journal of Economics and Finance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journal.idscipub.com/moneta/article/download/928/835",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 244
+    },
+    {
+      "doi": "10.1108/meq-01-2025-0032",
+      "arxiv_id": "",
+      "title": "Do carbon pricing policies matter? A global evidence of their impact on renewable energy capacity",
+      "authors": [
+        "Fei Zhao",
+        "Chor Foon Tang"
+      ],
+      "venue": "Management of environmental quality",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 79,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 245
+    },
+    {
+      "doi": "10.54254/2754-1169/2025.23513",
+      "arxiv_id": "",
+      "title": "A Study on the Carbon Emission Effects of Chinas OFDI in Belt and Road Countries",
+      "authors": [
+        "Qianqian Yang"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.ewadirect.com/proceedings/aemps/article/view/23513/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 246
     }
   ]
 }

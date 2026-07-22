@@ -1,316 +1,928 @@
 {
   "query_id": "q027",
   "query": "数据处理中对于文本的情绪连续性与媒体刺激物之间的关系 (譬如：如何提取两者的特征，证明它们的因果关系)",
-  "generated_at": "2026-07-14T23:28:19",
-  "config": "v3.9.0-baseline-n50",
+  "topic_bucket": "ml",
+  "source": "user",
+  "generated_at": "2026-07-22T11:26:55",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 50,
+  "top_n": 50,
   "by_engine": {
-    "crossref": 10,
+    "crossref": 50,
     "openalex": 0,
     "arxiv": 0,
     "semanticscholar": 0,
-    "core": 10
+    "aminer": 1,
+    "cnki": 1
   },
-  "dedup_count": 20,
   "results": [
     {
-      "rank": 1,
       "doi": "10.32629/er.v1i3.1497",
       "title": "试析如何正确处理经济发展与改善民生的关系",
-      "abstract": "<jats:p>当前,国内外经济发展发生了非常大的变化,我国的经济发展水平正在不断提高,人们的生活质量也在不断完善。与经济高速增长的阶段相比,如今我国社会生产力发展水平有了较为明显的提升,这对于我国尽早实现小康社会有着十分积极的意义。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 秀娟"
+      ],
       "venue": "教育研究",
-      "citation_count": 4,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>当前,国内外经济发展发生了非常大的变化,我国的经济发展水平正在不断提高,人们的生活质量也在不断完善。与经济高速增长的阶段相比,如今我国社会生产力发展水平有了较为明显的提升,这对于我国尽早实现小康社会有着十分积极的意义。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 1
     },
     {
-      "rank": 2,
       "doi": "10.37155/2717-5650-0603-29",
       "title": "情绪智力在临床护士心理弹性与人文关怀品质关系中的中介作用体会",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "娜, 卓"
+      ],
       "venue": "国际护理与健康",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 2
     },
     {
-      "rank": 3,
       "doi": "10.1142/9789814285063",
       "title": "台湾未来发展情境论：二十一世纪两岸关系与中华文明的再出发",
-      "abstract": "",
-      "year": 2000,
+      "authors": [
+        "黄, 枝连"
+      ],
       "venue": "台湾未来发展情境论：二十一世纪两岸关系与中华文明的再出发",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2000,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 3
     },
     {
-      "rank": 4,
+      "doi": "10.1360/zb2011-v41-i05-p893-899",
+      "title": "基于启发式变量筛选方法研究与雌激素&amp;beta;受体结合的化合物结构与活性之间的关系",
+      "authors": [
+        "王, 连生",
+        "杨, 旭曙",
+        "张, 一鸣",
+        "孙, 成"
+      ],
+      "venue": "SCIENTIA SINICA Chimica",
+      "year": 2011,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.70693/rwsk.v1i3.710",
+      "title": "高等数学教学中一致连续性简明证明的创新与实践",
+      "authors": [
+        "于晟伟",
+        "赵赫",
+        "何永明",
+        "王洪庆",
+        "宋云涛"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>一致连续性证明是高等数学教学的关键难点，学生常因其抽象与逻辑复杂性而理解不深。本文创新性地提出一种简明证明方法，系统探讨函数导数性质与一致连续性及其非一致连续性的内在联系，并总结为一系列定理。深入剖析一致连续性与非一致连续性定义，明确二者在函数行为上的本质差异。分析函数导数的有界性、单调性等关键性质，揭示其对函数一致连续性的影响机制。在此基础上，总结出一套将导数性质与一致连续性判断直接关联的定理体系，为学生提供清晰、系统的判断工具。为增强学生对理论的理解与应用能力，本文引入丰富实例。通过具体函数的分析与证明，直观展示如何借助导数性质判断一致连续性，使学生能够将抽象理论与实际问题相结合。教学实践表明，这种方法显著提升了学生的学习效果。课堂反馈显示，学生对一致连续性的理解更加深入，证明准确性提高，解决相关问题时的自信心和兴趣也有所提升。本研究为高等数学教学提供新思路，有助于增强学生对抽象数学概念的理解与应用能力，推动高等数学教学质量的提升。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
       "doi": "10.31219/osf.io/zfhta_v1",
       "title": "随机性在决定论框架中的角色：因果关系的时间连续性",
-      "abstract": "<p>在决定论框架下，因果关系必须沿着时间的流动逐步传递，过去的状态不能绕过当前时刻直接影响未来。本文探讨了在存在随机性的情况下，这一因果结构是否仍然成立。我们证明，即使当前时刻的状态对未来的决定具有随机性，过去的信息仍然不能透过当前状态直接影响未来，而必须通过当前状态这一“过滤层”进行传递。基于数学建模，我们建立了随机演化的迭代模型，表明决定论可以兼容随机性，但随机性不破坏因果关系的时间连续性。</p>",
-      "year": null,
+      "authors": [
+        "Yu, Xiaoyang"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>在决定论框架下，因果关系必须沿着时间的流动逐步传递，过去的状态不能绕过当前时刻直接影响未来。本文探讨了在存在随机性的情况下，这一因果结构是否仍然成立。我们证明，即使当前时刻的状态对未来的决定具有随机性，过去的信息仍然不能透过当前状态直接影响未来，而必须通过当前状态这一“过滤层”进行传递。基于数学建模，我们建立了随机演化的迭代模型，表明决定论可以兼容随机性，但随机性不破坏因果关系的时间连续性。</p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "posted-content"
+      "rank": 6
     },
     {
-      "rank": 5,
       "doi": "10.70693/hj0141",
       "title": "人文关怀护理对血液透析患者负性情绪的改善效果观察",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "张可娟"
+      ],
       "venue": "数据期刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 7
     },
     {
-      "rank": 6,
       "doi": "10.67328/bt1896",
       "title": "人文关怀护理对血液透析患者负性情绪的改善效果观察",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "张可娟"
+      ],
       "venue": "数据期刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 8
     },
     {
-      "rank": 7,
       "doi": "10.61654/zzjkwz0439",
       "title": "基于循证证据的针对性护理对胎膜早破患者不良心理情绪的影响分析",
-      "abstract": "<jats:p>目的:探讨基于循证证据的针对性护理对胎膜早破患者焦虑、抑郁等不良心理情绪的干预效果。方法:选取2025年2月—2026年2月我院收治的150例胎膜早破患者,采用随机数字表法分为对照组(75例,常规产科护理)与观察组(75例,循证证据指导下的针对性护理)。采用焦虑自评量表(SAS)、抑郁自评量表(SDS)评估护理前后心理状态,比较两组评分差异及护理满意度。结果:护理前两组SAS、SDS评分无统计学差异(P&gt;0.05);护理后观察组SAS、SDS评分均显著低于对照组(P&lt;0.05),护理满意度高于对照组(P&lt;0.05)。结论:基于循证证据的针对性护理可有效改善胎膜早破患者不良心理情绪,提升护理质量与患者满意度。</jats:p>",
-      "year": null,
+      "authors": [
+        "程, 蓉"
+      ],
       "venue": "健康文摘",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探讨基于循证证据的针对性护理对胎膜早破患者焦虑、抑郁等不良心理情绪的干预效果。方法:选取2025年2月—2026年2月我院收治的150例胎膜早破患者,采用随机数字表法分为对照组(75例,常规产科护理)与观察组(75例,循证证据指导下的针对性护理)。采用焦虑自评量表(SAS)、抑郁自评量表(SDS)评估护理前后心理状态,比较两组评分差异及护理满意度。结果:护理前两组SAS、SDS评分无统计学差异(P&gt;0.05);护理后观察组SAS、SDS评分均显著低于对照组(P&lt;0.05),护理满意度高于对照组(P&lt;0.05)。结论:基于循证证据的针对性护理可有效改善胎膜早破患者不良心理情绪,提升护理质量与患者满意度。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 9
     },
     {
-      "rank": 8,
       "doi": "10.32629/ej.v8i11.3081",
       "title": "基于文本分析的证据探究企业漂绿与政府补助的关系",
-      "abstract": "<jats:p>本文以2012—2021年中国沪深A股上市公司为研究样本,采用文本分析技术分析企业漂绿指标对政府环保补助的内在影响机理。研究发现,企业漂绿行为对政府环保补助的获取具有促进作用,并且该结论在一系列稳健性检验后依然成立。进一步研究发现,地区工业化程度和企业环境违规事件对漂绿与政府补助的关系存在调节效应。此外,本研究还为政策制定提供了启示,建议政府强化对企业环保信息的实质性核查,以防范企业漂绿行为并提升补助配置效率。</jats:p>",
-      "year": null,
+      "authors": [
+        "钱, 明",
+        "关, 雨彤",
+        "白, 家美",
+        "克依木, 沙依旦 •"
+      ],
       "venue": "经济学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文以2012—2021年中国沪深A股上市公司为研究样本,采用文本分析技术分析企业漂绿指标对政府环保补助的内在影响机理。研究发现,企业漂绿行为对政府环保补助的获取具有促进作用,并且该结论在一系列稳健性检验后依然成立。进一步研究发现,地区工业化程度和企业环境违规事件对漂绿与政府补助的关系存在调节效应。此外,本研究还为政策制定提供了启示,建议政府强化对企业环保信息的实质性核查,以防范企业漂绿行为并提升补助配置效率。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 10
     },
     {
-      "rank": 9,
       "doi": "10.1360/csb1985-30-24-1898",
       "title": "海洋体系中稀土元素的富集系数与停留时间的相关性研究",
-      "abstract": "",
-      "year": 1985,
+      "authors": [
+        "柴, 之芳"
+      ],
       "venue": "Chinese Science Bulletin",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 1985,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 11
     },
     {
-      "rank": 10,
       "doi": "10.64216/3080-1516.26.06.082",
       "title": "如何处理好长笛教学中音乐表现与演奏技术的关系",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "当代教育与艺术",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 12
+    },
+    {
+      "doi": "10.70693/fw357",
+      "title": "重症护理中人文关怀干预对患者负性情绪及康复依从性的影响研究",
+      "authors": [
+        "刘瑞环"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 13
     },
     {
-      "rank": 11,
-      "doi": "",
-      "title": "Local Public Goods Provision in the Post-Agricultural Tax Era in Rural China",
+      "doi": "10.67328/bt1694",
+      "title": "重症护理中人文关怀干预对患者负性情绪及康复依从性的影响研究",
+      "authors": [
+        "刘瑞环"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.64216/3104-9672.25.04.021",
+      "title": "公共安全行业关于如何提高数据传输安全的分析与方法研究",
+      "authors": [],
+      "venue": "全球文化探索",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.31219/osf.io/bs5tk",
+      "title": "对幂集公理与拟多项式函数之间关系的一些猜想",
+      "authors": [
+        "YANG, Zheng-Ling"
+      ],
+      "venue": "",
       "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>在作为数学基础的集合论里，幂集公理是一种构造更大结合的具体方法。高等数学里的函数，除了多项式函数、指数函数外，还有拟多项式函数等。这启发我们：完全有可能存在从一个集合出发，构造另一个比“该集合的幂集”更小集合的可能性。连续统假设，很可能会被这样的新集合证伪：既然连续统假设独立于ZFC，完全有可能找出替换幂集公理的许多个新公理。</p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 16
     },
     {
-      "rank": 12,
-      "doi": "",
-      "title": "力学的两种定义及其与物理学的关系",
-      "abstract": "",
-      "year": 1996,
+      "doi": "10.17816/dd60635-39209",
+      "title": "图 2临床任务，数据集与常规临床实践中实施人工智能（AI）解决方案的成功之间的关系。",
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 17
     },
     {
-      "rank": 13,
-      "doi": "",
-      "title": "Auto-focus technology and its application based on image processing",
+      "doi": "10.1360/csb1985-30-15-1193",
+      "title": "用中子活化法研究元素在海洋体系中的富集系数与停留时间的相关性",
+      "authors": [
+        "柴, 之芳"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1985,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.62989/jcssr2025.2.2.17",
+      "title": "日本特摄电影中的虚拟空间与现实空间的互动关系研究",
+      "authors": [
+        "",
+        "宝, 王小"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1360/csb1991-36-18-1404",
+      "title": "论相变矿物的高、低温相空间群类型与其畴结构特征之间的关系",
+      "authors": [
+        "徐, 洪武"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1991,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1360/csb1974-19-2-76",
+      "title": "溶液中络合物逐级稳定常数与配位数之间的S型关系和直线关系",
+      "authors": [
+        "张, 正斌"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1974,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.61654/zzjkwz0138",
+      "title": "基于人文关怀的手术室护理干预对乳腺癌患者负面情绪及应激反应的影响",
+      "authors": [
+        "张, 娟"
+      ],
+      "venue": "健康文摘",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:分析基于人文关怀的手术室护理干预对乳腺癌患者负面情绪及应激反应的影响。方法:此次研究对象为本院在2025年1月至2025年12月期间收治的80例乳腺癌患者。以随机数字表法分为常规组及试验组,每组40例。其中常规组采取常规护理,试验组采取基于人文关怀的手术室护理。对两组负面情绪及应激反应情况进行比较。结果:相比较常规组,试验组SAS评分、SDS评分显低(P&lt;0.05);收缩压、舒张压及心率显低(P&lt;0.05)。结论:基于人文关怀的手术室护理能够缓解乳腺癌患者焦虑、抑郁情绪,减轻其应激反应,此种方法值得推广应用。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.70693/hj0937",
+      "title": "药物不良反应的关联性评价与风险管理体系构建",
+      "authors": [
+        "范婷"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1360/csb2015-60-19-1851",
+      "title": "5 m尺度上夹卷率的变化特征及其与云微物理量之间的关系",
+      "authors": [
+        "刘, 延刚",
+        "程, 穆宁",
+        "陆, 春松"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.17816/dd81617-62551",
+      "title": "图 1线性回归分析：肿瘤大小与rCBF之间的关系",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.67328/bt0310",
+      "title": "药物不良反应的关联性评价与风险管理体系构建",
+      "authors": [
+        "范婷"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.17816/dd81617-62552",
+      "title": "图 2线性回归分析：肿瘤大小与rCBV之间的关系",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1142/g050",
+      "title": "台湾未来发展情境论：二十一世纪两岸关系与中华文明的再出发",
+      "authors": [
+        "黄, 枝连"
+      ],
+      "venue": "",
+      "year": 2000,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.3724/j.issn.1000-0518.1985.1.80",
+      "title": "氟烯的结构-特性关系&amp;mdash;&amp;mdash;Ⅴ.若干取代&amp;alpha;,&amp;beta;,&amp;beta;-三氟苯乙烯和&amp;alpha;,&amp;beta;,&amp;beta;-三氟萘乙烯的合成&amp;mdash;&amp;mdash;它们的19F核磁共振参数与&amp;ldquo;歪电子云&amp;rdquo;概念之间的联系",
+      "authors": [
+        "伍, 正志"
+      ],
+      "venue": "Chinese Journal of Applied Chemistry",
+      "year": 1985,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.37155/2717-5650-0603-20",
+      "title": "人文关怀理念的心理护理对急性心衰患者情绪的影响",
+      "authors": [
+        "谭迎春",
+        "安景慧"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.32629/er.v3i8.3086",
+      "title": "建筑美术教学中整体意识培养之明暗关系的处理",
+      "authors": [
+        "窦, 凤圆",
+        "帕尔哈提, 肉孜阿洪 •",
+        "张, 芳芳"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>建筑学属于一个综合性很强的学科,整体思维意识的培养对建筑学专业的学生来说是非常重要的。但实际上,在学生对知识点及知识间的相互关系还没有理解的基础上,让学生能够轻松运用知识,同时又能主动发挥整体意识,其实是个很难的过程,本文以建筑美术课作为课程研究领域,以建筑美术教学中的明暗关系作为问题点,来探讨建筑美术教学中有关整体意识的培养。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.12677/pm.2018.84048",
+      "title": "A Correspondence between Solutions of a Fractional System and Solutions of a Specific Fractional Equation",
+      "authors": [
+        "何, 其涵"
+      ],
+      "venue": "Pure  Mathematics",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 2,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.62662/llyj0105012",
+      "title": "媒介环境赋能铸牢中华民族共同体意识的三维逻辑：物质性、仪式性与关系性的理论阐释",
+      "authors": [],
+      "venue": "理论研究学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.3724/j.issn.1000-0518.1985.1.8080",
+      "title": "氟烯的结构-特性关系&amp;mdash;&amp;mdash;Ⅴ.若干取代&amp;alpha;,&amp;beta;,&amp;beta;-三氟苯乙烯和&amp;alpha;,&amp;beta;,&amp;beta;-三氟萘乙烯的合成&amp;mdash;&amp;mdash;它们的19F核磁共振参数与&amp;ldquo;歪电子云&amp;rdquo;概念之间的联系",
+      "authors": [
+        "伍, 正志"
+      ],
+      "venue": "Chinese Journal of Applied Chemistry",
+      "year": 1985,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.12677/fin.2013.33005",
+      "title": "A Control Equation between Money Quantity Relations—Empirical Analysis Based on Chinese Data",
+      "authors": [
+        "阎, 可佳"
+      ],
+      "venue": "Finance",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 26,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.67328/bt1878",
+      "title": "基于合理情绪疗法的护理干预在抑郁症患者中的应用及对HAMA、HAMD评分的影响",
+      "authors": [
+        "宋扣兄"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1360/csb1991-36-15-1194",
+      "title": "余代数的有限性之间的关系",
+      "authors": [
+        "梁, 桂"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1991,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.17816/pavlovj79099-45807",
+      "title": "图 3血管内手术组中 vWF 活动与死亡发展之间关系的预测模型中的 ROC 曲线。",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1080/10967494.2013.867762",
+      "title": "伙伴关系特征、网络行为与公共性： 有关可持续发展项目绩效的证据",
+      "authors": [
+        "WALKER, RICHARD M.",
+        "HILLS, PETER"
+      ],
+      "venue": "International Public Management Journal",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 59,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.37155/2972-435x-0101-4",
+      "title": "关于如何提高轻工产品质量安全的措施探讨",
+      "authors": [
+        "邓培旺",
+        "黄新文"
+      ],
+      "venue": "工程施工与管理",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.17816/jowd52877-42623",
+      "title": "图2 模拟子宫内膜异位症病灶中谷胱甘肽过氧化物酶的比活度与其质量的反比关系：log（GPX）是谷胱甘肽过氧化物酶活性的自然对数（每1mg蛋白质微mol/min）； log（MCG）是同质化提取的所有可溶性蛋白质的自然对数",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.2139/ssrn.6663720",
+      "title": "宏观经济政策干预期间社交媒体上的投资者情绪：来自中国A股市场的证据",
+      "authors": [
+        "Lyu, Zhongwang",
+        "Lin, Junshen",
+        "Lai, Sha",
+        "Lyu, leo"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 53,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>在宏观经济政策干预和市场不确定性的背景下，投资者情绪的变化已成为评估金融市场的主要指标。本研究利用中国大规模社交媒体数据，系统地追踪了A股市场投资者在宏观经济政策密集期的情绪轨迹。我们以新浪微博为主要数据源，收集了2024年9月至2025年1月关键政策窗口期内85,770条用户原创评论。通过趋势分析和情绪分析相结合的方法，并利用SnowNLP和潜在狄利克雷分布（LDA）主题模型，我们揭示了政策信号与市场情绪之间的动态关系。研究结果表明，政策公告显著重塑了投资者情绪的结构，政策发布后市场情绪立即出现乐观情绪，但随着政策影响的消化，乐观情绪逐渐趋于缓和或出现分歧。主题演化分析进一步表明，资本流动始终是市场关注的核心，而政策领导力、技术创新和外部冲击等主题在不同阶段的重要性则有所轮换。值得注意的是，政策信号在特定时期会对市场情绪产生放大作用，而持续的监管行动则会导致市场情绪结构日益复杂化和异质化。本研究通过动态捕捉不同时期投资者的情绪概念，表明政策干预可以暂时性地塑造公众的情绪认知框架。政策信息的透明度和有效性在稳定和规范经济市场方面发挥着重要作用。建议相关部门在制定相关政策",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1360/csb1979-24-6-253",
+      "title": "溶液中单核络合物的稳定常数与配位数间的关系",
+      "authors": [
+        "徐, 济德"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1979,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.17816/ptors32591-24080",
+      "title": "图 2。术后肌力与术后观察时间的关系。图中， 上值为Spearman相关系数（ρ），下值为p",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1360/csb1994-39-19-1738",
+      "title": "关于Bent函数与其变元的非线性组合之间的相关性",
+      "authors": [
+        "张, 木想"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1994,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.18356/d92ce34c-zh",
+      "title": "大赦与过渡司法措施之间的关系",
+      "authors": [
+        ""
+      ],
+      "venue": "",
       "year": 2009,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 46
     },
     {
-      "rank": 14,
-      "doi": "",
-      "title": "一名刻苦、勇敢的科学工作者是如何做出惊世成就的",
-      "abstract": "",
-      "year": 2012,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.3799/dqkx.2015.104",
+      "title": "承压井含水层孔隙度与固体骨架和水的体积压缩系数之间的关系",
+      "authors": [
+        "丁, 风和"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Earth Science-Journal of China University of Geosciences",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
     },
     {
-      "rank": 15,
-      "doi": "",
-      "title": "基因表达数据分析中的特征基因提取",
-      "abstract": "",
-      "year": 2008,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1360/csb1983-28-7-446",
+      "title": "关于线性模型中回归系数的最小二乘估计的相合性",
+      "authors": [
+        "何, 仲洛"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Chinese Science Bulletin",
+      "year": 1983,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
     },
     {
-      "rank": 16,
-      "doi": "",
-      "title": "ECFA之后的两岸政治关系走向",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.12677/ds.2023.94166",
+      "title": "Construction of Employer Responsibility System in Data Processing Employment Relationship",
+      "authors": [
+        "曹, 上"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Dispute Settlement",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
     },
     {
-      "rank": 17,
-      "doi": "",
-      "title": "如何与控制欲强的人相处",
+      "doi": "10.64216/3080-1516.26.02.094",
+      "title": "幼儿情绪理解能力与同伴关系质量的相关性研究",
+      "authors": [],
+      "venue": "当代教育与艺术",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2016,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 18,
-      "doi": "",
-      "title": "角点与线段特征提取的关键技术及应用研究",
-      "abstract": "",
-      "year": 2006,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 19,
-      "doi": "",
-      "title": "一种易变山羊草的咖啡因提取物及其提取方法与应用",
-      "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 20,
-      "doi": "",
-      "title": "基于脑电和近红外信号的特征提取方法",
-      "abstract": "",
-      "year": 2017,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 50
     }
   ]
 }

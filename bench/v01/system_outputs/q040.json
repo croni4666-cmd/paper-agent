@@ -1,466 +1,3220 @@
 {
   "query_id": "q040",
   "query": "sugar-sweetened beverage (SSB) consumption health effects obesity Chinese cohort, China bubble tea brand case studies",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 10
+  "topic_bucket": "cross",
+  "source": "user",
+  "generated_at": "2026-07-22T11:30:17",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 151,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 1,
+    "arxiv": 50,
+    "semanticscholar": 3,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1111/obr.13126",
+      "title": "Ultra‐processed foods and the nutrition transition: Global, regional and national trends, food systems transformations and political economy drivers",
+      "authors": [
+        "Phillip Baker",
+        "Priscila Machado",
+        "Thiago M. Santos",
+        "Katherine Sievert",
+        "Kathryn Backholer",
+        "Michalis Hadjikakou",
+        "Cherie Russell",
+        "Oliver Huse",
+        "Colin Bell",
+        "Gyorgy Scrinis",
+        "Anthony Worsley",
+        "Sharon Friel",
+        "Mark Lawrence"
+      ],
+      "venue": "Obesity Reviews",
+      "year": 2020,
+      "cited_by_count": 1144,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/11343/276118",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1111/obr.12040",
+      "title": "Resolved: there is sufficient scientific evidence that decreasing sugar‐sweetened beverage consumption will reduce the prevalence of obesity and obesity‐related diseases",
+      "authors": [
+        "Hu, F. B."
+      ],
+      "venue": "Obesity Reviews",
+      "year": 2013,
+      "cited_by_count": 728,
+      "reference_count": 87,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Summary</jats:title><jats:p>Sugar‐sweetened beverages (<jats:styled-content style=\"fixed-case\">SSB</jats:styled-content>s) are the single largest source of added sugar and the top source of energy intake in the <jats:styled-content style=\"fixed-case\">U.S.</jats:styled-content> diet. In this review, we evaluate whether there is sufficient scientific evidence that decreasing <jats:styled-content style=\"fixed-case\">SSB</jats:styled-content> consumption will reduce the prevalence of obes",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1038/s41574-021-00627-6",
+      "title": "The Role of Sugar-Sweetened Beverages in the Global Epidemics of Obesity and Chronic Diseases",
+      "authors": [
+        "Vasanti S. Malik"
+      ],
+      "venue": "Nature Reviews Endocrinology",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ed31585244ab9dcbf8e742",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1371/journal.pmed.1003015",
+      "title": "An Evaluation of Chile’s Law of Food Labeling and Advertising on Sugar-Sweetened Beverage Purchases from 2015 to 2017: A Before-and-after Study",
+      "authors": [
+        "Lindsey Smith Taillie"
+      ],
+      "venue": "PLOS MEDICINE",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e451ec093d709897c6aeb24",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1161/circulationaha.118.037401",
+      "title": "Long-Term Consumption of Sugar-Sweetened and Artificially Sweetened Beverages and Risk of Mortality in US Adults",
+      "authors": [
+        "Vasanti S Malik"
+      ],
+      "venue": "Circulation",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c90bf44e1cd8e132fb228e8",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1002/14651858.cd012292.pub2",
+      "title": "Environmental Interventions to Reduce the Consumption of Sugar-Sweetened Beverages and Their Effects on Health",
+      "authors": [
+        "Peter von Philipsborn"
+      ],
+      "venue": "The Cochrane database of systematic reviews",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8ec7c69fced0a24b6f20f7",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1111/obr.12868",
+      "title": "Impact of Sugar‐sweetened Beverage Taxes on Purchases and Dietary Intake: Systematic Review and Meta‐analysis",
+      "authors": [
+        "Andrea M Teng"
+      ],
+      "venue": "Obesity reviews  an official journal of the International Association for the Study of Obesity",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8ec7ef9fced0a24b6f3466",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1542/peds.2012-1628",
+      "title": "Dietary Salt Intake, Sugar-Sweetened Beverage Consumption, and Obesity Risk",
+      "authors": [
+        "Grimes, Carley A.",
+        "Riddell, Lynn J.",
+        "Campbell, Karen J.",
+        "Nowson, Caryl A."
+      ],
+      "venue": "Pediatrics",
+      "year": 2013,
+      "cited_by_count": 188,
+      "reference_count": 47,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec><jats:title>OBJECTIVE:</jats:title><jats:p>To determine the association among dietary salt, fluid, and sugar-sweetened beverage (SSB) consumption and weight status in a nationally representative sample of Australian children aged 2 to 16 years.</jats:p></jats:sec><jats:sec><jats:title>METHODS:</jats:title><jats:p>Cross-sectional data from the 2007 Australian National Children’s Nutrition and Physical Activity Survey. Consumption of dietary salt, fluid, and SSB was determined via two 24",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1016/j.jhealeco.2012.10.005",
+      "title": "Implications of a sugar-sweetened beverage (SSB) tax when substitutions to non-beverage items are considered",
+      "authors": [
+        "Finkelstein, Eric A.",
+        "Zhen, Chen",
+        "Bilger, Marcel",
+        "Nonnemaker, James",
+        "Farooqui, Assad M.",
+        "Todd, Jessica E."
+      ],
+      "venue": "Journal of Health Economics",
+      "year": 2013,
+      "cited_by_count": 159,
+      "reference_count": 68,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.2105/ajph.2019.304971",
+      "title": "Sugar-Sweetened Beverage Consumption 3 Years After the Berkeley, California, Sugar-Sweetened Beverage Tax",
+      "authors": [
+        "Lee, Matthew M.",
+        "Falbe, Jennifer",
+        "Schillinger, Dean",
+        "Basu, Sanjay",
+        "McCulloch, Charles E.",
+        "Madsen, Kristine A."
+      ],
+      "venue": "American Journal of Public Health",
+      "year": 2019,
+      "cited_by_count": 138,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> Objectives. To estimate changes in sugar-sweetened beverage (SSB) and water consumption 3 years after an SSB tax in Berkeley, California, relative to unexposed comparison neighborhoods. </jats:p><jats:p> Methods. Data came from repeated annual cross-sectional beverage frequency questionnaires from 2014 to 2017 in demographically diverse Berkeley (n = 1513) and comparison (San Francisco and Oakland; n = 3712) neighborhoods. Pretax consumption (2014) was compared with a weighted average o",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.21468/scipostphys.19.4.113",
+      "title": "Hasse Diagrams for Gapless SPT and SSB Phases with Non-Invertible Symmetries",
+      "authors": [
+        "Lakshya Bhardwaj"
+      ],
+      "venue": "SCIPOST PHYSICS",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e68af113fb2c6cf6f6d817",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.7326/m21-2977",
+      "title": "Association of Sugar-Sweetened, Artificially Sweetened, and Unsweetened Coffee Consumption with All-Cause and Cause-Specific Mortality",
+      "authors": [
+        "Dan Liu"
+      ],
+      "venue": "ANNALS OF INTERNAL MEDICINE",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629745395aee126c0fdfad33",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1001/jama.2023.12618",
+      "title": "Sugar-Sweetened and Artificially Sweetened Beverages and Risk of Liver Cancer and Chronic Liver Disease Mortality.",
+      "authors": [
+        "Longgang Zhao"
+      ],
+      "venue": "JAMA-JOURNAL OF THE AMERICAN MEDICAL ASSOCIATION",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64d32b5b3fda6d7f06263606",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1039/d2ja90005j",
+      "title": "Atomic Spectrometry Update: Review of Advances in the Analysis of Clinical and Biological Materials, Foods and Beverages",
+      "authors": [
+        "Marina Patriarca"
+      ],
+      "venue": "JOURNAL OF ANALYTICAL ATOMIC SPECTROMETRY",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc67e27e8bf8c1045b928a4",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1016/j.trac.2022.116670",
+      "title": "Microplastics and Nanoplastics in Food, Water, and Beverages; Part I. Occurrence",
+      "authors": [
+        "Clementina Vitali"
+      ],
+      "venue": "TRAC-TRENDS IN ANALYTICAL CHEMISTRY",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e28515aee126c0f831cf9",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1001/jamanetworkopen.2022.15276",
+      "title": "Outcomes Following Taxation of Sugar-Sweetened Beverages A Systematic Review and Meta-analysis",
+      "authors": [
+        "Tatiana Andreyeva"
+      ],
+      "venue": "JAMA Network Open",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629897465aee126c0faf8e2c",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1007/s13197-021-05054-z",
+      "title": "Sources and Relative Stabilities of Acylated and Nonacylated Anthocyanins in Beverage Systems",
+      "authors": [
+        "Vidana Gamage, Gayan Chandrajith"
+      ],
+      "venue": "Journal of Food Science and Technology",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619ba6941c45e57ce99ef153",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1001/jamanetworkopen.2022.2092",
+      "title": "Association of Low- and No-Calorie Sweetened Beverages As a Replacement for Sugar-Sweetened Beverages with Body Weight and Cardiometabolic Risk A Systematic Review and Meta-analysis",
+      "authors": [
+        "Nema D. McGlynn"
+      ],
+      "venue": "JAMA NETWORK OPEN",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62306f1c5aee126c0fdd131a",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1001/jamapediatrics.2022.1037",
+      "title": "Association of Food and Nonalcoholic Beverage Marketing with Children and Adolescents’ Eating Behaviors and Health",
+      "authors": [
+        "Emma Boyland"
+      ],
+      "venue": "JAMA pediatrics",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627107f45aee126c0ff4e3ad",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.3390/polym14122366",
+      "title": "Polyethylene Terephthalate (PET) Bottle-to-Bottle Recycling for the Beverage Industry: A Review.",
+      "authors": [
+        "Patnarin Benyathiar"
+      ],
+      "venue": "POLYMERS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62b6e6f65aee126c0fa704cb",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1093/advances/nmaa084",
+      "title": "Intake of Sugar-Sweetened and Low-Calorie Sweetened Beverages and Risk of Cardiovascular Disease: A Meta-Analysis and Systematic Review",
+      "authors": [
+        "Jiawei Yin"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f197c629fced0a24b3bd43c",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1146/annurev-publhealth-090419-103005",
+      "title": "Sugar-Sweetened Beverage Reduction Policies: Progress and Promise.",
+      "authors": [
+        "James Krieger"
+      ],
+      "venue": "Annual Review of Public Health",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc767aed4150a363c1f5476",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1371/journal.pmed.1003412",
+      "title": "Sugar-sweetened Beverage Taxes: Lessons to Date and the Future of Taxation",
+      "authors": [
+        "Barry M. Popkin"
+      ],
+      "venue": "PLOS MEDICINE",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff98664d4150a363cf4b56b",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1053/j.gastro.2021.03.028",
+      "title": "Simple Sugar and Sugar-Sweetened Beverage Intake During Adolescence and Risk of Colorectal Cancer Precursors",
+      "authors": [
+        "Hee-Kyung Joh"
+      ],
+      "venue": "GASTROENTEROLOGY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605b181ae4510cd7c8c7ca81",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1136/gutjnl-2020-323450",
+      "title": "Sugar-sweetened Beverage Intake in Adulthood and Adolescence and Risk of Early-Onset Colorectal Cancer among Women",
+      "authors": [
+        "Jinhee Hur"
+      ],
+      "venue": "Gut",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "609baa65e4510cd7c877faaa",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1093/eurpub/ckaa147",
+      "title": "Effect of Sugar-Sweetened Beverages on Oral Health: a Systematic Review and Meta-Analysis",
+      "authors": [
+        "Maria Josefina Valenzuela"
+      ],
+      "venue": "European journal of public health",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619baf361c45e57ce9f7541a",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1016/j.tifs.2021.02.040",
+      "title": "Pea Protein Ingredients: A Mainstream Ingredient to (re)formulate Innovative Foods and Beverages.",
+      "authors": [
+        "Fatma Boukid"
+      ],
+      "venue": "TRENDS IN FOOD SCIENCE & TECHNOLOGY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605aa41fe4510cd7c86e2cb5",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.3390/molecules26165026",
+      "title": "Chemical Constitution and Antimicrobial Activity of Kombucha Fermented Beverage.",
+      "authors": [
+        "Abdul-Raouf Al-Mohammadi"
+      ],
+      "venue": "MOLECULES",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6093bf3ee4510cd7c8ec0e50",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1007/s11947-021-02678-z",
+      "title": "Cellulases, Hemicellulases, and Pectinases: Applications in the Food and Beverage Industry",
+      "authors": [
+        "de Souza  Thaiza S. P."
+      ],
+      "venue": "Food and Bioprocess Technology",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae981c45e57ce9f0c4cb",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1596/33969",
+      "title": "Taxes on Sugar-Sweetened Beverages",
+      "authors": [
+        "NULL AUTHOR_ID"
+      ],
+      "venue": "World Bank, Washington, DC eBooks",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c75d245244ab9dcb352d28",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1016/j.ijfoodmicro.2020.108778",
+      "title": "Metabolome-microbiome Signatures in the Fermented Beverage, Kombucha",
+      "authors": [
+        "Silvia Alejandra Villarreal-Soto"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF FOOD MICROBIOLOGY",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f2542da9fced0a24b8d8701",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1001/jamainternmed.2019.4434",
+      "title": "Association of a Workplace Sales Ban on Sugar-Sweetened Beverages with Employee Consumption of Sugar-Sweetened Beverages and Health.",
+      "authors": [
+        "Elissa S. Epel"
+      ],
+      "venue": "JAMA Internal Medicine",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5db812ea47c8f76646196b0a",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1257/jep.33.3.202",
+      "title": "Should We Tax Sugar-Sweetened Beverages? an Overview of Theory and Evidence",
+      "authors": [
+        "Hunt Allcott"
+      ],
+      "venue": "JOURNAL OF ECONOMIC PERSPECTIVES",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc69fc4e8bf8c1045dbd26b",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1016/j.foodchem.2018.10.091",
+      "title": "Authenticity and Traceability in Beverages.",
+      "authors": [
+        "Senem Kamiloglu"
+      ],
+      "venue": "Food chemistry",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f91b2da562944aca9f77d",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1186/s12966-019-0776-7",
+      "title": "Assessing the Impact of the Barbados Sugar-Sweetened Beverage Tax on Beverage Sales: an Observational Study",
+      "authors": [
+        "Miriam Alvarado"
+      ],
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c5aede3e1cd8e47d3cdb504",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
       "doi": "10.1016/j.healthpol.2012.05.011",
       "title": "International application of sugar-sweetened beverage (SSB) taxation in obesity reduction: Factors that may influence policy effectiveness in country-specific contexts",
-      "abstract": "",
-      "year": 2012,
+      "authors": [
+        "Jou, Judy",
+        "Techakehakij, Win"
+      ],
       "venue": "Health Policy",
-      "citation_count": 85,
-      "engines_found_in": [
+      "year": 2012,
+      "cited_by_count": 85,
+      "reference_count": 60,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 36
     },
     {
-      "rank": 2,
+      "doi": "10.1111/ijpo.12194",
+      "title": "Sweetened beverage intake in association to energy and sugar consumption and cardiometabolic markers in children",
+      "authors": [
+        "Seferidi, P.",
+        "Millett, C.",
+        "Laverty, A. A."
+      ],
+      "venue": "Pediatric Obesity",
+      "year": 2018,
+      "cited_by_count": 47,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Summary</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Artificially sweetened beverages (ASBs) are promoted as healthy alternatives to sugar‐sweetened beverages (SSBs) in order to reduce sugar intake, but their effects on weight control and glycaemia have been debated. This study examines associations of SSBs and ASBs with energy and sugar intake and cardiometabolic measures.</jats:p></jats:sec><jats:sec><jats:title>Methods</jats:title><jats:p>One thousand six hundr",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1017/s136898001300356x",
+      "title": "Sugar-sweetened carbonated beverage consumption and childhood/adolescent obesity: a case–control study",
+      "authors": [
+        "Martin-Calvo, Nerea",
+        "Martínez-González, Miguel-Angel",
+        "Bes-Rastrollo, Maira",
+        "Gea, Alfredo",
+        "Ochoa, Ma Carmen",
+        "Marti, Amelia"
+      ],
+      "venue": "Public Health Nutrition",
+      "year": 2014,
+      "cited_by_count": 38,
+      "reference_count": 44,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec id=\"S136898001300356X_abs1\" sec-type=\"general\"><jats:title>Objective</jats:title><jats:p>To assess the association between the consumption of sugar-sweetened carbonated beverages (SSCB) and obesity in children and adolescents from Navarra (Spain).</jats:p></jats:sec><jats:sec id=\"S136898001300356X_abs2\" sec-type=\"general\"><jats:title>Design</jats:title><jats:p>We used a matched case–control study design. The exposure, SSCB consumption (1 serving: 200 ml",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.3390/nu8070395",
+      "title": "Modeling the Effect of Replacing Sugar-Sweetened Beverage Consumption with Water on Energy Intake, HBI Score, and Obesity Prevalence",
+      "authors": [
+        "Duffey, Kiyah",
+        "Poti, Jennifer"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 34,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Sugar-sweetened beverages (SSB) contribute to excessive weight gain through added energy intake. Replacing SSB with water is one strategy that has shown promise in helping lower excessive energy intake. Using nationally representative data from US adults (n = 19,718) from NHANES 2007–2012 we examine the impact of replacing SSB with water on Healthy Beverage Index (HBI) scores and obesity prevalence. Replacing an 8-ounce serving of SSB with water lowered the percent of energy from beverag",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1111/ijpo.13030",
+      "title": "Effects of Pictorial Warnings on Parents' Purchases and Perceptions of Sugar‐sweetened Beverage Categories",
+      "authors": [
+        "Aline D'Angelo Campos"
+      ],
+      "venue": "Pediatric obesity",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6421742490e50fcafd974a59",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.23912/978-1-915097-25-5-5119",
+      "title": "Food and Beverage Management",
+      "authors": [
+        "John Cousins"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8498ddabfae2eeec9a5b0",
+      "matched_phrase": "beverage",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.48550/arxiv.2301.07899",
+      "title": "Non-Invertible Duality Transformation Between SPT and SSB Phases",
+      "authors": [
+        "Linhao Li"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63ca069890e50fcafd683088",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.1109/jstars.2023.3262291",
+      "title": "SSB-Based Signal Processing for Passive Radar Using a 5G Network",
+      "authors": [
+        "Karol Abratkiewicz"
+      ],
+      "venue": "IEEE JOURNAL OF SELECTED TOPICS IN APPLIED EARTH OBSERVATIONS AND REMOTE SENSING",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6435f4c690e50fcafda4de10",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1093/nar/gkad263",
+      "title": "RecA and SSB Genome-Wide Distribution in Ssdna Gaps and Ends in Escherichia Coli.",
+      "authors": [
+        "Phuong Pham"
+      ],
+      "venue": "NUCLEIC ACIDS RESEARCH",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6441194bed329dcc6b6d0b84",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1002/art.42122",
+      "title": "Complement C4 Copy Number Variation is Linked to SSA/Ro and SSB/La Autoantibodies in Systemic Inflammatory Autoimmune Diseases",
+      "authors": [
+        "Christian Lundtoft"
+      ],
+      "venue": "Arthritis & rheumatology (Hoboken, NJ)",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623aff1e5aee126c0fb5939b",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1093/nar/gkaa1267",
+      "title": "Multiprotein E. Coli SSB–ssDNA Complex Shows Both Stable Binding and Rapid Dissociation Due to Interprotein Interactions",
+      "authors": [
+        "M. Nabuan Naufer"
+      ],
+      "venue": "NUCLEIC ACIDS RESEARCH",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60001db5d4150a363c82633c",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1109/jlt.2021.3058161",
+      "title": "Generation of Broadband Optical SSB Signal Using Dual Modulation of DML and EAM",
+      "authors": [
+        "Tianwai Bo"
+      ],
+      "venue": "JOURNAL OF LIGHTWAVE TECHNOLOGY",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605aa01ce4510cd7c86882ad",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1002/hec.4267",
+      "title": "The Impact of the Oakland SSB Tax on Prices and Volume Sold: A Study of Intended and Unintended Consequences.",
+      "authors": [
+        "Pierre Thomas Leger"
+      ],
+      "venue": "Health Economics",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "608e790be4510cd7c85f66cb",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1002/pro.4140",
+      "title": "The Mechanism of Action of the SSB Interactome Reveals It is the First OB ‐fold Family of Genome Guardians in Prokaryotes",
+      "authors": [
+        "Piero R Bianco"
+      ],
+      "venue": "Protein science  a publication of the Protein Society",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60bc9fd4e4510cd7c88a02ab",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1080/23311975.2021.1929033",
+      "title": "The Influence of the SSB’s Characteristics Toward Sharia Compliance of Islamic Banks",
+      "authors": [
+        "Rifqi Muhammad"
+      ],
+      "venue": "Cogent Business & Management",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60e2dd7e5244ab9dcbfd3bb6",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "",
+      "title": "Taxes on Sugar-Sweetened Beverages",
+      "authors": [
+        "Libby Hattersley"
+      ],
+      "venue": "World Bank Publications - Reports",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6576d0ee939a5f4082daed09",
+      "matched_phrase": "sugar-sweetened",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1016/j.bpj.2019.09.047",
+      "title": "Regulation of Nearest-Neighbor Cooperative Binding of E. Coli SSB Protein to DNA",
+      "authors": [
+        "Alexander G. Kozlov"
+      ],
+      "venue": "Biophysical Journal",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5dca894fdf1a9c0c41545a4b",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1364/ol.383029",
+      "title": "Asymmetric Direct Detection of Twin-Ssb Signals",
+      "authors": [
+        "Xueyang Li"
+      ],
+      "venue": "Optics letters",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e47c1a893d709897c3a673d",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1038/s41467-020-15313-w",
+      "title": "The Ribosome-Associated Complex RAC Serves in a Relay That Directs Nascent Chains to Ssb",
+      "authors": [
+        "Ying Zhang"
+      ],
+      "venue": "Nature Communications",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e77395e93d709897c4a7908",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.1093/ajcn/nqaa342",
+      "title": "Sugar-sweetened beverage (SSB) consumption is associated with lower quality of the non-SSB diet in US adolescents and young adults",
+      "authors": [
+        "Doherty, Alex M",
+        "Lacko, Allison M",
+        "Popkin, Barry M"
+      ],
+      "venue": "The American Journal of Clinical Nutrition",
+      "year": 2021,
+      "cited_by_count": 29,
+      "reference_count": 51,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.1007/s13679-013-0065-8",
+      "title": "Reducing Sugar-Sweetened Beverage Consumption: Evidence, Policies, and Economics",
+      "authors": [
+        "Hsiao, Amber",
+        "Wang, Y. Claire"
+      ],
+      "venue": "Current Obesity Reports",
+      "year": 2013,
+      "cited_by_count": 27,
+      "reference_count": 105,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1016/j.chieco.2022.101798",
+      "title": "Will the consumption tax on sugar-sweetened beverages help promote healthy beverage consumption? Evidence from urban China",
+      "authors": [
+        "Zhai, Tianchang",
+        "Li, Lei",
+        "Wang, Jingjing",
+        "Si, Wei"
+      ],
+      "venue": "China Economic Review",
+      "year": 2022,
+      "cited_by_count": 27,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.3390/nu12113294",
+      "title": "Changes in Population-Level Consumption of Taxed and Non-Taxed Sugar-Sweetened Beverages (SSB) after Implementation of SSB Excise Tax in Thailand: A Prospective Cohort Study",
+      "authors": [
+        "Phulkerd, Sirinya",
+        "Thongcharoenchupong, Natjera",
+        "Chamratrithirong, Aphichat",
+        "Soottipong Gray, Rossarin",
+        "Prasertsom, Piyada"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 26,
+      "reference_count": 36,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: Thailand has implemented a sugar-sweetened beverage (SSB) excise tax since September 2017, but questions remain about changes in individual-level SSB consumption after tax implementation. This study aimed to analyze the change in taxed and non-taxed SSB consumption in the Thai population. Method: This cohort study was carried out in 2018 and 2019. A total of 5594 persons who participated in both years were included in the analysis. Descriptive and t-test analyses were carried",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.1016/j.appet.2021.105663",
+      "title": "Associations of sugar-sweetened beverage knowledge, self-efficacy, and perceived benefits and barriers with sugar-sweetened beverage consumption in adolescents: A structural equation modeling approach",
+      "authors": [
+        "Wang, Chia-Wen",
+        "Chen, Duan-Rung"
+      ],
+      "venue": "Appetite",
+      "year": 2022,
+      "cited_by_count": 25,
+      "reference_count": 47,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1080/10410236.2016.1220041",
+      "title": "Development and Evaluation of the Sugar-Sweetened Beverages Media Literacy (SSB-ML) Scale and Its Relationship With SSB Consumption",
+      "authors": [
+        "Chen, Yvonnes",
+        "Porter, Kathleen J.",
+        "Estabrooks, Paul A.",
+        "Zoellner, Jamie"
+      ],
+      "venue": "Health Communication",
+      "year": 2017,
+      "cited_by_count": 21,
+      "reference_count": 37,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1016/j.numecd.2022.10.016",
+      "arxiv_id": "",
+      "title": "Habitual intakes of sugar-sweetened beverages associated with gut microbiota-related metabolites and metabolic health outcomes in young Chinese adults.",
+      "authors": [
+        "Tao Yan",
+        "Lin Shi",
+        "Kun Xu",
+        "Jinyu Bai",
+        "Ruixue Wen",
+        "Xia Liao",
+        "Xiaoshuang Dai",
+        "Qian Wu",
+        "L. Zeng",
+        "Wen Peng",
+        "Youfa Wang",
+        "Hong Yan",
+        "S. Dang",
+        "Xin Liu"
+      ],
+      "venue": "NMCD. Nutrition Metabolism and Cardiovascular Diseases",
+      "year": 2022,
+      "cited_by_count": 17,
+      "influential_cite_count": 1,
+      "reference_count": 0,
+      "tldr": "The associations between habitual intakes of SSBs and several metabolic markers relevant to noncommunicable diseases are demonstrated, and the critical involvement of gut microbiota-related metabolites in mediating such associations are highlighted.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The associations between habitual intakes of SSBs and several metabolic markers relevant to noncommunicable diseases are demonstrated, and the critical involvement of gut microbiota-related metabolites in mediating such associations are highlighted.",
+      "rank": 61
+    },
+    {
+      "doi": "10.1111/ijpo.12284",
+      "title": "Exposure to liquid sweetness in early childhood: artificially‐sweetened and sugar‐sweetened beverage consumption at 4–5 years and risk of overweight and obesity at 7–8 years",
+      "authors": [
+        "Macintyre, A. K.",
+        "Marryat, L.",
+        "Chambers, S."
+      ],
+      "venue": "Pediatric Obesity",
+      "year": 2018,
+      "cited_by_count": 12,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Summary</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>A significant gap exists in longitudinal evidence on early exposure to artificially sweetened beverages (ASBs) and weight outcomes for paediatric populations.</jats:p></jats:sec><jats:sec><jats:title>Objective</jats:title><jats:p>The objective of this study is to examine the relationship between ASB/sugar‐sweetened beverage (SSB) consumption at 4–5 years and risk of overweight and obesity at 7–8 years.</jats:p><",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1186/s12889-023-15987-z",
+      "title": "Association between sugar-sweetened beverage consumption frequency and muscle strength: results from a sample of Chinese adolescents",
+      "authors": [
+        "Zhang, Yunjie",
+        "Xu, Pan",
+        "Song, Yongjing",
+        "Ma, Nan",
+        "Lu, Jinkui"
+      ],
+      "venue": "BMC Public Health",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 50,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec>\n                <jats:title>Background</jats:title>\n                <jats:p>Although sugar-sweetened beverage consumption has become an important and widespread concern, there are few studies on the association between sugar-sweetened beverage consumption frequency and muscle strength in Chinese adolescents. The objective of this study was to analyze the association between sugar-sweetened beverage consumption frequency and muscle strength in Chinese a",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
       "doi": "10.1016/j.healthpol.2024.105076",
       "title": "Economic Evaluations of Obesity-Targeted Sugar-Sweetened Beverage (SSB) Taxes–A Review to Identify Methodological Issues",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "Thiboonboon, Kittiphong",
+        "Lourenco, Richard De Abreu",
+        "Cronin, Paula",
+        "Khoo, Terence",
+        "Goodall, Stephen"
+      ],
       "venue": "Health Policy",
-      "citation_count": 7,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 7,
+      "reference_count": 85,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 64
     },
     {
-      "rank": 3,
       "doi": "10.1186/s12889-023-15828-z",
       "title": "Sugar-sweetened beverage consumption among pregnant women attending general and teaching hospitals in Ibadan, Nigeria",
-      "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Sugar-sweetened beverages (SSBs) have become a global health concern because of their adverse health effects and their association with the obesity pandemic. It has not received much attention in sub-Saharan Africa, including Nigeria, especially among pregnant women. The pattern, frequency and factors associated with SSBs among pregnant women in Ibadan, Nigeria, were investigated.</jats:p></jats:sec><jats:sec><",
-      "year": null,
+      "authors": [
+        "Adeoye, Ikeola"
+      ],
       "venue": "BMC Public Health",
-      "citation_count": 6,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 76,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background</jats:title><jats:p>Sugar-sweetened beverages (SSBs) have become a global health concern because of their adverse health effects and their association with the obesity pandemic. It has not received much attention in sub-Saharan Africa, including Nigeria, especially among pregnant women. The pattern, frequency and factors associated with SSBs among pregnant women in Ibadan, Nigeria, were investigated.</jats:p></jats:sec><jats:sec><",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 65
     },
     {
-      "rank": 4,
+      "doi": "10.3390/children9071008",
+      "title": "Association between Smoking and Sugar-Sweetened Beverage Consumption, Tooth Brushing among Adolescents in China",
+      "authors": [
+        "Zhu, Haihua",
+        "Zhou, Huan",
+        "Qin, Qin",
+        "Zhang, Weifang"
+      ],
+      "venue": "Children",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 61,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The study aimed to investigate the relationship between smoking, Sugar-Sweetened Beverage (SSB) consumption and tooth brushing among adolescents in China. A valid sample of 6084 middle school students from the Zhejiang province was included. Participants were questioned about smoking status, SSB consumption, tooth brushing, and oral health-related quality of life (OHRQoL). Among the participants, smoking prevalence was 1.9% and nearly half of the students consumed SSBs. The demographic f",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.3390/ijms231810917",
+      "title": "Regulation of Ssb Gene Expression in Escherichia Coli",
+      "authors": [
+        "Isidoro Feliciello"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "632edfae90e50fcafdb2060c",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.7759/cureus.26908",
+      "title": "The Impacts of Sugar-Sweetened Beverages (SSB) on Cardiovascular Health",
+      "authors": [
+        "Dylan Pietrantoni"
+      ],
+      "venue": "CUREUS JOURNAL OF MEDICAL SCIENCE",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "667a11dca925a558d5ba8938",
+      "matched_phrase": "(SSB)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 68
+    },
+    {
       "doi": "10.1080/10410236.2024.2440534",
       "title": "Does Character–Audience Matching Increase the Persuasive Impact of Anti-Sugar-Sweetened-Beverage (SSB) Consumption Messages?",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "Li, Yingke",
+        "Dillard, James",
+        "Shen, Lijiang"
+      ],
       "venue": "Health Communication",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 63,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 69
     },
     {
-      "rank": 5,
+      "doi": "10.4094/chnr.2023.057",
+      "title": "Combined effects of sugar-sweetened beverage consumption, screen-based sedentary behavior, and sleep duration on South Korean adolescent obesity: a cross-sectional study",
+      "authors": [
+        "Ra, Jin Suk",
+        "Huyen, Do Thi Thu"
+      ],
+      "venue": "Child Health Nursing Research",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 38,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Purpose: This study examined the combined effects of sugar-sweetened beverage (SSB) consumption, screen-based sedentary behaviors, and sleep duration on adolescent obesity.Methods: It followed a cross-sectional study design and conducted secondary analysis on data from 20,497 high school students who participated in the 17th (2021) Korea Youth Risk Behavior Web-based Survey. This study underwent logistic regression analysis in complex sampling analysis.Results: The combinations of low an",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.20473/amnt.v7i2.2023.185-191",
+      "title": "Perilaku Mahasiswa Mengonsumsi Sugar Sweetened Beverage (SSB) Selama Pandemi COVID-19",
+      "authors": [
+        "Elkarima, Edna",
+        "Abihail, Chrysoprase Thasya",
+        "Priambudi, Dicky Andhyka",
+        "Mahmudiono, Trias",
+        "Megatsari, Hario",
+        "Indriani, Diah",
+        "Pratama, Gunawan Yoga"
+      ],
+      "venue": "Amerta Nutrition",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Latar Belakang: Perkembangan industri 4.0 memberikan kemudahan untuk mengakses segala hal salah satunya adalah makanan dan minuman. Aplikasi pesan antar makanan secara daring merupakan platform yang sering digunakan saat ini pada kalangan mahasiswa. Pandemi COVID-19 menyebabkan perubahan perilaku pembelian melalui jasa secara online order terutama dengan adanya kebijakan pembatasan aktivitas masyarakat. Minuman kekinian seperti boba, beberapa jenis teh, dan kopi merupakan minuman yang se",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 71
+    },
+    {
       "doi": "10.1016/j.orcp.2011.08.108",
       "title": "Sugar-sweetened beverage consumption and risk of obesity in Australian children: Could dietary salt be contributing to sugar-sweetened beverage consumption?",
-      "abstract": "",
-      "year": 2011,
+      "authors": [
+        "Grimes, C.A.",
+        "Riddell, L.J.",
+        "Campbell, K.J.",
+        "Nowson, C.A."
+      ],
       "venue": "Obesity Research &amp; Clinical Practice",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 72
     },
     {
-      "rank": 6,
+      "doi": "10.37256/fse.5120243547",
+      "title": "Prospective Health Outcomes of Sugar-Sweetened Beverage Consumption Patterns Associated with Sociodemographic and Ethnic Factors among Chinese Adults",
+      "authors": [
+        "Halawa, Abdelhadi"
+      ],
+      "venue": "Food Science and Engineering",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: The consumption rate of artificially sweetened beverages, 100% fruit juices, and soft drink products has been proliferating since the 1980s among the Chinese population. Sugar-sweetened beverages (SSBs) prevalence and high intake of SSBs are associated with several noncommunicable chronic diseases (NCDs). This trend presents a serious public health threat to the Chinese population. Purpose: The present cross-sectional study examined the association between added sugar-sweeten",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.1622/1059-8405(2008)024[0003:trosbc]2.0.co;2",
+      "title": "The Role of Sugar-Sweetened Beverage Consumption in Adolescent Obesity: A Review of the Literature",
+      "authors": [
+        "Harrington, Susan"
+      ],
+      "venue": "The Journal of School Nursing",
+      "year": 2008,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 74
+    },
+    {
       "doi": "10.5353/th_b5320304",
       "title": "A systematic review of the impact of sugar-sweetened beverage consumption on children and adolescent obesity",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Fang, Xingzhi"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dissertation"
+      "rank": 75
     },
     {
-      "rank": 7,
       "doi": "10.2174/0115734013391479250811112757",
       "title": "Sweet Taste Preference, Sugar-Sweetened Beverage (SSB) Consumption, and Obesity in Elementary School Children",
-      "abstract": "<jats:sec>\n                    <jats:title>Introduction:</jats:title>\n                    <jats:p>Childhood obesity results from an imbalance between energy intake and\nexpenditure, often exacerbated by high consumption of energy-dense foods and sugary beverages.\nThis study aimed to examine the relationship between sweet taste preference, sugar-sweetened\nbeverage (SSB) consumption, and obesity among elementary school children in Indonesia, particularly\nwithin the structured environment of a full-",
-      "year": 2025,
+      "authors": [
+        "Putri, Sheila Amara",
+        "Bahasuan, Yasmin Halim",
+        "Farapti, Farapti",
+        "Sumarmi, Sri",
+        "Sundjaya, Tonny"
+      ],
       "venue": "Current Nutrition &amp; Food Science",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 51,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec>\n                    <jats:title>Introduction:</jats:title>\n                    <jats:p>Childhood obesity results from an imbalance between energy intake and\nexpenditure, often exacerbated by high consumption of energy-dense foods and sugary beverages.\nThis study aimed to examine the relationship between sweet taste preference, sugar-sweetened\nbeverage (SSB) consumption, and obesity among elementary school children in Indonesia, particularly\nwithin the structured environment of a full-",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 76
     },
     {
-      "rank": 8,
-      "doi": "10.1016/j.orcp.2010.09.118",
-      "title": "Sugar sweetened beverage consumption in Australian children",
-      "abstract": "",
-      "year": 2010,
-      "venue": "Obesity Research &amp; Clinical Practice",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 9,
       "doi": "10.31525/ct1-nct04025060",
       "title": "Reducing Sugar-sweetened Beverage Consumption Among Children",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        ""
+      ],
       "venue": "Case Medical Research",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 77
     },
     {
-      "rank": 10,
+      "doi": "10.1016/j.orcp.2010.09.118",
+      "title": "Sugar sweetened beverage consumption in Australian children",
+      "authors": [
+        "Clifton, Peter"
+      ],
+      "venue": "Obesity Research &amp; Clinical Practice",
+      "year": 2010,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
       "doi": "10.1542/peds.2012-1628d",
       "title": "Dietary Salt Intake, Sugar-Sweetened Beverage Consumption, and Obesity Risk",
-      "abstract": "",
-      "year": 2013,
+      "authors": [],
       "venue": "PEDIATRICS",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 79
+    },
+    {
+      "doi": "10.2139/ssrn.5584566",
+      "title": "Behavioural Factors Drive Sugar-Sweetened Beverage Consumption from Tea and Coffee Retail Chains Despite High Awareness",
+      "authors": [
+        "Gurcharan Singh, Joshica",
+        "Say, Yee-How"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "arXiv:2404.09960v1",
-      "title": "Pseudo P-values for Assessing Covariate Balance in a Finite Study Population with Application to the California Sugar Sweetened Beverage Tax Study",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 80
     },
     {
-      "rank": 12,
-      "doi": "10.1088/1475-7516/2021/01/058",
-      "title": "Bubble wall velocity: heavy physics effects",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.1016/j.jada.2011.06.393",
+      "title": "Sugar-Sweetened Beverage Consumption and Risk of Obesity in Australian Children: Could Dietary Salt Be Contributing to Sugar-Sweetened Beverage Consumption?",
+      "authors": [
+        "Grimes, C.A.",
+        "Riddell, L.J.",
+        "Campbell, K.J.",
+        "Nowson, C.A."
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "arXiv:2606.20868v1",
-      "title": "Can LLMs Reason About Brand Ownership? An Empirical Study of Domain Attribution Intelligence",
+      "venue": "Journal of the American Dietetic Association",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 81
     },
     {
-      "rank": 14,
-      "doi": "arXiv:1710.07763v1",
-      "title": "Modeling the Annual Growth Rate of Electricity Consumption of China in the 21st Century: Trends and Prediction",
+      "doi": "10.58837/chula.the.2018.283",
+      "title": "System dynamics analysis of sugar-sweetened beverage taxing effect on sugar consumption, dental health service utilization and oral health for Thai adults and elderly",
+      "authors": [
+        "",
+        "Urwannachotima, Nipaporn"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:p>Dental caries is a major oral health problem, particularly among developing countries. Almost half of Thai adults and elderly have at least one untreated dental caries. Dental caries can result in debilitating pain that affects work productivity and even the performance of daily activities. The objectives of this study are to develop system dynamics model addressing the relationship of dental caries, sugar consumption and dental health service utilization of Thai population aged 15 and o",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1016/j.orcp.2013.12.721",
+      "title": "Using habit theory to inform public health initiatives targeting adolescent sugar-sweetened beverage consumption",
+      "authors": [
+        "Tull, Fraser L.",
+        "Peeters, Anna",
+        "Backholer, Kathryn"
+      ],
+      "venue": "Obesity Research &amp; Clinical Practice",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.1093/eurpub/ckx189.255",
+      "title": "Sugar-sweetened beverage and artificially sweetened beverage consumption from childhood to adulthood",
+      "authors": [
+        "Vik, FN",
+        "Stea, TH",
+        "Klepp, KI",
+        "Bere, E",
+        "Bolt-Evensen, K"
+      ],
+      "venue": "European Journal of Public Health",
       "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 84
     },
     {
-      "rank": 15,
-      "doi": "10.1080/23288604.2024.2387138",
-      "title": "The Digital Transformation in Health: How AI Can Improve the Performance of Health Systems",
+      "doi": "10.47895/amp.vi0.10870",
+      "title": "Association between Health Literacy and Sugar-sweetened Beverage Consumption among Filipinos",
+      "authors": [],
+      "venue": "Acta Medica Philippina",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 85
     },
     {
-      "rank": 16,
-      "doi": "arXiv:2307.11211v1",
-      "title": "The Effect of Epidemiological Cohort Creation on the Machine Learning Prediction of Homelessness and Police Interaction Outcomes Using Administrative Health Care Data",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.2139/ssrn.5662732",
+      "title": "Effects of Sugar-Sweetened Beverage Taxes and Added Sugar Labeling",
+      "authors": [
+        "Kim, Dahye"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
     },
     {
-      "rank": 17,
-      "doi": "10.1515/fhep-2017-0031",
-      "title": "Short-Run Health Consequences of Retirement and Pension Benefits: Evidence from China",
-      "abstract": "",
+      "doi": "10.3390/nu18050718",
+      "title": "Sugar-Sweetened Beverage (SSB) Intake Is Associated with Non-SSB Diet Quality in Swiss Adults",
+      "authors": [
+        "Abraham, Lukas",
+        "Suter, Flurina",
+        "Pestoni, Giulia",
+        "Rohrmann, Sabine"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 60,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background/Objectives: More than half of Swiss adults exceed the World Health Organization’s recommended limit for free sugar intake, with sugar-sweetened beverage (SSB) as a major contributor. SSB intake may be associated with other dietary risk factors, but little is known about diet quality excluding SSB intake. Therefore, the objective of this study was to investigate the association of SSB intake with the non-SSB diet quality in Swiss adults. Methods: Data from the cross-sectional, ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1096/fasebj.27.1_supplement.232.2",
+      "title": "Predictors of Sugar‐Sweetened Beverage (SSB) Consumption Classification among Urban Low Income Pre‐School Children",
+      "authors": [
+        "Glenn, David Robert",
+        "Lora, Karina",
+        "Wakefield, Dorothy"
+      ],
+      "venue": "The FASEB Journal",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study determined predictors of child classification SSBs (flavored milk, fluid and powdered juice drinks, iced tea, energy drinks and soda) consumption by using inductive methods to predict behavior. Study included 462 low‐income caregivers of 3–5 y. old children. Two‐third of children consumed SSBs. Independent variables (IV) included demographics, anthropometrics, food security assessment, a feeding practices questionnaire, and an Information‐Motivation‐Behavioral Skills (IMB) –ba",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1161/circ.141.suppl_1.p217",
+      "title": "Abstract P217: Neighborhood and Individual Characteristics Associated With Sugar-sweetened Beverage Consumption Among Overweight and Obese Adults in the Portal Obesity Cohort",
+      "authors": [
+        "Sidell, Margo",
+        "Hedderson, Monique",
+        "Horberg, Michael",
+        "Young, Deborah R"
+      ],
+      "venue": "Circulation",
       "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>A diet high in sugar sweetened beverages (SSB), which includes soda and beverages with added sugar, has been shown to be associated with adverse health outcomes. National data indicate that one-half of adults and two-thirds of youth consume at least one SSB per day. Studies have suggested that proximity to SSB vendors and neighborhood food environment are not associated with consumption; however higher intake has been shown in adults with lower individual level education and income. Less",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 89
     },
     {
-      "rank": 18,
-      "doi": "arXiv:1702.02461v1",
-      "title": "Who Will Win Practical Artificial Intelligence? AI Engineerings in China",
-      "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.17918/00001054",
+      "title": "The impact of taxes and price promotions on sugar-sweetened beverage consumption",
+      "authors": [
+        "",
+        "Zhong, Yichen",
+        "Auchincloss, Amy H."
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:p>Excessive consumption of sugar-sweetened beverages (SSBs) is a risk factor for obesity, cardiovascular diseases, type-2 diabetes, and other chronic conditions. The high SSB consumption may be partly due to the low price relative to other beverages. Policies targeting SSB prices, such as soda taxes, have been increasingly implemented as a public health measure to reduce sugar consumption and/or a mean to increase revenue for other public services. Philadelphia is the first large city in t",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
     },
     {
-      "rank": 19,
-      "doi": "arXiv:2006.15285v1",
-      "title": "Promoting the Research of Health Behavior Change in Chinese HCI Community",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 20,
-      "doi": "arXiv:2411.18628v1",
-      "title": "Cohort profile: the Northwest China Real-world and Population-based Cohort",
-      "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Results of the structural model for sugar-sweetened beverage (SSB) taxes.",
-      "abstract": "",
+      "doi": "10.47116/apjcri.2023.03.34",
+      "title": "Brand Correlation of Expression Elements of Sugar-Free Tea Beverage Package Design-A Study on the Package Design Analysis of Sugar-Free Tea Beverage in China",
+      "authors": [],
+      "venue": "Asia-pacific Journal of Convergent Research Interchange",
       "year": 2023,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 91
     },
     {
-      "rank": 22,
-      "doi": "",
-      "title": "Kajian Stres Remaja Terhadap Frekuensi Konsumsi Sugar-sweetened beverage (SSB) Selama Pandemi Covid -19.",
-      "abstract": "",
-      "year": 2022,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.2105/ajph.2020.305682",
+      "title": "Sugar-Sweetened Beverage Taxes: Increasing Prices to Reduce Beverage Consumption",
+      "authors": [
+        "Chriqui, Jamie F.",
+        "Powell, Lisa M."
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "American Journal of Public Health",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
     },
     {
-      "rank": 23,
-      "doi": "",
-      "title": "Substantial decline in sugar-sweetened beverage consumption among California&amp;rsquo;s children and adolescents",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1016/j.appet.2016.08.049",
+      "title": "Expectancy effects and sugar-sweetened beverage consumption",
+      "authors": [
+        "Jennings, E.J.",
+        "Hardman, C.A.",
+        "Harrold, J.A.",
+        "Halford, J.C.G.",
+        "Christiansen, P."
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Appetite",
+      "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
     },
     {
-      "rank": 24,
-      "doi": "",
-      "title": "Sugar Sweetened Beverage Consumption in Auckland Primary School Children",
+      "doi": "10.1017/s1368980024000995",
+      "title": "Did a workplace sugar-sweetened beverage sales ban reduce anxiety-related sugar-sweetened beverage consumption during the COVID-19 pandemic?",
+      "authors": [
+        "Jacobs, Laurie M",
+        "Schmidt, Laura A",
+        "Schillinger, Dean",
+        "Schmidt, Jamey M",
+        "Alegria, Katie E",
+        "Parrett, Bethany",
+        "Pickett, Amanda",
+        "Epel, Elissa S"
+      ],
+      "venue": "Public Health Nutrition",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n\t  <jats:sec id=\"S1368980024000995_as1\">\n\t    <jats:title>Objective:</jats:title>\n\t    <jats:p>Workplace sugar-sweetened beverage (SSB) sales bans can reduce SSB consumption. Because stress and anxiety can promote sugar consumption, we examined whether anxiety among hospital employees during the COVID-19 pandemic was associated with changes in SSB consumption and explored whether this relationship varied by exposure to a workplace SSB sales ban.</jats:p>\n\t  </ja",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.31525/ct1-nct04197063",
+      "title": "Sugar-Sweetened Beverage Portion Limit Study",
+      "authors": [
+        ""
+      ],
+      "venue": "Case Medical Research",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.22514/jomh.2023.070",
+      "title": "Sugar-sweetened beverage consumption and sleep duration among adult men: the role of race and ethnicity",
+      "authors": [],
+      "venue": "Journal of Men's Health",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Less attention has been given to the relationship between the consumption of sugar-sweetened beverages and sleep among adult men, even though they are a group that consumes a large amount of sugar-sweetened beverages and who has worse sleep duration than women. The purpose of the current study is to explore the association between the consumption of sugar-sweetened beverages and sleep duration and to investigate how the relationship differs by race and ethnicity among adult men. The curr",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.56026/imu.13.1.33",
+      "title": "IRDI Public Health Policy Dialogue Series No.1: Control of Sugar Sweetened Beverage (SSB): Regulation or Taxation?",
+      "authors": [
+        "Kuan Lai, Pei"
+      ],
+      "venue": "International e-Journal of Science, Medicine &amp; Education",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.3389/fnut.2026.1809303",
+      "title": "Correlation between sugar-sweetened beverage consumption and obesity among adults in Saudi Arabia",
+      "authors": [
+        "Al-Qahtani, Faisal Saeed",
+        "BinDhim, Nasser F.",
+        "Althumiri, Nora A."
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 38,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec>\n                    <jats:title>Background</jats:title>\n                    <jats:p>In Saudi Arabia, obesity represents a major population health challenge, driven largely by unhealthy lifestyle behaviors, including excessive intake of sugar-sweetened beverages (SSBs). Nevertheless, there is a lack of evidence on the interactions between different categories of beverages and lifestyle and behavior factors that will determine the risk of obesity.</jats:p>\n                  </jats:sec>\n",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1016/j.orcp.2018.11.099",
+      "title": "Correlates of sugar-sweetened beverage consumption in Australian young adults",
+      "authors": [
+        "Leech, Rebecca M.",
+        "Pendergast, Felicity J.",
+        "Worsley, Anthony",
+        "McNaughton, Sarah A."
+      ],
+      "venue": "Obesity Research &amp; Clinical Practice",
       "year": 2019,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 99
     },
     {
-      "rank": 25,
-      "doi": "",
-      "title": "Am J Health Promot",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2404.09960v1",
+      "arxiv_id": "2404.09960v1",
+      "title": "Pseudo P-values for Assessing Covariate Balance in a Finite Study Population with Application to the California Sugar Sweetened Beverage Tax Study",
+      "authors": [
+        "Bing Han",
+        "Margo A. Sidell"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.09960v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
     },
     {
-      "rank": 26,
-      "doi": "",
-      "title": "Sugar-sweetened-beverage tax. A strategic public health measure for oral health?",
-      "abstract": "",
+      "doi": "10.1088/1475-7516/2021/01/058",
+      "arxiv_id": "2010.02590v3",
+      "title": "Bubble wall velocity: heavy physics effects",
+      "authors": [
+        "Aleksandr Azatov",
+        "Miguel Vanvlasselaer"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.02590v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "arXiv:2606.20868v1",
+      "arxiv_id": "2606.20868v1",
+      "title": "Can LLMs Reason About Brand Ownership? An Empirical Study of Domain Attribution Intelligence",
+      "authors": [
+        "Fathima Mashood",
+        "Mohamed Nabeel"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.20868v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "arXiv:1710.07763v1",
+      "arxiv_id": "1710.07763v1",
+      "title": "Modeling the Annual Growth Rate of Electricity Consumption of China in the 21st Century: Trends and Prediction",
+      "authors": [
+        "Kunjin Chen",
+        "Kunlong Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.07763v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1080/23288604.2024.2387138",
+      "arxiv_id": "2409.16098v2",
+      "title": "The Digital Transformation in Health: How AI Can Improve the Performance of Health Systems",
+      "authors": [
+        "África Periáñez",
+        "Ana Fernández del Río",
+        "Ivan Nazarov",
+        "Enric Jané",
+        "Moiz Hassan",
+        "Aditya Rastogi",
+        "Dexian Tang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.16098v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "arXiv:2307.11211v1",
+      "arxiv_id": "2307.11211v1",
+      "title": "The Effect of Epidemiological Cohort Creation on the Machine Learning Prediction of Homelessness and Police Interaction Outcomes Using Administrative Health Care Data",
+      "authors": [
+        "Faezehsadat Shahidi",
+        "M. Ethan MacDonald",
+        "Dallas Seitz",
+        "Geoffrey Messier"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.11211v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1515/fhep-2017-0031",
+      "arxiv_id": "2006.02900v1",
+      "title": "Short-Run Health Consequences of Retirement and Pension Benefits: Evidence from China",
+      "authors": [
+        "Plamen Nikolov",
+        "Alan Adelman"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.02900v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "arXiv:2006.15285v1",
+      "arxiv_id": "2006.15285v1",
+      "title": "Promoting the Research of Health Behavior Change in Chinese HCI Community",
+      "authors": [
+        "Yunlong Wang",
+        "Harald Reiterer"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.15285v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "arXiv:1702.02461v1",
+      "arxiv_id": "1702.02461v1",
+      "title": "Who Will Win Practical Artificial Intelligence? AI Engineerings in China",
+      "authors": [
+        "Huai-Yu Wu",
+        "Feiyue Wang",
+        "Chunhong Pan"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1702.02461v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2411.18628v1",
+      "arxiv_id": "2411.18628v1",
+      "title": "Cohort profile: the Northwest China Real-world and Population-based Cohort",
+      "authors": [
+        "Qi Huang",
+        "Yanjun Li",
+        "Bo Yin",
+        "Yaoguo Wang",
+        "Yujuan Yuan",
+        "Yanying Guo",
+        "Kuiying Gu",
+        "Yining Yang",
+        "Qian Di"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.18628v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "arXiv:2308.00702v1",
+      "arxiv_id": "2308.00702v1",
+      "title": "An Empirical Study on the Holiday Effect of China's Time-Honored Companies",
+      "authors": [
+        "Xianyang Li",
+        "Jiayi Xu",
+        "Haoxuan Xu",
+        "Yunxuan Ma",
+        "Yu Zhong",
+        "Lei Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.00702v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "arXiv:2004.01398v1",
+      "arxiv_id": "2004.01398v1",
+      "title": "TEA: Temporal Excitation and Aggregation for Action Recognition",
+      "authors": [
+        "Yan Li",
+        "Bin Ji",
+        "Xintian Shi",
+        "Jianguo Zhang",
+        "Bin Kang",
+        "Limin Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.01398v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:1811.11400v2",
+      "arxiv_id": "1811.11400v2",
+      "title": "FADL:Federated-Autonomous Deep Learning for Distributed Electronic Health Record",
+      "authors": [
+        "Dianbo Liu",
+        "Timothy Miller",
+        "Raheel Sayeed",
+        "Kenneth D. Mandl"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1811.11400v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1016/j.actaastro.2014.05.026",
+      "arxiv_id": "1403.5188v1",
+      "title": "The Chinese space millimeter-wavelength VLBI array - a step toward imaging the most compact astronomical objects",
+      "authors": [
+        "Xiaoyu Hong",
+        "Zhiqiang Shen",
+        "Tao An",
+        "Qinghui Liu",
+        "the Chinese Space VLBI Array team"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1403.5188v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2311.14402v2",
+      "arxiv_id": "2311.14402v2",
+      "title": "TEA: Test-time Energy Adaptation",
+      "authors": [
+        "Yige Yuan",
+        "Bingbing Xu",
+        "Liang Hou",
+        "Fei Sun",
+        "Huawei Shen",
+        "Xueqi Cheng"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.14402v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:1711.06895v1",
+      "arxiv_id": "1711.06895v1",
+      "title": "Is China Entering WTO or shijie maoyi zuzhi--a Corpus Study of English Acronyms in Chinese Newspapers",
+      "authors": [
+        "Hai Hu"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1711.06895v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:2603.13444v1",
+      "arxiv_id": "2603.13444v1",
+      "title": "Technical Case Study of Privacy-Enhancing Technologies (PETs) for Public Health",
+      "authors": [
+        "Avinash Laddha",
+        "Danil Mikhailov",
+        "Uyi Stewart"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.13444v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "arXiv:2211.04781v1",
+      "arxiv_id": "2211.04781v1",
+      "title": "Profiling Obese Subgroups in National Health and Nutritional Status Survey Data using Machine Learning Techniques: A Case Study from Brunei Darussalam",
+      "authors": [
+        "Usman Khalil",
+        "Owais Ahmed Malik",
+        "Daphne Teck Ching Lai",
+        "Ong Sok King"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.04781v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:1804.02850v1",
+      "arxiv_id": "1804.02850v1",
+      "title": "Information Sources and Needs in the Obesity and Diabetes Twitter Discourse",
+      "authors": [
+        "Yelena Mejova"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1804.02850v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1177/0272989X221103163",
+      "arxiv_id": "2001.07824v4",
+      "title": "An Introductory Tutorial on Cohort State-Transition Models in R Using a Cost-Effectiveness Analysis Example",
+      "authors": [
+        "Fernando Alarid-Escudero",
+        "Eline M. Krijkamp",
+        "Eva A. Enns",
+        "Alan Yang",
+        "M. G. Myriam Hunink",
+        "Petros Pechlivanoglou",
+        "Hawre Jalal"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.07824v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.5281/zenodo.7243950",
+      "arxiv_id": "2404.08813v1",
+      "title": "Interactive Sonification for Health and Energy using ChucK and Unity",
+      "authors": [
+        "Yichun Zhao",
+        "George Tzanetakis"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.08813v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.3389/fdgth.2021.620828",
+      "arxiv_id": "2011.13978v2",
+      "title": "Automated Coding of Under-Studied Medical Concept Domains: Linking Physical Activity Reports to the International Classification of Functioning, Disability, and Health",
+      "authors": [
+        "Denis Newman-Griffis",
+        "Eric Fosler-Lussier"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.13978v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:2303.02075v2",
+      "arxiv_id": "2303.02075v2",
+      "title": "Adaptive Interventions for Global Health: A Case Study of Malaria",
+      "authors": [
+        "África Periáñez",
+        "Andrew Trister",
+        "Madhav Nekkar",
+        "Ana Fernández del Río",
+        "Pedro L. Alonso"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.02075v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2501.08197v1",
+      "arxiv_id": "2501.08197v1",
+      "title": "OpenCSG Chinese Corpus: A Series of High-quality Chinese Datasets for LLM Training",
+      "authors": [
+        "Yijiong Yu",
+        "Ziyun Dai",
+        "Zekun Wang",
+        "Wei Wang",
+        "Ran Chen",
+        "Ji Pei"
+      ],
+      "venue": "arXiv",
       "year": 2025,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/2501.08197v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 123
     },
     {
-      "rank": 27,
-      "doi": "",
-      "title": "A qualitative study of adolescent views of sugar sweetened beverage taxes",
-      "abstract": "",
+      "doi": "arXiv:2412.10454v2",
+      "arxiv_id": "2412.10454v2",
+      "title": "An Interoperable Machine Learning Pipeline for Pediatric Obesity Risk Estimation",
+      "authors": [
+        "Hamed Fayyaz",
+        "Mehak Gupta",
+        "Alejandra Perez Ramirez",
+        "Claudine Jurkovitz",
+        "H. Timothy Bunnell",
+        "Thao-Ly T. Phan",
+        "Rahmatollah Beheshti"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.10454v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:2411.17700v1",
+      "arxiv_id": "2411.17700v1",
+      "title": "Exploring the Impact of Generative AI on Cross-Border E-Commerce Brand Building in Chinese Tianjin's Manufacturing Sector",
+      "authors": [
+        "Jun Cui"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.17700v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:2106.04440v1",
+      "arxiv_id": "2106.04440v1",
+      "title": "Bubble clouds in viscoplastic fluids",
+      "authors": [
+        "Emad Chaparian",
+        "Ian A. Frigaard"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.04440v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:2504.12737v1",
+      "arxiv_id": "2504.12737v1",
+      "title": "Chinese-Vicuna: A Chinese Instruction-following Llama-based Model",
+      "authors": [
+        "Chenghao Fan",
+        "Zhenyi Lu",
+        "Jie Tian"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.12737v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:1612.02654v1",
+      "arxiv_id": "1612.02654v1",
+      "title": "China building energy consumption: definitions and measures from an operational perspective",
+      "authors": [
+        "Ling-Yun He",
+        "Wei Wei"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1612.02654v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.2196/publichealth.6313",
+      "arxiv_id": "1703.08813v1",
+      "title": "Tweet for Behavior Change: Using Social Media for the Dissemination of Public Health Messages",
+      "authors": [
+        "Aisling Gough",
+        "Ruth F Hunter",
+        "Oluwaseun Ajao",
+        "Anna Jurek",
+        "Gary McKeown",
+        "Jun Hong",
+        "Eimear Barrett",
+        "Marbeth Ferguson",
+        "Gerry McElwee",
+        "Miriam McCarthy",
+        "Frank Kee"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1703.08813v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2601.07204v1",
+      "arxiv_id": "2601.07204v1",
+      "title": "Intercultural Communication Strategies of a Technology Brand: A Comparative Quantitative Analysis of Xiaomi's Digital Marketing in China and Russia",
+      "authors": [
+        "Artem Novobritskii"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.07204v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "arXiv:1910.09461v1",
+      "arxiv_id": "1910.09461v1",
+      "title": "Returning Scientists and the Emergence of Chinese Science System",
+      "authors": [
+        "Cong Cao",
+        "Jeroen Baas",
+        "Caroline S. Wagner",
+        "Koen Jonkers"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1910.09461v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:2602.06992v1",
+      "arxiv_id": "2602.06992v1",
+      "title": "A New Mode of Teaching Chinese as a Foreign Language from the Perspective of Smart System Studied by Using Rongzhixue",
+      "authors": [
+        "Xiaohui Zou",
+        "Lijun Ke",
+        "Shunpeng Zou"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.06992v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1017/jfm.2021.1055",
+      "arxiv_id": "2107.07580v2",
+      "title": "Flow onset for a single bubble in yield-stress fluids",
+      "authors": [
+        "Ali Pourzahedi",
+        "Emad Chaparian",
+        "Ali Roustaei",
+        "Ian A. Frigaard"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.07580v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "arXiv:2601.04956v1",
+      "arxiv_id": "2601.04956v1",
+      "title": "TEA: Temporal Adaptive Satellite Image Semantic Segmentation",
+      "authors": [
+        "Juyuan Kang",
+        "Hao Zhu",
+        "Yan Zhu",
+        "Wei Zhang",
+        "Jianing Chen",
+        "Tianxiang Xiao",
+        "Yike Ma",
+        "Hao Jiang",
+        "Feng Dai"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.04956v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:2312.09425v3",
+      "arxiv_id": "2312.09425v3",
+      "title": "YouTube Videos for Public Health Literacy? A Machine Learning Pipeline to Curate Covid-19 Videos",
+      "authors": [
+        "Yawen Guo",
+        "Xiao Liu",
+        "Anjana Susarla",
+        "Rema Padman"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.09425v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.2196/37039",
+      "arxiv_id": "2208.05335v1",
+      "title": "Association Between Neighborhood Factors and Adult Obesity in Shelby County, Tennessee: Geospatial Machine Learning Approach",
+      "authors": [
+        "Whitney S Brakefield",
+        "Olufunto A Olusanya",
+        "Arash Shaban-Nejad"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.05335v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:2111.14521v1",
+      "arxiv_id": "2111.14521v1",
+      "title": "Do soda taxes affect the consumption and health of school-aged children? Evidence from France and Hungary",
+      "authors": [
+        "Selina Gangl"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.14521v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1103/PhysRevE.92.042402",
+      "arxiv_id": "1509.07978v1",
+      "title": "Doughnut-shaped soap bubbles",
+      "authors": [
+        "Deison Preve",
+        "Alberto Saa"
+      ],
+      "venue": "arXiv",
       "year": 2015,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/1509.07978v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 138
     },
     {
-      "rank": 28,
-      "doi": "",
-      "title": "A systematic scoping review evaluating sugar-sweetened beverage taxation from a systems perspective",
-      "abstract": "",
+      "doi": "arXiv:2006.04947v1",
+      "arxiv_id": "2006.04947v1",
+      "title": "Adherence to Personal Health Devices: A Case Study in Diabetes Management",
+      "authors": [
+        "Sudip Vhaduri",
+        "Temiloluwa Prioleau"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.04947v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.17501/26138417.2025.8102",
+      "arxiv_id": "2510.14909v1",
+      "title": "The Impact of Medicaid Coverage on Mental Health, Why Insurance Makes People Happier in OHIE: by Spending Less or by Spending More?",
+      "authors": [
+        "Yangyang Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.14909v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.5121/ijmvsc.2013.4301",
+      "arxiv_id": "1310.2079v1",
+      "title": "Mining The Relationship Between Demographic Variables And Brand Associations",
+      "authors": [
+        "Ajayeb Abu Dabbes",
+        "Faten Kharbat"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2079v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "arXiv:2507.22114v2",
+      "arxiv_id": "2507.22114v2",
+      "title": "Kerr Black Holes in an Expanding Bubble",
+      "authors": [
+        "Marco Astorino"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.22114v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:1606.01432v1",
+      "arxiv_id": "1606.01432v1",
+      "title": "How to be a Good Frand in China: an Exploratory Study of Effective Social Media Behaviours for Foreign Brands",
+      "authors": [
+        "Mary Tate",
+        "Hongzhi Gao",
+        "Hongxia Zhang",
+        "David Johnstone"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1606.01432v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:2512.13723v1",
+      "arxiv_id": "2512.13723v1",
+      "title": "Made-in China, Thinking in America:U.S. Values Persist in Chinese LLMs",
+      "authors": [
+        "David Haslett",
+        "Linus Ta-Lun Huang",
+        "Leila Khalatbari",
+        "Janet Hui-wen Hsiao",
+        "Antoni B. Chan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.13723v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "arXiv:2001.04034v2",
+      "arxiv_id": "2001.04034v2",
+      "title": "Evaluating Online Public Sentiments towards China: A Case Study of English and Chinese Twitter Discourse during the 2019 Chinese National Day",
+      "authors": [
+        "Yekai Xu",
+        "Qingqian He",
+        "Shiguang Ni"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.04034v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1016/j.suscom.2023.100857",
+      "arxiv_id": "2109.05472v2",
+      "title": "Compute and Energy Consumption Trends in Deep Learning Inference",
+      "authors": [
+        "Radosvet Desislavov",
+        "Fernando Martínez-Plumed",
+        "José Hernández-Orallo"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.05472v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1007/s11433-022-1981-8",
+      "arxiv_id": "2206.13022v3",
+      "title": "Status and progress of China SKA Regional Centre prototype",
+      "authors": [
+        "Tao An",
+        "Xiaocong Wu",
+        "Baoqiang Lao",
+        "Shaoguang Guo",
+        "Zhijun Xu",
+        "Weijia Lv",
+        "Yingkang Zhang",
+        "Zhongli Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.13022v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:2507.07517v1",
+      "arxiv_id": "2507.07517v1",
+      "title": "Vaccine Hesitancy on YouTube: a Competition between Health and Politics",
+      "authors": [
+        "Yelena Mejova",
+        "Michele Tizzani"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.07517v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2303.17791v1",
+      "arxiv_id": "2303.17791v1",
+      "title": "Analysis of the current status of tuberculosis transmission in China based on a heterogeneity model",
+      "authors": [
+        "Chuanqing Xu",
+        "Kedeng Cheng",
+        "Yu Wang",
+        "Songbai Guo",
+        "Maoxing Liu",
+        "Xiaojing Wang",
+        "Zhiguo Zhang"
+      ],
+      "venue": "arXiv",
       "year": 2023,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/2303.17791v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 149
     },
     {
-      "rank": 29,
-      "doi": "",
-      "title": "The Effects of a Sugar-Sweetened Beverage Tax: Consumption, Calorie Intake, Obesity, and Tax Burden by Income",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.3390/nu18142326",
+      "arxiv_id": "",
+      "title": "Consumption of Commercial Non-Alcoholic Beverages Is Associated with Refractive Changes, Axial Length Changes and Myopia in Children and Adolescents",
+      "authors": [
+        "K. Zheng",
+        "Dongling Yang",
+        "Xiaodong Sun",
+        "S. Qu",
+        "L. Chu",
+        "Shenglei Huang",
+        "Yuting Huang",
+        "Yanting Yang",
+        "W. Qi",
+        "Fengyun Zhang",
+        "C. Luo"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "Nutrients",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 60,
+      "tldr": "Different types of commercial non-alcoholic beverages have varying effects on the vision of children and adolescents, and consumption of carbonated beverages, milk tea beverages, and NSSBs is associated with myopia and AL growth in children, whereas drinking fruit and vegetable juice has been found to be associated with slower myopia progression.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/18/14/2326/pdf?version=1784187380",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Different types of commercial non-alcoholic beverages have varying effects on the vision of children and adolescents, and consumption of carbonated beverages, milk tea beverages, and NSSBs is associated with myopia and AL growth in children, whereas drinking fruit and vegetable juice has been found to be associated with slower myopia progression.",
+      "rank": 150
     },
     {
-      "rank": 30,
       "doi": "",
-      "title": "Difference-in-differences of likelihood of high sugar-sweetened beverage (SSB) consumption<sup>a</sup> pre- and post-tax implementation between San Francisco and San José (n = 1,443).",
-      "abstract": "",
-      "year": 2023,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "arxiv_id": "",
+      "title": "Cavities , Think Systemic Disease",
+      "authors": [
+        "G. White"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 43,
+      "tldr": "There are plausible mechanisms and research evidence that supports the suggestion that consumption of excess sugar promotes the development of cardiovascular disease (CVD) and type 2 diabetes (T2DM) both directly and indirectly.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There are plausible mechanisms and research evidence that supports the suggestion that consumption of excess sugar promotes the development of cardiovascular disease (CVD) and type 2 diabetes (T2DM) both directly and indirectly.",
+      "rank": 151
     }
   ]
 }

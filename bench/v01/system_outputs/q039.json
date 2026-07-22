@@ -1,166 +1,887 @@
 {
   "query_id": "q039",
   "query": "北美基督教是否真的褪色了？马克思韦伯的工作伦理是否仍然支撑当前的美国社会？",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
+  "topic_bucket": "cross",
+  "source": "user",
+  "generated_at": "2026-07-22T11:30:00",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 50,
+  "top_n": 50,
   "by_engine": {
-    "crossref": 10,
+    "crossref": 50,
     "openalex": 0,
     "arxiv": 0,
     "semanticscholar": 0,
-    "core": 0
+    "aminer": 1,
+    "cnki": 1
   },
-  "dedup_count": 10,
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1142/9789814285087",
+      "title": "华人社会",
+      "authors": [
+        "何, 国良",
+        "王, 思斌"
+      ],
+      "venue": "华人社会",
+      "year": 2001,
+      "cited_by_count": 10,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 1
+    },
+    {
       "doi": "10.32629/er.v2i7.1908",
       "title": "论真善美之中的美——从康德美学反思中国现代社会审美消费主义",
-      "abstract": "<jats:p>康德美学中认为美是一种纯粹愉悦,美的本源既不是客观的形式或神的理念,是出自居于人的理性能力与知性能力之间的审美判断力。本文即从康德的美学视角出发,反观中国自21世纪以来的审美消费主义,对社会中于消费、媒体等方面出现过的审美消费主义浪潮进行批判、反思,在总结其浮躁社会消费审美主义背后的深层原因上,对正向引导、树立社会消费审美主义提出一己之见。</jats:p>",
-      "year": null,
+      "authors": [
+        "李, 天娇"
+      ],
       "venue": "教育研究",
-      "citation_count": 4,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>康德美学中认为美是一种纯粹愉悦,美的本源既不是客观的形式或神的理念,是出自居于人的理性能力与知性能力之间的审美判断力。本文即从康德的美学视角出发,反观中国自21世纪以来的审美消费主义,对社会中于消费、媒体等方面出现过的审美消费主义浪潮进行批判、反思,在总结其浮躁社会消费审美主义背后的深层原因上,对正向引导、树立社会消费审美主义提出一己之见。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 2
     },
     {
-      "rank": 2,
+      "doi": "10.63887/fss.2025.1.6.19",
+      "title": "马克思主义中国化与中国传统治理智慧融合下的城市社区治理模式创新研究",
+      "authors": [
+        "王玉彦"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着我国城市化进程的不断加快，城市社区治理成为国家治理体系和治理能力现代化的重要环节。当前社区治理仍面临主体协同不足、居民参与度低、治理资源整合不充分以及文化引领力不足等问题。本文在梳理国内外社区治理研究成果的基础上，结合马克思主义中国化的治理理念与中华优秀传统治理智慧，从价值目标、治理方式和治理工具的融合出发，构建了“制度治理—协商治理—文化治理”三位一体的创新路径。研究认为，应坚持以人民为中心，发挥党建引领作用，深度挖掘传统文化的柔性治理优势，推动数字赋能与人文关怀并重，形成共建共治共享的社区治理格局。文章的创新在于提出以制度化与人情化相结合为核心的社区治理模式，对于提升新时代城市基层治理效能具有重要的理论与实践意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 3
+    },
+    {
       "doi": "10.32629/er.v2i9.2044",
       "title": "新时代教学中国特色社会主义思想是当代中国的马克思主义",
-      "abstract": "<jats:p>新时代教学中国特色社会主义思想逐步形成和发展,是马克思主义中国化昀新成果,也是当代中国的马克思主义。与时俱进是马克思主义的重要理论品格,新时代教学特色社会主义延续并传承了马克思主义思想,同马克思主义的基本立场、基本观点、基本方法和未来发展方向具有一致性。在推进新时代中国特色社会主义伟大事业的进程中,新时代教学中国特色社会主义思想将为决胜全面建成小康社会、夺取新时代中国特色社会主义伟大胜利、实现中华民族伟大复兴的中国梦保驾护航。</jats:p>",
-      "year": null,
+      "authors": [
+        "邹, 秀春",
+        "安, 骁"
+      ],
       "venue": "教育研究",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>新时代教学中国特色社会主义思想逐步形成和发展,是马克思主义中国化昀新成果,也是当代中国的马克思主义。与时俱进是马克思主义的重要理论品格,新时代教学特色社会主义延续并传承了马克思主义思想,同马克思主义的基本立场、基本观点、基本方法和未来发展方向具有一致性。在推进新时代中国特色社会主义伟大事业的进程中,新时代教学中国特色社会主义思想将为决胜全面建成小康社会、夺取新时代中国特色社会主义伟大胜利、实现中华民族伟大复兴的中国梦保驾护航。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 4
     },
     {
-      "rank": 3,
+      "doi": "10.62989/jes2025.2.3.62",
+      "title": "马克思主义与中国传统文化融合的理论基础",
+      "authors": [
+        "周维, 周维"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
       "doi": "10.5840/wcp22200816874",
       "title": "马 克 思 哲 学 是 劳 动 哲 学 ─对当代中国哲学主流的反思",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "Proceedings of the XXII World Congress of Philosophy",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 6
     },
     {
-      "rank": 4,
+      "doi": "10.63887/fss.2025.1.8.69",
+      "title": "新帝国主义的当代演变——基于福斯特对“让美国再次伟大”运动的解析",
+      "authors": [
+        "熊广华"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>“让美国再次伟大”运动的回归，标志着美国新帝国主义进入了全新的发展阶段。基于约翰·米贝拉·福斯特有关新帝国主义理论的研究，从经济、军事和文化三个层面，分析MAGA运动中美国新帝国主义的表现，揭示其维护霸权统治的本质，并探讨美国新帝国主义在经济、军事以及国际政策上的转向对美国社会结构与全球治理体系所造成的深远影响。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 7
+    },
+    {
       "doi": "10.61362/evfa3227",
       "title": "【经济史探索】宗教文化是否会影响社会的经济增长？",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "Was Weber Wrong?",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report-component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report-component"
+      "rank": 8
     },
     {
-      "rank": 5,
       "doi": "10.58911/bdic.s002.v2",
       "title": "探究式学习是否是“当局者迷、旁观者清”的",
-      "abstract": "",
-      "year": 2021,
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "report"
+      "rank": 9
     },
     {
-      "rank": 6,
       "doi": "10.70693/rwsk.v2i1.176",
       "title": "马克思主义需要观指导下当代青年工作的实践路径探析",
-      "abstract": "<jats:p>马克思主义需要观为社会中独立个体需求的演进至新阶段奠定了坚实的理论基础，并为其创新发展、螺旋式上升创造了有利条件。从人的本质属性出发，个体需求与社会实践紧密相连；这种植根于人类社会实践的需求，作为思想意识与精神层面的上层建筑，不仅对经济基础产生相应的反作用，还在人类社会的持续发展及稳定中展现出不可小觑的理论导向价值。在中国式现代化建设的进程中，青年工作的成效直接关系到党和国家发展计划的实施效果。在新时代背景下，深入理解和把握马克思主义需要观，将其理论精髓应用于青年工作实践，是实现马克思主义需要观现实意义的重要途径。通过理论与实践的紧密结合，为马克思主义需要观于当代社会的应用赋能有力支撑与依据。</jats:p>",
-      "year": null,
+      "authors": [
+        "宋美祺"
+      ],
       "venue": "人文与社会科学学刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>马克思主义需要观为社会中独立个体需求的演进至新阶段奠定了坚实的理论基础，并为其创新发展、螺旋式上升创造了有利条件。从人的本质属性出发，个体需求与社会实践紧密相连；这种植根于人类社会实践的需求，作为思想意识与精神层面的上层建筑，不仅对经济基础产生相应的反作用，还在人类社会的持续发展及稳定中展现出不可小觑的理论导向价值。在中国式现代化建设的进程中，青年工作的成效直接关系到党和国家发展计划的实施效果。在新时代背景下，深入理解和把握马克思主义需要观，将其理论精髓应用于青年工作实践，是实现马克思主义需要观现实意义的重要途径。通过理论与实践的紧密结合，为马克思主义需要观于当代社会的应用赋能有力支撑与依据。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 10
     },
     {
-      "rank": 7,
       "doi": "10.64216/3080-1486.26.03.076",
       "title": "从斯珀伯的马克思传记谈当代西方回归历史语境中马克思真实形象与错位",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "社会经济导刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 11
     },
     {
-      "rank": 8,
       "doi": "10.14218/mrp.2021.020",
       "title": "完美的“科学假设”是国自然成功的第一步",
-      "abstract": "",
-      "year": 2021,
+      "authors": [],
       "venue": "Medical Research &amp; Publication",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 12
     },
     {
-      "rank": 9,
       "doi": "10.69979/3029-2700.25.05.091",
       "title": "作为什么样的个体才能克服虚无主义：尼采、韦伯与马克思的价值主体",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "社会企业经济发展",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 13
     },
     {
-      "rank": 10,
       "doi": "10.63887/fss.2025.1.5.36",
       "title": "论马克思主义科学技术观在指导当代科技伦理问题中的意义",
-      "abstract": "<jats:p>本文深入探讨了马克思主义科学技术观在当代科技伦理中的关键作用。马克思主义科学技术观视科学技术为推动社会进步的重要力量，主张科技应服务于人类的全面发展与社会的公平正义。在当今科技迅猛发展的背景下前沿领域不仅带来了技术突破，也引发了深刻的哲学和伦理问题。这些问题挑战了传统的伦理观念，需要借助马克思主义科学技术观提供的理论框架来审视和解决。马克思主义强调科技发展的社会性和历史性，主张在享受科技便利的同时，关注其潜在的负面影响，确保科技进步与社会发展相协调。文章呼吁通过加强科技伦理教育和提高公众意识，利用马克思主义科学技术观指导科技发展，以实现科技与人类社会的和谐共生，推动人类文明的进步与发展。</jats:p>",
-      "year": null,
+      "authors": [
+        "邱添"
+      ],
       "venue": "社会科学前沿",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文深入探讨了马克思主义科学技术观在当代科技伦理中的关键作用。马克思主义科学技术观视科学技术为推动社会进步的重要力量，主张科技应服务于人类的全面发展与社会的公平正义。在当今科技迅猛发展的背景下前沿领域不仅带来了技术突破，也引发了深刻的哲学和伦理问题。这些问题挑战了传统的伦理观念，需要借助马克思主义科学技术观提供的理论框架来审视和解决。马克思主义强调科技发展的社会性和历史性，主张在享受科技便利的同时，关注其潜在的负面影响，确保科技进步与社会发展相协调。文章呼吁通过加强科技伦理教育和提高公众意识，利用马克思主义科学技术观指导科技发展，以实现科技与人类社会的和谐共生，推动人类文明的进步与发展。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 14
+    },
+    {
+      "doi": "10.32629/jief.v2i2.589",
+      "title": "马克思主义哲学创造秩序之美——谈马克思哲学应对公共事件的美学观照",
+      "authors": [
+        "任, 明"
+      ],
+      "venue": "国际教育论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "<jats:p>政治美学是将政治和美学融合的学科，从美学的角度来分析政治理论和政治实践工作，政治和美学并非是相互矛盾的个体，从源头看二者有着密切的联系，在不同的历史时期呈现出了不同的时代内涵。结合马克思哲学的内容和马尔库塞的审美形式，能更为深入的分析审美形式的功能，展现出政治美学的魅力，这也正是本文的研究内容。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.5840/wcp22200831176",
+      "title": "自由的自然受限是道 德和法律的伦理基础",
+      "authors": [],
+      "venue": "Proceedings of the XXII World Congress of Philosophy",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.12677/acpp.2026.152089",
+      "title": "Is the Dialectic of Psychoanalysis Still Materialistic?—A Methodological Examination of Zizek’s Philosophy",
+      "authors": [
+        "王, 铭浩"
+      ],
+      "venue": "Advances in Philosophy",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.17",
+      "title": "工艺美术的时代演变及其对社会审美的影响",
+      "authors": [
+        "王谟华"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文旨在探讨工艺美术在不同历史时期的时代演变，并深入分析其对社会审美的影响。通过对工艺美术发展历程的梳理，从古代传统工艺美术的辉煌，到近现代工艺美术的变革，再到当代工艺美术的多元化发展，揭示工艺美术与社会审美之间的相互作用关系。阐述工艺美术如何反映社会审美观念的变化，同时又如何引领和塑造社会审美趋势，为理解工艺美术在文化传承与社会发展中的重要作用提供理论依据，也为当代工艺美术的发展和审美教育提供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.64216/3104-9702.25.09.044",
+      "title": "人工智能辅助美术创作教学的模式探索与伦理思考",
+      "authors": [],
+      "venue": "教育科学理论研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.69979/3029-2700.25.04.099",
+      "title": "论晚年恩格斯对马克思宗教思想的发展——基于恩格斯“早期基督教研究三部曲”的文本考察",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.12677/acpp.2025.147400",
+      "title": "Is Art an Evolution?—Thoughts Based on the Changes of Technological Forms",
+      "authors": [
+        "董, 琨"
+      ],
+      "venue": "Advances in Philosophy",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 12,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.70693/rwsk.v1i1.458",
+      "title": "人工智能独立创作主体地位否定的社会分析 ——基于生产、交往和伦理维度",
+      "authors": [
+        "刘雨萌"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人工智能不具有独立创作主体地位，预设结论并进行错误论证是引起人工智能独立创作地位之争的弊病所在。回归社会分析：在生产维度，创作主体是创造人类文明的自然人；人工智能的算力强度尚未达到人类智能水平、算法运行区别于人脑意识活动，不符合人类智性要求。在交往维度，创作主体是具备特定人格的社会人；以法律人格的历史演进为线索，人工智能不具备创作主体的法律人格因素，其智能与人类的自由意志不同，不符合独立人格要求。在伦理维度，创作主体是遵守伦理秩序的理性人；将人工智能拟制为创作主体有悖人类伦理，可能挑战人类创作主体的权威性和作品的影响力，忽视人类价值判断和劳动贡献。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.52288/mice.27069273.2020.09.16",
+      "title": "巨无霸指数是否低估的实证分析",
+      "authors": [
+        "林, 雨熙"
+      ],
+      "venue": "会展前瞻",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>均衡汇率问题一直是学界的焦点，基于购买力平价理论的巨无霸指数，为判断汇率水平均衡性提供了一个简单的工具和辅助的视角。本文根据《经济学人》公布的巨无霸指数走势特征，分析巨无霸指数对不同汇率水平的低估程度，尤其是基于美元的巨无霸指数对人民币汇率水平的评估；本文同时分析人民币于各期相较于欧元、英镑、日元皆出现低估的现象。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.64216/3080-1486.26.03.077",
+      "title": "马克思主义视角下的当代中国社会思潮成因分析",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.69979/3029-2735.25.09.034",
+      "title": "四维融合·美术铸魂”：新时代中国特色社会主义思想在美术教学中的深度融入研究",
+      "authors": [],
+      "venue": "智慧教育",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.64216/3080-1516.26.04.017",
+      "title": "走“心”语文，震撼学生心灵：《真正的帅是什么》——一堂大胆的但触动了中职学生心灵的作文教学",
+      "authors": [],
+      "venue": "当代教育与艺术",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.5790/9789882206328-007",
+      "title": "現實主義在中國是一種意識形態",
+      "authors": [],
+      "venue": "当代中国新思虑",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.12677/acpp.2025.142085",
+      "title": "Ethical Challenges and Responses to Artificial Intelligence Technology from the Perspective of Marxist Ethical View",
+      "authors": [
+        "姜, 美宇"
+      ],
+      "venue": "Advances in Philosophy",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.54254/3050-2160/2026.33659",
+      "title": "马克思分工思想谱系的当代延伸：以“人机关系”为枢纽的当代性阐释",
+      "authors": [
+        "吴, 一泽",
+        "宋, 美佳"
+      ],
+      "venue": "公众与政策",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>分工是马克思考察和分析资本主义生产过程的重要一环，是理解马克思主义政治经济学的重要“枢纽”。系统梳理马克思分工理论的历史演进历程，有助于从唯物史观的视阈下理解分工的起源与发展，进而理解分工在当今时代所出现的新的变化。本文从马克思关于分工考察的经典文本出发，逐步梳理马克思分工理论从诞生到体系化的全过程，逐步考察在当下新质生产力逐步发展的背景下分工的变化，尝试为马克思分工理论在当代的发展提供新的考察与阐释。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.5790/9789882206328",
+      "title": "当代中国新思虑",
+      "authors": [],
+      "venue": "",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.32629/er.v9i1.6717",
+      "title": "基于OBE理念的学前儿童社会教育课程思政建设与实践",
+      "authors": [
+        "韦, 嘉林"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>学前儿童社会教育作为学前教育专业核心课程，在培养学生职业能力与育人素养中具有关键作用。当前课程存在思政元素融入碎片化、教学目标与职业需求脱节、评价方式单一等问题，难以满足师范类专业认证对“学生中心、产出导向、持续改进”的要求。本文以OBE理念为指导，结合学前教育专业人才培养目标，从教学内容优化、教学方法创新两个维度，系统探索课程思政与专业教学深度融合的路径。通过为期两学期的教学实践，结合实践考核、访谈反馈等材料验证，该改革方案能有效提升学生的专业能力与思政素养。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.17816/ptors21192-24091",
+      "title": "图 3。随着时间的推移，专家对与分析的足部图像相关的各种回答的频率。注：是（0）— 答案是 《是的，有平足症》，在脚的主要图像分析； 是（5）— 五个月后，当重新分析这些图像时，答案是《是的，有平足症》；否（0）— 答案是《没有，没有平足症》，在脚的主要图像分析； 否（5）— 五个月后，当重新分析这些图像时，答案是《没有，没有平足症》；有疑问（0）— 答案是《有疑问》，在脚的主要图像分析；有疑问（5）— 五个月后，当重新分析这些图像时，答案是《有疑问》",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.69979/3041-0673.25.01.071",
+      "title": "《舞姬》——是否真心的忏悔",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.4324/9781315144665-26",
+      "title": "一个美国的中文老师是怎样炼成的？",
+      "authors": [
+        "Tianwei, Xie"
+      ],
+      "venue": "The Field of Chinese Language Education in the U.S.",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.14218/mrp.2015.032",
+      "title": "改造人类基因的年代是否到来？",
+      "authors": [],
+      "venue": "Medical Research &amp; Publication",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.5790/9789882206328-001",
+      "title": "前 言",
+      "authors": [],
+      "venue": "当代中国新思虑",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.12677/acpp.2021.104046",
+      "title": "Is O’Connor’s Eco-Socialism Theory Feasible?—Reading James O’Connor’s &lt;i&gt;Reasons for Nature: A Study of Ecological Marxism &lt;/i&gt;",
+      "authors": [
+        "孙, 威威"
+      ],
+      "venue": "Advances in Philosophy",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.69979/3029-2700.25.07.086",
+      "title": "我国当代青年消费观的异化现象——马克思主义理论视角下的批判",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.70693/rwsk.v2i3.337",
+      "title": "马克思主义中国化视域下公安工作在社会治理体系现代化中的作用研究",
+      "authors": [
+        "王啸千"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>从马克思主义中国化的视角出发，探讨公安在社会治理体系现代化进程中的作用。以马克思主义的人民性、实践性、发展性等理论为指导，把马克思主义中国化和中国具体国情和社会发展实际相结合，以及研究马克思主义中国化和公安工作现代化的辩证统一，分析公安机关作为维护社会稳定的核心力量，在保障人民利益、践行群众路线、推动社会治理创新等方面的重要职能。在社会治理体系现代化的大背景下，公安机关作为维护国家安全与社会稳定的重要力量，在实现更加安全，舒适的生活环境中扮演着关键角色。深入研究公安的作用，对于提升社会治理效能、构建共建共治共享的社会治理格局具有深远意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.64216/3080-1486.26.04.091",
+      "title": "西德的国家衍生论争关于马克思主义国家理论的研究",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1142/g046",
+      "title": "华人社会",
+      "authors": [
+        "何, 国良",
+        "王, 思斌"
+      ],
+      "venue": "",
+      "year": 2001,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.64216/3104-9672.26.01.039",
+      "title": "马克思主义矛盾分析法在基层治理研究中的运用——基于社会工作专业视角",
+      "authors": [],
+      "venue": "全球文化探索",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.53300/001c.5707",
+      "title": "US American ‘Japan Bashing’ in the 1980s and Today’s ‘China Threat’: Is History Repeating Itself? 20世纪80年代美国对日本的“抨击”与今天的“中国威胁”：历史是否重演？",
+      "authors": [
+        "Dahl, Elizabeth S"
+      ],
+      "venue": "Journal of East Asia Security",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This paper examines American rhetoric since the late 1990s about the ‘rise of China’ in military and economic terms and compares it to the previous phenomenon of ‘Japan bashing.’ In the 1980s, Americans charged that the Japanese unfair trade practices were costing jobs and hastening America’s decline. While Japan’s stagnant economy in the 1990s eased the bilateral relationship, China became the next rising state of concern. In addition to substantial trade deficits, the PRC is the US’ mo",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.61369/edtr.4850",
+      "title": "多维视域下的现代工程伦理教育思考",
+      "authors": [
+        "王, 广斌",
+        "潘, 美玲"
+      ],
+      "venue": "Educational Theory Observation",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>工程是负载价值的人类实践过程，现代工程技术与人类社会、自然环境之间具有的强烈共生特性。工程伦理教育的使命就是培养具有良好道德意识和伦理价值观、高超专业素质何技能、强烈社会责任感的工程师。基于对现代工程技术多维属性的深刻分析，反思了科技、哲学、人文和国家维度下工程伦理教育的核心理念，提出了工程伦理教育的本质要求，即要求未来工程师在具体的工程实践中应认真践行&amp;ldquo;求真、向善、尚美、爱国&amp;rdquo;的工程观，成为中华民族伟大复兴的强大源动力。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.54254/3050-2160/2025.24030",
+      "title": "超越“断裂论”：马克思“政治解放”思想是“人的解放”思想的必要前提",
+      "authors": [
+        "朱, 书贤",
+        "谢, 知辰"
+      ],
+      "venue": "公众与政策",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>马克思在分析市民社会的内在矛盾时，考察了“政治解放”的历史意义及其理论限度。马克思指出，政治解放并未消除人的异化状态，因此必须向更彻底的“人的解放”迈进，而无产阶级正是实现“人的解放”的历史主体。传统观点认为，“人的解放”直接扬弃了“政治解放”，“人的解放”并不以“政治解放”为必要前提，二者之间存在一个“断裂”。然而， 这种理解存在两个缺陷：其一，未能充分认识政治异化到政治解放的历史发展过程对人的解放的根本性意义；其二，忽视了无产阶级作为解放主体的形成需要以特定的政治环境为前提条件。人的解放固然更加根本，但是政治解放的历史与现实价值并非无足轻重。马克思对政治解放概念做出了的补充表明，马克思始终重视政治解放在人类解放进 程中的历史作用。因此，马克思“政治解放 ”思想与“人的解放”一脉相承，所谓“断裂论”难以成立。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1111/bjd.21636",
+      "title": "溃疡是否会影响肢端黑色素瘤患者的存活?",
+      "authors": [],
+      "venue": "British Journal of Dermatology",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.18356/22203583-2022-2-2",
+      "title": "作品的译者是否该与作者保持一致？",
+      "authors": [
+        ""
+      ],
+      "venue": "Jiaokewen zuzhi xinshi",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.71411/-2025-v1i3-761",
+      "title": "基于“三区联动”的社会大美育发展机制研究",
+      "authors": [
+        "曹意"
+      ],
+      "venue": "当代设计研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为解决社会大美育资源整合不足与供给能力薄弱的问题，推动学校美育与社会美育的协同发展，本研究采用以“质性研究为主、量化研究为辅，并通过数据三角验证加以支撑”的混合研究方法，深入发掘社会大美育发展中的现实困境。在此基础上，创新性地提出“校区、社区、园区”三区联动的社会大美育发展机制，以期为高校拓展美育资源功能外延、有效推动社会大美育发展提供策略建议与实践路径。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.62662/kxwxz0302007",
+      "title": "马克思主义人的全面发展理论对高校思想政治教育的当代启示",
+      "authors": [],
+      "venue": "教育科学文献",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.62989/jes2025.2.3.67",
+      "title": "《英美国家概况》“课程思政”的路径探索：教师作为教学设计者的价值引领表达",
+      "authors": [
+        "郑洁, 郑洁"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
     }
   ]
 }

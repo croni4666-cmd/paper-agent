@@ -3,460 +3,4836 @@
   "query": "inequality and intergenerational mobility in education",
   "topic_bucket": "econ",
   "source": "pub",
-  "generated_at": "2026-07-10T21:04:05",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:23:23",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 232,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/s0140-6736(20)30893-x",
+      "title": "COVID-19 Exacerbating Inequalities in the US",
+      "authors": [
+        "Aaron van Dorn"
+      ],
+      "venue": "LANCET",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e9ec4eb9fced0a24b00ac28",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1136/jech-2020-214401",
+      "title": "The COVID-19 Pandemic and Health Inequalities.",
+      "authors": [
+        "Clare Bambra"
+      ],
+      "venue": "JOURNAL OF EPIDEMIOLOGY AND COMMUNITY HEALTH",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee9f3379fced0a24b0ae2a7",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.17219/pzp/100468",
+      "title": "Social Determinants of Health Inequalities",
+      "authors": [
+        "Agata Wypych-Ślusarska"
+      ],
+      "venue": "Nursing and Public Health",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6218fd0e5aee126c0f27ef8b",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
       "doi": "10.1016/s0140-6736(96)07226-1",
       "title": "Socioeconomic inequalities in morbidity and mortality in western Europe",
-      "abstract": "",
-      "year": 1997,
+      "authors": [
+        "Johan P. Mackenbach",
+        "Anton E. Kunst",
+        "Adriënne E.J.M. Cavelaars",
+        "Feikje Groenhof",
+        "José JM Geurts"
+      ],
       "venue": "The Lancet",
-      "citation_count": 1035,
-      "engines_found_in": [
+      "year": 1997,
+      "cited_by_count": 1035,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "http://www.thelancet.com/article/S0140673696072261/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 4
     },
     {
-      "rank": 2,
+      "doi": "10.1146/annurev-economics-080213-040753",
+      "title": "The Economics of Human Development and Social Mobility",
+      "authors": [
+        "James J. Heckman",
+        "Stefano Mosso"
+      ],
+      "venue": "Annual Review of Economics",
+      "year": 2014,
+      "cited_by_count": 938,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://www.nber.org/papers/w19925.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1093/jeg/lby021",
+      "title": "Regional inequality in Europe: evidence, theory and policy implications",
+      "authors": [
+        "Simona Iammarino",
+        "Andrés Rodríguez‐Pose",
+        "Michael Storper"
+      ],
+      "venue": "Journal of Economic Geography",
+      "year": 2018,
+      "cited_by_count": 923,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://researchonline.lse.ac.uk/id/eprint/87491/1/Iammarino_Regional%20Inequality%20in%20Europe.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 6
+    },
+    {
       "doi": "10.1093/qje/qjz042",
       "title": "Race and Economic Opportunity in the United States: an Intergenerational Perspective*",
-      "abstract": "Abstract We study the sources of racial disparities in income using anonymized longitudinal data covering nearly the entire U.S. population from 1989 to 2015. We document three results. First, black Americans and American Indians have much lower rates of upward mobility and higher rates of downward mobility than whites, leading to persistent disparities across generations. Conditional on parent income, the black-white income gap is driven by differences in wages and employment rates between black and white men; there are no such differences between black and white women. Hispanic Americans have rates of intergenerational mobility more similar to whites than blacks, leading the Hispanic-white income gap to shrink across generations. Second, differences in parental marital status, education, and wealth explain little of the black-white income gap conditional on parent income. Third, the black-white gap persists even among boys who grow up in the same neighborhood. Controlling for parental income, black boys have lower incomes in adulthood than white boys in 99% of Census tracts. The few areas with small black-white gaps tend to be low-poverty neighborhoods with low levels of racial bias among whites and high rates of father presence among blacks. Black males who move to such neighborhoods earlier in childhood have significantly better outcomes. However, less than 5% of black children grow up in such areas. Our findings suggest that reducing the black-white income gap will require efforts whose impacts cross neighborhood and class lines and increase upward mobility specifically for black men.",
-      "year": 2019,
-      "venue": "The Quarterly Journal of Economics",
-      "citation_count": 799,
-      "engines_found_in": [
-        "openalex"
+      "authors": [
+        "Raj Chetty",
+        "Nathaniel Hendren",
+        "Maggie R. Jones",
+        "Sonya R. Porter"
       ],
-      "score": 0.0,
+      "venue": "The Quarterly Journal of Economics",
+      "year": 2019,
+      "cited_by_count": 803,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/135/2/711/32994895/qjz042.pdf",
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "aminer"
+      ],
+      "rank": 7
     },
     {
-      "rank": 3,
+      "doi": "10.3402/gha.v8.27106",
+      "title": "Inequalities in health: definitions, concepts, and theories",
+      "authors": [
+        "Mariana Arcaya",
+        "Alyssa L. Arcaya",
+        "S. V. Subramanian"
+      ],
+      "venue": "Global Health Action",
+      "year": 2015,
+      "cited_by_count": 696,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.tandfonline.com/doi/epdf/10.3402/gha.v8.27106?needAccess=true&role=button",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.5089/9781513555188.006",
+      "title": "Causes and Consequences of Income Inequality",
+      "authors": [
+        "Evridiki Tsounta",
+        "Nujin Suphaphiphat",
+        "Franto Ricka",
+        "Era Dabla‐Norris",
+        "Kalpana Kochhar"
+      ],
+      "venue": "IMF staff discussion note",
+      "year": 2015,
+      "cited_by_count": 693,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/doc/IMF006/22594-9781513555188/22594-9781513555188/Other_formats/Source_PDF/22594-9781513544373.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1257/aer.20110683",
+      "title": "Inequality, Leverage, and Crises",
+      "authors": [
+        "Michael Kumhof",
+        "Romain Rancière",
+        "Pablo Winant"
+      ],
+      "venue": "American Economic Review",
+      "year": 2015,
+      "cited_by_count": 652,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20110683",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1038/s41586-022-04996-4",
+      "title": "Social capital I: measurement and associations with economic mobility",
+      "authors": [
+        "Raj Chetty",
+        "Matthew O. Jackson",
+        "Theresa Kuchler",
+        "Johannes Stroebel",
+        "Nathaniel Hendren",
+        "Robert B. Fluegge",
+        "Sara Gong",
+        "Federico Zertuche González",
+        "Armelle Grondin",
+        "Matthew Jacob",
+        "Drew Johnston",
+        "Martin Koenen",
+        "Eduardo Laguna-Muggenburg",
+        "Florian Mudekereza",
+        "Tom Rutter",
+        "Nicolaj Thor",
+        "Wilbur Townsend",
+        "Ruby Zhang",
+        "Mike Bailey",
+        "Pablo Barberá",
+        "Monica Bhole",
+        "Nils Wernerfelt"
+      ],
+      "venue": "Nature",
+      "year": 2022,
+      "cited_by_count": 618,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.nature.com/articles/s41586-022-04996-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 11
+    },
+    {
       "doi": "10.1257/jep.8.4.145",
       "title": "Intergenerational Transfers and the Accumulation of Wealth",
-      "abstract": "This paper uses household data to provide direct estimates of intergenerational transfers as a source of wealth. The authors distinguish between intended transfers (for example, gifts to other households) and possibly unintended transfers (bequests) and estimate that intended transfers account for at least 20 percent of net worth. Thus, a significant portion of the U.S. wealth cannot be explained by the life-cycle model, even when the model is augmented to allow for bequests. Estimated bequests can account for an additional 31 percent of net worth. The authors also show that transfers among living people are about half as large as bequests.",
-      "year": 1994,
+      "authors": [
+        "William G. Gale",
+        "John Karl Scholz"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 605,
-      "engines_found_in": [
+      "year": 1994,
+      "cited_by_count": 605,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.8.4.145",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 12
     },
     {
-      "rank": 4,
+      "doi": "10.1002/9781405165518.wbeosi027.pub3",
+      "title": "Income Inequality and Income Mobility",
+      "authors": [
+        "Neil Guppy"
+      ],
+      "venue": "The Blackwell Encyclopedia of Sociology",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac76cd5aee126c0f9fff73",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1111/padr.12547",
+      "title": "World Inequality Report 2022",
+      "authors": [
+        "Lucas Chancel"
+      ],
+      "venue": "POPULATION AND DEVELOPMENT REVIEW",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "645d065ed68f896efa9fba3b",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.25279/sak.1122145",
+      "title": "COVID-19 and Inequalities",
+      "authors": [
+        "Merve ARSLAN"
+      ],
+      "venue": "Sağlık Akademisi Kastamonu",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791797939a5f4082d90078",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1007/978-3-319-57365-6_380-1",
+      "title": "COVID-19 and Inequalities",
+      "authors": [
+        "Federica Alfani"
+      ],
+      "venue": "Handbook of Labor, Human Resources and Population Economics",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791ef0939a5f4082e44bdd",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1201/9781003208853",
+      "title": "Mathematical Theory of Hemivariational Inequalities and Applications",
+      "authors": [
+        "Z. Naniewicz"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d87ceadabfae2eee48ca5c",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1093/ser/mwy051",
+      "title": "The Paradox of Inequality: Income Inequality and Belief in Meritocracy Go Hand in Hand",
+      "authors": [
+        "Jonathan J. B. Mijs"
+      ],
+      "venue": "SOCIO-ECONOMIC REVIEW",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d1a6ced107d4c644fa2b",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "",
+      "title": "GENERALIZATION OF AN INEQUALITY BY TALAGRAND , AND LINKS WITH THE LOGARITHMIC SOBOLEV",
+      "authors": [
+        "S. Ormale"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c729bc5244ab9dcb57fe0f",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.18778/8220-793-4.05",
+      "title": "Income Inequality in Today’s China",
+      "authors": [
+        "Gabriel Hasík"
+      ],
+      "venue": "Asia in World Politics Past, Present, and Future",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a0d367d68f896efabbf0b4",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1016/j.cpr.2021.101997",
+      "title": "Intergenerational Transmission and Prevention of Adverse Childhood Experiences (Aces)",
+      "authors": [
+        "Angela J. Narayan"
+      ],
+      "venue": "CLINICAL PSYCHOLOGY REVIEW",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b4252ec47cda532dcef75",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.30525/2592-8813-2021-1-5",
+      "title": "INTERGENERATIONAL TRANSMISSION OF VALUES",
+      "authors": [
+        "Karina Ostapenko"
+      ],
+      "venue": "Baltic Journal of Legal and Social Sciences",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c96cff5244ab9dcb8f34ec",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1016/s2468-2667(20)30085-2",
+      "title": "Why Inequality Could Spread COVID-19",
+      "authors": [
+        "Faheem Ahmed"
+      ],
+      "venue": "The Lancet Public Health",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8c574b9fced0a24bdadbf8",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1111/1475-5890.12232",
+      "title": "COVID‐19 and Inequalities*",
+      "authors": [
+        "Richard Blundell"
+      ],
+      "venue": "Fiscal Studies",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0744079e795e1a9f4abc91",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1111/ssqu.12795",
+      "title": "Measuring Income Inequality Across Countries and over Time: the Standardized World Income Inequality Database",
+      "authors": [
+        "Frederick Solt"
+      ],
+      "venue": "SOCIAL SCIENCE QUARTERLY",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff5ab67bf33bee3bafde2d5",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1093/geronb/gbaa051",
+      "title": "Aging in Times of the COVID-19 Pandemic: Avoiding Ageism and Fostering Intergenerational Solidarity",
+      "authors": [
+        "Liat Ayalon"
+      ],
+      "venue": "The Journals of Gerontology Series B",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e99815c9fced0a24b834150",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1093/qje/qjy025",
+      "title": "Firming Up Inequality",
+      "authors": [
+        "Jae Song"
+      ],
+      "venue": "QUARTERLY JOURNAL OF ECONOMICS",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86f93dabfae2eeee9b895",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1038/s41556-018-0242-9",
+      "title": "Intergenerational and Transgenerational Epigenetic Inheritance in Animals",
+      "authors": [
+        "Marcos Francisco Perez"
+      ],
+      "venue": "Nature Cell Biology",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65bac0da939a5f4082b5a083",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
       "doi": "10.1093/esr/jcn026",
       "title": "Persistent Inequality in Educational Attainment and its Institutional Context",
-      "abstract": "Research has repeatedly shown that educational opportunities are distributed unevenly in all countries. Therefore, the question is not whether family background and educational outcomes are related but to what degree they are related. This latter question then invites a comparative perspective. That is, does social inequality in education differ across time and countries? If yes, which institutional characteristics can explain differences in educational inequality? Educational inequality is conceptualized as the association between individuals’ and their parents’ highest educational level attained. Intergenerational educational mobility processes are analysed for 20 industrialized nations by means of log-linear and log-multiplicative models. The results show that the degree of educational mobility has remained stable across the second half of the 20th century in virtually all countries. However, nations differ widely in the extent to which parents’ education influences their children's educational attainment. The degree of educational inequality is associated with the institutional structure of national education systems. Rigid systems with dead-end educational pathways appear to be a hindrance to the equalization of educational opportunities, especially if the sorting of students occurs early in the educational career. This association is not mediated by other institutional characteristics included in this analysis that do not exert notable influences on educational mobility.",
-      "year": 2008,
+      "authors": [
+        "Fabian T. Pfeffer"
+      ],
       "venue": "European Sociological Review",
-      "citation_count": 568,
-      "engines_found_in": [
+      "year": 2008,
+      "cited_by_count": 568,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 29
     },
     {
-      "rank": 5,
       "doi": "10.1111/j.1467-6419.2011.00690.x",
       "title": "CROSS‐COUNTRY RANKINGS IN INTERGENERATIONAL MOBILITY: A COMPARISON OF APPROACHES FROM ECONOMICS AND SOCIOLOGY",
-      "abstract": "Abstract This paper summarizes research on the relative level of intergenerational mobility – whether classified by income, education or social class. The literatures on education and income mobility reveal a similar ranking with South America, other developing nations, southern European countries and France tending to have rather limited mobility although the Nordic countries exhibit strong mobility. Estimates of mobility based on social class point to rather different patterns, and we demonstrate that these differences are most likely generated by intergenerational earnings persistence within social classes. The second part of the paper looks for explanations for the differences in earnings and education persistence and finds that mobility is negatively correlated with inequality and the return to education but positively correlated with a nation's education spending.",
-      "year": 2011,
+      "authors": [
+        "Jo Blanden"
+      ],
       "venue": "Journal of Economic Surveys",
-      "citation_count": 453,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 454,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-6419.2011.00690.x",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 6,
+      "doi": "10.1007/s13524-011-0014-7",
+      "title": "A Multigenerational View of Inequality",
+      "authors": [
+        "Robert D. Mare"
+      ],
+      "venue": "Demography",
+      "year": 2011,
+      "cited_by_count": 422,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://read.dukeupress.edu/demography/article-pdf/48/1/1/880525/1mare.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1257/jep.2.2.41",
+      "title": "Intergenerational Transfers and Savings",
+      "authors": [
+        "Laurence J. Kotlikoff"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 1988,
+      "cited_by_count": 412,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.2.2.41",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 32
+    },
+    {
       "doi": "10.1353/sof.2006.0108",
       "title": "Education and the Inequalities of Place",
-      "abstract": "Students living in inner city and rural areas of the United States exhibit lower educational achievement and a higher likelihood of dropping out of high school than do their suburban counterparts. Educational research and policy has tended to neglect these inequalities or, at best, focus on one type but not the other. In this article, we integrate literatures on spatial stratification and educational outcomes, and offer a framework in which resources influential for achievement/attainment are viewed as embedded within, and varying across, inner city, rural and suburban places. We draw from the National Educational Longitudinal Survey and the Common Core of Data, and employ hierarchical linear and hierarchical logistic modeling techniques to test our arguments. Results reveal inner city and rural disadvantages in both family and school resources. These resource inequalities translate into important educational investments at both family and school levels, and help explain deficits in attainment and standardized achievement. We conclude by discussing the implications of our approach and findings for analyses of educational stratification specifically and spatial patterning of inequality more generally.",
-      "year": 2006,
+      "authors": [
+        "Vincent J. Roscigno",
+        "Donald Tomaskovic‐Devey",
+        "Margaret Crowley"
+      ],
       "venue": "Social Forces",
-      "citation_count": 365,
-      "engines_found_in": [
+      "year": 2006,
+      "cited_by_count": 365,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/sf/article-pdf/84/4/2121/6521010/84-4-2121.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 33
     },
     {
-      "rank": 7,
       "doi": "10.1257/0002828043052213",
       "title": "Intergenerational Persistence of Earnings: The Role of Early and College Education",
-      "abstract": "Recent empirical evidence from the United States indicates a high degree of persistence in earnings across generations. Designing effective public policies to increase social mobility requires identifying and measuring the major sources of persistence and inequality in earnings. We provide a quantitative model of intergenerational human capital transmission that focuses on three sources: innate ability, early education, and college education. We find that approximately one-half of the intergenerational correlation in earnings is accounted for by parental investment in education, in particular early education. We show that these results have important implications for education policy.",
-      "year": 2004,
+      "authors": [
+        "Diego Restuccia",
+        "Carlos Urrutia"
+      ],
       "venue": "American Economic Review",
-      "citation_count": 351,
-      "engines_found_in": [
+      "year": 2004,
+      "cited_by_count": 351,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 34
     },
     {
-      "rank": 8,
       "doi": "10.1177/0003122416684777",
       "title": "An Immigrant Paradox? Contextual Attainment and Intergenerational Educational Mobility",
-      "abstract": "Numerous studies have revealed a seemingly paradoxical pattern in which, despite cultural differences, unfamiliarity with the educational system, and possible language difficulties, children of immigrants outperform their peers with native-born parents in the U.S. educational system. We problematize the notion of an immigrant paradox in education by broadening our conceptualization of social class background, and introducing the concept of contextual attainment to capture the geographic and historical contexts in which education is completed. Analyzing nationally representative longitudinal survey data combined with international educational data, we show that, for immigrant parents, contextual attainments vary between and within countries of origin and often diverge from post-migration socioeconomic statuses. Parental contextual attainment helps explain why, net of standard family socioeconomic status measures, most groups of immigrants’ children complete more years of schooling than do White Americans with native-born parents. Moreover, considering parental contextual attainment leads to a rethinking of intergenerational educational mobility patterns for adults with immigrant parents. We argue that contextual attainment captures the noneconomic benefits of higher class background that help explain how intergenerational educational inequalities are reproduced.",
-      "year": 2017,
+      "authors": [
+        "Cynthia Feliciano",
+        "Yader R. Lanuza"
+      ],
       "venue": "American Sociological Review",
-      "citation_count": 325,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 326,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 35
     },
     {
-      "rank": 9,
+      "doi": "10.1016/s0047-2727(99)00040-7",
+      "title": "More equal but less mobile?",
+      "authors": [
+        "Daniele Checchi",
+        "Andrea Ichino",
+        "Aldo Rustichini"
+      ],
+      "venue": "Journal of Public Economics",
+      "year": 1999,
+      "cited_by_count": 311,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 36
+    },
+    {
       "doi": "10.1162/003355397555145",
       "title": "How Much does Sorting Increase Inequality?",
-      "abstract": "Some commentators argue that increased sorting into internally homogeneous neighborhoods, schools, and marriages is radically polarizing society. Calibration of a formal model, however, suggests that the steady-state standard deviation of education would increase only 1.7 percent if the correlation between neighbors' education doubled, and would fall only 1.6 percent if educational sorting by neighborhood disappeared. The steady-state standard deviation of education would grow 1 percent if the correlation between spouses' education increased from 0.6 to 0.8. In fact, marital and neighborhood sorting have been stable, or even decreasing historically. Sorting has somewhat more significant effects on intergenerational mobility than on inequality.",
-      "year": 1997,
+      "authors": [
+        "Michael Kremer"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 275,
-      "engines_found_in": [
+      "year": 1997,
+      "cited_by_count": 275,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 37
     },
     {
-      "rank": 10,
-      "doi": "10.1016/s0169-7218(11)02414-2",
-      "title": "Recent Developments in Intergenerational Mobility",
-      "abstract": "",
-      "year": 2010,
-      "venue": "Handbook of labour economics",
-      "citation_count": 261,
-      "engines_found_in": [
+      "doi": "10.2307/2095555",
+      "title": "Comparative Social Mobility Revisited: Models of Convergence and Divergence in 16 Countries",
+      "authors": [
+        "David B. Grusky",
+        "Robert M. Hauser"
+      ],
+      "venue": "American Sociological Review",
+      "year": 1984,
+      "cited_by_count": 258,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 38
     },
     {
-      "rank": 11,
       "doi": "10.1093/sf/sov075",
       "title": "Income Inequality, Intergenerational Mobility, and the Great Gatsby Curve: Is Education the Key?",
-      "abstract": "It is widely believed that countries with greater levels of income inequality also have lower levels of intergenerational mobility. This relationship, known as the Great Gatsby Curve (GGC), has been prominently cited by high-ranking public policymakers, bestselling authors, and Nobel Prize–winning academics. Yet, relatively little cross-national work has empirically examined the mechanisms thought to underpin the GGC—particularly with regard to the role of educational attainment. This paper uses the cross-nationally comparable Programme for International Assessment of Adult Competencies (PIAAC) data set to shed new light on this issue. We find that income inequality is associated with several key components of the intergenerational transmission process—including access to higher education, the financial returns on education, and the residual effect of parental education upon labor-market earnings. Thus, consistent with theoretical models, we find that educational attainment is an important driver of the relationship between intergenerational mobility and income inequality. We hence conclude that unequal access to financial resources plays a central role in the intergenerational transmission of advantage.",
-      "year": 2015,
+      "authors": [
+        "John Jerrim",
+        "Lindsey Macmillan"
+      ],
       "venue": "Social Forces",
-      "citation_count": 238,
-      "engines_found_in": [
+      "year": 2015,
+      "cited_by_count": 239,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1093/sf/sov075",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 39
     },
     {
-      "rank": 12,
+      "doi": "10.1353/jhr.2008.0008",
+      "title": "Intergenerational Economic Mobility in the United States, 1940 to 2000",
+      "authors": [
+        "Daniel Aaronson",
+        "Bhashkar Mazumder"
+      ],
+      "venue": "The Journal of Human Resources",
+      "year": 2008,
+      "cited_by_count": 228,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://muse.jhu.edu/article/466580/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 40
+    },
+    {
       "doi": "10.1016/j.worlddev.2020.105115",
       "title": "Inequality of opportunity, inequality of income and economic growth",
-      "abstract": "",
-      "year": 2020,
-      "venue": "World Development",
-      "citation_count": 226,
-      "engines_found_in": [
-        "openalex"
+      "authors": [
+        "Shekhar Aiyar",
+        "Christian Ebeke"
       ],
-      "score": 0.0,
+      "venue": "World Development",
+      "year": 2020,
+      "cited_by_count": 226,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "aminer"
+      ],
+      "rank": 41
     },
     {
-      "rank": 13,
+      "doi": "10.1093/SF/SOV075",
+      "arxiv_id": "",
+      "title": "Income Inequality, Intergenerational Mobility, and the Great Gatsby Curve: Is Education the Key?",
+      "authors": [
+        "John Jerrim",
+        "L. Macmillan"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 218,
+      "influential_cite_count": 8,
+      "reference_count": 92,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://discovery.ucl.ac.uk/id/eprint/1472908/7/Social%20Forces-2015-Jerrim-505-33.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 42
+    },
+    {
       "doi": "10.1146/annurev-soc-071811-145521",
       "title": "Intergenerational Mobility and Inequality: The Latin American Case",
-      "abstract": "Prompted by new data and a renewed concern about equality of opportunity, the study of intergenerational mobility has flourished in Latin America in the past decade. Although analysis is still restricted to a handful of countries, one conclusion appears clear: Intergenerational income mobility is weaker in Latin America than in industrial countries and is characterized by “persistence at the top,” a pattern consistent with the high levels of economic concentration in the region. However, social class mobility in Latin America does not differ from that in the industrialized world. This essay reviews two generations of mobility research since the 1960s, takes stock of current findings on economic and class mobility in Latin America, examines the linkages between mobility and macro-level factors, and engages a new literature on equality of opportunity. I suggest that the comparative understanding of mobility in Latin America can inform and inspire research in the industrialized world.",
-      "year": 2014,
+      "authors": [
+        "Florencia Torche"
+      ],
       "venue": "Annual Review of Sociology",
-      "citation_count": 215,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 216,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-soc-071811-145521",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 43
     },
     {
-      "rank": 14,
-      "doi": "10.2139/ssrn.2314815",
-      "title": "Income Inequality, Equality of Opportunity, and Intergenerational Mobility",
-      "abstract": "",
-      "year": 2013,
-      "venue": "SSRN Electronic Journal",
-      "citation_count": 207,
-      "engines_found_in": [
+      "doi": "10.1111/sjoe.12219",
+      "title": "The Scandinavian Fantasy: The Sources of Intergenerational Mobility in Denmark and the US",
+      "authors": [
+        "Rasmus Landersø",
+        "James J. Heckman"
+      ],
+      "venue": "Scandinavian Journal of Economics",
+      "year": 2016,
+      "cited_by_count": 211,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/sjoe.12219",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 44
     },
     {
-      "rank": 15,
+      "doi": "10.1007/s13524-015-0428-8",
+      "title": "Like Father, Like Son? Intergenerational Educational Mobility in India",
+      "authors": [
+        "Mehtabul Azam",
+        "Vipul Bhatt"
+      ],
+      "venue": "Demography",
+      "year": 2015,
+      "cited_by_count": 205,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://read.dukeupress.edu/demography/article-pdf/52/6/1929/866646/1929azam.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 45
+    },
+    {
       "doi": "10.1016/j.jdeveco.2018.05.016",
       "title": "Educational inequality and intergenerational mobility in Latin America: A new database",
-      "abstract": "",
-      "year": 2018,
+      "authors": [
+        "Guido Neidhöfer",
+        "Joaquín Serrano",
+        "Leonardo Gasparini"
+      ],
       "venue": "Journal of Development Economics",
-      "citation_count": 190,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 190,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0304387818306618",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 46
     },
     {
-      "rank": 16,
+      "doi": "10.1111/j.1475-5890.2004.tb00099.x",
+      "title": "Educational inequality: the widening socio‐economic gap",
+      "authors": [
+        "Stephen Machin",
+        "Anna Vignoles"
+      ],
+      "venue": "Fiscal Studies",
+      "year": 2004,
+      "cited_by_count": 165,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
       "doi": "10.1093/oxrep/grw030",
       "title": "Higher education, career opportunities, and intergenerational inequality",
-      "abstract": "The UK government has expressed a desire to increase social mobility, with policies to help achieve this aim focused on reducing inequalities in educational attainment. This paper draws together established and new information about the contribution that higher education can make to social mobility using a life-course approach, considering differences by family background in terms of university attendance and achievement, as well as occupation and earnings following graduation. We find substantial socio-economic differences at each stage. Young people from poorer backgrounds are, on average, less likely to go to university than their richer peers. Even among the selected group who do go to university, they are less likely to attend the highest status institutions, less likely to graduate, and less likely to achieve the highest degree classes. These differences in degree outcomes contribute to the lower average earnings of graduates from poorer families, but earnings differentials go well beyond those driven purely by degree attainment or institution attended. The evidence strongly suggests that, even after taking these factors into account, graduates from affluent families are more likely to obtain a professional job and to see higher earnings growth in the labour market. We discuss the implications of these findings for the prospects of higher education as a route to greater social mobility.",
-      "year": 2016,
+      "authors": [
+        "Claire Crawford",
+        "Paul Gregg",
+        "Lindsey Macmillan",
+        "Anna Vignoles",
+        "Gill Wyness"
+      ],
       "venue": "Oxford Review of Economic Policy",
-      "citation_count": 162,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 17,
-      "doi": "10.1016/j.jdeveco.2018.05.016",
-      "title": "Educational inequality and intergenerational mobility in Latin America: A new database",
-      "abstract": "",
-      "year": 2017,
-      "venue": "Journal of Development Economics",
-      "citation_count": 148,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
-    },
-    {
-      "rank": 18,
-      "doi": "10.1016/j.chieco.2015.12.009",
-      "title": "The impact of education on income inequality and intergenerational mobility",
-      "abstract": "",
-      "year": 2015,
-      "venue": "China Economic Review",
-      "citation_count": 144,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 19,
-      "doi": "10.1016/j.chieco.2015.12.009",
-      "title": "The impact of education on income inequality and intergenerational mobility",
-      "abstract": "",
       "year": 2016,
-      "venue": "",
-      "citation_count": 142,
-      "engines_found_in": [
-        "semanticscholar"
+      "cited_by_count": 163,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/oxrep/article-pdf/32/4/553/7504736/grw030.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
+      "rank": 48
     },
     {
-      "rank": 20,
+      "doi": "10.1016/J.JDEVECO.2018.05.016",
+      "arxiv_id": "",
+      "title": "Educational inequality and intergenerational mobility in Latin America: A new database",
+      "authors": [
+        "Guido Neidhöfer",
+        "Joaquín Serrano",
+        "Leonardo Gasparini"
+      ],
+      "venue": "Journal of Development Economics",
+      "year": 2017,
+      "cited_by_count": 149,
+      "influential_cite_count": 14,
+      "reference_count": 63,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://www.memoria.fahce.unlp.edu.ar/trab_eventos/ev.10609/ev.10609.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1016/J.CHIECO.2015.12.009",
+      "arxiv_id": "",
+      "title": "The impact of education on income inequality and intergenerational mobility",
+      "authors": [
+        "Juan Yang",
+        "M. Qiu"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 142,
+      "influential_cite_count": 2,
+      "reference_count": 25,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1093/oso/9780198799580.003.0010",
+      "title": "Intergenerational Transfers and Inequality",
+      "authors": [
+        "Joseph E. Stiglitz"
+      ],
+      "venue": "The Origins of Inequality",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84867dabfae2eeec09e68",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1016/j.jtha.2023.03.015",
+      "title": "Convoys of Social Support: an Intergenerational Analysis.",
+      "authors": [
+        "Bethany Samuelson Bannow"
+      ],
+      "venue": "Journal of thrombosis and haemostasis  JTH",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a35bde612ca648686a3407",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1525/9780520384194",
+      "title": "Retail Inequality",
+      "authors": [
+        "KH Kolb"
+      ],
+      "venue": "RETAIL INEQUALITY Reframing the Food Desert Debate",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c88f8d5244ab9dcb7936fc",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1073/pnas.2113067119",
+      "title": "Intersectional Inequalities in Science",
+      "authors": [
+        "Diego Kozlowski"
+      ],
+      "venue": "PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61d6c7da5244ab9dcb74024f",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.1257/app.20210151",
+      "title": "And Yet It Moves: Intergenerational Mobility in Italy",
+      "authors": [
+        "Paolo Acciari"
+      ],
+      "venue": "AMERICAN ECONOMIC JOURNAL-APPLIED ECONOMICS",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d2e5635275ded87f95f5d54",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.19738/j.cnki.psy.2022.01.084",
+      "title": "Intergenerational transmission of values",
+      "authors": [],
+      "venue": "心理月刊",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b0531e3fda6d7f0696a335",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.4159/9780674269880",
+      "title": "The Anatomy of Racial Inequality",
+      "authors": [
+        "Glenn C. Loury"
+      ],
+      "venue": "Harvard University Press eBooks",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b58eb7602d97040d433c",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.1007/978-3-319-71060-0_52-1",
+      "title": "Measurement of Inequality",
+      "authors": [
+        "Sundus Usmani"
+      ],
+      "venue": "Encyclopedia of the UN Sustainable Development Goals",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c888c05244ab9dcb509c55",
+      "matched_phrase": "inequality",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.3982/ecta17018",
+      "title": "Intergenerational Mobility in Africa",
+      "authors": [
+        "Alberto Alesina"
+      ],
+      "venue": "Econometrica",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d2e50a0275ded87f95f1d79",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1016/j.socscimed.2020.113662",
+      "title": "Intergenerational Trauma in Latinxs: A Scoping Review",
+      "authors": [
+        "Jessica P. Cerden"
+      ],
+      "venue": "SOCIAL SCIENCE & MEDICINE",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "600bf78ad4150a363c432866",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1257/aer.20190553",
+      "title": "Dynastic Human Capital, Inequality, and Intergenerational Mobility",
+      "authors": [
+        "Adrian Adermon"
+      ],
+      "venue": "AMERICAN ECONOMIC REVIEW",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60b9a5c3e4510cd7c8fd65eb",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.1126/science.abi7339",
+      "title": "Intergenerational Inequities in Exposure to Climate Extremes",
+      "authors": [
+        "Wim Thiery"
+      ],
+      "venue": "Science (New York, NY)",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6153e40f5244ab9dcb3df8c4",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1016/j.jebo.2021.09.005",
+      "title": "Government Spending and Intergenerational Income Mobility: Evidence from China",
+      "authors": [
+        "Xiao Huang"
+      ],
+      "venue": "JOURNAL OF ECONOMIC BEHAVIOR & ORGANIZATION",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbb001c45e57ce976c3b4",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.1086/708820",
+      "title": "Intergenerational Redistribution in the Great Recession",
+      "authors": [
+        "Andrew Glover"
+      ],
+      "venue": "JOURNAL OF POLITICAL ECONOMY",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d865d3dabfae2eee9f5639",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.1146/annurev-clinpsy-071519-113915",
+      "title": "Intergenerational Transmission of Depression.",
+      "authors": [
+        "Sherryl H. Goodman"
+      ],
+      "venue": "Annual Review of Clinical Psychology",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e297001df1a9c0c41e7a097",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.1086/700765",
+      "title": "On the Intergenerational Transmission of Economic Status",
+      "authors": [
+        "Sang Yoon (Tim) Lee"
+      ],
+      "venue": "JOURNAL OF POLITICAL ECONOMY",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c757dbaf56def9798b16c22",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 66
+    },
+    {
       "doi": "10.1093/sf/sou092",
       "title": "Income Inequality and Intergenerational Income Mobility in the United States",
-      "abstract": "Is there a relationship between family income inequality and income mobility across generations in the United States? As family income inequality rose in the United States, parental resources available for improving children's health, education, and care diverged. The amount and rate of divergence also varied across US states. Researchers and policy analysts have expressed concern that relatively high inequality might be accompanied by relatively low mobility, tightening the connection between individuals' incomes during childhood and adulthood. Using data from the Panel Study of Income Dynamics, the National Longitudinal Survey of Youth, and various government sources, this paper exploits state and cohort variation to estimate the relationship between inequality and mobility. Results provide very little support for the hypothesis that inequality shapes mobility in the United States. The inequality children experienced during youth had no robust association with their economic mobility as adults. Formal analysis reveals that offsetting effects could underlie this result. In theory, mobility-enhancing forces may counterbalance mobility-reducing effects. In practice, the results suggest that in the US context, the intergenerational transmission of income may not be very responsive to changes in inequality.",
-      "year": 2014,
+      "authors": [
+        "Deirdre Bloome"
+      ],
       "venue": "Social Forces",
-      "citation_count": 123,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 124,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4569595",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 67
     },
     {
-      "rank": 21,
+      "doi": "10.1016/j.chieco.2015.12.009",
+      "title": "The impact of education on income inequality and intergenerational mobility",
+      "authors": [
+        "Yang, Juan",
+        "Qiu, Muyuan"
+      ],
+      "venue": "China Economic Review",
+      "year": 2016,
+      "cited_by_count": 113,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "rank": 68
+    },
+    {
       "doi": "10.1353/eco.2001.0010",
       "title": "Intergenerational Mobility in Latin America",
-      "abstract": "High inequality has long been regarded as one of the main problems facing Latin American countries. To understand better the determinants of inequality and to help guide thinking about policy options, it is useful to know whether inequality mainly reflects low intergenerational mobility or whether it is driven by differences in individual characteristics that arise independently of family background. In this paper we use five household surveys with questions about parental socioeconomic characteristics for adults, and a set of 112 standard household surveys to examine the intergenerational transmission of schooling and occupational status in Latin America and the United States. We find that intergenerational mobility is much higher in the United States than in Latin America, that there are sizable differences in mobility within Latin America, and that mobility in Latin America is strongly associated with schooling levels and expenditures on education.",
-      "year": 2001,
+      "authors": [
+        "Jere R. Behrman",
+        "Alejandro Gaviría",
+        "Miguel Székely"
+      ],
       "venue": "Economía",
-      "citation_count": 112,
-      "engines_found_in": [
+      "year": 2001,
+      "cited_by_count": 112,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://muse.jhu.edu/pub/11/article/10599",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 69
     },
     {
-      "rank": 22,
       "doi": "10.1007/s10887-007-9019-x",
       "title": "Inequality and mobility",
-      "abstract": "",
-      "year": 2007,
+      "authors": [
+        "John Hassler",
+        "José V. Rodrı́guez Mora",
+        "Joseph Zeira"
+      ],
       "venue": "Journal of Economic Growth",
-      "citation_count": 112,
-      "engines_found_in": [
+      "year": 2007,
+      "cited_by_count": 112,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/20.500.11820/68353a27-4949-4eb9-9128-e64e0cdb438b",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 70
     },
     {
-      "rank": 23,
+      "doi": "10.1177/0002716215596971",
+      "title": "Social Mobility in a High-Inequality Regime",
+      "authors": [
+        "Pablo A. Mitnik",
+        "Erin Cumberworth",
+        "David B. Grusky"
+      ],
+      "venue": "The Annals of the American Academy of Political and Social Science",
+      "year": 2015,
+      "cited_by_count": 104,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
       "doi": "10.1111/j.1749-124x.2013.12013.x",
       "title": "Inequality in Intergenerational Mobility of Education in China",
-      "abstract": "Abstract This paper investigates trends in intergenerational patterns of educational attainment of those born in China between 1941 and 1990. Employing the 2008 Rural–Urban Migration in China and Indonesia Survey, we find that intergenerational correlation is lower in rural and migrant than in urban populations. The higher mobility observed in rural and migrant populations stems from the fact that the majority of these children complete only junior high school, with some children in the youngest cohorts moving down the education ladder relative to their parents. In contrast, urban children seem to at least maintain their parents’ education level. The persistence of intergenerational transmission of education at high levels in urban areas combined with some mobility, upward or downward, in rural areas is likely to aggravate China's rural–urban disparity. Policies should focus more on the underlying gaps in education opportunities and the improvement in education of the rural and migrant populations.",
-      "year": 2013,
+      "authors": [
+        "Jane Golley",
+        "Sherry Tao Kong"
+      ],
       "venue": "China & World Economy",
-      "citation_count": 99,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 99,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 72
     },
     {
-      "rank": 24,
+      "doi": "10.1093/SF/SOU092",
+      "arxiv_id": "",
+      "title": "Income Inequality and Intergenerational Income Mobility in the United States",
+      "authors": [
+        "Deirdre Bloome"
+      ],
+      "venue": "Social forces; a scientific medium of social study and interpretation",
+      "year": 2014,
+      "cited_by_count": 98,
+      "influential_cite_count": 9,
+      "reference_count": 127,
+      "tldr": "The results suggest that in the US context, the intergenerational transmission of income may not be very responsive to changes in inequality, and offsetting effects could underlie this result.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc4569595?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results suggest that in the US context, the intergenerational transmission of income may not be very responsive to changes in inequality, and offsetting effects could underlie this result.",
+      "rank": 73
+    },
+    {
       "doi": "10.1006/ssre.1997.0598",
       "title": "Differential Fertility, Intergenerational Educational Mobility, and Racial Inequality",
-      "abstract": "",
-      "year": 1997,
+      "authors": [
+        "Robert D. Mare"
+      ],
       "venue": "Social Science Research",
-      "citation_count": 90,
-      "engines_found_in": [
+      "year": 1997,
+      "cited_by_count": 90,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 74
     },
     {
-      "rank": 25,
+      "doi": "10.1016/j.rssm.2019.100455",
+      "title": "Intergenerational mobility, intergenerational effects, sibling correlations, and equality of opportunity: A comparison of four approaches",
+      "authors": [
+        "Anders Björklund",
+        "Markus Jäntti"
+      ],
+      "venue": "Research in Social Stratification and Mobility",
+      "year": 2020,
+      "cited_by_count": 80,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 75
+    },
+    {
       "doi": "10.1016/j.jdeveco.2014.05.007",
       "title": "Intergenerational mobility and interpersonal inequality in an African economy",
-      "abstract": "How much economic mobility is there across generations in a poor, primarily rural, economy? How much do intergenerational linkages contribute to current inequality? We address these questions using original survey data on Senegal that include a sub-household measure of consumption for cells within the household. While intergenerational linkages are evident, we find a relatively high degree of mobility across generations, associated with the shift from farm to non-farm sectors and greater economic activity of women. Male-dominated bequests of land and housing bring little gain to consumption and play little role in explaining inequality, though they have important effects on sector of activity. Inheritance of non-land assets and the education and occupation of parents (especially the mother) and their choices about children's schooling are more important to adult welfare than property inheritance. Significant gender inequality in consumption is evident, though it is almost entirely explicable in terms of factors such as education and (non-land) inheritance. There are a number of other pronounced gender differences, with intergenerational linkages appearing through the mother rather than the father.",
-      "year": 2014,
+      "authors": [
+        "Sylvie Lambert",
+        "Martin Ravallion",
+        "Dominique van de Walle"
+      ],
       "venue": "Journal of Development Economics",
-      "citation_count": 76,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 76,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.jdeveco.2014.05.007",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 76
     },
     {
-      "rank": 26,
-      "doi": "10.1016/j.red.2015.07.006",
-      "title": "Public education financing, earnings inequality, and intergenerational mobility",
-      "abstract": "",
-      "year": 2015,
-      "venue": "Review of Economic Dynamics",
-      "citation_count": 69,
-      "engines_found_in": [
-        "openalex"
-      ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
-    },
-    {
-      "rank": 27,
-      "doi": "10.1016/j.red.2015.07.006",
-      "title": "Public education financing, earnings inequality, and intergenerational mobility ☆",
-      "abstract": "",
-      "year": 2015,
-      "venue": "",
-      "citation_count": 57,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": ""
-    },
-    {
-      "rank": 28,
       "doi": "10.1177/0003122419885094",
       "title": "The Relation between Inequality and Intergenerational Class Mobility in 39 Countries",
-      "abstract": "We study the relationship between inter-class inequality and intergenerational class mobility across 39 countries. Previous research on the relationship between economic inequality and class mobility remains inconclusive, as studies have confounded intra- with between-class economic inequalities. We propose that between-class inequality across multiple dimensions accounts for the inverse relationship between inequality and mobility: the larger the resource distance between classes, the less likely it is that mobility from one to the other will occur. We consider inequality in terms of between-class differences in three areas—education, wages, and income—and in a composite measure. Building on sociological mobility theory, we argue that cross-country variation in mobility results, in part, from families adapting to different levels of between-class inequality. Consistent with this hypothesis, we find a negative correlation between inter-class inequality and social fluidity, with between-class inequality being a better predictor of mobility chances than conventional distributional measures. We also find that the resource distance between classes is negatively related to the strength of their intergenerational association for some off-diagonal origin and destination (OD) class combinations.",
-      "year": 2019,
+      "authors": [
+        "Florian R. Hertel",
+        "Olaf Groh-Samberg"
+      ],
       "venue": "American Sociological Review",
-      "citation_count": 55,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 75,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0003122419885094",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
         "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "influential_cite_count": 1,
+      "reference_count": 127,
+      "rank": 77
     },
     {
-      "rank": 29,
-      "doi": "10.1080/00036846.2015.1031877",
-      "title": "Social mobility and inequality in urban China: understanding the role of intergenerational transmission of education",
-      "abstract": "China’s rapid economic growth since the late 1980s has been accompanied by great economic and social transformations, which have resulted in a sharp increase in income inequality. This article contributes to the literature of social mobility in China by examining the impact of parental education on the education of their children. Using the 1990 and 2000 Chinese Population Censuses, we employ nonparametric estimation strategies to provide a systematic investigation of intergenerational transmission of education in urban China. We find evidence of increasing parents–children educational correlations. Our results raise concerns regarding economic inequality in urban China as high intergenerational persistence of education is expected to be a barrier to equal opportunities in children’s education attainments and their future labour market outcomes.",
-      "year": 2015,
-      "venue": "Applied Economics",
-      "citation_count": 33,
-      "engines_found_in": [
+      "doi": "10.1177/0038040718801812",
+      "title": "Intergenerational Mobility at the Top of the Educational Distribution",
+      "authors": [
+        "Florencia Torche"
+      ],
+      "venue": "Sociology of Education",
+      "year": 2018,
+      "cited_by_count": 75,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 78
     },
     {
-      "rank": 30,
-      "doi": "",
-      "title": "The Great Gatsby Curve in China: Cross-Sectional Inequality and Intergenerational Mobility∗",
-      "abstract": "",
+      "doi": "10.1016/j.red.2015.07.006",
+      "title": "Public education financing, earnings inequality, and intergenerational mobility",
+      "authors": [
+        "Christopher Herrington"
+      ],
+      "venue": "Review of Economic Dynamics",
       "year": 2015,
+      "cited_by_count": 69,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.2202/1935-1682.2339",
+      "title": "Intergenerational Income Mobility in a Less-Developed, High-Inequality Context: The Case of Chile",
+      "authors": [
+        "Javier Núñez",
+        "Leslie Miranda"
+      ],
+      "venue": "The B E Journal of Economic Analysis & Policy",
+      "year": 2010,
+      "cited_by_count": 63,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1016/j.euroecorev.2019.04.003",
+      "title": "Intergenerational education mobility and the level of development",
+      "authors": [
+        "Abdurrahman Aydemir",
+        "Hakkı Yazıcı"
+      ],
+      "venue": "European Economic Review",
+      "year": 2019,
+      "cited_by_count": 62,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1007/s40503-015-0030-x",
+      "title": "On intergenerational (im)mobility in Latin America",
+      "authors": [
+        "Christian Daude",
+        "Virginia Robano"
+      ],
+      "venue": "Latin American Economic Review",
+      "year": 2015,
+      "cited_by_count": 60,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://latinaer.springeropen.com/counter/pdf/10.1007/s40503-015-0030-x",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1017/S004727941600026X",
+      "arxiv_id": "",
+      "title": "Educational inequality, educational expansion and intergenerational mobility",
+      "authors": [
+        "J. Blanden",
+        "L. Macmillan"
+      ],
       "venue": "",
-      "citation_count": 31,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 59,
+      "influential_cite_count": 4,
+      "reference_count": 48,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7923144D57AD72A00F3EC18A1E03525E/S004727941600026Xa.pdf/div-class-title-educational-inequality-educational-expansion-and-intergenerational-mobility-div.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
+      "rank": 83
+    },
+    {
+      "doi": "10.1111/j.1467-9442.2005.00415.x",
+      "title": "Intergenerational Mobility under Private vs. Public Education*",
+      "authors": [
+        "James Davies",
+        "Jie Zhang",
+        "Jinli Zeng"
+      ],
+      "venue": "Scandinavian Journal of Economics",
+      "year": 2005,
+      "cited_by_count": 58,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1016/J.RED.2015.07.006",
+      "arxiv_id": "",
+      "title": "Public education financing, earnings inequality, and intergenerational mobility ☆",
+      "authors": [
+        "Christopher Herrington"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 57,
+      "influential_cite_count": 5,
+      "reference_count": 53,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
       "source": "semanticscholar",
-      "type": ""
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "",
+      "title": "Income inequality, intergenerational mobility and the Great Gatsby Curve: is education the key?",
+      "authors": [
+        "John Jerrim",
+        "Lindsey Macmillan"
+      ],
+      "venue": "UCL Discovery (University College London)",
+      "year": 2014,
+      "cited_by_count": 42,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://discovery.ucl.ac.uk/1472908/7/Social%20Forces-2015-Jerrim-505-33.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1080/00036846.2015.1031877",
+      "title": "Social mobility and inequality in urban China: understanding the role of intergenerational transmission of education",
+      "authors": [
+        "Elisabetta Magnani",
+        "Rong Zhu"
+      ],
+      "venue": "Applied Economics",
+      "year": 2015,
+      "cited_by_count": 33,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "The Great Gatsby Curve in China: Cross-Sectional Inequality and Intergenerational Mobility∗",
+      "authors": [
+        "Yi Fan",
+        "Junjian Yi",
+        "Junsen Zhang"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 31,
+      "influential_cite_count": 5,
+      "reference_count": 33,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.2139/ssrn.3491857",
+      "title": "The Intergenerational Effects of Parental Incarceration",
+      "authors": [
+        "Hans Grönqvist"
+      ],
+      "venue": "The Economic Journal",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0e7b049fced0a24b14d3d4",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1080/15350770.2023.2276155",
+      "title": "Intergenerational Connections in Digital Families",
+      "authors": [
+        "Muhammad Akbar"
+      ],
+      "venue": "JOURNAL OF INTERGENERATIONAL RELATIONSHIPS",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6573638a939a5f4082fab4fb",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.4018/978-1-6684-8888-1.ch007",
+      "title": "Intergenerational Space",
+      "authors": [
+        "Gülşah Hiçyılmaz"
+      ],
+      "venue": "Advances in Early Childhood and K-12 Education Perspectives on Empowering Intergenerational Relations in Educational Organizations",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791b8c939a5f4082de8355",
+      "matched_phrase": "intergenerational",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1016/j.rssm.2021.100644",
+      "title": "Resource specificity in intergenerational inequality: The case of education, occupation, and income",
+      "authors": [
+        "Thaning, Max"
+      ],
+      "venue": "Research in Social Stratification and Mobility",
+      "year": 2021,
+      "cited_by_count": 27,
+      "reference_count": 60,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.1016/s0272-7757(01)00031-0",
+      "title": "Intergenerational mobility, sibling inequality and borrowing constraints",
+      "authors": [
+        "Gaviria, Alejandro"
+      ],
+      "venue": "Economics of Education Review",
+      "year": 2002,
+      "cited_by_count": 24,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1257/mac.20180466",
+      "title": "Public Education Inequality and Intergenerational Mobility",
+      "authors": [
+        "Angela Zheng",
+        "James Graham"
+      ],
+      "venue": "American Economic Journal Macroeconomics",
+      "year": 2022,
+      "cited_by_count": 24,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "reference_count": 41,
+      "rank": 94
+    },
+    {
+      "doi": "10.1007/s11205-018-1968-2",
+      "title": "Intergenerational Earnings Mobility and Returns to Education in Hong Kong: A Developed Society with High Economic Inequality",
+      "authors": [
+        "Chenhong Peng",
+        "Paul Yip",
+        "Yik Wa Law"
+      ],
+      "venue": "Social Indicators Research",
+      "year": 2018,
+      "cited_by_count": 21,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "reference_count": 79,
+      "rank": 95
+    },
+    {
+      "doi": "10.1515/9780691188652-009",
+      "title": "Chapter Six: Educational Inequality and Intergenerational Mobility",
+      "authors": [
+        "Blanden, Jo",
+        "Gregg, Paul",
+        "Machin, Stephen"
+      ],
+      "venue": "What's the Good of Education?",
+      "year": 2005,
+      "cited_by_count": 17,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1016/j.econlet.2011.05.011",
+      "title": "Education cost, intergenerational mobility, and income inequality",
+      "authors": [
+        "Nakamura, Tamotsu",
+        "Murayama, Yu"
+      ],
+      "venue": "Economics Letters",
+      "year": 2011,
+      "cited_by_count": 13,
+      "reference_count": 4,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.20955/WP.2018.011",
+      "arxiv_id": "",
+      "title": "Explaining Income Inequality and Intergenerational Mobility: The Role of Fertility and Family Transfers",
+      "authors": [
+        "J. Kozlowski"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 13,
+      "influential_cite_count": 3,
+      "reference_count": 43,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://s3.amazonaws.com/real.stlouisfed.org/wp/2018/2018-011.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1093/CESIFO/IFU010",
+      "arxiv_id": "",
+      "title": "Rising Inequality and Intergenerational Mobility: The Role of Public Investments in Human Capital",
+      "authors": [
+        "A. Aizer"
+      ],
+      "venue": "CESifo Economic Studies",
+      "year": 2014,
+      "cited_by_count": 13,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": "Examining changes in public spending in 25 Organization for Economic Co-operation and Development countries over the period 2000-2009 finds that increases in spending on health are most strongly associated with reductions in the importance of family background and declines in inequality in the production of child human capital as measured by the Program for International Student Assessment test scores among 15-year-olds.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc4239134?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Examining changes in public spending in 25 Organization for Economic Co-operation and Development countries over the period 2000-2009 finds that increases in spending on health are most strongly associated with reductions in the importance of family background and declines in inequality in the production of child human capital as measured by the Program for International Student Assessment test scores among 15-year-olds.",
+      "rank": 99
+    },
+    {
+      "doi": "10.1057/s41599-023-02077-z",
+      "arxiv_id": "",
+      "title": "The effect of intergenerational mobility on family education investment: evidence from China",
+      "authors": [
+        "Nan Zhao",
+        "W. Liao",
+        "Jun-Yao Xia",
+        "Zizhen Zhang"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": 2023,
+      "cited_by_count": 12,
+      "influential_cite_count": 0,
+      "reference_count": 56,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41599-023-02077-z.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1057/9781137283306_9",
+      "title": "Education, Intergenerational Mobility and Inequality",
+      "authors": [
+        "Chusseau, Nathalie",
+        "Hellier, Joël",
+        "Ben-Halima, B."
+      ],
+      "venue": "Growing Income Inequalities",
+      "year": 2013,
+      "cited_by_count": 10,
+      "reference_count": 118,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Marta Menéndez , joint with Francois Bourguignon and Francisco Ferreira Inequality of Outcomes , Inequality of Opportunities and Intergenerational Education Mobility in Brazil",
+      "authors": [
+        "F. Bourguignon",
+        "F. Ferreira",
+        "M. Menéndez"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 7,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.11126/stanford/9781503610163.003.0006",
+      "title": "Education as an Equalizing Force",
+      "authors": [
+        "Pollak, Reinhard",
+        "Müller, Walter"
+      ],
+      "venue": "Education and Intergenerational Social Mobility in Europe and the United States",
+      "year": 2020,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>The chapter examines the role of education in social mobility among men and women in Germany during the twentieth century. It analyses two pathways of how a person’s social class origin affects her or his own class position: First, an education-mediated path, where a person’s social origin influences her or his educational attainment, which in turn influences the social class position she or he attains in adult life. Second, a path that comprises all the mechanisms not related to formal educa",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Public Education Financing Systems, Earnings Inequality, and Intergenerational Mobility",
+      "authors": [
+        "Christopher Herrington"
+      ],
+      "venue": "",
+      "year": 2013,
+      "cited_by_count": 6,
+      "influential_cite_count": 2,
+      "reference_count": 35,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1057/s41599-026-06967-w",
+      "arxiv_id": "",
+      "title": "COVID-19 school closures, learning losses and intergenerational mobility",
+      "authors": [
+        "Alexandru Cojocaru",
+        "João Pedro Azevedo",
+        "Ambar Narayan",
+        "Veronica Sonia Montalva Talledo"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": 2023,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41599-026-06967-w_reference.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.3390/math12070966",
+      "arxiv_id": "",
+      "title": "Educational Status as a Mediator of Intergenerational Social Mobility in Europe: A Positional Analysis Approach",
+      "authors": [
+        "Glykeria Stamatopoulou",
+        "Eva Tsouparopoulou",
+        "M. Symeonaki"
+      ],
+      "venue": "Mathematics",
+      "year": 2024,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 31,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2227-7390/12/7/966/pdf?version=1711356193",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1017/CBO9780511489228.007",
+      "arxiv_id": "",
+      "title": "Ethnicity, Social Mobility, and Public Policy: Intergenerational mobility and racial inequality in education and earnings",
+      "authors": [
+        "L. Loury"
+      ],
+      "venue": "",
+      "year": 2005,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 54,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.1177/02685809241281075",
+      "arxiv_id": "",
+      "title": "Trends in intergenerational class mobility and education in Argentina, Chile, and Uruguay, over common birth cohorts",
+      "authors": [
+        "J. R. Jorrat",
+        "M. Boado",
+        "V. Espinoza"
+      ],
+      "venue": "International Sociology",
+      "year": 2024,
+      "cited_by_count": 5,
+      "influential_cite_count": 1,
+      "reference_count": 46,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.4337/9781800377806.00009",
+      "title": "Intergenerational mobility and the role of education in Korea",
+      "authors": [
+        "Kim, Hisam"
+      ],
+      "venue": "Human Capital Policy",
+      "year": 2021,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.4337/9781035305582.00019",
+      "title": "Intergenerational Income Mobility in a Comparative Perspective",
+      "authors": [
+        "Blanden, Jo"
+      ],
+      "venue": "Education and Inequality Across Europe",
+      "year": 2009,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.4337/9781800888265.00012",
+      "title": "Intergenerational income mobility",
+      "authors": [
+        "Nybom, Martin"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.3386/w6070",
+      "title": "Intergenerational Earnings Mobility, Inequality, and Growth",
+      "authors": [
+        "Owen, Ann",
+        "Weil, David"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.4337/9781800888265.00027",
+      "title": "The role of migration for intergenerational mobility",
+      "authors": [
+        "Ferry, Mathieu",
+        "Ichou, Mathieu"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Educational Inequality and Intergenerational Mobility in Africa ∗",
+      "authors": [
+        "A. Alesina"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1093/jae/ejac044",
+      "arxiv_id": "",
+      "title": "Intergenerational Mobility and the Growth–Inequality–Poverty Nexus in Africa",
+      "authors": [
+        "C. Ebeke"
+      ],
+      "venue": "Journal of African Economies",
+      "year": 2023,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 26,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/jae/article-pdf/32/Supplement_2/ii99/49959133/ejac044.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.1142/9789814623841_0003",
+      "title": "EDUCATION AND SOCIAL MOBILITY",
+      "authors": [
+        "NG, IRENE"
+      ],
+      "venue": "Inequality in Singapore",
+      "year": 2015,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.35188/UNU-WIDER/2018/571-8",
+      "arxiv_id": "",
+      "title": "Returns to education, intergenerational mobility and inequality trends in Brazil",
+      "authors": [
+        "Marcelo Neri",
+        "Tiago Bonomo"
+      ],
+      "venue": "WIDER Working Paper",
+      "year": 2018,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1111/roiw.12710",
+      "arxiv_id": "",
+      "title": "Using machine learning to unveil the predictors of intergenerational mobility",
+      "authors": [
+        "Luís Clemente‐Casinhas",
+        "Alexandra Ferreira‐Lopes",
+        "L. Martins"
+      ],
+      "venue": "The Review of Income and Wealth",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 40,
+      "tldr": "Results show that intergenerational income mobility is expected to be positively predicted by the parental average education, the share of married individuals and negatively predicted by the share of children that have completed less than primary education.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/roiw.12710",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Results show that intergenerational income mobility is expected to be positively predicted by the parental average education, the share of married individuals and negatively predicted by the share of children that have completed less than primary education.",
+      "rank": 118
+    },
+    {
+      "doi": "10.4337/9781800888265.00022",
+      "title": "Differences across place in intergenerational income mobility",
+      "authors": [
+        "Connolly, Marie",
+        "Haeck, Catherine"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.4337/9781800888265.00024",
+      "title": "Intergenerational mobility from a historical perspective",
+      "authors": [
+        "Maas, Ineke",
+        "van Leeuwen, Marco H.D."
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.2139/ssrn.4645078",
+      "arxiv_id": "",
+      "title": "Schooling and Intergenerational Mobility: Consequences of Expanding Higher Education Institutions",
+      "authors": [
+        "Noemí Katzkowicz",
+        "Victor Lavy",
+        "Martina Querejeta",
+        "Tatiana Rosá"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2023,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 60,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.1111/soc4.13128",
+      "arxiv_id": "",
+      "title": "Intergenerational mobility and racial inequality: The case for a more holistic approach",
+      "authors": [
+        "Janeria A Easley",
+        "Regina S. Baker"
+      ],
+      "venue": "Sociology Compass",
+      "year": 2023,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 35,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/soc4.13128",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.1080/13683500.2024.2404174",
+      "arxiv_id": "",
+      "title": "Tourism and intergenerational social mobility",
+      "authors": [
+        "Qiaoning Yang",
+        "Min Wei"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 55,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.16538/J.CNKI.JFE.2016.08.001",
+      "arxiv_id": "",
+      "title": "The Dynamic Effect of Education Financing System on Intergenerational Mobility and Inequality: Analysis Based on Overlapping Generation Model",
+      "authors": [
+        "Xu Junwu",
+        "Huang Shan"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1371/journal.pone.0302173",
+      "arxiv_id": "",
+      "title": "What really matters for global intergenerational mobility?",
+      "authors": [
+        "Khanh Duong"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0302173&type=printable",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.1057/9781137283306.0017",
+      "title": "Education, Intergenerational Mobility and Inequality",
+      "authors": [],
+      "venue": "Growing Income Inequalities",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.11126/stanford/9781503610163.003.0004",
+      "title": "Sweden, the Middle Way?",
+      "authors": [
+        "Breen, Richard",
+        "Jonsson, Jan O."
+      ],
+      "venue": "Education and Intergenerational Social Mobility in Europe and the United States",
+      "year": 2020,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>Sweden was renowned for attempting a “middle way” between capitalism and socialism, with a market economy combined with ambitious policies for equalizing both opportunities and living conditions. Did this facilitate social mobility, and was equalization of educational attainment the mechanism behind it? We document increasing social mobility during a period of strong growth of higher class occupations, both for men and women, an increase that, however, tends to level off for cohorts born in t",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.2139/ssrn.2276454",
+      "title": "Education, Intergenerational Mobility and Inequality",
+      "authors": [
+        "Chusseau, Nathalie",
+        "Hellier, Joël"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 118,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1787/888933754272",
+      "title": "Figure 4.9. Intergenerational earnings mobility and income inequality",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.2139/ssrn.3092714",
+      "title": "Public Education Inequality and Intergenerational Mobility in an Overlapping Generations Model",
+      "authors": [
+        "Zheng, Angela"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 46,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.2307/j.ctv301fj7.11",
+      "title": "Educational Inequality and Intergenerational Mobility",
+      "authors": [
+        "Blanden, Jo",
+        "Gregg, Paul",
+        "Machin, Stephen"
+      ],
+      "venue": "What's the Good of Education?",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.4337/9781800888265.00036",
+      "title": "The role of education for social mobility",
+      "authors": [
+        "Triventi, Moris",
+        "Passaretta, Giampiero"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1515/9781503611153-007",
+      "title": "Chapter Four. Sweden, the Middle Way? Trends and Patterns in Social Mobility and Educational Inequality",
+      "authors": [
+        "Breen, Richard",
+        "Jonsson, Jan O."
+      ],
+      "venue": "Education and Intergenerational Social Mobility in Europe and the United States",
+      "year": 2020,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "",
+      "title": "Inequality in Intergenerational Mobility of Education in China",
+      "authors": [
+        "Jane",
+        "Golley",
+        "Sherry",
+        "Tao Tao",
+        "Kong"
+      ],
+      "venue": "中国与世界经济：英文版",
+      "year": 2013,
+      "cited_by_count": 1,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "",
+      "arxiv_id": "2502.13868",
+      "title": "Locally Robust Policy Learning: Inequality, Inequality of Opportunity and Intergenerational Mobility",
+      "authors": [
+        "Joel Terschuur"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.19181/population.2023.26.4.14",
+      "arxiv_id": "",
+      "title": "Wealth inequality and intergenerational mobility in Russia: possibilities of tax regulation",
+      "authors": [
+        "A. Pugachev",
+        "A. Chistyakova"
+      ],
+      "venue": "Population",
+      "year": 2023,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.jour.fnisc.ru/index.php/population/article/download/9845/9596",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.3389/fsoc.2024.1295550",
+      "arxiv_id": "",
+      "title": "Intergenerational education mobility in India: nonlinearity and the Great Gatsby Curve",
+      "authors": [
+        "P. Kishan",
+        "Abhinav Rajverma"
+      ],
+      "venue": "Frontiers in Sociology",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 90,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.2139/ssrn.4168851",
+      "arxiv_id": "",
+      "title": "Nowcasting the Impact of Covid-19 on Education, Intergenerational Mobility and Earnings Inequality in Sub-Saharan Africa",
+      "authors": [
+        "Guido Neidhöfer",
+        "N. Lustig",
+        "Patricio Larroulet"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2022,
+      "cited_by_count": 1,
+      "influential_cite_count": 1,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.econstor.eu/bitstream/10419/261374/1/1810130417.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1007/s11205-025-03664-0",
+      "arxiv_id": "",
+      "title": "The Geography of Intergenerational Educational Mobility in Italy: Trends and Socioeconomic Correlates",
+      "authors": [
+        "Debora Di Gioacchino",
+        "Laura Sabani",
+        "Stefano Usai"
+      ],
+      "venue": "Social Indicators Research",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 52,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1007/s11205-025-03664-0",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1002/psp.2784",
+      "arxiv_id": "",
+      "title": "A lost land of opportunity? The geography of intergenerational educational mobility in China",
+      "authors": [
+        "Qilyu Hong",
+        "Rob Gruijter"
+      ],
+      "venue": "Population, Space and Place",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 39,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/psp.2784",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1787/423218022861",
+      "title": "Figure 8.2. Intergenerational mobility, static income inequality and private returns on education",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.54499/2020.04449.bd",
+      "title": "",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "grant",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.5790/hongkong/9789888390625.003.0011",
+      "title": "Human Capital, Poverty, Inequality, and Intergenerational Mobility",
+      "authors": [
+        "Wong, Yue Chim Richard"
+      ],
+      "venue": "Fixing Inequality in Hong Kong",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>The idea that economic development can help alleviate poverty is at the heart of the belief that growth is the best cure for poverty. But it can only work if governments of developing economies support economic opening and reforms that unleash market forces and embrace globalization.</p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.1920/ps.ifs.2024.0026",
+      "title": "Intergenerational mobility in UK, life chances and the role of inequality and education",
+      "authors": [
+        "Gregg, Paul"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1787/888933220547",
+      "title": "Figure 2.10. Inequality and intergenerational income mobility",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1093/oso/9780198807056.003.0013",
+      "title": "Income Inequality, Living Standards, and Intergenerational Social Mobility",
+      "authors": [
+        "Bukodi, Erzsébet",
+        "Paskov, Marii"
+      ],
+      "venue": "Oxford Scholarship Online",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "<p>This chapter deals with mobility across generations, paying particular attention to the now-common notion that greater inequality in the distribution of income is associated with less mobility and equality of opportunity—as encapsulated in the so-called ‘Great Gatsby Curve’. The chapter first discusses the conceptual and empirical issues that arise with respect to this hypothesis. Focusing on mobility in terms of social class, it uses a new dataset constructed for the purpose to provide a nov",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.2307/j.ctt1rfzz9q.16",
+      "title": "Human Capital, Poverty, Inequality, and Intergenerational Mobility",
+      "authors": [],
+      "venue": "Fixing Inequality in Hong Kong",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.35188/unu-wider/2018/571-8",
+      "title": "Returns to education, intergenerational mobility and inequality trends in Brazil",
+      "authors": [
+        "Neri, Marcelo",
+        "Bonomo, Tiago"
+      ],
+      "venue": "WIDER Working Paper",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.5790/hongkong/9789888390625.003.0017",
+      "title": "Factors Critical for Improving Intergenerational Mobility",
+      "authors": [
+        "Wong, Yue Chim Richard"
+      ],
+      "venue": "Fixing Inequality in Hong Kong",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>Failure to appreciate theimportant fact that poverty propagated itself in the absence of a parent or a social program that had time to help young childrenhas allowed child poverty to fester, compromising children’s ability to go to school, their willingness to learn, their attitudes, and their motivation. This is a major cause of worsening intergenerational mobility and poverty. The research findings of Chetty et al. confirm the importance of investing in schooling, of having stable families,",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1017/cbo9780511489228.007",
+      "title": "Intergenerational mobility and racial inequality in education and earnings",
+      "authors": [
+        "Loury, Linda Datcher"
+      ],
+      "venue": "Ethnicity, Social Mobility, and Public Policy",
+      "year": 2005,
+      "cited_by_count": 0,
+      "reference_count": 67,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.4337/9781800888265.00028",
+      "title": "Intergenerational mobility and race",
+      "authors": [
+        "Costa Ribeiro, Carlos A."
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.4337/9781800888265.00011",
+      "title": "Intergenerational social class mobility",
+      "authors": [
+        "Heath, Anthony",
+        "Li, Yaojun"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.38116/td3195-eng",
+      "title": "Discussion Paper 3195",
+      "authors": [
+        "Cenci, Eduardo",
+        "Lopes, Daniel",
+        "Monasterio, Leonardo Monteiro"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "<jats:p>We estimate the long-term intergenerational mobility (IM) in Brazil, by mesoregion, utiliz ing the methodology developed by Güell, Mora and Telmer (2015) and Güell et al. (2018). Benefiting from the unique features of Brazil, such as data availability on income, edu cation, full names, our study employed a machine learning algorithm to estimate sur name-based ancestry. This allows us to bypass limitations of previous studies and provide an initial exploration of the link between intergen",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.4324/9781003335863-31",
+      "title": "Intergenerational Mobility",
+      "authors": [
+        "Rycroft, Robert S."
+      ],
+      "venue": "The Economics of Inequality",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.3030/101171428",
+      "title": "",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "grant",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.2307/j.ctt1rfzz9q.22",
+      "title": "Factors Critical for Improving Intergenerational Mobility",
+      "authors": [],
+      "venue": "Fixing Inequality in Hong Kong",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.5040/9798400669941.ch-002",
+      "title": "Intergenerational Mobility",
+      "authors": [],
+      "venue": "Inequality in America",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.2139/ssrn.5392934",
+      "title": "Rising Inequality, Declining Mobility: The Evolution of Intergenerational Mobility in Germany",
+      "authors": [
+        "Baarck, Julia",
+        "Bode, Moritz",
+        "Peichl, Andreas"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 66,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "10.32907/ro-123-1380875794",
+      "title": "Intergenerational mobility and school inequality in the US",
+      "authors": [],
+      "venue": "Research Outreach",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "10.4337/9781800888265.00009",
+      "title": "Intergenerational inequality in education",
+      "authors": [
+        "Boliver, Vikki",
+        "Capsada-Munsech, Queralt"
+      ],
+      "venue": "Research Handbook on Intergenerational Inequality",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.4159/9780674020665-009",
+      "title": "7. Inequality and Intergenerational Mobility",
+      "authors": [],
+      "venue": "A Treatise on the Family",
+      "year": 1991,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.1787/888932344938",
+      "title": "4.11. Education and intergenerational mobility",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.4324/9781003088158-5",
+      "title": "Education and intergenerational income mobility",
+      "authors": [
+        "Hou, Yuna"
+      ],
+      "venue": "Intergenerational Income Mobility in China",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.4324/9781003088158-8",
+      "title": "Education policy promoting intergenerational income mobility",
+      "authors": [
+        "Hou, Yuna"
+      ],
+      "venue": "Intergenerational Income Mobility in China",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.1787/d252814a-en",
+      "title": "Intergenerational mobility in education",
+      "authors": [],
+      "venue": "OECD Education Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.4324/9781003361282-5",
+      "title": "Does Family Background Widen Inequality in Intergenerational Educational Attainment?",
+      "authors": [
+        "Chen, Chunjin"
+      ],
+      "venue": "Precise Poverty Alleviation and Intergenerational Mobility in China",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.2307/j.ctvr0qrr0.9",
+      "title": "Sweden, the Middle Way?",
+      "authors": [
+        "Breen, Richard",
+        "Jonsson, Jan O."
+      ],
+      "venue": "Education and Intergenerational Social Mobility in Europe and the United States",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:2605.19154v1",
+      "arxiv_id": "2605.19154v1",
+      "title": "Indirect Estimators of Intergenerational Mobility",
+      "authors": [
+        "Andrea Del Pizzo",
+        "Martin Nybom",
+        "Jan Stuhler"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.19154v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:1303.0042v1",
+      "arxiv_id": "1303.0042v1",
+      "title": "Twelve Years of Education and Public Outreach with the Fermi Gamma-ray Space Telescope",
+      "authors": [
+        "Lynn Cominsky",
+        "Kevin McLin",
+        "Aurore Simonnet",
+        "the Fermi Education",
+        "Public Outreach Team"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0042v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.1088/0031-9120/42/3/003",
+      "arxiv_id": "0608058v2",
+      "title": "Cinema, Fermi Problems, & General Education",
+      "authors": [
+        "C. J. Efthimiou",
+        "R. Llewellyn"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/physics/0608058v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.4337/9781800888265.00015",
+      "arxiv_id": "2509.16734v1",
+      "title": "Multigenerational Inequality",
+      "authors": [
+        "Jan Stuhler"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.16734v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "arXiv:2204.04701v1",
+      "arxiv_id": "2204.04701v1",
+      "title": "Educational Inequality",
+      "authors": [
+        "Jo Blanden",
+        "Matthias Doepke",
+        "Jan Stuhler"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.04701v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.31933/dijemss.v1i3.166",
+      "arxiv_id": "2006.09846v1",
+      "title": "Creating Experience value to build student satisfaction in higher education",
+      "authors": [
+        "Muji Gunarto",
+        "Ratih Hurriyati"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.09846v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.1119/perc.2025.pr.Moenter",
+      "arxiv_id": "2605.12609v1",
+      "title": "Power, Prescription, and Postpositivism: Considerations for collecting and representing neurodiversity demographic information in physics education research",
+      "authors": [
+        "Mason D. Moenter",
+        "George R. Keefe",
+        "Liam G. E. McDermott",
+        "Erin M. Scanlon"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.12609v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.32374/AEJ.2023.3.1.049ra",
+      "arxiv_id": "2209.02852v1",
+      "title": "Effects of Popular Science Writing Instruction on General Education Student Attitudes Towards Science: A Case Study in Astronomy",
+      "authors": [
+        "Briley L. Lewis",
+        "K. Supriya",
+        "Graham H. Read",
+        "Kaitlin L. Ingraham Dixie",
+        "Rachel Kennison",
+        "Anthony R. Friscia"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.02852v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.3934/steme.2022014",
+      "arxiv_id": "2206.12149v1",
+      "title": "Inquiry-Based Mathematics Education: a call for reform in tertiary education seems unjustified",
+      "authors": [
+        "Tanya Evans",
+        "Heiko Dietrich"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.12149v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "arXiv:0708.2496v1",
+      "arxiv_id": "0708.2496v1",
+      "title": "Contributions from cognitive research to mathematics and science education",
+      "authors": [
+        "William J. Gerace"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0708.2496v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2107.12702v1",
+      "arxiv_id": "2107.12702v1",
+      "title": "Income Inequality and Intergenerational Mobility in India",
+      "authors": [
+        "Anuradha Singh"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.12702v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.1103/PhysRevPhysEducRes.15.020108",
+      "arxiv_id": "1807.06510v5",
+      "title": "Modernizing use of regression models in physics education research: a review of hierarchical linear modeling",
+      "authors": [
+        "Ben Van Dusen",
+        "Jayson Nissen"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1807.06510v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2212.02407v3",
+      "arxiv_id": "2212.02407v3",
+      "title": "Educational Inequality of Opportunity and Mobility in Europe",
+      "authors": [
+        "Joël Terschuur"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2212.02407v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2303.06658v1",
+      "arxiv_id": "2303.06658v1",
+      "title": "Counterfactual Copula and Its Application to the Effects of College Education on Intergenerational Mobility",
+      "authors": [
+        "Tsung-Chih Lai",
+        "Jiun-Hua Su"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.06658v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:1805.07609v1",
+      "arxiv_id": "1805.07609v1",
+      "title": "Complexity in Mathematics Education",
+      "authors": [
+        "Brent Davis",
+        "Pratim Sengupta"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1805.07609v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2502.13868v1",
+      "arxiv_id": "2502.13868v1",
+      "title": "Locally Robust Policy Learning: Inequality, Inequality of Opportunity and Intergenerational Mobility",
+      "authors": [
+        "Joël Terschuur"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.13868v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:1603.06024v1",
+      "arxiv_id": "1603.06024v1",
+      "title": "Connecting Three Pivotal Concepts in K-12 Science State Standards and Maps of Conceptual Growth to Research in Physics Education",
+      "authors": [
+        "Chandralekha Singh",
+        "Christian D. Schunn"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1603.06024v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "10.1007/s10888-022-09526-w",
+      "arxiv_id": "2202.04591v2",
+      "title": "Are Fairness Perceptions Shaped by Income Inequality? Evidence from Latin America",
+      "authors": [
+        "Leonardo Gasparini",
+        "Germán Reyes"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.04591v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "10.1109/TE.2024.3403913",
+      "arxiv_id": "2407.12355v1",
+      "title": "Are Educational Escape Rooms More Effective Than Traditional Lectures for Teaching Software Engineering? A Randomized Controlled Trial",
+      "authors": [
+        "Aldo Gordillo",
+        "Daniel López-Fernández"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.12355v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "arXiv:2512.22848v1",
+      "arxiv_id": "2512.22848v1",
+      "title": "Assortative Mating, Inequality, and Rising Educational Mobility in Spain",
+      "authors": [
+        "Ricard Grebol",
+        "Margarita Machelett",
+        "Jan Stuhler",
+        "Ernesto Villanueva"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.22848v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "10.1007/s10956-007-9068-0",
+      "arxiv_id": "0703224v1",
+      "title": "Emerging technologies in physics education",
+      "authors": [
+        "Zosia A. C. Krusberg"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/physics/0703224v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "10.1080/15140326.2024.2432803",
+      "arxiv_id": "2303.08445v1",
+      "title": "Are high school degrees and university diplomas equally heritable in the US? A new measure of relative intergenerational mobility",
+      "authors": [
+        "Anna Naszodi",
+        "Liliana Cuccu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.08445v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.1162/rest_a_01585",
+      "arxiv_id": "2512.15368v1",
+      "title": "A Lifecycle Estimator of Intergenerational Income Mobility",
+      "authors": [
+        "Ursula Mello",
+        "Martin Nybom",
+        "Jan Stuhler"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.15368v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:1606.02242v1",
+      "arxiv_id": "1606.02242v1",
+      "title": "The Importance of Computation in Astronomy Education",
+      "authors": [
+        "M. Zingale",
+        "F. X. Timmes",
+        "R. Fisher",
+        "B. W. O'Shea"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1606.02242v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "10.1007/978-3-030-87391-2_3",
+      "arxiv_id": "2201.08682v1",
+      "title": "How to Teach a Teacher: Challenges and Opportunities in Physics Teacher Education in Germany and the USA",
+      "authors": [
+        "Ben Van Dusen",
+        "Christoph Vogelsang",
+        "Joseph Taylor",
+        "Eva Cauet"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.08682v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:0807.3534v1",
+      "arxiv_id": "0807.3534v1",
+      "title": "Learning from Physics Education Research: Lessons for Economics Education",
+      "authors": [
+        "Scott P. Simkins",
+        "Mark H. Maier"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0807.3534v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2510.24783v1",
+      "arxiv_id": "2510.24783v1",
+      "title": "AI & Data Competencies: Scaffolding holistic AI literacy in Higher Education",
+      "authors": [
+        "Kathleen Kennedy",
+        "Anuj Gupta"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.24783v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:2408.00025v3",
+      "arxiv_id": "2408.00025v3",
+      "title": "Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)",
+      "authors": [
+        "Supriya Manna",
+        "Niladri Sett"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2408.00025v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "10.1145/3631802.3631854",
+      "arxiv_id": "2311.14679v2",
+      "title": "\"Medium-n studies\" in computing education conferences",
+      "authors": [
+        "Michael Guerzhoy"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.14679v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:0710.1375v2",
+      "arxiv_id": "0710.1375v2",
+      "title": "Dynamic Models of Learning and Education Measurement",
+      "authors": [
+        "Lei Bao"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0710.1375v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "arXiv:1708.08743v1",
+      "arxiv_id": "1708.08743v1",
+      "title": "Massive Open and Online Courses and Open Education Resources in Singapore",
+      "authors": [
+        "Victor Lim",
+        "Lawrence Wee",
+        "Jessica Teo",
+        "Shannalyn Ng"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.08743v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:1009.5338v1",
+      "arxiv_id": "1009.5338v1",
+      "title": "Vast Educational Mobile Content Broadcasting using ARMrayan Multimedia Mobile CMS",
+      "authors": [
+        "Somayeh Fatahi",
+        "Ali Reza Manashty",
+        "Zahra Forootan Jahromi"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1009.5338v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "arXiv:1710.03064v1",
+      "arxiv_id": "1710.03064v1",
+      "title": "Different Applications of Mobile Robots in Education",
+      "authors": [
+        "Boris Crnokic",
+        "Miroslav Grubisic",
+        "Tomislav Volaric"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.03064v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "10.1109/TE.2023.3241099",
+      "arxiv_id": "2407.07762v1",
+      "title": "Learning and Motivational Impact of Game-Based Learning: Comparing Face-to-Face and Online Formats on Computer Science Education",
+      "authors": [
+        "Daniel López-Fernández",
+        "Aldo Gordillo",
+        "Jennifer Pérez",
+        "Edmundo Tovar"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.07762v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 201
+    },
+    {
+      "doi": "arXiv:1710.04492v1",
+      "arxiv_id": "1710.04492v1",
+      "title": "Forty Years of Linking Variable Star Research with Education",
+      "authors": [
+        "John R. Percy"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.04492v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 202
+    },
+    {
+      "doi": "10.1017/S1743921321001009",
+      "arxiv_id": "2102.04717v1",
+      "title": "Development of astronomy research and education in Africa and Ethiopia",
+      "authors": [
+        "Mirjana Pović"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.04717v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 203
+    },
+    {
+      "doi": "arXiv:1606.04578v1",
+      "arxiv_id": "1606.04578v1",
+      "title": "Sustaining educational and public outreach programs in astronomy",
+      "authors": [
+        "William I. Clarkson",
+        "Donald J. Bord",
+        "Carrie M. Swift",
+        "Eric J. Rasmussen",
+        "David Matzke",
+        "Steven R. Murrell",
+        "Michael C. LoPresto",
+        "Timothy Campbell",
+        "Robert Clubb",
+        "Dennis Salliotte"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1606.04578v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 204
+    },
+    {
+      "doi": "arXiv:2509.24743v1",
+      "arxiv_id": "2509.24743v1",
+      "title": "Exploring Physics Teachers' Views on Physics Education Research: A Case of Science Scepticism?",
+      "authors": [
+        "Melissa Costan",
+        "Kasim Costan",
+        "Anna Weißbach",
+        "Christoph Kulgemeyer"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.24743v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 205
+    },
+    {
+      "doi": "arXiv:1706.07783v1",
+      "arxiv_id": "1706.07783v1",
+      "title": "Intergenerational mobility measures in a bivariate normal model",
+      "authors": [
+        "Yonatan Berman"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.07783v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 206
+    },
+    {
+      "doi": "10.1063/1.2177045",
+      "arxiv_id": "0608295v1",
+      "title": "Physics Faculty and Educational Researchers: Divergent Expectations as Barriers to the Diffusion of Innovations",
+      "authors": [
+        "Charles Henderson",
+        "Melissa H. Dancy"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/physics/0608295v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 207
+    },
+    {
+      "doi": "10.1007/s10639-022-11093-6",
+      "arxiv_id": "2307.08582v1",
+      "title": "Applications of Educational Data Mining and Learning Analytics on Data From Cybersecurity Training",
+      "authors": [
+        "Valdemar Švábenský",
+        "Jan Vykopal",
+        "Pavel Čeleda",
+        "Lydia Kraus"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.08582v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 208
+    },
+    {
+      "doi": "arXiv:2406.00747v1",
+      "arxiv_id": "2406.00747v1",
+      "title": "Educational Perspectives on Quaternions: Insights and Applications",
+      "authors": [
+        "Fernando Ricardo González-Díaz",
+        "Vicent Martinez Badenes",
+        "Ricardo García-Salcedo"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2406.00747v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 209
+    },
+    {
+      "doi": "arXiv:1307.4136v2",
+      "arxiv_id": "1307.4136v2",
+      "title": "Selection, Generalization, and Theories of Cause in Case-Oriented Physics Education Research",
+      "authors": [
+        "Amy D. Robertson",
+        "Sarah B. McKagan",
+        "Rachel E. Scherr"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1307.4136v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 210
+    },
+    {
+      "doi": "10.1145/3470652",
+      "arxiv_id": "2107.01984v1",
+      "title": "A Systematic Literature Review of Empiricism and Norms of Reporting in Computing Education Research Literature",
+      "authors": [
+        "Sarah Heckman",
+        "Jeffrey C. Carver",
+        "Mark Sherriff",
+        "Ahmed Al-Zubidy"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.01984v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 211
+    },
+    {
+      "doi": "arXiv:2203.08919v1",
+      "arxiv_id": "2203.08919v1",
+      "title": "Strategies in Education, Outreach, and Inclusion to Enhance the US Workforce in Accelerator Science and Engineering",
+      "authors": [
+        "M. Bai",
+        "W. A. Barletta",
+        "D. L. Bruhwiler",
+        "S. Chattopadhyay",
+        "Y. Hao",
+        "S. Holder",
+        "J. Holzbauer",
+        "Z. Huang",
+        "K. Harkay",
+        "Y. -K. Kim",
+        "X. Lu",
+        "S. M. Lund",
+        "N. Neveu",
+        "P. Ostroumov",
+        "J. R. Patterson",
+        "P. Piot",
+        "T. Satogata",
+        "A. Seryi",
+        "A. K. Soha",
+        "S. Winchester"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.08919v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 212
+    },
+    {
+      "doi": "10.1103/PhysRevPhysEducRes.14.020102",
+      "arxiv_id": "1805.01381v1",
+      "title": "Motivations of Educators for Participating in NITARP, an Authentic Astronomy Research Experience Professional Development Program",
+      "authors": [
+        "L. M. Rebull",
+        "T. Roberts",
+        "W. Laurence",
+        "M. Fitzgerald",
+        "D. French",
+        "V. Gorjian",
+        "G. K. Squires"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1805.01381v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 213
+    },
+    {
+      "doi": "arXiv:1412.3037v2",
+      "arxiv_id": "1412.3037v2",
+      "title": "Towards a Model of Systemic Change in University STEM Education",
+      "authors": [
+        "Daniel L. Reinholz",
+        "Joel C. Corbo",
+        "Melissa H. Dancy",
+        "Noah Finkelstein",
+        "Stanley Deetz"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1412.3037v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 214
+    },
+    {
+      "doi": "10.1007/978-3-319-60013-0_31-1",
+      "arxiv_id": "2004.05892v1",
+      "title": "Computers in Secondary Schools: Educational Games",
+      "authors": [
+        "Margarida Romero"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.05892v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 215
+    },
+    {
+      "doi": "arXiv:2403.00961v2",
+      "arxiv_id": "2403.00961v2",
+      "title": "Data Science Education in Undergraduate Physics: Lessons Learned from a Community of Practice",
+      "authors": [
+        "Karan Shah",
+        "Julie Butler",
+        "Alexis Knaub",
+        "Anıl Zenginoğlu",
+        "William Ratcliff",
+        "Mohammad Soltanieh-ha"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.00961v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 216
+    },
+    {
+      "doi": "10.1088/0031-9120/38/3/307",
+      "arxiv_id": "0303076v1",
+      "title": "Ex-nihilo II: Examination Syllabi and the Sequencing of Cosmology Education",
+      "authors": [
+        "Kevin A. Pimbblet",
+        "John C. Newman"
+      ],
+      "venue": "arXiv",
+      "year": 2003,
+      "pdf_url": "https://arxiv.org/pdf/physics/0303076v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 217
+    },
+    {
+      "doi": "10.1007/s00181-025-02781-6",
+      "arxiv_id": "",
+      "title": "Income inequality, occupational choice, and intergenerational mobility in China",
+      "authors": [
+        "Yingfeng Fang",
+        "Haoliang Hu"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 45,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 218
+    },
+    {
+      "doi": "10.2139/ssrn.6437598",
+      "arxiv_id": "",
+      "title": "Inequality and Intergenerational Mobility in Sierra Leone",
+      "authors": [
+        "Giorgia Zotti",
+        "V. Peragine"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 219
+    },
+    {
+      "doi": "10.63313/edu.4004",
+      "arxiv_id": "",
+      "title": "Intergenerational Mobility in Education: Measurement, Impacts, and Determinants",
+      "authors": [
+        "Jiaying Chen",
+        "Yibi Fang"
+      ],
+      "venue": "教育学文摘",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 11,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.63313/edu.4004",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 220
+    },
+    {
+      "doi": "10.17848/wp23-382",
+      "arxiv_id": "",
+      "title": "The Decline of Routine Tasks, Education Investments, And Intergenerational Mobility",
+      "authors": [
+        "P. Bennett",
+        "Kai Liu",
+        "K. Salvanes"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 24,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://research.upjohn.org/cgi/viewcontent.cgi?article=1401&context=up_workingpapers",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 221
+    },
+    {
+      "doi": "10.1007/978-981-16-0885-8_9",
+      "arxiv_id": "",
+      "title": "Income Inequality and Intergenerational Mobility in an Endogenously Growing Economy",
+      "authors": [
+        "Tamotsu Nakamura"
+      ],
+      "venue": "New Frontiers in Regional Science: Asian Perspectives",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 222
+    },
+    {
+      "doi": "10.69651/pijhss030415",
+      "arxiv_id": "",
+      "title": "Exploring the role of economic of education in promoting intergenerational mobility and equality of opportunity",
+      "authors": [
+        "Himeji-Ken Dela Peña",
+        "Regina Galigao"
+      ],
+      "venue": "International journal of humanities and social sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 223
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Returns and intergenerational mobility of education during period of falling earnings inequality in Brazil",
+      "authors": [
+        "Marcelo Neri",
+        "Tiago Bonomo"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 224
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Sorting in the Marriage Market: The Role of Inequality and its Impact on Intergenerational Mobility",
+      "authors": [
+        "Victoria Raskin"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 33,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 225
+    },
+    {
+      "doi": "10.1080/23322039.2025.2521465",
+      "arxiv_id": "",
+      "title": "The effects of intergenerational income mobility and per pupil education spending on economic growth",
+      "authors": [
+        "Joseph A. Mauro"
+      ],
+      "venue": "Cogent Economics &amp; Finance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 67,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1080/23322039.2025.2521465",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 226
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Code and data files for \"Public Education Financing, Earnings Inequality, and Intergenerational Mobility\"",
+      "authors": [
+        "Christopher Herrington"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 227
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Implications of Public Education Financing Systems for Earnings Inequality and Intergenerational Mobility ∗",
+      "authors": [
+        "Christopher Herrington"
+      ],
+      "venue": "",
+      "year": 2012,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 33,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 228
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Education Equity and Intergenerational Mobility: Quasi-experimental Evidence From Court-ordered School Finance Reforms",
+      "authors": [
+        "Minghao Li"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 8,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 229
+    },
+    {
+      "doi": "10.47604/ijs.2589",
+      "arxiv_id": "",
+      "title": "Income Inequality and Social Mobility in Brazil",
+      "authors": [
+        "J. Pereira"
+      ],
+      "venue": "International Journal of Sociology",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 17,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://iprjb.org/journals/IJS/article/download/2589/3016",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 230
+    },
+    {
+      "doi": "10.32629/jher.v6i4.4294",
+      "arxiv_id": "",
+      "title": "Interrupted Ladders? Higher Education Expansion, Youth Aspirations, and Social Mobility in the 21st Century China",
+      "authors": [
+        "Lu Zhang"
+      ],
+      "venue": "Journal of Higher Education Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 4,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://en.front-sci.com/index.php/jher/article/view/4294/4618",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 231
+    },
+    {
+      "doi": "10.1016/j.rssm.2026.101147",
+      "arxiv_id": "",
+      "title": "The Role of Graduate Education in the Intergenerational Reproduction of Inequality in Chile",
+      "authors": [
+        "Ó. Espinoza",
+        "B. Corradi",
+        "Luis Sandoval",
+        "Catalina Miranda",
+        "Noel McGinn"
+      ],
+      "venue": "Research in Social Stratification and Mobility",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 57,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 232
     }
   ]
 }

@@ -1,466 +1,4099 @@
 {
   "query_id": "q034",
   "query": "low GDP growth + aging + debt crisis combined policy response paths comparative Japan lost decades and current China",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "econ",
+  "source": "user",
+  "generated_at": "2026-07-22T11:28:51",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 200,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
-      "doi": "10.3386/w10481",
-      "title": "Institutions as the Fundamental Cause of Long-Run Growth",
-      "abstract": "",
-      "year": 2004,
-      "venue": "National Bureau of Economic Research",
-      "citation_count": 2032,
-      "engines_found_in": [
-        "openalex"
+      "doi": "10.1038/s41580-023-00631-w",
+      "title": "The Biology of Vascular Endothelial Growth Factor",
+      "authors": [
+        "Lorena Pérez-Gutiérrez"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "venue": "Nature reviews Molecular cell biology",
+      "year": 2023,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a3b6fb612ca6486876865f",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
     },
     {
-      "rank": 2,
+      "doi": "10.48550/arxiv.2308.13111",
+      "title": "Bayesian Low-rank Adaptation for Large Language Models",
+      "authors": [
+        "Adam X. Yang"
+      ],
+      "venue": "ICLR 2024",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64ec1b763fda6d7f0626f42f",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1007/s10479-024-06247-3",
+      "title": "Another Puzzle: the Growth in Actively Managed Mutual Funds",
+      "authors": [
+        "Martin J. Gruber"
+      ],
+      "venue": "Annals of Operations Research",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc6a66ee8bf8c1045e18d8c",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1101/2023.09.16.558053",
+      "title": "Sound-mediated Nucleation and Growth of Amyloid Fibrils",
+      "authors": [
+        "Anna Kozell"
+      ],
+      "venue": "PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "651272e13fda6d7f06fcb7db",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.2307/1910352",
+      "title": "Money and Economic-Growth",
+      "authors": [
+        "J TOBIN"
+      ],
+      "venue": "Финансовые исследования",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99a62b7602d97022cf838",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1038/s41586-023-05825-y",
+      "title": "Controlled Growth of Perovskite Layers with Volatile Alkylammonium Chlorides.",
+      "authors": [
+        "Jaewang Park"
+      ],
+      "venue": "NATURE",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63f0b01090e50fcafd73fe76",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1021/acs.jpcb.3c05300",
+      "title": "Nucleation and Growth of Amyloid Fibrils.",
+      "authors": [
+        "Sharareh Jalali"
+      ],
+      "venue": "JOURNAL OF PHYSICAL CHEMISTRY B",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "654c745c939a5f4082e1aa4f",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.00555",
+      "title": "Toward Fast, Flexible, and Robust Low-Light Image Enhancement.",
+      "authors": [
+        "Long Ma"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR 2022)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62620f1d5aee126c0f686da2",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1021/acs.joc.2c01227",
+      "title": "TSC2 Mediates Cellular Energy Response to Control Cell Growth and Survival",
+      "authors": [
+        "Patricia Garcia-Dominguez"
+      ],
+      "venue": "The Journal of Organic Chemistry",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a743b7602d970307d529",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1093/acrefore/9780190625979.013.644",
+      "title": "Growth Econometrics",
+      "authors": [
+        "Jonathan R. W. Temple"
+      ],
+      "venue": "Oxford Research Encyclopedia of Economics and Finance",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99796b7602d9701f5cffe",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1109/cvpr42600.2020.00185",
+      "title": "Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement",
+      "authors": [
+        "Chunle Guo"
+      ],
+      "venue": "2020 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR)",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e281dbb3a55ac4d187e07cc",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
       "doi": "10.2307/2534694",
       "title": "It's Baaack: Japan's Slump and the Return of the Liquidity Trap",
-      "abstract": "",
-      "year": 1998,
+      "authors": [
+        "Paúl Krugman",
+        "Kathryn M. Dominquez",
+        "Kenneth Rogoff"
+      ],
       "venue": "Brookings Papers on Economic Activity",
-      "citation_count": 1777,
-      "engines_found_in": [
+      "year": 1998,
+      "cited_by_count": 1779,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.brookings.edu/wp-content/uploads/1998/06/1998b_bpea_krugman_dominquez_rogoff.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 12
     },
     {
-      "rank": 3,
       "doi": "10.1086/230786",
       "title": "Recombinant Property in East European Capitalism",
-      "abstract": "",
-      "year": 1996,
+      "authors": [
+        "David Stark"
+      ],
       "venue": "American Journal of Sociology",
-      "citation_count": 979,
-      "engines_found_in": [
+      "year": 1996,
+      "cited_by_count": 980,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/230786",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 13
     },
     {
-      "rank": 4,
-      "doi": "10.2139/ssrn.985843",
-      "title": "Good Capitalism, Bad Capitalism, and the Economics of Growth and Prosperity",
-      "abstract": "",
-      "year": 2007,
-      "venue": "SSRN Electronic Journal",
-      "citation_count": 843,
-      "engines_found_in": [
+      "doi": "10.1257/jep.6.3.79",
+      "title": "Organizational Capabilities and the Economic History of the Industrial Enterprise",
+      "authors": [
+        "Alfred D. Chandler"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 1992,
+      "cited_by_count": 845,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.6.3.79",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 14
     },
     {
-      "rank": 5,
       "doi": "10.1257/jep.27.3.3",
       "title": "The Top 1 Percent in International and Historical Perspective",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "Facundo Alvaredo",
+        "Anthony B. Atkinson",
+        "Thomas Piketty",
+        "Emmanuel Saez"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 836,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 836,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.27.3.3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 15
     },
     {
-      "rank": 6,
       "doi": "10.1353/eca.2004.0018",
       "title": "Ending Africa's Poverty Trap",
-      "abstract": "",
-      "year": 2004,
+      "authors": [
+        "Jeffrey D. Sachs",
+        "John W. McArthur",
+        "Guido Schmidt‐Traub",
+        "Margaret E. Kruk",
+        "Chandrika Bahadur",
+        "Michael Faye",
+        "Gordon C. McCord"
+      ],
       "venue": "Brookings Papers on Economic Activity",
-      "citation_count": 764,
-      "engines_found_in": [
+      "year": 2004,
+      "cited_by_count": 766,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.brookings.edu/wp-content/uploads/2004/01/2004a_bpea_sachs.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 16
     },
     {
-      "rank": 7,
+      "doi": "10.1257/jep.14.1.177",
+      "title": "How Far Will International Economic Integration Go?",
+      "authors": [
+        "Dani Rodrik"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2000,
+      "cited_by_count": 745,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.14.1.177",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "",
+      "title": "Reducing Disaster Risk: a challenge for development",
+      "authors": [
+        "Mark Pelling",
+        "Andrew Maskrey",
+        "Pablo Ruiz",
+        "Lisa J. Hall",
+        "Pascal Peduzzi",
+        "Hy Dao",
+        "Frédéric Mouton",
+        "Christian Herold",
+        "Stéphane Kluser"
+      ],
+      "venue": "Archive ouverte UNIGE (University of Geneva)",
+      "year": 2004,
+      "cited_by_count": 722,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://archive-ouverte.unige.ch/unige:32335",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 18
+    },
+    {
       "doi": "10.1016/s0140-6736(13)62407-1",
       "title": "The political origins of health inequity: prospects for change",
-      "abstract": "",
-      "year": 2014,
+      "authors": [
+        "Ole Petter Ottersen",
+        "Jashodhara Dasgupta",
+        "Chantal Blouin",
+        "Paulo Marchiori Buss",
+        "Virasakdi Chongsuvivatwong",
+        "Julio Frenk",
+        "Sakiko Fukuda‐Parr",
+        "Bience Gawanas",
+        "Rita Giacaman",
+        "John O. Gyapong",
+        "Jennifer Leaning",
+        "Michael Marmot",
+        "Desmond McNeill",
+        "Gertrude I Mongella",
+        "Nkosana Moyo",
+        "Sigrun Møgedal",
+        "Ayanda Ntsaluba",
+        "Gorik Ooms",
+        "Espen Bjertness",
+        "Ann Louise Lie",
+        "Suerie Moon",
+        "Sidsel Roalkvam",
+        "Kristin Ingstad Sandberg",
+        "Inger B. Scheel"
+      ],
       "venue": "The Lancet",
-      "citation_count": 680,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 681,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "http://www.thelancet.com/article/S0140673613624071/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 19
     },
     {
-      "rank": 8,
+      "doi": "10.1371/journal.pone.0002020",
+      "title": "The SIRT1 Deacetylase Suppresses Intestinal Tumorigenesis and Colon Cancer Growth",
+      "authors": [
+        "Ron Firestein"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99beab7602d9702494b1d",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1002/14651858.cd009365.pub2",
+      "title": "Exercise Therapy for Treatment of Acute Non-Specific Low Back Pain.",
+      "authors": [
+        "Wilhelmina I. Jzelenberg"
+      ],
+      "venue": "COCHRANE DATABASE OF SYSTEMATIC REVIEWS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a37b69c91b587b09587d2e",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.3390/ijerph120910490",
+      "title": "Food Safety in Low and Middle Income Countries.",
+      "authors": [
+        "Emmah Kwoba"
+      ],
+      "venue": "Zoonoses and public health",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8ea58f9fced0a24b51d222",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1145/3567592",
+      "title": "Neural Machine Translation for Low-Resource Languages: A Survey.",
+      "authors": [
+        "Surangika Ranathunga"
+      ],
+      "venue": "ACM COMPUTING SURVEYS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60dd1bcc91e011cc85cbcb64",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1109/cvpr52729.2023.02131",
+      "title": "Learning a Simple Low-Light Image Enhancer from Paired Low-Light Instances",
+      "authors": [
+        "Zhenqi Fu"
+      ],
+      "venue": "CVPR 2023",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6464af6cd68f896efa351dbb",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1103/revmodphys.95.045002",
+      "title": "Atmospheric Nanoparticle Growth",
+      "authors": [
+        "Dominik Stolzenburg"
+      ],
+      "venue": "REVIEWS OF MODERN PHYSICS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65794025939a5f40821b8e01",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1002/9781119550723.ch7",
+      "title": "Low‐dimensional Thermoelectric Materials",
+      "authors": [
+        "Xinyi Chen"
+      ],
+      "venue": "Flexible Thermoelectric Polymers and Systems",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6230032a5aee126c0f97f5b4",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1056/nejmc2210368",
+      "title": "Trastuzumab Deruxtecan in HER2-Low Breast Cancer.",
+      "authors": [
+        "Hailey K Carroll"
+      ],
+      "venue": "The New England journal of medicine",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62a082155aee126c0fee072e",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.01719",
+      "title": "SNR-Aware Low-light Image Enhancement",
+      "authors": [
+        "Xiaogang Xu"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR 2022)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c2a93f5aee126c0fcefa13",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1088/1361-6463/ac5e1c",
+      "title": "The 2022 Plasma Roadmap: Low Temperature Plasma Science and Technology",
+      "authors": [
+        "I Adamovich"
+      ],
+      "venue": "JOURNAL OF PHYSICS D-APPLIED PHYSICS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62f607d890e50fcafd187f52",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1016/s0140-6736(21)01590-7",
+      "title": "Nutrition in Adolescent Growth and Development",
+      "authors": [
+        "Shane A. Norris"
+      ],
+      "venue": "The Lancet",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ab46935244ab9dcb65f59c",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1371/journal.pone.0294792",
+      "title": "Pre-and Postdiagnosis Growth Failure, Adult Short Stature, and Untreated Growth Hormone Deficiency in Radiotherapy-Treated Long-Term Survivors of Childhood Brain Tumor",
+      "authors": [
+        "Julia Anttonen"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "631876d390e50fcafdff040b",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.4337/9781802206012.00017",
+      "title": "Growth and Unemployment",
+      "authors": [
+        "Ewald Walterskirchen"
+      ],
+      "venue": "Edward Elgar Publishing eBooks",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578af4f939a5f4082326ce4",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1007/s11263-021-01466-8",
+      "title": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+      "authors": [
+        "Lv  Feifan"
+      ],
+      "venue": "International Journal of Computer Vision",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d4800593a55ac01b0f8fefe",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1109/cvpr46437.2021.00425",
+      "title": "PREDATOR: Registration of 3D Point Clouds with Low Overlap",
+      "authors": [
+        "Shengyu Huang"
+      ],
+      "venue": "2021 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION, CVPR 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc4b85d91e011abfa2fadd1",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1007/s11263-020-01407-x",
+      "title": "Beyond Brightening Low-light Images",
+      "authors": [
+        "Zhang  Yonghua"
+      ],
+      "venue": "International Journal of Computer Vision",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60376714d3485cfff1db4a4a",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.48550/arxiv.2106.04647",
+      "title": "Compacter: Efficient Low-Rank Hypercomplex Adapter Layers",
+      "authors": [
+        "Rabeeh Karimi mahabadi"
+      ],
+      "venue": "NEURIPS 2021",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60c2ec5491e0117e30ca28b5",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1016/S0140-6736(21)00733-9",
+      "title": "Low back pain",
+      "authors": [
+        "Nebojsa Nick Knezevic"
+      ],
+      "venue": "Lancet (London, England)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60c5dca5e4510cd7c80e962e",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "",
+      "title": "Racial differences in low-birthweight",
+      "authors": [
+        "M. Martin"
+      ],
+      "venue": "BJOG-AN INTERNATIONAL JOURNAL OF OBSTETRICS AND GYNAECOLOGY",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bacac1c45e57ce9e12558",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1016/j.renene.2020.11.050",
+      "title": "A Machine Learning Approach on the Relationship among Solar and Wind Energy Production, Coal Consumption, GDP, and CO2 Emissions",
+      "authors": [
+        "Cosimo Magazzino"
+      ],
+      "venue": "Renewable Energy",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff68c78d4150a363cd280c8",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1038/s41566-019-0573-5",
+      "title": "High-efficiency Organic Solar Cells with Low Non-Radiative Recombination Loss and Low Energetic Disorder",
+      "authors": [
+        "Sha Liu"
+      ],
+      "venue": "Nature Photonics",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e5e19d593d709897ce8b312",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1177/000312240507000601",
+      "title": "The Worldwide Diffusion of Market-Oriented Infrastructure Reform, 1977–1999",
+      "authors": [
+        "Witold J. Henisz",
+        "Bennet A. Zelner",
+        "Mauro F. Guillén"
+      ],
+      "venue": "American Sociological Review",
+      "year": 2005,
+      "cited_by_count": 495,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://repository.upenn.edu/bitstreams/80edff4d-49f0-4980-80b5-73808597430e/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 41
+    },
+    {
       "doi": "10.1111/dech.12570",
       "title": "Industrial Policy in the 21st Century",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Ha‐Joon Chang",
+        "Antonio Andreoni"
+      ],
       "venue": "Development and Change",
-      "citation_count": 439,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 439,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dech.12570",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 42
     },
     {
-      "rank": 9,
+      "doi": "10.1257/089533003772034934",
+      "title": "Escaping from a Liquidity Trap and Deflation: The Foolproof Way and Others",
+      "authors": [
+        "Lars E.O. Svensson"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2003,
+      "cited_by_count": 360,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/089533003772034934",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1146/annurev-economics-080218-025852",
+      "title": "Global Wealth Inequality",
+      "authors": [
+        "Gabriel Zucman"
+      ],
+      "venue": "Annual Review of Economics",
+      "year": 2019,
+      "cited_by_count": 338,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-economics-080218-025852",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 44
+    },
+    {
       "doi": "10.1080/02665433.2013.874299",
       "title": "Taking path dependence seriously: an historical institutionalist research agenda in planning history",
-      "abstract": "",
-      "year": 2014,
+      "authors": [
+        "André Sørensen"
+      ],
       "venue": "Planning Perspectives",
-      "citation_count": 299,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 300,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://utoronto.scholaris.ca/bitstreams/d2c1cb22-fa05-4e69-ad3a-2e3a42abf616/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 45
     },
     {
-      "rank": 10,
+      "doi": "10.5089/9798400229046.006",
+      "title": "Geoeconomic Fragmentation and the Future of Multilateralism",
+      "authors": [
+        "Shekhar Aiyar",
+        "Jiaqian Chen",
+        "Christian Ebeke",
+        "Roberto Garcia-Saltos",
+        "Tryggvi Gudmundsson",
+        "Anna Ilyina",
+        "Alvar Kangur",
+        "Tansaya Kunaratskul",
+        "Sergio Rodríguez",
+        "Michèle Ruta",
+        "Tatjana Schulze",
+        "Gabriel Soderberg",
+        "Juan Treviño"
+      ],
+      "venue": "IMF staff discussion note",
+      "year": 2023,
+      "cited_by_count": 294,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/006/2023/001/006.2023.issue-001-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.2307/2534623",
+      "title": "China's Emergence and Prospects as a Trading Nation",
+      "authors": [
+        "Barry Naughton",
+        "Nicholas R. Lardy"
+      ],
+      "venue": "Brookings Papers on Economic Activity",
+      "year": 1996,
+      "cited_by_count": 215,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.brookings.edu/wp-content/uploads/1996/06/1996b_bpea_naughton_lardy.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1016/s2542-5196(24)00310-3",
+      "title": "Post-growth: the science of wellbeing within planetary boundaries",
+      "authors": [
+        "Giorgos Kallis",
+        "Jason Hickel",
+        "Daniel W. O’Neill",
+        "Tim Jackson",
+        "Peter A. Victor",
+        "Kate Raworth",
+        "Juliet B. Schor",
+        "J. Steinberger",
+        "Diána Ürge-Vorsatz"
+      ],
+      "venue": "The Lancet Planetary Health",
+      "year": 2025,
+      "cited_by_count": 193,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1016/s2542-5196(24)00310-3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1257/jep.33.4.128",
+      "title": "The Surge of Economic Nationalism in Western Europe",
+      "authors": [
+        "Italo Colantone",
+        "Piero Stanig"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2019,
+      "cited_by_count": 192,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.4.128",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.2307/2235583",
+      "title": "The Future of Central Banking: The Tercentenary Symposium of the Bank of England.",
+      "authors": [
+        "Richard S. Grossman",
+        "Forrest Capie",
+        "Charles Goodhart",
+        "Stanley Fischer"
+      ],
+      "venue": "The Economic Journal",
+      "year": 1996,
+      "cited_by_count": 175,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://eprints.lse.ac.uk/39606/1/The_development_of_central_banking_%28LSERO%29.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "",
+      "title": "2013 Global Go To Think Tank Index Report",
+      "authors": [
+        "James G. McGann"
+      ],
+      "venue": "Scholarly Commons (University of Pennsylvania)",
+      "year": 2014,
+      "cited_by_count": 160,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://repository.upenn.edu/think_tanks/9",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1093/nar/gkae973",
+      "title": "Generic Diagramming Platform (GDP): a Comprehensive Database of High-Quality Biomedical Graphics.",
+      "authors": [
+        "Shuai Jiang"
+      ],
+      "venue": "NUCLEIC ACIDS RESEARCH",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67213e0801d2a3fbfcfb79e9",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1016/j.jvcir.2022.103712",
+      "title": "R2RNet: Low-light Image Enhancement Via Real-low to Real-normal Network",
+      "authors": [
+        "Jiang Hai"
+      ],
+      "venue": "JOURNAL OF VISUAL COMMUNICATION AND IMAGE REPRESENTATION",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60dbf7e691e0117bb69ae652",
+      "matched_phrase": "low",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.4337/9781788974912.g.37",
+      "title": "Gross domestic product (GDP)",
+      "authors": [
+        "Richard A. Werner"
+      ],
+      "venue": "Dictionary of Ecological Economics",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648cfaeed68f896efa94fc8e",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.1007/978-3-319-57365-6_256-1",
+      "title": "Religion and Economic Growth",
+      "authors": [
+        "Linda K. English"
+      ],
+      "venue": "Handbook of Labor, Human Resources and Population Economics",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f2b7939a5f40829c7af9",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.5281/zenodo.7629916",
+      "title": "Hepatocyte Growth Factor",
+      "authors": [
+        "Jeffrey S. Rubin"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791106939a5f4082ce8de4",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1086/720458",
+      "title": "How Much Should We Trust the Dictator's GDP Growth Estimates?",
+      "authors": [
+        "Luis R. Martinez"
+      ],
+      "venue": "Journal of Political Economy",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0de1bd9fced0a24b7f5ce8",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.1038/s41597-022-01300-x",
+      "title": "Global Gridded GDP Data Set Consistent with the Shared Socioeconomic Pathways",
+      "authors": [
+        "Tingting Wang"
+      ],
+      "venue": "Scientific Data",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628caf705aee126c0f370661",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.1787/4b7e2bad-en",
+      "title": "Towards green growth",
+      "authors": [],
+      "venue": "OECD Green Growth Studies",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8abc4dabfae2eeeb8e496",
+      "matched_phrase": "growth",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1016/j.enpol.2020.112087",
+      "title": "Revisiting Electricity Consumption, Price, and Real GDP: A Modified Sectoral Level Analysis from Pakistan",
+      "authors": [
+        "Kashif Raza Abbasi"
+      ],
+      "venue": "ENERGY POLICY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60376400d3485cfff1d76e89",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1016/j.jeem.2021.102445",
+      "title": "The GDP-Temperature Relationship: Implications for Climate Change Damages",
+      "authors": [
+        "Richard G. Newell"
+      ],
+      "venue": "Journal of environmental economics and management",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "609a6e35e4510cd7c8908f0b",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.3390/su13095012",
+      "title": "Construction Sector Contribution to Economic Stability: Malaysian GDP Distribution",
+      "authors": [
+        "Wesam Salah Alaloul"
+      ],
+      "venue": "SUSTAINABILITY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60b9a6b2e4510cd7c8ffa69a",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1109/iccv48922.2021.00519",
+      "title": "GDP: Stabilized Neural Network Pruning Via Gates with Differentiable Polarization",
+      "authors": [
+        "Yi Guo"
+      ],
+      "venue": "2021 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION (ICCV 2021)",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6136d8495244ab9dcb6aa766",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.1016/j.eti.2021.101674",
+      "title": "The Nexus of Industrialization, GDP Per Capita and CO2 Emission in China",
+      "authors": [
+        "Bilal Aslam"
+      ],
+      "venue": "ENVIRONMENTAL TECHNOLOGY & INNOVATION",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbbbf1c45e57ce97d2909",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.1016/j.strueco.2019.10.003",
+      "title": "GDP-employment Decoupling in Germany",
+      "authors": [
+        "Sabine Klinger"
+      ],
+      "venue": "Structural Change and Economic Dynamics",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86a31dabfae2eeec0a7e5",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.1016/j.jdeveco.2020.102485",
+      "title": "Expressways, GDP, and the Environment: the Case of China",
+      "authors": [
+        "Guojun He"
+      ],
+      "venue": "Journal of Development Economics",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ecbc4fb9fced0a24b4e1522",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.1016/j.erss.2023.103122",
+      "title": "Barriers to powering past coal: Implications for a just energy transition in South Africa",
+      "authors": [
+        "Pegah Mirzania",
+        "Joel A. Gordon",
+        "Nazmiye Balta‐Ozkan",
+        "Ramazan Caner Sayan",
+        "Lochner Marais"
+      ],
+      "venue": "Energy Research & Social Science",
+      "year": 2023,
+      "cited_by_count": 115,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.erss.2023.103122",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.1016/s0140-6736(24)01439-9",
+      "title": "Global health 2050: the path to halving premature death by mid-century",
+      "authors": [
+        "Dean T. Jamison",
+        "Lawrence H. Summers",
+        "Angela Y. Chang",
+        "Omar Karlsson",
+        "Wenhui Mao",
+        "Ole Frithjof Norheim",
+        "Osondu Ogbuoji",
+        "Marco Schäferhoff",
+        "David Watkins",
+        "Olusoji Adeyi",
+        "George A.O. Alleyne",
+        "Ala Alwan",
+        "Shuchi Anand",
+        "Ruth Belachew",
+        "Seth Berkley",
+        "Stefano Bertozzi",
+        "Sarah Bolongaita",
+        "Donald A. P. Bundy",
+        "Flavia Bustreo",
+        "Márcia C. Castro",
+        "Simiao Chen",
+        "Victoria Y. Fan",
+        "Ayodamope Fawole",
+        "Richard Feachem",
+        "Lia Tadesse Gebremedhin",
+        "Jayati Ghosh",
+        "Sue J. Goldie",
+        "Eduardo González-Pier",
+        "Yan Guo",
+        "Sanjeev Gupta",
+        "Prabhat Jha",
+        "Felícia Marie Knaul",
+        "Margaret E. Kruk",
+        "Christoph Kurowski",
+        "Gordon G. Liu",
+        "Saeda Makimoto",
+        "Awad Mataria",
+        "Rachel Nugent",
+        "Hitoshi Oshitani",
+        "Ariel Pablos-Méndez",
+        "Richard Peto",
+        "Neelam Sekhri Feachem",
+        "Srinath Reddy",
+        "Nisreen Salti",
+        "Helen Saxenian",
+        "Justina O. Seyi‐Olajide",
+        "Agnès Soucat",
+        "Stéphane Verguet",
+        "Armand Zimmerman",
+        "Gavin Yamey"
+      ],
+      "venue": "The Lancet",
+      "year": 2024,
+      "cited_by_count": 107,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://portal.findresearcher.sdu.dk/da/publications/279a1fb5-8ada-473d-803c-86ecf7e91d28",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.1093/cje/bep033",
+      "title": "The crash of the knowledge economy",
+      "authors": [
+        "Ugo Pagano",
+        "Maria Alessandra Rossi"
+      ],
+      "venue": "Cambridge Journal of Economics",
+      "year": 2009,
+      "cited_by_count": 95,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/cje/article-pdf/33/4/665/4830006/bep033.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.2307/2534622",
+      "title": "Japan and the Asian Economies: A \"Miracle\" in Transition",
+      "authors": [
+        "Takatoshi Ito",
+        "David E. Weinstein"
+      ],
+      "venue": "Brookings Papers on Economic Activity",
+      "year": 1996,
+      "cited_by_count": 91,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.jstor.org/institutionSearch?redirectUri=%2fstable%2f2534622",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.5755/j01.ppaa.14.3.13491",
+      "title": "PUBLIC POLICY AND ADMINISTRATION",
+      "authors": [
+        "Juraj Nemec",
+        "Purshottama Reddy",
+        "Michiel S. de Vries"
+      ],
+      "venue": "Public Policy And Administration",
+      "year": 2015,
+      "cited_by_count": 87,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://vpa.ktu.lt/index.php/PPA/article/download/13491/7152",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.5089/9781451846409.001",
+      "title": "Globalization and Growth in the Twentieth Century",
+      "authors": [
+        "Nicholas Crafts"
+      ],
+      "venue": "IMF Working Paper",
+      "year": 2000,
+      "cited_by_count": 85,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/001/2000/044/001.2000.issue-044-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 72
+    },
+    {
       "doi": "10.1080/13608746.2018.1433478",
       "title": "The Italian Welfare State in the Crisis: Learning to Adjust?",
-      "abstract": "",
-      "year": 2018,
+      "authors": [
+        "Stefano Sacchi"
+      ],
       "venue": "South European Society & Politics",
-      "citation_count": 84,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 84,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13608746.2018.1433478?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 73
     },
     {
-      "rank": 11,
+      "doi": "",
+      "title": "Constructing Africa: Chinese Investment, Infrastructure Deficits, and Development",
+      "authors": [
+        "Olufunmilayo B. Arewa"
+      ],
+      "venue": "Scholarship @ Cornell Law (Cornell University)",
+      "year": 2015,
+      "cited_by_count": 78,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.cornell.edu/cilj/vol49/iss1/4",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.1016/j.ecolecon.2013.06.015",
+      "title": "Material use and material efficiency in Latin America and the Caribbean",
+      "authors": [
+        "James West",
+        "Heinz Schandl"
+      ],
+      "venue": "Ecological Economics",
+      "year": 2013,
+      "cited_by_count": 78,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0921800913002140",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.1007/s10368-020-00465-3",
+      "title": "Macroeconomic and health care aspects of the coronavirus epidemic: EU, US and global perspectives",
+      "authors": [
+        "Paul J. J. Welfens"
+      ],
+      "venue": "International Economics and Economic Policy",
+      "year": 2020,
+      "cited_by_count": 75,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10368-020-00465-3.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1016/j.thorsurg.2007.10.007",
+      "title": "The Division System in Crisis: Essays on Contemporary Korea",
+      "authors": [
+        "Paik Nak-chung"
+      ],
+      "venue": "",
+      "year": 2011,
+      "cited_by_count": 69,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://escholarship.org/uc/item/0n74x461",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "",
+      "title": "Japan's baby bust : causes, implications, and policy responses",
+      "authors": [
+        "Robert D. Retherford",
+        "Naohiro Ogawa"
+      ],
+      "venue": "ScholarSpace (University of Hawaii at Manoa)",
+      "year": 2005,
+      "cited_by_count": 57,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/10125/3757",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.1016/j.techsoc.2022.102000",
+      "title": "The importance of education and training policies in supporting technological revolutions: A comparative and historical analysis of UK, US, Germany, and Sweden (1830–1970)",
+      "authors": [
+        "Chiara Natalie Focacci",
+        "Carlota Pérez"
+      ],
+      "venue": "Technology in Society",
+      "year": 2022,
+      "cited_by_count": 56,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.techsoc.2022.102000",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.3390/economies7030065",
+      "title": "A Survey of Inclusive Growth Policy",
+      "authors": [
+        "Almas Heshmati",
+        "Jung Suk Kim",
+        "Jacob Wood"
+      ],
+      "venue": "Economies",
+      "year": 2019,
+      "cited_by_count": 50,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7099/7/3/65/pdf?version=1562209328",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1111/gove.12354",
+      "title": "The politics of social spending after the Great Recession: The return of partisan policy making",
+      "authors": [
+        "Lee Savage"
+      ],
+      "venue": "Governance",
+      "year": 2018,
+      "cited_by_count": 48,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://kclpure.kcl.ac.uk/portal/en/publications/cae30548-b9ab-49ff-abce-01655e799152",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1007/s11027-018-9786-z",
+      "title": "Impact assessment of climate policy on Poland's power sector",
+      "authors": [
+        "Tadeusz Skoczkowski",
+        "S. Bielecki",
+        "A. Węglarz",
+        "Magdalena Włodarczak",
+        "Piotr Gutowski"
+      ],
+      "venue": "Mitigation and Adaptation Strategies for Global Change",
+      "year": 2018,
+      "cited_by_count": 45,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11027-018-9786-z.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.22004/ag.econ.16242",
+      "title": "GOVERNANCE AND FOOD SECURITY IN AN AGE OF GLOBALIZATION",
+      "authors": [
+        "Robert Paarlberg",
+        "Paarlberg, Robert L."
+      ],
+      "venue": "AgEcon Search (University of Minnesota, USA)",
+      "year": 2002,
+      "cited_by_count": 44,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://ageconsearch.umn.edu/record/16242/files/dp010036.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.1016/j.chieco.2018.07.008",
+      "title": "Automation and inequality in China",
+      "authors": [
+        "Yixiao Zhou",
+        "Rod Tyers"
+      ],
+      "venue": "China Economic Review",
+      "year": 2018,
+      "cited_by_count": 41,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://api.research-repository.uwa.edu.au/ws/files/40622278/Zhou_Tyers_2019_Automation_and_inequality_in_China.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1093/cjip/poy010",
+      "title": "Economic Openness and Great Power Competition: Lessons for China and the United States",
+      "authors": [
+        "David A. Lake"
+      ],
+      "venue": "The Chinese Journal of International Politics",
+      "year": 2018,
+      "cited_by_count": 41,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/cjip/article-pdf/11/3/237/25499347/poy010.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.5089/9781513512907.002",
+      "title": "People’s Republic of China",
+      "authors": [
+        "International Monetary Fund"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2015,
+      "cited_by_count": 38,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2015/234/002.2015.issue-234-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1007/s10368-020-00479-x",
+      "title": "Trump’s Trade Policy, BREXIT, Corona Dynamics, EU Crisis and Declining Multilateralism",
+      "authors": [
+        "Paul J. J. Welfens"
+      ],
+      "venue": "International Economics and Economic Policy",
+      "year": 2020,
+      "cited_by_count": 37,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10368-020-00479-x.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "",
+      "title": "The Reliability of the Nominal GDP Expectations Gap",
+      "authors": [
+        "Andrew B. Martinez"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF CENTRAL BANKING",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c9d9be8eb7c4b5ac0a3",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1016/j.jjie.2023.101258",
+      "title": "The Impact of the COVID-19 Pandemic on Global GDP Growth.",
+      "authors": [
+        "Joseph E. Gagnon"
+      ],
+      "venue": "JOURNAL OF THE JAPANESE AND INTERNATIONAL ECONOMIES",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "642d52a290e50fcafdc610c5",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1016/0006-291x(77)91543-1",
+      "title": "Mannosyltransfer from GDP-mannose to Oligosaccharide-Lipids",
+      "authors": [
+        "Ahmed I. Foudah"
+      ],
+      "venue": "ACS Omega",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9adb1b7602d97037b47aa",
+      "matched_phrase": "GDP",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.1162/daed_a_00269",
+      "title": "China's Economy: Complacency, Crisis &amp; the Challenge of Reform",
+      "authors": [
+        "Barry Naughton"
+      ],
+      "venue": "Daedalus",
+      "year": 2014,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://direct.mit.edu/daed/article-pdf/143/2/14/1830382/daed_a_00269.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "",
+      "title": "Financial Crisis Containment",
+      "authors": [
+        "Anna Gelpern"
+      ],
+      "venue": "",
+      "year": 2009,
+      "cited_by_count": 27,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://digitalcommons.wcl.american.edu/cgi/viewcontent.cgi?article=1012&context=facsch_lawrev",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.5089/9781484313435.002",
+      "title": "Japan",
+      "authors": [],
+      "venue": "IMF Staff Country Reports",
+      "year": 2017,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/doc/IMF002/24519-9781484313435/24519-9781484313435/Other_formats/Source_PDF/24519-9781484313633.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1177/00323292241292920",
+      "title": "Growth Coalitions Within a Corporatist Setting: How Manufacturing Interests Dominated the German Response to the Energy Crisis",
+      "authors": [
+        "Donato Di Carlo",
+        "Anke Hassel",
+        "Martin Höpner"
+      ],
+      "venue": "Politics & Society",
+      "year": 2024,
+      "cited_by_count": 22,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.gmfus.org/sites/default/files/Jacoby%2520-%2520SurplusGermany%2520edited.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.24149/gwp218",
+      "title": "Aging and Deflation from a Fiscal Perspective",
+      "authors": [
+        "Bank of Japan",
+        "Mitsuru Katagiri",
+        "Hideki Konishi",
+        "Kōzō Ueda"
+      ],
+      "venue": "Federal Reserve Bank of Dallas, Globalization and Monetary Policy Institute Working Papers",
+      "year": 2014,
+      "cited_by_count": 16,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://doi.org/10.24149/gwp218",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.5089/9781484392898.001",
+      "title": "Public Debt Through the Ages",
+      "authors": [
+        "Barry Eichengreen",
+        "Asmaa El-Ganainy",
+        "Rui Esteves",
+        "Kris James Mitchener"
+      ],
+      "venue": "IMF Working Paper",
+      "year": 2019,
+      "cited_by_count": 14,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/doc/IMF001/25706-9781484392898/25706-9781484392898/Other_formats/Source_PDF/25706-9781484394786.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1111/dech.12798",
+      "title": "Pakistan, China and the Structures of Debt Distress: Resisting Bretton Woods",
+      "authors": [
+        "Farwa Sial",
+        "Juvaria Jafri",
+        "A.Q.M. Khaliq"
+      ],
+      "venue": "Development and Change",
+      "year": 2023,
+      "cited_by_count": 13,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dech.12798",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 97
+    },
+    {
       "doi": "10.1163/2468-1733_shafr_sim280020462",
       "title": "Lost Decades: The Making of America's Debt Crisis and the Long Recovery",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "The SHAFR Guide Online",
-      "citation_count": 11,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dataset"
+      "rank": 98
     },
     {
-      "rank": 12,
+      "doi": "",
+      "title": "Managing Financial Integration and Capital Mobility -- Policy Lessons from the Past Two Decades",
+      "authors": [
+        "Joshua Aizenman",
+        "Brian Pinto"
+      ],
+      "venue": "eScholarship (California Digital Library)",
+      "year": 2011,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://escholarship.org/content/qt9j53m1tp/qt9j53m1tp.pdf?t=m9f8ba",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.3386/w20423",
+      "title": "A New Method of Estimating Potential Real GDP Growth: Implications for the Labor Market and the Debt/GDP Ratio",
+      "authors": [
+        "Gordon, Robert"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1556/032.2018.68.s2.3",
+      "title": "Episode or hysteresis? Some theoretical and policy lessons from the crisis of 2008",
+      "authors": [
+        "Ádám Török",
+        "Boglárka Konka"
+      ],
+      "venue": "Acta Oeconomica",
+      "year": 2018,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://akjournals.com/downloadpdf/journals/032/68/s2/article-p45.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "",
+      "title": "The Bubble Economy and the Lost Decade: Learning from the Japanese Economic Experience",
+      "authors": [
+        "William Tsutsui",
+        "Stefano Mazzotta"
+      ],
+      "venue": "DigitalCommons - Kennesaw State University (Kennesaw State University)",
+      "year": 2015,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://digitalcommons.kennesaw.edu/cgi/viewcontent.cgi?article=1164&context=jgi",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1920/co.ifs.2024.0171",
+      "title": "The crisis in lost learning calls for a massive national policy response",
+      "authors": [
+        "Sibieta, Luke"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
       "doi": "10.2139/ssrn.2990902",
       "title": "GDP Growth, Private Debt and Monetary Policy",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Cafiso, Gianluca"
+      ],
       "venue": "SSRN Electronic Journal",
-      "citation_count": 3,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 104
     },
     {
-      "rank": 13,
+      "doi": "10.7551/mitpress/9780262027182.003.0012",
+      "title": "Current Debt Crisis in Historical Perspective",
+      "authors": [
+        "Abbas, S. Ali",
+        "Belhocine, Nazim",
+        "El-Ganainy, Asmaa",
+        "Weber, Anke"
+      ],
+      "venue": "Post-crisis Fiscal Policy",
+      "year": 2014,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1177/00323292221125566",
+      "title": "Financialized Growth and the Structural Power of Finance: Turkey's Debt-Led Growth Regime and Policy Response after the Crisis",
+      "authors": [
+        "Zayim, Ayca"
+      ],
+      "venue": "Politics &amp; Society",
+      "year": 2022,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This article analyzes the Turkish central bank's “managed uncertainty” policy after the global financial crisis. During 2010–14, the central bank intentionally generated uncertainty around short-term interest rates, using the level of predictability faced by financiers as a tool to buffer the domestic economy from volatile capital flows. How did the central bank implement this unconventional policy? Building on interview data and public texts, the article argues that the surge in capital",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1007/978-3-319-59102-5_7",
+      "title": "History of Greece’s Debt Crisis and the Banking Policy",
+      "authors": [
+        "Garefalakis, Alexandros",
+        "Lemonakis, Christos",
+        "Alexopoulos, George",
+        "Tabouratzi, Efthalia"
+      ],
+      "venue": "The Greek Debt Crisis",
+      "year": 2017,
+      "cited_by_count": 3,
+      "reference_count": 14,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.7551/mitpress/9780262027182.003.0009",
+      "title": "The Relationship between Debt Levels and Growth",
+      "authors": [
+        "Kumar, Manmohan S.",
+        "Woo, Jaejoon"
+      ],
+      "venue": "Post-crisis Fiscal Policy",
+      "year": 2014,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.1787/888933631228",
+      "title": "GDP growth and households debt: Belgium",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1787/888932836354",
+      "title": "GDP growth contribution and debt: Slovak Republic",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.5089/9781616353681.022.a007",
+      "title": "Export Credits and the Debt Crisis: Recent trends, current policy issues",
+      "authors": [
+        "Xafa, Miranda"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.5860/choice.49-2185",
+      "title": "Lost decades: the making of America's debt crisis and the long recovery",
+      "authors": [],
+      "venue": "Choice Reviews Online",
+      "year": 2011,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1007/978-3-030-25755-2_6",
+      "title": "The Lost Decades, 1980–2000: External Debt, Structural Reforms, and a Deep Financial Crisis",
+      "authors": [
+        "Luzardo-Luna, Ivan"
+      ],
+      "venue": "Palgrave Studies in Economic History",
+      "year": 2019,
+      "cited_by_count": 1,
+      "reference_count": 17,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.1057/9781137441522_7",
+      "title": "The UK Macroeconomic Policy Debate and the British Growth Crisis: Debt and Deficit Discourse in the Great Recession",
+      "authors": [
+        "Clift, Ben"
+      ],
+      "venue": "The British Growth Crisis",
+      "year": 2015,
+      "cited_by_count": 1,
+      "reference_count": 59,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1787/888933799929",
+      "title": "Figure 1.15. Corporate debt to GDP in China and G7 economies, Q1 2006 – Q4 2017",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.1787/888933799948",
+      "title": "Figure 1.16. Household debt to GDP in China and G7 economies, Q1 2006 – Q4 2017",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
       "doi": "10.1007/978-3-031-37755-6_9",
       "title": "Government Debt-to-GDP Ratio, Investment Growth and Employment Growth, and Their Response to High Nominal GDP Growth Regimes",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Ndou, Eliphas",
+        "Gumata, Nombulelo"
+      ],
       "venue": "Fiscal Policy Shocks and Macroeconomic Growth in South Africa",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 117
     },
     {
-      "rank": 14,
       "doi": "10.1057/9781137478757.0007",
       "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Werner, Richard A."
+      ],
       "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 118
     },
     {
-      "rank": 15,
       "doi": "10.1787/888932349536",
       "title": "Figure 1.1. Comparison of pre-1997 crisis and years preceding the current downturn (a) CPI inflation, current account balance and fiscal balance, (b) Total external debt (percentage of GDP), (c) Short-term external debt (percentage of GDP)",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "component"
+      "rank": 119
     },
     {
-      "rank": 16,
       "doi": "10.1057/9781137478757_2",
       "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
-      "abstract": "",
-      "year": 2015,
+      "authors": [
+        "Werner, Richard A."
+      ],
       "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 120
     },
     {
-      "rank": 17,
       "doi": "10.4324/9781003415510-3",
       "title": "Lost Decades",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Dunscomb, Paul E."
+      ],
       "venue": "The Crisis in Pro Baseball and Japan’s Lost Decade",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 121
     },
     {
-      "rank": 18,
       "doi": "10.1057/9781137478757.0011",
       "title": "Taiwan's Lost Decades",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Chu, Yun-Peng"
+      ],
       "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 122
     },
     {
-      "rank": 19,
-      "doi": "10.1057/9781137478757.0006",
-      "title": "Excessive Credits and the Lost Decades in Growth Performance",
-      "abstract": "",
-      "year": null,
-      "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
-    },
-    {
-      "rank": 20,
       "doi": "10.4324/9780203108253-14",
       "title": "The second crisis: from private debt to public debt",
-      "abstract": "",
-      "year": 2013,
+      "authors": [],
       "venue": "Public Policy beyond the Financial Crisis",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 123
+    },
+    {
+      "doi": "10.1057/9781137478757.0006",
+      "title": "Excessive Credits and the Lost Decades in Growth Performance",
+      "authors": [
+        "Chu, Yun-Peng"
+      ],
+      "venue": "Lost Decades in Growth Performance",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
       "source": "crossref",
-      "type": "book-chapter"
-    },
-    {
-      "rank": 21,
-      "doi": "arXiv:1808.01499v3",
-      "title": "Optimal Control of Debt-to-GDP Ratio in an N-state Regime Switching Economy",
       "abstract": "",
-      "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 124
     },
     {
-      "rank": 22,
-      "doi": "10.1109/TechDebt52882.2021.00017",
-      "title": "Business-Driven Technical Debt Prioritization: An Industrial Case Study",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.31979/etd.uddu-u757",
+      "title": "Lost Decades of Japan",
+      "authors": [
+        "Makhija, Nishant"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 23,
-      "doi": "arXiv:1607.04153v3",
-      "title": "On the Optimal Management of Public Debt: a Singular Stochastic Control Problem",
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
       "abstract": "",
-      "year": 2016,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 125
     },
     {
-      "rank": 24,
-      "doi": "arXiv:2101.06478v1",
-      "title": "GDP Forecasting using Payments Transaction Data",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.1057/9781137478757_1",
+      "title": "Excessive Credits and the “Lost Decades” in Growth Performance",
+      "authors": [
+        "Chu, Yun-Peng"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 25,
-      "doi": "10.3390/socsci11110522",
-      "title": "The Impact of National Culture on Innovation A Comparative Analysis between Developed and Developing Nations during the Pre and Post Crisis Period 2007_2021",
+      "venue": "Lost Decades in Growth Performance",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 34,
+      "type": "book-chapter",
+      "source": "crossref",
       "abstract": "",
-      "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 126
     },
     {
-      "rank": 26,
-      "doi": "arXiv:2407.02183v1",
-      "title": "How do financial variables impact public debt growth in China? An empirical study based on Markov regime-switching model",
-      "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.5353/th_b5479387",
+      "title": "The impact of demographic transition and aging on economic growth : a comparative study of Japan and China",
+      "authors": [
+        "Elgaard, Emil"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 27,
-      "doi": "arXiv:2407.08986v1",
-      "title": "Exploring Generative AI Policies in Higher Education: A Comparative Perspective from China, Japan, Mongolia, and the USA",
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 127
     },
     {
-      "rank": 28,
-      "doi": "arXiv:1209.6369v1",
-      "title": "The European debt crisis: Defaults and market equilibrium",
+      "doi": "10.1787/888933468631",
+      "title": "Figure 1. Japan has faced low growth, rising government debt and deflation",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
       "abstract": "",
-      "year": 2012,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 128
     },
     {
-      "rank": 29,
-      "doi": "arXiv:2305.12318v1",
-      "title": "The Federal Reserve's Response to the Global Financial Crisis and Its Long-Term Impact: An Interrupted Time-Series Natural Experimental Analysis",
+      "doi": "10.1057/9781137478757_6",
+      "title": "Taiwan’s Lost Decades: Populism and Internal Contradiction",
+      "authors": [
+        "Chu, Yun-Peng"
+      ],
+      "venue": "Lost Decades in Growth Performance",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 45,
+      "type": "book-chapter",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.1787/888934150709",
+      "title": "Figure 1.25. The government debt-to-GDP ratio is relatively low",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1787/086618665424",
+      "title": "Table 4.1b. Comparative Per Capita GDP Performance of China, Russia, Japan, India and the United States, 1990-2030",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.1353/sais.1986.0020",
+      "title": "From Debt to Development: Alternatives to the International Debt Crisis , and: Bank Lending to Developing Countries: The Policy Alternatives , and: Financial Intermediation Beyond the Debt Crisis , and: The Current Crisis in International Lending (review)",
+      "authors": [],
+      "venue": "SAIS Review",
+      "year": 1986,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.1787/888933201725",
+      "title": "Figure 1. Japan has faced low growth, rising government debt, large deficits and deflation",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1007/978-3-031-37755-6_10",
+      "title": "The Impact of the Government Debt-to-GDP Ratio on Investment Growth",
+      "authors": [
+        "Ndou, Eliphas",
+        "Gumata, Nombulelo"
+      ],
+      "venue": "Fiscal Policy Shocks and Macroeconomic Growth in South Africa",
       "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 134
     },
     {
-      "rank": 30,
-      "doi": "arXiv:2512.05063v2",
-      "title": "Debt, Growth, and the Carbon Lock-In",
+      "doi": "10.14251/crisisonomy.2017.13.2.1",
+      "title": "Recognition and Response to Low Fertility - Policy Response to Low Fertility in Japan -",
+      "authors": [
+        "",
+        "Kang, Hye Jung",
+        "Song, Hyo Jin",
+        ""
+      ],
+      "venue": "Crisis and Emergency Management",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2025,
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1515/cfer-2019-080406",
+      "title": "Local Government Debt in China: Development in Seven Decades, Current Situation, and Reform Suggestions",
+      "authors": [
+        "Feng, Jing"
+      ],
+      "venue": "China Finance and Economic Review",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.1787/888933174980",
+      "title": "Figure 1.1. Trend growth of GDP per capita has been weak for three decades",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.4324/9781351214780-3",
+      "title": "Income Inequality and Economic Growth in China in the Last Three Decades",
+      "authors": [
+        "Li, Shi"
+      ],
+      "venue": "China, India and Southeast Asia",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1787/888933496434",
+      "title": "Figure 1. GDP growth has weakened since the crisis",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1057/9781137356758.0011",
+      "title": "Economic Policies and the Debt/GDP Constraint",
+      "authors": [
+        "Vranceanu, Radu"
+      ],
+      "venue": "The Eurozone Crisis and the Future of Europe",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1787/888932383337",
+      "title": "Figure 1.2. Contributions to GDP growth during the crisis",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1108/oxan-es225790",
+      "title": "Policy signals will let China GDP growth slow further",
+      "authors": [],
+      "venue": "Emerald Expert Briefings",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "<jats:sec sec-type=\"headline\">\n               <jats:title content-type=\"abstract-subheading\">Headline</jats:title>\n               <jats:p>CHINA: Policy signals will let GDP growth slow further</jats:p>\n            </jats:sec>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.1093/oso/9780192895912.003.0007",
+      "title": "A Combined Arms Strategy",
+      "authors": [
+        "Rostagno, Massimo",
+        "Altavilla, Carlo",
+        "Carboni, Giacomo",
+        "Lemke, Wolfgang",
+        "Motto, Roberto",
+        "Guilhem, Arthur Saint",
+        "Yiangou, Jonathan"
+      ],
+      "venue": "Monetary Policy in Times of Crisis",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>The culmination of the European Central Bank’s (ECB) policy evolution was the ‘combined arms strategy’ that started taking shape in 2014–2015. In this chapter, we review how four unconventional measures—negative interest rates, asset purchases, targeted lending operations, and forward guidance—were progressively combined into a unified policy package. We recount the sequence of ‘recalibrations’ of these tools that took place between December 2015 and June 2018 and the internal debates that in",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.1787/888933577059",
+      "title": "Figure 6. Without policy changes the debt-to-GDP ratio is set to increase further",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1093/acprof:oso/9780199683789.003.0008",
+      "title": "Debt",
+      "authors": [
+        "Langley, Paul"
+      ],
+      "venue": "Liquidity Lost",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.14251/crisisonomy.2024.20.8.1",
+      "title": "Shaping Low Fertility Policies : A Comparative Analysis of Initial Policy Making Processes in South Korea and Japan Using Multiple Streams Theory",
+      "authors": [
+        "",
+        "Hayoung Yoon, Hayoung Yoon"
+      ],
+      "venue": "Crisis and Emergency Management: Theory and Praxis",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1002/9781118791912.ch6",
+      "title": "Hello Kitty Isn't a Foreign Policy: How Amateurish Diplomacy Undermines Japan",
+      "authors": [],
+      "venue": "Japanization",
+      "year": 2012,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.59425/eabc.1696852826",
+      "title": "Is the Chinese economy headed for Japan-style lost decades?",
+      "authors": [
+        "editors, EAF"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "10.1007/978-981-13-6077-0_3",
+      "title": "Policy Simulation: Effects of Changes in the Household Debt Ratio on China’s GDP Growth",
+      "authors": [
+        "Center for Macroeconomic Research"
+      ],
+      "venue": "Current Chinese Economic Report Series",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1002/9781118791912.ch1",
+      "title": "How Japan Papers Over Economic Cracks with Monetary and Fiscal Policy",
+      "authors": [],
+      "venue": "Japanization",
+      "year": 2012,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:1808.01499v3",
+      "arxiv_id": "1808.01499v3",
+      "title": "Optimal Control of Debt-to-GDP Ratio in an N-state Regime Switching Economy",
+      "authors": [
+        "Giorgio Ferrari",
+        "Neofytos Rodosthenous"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1808.01499v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 151
+    },
+    {
+      "doi": "10.1109/TechDebt52882.2021.00017",
+      "arxiv_id": "2010.09711v2",
+      "title": "Business-Driven Technical Debt Prioritization: An Industrial Case Study",
+      "authors": [
+        "Rodrigo Rebouças de Almeida",
+        "Rafael do Nascimento Ribeiro",
+        "Christoph Treude",
+        "Uirá Kulesza"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.09711v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:1607.04153v3",
+      "arxiv_id": "1607.04153v3",
+      "title": "On the Optimal Management of Public Debt: a Singular Stochastic Control Problem",
+      "authors": [
+        "Giorgio Ferrari"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1607.04153v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2101.06478v1",
+      "arxiv_id": "2101.06478v1",
+      "title": "GDP Forecasting using Payments Transaction Data",
+      "authors": [
+        "Arunav Das"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2101.06478v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.3390/socsci11110522",
+      "arxiv_id": "2301.04607v1",
+      "title": "The Impact of National Culture on Innovation A Comparative Analysis between Developed and Developing Nations during the Pre and Post Crisis Period 2007_2021",
+      "authors": [
+        "Han-Sol Lee",
+        "Sergey U. Chernikov",
+        "Szabolcs Nagy",
+        "Ekaterina A. Degtereva"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2301.04607v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:2407.02183v1",
+      "arxiv_id": "2407.02183v1",
+      "title": "How do financial variables impact public debt growth in China? An empirical study based on Markov regime-switching model",
+      "authors": [
+        "Tianbao Zhou",
+        "Zhixin Liu",
+        "Yingying Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.02183v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2407.08986v1",
+      "arxiv_id": "2407.08986v1",
+      "title": "Exploring Generative AI Policies in Higher Education: A Comparative Perspective from China, Japan, Mongolia, and the USA",
+      "authors": [
+        "Qin Xie",
+        "Ming Li",
+        "Ariunaa Enkhtur"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.08986v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "arXiv:1209.6369v1",
+      "arxiv_id": "1209.6369v1",
+      "title": "The European debt crisis: Defaults and market equilibrium",
+      "authors": [
+        "Marco Lagi",
+        "Yaneer Bar-Yam"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1209.6369v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2305.12318v1",
+      "arxiv_id": "2305.12318v1",
+      "title": "The Federal Reserve's Response to the Global Financial Crisis and Its Long-Term Impact: An Interrupted Time-Series Natural Experimental Analysis",
+      "authors": [
+        "Arnaud Cedric Kamkoum"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.12318v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2512.05063v2",
+      "arxiv_id": "2512.05063v2",
+      "title": "Debt, Growth, and the Carbon Lock-In",
+      "authors": [
+        "Silvia Montagnani",
+        "Barnabe Ledoux",
+        "David Lacoste"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.05063v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "arXiv:1706.01099v1",
+      "arxiv_id": "1706.01099v1",
+      "title": "Latent Estimation of GDP, GDP per capita, and Population from Historic and Contemporary Sources",
+      "authors": [
+        "Christopher J. Fariss",
+        "Charles D. Crabtree",
+        "Therese Anders",
+        "Zachary M. Jones",
+        "Fridolin J. Linder",
+        "Jonathan N. Markowitz"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.01099v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.1017/S1743921319000346",
+      "arxiv_id": "1812.04083v1",
+      "title": "The China crisis",
+      "authors": [
+        "Xiaowei Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1812.04083v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:2006.07938v1",
+      "arxiv_id": "2006.07938v1",
+      "title": "The energy representation of world GDP",
+      "authors": [
+        "Boris M. Dolgonosov"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.07938v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "arXiv:1710.07763v1",
+      "arxiv_id": "1710.07763v1",
+      "title": "Modeling the Annual Growth Rate of Electricity Consumption of China in the 21st Century: Trends and Prediction",
+      "authors": [
+        "Kunjin Chen",
+        "Kunlong Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.07763v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "arXiv:2109.10517v3",
+      "arxiv_id": "2109.10517v3",
+      "title": "Does Foreign Debt Contribute to Economic Growth?",
+      "authors": [
+        "Tomoo Kikuchi",
+        "Satoshi Tobe"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.10517v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "arXiv:2103.11486v1",
+      "arxiv_id": "2103.11486v1",
+      "title": "Experiences on Managing Technical Debt with Code Smells and AntiPatterns",
+      "authors": [
+        "Jacinto Ramirez Lahti",
+        "Antti-Pekka Tuovinen",
+        "Tommi Mikkonen"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.11486v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2020.125657",
+      "arxiv_id": "2004.03654v1",
+      "title": "Flux growth of Sr(n+1)Ir(n)O(3n+1) [n=1, 2, infinity] crystals",
+      "authors": [
+        "Kaustuv Manna",
+        "Gizem Aslan-Cansever",
+        "Andrey Maljuk",
+        "Sabine Wurmehl",
+        "Silvia Seiro",
+        "Bernd Büchner"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.03654v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:2303.02258v1",
+      "arxiv_id": "2303.02258v1",
+      "title": "An Exploratory Study on the Occurrence of Self-Admitted Technical Debt in Android Apps",
+      "authors": [
+        "Gregory Wilder",
+        "Riley Miyamoto",
+        "Samuel Watson",
+        "Rick Kazman",
+        "Anthony Peruma"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.02258v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:2405.16193v1",
+      "arxiv_id": "2405.16193v1",
+      "title": "Effect of Interest Payments on External Debt on Economic Growth in Kenya",
+      "authors": [
+        "Sammy Kemboi Chepkilot"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.16193v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.1007/s11433-014-5626-7",
+      "arxiv_id": "1412.6158v1",
+      "title": "Field topologies in ideal and near ideal magnetohydrodynamics and vortex dynamics",
+      "authors": [
+        "B. C. Low"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1412.6158v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1017/dap.2023.2",
+      "arxiv_id": "2010.14374v3",
+      "title": "Explainable Machine Learning for Public Policy: Use Cases, Gaps, and Research Directions",
+      "authors": [
+        "Kasun Amarasinghe",
+        "Kit Rodolfa",
+        "Hemank Lamba",
+        "Rayid Ghani"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.14374v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "arXiv:1707.06635v1",
+      "arxiv_id": "1707.06635v1",
+      "title": "Impact of the Global Crisis on SME Internal vs. External Financing in China",
+      "authors": [
+        "ShiXue He",
+        "Marcel Ausloos"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1707.06635v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "arXiv:0106135v2",
+      "arxiv_id": "0106135v2",
+      "title": "Superstructures at low spin - high spin transitions",
+      "authors": [
+        "D. I. Khomskii",
+        "U. Löw"
+      ],
+      "venue": "arXiv",
+      "year": 2001,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0106135v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.1016/j.physa.2014.07.001",
+      "arxiv_id": "1406.6559v2",
+      "title": "Hierarchical structure of the European countries based on debts as a percentage of GDP during the 2000-2011 period",
+      "authors": [
+        "Ersin Kantar",
+        "Bayram Deviren",
+        "Mustafa Keskin"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1406.6559v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "arXiv:0811.2125v1",
+      "arxiv_id": "0811.2125v1",
+      "title": "GDP growth rate and population",
+      "authors": [
+        "Ivan O. Kitov"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0811.2125v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:2601.07786v1",
+      "arxiv_id": "2601.07786v1",
+      "title": "\"TODO: Fix the Mess Gemini Created\": Towards Understanding GenAI-Induced Self-Admitted Technical Debt",
+      "authors": [
+        "Abdullah Al Mujahid",
+        "Mia Mohammad Imran"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.07786v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.1021/acs.cgd.0c00270",
+      "arxiv_id": "2003.01308v1",
+      "title": "Dislocation pipe diffusion and solute segregation during the growth of metastable GeSn",
+      "authors": [
+        "Jérôme Nicolas",
+        "Simone Assali",
+        "Samik Mukherjee",
+        "Andriy Lotnyk",
+        "Oussama Moutanabbir"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.01308v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2303.17791v1",
+      "arxiv_id": "2303.17791v1",
+      "title": "Analysis of the current status of tuberculosis transmission in China based on a heterogeneity model",
+      "authors": [
+        "Chuanqing Xu",
+        "Kedeng Cheng",
+        "Yu Wang",
+        "Songbai Guo",
+        "Maoxing Liu",
+        "Xiaojing Wang",
+        "Zhiguo Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.17791v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2601.11693v1",
+      "arxiv_id": "2601.11693v1",
+      "title": "Technical Lag as Latent Technical Debt: A Rapid Review",
+      "authors": [
+        "Shane K. Panter",
+        "Nasir U. Eisty"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.11693v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2407.03595v1",
+      "arxiv_id": "2407.03595v1",
+      "title": "Machine Learning for Economic Forecasting: An Application to China's GDP Growth",
+      "authors": [
+        "Yanqing Yang",
+        "Xingcheng Xu",
+        "Jinfeng Ge",
+        "Yan Xu"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.03595v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2407.02003v1",
+      "arxiv_id": "2407.02003v1",
+      "title": "Policy Changes and Growth Slowdown: Assessing the Lost Decade of the Latin American Miracle",
+      "authors": [
+        "Emiliano Toni",
+        "Pablo Paniagua",
+        "Patricio Órdenes"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.02003v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:2203.05967v1",
+      "arxiv_id": "2203.05967v1",
+      "title": "A Weibo Dataset for the 2022 Russo-Ukrainian Crisis",
+      "authors": [
+        "Yi R. Fung",
+        "Heng Ji"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.05967v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2502.13423v2",
+      "arxiv_id": "2502.13423v2",
+      "title": "The Policy Paradox: Government Debt Servicing and Local Bank Risk Growth",
+      "authors": [
+        "Yan Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.13423v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2015.01.017",
+      "arxiv_id": "1501.03770v1",
+      "title": "Flux growth utilizing the reaction between flux and crucible",
+      "authors": [
+        "J. -Q. Yan"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1501.03770v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2311.17711v2",
+      "arxiv_id": "2311.17711v2",
+      "title": "A Stochastic Non-Zero-Sum Game of Controlling the Debt-to-GDP Ratio",
+      "authors": [
+        "Felix Dammann",
+        "Neofytos Rodosthenous",
+        "Stéphane Villeneuve"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.17711v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:2604.09663v2",
+      "arxiv_id": "2604.09663v2",
+      "title": "JFR-rg: A New Macroeconomic Framework for High-Debt, Low-Growth Economies under Financial Repression",
+      "authors": [
+        "Hirofumi Wakimoto"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.09663v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.23731/CYRM-2025-0011",
+      "arxiv_id": "2511.20417v2",
+      "title": "Comparative evaluation of future collider options",
+      "authors": [
+        "G. Arduini",
+        "M. Benedikt",
+        "F. Gianotti",
+        "K. Jakobs",
+        "M. Lamont",
+        "R. Losito",
+        "M. Meddahi",
+        "J. Mnich",
+        "N. Mounet",
+        "D. Schulte",
+        "F. Sonnemann",
+        "S. Stapnes",
+        "F. Zimmermann"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.20417v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "arXiv:1901.07024v2",
+      "arxiv_id": "1901.07024v2",
+      "title": "Temporal Discounting in Technical Debt: How do Software Practitioners Discount the Future?",
+      "authors": [
+        "Christoph Becker",
+        "Fabian Fagerholm",
+        "Rahul Mohanani",
+        "Alexandros Chatzigeorgiou"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1901.07024v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2018.10.025",
+      "arxiv_id": "1206.4030v2",
+      "title": "Measurement of the Capillary Length for the Dendritic Growth of Ammonium Chloride",
+      "authors": [
+        "Andrew Dougherty"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1206.4030v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.1093/oxrep/grw022",
+      "arxiv_id": "1609.00415v1",
+      "title": "Does Infrastructure Investment Lead to Economic Growth or Economic Fragility? Evidence from China",
+      "authors": [
+        "Atif Ansar",
+        "Bent Flyvbjerg",
+        "Alexander Budzier",
+        "Daniel Lunn"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1609.00415v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "10.1103/PhysRevE.91.053022",
+      "arxiv_id": "1410.0637v2",
+      "title": "Bounds on the attractor dimension for magnetohydrodynamic channel flow with parallel magnetic field at low magnetic Reynolds number",
+      "authors": [
+        "Robert Low",
+        "Alban Potherat"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.0637v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "10.1016/j.jcrysgro.2020.125608",
+      "arxiv_id": "1911.08248v2",
+      "title": "Growth of different faces in a body centered cubic lattice: a case of the phase-field-crystal modeling",
+      "authors": [
+        "Vladimir Ankudinov",
+        "Peter K. Galenko"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.08248v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "10.3847/0004-637X/826/2/148",
+      "arxiv_id": "1605.02746v1",
+      "title": "Gas Loss by Ram Pressure Stripping and Internal Feedback From Low Mass Milky Way Satellites",
+      "authors": [
+        "Andrew Emerick",
+        "Mordecai-Mark Mac Low",
+        "Jana Grcevich",
+        "Andrea Gatto"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.02746v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "10.1017/S1743921307013816",
+      "arxiv_id": "0708.1761v1",
+      "title": "Lost Baryons at Low Redshift",
+      "authors": [
+        "Smita Mathur",
+        "Fabrizio Nicastro",
+        "Rik J. Williams"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0708.1761v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:2304.07829v1",
+      "arxiv_id": "2304.07829v1",
+      "title": "Automated Self-Admitted Technical Debt Tracking at Commit-Level: A Language-independent Approach",
+      "authors": [
+        "Mohammad Sadegh Sheikhaei",
+        "Yuan Tian"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2304.07829v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "arXiv:2007.03702v1",
+      "arxiv_id": "2007.03702v1",
+      "title": "The Role of Stellar Feedback in the Chemical Evolution of a Low Mass Dwarf Galaxy",
+      "authors": [
+        "Andrew Emerick",
+        "Greg L. Bryan",
+        "Mordecai-Mark Mac Low"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.03702v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:1411.4510v1",
+      "arxiv_id": "1411.4510v1",
+      "title": "Parallel Gaussian Process Regression for Big Data: Low-Rank Representation Meets Markov Approximation",
+      "authors": [
+        "Kian Hsiang Low",
+        "Jiangbo Yu",
+        "Jie Chen",
+        "Patrick Jaillet"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.4510v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "10.1021/acs.cgd.7b00205",
+      "arxiv_id": "1705.00570v1",
+      "title": "High pressure floating-zone growth of perovskite nickelate LaNiO3 single crystals",
+      "authors": [
+        "Junjie Zhang",
+        "Hong Zheng",
+        "Yang Ren",
+        "J. F. Mitchell"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.00570v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:2110.08015v1",
+      "arxiv_id": "2110.08015v1",
+      "title": "Crisis Domain Adaptation Using Sequence-to-sequence Transformers",
+      "authors": [
+        "Congcong Wang",
+        "Paul Nulty",
+        "David Lillis"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.08015v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "arXiv:2409.17988v1",
+      "arxiv_id": "2409.17988v1",
+      "title": "Deblur e-NeRF: NeRF from Motion-Blurred Events under High-speed or Low-light Conditions",
+      "authors": [
+        "Weng Fei Low",
+        "Gim Hee Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.17988v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
     }
   ]
 }

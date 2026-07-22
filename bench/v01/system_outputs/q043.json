@@ -1,436 +1,4220 @@
 {
   "query_id": "q043",
   "query": "地中海贫血因子携带者对于身体的影响 (thalassemia trait carrier)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 10
+  "topic_bucket": "bio",
+  "source": "user",
+  "generated_at": "2026-07-22T11:30:58",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 28,
+  "n_returned": 190,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/s0168-9525(00)89163-5",
+      "title": "Polygenic Disease: Methods for Mapping Complex Disease Traits.",
+      "authors": [
+        "DE WEEKS"
+      ],
+      "venue": "Analysis of Multifactorial Diseases",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a38042612ca648686f068b",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.18653/v1/2024.findings-naacl.229",
+      "title": "PersonaLLM: Investigating the Ability of Large Language Models to Express Personality Traits",
+      "authors": [
+        "Hang Jiang"
+      ],
+      "venue": "FINDINGS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS NAACL 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6456389bd68f896efacf6b4f",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1097/gim.0b013e3181cd68ed",
+      "title": "Beta-thalassemia.",
+      "authors": [
+        "Antonio Cao"
+      ],
+      "venue": "Genetics in Medicine",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a3839e65ce5cd7b3ad4eb5",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1093/genetics/iyad012",
+      "title": "Estimating the Genetic Parameters of Yield-Related Traits under Different Nitrogen Conditions in Maize.",
+      "authors": [
+        "Semra Palali Delen"
+      ],
+      "venue": "GENETICS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6327ef1890e50fcafd9c4fc6",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1038/s41588-021-00852-9",
+      "title": "The Trans-Ancestral Genomic Architecture of Glycemic Traits",
+      "authors": [
+        "Ji Chen"
+      ],
+      "venue": "Nature genetics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f6a21719fced0a24b7811d7",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1038/s41588-021-00870-7",
+      "title": "Computationally Efficient Whole-Genome Regression for Quantitative and Binary Traits",
+      "authors": [
+        "Joelle Mbatchou"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60aa2f28e4510cd7c85ca175",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1007/s13225-020-00466-2",
+      "title": "FungalTraits: a User-Friendly Traits Database of Fungi and Fungus-Like Stramenopiles",
+      "authors": [
+        "Põlme  Sergei"
+      ],
+      "venue": "Fungal Diversity",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bae971c45e57ce9f0b90b",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1056/nejmoa1910182",
+      "title": "A Phase 3 Trial of Luspatercept in Patients with Transfusion-Dependent Β-Thalassemia.",
+      "authors": [
+        "M. D. Cappellini"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8eee409fced0a24b7b1c3c",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1056/nejmc2103481",
+      "title": "CRISPR-Cas9 Gene Editing for Sickle Cell Disease and Β-Thalassemia",
+      "authors": [
+        "Haydar Frangoul"
+      ],
+      "venue": "The New England journal of medicine",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fcf5143d4150a363c445a18",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1007/978-1-4899-4441-2",
+      "title": "Genetical Analysis of Quantitative Traits",
+      "authors": [
+        "Dr M Kearsey"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86b69dabfae2eeec9bc25",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1111/gcb.14904",
+      "title": "TRY Plant Trait Database - Enhanced Coverage and Open Access.",
+      "authors": [
+        "Jens Kattge"
+      ],
+      "venue": "GLOBAL CHANGE BIOLOGY",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e0c7078df1a9c0c416ea731",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1038/s41579-020-0402-3",
+      "title": "Unique and Common Traits in Mycorrhizal Symbioses",
+      "authors": [
+        "Andrea Genre"
+      ],
+      "venue": "Nature Reviews Microbiology",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f197c619fced0a24b3bcec7",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1016/j.cell.2020.08.008",
+      "title": "The Polygenic and Monogenic Basis of Blood Traits and Diseases",
+      "authors": [
+        "Dragana Vuckovic"
+      ],
+      "venue": "Cell",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f54bc6f9fced0a24b9580e5",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1016/j.cpr.2020.101928",
+      "title": "Specificity of Trait Anxiety in Anxiety and Depression: Meta-analysis of the State-Trait Anxiety Inventory.",
+      "authors": [
+        "Kelly A. Knowles"
+      ],
+      "venue": "Clinical psychology review",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f93fe9c9fced0a24bacb77c",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1126/science.aaz0868",
+      "title": "Physical Traits of Cancer",
+      "authors": [
+        "Hadi T Nia"
+      ],
+      "venue": "Science (New York, NY)",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f9d38e3d4150a363c40dd84",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1007/978-3-319-24612-3_950",
+      "title": "State-Trait Anxiety Inventory",
+      "authors": [
+        "Sumner Sydeman"
+      ],
+      "venue": "Encyclopedia of Personality and Individual Differences",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c8ea825244ab9dcb7ce9d8",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1002/9781118970843.ch70",
+      "title": "Whole Trait Theory",
+      "authors": [
+        "Kira O. McCabe"
+      ],
+      "venue": "The Wiley Encyclopedia of Personality and Individual Differences",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca1bda5244ab9dcb2cdc5f",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1111/gcb.14869",
+      "title": "TRY—A Plant Trait Database of Databases",
+      "authors": [
+        "Lauchlan H Fraser"
+      ],
+      "venue": "Global change biology",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e0dbf58df1a9c0c416ef558",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1056/nejmoa1705342",
+      "title": "Gene Therapy in Patients with Transfusion-Dependent Β-Thalassemia.",
+      "authors": [
+        "A. A. Thompson"
+      ],
+      "venue": "NEW ENGLAND JOURNAL OF MEDICINE",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2cda0ced107d4c62deeb7",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.3390/thalassrep13010006",
+      "title": "CRISPR Gene Therapy: A Promising One-Time Therapeutic Approach for Transfusion-Dependent Β-Thalassemia—crispr-cas9 Gene Editing for Β-Thalassemia",
+      "authors": [
+        "Udani Gamage"
+      ],
+      "venue": "THALASSEMIA REPORTS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "642339b590e50fcafdda43c1",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.3389/fpls.2023.1231013",
+      "title": "Genome Editing for Healthy Crops: Traits, Tools and Impacts",
+      "authors": [
+        "Kubilay Yıldırım"
+      ],
+      "venue": "Frontiers in plant science",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "653c4dc5939a5f408262fe40",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1007/s42994-023-00122-8",
+      "title": "Regulation of Seed Traits in Soybean",
+      "authors": [
+        "Yang Hu"
+      ],
+      "venue": "aBIOTECH",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6566d1b1939a5f408212c044",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.3390/ijms23115948",
+      "title": "Correction of Beta-Thalassemia IVS-II-654 Mutation in a Mouse Model Using Prime Editing",
+      "authors": [
+        "Haokun Zhang"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b062b7602d9703ac9003",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.3390/ph15050592",
+      "title": "Targeting the Hematopoietic Stem Cell Niche in Β-Thalassemia and Sickle Cell Disease",
+      "authors": [
+        "Annamaria Aprile"
+      ],
+      "venue": "Pharmaceuticals (Basel, Switzerland)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6295f15c5aee126c0f3c4e99",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1097/hs9.0000000000000732",
+      "title": "2021 Thalassaemia International Federation Guidelines for the Management of Transfusion-dependent Thalassemia",
+      "authors": [
+        "Dimitrios Farmakis"
+      ],
+      "venue": "HemaSphere",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ea393a5aee126c0f39d718",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.3390/jcm11185426",
+      "title": "First and Second Level Haemoglobinopathies Diagnosis: Best Practices of the Italian Society of Thalassemia and Haemoglobinopathies (SITE)",
+      "authors": [
+        "Giorgia Mandrile"
+      ],
+      "venue": "JOURNAL OF CLINICAL MEDICINE",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "632edfaf90e50fcafdb20914",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1186/s13059-022-02697-9",
+      "title": "Open Problems in Human Trait Genetics",
+      "authors": [
+        "Brandes  Nadav"
+      ],
+      "venue": "Genome Biology",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "611b59505244ab9dcb96751c",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1007/978-3-7618-7287-1_37",
+      "title": "Traité Des Objets Musicaux",
+      "authors": [
+        "Pierre Schaeffer"
+      ],
+      "venue": "Lexikon Schriften über Musik",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "646c3f08d68f896efa6d160c",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1016/j.jmoldx.2021.06.008",
+      "title": "A More Universal Approach to Comprehensive Analysis of Thalassemia Alleles (CATSA).",
+      "authors": [
+        "Qiaowei Liang"
+      ],
+      "venue": "JOURNAL OF MOLECULAR DIAGNOSTICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60fbf1bb5244ab9dcb26df51",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1016/j.mrrev.2021.108387",
+      "title": "Borderline HbA2 Levels: Dilemma in Diagnosis of Beta-Thalassemia Carriers",
+      "authors": [
+        "Stacy Colaco"
+      ],
+      "venue": "Mutation research Reviews in mutation research",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61b5d26c5244ab9dcb6b1dd5",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1002/ece3.8321",
+      "title": "The Traits of “trait Ecologists”: an Analysis of the Use of Trait and Functional Trait Terminology",
+      "authors": [
+        "Samantha K Dawson"
+      ],
+      "venue": "Ecology and evolution",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c5a4795244ab9dcb5d6a7e",
+      "matched_phrase": "trait",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1111/ejh.13512",
+      "title": "Changing Patterns in the Epidemiology of Β‐thalassemia",
+      "authors": [
+        "Antonis Kattamis"
+      ],
+      "venue": "European journal of haematology",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f54bc6c9fced0a24b95787d",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.3389/fmolb.2020.00074",
+      "title": "Update in Laboratory Diagnosis of Thalassemia",
+      "authors": [
+        "Thongperm Munkongdee"
+      ],
+      "venue": "Frontiers in molecular biosciences",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e97eca3fda6d7f0695daea",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1016/j.blre.2019.100588",
+      "title": "Challenges of Blood Transfusions in Β-Thalassemia.",
+      "authors": [
+        "Farrukh T. Shah"
+      ],
+      "venue": "Blood Reviews",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b87cf1c45e57ce93ce585",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.14748/vmf.v8i1.5795",
+      "title": "Endocrine Abnormalities in Thalassemia Major",
+      "authors": [
+        "Elena Marinova"
+      ],
+      "venue": "Varna Medical Forum",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62283ec65aee126c0fdfff50",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1007/s12098-023-04595-9",
+      "title": "Transition of Care for Patients with Thalassemia",
+      "authors": [
+        "Jagdish Chandra"
+      ],
+      "venue": "Indian Journal of Pediatrics",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "647f178fd68f896efa17ed9a",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1016/j.mam.2021.101028",
+      "title": "Thalassemias: from Gene to Therapy",
+      "authors": [
+        "Giovanna De Simone"
+      ],
+      "venue": "MOLECULAR ASPECTS OF MEDICINE",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "616aacc25244ab9dcb31d643",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.3389/fmed.2022.880752",
+      "title": "New Insights into Pathophysiology of Β-Thalassemia",
+      "authors": [
+        "Maria Sanchez-Villalobos"
+      ],
+      "venue": "Frontiers in medicine",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627107dd5aee126c0ff4b41f",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1182/bloodadvances.2020002725",
+      "title": "The Use of Luspatercept for Thalassemia in Adults.",
+      "authors": [
+        "Maria Domenica Cappellini"
+      ],
+      "venue": "Blood Advances",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "602655cbaf79179a99d6e09e",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1002/ajh.26316",
+      "title": "2021 Update on Clinical Trials in Β‐thalassemia",
+      "authors": [
+        "Khaled M Musallam"
+      ],
+      "venue": "American journal of hematology",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "610d12ba5244ab9dcb7f3fe9",
+      "matched_phrase": "(thalassemia",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.32629/fcmr.v2i2.2916",
+      "title": "患者对医生选择意愿的影响因素研究",
+      "authors": [
+        "王, 红军"
+      ],
+      "venue": "中医药研究前沿",
+      "year": null,
+      "cited_by_count": 27,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着人民生活水平的不断提高,我国人民日益增长的医疗需求与医疗资源配置不充分、不合理之间的矛盾日益突出。互联网技术的不断发展,充分推动了在线咨询行业的快速发展。利用该技术合理分配医疗资源,建立分级医疗服务体系,提高在线咨询平台的用户耐心,增加就诊人数,具有重要意义。当前,在网络医学领域中很少有从患者的角度去探讨关于患者如何选择医生的研究。基于此,我们不考虑短期不稳定的因素,而是研究患者选择医生的意愿的影响因素,并以此为基础收集相关数据做出如下分析。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1002/jha2.262",
+      "arxiv_id": "",
+      "title": "Alpha‐globin gene triplication and its effect in beta‐thalassemia carrier, sickle cell trait, and healthy individual",
+      "authors": [
+        "M. Hamid",
+        "B. Keikhaei",
+        "H. Galehdari",
+        "A. Saberi",
+        "A. Sedaghat",
+        "G. Shariati",
+        "Marziye Mohammadi-Anaei"
+      ],
+      "venue": "eJHaem",
+      "year": 2021,
+      "cited_by_count": 15,
+      "influential_cite_count": 4,
+      "reference_count": 40,
+      "tldr": "The genotype and phenotype correlation between coinheritance of heterozygous beta‐thalassemia with the alpha‐globin triplication is unclear and its effect on hematological and phenotypical changes is investigated.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9175967",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The genotype and phenotype correlation between coinheritance of heterozygous beta‐thalassemia with the alpha‐globin triplication is unclear and its effect on hematological and phenotypical changes is investigated.",
+      "rank": 42
+    },
+    {
+      "doi": "10.1038/jhh.2013.102",
+      "arxiv_id": "",
+      "title": "Impact of β-thalassemia trait carrier state on cardiovascular risk factors and metabolic profile in patients with newly diagnosed hypertension",
+      "authors": [
+        "A. Triantafyllou",
+        "G. Vyssoulis",
+        "E. Karpanou",
+        "P. Karkalousos",
+        "E. Triantafyllou",
+        "A. Aessopos",
+        "D. Farmakis"
+      ],
+      "venue": "Journal of Human Hypertension",
+      "year": 2014,
+      "cited_by_count": 14,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "Among patients with newly diagnosed hypertension, those with Tm have a better overall CRF and metabolic profile, beyond the well-known differences in serum lipids, compared with men, and women seem to be at least equally protected.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Among patients with newly diagnosed hypertension, those with Tm have a better overall CRF and metabolic profile, beyond the well-known differences in serum lipids, compared with men, and women seem to be at least equally protected.",
+      "rank": 43
+    },
+    {
+      "doi": "10.37155/2717-5669-0302-22",
+      "title": "中西医结合护理对高血压脑出血患者预后的影响",
+      "authors": [
+        "李琦"
+      ],
+      "venue": "国际全科医学",
+      "year": 2022,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.7498/aps.49.654",
+      "title": "原子核的同位旋对碎裂产物的影响",
+      "authors": [
+        "Ma Yu-Gang",
+        ""
+      ],
+      "venue": "Acta Physica Sinica",
+      "year": 2000,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.36012/pmr.v2i3.2299",
+      "title": "中西医结合护理对高血压脑出血患者生活质量的影响",
+      "authors": [
+        "吴, 冬宁"
+      ],
+      "venue": "实用医学研究",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：总结中西医结合护理服务模式对于高血压脑出血患者的影响。方法：在 2019 年 3 月至 2020 年 4 月开展研究。研究期间随机入选高血压脑出血患者进行研究。入选时采用随机数表法分组，常规组应用西医护理模式，实验组应用中西医护理模式。对比两组患者的康复相关指标。结果：实验组患者的疗效指标明显优于常规组，对比差异较大，P＜0.05。实验组患者的生活质量指标数据优势明显，对比差异较大，P＜0.05。结论：中西医护理方案可有效应用于高血压脑出血患者，可以显著提高患者的生活质量，成本低收益高，值得普及。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1155/2024/4215439",
+      "arxiv_id": "",
+      "title": "Anemia among Medical Students from Jakarta: Indonesia—Iron Deficiency or Carrier Thalassemia?",
+      "authors": [
+        "R. Wratsangka",
+        "E. X. Tungka",
+        "A. K. Murthi",
+        "Soegianto Ali",
+        "I. M. Nainggolan",
+        "E. Sahiratmadja"
+      ],
+      "venue": "Anemia",
+      "year": 2024,
+      "cited_by_count": 9,
+      "influential_cite_count": 2,
+      "reference_count": 46,
+      "tldr": "DNA analysis can identify specific mutations associated with alpha-thalassemia, distinguishing between iron deficiency anemia and the alpha-thalassemia trait.",
+      "is_oa": true,
+      "oa_url": "https://downloads.hindawi.com/journals/anemia/2024/4215439.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "DNA analysis can identify specific mutations associated with alpha-thalassemia, distinguishing between iron deficiency anemia and the alpha-thalassemia trait.",
+      "rank": 47
+    },
+    {
+      "doi": "10.1016/j.cmpb.2024.108581",
+      "arxiv_id": "",
+      "title": "Classification of α-thalassemia data using machine learning models",
+      "authors": [
+        "Frederik Christensen",
+        "D. Kılıç",
+        "Izabela Ewa Nielsen",
+        "T. El‐Galaly",
+        "A. Glenthøj",
+        "J. Helby",
+        "Henrik Frederiksen",
+        "Sören Möller",
+        "A. Fuglkjær"
+      ],
+      "venue": "Comput. Methods Programs Biomed.",
+      "year": 2025,
+      "cited_by_count": 9,
+      "influential_cite_count": 1,
+      "reference_count": 56,
+      "tldr": "A larger dataset could enhance ML model generalization and the impact of feature extraction, especially with resampling, as well as enhance the effects of grouping silent- and non-carriers.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.cmpb.2024.108581",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A larger dataset could enhance ML model generalization and the impact of feature extraction, especially with resampling, as well as enhance the effects of grouping silent- and non-carriers.",
+      "rank": 48
+    },
+    {
+      "doi": "10.1109/C2I659362.2023.10430520",
+      "arxiv_id": "",
+      "title": "Advancing Alpha-Thalassemia Carrier Screening for Better Predictions Using Explainable AI",
+      "authors": [
+        "Aditya H. Meti",
+        "B. Maheswari",
+        "Aditya Vijjapu"
+      ],
+      "venue": "2023 4th International Conference on Communication, Computing and Industry 6.0 (C216)",
+      "year": 2023,
+      "cited_by_count": 7,
+      "influential_cite_count": 2,
+      "reference_count": 19,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.36012/etr.v2i10.2811",
+      "title": "新形势下水文地质因素对于地质灾害的影响研究",
+      "authors": [
+        "杨, 月堂"
+      ],
+      "venue": "工程技术研究",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>我国的国土面积十分辽阔,经纬度跨越极大,这样的 特 点 导 致 我 国 南 北 方 在 地 质 结 构 及 水 文 条 件 上 存 在 较 大 差 异,因此我国常常会出现各种类型的地质灾害问题。因此,本文对水下地质因素对地质灾害的影响作用进行了深入分析。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.2459/JCM.0000000000000787",
+      "arxiv_id": "",
+      "title": "Impact of &bgr;-thalassemia trait carrier state on inflammatory status in patients with newly diagnosed hypertension",
+      "authors": [
+        "A. Triantafyllou",
+        "D. Farmakis",
+        "K. Lampropoulos",
+        "Petros Karkalousos",
+        "E. Triantafyllou",
+        "Georgios Papingiotis",
+        "Aikaterini J. Megalou",
+        "E. Karpanou"
+      ],
+      "venue": "Journal of Cardiovascular Medicine",
+      "year": 2019,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 32,
+      "tldr": "Thalassemia minor is followed by a favorable inflammatory profile that may contribute to the overall better cardiovascular health of the carriers.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Thalassemia minor is followed by a favorable inflammatory profile that may contribute to the overall better cardiovascular health of the carriers.",
+      "rank": 51
+    },
+    {
+      "doi": "10.1093/ajcp/aqae085",
+      "arxiv_id": "",
+      "title": "HbA2 levels in children with β-thalassemia trait associated with iron deficiency: A perspective for pediatricians",
+      "authors": [
+        "Şeyda Değermenci",
+        "Deniz Aslan"
+      ],
+      "venue": "American Journal of Clinical Pathology",
+      "year": 2024,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 13,
+      "tldr": "HbA2 can be used as a screening test in children with β-thalassemia trait, despite accompanying iron deficiency, and may be the result of underlying thalassemia mutation, not the result of accompanying iron deficiency.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1093/ajcp/aqae085",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "HbA2 can be used as a screening test in children with β-thalassemia trait, despite accompanying iron deficiency, and may be the result of underlying thalassemia mutation, not the result of accompanying iron deficiency.",
+      "rank": 52
+    },
+    {
+      "doi": "10.37155/2717-5650-0303-46",
+      "title": "护理干预对健康体检人群中老年高血压患者血压水平的影响",
+      "authors": [
+        "清, 魏"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2022,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1186/s13023-025-03744-x",
+      "arxiv_id": "",
+      "title": "Thalassemia in Bangladesh: progress, challenges, and a strategic blueprint for prevention",
+      "authors": [
+        "M. S. Hossain",
+        "Farhin Islam",
+        "S. Akhter",
+        "Abdullah Al Mossabbir"
+      ],
+      "venue": "Orphanet Journal of Rare Diseases",
+      "year": 2025,
+      "cited_by_count": 5,
+      "influential_cite_count": 0,
+      "reference_count": 91,
+      "tldr": "This review systematically synthesizes all available data on the prevalence, clinical characteristics, management challenges, and socio-economic implications of thalassemia in Bangladesh, offering a blueprint for a prevention strategy tailored to its unique socio-economic and cultural context.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This review systematically synthesizes all available data on the prevalence, clinical characteristics, management challenges, and socio-economic implications of thalassemia in Bangladesh, offering a blueprint for a prevention strategy tailored to its unique socio-economic and cultural context.",
+      "rank": 54
+    },
+    {
+      "doi": "10.3390/jcm14103591",
+      "arxiv_id": "",
+      "title": "Accuracy of Red Blood Cell Parameters in Predicting α0-Thalassemia Trait Among Non-Anemic Males",
+      "authors": [
+        "Benchaya Phanthong",
+        "P. Charoenkwan",
+        "Threebhorn Kamlungkuea",
+        "S. Luewan",
+        "Threea Tongsong"
+      ],
+      "venue": "Journal of Clinical Medicine",
+      "year": 2025,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "MCH and MCV demonstrated excellent screening performance for identifying α0-thalassemia carriers in males, and the combination predictive model provided the best diagnostic performance, achieving an AUC of 0.987, which was slightly but significantly higher than that of any individual parameter.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "MCH and MCV demonstrated excellent screening performance for identifying α0-thalassemia carriers in males, and the combination predictive model provided the best diagnostic performance, achieving an AUC of 0.987, which was slightly but significantly higher than that of any individual parameter.",
+      "rank": 55
+    },
+    {
+      "doi": "10.7759/cureus.61093",
+      "arxiv_id": "",
+      "title": "Exploring the Clinical and Hematological Characteristics of Beta-Thalassemia Trait: A Comprehensive Analysis in a Tertiary Care Hospital Setting",
+      "authors": [
+        "Y. E",
+        "Sudha Vasudevan",
+        "S. Sonti",
+        "Kavitha Kannan",
+        "C. Srinivasan"
+      ],
+      "venue": "Cureus",
+      "year": 2024,
+      "cited_by_count": 4,
+      "influential_cite_count": 1,
+      "reference_count": 19,
+      "tldr": "It is concluded that regular monitoring of the Mentzer index along with HPLC analysis is an effective approach in identifying beta-thalassemia trait cases and further providing genetic counseling among the couples that will help in reducing high-risk pregnancy and the birth of a child with thalassemia major.",
+      "is_oa": true,
+      "oa_url": "https://assets.cureus.com/uploads/original_article/pdf/244345/20240526-20352-xgenu6.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is concluded that regular monitoring of the Mentzer index along with HPLC analysis is an effective approach in identifying beta-thalassemia trait cases and further providing genetic counseling among the couples that will help in reducing high-risk pregnancy and the birth of a child with thalassemia major.",
+      "rank": 56
+    },
+    {
+      "doi": "10.1186/s43042-025-00795-4",
+      "arxiv_id": "",
+      "title": "High prevalence and molecular spectrum of β-thalassemia trait in Haripur and Abbottabad districts of Pakistan: implications for regional carrier screening programs",
+      "authors": [
+        "E. Haq",
+        "A. Naeem",
+        "Usman Ayub Awan",
+        "S. Khan",
+        "M. Zohaib",
+        "Ghufran Uddin"
+      ],
+      "venue": "Egyptian Journal of Medical Human Genetics",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 21,
+      "tldr": "This study investigated the prevalence and mutational spectrum of β-thalassemia trait in Haripur and Abbottabad districts of northern Pakistan to better inform prevention strategies and underscores a concentrated genetic burden and the need for region-specific screening, premarital counseling, and expansion of molecular diagnostic services.",
+      "is_oa": true,
+      "oa_url": "https://jmhg.springeropen.com/counter/pdf/10.1186/s43042-025-00795-4",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study investigated the prevalence and mutational spectrum of β-thalassemia trait in Haripur and Abbottabad districts of northern Pakistan to better inform prevention strategies and underscores a concentrated genetic burden and the need for region-specific screening, premarital counseling, and expansion of molecular diagnostic services.",
+      "rank": 57
+    },
+    {
       "doi": "10.69979/3029-2808.24.11.041",
       "title": "活血化瘀中药介导的血管衰老对心血管疾病的影响",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "唐海, 赵心茹"
+      ],
       "venue": "医学研究",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 58
     },
     {
-      "rank": 2,
+      "doi": "10.1360/csb1977-22-7-313",
+      "title": "热带海洋对副热带高压长期变化的影响",
+      "authors": [],
+      "venue": "Chinese Science Bulletin",
+      "year": 1977,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.37155/2717-5650-0304-14",
+      "title": "关于优质护理对老年高血压患者的影响",
+      "authors": [
+        "闫彩霞"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2022,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1007/s00277-024-06007-0",
+      "arxiv_id": "",
+      "title": "Trans-acting genetic modifiers of clinical severity in heterozygous β-Thalassemia trait",
+      "authors": [
+        "J. Loh",
+        "J. M. Ross",
+        "Khaled M. Musallam",
+        "Kevin H. M. Kuo"
+      ],
+      "venue": "Annals of Hematology",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 90,
+      "tldr": "Although some genetic determinants seem to correlate more directly with β-thalassemia trait severity, such as mutations in SUPT5H, PIEZO1 and hereditary elliptocytosis, the difficulties of linking the contribution of other modulating factors are elucidated in this review.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Although some genetic determinants seem to correlate more directly with β-thalassemia trait severity, such as mutations in SUPT5H, PIEZO1 and hereditary elliptocytosis, the difficulties of linking the contribution of other modulating factors are elucidated in this review.",
+      "rank": 61
+    },
+    {
       "doi": "10.1360/csb1993-38-8-698",
       "title": "LiF晶体中OH~-离子的浓度对色心的影响",
-      "abstract": "",
-      "year": 1993,
+      "authors": [
+        "刘, 海风"
+      ],
       "venue": "Chinese Science Bulletin",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 1993,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 62
     },
     {
-      "rank": 3,
       "doi": "10.36012/pmr.v2i2.1812",
       "title": "抗焦虑治疗对高血压患者血压的影响",
-      "abstract": "<jats:p>目的:为了调查抗焦虑治疗对高血压患者血压的影响。方法:收集神经内科高血 压患者 50 例，分别给予评分(焦虑自评量表 SAS);然后随机分成两组，分别为对照组和治 疗组，分别给予抗焦虑治疗、必要的心理疏导和一般降压治疗。测量治疗前后 24 小时平均 血压、白昼平均血压、夜间平均血压。结果:对照组的 24 小时平均血压、白昼平均血压、夜间 平均血压均明显高于治疗组，并且 8 周后治疗组的血压值明显低于对照组。结论:伴有焦虑 情绪的高血压患者加用抗焦虑治疗既能改善焦虑情绪，又能增加降压药物的疗效，同时能 减轻血管内皮功能的损伤。单纯的降压治疗方法降压效果不理想，抗焦虑治疗和必要的心 理疏导是有效的正确降压方法。</jats:p>",
-      "year": null,
+      "authors": [
+        "于, 思雨"
+      ],
       "venue": "实用医学研究",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:为了调查抗焦虑治疗对高血压患者血压的影响。方法:收集神经内科高血 压患者 50 例，分别给予评分(焦虑自评量表 SAS);然后随机分成两组，分别为对照组和治 疗组，分别给予抗焦虑治疗、必要的心理疏导和一般降压治疗。测量治疗前后 24 小时平均 血压、白昼平均血压、夜间平均血压。结果:对照组的 24 小时平均血压、白昼平均血压、夜间 平均血压均明显高于治疗组，并且 8 周后治疗组的血压值明显低于对照组。结论:伴有焦虑 情绪的高血压患者加用抗焦虑治疗既能改善焦虑情绪，又能增加降压药物的疗效，同时能 减轻血管内皮功能的损伤。单纯的降压治疗方法降压效果不理想，抗焦虑治疗和必要的心 理疏导是有效的正确降压方法。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 63
     },
     {
-      "rank": 4,
+      "doi": "10.1360/csb2007-52-23-2746",
+      "title": "血管内皮生长因子对海绵状血管瘤内皮细胞血管形成的影响",
+      "authors": [
+        "王, 镛斐",
+        "刘, 锐",
+        "毛, 颖",
+        "谭, 玉珍",
+        "赵, 曜",
+        "周, 良辅",
+        "王, 海杰",
+        "舒, 加"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 2007,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.37155/2705-0653-0705-57",
+      "title": "初中体育教育中趣味田径对提高身体素质的影响研究",
+      "authors": [
+        "董　云"
+      ],
+      "venue": "教育理论与应用",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.3788/cjl20093609.2448",
+      "title": "Raman Spectral Discrimination of Thalassemia Erythrocytes Based on PCA Arithmetic and BP Network Model",
+      "authors": [
+        "Li Yongqing"
+      ],
+      "venue": "Chinese Journal of Lasers",
+      "year": 2009,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.3390/thalassrep14040012",
+      "arxiv_id": "",
+      "title": "Genotype–Phenotype Correlation in a Couple in Which the Wife Is a Carrier of the Beta-Thalassemia Trait and the Husband Is a Carrier of a Mutation in the ALAS2 Gene: Both Gene Defects Are Associated with Non-Iron-Deficiency Microcytic Anemia",
+      "authors": [
+        "D. Dell’Edera",
+        "C. Centoducati",
+        "Arianna Allegretti",
+        "Francesco La Rocca",
+        "B. Persia"
+      ],
+      "venue": "Thalassemia Reports",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 8,
+      "tldr": "How biochemical diagnosis alone is sometimes not sufficient to understand the cause of microcytic anaemia is highlighted to highlight how for a correct genotype–phenotype correlation, it is essential to identify the defective gene underlying the microcytic anaemia.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2039-4365/14/4/12/pdf?version=1733741642",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "How biochemical diagnosis alone is sometimes not sufficient to understand the cause of microcytic anaemia is highlighted to highlight how for a correct genotype–phenotype correlation, it is essential to identify the defective gene underlying the microcytic anaemia.",
+      "rank": 67
+    },
+    {
+      "doi": "10.18203/2320-6012.ijrms20251308",
+      "arxiv_id": "",
+      "title": "Differentiating iron deficiency anaemia and β thalassemia trait based on red cell indices- an economic way to health care in a resource limited setup",
+      "authors": [
+        "Mansi J. Odhwani",
+        "Spruha K. Dholakia",
+        "Meera G. Kangad",
+        "Nishith A. Vachhani",
+        "Roshan B. Colah",
+        "Sanjiv L. Nandani",
+        "Daya J. Vekariya",
+        "Heena N. Kashiyani"
+      ],
+      "venue": "International Journal of Research in Medical Sciences",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "Combination of these two indices, MI and RDWI with final confirmation by HPLC would help to reduce the overall cost of screening in situations where the ideal screening approach of doing CBC and HPLC analysis of all individuals as a first step itself is not possible due to cost constraints.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.18203/2320-6012.ijrms20251308",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Combination of these two indices, MI and RDWI with final confirmation by HPLC would help to reduce the overall cost of screening in situations where the ideal screening approach of doing CBC and HPLC analysis of all individuals as a first step itself is not possible due to cost constraints.",
+      "rank": 68
+    },
+    {
+      "doi": "10.3390/diagnostics15212759",
+      "arxiv_id": "",
+      "title": "Assessment of β-Thalassemia Trait Occurrence in an Outpatient Sample from Southern Chile: A Retrospective Study",
+      "authors": [
+        "Mario Balcázar-Villarroel",
+        "Angélica Mancilla-Uribe",
+        "Sandra Navia-León",
+        "Luis Carrasco-Fajardin",
+        "Johana Bohle-Matamala",
+        "Cristian Calbucura-Ovalle",
+        "F. Torrens",
+        "Eduardo Carmine-Peña",
+        "Cristian Sandoval",
+        "Francisca Peña"
+      ],
+      "venue": "Diagnostics",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 70,
+      "tldr": "A relatively low but non-negligible frequency of BTT in outpatients from southern Chile is demonstrated, emphasizing the importance of considering BTT in the differential diagnosis of microcytic anemia, a condition often underestimated in routine practice.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A relatively low but non-negligible frequency of BTT in outpatients from southern Chile is demonstrated, emphasizing the importance of considering BTT in the differential diagnosis of microcytic anemia, a condition often underestimated in routine practice.",
+      "rank": 69
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Haematological indices as screening tool in distinguishing beta thalassemia trait and iron deficiency anaemia: Insights from a tertiary hospital study.",
+      "authors": [
+        "E. Yogalakshmi",
+        "R. Chander",
+        "S. Sulochana",
+        "K. Kavitha"
+      ],
+      "venue": "The Medical journal of Malaysia",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The aim of this study is to determine the utility of haematological indices as a screening marker in detecting cases of beta thalassemia carriers and differentiating it from IDA in the authors' tertiary care hospital.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The aim of this study is to determine the utility of haematological indices as a screening marker in detecting cases of beta thalassemia carriers and differentiating it from IDA in the authors' tertiary care hospital.",
+      "rank": 70
+    },
+    {
+      "doi": "10.29309/tpmj/2026.33.01.10012",
+      "arxiv_id": "",
+      "title": "Serum ferritin-based assessment of iron deficiency anemia in individuals with β-thalassemia trait.",
+      "authors": [
+        "Muhammad Irtza Tanveer",
+        "S. M. Bugvi",
+        "Areeba Manzoor"
+      ],
+      "venue": "The Professional Medical Journal",
+      "year": 2026,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 20,
+      "tldr": "Iron deficiency reduced the red blood cell count, haemoglobin concentration, and MCV while it increased the RDW in BTT individuals (p<0.05), indicating that iron deficiency significantly affects the haematological indices in carriers of BTT.",
+      "is_oa": true,
+      "oa_url": "https://theprofesional.com/index.php/tpmj/article/download/10012/5932",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Iron deficiency reduced the red blood cell count, haemoglobin concentration, and MCV while it increased the RDW in BTT individuals (p<0.05), indicating that iron deficiency significantly affects the haematological indices in carriers of BTT.",
+      "rank": 71
+    },
+    {
+      "doi": "10.51985/jbumdc2023302",
+      "arxiv_id": "",
+      "title": "Red Cell Parameters in Beta Thalassemia Trait; Comparison between Iron Deficient and Non-Deficient Carriers",
+      "authors": [
+        "Nazish Tahir",
+        "Saeed Akhtar Khan Khattak",
+        "Ghulam Murtaza Shaikh",
+        "Zunera Sajjad",
+        "Tamoor Bin Hanif",
+        "Nighat Jamal"
+      ],
+      "venue": "Journal of Bahria University Medical and Dental College",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "Red Cell parameters and HBA2 levels in beta thalassemia trait vary significantly among the iron deficient vs non-deficient group, Hence due consideration is needed in screening of beta thalassemia trait in patients with iron deficiency anemia.",
+      "is_oa": true,
+      "oa_url": "https://jbumdc.bahria.edu.pk/download.php?id=1424",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Red Cell parameters and HBA2 levels in beta thalassemia trait vary significantly among the iron deficient vs non-deficient group, Hence due consideration is needed in screening of beta thalassemia trait in patients with iron deficiency anemia.",
+      "rank": 72
+    },
+    {
+      "doi": "10.54393/pjhs.v5i11.2473",
+      "arxiv_id": "",
+      "title": "The Prevalence and Distribution of Beta Thalassemia Trait among Outpatient Individuals in A Tertiary Care Hospital of Lodhran, Pakistan",
+      "authors": [
+        "Farhan Ali Khanzada",
+        "Samreen F Asghar",
+        "U. Chohan",
+        "S. Najam",
+        "Khushbakhat Khanzada Rajput",
+        "Abdus Sami",
+        "Rabia Ameer"
+      ],
+      "venue": "Pakistan journal of health sciences",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "It was concluded that the β-thalassemia trait is widespread across diverse ethnic groups and highlights the necessity for standardized blood testing protocols for β-thalassemia screening.",
+      "is_oa": true,
+      "oa_url": "https://www.thejas.com.pk/index.php/pjhs/article/download/2473/1175",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It was concluded that the β-thalassemia trait is widespread across diverse ethnic groups and highlights the necessity for standardized blood testing protocols for β-thalassemia screening.",
+      "rank": 73
+    },
+    {
+      "doi": "10.3329/bjmb.v12i2.71601",
+      "arxiv_id": "",
+      "title": "Peripheral Blood Film Patterns in Thalassemia and Hemoglobinopathy Carrier",
+      "authors": [
+        "S. Sadiya",
+        "W. Khan",
+        "B. Banu",
+        "G. Sarwardi",
+        "Y. Rahman"
+      ],
+      "venue": "Bangladesh Journal of Medical Biochemistry",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 24,
+      "tldr": "Peripheral blood film and hemoglobin status may give an idea about thalassaemia and hemoglbinopathy trait or carrier and in the suspected cases, High Performance Liquid Chromatography (HPLC) may be done to confirm the diagnosis.",
+      "is_oa": true,
+      "oa_url": "https://www.banglajol.info/index.php/BJMB/article/download/71601/47829",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Peripheral blood film and hemoglobin status may give an idea about thalassaemia and hemoglbinopathy trait or carrier and in the suspected cases, High Performance Liquid Chromatography (HPLC) may be done to confirm the diagnosis.",
+      "rank": 74
+    },
+    {
       "doi": "10.12677/hjbm.2025.155094",
       "title": "Analysis of Thalassemia Gene Carrying Status in 2734 People of Childbearing Age",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "唐, 立红"
+      ],
       "venue": "Hans Journal of Biomedicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 75
     },
     {
-      "rank": 5,
       "doi": "10.69979/3029-2808.26.04.049",
       "title": "连续性护理干预对有机磷农药中毒血液灌流患者的效果以及对血浆细胞因子指标的影响",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "医学研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 76
     },
     {
-      "rank": 6,
       "doi": "10.12677/acm.2023.13112388",
       "title": "Factors Influencing the Efficacy and Safety of Thalidomide in the Treatment of Transfusion-Dependent Thalassaemia",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "戴, 晓琳"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 77
     },
     {
-      "rank": 7,
       "doi": "10.1360/zb1994-24-2-171",
       "title": "羟基脲(HU)治疗&amp;beta;-地中海贫血的研究&amp;mdash;&amp;mdash;HU对珠蛋白基因表达的影响",
-      "abstract": "",
-      "year": 1994,
+      "authors": [
+        "G., P.Rodgers",
+        "陈, 美珏",
+        "A., N.Schechter",
+        "许, 洪平",
+        "曾, 溢滔",
+        "黄, 淑帧",
+        "任, 兆瑞",
+        "曾, 凡一"
+      ],
       "venue": "Science in China Series B-Chemistry, Life Sciences &amp; Earth Sciences (in Chinese)",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 1994,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 78
     },
     {
-      "rank": 8,
       "doi": "10.69979/3029-2808.26.04.038",
       "title": "黄芪当归汤辅助疗法对气血亏虚型肾性贫血患者血红蛋白的影响",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "医学研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 79
     },
     {
-      "rank": 9,
-      "doi": "10.61654/zzyskx0217",
-      "title": "一体化保温方案、ERAS手术室护理联合应用于肾结石患者手术中对于术中低体温的影响",
-      "abstract": "<jats:p>目的:探究肾结石患者手术治疗期间联合应用一体化保温方案、ERAS手术室护理所取效果,评估对术中低体温的预防效果。方法:研究开始时间为2023年1月,结束于2025年3月,选择在上述时间段内择期采取手术治疗的肾结石患者60例为研究对象,根据随机数字表法分组处理,纳入对照组的30例患者采用常规护理,观察组则应用一体化保温方案+ERAS手术室护理,统计术中低体温等并发症发生率,对比两组患者不同时间点体温变化、围术期指标。结果:观察组术中低体温等并发症发生率较低于对照组(P&lt;0.05);术前,就两组患者体表温度测定,数值对比未见明显差异(P&gt;0.05),术中、术后不同时间段,对两组患者体表温度测定,观察组较对照组偏高,组间对比差异可见(P&lt;0.05);分析入组对象围术期指标,观察组各指标测定数值较同期对照组偏低(P&lt;0.05)。结论:肾结石患者采取手术治疗的同时辅以一体化保温方案、ERAS手术室护理对于术中低体温预防效果理想,可加速患者术后康复进程,通过稳定体表温度减轻生理应激反应,可借鉴。</jats:p>",
-      "year": null,
-      "venue": "养生科学",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 10,
       "doi": "10.1360/csb2002-47-19-1494",
       "title": "血管内皮生长因子对小鼠胚胎植入过程中基质金属蛋白酶的影响",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "Chinese Science Bulletin",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 80
+    },
+    {
+      "doi": "10.61654/zzyskx0217",
+      "title": "一体化保温方案、ERAS手术室护理联合应用于肾结石患者手术中对于术中低体温的影响",
+      "authors": [
+        "戴, 英强"
+      ],
+      "venue": "养生科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 12,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "arXiv:2306.01818v1",
-      "title": "Beta Thalassemia Carriers detection empowered federated Learning",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "abstract": "<jats:p>目的:探究肾结石患者手术治疗期间联合应用一体化保温方案、ERAS手术室护理所取效果,评估对术中低体温的预防效果。方法:研究开始时间为2023年1月,结束于2025年3月,选择在上述时间段内择期采取手术治疗的肾结石患者60例为研究对象,根据随机数字表法分组处理,纳入对照组的30例患者采用常规护理,观察组则应用一体化保温方案+ERAS手术室护理,统计术中低体温等并发症发生率,对比两组患者不同时间点体温变化、围术期指标。结果:观察组术中低体温等并发症发生率较低于对照组(P&lt;0.05);术前,就两组患者体表温度测定,数值对比未见明显差异(P&gt;0.05),术中、术后不同时间段,对两组患者体表温度测定,观察组较对照组偏高,组间对比差异可见(P&lt;0.05);分析入组对象围术期指标,观察组各指标测定数值较同期对照组偏低(P&lt;0.05)。结论:肾结石患者采取手术治疗的同时辅以一体化保温方案、ERAS手术室护理对于术中低体温预防效果理想,可加速患者术后康复进程,通过稳定体表温度减轻生理应激反应,可借鉴。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 81
     },
     {
-      "rank": 12,
-      "doi": "arXiv:2308.02029v3",
-      "title": "Deep Maxout Network-based Feature Fusion and Political Tangent Search Optimizer enabled Transfer Learning for Thalassemia Detection",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.63779/kyiy7654",
+      "title": "基于个体评估的全程生活指导对异常子宫出血患者心理状态及生活质量的影响",
+      "authors": [
+        "利杰, 丁"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "arXiv:0512014v1",
-      "title": "A Game-Theoretic Approach to Energy-Efficient Power Control in Multi-Carrier CDMA Systems",
-      "abstract": "",
-      "year": 2005,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "venue": "医药产业研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探讨基于个体评估的全程生活指导对异常子宫出血(AUB)患者的影响。方法:以2023年1月至2023年12月收治的80例AUB患者对比研究,按照随机数字表法分为两组:对照组(n=40,常规护理);观察组(n=40,基于个体评估的全程生活指导)。比较两组干预前后心理状态[焦虑自评量表(SAS)、抑郁自评量表(SDS)]、生活质量[健康调查简表(SF-36)],并随访1年统计复发率。结果:干预后,观察组SAS、SDS评分低于对照组,SF-36各维度评分高于对照组(P&lt;0.05)。随访1年,观察组复发率低于对照组(P&lt;0.05)。结论:基于个体评估的全程生活指导可改善AUB患者心理状态,提高生活质量,降低复发率。</jats:p>",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 82
     },
     {
-      "rank": 14,
-      "doi": "arXiv:2504.10338v1",
-      "title": "Classifying Copy Number Variations Using State Space Modeling of Targeted Sequencing Data: A Case Study in Thalassemia",
+      "doi": "10.67328/bt1603",
+      "title": "“一对一”系统化护理对无偿献血者疼痛耐受、身心应激及再献血意愿的影响",
+      "authors": [
+        "李帅"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.3799/dqkx.2009.043",
+      "title": "钠离子对于海洋成因10Å-水锰矿结构稳定性的影响",
+      "authors": [
+        "姜, 学钧"
+      ],
+      "venue": "Earth Science-Journal of China University of Geosciences",
+      "year": 2009,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.63887/jfem.2025.1.6.28",
+      "title": "地理标志对消费者购买意愿的影响研究——基于感知价值的中介作用",
+      "authors": [
+        "邵逸文"
+      ],
+      "venue": "财经管理",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为探究地理标志与消费者购买意愿的内在关联及感知价值的中介效应，本文基于外部线索理论与 S-O-R理论，构建地理标志（自然环境、人文因素、政策支持）与感知价值（功能价值、情感价值、信任价值）的理论关联框架，系统解析地理标志通过价值感知传递影响消费决策的机理。研究明确地理标志多维属性对购买意愿的正向作用路径，证实感知价值的差异化中介角色，为地理标志产品市场化运营提供理论支撑。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.37155/2717-5650-0604-22",
+      "title": "基于微信群的健身功法八段锦在中医延续护理中对2型糖尿病患者自我管理行为及血糖控制的影响",
+      "authors": [
+        "然, 陈",
+        "兴, 田",
+        "王贺春"
+      ],
+      "venue": "国际护理与健康",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 86
     },
     {
-      "rank": 15,
-      "doi": "arXiv:2004.00480v1",
-      "title": "Novel Meta-Heuristic Model for Discrimination between Iron Deficiency Anemia and B-Thalassemia with CBC Indices Based on Dynamic Harmony Search",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.12677/md.2022.121005",
+      "title": "Analysis of Gene Detection Result of 1165 Cases of Thalassemia",
+      "authors": [
+        "陈, 燕"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "Medical  Diagnosis",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
     },
     {
-      "rank": 16,
-      "doi": "10.1051/0004-6361:20021074",
-      "title": "Asteroseismology and calibration of alpha Cen binary system",
+      "doi": "10.17816/jowd58194-42618",
+      "title": "图4 胰岛素样生长因子1受体在子宫内膜异位症患者（a）和对照组患者（b）子宫内膜中的表达。×400",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
       "abstract": "",
-      "year": 2002,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 88
     },
     {
-      "rank": 17,
-      "doi": "10.1051/0004-6361:20034203",
-      "title": "Analysis of alpha Centauri AB including seismic constraints",
+      "doi": "10.67328/bt0047",
+      "title": "体检中心护理干预对糖尿病患者血糖控制及健康行为的影响观察",
+      "authors": [
+        "安惠"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1360/csb1988-33-18-1439-x",
+      "title": "聚合酶链式反应(PCR)用于地中海贫血的产前诊断",
+      "authors": [
+        "张, 基增"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1988,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.17816/jowd58194-42617",
+      "title": "图3 胰岛素样生长因子1（IGF-1）受体的表达（相对面积，%）在外阴子宫内膜异位症患者、对照组和子宫内膜异位症患者的子宫内膜中",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1360/csb2004-49-22-2354",
+      "title": "牛顿流体小尺度地幔对流对海底地形与热流的影响",
+      "authors": [
+        "黄, 金水",
+        "钟, 时杰"
+      ],
+      "venue": "Chinese Science Bulletin",
       "year": 2004,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 92
     },
     {
-      "rank": 18,
-      "doi": "10.1109/JQE.2017.2788415",
-      "title": "Stochastic differential equation model for spontaneous emission and carrier noise in semiconductor lasers",
+      "doi": "10.69979/3060-8767.25.05.065",
+      "title": "探索环境保护工程中影响因子对环境质量的影响及优化措施",
+      "authors": [],
+      "venue": "当代水电科技",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2017,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 93
     },
     {
-      "rank": 19,
-      "doi": "arXiv:2305.10216v1",
-      "title": "CHMMOTv1 -- Cardiac and Hepatic Multi-Echo (T2*) MRI Images and Clinical Dataset for Iron Overload on Thalassemia Patients",
+      "doi": "10.12677/acm.2018.82039",
+      "title": "Thalassemia Detection for 3074 Pregnant Women with Anemia",
+      "authors": [
+        "张, 有成"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.1360/csb1987-32-9-720",
+      "title": "用合成的寡核苷酸探针鉴定中国人&amp;beta;地中海贫血基因突变",
+      "authors": [
+        "黄, 淑帧"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1987,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1360/csb1989-34-17-1358",
+      "title": "应用DNA体外扩增和寡核苷酸分子杂交技术研究中国人的&amp;beta;-地中海贫血突变类型",
+      "authors": [
+        "黄淑, 帧周霞娣朱皓任兆瑞曾溢滔"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1989,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1360/csb2002-47-24-1883",
+      "title": "泛素-蛋白水解酶复合体通路对小鼠围植入期子宫血管内皮生长因子及其受体表达的影响",
+      "authors": [
+        "李, 庆雷",
+        "祝, 诚",
+        "林, 海燕",
+        "刘, 冬林",
+        "刘, 国艺",
+        "王, 红梅",
+        "张, 璇",
+        "钱, 东"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 2002,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.69979/3029-2808.24.8.013",
+      "title": "不同运动方式对社区老年人身体形态、身体机能及身体素质的影响",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.37155/2661-4766-0702-26",
+      "title": "地中海贫血的流行病学和防控进展",
+      "authors": [
+        "柯海燕"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.35534/pc/0105022",
+      "title": "具身性情绪：面部表情和身体姿势对情绪感知的影响",
+      "authors": [
+        "许, 洪梅"
+      ],
+      "venue": "中国心理学前沿",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.70976/j.1672-7851.dw250031",
+      "title": "基于CDIO理念的护理模式对2型糖尿病患者体质量管理和血糖控制的影响",
+      "authors": [
+        "刘, 艺",
+        "岳, 芳",
+        "赵, 崔敏"
+      ],
+      "venue": "Clinical Journal of Diabetes World",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1360/csb2004-49-13-1278",
+      "title": "携带肝细胞生长因子基因的重组腺病毒对犬心肌缺血的基因治疗",
+      "authors": [
+        "吴, 祖泽",
+        "张, 友荣",
+        "吴, 丹莉",
+        "袁, 丽珍",
+        "王, 澜",
+        "劳, 妙芬",
+        "哈, 小琴"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 2004,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1360/csb1990-35-21-1668",
+      "title": "3&amp;prime;碱基特异的PCR技术及&amp;beta;地中海贫血基因点突变的直接检测",
+      "authors": [
+        "刘, 敬忠"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1990,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.69979/3029-2808.24.12.017",
+      "title": "口腔菌群对身体的影响，口腔菌群置换，改善身体健康的研究",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.12677/bp.2023.132010",
+      "title": "Analysis of Gene Test Results of Thalassemia in Reproductive Age Population in Kunming",
+      "authors": [
+        "李, 彬"
+      ],
+      "venue": "Bioprocess",
       "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 105
     },
     {
-      "rank": 20,
-      "doi": "10.1088/0953-8984/16/7/009",
-      "title": "Measurements of Composite Fermion Conductivity Dependence on Carrier Density",
+      "doi": "10.69979/3060-8767.25.11.060",
+      "title": "输电线路工程中地形因素对工程造价的影响及应对措施",
+      "authors": [
+        "庞涛，常盛楠，潘镜汀，金灿, 于波"
+      ],
+      "venue": "当代水电科技",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.37155/2717-5650-0701-18",
+      "title": "护理干预对老年患者全身麻醉术后低体温的影响",
+      "authors": [
+        "徐, 莹"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.58911/bdic.co.202601.05",
+      "title": "语料: （递进式对话）地球表面的变化会受到哪些因素的影响？",
+      "authors": [],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.61369/etqm.7972",
+      "title": "水工环勘查中的水文地质条件影响及分析",
+      "authors": [
+        "于, 海波"
+      ],
+      "venue": "Engineering Technology and Quality Management",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文着重论述了水文地质条件在水利勘测中的作用，并从水工环调查的角度论述了水文地质条件对工程建设、环境保护、资源利用等方面的影响。同时对水工环勘探中的水文地质条件进行了精确评价并提出了相应的对策。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.64216/3104-9656.25.04.010",
+      "title": "早期康复护理干预对急性缺血性脑卒中患者肢体功能恢复的影响研究",
+      "authors": [
+        "黄橙（通讯作者）, 周莺"
+      ],
+      "venue": "医学实践与研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "arXiv:2306.01818v1",
+      "arxiv_id": "2306.01818v1",
+      "title": "Beta Thalassemia Carriers detection empowered federated Learning",
+      "authors": [
+        "Muhammad Shoaib Farooq",
+        "Hafiz Ali Younas"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.01818v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:2308.02029v3",
+      "arxiv_id": "2308.02029v3",
+      "title": "Deep Maxout Network-based Feature Fusion and Political Tangent Search Optimizer enabled Transfer Learning for Thalassemia Detection",
+      "authors": [
+        "Hemn Barzan Abdalla",
+        "Awder Ahmed",
+        "Guoquan Li",
+        "Nasser Mustafa",
+        "Abdur Rashid Sangi"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.02029v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "arXiv:0512014v1",
+      "arxiv_id": "0512014v1",
+      "title": "A Game-Theoretic Approach to Energy-Efficient Power Control in Multi-Carrier CDMA Systems",
+      "authors": [
+        "Farhad Meshkati",
+        "Mung Chiang",
+        "H. Vincent Poor",
+        "Stuart C. Schwartz"
+      ],
+      "venue": "arXiv",
       "year": 2005,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/cs/0512014v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2504.10338v1",
+      "arxiv_id": "2504.10338v1",
+      "title": "Classifying Copy Number Variations Using State Space Modeling of Targeted Sequencing Data: A Case Study in Thalassemia",
+      "authors": [
+        "Austin Talbot",
+        "Alex Kotlar",
+        "Lavanya Rishishiwar",
+        "Yue Ke"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.10338v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Frequency of beta thalassemia trait and carrier in Gorgan, Iran",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 114
     },
     {
-      "rank": 22,
-      "doi": "",
-      "title": "Prevalence and Distribution of Thalassemia Trait Screening",
-      "abstract": "",
-      "year": 2017,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2004.00480v1",
+      "arxiv_id": "2004.00480v1",
+      "title": "Novel Meta-Heuristic Model for Discrimination between Iron Deficiency Anemia and B-Thalassemia with CBC Indices Based on Dynamic Harmony Search",
+      "authors": [
+        "Sultan Noman Qasem",
+        "Amir Mosavi"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 23,
-      "doi": "",
-      "title": "Frekuensi Trait Thalassemia-B Di Maumere, Flores",
-      "abstract": "",
-      "year": 1993,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 24,
-      "doi": "",
-      "title": "Carrier detection for beta-thalassemia trait in general Pakistani population: A way forward",
-      "abstract": "",
-      "year": 2012,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 25,
-      "doi": "",
-      "title": "FREKUENSI TRAIT THALASSEMIA-b DI AMBON, MALUKI",
-      "abstract": "",
-      "year": 1994,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 26,
-      "doi": "",
-      "title": "Prevalence of Beta Thalassemia Trait among Antenatal Women Attending a Tertiary Care Centre",
-      "abstract": "",
+      "venue": "arXiv",
       "year": 2020,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/2004.00480v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 115
     },
     {
-      "rank": 27,
-      "doi": "",
-      "title": "Premarital screening of beta-thalassemia trait in the province of Denizli, Turkey",
-      "abstract": "",
-      "year": 2000,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1051/0004-6361:20021074",
+      "arxiv_id": "0206283v1",
+      "title": "Asteroseismology and calibration of alpha Cen binary system",
+      "authors": [
+        "F. Thevenin",
+        "J. Provost",
+        "P. Morel",
+        "G. Berthomieu",
+        "F. Bouchy",
+        "F. Carrier"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2002,
+      "pdf_url": "https://arxiv.org/pdf/astro-ph/0206283v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
     },
     {
-      "rank": 28,
-      "doi": "",
-      "title": "Alpha‐globin gene triplication and its effect in beta‐thalassemia carrier, sickle cell trait, and healthy individual",
-      "abstract": "",
+      "doi": "10.1051/0004-6361:20034203",
+      "arxiv_id": "0401606v1",
+      "title": "Analysis of alpha Centauri AB including seismic constraints",
+      "authors": [
+        "P. Eggenberger",
+        "C. Charbonnel",
+        "S. Talon",
+        "G. Meynet",
+        "A. Maeder",
+        "F. Carrier",
+        "G. Bourban"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/astro-ph/0401606v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1109/JQE.2017.2788415",
+      "arxiv_id": "1709.03959v2",
+      "title": "Stochastic differential equation model for spontaneous emission and carrier noise in semiconductor lasers",
+      "authors": [
+        "Austin McDaniel",
+        "Alex Mahalov"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.03959v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:2305.10216v1",
+      "arxiv_id": "2305.10216v1",
+      "title": "CHMMOTv1 -- Cardiac and Hepatic Multi-Echo (T2*) MRI Images and Clinical Dataset for Iron Overload on Thalassemia Patients",
+      "authors": [
+        "Iraj Abedi",
+        "Maryam Zamanian",
+        "Hamidreza Bolhasani",
+        "Milad Jalilian"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.10216v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1088/0953-8984/16/7/009",
+      "arxiv_id": "0503427v1",
+      "title": "Measurements of Composite Fermion Conductivity Dependence on Carrier Density",
+      "authors": [
+        "C. -T. Liang",
+        "M. Y. Simmons",
+        "D. A. Ritchie",
+        "M. Pepper"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0503427v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.18653/v1/2023.findings-acl.98",
+      "arxiv_id": "2305.16826v1",
+      "title": "Prompt- and Trait Relation-aware Cross-prompt Essay Trait Scoring",
+      "authors": [
+        "Heejin Do",
+        "Yunsu Kim",
+        "Gary Geunbae Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.16826v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "arXiv:2309.05137v1",
+      "arxiv_id": "2309.05137v1",
+      "title": "Debugging Trait Errors as Logic Programs",
+      "authors": [
+        "Gavin Gray",
+        "Will Crichton"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.05137v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.1016/j.apsusc.2016.06.192",
+      "arxiv_id": "1701.02701v1",
+      "title": "Carrier mobility and scattering lifetime in electric double-layer gated few-layer graphene",
+      "authors": [
+        "E. Piatti",
+        "S. Galasso",
+        "M. Tortello",
+        "J. R. Nair",
+        "C. Gerbaldi",
+        "D. Daghero",
+        "M. Bruna",
+        "S. Borini",
+        "R. S. Gonnelli"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1701.02701v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:1609.09147v3",
+      "arxiv_id": "1609.09147v3",
+      "title": "Exchangeable Trait Allocations",
+      "authors": [
+        "Trevor Campbell",
+        "Diana Cai",
+        "Tamara Broderick"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1609.09147v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "arXiv:0401306v1",
+      "arxiv_id": "0401306v1",
+      "title": "Band structure parameters of the nitrides: The origin of the small band gap of InN",
+      "authors": [
+        "Su-Huai Wei",
+        "Pierre Carrier"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0401306v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:0208525v1",
+      "arxiv_id": "0208525v1",
+      "title": "Core-level spectroscopy of Si/SiO_2 quantum wells: evidence for confined states",
+      "authors": [
+        "Pierre Carrier",
+        "Zheng-Hong Lu",
+        "M. W. Chandre Dharma-wardana",
+        "Laurent J. Lewis"
+      ],
+      "venue": "arXiv",
+      "year": 2002,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0208525v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:1502.06629v1",
+      "arxiv_id": "1502.06629v1",
+      "title": "Scaling from traits to ecosystems: Developing a general Trait Driver Theory via integrating trait-based and metabolic scaling theories",
+      "authors": [
+        "Brian J. Enquist",
+        "Jon Norberg",
+        "Stephen P. Bonser",
+        "Cyrille Violle",
+        "Colleen T. Webb",
+        "Amanda Henderson",
+        "Lindsey L. Sloat",
+        "Van M. Savage"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1502.06629v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "arXiv:1505.02154v4",
+      "arxiv_id": "1505.02154v4",
+      "title": "Costly defense traits in structured populations",
+      "authors": [
+        "Martin Hutzenthaler",
+        "Felix Jordan",
+        "Dirk Metzler"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1505.02154v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1103/PhysRevB.70.035212",
+      "arxiv_id": "0403409v2",
+      "title": "Calculated spin-orbit splitting of all diamond-like and zinc-blende semiconductors: Effects of p1/2 local orbitals and chemical trends",
+      "authors": [
+        "Pierre Carrier",
+        "Su-Huai Wei"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0403409v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.1109/TVCG.2025.3525974",
+      "arxiv_id": "2501.06238v1",
+      "title": "Multi-field Visualization: Trait design and trait-induced merge trees",
+      "authors": [
+        "Danhua Lei",
+        "Jochen Jankowai",
+        "Petar Hristov",
+        "Hamish Carr",
+        "Leif Denby",
+        "Talha Bin Masood",
+        "Ingrid Hotz"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.06238v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1103/PhysRevB.65.165339",
+      "arxiv_id": "0111259v2",
+      "title": "Optical properties of structurally-relaxed Si/SiO$_2$ superlattices: the role of bonding at interfaces",
+      "authors": [
+        "Pierre Carrier",
+        "Laurent J. Lewis",
+        "M. W. Chandre Dharma-wardana"
+      ],
+      "venue": "arXiv",
+      "year": 2001,
+      "pdf_url": "https://arxiv.org/pdf/cond-mat/0111259v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:1408.3651v1",
+      "arxiv_id": "1408.3651v1",
+      "title": "Is information a selectable trait?",
+      "authors": [
+        "Masoud Mirmomeni",
+        "William F. Punch",
+        "Christoph Adami"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1408.3651v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:2605.25731v2",
+      "arxiv_id": "2605.25731v2",
+      "title": "Trait-Aware Policy Optimization for Autoregressive Multi-Trait Essay Scoring",
+      "authors": [
+        "Zhengyang Wang",
+        "Sanwoo Lee",
+        "Jiaxin Wang",
+        "Chenxi Miao",
+        "Weikang Li",
+        "Yunfang Wu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.25731v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1016/j.jtbi.2021.110985",
+      "arxiv_id": "2101.01234v3",
+      "title": "On the Fourier transform of a quantitative trait: Implications for compressive sensing",
+      "authors": [
+        "Stephen Doro",
+        "Matthew A. Herman"
+      ],
+      "venue": "arXiv",
       "year": 2021,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/2101.01234v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:1508.03103v1",
+      "arxiv_id": "1508.03103v1",
+      "title": "Adaptive Trait Evolution in Random Environment",
+      "authors": [
+        "Dwueng-Chwuan Jhwueng",
+        "Vasileios Maroulas"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1508.03103v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1038/s41598-024-61872-z",
+      "arxiv_id": "2202.07533v4",
+      "title": "Limits on the Evolutionary Rates of Biological Traits",
+      "authors": [
+        "Luis Pedro García-Pintos"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.07533v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:2310.07249v1",
+      "arxiv_id": "2310.07249v1",
+      "title": "Dynamic trait distribution as a source for shifts in interaction strength and population density",
+      "authors": [
+        "Zachary Jackson",
+        "BingKan Xue"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.07249v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:1408.5587v3",
+      "arxiv_id": "1408.5587v3",
+      "title": "Trait evolution in two-sex populations",
+      "authors": [
+        "Paweł Zwoleński"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1408.5587v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1098/rspb.2013.1552",
+      "arxiv_id": "1210.8423v2",
+      "title": "The evolution of genetic architectures underlying quantitative traits",
+      "authors": [
+        "Etienne Rajon",
+        "Joshua B. Plotkin"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1210.8423v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:1304.4640v1",
+      "arxiv_id": "1304.4640v1",
+      "title": "Trait substitution trees on two time scales analysis",
+      "authors": [
+        "Anton Bovier",
+        "Shi-Dong Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1304.4640v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:1902.06303v1",
+      "arxiv_id": "1902.06303v1",
+      "title": "What is an Ordinal Latent Trait Model?",
+      "authors": [
+        "Gerhard Tutz"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1902.06303v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "arXiv:2302.10817v1",
+      "arxiv_id": "2302.10817v1",
+      "title": "Inferring Implicit Trait Preferences for Task Allocation in Heterogeneous Teams",
+      "authors": [
+        "Vivek Mallampati",
+        "Harish Ravichandar"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.10817v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:2410.12327v2",
+      "arxiv_id": "2410.12327v2",
+      "title": "Neuron-based Personality Trait Induction in Large Language Models",
+      "authors": [
+        "Jia Deng",
+        "Tianyi Tang",
+        "Yanbin Yin",
+        "Wenhao Yang",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.12327v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:2604.01619v3",
+      "arxiv_id": "2604.01619v3",
+      "title": "Automatic Image-Level Morphological Trait Annotation for Organismal Images",
+      "authors": [
+        "Vardaan Pahuja",
+        "Samuel Stevens",
+        "Alyson East",
+        "Sydne Record",
+        "Yu Su"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.01619v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "arXiv:2606.23093v1",
+      "arxiv_id": "2606.23093v1",
+      "title": "A WKB-based fixed-grid method for capturing trait concentration in a dispersal evolution model",
+      "authors": [
+        "Weijie Huang",
+        "Xinran Ruan"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.23093v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "arXiv:2403.08332v1",
+      "arxiv_id": "2403.08332v1",
+      "title": "Autoregressive Score Generation for Multi-trait Essay Scoring",
+      "authors": [
+        "Heejin Do",
+        "Yunsu Kim",
+        "Gary Geunbae Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.08332v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.1239/jap/1450802756",
+      "arxiv_id": "1207.6488v5",
+      "title": "Phylogenetic confidence intervals for the optimal trait value",
+      "authors": [
+        "Krzysztof Bartoszek",
+        "Serik Sagitov"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1207.6488v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:1808.05878v1",
+      "arxiv_id": "1808.05878v1",
+      "title": "Statistical modeling for adaptive trait evolution in randomly evolving environment",
+      "authors": [
+        "Dwueng-Chwuan Jhwueng"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1808.05878v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2505.14577v2",
+      "arxiv_id": "2505.14577v2",
+      "title": "TRATES: Trait-Specific Rubric-Assisted Cross-Prompt Essay Scoring",
+      "authors": [
+        "Sohaila Eltanbouly",
+        "Salam Albatarni",
+        "Tamer Elsayed"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.14577v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "arXiv:1410.7363v1",
+      "arxiv_id": "1410.7363v1",
+      "title": "Genetic Studies of Physiological Traits with Their Application to Sleep Apnea",
+      "authors": [
+        "D. Y. Lee",
+        "C. Hanis",
+        "G. I. Bell",
+        "D. A. Aguilar",
+        "S. Redline",
+        "J. Below",
+        "M. M. Xiong"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.7363v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.1534/genetics.115.178988",
+      "arxiv_id": "1405.1610v2",
+      "title": "Multiple-line inference of selection on quantitative traits",
+      "authors": [
+        "Nico Riedel",
+        "Bhavin S. Khatri",
+        "Michael Lässig",
+        "Johannes Berg"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1405.1610v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:2109.06783v2",
+      "arxiv_id": "2109.06783v2",
+      "title": "Learning to Navigate Intersections with Unsupervised Driver Trait Inference",
+      "authors": [
+        "Shuijing Liu",
+        "Peixin Chang",
+        "Haonan Chen",
+        "Neeloy Chakraborty",
+        "Katherine Driggs-Campbell"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.06783v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:1301.2167v2",
+      "arxiv_id": "1301.2167v2",
+      "title": "Mixture of Latent Trait Analyzers for Model-Based Clustering of Categorical Data",
+      "authors": [
+        "Isabella Gollini",
+        "Thomas Brendan Murphy"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1301.2167v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:1111.5551v1",
+      "arxiv_id": "1111.5551v1",
+      "title": "Generalized Admixture Mapping for Complex Traits",
+      "authors": [
+        "Bin Zhu",
+        "Allison E. Ashley-Koch",
+        "David B. Dunson"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1111.5551v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2402.04326v1",
+      "arxiv_id": "2402.04326v1",
+      "title": "Personality Trait Recognition using ECG Spectrograms and Deep Learning",
+      "authors": [
+        "Muhammad Mohsin Altaf",
+        "Saadat Ullah Khan",
+        "Muhammad Majd",
+        "Syed Muhammad Anwar"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.04326v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:1310.6274v2",
+      "arxiv_id": "1310.6274v2",
+      "title": "Stochastic dynamics of adaptive trait and neutral marker driven by eco-evolutionary feedbacks",
+      "authors": [
+        "Sylvain Billiard",
+        "Regis Ferriere",
+        "Sylvie Méléard",
+        "Viet Chi Tran"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.6274v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.1007/s10035-022-01240-8",
+      "arxiv_id": "2110.14469v2",
+      "title": "Phenotypic Trait of Particle Geometries",
+      "authors": [
+        "Seung Jae Lee",
+        "Moochul Shin",
+        "Chang Hoon Lee",
+        "Priya Tripathi"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.14469v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1371/journal.pbio.2002985",
+      "arxiv_id": "1704.06707v2",
+      "title": "A population genetic interpretation of GWAS findings for human quantitative traits",
+      "authors": [
+        "Yuval B. Simons",
+        "Kevin Bullaughey",
+        "Richard R. Hudson",
+        "Guy Sella"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1704.06707v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2505.19199v1",
+      "arxiv_id": "2505.19199v1",
+      "title": "Pan-tropical plant functional trait variation from space",
+      "authors": [
+        "David Schimel",
+        "Andres Baresch",
+        "Adam Chlus",
+        "Phil Townsend",
+        "Fabian Schneider",
+        "Gaia Vaglio Laurin",
+        "Ben Poulter"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.19199v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:1201.5364v2",
+      "arxiv_id": "1201.5364v2",
+      "title": "Interspecies correlation for neutrally evolving traits",
+      "authors": [
+        "Serik Sagitov",
+        "Krzysztof Bartoszek"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1201.5364v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.18051/jbiomedkes.2025.v8.350-358",
+      "arxiv_id": "",
+      "title": "Severe Anemia in a Thalassemia Trait Carrier with Peritoneal Tuberculosis: A Case Report",
+      "authors": [
+        "Diva Azura Salsabila",
+        "Muhammad Athar Farsyah",
+        "A. Amelia",
+        "T. Fadilah"
+      ],
+      "venue": "Jurnal Biomedika dan Kesehatan",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 12,
+      "tldr": "The severe anemia in this patient was likely due to multifactorial causes: an underlying thalassemia trait compounded by anemia of chronic disease (ACD) from tuberculosis, highlighting the critical need to investigate comorbidities in thalassemia carriers with atypical presentations.",
+      "is_oa": true,
+      "oa_url": "https://jbiomedkes.org/index.php/jbk/article/download/736/283",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The severe anemia in this patient was likely due to multifactorial causes: an underlying thalassemia trait compounded by anemia of chronic disease (ACD) from tuberculosis, highlighting the critical need to investigate comorbidities in thalassemia carriers with atypical presentations.",
+      "rank": 161
+    },
+    {
+      "doi": "10.69830/jbkmc.v5i02.187",
+      "arxiv_id": "",
+      "title": "Mentzer Index As A Diagnostic Tool Of Thalassemia Trait In Children",
+      "authors": [
+        "Fozia Sayed Rasool",
+        "Rabiha Manzoor",
+        "Ajaz Ahmed",
+        "Shaista Naz",
+        "Habibullah Kibzai",
+        "Pirjan"
+      ],
+      "venue": "Journal of Bacha Khan Medical College",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The Mentzer Index functions as an affordable diagnostic measure which efficiently determines beta thalassemia trait when testing limited resources and can support reductions in undiagnosed thalassemia carriers thus promoting better preventative healthcare practices.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.69830/jbkmc.v5i02.187",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Mentzer Index functions as an affordable diagnostic measure which efficiently determines beta thalassemia trait when testing limited resources and can support reductions in undiagnosed thalassemia carriers thus promoting better preventative healthcare practices.",
+      "rank": 162
+    },
+    {
+      "doi": "10.35787/jimdc.v13i4.1312",
+      "arxiv_id": "",
+      "title": "Evaluation of Frequency of Beta Thalassemia Trait Among Pregnant Females",
+      "authors": [
+        "Rabiah Asghar",
+        "Ayesha Junaid",
+        "Shazia Fakhar"
+      ],
+      "venue": "Journal of Islamabad Medical &amp; Dental College",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "It is established, that the frequency of β-thalassemia trait amongst pregnant females was alarming, highlighting the importance of routine screening in antenatal clinics and a robust protocol for early identification of thalassemia carriers.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.35787/jimdc.v13i4.1312",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is established, that the frequency of β-thalassemia trait amongst pregnant females was alarming, highlighting the importance of routine screening in antenatal clinics and a robust protocol for early identification of thalassemia carriers.",
+      "rank": 163
+    },
+    {
+      "doi": "10.64261/ijaarai.v1n2.003",
+      "arxiv_id": "",
+      "title": "Prevalence and Hematological Profile of Beta Thalassemia Trait in an Urban Indian Population: A Cross-Sectional Study from Chandigarh",
+      "authors": [
+        "Priyanka Mandal"
+      ],
+      "venue": "Interdisciplinary Journal of the African Alliance for Research, Advocacy and Innovation",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "A significant prevalence of Beta Thalassemia Trait is revealed in Chandigarh, particularly among women of reproductive age, and findings support the expansion of urban thalassemia screening programs in India.",
+      "is_oa": true,
+      "oa_url": "https://ijaarai.com/index.php/ijaarai/article/download/31/50",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A significant prevalence of Beta Thalassemia Trait is revealed in Chandigarh, particularly among women of reproductive age, and findings support the expansion of urban thalassemia screening programs in India.",
+      "rank": 164
+    },
+    {
+      "doi": "10.25258/ijpqa.16.1.51",
+      "arxiv_id": "",
+      "title": "Impact of Iron Deficiency on HBA2 Levels and its Implications in Thalassemia Trait Detection",
+      "authors": [
+        "Shipra Singh",
+        "Ranjan Kumar Rajan"
+      ],
+      "venue": "International Journal of Pharmaceutical Quality Assurance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Iron deficiency significantly lowers HbA2 levels and may obscure the diagnosis of beta-thalassemia trait in screening programs, particularly in highprevalence regions like Bihar where iron deficiency anemia is common.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.25258/ijpqa.16.1.51",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Iron deficiency significantly lowers HbA2 levels and may obscure the diagnosis of beta-thalassemia trait in screening programs, particularly in highprevalence regions like Bihar where iron deficiency anemia is common.",
+      "rank": 165
+    },
+    {
+      "doi": "10.2337/db25-1353-p",
+      "arxiv_id": "",
+      "title": "1353-P: Asymptomatic Individuals with β-Thalassemia Trait in Southern China Having Falsely Low Hemoglobin A1c Levels Are Readily Identified by Their Low MCV, Low MCH, and High RDW Values",
+      "authors": [
+        "Li Liu",
+        "Meng-ke Luo",
+        "Ivan Stevic",
+        "Eunice Y. S. Chan",
+        "A. Chan",
+        "Howard Ho Wai Chan"
+      ],
+      "venue": "Diabetes",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Misinterpretation of HbA1c levels can occur in patients with an undiagnosed β-thalassemia trait, readily identified by microcytosis, hypochromia, or an elevated RDW, although HbA1c levels in α-thalassemia carriers are generally unaffected when measured using HPLC, although these carriers might go unnoticed because their red blood cell parameters fall within the normal ranges.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Misinterpretation of HbA1c levels can occur in patients with an undiagnosed β-thalassemia trait, readily identified by microcytosis, hypochromia, or an elevated RDW, although HbA1c levels in α-thalassemia carriers are generally unaffected when measured using HPLC, although these carriers might go unnoticed because their red blood cell parameters fall within the normal ranges.",
+      "rank": 166
+    },
+    {
+      "doi": "10.1080/03630269.2025.2599259",
+      "arxiv_id": "",
+      "title": "Two Novel SUPT5H Variants Causing β-Thalassemia Trait Phenotypes",
+      "authors": [
+        "Qingfeng Xie",
+        "Tizhen Yan",
+        "Zhao Ying",
+        "Youqing Fu",
+        "Jiwu Lou"
+      ],
+      "venue": "Hemoglobin",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 12,
+      "tldr": "The hematological profiles of all carriers of SUPT5H variants are consistent with previously reported heterozygous SUPT5H-related traits, underscoring the role of SUPT5H haploinsufficiency in modulating HBB regulation.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The hematological profiles of all carriers of SUPT5H variants are consistent with previously reported heterozygous SUPT5H-related traits, underscoring the role of SUPT5H haploinsufficiency in modulating HBB regulation.",
+      "rank": 167
+    },
+    {
+      "doi": "10.47363/jcmrm/2026(4)133",
+      "arxiv_id": "",
+      "title": "Clinical Differentiation of Gilbert Syndrome, Crigler-Najjar Syndrome and β-Thalassemia Trait",
+      "authors": [
+        "Jayesh Trivedi"
+      ],
+      "venue": "Journal of Clinical Medicine and Regenerative Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Key distinguishing features of GS, Crigler-Najjar type 2, and β-thalassemia trait – including typical bilirubin levels, hematologic indices, genetic basis, and management – are summarized in a comparative table.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Key distinguishing features of GS, Crigler-Najjar type 2, and β-thalassemia trait – including typical bilirubin levels, hematologic indices, genetic basis, and management – are summarized in a comparative table.",
+      "rank": 168
+    },
+    {
+      "doi": "10.7759/cureus.102005",
+      "arxiv_id": "",
+      "title": "Impact of Beta-Thalassemia Trait on Clinical Outcomes and Treatment Response in Chronic Myeloid Leukemia",
+      "authors": [
+        "A. Shirinova",
+        "Chingiz Asadov",
+        "A. Hasanova",
+        "Z. Alimirzoyeva"
+      ],
+      "venue": "Cureus",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "Beta-thalassemia trait influences baseline hematologic profiles and risk stratification in CML but does not impair the effectiveness of tyrosine kinase inhibitors or survival, suggesting the need for closer anemia monitoring.",
+      "is_oa": true,
+      "oa_url": "https://www.cureus.com/articles/452721-impact-of-beta-thalassemia-trait-on-clinical-outcomes-and-treatment-response-in-chronic-myeloid-leukemia.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Beta-thalassemia trait influences baseline hematologic profiles and risk stratification in CML but does not impair the effectiveness of tyrosine kinase inhibitors or survival, suggesting the need for closer anemia monitoring.",
+      "rank": 169
+    },
+    {
+      "doi": "10.1007/s43538-024-00367-x",
+      "arxiv_id": "",
+      "title": "Thalassemia carrier screening among the college going students of the rural areas of West Midnapore, India",
+      "authors": [
+        "Amrita Panja",
+        "Biplab Kahar",
+        "Mantu Das",
+        "T. Dolai"
+      ],
+      "venue": "Proceedings of Indian National Science Academy",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 22,
+      "tldr": "The screening for thalassemia should be included as a part of regular blood testing among the college going students which will provide idea about the extent of hemoglobinopathy in the rural area of West Midnapore.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The screening for thalassemia should be included as a part of regular blood testing among the college going students which will provide idea about the extent of hemoglobinopathy in the rural area of West Midnapore.",
+      "rank": 170
+    },
+    {
+      "doi": "10.31584/jhsmr.20251248",
+      "arxiv_id": "",
+      "title": "Evaluation of Red Blood Cell Indices and Reticulocyte Parameters for Thalassemia Carrier Screening Using the Dymind Automated Hematology Analyzer",
+      "authors": [
+        "Tipparat Penglong",
+        "Wanicha Tepakhan",
+        "Nisreen Sariddeepeerapan",
+        "Suppawit Thongsan",
+        "Nasra Tehyoh",
+        "Korntip Sreworadechpisal",
+        "Sataron Kanjanaopas",
+        "Yanisa Na Songkhla",
+        "Chakkrit Songnak",
+        "Kanitta Srinoun"
+      ],
+      "venue": "Journal of Health Science and Medical Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "The combined MCV and MCH analyzed using the Dymind automated hematology analyzers with the DCIP test, together with Ret-He parameters from the DH615, are effective for screening thalassemia and common abnormal Hb in the Thai population.",
+      "is_oa": true,
+      "oa_url": "https://www.jhsmr.org/index.php/jhsmr/article/download/1248/1443",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The combined MCV and MCH analyzed using the Dymind automated hematology analyzers with the DCIP test, together with Ret-He parameters from the DH615, are effective for screening thalassemia and common abnormal Hb in the Thai population.",
+      "rank": 171
+    },
+    {
+      "doi": "10.12688/f1000research.156586.2",
+      "arxiv_id": "",
+      "title": "Case Report: Acute hepatitis A virus infection presenting with direct antiglobulin test-negative autoimmune hemolytic anemia and α-thalassemia trait",
+      "authors": [
+        "H. Debbabi",
+        "Eya Chakroun",
+        "H. Hassine",
+        "H. Kchir",
+        "D. Cherif",
+        "H. Yacoub",
+        "N. Maamouri"
+      ],
+      "venue": "F1000Research",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 33,
+      "tldr": "A challenging case of Coombs-negative hemolytic anemia is presented as initial manifestation of hepatitis A virus infection in a silent carrier of α-thalassemia.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A challenging case of Coombs-negative hemolytic anemia is presented as initial manifestation of hepatitis A virus infection in a silent carrier of α-thalassemia.",
+      "rank": 172
+    },
+    {
+      "doi": "10.31344/ijhhs.v9i10.808",
+      "arxiv_id": "",
+      "title": "Iron Deficiency Anaemia with Underlying Beta-Thalassemia Carrier in a Single Mother with Multiple Substance Abuse: A Case Report",
+      "authors": [
+        "M. Idris",
+        "A. Rashid"
+      ],
+      "venue": "International Journal of Human and Health Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 6,
+      "tldr": "This case report describes a 23-year-old single mother with a history of substance abuse and smoking, who was diagnosed with severe iron deficiency anemia during late pregnancy, which led to hospital admission, where she required transfusions and iron therapy.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.31344/ijhhs.v9i10.808",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This case report describes a 23-year-old single mother with a history of substance abuse and smoking, who was diagnosed with severe iron deficiency anemia during late pregnancy, which led to hospital admission, where she required transfusions and iron therapy.",
+      "rank": 173
+    },
+    {
+      "doi": "10.7759/cureus.92353",
+      "arxiv_id": "",
+      "title": "Alpha-Thalassemia Unmasked in a Patient With Sickle Cell Trait: A Case Report",
+      "authors": [
+        "Bryan Chuquimarca",
+        "C. Carrión",
+        "Victoria Matosas",
+        "E. Riva"
+      ],
+      "venue": "Cureus",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 11,
+      "tldr": "The case of a 59-year-old female with sickle cell trait and mild persistent microcytic anemia is presented and homozygous alpha-thalassemia via gap-polymerase chain reaction is confirmed via gap-polymerase chain reaction.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The case of a 59-year-old female with sickle cell trait and mild persistent microcytic anemia is presented and homozygous alpha-thalassemia via gap-polymerase chain reaction is confirmed via gap-polymerase chain reaction.",
+      "rank": 174
+    },
+    {
+      "doi": "10.1007/s44199-025-00141-y",
+      "arxiv_id": "",
+      "title": "GLM-sPCA: An Approach in Carrier Screening for Binary Traits with an Application in Thalassemia Among Adult Males",
+      "authors": [
+        "Qiwen He",
+        "Hui Liang",
+        "Xu Chen",
+        "Lu Zhou",
+        "Likuan Xiong",
+        "Guang-xing Mai"
+      ],
+      "venue": "Journal of Statistical Theory and Applications (JSTA)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "This study introduces the generalized linear model (GLM) to modify sPCA so that the GLM-sPCA is applicable in disease screening and its high performance can greatly benefit carrier screening and clinical diagnosis.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s44199-025-00141-y.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study introduces the generalized linear model (GLM) to modify sPCA so that the GLM-sPCA is applicable in disease screening and its high performance can greatly benefit carrier screening and clinical diagnosis.",
+      "rank": 175
+    },
+    {
+      "doi": "10.3329/bjog.v39i2.82184",
+      "arxiv_id": "",
+      "title": "Red Blood Cell Indices as a Primary Tool for Carrier Screening of Thalassemia & E Disease in Pregnancy",
+      "authors": [
+        "Tabassum Parveen",
+        "Mahfuja Asma",
+        "Nahreen Akhtar",
+        "Nigar Sultana",
+        "Selima Kawsar",
+        "L. Naznin"
+      ],
+      "venue": "Bangladesh Journal of Obstetrics &amp; Gynaecology",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "During pregnancy red blood cell indices showing MCV ≤75 fl and/or MCH ≤23.5pg should be advised for Hb Electrophoresis for detection of defective Hb in the form of thalassemia trait, E trait or E disease.",
+      "is_oa": true,
+      "oa_url": "https://www.banglajol.info/index.php/BJOG/article/download/82184/55069",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "During pregnancy red blood cell indices showing MCV ≤75 fl and/or MCH ≤23.5pg should be advised for Hb Electrophoresis for detection of defective Hb in the form of thalassemia trait, E trait or E disease.",
+      "rank": 176
+    },
+    {
+      "doi": "10.29309/tpmj/2024.31.04.7921",
+      "arxiv_id": "",
+      "title": "Frequency of anemia in individuals with beta-thalassemia trait.",
+      "authors": [
+        "Huma Shakoor",
+        "Sundas Ali",
+        "Masoom Raza",
+        "Naheed Khattak",
+        "Zahra Rashid Khan",
+        "Fatima Babar"
+      ],
+      "venue": "The Professional Medical Journal",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "Burden of anemia among carriers of Beta-thalassemia traits is high, and understanding the prevalence of anemia in individuals with the trait is crucial for optimizing healthcare interventions and improving the quality of life for affected individuals.",
+      "is_oa": true,
+      "oa_url": "https://www.theprofesional.com/index.php/tpmj/article/download/7921/5443",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Burden of anemia among carriers of Beta-thalassemia traits is high, and understanding the prevalence of anemia in individuals with the trait is crucial for optimizing healthcare interventions and improving the quality of life for affected individuals.",
+      "rank": 177
+    },
+    {
+      "doi": "10.4103/ajts.ajts_242_23",
+      "arxiv_id": "",
+      "title": "Screening of voluntary blood donors for beta-thalassemia trait in an endemic area in Northwest India for 15 years: Results and future directions after screening more than 300 thousand donors",
+      "authors": [
+        "Anshika Yadav",
+        "G. N. Gupta",
+        "Pankaj Agarwal"
+      ],
+      "venue": "Asian Journal of Transfusion Science",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This comprehensive screening program revealed a relatively high prevalence of Thalassemia trait in 2.29% of the screened population, and communities with higher prevalence were educated about the disease and a targeted screening program will be further carried out in these ethnic groups.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.4103/ajts.ajts_242_23",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This comprehensive screening program revealed a relatively high prevalence of Thalassemia trait in 2.29% of the screened population, and communities with higher prevalence were educated about the disease and a targeted screening program will be further carried out in these ethnic groups.",
+      "rank": 178
+    },
+    {
+      "doi": "10.1097/MD.0000000000047953",
+      "arxiv_id": "",
+      "title": "Diagnostic accuracy of hematological indices and logistic regression for β-thalassemia carrier screening in children",
+      "authors": [
+        "Zeynep Uze Okay",
+        "B. Okay"
+      ],
+      "venue": "Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 33,
+      "tldr": "Simple complete blood count-derived indices offer reliable, cost-effective screening for β-thalassemia carriers, potentially reducing unnecessary electrophoresis testing by 60% to 70% in resource-limited settings.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Simple complete blood count-derived indices offer reliable, cost-effective screening for β-thalassemia carriers, potentially reducing unnecessary electrophoresis testing by 60% to 70% in resource-limited settings.",
+      "rank": 179
+    },
+    {
+      "doi": "10.1371/journal.pone.0350387",
+      "arxiv_id": "",
+      "title": "Diagnostic performance of discriminant formulas and machine learning models for detecting β-thalassemia trait in Bangladesh",
+      "authors": [
+        "Rumana Mahtarin",
+        "Kasrina Azad",
+        "Rakib Talukder",
+        "Rynak Rahmat",
+        "Suzana Chowdhury Nitu",
+        "Arif Mahmud Howlader",
+        "Mohabbat Hossain",
+        "Mst Sharmin Aktar Mukta",
+        "Mohammad Tanbir Habib",
+        "A. B. Siddik",
+        "Nishat Sultana",
+        "Z. Kawser",
+        "Umme Kulsum",
+        "Faisal Zainal Abedin",
+        "Nusrat Sultana",
+        "Md. Ahsan Habib",
+        "A. Hossain",
+        "F. A. Noor",
+        "Ahmad Zubair Mahdi",
+        "Muhammad Asaduzzaman",
+        "E. Chowdhury",
+        "Md Rofiqur Rahman",
+        "Firdausi Qadri",
+        "Mst. Noorjahan Begum",
+        "A. Nabi"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 71,
+      "tldr": "The combination of novel discriminant formula DF-6 and integration of XGB and SVM ML models can substantially strengthen nationwide screening programs to reduce the burden of thalassemia in Bangladesh.",
+      "is_oa": true,
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0350387&type=printable",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The combination of novel discriminant formula DF-6 and integration of XGB and SVM ML models can substantially strengthen nationwide screening programs to reduce the burden of thalassemia in Bangladesh.",
+      "rank": 180
+    },
+    {
+      "doi": "10.31436/imjm.v25i02.3077",
+      "arxiv_id": "",
+      "title": "Exploring Transferrin Gene Expression as A Biomarker of Ineffective Erythropoiesis and Iron Overload in HbE/β-Thalassemia and β-Thalassemia Trait",
+      "authors": [
+        "W. R. Wan Taib",
+        "Hanan Kamel M. Saad",
+        "Azly Sumanty Ab Ghani",
+        "F. A. Al-Rawashde",
+        "Imilia Ismail",
+        "M. F. Johan",
+        "Hamid Ali Naji Al-Jamal"
+      ],
+      "venue": "IIUM Medical Journal Malaysia",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "Findings suggest that TfR1 and TfR2 expression patterns may serve as potential biomarkers for assessing IE and iron overload in β-thalassaemia and elevated sTfR levels indicated that the transfusion regimen was insufficient to suppress ineffective erythropoiesis.",
+      "is_oa": true,
+      "oa_url": "https://journals.iium.edu.my/kom/index.php/imjm/article/download/3077/1660",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings suggest that TfR1 and TfR2 expression patterns may serve as potential biomarkers for assessing IE and iron overload in β-thalassaemia and elevated sTfR levels indicated that the transfusion regimen was insufficient to suppress ineffective erythropoiesis.",
+      "rank": 181
+    },
+    {
+      "doi": "10.7759/cureus.70251",
+      "arxiv_id": "",
+      "title": "Genetic Study for Identifying Beta Thalassemia Trait in Relatives of Children with Beta Thalassemia Major",
+      "authors": [
+        "Osama M Elasheer",
+        "Shimaa M Radi",
+        "M. Khalaf",
+        "M. H. Ghazally",
+        "Dalia A Nigm",
+        "Mostafa M. Embaby"
+      ],
+      "venue": "Cureus",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "The beta thalassemia carrier rate was found to be highly prevalent among relatives of beta thalassemia major children, and the value of tested gene study is still limited in the detection of carrier rates.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The beta thalassemia carrier rate was found to be highly prevalent among relatives of beta thalassemia major children, and the value of tested gene study is still limited in the detection of carrier rates.",
+      "rank": 182
+    },
+    {
+      "doi": "10.53555/j42sm771",
+      "arxiv_id": "",
+      "title": "SCREENING FOR β -THALASSEMIA TRAIT OR OTHER HEMOGLOBINOPATHIES IN FAMILIES OF THALASSEMIA MAJOR PATIENTS",
+      "authors": [
+        "Maliha Asif",
+        "S. Fatima",
+        "Yasmeen Batool",
+        "Nidda Ayub",
+        "N. Alavi",
+        "Ali Raza",
+        "Bakhtawar Farooq",
+        "Aftab Hussain",
+        "U. Ubaid"
+      ],
+      "venue": "Journal of Population Therapeutics and Clinical Pharmacology",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "C cascade screening seems to be one of the most cost-effective approaches to identify carriers of beta thalassemia carriers in third world countries like us.",
+      "is_oa": true,
+      "oa_url": "https://www.jptcp.com/index.php/jptcp/article/download/11844/11166",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "C cascade screening seems to be one of the most cost-effective approaches to identify carriers of beta thalassemia carriers in third world countries like us.",
+      "rank": 183
+    },
+    {
+      "doi": "10.1093/EURHEARTJ/EHY566.P5720",
+      "arxiv_id": "",
+      "title": "P5720Impact of β-thalassemia trait carrier state on inflammatory markers and body mass index in patients with newly diagnosed hypertension",
+      "authors": [
+        "K. Lampropoulos",
+        "E. Triantafyllou",
+        "G. Bazoukis",
+        "G. Tse",
+        "A. Megalou",
+        "A. Triantafyllou"
+      ],
+      "venue": "European Heart Journal",
+      "year": 2018,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/eurheartj/article-pdf/39/suppl_1/ehy566.P5720/25575465/ehy566.p5720.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "10.51642/ppmj.v34i02.548",
+      "arxiv_id": "",
+      "title": "DIAGNOSTIC ACCURACY OF RDWI TO DIFFERENTIATE IRON DEFICIENCY ANEMIA AND THALASSEMIA TRAIT IN BORDERLINE HBA2",
+      "authors": [
+        "Naghmana Mazher",
+        "M. A. Ali Khan",
+        "Maryam I. Salman",
+        "Fareeha Imran",
+        "Shabnam Bashir"
+      ],
+      "venue": "Pakistan Postgraduate Medical Journal",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "RDWI is a good indicator to differentiate between IDA and beta thalassemia trait (sensitivity 76.6% and specificity 56.6%), but in all cases of borderline HbA2 genetic analysis should be done to see the mutation and to confirm the diagnosis.",
+      "is_oa": true,
+      "oa_url": "http://mail.ppmj.org.pk/index.php/ppmj/article/download/548/401",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "RDWI is a good indicator to differentiate between IDA and beta thalassemia trait (sensitivity 76.6% and specificity 56.6%), but in all cases of borderline HbA2 genetic analysis should be done to see the mutation and to confirm the diagnosis.",
+      "rank": 185
+    },
+    {
+      "doi": "10.1186/s43042-025-00767-8",
+      "arxiv_id": "",
+      "title": "β-thalassemia due to de novo mutation IVS1-5(G > C) at HBB gene in three cases from West Bengal",
+      "authors": [
+        "Jyoti Shaw",
+        "Sunistha Bhattacharjee",
+        "Maitreyee Bhattacharyya"
+      ],
+      "venue": "Egyptian Journal of Medical Human Genetics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "Three cases of de novo IVS1-5(G > C) mutation where father is carrier but mother is normal are reported, indicating that globin genes are one of the hotspots for DNA alterations in human genome and predispose the risk of disease in newborn even in healthy couples.",
+      "is_oa": true,
+      "oa_url": "https://jmhg.springeropen.com/counter/pdf/10.1186/s43042-025-00767-8",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Three cases of de novo IVS1-5(G > C) mutation where father is carrier but mother is normal are reported, indicating that globin genes are one of the hotspots for DNA alterations in human genome and predispose the risk of disease in newborn even in healthy couples.",
+      "rank": 186
+    },
+    {
+      "doi": "10.3760/cma.j.cn511374-20250428-00260",
+      "arxiv_id": "",
+      "title": "[Genetic screening and typing study of Thalassemia among ethnic Miao Group in Qianxinan area of China].",
+      "authors": [
+        "Xiuxiu Zhang",
+        "Yan He",
+        "Yonghui Liao",
+        "Panpan Li",
+        "D. Tang",
+        "Hong Zhao",
+        "Hongmei Murong"
+      ],
+      "venue": "Zhonghua yi xue yi chuan xue za zhi = Zhonghua yixue yichuanxue zazhi = Chinese journal of medical genetics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The detection rate of thalassemia among the ethnic Miaos from Qianxinan Prefecture is relatively high, which primarily consisted of α-thalassemia.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The detection rate of thalassemia among the ethnic Miaos from Qianxinan Prefecture is relatively high, which primarily consisted of α-thalassemia.",
+      "rank": 187
+    },
+    {
+      "doi": "10.7759/cureus.84254",
+      "arxiv_id": "",
+      "title": "Ischemic Stroke as the Initial Presentation of Sickle Beta Thalassemia in an Adolescent: A Case Report",
+      "authors": [
+        "Shivangi Sinha",
+        "Jignesh Sharma",
+        "S. Arun",
+        "Amber Kumar",
+        "Shikha Malik"
+      ],
+      "venue": "Cureus",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "A 13-year-old girl presenting with sudden-onset right-sided weakness, facial deviation, and aphasia is reported, highlighting the quiet progression of hemoglobinopathies and the necessity for heightened clinical suspicion.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A 13-year-old girl presenting with sudden-onset right-sided weakness, facial deviation, and aphasia is reported, highlighting the quiet progression of hemoglobinopathies and the necessity for heightened clinical suspicion.",
+      "rank": 188
+    },
+    {
+      "doi": "10.1088/2752-5309/ae09d1",
+      "arxiv_id": "",
+      "title": "Sickle cell, thalassemia, and heat: risk estimates and equity policy considerations from an exploratory timeseries study in California",
+      "authors": [
+        "Dharshani Pearson",
+        "Beth Apsel Winger",
+        "K. Ebisu"
+      ],
+      "venue": "Environmental Research: Health",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 67,
+      "tldr": "The relationship between daily apparent temperature and hemoglobinopathy-related hospitalizations in California using patient discharge data (PDD) and a two-stage timeseries study design with Poisson regression to estimate a state-wide hospitalization risk estimate was analyzed.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1088/2752-5309/ae09d1",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The relationship between daily apparent temperature and hemoglobinopathy-related hospitalizations in California using patient discharge data (PDD) and a two-stage timeseries study design with Poisson regression to estimate a state-wide hospitalization risk estimate was analyzed.",
+      "rank": 189
+    },
+    {
+      "doi": "10.4103/joah.joah_49_25",
+      "arxiv_id": "",
+      "title": "Associations between Serum Ferritin Levels, Age-stratified Hematological Parameters, and Hemoglobin A2 Levels in Iraqi Beta Thalassemia Carriers",
+      "authors": [
+        "Zainab W Al-maaroof",
+        "Liqaa Mohammed Al Sharifi"
+      ],
+      "venue": "Journal of Applied Hematology",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 38,
+      "tldr": "Serum ferritin levels are evaluated in Iraqi BTT carriers and correlate them with HbA2, erythrocyte indices, and age-dependent hematological variations to refine the diagnostic and management protocols to mitigate phenotypic misinterpretation.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.4103/joah.joah_49_25",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Serum ferritin levels are evaluated in Iraqi BTT carriers and correlate them with HbA2, erythrocyte indices, and age-dependent hematological variations to refine the diagnostic and management protocols to mitigate phenotypic misinterpretation.",
+      "rank": 190
     }
   ]
 }

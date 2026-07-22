@@ -6,7 +6,7 @@
     "tier": "free",
     "expires": null,
     "notes": "OpenAlex API key for higher rate limit (1 RPS dedicated). Free tier, no expiry reported.",
-    "last_checked": "2026-07-16T09:00:43",
+    "last_checked": "2026-07-21T09:00:31",
     "last_used": null
   },
   "semanticscholar": {
@@ -16,7 +16,7 @@
     "tier": "free",
     "expires": null,
     "notes": "S2 API key for higher rate limit. Free tier, no expiry reported.",
-    "last_checked": "2026-07-16T09:00:44",
+    "last_checked": "2026-07-21T09:00:33",
     "last_used": null
   },
   "core": {
@@ -26,7 +26,7 @@
     "tier": "free",
     "expires": null,
     "notes": "CORE v3 API key for higher rate limit. Free tier, no expiry reported.",
-    "last_checked": "2026-07-16T09:00:48",
+    "last_checked": "2026-07-21T09:00:36",
     "last_used": null
   },
   "unpaywall": {
@@ -36,7 +36,7 @@
     "tier": "free",
     "expires": null,
     "notes": "Unpaywall API requires verified email — registered 2026-07-04",
-    "last_checked": "2026-07-16T09:00:49",
+    "last_checked": "2026-07-21T09:00:37",
     "last_used": null
   }
 }

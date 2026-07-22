@@ -1,466 +1,2501 @@
 {
   "query_id": "q050",
   "query": "当前社会形态是否比 20 世纪带给人们更多精神疾病 (mental illness prevalence 1990-2020 cohort meta)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 10
+  "topic_bucket": "social",
+  "source": "user",
+  "generated_at": "2026-07-22T11:32:41",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 121,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 1,
+    "aminer": 20,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1109/jproc.2023.3238524",
+      "title": "Object Detection in 20 Years: A Survey",
+      "authors": [
+        "Zhengxia Zou"
+      ],
+      "venue": "PROCEEDINGS OF THE IEEE",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5cda948de1cd8ecf46bb4b94",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.22331/q-2021-04-15-433",
+      "title": "How to Factor 2048 Bit RSA Integers in 8 Hours Using 20 Million Noisy Qubits",
+      "authors": [
+        "Craig Gidney"
+      ],
+      "venue": "QUANTUM",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce831433a55ac989e9ae58b",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1093/nar/gkaa977",
+      "title": "The InterPro Protein Families and Domains Database: 20 Years On",
+      "authors": [
+        "Matthias Blum"
+      ],
+      "venue": "Nucleic acids research",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fa67302d4150a363c24bf3b",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1038/s41586-021-03308-6",
+      "title": "A 20-Year Retrospective Review of Global Aquaculture",
+      "authors": [
+        "Rosamond L. Naylor"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65701820939a5f4082882e4c",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1016/S1473-3099(20)30251-6",
+      "title": "Early Dynamics Of Transmission And Control Of Covid-19: A Mathematical Modelling Study (Vol 20, Pg 553, 2020)",
+      "authors": [
+        "A. J. Kucharski"
+      ],
+      "venue": "LANCET INFECTIOUS DISEASES",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619b7eb01c45e57ce9d3f13c",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.37074/jalt.2020.3.1.7",
+      "title": "COVID-19: 20 Countries’ Higher Education Intra-Period Digital Pedagogy Responses",
+      "authors": [
+        "Joseph Crawford"
+      ],
+      "venue": "Journal of Applied Learning & Teaching",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "622864295aee126c0f8ccb26",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1093/nar/gky1055",
+      "title": "The Gene Ontology Resource: 20 Years and Still GOing Strong",
+      "authors": [
+        "The Gene Ontology Consortium"
+      ],
+      "venue": "Nucleic acids research",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f8f48da562944aca536bf",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1093/nar/gkz297",
+      "title": "The PSIPRED Protein Analysis Workbench: 20 Years On",
+      "authors": [
+        "Daniel W A Buchan"
+      ],
+      "venue": "Nucleic acids research",
+      "year": 2019,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce3ad16ced107d4c65b3465",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1016/j.neuron.2023.04.023",
+      "title": "20 Years of the Default Mode Network: A Review and Synthesis.",
+      "authors": [
+        "Vinod Menon"
+      ],
+      "venue": "NEURON",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af66e23fda6d7f063a3c03",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1038/s41573-021-00195-4",
+      "title": "Kinase Drug Discovery 20 Years after Imatinib: Progress and Future Directions",
+      "authors": [
+        "Philip Cohen"
+      ],
+      "venue": "Nature Reviews Drug Discovery",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60a63c6ce4510cd7c85c14f2",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1038/s42005-019-0249-y",
+      "title": "20 Years of Developments in Optical Frequency Comb Technology and Applications",
+      "authors": [
+        "Tara Fortier"
+      ],
+      "venue": "Communications Physics",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d7b71503a55ac0647653892",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1364/oe.26.024190",
+      "title": "Fiber-optic Transmission and Networking: the Previous 20 and the Next 20 Years [Invited].",
+      "authors": [
+        "Peter J Winzer"
+      ],
+      "venue": "Optics express",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f8a3cda562944ac9ac1df",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1093/nar/gkae1011",
+      "title": "The PRIDE Database at 20 Years: 2025 Update.",
+      "authors": [
+        "Yasset Perez-Riverol"
+      ],
+      "venue": "Nucleic acids research",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "672935a201d2a3fbfc52fbb9",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.22331/q-2023-08-01-1071",
+      "title": "20-Mode Universal Quantum Photonic Processor",
+      "authors": [
+        "Caterina Taballione"
+      ],
+      "venue": "QUANTUM",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "622183525aee126c0f23c78e",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1038/s41567-022-01716-7",
+      "title": "20 Years of Network Community Detection",
+      "authors": [
+        "Santo Fortunato"
+      ],
+      "venue": "Nature Physics",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ea18d25aee126c0fca0f3d",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1109/lgrs.2020.2993899",
+      "title": "ShipDeNet-20: an Only 20 Convolution Layers and <1-MB Lightweight SAR Ship Detector",
+      "authors": [
+        "Tianwen Zhang"
+      ],
+      "venue": "IEEE GEOSCIENCE AND REMOTE SENSING LETTERS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fae6b09d4150a363ce73178",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1111/conl.12773",
+      "title": "Working Landscapes Need at Least 20% Native Habitat",
+      "authors": [
+        "Lucas A. Garibaldi"
+      ],
+      "venue": "CONSERVATION LETTERS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff6898fd4150a363ccaad9c",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1007/s10660-021-09464-1",
+      "title": "20 Years of Electronic Commerce Research",
+      "authors": [
+        "Kumar  Satish"
+      ],
+      "venue": "Electronic Commerce Research",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60911ca0e4510cd7c88cc878",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1177/0149206319869435",
+      "title": "EPM 20/20: A Review, Framework, and Research Agenda for Electronic Performance Monitoring",
+      "authors": [
+        "Daniel M. Ravid"
+      ],
+      "venue": "JOURNAL OF MANAGEMENT",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5db9291347c8f766461edf8d",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1016/j.eclinm.2020.100289",
+      "title": "The Coronavirus 2019-Ncov Epidemic: is Hindsight 20/20?",
+      "authors": [
+        "Monica Malta"
+      ],
+      "venue": "EClinicalMedicine",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e68c3e993d709897cd4bfe3",
+      "matched_phrase": "20",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.70693/rwsk.v1i5.985",
+      "title": "数字年龄歧视——人工智能给老年人带来的挑战和机遇",
+      "authors": [
+        "吴静",
+        "刘晓燕"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人工智能（AI）和机器学习正在重塑医疗、教育、就业、金融和法律等领域。然而，AI系统的开发数据往往包含社会显性和隐性偏见，其预测模型可能加剧社会不平等和权力失衡等问题。当前，关于AI如何延续种族、性别和阶级歧视的讨论已成主流，但对其年龄歧视的研究相对不足。面对全球老龄化与AI技术的快速发展，亟需审视AI系统中的年龄偏见。本文重点探讨AI年龄歧视现象，提出一个概念模型，并分析相关伦理和法律影响，分析数字世界的不公正循环如何助长AI年龄歧视。最后，本研究指出未来数字年龄歧视的研究方向，以完善该领域的知识体系。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.37155/2661-4766-0204-3",
+      "title": "心理治疗在精神疾病患者康复期中的应用效果分析",
+      "authors": [
+        "李敏",
+        "曹新征"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2020,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.54254/3049-7825/2025.21351",
+      "title": "精神分析与乌托邦的碰撞：论白日梦中的乌托邦精神",
+      "authors": [
+        "王, 迪一"
+      ],
+      "venue": "人文社会发展",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>恩斯特·布洛赫试图通过将乌托邦精神注入精神分析学来塑造一种全新的白日梦理论，他一方面吸纳了精神分析学的科学论断，另一方面对精神分析的动力源、质料源与解析路径进行了乌托邦化的重塑。布洛赫塑造这种乌托邦化白日梦的理论旨归是唤醒其内核的乌托邦精神，布洛赫透过战争的灾难发现了现代人的根本困境：人的精神正在不断枯萎，个体超越维度的丧失导致现代人逐步沦为“社会的动物”。这种洞见时至今日仍极具反思价值，在布洛赫乌托邦哲学的理论视域下，脱离这种困境的唯一出路就是唤醒潜藏于人乌托邦精神：首先通过内在的道路达到“自我相遇”，其次通过外在道路实现其现实转化，使我成为“真我”，世界成为“家园”。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1360/n072015-00182",
+      "title": "中更新世晚期以来中国古人类化石形态特征的多样性",
+      "authors": [
+        "刘, 武",
+        "邢, 松",
+        "吴, 秀杰"
+      ],
+      "venue": "SCIENTIA SINICA Terrae",
+      "year": 2016,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.25",
+      "title": "公众对人工智能态度的形成机制探究",
+      "authors": [
+        "张洁仪"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>公众对人工智能的态度既包含技术采纳的乐观期待，也呈现出深层的伦理审慎。本研究聚焦态度背后的形成机制，梳理并整合已有新闻传播学领域实证研究成果，归纳出三条核心路径：将AI视为社会行动者的“心智模拟”，在信息判断中权衡信任与风险的“认知评估”，以及由社会文化叙事与技术想象共同建构的“文化建构”。研究指出，这三条路径并非彼此独立，而是在现实情境中交叉耦合，构成公众态度形成的复杂系统。本文旨在提供一个系统的理论框架，用以解释公众在AI接受过程中的心理反应、道德判断与文化互动，为未来相关研究与政策制定提供参考视角。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.70693/rwsk.v1i2.628",
+      "title": "19世纪中至20世纪初俄罗斯征服和统治突厥斯坦期间的伊斯兰教政策",
+      "authors": [
+        "陶克清"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>19世纪中叶至20世纪初，俄罗斯帝国在征服与统治突厥斯坦地区期间，制定并实施了一系列伊斯兰教的管理政策。这些政策充分体现了俄罗斯帝国在殖民扩张过程中，对伊斯兰教这一重要社会文化力量的复杂态度和应对策略。从最初的尊重与非干预，到中期的俄化政策推行以及对新兴意识形态的应对，再到后期更为深度的政策调整，这一系列演变不仅反映了俄罗斯帝国在整合中亚地区过程中遭遇的诸多挑战与困境，也为当代世界处理多元文化共存、宗教与政治关系等全球性议题，提供了宝贵的历史参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.63887/ssrp.2025.1.7.24",
+      "title": "当前中西方“大女主”剧中女性形象建构对比分析",
+      "authors": [
+        "王文雨"
+      ],
+      "venue": "社会科学研究与实践",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着生活水平提高和精神文化需求增多，影视剧作为大众媒介中不可忽视的一支中坚力量，受重视程度得到显著提升。同时，女性意识高涨，以女性故事为核心、关注女性生存状态的电视剧涌现，女性形象受广泛讨论。其中，“大女主”电视剧题材热门，吸引大批女性观众，引发收视热潮与争议。国内外“大女主”影视剧发展势头猛，但在女性角色形象描绘、故事线叙事方法和价值观传递上差异大。本文将对比国内外火爆的“大女主”影视剧，分析“大女主”影视剧中女性主义呈现层面的中外差异现象及传播意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.70693/rwsk.v5i2.457",
+      "title": "“两路”精神融入高职学生社区“三维六径”的育人机制研究",
+      "authors": [
+        "巫群珍"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>“两路”精神是交通类高职院校落实立德树人、培育工匠精神的价值根基。在“三全育人”改革背景下，“一站式”学生社区为其精神转化提供了实践场域。本文融合红色文化育人、场域理论与协同育人理论，依托四川交通职业技术学院构建“制度嵌入—文化浸润—实践养成”三位一体育人机制，并提出六条实施路径。为期一年的准实验研究前测528份、后测512份数据显示：学生对“两路”精神认知率由67.4%升至94.3%（p&lt;0.001），核心内涵理解率由32.8%升至67.5%（p&lt;0.001），社区活动参与率由34.2%升至78.6%（p&lt;0.001）。该机制在提升学生精神认同与参与实效方面成效显著。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.54254/3049-7825/2026.32400",
+      "title": "体验与回应，《社戏》之“我”的多重姿态",
+      "authors": [
+        "杨, 爱玲"
+      ],
+      "venue": "人文社会发展",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>《社戏》以北京与赵庄看戏的生存体验对比为张力，揭示了一个现代性命题：前者空间逼仄、人情僵硬，不适于生存；后者空间开阔、人情弹性，使“身体舒展到说不出的大”。这种差异源于社会空间从熟人村社向陌生都市的转换。三次看戏更交织社会与人生的双重颓败，民国改元未涤旧弊，个体从童年步入中年，希望渐次幻灭。面对无处可归的困境，“我”既不退返乡村，亦不融入都市，以否定性姿态成为“永远的革命者”。本文透过《社戏》文本抒情表层，开掘其蕴含的现代性思考与革命精神。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
       "doi": "10.65285/rwyshkx.v2i2.023",
       "title": "精神生态视域下《紫木槿》中康比丽的精神重建之路研究",
-      "abstract": "<jats:p>当前，在生态批评研究领域，“精神生态”已然成为探讨人类精神失衡问题的重要理论框架。在《紫木槿》中，奇玛曼达·恩戈兹·阿迪契讲述了 15 岁少女康比丽在专制父亲与政治动荡的双重阴影下，通过信仰、爱与自我觉醒，最终挣脱束缚、走向自由的故事。本文以精神生态为视角，探析康比丽从精神失衡到实现精神重建的发展过程。这一过程，深受其回归自然、建立互助的人际关系，以及找回自我主体性等多重因素的深刻影响。通过解析康比丽的成长路径，也为文学批评中关于人类精神创伤的疗愈研究提供了新的阐释维度。</jats:p>",
-      "year": 2026,
+      "authors": [
+        "王, 狄"
+      ],
       "venue": "人文与社会科学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>当前，在生态批评研究领域，“精神生态”已然成为探讨人类精神失衡问题的重要理论框架。在《紫木槿》中，奇玛曼达·恩戈兹·阿迪契讲述了 15 岁少女康比丽在专制父亲与政治动荡的双重阴影下，通过信仰、爱与自我觉醒，最终挣脱束缚、走向自由的故事。本文以精神生态为视角，探析康比丽从精神失衡到实现精神重建的发展过程。这一过程，深受其回归自然、建立互助的人际关系，以及找回自我主体性等多重因素的深刻影响。通过解析康比丽的成长路径，也为文学批评中关于人类精神创伤的疗愈研究提供了新的阐释维度。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 30
     },
     {
-      "rank": 2,
       "doi": "10.2307/jj.8595646.130",
       "title": "我们是比她更孤独的人",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Rong, Lin"
+      ],
       "venue": "Writing Woman Anthology",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 31
     },
     {
-      "rank": 3,
       "doi": "10.52926/jpmjpr2461",
       "title": "",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "grant",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "grant"
+      "rank": 32
     },
     {
-      "rank": 4,
       "doi": "10.70693/rwsk.v1i7.1188",
       "title": "19世纪末20世纪初在美华人反歧视抗争研究",
-      "abstract": "<jats:p>1882年5月6日，美国国会正式通过《关于实施与中国人有关的某些条约条款的法令》的排华法案，这一官方表态使得民间原已存在的排华情绪迅速膨胀，继而掀起了美国社会长达半个多世纪的排华浪潮，美国华人群体也因此饱受种族歧视和排挤。面对层出不穷的歧视性条例和暴力排华事件，部分华人不堪忍受选择离开美国，部分华人则选择继续留在北美大地。为了维护自身的合法权益，在美华人群体采取了多种手段同不利的社会环境进行了顽强的斗争，尽管最终没能直接推动美国排华法案的废除，但华人的不懈斗争也使得美国政府排华目的最终破产，为华人融入美国主流社会奠定了基础。</jats:p>",
-      "year": null,
+      "authors": [
+        "吴妙璇"
+      ],
       "venue": "人文与社会科学学刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>1882年5月6日，美国国会正式通过《关于实施与中国人有关的某些条约条款的法令》的排华法案，这一官方表态使得民间原已存在的排华情绪迅速膨胀，继而掀起了美国社会长达半个多世纪的排华浪潮，美国华人群体也因此饱受种族歧视和排挤。面对层出不穷的歧视性条例和暴力排华事件，部分华人不堪忍受选择离开美国，部分华人则选择继续留在北美大地。为了维护自身的合法权益，在美华人群体采取了多种手段同不利的社会环境进行了顽强的斗争，尽管最终没能直接推动美国排华法案的废除，但华人的不懈斗争也使得美国政府排华目的最终破产，为华人融入美国主流社会奠定了基础。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 33
     },
     {
-      "rank": 5,
       "doi": "10.12677/ass.2016.52030",
       "title": "Development of the Mental Illness Attitude and Stereotype Questionnaire—Preliminary Study",
-      "abstract": "",
-      "year": 2016,
+      "authors": [
+        "罗, 彦婷"
+      ],
       "venue": "Advances in Social Sciences",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 34
     },
     {
-      "rank": 6,
       "doi": "10.70693/rwsk.v2i1.174",
       "title": "19世纪下半叶至20世纪初里海——伏尔加河流域渔业工人卫生医疗体系的探讨",
-      "abstract": "<jats:p>19世纪下半叶至20世纪初期，尽管俄国存在官方批准的卫生规章，但渔业工人实际上无法获得专业医疗服务，相关职责被转嫁给私人渔业资本家。卫生监管失效源于医疗人员配置不足、卫生辖区幅员辽阔而交通设施匮乏导致卫生医师巡查困难、渔猎业管理局与地方行政机关及渔业资本家间的官僚协调障碍等因素。同时，阿斯特拉罕省特殊的地理环境与自然气候条件，叠加卫生医疗体系的缺陷，致使各类流行病大规模蔓延。由于缺乏国家免费医疗保障体系与专业医务人员，传染病防控机制形同虚设，最终造成渔业工人死亡率居高不下。因此，渔业工人卫生医疗体系的建立符合俄国当时的社会需要。本文主要探讨的是这一时期里海-伏尔加河流域渔业工人卫生医疗保健体系的形成。</jats:p>",
-      "year": null,
+      "authors": [
+        "龚嘉乐"
+      ],
       "venue": "人文与社会科学学刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>19世纪下半叶至20世纪初期，尽管俄国存在官方批准的卫生规章，但渔业工人实际上无法获得专业医疗服务，相关职责被转嫁给私人渔业资本家。卫生监管失效源于医疗人员配置不足、卫生辖区幅员辽阔而交通设施匮乏导致卫生医师巡查困难、渔猎业管理局与地方行政机关及渔业资本家间的官僚协调障碍等因素。同时，阿斯特拉罕省特殊的地理环境与自然气候条件，叠加卫生医疗体系的缺陷，致使各类流行病大规模蔓延。由于缺乏国家免费医疗保障体系与专业医务人员，传染病防控机制形同虚设，最终造成渔业工人死亡率居高不下。因此，渔业工人卫生医疗体系的建立符合俄国当时的社会需要。本文主要探讨的是这一时期里海-伏尔加河流域渔业工人卫生医疗保健体系的形成。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 35
     },
     {
-      "rank": 7,
       "doi": "10.11151/eds1951.21.177",
       "title": "SOCIAL CLASS AND MENTAL ILLNESS",
-      "abstract": "",
-      "year": 1966,
+      "authors": [
+        "Hatano, Giyoo",
+        "Hatano, Kyoko"
+      ],
       "venue": "The Journal of Educational Sociology",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 1966,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 36
     },
     {
-      "rank": 8,
       "doi": "10.18356/d97f80aa-zh",
       "title": "减少21世纪人类发展不平等的政策：我们有一个选择",
-      "abstract": "",
-      "year": 2020,
+      "authors": [],
       "venue": "Human Development Report (Chinese Version)",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 37
     },
     {
-      "rank": 9,
       "doi": "10.12677/wls.2022.104085",
       "title": "Subject Alienation in a Morbid Society—Illness Narrative in A Rose for Emily",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "沈, 欣雨"
+      ],
       "venue": "World Literature Studies",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 38
     },
     {
-      "rank": 10,
       "doi": "10.70693/rwsk.v2i4.400",
       "title": "20世纪上半叶新加坡胶商的”传承”交替",
-      "abstract": "<jats:p>20世纪初，殖民者向东南亚引入橡胶种子之后，马来亚（今西马来西亚地区）和荷属东印度（今印度尼西亚）迅速成为世界主要橡胶产地。新加坡作为东南亚橡胶输往欧洲消费国的必经之路，凭借自由港政策大力发展橡胶转口贸易，橡胶业迅速发展。最初橡胶经营者以欧洲人为主，直到第一次世界大战之后，华人胶商人数才逐渐增多。当时新加坡橡胶业的经营者们凭借族亲、姻亲、乡亲的关系紧密联络，交织成胶商网络，一代接一代地推动新加坡橡胶业向前发展。</jats:p>",
-      "year": null,
+      "authors": [
+        "林晓晓"
+      ],
       "venue": "人文与社会科学学刊",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>20世纪初，殖民者向东南亚引入橡胶种子之后，马来亚（今西马来西亚地区）和荷属东印度（今印度尼西亚）迅速成为世界主要橡胶产地。新加坡作为东南亚橡胶输往欧洲消费国的必经之路，凭借自由港政策大力发展橡胶转口贸易，橡胶业迅速发展。最初橡胶经营者以欧洲人为主，直到第一次世界大战之后，华人胶商人数才逐渐增多。当时新加坡橡胶业的经营者们凭借族亲、姻亲、乡亲的关系紧密联络，交织成胶商网络，一代接一代地推动新加坡橡胶业向前发展。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 39
+    },
+    {
+      "doi": "10.70693/rwsk.v1i6.1082",
+      "title": "身体物质的动态形构 ——从器官的可塑性谈十八世纪的唯物主义论争",
+      "authors": [
+        "夏铮铮"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "<jats:p>18世纪中叶的水螅实验触发自然研究从宇宙学向生物学转向，引发唯物主义哲学论争。狄德罗以水螅再生论证物质自组织与转化论，主张物种为无序演变产物，人类器官具可塑性及偶然性；博内通过物质化“存在之链”构建目的论形而上学，认为器官可塑性指向神性完善；赫姆斯特惠斯融合目的论与超唯物主义，将器官增殖视为人类发展目标，提出“物质潜在外延可变”主张。三者交锋最终催生“技术形而上学”，即以器官改造为认知工具重塑世界。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
     },
     {
-      "rank": 11,
-      "doi": "arXiv:2307.10513v2",
-      "title": "Technology in Association With Mental Health: Meta-ethnography",
-      "abstract": "",
+      "doi": "10.12677/wls.2023.113039",
+      "title": "A Study on Mental Illness Writing in The Caretaker from the Perspective of Humanistic Care",
+      "authors": [
+        "张, 濒月"
+      ],
+      "venue": "World Literature Studies",
       "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 12,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 41
     },
     {
-      "rank": 12,
-      "doi": "arXiv:2110.10780v3",
-      "title": "An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C)",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 13,
-      "doi": "arXiv:2002.08901v1",
-      "title": "Identifying physical health comorbidities in a cohort of individuals with severe mental illness: An application of SemEHR",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 14,
-      "doi": "arXiv:2003.05870v1",
-      "title": "Natural Language Interaction to Facilitate Mental Models of Remote Robots",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 15,
-      "doi": "10.1016/j.inffus.2022.11.031",
-      "title": "Emotion fusion for mental illness detection from social media: A survey",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 16,
-      "doi": "arXiv:2009.01672v1",
-      "title": "Yet Meta Learning Can Adapt Fast, It Can Also Break Easily",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 17,
-      "doi": "arXiv:2008.07738v1",
-      "title": "Usable Security for ML Systems in Mental Health: A Framework",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 18,
-      "doi": "10.3389/fpsyt.2022.810057",
-      "title": "Financial technologies (FinTech) for mental health: The potential of objective financial data to better understand the relationships between financial behavior and mental health",
-      "abstract": "",
-      "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 19,
-      "doi": "arXiv:2311.11482v9",
-      "title": "Meta Prompting for AI Systems",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 20,
-      "doi": "arXiv:2507.19218v3",
-      "title": "Technological folie à deux: Feedback Loops Between AI Chatbots and Mental Illness",
-      "abstract": "",
+      "doi": "10.64216/3080-1516.25.09.056",
+      "title": "剪刀下的宇宙观：民间剪纸与乡土社会精神世界探赜",
+      "authors": [],
+      "venue": "当代教育与艺术",
       "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.70693/rwsk.v2i3.333",
+      "title": "多元与在地的交织——两湖水彩表现题材的当代维度延展",
+      "authors": [
+        "马世杰"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>回溯历史，两湖水彩具有鲜明的地域特征和历史特色，在承续既有的面貌上，其逐渐吸纳了诸多当代性的表达范式，对传统题材的表现与延展便是典型案例。该文章以两湖中青年水彩画家群体为研究起点，结合相关创作案例，对静物、风景、人物三个层次的表现题材进行探索。通过对画面元素的形式分析与内容考察，笔者认为：两湖水彩对传统题材类型的表达已超越固有文本，转向超静物、场景以及人文等多元层次的深度挖掘，虽然它们均源自对地域经验的体悟，但却在向内的路径中呈现出超越性的面貌，即多元化与在地性的交织。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1163/22136746-00901009",
+      "title": "国家?权力?隐形的支配力――20世纪前期华北乡村权力主角的社会分层及生成逻辑",
+      "authors": [],
+      "venue": "Rural China",
+      "year": 2012,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.14793/chi_etd.28",
+      "title": "香港短篇小說的精神疾病書寫真(1990-2010)",
+      "authors": [
+        "TSANG, Pui Ting"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.54254/3049-7825/2026.33771",
+      "title": "日神与酒神：多恩与华兹华斯诗歌中“悖论”生成方式比较研究",
+      "authors": [
+        "覃, 蜜花"
+      ],
+      "venue": "人文社会发展",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文以“悖论”为核心概念，比较约翰·多恩与威廉·华兹华斯的诗歌，揭示二者在悖论生成方式及其背后世界观的差异。文章通过文本细读与诗歌史语境的结合，并引入尼采的“日神”与“酒神”的哲学概念，发现：多恩通过奇喻与推理将爱情、死亡等矛盾纳入神学秩序，其悖论体现了“酒神冲突”与“宗教超越”的结合；华兹华斯则通过日常经验与自然观照，在“平凡中的不平凡”中生成感性悖论，展现出“日神宁静”和“自然和解”。二者虽源自不同传统，却都以悖论回应悲剧性经验，提供独特的美学回应。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1142/s1793724822000165",
+      "title": "20世纪前期香港华商总会组织制度演进",
+      "authors": [
+        "董, 佳如"
+      ],
+      "venue": "华人研究国际学报",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> 香港与新加坡同为英属殖民地，在南洋地区都占重要位置和具华人社会的领导、示范作用。两地华人为表团结以维护自身权益，均成立了标榜 “中华” 二字的商会 — 香港中华总商会与新加坡中华总商会，两个商会既有共同点又各具特色。就成立原因，两商会既得益于在地华人势力的发展，又与晚清政府的侨务政策密切相关。政治上，两商会均具有 “双重效忠” 的心理，它们既须顾及殖民政府的管治，受社团条例约束，同时又与中国政府关系密切，处于两面夹缝、相互协调的境遇之中。经济方面，均以维护在地华商利益为其宗旨，但华商社会本身却错综复杂。在日常会务推行、选举制度、会员资格等方面，两地总商会又各具特色。作为两地华人领袖社团，两商会不仅具有代表性，同时也是在地华人发展的缩影。 </jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.63887/ssrp.2025.1.8.50",
+      "title": "社会支持理论视角下缓解残疾人家庭精神压力服务研究——以昆明市X社区为例",
+      "authors": [
+        "岳睿娜",
+        "殷莺倩"
+      ],
+      "venue": "社会科学研究与实践",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究旨在探讨社会支持理论视角下，如何有效缓解昆明市X社区残疾人家庭面临的精神压力。通过对该社区残疾人家庭精神压力现状的深入分析，我们发现经济压力、照顾压力、社会偏见以及心理孤独感是家庭精神压力的主要来源。同时，我们也对当前存在的社会支持服务进行了评估，分析了正式支持与非正式支持中的不足以及社会支持的缺口。基于社会支持理论，提出了构建“多元主体协同”的正式支持体系、强化“邻里—家庭—志愿者”的非正式支持网络以及创新社区服务模式等策略，以期为昆明市X社区残疾人家庭提供更加全面、有效的支持，从而减轻其精神压力，提升生活质量。本研究不仅为残疾人家庭精神压力缓解提供了理论支持和实践指导，也为相关社区服务提供了参考依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.70693/rwsk.v2i7.616",
+      "title": "不是红颜，就是祸水？──传世文献、出土文献与小说中对夏姬的叙述",
+      "authors": [
+        "陈嘉礼"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在中国古代历史文献中，夏姬通常被描绘成红颜祸水，她的美貌害死了三个丈夫、一个国君、一个儿子，又灭亡了一个国家，以及两个上卿。因为受害者众多，她都被赋予一个极为负面的形象。直至明代，一部称为《株林野史》的小说，颠覆了她的形象，她在小说中红颜仍旧，却不再是害人祸国的祸水。近代出土的《系年》，也有有关她的记载。本文以传世文献、出土文献与小说等材料，考察夏姬的形象，发现各文献基于创作动机，对夏姬有着不同的叙述。由最初的红颜祸水，到最后因美貌和性技出众而获得永恒青春。本文认为，借助多种文献，能有效地重新审视女性在传统史观上的地位和价值。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.63887/fss.2025.1.4.18",
+      "title": "社交媒体生态中的网络疑病症：技术驱动机制、多维影响与协同治理",
+      "authors": [
+        "黄书康"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>由于社交媒体的高速发展，人们获取健康信息的方式发生了颠覆性的转变，但信息的海量性、传播的高密度性也为网络疑病症埋下了种子。本文立足社交媒体视角下网络疑病症的产生机理，对用户行为、平台特性、信息属性间的关系展开论述分析，并针对此类问题提出合理应对方式，为制定数字健康传播相关政策提供理论依据，进而降低网络疑病症产生的概率，提高公众健康水平。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1142/s1793724822000037",
+      "title": "20世纪 “文化中国” 的再展演",
+      "authors": [
+        "蔡, 志祥"
+      ],
+      "venue": "华人研究国际学报",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> 社区性节日展陈了社会群体的整体。在20世纪，中国和海外华人的社区性节日受到了很多挑战，到了近年才“复兴”起来。作为周期性的活动，社区性节日定期庆祝，因此是社区成员已知和共享的活动。然而，仪式细节以及对节日的解释总是会根据不断变化的宏观环境而进行调整。20世纪是华侨身份由旅居者向定居者转变的时期。这是一个华侨与祖籍地疏远、在东道国定居，以及与中国重新联系的时期。本文将使用三个典型的节日来讨论中国社区性节日作为一种全球现象的延续，特别是探索节日在海外华人社会中仪式结构的演变及其与祖先家乡之间的相互作用。本文认为，中国传统文化，尤其是持续庆祝的社区性节日，不仅是华侨华人建立华人身份认同的工具，有助于重建与祖籍的联系；更重要的是，它们是海外华人利用的一种文化资源，在在地化过程中，塑造为在生活国家中的重要“他者”的身份。“中华文化”是一种生存策略，考验着地方当局的宽容度；同时，通过标准化的仪式，缓和华侨华人的内部差异。 </jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.54254/3049-7825/2026.33369",
+      "title": "疾病抑或疾痛：抑郁症治疗的人类学再思考",
+      "authors": [
+        "余, 淯燚"
+      ],
+      "venue": "人文社会发展",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在全球抑郁症发病率攀升的背景下，如何理解与应对抑郁症成为社会所关注的重要议题之一。本研究从人类学视角切入，基于“疾病（Disease）与疾痛（Illness）”的概念分野，对抑郁症展开深度反思。通过对抑郁症在不同文化语境下的文化建构性、社会互动性特征的分析发现，抑郁症不仅是生物医学模式下的生理疾病，更是受文化价值观、社会规范、权力关系等因素影响的疾痛体验。在不同文化中，抑郁症的症状表达、患者应对策略及社会反应均存在显著差异。而社会对抑郁症的污名化现象，更折射出背后复杂的权力结构。本研究揭示了传统生物医学模式对抑郁症理解的局限性，强调应重视患者主观体验与文化社会因素，为抑郁症的研究与防治提供了跨文化视角的新思路。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1111/bjd.18769",
+      "title": "慢性荨麻疹患者发生精神疾病的风险更高: 一项基于人群的研究",
+      "authors": [
+        "Chu, C.Y.",
+        "Cho, Y.T.",
+        "Jiang, J.H.",
+        "Chang, C.C.",
+        "Liao, S.C.",
+        "Tang, C.H."
+      ],
+      "venue": "British Journal of Dermatology",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.63887/fss.2025.1.5.27",
+      "title": "弗洛伊德精神分析理论下——《心是孤独的猎手》辛格的自我、本我、超我",
+      "authors": [
+        "高奕宝",
+        "黄涛"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>卡森·麦卡勒斯的《心是孤独的猎手》通过对哑巴辛格遭遇的描写，展现出现代人在寻找自我身份认同时面临的普遍困境。在故事中，哑巴辛格成为小镇居民倾诉情感的对象，他的个人形象完全由他人的想象和需求所塑造。在好友安东尼帕罗斯去世之后，辛格失去了唯一的精神支柱，最终选择结束自己的生命，通过这个悲剧，作者揭示了现代社会个体在建构自我认同时面临的深刻矛盾，我们的身份既需要他人确认，却又因此丧失真正的自我。本文通过弗洛伊德精神分析理论，从自我、本我、超我三个维度探讨了辛格的身份如同轨迹。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.63887/fss.2025.1.7.58",
+      "title": "长征精神培育时代新人的价值意蕴和实现路径研究",
+      "authors": [
+        "周芳",
+        "蔡君豪"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>长征精神是党和人民在革命战争时期孕育的重要精神资源，与培育时代新人的目标深度契合。新时代弘扬长征精神，对提升青年精神境界、坚定理想信念及实现民族复兴具有重大意义。面对价值多元与历史认知模糊等现实挑战，应深入挖掘长征精神内涵，创新传播方式与载体，加强实践育人，以此增强时代新人的使命感与认同感，为其投身新时代长征路提供坚实支撑。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.52288/mice.27069273.2020.09.16",
+      "title": "巨无霸指数是否低估的实证分析",
+      "authors": [
+        "林, 雨熙"
+      ],
+      "venue": "会展前瞻",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>均衡汇率问题一直是学界的焦点，基于购买力平价理论的巨无霸指数，为判断汇率水平均衡性提供了一个简单的工具和辅助的视角。本文根据《经济学人》公布的巨无霸指数走势特征，分析巨无霸指数对不同汇率水平的低估程度，尤其是基于美元的巨无霸指数对人民币汇率水平的评估；本文同时分析人民币于各期相较于欧元、英镑、日元皆出现低估的现象。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.63887/fss.2025.1.3.23",
+      "title": "二十一世纪马克思主义的文化蕴含",
+      "authors": [
+        "陆邑"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究旨在深入探究二十一世纪马克思主义的文化蕴含，以揭示其在新时代背景下的理论价值与实践意义。通过对时代背景的剖析，理解全球文化发展多元趋势、科技革命带来的文化冲击以及马克思主义自身发展的内在需求对其文化蕴含的影响；追溯马克思主义的文化根源，包括欧洲古典哲学的文化滋养、空想社会主义的文化传承以及经典作家所处文化环境的影响；分析其在当代中国文化语境中，如习近平新时代中国特色社会主义思想中的中华优秀传统文化元素、当代中国时代精神的体现以及马克思主义中国化进程中的文化创新；同时探讨其在全球其他文化语境中的表现，如与西方发达国家及发展中国家的文化融合。研究发现，马克思主义文化蕴含对当代社会发展在引领社会价值观、推动文化产业发展、促进国际文化交流等方面具有重要实践意义。未来，其有望与新兴科技深度融合，在应对全球性问题中发挥更强作用，并持续推动文化创新与理论发展。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.12677/acpp.2023.1210327",
+      "title": "Marxist Spiritual View: Power, Ideology and Social Control",
+      "authors": [
+        "王, 莹"
+      ],
+      "venue": "Advances in Philosophy",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.1360/csb1951-0-10-1044",
+      "title": "科学是一种社会意识形态",
+      "authors": [
+        "孔, 恩",
+        "高, 銘",
+        "韩, 靈銳"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1951,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.18356/db126b90-zh",
+      "title": "前言",
+      "authors": [
+        ""
+      ],
+      "venue": "Human Development Report (Chinese Version)",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.52926/jpmjfr2145",
+      "title": "",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "grant",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.18356/d2421408-zh",
+      "title": "超越平均的性别不平等：在社会规范和权力不平衡之间",
+      "authors": [],
+      "venue": "Human Development Report (Chinese Version)",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1142/s1793724824000038",
+      "title": "20世纪初至40年代白通帽在华人社会的流行与制造",
+      "authors": [
+        "王, 文欣"
+      ],
+      "venue": "华人研究国际学报",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> 19世纪下半叶欧洲殖民势力在亚洲的开拓对这一地区的服饰产生了巨大影响。本文聚焦白通帽这一类帽饰，结合图像和文献史料，勾勒20世纪初至40年代其在中国本土和东南亚华人社群中，逐步被接纳并成为流行风尚的过程，并探讨了华商资本在白通帽生产和销售领域所发挥的重要作用。在此过程中，白通帽身上的文化符号也经历了复杂而多变的演变过程，在不同历史时期叠加了舶来、南洋、国货、殖民等文化符号。 </jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.5846/stxb20152403",
+      "title": "",
+      "authors": [
+        "LIU Shirong, 刘世荣"
+      ],
+      "venue": "Acta Ecologica Sinica",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.65976/3080-0374.2026.05.045",
+      "title": "面向Z世代:用青春话语解读全会精神—推动党的二十届四中全会精神\"带着热气\"进课堂",
+      "authors": [
+        "孙, 擎",
+        "唐, 国尧",
+        "赵, 季秋"
+      ],
+      "venue": "教育发展论坛",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>运用青春话语解读党的二十届四中全会精神,是思政课教师面向Z世代的主动应对。要充分了解当代学生的话语认知特点和接受习惯,将\"全会精神\"引入\"青春频道\",实现党的二十届四中全会精神教学话语转换,使用Z世代的\"工具\"与\"语法\",构建\"实时化\"与\"社群化\"的互动语境,切实提升党的二十届四中全会精神宣传教育效果。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.64216/3080-1486.26.06.046",
+      "title": "当代精神障碍风险行为治理困境探究",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.2139/ssrn.6710058",
+      "title": "《物识社会元理论——21世纪马克思主义的前沿性延展理论》",
+      "authors": [
+        "永宽, 荣"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 22,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文提出并系统建构了“物识社会元理论”——一套适用于一切可能社会的原创哲学体系。本文以马克思《资本论》中“社会必要劳动时间”这一核心范畴为出发点，将其解剖为“前提、关系、过程、结果”的四元结构，并严格论证了这一结构不仅适用于物质生产领域，同样适用于思想生产领域——这是马克思本人触及却从未明确揭示的理论维度。在此基础上，本文锻造了一套完整的、互定义的范畴体系，包括“物识”、“积”、“思想拜识教”、“社会必要物识互构价值劳动”、“不可决定域”、“本体论盈余”和“单位性不可逆”。 \n&lt;div&gt;\n 本文的核心论点是：社会存在的最小功能单位不是孤立的“物”或“识”，而是二者不可拆解的乘积——“物识统一体”。传统的“物加识”加法逻辑在此遭遇了本体论层面的失败，必须被“物乘识”的乘法逻辑所取代。当任一因子为零时，积即为零。这一洞见同时宣告了旧经济学（只算物）和旧信息论（只算识）的双双失效。\n&lt;/div&gt;\n&lt;div&gt;\n 在此基础上，本文提出了“物识相对论”的方法论框架，以“影子论”解释唯物主义与唯心主义之争的认知根源，将纯唯物主义和纯唯心主义统合于一",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.5512/sea.2014.43_130",
+      "title": "",
+      "authors": [],
+      "venue": "Southeast Asia: History and Culture",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.12677/ass.2025.148743",
+      "title": "Determinants of Public Stigma toward Mental Illness and Strategies for Anti-Discrimination",
+      "authors": [
+        "田, 由"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.70693/rwsk.v2i6.566",
+      "title": "权力：一种支配关系还是行为能力——当代权力概念研究的核心争论",
+      "authors": [
+        "郭力"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>“关系说”与“能力说”之争是当代权力概念研究的核心争论。“关系说”（power over）将权力视为某一行为者对另一个行为者的支配关系，而能力说（power to）则将权力看作行为者实现其目标的行为能力，并不必然涉及对其他行为者的支配。本文旨在系统梳理并分析这一核心争论。首先从汉娜·皮特金的权力二元辩论开始，追溯这一争论的思想史脉络，之后重点考察当代西方学界围绕“能力说”（power to）与“关系说”（power over）而展开的争论，从中发现，这场争论已经实现从非此即彼的对立面转向认识论层面的辩证统一。因此，本文认为权力的“关系说”与“能力说”并不是互斥的对立观点，而是同一权力现象两个维度的分析，二者相辅相成，共同构成理解复杂权力现象的理论基础。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "arXiv:2307.10513v2",
+      "arxiv_id": "2307.10513v2",
+      "title": "Technology in Association With Mental Health: Meta-ethnography",
+      "authors": [
+        "Hamza Mohammed"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.10513v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 71
+    },
+    {
+      "doi": "arXiv:2110.10780v3",
+      "arxiv_id": "2110.10780v3",
+      "title": "An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C)",
+      "authors": [
+        "Sijia Liu",
+        "Andrew Wen",
+        "Liwei Wang",
+        "Huan He",
+        "Sunyang Fu",
+        "Robert Miller",
+        "Andrew Williams",
+        "Daniel Harris",
+        "Ramakanth Kavuluru",
+        "Mei Liu",
+        "Noor Abu-el-rub",
+        "Dalton Schutte",
+        "Rui Zhang",
+        "Masoud Rouhizadeh",
+        "John D. Osborne",
+        "Yongqun He",
+        "Umit Topaloglu",
+        "Stephanie S Hong",
+        "Joel H Saltz",
+        "Thomas Schaffter",
+        "Emily Pfaff",
+        "Christopher G. Chute",
+        "Tim Duong",
+        "Melissa A. Haendel",
+        "Rafael Fuentes",
+        "Peter Szolovits",
+        "Hua Xu",
+        "Hongfang Liu",
+        "National COVID Cohort Collaborative",
+        "Natural Language Processing",
+        " Subgroup",
+        "National COVID Cohort Collaborative"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.10780v3",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Smoking cessation advice for people with serious mental illness",
-      "abstract": "",
-      "year": 2012,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 72
     },
     {
-      "rank": 22,
-      "doi": "",
-      "title": "Training Mental Health Nurses to Assess the Physical Health Needs of Mental Health Service Users: A Pre- and Post-test Analysis",
-      "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2002.08901v1",
+      "arxiv_id": "2002.08901v1",
+      "title": "Identifying physical health comorbidities in a cohort of individuals with severe mental illness: An application of SemEHR",
+      "authors": [
+        "Rebecca Bendayan",
+        "Honghan Wu",
+        "Zeljko Kraljevic",
+        "Robert Stewart",
+        "Tom Searle",
+        "Jaya Chaturvedi",
+        "Jayati Das-Munshi",
+        "Zina Ibrahim",
+        "Aurelie Mascio",
+        "Angus Roberts",
+        "Daniel Bean",
+        "Richard Dobson"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 23,
-      "doi": "",
-      "title": "Estimating the prevalence of chronic medical co-morbidities in the seriously mentally ill in primary care: a modelling framework",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.08901v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 73
     },
     {
-      "rank": 24,
-      "doi": "",
-      "title": "Did female prisoners with mental disorders receive psychiatric treatment before imprisonment?",
-      "abstract": "",
-      "year": 2015,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1016/j.inffus.2022.11.031",
+      "arxiv_id": "2304.09493v1",
+      "title": "Emotion fusion for mental illness detection from social media: A survey",
+      "authors": [
+        "Tianlin Zhang",
+        "Kailai Yang",
+        "Shaoxiong Ji",
+        "Sophia Ananiadou"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 25,
-      "doi": "",
-      "title": "Epidemiology and heritability of Major Depressive Disorder, stratified by age of onset, sex, and illness course in Generation Scotland:Scottish Family Health Study (GS:SFHS)",
-      "abstract": "",
-      "year": 2015,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2304.09493v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 74
     },
     {
-      "rank": 26,
-      "doi": "",
-      "title": "Facilitating knowledge of mental health nurses to undertake physical health interventions: a pre-test/post-test evaluation",
-      "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2003.05870v1",
+      "arxiv_id": "2003.05870v1",
+      "title": "Natural Language Interaction to Facilitate Mental Models of Remote Robots",
+      "authors": [
+        "Francisco J. Chiyah Garcia",
+        "José Lopes",
+        "Helen Hastie"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 27,
-      "doi": "",
-      "title": "Prediction of depression in European general practice attendees: the PREDICT study",
-      "abstract": "",
-      "year": 2006,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.05870v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 75
     },
     {
-      "rank": 28,
-      "doi": "",
-      "title": "The age of anxiety? It depends where you look: changes in STAI trait anxiety, 1970–2010",
-      "abstract": "",
-      "year": 2015,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2009.01672v1",
+      "arxiv_id": "2009.01672v1",
+      "title": "Yet Meta Learning Can Adapt Fast, It Can Also Break Easily",
+      "authors": [
+        "Han Xu",
+        "Yaxin Li",
+        "Xiaorui Liu",
+        "Hui Liu",
+        "Jiliang Tang"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 29,
-      "doi": "",
-      "title": "Life course effects of anthropometric change among Singapore youth from 1990 to 2011",
-      "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.01672v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 76
     },
     {
-      "rank": 30,
-      "doi": "",
-      "title": "Epidemiology of childhood anxiety: longitudinal perspectives",
-      "abstract": "",
+      "doi": "10.3389/fpsyt.2022.810057",
+      "arxiv_id": "2204.05448v4",
+      "title": "Financial technologies (FinTech) for mental health: The potential of objective financial data to better understand the relationships between financial behavior and mental health",
+      "authors": [
+        "Johnna Blair",
+        "Jeff Brozena",
+        "Mark Matthews",
+        "Thomas Richardson",
+        "Saeed Abdullah"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.05448v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "arXiv:2008.07738v1",
+      "arxiv_id": "2008.07738v1",
+      "title": "Usable Security for ML Systems in Mental Health: A Framework",
+      "authors": [
+        "Helen Jiang",
+        "Erwen Senge"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.07738v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "arXiv:2311.11482v9",
+      "arxiv_id": "2311.11482v9",
+      "title": "Meta Prompting for AI Systems",
+      "authors": [
+        "Yifan Zhang",
+        "Yang Yuan",
+        "Andrew Chi-Chih Yao"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.11482v9",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "arXiv:2507.19218v3",
+      "arxiv_id": "2507.19218v3",
+      "title": "Technological folie à deux: Feedback Loops Between AI Chatbots and Mental Illness",
+      "authors": [
+        "Sebastian Dohnány",
+        "Zeb Kurth-Nelson",
+        "Eleanor Spens",
+        "Lennart Luettgau",
+        "Alastair Reid",
+        "Iason Gabriel",
+        "Christopher Summerfield",
+        "Murray Shanahan",
+        "Matthew M Nour"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.19218v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.2196/10140",
+      "arxiv_id": "1901.00449v1",
+      "title": "Instant Automated Inference of Perceived Mental Stress through Smartphone PPG and Thermal Imaging",
+      "authors": [
+        "Youngjun Cho",
+        "Simon J. Julier",
+        "Nadia Bianchi-Berthouze"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1901.00449v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "arXiv:2603.29239v1",
+      "arxiv_id": "2603.29239v1",
+      "title": "Diffusion Mental Averages",
+      "authors": [
+        "Phonphrm Thawatdamrongkit",
+        "Sukit Seripanitkarn",
+        "Supasorn Suwajanakorn"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.29239v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "arXiv:2311.10302v1",
+      "arxiv_id": "2311.10302v1",
+      "title": "Social Isolation and Serious Mental Illness: The Role of Context-Aware Mobile Interventions",
+      "authors": [
+        "Subigya Nepal",
+        "Arvind Pillai",
+        "Emma M. Parrish",
+        "Jason Holden",
+        "Colin Depp",
+        "Andrew T. Campbell",
+        "Eric Granholm"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.10302v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "arXiv:2008.10382v1",
+      "arxiv_id": "2008.10382v1",
+      "title": "Prevalence and incidence of postpartum depression and environmental factors: the IGEDEPP cohort",
+      "authors": [
+        "Sarah Tebeka",
+        "Yann Le Strat",
+        "Alix De Premorel Higgons",
+        "Alexandra Benachi",
+        "Marc Dommergues",
+        "Gilles Kayem",
+        "Jacques Lepercq",
+        "Dominique Luton",
+        "Laurent Mandelbrot",
+        "Yves Ville",
+        "Nicolas Ramoz",
+        "Sophie Tezenas du Montcel",
+        "IGEDEPP Groups",
+        "Jimmy Mullaert",
+        "Caroline Dubertret"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.10382v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "arXiv:2011.05233v2",
+      "arxiv_id": "2011.05233v2",
+      "title": "On the State of Social Media Data for Mental Health Research",
+      "authors": [
+        "Keith Harrigian",
+        "Carlos Aguirre",
+        "Mark Dredze"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.05233v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "arXiv:2305.07625v1",
+      "arxiv_id": "2305.07625v1",
+      "title": "Meta Omnium: A Benchmark for General-Purpose Learning-to-Learn",
+      "authors": [
+        "Ondrej Bohdal",
+        "Yinbing Tian",
+        "Yongshuo Zong",
+        "Ruchika Chavhan",
+        "Da Li",
+        "Henry Gouk",
+        "Li Guo",
+        "Timothy Hospedales"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.07625v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "arXiv:2312.01255v2",
+      "arxiv_id": "2312.01255v2",
+      "title": "Meta ControlNet: Enhancing Task Adaptation via Meta Learning",
+      "authors": [
+        "Junjie Yang",
+        "Jinze Zhao",
+        "Peihao Wang",
+        "Zhangyang Wang",
+        "Yingbin Liang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.01255v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "arXiv:1806.06927v2",
+      "arxiv_id": "1806.06927v2",
+      "title": "Auto-Meta: Automated Gradient Based Meta Learner Search",
+      "authors": [
+        "Jaehong Kim",
+        "Sangyeul Lee",
+        "Sungwan Kim",
+        "Moonsu Cha",
+        "Jung Kwon Lee",
+        "Youngduck Choi",
+        "Yongseok Choi",
+        "Dong-Yeon Cho",
+        "Jiwon Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1806.06927v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "arXiv:2209.03941v1",
+      "arxiv_id": "2209.03941v1",
+      "title": "The Users Aren't Alright: Dangerous Mental Illness Behaviors and Recommendations",
+      "authors": [
+        "Ashlee Milton",
+        "Stevie Chancellor"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.03941v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "arXiv:2504.12337v1",
+      "arxiv_id": "2504.12337v1",
+      "title": "\"It Listens Better Than My Therapist\": Exploring Social Media Discourse on LLMs as Mental Health Tool",
+      "authors": [
+        "Anna-Carolina Haensch"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.12337v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "arXiv:2602.05938v2",
+      "arxiv_id": "2602.05938v2",
+      "title": "DiPPER: A Bayesian approach to differential prevalence analysis with applications in microbiome studies",
+      "authors": [
+        "Juho Pelto",
+        "Kari Auranen",
+        "Janne V. Kujala",
+        "Leo Lahti"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.05938v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.2196/88435",
+      "arxiv_id": "2509.24857v3",
+      "title": "Between Help and Harm: An Evaluation of Mental Health Crisis Handling by LLMs",
+      "authors": [
+        "Adrian Arnaiz-Rodriguez",
+        "Miguel Baidal",
+        "Erik Derner",
+        "Jenn Layton Annable",
+        "Mark Ball",
+        "Mark Ince",
+        "Elvira Perez Vallejos",
+        "Nuria Oliver"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.24857v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "arXiv:2008.03406v1",
+      "arxiv_id": "2008.03406v1",
+      "title": "Security for People with Mental Illness in Telehealth Systems: A Proposal",
+      "authors": [
+        "Helen Jiang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.03406v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.1214/11-STS353",
+      "arxiv_id": "1108.3168v1",
+      "title": "Statistical Analysis in Genetic Studies of Mental Illnesses",
+      "authors": [
+        "Heping Zhang"
+      ],
+      "venue": "arXiv",
       "year": 2011,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/1108.3168v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 94
+    },
+    {
+      "doi": "arXiv:1901.09890v1",
+      "arxiv_id": "1901.09890v1",
+      "title": "Few-shot Learning with Meta Metric Learners",
+      "authors": [
+        "Yu Cheng",
+        "Mo Yu",
+        "Xiaoxiao Guo",
+        "Bowen Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1901.09890v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "arXiv:2011.11226v1",
+      "arxiv_id": "2011.11226v1",
+      "title": "Detection and Classification of mental illnesses on social media using RoBERTa",
+      "authors": [
+        "Ankit Murarka",
+        "Balaji Radhakrishnan",
+        "Sushma Ravichandran"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.11226v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "arXiv:2402.08837v1",
+      "arxiv_id": "2402.08837v1",
+      "title": "Learning to Generate Context-Sensitive Backchannel Smiles for Embodied AI Agents with Applications in Mental Health Dialogues",
+      "authors": [
+        "Maneesh Bilalpur",
+        "Mert Inan",
+        "Dorsa Zeinali",
+        "Jeffrey F. Cohn",
+        "Malihe Alikhani"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.08837v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "arXiv:2603.14007v1",
+      "arxiv_id": "2603.14007v1",
+      "title": "Formal Abductive Explanations for Navigating Mental Health Help-Seeking and Diversity in Tech Workplaces",
+      "authors": [
+        "Belona Sonna",
+        "Alain Momo",
+        "Alban Grastien"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.14007v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1016/B978-0-12-420248-1.00008-8",
+      "arxiv_id": "1511.02281v1",
+      "title": "Robotics Technology in Mental Health Care",
+      "authors": [
+        "Laurel D. Riek"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1511.02281v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1214/009053605000000372",
+      "arxiv_id": "0602239v1",
+      "title": "Asymptotic behavior of the unconditional NPMLE of the length-biased survivor function from right censored prevalent cohort data",
+      "authors": [
+        "Masoud Asgharian",
+        "David B. Wolfson"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/math/0602239v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1177/0962280216682376",
+      "arxiv_id": "1604.05456v2",
+      "title": "Hybrid copula mixed models for combining case-control and cohort studies in meta-analysis of diagnostic tests",
+      "authors": [
+        "Aristidis K. Nikoloulopoulos"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1604.05456v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "arXiv:2501.01220v1",
+      "arxiv_id": "2501.01220v1",
+      "title": "From Interaction to Attitude: Exploring the Impact of Human-AI Cooperation on Mental Illness Stigma",
+      "authors": [
+        "Tianqi Song",
+        "Jack Jamieson",
+        "Tianwen Zhu",
+        "Naomi Yamashita",
+        "Yi-Chieh Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.01220v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1177/0272989X221103163",
+      "arxiv_id": "2001.07824v4",
+      "title": "An Introductory Tutorial on Cohort State-Transition Models in R Using a Cost-Effectiveness Analysis Example",
+      "authors": [
+        "Fernando Alarid-Escudero",
+        "Eline M. Krijkamp",
+        "Eva A. Enns",
+        "Alan Yang",
+        "M. G. Myriam Hunink",
+        "Petros Pechlivanoglou",
+        "Hawre Jalal"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.07824v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "arXiv:2607.02795v1",
+      "arxiv_id": "2607.02795v1",
+      "title": "Coordinated Sniper Cohorts on Pump.fun: Detection of 1,012 Persistent Wallet Rings and the Limits of Naive Causal Inference for First-Hour Buyer Flow",
+      "authors": [
+        "Arati Uday Kamat"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2607.02795v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.24203/ajcis.v10i1.6882",
+      "arxiv_id": "2202.13495v1",
+      "title": "An empirical comparison of machine learning models for student's mental health illness assessment",
+      "authors": [
+        "Prathamesh Muzumdar",
+        "Ganga Prasad Basyal",
+        "Piyush Vyas"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.13495v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "arXiv:2207.01012v1",
+      "arxiv_id": "2207.01012v1",
+      "title": "Mental Illness Classification on Social Media Texts using Deep Learning and Transfer Learning",
+      "authors": [
+        "Iqra Ameer",
+        "Muhammad Arif",
+        "Grigori Sidorov",
+        "Helena Gòmez-Adorno",
+        "Alexander Gelbukh"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.01012v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.35566/jbds/caoyc",
+      "arxiv_id": "2410.16204v3",
+      "title": "Machine Learning Approaches for Mental Illness Detection on Social Media: A Systematic Review of Biases and Methodological Challenges",
+      "authors": [
+        "Yuchen Cao",
+        "Jianglai Dai",
+        "Zhongyan Wang",
+        "Yeyubei Zhang",
+        "Xiaorui Shen",
+        "Yunchong Liu",
+        "Yexin Tian"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.16204v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "arXiv:2002.00573v1",
+      "arxiv_id": "2002.00573v1",
+      "title": "Revisiting Meta-Learning as Supervised Learning",
+      "authors": [
+        "Wei-Lun Chao",
+        "Han-Jia Ye",
+        "De-Chuan Zhan",
+        "Mark Campbell",
+        "Kilian Q. Weinberger"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.00573v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2112.00547v3",
+      "arxiv_id": "2112.00547v3",
+      "title": "An Alternative Perspective on the Robust Poisson Method for Estimating Risk or Prevalence Ratios",
+      "authors": [
+        "Denis Talbot",
+        "Miceline Mésidor",
+        "Yohann Chiu",
+        "Marc Simard",
+        "Caroline Sirois"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.00547v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "arXiv:2107.03220v2",
+      "arxiv_id": "2107.03220v2",
+      "title": "Joint Embedding of Structural and Functional Brain Networks with Graph Neural Networks for Mental Illness Diagnosis",
+      "authors": [
+        "Yanqiao Zhu",
+        "Hejie Cui",
+        "Lifang He",
+        "Lichao Sun",
+        "Carl Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.03220v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1109/JBHI.2026.3694809",
+      "arxiv_id": "2411.15240v5",
+      "title": "A Foundation Model for Wearable Movement Data in Mental Health Research",
+      "authors": [
+        "Franklin Y. Ruan",
+        "Aiwei Zhang",
+        "Jenny Y. Oh",
+        "SouYoung Jin",
+        "Nicholas C. Jacobson"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.15240v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.1063/1.3072788",
+      "arxiv_id": "0810.0479v3",
+      "title": "Mental States as Macrostates Emerging from EEG Dynamics",
+      "authors": [
+        "Carsten Allefeld",
+        "Harald Atmanspacher",
+        "Jiri Wackermann"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0810.0479v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "arXiv:2006.02608v5",
+      "arxiv_id": "2006.02608v5",
+      "title": "Meta-Model-Based Meta-Policy Optimization",
+      "authors": [
+        "Takuya Hiraoka",
+        "Takahisa Imagawa",
+        "Voot Tangkaratt",
+        "Takayuki Osa",
+        "Takashi Onishi",
+        "Yoshimasa Tsuruoka"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.02608v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:2003.04390v4",
+      "arxiv_id": "2003.04390v4",
+      "title": "Meta-Baseline: Exploring Simple Meta-Learning for Few-Shot Learning",
+      "authors": [
+        "Yinbo Chen",
+        "Zhuang Liu",
+        "Huijuan Xu",
+        "Trevor Darrell",
+        "Xiaolong Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.04390v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "arXiv:1608.07740v1",
+      "arxiv_id": "1608.07740v1",
+      "title": "Forecasting the onset and course of mental illness with Twitter data",
+      "authors": [
+        "Andrew G. Reece",
+        "Andrew J. Reagan",
+        "Katharina L. M. Lix",
+        "Peter Sheridan Dodds",
+        "Christopher M. Danforth",
+        "Ellen J. Langer"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1608.07740v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "arXiv:2411.10971v1",
+      "arxiv_id": "2411.10971v1",
+      "title": "A novel density-based approach for estimating unknown means, distribution visualisations and meta-analyses of quantiles",
+      "authors": [
+        "Alysha M De Livera",
+        "Luke Prendergast",
+        "Udara Kumaranathunga"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.10971v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1561/2200000080",
+      "arxiv_id": "2301.08028v4",
+      "title": "A Tutorial on Meta-Reinforcement Learning",
+      "authors": [
+        "Jacob Beck",
+        "Risto Vuorio",
+        "Evan Zheran Liu",
+        "Zheng Xiong",
+        "Luisa Zintgraf",
+        "Chelsea Finn",
+        "Shimon Whiteson"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2301.08028v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:2401.12954v1",
+      "arxiv_id": "2401.12954v1",
+      "title": "Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding",
+      "authors": [
+        "Mirac Suzgun",
+        "Adam Tauman Kalai"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.12954v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "arXiv:2011.08784v1",
+      "arxiv_id": "2011.08784v1",
+      "title": "Towards Meta-Algorithm Selection",
+      "authors": [
+        "Alexander Tornede",
+        "Marcel Wever",
+        "Eyke Hüllermeier"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.08784v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.4018/979-8-3373-4222-1.ch015",
+      "arxiv_id": "2603.27994v1",
+      "title": "Filipino Students' Willingness to Use AI for Mental Health Support: A Path Analysis of Behavioral, Emotional, and Contextual Factors",
+      "authors": [
+        "John Paul P. Miranda",
+        "Rhiziel P. Manalese",
+        "Ivan G. Liwanag",
+        "Rodel T. Alimurong",
+        "Alvin B. Roque"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.27994v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.51521/ijfmph.2025.42.126",
+      "arxiv_id": "",
+      "title": "Post Dengue Depression and It’s Associated Factors Among Bangladeshi Population; Observation From a Tertiary Care Medical College Hospital",
+      "authors": [
+        "Abhizit Pandit",
+        "Ishrat Jabeen",
+        "Avijit Sarker Jyoti",
+        "Arnab Kumar Ghosh",
+        "Sofura Nammi Kristy",
+        "Arpita Sarkar Proma",
+        "Moshfiqua Mehnaz",
+        "Tasnuva Tahrin Tamanna"
+      ],
+      "venue": "International Journal of Family Medicine and Public Health",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The first ever study in Bangladesh that in-depth explored the impact of patient factors’ variability on post dengue depression is explored and may warrant the health care professionals to incorporate psychiatric counselling for dengue infected individuals during the follow-up following discharge from hospital.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The first ever study in Bangladesh that in-depth explored the impact of patient factors’ variability on post dengue depression is explored and may warrant the health care professionals to incorporate psychiatric counselling for dengue infected individuals during the follow-up following discharge from hospital.",
+      "rank": 121
     }
   ]
 }

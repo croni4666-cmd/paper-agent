@@ -1,466 +1,4024 @@
 {
   "query_id": "q037",
   "query": "economic decline induced psychological change and behavioral shift comparative Japan lost decades and Mexico crisis social trust",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 10,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "cross",
+  "source": "user",
+  "generated_at": "2026-07-22T11:29:34",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 198,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 0,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/j.ijsu.2020.04.018",
+      "title": "The Socio-Economic Implications of the Coronavirus Pandemic (COVID-19): A Review",
+      "authors": [
+        "Maria Nicola"
+      ],
+      "venue": "International journal of surgery (London, England)",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eb13b709fced0a24be6f643",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1007/978-1-349-62397-6_12",
+      "title": "Bowling Alone: America’s Declining Social Capital",
+      "authors": [
+        "Robert D. Putnam"
+      ],
+      "venue": "The City Reader",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99ca9b7602d970255ced0",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.2307/1910352",
+      "title": "Money and Economic-Growth",
+      "authors": [
+        "J TOBIN"
+      ],
+      "venue": "Финансовые исследования",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99a62b7602d97022cf838",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1007/s12325-023-02622-x",
+      "title": "The Economic Burden of Adults with Major Depressive Disorder in the United States (2019)",
+      "authors": [
+        "Paul Greenberg"
+      ],
+      "venue": "Advances in Therapy",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64ca44803fda6d7f061118fe",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1007/s10198-021-01426-6",
+      "title": "Consolidated Health Economic Evaluation Reporting Standards 2022 (CHEERS 2022) Statement: Updated Reporting Guidance for Health Economic Evaluations.",
+      "authors": [
+        "Husereau  Don"
+      ],
+      "venue": "The European Journal of Health Economics",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61e154395244ab9dcb1234e2",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1007/s11682-022-00644-7",
+      "title": "Assessment of Potential Selection Bias in Neuroimaging Studies of Postoperative Delirium and Cognitive Decline: Lessons from the SAGES Study",
+      "authors": [
+        "Cavallari  Michele"
+      ],
+      "venue": "Brain Imaging and Behavior",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b815b7602d97043c770a",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1126/science.abf0529",
+      "title": "Copper Induces Cell Death by Targeting Lipoylated TCA Cycle Proteins",
+      "authors": [
+        "Peter Tsvetkov"
+      ],
+      "venue": "Science (New York, NY)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6235b79a5aee126c0f7ded1c",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1145/3359552",
+      "title": "Some Simple Economics of the Blockchain",
+      "authors": [
+        "Christian Catalini"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c756b01f56def97983993d2",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
       "doi": "10.1086/300123",
       "title": "The Global Traffic in Human Organs",
-      "abstract": "",
-      "year": 2000,
+      "authors": [
+        "Nancy Scheper‐Hughes"
+      ],
       "venue": "Current Anthropology",
-      "citation_count": 715,
-      "engines_found_in": [
+      "year": 2000,
+      "cited_by_count": 715,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://escholarship.org/content/qt0fm776vf/qt0fm776vf.pdf?t=lnq576",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 9
     },
     {
-      "rank": 2,
       "doi": "10.3390/smartcities5030040",
       "title": "The Metaverse as a Virtual Form of Smart Cities: Opportunities and Challenges for Environmental, Economic, and Social Sustainability in Urban Futures",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Zaheer Allam",
+        "Ayyoob Sharifi",
+        "Simon Elias Bibri",
+        "David S. Jones",
+        "John Krogstie"
+      ],
       "venue": "Smart Cities",
-      "citation_count": 646,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 649,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2624-6511/5/3/40/pdf?version=1657504483",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 10
     },
     {
-      "rank": 3,
+      "doi": "10.4324/9781003547952-2",
+      "title": "Economic Calculation in the Socialist Commonwealth1",
+      "authors": [
+        "Ludwig von Mises"
+      ],
+      "venue": "Classics in Austrian Economics, Volume 3",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9ba90b7602d97046b6e21",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1086/466753",
+      "title": "The Fable of the Bees: an Economic Investigation",
+      "authors": [
+        "Steven N. S. Cheung"
+      ],
+      "venue": "Public Goods and Market Failures",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65af0970939a5f4082c766c9",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1038/s41586-023-06578-4",
+      "title": "Ongoing Declines for the World's Amphibians in the Face of Emerging Threats.",
+      "authors": [
+        "Jennifer A. Luedtke"
+      ],
+      "venue": "Nature",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "651fa2213fda6d7f06eeab01",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1124/dmd.123.001278",
+      "title": "Acetaminophen-Induced Hepatic Necrosis: A Reminiscence",
+      "authors": [
+        "David Jollow"
+      ],
+      "venue": "Drug metabolism and disposition the biological fate of chemicals",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "651fa2213fda6d7f06eea961",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1017/9781009374712",
+      "title": "Economic Analysis of Property Rights",
+      "authors": [
+        "Yoram Barzel"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84f23dabfae2eeef53d60",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1142/13374",
+      "title": "The Economics of Banking",
+      "authors": [
+        "Kent Matthews"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8d148dabfae2eeea62824",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "",
+      "title": "Economic Fears and Threats",
+      "authors": [
+        "Eric D. Miller"
+      ],
+      "venue": "COVID-19 CRISIS Key Social and Psychological Issues",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d91293dabfae2eee44ab71",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.2139/ssrn.4353008",
+      "title": "What is Ecological Economics?",
+      "authors": [
+        "Baldolino Calvino"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d34c9d68f896efab9d4da",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1038/s43017-023-00478-x",
+      "title": "Insect Declines in the Anthropocene",
+      "authors": [
+        "Nico Blüthgen"
+      ],
+      "venue": "Nature Reviews Earth & Environment",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64f6d1df3fda6d7f064d3bc4",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.53347/rid-162236",
+      "title": "Autoimmune/inflammatory syndrome induced by adjuvants",
+      "authors": [
+        "Henry Knipe"
+      ],
+      "venue": "Radiopaedia.org",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d1802d68f896efaa55178",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1007/978-3-662-65093-6_5385",
+      "title": "Cosmic-Ray-Induced Desorption",
+      "authors": [
+        "Eric Herbst"
+      ],
+      "venue": "Encyclopedia of Astrobiology",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6571107c939a5f40826c8ee5",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1016/j.respol.2020.103948",
+      "title": "Economic Complexity and the Green Economy",
+      "authors": [
+        "Penny Mealy"
+      ],
+      "venue": "RESEARCH POLICY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee2ee4d9e795e85042471d6",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1038/s41586-021-03405-6",
+      "title": "High and Rising Economic Costs of Biological Invasions Worldwide",
+      "authors": [
+        "Christophe Diagne"
+      ],
+      "venue": "Nature",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6066f008e4510cd7c8aac2f0",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1038/s41586-022-04959-9",
+      "title": "Emerging Signals of Declining Forest Resilience under Climate Change",
+      "authors": [
+        "Giovanni Forzieri"
+      ],
+      "venue": "Nature",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62d145015aee126c0f9cfc57",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1021/acs.chemrev.1c00403",
+      "title": "Visible Light-Induced Transition Metal Catalysis",
+      "authors": [
+        "Kelvin Pak Shing Cheung"
+      ],
+      "venue": "CHEMICAL REVIEWS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6161729a5244ab9dcb347d5a",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1158/0008-5472.can-21-3780",
+      "title": "Hypoxia-Inducible Factors in Cancer.",
+      "authors": [
+        "Laura C. Kim"
+      ],
+      "venue": "CANCER RESEARCH",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61e93d375244ab9dcbdea488",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1016/b978-0-12-819726-4.00067-3",
+      "title": "Twinning-Induced Plasticity (TWIP) Steel",
+      "authors": [
+        "Motomichi Koyama"
+      ],
+      "venue": "Encyclopedia of Materials: Metals and Alloys",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621955b95aee126c0f05654e",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1126/science.abo3959",
+      "title": "Copper-induced Cell Death",
+      "authors": [
+        "Martha A Kahlson"
+      ],
+      "venue": "Science (New York, NY)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6235b79a5aee126c0f7decf5",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1001/jamainternmed.2022.1812",
+      "title": "Chemotherapy-Induced Peripheral Neuropathy.",
+      "authors": [
+        "Nidhi Desai"
+      ],
+      "venue": "JAMA Internal Medicine",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629896ea5aee126c0fa8678f",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.3390/cancers14133038",
+      "title": "Proteases and HPV-Induced Carcinogenesis.",
+      "authors": [
+        "Gabriel Viliod Vieira"
+      ],
+      "venue": "CANCERS",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62caad0d5aee126c0f4f44bd",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.5298/1081-5937-50.1.03",
+      "title": "Chemotherapy-Induced Peripheral Neuropathy",
+      "authors": [
+        "Sarah Prinsloo"
+      ],
+      "venue": "Biofeedback",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a0fb87d68f896efad5d58e",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1093/med/9780197542873.003.0032",
+      "title": "Chemotherapy-Induced Peripheral Neuropathy",
+      "authors": [
+        "Rachel Caplan"
+      ],
+      "venue": "Pain",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "656fcff6939a5f40827b385f",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1016/b978-0-12-821976-8.00022-0",
+      "title": "Chemotherapy-induced Peripheral Neuropathy",
+      "authors": [
+        "Zhijian Chen"
+      ],
+      "venue": "Elsevier eBooks",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65785b6e939a5f4082b116bb",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1162/rest_a_00946",
+      "title": "Coronavirus Perceptions and Economic Anxiety",
+      "authors": [
+        "Thiemo Fetzer"
+      ],
+      "venue": "REVIEW OF ECONOMICS AND STATISTICS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e67655391e011e0d17911d1",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1162/rest_a_01042",
+      "title": "Longer-Run Economic Consequences of Pandemics",
+      "authors": [
+        "Oscar Jorda"
+      ],
+      "venue": "The Review of Economics and Statistics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0eaad89fced0a24b0c9d65",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1111/joes.12423",
+      "title": "A Literature Review of the Economics of COVID-19",
+      "authors": [
+        "Abel Brodeur"
+      ],
+      "venue": "Journal of economic surveys",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60e6cefe5244ab9dcb4e0119",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1038/s42254-020-00275-1",
+      "title": "Economic Complexity Theory and Applications",
+      "authors": [
+        "César A. Hidalgo"
+      ],
+      "venue": "Nature Reviews Physics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbb1e1c45e57ce977c70e",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1007/978-3-030-76753-2_2",
+      "title": "The Economics of Exhaustible Resources",
+      "authors": [
+        "Andrey Vavilov"
+      ],
+      "venue": "Contributions to Economics Natural Resource Pricing and Rents",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac36375aee126c0f2dd709",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.1073/pnas.2023989118",
+      "title": "Insect Decline in the Anthropocene: Death by a Thousand Cuts.",
+      "authors": [
+        "David L. Wagner"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ffec998d4150a363c8c39d2",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.1038/s41586-020-03173-9",
+      "title": "Half a Century of Global Decline in Oceanic Sharks and Rays.",
+      "authors": [
+        "Nathan Pacoureau"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6013e001d4150a363c3b3166",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1038/s41574-021-00598-8",
+      "title": "Environmental Factors in Declining Human Fertility",
+      "authors": [
+        "Niels E. Skakkebæk"
+      ],
+      "venue": "Nature Reviews Endocrinology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61bc6a375244ab9dcb86e63b",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1038/s41572-021-00264-3",
+      "title": "Trauma-induced Coagulopathy.",
+      "authors": [
+        "Ernest E. Moore"
+      ],
+      "venue": "Nature Reviews Disease Primers",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0eb0c49fced0a24b82bb68",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.2174/9781681087849121010008",
+      "title": "Chemotherapy Induced Thrombosis",
+      "authors": [
+        "Manoj Rai"
+      ],
+      "venue": "Thrombosis in Cancer A Medical Professional's Guide to Cancer Associated Thrombosis",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac40005aee126c0f7945e7",
+      "matched_phrase": "induced",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.1038/s41579-020-0335-x",
+      "title": "Chytrid Fungi and Global Amphibian Declines",
+      "authors": [
+        "Matthew C. Fisher"
+      ],
+      "venue": "Nature Reviews Microbiology",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f7fe4da562944ac84698a",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1146/annurev-ento-011019-025151",
+      "title": "Insect Declines in the Anthropocene.",
+      "authors": [
+        "David L. Wagner"
+      ],
+      "venue": "Annual Review of Entomology",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5da6ee1747c8f766460bba98",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
       "doi": "10.1177/1940161217740695",
       "title": "Caught in the Nexus: A Comparative and Longitudinal Analysis of Public Trust in the Press",
-      "abstract": "",
-      "year": 2017,
+      "authors": [
+        "Thomas Hanitzsch",
+        "Arjen van Dalen",
+        "Nina Steindl"
+      ],
       "venue": "The International Journal of Press/Politics",
-      "citation_count": 467,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 468,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://findresearcher.sdu.dk/ws/files/155180812/Caught_in_the_Nexus.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 46
     },
     {
-      "rank": 4,
+      "doi": "10.1029/2020rg000704",
+      "title": "Impact Forecasting to Support Emergency Management of Natural Hazards",
+      "authors": [
+        "Bruno Merz",
+        "Christian Kuhlicke",
+        "Michael Kunz",
+        "Massimiliano Pittore",
+        "Andrey Babeyko",
+        "David N. Bresch",
+        "Daniela I. V. Domeisen",
+        "Frauke Feser",
+        "Inga Monika Koszalka",
+        "Heidi Kreibich",
+        "Florian Pantillon",
+        "Stefano Parolai",
+        "Joaquim G. Pinto",
+        "Heinz Jürgen Punge",
+        "Eleonora Rivalta",
+        "Kai Schröter",
+        "Karen Strehlow",
+        "Ralf Weiße",
+        "Andreas Wurpts"
+      ],
+      "venue": "Reviews of Geophysics",
+      "year": 2020,
+      "cited_by_count": 361,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2020RG000704",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1016/s0140-6736(22)01933-x",
+      "title": "The political economy of infant and young child feeding: confronting corporate power, overcoming structural barriers, and accelerating progress",
+      "authors": [
+        "Phillip Baker",
+        "Julie Smith",
+        "Amandine Garde",
+        "Laurence M. Grummer‐Strawn",
+        "Benjamin Wood",
+        "Gita Sen",
+        "Gerard Hastings",
+        "Rafael Pérez‐Escamilla",
+        "Chee Yoke Ling",
+        "Nigel Rollins",
+        "David McCoy"
+      ],
+      "venue": "The Lancet",
+      "year": 2023,
+      "cited_by_count": 196,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "http://www.thelancet.com/article/S014067362201933X/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1177/0002764214534662",
+      "title": "The Decline of Political Trust in Spain and Portugal",
+      "authors": [
+        "Torcal, Mariano"
+      ],
+      "venue": "American Behavioral Scientist",
+      "year": 2014,
+      "cited_by_count": 194,
+      "reference_count": 95,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This article deals with the problem of the increasing distrust in institutions in European democracies, paying special attention to countries such as Spain and Portugal, which are being severely harmed by the current economic crisis and the austerity measures imposed by supranational organizations such as the European Union and implemented by their respective national governments. Contrary to the purely political-economic paradigm, the present article, based on panel survey data gathered",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1525/9780520336872",
+      "title": "Change and Decline",
+      "authors": [
+        "GORDON WILLIAMS"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a65696d68f896efa04ba5a",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1098/rsos.230052",
+      "title": "What Are Patterns of Rise and Decline?",
+      "authors": [
+        "Aura Raulo"
+      ],
+      "venue": "Royal Society open science",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6554b136939a5f4082513f5f",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.21799/frbp.wp.2022.15",
+      "title": "Blockchain Economics",
+      "authors": [
+        "Joseph Abadi"
+      ],
+      "venue": "PSN: Technology (Topic)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0dec359fced0a24b9c5e15",
+      "matched_phrase": "economic",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1002/alz.063736",
+      "title": "Association of Delirium with Long‐term Cognitive Decline: an Update",
+      "authors": [
+        "Terry E. Goldberg"
+      ],
+      "venue": "Alzheimer's & Dementia",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621935f15aee126c0fb9d199",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1016/j.jinteco.2021.103492",
+      "title": "Global Declining Competition?",
+      "authors": [
+        "Federico J. Diez"
+      ],
+      "venue": "JOURNAL OF INTERNATIONAL ECONOMICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bad411c45e57ce9e5df59",
+      "matched_phrase": "decline",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
       "doi": "",
       "title": "Public Accountability: Performance Measurement, The Extended State, And The Search For Trust",
-      "abstract": "",
-      "year": 2011,
+      "authors": [
+        "Melvin J. Dubnick",
+        "H. George Frederickson"
+      ],
       "venue": "University of New Hampshire Scholars Repository (University of New Hampshire at Manchester)",
-      "citation_count": 81,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 81,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholars.unh.edu/cgi/viewcontent.cgi?article=1060&context=polisci_facpub",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 55
     },
     {
-      "rank": 5,
+      "doi": "10.1016/j.eclinm.2022.101386",
+      "title": "Averting wildlife-borne infectious disease epidemics requires a focus on socio-ecological drivers and a redesign of the global food system",
+      "authors": [
+        "Giulia Wegner",
+        "Kris A. Murray",
+        "Marco Springmann",
+        "Adrian Müller",
+        "Susanne H. Sokolow",
+        "Karen Saylors",
+        "David M. Morens"
+      ],
+      "venue": "EClinicalMedicine",
+      "year": 2022,
+      "cited_by_count": 78,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://www.thelancet.com/article/S258953702200116X/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.2307/3596697",
+      "title": "The Global Traffic in Human Organs",
+      "authors": [
+        "Scheper-Hughes"
+      ],
+      "venue": "Current Anthropology",
+      "year": 2000,
+      "cited_by_count": 75,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/300123",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 57
+    },
+    {
       "doi": "10.5089/9798400203640.001",
       "title": "Tackling Legal Impediments to Women’s Economic Empowerment",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Katharine Christopherson Puh",
+        "Audrey Yiadom",
+        "Juliet Johnson",
+        "Francisca Fernando",
+        "Hanan Yazid",
+        "Clara Thiemann"
+      ],
       "venue": "IMF Working Paper",
-      "citation_count": 61,
-      "engines_found_in": [
+      "year": 2022,
+      "cited_by_count": 61,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/001/2022/037/001.2022.issue-037-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 58
     },
     {
-      "rank": 6,
-      "doi": "",
-      "title": "Integrative Assessment of Mitigation, Impacts, and Adaptation to Climate Change",
-      "abstract": "",
-      "year": 1994,
-      "venue": "IIASA PURE (International Institute of Applied Systems Analysis)",
-      "citation_count": 61,
-      "engines_found_in": [
+      "doi": "10.22004/ag.econ.44354",
+      "title": "Property Rights, Collective Action, and Poverty: The Role of Institutions for Poverty Reduction",
+      "authors": [
+        "Monica Di Gregorio",
+        "Konrad Hagedorn",
+        "Michael Kirk",
+        "Benedikt Korf",
+        "Nancy McCarthy",
+        "Ruth Meinzen‐Dick",
+        "Brent Swallow",
+        "Di Gregorio, Monica",
+        "Hagedorn, Konrad",
+        "Kirk, Michael",
+        "Korf, Benedikt",
+        "McCarthy, Nancy",
+        "Meinzen-Dick, Ruth Suseela",
+        "Swallow, Brent M."
+      ],
+      "venue": "AgEcon Search (University of Minnesota, USA)",
+      "year": 2008,
+      "cited_by_count": 57,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://ageconsearch.umn.edu/record/44354",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 59
     },
     {
-      "rank": 7,
+      "doi": "10.1093/ser/mwad002",
+      "title": "Regulatory capture’s third face of power",
+      "authors": [
+        "Wendy Y. Li"
+      ],
+      "venue": "Socio-Economic Review",
+      "year": 2023,
+      "cited_by_count": 56,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/ser/article-pdf/21/2/1217/50537396/mwad002.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 60
+    },
+    {
       "doi": "",
       "title": "Social-Republican Property",
-      "abstract": "",
-      "year": 1992,
+      "authors": [
+        "William H. Simon"
+      ],
       "venue": "eYLS (Yale Law School)",
-      "citation_count": 50,
-      "engines_found_in": [
+      "year": 1992,
+      "cited_by_count": 50,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.columbia.edu/faculty_scholarship/888",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 61
     },
     {
-      "rank": 8,
+      "doi": "10.2307/796785",
+      "title": "The \"No-Problem\" Problem: Feminist Challenges and Cultural Change",
+      "authors": [
+        "Deborah L. Rhode"
+      ],
+      "venue": "The Yale Law Journal",
+      "year": 1991,
+      "cited_by_count": 50,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://openyls.law.yale.edu/bitstream/20.500.13051/8620/2/66_100YaleLJ1731_April1991_.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.5018/economics-ejournal.ja.2015-4",
+      "title": "Income Inequality and Health: Evidence from Developed and Developing Countries",
+      "authors": [
+        "Dierk Herzer",
+        "Peter Nunnenkamp"
+      ],
+      "venue": "Economics",
+      "year": 2015,
+      "cited_by_count": 46,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.degruyter.com/document/doi/10.5018/economics-ejournal.ja.2015-4/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 63
+    },
+    {
+      "doi": "10.1080/13698570902784265",
+      "title": "Food risk management quality: Consumer evaluations of past and emerging food safety incidents",
+      "authors": [
+        "Ellen van Kleef",
+        "Øydis Ueland",
+        "Gregory Theodoridis",
+        "Gene Rowe",
+        "Uwe Pfenning",
+        "Julie Houghton",
+        "Heleen van Dijk",
+        "George Chryssochoidis",
+        "Lynn J. Frewer"
+      ],
+      "venue": "Health Risk & Society",
+      "year": 2009,
+      "cited_by_count": 45,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://edepot.wur.nl/30002",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "",
+      "title": "Reframing prostitution: from discourse to description, from moralisation to normalisation?",
+      "authors": [
+        "Nina Peršak",
+        "Gert Vermeulen"
+      ],
+      "venue": "",
+      "year": 2014,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://biblio.ugent.be/publication/5639953",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.3390/rel11090437",
+      "title": "Studying Religiosity and Spirituality: A Review of Macro, Micro, and Meso-Level Approaches",
+      "authors": [
+        "Patricia Snell Herzog",
+        "David P. King",
+        "Rafia A. Khader",
+        "Amy Strohmeier",
+        "Andrew Williams"
+      ],
+      "venue": "Religions",
+      "year": 2020,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2077-1444/11/9/437/pdf?version=1598346492",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 66
+    },
+    {
       "doi": "10.1016/0147-1767(83)90042-1",
       "title": "Value change in Japan",
-      "abstract": "",
-      "year": 1983,
+      "authors": [
+        "Gisela Trommsdorff"
+      ],
       "venue": "International Journal of Intercultural Relations",
-      "citation_count": 32,
-      "engines_found_in": [
+      "year": 1983,
+      "cited_by_count": 32,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 67
     },
     {
-      "rank": 9,
       "doi": "10.5089/9781513567723.001",
       "title": "Social Repercussions of Pandemics",
-      "abstract": "",
-      "year": 2021,
+      "authors": [
+        "Philip Barrett",
+        "Sophia Chen"
+      ],
       "venue": "IMF Working Paper",
-      "citation_count": 30,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/001/2021/021/001.2021.issue-021-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 68
     },
     {
-      "rank": 10,
+      "doi": "10.1016/j.ruje.2016.08.002",
+      "title": "Currency crises in post-Soviet economies — a never ending story?",
+      "authors": [
+        "Marek Dąbrowski"
+      ],
+      "venue": "Russian Journal of Economics",
+      "year": 2016,
+      "cited_by_count": 31,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://rujec.org/article/27973/download/pdf/",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
       "doi": "10.1111/puar.13607",
       "title": "Social inclusion, social exclusion, and the role of leaders in avoiding—or promoting—societal collapse",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Montgomery Van Wart",
+        "Miranda M. McIntyre",
+        "Jeremy L. Hall"
+      ],
       "venue": "Public Administration Review",
-      "citation_count": 26,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/puar.13607",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 70
     },
     {
-      "rank": 11,
+      "doi": "10.1016/j.egyr.2023.04.351",
+      "title": "The interplay between energy technologies and human health: Implications for energy transition",
+      "authors": [
+        "Sadegh Seddighi",
+        "Edward J. Anthony",
+        "Hamed Seddighi",
+        "Filip Johnsson"
+      ],
+      "venue": "Energy Reports",
+      "year": 2023,
+      "cited_by_count": 24,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S2352484723007163-ga1_lrg.jpg",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.1111/aepr.12044",
+      "title": "Micro Price Dynamics during Japan's Lost Decades",
+      "authors": [
+        "Sudo, Nao",
+        "Ueda, Kozo",
+        "Watanabe, Kota"
+      ],
+      "venue": "Asian Economic Policy Review",
+      "year": 2014,
+      "cited_by_count": 19,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.14989/159000",
+      "title": "REFUGEES, RESETTLEMENT, AND LAND AND RESOURCE CONFLICTS: THE POLITICS OF IDENTITY AMONG !XUN AND KHWE SAN IN NORTHEASTERN NAMIBIA",
+      "authors": [
+        "Robert K. Hitchcock"
+      ],
+      "venue": "Kyoto University Research Information Repository (Kyoto University)",
+      "year": 2012,
+      "cited_by_count": 17,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/2433/159000",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.22439/jba.v1i2.3944",
+      "title": "Opinions: What business anthropology is, what it might become… and what, perhaps, it should not be",
+      "authors": [
+        "Eric J. Arnould",
+        "Howard S. Becker",
+        "Dominic Boyer",
+        "Ulf Hannerz",
+        "Marianne Elisabeth Lien",
+        "Orvar Löfgren",
+        "George E. Marcus",
+        "Robert J. Morais",
+        "Hirochika Nakamaki",
+        "Alan Smart",
+        "Josephine Smart",
+        "Richard Swedberg",
+        "Richard Wilk",
+        "Brian Moeran"
+      ],
+      "venue": "Journal of Business Anthropology",
+      "year": 2012,
+      "cited_by_count": 15,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://rauli.cbs.dk/index.php/jba/article/download/3944/4438",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.24926/265535.2583",
+      "title": "From Junkyards to Gentrification: Explicating a Right to Protective Zoning in Low-Income Communities of Color",
+      "authors": [
+        "Jon C. Dubin"
+      ],
+      "venue": "Minnesota law review",
+      "year": 1993,
+      "cited_by_count": 14,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://scholarship.law.umn.edu/cgi/viewcontent.cgi?article=2682&context=mlr",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.1016/j.joep.2021.102369",
+      "title": "Lost job, lost trust? On the effect of involuntary job loss on trust",
+      "authors": [
+        "Friehe, Tim",
+        "Marcus, Jan"
+      ],
+      "venue": "Journal of Economic Psychology",
+      "year": 2021,
+      "cited_by_count": 13,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.15779/z38pw9h",
+      "title": "\"Beyond the First Decade: A Forward-Looking History of LatCrit Theory, Community and Praxis\"",
+      "authors": [
+        "Berta E. Hernández-Truyol"
+      ],
+      "venue": "UF Law Scholarship Repository (University of Florida)",
+      "year": 2006,
+      "cited_by_count": 13,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.ufl.edu/facultypub/196",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.1007/s11186-021-09448-y",
+      "title": "Toward a sociology of finitude: life, death, and the question of limits",
+      "authors": [
+        "Roi Livne"
+      ],
+      "venue": "Theory and Society",
+      "year": 2021,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11186-021-09448-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.1007/s40497-022-00335-z",
+      "title": "Bibliometric analysis of immigrant entrepreneurship research 2009–2019",
+      "authors": [
+        "Jan Wiers",
+        "Didier Chabaud"
+      ],
+      "venue": "Journal of global entrepreneurship research",
+      "year": 2022,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s40497-022-00335-z.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.1163/2468-1733_shafr_sim280020462",
+      "title": "Lost Decades: The Making of America's Debt Crisis and the Long Recovery",
+      "authors": [],
+      "venue": "The SHAFR Guide Online",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.1515/9789048537525",
+      "title": "Missionary Men in the Early Modern World: German Jesuits and Pacific Journeys",
+      "authors": [
+        "Ulrike Strasser"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 11,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.1002/ijgo.12584",
+      "title": "Special Session Abstracts",
+      "authors": [],
+      "venue": "International Journal of Gynecology & Obstetrics",
+      "year": 2018,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://obgyn.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ijgo.12584",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.1086/452556",
+      "title": "Social Structure and Population Change: A Comparative Study of Tokugawa Japan and Ch'ing China",
+      "authors": [
+        "Nakamura, James I.",
+        "Miyamoto, Matao"
+      ],
+      "venue": "Economic Development and Cultural Change",
+      "year": 1982,
+      "cited_by_count": 10,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.15407/eip2022.03.033",
+      "title": "STRATEGIES OF ECONOMIC STABILITY IN UNSTABLE ENVIRONMENT",
+      "authors": [
+        "Andrii Grytsenko"
+      ],
+      "venue": "Ekonomìka ì prognozuvannâ",
+      "year": 2022,
+      "cited_by_count": 10,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://msuweb.montclair.edu/~lebelp/1993SamuelPHuntingtonTheClashOfCivilizationsAndTheRemakingofWorldOrder.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "",
+      "title": "Disaster Justice: The Geography of Human Capability",
+      "authors": [
+        "Robert R.M. Verchick"
+      ],
+      "venue": "Duke Law Scholarship Repository (Duke University)",
+      "year": 2012,
+      "cited_by_count": 10,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.duke.edu/delpf/vol23/iss1/2",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.1080/00076791.2013.847428",
+      "title": "Crisis and change in the system of innovation: The Japanese pharmaceutical industry during the Lost Decades, 1990–2010",
+      "authors": [
+        "Umemura, Maki"
+      ],
+      "venue": "Business History",
+      "year": 2014,
+      "cited_by_count": 9,
+      "reference_count": 142,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "",
+      "title": "The Puzzling Absence of Economic Power in Constitutional Theory",
+      "authors": [
+        "Ganesh Sitaraman"
+      ],
+      "venue": "Scholarship @ Cornell Law (Cornell University)",
+      "year": 2015,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarship.law.cornell.edu/cgi/viewcontent.cgi?article=4707&context=clr",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.1558/ecot.2006.11.3.268",
+      "title": "Globalization and Sustainability",
+      "authors": [
+        "Nina Witoszek"
+      ],
+      "venue": "Journal for the Study of Religion Nature and Culture",
+      "year": 2006,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://mts.intechopen.com/storage/books/11476/authors_book/authors_book.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.1017/s1557466010010399",
+      "title": "A Loyal Retainer? Japan, capitalism, and the perpetuation of American hegemony",
+      "authors": [
+        "R. Taggart Murphy"
+      ],
+      "venue": "Japan focus",
+      "year": 2010,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/035D300DDF50B9163EE8269E7CEE041D/S1557466010010399a.pdf/div-class-title-a-loyal-retainer-japan-capitalism-and-the-perpetuation-of-american-hegemony-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1353/anq.0.0068",
+      "title": "Economic Crisis and the Decline of Remittances to Mexico",
+      "authors": [
+        "Wilson, Tamar Diana"
+      ],
+      "venue": "Anthropological Quarterly",
+      "year": 2009,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.7936/k78s4pbx",
+      "title": "Intimate Partner Violence among South Asian Women in the United States: Prevalence and Help-Seeking Behaviors",
+      "authors": [
+        "Vithya Murugan"
+      ],
+      "venue": "Open Scholarship Institutional Repository (Washington University in St. Louis)",
+      "year": 2017,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://openscholarship.wustl.edu/art_sci_etds/1273",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "",
+      "title": "DEFENSIBLE SPACES: IDEOLOGIES OF PROFESSIONALISM AND TEACHERS' WORK IN THE ROMANIAN PRIVATE TUTORING SYSTEM",
+      "authors": [
+        "Simona Popa"
+      ],
+      "venue": "D-Scholarship@Pitt (University of Pittsburgh)",
+      "year": 2007,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://d-scholarship.pitt.edu/7487/1/simodissertation.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "",
+      "title": "Soft Power And Hard Power Approaches In U.S. Foreign Policy: A Case Study Comparison In Latin America",
+      "authors": [
+        "John Weinbrenner"
+      ],
+      "venue": "Journal of International Crisis and Risk Communication Research",
+      "year": 2007,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://stars.library.ucf.edu/etd/3405",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.37708/el.swu.v2i2.1",
+      "title": "THE EFFECT OF AGGREGATE INSTITUTIONAL QUALITY ON FOREIGN DIRECT INVESTMENT IN NIGERIA: EVIDENCE FROM NARDL",
+      "authors": [
+        "Musa Abdullahi Sakanko",
+        "James Obilikwu",
+        "Joseph David"
+      ],
+      "venue": "Economics & Law",
+      "year": 2020,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "http://documents1.worldbank.org/curated/en/816281518818814423/pdf/2019-WDR-Report.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.4324/9781315715223-10",
+      "title": "Foreign economic policy strategies and economic performance",
+      "authors": [
+        "Drysdale, Peter",
+        "Armstrong, Shiro"
+      ],
+      "venue": "Examining Japan's Lost Decades",
+      "year": 2015,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.18332/popmed/163847",
+      "title": "Assessing the quality of the built environment in dementia: a framework to evaluate long-term care facilities",
+      "authors": [
+        "Silvia Mangili",
+        "Silvia Mangili",
+        "Gaia Ferraguzzi",
+        "Stefano Capolongo"
+      ],
+      "venue": "Population Medicine",
+      "year": 2023,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://dx.doi.org/10.18332/popmed/163847",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.1016/j.sbspro.2014.04.436",
+      "title": "The Crisis of Masculinity in the Economic Crisis Context",
+      "authors": [
+        "Matlak, Małgorzata"
+      ],
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "year": 2014,
+      "cited_by_count": 3,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1080/00472336.2022.2032280",
+      "title": "From the “Lost Decades” to the Organic Crisis of Post-1990s Japan",
+      "authors": [
+        "Carroll, Myles"
+      ],
+      "venue": "Journal of Contemporary Asia",
+      "year": 2023,
+      "cited_by_count": 3,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.2307/j.ctt9qgr33.7",
+      "title": "The economic crisis and paradigm change",
+      "authors": [
+        "Hill, Michael"
+      ],
+      "venue": "Social policy in challenging times",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.1016/j.sbspro.2015.11.707",
+      "title": "Psychological Stability of Orphans in Crisis Situations",
+      "authors": [
+        "Matyash, Natalia",
+        "Volodina, Julia"
+      ],
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "year": 2015,
+      "cited_by_count": 3,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1002/wcc.70031",
+      "title": "Learning From Natural Experiments to Accelerate Demographic Research on Climate‐Related Threats to Human Populations",
+      "authors": [
+        "Elizabeth Fussell",
+        "Kate Burrows",
+        "Narayan Sastry"
+      ],
+      "venue": "Wiley Interdisciplinary Reviews Climate Change",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1002/wcc.70031",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1186/s40794-023-00195-9",
+      "title": "The oral repellent – science fiction or common sense? Insects, vector-borne diseases, failing strategies, and a bold proposition",
+      "authors": [
+        "Irmgard Bauer"
+      ],
+      "venue": "Tropical Diseases Travel Medicine and Vaccines",
+      "year": 2023,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://tdtmvjournal.biomedcentral.com/counter/pdf/10.1186/s40794-023-00195-9",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.32872/spb.9665",
+      "title": "The “replication crisis” and trust in psychological science: How reforms shape public trust in psychology",
+      "authors": [
+        "Methner, Nicole",
+        "Dahme, Barbara",
+        "Menzel, Claudia"
+      ],
+      "venue": "Social Psychological Bulletin",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Failed replications can jeopardize public trust in psychological science and recent findings cast doubt on the idea that self-corrections and reforms can rebuild this trust. These findings are in contrast to trust repair research that proposes changes in transparency, norms, and policies as trust repair mechanisms. This raises the question of whether the used experimental material is one reason behind these unexpected findings. Previous studies used short texts that may give too little i",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.7551/mitpress/9780262036689.003.0015",
+      "title": "Sexbot-Induced Social Change: An Economic Perspective",
+      "authors": [
+        "Adshade, Marina"
+      ],
+      "venue": "Robot Sex",
+      "year": 2017,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>Sexbot-induced social change (SISC) is on the horizon. SISC will influence a broad spectrum of social structures. This chapter focuses on one significant area: the nature of marriage. It makes three predictions. Prediction One: The adoption of Sexbot technology will disentangle the association between sexual intimacy and marriage, leading to higher quality marriages. Prediction Two: The adoption of sexbot technology will lead to the normalization of non-exclusive relationships as the dominant",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.7765/9781847799357.00022",
+      "title": "Palliating terminal social democratic decline at the EU level?",
+      "authors": [
+        "Bailey, David J."
+      ],
+      "venue": "European social democracy during the global economic crisis",
+      "year": 2014,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "",
+      "title": "Financial repression in China: Short-term growth but long-term crisis?",
+      "authors": [
+        "Guangdong Xu",
+        "Michaël Faure"
+      ],
+      "venue": "Research Publications (Maastricht University)",
+      "year": 2019,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://digitalcommons.lmu.edu/ilr/vol42/iss1/1",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "",
+      "title": "The financial and conceptual foundations of intangible asset manager capitalism",
+      "authors": [
+        "Tunç Özelli"
+      ],
+      "venue": "DergiPark (Istanbul University)",
+      "year": 2021,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://dergipark.org.tr/tr/pub/ekonomi/issue/53787/862602",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.17615/ccxr-c554",
+      "title": "SEX AND STATE MAKING IN REVOLUTIONARY CUBA, 1959-1968",
+      "authors": [
+        "Rachel Hynson"
+      ],
+      "venue": "Carolina Digital Repository (University of North Carolina at Chapel Hill)",
+      "year": 2019,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://cdr.lib.unc.edu/record/uuid:cc917083-cf8d-4e23-ab6f-2345583426ec",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.1093/ereh/heaf013",
+      "title": "Italy’s Lost Decades: Trade, Capital Flows, and Currency Crisis, 1861–1883",
+      "authors": [
+        "Federico, Giovanni",
+        "Incerpi, Andrea"
+      ],
+      "venue": "European Review of Economic History",
+      "year": 2026,
+      "cited_by_count": 1,
+      "reference_count": 116,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>After Unification in 1861, the Italian government pursued an ambitious policy of investments, largely funded by foreign capital. Italy experienced a short boom that ended in 1866, when a collapse in credit nearly led to an Argentinian-style default. This was averted by adopting a prudent fiscal policy and suspending the convertibility of lira into gold. Imports of capital dried up and the GDP stagnated until the end of the century. We e",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.2307/j.ctt9qgr33.12",
+      "title": "South Korea after the 1997 economic crisis:",
+      "authors": [
+        "Lee-Gong, Eunna"
+      ],
+      "venue": "Social policy in challenging times",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.4324/9780429324864-4",
+      "title": "A New Parliament in the Economic Crisis",
+      "authors": [
+        "Zajc, Drago"
+      ],
+      "venue": "Legislative Decline in the 21st Century",
+      "year": 2020,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "",
+      "title": "Protecting Status: The Mortgage Crisis, Eminent Domain, and the Ethic of Homeownership",
+      "authors": [
+        "Rachel D. Godsil",
+        "David Simunovich"
+      ],
+      "venue": "FLASH - Fordham Law Archive of Scholarship & History (Fordham University)",
+      "year": 2008,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://ir.lawnet.fordham.edu/cgi/viewcontent.cgi?article=4401&context=flr",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "",
+      "title": "Narratives of Identity and Culturally Relevant Practices of Japanese Descent Teachers",
+      "authors": [
+        "Gumiko Monobe"
+      ],
+      "venue": "OhioLink ETD Center (Ohio Library and Information Network)",
+      "year": 2010,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1275243730",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "",
+      "title": "MARINE PROTECTED AREAS IN COLOMBIA: RE-CONNECTING SOCIAL, ECOLOGICAL, AND POLICY ASPECTS THROUGH A GOVERNANCE PERSPECTIVE",
+      "authors": [
+        "Luisa Ramírez"
+      ],
+      "venue": "Scholars Commons (Wilfrid Laurier University)",
+      "year": 2017,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholars.wlu.ca/etd/1986",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1002/ijop.13026",
+      "title": "SYMPOSIUM",
+      "authors": [],
+      "venue": "International Journal of Psychology",
+      "year": 2023,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ijop.13026",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "",
+      "title": "Sustainability: The Business Perspective",
+      "authors": [
+        "Simon Wright"
+      ],
+      "venue": "Charles Sturt University Research Output (CRO)",
+      "year": 2013,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://researchoutput.csu.edu.au/files/31661828/9874281_Whole_book.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 116
+    },
+    {
       "doi": "10.4324/9781003415510-3",
       "title": "Lost Decades",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Dunscomb, Paul E."
+      ],
       "venue": "The Crisis in Pro Baseball and Japan’s Lost Decade",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
       "source": "crossref",
-      "type": "book-chapter"
-    },
-    {
-      "rank": 12,
-      "doi": "10.31979/etd.uddu-u757",
-      "title": "Lost Decades of Japan",
       "abstract": "",
-      "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dissertation"
+      "rank": 117
     },
     {
-      "rank": 13,
       "doi": "10.2307/j.ctv301gpm.7",
       "title": "Negotiating the Economic Miracle:",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "In Gold We Trust",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 118
     },
     {
-      "rank": 14,
+      "doi": "10.31979/etd.uddu-u757",
+      "title": "Lost Decades of Japan",
+      "authors": [
+        "Makhija, Nishant"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
       "doi": "10.2307/j.ctv301gpm.12",
       "title": "Between Development and Decline:",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "In Gold We Trust",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 120
     },
     {
-      "rank": 15,
       "doi": "10.1515/9780691187365-005",
       "title": "CHAPTER 2. Negotiating the Economic Miracle: Valenza Po's Jewelry Industry in the Decades after World War II",
-      "abstract": "",
-      "year": 2007,
+      "authors": [],
       "venue": "In Gold We Trust",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2007,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 121
     },
     {
-      "rank": 16,
       "doi": "10.2307/j.ctt9qh7sf.12",
       "title": "TARGETED ASSISTANCE:",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "Workers and Welfare",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 122
     },
     {
-      "rank": 17,
       "doi": "10.1057/9781137478757.0009",
       "title": "Long Waves of Prosperity and Decline",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "DejuÃ¡n, Ãscar"
+      ],
       "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 123
     },
     {
-      "rank": 18,
       "doi": "10.1515/9780691187365-010",
       "title": "CHAPTER 7.  Between Development and Decline: Jewelry Work from an International Perspective",
-      "abstract": "",
-      "year": 2007,
+      "authors": [],
       "venue": "In Gold We Trust",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
+      "year": 2007,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
       "source": "crossref",
-      "type": "book-chapter"
-    },
-    {
-      "rank": 19,
-      "doi": "10.2307/j.ctt9qh7sf.11",
-      "title": "PARADIGM SHIFT:",
       "abstract": "",
-      "year": null,
-      "venue": "Workers and Welfare",
-      "citation_count": 0,
-      "engines_found_in": [
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "book-chapter"
+      "rank": 124
     },
     {
-      "rank": 20,
       "doi": "10.1057/9781137478757.0007",
       "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "Werner, Richard A."
+      ],
       "venue": "Lost Decades in Growth Performance",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 125
+    },
+    {
+      "doi": "10.2307/j.ctt9qh7sf.11",
+      "title": "PARADIGM SHIFT:",
+      "authors": [],
+      "venue": "Workers and Welfare",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
       "source": "crossref",
-      "type": "book-chapter"
-    },
-    {
-      "rank": 21,
-      "doi": "arXiv:2203.04740v1",
-      "title": "Trust levels in social networks",
       "abstract": "",
-      "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 126
     },
     {
-      "rank": 22,
-      "doi": "10.1609/icwsm.v18i1.31366",
-      "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+      "doi": "10.1016/j.sbspro.2013.08.555",
+      "title": "Gender Features of Trust Crisis Experience",
+      "authors": [
+        "Dostovalov, S.G."
+      ],
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1163/2589-4021_ieco_com_040001",
+      "title": "I. Three Decades of Legal and Social Change",
+      "authors": [],
+      "venue": "International Encyclopedia of Comparative Law Online",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1016/b978-0-08-097086-8.26070-4",
+      "title": "Social and Economic Change: Psychological Challenges for Individuals",
+      "authors": [
+        "Silbereisen, Rainer K.",
+        "Tomasik, Martin J."
+      ],
+      "venue": "International Encyclopedia of the Social &amp; Behavioral Sciences",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.4324/9780203114049-12",
+      "title": "Hibernating economic decline? Tourism and labour market change in Europe’s northern periphery",
+      "authors": [],
+      "venue": "Tourism and Crisis",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1007/978-981-99-2931-3_4",
+      "title": "Social Trust Rupture and Informal Financial Crisis in City D",
+      "authors": [
+        "Weiping, Liu"
+      ],
+      "venue": "Social Trust",
       "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 131
     },
     {
-      "rank": 23,
+      "doi": "10.1057/9781137002501.0016",
+      "title": "From Agrarian Crisis to Global Economic Crisis",
+      "authors": [
+        "Banerjee, Arindam"
+      ],
+      "venue": "The Global Crisis and Transformative Social Change",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.59425/eabc.1696852826",
+      "title": "Is the Chinese economy headed for Japan-style lost decades?",
+      "authors": [
+        "editors, EAF"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1142/9789814632102_0003",
+      "title": "The Lessons of the Lost Two Decades of the Japanese Economy",
+      "authors": [
+        "ICHIMURA, SHINICHI"
+      ],
+      "venue": "Japan and Asia",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.56687/9781847428295-010",
+      "title": "South Korea after the 1997 economic crisis: a ‘paradigm shift’?",
+      "authors": [
+        "Lee-Gong, Eunna"
+      ],
+      "venue": "Social policy in challenging times",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1002/9781118791912.ch1",
+      "title": "How Japan Papers Over Economic Cracks with Monetary and Fiscal Policy",
+      "authors": [],
+      "venue": "Japanization",
+      "year": 2012,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.46692/9781847428295.007",
+      "title": "South Korea after the 1997 economic crisis: a ‘paradigm shift’?",
+      "authors": [
+        "Lee-Gong, Eunna"
+      ],
+      "venue": "Social Policy in Challenging Times",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1525/9780520308350-006",
+      "title": "2. ECONOMIC CRISIS: THE DECLINE OF EXPORTS",
+      "authors": [],
+      "venue": "The Sugar Industry in Pernambuco, 1840–1910",
+      "year": 1974,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1016/j.sbspro.2013.06.397",
+      "title": "The Change in Governmental Organizations in the Context of the Economic and Financial Crisis. A Case-Study in Romania",
+      "authors": [
+        "Matei, Lucica",
+        "Lazăr, Corina Georgiana"
+      ],
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "year": 2013,
+      "cited_by_count": 0,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.7215/co_in_20101217a",
+      "title": "A Comparative Assessment of How Trade Liberalization and the Economic Crisis Have Impacted Mexico and Chile",
+      "authors": [
+        "Puyana, Alicia"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.2307/jj.8306298.9",
+      "title": "ECONOMIC CRISIS:",
+      "authors": [],
+      "venue": "The Sugar Industry in Pernambuco, 1840 - 1910",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1057/9781137478757_2",
+      "title": "A Third Decade of Low Growth? Lessons from Japan on Financial Management and Economic Growth",
+      "authors": [
+        "Werner, Richard A."
+      ],
+      "venue": "Lost Decades in Growth Performance",
+      "year": 2015,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.7560/716315-003",
+      "title": "2. Mexico and the World",
+      "authors": [],
+      "venue": "Globalization in Rural Mexico",
+      "year": 2007,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.1057/9781137293688.0017",
+      "title": "Crisis, Social Class, and the âFixingâ of Capitalism in Mexico",
+      "authors": [
+        "Martinez, Hepzibah MuÃ±oz"
+      ],
+      "venue": "Global Economic Crisis and the Politics of Diversity",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.46692/9781847428295.002",
+      "title": "The economic crisis and paradigm change",
+      "authors": [
+        "Hill, Michael"
+      ],
+      "venue": "Social Policy in Challenging Times",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.56687/9781847428295-005",
+      "title": "The economic crisis and paradigm change",
+      "authors": [
+        "Hill, Michael"
+      ],
+      "venue": "Social policy in challenging times",
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.38064/eurssh.18",
+      "title": "SOCIAL TRUST A CONFUSION BETWEEN LOST AND WON  A COMPARATIVE ENCOUNTER WITH SOCIAL TRUST AMONG THE YEZIDIS OF ARMENIA AND NORTH IRAQ",
+      "authors": [
+        "*, *"
+      ],
+      "venue": "Euroasia Journal of Social Sciences and Humanities",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.4324/9781351002707-17",
+      "title": "Social Justice and Security Crisis in Mexico",
+      "authors": [
+        "Azaola, Elena"
+      ],
+      "venue": "Routledge Handbook of Social, Economic, and Criminal Justice",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2203.04740v1",
+      "arxiv_id": "2203.04740v1",
+      "title": "Trust levels in social networks",
+      "authors": [
+        "Santanu Acharjee",
+        "Akhil Thomas Panicker"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.04740v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1609/icwsm.v18i1.31366",
+      "arxiv_id": "2312.11326v2",
+      "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+      "authors": [
+        "Marcelo Sartori Locatelli",
+        "Pedro Calais",
+        "Matheus Prado Miranda",
+        "João Pedro Junho",
+        "Tomas Lacerda Muniz",
+        "Wagner Meira",
+        "Virgilio Almeida"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11326v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
       "doi": "10.3390/socsci11110522",
+      "arxiv_id": "2301.04607v1",
       "title": "The Impact of National Culture on Innovation A Comparative Analysis between Developed and Developing Nations during the Pre and Post Crisis Period 2007_2021",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Han-Sol Lee",
+        "Sergey U. Chernikov",
+        "Szabolcs Nagy",
+        "Ekaterina A. Degtereva"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2301.04607v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 151
     },
     {
-      "rank": 24,
       "doi": "arXiv:2203.12318v1",
+      "arxiv_id": "2203.12318v1",
       "title": "Trust and Reliance in XAI -- Distinguishing Between Attitudinal and Behavioral Measures",
-      "abstract": "",
-      "year": 2022,
+      "authors": [
+        "Nicolas Scharowski",
+        "Sebastian A. C. Perrig",
+        "Nick von Felten",
+        "Florian Brühlmann"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.12318v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 152
     },
     {
-      "rank": 25,
       "doi": "10.1109/TSMCA.2011.2132707",
+      "arxiv_id": "1303.0093v1",
       "title": "Multidimensional Social Network in the Social Recommender System",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "Przemyslaw Kazienko",
+        "Katarzyna Musial",
+        "Tomasz Kajdanowicz"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0093v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 153
     },
     {
-      "rank": 26,
       "doi": "arXiv:2203.06015v1",
+      "arxiv_id": "2203.06015v1",
       "title": "Comparing Global Tourism Flows Measured by Official Census and Social Sensing",
-      "abstract": "",
+      "authors": [
+        "Lucas Skora",
+        "Helen Senefonte",
+        "Myriam Delgado",
+        "Ricardo Lüders",
+        "Thiago Silva"
+      ],
+      "venue": "arXiv",
       "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2203.06015v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 154
     },
     {
-      "rank": 27,
       "doi": "arXiv:2004.06774v4",
+      "arxiv_id": "2004.06774v4",
       "title": "CrisisBench: Benchmarking Crisis-related Social Media Datasets for Humanitarian Information Processing",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Firoj Alam",
+        "Hassan Sajjad",
+        "Muhammad Imran",
+        "Ferda Ofli"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.06774v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 155
     },
     {
-      "rank": 28,
       "doi": "arXiv:2603.09997v1",
+      "arxiv_id": "2603.09997v1",
       "title": "Empathy Is Not What Changed: Clinical Assessment of Psychological Safety Across GPT Model Generations",
-      "abstract": "",
+      "authors": [
+        "Michael Keeman",
+        "Anastasia Keeman"
+      ],
+      "venue": "arXiv",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2603.09997v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 156
     },
     {
-      "rank": 29,
       "doi": "arXiv:1311.4606v1",
+      "arxiv_id": "1311.4606v1",
       "title": "A Trust Model Based Analysis of Social Networks",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "Surya Nepal",
+        "Cecile Paris",
+        "Sanat Kumar Bista",
+        "Wanita Sherchan"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1311.4606v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 157
     },
     {
-      "rank": 30,
       "doi": "arXiv:2008.08370v2",
+      "arxiv_id": "2008.08370v2",
       "title": "Coordinated Behavior on Social Media in 2019 UK General Election",
-      "abstract": "",
-      "year": 2020,
+      "authors": [
+        "Leonardo Nizzoli",
+        "Serena Tardelli",
+        "Marco Avvenuti",
+        "Stefano Cresci",
+        "Maurizio Tesconi"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.08370v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 158
+    },
+    {
+      "doi": "10.1007/978-4-431-53853-0_6",
+      "arxiv_id": "0905.0220v1",
+      "title": "Financial Bubbles, Real Estate bubbles, Derivative Bubbles, and the Financial and Economic Crisis",
+      "authors": [
+        "Didier Sornette",
+        "Ryan Woodard"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0905.0220v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2007.11756v1",
+      "arxiv_id": "2007.11756v1",
+      "title": "Clustering of Social Media Messages for Humanitarian Aid Response during Crisis",
+      "authors": [
+        "Swati Padhee",
+        "Tanay Kumar Saha",
+        "Joel Tetreault",
+        "Alejandro Jaimes"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2007.11756v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.18564/jasss.3316",
+      "arxiv_id": "1406.7770v3",
+      "title": "A Psychologically-Motivated Model of Opinion Change with Applications to American Politics",
+      "authors": [
+        "Peter Duggins"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1406.7770v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.1109/TCSS.2022.3140779",
+      "arxiv_id": "2106.01750v3",
+      "title": "Modeling Influencer Marketing Campaigns in Social Networks",
+      "authors": [
+        "Ronak Doshi",
+        "Ajay Ramesh Ranganathan",
+        "Shrisha Rao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.01750v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.1007/978-3-319-77332-2_13",
+      "arxiv_id": "1708.08134v1",
+      "title": "Measuring social spam and the effect of bots on information diffusion in social media",
+      "authors": [
+        "Emilio Ferrara"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.08134v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "arXiv:2504.18837v4",
+      "arxiv_id": "2504.18837v4",
+      "title": "Sentiment and Social Signals in the Climate Crisis: A Survey on Analyzing Social Media Responses to Extreme Weather Events",
+      "authors": [
+        "Pouya Shaeri",
+        "Yasaman Mohammadpour",
+        "Alimohammad Beigi",
+        "Ariane Middel"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.18837v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "arXiv:2203.05967v1",
+      "arxiv_id": "2203.05967v1",
+      "title": "A Weibo Dataset for the 2022 Russo-Ukrainian Crisis",
+      "authors": [
+        "Yi R. Fung",
+        "Heng Ji"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.05967v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.1007/s11403-019-00236-7",
+      "arxiv_id": "1901.03951v1",
+      "title": "Inequality, mobility and the financial accumulation process: A computational economic analysis",
+      "authors": [
+        "Simone Righi",
+        "Yuri Biondi"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1901.03951v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "arXiv:1810.00132v1",
+      "arxiv_id": "1810.00132v1",
+      "title": "A Framework to Support the Trust Process in News and Social Media",
+      "authors": [
+        "Carlos Laufer",
+        "Daniel Schwabe"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1810.00132v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.1007/s13278-023-01161-1",
+      "arxiv_id": "2409.07720v1",
+      "title": "Keeping it Authentic: The Social Footprint of the Trolls Network",
+      "authors": [
+        "Ori Swed",
+        "Sachith Dassanayaka",
+        "Dimitri Volchenkov"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.07720v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:2510.10449v1",
+      "arxiv_id": "2510.10449v1",
+      "title": "Austerity in Crisis?: A Narrative Review of Its Economic, Social, and Political Effects in Times of Crisis",
+      "authors": [
+        "Ricardo Alonzo Fernández Salguero"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.10449v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.1007/s13278-022-00994-6",
+      "arxiv_id": "2603.21470v1",
+      "title": "Empirical Evaluation of Link Deletion Methods for Limiting Information Diffusion on Social Media",
+      "authors": [
+        "Shiori Furukawa",
+        "Sho Tsugawa"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.21470v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1109/CASoN.2012.6412380",
+      "arxiv_id": "1303.5009v1",
+      "title": "Quantifying Social Network Dynamics",
+      "authors": [
+        "Radosław Michalski",
+        "Piotr Bródka",
+        "Przemysław Kazienko",
+        "Krzysztof Juszczyszyn"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.5009v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.1145/2492517.2492530",
+      "arxiv_id": "1310.2665v1",
+      "title": "Clustering Memes in Social Media",
+      "authors": [
+        "Emilio Ferrara",
+        "Mohsen JafariAsbagh",
+        "Onur Varol",
+        "Vahed Qazvinian",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2665v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.1016/j.osnem.2023.100270",
+      "arxiv_id": "2305.18907v2",
+      "title": "Multitask learning for recognizing stress and depression in social media",
+      "authors": [
+        "Loukas Ilias",
+        "Dimitris Askounis"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.18907v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "10.1609/icwsm.v19i1.35911",
+      "arxiv_id": "2501.12571v2",
+      "title": "Exploring Unknown Social Networks for Discovering Hidden Nodes",
+      "authors": [
+        "Sho Tsugawa",
+        "Hiroyuki Ohsaki"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.12571v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1016/j.osnem.2022.100220",
+      "arxiv_id": "2203.15752v3",
+      "title": "Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users",
+      "authors": [
+        "Lucio La Cava",
+        "Andrea Tagarelli"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.15752v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:1412.0127v1",
+      "arxiv_id": "1412.0127v1",
+      "title": "A biased view of a few possible components when reflecting on the present decade financial and economic crisis",
+      "authors": [
+        "Marcel Ausloos"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1412.0127v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.1007/978-3-540-87781-3_40",
+      "arxiv_id": "1303.0284v1",
+      "title": "Social Recommendations within the Multimedia Sharing Systems",
+      "authors": [
+        "Katarzyna Musial",
+        "Przemyslaw Kazienkol",
+        "Tomasz Kajdanowicz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0284v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.1109/CGC.2012.95",
+      "arxiv_id": "1303.2369v1",
+      "title": "Negative Effects of Incentivised Viral Campaigns for Activity in Social Networks",
+      "authors": [
+        "Radosław Michalski",
+        "Jarosław Jankowski",
+        "Przemysław Kazienko"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.2369v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "10.1007/978-3-642-16567-2_7",
+      "arxiv_id": "1303.0095v1",
+      "title": "Label-dependent Feature Extraction in Social Networks for Node Classification",
+      "authors": [
+        "Tomasz Kajdanowicz",
+        "Przemyslaw Kazienko",
+        "Piotr Doskocz"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1303.0095v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.1145/2512938.2512956",
+      "arxiv_id": "1310.2671v1",
+      "title": "Traveling Trends: Social Butterflies or Frequent Fliers?",
+      "authors": [
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2671v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2504.07983v2",
+      "arxiv_id": "2504.07983v2",
+      "title": "Psychological Health Knowledge-Enhanced LLM-based Social Network Crisis Intervention Text Transfer Recognition Method",
+      "authors": [
+        "Shurui Wu",
+        "Xinyi Huang",
+        "Dingxin Lu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.07983v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:1604.07096v1",
+      "arxiv_id": "1604.07096v1",
+      "title": "Understanding Illicit Drug Use Behaviors by Mining Social Media",
+      "authors": [
+        "Yiheng Zhou",
+        "Numair Sani",
+        "Chia-Kuei Lee",
+        "Jiebo Luo"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1604.07096v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:1605.05146v14",
+      "arxiv_id": "1605.05146v14",
+      "title": "Understanding Social-Force Model in Psychological Principles of Collective Behavior",
+      "authors": [
+        "Peng N. Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.05146v14",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "10.1007/s42001-017-0007-4",
+      "arxiv_id": "1710.08615v1",
+      "title": "Computational Social Scientist Beware: Simpson's Paradox in Behavioral Data",
+      "authors": [
+        "Kristina Lerman"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.08615v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2602.08707v3",
+      "arxiv_id": "2602.08707v3",
+      "title": "Why do we Trust Chatbots? From Normative Principles to Behavioral Drivers",
+      "authors": [
+        "Aditya Gulati",
+        "Nuria Oliver"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.08707v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "10.1007/s13278-014-0237-x",
+      "arxiv_id": "1411.0652v1",
+      "title": "Clustering memes in social media streams",
+      "authors": [
+        "Mohsen JafariAsbagh",
+        "Emilio Ferrara",
+        "Onur Varol",
+        "Filippo Menczer",
+        "Alessandro Flammini"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.0652v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "arXiv:2510.06788v1",
+      "arxiv_id": "2510.06788v1",
+      "title": "Unpacking Discourses on Childbirth and Parenthood in Popular Social Media Platforms Across China, Japan, and South Korea",
+      "authors": [
+        "Zheng Wei",
+        "Yunqi Li",
+        "Yucheng He",
+        "Yuelu Li",
+        "Xian Xu",
+        "Huamin Qu",
+        "Pan Hui",
+        "Muzhi Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.06788v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "arXiv:1208.1004v1",
+      "arxiv_id": "1208.1004v1",
+      "title": "Social Trust as a solution to address sparsity-inherent problems of Recommender systems",
+      "authors": [
+        "Georgios Pitsilis",
+        "Svein J. Knapskog"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.1004v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:2511.03434v1",
+      "arxiv_id": "2511.03434v1",
+      "title": "Inter-Agent Trust Models: A Comparative Study of Brief, Claim, Proof, Stake, Reputation and Constraint in Agentic Web Protocol Design-A2A, AP2, ERC-8004, and Beyond",
+      "authors": [
+        "Botao 'Amber' Hu",
+        "Helena Rong"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.03434v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "10.3390/e25091265",
+      "arxiv_id": "2308.00087v1",
+      "title": "Efficient Multi-Change Point Analysis to decode Economic Crisis Information from the S&P500 Mean Market Correlation",
+      "authors": [
+        "Martin Heßler",
+        "Tobias Wand",
+        "Oliver Kamps"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.00087v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "arXiv:1609.02075v1",
+      "arxiv_id": "1609.02075v1",
+      "title": "The Social Dynamics of Language Change in Online Networks",
+      "authors": [
+        "Rahul Goel",
+        "Sandeep Soni",
+        "Naman Goyal",
+        "John Paparrizos",
+        "Hanna Wallach",
+        "Fernando Diaz",
+        "Jacob Eisenstein"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1609.02075v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:2011.12443v1",
+      "arxiv_id": "2011.12443v1",
+      "title": "The Human Effect Requires Affect: Addressing Social-Psychological Factors of Climate Change with Machine Learning",
+      "authors": [
+        "Kyle Tilbury",
+        "Jesse Hoey"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2011.12443v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "10.1007/s10368-025-00665-9",
+      "arxiv_id": "2512.19985v1",
+      "title": "The Quantitative Comparative Economics: indices of similarity to economic systems",
+      "authors": [
+        "Ali Zeytoon-Nejad"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.19985v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "arXiv:2402.15671v1",
+      "arxiv_id": "2402.15671v1",
+      "title": "Towards a Participatory and Social Justice-Oriented Measure of Human-Robot Trust",
+      "authors": [
+        "Raj Korpan"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.15671v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "arXiv:2112.06642v1",
+      "arxiv_id": "2112.06642v1",
+      "title": "Unraveling Social Perceptions & Behaviors towards Migrants on Twitter",
+      "authors": [
+        "Aparup Khatua",
+        "Wolfgang Nejdl"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.06642v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "arXiv:2110.13626v1",
+      "arxiv_id": "2110.13626v1",
+      "title": "A Pipeline for Graph-Based Monitoring of the Changes in the Information Space of Russian Social Media during the Lockdown",
+      "authors": [
+        "V. Danilova",
+        "S. Popova",
+        "V. Karpova"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.13626v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:1709.05551v1",
+      "arxiv_id": "1709.05551v1",
+      "title": "Applying Machine Learning Methods to Enhance the Distribution of Social Services in Mexico",
+      "authors": [
+        "Kris Sankaran",
+        "Diego Garcia-Olano",
+        "Mobin Javed",
+        "Maria Fernanda Alcala-Durand",
+        "Adolfo De Unánue",
+        "Paul van der Boor",
+        "Eric Potash",
+        "Roberto Sánchez Avalos",
+        "Luis Iñaki Alberro Encinas",
+        "Rayid Ghani"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.05551v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "10.1007/978-3-030-91434-9_25",
+      "arxiv_id": "2202.00515v1",
+      "title": "Comparing Community-aware Centrality Measures in Online Social Networks",
+      "authors": [
+        "Stephany Rajeh",
+        "Marinette Savonnet",
+        "Eric Leclercq",
+        "Hocine Cherifi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.00515v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
     }
   ]
 }

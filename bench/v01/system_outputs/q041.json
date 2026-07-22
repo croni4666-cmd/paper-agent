@@ -1,601 +1,4176 @@
 {
   "query_id": "q041",
   "query": "肝豆状核性变的研究综述以及患者生存概率追溯 (Wilson's disease)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 10,
-    "core": 10
+  "topic_bucket": "bio",
+  "source": "user",
+  "generated_at": "2026-07-22T11:30:30",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 39,
+  "n_returned": 187,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
-      "doi": "10.1016/j.jhep.2011.11.007",
-      "title": "EASL Clinical Practice Guidelines: Wilson's disease.",
-      "abstract": "",
-      "year": 2012,
-      "venue": "Journal of Hepatology",
-      "citation_count": 997,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.1038/s41580-020-00324-8",
+      "title": "Ferroptosis: Mechanisms, Biology and Role in Disease",
+      "authors": [
+        "Xuejun Jiang"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 2,
-      "doi": "10.1016/S0140-6736(07)60196-2",
-      "title": "Wilson's disease",
-      "abstract": "",
-      "year": 2007,
-      "venue": "The Lancet",
-      "citation_count": 843,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
-    },
-    {
-      "rank": 3,
-      "doi": "10.1016/0002-9343(56)90066-3",
-      "title": "Penicillamine, a new oral therapy for Wilson's disease.",
-      "abstract": "",
-      "year": 1956,
-      "venue": "American Journal of Medicine",
-      "citation_count": 683,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 4,
-      "doi": "10.1038/s41419-021-03397-1",
-      "title": "Inhibiting NLRP3 inflammasome activation prevents copper-induced neuropathology in a murine model of Wilson’s disease",
-      "abstract": "",
+      "venue": "Nature reviews Molecular cell biology",
       "year": 2021,
-      "venue": "Cell Death and Disease",
-      "citation_count": 89,
-      "engines_found_in": [
-        "semanticscholar"
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e99815a9fced0a24b833ac6",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "rank": 1
     },
     {
-      "rank": 5,
-      "doi": "10.5582/irdr.2017.01057",
-      "title": "Epidemiology, diagnosis, and treatment of Wilson's disease.",
-      "abstract": "",
-      "year": 2017,
-      "venue": "Intractable & Rare Diseases Research",
-      "citation_count": 83,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.1038/s41586-020-2008-3",
+      "title": "A New Coronavirus Associated with Human Respiratory Disease in China",
+      "authors": [
+        "Fan Wu"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
+      "venue": "Nature",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e3a9291df1a9c0c41ebeef8",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
     },
     {
-      "rank": 6,
-      "doi": "10.1002/cld.986",
-      "title": "Wilson’s Disease and Iron Overload: Pathophysiology and Therapeutic Implications",
-      "abstract": "",
-      "year": 2021,
-      "venue": "Clinical Liver Disease",
-      "citation_count": 27,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.1056/nejmoa2002032",
+      "title": "Clinical Characteristics of Coronavirus Disease 2019 in China.",
+      "authors": [
+        "W. Guan"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "Review"
+      "venue": "New England Journal of Medicine",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e5a379a93d709897c36aa66",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
     },
     {
-      "rank": 7,
-      "doi": "10.2147/NDT.S443278",
-      "title": "Ferulic Acid Activates SIRT1-Mediated Ferroptosis Signaling Pathway to Improve Cognition Dysfunction in Wilson’s Disease",
-      "abstract": "",
-      "year": 2023,
-      "venue": "Neuropsychiatric Disease and Treatment",
-      "citation_count": 17,
-      "engines_found_in": [
-        "semanticscholar"
+      "doi": "10.1016/s0140-6736(20)30925-9",
+      "title": "Global Burden of 369 Diseases and Injuries in 204 Countries and Territories, 1990–2019: a Systematic Analysis for the Global Burden of Disease Study 2019",
+      "authors": [
+        "GBD  Diseases and Injuries Collaborators"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "venue": "Lancet (London, England)",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f8ebff99fced0a24b50890a",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
     },
     {
-      "rank": 8,
-      "doi": "10.1016/j.nbd.2024.106692",
-      "title": "Altered cortical functional networks in Wilson's disease: A resting-state electroencephalogram study.",
-      "abstract": "",
+      "doi": "10.1016/j.cpcardiol.2023.102056",
+      "title": "Carotid and Renal Vascular Disease.",
+      "authors": [
+        "Chayakrit Krittanawong"
+      ],
+      "venue": "CURRENT PROBLEMS IN CARDIOLOGY",
       "year": 2024,
-      "venue": "Neurobiology of Disease",
-      "citation_count": 3,
-      "engines_found_in": [
-        "semanticscholar"
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64f6c3a43fda6d7f063a3ebd",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
       ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
+      "rank": 5
     },
     {
-      "rank": 9,
+      "doi": "10.1056/nejmoa2212948",
+      "title": "Lecanemab in Early Alzheimer's Disease.",
+      "authors": [
+        "Christopher H. van Dyck"
+      ],
+      "venue": "NEW ENGLAND JOURNAL OF MEDICINE",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6388863990e50fcafd5b7590",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1002/alz.12638",
+      "title": "2022 Alzheimer's disease facts and figures",
+      "authors": [
+        "Joseph Gaugler"
+      ],
+      "venue": "ALZHEIMERS & DEMENTIA",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628d1e565aee126c0f3e0850",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1515/mr-2022-0027",
+      "title": "Developmental Origins of Adult Diseases",
+      "authors": [
+        "Jiaying Mo"
+      ],
+      "venue": "Medical review (Berlin, Germany)",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63c96a9790e50fcafdd13028",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1038/s41392-021-00507-5",
+      "title": "Pyroptosis: Mechanisms and Diseases",
+      "authors": [
+        "Pian Yu"
+      ],
+      "venue": "Signal Transduction and Targeted Therapy",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6062f9f4e4510cd7c8963b7a",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1016/j.jhep.2011.11.007",
+      "arxiv_id": "",
+      "title": "EASL Clinical Practice Guidelines: Wilson's disease.",
+      "authors": [],
+      "venue": "Journal of Hepatology",
+      "year": 2012,
+      "cited_by_count": 998,
+      "influential_cite_count": 20,
+      "reference_count": 156,
+      "tldr": "There is not a single randomized controlled trial conducted in Wilson's disease which has an optimal design so it is impossible to assign a high or even a moderate quality of evidence to any of the questions dealt with in these guidelines.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.jhep.2011.11.007",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There is not a single randomized controlled trial conducted in Wilson's disease which has an optimal design so it is impossible to assign a high or even a moderate quality of evidence to any of the questions dealt with in these guidelines.",
+      "rank": 10
+    },
+    {
+      "doi": "10.1016/S0140-6736(07)60196-2",
+      "arxiv_id": "",
+      "title": "Wilson's disease",
+      "authors": [
+        "A. Ala",
+        "A. Walker",
+        "K. Ashkan",
+        "J. Dooley",
+        "M. Schilsky"
+      ],
+      "venue": "The Lancet",
+      "year": 2007,
+      "cited_by_count": 843,
+      "influential_cite_count": 12,
+      "reference_count": 458,
+      "tldr": "The discovery of the Wilson's disease gene has opened up a new molecular diagnostic approach, and could form the basis of future gene therapy.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The discovery of the Wilson's disease gene has opened up a new molecular diagnostic approach, and could form the basis of future gene therapy.",
+      "rank": 11
+    },
+    {
+      "doi": "10.1016/0002-9343(56)90066-3",
+      "arxiv_id": "",
+      "title": "Penicillamine, a new oral therapy for Wilson's disease.",
+      "authors": [
+        "J. Walshe"
+      ],
+      "venue": "American Journal of Medicine",
+      "year": 1956,
+      "cited_by_count": 683,
+      "influential_cite_count": 17,
+      "reference_count": 23,
+      "tldr": "A new form of oral treatment with dimethyl cysteine (penicillamine) is described, given in doses varying from 0.5 to 1.5 gm.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A new form of oral treatment with dimethyl cysteine (penicillamine) is described, given in doses varying from 0.5 to 1.5 gm.",
+      "rank": 12
+    },
+    {
+      "doi": "10.1016/j.mpmed.2024.01.011",
+      "title": "Crohn's Disease",
+      "authors": [
+        "Hannah Walton"
+      ],
+      "venue": "Medicine",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e6c55d13fb2c6cf6265385",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1016/b978-0-323-69424-7.00026-0",
+      "title": "Vertebrobasilar Disease.",
+      "authors": [
+        "Louis R. Caplan"
+      ],
+      "venue": "STORIES OF STROKE Key Individuals and the Evolution of Ideas",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a516d7612c6b12ab036368",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1016/j.cell.2022.12.032",
+      "title": "Hallmarks of Neurodegenerative Diseases.",
+      "authors": [
+        "David M. Wilson III"
+      ],
+      "venue": "CELL",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63f746a290e50fcafd16aaeb",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1038/s41392-022-00974-4",
+      "title": "Microbiota in Health and Diseases",
+      "authors": [
+        "Kaijian Hou"
+      ],
+      "venue": "SIGNAL TRANSDUCTION AND TARGETED THERAPY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6267ce9f5aee126c0f7948e1",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1016/S0140-6736(20)32205-4",
+      "title": "Alzheimer's disease.",
+      "authors": [
+        "Philip Scheltens"
+      ],
+      "venue": "Lancet (London, England)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6044a520d3485cfff1a2ab27",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1161/circulationaha.120.050686",
+      "title": "Cardiovascular Disease in Chronic Kidney Disease",
+      "authors": [
+        "Joachim Jankowski"
+      ],
+      "venue": "Circulation",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6051d701ec47cda5321a48a9",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1016/s0140-6736(21)00218-x",
+      "title": "Parkinson's Disease.",
+      "authors": [
+        "Bastiaan R Bloem"
+      ],
+      "venue": "Lancet (London, England)",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60781183e4510cd7c830f9b4",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1016/j.cell.2021.04.015",
+      "title": "Mechanisms and Disease Consequences of Nonalcoholic Fatty Liver Disease.",
+      "authors": [
+        "Rohit Loomba"
+      ],
+      "venue": "CELL",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60a0f5fee4510cd7c8dd10f5",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1038/s41593-020-0624-8",
+      "title": "Disease-associated Astrocytes in Alzheimer’s Disease and Aging",
+      "authors": [
+        "Naomi Habib"
+      ],
+      "venue": "Nature Neuroscience",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ea9515b9fced0a24b19bc48",
+      "matched_phrase": "disease)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1002/9781119211419.ch37",
+      "title": "Wilson's Disease",
+      "authors": [
+        "Claire  Kelly"
+      ],
+      "venue": "Evidence-based Gastroenterology and Hepatology 4e",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c9a6f25244ab9dcb049efa",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1111/j.1749-6632.2009.05109.x",
+      "arxiv_id": "",
+      "title": "Neurologic Wilson's disease",
+      "authors": [
+        "M. Lorincz"
+      ],
+      "venue": "Annals of the New York Academy of Sciences",
+      "year": 2010,
+      "cited_by_count": 322,
+      "influential_cite_count": 12,
+      "reference_count": 82,
+      "tldr": "Despite a long history, Wilson's disease, an autosomal recessive disease caused by mutations in the ATP7B gene, remains a commonly misdiagnosed import disease.",
+      "is_oa": true,
+      "oa_url": "http://deepblue.lib.umich.edu/bitstream/2027.42/78731/1/j.1749-6632.2009.05109.x.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Despite a long history, Wilson's disease, an autosomal recessive disease caused by mutations in the ATP7B gene, remains a commonly misdiagnosed import disease.",
+      "rank": 23
+    },
+    {
+      "doi": "10.3390/diagnostics13071287",
+      "title": "Wilson’s Disease—Genetic Puzzles with Diagnostic Implications",
+      "authors": [
+        "Grazyna Gromadzka"
+      ],
+      "venue": "DIAGNOSTICS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6436bc70eb3a37274425d812",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1155/2022/9518592",
+      "title": "Haplotype and Mutation Analysis in Japanese Patients with Wilson Disease",
+      "authors": [
+        "Zachary M. M. Harris"
+      ],
+      "venue": "OXIDATIVE MEDICINE AND CELLULAR LONGEVITY",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a749b7602d9703081c6f",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1126/sciadv.abl5508",
+      "title": "Structure of the Wilson Disease Copper Transporter ATP7B",
+      "authors": [
+        "Ryan M. Bitter"
+      ],
+      "venue": "SCIENCE ADVANCES",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9ad81b7602d9703777a3a",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/jhep06(2022)112",
+      "title": "Spin Impurities, Wilson Lines and Semiclassics",
+      "authors": [
+        "Cuomo  Gabriel"
+      ],
+      "venue": "Journal of High Energy Physics",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61f9f6455aee126c0f41ed7b",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.1002/hep.32805",
+      "title": "A Multidisciplinary Approach to the Diagnosis and Management of Wilson Disease:Executive Summary of the 2022 Practice Guidance on Wilson Disease from the American Association for the Study of Liver Diseases.",
+      "authors": [
+        "Michael L. Schilsky"
+      ],
+      "venue": "HEPATOLOGY",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63301a1f90e50fcafd8f3c48",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1136/jnnp-2021-326123",
+      "title": "Wilson's Disease: Update on Pathogenesis, Biomarkers and Treatments",
+      "authors": [
+        "Samuel Shribman"
+      ],
+      "venue": "JOURNAL OF NEUROLOGY NEUROSURGERY AND PSYCHIATRY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "610a6d005244ab9dcbe22079",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1002/hep.30911",
+      "title": "The Prevalence of Wilson’s Disease: an Update",
+      "authors": [
+        "Thomas Damgaard Sandahl"
+      ],
+      "venue": "Hepatology (Baltimore, Md)",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d6654c6ed7e9c792655a764",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.3389/fmed.2020.00026",
+      "title": "Late-Onset Wilson's Disease",
+      "authors": [
+        "Miroslav Zigrai"
+      ],
+      "venue": "FRONTIERS IN MEDICINE",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8eddb69fced0a24b7574e5",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1144/sp470.3",
+      "title": "The Subduction Initiation Stage of the Wilson Cycle",
+      "authors": [
+        "Robert Hall"
+      ],
+      "venue": "Geological Society Special Publication",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c757414f56def979890938b",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1093/ia/iiy212",
+      "title": "The Rise and Fall of American Hegemony from Wilson to Trump",
+      "authors": [
+        "Joseph S. Nye"
+      ],
+      "venue": "INTERNATIONAL AFFAIRS",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ce2d0dfced107d4c63c79e9",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1016/b978-0-12-811077-5.00009-8",
+      "title": "The Genetics of Wilson Disease",
+      "authors": [
+        "Michelle Angela Camarata"
+      ],
+      "venue": "Wilson Disease",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6218ef5b5aee126c0f074374",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.1055/s-2000-9389",
+      "arxiv_id": "",
+      "title": "Wilson's Disease",
+      "authors": [
+        "G. Loudianos",
+        "J. Gitlin"
+      ],
+      "venue": "Seminars in liver disease (Print)",
+      "year": 2000,
+      "cited_by_count": 107,
+      "influential_cite_count": 3,
+      "reference_count": 103,
+      "tldr": "The molecular genetic basis of Wilson's disease has permitted new insights into the mechanisms of cellular copper homeostasis and copper chelation with penicillamine is an effective therapy in most patients and hepatic transplantation is curative in individuals presenting with irreversible liver failure.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The molecular genetic basis of Wilson's disease has permitted new insights into the mechanisms of cellular copper homeostasis and copper chelation with penicillamine is an effective therapy in most patients and hepatic transplantation is curative in individuals presenting with irreversible liver failure.",
+      "rank": 35
+    },
+    {
+      "doi": "10.1136/adc.37.193.253",
+      "arxiv_id": "",
+      "title": "Wilson's Disease",
+      "authors": [
+        "J. Walshe"
+      ],
+      "venue": "Archives of Disease in Childhood",
+      "year": 1962,
+      "cited_by_count": 96,
+      "influential_cite_count": 2,
+      "reference_count": 16,
+      "tldr": "Analysis of the presenting signs and symptoms in cases personally studied has fully confirmed the pleomorphic manifestations of Wilson's disease and the various guises which it may take.",
+      "is_oa": true,
+      "oa_url": "https://adc.bmj.com/content/archdischild/37/193/253.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Analysis of the presenting signs and symptoms in cases personally studied has fully confirmed the pleomorphic manifestations of Wilson's disease and the various guises which it may take.",
+      "rank": 36
+    },
+    {
+      "doi": "10.1038/s41419-021-03397-1",
+      "arxiv_id": "",
+      "title": "Inhibiting NLRP3 inflammasome activation prevents copper-induced neuropathology in a murine model of Wilson’s disease",
+      "authors": [
+        "Jianjian Dong",
+        "Xun Wang",
+        "Chenchen Xu",
+        "Manli Gao",
+        "Shijing Wang",
+        "Jin Zhang",
+        "Haiyang Tong",
+        "Lulu Wang",
+        "Yongzhu Han",
+        "N. Cheng",
+        "Yongsheng Han"
+      ],
+      "venue": "Cell Death and Disease",
+      "year": 2021,
+      "cited_by_count": 89,
+      "influential_cite_count": 2,
+      "reference_count": 49,
+      "tldr": "This study investigates how the activation of NLR family pyrin domain containing 3 (NLRP3) inflammasome contributes to copper-mediated neuroinflammation in an animal model of Wilson’s disease and demonstrates the contribution of copper overload-mediatedactivation of NLRP3 inflammaome to progressive neuropathology in the CNS of a murine model of WD.",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41419-021-03397-1.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study investigates how the activation of NLR family pyrin domain containing 3 (NLRP3) inflammasome contributes to copper-mediated neuroinflammation in an animal model of Wilson’s disease and demonstrates the contribution of copper overload-mediatedactivation of NLRP3 inflammaome to progressive neuropathology in the CNS of a murine model of WD.",
+      "rank": 37
+    },
+    {
+      "doi": "10.5582/irdr.2017.01057",
+      "arxiv_id": "",
+      "title": "Epidemiology, diagnosis, and treatment of Wilson's disease.",
+      "authors": [
+        "Jing Liu",
+        "J. Luan",
+        "Xiaoyan Zhou",
+        "Yazhou Cui",
+        "Jinxiang Han"
+      ],
+      "venue": "Intractable & Rare Diseases Research",
+      "year": 2017,
+      "cited_by_count": 84,
+      "influential_cite_count": 4,
+      "reference_count": 55,
+      "tldr": "The specific clinical symptoms of Wilson's disease, its diagnosis, and treatment options are described.",
+      "is_oa": true,
+      "oa_url": "https://www.jstage.jst.go.jp/article/irdr/6/4/6_2017.01057/_pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The specific clinical symptoms of Wilson's disease, its diagnosis, and treatment options are described.",
+      "rank": 38
+    },
+    {
+      "doi": "10.1136/adc.48.6.476",
+      "arxiv_id": "",
+      "title": "Wilson's disease or chronic copper poisoning?",
+      "authors": [
+        "J. Walker-Smith",
+        "J. Blomfield"
+      ],
+      "venue": "Archives of Disease in Childhood",
+      "year": 1973,
+      "cited_by_count": 72,
+      "influential_cite_count": 2,
+      "reference_count": 13,
+      "tldr": "The case history is given of a child who presented at 14 months with ascites and was found to have severe micronodular cirrhosis with biochemical evidence of Wilson's disease, but in view of the severity of the pathology and early age of presentation the possibility of chronic copper poisoning was investigated.",
+      "is_oa": true,
+      "oa_url": "https://adc.bmj.com/content/archdischild/48/6/476.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The case history is given of a child who presented at 14 months with ascites and was found to have severe micronodular cirrhosis with biochemical evidence of Wilson's disease, but in view of the severity of the pathology and early age of presentation the possibility of chronic copper poisoning was investigated.",
+      "rank": 39
+    },
+    {
+      "doi": "10.3233/JAD-2012-111997",
+      "arxiv_id": "",
+      "title": "Association of K832R and R952K SNPs of Wilson's Disease Gene with Alzheimer's Disease",
+      "authors": [
+        "S. Bucossi",
+        "R. Polimanti",
+        "S. Mariani",
+        "M. Ventriglia",
+        "C. Bonvicini",
+        "S. Migliore",
+        "D. Manfellotto",
+        "C. Salustri",
+        "F. Vernieri",
+        "P. Rossini",
+        "R. Squitti"
+      ],
+      "venue": "Journal of Alzheimer's Disease",
+      "year": 2012,
+      "cited_by_count": 57,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "The investigation demonstrated the presence of loci of susceptibility for AD in the WD ATP7B gene, supporting a role of copper dysfunction in contributing or accelerating neurodegenerative processes leading to AD.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The investigation demonstrated the presence of loci of susceptibility for AD in the WD ATP7B gene, supporting a role of copper dysfunction in contributing or accelerating neurodegenerative processes leading to AD.",
+      "rank": 40
+    },
+    {
+      "doi": "10.1007/s11011-013-9378-2",
+      "arxiv_id": "",
+      "title": "The effect of gender on brain MRI pathology in Wilson’s disease",
+      "authors": [
+        "T. Litwin",
+        "G. Gromadzka",
+        "Anna Członkowska",
+        "Marek Gołębiowski",
+        "Renata Poniatowska"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2013,
+      "cited_by_count": 54,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "There is a gender-dependent brain vulnerability to copper toxicity, potentially related to an oestrogen protective effect and are due to differences in gender-related clinical forms according to the predominant form of Wilson's Disease.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11011-013-9378-2.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There is a gender-dependent brain vulnerability to copper toxicity, potentially related to an oestrogen protective effect and are due to differences in gender-related clinical forms according to the predominant form of Wilson's Disease.",
+      "rank": 41
+    },
+    {
+      "doi": "10.1002/jca.21396",
+      "arxiv_id": "",
+      "title": "REPORT OF THE ASFA APHERESIS REGISTRY STUDY ON WILSON'S DISEASE",
+      "authors": [
+        "H. Pham",
+        "J. Schwartz",
+        "L. Cooling",
+        "Jan C. Hofmann",
+        "Haewon C. Kim",
+        "S. Morgan",
+        "M. Pagano",
+        "J. Schneiderman",
+        "Jeffrey L. Winters",
+        "Chisa Yamada",
+        "E. Wong",
+        "Yanyun Wu"
+      ],
+      "venue": "Journal of clinical apheresis",
+      "year": 2015,
+      "cited_by_count": 45,
+      "influential_cite_count": 1,
+      "reference_count": 23,
+      "tldr": "The collective experiences through the ASFA apheresis registry on Wilson's disease are reported here to provide a bridge to liver transplantation.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc4713324?pdf=render",
+      "source": "semanticscholar",
+      "type": "Study",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The collective experiences through the ASFA apheresis registry on Wilson's disease are reported here to provide a bridge to liver transplantation.",
+      "rank": 42
+    },
+    {
+      "doi": "10.1002/jimd.12430",
+      "arxiv_id": "",
+      "title": "Adherence to treatment, a challenge even in treatable metabolic rare diseases: A cross sectional study of Wilson's disease",
+      "authors": [
+        "Elodie Jacquelet",
+        "A. Poujois",
+        "M. Pheulpin",
+        "Adèle Demain",
+        "N. Tinant",
+        "Nathalie Gastellier",
+        "F. Woimant"
+      ],
+      "venue": "Journal of Inherited Metabolic Disease",
+      "year": 2021,
+      "cited_by_count": 44,
+      "influential_cite_count": 6,
+      "reference_count": 39,
+      "tldr": "S sustained multidisciplinary management on a case‐by‐case basis is necessary for sustained adherence problems with Wilson's disease in particular in asymptomatic patients.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "S sustained multidisciplinary management on a case‐by‐case basis is necessary for sustained adherence problems with Wilson's disease in particular in asymptomatic patients.",
+      "rank": 43
+    },
+    {
+      "doi": "10.1016/j.dld.2011.12.010",
+      "arxiv_id": "",
+      "title": "Non-invasive assessment of hepatic fibrosis in a series of patients with Wilson's Disease.",
+      "authors": [
+        "M. Sini",
+        "O. Sorbello",
+        "A. Civolani",
+        "M. Liggi",
+        "L. Demelia"
+      ],
+      "venue": "Digestive and Liver Disease",
+      "year": 2012,
+      "cited_by_count": 44,
+      "influential_cite_count": 2,
+      "reference_count": 17,
+      "tldr": "FibroScan values are clinically useful for predicting fibrosis stages and helpful in managing chronic therapy in Wilson's Disease patients and non-invasive tests compared to liver histology inWilson's Disease are validated.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "FibroScan values are clinically useful for predicting fibrosis stages and helpful in managing chronic therapy in Wilson's Disease patients and non-invasive tests compared to liver histology inWilson's Disease are validated.",
+      "rank": 44
+    },
+    {
+      "doi": "10.1007/s00259-007-0681-1",
+      "arxiv_id": "",
+      "title": "Brain MRI and SPECT in the diagnosis of early neurological involvement in Wilson’s disease",
+      "authors": [
+        "M. Piga",
+        "A. Murru",
+        "L. Satta",
+        "A. Serra",
+        "A. Sias",
+        "G. Loi",
+        "F. Marrosu",
+        "L. Demelia"
+      ],
+      "venue": "European Journal of Nuclear Medicine and Molecular Imaging",
+      "year": 2008,
+      "cited_by_count": 39,
+      "influential_cite_count": 0,
+      "reference_count": 57,
+      "tldr": "It is suggested that ECD SPECT might be useful in detecting early brain damage in WD, not only in the perspective of assessing and treating motor impairment but also in evaluating better the less investigated disorders in the cognitive domain.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is suggested that ECD SPECT might be useful in detecting early brain damage in WD, not only in the perspective of assessing and treating motor impairment but also in evaluating better the less investigated disorders in the cognitive domain.",
+      "rank": 45
+    },
+    {
+      "doi": "10.1007/s11011-013-9407-1",
+      "arxiv_id": "",
+      "title": "Diffusion Tensor Imaging (DTI) and its clinical correlates in drug naïve Wilson’s disease",
+      "authors": [
+        "R. Jadav",
+        "J. Saini",
+        "S. Sinha",
+        "B. Bagepally",
+        "Shobini L. Rao",
+        "A. Taly"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2013,
+      "cited_by_count": 35,
+      "influential_cite_count": 1,
+      "reference_count": 26,
+      "tldr": "DTI analysis revealed lobar WM abnormalities which is less frequently noted on conventional MRI and suggests widespread WM abnormalities in Wilson’s disease, probably the first study to reveal widespread alterations in WM by DTI metrics in drug naïve WD.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "DTI analysis revealed lobar WM abnormalities which is less frequently noted on conventional MRI and suggests widespread WM abnormalities in Wilson’s disease, probably the first study to reveal widespread alterations in WM by DTI metrics in drug naïve WD.",
+      "rank": 46
+    },
+    {
+      "doi": "10.1007/s11011-015-9776-8",
+      "arxiv_id": "",
+      "title": "Optical coherence tomography and electrophysiology of retinal and visual pathways in Wilson’s disease",
+      "authors": [
+        "E. Langwińska-Wośko",
+        "T. Litwin",
+        "K. Szulborski",
+        "A. Członkowska"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2015,
+      "cited_by_count": 33,
+      "influential_cite_count": 1,
+      "reference_count": 37,
+      "tldr": "Morphological and electrophysiological changes of retinal and visual pathways are associated with MRI visualized brain injury in Wilson’s disease and may be useful for detecting the degree of neurodegeneration.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11011-015-9776-8.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Morphological and electrophysiological changes of retinal and visual pathways are associated with MRI visualized brain injury in Wilson’s disease and may be useful for detecting the degree of neurodegeneration.",
+      "rank": 47
+    },
+    {
+      "doi": "10.1136/adc.60.7.656",
+      "arxiv_id": "",
+      "title": "Oral zinc sulphate for Wilson's disease.",
+      "authors": [
+        "M. Caillie-Bertrand",
+        "J. Degenhart",
+        "K. A. Visser",
+        "M. Sinaasappel",
+        "J. Bouquet",
+        "Dr H J Degenhart"
+      ],
+      "venue": "Archives of Disease in Childhood",
+      "year": 1985,
+      "cited_by_count": 31,
+      "influential_cite_count": 1,
+      "reference_count": 10,
+      "tldr": "It is concluded that zinc sulphate is a low toxic and well tolerated alternative for D-penicillamine, and the dosage depends, however, on individual factors not yet well understood, and it is recommended restriction of its use to patients who do not tolerate D- penicillamines well.",
+      "is_oa": true,
+      "oa_url": "https://adc.bmj.com/content/archdischild/60/7/656.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is concluded that zinc sulphate is a low toxic and well tolerated alternative for D-penicillamine, and the dosage depends, however, on individual factors not yet well understood, and it is recommended restriction of its use to patients who do not tolerate D- penicillamines well.",
+      "rank": 48
+    },
+    {
+      "doi": "10.1103/physrevlett.130.151601",
+      "title": "Phases of Wilson Lines in Conformal Field Theories",
+      "authors": [
+        "Ofer Aharony"
+      ],
+      "venue": "Physical review letters",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "637d8f5490e50fcafd6e629b",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.1103/physrevlett.130.201601",
+      "title": "Wilson Loops at Large N and the Quantum M2-Brane",
+      "authors": [
+        "Simone Giombi"
+      ],
+      "venue": "Physical review letters",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64225b7e90e50fcafde14f8e",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1007/jhep12(2023)183",
+      "title": "Phases of Wilson Lines: Conformality and Screening",
+      "authors": [
+        "Ofer Aharony"
+      ],
+      "venue": "Journal of High Energy Physics",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "651b79a33fda6d7f0628d351",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1007/jhep08(2022)067",
+      "title": "Multipoint Correlators on the Supersymmetric Wilson Line Defect CFT",
+      "authors": [
+        "Barrat  Julien"
+      ],
+      "venue": "Journal of High Energy Physics",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c2974b5244ab9dcbcf1ade",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1016/j.cld.2022.03.008",
+      "title": "Wilson Disease in Children",
+      "authors": [
+        "Nanda Kerkar"
+      ],
+      "venue": "Clinics in liver disease",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6347ac6290e50fcafd892f0f",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1007/jhep03(2021)145",
+      "title": "AdS2 Duals to ADHM Quivers with Wilson Lines",
+      "authors": [
+        "Lozano  Yolanda"
+      ],
+      "venue": "Journal of High Energy Physics",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fc6076891e011894738192b",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.21037/tgh-2020-02",
+      "title": "Recent Advances in Wilson Disease",
+      "authors": [
+        "Maryam Moini"
+      ],
+      "venue": "Translational gastroenterology and hepatology",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "606ed571e4510cd7c8b5be75",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.1097/wco.0000000000000837",
+      "title": "Wilson Disease.",
+      "authors": [
+        "Annu Aggarwal"
+      ],
+      "venue": "Current opinion in neurology",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee356979fced0a24b91c64e",
+      "matched_phrase": "(Wilson's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1097/MD.0000000000011743",
+      "arxiv_id": "",
+      "title": "Association study of gut flora in Wilson's disease through high-throughput sequencing",
+      "authors": [
+        "H. Geng",
+        "Shan Shu",
+        "Jianjian Dong",
+        "Hai Li",
+        "Chenchen Xu",
+        "Yongsheng Han",
+        "Ji-yuan Hu",
+        "Yongzhu Han",
+        "Renmin Yang",
+        "N. Cheng"
+      ],
+      "venue": "Medicine",
+      "year": 2018,
+      "cited_by_count": 29,
+      "influential_cite_count": 1,
+      "reference_count": 28,
+      "tldr": "The diversity and composition of intestinal flora in the WD patients were significantly lower than those in the healthy controls, and the diversity of intestine flora may be associated with the presence of WD.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1097/md.0000000000011743",
+      "source": "semanticscholar",
+      "type": "Study",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The diversity and composition of intestinal flora in the WD patients were significantly lower than those in the healthy controls, and the diversity of intestine flora may be associated with the presence of WD.",
+      "rank": 57
+    },
+    {
+      "doi": "10.1136/adc.60.7.652",
+      "arxiv_id": "",
+      "title": "Wilson's disease: assessment of D-penicillamine treatment.",
+      "authors": [
+        "M. Van Caillie-Bertrand",
+        "H. Degenhart",
+        "I. Luijendijk",
+        "J. Bouquet",
+        "M. Sinaasappel"
+      ],
+      "venue": "Archives of Disease in Childhood",
+      "year": 1985,
+      "cited_by_count": 28,
+      "influential_cite_count": 1,
+      "reference_count": 17,
+      "tldr": "Data obtained indicate that D-penicillamine alters the metabolism of both copper and zinc, and the extent of this is not only dose dependent but is also related to the efficacy of copper elimination.",
+      "is_oa": true,
+      "oa_url": "https://adc.bmj.com/content/archdischild/60/7/652.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Data obtained indicate that D-penicillamine alters the metabolism of both copper and zinc, and the extent of this is not only dose dependent but is also related to the efficacy of copper elimination.",
+      "rank": 58
+    },
+    {
+      "doi": "10.1002/cld.986",
+      "arxiv_id": "",
+      "title": "Wilson’s Disease and Iron Overload: Pathophysiology and Therapeutic Implications",
+      "authors": [
+        "Kevin Pak",
+        "Sarah M Ordway",
+        "Brett W. Sadowski",
+        "Margaux M Canevari",
+        "D. Torres"
+      ],
+      "venue": "Clinical Liver Disease",
+      "year": 2021,
+      "cited_by_count": 27,
+      "influential_cite_count": 2,
+      "reference_count": 31,
+      "tldr": "A review of the etiology and pathophysiology of Wilson’s disease, as well as the iron overload syndromes, is reviewed, followed by an explanation of the mechanism of secondary hemochromatosis in patients with WD.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cld.986",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A review of the etiology and pathophysiology of Wilson’s disease, as well as the iron overload syndromes, is reviewed, followed by an explanation of the mechanism of secondary hemochromatosis in patients with WD.",
+      "rank": 59
+    },
+    {
+      "doi": "10.1097/00005053-198511000-00009",
+      "arxiv_id": "",
+      "title": "Penicillamine therapy for schizophreniform psychosis in Wilson's disease.",
+      "authors": [
+        "I. Modai",
+        "L. Karp",
+        "U. Liberman",
+        "H. Munitz"
+      ],
+      "venue": "Journal of Nervous and Mental Disease",
+      "year": 1985,
+      "cited_by_count": 27,
+      "influential_cite_count": 1,
+      "reference_count": 0,
+      "tldr": "This case suggests a connection between copper brain poisoning and the related acute psychotic features, which responded well to penicillamine treatment.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This case suggests a connection between copper brain poisoning and the related acute psychotic features, which responded well to penicillamine treatment.",
+      "rank": 60
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Wilson's disease.",
+      "authors": [
+        "P. Ferenci"
+      ],
+      "venue": "Clinical Liver Disease",
+      "year": 1998,
+      "cited_by_count": 26,
+      "influential_cite_count": 2,
+      "reference_count": 0,
+      "tldr": "Effective medical treatment with copper chelators or zinc results in symptomatic improvement and normal life expectancy and Orthotopic liver transplantation is indicated in advanced cases with hepatic decompensation or in patients with fulminant Wilson's disease.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Effective medical treatment with copper chelators or zinc results in symptomatic improvement and normal life expectancy and Orthotopic liver transplantation is indicated in advanced cases with hepatic decompensation or in patients with fulminant Wilson's disease.",
+      "rank": 61
+    },
+    {
+      "doi": "10.1016/j.bbadis.2020.165842",
+      "arxiv_id": "",
+      "title": "Activation of HIF-1 signaling ameliorates liver steatosis in zebrafish atp7b deficiency (Wilson's disease) models.",
+      "authors": [
+        "X. Mi",
+        "Zhihui Li",
+        "Jian Yan",
+        "Yingniang Li",
+        "Jun Zheng",
+        "Zhenjie Zhaung",
+        "Wenjun Yang",
+        "L. Gong",
+        "Junping Shi"
+      ],
+      "venue": "Biochimica et Biophysica Acta - Molecular Basis of Disease",
+      "year": 2020,
+      "cited_by_count": 25,
+      "influential_cite_count": 0,
+      "reference_count": 58,
+      "tldr": "It is demonstrated that activation of the HIF-1 signaling pathway with the chemical compound FG-4592 or DMOG ameliorates liver steatosis and reduces accumulated Cu levels in zebrafish atp7b deficiency models.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is demonstrated that activation of the HIF-1 signaling pathway with the chemical compound FG-4592 or DMOG ameliorates liver steatosis and reduces accumulated Cu levels in zebrafish atp7b deficiency models.",
+      "rank": 62
+    },
+    {
+      "doi": "10.1007/s10545-013-9625-z",
+      "arxiv_id": "",
+      "title": "Concordance rates of Wilson’s disease phenotype among siblings",
+      "authors": [
+        "G. Chabik",
+        "T. Litwin",
+        "A. Członkowska"
+      ],
+      "venue": "Journal of Inherited Metabolic Disease",
+      "year": 2013,
+      "cited_by_count": 22,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "A high intra-familial concordance of the clinical and biochemical presentation of Wilson’s disease is demonstrated, suggesting that similar factors shared within the same families strongly influence the disease presentation.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1007/s10545-013-9625-z",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A high intra-familial concordance of the clinical and biochemical presentation of Wilson’s disease is demonstrated, suggesting that similar factors shared within the same families strongly influence the disease presentation.",
+      "rank": 63
+    },
+    {
+      "doi": "10.1007/s11011-009-9145-6",
+      "arxiv_id": "",
+      "title": "Heterozygous carriers for Wilson’s disease—magnetic spectroscopy changes in the brain",
+      "authors": [
+        "B. Tarnacka",
+        "W. Szeszkowski",
+        "J. Buettner",
+        "M. Gołębiowski",
+        "G. Gromadzka",
+        "A. Członkowska"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2009,
+      "cited_by_count": 22,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "The results suggest that WD Hzc may accumulate free copper in the basal ganglia, and the brain metabolite analysis showed a statistically significant higher mean ratio of Glx/Cr and Lip/Cr in MRS in Hzc in both the pallidum and thalami compared to control subjects.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results suggest that WD Hzc may accumulate free copper in the basal ganglia, and the brain metabolite analysis showed a statistically significant higher mean ratio of Glx/Cr and Lip/Cr in MRS in Hzc in both the pallidum and thalami compared to control subjects.",
+      "rank": 64
+    },
+    {
+      "doi": "10.1002/cld.1041",
+      "arxiv_id": "",
+      "title": "The Present and Future Challenges of Wilson’s Disease Diagnosis and Treatment",
+      "authors": [
+        "M. Leung",
+        "P. Aronowitz",
+        "V. Medici"
+      ],
+      "venue": "Clinical Liver Disease",
+      "year": 2021,
+      "cited_by_count": 21,
+      "influential_cite_count": 3,
+      "reference_count": 22,
+      "tldr": "The aim of this review is to recapitulate the current understanding of the genetics of Wilson’s disease, explain the challenges in diagnosis and management, and appraise the pipeline of future diagnostic tests and therapies for WD.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8087914",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The aim of this review is to recapitulate the current understanding of the genetics of Wilson’s disease, explain the challenges in diagnosis and management, and appraise the pipeline of future diagnostic tests and therapies for WD.",
+      "rank": 65
+    },
+    {
+      "doi": "10.1007/s11011-016-9946-3",
+      "arxiv_id": "",
+      "title": "Frequency-dependent changes in the amplitude of low-frequency fluctuations in patients with Wilson’s disease: a resting-state fMRI study",
+      "authors": [
+        "Xiaopeng Hu",
+        "Siyi Chen",
+        "Chang-Bing Huang",
+        "Y. Qian",
+        "Yongqiang Yu"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2017,
+      "cited_by_count": 20,
+      "influential_cite_count": 2,
+      "reference_count": 49,
+      "tldr": "The study suggests the accumulation of copper profoundly impaired intrinsic brain activity and the impairments seem to be frequency-dependent, which provides further insights into the understanding of the pathophysiology of Wilson’s disease.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11011-016-9946-3.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The study suggests the accumulation of copper profoundly impaired intrinsic brain activity and the impairments seem to be frequency-dependent, which provides further insights into the understanding of the pathophysiology of Wilson’s disease.",
+      "rank": 66
+    },
+    {
+      "doi": "10.2147/NDT.S443278",
+      "arxiv_id": "",
+      "title": "Ferulic Acid Activates SIRT1-Mediated Ferroptosis Signaling Pathway to Improve Cognition Dysfunction in Wilson’s Disease",
+      "authors": [
+        "Xie Wang",
+        "N. Shao",
+        "Xiaoyan Zhang",
+        "Hong Chen",
+        "Z. Chang",
+        "D. Xie",
+        "Juan Zhang"
+      ],
+      "venue": "Neuropsychiatric Disease and Treatment",
+      "year": 2023,
+      "cited_by_count": 18,
+      "influential_cite_count": 0,
+      "reference_count": 71,
+      "tldr": "FA alleviates hippocampal neuronal injury by activating SIRT1-mediated FPT, providing a valuable candidate for traditional Chinese medicine monomer for the clinical therapeutics of WD cognitive impairment.",
+      "is_oa": true,
+      "oa_url": "https://www.dovepress.com/getfile.php?fileID=94936",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "FA alleviates hippocampal neuronal injury by activating SIRT1-mediated FPT, providing a valuable candidate for traditional Chinese medicine monomer for the clinical therapeutics of WD cognitive impairment.",
+      "rank": 67
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Hepatic Manifestations in Wilson's Disease: Report of 110 Cases.",
+      "authors": [
+        "Lianjie Lin",
+        "Dong-xu Wang",
+        "Nannan Ding",
+        "Changqing Zheng"
+      ],
+      "venue": "Hepato-Gastroenterology",
+      "year": 2015,
+      "cited_by_count": 17,
+      "influential_cite_count": 1,
+      "reference_count": 0,
+      "tldr": "Patients at any age with liver injury of unknown etiology should be screened for Wilson's disease, especially in terms of age, type of liver injury, and clinical manifestations and laboratory findings.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Patients at any age with liver injury of unknown etiology should be screened for Wilson's disease, especially in terms of age, type of liver injury, and clinical manifestations and laboratory findings.",
+      "rank": 68
+    },
+    {
+      "doi": "10.1136/fn.79.3.F198",
+      "arxiv_id": "",
+      "title": "Caeruloplasmin isoforms in Wilson’s disease in neonates",
+      "authors": [
+        "G. F. E. Chowrimootoo",
+        "H. Scowcroft",
+        "Carol A Seymour",
+        "Ezhova Gf",
+        "Chowrimootoo H Scowcroft"
+      ],
+      "venue": "Archives of Disease in Childhood: Fetal and Neonatal Edition",
+      "year": 1998,
+      "cited_by_count": 17,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "Although total caeruloplasmin concentrations are reduced in neonates, the plasma isoform was significantly reduced or absent in patients with Wilson’s disease.",
+      "is_oa": true,
+      "oa_url": "https://fn.bmj.com/content/fetalneonatal/79/3/F198.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Although total caeruloplasmin concentrations are reduced in neonates, the plasma isoform was significantly reduced or absent in patients with Wilson’s disease.",
+      "rank": 69
+    },
+    {
+      "doi": "10.1016/j.dld.2011.11.001",
+      "arxiv_id": "",
+      "title": "Urinary copper excretion before and after oral intake of d-penicillamine in parents of patients with Wilson's disease.",
+      "authors": [
+        "J. Vieira",
+        "P. Oliveira",
+        "Y. Juliano",
+        "K. R. J. Warde",
+        "M. Deguti",
+        "E. Barbosa",
+        "F. Carrilho",
+        "E. Cançado"
+      ],
+      "venue": "Digestive and Liver Disease",
+      "year": 2012,
+      "cited_by_count": 16,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "The current diagnostic threshold of 24-h urinary copper excretion after d-penicillamine was not reached by heterozygotes and should not be taken into account when diagnosing Wilson's disease.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The current diagnostic threshold of 24-h urinary copper excretion after d-penicillamine was not reached by heterozygotes and should not be taken into account when diagnosing Wilson's disease.",
+      "rank": 70
+    },
+    {
+      "doi": "10.1016/j.disamonth.2014.07.002",
+      "arxiv_id": "",
+      "title": "Wilson's disease: etiology, diagnosis, and treatment.",
+      "authors": [
+        "Arif Dalvi",
+        "M. Padmanaban"
+      ],
+      "venue": "Disease-a-month : DM",
+      "year": 2014,
+      "cited_by_count": 16,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "Though WD is thought to be an autosomal recessive disease, most individuals are compound heterozygotes, carrying different mutations on each allele encoding the WD gene.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Though WD is thought to be an autosomal recessive disease, most individuals are compound heterozygotes, carrying different mutations on each allele encoding the WD gene.",
+      "rank": 71
+    },
+    {
+      "doi": "10.1007/s11011-017-9956-9",
+      "arxiv_id": "",
+      "title": "Age-dependent Changes of Cerebral Copper Metabolism in Atp7b−/− Knockout Mouse Model of Wilson’s Disease by [64Cu]CuCl2-PET/CT",
+      "authors": [
+        "Fang Xie",
+        "Y. Xi",
+        "J. Pascual",
+        "O. Muzik",
+        "Fangyu Peng"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2017,
+      "cited_by_count": 15,
+      "influential_cite_count": 0,
+      "reference_count": 43,
+      "tldr": "The findings of this study support clinical use of [64Cu]CuCl2-PET/CT imaging as a tool for noninvasive assessment of age-dependent changes of cerebral copper metabolism in WD patients presenting with variable neurological and psychiatric symptoms.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5573586",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The findings of this study support clinical use of [64Cu]CuCl2-PET/CT imaging as a tool for noninvasive assessment of age-dependent changes of cerebral copper metabolism in WD patients presenting with variable neurological and psychiatric symptoms.",
+      "rank": 72
+    },
+    {
+      "doi": "10.1016/j.dld.2009.06.012",
+      "arxiv_id": "",
+      "title": "HFE gene mutations and Wilson's disease in Sardinia.",
+      "authors": [
+        "O. Sorbello",
+        "M. Sini",
+        "A. Civolani",
+        "L. Demelia"
+      ],
+      "venue": "Digestive and Liver Disease",
+      "year": 2010,
+      "cited_by_count": 14,
+      "influential_cite_count": 1,
+      "reference_count": 29,
+      "tldr": "The results showed that an adjustment of dosage of drugs could prevent further iron overload induced by overtreatment only in patients HFE wild-type.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results showed that an adjustment of dosage of drugs could prevent further iron overload induced by overtreatment only in patients HFE wild-type.",
+      "rank": 73
+    },
+    {
+      "doi": "10.1016/j.disamonth.2014.07.003",
+      "arxiv_id": "",
+      "title": "Wilson's disease: neurological and psychiatric manifestations.",
+      "authors": [
+        "Arif Dalvi"
+      ],
+      "venue": "Disease-a-month : DM",
+      "year": 2014,
+      "cited_by_count": 14,
+      "influential_cite_count": 3,
+      "reference_count": 38,
+      "tldr": null,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.1136/adc.37.193.242",
+      "arxiv_id": "",
+      "title": "Wilson's Disease",
+      "authors": [
+        "C. Warren",
+        "P. Broughton"
+      ],
+      "venue": "Archives of Disease in Childhood",
+      "year": 1962,
+      "cited_by_count": 13,
+      "influential_cite_count": 0,
+      "reference_count": 40,
+      "tldr": "This paper records two cases of Wilson's disease in the same family, one severely affected, the other asymptomatic, and the good clinical response of the former to treatment with penicillamine over a period of four years.",
+      "is_oa": true,
+      "oa_url": "https://adc.bmj.com/content/archdischild/37/193/242.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This paper records two cases of Wilson's disease in the same family, one severely affected, the other asymptomatic, and the good clinical response of the former to treatment with penicillamine over a period of four years.",
+      "rank": 75
+    },
+    {
+      "doi": "10.32629/er.v3i7.2941",
+      "title": "95后大学生的性观念现状调查研究——以工科院校的学生为例",
+      "authors": [
+        "张, 由月"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 11,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着社会的快速发展,95后大学生的性观念也会随之发生变化,笔者以工科院校的学生为例,对95后大学生的性观念、性行为进行调查研究。从国家、学校、家庭等方面加强性教育,对于维护性心理健康,形成良好的大学生性文明,有着非常重要的现实意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1055/s-0037-1602764",
+      "arxiv_id": "",
+      "title": "Disorders in Hepatic Copper Secretion: Wilson's Disease and Pleomorphic Syndromes",
+      "authors": [
+        "V. Lalioti",
+        "A. Tsubota",
+        "I. Sandoval"
+      ],
+      "venue": "Seminars in liver disease (Print)",
+      "year": 2017,
+      "cited_by_count": 11,
+      "influential_cite_count": 1,
+      "reference_count": 131,
+      "tldr": "The authors discuss the new association of cuprotoxicosis with pleomorphic syndromes, of which MEDNIK is the first example, produced by genetic variations that disrupt the universal mechanisms of protein transport and thus perturb the traffic of Atp7b linked to Cu excretion.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The authors discuss the new association of cuprotoxicosis with pleomorphic syndromes, of which MEDNIK is the first example, produced by genetic variations that disrupt the universal mechanisms of protein transport and thus perturb the traffic of Atp7b linked to Cu excretion.",
+      "rank": 77
+    },
+    {
+      "doi": "10.1007/s11011-013-9399-x",
+      "arxiv_id": "",
+      "title": "Influence of BDNF polymorphisms on Wilson’s disease susceptibility and clinical course",
+      "authors": [
+        "D. Mirowska-Guzel",
+        "T. Litwin",
+        "G. Gromadzka",
+        "A. Członkowski",
+        "A. Członkowska"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2013,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 37,
+      "tldr": "It was found that the BDNF Val/Val (−196 G/G) and −270 C/T genotypes occurred more frequently in WD patients than in healthy controls, and no association was detected between any of the determined polymorphisms and the dominant form of the disease or the age of onset for WD.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11011-013-9399-x.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It was found that the BDNF Val/Val (−196 G/G) and −270 C/T genotypes occurred more frequently in WD patients than in healthy controls, and no association was detected between any of the determined polymorphisms and the dominant form of the disease or the age of onset for WD.",
+      "rank": 78
+    },
+    {
+      "doi": "10.1007/BF01811324",
+      "arxiv_id": "",
+      "title": "Hudson memorial lecture: Wilson's disease: Genetics and biochemistry—their relevance to therapy",
+      "authors": [
+        "J. Walshe"
+      ],
+      "venue": "Journal of Inherited Metabolic Disease",
+      "year": 1983,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "There is no satisfactory explanation for the pleomorphic nature of the disease much less of the often gross assymetry of the lesions in the brain, but treatment entails the establishment of a negative copper balance until the abnormal body stores of the metal have been removed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There is no satisfactory explanation for the pleomorphic nature of the disease much less of the often gross assymetry of the lesions in the brain, but treatment entails the establishment of a negative copper balance until the abnormal body stores of the metal have been removed.",
+      "rank": 79
+    },
+    {
+      "doi": "10.1007/BF01805621",
+      "arxiv_id": "",
+      "title": "Biochemical and clinical changes in Wilson's disease heterozygotes",
+      "authors": [
+        "Z. Mareček",
+        "S. Nevšímalová"
+      ],
+      "venue": "Journal of Inherited Metabolic Disease",
+      "year": 1984,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "Nearly all the children of patients with Wilson's disease were found to have reduced serum copper and caeruloplasmin levels and high rates of urine copper excretion following exposure to penicillamine.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Nearly all the children of patients with Wilson's disease were found to have reduced serum copper and caeruloplasmin levels and high rates of urine copper excretion following exposure to penicillamine.",
+      "rank": 80
+    },
+    {
+      "doi": "10.1016/j.disamonth.2014.07.004",
+      "arxiv_id": "",
+      "title": "Wilson's disease: hepatic manifestations.",
+      "authors": [
+        "D. Shah"
+      ],
+      "venue": "Disease-a-month : DM",
+      "year": 2014,
+      "cited_by_count": 9,
+      "influential_cite_count": 1,
+      "reference_count": 88,
+      "tldr": "It is imperative that WD be considered in the differential diagnosis in anyone with unexplained liver disease with early recognition and prompt medical treatment.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is imperative that WD be considered in the differential diagnosis in anyone with unexplained liver disease with early recognition and prompt medical treatment.",
+      "rank": 81
+    },
+    {
+      "doi": "10.1055/s-0035-1567828",
+      "arxiv_id": "",
+      "title": "Beneath the Copper—Pediatric Wilson's Disease Cirrhosis and Hepatocellular Carcinoma: A Case Report with Literature Review",
+      "authors": [
+        "R. Rosencrantz",
+        "L. LeCompte",
+        "Yasmin Yusuf"
+      ],
+      "venue": "Seminars in liver disease (Print)",
+      "year": 2015,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 39,
+      "tldr": "A preadolescent girl presented with Wilson's disease cirrhosis and a HCC requiring orthotopic liver transplantation, highlighting the need to consider hepatic malignancies even in young Wilson’s disease patients.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A preadolescent girl presented with Wilson's disease cirrhosis and a HCC requiring orthotopic liver transplantation, highlighting the need to consider hepatic malignancies even in young Wilson’s disease patients.",
+      "rank": 82
+    },
+    {
+      "doi": "10.62989/jgpr2024.1.4.2",
+      "title": "凝血功能相关参数在慢性肝病患者中的改变及临床意义",
+      "authors": [
+        "赵欣雨, 赵欣雨"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2024,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.32629/er.v3i2.2470",
+      "title": "大学生抑郁情绪产生的社会影响因素的综述及对策研究",
+      "authors": [
+        "赵, 立娜"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大学生是抑郁的高危群体,影响大学生抑郁情绪的因素有很多,国内的研究一般只针对大学生抑郁情绪产生的影响因素的某一方面或某一方面的某一点进行研究,并未全方位的去探讨,本论文针对国内大学生抑郁情绪产生的社会影响因素的相关文献进行讨论,并从社会就业压力和大学生网络及智能手机成瘾两方面进行综述,并提出一些相关的建议,希望对大学生抑郁情绪的干预提供一定的理论依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1007/s11011-015-9685-x",
+      "arxiv_id": "",
+      "title": "Elevated serum brain natriuretic peptide and matrix metalloproteinases 2 and 9 in Wilson’s disease",
+      "authors": [
+        "N. Cheng",
+        "Honghao Wang",
+        "Jianjian Dong",
+        "Suyue Pan",
+        "Xun Wang",
+        "Yongsheng Han",
+        "Yongzhu Han",
+        "Renmin Yang"
+      ],
+      "venue": "Metabolic brain disease",
+      "year": 2015,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 30,
+      "tldr": null,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.1016/j.nbd.2024.106692",
+      "arxiv_id": "",
+      "title": "Altered cortical functional networks in Wilson's disease: A resting-state electroencephalogram study.",
+      "authors": [
+        "Ru-Kai Chen",
+        "Chan Zhang",
+        "Jian-Wei Lin",
+        "Wu-Xiang Shi",
+        "Yu-Rong Li",
+        "Naiqing Cai"
+      ],
+      "venue": "Neurobiology of Disease",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 58,
+      "tldr": "It is demonstrated that functional network deficits in Wilson's disease can reflect the severity of their neurological symptoms and structural brain abnormalities and may be used as a marker of brain injury in WD.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.nbd.2024.106692",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is demonstrated that functional network deficits in Wilson's disease can reflect the severity of their neurological symptoms and structural brain abnormalities and may be used as a marker of brain injury in WD.",
+      "rank": 86
+    },
+    {
+      "doi": "10.1007/BF01805532",
+      "arxiv_id": "",
+      "title": "Cultured skin fibroblasts: Useful for diagnosis of Wilson's disease?",
+      "authors": [
+        "G. J. V. D. Berg",
+        "C. Hamer",
+        "R. Meijer",
+        "T. Hoogenraad"
+      ],
+      "venue": "Journal of Inherited Metabolic Disease",
+      "year": 1989,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "It is concluded that the cytosolic copper content of fibroblasts grown in a low copper medium is a potential diagnostic tool in Wilson's disease.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is concluded that the cytosolic copper content of fibroblasts grown in a low copper medium is a potential diagnostic tool in Wilson's disease.",
+      "rank": 87
+    },
+    {
+      "doi": "10.37155/2717-5669-0607-15",
+      "title": "脱敏治疗对过敏性鼻炎和过敏性哮喘患者症状及生活质量的影响研究",
+      "authors": [
+        "骆熙昌"
+      ],
+      "venue": "国际全科医学",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.61369/ied.9313",
+      "title": "人口结构变动对消费率的影响研究文献综述",
+      "authors": [
+        "王, 颖"
+      ],
+      "venue": "International Economy and Development",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>人口结构是影响经济发展的关键因素之一。本文旨在综述近年来关于人口结构如何影响消费率的研究成果，探讨人口的年龄结构、性别结构、教育结构、家庭结构、婚姻结构、人口的分布结构等因素对消费率的影响，为制定更加科学合理的政策提供理论依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
       "doi": "10.63887/mhr.2025.1.3.5",
       "title": "骨髓增生异常综合征患者铁过载状态对造血功能及生存质量的影响机制研究",
-      "abstract": "<jats:p>骨髓增生异常综合征是一类造血干细胞克隆性疾病，具有发病率高、异质性强及向急性白血病转化风险大的特点。患者在疾病过程中常因严重贫血而长期接受红细胞输注，这在改善临床症状的同时，却带来体内铁负荷逐渐积累的问题。铁过载不仅是单纯的代谢异常，更是影响患者造血功能、加速病情进展并显著降低生存质量的重要因素。铁过载通过自由基生成、氧化应激反应和炎症反应，导致造血干细胞功能障碍与骨髓微环境破坏，同时引发心脏、肝脏、内分泌系统等多器官损伤。本文在梳理铁过载形成机制的基础上，系统探讨其对造血功能及生存质量的影响途径，结合现有研究提出防治策略与未来方向。结果显示，早期监测铁负荷并进行去铁治疗，有助于延缓病情进展和改善患者生活质量。未来应加强对铁代谢分子机制的研究，发展精准化和个体化的管理方案，以提高MDS患者的总体预后。</jats:p>",
-      "year": null,
+      "authors": [
+        "张锁林"
+      ],
       "venue": "医药卫生研究",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>骨髓增生异常综合征是一类造血干细胞克隆性疾病，具有发病率高、异质性强及向急性白血病转化风险大的特点。患者在疾病过程中常因严重贫血而长期接受红细胞输注，这在改善临床症状的同时，却带来体内铁负荷逐渐积累的问题。铁过载不仅是单纯的代谢异常，更是影响患者造血功能、加速病情进展并显著降低生存质量的重要因素。铁过载通过自由基生成、氧化应激反应和炎症反应，导致造血干细胞功能障碍与骨髓微环境破坏，同时引发心脏、肝脏、内分泌系统等多器官损伤。本文在梳理铁过载形成机制的基础上，系统探讨其对造血功能及生存质量的影响途径，结合现有研究提出防治策略与未来方向。结果显示，早期监测铁负荷并进行去铁治疗，有助于延缓病情进展和改善患者生活质量。未来应加强对铁代谢分子机制的研究，发展精准化和个体化的管理方案，以提高MDS患者的总体预后。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 90
     },
     {
-      "rank": 10,
       "doi": "10.63779/qrkd5560",
       "title": "综合康复训练护理对急性脊髓炎患者活动能力、生存质量的影响",
-      "abstract": "<jats:p>目的:实施综合康复训练护理,探究其对急性脊髓炎患者整体活动功能等机体康复的实际影响及价值。方法:选取在我院进行治疗的急性脊髓炎患者(样本纳入例数:80例;纳入时间:2023年7月至2024年7月),随机数字抽签法将患者分为对照、观察两个组,观察例数高度一致。分别实施常规护理干预、综合康复训练护理干预。对比分析不同护理模式对患者活动能力、生存质量、神经功能的运用作用及价值。结果:与对照组(常规护理干预)相比,观察组(综合康复训练护理)的活动能力各指标评分均高于对照组(P&lt;0.05);生存质量各指标水平评分均更高(P&lt;0.05);神经功能各指标评分均优于对照组(P&lt;0.05)。结论:实施综合康复训练护理干预具有一定实际应用价值及护理合理性、创新性,其可有效提升患者活动能力,优化生存质量,改善神经功能各指标数据,为患者康复提供一定支持干预。</jats:p>",
-      "year": null,
+      "authors": [
+        "小璐, 周"
+      ],
       "venue": "医药产业研究",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:实施综合康复训练护理,探究其对急性脊髓炎患者整体活动功能等机体康复的实际影响及价值。方法:选取在我院进行治疗的急性脊髓炎患者(样本纳入例数:80例;纳入时间:2023年7月至2024年7月),随机数字抽签法将患者分为对照、观察两个组,观察例数高度一致。分别实施常规护理干预、综合康复训练护理干预。对比分析不同护理模式对患者活动能力、生存质量、神经功能的运用作用及价值。结果:与对照组(常规护理干预)相比,观察组(综合康复训练护理)的活动能力各指标评分均高于对照组(P&lt;0.05);生存质量各指标水平评分均更高(P&lt;0.05);神经功能各指标评分均优于对照组(P&lt;0.05)。结论:实施综合康复训练护理干预具有一定实际应用价值及护理合理性、创新性,其可有效提升患者活动能力,优化生存质量,改善神经功能各指标数据,为患者康复提供一定支持干预。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 91
     },
     {
-      "rank": 11,
+      "doi": "10.36012/pmr.v2i1.1325",
+      "title": "换位思考联合共情护理对急性冠脉综合征患者心理状态及预后的影响",
+      "authors": [
+        "薛, 亚亚"
+      ],
+      "venue": "实用医学研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：对换位思考联合共情护理对急性冠脉综合征患者心理状态及预后的影响进行研究。方法：将 126 例患者（分为观察组、对照组）分别给予换位思考联合共情护理、常规护理。结果：治疗后，观察组患者 SAS、SDS 评分及预后情况均优于对照组患者，P＜0.05。结论：给予急性冠脉综合征患者换位思考联合共情护理，对其心理状态及预后有十分积极的影响，该护理方式应推广使用。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.64216/3104-9656.25.03.019",
+      "title": "不同转移部位对结直肠癌患者临床病理特征及生存预后的影响研究",
+      "authors": [],
+      "venue": "医学实践与研究",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.37155/2717-5669-0402-9",
+      "title": "结核患者采取社区个性化护理对其肺结核知识知晓率的影响研究",
+      "authors": [
+        "王玉芹"
+      ],
+      "venue": "国际全科医学",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.12677/acm.2023.133477",
+      "title": "Study on the Correlation between Stigma, Resilience and Quality of Life in Patients with Chronic Hepatitis B Cirrhosis",
+      "authors": [
+        "宋, 艳艳"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 16,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 95
+    },
+    {
       "doi": "10.69979/3029-2700.24.6.040",
       "title": "高管团队异质性概念、维度、测量以及结果变量的研究综述",
-      "abstract": "",
-      "year": 2024,
+      "authors": [],
       "venue": "社会企业经济发展",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 96
     },
     {
-      "rank": 12,
       "doi": "10.61654/zzjkwz0163",
       "title": "急诊护理对急性肠梗阻患者生存率的影响研究",
-      "abstract": "<jats:p>目的:为了研究急诊护理对急性肠梗阻患者生存率的影响。方法:本研究选择了64例急性肠梗阻患者,分为参照组(32例,接受常规护理)和实验组(32例,接受急诊护理)。对两组患者护理前后的生活质量、术后康复效果、并发症发生情况进行对比分析。结果:护理后,实验组患者的生理功能、社会功能、躯体功能、精神健康的评分均明显高于参照组,P值均＜0.05。在术后康复效果方面,实验组的肠道功能恢复时间、下床活动时间、术后肛门排气时间、进食时间以及住院时间均低于参照组,P值＜0.05。在并发症发生情况对比方面,实验组的切口开裂、腹腔感染、吻合口开裂、功能性胃肠疾病的发生率均低于参照组,P值＜0.05。结论:急诊护理可以显著提高急性肠梗阻患者的生活质量,加快术后康复,减少并发症的发生率,提高患者的生存率。</jats:p>",
-      "year": null,
+      "authors": [
+        "杨, 亚坤"
+      ],
       "venue": "健康文摘",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:为了研究急诊护理对急性肠梗阻患者生存率的影响。方法:本研究选择了64例急性肠梗阻患者,分为参照组(32例,接受常规护理)和实验组(32例,接受急诊护理)。对两组患者护理前后的生活质量、术后康复效果、并发症发生情况进行对比分析。结果:护理后,实验组患者的生理功能、社会功能、躯体功能、精神健康的评分均明显高于参照组,P值均＜0.05。在术后康复效果方面,实验组的肠道功能恢复时间、下床活动时间、术后肛门排气时间、进食时间以及住院时间均低于参照组,P值＜0.05。在并发症发生情况对比方面,实验组的切口开裂、腹腔感染、吻合口开裂、功能性胃肠疾病的发生率均低于参照组,P值＜0.05。结论:急诊护理可以显著提高急性肠梗阻患者的生活质量,加快术后康复,减少并发症的发生率,提高患者的生存率。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 97
     },
     {
-      "rank": 13,
       "doi": "10.69979/3029-2808.25.05.031",
       "title": "综合护理干预对慢性荨麻疹患者负性情绪及生活质量的影响",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "医学研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 98
     },
     {
-      "rank": 14,
       "doi": "10.12677/ns.2023.122031",
       "title": "Scope of Research on Symptom Cluster in Patients with Chronic Obstructive Pulmonary Disease",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "姚, 倩"
+      ],
       "venue": "Nursing Science",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 32,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 99
     },
     {
-      "rank": 15,
       "doi": "10.61654/zzyskx0504",
       "title": "咽喉益生菌改善慢性咽炎患者生活质量及症状评分的临床研究",
-      "abstract": "<jats:p>目的:探讨咽喉益生菌改善慢性咽炎患者生活质量及症状评分的临床研究。方法:选取本院2024年7月-2025年7月收治的80例慢性咽炎患者,采用随机数字表法分为B组与A组,各40例。A组患者采用常规药物治疗,B组患者在常规药物治疗基础上加用咽喉益生菌干预,对比两组患者的临床症状评分、生活质量评分、炎症因子水平。结果:治疗4周后,两组各项症状评分及总分均较治疗前显著降低(P＜0.05),且B组的咽部异物感评分、咽干评分、咽痛评分、咳嗽评分及总评分,均显著低于A组(P＜0.05)。治疗4周后,两组各维度得分及总分均较治疗前显著升高(P＜0.05),且B组的生理功能、心理状态、社会交往及总分,均明显高于A组(P＜0.05)。治疗4周后,两组血清IL-6、TNF-α水平均较治疗前显著降低(P＜0.05),且观察组的IL-6、TNF-α均显著低于对照组(P＜0.05)。结论:在慢性咽炎常规治疗基础上加用咽喉益生菌,可通过调节咽喉部微生态平衡、抑制局部炎症反应,显著调节咽部黏膜的免疫细胞活性,减轻患者临床症状,提升生活质量。</jats:p>",
-      "year": null,
+      "authors": [
+        "钟, 冬兰"
+      ],
       "venue": "养生科学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 12,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探讨咽喉益生菌改善慢性咽炎患者生活质量及症状评分的临床研究。方法:选取本院2024年7月-2025年7月收治的80例慢性咽炎患者,采用随机数字表法分为B组与A组,各40例。A组患者采用常规药物治疗,B组患者在常规药物治疗基础上加用咽喉益生菌干预,对比两组患者的临床症状评分、生活质量评分、炎症因子水平。结果:治疗4周后,两组各项症状评分及总分均较治疗前显著降低(P＜0.05),且B组的咽部异物感评分、咽干评分、咽痛评分、咳嗽评分及总评分,均显著低于A组(P＜0.05)。治疗4周后,两组各维度得分及总分均较治疗前显著升高(P＜0.05),且B组的生理功能、心理状态、社会交往及总分,均明显高于A组(P＜0.05)。治疗4周后,两组血清IL-6、TNF-α水平均较治疗前显著降低(P＜0.05),且观察组的IL-6、TNF-α均显著低于对照组(P＜0.05)。结论:在慢性咽炎常规治疗基础上加用咽喉益生菌,可通过调节咽喉部微生态平衡、抑制局部炎症反应,显著调节咽部黏膜的免疫细胞活性,减轻患者临床症状,提升生活质量。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 100
     },
     {
-      "rank": 16,
-      "doi": "10.64216/3104-9656.25.02.027",
-      "title": "根本原因分析法在降低创伤骨科患者院内跌倒发生率中的应用综述",
-      "abstract": "",
-      "year": 2025,
-      "venue": "医学实践与研究",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 17,
-      "doi": "10.37155/2717-5650-0302-29",
-      "title": "研究心理护理干预对慢性肝病患者治疗效果及生存质量的改善",
-      "abstract": "",
-      "year": 2022,
-      "venue": "国际护理与健康",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 18,
       "doi": "10.63779/tkqu8560",
       "title": "以患者为中心的个性化护理对门诊分诊护理质量,患者情绪及护患纠纷的影响",
-      "abstract": "<jats:p>目的:探究以患者为中心的个性化护理在门诊分诊护理质量、患者情绪及护患纠纷等方面的影响。方法:选择两组各33例患者,对照组接受常规护理,观察组接受以患者为中心的个性化护理。结果:观察组护理后的SDS评分(41.49±1.39)和SAS评分(40.52±2.24)均明显低于护理前和对照组护理后(对照组护理后SDS评分为45.50±1.95,SAS评分为44.62±2.43)。同时观察组预检分诊、挂号、候诊、缴费时间均明显低于对照组。观察组在就诊环境、护士形象、护理专业性及服务态度等服务满意度方面评分也明显高于对照组。而观察组护理纠纷总发生率为3.03%,对照组为21.21%,显著低于对照组。结论:以患者为中心的个性化护理能有效改善患者情绪,提高护理质量和服务满意度,减少护患纠纷,对提升门诊分诊护理的整体水平具有重要意义。</jats:p>",
-      "year": null,
+      "authors": [
+        "珊珊, 康"
+      ],
       "venue": "医药产业研究",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探究以患者为中心的个性化护理在门诊分诊护理质量、患者情绪及护患纠纷等方面的影响。方法:选择两组各33例患者,对照组接受常规护理,观察组接受以患者为中心的个性化护理。结果:观察组护理后的SDS评分(41.49±1.39)和SAS评分(40.52±2.24)均明显低于护理前和对照组护理后(对照组护理后SDS评分为45.50±1.95,SAS评分为44.62±2.43)。同时观察组预检分诊、挂号、候诊、缴费时间均明显低于对照组。观察组在就诊环境、护士形象、护理专业性及服务态度等服务满意度方面评分也明显高于对照组。而观察组护理纠纷总发生率为3.03%,对照组为21.21%,显著低于对照组。结论:以患者为中心的个性化护理能有效改善患者情绪,提高护理质量和服务满意度,减少护患纠纷,对提升门诊分诊护理的整体水平具有重要意义。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 101
+    },
+    {
+      "doi": "10.17816/pavlovj62354-45808",
+      "title": "图 1静脉腔的发生率取决于研究组患者的大小（n=41）。",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 19,
-      "doi": "10.1177/13872877251415019",
-      "title": "How reproducible are data-driven subtypes of Alzheimer's disease atrophy?",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 102
     },
     {
-      "rank": 20,
-      "doi": "arXiv:2402.12205v1",
-      "title": "Self-organized clustering, prediction, and superposition of long-term cognitive decline from short-term individual cognitive test scores in Alzheimer's disease",
+      "doi": "10.64216/3104-9656.25.02.027",
+      "title": "根本原因分析法在降低创伤骨科患者院内跌倒发生率中的应用综述",
+      "authors": [],
+      "venue": "医学实践与研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2024,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 103
     },
     {
-      "rank": 21,
-      "doi": "arXiv:1611.00953v2",
-      "title": "High-dimensional regression over disease subgroups",
-      "abstract": "",
-      "year": 2016,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.37155/2717-5650-0302-29",
+      "title": "研究心理护理干预对慢性肝病患者治疗效果及生存质量的改善",
+      "authors": [
+        "童姝睿",
+        "胡玲",
+        "张贤贤"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 22,
-      "doi": "arXiv:2306.12520v1",
-      "title": "Bayesian inference and role of astrocytes in amyloid-beta dynamics with modelling of Alzheimer's disease using clinical data",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 23,
-      "doi": "10.3389/fnins.2019.00509",
-      "title": "Diagnosis of Alzheimer's Disease via Multi-modality 3D Convolutional Neural Network",
-      "abstract": "",
-      "year": 2019,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 24,
-      "doi": "arXiv:2203.09096v5",
-      "title": "DeepAD: A Robust Deep Learning Model of Alzheimer's Disease Progression for Real-World Clinical Applications",
-      "abstract": "",
+      "venue": "国际护理与健康",
       "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 104
     },
     {
-      "rank": 25,
-      "doi": "10.7815/ijorcs.26.2012.051",
-      "title": "Ontology Based Information Extraction for Disease Intelligence",
-      "abstract": "",
-      "year": 2012,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.63779/udnr3506",
+      "title": "个性化综合护理对胎膜早破患者不良情绪及新生儿结局的影响",
+      "authors": [
+        "宁宁, 康"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "医药产业研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:研究个性化综合护理对胎膜早破患者不良情绪及新生儿结局的影响。方法:选取2023年4月—2024年4月期间在本院收治的胎膜早破患者68例,随机分为对照组(常规护理)和观察组(个性化综合护理);比较两组的不良情绪、产后并发症发生率、新生儿结局及满意度情况。结果:观察组的SAS(焦虑自评量表)、SDS(抑郁自评量表)评分均明显低于对照组(P&lt;0.05);观察组的产后并发症发生率为5.88%,显著低于对照组的23.53%(P&lt;0.05);观察组的不良新生儿结局发生率为2.94%,显著低于对照组的20.59%(P&lt;0.05);观察组的满意率为97.06%,高于对照组的70.59%。结论:胎膜早破患者经过个性化综合护理,其不良情绪显著减轻,产后并发症及不良新生儿结局的发生率大幅降低,同时患者满意度显著提高,值得推广。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
     },
     {
-      "rank": 26,
-      "doi": "arXiv:2506.00662v1",
-      "title": "Uncertainty-Aware Genomic Classification of Alzheimer's Disease: A Transformer-Based Ensemble Approach with Monte Carlo Dropout",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 27,
-      "doi": "arXiv:2509.21735v3",
-      "title": "Spatio-Temporal Graph Deep Learning with Stochastic Differential Equations for Uncovering Alzheimer's Disease Progression",
-      "abstract": "",
-      "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 28,
-      "doi": "arXiv:2309.14256v1",
-      "title": "A Weighted Prognostic Covariate Adjustment Method for Efficient and Powerful Treatment Effect Inferences in Randomized Controlled Trials",
-      "abstract": "",
-      "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 29,
-      "doi": "10.36922/gpd.7503",
-      "title": "Identifying regulatory variants in Indian Wilson’s disease patients with missing heritability",
-      "abstract": "",
-      "year": 2025,
-      "venue": "Gene &amp; Protein in Disease",
-      "citation_count": 0,
-      "engines_found_in": [
-        "semanticscholar"
-      ],
-      "score": 0.0,
-      "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 30,
-      "doi": "10.1016/j.nbd.2026.107495",
-      "title": "Transcriptomic profiles link heterogeneous brain structural deviation to neurological subtypes in Wilson's disease.",
-      "abstract": "",
+      "doi": "10.69979/3029-2808.26.05.013",
+      "title": "评估老年精神病合并糖尿病患者的综合护理模式与患者生活质量的相关性",
+      "authors": [],
+      "venue": "医学研究",
       "year": 2026,
-      "venue": "Neurobiology of Disease",
-      "citation_count": 0,
-      "engines_found_in": [
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.63779/desx7635",
+      "title": "综合护理在外伤性肝脾破裂患者中的应用效果",
+      "authors": [
+        "甜甜, 王"
+      ],
+      "venue": "医药产业研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探究肝脾破裂的患者在临床上实施综合护理的效果。方法:选取我院收治的80例外伤性肝脾破裂患者,随机分为实验组40例和参照组40例。参照组接受常规护理,实验组在此基础上执行综合护理。结果:采用这种方式护理的患者,他们在接受治疗时所需的时间明显缩短,通常大概是35分钟左右,而传统护理的患者则需要将近一个小时。这不仅加快了治疗速度,还降低了患者休克和并发症的发生几率。在综合护理的帮助下,状况明显稳定,出血控制得很好,最终康复得很顺利。综合护理的患者,他们的救治成功率高达95%,几乎所有患者都对护理过程感到满意,从这里就能看出这种护理模式的成效显著。在干预后,实验组中0级和Ⅰ级疼痛的患者人数均显著多于参照组,Ⅱ级与Ⅲ级疼痛的患者明显少于参照组。所有差异均具有统计学意义(均P&lt;0.05)。结论:对外伤性肝脾破裂患者实施综合护理,可有效缩短治疗时间,降低休克的发生率和并发症率,提高救治成功率和患者满意度,改善患者的疼病状况。对于临床应用具有非常高的价值。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.69979/3029-2808.26.05.048",
+      "title": "精神分裂症患者服药依从性影响因素及护理对策综述",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.61654/zzjkwz0154",
+      "title": "耳穴压豆联合规范化疼痛管理在改善肿瘤癌性疼痛患者生活质量及睡眠状况中的应用研究",
+      "authors": [
+        "周, 亚蓉"
+      ],
+      "venue": "健康文摘",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:研究耳穴压豆联合规范化疼痛管理在改善肿瘤癌性疼痛患者生活质量及睡眠状况中的应用效果。方法:选取2025年7月—2025年11月本院肿瘤科收治的100例癌性疼痛患者,按照随机数字表法分组,各50例。对照组采取规范化疼痛管理,观察组在此基础上联合耳穴压豆进行干预。对比应用效果。结果:观察组疼痛评分低于对照组(P＜0.05);观察组生活质量评分高于对照组,PSQI评分低于对照组(P＜0.05);观察组抗癌相关治疗不良反应发生率低于对照组(P＜0.05);观察组爆发性疼、增加口服和静脉止疼用药次数均少于对照组,爆发性持续疼痛时间短于对照组(P＜0.05)。结论:规范化疼痛管理联合耳穴压豆干预,可有效减轻肿瘤癌性疼痛患者的疼痛程度,降低疼痛评分,减少爆发性疼痛发生频率和持续时间,进而可减少额外镇痛药物的使用需求,并可减少抗癌治疗相关不良反应,最终提高患者的睡眠质量和生活质量。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.32629/er.v3i7.2964",
+      "title": "来华留学生学费及其定价机制现状研究综述",
+      "authors": [
+        "王, 镱儒",
+        "万, 学红"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>来华留学生教育迅速发展,留学生学费如何调整以及学费定价机制逐渐受到人们的关注。本文以中国学术期刊网络出版总库CNKI收录的相关文献为样本来源,从研究方法、研究内容和研究结果等方面进行梳理和分析。研究发现学界对来华留学生学费研究的关注度不够,缺乏实证研究且研究方法较为单一。本文建议应该更加重视来华留学生学费定价方面的研究,未来需要更多的多学科研究和实证研究。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.12677/acm.2021.118561",
+      "title": "A Nomogram for Distinction and Potential Prediction of Lung Metastasis in Thyroid Cancer Patients",
+      "authors": [
+        "欧, 振飞"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.14725/gjnr.v2n5a711",
+      "title": "老年性白内障患者超声乳化术中血压、心率变化的观察及 护理对策",
+      "authors": [
+        "SHI, Xiao-chun"
+      ],
+      "venue": "国际护理研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.70693/cjmsr.v1i2.1226",
+      "title": "腰痛患者视觉-姿势控制的神经可塑性变化：从急性到慢性阶段的动态机制综述",
+      "authors": [
+        "沈, 蓥皓",
+        "李, 丽",
+        "苗, 壮壮",
+        "程, 鹏飞",
+        "刘, 俊杰"
+      ],
+      "venue": "中国医学科学研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>腰背痛是高发的肌肉骨骼疾病，约 20% 急性患者可进展为慢性，其急慢转变涉及神经可塑性、心理及生物因素的复杂作用。本文围绕腰痛患者视觉 - 姿势控制的神经可塑性动态变化展开综述。研究发现，健康人群通过前庭、视觉、本体感觉系统的神经整合维持姿势，而腰痛状态下该系统的神经可塑性呈现阶段特异性：急性阶段以保护性适应为特征，表现为视觉依赖性增强及运动皮层快速重组；亚急性期出现中枢敏化早期迹象，视觉 - 姿势控制策略适应性调整，依赖视觉补偿本体感觉缺陷；慢性阶段则伴随大脑结构（如前额叶皮层灰质减少）与功能（如默认模式网络连接异常）重塑，视觉 - 姿势控制持续异常并形成恶性循环。同时，疼痛记忆通过长时程增强、表观遗传修饰等机制形成，经条件性恐惧、疼痛预期影响视觉 - 姿势控制相关神经回路。研究表明，生物 - 心理 - 社会因素共同驱动这一动态过程，未来需结合纵向追踪与多模式评估，制定个性化干预以阻断慢性化进程，为临床治疗提供理论依据。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.54254/3029-0740/2026.31682",
+      "title": "核心训练对慢性非特异性腰痛患者下肢生物力学及功能的研究进展",
+      "authors": [
+        "刘, 美辰"
+      ],
+      "venue": "学知 Xue Zhi",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的 本文旨在探讨核心训练对慢性非特异性腰痛患者下肢生物力学及功能的影响，为该领域的后续研究提供参考。方法 基于文献分析，系统检索PubMed、Web of Science、Embase、Cochrane Library、CINAHL、Scopus、IEEEXplore、中国生物医学文献数据库、中国知网、万方数据库、维普数据库等，检索时限为建库至2026年1月4日，对纳入研究进行分析和总结。 结果 共纳入21篇文献。通过系统回顾相关文献，本研究总结了慢性非特异性腰痛的定义、流行病学及其病因机制，并详细介绍了核心训练的作用机制及对CNLBP患者的影响。研究发现，核心训练不仅能够有效缓解慢性非特异性腰痛患者的疼痛，还能显著改善腰椎的功能，尤其是对下肢生物力学产生了积极影响，包括运动学、动力学特征的变化，未来的研究应进一步探索更深层次的机制，结合新技术综合治疗方法。 结论 核心训练对慢性非特异性腰痛患者下肢生物力学及功能有积极的影响。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.32629/eep.v9i1.3017",
+      "title": "白囊耙齿菌的代谢特性、生物活性及多领域应用研究综述",
+      "authors": [
+        "张, 雅惠",
+        "左, 盼盼",
+        "刘, 正学"
+      ],
+      "venue": "生态环境与保护",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>白囊耙齿菌兼具药用价值与工业应用潜力,其代谢产物与酶系统多样且功能优异。本文综述其次生代谢产物、提取物活性及酶学应用研究进展：代谢产物涵盖倍半萜类、三萜类等,具细胞毒性、抗炎、抗菌等活性；提取物富含多糖、蛋白质等,具有肾脏保护、抗疲劳等功效,且肾脏保护作用已实现临床转化；其漆酶、锰过氧化物酶等在生物质转化、环境修复等领域前景广阔。文末分析研究不足并展望未来,为该菌深度开发提供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.69979/3029-2808.26.04.084",
+      "title": "中医五音疗法对原发性高血压患者自主神经功能及血压变异性的影响研究",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.69979/3029-2808.24.5.017",
+      "title": "肝癌TACE术后并发栓塞综合征患者的护理研究进展",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.37155/2717-5650-0606-17",
+      "title": "3H的综合性护理模式对胃癌放疗患者免疫功能、营养状况及急性放射反应的影响研究",
+      "authors": [
+        "袁意婷"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.69979/3029-2808.25.12.060",
+      "title": "阻生牙拔除术患者的心理现状及其护理新进展",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1111/bjd.21660",
+      "title": "关于意大利黑色素瘤患者生存率提高原因的研究",
+      "authors": [],
+      "venue": "British Journal of Dermatology",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.5376/cmb.cn.2012.01.0003",
+      "title": "原核生物基因组三核苷酸转移概率偏倚的物种特异性及致病关联性",
+      "authors": [
+        "章芬"
+      ],
+      "venue": "计算分子生物学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.12677/acm.2024.141095",
+      "title": "A Descriptive Qualitative Research of Life and Rehabilitation Experience in Patients with Parkinson’s Disease after DBS Was Started",
+      "authors": [
+        "张, 欣"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.12677/ns.2025.148199",
+      "title": "A Scoping Review of Demoralization Syndrome in Patients Undergoing Maintenance Hemodialysis",
+      "authors": [
+        "刘, 硕"
+      ],
+      "venue": "Nursing Science",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.12677/acm.2026.161256",
+      "title": "Symptom Cluster Study of Orthopaedic Trauma Patients: A Scoping Review",
+      "authors": [
+        "莫, 永利"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.69979/3029-2808.26.01.006",
+      "title": "糖尿病视网膜病变患者25-羟维生素D与血清促甲状腺激素水平的相关性",
+      "authors": [
+        "陈帅, 胡涛"
+      ],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.69979/3029-2808.25.11.014",
+      "title": "老年肝硬化患者孤独隔离体验的质性研究",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.69979/3029-2808.25.11.031",
+      "title": "针对性健康教育在乳腺癌患者围手术期护理的应用效果及对并发症发生率的影响",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.70693/hj0138",
+      "title": "慢性阻塞性肺疾病合并肛肠疾病患者的临床特征及综合护理研究",
+      "authors": [
+        "温丽辉"
+      ],
+      "venue": "数据期刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.69979/3029-2808.26.02.003",
+      "title": "化疗期间消化道肿瘤患者营养影响症状与生活质量的相关性研究",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.69979/3029-2808.24.7.018",
+      "title": "全面护理对核医学治疗患者接受辐射量及满意率的影响",
+      "authors": [
+        "陈倩, 顾丽勤"
+      ],
+      "venue": "医学研究",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1360/csb1984-29-13-820",
+      "title": "环状核苷酸的磷酸酯、磷酰胺的合成及其生物活性的研究",
+      "authors": [
+        "张, 礼和"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1984,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.69979/3029-2808.24.8.004",
+      "title": "初治肺结核患者抗结核治疗所致药物性肝损伤的危险因素",
+      "authors": [
+        "刘炜炜，李慧，袁蓓, 凌炜焱"
+      ],
+      "venue": "医学研究",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.12677/acm.2023.1371586",
+      "title": "Study on the Effects of Recurrent Hemorrhage, Complications and Survival Rate after Transjugular Intrahepatic Portosystemic Shunt in Patients with Cirrhotic Portal Hypertension",
+      "authors": [
+        "周, 悠"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.63779/kyiy7654",
+      "title": "基于个体评估的全程生活指导对异常子宫出血患者心理状态及生活质量的影响",
+      "authors": [
+        "利杰, 丁"
+      ],
+      "venue": "医药产业研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的:探讨基于个体评估的全程生活指导对异常子宫出血(AUB)患者的影响。方法:以2023年1月至2023年12月收治的80例AUB患者对比研究,按照随机数字表法分为两组:对照组(n=40,常规护理);观察组(n=40,基于个体评估的全程生活指导)。比较两组干预前后心理状态[焦虑自评量表(SAS)、抑郁自评量表(SDS)]、生活质量[健康调查简表(SF-36)],并随访1年统计复发率。结果:干预后,观察组SAS、SDS评分低于对照组,SF-36各维度评分高于对照组(P&lt;0.05)。随访1年,观察组复发率低于对照组(P&lt;0.05)。结论:基于个体评估的全程生活指导可改善AUB患者心理状态,提高生活质量,降低复发率。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.1177/13872877251415019",
+      "arxiv_id": "2412.00160v1",
+      "title": "How reproducible are data-driven subtypes of Alzheimer's disease atrophy?",
+      "authors": [
+        "Emma Prevot",
+        "Cameron Shand",
+        "Neil Oxtoby",
+        "for Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.00160v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2402.12205v1",
+      "arxiv_id": "2402.12205v1",
+      "title": "Self-organized clustering, prediction, and superposition of long-term cognitive decline from short-term individual cognitive test scores in Alzheimer's disease",
+      "authors": [
+        "Hiroyuki Sato",
+        "Keisuke Suzuki",
+        "Atsushi Hashizume",
+        "Ryoichi Hanazawa",
+        "Masanao Sasaki",
+        "Akihiro Hirakawa",
+        "the Japanese Alzheimer's Disease Neuroimaging Initiative",
+        "the Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.12205v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "arXiv:1611.00953v2",
+      "arxiv_id": "1611.00953v2",
+      "title": "High-dimensional regression over disease subgroups",
+      "authors": [
+        "Frank Dondelinger",
+        "Sach Mukherjee",
+        "The Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1611.00953v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:2306.12520v1",
+      "arxiv_id": "2306.12520v1",
+      "title": "Bayesian inference and role of astrocytes in amyloid-beta dynamics with modelling of Alzheimer's disease using clinical data",
+      "authors": [
+        "Hina Shaheen",
+        "Roderick Melnik",
+        "The Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.12520v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.3389/fnins.2019.00509",
+      "arxiv_id": "1902.09904v1",
+      "title": "Diagnosis of Alzheimer's Disease via Multi-modality 3D Convolutional Neural Network",
+      "authors": [
+        "Yechong Huang",
+        "Jiahang Xu",
+        "Yuncheng Zhou",
+        "Tong Tong",
+        "Xiahai Zhuang",
+        "the Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1902.09904v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:2203.09096v5",
+      "arxiv_id": "2203.09096v5",
+      "title": "DeepAD: A Robust Deep Learning Model of Alzheimer's Disease Progression for Real-World Clinical Applications",
+      "authors": [
+        "Somaye Hashemifar",
+        "Claudia Iriondo",
+        "Evan Casey",
+        "Mohsen Hejrati",
+        "for Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.09096v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.7815/ijorcs.26.2012.051",
+      "arxiv_id": "1211.3497v1",
+      "title": "Ontology Based Information Extraction for Disease Intelligence",
+      "authors": [
+        "Prabath Chaminda Abeysiriwardana",
+        "Saluka R Kodituwakku"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1211.3497v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "arXiv:2506.00662v1",
+      "arxiv_id": "2506.00662v1",
+      "title": "Uncertainty-Aware Genomic Classification of Alzheimer's Disease: A Transformer-Based Ensemble Approach with Monte Carlo Dropout",
+      "authors": [
+        "Taeho Jo",
+        "Eun Hye Lee",
+        "Alzheimer's Disease Sequencing Project"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.00662v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "arXiv:2509.21735v3",
+      "arxiv_id": "2509.21735v3",
+      "title": "Spatio-Temporal Graph Deep Learning with Stochastic Differential Equations for Uncovering Alzheimer's Disease Progression",
+      "authors": [
+        "Houliang Zhou",
+        "Rong Zhou",
+        "Yangying Liu",
+        "Kanhao Zhao",
+        "Li Shen",
+        "Brian Y. Chen",
+        "Yu Zhang",
+        "Lifang He",
+        "Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.21735v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "arXiv:2309.14256v1",
+      "arxiv_id": "2309.14256v1",
+      "title": "A Weighted Prognostic Covariate Adjustment Method for Efficient and Powerful Treatment Effect Inferences in Randomized Controlled Trials",
+      "authors": [
+        "Alyssa M. Vanderbeek",
+        "Anna A. Vidovszky",
+        "Jessica L. Ross",
+        "Arman Sabbaghi",
+        "Jonathan R. Walsh",
+        "Charles K. Fisher",
+        "the Critical Path for Alzheimer's Disease",
+        "the Alzheimer's Disease Neuroimaging Initiative",
+        "the European Prevention of Alzheimer's Disease",
+        " Consortium",
+        "the Alzheimer's Disease Cooperative Study"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.14256v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "arXiv:2404.17576v1",
+      "arxiv_id": "2404.17576v1",
+      "title": "Enhancing Longitudinal Clinical Trial Efficiency with Digital Twins and Prognostic Covariate-Adjusted Mixed Models for Repeated Measures (PROCOVA-MMRM)",
+      "authors": [
+        "Jessica L. Ross",
+        "Arman Sabbaghi",
+        "Run Zhuang",
+        "Daniele Bertolini",
+        "the Alzheimer's Disease Cooperative Study",
+        "Alzheimer's Disease Neuroimaging Initiative",
+        "the Critical Path for Alzheimer's Disease Database",
+        "the European Prevention of Alzheimer's Disease",
+        " Consortium",
+        "the Pooled Resource Open-Access ALS Clinical Trials Consortium"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.17576v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "arXiv:2204.01708v3",
+      "arxiv_id": "2204.01708v3",
+      "title": "MRI-based Multi-task Decoupling Learning for Alzheimer's Disease Detection and MMSE Score Prediction: A Multi-site Validation",
+      "authors": [
+        "Xu Tian",
+        "Jin Liu",
+        "Hulin Kuang",
+        "Yu Sheng",
+        "Jianxin Wang",
+        "The Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.01708v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "arXiv:2008.04396v1",
+      "arxiv_id": "2008.04396v1",
+      "title": "GANDALF: Generative Adversarial Networks with Discriminator-Adaptive Loss Fine-tuning for Alzheimer's Disease Diagnosis from MRI",
+      "authors": [
+        "Hoo-Chang Shin",
+        "Alvin Ihsani",
+        "Ziyue Xu",
+        "Swetha Mandava",
+        "Sharath Turuvekere Sreenivas",
+        "Christopher Forster",
+        "Jiook Cha",
+        "Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.04396v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:2601.10912v5",
+      "arxiv_id": "2601.10912v5",
+      "title": "Graph Neural Network Reveals the Cortical Morphology of Local Brain Aging in Normal Cognition and Alzheimer's Disease",
+      "authors": [
+        "Samuel D. Anderson",
+        "Jordan Jomsky",
+        "Nikhil N. Chaudhari",
+        "Nahian F. Chowdhury",
+        " Xiaoyu",
+        " Zheng",
+        "Andrei Irimia",
+        "Alzheimers Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.10912v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 148
+    },
+    {
+      "doi": "arXiv:2406.05262v2",
+      "arxiv_id": "2406.05262v2",
+      "title": "A Three-groups Non-local Model for Combining Heterogeneous Data Sources to Identify Genes Associated with Parkinson's Disease",
+      "authors": [
+        "Troy P. Wixson",
+        "Benjamin A. Shaby",
+        "Daisy L. Philtron",
+        "International Parkinson Disease Genomics Consortium",
+        "Leandro A. Lima",
+        "Stacia K. Wyman",
+        "Julia A. Kaye",
+        "Steven Finkbeiner"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2406.05262v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "arXiv:2412.13608v1",
+      "arxiv_id": "2412.13608v1",
+      "title": "Disease Progression Modelling and Stratification for detecting sub-trajectories in the natural history of pathologies: application to Parkinson's Disease trajectory modelling",
+      "authors": [
+        "Alessandro Viani",
+        "Boris A Gutman",
+        "Emile d'Angremont",
+        "Marco Lorenzi"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.13608v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:1608.06242v1",
+      "arxiv_id": "1608.06242v1",
+      "title": "Some Models for Epidemics of Vector-Transmitted Diseases",
+      "authors": [
+        "Fred Brauer",
+        "Carlos Castillo-Chavez",
+        "Anuj Mubayi",
+        "Sherry Towers"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1608.06242v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.3233/JAD-220021",
+      "arxiv_id": "2203.05707v1",
+      "title": "Machine Learning Based Multimodal Neuroimaging Genomics Dementia Score for Predicting Future Conversion to Alzheimer's Disease",
+      "authors": [
+        "Ghazal Mirabnahrazam",
+        "Da Ma",
+        "Sieun Lee",
+        "Karteek Popuri",
+        "Hyunwoo Lee",
+        "Jiguo Cao",
+        "Lei Wang",
+        "James E Galvin",
+        "Mirza Faisal Beg",
+        "the Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.05707v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:1201.3937v1",
+      "arxiv_id": "1201.3937v1",
+      "title": "Mixture Likelihood Ratio Scan Statistic for Disease Outbreak Detection",
+      "authors": [
+        "Michael D. Porter",
+        "Jarad B. Niemi",
+        "Brian J. Reich"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1201.3937v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2010.06047v1",
+      "arxiv_id": "2010.06047v1",
+      "title": "Artificial Intelligence, speech and language processing approaches to monitoring Alzheimer's Disease: a systematic review",
+      "authors": [
+        "Sofia de la Fuente Garcia",
+        "Craig Ritchie",
+        "Saturnino Luz"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.06047v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1016/j.idm.2025.12.008",
+      "arxiv_id": "2507.22087v2",
+      "title": "Determining disease attributes from epidemic trajectories",
+      "authors": [
+        "Mark P. Rast",
+        "Luke I. Rast"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.22087v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "arXiv:2409.10403v1",
+      "arxiv_id": "2409.10403v1",
+      "title": "A Knowledge-Enhanced Disease Diagnosis Method Based on Prompt Learning and BERT Integration",
+      "authors": [
+        "Zhang Zheng"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.10403v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.4236/oalib.1111135",
+      "arxiv_id": "2306.04748v2",
+      "title": "Analysis, Identification and Prediction of Parkinson Disease Sub-Types and Progression through Machine Learning",
+      "authors": [
+        "Ashwin Ram"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.04748v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1371/journal.pone.0257958",
+      "arxiv_id": "2009.06576v4",
+      "title": "Disease control as an optimization problem",
+      "authors": [
+        "Miguel Navascues",
+        "Costantino Budroni",
+        "Yelena Guryanova"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2009.06576v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2307.00936v1",
+      "arxiv_id": "2307.00936v1",
+      "title": "OpenAPMax: Abnormal Patterns-based Model for Real-World Alzheimer's Disease Diagnosis",
+      "authors": [
+        "Yunyou Huang",
+        "Xianglong Guan",
+        "Xiangjiang Lu",
+        "Xiaoshuang Liang",
+        "Xiuxia Miao",
+        "Jiyue Xie",
+        "Wenjing Liu",
+        "Li Ma",
+        "Suqin Tang",
+        "Zhifei Zhang",
+        "Jianfeng Zhan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.00936v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2502.15069v1",
+      "arxiv_id": "2502.15069v1",
+      "title": "Rare Disease Differential Diagnosis with Large Language Models at Scale: From Abdominal Actinomycosis to Wilson's Disease",
+      "authors": [
+        "Elliot Schumacher",
+        "Dhruv Naik",
+        "Anitha Kannan"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.15069v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.1016/j.eswa.2019.113075",
+      "arxiv_id": "1910.11509v4",
+      "title": "Deep 1D-Convnet for accurate Parkinson disease detection and severity prediction from gait",
+      "authors": [
+        "Imanne El Maachi",
+        "Guillaume-Alexandre Bilodeau",
+        "Wassim Bouachir"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1910.11509v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:2110.05445v3",
+      "arxiv_id": "2110.05445v3",
+      "title": "Data-driven approaches for predicting spread of infectious diseases through DINNs: Disease Informed Neural Networks",
+      "authors": [
+        "Sagi Shaier",
+        "Maziar Raissi",
+        "Padmanabhan Seshaiyer"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.05445v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "arXiv:1512.01389v2",
+      "arxiv_id": "1512.01389v2",
+      "title": "A generalized-growth model to characterize the early ascending phase of infectious disease outbreaks",
+      "authors": [
+        "Cécile Viboud",
+        "Lone Simonsen",
+        "Gerardo Chowell"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1512.01389v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "arXiv:1810.08807v1",
+      "arxiv_id": "1810.08807v1",
+      "title": "Investigating Voice as a Biomarker for leucine-rich repeat kinase 2-Associated Parkinson's Disease",
+      "authors": [
+        "S. Arora",
+        "N. P. Visanji",
+        "T. A. Mestre",
+        "A. Tsanas",
+        "A. AlDakheel",
+        "B. S. Connolly",
+        "C. Gasca-Salas",
+        "D. S. Kern",
+        "J. Jain",
+        "E. J. Slow",
+        "A. Faust-Socher",
+        "A. E. Lang",
+        "M. A. Little",
+        "C. Marras"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1810.08807v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "arXiv:2601.14795v2",
+      "arxiv_id": "2601.14795v2",
+      "title": "Validating Behavioral Proxies for Disease Risk Monitoring via Large-Scale E-commerce Data",
+      "authors": [
+        "Naomi Sasaya",
+        "Shigefumi Kishida",
+        "Ryo Kikuchi",
+        "Akira Tajima"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.14795v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "arXiv:1710.04782v1",
+      "arxiv_id": "1710.04782v1",
+      "title": "Multimodal and Multiscale Deep Neural Networks for the Early Diagnosis of Alzheimer's Disease using structural MR and FDG-PET images",
+      "authors": [
+        "Donghuan Lu",
+        "Karteek Popuri",
+        "Weiguang Ding",
+        "Rakesh Balachandar",
+        "Mirza Faisal Beg"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.04782v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "arXiv:2306.08326v3",
+      "arxiv_id": "2306.08326v3",
+      "title": "Early Detection of Late Blight Tomato Disease using Histogram Oriented Gradient based Support Vector Machine",
+      "authors": [
+        "Yousef Alhwaiti",
+        "Muhammad Ishaq",
+        "Muhammad Hameed Siddiqi",
+        "Muhammad Waqas",
+        "Madallah Alruwaili",
+        "Saad Alanazi",
+        "Asfandyar Khan",
+        "Faheem Khan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2306.08326v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:1706.08491v2",
+      "arxiv_id": "1706.08491v2",
+      "title": "Cognitive Subscore Trajectory Prediction in Alzheimer's Disease",
+      "authors": [
+        "Lev E. Givon",
+        "Laura J. Mariano",
+        "David O'Dowd",
+        "John M. Irvine",
+        "Abraham R. Schneider"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.08491v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:2312.05345v4",
+      "arxiv_id": "2312.05345v4",
+      "title": "Spline-Based Multi-State Models for Analyzing Disease Progression",
+      "authors": [
+        "Alessia Eletti",
+        "Giampiero Marra",
+        "Rosalba Radice"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.05345v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "arXiv:2307.00965v1",
+      "arxiv_id": "2307.00965v1",
+      "title": "OpenClinicalAI: An Open and Dynamic Model for Alzheimer's Disease Diagnosis",
+      "authors": [
+        "Yunyou Huang",
+        "Xiaoshuang Liang",
+        "Xiangjiang Lu",
+        "Xiuxia Miao",
+        "Jiyue Xie",
+        "Wenjing Liu",
+        "Fan Zhang",
+        "Guoxin Kang",
+        "Li Ma",
+        "Suqin Tang",
+        "Zhifei Zhang",
+        "Jianfeng Zhan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.00965v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
+    },
+    {
+      "doi": "10.1016/j.neuroimage.2009.05.036",
+      "arxiv_id": "1707.05961v1",
+      "title": "Multidimensional classification of hippocampal shape features discriminates Alzheimer's disease and mild cognitive impairment from normal aging",
+      "authors": [
+        "Emilie Gerardin",
+        "Gaël Chételat",
+        "Marie Chupin",
+        "Rémi Cuingnet",
+        "Béatrice Desgranges",
+        "Ho-Sung Kim",
+        "Marc Niethammer",
+        "Bruno Dubois",
+        "Stéphane Lehéricy",
+        "Line Garnero",
+        "Francis Eustache",
+        "Olivier Colliot"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1707.05961v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.1016/j.media.2025.103669",
+      "arxiv_id": "2502.21049v1",
+      "title": "Synthesizing Individualized Aging Brains in Health and Disease with Generative Models and Parallel Transport",
+      "authors": [
+        "Jingru Fu",
+        "Yuqi Zheng",
+        "Neel Dey",
+        "Daniel Ferreira",
+        "Rodrigo Moreno"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.21049v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "arXiv:2603.06888v1",
+      "arxiv_id": "2603.06888v1",
+      "title": "Enhancing the Detection of Coronary Artery Disease Using Machine Learning",
+      "authors": [
+        "Karan Kumar Singh",
+        "Nikita Gajbhiye",
+        "Gouri Sankar Mishra"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.06888v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 173
+    },
+    {
+      "doi": "arXiv:1411.7364v3",
+      "arxiv_id": "1411.7364v3",
+      "title": "The Western Africa Ebola virus disease epidemic exhibits both global exponential and local polynomial growth rates",
+      "authors": [
+        "Gerardo Chowell",
+        "Cécile Viboud",
+        "James M. Hyman",
+        "Lone Simonsen"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.7364v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "arXiv:2605.00665v2",
+      "arxiv_id": "2605.00665v2",
+      "title": "Prediction of Alzheimer's Disease Risk Factors from Retinal Images via Deep Learning: Development and Validation of Biologically Relevant Morphological Associations in the UK Biobank",
+      "authors": [
+        "Seowung Leem",
+        "Yunchao Yang",
+        "Adam J. Woods",
+        "Ruogu Fang"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.00665v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "arXiv:1706.00856v1",
+      "arxiv_id": "1706.00856v1",
+      "title": "Multiple Kernel Learning and Automatic Subspace Relevance Determination for High-dimensional Neuroimaging Data",
+      "authors": [
+        "Murat Seckin Ayhan",
+        "Vijay Raghavan",
+        "Alzheimer's disease Neuroimaging Initiative"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.00856v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.3390/idr13040090",
+      "arxiv_id": "2110.07416v2",
+      "title": "Assessing the Impact of (Self)-Quarantine Through a Basic Model of Infectious Disease Dynamics",
+      "authors": [
+        "Jozsef Z. Farkas",
+        "Roxane Chatzopoulos"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2110.07416v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "10.4018/IJIIT.296268",
+      "arxiv_id": "2305.00923v1",
+      "title": "Early Detection of Alzheimer's Disease using Bottleneck Transformers",
+      "authors": [
+        "Arunima Jaiswal",
+        "Ananya Sadana"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.00923v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2309.15053v1",
+      "arxiv_id": "2309.15053v1",
+      "title": "Thalamic nuclei segmentation from T$_1$-weighted MRI: unifying and benchmarking state-of-the-art methods with young and old cohorts",
+      "authors": [
+        "Brendan Williams",
+        "Dan Nguyen",
+        "Julie Vidal",
+        "Alzheimer's Disease Neuroimaging Initiative",
+        "Manojkumar Saranathan"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.15053v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2502.05713v1",
+      "arxiv_id": "2502.05713v1",
+      "title": "4D VQ-GAN: Synthesising Medical Scans at Any Time Point for Personalised Disease Progression Modelling of Idiopathic Pulmonary Fibrosis",
+      "authors": [
+        "An Zhao",
+        "Moucheng Xu",
+        "Ahmed H. Shahin",
+        "Wim Wuyts",
+        "Mark G. Jones",
+        "Joseph Jacob",
+        "Daniel C. Alexander"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.05713v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "10.1016/j.idm.2020.06.008",
+      "arxiv_id": "2005.04937v1",
+      "title": "Using statistics and mathematical modelling to understand infectious disease outbreaks: COVID-19 as an example",
+      "authors": [
+        "Christopher E. Overton",
+        "Helena B. Stage",
+        "Shazaad Ahmad",
+        "Jacob Curran-Sebastian",
+        "Paul Dark",
+        "Rajenki Das",
+        "Elizabeth Fearon",
+        "Timothy Felton",
+        "Martyn Fyles",
+        "Nick Gent",
+        "Ian Hall",
+        "Thomas House",
+        "Hugo Lewkowicz",
+        "Xiaoxi Pang",
+        "Lorenzo Pellis",
+        "Robert Sawko",
+        "Andrew Ustianowski",
+        "Bindu Vekaria",
+        "Luke Webb"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.04937v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:1705.10922v2",
+      "arxiv_id": "1705.10922v2",
+      "title": "Network-based identification of disease genes in expression data: the GeneSurrounder method",
+      "authors": [
+        "Sahil D. Shah",
+        "Rosemary Braun"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.10922v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2512.21005v2",
+      "arxiv_id": "2512.21005v2",
+      "title": "Learning from Neighbors with PHIBP: Predicting Infectious Disease Dynamics in Data-Sparse Environments",
+      "authors": [
+        "Edwin Fong",
+        "Lancelot F. James",
+        "Juho Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.21005v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "10.1038/srep04856",
+      "arxiv_id": "1308.3361v2",
+      "title": "Analytical Modelling of the Spread of Disease in Confined and Crowded Spaces",
+      "authors": [
+        "Lara Goscé",
+        "David A W Barton",
+        "Anders Johansson"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1308.3361v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "10.36922/gpd.7503",
+      "arxiv_id": "",
+      "title": "Identifying regulatory variants in Indian Wilson’s disease patients with missing heritability",
+      "authors": [
+        "Shubhrajit Roy",
+        "Sreyashi Bhattacharya",
+        "Arpan Saha",
+        "Asif Iqbal",
+        "Sampurna Ghosh",
+        "Debmalya Sengupta",
+        "Shyamal Kumar Das",
+        "P. Gangopadhyay",
+        "Ashish Bavdekar",
+        "Kunal Ray",
+        "J. Ray",
+        "M. Sengupta"
+      ],
+      "venue": "Gene &amp; Protein in Disease",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "This novel study is the first to identify and screen cis-regulatory elements of ATP7B cis-regulatory elements in Indian WD patients with missing heritability through polymerase chain reaction sequencing.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.36922/gpd.7503",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
         "semanticscholar"
       ],
-      "score": 0.0,
+      "abstract": "This novel study is the first to identify and screen cis-regulatory elements of ATP7B cis-regulatory elements in Indian WD patients with missing heritability through polymerase chain reaction sequencing.",
+      "rank": 185
+    },
+    {
+      "doi": "10.1016/j.nbd.2026.107495",
+      "arxiv_id": "",
+      "title": "Transcriptomic profiles link heterogeneous brain structural deviation to neurological subtypes in Wilson's disease.",
+      "authors": [
+        "Kun Xia",
+        "Shijing Wang",
+        "Tong Wu",
+        "Dandan Sun",
+        "Wei Wang",
+        "Xun Wang",
+        "Yongsheng Han"
+      ],
+      "venue": "Neurobiology of Disease",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 82,
+      "tldr": "A gray matter volume-based 'brain age model' is developed to calculate the deviation between predicted brain age and chronological age, known as the brain-predicted age difference (brainPAD) and brain structure deviation (BSD), across one hepatic subtype and two neurological subtypes, suggesting a potential complex pathology underlying heterogeneous clinical manifestations in patients with neurological WD.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.nbd.2026.107495",
       "source": "semanticscholar",
-      "type": "JournalArticle"
-    },
-    {
-      "rank": 31,
-      "doi": "",
-      "title": "Intrahepatocellular Localization of Copper in Wilson's Disease",
-      "abstract": "",
-      "year": 1993,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "abstract": "A gray matter volume-based 'brain age model' is developed to calculate the deviation between predicted brain age and chronological age, known as the brain-predicted age difference (brainPAD) and brain structure deviation (BSD), across one hepatic subtype and two neurological subtypes, suggesting a potential complex pathology underlying heterogeneous clinical manifestations in patients with neurological WD.",
+      "rank": 186
     },
     {
-      "rank": 32,
-      "doi": "",
-      "title": "Neurologic Wilson's disease",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.33444/2414-0007.5.1-2.9-15",
+      "arxiv_id": "",
+      "title": "Wilson’s Disease: diagnosis and treatment",
+      "authors": [
+        "Y. Trufanov"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 33,
-      "doi": "",
-      "title": "Hepatocellular carcinoma in a non-cirrhotic patient with Wilson's disease",
-      "abstract": "",
-      "year": 2013,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 34,
-      "doi": "",
-      "title": "Wilson's disease",
-      "abstract": "",
+      "venue": "East European Journal of Parkinson`s Disease and Movement Disorders",
       "year": 2019,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Adequate, continuous treatment initiated in the early stages of the disease greatly improves clinical symptoms and the prognosis of Wilson’s Disease.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 35,
-      "doi": "",
-      "title": "Wilson's disease: Current status",
-      "abstract": "",
-      "year": 1992,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 36,
-      "doi": "",
-      "title": "Wilson's Disease and Monoamines",
-      "abstract": "",
-      "year": 1978,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 37,
-      "doi": "",
-      "title": "A Case to Tear One's Hair Out: Trichotillomania in Wilson's Disease",
-      "abstract": "",
-      "year": 2022,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 38,
-      "doi": "",
-      "title": "HFE gene mutations and Wilson's disease in Sardinia",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 39,
-      "doi": "",
-      "title": "Wilson's disease - clinical picture, factors influencing disease progression, treatment methods",
-      "abstract": "",
-      "year": 2024,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "abstract": "Adequate, continuous treatment initiated in the early stages of the disease greatly improves clinical symptoms and the prognosis of Wilson’s Disease.",
+      "rank": 187
     }
   ]
 }

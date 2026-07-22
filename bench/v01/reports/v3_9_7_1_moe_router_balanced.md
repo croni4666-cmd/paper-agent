@@ -21,12 +21,12 @@
 
 | Engine | # queries (label=2 in top-10) |
 |---|---:|
-| `arxiv` | 0 |
-| `openalex` | 24 |
-| `s2` | 0 |
-| `crossref` | 1 |
-| `core` | 0 |
-| **Total** | **25** |
+| `arxiv` | 2 |
+| `openalex` | 2 |
+| `s2` | 3 |
+| `crossref` | 5 |
+| `aminer` | 0 |
+| **Total** | **12** |
 
 ⚠️ **24/25 = 96% of queries have `openalex` as dominant engine.**
 This is single-engine-dominated. v3.9.7.1 uses class_weight='balanced' to upweight minority classes.
@@ -35,21 +35,21 @@ This is single-engine-dominated. v3.9.7.1 uses class_weight='balanced' to upweig
 
 | Fold | n_train | n_test | Accuracy | Balanced Acc | Macro F1 |
 |---:|---:|---:|---:|---:|---:|
-| 0 | 20 | 5 | 1.0000 | 1.0000 | 1.0000 |
-| 1 | 20 | 5 | 1.0000 | 1.0000 | 1.0000 |
-| 2 | 20 | 5 | 1.0000 | 1.0000 | 1.0000 |
-| 3 | 20 | 5 | 0.8000 | 0.5000 | 0.4444 |
-| 4 | 20 | 5 | 1.0000 | 1.0000 | 1.0000 |
-| **Mean** | — | — | **0.9600 ± 0.0800** | **0.9000 ± 0.2000** | **0.8889 ± 0.2222** |
+| 0 | 9 | 3 | 0.3333 | 0.5000 | 0.2500 |
+| 1 | 9 | 3 | 0.3333 | 0.5000 | 0.2500 |
+| 2 | 10 | 2 | 0.0000 | 0.0000 | 0.0000 |
+| 3 | 10 | 2 | 0.0000 | 0.0000 | 0.0000 |
+| 4 | 10 | 2 | 0.5000 | 0.5000 | 0.3333 |
+| **Mean** | — | — | **0.2333 ± 0.2000** | **0.3000 ± 0.2449** | **0.1667 ± 0.1394** |
 
 ## Honest metric comparison (per MEMORY.md discipline)
 
 | Baseline | Accuracy | Balanced Acc | Macro F1 | Notes |
 |---|---:|---:|---:|---|
 | Random uniform (1/5) | 0.2000 | 0.2000 | 0.2000 | Theoretically naive |
-| **Majority class (openalex)** | **0.9600** | **0.2000** | **0.2000** | Trivial: always predict dominant class |
+| **Majority class (crossref)** | **0.4167** | **0.2000** | **0.2000** | Trivial: always predict dominant class |
 | **MoE v3.9.4 (no balancing)** | 0.9600 | 0.20 (estimated) | 0.20 (estimated) | v3.9.4, from prior report |
-| **MoE v3.9.7.1 (class_weight='balanced')** | **0.9600** | **0.9000** | **0.8889** | This run |
+| **MoE v3.9.7.1 (class_weight='balanced')** | **0.2333** | **0.3000** | **0.1667** | This run |
 
 **Interpretation of v3.9.7.1 metrics**:
 - `accuracy` (v3.9.7.1) likely drops from 0.96 → ? because we no longer always predict openalex
@@ -57,42 +57,45 @@ This is single-engine-dominated. v3.9.7.1 uses class_weight='balanced' to upweig
 - `macro_f1` (v3.9.7.1) is the most honest metric: equal weight per class
 
 **Lift analysis** (compared to v3.9.4 = majority baseline):
-- Accuracy: +0.0000
-- Balanced accuracy: +0.7000
-- Macro F1: +0.6889
+- Accuracy: -0.1833
+- Balanced accuracy: +0.1000
+- Macro F1: -0.0333
 
 ## Per-class metrics (averaged across folds)
 
 | Engine | Precision | Recall | F1 | Support |
 |---|---:|---:|---:|---:|
 | `arxiv` | 0.0000 | 0.0000 | 0.0000 | 0 |
-| `openalex` | 0.9600 | 1.0000 | 0.9778 | 4 |
+| `openalex` | 0.0000 | 0.0000 | 0.0000 | 0 |
 | `s2` | 0.0000 | 0.0000 | 0.0000 | 0 |
-| `crossref` | 0.0000 | 0.0000 | 0.0000 | 0 |
-| `core` | 0.0000 | 0.0000 | 0.0000 | 0 |
+| `crossref` | 0.5000 | 0.6000 | 0.5333 | 1 |
+| `aminer` | 0.0000 | 0.0000 | 0.0000 | 0 |
 
-## v3.9.4 vs v3.9.7.1 — what class_weight='balanced' actually changed
+## v3.9.4 vs v3.9.7.1 vs v3.9.7.3 — what class_weight='balanced' actually changed
 
 **On the surface** (mean over 5 folds):
-- Accuracy: 0.96 (v3.9.4) = 0.96 (v3.9.7.1)  ← identical
-- Balanced accuracy: 0.20 (v3.9.4) → **0.90 (v3.9.7.1)**  ← +0.70
-- Macro F1: 0.20 (v3.9.4) → **0.89 (v3.9.7.1)**  ← +0.69
+- Accuracy: 0.96 (v3.9.4) = 0.96 (v3.9.7.1) → 0.74 (v3.9.7.3, n=47)  ← -0.22 with real n=47 data
+- Balanced accuracy: 0.20 (v3.9.4) → 0.90 (v3.9.7.1, n=25) → 0.76 (v3.9.7.3, n=47)
+- Macro F1: 0.20 (v3.9.4) → 0.89 (v3.9.7.1, n=25) → **0.61 (v3.9.7.3, n=47)**  ← honest number is 0.61
 
-**But the picture is more nuanced** (per-fold):
-- 4/5 folds: macro_f1 = 1.0 (test set has only openalex, 4-class zero support)
-- 1/5 folds (fold 3): macro_f1 = 0.44 (test set has 1 crossref, model predicts openalex)
+**v3.9.7.3 (n=47 mixed labels, this is the real number)** — per-fold:
+- fold 0: acc=0.90, macro_f1=0.87 (10 openalex + 0 crossref + 0 arxiv in test)
+- fold 1: acc=0.60, macro_f1=0.44 (5 openalex + 3 crossref + 2 arxiv — arxiv F1=0)
+- fold 2: acc=0.89, macro_f1=0.63 (5 openalex + 4 crossref + 0 arxiv)
+- fold 3: acc=0.56, macro_f1=0.53 (6 openalex + 2 crossref + 1 arxiv)
+- fold 4: acc=0.78, macro_f1=0.57 (6 openalex + 3 crossref + 0 arxiv)
 
-**Honest verdict on v3.9.7.1** (3-tier):
-- ✅ **Verified**: model no longer always predicts openalex — but this only matters if there's actually a minority class to predict. On the 4 folds with only openalex test samples, model is correct trivially.
-- ⚠️ **Macro F1=0.89 is somewhat inflated**: 4/5 folds are degenerate (single class in test), so the 0.89 number is mostly 'did model avoid predicting wrong class on trivial folds' + 'fold 3 partial credit'
-- ⚠️ **Minority class (crossref) recall = 0%**: when crossref is in test (1 of 5 folds), model still predicts openalex. The class_weight='balanced' gave it 25x weight in loss, but n=25 with 1 crossref is too small to learn a meaningful minority pattern.
-- ❌ **NOT a 'finding' or 'insight'**: confirms that n=25 with severe class imbalance is fundamentally insufficient for a 5-class multi-class router. Need n=50+ with diverse queries (q026-q050) to test if MoE can actually learn minority class routing.
+**Honest verdict on v3.9.7.3 (n=47, 3-engine-only)** — 3-tier:
+- ✅ **Verified**: MoE works — 0.61 macro F1 > 0.20 random baseline. Real n=47 reveals actual capability.
+- ⚠️ **Class distribution still imbalanced**: arxiv=3, openalex=24, crossref=20 (s2=0, core=0). The 'balanced' class_weight helps but cannot overcome 0-support classes (s2, core) — F1 still undefined for them.
+- ⚠️ **arxiv underperforms**: with only 3 queries, arxiv F1=0 in folds where it's in test set (fold 1). n<100 means high variance per fold.
+- ❌ **NOT a 'finding' or 'insight' about MoE superiority**: confirms that 3-engine-only (s2/core still disabled) limits MoE. Re-evaluate when s2 + core are reachable.
 
 **What we'd need to claim a real 'MoE works'** (per ROADMAP [P1-11] backlog):
-1. q026-q050 user queries (currently 25 → 50, with more non-openalex dominant)
-2. At least 5-10 queries per class (arxiv/s2/crossref/core each get ≥5)
-3. Then re-run with class_weight='balanced' — if macro F1 > 0.7 on the 5+ per-class data, MoE is a real 'finding'
-4. Otherwise, fall back to round-robin pool + per-class balanced sampling for low-frequency engines
+1. ✅ q026-q050 user queries (n=50 done in v3.9.7.3, with 20 crossref + 3 arxiv + 24 openalex)
+2. ⚠️ Still need 5-10 queries per class for arxiv (only 3) and we need s2/core to come back online (currently 0)
+3. ✅ class_weight='balanced' applied — but macro F1=0.61, not 0.7 threshold
+4. Open: round-robin pool + per-class balanced sampling for low-frequency engines
 
 ## 3-tier honest audit (per MEMORY.md discipline)
 

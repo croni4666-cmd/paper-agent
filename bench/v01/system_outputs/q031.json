@@ -1,316 +1,2827 @@
 {
   "query_id": "q031",
   "query": "新能源汽车销售与国际原油价格的 Granger 因果 / SVAR 检验",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 0
+  "topic_bucket": "econ",
+  "source": "user",
+  "generated_at": "2026-07-22T11:28:09",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 20,
+  "n_returned": 140,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 1,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1016/j.rser.2022.113058",
+      "title": "Impact of Climate Policy Uncertainty on Traditional Energy and Green Markets: Evidence from Time-Varying Granger Tests",
+      "authors": [
+        "Xiaohang Ren"
+      ],
+      "venue": "RENEWABLE & SUSTAINABLE ENERGY REVIEWS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63811c7290e50fcafd0fb818",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 1
+    },
+    {
+      "doi": "10.1016/j.eng.2022.11.004",
+      "title": "免疫球蛋白G N-糖基化与代谢特征之间的双向因果关联——一项孟德尔随机化研究（英文）",
+      "authors": [
+        "Xiaoni Meng"
+      ],
+      "venue": "ENGINEERING",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648ce9f2d68f896efa8c7751",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1080/13504509.2022.2054877",
+      "title": "Environmental Consequences of Fossil Fuel in Spain Amidst Renewable Energy Consumption: a New Insights from the Wavelet-Based Granger Causality Approach",
+      "authors": [
+        "Tomiwa Sunday Adebayo"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF SUSTAINABLE DEVELOPMENT AND WORLD ECOLOGY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "628d22335aee126c0f44a050",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1007/s00181-020-01970-9",
+      "title": "A Homogeneous Approach to Testing for Granger Non-Causality in Heterogeneous Panels",
+      "authors": [
+        "Juodis  Artūras"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbba31c45e57ce97c31ed",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1109/tpami.2021.3065601",
+      "title": "Neural Granger Causality",
+      "authors": [
+        "Alex Tank"
+      ],
+      "venue": "IEEE transactions on pattern analysis and machine intelligence",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c75736af56def9798898f46",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1080/13504509.2021.1990158",
+      "title": "Examining the Dynamics of Ecological Footprint in China with Spectral Granger Causality and Quantile-on-quantile Approaches",
+      "authors": [
+        "Andrew Adewale Alola"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF SUSTAINABLE DEVELOPMENT AND WORLD ECOLOGY",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c85ed15244ab9dcb5fe038",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.3389/fenvs.2021.817982",
+      "title": "Decarbonized Energies and the Wealth of Three European Nations: A Comparative Nexus Study Using Granger and Toda-Yamamoto Approaches",
+      "authors": [
+        "Mihaela Simionescu"
+      ],
+      "venue": "FRONTIERS IN ENVIRONMENTAL SCIENCE",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e2c185aee126c0f8f3fb8",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.3969/j.issn.1006-480X.2022.05.007",
+      "title": "因果推断经验研究中的中介效应与调节效应",
+      "authors": [
+        "JIANG Ting"
+      ],
+      "venue": "China Industrial Economics",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6302ed1790e50fcafd513f3b",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1016/j.neunet.2020.11.002",
+      "title": "An EEG Channel Selection Method for Motor Imagery Based Brain-Computer Interface and Neurofeedback Using Granger Causality",
+      "authors": [
+        "Hesam Varsehi"
+      ],
+      "venue": "NEURAL NETWORKS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fbb8a88d4150a363c1cb183",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1016/j.strueco.2020.11.001",
+      "title": "From FDI to Economic Complexity: a Panel Granger Causality Analysis",
+      "authors": [
+        "Roberto Antonietti"
+      ],
+      "venue": "STRUCTURAL CHANGE AND ECONOMIC DYNAMICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff68c84d4150a363cd2a114",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.48550/arxiv.2101.07600",
+      "title": "Interpretable Models for Granger Causality Using Self-explaining Neural Networks.",
+      "authors": [
+        "Ričards Marcinkevičs"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6008019091e011d056eee7ac",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1146/annurev-statistics-040120-010930",
+      "title": "Granger Causality: A Review and Recent Advances",
+      "authors": [
+        "Ali Shojaie"
+      ],
+      "venue": "Annual review of statistics and its application",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6095117f91e011e1dbbca901",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
+      "doi": "10.1109/tcyb.2019.2940509",
+      "title": "基于马尔科夫边界发现的因果特征选择算法综述",
+      "authors": [
+        "Xingyu Wu"
+      ],
+      "venue": "IEEE Transactions on Cybernetics",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5db0318e47c8f76646148136",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 13
+    },
+    {
+      "doi": "10.1145/3441452",
+      "arxiv_id": "2002.00208v3",
+      "title": "Variable-lag Granger Causality and Transfer Entropy for Time Series Analysis",
+      "authors": [
+        "Chainarong Amornbunchornvej",
+        "Elena Zheleva",
+        "Tanya Berger-Wolf"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.00208v3",
+      "cited_by_count": 30,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv",
+        "aminer"
+      ],
+      "rank": 14
+    },
+    {
+      "doi": "10.1038/s41598-025-33385-w",
+      "title": "Jacobian Granger Causality for Count and Binary Data with Applications to Causal Network Inference",
+      "authors": [
+        "Suryadi"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "694827bb94d1bc07b496f4d4",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 15
+    },
+    {
+      "doi": "10.1177/1536867x231162034",
+      "title": "Improved Tests for Granger Noncausality in Panel Data",
+      "authors": [
+        "Jiaqi Xiao"
+      ],
+      "venue": "STATA JOURNAL",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "645d0859d68f896efaa90b7c",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 16
+    },
+    {
+      "doi": "10.1016/j.eng.2022.06.019",
+      "title": "因果模型启发的复杂工业过程软传感器自动化特征选择方法",
+      "authors": [
+        "Yan-Ning Sun"
+      ],
+      "venue": "ENGINEERING",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648edc11d68f896efa8c46db",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 17
+    },
+    {
+      "doi": "10.1177/1354816621990155",
+      "title": "Tourism and Economic Growth: Multi-country Evidence from Mixed-Frequency Granger Causality Tests",
+      "authors": [
+        "Martin Enilov"
+      ],
+      "venue": "TOURISM ECONOMICS",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605aa47de4510cd7c86ed091",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 18
+    },
+    {
+      "doi": "10.1021/acs.jctc.1c00945",
+      "title": "Granger Causality Analysis of Chignolin Folding",
+      "authors": [
+        "Marcin Sobieraj"
+      ],
+      "venue": "JOURNAL OF CHEMICAL THEORY AND COMPUTATION",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "620e2d435aee126c0fab8a53",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 19
+    },
+    {
+      "doi": "10.1016/j.irfa.2022.102179",
+      "title": "Systemic Risk in the Chinese Financial System: A Panel Granger Causality Analysis",
+      "authors": [
+        "Peter Cincinelli"
+      ],
+      "venue": "INTERNATIONAL REVIEW OF FINANCIAL ANALYSIS",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627e2c185aee126c0f8f4190",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.1177/1536867x221106403",
+      "title": "Testing for Time-Varying Granger Causality",
+      "authors": [
+        "Christopher F. Baum"
+      ],
+      "venue": "STATA JOURNAL",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62f6035190e50fcafdf78334",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1080/07350015.2020.1739531",
+      "title": "Measuring Granger Causality in Quantiles",
+      "authors": [
+        "Xiaojun Song"
+      ],
+      "venue": "JOURNAL OF BUSINESS & ECONOMIC STATISTICS",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ea012b59fced0a24b9c3fb3",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1029/2021gl094707",
+      "title": "Detecting Climate Teleconnections with Granger Causality",
+      "authors": [
+        "Filipi N. Silva"
+      ],
+      "venue": "GEOPHYSICAL RESEARCH LETTERS",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fcf749791e011f4c80baf65",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.48550/arxiv.2208.10671",
+      "title": "Cardinality-Regularized Hawkes-Granger Model",
+      "authors": [
+        "Tsuyoshi Ide"
+      ],
+      "venue": "NEURIPS 2021",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61a87fe56750f87bf8701ff0",
+      "matched_phrase": "Granger",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.3760/cma.j.cn112338-20190606-00408",
+      "title": "横断面研究能否进行因果推断",
+      "authors": [
+        "Y P Qiao"
+      ],
+      "venue": "PubMed",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eaaa4069fced0a24b973b07",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.3760/cma.j.cn112338-20200521-00749",
+      "title": "孟德尔随机化研究应用于因果推断的影响因素及其结果解读面临的挑战 题录",
+      "authors": [
+        "Y Z Wang"
+      ],
+      "venue": "Zhonghua liu xing bing xue za zhi = Zhonghua liuxingbingxue zazhi",
+      "year": 2020,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f4f73d89fced0a24bf5a8ed",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.7500/AEPS20180629013",
+      "title": "基于协整-格兰杰因果检验和季节分解的中期负荷预测",
+      "authors": [
+        "LIU Jun"
+      ],
+      "venue": "Automation of Electric Power Systems",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b3dbf6f90b7f6cac22ed3",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.14120/j.cnki.cn11-5057/f.2019.01.009",
+      "title": "因果逻辑和效果逻辑对新企业新颖型商业模式设计的影响:环境不确定性的调节作用",
+      "authors": [
+        "Wang Lingling"
+      ],
+      "venue": "Management Review",
+      "year": 2019,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b74656f90b7f6ca96c493",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.3969/j.issn.1008-9314.2018.05.021",
+      "title": "公共政策评估的循证进路——实验设计与因果推论",
+      "authors": [],
+      "venue": "Journal of Chinese Academy Of Governance",
+      "year": 2018,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b7d066f90b7f6caec3143",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.3724/sp.j.1042.2018.00144",
+      "title": "领导行为与人力资源管理实践的关系:因果、联合、替代还是强化?",
+      "authors": [
+        "YIN Kui"
+      ],
+      "venue": "Advances in Psychological Science",
+      "year": 2018,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b7d166f90b7f6caecdab8",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.3969/j.issn.1673-8209.2018.06.248",
+      "title": "领导行为与人力资源管理实践的关系:因果、联合、替代还是强化",
+      "authors": [],
+      "venue": "Human Resource Management",
+      "year": 2018,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62a860235aee126c0f2dcc41",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1016/j.compchemeng.2017.03.026",
+      "title": "基于收敛交叉映射的化工过程扰动因果分析方法",
+      "authors": [
+        "Lei Luo"
+      ],
+      "venue": "COMPUTERS & CHEMICAL ENGINEERING",
+      "year": 2017,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5a260c7817c44a4ba8a2f066",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.63887/fem.2025.1.7.40",
+      "title": "基于模糊综合评价法的消费者购买新能源汽车影响因素的研究",
+      "authors": [
+        "高威"
+      ],
+      "venue": "经济管理前沿",
+      "year": null,
+      "cited_by_count": 10,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究采用模糊综合评判法作为核心分析工具，旨在构建一个多维度的评价体系，以全面探讨影响消费者购车意愿的关键因素。具体来说，该体系围绕五个主要方面展开：安全性能（包括主动与被动安全配置）、经济性（涵盖购买成本及长期使用费用）、操作便捷性（考虑人机交互设计和驾驶体验）、外观吸引力（涉及车辆美学设计和品牌识别度）以及乘坐舒适度（包括空间布局和NVH表现）。通过这一科学模型的应用，不仅能够实现对各个因素的有效量化，还进一步揭示了这些因素在消费者决策过程中所扮演的角色及其相互间的重要性权重。研究发现，当今消费者的汽车购买决策展现出明显的综合性特征，这一过程并非由单一因素所驱动，而是多种因素通过复杂的相互作用共同决定了最终的选择。特别强调的是，这项研究专注于新能源汽车领域，通过对大量实证数据的收集与分析，全面探讨了其市场发展潜力。随着全球环境保护意识的增强及可持续发展理念的深入人心，新能源汽车以其突出的环保效益和能源效率优势，正逐渐取代传统燃油车在市场中的份额。然而，经过深入的市场调研和技术评估后，本研究指出了行业发展中面临的几大关键障碍：充电设施网络覆盖不全、快速充电技术存在的局",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.37155/2717-5669-0503-50",
+      "title": "药学检验检测中的新技术应用与挑战",
+      "authors": [
+        "英, 李"
+      ],
+      "venue": "国际全科医学",
+      "year": 2024,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.7498/aps.71.20211871",
+      "title": "基于因果检验的非线性系统的预测试验",
+      "authors": [
+        "Zhang Lu-Yi"
+      ],
+      "venue": "Acta Physica Sinica",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "623004eb5aee126c0f9d7f06",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.14107/j.cnki.kzgc.20210524",
+      "title": "因果推断:起源和发展",
+      "authors": [
+        "WANG Dong-ming"
+      ],
+      "venue": "Control Engineering of China",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6332cae590e50fcafd4c94a1",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.16471/j.cnki.11-2822/c.2021.2.002",
+      "title": "通向更精确的因果分析:交叉滞后模型的新进展",
+      "authors": [],
+      "venue": "Human Resource Development of China",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61cacfaa5244ab9dcb1f51fb",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.19484/j.cnki.1000-8934.2021.04.004",
+      "title": "因果方向与反事实依赖——大卫·刘易斯关于因果方向的形而上学理论",
+      "authors": [],
+      "venue": "Studies in Dialectics of Nature",
+      "year": 2021,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61cacfbd5244ab9dcb20fb81",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.15994/j.1000-0763.2020.08.002",
+      "title": "实际因果的反事实定义",
+      "authors": [
+        "Jiangjie QIU"
+      ],
+      "venue": "Journal of Dialectics of Nature",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b7d306f90b7f6caedcac3",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "",
+      "title": "为什么全球化会发生逆转\r——逆全球化现象的因果机制分析",
+      "authors": [],
+      "venue": "Political Economy Quarterly",
+      "year": 2020,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64b0115a3fda6d7f06f8cc35",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.19652/j.cnki.femt.1801259",
+      "title": "基于改进型因果时序网络的微电网故障诊断方法",
+      "authors": [
+        "Fan Yang"
+      ],
+      "venue": "Foreign Electronic Measurement Technology",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b418e6f90b7f6cae339bf",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "",
+      "title": "英汉因果复句主观化的历程和机制",
+      "authors": [],
+      "venue": "Foreign Language Teaching and Research",
+      "year": 2019,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b63566f90b7f6caf63a86",
+      "matched_phrase": "因果",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
       "doi": "10.37155/2717-5197-0607-2",
       "title": "汽车新能源与新能源汽车发展趋势分析",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "舒文俊"
+      ],
       "venue": "机械与电子控制工程",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 43
     },
     {
-      "rank": 2,
+      "doi": "10.61369/se.12527",
+      "title": "新能源汽车发展对车险经营的影响与策略",
+      "authors": [
+        "徐, 建国"
+      ],
+      "venue": "Society and Economy",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>聚焦新能源汽车发展对车险经营的影响与策略展开研究。在全球倡导绿色出行背景下，新能源汽车保有量快速增长，给车险经营带来深刻变革。分析新能源汽车特性，如电池易损耗、动力系统差异、智能网联增加网络安全风险等，这些改变了车险风险结构。传统车险产品与理赔服务难以适应，需开发专属产品、优化定价模型，革新理赔流程与定损方式。车险经营应构建数据收集与风险评估体系，加强与车企等合作，运用保险科技并培养专业人才。研究成果为车险行业在新能源浪潮下的转型发展提供理论支撑与实践指导。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.37155/2717-5197-0704-58",
+      "title": "新能源汽车技术的发展与智能控制",
+      "authors": [
+        "江, 许"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2025,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.37155/2717-5316-0412-77",
+      "title": "新能源汽车整车控制器的改进设计与应用研究",
+      "authors": [
+        "刘　璐"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2023,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
       "doi": "10.37155/2811-0609-0315-35",
       "title": "汽车新能源与新能源汽车发展趋势",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "屈克勇"
+      ],
       "venue": "工程施工新技术",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 47
     },
     {
-      "rank": 3,
       "doi": "10.37155/2717-5197-0707-18",
       "title": "汽车新能源与新能源汽车发展趋势分析",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "闫　哲"
+      ],
       "venue": "机械与电子控制工程",
-      "citation_count": 1,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 48
     },
     {
-      "rank": 4,
+      "doi": "10.37155/2717-5197-0511-82",
+      "title": "新能源汽车检测与维修现状及发展对策分析",
+      "authors": [
+        "袁书新"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.12677/ecl.2025.1451469",
+      "title": "Risks and Challenges of China’s New Energy Vehicles Going Overseas under the EU’s New Automotive Industry Regulations",
+      "authors": [
+        "朱, 瑾文"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.37155/2972-435x-0309-22",
+      "title": "新能源汽车智能化技术开发与研究",
+      "authors": [
+        "张新国",
+        "陈毓枫",
+        "管士斌",
+        "章东海"
+      ],
+      "venue": "工程施工与管理",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.37155/2717-5197-0511-18",
+      "title": "汽车新能源的应用与发展前景",
+      "authors": [
+        "王　超"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 52
+    },
+    {
       "doi": "10.54254/3049-5660/1/2024002",
       "title": "基于回归模型的中国新能源汽车销售量影响因素探究",
-      "abstract": "<jats:p>本文旨在探究影响中国新能源汽车销售量的主要因素，并构建多元线性回归模型进行分析。通过文献综述和结构分析，确定政策、技术、市场和社会观念等因素对新能源汽车发展的影响。利用中国统计年鉴和数据库数据，分析了2014年至2022年新能源汽车销售量与多个影响因素的关系，并使用Origin软件进行可视化处理。通过MATLAB建立多元线性回归模型，得到回归方程并进行拟合优度检验，结果表明模型拟合效果良好。进一步进行权重分析和灵敏度分析，发现充电桩数量、石油价格、限牌地区等因素对新能源汽车销售量影响显著，且模型具有较强的稳健性。研究结果表明，充电桩的普及对新能源汽车销售量的影响最为重要，其次是石油价格、限牌地区、疫情等因素。政策支持力度和补贴力度对销售量的影响相对较小。该研究为中国新能源汽车产业发展提供了参考依据，并为相关政策的制定提供理论支持。</jats:p>",
-      "year": null,
+      "authors": [
+        "毛, 健升",
+        "任, 晨男",
+        "高, 焕琦",
+        "李, 世洋",
+        "吴, 鹏"
+      ],
       "venue": "计算与实验",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文旨在探究影响中国新能源汽车销售量的主要因素，并构建多元线性回归模型进行分析。通过文献综述和结构分析，确定政策、技术、市场和社会观念等因素对新能源汽车发展的影响。利用中国统计年鉴和数据库数据，分析了2014年至2022年新能源汽车销售量与多个影响因素的关系，并使用Origin软件进行可视化处理。通过MATLAB建立多元线性回归模型，得到回归方程并进行拟合优度检验，结果表明模型拟合效果良好。进一步进行权重分析和灵敏度分析，发现充电桩数量、石油价格、限牌地区等因素对新能源汽车销售量影响显著，且模型具有较强的稳健性。研究结果表明，充电桩的普及对新能源汽车销售量的影响最为重要，其次是石油价格、限牌地区、疫情等因素。政策支持力度和补贴力度对销售量的影响相对较小。该研究为中国新能源汽车产业发展提供了参考依据，并为相关政策的制定提供理论支持。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 53
     },
     {
-      "rank": 5,
       "doi": "10.61369/asds.12185",
       "title": "AI大模型在新能源汽车境外销售检修中的信息检索与NLP 应用自动化驾驶标准化的研究",
-      "abstract": "<jats:p>本论文聚焦于 AI大模型在新能源汽车境外销售检修及自动化驾驶标准化方面的应用。阐述了当前新能源汽车境外业务拓展面临的挑战，分析 AI大模型如何助力解决销售检修环节的文本信息处理难题，以及在推动自动化驾驶标准化进程中的作用。通过研究，旨在为提升新能源汽车的全球竞争力、保障自动化驾驶安全规范发展提供理论与实践参考。</jats:p>",
-      "year": null,
+      "authors": [
+        "徐, 小雅",
+        "杜, 善琪"
+      ],
       "venue": "Applied Statistics and Data Science",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本论文聚焦于 AI大模型在新能源汽车境外销售检修及自动化驾驶标准化方面的应用。阐述了当前新能源汽车境外业务拓展面临的挑战，分析 AI大模型如何助力解决销售检修环节的文本信息处理难题，以及在推动自动化驾驶标准化进程中的作用。通过研究，旨在为提升新能源汽车的全球竞争力、保障自动化驾驶安全规范发展提供理论与实践参考。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 54
     },
     {
-      "rank": 6,
       "doi": "10.69979/3029-2700.25.02.078",
       "title": "汇率、国际原油价格对国内能源化工期货的影响",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "社会企业经济发展",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 55
     },
     {
-      "rank": 7,
       "doi": "10.12677/ecl.2025.1461726",
       "title": "Analysis of Sales Factors of New Energy Vehicles under the Background of Green—Taking BYD’s New Energy Vehicles as an Example",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "阮, 景花"
+      ],
       "venue": "E-Commerce Letters",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 56
     },
     {
-      "rank": 8,
       "doi": "10.61654/zzjzjdjcyzj04121",
       "title": "新能源汽车三电系统损伤鉴定研究",
-      "abstract": "<jats:p>三电系统作为新能源汽车的核心组成部分,直接决定车辆的动力性能、安全性能和使用寿命,其损伤情况不仅关系到车辆维修成本,更影响车辆后续行驶安全和二手交易价值。随着新能源汽车保有量的不断增加,碰撞、涉水、过载等引发的三电系统损伤事故频发,而三电系统结构复杂、技术含量高,其损伤鉴定难度远高于传统燃油车零部件。本文结合新能源汽车三电系统的结构特点,界定三电系统损伤鉴定的核心内涵与重要意义,分析常见损伤类型及成因,探讨当前损伤鉴定工作中存在的问题,提出针对性的优化路径,为规范三电系统损伤鉴定流程、提升鉴定准确性、保障相关主体合法权益提供理论参考和实践借鉴。</jats:p>",
-      "year": null,
+      "authors": [
+        "张, 晋民"
+      ],
       "venue": "建筑监督检测与造价",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>三电系统作为新能源汽车的核心组成部分,直接决定车辆的动力性能、安全性能和使用寿命,其损伤情况不仅关系到车辆维修成本,更影响车辆后续行驶安全和二手交易价值。随着新能源汽车保有量的不断增加,碰撞、涉水、过载等引发的三电系统损伤事故频发,而三电系统结构复杂、技术含量高,其损伤鉴定难度远高于传统燃油车零部件。本文结合新能源汽车三电系统的结构特点,界定三电系统损伤鉴定的核心内涵与重要意义,分析常见损伤类型及成因,探讨当前损伤鉴定工作中存在的问题,提出针对性的优化路径,为规范三电系统损伤鉴定流程、提升鉴定准确性、保障相关主体合法权益提供理论参考和实践借鉴。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 57
     },
     {
-      "rank": 9,
       "doi": "10.32629/jpm.v7i5.8906",
       "title": "电动汽车营销与新能源协同发展",
-      "abstract": "<jats:p>在“双碳”目标引领和能源结构转型的大背景下，电动汽车产业与新能源产业、微电网技术的融合发展，已成为推动绿色低碳发展的重要路径。本文立足电动汽车营销实践，结合新能源（光伏、风电等）开发利用与微电网技术的应用场景，剖析三者协同发展的内在逻辑与现存困境，探索基于新能源协同的电动汽车营销创新路径，实现电动汽车推广、新能源消纳与微电网优化的双向赋能。研究表明，电动汽车营销与新能源、微电网的协同发展，既能破解电动汽车充电续航痛点、压缩营销成本，又能促进新能源就地消纳、提升微电网运行效能，助力能源系统向清洁化、智能化转型。</jats:p>",
-      "year": null,
+      "authors": [
+        "许, 轶群"
+      ],
       "venue": "工程管理",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在“双碳”目标引领和能源结构转型的大背景下，电动汽车产业与新能源产业、微电网技术的融合发展，已成为推动绿色低碳发展的重要路径。本文立足电动汽车营销实践，结合新能源（光伏、风电等）开发利用与微电网技术的应用场景，剖析三者协同发展的内在逻辑与现存困境，探索基于新能源协同的电动汽车营销创新路径，实现电动汽车推广、新能源消纳与微电网优化的双向赋能。研究表明，电动汽车营销与新能源、微电网的协同发展，既能破解电动汽车充电续航痛点、压缩营销成本，又能促进新能源就地消纳、提升微电网运行效能，助力能源系统向清洁化、智能化转型。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 58
     },
     {
-      "rank": 10,
       "doi": "10.37155/2717-5251-0710-22",
       "title": "新能源电力市场化交易的国际经验与中国实施路径",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "母卓元",
+        "钢迪格"
+      ],
       "venue": "水利电力技术与应用",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 59
+    },
+    {
+      "doi": "10.64083/etm2630124",
+      "title": "面向新能源汽车的《汽车构造》实验教学改革与实践",
+      "authors": [
+        "李, 清安",
+        "李, 炳",
+        "马, 现军",
+        "费, 强",
+        "江, 深",
+        "金, 标"
+      ],
+      "venue": "教育教学与管理",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
+      "abstract": "<jats:p>在新能源汽车快速发展的背景下,传统《汽车构造》实验教学面临内容滞后、设备匮乏、师资能力不足等问题。本文通过构建\"传统-新能源\"双主线融合的教学内容体系,采用项目式学习与混合式教学相结合的创新策略,建设虚实结合的教学资源平台,建立以能力为导向的多元评价体系,形成了一套完整的实验教学改革方案。教学实践表明,该方案有效提升了学生的工程实践能力和创新素养,为新能源汽车人才培养提供了可借鉴的教学模式。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 60
     },
     {
-      "rank": 11,
-      "doi": "arXiv:2606.07575v1",
-      "title": "Forward-Looking Stress Testing Under Macro Scenarios: Stable SVaR Estimation Using a Hybrid GPR-HS Framework with SACS",
-      "abstract": "",
+      "doi": "10.64216/3080-1486.26.06.026",
+      "title": "美国《通胀削减法案》背景下我国新能源汽车产业国际竞争力评价分析",
+      "authors": [],
+      "venue": "社会经济导刊",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 61
     },
     {
-      "rank": 12,
-      "doi": "arXiv:1911.09879v2",
-      "title": "Economy Statistical Recurrent Units For Inferring Nonlinear Granger Causality",
-      "abstract": "",
-      "year": 2019,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.37155/2972-4333-0403-30",
+      "title": "电子诊断技术在新能源汽车检测与维修中的应用",
+      "authors": [
+        "司腊梅"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "工程技术创新与发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 62
     },
     {
-      "rank": 13,
-      "doi": "10.1145/3441452",
-      "title": "Variable-lag Granger Causality and Transfer Entropy for Time Series Analysis",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.37155/2811-0609-0415-33",
+      "title": "浅谈新能源汽车检测与维修技术人员的培养",
+      "authors": [
+        "魏　涌"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 14,
-      "doi": "arXiv:1810.12171v1",
-      "title": "Causal Inference in Nonverbal Dyadic Communication with Relevant Interval Selection and Granger Causality",
-      "abstract": "",
-      "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 15,
-      "doi": "arXiv:2008.02717v1",
-      "title": "Computation of a 30750-Bit Binary Field Discrete Logarithm",
-      "abstract": "",
-      "year": 2020,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 16,
-      "doi": "arXiv:2108.08464v1",
-      "title": "Svar: A Tiny C++ Header Brings Unified Interface for Multiple programming Languages",
-      "abstract": "",
-      "year": 2021,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 17,
-      "doi": "arXiv:0505465v1",
-      "title": "A flatness property for filtered D-modules",
-      "abstract": "",
-      "year": 2005,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
-      ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 18,
-      "doi": "arXiv:2505.23542v3",
-      "title": "Large SVARs",
-      "abstract": "",
+      "venue": "工程施工新技术",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 63
     },
     {
-      "rank": 19,
-      "doi": "arXiv:2604.07718v1",
-      "title": "Identification in (Endogenously) Nonlinear SVARs Is Easier Than You Think",
+      "doi": "10.61369/ied.9212",
+      "title": "中国汽车海外销售的风险管理与应对策略",
+      "authors": [
+        "宋, 军"
+      ],
+      "venue": "International Economy and Development",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本研究深入探讨了我国汽车出口市场的当前状况、发展动向以及所面临的主要竞争格局。在此基础上，本文构建了一套针对中国汽车海外销售的风险识别、分析与评价模型。研究提出了构建全面且高效的风险管理体系的指导原则、组织架构和流程制度，并对风险规避、减轻、转移与共担等策略进行了深入探讨和详细阐述。文章强调，在全球化的大背景下，中国汽车企业在面对海外市场风险时，必须综合考虑风险的类型、发生概率、潜在损失等多个维度，制定并执行恰当的风险应对策略。这不仅是为了确保海外销售业务的稳定性和连续性，更是为了在激烈的国际竞争中提升自身的竞争力。本研究为我国汽车企业在应对海外市场风险方面提供了理论上的指导和实践上的参考，有助于企业在全球化进程中更好地把握市场机遇，规避和减轻潜在风险，从而在国际市场上稳固地位，增强影响力。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 64
+    },
+    {
+      "doi": "10.70693/cjst.v2i1.1852",
+      "title": "基于改进 Schwartz-Moon 模型的新能源汽车企业价值评估",
+      "authors": [
+        "谭小庆",
+        "郭红霞"
+      ],
+      "venue": "中国科学与技术学报",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着新能源汽车行业的快速发展，企业价值评估面临高度不确定性和高成长性等挑战。传统估值方法难以准确反映其内在价值，而Schwartz-Moon模型作为一种基于实物期权的连续时间模型，具有处理不确定性和动态模拟企业发展的优势。本文在传统Schwartz-Moon模型基础上，引入无形资产摊销参数以改进模型，并采用收益法的二阶段增长模型以修正终值倍率，构建改进后的估值模型。以小鹏汽车和零跑汽车为案例进行实证分析，结果表明，改进后的模型评估误差显著降低了19.08%和14.13%，验证了其在新能源汽车企业价值评估中的有效性与适用性。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.37155/2811-0633-0411-41",
+      "title": "新能源汽车电池热失控火灾原因和防控",
+      "authors": [
+        "王俊玲"
+      ],
+      "venue": "现代交通与路桥建设",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.62989/jetm2025.2.3.20",
+      "title": "面向新能源汽车制造的自动化装配工艺创新与实践",
+      "authors": [
+        "孙业伟, 孙业伟",
+        "滕宁宁, 滕宁宁"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.12677/ecl.2025.1482591",
+      "title": "Analysis of International Marketing Dynamic Capability of New Energy Vehicles—Taking Hongmeng Zhixing and Xiaomi Automobile as Examples",
+      "authors": [
+        "李, 紫莹"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.37155/2811-0633-0422-8",
+      "title": "新能源汽车技术专业群赋能京津冀新能源和智能网联汽车产业的路径研究",
+      "authors": [
+        "杜, 雪",
+        "刘冰月"
+      ],
+      "venue": "现代交通与路桥建设",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.36012/978-981-14-6618-2",
+      "title": "新能源汽车技术创新与人才培养研究",
+      "authors": [],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.37155/2972-4333-0403-3",
+      "title": "新能源汽车技术原理及优缺点",
+      "authors": [
+        "夏, 特"
+      ],
+      "venue": "工程技术创新与发展",
       "year": 2026,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 71
     },
     {
-      "rank": 20,
-      "doi": "arXiv:2412.15373v1",
-      "title": "Granger Causality Detection with Kolmogorov-Arnold Networks",
+      "doi": "10.64216/3080-1486.26.04.009",
+      "title": "新能源汽车的企业价值评估——以小鹏汽车为例",
+      "authors": [
+        "白卓颖，简克蓉, 廖志高"
+      ],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.65113/keji1041",
+      "title": "新能源汽车能量管理系统设计与智能控制方法探索",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.26789/jnhb.v7i5.1172",
+      "title": "分析新能源汽车的环保效益与环保路径",
+      "authors": [
+        "银森, 钱"
+      ],
+      "venue": "节能环保",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着社会的不断发展，能源开采和环境治理二者之间的矛盾越来越明显。中国汽车工业发展迅速的同时，环境污染愈发严重，部分地区已经出现对应的自然灾害，对此新能源汽车的研发势在必行。相关工作人员更要对现有的技术体系进行优化，稳固汽车产业的发展。基于此，论文通过总结新能源汽车的概念和其环保效益，明确在生产与管理过程中存在的问题，提出针对性的解决方案，以期帮助工作人员减少管理难度，明确优化方向，为环境友好型社会的建立奠定基础。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.37155/2717-5197-0622-80",
+      "title": "上海新能源汽车发展现状及趋势分析与展望——以上海新能源汽车行业为例",
+      "authors": [
+        "张海龙"
+      ],
+      "venue": "机械与电子控制工程",
       "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.12677/ecl.2025.14113533",
+      "title": "Strategies for Chinese New Energy Vehicles to Expand into International Markets",
+      "authors": [
+        "金, 纯明"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 12,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.64216/3080-1486.26.04.017",
+      "title": "全球碳中和背景下中国新能源汽车出海的前景与壁垒",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 77
+    },
+    {
+      "doi": "10.32629/ej.v9i3.3435",
+      "title": "新能源汽车国际化战略研究——以比亚迪为例",
+      "authors": [
+        "彭, 夏璇 None"
+      ],
+      "venue": "经济学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在全球新能源汽车产业重构与中国车企出海浪潮下,比亚迪作为行业龙头,对其国际 化战略实践具有典型示范意义。本文以比亚迪新能源汽车为研究对象,从市场进入、 产品出海、渠道运营、品牌营销四大维度剖析其国际化战略的实践特征,挖掘企业在 全球资源配置、核心技术突破、渠道管控、跨文化沟通等方面的深层困境,并针对性 提出在地化研发制造、打造差异化技术标签、构建数字化渠道网络、推进全球品牌 一致性管理的优化路径。研究表明,比亚迪的国际化实践为中国新能源车企出海提供 了实操参考,唯有兼顾战略适配性与本土化落地,方能实现中国新能源汽车品牌的全 球价值提升。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.69979/3041-0673.26.06.052",
+      "title": "政策驱动下的泰国新能源汽车产业路径探索",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 79
+    },
+    {
+      "doi": "10.69979/3041-0673.25.12.031",
+      "title": "新能源汽车项目环境影响评价重点关注的问题",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 80
+    },
+    {
+      "doi": "10.37155/2717-5197-0510-48",
+      "title": "基于电子诊断技术的新能源汽车检测与维修技术研究",
+      "authors": [
+        "维, 黄",
+        "鑫, 金",
+        "挺, 徐"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 81
+    },
+    {
+      "doi": "10.37155/2717-5197-0410-64",
+      "title": "新时期汽车综合性能的检测与维修技术",
+      "authors": [
+        "袁书新"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 82
+    },
+    {
+      "doi": "10.37155/2717-5316-0410-72",
+      "title": "新能源汽车整车控制器的改进设计与应用研究",
+      "authors": [
+        "刘　璐"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 83
+    },
+    {
+      "doi": "10.66106/xinna7.20250105",
+      "title": "电气技术在新能源汽车充电设施中的应用与发展(The Application and Development of Electrical Technology in New Energy Vehicle Charging Facilities)",
+      "authors": [
+        "Xuhai Song, 宋旭海"
+      ],
+      "venue": "新能源（New Energy）",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"en\">Abstract: With the global energy structure transformation and the widespread adoption of sustainable development concepts, the scale of the new energy vehicle industry has expanded rapidly. However, the construction standards and operational efficiency of supporting charging infrastructure have become core issues limiting industry growth. Currently, charging facilities still exhibit significant shortcomings in grid load regulation, energy conversion efficiency, equipment in",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.32629/pe.v4i2.20020",
+      "title": "基于数据分布的新能源汽车动力电池异常检测与维修技术",
+      "authors": [
+        "米吉提, 马哈木提江 •"
+      ],
+      "venue": "项目工程",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着新能源汽车保有量的快速增长,动力电池安全性与可靠性已成为支持行业高质量发展的关键。加强动力电池异常检测与维修,对于保障群众出行安全,促进行业健康发展具有重要意义。新能源车辆行驶以及动力锂电池系统在工作中会产生大量数据,基于数据分布的异常检测方法,可充分利用各类信息数据,对于提升检测效率、解决疑难杂症提供了新思路。本文系统阐述了动力电池异常检测的技术背景与分类,分析了基于数据分布的异常检测核心方法,包括统计学方法、机器学习方法等,并探讨了数据驱动的新能源动力电池维修技术与策略。希望本文抛砖引玉,能为动力电池安全管理提供一定理论与实践参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.61654/zzhqkx1010",
+      "title": "基于质量工程的新能源汽车电池性能测试与分析",
+      "authors": [
+        "李, 道明"
+      ],
+      "venue": "环球科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>从质量工程视角来看,电池性能测试是把控电池生产、装配及服役全过程质量的关键手段,是排查产品质量隐患、优化产品性能、提升整车品质的核心环节。为全面保障新能源汽车电池的使用可靠性与使用寿命,构建标准化、系统化的性能测试体系尤为重要。本文基于质量工程的质量管理与质量优化理念,阐述新能源汽车电池核心性能测试内容,分析当前电池性能测试工作中存在的普遍问题,提出针对性的测试优化与质量提升策略,为新能源汽车电池质量管控与性能升级提供理论参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.37155/2811-0609-0401-28",
+      "title": "新能源汽车的维修与故障诊断技术研究",
+      "authors": [
+        "郭　伟"
+      ],
+      "venue": "工程施工新技术",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.69979/3041-0673.26.01.013",
+      "title": "新能源汽车智能化诊断技术在维修案例中的应用与实践",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.37155/2717-5197-0603-72",
+      "title": "新能源汽车电机性能测试台的设计",
+      "authors": [
+        "伟, 金",
+        "平, 杨"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.37155/2717-5197-0616-16",
+      "title": "新能源汽车智能网联的通信协议与标准化研究",
+      "authors": [
+        "张　弛"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "arXiv:2606.07575v1",
+      "arxiv_id": "2606.07575v1",
+      "title": "Forward-Looking Stress Testing Under Macro Scenarios: Stable SVaR Estimation Using a Hybrid GPR-HS Framework with SACS",
+      "authors": [
+        "Ujjwala Vadrevu"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.07575v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 91
+    },
+    {
+      "doi": "arXiv:1911.09879v2",
+      "arxiv_id": "1911.09879v2",
+      "title": "Economy Statistical Recurrent Units For Inferring Nonlinear Granger Causality",
+      "authors": [
+        "Saurabh Khanna",
+        "Vincent Y. F. Tan"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.09879v2",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "arXiv:1810.12171v1",
+      "arxiv_id": "1810.12171v1",
+      "title": "Causal Inference in Nonverbal Dyadic Communication with Relevant Interval Selection and Granger Causality",
+      "authors": [
+        "Lea Müller",
+        "Maha Shadaydeh",
+        "Martin Thümmel",
+        "Thomas Kessler",
+        "Dana Schneider",
+        "Joachim Denzler"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1810.12171v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "arXiv:2008.02717v1",
+      "arxiv_id": "2008.02717v1",
+      "title": "Computation of a 30750-Bit Binary Field Discrete Logarithm",
+      "authors": [
+        "Robert Granger",
+        "Thorsten Kleinjung",
+        "Arjen K. Lenstra",
+        "Benjamin Wesolowski",
+        "Jens Zumbrägel"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.02717v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "arXiv:2108.08464v1",
+      "arxiv_id": "2108.08464v1",
+      "title": "Svar: A Tiny C++ Header Brings Unified Interface for Multiple programming Languages",
+      "authors": [
+        "Yong Zhao",
+        "Pengcheng Zhao",
+        "Shibiao Xu",
+        "Lin Chen",
+        "Pengcheng Han",
+        "Shuhui Bu",
+        "Hongkai Jiang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.08464v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "arXiv:0505465v1",
+      "arxiv_id": "0505465v1",
+      "title": "A flatness property for filtered D-modules",
+      "authors": [
+        "F. J. Castro-Jimenez",
+        "M. Granger"
+      ],
+      "venue": "arXiv",
+      "year": 2005,
+      "pdf_url": "https://arxiv.org/pdf/math/0505465v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "arXiv:2505.23542v3",
+      "arxiv_id": "2505.23542v3",
+      "title": "Large SVARs",
+      "authors": [
+        "Jonas E. Arias",
+        "Juan F. Rubio-Ramírez",
+        "Daniel Rudolf",
+        "Minchul Shin"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.23542v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "arXiv:2604.07718v1",
+      "arxiv_id": "2604.07718v1",
+      "title": "Identification in (Endogenously) Nonlinear SVARs Is Easier Than You Think",
+      "authors": [
+        "James A. Duffy",
+        "Sophocles Mavroeidis"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.07718v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "arXiv:2412.15373v1",
+      "arxiv_id": "2412.15373v1",
+      "title": "Granger Causality Detection with Kolmogorov-Arnold Networks",
+      "authors": [
+        "Hongyu Lin",
+        "Mohan Ren",
+        "Paolo Barucca",
+        "Tomaso Aste"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.15373v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.5705/ss.202023.0317",
+      "arxiv_id": "2103.00209v2",
+      "title": "Statistical Inference for Local Granger Causality",
+      "authors": [
+        "Yan Liu",
+        "Masanobu Taniguchi",
+        "Hernando Ombao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.00209v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "arXiv:2405.08779v1",
+      "arxiv_id": "2405.08779v1",
+      "title": "Jacobian Regularizer-based Neural Granger Causality",
+      "authors": [
+        "Wanqi Zhou",
+        "Shuanghao Bai",
+        "Shujian Yu",
+        "Qibin Zhao",
+        "Badong Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.08779v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1103/PhysRevE.103.L020102",
+      "arxiv_id": "2010.13833v1",
+      "title": "Local Granger Causality",
+      "authors": [
+        "Sebastiano Stramaglia",
+        "Tomas Scagliarini",
+        "Yuri Antonacci",
+        "Luca Faes"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.13833v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "arXiv:2203.04876v1",
+      "arxiv_id": "2203.04876v1",
+      "title": "Structural & Granger CAUSALITY for IoT Digital Twin",
+      "authors": [
+        "PG Madhavan"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.04876v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1103/PhysRevE.81.041907",
+      "arxiv_id": "1002.0299v2",
+      "title": "Multivariate Granger Causality and Generalized Variance",
+      "authors": [
+        "Adam B. Barrett",
+        "Lionel Barnett",
+        "Anil K. Seth"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1002.0299v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "arXiv:2407.09632v3",
+      "arxiv_id": "2407.09632v3",
+      "title": "Granger Causality in Extremes",
+      "authors": [
+        "Juraj Bodik",
+        "Olivier C. Pasche"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.09632v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "arXiv:2102.05298v1",
+      "arxiv_id": "2102.05298v1",
+      "title": "Inductive Granger Causal Modeling for Multivariate Time Series",
+      "authors": [
+        "Yunfei Chu",
+        "Xiaowei Wang",
+        "Jianxin Ma",
+        "Kunyang Jia",
+        "Jingren Zhou",
+        "Hongxia Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.05298v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1109/TPAMI.2021.3065601",
+      "arxiv_id": "1802.05842v2",
+      "title": "Neural Granger Causality",
+      "authors": [
+        "Alex Tank",
+        "Ian Covert",
+        "Nicholas Foti",
+        "Ali Shojaie",
+        "Emily Fox"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.05842v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "arXiv:2407.03265v2",
+      "arxiv_id": "2407.03265v2",
+      "title": "Wild inference for wild SVARs with application to heteroscedasticity-based IV",
+      "authors": [
+        "Bulat Gafarov",
+        "Madina Karamysheva",
+        "Andrey Polbin",
+        "Anton Skrobotov"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.03265v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "arXiv:2106.01513v2",
+      "arxiv_id": "2106.01513v2",
+      "title": "Granger Causality from Quantized Measurements",
+      "authors": [
+        "Salman Ahmadi",
+        "Girish N. Nair",
+        "Erik Weyer"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.01513v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "arXiv:1602.04511v2",
+      "arxiv_id": "1602.04511v2",
+      "title": "Learning Granger Causality for Hawkes Processes",
+      "authors": [
+        "Hongteng Xu",
+        "Mehrdad Farajtabar",
+        "Hongyuan Zha"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1602.04511v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1016/j.neuroimage.2013.04.091",
+      "arxiv_id": "1210.3889v4",
+      "title": "Spatio-temporal Granger causality: a new framework",
+      "authors": [
+        "Qiang Luo",
+        "Wenlian Lu",
+        "Wei Cheng",
+        "Pedro A. Valdes-Sosa",
+        "Xiaotong Wen",
+        "Mingzhou Ding",
+        "Jianfeng Feng"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1210.3889v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "arXiv:2205.09573v1",
+      "arxiv_id": "2205.09573v1",
+      "title": "Jacobian Granger Causal Neural Networks for Analysis of Stationary and Nonstationary Data",
+      "authors": [
+        " Suryadi",
+        "Yew-Soon Ong",
+        "Lock Yue Chew"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.09573v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1016/j.physleta.2004.02.032",
+      "arxiv_id": "0405016v1",
+      "title": "Analyzing Multiple Nonlinear Time Series with Extended Granger Causality",
+      "authors": [
+        "Yonghong Chen",
+        "Govindan Rangarajan",
+        "Jianfeng Feng",
+        "Mingzhou Ding"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/nlin/0405016v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "arXiv:0911.1159v1",
+      "arxiv_id": "0911.1159v1",
+      "title": "Identification and quantification of Granger causality between gene sets",
+      "authors": [
+        "Andre Fujita",
+        "Joao Ricardo Sato",
+        "Kaname Kojima",
+        "Luciana Rodrigues Gomes",
+        "Masao Nagasaki",
+        "Mari Cleide Sogayar",
+        "Satoru Miyano"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0911.1159v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1016/j.physleta.2009.05.009",
+      "arxiv_id": "0902.2341v1",
+      "title": "Granger causality for circular variables",
+      "authors": [
+        "Leonardo Angelini",
+        "Mario Pellicoro",
+        "Sebastiano Stramaglia"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0902.2341v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.1103/PhysRevE.91.040101",
+      "arxiv_id": "1501.06502v2",
+      "title": "Granger causality for state space models",
+      "authors": [
+        "Lionel Barnett",
+        "Anil K. Seth"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1501.06502v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "arXiv:1607.01519v1",
+      "arxiv_id": "1607.01519v1",
+      "title": "Granger Independent Martingale Processes",
+      "authors": [
+        "Umberto Cherubini",
+        "Fabio Gobbi",
+        "Sabrina Mulinacci",
+        "Silvia Romagnoli"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1607.01519v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "arXiv:1911.09625v2",
+      "arxiv_id": "1911.09625v2",
+      "title": "Sampling distribution for single-regression Granger causality estimators",
+      "authors": [
+        "A. J. Gutknecht",
+        "L. Barnett"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.09625v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.1029/2021GL094707",
+      "arxiv_id": "2012.03848v2",
+      "title": "Detecting climate teleconnections with Granger causality",
+      "authors": [
+        "Filipi N Silva",
+        "Didier A. Vega-Oliveros",
+        "Xiaoran Yan",
+        "Alessandro Flammini",
+        "Filippo Menczer",
+        "Filippo Radicchi",
+        "Ben Kravitz",
+        "Santo Fortunato"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.03848v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "arXiv:2402.09744v2",
+      "arxiv_id": "2402.09744v2",
+      "title": "Quantile Granger Causality in the Presence of Instability",
+      "authors": [
+        "Alexander Mayer",
+        "Dominik Wied",
+        "Victor Troster"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.09744v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "arXiv:2402.03614v2",
+      "arxiv_id": "2402.03614v2",
+      "title": "Bayesian Vector AutoRegression with Factorised Granger-Causal Graphs",
+      "authors": [
+        "He Zhao",
+        "Vassili Kitsios",
+        "Terence J. O'Kane",
+        "Edwin V. Bonilla"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.03614v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.3390/e15010113",
+      "arxiv_id": "1211.3169v1",
+      "title": "The relation between Granger causality and directed information theory: a review",
+      "authors": [
+        "Pierre-Olivier Amblard",
+        "Olivier J. J. Michel"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1211.3169v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "arXiv:2101.07600v1",
+      "arxiv_id": "2101.07600v1",
+      "title": "Interpretable Models for Granger Causality Using Self-explaining Neural Networks",
+      "authors": [
+        "Ričards Marcinkevičs",
+        "Julia E. Vogt"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2101.07600v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "arXiv:0608035v1",
+      "arxiv_id": "0608035v1",
+      "title": "Granger Causality: Basic Theory and Application to Neuroscience",
+      "authors": [
+        "Mingzhou Ding",
+        "Yonghong Chen",
+        "Steven L. Bressler"
+      ],
+      "venue": "arXiv",
+      "year": 2006,
+      "pdf_url": "https://arxiv.org/pdf/q-bio/0608035v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1109/DSAA.2019.00016",
+      "arxiv_id": "1912.10829v1",
+      "title": "Variable-lag Granger Causality for Time Series Analysis",
+      "authors": [
+        "Chainarong Amornbunchornvej",
+        "Elena Zheleva",
+        "Tanya Y. Berger-Wolf"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.10829v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "arXiv:2507.22869v2",
+      "arxiv_id": "2507.22869v2",
+      "title": "Inference on Common Trends in a Cointegrated Nonlinear SVAR",
+      "authors": [
+        "James A. Duffy",
+        "Xiyu Jiao"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2507.22869v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "arXiv:2208.10671v2",
+      "arxiv_id": "2208.10671v2",
+      "title": "Cardinality-Regularized Hawkes-Granger Model",
+      "authors": [
+        "Tsuyoshi Idé",
+        "Georgios Kollias",
+        "Dzung T. Phan",
+        "Naoki Abe"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.10671v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1016/j.eswa.2022.118036.",
+      "arxiv_id": "2202.11286v1",
+      "title": "Deep Recurrent Modelling of Granger Causality with Latent Confounding",
+      "authors": [
+        "Zexuan Yin",
+        "Paolo Barucca"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2202.11286v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.1002/cjs.70056",
+      "arxiv_id": "2308.06220v2",
+      "title": "Nonlinear Permuted Granger Causality",
+      "authors": [
+        "Noah D. Gade",
+        "Jordan Rodu"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.06220v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "arXiv:2601.11195v1",
+      "arxiv_id": "2601.11195v1",
+      "title": "Beyond Validity: SVAR Identification Through the Proxy Zoo",
+      "authors": [
+        "Jiaming Huang",
+        "Luca Neri"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.11195v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1103/PhysRevLett.100.144103",
+      "arxiv_id": "0711.2643v2",
+      "title": "Kernel method for nonlinear Granger causality",
+      "authors": [
+        "Daniele Marinazzo",
+        "Mario Pellicoro",
+        "Sebastiano Stramaglia"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0711.2643v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "arXiv:2107.05263v2",
+      "arxiv_id": "2107.05263v2",
+      "title": "A Lucas Critique Compliant SVAR model with Observation-driven Time-varying Parameters",
+      "authors": [
+        "Giacomo Bormetti",
+        "Fulvio Corsi"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2107.05263v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "arXiv:1708.06990v1",
+      "arxiv_id": "1708.06990v1",
+      "title": "On the interpretability and computational reliability of frequency-domain Granger causality",
+      "authors": [
+        "Luca Faes",
+        "Sebastiano Stramaglia",
+        "Daniele Marinazzo"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.06990v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1016/j.physa.2010.06.028",
+      "arxiv_id": "1003.4217v2",
+      "title": "Granger causality and the inverse Ising problem",
+      "authors": [
+        "Mario Pellicoro",
+        "Sebastiano Stramaglia"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1003.4217v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "arXiv:2501.08958v2",
+      "arxiv_id": "2501.08958v2",
+      "title": "Kolmogorov-Arnold Networks for Time Series Granger Causality Inference",
+      "authors": [
+        "Meiliang Liu",
+        "Yunfang Xu",
+        "Zijin Li",
+        "Zhengye Si",
+        "Xiaoxiao Yang",
+        "Xinyue Yang",
+        "Zhiwen Zhao"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.08958v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "arXiv:2405.04973v2",
+      "arxiv_id": "2405.04973v2",
+      "title": "SVARs with breaks: Identification and inference",
+      "authors": [
+        "Emanuele Bacchiocchi",
+        "Toru Kitagawa"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.04973v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.1590/1806-9126-RBEF-2020-0007",
+      "arxiv_id": "2106.03990v1",
+      "title": "Granger causality in the frequency domain: derivation and applications",
+      "authors": [
+        "Vinicius Lima",
+        "Fernanda Jaiara Dellajustina",
+        "Renan O. Shimoura",
+        "Mauricio Girardi-Schappo",
+        "Nilton L. Kamiji",
+        "Rodrigo F. O. Pena",
+        "Antonio C. Roque"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.03990v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1088/1367-2630/16/10/105003",
+      "arxiv_id": "1403.5156v2",
+      "title": "Synergy and redundancy in the Granger causal analysis of dynamical networks",
+      "authors": [
+        "Sebastiano Stramaglia",
+        "Jesus M. Cortes",
+        "Daniele Marinazzo"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1403.5156v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1103/PhysRevE.77.056215",
+      "arxiv_id": "0803.2881v1",
+      "title": "Kernel Granger causality and the analysis of dynamical networks",
+      "authors": [
+        "Daniele Marinazzo",
+        "Mario Pellicoro",
+        "Sebastiano Stramaglia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0803.2881v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "人民币国际化背景下人民币汇率和港元汇率传导机制研究——基于集总平均经验模态分解、SVAR和状态空间模型的分析",
+      "authors": [
+        "王晓芳",
+        "张娥"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 140
     }
   ]
 }

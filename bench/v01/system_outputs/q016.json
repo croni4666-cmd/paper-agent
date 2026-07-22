@@ -3,460 +3,5102 @@
   "query": "labor economics gender wage gap empirical evidence",
   "topic_bucket": "econ",
   "source": "v3.8.3_variant",
-  "generated_at": "2026-07-10T21:06:15",
-  "config": "baseline-v0.1",
-  "top_n": 30,
-  "n_returned": 30,
+  "generated_at": "2026-07-22T11:24:07",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 243,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 50,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 50,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
       "doi": "10.1162/003355300554881",
       "title": "Economics and Identity*",
-      "abstract": "This paper considers how identity, a person's sense of self, affects economic outcomes. We incorporate the psychology and sociology of identity into an economic model of behavior. In the utility function we propose, identity is associated with different social categories and how people in these categories should behave. We then construct a simple game-theoretic model showing how identity can affect individual interactions. The paper adapts these models to gender discrimination in the workplace, the economics of poverty and social exclusion, and the household division of labor. In each case, the inclusion of identity substantively changes conclusions of previous economic analysis.",
-      "year": 2000,
+      "authors": [
+        "George A. Akerlof",
+        "Rachel Kranton"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 5608,
-      "engines_found_in": [
+      "year": 2000,
+      "cited_by_count": 5628,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/10161/1993",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 1
     },
     {
-      "rank": 2,
+      "doi": "10.1038/s41562-020-0884-z",
+      "title": "Using social and behavioural science to support COVID-19 pandemic response",
+      "authors": [
+        "Jay Joseph Van Bavel",
+        "Katherine Baicker",
+        "Paulo S. Boggio",
+        "Valerio Capraro",
+        "Aleksandra Cichocka",
+        "Mina Cikara",
+        "Molly J. Crockett",
+        "Alia J. Crum",
+        "Karen M. Douglas",
+        "James Druckman",
+        "John Drury",
+        "Oeindrila Dube",
+        "Naomi Ellemers",
+        "Eli J. Finkel",
+        "James H. Fowler",
+        "Michele J. Gelfand",
+        "Shihui Han",
+        "S. Alexander Haslam",
+        "Jolanda Jetten",
+        "Shinobu Kitayama",
+        "Dean Mobbs",
+        "Lucy E. Napper",
+        "Dominic J. Packer",
+        "Gordon Pennycook",
+        "Ellen Peters",
+        "Richard E. Petty",
+        "David G. Rand",
+        "Stephen Reicher",
+        "Simone Schnall",
+        "Azim Shariff",
+        "Linda J. Skitka",
+        "Sandra Susan Smith",
+        "Cass R. Sunstein",
+        "Nassim Tabri",
+        "Joshua A. Tucker",
+        "Sander van der Linden",
+        "Paul A. M. Van Lange",
+        "Kim A. Weeden",
+        "Michael J. A. Wohl",
+        "Jamil Zaki",
+        "Sean R. Zion",
+        "Robb Willer"
+      ],
+      "venue": "Nature Human Behaviour",
+      "year": 2020,
+      "cited_by_count": 5078,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nature.com/articles/s41562-020-0884-z.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 2
+    },
+    {
       "doi": "10.1257/aer.103.6.2121",
       "title": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
-      "abstract": "We analyze the effect of rising Chinese import competition between 1990 and 2007 on US local labor markets, exploiting cross-market variation in import exposure stemming from initial differences in industry specialization and instrumenting for US imports using changes in Chinese imports by other high-income countries. Rising imports cause higher unemployment, lower labor force participation, and reduced wages in local labor markets that house import-competing manufacturing industries. In our main specification, import competition explains one-quarter of the contemporaneous aggregate decline in US manufacturing employment. Transfer benefits payments for unemployment, disability, retirement, and healthcare also rise sharply in more trade-exposed labor markets. (JEL E24, F14, F16, J23, J31, L60, O47, R12, R23)",
-      "year": 2013,
+      "authors": [
+        "David Autor",
+        "David Dorn",
+        "Gordon Hanson"
+      ],
       "venue": "American Economic Review",
-      "citation_count": 4352,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 4379,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.103.6.2121",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 3
     },
     {
-      "rank": 3,
+      "doi": "10.1111/j.1527-2001.2007.tb01156.x",
+      "title": "Heterosexualism and the Colonial / Modern Gender System",
+      "authors": [
+        "María Lugones"
+      ],
+      "venue": "The Latinx Philosophy Reader",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b8e1b7602d97044c389f",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.48550/arxiv.2303.10130",
+      "title": "GPTs Are GPTs: an Early Look at the Labor Market Impact Potential of Large Language Models.",
+      "authors": [
+        "Tyna Eloundou"
+      ],
+      "venue": "CoRR",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6417d04b90e50fcafd8408ef",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.2307/1910352",
+      "title": "Money and Economic-Growth",
+      "authors": [
+        "J TOBIN"
+      ],
+      "venue": "Финансовые исследования",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99a62b7602d97022cf838",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.1007/s12325-023-02622-x",
+      "title": "The Economic Burden of Adults with Major Depressive Disorder in the United States (2019)",
+      "authors": [
+        "Paul Greenberg"
+      ],
+      "venue": "Advances in Therapy",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64ca44803fda6d7f061118fe",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1016/b978-0-12-803506-1.00038-3",
+      "title": "Sex, Gender, and Pain",
+      "authors": [
+        "Roger B. Fillingim"
+      ],
+      "venue": "Principles of Gender-Specific Medicine",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bac6e1c45e57ce9de9e63",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1007/978-3-031-08956-5_163-1",
+      "title": "Gender Similarities Hypothesis",
+      "authors": [
+        "Janine Bosak"
+      ],
+      "venue": "Encyclopedia of Sexual Psychology and Behavior",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65791e0f939a5f4082e2d0f4",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1007/s10198-021-01426-6",
+      "title": "Consolidated Health Economic Evaluation Reporting Standards 2022 (CHEERS 2022) Statement: Updated Reporting Guidance for Health Economic Evaluations.",
+      "authors": [
+        "Husereau  Don"
+      ],
+      "venue": "The European Journal of Health Economics",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61e154395244ab9dcb1234e2",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1080/26895269.2022.2100644",
+      "title": "Standards of Care for the Health of Transgender and Gender Diverse People, Version 8",
+      "authors": [
+        "E Coleman"
+      ],
+      "venue": "International journal of transgender health",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "634a8fc090e50fcafd913b0d",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.1097/acm.0000000000004873",
+      "title": "Perspectives of Transgender and Nonbinary Health Care Providers on Gender Minority Patient Simulation.",
+      "authors": [
+        "Emily J. Noonan"
+      ],
+      "venue": "Academic Medicine",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "635a639390e50fcafdf79ec3",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 12
+    },
+    {
       "doi": "10.1257/jel.20160995",
       "title": "The Gender Wage Gap: Extent, Trends, and Explanations",
-      "abstract": "Using Panel Study of Income Dynamics (PSID) microdata over the 1980–2010 period, we provide new empirical evidence on the extent of and trends in the gender wage gap, which declined considerably during this time. By 2010, conventional human capital variables taken together explained little of the gender wage gap, while gender differences in occupation and industry continued to be important. Moreover, the gender pay gap declined much more slowly at the top of the wage distribution than at the middle or bottom and by 2010 was noticeably higher at the top. We then survey the literature to identify what has been learned about the explanations for the gap. We conclude that many of the traditional explanations continue to have salience. Although human-capital factors are now relatively unimportant in the aggregate, women's work force interruptions and shorter hours remain significant in high-skilled occupations, possibly due to compensating differentials. Gender differences in occupations and industries, as well as differences in gender roles and the gender division of labor remain important, and research based on experimental evidence strongly suggests that discrimination cannot be discounted. Psychological attributes or noncognitive skills comprise one of the newer explanations for gender differences in outcomes. Our effort to assess the quantitative evidence on the importance of these factors suggests that they account for a small to moderate portion of the gender pay gap, considerably smaller than, say, occupation and industry effects, though they appear to modestly contribute to these differences. ( JEL I26, J16, J24, J31, J71)",
-      "year": 2017,
+      "authors": [
+        "Francine D. Blau",
+        "Lawrence M. Kahn"
+      ],
       "venue": "Journal of Economic Literature",
-      "citation_count": 2935,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 2947,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jel.20160995",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 13
     },
     {
-      "rank": 4,
       "doi": "10.1257/jep.15.2.103",
       "title": "New Evidence and Perspectives on Mergers",
-      "abstract": "As in previous decades, merger activity clusters by industry during the 1990s. One particular kind of industry shock, deregulation, becomes a dominant factor, accountings for nearly half of the merger activity since the late 1980s. In contrast to the 1980s, mergers in the 1990s are mostly stock swaps, and hostile takeovers virtually disappear. Over our 1973 to 1998 sample period, the announcement-period stock market response to mergers is positive for the combined merging parties, suggesting that mergers create value on behalf of shareholders. Consistent with that, we find evidence of improved operating performance following mergers, relative to industry peers.",
-      "year": 2001,
+      "authors": [
+        "Gregor Andrade",
+        "Mark L. Mitchell",
+        "Erik Stafford"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 2725,
-      "engines_found_in": [
+      "year": 2001,
+      "cited_by_count": 2728,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.15.2.103",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 14
     },
     {
-      "rank": 5,
       "doi": "10.1093/qje/qjz014",
       "title": "The Effect of Minimum Wages on Low-Wage Jobs*",
-      "abstract": "Abstract We estimate the effect of minimum wages on low-wage jobs using 138 prominent state-level minimum wage changes between 1979 and 2016 in the United States using a difference-in-differences approach. We first estimate the effect of the minimum wage increase on employment changes by wage bins throughout the hourly wage distribution. We then focus on the bottom part of the wage distribution and compare the number of excess jobs paying at or slightly above the new minimum wage to the missing jobs paying below it to infer the employment effect. We find that the overall number of low-wage jobs remained essentially unchanged over the five years following the increase. At the same time, the direct effect of the minimum wage on average earnings was amplified by modest wage spillovers at the bottom of the wage distribution. Our estimates by detailed demographic groups show that the lack of job loss is not explained by labor-labor substitution at the bottom of the wage distribution. We also find no evidence of disemployment when we consider higher levels of minimum wages. However, we do find some evidence of reduced employment in tradeable sectors. We also show how decomposing the overall employment effect by wage bins allows a transparent way of assessing the plausibility of estimates.",
-      "year": 2019,
+      "authors": [
+        "Doruk Cengiz",
+        "Arindrajit Dubé",
+        "Attila Lindner",
+        "Ben Zipperer"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 2427,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2472,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/134/3/1405/29173920/qjz014.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 15
     },
     {
-      "rank": 6,
+      "doi": "10.1257/aer.20150572",
+      "title": "The Effects of Exposure to Better Neighborhoods on Children: New Evidence from the Moving to Opportunity Experiment",
+      "authors": [
+        "Raj Chetty",
+        "Nathaniel Hendren",
+        "Lawrence F. Katz"
+      ],
+      "venue": "American Economic Review",
+      "year": 2016,
+      "cited_by_count": 2296,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20150572",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 16
+    },
+    {
       "doi": "10.1257/jep.33.2.3",
       "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
-      "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades.",
-      "year": 2019,
+      "authors": [
+        "Daron Acemoğlu",
+        "Pascual Restrepo"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 2209,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 2254,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 17
     },
     {
-      "rank": 7,
       "doi": "10.1080/135457097338799",
       "title": "''Bargaining'' and Gender Relations: Within and Beyond the Household",
-      "abstract": "Highlighting the problems posed by a \"unitary\" conceptualization of the household, a number of economists have in recent years proposed alternative models. These models, especially those embodying the bargaining approach, provide a useful framework for analyzing gender relations and throw some light on how gender asymmetries are constructed and contested. At the same time, the models have paid inadequate or no attention to some critical aspects of intrahousehold gender dynamics, such as: what factors (especially qualitative ones) affect bargaining power? What is the role of social norms and social perceptions in the bargaining process and how might these factors themselves be bargained over? Are women less motivated than men by self-interest and might this affect bargaining outcomes? Most discussions on bargaining also say little about gender relations beyond the household, and about the links between extrahousehold and intrahousehold bargaining power. This paper spells out the nature of these complexities and their importance in determining the outcomes of intrahousehold dynamics. It also extends the bargaining approach beyond the household to the interlinked arenas of the market, the community, and the State.",
-      "year": 1997,
+      "authors": [
+        "Bina Agarwal"
+      ],
       "venue": "Feminist Economics",
-      "citation_count": 1663,
-      "engines_found_in": [
+      "year": 1997,
+      "cited_by_count": 1666,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/135457097338799",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 18
     },
     {
-      "rank": 8,
       "doi": "10.1093/qje/qjx022",
       "title": "The Growing Importance of Social Skills in the Labor Market*",
-      "abstract": "Abstract The labor market increasingly rewards social skills. Between 1980 and 2012, jobs requiring high levels of social interaction grew by nearly 12 percentage points as a share of the U.S. labor force. Math-intensive but less social jobs—including many STEM occupations—shrank by 3.3 percentage points over the same period. Employment and wage growth were particularly strong for jobs requiring high levels of both math skill and social skills. To understand these patterns, I develop a model of team production where workers “trade tasks” to exploit their comparative advantage. In the model, social skills reduce coordination costs, allowing workers to specialize and work together more efficiently. The model generates predictions about sorting and the relative returns to skill across occupations, which I investigate using data from the NLSY79 and the NLSY97. Using a comparable set of skill measures and covariates across survey waves, I find that the labor market return to social skills was much greater in the 2000s than in the mid-1980s and 1990s.",
-      "year": 2017,
+      "authors": [
+        "David Deming"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 1620,
-      "engines_found_in": [
+      "year": 2017,
+      "cited_by_count": 1626,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/132/4/1593/30637898/qjx022.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 19
     },
     {
-      "rank": 9,
       "doi": "10.1002/jae.788",
       "title": "Counterfactual decomposition of changes in wage distributions using quantile regression",
-      "abstract": "Abstract We propose a method to decompose the changes in the wage distribution over a period of time in several factors contributing to those changes. The method is based on the estimation of marginal wage distributions consistent with a conditional distribution estimated by quantile regression as well as with any hypothesized distribution for the covariates. Comparing the marginal distributions implied by different distributions for the covariates, one is then able to perform counterfactual exercises. The proposed methodology enables the identification of the sources of the increased wage inequality observed in most countries. Specifically, it decomposes the changes in the wage distribution over a period of time into several factors contributing to those changes, namely by discriminating between changes in the characteristics of the working population and changes in the returns to these characteristics. We apply this methodology to Portuguese data for the period 1986–1995, and find that the observed increase in educational levels contributed decisively towards greater wage inequality. Copyright © 2005 John Wiley &amp; Sons, Ltd.",
-      "year": 2005,
+      "authors": [
+        "José A. F. Machado",
+        "José Mata"
+      ],
       "venue": "Journal of Applied Econometrics",
-      "citation_count": 1425,
-      "engines_found_in": [
+      "year": 2005,
+      "cited_by_count": 1425,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jae.788",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 20
     },
     {
-      "rank": 10,
       "doi": "10.1093/qje/qjt006",
       "title": "Workplace Heterogeneity and the Rise of West German Wage Inequality*",
-      "abstract": "Abstract We study the role of establishment-specific wage premiums in generating recent increases in West German wage inequality. Models with additive fixed effects for workers and establishments are fit into four subintervals spanning the period from 1985 to 2009. We show that these models provide a good approximation to the wage structure and can explain nearly all of the dramatic rise in West German wage inequality. Our estimates suggest that the increasing dispersion of West German wages has arisen from a combination of rising heterogeneity between workers, rising dispersion in the wage premiums at different establishments, and increasing assortativeness in the assignment of workers to plants. In contrast, the idiosyncratic job-match component of wage variation is small and stable over time. Decomposing changes in mean wages between different education groups, occupations, and industries, we find that increasing plant-level heterogeneity and rising assortativeness in the assignment of workers to establishments explain a large share of the rise in inequality along all three dimensions.",
-      "year": 2013,
+      "authors": [
+        "David Card",
+        "Jörg Heining",
+        "Patrick Kline"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 1319,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 1325,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/128/3/967/30630708/qjt006.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 21
     },
     {
-      "rank": 11,
       "doi": "10.1146/annurev-economics-080315-015041",
       "title": "The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade",
-      "abstract": "China's emergence as a great economic power has induced an epochal shift in patterns of world trade. Simultaneously, it has challenged much of the received empirical wisdom about how labor markets adjust to trade shocks. Alongside the heralded consumer benefits of expanded trade are substantial adjustment costs and distributional consequences. These impacts are most visible in the local labor markets in which the industries exposed to foreign competition are concentrated. Adjustment in local labor markets is remarkably slow, with wages and labor-force participation rates remaining depressed and unemployment rates remaining elevated for at least a full decade after the China trade shock commences. Exposed workers experience greater job churning and reduced lifetime income. At the national level, employment has fallen in the US industries more exposed to import competition, as expected, but offsetting employment gains in other industries have yet to materialize. Better understanding when and where trade is costly, and how and why it may be beneficial, is a key item on the research agenda for trade and labor economists.",
-      "year": 2016,
+      "authors": [
+        "David Autor",
+        "David Dorn",
+        "Gordon Hanson"
+      ],
       "venue": "Annual Review of Economics",
-      "citation_count": 1278,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 1282,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-economics-080315-015041",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 22
     },
     {
-      "rank": 12,
       "doi": "10.1353/jhr.2008.0017",
       "title": "The Economics and Psychology of Personality Traits",
-      "abstract": "This paper explores the interface between personality psychology and economics. We examine the predictive power of personality, and the stability of personality traits over the life cycle. We develop simple analytical frameworks for interpreting the evidence in personality psychology and suggest promising avenues for future research.",
-      "year": 2008,
+      "authors": [
+        "Lex Borghans",
+        "Angela Duckworth",
+        "James J. Heckman",
+        "Bas ter Weel"
+      ],
       "venue": "The Journal of Human Resources",
-      "citation_count": 1048,
-      "engines_found_in": [
+      "year": 2008,
+      "cited_by_count": 1050,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://papers.nber.org/papers/w13810.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 23
     },
     {
-      "rank": 13,
       "doi": "10.2307/2675569",
       "title": "Is Anyone Doing the Housework? Trends in the Gender Division of Household Labor",
-      "abstract": "Time-diary data from representative samples ofAmerican adults show thatthenumber ofoverall hours ofdomestic labor (excluding child care andshopping) has continued to decline steadily and predictably since 1965. This finding is mainly due to dramatic declines among women (both in and out of thepaidlabor market), whohave cuttheir housework hours almostin halfsince the 1960s: abouthalfof women's 12-hour-perweek decline can beaccounted for by compositional shifts -such as increased labor force participation, later marriage, andfewer children. In contrast, men's housework time has almost doubled during thisperiod (to thepoint where men were responsible for a third of housework in the 1990s), and only about 15% of theirfive-hour-perweek increase can be attributed to compositional factors. Parallel results on gender differences in housework were obtained from the National Survey of Families and Households estimate data, even though these produce figures 50% higher than diary data. Regression results examiningfactors related to wives' and husbands' housework hours show more support for the time-availability and relative-resource models of household production thanfor thegender perspective, although there issome support for the latter perspective aswell.",
-      "year": 2000,
+      "authors": [
+        "Suzanne M. Bianchi",
+        "Melissa A. Milkie",
+        "Liana C. Sayer",
+        "John P. Robinson"
+      ],
       "venue": "Social Forces",
-      "citation_count": 1046,
-      "engines_found_in": [
+      "year": 2000,
+      "cited_by_count": 1049,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/sf/article-pdf/79/1/191/6885742/79-1-191.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 24
     },
     {
-      "rank": 14,
       "doi": "10.2307/2070285",
       "title": "The Economics of Women, Men, and Work.",
-      "abstract": "Chapter 1 Introduction What Economics Is About Uses of Economic Theory The Scope of Economics Individuals, Families, and Households A Note on Terminology Outline of the Book Appendix: A Review of Supply and Demand in the Labor Market Chapter 2 Women and Men: Historical Perspectives The Source of Gender Differences: Nature versus Nurture-The Ongoing Debate Factors Influencing Women's Relative Status Women's Roles and Economic Development The U.S. Experience Chapter 3 The Family as an Economic Unit: Theoretical Perspectives The Simple Neoclassical Model: Specialization and Exchange Disadvantages of Specialization Advantages of Families Beyond Specialization Transaction Cost and Bargaining Approaches Appendix: Specialization and Exchange: A Graphical Analysis Chapter 4 The Family as an Economic Unit: Evidence Time Spent in Nonmarket Work Estimating the Value of Nonmarket Production The American Family in the Twenty-First Century Chapter 5 The Labor Force: Definitions and Trends The Labor Force: Some Definitions Trends in Labor Force Participation Trends in Labor Force Attachment of Women Trends in Hours Worked Trends in Gender Differences in Unemployment Chapter 6 The Labor Supply Decision The Labor Supply Decision Some Applications of the Theory: Taxes, Child Care Costs, and Labor Supply Analyzing the Long-term Growth in Women's Labor Force Participation Recent Trends in Women's Labor Force Participation: Has the Engine of Growth Stalled? Analyzing Trends in Men's Labor Force Participation Black and White Participation Differentials: Serious Employment Problems for Black Men Appendix: The Income and Substitution Effects: A Closer Look Chapter 7 Evidence on Gender Differences in Labor Market Outcomes Gender Differences in Occupations The Gender Pay Ratio Gender Differences in Union Membership Gender Differences in Self-Employment Gender Differences in Nonstandard Work Chapter 8 Gender Differences in Educational Attainment: Theory and Evidence Chapter Highlights Supply ",
-      "year": 1987,
+      "authors": [
+        "Glenna Spitze",
+        "Francine D. Blau",
+        "Marianne A. Ferber"
+      ],
       "venue": "Contemporary Sociology A Journal of Reviews",
-      "citation_count": 990,
-      "engines_found_in": [
+      "year": 1987,
+      "cited_by_count": 991,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 25
     },
     {
-      "rank": 15,
       "doi": "10.1257/app.20180010",
       "title": "Children and Gender Inequality: Evidence from Denmark",
-      "abstract": "Using Danish administrative data, we study the impacts of children on gender inequality in the labor market. The arrival of children creates a long-run gender gap in earnings of around 20 percent driven by hours worked, participation, and wage rates. We identify mechanisms driving these “child penalties” in terms of occupation, sector, and firm choices. We find that the fraction of gender inequality caused by child penalties has featured a dramatic increase over the last three to four decades. Finally, we show that child penalties are transmitted through generations, from parents to daughters, suggesting an influence of childhood environment on gender identity. (JEL D63, J13, J16, J22, J31, J71)",
-      "year": 2019,
+      "authors": [
+        "Henrik Kleven",
+        "Camille Landais",
+        "Jakob Egholt Søgaard"
+      ],
       "venue": "American Economic Journal Applied Economics",
-      "citation_count": 964,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 965,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/app.20180010",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 26
     },
     {
-      "rank": 16,
       "doi": "10.1257/089533006776526111",
       "title": "Some Uses of Happiness Data in Economics",
-      "abstract": "Happiness research is based on the idea that it is fruitful to study empirical measures of individual welfare. The most common is the answer to a simple well-being question such as “Are you Happy?” Hundreds of thousands of individuals have been asked this question, in many countries and over many years. Researchers have begun to use these data to tackle a variety of important questions in economics. Some require strong assumptions concerning interpersonal comparisons of utility, but others make only mild assumptions in this regard. They range from microeconomic questions, such as the way income and utility are connected, to macroeconomic questions such as the tradeoff between inflation and unemployment, including large areas in political economy. Public policy is another area where progress using happiness data is taking place. Given the central role of utility notions in economic theory, we argue that the use of happiness data in empirical research should be given serious consideration.",
-      "year": 2006,
+      "authors": [
+        "Rafael Di Tella",
+        "Robert MacCulloch"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 902,
-      "engines_found_in": [
+      "year": 2006,
+      "cited_by_count": 903,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/089533006776526111",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 27
     },
     {
-      "rank": 17,
+      "doi": "10.1016/j.red.2009.10.010",
+      "title": "Unequal we stand: An empirical analysis of economic inequality in the United States, 1967–2006",
+      "authors": [
+        "Jonathan Heathcote",
+        "Fabrizio Perri",
+        "Giovanni L. Violante"
+      ],
+      "venue": "Review of Economic Dynamics",
+      "year": 2009,
+      "cited_by_count": 894,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://www.nber.org/papers/w15483.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.2307/2534701",
+      "title": "How Much Do Immigration and Trade Affect Labor Market Outcomes?",
+      "authors": [
+        "George J. Borjas",
+        "Richard B. Freeman",
+        "Lawrence F. Katz",
+        "John DiNardo",
+        "John M. Abowd"
+      ],
+      "venue": "Brookings Papers on Economic Activity",
+      "year": 1997,
+      "cited_by_count": 882,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.jstor.org/institutionSearch?redirectUri=%2fstable%2f2534701",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 29
+    },
+    {
       "doi": "10.1287/mnsc.2018.3093",
       "title": "Algorithmic Bias? An Empirical Study of Apparent Gender-Based Discrimination in the Display of STEM Career Ads",
-      "abstract": "We explore data from a field test of how an algorithm delivered ads promoting job opportunities in the science, technology, engineering and math fields. This ad was explicitly intended to be gender neutral in its delivery. Empirically, however, fewer women saw the ad than men. This happened because younger women are a prized demographic and are more expensive to show ads to. An algorithm that simply optimizes cost-effectiveness in ad delivery will deliver ads that were intended to be gender neutral in an apparently discriminatory way, because of crowding out. We show that this empirical regularity extends to other major digital platforms. This paper was accepted by Joshua Gans, business strategy.",
-      "year": 2019,
+      "authors": [
+        "Anja Lambrecht",
+        "Catherine E. Tucker"
+      ],
       "venue": "Management Science",
-      "citation_count": 816,
-      "engines_found_in": [
+      "year": 2019,
+      "cited_by_count": 822,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://lbsresearch.london.edu/id/eprint/967/1/AlgorithmicBias_Mar2018.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 30
     },
     {
-      "rank": 18,
       "doi": "10.1093/qje/qju009",
       "title": "Gender, Competitiveness, and Career Choices *",
-      "abstract": "Abstract Gender differences in competitiveness have been hypothesized as a potential explanation for gender differences in education and labor market outcomes. We examine the predictive power of a standard laboratory experimental measure of competitiveness for the later important choice of academic track of secondary school students in the Netherlands. Although boys and girls display similar levels of academic ability, boys choose substantially more prestigious academic tracks, where more prestigious tracks are more math- and science-intensive. Our experimental measure shows that boys are also substantially more competitive than girls. We find that competitiveness is strongly positively correlated with choosing more prestigious academic tracks even conditional on academic ability. Most important, we find that the gender difference in competitiveness accounts for a substantial portion (about 20%) of the gender difference in track choice.",
-      "year": 2014,
+      "authors": [
+        "Thomas Buser",
+        "Muriel Niederle",
+        "Hessel Oosterbeek"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 805,
-      "engines_found_in": [
+      "year": 2014,
+      "cited_by_count": 810,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/129/3/1409/30628348/qju009.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 31
     },
     {
-      "rank": 19,
       "doi": "10.1093/qje/qjr013",
       "title": "Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax Records",
-      "abstract": "We show that the effects of taxes on labor supply are shaped by interactions between adjustment costs for workers and hours constraints set by firms. We develop a model in which firms post job offers characterized by an hours requirement and workers pay search costs to find jobs. We present evidence supporting three predictions of this model by analyzing bunching at kinks using Danish tax records. First, larger kinks generate larger taxable income elasticities. Second, kinks that apply to a larger group of workers generate larger elasticities. Third, the distribution of job offers is tailored to match workers' aggregate tax preferences in equilibrium. Our results suggest that macro elasticities may be substantially larger than the estimates obtained using standard microeconometric methods.",
-      "year": 2011,
+      "authors": [
+        "Raj Chetty",
+        "John N. Friedman",
+        "Thomas Olsen",
+        "Luigi Pistaferri"
+      ],
       "venue": "The Quarterly Journal of Economics",
-      "citation_count": 788,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 792,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/qje/article-pdf/126/2/749/17089220/qjr013.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 32
     },
     {
-      "rank": 20,
+      "doi": "10.1257/jep.12.2.91",
+      "title": "What Has Economics to Say About Racial Discrimination?",
+      "authors": [
+        "Kenneth J. Arrow"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 1998,
+      "cited_by_count": 690,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.12.2.91",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.3390/econometrics6020028",
+      "title": "Decomposing Wage Distributions Using Recentered Influence Function Regressions",
+      "authors": [
+        "Sérgio Firpo",
+        "Nicole M. Fortin",
+        "Thomas Lemieux"
+      ],
+      "venue": "Econometrics",
+      "year": 2018,
+      "cited_by_count": 638,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2225-1146/6/2/28/pdf?version=1527493602",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 34
+    },
+    {
+      "doi": "10.4324/9781003547952-2",
+      "title": "Economic Calculation in the Socialist Commonwealth1",
+      "authors": [
+        "Ludwig von Mises"
+      ],
+      "venue": "Classics in Austrian Economics, Volume 3",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9ba90b7602d97046b6e21",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.1086/466753",
+      "title": "The Fable of the Bees: an Economic Investigation",
+      "authors": [
+        "Steven N. S. Cheung"
+      ],
+      "venue": "Public Goods and Market Failures",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65af0970939a5f4082c766c9",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.1080/09663690903498225",
+      "title": "Gender and Mobility: New Approaches for Informing Sustainability",
+      "authors": [
+        "Susan Hanson"
+      ],
+      "venue": "Handbook Of Gender And Mobilities",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b85cb7602d9704425b9a",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1186/s41073-016-0007-6",
+      "title": "Sex and Gender Equity in Research: Rationale for the SAGER Guidelines and Recommended Use",
+      "authors": [
+        "Shirin Heidari"
+      ],
+      "venue": "Research Integrity and Peer Review",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "58d53c050cf221de03620405",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.3386/w22452",
+      "title": "The Effect of Population Aging on Economic Growth, the Labor Force, and Productivity",
+      "authors": [
+        "Nicole Maestas"
+      ],
+      "venue": "AMERICAN ECONOMIC JOURNAL-MACROECONOMICS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c756859f56def97981e980b",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.18653/v1/2023.acl-long.806",
+      "title": "Unnatural Instructions: Tuning Language Models with (almost) No Human Labor",
+      "authors": [
+        "Or Honovich"
+      ],
+      "venue": "PROCEEDINGS OF THE 61ST ANNUAL MEETING OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS (ACL 2023) LONG PAPERS, VOL 1",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63a1751790e50fcafd1f4991",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.1017/9781009374712",
+      "title": "Economic Analysis of Property Rights",
+      "authors": [
+        "Yoram Barzel"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84f23dabfae2eeef53d60",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.1142/13374",
+      "title": "The Economics of Banking",
+      "authors": [
+        "Kent Matthews"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8d148dabfae2eeea62824",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "",
+      "title": "Economic Fears and Threats",
+      "authors": [
+        "Eric D. Miller"
+      ],
+      "venue": "COVID-19 CRISIS Key Social and Psychological Issues",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d91293dabfae2eee44ab71",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.2139/ssrn.4353008",
+      "title": "What is Ecological Economics?",
+      "authors": [
+        "Baldolino Calvino"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d34c9d68f896efab9d4da",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.1177/0192513x21993899",
+      "title": "Fairness Perceptions of the Division of Household Labor: Housework and Childcare",
+      "authors": [
+        "Tara Koster"
+      ],
+      "venue": "JOURNAL OF FAMILY ISSUES",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d87b2bdabfae2eee3c7353",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.1142/9789811239472_0005",
+      "title": "Has Globalization Eroded Labor’s Share? Some Cross-Country Evidence",
+      "authors": [
+        "Ann Harrison"
+      ],
+      "venue": "World Scientific Studies in International Economics",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8ca55dabfae2eee70280e",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.1016/j.respol.2020.103948",
+      "title": "Economic Complexity and the Green Economy",
+      "authors": [
+        "Penny Mealy"
+      ],
+      "venue": "RESEARCH POLICY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee2ee4d9e795e85042471d6",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 47
+    },
+    {
+      "doi": "10.1038/s41586-021-03405-6",
+      "title": "High and Rising Economic Costs of Biological Invasions Worldwide",
+      "authors": [
+        "Christophe Diagne"
+      ],
+      "venue": "Nature",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6066f008e4510cd7c8aac2f0",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.1161/circresaha.121.319915",
+      "title": "The Impact of Sex and Gender on Stroke",
+      "authors": [
+        "Kathryn M. Rexrode"
+      ],
+      "venue": "CIRCULATION RESEARCH",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6210d27e5aee126c0f8fd9f5",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.4324/9781003127710-5",
+      "title": "Entrepreneurship As Gendered",
+      "authors": [
+        "Maura McAdam"
+      ],
+      "venue": "Women's Entrepreneurship",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6228f90c5aee126c0f49a227",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 50
+    },
+    {
+      "doi": "10.1037/sgd0000081",
+      "title": "Development of the Gender Minority Stress and Resilience Measure.",
+      "authors": [
+        "Rylan J. Testa"
+      ],
+      "venue": "PSYCHOLOGY OF SEXUAL ORIENTATION AND GENDER DIVERSITY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63526d4490e50fcafd7274d7",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 51
+    },
+    {
+      "doi": "10.1086/711916",
+      "title": "Leisure Luxuries and the Labor Supply of Young Men",
+      "authors": [
+        "Mark Aguiar"
+      ],
+      "venue": "JOURNAL OF POLITICAL ECONOMY",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c756fe2f56def979869c8d3",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 52
+    },
+    {
+      "doi": "10.1093/jeea/jvab012",
+      "title": "THE ADJUSTMENT OF LABOR MARKETS TO ROBOTS",
+      "authors": [
+        "Wolfgang Dauth"
+      ],
+      "venue": "JOURNAL OF THE EUROPEAN ECONOMIC ASSOCIATION",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "609a6df4e4510cd7c8901a44",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 53
+    },
+    {
+      "doi": "10.1162/rest_a_00946",
+      "title": "Coronavirus Perceptions and Economic Anxiety",
+      "authors": [
+        "Thiemo Fetzer"
+      ],
+      "venue": "REVIEW OF ECONOMICS AND STATISTICS",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e67655391e011e0d17911d1",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 54
+    },
+    {
+      "doi": "10.1162/rest_a_01042",
+      "title": "Longer-Run Economic Consequences of Pandemics",
+      "authors": [
+        "Oscar Jorda"
+      ],
+      "venue": "The Review of Economics and Statistics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0eaad89fced0a24b0c9d65",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 55
+    },
+    {
+      "doi": "10.1111/joes.12423",
+      "title": "A Literature Review of the Economics of COVID-19",
+      "authors": [
+        "Abel Brodeur"
+      ],
+      "venue": "Journal of economic surveys",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60e6cefe5244ab9dcb4e0119",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 56
+    },
+    {
+      "doi": "10.1038/s42254-020-00275-1",
+      "title": "Economic Complexity Theory and Applications",
+      "authors": [
+        "César A. Hidalgo"
+      ],
+      "venue": "Nature Reviews Physics",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bbb1e1c45e57ce977c70e",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 57
+    },
+    {
+      "doi": "10.1007/978-3-030-76753-2_2",
+      "title": "The Economics of Exhaustible Resources",
+      "authors": [
+        "Andrey Vavilov"
+      ],
+      "venue": "Contributions to Economics Natural Resource Pricing and Rents",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac36375aee126c0f2dd709",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 58
+    },
+    {
+      "doi": "10.3389/fpsyg.2020.587023",
+      "title": "Gender and Competition",
+      "authors": [
+        "Martin Götze"
+      ],
+      "venue": "Frontiers in psychology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99800b7602d970201260d",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 59
+    },
+    {
+      "doi": "10.1080/14616696.2020.1823010",
+      "title": "The Impact of COVID-19 on Gender Inequality in the Labor Market and Gender-Role Attitudes",
+      "authors": [
+        "Malte Reichelt"
+      ],
+      "venue": "EUROPEAN SOCIETIES",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff68680d4150a363cc29b6d",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 60
+    },
+    {
+      "doi": "10.1016/j.ajogmf.2020.100110",
+      "title": "Labor and Delivery Guidance for COVID-19",
+      "authors": [
+        "Rupsa C. Boelig"
+      ],
+      "venue": "Carolina Digital Repository (University of North Carolina at Chapel Hill)",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ee207b79fced0a24befbde1",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 61
+    },
+    {
+      "doi": "10.3386/w25682",
+      "title": "The Wrong Kind of Ai? Artificial Intelligence and the Future of Labor Demand",
+      "authors": [
+        "Daron Acemoglu"
+      ],
+      "venue": "CAMBRIDGE JOURNAL OF REGIONS ECONOMY AND SOCIETY",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0e5a479fced0a24b2d53db",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 62
+    },
+    {
+      "doi": "10.1093/qje/qjt001",
+      "title": "Do Labor Market Policies have Displacement Effects? Evidence from a Clustered Randomized Experiment *",
+      "authors": [
+        "Bruno Crépon",
+        "Esther Duflo",
+        "Marc Gurgand",
+        "Roland Rathelot",
+        "Philippe Zamora"
+      ],
+      "venue": "The Quarterly Journal of Economics",
+      "year": 2013,
+      "cited_by_count": 548,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://dspace.mit.edu/bitstream/1721.1/82896/1/Duflo_Do%20Labor%20Market.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 63
+    },
+    {
       "doi": "10.1257/jel.20161309",
       "title": "Experimental Research on Labor Market Discrimination",
-      "abstract": "Understanding whether labor market discrimination explains inferior labor market outcomes for many groups has drawn the attention of labor economists for decades— at least since the publication of Gary Becker’s The Economics of Discrimination in 1957. The decades of research on discrimination in labor markets began with a regression-based “decomposition” approach, asking whether raw wage or earnings differences between groups—which might constitute prima facie evidence of discrimination—were in fact attributable to other productivity-related factors. Subsequent research—responding in large part to limitations of the regression-based approach—moved on to other approaches, such as using firm-level data to estimate both marginal productivity and wage differentials. In recent years, however, there has been substantial growth in experimental research on labor market discrimination—although the earliest experiments were done decades ago. Some experimental research on labor market discrimination takes place in the lab. But far more of it is done in the field, which makes this particular area of experimental research unique relative to the explosion of experimental economic research more generally. This paper surveys the full range of experimental literature on labor market discrimination, places it in the context of the broader research literature on labor market discrimination, discusses the experimental literature from many different perspectives (empirical, theoretical, and policy), and reviews both what this literature has taught us thus far, and what remains to be done. (JEL C93, J14, J15, J16, J23, J41, J71)",
-      "year": 2018,
+      "authors": [
+        "David Neumark"
+      ],
       "venue": "Journal of Economic Literature",
-      "citation_count": 537,
-      "engines_found_in": [
+      "year": 2018,
+      "cited_by_count": 537,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jel.20161309",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 64
     },
     {
-      "rank": 21,
+      "doi": "10.1257/jep.14.3.75",
+      "title": "The Sports Business as a Labor Market Laboratory",
+      "authors": [
+        "Lawrence M. Kahn"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2000,
+      "cited_by_count": 534,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.14.3.75",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 65
+    },
+    {
       "doi": "10.1257/jep.12.2.63",
       "title": "Evidence on Discrimination in Employment: Codes of Color, Codes of Gender",
-      "abstract": "There is substantial racial and gender disparity in the American economy. As we will demonstrate, discriminatory treatment within the labor market is a major cause of this inequality. Yet, there appear to have been particular periods in which racial minorities, and then women, experienced substantial reductions in economic disparity and discrimination. Some questions remain: Why did the movement toward racial equality stagnate after the mid-1970s? What factors are most responsible for the remaining gender inequality? What is the role of the competitive process in elimination or reproduction of discrimination in employment? How successful has the passage of federal antidiscrimination legislation in the 1960s been in producing an equal opportunity environment where job applicants are now evaluated on their qualifications? To give away the answer at the outset, discrimination by race has diminished somewhat, and discrimination by gender has diminished substantially; neither employment discrimination by race or by gender is close to ending. The Civil Rights Act of 1964 and subsequent related legislation has purged American society of the most overt forms of discrimination, while discriminatory practices have continued in more covert and subtle forms. Furthermore, racial discrimination is masked and rationalized by widely-held presumptions of black inferiority.",
-      "year": 1998,
+      "authors": [
+        "William Darity",
+        "Patrick L. Mason"
+      ],
       "venue": "The Journal of Economic Perspectives",
-      "citation_count": 533,
-      "engines_found_in": [
+      "year": 1998,
+      "cited_by_count": 533,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.12.2.63",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 66
     },
     {
-      "rank": 22,
+      "doi": "10.1257/jep.11.2.75",
+      "title": "Institutional Changes and Rising Wage Inequality: Is There a Linkage?",
+      "authors": [
+        "Nicole M. Fortin",
+        "Thomas Lemieux"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 1997,
+      "cited_by_count": 516,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.11.2.75",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 67
+    },
+    {
       "doi": "10.1353/dem.2006.0003",
       "title": "Gender-specific trends in the value of education and the emerging gender gap in college completion",
-      "abstract": "Analysis of March Current Population Survey data from 1964 through 2002 shows that white women overtook white men in their rates of college completion and that this phenomenon occurred during a period in which women's standard-of-living gains from college completion grew at a faster rate than those for men. We assess whether these trends are related to changes in the value of education for men and women in terms of earnings returns to higher education, the probability of getting and staying married, education-related differences in family standard of living, and insurance against living in poverty. Although returns to a college education in the form of earnings remained higher for women than for men over the entire period, trends in these returns do not provide a plausible explanation for gender-specific trends in college completion. But when broader measures of material well-being are taken into account, women's returns to higher education appear to have risen faster than those of men.",
-      "year": 2006,
+      "authors": [
+        "Thomas A. DiPrete",
+        "Claudia Buchmann"
+      ],
       "venue": "Demography",
-      "citation_count": 475,
-      "engines_found_in": [
+      "year": 2006,
+      "cited_by_count": 475,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://read.dukeupress.edu/demography/article-pdf/43/1/1/884068/1diprete.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 68
     },
     {
-      "rank": 23,
+      "doi": "10.1257/jep.14.3.95",
+      "title": "The Economics of Sports Facilities and Their Communities",
+      "authors": [
+        "John J. Siegfried",
+        "Andrew Zimbalist"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2000,
+      "cited_by_count": 473,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://scholarworks.smith.edu/cgi/viewcontent.cgi?article=1051&context=eco_facpubs",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.1093/ei/cbi053",
+      "title": "A SIMPLE SOLUTION TO THE IDENTIFICATION PROBLEM IN DETAILED WAGE DECOMPOSITIONS",
+      "authors": [
+        "Myeong‐Su Yun"
+      ],
+      "venue": "Economic Inquiry",
+      "year": 2005,
+      "cited_by_count": 451,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1093/ei/cbi053",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1257/0895330042162386",
+      "title": "Women in Economics: Moving Up or Falling Off the Academic Career Ladder?",
+      "authors": [
+        "Donna K. Ginther",
+        "Shulamit Kahn"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "year": 2004,
+      "cited_by_count": 430,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/0895330042162386",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 71
+    },
+    {
       "doi": "10.1177/0003122411425170",
       "title": "Revisiting the Gender Gap in Time-Use Patterns",
-      "abstract": "This study suggests that multitasking constitutes an important source of gender inequality, which can help explain previous findings that mothers feel more burdened and stressed than do fathers even when they have relatively similar workloads. Using data from the 500 Family Study, including surveys and the Experience Sampling Method, the study examines activities parents simultaneously engage in and how they feel when multitasking. We find that mothers spend 10 more hours a week multitasking compared to fathers and that these additional hours are mainly related to time spent on housework and childcare. For mothers, multitasking activities at home and in public are associated with an increase in negative emotions, stress, psychological distress, and work-family conflict. By contrast, fathers’ multitasking at home involves less housework and childcare and is not a negative experience. We also find several similarities by gender. Mothers’ and fathers’ multitasking in the company of a spouse or children are positive experiences, whereas multitasking at work, although associated with an increased sense of productivity, is perceived as a negative experience.",
-      "year": 2011,
+      "authors": [
+        "Shira Offer",
+        "Barbara Schneider"
+      ],
       "venue": "American Sociological Review",
-      "citation_count": 404,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 405,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0003122411425170?download=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 72
     },
     {
-      "rank": 24,
+      "doi": "10.1080/13662716.2016.1216397",
+      "title": "The Schumpeterian entrepreneur: a review of the empirical evidence on the antecedents, behaviour and consequences of innovative entrepreneurship",
+      "authors": [
+        "Joern Block",
+        "Christian Fisch",
+        "Mirjam van Praag"
+      ],
+      "venue": "Industry and Innovation",
+      "year": 2016,
+      "cited_by_count": 368,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13662716.2016.1216397?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.1080/01944360708977979",
+      "title": "Is There a Quiet Revolution in Women's Travel? Revisiting the Gender Gap in Commuting",
+      "authors": [
+        "Randall Crane"
+      ],
+      "venue": "Journal of the American Planning Association",
+      "year": 2007,
+      "cited_by_count": 362,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/01944360708977979",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 74
+    },
+    {
       "doi": "10.1086/685449",
       "title": "Minimum Wage Shocks, Employment Flows, and Labor Market Frictions",
-      "abstract": "We provide the first estimates of the effects of minimum wages on employment flows in the US labor market, identifying the impact by using policy discontinuities at state borders. We find that minimum wages have a sizable negative effect on employment flows but not on stocks. Separations and accessions fall among affected workers, especially those with low tenure. We do not find changes in the duration of nonemployment for separations or hires. This evidence is consistent with search models with endogenous separations.",
-      "year": 2016,
+      "authors": [
+        "Arindrajit Dubé",
+        "T. William Lester",
+        "Michael Reich"
+      ],
       "venue": "Journal of Labor Economics",
-      "citation_count": 339,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 340,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://escholarship.org/content/qt27z0006g/qt27z0006g.pdf?t=mqcbdz",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 75
     },
     {
-      "rank": 25,
       "doi": "10.1146/annurev-economics-080614-115329",
       "title": "The Evolution of Gender Gaps in Industrialized Countries",
-      "abstract": "Women in developed economies have made major advancements in labor markets throughout the past century, but remaining gender differences in pay and employment seem remarkably persistent. This article documents long-run trends in female employment, working hours, and relative wages for a wide cross section of developed economies. It reviews existing work on the factors driving gender convergence, and novel perspectives on remaining gender gaps. Finally, the article emphasizes the interplay between gender trends and the evolution of the industry structure. Based on a shift-share decomposition, it shows that the growth in the service share can explain at least half of the overall variation in female hours, both over time and across countries.",
-      "year": 2016,
+      "authors": [
+        "Claudia Olivetti",
+        "Bárbara Petrongolo"
+      ],
       "venue": "Annual Review of Economics",
-      "citation_count": 338,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 340,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-economics-080614-115329",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 76
     },
     {
-      "rank": 26,
       "doi": "10.1111/j.1468-232x.2007.00479.x",
       "title": "New Evidence on Gender Differences in Promotion Rates: An Empirical Analysis of a Sample of New Hires",
-      "abstract": "Using a large sample of establishments drawn from the Multi‐City Study of Urban Inequality employer survey, we studied gender differences in promotion rates and in the wage gains attached to promotions. Several unique features of our data distinguish our analysis from the previous literature on this topic. First, we have information on the wage increases attached to promotions, and relatively few studies on gender differences have considered promotions and wage increases together. Second, our data include job‐specific worker performance ratings, allowing us to control for performance and ability more precisely than through commonly used skill indicators such as educational attainment or tenure. Third, in addition to standard information on occupation and industry, we have data on a number of other firm characteristics, enabling us to control for these variables while still relying on a broad, representative sample, as opposed to a single firm or a similarly narrowly defined population. Our results indicate that women have lower probabilities of promotion and expected promotion than men do but that there is essentially no gender difference in wage growth with or without promotions.",
-      "year": 2007,
+      "authors": [
+        "Francine D. Blau",
+        "Jed DeVaro"
+      ],
       "venue": "Industrial Relations A Journal of Economy and Society",
-      "citation_count": 318,
-      "engines_found_in": [
+      "year": 2007,
+      "cited_by_count": 318,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-232X.2007.00479.x",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 77
     },
     {
-      "rank": 27,
+      "doi": "10.1257/mac.20150253",
+      "title": "Gender Gaps and the Rise of the Service Economy",
+      "authors": [
+        "L. Rachel Ngai",
+        "Bárbara Petrongolo"
+      ],
+      "venue": "American Economic Journal Macroeconomics",
+      "year": 2017,
+      "cited_by_count": 308,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/mac.20150253",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 78
+    },
+    {
+      "doi": "10.1257/aer.20171445",
+      "title": "Who Pays for the Minimum Wage?",
+      "authors": [
+        "Péter Harasztosi",
+        "Attila Lindner"
+      ],
+      "venue": "American Economic Review",
+      "year": 2019,
+      "cited_by_count": 281,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20171445",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 79
+    },
+    {
       "doi": "10.1007/s00148-006-0128-1",
       "title": "Ceilings or floors? Gender wage gaps by education in Spain",
-      "abstract": "",
-      "year": 2007,
+      "authors": [
+        "Sara de la Rica",
+        "Juan J. Dolado",
+        "Vanesa Llorens"
+      ],
       "venue": "Journal of Population Economics",
-      "citation_count": 277,
-      "engines_found_in": [
+      "year": 2007,
+      "cited_by_count": 278,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "http://hdl.handle.net/10016/3212",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 80
     },
     {
-      "rank": 28,
       "doi": "10.1016/j.labeco.2013.01.003",
       "title": "Gender wage gaps, ‘sticky floors’ and ‘glass ceilings’ in Europe",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "Louis N. Christofides",
+        "Alexandros Polycarpou",
+        "Konstantinos Vrachimis"
+      ],
       "venue": "Labour Economics",
-      "citation_count": 269,
-      "engines_found_in": [
+      "year": 2013,
+      "cited_by_count": 269,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0927537113000122",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 81
     },
     {
-      "rank": 29,
+      "doi": "10.1177/0003122416683393",
+      "title": "Why Should Women Get Less? Evidence on the Gender Pay Gap from Multifactorial Survey Experiments",
+      "authors": [
+        "Katrin Auspurg",
+        "Thomas Hinz",
+        "Carsten Sauer"
+      ],
+      "venue": "American Sociological Review",
+      "year": 2017,
+      "cited_by_count": 264,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://epub.ub.uni-muenchen.de/42066/1/0003122416683393.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 82
+    },
+    {
       "doi": "10.1086/683847",
       "title": "Aggregate Effects of Gender Gaps in the Labor Market: A Quantitative Estimate",
-      "abstract": "This paper examines the quantitative effects of gender gaps in entrepreneurship and workforce participation. We simulate an occupational choice model with heterogeneous agents in entrepreneurial ability. Gender gaps in entrepreneurship affect negatively both income and aggregate productivity, since they reduce the entrepreneurs’ average talent. Specifically, the expected income loss from excluding 5 percent of women is 2.5 percent, while the loss is 10 percent if they are all employers. We find that gender gaps cause an average income loss of 15 percent in the OECD, 40 percent of which is due to entrepreneurship gaps. Extending the model to developing countries, we obtain substantially higher losses, with significant variation across regions.",
-      "year": 2016,
+      "authors": [
+        "David Cuberes",
+        "Marc Teignier"
+      ],
       "venue": "Journal of Human Capital",
-      "citation_count": 261,
-      "engines_found_in": [
+      "year": 2016,
+      "cited_by_count": 263,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/683847",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
-      "source": "openalex",
-      "type": "article"
+      "rank": 83
     },
     {
-      "rank": 30,
       "doi": "10.1111/j.1467-9361.2004.00230.x",
       "title": "International Trade and Gender Wage Discrimination: Evidence from East Asia",
-      "abstract": "Abstract The paper explores how competition from international trade affects gender wage discrimination in two open economies. According to neoclassical theory, if discrimination is costly, then increased industry competitiveness from international trade lessens the incentive for employers to discriminate against women. This effect should be stronger in concentrated sectors, where employers can use excess profits to cover the costs of discrimination. Alternatively, increased international trade may reduce women's bargaining power to achieve wage gains. Results for Taiwan and Korea indicate that, in contrast to neoclassical theory, competition from foreign trade in concentrated industries is positively associated with wage discrimination against women.",
-      "year": 2004,
+      "authors": [
+        "Günseli Berik",
+        "Yana van der Meulen Rodgers",
+        "Joseph E. Zveglich"
+      ],
       "venue": "Review of Development Economics",
-      "citation_count": 248,
-      "engines_found_in": [
+      "year": 2004,
+      "cited_by_count": 248,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-9361.2004.00230.x",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
         "openalex"
       ],
-      "score": 0.0,
+      "rank": 84
+    },
+    {
+      "doi": "10.1257/aer.20141625",
+      "title": "Nominal Wage Rigidity in Village Labor Markets",
+      "authors": [
+        "Supreet Kaur"
+      ],
+      "venue": "American Economic Review",
+      "year": 2019,
+      "cited_by_count": 199,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/aer.20141625",
       "source": "openalex",
-      "type": "article"
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.1086/700185",
+      "title": "When Time Binds: Substitutes for Household Production, Returns to Working Long Hours, and the Skilled Gender Wage Gap",
+      "authors": [
+        "Cortés, Patricia",
+        "Pan, Jessica"
+      ],
+      "venue": "Journal of Labor Economics",
+      "year": 2019,
+      "cited_by_count": 151,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 86
+    },
+    {
+      "doi": "10.1007/s001810000050",
+      "title": "How wide is the gap? An investigation of gender wage differences using quantile regression",
+      "authors": [
+        "García, Jaume",
+        "Hernández, Pedro J.",
+        "López-Nicolás, Angel"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2001,
+      "cited_by_count": 127,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 87
+    },
+    {
+      "doi": "10.4324/9780429327209",
+      "title": "Modern Labor Economics",
+      "authors": [
+        "Ronald G. Ehrenberg"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c8b78c5244ab9dcb5db763",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.14361/9783839461020-002",
+      "title": "The Coloniality of Gender",
+      "authors": [
+        "Maria Lugones"
+      ],
+      "venue": "Gender Studies",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c7ff255aee126c0f412d5a",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.1016/j.ogc.2022.10.011",
+      "title": "Antibiotics in Labor and Delivery",
+      "authors": [
+        "Joanna M. Izewski"
+      ],
+      "venue": "OBSTETRICS AND GYNECOLOGY CLINICS OF NORTH AMERICA",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d834c7dabfae2eee3883ed",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.1177/00197939221076856",
+      "title": "Heterogeneous Labor Market Impacts of the COVID-19 Pandemic",
+      "authors": [
+        "Guido Matias Cortes"
+      ],
+      "venue": "Industrial & labor relations review",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0745dc9e795e1a9f4ac863",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.1016/j.iref.2023.10.010",
+      "title": "Political Connections and Labor Investment Efficiency",
+      "authors": [
+        "Bole Zhou"
+      ],
+      "venue": "ECONOMICS & POLITICS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "645d08a7d68f896efaaa6dfe",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 92
+    },
+    {
+      "doi": "10.2307/jj.5232966",
+      "title": "Technology and Gender",
+      "authors": [
+        "FRANCESCA BRAY"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "649a10f5d68f896efa691d94",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 93
+    },
+    {
+      "doi": "10.2139/ssrn.3088767",
+      "title": "Labor Market Concentration",
+      "authors": [
+        "Jose Azar"
+      ],
+      "venue": "JOURNAL OF HUMAN RESOURCES",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca3bf15244ab9dcb0e5e28",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 94
+    },
+    {
+      "doi": "10.21799/frbp.wp.2022.15",
+      "title": "Blockchain Economics",
+      "authors": [
+        "Joseph Abadi"
+      ],
+      "venue": "PSN: Technology (Topic)",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0dec359fced0a24b9c5e15",
+      "matched_phrase": "economics",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 95
+    },
+    {
+      "doi": "10.1016/j.jdeveco.2021.102627",
+      "title": "Exploitation of Labor? Classical Monopsony Power and Labor's Share",
+      "authors": [
+        "Wyatt J. Brooks"
+      ],
+      "venue": "JOURNAL OF DEVELOPMENT ECONOMICS",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0e43e99fced0a24b1e27be",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 96
+    },
+    {
+      "doi": "10.2139/ssrn.2608189",
+      "title": "Financing Labor",
+      "authors": [
+        "Efraim Benmelech"
+      ],
+      "venue": "REVIEW OF FINANCE",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f0e5b479fced0a24b4505d6",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 97
+    },
+    {
+      "doi": "10.1177/0019793920922499",
+      "title": "Monopsony in Labor Markets: A Review",
+      "authors": [
+        "Alan Manning"
+      ],
+      "venue": "ILR REVIEW",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fae6d21d4150a363ceb0d9c",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 98
+    },
+    {
+      "doi": "10.1145/3476060",
+      "title": "Quantifying the Invisible Labor in Crowd Work",
+      "authors": [
+        "Carlos Toxtli"
+      ],
+      "venue": "ACM Conference on Computer Supported Cooperative Work and Social Computing",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "615a709c5244ab9dcb3a716d",
+      "matched_phrase": "labor",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 99
+    },
+    {
+      "doi": "10.18653/v1/2021.emnlp-main.151",
+      "title": "Are Gender-Neutral Queries Really Gender-Neutral? Mitigating Gender Bias in Image Search.",
+      "authors": [
+        "Jialu Wang"
+      ],
+      "venue": "2021 CONFERENCE ON EMPIRICAL METHODS IN NATURAL LANGUAGE PROCESSING (EMNLP 2021)",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "614012c05244ab9dcb8164c8",
+      "matched_phrase": "gender",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 100
+    },
+    {
+      "doi": "10.1086/323935",
+      "title": "The Transition in East Germany: When Is a Ten‐Point Fall in the Gender Wage Gap Bad News?",
+      "authors": [
+        "Hunt, Jennifer"
+      ],
+      "venue": "Journal of Labor Economics",
+      "year": 2002,
+      "cited_by_count": 113,
+      "reference_count": 27,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 101
+    },
+    {
+      "doi": "10.1016/j.jinteco.2017.12.008",
+      "title": "Working across time zones: Exporters and the gender wage gap",
+      "authors": [
+        "Esther Ann Bøler",
+        "Beata Smarzynska Javorcik",
+        "Karen Helene Ulltveit‐Moe"
+      ],
+      "venue": "Journal of International Economics",
+      "year": 2018,
+      "cited_by_count": 109,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0022199617301629",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 102
+    },
+    {
+      "doi": "10.1016/j.jdeveco.2014.07.003",
+      "title": "International trade, the gender wage gap and female labor force participation",
+      "authors": [
+        "Sauré, Philip",
+        "Zoabi, Hosny"
+      ],
+      "venue": "Journal of Development Economics",
+      "year": 2014,
+      "cited_by_count": 88,
+      "reference_count": 47,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
+    },
+    {
+      "doi": "10.1007/s00181-007-0143-4",
+      "title": "Gender wage gap studies: consistency and decomposition",
+      "authors": [
+        "Kunze, Astrid"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2008,
+      "cited_by_count": 85,
+      "reference_count": 39,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 104
+    },
+    {
+      "doi": "10.1016/s0927-5371(96)00016-4",
+      "title": "The gender wage gap in Russia: Some empirical evidence",
+      "authors": [
+        "Newell, Andrew",
+        "Reilly, Barry"
+      ],
+      "venue": "Labour Economics",
+      "year": 1996,
+      "cited_by_count": 72,
+      "reference_count": 28,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
+    },
+    {
+      "doi": "10.1590/s1413-80502010000200002",
+      "title": "Occupational segregation and the gender wage gap in Brazil: an empirical analysis",
+      "authors": [
+        "Regina Madalozzo"
+      ],
+      "venue": "Economia Aplicada",
+      "year": 2010,
+      "cited_by_count": 66,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.scielo.br/j/ecoa/a/PXgdLDTF6L9DHCkc75tHmVG/?lang=en&format=pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.1080/13545701.2022.2042472",
+      "arxiv_id": "",
+      "title": "Returns in the Labor Market: A Nuanced View of Penalties at the Intersection of Race and Gender in the US",
+      "authors": [
+        "M. Paul",
+        "Khaing Zaw",
+        "W. Darity"
+      ],
+      "venue": "Feminist Economics",
+      "year": 2022,
+      "cited_by_count": 41,
+      "influential_cite_count": 3,
+      "reference_count": 76,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 107
+    },
+    {
+      "doi": "10.1016/j.econlet.2011.05.025",
+      "title": "The gender reservation wage gap: Evidence from British Panel data",
+      "authors": [
+        "Brown, Sarah",
+        "Roberts, Jennifer",
+        "Taylor, Karl"
+      ],
+      "venue": "Economics Letters",
+      "year": 2011,
+      "cited_by_count": 37,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.1016/s0165-1765(03)00226-x",
+      "title": "Gender differences in rent sharing and its implications for the gender wage gap, evidence from Sweden",
+      "authors": [
+        "Nekby, Lena"
+      ],
+      "venue": "Economics Letters",
+      "year": 2003,
+      "cited_by_count": 35,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.1007/s001810000063",
+      "title": "The unequal distribution of unequal pay - An empirical analysis of the gender wage gap in Switzerland",
+      "authors": [
+        "Bonjour, Dorothe",
+        "Gerfin, Michael"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2001,
+      "cited_by_count": 32,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.1016/j.econlet.2015.01.004",
+      "title": "Performance pay, competitiveness, and the gender wage gap: Evidence from the United States",
+      "authors": [
+        "McGee, Andrew",
+        "McGee, Peter",
+        "Pan, Jessica"
+      ],
+      "venue": "Economics Letters",
+      "year": 2015,
+      "cited_by_count": 27,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.1086/666646",
+      "title": "Labor Market Signaling and Self-Confidence: Wage Compression and the Gender Pay Gap",
+      "authors": [
+        "Santos-Pinto, Luís"
+      ],
+      "venue": "Journal of Labor Economics",
+      "year": 2012,
+      "cited_by_count": 25,
+      "reference_count": 65,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.1086/725032",
+      "title": "The Impact of Selection into the Labor Force on the Gender Wage Gap",
+      "authors": [
+        "Blau, Francine D.",
+        "Kahn, Lawrence M.",
+        "Boboshko, Nikolai",
+        "Comey, Matthew"
+      ],
+      "venue": "Journal of Labor Economics",
+      "year": 2024,
+      "cited_by_count": 22,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.2307/2524915",
+      "title": "Interindustry Wage Differentials and the Gender Wage Gap",
+      "authors": [
+        "Fields, Judith",
+        "Wolff, Edward N."
+      ],
+      "venue": "Industrial and Labor Relations Review",
+      "year": 1995,
+      "cited_by_count": 22,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.1016/j.asieco.2021.101435",
+      "title": "Parenthood penalty and gender wage gap: Recent evidence from Thailand",
+      "authors": [
+        "Paweenawat, Sasiwimon Warunsiri",
+        "Liao, Lusi"
+      ],
+      "venue": "Journal of Asian Economics",
+      "year": 2022,
+      "cited_by_count": 16,
+      "reference_count": 78,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.2139/SSRN.1711854",
+      "arxiv_id": "",
+      "title": "Getting what (employers think) you’re worth: Evidence on the gender gap in entry wages among university graduates",
+      "authors": [
+        "Julia Bredtmann",
+        "Sebastian Otten",
+        "Sebastian Otten"
+      ],
+      "venue": "",
+      "year": 2014,
+      "cited_by_count": 16,
+      "influential_cite_count": 0,
+      "reference_count": 35,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.econstor.eu/bitstream/10419/45311/1/655733159.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.1177/07308884221141072",
+      "arxiv_id": "",
+      "title": "The Gender Wage Gap, Between-Firm Inequality, and Devaluation: Testing a New Hypothesis in the Service Sector",
+      "authors": [
+        "Carmen Brick",
+        "Daniel Schneider",
+        "K. Harknett"
+      ],
+      "venue": "Work and occupations",
+      "year": 2023,
+      "cited_by_count": 16,
+      "influential_cite_count": 1,
+      "reference_count": 88,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1177/07308884221141072",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.1007/s11205-021-02631-9",
+      "arxiv_id": "",
+      "title": "Rising Female Labor Force Participation and Gender Wage Gap: Evidence From Turkey",
+      "authors": [
+        "A. Aldan"
+      ],
+      "venue": "Social Indicators Research",
+      "year": 2021,
+      "cited_by_count": 15,
+      "influential_cite_count": 1,
+      "reference_count": 36,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "The Effects of Risk Aversion on Job Matching : Can Differences in Risk Aversion Explain the Wage Gap ?",
+      "authors": [
+        "L. Vesterlund"
+      ],
+      "venue": "",
+      "year": 1997,
+      "cited_by_count": 14,
+      "influential_cite_count": 1,
+      "reference_count": 34,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.1371/journal.pone.0299355",
+      "title": "Labor market segmentation and the gender wage gap: Evidence from China",
+      "authors": [
+        "Li, Mingming",
+        "Tang, Yuan",
+        "Jin, Keyan"
+      ],
+      "venue": "PLOS ONE",
+      "year": null,
+      "cited_by_count": 13,
+      "reference_count": 130,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Although the Chinese government has implemented a variety of measures, the gender wage gap in 21<jats:sup>st</jats:sup> century China has not decreased. A significant body of literature has studied this phenomenon using sector segmentation theory, but these studies have overlooked the importance of the collective economy beyond the public and private sectors. Moreover, they have lacked assessment of the gender wage gap across different wage groups, hindering an accurate estimation of the",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0299355&type=printable",
+      "rank": 120
+    },
+    {
+      "doi": "10.1007/s00181-013-0710-9",
+      "title": "The trend over time of the gender wage gap in Italy",
+      "authors": [
+        "Mussida, Chiara",
+        "Picchio, Matteo"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2014,
+      "cited_by_count": 11,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.3390/su17052106",
+      "arxiv_id": "",
+      "title": "Green Innovation and the Urban–Rural Income Gap: Empirical Evidence from China",
+      "authors": [
+        "Jinda Wen",
+        "Haonan Chen"
+      ],
+      "venue": "Sustainability",
+      "year": 2025,
+      "cited_by_count": 11,
+      "influential_cite_count": 0,
+      "reference_count": 79,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/su17052106",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.3982/qe295",
+      "title": "Explaining the gender wage gap: Estimates from a dynamic model of job changes and hours changes",
+      "authors": [
+        "Liu, Kai"
+      ],
+      "venue": "Quantitative Economics",
+      "year": 2016,
+      "cited_by_count": 10,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.16538/J.CNKI.JFE.2018.07.003",
+      "arxiv_id": "",
+      "title": "Does Internet Usage Reduce the Gender Wage Gap? Empirical Analysis based on CFPS Data",
+      "authors": [
+        "Ma Yufei",
+        "Zeng Xiangquan",
+        "Huang Wenxin"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.1016/j.econlet.2012.07.021",
+      "title": "The gender wage gap in experimental labor markets",
+      "authors": [
+        "Schwieren, Christiane"
+      ],
+      "venue": "Economics Letters",
+      "year": 2012,
+      "cited_by_count": 9,
+      "reference_count": 19,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.1007/s00181-004-0218-4",
+      "title": "Endogenous schooling and the distribution of the gender wage gap",
+      "authors": [
+        "Hansen, J�rgen",
+        "Wahlberg, Roger"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2005,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.1016/s0147-9121(08)28011-8",
+      "title": "Occupational gender composition and the gender wage gap in Sweden",
+      "authors": [
+        "Hansen, Jorgen",
+        "Wahlberg, Roger"
+      ],
+      "venue": "Research in Labor Economics",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 14,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.1080/13547860.2024.2304391",
+      "arxiv_id": "",
+      "title": "Gender role attitudes and the gender wage gap: evidence from China",
+      "authors": [
+        "Xinxin Ma"
+      ],
+      "venue": "Journal of the Asia Pacific Economy",
+      "year": 2024,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 73,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.2139/SSRN.3427012",
+      "arxiv_id": "",
+      "title": "Is There a Gender Wage Gap in Online Labor Markets? Evidence from Over 250,000 Projects and 2.5 Million Wage Bill Proposals",
+      "authors": [
+        "E. Herrera",
+        "Frank Mueller-Langer"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2019,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 31,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.cesifo.org/DocDL/cesifo1_wp7779.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.1186/s12651-024-00361-2",
+      "arxiv_id": "",
+      "title": "Union membership and the wage gap between the public and private sectors: evidence from China",
+      "authors": [
+        "Xinxin Ma"
+      ],
+      "venue": "Journal for labour market research",
+      "year": 2024,
+      "cited_by_count": 8,
+      "influential_cite_count": 2,
+      "reference_count": 80,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://labourmarketresearch.springeropen.com/counter/pdf/10.1186/s12651-024-00361-2",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.46456/jisdep.v3i2.301",
+      "arxiv_id": "",
+      "title": "Gender Wage Gap: Evidence from Employment in Informal Sector",
+      "authors": [
+        "Fakhriza Akbar"
+      ],
+      "venue": "The Journal of Indonesia Sustainable Development Planning",
+      "year": 2022,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 38,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://jurnal.pusbindiklatren.bappenas.go.id/lib/jisdep/article/download/301/127",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.2478/izajole-2022-0005",
+      "title": "The gender wage gap: evidence from South Korea",
+      "authors": [
+        "Lee, Kyeongah"
+      ],
+      "venue": "IZA Journal of Labor Economics",
+      "year": 2022,
+      "cited_by_count": 7,
+      "reference_count": 36,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Using microdata between 1998 and 2020, this study provides potential explanations for the gender wage gap in South Korea, which continues to be the largest among Organisation for Economic Co-operation and Development (OECD) countries. Although improvement in females’ relative measured labor market characteristics plays an important role in the reduction of the gender wage gap, these characteristics cannot explain a large part of the gap",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://sciendo.com/pdf/10.2478/izajole-2022-0005",
+      "influential_cite_count": 1,
+      "rank": 132
+    },
+    {
+      "doi": "10.1016/j.labeco.2023.102359",
+      "title": "Marriage patterns and the gender gap in labor force participation: Evidence from Italy",
+      "authors": [
+        "Righetto, Giovanni"
+      ],
+      "venue": "Labour Economics",
+      "year": 2023,
+      "cited_by_count": 7,
+      "reference_count": 44,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.1016/s0147-9121(03)22014-8",
+      "title": "NEW EVIDENCE ON CULTURE AND THE GENDER WAGE GAP: A COMPARISON ACROSS ETHNIC ORIGIN GROUPS",
+      "authors": [
+        "Antecol, Heather"
+      ],
+      "venue": "Research in Labor Economics",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 10,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.1080/00036846.2024.2402953",
+      "title": "Can minimum wage increases narrow the gender wage gap? Evidence from China",
+      "authors": [
+        "Chen, Jiwei",
+        "Xu, Zhigang"
+      ],
+      "venue": "Applied Economics",
+      "year": 2025,
+      "cited_by_count": 6,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.1016/j.labeco.2024.102585",
+      "title": "Does information disclosure affect the gender gap in bidding behavior? Empirical evidence from a natural experiment on a large online labor platform",
+      "authors": [
+        "Gomez-Herrera, Estrella",
+        "Mueller-Langer, Frank"
+      ],
+      "venue": "Labour Economics",
+      "year": 2024,
+      "cited_by_count": 6,
+      "reference_count": 145,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.labeco.2024.102585",
+      "rank": 136
+    },
+    {
+      "doi": "10.5296/rae.v10i1.12873",
+      "title": "Exploring Gender Wage Gap in Urban Labor Market of Bangladesh",
+      "authors": [
+        "Siddiquee, Muhammad Shahadat Hossain",
+        "Hossain, Md Amzad"
+      ],
+      "venue": "Research in Applied Economics",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Using the Labor Force Survey 2010 dataset this paper examines gender wage gap in a large sample of urban workers in Bangladesh and explore whether gender wage gap varies across the wage distribution. Mincerian OLS regression and its Blinder-Oaxaca decomposition results reveal that the estimated wage gap between men and women workers is 21.2%. Adjusting women’s endowments levels to those of men increases women’s wage by 12.1% and a gap of 8.0% remains unexplained. The decomposition result",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "10.1016/j.econlet.2023.111505",
+      "title": "An analysis of the gender layoff gap implied by a gender gap in wage bargaining",
+      "authors": [
+        "Abrahams, Scott"
+      ],
+      "venue": "Economics Letters",
+      "year": 2024,
+      "cited_by_count": 6,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "10.1016/j.econlet.2018.12.015",
+      "title": "Income taxation of couples, spouses’ labor supplies and the gender wage gap",
+      "authors": [
+        "Cremer, Helmuth",
+        "Roeder, Kerstin"
+      ],
+      "venue": "Economics Letters",
+      "year": 2019,
+      "cited_by_count": 5,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "10.1080/13504851.2019.1646867",
+      "title": "Labor market sorting on personality traits and the gender wage gap",
+      "authors": [
+        "Lesner, Rune V."
+      ],
+      "venue": "Applied Economics Letters",
+      "year": 2020,
+      "cited_by_count": 5,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "10.1016/j.asieco.2024.101801",
+      "title": "The clan imprint within gender wage gap: Evidence from China",
+      "authors": [
+        "Liu, Yulin",
+        "Ran, Wei"
+      ],
+      "venue": "Journal of Asian Economics",
+      "year": 2024,
+      "cited_by_count": 5,
+      "reference_count": 51,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1108/IJM-01-2012-0013",
+      "arxiv_id": "",
+      "title": "Getting what (employers think) you’re worth",
+      "authors": [
+        "Julia Bredtmann",
+        "S. Otten"
+      ],
+      "venue": "",
+      "year": 2014,
+      "cited_by_count": 5,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 142
+    },
+    {
+      "doi": "10.1016/j.asieco.2025.101988",
+      "title": "Gender wage gap of migrant workers and its root causes: Gender discrimination or labor endowment?",
+      "authors": [
+        "Li, Lilian",
+        "Cheng, Mingwang",
+        "Chen, Chunyan"
+      ],
+      "venue": "Journal of Asian Economics",
+      "year": 2025,
+      "cited_by_count": 4,
+      "reference_count": 51,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 143
+    },
+    {
+      "doi": "10.2139/ssrn.4114834",
+      "arxiv_id": "",
+      "title": "The Distribution of the Gender Wage Gap: An Equilibrium Model",
+      "authors": [
+        "S. Bhalotra",
+        "Manuel Fernández Sierra",
+        "Fang Wang"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2025,
+      "cited_by_count": 4,
+      "influential_cite_count": 1,
+      "reference_count": 98,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://wrap.warwick.ac.uk/164956/1/WRAP-distribution-gender-wage-gap-equilibrium%20model-Bhalotra-2022.pdf",
+      "source": "semanticscholar",
+      "type": "CaseReport",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 144
+    },
+    {
+      "doi": "10.1108/jes-01-2024-0002",
+      "arxiv_id": "",
+      "title": "The intersection between traditional roles and a fragmented labor market: a propensity score matching analysis of gender wage gap in Ecuador",
+      "authors": [
+        "Sara Caria",
+        "Jorge Yepez"
+      ],
+      "venue": "Journal of Economic Studies",
+      "year": 2024,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 42,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://hdl.handle.net/11380/1345386",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 145
+    },
+    {
+      "doi": "10.1016/s0147-9121(01)20049-1",
+      "title": "Looking again at instrumental variable estimation of wage models in the gender wage gap literature",
+      "authors": [
+        "Kunze, Astrid"
+      ],
+      "venue": "Research in Labor Economics",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 23,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 146
+    },
+    {
+      "doi": "10.2139/ssrn.3434835",
+      "title": "Is There a Gender Wage Gap in Online Labor Markets? Evidence from Over 250,000 Projects and 2.5 Million Wage Bill Proposals",
+      "authors": [
+        "Gomez-Herrera, Estrella",
+        "Mueller-Langer, Frank"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 147
+    },
+    {
+      "doi": "10.2478/sues-2024-0016",
+      "title": "Decomposing the Gender Wage Gap in the Urban Labor Market in Kenya",
+      "authors": [
+        "Alwago, Wycliffe Obwori"
+      ],
+      "venue": "Studia Universitatis „Vasile Goldis” Arad – Economics Series",
+      "year": 2024,
+      "cited_by_count": 3,
+      "reference_count": 50,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Legislation and regulation have been effective in reducing the gender wage gap in developed countries; however, the gap still exists globally, and progress towards narrowing the gap has been unacceptably slow even in regions where it is improving. This study presents the analysis of gender wage gap in Kenya’s urban labor market by using the World Bank Skills Towards Employability and Productivity Survey (WBSTEPS). This study employed Mi",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.2478/sues-2024-0016",
+      "rank": 148
+    },
+    {
+      "doi": "10.1108/ijm-11-2022-0549",
+      "arxiv_id": "",
+      "title": "Analysis of gender wage gap and the Nigerian labour market: a new empirical evidence",
+      "authors": [
+        "A. Orji",
+        "Emmanuel O. Nwosu"
+      ],
+      "venue": "International journal of manpower",
+      "year": 2023,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 80,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 149
+    },
+    {
+      "doi": "10.1177/21582440251327015",
+      "arxiv_id": "",
+      "title": "The Return on Education and the Gender Wage Gap in China: A Sector Perspective",
+      "authors": [
+        "Mingming Li",
+        "Xinyun Hu",
+        "Keyan Jin"
+      ],
+      "venue": "SAGE Open",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 109,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1177/21582440251327015",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "10.1453/JEPE.V6I2.1872",
+      "arxiv_id": "",
+      "title": "Gender wage gap in the agricultural labor market of India: An empirical analysis",
+      "authors": [
+        "A. Kundu",
+        "Sangita Das"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 29,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "10.1007/978-981-15-9358-1_8",
+      "title": "Gender Wage Gap and Gender Attitudes in Ukraine",
+      "authors": [
+        "Gatskova, Kseniia"
+      ],
+      "venue": "Gendering Post-Soviet Space",
+      "year": 2021,
+      "cited_by_count": 2,
+      "reference_count": 24,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "10.1080/15140326.2024.2369430",
+      "title": "Trade unions and the gender wage gap: evidence from China",
+      "authors": [
+        "Ma, Xinxin",
+        "Zhan, Peng"
+      ],
+      "venue": "Journal of Applied Economics",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 63,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "10.1108/ijssp-12-2024-0616",
+      "arxiv_id": "",
+      "title": "The gender wage gap and firms’ characteristics: empirical evidence from UK firms",
+      "authors": [
+        "Qusai M. Talafha",
+        "Esam Emad Ghassab",
+        "Ala' Y. Alsamman",
+        "Abdullah M. Alyousef",
+        "E. Mansour"
+      ],
+      "venue": "International journal of sociology and social policy",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 65,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "10.1108/jes-06-2024-0371",
+      "arxiv_id": "",
+      "title": "Gender wage gap among highly educated workers: some evidence from Spain",
+      "authors": [
+        "Antonio Caparrós Ruiz"
+      ],
+      "venue": "Journal of Economic Studies",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 29,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.1080/0023656X.2021.1970725",
+      "arxiv_id": "",
+      "title": "Gender disparities in Ugandan urban labor market: an analysis of the gender wage gap",
+      "authors": [
+        "Gaston Brice Nkoumou Ngoa",
+        "Ebenezer Lemven Wirba"
+      ],
+      "venue": "Labor History",
+      "year": 2021,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "10.1057/s41599-025-05312-x",
+      "arxiv_id": "",
+      "title": "Gender wage gap among the educated: evidence from fields of study in Chile",
+      "authors": [
+        "Marcela Parada-Contzen",
+        "F. Jara"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 69,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41599-025-05312-x.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.1111/rode.13244",
+      "title": "Labor Market Participation and Gender Wage Gap: The Case of Young Workers in Senegal",
+      "authors": [
+        "Diallo, Mamadou Abdoulaye"
+      ],
+      "venue": "Review of Development Economics",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 91,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>ABSTRACT</jats:title><jats:p>This study aims to identify the factors influencing labor market participation and the wage gap among young people in Senegal. Based on a representative survey of 1560 young people aged 18–35, we performed probit and Heckman selection models, and an Oaxaca‐Blinder decomposition. The results show that whatever the level of education is, men earn more than women. In addition, we show that 44.4% of the participation gap is due to a difference in endowments, ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "10.1007/s00181-021-02076-6",
+      "arxiv_id": "",
+      "title": "Changes in the women’s labor market and education and their impacts on marriage and inequality: evidence from Brazil",
+      "authors": [
+        "Sergio Firpo",
+        "Lorena Hakak"
+      ],
+      "venue": "Empirical Economics",
+      "year": 2019,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 20,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "The Economics of Higher Education: Interactions Between Gender, College Major Decisions and the Labor Market",
+      "authors": [
+        "Amber Qureshi Urrutia"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 1,
+      "influential_cite_count": 1,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "10.1080/13545701.2024.2413914",
+      "arxiv_id": "",
+      "title": "Trapped in Flexibility: How Does Precarious Work Affect Gender Wage Gap in China?",
+      "authors": [
+        "Fusheng Xie",
+        "Nan Jiang",
+        "Han Cheng"
+      ],
+      "venue": "Feminist Economics",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 96,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "10.1111/rode.13181",
+      "arxiv_id": "",
+      "title": "Gender Wage Gap in Early Careers: Evidence From University Graduates in China",
+      "authors": [
+        "Yue Zhang",
+        "Yanyan Dong"
+      ],
+      "venue": "Review of Development Economics",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 162
+    },
+    {
+      "doi": "10.17771/pucrio.acad.72013",
+      "title": "LABOR MARKET CONCENTRATION AND THE GENDER WAGE GAP: EVIDENCE FROM MASS LAYOFFS",
+      "authors": [
+        "D ANGELO SANTOS DE MORAES, PEDRO"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 163
+    },
+    {
+      "doi": "10.1016/j.econlet.2025.112489",
+      "title": "Labor market concentration and the gender wage gap",
+      "authors": [
+        "D’Angelo, Pedro",
+        "Guanziroli, Tomás"
+      ],
+      "venue": "Economics Letters",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "10.2139/ssrn.5547821",
+      "title": "Exploring Wage Determinants and the Gender Wage Gap in Bangladesh’s Daily Labor Market: Evidence from HIES 2016",
+      "authors": [
+        "Mamun, Al"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "10.2139/ssrn.6934266",
+      "title": "Transport Accessibility, Local Labor Markets, and the Gender Wage Gap: Evidence from China’s High-Speed Rail Expansion",
+      "authors": [
+        "Wu, Shuirui",
+        "Hong, Zhang"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Transport infrastructure changes market access and local labor-market opportunities, but its distributional effects within local labor markets remain less understood. This paper examines whether improved intercity accessibility through China’s high-speed rail (HSR) expansion narrows or widens the gender wage gap within connected counties. We combine county-level HSR opening records from China Railway 12306 with individual data from the China Family Panel Studies (CFPS), and identify gend",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "10.1016/j.inteco.2025.100642",
+      "title": "Foreign direct investment and the gender wage gap: Evidence from China",
+      "authors": [
+        "Ma, Xinxin"
+      ],
+      "venue": "International Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 61,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "10.58837/chula.the.2025.334",
+      "title": "Wage gap and wage discrimination among persons with disabilities: empirical evidence from Thailand",
+      "authors": [
+        "",
+        "Wongsrithanasarn, Natthavit"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:p>This study provides a comprehensive quantitative analysis of the disability wage gap and potential wage discrimination in Thailand. Utilizing data from the 2017 and 2022 Thailand Disability Surveys, this research employs the Oaxaca-Blinder decomposition technique to examine wage disparities between workers with and without physical or cognitive disabilities. The results reveal a substantial wage gap, with non-disabled workers, on average, earning approximately 50% more than persons with ",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "10.1016/j.econlet.2025.112571",
+      "title": "Foreign–native wage gap and tasks: Evidence from the Japanese labor market",
+      "authors": [
+        "Doi, Yasuhiro",
+        "Suzuki, Kensuke"
+      ],
+      "venue": "Economics Letters",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 169
+    },
+    {
+      "doi": "10.1515/rmeef-2025-0018",
+      "title": "The Nexus Between Using Technology and the Gender Wage Gap in the Labor Market: Evidence from Egypt",
+      "authors": [
+        "Riad, Marina A."
+      ],
+      "venue": "Review of Middle East Economics and Finance",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>This study examines the impact of technology usage on the gender wage gap in Egypt, analyzing wage disparities across three groups: technology professionals (ICT sector), technology users (non-ICT jobs utilizing digital tools), and nonusers (no technology engagement). Using the 2023 Egypt Labor Market Panel Survey (ELMPS), we estimate gender-disaggregated wage equations via Ordinary Least Squares (OLS) and Instrumental Variables Two-Sta",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "tldr": "Engagement with technology enhances women’s earning potential, yet persistent gender-based disparities remain outside technology-intensive roles, suggesting that engagement with technology enhances women’s earning potential, yet persistent gender-based disparities remain outside technology-intensive roles.",
+      "rank": 170
+    },
+    {
+      "doi": "10.3897/arphapreprints.e98171",
+      "title": "The Impact of Internet Usage on the Gender Wage Gap in the Chinese Labor Force&amp;nbsp;-- an Empirical analysis based on the moderating effect of education level taken into account",
+      "authors": [
+        "Gao, Jiacheng",
+        "Liu, Yue"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Based on data from a sample of 3163 respondents from the Chinese General Social Survey in 2018, this study constructs a RIF mean regression decomposition model that considers moderating effects to examine the effect of Internet usage on the gender wage gap in the Chinese labor force, and examines the moderating effect of years of education on this effect. The results show that both Internet usage and years of education have stronger premium effects on the wage income of Chinese male labo",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 171
+    },
+    {
+      "doi": "10.2139/ssrn.3427012",
+      "title": "Is There a Gender Wage Gap in Online Labor Markets? Evidence from Over 250,000 Projects and 2.5 Million Wage Bill Proposals",
+      "authors": [
+        "Gomez Herrera, Estrella",
+        "Mueller-Langer, Frank"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "10.30845/jbep.v7n2a7",
+      "title": "The Gender Wage Gap in Africa: Theoretical and Empirical Evidence",
+      "authors": [
+        "Engama, Manga"
+      ],
+      "venue": "Journal of Business &amp; Economic Policy",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "http://jbepnet.com/journals/Vol_7_No_2_June_2020/7.pdf",
+      "rank": 173
+    },
+    {
+      "doi": "10.5771/9783748939979-71",
+      "title": "3. Labor Market Closure and the Stalling of the Gender Pay Gap",
+      "authors": [
+        "Minkus, Lara"
+      ],
+      "venue": "Disentangling the Components of the Gender Wage Gap",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1037/e571712011-004",
+      "title": "Separate and Not Equal? Gender Segregation in the Labor Market and the Gender Wage Gap",
+      "authors": [
+        "Hayes, Jeffrey"
+      ],
+      "venue": "PsycEXTRA Dataset",
+      "year": 2010,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.9790/5933-1604035664",
+      "arxiv_id": "2509.10152v1",
+      "title": "Evaluating the Economic Feasibility of Labor Replacement Through Robotics and Automation in Qatar",
+      "authors": [
+        "Tariq Eldakruri",
+        "Edip Senyurek"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.10152v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "10.18653/v1/W19-3803",
+      "arxiv_id": "2601.17203v1",
+      "title": "Relating Word Embedding Gender Biases to Gender Gaps: A Cross-Cultural Analysis",
+      "authors": [
+        "Scott Friedman",
+        "Sonja Schmer-Galunder",
+        "Anthony Chen",
+        "Jeffrey Rye"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.17203v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2405.15486v1",
+      "arxiv_id": "2405.15486v1",
+      "title": "Digital finance, Bargaining Power and Gender Wage Gap",
+      "authors": [
+        "Qing Guo",
+        "Siyu Chen",
+        "Xiangquan Zeng"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.15486v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2504.07689v1",
+      "arxiv_id": "2504.07689v1",
+      "title": "Inequality at risk of automation? Gender differences in routine tasks intensity in developing country labor markets",
+      "authors": [
+        "Janneke Pieters",
+        "Ana Kujundzic",
+        "Rulof Burger",
+        "Joel Gondwe"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.07689v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "arXiv:2402.17954v3",
+      "arxiv_id": "2402.17954v3",
+      "title": "Twists, Humps, and Pebbles: Multilingual Speech Recognition Models Exhibit Gender Performance Gaps",
+      "authors": [
+        "Giuseppe Attanasio",
+        "Beatrice Savoldi",
+        "Dennis Fucci",
+        "Dirk Hovy"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.17954v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2201.02835v1",
+      "arxiv_id": "2201.02835v1",
+      "title": "Jumping to male-dominated occupations: A novel way to reduce gender wage gap for Chinese women",
+      "authors": [
+        "Wei Bai",
+        "Zhongtao Yue",
+        "Tao Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.02835v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:1812.04345v2",
+      "arxiv_id": "1812.04345v2",
+      "title": "Closing the U.S. gender wage gap requires understanding its heterogeneity",
+      "authors": [
+        "Philipp Bach",
+        "Victor Chernozhukov",
+        "Martin Spindler"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1812.04345v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2601.06343v1",
+      "arxiv_id": "2601.06343v1",
+      "title": "Resolving the automation paradox: falling labor share, rising wages",
+      "authors": [
+        "David Autor",
+        "B. N. Kausik"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.06343v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:2405.04365v1",
+      "arxiv_id": "2405.04365v1",
+      "title": "Detailed Gender Wage Gap Decompositions: Controlling for Worker Unobserved Heterogeneity Using Network Theory",
+      "authors": [
+        "Jamie Fogel",
+        "Bernardo Modenesi"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.04365v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:2111.13692v7",
+      "arxiv_id": "2111.13692v7",
+      "title": "Minimum Wages in Concentrated Labor Markets",
+      "authors": [
+        "Martin Popp"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.13692v7",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "arXiv:2410.19775v1",
+      "arxiv_id": "2410.19775v1",
+      "title": "Gender Bias of LLM in Economics: An Existentialism Perspective",
+      "authors": [
+        "Hui Zhong",
+        "Songsheng Chen",
+        "Mian Liang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.19775v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "arXiv:2309.09178v1",
+      "arxiv_id": "2309.09178v1",
+      "title": "Does Reliable Electricity Mean Lesser Agricultural Labor Wages? Evidence from Indian Villages",
+      "authors": [
+        "Suryadeepto Nag"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2309.09178v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
+    },
+    {
+      "doi": "arXiv:2005.12600v9",
+      "arxiv_id": "2005.12600v9",
+      "title": "The Race between Technology and Woman: Changes in Relative Wages and Labor Shares in OECD Countries",
+      "authors": [
+        "Hiroya Taniguchi",
+        "Ken Yamada"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.12600v9",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 188
+    },
+    {
+      "doi": "arXiv:1511.02229v1",
+      "arxiv_id": "1511.02229v1",
+      "title": "Wage gap between men and women in Tunisia",
+      "authors": [
+        "Hela Jeddi",
+        "Dhafer Malouche"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1511.02229v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 189
+    },
+    {
+      "doi": "arXiv:2209.09592v1",
+      "arxiv_id": "2209.09592v1",
+      "title": "Closing the Gender Wage Gap: Adversarial Fairness in Job Recommendation",
+      "authors": [
+        "Clara Rus",
+        "Jeffrey Luppes",
+        "Harrie Oosterhuis",
+        "Gido H. Schoenmacker"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.09592v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 190
+    },
+    {
+      "doi": "10.1453/jepe.v8i3.2230",
+      "arxiv_id": "2209.02743v1",
+      "title": "Identifying the Effect of Parenthood on Labor Force Participation: A Gender Comparison",
+      "authors": [
+        "Seyyed Ali Zeytoon Nejad Moosavian"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.02743v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 191
+    },
+    {
+      "doi": "arXiv:2604.02403v1",
+      "arxiv_id": "2604.02403v1",
+      "title": "Measuring What Cannot Be Surveyed: LLMs as Instruments for Latent Cognitive Variables in Labor Economics",
+      "authors": [
+        "Cristian Espinal Maya"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.02403v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 192
+    },
+    {
+      "doi": "arXiv:2511.03252v1",
+      "arxiv_id": "2511.03252v1",
+      "title": "Gender gap in the desired wages: Evidence from large administrative data",
+      "authors": [
+        "Taiyo Fukai",
+        "Keisuke Kawata",
+        "Mizuki Komura",
+        "Takahiro Toriyabe"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.03252v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 193
+    },
+    {
+      "doi": "10.18653/v1/2021.gebnlp-1.12",
+      "arxiv_id": "2109.14047v1",
+      "title": "Second Order WinoBias (SoWinoBias) Test Set for Latent Gender Bias Detection in Coreference Resolution",
+      "authors": [
+        "Hillary Dawkins"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.14047v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 194
+    },
+    {
+      "doi": "10.5281/zenodo.3609865",
+      "arxiv_id": "2001.06003v2",
+      "title": "Examining the correlation of the level of wage inequality with labor market institutions",
+      "authors": [
+        "Virginia Tsoukatou"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.06003v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 195
+    },
+    {
+      "doi": "arXiv:2305.16935v1",
+      "arxiv_id": "2305.16935v1",
+      "title": "Gender Lost In Translation: How Bridging The Gap Between Languages Affects Gender Bias in Zero-Shot Multilingual Translation",
+      "authors": [
+        "Lena Cabrera",
+        "Jan Niehues"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2305.16935v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 196
+    },
+    {
+      "doi": "arXiv:2310.05117v1",
+      "arxiv_id": "2310.05117v1",
+      "title": "Minimum wage and manufacturing labor share: Evidence from North Macedonia",
+      "authors": [
+        "Marjan Petreski",
+        "Jaakko Pehkonen"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.05117v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 197
+    },
+    {
+      "doi": "10.1371/journal.pone.0250892",
+      "arxiv_id": "2003.11496v1",
+      "title": "Gender Differences in Wage Expectations",
+      "authors": [
+        "Ana Fernandes",
+        "Martin Huber",
+        "Giannina Vaccaro"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2003.11496v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 198
+    },
+    {
+      "doi": "arXiv:2512.03812v3",
+      "arxiv_id": "2512.03812v3",
+      "title": "Minimum Wages, Firm Size Distribution, and the Labor Share",
+      "authors": [
+        "Jiyuan Lyu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.03812v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 199
+    },
+    {
+      "doi": "arXiv:2010.14669v3",
+      "arxiv_id": "2010.14669v3",
+      "title": "Minimum Wage, Labor Equilibrium, and the Productivity Horizon: A Visual Examination",
+      "authors": [
+        "John R. Moser"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.14669v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 200
+    },
+    {
+      "doi": "arXiv:2511.07652v1",
+      "arxiv_id": "2511.07652v1",
+      "title": "From Double to Triple Burden: Gender Stratification in the Latin American Data Annotation Gig Economy",
+      "authors": [
+        "Lauren Benjamin Mushro"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.07652v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 201
+    },
+    {
+      "doi": "arXiv:2503.19159v1",
+      "arxiv_id": "2503.19159v1",
+      "title": "Augmenting or Automating Labor? The Effect of AI Development on New Work, Employment, and Wages",
+      "authors": [
+        "David Marguerit"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.19159v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 202
+    },
+    {
+      "doi": "arXiv:2001.11843v1",
+      "arxiv_id": "2001.11843v1",
+      "title": "An Interacting Agent Model of Economic Crisis",
+      "authors": [
+        "Yuichi Ikeda"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2001.11843v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 203
+    },
+    {
+      "doi": "arXiv:2505.09408v1",
+      "arxiv_id": "2505.09408v1",
+      "title": "Evolving the Productivity Equation: Should Digital Labor Be Considered a New Factor of Production?",
+      "authors": [
+        "Alex Farach",
+        "Alexia Cambon",
+        "Jared Spataro"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.09408v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 204
+    },
+    {
+      "doi": "arXiv:2601.22079v1",
+      "arxiv_id": "2601.22079v1",
+      "title": "The Economics of No-regret Learning Algorithms",
+      "authors": [
+        "Jason Hartline"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.22079v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 205
+    },
+    {
+      "doi": "arXiv:2012.07739v2",
+      "arxiv_id": "2012.07739v2",
+      "title": "The economics of stop-and-go epidemic control",
+      "authors": [
+        "Claudius Gros",
+        "Daniel Gros"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2012.07739v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 206
+    },
+    {
+      "doi": "arXiv:2605.05558v2",
+      "arxiv_id": "2605.05558v2",
+      "title": "Who Prices Cognitive Labor in the Age of Agents? Compute-Anchored Wages",
+      "authors": [
+        "Siqi Zhu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.05558v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 207
+    },
+    {
+      "doi": "arXiv:2204.00551v2",
+      "arxiv_id": "2204.00551v2",
+      "title": "Decomposition of Differences in Distribution under Sample Selection and the Gender Wage Gap",
+      "authors": [
+        "Santiago Pereda-Fernández"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2204.00551v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 208
+    },
+    {
+      "doi": "arXiv:2111.00319v2",
+      "arxiv_id": "2111.00319v2",
+      "title": "Skill Downgrading Among Refugees and Economic Immigrants in Germany",
+      "authors": [
+        "Plamen Nikolov",
+        "Leila Salarpour",
+        "David Titus"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.00319v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 209
+    },
+    {
+      "doi": "arXiv:2402.05729v1",
+      "arxiv_id": "2402.05729v1",
+      "title": "Monetary Policy and the Gendered Labor Market Dynamics: Evidence from Developing Economies",
+      "authors": [
+        "Marjan Petreski",
+        "Stefan Tanevski",
+        "Alejandro D. Jacobo"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.05729v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 210
+    },
+    {
+      "doi": "arXiv:2408.03659v1",
+      "arxiv_id": "2408.03659v1",
+      "title": "Firms' Risk Adjustments to Minimum Wage: Financial Leverage and Labor Share Trade-off",
+      "authors": [
+        "Ying Liang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2408.03659v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 211
+    },
+    {
+      "doi": "arXiv:2603.12630v1",
+      "arxiv_id": "2603.12630v1",
+      "title": "The Economics of AI Supply Chain Regulation",
+      "authors": [
+        "Sihan Qian",
+        "Amit Mehra",
+        "Dengpan Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.12630v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 212
+    },
+    {
+      "doi": "arXiv:2307.02470v1",
+      "arxiv_id": "2307.02470v1",
+      "title": "Statistical Physics Perspective on Economic Inequality",
+      "authors": [
+        "Victor M. Yakovenko"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.02470v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 213
+    },
+    {
+      "doi": "arXiv:2511.16187v2",
+      "arxiv_id": "2511.16187v2",
+      "title": "Quantile Selection in the Gender Pay Gap",
+      "authors": [
+        "Egshiglen Batbayar",
+        "Christoph Breunig",
+        "Peter Haan",
+        "Boryana Ilieva"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.16187v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 214
+    },
+    {
+      "doi": "10.1007/s10664-011-9186-4",
+      "arxiv_id": "1205.6363v1",
+      "title": "What Should Developers Be Aware Of? An Empirical Study on the Directives of API Documentation",
+      "authors": [
+        "Martin Monperrus",
+        "Michael Eichberg",
+        "Elif Tekes",
+        "Mira Mezini"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1205.6363v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 215
+    },
+    {
+      "doi": "arXiv:2510.16626v1",
+      "arxiv_id": "2510.16626v1",
+      "title": "Evaluating the Public Pay Gap: A Comparison of Public and Private Sector Wages in France",
+      "authors": [
+        "Riddhi Kalsi"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.16626v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 216
+    },
+    {
+      "doi": "arXiv:1702.03977v1",
+      "arxiv_id": "1702.03977v1",
+      "title": "Labor Contract Law -An Economic View",
+      "authors": [
+        "Yaofeng Fu",
+        "Ruokun Huang",
+        "Yiran Sheng"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1702.03977v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 217
+    },
+    {
+      "doi": "arXiv:2301.09252v3",
+      "arxiv_id": "2301.09252v3",
+      "title": "Gender-Segmented Labor Markets and Foreign Demand Shocks",
+      "authors": [
+        "Carlos Góes",
+        "Gladys Lopez-Acevedo",
+        "Raymond Robertson"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2301.09252v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 218
+    },
+    {
+      "doi": "10.1016/j.jce.2025.10.001",
+      "arxiv_id": "2307.08869v2",
+      "title": "Culture, Gender, and Labor Force Participation: Evidence from Colombia",
+      "authors": [
+        "Hector Galindo-Silva",
+        "Paula Herrera-Idárraga"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.08869v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 219
+    },
+    {
+      "doi": "arXiv:2505.04555v3",
+      "arxiv_id": "2505.04555v3",
+      "title": "Just After Minimum Wage Hikes: Short-Run Labor-Demand Response and Reallocation",
+      "authors": [
+        "Hayato Kanayama",
+        "Sho Miyaji",
+        "Suguru Otani"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.04555v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 220
+    },
+    {
+      "doi": "arXiv:2606.23150v1",
+      "arxiv_id": "2606.23150v1",
+      "title": "A missed opportunity? Labor demand and workforce diversity",
+      "authors": [
+        "Anna Bindler",
+        "Barbara Boelmann",
+        "Lena Janys",
+        "Luisa H. Santiago Wolf"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.23150v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 221
+    },
+    {
+      "doi": "10.1111/gwao.70074",
+      "arxiv_id": "2602.17721v1",
+      "title": "Gender and Digital Platform Work During Turbulent Times",
+      "authors": [
+        "Melissa Langworthy",
+        "Yana Rodgers"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2602.17721v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 222
+    },
+    {
+      "doi": "arXiv:2406.13677v3",
+      "arxiv_id": "2406.13677v3",
+      "title": "Leveraging Large Language Models to Measure Gender Representation Bias in Gendered Language Corpora",
+      "authors": [
+        "Erik Derner",
+        "Sara Sansalvador de la Fuente",
+        "Yoan Gutiérrez",
+        "Paloma Moreda",
+        "Nuria Oliver"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2406.13677v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 223
+    },
+    {
+      "doi": "arXiv:2410.09305v1",
+      "arxiv_id": "2410.09305v1",
+      "title": "Analyzing Wage Theft in Day Labor Markets via Principal Agent Models",
+      "authors": [
+        "James P. Bailey",
+        "Bahar Cavdar",
+        "Yanling Chang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.09305v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 224
+    },
+    {
+      "doi": "arXiv:2503.12837v1",
+      "arxiv_id": "2503.12837v1",
+      "title": "Financial Adviser Misconduct and Labor Market Penalties: Uncovering Racial Disparities in the Absence of Gender Gaps",
+      "authors": [
+        "Jun Honda"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.12837v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 225
+    },
+    {
+      "doi": "10.54254/2754-1169/2025.gl30321",
+      "arxiv_id": "",
+      "title": "Did Digitalisation Narrow the Gender Wage Gap? Evidence from China",
+      "authors": [
+        "Luyang Wang"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.54254/2754-1169/2025.gl30321",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 226
+    },
+    {
+      "doi": "10.1108/ijse-06-2025-0520",
+      "arxiv_id": "",
+      "title": "Does access to clean fuels and technologies for cooking promote women’s participation in wage and salaried employment? Empirical evidence in developing countries",
+      "authors": [
+        "Martin Sawadogo",
+        "Issa Dianda",
+        "P. Zidouemba"
+      ],
+      "venue": "International Journal of Social Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 52,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 227
+    },
+    {
+      "doi": "10.1177/21582440251345647",
+      "arxiv_id": "",
+      "title": "Gender-Wage Gap in the Korean Air Transport Industry: Evidence From Microdata Between the Years 2015 and 2022",
+      "authors": [
+        "Zeljana Zmire",
+        "Hye-Jeong Lee",
+        "Yolanda T. Montances",
+        "Sohee Yang",
+        "Seul-Ki Lee"
+      ],
+      "venue": "SAGE Open",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 74,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1177/21582440251345647",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 228
+    },
+    {
+      "doi": "10.20473/jde.v10i1.60467",
+      "arxiv_id": "",
+      "title": "The Role of Internet Usage on Gender Wage Gap: Evidence From Indonesia",
+      "authors": [
+        "Martina Nurma Dewi",
+        "Arie Damayanti"
+      ],
+      "venue": "Journal of Development Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://e-journal.unair.ac.id/JDE/article/download/60467/33194",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 229
+    },
+    {
+      "doi": "10.1007/s41027-025-00558-0",
+      "arxiv_id": "",
+      "title": "Status of Vocational Education and Wage Gap in the Indian Economy: Empirical Evidence",
+      "authors": [
+        "Harshil Sharma",
+        "M. Beher",
+        "Santosh Mehrotra"
+      ],
+      "venue": "Indian Journal of Labour Economics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 230
+    },
+    {
+      "doi": "10.46665/jkes.2022.9.40.3.27",
+      "arxiv_id": "",
+      "title": "Gender Wage Gap in the Korea Labor Market: A New Empirical Examination Using a Demand-Supply Model",
+      "authors": [
+        "Kyungho Baek",
+        "Jihye Choi",
+        "Seewon Kim"
+      ],
+      "venue": "Journal of Korean Economics Studies",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 231
+    },
+    {
+      "doi": "10.15611/aoe.2025.2.11",
+      "arxiv_id": "",
+      "title": "Can occupational skills explain the gender wage gap in a developing economy? Evidence from an unconditional quantile regression approach",
+      "authors": [
+        "Zubaria Andlib"
+      ],
+      "venue": "Argumenta Oeconomica",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://dbc.wroc.pl/Content/141182/Andlib_Can_occupational_skills_explain_the_gender.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 232
+    },
+    {
+      "doi": "10.53753/JAME.1.1.01",
+      "arxiv_id": "",
+      "title": "Has the gender wage gap narrowed or widened in a decade? Some recent evidence from the Turkish labor market",
+      "authors": [
+        "Fulden Kömüryakan",
+        "Metehan Yilgör"
+      ],
+      "venue": "Volume 1, Issue 1",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journals.gen.tr/index.php/jame/article/download/1470/994/8399",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 233
+    },
+    {
+      "doi": "10.1007/s12626-026-00213-0",
+      "arxiv_id": "",
+      "title": "Empirical Analysis of the Gender Wage Gap in Platform Work in Japan",
+      "authors": [
+        "Kun Li",
+        "S. Takagi"
+      ],
+      "venue": "The Review of Socionetwork Strategies",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 14,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s12626-026-00213-0.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 234
+    },
+    {
+      "doi": "10.54254/2754-1169/2025.bl24766",
+      "arxiv_id": "",
+      "title": "Research on the Impact of Artificial Intelligence Development on the Wage Gap of the Labor Force: From the Perspectives of Labor Intensity and Task Cognition",
+      "authors": [
+        "Hejin Wang"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "While AI fosters economic growth, it also exacerbates income inequality and regional heterogeneity analysis shows that the income gap expansion is most pronounced in western regions, where AI suppresses low-skilled incomes in central areas and has weaker effects in eastern regions.",
+      "is_oa": true,
+      "oa_url": "https://www.ewadirect.com/proceedings/aemps/article/view/24766/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "While AI fosters economic growth, it also exacerbates income inequality and regional heterogeneity analysis shows that the income gap expansion is most pronounced in western regions, where AI suppresses low-skilled incomes in central areas and has weaker effects in eastern regions.",
+      "rank": 235
+    },
+    {
+      "doi": "10.1080/14782804.2024.2447772",
+      "arxiv_id": "",
+      "title": "The gender wage gap, working from home and the pandemic: evidence from Hungary",
+      "authors": [
+        "J. Szenderák",
+        "Éva Bácsné Bába",
+        "P. M. Kőmíves",
+        "Mónika Rákos",
+        "Veronika Fenyves"
+      ],
+      "venue": "The Journal of Contemporary European Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 53,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 236
+    },
+    {
+      "doi": "10.13043/dys.96.2",
+      "arxiv_id": "",
+      "title": "The gender wage gap and domestic violence against women: evidence from Peru",
+      "authors": [
+        "Diego Quispe Ortogorin"
+      ],
+      "venue": "Revista Desarrollo y Sociedad",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 43,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://revistas.uniandes.edu.co/index.php/dys/article/download/280/9254",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 237
+    },
+    {
+      "doi": "10.2139/ssrn.6516341",
+      "arxiv_id": "",
+      "title": "Human capital, regionalism and feminist economics in the gender wage gap explanation: a papers review",
+      "authors": [
+        "Manuel de Jesús López Pérez",
+        "María Ángeles Recio Ramírez"
+      ],
+      "venue": "Social Science Research Network",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 238
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "The Impact of Internet Usage on the Gender Wage Gap in the Chinese Labor Force -- an Empirical analysis based on the moderating effect of education level taken into account",
+      "authors": [
+        "Jiacheng Gao"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 35,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 239
+    },
+    {
+      "doi": "10.54254/2754-1169/71/20241259",
+      "arxiv_id": "",
+      "title": "Gender Wage Ratio and Intra-household Resources Allocation in China: Evidence from the China Health and Nutrition Survey",
+      "authors": [
+        "Ruiying Zou"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.ewadirect.com/proceedings/aemps/article/view/9713/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 240
+    },
+    {
+      "doi": "10.21203/rs.3.rs-2857277/v1",
+      "arxiv_id": "",
+      "title": "Gender Wage Gap and Male Perpetrated Child Sexual Abuse",
+      "authors": [
+        "Zainab Hans",
+        "M. Belzer"
+      ],
+      "venue": "Research Square",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 72,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.researchsquare.com/article/rs-2857277/latest.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 241
+    },
+    {
+      "doi": "10.21919/remef.v21i3.1645",
+      "arxiv_id": "",
+      "title": "Structural determinants of the gender wage gap in Mexico's informal sector",
+      "authors": [
+        "Nora Gavira Durón",
+        "Angelica Alonso Rivera",
+        "Marco Antonio Austria Carlos"
+      ],
+      "venue": "Revista Mexicana de Economía y Finanzas",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 31,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://remef.org.mx/index.php/remef/article/download/1645/1063",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 242
+    },
+    {
+      "doi": "10.2478/eoik-2026-0033",
+      "arxiv_id": "",
+      "title": "PUBLIC AND PRIVATE SECTOR WAGE DIFFERENTIALS: EMPIRICAL EVIDENCE FROM TÜRKİYE",
+      "authors": [
+        "Hayriye Özgül Özkan-Değirmenci",
+        "Serkan Değirmenci"
+      ],
+      "venue": "Economics",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://reference-global.com/download/article/10.2478/eoik-2026-0033.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "rank": 243
     }
   ]
 }

@@ -1,316 +1,906 @@
 {
   "query_id": "q047",
   "query": "恋爱综艺节目或者二次元擦边手机游戏 (包括男性和女性) 会促进婚恋吗？机理研究 媒体是否有效 情感分析",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
+  "topic_bucket": "social",
+  "source": "user",
+  "generated_at": "2026-07-22T11:31:52",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
+  },
+  "n_returned": 50,
+  "top_n": 50,
   "by_engine": {
-    "crossref": 10,
+    "crossref": 50,
     "openalex": 0,
     "arxiv": 0,
     "semanticscholar": 0,
-    "core": 10
+    "aminer": 1,
+    "cnki": 1
   },
-  "dedup_count": 20,
   "results": [
     {
-      "rank": 1,
       "doi": "10.63887/fss.2025.1.6.75",
       "title": "乙女游戏中的具身嵌入与人机情感生成机制——以“恋与深空”为例",
-      "abstract": "<jats:p>本文以“恋与深空”为例，探讨乙女游戏中如何通过具身体验构成人机的情感生成机制。从技术层面的身体嵌入（如陀螺仪、动作捕捉、触觉反馈）与叙事维度的具身化策略（如拟真表演、触觉模拟）的研究，探讨玩家在互动中获得的沉浸感与亲密真实。这样的共同机制下多感官的参与强化了玩家的代入感，也在潜移默化中重塑玩家的情感认知路径，进而揭示具身体验在乙女游戏中建构情感链接的重要作用。</jats:p>",
-      "year": null,
+      "authors": [
+        "陈瑛倩",
+        "彭苗苗"
+      ],
       "venue": "社会科学前沿",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文以“恋与深空”为例，探讨乙女游戏中如何通过具身体验构成人机的情感生成机制。从技术层面的身体嵌入（如陀螺仪、动作捕捉、触觉反馈）与叙事维度的具身化策略（如拟真表演、触觉模拟）的研究，探讨玩家在互动中获得的沉浸感与亲密真实。这样的共同机制下多感官的参与强化了玩家的代入感，也在潜移默化中重塑玩家的情感认知路径，进而揭示具身体验在乙女游戏中建构情感链接的重要作用。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 1
     },
     {
-      "rank": 2,
       "doi": "10.12677/ap.2024.142115",
       "title": "Does Tracing Enhance Multimedia Learning? A Meta-Analysis",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "李, 辉"
+      ],
       "venue": "Advances in Psychology",
-      "citation_count": 2,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 58,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 2
     },
     {
-      "rank": 3,
+      "doi": "10.5376/pr.cn.2014.03.0002",
+      "title": "高、低心理弹性女性的日常情绪状态及情绪自我调节方式",
+      "authors": [
+        "席居哲"
+      ],
+      "venue": "心理学研究",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.32629/er.v2i4.1792",
+      "title": "计算机教育游戏在小学数学教学中的有效运用",
+      "authors": [
+        "张, 曼"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>随着信息时代的不断发展,教改力度不断增大,为了更好地顺应时代的发展需求,有效推动计算机教育游戏与小学数学教学的有机结合,本文将主要分析计算机教育游戏在学生学习中的意义,探讨计算机教育游戏在小学数学教学中的应用,以供参考。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.32629/er.v2i2.1692",
+      "title": "计算机教育游戏在小学数学教学中的有效运用",
+      "authors": [
+        "李, 继"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>所谓的计算机教育游戏,就是在实际教育中利用计算机游戏的方式,完成教学目标。该方法在当前的小学数学课堂上得到了广泛应用。本文就将主要分析计算机教育游戏在数学课堂上的实际应用,以期完善上课模式,增强课堂趣味性。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.18686/ct.v1i2.2462",
+      "title": "机械制造工艺的可靠性分析",
+      "authors": [
+        "朱, 瑞毅"
+      ],
+      "venue": "城市建设理论研究—施工技术",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>&lt;div style=\"left: 165.173px; top: 267.237px; font-size: 13.3333px; font-family: serif; transform: scaleX(1.03033);\" data-canvas-width=\"776.8666666666672\"&gt;对于机械制造业企业而言，其工艺的可靠性直接关系着企业的生产制造效益，对企业实现最大的经济效益、进一步提高综合竞争力，&lt;/div&gt;&lt;div style=\"left: 85.0393px; top: 287.237px; font-size: 13.3333px; font-family: serif; transform: scaleX(1.03792);\" data-canvas-width=\"850.0533333333328\"&gt;在激烈的市场竞争中获得长远发展等有重要影响。目前，相比于发达国家，我国的机械制造业发展仍然比较落后，随着社会各界对机械制造工艺&lt;/div&gt;&lt;div style=\"left: 85.039",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.12677/ms.2018.81001",
+      "title": "Comparative Investigation of Binary and Ternary Donor-Acceptor Conjugated Polymer for Photovoltaic Application",
+      "authors": [
+        "王, 雪娇"
+      ],
+      "venue": "Material Sciences",
+      "year": 2018,
+      "cited_by_count": 1,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.64090/3080-4302.20250104",
+      "title": "情感智能干预对突发性聋患者的负性情绪和康复效果的影响",
+      "authors": [
+        "程, 麟婷",
+        "邓, 程",
+        "何, 思漪",
+        "牛, 杨"
+      ],
+      "venue": "医学理论研究",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>摘要 : 探讨情感智能干预对突发性聋患者负性情绪及康复效果的影响。研究表明，通过情感智能干预可有效缓解患者焦虑、抑郁等负性情绪，改善心理状态。同时，在康复过程中能提高患者依从性，促进听力恢复，提升整体康复效果，为突发性聋患者的治疗提供新思路。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.12677/ass.2022.1112741",
+      "title": "Research on the Mechanism and Market Exploration of the Authentic Experience of Female Solo Tourists from the Perspective of Existentialism",
+      "authors": [
+        "曹, 柳"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1360/ssc-2024-0006",
+      "title": "有机场效应气体传感器研究进展",
+      "authors": [
+        "Zhang, Haifeng",
+        "Zhao, Guodong",
+        "Tong, Yanhong",
+        "Tang, Qingxin",
+        "Liu, Yichun"
+      ],
+      "venue": "SCIENTIA SINICA Chimica",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.37155/2717-5650-0405-42",
+      "title": "个性化护理促进住院精神分裂症患者心理康复的效果分析",
+      "authors": [
+        "张　磊"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 11
+    },
+    {
+      "doi": "10.37155/2717-5316-0514-5",
+      "title": "机械制造工艺的可靠性分析",
+      "authors": [
+        "党　博"
+      ],
+      "venue": "工程学研究与实用",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 12
+    },
+    {
       "doi": "10.12677/isl.2026.102051",
       "title": "A Study on the Emotional Consumption of Female Groups in Love Simulation Games",
-      "abstract": "",
-      "year": 2026,
+      "authors": [
+        "张, 魏"
+      ],
       "venue": "Interdisciplinary Science Letters",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 13
     },
     {
-      "rank": 4,
       "doi": "10.4016/35543.01",
       "title": "国外综艺节目性感女嘉宾",
-      "abstract": "",
-      "year": 2011,
+      "authors": [],
       "venue": "SciVee",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2011,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "dataset"
+      "rank": 14
     },
     {
-      "rank": 5,
       "doi": "10.69979/3029-2735.25.11.068",
       "title": "乙女游戏中虚拟恋爱关系的建构研究",
-      "abstract": "",
-      "year": 2025,
+      "authors": [],
       "venue": "智慧教育",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 15
     },
     {
-      "rank": 6,
       "doi": "10.1360/zb2001-31-3-240",
       "title": "有机磷化合物高效液相色谱保留和手性识别机理的研究",
-      "abstract": "",
-      "year": null,
+      "authors": [],
       "venue": "Science in China Series B-Chemistry (in Chinese)",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 16
     },
     {
-      "rank": 7,
       "doi": "10.64216/3080-1516.26.04.076",
       "title": "综合艺术课程促进流动儿童艺术与社会性发展的研究分析",
-      "abstract": "",
-      "year": 2026,
+      "authors": [],
       "venue": "当代教育与艺术",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 17
     },
     {
-      "rank": 8,
       "doi": "10.33142/9798963341278",
       "title": "新媒体时代网络舆情传播机制分析与治理研究",
-      "abstract": "<jats:p>本书立足新媒体时代网络舆情的复杂生态，构建了“理论—形态—机制—治理”的完整研究框架。开篇阐释网络舆情的基础理论与核心要素，剖析新媒体环境下其独特特点。随后系统梳理网站、即时通信、移动短视频等主流传播形态。本书重点探究舆情传播的动力机制，包括路径、跨平台特性、虚拟社区扩散规律及生命周期特征，并分析突发事件、大众心理等关键诱因与生成演变逻辑。最后围绕实践应用，系统论述舆情监测预警、应对策略、引导体系构建，以及政府治理创新与AI技术应用，结合舆情图谱构建与生态治理，为新媒体时代网络舆情治理提供理论支撑与实践方案。</jats:p>",
-      "year": 2026,
+      "authors": [
+        "朱, 娜",
+        "郭, 清宇"
+      ],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "<jats:p>本书立足新媒体时代网络舆情的复杂生态，构建了“理论—形态—机制—治理”的完整研究框架。开篇阐释网络舆情的基础理论与核心要素，剖析新媒体环境下其独特特点。随后系统梳理网站、即时通信、移动短视频等主流传播形态。本书重点探究舆情传播的动力机制，包括路径、跨平台特性、虚拟社区扩散规律及生命周期特征，并分析突发事件、大众心理等关键诱因与生成演变逻辑。最后围绕实践应用，系统论述舆情监测预警、应对策略、引导体系构建，以及政府治理创新与AI技术应用，结合舆情图谱构建与生态治理，为新媒体时代网络舆情治理提供理论支撑与实践方案。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "edited-book"
+      "rank": 18
     },
     {
-      "rank": 9,
       "doi": "10.63887/ssrp.2025.1.4.18",
       "title": "船舶轮机管理和养护的有效措施分析",
-      "abstract": "<jats:p>船舶轮机作为船舶动力系统的核心，其管理与养护水平会直接影响船舶安全性。船舶运行环境较为复杂，在实际运转过程中，轮机正常运行是一项基础性工作。针对于船舶轮机管理与养护工作来讲，有效开展这项工作可以提高船舶设备运行效率，进而为相关企业带来更多经济效益。基于此，本文主要分析船舶轮机管理和养护的有效措施，希望可以提升航运企业综合竞争力。</jats:p>",
-      "year": null,
+      "authors": [
+        "武良举"
+      ],
       "venue": "社会科学研究与实践",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>船舶轮机作为船舶动力系统的核心，其管理与养护水平会直接影响船舶安全性。船舶运行环境较为复杂，在实际运转过程中，轮机正常运行是一项基础性工作。针对于船舶轮机管理与养护工作来讲，有效开展这项工作可以提高船舶设备运行效率，进而为相关企业带来更多经济效益。基于此，本文主要分析船舶轮机管理和养护的有效措施，希望可以提升航运企业综合竞争力。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 19
     },
     {
-      "rank": 10,
       "doi": "10.32629/eces.v8i1.19634",
       "title": "以角色游戏为载体促进幼儿社会性发展的实践研究",
-      "abstract": "<jats:p>在游戏本位学习已成为国际学前教育共识的背景下,角色游戏作为幼儿最喜爱的活动形式之一,其蕴含的社会性教育价值备受关注。本文以皮亚杰及维果茨基的发展理论为支撑,结合幼儿年龄特点,系统论述角色游戏与社会性发展的内在关联,并重点从环境创设、情节引导、教师支持、家园协同四个维度,构建以角色游戏为载体促进幼儿社会性发展的实践体系。本研究旨在为一线教师提供可操作、可复制的实践框架,推动“在游戏中学习,在游戏中发展”教育理念的真正落地。</jats:p>",
-      "year": null,
+      "authors": [
+        "刘, 燕"
+      ],
       "venue": "幼儿教育科学",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在游戏本位学习已成为国际学前教育共识的背景下,角色游戏作为幼儿最喜爱的活动形式之一,其蕴含的社会性教育价值备受关注。本文以皮亚杰及维果茨基的发展理论为支撑,结合幼儿年龄特点,系统论述角色游戏与社会性发展的内在关联,并重点从环境创设、情节引导、教师支持、家园协同四个维度,构建以角色游戏为载体促进幼儿社会性发展的实践体系。本研究旨在为一线教师提供可操作、可复制的实践框架,推动“在游戏中学习,在游戏中发展”教育理念的真正落地。</jats:p>",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 20
+    },
+    {
+      "doi": "10.64216/3104-9702.25.03.021",
+      "title": "高校体育教学中实施研究性学习的有效性分析",
+      "authors": [],
+      "venue": "教育科学理论研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "",
-      "title": "本、あり〼。vol.5：「 女性と宇宙」",
       "abstract": "",
-      "year": 2014,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 21
     },
     {
-      "rank": 12,
-      "doi": "",
-      "title": "化学と歩む : チャレンジした女性たちからチャレンジする女性たちへ : 展示パネル",
+      "doi": "10.64216/3080-1494.25.06.047",
+      "title": "幼儿园户外自主游戏促进社会性发展的有效策略",
+      "authors": [],
+      "venue": "东方教育学刊",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
-      "year": 2011,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 22
     },
     {
-      "rank": 13,
-      "doi": "",
-      "title": "ボランティア女性教育情報センターだよりNo.94「コロナ禍の不況は『女性不況』ー影響は女性に集中ー」",
-      "abstract": "",
-      "year": 2022,
+      "doi": "10.65113/kejiao1029",
+      "title": "胶东红色文学作品中女性形象分析和女性叙事研究",
+      "authors": [],
       "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 14,
-      "doi": "",
-      "title": "女性の実業教育のはじまり : チャレンジした女性たち : 展示パネル",
-      "abstract": "",
-      "year": 2010,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 15,
-      "doi": "",
-      "title": "建築と歩む : チャレンジした女性たちからチャレンジする女性たちへ",
-      "abstract": "",
-      "year": 2012,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 16,
-      "doi": "",
-      "title": "女性の歩みを受け継ぐ 女性アーカイブセンター10周年展　パネル",
-      "abstract": "",
-      "year": 2018,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
-      ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 17,
-      "doi": "",
-      "title": "女性の高等教育の黎明 : チャレンジした女性たち : 展示パネル",
-      "abstract": "",
       "year": null,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 23
     },
     {
-      "rank": 18,
-      "doi": "",
-      "title": "ボランティア女性教育情報センターだよりNo.100「特集：女性アーカイブセンター所蔵展示 国際女性年から50年展 どこまで進んだ？日本のジェンダー平等ーキーワードで振り返る50年ー」",
+      "doi": "10.64216/3104-9702.25.08.016",
+      "title": "自然疗愈促进大学生积极心理品质的内在机理和路径分析",
+      "authors": [],
+      "venue": "教育科学理论研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.64216/3104-9672.25.06.051",
+      "title": "当机器拥有“性格”：语音助手用户体验的研究综述",
+      "authors": [],
+      "venue": "全球文化探索",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.18356/6317d732-zh",
+      "title": "创建和平、包容的社会以促进可持续发展，让所有人都能 诉诸司法，在各级建立有效、负责和包容的机构",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "component",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.12677/br.2018.71005",
+      "title": "Research Progress of Plant Active Ingredient Antibacterial Abilities and Mechanism",
+      "authors": [
+        "贺, 可可"
+      ],
+      "venue": "Botanical Research",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 47,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "10.64216/3080-1486.25.11.018",
+      "title": "农村电商扶持政策是否有效促进农民增收——基于中部地区实证分析",
+      "authors": [],
+      "venue": "社会经济导刊",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.69979/3041-0673.25.05.096",
+      "title": "社会保障政策在公共危机管理中的有效性分析",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.69979/3029-2700.25.10.067",
+      "title": "企业人力资源管理中激励机制有效性分析",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.63887/fss.2025.1.6.63",
+      "title": "婚恋创伤女性的心理赋能路径基于咨询实践的团体疗法模式反思",
+      "authors": [
+        "易巧彬"
+      ],
+      "venue": "社会科学前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>本文基于心理咨询的实践经验，聚焦婚恋创伤女性的心理赋能路径，重点分析团体疗法模式的应用效果与存在问题。通过文献综述与案例归纳，深入探讨团体疗法在情感支持、认知重构及行为引导中的具体作用机制，揭示其促进心理康复的优势。研究指出，优化团体成员的筛选和分组策略，融合多元心理技术，强化成员主体地位，是提升心理赋能实效的关键。最后，提出未来心理赋能路径优化的方向和策略建议，为婚恋创伤女性心理健康的持续发展提供理论与实践支持。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1360/csb1991-36-2-151",
+      "title": "高效有机非线性光学新材料&amp;mdash;&amp;mdash;二氯三丙烯基硫脲合汞晶体的生长和性能研究",
+      "authors": [
+        "袁, 多荣"
+      ],
+      "venue": "Chinese Science Bulletin",
+      "year": 1991,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.71411/yishu.2025.v1i1.1024",
+      "title": "数字媒体艺术赋能广彩非遗的传播机制研究——基于 VR 严肃游戏的建构",
+      "authors": [
+        "段茜旬"
+      ],
+      "venue": "艺术与设计前沿",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>在数字技术与文化产业深度融合的背景下，广彩作为岭南地区具有代表性的釉上彩绘瓷种，面临着受众结构老化、学习门槛高和传播渠道单一等问题。虚拟现实及严肃游戏为非遗技艺的沉浸式体验与情境化传播提供了新的路径。本文以数字媒体艺术视角构建“广彩VR严肃游戏”原型系统，通过Unity3D搭建虚拟作坊与展陈空间，结合纹样再设计与场景交互，探索适配当代青年审美和媒介习惯的广彩传播机制。研究采用文献综述与实践型设计研究相结合的方法：一方面梳理VR与严肃游戏在文化遗产传播中的发展脉络及特点；另一方面围绕视觉纹样重构、虚拟场景叙事与交互流程设计。本文的贡献在于，从数字媒体艺术与交互叙事的角度提出了一种以视觉研究为核心的广彩VR严肃游戏建构思路，为广彩及其他工艺类非遗的数字传播提供了可参考的设计框架。本研究通过任务化与关卡式浏览提高参与度与停留时长，缓解传统展陈“看得见、摸不着、学不会”的割裂状态；在不直接替代师徒制技艺教学的前提下，为后续技能训练系统的拓展预留交互接口和叙事基础。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.69979/3029-2808.24.4.020",
+      "title": "心理护理对膝关节置换手术患者的效果分析",
+      "authors": [],
+      "venue": "医学研究",
       "year": 2024,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 34
     },
     {
-      "rank": 19,
-      "doi": "",
-      "title": "女性とスポーツ展～チャレンジした女性たちからチャレンジする女性たちへ～展示パネル",
+      "doi": "10.12677/ecl.2025.142625",
+      "title": "Research on Marketing Strategies for Female Game—Taking “Evolver” as an Example",
+      "authors": [
+        "黄, 稳"
+      ],
+      "venue": "E-Commerce Letters",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 6,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 35
+    },
+    {
+      "doi": "10.12677/ap.2025.155332",
+      "title": "A Study on the Impact of Otome Games on the Views of Marriage and Love of Female College Students",
+      "authors": [
+        "鲍, 月悦"
+      ],
+      "venue": "Advances in Psychology",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 36
+    },
+    {
+      "doi": "10.62662/llyj0104002",
+      "title": "生态系统理论视角下农村留守儿童手机网络游戏沉迷研究",
+      "authors": [],
+      "venue": "理论研究学刊",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 37
+    },
+    {
+      "doi": "10.1111/bjd.19587",
+      "title": "一项探究长期使用生物制剂（包括停药后重新开始使用）对银屑病患者是否安全有效的研究",
+      "authors": [],
+      "venue": "British Journal of Dermatology",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 38
+    },
+    {
+      "doi": "10.37155/2661-4766-0703-43",
+      "title": "ICU感染性休克患者应用分层次护理的效果研究",
+      "authors": [
+        "倪海燕"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 39
+    },
+    {
+      "doi": "10.32629/er.v9i3.6928",
+      "title": "当代大学生婚恋生育心理现状分析及教育策略",
+      "authors": [
+        "薛, 珊"
+      ],
+      "venue": "教育研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>大学生这一群体正处于人生的重要转折点，面临着从校园到社会的过渡，以及个人身份、角色和责任的多重变化。在婚恋方面，他们需要建立健康、平等的两性关系观念，学会有效沟通和解决冲突，以应对未来可能出现的复杂情感问题。在生育方面，随着社会的快速发展和观念的变迁，大学生对生育的认知和态度也在发生变化。因此，各大高校应加强大学生婚恋生育心理教育工作，帮助他们树立正确的生育观念，理解生育对个人、家庭和社会的意义，以及如何在合适的时机做出明智的决策。这不仅有助于他们的个人成长和幸福，也对社会的和谐稳定具有重要意义。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 40
+    },
+    {
+      "doi": "10.69979/3029-2727.26.03.087",
+      "title": "活性炭吸附工艺对微污染水有机物的去除效能优化研究综述",
+      "authors": [],
+      "venue": "建筑技术与创新",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 41
+    },
+    {
+      "doi": "10.12677/ass.2025.14121087",
+      "title": "Decoding Love: A Muti-Dimensional Analysis of Contemporary University Students’ Love Motivation",
+      "authors": [
+        "曲, 欣"
+      ],
+      "venue": "Advances in Social Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 67,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 42
+    },
+    {
+      "doi": "10.37155/2717-5197-0708-1",
+      "title": "飞机维修故障分析和管理改进的研究",
+      "authors": [
+        "田长江"
+      ],
+      "venue": "机械与电子控制工程",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 43
+    },
+    {
+      "doi": "10.32629/bmtr.v8i3.20482",
+      "title": "1例机器人辅助全膝关节置换术联合情志护理的体会",
+      "authors": [
+        "李, 菲",
+        "杨, 爱国",
+        "罗, 黎黎",
+        "曹, 海燕"
+      ],
+      "venue": "基础医学理论研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：1例机器人辅助全膝关节置换术患者的效果，融入情志护理。方法：对1例接受机器人辅助全膝关节置换的患者，实施贯穿围手术期的精细化情志护理。术前，借助机器人手术的3D可视化规划，进行针对性认知教育，化解技术陌生感与手术焦虑；术中，保障手术精密配合，术后，以快速康复流程为载体，整合疼痛管理、早期康复与情志干预，采用疼痛数字评分量表（NRS）及膝关节活动度（Range of Motion）功能评分进行量化评估。结果：患者围手术期心理状态稳定，焦虑评分较干预前显著降低；术后疼痛控制良好，功能锻炼依从性高，膝关节功能恢复好，患者对手术及护理过程表示高度满意。结论：本案例表明，将情志护理深度融入机器人辅助膝关节置换的围手术期管理中，能有效促进患者心理与生理的协同康复。为优化关节置换患者的整体护理方案提供了新思路。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 44
+    },
+    {
+      "doi": "10.69979/3041-0673.26.02.002",
+      "title": "节奏分析视域下的玩家游戏体验研究——以《王者荣耀》为例",
+      "authors": [],
+      "venue": "科技创新发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 45
+    },
+    {
+      "doi": "10.71411/-2025-v1i3-755",
+      "title": "AI驱动下艺术设计教育的“主体性”危机与伦理&lt;b&gt;重构&lt;/b&gt;路径研究",
+      "authors": [
+        "刘哲"
+      ],
+      "venue": "当代设计研究",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>生成式人工智能（AIGC）为艺术设计教育带来了深刻的“主体性”危机。本研究基于康德的“意志自律”与弗莱雷的“批判意识”理论，将此危机界定为创作意图的“他律化”与批判反思能力的“悬置”。通过对现有文献的系统梳理，研究揭示了AIGC在版权归属、集体同质化、学术诚信及认知卸载四个维度对学生主体性的侵蚀机制。针对当前应对策略缺乏系统性顶层设计的现状，本研究构建了一个整合性的教育框架。该框架以“分层整合”教学模式为核心路径，通过“提示词工程学”等课程深化主体意图，以“AI透明度协议”保障伦理规范，并借助“双轨评估体系”来衡量思辨过程。最终，本研究旨在推动艺术设计教育向“主体性培育”体系转型，为培养兼具技术驾驭能力与人文价值关怀的“设计思想家”提供系统性方案。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 46
+    },
+    {
+      "doi": "10.12677/design.2023.84502",
+      "title": "Study on Subjectivity and Emotion of AI Art Design",
+      "authors": [
+        "王, 兴珍"
+      ],
+      "venue": "Design",
       "year": 2023,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 47
     },
     {
-      "rank": 20,
-      "doi": "",
-      "title": "ボランティア女性教育情報センターだよりNo.90「女性アーカイブセンター所蔵展示 ベアテ・シロタ・ゴードン展～日本国憲法に男女平等の思いを込めて～」",
-      "abstract": "",
-      "year": 2019,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.37155/2717-5197-0805-58",
+      "title": "铝加工包装机关键部件失效机理与预防性维护研究",
+      "authors": [
+        "许仓孝",
+        "王世博"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "机械与电子控制工程",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 48
+    },
+    {
+      "doi": "10.37155/2717-5650-0605-22",
+      "title": "提供延续性护理在乳腺伤口护理门诊对乳腺癌患者进行健康宣教术后焦虑和抑郁情绪的效果分析",
+      "authors": [
+        "边丽娜"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 49
+    },
+    {
+      "doi": "10.32629/as.v9i5.3966",
+      "title": "季节交替期粮堆结露机理分析及综合防控技术研究",
+      "authors": [
+        "许, 发兵"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>粮食在仓储保管过程中,季节交替阶段气温、湿度剧烈波动,极易引发粮堆结露,进而 导致粮食吸湿、发热、霉变、品质劣变甚至数量损失,是影响储粮安全的主要隐患之 一。本文以粮食湿热传递理论为基础,系统分析粮堆内部气流运动方向与水汽迁移规 律,阐述粮食对水分的吸附与解吸动态平衡过程,结合ID函数图(等温吸湿曲线)特征 ,深入探讨相对湿度、绝对湿度、平衡水分与粮食湿含量之间的线性耦合关系,揭示 季节交替期粮堆结露的热力学与动力学成因。在此基础上,从控温、控湿、控气流、 密闭隔热、通风管理、智能预警等方面构建一套可落地、可操作的防结露综合防控 体系,为一线粮食仓储保管员提供理论依据与实践指导。研究表明,控制粮堆内外温 差、阻断水汽定向迁移、维持吸附解吸动态平衡、稳定仓内温湿度场是预防结露的 核心关键,科学实施分层控温、精准通风、密闭压盖等措施可显著降低结露发生率, 保障粮食长期安全储存。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 50
     }
   ]
 }

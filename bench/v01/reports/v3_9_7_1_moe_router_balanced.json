@@ -14,42 +14,42 @@
     "class_weight": "balanced",
     "report_balanced_metrics": true
   },
-  "n_queries": 25,
+  "n_queries": 12,
   "label_distribution": {
-    "arxiv": 0,
-    "openalex": 24,
-    "s2": 0,
-    "crossref": 1,
-    "core": 0
+    "arxiv": 2,
+    "openalex": 2,
+    "s2": 3,
+    "crossref": 5,
+    "aminer": 0
   },
   "cv_aggregate": {
-    "mean_accuracy": 0.96,
-    "std_accuracy": 0.07999999999999999,
-    "mean_balanced_accuracy": 0.9,
-    "std_balanced_accuracy": 0.2,
-    "mean_macro_f1": 0.888888888888889,
-    "std_macro_f1": 0.22222222222222224
+    "mean_accuracy": 0.2333333333333333,
+    "std_accuracy": 0.2,
+    "mean_balanced_accuracy": 0.3,
+    "std_balanced_accuracy": 0.24494897427831783,
+    "mean_macro_f1": 0.16666666666666666,
+    "std_macro_f1": 0.13944333775567927
   },
   "folds": [
     {
       "fold": 0,
-      "n_train": 20,
-      "n_test": 5,
-      "accuracy": 1.0,
-      "balanced_accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 9,
+      "n_test": 3,
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.25,
       "per_class_metrics": {
         "arxiv": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 0
+          "support": 2
         },
         "openalex": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 5
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
         },
         "s2": {
           "precision": 0.0,
@@ -58,12 +58,12 @@
           "support": 0
         },
         "crossref": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
         },
-        "core": {
+        "aminer": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
@@ -71,20 +71,20 @@
         }
       },
       "per_class_accuracy": {
-        "arxiv": null,
-        "openalex": 1.0,
+        "arxiv": 0.0,
+        "openalex": null,
         "s2": null,
-        "crossref": null,
-        "core": null
+        "crossref": 1.0,
+        "aminer": null
       }
     },
     {
       "fold": 1,
-      "n_train": 20,
-      "n_test": 5,
-      "accuracy": 1.0,
-      "balanced_accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 9,
+      "n_test": 3,
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.25,
       "per_class_metrics": {
         "arxiv": {
           "precision": 0.0,
@@ -93,24 +93,24 @@
           "support": 0
         },
         "openalex": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 5
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
         },
         "s2": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 0
+          "support": 2
         },
         "crossref": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
         },
-        "core": {
+        "aminer": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
@@ -119,19 +119,19 @@
       },
       "per_class_accuracy": {
         "arxiv": null,
-        "openalex": 1.0,
-        "s2": null,
-        "crossref": null,
-        "core": null
+        "openalex": null,
+        "s2": 0.0,
+        "crossref": 1.0,
+        "aminer": null
       }
     },
     {
       "fold": 2,
-      "n_train": 20,
-      "n_test": 5,
-      "accuracy": 1.0,
-      "balanced_accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 10,
+      "n_test": 2,
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
       "per_class_metrics": {
         "arxiv": {
           "precision": 0.0,
@@ -140,57 +140,10 @@
           "support": 0
         },
         "openalex": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 5
-        },
-        "s2": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 0
-        },
-        "crossref": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 0
-        },
-        "core": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 0
-        }
-      },
-      "per_class_accuracy": {
-        "arxiv": null,
-        "openalex": 1.0,
-        "s2": null,
-        "crossref": null,
-        "core": null
-      }
-    },
-    {
-      "fold": 3,
-      "n_train": 20,
-      "n_test": 5,
-      "accuracy": 0.8,
-      "balanced_accuracy": 0.5,
-      "macro_f1": 0.4444444444444444,
-      "per_class_metrics": {
-        "arxiv": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "support": 0
-        },
-        "openalex": {
-          "precision": 0.8,
-          "recall": 1.0,
-          "f1": 0.8888888888888888,
-          "support": 4
+          "support": 1
         },
         "s2": {
           "precision": 0.0,
@@ -204,7 +157,7 @@
           "f1": 0.0,
           "support": 1
         },
-        "core": {
+        "aminer": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
@@ -213,19 +166,19 @@
       },
       "per_class_accuracy": {
         "arxiv": null,
-        "openalex": 1.0,
+        "openalex": 0.0,
         "s2": null,
         "crossref": 0.0,
-        "core": null
+        "aminer": null
       }
     },
     {
-      "fold": 4,
-      "n_train": 20,
-      "n_test": 5,
-      "accuracy": 1.0,
-      "balanced_accuracy": 1.0,
-      "macro_f1": 1.0,
+      "fold": 3,
+      "n_train": 10,
+      "n_test": 2,
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
       "per_class_metrics": {
         "arxiv": {
           "precision": 0.0,
@@ -234,10 +187,10 @@
           "support": 0
         },
         "openalex": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "support": 5
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
         },
         "s2": {
           "precision": 0.0,
@@ -249,9 +202,9 @@
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
-          "support": 0
+          "support": 1
         },
-        "core": {
+        "aminer": {
           "precision": 0.0,
           "recall": 0.0,
           "f1": 0.0,
@@ -260,10 +213,57 @@
       },
       "per_class_accuracy": {
         "arxiv": null,
-        "openalex": 1.0,
+        "openalex": 0.0,
         "s2": null,
-        "crossref": null,
-        "core": null
+        "crossref": 0.0,
+        "aminer": null
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 10,
+      "n_test": 2,
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3333333333333333,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "crossref": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": null,
+        "s2": 0.0,
+        "crossref": 1.0,
+        "aminer": null
       }
     }
   ]

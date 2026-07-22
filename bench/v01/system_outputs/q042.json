@@ -1,466 +1,4663 @@
 {
   "query_id": "q042",
   "query": "干燥综合症的原因以及干燥综合症如何保养 (Sjögren's syndrome)",
-  "generated_at": "2026-07-14T23:31:39",
-  "config": "v3.9.0-baseline-n50",
-  "by_engine": {
-    "crossref": 10,
-    "openalex": 0,
-    "arxiv": 10,
-    "semanticscholar": 0,
-    "core": 10
+  "topic_bucket": "bio",
+  "source": "user",
+  "generated_at": "2026-07-22T11:30:44",
+  "config": {
+    "limit": 50,
+    "engine": "crossref,openalex,arxiv,semanticscholar,aminer,cnki",
+    "sort_by": "cite",
+    "enrich_top": 0,
+    "fix_version": "v3.9.10.11",
+    "s2_throttle": "1 RPS + 1s/2s/4s backoff (max 3 retries)"
   },
-  "dedup_count": 30,
+  "n_returned": 187,
+  "top_n": 50,
+  "by_engine": {
+    "crossref": 50,
+    "openalex": 0,
+    "arxiv": 50,
+    "semanticscholar": 50,
+    "aminer": 40,
+    "cnki": 1
+  },
   "results": [
     {
-      "rank": 1,
+      "doi": "10.1136/ard.61.6.554",
+      "arxiv_id": "",
+      "title": "Classification criteria for Sjögren's syndrome: a revised version of the European criteria proposed by the American-European Consensus Group",
+      "authors": [
+        "C. Vitali",
+        "S. Bombardieri",
+        "R. Jonsson",
+        "H. Moutsopoulos",
+        "E. Alexander",
+        "S. Carsons",
+        "T. Daniels",
+        "P. C. Fox",
+        "Robert I. Fox",
+        "S. Kassan",
+        "S. Pillemer",
+        "N. Talal",
+        "M. Weisman"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2002,
+      "cited_by_count": 5391,
+      "influential_cite_count": 240,
+      "reference_count": 32,
+      "tldr": "These classification criteria for Sjögren's syndrome have been re-examined by consensus group members, who have introduced some modifications, more clearly defined the rules for classifying patients with primary or secondary SS, and provided more precise exclusion criteria.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc1754137?pdf=render",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "These classification criteria for Sjögren's syndrome have been re-examined by consensus group members, who have introduced some modifications, more clearly defined the rules for classifying patients with primary or secondary SS, and provided more precise exclusion criteria.",
+      "rank": 1
+    },
+    {
+      "doi": "10.1038/s41591-021-01283-z",
+      "title": "Post-acute COVID-19 Syndrome",
+      "authors": [
+        "Ani Nalbandian"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2021,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "605b181ae4510cd7c8c7cc92",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 2
+    },
+    {
+      "doi": "10.1093/eurheartj/ehz425",
+      "title": "2019 ESC Guidelines for the Diagnosis and Management of Chronic Coronary Syndromes",
+      "authors": [
+        "Juhani Knuuti"
+      ],
+      "venue": "European heart journal",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d7b6a3c47c8f76646dbc78c",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 3
+    },
+    {
+      "doi": "10.1016/s2213-2600(20)30076-x",
+      "title": "Pathological Findings of COVID-19 Associated with Acute Respiratory Distress Syndrome",
+      "authors": [
+        "Zhe Xu"
+      ],
+      "venue": "The Lancet Respiratory medicine",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e4e78919e795e32e3db20ba",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 4
+    },
+    {
+      "doi": "10.1016/s0140-6736(20)30628-0",
+      "title": "COVID-19: Consider Cytokine Storm Syndromes and Immunosuppression",
+      "authors": [
+        "Puja Mehta"
+      ],
+      "venue": "LANCET",
+      "year": 2020,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8eec3f9fced0a24b7aae49",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 5
+    },
+    {
+      "doi": "10.1111/dom.14954",
+      "title": "Lixisenatide in Patients with Type 2 Diabetes and Acute Coronary Syndrome",
+      "authors": [
+        "Marc A. Pfeffer"
+      ],
+      "venue": "Diabetes Obesity and Metabolism",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56604b940cf2dab45b564d53",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 6
+    },
+    {
+      "doi": "10.4103/0028-3886.349616",
+      "title": "Morvan's Syndrome Presenting with Psychiatric Manifestations-A Case Report and Review of the Literature",
+      "authors": [
+        "P N Suresh Kumar"
+      ],
+      "venue": "Neurology India",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62dbd5005aee126c0f61d962",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 7
+    },
+    {
+      "doi": "10.1542/peds.2021-053843eeeee",
+      "title": "Multisystem Inflammatory Syndrome in U.S. Children and Adolescents",
+      "authors": [
+        "Marielle C. Young"
+      ],
+      "venue": "PEDIATRICS",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "627cd7795aee126c0f3f5558",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 8
+    },
+    {
+      "doi": "10.1126/science.abb8925",
+      "title": "Cytokine Release Syndrome in Severe COVID-19",
+      "authors": [
+        "John B. Moore"
+      ],
+      "venue": "Science",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e9c22529fced0a24b1c90c5",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 9
+    },
+    {
+      "doi": "10.1056/nejmoa2021680",
+      "title": "Multisystem Inflammatory Syndrome in U.S. Children and Adolescents",
+      "authors": [
+        "Leora R. Feldstein"
+      ],
+      "venue": "NEW ENGLAND JOURNAL OF MEDICINE",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5efcbd3a9fced0a24bb60ffc",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 10
+    },
+    {
+      "doi": "10.1002/art.39859",
+      "arxiv_id": "",
+      "title": "2016 ACR-EULAR Classification Criteria for primary Sjögren’s Syndrome: A Consensus and Data-Driven Methodology Involving Three International Patient Cohorts",
+      "authors": [
+        "C. Shiboski",
+        "Steve Shiboski",
+        "R. Seror",
+        "L. Criswell",
+        "M. Labetoulle",
+        "Tom Lietman",
+        "A. Rasmussen",
+        "H. Scofield",
+        "C. Vitali",
+        "S. Bowman",
+        "X. Mariette"
+      ],
+      "venue": "Arthritis & Rheumatology",
+      "year": 2016,
+      "cited_by_count": 2294,
+      "influential_cite_count": 90,
+      "reference_count": 44,
+      "tldr": "To develop and validate an international set of classification criteria for primary Sjögren's syndrome using guidelines from the American College of Rheumatology and the European League Against Rheumatism.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/art.39859",
+      "source": "semanticscholar",
+      "type": "Study",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "To develop and validate an international set of classification criteria for primary Sjögren's syndrome using guidelines from the American College of Rheumatology and the European League Against Rheumatism.",
+      "rank": 11
+    },
+    {
+      "doi": "10.1111/j.1742-1241.1953.tb05604.x",
+      "arxiv_id": "",
+      "title": "Sjögren's Syndrome",
+      "authors": [
+        "E. F. Cadman"
+      ],
+      "venue": "Medicine illustrated",
+      "year": 1953,
+      "cited_by_count": 1791,
+      "influential_cite_count": 85,
+      "reference_count": 6,
+      "tldr": "The term \"Sjogren's disease\" has been used as the condition appears to be a fairly clearly defined one, but until more is known about its aetiology and especially its relationship to the syndromes of Mikulicz and Heerfordt, it might be as well to avoid the term and to use the less specific expression of \" Sjogen's syndrome.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The term \"Sjogren's disease\" has been used as the condition appears to be a fairly clearly defined one, but until more is known about its aetiology and especially its relationship to the syndromes of Mikulicz and Heerfordt, it might be as well to avoid the term and to use the less specific expression of \" Sjogen's syndrome.",
+      "rank": 12
+    },
+    {
+      "doi": "10.1002/ART.1780360309",
+      "arxiv_id": "",
+      "title": "Preliminary criteria for the classification of Sjögren's syndrome. Results of a prospective concerted action supported by the European Community.",
+      "authors": [
+        "C. Vitali",
+        "S. Bombardieri",
+        "H. Moutsopoulos",
+        "G. Balestrieri",
+        "W. Bencivelli",
+        "R. Bernstein",
+        "K. Bjerrum",
+        "Susanna Braga",
+        "J. Coll",
+        "S. Vita",
+        "A. Drosos",
+        "M. Ehrenfeld",
+        "P. Hatron",
+        "E. Hay",
+        "D. Isenberg",
+        "A. Janin",
+        "J. Kalden",
+        "L. Kater",
+        "Y. Konttinen",
+        "P. Maddison",
+        "R. Maini",
+        "R. Manthorpe",
+        "O. Meyer",
+        "P. Ostuni",
+        "Y. Pennec",
+        "J. Prause",
+        "A. Richards",
+        "B. Sauvezie",
+        "M. Schiødt",
+        "M. Sciuto",
+        "C. Scully",
+        "Yehuda Shoenfeld",
+        "F. Skopouli",
+        "J. Smolen",
+        "M. Snaith",
+        "M. Tishler",
+        "S. Todesco",
+        "G. Valesini",
+        "P. Venables",
+        "M. Wattiaux",
+        "P. Youinou"
+      ],
+      "venue": "Arthritis & Rheumatism",
+      "year": 1993,
+      "cited_by_count": 1581,
+      "influential_cite_count": 28,
+      "reference_count": 21,
+      "tldr": "Using the findings of this prospective multicenter European study, general agreement can be reached on the diagnostic procedures to be used for patients with SS.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Study",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Using the findings of this prospective multicenter European study, general agreement can be reached on the diagnostic procedures to be used for patients with SS.",
+      "rank": 13
+    },
+    {
+      "doi": "10.1002/acr.21591",
+      "arxiv_id": "",
+      "title": "American College of Rheumatology Classification Criteria for Sjögren’s Syndrome: A Data-Driven, Expert Consensus Approach in the SICCA Cohort",
+      "authors": [
+        "S. Shiboski",
+        "C. Shiboski",
+        "L. Criswell",
+        "A. Baer",
+        "S. Challacombe",
+        "Hector E Lanfranchi",
+        "M. Schiødt",
+        "H. Umehara",
+        "F. Vivino",
+        "Yongju Zhao",
+        "Yan Dong",
+        "D. Greenspan",
+        "A. M. Heidenreich",
+        "Pekka Helin",
+        "Bruce Kirkham",
+        "K. Kitagawa",
+        "G. Larkin",
+        "Mengtao Li",
+        "T. Lietman",
+        "J. Lindegaard",
+        "N. McNamara",
+        "K. Sack",
+        "P. Shirlaw",
+        "S. Sugai",
+        "C. Vollenweider",
+        "J. Whitcher",
+        "A. Wu",
+        "S. Zhang",
+        "W. Zhang",
+        "J. Greenspan",
+        "T. Daniels"
+      ],
+      "venue": "Arthritis care & research",
+      "year": 2012,
+      "cited_by_count": 1354,
+      "influential_cite_count": 52,
+      "reference_count": 36,
+      "tldr": "New classification criteria for Sjögren's syndrome are proposed, which are needed considering the emergence of biologic agents as potential treatments and their associated comorbidity.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/acr.21591",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "New classification criteria for Sjögren's syndrome are proposed, which are needed considering the emergence of biologic agents as potential treatments and their associated comorbidity.",
+      "rank": 14
+    },
+    {
+      "doi": "10.1136/annrheumdis-2016-210571",
+      "arxiv_id": "",
+      "title": "2016 American College of Rheumatology/European League Against Rheumatism classification criteria for primary Sjögren's syndrome",
+      "authors": [
+        "C. Shiboski",
+        "S. Shiboski",
+        "R. Seror",
+        "L. Criswell",
+        "M. Labetoulle",
+        "T. Lietman",
+        "A. Rasmussen",
+        "H. Scofield",
+        "C. Vitali",
+        "S. Bowman",
+        "X. Mariette"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2016,
+      "cited_by_count": 1045,
+      "influential_cite_count": 8,
+      "reference_count": 47,
+      "tldr": "A single set of data-driven consensus classification criteria for primary Sjögren's syndrome performed well in validation analyses and are well suited as criteria for enrolment in clinical trials.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Study",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A single set of data-driven consensus classification criteria for primary Sjögren's syndrome performed well in validation analyses and are well suited as criteria for enrolment in clinical trials.",
+      "rank": 15
+    },
+    {
+      "doi": "10.1056/NEJMcp1702514",
+      "arxiv_id": "",
+      "title": "Primary Sjögren's Syndrome",
+      "authors": [
+        "X. Mariette",
+        "L. Criswell"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2018,
+      "cited_by_count": 892,
+      "influential_cite_count": 44,
+      "reference_count": 39,
+      "tldr": "In the absence of trials involving patients with primary Sjögren's syndrome, severe organ manifestations are treated with immunosuppressive agents (including prednisone, methotrexate, mycophenolate sodium, azathioprine, and cyclophosphamide), in accordance with guidelines for systemic lupus erythematosus and other connective‐tissue diseases.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.5281/zenodo.7614340",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "In the absence of trials involving patients with primary Sjögren's syndrome, severe organ manifestations are treated with immunosuppressive agents (including prednisone, methotrexate, mycophenolate sodium, azathioprine, and cyclophosphamide), in accordance with guidelines for systemic lupus erythematosus and other connective‐tissue diseases.",
+      "rank": 16
+    },
+    {
+      "doi": "10.1136/annrheumdis-2014-205375",
+      "arxiv_id": "",
+      "title": "Epidemiology of primary Sjögren's syndrome: a systematic review and meta-analysis",
+      "authors": [
+        "B. Qin",
+        "Jiaqi Wang",
+        "Zaixing Yang",
+        "Min Yang",
+        "Ning Ma",
+        "Fenglou Huang",
+        "R. Zhong"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2014,
+      "cited_by_count": 811,
+      "influential_cite_count": 72,
+      "reference_count": 73,
+      "tldr": "A systematic review of the epidemiology of primary Sjögren's syndrome to assess the prevalence rates (PRs) and incidence rates (IRs), and to investigate possible geographic variations in pSS to better understand the global epidemiology.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A systematic review of the epidemiology of primary Sjögren's syndrome to assess the prevalence rates (PRs) and incidence rates (IRs), and to investigate possible geographic variations in pSS to better understand the global epidemiology.",
+      "rank": 17
+    },
+    {
+      "doi": "10.1076/CEYR.19.3.201.5309",
+      "arxiv_id": "",
+      "title": "Altered cytokine balance in the tear fluid and conjunctiva of patients with Sjögren's syndrome keratoconjunctivitis sicca.",
+      "authors": [
+        "S. Pflugfelder",
+        "David L. Jones",
+        "Z. Ji",
+        "Adolfo Afonso",
+        "D. Monroy"
+      ],
+      "venue": "Current Eye Research",
+      "year": 1999,
+      "cited_by_count": 644,
+      "influential_cite_count": 15,
+      "reference_count": 46,
+      "tldr": "The balance of cytokines in the tear fluid and conjunctival epithelium is altered in Sjögren's syndrome and new insight into the pathogenesis of keratoconjunctivitis is provided and potential targets for therapy are provided.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The balance of cytokines in the tear fluid and conjunctival epithelium is altered in Sjögren's syndrome and new insight into the pathogenesis of keratoconjunctivitis is provided and potential targets for therapy are provided.",
+      "rank": 18
+    },
+    {
+      "doi": "10.1136/annrheumdis-2019-216114",
+      "arxiv_id": "",
+      "title": "EULAR recommendations for the management of Sjögren’s syndrome with topical and systemic therapies",
+      "authors": [
+        "M. Ramos-Casals",
+        "P. Brito-Zerón",
+        "S. Bombardieri",
+        "H. Bootsma",
+        "S. De Vita",
+        "T. Dörner",
+        "B. Fisher",
+        "J. Gottenberg",
+        "G. Hernández-Molina",
+        "A. Kocher",
+        "B. Kostov",
+        "A. Kruize",
+        "T. Mandl",
+        "W. Ng",
+        "S. Retamozo",
+        "R. Seror",
+        "Y. Shoenfeld",
+        "A. Sisó-Almirall",
+        "A. Tzioufas",
+        "C. Vitali",
+        "S. Bowman",
+        "X. Mariette"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2019,
+      "cited_by_count": 615,
+      "influential_cite_count": 32,
+      "reference_count": 130,
+      "tldr": "The 2019 EULAR recommendations synthesise current thinking on SjS treatment in a set of overarching principles and recommendations and it is hoped that the current recommendations will be broadly applied in clinical practice and/or serve as a template for national societies to develop local recommendations.",
+      "is_oa": true,
+      "oa_url": "https://ard.bmj.com/content/annrheumdis/79/1/3.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "abstract": "The 2019 EULAR recommendations synthesise current thinking on SjS treatment in a set of overarching principles and recommendations and it is hoped that the current recommendations will be broadly applied in clinical practice and/or serve as a template for national societies to develop local recommendations.",
+      "rank": 19
+    },
+    {
+      "doi": "10.1002/14651858.cd003200.pub6",
+      "title": "Exercise Therapy for Chronic Fatigue Syndrome",
+      "authors": [
+        "Lillebeth Larun"
+      ],
+      "venue": "The Cochrane database of systematic reviews",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a6b6dc65ce054aad726f44",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 20
+    },
+    {
+      "doi": "10.53347/rid-162236",
+      "title": "Autoimmune/inflammatory syndrome induced by adjuvants",
+      "authors": [
+        "Henry Knipe"
+      ],
+      "venue": "Radiopaedia.org",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d1802d68f896efaa55178",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 21
+    },
+    {
+      "doi": "10.1201/9781003329732-6",
+      "title": "Gut Microbiome and the Metabolic Syndrome",
+      "authors": [
+        "Shivani Srivastava"
+      ],
+      "venue": "The Metabolic Syndrome",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578fbc5939a5f4082ac7be0",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 22
+    },
+    {
+      "doi": "10.1016/j.jacasi.2023.05.004",
+      "title": "The Increasing Prevalence of Metabolic Syndrome in Korea",
+      "authors": [
+        "Andrea J. Lobene"
+      ],
+      "venue": "JACC Asia",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65792098939a5f4082e6f7bf",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 23
+    },
+    {
+      "doi": "10.1007/978-3-030-90977-2_13",
+      "title": "Labial Salivary Gland Biopsy in Sjögren’s Syndrome",
+      "authors": [
+        "Alen Zabotti"
+      ],
+      "venue": "Contemporary Rheumatology Sjögren’s Syndrome and the Salivary Glands",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac01985aee126c0fab8dce",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 24
+    },
+    {
+      "doi": "10.1056/nejmc1902955",
+      "title": "Alirocumab after Acute Coronary Syndrome",
+      "authors": [
+        "Andrzej Budaj"
+      ],
+      "venue": "CIRCULATION",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c0f8f8fda562944aca5c66a",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 25
+    },
+    {
+      "doi": "10.1016/j.jacc.2008.07.051",
+      "title": "Cardiorenal Syndrome.",
+      "authors": [
+        "C. Ronco"
+      ],
+      "venue": "Journal of the American College of Cardiology",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ff9f4f6d4150a363c6941af",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 26
+    },
+    {
+      "doi": "10.1007/978-981-16-7337-5_5",
+      "title": "Syndromic Retinitis Pigmentosa",
+      "authors": [
+        "Chang Ki Yoon"
+      ],
+      "venue": "Inherited Retinal Disease",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6230062b5aee126c0fa0fa76",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 27
+    },
+    {
+      "doi": "",
+      "title": "Cytokine release syndrome",
+      "authors": [
+        "Emma Cookson"
+      ],
+      "venue": "LANCET HAEMATOLOGY",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62f602c890e50fcafdf32600",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 28
+    },
+    {
+      "doi": "10.1055/a-1893-7859",
+      "title": "The 22q11 Deletion Syndrome",
+      "authors": [
+        "Amelie Schaefer"
+      ],
+      "venue": "SPRACHE-STIMME-GEHOR",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64d4a5263fda6d7f06dc638e",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 29
+    },
+    {
+      "doi": "10.1016/j.cub.2021.01.043",
+      "title": "Fragile X Syndrome",
+      "authors": [
+        "Paul J Hagerman"
+      ],
+      "venue": "Current biology  CB",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60bc9fcde4510cd7c889f280",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 30
+    },
+    {
+      "doi": "10.1016/S0140-6736(21)00439-6",
+      "title": "Acute respiratory distress syndrome",
+      "authors": [
+        "Nuala J. Meyer"
+      ],
+      "venue": "LANCET",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "619bafca1c45e57ce9fd8512",
+      "matched_phrase": "syndrome)",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 31
+    },
+    {
+      "doi": "10.1056/nejmc1804598",
+      "title": "Primary Sjögren's Syndrome.",
+      "authors": [
+        "Xavier Mariette"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5e8eba139fced0a24b680b62",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 32
+    },
+    {
+      "doi": "10.1056/nejmcp1702514",
+      "title": "Primary Sjögren's Syndrome",
+      "authors": [
+        "X. Mariette"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2018,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6679290ea925a558d54b5212",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 33
+    },
+    {
+      "doi": "10.1136/ard.2005.041186",
+      "arxiv_id": "",
+      "title": "Lymphoma and other malignancies in primary Sjögren’s syndrome: a cohort study on cancer incidence and lymphoma predictors",
+      "authors": [
+        "E. Theander",
+        "G. Henriksson",
+        "O. Ljungberg",
+        "T. Mandl",
+        "R. Manthorpe",
+        "L. Jacobsson"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2005,
+      "cited_by_count": 581,
+      "influential_cite_count": 24,
+      "reference_count": 61,
+      "tldr": "A 16-fold increased risk for development of NHL was found and CD4+ T lymphocytopenia is an additional strong risk factor for developing lymphoma.",
+      "is_oa": true,
+      "oa_url": "https://europepmc.org/articles/pmc1798187?pdf=render",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A 16-fold increased risk for development of NHL was found and CD4+ T lymphocytopenia is an additional strong risk factor for developing lymphoma.",
+      "rank": 34
+    },
+    {
+      "doi": "10.1007/s10238-021-00728-6",
+      "arxiv_id": "",
+      "title": "Sjögren’s syndrome: a systemic autoimmune disease",
+      "authors": [
+        "S. Negrini",
+        "G. Emmi",
+        "M. Greco",
+        "M. Borro",
+        "Federica Sardanelli",
+        "G. Murdaca",
+        "F. Indiveri",
+        "F. Puppo"
+      ],
+      "venue": "Clinical and Experimental Medicine (Testo stampato)",
+      "year": 2021,
+      "cited_by_count": 399,
+      "influential_cite_count": 19,
+      "reference_count": 173,
+      "tldr": "The objective of this review paper is to summarize the recent literature on Sjögren’s syndrome, starting from its pathogenesis to current therapeutic options.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-021-00728-6.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "abstract": "The objective of this review paper is to summarize the recent literature on Sjögren’s syndrome, starting from its pathogenesis to current therapeutic options.",
+      "rank": 35
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "The spectrum of benign to malignant lymphoproliferation in Sjögren's syndrome.",
+      "authors": [
+        "L. G. Anderson",
+        "N. Talal"
+      ],
+      "venue": "Clinical and Experimental Immunology",
+      "year": 1972,
+      "cited_by_count": 347,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "In Sjogren's syndrome, as in these other conditions, it seems likely that a combination of genetic, immunologic, and viral or other unknown environmental factors plays a role in pathogenesis.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "In Sjogren's syndrome, as in these other conditions, it seems likely that a combination of genetic, immunologic, and viral or other unknown environmental factors plays a role in pathogenesis.",
+      "rank": 36
+    },
+    {
+      "doi": "10.1002/ART.22536",
+      "arxiv_id": "",
+      "title": "Improvement of Sjögren's syndrome after two infusions of rituximab (anti-CD20).",
+      "authors": [
+        "V. Devauchelle-Pensec",
+        "Y. Pennec",
+        "J. Morvan",
+        "J. Pers",
+        "C. Daridon",
+        "S. Jousse-Joulin",
+        "A. Roudaut",
+        "C. Jamin",
+        "Yves Renaudineau",
+        "I. Q. Roué",
+        "B. Cochener",
+        "P. Youinou",
+        "A. Saraux"
+      ],
+      "venue": "Arthritis & Rheumatism",
+      "year": 2007,
+      "cited_by_count": 335,
+      "influential_cite_count": 12,
+      "reference_count": 46,
+      "tldr": "Low-dose rituximab infusions induced a rapid depletion of B cells in the blood and SG and could improve primary Sjögren's syndrome, and controlled studies are needed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Low-dose rituximab infusions induced a rapid depletion of B cells in the blood and SG and could improve primary Sjögren's syndrome, and controlled studies are needed.",
+      "rank": 37
+    },
+    {
+      "doi": "10.1016/j.autrev.2009.11.004",
+      "arxiv_id": "",
+      "title": "The geoepidemiology of Sjögren's syndrome.",
+      "authors": [
+        "C. Mavragani",
+        "H. Moutsopoulos"
+      ],
+      "venue": "Autoimmunity Reviews",
+      "year": 2010,
+      "cited_by_count": 329,
+      "influential_cite_count": 18,
+      "reference_count": 40,
+      "tldr": "Although the clinical manifestations of pSS patients are mainly those of an autoimmune exocrinopathy, almost half of patients develop extraglandular disease, which may be manifested either by epithelial lymphocytic invasion of lung, liver, or kidney (resulting in interstitial nephritis) or by skin vasculitis, peripheral neuropathy, glomerulonephritis, and low C4 levels.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Although the clinical manifestations of pSS patients are mainly those of an autoimmune exocrinopathy, almost half of patients develop extraglandular disease, which may be manifested either by epithelial lymphocytic invasion of lung, liver, or kidney (resulting in interstitial nephritis) or by skin vasculitis, peripheral neuropathy, glomerulonephritis, and low C4 levels.",
+      "rank": 38
+    },
+    {
+      "doi": "10.7326/0003-4819-98-2-155",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome: association of anti-Ro(SS-A) antibodies with vasculitis, hematologic abnormalities, and serologic hyperreactivity.",
+      "authors": [
+        "E. Alexander",
+        "F. Arnett",
+        "T. Provost",
+        "M. Stevens"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 1983,
+      "cited_by_count": 312,
+      "influential_cite_count": 3,
+      "reference_count": 30,
+      "tldr": "The presence of anti-Ro(SS-A) antibodies defines a subset of patients with Sjögren's syndrome who have systemic clinical manifestations including vasculitis, hematologic abnormalities, and serologic hyperreactivity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The presence of anti-Ro(SS-A) antibodies defines a subset of patients with Sjögren's syndrome who have systemic clinical manifestations including vasculitis, hematologic abnormalities, and serologic hyperreactivity.",
+      "rank": 39
+    },
+    {
+      "doi": "10.3109/s10165-004-0338-x",
+      "arxiv_id": "",
+      "title": "Revised Japanese criteria for Sjögren's syndrome (1999): availability and validity",
+      "authors": [
+        "T. Fujibayashi",
+        "S. Sugai",
+        "N. Miyasaka",
+        "Y. Hayashi",
+        "K. Tsubota"
+      ],
+      "venue": "Modern Rheumatology",
+      "year": 2004,
+      "cited_by_count": 302,
+      "influential_cite_count": 10,
+      "reference_count": 12,
+      "tldr": "To evaluate the validity of the revised criteria, the records of 900 patients, including SS patients and non-SS controls, from 54 clinical centers were registered and analyzed and the accuracy of the criteria was found to have 96.5% accuracy for diagnosing SS.",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/mr/article-pdf/14/6/425/38930117/mr0425.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "To evaluate the validity of the revised criteria, the records of 900 patients, including SS patients and non-SS controls, from 54 clinical centers were registered and analyzed and the accuracy of the criteria was found to have 96.5% accuracy for diagnosing SS.",
+      "rank": 40
+    },
+    {
+      "doi": "10.1038/labinvest.3780221",
+      "arxiv_id": "",
+      "title": "Abnormal Distribution of Aquaporin-5 Water Channel Protein in Salivary Glands from Sjögren’s Syndrome Patients",
+      "authors": [
+        "S. Steinfeld",
+        "E. Cogan",
+        "L. King",
+        "P. Agre",
+        "R. Kiss",
+        "C. Delporte"
+      ],
+      "venue": "Laboratory Investigation",
+      "year": 2001,
+      "cited_by_count": 280,
+      "influential_cite_count": 2,
+      "reference_count": 40,
+      "tldr": "Abnormal distribution of AQP5 in salivary gland acini is likely to contribute to the deficiency of fluid secretion, which is a defining feature of Sjögren’s syndrome.",
+      "is_oa": true,
+      "oa_url": "http://li.uscap.org/article/S0023683722020116/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Abnormal distribution of AQP5 in salivary gland acini is likely to contribute to the deficiency of fluid secretion, which is a defining feature of Sjögren’s syndrome.",
+      "rank": 41
+    },
+    {
+      "doi": "10.1002/ART.20176",
+      "arxiv_id": "",
+      "title": "Mortality and causes of death in primary Sjögren's syndrome: a prospective cohort study.",
+      "authors": [
+        "E. Theander",
+        "R. Manthorpe",
+        "L. Jacobsson"
+      ],
+      "venue": "Arthritis & Rheumatism",
+      "year": 2004,
+      "cited_by_count": 277,
+      "influential_cite_count": 8,
+      "reference_count": 29,
+      "tldr": "Hypocomplementemia, defined as C3 and/or C4 values in the lowest quartile of the SS patients' values at the time of diagnosis, was a significant predictor of death, mainly due to lymphoproliferative malignancy.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Hypocomplementemia, defined as C3 and/or C4 values in the lowest quartile of the SS patients' values at the time of diagnosis, was a significant predictor of death, mainly due to lymphoproliferative malignancy.",
+      "rank": 42
+    },
+    {
+      "doi": "10.1097/00005792-198207000-00004",
+      "arxiv_id": "",
+      "title": "Neurologic Complications of Primary Sjögren's Syndrome",
+      "authors": [
+        "E. Alexander",
+        "T. Provost",
+        "M. Stevens",
+        "G. E. Alexander"
+      ],
+      "venue": "Medicine",
+      "year": 1982,
+      "cited_by_count": 267,
+      "influential_cite_count": 6,
+      "reference_count": 0,
+      "tldr": "The high proportion of patients with concomitant peripheral vasculitis, and the observed association with antibodies to the Ro(SSA) antigen system, suggest that an immune vasculopathy may play a role in the pathogenesis of the CNS disease of SS.",
+      "is_oa": true,
+      "oa_url": "https://journals.lww.com/md-journal/citation/1982/07000/neurologic_complications_of_primary_sj_gren_s.4.aspx",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The high proportion of patients with concomitant peripheral vasculitis, and the observed association with antibodies to the Ro(SSA) antigen system, suggest that an immune vasculopathy may play a role in the pathogenesis of the CNS disease of SS.",
+      "rank": 43
+    },
+    {
+      "doi": "10.7326/0003-4819-104-3-323",
+      "arxiv_id": "",
+      "title": "Primary Sjögren's syndrome with central nervous system disease mimicking multiple sclerosis.",
+      "authors": [
+        "E. Alexander",
+        "K. Malinow",
+        "J. E. Lejewski",
+        "M. Jerdan",
+        "T. Provost",
+        "G. E. Alexander"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 1986,
+      "cited_by_count": 264,
+      "influential_cite_count": 8,
+      "reference_count": 37,
+      "tldr": "Patients with primary Sjögren's syndrome and central nervous system involvement whose neurologic findings, evoked potential abnormalities, and cerebrospinal fluid profiles closely resembled those of multiple sclerosis were presented.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Patients with primary Sjögren's syndrome and central nervous system involvement whose neurologic findings, evoked potential abnormalities, and cerebrospinal fluid profiles closely resembled those of multiple sclerosis were presented.",
+      "rank": 44
+    },
+    {
+      "doi": "10.1016/S0140-6736(94)90630-0",
+      "arxiv_id": "",
+      "title": "Prevalence of serum and salivary antibodies to HTLV-1 in Sjögren's syndrome.",
+      "authors": [
+        "Kaoru Terada",
+        "Shigeru Katamine",
+        "R. Moriuchi",
+        "Takenori Miyamoto",
+        "K. Eguchi",
+        "M. Kita",
+        "H. Shimada",
+        "I. Yamashita",
+        "Shigenobu Nagataki",
+        "K. Iwata",
+        "Yoshiro Tsuji"
+      ],
+      "venue": "The Lancet",
+      "year": 1994,
+      "cited_by_count": 242,
+      "influential_cite_count": 8,
+      "reference_count": 25,
+      "tldr": "Seroepidemiological and virological studies conducted on patients with this syndrome in Nagasaki Prefecture, Japan suggest that HTLV-1 is involved in the pathogenesis of the disease in a subset of patients with Sjögren's syndrome in endemic areas.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Seroepidemiological and virological studies conducted on patients with this syndrome in Nagasaki Prefecture, Japan suggest that HTLV-1 is involved in the pathogenesis of the disease in a subset of patients with Sjögren's syndrome in endemic areas.",
+      "rank": 45
+    },
+    {
+      "doi": "10.1136/ard.52.5.360",
+      "arxiv_id": "",
+      "title": "Hydroxychloroquine treatment for primary Sjögren's syndrome: a two year double blind crossover trial.",
+      "authors": [
+        "A. Kruize",
+        "R. Hené",
+        "C. Kallenberg",
+        "O. P. van Bijsterveld",
+        "A. van der Heide",
+        "L. Kater",
+        "J. Bijlsma"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 1993,
+      "cited_by_count": 232,
+      "influential_cite_count": 7,
+      "reference_count": 18,
+      "tldr": "The use of hydroxychloroquine at a dose of 400 mg daily taken over a 12 month period does not have a worthwhile clinical benefit in patients with primary Sjögren's syndrome despite an improvement of hyperglobulinaemia and slight changes in the ESR and IgM.",
+      "is_oa": true,
+      "oa_url": "https://ard.bmj.com/content/annrheumdis/52/5/360.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The use of hydroxychloroquine at a dose of 400 mg daily taken over a 12 month period does not have a worthwhile clinical benefit in patients with primary Sjögren's syndrome despite an improvement of hyperglobulinaemia and slight changes in the ESR and IgM.",
+      "rank": 46
+    },
+    {
+      "doi": "10.2215/CJN.00980209",
+      "arxiv_id": "",
+      "title": "Renal involvement in primary Sjögren's syndrome: a clinicopathologic study.",
+      "authors": [
+        "Saugar Maripuri",
+        "J. Grande",
+        "T. Osborn",
+        "F. Fervenza",
+        "E. Matteson",
+        "J. Donadio",
+        "M. Hogan"
+      ],
+      "venue": "American Society of Nephrology. Clinical Journal",
+      "year": 2009,
+      "cited_by_count": 223,
+      "influential_cite_count": 13,
+      "reference_count": 47,
+      "tldr": "This case series supports chronic TIN as the predominant KB finding in patients with renal involvement from pSS and illustrates diverse glomerular lesions and should be considered in the clinical evaluation of kidney dysfunction in pSS.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.2215/cjn.00980209",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This case series supports chronic TIN as the predominant KB finding in patients with renal involvement from pSS and illustrates diverse glomerular lesions and should be considered in the clinical evaluation of kidney dysfunction in pSS.",
+      "rank": 47
+    },
+    {
+      "doi": "10.1016/j.jaut.2018.10.009",
+      "arxiv_id": "",
+      "title": "Shared gut, but distinct oral microbiota composition in primary Sjögren's syndrome and systemic lupus erythematosus.",
+      "authors": [
+        "T. A. van der Meulen",
+        "H. Harmsen",
+        "A. V. Vila",
+        "A. Kurilshikov",
+        "S. Liefers",
+        "A. Zhernakova",
+        "Jingyuan Fu",
+        "C. Wijmenga",
+        "R. Weersma",
+        "K. de Leeuw",
+        "H. Bootsma",
+        "F. Spijkervet",
+        "A. Vissink",
+        "F. Kroese"
+      ],
+      "venue": "Journal of Autoimmunity",
+      "year": 2019,
+      "cited_by_count": 192,
+      "influential_cite_count": 13,
+      "reference_count": 69,
+      "tldr": "pSS and SLE patients share similar alterations in gut microbiota composition, distinguishing patients from individuals in the general population, while oral microbiota composition shows disease-specific differences between pSS andSLE patients.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.jaut.2018.10.009",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "pSS and SLE patients share similar alterations in gut microbiota composition, distinguishing patients from individuals in the general population, while oral microbiota composition shows disease-specific differences between pSS andSLE patients.",
+      "rank": 48
+    },
+    {
+      "doi": "10.7326/0003-4819-103-3-344",
+      "arxiv_id": "",
+      "title": "Neuropsychiatric dysfunction in primary Sjögren's syndrome.",
+      "authors": [
+        "K. Malinow",
+        "Rodolfo Molina",
+        "B. Gordon",
+        "O. Selnes",
+        "T. Provost",
+        "E. Alexander"
+      ],
+      "venue": "Annals of Internal Medicine",
+      "year": 1985,
+      "cited_by_count": 181,
+      "influential_cite_count": 2,
+      "reference_count": 21,
+      "tldr": "The diagnosis of primary Sjögren's syndrome should be considered in patients with unexplained neuropsychiatric illness, and a significant correlation between psychiatric disturbances and neurologic dysfunction, suggesting a possible organic basis for psychiatric dysfunction.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The diagnosis of primary Sjögren's syndrome should be considered in patients with unexplained neuropsychiatric illness, and a significant correlation between psychiatric disturbances and neurologic dysfunction, suggesting a possible organic basis for psychiatric dysfunction.",
+      "rank": 49
+    },
+    {
+      "doi": "10.1146/annurev-pathol-012513-104728",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome.",
+      "authors": [
+        "C. Mavragani",
+        "H. Moutsopoulos"
+      ],
+      "venue": "Annual Review of Pathology",
+      "year": 2019,
+      "cited_by_count": 156,
+      "influential_cite_count": 4,
+      "reference_count": 187,
+      "tldr": "Inappropriate overexpression of endogenous nucleic acids in a genetically susceptible individual might provide a plausible scenario for the immune activation observed in SS.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1007/978-3-030-23022-7_10",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Inappropriate overexpression of endogenous nucleic acids in a genetically susceptible individual might provide a plausible scenario for the immune activation observed in SS.",
+      "rank": 50
+    },
+    {
+      "doi": "10.1016/s0140-6736(21)02251-0",
+      "arxiv_id": "",
+      "title": "Safety and efficacy of subcutaneous ianalumab (VAY736) in patients with primary Sjögren's syndrome: a randomised, double-blind, placebo-controlled, phase 2b dose-finding trial.",
+      "authors": [
+        "S. Bowman",
+        "R. Fox",
+        "T. Dörner",
+        "X. Mariette",
+        "A. Papas",
+        "T. Grader-Beck",
+        "B. Fisher",
+        "F. Barcelos",
+        "Salvatore de Vita",
+        "H. Schulze-Koops",
+        "R. Moots",
+        "G. Junge",
+        "Janice N Woznicki",
+        "M. Sopala",
+        "W. Luo",
+        "W. Hueber"
+      ],
+      "venue": "The Lancet",
+      "year": 2021,
+      "cited_by_count": 149,
+      "influential_cite_count": 1,
+      "reference_count": 24,
+      "tldr": "This first large, randomised, controlled trial in primary Sjögren's syndrome met its primary objective, showing a dose-related decrease in disease activity as measured by ESSDAI at week 24, and there is potential for more studies of this mechanism in the future.",
+      "is_oa": true,
+      "oa_url": "https://birmingham.elsevierpure.com/en/publications/d682e5ca-9234-460b-b0ed-e92381529a78",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This first large, randomised, controlled trial in primary Sjögren's syndrome met its primary objective, showing a dose-related decrease in disease activity as measured by ESSDAI at week 24, and there is potential for more studies of this mechanism in the future.",
+      "rank": 51
+    },
+    {
+      "doi": "10.1136/annrheumdis-2020-217646",
+      "arxiv_id": "",
+      "title": "Unique expansion of IL-21+ Tfh and Tph cells under control of ICOS identifies Sjögren’s syndrome with ectopic germinal centres and MALT lymphoma",
+      "authors": [
+        "E. Pontarini",
+        "W. Murray-Brown",
+        "C. Croia",
+        "D. Lucchesi",
+        "James Conway",
+        "F. Rivellese",
+        "L. Fossati-Jimack",
+        "E. Astorri",
+        "E. Prediletto",
+        "E. Corsiero",
+        "Francesca Romana Delvecchio",
+        "R. Coleby",
+        "Eva Gelbhardt",
+        "Aurora Bono",
+        "C. Baldini",
+        "I. Puxeddu",
+        "P. Ruscitti",
+        "R. Giacomelli",
+        "F. Barone",
+        "B. Fisher",
+        "S. Bowman",
+        "S. Colafrancesco",
+        "R. Priori",
+        "N. Sutcliffe",
+        "S. Challacombe",
+        "G. Carlesso",
+        "A. Tappuni",
+        "C. Pitzalis",
+        "M. Bombardieri"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2020,
+      "cited_by_count": 146,
+      "influential_cite_count": 9,
+      "reference_count": 49,
+      "tldr": "Findings highlight Tfh and Tph-cells, IL-21 and the ICOS costimulatory pathway as key pathogenic players in SS immunopathology and exploitable therapeutic targets in SS.",
+      "is_oa": true,
+      "oa_url": "https://ard.bmj.com/content/annrheumdis/79/12/1588.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings highlight Tfh and Tph-cells, IL-21 and the ICOS costimulatory pathway as key pathogenic players in SS immunopathology and exploitable therapeutic targets in SS.",
+      "rank": 52
+    },
+    {
+      "doi": "10.1371/journal.pone.0229029",
+      "arxiv_id": "",
+      "title": "Gut dysbiosis is prevailing in Sjögren’s syndrome and is related to dry eye severity",
+      "authors": [
+        "Jayoon Moon",
+        "S. Choi",
+        "C. Yoon",
+        "Mee-Kum Kim"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2020,
+      "cited_by_count": 143,
+      "influential_cite_count": 11,
+      "reference_count": 48,
+      "tldr": "Dysbiosis of the gut microbiota was partly correlated to dry eye severity, and Sjögren’s syndrome showed significant gut dysbiosis compared to controls and environmental dry eye syndrome, while dry eye patients showed compositional changes of gut microbiome somewhere in between Sj Ögren's syndrome and controls.",
+      "is_oa": true,
+      "oa_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0229029/1/pone.0229029.pdf?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20210219%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20210219T183242Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=586452f8e40ca1106e238eb2e0ee9a68ba9a03e987e40c5c1f8ffbd004274030efdf984255e049ea7d5ffa48e7d147625d1c82bacfb53c5dee603fdf7ac3eae6e2b7b22f9e3f93a8772b0762a02efeae6b3a0b886b1b39f94f9812a60c82c6be6cc336c9860ed36e05a5ab5ac9f866e716646e9ba05c7deadcd554c4f98b105a8cf7046c96c23effa1efef9af8ba155fd0a922bef10b0f7c1d0b5eda0e57e4d4e60b63e129f3ea668d77f4e29c507e1012935393896f98271a968948e8071c8d824daa3f97f7d7831f5ed91094fdb95efe5e2c35d7ad6b40ce561112c635d0a24384bf4b458b31be76091065cf73ee44f1fc764de9465111f45f4919eb6d9422",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Dysbiosis of the gut microbiota was partly correlated to dry eye severity, and Sjögren’s syndrome showed significant gut dysbiosis compared to controls and environmental dry eye syndrome, while dry eye patients showed compositional changes of gut microbiome somewhere in between Sj Ögren's syndrome and controls.",
+      "rank": 53
+    },
+    {
+      "doi": "10.3390/jcm9072299",
+      "arxiv_id": "",
+      "title": "Current State of Knowledge on Primary Sjögren’s Syndrome, an Autoimmune Exocrinopathy",
+      "authors": [
+        "Dorian Parisis",
+        "Clara Chivasso",
+        "J. Perret",
+        "M. Soyfoo",
+        "C. Delporte"
+      ],
+      "venue": "Journal of Clinical Medicine",
+      "year": 2020,
+      "cited_by_count": 139,
+      "influential_cite_count": 14,
+      "reference_count": 364,
+      "tldr": "The present comprehensive review of primary Sjögren’s syndrome addresses the clinical manifestations and complications of the disease, the diagnostic workup, the pathogenic mechanisms and the therapeutic approaches.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2077-0383/9/7/2299/pdf?version=1595410696",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The present comprehensive review of primary Sjögren’s syndrome addresses the clinical manifestations and complications of the disease, the diagnostic workup, the pathogenic mechanisms and the therapeutic approaches.",
+      "rank": 54
+    },
+    {
+      "doi": "10.1016/j.jaut.2019.102364",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome: Old and new therapeutic targets.",
+      "authors": [
+        "C. Mavragani",
+        "H. Moutsopoulos"
+      ],
+      "venue": "Journal of Autoimmunity",
+      "year": 2019,
+      "cited_by_count": 139,
+      "influential_cite_count": 3,
+      "reference_count": 150,
+      "tldr": "Preliminary results from two randomized placebo controlled trials on CD40 blockade and B-cell activating factor receptor receptor inhibition resulted in significant reduction of SS disease activity, with a favorable so far safety profile.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Preliminary results from two randomized placebo controlled trials on CD40 blockade and B-cell activating factor receptor receptor inhibition resulted in significant reduction of SS disease activity, with a favorable so far safety profile.",
+      "rank": 55
+    },
+    {
+      "doi": "10.3389/fimmu.2023.1127417",
+      "arxiv_id": "",
+      "title": "Pathogenesis and treatment of Sjogren’s syndrome: Review and update",
+      "authors": [
+        "Qipeng Zhan",
+        "Jianan Zhang",
+        "Yubin Lin",
+        "Wenjing Chen",
+        "Xinzou Fan",
+        "Dunfang Zhang"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2023,
+      "cited_by_count": 138,
+      "influential_cite_count": 7,
+      "reference_count": 151,
+      "tldr": "It is highlighted that IFNs, Th17 cell-related cytokines, and B cell- related cytokines are crucial for the pathogenesis of SS and targeted drugs, low-side-effect drugs, and combination therapies should be the focus of future research.",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2023.1127417/pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "abstract": "It is highlighted that IFNs, Th17 cell-related cytokines, and B cell- related cytokines are crucial for the pathogenesis of SS and targeted drugs, low-side-effect drugs, and combination therapies should be the focus of future research.",
+      "rank": 56
+    },
+    {
+      "doi": "10.1016/J.IMMUNI.2004.08.013",
+      "arxiv_id": "",
+      "title": "A T cell intrinsic role of Id3 in a mouse model for primary Sjogren's syndrome.",
+      "authors": [
+        "Hongmei Li",
+        "M. Dai",
+        "Zhuang Yuan"
+      ],
+      "venue": "Immunity",
+      "year": 2004,
+      "cited_by_count": 136,
+      "influential_cite_count": 8,
+      "reference_count": 29,
+      "tldr": "It is shown that Id3-deficient mice develop many disease symptoms found in primary Sjogren's syndrome patients including dry eyes and mouth, lymphocyte infiltration in lachrymal and salivary glands, and development of anti-Ro and anti-La antibodies.",
+      "is_oa": true,
+      "oa_url": "http://www.cell.com/article/S1074761304002493/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is shown that Id3-deficient mice develop many disease symptoms found in primary Sjogren's syndrome patients including dry eyes and mouth, lymphocyte infiltration in lachrymal and salivary glands, and development of anti-Ro and anti-La antibodies.",
+      "rank": 57
+    },
+    {
+      "doi": "10.1002/acr.22968",
+      "arxiv_id": "",
+      "title": "Treatment Guidelines for Rheumatologic Manifestations of Sjögren's Syndrome: Use of Biologic Agents, Management of Fatigue, and Inflammatory Musculoskeletal Pain",
+      "authors": [
+        "S. Carsons",
+        "F. Vivino",
+        "A. Parke",
+        "N. Carteron",
+        "V. Sankar",
+        "R. Brasington",
+        "M. Brennan",
+        "W. Ehlers",
+        "R. Fox",
+        "H. Scofield",
+        "K. Hammitt",
+        "J. Birnbaum",
+        "S. Kassan",
+        "S. Mandel"
+      ],
+      "venue": "Arthritis care & research",
+      "year": 2017,
+      "cited_by_count": 136,
+      "influential_cite_count": 3,
+      "reference_count": 54,
+      "tldr": "The Sj Ögren's Syndrome Foundation clinical practice guidelines (CPGs) are designed to improve quality and consistency of care in Sjögren's syndrome by offering recommendations for management.",
+      "is_oa": true,
+      "oa_url": "https://escholarship.org/uc/item/8cx2r5z3",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Sj Ögren's Syndrome Foundation clinical practice guidelines (CPGs) are designed to improve quality and consistency of care in Sjögren's syndrome by offering recommendations for management.",
+      "rank": 58
+    },
+    {
+      "doi": "10.1038/s41467-021-23472-7",
+      "arxiv_id": "",
+      "title": "A new molecular classification to drive precision treatment strategies in primary Sjögren’s syndrome",
+      "authors": [
+        "Perrine Soret",
+        "C. le Dantec",
+        "Emiko Desvaux",
+        "N. Foulquier",
+        "Bastien Chassagnol",
+        "Sandra Hubert",
+        "C. Jamin",
+        "G. Barturen",
+        "G. Desachy",
+        "V. Devauchelle-Pensec",
+        "Cheïma Boudjeniba",
+        "D. Cornec",
+        "A. Saraux",
+        "S. Jousse-Joulin",
+        "N. Barbarroja",
+        "I. Rodríguez-Pintó",
+        "E. De Langhe",
+        "L. Beretta",
+        "C. Chizzolini",
+        "Laszló Kovács",
+        "T. Witte",
+        "Lorenzo Barbara Jacques-Olivier Alain Valérie Divi Sandrin Beretta Vigone Pers Saraux Devauchelle-Pensec Corn",
+        "B. Vigone",
+        "Jacques Olivier Pers",
+        "D. Cornec",
+        "B. Lauwerys",
+        "J. Ducreux",
+        "Anne‐Lise Maudoux",
+        "C. Vasconcelos",
+        "A. Tavares",
+        "E. Neves",
+        "R. Faria",
+        "M. Brandão",
+        "A. Campar",
+        "A. Marinho",
+        "F. Farinha",
+        "I. Almeida",
+        "Miguel Ángel González-Gay Mantecón",
+        "R. Blanco Alonso",
+        "A. Corrales Martínez",
+        "R. Cervera",
+        "I. Rodríguez-Pintó",
+        "G. Espinosa",
+        "R. Lories",
+        "E. De Langhe",
+        "N. Hunzelmann",
+        "D. Belz",
+        "N. Baerlecken",
+        "G. Stummvoll",
+        "M. Zauner",
+        "Michael Lehner",
+        "E. Collantes",
+        "R. Ortega-Castro",
+        "M. Aguirre-Zamorano",
+        "A. Escudero-Contreras",
+        "M. Castro-Villegas",
+        "Yolanda Jiménez Gómez",
+        "N. Ortego",
+        "María Concepción Fernández Roldán",
+        "E. Raya",
+        "Inmaculada Jiménez Moleón",
+        "E. de Ramón",
+        "Isabel Díaz Quintero",
+        "Pier Luigi Meroni",
+        "M. Gerosa",
+        "T. Schioppo",
+        "C. Artusi",
+        "A. Zuber",
+        "Donatienne Wynar",
+        "Laszló Kovács",
+        "A. Balog",
+        "M. Deák",
+        "M. Bocskai",
+        "S. Dulić",
+        "G. Kádár",
+        "F. Hiepe",
+        "V. Gerl",
+        "Silvia Thiel",
+        "M. R. Rodríguez Maresca",
+        "A. López‐Berrio",
+        "R. Aguilar-Quesada",
+        "Héctor Navarro‐Linares",
+        "Y. Ioannou",
+        "C. Chamberlain",
+        "J. Marovac",
+        "M. A. Alarcon Riquelme",
+        "T. Gomes Anjos",
+        "Christophe Concepción Lucas Quentin Bénédicte Nieves Brian Al Jamin Marañón Le Lann Simon Rouvière Varela Muchmo",
+        "C. Jamin",
+        "C. Marañón",
+        "Lucas Le Lann",
+        "Q. Simon",
+        "B. Rouvière",
+        "Nieves Varela",
+        "Brian Muchmore",
+        "A. Dufour",
+        "M. Alvarez",
+        "J. Cremer",
+        "C. López-Pedrera",
+        "L. Khodadadi",
+        "Q. Cheng",
+        "A. Buttgereit",
+        "Z. Makowska",
+        "A. De Groof",
+        "J. Ducreux",
+        "E. Trombetta",
+        "Tianlu Li",
+        "D. Álvarez-Errico",
+        "K. Kniesch",
+        "Nancy Azevedo",
+        "E. Neves",
+        "S. Rao",
+        "Pierre-Emmanuel Jouve",
+        "E. Bettacchioli",
+        "R. Lesche",
+        "M. Borghi",
+        "Javier Martín",
+        "Sophie Courtade-Gaiani",
+        "L. Xuereb",
+        "M. Guedj",
+        "P. Moingeon",
+        "M. Alarcón-Riquelme",
+        "L. Laigle",
+        "Jacques Olivier Pers"
+      ],
+      "venue": "Nature Communications",
+      "year": 2021,
+      "cited_by_count": 135,
+      "influential_cite_count": 6,
+      "reference_count": 76,
+      "tldr": "A molecular classification scheme for Sjögren’s syndrome patients is reported based on the multi-omic profiling of whole blood samples from a European cohort of over 300 patients and healthy controls, combined with clinical parameters to identify four groups of patients with distinct patterns of immune dysregulation.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1038/s41467-021-23472-7",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A molecular classification scheme for Sjögren’s syndrome patients is reported based on the multi-omic profiling of whole blood samples from a European cohort of over 300 patients and healthy controls, combined with clinical parameters to identify four groups of patients with distinct patterns of immune dysregulation.",
+      "rank": 59
+    },
+    {
+      "doi": "10.1016/s2665-9913(19)30042-6",
+      "arxiv_id": "",
+      "title": "Symptom-based stratification of patients with primary Sjögren's syndrome: multi-dimensional characterisation of international observational cohorts and reanalyses of randomised clinical trials",
+      "authors": [
+        "J. Tarn",
+        "Nadia Howard-Tripp",
+        "D. Lendrem",
+        "X. Mariette",
+        "Alain Saraux",
+        "Valérie Devauchelle-Pensec",
+        "R. Seror",
+        "A. Skelton",
+        "K. James",
+        "P. McMeekin",
+        "S. Al-Ali",
+        "K. Hackett",
+        "B. Lendrem",
+        "B. Hargreaves",
+        "J. Casement",
+        "S. Mitchell",
+        "Simon J. Bowman",
+        "Elizabeth Price",
+        "C. Pease",
+        "Paul Emery",
+        "Peter Lanyon",
+        "J. Hunter",
+        "Monica Gupta",
+        "M. Bombardieri",
+        "N. Sutcliffe",
+        "Costantino Pitzalis",
+        "John McLaren",
+        "A. Cooper",
+        "M. Regan",
+        "Ian Giles",
+        "David A. Isenberg",
+        "V. Saravanan",
+        "David Coady",
+        "Bhaskar Dasgupta",
+        "Neil McHugh",
+        "S. Young-Min",
+        "R. Moots",
+        "N. Gendi",
+        "M. Akil",
+        "B. Griffiths",
+        "S. Johnsen",
+        "Katrine B. Norheim",
+        "R. Omdal",
+        "D. Stocken",
+        "C. Everett",
+        "C. Fernandez",
+        "J. Isaacs",
+        "J. Gottenberg",
+        "Valerie Philippe Jean Jacques Anne-Laure Vincent Eric Clai Devauchelle-Pensec Dieude Dubost Fauchais Goeb Hac",
+        "Valérie Devauchelle-Pensec",
+        "P. Dieudé",
+        "J. Dubost",
+        "A. Fauchais",
+        "V. Goeb",
+        "E. Hachulla",
+        "C. Larroche",
+        "V. le Guern",
+        "J. Morel",
+        "A. Perdriger",
+        "X. Puéchal",
+        "S. Rist",
+        "D. Sen",
+        "J. Sibilia",
+        "O. Vittecoq",
+        "J. Bénessiano",
+        "Sarah Tubiana",
+        "Karine Inamo",
+        "Stanie Gaete",
+        "D. Batouche",
+        "D. Molinari",
+        "Mickael Randrianandrasana",
+        "I. Pane",
+        "A. Abbe",
+        "G. Baron",
+        "P. Ravaud",
+        "J. Gottenberg",
+        "J. Dubost",
+        "S. Rist",
+        "Alain Saraux",
+        "Valérie Devauchelle-Pensec",
+        "G. Hayem",
+        "P. Hatron",
+        "D. Sène",
+        "C. Zarnitsky",
+        "V. Furlan",
+        "É. Perrodeau",
+        "R. Seror",
+        "Xavier Mariette",
+        "S. Brown",
+        "N. Navarro",
+        "C. Pitzalis",
+        "P. Emery",
+        "S. Pavitt",
+        "J. Gray",
+        "C. Hulme",
+        "F. Hall",
+        "R. Busch",
+        "P. Smith",
+        "L. Dawson",
+        "M. Bombardieri",
+        "W. Ng",
+        "C. Pease",
+        "E Price",
+        "N. Sutcliffe",
+        "C. Woods",
+        "S. Ruddock",
+        "C. Everett",
+        "C. Reynolds",
+        "E. Skinner",
+        "A. Poveda-Gallego",
+        "J. Rout",
+        "I. Macleod",
+        "S. Rauz",
+        "S. Bowman",
+        "Wan-Fai Ng",
+        "Wan-Fai Simon J Bridget Frances Elalaine C Helen Robert Ku Ng Bowman Griffiths Hall Bacaba Frankland Moots Ch",
+        "Wan-Fai Ng",
+        "S. Bowman",
+        "B. Griffiths",
+        "F. Hall",
+        "Elalaine C Bacaba",
+        "H. Frankland",
+        "R. Moots",
+        "Kuntal Chadravarty",
+        "S. Lamabadusuriya",
+        "M. Bombardieri",
+        "C. Pitzalis",
+        "N. Sutcliffe",
+        "C. Breston",
+        "N. Gendi",
+        "K. Culfear",
+        "C. Riddell",
+        "J. Hamburger",
+        "A. Richards",
+        "S. Rauz",
+        "S. Brailsford",
+        "J. Dasgin",
+        "J. Logan",
+        "D. Mulherin",
+        "J. Andrews",
+        "P. Emery",
+        "Alison Mcmanus",
+        "C. Pease",
+        "D. Pickles",
+        "A. Booth",
+        "M. Regan",
+        "Jon King Kin",
+        "A. Holt",
+        "T. Dimitroulas",
+        "Lucy Kadiki",
+        "Daljit Kaur",
+        "G. Kitas",
+        "Abdul Khan",
+        "T. Cosier",
+        "Panthakalam",
+        "Kelly Mintrim",
+        "M. Lloyd",
+        "L. Moore",
+        "Esther Gordon",
+        "C. Lawson",
+        "Monica Gupta",
+        "J. Hunter",
+        "Lesley Stirton",
+        "G. Ortiz",
+        "Elizabeth Price",
+        "Suzannah Pelger",
+        "C. Gorman",
+        "B. Hans",
+        "G. Clunie",
+        "S. Lane",
+        "G. Rose",
+        "Sue Cuckow",
+        "M. Batley",
+        "R. Einosas",
+        "S. Knight",
+        "D. Symmons",
+        "Beverley Jones",
+        "A. Carr",
+        "S. Edgar",
+        "Francisco Figuereido",
+        "H. Foggo",
+        "D. Lendrem",
+        "I. Macleod",
+        "S. Mitchell",
+        "C. Downie",
+        "J. Tarn",
+        "J. Locke",
+        "S. Al-Ali",
+        "Sarah Legg",
+        "Kamran M. Mirza",
+        "B. Hargreaves",
+        "Laura Hetherington",
+        "A. Jones",
+        "Peter Lanyon",
+        "Alice Muir",
+        "P. White",
+        "S. Young-Min",
+        "S. Pugmire",
+        "S. Vadivelu",
+        "A. Cooper",
+        "Marianne Watkins",
+        "A. Field",
+        "S. Kaye",
+        "D. Mewar",
+        "P. Medcalf",
+        "Pamela Tomlinson",
+        "Debbie Whiteside",
+        "Neil McHugh",
+        "J. Pauling",
+        "Julie James",
+        "Andrea Dowden",
+        "M. Akil",
+        "J. McDermott",
+        "Olivia Godia",
+        "David Coady",
+        "E. Kidd",
+        "L. Palmer",
+        "Charles Li",
+        "Sarah Bartrum",
+        "D. Mead",
+        "B. Dasgupta",
+        "V. Katsande",
+        "Pamela Long",
+        "E. Vermaak",
+        "J. Turner",
+        "U. Chandra",
+        "K. Mackay",
+        "S. Fedele",
+        "A. Ferenkeh-Koroma",
+        "Ian Giles",
+        "David A Isenberg",
+        "Helena Maconnell",
+        "Nyarko Ahwiren",
+        "S. Porter",
+        "Paul Allcoa",
+        "John McLaren"
+      ],
+      "venue": "The Lancet Rheumatology",
+      "year": 2019,
+      "cited_by_count": 128,
+      "influential_cite_count": 6,
+      "reference_count": 30,
+      "tldr": "A robust method for stratification on the basis of patient-reported symptoms of patients with primary Sjögren's syndrome revealed distinct pathobiological endotypes with distinct responses to immunomodulatory treatments.",
+      "is_oa": true,
+      "oa_url": "http://www.thelancet.com/article/S2665991319300426/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A robust method for stratification on the basis of patient-reported symptoms of patients with primary Sjögren's syndrome revealed distinct pathobiological endotypes with distinct responses to immunomodulatory treatments.",
+      "rank": 60
+    },
+    {
+      "doi": "10.1016/j.clinbiochem.2014.08.022",
+      "arxiv_id": "",
+      "title": "Red blood cell distribution width and neutrophil/lymphocyte ratio are positively correlated with disease activity in primary Sjögren's syndrome.",
+      "authors": [
+        "Zhi-De Hu",
+        "Yi Sun",
+        "Jie Guo",
+        "Yuan-lan Huang",
+        "B. Qin",
+        "Qian Gao",
+        "Q. Qin",
+        "A. Deng",
+        "R. Zhong"
+      ],
+      "venue": "Clinical Biochemistry",
+      "year": 2014,
+      "cited_by_count": 127,
+      "influential_cite_count": 5,
+      "reference_count": 23,
+      "tldr": "RDW and NLR were increased in pSS patients and positively correlated with the Sjögren's syndrome disease activity index (SSDAI) and may prove to be useful indices to estimate pSS disease activity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "RDW and NLR were increased in pSS patients and positively correlated with the Sjögren's syndrome disease activity index (SSDAI) and may prove to be useful indices to estimate pSS disease activity.",
+      "rank": 61
+    },
+    {
+      "doi": "10.1111/1523-1747.EP12552002",
+      "arxiv_id": "",
+      "title": "Cutaneous manifestations of primary Sjögren's syndrome: a reflection of vasculitis and association with anti-Ro(SSA) antibodies.",
+      "authors": [
+        "E. Alexander",
+        "Thomas T. Provost"
+      ],
+      "venue": "Journal of Investigative Dermatology",
+      "year": 1983,
+      "cited_by_count": 126,
+      "influential_cite_count": 4,
+      "reference_count": 19,
+      "tldr": "Purpura and urticaria may reflect cutaneous vasculitis occurring in the clinical setting of Sjögren's syndrome.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1111/1523-1747.ep12552002",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Purpura and urticaria may reflect cutaneous vasculitis occurring in the clinical setting of Sjögren's syndrome.",
+      "rank": 62
+    },
+    {
+      "doi": "10.1172/jci.insight.163030",
+      "arxiv_id": "",
+      "title": "A randomized, phase II study of sequential belimumab and rituximab in primary Sjögren’s syndrome",
+      "authors": [
+        "X. Mariette",
+        "F. Barone",
+        "C. Baldini",
+        "H. Bootsma",
+        "K. Clark",
+        "S. De Vita",
+        "D. Gardner",
+        "R. B. Henderson",
+        "M. Herdman",
+        "K. Lerang",
+        "P. Mistry",
+        "R. Punwaney",
+        "R. Seror",
+        "J. Stone",
+        "P. V. van Daele",
+        "A. van Maurik",
+        "N. Wisniacki",
+        "D. Roth",
+        "P. Tak"
+      ],
+      "venue": "JCI Insight",
+      "year": 2022,
+      "cited_by_count": 125,
+      "influential_cite_count": 4,
+      "reference_count": 82,
+      "tldr": "The safety profile of belimumab + rituximab in pSS was consistent with the monotherapies and induced enhanced salivary gland B cell depletion relative to the montherapies, potentially leading to improved clinical outcomes.",
+      "is_oa": true,
+      "oa_url": "http://insight.jci.org/articles/view/163030/files/pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The safety profile of belimumab + rituximab in pSS was consistent with the monotherapies and induced enhanced salivary gland B cell depletion relative to the montherapies, potentially leading to improved clinical outcomes.",
+      "rank": 63
+    },
+    {
+      "doi": "10.1016/0002-9343(70)90045-8",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome and renal tubular acidosis.",
+      "authors": [
+        "R. Shioji",
+        "T. Furuyama",
+        "S. Onodera",
+        "H. Saito",
+        "H. Ito",
+        "Y. Sasaki"
+      ],
+      "venue": "American Journal of Medicine",
+      "year": 1970,
+      "cited_by_count": 125,
+      "influential_cite_count": 5,
+      "reference_count": 22,
+      "tldr": "Renal changes appear to represent one of several systemic changes occurring in Sjogren's syndrome, and renal tubular acidosis is probably an inherent result of the disease process responsible for the development of Sjogsen's syndrome.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Renal changes appear to represent one of several systemic changes occurring in Sjogren's syndrome, and renal tubular acidosis is probably an inherent result of the disease process responsible for the development of Sjogsen's syndrome.",
+      "rank": 64
+    },
+    {
+      "doi": "10.3389/fimmu.2022.1094278",
+      "title": "Current Experimental Methods to Investigate the Impact of Specialized Pro-Resolving Lipid Mediators on Sjögren’s Syndrome",
+      "authors": [
+        "Harim T. dos Santos"
+      ],
+      "venue": "FRONTIERS IN IMMUNOLOGY",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63c0f9d390e50fcafdbf6201",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 65
+    },
+    {
+      "doi": "10.3390/ijerph191710969",
+      "title": "Illness Experience and Quality of Life in Sjögren Syndrome Patients",
+      "authors": [
+        "Gonzalo Rojas-Alcayaga"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF ENVIRONMENTAL RESEARCH AND PUBLIC HEALTH",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a55d5e24012c2a391ee8df",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 66
+    },
+    {
+      "doi": "10.3389/fimmu.2022.879516",
+      "title": "Cardiovascular Involvement in Sjögren’s Syndrome",
+      "authors": [
+        "Fabiola Atzeni"
+      ],
+      "venue": "FRONTIERS IN IMMUNOLOGY",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629745355aee126c0fdfa318",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 67
+    },
+    {
+      "doi": "10.1093/rheumatology/key330",
+      "title": "Genetics and epigenetics in primary Sjogren's syndrome",
+      "authors": [
+        "Juliana Imgenberg-Kreuz"
+      ],
+      "venue": "RHEUMATOLOGY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c693610e1cd8e202b1ebbe5",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 68
+    },
+    {
+      "doi": "10.1093/rheumatology/kez027",
+      "title": "Pain and Fatigue in Primary Sjögren's Syndrome.",
+      "authors": [
+        "Roald Omdal"
+      ],
+      "venue": "RHEUMATOLOGY",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5c7903a3e1cd8e7206905a9b",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 69
+    },
+    {
+      "doi": "10.3390/ijms22063090",
+      "title": "Role of the Innate Immunity Signaling Pathway in the Pathogenesis of Sjögren’s Syndrome",
+      "authors": [
+        "Toshimasa Shimizu"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60698fb6e4510cd7c88e0a53",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 70
+    },
+    {
+      "doi": "10.1038/s41584-021-00605-2",
+      "title": "Epithelial–immune Cell Interplay in Primary Sjögren Syndrome Salivary Gland Pathogenesis",
+      "authors": [
+        "Gwenny M. Verstappen"
+      ],
+      "venue": "Nature Reviews Rheumatology",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "608bd943e4510cd7c825f6c3",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 71
+    },
+    {
+      "doi": "10.1038/s41584-021-00634-x",
+      "title": "Current and Future Therapies for Primary Sjögren Syndrome",
+      "authors": [
+        "Raphaèle Seror"
+      ],
+      "venue": "Nature Reviews Rheumatology",
+      "year": 2021,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "60dd94d01e8bd4ede2dc7375",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 72
+    },
+    {
+      "doi": "10.1016/j.jaut.2013.12.010",
+      "title": "Outcome Measures for Primary Sjögren's Syndrome: A Comprehensive Review",
+      "authors": [
+        "Raphaele Seror"
+      ],
+      "venue": "ARTHRITIS CARE & RESEARCH",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a49aff65ceb7cb02d35846",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 73
+    },
+    {
+      "doi": "10.3390/biom10111539",
+      "title": "T Cells Subsets in the Immunopathology and Treatment of Sjogren’s Syndrome",
+      "authors": [
+        "William de Jesus Rios-Rios"
+      ],
+      "venue": "BIOMOLECULES",
+      "year": 2020,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fb0ff45d4150a363c0ac3eb",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 74
+    },
+    {
+      "doi": "10.3389/fimmu.2019.01600",
+      "title": "Neuro-Sjögren: Peripheral Neuropathy with Limb Weakness in Sjögren's Syndrome.",
+      "authors": [
+        "Tabea Seeliger"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d4018cb275ded87f97e7c67",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 75
+    },
+    {
+      "doi": "10.1016/j.survophthal.2019.10.004",
+      "title": "Primary Sjögren’s Syndrome and the Eye",
+      "authors": [
+        "Oddbjørn Bjordal"
+      ],
+      "venue": "Survey of ophthalmology",
+      "year": 2019,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5de0dc4edf1a9c0c415c1d51",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 76
+    },
+    {
+      "doi": "10.1002/ART.1780390219",
+      "arxiv_id": "",
+      "title": "Long-term followup of patients with Sjögren's syndrome.",
+      "authors": [
+        "A. Kruize",
+        "R. Hené",
+        "Agnes van der Heide",
+        "C. Bodeutsch",
+        "P. De Wilde",
+        "O. van Bijsterveld",
+        "J. de Jong",
+        "T. E. W. Feltkamp",
+        "Louis Kater",
+        "J. Bijlsma"
+      ],
+      "venue": "Arthritis & Rheumatism",
+      "year": 1996,
+      "cited_by_count": 122,
+      "influential_cite_count": 1,
+      "reference_count": 12,
+      "tldr": "Primary Sjögren's syndrome is characterized by a stable and rather mild course of glandular and extraglandular manifestations, in marked contrast to the increased risk of development of malignant lymphoma in these patients.",
+      "is_oa": true,
+      "oa_url": "https://repository.ubn.ru.nl/bitstream/2066/24270/1/24270.PDF",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Primary Sjögren's syndrome is characterized by a stable and rather mild course of glandular and extraglandular manifestations, in marked contrast to the increased risk of development of malignant lymphoma in these patients.",
+      "rank": 77
+    },
+    {
+      "doi": "10.1111/j.1834-7819.2010.01197.x",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome: a review of aetiology, pathogenesis, diagnosis and management.",
+      "authors": [
+        "K. Bayetto",
+        "Richard M. Logan"
+      ],
+      "venue": "Australian dental journal",
+      "year": 2010,
+      "cited_by_count": 109,
+      "influential_cite_count": 4,
+      "reference_count": 30,
+      "tldr": "This review will highlight the difficulties and complexities that are inherent in the diagnosis of Sjögren's syndrome and the important role that dental practitioners can play in the management of its oral manifestations.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1834-7819.2010.01197.x",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This review will highlight the difficulties and complexities that are inherent in the diagnosis of Sjögren's syndrome and the important role that dental practitioners can play in the management of its oral manifestations.",
+      "rank": 78
+    },
+    {
+      "doi": "10.1016/0002-9343(74)90771-2",
+      "arxiv_id": "",
+      "title": "Sjögren's syndrome in progressive systemic sclerosis (scleroderma).",
+      "authors": [
+        "D. Alarcon-segovia",
+        "G. Ibáñez",
+        "J. Hérnandez-Ortiz",
+        "F. Velázquez-Forero",
+        "Y. González-Jiménez"
+      ],
+      "venue": "American Journal of Medicine",
+      "year": 1974,
+      "cited_by_count": 102,
+      "influential_cite_count": 3,
+      "reference_count": 18,
+      "tldr": "The finding of lacrimal and major salivary gland involvement indicates that Sjogren's syndrome does occur in the majority of patients with progressive systemic sclerosis, and supports the contention that progressive systems sclerosis is related to autoimmunity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The finding of lacrimal and major salivary gland involvement indicates that Sjogren's syndrome does occur in the majority of patients with progressive systemic sclerosis, and supports the contention that progressive systems sclerosis is related to autoimmunity.",
+      "rank": 79
+    },
+    {
+      "doi": "10.1371/journal.pone.0218319",
+      "arxiv_id": "",
+      "title": "Dysbiotic salivary microbiota in dry mouth and primary Sjögren’s syndrome patients",
+      "authors": [
+        "Shermin Rusthen",
+        "A. K. Kristoffersen",
+        "Alix Young",
+        "H. Galtung",
+        "B. Petrovski",
+        "Øyvind Palm",
+        "M. Enersen",
+        "J. L. Jensen"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2019,
+      "cited_by_count": 99,
+      "influential_cite_count": 7,
+      "reference_count": 32,
+      "tldr": "Dysbiosis in the salivary microbiota from pSS and non-SS patients compared to healthy controls is indicated, and the results showed that theSalivary microbiome in the pSS group differed significantly from the non- SS group.",
+      "is_oa": true,
+      "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0218319&type=printable",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Dysbiosis in the salivary microbiota from pSS and non-SS patients compared to healthy controls is indicated, and the results showed that theSalivary microbiome in the pSS group differed significantly from the non- SS group.",
+      "rank": 80
+    },
+    {
+      "doi": "10.1136/annrheumdis-2021-222054",
+      "arxiv_id": "",
+      "title": "Development and preliminary validation of the Sjögren’s Tool for Assessing Response (STAR): a consensual composite score for assessing treatment effect in primary Sjögren’s syndrome",
+      "authors": [
+        "R. Seror",
+        "G. Baron",
+        "M. Camus",
+        "D. Cornec",
+        "É. Perrodeau",
+        "S. Bowman",
+        "M. Bombardieri",
+        "H. Bootsma",
+        "J. Gottenberg",
+        "B. Fisher",
+        "W. Hueber",
+        "J. V. van Roon",
+        "V. Devauchelle-Pensec",
+        "P. Gergely",
+        "X. Mariette",
+        "R. Porcher"
+      ],
+      "venue": "Annals of the Rheumatic Diseases",
+      "year": 2022,
+      "cited_by_count": 87,
+      "influential_cite_count": 2,
+      "reference_count": 36,
+      "tldr": "A composite responder index that includes all main disease features in a single tool and is designed for use as a primary endpoint in pSS RCTs is designed.",
+      "is_oa": true,
+      "oa_url": "https://ard.bmj.com/content/annrheumdis/81/7/979.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A composite responder index that includes all main disease features in a single tool and is designed for use as a primary endpoint in pSS RCTs is designed.",
+      "rank": 81
+    },
+    {
+      "doi": "10.1259/dmfr.20190019",
+      "arxiv_id": "",
+      "title": "Preliminary study on the application of deep learning system to diagnosis of Sjögren's syndrome on CT images.",
+      "authors": [
+        "Yoshitaka Kise",
+        "Haruka Ikeda",
+        "T. Fujii",
+        "Motoki Fukuda",
+        "Y. Ariji",
+        "H. Fujita",
+        "Akitoshi Katsumata",
+        "E. Ariji"
+      ],
+      "venue": "Dento maxillo facial radiology",
+      "year": 2019,
+      "cited_by_count": 73,
+      "influential_cite_count": 3,
+      "reference_count": 28,
+      "tldr": "The deep learning system showed a high diagnostic performance for SjS, suggesting that it could possibly be used for diagnostic support when interpreting CT images.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6747436",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The deep learning system showed a high diagnostic performance for SjS, suggesting that it could possibly be used for diagnostic support when interpreting CT images.",
+      "rank": 82
+    },
+    {
+      "doi": "10.1111/j.1365-2249.2004.02427.x",
+      "arxiv_id": "",
+      "title": "Detection of circulating soluble CD28 in patients with systemic lupus erythematosus, primary Sjögren's syndrome and systemic sclerosis",
+      "authors": [
+        "M. Hebbar",
+        "P. Jeannin",
+        "G. Magistrelli",
+        "P. Hatron",
+        "E. Hachulla",
+        "B. Devulder",
+        "J. Bonnefoy",
+        "Y. Delneste"
+      ],
+      "venue": "Clinical and Experimental Immunology",
+      "year": 2004,
+      "cited_by_count": 67,
+      "influential_cite_count": 5,
+      "reference_count": 48,
+      "tldr": "Soluble CD28, which modulates the proliferation of T lymphocytes, could be associated with disease severity in patients with autoimmune disease, especially primary SS.",
+      "is_oa": true,
+      "oa_url": "https://academic.oup.com/cei/article-pdf/136/2/388/42145785/j.1365-2249.2004.02427.x.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Soluble CD28, which modulates the proliferation of T lymphocytes, could be associated with disease severity in patients with autoimmune disease, especially primary SS.",
+      "rank": 83
+    },
+    {
+      "doi": "10.1038/s41584-023-01057-6",
+      "title": "Epidemiology of Sjögren Syndrome",
+      "authors": [
+        "Maxime Beydon"
+      ],
+      "venue": "Nature reviews Rheumatology",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65cf7f6b939a5f4082c796b0",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 84
+    },
+    {
+      "doi": "10.1093/med/9780198806684.003.0004",
+      "title": "Biomarkers in Primary Sjögren’s Syndrome",
+      "authors": [
+        "Onorina Berardicurti"
+      ],
+      "venue": "Oxford Textbook of Sjögren's Syndrome",
+      "year": 2021,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65703a0f939a5f4082195fd5",
+      "matched_phrase": "(Sjögren's",
+      "found_by": [
+        "aminer"
+      ],
+      "rank": 85
+    },
+    {
+      "doi": "10.2147/DMSO.S295847",
+      "arxiv_id": "",
+      "title": "Islet Autoantibodies in the Patients with Sjogren’s Syndrome and Thyroid Disease and Risk of Progression to Latent Autoimmune Diabetes in Adults: A Case Series",
+      "authors": [
+        "S. Wen",
+        "Wenjing Jiang",
+        "Ligang Zhou"
+      ],
+      "venue": "Diabetes, Metabolic Syndrome and Obesity : Targets and Therapy",
+      "year": 2021,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "Two unique cases of middle-aged Chinese Han women free from diabetes for three years are described despite their blood tests persistently testing positive for GAD65-Ab or IAA, postulate that both the primary immune injury caused by serum GAD 65-Ab positive, an autoimmune marker, and increased body weight contribute to the progression of LADA.",
+      "is_oa": true,
+      "oa_url": "https://www.dovepress.com/getfile.php?fileID=67385",
+      "source": "semanticscholar",
+      "type": "CaseReport",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Two unique cases of middle-aged Chinese Han women free from diabetes for three years are described despite their blood tests persistently testing positive for GAD65-Ab or IAA, postulate that both the primary immune injury caused by serum GAD 65-Ab positive, an autoimmune marker, and increased body weight contribute to the progression of LADA.",
+      "rank": 86
+    },
+    {
       "doi": "10.35633/inmateh-71-38",
       "title": "HOT AIR DRYING, IMPACT OF INFRARED DRYING, AND COMBINED HOT AIR-INFRARED DRYING ON ALFALFA DRYING QUALITY AND PERFORMANCE",
-      "abstract": "<jats:p>This study analyzes the drying of alfalfa using hot air, infrared and combined drying techniques. Different temperatures, radiation heights, radiation power and wind speed are used as control factors, and drying time, color, crude protein and specific energy consumption are used as evaluation indicators. After assigning weights to each indicator, the comprehensive evaluation index is calculated. The comprehensive evaluation index of alfalfa drying after combined drying is between 1.00 an",
-      "year": 2023,
+      "authors": [
+        "SUN, Xihang",
+        "GUO, Ziwen",
+        "WANG, Guanghui",
+        "CAI, Chen",
+        "WANG, Zhiqin"
+      ],
       "venue": "INMATEH Agricultural Engineering",
-      "citation_count": 5,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 5,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study analyzes the drying of alfalfa using hot air, infrared and combined drying techniques. Different temperatures, radiation heights, radiation power and wind speed are used as control factors, and drying time, color, crude protein and specific energy consumption are used as evaluation indicators. After assigning weights to each indicator, the comprehensive evaluation index is calculated. The comprehensive evaluation index of alfalfa drying after combined drying is between 1.00 an",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 87
     },
     {
-      "rank": 2,
+      "doi": "10.37155/2661-4766-0403-16",
+      "title": "儿科重症肺炎患儿中运用综合护理干预后的效果分析",
+      "authors": [
+        "珍, 张"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2022,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 88
+    },
+    {
+      "doi": "10.12677/tcm.2022.113054",
+      "title": "Experience of TCM Differentiation and Treatment of Primary Sjogren’s Syndrome Complicated with Depression",
+      "authors": [
+        "李, 荣良"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 89
+    },
+    {
+      "doi": "10.37155/2717-5650-0402-48",
+      "title": "综合护理干预在ICU重症护理中的效果分析",
+      "authors": [
+        "倩, 李"
+      ],
+      "venue": "国际护理与健康",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 90
+    },
+    {
+      "doi": "10.37155/2661-4766-0502-58",
+      "title": "综合护理干预在ICU重症护理中的效果观察",
+      "authors": [
+        "蔡玉婷",
+        "媛, 韩"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 91
+    },
+    {
+      "doi": "10.11817/j.issn.1672-7347.2024.230295",
+      "arxiv_id": "",
+      "title": "原发性干燥综合征合并骨质疏松的危险因素",
+      "authors": [
+        "Wuxinrui Huang",
+        "Jing Tian",
+        "Jieyu He"
+      ],
+      "venue": "Zhong nan da xue xue bao. Yi xue ban = Journal of Central South University. Medical sciences",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 44,
+      "tldr": "Education, guidance of healthy lifestyle, and OP screening are recommended for bone management of pSS patients, and early detection and intervention are crucial for keeping bone health and life quality in pSS patients.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Education, guidance of healthy lifestyle, and OP screening are recommended for bone management of pSS patients, and early detection and intervention are crucial for keeping bone health and life quality in pSS patients.",
+      "rank": 92
+    },
+    {
       "doi": "10.12677/acm.2025.153801",
       "title": "Autoimmune Hepatitis-Primary Biliary Cholangitis Overlap Syndrome with Sjögren Syndrome: A Case Report",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "邹, 沛炫"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 33,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 93
     },
     {
-      "rank": 3,
       "doi": "10.12677/acm.2023.133606",
       "title": "A Case of Sjogren’s Syndrome Misdiagnosed as Intractable Hypokalemia",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "曹, 靖兰"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 48,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 94
     },
     {
-      "rank": 4,
       "doi": "10.12677/tcm.2023.1210436",
       "title": "Case Examples and Diagnosis and Treatment Experience of Sjogren’s Syndrome and Its Complications",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "李, 亚青"
+      ],
       "venue": "Traditional Chinese Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 95
     },
     {
-      "rank": 5,
       "doi": "10.12677/jcpm.2024.33099",
       "title": "The Application of Nourishing Yin and Clearing Heat in Primary Sjogren’s Syndrome Was Analyzed Based on the Theory of “Dryness Leads to Dryness”",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "张, 铧丹"
+      ],
       "venue": "Journal of Clinical Personalized Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 96
     },
     {
-      "rank": 6,
       "doi": "10.12677/acm.2021.114277",
       "title": "Severe Hypokalaemia Due to Renal Tubular Acidosis in a Patient with Sjogren’s Syndrome",
-      "abstract": "",
-      "year": 2021,
+      "authors": [
+        "王, 慧"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 97
     },
     {
-      "rank": 7,
       "doi": "10.12677/acm.2024.142519",
       "title": "Report of 3 Cases of SjÖgren’s Syndrome with Central Nervous System Damage as the First Symptom and Review of the Literature",
-      "abstract": "",
-      "year": 2024,
+      "authors": [
+        "刘, 保成"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 27,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 98
     },
     {
-      "rank": 8,
       "doi": "10.64658/gscr.20251226.f01e2",
       "title": "1例干燥综合征合并肾小管酸中毒致危重型低钾血症的中西医结合救治病案报告",
-      "abstract": "",
-      "year": null,
+      "authors": [
+        "廖, 瑞莲"
+      ],
       "venue": "中西医转化医学临床病案成果数据库",
-      "citation_count": 0,
-      "engines_found_in": [
-        "crossref"
-      ],
-      "score": 0.0,
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 9,
-      "doi": "10.12677/acm.2021.119591",
-      "title": "A Case of Sjogren’s Syndrome during Pregnancy with Hypokalemia as the First Symptom Misdiagnosed as Hyperemesis Gravidarum",
       "abstract": "",
-      "year": 2021,
-      "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
-      "source": "crossref",
-      "type": "journal-article"
+      "rank": 99
     },
     {
-      "rank": 10,
+      "doi": "10.37155/2717-5669-0603-12",
+      "title": "干眼症的综合护理干预效果分析",
+      "authors": [
+        "李世文"
+      ],
+      "venue": "国际全科医学",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 100
+    },
+    {
       "doi": "10.12677/acm.2025.1541062",
       "title": "Research Progress on Serological Markers of Primary Sjögren’s Syndrome",
-      "abstract": "",
-      "year": 2025,
+      "authors": [
+        "张, 智栋"
+      ],
       "venue": "Advances in Clinical Medicine",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 53,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
         "crossref"
       ],
-      "score": 0.0,
+      "rank": 101
+    },
+    {
+      "doi": "10.12677/acm.2026.1652049",
+      "title": "Research Progress on Cardiovascular Risk in Primary Sjögren’s Syndrome",
+      "authors": [
+        "薛, 嘉辉"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 53,
+      "type": "journal-article",
       "source": "crossref",
-      "type": "journal-article"
-    },
-    {
-      "rank": 11,
-      "doi": "arXiv:1501.04732v1",
-      "title": "Strabismic syndromes and syndromic strabismus - a brief review",
       "abstract": "",
-      "year": 2015,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 102
     },
     {
-      "rank": 12,
-      "doi": "arXiv:2205.02341v1",
-      "title": "Soft Syndrome Decoding of Quantum LDPC Codes for Joint Correction of Data and Syndrome Errors",
-      "abstract": "",
-      "year": 2022,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.12677/acm.2021.119591",
+      "title": "A Case of Sjogren’s Syndrome during Pregnancy with Hypokalemia as the First Symptom Misdiagnosed as Hyperemesis Gravidarum",
+      "authors": [
+        "徐, 小哲"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "Advances in Clinical Medicine",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 103
     },
     {
-      "rank": 13,
-      "doi": "arXiv:1810.10902v1",
-      "title": "Learning from the Syndrome",
-      "abstract": "",
+      "doi": "10.12677/acm.2018.86097",
+      "title": "The Clinical Analysis of Dry Eye in Patients with Primary Sj?gren’s Syndrome",
+      "authors": [
+        "徐, 玲娟"
+      ],
+      "venue": "Advances in Clinical Medicine",
       "year": 2018,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 104
     },
     {
-      "rank": 14,
-      "doi": "arXiv:1505.07390v1",
-      "title": "Syndrome Measurement Strategies for the [[7,1,3]] Code",
-      "abstract": "",
-      "year": 2015,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "doi": "10.12677/acm.2023.132379",
+      "title": "Clinical Characteristics of Patients with Primary Biliary Cholangitis Complicated with Sjogren’s Syndrome",
+      "authors": [
+        "赵, 晨阳"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "venue": "Advances in Clinical Medicine",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 43,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 105
     },
     {
-      "rank": 15,
-      "doi": "10.1103/ps3r-wf84",
-      "title": "Adaptive Syndrome Extraction",
+      "doi": "10.12677/acm.2024.14112906",
+      "title": "Research Progress on Biological Markers of Primary Sjogren’s Syndrome and Related Mechanisms of Anxiety and Depression",
+      "authors": [
+        "吴, 志芳"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
       "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 106
+    },
+    {
+      "doi": "10.37155/2661-4766-0705-38",
+      "title": "干眼症的综合护理干预与生活质量改善",
+      "authors": [
+        "杨秀萍"
+      ],
+      "venue": "临床医学前沿",
       "year": 2025,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
-        "arxiv"
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 107
     },
     {
-      "rank": 16,
+      "doi": "10.12677/jcpm.2026.51010",
+      "title": "Research Progress and Prospects of Acupuncture Treatment for Sjögren’s Syndrome",
+      "authors": [
+        "杨, 佳君"
+      ],
+      "venue": "Journal of Clinical Personalized Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 108
+    },
+    {
+      "doi": "10.12677/acm.2024.1451532",
+      "title": "Predictive Value of Serum Interleukin-6 in Primary Sjogren’s Syndrome with Anxiety and Depression",
+      "authors": [
+        "叶, ·叶尔丁其木克"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 109
+    },
+    {
+      "doi": "10.12677/acm.2022.123326",
+      "title": "Research Progress of Autoimmune Thyroid Diseases in Sj?gren’s Syndrome",
+      "authors": [
+        "陈, 彦蓉"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 110
+    },
+    {
+      "doi": "10.12677/tcm.2024.136193",
+      "title": "Research Progress on Sjogren’s Syndrome Treated with Traditional Chinese and Western Medicine",
+      "authors": [
+        "周, 璐璐"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 18,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 111
+    },
+    {
+      "doi": "10.12677/acm.2026.163834",
+      "title": "Research Progress on Anxiety in Patients with Primary Sjögren’s Syndrome",
+      "authors": [
+        "杨, 小露"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 86,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 112
+    },
+    {
+      "doi": "10.12677/jcpm.2026.51079",
+      "title": "AQP4-IgG-Negative Neuromyelitis Optica Spectrum Disorder Complicated with Sjögren’s Syndrome Presenting with Area Postrema Syndrome: A Case Report",
+      "authors": [
+        "李, 学伟"
+      ],
+      "venue": "Journal of Clinical Personalized Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 113
+    },
+    {
+      "doi": "10.12677/acm.2022.124517",
+      "title": "Research Progress in Echocardiography Evaluation of Cardiac Involvement in Primary Sjogren’s Syndrome",
+      "authors": [
+        "周, 晶晶"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 33,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 114
+    },
+    {
+      "doi": "10.33142/cmn.v4i1.19002",
+      "title": "艾滋病患者的综合护理干预及并发症预防效果",
+      "authors": [
+        "李, 丽君"
+      ],
+      "venue": "临床医学与护理",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的：探讨综合护理干预对艾滋病患者并发症预防、生活质量提升的临床效果。方法：纳入2024年1月至2025年1月期间我院收治的80例艾滋病患者，采用随机数字表分为两组，对照组与观察组各40例，对照组采用常规护理干预，观察组采用综合护理干预，对比两组患者比较两组并发症发生率、生活质量、CD4?T淋巴细胞计数、病毒载量。结果：观察组CD4?T淋巴细胞计数高于对照组，病毒载量低于对照组，并发症发生率较对照组更低；观察组SAS、SDS评分低于对照组，生活质量评分高于对照组（P＜0.05）。结论：综合护理干预的应用可以降低艾滋病患者并发症的发生率，改善其负面情绪与免疫功能，提高患者生活质量，值得推荐。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 115
+    },
+    {
+      "doi": "10.32629/as.v8i11.3446",
+      "title": "仔猪断奶应激综合征的营养干预策略及分子机制",
+      "authors": [
+        "蒋, 红霞"
+      ],
+      "venue": "农业科学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>仔猪断奶应激综合征(PWSS)是当前养殖业中一个极为突出的难题,它直接导致了断奶仔猪的生长速度显著减缓以及死亡率的大幅上升,成为制约养殖业发展的关键问题。其根本原因在于断奶过程中产生的应激反应,这种应激不仅引发了仔猪肠道屏障的严重损伤,还导致了免疫系统失衡以及代谢过程的紊乱。本文对PWSS的营养干预策略进行了全面而系统的综述,详细探讨了多种营养干预手段的应用机制。具体包括功能性氨基酸的应用,如谷氨酰胺和精氨酸在修复肠道屏障中的作用；益生菌与益生元的联合使用,如何通过调节肠道菌群来改善肠道健康；植物提取物的抗炎和抗氧化特性及其对仔猪免疫系统的调节作用；以及脂肪酸在维持肠道细胞结构和功能方面的关键作用。此外,文章还从分子层面深入解析了营养调控的具体作用机制,揭示了营养干预如何通过调控肠道紧密连接蛋白(如ZO-1、occludin)的表达,影响炎症信号通路(如NF-κB、MAPK)的激活,以及调节肠道菌群与宿主之间的互作网络,从而有效缓解断奶应激带来的负面影响。研究结果表明,精准的营养干预策略能够显著增强仔猪的肠道屏障功能,调节其免疫应答,并改善肠道微生态的平衡状态,从而有效",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 116
+    },
+    {
+      "doi": "10.62836/nursing.v3n1.1082",
+      "title": "干眼症患者门诊综合护理干预方案的构建与效果评价",
+      "authors": [
+        "汤玲",
+        "李凌云"
+      ],
+      "venue": "环球护理学杂志",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>汤玲，李凌云*\n南京医科大学第四附属医院，江苏南京\n摘要：目的：研究干眼症患者门诊综合护理干预方案的构建与效果评价。方法：选取2024年7月至2025年7月收治的98例干眼症患者将其随机分为观察组和对照组，对照组采用干眼症常规门诊护理，观察组实施综合护理干预方案。比较两组眼部生理指标、护理总有效率的差异。结果：护理后，观察组泪液破裂时间（16.8±1.7）s、SchirmerⅠ泪液分泌量（15.1±1.2）mm均显著高于对照组（12.7±1.2）s、（13.1±0.9）mm，角膜荧光染色评分（0.3±0.2）分显著低于对照组（1.3±0.5）分，有统计学意义，P＜0.05；观察组临床总有效率为91.8%（45/49），显著高于对照组的75.5%（37/49），有统计学意义，P＜0.05。结论：针对干眼症门诊患者构建的综合护理干预方案，能有效改善患者的眼部生理指标，提升患者生活质量，具备临床推广价值，值得临床应用。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 117
+    },
+    {
+      "doi": "10.12677/is.2014.22004",
+      "title": "Changes and Significance of Serum Soluble Complement Receptor 2 in Patients with Primary Sjogren’s Syndrome",
+      "authors": [
+        "李, 宁宁"
+      ],
+      "venue": "Immunology Studies",
+      "year": 2014,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 118
+    },
+    {
+      "doi": "10.69979/3029-2700.26.02.003",
+      "title": "如何提升纪检监察干部综合素质与能力",
+      "authors": [],
+      "venue": "社会企业经济发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 119
+    },
+    {
+      "doi": "10.12677/acm.2024.1482388",
+      "title": "Research Progress on Pathogenesis and Treatment of Sjögren’s Syndrome with Traditional Chinese and Western Medicine",
+      "authors": [
+        "田, 莲巧"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 42,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 120
+    },
+    {
+      "doi": "10.61654/zzjkwz0304",
+      "title": "人性化护理干预对改善肾病综合症患者心理状况及睡眠状态的应用观察",
+      "authors": [
+        "刘, 洋"
+      ],
+      "venue": "健康文摘",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>为观察人性化护理干预对肾病综合征患者心理及睡眠的改善效果,选取2025年1—12月某市中心医院肾病内科180例患者,随机分为对照组与观察组各90例。对照组采用常规护理,观察组在其基础上加用人性化护理,干预3个月。以SAS、SDS量表评估心理状况,PSQI量表评估睡眠质量,并比较护理满意度。结果显示,干预前两组各项评分无统计学差异。结论表明,人性化护理可有效缓解患者焦虑抑郁情绪,改善睡眠质量,提升护理满意度,具有较高临床推广价值。</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 121
+    },
+    {
+      "doi": "10.12677/acm.2021.118499",
+      "title": "Progress in Ultrasonic Diagnosis of Submandibular Adenopathy in Sjogren’s Syndrome",
+      "authors": [
+        "易, 文娟"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 122
+    },
+    {
+      "doi": "10.37155/2661-4766-0703-20",
+      "title": "重症脑外伤手术昏迷患者给予综合护理干预对其预后以及心理压力",
+      "authors": [
+        "王婷婷",
+        "张　瑜"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 123
+    },
+    {
+      "doi": "10.12677/acm.2022.121016",
+      "title": "Review of a Case of Optic Neuromyelitis Spectrum Disease Complicated with Sjogren’s Syndrome",
+      "authors": [
+        "邹, 琳"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 7,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 124
+    },
+    {
+      "doi": "10.12677/acm.2021.118497",
+      "title": "Sjogren’s Syndrome with Bilateral Dilated Hydronephrosis: Report of Three Cases and Review of Literature",
+      "authors": [
+        "马, 柯"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 125
+    },
+    {
+      "doi": "10.12677/jcpm.2024.34271",
+      "title": "Research on the Application Effect of Hydroxychloroquine Sulfate Combined with Xuanmai Ganjie Decoction and Press-Needle Therapy in Treating Sjogren’s Syndrome",
+      "authors": [
+        "王, 文静"
+      ],
+      "venue": "Journal of Clinical Personalized Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 126
+    },
+    {
+      "doi": "10.69979/3029-2727.24.04.022",
+      "title": "如何提高光伏电站的发电效率以及降低综合厂用电率",
+      "authors": [],
+      "venue": "建筑技术与创新",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 127
+    },
+    {
+      "doi": "10.12677/tcm.2024.1312529",
+      "title": "Experience in Identifying and Treating Sjögren’s Syndrome Based on the Theory of Toxins and Pathogens",
+      "authors": [
+        "宋, 贤婧"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 128
+    },
+    {
+      "doi": "10.64658/gscr.20251112.205bf",
+      "title": "1例精神分裂症合并2型糖尿病性酮症、急性冠脉综合征患者的多系统合并症综合护理管理",
+      "authors": [
+        "陈, 映芳"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 129
+    },
+    {
+      "doi": "10.12677/acm.2024.14113027",
+      "title": "Neurological Impairment Caused by Rheumatoid Arthritis Complicated with Sjogren’s Syndrome Secondary to Antiphospholipid Antibody Syndrome: A Case Report and Literature Review",
+      "authors": [
+        "唐, 光情"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 130
+    },
+    {
+      "doi": "10.1111/bjd.21910",
+      "title": "罕见皮肤癌综合征: Bazex-Dupré-Christol 综合征的遗传原因",
+      "authors": [],
+      "venue": "British Journal of Dermatology",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Linked Article:  Liu et al. Br J Dermatol 2022; 187:948–961.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 131
+    },
+    {
+      "doi": "10.69979/3029-2808.25.10.007",
+      "title": "综合护理干预在高原地区新生儿低出生体重中的应用及效果评估",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 132
+    },
+    {
+      "doi": "10.18686/xjjz.v1i2.2003",
+      "title": "综合性妒理干预联合舒适性妒理在经皮椎闰孔镜治疗腰椎闰盘突出症申的应用",
+      "authors": [
+        "慧, 王"
+      ],
+      "venue": "先进急诊医学",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>目的探讨在腰间盘突出患者中进行综合性护理干预联合舒适性护理的作用。方法 选取我院2017年6月至2018年6月入院治疗的80名腰间盘突出患者作为研究对象，经诊断都己确诊为CT或MRI，将两者根据入院 顺序平均分为两组，对照组、实验组，每组患者40名，通过比对两组患者的临床资料。结果实验组患者恢复情况明显高于对照组，两组患者临床数据没有明显差异，具有统计学意义。结论在腰间盘突出病症中应用综合性护理联合舒适性护理具有重要意义，但得广泛推广</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 133
+    },
+    {
+      "doi": "10.37155/2717-557x-0206-2",
+      "title": "建筑结构检测鉴定加固若干问题的综合分析",
+      "authors": [
+        "刘亚军",
+        "刘亚军"
+      ],
+      "venue": "城市建筑与发展",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 134
+    },
+    {
+      "doi": "10.12677/acm.2024.1461825",
+      "title": "One Case Report of Total Blood Cell Reduction Secondary to Sj?gren Syndrome Combined with Autoimmune Liver Disease",
+      "authors": [
+        "孟, 媛"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 15,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 135
+    },
+    {
+      "doi": "10.12677/acm.2019.98150",
+      "title": "Etiology and Treatment Progress of Adolescent Polycystic Ovary Syndrome",
+      "authors": [
+        "杨, 克敏"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 47,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 136
+    },
+    {
+      "doi": "10.12677/acm.2024.1441375",
+      "title": "Mucosal-Associated Lymphoid Tissue Lymphoma with Sjogren’s Syndrome: A Case Report and Literature Review",
+      "authors": [
+        "尹, 高慧"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "rank": 137
+    },
+    {
+      "doi": "arXiv:1501.04732v1",
+      "arxiv_id": "1501.04732v1",
+      "title": "Strabismic syndromes and syndromic strabismus - a brief review",
+      "authors": [
+        "Aditya Tri Hernowo",
+        "R. Haryo Yudono"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1501.04732v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 138
+    },
+    {
+      "doi": "arXiv:2205.02341v1",
+      "arxiv_id": "2205.02341v1",
+      "title": "Soft Syndrome Decoding of Quantum LDPC Codes for Joint Correction of Data and Syndrome Errors",
+      "authors": [
+        "Nithin Raveendran",
+        "Narayanan Rengaswamy",
+        "Asit Kumar Pradhan",
+        "Bane Vasić"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2205.02341v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 139
+    },
+    {
+      "doi": "arXiv:1810.10902v1",
+      "arxiv_id": "1810.10902v1",
+      "title": "Learning from the Syndrome",
+      "authors": [
+        "Loren Lugosch",
+        "Warren J. Gross"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1810.10902v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 140
+    },
+    {
+      "doi": "arXiv:1505.07390v1",
+      "arxiv_id": "1505.07390v1",
+      "title": "Syndrome Measurement Strategies for the [[7,1,3]] Code",
+      "authors": [
+        "Yaakov S. Weinstein"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1505.07390v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 141
+    },
+    {
+      "doi": "10.1103/ps3r-wf84",
+      "arxiv_id": "2502.14835v1",
+      "title": "Adaptive Syndrome Extraction",
+      "authors": [
+        "Noah Berthusen",
+        "Shi Jie Samuel Tan",
+        "Eric Huang",
+        "Daniel Gottesman"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.14835v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 142
+    },
+    {
       "doi": "arXiv:1903.07464v2",
+      "arxiv_id": "1903.07464v2",
       "title": "Ternary Syndrome Decoding with Large Weight",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Rémi Bricout",
+        "André Chailloux",
+        "Thomas Debris-Alazard",
+        "Matthieu Lequesne"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1903.07464v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 143
     },
     {
-      "rank": 17,
       "doi": "10.1109/JSAC.2020.2968997.",
+      "arxiv_id": "1907.01393v1",
       "title": "Quantum Data-Syndrome Codes",
-      "abstract": "",
-      "year": 2019,
+      "authors": [
+        "Alexei Ashikhmin",
+        "Ching-Yi Lai",
+        "Todd A. Brun"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1907.01393v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 144
     },
     {
-      "rank": 18,
       "doi": "10.1109/ISIT57864.2024.10619479",
+      "arxiv_id": "2311.16044v1",
       "title": "Robust Syndrome Extraction via BCH Encoding",
-      "abstract": "",
-      "year": 2023,
+      "authors": [
+        "Eren Guttentag",
+        "Andrew Nemec",
+        "Kenneth R. Brown"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.16044v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 145
     },
     {
-      "rank": 19,
       "doi": "10.1088/1367-2630/ad9828",
+      "arxiv_id": "2305.03004v2",
       "title": "Calibration of syndrome measurements in a single experiment",
-      "abstract": "",
+      "authors": [
+        "Christian Wimmer",
+        "Jochen Szangolies",
+        "Michael Epping"
+      ],
+      "venue": "arXiv",
       "year": 2023,
-      "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "pdf_url": "https://arxiv.org/pdf/2305.03004v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
-      "source": "arxiv",
-      "type": "preprint"
+      "rank": 146
     },
     {
-      "rank": 20,
       "doi": "arXiv:1306.0498v3",
+      "arxiv_id": "1306.0498v3",
       "title": "Syndrome Measurement Order for the [[7,1,3]] Quantum Error Correction Code",
-      "abstract": "",
-      "year": 2013,
+      "authors": [
+        "Yaakov S. Weinstein"
+      ],
       "venue": "arXiv",
-      "citation_count": 0,
-      "engines_found_in": [
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1306.0498v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
         "arxiv"
       ],
-      "score": 0.0,
+      "rank": 147
+    },
+    {
+      "doi": "arXiv:2605.06101v1",
+      "arxiv_id": "2605.06101v1",
+      "title": "Syndrome resampling enhances quantum error correction thresholds",
+      "authors": [
+        "Luis Colmenarez",
+        "Áron Márton",
+        "Markus Müller"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.06101v1",
+      "cited_by_count": 0,
       "source": "arxiv",
-      "type": "preprint"
-    },
-    {
-      "rank": 21,
-      "doi": "",
-      "title": "Effect of cevimeline hydrocholoride on dental caries-related micro-organisms in patients with Sjogren's syndrome",
-      "abstract": "",
-      "year": 2009,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 148
     },
     {
-      "rank": 22,
-      "doi": "",
-      "title": "Primary Sjögren's syndrome: case report",
-      "abstract": "",
-      "year": 2019,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1007/978-3-031-74630-7_10",
+      "arxiv_id": "2502.06341v1",
+      "title": "Facial Analysis Systems and Down Syndrome",
+      "authors": [
+        "Marco Rondina",
+        "Fabiana Vinci",
+        "Antonio Vetrò",
+        "Juan Carlos De Martin"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
-    },
-    {
-      "rank": 23,
-      "doi": "",
-      "title": "Immunoglobulin variable-region gene mutational lineage tree analysis: application to autoimmune diseases",
-      "abstract": "",
-      "year": 2006,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2502.06341v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 149
     },
     {
-      "rank": 24,
-      "doi": "",
-      "title": "The Diagnosis and Treatment of Sjögren's Syndrome.",
-      "abstract": "",
+      "doi": "10.1007/s11128-024-04568-7",
+      "arxiv_id": "2207.05942v2",
+      "title": "Syndrome decoding by quantum approximate optimization",
+      "authors": [
+        "Ching-Yi Lai",
+        "Kao-Yueh Kuo",
+        "Bo-Jyun Liao"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.05942v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 150
+    },
+    {
+      "doi": "arXiv:2606.24469v1",
+      "arxiv_id": "2606.24469v1",
+      "title": "When to Skip Syndrome Extraction in Surface-GKP Codes",
+      "authors": [
+        "Vaughn Sohn",
+        "Changhun Oh"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2606.24469v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 151
+    },
+    {
+      "doi": "arXiv:1410.7140v5",
+      "arxiv_id": "1410.7140v5",
+      "title": "A data-driven method for syndrome type identification and classification in traditional Chinese medicine",
+      "authors": [
+        "Nevin L. Zhang",
+        "Chen Fu",
+        "Teng Fei Liu",
+        "Bao Xin Chen",
+        "Kin Man Poon",
+        "Pei Xian Chen",
+        "Yun Ling Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1410.7140v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 152
+    },
+    {
+      "doi": "arXiv:2405.11240v1",
+      "arxiv_id": "2405.11240v1",
+      "title": "Testing the Performance of Face Recognition for People with Down Syndrome",
+      "authors": [
+        "Christian Rathgeb",
+        "Mathias Ibsen",
+        "Denise Hartmann",
+        "Simon Hradetzky",
+        "Berglind Ólafsdóttir"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.11240v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 153
+    },
+    {
+      "doi": "arXiv:2002.08575v1",
+      "arxiv_id": "2002.08575v1",
+      "title": "Syndrome-aware Herb Recommendation with Multi-Graph Convolution Network",
+      "authors": [
+        "Yuanyuan Jin",
+        "Wei Zhang",
+        "Xiangnan He",
+        "Xinyu Wang",
+        "Xiaoling Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.08575v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 154
+    },
+    {
+      "doi": "arXiv:2510.07602v2",
+      "arxiv_id": "2510.07602v2",
+      "title": "Noisy-Syndrome Decoding of Hypergraph Product Codes",
+      "authors": [
+        "Venkata Gandikota",
+        "Elena Grigorescu",
+        "Vatsal Jha",
+        "S. Venkitesh"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.07602v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 155
+    },
+    {
+      "doi": "10.1109/ISIT45174.2021.9518018",
+      "arxiv_id": "2102.01984v1",
+      "title": "Decoding of Quantum Data-Syndrome Codes via Belief Propagation",
+      "authors": [
+        "Kao-Yueh Kuo",
+        "I-Chun Chern",
+        "Ching-Yi Lai"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.01984v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 156
+    },
+    {
+      "doi": "arXiv:2112.00057v1",
+      "arxiv_id": "2112.00057v1",
+      "title": "Successive Syndrome-Check Decoding of Polar Codes",
+      "authors": [
+        "Seyyed Ali Hashemi",
+        "Marco Mondelli",
+        "John Cioffi",
+        "Andrea Goldsmith"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2112.00057v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 157
+    },
+    {
+      "doi": "10.22331/q-2023-08-08-1075",
+      "arxiv_id": "2208.05601v4",
+      "title": "Adaptive syndrome measurements for Shor-style error correction",
+      "authors": [
+        "Theerapat Tansuwannont",
+        "Balint Pato",
+        "Kenneth R. Brown"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.05601v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 158
+    },
+    {
+      "doi": "arXiv:2603.17988v1",
+      "arxiv_id": "2603.17988v1",
+      "title": "Adaptive Loss-tolerant Syndrome Measurements",
+      "authors": [
+        "Yuanjia Wang",
+        "Todd A. Brun"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.17988v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 159
+    },
+    {
+      "doi": "arXiv:2504.14643v1",
+      "arxiv_id": "2504.14643v1",
+      "title": "Estimating detector error models from syndrome data",
+      "authors": [
+        "Robin Blume-Kohout",
+        "Kevin Young"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.14643v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 160
+    },
+    {
+      "doi": "arXiv:1602.01545v1",
+      "arxiv_id": "1602.01545v1",
+      "title": "Correction of Data and Syndrome Errors by Stabilizer Codes",
+      "authors": [
+        "Alexei Ashikhmin",
+        "Ching-Yi Lai",
+        "Todd Brun"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1602.01545v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 161
+    },
+    {
+      "doi": "arXiv:1710.02703v2",
+      "arxiv_id": "1710.02703v2",
+      "title": "Properties of Syndrome Distribution for Blind Reconstruction of Cyclic Codes",
+      "authors": [
+        "Arti D. Yardi",
+        "Saravanan Vijayakumaran"
+      ],
+      "venue": "arXiv",
       "year": 2017,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/1710.02703v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 162
     },
     {
-      "rank": 25,
-      "doi": "",
-      "title": "An antigen-driven B-cell response within the salivary glands of patients with Sjögren’s syndrome",
-      "abstract": "",
-      "year": 2002,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "10.1111/ene.13923",
+      "arxiv_id": "2401.13301v1",
+      "title": "Classification of Radiologically Isolated Syndrome and Clinically Isolated Syndrome with Machine-Learning Techniques",
+      "authors": [
+        "V Mato-Abad",
+        "A Labiano-Fontcuberta",
+        "S Rodriguez-Yanez",
+        "R Garcia-Vazquez",
+        "CR Munteanu",
+        "J Andrade-Garda",
+        "A Domingo-Santos",
+        "V Galan Sanchez-Seco",
+        "Y Aladro",
+        "ML Martinez-Gines",
+        "L Ayuso",
+        "J Benito-Leon"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.13301v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 163
     },
     {
-      "rank": 26,
-      "doi": "",
-      "title": "Eligibility for clinical trials in primary Sjögren's syndrome: lessons from the UK Primary Sjögren's Syndrome Registry.",
-      "abstract": "",
+      "doi": "arXiv:2512.02275v1",
+      "arxiv_id": "2512.02275v1",
+      "title": "Understanding Down Syndrome Stereotypes in LLM-Based Personas",
+      "authors": [
+        "Chantelle Wu",
+        "Peinan Wang",
+        "Nafi Nibras",
+        "Meida Li",
+        "Dajun Yuan",
+        "Zhixiao Wang",
+        "Jiahuan He",
+        "Mona Ali",
+        "Mirjana Prpa"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.02275v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 164
+    },
+    {
+      "doi": "arXiv:2603.05145v2",
+      "arxiv_id": "2603.05145v2",
+      "title": "Quantum advantages for syndrome-aware noisy logical observable estimation",
+      "authors": [
+        "Kento Tsubouchi",
+        "Hyukgun Kwon",
+        "Liang Jiang",
+        "Nobuyuki Yoshioka"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.05145v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 165
+    },
+    {
+      "doi": "arXiv:2508.08188v1",
+      "arxiv_id": "2508.08188v1",
+      "title": "Characterization of syndrome-dependent logical noise in detector regions",
+      "authors": [
+        "Matthew Girling",
+        "Ben Criger",
+        "Cristina Cirstoiu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.08188v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 166
+    },
+    {
+      "doi": "arXiv:2605.25317v1",
+      "arxiv_id": "2605.25317v1",
+      "title": "Fault-Tolerant QLDPC Syndrome Measurement via LDGM Encoding",
+      "authors": [
+        "Eren Guttentag",
+        "Anthony Gómez-Fonseca"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.25317v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 167
+    },
+    {
+      "doi": "arXiv:2509.14835v1",
+      "arxiv_id": "2509.14835v1",
+      "title": "Inference of unknown syndrome values in the implementation of the Berlekamp-Massey-Sakata algorithm",
+      "authors": [
+        "J. J. Bernal",
+        "J. J. Simón"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.14835v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 168
+    },
+    {
+      "doi": "arXiv:1601.07867v1",
+      "arxiv_id": "1601.07867v1",
+      "title": "Brain network efficiency is influenced by pathological source of corticobasal syndrome",
+      "authors": [
+        "John D. Medaglia",
+        "Weiyu Huang",
+        "Santiago Segarra",
+        "Christopher Olm",
+        "James Gee",
+        "Murray Grossman",
+        "Alejandro Ribeiro",
+        "Corey T. McMillan",
+        "Danielle S. Bassett"
+      ],
+      "venue": "arXiv",
       "year": 2016,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/1601.07867v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 169
     },
     {
-      "rank": 27,
-      "doi": "",
-      "title": "Criteria for Sjögren's syndrome.",
-      "abstract": "",
-      "year": 2016,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2409.06979v2",
+      "arxiv_id": "2409.06979v2",
+      "title": "A High-Performance List Decoding Algorithm for Surface Codes with Erroneous Syndrome",
+      "authors": [
+        "Jifan Liang",
+        "Qianfan Wang",
+        "Lvzhou Li",
+        "Xiao Ma"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.06979v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 170
     },
     {
-      "rank": 28,
-      "doi": "",
-      "title": "Sjögren's Syndrome: Terminology",
-      "abstract": "",
-      "year": 1995,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2208.02001v1",
+      "arxiv_id": "2208.02001v1",
+      "title": "Kasabach-Merritt syndrome arising from an Enteroatmospheric Fistula",
+      "authors": [
+        "Kunal Shah",
+        "Krishan Rajaratnam"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.02001v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 171
     },
     {
-      "rank": 29,
-      "doi": "",
-      "title": "Cytokines in Sjögren's syndrome",
-      "abstract": "",
+      "doi": "arXiv:1411.0724v2",
+      "arxiv_id": "1411.0724v2",
+      "title": "Bounds for complexity of syndrome decoding for poset metrics",
+      "authors": [
+        "Marcelo Firer",
+        "Jerry Anderson Pinheiro"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1411.0724v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 172
+    },
+    {
+      "doi": "arXiv:0912.0453v1",
+      "arxiv_id": "0912.0453v1",
+      "title": "NP-completeness of Certain Sub-classes of the Syndrome Decoding Problem",
+      "authors": [
+        "Matthieu Finiasz"
+      ],
+      "venue": "arXiv",
       "year": 2009,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "pdf_url": "https://arxiv.org/pdf/0912.0453v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "rank": 173
     },
     {
-      "rank": 30,
-      "doi": "",
-      "title": "Pulmonary manifestations of Sjögren's syndrome",
-      "abstract": "",
-      "year": 2016,
-      "venue": "",
-      "citation_count": 0,
-      "engines_found_in": [
-        "core"
+      "doi": "arXiv:2008.05051v1",
+      "arxiv_id": "2008.05051v1",
+      "title": "Short Shor-style syndrome sequences",
+      "authors": [
+        "Nicolas Delfosse",
+        "Ben W. Reichardt"
       ],
-      "score": 0.0,
-      "source": "core",
-      "type": ""
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2008.05051v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 174
+    },
+    {
+      "doi": "10.1007/978-3-032-22695-2_7",
+      "arxiv_id": "2604.09292v1",
+      "title": "Cross-Paradigm Models of Restricted Syndrome Decoding with Application to CROSS",
+      "authors": [
+        "Étienne Burle",
+        "Aleksei Udovenko"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.09292v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 175
+    },
+    {
+      "doi": "10.1109/TIT.2025.3529773",
+      "arxiv_id": "2310.12682v2",
+      "title": "Generalized quantum data-syndrome codes and belief propagation decoding for phenomenological noise",
+      "authors": [
+        "Kao-Yueh Kuo",
+        "Ching-Yi Lai"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.12682v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 176
+    },
+    {
+      "doi": "arXiv:2404.10194v1",
+      "arxiv_id": "2404.10194v1",
+      "title": "Impostor Syndrome in Final Year Computer Science Students: An Eye Tracking and Biometrics Study",
+      "authors": [
+        "Alyssia Chen",
+        "Carol Wong",
+        "Katy Tarrit",
+        "Anthony Peruma"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.10194v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 177
+    },
+    {
+      "doi": "arXiv:2510.08719v1",
+      "arxiv_id": "2510.08719v1",
+      "title": "Universal syndrome-based recovery for noise-adapted quantum error correction",
+      "authors": [
+        "Debjyoti Biswas",
+        "Prabha Mandayam"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.08719v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 178
+    },
+    {
+      "doi": "arXiv:2006.01666v1",
+      "arxiv_id": "2006.01666v1",
+      "title": "Nervous Excitability dynamics in a multisensory syndrome and its similitude with a normal state. Scaling Laws",
+      "authors": [
+        "Isabel Gonzalo-Fonrodona",
+        "Miguel A. Porras"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.01666v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 179
+    },
+    {
+      "doi": "10.1103/PhysRevResearch.6.L032004",
+      "arxiv_id": "2311.15146v1",
+      "title": "Artificial Neural Network Syndrome Decoding on IBM Quantum Processors",
+      "authors": [
+        "Brhyeton Hall",
+        "Spiro Gicev",
+        "Muhammad Usman"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.15146v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 180
+    },
+    {
+      "doi": "arXiv:2209.06656v1",
+      "arxiv_id": "2209.06656v1",
+      "title": "Syndrome decoding meets multiple instances",
+      "authors": [
+        "Haoxuan Wu",
+        "Jincheng Zhuang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.06656v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 181
+    },
+    {
+      "doi": "arXiv:2605.26843v1",
+      "arxiv_id": "2605.26843v1",
+      "title": "A warning system for risk prediction of metabolic syndrome in a healthy population of blood donors",
+      "authors": [
+        "Simone Colombara",
+        "Ilenia Epifani",
+        "Alessandra Guglielmi",
+        "Ettore Lanzarone"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2605.26843v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 182
+    },
+    {
+      "doi": "arXiv:2512.23810v2",
+      "arxiv_id": "2512.23810v2",
+      "title": "Syndrome aware mitigation of logical errors",
+      "authors": [
+        "Dorit Aharonov",
+        "Yosi Atia",
+        "Eyal Bairey",
+        "Zvika Brakerski",
+        "Itsik Cohen",
+        "Omri Golan",
+        "Ilya Gurwich",
+        "Netanel H. Lindner",
+        "Maor Shutman"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.23810v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 183
+    },
+    {
+      "doi": "arXiv:2508.07913v1",
+      "arxiv_id": "2508.07913v1",
+      "title": "Scheduling of syndrome measurements with a few ancillary qubits",
+      "authors": [
+        "Shintaro Sato",
+        "Yasunari Suzuki"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2508.07913v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 184
+    },
+    {
+      "doi": "arXiv:1601.06923v2",
+      "arxiv_id": "1601.06923v2",
+      "title": "Identification and classification of TCM syndrome types among patients with vascular mild cognitive impairment using latent tree analysis",
+      "authors": [
+        "Chen Fu",
+        "Nevin L. Zhang",
+        "Bao Xin Chen",
+        "Zhou Rong Chen",
+        "Xiang Lan Jin",
+        "Rong Juan Guo",
+        "Zhi Gang Chen",
+        "Yun Ling Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1601.06923v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 185
+    },
+    {
+      "doi": "10.1109/LCOMM.2010.06.100283",
+      "arxiv_id": "0912.0797v3",
+      "title": "On Syndrome Decoding for Slepian-Wolf Coding Based on Convolutional and Turbo Codes",
+      "authors": [
+        "Lorenzo Cappellari"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0912.0797v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 186
+    },
+    {
+      "doi": "10.2196/86249",
+      "arxiv_id": "2509.25434v2",
+      "title": "The Open Syndrome Definition",
+      "authors": [
+        "Ana Paula Gomes Ferreira",
+        "Aleksandar Anžel",
+        "Izabel Oliva Marcilio de Souza",
+        "Helen Hughes",
+        "Alex J Elliot",
+        "Jude Dzevela Kong",
+        "Madlen Schranz",
+        "Alexander Ullrich",
+        "Georges Hattab"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.25434v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "rank": 187
     }
   ]
 }
