@@ -122,6 +122,21 @@ test_output/_test_*.py  # test files: tracked separately below
 /search_t*.json
 /search_topic*.json
 
+# Per 2026-07-22 cleanup: data backup files in bench/v01
+# (real .bak of labels_clean.json, queries.json, etc.)
+bench/v01/*.bak
+bench/v01/*.bak-*
+
+# Per 2026-07-22 cleanup: more test_output debug/smoke scripts
+# (not in the original exclude list; one-off debug, not the real e2e tests)
+test_output/_api_*.py
+test_output/_api_*.json
+test_output/_doi_lookup.py
+test_output/_inspect_q032.py
+# CJK in filename is allowed but these specific ones were one-offs
+test_output/_test_深度学习.py
+test_output/_test_*.py  # wildcard fallback: any CJK test names
+
 
 # OS files
 .DS_Store
