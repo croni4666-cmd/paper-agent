@@ -1,0 +1,94 @@
+{
+  "query_id": "q061",
+  "query": "industry 4.0 SME 4 stages Bibby Dehe 2018 production planning control",
+  "topic_bucket": "sample-t1",
+  "source": "moe-keyword-samples",
+  "generated_at": "2026-07-22",
+  "config": {
+    "limit": 50,
+    "engine": "arxiv,openalex,s2,crossref,aminer",
+    "fix_version": "v3.9.10.11",
+    "is_synthetic": true,
+    "synth_purpose": "MoE router training sample (n=12 supplement)"
+  },
+  "n_returned": 4,
+  "top_n": 4,
+  "by_engine": {
+    "crossref": 1
+  },
+  "results": [
+    {
+      "doi": "10.1080/09537287.2017.1381397",
+      "title": "Paper q061 (t1/m11/d5/i2) engine=crossref",
+      "authors": [
+        "Author A",
+        "Author B"
+      ],
+      "venue": "Sample Journal",
+      "year": 2024,
+      "cited_by_count": 50,
+      "rank": 1,
+      "v4_score": 1.0,
+      "bm25_score": 10.0,
+      "biencoder_score": 0.95,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "source": "crossref"
+    },
+    {
+      "doi": "10.1109/ACCESS.2020.2981234",
+      "title": "A survey of manufacturing 4.0 adoption barriers",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 2,
+      "v4_score": 0.3,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "source": "crossref"
+    },
+    {
+      "doi": "10.1016/j.techfore.2019.03.025",
+      "title": "Technology forecasting and innovation policy",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 3,
+      "v4_score": 0.25,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "source": "crossref"
+    },
+    {
+      "doi": "10.1080/00207543.2018.1457808",
+      "title": "Lean production industry 4.0 integration",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 4,
+      "v4_score": 0.19999999999999998,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "source": "crossref"
+    }
+  ]
+}

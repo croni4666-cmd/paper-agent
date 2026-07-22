@@ -1,0 +1,94 @@
+{
+  "query_id": "q057",
+  "query": "edge AI 4 layer architecture IoT CPS Singh Gill 2023 inference offloading",
+  "topic_bucket": "sample-t3",
+  "source": "moe-keyword-samples",
+  "generated_at": "2026-07-22",
+  "config": {
+    "limit": 50,
+    "engine": "arxiv,openalex,s2,crossref,aminer",
+    "fix_version": "v3.9.10.11",
+    "is_synthetic": true,
+    "synth_purpose": "MoE router training sample (n=12 supplement)"
+  },
+  "n_returned": 4,
+  "top_n": 4,
+  "by_engine": {
+    "arxiv": 1
+  },
+  "results": [
+    {
+      "doi": "10.1109/MC.2023.3254401",
+      "title": "Paper q057 (t3/m7/d7/i0) engine=arxiv",
+      "authors": [
+        "Author A",
+        "Author B"
+      ],
+      "venue": "Sample Journal",
+      "year": 2024,
+      "cited_by_count": 50,
+      "rank": 1,
+      "v4_score": 1.0,
+      "bm25_score": 10.0,
+      "biencoder_score": 0.95,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "source": "arxiv"
+    },
+    {
+      "doi": "arXiv:2104.01266v2",
+      "title": "Deep learning for IoT edge devices survey",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 2,
+      "v4_score": 0.3,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "source": "arxiv"
+    },
+    {
+      "doi": "arXiv:2302.07845v1",
+      "title": "Federated learning at the edge architecture",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 3,
+      "v4_score": 0.25,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "source": "arxiv"
+    },
+    {
+      "doi": "arXiv:2411.12345v1",
+      "title": "5G MEC multi-access edge computing performance",
+      "authors": [
+        "Noise Author"
+      ],
+      "venue": "Other Journal",
+      "year": 2020,
+      "cited_by_count": 5,
+      "rank": 4,
+      "v4_score": 0.19999999999999998,
+      "bm25_score": 2.0,
+      "biencoder_score": 0.3,
+      "engines_found_in": [
+        "arxiv"
+      ],
+      "source": "arxiv"
+    }
+  ]
+}
