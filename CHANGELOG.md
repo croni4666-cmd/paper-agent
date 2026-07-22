@@ -158,7 +158,33 @@ macro F1 to the target 0.70-0.75.
 
 ---
 
-## [3.9.10.11] - 2026-07-22 ([P1-20] S2 throttling ships — needs S2_API_KEY for impact)
+## [3.9.10.11] - 2026-07-22 ([P1-20] S2 throttling + [P2-14] Quality filter + v3.9.10.10 re-eval honest finding; all shipped in same release)
+
+**Note** (added 2026-07-22 cleanup): v3.9.10.11 is a combined release that
+includes THREE change sets, originally documented as two separate `## [3.9.10.11]`
+entries (one for 2026-07-22 [P1-20], one for 2026-07-20 [P2-14] + re-eval).
+This cleanup merges them into one release entry for clarity.
+
+**Commits in v3.9.10.11** (chronological):
+- `f8eaac3` 2026-07-20 — [P2-14] Quality filter ships
+- `75f4c33` + `ca9ecb0` 2026-07-20 — v3.9.10.10 honest 3-tier re-eval finding
+- `c434f50` 2026-07-22 — [P1-20] S2 throttle + 429 backoff ships
+- `482672e` 2026-07-22 — [P1-20] honest 3-tier report
+
+**Code state at v3.9.10.11** (`pa_cli/__init__.py:__version__` = "3.9.10.11"):
+- [P1-20] S2 throttle: `_S2_LOCK`, `_S2_MIN_INTERVAL=1.1`, `_S2_MAX_RETRIES=3`,
+  `_s2_throttle_wait()`, `_s2_request_with_retry()` in `pa_cli/search.py` (~50 LOC)
+- [P2-14] Quality filter: `pa_cli/quality_filter.py` (~100 LOC) + `--quality-mode`
+  CLI option in `pa_cli/cli.py`
+- 8+13 = 21 tests pass (`_test_s2_throttle.py` 8/8, `_test_quality_filter.py` 13/13)
+
+**Honest finding summary**:
+- [P1-20] S2 throttle is **correct but non-functional without S2_API_KEY**
+  (re-eval: v3.9.10.11 ≈ v3.9.10.10, both at NDCG@10 ≈ 0.15)
+- [P2-14] Quality filter works (13/13 tests) but is **CLI default = flag** for safety
+- v3.9.10.10 re-eval caught a regression: pool coverage 99.7% → 89.6% (-10%),
+  NDCG@10 0.81 → 0.15 (-0.66). Root cause: rebuild script excluded S2.
+  [P1-20] is the fix; S2_API_KEY is needed for full effect.
 
 ### v3.9.10.11 — [P1-20] S2 throttle + 429 backoff/retry (2026-07-22)
 
@@ -206,8 +232,6 @@ pool coverage to ~0.99 and NDCG@10 to ~0.85.
 - `bench/v01/reports/v3_9_10_11_p1_20_re_eval.md` (honest 3-tier report)
 
 ---
-
-## [3.9.10.11] - 2026-07-20 ([P2-14] Quality filter + v3.9.10.10 honest re-eval finding)
 
 ### v3.9.10.11 — [P2-14] Quality filter ships (2026-07-20)
 
