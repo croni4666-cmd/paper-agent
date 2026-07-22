@@ -2286,11 +2286,25 @@ decomposition is stable enough to thread into ranking).
 > `[P1-18] Year-aware enrichment skip` (retroactively assigned in
 > [3.9.9.3] round-3 audit).
 
-- **Status**: proposed
+- **Status**: blocked (waiting on [P1-8] China inst + country library to accumulate)
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 5)
-- **Rationale**: User stated "Qs鍓?0澶у浠ュ強涓€浜涚壒娈婃満鏋勮濡侲SMFold,IMF,涓栫晫閾惰绛夊叿鏈夊叕淇″姏鎴栬€呭浗闄呰儗鏅垨鑰呰憲鍚嶇殑鍥藉鐨勭爺绌舵墍,鑳屼功鐨勮鏂?灏辩畻浠呬粎鏄儴鍒嗙浉鍏?浣嗗叾鍙兘鐨勭爺绌舵繁搴︽槸鏋侀珮鐨?. The Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: Mavis labeled 1 ("partial"), user said "鏋佸叿鍙傝€冧环鍊? (high reference value) 鈥?but didn't override to 2 because relevance is technically partial. Solution: don't change label, but boost ranking score.
+- **Rationale**: User stated institution credibility affects ranking. Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: high reference value but partial relevance. Solution: don't change label, but boost ranking score.
+
+### Modified 2026-07-22 — Blocked on sample library accumulation
+Per user decision 2026-07-22: do **NOT** do institution credibility
+boost now. Wait until the institution lists ([P1-8] China inst,
+[P1-9] country metadata) have accumulated enough user-added entries
+to make the tier definition grounded in real research data.
+
+Status: **blocked** until either:
+- [P1-8] China inst library has ≥10 user-added institutions
+- [P1-9] country library has ≥30 countries
+- Whichever comes first
+
+Re-evaluate [P1-19] when either condition is met. Tier definitions
++ boost magnitudes will need user input at that point.
 - **Acceptance criteria**:
   - `pa_cli/institutions.py` with `INSTITUTION_TIERS` lookup:
     - Tier 1 (high credibility, big boost): IMF, World Bank, OECD, NBER, Federal Reserve, BIS, top-5 central banks, ESMFold/AlphaFold teams, top-5 pharma R&D, Qs top-10 universities (MIT, Stanford, Harvard, Oxford, Cambridge, Caltech, etc.)
@@ -2439,10 +2453,31 @@ African / Pacific island nations per original concern.
 
 ### [P1-10] Falsifiability philosophy integration (research item)
 
-- **Status**: proposed (research)
+- **Status**: in-progress (sample library form, 2026-07-22)
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 7: falsifiability)
+
+### Modified 2026-07-22 — Transformed to sample library (user-driven)
+Per user decision 2026-07-22, refactored from "proactive research
+deliverable" to **sample library form** populated by user after each
+research session concludes:
+- `bench/v01/falsifiability_summaries.json` — empty initial state
+- `test_output/_add_falsifiability.py` — user runs after each
+  research summary request to session, commits summary
+- `test_output/_status_lookups.py --library falsifiability` —
+  progress visibility
+- Each summary has: topic, falsifiable question, evidence, verdict
+  (supported / supported-with-caveats / inconclusive / refuted),
+  Popperian severity (weak / moderate / strong), paper DOIs
+
+User workflow: when research on a topic concludes, user asks
+session "summarize the falsifiability of [topic]" → session produces
+structured summary → user runs `_add_falsifiability.py` to commit.
+
+Merge threshold: 5 summaries → can be used to (a) inform pa review's
+methodology section, (b) build a 'falsifiability checklist' tool,
+(c) write into CHANGELOG as methodology guideline.
 - **Rationale**: User said "浣犵殑鏋舵瀯鍝插閲岄潰涔熷簲璇ヨ€冭檻 鍙瘉浼€х殑纭,灏ゅ叾鏄綋浠ｅ彲璇佷吉鎬у摬瀛︽柟娉曞簲鐢ㄥ湪鍗氬＋浠ュ強瀛︽湳鐣屽眰闈?. This is an architectural-philosophy ask, not a feature ask. Need to research what falsifiability-check tools exist in academic research and design how paper-agent should encode them.
 - **Initial GitHub research findings (2026-07-13)**:
   - **No direct "falsifiability tool" found on GitHub**. The Popper / Lakatos / Kuhn / Feyerabend / Shapere tradition is primarily academic literature, not software.
@@ -3746,7 +3781,7 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ### [P1-13] n=50 → n=100 → n=200 label expansion (added 2026-07-15)
 
-- **Status**: proposed
+- **Status**: blocked (waiting on P1-6 / P1-21 sample libraries to accumulate)
 - **Added**: 2026-07-15
 - **Source**: v3.9.7.3 limit — n=48-50 still in n<100 noise zone per memory discipline
 - **Rationale**: 当前 n=50 (25 real + 25 auto) 是 评估 ceiling. 真 n>100 才能:
@@ -3764,3 +3799,16 @@ and `pa review` now surfaces the caveat. Marking **done**.
   - n=200: 1-2 hour user review (50 queries) + 60 min A2 + 20 min eval = ~3-4 hours
 - **Global Rule check**: 5/5 pass
 - **Honest framing**: per memory discipline, even n=200 paired deltas are still noise for effect sizes <0.05. n=500+ is the real threshold for "finding" claims.
+
+### Modified 2026-07-22 — Blocked on sample library accumulation
+Per user decision 2026-07-22: do **NOT** do n=100/n=200 expansion now.
+Wait until the sample libraries ([P1-6] sub-topic, [P1-21] MoE
+samples) have accumulated enough user-added entries to make the
+n=100/n=200 work grounded in real research data (not synthetic).
+
+Status: **blocked** until either:
+- [P1-21] MoE samples reach n=30 (per `_merge_moe_samples.py` gate)
+- [P1-6] sub-topic library has ≥10 user-verified entries
+- Whichever comes first
+
+Re-evaluate [P1-13] when either condition is met.

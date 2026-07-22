@@ -1,0 +1,8 @@
+{
+  "version": "v0.1-falsifiability-summaries",
+  "source": "ROADMAP [P1-10] Falsifiability philosophy integration",
+  "purpose": "Per-research-area summaries of falsifiability assessment, populated by user after each research session concludes",
+  "workflow": "User finishes research on a topic → asks session for summary → runs `python test_output/_add_falsifiability.py` with the summary → entry added to this library",
+  "merge_criterion": "When 5+ summaries accumulated, can be used to (a) inform pa review's methodology section, (b) build a 'falsifiability checklist' tool, (c) write into CHANGELOG as a methodology guideline",
+  "summaries": []
+}
