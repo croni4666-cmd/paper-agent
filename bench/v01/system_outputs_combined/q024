@@ -1,0 +1,585 @@
+{
+  "query_id": "q024",
+  "query": "Acemoglu Restrepo automation tasks model",
+  "topic_bucket": "econ",
+  "source": "v3.8.3_variant",
+  "generated_at": "2026-07-12T13:05:54",
+  "config": "v4-combined",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.1257/AER.20160696",
+      "title": "The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment",
+      "abstract": "We examine the concerns that new technologies will render labor redundant in a framework in which tasks previously performed by labor can be automated and new versions of existing tasks, in which labor has a comparative advantage, can be created. In a static version where capital is fixed and technology is exogenous, automation reduces employment and the labor share, and may even reduce wages, while the creation of new tasks has the opposite effects. Our full model endogenizes capital accumulation and the direction of research toward automation and the creation of new tasks. If the long-run rental rate of capital relative to the wage is sufficiently low, the long-run equilibrium involves automation of all tasks. Otherwise, there exists a stable balanced growth path in which the two types of innovations go hand-in-hand. Stability is a consequence of the fact that automation reduces the cost of producing using labor, and thus discourages further automation and encourages the creation of new tasks. In an extension with heterogeneous skills, we show that inequality increases during transitions driven both by faster automation and the introduction of new tasks, and characterize the conditions under which inequality stabilizes in the long run. (JEL D63, E22, E23, E24, J24, O33, O41)",
+      "year": 2018,
+      "venue": "The American Economic Review",
+      "citation_count": 2412,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 1,
+      "v4_score": 0.870599,
+      "bm25_score": 2.8666,
+      "biencoder_score": 0.2672
+    },
+    {
+      "rank": 2,
+      "doi": "10.1257/mac.20160164",
+      "title": "The Rise of the Machines: Automation, Horizontal Innovation, and Income Inequality",
+      "abstract": "We build an endogenous growth model with automation (the replacement of low-skill workers with machines) and horizontal innovation (the creation of new products). Over time, the share of automation innovations endogenously increases through an increase in low-skill wages, leading to an increase in the skill premium and a decline in the labor share. We calibrate the model to the US economy and show that it quantitatively replicates the paths of the skill premium, the labor share, and labor productivity. Our model offers a new perspective on recent trends in the income distribution by showing that they can be explained endogenously. (JEL D31, E25, J24, J31, O33, O41)",
+      "year": 2021,
+      "venue": "American Economic Journal Macroeconomics",
+      "citation_count": 222,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.841268,
+      "bm25_score": 2.8738,
+      "biencoder_score": 0.2457
+    },
+    {
+      "rank": 3,
+      "doi": "10.1086/697242",
+      "title": "Low-Skill and High-Skill Automation",
+      "abstract": "We present a task-based model in which high- and low-skill workers compete against machines in the production of tasks. Low-skill (high-skill) automation corresponds to tasks performed by low-skill (high-skill) labor being taken over by capital. Automation displaces the type of labor it directly affects, depressing its wage. Through ripple effects, automation also affects the real wage of other workers. Counteracting these forces, automation creates a positive productivity effect, pushing up the price of all factors. Because capital adjusts to keep the interest rate constant, the productivity effect dominates in the long run. Finally, low-skill (high-skill) automation increases (reduces) wage inequality.",
+      "year": 2018,
+      "venue": "Journal of Human Capital",
+      "citation_count": 271,
+      "engines_found_in": [
+        "crossref",
+        "openalex",
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 22,
+      "v4_score": 0.820252,
+      "bm25_score": 2.9053,
+      "biencoder_score": 0.2271
+    },
+    {
+      "rank": 4,
+      "doi": "",
+      "title": "NBER WORKING PAPER SERIES AUTOMATION AND NEW TASKS : HOW TECHNOLOGY DISPLACES AND REINSTATES LABOR",
+      "abstract": "",
+      "year": 2019,
+      "venue": "",
+      "citation_count": 1966,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 3,
+      "v4_score": 0.752366,
+      "bm25_score": 1.4664,
+      "biencoder_score": 0.3535
+    },
+    {
+      "rank": 5,
+      "doi": "10.1257/jep.33.2.3",
+      "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+      "abstract": "<jats:p> We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a res",
+      "year": 2019,
+      "venue": "Journal of Economic Perspectives",
+      "citation_count": 2038,
+      "engines_found_in": [
+        "crossref",
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 2,
+      "v4_score": 0.701069,
+      "bm25_score": 1.6595,
+      "biencoder_score": 0.2941
+    },
+    {
+      "rank": 6,
+      "doi": "10.7208/chicago/9780226613475.003.0008",
+      "title": "Artificial Intelligence, Automation, and Work",
+      "abstract": "We summarize a framework for the study of the implications of automation and AI on the demand for labor, wages, and employment.Our task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform.This displacement effect tends to reduce the demand for labor and wages.But it is counteracted by a productivity effect, resulting from the cost savings generated by automation, which increase the demand for labor in non-automated tasks.The productivity effect is complemented by additional capital accumulation and the deepening of automation (improvements of existing machinery), both of which further increase the demand for labor.These countervailing effects are incomplete.Even when they are strong, automation increases output per worker more than wages and reduce the share of labor in national income.The more powerful countervailing force against automation is the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to increase the labor share to counterbalance the impact of automation.Our framework also highlights the constraints and imperfections that slow down the adjustment of the economy and the labor market to automation and weaken the resulting productivity gains from this transformation: a mismatch between the skill requirements of new technologies, and the possibility that automation is being introduced at an excessive rate, possibly at the expense of other productivity-enhancing technologies.",
+      "year": 2019,
+      "venue": "The Economics of Artificial Intelligence",
+      "citation_count": 253,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "book-chapter",
+      "orig_rank": 23,
+      "v4_score": 0.688168,
+      "bm25_score": 1.4371,
+      "biencoder_score": 0.3119
+    },
+    {
+      "rank": 7,
+      "doi": "10.3386/w24196",
+      "title": "Artificial Intelligence, Automation and Work",
+      "abstract": "We summarize a framework for the study of the implications of automation and AI on the demand for labor, wages, and employment. Our task-based framework emphasizes the displacement effect that automation creates as machines and AI replace labor in tasks that it used to perform. This displacement effect tends to reduce the demand for labor and wages. But it is counteracted by a productivity effect, resulting from the cost savings generated by automation, which increase the demand for labor in non-automated tasks. The productivity effect is complemented by additional capital accumulation and the deepening of automation (improvements of existing machinery), both of which further increase the demand for labor. These countervailing effects are incomplete. Even when they are strong, automation in-creases output per worker more than wages and reduce the share of labor in national income. The more powerful countervailing force against automation is the creation of new labor-intensive tasks, which reinstates labor in new activities and tends to increase the labor share to counterbalance the impact of automation. Our framework also highlights the constraints and imperfections that slow down the adjustment of the economy and the labor market to automation and weaken the resulting productivity gains from this transformation: a mismatch between the skill requirements of new technologies, and the possibility that automation is being introduced at an excessive rate, possibly at the expense of other productivity-enhancing technologies.",
+      "year": null,
+      "venue": "",
+      "citation_count": 489,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "report",
+      "orig_rank": 14,
+      "v4_score": 0.684437,
+      "bm25_score": 1.4371,
+      "biencoder_score": 0.3093
+    },
+    {
+      "rank": 8,
+      "doi": "10.3386/W24421",
+      "title": "Demographics and Automation",
+      "abstract": "We argue theoretically and document empirically that aging leads to greater (industrial) automation, and in particular, to more intensive use and development of robots. Using US data, we document that robots substitute for middle-aged workers (those between the ages of 36 and 55). We then show that demographic change-corresponding to an increasing ratio of older to middle-aged workers-is associated with greater adoption of robots and other automation technologies across countries and with more robotics-related activities across US commuting zones. We also provide evidence of more rapid development of automation technologies in countries undergoing greater demographic change. Our directed technological change model further predicts that the induced adoption of automation technology should be more pronounced in industries that rely more on middle-aged workers and those that present greater opportunities for automation. Both of these predictions receive support from country-industry variation in the adoption of robots. Our model also implies that the productivity implications of aging are ambiguous when technology responds to demographic change, but we should expect productivity to increase and labor share to decline relatively in industries that are most amenable to automation, and this is indeed the pattern we find in the data.",
+      "year": 2021,
+      "venue": "The Review of Economic Studies",
+      "citation_count": 531,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 9,
+      "v4_score": 0.680404,
+      "bm25_score": 2.2334,
+      "biencoder_score": 0.2101
+    },
+    {
+      "rank": 9,
+      "doi": "10.1093/epolic/eiaa001",
+      "title": "Automation and jobs: when technology boosts employment*",
+      "abstract": "SUMMARY Will new technologies cause industries to shed jobs, requiring novel policies to address mass unemployment? Sometimes productivity-enhancing technology increases industry employment instead. In manufacturing, jobs grew along with productivity for a century or more; only later did productivity gains bring declining employment. What changed? The elasticity of demand. Using data over two centuries for US textile, steel and auto industries, this paper shows that automation initially spurred job growth because demand was highly elastic. But demand later became satiated, leading to job losses. A simple model explains why this pattern might be common, suggesting that today’s technologies may cause some industries to decline and others to grow. Automation might not cause mass unemployment, but it may well require workers to make disruptive transitions to new industries, requiring new skills and occupations.",
+      "year": 2019,
+      "venue": "Economic Policy",
+      "citation_count": 301,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.633934,
+      "bm25_score": 1.6985,
+      "biencoder_score": 0.2422
+    },
+    {
+      "rank": 10,
+      "doi": "10.2139/ssrn.2935003",
+      "title": "Automation and Jobs: When Technology Boosts Employment",
+      "abstract": "Will new technologies cause industries to shed jobs, requiring novel policies to address mass unemployment? Sometimes productivity-enhancing technology increases industry employment instead. In manufacturing, jobs grew along with productivity for a century or more; only later did productivity gains bring declining employment. What changed? The elasticity of demand. Using data over two centuries for US textile, steel, and auto industries, this paper shows that automation initially spurred job growth because demand was highly elastic. But demand later became satiated, leading to job losses. A simple model explains why this pattern might be common, suggesting that today’s technologies may cause some industries to decline and others to grow. Automation might not cause mass unemployment, but it may well require workers to make disruptive transitions to new industries, requiring new skills and occupations.",
+      "year": 2018,
+      "venue": "SSRN Electronic Journal",
+      "citation_count": 131,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 30,
+      "v4_score": 0.626373,
+      "bm25_score": 1.7055,
+      "biencoder_score": 0.236
+    },
+    {
+      "rank": 11,
+      "doi": "10.3982/ecta19815",
+      "title": "Tasks, Automation, and the Rise in U.S. Wage Inequality",
+      "abstract": "<jats:p>We document that between 50% and 70% of changes in the U.S. wage structure over the last four decades are accounted for by relative wage declines of worker groups specialized in routine tasks in industries experiencing rapid automation. We develop a conceptual framework where tasks across industries are allocated to different types of labor and capital. Automation technologies expand the set of tasks performed by capital, displacing certain worker groups from jobs for which they have com",
+      "year": null,
+      "venue": "Econometrica",
+      "citation_count": 520,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 10,
+      "v4_score": 0.623343,
+      "bm25_score": 1.7426,
+      "biencoder_score": 0.2294
+    },
+    {
+      "rank": 12,
+      "doi": "10.3390/su10051661",
+      "title": "The Impact of Automation on Employment: Just the Usual Structural Change?",
+      "abstract": "We study the projected impact of automation on employment in the forthcoming decade, both at the macro-level and in actual (types of) sectors. Hereto, we unite an evolutionary economic model of multisectoral structural change with labor economic theory. We thus get a comprehensive framework of how displacement of labor in sectors of application is compensated by intra- and intersectoral countervailing effects and notably mopped up by newly created, labor-intensive sectors. We use several reputable datasets with expert projections on employment in occupations affected by automation (and notably by the introduction of robotics and AI) to pinpoint which and how sectors and occupations face employment shifts. This reveals how potential job loss due to automation in “applying” sectors is counterbalanced by job creation in “making” sectors as well in complementary and quaternary, spillover sectors. Finally, we study several macro-level scenarios on employment and find that mankind is facing “the usual structural change” rather than the “end of work”. We provide recommendations on policy instruments that enhance the dynamic efficiency of structural change.",
+      "year": 2018,
+      "venue": "Sustainability",
+      "citation_count": 172,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.604386,
+      "bm25_score": 1.6243,
+      "biencoder_score": 0.2304
+    },
+    {
+      "rank": 13,
+      "doi": "10.3386/W25682",
+      "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
+      "abstract": "Artificial intelligence (AI) is set to influence every aspect of our lives, not least the way production is organised. AI, as a technology platform, can automate tasks previously performed by labour or create new tasks and activities in which humans can be productively employed. Recent technological change has been biased towards automation, with insufficient focus on creating new tasks where labour can be productively employed. The consequences of this choice have been stagnating labour demand, declining labour share in national income, rising inequality and lowering productivity growth. The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
+      "year": 2019,
+      "venue": "Cambridge Journal of Regions, Economy and Society",
+      "citation_count": 509,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 12,
+      "v4_score": 0.601353,
+      "bm25_score": 1.4855,
+      "biencoder_score": 0.245
+    },
+    {
+      "rank": 14,
+      "doi": "10.3386/W28920",
+      "title": "Tasks, Automation, and the Rise in US Wage Inequality",
+      "abstract": "We document that between 50% and 70% of changes in the US wage structure over the last four decades are accounted for by the relative wage declines of worker groups specialized in routine tasks in industries experiencing rapid automation. We develop a conceptual framework where tasks across a number of industries are allocated to different types of labor and capital. Automation technologies expand the set of tasks performed by capital, displacing certain worker groups from employment opportunities for which they have comparative advantage. This framework yields a simple equation linking wage changes of a demographic group to the task displacement it experiences. We report robust evidence in favor of this relationship and show that regression models incorporating task displacement explain much of the changes in education differentials between 1980 and 2016. Our task displacement variable captures the effects of automation technologies (and to a lesser degree offshoring) rather than those of rising market power, markups or deunionization, which themselves do not appear to play a major role in US wage inequality. We also propose a methodology for evaluating the full general equilibrium effects of task displacement (which include induced changes in industry composition and ripple effects as tasks are reallocated across different groups). Our quantitative evaluation based on this methodology explains how major changes in wage inequality can go hand-in-hand with modest productivity gains.",
+      "year": 2021,
+      "venue": "Social Science Research Network",
+      "citation_count": 424,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 17,
+      "v4_score": 0.595005,
+      "bm25_score": 1.5306,
+      "biencoder_score": 0.2351
+    },
+    {
+      "rank": 15,
+      "doi": "10.1093/cjres/rsz022",
+      "title": "The wrong kind of AI? Artificial intelligence and the future of labour demand",
+      "abstract": "Abstract Artificial intelligence (AI) is set to influence every aspect of our lives, not least the way production is organised. AI, as a technology platform, can automate tasks previously performed by labour or create new tasks and activities in which humans can be productively employed. Recent technological change has been biased towards automation, with insufficient focus on creating new tasks where labour can be productively employed. The consequences of this choice have been stagnating labour demand, declining labour share in national income, rising inequality and lowering productivity growth. The current tendency is to develop AI in the direction of further automation, but this might mean missing out on the promise of the ‘right’ kind of AI, with better economic and social outcomes.",
+      "year": 2019,
+      "venue": "Cambridge Journal of Regions Economy and Society",
+      "citation_count": 575,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.586881,
+      "bm25_score": 1.4813,
+      "biencoder_score": 0.2353
+    },
+    {
+      "rank": 16,
+      "doi": "10.1371/journal.pone.0242929",
+      "title": "Automation, workers’ skills and job satisfaction",
+      "abstract": "When industrial robots are adopted by firms in a local labor market, some workers are displaced and become unemployed. Other workers that are not directly affected by automation may however fear that these new technologies might replace their working tasks in the future. This fear of a possible future replacement is important because it negatively affects workers' job satisfaction at present. This paper studies the extent to which automation affects workers' job satisfaction, and whether this effect differs for high- versus low-skilled workers. The empirical analysis uses microdata for several thousand workers in Norway from the Working Life Barometer survey for the period 2016-2019, combined with information on the introduction of industrial robots in Norway from the International Federation of Robotics. Our identification strategy exploits variation in the pace of introduction of industrial robots in Norwegian regions and industries since 2007 to instrument workers' fear of replacement. The results indicate that automation in industrial firms in recent years have induced 40% of the workers that are currently in employment to fear that their work might be replaced by a smart machine in the future. Such fear of future replacement does negatively affect workers' job satisfaction at present. This negative effect is driven by low-skilled workers, which are those carrying out routine-based tasks, and who are therefore more exposed to the risks of automation.",
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "citation_count": 136,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 0.578403,
+      "bm25_score": 1.1926,
+      "biencoder_score": 0.2643
+    },
+    {
+      "rank": 17,
+      "doi": "10.1093/restud/rdab031",
+      "title": "Demographics and Automation",
+      "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>We argue theoretically and document empirically that aging leads to greater (industrial) automation, because it creates a shortage of middle-aged workers specializing in manual production tasks. We show that demographic change is associated with greater adoption of robots and other automation technologies across countries and with more robotics-related activities across U.S. commuting zones. We also document more automation innovation in c",
+      "year": 2022,
+      "venue": "The Review of Economic Studies",
+      "citation_count": 457,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 15,
+      "v4_score": 0.550906,
+      "bm25_score": 1.2733,
+      "biencoder_score": 0.2352
+    },
+    {
+      "rank": 18,
+      "doi": "10.1093/jeea/jvab012",
+      "title": "The Adjustment of Labor Markets to Robots",
+      "abstract": "Abstract We use detailed administrative data to study the adjustment of local labor markets to industrial robots in Germany. Robot exposure, as predicted by a shift-share variable, is associated with displacement effects in manufacturing, but those are fully offset by new jobs in services. The incidence mostly falls on young workers just entering the labor force. Automation is related to more stable employment within firms for incumbents, and this is driven by workers taking over new tasks in their original plants. Several measures indicate that those new jobs are of higher quality than the previous ones. Young workers also adapt their educational choices, and substitute away from vocational training towards colleges and universities. Finally, industrial robots have benefited workers in occupations with complementary tasks, such as managers or technical scientists.",
+      "year": 2021,
+      "venue": "Journal of the European Economic Association",
+      "citation_count": 519,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.524649,
+      "bm25_score": 1.2097,
+      "biencoder_score": 0.2245
+    },
+    {
+      "rank": 19,
+      "doi": "10.1016/j.techfore.2023.122448",
+      "title": "Automation technologies and their impact on employment: A review, synthesis and future research agenda",
+      "abstract": "This paper aims to review prior studies investigating how automation technologies affect employment. Our structured systematic review resulted in 102 publications recovered from Web of Science, Scopus and hand searching. The literature investigating how automation technologies affect employment is extremely complex and detailed, given that the impact of automation is evaluated at different levels of analysis (i.e., global, international, continental, country, regional, labour market, industry, firm, occupational, worker, and work activities) by adopting alternative methods (i.e., estimating the probability of automation or the net impact of employment) and, for some levels of analysis, the impact of each specific type of automation technology is evaluated. Moreover, the results are often inconsistent and inconclusive since only few clear results emerge and the impact of automation technologies is unclear for many levels of analysis. Research gaps and future research agenda are identified and discussed based on previous evidence.",
+      "year": 2023,
+      "venue": "Technological Forecasting and Social Change",
+      "citation_count": 157,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.448304,
+      "bm25_score": 0.3954,
+      "biencoder_score": 0.2693
+    },
+    {
+      "rank": 20,
+      "doi": "10.2139/SSRN.3098384",
+      "title": "Artificial Intelligence, Automation, and Work",
+      "abstract": "",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 1039,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 4,
+      "v4_score": 0.416158,
+      "bm25_score": 0.3435,
+      "biencoder_score": 0.253
+    },
+    {
+      "rank": 21,
+      "doi": "10.3386/w24871",
+      "title": "Is Automation Labor-Displacing? Productivity Growth, Employment, and the Labor Share",
+      "abstract": "Many technological innovations replace workers with machines, but this capital-labor substitution need not reduce aggregate labor demand because it simultaneously induces four countervailing responses: own-industry output effects; cross-industry input-output effects; between-industry shifts; and final demand effects. We quantify these channels using four decades of harmonized cross-country and industry data, where we measure automation as industry-level movements in total factor productivity (TFP) that are common across countries. We find that automation displaces employment and reduces labor's share of value-added in the industries in which it originates (a direct effect). In the case of employment, these own-industry losses are reversed by indirect gains in customer industries and induced increases in aggregate demand. By contrast, own-industry labor share losses are not recouped elsewhere. Our framework can account for a substantial fraction of the reallocation of employment across industries and the aggregate fall in the labor share over the last three decades. It does not, however, explain",
+      "year": 2018,
+      "venue": "",
+      "citation_count": 394,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 18,
+      "v4_score": 0.398494,
+      "bm25_score": 0.307,
+      "biencoder_score": 0.245
+    },
+    {
+      "rank": 22,
+      "doi": "10.1108/jaar-10-2020-0201",
+      "title": "A profession in transition: actors, tasks and roles in AI-based accounting",
+      "abstract": "Purpose This article ties in with current debates on the digital transformation of society and the consequent work changes. Using an artificial intelligence (AI)-based accounting context, the focus of this paper is on actors, roles and tasks and related skills on an individual level. The authors look at the effect of AI-based “smart” technology on the workforce in the broader accounting profession taking an intrafirm perspective, yet acknowledging that the digital transformation encompasses a much larger field in the financial sector. Design/methodology/approach The authors conduct a Delphi study to identify the new roles and tasks in future accounting. In addition, the authors use expert workshops to clarify the related tasks and skills and determine whether either humans or AI-based technologies perform the roles or collaborate in professional accounting occupations. Findings The results show that tasks and skills for existing professional occupations in the broader acounting context will be subject to major changes in the next 10 years due to (AI based) digital technologies, while “core” roles and tasks will continue to exist in the future, some will not be performed by humans but by AI-based technology. For other “new” roles, humans will need to make informed use of digital technologies and, to some extent, collaborate with AI-based technology. Research limitations/implications The authors look at the effect of AI-based “smart” technology on the workforce in the broader accounting profession, taking an intrafirm perspective. Practical implications This article ties in with current debates on the digital transformation of society and the consequent work changes. Using an AI-based accounting context, the focus of this paper is on the new and adapted roles and tasks. Originality/value The comprehensive analysis based on the Delphi study and expert workshops provide ample innovative ground for future research on the impact of AI on organisations and society.",
+      "year": 2021,
+      "venue": "Journal of Applied Accounting Research",
+      "citation_count": 201,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.381477,
+      "bm25_score": 1.2441,
+      "biencoder_score": 0.1196
+    },
+    {
+      "rank": 23,
+      "doi": "10.1073/pnas.1900949116",
+      "title": "Toward understanding the impact of artificial intelligence on labor",
+      "abstract": "Rapid advances in artificial intelligence (AI) and automation technologies have the potential to significantly disrupt labor markets. While AI and automation can augment the productivity of some workers, they can replace the work done by others and will likely transform almost all occupations at least to some degree. Rising automation is happening in a period of growing economic inequality, raising fears of mass technological unemployment and a renewed call for policy efforts to address the consequences of technological change. In this paper we discuss the barriers that inhibit scientists from measuring the effects of AI and automation on the future of work. These barriers include the lack of high-quality data about the nature of work (e.g., the dynamic requirements of occupations), lack of empirically informed models of key microlevel processes (e.g., skill substitution and human-machine complementarity), and insufficient understanding of how cognitive technologies interact with broader economic dynamics and institutional mechanisms (e.g., urban migration and international trade policy). Overcoming these barriers requires improvements in the longitudinal and spatial resolution of data, as well as refinements to data on workplace skills. These improvements will enable multidisciplinary research to quantitatively monitor and predict the complex evolution of work in tandem with technological progress. Finally, given the fundamental uncertainty in predicting technological change, we recommend developing a decision framework that focuses on resilience to unexpected scenarios in addition to general equilibrium behavior.",
+      "year": 2019,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_count": 669,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.365795,
+      "bm25_score": 0.3173,
+      "biencoder_score": 0.2208
+    },
+    {
+      "rank": 24,
+      "doi": "10.1353/eca.2018.0000",
+      "title": "Is Automation Labor Share-Displacing? Productivity Growth, Employment, and the Labor Share",
+      "abstract": "Many technological innovations replace workers with machines, but this capital-labor substitution need not reduce aggregate labor demand because it simultaneously induces four countervailing responses: own-industry output effects; cross-industry input-output effects; between-industry shifts; and final demand effects. We quantify these channels using four decades of harmonized cross-country and industry data, where we measure automation as industry-level movements in total factor productivity (TFP) that are common across countries. We find that automation displaces employment and reduces labor's share of value-added in the industries in which it originates (a direct effect). In the case of employment, these own-industry losses are reversed by indirect gains in customer industries and induced increases in aggregate demand. By contrast, own-industry labor share losses are not recouped elsewhere. Our framework can account for a substantial fraction of the reallocation of employment across industries and the aggregate fall in the labor share over the last three decades. It does not, however, explain why the labor share fell more rapidly during the 2000s",
+      "year": 2018,
+      "venue": "Brookings Papers on Economic Activity",
+      "citation_count": 365,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.340939,
+      "bm25_score": 0.3004,
+      "biencoder_score": 0.2053
+    },
+    {
+      "rank": 25,
+      "doi": "10.1086/718327",
+      "title": "Artificial Intelligence and Jobs: Evidence from Online Vacancies",
+      "abstract": "We study the impact of artificial intelligence (AI) on labor markets using establishment-level data on the near universe of online vacancies in the United States from 2010 onward. There is rapid growth in AI-related vacancies over 2010–18 that is driven by establishments whose workers engage in tasks compatible with AI’s current capabilities. As these AI-exposed establishments adopt AI, they simultaneously reduce hiring in non-AI positions and change the skill requirements of remaining postings. While visible at the establishment level, the aggregate impacts of AI-labor substitution on employment and wage growth in more exposed occupations and industries is currently too small to be detectable.",
+      "year": 2022,
+      "venue": "Journal of Labor Economics",
+      "citation_count": 908,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.310347,
+      "bm25_score": 0.7513,
+      "biencoder_score": 0.1292
+    },
+    {
+      "rank": 26,
+      "doi": "10.1257/aer.p20171101",
+      "title": "Secular Stagnation? The Effect of Aging on Economic Growth in the Age of Automation",
+      "abstract": "Several recent theories emphasize the negative effects of an aging population on economic growth, either because of the lower labor force participation and productivity of older workers or because aging will create an excess of savings over desired investment, leading to secular stagnation. We show that there is no such negative relationship in the data. If anything, countries experiencing more rapid aging have grown more in recent decades. We suggest that this counterintuitive finding might reflect the more rapid adoption of automation technologies in countries undergoing more pronounced demographic changes and provide evidence and theoretical underpinnings for this argument.",
+      "year": 2017,
+      "venue": "American Economic Review",
+      "citation_count": 492,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.214442,
+      "bm25_score": 0.3017,
+      "biencoder_score": 0.1162
+    },
+    {
+      "rank": 27,
+      "doi": "10.1146/annurev-polisci-051120-104535",
+      "title": "Automation, Digitalization, and Artificial Intelligence in the Workplace: Implications for Political Behavior",
+      "abstract": "New technologies have been a key driver of labor market change in recent decades. There are renewed concerns that technological developments in areas such as robotics and artificial intelligence will destroy jobs and create political upheaval. This article reviews the vibrant debate about the economic consequences of recent technological change and then discusses research about how digitalization may affect political participation, vote choice, and policy preferences. It is increasingly well established that routine workers have been the main losers of recent technological change and disproportionately support populist parties. However, at the same time, digitalization also creates a large group of economic winners who support the political status quo. The mechanisms connecting technology-related workplace risks to political behavior and policy demands are less well understood. Voters may fail to fully comprehend the relative importance of different causes of structural economic change and misattribute blame to other factors. We conclude with a list of pressing research questions.",
+      "year": 2022,
+      "venue": "Annual Review of Political Science",
+      "citation_count": 149,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.119025,
+      "bm25_score": 0.1792,
+      "biencoder_score": 0.0639
+    },
+    {
+      "rank": 28,
+      "doi": "10.2139/SSRN.2781320",
+      "title": "The Race between Machine and Man: Implications of Technology for Growth, Factor Shares and Employment",
+      "abstract": "",
+      "year": 2017,
+      "venue": "",
+      "citation_count": 316,
+      "engines_found_in": [
+        "semanticscholar"
+      ],
+      "score": 0.0,
+      "source": "semanticscholar",
+      "type": "",
+      "orig_rank": 20,
+      "v4_score": 0.099692,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.072
+    },
+    {
+      "rank": 29,
+      "doi": "10.1016/j.respol.2019.03.010",
+      "title": "Is this time different? How digitalization influences job creation and destruction",
+      "abstract": "",
+      "year": 2019,
+      "venue": "Research Policy",
+      "citation_count": 455,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.001968,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0033
+    },
+    {
+      "rank": 30,
+      "doi": "10.1145/3531146.3533088",
+      "title": "Taxonomy of Risks posed by Language Models",
+      "abstract": "Responsible innovation on large-scale Language Models (LMs) requires foresight into and in-depth understanding of the risks these models may pose. This paper develops a comprehensive taxonomy of ethical and social risks associated with LMs. We identify twenty-one risks, drawing on expertise and literature from computer science, linguistics, and the social sciences. We situate these risks in our taxonomy of six risk areas: I. Discrimination, Hate speech and Exclusion, II. Information Hazards, III. Misinformation Harms, IV. Malicious Uses, V. Human-Computer Interaction Harms, and VI. Environmental and Socioeconomic harms. For risks that have already been observed in LMs, the causal mechanism leading to harm, evidence of the risk, and approaches to risk mitigation are discussed. We further describe and analyse risks that have not yet been observed but are anticipated based on assessments of other language technologies, and situate these in the same taxonomy. We underscore that it is the responsibility of organizations to engage with the mitigations we discuss throughout the paper. We close by highlighting challenges and directions for further research on risk evaluation and mitigation with the goal of ensuring that language models are developed responsibly.",
+      "year": 2022,
+      "venue": "2022 ACM Conference on Fairness, Accountability, and Transparency",
+      "citation_count": 625,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.0,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.0019
+    }
+  ]
+}

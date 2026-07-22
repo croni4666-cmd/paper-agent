@@ -1,7 +1,7 @@
 {
   "query_id": "q050",
   "query": "当前社会形态是否比 20 世纪带给人们更多精神疾病 (mental illness prevalence 1990-2020 cohort meta)",
-  "generated_at": "2026-07-20T12:06:07",
+  "generated_at": "2026-07-14T23:53:02",
   "config": "v4-combined-recency-off",
   "by_engine": {
     "crossref": 10,

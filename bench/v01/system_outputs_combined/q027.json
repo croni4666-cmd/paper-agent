@@ -1,7 +1,7 @@
 {
   "query_id": "q027",
   "query": "数据处理中对于文本的情绪连续性与媒体刺激物之间的关系 (譬如：如何提取两者的特征，证明它们的因果关系)",
-  "generated_at": "2026-07-20T12:05:55",
+  "generated_at": "2026-07-14T23:52:52",
   "config": "v4-combined-recency-off",
   "by_engine": {
     "crossref": 10,
