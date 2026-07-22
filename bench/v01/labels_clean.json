@@ -1,5 +1,5 @@
 {
-  "version": "v0.1-clean+12-samples",
+  "version": "v0.1-clean",
   "labels": {
     "q001": {
       "10.1016/j.lindif.2023.102274": {
@@ -3013,78 +3013,6 @@
       "10.1007/s00146-023-01675-4": {
         "label": 1,
         "reason": "USER NOTE: ---"
-      }
-    },
-    "q051": {
-      "10.1016/0377-2217(78)90138-6": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t2/m1/d1/i0] engine=crossref"
-      }
-    },
-    "q052": {
-      "10.1016/S0377-2217(00)00118-0": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t2/m2/d2/i0] engine=crossref"
-      }
-    },
-    "q053": {
-      "10.1016/j.ejor.2008.04.001": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t2/m3/d3/i0] engine=crossref"
-      }
-    },
-    "q054": {
-      "10.1007/s11123-010-0200-8": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t2/m4/d4/i0] engine=crossref"
-      }
-    },
-    "q055": {
-      "10.1016/j.jmsy.2018.05.003": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t1/m5/d5/i1] engine=openalex"
-      }
-    },
-    "q056": {
-      "10.1080/00207543.2021.1905110": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t1/m6/d6/i0] engine=openalex"
-      }
-    },
-    "q057": {
-      "10.1109/MC.2023.3254401": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t3/m7/d7/i0] engine=arxiv"
-      }
-    },
-    "q058": {
-      "10.1145/3581783": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t3/m8/d8/i0] engine=arxiv"
-      }
-    },
-    "q059": {
-      "10.1093/pnasnexus/pgae018": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t4/m9/d9/i0] engine=s2"
-      }
-    },
-    "q060": {
-      "10.1016/j.jebo.2023.01.005": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t4/m10/d10/i0] engine=s2"
-      }
-    },
-    "q061": {
-      "10.1080/09537287.2017.1381397": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t1/m11/d5/i2] engine=crossref"
-      }
-    },
-    "q062": {
-      "10.1016/j.ijinfomgt.2023.102672": {
-        "label": 2,
-        "reason": "USER NOTE: v3.9.7.4 MoE sample [t4/m12/d5/i0] engine=s2"
       }
     }
   }

@@ -1,0 +1,582 @@
+{
+  "query_id": "q001",
+  "query": "AI tutoring systems and their effect on K-12 student learning outcomes",
+  "topic_bucket": "edu_ai",
+  "source": "pub",
+  "generated_at": "2026-07-12T13:05:34",
+  "config": "v4-combined",
+  "top_n": 30,
+  "n_returned": 30,
+  "results": [
+    {
+      "rank": 1,
+      "doi": "10.58631/injurity.v2i3.52",
+      "title": "Role of AI in Education",
+      "abstract": "Artificial intelligence (AI) has the potential to revolutionize the way we learn and teach, making it more personalized, engaging, and efficient. AI in education refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to enhance the learning experience. It involves the use of algorithms that analyze data, identify patterns, and make predictions, enabling educators to personalize learning for each student. The potential benefits of using AI in education are significant. Personalized learning, one of the most significant advantages of AI in education, can lead to better student outcomes, as students can learn at their own pace and in a way that suits their learning style. Intelligent tutoring systems, chatbots, and automated grading and assessment can increase efficiency, save teachers' time, and provide more accurate and consistent feedback. However, there are also challenges associated with using AI in education. Privacy and security concerns, lack of trust, cost, and potential bias are some of the challenges that need to be addressed. Ethical considerations such as ensuring accessibility, transparency, and fairness in AI-based education systems also need to be taken into account. Despite these challenges, the potential of AI in education is immense. AI can provide better data analysis, enabling educators to make data-driven decisions. In this review we described role of AI in management, promotion of education which describe the effect of AI in education sector",
+      "year": 2023,
+      "venue": "Interdiciplinary Journal and Hummanity (INJURITY)",
+      "citation_count": 241,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 27,
+      "v4_score": 0.985508,
+      "bm25_score": 7.4206,
+      "biencoder_score": 0.6311
+    },
+    {
+      "rank": 2,
+      "doi": "10.1186/s41239-021-00292-9",
+      "title": "The impact of artificial intelligence on learner–instructor interaction in online learning",
+      "abstract": "Artificial intelligence (AI) systems offer effective support for online learning and teaching, including personalizing learning for students, automating instructors' routine tasks, and powering adaptive assessments. However, while the opportunities for AI are promising, the impact of AI systems on the culture of, norms in, and expectations about interactions between students and instructors are still elusive. In online learning, learner-instructor interaction (inter alia, communication, support, and presence) has a profound impact on students' satisfaction and learning outcomes. Thus, identifying how students and instructors perceive the impact of AI systems on their interaction is important to identify any gaps, challenges, or barriers preventing AI systems from achieving their intended potential and risking the safety of these interactions. To address this need for forward-looking decisions, we used Speed Dating with storyboards to analyze the authentic voices of 12 students and 11 instructors on diverse use cases of possible AI systems in online learning. Findings show that participants envision adopting AI systems in online learning can enable personalized learner-instructor interaction at scale but at the risk of violating social boundaries. Although AI systems have been positively recognized for improving the quantity and quality of communication, for providing just-in-time, personalized support for large-scale settings, and for improving the feeling of connection, there were concerns about responsibility, agency, and surveillance issues. These findings have implications for the design of AI systems to ensure explainability, human-in-the-loop, and careful data collection and presentation. Overall, contributions of this study include the design of AI system storyboards which are technically feasible and positively support learner-instructor interaction, capturing students' and instructors' concerns of AI systems through Speed Dating, and suggesting practical im",
+      "year": 2021,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 715,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 11,
+      "v4_score": 0.867256,
+      "bm25_score": 6.2762,
+      "biencoder_score": 0.5956
+    },
+    {
+      "rank": 3,
+      "doi": "10.1016/j.compedu.2023.104967",
+      "title": "Impact of AI assistance on student agency",
+      "abstract": "AI-powered learning technologies are increasingly being used to automate and scaffold learning activities (e.g., personalised reminders for completing tasks, automated real-time feedback for improving writing, or recommendations for when and what to study). While the prevailing view is that these technologies generally have a positive effect on student learning, their impact on students’ agency and ability to self-regulate their learning is under-explored. Do students learn from the regular, detailed and personalised feedback provided by AI systems, and will they continue to exhibit similar behaviour in the absence of assistance? Or do they instead continue to rely on AI assistance without learning from it? To contribute to filling this research gap, we conducted a randomised controlled experiment that explored the impact of AI assistance on student agency in the context of peer feedback. With 1625 students across 10 courses, an experiment was conducted using peer review. During the initial four-week period, students were guided by AI features that utilised techniques such as rule-based suggestion detection, semantic similarity, and comparison with previous comments made by the reviewer to enhance their submissions if the feedback provided was deemed insufficiently detailed or general in nature. Over the following four weeks, students were divided into four different groups: control (AI) received prompts, (NR) received no prompts, (SR) received self-monitoring checklists in place of AI prompts, and (SAI) had access to both AI prompts and self-monitoring checklists. Results of the experiment suggest that students tended to rely on rather than learn from AI assistance. If AI assistance was removed, self-regulated strategies could help in filling in the gap but were not as effective as AI assistance. Results also showed that hybrid human-AI approaches that complement AI assistance with self-regulated strategies (SAI) were not more effective than AI assistance on its ow",
+      "year": 2023,
+      "venue": "Computers & Education",
+      "citation_count": 398,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 19,
+      "v4_score": 0.79702,
+      "bm25_score": 4.4081,
+      "biencoder_score": 0.6436
+    },
+    {
+      "rank": 4,
+      "doi": "10.1001/jamanetworkopen.2021.49008",
+      "title": "Effect of Artificial Intelligence Tutoring vs Expert Instruction on Learning Simulated Surgical Skills Among Medical Students",
+      "abstract": "Importance: To better understand the emerging role of artificial intelligence (AI) in surgical training, efficacy of AI tutoring systems, such as the Virtual Operative Assistant (VOA), must be tested and compared with conventional approaches. Objective: To determine how VOA and remote expert instruction compare in learners' skill acquisition, affective, and cognitive outcomes during surgical simulation training. Design, Setting, and Participants: This instructor-blinded randomized clinical trial included medical students (undergraduate years 0-2) from 4 institutions in Canada during a single simulation training at McGill Neurosurgical Simulation and Artificial Intelligence Learning Centre, Montreal, Canada. Cross-sectional data were collected from January to April 2021. Analysis was conducted based on intention-to-treat. Data were analyzed from April to June 2021. Interventions: The interventions included 5 feedback sessions, 5 minutes each, during a single 75-minute training, including 5 practice sessions followed by 1 realistic virtual reality brain tumor resection. The 3 intervention arms included 2 treatment groups, AI audiovisual metric-based feedback (VOA group) and synchronous verbal scripted debriefing and instruction from a remote expert (instructor group), and a control group that received no feedback. Main Outcomes and Measures: The coprimary outcomes were change in procedural performance, quantified as Expertise Score by a validated assessment algorithm (Intelligent Continuous Expertise Monitoring System [ICEMS]; range, -1.00 to 1.00) for each practice resection, and learning and retention, measured from performance in realistic resections by ICEMS and blinded Objective Structured Assessment of Technical Skills (OSATS; range 1-7). Secondary outcomes included strength of emotions before, during, and after the intervention and cognitive load after intervention, measured in self-reports. Results: A total of 70 medical students (41 [59%] women and 29 [41%] m",
+      "year": 2022,
+      "venue": "JAMA Network Open",
+      "citation_count": 256,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 26,
+      "v4_score": 0.777308,
+      "bm25_score": 6.276,
+      "biencoder_score": 0.5179
+    },
+    {
+      "rank": 5,
+      "doi": "10.3390/su151612451",
+      "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
+      "abstract": "The recent high performance of ChatGPT on several standardized academic tests has thrust the topic of artificial intelligence (AI) into the mainstream conversation about the future of education. As deep learning is poised to shift the teaching paradigm, it is essential to have a clear understanding of its effects on the current education system to ensure sustainable development and deployment of AI-driven technologies at schools and universities. This research aims to investigate the potential impact of AI on education through review and analysis of the existing literature across three major axes: applications, advantages, and challenges. Our review focuses on the use of artificial intelligence in collaborative teacher–student learning, intelligent tutoring systems, automated assessment, and personalized learning. We also report on the potential negative aspects, ethical issues, and possible future routes for AI implementation in education. Ultimately, we find that the only way forward is to embrace the new technology, while implementing guardrails to prevent its abuse.",
+      "year": 2023,
+      "venue": "Sustainability",
+      "citation_count": 940,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 6,
+      "v4_score": 0.767932,
+      "bm25_score": 4.529,
+      "biencoder_score": 0.6114
+    },
+    {
+      "rank": 6,
+      "doi": "10.1111/bjet.13334",
+      "title": "Do <scp>AI</scp> chatbots improve students learning outcomes? Evidence from a meta‐analysis",
+      "abstract": "Abstract Artificial intelligence (AI) chatbots are gaining increasing popularity in education. Due to their increasing popularity, many empirical studies have been devoted to exploring the effects of AI chatbots on students' learning outcomes. The proliferation of experimental studies has highlighted the need to summarize and synthesize the inconsistent findings about the effects of AI chatbots on students' learning outcomes. However, few reviews focused on the meta‐analysis of the effects of AI chatbots on students' learning outcomes. The present study performed a meta‐analysis of 24 randomized studies utilizing Stata software (version 14). The main goal of the current study was to meta‐analytically examine the effects of AI chatbots on students' learning outcomes and the moderating effects of educational levels and intervention duration. The results indicated that AI chatbots had a large effect on students' learning outcomes. Moreover, AI chatbots had a greater effect on students in higher education, compared to those in primary education and secondary education. In addition, short interventions were found to have a stronger effect on students' learning outcomes than long interventions. It could be explained by the argument that the novelty effects of AI chatbots could improve learning outcomes in short interventions, but it has worn off in the long interventions. Future designers and educators should make attempt to increase students' learning outcomes by equipping AI chatbots with human‐like avatars, gamification elements and emotional intelligence. Practitioner notes What is already known about this topic In recent years, artificial intelligence (AI) chatbots have been gaining increasing popularity in education. Studies undertaken so far have provided conflicting evidence concerning the effects of AI chatbots on students' learning outcomes. There has remained a paucity of meta‐analyses synthesizing the contradictory findings about the effects of AI chatbots on ",
+      "year": 2023,
+      "venue": "British Journal of Educational Technology",
+      "citation_count": 484,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 15,
+      "v4_score": 0.763329,
+      "bm25_score": 5.6083,
+      "biencoder_score": 0.5447
+    },
+    {
+      "rank": 7,
+      "doi": "10.1007/s40593-014-0023-y",
+      "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
+      "abstract": "",
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_count": 260,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 24,
+      "v4_score": 0.639003,
+      "bm25_score": 2.691,
+      "biencoder_score": 0.6071
+    },
+    {
+      "rank": 8,
+      "doi": "10.1016/j.eswa.2023.121820",
+      "title": "From chatting to self-educating: Can AI tools boost student learning outcomes?",
+      "abstract": "Artificial intelligence (AI) has the power to revolutionize the field of education by enhancing teaching and learning experiences , improving student outcomes, and streamlining administrative tasks. The current study seeks to address the role of ChatGPT in enhancing students' learning outcomes. A sample of Moroccan higher education institutions (HEIs) students was collected through an online questionnaire using a convenience sampling method. The gathered data were processed through partial least squares technique. The findings reveal that output quality influence on perceived usefulness, ChatGPT use, and student satisfaction. Similarly, social influence significantly influences on perceived usefulness and ChatGPT use. The perceived ease of use significantly influence on perceived usefulness and student satisfaction. In addition, the ChatGPT perceived usefulness positively influence ChatGPT use, and students' satisfaction, leading to enhance individual impact. These outcomes provide a number of useful recommendations and implications for HEIs' managers to consider regarding how they might take action to renovate teaching practices in today's digital age.",
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citation_count": 156,
+      "engines_found_in": [
+        "crossref"
+      ],
+      "score": 0.0,
+      "source": "crossref",
+      "type": "journal-article",
+      "orig_rank": 30,
+      "v4_score": 0.578826,
+      "bm25_score": 4.1136,
+      "biencoder_score": 0.4724
+    },
+    {
+      "rank": 9,
+      "doi": "10.1186/s41239-022-00362-6",
+      "title": "The impact of a virtual teaching assistant (chatbot) on students' learning in Ghanaian higher education",
+      "abstract": "Abstract Chatbot usage is evolving rapidly in various fields, including higher education. The present study’s purpose is to discuss the effect of a virtual teaching assistant (chatbot) that automatically responds to a student’s question. A pretest–posttest design was implemented, with the 68 participating undergraduate students being randomly allocated to scenarios representing a 2 × 2 design (experimental and control cohorts). Data was garnered utilizing an academic achievement test and focus groups, which allowed more in depth analysis of the students’ experience with the chatbot. The results of the study demonstrated that the students who interacted with the chatbot performed better academically comparing to those who interacted with the course instructor. Besides, the focus group data garnered from the experimental cohort illustrated that they were confident about the chatbot’s integration into the course. The present study essentially focused on the learning of the experimental cohort and their view regarding interaction with the chatbot. This study contributes the emerging artificial intelligence (AI) chatbot literature to improve student academic performance. To our knowledge, this is the first study in Ghana to integrate a chatbot to engage undergraduate students. This study provides critical information on the use and development of virtual teaching assistants using a zero-coding technique, which is the most suitable approach for organizations with limited financial and human resources.",
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 395,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 20,
+      "v4_score": 0.563688,
+      "bm25_score": 3.3094,
+      "biencoder_score": 0.5061
+    },
+    {
+      "rank": 10,
+      "doi": "10.1186/s41239-023-00425-2",
+      "title": "AI-generated feedback on writing: insights into efficacy and ENL student preference",
+      "abstract": "Abstract The question of how generative AI tools, such as large language models and chatbots, can be leveraged ethically and effectively in education is ongoing. Given the critical role that writing plays in learning and assessment within educational institutions, it is of growing importance for educators to make thoughtful and informed decisions as to how and in what capacity generative AI tools should be leveraged to assist in the development of students’ writing skills. This paper reports on two longitudinal studies. Study 1 examined learning outcomes of 48 university English as a new language (ENL) learners in a six-week long repeated measures quasi experimental design where the experimental group received writing feedback generated from ChatGPT (GPT-4) and the control group received feedback from their human tutor. Study 2 analyzed the perceptions of a different group of 43 ENLs who received feedback from both ChatGPT and their tutor. Results of study 1 showed no difference in learning outcomes between the two groups. Study 2 results revealed a near even split in preference for AI-generated or human-generated feedback, with clear advantages to both forms of feedback apparent from the data. The main implication of these studies is that the use of AI-generated feedback can likely be incorporated into ENL essay evaluation without affecting learning outcomes, although we recommend a blended approach that utilizes the strengths of both forms of feedback. The main contribution of this paper is in addressing generative AI as an automatic essay evaluator while incorporating learner perspectives.",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 474,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 16,
+      "v4_score": 0.515013,
+      "bm25_score": 3.1428,
+      "biencoder_score": 0.4738
+    },
+    {
+      "rank": 11,
+      "doi": "10.3390/electronics13183762",
+      "title": "Leveraging AI in E-Learning: Personalized Learning and Adaptive Assessment through Cognitive Neuropsychology—A Systematic Analysis",
+      "abstract": "This paper reviews the literature on integrating AI in e-learning, from the viewpoint of cognitive neuropsychology, for Personalized Learning (PL) and Adaptive Assessment (AA). This review follows the PRISMA systematic review methodology and synthesizes the results of 85 studies that were selected from an initial pool of 818 records across several databases. The results indicate that AI can improve students’ performance, engagement, and motivation; at the same time, some challenges like bias and discrimination should be noted. The review covers the historic development of AI in education, its theoretical grounding, and its practical applications within PL and AA with high promise and ethical issues of AI-powered educational systems. Future directions are empirical validation of effectiveness and equity, development of algorithms that reduce bias, and exploration of ethical implications regarding data privacy. The review identifies the transformative potential of AI in developing personalized and adaptive learning (AL) environments, thus, it advocates continued development and exploration as a means to improve educational outcomes.",
+      "year": 2024,
+      "venue": "Electronics",
+      "citation_count": 257,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 25,
+      "v4_score": 0.504517,
+      "bm25_score": 3.0464,
+      "biencoder_score": 0.4703
+    },
+    {
+      "rank": 12,
+      "doi": "10.3389/fpsyg.2023.1261955",
+      "title": "Artificial intelligence in language instruction: impact on English learning achievement, L2 motivation, and self-regulated learning",
+      "abstract": "Introduction: This mixed methods study examines the effects of AI-mediated language instruction on English learning achievement, L2 motivation, and self-regulated learning among English as a Foreign Language (EFL) learners. It addresses the increasing interest in AI-driven educational technologies and their potential to revolutionize language instruction. Methods: Two intact classes, consisting of a total of 60 university students, participated in this study. The experimental group received AI-mediated instruction, while the control group received traditional language instruction. Pre-tests and post-tests were administered to evaluate English learning achievement across various domains, including grammar, vocabulary, reading comprehension, and writing skills. Additionally, self-report questionnaires were employed to assess L2 motivation and self-regulated learning. Results: Quantitative analysis revealed that the experimental group achieved significantly higher English learning outcomes in all assessed areas compared to the control group. Furthermore, they exhibited greater L2 motivation and more extensive utilization of self-regulated learning strategies. These results suggest that AI-mediated instruction positively impacts English learning achievement, L2 motivation, and self-regulated learning. Discussion: Qualitative analysis of semi-structured interviews with 14 students from the experimental group shed light on the transformative effects of the AI platform. It was found to enhance engagement and offer personalized learning experiences, ultimately boosting motivation and fostering self-regulated learning. These findings emphasize the potential of AI-mediated language instruction to improve language learning outcomes, motivate learners, and promote autonomy. Conclusion: This study contributes to evidence-based language pedagogy, offering valuable insights to educators and researchers interested in incorporating AI-powered platforms into language classrooms. The ",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_count": 438,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 18,
+      "v4_score": 0.502089,
+      "bm25_score": 2.1356,
+      "biencoder_score": 0.5212
+    },
+    {
+      "rank": 13,
+      "doi": "10.1186/s41239-023-00392-8",
+      "title": "Artificial intelligence in higher education: the state of the field",
+      "abstract": "Abstract This systematic review provides unique findings with an up-to-date examination of artificial intelligence (AI) in higher education (HE) from 2016 to 2022. Using PRISMA principles and protocol, 138 articles were identified for a full examination. Using a priori, and grounded coding, the data from the 138 articles were extracted, analyzed, and coded. The findings of this study show that in 2021 and 2022, publications rose nearly two to three times the number of previous years. With this rapid rise in the number of AIEd HE publications, new trends have emerged. The findings show that research was conducted in six of the seven continents of the world. The trend has shifted from the US to China leading in the number of publications. Another new trend is in the researcher affiliation as prior studies showed a lack of researchers from departments of education. This has now changed to be the most dominant department. Undergraduate students were the most studied students at 72%. Similar to the findings of other studies, language learning was the most common subject domain. This included writing, reading, and vocabulary acquisition. In examination of who the AIEd was intended for 72% of the studies focused on students, 17% instructors, and 11% managers. In answering the overarching question of how AIEd was used in HE, grounded coding was used. Five usage codes emerged from the data: (1) Assessment/Evaluation, (2) Predicting, (3) AI Assistant, (4) Intelligent Tutoring System (ITS), and (5) Managing Student Learning. This systematic review revealed gaps in the literature to be used as a springboard for future researchers, including new tools, such as Chat GPT.",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 1414,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 4,
+      "v4_score": 0.476841,
+      "bm25_score": 2.7733,
+      "biencoder_score": 0.4623
+    },
+    {
+      "rank": 14,
+      "doi": "10.1186/s41239-022-00372-4",
+      "title": "Integration of artificial intelligence performance prediction and learning analytics to improve student learning in online engineering course",
+      "abstract": "",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 337,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 22,
+      "v4_score": 0.473327,
+      "bm25_score": 1.7148,
+      "biencoder_score": 0.5208
+    },
+    {
+      "rank": 15,
+      "doi": "10.3389/fpsyg.2023.1260843",
+      "title": "Enhancing academic writing skills and motivation: assessing the efficacy of ChatGPT in AI-assisted language learning for EFL students",
+      "abstract": "Introduction: This mixed-methods study evaluates the impact of AI-assisted language learning on Chinese English as a Foreign Language (EFL) students' writing skills and writing motivation. As artificial intelligence (AI) becomes more prevalent in educational settings, understanding its effects on language learning outcomes is crucial. Methods: The study employs a comprehensive approach, combining quantitative and qualitative methods. The quantitative phase utilizes a pre-test and post-test design to assess writing skills. Fifty EFL students, matched for proficiency, are randomly assigned to experimental (AI-assisted instruction via ChatGPT) or control (traditional instruction) groups. Writing samples are evaluated using established scoring rubrics. Concurrently, semi-structured interviews are conducted with a subset of participants to explore writing motivation and experiences with AI-assisted learning. Results: Quantitative analysis reveals significant improvements in both writing skills and motivation among students who received AI-assisted instruction compared to the control group. The experimental group demonstrates enhanced proficiency in various aspects of writing, including organization, coherence, grammar, and vocabulary. Qualitative findings showcase diverse perspectives, ranging from recognition of AI's innovative instructional role and its positive influence on writing skills and motivation to concerns about contextual accuracy and over-reliance. Participants also reflect on the long-term impact and sustainability of AI-assisted instruction, emphasizing the need for ongoing development and adaptation of AI tools. Discussion: The nuanced findings offer a comprehensive understanding of AI's transformative potential in education. These insights have practical implications for practitioners and researchers, emphasizing the benefits, challenges, and the evolving nature of AI's role in language instruction.",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_count": 576,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 13,
+      "v4_score": 0.46281,
+      "bm25_score": 1.7338,
+      "biencoder_score": 0.5106
+    },
+    {
+      "rank": 16,
+      "doi": "10.1186/s41039-018-0078-8",
+      "title": "Students’ perception of Kahoot!’s influence on teaching and learning",
+      "abstract": "Technology is being increasingly integrated into teaching environments in view of enhancing students’ engagement and motivation. In particular, game-based student response systems have been found to foster students’ engagement, enhance classroom dynamics and improve overall students’ learning experience. This article presents outcomes of research that examined students’ experience using a game-based student response system, Kahoot!, in an Information Systems Strategy and Governance course at a research-intensive teaching university in New Zealand. We conducted semi-structured interviews with students to learn about the extent to which Kahoot! influence classroom dynamics, motivation and students’ learning process. Key findings revealed that Kahoot! enriched the quality of student learning in the classroom, with the highest influence reported on classroom dynamics, engagement, motivation and improved learning experience. Our findings also suggest that the use of educational games in the classroom is likely to minimise distractions, thereby improving the quality of teaching and learning beyond what is provided in conventional classrooms. Other factors that contributed to students’ enhanced learning included the creation and integration of appropriate content in Kahoot!, providing students with timely feedback, and game-play (gamification) strategies.",
+      "year": 2018,
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "citation_count": 510,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 14,
+      "v4_score": 0.455859,
+      "bm25_score": 4.0845,
+      "biencoder_score": 0.3679
+    },
+    {
+      "rank": 17,
+      "doi": "10.1186/s41039-017-0062-8",
+      "title": "Exploring the impact of artificial intelligence on teaching and learning in higher education",
+      "abstract": "This paper explores the phenomena of the emergence of the use of artificial intelligence in teaching and learning in higher education. It investigates educational implications of emerging technologies on the way students learn and how institutions teach and evolve. Recent technological advancements and the increasing speed of adopting new technologies in higher education are explored in order to predict the future nature of higher education in a world where artificial intelligence is part of the fabric of our universities. We pinpoint some challenges for institutions of higher education and student learning in the adoption of these technologies for teaching, learning, student support, and administration and explore further directions for research.",
+      "year": 2017,
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "citation_count": 1791,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 2,
+      "v4_score": 0.436745,
+      "bm25_score": 1.6979,
+      "biencoder_score": 0.4902
+    },
+    {
+      "rank": 18,
+      "doi": "10.1186/s41239-023-00406-5",
+      "title": "Supporting students’ self-regulated learning in online learning using artificial intelligence applications",
+      "abstract": "Abstract Self-regulated learning (SRL) is crucial for helping students attain high academic performance and achieve their learning objectives in the online learning context. However, learners often face challenges in properly applying SRL in online learning environments. Recent developments in artificial intelligence (AI) applications have shown promise in supporting learners’ self-regulation in online learning by measuring and augmenting SRL, but research in this area is still in its early stages. The purpose of this study is to explore students’ perceptions of the use of AI applications to support SRL and to identify the pedagogical and psychological aspects that they perceive as necessary for effective utilization of those AI applications. To explore this, a speed dating method using storyboards was employed as an exploratory design method. The study involved the development of 10 AI application storyboards to identify the phases and areas of SRL, and semi-structured interviews were conducted with 16 university students from various majors. The results indicated that learners perceived AI applications as useful for supporting metacognitive, cognitive, and behavioral regulation across different SRL areas, but not for regulating motivation. Next, regarding the use of AI applications to support SRL, learners requested consideration of three pedagogical and psychological aspects: learner identity, learner activeness, and learner position. The findings of this study offer practical implications for the design of AI applications in online learning, with the aim of supporting students’ SRL.",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 275,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 23,
+      "v4_score": 0.432669,
+      "bm25_score": 0.961,
+      "biencoder_score": 0.5296
+    },
+    {
+      "rank": 19,
+      "doi": "10.1109/access.2022.3193938",
+      "title": "AI-Based Personalized E-Learning Systems: Issues, Challenges, and Solutions",
+      "abstract": "A personalized e-learning system is effective in imparting enhanced learning to its users. As compared to a conventional e-learning system, which provides similar contents to each learner, a personalized learning system provides specific learning contents and assessments to the learners. Personalization is based on Artificial Intelligence (AI) based techniques in which appropriate contents for each learner are determined using the level of comprehension of the learner and the preferred modes of learning. This paper presents requirements and challenges for a personalized e-learning system. The paper is focused in elaborating four research questions, which are related to identifying key factors of personalized education, elaborating on state of the art research in the domain, utilizing benefits of AI in personalized education, and determining future research directions. The paper utilizes an extensive survey of current research papers in answering these questions. It provides a comprehensive review of existing solutions in offering personalized e-learning solutions. It also elaborates on different learning models and learning theories, which are significant in providing personalized education. It proposes an efficient framework, which can offer personalized e-learning to each learner and identifies significant directions for future research. The paper is beneficial for academicians and researchers in understanding the requirements of such a system, comprehending its methodologies, and identifying challenges which are needed to be addressed.",
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citation_count": 343,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 21,
+      "v4_score": 0.424191,
+      "bm25_score": 1.8069,
+      "biencoder_score": 0.4731
+    },
+    {
+      "rank": 20,
+      "doi": "10.3390/su16073034",
+      "title": "Generative AI for Customizable Learning Experiences",
+      "abstract": "The introduction of accessible generative artificial intelligence opens promising opportunities for the implementation of personalized learning methods in any educational environment. Personalized learning has been conceptualized for a long time, but it has only recently become realistic and truly achievable. In this paper, we propose an affordable and sustainable approach toward personalizing learning materials as part of the complete educational process. We have created a tool within a pre-existing learning management system at a software engineering college that automatically generates learning materials based on the learning outcomes provided by the professor for a particular class. The learning materials were composed in three distinct styles, the initial one being the traditional professor style and the other two variations adopting a pop-culture influence, namely Batman and Wednesday Addams. Each lesson, besides being delivered in three different formats, contained automatically generated multiple-choice questions that students could use to check their progress. This paper contains complete instructions for developing such a tool with the help of large language models using OpenAI’s API and an analysis of the preliminary experiment of its usage performed with the help of 20 college students studying software engineering at a European university. Participation in the study was optional and on voluntary basis. Each student’s tool usage was quantified, and two questionnaires were conducted: one immediately after subject completion and another 6 months later to assess both immediate and long-term effects, perceptions, and preferences. The results indicate that students found the multiple variants of the learning materials really engaging. While predominantly utilizing the traditional variant of the learning materials, they found this approach inspiring, would recommend it to other students, and would like to see it more in classes. The most popular feature were t",
+      "year": 2024,
+      "venue": "Sustainability",
+      "citation_count": 226,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 28,
+      "v4_score": 0.421262,
+      "bm25_score": 2.111,
+      "biencoder_score": 0.4529
+    },
+    {
+      "rank": 21,
+      "doi": "10.1186/s41239-024-00448-3",
+      "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+      "abstract": "Abstract The present discussion examines the transformative impact of Artificial Intelligence (AI) in educational settings, focusing on the necessity for AI literacy, prompt engineering proficiency, and enhanced critical thinking skills. The introduction of AI into education marks a significant departure from conventional teaching methods, offering personalized learning and support for diverse educational requirements, including students with special needs. However, this integration presents challenges, including the need for comprehensive educator training and curriculum adaptation to align with societal structures. AI literacy is identified as crucial, encompassing an understanding of AI technologies and their broader societal impacts. Prompt engineering is highlighted as a key skill for eliciting specific responses from AI systems, thereby enriching educational experiences and promoting critical thinking. There is detailed analysis of strategies for embedding these skills within educational curricula and pedagogical practices. This is discussed through a case-study based on a Swiss university and a narrative literature review, followed by practical suggestions of how to implement AI in the classroom.",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_count": 831,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 8,
+      "v4_score": 0.411106,
+      "bm25_score": 1.8491,
+      "biencoder_score": 0.4593
+    },
+    {
+      "rank": 22,
+      "doi": "10.1207/s15326985ep4004_7",
+      "title": "Fostering the Intelligent Novice: Learning From Errors With Metacognitive Tutoring",
+      "abstract": "This article explores 2 important aspects of metacognition: (a) how students monitor their ongoing performance to detect and correct errors and (b) how students reflect on those errors to learn from them. Although many instructional theories have advocated providing students with immediate feedback on errors, some researchers have argued that immediate feedback eliminates the opportunity for students to practice monitoring for and learning from errors. Thus, they advocate delayed feedback. This article provides evidence that this line of reason is flawed and suggests that rather than focusing on the timing of feedback, instructional designers should focus on the \"model of desired performance\" with respect to which feedback is provided. Instead of delaying feedback, we suggest broadening our model of correct behavior or desired performance to include some kinds of incorrect, but reasonable behaviors. This article explores the effects of providing feedback on the basis of a so-called intelligent novice cognitive model. A system based on an intelligent novice model allows students to make certain reasonable errors, and provides guidance through the exercise of error detection and correction skills. There are two pedagogical motivations for feedback based on an intelligent novice model. First, jobs today not only require ready-made expertise for dealing with known problems, but also intelligence to address novel situation where nominal experts are thrown back to the state of a novice. Second, the opportunity to reason about the causes and consequences of errors may allow students to form a better model of the behavior of domain operators. Results show that students receiving intelligent novice feedback acquire a deeper conceptual understanding of domain principles and demonstrate better transfer and retention of skills over time.",
+      "year": 2005,
+      "venue": "Educational Psychologist",
+      "citation_count": 197,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 29,
+      "v4_score": 0.396393,
+      "bm25_score": 1.5255,
+      "biencoder_score": 0.4654
+    },
+    {
+      "rank": 23,
+      "doi": "10.1007/s10462-022-10246-w",
+      "title": "Human-in-the-loop machine learning: a state of the art",
+      "abstract": "Abstract Researchers are defining new types of interactions between humans and machine learning algorithms generically called human-in-the-loop machine learning. Depending on who is in control of the learning process, we can identify: active learning, in which the system remains in control; interactive machine learning, in which there is a closer interaction between users and learning systems; and machine teaching, where human domain experts have control over the learning process. Aside from control, humans can also be involved in the learning process in other ways. In curriculum learning human domain experts try to impose some structure on the examples presented to improve the learning; in explainable AI the focus is on the ability of the model to explain to humans why a given solution was chosen. This collaboration between AI models and humans should not be limited only to the learning process; if we go further, we can see other terms that arise such as Usable and Useful AI. In this paper we review the state of the art of the techniques involved in the new forms of relationship between humans and ML algorithms. Our contribution is not merely listing the different approaches, but to provide definitions clarifying confusing, varied and sometimes contradictory terms; to elucidate and determine the boundaries between the different methods; and to correlate all the techniques searching for the connections and influences between them.",
+      "year": 2022,
+      "venue": "Artificial Intelligence Review",
+      "citation_count": 870,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 7,
+      "v4_score": 0.388861,
+      "bm25_score": 1.8112,
+      "biencoder_score": 0.4423
+    },
+    {
+      "rank": 24,
+      "doi": "10.1111/j.1551-6709.2012.01245.x",
+      "title": "The Knowledge‐Learning‐Instruction Framework: Bridging the Science‐Practice Chasm to Enhance Robust Student Learning",
+      "abstract": "Despite the accumulation of substantial cognitive science research relevant to education, there remains confusion and controversy in the application of research to educational practice. In support of a more systematic approach, we describe the Knowledge-Learning-Instruction (KLI) framework. KLI promotes the emergence of instructional principles of high potential for generality, while explicitly identifying constraints of and opportunities for detailed analysis of the knowledge students may acquire in courses. Drawing on research across domains of science, math, and language learning, we illustrate the analyses of knowledge, learning, and instructional events that the KLI framework affords. We present a set of three coordinated taxonomies of knowledge, learning, and instruction. For example, we identify three broad classes of learning events (LEs): (a) memory and fluency processes, (b) induction and refinement processes, and (c) understanding and sense-making processes, and we show how these can lead to different knowledge changes and constraints on optimal instructional choices.",
+      "year": 2012,
+      "venue": "Cognitive Science",
+      "citation_count": 737,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 10,
+      "v4_score": 0.362263,
+      "bm25_score": 1.2309,
+      "biencoder_score": 0.4531
+    },
+    {
+      "rank": 25,
+      "doi": "10.3390/educsci13090856",
+      "title": "Challenges and Opportunities of Generative AI for Higher Education as Explained by ChatGPT",
+      "abstract": "ChatGPT is revolutionizing the field of higher education by leveraging deep learning models to generate human-like content. However, its integration into academic settings raises concerns regarding academic integrity, plagiarism detection, and the potential impact on critical thinking skills. This article presents a study that adopts a thing ethnography approach to understand ChatGPT’s perspective on the challenges and opportunities it represents for higher education. The research explores the potential benefits and limitations of ChatGPT, as well as mitigation strategies for addressing the identified challenges. Findings emphasize the urgent need for clear policies, guidelines, and frameworks to responsibly integrate ChatGPT in higher education. It also highlights the need for empirical research to understand user experiences and perceptions. The findings provide insights that can guide future research efforts in understanding the implications of ChatGPT and similar Artificial Intelligence (AI) systems in higher education. The study concludes by highlighting the importance of thing ethnography as an innovative approach for engaging with intelligent AI systems and calls for further research to explore best practices and strategies in utilizing Generative AI for educational purposes.",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_count": 769,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 9,
+      "v4_score": 0.359044,
+      "bm25_score": 2.1791,
+      "biencoder_score": 0.3952
+    },
+    {
+      "rank": 26,
+      "doi": "10.1080/2331186x.2023.2236469",
+      "title": "The impact of AI writing tools on the content and organization of students’ writing: EFL teachers’ perspective",
+      "abstract": "The primary objective of this study was to examine the range of available Artificial Intelligence (AI) writing tools and assess their influence on student writing, particularly in terms of content and organization, as perceived by English as a Foreign Language (EFL) teachers. Utilizing a qualitative approach, the research was constructed within a case study design. The data was collected via semi-structured interviews, targeting information about the diversity of AI writing tools and their impact on students” writing quality. The study gathered data from four EFL teachers across three distinct universities in Indonesia, shedding light on the variety of AI writing tools used in their classrooms. These included applications like Quillbot, WordTune, Jenni, Chat-GPT, Paperpal, Copy.ai, and Essay Writer. Furthermore, these teachers unanimously agreed that the AI writing tools positively improved their students’ writing quality, particularly enhancing the quality of their content and organization. The findings of this study imply that integrating AI writing tools can prove beneficial in elevating the quality of EFL student writing. In response to this study’s limitations, recommendations for future research were also addressed.",
+      "year": 2023,
+      "venue": "Cogent Education",
+      "citation_count": 453,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 17,
+      "v4_score": 0.343132,
+      "bm25_score": 1.8462,
+      "biencoder_score": 0.4008
+    },
+    {
+      "rank": 27,
+      "doi": "10.1007/s11423-023-10203-6",
+      "title": "Teachers’ AI digital competencies and twenty-first century skills in the post-pandemic world",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Educational Technology Research and Development",
+      "citation_count": 598,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 12,
+      "v4_score": 0.327006,
+      "bm25_score": 0.5457,
+      "biencoder_score": 0.4625
+    },
+    {
+      "rank": 28,
+      "doi": "10.3102/00346543068002179",
+      "title": "Scientific Discovery Learning with Computer Simulations of Conceptual Domains",
+      "abstract": "Scientific discovery learning is a highly self-directed and constructivistic form of learning. A computer simulation is a type of computer-based environment that is well suited for discovery learning, the main task of the learner being to infer, through experimentation, characteristics of the model underlying the simulation. In this article we give a review of the observed effectiveness and efficiency of discovery learning in simulation environments together with problems that learners may encounter in discovery learning, and we discuss how simulations may be combined with instructional support in order to overcome these problems.",
+      "year": 1998,
+      "venue": "Review of Educational Research",
+      "citation_count": 1549,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 3,
+      "v4_score": 0.165023,
+      "bm25_score": 0.3413,
+      "biencoder_score": 0.3346
+    },
+    {
+      "rank": 29,
+      "doi": "10.1016/j.lindif.2023.102274",
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "abstract": "",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_count": 5330,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 1,
+      "v4_score": 0.070191,
+      "bm25_score": 0.0,
+      "biencoder_score": 0.2726
+    },
+    {
+      "rank": 30,
+      "doi": "10.1109/tnnls.2022.3160699",
+      "title": "Towards Personalized Federated Learning",
+      "abstract": "In parallel with the rapid adoption of artificial intelligence (AI) empowered by advances in AI research, there has been growing awareness and concerns of data privacy. Recent significant developments in the data regulation landscape have prompted a seismic shift in interest toward privacy-preserving AI. This has contributed to the popularity of Federated Learning (FL), the leading paradigm for the training of machine learning models on data silos in a privacy-preserving manner. In this survey, we explore the domain of personalized FL (PFL) to address the fundamental challenges of FL on heterogeneous data, a universal characteristic inherent in all real-world datasets. We analyze the key motivations for PFL and present a unique taxonomy of PFL techniques categorized according to the key challenges and personalization strategies in PFL. We highlight their key ideas, challenges, opportunities, and envision promising future trajectories of research toward a new PFL architectural design, realistic PFL benchmarking, and trustworthy PFL approaches.",
+      "year": 2022,
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "citation_count": 1019,
+      "engines_found_in": [
+        "openalex"
+      ],
+      "score": 0.0,
+      "source": "openalex",
+      "type": "article",
+      "orig_rank": 5,
+      "v4_score": 0.056439,
+      "bm25_score": 0.8376,
+      "biencoder_score": 0.212
+    }
+  ]
+}
