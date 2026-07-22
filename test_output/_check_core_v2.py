@@ -1,9 +1,18 @@
-"""Re-probe CORE v3 API — is the key really needed? (2026-07-15 follow-up)"""
+"""Re-probe CORE v3 API -- is the key really needed? (2026-07-15 follow-up)
+
+NOTE: this script previously hardcoded the CORE API key as a literal string.
+That was a SECURITY LEAK and is now fixed -- the key is read from
+CORE_API_KEY env var (auto-loaded from .env via pa_cli.search._load_dotenv).
+
+If CORE_API_KEY is not set, probes with key will fail with 401.
+Set the env var first, then run.
+"""
+import os
 import urllib.request as ur
 import urllib.error
 import json
 
-KEY = "<REDACTED-CORE-KEY>"
+KEY = os.environ.get("CORE_API_KEY", "")
 
 
 def probe(name, url, hdr=None):
@@ -24,8 +33,11 @@ def probe(name, url, hdr=None):
 print("=== CORE v3 API probes ===")
 probe("NO key, EN", "https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&limit=2")
 probe("NO key, CJK", "https://api.core.ac.uk/v3/search/works?q=" + ur.quote("数字普惠金融") + "&limit=2")
-probe("Auth Bearer", "https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&limit=2",
-      hdr={"User-Agent": "paper-agent/3.9.8.1", "Authorization": f"Bearer {KEY}"})
-probe("Query param key", f"https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&api_key={KEY}&limit=2")
-probe("X-API-Key header", "https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&limit=2",
-      hdr={"User-Agent": "paper-agent/3.9.8.1", "X-API-Key": KEY})
+if KEY:
+    probe("Auth Bearer", "https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&limit=2",
+          hdr={"User-Agent": "paper-agent/3.9.8.1", "Authorization": f"Bearer {KEY}"})
+    probe("Query param key", f"https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&api_key={KEY}&limit=2")
+    probe("X-API-Key header", "https://api.core.ac.uk/v3/search/works?q=long-term+care+insurance&limit=2",
+          hdr={"User-Agent": "paper-agent/3.9.8.1", "X-API-Key": KEY})
+else:
+    print("(CORE_API_KEY env var not set; skipping 3 key-based probes)")

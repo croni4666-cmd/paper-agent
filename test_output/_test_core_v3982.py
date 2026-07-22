@@ -16,11 +16,15 @@ if r:
     print(f"  first: {r[0]['title'][:60]} | year={r[0]['year']} | doi={r[0]['doi']}")
 
 # Mode 2: with key (query param style)
-os.environ["CORE_API_KEY"] = "<REDACTED-CORE-KEY>"
-r2 = search_core("long-term care insurance", year_min=2022, year_max=2024, limit=3)
-print(f"with-key mode: n={len(r2)}")
-if r2:
-    print(f"  first: {r2[0]['title'][:60]} | year={r2[0]['year']} | doi={r2[0]['doi']}")
+# SECURITY: do NOT hardcode the key here. Read from env (.env auto-loaded
+# by pa_cli.search._load_dotenv). If not set, skip the with-key mode.
+if os.environ.get("CORE_API_KEY"):
+    r2 = search_core("long-term care insurance", year_min=2022, year_max=2024, limit=3)
+    print(f"with-key mode: n={len(r2)}")
+    if r2:
+        print(f"  first: {r2[0]['title'][:60]} | year={r2[0]['year']} | doi={r2[0]['doi']}")
+else:
+    print("(CORE_API_KEY env var not set; skipping with-key mode)")
 
 # Mode 3: explicit --engine core (skip the unified dedup)
 from pa_cli.search import run_search

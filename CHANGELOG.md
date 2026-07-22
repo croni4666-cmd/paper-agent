@@ -4875,7 +4875,7 @@ Complete 5-command group under `pa keys` for managing API key lifecycles.
 | openalex | api.openalex.org | ok | 200 |
 | semanticscholar | api.semanticscholar.org | http-429 (transient rate limit; unrelated to key config) | 429 |
 | core | api.core.ac.uk | ok | 200 |
-| unpaywall | api.unpaywall.org | ok (real email <REDACTED-UNPAYWALL-EMAIL>) | 200 |
+| unpaywall | api.unpaywall.org | ok (verified email; see `.env` for `UNPAYWALL_EMAIL`) | 200 |
 | demo-api-key | (no service_url set) | no-probe-url (skipped) | n/a |
 
 **End-to-end `pa fetch` validation**:
