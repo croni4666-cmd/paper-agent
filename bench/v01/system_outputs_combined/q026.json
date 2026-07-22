@@ -1,7 +1,7 @@
 {
   "query_id": "q026",
   "query": "自然语言处理中对于细致情绪状态的划分，以及情绪转换矩阵 (譬如：羡慕转化成嫉妒再转化成生气等等)",
-  "generated_at": "2026-07-14T23:52:52",
+  "generated_at": "2026-07-20T12:05:54",
   "config": "v4-combined-recency-off",
   "by_engine": {
     "crossref": 10,

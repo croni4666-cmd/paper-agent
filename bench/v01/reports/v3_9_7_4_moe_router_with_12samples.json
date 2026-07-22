@@ -1,0 +1,278 @@
+{
+  "version": "v3.9.7.4-moe-router-with-12samples",
+  "config": {
+    "n_estimators": 50,
+    "learning_rate": 0.05,
+    "num_leaves": 7,
+    "min_data_in_leaf": 3,
+    "max_features": 5000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "random_state": 42,
+    "verbose": -1,
+    "class_weight": "balanced",
+    "report_balanced_metrics": true
+  },
+  "n_queries": 37,
+  "label_distribution": {
+    "arxiv": 2,
+    "openalex": 26,
+    "s2": 3,
+    "crossref": 6,
+    "aminer": 0
+  },
+  "cv_aggregate": {
+    "mean_accuracy": 0.675,
+    "std_accuracy": 0.1299528957047161,
+    "mean_balanced_accuracy": 0.47333333333333333,
+    "std_balanced_accuracy": 0.24050872010063262,
+    "mean_macro_f1": 0.41171717171717165,
+    "std_macro_f1": 0.24431718868067404
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 29,
+      "n_test": 8,
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 4
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 3
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": 0.0,
+        "crossref": 0.0,
+        "aminer": null
+      }
+    },
+    {
+      "fold": 1,
+      "n_train": 29,
+      "n_test": 8,
+      "accuracy": 0.875,
+      "balanced_accuracy": 0.95,
+      "macro_f1": 0.8888888888888888,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1
+        },
+        "crossref": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": 1.0,
+        "openalex": 0.8,
+        "s2": 1.0,
+        "crossref": 1.0,
+        "aminer": null
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 30,
+      "n_test": 7,
+      "accuracy": 0.5714285714285714,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.36363636363636365,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.8,
+          "recall": 0.6666666666666666,
+          "f1": 0.7272727272727273,
+          "support": 6
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 0.6666666666666666,
+        "s2": null,
+        "crossref": 0.0,
+        "aminer": null
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 30,
+      "n_test": 7,
+      "accuracy": 0.7142857142857143,
+      "balanced_accuracy": 0.4166666666666667,
+      "macro_f1": 0.30303030303030304,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "openalex": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "support": 6
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": 0.0,
+        "openalex": 0.8333333333333334,
+        "s2": null,
+        "crossref": null,
+        "aminer": null
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 30,
+      "n_test": 7,
+      "accuracy": 0.7142857142857143,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.30303030303030304,
+      "per_class_metrics": {
+        "arxiv": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "openalex": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "s2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "crossref": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "aminer": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "per_class_accuracy": {
+        "arxiv": null,
+        "openalex": 1.0,
+        "s2": 0.0,
+        "crossref": 0.0,
+        "aminer": null
+      }
+    }
+  ],
+  "comparison_to_v3_9_7_3": {
+    "v3_9_7_3_macro_f1": 0.609,
+    "v3_9_7_3_n_queries": 47,
+    "v3_9_7_4_macro_f1": 0.41171717171717165,
+    "v3_9_7_4_n_queries": 37,
+    "delta_macro_f1": -0.19728282828282834
+  }
+}
