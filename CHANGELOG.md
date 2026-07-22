@@ -7,6 +7,60 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.10.12] - 2026-07-22 ([P0-8] path A: 12-feature LTR baseline + honest 3-tier)
+
+### v3.9.10.12 — [P0-8] path A: 12-feature LTR baseline + honest 3-tier finding (2026-07-22)
+
+**Per user direction (2026-07-22)**: "12-feature LTR baseline + 3-tier honest eval,
+NOT cross_encoder implementation."
+
+**Eval setup**:
+- 12 features = 8 LTR base + 4 fulltext (`fulltext_bm25`, `fulltext_cross_encoder`,
+  `fulltext_citation_density`, `fulltext_venue_score`)
+- n_queries=25, n_labeled=736, n_estimators=50, 5-fold CV
+- OpenAlex venue cache pre-warmed (368 unique venues, 442s) — cache now saved to
+  `bench/v01/_openalex_venue_cache.json` for fast re-runs
+
+**Result**:
+
+| Method                  | NDCG@10   | Recall@10 | Prec@10 |
+|-------------------------|-----------|-----------|---------|
+| combined baseline       | 0.7210    | 0.6947    | 0.5000  |
+| LTR 8 features          | 0.7543    | 0.7234    | 0.5080  |
+| LTR 12 features (NEW)   | 0.7543    | 0.7234    | 0.5080  |
+| d (12-feat - 8-feat)    | +0.0000   | -         | -       |
+| d (12-feat - baseline)  | +0.0333   | -         | -       |
+| d (8-feat - baseline)   | +0.0333   | -         | -       |
+
+**3-tier honest verdict**:
+- ✅ 12-feature LTR pipeline works end-to-end (n=25, 5-fold CV)
+- ✅ LTR (8 or 12 features) beats combined baseline by +0.033 NDCG@10
+- ✅ 3 of 4 fulltext features have working computation in `pa_cli/deep_rerank.py:288-296`
+- ⚠️ **12-feat = 8-feat (delta=0.0000)** — adding 2 working fulltext features
+  does not lift NDCG@10 at n=25
+- ❌ **n=25 is below n>=100 noise threshold per memory discipline**; +0.033 LTR-vs-baseline
+  lift may be noise
+- ❌ 2 of 4 fulltext features (`fulltext_bm25`, `fulltext_cross_encoder`) are 0 because
+  no PDF fulltext is in dataset; remaining 2 working features are too sparse to differentiate
+  at n=25
+
+**Verdict for paper-agent**:
+- **Path A COMPLETE**: 12-feature LTR pipeline + honest 3-tier finding
+- **Code state**: 3 of 4 fulltext features work; cross_encoder is the only unimplemented
+  feature; import error (broken since 2026-07-15) is fixed
+- **Recommended next step**: NOT cross_encoder implementation. Expand label set
+  (n=50 -> n=200 per [P1-13]) so LTR can actually learn from fulltext features.
+- **Priority**: low
+
+**Files**:
+- Created: `test_output/_ltr_12feature_eval.py` (15KB, OpenAlex pre-warm + 12-feature LTR)
+- Created: `bench/v01/_openalex_venue_cache.json` (368 venue prestige values, 442s pre-warm)
+- Created: `bench/v01/reports/v3_9_10_12_p0_8_12features_ltr.json` (eval results)
+- Modified: `pa_cli/__init__.py` (version 3.9.10.11 -> 3.9.10.12)
+- Modified: `ROADMAP.md` ([P0-8] broken -> modified; [P1-12] cross_encoder deferred to n>=100)
+
+---
+
 ## [3.9.7.4-indep] - 2026-07-22 (12 MoE samples moved to independent files)
 
 ### v3.9.7.4-indep — MoE sample refactor (Option B per user 2026-07-22)

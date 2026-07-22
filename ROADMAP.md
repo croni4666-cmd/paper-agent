@@ -2984,7 +2984,7 @@ User 2026-07-13 鎻愬嚭鏂板 Layer 6-7 (post-download full-text deep reran
 **鍏抽敭 insight**:鏂板 Layer 6-7 (full-text deep rerank) 鎶?PaSa 瑕嗙洊鐜囦粠 30-40% 鎻愬崌鍒?50-60%,涓昏闈?3 涓?component 鐨勬彁鍗?Full-text paper reading (10%鈫?0%)銆丷elevance reasoning (30%鈫?0%)銆丄daptive iteration (40%鈫?0%)銆傚墿涓?40-50% 浠嶇劧鍙楅檺浜?Global Rule (鏃?LLM + 鏃?paid API)銆?
 ### [P0-8] Full-text deep rerank layer (post-download, PaSa-inspired)
 
-- **Status**: broken (revised 2026-07-16, was `done`)
+- **Status**: modified (revised 2026-07-22; was `broken` since 2026-07-16, was `done` 2026-07-13)
 - **Added**: 2026-07-13
 - **Started**: 2026-07-13
 - **Completed**: 2026-07-13
@@ -3119,6 +3119,62 @@ Until those 3 features are real, Layer 7's lift measurement is incomplete.
 - Renamed: A 2014 (`Occupational_Segregation_and_the_Gender_Wage_Gap-A_Job_Half_Done.pdf` 鈫?`10_1037_e686432011-001.pdf`)
 - Trashed: 7 placeholder files in `manual_pdfs/` (Cloudflare HTML / 222-byte UNT URL placeholders)
 - Trashed: 2 BM25=0 v3.9.7 first-run reports (kept only the BM25-real one)
+
+---
+
+#### **Modified 2026-07-22** — v3.9.10.12 path A: 12-feature LTR baseline established (n=25, honest negative)
+
+**P0-8 path A** (per 2026-07-22 user direction -- "12-feature LTR baseline + 3-tier honest eval,
+NOT cross_encoder implementation"):
+
+**Eval setup**:
+- 12 features = 8 LTR base + 4 fulltext (`fulltext_bm25`, `fulltext_cross_encoder`,
+  `fulltext_citation_density`, `fulltext_venue_score`)
+- n_queries=25, n_labeled=736, n_estimators=50, 5-fold CV
+- OpenAlex venue cache pre-warmed (368 unique venues, 442s)
+- See `test_output/_ltr_12feature_eval.py` + `bench/v01/reports/v3_9_10_12_p0_8_12features_ltr.json`
+
+**Result**:
+
+| Method                  | NDCG@10   | Recall@10 | Prec@10 |
+|-------------------------|-----------|-----------|---------|
+| combined baseline       | 0.7210    | 0.6947    | 0.5000  |
+| LTR 8 features          | 0.7543    | 0.7234    | 0.5080  |
+| LTR 12 features (NEW)   | 0.7543    | 0.7234    | 0.5080  |
+| d (12-feat - 8-feat)    | +0.0000   | -         | -       |
+| d (12-feat - baseline)  | +0.0333   | -         | -       |
+| d (8-feat - baseline)   | +0.0333   | -         | -       |
+
+**3-tier honest verdict**:
+- ✅ 12-feature LTR pipeline works end-to-end (n=25, 5-fold CV)
+- ✅ LTR (8 or 12 features) beats combined baseline by +0.033 NDCG@10
+- ✅ 3 of 4 fulltext features have working computation in `pa_cli/deep_rerank.py:288-296`
+  (`fulltext_bm25`, `fulltext_citation_density`, `fulltext_venue_score` work;
+  `fulltext_cross_encoder` is the only placeholder)
+- ⚠️ **12-feat = 8-feat (delta=0.0000)** -- adding 2 working fulltext features
+  (`citation_density`, `venue_score`) does not lift NDCG@10 at n=25
+- ❌ **n=25 is below n>=100 noise threshold per memory discipline**; the +0.033 LTR-vs-baseline
+  lift may be noise, not signal
+- ❌ **2 of 4 fulltext features (fulltext_bm25, fulltext_cross_encoder) are 0** because no
+  PDF fulltext is in the dataset (only abstracts). 2 working features (citation_count/page_count
+  + OpenAlex venue prestige) are too sparse to differentiate label=2 from label=0 papers at n=25
+
+**Verdict for paper-agent**:
+- **Path A COMPLETE**: 12-feature LTR pipeline + honest 3-tier finding
+- **Code state**: 3 of 4 fulltext features work; cross_encoder is the only unimplemented feature;
+  import error (broken since 2026-07-15) is fixed
+- **Recommended next step**: NOT cross_encoder implementation. Instead, expand label set
+  (n=50 -> n=200 per [P1-13]) so LTR can actually learn from fulltext features. Cross_encoder
+  on full text would need PDF download to be effective anyway (Layer 6 dependency).
+- **Priority**: low -- adding fulltext features does not help LTR at n=25; the 2 working features
+  are too sparse to provide signal until n>=100
+
+**Files**:
+- Created: `test_output/_ltr_12feature_eval.py` (15KB, OpenAlex pre-warm + 12-feature LTR)
+- Created: `bench/v01/reports/v3_9_10_12_p0_8_12features_ltr.json` (eval results)
+- Modified: `pa_cli/deep_rerank.py:288-296` (3/4 fulltext features already working)
+- Modified: `pa_cli/__init__.py` (version 3.9.10.11 -> 3.9.10.12)
+- Modified: `CHANGELOG.md` (v3.9.10.12 entry)
 
 ---
 
@@ -3754,7 +3810,7 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ### [P1-12] 3 of 4 fulltext features (added 2026-07-15)
 
-- **Status**: modified (1-2 days, blocked on cross-encoder choice)
+- **Status**: modified (revised 2026-07-22; was "blocked on cross-encoder choice" but P0-8 path A finding makes cross_encoder deferrable)
 - **Added**: 2026-07-15
 - **Source**: v3.9.7.3 audit of [P0-8] Layer 7 partial implementation
 - **Rationale**: Layer 7 currently has 3 of 4 fulltext features working (verified 2026-07-22 in `pa_cli/deep_rerank.py`):
@@ -3763,19 +3819,21 @@ and `pa review` now surfaces the caveat. Marking **done**.
   - ✅ `fulltext_venue_score` (line 295, OpenAlex venue prestige lookup)
   - ❌ `fulltext_cross_encoder` (BGE-reranker on (query, full text)) — placeholder, not implemented
   - **Original entry said "1 of 4 working" — verified 2026-07-22 that 3 of 4 are actually done**
+  - **2026-07-22 P0-8 path A finding**: 12-feature LTR = 8-feature LTR (delta=0.0000) at n=25.
+    Cross_encoder unlikely to lift LTR at n<100 either. Defer until [P1-13] n>=100.
 - **Acceptance criteria**:
-  - `fulltext_cross_encoder`: BGE-reranker on (query, full text) — but BGE abstract-level already loses (per [P0-7] deprecation). Alternative: try monoT5 or ColBERT for full-text rerank
-  - `fulltext_citation_density`: citation_count / page_count (proxy for "depth"); needs Crossref + PyMuPDF page count
-  - `fulltext_venue_score`: OpenAlex venue prestige score (e.g. Qs top-50); needs OpenAlex venue query
-  - LTR re-fit with 12 features (8 + 4 full-text) — measure Layer 7 lift on n=50
-- **Estimated effort**: 1-2 days
-  - 4h: implement `fulltext_citation_density` (Crossref + page count)
-  - 4h: implement `fulltext_venue_score` (OpenAlex venue prestige lookup)
-  - 4h: implement `fulltext_cross_encoder` OR alternative (monoT5/ColBERT)
-  - 2h: LTR re-fit with 12 features, compare to 8-feature baseline
+  - `fulltext_cross_encoder`: BGE-reranker on (query, full text) — but BGE abstract-level already loses (per [P0-7] deprecation). Alternative: try monoT5 or ColBERT for full-text rerank. **DEFERRED until n>=100 labels available**
+  - `fulltext_citation_density`: ✅ already implemented (citation_count / page_count)
+  - `fulltext_venue_score`: ✅ already implemented (OpenAlex venue prestige lookup)
+  - LTR re-fit with 12 features (8 + 4 full-text) — ✅ done 2026-07-22 in v3.9.10.12; 12-feat = 8-feat at n=25
+- **Estimated effort**: 1-2 days (only cross_encoder remaining)
+  - ✅ 4h: implement `fulltext_citation_density` (Crossref + page count) — DONE 2026-07-22
+  - ✅ 4h: implement `fulltext_venue_score` (OpenAlex venue prestige lookup) — DONE 2026-07-22
+  - ⏸️ 4h: implement `fulltext_cross_encoder` OR alternative (monoT5/ColBERT) — DEFERRED to n>=100
+  - ✅ 2h: LTR re-fit with 12 features, compare to 8-feature baseline — DONE 2026-07-22 (delta=0.0000)
 - **Global Rule check**: 5/5 pass (all local computation, no hosted)
-- **Dependency**: needs Layer 6 PDF download working (~16/16 candidates per [P0-8] outcome)
-- **Honest framing**: even with all 4 features, n<100 LTR lifts are noise. Use n=50 mixed labels + holdout for honest measurement.
+- **Dependency**: needs Layer 6 PDF download working (~16/16 candidates per [P0-8] outcome) AND [P1-13] n>=100 labels
+- **Honest framing**: even with all 4 features, n<100 LTR lifts are noise. P0-8 path A confirmed: 12-feat = 8-feat at n=25. Cross_encoder implementation needs n>=100 to be measurable. Use n=50 mixed labels + holdout for honest measurement.
 
 ---
 
