@@ -3409,8 +3409,9 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 
 ### [P0-12] Quality research workflow — Chinese/English split decision (smoke-test-driven, 2026-07-15)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-15
+- **Completed**: 2026-07-22
 - **Source**: User request 2026-07-15 "需要确保高质量的信息"; smoke test on
   2 queries (Chinese: "金融科技 风险承担", English: "transformer attention")
   via `pa search --year-min 2020 --year-max 2024 --limit 20`.
@@ -3452,6 +3453,18 @@ Per [P0-9] "Source: v3.9.7.3 MoE n=47 label distribution" prediction, with CNKI:
 - **Files**: `CHANGELOG.md` v3.9.7.7 documents the honest verdict
 - **User confirmation needed**: scope — is the workflow split acceptable, or does
   user need cite coverage for Chinese queries that would force re-opening [P0-9.1b]?
+- **Outcome (2026-07-22)**: 
+  - Workflow split decision documented (Chinese→CNKI, English→paper-agent, Mixed→both)
+  - `pa review` markdown output now includes **Coverage caveat** section
+    citing [P0-12] with English/Chinese coverage numbers and terminal
+    verdict (per ROADMAP [P0-12] honest finding)
+  - 2/2 unit tests pass (`test_output/_test_review_coverage_caveat.py`)
+  - Verdict terminal under hobbyist budget; no further action on
+    Chinese cite coverage without re-opening [P0-9.1b] (still deprecated)
+
+### Modified 2026-07-22 — Synced status (was stale "proposed")
+Original entry stayed "proposed" but the verdict is already in ROADMAP
+and `pa review` now surfaces the caveat. Marking **done**.
 
 ---
 
