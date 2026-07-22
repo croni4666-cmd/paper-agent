@@ -2336,6 +2336,51 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: exact list of institutions to exclude
 
+### [P1-21] MoE keyword sample library (incremental growth, 2026-07-22)
+
+- **Status**: in-progress (user is incrementally adding samples)
+- **Added**: 2026-07-22
+- **Priority**: P1
+- **Source**: Haining research workflow — user will grow the sample
+  library incrementally as the课题 progresses. The 12 starter samples
+  from `bench/moe-keyword-samples.md` (crossref=5, s2=3, openalex=2,
+  arxiv=2, aminer=0) were insufficient to lift macro F1 from 0.609 to
+  the target 0.70-0.75 (v3.9.7.4 attempt regressed to 0.41).
+- **Rationale**: n<30 samples + 0 aminer samples means MoE router
+  cannot learn meaningful routing. Need:
+  1. n_total >= 30 (currently 12, need +18)
+  2. aminer >= 1 (currently 0, need China-local query)
+  Gated merger (`_merge_moe_samples.py`) refuses to merge until both
+  conditions are met, preventing premature pollution of main training data.
+- **Acceptance criteria**:
+  - `test_output/_add_moe_sample.py --query ... --doi ... --engine ...
+    --topic ... --method ... --data ... --industry ...` adds a new sample
+    with 4-dim labels (per `bench/moe-keyword-samples.md` §1)
+  - `test_output/_status_moe_samples.py` shows current progress
+    (n_total, engine dist, topic dist, distance to merge threshold)
+  - `test_output/_merge_moe_samples.py` merges into main training data
+    when conditions met; backs up + atomic writes
+  - Final goal: macro F1 0.70-0.75 when n=30+ and aminer>0 (re-evaluate
+    after merge)
+- **Files**:
+  - `bench/v01/moe_keyword_samples_12.json` (sample library labels)
+  - `bench/v01/system_outputs_combined_moe_samples_12/` (12+ system_outputs)
+  - `test_output/_add_moe_sample.py` (incremental add)
+  - `test_output/_remove_moe_sample.py` (cleanup utility)
+  - `test_output/_status_moe_samples.py` (progress visibility)
+  - `test_output/_merge_moe_samples.py` (gated merger, refuses if n<30 or aminer=0)
+- **Estimated effort**: user-driven (~5min per sample add, ~30min merge + re-eval when conditions met)
+- **Global Rule check**: 5/5 pass
+  - $0 cost (local code)
+  - No hosted service
+  - Maintenance: ~150 LOC across 4 scripts, no ongoing obligation
+  - No publish obligation
+  - Free-tier degradation: N/A (no API involved)
+- **User confirmation needed**: real paper DOIs for each new sample
+  (placeholder DOIs work but not for actual training); subject domain
+  when expanding the 4-dim label vocabulary (currently t1-t5, m1-m15,
+  d1-d12, i0-i4)
+
 ### [P1-9] Geographic / country metadata extraction
 
 - **Status**: proposed
