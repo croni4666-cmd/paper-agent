@@ -2293,8 +2293,9 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 
 ### [P1-20] S2 throttling for batch rebuild (added 2026-07-20)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-20
+- **Completed**: 2026-07-22
 - **Priority**: P1
 - **Source**: v3.9.10.10 re-eval finding — pool coverage regressed 99.7% → 89.6% (-10.1%) because rebuild script excluded S2 to avoid 429. 35 of 100+ label=2 papers MISSING from new pool. S2 is the most relevance-aware engine; Crossref/OpenAlex are citation-heavy and dilute the pool without S2's relevance signal.
 - **Rationale**: S2 free tier has rate limit (~1 RPS, returns 429 on burst). My v3.9.10.10 rebuild script (`test_output/_rebuild_system_outputs_v3_9_10_10.py`) skipped S2 entirely to avoid the burst. The honest finding is: **without S2, the bigger pool from the gzip/brotli fix is WORSE, not better** (NDCG@10 0.81 → 0.15, Recall@10 0.84 → 0.25). The fix is correct; the rebuild strategy is the regression source.
@@ -2431,8 +2432,9 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 > in CHANGELOG or commit messages from before 2026-07-16 may still use
 > the old [P2-5] ID — when in doubt, grep for the title.
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-07-13
+- **Completed**: 2026-07-22 (commit f8eaac3)
 - **Priority**: P2
 - **Source**: User spot-check 2026-07-13 feedback (q005 #30: "浣庣浉鍏?鏃犲彂琛ㄦ椂闂?浣庡紩鐢?鍙瑙嗕负鍔ｈ川璁烘枃")
 - **Rationale**: Papers with no abstract + no year + low citations have ~zero utility. Mavis was labeling them as 1 (partial) because there's no signal to override. User caught one (q005 #30) and explicitly called out "no year + low cites = low quality paper, should be removed".
@@ -2446,6 +2448,17 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 - **Estimated effort**: ~1h
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: threshold values
+- **Completed**: 2026-07-22 (commit f8eaac3)
+- **Outcome**: v3.9.10.11 [P2-14] ships. `pa_cli/quality_filter.py` (~100 LOC)
+  with `flag_quality()` / `apply_quality_filter()` / `summarize_quality()`.
+  CLI: `pa search <q> --quality-mode flag|filter|off` (default = flag,
+  backward compat). 13/13 unit tests PASS
+  (`test_output/_test_quality_filter.py`). Thresholds: low_quality =
+  no abstract + cites<50 + no year; outdated = year > 25y + cites<100.
+
+### Modified 2026-07-22 — Synced status (was stale "proposed")
+Original entry stayed "proposed" but [P2-14] code actually shipped
+in v3.9.10.11 (commit f8eaac3). Marking **done** to match reality.
 
 ---
 
