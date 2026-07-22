@@ -3682,10 +3682,15 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ### [P1-12] 3 of 4 fulltext features (added 2026-07-15)
 
-- **Status**: proposed
+- **Status**: modified (1-2 days, blocked on cross-encoder choice)
 - **Added**: 2026-07-15
 - **Source**: v3.9.7.3 audit of [P0-8] Layer 7 partial implementation
-- **Rationale**: Layer 7 currently has only 1 of 4 fulltext features working (`fulltext_bm25`); 3 features return 0.0 placeholder. Until implemented, Layer 7 lift measurement is incomplete.
+- **Rationale**: Layer 7 currently has 3 of 4 fulltext features working (verified 2026-07-22 in `pa_cli/deep_rerank.py`):
+  - ✅ `fulltext_bm25` (line 288, real BM25 calc)
+  - ✅ `fulltext_citation_density` (line 292, citation_count / page_count)
+  - ✅ `fulltext_venue_score` (line 295, OpenAlex venue prestige lookup)
+  - ❌ `fulltext_cross_encoder` (BGE-reranker on (query, full text)) — placeholder, not implemented
+  - **Original entry said "1 of 4 working" — verified 2026-07-22 that 3 of 4 are actually done**
 - **Acceptance criteria**:
   - `fulltext_cross_encoder`: BGE-reranker on (query, full text) — but BGE abstract-level already loses (per [P0-7] deprecation). Alternative: try monoT5 or ColBERT for full-text rerank
   - `fulltext_citation_density`: citation_count / page_count (proxy for "depth"); needs Crossref + PyMuPDF page count
