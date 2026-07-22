@@ -1,0 +1,53 @@
+{
+  "version": "v0.1-country-metadata",
+  "source": "ROADMAP [P1-9] Geographic / country metadata extraction",
+  "purpose": "Lookup table mapping country name -> ISO code + region + tag for pa search geographic filtering",
+  "merge_criterion": "When user adds a new country during research, it takes effect immediately. Aim for full UN member state coverage over time.",
+  "countries": {
+    "China": {
+      "iso": "CN",
+      "region": "East Asia",
+      "tag": "china-local"
+    },
+    "United States": {
+      "iso": "US",
+      "region": "North America",
+      "tag": "english-major"
+    },
+    "United Kingdom": {
+      "iso": "GB",
+      "region": "Europe",
+      "tag": "english-major"
+    },
+    "Germany": {
+      "iso": "DE",
+      "region": "Europe",
+      "tag": "manufacturing-strong"
+    },
+    "Japan": {
+      "iso": "JP",
+      "region": "East Asia",
+      "tag": "manufacturing-strong"
+    },
+    "South Korea": {
+      "iso": "KR",
+      "region": "East Asia",
+      "tag": "manufacturing-strong"
+    },
+    "India": {
+      "iso": "IN",
+      "region": "South Asia",
+      "tag": "developing-major"
+    }
+  },
+  "user_added": [],
+  "tags_used": [
+    "china-local",
+    "english-major",
+    "manufacturing-strong",
+    "developing-major",
+    "african-union",
+    "pacific-island",
+    "small-economy"
+  ]
+}

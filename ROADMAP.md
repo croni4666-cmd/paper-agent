@@ -2248,11 +2248,23 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 
 ### [P1-6] Sub-topic granularity decomposition
 
-- **Status**: proposed
+- **Status**: in-progress (sample library form, 2026-07-22)
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 3: granularity)
-- **Rationale**: User said "閮ㄥ垎涓婚鐨勯绮掑害澶ぇ浜?璀鍐滀笟". When query is "agriculture", every ag paper matches 鈫?unrankable. When query is "AI in higher ed" vs "intelligent tutoring systems", these are very different. Need query decomposition before retrieval.
+- **Rationale**: User said "閮ㄥ垎涓婚鐨勯绮掑害澶ぇ浜?璀鍐滀笟". When query is "agriculture", every ag paper matches → unrankable. When query is "AI in higher ed" vs "intelligent tutoring systems", these are very different. Need query decomposition before retrieval.
+
+### Modified 2026-07-22 — Transformed to sample library
+Original spec was "static lookup table with 30 sub-topic domains".
+Per user decision 2026-07-22, refactored to **sample library form**:
+- `bench/v01/sub_topic_library.json` — 4 parent topics × ~3 sub-topics seeded (13 total)
+- `test_output/_add_lookup.py sub-topic` — user adds new sub-topics as research progresses
+- `test_output/_status_lookups.py` — progress visibility
+- `test_output/_remove_lookup.py` — cleanup utility
+
+Library integration into v3.9.0 rerank pipeline: deferred until
+`verified=True` for ≥10 sub-topics (user signal that the
+decomposition is stable enough to thread into ranking).
 - **Acceptance criteria**:
   - New module `pa_cli/decompose.py` with `decompose_query(query: str) -> list[SubTopic]`
   - `SubTopic = {name, keywords, exclusion_keywords, weight, domain}`
@@ -2321,10 +2333,21 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 
 ### [P1-8] China political-institution exclusion
 
-- **Status**: proposed
+- **Status**: in-progress (sample library form, 2026-07-22)
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 6: China-specific exclusion)
+
+### Modified 2026-07-22 — Transformed to sample library
+Original spec was "static blocklist applied at retrieval time".
+Per user decision 2026-07-22, refactored to **sample library form**:
+- `bench/v01/china_institution_exclusion.json` — empty initial state, 4 categories defined
+- `test_output/_add_lookup.py china-inst` — user adds new institutions as research progresses
+- `test_output/_status_lookups.py` — progress visibility
+- `test_output/_remove_lookup.py` — cleanup utility
+
+Each new institution takes effect immediately (no merge gate needed;
+this is a per-user sensitivity filter, not a training dataset).
 - **Rationale**: User said "閽堝涓浗,鎺掗櫎浠讳綍鍥介檯鍏崇郴鐮旂┒闄互鍙婇┈鍏嬫€濅富涔夊闄㈢瓑鍏锋湁瀹樻柟鏀挎不鑳屾櫙鐨勬枃绔?. These papers have low academic-rigor signal in their domain, even if cited. Need a blocklist applied at retrieval time.
 - **Acceptance criteria**:
   - `pa_cli/exclusions.py` with `POLITICAL_EXCLUSION_INSTITUTIONS`:
@@ -2384,10 +2407,24 @@ The 螖 values are within the noise band of n=25 (no significance test, no holdo
 
 ### [P1-9] Geographic / country metadata extraction
 
-- **Status**: proposed
+- **Status**: in-progress (sample library form, 2026-07-22)
 - **Added**: 2026-07-13
 - **Priority**: P1
 - **Source**: User spot-check 2026-07-13 feedback (theme 4: geographic)
+
+### Modified 2026-07-22 — Transformed to sample library
+Original spec was "static country list completeness (small African /
+Pacific island nations)".
+Per user decision 2026-07-22, refactored to **sample library form**:
+- `bench/v01/country_metadata.json` — 7 countries seeded (China, US,
+  UK, Germany, Japan, South Korea, India), 7 tags defined
+- `test_output/_add_lookup.py country` — user adds new countries as research progresses
+- `test_output/_status_lookups.py` — progress visibility
+- `test_output/_remove_lookup.py` — cleanup utility
+
+Each new country takes effect immediately. Goal: full UN member
+state coverage (~193) over time, with special attention to small
+African / Pacific island nations per original concern.
 - **Rationale**: User said "鏈変簺鍛介闇€瑕佹湁瀹炶瘉妫€楠?姝ゆ椂鍙兘鏈夊湴鐞嗕俊鎭垨鑰呭浗鍒俊鎭?鍍忚繖绉嶅甫鏈夊湴鐞嗗拰鍥藉埆鐨勪俊鎭殑涔熻鍙傝€冧笉浠呬粎鍙槸鍋滅暀鍦ㄥ懡棰樿В鏋勪笂". When query is "carbon pricing in OECD countries", the country-level data is essential, not the abstract theory. Need to surface country info in retrieval, not just rely on concept keywords.
 - **Acceptance criteria**:
   - `pa_cli/geography.py` with `extract_country(title, abstract, venue) -> list[str]` using a curated country-name list (~250 ISO 3166-1)

@@ -1,0 +1,30 @@
+{
+  "version": "v0.1-sub-topic-library",
+  "source": "ROADMAP [P1-6] sub-topic granularity decomposition",
+  "purpose": "Lookup table mapping topic -> sub-topic decomposition for finer query routing",
+  "merge_criterion": "When a sub-topic is queried 3+ times by user OR covers 5+ new queries, mark as 'verified'",
+  "topics": {
+    "DEA": [
+      {"id": "DEA-CCR", "label": "Charnes 1978 CCR", "queries_seen": 0, "verified": false},
+      {"id": "DEA-BCC", "label": "Banker 1984 BCC (VRS)", "queries_seen": 0, "verified": false},
+      {"id": "DEA-SBM", "label": "Tone 2001 SBM (slacks-based)", "queries_seen": 0, "verified": false},
+      {"id": "DEA-Tobit", "label": "McDonald 2009 two-stage", "queries_seen": 0, "verified": false},
+      {"id": "DEA-bootstrap", "label": "Simar & Wilson 2011 bootstrap", "queries_seen": 0, "verified": false}
+    ],
+    "maturity": [
+      {"id": "Mittal-5level", "label": "Mittal 2018 5-level SME", "queries_seen": 0, "verified": false},
+      {"id": "DTCMM-5x5", "label": "Gokalp 2022 DTCMM 5x5", "queries_seen": 0, "verified": false},
+      {"id": "Bibby-4stage", "label": "Bibby 2018 4-stage Industry 4.0", "queries_seen": 0, "verified": false}
+    ],
+    "edge-AI": [
+      {"id": "Singh-IoT-CPS", "label": "Singh 2023 edge AI IoT/CPS", "queries_seen": 0, "verified": false},
+      {"id": "Hua-4layer", "label": "Hua 2023 cloud-edge-end 4-layer", "queries_seen": 0, "verified": false}
+    ],
+    "AI-divide": [
+      {"id": "Capraro-PNAS", "label": "Capraro 2024 PNAS GenAI inequality", "queries_seen": 0, "verified": false},
+      {"id": "Czarnitzki-JEBO", "label": "Czarnitzki 2023 SME AI productivity", "queries_seen": 0, "verified": false},
+      {"id": "Peretz-IJIM", "label": "Peretz 2024 SME AI 67% vs 12%", "queries_seen": 0, "verified": false}
+    ]
+  },
+  "user_added": []
+}
