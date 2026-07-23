@@ -1,4 +1,25 @@
-# paper-agent v3.1 — 发布说明 + TODO 路线图
+# paper-agent v3.1 — 发布说明 + TODO 路线图 (ARCHIVED)
+
+> **⛔ ARCHIVED 2026-07-23**: This document is from the **v3.1 era (2026-07-03)** —
+> the very first version of paper-agent as a Python package. All 5 TODO items
+> listed below were **shipped long ago** (most by v3.9.0, all by v3.9.7.4).
+> Kept for historical reference only.
+>
+> **Current state** (v3.9.11.3, 2026-07-23):
+> - v3.1 item 1.1 (OpenAlex get_by_doi timeout wrap): shipped in v3.9.5
+> - v3.1 item 1.2 (真研究方向 topic config + 跑一次): shipped via `pa project` phase 1 (v3.9.10.8)
+> - v3.1 item 1.3 (`pa` CLI wrapper): shipped in v3.3.0
+> - v3.1 item 4.2 (PDFPool 4 缺口): closed across v3.9.5-v3.9.7.6 (CNKI/CORE/Sci-Hub all probed)
+> - v3.1 item 4.3 (跨项目 transfer 缺): partially shipped (`pa fetch-batch`, `pa project`,
+>   `pa build`); no cron/email push (Global Rule blocks)
+>
+> See `ROADMAP.md` "Versioned roadmap summary" for full v3.3.0 → v3.9.11.3 history.
+>
+> For current TODO, see `TODO.md` (slim version, v3.9.11.3 era).
+
+---
+
+# paper-agent v3.1 — 发布说明 + TODO 路线图 (HISTORICAL, original content below)
 
 > **发布日期**: 2026-07-03
 > **前一版本**: v3.0 (Phase 5 — relevance ranking + 稳定性 fix, 2026-07-03)

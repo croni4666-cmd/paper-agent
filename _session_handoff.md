@@ -1,4 +1,27 @@
-# Session Handoff — paper-agent 增强计划 (originally v3.9.8.4, now v3.9.9.6)
+# Session Handoff — paper-agent 增强计划 (ARCHIVED, was v3.9.8.4 → v3.9.9.6)
+
+> **⛔ ARCHIVED 2026-07-23**: This handoff is **superseded by `SESSION_HANDOFF.md`**
+> (v3.9.11.3 post-GitHub-push era). Kept for historical reference only.
+> DO NOT use as source of truth — most items are now shipped or restructured.
+> See **`SESSION_HANDOFF.md`** for current state.
+
+**Archived date**: 2026-07-16 09:19 (original handoff) → 2026-07-16 12:40 (current at archive time)
+**Superseded by**: `SESSION_HANDOFF.md` (v3.9.11.3)
+**Archive reason**: User asked 2026-07-23 to "调整成符合我们现在进度的情况" — this file
+was 7 minor versions stale (v3.9.9.6 → v3.9.11.3) and missing v3.9.10.x + v3.9.11.x entirely.
+
+**Last capability snapshot at archive time**: v3.9.9.1 (pa judge)
+**Now (post-archive)**: v3.9.11.3 (7 engines, GitHub-pushed, AGPL-3.0 + No-AI-Training)
+
+For current state, see:
+- `SESSION_HANDOFF.md` (v3.9.11.3, compact + 3-tier honest)
+- `ROADMAP.md` (formal status of every [P-N] item)
+- `CHANGELOG.md` (per-version release notes)
+- `README.md` (user-facing quick start)
+
+---
+
+**Original handoff (v3.9.9.6 era, for historical reference only):**
 
 **Date**: 2026-07-16 09:19 (original handoff) → 2026-07-16 12:40 (current)
 **From session**: mvs_6bb48cb3cb1e4e5b9bc5625f1a5b3da9

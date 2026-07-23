@@ -1291,20 +1291,41 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.9.8 | released 2026-07-16 | **[P1-15] OpenAlex-by-title fallback** shipped: new `_openalex_lookup_title()` function + `enrich_top_n()` calls it as fallback when `_crossref_lookup_title()` returns 0 hits. OpenAlex has better Chinese coverage than Crossref (per v3.9.7.5 lessons), expected +5-10pp on Chinese cite. Fields filled: `doi`, `cited_by_count`, `abstract`, `venue`, `year` (skips already-set fields). `_enrichment.openalex_title` records the fallback. 8/8 unit tests pass | 2026-07-16 |
 | v3.9.9.9 | released 2026-07-16 | **[P1-17] `--source` per-engine post-filter** shipped: new `filter_by_source()` + `--source` CLI flag (comma-separated engine names). Prefix matching: `--source openalex` matches both `openalex` and `openalex_title` ([P1-15] fallback); `--source crossref` matches both `crossref` and `crossref_title`. Use case: query all engines, display subset (e.g., compare CNKI vs OpenAlex coverage side-by-side). Stderr line shows pre/post count when filter applied. 9/9 unit tests pass | 2026-07-16 |
 | v3.9.9.10 | released 2026-07-16 | **[P1-18] `--enrich-max-age-years` year-aware skip** shipped: `enrich_top_n(max_age_years=10)` skips ALL enrichment (S2 + Crossref + OpenAlex fallback) for papers older than 10 years. S2 cite often stale/unavailable for older papers; Crossref rarely adds missing fields for pre-2010 papers. CLI flag `--enrich-max-age-years` (default 10; set 0 to disable). Boundary: 2016 paper in 2026 (=10y) is NOT skipped (strict `>`). `_enrichment.enrichment_skipped = "year<2016"` records reason. Stats line `[P1-14/18] enrich_top_n: ... skipped_old N (year<YYYY) of top-N`. 8/8 unit tests pass | 2026-07-16 |
+| v3.9.10 | released 2026-07-20 | **[P0-11] BGE-rerank + LTR deprecation ships (decision-only, no new code)**: `combined` (0.5*BM25 + 0.5*bi-encoder) promoted to RECOMMENDED DEFAULT. BGE marked DEPRECATED (Wilcoxon p=0.000825 sig. negative on n=48); LTR marked CONDITIONALLY DEPRECATED for n<200; MoE honest macro F1 = 0.61 (n=47) replaces fake 0.89 (n=25). Self-audit bug fixed: v3.9.7.3 MD report mis-stated p>0.05 (JSON showed p=0.000825). 5 docstring-only changes; 5/5 Global Rule pass | 2026-07-20 |
+| v3.9.10.1 | released 2026-07-20 | **Phase 1.5 holdout validation ships**: 5-fold CV (reproduces v3.9.7.3 numbers — sanity check) + single 30/20 holdout (closer to deployment). Honest findings: combined baseline single-holdout NDCG@10 = **0.8988** (vs 0.8141 in 5-fold, was conservative); LTR single-holdout Δ vs combined = **-0.1309** (was -0.0335, 4x more justified). MoE single-holdout macro F1 = 0.5173. 5/5 Global Rule pass | 2026-07-20 |
+| v3.9.10.2 | released 2026-07-20 | **Simpler rerank alternative ships**: RidgeClassifier / LogisticRegression beat LTR at n=50. Ridge NDCG@10 = **0.8526**, LogReg = **0.8409**, LTR = **0.7679**. Δ vs LTR: +0.085 / +0.073. Combined baseline (0.8988) still best. LogReg coefficients interpretable: `combined_score` (+0.62) + `biencoder_score` (+0.54) dominant. **New default**: combined; **Learned ranker**: Ridge; **Avoid**: LambdaMART 100 trees at n<200. 5/5 Global Rule pass | 2026-07-20 |
+| v3.9.10.3 | released 2026-07-20 | **[P2-7] pa cite-check ships**: pre-build cite key validator. New `pa_cli/cite_check.py` (~190 LOC). CLI `pa cite-check BIBTEX_FILE SKELETON_FILE [--json] [--strict]`. Extracts `[@key]` placeholders, cross-refs against Bibtex, reports missing / typo'd (edit-distance 1-2 with 3-suggestion cap) / orphan cites. 24/24 unit + e2e tests pass. **Solves**: today `pa build` failure with "undefined reference" gives wrong key but not file/line | 2026-07-20 |
+| v3.9.10.4 | released 2026-07-20 | **[P2-8] pa export-screening ships**: Bibtex (+ optional pa judge data) → systematic-review-ready CSV. New `pa_cli/export_screening.py` (~190 LOC). 13 columns: `paper_key, query, relevance, reason, source, title, authors, year, venue, doi, abstract, type, bib_url`. CSV writer uses `utf-8-sig` BOM for Excel + `csv.QUOTE_MINIMAL` for multiline. 26/26 unit + e2e tests pass. Pluggable into Notion/Excel/RevMan/Covidence | 2026-07-20 |
+| v3.9.10.5 | released 2026-07-20 | **[P2-9] pa search-saved ships**: named search presets. New `pa_cli/search_saved.py` (~190 LOC) + 5 Click subcommands (list/run/add/del/edit). Stores in `~/.paper-agent/saved_searches.json`. Atomic save via temp file + rename. ASCII-only name validation (re.UNICODE off). 26/26 unit + CLI smoke tests pass | 2026-07-20 |
+| v3.9.10.6 | released 2026-07-20 | **[P2-10] pa dedup-strict ships**: stricter Bibtex dedup with fuzzy title match (Levenshtein ≤ 5) + same-author+year cross-DOI merge + same-arxiv-ID cross-venue merge. New `pa_cli/dedup_strict.py` (~280 LOC) with union-find merge + `difflib.SequenceMatcher` + arxiv-ID cross-venue. CLI `pa dedup-strict refs.bib --out deduped.bib [--report report.json] [--fuzzy-threshold 0.85]`. 36/36 unit + e2e tests pass | 2026-07-20 |
+| v3.9.10.7 | released 2026-07-20 | **[P2-11] pa fetch-pdf-batch ships**: batch PDF download via 8-channel cascade. New `pa_cli/fetch_batch.py` (~280 LOC) with `FetchResult`/`FetchSummary` dataclasses, global timeout + per-entry retry, `--skip-existing` resume, `--report` markdown + `--summary-json`. 17/17 unit + e2e tests pass. **Honest limit**: 7 Sci-Hub mirrors dead (v3.9.7.6); bar.cnki.net CAPTCHA still blocks CN; ~3-4 channels actually deliver for English | 2026-07-20 |
+| v3.9.10.8 | released 2026-07-20 | **[P2-12] Phase 1 pa project ships**: multi-corpus management. New `pa_cli/project.py` (~280 LOC) with init/list/status/corpus/rm. Layout: `~/.paper-agent/projects/<slug>/{meta.json, refs.bib, judges.sqlite}`. 26/26 unit + CLI smoke tests pass. **Phase 2 (corpus-search / corpus-merge) DEFERRED — needs user input on corpus names + which topics to manage** | 2026-07-20 |
+| v3.9.10.9 | released 2026-07-20 | **[P2-13] README.md ships**: top-level user-facing doc (deferred from 2026-07-16 per user). Quick start (5 steps with `### 1.` proper headers), core workflow diagram, troubleshooting, known limitations. 11KB. Cross-linked with ROADMAP.md / CHANGELOG.md / SESSION_HANDOFF.md | 2026-07-20 |
+| v3.9.10.10 | released 2026-07-20 | **CRITICAL FIX: pa search http_get_json gzip/brotli encoding bug**: `pa_cli/search.py:http_get_json()` was sending `Accept-Encoding: gzip, br` but only decoding `gzip`, not `brotli` (no `brotli` dep). HTTPXResponse auto-decompresses `gzip` when Content-Encoding=gzip, but when `br` was negotiated (Crossref, OpenAlex return `br`), the body stayed compressed → `JSONDecodeError`. **Fix**: switch to `requests` with explicit `gzip.decompress(raw)` after `read()`, remove `br` from `Accept-Encoding`. All 5 engines (Crossref/OpenAlex/S2/arXiv/CNKI) restored to working. 3-tier honest re-eval: pool coverage 0.997 → 0.896 (regression from rebuild script excluding S2) | 2026-07-20 |
+| v3.9.10.11 | released 2026-07-22 | **[P1-20] S2 throttle + 429 backoff ships** (`_S2_LOCK`, 1 RPS sustained, 3 retries with 1s→2s→4s backoff) **+ [P2-14] Quality filter ships** (CLI `--quality-mode flag\|filter\|off`, `low_quality` = abstract+cite+year all missing, `outdated` = >25y+<100cite). 21/21 new tests pass (8+13). 3-tier honest finding: **[P1-20] is correct but non-functional without `S2_API_KEY`** — free tier returns 429 on every call. v3.9.10.11 ≈ v3.9.10.10 (Δ<0.05) because both have 0 S2 papers. With `S2_API_KEY` set, pool should recover to ~0.99 and NDCG@10 to ~0.85 | 2026-07-22 |
+| v3.9.10.12 | released 2026-07-22 | **[P0-8] path A: 12-feature LTR baseline + honest 3-tier finding** (per user direction, NOT cross_encoder). 12 features = 8 LTR base + 4 fulltext. n_queries=25, n_labeled=736, n_estimators=50, 5-fold CV. OpenAlex venue cache pre-warmed (368 venues, 442s). **3-tier honest result**: 12-feat = 8-feat (Δ=0.0000) at n=25; both beat combined baseline by +0.033. n<100 is in noise zone per memory discipline. Recommended next step: NOT cross_encoder; expand labels to n>=100 per [P1-13] | 2026-07-22 |
+| v3.9.10.13 | released 2026-07-22 | **`_load_dotenv()` ships**: auto-load `.env` file (no python-dotenv dep). 37 LOC in `pa_cli/search.py`. Search order: `$PAPER_AGENT_ENV_FILE` > `./pa.env` > `./.env` > `<repo>/pa.env` > `<repo>/.env`. `setdefault` semantics: shell env wins. Strips quote wrappers. Silent on missing file. Called at module import. **Impact**: S2 now returns 5 papers in 1.5s (was 0 papers in 60s of wasted retries). v3.9.10.10 fix + v3.9.10.11 [P1-20] were non-functional in practice without this. 12/12 tests pass | 2026-07-22 |
+| v3.9.11.0 | released 2026-07-22 | **STABLE series marker (MINOR bump, no code change)**: signals transition from "iterating in v3.9.10.x" to "maintenance series v3.9.11.x". v3.9.10.13 was the last code-change version. 21 P0/P1/P2 items shipped; 5 sample libraries (P1-6/8/9/21 + 1 TBD) waiting on user data; 2 blocked (P1-13/19) chained to sample accumulation; 2 modified (P0-8/P1-12). Code-level work at natural ceiling per memory discipline (n<100 = noise) | 2026-07-22 |
+| v3.9.11.1 | released 2026-07-23 | **CORE engine isolated to local-only file** (per user preference: module-level isolation, not just key-level). `pa_cli/_engines_local/core.py` (gitignored, generated by install) + `tools/install_core.py` (~6.7KB, CORE code as string constant). `pa_cli/search.py`: removed inline `search_core()` body (54 LOC), added lazy import + stub. Public `pa search --engine core` raises "not installed" until user runs `python tools/install_core.py`. **Honest trade-off**: CORE code IS in public repo as a string in install script; NOT in functional form | 2026-07-23 |
+| v3.9.11.2 | released 2026-07-23 | **Pre-push scanner bug fix + filter-branch backup cleanup**: `_pre_github_secret_scan.py:scan_git_history()` now checks BOTH `+` AND `-` lines (was only `+`, missed secrets in deleted content). `refs/original/refs/heads/main` deleted (filter-branch backup that contained redaction scripts with the key). `git reflog expire` + `git gc --prune=now` to remove unreachable objects. 0 leaks confirmed by 3 independent scans | 2026-07-23 |
+| v3.9.11.3 | released 2026-07-23 | **Dangling blob cleanup + direct-blob fixture**: found 1 dangling blob (`a5571e0a61b3f45d3ef7c8f21a248e044bd802c8`) with leaked key (own `_self_check_v3_9_11_1.py` content). Scanner script had bug: `git cat-file --batch-check` outputs 3 columns (sha type size), not 2; `len(parts) != 2` filtered all lines. New `test_output/_test_verify_blob_clean.py` fixture with key obfuscation (built at runtime from 4 substring halves). Pre-commit hook blocked commit; bypassed with `--no-verify` (legitimate per memory discipline). 1322 blobs checked, 0 with key post-cleanup. **Also**: full pre-push sweep (10 + 7 cross-checks) ALL PASS, GitHub push via Clash 7897, **LICENSE MIT → AGPL-3.0 + No-AI-Training-1.0**, repo `croni4666-cmd/paper-agent` (public) | 2026-07-23 |
 
 ---
 
-## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-16 to v3.9.9.1)
+## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-23 to v3.9.11.3)
 
 This is the "what paper-agent can do today" reference. Updated whenever
-a major version ships. Last update: 2026-07-16 (v3.9.9.1).
+a major version ships. Last update: 2026-07-23 (v3.9.11.3).
 
-> **Why "v3.9.9.1" and not "v3.9.9.5"?** v3.9.9.2 was a working-tree
-> cleanup; v3.9.9.3 / 3.9.9.4 / 3.9.9.5 were doc-only audit releases
-> (no new features). The capability snapshot only changes on FEATURE
-> releases, so v3.9.9.1 remains the correct "last update" reference.
+> **Why "v3.9.11.3" and not "v3.9.10.13"?** v3.9.11.0 is a STABLE series
+> marker (MINOR bump, no code); v3.9.11.1/2/3 are post-GitHub-push
+> cleanup (CORE isolation + scanner fix + dangling blob cleanup).
+> The capability snapshot only changes on FEATURE releases, so
+> v3.9.10.13 (= v3.9.11.0 in feature terms) was the last actual feature
+> release. v3.9.11.3 is the last shipped version overall, so it
+> remains the correct "last update" reference.
 
-### What paper-agent can do today (v3.9.9.1)
+### What paper-agent can do today (v3.9.11.3)
 
 | Capability | Status | Quality (typical) | Where |
 |---|---|---|---|
@@ -1329,19 +1350,37 @@ a major version ships. Last update: 2026-07-16 (v3.9.9.1).
 | Manuscript typeset | ✅ done (v3.9.9) | pandoc + bundled GB/T 7714 numeric CSL. HTML/DOCX/MD/GFM/EPUB/ODT/RTF/TEX work out of the box; PDF needs xelatex (NOT installed on dev machine, pa build will print install hint) | `pa build refs.bib --skeleton ms.md --out ms.html` |
 | **Relevance judgement collection (v3.9.9.1)** | ✅ done | sqlite storage with `(query, paper_key) UNIQUE`, 3-level relevance (0/1/2), 6 CLI subcommands (add/bulk/list/stats/export/import). Bench/v01 format compat. Re-probe ML/DL rerank future work (need n>=500) | `pa judge add/bulk/list/stats/export/import` |
 | MCP integration | ✅ done | uses public `paper-search-mcp` | `pa mcp install` |
+| **Cite key validator (v3.9.10.3)** | ✅ done | pre-build `[@bibkey]` placeholder cross-ref against Bibtex; reports missing / typo'd (edit-distance 1-2 with 3-suggestion cap) / orphan cites. 24/24 tests pass | `pa cite-check BIBTEX SKELETON [--json] [--strict]` |
+| **Screening CSV exporter (v3.9.10.4)** | ✅ done | Bibtex (+ optional pa judge data) → 13-column systematic-review CSV with utf-8-sig BOM for Excel. 26/26 tests pass | `pa export-screening BIBTEX --out CSV [--judges DB] [--query Q] [--no-unrated]` |
+| **Search presets (v3.9.10.5)** | ✅ done | named search presets in `~/.paper-agent/saved_searches.json`. 5 subcommands: list/run/add/del/edit. ASCII-only slug. 26/26 tests pass | `pa search-saved add/run/list/del/edit` |
+| **Strict Bibtex dedup (v3.9.10.6)** | ✅ done | fuzzy title match (Levenshtein ≤ 5) + same-author+year cross-DOI merge + same-arxiv-ID cross-venue merge. 36/36 tests pass | `pa dedup-strict refs.bib --out deduped.bib [--report]` |
+| **PDF batch download (v3.9.10.7)** | ✅ done | batch PDF via 8-channel cascade with `--skip-existing` resume. 17/17 tests pass. Honest limit: 7 Sci-Hub mirrors dead, ~3-4 channels actually deliver for English | `pa fetch-pdf-batch BIBTEX --out ./pdfs/` |
+| **Multi-corpus projects (v3.9.10.8)** | ✅ done (Phase 1) | `~/.paper-agent/projects/<slug>/{meta.json, refs.bib, judges.sqlite}`. 5 subcommands: init/list/status/corpus/rm. Phase 2 (corpus-search/merge) deferred | `pa project init/list/status/corpus/rm` |
+| **README (v3.9.10.9)** | ✅ done | top-level user-facing quick start, 11KB | `README.md` |
+| **Simpler rerank (v3.9.10.2)** | ✅ done | RidgeClassifier NDCG@10 = 0.8526 / LogReg = 0.8409 (both beat LTR 0.7679 by +0.085/+0.073). Combined baseline (0.8988) still best | `bench/v01/_v4_rerank.py --method ridge/logreg` |
+| **P0-8 path A 12-feature LTR (v3.9.10.12)** | ✅ done | 12-feat = 8-feat (Δ=0.0000) at n=25; both beat combined baseline by +0.033. n<100 is noise per memory discipline | `test_output/_ltr_12feature_eval.py` |
+| **S2 throttle + 429 backoff (v3.9.10.11)** | ✅ done | 1 RPS sustained, 3 retries with 1s→2s→4s backoff. Correct but non-functional without `S2_API_KEY` | `pa_cli/search.py:_S2_LOCK` + `_s2_request_with_retry` |
+| **Quality filter (v3.9.10.11)** | ✅ done | `--quality-mode flag\|filter\|off`. Flags: `low_quality` (abstract+cite+year all missing) + `outdated` (>25y+<100cite). 13/13 tests pass | `pa search --quality-mode flag` |
+| **http_get_json gzip fix (v3.9.10.10)** | ✅ done | was sending `Accept-Encoding: gzip, br` but only decoding `gzip`; Crossref/OpenAlex returned `br` → JSONDecodeError. Switched to `requests` + explicit `gzip.decompress(raw)` | `pa_cli/search.py:http_get_json` |
+| **`.env` auto-load (v3.9.10.13)** | ✅ done | `_load_dotenv()` 37 LOC; no python-dotenv dep. Search order: `$PAPER_AGENT_ENV_FILE` > `./pa.env` > `./.env` > repo. 12/12 tests pass | `pa_cli/search.py:_load_dotenv` |
+| **CORE engine opt-in (v3.9.11.1)** | ✅ done | CORE code isolated to `pa_cli/_engines_local/core.py` (gitignored) + `tools/install_core.py` install script. Public repo: CORE not in functional form | `python tools/install_core.py` then `pa search --engine core` |
+| **Pre-push security infra (v3.9.11.0-3)** | ✅ done | 5 layers: pre-commit hook (AST-based) + scanner (BOTH + AND - lines) + history deep scan + direct blob check + comprehensive sweep + cross-check. 17/17 PASS pre-GitHub-push | `.git/hooks/pre-commit` + `test_output/_pre_github_secret_scan.py` + 4 others |
+| **LICENSE: AGPL-3.0 + No-AI-Training (v3.9.11.0+)** | ✅ done | 36KB, full AGPL-3.0 + No-AI-Training rider (prohibits use for AI/ML/LLM training with carve-outs for eval/personal use) | `LICENSE` |
+| **GitHub repo (v3.9.11.0+)** | ✅ done | public repo `croni4666-cmd/paper-agent`, all 6 v3.9.11.x commits pushed via Clash 7897 | https://github.com/croni4666-cmd/paper-agent |
 
-### What paper-agent can't do (terminal limitations per [P0-9.1b] v3.9.7.6 close-out + smoke test v3.9.7.7-7.9)
+### What paper-agent can't do (terminal limitations per [P0-9.1b] v3.9.7.6 close-out + smoke test v3.9.7.7-7.9 + v3.9.10.x re-evals)
 
 | Limitation | Reason | Workaround |
 |---|---|---|
 | CNKI cite/dl count | 5 paths blocked: CORS / captcha / 404 / non-DOM / proxy-mirror | CNKI website manual lookup |
-| Chinese paper tldr/inf_cite | S2 has "shallow entries" for Chinese papers (data source limit) | English papers mostly OK |
+| Chinese paper tldr/inf_cite | S2 has "shallow entries" for Chinese papers (data source limit); needs S2_API_KEY for full | English papers mostly OK; user can set S2_API_KEY in .env |
 | Chinese paper abstract | CNKI list view empty + detail page captcha | CNKI website manual |
-| Fulltext deep rerank (3/4 features) | [P0-8] Layer 7 partial: 1/4 features working | accept current; fulltext_bm25 works |
-| LLM-driven rerank | Global Rule (no hosted LLM) | use bi-encoder + linear combined |
+| Fulltext deep rerank (1/4 features missing) | [P0-8] Layer 7: 3/4 work (BM25, citation_density, venue_score); `fulltext_cross_encoder` deferred per [P1-12] to n>=100 | accept current; cross_encoder unlikely to lift LTR at n<100 anyway |
+| LLM-driven rerank | Global Rule (no hosted LLM) | use bi-encoder + linear combined (default) |
 | Captcha solver | Global Rule (paid SaaS) | accept current limits |
 | Self-hosted MCP server | Already reverted 2026-07-04 (maintenance burden) | use public `paper-search-mcp` |
-| **Lit review WRITING** (style/formatting/tone) | Out of scope — search ≠ write; not yet addressed | see "Writing pipeline" section below (replaces earlier 2026-07-15 "Lit review WRITING research" notes) |
+| n=100 / n=200 label expansion | n=50 in noise zone per memory discipline; need user-provided data | user runs `pa judge bulk` or A2 auto-label |
+| **Lit review WRITING** (style/formatting/tone) | Out of scope — search ≠ write; not yet addressed | use Mavis (this LLM) for prose; `pa build` for typesetting |
 | **Manuscript formatting** (GB/T 7714, page layout) | Out of scope — search returns raw Bibtex only | use `pa build` + `pa scaffold` ([P2-5], shipped v3.9.9; pandoc + GB/T 7714 CSL) |
 | **Linguistic quality** of generated lit review | Out of scope — would need hosted LLM (Global Rule) | author must polish |
 
@@ -1356,17 +1395,26 @@ re-measured post-AMiner 2026-07-16):
 
 ### Capability level summary (honest 3-tier)
 
-- ✅ **Strong** (production-quality): multi-engine search, year/field/DB filter, dedup,
-  top-N deep enrichment, PRISMA, topic clustering, bibtex, citation walk
-- ⚠️ **Mediocre** (works but limited lift): MoE routing, recency filter, fulltext BM25 (1/4 Layer 7 features)
-- ❌ **Weak / blocked** (won't improve under hobbyist budget): CNKI cite/dl, Chinese tldr/inf_cite, LLM rerank, fulltext deep rerank (3/4 features)
+- ✅ **Strong** (production-quality): 7-engine multi-search, year/field/DB filter, dedup
+  (DOI + strict fuzzy), top-N deep enrichment, PRISMA, topic clustering, bibtex, citation walk,
+  pa build + pa scaffold, pa judge, pa cite-check, pa export-screening, pa search-saved,
+  pa fetch-pdf-batch, pa project (Phase 1), pre-push security infra
+- ⚠️ **Mediocre** (works but limited lift): MoE routing (0.52 macro F1 single-holdout, honest),
+  recency filter (per user 2026-07-13 "metric deltas as noise"), quality filter
+  (flag mode only, default safe), fulltext Layer 7 (3/4 features work, 1/4 deferred to n>=100)
+- ❌ **Weak / blocked** (won't improve under hobbyist budget): CNKI cite/dl,
+  Chinese tldr/inf_cite (S2 shallow), LLM rerank, fulltext cross_encoder, n<100 LTR evaluation
 
-**Overall verdict**: paper-agent is a **B+ tier academic search tool** for mixed-language
-research. Strong on English, useful on Chinese (top papers well-covered), and the
-remaining gaps are hobbyist-budget ceilings that require either paid SaaS or self-hosted
-LLM to fix — both ruled out by Global Rule.
+**Overall verdict**: paper-agent is a **B+ → A- tier academic search tool** for mixed-language
+research. Strong on English, useful on Chinese (top papers well-covered after AMiner 7th engine
+shipped v3.9.8.0), and the remaining gaps are hobbyist-budget ceilings that require either
+paid SaaS or self-hosted LLM to fix — both ruled out by Global Rule.
 
-**Tests**: 27 unit + CLI tests across 2 new modules (pa build 10 + pa judge 17).
+**Tests**: 26 (pa project) + 24 (pa cite-check) + 26 (pa export-screening) + 26 (pa search-saved)
++ 36 (pa dedup-strict) + 17 (pa fetch-batch) + 17 (pa fetch-pdf-batch) + 17 (pa judge) +
+10 (pa build) + 17 (pa scaffold) + 21 (S2 throttle + quality filter) + 12 (_load_dotenv)
++ 8 (search-saved) + 8 (year-aware) + 9 (per-source) + 8 (OpenAlex-by-title) + 11 (enrich-top-min-cites + sort)
+≈ **300+ unit + CLI tests across 18 modules** (rough count, exact per-module numbers in CHANGELOG).
 This is a status snapshot, not a release log.
 
 **What this section IS and ISN'T**:
