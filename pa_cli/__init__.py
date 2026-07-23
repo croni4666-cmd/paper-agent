@@ -1,14 +1,23 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.1 (CORE engine isolated to local-only file).
-See CHANGELOG [3.9.11.1] for the CORE isolation rationale.
+Latest stable: v3.9.11.2 (scanner bug fix + filter-branch backup cleanup).
+See CHANGELOG [3.9.11.2] for the post-isolation security audit findings.
 
-Previous in v3.9.10.x and v3.9.11.0:
+Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1:
   - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix
   - v3.9.10.11: [P2-14] pa search --quality-mode ships + [P1-20] S2 throttle
   - v3.9.10.12: [P0-8] path A 12-feature LTR baseline (12-feat = 8-feat at n=25)
   - v3.9.10.13: _load_dotenv() auto-load .env (CORE_API_KEY, S2_API_KEY, etc.)
   - v3.9.11.0: STABLE series marker; no code change; MINOR bump
+  - v3.9.11.1: CORE engine isolated to local-only file (gitignored)
+
+v3.9.11.2 (2026-07-23): Pre-push scanner bug fix + filter-branch backup cleanup.
+  - _pre_github_secret_scan.py: scan_git_history() now checks both + AND - lines
+    (previously only + lines, missed secrets in deleted content)
+  - refs/original/refs/heads/main deleted (filter-branch backup that contained
+    redaction scripts with the key)
+  - git reflog expire + gc prune to remove unreachable objects
+  - 0 leaks confirmed by 3 independent scans (pre-push + deep history + blob)
 
 v3.9.11.1 (2026-07-23): CORE engine code moved to pa_cli/_engines_local/core.py
 (local-only, gitignored). Public `pa search --engine core` raises "not installed"
@@ -29,7 +38,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.1"
+__version__ = "3.9.11.2"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 
