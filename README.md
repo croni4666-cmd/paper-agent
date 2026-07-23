@@ -16,20 +16,28 @@ raise a clear "not installed" error if you try `--engine core`. See
 
 ## Quick start (5 commands)
 
+### 1. Search — 6 engines in one call
 ```bash
-# 1. Search — 6 engines in one call
 pa search "AI literacy K-12" --year-min 2020 --limit 30 -o results.json
+```
 
-# 2. Validate citation skeleton before building
-pa cite-check refs.bib skeleton.md                    # 3 buckets: missing/typo/orphan
+### 2. Validate citation skeleton before building
+```bash
+pa cite-check refs.bib skeleton.md    # 3 buckets: missing / typo / orphan
+```
 
-# 3. Batch PDF download
+### 3. Batch PDF download
+```bash
 pa fetch-batch refs.bib --out-dir ./pdfs/ --skip-existing --report failed.md
+```
 
-# 4. Mark relevance for screening
+### 4. Mark relevance for screening
+```bash
 pa judge add --query "AI literacy" --paper-key smith2023 --relevance 2 --reason "Direct hit"
+```
 
-# 5. Build manuscript from refs.bib + filled-in skeleton
+### 5. Build manuscript from refs.bib + filled-in skeleton
+```bash
 pa build refs.bib skeleton.md -o paper.pdf
 ```
 
@@ -81,11 +89,12 @@ search results       pa cite-check        pa fetch-batch
 
 ## Known limitations
 
-- **1 of 6 default engines returns 0 hits** in current config (S2 — demo API key
-  expired; user must set `S2_API_KEY` in `.env` to enable)
+- **API key rate limits**: Some engines (S2, CORE) have higher rate limits with
+  free API keys. See [`.env.example`](./.env.example) for which keys unlock
+  which engines. No keys are required for basic use (anonymous rate limits
+  work for low-volume academic work).
 - **CORE engine** is opt-in (v3.9.11.1+) — run `python tools/install_core.py`
-  after clone; also requires `CORE_API_KEY` in `.env` for higher rate limit
-  (anonymous requests work at low rate)
+  after clone to enable. Anonymous requests work at low rate.
 - **CNKI** requires user cookies / EZproxy / institution library access
 - **Layer 7 fulltext features** (3 of 4) still at 0.0 — need PDF download first
 - **Pa judge data** scales to ~5-50 projects; beyond that needs SQLite tuning
