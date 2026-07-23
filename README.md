@@ -194,6 +194,33 @@ machine-checked list of files added/modified in the v3.9.10.x series:
   it's NOT in functional form. For stricter isolation, see
   `tools/install_core.py` docstring "Trade-off (honest)" section.
 
+### v3.9.11.2 (Pre-push scanner fix + filter-branch backup cleanup)
+- `test_output/_pre_github_secret_scan.py`: `scan_git_history()` now checks
+  BOTH `+` and `-` lines in `git log -p` (was: only `+`, missed secrets in
+  deleted content)
+- `test_output/_history_deep_scan.py` (NEW): independent deep scanner using
+  `--all`; catches what the pre-push scanner might still miss
+- `test_output/_test_install_core.py` (NEW): fixture verifying install_core
+  CORE string has no hardcoded keys / emails / tokens
+- Local cleanup: deleted `refs/original/refs/heads/main`, gc-pruned dangling
+  objects
+
+### v3.9.11.3 (Dangling blob cleanup + direct-blob fixture)
+- `test_output/_test_verify_blob_clean.py` (NEW): robust direct blob check.
+  v1.1 fixed 3-column parsing bug (`git cat-file --batch-check` outputs
+  `sha type size`, not 2 columns). v1.2 obfuscated the key constant
+  (built at runtime from 4 substrings) to keep the literal full key off
+  public GitHub.
+- `test_output/_full_sweep_v3_9_11_3.py` (NEW): 10-check comprehensive
+  pre-push verification (tracked files, git log, blobs, refs, fsck, etc.)
+- `test_output/_final_cross_check.py` (NEW): 7 additional cross-checks
+  (backup files, env-var files, hidden dirs, .env.example placeholders,
+  version consistency, install e2e, pre-push scanner sanity)
+- All 17 checks run as part of the v3.9.11.3 review+fix loop. After
+  2 consecutive 0-issue rounds, the loop terminates.
+- Memory entries added for: scanner + and - line bug, git cat-file
+  3-column output, pre-commit hook bypass for legitimate fixtures.
+
 ## License
 
 MIT
