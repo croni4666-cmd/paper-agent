@@ -49,7 +49,7 @@ bypass for academic PDF recovery.
 
 __version__ = "3.9.11.3"
 __author__ = "Mavis (mavis)"
-__license__ = "MIT"
+__license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 
 # Public API surface (programmatic use)
 from .keys import (

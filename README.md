@@ -223,4 +223,35 @@ machine-checked list of files added/modified in the v3.9.10.x series:
 
 ## License
 
-MIT
+This software is licensed under **GNU Affero General Public License v3.0 (AGPL-3.0)**
+with an **additional restriction prohibiting use for AI/ML training** (the "No-AI-Training
+restriction"). 
+
+**In plain English**:
+- ✅ You can use, modify, and run it for personal / academic / commercial purposes
+- ✅ If you modify it, your modifications must also be open-sourced under AGPL-3.0
+  (this is the standard AGPL copyleft clause)
+- ✅ If you run it as a network service, you must publish your source code
+  (this is the AGPL network clause; the key difference from regular GPL)
+- ❌ **You may NOT use this software, its source code, or its outputs to train,
+  fine-tune, validate, or improve any AI / ML / LLM model** — including LLMs,
+  code-generation systems, embedding models, and any system whose weights or
+  training data are derived from this software
+
+Full text in [`LICENSE`](./LICENSE). The file contains:
+- PART 1: Reference to AGPL-3.0 (canonical text at gnu.org/licenses/agpl-3.0.txt)
+- PART 2: Additional restriction (No-AI-Training) — with specific carve-outs
+  for evaluation, security review, and personal use
+- PART 3: Full AGPL-3.0 text reproduced verbatim for convenience
+
+**SPDX identifiers**:
+- `AGPL-3.0-only`
+- `LicenseRef-No-AI-Training-1.0`
+
+**Why this combination**: AGPL-3.0 protects the source-sharing intent for any
+network use; the No-AI-Training clause adds an explicit 2026-era protection
+against LLM/ML training. Together they reflect the author's preference for
+**copyleft + no commercial AI training** without prohibiting ordinary use.
+
+If you have questions about whether your intended use is allowed, contact the
+copyright holder.
