@@ -1,14 +1,25 @@
 """
-pa_cli.search — 6+1-engine academic paper search.
+pa_cli.search — academic paper search across multiple engines.
 
-Engines: Crossref, Semantic Scholar, arXiv, OpenAlex, AMiner, CNKI (optional).
+Default engines: Crossref, Semantic Scholar, arXiv, OpenAlex, AMiner, CNKI.
 Wraps the existing paper-agent v3.1 SearchPool pattern. Falls back gracefully
 on per-engine failure.
+
+CORE engine is isolated to a local-only file (pa_cli/_engines_local/core.py,
+gitignored). Public repo does not include the functional CORE engine. To use
+CORE: `python tools/install_core.py` once after clone, then `pa search
+--engine core "..."`. See tools/install_core.py for rationale.
 
 v3.9.8.2 (2026-07-15): CORE removed from default "all" list — OpenAlex already
 indexes CORE's repos, so the marginal coverage was <5% but maintenance cost
 (buggy key auth path) was real. search_core() function still available via
 `pa search --engine core` for explicit use, and now works in no-key mode.
+
+v3.9.11.1 (2026-07-23): CORE engine code moved to pa_cli/_engines_local/core.py
+(local-only, gitignored). Public `pa search --engine core` raises "not installed"
+error; user runs `python tools/install_core.py` to enable. This separates the
+CORE engine from the rest of the package — see tools/install_core.py for the
+isolation rationale and trade-offs.
 
 AMiner (added v3.9.8.0): 6th default engine for Chinese papers, gated on
 AMINER_API_KEY env var (体验金 3880 calls / 60 days). +10.9pp cite lift
@@ -606,60 +617,20 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     return results
 
 
-def search_core(query: str, year_min: int = None, year_max: int = None,
-                limit: int = 50) -> List[Dict]:
-    """CORE.ac.uk v3. Best for legal OA papers (English-heavy repos).
+# v3.9.11.1 (2026-07-23): CORE engine isolated to local-only file.
+# The public repo's `pa search --engine core` raises a clear "not installed"
+# error until the user runs `python tools/install_core.py` once after clone.
+# See tools/install_core.py for the install step + isolation rationale.
+def _search_core_unavailable(*args, **kwargs):
+    raise RuntimeError(
+        "CORE engine not installed locally. "
+        "Run: python tools/install_core.py"
+    )
 
-    v3.9.8.2 fix (2026-07-15): CORE v3 API key is OPTIONAL — anonymous
-    requests work at a low rate. Earlier we had two bugs:
-      1. `if not api_key: return []` skipped CORE entirely when key missing
-      2. `Authorization: Bearer ...` header caused timeouts (CORE v3 doesn't
-         accept Bearer auth — use `?api_key=` query param instead, or skip key)
-
-    Now we try no-key first, then fall back to key-via-query-param if set.
-    Note: this function is NOT in the default "all" engine list (v3.9.8.1+)
-    because OpenAlex already indexes CORE's content, but the function is kept
-    available via `pa search --engine core` for explicit use.
-    """
-    api_key = os.environ.get("CORE_API_KEY", "").strip()
-    base = f"https://api.core.ac.uk/v3/search/works?q={quote(query)}&limit={min(limit, 100)}"
-    if year_min:
-        base += f"&yearPublishedFrom={year_min}"
-    if year_max:
-        base += f"&yearPublishedTo={year_max}"
-    # Key as query param (CORE v3 supported format); no Authorization header
-    if api_key:
-        url = base + f"&api_key={quote(api_key, safe='')}"
-    else:
-        url = base
-    s, data = http_get_json(url)
-    if s != 200:
-        return []
-    results = []
-    for it in (data.get("results") or []):
-        ext = it.get("externalIdentifiers") or {}
-        doi = ""
-        if isinstance(ext, dict):
-            doi = ext.get("doi", "") or ""
-        elif isinstance(ext, list):
-            for e in ext:
-                if isinstance(e, dict) and e.get("type") == "doi":
-                    doi = e.get("value", "")
-                    break
-        downloads = it.get("sourceFulltextUrls") or []
-        results.append({
-            "doi": doi,
-            "title": it.get("title", ""),
-            "authors": [a.get("name", "") for a in (it.get("authors") or [])],
-            "venue": (it.get("publisher") or ""),
-            "year": it.get("yearPublished"),
-            "cited_by_count": it.get("citationCount", 0) or 0,
-            "is_oa": True,
-            "oa_url": downloads[0] if downloads else None,
-            "source": "core",
-            "type": it.get("documentType", ""),
-        })
-    return results
+try:
+    from pa_cli._engines_local.core import search_core  # noqa: F401
+except ImportError:
+    search_core = _search_core_unavailable
 
 
 def run_search(query: str, year_min: int = None, year_max: int = None,

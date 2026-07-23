@@ -1,15 +1,22 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.0 (stable release marker; all P0/P1/P2 code shipped
-+ honest 3-tier finding for LTR). See CHANGELOG [3.9.11.0] for stable-release notes.
+Latest stable: v3.9.11.1 (CORE engine isolated to local-only file).
+See CHANGELOG [3.9.11.1] for the CORE isolation rationale.
 
-Previous in v3.9.10.x:
+Previous in v3.9.10.x and v3.9.11.0:
   - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix
   - v3.9.10.11: [P2-14] pa search --quality-mode ships + [P1-20] S2 throttle
   - v3.9.10.12: [P0-8] path A 12-feature LTR baseline (12-feat = 8-feat at n=25)
   - v3.9.10.13: _load_dotenv() auto-load .env (CORE_API_KEY, S2_API_KEY, etc.)
+  - v3.9.11.0: STABLE series marker; no code change; MINOR bump
 
-v3.9.11.0 is a STABLE series marker:
+v3.9.11.1 (2026-07-23): CORE engine code moved to pa_cli/_engines_local/core.py
+(local-only, gitignored). Public `pa search --engine core` raises "not installed"
+error; user runs `python tools/install_core.py` once after clone to enable.
+Trade-off: CORE code IS in public repo as a string in install_core.py; it's NOT
+in functional form. See tools/install_core.py docstring for the rationale.
+
+v3.9.11.0 was a STABLE series marker:
   - All 21 P0/P1/P2 priority items shipped (or honestly partial)
   - 5 sample libraries (P1-6/8/9/10/21) waiting on user data
   - 2 blocked items (P1-13/19) chained to sample accumulation
@@ -22,7 +29,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.0"
+__version__ = "3.9.11.1"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 

@@ -74,6 +74,61 @@ importance at n=25").
 
 ---
 
+## [3.9.11.1] - 2026-07-23 (CORE engine isolated to local-only file)
+
+### v3.9.11.1 — CORE engine isolation (2026-07-23)
+
+**Architecture change**: CORE engine code is no longer in the public repo's
+functional form. It is moved to `pa_cli/_engines_local/core.py` (gitignored,
+local-only). The install step `python tools/install_core.py` writes the file
+from a string constant embedded in the install script.
+
+**Why this change**:
+- Pre-GitHub-push security audit (v3.9.11.0 → c0955fb) found CORE API key
+  in 3 tracked test files + git history (commit `acca2a8`)
+- Filter-branch rewrite replaced all key occurrences with `<REDACTED-CORE-KEY>`
+- But: user preference is to keep the CORE engine itself isolated, not just
+  the key. This change implements that preference.
+
+**What changed**:
+- `pa_cli/search.py`: removed inline `search_core()` function body (54 LOC);
+  replaced with lazy import that points to `pa_cli._engines_local.core` or
+  raises "not installed" error.
+- `pa_cli/_engines_local/` (NEW, gitignored): contains `core.py` (2670 bytes,
+  generated) + `__init__.py` (auto-created).
+- `tools/install_core.py` (NEW, ~6.7 KB): install / uninstall / verify script.
+  Has `install_core_engine()`, `uninstall_core_engine()`, `verify_install()`,
+  and `main()` with `--uninstall` / `--verify` / `--no-verify` flags.
+- `.gitignore`: added `pa_cli/_engines_local/` to the top section.
+- `pa_cli/__init__.py`: `__version__ = "3.9.11.1"`; docstring updated.
+- `README.md`: added "Note on CORE engine" section; updated "Known limitations"
+  (S2 only as broken-by-config, CORE moved to opt-in section); added v3.9.11.1
+  entry to "Files added in v3.9.10" section.
+
+**Trade-off (honest)**:
+- The CORE code IS in the public repo as a string in `tools/install_core.py`
+- It is NOT in functional form: not imported, not runnable without install step
+- For stricter isolation (e.g. if CORE's TOS prohibits public redistribution
+  of the code): keep a private backup of `install_core.py` and `git rm` it
+  before public push; restore from backup after. See install script docstring.
+
+**Verification (post-install)**:
+- `python tools/install_core.py` → `VERIFY OK: pa_cli._engines_local.core.search_core importable`
+- `pa search --engine core "machine learning" --limit 2` → 2 results, year 2024
+- `git check-ignore -v pa_cli/_engines_local/core.py` → gitignored (line 8 of .gitignore)
+- Public-clone path: `pa search --engine core` without install → `RuntimeError: CORE engine not installed. Run: python tools/install_core.py`
+
+**Files**:
+- Modified: `pa_cli/__init__.py` (version 3.9.11.0 → 3.9.11.1)
+- Modified: `pa_cli/search.py` (removed search_core function, added lazy import)
+- Modified: `.gitignore` (added `pa_cli/_engines_local/`)
+- Modified: `README.md` (CORE note, limitations, files-added section)
+- New: `tools/install_core.py` (~6.7 KB, install/uninstall/verify)
+- Generated (gitignored): `pa_cli/_engines_local/core.py` (2670 bytes)
+- Generated (gitignored): `pa_cli/_engines_local/__init__.py` (auto-created)
+
+---
+
 ## [3.9.10.13] - 2026-07-22 (_load_dotenv auto-load .env file)
 
 ### v3.9.10.13 — _load_dotenv() auto-load .env file (2026-07-22)
