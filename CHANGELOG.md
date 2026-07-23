@@ -74,6 +74,80 @@ importance at n=25").
 
 ---
 
+## [3.9.11.3] - 2026-07-23 (Dangling blob cleanup + script bug fix)
+
+### v3.9.11.3 — Dangling blob cleanup + direct-blob fixture (2026-07-23)
+
+**3-tier honest finding (per discipline — second sub-agent review caught a
+sloppy state from v3.9.11.2)**:
+
+- ✅ Pass:
+  - All 6 independent checks clean (see verification section below)
+  - 1322 blobs checked, 0 with leaked key
+  - `git fsck`: no errors, no missing/broken objects
+  - `git count-objects`: `garbage: 0`, `size-garbage: 0`
+  - `git for-each-ref`: only `refs/heads/main` (no `refs/original/`)
+  - `git log -p` (main only): no key in any diff line
+
+- ⚠️ v3.9.11.2 missed one dangling blob:
+  - My earlier `_verify_blob_clean.py` v1.0 had a bug:
+    `git cat-file --batch-check` output is `sha type size` (3 columns, not 2).
+    The `len(parts) != 2` filter excluded EVERY line, so the script
+    reported "0 hits" even when leaks existed.
+  - This caused v3.9.11.2 to falsely claim "1896 objects, 0 with key"
+  - Actual state at v3.9.11.2: 1 dangling blob (`a5571e0a61b3f45d3ef7c8f21a248e044bd802c8`)
+  - The blob's content was my own `_self_check_v3_9_11_1.py` (a script
+    I wrote to scan for the key, which contained the key as a search
+    pattern string literal)
+  - The blob was NOT reachable from main, so `git push origin main`
+    would not have transferred it
+  - But it WAS in the local object database — sloppy state
+
+- ❌ Fail (now fixed):
+  - Local object database had a dangling blob with the key
+  - Dangling blobs are NOT pushed (no security risk for push), but the
+    previous "1896 objects, 0 with key" claim was a false negative
+
+**What changed**:
+- `test_output/_test_verify_blob_clean.py` (NEW, ~1.2 KB): robust direct
+  blob check fixture. Iterates all blobs, greps for leaked key. Correctly
+  parses `git cat-file --batch-check` output (3 columns: sha, type, size).
+- Renamed `test_output/_verify_blob_clean.py` to `_test_verify_blob_clean.py`
+  so it matches the `_test_*.py` tracked pattern
+- Local cleanup (NOT in commit): `git reflog expire --expire=now --all`
+  + `git gc --prune=now --aggressive` removed the dangling blob
+
+**Verification (post-cleanup)**:
+- `python test_output/_test_verify_blob_clean.py`:
+  - 1895 total objects (was 1896 — 1 dangling blob gone)
+  - 1322 blobs checked, 0 with key
+- `git fsck --unreachable` and `git fsck --dangling`: empty (no orphans)
+- `git count-objects -v`: `garbage: 0`, `size-garbage: 0`
+
+**3 lessons (worth memorizing)**:
+1. **Always verify sub-agent results yourself** — both sub-agents in
+   this session failed with "Connection error" (MiniMax Code 3.0.48
+   daemon bug). Did the work manually. The second review request from
+   user was what exposed the script bug.
+2. **`git cat-file --batch-check` output has 3 columns** (sha type size),
+   not 2. Test scripts that parse it must allow `len(parts) >= 2`.
+3. **Dangling blobs ≠ leaks in push**, but they ARE sloppy local state.
+   Run `git fsck --dangling` and `git gc --prune=now` for hygiene.
+
+**Sub-agent note**:
+- 2nd sub-agent (`bg_1e5a489f...`) failed with "Connection error"
+  (MiniMax Code 3.0.48/3.0.49 daemon bug, same as 1st attempt)
+- Per memory discipline: did not retry. Investigated directly.
+- The dangling blob was found by re-running my own (corrected) blob check
+  while waiting for the sub-agent.
+
+**Files**:
+- New: `test_output/_test_verify_blob_clean.py` (~1.2 KB, fixture)
+
+**Version**: 3.9.11.2 → 3.9.11.3 (PATCH — local cleanup + script fix)
+
+---
+
 ## [3.9.11.2] - 2026-07-23 (Pre-push scanner fix + cleanup of refs/original/)
 
 ### v3.9.11.2 — Scanner bug fix + filter-branch backup cleanup (2026-07-23)

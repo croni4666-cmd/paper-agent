@@ -1,15 +1,24 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.2 (scanner bug fix + filter-branch backup cleanup).
-See CHANGELOG [3.9.11.2] for the post-isolation security audit findings.
+Latest stable: v3.9.11.3 (dangling blob cleanup + script bug fix).
+See CHANGELOG [3.9.11.3] for the post-audit cleanup findings.
 
-Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1:
+Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2:
   - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix
   - v3.9.10.11: [P2-14] pa search --quality-mode ships + [P1-20] S2 throttle
   - v3.9.10.12: [P0-8] path A 12-feature LTR baseline (12-feat = 8-feat at n=25)
   - v3.9.10.13: _load_dotenv() auto-load .env (CORE_API_KEY, S2_API_KEY, etc.)
   - v3.9.11.0: STABLE series marker; no code change; MINOR bump
   - v3.9.11.1: CORE engine isolated to local-only file (gitignored)
+  - v3.9.11.2: pre-push scanner fix + filter-branch backup cleanup
+
+v3.9.11.3 (2026-07-23): Dangling blob cleanup + direct-blob fixture.
+  - Found 1 dangling blob with leaked key (my own _self_check_v3_9_11_1.py
+    content, which contained the key as a search pattern string literal)
+  - Blob was NOT reachable from main (not pushed), but was sloppy local state
+  - Added test_output/_test_verify_blob_clean.py fixture
+  - git gc --prune=now removed the dangling blob
+  - 1322 blobs checked, 0 with key (post-cleanup)
 
 v3.9.11.2 (2026-07-23): Pre-push scanner bug fix + filter-branch backup cleanup.
   - _pre_github_secret_scan.py: scan_git_history() now checks both + AND - lines
@@ -38,7 +47,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.2"
+__version__ = "3.9.11.3"
 __author__ = "Mavis (mavis)"
 __license__ = "MIT"
 
