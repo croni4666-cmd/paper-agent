@@ -65,13 +65,18 @@ def scan_tracked_files() -> dict:
 
 
 def scan_git_history() -> list:
-    """Scan all commits for secret leaks via git log -p."""
+    """Scan all commits for secret leaks via git log -p.
+
+    v3.9.11.1 fix: BOTH + (added) and - (deleted) lines are checked.
+    Previously only + lines were checked, which missed secrets in files
+    that were added then deleted (e.g. filter-branch redaction scripts
+    in commits b0afe15/f8cee28/4d7cdcf).
+    """
     print()
     print("=" * 70)
     print("SCAN 2: git history (git log -p) for ALL commits")
     print("=" * 70)
     print("(this is slow but necessary -- secrets in history are still public after push)")
-    # Use git log -p on main only (not --all which includes reflog/unreachable)
     result = subprocess.run(
         ["git", "log", "-p"],
         capture_output=True,
@@ -79,22 +84,33 @@ def scan_git_history() -> list:
         cwd=REPO,
         errors="ignore",
     )
-    # Find lines with patterns
     findings = []
     current_commit = None
     current_file = None
     for line in result.stdout.splitlines():
         if line.startswith("commit "):
             current_commit = line[7:].strip()[:12]
-        elif line.startswith("+++") or line.startswith("---"):
-            if "/" in line:
-                current_file = line.split("/")[-1]
-        elif line.startswith("+") and not line.startswith("+++"):
+            continue
+        if line.startswith("diff --git "):
+            m = re.search(r"diff --git a/(\S+)", line)
+            if m:
+                current_file = m.group(1)
+            continue
+        if line.startswith("+++") or line.startswith("---"):
+            continue
+        # v3.9.11.1: check BOTH + (added) and - (deleted) lines.
+        # Previously only + lines were scanned, which missed secrets in
+        # files that were added then removed (filter-branch redaction scripts).
+        if line.startswith("+") and not line.startswith("+++"):
             content = line[1:]
-            for name, pat in PATTERNS.items():
-                if pat.search(content):
-                    findings.append((current_commit, current_file, name, content[:120]))
-                    break
+        elif line.startswith("-") and not line.startswith("---"):
+            content = line[1:]
+        else:
+            continue
+        for name, pat in PATTERNS.items():
+            if pat.search(content):
+                findings.append((current_commit, current_file, name, content[:120]))
+                break
     return findings
 
 

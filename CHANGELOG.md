@@ -74,6 +74,64 @@ importance at n=25").
 
 ---
 
+## [3.9.11.2] - 2026-07-23 (Pre-push scanner fix + cleanup of refs/original/)
+
+### v3.9.11.2 — Scanner bug fix + filter-branch backup cleanup (2026-07-23)
+
+**Honest finding from a post-isolation sub-agent review**: the v3.9.11.1 pre-push
+scanner (`test_output/_pre_github_secret_scan.py`) had a bug that returned
+"Safe to push" while the local git object database still contained
+unreachable commits with the leaked CORE key in their `git log -p` diff content.
+
+**What was the bug**:
+- `scan_git_history()` only checked `+` (added) lines in `git log -p` output
+- It did NOT check `-` (deleted) lines
+- The filter-branch redaction scripts (`_filter_branch_redact.py` and
+  `_filter_branch_sed.sh`) were added in commits `b0afe15`/`f8cee28` and
+  removed in `4d7cdcf`. The key appeared in `-` lines (deletions) of the
+  removal commit, which the scanner missed.
+- These commits were ALSO reachable from `refs/original/refs/heads/main` —
+  a local backup ref that `git filter-branch` creates by default.
+
+**Why push was actually still safe** (but the scanner's "safe" verdict was
+misleading):
+- Normal `git push -u origin main` only pushes `refs/heads/main`
+- `refs/original/refs/heads/main` is local-only and NOT pushed
+- `git log -p` on main (the only ref that goes to GitHub) was clean
+- BUT: if the user had used `git push --mirror`, the original ref would
+  have been pushed too, exposing the leaked key
+
+**What changed**:
+- `test_output/_pre_github_secret_scan.py`: `scan_git_history()` now checks
+  BOTH `+` and `-` lines (defense in depth)
+- New `test_output/_history_deep_scan.py`: independent deep scanner that
+  uses `--all` and checks both `+` and `-` lines. Catches what the
+  pre-push scanner might still miss.
+- Deleted `refs/original/refs/heads/main` (filter-branch backup ref)
+- `git reflog expire --expire=now --all` + `git gc --prune=now --aggressive`
+  to remove unreachable objects (offending commits are now truly gone)
+
+**Verification (post-cleanup)**:
+- `_history_deep_scan.py`: 0 leaks in git history
+- `_pre_github_secret_scan.py`: "Safe to push to GitHub"
+- Direct blob check: 1886 objects, 0 contain the leaked key
+- `git count-objects`: `garbage: 0`, `size-garbage: 0` (no dangling)
+
+**3-tier honest report** (per the discipline):
+- ✅ Pass: scanner now catches the bug class; local git history truly clean
+- ⚠️ Neutral: 1 sub-agent task failed with "Connection error" (MiniMax Code
+  3.0.48/3.0.49 daemon bug per memory; we caught the issue ourselves)
+- ❌ Fail: previous "Safe to push" verdict was technically wrong about
+  the local object db; fixed now
+
+**Files**:
+- Modified: `test_output/_pre_github_secret_scan.py` (line 92: scan - lines)
+- New: `test_output/_history_deep_scan.py` (independent deep scanner)
+- New: `test_output/_self_check_v3_9_11_1.py` (initial self-check script)
+- New: `test_output/_check_install_core.py` (install script content scan)
+
+---
+
 ## [3.9.11.1] - 2026-07-23 (CORE engine isolated to local-only file)
 
 ### v3.9.11.1 — CORE engine isolation (2026-07-23)
