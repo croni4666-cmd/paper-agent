@@ -7,6 +7,197 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.4] - 2026-08-03 (v02 Global Sample Pool + phased rerank plan)
+
+### ⚠️ Important context — v01 numbers are in-sample, do not generalize
+
+Per honest 3-tier audit (acknowledged 2026-08-03 by user), paper-agent v3.9.11.3's
+50-query evaluation in `bench/v01/` had **5 methodological errors**:
+
+1. Same-distribution circular verification (50 query all econ+cross-domain, no held-out)
+2. Auto-label circular bias (BGE tie-break labels = the method we were evaluating)
+3. Metric mismatch (MoE reports macro F1, others report NDCG)
+4. n=50 statistical power insufficient (±0.08 CI; n≥200 needed for ±0.03 detection)
+5. Holdout实质被污染 (chose hyperparameters after seeing test)
+
+**Therefore: v3.9.11.3's numbers are in-sample estimates. The cross-domain
+estimate for any of the 4 methods (Combined 0.8988 / Ridge 0.8526 / LogReg
+0.8409 / LTR 0.7679 / BGE 0.6952) is realistically 0.70-0.85 NDCG@10.
+Use them for relative ordering only, NOT absolute claims.**
+
+The new [P3-26] Global Sample Pool (this release) is the antidote: user-owned,
+cross-domain, frozen splits, training-isolated. Once n≥200 accumulates, we
+get our first honest held-out numbers.
+
+### Added — [P3-26] v02 Global Sample Pool (the foundation for future honest eval)
+
+**Location**: `~/.paper-agent/sample_pool/` (user-level, NOT in git, cross-platform)
+**Schema**: `pool.sqlite` (4 tables + 6 views + 5 gates), see `schema.sql`
+**Doc**: `README.md` (22KB, 11 sections + 4 appendices) is canonical
+**CLI**: `pa sample-pool` (13 subcommands, see below)
+
+**Three iron rules enforced at API + CLI level**:
+
+1. **User-only write**: `add` / `label` / `deprecate` require `--confirm-y` or
+   interactive y/n. Mavis cannot bypass.
+2. **Mavis read-only**: `list` / `get` / `stats` / `count` / `query` / `export`
+   work for any session. INSERT/UPDATE/DELETE rejected even via `query`.
+3. **Training-isolated**: `export` writes to OUT path, never touches `pool.sqlite`.
+   Training scripts must read from OUT path, not the pool.
+
+**Five gates** (all LOCKED at n=0, 2026-08-03):
+
+| Gate | n threshold | Extra | Unlocks |
+|---|---|---|---|
+| `moe_merge_n30` | 30 | aminer>=1 | MoE 合并训练 |
+| `ltr_eval_n100` | 100 | - | LTR/Ridge/LogReg 重训 |
+| `ltr_12feat_n200` | 200 | domain>=5 | 跨 domain 验证 |
+| `holdout_eval_n200` | 200 | split_frozen | test 评估 ≤1/version |
+| `mldl_rerank_n500` | 500 | - | cross-encoder fine-tune |
+
+**`pa sample-pool` CLI surface (13 subcommands)**:
+
+| Command | Use | Iron Rule |
+|---|---|---|
+| `init` | Create pool.sqlite (idempotent, runs migrations) | n/a |
+| `verify` | Show schema version, table list, row counts | read |
+| `list` | List active entries (filter: domain/project/difficulty) | read |
+| `get <qid>` | Show full entry with all labels | read |
+| `stats` | Aggregate stats + gate status | read |
+| `count --by domain\|project\|difficulty` | Group counts | read |
+| `query <sql>` | Read-only SELECT/WITH (rejects DML/DDL) | read (5.2) |
+| `suggest` | Propose entry (Mavis may call, NO write) | propose |
+| `add` (--confirm-y) | INSERT new entry | write (5.1) |
+| `label <qid> <key> <0\|1\|2\|3>` (--confirm-y) | Add/update one label | write (5.1) |
+| `deprecate <qid> <reason>` (--confirm-y) | Mark deprecated (NOT delete) | write (5.1) |
+| `export --format {ltr\|moe\|cross-encoder\|json}` | Working copy export | read (5.3) |
+| `audit` | Show recent audit log entries | read |
+
+**Audit log** is dual-channel:
+- In-DB: `audit_log` table (INSERT/UPDATE/DEPRECATE operations on pool)
+- Flat file: `audit.log` (also EXPORT operations, cross-process visibility)
+
+**Schema v2** (migration applied automatically on `init`):
+- `relevance_labels.label` now NULLABLE (was NOT NULL) — supports README 5.1/6.1
+  incremental labeling workflow. Entries can be added with candidates, then
+  labeled one by one via `pa sample-pool label`.
+- Old v1 schema detected → drop & recreate `relevance_labels` table; pre-existing
+  labels preserved (any NULL labels marked for re-labeling).
+
+### Changed — ROADMAP: 5 sample libraries DEPRECATED, 4 new gated tickets
+
+**DEPRECATED** (moved to [P3-26]):
+- [P1-6] Sub-topic granularity decomposition
+- [P1-8] China political-institution exclusion
+- [P1-9] Geographic / country metadata extraction
+- [P1-21] MoE keyword sample library
+- ([P1-10] Falsifiability stays as-is — research deliverable, not a relevance label)
+
+**PROPOSED (gated by [P3-26] n=200+ holdout)**:
+- [P3-22] `answerdotai/rerankers` opt-in wrapper (3h, 1 free dep, 5+ SoTA models)
+- [P3-23] Local LLM listwise rerank (Qwen2.5-1.5B, 1d, ~3GB model)
+- [P3-24] Multi-stage cascade rerank (1-3 months, after [P3-22] proves worth)
+- [P3-25] Qwen3 Embedding (2025 SoTA) integration (4h, 8B model)
+
+**Blocker updates**:
+- [P1-13] n=50→n=200 label expansion: now blocked by [P3-26] (not [P1-6/21])
+- [P1-19] Institutional credibility boost: now blocked by [P3-26] (not [P1-8/9])
+
+### Added — Phased plan (data-gated, NOT method-gated)
+
+The honest answer to "继续做老方法,还是找新方法?" is: **decide at n=200, not now**.
+
+| Phase | Trigger | Action | Decision point |
+|---|---|---|---|
+| 0 (now) | n=0 | Pool infra + Combined default | 不加新方法。**池子是瓶颈,不是方法。** |
+| 1 | n>=30 + aminer>=1 | MoE merge [P1-21] | 验证 merge 逻辑通 |
+| 2 | n>=100 | Ridge/LogReg 重训 | 简单方法在新数据上还是不是 top? |
+| 3 | n>=200 + holdout | **首次诚实 holdout 评估** + 加 [P3-22] + [P3-25] | **A vs B 决策点** |
+| 4 | n>=200+ 决策 B | Cascade [P3-24] | 慢/快分阶段 |
+| 5 | n>=500 | LLM listwise [P3-23] | 终极质量 |
+
+**4 老方法架构天花板 (NDCG@10 ~0.87-0.88)**: Combined / Ridge / LogReg / LTR are
+all "linear / first-stage 调权". To break this, need **cross-encoder (BGE-v2 /
+ColBERT v2.5 / MXBai V2)** or **LLM rerank (Qwen3 / RankZephyr)** — different
+species. But this gap only verifiable at n=200+ holdout.
+
+### Mavis / `pa sample-pool` integration
+
+- Skill file `~/.minimax/skills/paper-agent/SKILL.md` (Mavis-side) already has
+  a "Global Sample Pool" section pointing to the README
+- 5 sample library sections in skill marked "DEPRECATED, see [P3-26]"
+- Cross-conversation writable (any Mavis session can `read`; user can `add`)
+
+### Files added / modified
+
+**Added**:
+- `pa_cli/sample_pool.py` (650+ LOC, all cmd_* functions)
+- `pa_cli/cli.py`: `pa sample-pool` group + 13 subcommands (~340 LOC appended)
+- `~/.paper-agent/sample_pool/schema.sql` (v2, label nullable)
+- `~/.paper-agent/sample_pool/README.md` (22KB canonical doc)
+- `~/.paper-agent/sample_pool/pool.sqlite` (initialized, n=0)
+- `~/.paper-agent/sample_pool/example_entry.json` (4-candidate example)
+- `test_output/smoketest_entry.json` (3-candidate smoke test fixture)
+- `test_output/_smoketest_validate.py` (slug + Iron Rule 5.1/5.2/5.3 regression)
+- `test_output/_cleanup_smoketest.py` (one-time cleanup utility)
+
+**Modified**:
+- `ROADMAP.md`: [P3-26] added; [P1-6/8/9/21] deprecated; [P3-22/23/24/25] gated;
+  [P1-13]/[P1-19] blockers updated
+- `~/.paper-agent/sample_pool/schema.sql`: v1 → v2 (label nullable)
+
+### 3-tier honest audit (per discipline)
+
+- ✅ **Pass** (verified by smoke test on real pool.sqlite):
+  - All 13 `pa sample-pool` subcommands import and execute
+  - Iron Rule 5.1: Mavis `add` without `confirm=True` raises `PermissionError`
+  - Iron Rule 5.1b: `mavis-suggested` without `user_approved=True` raises
+  - Iron Rule 5.2: query with DML/DDL (DELETE/UPDATE/DROP/INSERT/ALTER/CREATE/VACUUM/ATTACH) raises
+  - Iron Rule 5.3: export writes to OUT path only, pool.sqlite is NOT modified
+  - Schema migration v1 → v2 runs automatically, preserves pool_entries
+  - Slug validation: 10/10 test cases pass (rejects uppercase, spaces, dots, leading underscore; accepts digits-only start)
+  - `get` correctly shows 1 unlabeled, 2 labeled when partial labels exist
+  - `stats` correctly reports 0/1/2/3 label distribution + gate status
+  - `export --format {json|ltr|cross-encoder|moe}` all 3 work, output schema sane
+
+- ⚠️ **Partial** (code exists, real-world data not yet exercised):
+  - `--from-file` JSON loading: smoke tested with 3-candidate fixture only;
+    real user files may have edge cases (multi-line strings, etc.)
+  - 5 user projects (long-term-care / digital-finance / korea-tripartite-game /
+    biohack / global): all 5 are **untested** with real data
+  - `pa sample-pool label` requires candidate_key pre-registered; if user wants
+    to "add label for candidate not in pool", they must first run
+    `pa sample-pool add` to register. This is a UX gotcha not yet hit in practice.
+
+- ❌ **Not yet implemented** (intentional, gated):
+  - Interactive labeling session (`pa sample-pool label <qid> --interactive`
+    for stdin-driven 0/1/2/3 walk-through) — would be ~50 LOC, deferred
+    until first real user need
+  - Splits.json frozen export (`pa sample-pool export --format splits`)
+    — needed for [P3-26] Phase 3 (holdout_eval_n200 unlock); deferred
+  - Mavis-side `pa sample-pool suggest --candidates-from-search-output <path>`
+    — would auto-extract candidates from a `pa search` JSON output;
+    deferred until user wants this workflow
+  - Re-evaluate BGE / LTR / MoE on v02 pool data (need n≥30 / n≥100 / n≥200 first)
+
+### Honest limitation: 池子是冷启动,实际效果要 2-3 月后才知道
+
+This is **infrastructure**, not evaluation. The pool is at n=0. To reach the
+first decision gate (n=30 + aminer>=1), user needs to add ~30 entries with
+real research queries. Estimated 2-3 months of incremental work.
+
+Until then: **any "this pool will fix the v01 overfitting" claim is aspirational,
+not measured**. The next honest measurement will come at n=30 (MoE merge test)
+and n=200 (first held-out eval).
+
+### Test results
+
+- 4/4 Iron Rule enforcement tests PASS (`test_output/_smoketest_validate.py`)
+- 10/10 slug validation cases PASS
+- 8/8 DML/DDL rejection cases PASS
+- 1 export × 3 formats PASS (json / ltr / cross-encoder)
+- Migration v1 → v2 PASS (preserves existing entries)
+
 ## [3.9.11.3] - 2026-07-23 (Dangling blob cleanup + script bug fix)
 
 ### v3.9.11.3 — Dangling blob cleanup + direct-blob fixture (2026-07-23)

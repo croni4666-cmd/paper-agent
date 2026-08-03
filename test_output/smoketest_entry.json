@@ -1,0 +1,17 @@
+{
+  "qid": "smoketest-002",
+  "query": "smoke test query 2 with candidates",
+  "domain": "cs_ai",
+  "difficulty": "medium",
+  "project": "smoketest",
+  "notes": "smoke test entry with candidates",
+  "added_at": "2026-08-03T11:00:00+08:00",
+  "added_by": "user",
+  "source": "manual-pa-search",
+  "n_candidates": 3,
+  "candidates": [
+    {"rank": 1, "candidate_key": "10.1234/test.001", "title": "Test paper 1", "year": 2024, "label": 3, "label_notes": "directly relevant"},
+    {"rank": 2, "candidate_key": "10.1234/test.002", "title": "Test paper 2", "year": 2023, "label": 2, "label_notes": "relevant"},
+    {"rank": 3, "candidate_key": "10.1234/test.003", "title": "Test paper 3", "year": 2022, "label": null}
+  ]
+}
