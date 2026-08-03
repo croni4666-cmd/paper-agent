@@ -2328,6 +2328,16 @@ decomposition is stable enough to thread into ranking).
 - **Global Rule check**: 5/5 pass (local code, no API required, no maintenance)
 - **User confirmation needed**: static lookup table content 鈥?is 30 sub-topic domains enough? More generalizable: LLM-based decomposition is out of scope (per Global Rule no hosted LLM); pure keyphrase is feasible
 
+### Deprecated 2026-08-03 — moved to [P3-26] Global Sample Pool
+Per 2026-08-03 design pivot: 5 separate "sample library" JSON files
+(`bench/v01/sub_topic_library.json` etc.) are replaced by a single
+SQLite pool (`~/.paper-agent/sample_pool/pool.sqlite`). New design:
+sub-topic is a field on each entry, not a separate lookup table.
+**Audit trail**: 13 sub-topic entries in v01 library preserved at
+`bench/v01/sub_topic_library.json` for historical reference but no
+longer maintained. Future sub-topic data goes into the pool with
+`source = 'sub-topic'` field on each entry.
+
 ### [P1-19] Institutional credibility boost (renumbered 2026-07-16, was [P1-7] — ID collision with shipped AMiner engine)
 
 > **ID renumber note (2026-07-16)**: this item was originally labeled `[P1-7]`
@@ -2344,11 +2354,12 @@ decomposition is stable enough to thread into ranking).
 - **Source**: User spot-check 2026-07-13 feedback (theme 5)
 - **Rationale**: User stated institution credibility affects ranking. Oxford COVID tracker (OxCGRT, q010 #1) is the canonical example: high reference value but partial relevance. Solution: don't change label, but boost ranking score.
 
-### Modified 2026-07-22 — Blocked on sample library accumulation
-Per user decision 2026-07-22: do **NOT** do institution credibility
-boost now. Wait until the institution lists ([P1-8] China inst,
-[P1-9] country metadata) have accumulated enough user-added entries
-to make the tier definition grounded in real research data.
+### Modified 2026-08-03 — Blocked on [P3-26] Global Sample Pool
+Per 2026-08-03 design pivot: institution credibility boost still
+NOT being implemented. The blocker changed from "[P1-8] China inst +
+[P1-9] country metadata" to "[P3-26] Global Sample Pool n>=100
+with institution field on candidate labels". Tier definitions
++ boost magnitudes will need user input at that point.
 
 Status: **blocked** until either:
 - [P1-8] China inst library has ≥10 user-added institutions
@@ -2426,6 +2437,15 @@ this is a per-user sensitivity filter, not a training dataset).
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: exact list of institutions to exclude
 
+### Deprecated 2026-08-03 — moved to [P3-26] Global Sample Pool
+Per 2026-08-03 design pivot: China political-institution exclusion
+is no longer a separate blocklist. New design: `exclusion_check` is
+a field on each pool entry (decided at entry creation time, not
+query time). User adds institutions to a single pool-managed
+"exclusion list" view rather than maintaining a separate JSON.
+**Audit trail**: 0 entries in v01 (blocklist was empty) — nothing
+to preserve.
+
 ### [P1-21] MoE keyword sample library (incremental growth, 2026-07-22)
 
 - **Status**: in-progress (user is incrementally adding samples)
@@ -2471,6 +2491,17 @@ this is a per-user sensitivity filter, not a training dataset).
   when expanding the 4-dim label vocabulary (currently t1-t5, m1-m15,
   d1-d12, i0-i4)
 
+### Deprecated 2026-08-03 — moved to [P3-26] Global Sample Pool
+Per 2026-08-03 design pivot: 12 MoE keyword samples in
+`bench/v01/moe_keyword_samples_12.json` are replaced by entries
+in the global pool with `source = 'moe-sample'` field. Each entry's
+4-dim labels (t1-t5/m1-m15/d1-d12/i0-i4) become candidate fields.
+**Audit trail**: 12 v01 MoE samples preserved at
+`bench/v01/moe_keyword_samples_12.json` for historical reference.
+Gated merger logic (`_merge_moe_samples.py`) is replaced by gate
+`moe_merge_n30` in [P3-26]: when n>=30 AND aminer>=1, the
+gate unlocks and the MoE router can be re-trained.
+
 ### [P1-9] Geographic / country metadata extraction
 
 - **Status**: in-progress (sample library form, 2026-07-22)
@@ -2502,6 +2533,15 @@ African / Pacific island nations per original concern.
 - **Estimated effort**: ~3h (country list + extractor + integration + tests)
 - **Global Rule check**: 5/5 pass (no API; country list is a static file, <50KB)
 - **User confirmation needed**: country list completeness, especially small African / Pacific island nations
+
+### Deprecated 2026-08-03 — moved to [P3-26] Global Sample Pool
+Per 2026-08-03 design pivot: 7 country seeds in
+`bench/v01/country_metadata.json` are replaced by `country` field
+on each `relevance_labels` row in the global pool. The 7 ISO 3166-1
+codes can be re-added as the first entries when user resumes
+labeling (or skipped — geographic metadata is now opt-in per
+candidate, not a global table). **Audit trail**: 7 country seeds
+preserved at `bench/v01/country_metadata.json`.
 
 ### [P1-10] Falsifiability philosophy integration (research item)
 
@@ -3889,9 +3929,148 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ---
 
+### [P3-26] v02 Global Sample Pool — single source of truth for relevance labels (added 2026-08-03)
+
+- **Status**: in-progress (CLI shipping v3.9.11.4; pool cold-start at n=0)
+- **Added**: 2026-08-03
+- **Priority**: P0 (foundation for [P1-13], [P1-19], [P3-22..25] and all future held-out evaluations)
+- **Source**: User direction 2026-08-03 ("你的真实样本池子应该有让别的对话写入的能力...样本池是需要我自己积累的,而不是你自己生成的...样本池子要和 rerank 方法之间做一层隔离"); honest 3-tier audit of v01 50-query evaluation (5 methodological errors acknowledged 2026-08-03)
+- **Rationale**: v01's 50-query in-sample NDCG@10 = 0.8988 (Combined) is **methodologically contaminated** — same-distribution circular verification, BGE-tiebreak auto-label bias, metric mismatch (MoE F1 vs NDCG), n=50 statistical power insufficient (±0.08 CI), holdout实质被污染. Without held-out, honest cross-domain evaluation, **we cannot distinguish "Combined is good" from "we overfit to econ queries"**. This pool is the antidote: user-owned, cross-domain, frozen splits, isolation from training.
+- **Location**: `~/.paper-agent/sample_pool/` (user-level, NOT in git, cross-Mavis-session, cross-platform)
+- **Files**:
+  - `README.md` (canonical, 22KB, 11 sections + 4 appendices) — every Mavis session reads this
+  - `schema.sql` (SQLite DDL, 4 tables + 6 views + 5 gates)
+  - `example_entry.json` (standard entry example)
+  - `pool.sqlite` (initialized, cold-start n=0)
+- **Three Iron Rules** (强制,任何场景):
+  1. **User only write** — Mavis 永远不自动加;`add` 命令默认 interactive confirm
+  2. **Mavis read-only** — Mavis session / 自动化脚本只读 list/get/stats/count/query/export;不可 add/update/delete
+  3. **Training 复制,不改** — `pa sample-pool export` 写到 `bench/v02/working/`,原池永远不动
+- **Five gates** (all LOCKED at n=0, 2026-08-03):
+  | Gate | n threshold | Extra | Unlocks |
+  |---|---|---|---|
+  | `moe_merge_n30` | 30 | aminer>=1 | MoE 合并训练 |
+  | `ltr_eval_n100` | 100 | - | LTR/Ridge/LogReg 重训 |
+  | `ltr_12feat_n200` | 200 | domain>=5 | 跨 domain 验证 |
+  | `holdout_eval_n200` | 200 | split_frozen | test 评估 ≤1/version |
+  | `mldl_rerank_n500` | 500 | - | cross-encoder fine-tune |
+- **CLI surface (v3.9.11.4 ships)**:
+  - **Read-only** (Mavis 可调): `list` / `get` / `stats` / `count` / `query <sql>`
+  - **Propose** (Mavis 可调,不写): `suggest`
+  - **Write** (user only, interactive confirm): `add` / `label --interactive` / `deprecate`
+  - **Isolated export** (read from pool, write to working/): `export --format {ltr|moe|cross-encoder|json}`
+  - 审计日志: 每次 read/write/export 写一行 JSON 到 `audit_log` 表 (schema 内置)
+- **Five deprecated items** (refactored, see Deprecated subsection below): [P1-6] sub-topic / [P1-8] China inst / [P1-9] country / [P1-21] MoE samples. New design: entries are stored in the global pool with `source` field marking which "library" they came from; no separate JSON files.
+- **Phased plan (data-gated, not method-gated)** — honest answer to "继续做老方法,还是找新方法?":
+
+  | Phase | Trigger | Action | Decision point |
+  |---|---|---|---|
+  | 0 (now) | n=0 | Pool infra + Combined default | 不加新方法。**池子是瓶颈,不是方法。** |
+  | 1 | n>=30 + aminer>=1 | MoE merge [P1-21] | 验证 merge 逻辑通 |
+  | 2 | n>=100 | Ridge/LogReg 重训 | 简单方法在新数据上还是不是 top? |
+  | 3 | n>=200 + holdout | **首次诚实 holdout 评估** + 加 [P3-22] answerdotai/rerankers (3h) + [P3-25] Qwen3 Embedding (4h) | **A vs B 决策点**: 4 个老方法在 n=200 holdout 上还赢 BGE-reranker-v2-m3 吗? |
+  | 4 | n>=200+ 决策 B | Cascade 架构 [P3-24] | 慢/快分阶段 |
+  | 5 | n>=500 | LLM listwise [P3-23] (Qwen2.5-1.5B) | 终极质量 |
+
+  **核心洞察**: 4 个老方法 (Combined/Ridge/LogReg/LTR) 架构天花板 NDCG@10 ~0.87-0.88 (linear / first-stage 调权)。要突破,得加 **cross-encoder 类 (BGE-v2 / ColBERT v2.5 / MXBai V2)** 或 **LLM rerank (Qwen3 / RankZephyr)** — 这是不同物种。但**这个差距只有 n=200+ holdout 能证实**。在 n=0 的现在选 A 还是 B,只是凭想象。
+- **v01 数据不迁移**: v01 50 query 的 labels 留在 `bench/v01/labels_n50_mixed.json` 作为 debug baseline,不入池(已污染)。CHANGELOG v3.9.11.4 加 note: "v01 numbers are in-sample, do not generalize"
+- **Acceptance criteria**:
+  - [ ] v3.9.11.4: `pa sample-pool` CLI 全部子命令 smoke test 通过
+  - [ ] v3.9.11.4: ROADMAP 5 个 sample library 全部标 Deprecated
+  - [ ] v3.9.11.4: CHANGELOG 写 v01 不可 generalize 警告
+  - [ ] (later) user 第一批 n>=20 entry 入池,写 n>=20 milestone
+  - [ ] (later) gate 1 unlock,跑 MoE merge
+- **Estimated effort**: ~3h (CLI 实现) + user-driven (积累 entry,~5min/entry,估 2-3 月到 n=100)
+- **Global Rule check**: 5/5 pass
+  - $0 cost (本地 SQLite,免费)
+  - No hosted service
+  - Maintenance: ~300 LOC CLI,无持续义务
+  - No publish obligation (pool.sqlite 不入 git)
+  - Free-tier degradation: N/A (无第三方 API)
+- **User confirmation needed**: 无 — 直接按设计执行
+- **Dependencies**: 任何未来 rerank / MoE / LTR 训练都从这里取数据 [P3-22/23/24/25 + [P1-13]/[P1-19] blocker]
+- **Cross-references**:
+  - 受影响: [P1-6] / [P1-8] / [P1-9] / [P1-13] / [P1-19] / [P1-21] / [P3-22] / [P3-23] / [P3-24] / [P3-25] 全部 chain 到 [P3-26]
+  - 解释: 5 个 [P1-...] sample library DEPRECATED → 合并到本条目
+  - 解释: [P1-13] n=50→n=200 目标变 "v02 pool n>=200"
+  - 解释: [P3-22/23/24/25] 新方法从 "proposed" 变 "gated by [P3-26] n=200 holdout"
+
+### [P3-22] `answerdotai/rerankers` opt-in wrapper (proposed 2026-07-29, gated by [P3-26] n=200)
+
+- **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=200 holdout unlocks)
+- **Added**: 2026-07-29 (re-confirmed 2026-08-03 as gated)
+- **Priority**: P3 (long-term bet)
+- **Block**: needs [P3-26] `holdout_eval_n200` gate to unlock (n>=200 + splits.json frozen)
+- **Source**: User question 2026-08-03 "继续做老方法,还是找新方法?"; GitHub research 2026-07-13 found `answerdotai/rerankers` v0.10.0 (MIT, 22 source models)
+- **Rationale**: Current 4 paper-agent rerank methods (Combined / Ridge / LogReg / LTR) cap at NDCG@10 ~0.87-0.88 (linear / first-stage 调权). To break this ceiling, need a **cross-encoder** (BGE-reranker-v2-m3 / mxbai-rerank-base-v2 / ColBERT v2.5) or **LLM listwise** (RankLLM / MonoT5). `answerdotai/rerankers` is a single free lib that wraps 5+ SoTA models behind one API — low marginal cost to add.
+- **What ships** (when n>=200 gate unlocks):
+  - `pa_cli/rerankers_wrapper.py` (~80 LOC): thin wrapper over `answerdotai.Rerankers('cross-encoder', 'BAAI/bge-reranker-v2-m3')` + 4 other models
+  - `pa rerank-eval --method {bge-v2|mxbai|colbert|rankllm|monot5} --split test`: read working/ test split, run new method, compare to baseline
+  - Output: NDCG@10 + Recall@10 + Wilcoxon p-value vs combined baseline
+- **Why gated** (DO NOT START at n<200):
+  - n<200 numbers from any rerank method are noise per memory discipline ("Don't overclaim n<100 metric deltas")
+  - v01's BGE cross-encoder scored 0.6952 (worse than combined 0.8988) at n=48, but that was old BGE model + n=48 noise. We have no honest signal on BGE-v2 yet.
+  - Adding 5+ methods at n=0 just gives us 5 overfitting curves, not real comparisons
+- **External anchor** (required by [P3-26] discipline): MUST include TREC DL 2019/2020 or BEIR (scifact / trec-covid) reference numbers in the eval report
+- **Estimated effort**: ~3h (1 lib install + 1 wrapper + 1 eval command + 1 report)
+- **Global Rule check**: 5/5 pass (free MIT lib, local compute, no hosted)
+- **User confirmation needed**: 选哪个具体模型 (推荐 BGE-reranker-v2-m3 起步,再考虑其他)
+
+### [P3-23] Local LLM listwise rerank — Qwen2.5-1.5B (proposed 2026-07-29, gated by [P3-26] n=500)
+
+- **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=500 unlocks)
+- **Added**: 2026-07-29 (re-confirmed 2026-08-03 as gated)
+- **Priority**: P3 (long-term bet)
+- **Block**: needs [P3-26] `mldl_rerank_n500` gate to unlock
+- **Source**: 2025 SoTA landscape: RankZephyr (7B) / Qwen3-Reranker (8B) / Rank-K (reasoning) all show +5-10 NDCG lift over cross-encoder. Local 1.5B Qwen2.5 fits hobbyist hardware (RTX 3060+).
+- **Rationale**: Listwise LLM rerank is the 2025 quality ceiling. But:
+  - 1.5B model = 1-3GB download + ~1-3s/query latency (vs 50ms cross-encoder)
+  - Needs user hardware test first (RTX 3060 12GB ok, integrated GPU not ok)
+  - Without n=500+ labels, we cannot measure if it actually beats cross-encoder
+- **What ships** (when n>=500 gate unlocks):
+  - `pa_cli/llm_rerank.py` (~150 LOC): Qwen2.5-1.5B-AWQ (4-bit quant) + sliding-window listwise prompt
+  - `pa rerank-eval --method llm-listwise`: 100-200 query subset, measure NDCG@10 vs cross-encoder + combined
+- **Why gated at 500 (not 200)**: At n=200, cross-encoder likely beats LLM (LLM needs more training signal to learn prompt format). LLM only makes sense when cross-encoder has hit its own ceiling.
+- **Estimated effort**: ~1d (model download test + wrapper + eval + report)
+- **Global Rule check**: 5/5 pass (local model, no API)
+- **User confirmation needed**: 用户硬件 (VRAM ≥ 8GB?) + 接受 ~2s/query 延迟
+
+### [P3-24] Multi-stage cascade rerank (proposed 2026-07-29, gated by [P3-26] n=200+ decision B)
+
+- **Status**: proposed (gated — **DO NOT START** until [P3-22] A vs B decision at n=200+)
+- **Added**: 2026-07-29 (re-confirmed 2026-08-03 as gated)
+- **Priority**: P3 (long-term bet)
+- **Block**: needs [P3-22] to ship AND n=200 holdout to show new methods actually win
+- **Source**: 2025 CheckThat! #1 (arXiv 2505.23250) uses BM25 + FAISS dense + LLM cross-encoder cascade. Cascade architecture is the production pattern.
+- **Rationale**: After we know cross-encoder beats combined (Phase 3 of [P3-26] plan), the next question is "can we be 2x faster with similar quality?". Cascade = BM25 (10ms) → bi-encoder (50ms, top 100) → cross-encoder (500ms, top 20) → LLM listwise (2s, top 5). Each stage prunes the candidate set.
+- **What ships** (after [P3-22] proves worth):
+  - `pa_cli/cascade.py` (~200 LOC): 4-stage pipeline + per-stage budget allocation
+  - Latency budget: target < 1s per query for top-10 (vs 5s all-LLM)
+  - Quality budget: target >= cross-encoder-only NDCG@10
+- **Why gated at "decision B"**: If [P3-22] at n=200 shows combined 0.88 still wins cross-encoder 0.85, **cascade is not needed** — we just stay with combined. Cascade is only worth it when cross-encoder has clear lift.
+- **Estimated effort**: ~1-3 months (4-stage pipeline + budget tuning + A/B harness)
+- **Global Rule check**: 5/5 pass
+- **User confirmation needed**: latency vs quality tradeoff (1s vs 5s per query)
+
+### [P3-25] Qwen3 Embedding (2025 SoTA) integration (proposed 2026-07-29, gated by [P3-26] n=200)
+
+- **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=200 holdout unlocks)
+- **Added**: 2026-07-29 (re-confirmed 2026-08-03 as gated)
+- **Priority**: P3
+- **Block**: needs [P3-26] `holdout_eval_n200` gate
+- **Source**: Qwen3 Embedding (arXiv 2506.14876, 2025-06) — current MTEB leader, 8B params, multilingual
+- **Rationale**: Current default bi-encoder (probably sentence-transformers/all-MiniLM-L6-v2 or similar) is 2021-era. Qwen3 Embedding 2025 has +0.10+ on multilingual retrieval benchmarks. Worth testing as new default bi-encoder.
+- **What ships** (when n>=200 gate unlocks):
+  - `pa_cli/qwen3_embed.py` (~100 LOC): model load + embedding API + integrated with `pa search` rerank stage
+  - Eval: rerank with Qwen3 bi-encoder vs current bi-encoder, both combined with BM25
+- **Why gated**: Same as [P3-22] — at n<200 we have no signal whether the 8B model is worth its 2-3s inference cost
+- **Estimated effort**: ~4h
+- **Global Rule check**: 5/5 pass
+- **User confirmation needed**: 是否接受 8B 模型 (~16GB VRAM, 2-3s/query) 作为 bi-encoder
+
 ### [P1-13] n=50 → n=100 → n=200 label expansion (added 2026-07-15)
 
-- **Status**: blocked (waiting on P1-6 / P1-21 sample libraries to accumulate)
+- **Status**: blocked (waiting on [P3-26] Global Sample Pool to accumulate) — REQUIRES user-driven entry accumulation
 - **Added**: 2026-07-15
 - **Source**: v3.9.7.3 limit — n=48-50 still in n<100 noise zone per memory discipline
 - **Rationale**: 当前 n=50 (25 real + 25 auto) 是 评估 ceiling. 真 n>100 才能:

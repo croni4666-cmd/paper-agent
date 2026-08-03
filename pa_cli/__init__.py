@@ -1,9 +1,9 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.3 (dangling blob cleanup + script bug fix).
-See CHANGELOG [3.9.11.3] for the post-audit cleanup findings.
+Latest stable: v3.9.11.4 (v02 Global Sample Pool + phased rerank plan).
+See CHANGELOG [3.9.11.4] for the [P3-26] infrastructure + ROADMAP pivots.
 
-Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2:
+Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2/v3.9.11.3:
   - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix
   - v3.9.10.11: [P2-14] pa search --quality-mode ships + [P1-20] S2 throttle
   - v3.9.10.12: [P0-8] path A 12-feature LTR baseline (12-feat = 8-feat at n=25)
@@ -11,6 +11,18 @@ Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2:
   - v3.9.11.0: STABLE series marker; no code change; MINOR bump
   - v3.9.11.1: CORE engine isolated to local-only file (gitignored)
   - v3.9.11.2: pre-push scanner fix + filter-branch backup cleanup
+  - v3.9.11.3: dangling blob cleanup + script bug fix
+
+v3.9.11.4 (2026-08-03): v02 Global Sample Pool ships ([P3-26]).
+  - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
+  - pa_cli/cli.py: `pa sample-pool` group with 13 subcommands
+  - 3 iron rules enforced at API + CLI level (user-write / Mavis-readonly / training-isolated)
+  - C:\\Users\\DengN\\.paper-agent\\sample_pool\\: SQLite + README + schema + example
+  - 5 sample libraries (P1-6/8/9/21) DEPRECATED, replaced by [P3-26]
+  - 4 new gated tickets (P3-22/23/24/25) for future SoTA rerank methods
+  - Phased plan: data-gated (n=30 / 100 / 200 / 500), not method-gated
+  - Honest 3-tier audit: v01 numbers are in-sample, do not generalize
+  - Schema v1 -> v2 migration: relevance_labels.label made nullable
 
 v3.9.11.3 (2026-07-23): Dangling blob cleanup + direct-blob fixture.
   - Found 1 dangling blob with leaked key (my own _self_check_v3_9_11_1.py
@@ -47,7 +59,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.3"
+__version__ = "3.9.11.4"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 

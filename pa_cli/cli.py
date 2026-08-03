@@ -1914,3 +1914,420 @@ def judge_import(input_path, source, db_path):
     )
     click.echo(f"[pa judge import] {input_path}", err=True)
     click.echo(f"  added={n_added} updated={n_updated} skipped={n_skipped}", err=True)
+
+
+# =============== sample-pool subcommand group ===============
+# [P3-26] v02 Global Sample Pool -- user-owned, Mavis-read-only, training-isolated
+# Canonical doc: C:\Users\DengN\.paper-agent\sample_pool\README.md
+# Three iron rules enforced at API + CLI level:
+#   1. User-only write: add/label/deprecate require --confirm-y or interactive y/n
+#   2. Mavis read-only: list/get/stats/count/query/export work for any session
+#   3. Training-isolated: export writes to OUT path, never touches pool.sqlite
+
+
+@main.group(name="sample-pool")
+def sample_pool_cmd():
+    """Global Sample Pool -- relevance labels for held-out evaluation.
+
+    See C:\\Users\\DengN\\.paper-agent\\sample_pool\\README.md for the
+    canonical design doc. Briefly: this is a user-owned, Mavis-read-only,
+    training-isolated pool of query+candidate+relevance_label triples.
+
+    \b
+    Read paths (any session may call):
+      list / get / stats / count / query / export / audit / verify
+
+    \b
+    Propose path (Mavis may call, no write):
+      suggest
+
+    \b
+    Write paths (require --confirm-y or interactive y/n, Iron Rule 5.1):
+      add / label / deprecate
+    """
+
+
+@sample_pool_cmd.command("init")
+@click.option("--force", is_flag=True,
+              help="Re-create schema even if pool.sqlite exists (DESTRUCTIVE)")
+def sample_pool_init(force):
+    """Initialize pool.sqlite from schema.sql. Idempotent unless --force."""
+    from .sample_pool import cmd_init
+    result = cmd_init(force=force)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@sample_pool_cmd.command("verify")
+def sample_pool_verify():
+    """Verify pool integrity: schema version, tables, counts, gate status."""
+    from .sample_pool import cmd_verify
+    result = cmd_verify()
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@sample_pool_cmd.command("list")
+@click.option("--domain", default=None,
+              help="Filter: econ / cs_ai / medical / legal / social / other")
+@click.option("--project", default=None,
+              help="Filter by project tag (e.g. long-term-care)")
+@click.option("--difficulty", default=None,
+              help="Filter: easy / medium / hard")
+@click.option("--limit", default=20, show_default=True, type=int,
+              help="Max rows to show")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_list(domain, project, difficulty, limit, as_json):
+    """List active entries (Mavis may call)."""
+    from .sample_pool import cmd_list
+    rows = cmd_list(
+        domain=domain, project=project, difficulty=difficulty, limit=limit,
+    )
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    if not rows:
+        click.echo("[sample-pool] no entries yet. Run `pa sample-pool suggest` to preview, then `pa sample-pool add`.")
+        return
+    click.echo(f"{'QID':24s} {'DOMAIN':8s} {'DIFF':6s} {'PROJECT':24s} {'N_CAND':6s} {'ADDED_AT':20s} QUERY")
+    click.echo("-" * 130)
+    for r in rows:
+        q = (r["query"][:50] + "...") if len(r["query"]) > 53 else r["query"]
+        click.echo(
+            f"{r['qid']:24s} {r['domain']:8s} {r['difficulty']:6s} "
+            f"{(r['project'] or 'global')[:24]:24s} {r['n_candidates']:6d} "
+            f"{r['added_at'][:19]:20s} {q}"
+        )
+
+
+@sample_pool_cmd.command("get")
+@click.argument("qid")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_get(qid, as_json):
+    """Get full entry with all labels (Mavis may call)."""
+    from .sample_pool import cmd_get
+    entry = cmd_get(qid)
+    if not entry:
+        click.echo(f"[sample-pool] qid {qid!r} not found or deprecated", err=True)
+        sys.exit(2)
+    if as_json:
+        click.echo(json.dumps(entry, indent=2, ensure_ascii=False))
+        return
+    # pretty print
+    click.echo(f"QID:        {entry['qid']}")
+    click.echo(f"Query:      {entry['query']}")
+    click.echo(f"Domain:     {entry['domain']}  Difficulty: {entry['difficulty']}")
+    click.echo(f"Project:    {entry.get('project') or 'global'}")
+    click.echo(f"Source:     {entry.get('source', '-')}")
+    click.echo(f"Added:      {entry.get('added_at', '-')}  by {entry.get('added_by', '-')}")
+    click.echo(f"Candidates: {entry.get('n_candidates', 0)}  Labeled: {entry.get('n_labeled', 0)}  Unlabeled: {entry.get('n_unlabeled', 0)}")
+    if entry.get("notes"):
+        click.echo(f"Notes:      {entry['notes']}")
+    click.echo("")
+    click.echo(f"Labels ({len(entry.get('labels', []))} rows):")
+    click.echo(f"  {'RANK':4s} {'LABEL':5s} {'CANDIDATE_KEY':50s} NOTES")
+    click.echo("  " + "-" * 100)
+    for l in entry.get("labels", []):
+        ck = (l["candidate_key"] or "")[:50]
+        notes = (l.get("notes") or "")[:30]
+        label = str(l.get("label")) if l.get("label") is not None else "(unlabeled)"
+        click.echo(f"  {l['rank']:4d} {label:5s} {ck:50s} {notes}")
+
+
+@sample_pool_cmd.command("stats")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_stats(as_json):
+    """Show pool stats + gate status (Mavis may call)."""
+    from .sample_pool import cmd_stats
+    s = cmd_stats()
+    if as_json:
+        click.echo(json.dumps(s, indent=2, ensure_ascii=False))
+        return
+    p = s["pool"]
+    click.echo(f"[sample-pool] stats")
+    click.echo(f"  n_entries (active): {p.get('n_entries', 0)}")
+    click.echo(f"  n_labels total:     {p.get('n_labels_total', 0)}")
+    click.echo(f"  by label:           0={p.get('n_label_0', 0)}  1={p.get('n_label_1', 0)}  2={p.get('n_label_2', 0)}  3={p.get('n_label_3', 0)}")
+    click.echo("")
+    click.echo("  by_domain:")
+    for d, v in s["by_domain"].items():
+        click.echo(f"    {d:10s} entries={v['n_entries']:3d}  labels={v['n_labels']}")
+    click.echo("  by_project:")
+    for p_name, v in s["by_project"].items():
+        click.echo(f"    {p_name:24s} entries={v['n_entries']:3d}  labels={v['n_labels']}")
+    click.echo("  by_difficulty:")
+    for diff, n in s["by_difficulty"].items():
+        click.echo(f"    {diff:8s} entries={n}")
+    click.echo("")
+    click.echo("  gates:")
+    for g in s["gates"]:
+        marker = "UNLOCKED" if g["unlocked"] else "LOCKED  "
+        extra = f" + {g['threshold_other']}" if g["threshold_other"] else ""
+        click.echo(
+            f"    [{marker}] {g['gate_name']:24s} need n>={g['threshold_n']:3d}{extra}  "
+            f"current_n={g['current_n']}"
+        )
+
+
+@sample_pool_cmd.command("count")
+@click.option("--by", default="domain", show_default=True,
+              type=click.Choice(["domain", "project", "difficulty"]),
+              help="Group by dimension")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_count(by, as_json):
+    """Count entries by dimension (Mavis may call)."""
+    from .sample_pool import cmd_count
+    rows = cmd_count(by=by)
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    if not rows:
+        click.echo(f"[sample-pool] no entries")
+        return
+    cols = list(rows[0].keys())
+    header = "  ".join(f"{c:24s}" for c in cols)
+    click.echo(header)
+    click.echo("-" * len(header))
+    for r in rows:
+        click.echo("  ".join(f"{str(r[c])[:24]:24s}" for c in cols))
+
+
+@sample_pool_cmd.command("query")
+@click.argument("sql")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_query(sql, as_json):
+    """Run a read-only SELECT/WITH query (Mavis may call).
+
+    Iron Rule 5.2: rejects INSERT/UPDATE/DELETE/DDL keywords.
+    """
+    from .sample_pool import cmd_query
+    try:
+        rows = cmd_query(sql)
+    except ValueError as e:
+        click.echo(f"[sample-pool] query rejected: {e}", err=True)
+        sys.exit(2)
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    if not rows:
+        click.echo("[sample-pool] 0 rows")
+        return
+    cols = list(rows[0].keys())
+    widths = {c: max(len(c), max(len(str(r[c]) if r[c] is not None else "") for r in rows)) for c in cols}
+    line_width = sum(widths.values()) + 2 * (len(cols) - 1)
+    click.echo("  ".join(f"{c[:widths[c]]:>{widths[c]}}" for c in cols))
+    click.echo("-" * line_width)
+    for r in rows:
+        click.echo("  ".join(f"{(str(r[c]) if r[c] is not None else '')[:widths[c]]:>{widths[c]}}" for c in cols))
+
+
+@sample_pool_cmd.command("suggest")
+@click.option("--query", required=True, help="The query string (what the user searched)")
+@click.option("--domain", required=True,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_DOMAINS"]).ALLOWED_DOMAINS)),
+              help="Research domain")
+@click.option("--difficulty", required=True,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_DIFFICULTY"]).ALLOWED_DIFFICULTY)),
+              help="Query difficulty")
+@click.option("--project", default="global", show_default=True,
+              help="Project tag (e.g. long-term-care, korea-tripartite-game)")
+@click.option("--notes", default="", help="Free-text notes")
+@click.option("--source", default="manual-pa-search", show_default=True,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_SOURCE"]).ALLOWED_SOURCE)),
+              help="Provenance tag")
+@click.option("--n-candidates", default=30, show_default=True, type=int,
+              help="Number of candidates (1-50)")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_suggest(query, domain, difficulty, project, notes, source, n_candidates, as_json):
+    """Propose a new entry (Mavis may call; NOT written to pool).
+
+    Returns a preview dict. User reviews and runs `pa sample-pool add` to commit.
+    """
+    from .sample_pool import cmd_suggest
+    preview = cmd_suggest(
+        query=query, domain=domain, difficulty=difficulty,
+        project=project, notes=notes, source=source, n_candidates=n_candidates,
+    )
+    if as_json:
+        click.echo(json.dumps(preview, indent=2, ensure_ascii=False))
+        return
+    click.echo("[sample-pool] SUGGESTION (not written to pool):")
+    click.echo(json.dumps(preview, indent=2, ensure_ascii=False))
+    click.echo("")
+    click.echo("To commit, run `pa sample-pool add` with these values (or save to JSON, then --from-file).")
+
+
+@sample_pool_cmd.command("add")
+@click.option("--from-file", "from_file", default=None, type=click.Path(exists=True, dir_okay=False),
+              help="Load entry from JSON file (recommended). Format: see example_entry.json")
+@click.option("--qid", default=None, help="Entry qid (ASCII slug). Required if --from-file not used.")
+@click.option("--query", default=None, help="Query string. Required if --from-file not used.")
+@click.option("--domain", default=None,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_DOMAINS"]).ALLOWED_DOMAINS)),
+              help="Research domain")
+@click.option("--difficulty", default=None,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_DIFFICULTY"]).ALLOWED_DIFFICULTY)),
+              help="Query difficulty")
+@click.option("--project", default="global", show_default=True, help="Project tag")
+@click.option("--notes", default="", help="Free-text notes")
+@click.option("--source", default="manual-pa-search", show_default=True,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_SOURCE"]).ALLOWED_SOURCE)),
+              help="Provenance tag")
+@click.option("--n-candidates", default=30, show_default=True, type=int,
+              help="Number of candidates (1-50)")
+@click.option("--added-by", default="user", show_default=True,
+              type=click.Choice(["user", "mavis-suggested"]),
+              help="Who added this. mavis-suggested requires --user-approved.")
+@click.option("--user-approved", is_flag=True,
+              help="Required when --added-by=mavis-suggested (Iron Rule 5.1)")
+@click.option("--confirm-y", "confirm", is_flag=True,
+              help="Bypass interactive prompt (REQUIRED for non-interactive use)")
+def sample_pool_add(from_file, qid, query, domain, difficulty, project, notes,
+                    source, n_candidates, added_by, user_approved, confirm):
+    """INSERT a new entry (USER ONLY, Iron Rule 5.1).
+
+    By default, prompts for y/n confirmation. Use --confirm-y for non-interactive.
+    Rejects mavis-suggested entries without --user-approved (Iron Rule 5.1).
+    """
+    from .sample_pool import cmd_add
+    # Load entry from file or build from args
+    if from_file:
+        try:
+            with open(from_file, encoding="utf-8") as f:
+                entry = json.load(f)
+        except (json.JSONDecodeError, OSError) as e:
+            click.echo(f"[sample-pool] failed to read {from_file}: {e}", err=True)
+            sys.exit(2)
+    else:
+        if not (qid and query and domain and difficulty):
+            click.echo(
+                "[sample-pool] --from-file OR (--qid, --query, --domain, --difficulty) required",
+                err=True,
+            )
+            sys.exit(2)
+        entry = {
+            "qid": qid, "query": query, "domain": domain, "difficulty": difficulty,
+            "project": project, "notes": notes, "source": source,
+            "n_candidates": n_candidates, "added_by": added_by,
+            "user_approved": user_approved,
+            "added_at": __import__("pa_cli.sample_pool", fromlist=["now_iso"]).now_iso(),
+        }
+    # Interactive confirm unless --confirm-y
+    if not confirm:
+        click.echo("[sample-pool] About to add this entry to pool:")
+        click.echo(json.dumps({k: v for k, v in entry.items() if k != "candidates"}, indent=2, ensure_ascii=False))
+        if entry.get("candidates"):
+            n_lab = sum(1 for c in entry["candidates"] if c.get("label") is not None)
+            click.echo(f"  + {len(entry['candidates'])} candidates ({n_lab} pre-labeled)")
+        if not click.confirm("Proceed?"):
+            click.echo("[sample-pool] cancelled.", err=True)
+            sys.exit(1)
+    try:
+        result = cmd_add(entry, confirm=True, session_id="cli")
+    except (PermissionError, ValueError) as e:
+        click.echo(f"[sample-pool] add rejected: {e}", err=True)
+        sys.exit(2)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@sample_pool_cmd.command("label")
+@click.argument("qid")
+@click.argument("candidate_key")
+@click.argument("label", type=int)
+@click.option("--notes", default=None, help="Label notes (optional)")
+@click.option("--confirm-y", "confirm", is_flag=True,
+              help="Bypass interactive prompt (REQUIRED for non-interactive use)")
+def sample_pool_label(qid, candidate_key, label, notes, confirm):
+    """Add or update a single relevance label (USER ONLY, Iron Rule 5.1).
+
+    LABEL is one of: 0=irrelevant, 1=marginal, 2=relevant, 3=highly relevant.
+    Refuses if qid is deprecated. Refuses if candidate_key is not registered
+    (use `pa sample-pool add` to register candidates first).
+    """
+    from .sample_pool import cmd_label
+    if label not in (0, 1, 2, 3):
+        click.echo(f"[sample-pool] label must be 0, 1, 2, or 3 (got {label})", err=True)
+        sys.exit(2)
+    if not confirm:
+        click.echo(f"[sample-pool] About to set label:")
+        click.echo(f"  qid:           {qid}")
+        click.echo(f"  candidate_key: {candidate_key}")
+        click.echo(f"  label:         {label}  (0=irrelevant, 1=marginal, 2=relevant, 3=highly relevant)")
+        if notes:
+            click.echo(f"  notes:         {notes}")
+        if not click.confirm("Proceed?"):
+            click.echo("[sample-pool] cancelled.", err=True)
+            sys.exit(1)
+    try:
+        result = cmd_label(qid, candidate_key, label, notes=notes, confirm=True, session_id="cli")
+    except (PermissionError, ValueError) as e:
+        click.echo(f"[sample-pool] label rejected: {e}", err=True)
+        sys.exit(2)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@sample_pool_cmd.command("deprecate")
+@click.argument("qid")
+@click.argument("reason")
+@click.option("--confirm-y", "confirm", is_flag=True,
+              help="Bypass interactive prompt (REQUIRED for non-interactive use)")
+def sample_pool_deprecate(qid, reason, confirm):
+    """Mark entry as deprecated (NOT delete, Iron Rule 5.1)."""
+    from .sample_pool import cmd_deprecate
+    if not confirm:
+        click.echo(f"[sample-pool] About to DEPRECATE:")
+        click.echo(f"  qid:    {qid}")
+        click.echo(f"  reason: {reason}")
+        click.echo("  (entry is hidden from active views, NOT deleted)")
+        if not click.confirm("Proceed?"):
+            click.echo("[sample-pool] cancelled.", err=True)
+            sys.exit(1)
+    try:
+        result = cmd_deprecate(qid, reason, confirm=True, session_id="cli")
+    except (PermissionError, ValueError) as e:
+        click.echo(f"[sample-pool] deprecate rejected: {e}", err=True)
+        sys.exit(2)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@sample_pool_cmd.command("export")
+@click.option("--format", "fmt", default="json", show_default=True,
+              type=click.Choice(list(__import__("pa_cli.sample_pool", fromlist=["ALLOWED_EXPORT_FORMATS"]).ALLOWED_EXPORT_FORMATS)),
+              help="Output format")
+@click.option("--out", "out_path", required=True, type=click.Path(),
+              help="Where to write (relative paths resolved against cwd; absolute OK)")
+@click.option("--min-n-labeled", default=1, show_default=True, type=int,
+              help="Skip entries with fewer than N labels")
+def sample_pool_export(fmt, out_path, min_n_labeled):
+    """Export pool to working/ in given format (Mavis may call, Iron Rule 5.3).
+
+    Reads from pool.sqlite (immutable), writes to OUT path. Training scripts
+    must read from OUT path, NOT from pool.sqlite directly.
+    """
+    from .sample_pool import cmd_export
+    try:
+        result = cmd_export(fmt, out_path, min_n_labeled=min_n_labeled, session_id="cli")
+    except (ValueError, FileNotFoundError) as e:
+        click.echo(f"[sample-pool] export failed: {e}", err=True)
+        sys.exit(2)
+    click.echo(json.dumps(result, indent=2, ensure_ascii=False))
+    click.echo(f"[sample-pool] working copy at {result['out']}", err=True)
+    click.echo(f"[sample-pool] original pool at {__import__('pa_cli.sample_pool', fromlist=['POOL_DB']).POOL_DB} is UNTOUCHED", err=True)
+
+
+@sample_pool_cmd.command("audit")
+@click.option("--limit", default=50, show_default=True, type=int,
+              help="Max rows to show")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def sample_pool_audit(limit, as_json):
+    """Show recent audit log entries (Mavis may call)."""
+    from .sample_pool import cmd_audit
+    rows = cmd_audit(limit=limit)
+    if as_json:
+        click.echo(json.dumps(rows, indent=2, ensure_ascii=False))
+        return
+    if not rows:
+        click.echo("[sample-pool] audit log empty (no operations yet)")
+        return
+    for r in rows:
+        click.echo(f"{r['ts'][:19]}  {r['op']:10s} target={r.get('target') or '-':24s} session={r.get('source_session', '-')}")
+        if r.get("details"):
+            click.echo(f"    {json.dumps(r['details'], ensure_ascii=False)}")
