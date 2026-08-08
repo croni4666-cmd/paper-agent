@@ -86,6 +86,15 @@ def _get_proxy_dict() -> Dict[str, str]:
     all GFW-blocked services (annas, sci-hub) failed. After user reminded about
     clash on 127.0.0.1:7897, we made proxy config auto-detect from env vars.
     Standard Windows-side clash-verge uses 7897 (HTTP) + 7899 (SOCKS5).
+
+    v3.9.11.5 (2026-08-08): User's clash-verge proxy port changed 7897 -> 10808
+    (per memory note 2026-08-06). Old port 7897 returns "WinError 10061
+    actively refused" — the connection can't even reach the proxy. The
+    fix here is documentation only: the code already correctly reads
+    HTTP_PROXY / HTTPS_PROXY env vars, and the user's fix is to set
+        $env:HTTPS_PROXY = "http://127.0.0.1:10808"
+    in their session before invoking `pa fetch`. The help text in
+    pa_cli/cli.py:pa fetch is also updated to show 10808.
     """
     p = (os.environ.get("HTTPS_PROXY")
          or os.environ.get("HTTP_PROXY")

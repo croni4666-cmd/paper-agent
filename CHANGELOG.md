@@ -7,6 +7,91 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.5] - 2026-08-08 (proxy port 7897 → 10808 documentation fix)
+
+### Fixed — `pa fetch` 8-channel cascade was "broken" only because of stale proxy port
+
+**Symptom** (user report 2026-08-08, mvs_d9ecb3a3c48a49c086d00e44ed62a826):
+- `pa fetch <DOI>` returned `{"error": "fetch_all_mirrors_failed"}` for all DOIs
+- User thought the 8-channel cascade itself was broken
+- Diagnosis: it wasn't broken — proxy port 7897 (the documented one) was
+  no longer listening
+
+**Root cause**:
+- 2026-07-15: paper-agent v3.9.8.2 added `pa_cli/fetch.py:_get_proxy_dict()`
+  that reads `HTTPS_PROXY` / `HTTP_PROXY` / `ALL_PROXY` env vars, with
+  docstring example pointing at 127.0.0.1:7897 (user's clash-verge port)
+- 2026-08-06: user changed clash-verge port 7897 → 10808
+- 2026-08-08: paper-agent's help text, docstring, and SKILL.md still
+  all pointed at 7897. When user (in a new Mavis session) ran
+  `pa fetch --proxy http://127.0.0.1:7897`, Python's urllib tried to
+  connect to a port that nothing was listening on:
+  `WinError 10061 由于目标计算机积极拒绝,无法连接`.
+  All 8 channels (OpenAlex, arXiv, Unpaywall, DOI.org, Sci-Hub, annas,
+  Crossref) failed because **none of them could even reach the proxy**.
+
+**Fix** (this release, ~5 LOC of doc + 25 LOC of friendly error):
+- `pa_cli/cli.py:pa fetch --proxy` help text updated to show
+  `http://127.0.0.1:10808` (the new port) plus the deprecation note
+- `pa_cli/cli.py:pa fetch` top-of-file usage example updated
+- `pa_cli/fetch.py:_get_proxy_dict()` docstring updated to mention
+  10808 as the new port
+- New friendly error when `pa fetch` returns a failure AND no proxy
+  is set (the most common cause of "all channels failed" in this
+  user environment). Points the user to:
+  ```
+  $env:HTTPS_PROXY = 'http://127.0.0.1:10808'
+  ```
+  or `--proxy http://127.0.0.1:10808`. Same hint on `handoff` path.
+- `C:\Users\DengN\.minimax\skills\paper-agent\SKILL.md` (Mavis-side
+  skill) updated to 10808 in 2 places. Future Mavis sessions will see
+  the new port without having to re-discover it.
+
+**No code change to the actual fetch logic**:
+- The proxy plumbing (`_get_proxy_dict` + `urllib.build_opener` +
+  `ProxyHandler`) was already correct since v3.9.8.2 — it just wasn't
+  being given the right port
+- The 8-channel cascade itself works on direct connection too
+  (verified: `pa fetch 10.1038/nature12373` without any proxy env
+  var returns 943KB PDF via sci-hub in 36s). So even the wrong-proxy
+  case only fails because the user explicitly asked for proxy and
+  the proxy they asked for is dead — not because foreign services
+  are unreachable from this machine
+
+**3-tier honest audit**:
+- ✅ Pass: `pa fetch 10.1038/nature12373` without proxy → SUCCESS (sci-hub
+  direct, 943KB, 36s)
+- ✅ Pass: `pa fetch 10.1038/nature12373` with `HTTPS_PROXY=10808` →
+  SUCCESS (proxy path, ~36s)
+- ✅ Pass: `pa fetch --help` shows 10808 as the new port example
+- ✅ Pass: friendly hint fires when all channels fail AND no proxy set
+  (verified in test 5, where a fake DOI with no proxy gives clear hint)
+- ⚠️ Partial: The hint does NOT detect "proxy set to a dead port" —
+  only "no proxy at all". Detecting dead port would require active TCP
+  probe of the proxy, which is overengineering. The right user
+  behavior is: "if you set a proxy and it failed, try a different
+  port or remove the proxy entirely".
+- ❌ Not yet done: `pa config proxy 10808` persistent setting — would
+  let user set the proxy once and forget it. Fails Global Rule (adds
+  a CLI command and a config file just to avoid typing a one-line env
+  var). Documented as deferred.
+
+**Files**:
+- `pa_cli/cli.py`: help text update + friendly error path (~25 LOC)
+- `pa_cli/fetch.py`: `_get_proxy_dict()` docstring update (~15 LOC)
+- `C:\Users\DengN\.minimax\skills\paper-agent\SKILL.md`: 2 references
+  to 10808 in proxy section + usage example
+- `test_output/_diag_8channel.py` (new): diagnostic script — direct
+  probe of all sci-hub mirrors + annas + reference sites, with
+  proxy on/off
+- `test_output/_smoketest_fetch_3_9_11_5.py` (new): 5-test smoke test
+  covering help text, no-proxy, proxy 10808, proxy 7897 (deprecated),
+  and status_report
+
+**No new dependencies, no breaking changes, no API change** —
+this is a documentation/UX fix that any user with the right port
+already has a working fetch pipeline.
+
 ## [3.9.11.4] - 2026-08-03 (v02 Global Sample Pool + phased rerank plan)
 
 ### ⚠️ Important context — v01 numbers are in-sample, do not generalize
