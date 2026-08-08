@@ -2,13 +2,14 @@
 pa_cli.cli — Click command group for paper-agent CLI.
 
 Usage examples:
-  python -m pa_cli fetch 10.1016/j.caeo.2024.100184 --proxy http://127.0.0.1:7897
+  python -m pa_cli fetch 10.1016/j.caeo.2024.100184 --proxy http://127.0.0.1:10808
   python -m pa_cli search "AI literacy higher education" --year-min 2023 --limit 20
   python -m pa_cli review ./pdfs --output lit_review.md
   python -m pa_cli version
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -211,7 +212,11 @@ def keys_remind(as_json, write_alerts_path):
 @click.option("-o", "--output-dir", default=".", show_default=True,
               help="Where to save PDF")
 @click.option("--proxy", default=None,
-              help="HTTP proxy URL (e.g. http://127.0.0.1:7897)")
+              help="HTTP proxy URL (e.g. http://127.0.0.1:10808). "
+                   "If unset, falls back to HTTPS_PROXY/HTTP_PROXY env vars. "
+                   "v3.9.11.5: user's clash-verge proxy port changed 7897 -> 10808 "
+                   "(see memory 2026-08-06); use 10808 to reach foreign services "
+                   "via GFW bypass.")
 @click.option("--channels", default="openalex,arxiv,unpaywall,doi_redirect,scihub,playwright",
               show_default=True, help="Comma-separated channel list")
 @click.option("--unpaywall-email", default="hello@example.com", show_default=True,
@@ -249,9 +254,43 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
         sys.exit(0)
     elif result.get("handoff"):
         click.echo(f"\n[pa] ⚠ handoff: {result['handoff'].get('user_action_required')}", err=True)
+        # v3.9.11.5: also surface a proxy-missing hint on handoff path, since
+        # the most common cause of "all sources failed" is missing/wrong proxy.
+        env_proxy = (
+            os.environ.get("HTTPS_PROXY")
+            or os.environ.get("HTTP_PROXY")
+            or os.environ.get("ALL_PROXY")
+        )
+        if not proxy and not env_proxy:
+            click.echo(
+                "[pa] hint: no proxy is set. If you expected a paper to download,\n"
+                "         try:  $env:HTTPS_PROXY = 'http://127.0.0.1:10808'\n"
+                "         (user's clash-verge port changed 7897 -> 10808 on 2026-08-06)",
+                err=True,
+            )
         sys.exit(2)
     else:
-        click.echo("\n[pa] ❌ all channels failed", err=True)
+        # v3.9.11.5: friendly hint when all channels fail (often = missing proxy)
+        env_proxy = (
+            os.environ.get("HTTPS_PROXY")
+            or os.environ.get("HTTP_PROXY")
+            or os.environ.get("ALL_PROXY")
+        )
+        if not proxy and not env_proxy:
+            click.echo(
+                "\n[pa] ❌ all channels failed AND no proxy is set.\n"
+                "     Most likely cause: paper-agent needs a proxy to reach foreign\n"
+                "     services (OpenAlex, arXiv, Unpaywall, Sci-Hub, annas, etc.).\n"
+                "     Set one of:\n"
+                "       $env:HTTPS_PROXY = 'http://127.0.0.1:10808'   # Windows PowerShell\n"
+                "       export HTTPS_PROXY=http://127.0.0.1:10808      # bash/sh\n"
+                "     Or pass --proxy http://127.0.0.1:10808 to this command.\n"
+                "     v3.9.11.5: user's clash-verge proxy port changed 7897 -> 10808\n"
+                "     (see memory note 2026-08-06); old 7897 is no longer listening.",
+                err=True,
+            )
+        else:
+            click.echo("\n[pa] ❌ all channels failed (proxy is set; check network/Cloudflare)", err=True)
         sys.exit(1)
 
 

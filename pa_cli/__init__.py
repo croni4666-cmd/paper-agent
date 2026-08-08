@@ -1,9 +1,9 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.4 (v02 Global Sample Pool + phased rerank plan).
-See CHANGELOG [3.9.11.4] for the [P3-26] infrastructure + ROADMAP pivots.
+Latest stable: v3.9.11.5 (proxy port 7897 -> 10808 documentation fix).
+See CHANGELOG [3.9.11.5] for the proxy port fix + friendly error path.
 
-Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2/v3.9.11.3:
+Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2/v3.9.11.3/v3.9.11.4:
   - v3.9.10.10: search.py http_get_json gzip/brotli encoding fix
   - v3.9.10.11: [P2-14] pa search --quality-mode ships + [P1-20] S2 throttle
   - v3.9.10.12: [P0-8] path A 12-feature LTR baseline (12-feat = 8-feat at n=25)
@@ -12,6 +12,14 @@ Previous in v3.9.10.x and v3.9.11.0/v3.9.11.1/v3.9.11.2/v3.9.11.3:
   - v3.9.11.1: CORE engine isolated to local-only file (gitignored)
   - v3.9.11.2: pre-push scanner fix + filter-branch backup cleanup
   - v3.9.11.3: dangling blob cleanup + script bug fix
+
+v3.9.11.5 (2026-08-08): proxy port 7897 -> 10808 documentation fix.
+  - pa_cli/fetch.py: _get_proxy_dict() docstring updated to mention 10808
+  - pa_cli/cli.py: pa fetch --proxy help text shows 10808
+  - pa_cli/cli.py: pa fetch friendly hint when all channels fail + no proxy
+  - SKILL.md: 2 references to 10808 in proxy section + usage example
+  - No code change to fetch logic itself; proxy plumbing was correct since v3.9.8.2
+  - Diagnosed from mvs_d9ecb3a3c48a49c086d00e44ed62a826 user report 2026-08-08
 
 v3.9.11.4 (2026-08-03): v02 Global Sample Pool ships ([P3-26]).
   - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
@@ -59,7 +67,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.4"
+__version__ = "3.9.11.5"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 
