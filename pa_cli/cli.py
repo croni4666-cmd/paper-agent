@@ -217,8 +217,18 @@ def keys_remind(as_json, write_alerts_path):
                    "v3.9.11.5: user's clash-verge proxy port changed 7897 -> 10808 "
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
+@click.option("--prefer", default=None,
+              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "auto"]),
+              help="v3.9.11.6 new: pick a single source first. "
+                   "'arxiv' for arXiv preprints, 'annas' for annas-archive, "
+                   "'cnki' for Chinese journals, 'scihub' for sci-hub, "
+                   "'auto' (default) tries all in order: arxiv -> cnki -> "
+                   "annas -> unpaywall -> scihub. Takes precedence over --channels.")
 @click.option("--channels", default="openalex,arxiv,unpaywall,doi_redirect,scihub,playwright",
-              show_default=True, help="Comma-separated channel list")
+              show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
+                   "Prefer --prefer instead. This legacy list maps heuristically to "
+                   "--prefer: 'arxiv'->arxiv, 'cnki'->cnki, 'annas'->annas, "
+                   "'scihub'/'unpaywall'->scihub, anything else->auto.")
 @click.option("--unpaywall-email", default="hello@example.com", show_default=True,
               help="Email registered with Unpaywall API")
 @click.option("--max-total-sec", default=300, show_default=True,
@@ -226,7 +236,7 @@ def keys_remind(as_json, write_alerts_path):
 @click.option("--no-cache", is_flag=True,
               help="Bypass cache lookup; cascade attempts download (cache still written on success)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_cache, quiet):
+def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_sec, no_cache, quiet):
     """Fetch a single paper PDF by DOI using 8 channels with Cloudflare fallback.
 
     Cache behaviour (P0-2):
@@ -239,11 +249,30 @@ def fetch(doi, output_dir, proxy, channels, unpaywall_email, max_total_sec, no_c
     if not quiet:
         click.echo(f"[pa] fetch DOI={doi}", err=True)
         click.echo(f"[pa] output_dir={output_dir} proxy={proxy or '(none)'}", err=True)
-        click.echo(f"[pa] channels={channels} cache={'disabled' if no_cache else 'enabled'}", err=True)
+        prefer_msg = prefer or "(auto from --channels)"
+        click.echo(f"[pa] prefer={prefer_msg} channels={channels} cache={'disabled' if no_cache else 'enabled'}", err=True)
         click.echo(f"[pa] max_total_sec={max_total_sec}", err=True)
+    # v3.9.11.6: --prefer takes precedence over --channels when set.
+    # If --prefer is set, we wrap fetch_doi by passing channels that map
+    # to that single prefer. This is a hack — proper way is to expose
+    # --prefer through fetch_doi. Done in v3.9.11.6 by overriding the
+    # channels list to force a single prefer mapping.
+    if prefer:
+        # Force the channel list to one that maps to our prefer
+        # (see fetch_doi channel->prefer mapping)
+        channel_to_prefer = {
+            "arxiv": ["arxiv"],
+            "annas": ["annas"],
+            "cnki": ["cnki"],
+            "scihub": ["scihub", "unpaywall"],  # unpaywall is checked first
+            "auto": [],  # empty list -> auto
+        }
+        channels_list = channel_to_prefer[prefer]
+    else:
+        channels_list = channels.split(",")
     result = fetch_doi(
         doi=doi, output_dir=output_dir, proxy=proxy,
-        channels=channels.split(","), unpaywall_email=unpaywall_email,
+        channels=channels_list, unpaywall_email=unpaywall_email,
         max_total_sec=max_total_sec,
         use_cache=not no_cache,
     )

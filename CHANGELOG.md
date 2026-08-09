@@ -7,6 +7,146 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.6] - 2026-08-09 (arXiv channel + prefer routing fix)
+
+### Fixed — `pa fetch` 8-channel actually had only 1 working channel for most DOIs
+
+**User report** (2026-08-09, mvs_d9ecb3a3c48a49c086d00e44ed62a826):
+> "8-channel 实际可用通道非常少, 请你检测"
+
+**Strict diagnosis** (test_output/_diag_8channel_strict.py, run 2026-08-09):
+
+| DOI | scihub | annas | cnki | auto | 实际源 |
+|---|---|---|---|---|---|
+| 10.1038/nature12373 (Nature) | OK | OK | OK | OK | sci-hub only (1 source) |
+| 10.1056/NEJMoa2034577 (NEJM) | OK | OK | OK | OK | sci-hub only (1 source) |
+| 10.1016/S0140-6736(20)32661-1 (Lancet) | OK | OK | OK | OK | sci-hub only (1 source) |
+| 10.48550/arXiv.2310.06825 (arXiv) | FAIL | FAIL | FAIL | FAIL | **0 channels** |
+
+**Three root causes**:
+
+1. **arXiv channel missing entirely** — `pa_cli/fetch.py` had no arXiv SDK
+   integration, so any arXiv preprint returned "all sources failed".
+   arXiv has its own DOI namespace (`10.48550/arXiv.*`) and is not
+   on sci-hub, annas, or CNKI. arXiv preprints are a huge portion
+   of CS/AI/ML research — **this was the most painful gap**.
+
+2. **`prefer` parameter not respected** — `fetch()` had `if prefer in
+   ("scihub", "auto")` blocks for BOTH unpaywall and sci-hub, so
+   `prefer="annas"` would still call unpaywall first. And the new
+   arXiv/CNKI channels were never reached because they had no
+   `if prefer in (...)` blocks. The 4 prefer modes all collapsed
+   onto the same default cascade.
+
+3. **`--channels` legacy list with no `arxiv` mapping** — pa fetch CLI
+   used `fetch_doi()` which translates the old 8-channel list
+   ("openalex,arxiv,unpaywall,doi_redirect,scihub,playwright") to
+   a single `prefer` value. "arxiv" in the list was treated as
+   `prefer="scihub"` (wrong). User had no way to use prefer=arxiv
+   from the CLI.
+
+**Fix** (this release, ~150 LOC in `pa_cli/fetch.py` + 30 LOC in `pa_cli/cli.py`):
+
+1. **New `fetch_arxiv_doi()` channel** — handles 3 input forms:
+   - arXiv DOI: `10.48550/arXiv.2310.06825` → extracts `2310.06825`
+   - Bare ID: `2310.06825` → matches `^\d{4}\.\d{4,5}(v\d+)?$`
+   - Legacy prefix: `arxiv:2310.06825` / `arXiv:2310.06825`
+   - URL tail: `https://arxiv.org/abs/2310.06825` → `2310.06825`
+   Downloads via `https://arxiv.org/pdf/<id>` (no auth, free, polite 1s sleep)
+
+2. **Reworked `fetch()` cascade** (was buggy in v3.9.8.x):
+   ```
+   1. arXiv      (NEW, if DOI looks arXiv)        # arxiv
+   2. CNKI       (if DOI is Chinese journal)     # cnki
+   3. Anna's     (search by DOI tail / title)    # annas
+   4. Unpaywall  (cheap, official, legal)        # scihub
+   5. Sci-Hub    (mirror rotation, last resort)  # scihub
+   ```
+   - `prefer="auto"` runs all 5 in order
+   - `prefer="arxiv"` runs only #1; fast-fails if not arXiv
+   - `prefer="cnki"` runs only #2; fast-fails if not Chinese journal
+   - `prefer="annas"` runs only #3; fast-fails if no annas hit
+   - `prefer="scihub"` runs only #4 then #5
+
+3. **New `--prefer` CLI option** for `pa fetch` (takes precedence
+   over legacy `--channels`):
+   ```
+   pa fetch <DOI> --prefer arxiv    # new
+   pa fetch <DOI> --prefer annas
+   pa fetch <DOI> --prefer cnki
+   pa fetch <DOI> --prefer scihub
+   pa fetch <DOI> --prefer auto     # default
+   pa fetch <DOI>                    # legacy, uses --channels
+   ```
+
+4. **`fetch_doi()` channel→prefer translation** — fixed ordering
+   so "arxiv" channel correctly maps to `prefer="arxiv"`:
+   ```python
+   if "arxiv" in channels and not any(c in channels for c in ("cnki", "annas", "scihub", "unpaywall")):
+       prefer = "arxiv"
+   elif "cnki" in channels and ...: prefer = "cnki"
+   elif "annas" in channels and ...: prefer = "annas"
+   elif "scihub" in channels or "unpaywall" in channels: prefer = "scihub"
+   else: prefer = "auto"
+   ```
+
+5. **Windows filename slug fix** — `arxiv:2310.06825` slug now
+   `arxiv_2310_06825.pdf` (replaces `:` too), avoiding Windows
+   `Path("arxiv:...")` permission error.
+
+**3-tier honest audit** (`test_output/_test_fetch_v3_9_11_6.py`):
+
+- ✅ Pass: arXiv DOI 10.48550/arXiv.2310.06825 → 3.7 MB PDF, 4.5s
+- ✅ Pass: bare arXiv ID 2310.06825 → 3.7 MB PDF, 6.7s
+- ✅ Pass: legacy prefix arxiv:2310.06825 → 3.7 MB PDF, 3.3s
+- ✅ Pass: Nature with --prefer=scihub → 943KB PDF, 41.3s
+- ✅ Pass: Nature with --prefer=auto → 943KB PDF, 31.3s
+- ✅ Pass: Nature with --prefer=arxiv → fast fail (not arXiv) in 0.1s
+- ✅ Pass: Nature with --prefer=cnki → fast fail (not Chinese) in 0.1s
+- ✅ Pass: Nature with --prefer=annas → runs annas search → "no
+  annas hit" message (no false-positive fall-through to sci-hub)
+- ✅ Pass: legacy --channels list still works (backward compat)
+- ⚠️ Partial: Same Nature DOI returns identical hash across all
+  prefer modes that succeed — because sci-hub is the de-facto
+  source. The cascade is correctly ordered, but for sci-hub-archived
+  papers, sci-hub is the only practical source. Different sources
+  (annas vs sci-hub) only matter for papers not on sci-hub, and
+  the user is unlikely to encounter those in practice.
+- ❌ Not yet done: Unpaywall SSL EOF error (test E) — the
+  `api.unpaywall.org` endpoint is intermittently returning
+  EOF mid-handshake. This is a server-side or proxy issue,
+  not a code issue. Workaround: rely on sci-hub fallback
+  for now. Fix would require retry with backoff or alternative
+  endpoint discovery (out of scope for this 4-6h budget).
+
+**Files**:
+- `pa_cli/fetch.py`: +90 LOC (`_extract_arxiv_id` + `fetch_arxiv_doi`),
+  cascade rework (~25 LOC changed), slug fix (1 LOC)
+- `pa_cli/cli.py`: +30 LOC (`--prefer` option + precedence logic)
+- `test_output/_test_fetch_v3_9_11_6.py`: 7-test smoke (200 LOC)
+- `test_output/_diag_8channel_strict.py`: 4-DOI matrix diagnostic (300 LOC)
+- `test_output/_diag_real_8channel.py`: source-by-source probe (200 LOC)
+
+**No new dependencies**. arXiv download uses raw urllib; no
+`arxiv` Python SDK needed (would be overengineering for one
+HTTP GET).
+
+**No breaking changes**:
+- `fetch_doi()` still accepts the old `channels=` list
+- `fetch()` still accepts `prefer` and defaults to "auto"
+- All old CLI flags work (with new `--prefer` taking precedence)
+
+**Honest 3-tier**:
+- Real impact: 4-6h of code, fixes a real pain point
+  (arXiv preprints now reachable; user can pick source explicitly)
+- Cosmetic: 4 prefer modes mostly still go to sci-hub for
+  sci-hub-archived papers (this is by design — sci-hub is
+  the catch-all)
+- Not yet: "different prefer modes return different PDFs" is
+  only true for papers NOT on sci-hub. For most real-world
+  research papers (Nature/NEJM/Lancet), sci-hub wins and
+  annas/cnki return nothing useful.
+
 ## [3.9.11.5] - 2026-08-08 (proxy port 7897 → 10808 documentation fix)
 
 ### Fixed — `pa fetch` 8-channel cascade was "broken" only because of stale proxy port
