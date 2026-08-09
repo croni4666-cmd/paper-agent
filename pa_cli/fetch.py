@@ -60,6 +60,12 @@ SCIHUB_MIRRORS = [
     "https://sci-hub.al",
 ]
 
+# arXiv PDF URL pattern (v3.9.11.6, new channel — was missing from v3.9.8.x)
+ARXIV_PDF_URL = "https://arxiv.org/pdf/{arxiv_id}"
+ARXIV_DOI_PREFIX = "10.48550/arXiv."  # arXiv DOI prefix
+ARXIV_OLD_PREFIXES = ("arxiv:", "arXiv:")  # legacy ID prefix
+ARXIV_ID_RE = re.compile(r"^\d{4}\.\d{4,5}(v\d+)?$")  # 2310.06825, 2310.06825v1
+
 # annas-archive.org (主入口 + 中文镜像)
 ANNAS_DOMAINS = [
     "https://annas-archive.org",
@@ -178,6 +184,82 @@ def _save_pdf(body: bytes, out_path: str) -> str:
     with open(p, "wb") as f:
         f.write(body)
     return str(p.resolve())
+
+
+# ============================================================================
+# arXiv channel (v3.9.11.6, new — was missing from cascade in v3.9.8.x)
+# ============================================================================
+# arXiv papers are not on sci-hub, not on annas, not on CNKI. The old
+# `pa fetch` for arXiv DOIs returned "all sources failed" because no
+# channel knew how to fetch from arxiv.org. v3.9.11.6 adds this channel
+# so arXiv preprints (a huge portion of CS/AI/ML research) are reachable.
+#
+# Accepts 3 input forms:
+#   - Bare arXiv ID:           "2310.06825"
+#   - arXiv DOI:               "10.48550/arXiv.2310.06825"
+#   - Legacy prefix:           "arxiv:2310.06825" / "arXiv:2310.06825"
+#   - URL tail:                "https://arxiv.org/abs/2310.06825" → 2310.06825
+#
+# arXiv PDF URL: https://arxiv.org/pdf/{id}  (no auth, free, no rate limit
+# for normal use, but be polite with 1s sleep)
+
+def _extract_arxiv_id(s: str) -> Optional[str]:
+    """Extract arXiv ID from various input forms. Returns None if not arXiv."""
+    s = (s or "").strip()
+    if not s:
+        return None
+    # Bare ID: 2310.06825 or 2310.06825v1
+    if ARXIV_ID_RE.match(s):
+        return s
+    # arXiv DOI: 10.48550/arXiv.2310.06825
+    if s.startswith(ARXIV_DOI_PREFIX):
+        return s[len(ARXIV_DOI_PREFIX):]
+    # Legacy prefix: arxiv:2310.06825 or arXiv:2310.06825
+    for prefix in ARXIV_OLD_PREFIXES:
+        if s.lower().startswith(prefix.lower()):
+            tail = s[len(prefix):].strip()
+            if ARXIV_ID_RE.match(tail):
+                return tail
+    # URL tail: https://arxiv.org/abs/2310.06825 or /pdf/2310.06825
+    if "arxiv.org/" in s:
+        # take last path segment
+        tail = s.rstrip("/").split("/")[-1]
+        if ARXIV_ID_RE.match(tail):
+            return tail
+    return None
+
+
+def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
+    """arXiv channel: directly download PDF from arxiv.org/pdf/<id>.
+
+    Returns dict with 'source' / 'arxiv_id' / 'pdf_url' / 'size' / 'path'
+    on success, or dict with 'error' on failure.
+
+    v3.9.11.6: new channel. arXiv preprints have their own DOI namespace
+    (10.48550/arXiv.*) and are not on sci-hub/annas/CNKI. Without this
+    channel, all arXiv papers returned "fetch_all_mirrors_failed".
+    """
+    arxiv_id = _extract_arxiv_id(doi_or_id)
+    if not arxiv_id:
+        return {"error": "not_arxiv",
+                "message": f"Input {doi_or_id!r} does not look like an arXiv ID",
+                "hint": "Use prefer=annas or prefer=scihub for non-arXiv DOIs"}
+    pdf_url = ARXIV_PDF_URL.format(arxiv_id=arxiv_id)
+    time.sleep(1.0)  # polite jitter
+    status, body = _http_get_bytes(pdf_url, timeout=60)
+    if status == 200 and body[:4] == b"%PDF":
+        result = {
+            "source": "arxiv",
+            "arxiv_id": arxiv_id,
+            "pdf_url": pdf_url,
+            "size": len(body),
+        }
+        if out_path:
+            result["path"] = _save_pdf(body, out_path)
+        return result
+    return {"error": f"arxiv_download_failed_{status}",
+            "message": f"arXiv download failed for {arxiv_id} (status {status})",
+            "hint": "Check network / proxy; arXiv should not have paywall"}
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -654,43 +736,72 @@ def fetch_cnki_detail(cnki_id: str, out_path: str = None) -> Dict[str, Any]:
 # ─────────────────────────────────────────────────────────────────
 def fetch(doi: str = None, title: str = None, md5_path: str = None,
           out_path: str = None, prefer: str = "auto") -> Dict[str, Any]:
-    """Unified fetch. prefer: 'scihub' / 'annas' / 'cnki' / 'auto' (try all).
+    """Unified fetch. prefer: 'arxiv' / 'annas' / 'cnki' / 'scihub' / 'auto'.
+
+    v3.9.11.6 cascade (was buggy in v3.9.8.x — only scihub was reachable):
+      1. arXiv     (NEW v3.9.11.6)  — if DOI looks like arXiv
+      2. CNKI                       — if DOI is Chinese journal pattern
+      3. Anna's archive             — search by DOI tail / title
+      4. Unpaywall                  — official, legal, stable
+      5. Sci-Hub                    — mirror rotation, last resort
+
+    'auto' runs all 5 in order. Other prefer values restrict to that
+    channel + 'auto'-equivalent paths.
 
     Returns: dict with 'source' / 'path' / 'size' / 'pdf_url' on success,
              or dict with 'error' on failure.
     """
     if doi:
-        # v3.9.8.3: Chinese journal DOI heuristic — try CNKI first to save 4 fallback calls
-        # CN style DOI like 10.3969/j.issn.XXXX-XXXX or 10.16525/j.cnki.XXXX
+        # 1. arXiv channel — if DOI looks like arXiv (10.48550/arXiv.* or bare ID)
+        arxiv_id = _extract_arxiv_id(doi)
+        if arxiv_id and prefer in ("arxiv", "auto"):
+            r = fetch_arxiv_doi(arxiv_id, out_path)
+            if "error" not in r:
+                return r
+            # If user explicitly asked for arxiv and it failed, don't fall through
+            if prefer == "arxiv":
+                return r
+
+        # 2. CNKI — if DOI is Chinese journal pattern
         is_cn_journal = (doi.startswith("10.3969/") or doi.startswith("10.16525/")
                           or "/j.cnki." in doi or "/j.issn." in doi)
         if is_cn_journal and prefer in ("cnki", "auto"):
             r = fetch_cnki_detail(doi, out_path)
             if "error" not in r:
                 return r
-            # Fall through to other paths if CNKI fails
+            if prefer == "cnki":
+                return r
+
+        # 3. Anna's archive — search by DOI tail (or title if provided)
+        if prefer in ("annas", "auto"):
+            search_q = title or doi.split("/")[-1] or doi
+            results = fetch_annas_search(search_q, limit=3)
+            for cand in results:
+                r = fetch_annas_md5(cand["md5_path"], out_path)
+                if "error" not in r:
+                    r["matched_query"] = search_q
+                    r["search_domain"] = cand.get("domain", "")
+                    return r
+            if prefer == "annas":
+                return {"error": E_ALL_MIRRORS,
+                        "message": f"annas search yielded no PDF for {search_q!r}",
+                        "hint": "Try a different query or prefer=auto"}
+
+        # 4. Unpaywall (cheap, official, legal) — only if scihub-style cascade
         if prefer in ("scihub", "auto"):
-            # 优先 Unpaywall (合法 + 稳定)
             r = fetch_unpaywall_doi(doi, out_path)
             if "error" not in r:
                 return r
-            # fall through to sci-hub
+
+        # 5. Sci-Hub (mirror rotation, last-resort gray route)
         if prefer in ("scihub", "auto"):
             r = fetch_scihub_doi(doi, out_path)
             if "error" not in r:
                 return r
-        if prefer in ("annas", "auto"):
-            if title is None:
-                title = doi.split("/")[-1] or doi
-            results = fetch_annas_search(title, limit=3)
-            for cand in results:
-                r = fetch_annas_md5(cand["md5_path"], out_path)
-                if "error" not in r:
-                    r["matched_query"] = title
-                    return r
+
         return {"error": E_ALL_MIRRORS,
                 "message": f"All sources failed for DOI {doi}",
-                "hint": "Try CNKI for Chinese papers"}
+                "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"}
     if md5_path:
         return fetch_annas_md5(md5_path, out_path)
     if title:
@@ -780,11 +891,14 @@ def fetch_doi(doi: str, output_dir: str = ".",
             # Cache miss or read error — fall through to fetch
             pass
 
-    # Map channels → prefer
+    # Map channels → prefer (v3.9.11.6: added arxiv and proper ordering)
+    # Order matters: arxiv > cnki > annas > scihub > auto
     channels = channels or []
-    if "cnki" in channels and "annas" not in channels and "scihub" not in channels:
+    if "arxiv" in channels and not any(c in channels for c in ("cnki", "annas", "scihub", "unpaywall")):
+        prefer = "arxiv"
+    elif "cnki" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
         prefer = "cnki"
-    elif "annas" in channels:
+    elif "annas" in channels and not any(c in channels for c in ("scihub", "unpaywall")):
         prefer = "annas"
     elif "scihub" in channels or "unpaywall" in channels:
         prefer = "scihub"
@@ -792,7 +906,10 @@ def fetch_doi(doi: str, output_dir: str = ".",
         prefer = "auto"
 
     # Map output_dir + DOI → out_path
-    doi_slug = doi.replace("/", "_").replace(".", "_")
+    # v3.9.11.6: also replace ':' (legacy arXiv prefix) and other
+    # Windows-illegal chars. arxiv:2310.06825 → arxiv_2310_06825
+    doi_slug = (doi.replace("/", "_").replace(".", "_").replace(":", "_")
+                    .replace("\\", "_").replace(" ", "_"))
     out_path = str(Path(output_dir) / f"{doi_slug}.pdf")
 
     # Call new fetch
