@@ -627,6 +627,145 @@ def _search_core_unavailable(*args, **kwargs):
         "Run: python tools/install_core.py"
     )
 
+
+# v3.9.11.8 (2026-08-09): PubMed engine (NCBI E-utilities).
+# First medical-specific search engine. ~36M biomedical citations.
+# Free public API, no auth required (API key raises rate limit from 3 to 10 RPS).
+# Returns: PMID, title, journal, year, authors, DOI, publication types.
+# Does NOT return: abstract / MeSH terms (would need efetch XML, deferred to v3.9.12).
+# 2 calls per search: esearch (PMID list) + esummary (metadata). 1s polite sleep between.
+_PUBMED_LAST_CALL_TS = [0.0]  # module-level throttle
+
+def _pubmed_throttle(min_interval: float = 0.4) -> None:
+    """NCBI etiquette: 3 RPS without API key, 10 RPS with key.
+    Default 0.4s = 2.5 RPS = safely under both limits and polite to NCBI.
+    """
+    elapsed = time.time() - _PUBMED_LAST_CALL_TS[0]
+    if elapsed < min_interval:
+        time.sleep(min_interval - elapsed)
+    _PUBMED_LAST_CALL_TS[0] = time.time()
+
+
+def search_pubmed(query: str, year_min: int = None, year_max: int = None,
+                  limit: int = 50) -> List[Dict]:
+    """PubMed (NCBI E-utilities): ~36M biomedical/biomedical-adjacent citations.
+
+    Free public API, no key required. To raise rate limit from 3 to 10 RPS,
+    set env var NCBI_API_KEY (free at https://www.ncbi.nlm.nih.gov/account/settings/).
+
+    v3.9.11.8: initial release. Returns: PMID, title, journal, year,
+    authors (max 5 + et al.), DOI (if available), publication types.
+    No abstract / MeSH in v1 (deferred — needs efetch XML parse, ~+150 LOC).
+    """
+    # NCBI E-utilities requires email + tool parameters per their etiquette
+    tool = "paper-agent"
+    email = os.environ.get("NCBI_EMAIL", "paper-agent@example.com")
+    api_key = os.environ.get("NCBI_API_KEY", "").strip()
+
+    # ── 1. esearch: get PMIDs matching query ─────────────────────────
+    _pubmed_throttle()
+    date_filter = ""
+    if year_min or year_max:
+        ymin = year_min or 1900
+        ymax = year_max or 2099
+        date_filter = f"&mindate={ymin}/01/01&maxdate={ymax}/12/31&datetype=pdat"
+    esearch_url = (
+        f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+        f"?db=pubmed&term={quote(query)}&retmode=json"
+        f"&retmax={min(limit, 200)}{date_filter}"
+        f"&tool={tool}&email={email}"
+    )
+    if api_key:
+        esearch_url += f"&api_key={quote(api_key)}"
+
+    s, data = http_get_json(esearch_url, timeout=30)
+    if s != 200 or not data:
+        return []
+    pmids = (data.get("esearchresult") or {}).get("idlist") or []
+    if not pmids:
+        return []
+
+    # ── 2. esummary: get metadata for PMIDs ─────────────────────────
+    # NCBI limits to 200 IDs per esummary call. If we got more, chunk.
+    results: List[Dict] = []
+    for i in range(0, len(pmids), 100):
+        chunk = pmids[i:i + 100]
+        _pubmed_throttle()
+        ids_str = ",".join(chunk)
+        esummary_url = (
+            f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
+            f"?db=pubmed&id={ids_str}&retmode=json"
+            f"&tool={tool}&email={email}"
+        )
+        if api_key:
+            esummary_url += f"&api_key={quote(api_key)}"
+
+        s2, data2 = http_get_json(esummary_url, timeout=30)
+        if s2 != 200 or not data2:
+            continue
+        result_root = data2.get("result") or {}
+        uids = result_root.get("uids") or []
+        for uid in uids:
+            r = result_root.get(uid) or {}
+            if not r or r.get("error"):
+                continue
+            results.append(_normalize_pubmed(r))
+    return results
+
+
+def _normalize_pubmed(r: dict) -> dict:
+    """Convert PubMed esummary record to paper-agent unified schema."""
+    # Authors: list of {name, authtype, clusterid}
+    authors_raw = r.get("authors") or []
+    authors = [a.get("name", "") for a in authors_raw if a.get("name")]
+
+    # DOI from articleids list
+    doi = ""
+    for aid in (r.get("articleids") or []):
+        if aid.get("idtype") == "doi":
+            doi = aid.get("value", "")
+            break
+
+    # Publication year from pubdate (e.g. "2025 Mar 15" -> 2025)
+    pubdate = r.get("pubdate", "") or ""
+    year = None
+    for part in pubdate.split():
+        if part.isdigit() and len(part) == 4:
+            year = int(part)
+            break
+    if not year and (r.get("epubdate") or ""):
+        for part in r["epubdate"].split():
+            if part.isdigit() and len(part) == 4:
+                year = int(part)
+                break
+
+    # Publication types
+    pub_types = r.get("pubtype") or []
+
+    # Volume / issue / pages
+    volume = r.get("volume", "")
+    issue = r.get("issue", "")
+    pages = r.get("pages", "")
+
+    return {
+        "doi": doi,
+        "pmid": r.get("uid", ""),
+        "title": r.get("title", ""),
+        "authors": authors,
+        "venue": r.get("fulljournalname") or r.get("source") or "",
+        "year": year,
+        "volume": volume,
+        "issue": issue,
+        "pages": pages,
+        "pub_types": pub_types,
+        "issn": r.get("issn", ""),
+        "source": "pubmed",
+        # cited_by_count: PubMed doesn't have a direct cite count.
+        # Leave 0; downstream engines (S2/OpenAlex dedup) can fill it in.
+        "cited_by_count": 0,
+    }
+
+
 try:
     from pa_cli._engines_local.core import search_core  # noqa: F401
 except ImportError:
@@ -669,7 +808,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
              fields for pre-2010 papers. Set to 0 to disable and enrich
              all papers regardless of age.
     """
-    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki"]
+    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
     # OpenAlex already indexes CORE's repos, so marginal coverage is <5%.
@@ -683,6 +822,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "openalex": search_openalex,
         "arxiv": search_arxiv,
         "semanticscholar": search_semanticscholar,
+        # v3.9.11.8 (2026-08-09): PubMed medical engine, no auth required.
+        "pubmed": search_pubmed,
     }
     # AMiner is optional — only include if token is set (avoid hard-fail on first run)
     if "aminer" in engines:

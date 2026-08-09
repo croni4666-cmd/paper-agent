@@ -7,6 +7,74 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.8] - 2026-08-09 (PubMed medical search engine + 2026-08-09 hotfix chain)
+
+### Added — PubMed as 7th default search engine
+
+**User feedback** (2026-08-09, mvs_169be1d1aec8490f9a4e29869bd831c3):
+> "现在遇到了最大的限制，就是我们的引擎没有深度医学相关的"
+
+**Before**: `pa search` had 6 engines (crossref / openalex / arxiv / S2 / aminer / cnki).
+None of them had medical-specific metadata (MeSH terms, publication types, PubMed IDs).
+For medical literature — long-term care insurance, biohack-related RCTs, etc. — the
+gap was real.
+
+**Fix** (v3.9.11.8):
+- New `search_pubmed()` function in `pa_cli/search.py` (~110 LOC).
+- Uses **NCBI E-utilities** public API: 2 calls per search (esearch + esummary).
+- No auth required; `NCBI_API_KEY` env var (free) raises rate limit from 3 to 10 RPS.
+- Returns: PMID, title, journal, year, authors, DOI, publication types, ISSN, volume/issue/pages.
+- Added as **7th default engine** in `pa search --engine all` (opt-in via `--engine pubmed`).
+- Polite throttle: 0.4s between calls = ~2.5 RPS = safely under NCBI's 3 RPS limit.
+
+**Why NCBI E-utilities (not Biopython/Entrez)**:
+- Zero new dependencies (uses stdlib urllib)
+- Same JSON API as other engines (consistent code style)
+- ~110 LOC vs Biopython's ~500 LOC wrapper
+- Same data: PMID, title, journal, year, authors, DOI, pub_types
+
+**What v3.9.11.8 does NOT include (deferred to v3.9.12)**:
+- Abstract text (needs efetch XML, ~+150 LOC)
+- MeSH terms (needs efetch XML)
+- Clinical relevance ranking (NLM relevance score is in esearch result.count, but
+  per-record ranking needs efetch)
+- Citation count (PubMed doesn't have it; relies on S2/OpenAlex for dedup)
+
+**Verify** (test_output/_test_pubmed_v3_9_11_8.py, 4/4 PASS):
+
+| Test | Query | Result |
+|---|---|---|
+| 1 | `ACE inhibitors hypertension RCT` year>=2024 | 5 papers, all with pmid+doi+year+venue+pub_types |
+| 2 | `long-term care insurance elderly` 2020-2024 | 5 papers, Korean/Japanese/Indian medical journals |
+| 3 | `mRNA COVID vaccine` --engine all | pubmed=20 in by_engine, all 7 engines ran |
+| 4 | dedup with DOI | pubmed paper merged into unified, `found_by=['pubmed']` |
+
+**CLI**:
+```bash
+# pubmed only
+pa search "ACE inhibitors hypertension" --engine pubmed --year-min 2024
+
+# all engines (pubmed now included by default)
+pa search "mRNA COVID vaccine" --engine all
+
+# optional: raise rate limit
+setx NCBI_API_KEY "your-key-from-ncbi-account-settings"
+```
+
+**3-tier honest limits**:
+- ✅ Works for medical queries (RCT, drug, disease, study type)
+- ⚠️ Year filter works (datetype=pdat) but is approximate — PubMed dates are
+  messy (epub vs print vs accepted), 1-3 papers/year may be misbucketed
+- ❌ No abstract in v1 — if user needs abstracts, efetch XML is the v3.9.12 ticket
+- ❌ No MeSH term mapping in v1 — affects OpenAlex concept-filter use case for
+  medical queries (user would need efetch)
+
+**Why MINOR bump (3.9.11.x → 3.9.11.8 not 3.9.12.0)**:
+- New searcher counts as additive (MINOR) per the changelog format key
+- But this is a PATCH-level feature (one new engine, no breaking changes)
+- Decision: keep it in 3.9.11.x for the 3.9.11 stable series marker
+- v3.9.12.0 will be the next MINOR cut when abstract/MeSH land
+
 ## [3.9.11.7] - 2026-08-09 (fetch_doi arxiv translation hotfix on top of 3.9.11.6)
 
 ### Fixed — `fetch_doi` channel→prefer translation still let arXiv DOIs fall through to sci-hub
