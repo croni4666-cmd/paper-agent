@@ -1,7 +1,16 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.6 (arXiv channel + prefer routing fix).
-See CHANGELOG [3.9.11.6] for the arXiv channel + cascade rework.
+Latest stable: v3.9.11.7 (fetch_doi arxiv translation hotfix on top of v3.9.11.6).
+See CHANGELOG [3.9.11.7] for the fetch_doi arxiv-priority routing fix.
+
+v3.9.11.6 (arXiv channel + prefer routing fix) added arxiv SDK + cascade
+rework, but its `fetch_doi` channel->prefer translation still let
+arXiv DOIs fall through to sci-hub whenever the default channel list
+("openalex,arxiv,unpaywall,doi_redirect,scihub,playwright") was used.
+v3.9.11.7 fixes that by checking arxiv_id first: if the DOI looks like
+arXiv AND "arxiv" is in channels, route to arxiv regardless of other
+channels. End-to-end verified: pa fetch 10.48550/arXiv.2310.06825
+-> via_channel=arxiv, 3.7 MB PDF, SUCCESS.
 
 Previous in v3.9.10.x and v3.9.11.0..v3.9.11.5:
   - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
@@ -49,7 +58,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.6"
+__version__ = "3.9.11.7"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 

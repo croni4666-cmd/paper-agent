@@ -7,6 +7,65 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.7] - 2026-08-09 (fetch_doi arxiv translation hotfix on top of 3.9.11.6)
+
+### Fixed — `fetch_doi` channel→prefer translation still let arXiv DOIs fall through to sci-hub
+
+**User report** (2026-08-09, mvs_d9ecb3a3c48a49c086d00e44ed62a826):
+> "mvs_d9ecb3a3c48a49c086d00e44ed62a826 到底怎么回事，它怎么还是说你没修"
+
+**Diagnosis** (end-to-end retest after v3.9.11.6):
+- v3.9.11.6 added `fetch_arxiv_doi()` + cascade rework + `--prefer` option.
+- BUT `fetch_doi` channel→prefer translation had this guard:
+  ```python
+  if "arxiv" in channels and not any(c in channels for c in ("cnki", "annas", "scihub", "unpaywall")):
+      prefer = "arxiv"
+  ```
+- Default channels = `"openalex,arxiv,unpaywall,doi_redirect,scihub,playwright"`.
+- `unpaywall` and `scihub` are both present → `not any(...)` is False → fall through.
+- Result: arXiv DOIs routed to sci-hub, which has no arXiv preprints, all sources fail.
+- End-to-end test `pa fetch 10.48550/arXiv.2310.06825` after v3.9.11.6: FAIL.
+
+**Fix** (`pa_cli/fetch.py:fetch_doi`):
+- Replace the multi-channel guard with an arxiv_id-first check:
+  ```python
+  arxiv_id = _extract_arxiv_id(doi)
+  if arxiv_id and "arxiv" in channels:
+      prefer = "arxiv"
+  ```
+- Logic: if the DOI IS arXiv AND "arxiv" is in the channel list, arxiv is
+  the only source that can actually serve it (sci-hub / annas / CNKI /
+  unpaywall do not carry arXiv preprints). So we route to arxiv
+  unconditionally instead of trying to exclude other channels.
+- Helper `_extract_arxiv_id()` was already shipped in v3.9.11.6 (handles
+  `10.48550/arXiv.*` / bare ID `X.Y` / `arxiv:X` / URL tail).
+
+**Verify** (after fix, end-to-end):
+- `pa fetch 10.48550/arXiv.2310.06825 --prefer auto` →
+  `via_channel: "arxiv"`, 3,749,788 bytes, 216.1s, `final_status: "SUCCESS"`.
+- Output PDF: `G:\minimax - workspace\Paper agent\10_48550_arXiv_2310_06825.pdf`.
+
+**Why version 3.9.11.7 (not 3.9.11.6.1)**:
+- v3.9.11.6 was already tagged and committed as a "release" — it shipped
+  a feature but with a routing bug. That is a bugfix, not a feature add.
+- 3.9.11.7 = PATCH bump on the same MINOR series, matches semver.
+
+**Why the other Mavis session still said "未修"**:
+- Mavis sessions are independent processes. They do not auto-sync
+  uncommitted working copy state across sessions.
+- Other session ran `pa fetch` against `578becb` (v3.9.11.6) which IS broken.
+- Fix was applied to working tree but uncommitted → invisible to that session.
+- After this commit, `git pull` in the other session will pull in
+  `3.9.11.7` and the fix becomes visible.
+
+**Discipline** (write-in-memory, cross-project):
+- "Uncommitted working copy" is invisible to other Mavis sessions / agents
+  / future-self. Only `git log` is the cross-context truth.
+- Diagnosing "X said it's fixed but Y says it's not" → first check `git log`
+  on both sides, then check `git status` on the claiming side. If claiming
+  side has uncommitted changes, the claim is local-only until committed.
+- See `~/.minimax/memory/MEMORY.md` "Mavis session sync" section.
+
 ## [3.9.11.6] - 2026-08-09 (arXiv channel + prefer routing fix)
 
 ### Fixed — `pa fetch` 8-channel actually had only 1 working channel for most DOIs

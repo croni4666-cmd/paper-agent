@@ -891,10 +891,23 @@ def fetch_doi(doi: str, output_dir: str = ".",
             # Cache miss or read error — fall through to fetch
             pass
 
-    # Map channels → prefer (v3.9.11.6: added arxiv and proper ordering)
-    # Order matters: arxiv > cnki > annas > scihub > auto
+    # Map channels → prefer (v3.9.11.6 + 2026-08-09 fix: arxiv priority)
+    #
+    # Key insight: if DOI looks like arXiv (10.48550/arXiv.* / bare ID /
+    # arxiv: prefix), ONLY the arxiv channel can fetch it — sci-hub,
+    # annas, CNKI don't carry arXiv preprints. So when the DOI is
+    # arXiv-shaped AND "arxiv" is in the channel list, we MUST use
+    # arxiv regardless of other channels being present.
+    #
+    # v3.9.11.6 had this bug: required "arxiv in channels AND no
+    # other channels", which fails for the default list
+    # ("openalex,arxiv,unpaywall,doi_redirect,scihub,playwright")
+    # because scihub+unpaywall are also present. Result: arXiv DOIs
+    # always fell through to scihub, which has no arXiv papers.
+    # Verified bug 2026-08-09 via test_output/_retest_arxiv/test1.pdf.
     channels = channels or []
-    if "arxiv" in channels and not any(c in channels for c in ("cnki", "annas", "scihub", "unpaywall")):
+    arxiv_id = _extract_arxiv_id(doi)
+    if arxiv_id and "arxiv" in channels:
         prefer = "arxiv"
     elif "cnki" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
         prefer = "cnki"
