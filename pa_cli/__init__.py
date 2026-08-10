@@ -1,18 +1,16 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.9 (PubMed year filter post-filter hotfix).
-See CHANGELOG [3.9.11.9] for the year semantic fix.
+Latest stable: v3.9.12.0 (ClinicalTrials.gov engine + 2026-08-10 hotfix chain).
+See CHANGELOG [3.9.12.0] for the new engine.
 
-v3.9.11.8 (2026-08-09): PubMed engine (NCBI E-utilities) added to
-`pa search` as 7th default engine. ~36M biomedical citations, no auth
-required. Returns PMID, title, journal, year, authors, DOI, pub_types.
-Abstract / MeSH terms deferred to v3.9.12 (needs efetch XML parse).
+v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 PubMed year filter — see
+CHANGELOG [3.9.11.9]. esearch `pdat` filter post-filter on `year` field.
 
-v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 — esearch `pdat` filter
-(online pubdate) was returning papers whose print year was outside
-the user's requested range (e.g. --year-min 2020 --year-max 2020
-returned a 1993 GeneReview with epub 2020). Added post-filter on
-`year` field after esummary. 6/6 PASS after fix.
+v3.9.12.0 (2026-08-10): NEW ENGINE — ClinicalTrials.gov (NCBI sister
+site). 500K+ registered clinical trial records, free public API, no
+auth. Returns trial registry records (not papers — different content
+type from PubMed/PEDro). Use case: "is anyone running a trial for
+this intervention?"
 
 Previous in v3.9.10.x and v3.9.11.0..v3.9.11.5:
   - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
@@ -60,7 +58,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.9"
+__version__ = "3.9.12.0"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 
