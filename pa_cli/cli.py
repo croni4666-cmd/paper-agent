@@ -330,8 +330,8 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
 @click.option("--limit", type=int, default=50, show_default=True,
               help="Max results per engine")
 @click.option("--engine", default="all", show_default=True,
-              help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,pubmed,core "
-                   "(comma-separated; default 'all' = first 7 incl. pubmed; "
+              help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,pubmed,clinicaltrials,core "
+                   "(comma-separated; default 'all' = first 8 incl. pubmed + clinicaltrials; "
                    "'core' = explicit CORE-only)")
 @click.option("--format", "out_format", default="json", show_default=True,
               type=click.Choice(["json", "bibtex"]),

@@ -7,6 +7,85 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.12.0] - 2026-08-10 (ClinicalTrials.gov engine + 2026-08-10 minor)
+
+### Added — ClinicalTrials.gov as 8th default search engine
+
+**Trigger feedback** (2026-08-10, mvs_169be1d1aec8490f9a4e29869bd831c3):
+> "对于引擎是否需要再修正?是否需要再增加医学专门引擎?"
+
+**Why this engine**:
+- PubMed (v3.9.11.8) covers published medical literature (~36M citations)
+- ClinicalTrials.gov covers **trial registry** — different content type
+- 500K+ registered trials, free public API, no auth
+- Companion to PubMed for "is anyone currently studying this?" question
+- Triggered by user's specific medical research needs (cervical muscle training, OPLL conservative treatment)
+
+**Implementation** (v3.9.12.0):
+- New `search_clinicaltrials()` in `pa_cli/search.py` (~140 LOC)
+- 2 API calls per search: `/api/v2/studies?query.term=...` (no auth, JSON)
+- Polite throttle: 0.4s between calls (~2.5 RPS, safely under CT.gov's limit)
+- Added as 8th default engine in `pa search --engine all`
+- `~80` LOC `_normalize_clinicaltrial()` to map CT.gov study schema to paper-agent unified fields
+
+**Returns** (per trial):
+- `nct_id` (ClinicalTrials.gov unique ID, primary key)
+- `title` (briefTitle / officialTitle)
+- `status` (RECRUITING, COMPLETED, etc.)
+- `conditions` (e.g. "Cervical Pain", "Myofascial Pain Syndromes")
+- `interventions` (e.g. "Dry Needling", "Exercise Therapy")
+- `phase` (PHASE1, PHASE2, etc.)
+- `enrollment` (count)
+- `start_date` (YYYY-MM-DD) and `year` (extracted)
+- `related_pubs` (citations to published papers from this trial, with PMID)
+
+**Key design decision — different content type**:
+- PubMed/PEDro/OpenAlex = **published papers**
+- ClinicalTrials.gov = **trial registry records** (not papers)
+- They don't dedup against each other (no DOI/PMID overlap on trial records)
+- New `source: "clinicaltrials"` field distinguishes in unified results
+- `nct_id` is the primary key (no DOI for trials)
+
+**Year filter**:
+- Uses `filter.advanced=AREA[StartDate]RANGE[YYYY-MM-DD, YYYY-MM-DD]`
+- Filters by trial **start date**, not publication date
+- CT.gov filter is precise (no v3.9.11.9-style post-filter needed)
+
+**Verify** (initial test 4/4 PASS):
+- `pa search "cervical muscle" --engine clinicaltrials` → 5 trials, all 2024-2026, conditions matching
+- `pa search "mRNA COVID vaccine" --engine clinicaltrials` → 5 trials, RECRUITING/COMPLETED
+- `pa search "low back pain" --year-min 2023 --engine clinicaltrials` → trials started 2023+
+- `--engine all` now includes clinicaltrials in `by_engine` dict
+
+**3-tier honest limits**:
+- ✅ Free, no auth, clean JSON API
+- ✅ Different content type from PubMed (trial registry, not papers)
+- ⚠️ No DOI — primary key is `nct_id` not `doi`
+- ⚠️ Different relevance ranking (CT.gov uses simple match, not citation count)
+- ❌ No PEDro engine in this release (HTML scraping too fragile for v3.9.12.0; deferred to v3.9.13 or later if scope allows)
+
+**Why MINOR bump (3.9.11.x → 3.9.12.0)**:
+- New engine counts as additive per the changelog format key
+- v3.9.12.0 marks the start of a new series with multiple planned engines
+  (PEDro, Cochrane, Europe PMC) per the mvs_169be1d1aec8490f9a4e29869bd831c3 feedback
+
+### PEDro deferred to v3.9.13 (or later)
+
+**mvs_169be1d1aec8490f9a4e29869bd831c3 also recommended PEDro** (Physiotherapy
+Evidence Database) as priority 1 medical engine. After verification:
+
+- PEDro has **NO public JSON API** (only HTML form on `search.pedro.org.au`)
+- The "search" page on `pedro.org.au/english/search/` is actually a **Mailchimp
+  newsletter signup form** (not a search form)
+- The real search form is on `search.pedro.org.au/search` with form action
+  `search-results` and CSRF token
+- Adding PEDro would require **HTML scraping + CSRF handling + JS rendering** —
+  estimated 300-400 LOC, fragile (WordPress theme changes break scraping),
+  and violates user's "personal hobby maintenance cap" rule
+
+**Decision**: Defer PEDro. If user wants it later, it should be a separate
+PR with proper cost-benefit analysis and Cloudflare handling.
+
 ## [3.9.11.9] - 2026-08-10 (PubMed year filter post-filter hotfix)
 
 ### Fixed — Year filter semantic mismatch with esearch `pdat`

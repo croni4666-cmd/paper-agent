@@ -785,6 +785,153 @@ def _normalize_pubmed(r: dict) -> dict:
     }
 
 
+# v3.9.12.0 (2026-08-10): ClinicalTrials.gov engine
+# Free public API, no auth, JSON-based, returns clinical trial registry
+# records (NOT papers — different content type from PubMed/PEDro).
+# Use case: "is anyone currently running a trial for this intervention?"
+# See: https://clinicaltrials.gov/api/v2
+def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None,
+                          limit: int = 50) -> List[Dict]:
+    """ClinicalTrials.gov v2 API: 500K+ registered clinical trials.
+
+    Free public API, no auth, no key, ~3 req/s rate limit. Returns trial
+    registry records (not published papers — different content type from
+    PubMed/PEDro/etc.).
+
+    v3.9.12.0: initial release. Returns: nct_id, title, status, conditions,
+    interventions, phase, enrollment, start_date, related_pub_refs.
+
+    Args:
+        query: free-text search (CT.gov searches title/condition/intervention
+               fields with simple relevance ranking).
+        year_min / year_max: filter by trial START year. CT.gov uses
+               YYYY-MM-DD date format with dateFilter via filter.advanced.
+        limit: max results to return. CT.gov accepts pageSize up to 1000,
+               we cap at 100 internally.
+    """
+    import urllib.parse as _up
+
+    base = "https://clinicaltrials.gov/api/v2/studies"
+    params = {
+        "query.term": query,
+        "format": "json",
+        "pageSize": str(min(limit, 100)),
+    }
+    if year_min or year_max:
+        # dateFilter syntax via filter.advanced: AREA[StartDate]RANGE[YYYY-MM-DD, YYYY-MM-DD]
+        ymin = f"{year_min or 1900}-01-01"
+        ymax = f"{year_max or 2099}-12-31"
+        params["filter.advanced"] = f"AREA[StartDate]RANGE[{ymin},{ymax}]"
+
+    url = base + "?" + _up.urlencode(params)
+    _pubmed_throttle(0.4)  # ~2.5 RPS, polite to CT.gov
+
+    s, data = http_get_json(url, timeout=30)
+    if s != 200 or not data:
+        return []
+
+    studies = data.get("studies") or []
+    results: List[Dict] = []
+    for study in studies:
+        norm = _normalize_clinicaltrial(study)
+        if norm:
+            results.append(norm)
+
+    # CT.gov date filter is precise (exact start date in range), so
+    # post-filter is optional. We trust it. (No v3.9.11.9-style post-filter
+    # needed because CT.gov API does proper date filtering, unlike NCBI
+    # esearch which uses pdat vs print date.)
+    return results
+
+
+def _normalize_clinicaltrial(s: dict) -> dict:
+    """Normalize CT.gov study to paper-agent unified schema.
+
+    CT.gov study shape:
+      {
+        "protocolSection": {
+          "identificationModule": {nctId, briefTitle, officialTitle, ...},
+          "statusModule": {overallStatus, startDateStruct, ...},
+          "designModule": {phases, enrollmentInfo, ...},
+          "conditionsModule": {conditions: [{name, ...}]},
+          "armsInterventionsModule": {interventions: [{type, name, ...}]},
+          "referencesModule": {references: [{citation, pmid, ...}]}
+        }
+      }
+    """
+    proto = s.get("protocolSection") or {}
+    if not proto:
+        return None
+
+    ident = proto.get("identificationModule") or {}
+    status = proto.get("statusModule") or {}
+    design = proto.get("designModule") or {}
+    cond_mod = proto.get("conditionsModule") or {}
+    arms = proto.get("armsInterventionsModule") or {}
+    refs_mod = proto.get("referencesModule") or {}
+
+    # Conditions: list of strings or list of dicts depending on CT.gov version
+    cond_raw = cond_mod.get("conditions") or []
+    if cond_raw and isinstance(cond_raw[0], dict):
+        conditions = [c.get("name", "?") for c in cond_raw if c.get("name")]
+    else:
+        conditions = list(cond_raw)
+
+    # Interventions
+    interv_raw = arms.get("interventions") or []
+    interventions = []
+    for i in interv_raw:
+        if isinstance(i, dict):
+            interventions.append(i.get("name", "?"))
+        else:
+            interventions.append(str(i))
+
+    # Start year from YYYY-MM-DD or YYYY-MM or YYYY
+    start_struct = status.get("startDateStruct") or {}
+    start_date = start_struct.get("date", "")
+    year = None
+    if start_date:
+        try:
+            year = int(start_date.split("-")[0])
+        except (ValueError, IndexError):
+            year = None
+
+    # Phase
+    phases = design.get("phases") or []
+    phase = ", ".join(phases) if phases else ""
+
+    # Enrollment
+    enroll = design.get("enrollmentInfo") or {}
+    enrollment = enroll.get("count")
+
+    # Related published refs (citations to papers from this trial)
+    related_pubs = []
+    for r in (refs_mod.get("references") or [])[:5]:
+        cite = r.get("citation")
+        pmid = r.get("pmid")
+        if cite:
+            related_pubs.append({"citation": cite, "pmid": pmid})
+
+    nct_id = ident.get("nctId", "")
+    return {
+        "doi": "",  # trials don't have DOI
+        "nct_id": nct_id,  # ClinicalTrials.gov unique ID
+        "title": ident.get("briefTitle") or ident.get("officialTitle") or "",
+        "authors": [],  # trials have no authors per se (PI is "sponsor")
+        "venue": f"ClinicalTrials.gov ({nct_id})",
+        "year": year,
+        "phase": phase,
+        "enrollment": enrollment,
+        "status": status.get("overallStatus", ""),
+        "start_date": start_date,
+        "conditions": conditions,
+        "interventions": interventions,
+        "related_pubs": related_pubs,
+        "source": "clinicaltrials",
+        "cited_by_count": 0,  # trials don't have cite count
+    }
+
+
 try:
     from pa_cli._engines_local.core import search_core  # noqa: F401
 except ImportError:
@@ -827,7 +974,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
              fields for pre-2010 papers. Set to 0 to disable and enrich
              all papers regardless of age.
     """
-    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed"]
+    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
     # OpenAlex already indexes CORE's repos, so marginal coverage is <5%.
@@ -843,6 +990,10 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "semanticscholar": search_semanticscholar,
         # v3.9.11.8 (2026-08-09): PubMed medical engine, no auth required.
         "pubmed": search_pubmed,
+        # v3.9.12.0 (2026-08-10): ClinicalTrials.gov, no auth, JSON API.
+        # Note: returns trial registry records (NOT papers). Different
+        # content type from PubMed/PEDro. Will appear as source='clinicaltrials'.
+        "clinicaltrials": search_clinicaltrials,
     }
     # AMiner is optional — only include if token is set (avoid hard-fail on first run)
     if "aminer" in engines:
