@@ -7,6 +7,46 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.11.9] - 2026-08-10 (PubMed year filter post-filter hotfix)
+
+### Fixed — Year filter semantic mismatch with esearch `pdat`
+
+**Bug found by independent verifier (mvs_ca3a2a9a5dbf467396047cf4aa04075c, 2026-08-10)**:
+`pa search "diabetes" --engine pubmed --year-min 2020 --year-max 2020 --limit 3`
+returned 3 papers with years `1993, 2020, 2023` — only 1/3 was actually in 2020.
+
+**Root cause**:
+- esearch `datetype=pdat` filter is on **online publication date** (epub ahead of print)
+- `_normalize_pubmed` extracts `year` from `pubdate` (print pubdate)
+- For papers with epub ahead of print, the two can differ by 1-2 years
+- Examples that triggered the bug:
+  - PMID 33119245: GeneReview "POT1 Tumor Predisposition" — print 1993, epub 2020
+  - PMID 36969130: "Fournier's gangrene" — print 2023, epub 2020
+- esearch IS filtering (61K vs 1.1M papers proven by direct test), but the
+  print `year` field we return can be outside the requested range.
+
+**Fix** (v3.9.11.9):
+- Added post-filter on `year` field after esummary, in `pa_cli/search.py:search_pubmed()`
+- If `year_min` or `year_max` set, drop results whose `year` is outside [year_min, year_max]
+- Trade-off: post-filter may reduce result count below `limit`. Acceptable —
+  user wants correct year semantics, not full limit.
+- ~10 LOC, no API change, no behavior change for non-year-filtered queries.
+
+**Verify** (independent run 2026-08-10):
+- `pa search "diabetes" --engine pubmed --year-min 2020 --year-max 2020 --limit 5` →
+  5 papers, **all year=2020** (post-fix)
+- `pa search "ACE inhibitors" --engine pubmed --year-min 2024` →
+  5 papers, all year >= 2024 (post-fix)
+- `pa search "aspirin" --engine pubmed` (no year filter) →
+  5 papers, year span varies (no regression)
+
+**3-tier honest**:
+- ✅ Year filter now semantically correct for "print pubdate"
+- ⚠️ Trade-off: post-filter may reduce result count below `limit` for queries
+  with many epub-ahead-of-print papers. Acceptable — correctness > completeness.
+- ❌ Pre-existing OpenAlex concept filter still returns 0 results —
+  unrelated to PubMed, deferred to v3.9.13.
+
 ## [3.9.11.8] - 2026-08-09 (PubMed medical search engine + 2026-08-09 hotfix chain)
 
 ### Added — PubMed as 7th default search engine

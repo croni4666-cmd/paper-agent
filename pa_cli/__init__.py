@@ -1,15 +1,18 @@
 """paper-agent CLI — academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.11.8 (PubMed medical search engine + 2026-08-09 fixes).
-See CHANGELOG [3.9.11.8] for the PubMed engine addition.
-
-v3.9.11.7 (fetch_doi arxiv translation hotfix on top of v3.9.11.6):
-fix for arXiv DOI routing — see CHANGELOG [3.9.11.7].
+Latest stable: v3.9.11.9 (PubMed year filter post-filter hotfix).
+See CHANGELOG [3.9.11.9] for the year semantic fix.
 
 v3.9.11.8 (2026-08-09): PubMed engine (NCBI E-utilities) added to
 `pa search` as 7th default engine. ~36M biomedical citations, no auth
 required. Returns PMID, title, journal, year, authors, DOI, pub_types.
 Abstract / MeSH terms deferred to v3.9.12 (needs efetch XML parse).
+
+v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 — esearch `pdat` filter
+(online pubdate) was returning papers whose print year was outside
+the user's requested range (e.g. --year-min 2020 --year-max 2020
+returned a 1993 GeneReview with epub 2020). Added post-filter on
+`year` field after esummary. 6/6 PASS after fix.
 
 Previous in v3.9.10.x and v3.9.11.0..v3.9.11.5:
   - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
@@ -57,7 +60,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.11.8"
+__version__ = "3.9.11.9"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 
