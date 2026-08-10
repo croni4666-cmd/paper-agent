@@ -710,6 +710,25 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
             if not r or r.get("error"):
                 continue
             results.append(_normalize_pubmed(r))
+
+    # Post-filter by year (v3.9.11.8 hotfix)
+    #
+    # esearch's `datetype=pdat` filter is on ONLINE publication date (epub
+    # ahead of print), but `_normalize_pubmed` extracts `year` from
+    # `pubdate` (print pubdate). For papers with epub ahead of print, the
+    # two can differ by 1-2 years. Re-filter to ensure `year` falls in
+    # [year_min, year_max] so the user gets semantically correct results.
+    #
+    # Trade-off: post-filter may reduce the result count below `limit`.
+    # Acceptable — user wants correct year filter, not full limit.
+    if year_min or year_max:
+        ymin = year_min or 1900
+        ymax = year_max or 2099
+        results = [
+            r for r in results
+            if r.get("year") and ymin <= int(r["year"]) <= ymax
+        ]
+
     return results
 
 
