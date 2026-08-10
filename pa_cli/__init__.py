@@ -16,7 +16,7 @@ Previous in v3.9.10.x and v3.9.11.0..v3.9.11.5:
   - pa_cli/sample_pool.py: 13 cmd_* functions (read / propose / write)
   - pa_cli/cli.py: `pa sample-pool` group with 13 subcommands
   - 3 iron rules enforced at API + CLI level (user-write / Mavis-readonly / training-isolated)
-  - C:\\Users\\DengN\\.paper-agent\\sample_pool\\: SQLite + README + schema + example
+  - ~/.paper-agent/sample_pool/ (cross-platform, user home): SQLite + README + schema + example
   - 5 sample libraries (P1-6/8/9/21) DEPRECATED, replaced by [P3-26]
   - 4 new gated tickets (P3-22/23/24/25) for future SoTA rerank methods
   - Phased plan: data-gated (n=30 / 100 / 200 / 500), not method-gated

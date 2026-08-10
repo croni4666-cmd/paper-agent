@@ -1,6 +1,6 @@
 """Global Sample Pool -- user-owned, Mavis-read-only, training-isolated.
 
-Canonical doc: C:\\Users\\DengN\\.paper-agent\\sample_pool\\README.md
+Canonical doc: ~/.paper-agent/sample_pool/README.md (cross-platform)
 Reference: paper-agent [P3-26] v02 Global Sample Pool (added 2026-08-03)
 
 Three iron rules (enforced at API level):

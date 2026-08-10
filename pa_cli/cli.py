@@ -1987,7 +1987,7 @@ def judge_import(input_path, source, db_path):
 
 # =============== sample-pool subcommand group ===============
 # [P3-26] v02 Global Sample Pool -- user-owned, Mavis-read-only, training-isolated
-# Canonical doc: C:\Users\DengN\.paper-agent\sample_pool\README.md
+# Canonical doc: ~/.paper-agent/sample_pool/README.md (cross-platform, user home)
 # Three iron rules enforced at API + CLI level:
 #   1. User-only write: add/label/deprecate require --confirm-y or interactive y/n
 #   2. Mavis read-only: list/get/stats/count/query/export work for any session
