@@ -11,7 +11,7 @@ tiktoken>=0.4
 # Downloads 2-3 GB on first use (BAAI/bge-reranker-base or similar).
 # For LTR features (P0-8) only.
 sentence-transformers>=2.2
-torch>=2.0
+torch>=2.13.0
 transformers>=4.30
 
 # === Async batch fetch (pa fetch-batch) ===
