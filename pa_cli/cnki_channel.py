@@ -98,6 +98,77 @@ import random
 
 CNKI_COOKIES_PATH = Path.home() / ".paper-agent" / "cookies" / "cnki.json"
 # xueshu789.com entry URL (1.5s JS redirect to real CNKI proxy IP)
+
+
+def _validate_cnki_proxy_security(proxy_url: str) -> None:
+    """Warn or refuse if CNKI proxy URL is plaintext HTTP.
+
+    Threat model (v3.9.13.1):
+    - xueshu789.com entry is HTTPS (https://www.xueshu789.com/dbItem/1)
+    - The JS redirect typically lands on a plain HTTP CNKI proxy IP
+      (e.g. http://120.53.241.46:5888). This is a third-party Chinese
+      proxy service that historically does not support HTTPS.
+    - All subsequent CNKI traffic (search queries, results, cookies)
+      goes through this plaintext HTTP channel. The user's CNKI
+      session cookies (4 cookies, valid 4-8h) are visible to any
+      observer on the network path.
+    - xueshu789's TLS cert does NOT cover the IP, so we cannot
+      "upgrade" to HTTPS — the destination genuinely doesn't speak it.
+
+    Behavior:
+    - HTTPS CNKI proxy → silent (no leak, no warn)
+    - HTTP CNKI proxy + PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1 → WARN, accept
+    - HTTP CNKI proxy without override → refuse with clear error
+    """
+    import urllib.parse as up
+    import warnings
+    import os
+
+    try:
+        parsed = up.urlparse(proxy_url)
+    except Exception:
+        return  # cannot parse; let downstream raise
+
+    scheme = (parsed.scheme or "").lower()
+    if scheme == "https":
+        return  # secure path
+
+    if scheme == "http":
+        allow = os.environ.get("PAPER_AGENT_ALLOW_PLAINTEXT_CNKI", "").strip() in (
+            "1", "true", "yes"
+        )
+        if allow:
+            warnings.warn(
+                f"paper-agent: CNKI proxy {proxy_url} uses plaintext HTTP. "
+                f"Your CNKI session cookies and search queries are visible to any "
+                f"observer on the network path. "
+                f"(PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1 overrides the default refuse).",
+                stacklevel=3,
+            )
+            return
+        # Default: refuse. This is the security-first default.
+        raise RuntimeError(
+            f"paper-agent: REFUSING to connect to CNKI proxy {proxy_url} over "
+            f"plaintext HTTP.\n"
+            f"  The CNKI proxy service (typically resolved from xueshu789.com) "
+            f"does not support HTTPS, so user cookies + search queries would "
+            f"be transmitted in plaintext.\n"
+            f"\n"
+            f"  Mitigations (in order of preference):\n"
+            f"    1. Use a VPN that encrypts traffic to the CNKI proxy IP\n"
+            f"    2. Switch to OpenAlex / Crossref / Semantic Scholar / arXiv "
+            f"(all default HTTPS, no proxy needed)\n"
+            f"    3. If you understand the risk, set "
+            f"PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1 to override\n"
+            f"\n"
+            f"  See SECURITY.md §\"Known Limitations\" #4 for context."
+        )
+    # Other schemes (file://, data://, etc.) — refuse
+    raise RuntimeError(
+        f"paper-agent: REFUSING CNKI proxy with unexpected scheme '{scheme}' "
+        f"in URL {proxy_url}."
+    )
+
 XUESHU_ENTRY_URL = "https://www.xueshu789.com/dbItem/1"
 # Real CNKI search endpoint (relative path on proxy IP)
 CNKI_BRIEF_GRID_PATH = "/kns8s/brief/grid"
@@ -425,7 +496,14 @@ class CNKIClient:
         m = re.match(r'(https?://[^/]+)', page.url)
         if not m:
             raise CNKIError(E_BOOTSTRAP_FAILED, f"Could not extract proxy base from {page.url}")
-        return m.group(1)
+        proxy_base = m.group(1)
+        # Security: validate CNKI proxy scheme (v3.9.13.1)
+        # xueshu789 entry is HTTPS, but the redirect typically lands on a
+        # plain-HTTP CNKI proxy IP (e.g. http://120.53.241.46:5888).
+        # User's CNKI session cookies and search queries will then be
+        # transmitted in plaintext. Warn loudly + offer override.
+        _validate_cnki_proxy_security(proxy_base)
+        return proxy_base
 
     def _post_brief_page_in_context(self, ctx, page, proxy_base: str,
                                      query_json: Dict, page_num: int) -> str:
