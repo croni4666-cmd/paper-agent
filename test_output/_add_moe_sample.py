@@ -33,7 +33,7 @@ Data (d):
   d12=面板数据
 
 Industry (i):
-  i0=一般 / i1=制造 / i2=工业 / i3=纺织经编 / i4=AI产业
+  i0=一般 / i1=制造 / i2=工业 / i3=纺织 / i4=AI产业
 
 Engine (one of arxiv/openalex/s2/crossref/aminer/cnki):
   The engine that ACTUALLY returned the paper. This is what the MoE
@@ -84,8 +84,8 @@ NOISE_TEMPLATES = {
     ],
     "cnki": [
         ("10.1234/cnki.2024.001", "中国纺织工业 4.0 转型"),
-        ("10.1234/cnki.2024.002", "本地经编产业大脑研究"),
-        ("10.1234/cnki.2024.003", "算力券补贴政策评估"),
+        ("10.1234/cnki.2024.002", "本地纺织产业大脑研究"),
+        ("10.1234/cnki.2024.003", "compute-subsidy 补贴政策评估"),
     ],
 }
 
@@ -221,7 +221,7 @@ def main():
     parser.add_argument("--data", required=True, choices=sorted(VALID_DATA),
                         help="Data tag")
     parser.add_argument("--industry", required=True, choices=sorted(VALID_INDUSTRY),
-                        help="Industry tag (i0=一般, i1=制造, i2=工业, i3=纺织经编, i4=AI 产业)")
+                        help="Industry tag (i0=一般, i1=制造, i2=工业, i3=纺织, i4=AI 产业)")
     args = parser.parse_args()
 
     add_sample(args.qid, args.query, args.doi, args.engine,

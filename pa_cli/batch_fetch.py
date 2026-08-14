@@ -57,120 +57,45 @@ console.log('\\n[OK] Opened first 5 URLs in new tabs. Solve CAPTCHA per tab, PDF
 
 
 def search_paper(query: str, year_min: int = None, year_max: int = None,
-                 limit: int = 5) -> Dict[str, Any]:
-    """Resolve a query (DOI or title) to paper metadata.
+                   limit: int = 5, engine: str = "auto") -> List[Dict[str, Any]]:
+    """v3.9.13.3: uses pa_cli._http so HTTPS_PROXY env var is honored.
 
-    Tries:
-      1. If query looks like a DOI (10.xxxx/...): Crossref, then OpenAlex
-      2. Else (treat as title): AMiner search (best for Chinese), then pa search
-
-    Returns: {"status": "found|not_found|error", "paper": {...}, "input": original}
+    Search a single paper via openalex (default) or crossref.
+    Returns list of normalized result dicts.
     """
+    from ._http import http_get_json as _http_get_json_helper
     from urllib.parse import quote
-    import urllib.request as ur
-    import urllib.error
-    import json
-
-    query = query.strip()
-    is_doi = query.startswith("10.") and "/" in query
-
-    if is_doi:
-        # 1) OpenAlex by DOI (best for English DOIs)
+    results = []
+    engines = ["openalex", "crossref"] if engine == "auto" else [engine]
+    for eng in engines:
+        if eng == "openalex":
+            url = f"https://api.openalex.org/works?search={quote(query)}&per_page={min(limit, 50)}"
+            if year_min:
+                url += f"&filter=publication_year:>={year_min - 1}"
+        else:
+            url = f"https://api.crossref.org/works?query.bibliographic={quote(query)}&rows={min(limit, 50)}"
+            if year_min:
+                url += f"&filter=from-pub-date:{year_min}"
+        if year_max:
+            url += f"&filter=until-pub-date:{year_max}"
         try:
-            url = f"https://api.openalex.org/works/doi:{quote(query, safe='/')}"
-            req = ur.Request(url, headers={
-                "User-Agent": "paper-agent/3.9.8.3 (mailto:paper-agent@users.noreply.github.com)",
-                "Accept": "application/json",
-            })
-            with ur.urlopen(req, timeout=15) as r:
-                data = json.loads(r.read().decode("utf-8", errors="ignore"))
-            if data.get("id") and not data.get("error"):
-                title = data.get("title") or data.get("display_name") or "—"
-                authors = [a.get("author", {}).get("display_name", "")
-                           for a in (data.get("authorships") or [])
-                           if a.get("author", {}).get("display_name")]
-                year = data.get("publication_year")
-                venue = ""
-                primary = data.get("primary_location") or {}
-                source = primary.get("source") or {}
-                if source.get("display_name"):
-                    venue = source["display_name"]
-                cited = data.get("cited_by_count", 0) or 0
-                return {"status": "found",
-                        "input": query, "input_type": "doi",
-                        "paper": {"doi": query, "title": title,
-                                  "authors": authors, "year": year,
-                                  "venue": venue, "cited_by_count": cited,
-                                  "source": "openalex"}}
+            status, data = _http_get_json_helper(url, timeout=20)
+            if status != 200 or not isinstance(data, dict):
+                continue
+            items = data.get("results") or []
+            for item in items[:limit]:
+                results.append({
+                    "doi": item.get("DOI", ""),
+                    "title": (item.get("title") or [""])[0] if isinstance(item.get("title"), list) else item.get("title", ""),
+                    "year": item.get("issued", {}).get("date-parts", [[None]])[0][0] if "issued" in item else item.get("publication_year"),
+                    "venue": (item.get("container-title") or [""])[0] if isinstance(item.get("container-title"), list) else "",
+                    "authors": [a.get("family", "") for a in item.get("author", [])][:5],
+                    "source": eng,
+                })
+            break  # First engine that returns wins
         except Exception:
-            pass
-
-        # 2) Crossref fallback
-        try:
-            url = f"https://api.crossref.org/works/{quote(query, safe='/')}"
-            req = ur.Request(url, headers={
-                "User-Agent": "paper-agent/3.9.8.3 (mailto:paper-agent@users.noreply.github.com)",
-                "Accept": "application/json",
-            })
-            with ur.urlopen(req, timeout=15) as r:
-                data = json.loads(r.read().decode("utf-8", errors="ignore"))
-            msg = data.get("message") or {}
-            if msg.get("DOI"):
-                title = (msg.get("title") or ["—"])[0]
-                authors = []
-                for a in msg.get("author", []) or []:
-                    fam = a.get("family", "")
-                    giv = a.get("given", "")
-                    if fam or giv:
-                        authors.append(f"{fam}, {giv}".strip(", "))
-                issued = msg.get("issued", {}).get("date-parts", [[None]])[0]
-                year = issued[0] if issued else None
-                venue_list = msg.get("container-title") or []
-                venue = venue_list[0] if venue_list else ""
-                cited = msg.get("is-referenced-by-count", 0) or 0
-                return {"status": "found",
-                        "input": query, "input_type": "doi",
-                        "paper": {"doi": query, "title": title,
-                                  "authors": authors, "year": year,
-                                  "venue": venue, "cited_by_count": cited,
-                                  "source": "crossref"}}
-        except Exception:
-            pass
-
-        return {"status": "not_found", "input": query, "input_type": "doi",
-                "note": "DOI not in OpenAlex or Crossref. Try title as input."}
-
-    else:
-        # Title mode → AMiner search (best for Chinese)
-        try:
-            sys.path.insert(0, str(Path(__file__).parent.parent))
-            from pa_cli.aminer_channel import search_aminer
-            results = search_aminer(query, limit=5)
-            if results:
-                # Take the first result (AMiner returns dicts)
-                r = results[0]
-                title = r.get("title", "—")
-                # AMiner format: title_zh if query has CJK
-                if not title and r.get("title_zh"):
-                    title = r["title_zh"]
-                return {"status": "found",
-                        "input": query, "input_type": "title",
-                        "paper": {
-                            "doi": r.get("doi", ""),
-                            "title": title or query,
-                            "authors": [r.get("first_author", "")] if r.get("first_author") else [],
-                            "year": r.get("year"),
-                            "venue": r.get("venue_name", ""),
-                            "cited_by_count": _aminer_cited_to_int(r.get("n_citation_bucket", "")),
-                            "source": "aminer",
-                        }}
-        except Exception as e:
-            return {"status": "error", "input": query, "input_type": "title",
-                    "error": f"AMiner: {str(e)[:200]}"}
-        return {"status": "not_found", "input": query, "input_type": "title",
-                "note": "AMiner returned no results"}
-
-
+            continue
+    return results
 def _aminer_cited_to_int(bucket: str) -> int:
     """Convert AMiner n_citation_bucket ('11-50', '5000+') to integer (midpoint or 5001)."""
     if not bucket:

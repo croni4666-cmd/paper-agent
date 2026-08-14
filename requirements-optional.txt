@@ -1,6 +1,7 @@
 # paper-agent OPTIONAL dependencies
 # These are NOT required for the core `pa search` / `pa fetch` / `pa sample-pool` workflows.
 # Install only if you need the corresponding feature.
+# v3.9.13.3: added MoE router + CNKI + build + review groups (Round 13 audit F-001/002 fixes).
 
 # === LLM listwise rerank (pa moe-router --use-llm) ===
 # Requires OpenAI-compatible API endpoint (e.g. local Qwen2.5 or OpenAI cloud)
@@ -24,6 +25,36 @@ aiohttp-client-cache>=0.10
 bertopic>=0.16
 umap-learn>=0.5
 hdbscan>=0.8
+
+# === MoE router (pa moe-router) — v3.9.13.3 ===
+# Heavyweight stack: scikit-learn (Ridge/LogReg) + LightGBM (LTR) +
+# jieba (Chinese tokenizer) + scipy (sparse matrix concat).
+# Without these, `pa moe-router` will ImportError on fit_router().
+scipy>=1.10
+scikit-learn>=1.3
+lightgbm>=4.0
+jieba>=0.42
+
+# === CNKI engine (pa search --engine cnki) — v3.9.13.3 ===
+# Playwright is a HARD dep of pa_cli/cnki_channel.py (default in `all` engine list).
+# Without playwright, `pa search --engine all` will ImportError when cascade reaches CNKI.
+# First run: `python -m playwright install chromium`
+playwright>=1.40
+
+# === arXiv engine (pa search --engine arxiv) — v3.9.13.3 ===
+# Official `arxiv` PyPI package wraps the arxiv.org API.
+# Without it, search.py falls back to direct HTTP (works but no rate-limit awareness).
+arxiv>=2.0
+
+# === Deep rerank + review (pa deep-rerank / pa review) — v3.9.13.3 ===
+# PyMuPDF (fitz) for PDF text extraction in deep_rerank.py and review.py.
+PyMuPDF>=1.23
+
+# === Build (pa build) — v3.9.13.3 ===
+# weasyprint for HTML→PDF report generation in build.py.
+# brotli for Content-Encoding: br decoding in fetch.py.
+weasyprint>=60.0
+brotli>=1.0
 
 # === Local CORE engine install (tools/install_core.py) ===
 # CORE v3 API. Local install via `pa mcp install` to add to .env.

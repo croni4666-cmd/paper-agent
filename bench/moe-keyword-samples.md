@@ -117,7 +117,7 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 - openalex: `China AI manufacturing policy local textile industry`
 - s2: `China industrial policy 12X computing power system`
 - crossref: `China AI policy subsidy enterprise`
-- aminer: `中国 经编 算力券 政策 杠杆`
+- aminer: `中国 textile compute-subsidy 政策 杠杆`
 
 **英文** (少, 主要靠 aminer + CNKI):
 - `China industrial policy AI subsidy enterprise`

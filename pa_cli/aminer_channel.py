@@ -50,26 +50,12 @@ def _aminer_token() -> Optional[str]:
 
 
 def _http_get(url: str, headers: Dict[str, str], timeout: int = 30) -> tuple:
-    """Returns (status_code, json_dict or error_string)."""
-    try:
-        req = ur.Request(url, headers=headers)
-        resp = ur.urlopen(req, timeout=timeout)
-        body = resp.read().decode("utf-8", errors="replace")
-        try:
-            return resp.status, json.loads(body)
-        except json.JSONDecodeError:
-            return resp.status, body[:500]
-    except urllib.error.HTTPError as e:
-        try:
-            err_body = e.read().decode("utf-8", errors="replace")
-            try:
-                return e.code, json.loads(err_body)
-            except json.JSONDecodeError:
-                return e.code, err_body[:500]
-        except Exception:
-            return e.code, str(e)
-    except Exception as e:
-        return 0, str(e)[:300]
+    """Returns (status_code, json_dict or error_string).
+
+    v3.9.13.3: uses pa_cli._http so HTTPS_PROXY env var is honored.
+    """
+    from ._http import http_get_json as _http_get_json_helper
+    return _http_get_json_helper(url, headers=headers, timeout=timeout)
 
 
 def search_aminer(query: str, year_min: int = None, year_max: int = None,
