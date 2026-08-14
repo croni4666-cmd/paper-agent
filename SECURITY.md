@@ -52,10 +52,20 @@ This policy does **not** cover:
 ### 2. Proxy / network
 
 - **Set `HTTPS_PROXY` correctly**. Common values:
-  - `http://127.0.0.1:10808` (Clash on Windows after 2026-08-06)
+  - `http://127.0.0.1:10808` (Clash on Windows after 2026-08-06) — local HTTP proxy, ACCEPTED with warning
   - `socks5://127.0.0.1:10808` (SOCKS5 variant)
-  - Avoid HTTP proxies for traffic that includes credentials, since
-    the proxy sees the URL (including `?api_key=` for OpenAlex).
+  - `https://127.0.0.1:10809` (HTTPS proxy, best, encrypted CONNECT)
+- **TLS validation** (v3.9.13.0+): `pa_cli/fetch.py:_validate_proxy_security()`
+  - Local HTTP proxy (127.0.0.1, 10.*, 192.168.*, 172.16-31.*, ::1) → WARN but accept
+  - Remote HTTP proxy → REFUSE with clear error (set `PAPER_AGENT_ALLOW_REMOTE_PROXY=1` to override)
+  - Remote SOCKS5 proxy → REFUSE similarly
+  - HTTPS proxy → silent (no leak)
+- **Threat model**: HTTP proxy leaks the target hostname in the
+  plaintext CONNECT handshake. After CONNECT, the data flow is
+  TLS-encrypted to the destination, so API keys in URL (OpenAlex
+  `?api_key=...`) are NOT visible to the proxy. Only the target
+  hostname is. For local Clash this is acceptable; for REMOTE
+  proxy this is a privacy leak.
 - **Don't use sci-hub in jurisdictions where it's illegal**. The
   user is responsible for compliance with local laws.
 
@@ -88,9 +98,10 @@ This policy does **not** cover:
 These are accepted limitations of the current design, not bugs:
 
 1. **API keys in URL query params** (OpenAlex). This is the official
-   OpenAlex API pattern; we don't control it. If proxy or access logs
-   are kept, the key will be visible. Mitigation: use a free-tier
-   key, rotate periodically.
+   OpenAlex API pattern; we don't control it. Mitigation: v3.9.13.0+
+   enforces local proxy only, so even if the proxy is logging the
+   URL, it's only the user's own proxy (not a third party). API key
+   visibility is limited to the user themselves + OpenAlex.
 
 2. **No TLS pinning**. We rely on the system TLS store. Compromise
    of a CA would allow MITM. Acceptable risk for a research tool.

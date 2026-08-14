@@ -101,7 +101,25 @@ def _get_proxy_dict() -> Dict[str, str]:
         $env:HTTPS_PROXY = "http://127.0.0.1:10808"
     in their session before invoking `pa fetch`. The help text in
     pa_cli/cli.py:pa fetch is also updated to show 10808.
+
+    v3.9.13.0 (2026-08-14, security): Hardened against plaintext proxy leak.
+    Added _validate_proxy_security() that warns (and refuses to use non-local
+    HTTP proxies unless --allow-remote-proxy is passed). The threat model:
+    - http:// proxy = plaintext CONNECT handshake (target hostname visible)
+    - https:// proxy = encrypted CONNECT (preferred but rare locally)
+    - socks5:// proxy = plaintext SOCKS5 handshake (similar to http://)
+    - For local Clash/V2RayN on 127.0.0.1, http:// is acceptable since the
+      proxy is user-controlled, but we still WARN so user is aware.
+    - For REMOTE proxies (not on 127.0.0.1 / ::1 / private ranges), HTTP
+      proxy is a privacy leak; refuse to use unless explicitly allowed.
     """
+    p = (os.environ.get("HTTPS_PROXY")
+         or os.environ.get("HTTP_PROXY")
+         or os.environ.get("ALL_PROXY")
+         or os.environ.get("https_proxy")
+         or os.environ.get("http_proxy")
+         or os.environ.get("all_proxy")
+         or "").strip()
     p = (os.environ.get("HTTPS_PROXY")
          or os.environ.get("HTTP_PROXY")
          or os.environ.get("ALL_PROXY")
@@ -113,14 +131,118 @@ def _get_proxy_dict() -> Dict[str, str]:
         return {}
     if not p.startswith(("http://", "https://", "socks5://", "socks5h://")):
         p = "http://" + p
-    # Security: warn if user passes plain HTTP proxy (proxy traffic would be unencrypted).
-    # SOCKS5 is also acceptable; HTTPS proxy is best but rarely available locally.
-    if p.startswith("http://") and not p.startswith("https://"):
-        # Local Clash/V2RayN proxies commonly use HTTP. Not a leak risk since traffic
-        # is already TLS-encrypted end-to-end (https://api.crossref.org etc.).
-        # We just emit a debug note in the opener; not a hard error.
-        pass
+    # Security validation: warn on HTTP proxy, refuse remote HTTP proxy.
+    _validate_proxy_security(p, allow_remote=_get_allow_remote_proxy())
     return {"http": p, "https": p}
+
+
+def _validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
+    """Validate proxy URL for plaintext-leak risk. Warn or raise.
+
+    Threat model:
+    - `http://host:port` proxy: CONNECT handshake is plaintext. Target hostname
+      (api.crossref.org, etc.) is visible to anyone on the path between client
+      and proxy. After CONNECT, the data flow is TLS-encrypted to the target,
+      so the API key in URL (OpenAlex ?api_key=...) is NOT visible.
+    - `https://host:port` proxy: CONNECT inside TLS. Hostname hidden. Best.
+    - `socks5://host:port` proxy: SOCKS5 handshake. Hostname visible, similar
+      to http://.
+
+    Local Clash/V2RayN on 127.0.0.1: http:// is acceptable (user-controlled
+    proxy), but we WARN for awareness.
+
+    Remote HTTP proxy (not on 127.0.0.1 / ::1 / 10.* / 172.16-31.* / 192.168.*):
+    refused unless allow_remote=True.
+    """
+    import ipaddress
+    import urllib.parse as up
+    import warnings
+
+    try:
+        parsed = up.urlparse(proxy_url)
+    except Exception:
+        return  # can't parse; let urllib deal with it
+
+    scheme = (parsed.scheme or "").lower()
+    host = (parsed.hostname or "").lower()
+
+    if scheme not in ("http", "https", "socks5", "socks5h"):
+        return  # unknown scheme, skip
+
+    # Determine if proxy is on a local/private IP
+    is_local = False
+    if host in ("localhost", "127.0.0.1", "::1", "0.0.0.0"):
+        is_local = True
+    elif host.startswith(("10.", "192.168.")):
+        is_local = True
+    elif host.startswith("172."):
+        # 172.16.0.0/12 is private
+        try:
+            ip = ipaddress.IPv4Address(host)
+            if ip in ipaddress.IPv4Network("172.16.0.0/12"):
+                is_local = True
+        except ValueError:
+            pass
+
+    if scheme in ("https",):
+        # HTTPS proxy: encrypted, no leak
+        return
+
+    if scheme in ("socks5", "socks5h"):
+        # SOCKS5: hostname visible in handshake
+        if is_local:
+            warnings.warn(
+                f"paper-agent: proxy {proxy_url} uses SOCKS5 (plaintext hostname "
+                f"leak). For local proxy this is acceptable; for remote consider "
+                f"using HTTPS proxy or VPN.",
+                stacklevel=3,
+            )
+        else:
+            if not allow_remote:
+                raise RuntimeError(
+                    f"paper-agent: REFUSING remote SOCKS5 proxy {proxy_url}. "
+                    f"SOCKS5 leaks target hostname in plaintext. Either:\n"
+                    f"  - Run a local SOCKS5 proxy (Clash/V2RayN on 127.0.0.1)\n"
+                    f"  - Use HTTPS proxy instead\n"
+                    f"  - Set environment variable PAPER_AGENT_ALLOW_REMOTE_PROXY=1 "
+                    f"to override (NOT recommended for untrusted networks)"
+                )
+        return
+
+    if scheme == "http":
+        # HTTP proxy: CONNECT handshake is plaintext
+        if is_local:
+            warnings.warn(
+                f"paper-agent: proxy {proxy_url} uses HTTP (plaintext CONNECT "
+                f"handshake — target hostname visible to anyone on path). For "
+                f"local Clash/V2RayN this is acceptable. For REMOTE proxy, "
+                f"consider HTTPS proxy or VPN.",
+                stacklevel=3,
+            )
+        else:
+            if not allow_remote:
+                raise RuntimeError(
+                    f"paper-agent: REFUSING remote HTTP proxy {proxy_url}. "
+                    f"HTTP proxy leaks target hostname in plaintext CONNECT. "
+                    f"Either:\n"
+                    f"  - Run a local HTTP proxy (Clash/V2RayN on 127.0.0.1)\n"
+                    f"  - Use HTTPS proxy instead\n"
+                    f"  - Set environment variable PAPER_AGENT_ALLOW_REMOTE_PROXY=1 "
+                    f"to override (NOT recommended for untrusted networks)"
+                )
+            # User explicitly allowed remote proxy; warn anyway.
+            warnings.warn(
+                f"paper-agent: using remote HTTP proxy {proxy_url} "
+                f"(PAPER_AGENT_ALLOW_REMOTE_PROXY=1). Target hostname will be "
+                f"visible in plaintext CONNECT. This is your decision; do not use "
+                f"on untrusted networks.",
+                stacklevel=3,
+            )
+
+
+def _get_allow_remote_proxy() -> bool:
+    """Check if user explicitly allows remote (non-local) proxies."""
+    return os.environ.get("PAPER_AGENT_ALLOW_REMOTE_PROXY", "").strip() in ("1", "true", "yes")
 
 
 def _build_opener() -> "urllib.request.OpenerDirector":
