@@ -385,14 +385,9 @@ def _openalex_venue_prestige(venue_name: str) -> float:
 
 
 def _http_get_json_simple(url: str, timeout: int = 5):
-    """Lightweight JSON GET helper (separate from pa_cli.fetch.http_get_json
-    to avoid cross-module coupling in deep_rerank.py).
-    """
-    import requests
-    s = requests.get(url, timeout=timeout, headers={"User-Agent": "paper-agent/3.9.7.3 (Mavis)"})
-    return s.status_code, (s.json() if s.text else {})
-
-
+    """v3.9.13.3: uses pa_cli._http so HTTPS_PROXY env var is honored."""
+    from ._http import http_request_get as _http_request_get
+    return _http_request_get(url, headers={"User-Agent": "paper-agent/3.9.13.3 (Mavis)"}, timeout=timeout)
 def _load_queries_lookup(bench_dir: Optional[Path] = None) -> dict:
     """Load queries.json and return {qid: query_text} dict.
 

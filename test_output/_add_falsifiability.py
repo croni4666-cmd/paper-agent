@@ -13,7 +13,7 @@ Usage:
     # Parameterized
     python test_output/_add_falsifiability.py \\
         --topic "DEA-Tobit second-stage" \\
-        --question "Does 算力券享受 have a non-zero effect on DMU efficiency?" \\
+        --question "Does compute-subsidy 享受 have a non-zero effect on DMU efficiency?" \\
         --evidence "16 DMU real data, p=0.31, direction matches hypothesis" \\
         --verdict "supported-with-caveats" \\
         --severity "weak" \\

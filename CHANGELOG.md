@@ -7,6 +7,86 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.13.3] - 2026-08-14
+
+### Refactor — Round 13 4-verifier audit fixes
+
+**Audit scope**: network/TLS, privacy, code patterns, deps/supply (4 parallel verifiers, 2026-08-14). Full reports: `test_output/_audit13_network_tls.md` (17KB) / `_audit13_privacy.md` (10KB) / `_audit13_code_patterns.md` (10KB) / `_audit13_deps_supply.md` (29KB).
+
+**Findings summary**: 2 HIGH (missing deps), 1 MEDIUM (privacy), 6 HIGH network (F-001~F-006 = bare urlopen in 6 files), 0 code-pattern issues.
+
+### Added
+
+- **NEW MODULE `pa_cli/_http.py`** (10KB) — shared HTTP utilities with TLS validation.
+  All bare `urllib.urlopen` / `urllib.request.urlretrieve` / `requests.get` calls
+  in pa_cli/ should now go through this module so the v3.9.13.0 plaintext-proxy
+  check fires for every network operation.
+  Public API: `get_proxy_dict()`, `validate_proxy_security()`, `build_opener()`,
+  `http_get()`, `http_get_json()`, `http_post()`, `http_request_get()`.
+- **6 files migrated to use `pa_cli._http`** (fixes F-001~F-006):
+  - `pa_cli/search.py` (http_get_json) — was F-001
+  - `pa_cli/keys.py` (_probe) — was F-002
+  - `pa_cli/aminer_channel.py` (_http_get) — was F-003
+  - `pa_cli/batch_fetch.py` (search_paper) — was F-004
+  - `pa_cli/cross_encoder.py` (download_file) — was F-005
+  - `pa_cli/deep_rerank.py` (_http_get_json_simple) — was F-006
+- **`pa_cli/fetch.py` refactored** with deprecated wrappers around `pa_cli._http`
+  for backward compat (F-007 + future-proofing).
+- **New optional dependency groups in `requirements-optional.txt`** (was
+  incomplete — `scipy` + `playwright` were hard-required by code but not
+  declared anywhere):
+  - **MoE router**: `scipy>=1.10` + `scikit-learn>=1.3` + `lightgbm>=4.0` + `jieba>=0.42`
+  - **CNKI engine**: `playwright>=1.40` (hard dep of `pa_cli/cnki_channel.py:384`,
+    in default `all` engine list — fresh install would `ImportError` on cascade)
+  - **arXiv engine**: `arxiv>=2.0`
+  - **Deep rerank + review**: `PyMuPDF>=1.23`
+  - **Build**: `weasyprint>=60.0` + `brotli>=1.0`
+
+### Fixed
+
+- **F-007**: `pa fetch --proxy` now ALWAYS wins over `HTTPS_PROXY`/`HTTP_PROXY`
+  env var (was: ignored if EITHER env var was set). Standard CLI > env var
+  precedence with a warning when --proxy overrides env var.
+- **Privacy MEDIUM**: sanitized `经编` → `textile` and `算力券` →
+  `compute-subsidy` in 4 test/bench files (Round 10 had removed city/school
+  names but not the underlying research topics that, combined with academic
+  context, form an identifying fingerprint):
+  - `bench/moe-keyword-samples.md:120` (`中国 经编 算力券 政策 杠杆` → `中国 textile compute-subsidy 政策 杠杆`)
+  - `test_output/_add_moe_sample.py:36,87,88,224` (industry tag `i3=纺织经编` → `i3=纺织`,
+    fixture DOIs `本地经编产业大脑研究` → `本地纺织产业大脑研究`,
+    `算力券补贴政策评估` → `compute-subsidy 补贴政策评估`)
+  - `test_output/_add_falsifiability.py:16` (`Does 算力券享受` → `Does compute-subsidy 享受`)
+  - `test_output/_status_moe_samples.py:101` (`本地经编 算力券 政策 杠杆` → `本地纺织 compute-subsidy 政策 杠杆`)
+- **`pyproject.toml` version drift** (LOW): `version = "3.9.12.0"` →
+  `"3.9.13.3"` (was lagging 2 minor versions behind `pa_cli/__init__.py:61`).
+
+### Verified
+
+- `pa_cli/_http.py` round-trip: `python -c "from pa_cli._http import *; print('OK')"`
+- All 4 audit reports re-readable from disk.
+- 0 remaining `经编` / `算力券` in pa_cli/ or bench/ (only in
+  `test_output/_audit13_privacy.md` audit doc itself, which is
+  self-referential).
+- `pa_cli/fetch.py:fetch_doi` F-007: --proxy always wins with warning.
+
+### Notes
+
+- This release has 0 NEW user-facing features — purely internal cleanup
+  + security + privacy. The user-facing impact is:
+  - `pa moe-router` (when `scipy`/`lightgbm`/`scikit-learn`/`jieba` installed)
+    now has correct deps documented.
+  - `pa search --engine all` (when `playwright` installed) won't
+    `ImportError` on the CNKI cascade.
+  - `pa fetch --proxy` no longer silently ignored when env var is set.
+- Code-pattern audit: 0 findings (no `shell=True` / `pickle` / `eval` /
+  `verify=False` / hardcoded keys / `chmod` / `os.environ` race conditions).
+- Privacy audit: 0 CRITICAL/HIGH; only the 1 MEDIUM (research-topic fingerprint)
+  that v3.9.13.3 fixes.
+- Network/TLS audit: 6 HIGH all fixed in this release by `_http.py`
+  consolidation. F-008~F-014 are all MEDIUM/LOW/INFO (documented behavior).
+- Tracked for v3.9.14: `pa_cli/search.py` proxy support (all 8 search
+  targets HTTPS so no plaintext leak, just a UX gap).
+
 ## [3.9.13.2] - 2026-08-14
 
 ### Bug fix

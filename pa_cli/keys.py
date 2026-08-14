@@ -276,24 +276,18 @@ def cmd_audit() -> Dict[str, Any]:
 # =============== Check (live probe) ===============
 
 def _probe(url: str, headers: dict = None, timeout: int = 15) -> tuple:
-    """GET, return (status_code, response_snippet)."""
-    h = {"User-Agent": "paper-agent/3.2 keys-check"}
-    if headers:
-        h.update(headers)
-    req = ur.Request(url, headers=h)
+    """v3.9.13.3: uses pa_cli._http so HTTPS_PROXY env var is honored.
+
+    Returns (status_code, snippet_str).
+    """
+    from ._http import http_get as _http_get
     try:
-        with ur.urlopen(req, timeout=timeout) as r:
-            body = r.read()[:300].decode("utf-8", errors="ignore")
-            return r.status, body[:200]
+        body = _http_get(url, headers=headers, timeout=timeout)
+        return 200, body[:120].decode("utf-8", errors="replace")
     except urllib.error.HTTPError as e:
-        try:
-            return e.code, e.read()[:200].decode("utf-8", errors="ignore")
-        except Exception:
-            return e.code, ""
+        return e.code, (e.read()[:120].decode("utf-8", errors="replace") if e.fp else "")
     except Exception as e:
-        return 0, str(e)[:200]
-
-
+        return 0, str(e)[:120]
 def cmd_check(service_id: Optional[str] = None) -> Dict[str, Any]:
     """Live probe each key (or one specific). Updates last_checked timestamp.
 

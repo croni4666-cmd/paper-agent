@@ -123,20 +123,12 @@ def is_model_downloaded(cache_dir: Path = DEFAULT_CACHE_DIR) -> bool:
 
 
 def download_file(url: str, target: Path, timeout: int = 60) -> None:
-    """Download a single file with progress indication."""
+    """v3.9.13.3: uses pa_cli._http so HTTPS_PROXY env var is honored."""
+    from ._http import http_get as _http_get
+    body = _http_get(url, timeout=timeout)
     target.parent.mkdir(parents=True, exist_ok=True)
-    if target.exists():
-        return
-    print(f"  Downloading {target.name} from {url}...")
-    try:
-        urllib.request.urlretrieve(url, target)
-    except Exception as e:
-        raise RuntimeError(
-            f"Failed to download {target.name} from {url}: {e}\n"
-            f"Tip: set HF_ENDPOINT=https://hf-mirror.com for Chinese networks."
-        ) from e
-
-
+    with open(target, "wb") as f:
+        f.write(body)
 def ensure_model_downloaded(
     cache_dir: Path = DEFAULT_CACHE_DIR,
     prefer_endpoint: Optional[str] = None,

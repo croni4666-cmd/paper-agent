@@ -86,53 +86,12 @@ UA_BROWSER = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 
 
 def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
-    # 2026-07-20 fix: removed 'br' (Brotli) from Accept-Encoding.
-    # urllib stdlib cannot decode Brotli; OpenAlex defaults to br for Chrome UA
-    # which causes silent 0 results. gzip + deflate is universally supported.
-    h = {"User-Agent": UA_BROWSER,
-         "Accept": "application/json",
-         "Accept-Language": "en-US,en;q=0.9",
-         "Accept-Encoding": "gzip, deflate"}  # NO 'br' — urllib can't decode it
-    if headers:
-        h.update(headers)
-    req = ur.Request(url, headers=h)
-    try:
-        with ur.urlopen(req, timeout=timeout) as r:
-            raw = r.read()
-            ce = (r.headers.get("Content-Encoding") or "").lower()
-            if "gzip" in ce:
-                raw = gzip.decompress(raw)
-            text = raw.decode("utf-8", errors="ignore")
-            return r.status, json.loads(text)
-    except urllib.error.HTTPError as e:
-        try:
-            err_raw = e.read()
-            if "gzip" in (e.headers.get("Content-Encoding") or "").lower():
-                err_raw = gzip.decompress(err_raw)
-            return e.code, json.loads(err_raw.decode("utf-8", errors="ignore"))
-        except Exception:
-            return e.code, {}
-    except Exception:
-        return 0, {}
+    """v3.9.13.3: now goes through pa_cli._http so HTTPS_PROXY env var is honored.
 
-
-# ──────────────────────────────────────────────────────────────────────
-# Top-N deep enrichment (v3.9.7.8)
-# For papers lacking cite/abstract, do "second-hop" lookups:
-#   - If has DOI → query S2 `paper/DOI:...` (returns full tldr/inf_cite)
-#   - If no DOI → query Crossref by title (returns DOI + cite)
-# Used to lift Chinese-paper cite coverage from 21% (search-only) to ~40-50%.
-# ──────────────────────────────────────────────────────────────────────
-
-# Known S2 placeholder strings for tldr filter (same as dedup loop)
-S2_TLDR_PLACEHOLDERS = (
-    "It's time to dust off the gloves",
-    "It\u2019s time to dust off the gloves",
-    "It's time to dust off the sledgehammers",
-    "It\u2019s time to dust off the sledgehammers",
-)
-
-
+    Returns (status_code, parsed_dict_or_bytes_or_error_dict).
+    """
+    from ._http import http_get_json as _http_get_json_helper
+    return _http_get_json_helper(url, headers=headers, timeout=timeout)
 def _s2_lookup_doi(doi: str) -> Optional[Dict]:
     """Semantic Scholar paper/DOI endpoint — returns full metadata for one paper.
 
