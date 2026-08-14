@@ -17,7 +17,7 @@ transformers>=4.30
 # === Async batch fetch (pa fetch-batch) ===
 # aiohttp + cache for parallel PDF downloads
 aiohttp>=3.9
-aiohttp-client-cache>=0.10
+aiohttp-client-cache>=0.14.3
 
 # === Topic modeling (pa topics) ===
 # BERTopic + UMAP + HDBSCAN
