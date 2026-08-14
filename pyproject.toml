@@ -44,7 +44,7 @@ dependencies = [
     "charset-normalizer>=3.0",
     "cryptography>=41.0",
     "python-dotenv>=1.0",
-    "PyYAML>=6.0",
+    "PyYAML>=6.0.3",
 ]
 
 [project.optional-dependencies]

@@ -24,7 +24,7 @@ cryptography>=41.0
 python-dotenv>=1.0
 
 # YAML parser (used by pa_cli/config.py for project.yml)
-PyYAML>=6.0
+PyYAML>=6.0.3
 
 # Optional: LLM rerank (pa moe-router --use-llm). NOT required for default pa search / pa fetch.
 # Uncomment if you want to use the LLM rerank feature.
