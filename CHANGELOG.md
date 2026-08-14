@@ -7,6 +7,31 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.13.1] - 2026-08-14
+
+### Security
+
+- **CNKI proxy: refuse plaintext HTTP by default.**  
+  The CNKI search engine uses `xueshu789.com` (HTTPS) as entry, which
+  JS-redirects to a plain-HTTP CNKI proxy IP (e.g. `http://120.53.241.46:5888`).
+  This is a real plaintext leak: user CNKI session cookies + search
+  queries were being transmitted in cleartext.  
+  v3.9.13.1 adds `_validate_cnki_proxy_security()` in `pa_cli/cnki_channel.py`
+  that:
+    - HTTPS CNKI proxy: silent (no leak)
+    - HTTP CNKI proxy (default): REFUSE with clear error + 3 mitigations
+    - HTTP CNKI proxy + `PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1`: WARN, accept
+    - Unexpected scheme (e.g. `file://`): REFUSE
+  Threat model documented in `SECURITY.md` "Known Limitations" #4.
+
+### Notes
+
+- v3.9.13.0 added `_validate_proxy_security()` for pa fetch (local
+  HTTP proxy warn, remote HTTP proxy refuse). v3.9.13.1 extends
+  the same discipline to the CNKI engine.
+- For users who can't use VPN and need to keep using CNKI: set
+  `PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1` environment variable.
+
 ## [3.9.12.0] - 2026-08-10 (ClinicalTrials.gov engine + 2026-08-10 minor)
 
 ### Added — ClinicalTrials.gov as 8th default search engine

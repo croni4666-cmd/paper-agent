@@ -111,11 +111,18 @@ These are accepted limitations of the current design, not bugs:
    Mitigation: verify checksums for any PDF you intend to use in
    published work.
 
-4. **CNKI proxy IP discovery via redirect**. The example IP
-   `120.53.241.46:5888` in `pa_cli/cnki_channel.py` docstring is
-   a known endpoint at the time of writing; the actual IP is
-   load-balanced. Not a security concern (the connection is over
-   user cookies, not auth tokens).
+4. **CNKI proxy IP discovery via redirect** (v3.9.13.1+ mitigated). The
+   example IP `120.53.241.46:5888` in `pa_cli/cnki_channel.py` is a
+   load-balanced endpoint resolved from `xueshu789.com` (HTTPS) JS
+   redirect. As of v3.9.13.0, the actual connection is over **plaintext
+   HTTP** because the third-party CNKI proxy service does not support
+   HTTPS. This is a real plaintext leak: user CNKI session cookies and
+   search queries were transmitted in cleartext. **v3.9.13.1 now REFUSES
+   this by default** with `_validate_cnki_proxy_security()`. Users who
+   must keep using CNKI can override with `PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1`
+   (accepts with WARN) or, better, use a VPN that encrypts traffic to
+   the CNKI proxy IP. The long-term fix is for the CNKI proxy service
+   to support HTTPS — out of paper-agent's scope.
 
 5. **Branch protection on main allows direct push** (no required
    PR reviews) because this is a single-maintainer hobby project.
