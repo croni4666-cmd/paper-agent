@@ -43,7 +43,7 @@ dependencies = [
     "requests-cache>=1.0",
     "charset-normalizer>=3.0",
     "cryptography>=41.0",
-    "python-dotenv>=1.0",
+    "python-dotenv>=1.2.2",
     "PyYAML>=6.0",
 ]
 

@@ -21,7 +21,7 @@ charset-normalizer>=3.0
 cryptography>=41.0
 
 # .env loader (used by pa_cli/keys.py to read user API keys)
-python-dotenv>=1.0
+python-dotenv>=1.2.2
 
 # YAML parser (used by pa_cli/config.py for project.yml)
 PyYAML>=6.0
