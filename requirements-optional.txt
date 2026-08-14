@@ -1,0 +1,35 @@
+# paper-agent OPTIONAL dependencies
+# These are NOT required for the core `pa search` / `pa fetch` / `pa sample-pool` workflows.
+# Install only if you need the corresponding feature.
+
+# === LLM listwise rerank (pa moe-router --use-llm) ===
+# Requires OpenAI-compatible API endpoint (e.g. local Qwen2.5 or OpenAI cloud)
+openai>=1.0
+tiktoken>=0.4
+
+# === Local cross-encoder rerank (pa moe-router --use-cross-encoder) ===
+# Downloads 2-3 GB on first use (BAAI/bge-reranker-base or similar).
+# For LTR features (P0-8) only.
+sentence-transformers>=2.2
+torch>=2.0
+transformers>=4.30
+
+# === Async batch fetch (pa fetch-batch) ===
+# aiohttp + cache for parallel PDF downloads
+aiohttp>=3.9
+aiohttp-client-cache>=0.10
+
+# === Topic modeling (pa topics) ===
+# BERTopic + UMAP + HDBSCAN
+bertopic>=0.16
+umap-learn>=0.5
+hdbscan>=0.8
+
+# === Local CORE engine install (tools/install_core.py) ===
+# CORE v3 API. Local install via `pa mcp install` to add to .env.
+# No third-party Python package required; CORE has a public API.
+
+# === MCP server (one-shot setup via pa mcp install) ===
+# The MCP server itself is a public third-party package (paper-search-mcp, MIT, 22 free sources).
+# Install is handled by `pa mcp install` which writes the JSON config to your MCP client.
+# No additional Python package needed for paper-agent itself.

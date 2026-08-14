@@ -1,0 +1,318 @@
+[
+  {
+    "doi_name": "arXiv_2310.06825",
+    "doi": "10.48550/arXiv.2310.06825",
+    "prefer": "arxiv",
+    "elapsed_sec": 22.28,
+    "size_bytes": 3749788,
+    "sha256_8": "dfbac4e7",
+    "source_or_error": "arxiv",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\arXiv_2310.06825_prefer-arxiv.pdf",
+    "full_result": {
+      "source": "arxiv",
+      "arxiv_id": "2310.06825",
+      "pdf_url": "https://arxiv.org/pdf/2310.06825",
+      "size": 3749788,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\arXiv_2310.06825_prefer-arxiv.pdf"
+    }
+  },
+  {
+    "doi_name": "arXiv_2310.06825",
+    "doi": "10.48550/arXiv.2310.06825",
+    "prefer": "annas",
+    "elapsed_sec": 10.18,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "annas search yielded no PDF for 'arXiv.2310.06825'",
+      "hint": "Try a different query or prefer=auto"
+    }
+  },
+  {
+    "doi_name": "arXiv_2310.06825",
+    "doi": "10.48550/arXiv.2310.06825",
+    "prefer": "cnki",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.48550/arXiv.2310.06825",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "arXiv_2310.06825",
+    "doi": "10.48550/arXiv.2310.06825",
+    "prefer": "scihub",
+    "elapsed_sec": 41.52,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.48550/arXiv.2310.06825",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "arXiv_2310.06825",
+    "doi": "10.48550/arXiv.2310.06825",
+    "prefer": "auto",
+    "elapsed_sec": 25.76,
+    "size_bytes": 3749788,
+    "sha256_8": "dfbac4e7",
+    "source_or_error": "arxiv",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\arXiv_2310.06825_prefer-auto.pdf",
+    "full_result": {
+      "source": "arxiv",
+      "arxiv_id": "2310.06825",
+      "pdf_url": "https://arxiv.org/pdf/2310.06825",
+      "size": 3749788,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\arXiv_2310.06825_prefer-auto.pdf"
+    }
+  },
+  {
+    "doi_name": "Nature_nature12373",
+    "doi": "10.1038/nature12373",
+    "prefer": "arxiv",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.1038/nature12373",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "Nature_nature12373",
+    "doi": "10.1038/nature12373",
+    "prefer": "annas",
+    "elapsed_sec": 8.54,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "annas search yielded no PDF for 'nature12373'",
+      "hint": "Try a different query or prefer=auto"
+    }
+  },
+  {
+    "doi_name": "Nature_nature12373",
+    "doi": "10.1038/nature12373",
+    "prefer": "cnki",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.1038/nature12373",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "Nature_nature12373",
+    "doi": "10.1038/nature12373",
+    "prefer": "scihub",
+    "elapsed_sec": 25.35,
+    "size_bytes": 943776,
+    "sha256_8": "5929b8e4",
+    "source_or_error": "scihub",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\Nature_nature12373_prefer-scihub.pdf",
+    "full_result": {
+      "source": "scihub",
+      "mirror": "https://sci-hub.mk",
+      "doi": "10.1038/nature12373",
+      "pdf_url": "https://sci.bban.top/pdf/10.1038/nature12373.pdf",
+      "size": 943776,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\Nature_nature12373_prefer-scihub.pdf"
+    }
+  },
+  {
+    "doi_name": "Nature_nature12373",
+    "doi": "10.1038/nature12373",
+    "prefer": "auto",
+    "elapsed_sec": 40.12,
+    "size_bytes": 943776,
+    "sha256_8": "5929b8e4",
+    "source_or_error": "scihub",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\Nature_nature12373_prefer-auto.pdf",
+    "full_result": {
+      "source": "scihub",
+      "mirror": "https://sci-hub.mk",
+      "doi": "10.1038/nature12373",
+      "pdf_url": "https://sci.bban.top/pdf/10.1038/nature12373.pdf",
+      "size": 943776,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\Nature_nature12373_prefer-auto.pdf"
+    }
+  },
+  {
+    "doi_name": "OSF_nxv6a",
+    "doi": "10.31219/osf.io/nxv6a_v1",
+    "prefer": "arxiv",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.31219/osf.io/nxv6a_v1",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "OSF_nxv6a",
+    "doi": "10.31219/osf.io/nxv6a_v1",
+    "prefer": "annas",
+    "elapsed_sec": 9.3,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "annas search yielded no PDF for 'nxv6a_v1'",
+      "hint": "Try a different query or prefer=auto"
+    }
+  },
+  {
+    "doi_name": "OSF_nxv6a",
+    "doi": "10.31219/osf.io/nxv6a_v1",
+    "prefer": "cnki",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.31219/osf.io/nxv6a_v1",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "OSF_nxv6a",
+    "doi": "10.31219/osf.io/nxv6a_v1",
+    "prefer": "scihub",
+    "elapsed_sec": 44.98,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.31219/osf.io/nxv6a_v1",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "OSF_nxv6a",
+    "doi": "10.31219/osf.io/nxv6a_v1",
+    "prefer": "auto",
+    "elapsed_sec": 49.68,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.31219/osf.io/nxv6a_v1",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "NEJM_oa2034577",
+    "doi": "10.1056/NEJMoa2034577",
+    "prefer": "arxiv",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.1056/NEJMoa2034577",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "NEJM_oa2034577",
+    "doi": "10.1056/NEJMoa2034577",
+    "prefer": "annas",
+    "elapsed_sec": 9.1,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "annas search yielded no PDF for 'NEJMoa2034577'",
+      "hint": "Try a different query or prefer=auto"
+    }
+  },
+  {
+    "doi_name": "NEJM_oa2034577",
+    "doi": "10.1056/NEJMoa2034577",
+    "prefer": "cnki",
+    "elapsed_sec": 0.0,
+    "size_bytes": 0,
+    "sha256_8": "-",
+    "source_or_error": "fetch_all_mirrors_failed",
+    "saved_as": null,
+    "full_result": {
+      "error": "fetch_all_mirrors_failed",
+      "message": "All sources failed for DOI 10.1056/NEJMoa2034577",
+      "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"
+    }
+  },
+  {
+    "doi_name": "NEJM_oa2034577",
+    "doi": "10.1056/NEJMoa2034577",
+    "prefer": "scihub",
+    "elapsed_sec": 35.68,
+    "size_bytes": 774219,
+    "sha256_8": "572d9b28",
+    "source_or_error": "scihub",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\NEJM_oa2034577_prefer-scihub.pdf",
+    "full_result": {
+      "source": "scihub",
+      "mirror": "https://sci-hub.mk",
+      "doi": "10.1056/NEJMoa2034577",
+      "pdf_url": "https://sci.bban.top/pdf/10.1056/NEJMoa2034577.pdf",
+      "size": 774219,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\NEJM_oa2034577_prefer-scihub.pdf"
+    }
+  },
+  {
+    "doi_name": "NEJM_oa2034577",
+    "doi": "10.1056/NEJMoa2034577",
+    "prefer": "auto",
+    "elapsed_sec": 37.82,
+    "size_bytes": 774219,
+    "sha256_8": "572d9b28",
+    "source_or_error": "scihub",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\NEJM_oa2034577_prefer-auto.pdf",
+    "full_result": {
+      "source": "scihub",
+      "mirror": "https://sci-hub.mk",
+      "doi": "10.1056/NEJMoa2034577",
+      "pdf_url": "https://sci.bban.top/pdf/10.1056/NEJMoa2034577.pdf",
+      "size": 774219,
+      "path": "G:\\minimax - workspace\\Paper agent\\test_output\\_strict_matrix_v397\\NEJM_oa2034577_prefer-auto.pdf"
+    }
+  }
+]

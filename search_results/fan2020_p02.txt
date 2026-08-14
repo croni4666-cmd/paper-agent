@@ -1,0 +1,149 @@
+
+========== PAGE 2 ==========
+2004 when it was shown in mice that the gut microbiota 
+regulates host capacity for harvesting energy from the 
+diet as well as energy storage12. Subsequently, and spear-
+headed by application of next-​generation microbiome 
+sequencing, generation of comprehensive microbial gene 
+catalogues, development of targeted bioinformatics and 
+availability of high data storage and operational capac-
+ity, the research field has delivered an enormous amount 
+of new knowledge about the potential role of the gut 
+microbiota in metabolism13–15 (Box 1).
+In this Review, we discuss taxonomic and functional 
+characteristics of the intestinal microbiota in the meta-
+bolically healthy human host and the implication of a 
+reduction in gut microbial diversity for host metabo-
+lism. This is followed by highlighting aspects of abnor-
+mal gut microbiota composition and function, and the 
+relationship to dysmetabolism in obesity, T2D, CMD, 
+metabolic liver disease and malnutrition. We evaluate 
+a series of recently discovered gut microbiota-​derived 
+compounds and their potential role as messengers 
+between the gut microbiota and host metabolism in 
+physiological and diseased states. We highlight exam-
+ples of microbiota-​based therapies to improve meta-
+bolic health and, finally, we outline potential avenues for 
+future epidemiological and experimental studies (Box 2 
+and Box 3).
+Healthy gut microbiota
+A fundamental assumption for claiming disruption of 
+gut microbiota in states of metabolic disorders is knowl-
+edge on the composition and function of the gut micro-
+biota of metabolically healthy people. However, a healthy 
+human gut microbiota has not been defined at any pro-
+found taxonomic resolution. The relative distribution of 
+gut bacteria and archaea is unique to an individual, partly 
+owing to strain-​level diversities and differences in micro-
+bial growth rates16 and in structural variants within the 
+microbial genes17,18, and partly owing to influence from 
+the considerable inter-​individual variation in environ-
+mental exposures and host genetics19. Overall, however, 
+a high taxa diversity, high microbial gene richness and 
+stable microbiome functional cores characterize healthy 
+gut microbial communities18. Yet it is worth noting that 
+high gut bacterial diversity and richness alone are not 
+unbiased indicators of a healthy microbiota, because the 
+intestinal transit time affects microbial richness20. A pro-
+longed transit time may result in an increased richness 
+but not necessarily in a healthy gut microbiota.
+Box 1 | Tools for dissecting gut microbiota–metabolic health associations
+Currently, there is major interest in exploring the potential role of the 
+intestinal microbiome and linked faecal, blood and urine metabolomes  
+as determinants for metabolic health and various metabolic diseases. 
+recent advances in shotgun sequencing technologies and a reduction in 
+sequencing costs together with advances in bioinformatics have made it 
+possible to capture a more comprehensive view of the entire community 
+of gut microorganisms and their functional potentials. similarly, various 
+sensitive and precise technologies for profiling the metabolome of body 
+fluids are available. Here, we summarize some of the recent strategies 
+that have been applied to uncover relationships between the gut 
+microbiome and various metabolomes.
+Microbiome-​wide association studies
+the microbiome-​wide association study approach largely mimics 
+genome-​wide association studies identifying genetic variants in case–
+control studies that are associated with a phenotype, often a disease 
+state. in the case of microbiome-​wide association studies, microbial DNa 
+is purified from intestinal or faecal samples and subjected to deep 
+shotgun-​based sequencing. individually, the identified and assembled 
+genes are then integrated to construct a cross-​sampled, non-​redundant 
+microbial gene catalogue. the abundance of each gene is determined by 
+counting the reads of matching sequences in the individual sample.
+applying various bioinformatic algorithms and correlation coefficients, 
+assembled genes in the microbiome data are clustered into specific 
+groups, such as metagenomic linkage groups8, metagenomic species62, 
+co-​abundance gene groups168 or metagenomic species pan-​genomes169. 
+sequence reads from individual samples that map to the metagenomic 
+linkage groups, metagenomic species, co-​abundance gene groups, 
+metagenomic species pan-​genomes and their contigs, respectively, are 
+then extracted and assembled into high-​quality draft genomes, each  
+of which is defined as a species or a group of highly related species. 
+recently, it has also become possible to define strain-​level signatures  
+in gut microbiomes. these tools include strainPhlan that is based on 
+applying single-​nucleotide variant analysis to the core genome of 
+sequenced microbial isolates170, MetaMLst that is based on species-​ 
+specific hypervariable loci171 and MetaPanPhlan that is based on pan-​ 
+genome profiling172. However, these methods rely on the coverage and 
+quality of reference genomes173. results from strain-​level profiling still 
+need to be validated by obtaining a pure culture containing the target 
+bacterial isolate. in addition, associations with health or disease status  
+can be characterized for individual microbial genes, taxa or modules  
+of microbial functional potentials14,17,45. Classifiers such as supervised  
+machine learning or random forest can be used to assign each sample to a 
+certain category. to validate associations identified by microbiome-​wide 
+association studies, additional metagenomics data sets such as samples 
+from other independent studies are included.
+integrated analyses of microbiome and linked metabolomes
+Gut bacteria can produce various bioactive metabolites, which can enter 
+the bloodstream of the host through absorption into the enterohepatic 
+circulation. specific metabolites associated with a disease phenotype can 
+be identified by mass spectrometry or nuclear magnetic resonance-​based 
+metabolomics of faeces, plasma, urine or other biofluids, making it 
+possible to conduct joint analyses of the microbiome, metabolome and 
+host phenotypes to identify potential mechanistic links15. the analysis 
+framework includes at least four steps: first, as described above, clustering 
+of microbial genes, the functional potential of which can be constructed 
+by organizing the genes into Kyoto Encyclopedia of Genes and Genomes 
+functional modules based on sequence similarity to proteins with 
+known functional characteristics15. the second step involves clustering of 
+metabolites showing co-​abundance to reduce dimension of metabolomics 
+features, given that metabolites are often shaped by common pathways 
+that could be regulated by precursors14. By using weighted gene 
+co-​expression network analysis, which was originated from gene expression 
+analysis, co-​abundant metabolites can be clustered174. Of note, one of the 
+advantages of this algorithm is the use of a bin cluster for unannotated 
+metabolites instead of clustering all metabolites. the next step is to apply 
+non-​parametric statistical tests to correlated clustered genes and 
+metabolites. Finally, based on the hypothesis that microbial functional 
+correlations could be driven by one or few species or by a group of species, 
+it is recommended to perform leave-​one-​out cross-​validation to evaluate 
+the contribution of each gene cluster by removing it from the associations14. 
+Correlation analysis between these specific metabolites and prevalent 
+gene clusters may lead to the identification of specific species that 
+harbour the genes needed to produce precursors of the disease-​relevant 
+metabolites that are produced either by the gut microbiota or by both the 
+host and the gut microbiota14,45. eventually, identified microbial candidates 
+are evaluated in rodent models (Box 2).
+Supervised machine learning
+A form of applied artificial 
+intelligence where the algorithm 
+learns by experience to classify 
+new data according to prior 
+labels.
+Random forest
+A machine learning approach 
+where a multitude of algorithms 
+(decision trees) are used  
+to optimize, for instance, 
+classification or regression  
+of data sets.
+Kyoto Encyclopedia of 
+Genes and Genomes
+A publicly available database 
+in bioinformatics and system 
+medicine-​driven analyses with 
+information on omics-​generated 
+data, biological pathways, 
+chemicals and drugs.
+www.nature.com/nrmicro
+Reviews

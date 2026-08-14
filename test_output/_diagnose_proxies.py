@@ -43,9 +43,9 @@ for label, fn in [
 
 print()
 print("=" * 70)
-print("DIAGNOSIS 2: Unpaywall with real-looking email (paper-agent-user@gmail.com?)")
+print("DIAGNOSIS 2: Unpaywall with real-looking email (paper-agent@example.com?)")
 print("=" * 70)
-for email in ["paper-agent-user@gmail.com", "paper-agent-user@gmail.com"]:
+for email in ["paper-agent@example.com", "paper-agent@example.com"]:
     s, body = _http_get_bytes(
         f"https://api.unpaywall.org/v2/10.1038/nature12373?email={quote(email, safe='@')}",
         timeout=20)

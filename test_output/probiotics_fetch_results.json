@@ -1,0 +1,38 @@
+{
+  "10.3389/fmicb.2025.1661211": {
+    "doi": "10.3389/fmicb.2025.1661211",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\10_3389_fmicb_2025_1661211.pdf",
+    "via_channel": "unpaywall",
+    "via_url": "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1661211/pdf",
+    "elapsed_sec": 79.521,
+    "final_status": "SUCCESS",
+    "cache_hit": false,
+    "size_bytes": 2696468,
+    "_wrapper_notes": {
+      "cache_supported": true,
+      "max_total_sec_supported": false,
+      "channels_translated_to": "auto"
+    }
+  },
+  "10.1007/s10238-024-01304-4": {
+    "error": "[pa] loaded 1 env var(s) from .env\n[pa] fetch DOI=10.1007/s10238-024-01304-4\n[pa] output_dir=. proxy=(none)\n[pa] prefer=auto channels=openalex,arxiv,unpaywall,doi_redirect,scihub,playwright cache=enab"
+  },
+  "10.3390/ijms252010918": {
+    "error": "[pa] loaded 1 env var(s) from .env\n[pa] fetch DOI=10.3390/ijms252010918\n[pa] output_dir=. proxy=(none)\n[pa] prefer=auto channels=openalex,arxiv,unpaywall,doi_redirect,scihub,playwright cache=enabled\n["
+  },
+  "10.3389/fcimb.2024.1465928": {
+    "doi": "10.3389/fcimb.2024.1465928",
+    "saved_as": "G:\\minimax - workspace\\Paper agent\\10_3389_fcimb_2024_1465928.pdf",
+    "via_channel": "unpaywall",
+    "via_url": "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2024.1465928/pdf",
+    "elapsed_sec": 73.5,
+    "final_status": "SUCCESS",
+    "cache_hit": false,
+    "size_bytes": 1610197,
+    "_wrapper_notes": {
+      "cache_supported": true,
+      "max_total_sec_supported": false,
+      "channels_translated_to": "auto"
+    }
+  }
+}

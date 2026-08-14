@@ -1,0 +1,47 @@
+nutrients
+Review
+Fermented Foods: Definitions and Characteristics,
+ff
+Impact on the Gut Microbiota and E ects on
+Gastrointestinal Health and Disease
+† †
+EiriniDimidi ,SelinaRoseCox ,MeganRossiandKevinWhelan*
+King’sCollegeLondon,DepartmentofNutritionalSciences,LondonSE19NH,UK
+* Correspondence: kevin.whelan@kcl.ac.uk
+† Thetwoauthorscontributedequally.
+(cid:1)(cid:2)(cid:3)(cid:1)(cid:4)(cid:5)(cid:6)(cid:7)(cid:8)(cid:1)
+(cid:1)(cid:2)(cid:3)(cid:4)(cid:5)(cid:6)(cid:7)
+Received: 9July2019;Accepted: 2August2019;Published: 5August2019
+Abstract: Fermentedfoodsaredefinedasfoodsorbeveragesproducedthroughcontrolledmicrobial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction. Inrecentyears,fermented
+foodshaveundergoneasurgeinpopularity,mainlyduetotheirproposedhealthbenefits. Theaim
+ofthisreviewistodefineandcharacterisecommonfermentedfoods(kefir,kombucha,sauerkraut,
+tempeh,natto,miso,kimchi,sourdoughbread),theirmechanismsofaction(includingimpactonthe
+microbiota),andtheevidenceforeffectsongastrointestinalhealthanddiseaseinhumans. Putative
+mechanismsfortheimpactoffermentedfoodsonhealthincludethepotentialprobioticeffectoftheir
+constituentmicroorganisms,thefermentation-derivedproductionofbioactivepeptides,biogenic
+amines, andconversionofphenoliccompoundstobiologicallyactivecompounds, aswellasthe
+reduction of anti-nutrients. Fermented foods that have been tested in at least one randomised
+controlledtrial(RCT)fortheirgastrointestinaleffectswerekefir,sauerkraut,natto,andsourdough
+bread. Despiteextensiveinvitrostudies,therearenoRCTsinvestigatingtheimpactofkombucha,
+miso,kimchiortempehingastrointestinalhealth. Themostwidelyinvestigatedfermentedfoodis
+kefir,withevidencefromatleastoneRCTsuggestingbeneficialeffectsinbothlactosemalabsorption
+and Helicobacter pylori eradication. In summary, there is very limited clinical evidence for the
+effectivenessofmostfermentedfoodsingastrointestinalhealthanddisease. Giventheconvincing
+invitro findings, clinical high-quality trials investigating the health benefits of fermented foods
+arewarranted.
+Keywords: kefir;kombucha;sauerkraut;miso;natto;tempeh;soy;kimchi;sourdough;fermentedfood
+1. Introduction
+Fermented foods are defined as “foods or beverages produced through controlled microbial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction”[1]. Manyfoodshave
+historically undergone fermentation, including meat and fish, dairy, vegetables, soybeans, other
+legumes, cereals and fruits. There are several variables in the fermentation process including the
+microorganisms,thenutritionalingredientsandtheenvironmentalconditions,givingrisetothousands
+of different variations of fermented foods. Historically, food fermentation was performed as a
+methodofpreservation,asthegenerationofantimicrobialmetabolites(e.g.,organicacids,ethanoland
+bacteriocins)reducestheriskofcontaminationwithpathogenicmicroorganisms. Fermentationisalso
+usedtoenhancetheorganolepticproperties(e.g.,tasteandtexture),withsomefoods,suchasolives,
+beinginediblewithoutfermentationthatremovesbitterphenoliccompounds.
+Therearetwomainmethodsthroughwhichfoodsarefermented. Firstly,foodscanbefermented
+naturally,oftenreferredtoas“wildferments”or“spontaneousferments”,wherebythemicroorganisms
+Nutrients2019,11,1806;doi:10.3390/nu11081806 www.mdpi.com/journal/nutrients

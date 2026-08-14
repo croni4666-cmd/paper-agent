@@ -1,0 +1,1345 @@
+{
+  "query": "Mediterranean diet characteristics food components review",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 12,
+    "openalex": 12,
+    "arxiv": 12,
+    "semanticscholar": 12,
+    "aminer": 12,
+    "cnki": 1
+  },
+  "dedup_count": 58,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1056/nejmoa1800389",
+      "title": "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts",
+      "authors": [
+        "Ramón Estruch",
+        "Emilio Ros",
+        "Jordi Salas‐Salvadó",
+        "María‐Isabel Covas",
+        "Dolores Corella",
+        "Fernando Arós",
+        "Enrique Gómez‐Gracia",
+        "Valentina Ruíz-Gutiérrez",
+        "Miquel Fiol",
+        "José Lapetra",
+        "Rosa M. Lamuela‐Raventós",
+        "Lluís Serra‐Majem",
+        "Xavier Pintó",
+        "Josep Basora",
+        "Miguel Ángel Muñoz",
+        "José V. Sorlí",
+        "J. Alfredo Martínéz",
+        "Montserrat Fitó",
+        "Alfredo Gea",
+        "Miguel A. Hernán",
+        "Miguel Ángel Martínez‐González"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2018,
+      "cited_by_count": 3530,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa1800389?articleTools=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7185/gold2023.20373",
+      "title": "Characteristics and Tectonic Significance of Subduction Initiation Ophiolites",
+      "authors": [
+        "Julian Pearce"
+      ],
+      "venue": "Goldschmidt2023 abstracts",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9adc7b7602d97037cda92",
+      "matched_phrase": "characteristics",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41558-018-0299-2",
+      "title": "Climate change and interconnected risks to sustainable development in the Mediterranean",
+      "authors": [
+        "Wolfgang Crämer",
+        "Joël Guiot",
+        "Marianela Fader",
+        "Joaquim Garrabou",
+        "Jean‐Pierre Gattuso",
+        "Ana Iglesias",
+        "Manfred A. Lange",
+        "Piero Lionello",
+        "María Carmen Llasat",
+        "Shlomit Paz",
+        "Josep Peñuelas",
+        "Maria Snoussi",
+        "Andrea Toreti",
+        "Michael Tsimplis",
+        "Elena Xoplaki"
+      ],
+      "venue": "Nature Climate Change",
+      "year": 2018,
+      "cited_by_count": 1487,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://ddd.uab.cat/record/203562",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu12020334",
+      "title": "Defining a Healthy Diet: Evidence for the Role of Contemporary Dietary Patterns in Health and Disease",
+      "authors": [
+        "Hellas Cena",
+        "Philip C. Calder"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 1114,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/2/334/pdf?version=1583060849",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1161/circresaha.118.313348",
+      "title": "The Mediterranean Diet and Cardiovascular Health",
+      "authors": [
+        "Miguel Ángel Martínez‐González",
+        "Alfredo Gea",
+        "Miguel Ruiz‐Canela"
+      ],
+      "venue": "Circulation Research",
+      "year": 2019,
+      "cited_by_count": 861,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.ahajournals.org/doi/pdf/10.1161/CIRCRESAHA.118.313348",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/advances/nmy130",
+      "title": "A Global Review of Food-Based Dietary Guidelines",
+      "authors": [
+        "Anna Herforth",
+        "Mary Arimond",
+        "Cristina Álvarez-Sánchez",
+        "Jennifer Coates",
+        "Karin Christianson",
+        "Ellen Muehlhoff"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2019,
+      "cited_by_count": 848,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://academic.oup.com/advances/article-pdf/10/4/590/28921640/nmy130.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.neubiorev.2023.105147",
+      "title": "Outrunning a Bad Diet: Interactions Between Exercise and a Western-style Diet for Adolescent Mental Health, Metabolism and Microbes",
+      "authors": [
+        "Minke H. C. Nota"
+      ],
+      "venue": "NEUROSCIENCE AND BIOBEHAVIORAL REVIEWS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6421776990e50fcafda59a73",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/jof8090950",
+      "title": "What is Hiding in the Israeli Mediterranean Seawater and Beach Sand",
+      "authors": [
+        "Michael Frenkel"
+      ],
+      "venue": "JOURNAL OF FUNGI",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b350b7602d9703e28091",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.scitotenv.2021.150106",
+      "title": "Soil Degradation in the European Mediterranean Region: Processes, Status and Consequences.",
+      "authors": [
+        "Carla S. S. Ferreira"
+      ],
+      "venue": "SCIENCE OF THE TOTAL ENVIRONMENT",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6149b75c5244ab9dcb3174bf",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/advances/nmz054",
+      "title": "The Mediterranean, Dietary Approaches to Stop Hypertension (DASH), and Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) Diets Are Associated with Less Cognitive Decline and a Lower Risk of Alzheimer’s Disease—A Review",
+      "authors": [
+        "Annelien C. van den Brink",
+        "Elske M Brouwer-Brolsma",
+        "Agnes A. M. Berendsen",
+        "Ondine van de Rest"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2019,
+      "cited_by_count": 576,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S2161831322004513/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13082795",
+      "title": "Effect of Diet and Dietary Components on the Composition of the Gut Microbiota",
+      "authors": [
+        "Ashley Beam",
+        "Elizabeth Clinger",
+        "Lei Hao"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 553,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/8/2795/pdf?version=1629020029",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu10010043",
+      "title": "Soy, Soy Foods and Their Role in Vegetarian Diets",
+      "authors": [
+        "Gianluca Rizzo",
+        "Luciana Baroni"
+      ],
+      "venue": "Nutrients",
+      "year": 2018,
+      "cited_by_count": 494,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/10/1/43/pdf?version=1515158166",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu11092059",
+      "title": "Cancer and Mediterranean Diet: A Review",
+      "authors": [
+        "Maria Chiara Mentella",
+        "Franco Scaldaferri",
+        "Caterina Ricci",
+        "Antonio Gasbarrini",
+        "Giacinto Abele Donato Miggiano"
+      ],
+      "venue": "Nutrients",
+      "year": 2019,
+      "cited_by_count": 477,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/11/9/2059/pdf?version=1568032242",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13020699",
+      "title": "Nutritional Components in Western Diet Versus Mediterranean Diet at the Gut Microbiota–Immune System Interplay. Implications for Health and Disease",
+      "authors": [
+        "Cielo García‐Montero",
+        "Oscar Fraile‐Μartinez",
+        "Ana M. Gómez-Lahoz",
+        "Leonel Pekarek",
+        "Alejandro J. Castellanos",
+        "Fernando Noguerales-Fraguas",
+        "Santiago Coca",
+        "Luis G. Guijarro",
+        "Natalio García‐Honduvilla",
+        "Ángel Asúnsolo",
+        "Lara Sánchez‐Trujillo",
+        "Guillermo Lahera",
+        "Julia Buján",
+        "Jorge Monserrat",
+        "Melchor Álvarez‐Mon",
+        "Miguel Ángel Álvarez-Mon",
+        "Miguel Á. Ortega"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 416,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/2/699/pdf?version=1614257561",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13010007",
+      "title": "Influence of Mediterranean Diet on Human Gut Microbiota",
+      "authors": [
+        "Giuseppe Merra",
+        "Annalisa Noce",
+        "Giulia Marrone",
+        "Marco Cintoni",
+        "Maria Grazia Tarsitano",
+        "Annunziata Capacci",
+        "Antonino De Lorenzo"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 405,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/1/7/pdf?version=1608640558",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu11061306",
+      "title": "Obesity and the Mediterranean Diet: A Review of Evidence of the Role and Sustainability of the Mediterranean Diet",
+      "authors": [
+        "Santa D’Innocenzo",
+        "Carlotta Biagi",
+        "Marcello Lanari"
+      ],
+      "venue": "Nutrients",
+      "year": 2019,
+      "cited_by_count": 235,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/11/6/1306/pdf?version=1560062476",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1167/iovs.66.7.3",
+      "title": "Optical and Visual Diet in Myopia",
+      "authors": [
+        "Susana Marcos"
+      ],
+      "venue": "Investigative ophthalmology & visual science",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6841f689163c01c8505f2320",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-822562-2.00395-9",
+      "title": "Mediterranean-Climate Ecosystems",
+      "authors": [
+        "Philip W. Rundel"
+      ],
+      "venue": "Encyclopedia of Biodiversity",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b689b7602d97041f83cd",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12665-015-4239-4",
+      "title": "Karst and Karst Groundwater Resources in the Mediterranean",
+      "authors": [
+        "Julian Xanke"
+      ],
+      "venue": "Hydrogeology Journal",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8f6fadabfae2eee99c222",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5772/intechopen.104257",
+      "title": "Mediterranean Diet and Health",
+      "authors": [
+        "Semra Akar Sahingoz"
+      ],
+      "venue": "Sustainable Development Well-Being Across the Globe - New Perspectives, Concepts, Correlates and Geography",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c5533f35d8759cb6e6ee1c",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/ccol0521817463.006",
+      "title": "Mediterranean Plague in the Age of Justinian",
+      "authors": [
+        "Peregrine Horden"
+      ],
+      "venue": "Hospitals and Healing from Antiquity to the Later Middle Ages",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6216f2115aee126c0fb4b29b",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/9781009325844.021",
+      "title": "Mediterranean Region",
+      "authors": [
+        "Hans‐Otto Pörtner"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f30a939a5f40829cf9f2",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/acrefore/9780190854584.013.615",
+      "title": "Anthropology of the Mediterranean",
+      "authors": [
+        "Laia Soto Bermant"
+      ],
+      "venue": "Oxford Research Encyclopedia of Anthropology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578fcc9939a5f4082ae3540",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003260301-5",
+      "title": "Sustainable Diets",
+      "authors": [
+        "Martin Caraher"
+      ],
+      "venue": "Food Policy in the United Kingdom",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578d656939a5f40826b584d",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17020358",
+      "arxiv_id": "",
+      "title": "Effects of the Mediterranean Diet on the Components of Metabolic Syndrome Concerning the Cardiometabolic Risk",
+      "authors": [
+        "Stefania Scaglione",
+        "T. di Chiara",
+        "M. Daidone",
+        "A. Tuttolomondo"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 66,
+      "influential_cite_count": 4,
+      "reference_count": 117,
+      "tldr": "The Mediterranean diet offers a holistic approach to managing metabolic syndrome and reducing the risk of related chronic diseases and its positive impact on metabolic health, combined with lifestyle changes like increased physical activity provides a sustainable method for addressing the global burden of this syndrome.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/17/2/358/pdf?version=1737364282",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Mediterranean diet offers a holistic approach to managing metabolic syndrome and reducing the risk of related chronic diseases and its positive impact on metabolic health, combined with lifestyle changes like increased physical activity provides a sustainable method for addressing the global burden of this syndrome.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25094942",
+      "arxiv_id": "",
+      "title": "The Mediterranean Diet, Its Microbiome Connections, and Cardiovascular Health: A Narrative Review",
+      "authors": [
+        "Vincenzo Abrignani",
+        "Andrea Salvo",
+        "Gaetano Pacinella",
+        "A. Tuttolomondo"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 66,
+      "influential_cite_count": 0,
+      "reference_count": 191,
+      "tldr": "The Mediterranean diet, rich in minimally processed plant foods and in monounsaturated fats but low in saturated fats, meat, and dairy products, represents one of the most studied diets for cardiovascular health, but it is unclear whether it offers cardiovascular benefits from its individual components or as a whole.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1422-0067/25/9/4942/pdf?version=1715331163",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The Mediterranean diet, rich in minimally processed plant foods and in monounsaturated fats but low in saturated fats, meat, and dairy products, represents one of the most studied diets for cardiovascular health, but it is unclear whether it offers cardiovascular benefits from its individual components or as a whole.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fnut.2020.583981",
+      "arxiv_id": "",
+      "title": "Mediterranean Gluten-Free Diet: Is It a Fair Bet for the Treatment of Gluten-Related Disorders?",
+      "authors": [
+        "K. Bascuñán",
+        "L. Elli",
+        "M. Vecchi",
+        "A. Scricciolo",
+        "F. Mascaretti",
+        "M. Parisi",
+        "L. Doneda",
+        "V. Lombardo",
+        "M. Araya",
+        "L. Roncoroni"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2020,
+      "cited_by_count": 23,
+      "influential_cite_count": 1,
+      "reference_count": 76,
+      "tldr": "A narrative review of the current knowledge about GFD and MedD, their characteristics and central food components, and proposes a combination between the MedD and the GFD, an attractive alternative to reach a gluten-free state that at the same time is healthy, with a clear benefit to those who practice it.",
+      "is_oa": true,
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fnut.2020.583981/pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A narrative review of the current knowledge about GFD and MedD, their characteristics and central food components, and proposes a combination between the MedD and the GFD, an attractive alternative to reach a gluten-free state that at the same time is healthy, with a clear benefit to those who practice it.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-811959-4.00001-8",
+      "title": "Effects of Mediterranean Diet Components on Neurodegenerative Diseases",
+      "authors": [
+        "Farooqui, Akhlaq A.",
+        "Farooqui, Tahira"
+      ],
+      "venue": "Role of the Mediterranean Diet in the Brain and Neurodegenerative Diseases",
+      "year": 2018,
+      "cited_by_count": 21,
+      "reference_count": 96,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/09540105.2024.2398042",
+      "arxiv_id": "",
+      "title": "The role of the Mediterranean diet in prediabetes management and prevention: a review of molecular mechanisms and clinical outcomes",
+      "authors": [
+        "V. Ruiz-Pozo",
+        "P. Guevara-Ramírez",
+        "Elius Paz-Cruz",
+        "Rafael Tamayo-Trujillo",
+        "Santiago Cadena-Ullauri",
+        "Evelyn Frías-Toral",
+        "D. Simancas-Racines",
+        "Yekaterina Altuna-Roshkova",
+        "C. Reytor-González",
+        "A. Zambrano"
+      ],
+      "venue": "Food and Agricultural Immunology",
+      "year": 2024,
+      "cited_by_count": 20,
+      "influential_cite_count": 0,
+      "reference_count": 88,
+      "tldr": "MedDiet’s molecular mechanisms and potential for prediabetes treatment and glycemic control positively affect prediabetes management by improving insulin sensitivity, regulating blood glucose, reducing inflammation, and aiding weight control.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1080/09540105.2024.2398042",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "MedDiet’s molecular mechanisms and potential for prediabetes treatment and glycemic control positively affect prediabetes management by improving insulin sensitivity, regulating blood glucose, reducing inflammation, and aiding weight control.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/antiox11081513",
+      "title": "Modulation of 1,2-Dicarbonyl Compounds in Postprandial Responses Mediated by Food Bioactive Components and Mediterranean Diet",
+      "authors": [
+        "Cruz, Nadia",
+        "Flores, Marcos",
+        "Urquiaga, Inés",
+        "Ávila, Felipe"
+      ],
+      "venue": "Antioxidants",
+      "year": null,
+      "cited_by_count": 13,
+      "reference_count": 194,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Glycoxidative stress with the consequent generation of advanced glycation end products has been implied in the etiology of numerous non-communicable chronic diseases. During the postprandial state, the levels of 1,2-dicarbonyl compounds can increase, depending on numerous factors, including characteristics of the subjects mainly related to glucose metabolism disorders and nutritional status, as well as properties related to the chemical composition of meals, including macronutrient compo",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2076-3921/11/8/1513/pdf?version=1659573904",
+      "tldr": "The modulation of postprandial 1,2-dicarbonyl compounds is discussed in terms of biochemical pathways regulating the levels of these compounds, as well as the effect of phenolic compounds, dietary fiber, and dietary patterns, such as Mediterranean and Western diets.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/09637486.2025.2472216",
+      "arxiv_id": "",
+      "title": "Strategies for increased adherence to the Mediterranean or healthy diet in university food services: a systematic review",
+      "authors": [
+        "Sofia Sousa Silva",
+        "A. Rocha",
+        "C. Viegas"
+      ],
+      "venue": "International Journal of Food Science and Nutrition",
+      "year": 2025,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 77,
+      "tldr": "Architectural nudges, discounts on healthy food and nutritional information were identified as successful strategies, especially among females and students with higher nutrition education, and a combination of nudging strategies in food service is a promising way to promote healthier food habits.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1080/09637486.2025.2472216",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Architectural nudges, discounts on healthy food and nutritional information were identified as successful strategies, especially among females and students with higher nutrition education, and a combination of nudging strategies in food service is a promising way to promote healthier food habits.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20944/preprints202307.0497.v1",
+      "title": "The Effect of Dietary Components of the Mediterranean Diet on Food Allergies: A Systematic Review",
+      "authors": [
+        "Panagiotou, Eleftheria",
+        "Andreou, Eleni",
+        "Nicolaou, Stella A."
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Allergies are a common and increasing health problem affecting millions of people worldwide. In addition to genetic predisposition, this increase in allergic cases is attributed to air pollution, climate change, more time spent indoors, lack of physical activity, and alterations in eating habits. The Mediterranean diet (MD), which includes a lot of fruits and vegetables, whole grains, legumes, nuts, olive oil and fish has been linked to a variety of health benefits, including a lower ris",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu15153295",
+      "title": "The Effect of Dietary Components of the Mediterranean Diet on Food Allergies: A Systematic Review",
+      "authors": [
+        "Panagiotou, Eleftheria",
+        "Andreou, Eleni",
+        "Nicolaou, Stella A."
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 6,
+      "reference_count": 32,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Allergies are a common and increasing health problem affecting millions of people worldwide. This increase is attributed to genetic predisposition, air pollution, climate change, lack of physical activity, and alterations in eating habits. The Mediterranean diet (MD), which includes a lot of fruits and vegetables, whole grains, legumes, nuts, olive oil, and fish, has been linked to a variety of health benefits, including a lower risk of chronic and allergic disease. This paper explores t",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/15/15/3295/pdf?version=1690347898",
+      "tldr": "The animal studies indicated a beneficial effect between the food components of the MD and food allergies, and the limited number of studies highlights the need for more research.",
+      "influential_cite_count": 1,
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-818649-7.00008-4",
+      "title": "Food security and adherence to the Mediterranean diet: An interplay of socio-demographic characteristics",
+      "authors": [
+        "Grammatikopoulou, Maria G.",
+        "Gkiouras, Konstantinos",
+        "Tranidou, Antigoni",
+        "Goulis, Dimitrios G."
+      ],
+      "venue": "The Mediterranean Diet",
+      "year": 2020,
+      "cited_by_count": 4,
+      "reference_count": 121,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-818649-7.00026-6",
+      "title": "The Mediterranean diet and its individual components: Linking with obesity in Italy",
+      "authors": [
+        "Buscemi, Silvio",
+        "Corleo, Davide",
+        "Galvano, Fabio",
+        "De Lorenzo, Antonino"
+      ],
+      "venue": "The Mediterranean Diet",
+      "year": 2020,
+      "cited_by_count": 3,
+      "reference_count": 47,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-811959-4.00013-4",
+      "title": "Effect of Mediterranean Diet Components on Type 2 Diabetes and Metabolic Syndrome",
+      "authors": [
+        "Farooqui, Akhlaq A.",
+        "Farooqui, Tahira"
+      ],
+      "venue": "Role of the Mediterranean Diet in the Brain and Neurodegenerative Diseases",
+      "year": 2018,
+      "cited_by_count": 3,
+      "reference_count": 75,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s44187-025-00645-7",
+      "arxiv_id": "",
+      "title": "Exploring the relationship between functional food perceptions and Mediterranean diet adherence in a Portuguese adult sample",
+      "authors": [
+        "Leandro Oliveira",
+        "J. Ferreira",
+        "Marta Esgalhado"
+      ],
+      "venue": "Discover Food",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 34,
+      "tldr": "Perceptions of FF and Mediterranean diet adherence among Portuguese adults are evaluated, and targeted nutrition education could improve FF literacy and support healthier eating behaviours aligned with the Mediterranean diet.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s44187-025-00645-7.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Perceptions of FF and Mediterranean diet adherence among Portuguese adults are evaluated, and targeted nutrition education could improve FF literacy and support healthier eating behaviours aligned with the Mediterranean diet.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54097/t16sm410",
+      "title": "Association of Components of the Mediterranean Diet with Food Allergies",
+      "authors": [
+        "Deng, Shifan"
+      ],
+      "venue": "Highlights in Science, Engineering and Technology",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>There is a rising incidence of food allergies, and both children and adults suffer from it. Existing research suggests that avoidance of food allergy relies more on avoiding exposure to food allergens in one's life. However, this method of eliminating food allergy through passive elimination may cause nutritional deficiencies, especially in children during their growth period. On the other hand, most of the food circulating may contain other chemical ingredients that can also cause food ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/nfs-07-2023-0140",
+      "arxiv_id": "",
+      "title": "Mediterranean diet and telomere length: aspects from obesity",
+      "authors": [
+        "N. Arslan",
+        "E. Köksal"
+      ],
+      "venue": "Nutrition &amp; Food Science",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 83,
+      "tldr": "This study examines the Mediterranean diet, telomere length and obesity to determine if the MD can help lose weight while maintaining telomere length and fills a research gap and improves the understanding of nutrition, telomere biology and obesity-related outcomes.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study examines the Mediterranean diet, telomere length and obesity to determine if the MD can help lose weight while maintaining telomere length and fills a research gap and improves the understanding of nutrition, telomere biology and obesity-related outcomes.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/obesities5020043",
+      "arxiv_id": "",
+      "title": "A Narrative Review of the Mediterranean Lifestyle and Its Role in Obesity Prevention and Management",
+      "authors": [
+        "Sotiria Laoutari",
+        "Efstratios Christodoulou",
+        "A. Koutelidakis"
+      ],
+      "venue": "Obesities",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 50,
+      "tldr": "Evidence suggests that adherence to the Mediterranean diet is linked to lower obesity rates, improved metabolic markers, and reduced risk of weight gain, and key components contributing to these effects include high fiber intake, healthy fatty acids from olive oil and nuts, and a balanced macronutrient profile that promotes satiety and reduces inflammation.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2673-4168/5/2/43/pdf?version=1749116581",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Evidence suggests that adherence to the Mediterranean diet is linked to lower obesity rates, improved metabolic markers, and reduced risk of weight gain, and key components contributing to these effects include high fiber intake, healthy fatty acids from olive oil and nuts, and a balanced macronutrient profile that promotes satiety and reduces inflammation.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/fft2.70044",
+      "arxiv_id": "",
+      "title": "A Novel Plant‐Based Food to Enlarge the Access of Healthy Bioactive Compounds Typical of the Mediterranean Diet to Non‐Adherent People",
+      "authors": [
+        "Andrea Polo",
+        "F. M. Calabrese",
+        "Ali Zein Alabiden Tlais",
+        "I. Ferrocino",
+        "F. De Filippis",
+        "G. Celano",
+        "O. Vincentini",
+        "V. Valentino",
+        "Cristian Del Bo’",
+        "Simona Bo",
+        "R. Di Cagno",
+        "L. Cocolin",
+        "D. Ercolini",
+        "M. de Angelis",
+        "Marco Gobbetti"
+      ],
+      "venue": "Food Frontiers",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 71,
+      "tldr": "The reshaping of the microbiota reflected on microbiome changes: genes responsible for colanic acid biosynthesis and carbohydrate metabolism increased, whereas genes involved in l‐valine pathway decreased, whereas genes involved in l‐valine pathway decreased.",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/fft2.70044",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The reshaping of the microbiota reflected on microbiome changes: genes responsible for colanic acid biosynthesis and carbohydrate metabolism increased, whereas genes involved in l‐valine pathway decreased, whereas genes involved in l‐valine pathway decreased.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/9781394323128.app3",
+      "title": "Food Components of the Mediterranean Diet",
+      "authors": [],
+      "venue": "Textbook of Lifestyle Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-811959-4.00003-1",
+      "title": "Molecular and Intracellular Signaling Mechanisms of Herbs, Spices, and Food Components in the Mediterranean Diet in Improving Cognitive Function",
+      "authors": [
+        "Panickar, Kiran S.",
+        "Tavener, Selena K.",
+        "Jewell, Dennis E."
+      ],
+      "venue": "Role of the Mediterranean Diet in the Brain and Neurodegenerative Diseases",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 104,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7287/peerj.14329v0.1/reviews/2",
+      "title": "Peer Review #2 of \"Adherence to the Mediterranean diet, kinanthropometric characteristics and physical performance of young male handball players (v0.1)\"",
+      "authors": [],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21203/rs.3.rs-2206452/v1",
+      "title": "Does Food Neophobia Affect Mediterranean Diet Adherence and Eating Disorders in University Students?",
+      "authors": [
+        "OZKAN, Nilufer",
+        "GUL, Fatma Hazan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 46,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n        <jats:p>Purpose\n Food neophobia can describe the fear of the unfamiliar foods. It has many causes such as environmental, cultural, and genetic factors. This situation reduces the consumption of new or unfamiliar foods as well as other foods. The aim of this study is to investigate does food neophobia affect mediterranean diet adherence and eating disorders in university students.\nMethods\n In this cross-sectional study, 1277 university students were inclu",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.tifs.2019.07.034",
+      "arxiv_id": "1908.07391v1",
+      "title": "The Rise of Blockchain Technology in Agriculture and Food Supply Chains",
+      "authors": [
+        "Andreas Kamilaris",
+        "Agusti Fonts",
+        "Francesc X. Prenafeta-Boldu"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1908.07391v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.foodhyd.2015.06.014",
+      "arxiv_id": "1506.03248v1",
+      "title": "Spontaneous gelation of wheat gluten proteins in a food grade solvent",
+      "authors": [
+        "Mohsen Dahesh",
+        "Amélie Banc",
+        "Agnès Duri",
+        "Marie-Hélène Morel",
+        "Laurence Ramos"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1506.03248v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.14586/astroedu/1645",
+      "arxiv_id": "1708.07700v3",
+      "title": "Navigation in the Ancient Mediterranean and Beyond",
+      "authors": [
+        "Markus Nielbock"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.07700v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2312.11767v1",
+      "arxiv_id": "2312.11767v1",
+      "title": "Least-cost diets to teach optimization and consumer behavior, with applications to health equity, poverty measurement and international development",
+      "authors": [
+        "Jessica K. Wallingford",
+        "William A. Masters"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11767v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2208.10580v1",
+      "arxiv_id": "2208.10580v1",
+      "title": "Robotic Perception in Agri-food Manipulation: A Review",
+      "authors": [
+        "Jack Foster",
+        "Mazvydas Gudelis",
+        "Amir Ghalamzan Esfahani"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.10580v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/B978-0-443-13244-5.00015-8",
+      "arxiv_id": "2307.05372v1",
+      "title": "Food Recognition and Nutritional Apps",
+      "authors": [
+        "Lubnaa Abdur Rahman",
+        "Ioannis Papathanail",
+        "Lorenzo Brigato",
+        "Elias K. Spanakis",
+        "Stavroula Mougiakakou"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.05372v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2603.23985v3",
+      "arxiv_id": "2603.23985v3",
+      "title": "Diet Your LLM: Dimension-wise Global Pruning of LLMs via Merging Task-specific Importance Score",
+      "authors": [
+        "Jimyung Hong",
+        "Jaehyung Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.23985v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2311.01042v1",
+      "arxiv_id": "2311.01042v1",
+      "title": "Higher Mediterranean diet score is associated with longer time between relapses in Australian females with multiple sclerosis",
+      "authors": [
+        "Hajar Mazahery",
+        "Alison Daly",
+        "Ngoc Minh Pham",
+        "Madeleine Stephens",
+        "Eleanor Dunlop",
+        "Anne-Louise Ponsonby",
+        "Ausimmune/AusLong Investigator Group",
+        "Lucinda J Black"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.01042v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1155/2020/5385207",
+      "arxiv_id": "2006.01307v1",
+      "title": "Application of Blockchain and Internet of Things to Ensure Tamper-Proof Data Availability for Food Safety",
+      "authors": [
+        "Adnan Iftekhar",
+        "Xiaohui Cui",
+        "Mir Hassan",
+        "Wasif Afzal"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2006.01307v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1801.07239v1",
+      "arxiv_id": "1801.07239v1",
+      "title": "Food recognition and recipe analysis: integrating visual content, context and external knowledge",
+      "authors": [
+        "Luis Herranz",
+        "Weiqing Min",
+        "Shuqiang Jiang"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1801.07239v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41598-018-22691-1",
+      "arxiv_id": "1803.04915v2",
+      "title": "Nutritionally recommended food for semi- to strict vegetarian diets based on large-scale nutrient composition data",
+      "authors": [
+        "Seunghyeon Kim",
+        "Michael F. Fenech",
+        "Pan-Jun Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1803.04915v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1063/1.4964956",
+      "arxiv_id": "1607.08811v1",
+      "title": "Can a CNN Recognize Catalan Diet?",
+      "authors": [
+        "Pedro Herruzo",
+        "Marc Bolaños",
+        "Petia Radeva"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1607.08811v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.62381/acs.sdit2024.36",
+      "arxiv_id": "",
+      "title": "The Potential Role of the Mediterranean Diet in Preventing Depression in the Elderly",
+      "authors": [
+        "Xinyu Jiang"
+      ],
+      "venue": "Academic Conferences Series",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The positive effect of the Mediterranean diet on the mental health of the elderly is explained and the possible role of the Mediterranean diet in preventing depression through anti-inflammatory and antioxidant mechanisms is developed.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The positive effect of the Mediterranean diet on the mental health of the elderly is explained and the possible role of the Mediterranean diet in preventing depression through anti-inflammatory and antioxidant mechanisms is developed.",
+      "quality_flag": null
+    }
+  ]
+}

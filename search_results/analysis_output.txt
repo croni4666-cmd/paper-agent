@@ -1,0 +1,183 @@
+﻿[load] 240 papers (raw)
+[dedup] 207 papers (unique)
+
+=== TOP 30 by relevance (score + cites) ===
+
+ 1. [128|c=  53|?] Effect of probiotic supplementation on gastrointestinal motility, inflammation, motor, non-motor sym
+     Park, Jong Mi, Lee, Sang Chul, Ham, Chorom et al. | Gut Pathogens
+     DOI: 10.1186/s13099-023-00536-1
+
+ 2. [108|c=   8|2025] Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in NAFLD Man
+     Ko-Shih Chang, Wu-Hsien Kuo, Mu-Hsin Chang et al. | International Journal of Molecular Sciences
+     DOI: 10.3390/ijms26135944
+
+ 3. [103|c=   3|2025] Distinct modulatory effects of high-fiber and fermented-food diets on gut microbiota, immune functio
+     M. van den Belt, M. L. Van de Put, E. YuÌksel et al. | medRxiv
+     DOI: 10.1101/2025.08.05.25332853
+
+ 4. [100|c=  19|2022] Fermented brown rice beverage distinctively modulates the gut microbiota in Okinawans with metabolic
+     Yukari Akamine, Jasmine F. Millman, Tsugumi Uema et al. | Nutrition Research
+     DOI: 10.1016/j.nutres.2022.03.013
+
+ 5. [100|c=  10|2023] Different gut microbiota in U.S. formula-fed infants consuming a meat vs. dairy-based complementary 
+     Minghua Tang, Cheng Ma, Eileen M Weinheimer-Haus et al. | Frontiers in Nutrition
+     DOI: 10.3389/fnut.2022.1063518
+
+ 6. [100|c=   0|2026] The effectiveness of a plant-based milk with fermented brown rice on constipation symptoms via gut m
+     Amei Tang, Qiuge Cao, Menghan Wang et al. | European Journal of Nutrition
+     DOI: 10.1007/s00394-026-04029-0
+
+ 7. [ 83|c=   2|?] Probiotic Driven Competitive Exclusion in the Human Gut: A Meta Analysis of Microbial Diversity and 
+     Alshatari, Sumaya Sameer, Ziarno, Malgorzata | ?
+     DOI: 10.20944/preprints202601.1492.v1
+
+ 8. [ 83|c=   2|?] Probiotic-Driven Competitive Exclusion in the Human Gut: A Meta-Analysis of Microbial Diversity and 
+     Alshatari, Sumaya Sameer, Ziarno, Malgorzata | Nutrients
+     DOI: 10.3390/nu18050796
+
+ 9. [ 80|c=   2|?] Impact of Single and Multi-Strain Probiotic Supplementation on Glycaemic Control in Type 2 Diabetic 
+     Tchamani Piame, Laverdure, Yako, Yandiswa Yolanda | Applied Biosciences
+     DOI: 10.3390/applbiosci5010006
+
+10. [ 80|c=   0|2021] THE EFFECT OF FREEZE-DRIED PROBIOTIC SACHETS VERSUS FERMENTED DAIRY PRODUCT (YOGURT) ON GINGIVAL BLE
+     Ismaiel, Mai, fouad, Marwa, abdelmoniem, soad | Egyptian Dental Journal
+     DOI: 10.21608/edj.2021.56782.1446
+
+11. [ 75|c=   0|?] Strain inheritance and neonatal gut microbiota development: a meta-analysis
+     Podlesny, Daniel, Fricke, W. Florian | ?
+     DOI: 10.1101/2020.10.10.20210534
+
+12. [ 75|c=   0|2026] Distinct effects of a dairy probiotic drink and physical exercise on gut microbiota in pediatric acu
+     Libuša Nechalová, Ivan Hric, Sabína Šmahová et al. | Frontiers in Microbiology
+     DOI: 10.3389/fmicb.2026.1791192
+
+13. [ 73|c= 770|2019] Fermented Foods: Definitions and Characteristics, Impact on the Gut Microbiota and Effects on Gastro
+     Eirini Dimidi, Selina Cox, Megan Rossi et al. | Nutrients
+     DOI: 10.3390/nu11081806
+
+14. [ 73|c=   3|2024] Does Yogurt Enriched with Platelet-Activating Factor Inhibitors from Olive Oil By-Products Affect Gu
+     Smaragdi Antonopoulou, E. Mitsou, A. Kyriacou et al. | Frontiers in Bioscience
+     DOI: 10.31083/j.fbl2904159
+
+15. [ 70|c=   4|2025] Randomized study of Lacticaseibacillus fermented milk in Indonesian elderly houses: Impact on gut mi
+     I. Sujaya, M. Mariyatun, P. N. Hasan et al. | World Journal of Gastroenterology
+     DOI: 10.3748/wjg.v31.i12.104081
+
+16. [ 70|c=   3|2020] Gut microbiota profile in infants with milk and/or egg allergy and evaluation of intestinal coloniza
+     Reddel, Sofia, Mennini, Maurizio, Del Chierico, Federica et al. | World Allergy Organization Journal
+     DOI: 10.1016/j.waojou.2020.100424
+
+17. [ 63|c= 222|2020] Non-Dairy Fermented Beverages as Potential Carriers to Ensure Probiotics, Prebiotics, and Bioactive 
+     Estefanía Valero‐Cases, Débora Cerdá-Bernad, Joaquín-Julián Pastor et al. | Nutrients
+     DOI: 10.3390/nu12061666
+
+18. [ 63|c= 128|2019] Fermented Dairy Foods: Impact on Intestinal Microbiota and Health-Linked Biomarkers
+     Sónia González, Tania Fernández-Navarro, Silvia Arboleya et al. | Frontiers in Microbiology
+     DOI: 10.3389/fmicb.2019.01046
+
+19. [ 63|c=  60|2025] Fermented Dairy Products as Precision Modulators of Gut Microbiota and Host Health: Mechanistic Insi
+     Yuan Gao, Yanyan Liu, Tingting Ma et al. | Foods
+     DOI: 10.3390/foods14111946
+
+20. [ 60|c= 669|2022] Programmable probiotics modulate inflammation and gut microbiota for inflammatory bowel disease trea
+     Jun Zhou, Maoyi Li, Qiufang Chen et al. | Nature Communications
+     DOI: 10.1038/s41467-022-31171-0
+
+21. [ 60|c=  49|2024] Effect of a multi-strain probiotic mixture consumption on anxiety and depression symptoms induced in
+     Francesca De Santa, G. Strimpakos, Nicole Marchetti et al. | Microbiome
+     DOI: 10.1186/s40168-024-01752-w
+
+22. [ 58|c=4659|2020] Gut microbiota in human metabolic health and disease
+     Yong Fan, Oluf Pedersen | Nature Reviews Microbiology
+     DOI: 10.1038/s41579-020-0433-9
+
+23. [ 58|c= 644|2023] The gut–liver axis and gut microbiota in health and liver disease
+     Cynthia L. Hsu, Bernd Schnabl | Nature Reviews Microbiology
+     DOI: 10.1038/s41579-023-00904-3
+
+24. [ 58|c=   7|2023] Clinical trials targeting the gut-microbiome to effect ocular health: a systematic review
+     M. Russell, J. Muste, Blanche L. Kuo et al. | Eye
+     DOI: 10.1038/s41433-023-02462-7
+
+25. [ 58|c=   3|2019] Fermented Dairy Products
+     Peláez, C., Martínez-Cuesta, M. C., Requena, T. | How Fermented Foods Feed a Healthy Gut Microbiota
+     DOI: 10.1007/978-3-030-28737-5_2
+
+26. [ 58|c=   2|2025] A Randomized Double-Blind Trial of the Effect of Liupao Tea on Metabolic Parameters, Body Compositio
+     Yuyang Wang, Qiang Hu, Q. Jiang et al. | Nutrients
+     DOI: 10.3390/nu17142371
+
+27. [ 58|c=   1|2025] Multi-Strain Probiotic Supplement Enhances Gut Microbiota Composition in Rats: Evidence for Function
+     Wu, Tzu-Chin | Universal Library of Medical and Health Sciences
+     DOI: 10.70315/uloap.ulmhs.2025.0304005
+
+28. [ 58|c=   0|?] Perspective Chapter: Fermented and Functional Dairy Products in Modulating Gut Microbiota and Human 
+     Kaptan, Binnur | Gut Microbiota as Unseen Regulators of Human Healt
+     DOI: 10.5772/intechopen.1016755
+
+29. [ 55|c=1741|2020] Role of gut microbiota in type 2 diabetes pathophysiology
+     Manoj Gurung, Zhipeng Li, Hannah You et al. | EBioMedicine
+     DOI: 10.1016/j.ebiom.2019.11.051
+
+30. [ 55|c= 625|2020] Gut microbiota modulation: a novel strategy for prevention and treatment of colorectal cancer
+     Winnie Fong, Qing Li, Jun Yu | Oncogene
+     DOI: 10.1038/s41388-020-1341-1
+
+
+=== 主题分布 ===
+  PERSISTENCE: 76 papers
+  FERMENTED_DAIRY: 36 papers
+  MULTI-STRAIN: 17 papers
+  META/SR: 10 papers
+  RCT: 10 papers
+  DOSE: 7 papers
+
+=== TOP 3 in PERSISTENCE ===
+  1. [c=8|2025] Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in
+     DOI: 10.3390/ijms26135944
+  2. [c=3|2025] Distinct modulatory effects of high-fiber and fermented-food diets on gut microbiota, immu
+     DOI: 10.1101/2025.08.05.25332853
+  3. [c=19|2022] Fermented brown rice beverage distinctively modulates the gut microbiota in Okinawans with
+     DOI: 10.1016/j.nutres.2022.03.013
+
+=== TOP 3 in FERMENTED_DAIRY ===
+  1. [c=3|2025] Distinct modulatory effects of high-fiber and fermented-food diets on gut microbiota, immu
+     DOI: 10.1101/2025.08.05.25332853
+  2. [c=19|2022] Fermented brown rice beverage distinctively modulates the gut microbiota in Okinawans with
+     DOI: 10.1016/j.nutres.2022.03.013
+  3. [c=10|2023] Different gut microbiota in U.S. formula-fed infants consuming a meat vs. dairy-based comp
+     DOI: 10.3389/fnut.2022.1063518
+
+=== TOP 3 in MULTI-STRAIN ===
+  1. [c=8|2025] Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in
+     DOI: 10.3390/ijms26135944
+  2. [c=2|?] Impact of Single and Multi-Strain Probiotic Supplementation on Glycaemic Control in Type 2
+     DOI: 10.3390/applbiosci5010006
+  3. [c=49|2024] Effect of a multi-strain probiotic mixture consumption on anxiety and depression symptoms 
+     DOI: 10.1186/s40168-024-01752-w
+
+=== TOP 3 in META/SR ===
+  1. [c=53|?] Effect of probiotic supplementation on gastrointestinal motility, inflammation, motor, non
+     DOI: 10.1186/s13099-023-00536-1
+  2. [c=8|2025] Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in
+     DOI: 10.3390/ijms26135944
+  3. [c=2|?] Probiotic Driven Competitive Exclusion in the Human Gut: A Meta Analysis of Microbial Dive
+     DOI: 10.20944/preprints202601.1492.v1
+
+=== TOP 3 in RCT ===
+  1. [c=3|2025] Distinct modulatory effects of high-fiber and fermented-food diets on gut microbiota, immu
+     DOI: 10.1101/2025.08.05.25332853
+  2. [c=19|2022] Fermented brown rice beverage distinctively modulates the gut microbiota in Okinawans with
+     DOI: 10.1016/j.nutres.2022.03.013
+  3. [c=10|2023] Different gut microbiota in U.S. formula-fed infants consuming a meat vs. dairy-based comp
+     DOI: 10.3389/fnut.2022.1063518
+
+=== TOP 3 in DOSE ===
+  1. [c=0|2026] Effects of probiotic dose on growth performance, health, and gut microbiota of Pacific whi
+     DOI: 10.1093/jahafs/vsag001
+  2. [c=0|2026] Precise quantification of viable probiotic cells is critical for dose-response relationshi
+     DOI: 10.1152/physiol.2026.41.s1.2300380
+  3. [c=1|2020] Probiotic Dose-Response and Strain Number
+     DOI: 10.1201/9780429422591-2
+
+[save] top 50 -> G:\minimax - workspace\Paper agent\search_results\consolidated.json

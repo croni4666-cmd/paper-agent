@@ -1,0 +1,2762 @@
+
+========== PAGE 1 ==========
+From the outcome of recent epidemiological, physiolog-
+ical and omics-​based studies, complemented by cellu-
+lar studies and experiments in animals, it appears that 
+a considerable part of the environmental influence on 
+human health and disease risk may be mediated or mod-
+ified by microbial communities1. These microorganisms, 
+collectively referred to as the microbiota, include a vast 
+number of interacting bacteria, archaea, bacteriophages, 
+eukaryotic virus and fungi coexisting on human surfaces 
+and in all body cavities1. The majority of them are com-
+mensal or mutualistic microorganisms1. The collection 
+of all intestinal microbial genes (that is, the microbiome) 
+in an individual represents a genetic repertoire that is 
+more than one order of magnitude higher in genes than 
+the human genome1. The majority of microorganisms 
+that inhabit humans reside within the intestines and 
+are influenced by mode of birth, infant feeding, life-
+style, medication and the genetics of the host. The gut 
+microbiome has important roles in the training of host 
+immunity, digesting food, regulating gut endocrine func-
+tion and neurological signalling, modifying drug action 
+and metabolism, eliminating toxins and producing 
+numerous compounds that influence the host1.
+Here, we review the literature on the intestinal micro-
+biota of the human host with a focus on bacteria and 
+archaea, and their potential importance for human 
+metabolism. In the literature, there is no consensus on 
+how to define metabolic health. Yet a tentative definition 
+is to have an overall metabolism (as estimated from an 
+array of various measures of body organ functions, such 
+as those of the liver, and intestinal, fat, muscle, heart 
+and brain tissues) that in representative epidemiologi-
+cal studies is linked with both desirable life quality and 
+longevity. A considerable part of the world population, 
+however, primarily due to overeating of processed 
+energy-​dense food, urbanization with sedentary occu-
+pations and leisure-​time inactivity often combined with 
+smoking addiction, has a suboptimal or even a poor 
+metabolic health. The implications are a high prevalence 
+of metabolic disorders, including obesity, non-​alcoholic 
+liver disease, type 2 diabetes mellitus (T2D) as well 
+as cardio-​metabolic disease (CMD), and premature 
+death2–6. In some developing countries, the metabolic 
+health landscape is quite the opposite — a major part of 
+the population is chronically malnourished7.
+Despite the immense differences in pathologies of 
+common chronic metabolic disorders, they are asso-
+ciated with shared and disease-​specific abnormali-
+ties in the composition and function of the intestinal 
+microbiota8–11. Since the start of the microbiota research 
+era, whether disease-​associated aberrant microbiota are 
+involved in disease causation (that is, predisposition, ini-
+tiation or progression) or are secondary phenomena has 
+been widely debated. However, one of the first pieces of 
+evidence for a mechanistic involvement of the gut micro-
+biota in the regulation of metabolism was provided in 
+Gut microbiota in human metabolic 
+health and disease
+Yong Fan    and Oluf Pedersen    ✉
+Abstract | Observational findings achieved during the past two decades suggest that the 
+intestinal microbiota may contribute to the metabolic health of the human host and, when 
+aberrant, to the pathogenesis of various common metabolic disorders including obesity, type 2 
+diabetes, non-​alcoholic liver disease, cardio-​metabolic diseases and malnutrition. However, to 
+gain a mechanistic understanding of how the gut microbiota affects host metabolism, research  
+is moving from descriptive microbiota census analyses to cause-​and-​effect studies. Joint analyses 
+of high-​throughput human multi-​omics data, including metagenomics and metabolomics data, 
+together with measures of host physiology and mechanistic experiments in humans, animals  
+and cells hold potential as initial steps in the identification of potential molecular mechanisms 
+behind reported associations. In this Review, we discuss the current knowledge on how gut 
+microbiota and derived microbial compounds may link to metabolism of the healthy host or to 
+the pathogenesis of common metabolic diseases. We highlight examples of microbiota-​targeted 
+interventions aiming to optimize metabolic health, and we provide perspectives for future basic 
+and translational investigations within the nascent and promising research field.
+Novo Nordisk Foundation 
+Center for Basic Metabolic 
+Research, Faculty of Health 
+and Medical Sciences, 
+University of Copenhagen, 
+Copenhagen, Denmark.
+✉e-​mail: oluf@sund.ku.dk
+https://doi.org/10.1038/ 
+s41579-020-0433-9
+REvIEWS
+Nature Reviews | Microbiology
+
+========== PAGE 2 ==========
+2004 when it was shown in mice that the gut microbiota 
+regulates host capacity for harvesting energy from the 
+diet as well as energy storage12. Subsequently, and spear-
+headed by application of next-​generation microbiome 
+sequencing, generation of comprehensive microbial gene 
+catalogues, development of targeted bioinformatics and 
+availability of high data storage and operational capac-
+ity, the research field has delivered an enormous amount 
+of new knowledge about the potential role of the gut 
+microbiota in metabolism13–15 (Box 1).
+In this Review, we discuss taxonomic and functional 
+characteristics of the intestinal microbiota in the meta-
+bolically healthy human host and the implication of a 
+reduction in gut microbial diversity for host metabo-
+lism. This is followed by highlighting aspects of abnor-
+mal gut microbiota composition and function, and the 
+relationship to dysmetabolism in obesity, T2D, CMD, 
+metabolic liver disease and malnutrition. We evaluate 
+a series of recently discovered gut microbiota-​derived 
+compounds and their potential role as messengers 
+between the gut microbiota and host metabolism in 
+physiological and diseased states. We highlight exam-
+ples of microbiota-​based therapies to improve meta-
+bolic health and, finally, we outline potential avenues for 
+future epidemiological and experimental studies (Box 2 
+and Box 3).
+Healthy gut microbiota
+A fundamental assumption for claiming disruption of 
+gut microbiota in states of metabolic disorders is knowl-
+edge on the composition and function of the gut micro-
+biota of metabolically healthy people. However, a healthy 
+human gut microbiota has not been defined at any pro-
+found taxonomic resolution. The relative distribution of 
+gut bacteria and archaea is unique to an individual, partly 
+owing to strain-​level diversities and differences in micro-
+bial growth rates16 and in structural variants within the 
+microbial genes17,18, and partly owing to influence from 
+the considerable inter-​individual variation in environ-
+mental exposures and host genetics19. Overall, however, 
+a high taxa diversity, high microbial gene richness and 
+stable microbiome functional cores characterize healthy 
+gut microbial communities18. Yet it is worth noting that 
+high gut bacterial diversity and richness alone are not 
+unbiased indicators of a healthy microbiota, because the 
+intestinal transit time affects microbial richness20. A pro-
+longed transit time may result in an increased richness 
+but not necessarily in a healthy gut microbiota.
+Box 1 | Tools for dissecting gut microbiota–metabolic health associations
+Currently, there is major interest in exploring the potential role of the 
+intestinal microbiome and linked faecal, blood and urine metabolomes  
+as determinants for metabolic health and various metabolic diseases. 
+recent advances in shotgun sequencing technologies and a reduction in 
+sequencing costs together with advances in bioinformatics have made it 
+possible to capture a more comprehensive view of the entire community 
+of gut microorganisms and their functional potentials. similarly, various 
+sensitive and precise technologies for profiling the metabolome of body 
+fluids are available. Here, we summarize some of the recent strategies 
+that have been applied to uncover relationships between the gut 
+microbiome and various metabolomes.
+Microbiome-​wide association studies
+the microbiome-​wide association study approach largely mimics 
+genome-​wide association studies identifying genetic variants in case–
+control studies that are associated with a phenotype, often a disease 
+state. in the case of microbiome-​wide association studies, microbial DNa 
+is purified from intestinal or faecal samples and subjected to deep 
+shotgun-​based sequencing. individually, the identified and assembled 
+genes are then integrated to construct a cross-​sampled, non-​redundant 
+microbial gene catalogue. the abundance of each gene is determined by 
+counting the reads of matching sequences in the individual sample.
+applying various bioinformatic algorithms and correlation coefficients, 
+assembled genes in the microbiome data are clustered into specific 
+groups, such as metagenomic linkage groups8, metagenomic species62, 
+co-​abundance gene groups168 or metagenomic species pan-​genomes169. 
+sequence reads from individual samples that map to the metagenomic 
+linkage groups, metagenomic species, co-​abundance gene groups, 
+metagenomic species pan-​genomes and their contigs, respectively, are 
+then extracted and assembled into high-​quality draft genomes, each  
+of which is defined as a species or a group of highly related species. 
+recently, it has also become possible to define strain-​level signatures  
+in gut microbiomes. these tools include strainPhlan that is based on 
+applying single-​nucleotide variant analysis to the core genome of 
+sequenced microbial isolates170, MetaMLst that is based on species-​ 
+specific hypervariable loci171 and MetaPanPhlan that is based on pan-​ 
+genome profiling172. However, these methods rely on the coverage and 
+quality of reference genomes173. results from strain-​level profiling still 
+need to be validated by obtaining a pure culture containing the target 
+bacterial isolate. in addition, associations with health or disease status  
+can be characterized for individual microbial genes, taxa or modules  
+of microbial functional potentials14,17,45. Classifiers such as supervised  
+machine learning or random forest can be used to assign each sample to a 
+certain category. to validate associations identified by microbiome-​wide 
+association studies, additional metagenomics data sets such as samples 
+from other independent studies are included.
+integrated analyses of microbiome and linked metabolomes
+Gut bacteria can produce various bioactive metabolites, which can enter 
+the bloodstream of the host through absorption into the enterohepatic 
+circulation. specific metabolites associated with a disease phenotype can 
+be identified by mass spectrometry or nuclear magnetic resonance-​based 
+metabolomics of faeces, plasma, urine or other biofluids, making it 
+possible to conduct joint analyses of the microbiome, metabolome and 
+host phenotypes to identify potential mechanistic links15. the analysis 
+framework includes at least four steps: first, as described above, clustering 
+of microbial genes, the functional potential of which can be constructed 
+by organizing the genes into Kyoto Encyclopedia of Genes and Genomes 
+functional modules based on sequence similarity to proteins with 
+known functional characteristics15. the second step involves clustering of 
+metabolites showing co-​abundance to reduce dimension of metabolomics 
+features, given that metabolites are often shaped by common pathways 
+that could be regulated by precursors14. By using weighted gene 
+co-​expression network analysis, which was originated from gene expression 
+analysis, co-​abundant metabolites can be clustered174. Of note, one of the 
+advantages of this algorithm is the use of a bin cluster for unannotated 
+metabolites instead of clustering all metabolites. the next step is to apply 
+non-​parametric statistical tests to correlated clustered genes and 
+metabolites. Finally, based on the hypothesis that microbial functional 
+correlations could be driven by one or few species or by a group of species, 
+it is recommended to perform leave-​one-​out cross-​validation to evaluate 
+the contribution of each gene cluster by removing it from the associations14. 
+Correlation analysis between these specific metabolites and prevalent 
+gene clusters may lead to the identification of specific species that 
+harbour the genes needed to produce precursors of the disease-​relevant 
+metabolites that are produced either by the gut microbiota or by both the 
+host and the gut microbiota14,45. eventually, identified microbial candidates 
+are evaluated in rodent models (Box 2).
+Supervised machine learning
+A form of applied artificial 
+intelligence where the algorithm 
+learns by experience to classify 
+new data according to prior 
+labels.
+Random forest
+A machine learning approach 
+where a multitude of algorithms 
+(decision trees) are used  
+to optimize, for instance, 
+classification or regression  
+of data sets.
+Kyoto Encyclopedia of 
+Genes and Genomes
+A publicly available database 
+in bioinformatics and system 
+medicine-​driven analyses with 
+information on omics-​generated 
+data, biological pathways, 
+chemicals and drugs.
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 3 ==========
+Box 2 | A framework to study causality of gut microbial components
+to progress from microbiome–disease 
+associations to functions of the microbiome  
+in a given disease, additional experiments  
+are suggested to explore potential causality 
+between microbial components and the disease 
+of interest. Biological samples from affected 
+and control individuals are analysed using 
+shotgun sequencing and untargeted (that is, 
+discovery-based and global but semi-quantitative) 
+metabolomics profiling to identify microbial 
+features or molecules differently abundant in 
+various biofluids (see the figure, part a). in an 
+untargeted run, the analyte is characterized by 
+its retention time and its mass to charge ratio 
+(m/z value). the identification of a novel 
+compound is confirmed by generation of a 
+nuclear magnetic resonance spectrum or 
+matching fragmental behaviour and retention 
+time to synthetic reference standards175. 
+Both microbiome and metabolome data sets are 
+subjected to integrative analysis to capture 
+candidate biosynthetic gene clusters (BGCs), 
+bacteria or communities that are highly related 
+to metabolites. to identify whether the 
+compound of interest is produced in a 
+microbiota-​dependent manner, triple 
+quadrupole mass spectrometry can be used  
+to perform targeted (that is, validation of 
+well-​defined metabolites often in a quantitative 
+manner) profiling of samples from both 
+germ-​free and control mice (see the figure, 
+part b). in addition, the conventionalization  
+of antibiotic-​treated mice to rescue gut 
+microbiota can also specifically demonstrate 
+the role of gut microbiota in generating  
+specific compounds. when employing 
+reaction-selecting modes in targeted capturing 
+of the candidate analytes, both the first 
+quadrupole (Q1) and the last quadrupole (Q3) 
+are set at a specific mass, allowing only distinct 
+monitoring of the ion fragment from a certain 
+precursor, which results in an increased 
+detecting sensitivity.
+when the selected reaction monitoring is 
+applied to multiple product ions from one or 
+more precursor ions, the pattern is called 
+multiple reaction monitoring176.
+Human intestinal microbiome data and 
+microbial-​derived compounds can be 
+associated to select candidate BGCs, microbial 
+species or a microbial community whose 
+presence correlates with the production of 
+specific compounds (see the figure, part c). 
+Dimensionality reduction is achieved by 
+clustering genes that encode the biosynthetic 
+enzymes for secondary metabolite pathways, 
+binning co-​abundant genes and assembling 
+co-​occurring microbes that are present in a 
+defined ecological habitat in space and 
+time14,177.
+Phenotypic profiling of germ-​free mice harbouring a reference BGC, microbial species or microbial community can be profiled in a comparative 
+targeted manner to examine the abundance changes of the compound of interest177.
+to identify downstream signalling pathways that microbial-​derived compounds may be involved in, a genetically altered mouse can be generated to see 
+the change of microorganism-​generated compound because of the inactivated downstream effects (see the figure, part d). the evidence collected above 
+may stimulate to develop microbiota-​directed interventions (Box 3).
+HOMa-​ir, homeostatic model assessment of insulin resistance. Part c of figure adapted from ref.14, springer Nature Limited.
+–1
+0
+1
+Spearman 
+correlation 
+coeﬃcient
+Control
+Control
+Control
+Conven-
+tionalized
+Antibiotic-
+treated
+Germ-
+free
+Disease
+Disease
+Microbial-
+targeted therapy
+Microbial-based
+drug design
+Control
+Gene knockout
+a
+b
+c
+d
+Metagenomic 
+proﬁling
+Untargeted
+metabolomic 
+proﬁling
+m/z
+Intensity
++
+Metabolome
+Microbiome
+Integrative analysis
+Standard
+Analyte
+Time
+Intensity
+Candidate BGCs or 
+bacteria or community
+Metabolite
+identiﬁcation
+Gene knockout
+Control
+Time
+Intensity
+Serum
+Faeces
+Urine
+Serum
+Faeces
+Urine
+Serum
+Faeces
+Urine
+Q1
+Q2
+Q3
+Ion
+source
+Precursor ion
+selection
+Product ion 
+selection
+Fragmentation
+Targeted metabolomics
+Time
+Intensity
+BGC or bacteria or 
+community
+Microbiota-dependent fashion
+Potential targeted
+gene deﬁcient
+Healthy metabolism
++
+BGCs or bacteria or community of interest
+Colonization of
+germ-free mice
+Germ-free
+Comparative targeted metabolomics
+Time
+Intensity
+Control
+Antibiotic-
+treated
+Conven-
+tionalized
+Control
+Germ-
+free
+Serum glucose (mol–1)
+HOMA-IR
+Minutes post 
+insulin injection
+P. copri abundance
+(a.u.)
+5
+10
+15
+0
+0
+50
+100
+**
+**
+*
+Prevotella copri
+Sham control
+20
+10
+40
+30
+50
+0
+0
+20
+40
+60
+Phenotypic proﬁling
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 4 ==========
+The mode of birth and access to breastfeeding 
+shape the infant gut microbiota, and it matures grad-
+ually during childhood in response to environmental 
+exposures21,22. Thereafter, the intestinal microbiota 
+remains relatively stable in late childhood, adolescence 
+and adulthood until a decline in diversity occurs at 
+advanced age, likely owing, in part, to a change in 
+immune functions22. The mature healthy intestinal 
+Box 3 | Microbiota-​changing interventions
+Owing to the exponentially growing 
+knowledge gained from 
+epidemio­logical and experimental 
+studies about the impact of the 
+intestinal microbiome on metabolic 
+health, there is an interest in testing 
+both targeted and untargeted 
+microbiome-​directed interventions 
+in humans with disrupted gut 
+microbiomes (see the figure).
+Untargeted interventions
+Diet or exercise interventions
+in rodents, feeding various 
+combinations of nutrients changes 
+the gut microbiome and metabolism.  
+in particular, high-​saturated fat feeding 
+causes endotoxaemia and insulin 
+resistance178 (Fig. 1). a systematic 
+review has summarized the results  
+of six interventions and nine cross-​ 
+sectional studies investigating the 
+effects of dietary fat on intestinal 
+microbiota in humans179, and 
+demonstrated that diets high in saturated or monounsaturated fat 
+negatively influenced the microbiota whereas diets high in 
+polyunsaturated fat appeared to be neutral with respect to the microbiota. 
+similarly, high-​polysaccharide diet interventions have resulted in altered 
+gut microbiota linked with increased faecal, serum or urine concentrations 
+of short-​chain fatty acids, weight loss and improvements of cytokine and 
+metabolome profiles180–183. Likewise, interventions with increased physical 
+activity have shown adaptive and, in some cases, transmissible changes of 
+the intestinal microbiome linked with an increased capacity for breakdown 
+of lactate, branched-​chain amino acids, an increased potential for 
+synthesis of short-​chain fatty acids and improvements of cardiorespiratory 
+fitness and insulin sensitivity.
+Trials testing probiotics, prebiotics or postbiotics
+Bifidobacterium, Lactobacillus and Saccharomyces spp. have a long history 
+as safe probiotics184. in addition, potential next-​generation probiotics, 
+which are not yet marketed, include Faecalibacterium prausnitzii185, 
+Akkermansia muciniphila186 and several Clostridia spp.187. systematic 
+reviews of short-​term randomized controlled trials in healthy individuals 
+show no consistent effect of probiotics on gut microbial composition188. 
+However, it is possible that some probiotics, for example A. muciniphila 
+strains, do not even need to colonize the intestine to provide beneficial 
+metabolic health effects189,190. some non-​digestible polysaccharides called 
+prebiotics change the relative abundance of fermenting microbiota in the 
+colon of rodents and induce improved gut barrier functions and in some 
+cases improved metabolism191. Of note, randomized controlled trials 
+testing various prebiotics have demonstrated that inulin-​type fructans 
+changed the gut microbiota composition in adult women with obesity, 
+leading to modest changes in host metabolism192. in children who are 
+overweight or have obesity, it is reported that oligofructose-​enriched 
+inulin prebiotics alter the intestinal microbiota and modestly reduce body 
+weight, adiposity and inflammatory markers193. the same holds for the 
+combination of various probiotic strains and prebiotics often named 
+synbiotics. Postbiotics represent the pasteurized version of probiotics or 
+parts of microbial strains possessing health-​promoting effects194. a pilot 
+trial of pasteurized A. muciniphila and its membrane protein amuc_1100 
+demonstrated positive effects on markers of human metabolism186,195.
+Heterologous and autologous faecal microbiota transplantation
+it is currently unsettled whether heterologous faecal microbiota 
+transplantation will be an option in preventing or treating metabolic 
+dysfunctions with aetiologies far more complex than chronic infections 
+caused by Clostridioides difficile196. Challenges include lack of knowledge 
+about the importance of dieting for stool graft colonization and survival, 
+optimal anaerobic handling of donor faeces, immunological compatibility 
+between donor and recipient, and the role of bacteriophages and fungi for 
+a successful faecal microbiota transplantation. in parallel, there is a need 
+for examining the feasibility and efficacy of the much less complicated 
+autologous faecal microbiota transplantation stored prior to development 
+of a metabolic disease, that is, faecal samples biobanked in childhood or 
+adolescence.
+Targeted interventions
+Bio-engineered commensals and drugs
+in mice, gavaging engineered Escherichia coli overexpressing the satiety 
+factor N-​acylphosphatidylethanolamine alleviated high-​fat diet-​induced 
+obesity, insulin resistance and hepatosteatosis197; and in rats with diabetes, 
+a genetically modified Lactobacillus gasseri strain with the ability to express 
+and secrete glucagon-​like peptide 1 (GLP-1) increased insulin release and 
+reduced hyperglycaemia198. whether delivering genetically modified 
+organisms carrying microbial genes to the human gut is acceptable for 
+health and drug authorities or consumers is at present unsettled. targeting 
+specific microbial-​synthesized metabolites by delivering tailored drugs is 
+another emerging potential frontier to optimize metabolism. a prime 
+example is the specific drug blockade of the microbial production of 
+trimethylamine78.
+Bacteriophage therapy and CRISPR–Cas9 editing
+as most bacteriophages and archaeal viruses are specific to bacterial  
+and archaeal strains, respectively, they may in future experiments  
+be applied to target dysbiotic parts of the microbiome in individuals  
+with metabolic disorders199. similarly, it is at present unknown whether  
+CrisPr–Cas can be applied to edit and reset dysbiotic parts of a  
+human gut microbiome without causing undesired effects for the  
+host200.
+Exercises
+Individualized
+nutrition
+Faecal microbiota
+transplantation
+Bio-engineered
+commensals
+Drugs targeting selected
+microbial metabolism
+Phage therapy
+CRISPR–Cas9-based
+therapy
+Prebiotics
+Probiotics
+Synbiotics
+Postbiotics
+Microbiome-directed interventions
+General improvement in
+microbial composition and functions
+Speciﬁc modiﬁcation in
+metabolism-related gut microbiota
+Targeted
+Untargeted
+A
+E
+D C
+B
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 5 ==========
+microbial core functions include genes encoding glycos-
+aminoglycan degradation, the production of short-​chain 
+fatty acids (SCFAs) via fermentation of complex poly-
+saccharides and synthesis of specific lipopolysaccharides 
+(LPS), and the biosynthesis of some essential amino 
+acids and vitamins13,18,23,24 (Fig. 1).
+In summary, a ‘gold standard’ reference of a human 
+gut microbiota with the capacity to promote host meta­
+b­olic health does not exist. This is owing to a tremen-
+dous variation, especially at taxonomy levels, between 
+individuals of different demography, ethnicity, sex, age 
+and health status. The implications of this variation are 
+that epidemiological studies must include controls for 
+contextual factors or adjust for the contextual differences.
+Receding gut microbial diversity
+Compared with people living traditional lifestyles (for 
+instance, people in East Africa or in the Amazonas) 
+who have not been exposed to antimicrobial factors of 
+modern living, most populations in technically devel-
+oped countries of the world show reduced gut micro-
+bial diversity25. In parallel with urbanization, sewerage, 
+higher standards of housing and improved hygiene 
+in general, the abundance of Bacteroides, Prevotella, 
+Desulfovibrio, Lactobacillus and Oxalobacter genera 
+in the gut microbiota is declining25–27. This decline in 
+diversity relates to a rise in the prevalence of common 
+chronic metabolic disorders28. Similarly, in both lean 
+individuals and individuals with obesity, low microbial 
+gene richness links with a relative increase in adipos-
+ity, insulin resistance, inflammation and dyslipidaemia28. 
+The precise and specific causes of the receding microbial 
+richness and diversity in developed countries are elusive. 
+However, besides the general improvement in standards 
+of living and hygiene, the use of antibiotics to combat 
+infectious diseases is suspected to be a contributor29. 
+For instance, the use of antibiotics before pregnancy, 
+during pregnancy or in early childhood may change 
+the composition of the gut microbiota of infants and 
+children, practices that have occurred in parallel with 
+increases in the incidence of early-​onset obesity30,31. 
+In adults, short-​term treatment of young healthy indi-
+viduals with broad-​spectrum antibiotics causes the 
+long-​term depletion of some commensal and mutual-
+istic bacteria32. However, causal relationships between 
+antibiotic use, disruption of the gut microbiota and 
+dysmetabolism have not been shown33–35. The effects of 
+antibiotics on the gut microbiota and metabolism may 
+be dependent on host genetics because studies in mice 
+fed a high-​fat diet demonstrate that the effect of anti-
+biotics on numerous metabolic variables is dependent 
+on the genetic background of the animals36. Below, we 
+discuss aspects of abnormal gut microbiota and the 
+relationships to metabolism in obesity, T2D, metabolic 
+liver disease and CMD, where the diversity of the gut 
+microbiota of the affected is often reported to be reduced 
+compared with healthy individuals, and even more 
+so compared with people living traditional lifestyles28,37. 
+In addition, we discuss how severe malnutrition dur-
+ing infancy and early childhood relates to a relative 
+depletion of certain bacteria in the gut microbiota. In 
+the absence of clinically controlled interventions aimed 
+at restoring the richness and diversity of gut microbial 
+communities in chronic disorders, it is not possible to 
+evaluate whether a receding intestinal microbiota is 
+part of disease causation or a secondary adaptation in 
+states of chronic non-​communicable disorders. Yet there 
+is some evidence that dietary interventions may improve 
+low microbial gene richness and host metabolism in 
+individuals with obesity38.
+Gut microbiota of metabolic pathologies
+Gut microbiota is aberrant in obesity. The incidence of 
+obesity and its metabolic co-​morbidities in the devel-
+oped countries has increased dramatically since the mid-​
+twentieth century39. Sedentary lifestyles and increased 
+food consumption in combination with a widespread 
+polygenetic susceptibility are considered to be the major 
+causes for the obesity epidemic40, which is potentially 
+further aggravated by the widespread use of antibiotics29. 
+In addition, evidence is accumulating for a role of the 
+gut microbiota in mediating some of the environmental 
+effects in obesity pathogenesis. Following the discovery 
+in 2006 that a transferrable obesity-​associated micro­
+biota can induce weight gain in lean mice41, subse-
+quent epidemiological studies have shown differences 
+in the gut microbiota of individuals with obesity and 
+lean individuals. At the species level, twin studies have 
+shown that the abundance of SCFA producers such as 
+Eubacterium ventriosum and Roseburia intestinalis is 
+associated with obesity42, whereas butyrate producers 
+such as Oscillospira spp.43 and the methanogenic 
+archaeon Methanobrevibacter smithii may associate 
+with leanness44. Another metagenome-​wide association 
+study of lean individuals and individuals with obesity 
+showed that the abundance of Bacteroides thetaiotaomi­
+cron, a glutamate-​fermenting commensal, was markedly 
+decreased in individuals with obesity and was inversely 
+correlated with serum glutamate concentration45. 
+Furthermore, gavage of mice with B. thetaiotaomicron 
+protected against adiposity, pointing to possible future 
+modalities for obesity intervention targeting the gut 
+microbiota with potential probiotic or microbial com-
+pounds (Box 3). Analyses of gut microbial pathways and 
+gene families suggest that obesity is associated with a 
+decreased capacity for unidirectional conjugation, 
+which transfers genetic material between bacteria, and a 
+reduction in superoxide reductase, potentially leading to 
+intestinal oxidative stress46 (Fig. 2). Observational studies 
+have been complemented by a faecal microbiota trans-
+plantation study demonstrating that transplantation of 
+stools from twins discordant for obesity into germ-​free 
+mice transfers, in a diet-​dependent manner, the pheno-
+type of the human donor to the recipient animal47. This 
+landmark study provides the rationale for the ongoing 
+intense search for gut microbial messengers linking the 
+gut microbiota with whole-​body energy metabolism. In 
+studies of the potential impact of altered gut microbiota 
+in the development of chronic disorders including obe-
+sity, however, it is important to bear in mind that various 
+drugs may influence the gut microbiota. For instance, 
+intake of statins, which are cholesterol-​lowering drugs 
+widely prescribed for the prevention of arterioscle-
+rosis, has been linked with a health-​promoting gut 
+Dysmetabolism
+Metabolic dysfunctions often 
+including abdominal obesity, 
+dyslipidaemia and higher 
+blood glucose and higher 
+blood pressure than normal.
+Endotoxaemia
+The presence of endotoxin(s) 
+within the blood, for example, 
+bacterial lipopolysaccharides.
+Dyslipidaemia
+An abnormal amount and an 
+abnormal relative distribution 
+of various lipids in the blood.
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 6 ==========
+microbiota48. Obviously, observations of any effects of 
+microbiota-​modifying drugs ideally need to be followed 
+up in interventional studies to address any causality of 
+the relationships.
+Type 2 diabetes and prediabetes link with altered gut 
+microbiota. Indirect evidence that the intestinal micro-
+biota together with the hormonal secretion capacities 
+of the distal gut may be involved in glucose regulation 
+comes from large-​scale epidemiological studies show-
+ing that, compared with individuals without colectomy, 
+patients with total colectomy have an increased risk 
+of T2D49. In addition, mechanistic studies in rodents 
+have shown that hyperglycaemia may increase intesti-
+nal barrier permeability through a GLUT2-​dependent 
+transcriptional reprogramming of intestinal epithelial 
+cells and alteration of tight junction integrity, subse-
+quently causing a leaky mucosa50. Therefore, there is 
+major interest in understanding whether an aberrant 
+gut micro­biota is involved in triggering or sustaining 
+elevated blood glucose in T2D and its precursor states. 
+T2D represents ~90% of all diabetes cases51 and, like 
+obesity, is growing in incidence and prevalence, affect-
+ing between 5 and 15% of the adult population, making 
+it the most common endocrine disorder52. The aetiology 
+of T2D involves a combination of hundreds of genetic 
+↓ Mucus
+    secretion
+GPCR-41/43
+GPCR-41/43
+Microbiota related to metabolic health
+Aberrant microbiota related to metabolic diseases
+Diet low in animal fat and protein
+but high in plant ﬁbres
+Host enzyme
+digestion
+Acid
+hydrolysis
+Fermentation
+Indigestible
+polysaccharides
+Diet high in animal fat and protein
+but low in plant ﬁbres
+Host
+proteases
+Proteolysis
+• Ammonia 
+• Amines
+• H2
+• CO2
+• CH4
+• Organic
+   acids
+• p-Cresol 
+• Phenyl-
+ propionate
+• Indole
+ propionate 
+• Indole
+ acetate
+• Indole
+Phenylacetate
+Hydrogen
+sulﬁde
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+Peptides
+Other
+amino acids
+Sulfur
+amino acids
+Aromatic
+amino acids
+↑ Luminal pH
+↑ Acetaldehyde
+↑ Energy
+    expenditure
+↓ Blood
+    glucose
+↑ Mucus
+    secretion
+↑ Methane
+↓ Luminal pH
+↑ Glucose-stimulated
+    insulin secretion
+↑ BCFAs
+↑ TMAO
+• Deamination
+• Decarboxylation
+• Methionine
+• Cystine
+• Cysteine
+• Taurine
+Tyrosine
+Phenylalanine Tryptophan
+Miscellaneous
+reactions
+Sulfate
+reduction
+PAMPs (LPS)
+L cells
+↑ Metabolic
+    endotoxaemia
+↑ Blood
+    glucose
+↓ Glucose-stimulated
+    insulin secretion
+Gut hormones
+PYY or GLP-1
+Weekly defecation
+a
+b
+SCFAs
+Propionate
+Acetate
+Butyrate
+PPARγ
+β-Oxidation
+Indigestible but 
+fermentable
+polysaccharides
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 7 ==========
+variants and a series of environmental factors, which are 
+shared with obesity53. Most individuals are either over-
+weight or obese, and the pathophysiology in the early 
+stages of these cases is characterized by insulin resist-
+ance of primarily skeletal muscles and liver and adipose 
+tissues, and a compensatory increased biosynthesis and 
+secretion of insulin. In the presence of continued insu-
+lin resistance, insulin biosynthesis declines, which is fol-
+lowed by an aggravation of hyperglycaemia54,55. Besides 
+hyperglycaemia, the T2D phenotype often exhibits 
+dyslipidaemia with elevated circulating levels of triglyc-
+erides and low-​density lipoprotein cholesterol, hyperten-
+sion and an increased tendency for platelet aggregation. 
+All of these abnormalities are risk factors for premature 
+arteriosclerosis55,56. Consequently, individuals with 
+T2D are, in addition to health behaviour modifications, 
+treated with multiple medications targeting both ele-
+vated plasma glucose and risk factors for cardiovascular 
+co-​morbidities. However, the multidrug regimens affect 
+the gut microbiota of these individuals in many differ-
+ent ways57. Therefore, recent epidemiological studies 
+attempting to elucidate links between the gut microbiota 
+and T2D have focused on the drug-​naive early stages 
+of T2D, called prediabetes. Individuals with prediabetes 
+have elevated plasma glucose values that are within the 
+non-​diabetes range but raised to a level where they are at 
+an increased risk of developing overt T2D and ischaemic 
+cardiovascular disease11. In these drug-​naive individuals 
+with prediabetes, the gut microbiota exhibits a loss 
+of butyrate-​producing taxa, a decrease in abundance of 
+Akkermansia muciniphila and an increase in abundance 
+of bacteria with pro-​inflammatory potentials11,58 (Fig. 2). 
+Gestational diabetes mellitus (GDM), which may occur 
+in the third trimester of pregnancy and is estimated to 
+affect 7–10% of all pregnancies, is another prediabetic 
+state59. In GDM, diagnostic criteria for plasma glucose 
+are set at lower thresholds than for other forms of dia-
+betes owing to the toxic effects on fetus development 
+of even slightly elevated glycaemia59. Interestingly, com-
+pared with pregnant women with normoglycaemia in 
+the same trimester, women with GDM have a disrupted 
+gut microbiota composition, and differences in the gut 
+microbiota are still detectable between the two groups 
+of women 8 months after pregnancy. Both during and 
+after pregnancy, the gut microbiota of GDM resem-
+bles the aberrant microbiota composition reported in 
+non-​pregnant individuals with T2D60, where a reduced 
+abundance of butyrate-​producing bacteria has been con-
+sistently found in addition to an often reduced bacterial 
+richness and an increase in opportunistic pathogens8,61. 
+At the functional potential level, the gut microbiome of 
+individuals with T2D is enriched in multiple pathways. 
+These include an enrichment of pathways involved in 
+sugar-​related membrane transport to increase cellular 
+glucose uptake, branched-​chain amino acid (BCAA) 
+outward transport to induce insulin resistance, methane 
+metabolism related to an anaerobic intestinal environ-
+ment, xenobiotic degradation, metabolism to promote 
+drug resistance and sulfate reduction to reduce insulin 
+sensitivity8 (Fig. 2). However, interpretation of gut micro-
+biota profiles from individuals with T2D who are being 
+treated with multiple drugs is problematic owing to 
+drug confounders. Among the drugs that are frequently 
+prescribed for T2D, the anti-​hyperglycaemic drug met-
+formin appears to change the gut microbiota most, 
+with effects on the relative abundance of multiple gen-
+era and species, such as Escherichia and Intestinibacter, 
+and enhancement of several microbiome functional 
+potentials, such as propionate and butyrate production 
+that induces intestinal gluconeogenesis62–64. In fact, the 
+gut microbiota has been suggested to mediate some of 
+the anti-​hyperglycaemic effects of metformin through 
+enhanced production of SCFAs and unconjugated bile 
+acids, which activate intestinal gluconeogenesis, and 
+an increase in intestinal gluconeogenesis resulting in 
+a lowering of glycaemia65,66. However, any effects that 
+metformin-​induced changes of gut microbiota have on 
+overall glucose regulation may be modest. Consistent 
+with this notion, it has been reported that in germ-​free 
+or antibiotic-​treated mice, the effect of metformin on 
+measures of dysmetabolism remains largely unaffected67. 
+Metformin treatment is also known to cause transient or 
+persistent intestinal discomfort in around one-​third of 
+individuals, which in part may be attributed to increased 
+gas production by some Escherichia spp. and an 
+enrichment of various virulence factors63,64,68.
+Altogether, these studies investigating the role of 
+the gut microbiota in T2D highlight several important 
+findings and shortcomings. The microbiome in indi-
+viduals with overt T2D and prediabetes appears to be 
+Fig. 1 | impact of diet on gut microbiota and host metabolism. The balance between 
+metabolically healthy microbiota and dysbiosis is crucial. Homeostasis is maintained by 
+various factors, such as host genetics, diet, daily number of defecations, physical activity, 
+smoking and drug usage. a | A metabolically healthy microbiota (mainly achieved by a 
+high-​fibre, low animal fat and low animal protein diet) is illustrated. The indigestible but 
+fermentable polysaccharides are metabolized by the microbiota of the large intestine 
+and are fermented to produce an array of compounds, and to stimulate a thick intestinal 
+mucus layer and strong barrier functions. Microbial production of short-​chain fatty acids 
+(SCFAs) provides an additional energy source for colonocytes and causes a decrease in 
+luminal pH. The SCFAs acetate, butyrate and propionate can bind to G protein-​coupled 
+receptor (GPCR)-41 and GPCR-43, which are expressed on enteroendocrine L cells, and 
+subsequently induce secretion of glucagon-​like peptide 1 (GLP-1) and peptide YY (PYY) 
+that contribute to increased energy expenditure162, reduced food intake163 and improved 
+glucose metabolism and insulin secretion164. Butyrate is an activator of the peroxisome 
+proliferator-​activated receptor-​γ (PPARγ) and a stimulator for β-​oxidation and oxygen 
+consumption in the gut, which maintains an anaerobic environment in the gut lumen114.  
+b | Microbial dysbiosis induced by a high animal fat and protein diet, sedentary life, 
+smoking, alcohol intake and relatively infrequent defecation may result in a leaky 
+mucosa, intestinal and systemic inflammation and reduced production of SCFAs, leading 
+to less gut hormones being secreted by L cells. In the fermentation process, complex 
+proteins are first cleaved by various bacterial peptidases, proteases and endopeptidases 
+to release free amino acids and short peptides that then undergo fermentation165. 
+Of note, a dysbiotic microbiota is often associated with a prolonged colonic transit time, 
+resulting in a shift in colonic metabolism leading to increased microbial proteolysis, even 
+though the preferred substrate for bacterial fermentation is fermentable dietary fibres 
+and bacteria will not switch to protein metabolism until fermentable polysaccharides are 
+depleted166.As a result of increased protein fermentation, branched-​chain fatty acids 
+(BCFAs; 2-​methyl butyrate, isobutyrate and isovalerate), trimethylamine, organic acids, 
+gases (H2S (malodorous), H2 and CO2) and trace amounts of phenols, amines, indoles and 
+ammonia are produced, causing an increase in luminal pH167. Altogether, such changes in 
+the microbial environment and metabolites cause a leakage of pathogen-​associated 
+molecular patterns (PAMPs) including lipopolysaccharides (LPS) that become increased 
+in the blood and trigger systemic low-​grade inflammation and insulin resistance147. 
+It should be noted, however, that some indole derivatives such as 3-​indolepropionic 
+acid produced by fermentation of dietary fibres have been shown to improve glucose 
+metabolism137. TMAO, trimethylamine N-​oxide.
+◀
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 8 ==========
+relatively depleted in bacterial butyrate producers and to 
+exhibit an increase in species with a pro-​inflammatory 
+functional potential. However, none of these changes 
+is specific to T2D but they occur in many chronic 
+non-​communicable disorders characterized by a clin-
+ically silent low-​grade inflammation. So far, attempts 
+to transfer gut microbiota from drug-​naive individuals 
+with T2D or prediabetes to germ-​free mice to reproduce 
+the T2D phenotype have failed11.
+Gut microbial dysbiosis linked to cardio-​metabolic dis-
+eases. Arteriosclerosis is one of the leading causes of 
+morbidity and mortality in the western world69. People 
+who suffer from arteriosclerosis frequently have prior 
+clinically silent metabolic dysfunctions for many years, 
+including elevated circulating concentrations of glu-
+cose, insulin70 and lipids71 in addition to insulin resist-
+ance and low-​grade inflammation72. Therefore, it is a 
+major challenge to disentangle the possible impact of an 
+Taxa features
+• ↓ Anaerobes to facultative 
+anaerobes ratio
+• ↓ Biﬁdobacterium longum
+• ↓ Biﬁdobacterium pseudolongum
+Function features
+• ↓ Lantibiotics production
+• ↓ Energy harvest
+• ↓ Immune protection
+• ↓ Vitamin biosynthesis
+• ↑ Pathogenic factors
+Taxa features
+• ↓ Coprococcus comes
+• ↓ Faecalibacterium prausnitzii
+• ↑ Klebsiella pneumoniae
+• ↑ Streptococcus anginosus
+• ↑ Veillonella atypica
+Function features
+• ↑ Oxidative damage
+• ↑ γ-Aminobutyric acid biosynthesis
+• ↓ Haem biosynthesis
+• ↑ Dentriﬁcation
+• ↑ Ethanol production
+• ↑ Lipopolysaccharide and 
+peptidoglycan biosynthesis
+• ↑ BCAAs and AAA biosynthesis
+Taxa features
+• ↓ Enterobacter aerogenes
+• ↓ Escherichia coli
+• ↑ Faecalibacterium prausnitzii
+• ↑ Klebsiella spp.
+• ↑ Ruminococcus gnavus
+• ↑ Streptococcus spp.
+Function features
+• ↓ Activities of SCFAs
+• ↑ TMA lysases
+• ↑ Phosphotransferase system
+• ↓ Vitamin metabolism
+• ↑ Lipopolysaccharide biosynthesis
+• ↑ Tryptophan production
+• ↓ SCFA metabolism
+• ↓ Butyrate production
+Taxa features
+• ↓ Akkermansia muciniphila
+• ↑ Bacteroides vulgatus
+• ↑ Clostridium clostridioforme
+• ↑ Clostridium hathewayi
+• ↓ Clostridiales sp. SS3/4
+• ↑ Prevotella copri
+Function features
+• ↑ Membrane transport of sugars
+• ↑ BCAA transport
+• ↓ SCFA production
+• ↓ Metabolism of cofactors 
+and vitamins
+Taxa features
+• ↓ Bacteroidetes to Firmicutes ratio
+• ↓ Akkermansia muciniphila
+• ↓ Bacteroides thetaiotaomicron
+• ↓ Clostridium histolyticum
+• ↓ Clostridium coccoides
+• ↑ Dorea longicatena
+• ↑ Eubacterium ventriosum
+• ↓ Faecalibacterium prausnitzii
+• ↓ Methanobrevibacter smithii
+• ↑ Roseburia intestinalis
+• ↑ Ruminococcus gnavus
+• ↑ Ruminococcus torques
+Function features
+• ↑ LGC: degradation of β-glucuronide 
+and aromatic amino acids
+• ↑ HGC: production of organic acids 
+and H2
+• ↑ Phosphotransferase system
+• ↓ Glycosaminoglycan degradation
+• ↑ Glutamine or glutamate transport 
+system
+• ↑ Phenylalanine, tyrosine and 
+tryptophan biosynthesis
+• ↓ Valine, leucine and isoleucine 
+degradation
+• ↓ Superoxide reductase
+Healthy microbiota
+Dysbiosis
+Obesity
+Type 2 diabetes
+Malnutrition
+Cardio-metabolic
+disease
+Metabolic liver
+disease
+Fig. 2 | Some of the reported intestinal microbial taxonomic and functional features linked to common metabolic 
+disorders. An overview of selected key gut microbiome features related to metabolic diseases. Multiple studies have 
+implicated bacterial species and functional features in metabolic diseases; however, results differ between studies. The 
+association results from metagenomic studies have been summarized. Selected microbial taxonomic features are listed  
+in addition to their directions in metabolic diseases. The list is not comprehensive of all altered taxonomic or functional 
+features but represents common patterns observed across studies. AAA, aromatic amino acid; BCAA, branched-​chain 
+amino acid; HGC, high gene count; LGC, low gene count; SCFA, short-​chain fatty acid; TMA, trimethylamine; ↓, lower 
+abundance in metabolic diseases when compared with control; ↑, higher levels in metabolic diseases when compared 
+with control.
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 9 ==========
+aberrant gut microbiota on early-​stage metabolic per-
+turbations from an imbalanced gut microbiota that, at 
+a stage distal to the dysmetabolic stage, is escalating the 
+pathogenesis of ischaemic heart disease. On top of this, 
+individuals with CMD are, as in T2D, heavily medicated, 
+making it challenging to tease apart authentic arterio-
+sclerosis signals in the gut micro­biota from signatures 
+induced by complex medication and pre-​morbidities 
+and co-​morbidities. So far, these challenges have not 
+been systematically addressed. A metagenome-​wide 
+association study of faecal samples from individuals 
+with CMD reported that the gut microbiome of these 
+individuals, without adjustments for pre-​morbidities 
+or co-​morbidities, exhibits enriched abundances of 
+Enterobacteriaceae, including Escherichia coli, Klebsiella 
+spp. and Enterobacter aerogenes, as well as an increased 
+abundance of oral cavity species when compared with 
+healthy control subjects73 (Fig. 2). By contrast, individuals 
+with CMD had a reduced abundance of Bacteroides spp. 
+and anti-​inflammatory Faecalibacterium prausnitzii74. 
+At the functional level, a decrease in some fermen-
+tation capacities was seen but an enrichment in the 
+phosphotransferase system, amino acid transporters 
+and enzymes involved in the synthesis of LPS and tri-
+methylamine (TMA)73 was also seen. Recently, it was 
+shown that ischaemic heart failure is associated with a 
+dysbiotic gut microbiota with an increased abundance of 
+Ruminococcus, Acinetobacter and Veillonella spp. and a 
+decreased abundance of Alistipes, Faecalibacterium and 
+Oscillibacter spp.75. At the functional level, the micro-
+biome of these patients was enriched in genes involved 
+in the biosynthesis of LPS and trimethylamine N-​oxide 
+(TMAO)75. Taken together, these studies of CMD point 
+to a more inflammatory and a less fermentative micro-
+biome, even though it remains to be determined which 
+components of the gut microbiota are involved in early-​
+stage dysmetabolism and which are related to a more 
+distal atherogenesis stage.
+Of special interest is the discovery of the TMAO 
+pathway with the involvement of the gut microbiota 
+and relations to ischaemic vascular diseases76. TMA is 
+synthesized by gut microbiota from dietary phosphati-
+dylcholine, lecithin and l-​carnitine, which are found 
+not only in meat from four-​legged animals but also in 
+poultry, seafood and eggs. TMA enters the portal circu-
+lation and is oxidized to TMAO in the liver. Experiments 
+in rodents demonstrate that feeding dietary TMAO or 
+its dietary precursors causes an acceleration of arterio-
+sclerosis, induces platelet aggregation and enhances the 
+thrombosis potential77. Moreover, inhibition of intestinal 
+bacterial TMA production with 3,3-​dimethyl-1-​butanol 
+(a TMA-​lyase inhibitor) attenuates arteriosclerosis and 
+thrombosis78. Epidemiological studies showing posi-
+tive relationships between the plasma concentrations 
+of TMAO and an increased prevalence of stroke and 
+myocardial infarction as well as an increase in prema-
+ture mortality of people with stable coronary artery 
+ischaemia lend support to the outcome of the mech-
+anistic experiments that TMAO is a biomarker of 
+arteriosclerosis79,80.
+Still, there are inconsistencies in available results. For 
+instance, mice fed a diet enriched in l-​carnitine have 
+increased plasma TMAO concentrations but unex-
+pectedly reduced aortic lesion sizes without changes in 
+plasma lipids, thereby indicating a potential beneficial 
+role for l-​carnitine in the prevention of atherosclerosis 
+independently of an increase in plasma TMAO, in this 
+specific mouse model81. Moreover, there are numerous 
+foods that are rich in TMAO itself, such as some cold 
+water-​dwelling fish, the intake of which is generally con-
+sidered beneficial for cardiovascular health82. Lately, the 
+contradictory results may have been reconciled to some 
+extent83. Recent animal and human studies suggest that 
+the influence of TMAO on vascular biology is dependent 
+on dietary–microbiome interactions and host genetics, 
+which may explain some of the apparent controversies 
+of TMAO’s involvement in atherothrombosis. In rodent 
+experiments, it was found that TMAO can be directly 
+produced in the gut in addition to oxidation of TMA in 
+the liver, and blood TMAO levels increased after feed-
+ing the animals with a high-​fibre diet or a high-​choline 
+diet. In two different genetically modified mouse mod-
+els that are predisposed to arteriosclerosis, investigators 
+could not find evidence of any relationships between 
+TMAO generation and accelerated atherogenesis83. 
+However, in the atherosclerosis-​prone animals, circu-
+lating TMAO concentrations linked directly with fea-
+tures of plaque instability, including biomarkers of platelet 
+aggregation, intra-​plaque bleeding and inflammation. 
+In a population-​based observational study of adults, the 
+same authors could not find evidence of correlations 
+between plasma TMAO levels and markers of arterio-
+sclerosis such as intima thickness of carotid arteries or 
+calcium scores of coronary arteries83,84. Thus, it appears 
+that a major role of the partially gut microbiota-​derived 
+TMAO, in relation to ischaemic vascular disorders, 
+may be an aggravation of atherogenesis in individu-
+als with already established ischaemic heart disease or 
+stroke through mechanisms primarily involving plaque 
+instability.
+Dysbiosis of the intestinal microbiota in metabolic liver 
+diseases. Non-​alcoholic fatty liver disease (NAFLD), 
+frequently regarded as the hepatic manifestation of 
+the metabolic syndrome, occurs in many countries 
+with a prevalence of 20–40% of the adult population3. 
+NAFLD comprises a wide spectrum of diseases ranging 
+from simple steatosis to non-​alcoholic steatohepatitis 
+(NASH), which is the inflammatory, aggressive form of 
+NAFLD85. There is growing recognition that a disrupted 
+gut microbiota may be one of several crucial factors in 
+the pathophysiology of NAFLD and NASH. Individuals 
+with NAFLD have an increased abundance of species 
+assigned to Clostridium, Anaerobacter, Streptococcus, 
+Escherichia and Lactobacillus, whereas Oscillibacter, 
+Flavonifaractor, Odoribacter and Alistipes spp. 
+are less abundant86. In comparison, the abundance of 
+Proteobacteria, Enterobacteriaceae and Escherichia 
+spp. is elevated in patients with NASH87. Concordantly, 
+children with steatosis or NASH are depleted in 
+Oscillospira spp. accompanied by higher abundance 
+of Dorea and Ruminococcus spp. when compared with 
+controls88. The microbiota alterations are associated 
+with higher faecal concentrations of 2-​butanone and 
+Atherogenesis
+The dynamic process of 
+forming atheromas (also called 
+plaques), that is, accumulated 
+inflammatory cells, lipids,  
+cell debris, minerals and 
+connective tissue in and on  
+the walls of an artery forming  
+a swelling that narrows the 
+arterial lumen and restricts  
+the flow of blood.
+Thrombosis
+The formation of a blood clot, 
+known as a thrombus, within  
+a blood vessel. The blood clot 
+that consists of platelets, red 
+blood cells and fibrin proteins 
+obstructs the flow of blood 
+through the blood vessel.
+Stroke
+An acute brain insult where 
+compromised blood flow in 
+atherosclerotic arteries or 
+bleeding from brain arteries 
+causes damage to brain tissues 
+often resulting in various 
+paresis.
+Myocardial infarction
+(Also known as an acute heart 
+attack or acute coronary 
+syndrome). An event that 
+occurs when blood flow is 
+acutely compromised or  
+is completely stopped to a  
+part of the heart muscle 
+(myocardium), causing severe 
+damage to the heart.
+Atherosclerosis
+The build-​up of cholesterol, 
+other lipids, inflammatory cells 
+and calcium in artery walls, 
+which can restrict blood flow.
+Atherothrombosis
+The formation of a blood clot 
+within an artery that is affected 
+by arteriosclerosis.
+Plaque instability
+Vulnerable arterial wall plague 
+that intermittently ruptures 
+giving rise to circulating plaque 
+fragments called emboli, which 
+may cause myocardial 
+infarction or stroke.
+Intima
+The innermost coating  
+of the vessel wall including  
+the endothelial surface  
+at the lumen.
+Steatosis
+An abnormal retention of lipids 
+within an organ. The term is 
+most often used about a fatty 
+liver.
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 10 ==========
+4-​methyl-2-​pentanone that cause hepatocellular toxic-
+ity in individuals with metabolic liver diseases compared 
+with healthy controls88.
+Additionally, given that the microbiota associated 
+with NALFD is enriched in ethanol-​producing bac-
+teria such as E. coli, it has been hypothesized that the 
+aberrant gut microbiome of individuals with NAFLD 
+produce more ethanol than microbiomes of healthy 
+individuals, as evidenced by increased concentrations 
+of intrinsically generated ethanol in the circulation and 
+breath87,89 (Fig. 2). Ethanol activates nuclear factor-​κB 
+(NF-​κB) signalling pathways and causes tissue damage 
+by impairing gut barrier function and contributing to 
+portal endotoxaemia90,91. In the liver of individuals with 
+NALFD, the detoxification pathway is weakened, pro-
+viding a constant source of reactive oxygen species that 
+potentially cause oxidative damage to the hepatocytes, 
+which in turn may induce hepatic inflammation and 
+steatohepatitis92.
+Similarly, individuals with liver cirrhosis have a sub-
+stantially altered microbiota, including an enrichment 
+of Proteobacteria and Fusobacteria phyla9. The func-
+tional potentials of the gut microbiome in individuals 
+with liver cirrhosis and liver failure are massively altered 
+compared with healthy individuals. The changes include 
+significant enrichment of both assimilation and dissim-
+ilation of nitrate to or from ammonia as signatures of 
+hepatic encephalopathy. An increase in denitrification 
+capacity may relate to the higher nitrogen production, 
+whereas increased γ-​aminobutyric acid (GABA) bio-
+synthesis and GABA shunt functions relate to hydro-
+dynamic venous shunting in liver failure. An increase 
+of microbial haem biosynthesis may contribute to liver 
+damage because of protoporphyrin toxicity, whereas an 
+increase in phosphotransferase systems may indicate 
+an increased demand for protein following liver tissue 
+damage9,93.
+Apart from the above-​mentioned observations, 
+indicating links between gut microbial composition 
+and function and metabolic liver disorders, human and 
+animal faecal transplantation studies show that a 
+high abundance of the alcohol-​producing bacterial 
+species Klebsiella pneumoniae in the gut accelerates 
+NAFLD pathogenesis94,95. Additionally, an integrative 
+multi-​omics approach in women with obsesity without 
+diabetes identified phenylacetate as a microbial metabo-
+lite contributing to the accumulation of lipids in the liver 
+and, hence, to NASH96.
+Disrupted gut microbiota in malnutrition. Globally, mal-
+nutrition affects ~160 million people and is the leading 
+cause of death in children under the age of 5 years97,98. 
+Breastfeeding, food and water security are major protec-
+tive factors against malnutrition and are crucial factors 
+in the maturation of the healthy gut microbiota, char-
+acterized by a transient bifidobacterial bloom before 
+a rise in anaerobes during late infancy99. Early loss of 
+Bifidobacterium longum and Bifidobacterium pseudo­
+longum, two key members in mother milk, represents 
+some of the first disruptions in the intestinal dysbiosis 
+of severe acute malnutrition (SAM)100 (Fig. 2). B. longum 
+and B. pseudolongum appear to be crucial in shaping the 
+early gut microbiota in infants, partly through secretion 
+of broad-​spectrum lantibiotics101. Following this, SAM 
+dysbiosis is mainly accompanied by an aberrant inver-
+sion of the ratio of anaerobes to facultative anaerobes. 
+This inversion might be corrected under appropriate 
+dietary treatment, eventually leading to microbial com-
+munities enriched in anaerobes102. However, in cases 
+where malnutrition continues, the loss of the healthy 
+mature anaerobic gut microbiota gradually leads to a 
+deficiency in energy harvest41, immune responses103 and 
+vitamin synthesis104, and links with chronic malabsorp-
+tion, diarrhoea and systemic invasion from pathogenic 
+bacteria105. Current dietary therapeutic regimens for 
+SAM are not based on knowledge about the develop-
+mental biology of the intestinal microbiota. However, a 
+recent study designed diets using pig and mouse mod-
+els to nudge the microbiota into a mature post-​weaning 
+state, which could entrain maturation of the microbiota 
+of children with SAM and restore their metabolic and 
+growth profiles to a healthier trajectory106. Such dietary 
+regimens urgently need to be tested in long-​term ran-
+domized clinical trials to evaluate the effects of matu-
+rating the gut microbiota on weight gain and overall 
+physiology of affected children.
+Bacterial messengers affect metabolism
+An overwhelming number of reports demonstrate that 
+disruptions in gut microbiome taxonomy and func-
+tional potential relate to numerous pathological pheno-
+types. The majority of studies in humans and animals 
+are observational and lack experimental mechanistic 
+data. However, as revealed by the genetic repertoire of 
+the human gut microbiome, the trillions of commen-
+sal or mutualistic bacteria and archaea are an immense 
+chemical factory that can synthesize a multitude of 
+compounds needed for their own existence and survival 
+with their host, but also compounds that affect the entire 
+holobiont. In the following sections, we selectively review 
+some reported intestinal microbial products that affect 
+host energy homeostasis, body adiposity, glucose toler-
+ance, insulin sensitivity, inflammation and endocrine 
+regulation (Fig. 3).
+Microbiota affecting energy homeostasis and body adi-
+posity. For their own energy supply, the gut microbiota 
+ferment energy-​yielding nutrients, especially complex 
+carbohydrates and, to lesser extent, proteins, mono­
+saccharides, SCFAs and amino acids. However, the 
+microbiota produces large amounts of fermented nutri-
+ents that benefit their host, corresponding to 5–10% 
+of the daily energy needs of a human107. Here, we first 
+focus on the SCFAs butyrate, propionate and acetate, 
+which affect energy metabolism and body adiposity in 
+various ways in addition to being simple substrates for 
+overall host energy turnover and nutrients for colonic 
+cell metabolism. Both propionate and butyrate are pre-
+dominantly anti-​obesogenic through their stimulation 
+of anorexigenic hormones and leptin synthesis108,109. Mice 
+treated with a butyrate precursor drug (tributyrin) are 
+protected from diet-​induced obesity, insulin resistance 
+and hepatic steatosis110. Butyrate also suppresses inflam-
+mation in various tissues, enhances the differentiation of 
+Portal endotoxaemia
+Endotoxins, primarily bacterial 
+lipopolysaccharides, which are 
+absorbed from the intestines 
+into mensenteric and liver 
+veins (portal drainage).
+Liver cirrhosis
+A chronic liver disease caused, 
+for instance, by alcohol abuse 
+or virus infection with 
+impairment of multiple liver 
+functions owing to replacement 
+of normal liver tissues by scar 
+tissue.
+Hepatic encephalopathy
+A spectrum of cognitive and 
+neuro-​psychiatric 
+abnormalities such as 
+personality changes, anxiety, 
+confusion, fatigue, shaky hands 
+or seizures caused by severely 
+impaired liver function.
+Holobiont
+The unique and discrete 
+collective of a macro-​organism 
+— a host — and the complex 
+microbial communities for 
+which the macro-​organism is 
+the habitat.
+Anorexigenic hormones
+These appetite-​decreasing 
+hormones include 
+glucagon-​like peptide 1 
+(GLP-1) and peptide YY (PYY), 
+both produced by specialized 
+intestinal cells and leptin 
+produced by adipocytes and 
+intestinal cells.
+Leptin
+A hormone predominantly 
+synthesized in adipose cells 
+and enterocytes in the small 
+intestine that helps to regulate 
+energy balance by inhibiting 
+hunger, which in turn 
+diminishes fat storage in 
+adipocytes.
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 11 ==========
+colonic anti-​inflammatory regulatory T cells and induces 
+the NOD, LRR and pyrin domain-​containing protein 3 
+(NLRP3) inflammasome in a G protein-​coupled recep-
+tor manner111,112. Another G protein-​coupled receptor, the 
+olfactory receptor 78, which may modulate blood pres-
+sure regulation, can also be directly activated by acetate 
+and propionate113. Additionally, increased butyrate pro-
+duction activates the peroxisome proliferator-​activated 
+receptor-​γ (PPARγ), leading to β-​oxidation and oxygen 
+consumption in the gut, a phenomenon that contributes 
+to the maintenance of anaerobic conditions in the gut 
+lumen114 (Fig. 1).
+O
+R
+N
+H
+R1
+p38/mTORC1
+FMO
+• Satiety
+• Neuronal effects
+Gut peptide
+Vagus nerve
+Satiety
+• Body weight gain
+• Fat mass gain
+• Insulin resistance
+• Glucose intolerance
+• Fatty acid metabolism
+• Inﬂammation
+Atherosclerosis
+Neuro-
+transmitters
+Improved gut
+barrier function
+TLR2
+MC1R
+GPR-119
+TGR5
+GPCRs
+GLP-1/
+PYY
+Increased
+goblet cell 
+density
+Entero-
+endocrine 
+cell
+Cytokines
+Inﬂammation
+GLP-1 or PYY
+AhR
+GLP-1
+TMAO
+• Energy harvest 
+• Fat storage
+• Adipose 
+    inﬂammation
+SCFAs
+Acetate Succinate
+LPS
+LPS
+Secondary bile acids
+TMA
+BCAAs
+N-Acyl amides
+• Indole 
+• Indole
+derivatives
+Imidazole
+propionate
+Firmicutes/
+Bacteroidetes
+Gram-negative
+bacteria
+Speciﬁc
+bacteria
+Speciﬁc
+bacteria
+Speciﬁc
+bacteria
+Secondary 
+bile acids
+FXR
+Speciﬁc
+bacteria
+ClpB
+MECO-1
+Amuc_1100
+Dietary ﬁbres Primary bile acids
+Amino acids
+Phosphatidylcholine
+and L-carnitine
+Gut lumen
+Ghrelin
+UCP1
+Fig. 3 | Microbial messengers regulate host metabolism. An overview of 
+some of the intestinal microbial compounds affecting host energy 
+homeostasis, body adiposity, inflammation, glucose regulation, insulin 
+sensitivity and hormone secretion. Fermentation of the dietary fibre by gut 
+Firmicutes and Bacteroidetes produces the short-​chain fatty acids (SCFAs) 
+butyrate, propionate and acetate, which influence host metabolism in 
+multiple ways by acting on G protein-​coupled receptors (GPCRs) expressed 
+by enteroendocrine cells. Acetate and butyrate stimulates glucagon-​like 
+peptide 1 (GLP-1) and peptide YY (PYY) release with effects on the pancreas 
+(GLP-1-​induced insulin biosynthesis) and on the brain (PYY-​induced satiety), 
+and acetate may enhance fat storage by inducing secretion of ghrelin. 
+Microbial-​derived succinate drives expression of uncoupling protein 1 
+(UCP1), thereby increasing thermogenesis in adipose tissue. However, 
+succinate has pro-​inflammatory properties on lipopolysaccharide-​activated 
+macrophages and may thus contribute to adipose tissue inflammation and 
+insulin resistance. Lipopolysaccharides (LPS) are pro-​inflammatory 
+compounds derived from Gram-​negative bacterial membranes that 
+promote inflammation. Primary bile acids are converted by gut microbiota 
+to secondary bile acids that act through the TGR5 receptor to promote 
+GLP-1 release enhancing thermogenesis in adipose tissue. Gut microbiota 
+produces trimethylamine (TMA) by metabolizing dietary phosphatidy­l­
+choline and l-​carnitine. TMA is N-​oxidized in the liver by flavin-​ 
+containing monooxygenase (FMO) to trimethylamine N-​oxide (TMAO), 
+which contributes to atherosclerosis. Imidazole propionate, a bacterial 
+metabolite derived from histidine, contributes to insulin resistance. Gut 
+bacterial-​derived branched-​chain amino acids (BCAAs) correlate, in cases 
+of high fat intake, with insulin resistance in both humans and rodents. Other 
+bacterial metabolites such as indole and its derivatives bind to the aryl 
+hydrocarbon receptor (AhR). Indolepropionic acid is linked with improved 
+insulin secretion and insulin sensitivity and a decreased risk of type 2 
+diabetes. Gut bacteria produce N-​acyl amide, an endocannabinoid mimic 
+that regulates host glucose metabolism by binding to the G protein-​coupled 
+receptor 119 (GPR119). Proteins secreted by gut bacteria also modulate 
+paracrine or endocrine action. ClpB, a protein secreted by Escherichia coli, 
+is involved in regulation of appetite. Melanocortin-​like peptide of E. coli 
+(MECO-1), which is a structural and functional analogue to α-​melanocyte-​ 
+stimulating hormone and adrenocorticotropin, acts via the mammalian 
+melanocortin-1 receptor (MC1R), inhibiting cytokine release in response to 
+pro-​inflammatory stimuli. In the large intestine, pro-​inflammatory changes 
+involve increased production of cytokines such as IL-1β and IL-18, and 
+reduced IL-10 and IL-22. Amuc_1100, expressed on the outer membrane of 
+Akkermansia muciniphila, improves gut barrier function with increased 
+goblet cell density through Toll-​like receptor 2 (TLR2) and partially 
+recapitulates the beneficial effect of the live A. muciniphila bacterium on 
+energy metabolism and insulin sensitivity. Host metabolism is also 
+influenced by gut bacterially synthesized neurotransmitters (that is, 
+catecholamine, histamine, γ-​aminobutyric acid and serotonin) or gaseous 
+neurotransmitters (NO and H2S). Arrow represents stimulation, arrow with 
+bar indicates inhibition. FXR, farnesoid X receptor; mTORC1, mechanistic 
+target of rapamycin complex 1.
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 12 ==========
+In two independent studies, structural variations in 
+the Anaerostipes hadrus genome that encode metabolic 
+modules for inositol catabolism and for metaboliz-
+ing 3-​hydroxybutanoyl-​CoA to butyrate show inverse 
+relationships with body weight, waist circumference 
+and body mass index, potentially pointing to mecha-
+nistic links between these metabolic pathways and host 
+metabolic health17.
+A mouse study demonstrated that acetate, butyrate 
+and propionate may have anabolic effects on host 
+metabolism115, whereas another study demonstrated 
+that long-​term administration of an inulin-​propionate 
+ester significantly reduced weight gain, intra-​abdominal 
+adipose tissue distribution, intra-​hepatocellular lipid 
+content and insulin resistance in overweight adults116. 
+Nevertheless, other investigators have reported conflict-
+ing findings for effects of propionate on host metabo-
+lism. A host genetics-​driven increase in gut microbial 
+production of butyrate improved the insulin response 
+after an oral glucose tolerance test, whereas propionate 
+causally increased the risk of T2D117. In line with the 
+latter finding, another study in mice suggested that pro-
+pionate impairs insulin signalling through stimulation 
+of the production of glucagon and fatty acid-​binding 
+protein 4 (FABP4)118. Intake of a propionate-​containing 
+meal in humans resulted in a postprandial increase in 
+plasma concentrations of glucagon, FABP4 and norep-
+inephrine, leading to insulin resistance and compensa-
+tory hyperinsulinemia118. Finally, findings in a human pilot 
+study suggested that glucose metabolism is more respon-
+sive to oral butyrate supplementation in lean individu-
+als than in people with the metabolic syndrome, which 
+argues against oral butyrate supplementation as a poten-
+tial therapeutic remedy to improve glucose regulation 
+in individuals with dysmetabolism119. These conflicting 
+experimental results call for human studies in which the 
+physiological effects of each SCFA are tested separately 
+as well as in combinations, relative to their proportional 
+concentrations in circulation, in order to properly and 
+systematically investigate their net effects on glucose 
+homeostasis, insulin secretion and insulin sensitivity.
+Unlike butyrate and propionate, acetate may pre-
+dominantly have obesogenic properties because it acts 
+as a substrate for hepatic and adipocyte lipogenesis120. 
+In mice, increased acetate production induced by an 
+altered gut microbiota promotes hyperphagia through 
+increased ghrelin secretion and enhances fat storage by 
+increasing glucose-​stimulated insulin secretion121. In 
+humans, plasma concentrations of the intestinal hor-
+mones, peptide YY (PYY) and glucagon-​like peptide 
+1 (GLP-1) are reported to increase following rectal or 
+intravenous administration of acetate122.
+Host energy homeostasis and body adiposity are 
+also influenced by bile acids, and the gut microbiota 
+converts primary bile acids to various secondary bile 
+acids123. Both categories of bile acid exert their meta-
+bolic functions by binding to cellular receptors in various 
+organs of the body, including nuclear farnesoid X recep-
+tor (FXR) and TGR5, a G protein-​coupled receptor124. 
+Signalling via these receptors is implicated in glucose 
+metabolism, yet in opposite directions; FXR impairs125 
+whereas TGR5 promotes126 carbohydrate metabolism. 
+One of the primary bile acids, chenodeoxycholic acid, is 
+a highly efficacious FXR ligand127, whereas the second-
+ary bile acids lithocholic acid (LCA) and taurolithocholic 
+acid, which in rodents are transformed from primary 
+bile acids by intestinal bacteria123, are the two most 
+potent endogenous TGR5 ligands128. TGR5 signalling 
+in enteroendocrine L cells induces secretion of GLP-1, 
+thereby improving liver function and enhancing glucose 
+tolerance in obese mice126. LCA, a high-​affinity TGR5 
+agonist, stimulates thermogenesis through browning of 
+both white and brown adipose tissues129, whereas deoxy­
+cholic acid (DCA) and LCA have been suggested as 
+partial antagonists of FXR130. Recently, a subgroup of sec-
+ondary bile acids, C-6-​hydroxylated secondary bile acids, 
+have attracted attention as these bile acids may be asso-
+ciated with leanness in rodents131 and early weight loss 
+in people with obesity following sleeve gastrectomy132.
+Studies of the intestinal microbiome in several 
+chronic metabolic disorders show increased functional 
+potentials for metabolism of amino acids133. Whether 
+these observations reflect primary disease-​linked mech-
+anisms or secondary phenomena is unclear. However, in 
+the case of microbial break down of tryptophan, both 
+in vitro and in vivo studies suggest that indole, a trypto-
+phan microbial catabolite (Fig. 1), improves intestinal epi-
+thelial barrier functions134,135. Indole is also a signalling 
+molecule involved in enhancing the release of the gut 
+hormone GLP-1 from enteroendocrine L cells136, thereby 
+indirectly influencing insulin secretion and appetite 
+regulation. Similarly, the circulating concentration of 
+3-​indolepropionic acid (IPA), a catabolite involved in 
+the tryptophan metabolic pathway, is in epidemiolog-
+ical studies reported to associate with improved insulin 
+secretion and insulin sensitivity, and a lower likelihood 
+of developing T2D137.
+Microbiota affecting insulin sensitivity and endocrine 
+regulation. Elevated circulating concentrations of the 
+BCAAs leucine, isoleucine and valine are a strong bio-
+marker for insulin resistance and an increased risk of 
+T2D138. In individuals with normoglycaemia who are 
+insulin resistant, the gut microbiome has an increased 
+potential to synthesize BCAAs, which is largely driven 
+by an increased abundance of Prevotella copri and 
+Bacteroides vulgatus, but a reduced potential for micro-
+bial BCAA uptake and BCAA catabolism primar-
+ily driven by Butyrivibrio crossotus and Eubacterium 
+siraeum14. These findings, supported by experiments in 
+mice, suggest that the gut microbiome may contribute 
+to increased plasma BCAA concentrations and insulin 
+resistance under conditions of unhealthy dieting138. In 
+heart failure, the catabolism of BCAAs is impaired and 
+the accumulated BCAAs induce oxidative stress and 
+disrupt mitochondrial function139.
+Imidazole propionate is yet another microbial com-
+pound that contextually impairs insulin signalling140. In 
+portal and peripheral blood of individuals with T2D, 
+imidazole propionate was present at higher concentra-
+tions than in healthy individuals. Gut bacterial species 
+such as Streptococcus mutans and Eggerthella lenta were 
+verified as producers of imidazole propionate. In mice 
+experiments, imidazole propionate worsened glucose 
+Hyperinsulinemia
+A state where the 
+concentration of insulin in 
+blood is higher than what is 
+considered normal.
+Hyperphagia
+An abnormally great desire for 
+food.
+Ghrelin
+A circulating hormone that is 
+produced mainly by stomach 
+cells and that stimulates 
+appetite and promotes fat 
+storage.
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 13 ==========
+tolerance and insulin signalling through activation of the 
+mechanistic target of rapamycin complex 1 (mTORC1) 
+pathway. In line with these findings, overexpression of the 
+mTORC1-​mediated insulin signalling pathway was found 
+in liver tissue isolated from individuals with T2D140.
+Both the host and the intestinal microbiome produce 
+succinate, which may have multiple roles as a metabolic 
+intermediate. One role relates to insulin sensitivity and 
+inflammation, with effects that are also apparently con-
+textual. In wild-​type mice, microbial-​derived succinate 
+not only prevented obesity but also improved insulin 
+sensitivity and glucose tolerance141,142. By contrast, suc-
+cinate might act as a metabolite in innate immune sig-
+nalling. Thus, in LPS-​activated macrophages, succinate 
+stabilized the transcription factor hypoxia-​inducible fac-
+tor 1α, which increased IL-1β production and triggered 
+inflammation. Therefore, succinate may under some 
+conditions contribute to insulin resistance that is trig-
+gered by inflammation143. Unexpectedly, pharmacolog-
+ically raised circulating succinate concentrations in mice 
+have been shown to be a driver for uncoupling protein 
+1 (UCP1)-​dependent thermogenesis in brown adipose 
+tissue, thereby boosting protection against diet-​induced 
+obesity and improving glucose tolerance142. Nevertheless, 
+outcomes of studies of the impact of the gut micro­
+biome on regulation of UCP1 in various mouse models 
+remain inconsistent144,145. Whether microbial-​derived 
+succinate is relevant to comparable processes in human 
+metabolism is unknown.
+Bacterial LPS are the major outer surface membrane 
+components present in most Gram-​negative bacteria146. 
+LPS are released at bacterial cell death and become 
+strong stimulators of host immunity. When in excess, 
+for instance owing to habitual intake of diets high in 
+animal fat or in an extreme state such as sepsis-​elicited 
+endotoxaemia, LPS trigger local and systemic inflamma-
+tion and insulin resistance147. Generally, several common 
+chronic disorders that appear to be characterized by a 
+relative disruption of the gut barrier, which elicits mul-
+tiple imbalances in both intestinal and systemic immune 
+competences, converge to cause insulin resistance, 
+eventually leading to metabolic syndrome148,149.
+Above, we have discussed how, for instance, SCFAs 
+and indole interfere with endocrine regulation, but 
+there are more examples of how gut bacterial com-
+pounds interact with hormone secretion or act as lig-
+ands for known hormone receptors. Several proteins 
+secreted by E. coli, including ClpB, which mimics the 
+host peptide α-​melanocyte-​stimulating hormone 
+(α-​MSH), affect food intake150 and meal patterns in 
+mice151. Mechanistically, the ClpB protein stimulates 
+release of intestinal GLP-1 and PYY and activates brain 
+anorexigenic pathways inducing satiety. In humans, 
+higher plasma ClpB levels have been reported in indi-
+viduals with eating disorders such as anorexia ner-
+vosa compared with circulating ClpB levels in healthy 
+individuals152. Furthermore, some gut commensal bac-
+teria harbour N-​acyl amide synthase genes, and their 
+encoded lipids mimic binding of classical eukaryotic 
+signalling molecules to G protein-​coupled receptors153. 
+In experiments where mice were fed an engineered bac-
+terium that produces the lipid N-​acyl serinol, which 
+is structurally similar to a human ligand for GPR119, 
+the mice had an improved glucose tolerance when 
+compared with control mice that were gavaged with 
+E. coli harbouring an empty vector154. Finally, MECO-1, 
+which is a bacterial melanocortin-​like peptide that has 
+structural similarities to α-​MSH and adrenocorticotro-
+pin (ACTH)155, inhibits the release of cytokines when 
+exposed to pro-​inflammatory stimuli in vitro and res-
+cues mice from death caused by endotoxins. Whether 
+the microbial peptide also has endocrine functions like 
+its human homologous hormones is unknown.
+In summary, an overwhelming amount of data gen-
+erated both in humans and in animals suggest important 
+involvements of the primary saccharolytically derived 
+microbial fermentation products SCFAs, succinate and 
+ethanol in host metabolism. We know less about posi-
+tive or undesired health implications of proteolytic or 
+lipolytic fermentation by the gut microbiota (Fig. 1). An 
+exception is the microbial fermentation of the dietary 
+amino acids tryptophan and tyrosine that are metabo-
+lized to indoles and phenols, respectively156. In the liver, 
+the compounds are converted to indoxyl sulfate and 
+p-​cresyl sulfate, the blood concentrations of which are 
+elevated in CMD. In chronic kidney disease, elevated cir-
+culating levels of the two metabolites are associated with 
+progression of chronic kidney disease, risk of CMD and 
+all-​cause mortality157. In addition, experiments in mice 
+suggest that microbiota-​produced gluconeogenic amino 
+acid metabolites, including indoxyl sulfate, contribute to 
+maintaining glucose homeostasis158.
+Conclusions and perspectives
+The past two decades of research within the microbiome 
+field has made it evident that human biology means the 
+biology of the holobiont Homo sapiens. In other words, 
+human biology is contextual on the coexisting microor-
+ganisms, with the majority living in the digestive tract 
+from where they produce or modify various chemicals, 
+or trigger host reactions that affect various physiolog-
+ical functions including immunity, neurobiology and, 
+not least, metabolism. As appears from our discussion of 
+the pertinent literature on metabolism and the intestinal 
+microbiota, the research field is still at a juvenile stage 
+both in its basic and translational dimensions. With 
+the focus on the influence of the gut microbiome on the 
+overall functional metabolic read-​outs, much still needs 
+to be learned. The knowledge gaps to be filled include 
+annotation of hundreds of as yet unknown chemical 
+compounds in the metabolomes and peptidomes of 
+various body fluids as well as approaches to decipher 
+compounds of solely host, microbial and dietary origin, 
+or of combined origin159. Most studies are snapshots of 
+microbiome landscapes and more information is needed 
+on the short-​term and long-​term dynamics of the intes-
+tinal microbiome. Importantly, very little of the novel 
+knowledge is validated or has maturated to stages where 
+it can be translated to guide personal everyday health 
+behaviour (public health) or clinical practice. To achieve 
+such goals, several conceptual and analytical challenges 
+need attention in future studies where data on the micro-
+biome are integrated with other omics read-​out and 
+bioclinical variables (Box 2).
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 14 ==========
+The fact that the human intestinal microbiota is 
+unique at deep resolution levels, with substantial struc-
+tural variations in species and subspecies that influ-
+ence microbiome functionality, is a major conceptual 
+and statistical challenge when comparing individual 
+microbiota irrespective of the health status of study 
+subjects17. Moreover, there are several more technical 
+and database-​related shortcomings, including incom-
+plete microbial genome databases and a lack of func-
+tional annotation of the majority of microbial genes. 
+Similarly, knowledge about the regulation of transcrip-
+tional and translational activities of the gut microbiome 
+is sparse, and when it comes to the interpretation of the 
+outcome of untargeted metabolome profiling, which is 
+often compared with microbiome features, the majority 
+of read-​outs are neither annotated nor quantified70.
+When considering the translational implications of 
+microbiome research, it recently became evident that 
+most drugs influence microbiome, metatranscriptome 
+and metabolome profiles in addition to their well-​known 
+effects on bioclinical variables57,62–64. Blindness to the 
+impact of medication on ‘omics’ analyses may there-
+fore have inflated the reported findings in human stud-
+ies of any relationships between the gut microbiome 
+and host metabolism, which we have discussed in this 
+Review. Ideally, any such omics-​based studies should be 
+performed in drug-​naive individuals. This demand is 
+difficult to accommodate in studies of individuals with 
+chronic metabolic diseases who often are prescribed 
+multiple medications. Instead, more studies are cur-
+rently undertaken in individuals at high risk of devel-
+oping metabolic diseases and prior to medication, for 
+example, in treatment-​naive pre-​morbid individuals. Yet 
+another shortcoming of microbiome studies is the fact 
+that microbiome analysis has so far largely been limited 
+to relative abundances, failing therefore to account for 
+biologically relevant differences between microbiomes 
+owing to considerable sample variation in the bacterial 
+cell density of stools or intestinal contents160.
+Experimental studies of the targets and mechanisms 
+of action of a given microbial compound are, for obvi-
+ous reasons, done in vitro in assumed target tissues 
+or cells and are complemented with in vivo studies in 
+rodents (Box 2). However, many experimental studies 
+fall short owing to lack of appropriate test animals with 
+a biology and behaviour close to those of humans and, 
+especially when unravelling the role of the gut micro-
+biome in disease causation, there is often a lack of ani-
+mal models with genetic susceptibilities comparable 
+to those of the human disorders under examination. 
+Nevertheless, experimental studies are not exclusively 
+done in cellular systems or animal models. In fact, clin-
+ically controlled trials are by their nature mechanis-
+tic experiments. Because of the massive and complex 
+inter-​individual variation in the gut microbiome, the 
+ideal human trial design is to perform various con-
+trolled crossover interventions in the same individuals 
+for years. Intra-​individual trials have been done but are 
+very resource demanding and have no potential for gen-
+eralization to the population level161. Therefore, the only 
+realistic way forward to gain population-​relevant mecha-
+nistic insights into how the gut microbiome mediates or 
+modifies the effects of diet, exercise, drugs and so forth 
+in the human setting appears to be through carefully 
+prepared randomized controlled trials of long duration. 
+That means the inclusion of homogeneous groups of 
+people who have undergone deep and extensive pheno-
+typing in a sufficient number to have statistical power to 
+address the hypothesis in focus.
+Finally, the complexity of the gut microbiome 
+is daunting, and the global intestinal microbiome is 
+far more than bacteria and archaea. It also includes 
+fungi, bacteriophages and eukaryotic virus. Future, 
+sequencing-​based and culture-​based gut microorganism 
+surveys combined with mechanistic exploitations of the 
+gut bacteriome, archaeome, phageome, virome and myco­
+biome will exponentially expand our knowledge about 
+the interactions within the global intestinal microbial 
+community. Moreover, not least, exciting new knowl-
+edge about the multitude of chemicals that the global 
+gut microbiome produces affecting host physiology and 
+numerous pathologies may foster novel efficacious paths 
+to stabilize metabolic health of the human holobiont and 
+prevent or combat common human metabolic disorders.
+Published online xx xx xxxx
+1.	
+Lynch, S. V. & Pedersen, O. The human intestinal 
+microbiome in health and disease. N. Engl. J. Med. 
+375, 2369–2379 (2016).
+2.	
+Jaacks, L. M. et al. The obesity transition: stages of 
+the global epidemic. Lancet Diabetes Endocrinol. 7, 
+231–240 (2019).
+3.	
+Younossi, Z. M. et al. Global epidemiology of 
+nonalcoholic fatty liver disease — meta-analytic 
+assessment of prevalence, incidence, and outcomes. 
+Hepatology 64, 73–84 (2016).
+4.	
+Zheng, Y., Ley, S. H. & Hu, F. B. Global aetiology  
+and epidemiology of type 2 diabetes mellitus and its 
+complications. Nat. Rev. Endocrinol. 14, 88 (2018).
+5.	
+Reddy, K. S. & Yusuf, S. Emerging epidemic of 
+cardiovascular disease in developing countries. 
+Circulation 97, 596–601 (1998).
+6.	
+Lakka, H.-M. et al. The metabolic syndrome and total 
+and cardiovascular disease mortality in middle-​aged 
+men. JAMA 288, 2709–2716 (2002).
+7.	
+Müller, O. & Krawinkel, M. Malnutrition and health  
+in developing countries. CMAJ 173, 279–286 (2005).
+8.	
+Qin, J. et al. A metagenome-​wide association study  
+of gut microbiota in type 2 diabetes. Nature 490, 
+55–60 (2012).  
+This is the first metagenome-​wide association study to 
+identify links between the gut microbiome and T2D.
+9.	
+Qin, N. et al. Alterations of the human gut microbiome 
+in liver cirrhosis. Nature 513, 59–64 (2014).
+10.	 Koeth, R. A. et al. Intestinal microbiota metabolism  
+of l-​carnitine, a nutrient in red meat, promotes 
+atherosclerosis. Nat. Med. 19, 576–585 (2013).
+11.	 Allin, K. H. et al. Aberrant intestinal microbiota in 
+individuals with prediabetes. Diabetologia 61,  
+810–820 (2018).
+12.	 Bäckhed, F. et al. The gut microbiota as an 
+environmental factor that regulates fat storage.  
+Proc. Natl Acad. Sci. USA 101, 15718–15723 
+(2004).
+13.	 Qin, J. et al. A human gut microbial gene catalogue 
+established by metagenomic sequencing. Nature 464, 
+59–65 (2010).
+14.	 Pedersen, H. K. et al. Human gut microbes impact 
+host serum metabolome and insulin sensitivity. Nature 
+535, 376–381 (2016).  
+This study identifies P. copri and B. vulgatus as  
+the main species driving the association between 
+biosynthesis of BCAAs and insulin resistance under 
+conditions of high fat intake.
+15.	 Pedersen, H. K. et al. A computational framework  
+to integrate high-​throughput ‘-omics’ datasets for  
+the identification of potential mechanistic links.  
+Nat. Protoc. 13, 2781 (2018).
+16.	 Korem, T. et al. Growth dynamics of gut microbiota in 
+health and disease inferred from single metagenomic 
+samples. Science 349, 1101–1106 (2015).
+17.	 Zeevi, D. et al. Structural variation in the gut 
+microbiome associates with host health. Nature 568, 
+43–48 (2019).
+18.	 Huttenhower, C. et al. Structure, function and diversity 
+of the healthy human microbiome. Nature 486,  
+207–214 (2012).
+19.	 Rothschild, D. et al. Environment dominates over host 
+genetics in shaping human gut microbiota. Nature 
+555, 210–215 (2018).
+20.	 Falony, G., Vieira-​Silva, S. & Raes, J. Richness and 
+ecosystem development across faecal snapshots  
+of the gut microbiota. Nat. Microbiol. 3, 526–528 
+(2018).
+21.	 Jakobsson, H. E. et al. Decreased gut microbiota 
+diversity, delayed Bacteroidetes colonisation and 
+reduced Th1 responses in infants delivered by 
+caesarean section. Gut 63, 559–566 (2014).
+22.	 Rodríguez, J. M. et al. The composition of the gut 
+microbiota throughout life, with an emphasis on  
+early life. Microb. Ecol. Health Dis. 26, 26050  
+(2015).
+23.	 Flint, H. J., Scott, K. P., Louis, P. & Duncan, S. H.  
+The role of the gut microbiota in nutrition and health. 
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 15 ==========
+Nat. Rev. Gastroenterol. Hepatol. 9, 577–589 
+(2012).
+24.	 Shafquat, A., Joice, R., Simmons, S. L. &  
+Huttenhower, C. Functional and phylogenetic assembly 
+of microbial communities in the human microbiome. 
+Trends Microbiol. 22, 261–266 (2014).
+25.	 Clemente, J. C. et al. The microbiome of uncontacted 
+Amerindians. Sci. Adv. 1, e1500183 (2015).
+26.	 Smits, S. A. et al. Seasonal cycling in the gut microbiome 
+of the Hadza hunter-​gatherers of Tanzania. Science 357, 
+802–806 (2017).
+27.	 Tyakht, A. V. et al. Human gut microbiota community 
+structures in urban and rural populations in Russia. 
+Nat. Commun. 4, 1–9 (2013).
+28.	 Le Chatelier, E. et al. Richness of human gut microbiome 
+correlates with metabolic markers. Nature 500,  
+541–546 (2013).  
+This work shows that adults with low bacterial gene 
+richness in their gut microbiome feature insulin 
+resistance, pro-​inflammation dyslipidaemia and 
+increased body adiposity compared with individuals 
+with high bacterial gene richness.
+29.	 Cox, L. M. & Blaser, M. J. Antibiotics in early life and 
+obesity. Nat. Rev. Endocrinol. 11, 182–190 (2015).
+30.	 Ajslev, T., Andersen, C., Gamborg, M., Sørensen, T.  
+& Jess, T. Childhood overweight after establishment  
+of the gut microbiota: the role of delivery mode,  
+pre-​pregnancy weight and early administration of 
+antibiotics. Int. J. Obes. 35, 522 (2011).
+31.	 Mor, A. et al. Prenatal exposure to systemic 
+antibacterials and overweight and obesity in Danish 
+schoolchildren: a prevalence study. Int. J. Obes. 39, 
+1450 (2015).
+32.	 Palleja, A. et al. Recovery of gut microbiota of healthy 
+adults following antibiotic exposure. Nat. Microbiol. 3, 
+1255–1265 (2018).
+33.	 Thuny, F. et al. Vancomycin treatment of infective 
+endocarditis is linked with recently acquired obesity. 
+PLoS ONE 5, e9074 (2010).
+34.	 Mikkelsen, K. H. et al. Effect of antibiotics on gut 
+microbiota, gut hormones and glucose metabolism. 
+PLoS ONE 10, e0142352 (2015).
+35.	 Reijnders, D. et al. Effects of gut microbiota 
+manipulation by antibiotics on host metabolism  
+in obese humans: a randomized double-​blind  
+placebo-​controlled trial. Cell Metab. 24, 63–74 
+(2016).
+36.	 Fujisaka, S. et al. Antibiotic effects on gut microbiota 
+and metabolism are host dependent. J. Clin. Invest. 
+126, 4430–4443 (2016).
+37.	 Yatsunenko, T. et al. Human gut microbiome viewed 
+across age and geography. Nature 486, 222–227 
+(2012).
+38.	 Cotillard, A. et al. Dietary intervention impact on gut 
+microbial gene richness. Nature 500, 585–588 (2013).
+39.	 World Health Organization. Obesity: Preventing  
+and Managing the Global Epidemic (World Health 
+Organization, 2000).
+40.	 McAllister, E. J. et al. Ten putative contributors to  
+the obesity epidemic. Crit. Rev. Food Sci. Nutr. 49, 
+868–913 (2009).
+41.	 Turnbaugh, P. J. et al. An obesity-​associated gut 
+microbiome with increased capacity for energy 
+harvest. Nature 444, 1027–1031 (2006).
+42.	 Tims, S. et al. Microbiota conservation and BMI 
+signatures in adult monozygotic twins. ISME J. 7, 
+707–717 (2013).
+43.	 Gophna, U., Konikoff, T. & Nielsen, H. B. Oscillospira 
+and related bacteria—from metagenomic species to 
+metabolic features. Environ. Microbiol. 19, 835–841 
+(2017).
+44.	 Miller, T. L., Wolin, M., de Macario, E. C. & Macario, A. 
+Isolation of Methanobrevibacter smithii from human 
+feces. Appl. Environ. Microbiol. 43, 227–232 (1982).
+45.	 Liu, R. et al. Gut microbiome and serum metabolome 
+alterations in obesity and after weight-​loss intervention. 
+Nat. Med. 23, 859–868 (2017).  
+This study links intestinal microbiota alterations, 
+circulating amino acids and obesity, and suggests 
+that a possible way to intervene in obesity is by 
+targeting the gut microbiota.
+46.	 Thingholm, L. B. et al. Obese individuals with and 
+without type 2 diabetes show different gut microbial 
+functional capacity and composition. Cell Host 
+Microbe 26, 252–264.e10 (2019).
+47.	 Ridaura, V. K. et al. Gut microbiota from twins 
+discordant for obesity modulate metabolism in mice. 
+Science 341, 1241214 (2013).  
+This study shows that adiposity is transmissible in 
+a diet-​dependent manner from human to mouse 
+and is associated with alterations in serum levels  
+of BCAAs.
+48.	 Vieira-​Silva, S. et al. Statin therapy is associated with 
+lower prevalence of gut microbiota dysbiosis. Nature 
+581, 310–315 (2020).  
+This study observes that obesity-​associated 
+microbiota dysbiosis is negatively associated with 
+statin treatment, indicating statins as a possible 
+target for the development of future drug-​based 
+strategies for the modulation of the intestinal 
+microbiota.
+49.	 Jensen, A. B. et al. Increase in clinically recorded type 2 
+diabetes after colectomy. eLife 7, e37420 (2018).
+50.	 Thaiss, C. A. et al. Hyperglycemia drives intestinal 
+barrier dysfunction and risk for enteric infection. 
+Science 359, 1376–1383 (2018).
+51.	 Association, A. D. Diagnosis and classification of 
+diabetes mellitus. Diabetes Care 37, S81–S90 (2014).
+52.	 Deshpande, A. D., Harris-​Hayes, M. & Schootman, M. 
+Epidemiology of diabetes and diabetes-​related 
+complications. Phys. Ther. 88, 1254–1264 (2008).
+53.	 Grarup, N., Sandholt, C. H., Hansen, T. & Pedersen, O. 
+Genetic susceptibility to type 2 diabetes and obesity: 
+from genome-​wide association studies to rare variants 
+and beyond. Diabetologia 57, 1528–1541 (2014).
+54.	 Kasuga, M. Insulin resistance and pancreatic β cell 
+failure. J. Clin. Invest. 116, 1756–1760 (2006).
+55.	 Bornfeldt, K. E. & Tabas, I. Insulin resistance, 
+hyperglycemia, and atherosclerosis. Cell Metab. 14, 
+575–585 (2011).
+56.	 Laakso, M. & Kuusisto, J. Insulin resistance and 
+hyperglycaemia in cardiovascular disease development. 
+Nat. Rev. Endocrinol. 10, 293–302 (2014).
+57.	 Vila, A. V. et al. Impact of commonly used drugs on  
+the composition and metabolic function of the gut 
+microbiota. Nat. Commun. 11, 1–11 (2020).
+58.	 Zhong, H. et al. Distinct gut metagenomics  
+and metaproteomics signatures in prediabetics and 
+treatment-naïve type 2 diabetics. EBioMedicine 47, 
+373–383 (2019).
+59.	 Whiting, D. R., Guariguata, L., Weil, C. & Shaw, J.  
+IDF diabetes atlas: global estimates of the prevalence 
+of diabetes for 2011 and 2030. Diabetes Res. Clin. 
+Pract. 94, 311–321 (2011).
+60.	 Crusell, M. K. W. et al. Gestational diabetes is 
+associated with change in the gut microbiota 
+composition in third trimester of pregnancy and 
+postpartum. Microbiome 6, 89 (2018).
+61.	 Karlsson, F. H. et al. Gut metagenome in European 
+women with normal, impaired and diabetic glucose 
+control. Nature 498, 99–103 (2013).
+62.	 Forslund, K. et al. Disentangling type 2 diabetes and 
+metformin treatment signatures in the human gut 
+microbiota. Nature 528, 262–266 (2015).  
+This work outlines a paradigm to disentangle 
+disease microbiome features from secondary 
+changes in the microbiome induced by medication.
+63.	 Wu, H. et al. Metformin alters the gut microbiome of 
+individuals with treatment-​naive type 2 diabetes, 
+contributing to the therapeutic effects of the drug. 
+Nat. Med. 23, 850–858 (2017).
+64.	 Bryrup, T. et al. Metformin-​induced changes of the gut 
+microbiota in healthy young men: results of a non-​
+blinded, one-​armed intervention study. Diabetologia 
+62, 1024–1035 (2019).
+65.	 Sun, L. et al. Gut microbiota and intestinal FXR 
+mediate the clinical benefits of metformin. Nat. Med. 
+24, 1919 (2018).
+66.	 De La Cuesta-​Zuluaga, J. et al. Metformin is 
+associated with higher relative abundance of mucin-​
+degrading Akkermansia muciniphila and several  
+short-​chain fatty acid-​producing microbiota in the gut. 
+Diabetes Care 40, 54–62 (2017).
+67.	 Adeshirlarijaney, A., Zou, J., Tran, H. Q., Chassaing, B. 
+& Gewirtz, A. T. Amelioration of metabolic syndrome 
+by metformin associates with reduced indices of  
+low-​grade inflammation independently of the gut 
+microbiota. Am. J. Physiol. Endocrinol. Metab. 317, 
+E1121–E1130 (2019).
+68.	 Pryor, R. et al. Host–microbe–drug–nutrient screen 
+identifies bacterial effectors of metformin therapy. Cell 
+178, 1299–1312.e29 (2019).
+69.	 Herrington, W., Lacey, B., Sherliker, P., Armitage, J.  
+& Lewington, S. Epidemiology of atherosclerosis  
+and the potential to reduce the global burden of 
+atherothrombotic disease. Circ. Res. 118, 535–546 
+(2016).
+70.	 Fan, Y. et al. Comprehensive metabolomic 
+characterization of coronary artery diseases. J. Am. 
+Coll. Cardiol. 68, 1281–1293 (2016).
+71.	 Michos, E. D., McEvoy, J. W. & Blumenthal, R. S. Lipid 
+management for the prevention of atherosclerotic 
+cardiovascular disease. N. Engl. J. Med. 381,  
+1557–1567 (2019).
+72.	 Hansson, G. K. Inflammation, atherosclerosis, and 
+coronary artery disease. N. Engl. J. Med. 352,  
+1685–1695 (2005).
+73.	 Jie, Z. et al. The gut microbiome in atherosclerotic 
+cardiovascular disease. Nat. Commun. 8, 845 (2017).
+74.	 Sokol, H. et al. Faecalibacterium prausnitzii is an anti-​
+inflammatory commensal bacterium identified by gut 
+microbiota analysis of Crohn disease patients. Proc. 
+Natl Acad. Sci. USA 105, 16731–16736 (2008).
+75.	 Cui, X. et al. Metagenomic and metabolomic analyses 
+unveil dysbiosis of gut microbiota in chronic heart 
+failure patients. Sci. Rep. 8, 1–15 (2018).
+76.	 Wang, Z. et al. Gut flora metabolism of 
+phosphatidylcholine promotes cardiovascular disease. 
+Nature 472, 57–63 (2011).  
+This work discovers a relationship between the  
+gut microbiota-​dependent metabolism of dietary 
+phosphatidylcholine and pathogenesis of 
+arteriosclerosis.
+77.	 Zhu, W. et al. Gut microbial metabolite TMAO 
+enhances platelet hyperreactivity and thrombosis risk. 
+Cell 165, 111–124 (2016).
+78.	 Wang, Z. et al. Non-​lethal inhibition of gut microbial 
+trimethylamine production for the treatment of 
+atherosclerosis. Cell 163, 1585–1595 (2015).  
+This study discovers a structural analogue of 
+choline that inhibits microbial TMA lyases and the 
+production of TMA by the gut microbiota.
+79.	 Haghikia, A. et al. Gut microbiota-​dependent 
+trimethylamine N-​oxide predicts risk of cardiovascular 
+events in patients with stroke and is related to 
+proinflammatory monocytes. Arterioscl. Throm. Vas. 
+Biol. 38, 2225–2235 (2018).
+80.	 Senthong, V. et al. Intestinal microbiota-​generated 
+metabolite trimethylamine-​N-oxide and 5-year 
+mortality risk in stable coronary artery disease: the 
+contributory role of intestinal microbiota in a 
+COURAGE-​like patient cohort. J. Am. Heart Assoc. 5, 
+e002816 (2016).
+81.	 Collins, H. L. et al. l-​Carnitine intake and high 
+trimethylamine N-​oxide plasma levels correlate  
+with low aortic lesions in ApoE−/− transgenic mice 
+expressing CETP. Atherosclerosis 244, 29–37 (2016).
+82.	 He, K. et al. Accumulated evidence on fish consumption 
+and coronary heart disease mortality: a meta-​analysis 
+of cohort studies. Circulation 109, 2705–2711 (2004).
+83.	 Koay, Y. C. et al. Plasma levels of TMAO can be 
+increased with ‘healthy’ and ‘unhealthy’ diets and do 
+not correlate with the extent of atherosclerosis but 
+with plaque instability. Cardiovasc. Res. 8, cvaa094 
+(2020).
+84.	 Tang, W. W. et al. Intestinal microbial metabolism of 
+phosphatidylcholine and cardiovascular risk. N. Engl. 
+J. Med. 368, 1575–1584 (2013).
+85.	 Brunt, E. M. et al. Nonalcoholic fatty liver disease 
+(NAFLD) activity score and the histopathologic 
+diagnosis in NAFLD: distinct clinicopathologic 
+meanings. Hepatology 53, 810–820 (2011).
+86.	 Jiang, W. et al. Dysbiosis gut microbiota associated 
+with inflammation and impaired mucosal immune 
+function in intestine of humans with non-​alcoholic fatty 
+liver disease. Sci. Rep. 5, 8096 (2015).
+87.	 Zhu, L. et al. Characterization of gut microbiomes  
+in nonalcoholic steatohepatitis (NASH) patients:  
+a connection between endogenous alcohol and NASH. 
+Hepatology 57, 601–609 (2013).
+88.	 Del Chierico, F. et al. Gut microbiota profiling of 
+pediatric nonalcoholic fatty liver disease and obese 
+patients unveiled by an integrated meta-​omics-based 
+approach. Hepatology 65, 451–464 (2017).
+89.	 Nair, S., Cope, K., Terence, R. H. & Diehl, A. M. 
+Obesity and female gender increase breath ethanol 
+concentration: potential implications for the 
+pathogenesis of nonalcoholic steatohepatitis. Am. J. 
+Gastroenterol. 96, 1200–1204 (2001).
+90.	 Rao, R., Seth, A. & Sheth, P. Recent advances in 
+alcoholic liver disease I. Role of intestinal permeability 
+and endotoxemia in alcoholic liver disease. Am. J. 
+Physiol. Gastrointest. Liver Physiol. 286, G881–G884 
+(2004).
+91.	 Xu, J. et al. Synergistic steatohepatitis by moderate 
+obesity and alcohol in mice despite increased 
+adiponectin and p-​AMPK. J. Hepatol. 55, 673–682 
+(2011).
+92.	 de Medeiros, I. C. & de Lima, J. G. Is nonalcoholic  
+fatty liver disease an endogenous alcoholic fatty  
+liver disease? — A mechanistic hypothesis.  
+Med. Hypotheses 85, 148–152 (2015).
+93.	 Schwenger, K. J., Clermont-​Dejean, N. & Allard, J. P. 
+The role of the gut microbiome in chronic liver  
+disease: the clinical evidence revised. JHEP Rep. 1, 
+214–226 (2019).
+Nature Reviews | Microbiology
+Reviews
+
+========== PAGE 16 ==========
+94.	 Le Roy, T. et al. Intestinal microbiota determines 
+development of non-​alcoholic fatty liver disease in 
+mice. Gut 62, 1787–1794 (2013).
+95.	 Yuan, J. et al. Fatty liver disease caused by high-​
+alcohol-producing Klebsiella pneumoniae. Cell Metab. 
+30, 675–688.e7 (2019).
+96.	 Hoyles, L. et al. Molecular phenomics and 
+metagenomics of hepatic steatosis in non-​diabetic 
+obese women. Nat. Med. 24, 1070–1080 (2018).  
+This study demonstrates that individuals with liver 
+steatosis have low microbial gene richness and 
+increased genetic potential for the processing of 
+dietary lipids and endotoxin biosynthesis, hepatic 
+inflammation and dysregulation of aromatic and 
+BCAA metabolism.
+97.	 UNICEF–WHO–The World Bank Group: Joint Child 
+Malnutrition Estimates — levels and trends in  
+child malnutrition: key findings of the 2015 edition. 
+Global Database on Child Growth and Malnutrition 
+(WHO, 2015).
+98.	 Black, R. E. et al. Maternal and child undernutrition: 
+global and regional exposures and health 
+consequences. Lancet 371, 243–260 (2008).
+99.	 Million, M., Diallo, A. & Raoult, D. Gut microbiota and 
+malnutrition. Microb. Pathog. 106, 127–138 (2017).
+100.	Smith, M. I. et al. Gut microbiomes of Malawian  
+twin pairs discordant for kwashiorkor. Science 339, 
+548–554 (2013).
+101.	Lee, J.-H., Li, X. & O’Sullivan, D. J. Transcription 
+analysis of a lantibiotic gene cluster from 
+Bifidobacterium longum DJO10A. Appl. Environ. 
+Microbiol. 77, 5879–5887 (2011).
+102.	Mata, L. J. et al. Gastrointestinal flora of children with 
+protein — calorie malnutrition. Am. J. Clin. Nutr. 25, 
+1118–1126 (1972).
+103.	Kelly, D. et al. Commensal anaerobic gut bacteria 
+attenuate inflammation by regulating nuclear-​
+cytoplasmic shuttling of PPAR-​γ and RelA.  
+Nat. Immunol. 5, 104–112 (2004).
+104.	Martens, J.-H., Barg, H., Warren, M. A. & Jahn, D. 
+Microbial production of vitamin B 12. Appl. Microbiol. 
+Biotechnol. 58, 275–285 (2002).
+105.	Stecher, B. & Hardt, W.-D. The role of microbiota in 
+infectious disease. Trends Microbiol. 16, 107–114 
+(2008).
+106.	Gehrig, J. L. et al. Effects of microbiota-​directed foods 
+in gnotobiotic animals and undernourished children. 
+Science 365, eaau4732 (2019).
+107.	Jumpertz, R. et al. Energy-​balance studies reveal 
+associations between gut microbes, caloric load, and 
+nutrient absorption in humans. Am. J. Clin. Nutr. 94, 
+58–65 (2011).
+108.	Lin, H. V. et al. Butyrate and propionate protect 
+against diet-​induced obesity and regulate gut 
+hormones via free fatty acid receptor 3-independent 
+mechanisms. PLoS ONE 7, e35240 (2012).
+109.	Xiong, Y. et al. Short-​chain fatty acids stimulate leptin 
+production in adipocytes through the G protein-​
+coupled receptor GPR41. Proc. Natl Acad. Sci. USA 
+101, 1045–1050 (2004).
+110.	 Vinolo, M. A. R. et al. Tributyrin attenuates obesity-​
+associated inflammation and insulin resistance in high-​
+fat-fed mice. Am. J. Physiol. Endocrinol. Metab. 303, 
+E272–E282 (2012).
+111.	 Maslowski, K. M. et al. Regulation of inflammatory 
+responses by gut microbiota and chemoattractant 
+receptor GPR43. Nature 461, 1282–1286 (2009).
+112.	Macia, L. et al. Metabolite-​sensing receptors GPR43 
+and GPR109A facilitate dietary fibre-​induced gut 
+homeostasis through regulation of the inflammasome. 
+Nat. Commun. 6, 6734 (2015).
+113.	Pluznick, J. L. Renal and cardiovascular sensory 
+receptors and blood pressure regulation. Am. J. 
+Physiol. Ren. Physiol. 305, F439–F444 (2013).
+114.	Byndloss, M. X. et al. Microbiota-​activated PPAR-​γ 
+signaling inhibits dysbiotic Enterobacteriaceae 
+expansion. Science 357, 570–575 (2017).
+115.	Tang, T. W. et al. Loss of gut microbiota alters immune 
+system composition and cripples postinfarction 
+cardiac repair. Circulation 139, 647–659 (2019).
+116.	Chambers, E. S. et al. Effects of targeted delivery of 
+propionate to the human colon on appetite regulation, 
+body weight maintenance and adiposity in overweight 
+adults. Gut 64, 1744–1754 (2015).
+117.	Sanna, S. et al. Causal relationships among the gut 
+microbiome, short-​chain fatty acids and metabolic 
+diseases. Nat. Genet. 51, 600 (2019).  
+This study presents data providing evidence of a 
+causal effect of the gut microbiome on metabolic 
+traits.
+118.	Tirosh, A. et al. The short-​chain fatty acid propionate 
+increases glucagon and FABP4 production, impairing 
+insulin action in mice and humans. Sci. Transl Med. 
+11, eaav0120 (2019).
+119.	Bouter, K. et al. Differential metabolic effects of oral 
+butyrate treatment in lean versus metabolic syndrome 
+subjects. Clin. Trans. Gastroenterol 9, 155 (2018).
+120.	Gao, X. et al. Acetate functions as an epigenetic 
+metabolite to promote lipid synthesis under hypoxia. 
+Nat. Commun. 7, 11960 (2016).
+121.	Perry, R. J. et al. Acetate mediates a microbiome–
+brain–β-​cell axis to promote metabolic syndrome. 
+Nature 534, 213–217 (2016).
+122.	Freeland, K. R. & Wolever, T. M. Acute effects of 
+intravenous and rectal acetate on glucagon-​like 
+peptide-1, peptide YY, ghrelin, adiponectin and 
+tumour necrosis factor-​α. Br. J. Nutr. 103, 460–466 
+(2010).
+123.	Ridlon, J. M., Kang, D.-J. & Hylemon, P. B. Bile salt 
+biotransformations by human intestinal bacteria.  
+J. Lipid Res. 47, 241–259 (2006).
+124.	Fiorucci, S., Mencarelli, A., Palladino, G. & Cipriani, S. 
+Bile-​acid-activated receptors: targeting TGR5 and 
+farnesoid-​X-receptor in lipid and glucose disorders. 
+Trends Pharmacol. Sci. 30, 570–580 (2009).
+125.	Prawitt, J. et al. Farnesoid X receptor deficiency 
+improves glucose homeostasis in mouse models  
+of obesity. Diabetes 60, 1861–1871 (2011).
+126.	Thomas, C. et al. TGR5-mediated bile acid sensing 
+controls glucose homeostasis. Cell Metab. 10,  
+167–177 (2009).
+127.	Makishima, M. et al. Identification of a nuclear 
+receptor for bile acids. Science 284, 1362–1365 
+(1999).
+128.	Kawamata, Y. et al. A G protein-​coupled receptor 
+responsive to bile acids. J. Biol. Chem. 278,  
+9435–9440 (2003).
+129.	Pathak, P. et al. Intestine farnesoid X receptor agonist 
+and the gut microbiota activate G-​protein bile acid 
+receptor-1 signaling to improve metabolism. 
+Hepatology 68, 1574–1588 (2018).
+130.	Modica, S., Gadaleta, R. M. & Moschetta, A. 
+Deciphering the nuclear bile acid receptor FXR 
+paradigm. Nucl. Recept. Signal. https://doi.org/ 
+10.1621/nrs.08005 (2010).
+131.	Spinelli, V. et al. Influence of Roux-​en-Y gastric bypass 
+on plasma bile acid profiles: a comparative study 
+between rats, pigs and humans. Int. J. Obes. 40, 1260 
+(2016).
+132.	Kindel, T. L. et al. Increased glycine-​amidated 
+hyocholic acid correlates to improved early weight loss 
+after sleeve gastrectomy. Surg. Endosc. 32, 805–812 
+(2018).
+133.	Canfora, E. E., Meex, R. C., Venema, K. & Blaak, E. E. 
+Gut microbial metabolites in obesity, NAFLD and 
+T2DM. Nat. Rev. Endocrinol. 15, 261–273 (2019).
+134.	Bansal, T., Alaniz, R. C., Wood, T. K. & Jayaraman, A. 
+The bacterial signal indole increases epithelial-​cell 
+tight-​junction resistance and attenuates indicators  
+of inflammation. Proc. Natl Acad. Sci. USA 107,  
+228–233 (2010).
+135.	Shimada, Y. et al. Commensal bacteria-​dependent 
+indole production enhances epithelial barrier function 
+in the colon. PLoS ONE 8, e80604 (2013).
+136.	Chimerel, C. et al. Bacterial metabolite indole 
+modulates incretin secretion from intestinal 
+enteroendocrine L cells. Cell Rep. 9, 1202–1208 
+(2014).
+137.	De Mello, V. D. et al. Indolepropionic acid and novel 
+lipid metabolites are associated with a lower risk of 
+type 2 diabetes in the Finnish Diabetes Prevention 
+Study. Sci. Rep. 7, 46337 (2017).  
+This study shows that microbial indole propionate 
+and additional metabolites associate with lower 
+risk of incident T2D.
+138.	Wang, T. J. et al. Metabolite profiles and the risk of 
+developing diabetes. Nat. Med. 17, 448 (2011).
+139.	Sun, H. et al. Catabolic defect of branched-​chain 
+amino acids promotes heart failure. Circulation 133, 
+2038–2049 (2016).
+140.	Koh, A. et al. Microbially produced imidazole 
+propionate impairs insulin signaling through mTORC1. 
+Cell 175, 947–961.e17 (2018).  
+This study demonstrates that imidazole propionate 
+is produced from histidine in a gut simulator at 
+higher concentrations when using faecal microbiota 
+from subjects with T2D than from individuals 
+without T2D, and that it impairs glucose tolerance 
+when administered to mice.
+141.	MacDonald, M. J., Fahien, L. A., Mertz, R. J. &  
+Rana, R. S. Effect of esters of succinic acid and other 
+citric acid cycle intermediates on insulin release and 
+inositol phosphate formation by pancreatic islets. 
+Arch. Biochem. Biophys. 269, 400–406 (1989).
+142.	Mills, E. L. et al. Accumulation of succinate controls 
+activation of adipose tissue thermogenesis. Nature 
+560, 102–106 (2018).
+143.	Tannahill, G. et al. Succinate is an inflammatory signal 
+that induces IL-1β through HIF-1α. Nature 496,  
+238–242 (2013).
+144.	Suárez-​Zamorano, N. et al. Microbiota depletion 
+promotes browning of white adipose tissue and 
+reduces obesity. Nat. Med. 21, 1497 (2015).
+145.	Li, B. et al. Microbiota depletion impairs thermogenesis 
+of brown adipose tissue and browning of white adipose 
+tissue. Cell Rep. 26, 2720–2737.e5 (2019).
+146.	Kamio, Y. & Nikaido, H. Outer membrane of 
+Salmonella typhimurium: accessibility of phospholipid 
+head groups to phospholipase C and cyanogen 
+bromide activated dextran in the external medium. 
+Biochemistry 15, 2561–2570 (1976).
+147.	Cani, P. D. et al. Metabolic endotoxemia initiates 
+obesity and insulin resistance. Diabetes 56,  
+1761–1772 (2007).
+148.	Luck, H. et al. Gut-​associated IgA+ immune cells regulate 
+obesity-​related insulin resistance. Nat. Commun. 10, 
+1–17 (2019).
+149.	Winer, D. A., Luck, H., Tsai, S. & Winer, S. The 
+intestinal immune system in obesity and insulin 
+resistance. Cell Metab. 23, 413–426 (2016).
+150.	Breton, J. et al. Gut commensal E. coli proteins 
+activate host satiety pathways following nutrient-​
+induced bacterial growth. Cell Metab. 23, 324–334 
+(2016).
+151.	Tennoune, N. et al. Bacterial ClpB heat-​shock protein, 
+an antigen-​mimetic of the anorexigenic peptide α-​MSH, 
+at the origin of eating disorders. Transl Psychiat. 4, 
+e458–e458 (2014).
+152.	Breton, J. et al. Elevated plasma concentrations of 
+bacterial ClpB protein in patients with eating 
+disorders. Int. J. Eat. Disord. 49, 805–808 (2016).
+153.	Cohen, L. J. et al. Functional metagenomic discovery of 
+bacterial effectors in the human microbiome and 
+isolation of commendamide, a GPCR G2A/132 agonist. 
+Proc. Natl Acad. Sci. USA 112, E4825–E4834 (2015).
+154.	Cohen, L. J. et al. Commensal bacteria make GPCR 
+ligands that mimic human signalling molecules. Nature 
+549, 48 (2017).
+155.	Qiang, X. et al. New melanocortin-​like peptide of  
+E. coli can suppress inflammation via the mammalian 
+melanocortin-1 receptor (MC1R): possible endocrine-​
+like function for microbes of the gut. NPJ Biofilms 
+Microbiomes 3, 31 (2017).
+156.	Elsden, S. R., Hilton, M. G. & Waller, J. M.  
+The end products of the metabolism of aromatic 
+amino acids by Clostridia. Arch. Microbiol. 107,  
+283–288 (1976).
+157.	Lin, C.-J., Wu, V., Wu, P.-C. & Wu, C.-J. Meta-​analysis 
+of the associations of p-​cresyl sulfate (PCS) and indoxyl 
+sulfate (IS) with cardiovascular events and all-​cause 
+mortality in patients with chronic renal failure.  
+PLoS ONE 10, e0132589 (2015).
+158.	Krisko, T. I. et al. Dissociation of adaptive thermogenesis 
+from glucose homeostasis in microbiome-​deficient 
+mice. Cell Metab. 31, 592–604.e9 (2020).
+159.	Vojinovic, D. et al. Relationship between gut 
+microbiota and circulating metabolites in  
+population-based cohorts. Nat. Commun. 10,  
+1–7 (2019).
+160.	Vandeputte, D. et al. Quantitative microbiome 
+profiling links gut community variation to microbial 
+load. Nature 551, 507 (2017).  
+This study builds a workflow for the quantitative 
+microbiome profiling of faecal material, showing 
+that quantitative microbiome profiling has a 
+substantial effect on co-​occurrence analyses and 
+the characterization of disease-​associated 
+microbiota perturbations.
+161.	Zhou, W. et al. Longitudinal multi-​omics of host–microbe 
+dynamics in prediabetes. Nature 569, 663–671 
+(2019).
+162.	Flint, A., Raben, A., Rehfeld, J., Holst, J. & Astrup, A. 
+The effect of glucagon-​like peptide-1 on energy 
+expenditure and substrate metabolism in humans.  
+Int. J. Obes. 24, 288 (2000).
+163.	Batterham, R. L. et al. Gut hormone PYY 3-36 
+physiologically inhibits food intake. Nature 418, 650 
+(2002).
+164.	Holz, I. V. IV, G. G., Kiihtreiber, W. M. & Habener, J. F. 
+Pancreatic β-​cells are rendered glucose-​competent by 
+the insulinotropic hormone glucagon-​like peptide-1 
+(7–37). Nature 361, 362 (1993).
+165.	Macfarlane, S. & Macfarlane, G. T. Composition and 
+metabolic activities of bacterial biofilms colonizing 
+food residues in the human gut. Appl. Environ. 
+Microbiol. 72, 6204–6211 (2006).
+www.nature.com/nrmicro
+Reviews
+
+========== PAGE 17 ==========
+166.	Roager, H. M. et al. Colonic transit time is related to 
+bacterial metabolism and mucosal turnover in the gut. 
+Nat. Microbiol. 1, 16093 (2016).  
+This study indicates that the colonic transit time is 
+an important factor to consider in microbiome and 
+metabolomics studies.
+167.	Russell, W. R. et al. Major phenylpropanoid-​derived 
+metabolites in the human gut can arise from microbial 
+fermentation of protein. Mol. Nutr. Food Res. 57, 
+523–535 (2013).
+168.	Flemer, B. et al. The oral microbiota in colorectal cancer 
+is distinctive and predictive. Gut 67, 1454–1463 
+(2018).
+169.	Plaza Oñate, F. et al. MSPminer: abundance-​based 
+reconstitution of microbial pan-​genomes from shotgun 
+metagenomic data. Bioinformatics 35, 1544–1552 
+(2018).
+170.	Truong, D. T., Tett, A., Pasolli, E., Huttenhower, C. & 
+Segata, N. Microbial strain-​level population structure 
+and genetic diversity from metagenomes. Genome 
+Res. 27, 626–638 (2017).
+171.	Zolfo, M., Tett, A., Jousson, O., Donati, C. & Segata, N. 
+MetaMLST: multi-​locus strain-​level bacterial typing 
+from metagenomic samples. Nucleic Acids Res. 45, 
+e7–e7 (2016).
+172.	Truong, D. T. et al. MetaPhlAn2 for enhanced 
+metagenomic taxonomic profiling. Nat. Methods 12, 
+902 (2015).
+173.	Greenblum, S., Carr, R. & Borenstein, E. Extensive 
+strain-​level copy-​number variation across human gut 
+microbiome species. Cell 160, 583–594 (2015).
+174.	Langfelder, P. & Horvath, S. WGCNA: an R package  
+for weighted correlation network analysis. BMC 
+Bioinforma. 9, 559 (2008).
+175.	Wikoff, W. R. et al. Diacetylspermine is a novel 
+prediagnostic serum biomarker for non-​small-cell  
+lung cancer and has additive performance with  
+pro-​surfactant protein B. J. Clin. Oncol. 33, 3880 
+(2015).
+176.	de Hoffmann, E. Tandem mass spectrometry:  
+a primer. J. Mass. Spectrom. 31, 129–137 (1996).
+177.	Donia, M. S. & Fischbach, M. A. Small molecules from 
+the human microbiota. Science 349, 1254766 (2015).
+178.	Cani, P. D. et al. Changes in gut microbiota control 
+metabolic endotoxemia-​induced inflammation in  
+high-​fat diet-​induced obesity and diabetes in mice. 
+Diabetes 57, 1470–1481 (2008).
+179.	Wolters, M. et al. Dietary fat, the gut microbiota, and 
+metabolic health — a systematic review conducted 
+within the MyNewGut project. Clin. Nutr. 38,  
+2504–2520 (2018).
+180.	Kjølbæk, L. et al. Arabinoxylan oligosaccharides and 
+polyunsaturated fatty acid effects on gut microbiota 
+and metabolic markers in overweight individuals with 
+signs of metabolic syndrome: a randomized cross-​over 
+trial. Clin. Nutr. 39, 67–79 (2019).
+181.	Dieterich, W. et al. Influence of low FODMAP and 
+gluten-​free diets on disease activity and intestinal 
+microbiota in patients with non-​celiac gluten 
+sensitivity. Clin. Nutr. 38, 697–707 (2019).
+182.	Hansen, L. B. et al. A low-​gluten diet induces changes 
+in the intestinal microbiome of healthy Danish adults. 
+Nat. Commun. 9, 4630 (2018).
+183.	Roager, H. M. et al. Whole grain-​rich diet reduces 
+body weight and systemic low-​grade inflammation 
+without inducing major changes of the gut microbiome: 
+a randomised cross-​over trial. Gut 68, 83–93 (2019).
+184.	Sanders, M. E., Merenstein, D. J., Reid, G., Gibson, G. R. 
+& Rastall, R. A. Probiotics and prebiotics in intestinal 
+health and disease: from biology to the clinic.  
+Nat. Rev. Gastroenterol. Hepatol. 16, 605–616 
+(2019).
+185.	Martín, R. et al. Functional characterization of  
+novel Faecalibacterium prausnitzii strains isolated 
+from healthy volunteers: a step forward in the use  
+of F. prausnitzii as a next-​generation probiotic.  
+Front. Microbiol. 8, 1226 (2017).
+186.	Depommier, C. et al. Supplementation with 
+Akkermansia muciniphila in overweight and obese 
+human volunteers: a proof-​of-concept exploratory 
+study. Nat. Med. 25, 1096–1103 (2019).  
+This proof-​of-concept study shows that 
+supplementation with A. muciniphila improves 
+several dysmetabolic features.
+187.	Cani, P. D. & Van Hul, M. Novel opportunities for  
+next-​generation probiotics targeting metabolic 
+syndrome. Curr. Opin. Biotechnol. 32, 21–27  
+(2015).
+188.	Kristensen, N. B. et al. Alterations in fecal microbiota 
+composition by probiotic supplementation in healthy 
+adults: a systematic review of randomized controlled 
+trials. Genome Med. 8, 52 (2016).
+189.	Zmora, N. et al. Personalized gut mucosal colonization 
+resistance to empiric probiotics is associated with 
+unique host and microbiome features. Cell 174, 
+1388–1405.e21 (2018).
+190.	Suez, J. et al. Post-​antibiotic gut mucosal microbiome 
+reconstitution is impaired by probiotics and improved 
+by autologous FMT. Cell 174, 1406–1423.e16 
+(2018).
+191.	Everard, A. et al. Responses of gut microbiota and 
+glucose and lipid metabolism to prebiotics in genetic 
+obese and diet-​induced leptin-​resistant mice. Diabetes 
+60, 2775–2786 (2011).
+192.	Dewulf, E. M. et al. Insight into the prebiotic concept: 
+lessons from an exploratory, double blind intervention 
+study with inulin-​type fructans in obese women. Gut 
+62, 1112–1121 (2013).
+193.	Nicolucci, A. C. et al. Prebiotics reduce body fat  
+and alter intestinal microbiota in children who are 
+overweight or with obesity. Gastroenterology 153, 
+711–722 (2017).
+194.	Tsilingiri, K. et al. Probiotic and postbiotic activity in 
+health and disease: comparison on a novel polarised ex-​
+vivo organ culture model. Gut 61, 1007–1015 (2012).
+195.	Plovier, H. et al. A purified membrane protein  
+from Akkermansia muciniphila or the pasteurized 
+bacterium improves metabolism in obese and diabetic 
+mice. Nat. Med. 23, 107 (2017).
+196.	Van Nood, E. et al. Duodenal infusion of donor feces 
+for recurrent Clostridium difficile. N. Engl. J. Med. 
+368, 407–415 (2013).
+197.	Kootte, R. S. et al. Improvement of insulin sensitivity 
+after lean donor feces in metabolic syndrome is  
+driven by baseline intestinal microbiota composition. 
+Cell Metab. 26, 611–619.e6 (2017).
+198.	Duan, F. F., Liu, J. H. & March, J. C. Engineered 
+commensal bacteria reprogram intestinal cells into 
+glucose-​responsive insulin-​secreting cells for the 
+treatment of diabetes. Diabetes 64, 1794–1803 
+(2015).
+199.	Górski, A. et al. Perspectives of phage therapy in non-​
+bacterial infections. Front. Microbiol. https://doi.org/ 
+10.3389/fmicb.2018.03306 (2018).
+200.	Ramachandran, G. & Bikard, D. Editing the microbiome 
+the CRISPR way. Philos. Trans. R. Soc. Lond. B Biol. Sci. 
+374, 20180103 (2019).
+Acknowledgements
+This study was supported by Marie Skłodowska-​Curie 
+Individual Fellowship 797267 (granted to Y.F.). The Novo 
+Nordisk Foundation Center for Basic Metabolic Research is 
+an independent research centre at the University of 
+Copenhagen partially funded by an unrestricted donation 
+from the Novo Nordisk Foundation.
+Author contributions
+The authors contributed equally to all aspects of the article.
+Competing interests
+The authors declare no competing interests.
+Peer review information
+Nature Reviews Microbiology thanks M. Nieuwdorp, C. Thaiss 
+and the other, anonymous, reviewer(s) for their contribution 
+to the peer review of this work.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional 
+claims in published maps and institutional affiliations.
+ 
+© Springer Nature Limited 2020
+Nature Reviews | Microbiology
+Reviews

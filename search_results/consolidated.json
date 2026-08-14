@@ -1,0 +1,982 @@
+[
+  {
+    "title": "Effect of probiotic supplementation on gastrointestinal motility, inflammation, motor, non-motor symptoms and mental health in Parkinson’s disease: a meta-analysis of randomized controlled trials",
+    "authors": [
+      "Park, Jong Mi",
+      "Lee, Sang Chul",
+      "Ham, Chorom",
+      "Kim, Yong Wook"
+    ],
+    "year": null,
+    "doi": "10.1186/s13099-023-00536-1",
+    "cited_by": 53,
+    "venue": "Gut Pathogens",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:title>Abstract</jats:title><jats:sec>\n                <jats:title>Background</jats:title>\n                <jats:p>Parkinson’s disease (PD) is the second most common neurodegenerative disease worldwide. Gut dysbiosis is hypothesized to cause PD; therefore, whether probiotics can be used as adju",
+    "score": 128
+  },
+  {
+    "title": "Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in NAFLD Management",
+    "authors": [
+      "Ko-Shih Chang",
+      "Wu-Hsien Kuo",
+      "Mu-Hsin Chang",
+      "Yao Hsiao",
+      "Ru-Yin Tsai"
+    ],
+    "year": 2025,
+    "doi": "10.3390/ijms26135944",
+    "cited_by": 8,
+    "venue": "International Journal of Molecular Sciences",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "Findings suggest that Bifidobacterium-based probiotic combinations may provide cardiometabolic benefits, particularly in lipid regulation, glucose metabolism, and inflammatory control.",
+    "score": 108
+  },
+  {
+    "title": "Distinct modulatory effects of high-fiber and fermented-food diets on gut microbiota, immune function, transit time, and sleep quality in a citizen science randomized controlled trial",
+    "authors": [
+      "M. van den Belt",
+      "M. L. Van de Put",
+      "E. YuÌksel",
+      "D. Lee",
+      "F. V. van Eeden",
+      "J. P. van Straaten",
+      "N. Pintar",
+      "B. Balen",
+      "M. Andelic",
+      "I. Rijnaarts",
+      "I. Besseling-van der Vaart",
+      "M. Rook",
+      "D. Molenaar",
+      "E. Levin",
+      "W. M. de Vos",
+      "N. D. de Wit",
+      "R. Kort"
+    ],
+    "year": 2025,
+    "doi": "10.1101/2025.08.05.25332853",
+    "cited_by": 3,
+    "venue": "medRxiv",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "This is the first randomized controlled nutritional intervention using a citizen science approach that demonstrates the feasibility and scientific value of engaging participants in healthier food choices and induced a modest shift in the gut microbiota of participants over 50 years toward a composit",
+    "score": 103
+  },
+  {
+    "title": "Fermented brown rice beverage distinctively modulates the gut microbiota in Okinawans with metabolic syndrome: A randomized controlled trial.",
+    "authors": [
+      "Yukari Akamine",
+      "Jasmine F. Millman",
+      "Tsugumi Uema",
+      "S. Okamoto",
+      "M. Yonamine",
+      "M. Uehara",
+      "Chisayo Kozuka",
+      "T. Kaname",
+      "M. Shimabukuro",
+      "K. Kinjo",
+      "Masayo Mitsuta",
+      "Hirosuke Watanabe",
+      "H. Masuzaki"
+    ],
+    "year": 2022,
+    "doi": "10.1016/j.nutres.2022.03.013",
+    "cited_by": 19,
+    "venue": "Nutrition Research",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "It is demonstrated that consumption of BA is effective to beneficially modulate the gut microbiota compared with WA in patients with MetS.",
+    "score": 100
+  },
+  {
+    "title": "Different gut microbiota in U.S. formula-fed infants consuming a meat vs. dairy-based complementary foods: A randomized controlled trial",
+    "authors": [
+      "Minghua Tang",
+      "Cheng Ma",
+      "Eileen M Weinheimer-Haus",
+      "C. Robertson",
+      "J. Kofonow",
+      "Lillian M Berman",
+      "A. Waljee",
+      "Ji Zhu",
+      "Daniel N. Frank",
+      "N. Krebs"
+    ],
+    "year": 2023,
+    "doi": "10.3389/fnut.2022.1063518",
+    "cited_by": 10,
+    "venue": "Frontiers in Nutrition",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "Complementary feeding not only impacts infant growth but also affects gut microbiota maturation and these changes in gut microbiota are associated with infant growth.",
+    "score": 100
+  },
+  {
+    "title": "The effectiveness of a plant-based milk with fermented brown rice on constipation symptoms via gut microbiota modulation: a double-blind randomized controlled trial",
+    "authors": [
+      "Amei Tang",
+      "Qiuge Cao",
+      "Menghan Wang",
+      "Wei Li",
+      "Hongkai Xu",
+      "Yu Wang",
+      "Haozhi Niu",
+      "Huiying Wang",
+      "Guoqing Ma",
+      "Kaizhen Jia",
+      "Xinran Feng",
+      "Chen He",
+      "Juan He",
+      "Maab Mohammed Alballa",
+      "Xia Liao",
+      "Tian Tian",
+      "B. Qin",
+      "Nan Yang",
+      "Jing Wei",
+      "Jianguo Sun",
+      "Ying Wang",
+      "Yuan Cheng",
+      "Qian Wu",
+      "Jiaomei Yang",
+      "Qian Wang",
+      "Xue Wang",
+      "Xin Liu"
+    ],
+    "year": 2026,
+    "doi": "10.1007/s00394-026-04029-0",
+    "cited_by": 0,
+    "venue": "European Journal of Nutrition",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "The study did not find between-group difference in CSBM, while the plant-based milk with fermented brown rice showed greater effectiveness in relieving constipation symptoms and optimizing gut microbiota, and machine learning models identified gut microbiota features predicting intervention responde",
+    "score": 100
+  },
+  {
+    "title": "Probiotic Driven Competitive Exclusion in the Human Gut: A Meta Analysis of Microbial Diversity and Pathogen Suppression",
+    "authors": [
+      "Alshatari, Sumaya Sameer",
+      "Ziarno, Malgorzata"
+    ],
+    "year": null,
+    "doi": "10.20944/preprints202601.1492.v1",
+    "cited_by": 2,
+    "venue": "",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:p>Background: The human microbiome, particularly the gut microbiota, is essential for health maintenance and disease prevention. Probiotics, defined as live microorganisms that provide health benefits to the host, are increasingly recognized for their capacity to inhibit pathogenic bacteria th",
+    "score": 83
+  },
+  {
+    "title": "Probiotic-Driven Competitive Exclusion in the Human Gut: A Meta-Analysis of Microbial Diversity and Pathogen Suppression",
+    "authors": [
+      "Alshatari, Sumaya Sameer",
+      "Ziarno, Malgorzata"
+    ],
+    "year": null,
+    "doi": "10.3390/nu18050796",
+    "cited_by": 2,
+    "venue": "Nutrients",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:p>Background: The gut microbiota is essential for maintaining health and preventing disease. Probiotics, defined as beneficial live microorganisms, are increasingly recognized for their ability to inhibit pathogens through competitive exclusion. This meta-analysis systematically evaluates the ",
+    "score": 83
+  },
+  {
+    "title": "Impact of Single and Multi-Strain Probiotic Supplementation on Glycaemic Control in Type 2 Diabetic Patients: A Comparative Meta-Analysis",
+    "authors": [
+      "Tchamani Piame, Laverdure",
+      "Yako, Yandiswa Yolanda"
+    ],
+    "year": null,
+    "doi": "10.3390/applbiosci5010006",
+    "cited_by": 2,
+    "venue": "Applied Biosciences",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:p>Probiotics, whether consisting of a single strain or multiple strains, are attracting growing interest in the management of type 2 diabetes mellitus (T2DM). However, their efficacy remains a matter of controversy and requires careful consideration. Accordingly, this meta-analysis aimed to co",
+    "score": 80
+  },
+  {
+    "title": "THE EFFECT OF FREEZE-DRIED PROBIOTIC SACHETS VERSUS FERMENTED DAIRY PRODUCT (YOGURT) ON GINGIVAL BLEEDING ON BRUSHING IN ADOLESCENTS (12-15) YEARS OLD: A RANDOMIZED CLINICAL PILOT TRIAL",
+    "authors": [
+      "Ismaiel, Mai",
+      "fouad, Marwa",
+      "abdelmoniem, soad"
+    ],
+    "year": 2021,
+    "doi": "10.21608/edj.2021.56782.1446",
+    "cited_by": 0,
+    "venue": "Egyptian Dental Journal",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 80
+  },
+  {
+    "title": "Strain inheritance and neonatal gut microbiota development: a meta-analysis",
+    "authors": [
+      "Podlesny, Daniel",
+      "Fricke, W. Florian"
+    ],
+    "year": null,
+    "doi": "10.1101/2020.10.10.20210534",
+    "cited_by": 0,
+    "venue": "",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:title>ABSTRACT</jats:title>\n                <jats:p>\n                  As many inflammatory and metabolic disorders have been associated with structural deficits of the human gut microbiota, the principles and mechanisms that govern its initialization and development are of considerable scient",
+    "score": 75
+  },
+  {
+    "title": "Distinct effects of a dairy probiotic drink and physical exercise on gut microbiota in pediatric acute lymphoblastic leukemia patients in remission: a randomized clinical trial",
+    "authors": [
+      "Libuša Nechalová",
+      "Ivan Hric",
+      "Sabína Šmahová",
+      "Miriam Babicová",
+      "Simona Ugrayová",
+      "Veronika Hlaváčová",
+      "Leonard Lendvorský",
+      "Timotej Surán",
+      "Alexandra Kolenová",
+      "V. Bielik"
+    ],
+    "year": 2026,
+    "doi": "10.3389/fmicb.2026.1791192",
+    "cited_by": 0,
+    "venue": "Frontiers in Microbiology",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "Overall, probiotic supplementation had a greater impact on gut microbiota composition than physical activity, inducing targeted shifts toward a more favorable microbial profile in this clinically vulnerable population.",
+    "score": 75
+  },
+  {
+    "title": "Fermented Foods: Definitions and Characteristics, Impact on the Gut Microbiota and Effects on Gastrointestinal Health and Disease",
+    "authors": [
+      "Eirini Dimidi",
+      "Selina Cox",
+      "Megan Rossi",
+      "Kevin Whelan"
+    ],
+    "year": 2019,
+    "doi": "10.3390/nu11081806",
+    "cited_by": 770,
+    "venue": "Nutrients",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 73
+  },
+  {
+    "title": "Does Yogurt Enriched with Platelet-Activating Factor Inhibitors from Olive Oil By-Products Affect Gut Microbiota and Faecal Metabolites in Healthy Overweight Subjects? (A randomized, parallel, three arm trial.).",
+    "authors": [
+      "Smaragdi Antonopoulou",
+      "E. Mitsou",
+      "A. Kyriacou",
+      "E. Fragopoulou",
+      "M. Detopoulou"
+    ],
+    "year": 2024,
+    "doi": "10.31083/j.fbl2904159",
+    "cited_by": 3,
+    "venue": "Frontiers in Bioscience",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "Yogurt consumption seems to favorably affect gut microbiota while its enrichment with PAF-R antagonists from olive oil by-products, may provide further benefits in healthy overweight subjects.",
+    "score": 73
+  },
+  {
+    "title": "Randomized study of Lacticaseibacillus fermented milk in Indonesian elderly houses: Impact on gut microbiota and gut environment",
+    "authors": [
+      "I. Sujaya",
+      "M. Mariyatun",
+      "P. N. Hasan",
+      "N. Manurung",
+      "P. C. Pramesi",
+      "M. Juffrie",
+      "T. Utami",
+      "M. N. Cahyanto",
+      "Shuta Yamamoto",
+      "Takuya Takahashi",
+      "Takashi Asahara",
+      "T. Akiyama",
+      "E. S. Rahayu"
+    ],
+    "year": 2025,
+    "doi": "10.3748/wjg.v31.i12.104081",
+    "cited_by": 4,
+    "venue": "World Journal of Gastroenterology",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "Daily intake of LcS positively affects the gut microbiota and environment of people living in Indonesian elderly houses.",
+    "score": 70
+  },
+  {
+    "title": "Gut microbiota profile in infants with milk and/or egg allergy and evaluation of intestinal colonization and persistence of a probiotic mixture",
+    "authors": [
+      "Reddel, Sofia",
+      "Mennini, Maurizio",
+      "Del Chierico, Federica",
+      "Vernocchi, Pamela",
+      "Valluzzi, Rocco",
+      "Fierro, Vincenzo",
+      "Riccardi, Carla",
+      "Fiocchi, Alessandro",
+      "Putignani, Lorenza"
+    ],
+    "year": 2020,
+    "doi": "10.1016/j.waojou.2020.100424",
+    "cited_by": 3,
+    "venue": "World Allergy Organization Journal",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 70
+  },
+  {
+    "title": "Non-Dairy Fermented Beverages as Potential Carriers to Ensure Probiotics, Prebiotics, and Bioactive Compounds Arrival to the Gut and Their Health Benefits",
+    "authors": [
+      "Estefanía Valero‐Cases",
+      "Débora Cerdá-Bernad",
+      "Joaquín-Julián Pastor",
+      "María José Frutos Fernández"
+    ],
+    "year": 2020,
+    "doi": "10.3390/nu12061666",
+    "cited_by": 222,
+    "venue": "Nutrients",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 63
+  },
+  {
+    "title": "Fermented Dairy Foods: Impact on Intestinal Microbiota and Health-Linked Biomarkers",
+    "authors": [
+      "Sónia González",
+      "Tania Fernández-Navarro",
+      "Silvia Arboleya",
+      "Clara G. de los Reyes‐Gavilán",
+      "Nuria Salazar",
+      "Miguel Gueimonde"
+    ],
+    "year": 2019,
+    "doi": "10.3389/fmicb.2019.01046",
+    "cited_by": 128,
+    "venue": "Frontiers in Microbiology",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 63
+  },
+  {
+    "title": "Fermented Dairy Products as Precision Modulators of Gut Microbiota and Host Health: Mechanistic Insights, Clinical Evidence, and Future Directions",
+    "authors": [
+      "Yuan Gao",
+      "Yanyan Liu",
+      "Tingting Ma",
+      "Qimeng Liang",
+      "Junqi Sun",
+      "Xiaomeng Wu",
+      "Yinglong Song",
+      "Hui Nie",
+      "Jun Huang",
+      "Guangqing Mu"
+    ],
+    "year": 2025,
+    "doi": "10.3390/foods14111946",
+    "cited_by": 60,
+    "venue": "Foods",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "This review synthesizes mechanistic insights demonstrating how live starter cultures and their fermentation-derived metabolites act synergistically to enhance microbial diversity, reinforce epithelial barrier integrity via upregulation of tight-junction proteins, and modulate immune signaling.",
+    "score": 63
+  },
+  {
+    "title": "Programmable probiotics modulate inflammation and gut microbiota for inflammatory bowel disease treatment after effective oral delivery",
+    "authors": [
+      "Jun Zhou",
+      "Maoyi Li",
+      "Qiufang Chen",
+      "Qiufang Chen",
+      "Xinjie Li",
+      "Linfu Chen",
+      "Ziliang Dong",
+      "Wenjun Zhu",
+      "Yang Yang",
+      "Zhuang Liu",
+      "Qian Chen",
+      "Qian Chen"
+    ],
+    "year": 2022,
+    "doi": "10.1038/s41467-022-31171-0",
+    "cited_by": 669,
+    "venue": "Nature Communications",
+    "source_file": "dose_response.json",
+    "url": "",
+    "abstract": "",
+    "score": 60
+  },
+  {
+    "title": "Effect of a multi-strain probiotic mixture consumption on anxiety and depression symptoms induced in adult mice by postnatal maternal separation",
+    "authors": [
+      "Francesca De Santa",
+      "G. Strimpakos",
+      "Nicole Marchetti",
+      "Giorgio Gargari",
+      "Alessio Torcinaro",
+      "S. Arioli",
+      "Diego Mora",
+      "Carla Petrella",
+      "S. Farioli-Vecchioli"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40168-024-01752-w",
+    "cited_by": 49,
+    "venue": "Microbiome",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "Gut microbiota and its metabolites mediate the therapeutic action of the probiotic mix on MS-induced brain dysfunctions and extend the knowledge on the use of probiotics as a therapeutic tool in the presence of alterations of the emotional sphere that significantly impact on gut microbiota compositi",
+    "score": 60
+  },
+  {
+    "title": "Gut microbiota in human metabolic health and disease",
+    "authors": [
+      "Yong Fan",
+      "Oluf Pedersen"
+    ],
+    "year": 2020,
+    "doi": "10.1038/s41579-020-0433-9",
+    "cited_by": 4659,
+    "venue": "Nature Reviews Microbiology",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 58
+  },
+  {
+    "title": "The gut–liver axis and gut microbiota in health and liver disease",
+    "authors": [
+      "Cynthia L. Hsu",
+      "Bernd Schnabl"
+    ],
+    "year": 2023,
+    "doi": "10.1038/s41579-023-00904-3",
+    "cited_by": 644,
+    "venue": "Nature Reviews Microbiology",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 58
+  },
+  {
+    "title": "Clinical trials targeting the gut-microbiome to effect ocular health: a systematic review",
+    "authors": [
+      "M. Russell",
+      "J. Muste",
+      "Blanche L. Kuo",
+      "Anna K. Wu",
+      "Rishi P. Singh"
+    ],
+    "year": 2023,
+    "doi": "10.1038/s41433-023-02462-7",
+    "cited_by": 7,
+    "venue": "Eye",
+    "source_file": "cn_meta.json",
+    "url": "",
+    "abstract": "The gut-eye axis appears to hold clinical relevance, but current data is limited in sample size and design and further investigation via longitudinal clinical trials may be warranted.",
+    "score": 58
+  },
+  {
+    "title": "Fermented Dairy Products",
+    "authors": [
+      "Peláez, C.",
+      "Martínez-Cuesta, M. C.",
+      "Requena, T."
+    ],
+    "year": 2019,
+    "doi": "10.1007/978-3-030-28737-5_2",
+    "cited_by": 3,
+    "venue": "How Fermented Foods Feed a Healthy Gut Microbiota",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 58
+  },
+  {
+    "title": "A Randomized Double-Blind Trial of the Effect of Liupao Tea on Metabolic Parameters, Body Composition, and Gut Microbiota in Adults with Metabolic Syndrome",
+    "authors": [
+      "Yuyang Wang",
+      "Qiang Hu",
+      "Q. Jiang",
+      "Jiami Jiang",
+      "Biandi Li",
+      "Defu Ma"
+    ],
+    "year": 2025,
+    "doi": "10.3390/nu17142371",
+    "cited_by": 2,
+    "venue": "Nutrients",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "Findings support LPT as a functional beverage for the management of MetS and effectively improves metabolic health and modulates gut microbiota in MetS patients, irrespective of aging duration.",
+    "score": 58
+  },
+  {
+    "title": "Multi-Strain Probiotic Supplement Enhances Gut Microbiota Composition in Rats: Evidence for Functional Food Potential",
+    "authors": [
+      "Wu, Tzu-Chin"
+    ],
+    "year": 2025,
+    "doi": "10.70315/uloap.ulmhs.2025.0304005",
+    "cited_by": 1,
+    "venue": "Universal Library of Medical and Health Sciences",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "<jats:p>Background: Probiotics, particularly Lactobacillus and Bifidobacterium species, are widely recognized for their beneficial effects on gut microbiota balance and host health. Alterations in gut microbial composition are associated with gastrointestinal disorders and the development of colorec",
+    "score": 58
+  },
+  {
+    "title": "Perspective Chapter: Fermented and Functional Dairy Products in Modulating Gut Microbiota and Human Health",
+    "authors": [
+      "Kaptan, Binnur"
+    ],
+    "year": null,
+    "doi": "10.5772/intechopen.1016755",
+    "cited_by": 0,
+    "venue": "Gut Microbiota as Unseen Regulators of Human Health and Disease [Working Title]",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "<jats:p>The gut microbiota is a central regulator of human health, influencing metabolism, immune responses, and intestinal homeostasis. Diet strongly shapes microbial composition, diversity, and activity, and dairy products represent a key dietary group with considerable potential to modulate this ",
+    "score": 58
+  },
+  {
+    "title": "Role of gut microbiota in type 2 diabetes pathophysiology",
+    "authors": [
+      "Manoj Gurung",
+      "Zhipeng Li",
+      "Hannah You",
+      "Richard R. Rodrigues",
+      "Donald Β. Jump",
+      "Andrey Morgun",
+      "Natalia Shulzhenko"
+    ],
+    "year": 2020,
+    "doi": "10.1016/j.ebiom.2019.11.051",
+    "cited_by": 1741,
+    "venue": "EBioMedicine",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "Gut microbiota modulation: a novel strategy for prevention and treatment of colorectal cancer",
+    "authors": [
+      "Winnie Fong",
+      "Qing Li",
+      "Jun Yu"
+    ],
+    "year": 2020,
+    "doi": "10.1038/s41388-020-1341-1",
+    "cited_by": 625,
+    "venue": "Oncogene",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "The Gut Microbiota and Alzheimer's Disease",
+    "authors": [
+      "Mónica Morales"
+    ],
+    "year": 2023,
+    "doi": "10.1016/b978-0-323-89834-8.00050-7",
+    "cited_by": 600,
+    "venue": "Diet and Nutrition in Neurological Disorders",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "The Gut Microbiota in the Pathogenesis and Therapeutics of Inflammatory Bowel Disease",
+    "authors": [
+      "Tao Zuo",
+      "Siew C. Ng"
+    ],
+    "year": 2018,
+    "doi": "10.3389/fmicb.2018.02247",
+    "cited_by": 592,
+    "venue": "Frontiers in Microbiology",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "Combined effects of host genetics and diet on human gut microbiota and incident disease in a single population cohort",
+    "authors": [
+      "Youwen Qin",
+      "Aki S. Havulinna",
+      "Yang Liu",
+      "Pekka Jousilahti",
+      "Scott C. Ritchie",
+      "Alex Tokolyi",
+      "Jon G. Sanders",
+      "Liisa Valsta",
+      "Marta Brożyńska",
+      "Qiyun Zhu",
+      "Anupriya Tripathi",
+      "Yoshiki Vázquez‐Baeza",
+      "Rohit Loomba",
+      "Susan Cheng",
+      "Mohit Jain",
+      "Teemu Niiranen",
+      "Leo Lahti",
+      "Rob Knight",
+      "Veikko Salomaa",
+      "Michael Inouye",
+      "Guillaume Méric"
+    ],
+    "year": 2022,
+    "doi": "10.1038/s41588-021-00991-z",
+    "cited_by": 576,
+    "venue": "Nature Genetics",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "Effects of Psychological, Environmental and Physical Stressors on the Gut Microbiota",
+    "authors": [
+      "J. Philip Karl",
+      "Adrienne Hatch‐McChesney",
+      "Steven Arcidiacono",
+      "Sarah Pearce",
+      "Ida G. Pantoja-Feliciano",
+      "Laurel A. Doherty",
+      "Jason W. Soares"
+    ],
+    "year": 2018,
+    "doi": "10.3389/fmicb.2018.02013",
+    "cited_by": 534,
+    "venue": "Frontiers in Microbiology",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "Efficacy of Probiotic Compounds in Relieving Constipation and Their Colonization in Gut Microbiota",
+    "authors": [
+      "He, Yuan",
+      "Zhu, Leilei",
+      "Chen, Jialun",
+      "Tang, Xin",
+      "Pan, Mingluo",
+      "Yuan, Weiwei",
+      "Wang, Hongchao"
+    ],
+    "year": null,
+    "doi": "10.3390/molecules27030666",
+    "cited_by": 46,
+    "venue": "Molecules",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "<jats:p>A number of studies have confirmed the relationship between constipation and gut microbiota. Additionally, many human and animal experiments have identified probiotics as effectors for the relief of constipation symptoms. In this study, probiotic compounds, including Lactobacillus acidophilu",
+    "score": 55
+  },
+  {
+    "title": "Gut Microbiota Profile in Children with IgE-Mediated Cow’s Milk Allergy and Cow’s Milk Sensitization and Probiotic Intestinal Persistence Evaluation",
+    "authors": [
+      "M. Mennini",
+      "Sofia Reddel",
+      "F. Del Chierico",
+      "S. Gardini",
+      "Andrea Quagliariello",
+      "P. Vernocchi",
+      "R. Valluzzi",
+      "V. Fierro",
+      "C. Riccardi",
+      "T. Napolitano",
+      "A. Fiocchi",
+      "L. Putignani"
+    ],
+    "year": 2021,
+    "doi": "10.3390/ijms22041649",
+    "cited_by": 35,
+    "venue": "International Journal of Molecular Sciences",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "Gut microbiota of cow’s milk allergic infants resulted to be characterized by a dysbiotic status with a prevalence of some bacteria as Haemophilus, Klebsiella, Prevotella, Actinobacillus and Streptococcus, and among the three strains administered, B. infantis colonized the gastrointestinal tract and",
+    "score": 55
+  },
+  {
+    "title": "Relationship between fermented dairy consumption, gut microbiota and type 2 diabetes",
+    "authors": [
+      "Flores, Sergio Vladimir",
+      "Roco-Videla, Ángel"
+    ],
+    "year": 2024,
+    "doi": "10.20960/nh.05435",
+    "cited_by": 0,
+    "venue": "Nutrición Hospitalaria",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 55
+  },
+  {
+    "title": "New perspectives in fermented dairy products and their health relevance",
+    "authors": [
+      "María García‐Burgos",
+      "Jorge Moreno‐Fernández",
+      "María José Muñoz Alférez",
+      "Javier Díaz‐Castro",
+      "Inmaculada López‐Aliaga"
+    ],
+    "year": 2020,
+    "doi": "10.1016/j.jff.2020.104059",
+    "cited_by": 306,
+    "venue": "Journal of Functional Foods",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 53
+  },
+  {
+    "title": "Fermented Cereal-based Products: Nutritional Aspects, Possible Impact on Gut Microbiota and Health Implications",
+    "authors": [
+      "Panagiota Tsafrakidou",
+      "Alexandra-Maria Michaelidou",
+      "Costas G. Βiliaderis"
+    ],
+    "year": 2020,
+    "doi": "10.3390/foods9060734",
+    "cited_by": 182,
+    "venue": "Foods",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 53
+  },
+  {
+    "title": "Effects of probiotic dose on growth performance, health, and gut microbiota of Pacific white shrimp reared in biofloc conditions",
+    "authors": [
+      "Appuhami, Ishini A",
+      "Bajracharya, Shrijan",
+      "Davis, D Allen",
+      "Bruce, Timothy J"
+    ],
+    "year": 2026,
+    "doi": "10.1093/jahafs/vsag001",
+    "cited_by": 0,
+    "venue": "Journal of Aquatic Animal Health",
+    "source_file": "dose_response.json",
+    "url": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:sec>\n                    <jats:title>Objective</jats:title>\n                    <jats:p>This study evaluated the effect of commercial Bacillus spp. probiotics on growth performance, immunity, gut microbiota composition, and disease resistance",
+    "score": 53
+  },
+  {
+    "title": "Modulation of Gut Microbiota and Immune System by Probiotics, Pre-biotics, and Post-biotics",
+    "authors": [
+      "Yue Liu",
+      "Jiaqi Wang",
+      "Changxin Wu"
+    ],
+    "year": 2022,
+    "doi": "10.3389/fnut.2021.634897",
+    "cited_by": 367,
+    "venue": "Frontiers in Nutrition",
+    "source_file": "dose_response.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  },
+  {
+    "title": "Multi-Strain Probiotics: Synergy among Isolates Enhances Biological Activities",
+    "authors": [
+      "Iliya Dauda Kwoji",
+      "Olayinka Ayobami Aiyegoro",
+      "Moses Okpeku",
+      "Matthew A. Adeleke"
+    ],
+    "year": 2021,
+    "doi": "10.3390/biology10040322",
+    "cited_by": 211,
+    "venue": "Biology",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  },
+  {
+    "title": "Persistence of Suspected Probiotic Organisms in Preterm Infant Gut Microbiota Weeks After Probiotic Supplementation in the NICU",
+    "authors": [
+      "Yousuf, Efrah I.",
+      "Carvalho, Marilia",
+      "Dizzell, Sara E.",
+      "Kim, Stephanie",
+      "Gunn, Elizabeth",
+      "Twiss, Jennifer",
+      "Giglia, Lucy",
+      "Stuart, Connie",
+      "Hutton, Eileen K."
+    ],
+    "year": null,
+    "doi": "10.3389/fmicb.2020.574137",
+    "cited_by": 30,
+    "venue": "Frontiers in Microbiology",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  },
+  {
+    "title": "Lactobacillus paracasei ZFM54 alters the metabolomic profiles of yogurt and the co-fermented yogurt improves the gut microecology of human adults",
+    "authors": [
+      "Chen, Xiangfeng",
+      "Zhu, Zichun",
+      "Zhang, Xin",
+      "Chen, Lin",
+      "Gu, Qing",
+      "Li, Ping"
+    ],
+    "year": 2024,
+    "doi": "10.3168/jds.2023-24332",
+    "cited_by": 26,
+    "venue": "Journal of Dairy Science",
+    "source_file": "fermented_dairy.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  },
+  {
+    "title": "Sialic acid-based probiotic intervention in lactating mothers improves the neonatal gut microbiota and immune responses by regulating sialylated milk oligosaccharide synthesis via the gut–breast axis",
+    "authors": [
+      "Yushuang Wang",
+      "Binqi Rui",
+      "X. Ze",
+      "Yujia Liu",
+      "Da Yu",
+      "Yinhui Liu",
+      "Zhi Li",
+      "Y. Xi",
+      "Xixi Ning",
+      "Zengjie Lei",
+      "Jieli Yuan",
+      "Liang Li",
+      "Xuguang Zhang",
+      "Wenzhe Li",
+      "Yanjie Deng",
+      "Jingyu Yan",
+      "Ming Li"
+    ],
+    "year": 2024,
+    "doi": "10.1080/19490976.2024.2334967",
+    "cited_by": 21,
+    "venue": "Gut microbes",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "The results showed that SA+Pro intervention modulated the gut microbiota and 6’-SL contents in milk of maternal rats more than the SA intervention, which promoted Lactobacillus reuteri colonization in neonates and immune development.",
+    "score": 50
+  },
+  {
+    "title": "Gut microbiota drives structural variation of exogenous probiotics to enhance colonization",
+    "authors": [
+      "Shuaiming Jiang",
+      "S. Huang",
+      "Zeng Zhang",
+      "Wenyao Ma",
+      "Zhe Han",
+      "Yuan Song",
+      "Dongxue Huo",
+      "Weipeng Cui",
+      "Jiachao Zhang"
+    ],
+    "year": 2025,
+    "doi": "10.1080/19490976.2025.2503371",
+    "cited_by": 11,
+    "venue": "Gut microbes",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "The gut domestication process can drive probiotics to undergo many SNVs and SVs, thereby enhancing their colonization ability, which provides new insights into the colonization mechanisms and offers an ecology-based strategy.",
+    "score": 50
+  },
+  {
+    "title": "Exercise-driven gut microbiota alterations enhance colonization resistance against methicillin-resistant Staphylococcus aureus.",
+    "authors": [
+      "Tingting Xu",
+      "Dan Fang",
+      "Tianqi Xu",
+      "Xiuying Tao",
+      "Zhiqiang Wang",
+      "Yuan Liu"
+    ],
+    "year": 2025,
+    "doi": "10.1016/j.celrep.2025.115424",
+    "cited_by": 9,
+    "venue": "Cell Reports",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "It is demonstrated that moderate exercise significantly reduces gut colonization by methicillin-resistant Staphylococcus aureus (MRSA), a clinically important MDR pathogen, and an understudied strain of the intestinal probiotic Dubosiella newyorkensis (L8) is identified as a critical factor in media",
+    "score": 50
+  },
+  {
+    "title": "Gut microbiome features associated with Bifidobacterium colonization predict personalized probiotic persistence patterns",
+    "authors": [
+      "Goswami, Sourav",
+      "Ansari, Alisha",
+      "Sharaf, Chetan",
+      "O’Toole, Paul W.",
+      "Shanahan, Fergus",
+      "Ahuja, Vineet",
+      "Ghosh, Tarini Shankar"
+    ],
+    "year": null,
+    "doi": "10.1038/s41467-026-72289-9",
+    "cited_by": 5,
+    "venue": "Nature Communications",
+    "source_file": "persistence.json",
+    "url": "",
+    "abstract": "This work identifies microbiome features governing Bifidobacterial colonization and provides tools to predict personalized probiotic responses and introduces “Receptive Scores” to predict colonization of different Bifidobacteria from an individual’s baseline microbiome.",
+    "score": 50
+  },
+  {
+    "title": "IQ: Intrinsic measure for quantifying the heterogeneity in meta-analysis",
+    "authors": [
+      "Ke Yang",
+      "Enxuan Lin",
+      "Tiejun Tong"
+    ],
+    "year": 2021,
+    "doi": "arXiv:2109.05755v2",
+    "cited_by": 0,
+    "venue": "arXiv",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  },
+  {
+    "title": "Generative AI and Creativity: A Systematic Literature Review and Meta-Analysis",
+    "authors": [
+      "Niklas Holzner",
+      "Sebastian Maier",
+      "Stefan Feuerriegel"
+    ],
+    "year": 2025,
+    "doi": "arXiv:2505.17241v1",
+    "cited_by": 0,
+    "venue": "arXiv",
+    "source_file": "meta_analysis.json",
+    "url": "",
+    "abstract": "",
+    "score": 50
+  }
+]

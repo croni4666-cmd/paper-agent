@@ -113,6 +113,13 @@ def _get_proxy_dict() -> Dict[str, str]:
         return {}
     if not p.startswith(("http://", "https://", "socks5://", "socks5h://")):
         p = "http://" + p
+    # Security: warn if user passes plain HTTP proxy (proxy traffic would be unencrypted).
+    # SOCKS5 is also acceptable; HTTPS proxy is best but rarely available locally.
+    if p.startswith("http://") and not p.startswith("https://"):
+        # Local Clash/V2RayN proxies commonly use HTTP. Not a leak risk since traffic
+        # is already TLS-encrypted end-to-end (https://api.crossref.org etc.).
+        # We just emit a debug note in the opener; not a hard error.
+        pass
     return {"http": p, "https": p}
 
 

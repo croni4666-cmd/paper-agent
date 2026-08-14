@@ -23,11 +23,11 @@ emails_to_test = [
     "user@example.com",          # RFC 2606 reserved → should 422
     "foo@bar.com",               # Random unregistered domain
     # Real public email services
-    "paper-agent-user@gmail.com",           # Real Gmail format
-    "paper-agent-user@qq.com",              # Real QQ format
-    "paper-agent-user@163.com",             # Real 163 format
-    "paper-agent-user@gmail.com",        # Real Gmail with dots
-    "paper-agent-user+research@outlook.com", # Real Outlook with plus
+    "paper-agent@example.com",           # Real Gmail format
+    "paper-agent@example.com",              # Real QQ format
+    "paper-agent@example.com",             # Real 163 format
+    "paper-agent@example.com",        # Real Gmail with dots
+    "paper-agent+research@example.com", # Real Outlook with plus
     "user@mavis.local",          # Custom non-existent domain
     "user@qq.local",             # Custom local
 ]

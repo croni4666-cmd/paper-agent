@@ -1,0 +1,30 @@
+
+
+======================================================================
+Q1: probiotics + Hashimoto + RCT
+======================================================================
+[pa] loaded 1 env var(s) from .env
+Usage: python -m pa_cli search [OPTIONS] QUERY
+Try 'python -m pa_cli search --help' for help.
+
+Error: No such option '--out-format'. (Did you mean one of: '--format', '--output'?)
+
+
+======================================================================
+Q2: gut microbiome + thyroid autoimmunity
+======================================================================
+[pa] loaded 1 env var(s) from .env
+Usage: python -m pa_cli search [OPTIONS] QUERY
+Try 'python -m pa_cli search --help' for help.
+
+Error: No such option '--out-format'. (Did you mean one of: '--format', '--output'?)
+
+
+======================================================================
+Q3: specific strains + antibodies
+======================================================================
+[pa] loaded 1 env var(s) from .env
+Usage: python -m pa_cli search [OPTIONS] QUERY
+Try 'python -m pa_cli search --help' for help.
+
+Error: No such option '--out-format'. (Did you mean one of: '--format', '--output'?)

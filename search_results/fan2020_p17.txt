@@ -1,0 +1,161 @@
+
+========== PAGE 17 ==========
+166.	Roager, H. M. et al. Colonic transit time is related to 
+bacterial metabolism and mucosal turnover in the gut. 
+Nat. Microbiol. 1, 16093 (2016).  
+This study indicates that the colonic transit time is 
+an important factor to consider in microbiome and 
+metabolomics studies.
+167.	Russell, W. R. et al. Major phenylpropanoid-​derived 
+metabolites in the human gut can arise from microbial 
+fermentation of protein. Mol. Nutr. Food Res. 57, 
+523–535 (2013).
+168.	Flemer, B. et al. The oral microbiota in colorectal cancer 
+is distinctive and predictive. Gut 67, 1454–1463 
+(2018).
+169.	Plaza Oñate, F. et al. MSPminer: abundance-​based 
+reconstitution of microbial pan-​genomes from shotgun 
+metagenomic data. Bioinformatics 35, 1544–1552 
+(2018).
+170.	Truong, D. T., Tett, A., Pasolli, E., Huttenhower, C. & 
+Segata, N. Microbial strain-​level population structure 
+and genetic diversity from metagenomes. Genome 
+Res. 27, 626–638 (2017).
+171.	Zolfo, M., Tett, A., Jousson, O., Donati, C. & Segata, N. 
+MetaMLST: multi-​locus strain-​level bacterial typing 
+from metagenomic samples. Nucleic Acids Res. 45, 
+e7–e7 (2016).
+172.	Truong, D. T. et al. MetaPhlAn2 for enhanced 
+metagenomic taxonomic profiling. Nat. Methods 12, 
+902 (2015).
+173.	Greenblum, S., Carr, R. & Borenstein, E. Extensive 
+strain-​level copy-​number variation across human gut 
+microbiome species. Cell 160, 583–594 (2015).
+174.	Langfelder, P. & Horvath, S. WGCNA: an R package  
+for weighted correlation network analysis. BMC 
+Bioinforma. 9, 559 (2008).
+175.	Wikoff, W. R. et al. Diacetylspermine is a novel 
+prediagnostic serum biomarker for non-​small-cell  
+lung cancer and has additive performance with  
+pro-​surfactant protein B. J. Clin. Oncol. 33, 3880 
+(2015).
+176.	de Hoffmann, E. Tandem mass spectrometry:  
+a primer. J. Mass. Spectrom. 31, 129–137 (1996).
+177.	Donia, M. S. & Fischbach, M. A. Small molecules from 
+the human microbiota. Science 349, 1254766 (2015).
+178.	Cani, P. D. et al. Changes in gut microbiota control 
+metabolic endotoxemia-​induced inflammation in  
+high-​fat diet-​induced obesity and diabetes in mice. 
+Diabetes 57, 1470–1481 (2008).
+179.	Wolters, M. et al. Dietary fat, the gut microbiota, and 
+metabolic health — a systematic review conducted 
+within the MyNewGut project. Clin. Nutr. 38,  
+2504–2520 (2018).
+180.	Kjølbæk, L. et al. Arabinoxylan oligosaccharides and 
+polyunsaturated fatty acid effects on gut microbiota 
+and metabolic markers in overweight individuals with 
+signs of metabolic syndrome: a randomized cross-​over 
+trial. Clin. Nutr. 39, 67–79 (2019).
+181.	Dieterich, W. et al. Influence of low FODMAP and 
+gluten-​free diets on disease activity and intestinal 
+microbiota in patients with non-​celiac gluten 
+sensitivity. Clin. Nutr. 38, 697–707 (2019).
+182.	Hansen, L. B. et al. A low-​gluten diet induces changes 
+in the intestinal microbiome of healthy Danish adults. 
+Nat. Commun. 9, 4630 (2018).
+183.	Roager, H. M. et al. Whole grain-​rich diet reduces 
+body weight and systemic low-​grade inflammation 
+without inducing major changes of the gut microbiome: 
+a randomised cross-​over trial. Gut 68, 83–93 (2019).
+184.	Sanders, M. E., Merenstein, D. J., Reid, G., Gibson, G. R. 
+& Rastall, R. A. Probiotics and prebiotics in intestinal 
+health and disease: from biology to the clinic.  
+Nat. Rev. Gastroenterol. Hepatol. 16, 605–616 
+(2019).
+185.	Martín, R. et al. Functional characterization of  
+novel Faecalibacterium prausnitzii strains isolated 
+from healthy volunteers: a step forward in the use  
+of F. prausnitzii as a next-​generation probiotic.  
+Front. Microbiol. 8, 1226 (2017).
+186.	Depommier, C. et al. Supplementation with 
+Akkermansia muciniphila in overweight and obese 
+human volunteers: a proof-​of-concept exploratory 
+study. Nat. Med. 25, 1096–1103 (2019).  
+This proof-​of-concept study shows that 
+supplementation with A. muciniphila improves 
+several dysmetabolic features.
+187.	Cani, P. D. & Van Hul, M. Novel opportunities for  
+next-​generation probiotics targeting metabolic 
+syndrome. Curr. Opin. Biotechnol. 32, 21–27  
+(2015).
+188.	Kristensen, N. B. et al. Alterations in fecal microbiota 
+composition by probiotic supplementation in healthy 
+adults: a systematic review of randomized controlled 
+trials. Genome Med. 8, 52 (2016).
+189.	Zmora, N. et al. Personalized gut mucosal colonization 
+resistance to empiric probiotics is associated with 
+unique host and microbiome features. Cell 174, 
+1388–1405.e21 (2018).
+190.	Suez, J. et al. Post-​antibiotic gut mucosal microbiome 
+reconstitution is impaired by probiotics and improved 
+by autologous FMT. Cell 174, 1406–1423.e16 
+(2018).
+191.	Everard, A. et al. Responses of gut microbiota and 
+glucose and lipid metabolism to prebiotics in genetic 
+obese and diet-​induced leptin-​resistant mice. Diabetes 
+60, 2775–2786 (2011).
+192.	Dewulf, E. M. et al. Insight into the prebiotic concept: 
+lessons from an exploratory, double blind intervention 
+study with inulin-​type fructans in obese women. Gut 
+62, 1112–1121 (2013).
+193.	Nicolucci, A. C. et al. Prebiotics reduce body fat  
+and alter intestinal microbiota in children who are 
+overweight or with obesity. Gastroenterology 153, 
+711–722 (2017).
+194.	Tsilingiri, K. et al. Probiotic and postbiotic activity in 
+health and disease: comparison on a novel polarised ex-​
+vivo organ culture model. Gut 61, 1007–1015 (2012).
+195.	Plovier, H. et al. A purified membrane protein  
+from Akkermansia muciniphila or the pasteurized 
+bacterium improves metabolism in obese and diabetic 
+mice. Nat. Med. 23, 107 (2017).
+196.	Van Nood, E. et al. Duodenal infusion of donor feces 
+for recurrent Clostridium difficile. N. Engl. J. Med. 
+368, 407–415 (2013).
+197.	Kootte, R. S. et al. Improvement of insulin sensitivity 
+after lean donor feces in metabolic syndrome is  
+driven by baseline intestinal microbiota composition. 
+Cell Metab. 26, 611–619.e6 (2017).
+198.	Duan, F. F., Liu, J. H. & March, J. C. Engineered 
+commensal bacteria reprogram intestinal cells into 
+glucose-​responsive insulin-​secreting cells for the 
+treatment of diabetes. Diabetes 64, 1794–1803 
+(2015).
+199.	Górski, A. et al. Perspectives of phage therapy in non-​
+bacterial infections. Front. Microbiol. https://doi.org/ 
+10.3389/fmicb.2018.03306 (2018).
+200.	Ramachandran, G. & Bikard, D. Editing the microbiome 
+the CRISPR way. Philos. Trans. R. Soc. Lond. B Biol. Sci. 
+374, 20180103 (2019).
+Acknowledgements
+This study was supported by Marie Skłodowska-​Curie 
+Individual Fellowship 797267 (granted to Y.F.). The Novo 
+Nordisk Foundation Center for Basic Metabolic Research is 
+an independent research centre at the University of 
+Copenhagen partially funded by an unrestricted donation 
+from the Novo Nordisk Foundation.
+Author contributions
+The authors contributed equally to all aspects of the article.
+Competing interests
+The authors declare no competing interests.
+Peer review information
+Nature Reviews Microbiology thanks M. Nieuwdorp, C. Thaiss 
+and the other, anonymous, reviewer(s) for their contribution 
+to the peer review of this work.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional 
+claims in published maps and institutional affiliations.
+ 
+© Springer Nature Limited 2020
+Nature Reviews | Microbiology
+Reviews

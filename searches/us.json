@@ -1,0 +1,839 @@
+{
+  "query": "US security deposit state regulation tenant rights housing",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 40,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1109/jqe.2025.3597889",
+      "title": "Sensitive Measurement of Optical Nonlinearities Using a Single Beam",
+      "authors": [
+        "Mansoor Sheik-Bahae"
+      ],
+      "venue": "IEEE JOURNAL OF QUANTUM ELECTRONICS",
+      "year": 2025,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "690a070f163c01c8506bc73f",
+      "matched_phrase": "US",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17487/rfc8446",
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+      "authors": [
+        "E. Rescorla"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5a260c6217c44a4ba8a2b601",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1162/tacl_a_00638",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "authors": [
+        "Nelson F. Liu"
+      ],
+      "venue": "TRANSACTIONS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a78f1fd68f896efa01eb25",
+      "matched_phrase": "US",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41587-022-01565-y",
+      "title": "Accurate Isoform Discovery with IsoQuant Using Long Reads",
+      "authors": [
+        "Andrey D Prjibelski"
+      ],
+      "venue": "Nature biotechnology",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63b55a8a90e50fcafd761d6a",
+      "matched_phrase": "US",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1053/j.akdh.2022.11.009",
+      "title": "Deep Learning Using Electrocardiograms in Patients on Maintenance Dialysis",
+      "authors": [
+        "Zhong Zheng"
+      ],
+      "venue": "ADVANCES IN KIDNEY DISEASE AND HEALTH",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63dcb9cb90e50fcafd579e33",
+      "matched_phrase": "US",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arxiv.2302.04761",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "authors": [
+        "Timo Schick"
+      ],
+      "venue": "NEURIPS 2023",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63e5b5d290e50fcafd421f1f",
+      "matched_phrase": "US",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3610721",
+      "title": "Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions",
+      "authors": [
+        "Hammond Pearce"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61234ddd5244ab9dcb6ac1d6",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/s2665-9913(24)00122-x",
+      "title": "Calcium Pyrophosphate Deposition Disease",
+      "authors": [
+        "Tristan Pascart"
+      ],
+      "venue": "The Lancet Rheumatology",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621821f35aee126c0feb17d0",
+      "matched_phrase": "deposit",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/jqs.3390070209",
+      "title": "Glacial Deposits in Great Britain and Ireland",
+      "authors": [
+        "Juergen Ehlers"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b8a8b7602d970447e9e3",
+      "matched_phrase": "deposit",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2131/sajg.129.2746",
+      "title": "Impact Structures and Deposits of South Africa",
+      "authors": [
+        "R. L. Gibson"
+      ],
+      "venue": "SOUTH AFRICAN JOURNAL OF GEOLOGY",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c819be8eb7c4b59bb18",
+      "matched_phrase": "deposit",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620",
+      "title": "Housing the City by the Bay",
+      "authors": [
+        "Baranski, John"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 4,
+      "reference_count": 0,
+      "type": "monograph",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/09697764251361723",
+      "arxiv_id": "",
+      "title": "Institutional private rental sector and tenure security in Poland",
+      "authors": [
+        "Barbara Audycka"
+      ],
+      "venue": "European Urban and Regional Studies",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 60,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26565/1992-2337-2024-1-06",
+      "arxiv_id": "",
+      "title": "The essence and criteria of the welfare state",
+      "authors": [
+        "Yevhen Tryshnovskyi"
+      ],
+      "venue": "State Formation",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.26565/1992-2337-2024-1-06",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/27541258231183699",
+      "arxiv_id": "",
+      "title": "Solving Housing Affordability Challenges in the United States",
+      "authors": [
+        "Katrin B. Anacker"
+      ],
+      "venue": "Dialogues in Urban Research",
+      "year": 2023,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.36433/kacla.2023.6.2.41",
+      "arxiv_id": "",
+      "title": "Public Law Regulation for Large-Scale Jeonse Lease Fraud (Villa King)",
+      "authors": [
+        "Kyoung-sun Kwon"
+      ],
+      "venue": "Korea Anti-Corruption Law Association",
+      "year": 2023,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Money Laundering Using Electronic Payment Systems",
+      "authors": [
+        "Juergen Seitz"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 17,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.63878/cjssr.v3i2.1581",
+      "title": "EVICTION LAWS AND TENANT SECURITY IN THE US: BALANCING PROPERTY RIGHTS AND HOUSING STABILITY",
+      "authors": [
+        "Shakeel Bashir",
+        "Dr. Tansif Ur Rehman",
+        "Hasan Waheed"
+      ],
+      "venue": "Contemporary Journal of Social Science Review",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In this research article, the authors focus on the complex trade-off between eviction law and tenant protection and the conflict between property rights and housing stability in the United States. The recent years have witnessed an increase in housing instability caused by economic shocks, rising rent costs, and the effects of the COVID-19 pandemic, which has led to the housing instability issue becoming a topic of discussion. This paper examines different eviction legislations in variou",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620-006",
+      "title": "CHAPTER 3. PUBLIC HOUSING, RACE, AND CONFLICTING VISIONS OF DEMOCRACY AND THE STATE",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-3-031-57758-1_7",
+      "title": "People Power, Tenant Power!—Rebuilding Trust Through Housing Rights Movements and Activism",
+      "authors": [
+        "Keller, Judith"
+      ],
+      "venue": "The Urban Book Series",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 14,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5227597",
+      "title": "Empowering Housing Equity: An AI-Driven Chatbot for Landlord-Tenant Rights and Community Stability",
+      "authors": [
+        "Subedi, Nischal"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 18,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1515/9781503607620-010",
+      "title": "CHAPTER 7. ALL HOUSING IS PUBLIC",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620-004",
+      "title": "CHAPTER 1. PROGRESSIVE ERA HOUSING REFORM",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620-003",
+      "title": "INTRODUCTION",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620-017",
+      "title": "INDEX",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/9781503607620-toc",
+      "title": "CONTENTS",
+      "authors": [],
+      "venue": "Housing the City by the Bay",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1707.09430v1",
+      "arxiv_id": "1707.09430v1",
+      "title": "Human in the Loop: Interactive Passive Automata Learning via Evidence-Driven State-Merging Algorithms",
+      "authors": [
+        "Christian A. Hammerschmidt",
+        "Radu State",
+        "Sicco Verwer"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1707.09430v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2210.02137v1",
+      "arxiv_id": "2210.02137v1",
+      "title": "Internet Service Providers' and Individuals' Attitudes, Barriers, and Incentives to Secure IoT",
+      "authors": [
+        "Nissy Sombatruang",
+        "Tristan Caulfield",
+        "Ingolf Becker",
+        "Akira Fujita",
+        "Takahiro Kasama",
+        "Koji Nakao",
+        "Daisuke Inoue"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2210.02137v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/MSEC.2025.3539504",
+      "arxiv_id": "2506.09580v1",
+      "title": "The Everyday Security of Living with Conflict",
+      "authors": [
+        "Jessica McClearn",
+        "Reem Talhouk",
+        "Rikke Bjerg Jensen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.09580v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2021.102279",
+      "arxiv_id": "2103.08436v1",
+      "title": "Formal Modelling and Security Analysis of Bitcoin's Payment Protocol",
+      "authors": [
+        "Paolo Modesti",
+        "Siamak F. Shahandashti",
+        "Patrick McCorry",
+        "Feng Hao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.08436v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2025.104733",
+      "arxiv_id": "2503.14006v2",
+      "title": "Securing Automated Insulin Delivery Systems: A Review of Security Threats and Protective Strategies",
+      "authors": [
+        "Yuchen Niu",
+        "Siew-Kei Lam"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.14006v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1002.1174v1",
+      "arxiv_id": "1002.1174v1",
+      "title": "M-Banking Security - a futuristic improved security approach",
+      "authors": [
+        "Geeta S. Navale",
+        "Swati S. Joshi",
+        "Aaradhana A. Deshmukh"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1002.1174v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1805.07570v1",
+      "arxiv_id": "1805.07570v1",
+      "title": "Physical and Mechatronic Security, Technologies and Future Trends for Vehicular Environment",
+      "authors": [
+        "Wael Adi",
+        "Ayoub Mars"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1805.07570v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2111.06002v1",
+      "arxiv_id": "2111.06002v1",
+      "title": "SyzScope: Revealing High-Risk Security Impacts of Fuzzer-Exposed Bugs in Linux kernel",
+      "authors": [
+        "Xiaochen Zou",
+        "Guoren Li",
+        "Weiteng Chen",
+        "Hang Zhang",
+        "Zhiyun Qian"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.06002v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2022.103008",
+      "arxiv_id": "2206.02156v2",
+      "title": "Perspectives of Non-Expert Users on Cyber Security and Privacy: An Analysis of Online Discussions on Twitter",
+      "authors": [
+        "Nandita Pattnaik",
+        "Shujun Li",
+        "Jason R. C. Nurse"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.02156v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2025.104751",
+      "arxiv_id": "2511.15479v1",
+      "title": "Towards a Formal Verification of Secure Vehicle Software Updates",
+      "authors": [
+        "Martin Slind Hagen",
+        "Emil Lundqvist",
+        "Alex Phu",
+        "Yenan Wang",
+        "Kim Strandberg",
+        "Elad Michael Schiller"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.15479v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.53982/alj.2025.1301.04-j",
+      "arxiv_id": "",
+      "title": "Divergent Landlord-Tenant Regimes: A Comparative Analysis of Legal Frameworks and Eviction Practices in Nigeria's Urban Centres (Edo and Lagos States)",
+      "authors": [
+        "Omonye Omoigberale"
+      ],
+      "venue": "ABUAD Law Journal",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://mail.journals.abuad.edu.ng/index.php/alj/article/download/1791/901",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7417/CT.2025.5167",
+      "arxiv_id": "",
+      "title": "Life and health rights for italy's disabled without caregivers.",
+      "authors": [
+        "P. Bailo",
+        "M. Cennamo",
+        "A. Caraffa",
+        "F. Gibelli",
+        "G. Pesel",
+        "G. Ricci"
+      ],
+      "venue": "Clinica Terapeutica",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "While the \"After Us\" law represents a significant step forward, uniform implementation across Italy remains a challenge and comparisons with similar regulations in other European countries suggest that further improvements are necessary to ensure long-term care and economic security for disabled individuals throughout the European Union.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "While the \"After Us\" law represents a significant step forward, uniform implementation across Italy remains a challenge and comparisons with similar regulations in other European countries suggest that further improvements are necessary to ensure long-term care and economic security for disabled individuals throughout the European Union.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32989/rel.2024.28.2.175",
+      "arxiv_id": "",
+      "title": "A Study on Legal Controversies and Improvement Strategies in the Housing Lease Protection Act",
+      "authors": [],
+      "venue": "Korea Association Of Real Estate Law",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.46751/nplak.2026.22.2.203",
+      "arxiv_id": "",
+      "title": "Public Law Evaluation on Real Estate Auction and Loan Regulations : in terms of property rights guarantees",
+      "authors": [
+        "Kyoung-sun Kwon"
+      ],
+      "venue": "National Public Law Review",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32989/rel.2023.27.1.117",
+      "arxiv_id": "",
+      "title": "A Study on the Enactment Proposal on the Right to Renewal Lease under the revised Housing Lease Protection Act",
+      "authors": [
+        "M. Choi"
+      ],
+      "venue": "Korea Association Of Real Estate Law",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

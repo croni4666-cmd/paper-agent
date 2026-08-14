@@ -1,0 +1,13 @@
+﻿python : Traceback (most recent call last):
+所在位置 行:1 字符: 235
++ ...  200 2>&1 | python "G:\minimax - workspace\Paper agent\training_corpu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "G:\minimax - workspace\Paper agent\training_corpus\export_session.py", line 177, in <module>
+    data = json.loads(raw_bytes.decode('utf-8'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paper-agent-author\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)

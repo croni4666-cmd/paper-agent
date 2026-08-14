@@ -1,0 +1,1315 @@
+{
+  "query": "multi-strain probiotic gut health meta-analysis",
+  "year_min": 2020,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 12,
+    "openalex": 12,
+    "arxiv": 12,
+    "semanticscholar": 12,
+    "aminer": 12,
+    "cnki": 1
+  },
+  "dedup_count": 56,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1038/nature13075",
+      "title": "Enterotypes of the Human Gut Mycobiome",
+      "authors": [
+        "Senying Lai"
+      ],
+      "venue": "Microbiome",
+      "year": 2023,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a4083165ce5cd7b3c11ff2",
+      "matched_phrase": "gut",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41579-020-0433-9",
+      "title": "Gut microbiota in human metabolic health and disease",
+      "authors": [
+        "Yong Fan",
+        "Oluf Pedersen"
+      ],
+      "venue": "Nature Reviews Microbiology",
+      "year": 2020,
+      "cited_by_count": 4659,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://curis.ku.dk/ws/files/261048194/Main_text_Fan_and_Pedersen_editor_post_print_on_July_24_2020.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41575-020-0344-2",
+      "title": "The International Scientific Association for Probiotics and Prebiotics (ISAPP) consensus statement on the definition and scope of synbiotics",
+      "authors": [
+        "Kelly S. Swanson",
+        "Glenn R. Gibson",
+        "Robert Hutkins",
+        "Raylene A. Reimer",
+        "Gregor Reid",
+        "Kristin Verbeke",
+        "Karen P. Scott",
+        "Hannah D. Holscher",
+        "Meghan B. Azad",
+        "Nathalie M. Delzenne",
+        "Mary Ellen Sanders"
+      ],
+      "venue": "Nature Reviews Gastroenterology & Hepatology",
+      "year": 2020,
+      "cited_by_count": 2091,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.nature.com/articles/s41575-020-0344-2.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2020.00906",
+      "title": "The Genus Alistipes: Gut Bacteria With Emerging Implications to Inflammation, Cancer, and Mental Health",
+      "authors": [
+        "Bianca J. Parker",
+        "Pamela A. Wearsch",
+        "A.C.M. Veloo",
+        "Alexander Rodriguez‐Palacios"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2020,
+      "cited_by_count": 1709,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2020.00906/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41392-024-01743-1",
+      "title": "Microbiota–gut–brain axis and its therapeutic applications in neurodegenerative diseases",
+      "authors": [
+        "Jian Sheng Loh",
+        "Wen Qi Mak",
+        "Li Tan",
+        "Chu Xin Ng",
+        "Hong Hao Chan",
+        "Shiau Hueh Yeow",
+        "Jhi Biau Foo",
+        "Yong Sze Ong",
+        "Chee Wun How",
+        "Kooi Yeong Khaw"
+      ],
+      "venue": "Signal Transduction and Targeted Therapy",
+      "year": 2024,
+      "cited_by_count": 1023,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41392-024-01743-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2021.578386",
+      "title": "Anti-Inflammatory and Immunomodulatory Effects of Probiotics in Gut Inflammation: A Door to the Body",
+      "authors": [
+        "Fernanda Cristofori",
+        "Vanessa Nadia Dargenio",
+        "Costantino Dargenio",
+        "Vito Leonardo Miniello",
+        "M. Barone",
+        "Ruggiero Francavilla"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2021,
+      "cited_by_count": 896,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2021.578386/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41575-020-00390-5",
+      "title": "The International Scientific Association for Probiotics and Prebiotics (ISAPP) consensus statement on fermented foods",
+      "authors": [
+        "Maria L. Marco",
+        "Mary Ellen Sanders",
+        "Michael G. Gänzle",
+        "Marie‐Claire Arrieta",
+        "Paul D. Cotter",
+        "Luc De Vuyst",
+        "Colin Hill",
+        "Wilhelm H. Holzapfel",
+        "Sarah Lebeer",
+        "Dan Merenstein",
+        "Gregor Reid",
+        "Benjamin E. Wolfe",
+        "Robert W. Hutkins"
+      ],
+      "venue": "Nature Reviews Gastroenterology & Hepatology",
+      "year": 2021,
+      "cited_by_count": 848,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.nature.com/articles/s41575-020-00390-5.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/cells12010184",
+      "title": "Probiotics Mechanism of Action on Immune Cells and Beneficial Effects on Human Health",
+      "authors": [
+        "Chiara Mazziotta",
+        "Mauro Tognon",
+        "Fernanda Martini",
+        "Elena Torreggiani",
+        "John Charles Rotondo"
+      ],
+      "venue": "Cells",
+      "year": 2023,
+      "cited_by_count": 835,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.3390/cells12010184",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41579-023-00904-3",
+      "title": "The gut–liver axis and gut microbiota in health and liver disease",
+      "authors": [
+        "Cynthia L. Hsu",
+        "Bernd Schnabl"
+      ],
+      "venue": "Nature Reviews Microbiology",
+      "year": 2023,
+      "cited_by_count": 644,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10794111/pdf/nihms-1958454.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/microorganisms11010095",
+      "title": "Journey of the Probiotic Bacteria: Survival of the Fittest",
+      "authors": [
+        "Allyson Andrade Mendonca"
+      ],
+      "venue": "MICROORGANISMS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63cac06690e50fcafd8ceda5",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fphar.2023.1212742",
+      "title": "Harnessing the Potential of Probiotics in the Treatment of Alcoholic Liver Disorders.",
+      "authors": [
+        "Garima Mishra"
+      ],
+      "venue": "FRONTIERS IN PHARMACOLOGY",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af70533fda6d7f064212ed",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5281/zenodo.8086446",
+      "title": "Role of Probiotics in Aquaculture",
+      "authors": [
+        "Aditya Kumar"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f357939a5f40829d7ab0",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-323-89834-8.00050-7",
+      "title": "The Gut Microbiota and Alzheimer's Disease",
+      "authors": [
+        "Mónica Morales"
+      ],
+      "venue": "Diet and Nutrition in Neurological Disorders",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6570118e939a5f40826a0d5d",
+      "matched_phrase": "gut",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1201/9781003329732-6",
+      "title": "Gut Microbiome and the Metabolic Syndrome",
+      "authors": [
+        "Shivani Srivastava"
+      ],
+      "venue": "The Metabolic Syndrome",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578fbc5939a5f4082ac7be0",
+      "matched_phrase": "gut",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2019.00454",
+      "title": "How Probiotics Affect the Microbiota",
+      "authors": [
+        "Grégoire Wieërs",
+        "Leïla Belkhir",
+        "Raphaël Enaud",
+        "Sophie Leclercq",
+        "Jean-Michel Philippart de Foy",
+        "Isabelle Dequenne",
+        "Philippe de Timary",
+        "Patrice D. Cani"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2020,
+      "cited_by_count": 532,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2019.00454/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s13668-020-00313-5",
+      "title": "Probiotics and the Microbiota-Gut-Brain Axis: Focus on Psychiatry",
+      "authors": [
+        "Sabrina Mörkl",
+        "Mary Butler",
+        "Anna Höll",
+        "John F. Cryan",
+        "Timothy G. Dinan"
+      ],
+      "venue": "Current Nutrition Reports",
+      "year": 2020,
+      "cited_by_count": 341,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s13668-020-00313-5.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fphar.2022.1042189",
+      "title": "Gut microbiome and human health: Exploring how the probiotic genus Lactobacillus modulate immune responses",
+      "authors": [
+        "Sonakshi Rastogi",
+        "Aditi Singh"
+      ],
+      "venue": "Frontiers in Pharmacology",
+      "year": 2022,
+      "cited_by_count": 313,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2022.1042189/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/biology10040322",
+      "title": "Multi-Strain Probiotics: Synergy among Isolates Enhances Biological Activities",
+      "authors": [
+        "Iliya Dauda Kwoji",
+        "Olayinka Ayobami Aiyegoro",
+        "Moses Okpeku",
+        "Matthew A. Adeleke"
+      ],
+      "venue": "Biology",
+      "year": 2021,
+      "cited_by_count": 211,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2079-7737/10/4/322/pdf?version=1618297230",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ph18020196",
+      "title": "In Silico Approach for Antibacterial Discovery: PTML Modeling of Virtual Multi-Strain Inhibitors Against Staphylococcus Aureus",
+      "authors": [
+        "Valeria V. Kleandrova"
+      ],
+      "venue": "PHARMACEUTICALS",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "679d484eae8580e7ff3395a0",
+      "matched_phrase": "multi-strain",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/vaccines12070711",
+      "title": "Deciphering the Potential of Probiotics in Vaccines",
+      "authors": [
+        "Chang Xu"
+      ],
+      "venue": "Vaccines",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "669f901f01d2a3fbfc3aa01f",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41581-022-00654-0",
+      "title": "The Gut Microbiome and Hypertension",
+      "authors": [
+        "Joanne A. O’Donnell"
+      ],
+      "venue": "Nature Reviews Nephrology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63ecc51c90e50fcafdfae76e",
+      "matched_phrase": "gut",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19490976.2023.2186098",
+      "title": "Efficacy of\n            <i>Bifidobacterium longum</i>\n            alone or in multi-strain probiotic formulations during early life and beyond",
+      "authors": [
+        "Mills, Susan",
+        "Yang, Bo",
+        "Smith, Graeme J.",
+        "Stanton, Catherine",
+        "Ross, R. Paul"
+      ],
+      "venue": "Gut Microbes",
+      "year": 2023,
+      "cited_by_count": 96,
+      "reference_count": 251,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s13099-023-00536-1",
+      "title": "Effect of probiotic supplementation on gastrointestinal motility, inflammation, motor, non-motor symptoms and mental health in Parkinson’s disease: a meta-analysis of randomized controlled trials",
+      "authors": [
+        "Park, Jong Mi",
+        "Lee, Sang Chul",
+        "Ham, Chorom",
+        "Kim, Yong Wook"
+      ],
+      "venue": "Gut Pathogens",
+      "year": null,
+      "cited_by_count": 53,
+      "reference_count": 59,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec>\n                <jats:title>Background</jats:title>\n                <jats:p>Parkinson’s disease (PD) is the second most common neurodegenerative disease worldwide. Gut dysbiosis is hypothesized to cause PD; therefore, whether probiotics can be used as adjuvants in the treatment of PD is being actively investigated.</jats:p>\n              </jats:sec><jats:sec>\n                <jats:title>Aims</jats:title>\n                <jats:p>We performed a systemati",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s40168-024-01752-w",
+      "arxiv_id": "",
+      "title": "Effect of a multi-strain probiotic mixture consumption on anxiety and depression symptoms induced in adult mice by postnatal maternal separation",
+      "authors": [
+        "Francesca De Santa",
+        "G. Strimpakos",
+        "Nicole Marchetti",
+        "Giorgio Gargari",
+        "Alessio Torcinaro",
+        "S. Arioli",
+        "Diego Mora",
+        "Carla Petrella",
+        "S. Farioli-Vecchioli"
+      ],
+      "venue": "Microbiome",
+      "year": 2024,
+      "cited_by_count": 49,
+      "influential_cite_count": 1,
+      "reference_count": 91,
+      "tldr": "Gut microbiota and its metabolites mediate the therapeutic action of the probiotic mix on MS-induced brain dysfunctions and extend the knowledge on the use of probiotics as a therapeutic tool in the presence of alterations of the emotional sphere that significantly impact on gut microbiota composition.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Gut microbiota and its metabolites mediate the therapeutic action of the probiotic mix on MS-induced brain dysfunctions and extend the knowledge on the use of probiotics as a therapeutic tool in the presence of alterations of the emotional sphere that significantly impact on gut microbiota composition.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s11274-026-04960-8",
+      "title": "Enhancing Eucalyptus Seedling Quality Through Multi-Strain Bacterial Inoculation",
+      "authors": [
+        "Millena Salles Araujo"
+      ],
+      "venue": "World Journal of Microbiology and Biotechnology",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f247610a96f8c83c5a828e",
+      "matched_phrase": "multi-strain",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2025.1631322",
+      "arxiv_id": "",
+      "title": "A multi-strain probiotic formulation preserves intestinal epithelial and vascular barriers during enteropathogenic infection",
+      "authors": [
+        "Anna Maria Naso",
+        "M. Lizier",
+        "Carmen Correale",
+        "Alessandra Silvestri",
+        "Giuseppe Penna",
+        "Paola Brescia",
+        "M. Rescigno"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": 2025,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "Findings suggest that this new formulation of multi-strain probiotics protects against Salmonella-induced damage to both the IEB and GVB, supporting its potential as a therapeutic intervention for managing conditions associated with intestinal barrier dysfunction.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings suggest that this new formulation of multi-strain probiotics protects against Salmonella-induced damage to both the IEB and GVB, supporting its potential as a therapeutic intervention for managing conditions associated with intestinal barrier dysfunction.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms26135944",
+      "arxiv_id": "",
+      "title": "Gut Microbiota and Liver Health: Meta-Analysis of Bifidobacterium-Containing Probiotics in NAFLD Management",
+      "authors": [
+        "Ko-Shih Chang",
+        "Wu-Hsien Kuo",
+        "Mu-Hsin Chang",
+        "Yao Hsiao",
+        "Ru-Yin Tsai"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2025,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 65,
+      "tldr": "Findings suggest that Bifidobacterium-based probiotic combinations may provide cardiometabolic benefits, particularly in lipid regulation, glucose metabolism, and inflammatory control.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "MetaAnalysis",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings suggest that Bifidobacterium-based probiotic combinations may provide cardiometabolic benefits, particularly in lipid regulation, glucose metabolism, and inflammatory control.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.lwt.2021.111706",
+      "title": "Development of multi-strain probiotic cheese: Nisin production in food and gut",
+      "authors": [
+        "Langa, S.",
+        "Peirotén, A.",
+        "Gaya, P.",
+        "Escudero, C.",
+        "Rodríguez-Mínguez, E.",
+        "Landete, J.M.",
+        "Arqués, J.L."
+      ],
+      "venue": "LWT",
+      "year": 2021,
+      "cited_by_count": 7,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12223-025-01244-w",
+      "arxiv_id": "",
+      "title": "Probiotic characteristics and survival of a multi-strain lactic acid bacteria consortium in simulated gut model",
+      "authors": [
+        "Muhammad Nadeem Khan",
+        "S. Bashir",
+        "Afifa Afzal",
+        "N. Andleeb",
+        "Lukasz Krych",
+        "Dennis Sandris Nielsen",
+        "Muhammad Imran"
+      ],
+      "venue": "Folia Microbiologica (Prague)",
+      "year": 2025,
+      "cited_by_count": 7,
+      "influential_cite_count": 1,
+      "reference_count": 85,
+      "tldr": "LAB strains isolated from dahi possess strong probiotic potential, confirmed through in vitro and genomic safety assessments, and a multi-strain probiotic consortium holds promise for applications.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "LAB strains isolated from dahi possess strong probiotic potential, confirmed through in vitro and genomic safety assessments, and a multi-strain probiotic consortium holds promise for applications.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/applbiosci5010006",
+      "title": "Impact of Single and Multi-Strain Probiotic Supplementation on Glycaemic Control in Type 2 Diabetic Patients: A Comparative Meta-Analysis",
+      "authors": [
+        "Tchamani Piame, Laverdure",
+        "Yako, Yandiswa Yolanda"
+      ],
+      "venue": "Applied Biosciences",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 62,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Probiotics, whether consisting of a single strain or multiple strains, are attracting growing interest in the management of type 2 diabetes mellitus (T2DM). However, their efficacy remains a matter of controversy and requires careful consideration. Accordingly, this meta-analysis aimed to compare the efficacy of single-strain to that of multi-strain probiotics supplementation on glycated haemoglobin (HbA1c) and fasting blood glucose (FBG) levels in adults with T2DM. Nineteen articles pub",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2813-0464/5/1/6/pdf?version=1769061822",
+      "tldr": "The results showed that, overall, probiotic supplementation had no significant effect on HbA1c and FBG, and the comparison between the two formulations showed that there was no significant difference (p ≤ 0.05).",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20944/preprints202601.1492.v1",
+      "title": "Probiotic Driven Competitive Exclusion in the Human Gut: A Meta Analysis of Microbial Diversity and Pathogen Suppression",
+      "authors": [
+        "Alshatari, Sumaya Sameer",
+        "Ziarno, Malgorzata"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: The human microbiome, particularly the gut microbiota, is essential for health maintenance and disease prevention. Probiotics, defined as live microorganisms that provide health benefits to the host, are increasingly recognized for their capacity to inhibit pathogenic bacteria through competitive exclusion. This meta‑analysis systematically evaluates the effectiveness of probiotics in reducing pathogen colonization within the human gut. Methods: A comprehensive literature sea",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu18050796",
+      "title": "Probiotic-Driven Competitive Exclusion in the Human Gut: A Meta-Analysis of Microbial Diversity and Pathogen Suppression",
+      "authors": [
+        "Alshatari, Sumaya Sameer",
+        "Ziarno, Malgorzata"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 58,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: The gut microbiota is essential for maintaining health and preventing disease. Probiotics, defined as beneficial live microorganisms, are increasingly recognized for their ability to inhibit pathogens through competitive exclusion. This meta-analysis systematically evaluates the effectiveness of probiotics in reducing pathogen colonization within the human gut. Methods: A comprehensive literature search was conducted across PubMed and Scopus from October 2018 to August 2023, ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fvets.2025.1677127",
+      "arxiv_id": "",
+      "title": "Synergistic effects of multi-strain probiotics and Chinese herbal medicine on growth performance and gut health in weaned piglets",
+      "authors": [
+        "Kai Ji",
+        "Sheng Lei",
+        "Lingling Wang",
+        "Lang Tian",
+        "Z. Wen",
+        "Rongjin Shi",
+        "Lin Liu",
+        "Jinjia Liu",
+        "Baoming Shi",
+        "Jian Wang"
+      ],
+      "venue": "Frontiers in Veterinary Science",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 84,
+      "tldr": "Findings suggest that combined probiotic and Chinese herbal medicine supplementation may serve as an effective feed strategy for promoting intestinal health and alleviating weaning stress, providing valuable insights for developing antibiotic alternatives in swine production.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings suggest that combined probiotic and Chinese herbal medicine supplementation may serve as an effective feed strategy for promoting intestinal health and alleviating weaning stress, providing valuable insights for developing antibiotic alternatives in swine production.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu18010174",
+      "arxiv_id": "",
+      "title": "Multi-Strain Probiotic Improves Tryptophan Metabolism and Symptoms in Chronic Fatigue Syndrome Patients with Co-Occurring Irritable Bowel Syndrome: An Open-Label Pilot Study",
+      "authors": [
+        "C. Chojnacki",
+        "Marta Mędrek-Socha",
+        "Jan Chojnacki",
+        "Anita Gąsiorowska",
+        "Ewa Walecka-Kapica",
+        "M. Bijak",
+        "Karolina Przybylowska-Sygut",
+        "T. Popławski"
+      ],
+      "venue": "Nutrients",
+      "year": 2026,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 40,
+      "tldr": "The results showed that the probiotic intervention was associated with an improved gut bacteria profile, which coincided with a reduction in neurotoxic metabolites and a significant decrease in fatigue severity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results showed that the probiotic intervention was associated with an improved gut bacteria profile, which coincided with a reduction in neurotoxic metabolites and a significant decrease in fatigue severity.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.psj.2024.104550",
+      "arxiv_id": "",
+      "title": "A cross-study analysis of the effect of a dual-strain probiotic applied via the waterline on the growth performance and gut health of broilers under a mild necrotic enteritis challenge",
+      "authors": [
+        "S. van der Klein",
+        "M. Bernardeau",
+        "Q. Wang",
+        "K. Gibbs"
+      ],
+      "venue": "Poultry Science",
+      "year": 2024,
+      "cited_by_count": 2,
+      "influential_cite_count": 1,
+      "reference_count": 53,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.70315/uloap.ulmhs.2025.0304005",
+      "title": "Multi-Strain Probiotic Supplement Enhances Gut Microbiota Composition in Rats: Evidence for Functional Food Potential",
+      "authors": [
+        "Wu, Tzu-Chin"
+      ],
+      "venue": "Universal Library of Medical and Health Sciences",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 21,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Background: Probiotics, particularly Lactobacillus and Bifidobacterium species, are widely recognized for their beneficial effects on gut microbiota balance and host health. Alterations in gut microbial composition are associated with gastrointestinal disorders and the development of colorectal cancer. Functional probiotic formulations are increasingly investigated for their ability to enhance beneficial bacteria and suppress harmful strains. Objective: This study aimed to evaluate the e",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "tldr": "The compound probiotic powder promoted the proliferation of beneficial gut bacteria—particularly Lactobacillus and Bifidobacterium—without altering harmful bacterial populations or physiological parameters in rats, supporting its potential as a functional probiotic supplement for maintaining gut microbiota balance.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1101/2020.10.10.20210534",
+      "title": "Strain inheritance and neonatal gut microbiota development: a meta-analysis",
+      "authors": [
+        "Podlesny, Daniel",
+        "Fricke, W. Florian"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 48,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:title>ABSTRACT</jats:title>\n                <jats:p>\n                  As many inflammatory and metabolic disorders have been associated with structural deficits of the human gut microbiota, the principles and mechanisms that govern its initialization and development are of considerable scientific interest and clinical relevance. However, our current understanding of the developing gut microbiota dynamics remains incomplete. We carried out a large-scale, comprehensive meta-analysis of over",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21203/rs.3.rs-3180210/v2",
+      "title": "WITHDRAWN: The anti-hyperuricemic and gut microbiota regulatory effects of a novel purine assimilatory probiotic strain",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 57,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n                <p>The full text of this preprint has been withdrawn by the authors while they make corrections to the work. Therefore, the authors do not wish this work to be cited as a reference. Questions should be directed to the corresponding author.</p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5829988",
+      "title": "A multi-strain probiotic modulates gut microbiome composition, intestinal barrier integrity and inflammation in a multi-compartmental in vitro gut model of decompensated alcohol-related advanced chronic liver disease",
+      "authors": [
+        "Maxan, Maria-Emanuela",
+        "Patel, Vishal  C.",
+        "Moens, Frédéric",
+        "Marzorati, Massimo",
+        "Mohamad, Merianne",
+        "Yue, Christine",
+        "Said, Jawal",
+        "Basit, Abdul",
+        "Gaisford, Simon"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.55529/ijaap.61.26.38",
+      "title": "Dietary multi-strain probiotic supplementation improves growth performance, intestinal morphology, serum biochemistry, and gut microbiome diversity in Ross 308 broiler chickens",
+      "authors": [
+        "Swain, Madhusmita"
+      ],
+      "venue": "International Journal of Agriculture and Animal Production",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>With the ban on antibiotic growth promoters (AGPs), the demand for alternative feed additives for commercial poultry production has increased. This study evaluated the effects of a multi-strain probiotic containing Lactobacillus acidophilus ATCC 4356, Lactobacillus reuteri DSM 17938, and Bifidobacterium longum ATCC 15707 on growth performance, intestinal morphology, serum biochemical indices, immune responses, and cecal microbial diversity in Ross 308 broiler chickens. In a 42-day feedin",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.6044681",
+      "title": "Four grape-derived non-Saccharomyces yeasts as novel probiotic candidates: Strain-specific probiotic properties, safety evaluation, and modulation of gut microbiota in mice",
+      "authors": [
+        "Bai, Shuaibo",
+        "Chen, Qian",
+        "Zhang, Xiuyan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "arXiv:2307.10513v2",
+      "arxiv_id": "2307.10513v2",
+      "title": "Technology in Association With Mental Health: Meta-ethnography",
+      "authors": [
+        "Hamza Mohammed"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2307.10513v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2511.02766v4",
+      "arxiv_id": "2511.02766v4",
+      "title": "Microbes in the Moonlight: How the Gut Microbiota Influences Sleep",
+      "authors": [
+        "Enso Onill Torres Alegre"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.02766v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/23288604.2024.2387138",
+      "arxiv_id": "2409.16098v2",
+      "title": "The Digital Transformation in Health: How AI Can Improve the Performance of Health Systems",
+      "authors": [
+        "África Periáñez",
+        "Ana Fernández del Río",
+        "Ivan Nazarov",
+        "Enric Jané",
+        "Moiz Hassan",
+        "Aditya Rastogi",
+        "Dexian Tang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.16098v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1811.11400v2",
+      "arxiv_id": "1811.11400v2",
+      "title": "FADL:Federated-Autonomous Deep Learning for Distributed Electronic Health Record",
+      "authors": [
+        "Dianbo Liu",
+        "Timothy Miller",
+        "Raheel Sayeed",
+        "Kenneth D. Mandl"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1811.11400v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1063/1.2939059",
+      "arxiv_id": "0806.1987v1",
+      "title": "Renormalizable minimal SO(10) GUT in 4D and 5D",
+      "authors": [
+        "Takeshi Fukuyama"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0806.1987v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2109.05755v2",
+      "arxiv_id": "2109.05755v2",
+      "title": "IQ: Intrinsic measure for quantifying the heterogeneity in meta-analysis",
+      "authors": [
+        "Ke Yang",
+        "Enxuan Lin",
+        "Tiejun Tong"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2109.05755v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2411.10971v1",
+      "arxiv_id": "2411.10971v1",
+      "title": "A novel density-based approach for estimating unknown means, distribution visualisations and meta-analyses of quantiles",
+      "authors": [
+        "Alysha M De Livera",
+        "Luke Prendergast",
+        "Udara Kumaranathunga"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.10971v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5281/zenodo.7243950",
+      "arxiv_id": "2404.08813v1",
+      "title": "Interactive Sonification for Health and Energy using ChucK and Unity",
+      "authors": [
+        "Yichun Zhao",
+        "George Tzanetakis"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2404.08813v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2505.17241v1",
+      "arxiv_id": "2505.17241v1",
+      "title": "Generative AI and Creativity: A Systematic Literature Review and Meta-Analysis",
+      "authors": [
+        "Niklas Holzner",
+        "Sebastian Maier",
+        "Stefan Feuerriegel"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.17241v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2211.15476v1",
+      "arxiv_id": "2211.15476v1",
+      "title": "Meta-analysis of individualized treatment rules via sign-coherency",
+      "authors": [
+        "Jay Jojo Cheng",
+        "Jared D. Huling",
+        "Guanhua Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.15476v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2196/publichealth.6313",
+      "arxiv_id": "1703.08813v1",
+      "title": "Tweet for Behavior Change: Using Social Media for the Dissemination of Public Health Messages",
+      "authors": [
+        "Aisling Gough",
+        "Ruth F Hunter",
+        "Oluwaseun Ajao",
+        "Anna Jurek",
+        "Gary McKeown",
+        "Jun Hong",
+        "Eimear Barrett",
+        "Marbeth Ferguson",
+        "Gerry McElwee",
+        "Miriam McCarthy",
+        "Frank Kee"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1703.08813v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2210.03198v1",
+      "arxiv_id": "2210.03198v1",
+      "title": "Metabolic Model-based Ecological Modeling for Probiotic Design",
+      "authors": [
+        "James D. Brunner",
+        "Nicholas Chia"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2210.03198v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.biopha.2026.119370",
+      "arxiv_id": "",
+      "title": "Multi-strain probiotic enhances metformin tolerance by modulating gut microbiome and bile acid pathways: Insight from multi-omics post-hoc analysis (ProGasMet trial).",
+      "authors": [
+        "Hanna Kwiendacz",
+        "D. Cembrowska-Lech",
+        "K. Skonieczna-Żydecka",
+        "K. Klimontowicz",
+        "Konrad Podsiadło",
+        "A. Wierzbicka-Woś",
+        "D. Styburski",
+        "Mariusz Kaczmarczyk",
+        "Janusz Gumprecht",
+        "Igor Łoniewski",
+        "K. Nabrdalik"
+      ],
+      "venue": "Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": null,
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.biopha.2026.119370",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.64898/2026.02.06.26345743",
+      "arxiv_id": "",
+      "title": "Multi-strain probiotic enhances metformin tolerance by modulating gut microbiome and bile acid pathways: Insight from multi-omics post-hoc analysis (ProGasMet trial)",
+      "authors": [
+        "H. Kwiendacz",
+        "D. Cembrowska-Lech",
+        "K. Skonieczna-Żydecka",
+        "K. Klimontowicz",
+        "K. PodsiadÅo",
+        "A. Wierzbicka-Woś",
+        "D. Styburski",
+        "M. Kaczmarczyk",
+        "J. Gumprecht",
+        "I. Åoniewski",
+        "K. Nabrdalik"
+      ],
+      "venue": "medRxiv",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": null,
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.foodres.2025.118172",
+      "arxiv_id": "",
+      "title": "The impact of Symprove™ multi-strain probiotic on enterotoxigenic Escherichia coli- or antibiotic-induced gut microbiome dysbiosis using high-throughput in vitro screening.",
+      "authors": [
+        "Lieven Van Meulebroek",
+        "J. Ghyselinck",
+        "Dries Van Elst",
+        "C. Duysburgh",
+        "André Gessner",
+        "O. Thas",
+        "Massimo Marzorati"
+      ],
+      "venue": "Food Research International",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 63,
+      "tldr": "Benefits of Symprove™ supplementation were shown not only in healthy fecal microbiomes, but also in fecal microbiomes with in vitro antibiotic-induced dysbiosis, showing therapeutic potential.",
+      "is_oa": true,
+      "oa_url": "http://hdl.handle.net/1942/49515",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Benefits of Symprove™ supplementation were shown not only in healthy fecal microbiomes, but also in fecal microbiomes with in vitro antibiotic-induced dysbiosis, showing therapeutic potential.",
+      "quality_flag": null
+    }
+  ]
+}

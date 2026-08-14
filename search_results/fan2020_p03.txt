@@ -1,0 +1,194 @@
+
+========== PAGE 3 ==========
+Box 2 | A framework to study causality of gut microbial components
+to progress from microbiome–disease 
+associations to functions of the microbiome  
+in a given disease, additional experiments  
+are suggested to explore potential causality 
+between microbial components and the disease 
+of interest. Biological samples from affected 
+and control individuals are analysed using 
+shotgun sequencing and untargeted (that is, 
+discovery-based and global but semi-quantitative) 
+metabolomics profiling to identify microbial 
+features or molecules differently abundant in 
+various biofluids (see the figure, part a). in an 
+untargeted run, the analyte is characterized by 
+its retention time and its mass to charge ratio 
+(m/z value). the identification of a novel 
+compound is confirmed by generation of a 
+nuclear magnetic resonance spectrum or 
+matching fragmental behaviour and retention 
+time to synthetic reference standards175. 
+Both microbiome and metabolome data sets are 
+subjected to integrative analysis to capture 
+candidate biosynthetic gene clusters (BGCs), 
+bacteria or communities that are highly related 
+to metabolites. to identify whether the 
+compound of interest is produced in a 
+microbiota-​dependent manner, triple 
+quadrupole mass spectrometry can be used  
+to perform targeted (that is, validation of 
+well-​defined metabolites often in a quantitative 
+manner) profiling of samples from both 
+germ-​free and control mice (see the figure, 
+part b). in addition, the conventionalization  
+of antibiotic-​treated mice to rescue gut 
+microbiota can also specifically demonstrate 
+the role of gut microbiota in generating  
+specific compounds. when employing 
+reaction-selecting modes in targeted capturing 
+of the candidate analytes, both the first 
+quadrupole (Q1) and the last quadrupole (Q3) 
+are set at a specific mass, allowing only distinct 
+monitoring of the ion fragment from a certain 
+precursor, which results in an increased 
+detecting sensitivity.
+when the selected reaction monitoring is 
+applied to multiple product ions from one or 
+more precursor ions, the pattern is called 
+multiple reaction monitoring176.
+Human intestinal microbiome data and 
+microbial-​derived compounds can be 
+associated to select candidate BGCs, microbial 
+species or a microbial community whose 
+presence correlates with the production of 
+specific compounds (see the figure, part c). 
+Dimensionality reduction is achieved by 
+clustering genes that encode the biosynthetic 
+enzymes for secondary metabolite pathways, 
+binning co-​abundant genes and assembling 
+co-​occurring microbes that are present in a 
+defined ecological habitat in space and 
+time14,177.
+Phenotypic profiling of germ-​free mice harbouring a reference BGC, microbial species or microbial community can be profiled in a comparative 
+targeted manner to examine the abundance changes of the compound of interest177.
+to identify downstream signalling pathways that microbial-​derived compounds may be involved in, a genetically altered mouse can be generated to see 
+the change of microorganism-​generated compound because of the inactivated downstream effects (see the figure, part d). the evidence collected above 
+may stimulate to develop microbiota-​directed interventions (Box 3).
+HOMa-​ir, homeostatic model assessment of insulin resistance. Part c of figure adapted from ref.14, springer Nature Limited.
+–1
+0
+1
+Spearman 
+correlation 
+coeﬃcient
+Control
+Control
+Control
+Conven-
+tionalized
+Antibiotic-
+treated
+Germ-
+free
+Disease
+Disease
+Microbial-
+targeted therapy
+Microbial-based
+drug design
+Control
+Gene knockout
+a
+b
+c
+d
+Metagenomic 
+proﬁling
+Untargeted
+metabolomic 
+proﬁling
+m/z
+Intensity
++
+Metabolome
+Microbiome
+Integrative analysis
+Standard
+Analyte
+Time
+Intensity
+Candidate BGCs or 
+bacteria or community
+Metabolite
+identiﬁcation
+Gene knockout
+Control
+Time
+Intensity
+Serum
+Faeces
+Urine
+Serum
+Faeces
+Urine
+Serum
+Faeces
+Urine
+Q1
+Q2
+Q3
+Ion
+source
+Precursor ion
+selection
+Product ion 
+selection
+Fragmentation
+Targeted metabolomics
+Time
+Intensity
+BGC or bacteria or 
+community
+Microbiota-dependent fashion
+Potential targeted
+gene deﬁcient
+Healthy metabolism
++
+BGCs or bacteria or community of interest
+Colonization of
+germ-free mice
+Germ-free
+Comparative targeted metabolomics
+Time
+Intensity
+Control
+Antibiotic-
+treated
+Conven-
+tionalized
+Control
+Germ-
+free
+Serum glucose (mol–1)
+HOMA-IR
+Minutes post 
+insulin injection
+P. copri abundance
+(a.u.)
+5
+10
+15
+0
+0
+50
+100
+**
+**
+*
+Prevotella copri
+Sham control
+20
+10
+40
+30
+50
+0
+0
+20
+40
+60
+Phenotypic proﬁling
+Nature Reviews | Microbiology
+Reviews

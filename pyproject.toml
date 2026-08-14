@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-agent"
+version = "3.9.12.0"
+description = "Multi-engine academic paper search, full-text fetch, and sample pool for research workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-only with No-AI-Training restriction" }
+authors = [
+    { name = "paper-agent contributors" }
+]
+keywords = [
+    "academic-search",
+    "literature-review",
+    "bibtex",
+    "doi",
+    "crossref",
+    "openalex",
+    "arxiv",
+    "pubmed",
+    "clinicaltrials",
+    "research-tooling",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing :: Markup",
+]
+dependencies = [
+    "click>=8.1",
+    "numpy>=1.24",
+    "requests>=2.28",
+    "requests-cache>=1.0",
+    "charset-normalizer>=3.0",
+    "cryptography>=41.0",
+    "python-dotenv>=1.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+llm-rerank = ["openai>=1.0", "tiktoken>=0.4"]
+cross-encoder = ["sentence-transformers>=2.2", "torch>=2.0", "transformers>=4.30"]
+async-fetch = ["aiohttp>=3.9", "aiohttp-client-cache>=0.10"]
+topics = ["bertopic>=0.16", "umap-learn>=0.5", "hdbscan>=0.8"]
+all = [
+    "openai>=1.0",
+    "tiktoken>=0.4",
+    "sentence-transformers>=2.2",
+    "torch>=2.0",
+    "transformers>=4.30",
+    "aiohttp>=3.9",
+    "aiohttp-client-cache>=0.10",
+    "bertopic>=0.16",
+    "umap-learn>=0.5",
+    "hdbscan>=0.8",
+]
+
+[project.scripts]
+pa = "pa_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/croni4666-cmd/paper-agent"
+Issues = "https://github.com/croni4666-cmd/paper-agent/issues"
+Changelog = "https://github.com/croni4666-cmd/paper-agent/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["pa_cli"]
+
+[tool.setuptools.package-data]
+pa_cli = ["py.typed"]
+
+# Note: AGPL-3.0 + No-AI-Training restriction. See LICENSE and NO_AI_TRAINING.md.
+# This software may NOT be used to train, fine-tune, validate, benchmark, or
+# otherwise improve any AI/ML/LLM/embedding model. See LICENSE PART 2.

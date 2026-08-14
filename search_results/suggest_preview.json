@@ -1,0 +1,21 @@
+﻿python : [pa] loaded 1 env var(s) from .env
+所在位置 行:1 字符: 189
++ ... $env:PYTHONIOENCODING='utf-8'; python -m pa_cli sample-pool suggest `
++                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([pa] loaded 1 env var(s) from .env:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+{
+  "qid": null,
+  "query": "multi-strain probiotic gut health meta-analysis",
+  "domain": "medical",
+  "difficulty": "medium",
+  "project": "global",
+  "notes": "From this Mavis session 2026-08-01; first 5 searches (5 engines) merged + deduped; top 30 by citations. NOT re-searched per user instruction 2026-08-03 (use only papers actually seen in this dialogue).",
+  "added_at": "2026-08-03T04:16:16+00:00",
+  "added_by": "mavis-suggested",
+  "source": "manual-pa-search",
+  "n_candidates": 30,
+  "candidates": [],
+  "_hint": "This is a SUGGESTION, not written to pool. Review fields above. To commit, run `pa sample-pool add` with these values (or save to a JSON file and use --from-file)."
+}

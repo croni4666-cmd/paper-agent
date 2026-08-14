@@ -1,0 +1,173 @@
+{
+  "query": "Lactobacillus reuteri Bifidobacterium animalis Hashimoto thyroiditis",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 7
+  },
+  "dedup_count": 7,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3389/fendo.2022.1092837",
+      "title": "The protective role of nutritional antioxidants against oxidative stress in thyroid disorders",
+      "authors": [
+        "Mirjana Mačvanin",
+        "Zoran Gluvić",
+        "Sonja Zafirović",
+        "Xin Gao",
+        "Magbubah Essack",
+        "Esma R. Isenović"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2023,
+      "cited_by_count": 80,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fendo.2022.1092837/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/biomedicines12010221",
+      "title": "Microbiota Implications in Endocrine-Related Diseases: From Development to Novel Therapeutic Approaches",
+      "authors": [
+        "Vicente Javier Clemente‐Suárez",
+        "Laura Redondo-Flórez",
+        "Alejandro Rubio-Zarapuz",
+        "Alexandra Martín-Rodríguez",
+        "José Francisco Tornero-Aguilera"
+      ],
+      "venue": "Biomedicines",
+      "year": 2024,
+      "cited_by_count": 47,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-9059/12/1/221/pdf?version=1705593613",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2020.573079",
+      "title": "Intestinal Dysbiosis in, and Enteral Bacterial Therapies for, Systemic Autoimmune Diseases",
+      "authors": [
+        "Eric Marietta",
+        "Ashutosh K. Mangalam",
+        "Veena Taneja",
+        "Joseph A. Murray"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2020,
+      "cited_by_count": 35,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2020.573079/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ph18091372",
+      "title": "Drugs Versus Microbiota: How Pharmacotherapy Affects Gut and Probiotic Bacteria",
+      "authors": [
+        "Anna Zawistowska-Rojek",
+        "Stefan Tyski"
+      ],
+      "venue": "Pharmaceuticals",
+      "year": 2025,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1424-8247/18/9/1372/pdf?version=1757748874",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s10020-025-01195-5",
+      "title": "The influence of the gut microbiota on B cells in autoimmune diseases",
+      "authors": [
+        "Lun He",
+        "Xin Li",
+        "Shan Jiang",
+        "Yanhua Ou",
+        "Shanshan Wang",
+        "Ning Shi",
+        "Zhongshan Yang",
+        "Jiali Yuan",
+        "Gregg J. Silverman",
+        "Haitao Niu"
+      ],
+      "venue": "Molecular Medicine",
+      "year": 2025,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://molmed.biomedcentral.com/counter/pdf/10.1186/s10020-025-01195-5",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.31857/s0869813923080095",
+      "title": "The Role of Tryptophan Metabolites and Short-Chain Fatty Acids in the Pathogenesis of Autoimmune Diseases",
+      "authors": [
+        "О. П. Шатова",
+        "E. M. Yagodkina",
+        "S. S. Kaydoshko",
+        "Anastasia A. Zabolotneva",
+        "А. В. Шестопалов"
+      ],
+      "venue": "Российский физиологический журнал им  И  М  Сеченова",
+      "year": 2023,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://journals.rcsi.science/0869-8139/article/download/137976/115910",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2026.1905146",
+      "title": "Lactobacillus in autoimmune thyroid diseases: benefit or risk?",
+      "authors": [
+        "Jin-min Yang",
+        "Pengfei Hou",
+        "Shuaiying Jia"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1905146/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

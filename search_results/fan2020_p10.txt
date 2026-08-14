@@ -1,0 +1,172 @@
+
+========== PAGE 10 ==========
+4-​methyl-2-​pentanone that cause hepatocellular toxic-
+ity in individuals with metabolic liver diseases compared 
+with healthy controls88.
+Additionally, given that the microbiota associated 
+with NALFD is enriched in ethanol-​producing bac-
+teria such as E. coli, it has been hypothesized that the 
+aberrant gut microbiome of individuals with NAFLD 
+produce more ethanol than microbiomes of healthy 
+individuals, as evidenced by increased concentrations 
+of intrinsically generated ethanol in the circulation and 
+breath87,89 (Fig. 2). Ethanol activates nuclear factor-​κB 
+(NF-​κB) signalling pathways and causes tissue damage 
+by impairing gut barrier function and contributing to 
+portal endotoxaemia90,91. In the liver of individuals with 
+NALFD, the detoxification pathway is weakened, pro-
+viding a constant source of reactive oxygen species that 
+potentially cause oxidative damage to the hepatocytes, 
+which in turn may induce hepatic inflammation and 
+steatohepatitis92.
+Similarly, individuals with liver cirrhosis have a sub-
+stantially altered microbiota, including an enrichment 
+of Proteobacteria and Fusobacteria phyla9. The func-
+tional potentials of the gut microbiome in individuals 
+with liver cirrhosis and liver failure are massively altered 
+compared with healthy individuals. The changes include 
+significant enrichment of both assimilation and dissim-
+ilation of nitrate to or from ammonia as signatures of 
+hepatic encephalopathy. An increase in denitrification 
+capacity may relate to the higher nitrogen production, 
+whereas increased γ-​aminobutyric acid (GABA) bio-
+synthesis and GABA shunt functions relate to hydro-
+dynamic venous shunting in liver failure. An increase 
+of microbial haem biosynthesis may contribute to liver 
+damage because of protoporphyrin toxicity, whereas an 
+increase in phosphotransferase systems may indicate 
+an increased demand for protein following liver tissue 
+damage9,93.
+Apart from the above-​mentioned observations, 
+indicating links between gut microbial composition 
+and function and metabolic liver disorders, human and 
+animal faecal transplantation studies show that a 
+high abundance of the alcohol-​producing bacterial 
+species Klebsiella pneumoniae in the gut accelerates 
+NAFLD pathogenesis94,95. Additionally, an integrative 
+multi-​omics approach in women with obsesity without 
+diabetes identified phenylacetate as a microbial metabo-
+lite contributing to the accumulation of lipids in the liver 
+and, hence, to NASH96.
+Disrupted gut microbiota in malnutrition. Globally, mal-
+nutrition affects ~160 million people and is the leading 
+cause of death in children under the age of 5 years97,98. 
+Breastfeeding, food and water security are major protec-
+tive factors against malnutrition and are crucial factors 
+in the maturation of the healthy gut microbiota, char-
+acterized by a transient bifidobacterial bloom before 
+a rise in anaerobes during late infancy99. Early loss of 
+Bifidobacterium longum and Bifidobacterium pseudo­
+longum, two key members in mother milk, represents 
+some of the first disruptions in the intestinal dysbiosis 
+of severe acute malnutrition (SAM)100 (Fig. 2). B. longum 
+and B. pseudolongum appear to be crucial in shaping the 
+early gut microbiota in infants, partly through secretion 
+of broad-​spectrum lantibiotics101. Following this, SAM 
+dysbiosis is mainly accompanied by an aberrant inver-
+sion of the ratio of anaerobes to facultative anaerobes. 
+This inversion might be corrected under appropriate 
+dietary treatment, eventually leading to microbial com-
+munities enriched in anaerobes102. However, in cases 
+where malnutrition continues, the loss of the healthy 
+mature anaerobic gut microbiota gradually leads to a 
+deficiency in energy harvest41, immune responses103 and 
+vitamin synthesis104, and links with chronic malabsorp-
+tion, diarrhoea and systemic invasion from pathogenic 
+bacteria105. Current dietary therapeutic regimens for 
+SAM are not based on knowledge about the develop-
+mental biology of the intestinal microbiota. However, a 
+recent study designed diets using pig and mouse mod-
+els to nudge the microbiota into a mature post-​weaning 
+state, which could entrain maturation of the microbiota 
+of children with SAM and restore their metabolic and 
+growth profiles to a healthier trajectory106. Such dietary 
+regimens urgently need to be tested in long-​term ran-
+domized clinical trials to evaluate the effects of matu-
+rating the gut microbiota on weight gain and overall 
+physiology of affected children.
+Bacterial messengers affect metabolism
+An overwhelming number of reports demonstrate that 
+disruptions in gut microbiome taxonomy and func-
+tional potential relate to numerous pathological pheno-
+types. The majority of studies in humans and animals 
+are observational and lack experimental mechanistic 
+data. However, as revealed by the genetic repertoire of 
+the human gut microbiome, the trillions of commen-
+sal or mutualistic bacteria and archaea are an immense 
+chemical factory that can synthesize a multitude of 
+compounds needed for their own existence and survival 
+with their host, but also compounds that affect the entire 
+holobiont. In the following sections, we selectively review 
+some reported intestinal microbial products that affect 
+host energy homeostasis, body adiposity, glucose toler-
+ance, insulin sensitivity, inflammation and endocrine 
+regulation (Fig. 3).
+Microbiota affecting energy homeostasis and body adi-
+posity. For their own energy supply, the gut microbiota 
+ferment energy-​yielding nutrients, especially complex 
+carbohydrates and, to lesser extent, proteins, mono­
+saccharides, SCFAs and amino acids. However, the 
+microbiota produces large amounts of fermented nutri-
+ents that benefit their host, corresponding to 5–10% 
+of the daily energy needs of a human107. Here, we first 
+focus on the SCFAs butyrate, propionate and acetate, 
+which affect energy metabolism and body adiposity in 
+various ways in addition to being simple substrates for 
+overall host energy turnover and nutrients for colonic 
+cell metabolism. Both propionate and butyrate are pre-
+dominantly anti-​obesogenic through their stimulation 
+of anorexigenic hormones and leptin synthesis108,109. Mice 
+treated with a butyrate precursor drug (tributyrin) are 
+protected from diet-​induced obesity, insulin resistance 
+and hepatic steatosis110. Butyrate also suppresses inflam-
+mation in various tissues, enhances the differentiation of 
+Portal endotoxaemia
+Endotoxins, primarily bacterial 
+lipopolysaccharides, which are 
+absorbed from the intestines 
+into mensenteric and liver 
+veins (portal drainage).
+Liver cirrhosis
+A chronic liver disease caused, 
+for instance, by alcohol abuse 
+or virus infection with 
+impairment of multiple liver 
+functions owing to replacement 
+of normal liver tissues by scar 
+tissue.
+Hepatic encephalopathy
+A spectrum of cognitive and 
+neuro-​psychiatric 
+abnormalities such as 
+personality changes, anxiety, 
+confusion, fatigue, shaky hands 
+or seizures caused by severely 
+impaired liver function.
+Holobiont
+The unique and discrete 
+collective of a macro-​organism 
+— a host — and the complex 
+microbial communities for 
+which the macro-​organism is 
+the habitat.
+Anorexigenic hormones
+These appetite-​decreasing 
+hormones include 
+glucagon-​like peptide 1 
+(GLP-1) and peptide YY (PYY), 
+both produced by specialized 
+intestinal cells and leptin 
+produced by adipocytes and 
+intestinal cells.
+Leptin
+A hormone predominantly 
+synthesized in adipose cells 
+and enterocytes in the small 
+intestine that helps to regulate 
+energy balance by inhibiting 
+hunger, which in turn 
+diminishes fat storage in 
+adipocytes.
+www.nature.com/nrmicro
+Reviews

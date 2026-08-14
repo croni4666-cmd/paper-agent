@@ -1,0 +1,648 @@
+{
+  "query": "BGB 551 Mietsicherheit rental deposit law Germany",
+  "year_min": 2010,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 0,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 30,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.17104/9783406752063",
+      "title": "Allgemeiner Teil Des BGB",
+      "authors": [
+        "Bernd Rüthers"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84dd5dabfae2eeeeb92a9",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-167631-4",
+      "title": "Die Abgrenzung Der Wahlschuld Von Der Elektiven Konkurrenz Nach Dem BGB",
+      "authors": [
+        "Abbas Samhat"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8450ddabfae2eeea75d5a",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-167597-3",
+      "title": "Die Rückabwicklung Erbrachter Leistungen Bei Der Kumulation Von Rücktritt Und Schadensersatz Nach § 325 BGB",
+      "authors": [
+        "Ina Riewert"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86881dabfae2eeeb398cd",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-170513-7",
+      "title": "Zur Rechtstheoretischen Präzisierung Des §242 BGB",
+      "authors": [
+        "Franz Wieacker"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86c33dabfae2eeecfe64a",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17877/de290r-12805",
+      "title": "BGB I: Einführung Und Allgemeiner Teil",
+      "authors": [
+        "Dieter Leipold"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d875f5dabfae2eee1843fc",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-168623-8",
+      "title": "Der Privatrechtliche Immissionsschutz Nach § 906 BGB",
+      "authors": [
+        "Bernhard Kleindienst"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d89dcfdabfae2eee4cc803",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17104/9783406816888",
+      "title": "Die BGB-Klausur",
+      "authors": [
+        "Gerhard Wagner"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8a2b0dabfae2eee718977",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/11206721221125013",
+      "title": "Investigating the Role of Inflammation in Keratoconus: A Retrospective Analysis of 551 Eyes",
+      "authors": [
+        "Prem A. H. Nichani"
+      ],
+      "venue": "EUROPEAN JOURNAL OF OPHTHALMOLOGY",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6334267090e50fcafd6a1645",
+      "matched_phrase": "551",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1164/rccm.202204-0740oc",
+      "title": "Early-Life Exposure to PM2.5 and Sleep Disturbances in Preschoolers from 551 Cities of China.",
+      "authors": [
+        "Jing Cai"
+      ],
+      "venue": "AMERICAN JOURNAL OF RESPIRATORY AND CRITICAL CARE MEDICINE",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "633585ae90e50fcafd27bd14",
+      "matched_phrase": "551",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1182/blood-2023-180109",
+      "title": "First Results from a Phase 1, First-in-Human Study of the Bruton's Tyrosine Kinase (BTK) Degrader Bgb-16673 in Patients (pts) with Relapsed or Refractory (R/R) B-Cell Malignancies (BGB-16673-101)",
+      "authors": [
+        "John F. Seymour"
+      ],
+      "venue": "BLOOD",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6572f2cf939a5f4082aa4796",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4337/9781781954164.00008",
+      "title": "Germany",
+      "authors": [
+        "Kemp, Peter A.",
+        "Kofner, Stefan"
+      ],
+      "venue": "Private Rental Housing",
+      "year": 2014,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37651/aujlps.2024.154766.1382",
+      "title": "Safe deposit box rental contract according to Iraqi commercial law",
+      "authors": [
+        "Kazim, Muhaimin"
+      ],
+      "venue": "Journal of Anbar University for Law and Political Sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17104/9783406827556-107",
+      "title": "I. German Civil Code (Bürgerliches Gesetzbuch – BGB)",
+      "authors": [
+        "Schuster, Doris-Maria",
+        "Steinau-Steinrück, Robert",
+        "Mengel, Anja"
+      ],
+      "venue": "Employment and Labor Law in Germany",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.36128/priw.vi42.472",
+      "title": "Czy BGB było wielką kodyfikacją? – Zapomniane prawa kobiet.",
+      "authors": [
+        "Mecke, Christoph-Eric"
+      ],
+      "venue": "PRAWO i WIĘŹ",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 32,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Artykuł zajmuje się historią rozwoju tej części niemieckiego Kodeksu cywilnego („BGB”), która dotyczy prawa rodzinnego, oraz ówczesną krytyką projektu ustawy, zwłaszcza ze strony ruchu na rzecz praw kobiet przed 1900 r. Wybrane przepisy projektów ustawy oraz pierwotnej wersji BGB zestawiono z krytyką polityki prawnej opublikowaną w okresie poprzedzającym uchwalenie BGB, dotyczącą dyskryminacji kobiet zamężnych, nieślubnych dzieci, jak również ich matek. Postulaty ruchu na rzecz praw kobi",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-3-319-67666-1_10",
+      "title": "Organic Farming Law",
+      "authors": [
+        "Olbrisch, Mathias",
+        "Li, Wei"
+      ],
+      "venue": "Handbook of Agri-Food Law in China, Germany, European Union",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 72,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32989/rel.2023.27.4.101",
+      "title": "Reconsideration of the Essence and Functional Theory of Rental Deposit in Unrecorded ‘Cheonse’",
+      "authors": [
+        "",
+        "SUNG, JOONHO"
+      ],
+      "venue": "Korea Association Of Real Estate Law",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>An unregistered lease is a lease that has not been registered even though there is a lease agreement. This is a widely used method of real estate rights. Usually, a ‘cheonse’ is a property right under the Civil Code, which requires an agreement to establish a cheonse and payment of a ‘cheonse’. Then, based on ‘property right legalism’, the ‘cheonse’ is registered and has the effect of a property right under civil law. However, in the absence of registration, the ‘cheonse’ is only a bond ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/9781780687988.027",
+      "title": "Reflections on Criminal Law in England and Germany",
+      "authors": [
+        "Dyson, Matthew",
+        "Vogel, Benjamin"
+      ],
+      "venue": "The Limits of Criminal Law",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "other",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.9785/mdtr-2022-760914",
+      "title": "Reiseveranstalter-Entschädigung bei Reiserücktritt (BGB a.F.); Darlegungs- und Beweislast",
+      "authors": [],
+      "venue": "Monatsschrift für Deutsches Recht",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/03069400.2024.2420684",
+      "title": "Continuing colonialities through epistemic silences: law schools, law studies and avenues for transformation in Germany",
+      "authors": [
+        "Makaza-Goede, Dorothy"
+      ],
+      "venue": "The Law Teacher",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47766/alhiwalah.v2i2.1978",
+      "title": "Analysis of Car Rental Practices According to Law No. 22 of 2009 and Sharia Economic Law",
+      "authors": [
+        "Syarif, Muhammad",
+        "Hasbi, Husnaini",
+        "Littaqwani, Tasya",
+        "Chaliddin, Chaliddin"
+      ],
+      "venue": "Al-Hiwalah : Journal Syariah Economic Law",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Leasing is a right commonly exercised by the community and is one form of interaction that is often carried out. The problem in this study is about the practice of Car Rental according to Law Number 22 of 2009 concerning traffic rules and Sharia Economic Law that occurs at CV Galeri Rental in Banda Sakti District, Lhokseumawe City. The formulation of this research problem, namely: 1) How is the practice of car rental at CV Galeri Rental Lhokseumawe City? 2) How is the analysis of sharia ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1208.2724v5",
+      "arxiv_id": "1208.2724v5",
+      "title": "Caching with rental cost and zapping",
+      "authors": [
+        "Monik Khare",
+        "Neal E. Young"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.2724v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1705.05327v1",
+      "arxiv_id": "1705.05327v1",
+      "title": "Plankton: the paradox and the power law",
+      "authors": [
+        "Richard Law",
+        "José A. Cuesta",
+        "Gustav W. Delius"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.05327v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1001.3826v3",
+      "arxiv_id": "1001.3826v3",
+      "title": "A stability analysis of the power-law steady state of marine size spectra",
+      "authors": [
+        "Samik Datta",
+        "Gustav W. Delius",
+        "Richard Law",
+        "Michael J. Plank"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1001.3826v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2005.11278v3",
+      "arxiv_id": "2005.11278v3",
+      "title": "The Impact of Response Measures on COVID-19-Related Hospitalization and Death Rates in Germany and Switzerland",
+      "authors": [
+        "Martin Huber",
+        "Henrika Langen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.11278v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2401.16845v4",
+      "arxiv_id": "2401.16845v4",
+      "title": "Chronicling Germany: An Annotated Historical Newspaper Dataset",
+      "authors": [
+        "Christian Schultze",
+        "Niklas Kerkfeld",
+        "Kara Kuebart",
+        "Princilia Weber",
+        "Moritz Wolter",
+        "Felix Selgert"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.16845v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1039/D0RA03375H",
+      "arxiv_id": "2010.03819v1",
+      "title": "A multi-technique study of altered granitic rock from the Krunkelbach Valley uranium deposit, Southern Germany",
+      "authors": [
+        "Ivan Pidchenko",
+        "Stephen Bauters",
+        "Irina Sinenko",
+        "Simone Hempel",
+        "Lucia Amidani",
+        "Dirk Detollenaere",
+        "Laszlo Vinze",
+        "Dipanjan Banerjee",
+        "Roelof van Silfhout",
+        "Stepan Kalmykov",
+        "Jörg Göttlicher",
+        "Robert J. Baker",
+        "Kristina Kvashnina"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.03819v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.clsr.2026.106263",
+      "arxiv_id": "2509.09508v2",
+      "title": "Incorporating AI incident reporting into telecommunications law and policy: Insights from India",
+      "authors": [
+        "Avinash Agarwal",
+        "Manisha J. Nene"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.09508v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2603.28669v1",
+      "arxiv_id": "2603.28669v1",
+      "title": "Superintelligence and Law",
+      "authors": [
+        "Noam Kolt"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.28669v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2601.06237v1",
+      "arxiv_id": "2601.06237v1",
+      "title": "Data-Dependent Goal Modeling for ML-Enabled Law Enforcement Systems",
+      "authors": [
+        "Dalal Alrajeh",
+        "Vesna Nowack",
+        "Patrick Benjamin",
+        "Katie Thomas",
+        "William Hobson",
+        "Carolina Gutierrez Muñoz",
+        "Catherine Hamilton-Giachritsis",
+        "Juliane A. Kloess",
+        "Jessica Woodhams",
+        "Daniel Butler",
+        "Mark Law",
+        "Ralph Morton",
+        "Benjamin Costello",
+        "Amy Burrell",
+        "Tim Grant",
+        "Prachiben Shah",
+        "Frances Laureano de Leon",
+        "Mark Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.06237v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1911.08253v1",
+      "arxiv_id": "1911.08253v1",
+      "title": "The gift of the gab: Are rental scammers skilled at the art of persuasion?",
+      "authors": [
+        "Sophie Van Der Zee",
+        "Richard Clayton",
+        "Ross Anderson"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.08253v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

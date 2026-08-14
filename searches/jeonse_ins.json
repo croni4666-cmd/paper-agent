@@ -1,0 +1,862 @@
+{
+  "query": "jeonse Korea leasehold deposit return guarantee insurance",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 3,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 41,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1038/s41597-022-01924-z",
+      "title": "Functional Group Analyses of Herpetofauna in South Korea Using a Large Dataset",
+      "authors": [
+        "Jong Yoon Jeon"
+      ],
+      "venue": "SCIENTIFIC DATA",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63baa16990e50fcafddb9949",
+      "matched_phrase": "Korea",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jacasi.2023.05.004",
+      "title": "The Increasing Prevalence of Metabolic Syndrome in Korea",
+      "authors": [
+        "Andrea J. Lobene"
+      ],
+      "venue": "JACC Asia",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65792098939a5f4082e6f7bf",
+      "matched_phrase": "Korea",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4143/crt.2023.447",
+      "title": "Cancer Statistics in Korea: Incidence, Mortality, Survival, and Prevalence in 2020",
+      "authors": [
+        "Mee Joo Kang"
+      ],
+      "venue": "CANCER RESEARCH AND TREATMENT",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6411a73690e50fcafde992c2",
+      "matched_phrase": "Korea",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.19172/kreaa.28.4.4",
+      "title": "The Relationship between Jeonse-to-Price Ratio and Jeonse Deposit Non-Return Risk: Focused on Jeonse Guarantee Accident in Seoul",
+      "authors": [
+        "Kim, Jin-Yoo"
+      ],
+      "venue": "The Journal of Korea Real Estate Analysists Association",
+      "year": 2022,
+      "cited_by_count": 15,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.19172/kreaa.27.2.4",
+      "title": "Measuring the Risk of Jeonse Deposit Loss Using Jeonse Deposit Fluctuation Distribution",
+      "authors": [
+        "Min, Byung-Chul"
+      ],
+      "venue": "The Journal of Korea Real Estate Analysists Association",
+      "year": 2021,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22313/reik.2023.21.1.21",
+      "arxiv_id": "",
+      "title": "Analysis and Solution of Jeonse(the lease of a house on a deposit basis) fraud by type",
+      "authors": [
+        "Seunghyuk Hwang",
+        "H. Jang"
+      ],
+      "venue": "Residential Environment Institute Of Korea",
+      "year": 2023,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2023.31.3.127",
+      "title": "Determinants of Jeonse Prices in Gangnam District: Machine Learning and Explainable Artificial Intelligence Approach",
+      "authors": [
+        "Tae-Young Kim"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578d56e939a5f408269e164",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2022.8.1.5",
+      "title": "Assessing the Risk of Underwater Jeonse",
+      "authors": [
+        "Byungchul Min"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578db1c939a5f4082736574",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17208/jkpa.2025.06.60.3.101",
+      "title": "Impact of Changes in Jeonse Deposit Return Guarantee Requirements on the Probability of High-Risk Jeonse Occurrence : Focusing on Row Houses and Multi-Family Housing Market in Seoul",
+      "authors": [
+        "Kwon, Hyuk",
+        "Sung, Hyungun"
+      ],
+      "venue": "Journal of Korea Planning Association",
+      "year": 2025,
+      "cited_by_count": 4,
+      "reference_count": 33,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.4901069",
+      "title": "전세보증금 반환보증제도 개선방안 (Strategies for Refining the Jeonse Deposit Return Guarantee System)",
+      "authors": [
+        "Moon, Yoon Sang"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.55029/kabl.2025.54.31",
+      "arxiv_id": "",
+      "title": "A VECM-Based Analysis of Determinants Affecting the Application for Leasehold Registration Orders : Focusing on foreign landlords",
+      "authors": [
+        "Sookyoun Lee",
+        "Haejung Chun"
+      ],
+      "venue": "Korean Institute for Aggregate Buildings Law",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.4901075",
+      "title": "Strategies for Refining the Jeonse Deposit&amp;nbsp;&lt;span&gt;Return Guarantee System&lt;/span&gt;",
+      "authors": [
+        "Moon, Yoon Sang"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.2139/ssrn.5998896",
+      "title": "Jeonse-to-Monthly Rent Conversion Rate and Jeonse Deposit Return Risk: A Panel Data Analysis for Seoul",
+      "authors": [
+        "Kim, Doil"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 35,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.37407/kres.2023.41.3.59",
+      "title": "A Study on the Improvement of the Guarantee Insurance System for the Return Deposit",
+      "authors": [
+        "",
+        "Seo, Young Cheon",
+        "Kim, Sang Geun"
+      ],
+      "venue": "Korea Real Estate Society",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>If a home tenant does not receive a deposit back after the contract is terminated, a lease deposit return guarantee system is in effect to protect it, but there are still many aspects to be improved. In this study, we would like to present the direction of improvement of the lease deposit return guarantee system as follows.\r\nFirst, when a tenant applies for guarantee insurance, there is still a lot of time delay. In the future, if the tenant applies for a lease registration order, and if",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22313/reik.2025.23.3.135",
+      "title": "The Impact of Jeonse Deposit Non-Return on Jeonse Prices Across Market Phases : A Hierarchical Linear Modeling Approach",
+      "authors": [
+        "",
+        "HA, Seok-Hyun",
+        "KIM, Jin-Woo",
+        "KIM, Seung-Hee"
+      ],
+      "venue": "Residential Environment Institute Of Korea",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.30902/jrea.2026.12.1.59",
+      "title": "Dynamic Determinants and Structural Changes of Jeonse Deposit Return Guarantee Subscriptions",
+      "authors": [
+        "Lee, Hang-Jae"
+      ],
+      "venue": "Journal of Real Estate Analysis",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 13,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54091/krepa.2021.22.1.6",
+      "title": "\"Systematic Risk-Excess Rate of Return using Jeonse Transaction Price Index in Apartment - Focused on Jeonse Transaction Price Index and Jeonse Actual Transaction Price Index -\"",
+      "authors": [
+        "Lee, Kyeongkeun",
+        "Jun, Jaebum"
+      ],
+      "venue": "Korea Real Estate Policy Association",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9781513557052.002",
+      "title": "Republic of Korea",
+      "authors": [],
+      "venue": "IMF Staff Country Reports",
+      "year": 2020,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2020/279/002.2020.issue-279-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9798400259432.002",
+      "title": "Republic of Korea",
+      "authors": [
+        "International Monetary Fund. Asia and Pacific Dept"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2023,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2023/369/002.2023.issue-369-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9798400204517.002",
+      "title": "Republic of Korea: 2022 Article IV Consultation-Press Release; Staff Report; Staff Statement; and Statement by the Executive Director for the Republic of Korea",
+      "authors": [
+        "International Monetary Fund. Asia and Pacific Dept"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2022,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2022/086/002.2022.issue-086-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.insmatheco.2022.03.009",
+      "arxiv_id": "2111.03603v1",
+      "title": "Decrease of capital guarantees in life insurance products: can reinsurance stop it?",
+      "authors": [
+        "Marcos Escobar-Anel",
+        "Yevhen Havrylenko",
+        "Michel Kschonnek",
+        "Rudi Zagst"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.03603v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1510.03146v1",
+      "arxiv_id": "1510.03146v1",
+      "title": "IoT enabled Insurance Ecosystem - Possibilities Challenges and Risks",
+      "authors": [
+        "Jai Manral"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1510.03146v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0808.0650v1",
+      "arxiv_id": "0808.0650v1",
+      "title": "Summary of the 3rd International Workshop on a Far Detector in Korea for the J-PARC Beam",
+      "authors": [
+        "T. Kajita",
+        "S. B. Kim",
+        "A. Rubbia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0808.0650v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.insmatheco.2016.08.008",
+      "arxiv_id": "1602.07910v4",
+      "title": "Polynomial Diffusion Models for Life Insurance Liabilities",
+      "authors": [
+        "Francesca Biagini",
+        "Yinglin Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1602.07910v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1057/s41288-025-00367-y",
+      "arxiv_id": "2511.16760v1",
+      "title": "Insurance Supervision under Climate Change: A Pioneer Detection Method",
+      "authors": [
+        "Eric Vansteenberhge"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.16760v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/TPWRS.2022.3164628",
+      "arxiv_id": "2403.11054v1",
+      "title": "A Novel Mutual Insurance Model for Hedging Against Cyber Risks in Power Systems Deploying Smart Technologies",
+      "authors": [
+        "Pikkin Lau",
+        "Lingfeng Wang",
+        "Wei Wei",
+        "Zhaoxi Liu",
+        "Chee-Wooi Ten"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2403.11054v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1503.02237v1",
+      "arxiv_id": "1503.02237v1",
+      "title": "Purchasing Term Life Insurance to Reach a Bequest Goal: Time-Dependent Case",
+      "authors": [
+        "Erhan Bayraktar",
+        "Virginia R. Young",
+        "David Promislow"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1503.02237v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2111.10476v2",
+      "arxiv_id": "2111.10476v2",
+      "title": "Towards Return Parity in Markov Decision Processes",
+      "authors": [
+        "Jianfeng Chi",
+        "Jian Shen",
+        "Xinyi Dai",
+        "Weinan Zhang",
+        "Yuan Tian",
+        "Han Zhao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.10476v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1909.09511v6",
+      "arxiv_id": "1909.09511v6",
+      "title": "Optimal Dividend Strategy for an Insurance Group with Contagious Default Risk",
+      "authors": [
+        "Zhuo Jin",
+        "Huafu Liao",
+        "Yue Yang",
+        "Xiang Yu"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1909.09511v6",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0801.4035v1",
+      "arxiv_id": "0801.4035v1",
+      "title": "Neutrino Oscillations With A Next Generation Liquid Argon TPC Detector in Kamioka or Korea Along The J-PARC Neutrino Beam",
+      "authors": [
+        "A. Meregaglia",
+        "A. Rubbia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0801.4035v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37407/kres.2025.43.3.95",
+      "arxiv_id": "",
+      "title": "A Study on the Impact of Non-Return of Deposit-Related Tenancy Insecurity in Seoul on the Number of Leasehold Registration Orders",
+      "authors": [
+        "Seong Chan Kim",
+        "J. Sung"
+      ],
+      "venue": "Korea Real Estate Society",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37407/kres.2024.42.3.97",
+      "arxiv_id": "",
+      "title": "A Study on the Application of Monthly and Jeonse Conversion Ratio in the Calculation of Real Estate Brokerage Fees",
+      "authors": [],
+      "venue": "Korea Real Estate Society",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/ijhma-10-2024-0159",
+      "arxiv_id": "",
+      "title": "The impact of reverse jeonse incidents on the risk of nonreturn of security deposits: an empirical analysis of the South Korean housing market",
+      "authors": [
+        "Jinbaek Park",
+        "Kiduk Park"
+      ],
+      "venue": "International Journal of Housing Markets and Analysis",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 4,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37407/kres.2026.44.1.125",
+      "arxiv_id": "",
+      "title": "A Study on the Efficiency of Real Estate Financial Support Policies Related to Jeonse Fraud",
+      "authors": [
+        "H. Yun"
+      ],
+      "venue": "Korea Real Estate Society",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52554/kjcl.2025.111.175",
+      "arxiv_id": "",
+      "title": "A Suggest for Reforms on Residential Tenant Law",
+      "authors": [
+        "Jewan Kim"
+      ],
+      "venue": "The Korean Association of Civil Law",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2024.32.4.29",
+      "arxiv_id": "",
+      "title": "A Study on Improving the Jeonse System to Prevent Jeonse Fraud",
+      "authors": [
+        "Jinyoo Kim",
+        "HyuckShin Kwon"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52663/kcsr.2025.30.4.261",
+      "arxiv_id": "",
+      "title": "What Should We Audit?: News-Driven Structural Topic Modeling for Internal Audit Planning",
+      "authors": [
+        "Yong Sun Kim"
+      ],
+      "venue": "The Korea Association for Corruption Studies",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2024.32.3.61",
+      "arxiv_id": "",
+      "title": "More Damage to Whom?: An Exploratory Examination of Health and Credit Status Changes Among Households at Risk of Losing Rental Deposit in Gangseo-gu, Seoul",
+      "authors": [
+        "Yongchan Jung",
+        "Seungbeom Kang"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52344/hfr.2025.9.2.5",
+      "title": "Impact of Expanding Jeonse Loan Guarantees on Jeonse and Housing Sales Prices",
+      "authors": [
+        "Minjoon Oh"
+      ],
+      "venue": "Housing Finance Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a4479ff0a96f8c83c391090",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47116/apjcri.2024.10.13",
+      "title": "Causes and Solution of Jeonse Accidents",
+      "authors": [
+        "Eunghwan Kang"
+      ],
+      "venue": "Asia-pacific Journal of Convergent Research Interchange",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6721fb2801d2a3fbfca61b34",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21447/jusre.2024.15.4.6",
+      "title": "Analysis of the Estimation of Jeonse Deposit and Jeonse Leverage in Seoul",
+      "authors": [
+        "Kwang-Seok Lee"
+      ],
+      "venue": "The Korean Association of Urban Policies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68a985d4163c01c850f597e2",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+
+========== PAGE 4 ==========
+The mode of birth and access to breastfeeding 
+shape the infant gut microbiota, and it matures grad-
+ually during childhood in response to environmental 
+exposures21,22. Thereafter, the intestinal microbiota 
+remains relatively stable in late childhood, adolescence 
+and adulthood until a decline in diversity occurs at 
+advanced age, likely owing, in part, to a change in 
+immune functions22. The mature healthy intestinal 
+Box 3 | Microbiota-​changing interventions
+Owing to the exponentially growing 
+knowledge gained from 
+epidemio­logical and experimental 
+studies about the impact of the 
+intestinal microbiome on metabolic 
+health, there is an interest in testing 
+both targeted and untargeted 
+microbiome-​directed interventions 
+in humans with disrupted gut 
+microbiomes (see the figure).
+Untargeted interventions
+Diet or exercise interventions
+in rodents, feeding various 
+combinations of nutrients changes 
+the gut microbiome and metabolism.  
+in particular, high-​saturated fat feeding 
+causes endotoxaemia and insulin 
+resistance178 (Fig. 1). a systematic 
+review has summarized the results  
+of six interventions and nine cross-​ 
+sectional studies investigating the 
+effects of dietary fat on intestinal 
+microbiota in humans179, and 
+demonstrated that diets high in saturated or monounsaturated fat 
+negatively influenced the microbiota whereas diets high in 
+polyunsaturated fat appeared to be neutral with respect to the microbiota. 
+similarly, high-​polysaccharide diet interventions have resulted in altered 
+gut microbiota linked with increased faecal, serum or urine concentrations 
+of short-​chain fatty acids, weight loss and improvements of cytokine and 
+metabolome profiles180–183. Likewise, interventions with increased physical 
+activity have shown adaptive and, in some cases, transmissible changes of 
+the intestinal microbiome linked with an increased capacity for breakdown 
+of lactate, branched-​chain amino acids, an increased potential for 
+synthesis of short-​chain fatty acids and improvements of cardiorespiratory 
+fitness and insulin sensitivity.
+Trials testing probiotics, prebiotics or postbiotics
+Bifidobacterium, Lactobacillus and Saccharomyces spp. have a long history 
+as safe probiotics184. in addition, potential next-​generation probiotics, 
+which are not yet marketed, include Faecalibacterium prausnitzii185, 
+Akkermansia muciniphila186 and several Clostridia spp.187. systematic 
+reviews of short-​term randomized controlled trials in healthy individuals 
+show no consistent effect of probiotics on gut microbial composition188. 
+However, it is possible that some probiotics, for example A. muciniphila 
+strains, do not even need to colonize the intestine to provide beneficial 
+metabolic health effects189,190. some non-​digestible polysaccharides called 
+prebiotics change the relative abundance of fermenting microbiota in the 
+colon of rodents and induce improved gut barrier functions and in some 
+cases improved metabolism191. Of note, randomized controlled trials 
+testing various prebiotics have demonstrated that inulin-​type fructans 
+changed the gut microbiota composition in adult women with obesity, 
+leading to modest changes in host metabolism192. in children who are 
+overweight or have obesity, it is reported that oligofructose-​enriched 
+inulin prebiotics alter the intestinal microbiota and modestly reduce body 
+weight, adiposity and inflammatory markers193. the same holds for the 
+combination of various probiotic strains and prebiotics often named 
+synbiotics. Postbiotics represent the pasteurized version of probiotics or 
+parts of microbial strains possessing health-​promoting effects194. a pilot 
+trial of pasteurized A. muciniphila and its membrane protein amuc_1100 
+demonstrated positive effects on markers of human metabolism186,195.
+Heterologous and autologous faecal microbiota transplantation
+it is currently unsettled whether heterologous faecal microbiota 
+transplantation will be an option in preventing or treating metabolic 
+dysfunctions with aetiologies far more complex than chronic infections 
+caused by Clostridioides difficile196. Challenges include lack of knowledge 
+about the importance of dieting for stool graft colonization and survival, 
+optimal anaerobic handling of donor faeces, immunological compatibility 
+between donor and recipient, and the role of bacteriophages and fungi for 
+a successful faecal microbiota transplantation. in parallel, there is a need 
+for examining the feasibility and efficacy of the much less complicated 
+autologous faecal microbiota transplantation stored prior to development 
+of a metabolic disease, that is, faecal samples biobanked in childhood or 
+adolescence.
+Targeted interventions
+Bio-engineered commensals and drugs
+in mice, gavaging engineered Escherichia coli overexpressing the satiety 
+factor N-​acylphosphatidylethanolamine alleviated high-​fat diet-​induced 
+obesity, insulin resistance and hepatosteatosis197; and in rats with diabetes, 
+a genetically modified Lactobacillus gasseri strain with the ability to express 
+and secrete glucagon-​like peptide 1 (GLP-1) increased insulin release and 
+reduced hyperglycaemia198. whether delivering genetically modified 
+organisms carrying microbial genes to the human gut is acceptable for 
+health and drug authorities or consumers is at present unsettled. targeting 
+specific microbial-​synthesized metabolites by delivering tailored drugs is 
+another emerging potential frontier to optimize metabolism. a prime 
+example is the specific drug blockade of the microbial production of 
+trimethylamine78.
+Bacteriophage therapy and CRISPR–Cas9 editing
+as most bacteriophages and archaeal viruses are specific to bacterial  
+and archaeal strains, respectively, they may in future experiments  
+be applied to target dysbiotic parts of the microbiome in individuals  
+with metabolic disorders199. similarly, it is at present unknown whether  
+CrisPr–Cas can be applied to edit and reset dysbiotic parts of a  
+human gut microbiome without causing undesired effects for the  
+host200.
+Exercises
+Individualized
+nutrition
+Faecal microbiota
+transplantation
+Bio-engineered
+commensals
+Drugs targeting selected
+microbial metabolism
+Phage therapy
+CRISPR–Cas9-based
+therapy
+Prebiotics
+Probiotics
+Synbiotics
+Postbiotics
+Microbiome-directed interventions
+General improvement in
+microbial composition and functions
+Speciﬁc modiﬁcation in
+metabolism-related gut microbiota
+Targeted
+Untargeted
+A
+E
+D C
+B
+www.nature.com/nrmicro
+Reviews

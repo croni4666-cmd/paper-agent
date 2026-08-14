@@ -1,0 +1,38 @@
+# paper-agent core dependencies
+# All versions are MINIMUM (>=). Pin to exact version if reproducibility needed.
+# Python: 3.10+ (uses match/case, | union types, type hints with builtin generics)
+
+# CLI framework (used by pa_cli/cli.py)
+click>=8.1
+
+# Numerics (used by pa_cli/ltr.py, moe_router.py, features.py)
+numpy>=1.24
+
+# HTTP client (used by pa_cli/fetch.py, search.py)
+requests>=2.28
+
+# Response caching (used by pa_cli/keys.py, search.py for S2 throttle+retry)
+requests-cache>=1.0
+
+# Encoding detection (transitive via requests, but pinned for safety)
+charset-normalizer>=3.0
+
+# TLS / hashing (transitive, pinned for safety)
+cryptography>=41.0
+
+# .env loader (used by pa_cli/keys.py to read user API keys)
+python-dotenv>=1.0
+
+# YAML parser (used by pa_cli/config.py for project.yml)
+PyYAML>=6.0
+
+# Optional: LLM rerank (pa moe-router --use-llm). NOT required for default pa search / pa fetch.
+# Uncomment if you want to use the LLM rerank feature.
+# openai>=1.0
+# tiktoken>=0.4
+
+# Optional: local embedding model for cross-encoder rerank (pa moe-router --use-cross-encoder)
+# 2-3 GB download on first use. NOT required for default pa search / pa fetch.
+# sentence-transformers>=2.2
+# torch>=2.0
+# transformers>=4.30

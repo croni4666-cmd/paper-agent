@@ -1,0 +1,739 @@
+{
+  "query": "借地借家法 Japan tenant protection law reform deposit",
+  "year_min": 2010,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 0,
+    "arxiv": 10,
+    "semanticscholar": 4,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 33,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "",
+      "title": "Preschool in Three Cultures Revisited: China, Japan and the United states",
+      "authors": [
+        "Xinyi Zong"
+      ],
+      "venue": "ECNU REVIEW OF EDUCATION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86698dabfae2eeea51d13",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/gji/ggag087",
+      "title": "Subslab Heterogeneity and Geodynamics of Japan Subduction Zone",
+      "authors": [
+        "Motoya Suzuki"
+      ],
+      "venue": "GEOPHYSICAL JOURNAL INTERNATIONAL",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08d7a9be8eb7c4b628a4a",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2026.2650639",
+      "title": "Gendered Housing Struggles and the Construction of Single Women As Risky Tenants in Urban India",
+      "authors": [
+        "Julia Gabriele Harten"
+      ],
+      "venue": "HOUSING STUDIES",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08b4b9be8eb7c4b4fb7fd",
+      "matched_phrase": "tenant",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5749/minnesota/9780816665792.001.0001",
+      "title": "The Japan of Pure Invention",
+      "authors": [
+        "Josephine Lee"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86152dabfae2eee7eacec",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1525/9780520922679",
+      "title": "Everyday Things in Premodern Japan",
+      "authors": [
+        "Susan B. Hanley"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a855b7602d970319de2d",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5771/9781442221963",
+      "title": "Japan’s New Middle Class",
+      "authors": [
+        "EZRA F. VOGEL"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8278fdabfae2eeee6a9ba",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/2108645",
+      "title": "Parties and Politics in Contemporary Japan",
+      "authors": [
+        "ROBERT A. SCALAPINO"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6216bb565aee126c0f00b983",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/jj.2430643",
+      "title": "Japan’s Invisible Race",
+      "authors": [
+        "GEORGE DE VOS"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a6547dd68f896efa02aac3",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/lsr.2026.10100",
+      "title": "Courthouse Funneling: How Organizational Mechanisms Teach Tenants to Bargain in Eviction Court",
+      "authors": [
+        "N. Hardaway"
+      ],
+      "venue": "LAW & SOCIETY REVIEW",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c809be8eb7c4b599ea9",
+      "matched_phrase": "tenant",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7310/arfe.47.290",
+      "title": "Measurement of Leased Land Choice and the Effect of Farmland Accumulation of “large-scale business farms^|^quot;",
+      "authors": [
+        "Nitta, Yoshinobu"
+      ],
+      "venue": "Journal of Rural Problems",
+      "year": 2011,
+      "cited_by_count": 1,
+      "reference_count": 11,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Judging Tenant Protections: The Evidence from Enforcement of Landlord Penalties",
+      "authors": [
+        "Lee Harris"
+      ],
+      "venue": "",
+      "year": 2011,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Civil Asset Forfeiture in Virginia: An Imperfect System",
+      "authors": [
+        "James Simon"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52554/kjcl.2025.112.201",
+      "title": "Fixed Term Housing Lease and Tenant's Right to Terminate - Focusing on Article 38 of the Act on Land and Building Leases in Japan -",
+      "authors": [
+        "",
+        "Yang, Mi-Suk"
+      ],
+      "venue": "The Korean Association of Civil Law",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Since the enactment of the Housing Lease Protection Act in 1981, several systems have been introduced to guarantee tenants' right to live. However, the contract renewal request system introduced in July 2020 has also contributed to the improvement of housing rights by allowing tenants to secure up to four years of stable residence without worrying about rent increases. However, it also raises concerns about the increase in disputes between landlords and tenants, undermining the stability",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5955/jalha.69.179",
+      "title": "林真貴子著「借地借家調停法の成立と施行地区限定の意味」",
+      "authors": [
+        "小柳, 春一郎"
+      ],
+      "venue": "Legal History Review",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17252/dlr.2010.34.2.004",
+      "title": "近代地方法制的特例 －德国租借时期的青岛法制－",
+      "authors": [
+        "王成儒"
+      ],
+      "venue": "Dankook Law Riview",
+      "year": 2010,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5736/jares.39.1_98",
+      "title": "不動産法の最前線「地方住宅供給公社による住宅の使用関係と借地 借家法32条1項の適用 ─最一小判令和6年6月24日民集78巻3号335頁」",
+      "authors": [
+        "KITAMI, Kosuke"
+      ],
+      "venue": "The Japanese Journal of Real Estate Sciences",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 9,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5736/jares.36.3_18",
+      "title": "Act on Appropriate Management of Rental Housing and the Right to Demand Rent Reduction in Master Lease Agreement：",
+      "authors": [
+        "SESHIMO, Hiroyuki"
+      ],
+      "venue": "The Japanese Journal of Real Estate Sciences",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.53106/1025593135005",
+      "title": "論我國P2P網路借貸平台法制之迷思──民間借貸或違法吸金？",
+      "authors": [
+        "莊永丞, 莊永丞"
+      ],
+      "venue": "月旦法學雜誌",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5736/jares.24.2_110",
+      "title": "Housing Maintenance Law System for Private Renting in England",
+      "authors": [
+        "OKADA, Yasuo"
+      ],
+      "venue": "The Japanese Journal of Real Estate Sciences",
+      "year": 2010,
+      "cited_by_count": 0,
+      "reference_count": 5,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.53106/1684739323702",
+      "title": "原住民保留地的借名登記──大法庭裁定的商榷",
+      "authors": [
+        "陳榮傳, 陳榮傳"
+      ],
+      "venue": "月旦法學教室",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p />",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.53106/172717628001",
+      "title": "借名投保法律效力之研究",
+      "authors": [
+        "張冠群, 張冠群"
+      ],
+      "venue": "月旦民商法雜誌",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p />",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2111.08664v2",
+      "arxiv_id": "2111.08664v2",
+      "title": "An Empirical Evaluation of the Impact of New York's Bail Reform on Crime Using Synthetic Controls",
+      "authors": [
+        "Angela Zhou",
+        "Andrew Koo",
+        "Nathan Kallus",
+        "Rene Ropac",
+        "Richard Peterson",
+        "Stephen Koppel",
+        "Tiffany Bergin"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.08664v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2412.08244v2",
+      "arxiv_id": "2412.08244v2",
+      "title": "Call to Protect the Dark and Quiet Sky from Harmful Interference by Satellite Constellations",
+      "authors": [
+        "IAU Centre for the Protection of the Dark",
+        "Quiet Sky from Satellite Constellation Interference",
+        "Gyula I. G. Józsa",
+        "Andrew Williams",
+        "Richard Green",
+        "Isabel Marsh",
+        "John Antoniadis",
+        "Domingos Barbosa",
+        "John Barentine",
+        "Guillermo Blanc",
+        "Aaron Boley",
+        "Bruno Coelho",
+        "Patricia Cooper",
+        "Sara Dalledonne",
+        "Federico Di Vruno",
+        "Joe Diamond",
+        "Adam Dong",
+        "Ronald Drimmel",
+        "Siegfried Eggl",
+        "Nusrin Habeeb",
+        "Jessica Heim",
+        "Chris Hofer",
+        "Narae Hwang",
+        "Mathieu Isidro",
+        "David Koplow",
+        "James Lowenthal",
+        "Sara Lucatello",
+        "Mariya Lyubenova",
+        "Robert Massey",
+        "Mike Peel",
+        "Meredith Rawls",
+        "Adrien Saada",
+        "Alejandro Sanchez",
+        "Pedro Sanhueza",
+        "Warren Skidmore",
+        "Boris Sorokin",
+        "P. Sreekumar",
+        "Tim Stevenson",
+        "Paula Tartari",
+        "Vincenza Tornatore",
+        "Connie Walker",
+        "Benjamin Winkel",
+        "Yana Yakushina"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.08244v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1705.05327v1",
+      "arxiv_id": "1705.05327v1",
+      "title": "Plankton: the paradox and the power law",
+      "authors": [
+        "Richard Law",
+        "José A. Cuesta",
+        "Gustav W. Delius"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.05327v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1049/icp.2026.1934",
+      "arxiv_id": "2512.15385v1",
+      "title": "Robustness Evaluation of Machine Learning Models for Fault Classification and Localization In Power System Protection",
+      "authors": [
+        "Julian Oelhaf",
+        "Mehran Pashaei",
+        "Georg Kordowich",
+        "Christian Bergler",
+        "Andreas Maier",
+        "Johann Jäger",
+        "Siming Bayer"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.15385v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2210.03574v1",
+      "arxiv_id": "2210.03574v1",
+      "title": "The Kolmogorov Reform of Mathematics Education in the USSR",
+      "authors": [
+        "Alexandre Borovik"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2210.03574v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54648/cola2017118",
+      "arxiv_id": "2510.13466v1",
+      "title": "The Perfect Match? A Closer Look at the Relationship between EU Consumer Law and Data Protection Law",
+      "authors": [
+        "Natali Helberger",
+        "Frederik Zuiderveen Borgesius",
+        "Agustin Reyna"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.13466v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2509.08837v1",
+      "arxiv_id": "2509.08837v1",
+      "title": "Protected Grounds and the System of Non-Discrimination Law in the Context of Algorithmic Decision-Making and Artificial Intelligence",
+      "authors": [
+        "Janneke Gerards",
+        "Frederik Zuiderveen Borgesius"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.08837v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/TON.2026.3654114",
+      "arxiv_id": "2503.04971v2",
+      "title": "Incentivizing Multi-Tenant Split Federated Learning for Foundation Models at the Network Edge",
+      "authors": [
+        "Songyuan Li",
+        "Jia Hu",
+        "Geyong Min",
+        "Haojun Huang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.04971v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2510.24592v3",
+      "arxiv_id": "2510.24592v3",
+      "title": "ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization",
+      "authors": [
+        "Guoxin Chen",
+        "Jing Wu",
+        "Xinjie Chen",
+        "Wayne Xin Zhao",
+        "Ruihua Song",
+        "Chengxi Li",
+        "Kai Fan",
+        "Dayiheng Liu",
+        "Minpeng Liao"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2510.24592v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1001.3826v3",
+      "arxiv_id": "1001.3826v3",
+      "title": "A stability analysis of the power-law steady state of marine size spectra",
+      "authors": [
+        "Samik Datta",
+        "Gustav W. Delius",
+        "Richard Law",
+        "Michael J. Plank"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1001.3826v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52554/kjcl.2025.111.175",
+      "arxiv_id": "",
+      "title": "A Suggest for Reforms on Residential Tenant Law",
+      "authors": [
+        "Jewan Kim"
+      ],
+      "venue": "The Korean Association of Civil Law",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54091/krepa.2025.26.2.81",
+      "arxiv_id": "",
+      "title": "A Study on Legal and Institutional Measures for the Prevention and Remedy of Jeonse Fraud: Focusing on Field Experts' Perspectives",
+      "authors": [
+        "Yongseon Kim",
+        "Mihwa Lim"
+      ],
+      "venue": "Korea Real Estate Policy Association",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

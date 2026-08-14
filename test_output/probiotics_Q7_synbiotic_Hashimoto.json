@@ -1,0 +1,337 @@
+{
+  "query": "synbiotic selenium Hashimoto thyroiditis intervention",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 15
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25094703",
+      "title": "Autoimmunity, New Potential Biomarkers and the Thyroid Gland—The Perspective of Hashimoto’s Thyroiditis and Its Treatment",
+      "authors": [
+        "Ewa Tywanek",
+        "Agata Michalak",
+        "Joanna Świrska",
+        "Agnieszka Zwolak"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 81,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/9/4703/pdf?version=1714107018",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/fsn3.3229",
+      "title": "Food, gut barrier dysfunction, and related diseases: A new target for future individualized disease prevention and management",
+      "authors": [
+        "Linda Liang",
+        "Clarissa Saunders",
+        "Nerses Sanossian"
+      ],
+      "venue": "Food Science & Nutrition",
+      "year": 2023,
+      "cited_by_count": 64,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/fsn3.3229",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7759/cureus.4556",
+      "title": "Efficacy of the Autoimmune Protocol Diet as Part of a Multi-disciplinary, Supported Lifestyle Intervention for Hashimoto’s Thyroiditis",
+      "authors": [
+        "Robert D. Abbott",
+        "Adam Sadowski",
+        "Angela G Alt"
+      ],
+      "venue": "Cureus",
+      "year": 2019,
+      "cited_by_count": 47,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://assets.cureus.com/uploads/original_article/pdf/18455/1594622316-20200713-22038-tzw7af.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/biomedicines12010221",
+      "title": "Microbiota Implications in Endocrine-Related Diseases: From Development to Novel Therapeutic Approaches",
+      "authors": [
+        "Vicente Javier Clemente‐Suárez",
+        "Laura Redondo-Flórez",
+        "Alejandro Rubio-Zarapuz",
+        "Alexandra Martín-Rodríguez",
+        "José Francisco Tornero-Aguilera"
+      ],
+      "venue": "Biomedicines",
+      "year": 2024,
+      "cited_by_count": 47,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-9059/12/1/221/pdf?version=1705593613",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fphar.2022.955672",
+      "title": "Inflammatory pathophysiological mechanisms implicated in postpartum depression",
+      "authors": [
+        "Jialei Zhu",
+        "Jing Jin",
+        "Jing Tang"
+      ],
+      "venue": "Frontiers in Pharmacology",
+      "year": 2022,
+      "cited_by_count": 39,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fphar.2022.955672/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10238-024-01304-4",
+      "title": "Intestinal microbiota regulates the gut-thyroid axis: the new dawn of improving Hashimoto thyroiditis",
+      "authors": [
+        "Xiaxin Zhu",
+        "Chi Zhang",
+        "Shuyan Feng",
+        "Ruonan He",
+        "Shuo Zhang"
+      ],
+      "venue": "Clinical and Experimental Medicine",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-024-01304-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fnut.2025.1597206",
+      "title": "The early-life gut microbiome in common pediatric diseases: roles and therapeutic implications",
+      "authors": [
+        "Taiwo Bankole",
+        "Yuanyuan Li"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2025,
+      "cited_by_count": 33,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2025.1597206/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms252010918",
+      "title": "Unveiling the Role of Gut Microbiota and Metabolites in Autoimmune Thyroid Diseases: Emerging Perspectives",
+      "authors": [
+        "Kai Yan",
+        "Xin Sun",
+        "Chenxi Fan",
+        "Xin Wang",
+        "Hongsong Yu"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/20/10918/pdf?version=1728572616",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2024.1465928",
+      "title": "Recent advances in gut microbiota and thyroid disease: pathogenesis and therapeutics in autoimmune, neoplastic, and nodular conditions",
+      "authors": [
+        "Lihua Fang",
+        "Jie Ning"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2024,
+      "cited_by_count": 22,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2024.1465928/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/jpm13121659",
+      "title": "Assessment of the Impact of Nutritional Intervention with the Probiotic Lactiplantibacillus plantarum 299v on Nutritional Status and Quality of Life of Hashimoto’s Thyroiditis Patients—A Randomized Double-Blind Study Protocol",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Journal of Personalized Medicine",
+      "year": 2023,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2075-4426/13/12/1659/pdf?version=1701155520",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17213387",
+      "title": "Probiotic Supplementation Enhances the Effects of a Nutritional Intervention on Quality of Life in Women with Hashimoto’s Thyroiditis—A Double-Blind Randomised Study",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/17/21/3387/pdf?version=1761664723",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20945/2359-4292-2025-0075",
+      "title": "The impact of thyroid disorders on the gut microbiome: emerging mechanisms and clinical relevance",
+      "authors": [
+        "Isabela Busto Silva",
+        "Manel Puig‐Domingo"
+      ],
+      "venue": "Archives of Endocrinology and Metabolism",
+      "year": 2026,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.aem-sbem.com/wp-content/uploads/articles_xml/2359-4292-aem-70-spe1-e250075/2359-4292-aem-70-spe1-e250075.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fendo.2026.1785878",
+      "title": "The role of gut microbiota in autoimmune thyroid diseases: nutritional determinants and diet-based modulation",
+      "authors": [
+        "Hubert Lewandowski",
+        "Maciej M. Maslyk",
+        "Halla Kamińska",
+        "Lukasz Szarpak"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2026,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://public-pages-files-2025.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2026.1785878/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s00210-025-04604-y",
+      "title": "Natural product-based interventions for thyroid disorders: mechanisms and applications",
+      "authors": [
+        "Radwa H. El‐Akad",
+        "Ahmed H. Elosaily",
+        "Noha M. Gamil",
+        "Rana M. Merghany",
+        "Riham A. El‐Shiekh",
+        "Wesam Taher Almagharbeh",
+        "Hebatollah E. Eitah"
+      ],
+      "venue": "Naunyn-Schmiedeberg s Archives of Pharmacology",
+      "year": 2025,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00210-025-04604-y.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

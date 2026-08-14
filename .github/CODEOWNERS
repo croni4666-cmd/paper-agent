@@ -1,0 +1,17 @@
+# CODEOWNERS for paper-agent
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Single-maintainer project, so all paths default to the owner.
+# This file is here for future maintainers and for documentation.
+
+# Default owners for everything in the repo
+*       @croni4666-cmd
+
+# pa_cli/ — core library, requires deeper review
+/pa_cli/         @croni4666-cmd
+
+# LICENSE / NOTICE / IP / security policy — only the owner
+/LICENSE          @croni4666-cmd
+/NO_AI_TRAINING.md  @croni4666-cmd
+/SECURITY.md     @croni4666-cmd
+/THIRD_PARTY.md  @croni4666-cmd

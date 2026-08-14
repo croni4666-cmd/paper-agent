@@ -1,0 +1,959 @@
+{
+  "query": "Germany Mietkaution BGB 551 rental deposit",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 1,
+    "arxiv": 15,
+    "semanticscholar": 1,
+    "aminer": 15,
+    "cnki": 1
+  },
+  "dedup_count": 46,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1111/ddi.70170",
+      "title": "Determinants of Terrestrial and Limnic Species Richness in Germany",
+      "authors": [
+        "Julia S. Ellerbrok"
+      ],
+      "venue": "DIVERSITY AND DISTRIBUTIONS",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08ced9be8eb7c4b5d3b41",
+      "matched_phrase": "Germany",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4202/app.01262.2025",
+      "title": "The First Ornithomimosaur Remains from Germany",
+      "authors": [
+        "Denis Theda"
+      ],
+      "venue": "ACTA PALAEONTOLOGICA POLONICA",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68f264cc163c01c850dfc05f",
+      "matched_phrase": "Germany",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/s0927-5371(99)00017-2",
+      "title": "Labor Force Transitions of Older Married Couples in Germany",
+      "authors": [
+        "David M. Blau"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b7fcb7602d97043af973",
+      "matched_phrase": "Germany",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/jj.8501185",
+      "title": "The Political Economy of Germany in the Twentieth Century",
+      "authors": [
+        "Karl Hardach"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a498bad68f896efaad39a4",
+      "matched_phrase": "Germany",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s40878-022-00313-0",
+      "title": "Should They Stay or Should They Go? A Case Study on International Students in Germany",
+      "authors": [
+        "Krannich  Sascha"
+      ],
+      "venue": "Comparative Migration Studies",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a806b7602d9703144fde",
+      "matched_phrase": "Germany",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17104/9783406752063",
+      "title": "Allgemeiner Teil Des BGB",
+      "authors": [
+        "Bernd Rüthers"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d84dd5dabfae2eeeeb92a9",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-167631-4",
+      "title": "Die Abgrenzung Der Wahlschuld Von Der Elektiven Konkurrenz Nach Dem BGB",
+      "authors": [
+        "Abbas Samhat"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8450ddabfae2eeea75d5a",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-167597-3",
+      "title": "Die Rückabwicklung Erbrachter Leistungen Bei Der Kumulation Von Rücktritt Und Schadensersatz Nach § 325 BGB",
+      "authors": [
+        "Ina Riewert"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86881dabfae2eeeb398cd",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-170513-7",
+      "title": "Zur Rechtstheoretischen Präzisierung Des §242 BGB",
+      "authors": [
+        "Franz Wieacker"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86c33dabfae2eeecfe64a",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17877/de290r-12805",
+      "title": "BGB I: Einführung Und Allgemeiner Teil",
+      "authors": [
+        "Dieter Leipold"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d875f5dabfae2eee1843fc",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1628/978-3-16-168623-8",
+      "title": "Der Privatrechtliche Immissionsschutz Nach § 906 BGB",
+      "authors": [
+        "Bernhard Kleindienst"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d89dcfdabfae2eee4cc803",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17104/9783406816888",
+      "title": "Die BGB-Klausur",
+      "authors": [
+        "Gerhard Wagner"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8a2b0dabfae2eee718977",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/ijhma-08-2022-0108",
+      "title": "Does work from home reshape the urban rental structure? Early evidence from a rental gradient analysis in Auckland",
+      "authors": [
+        "Yiu, Chung Yim Edward",
+        "Cheung, Ka Shing",
+        "Wong, Daniel"
+      ],
+      "venue": "International Journal of Housing Markets and Analysis",
+      "year": 2023,
+      "cited_by_count": 9,
+      "reference_count": 72,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Purpose</jats:title>\n<jats:p>This study aims to identify the pandemic’s impact on house rents by applying a rental gradient analysis to compare the pre-and post-COVID-19 periods in Auckland. The micro-level household census data from the Integrated Data Infrastructure of Statistics New Zealand is also applied to scrutinise this WFH trend as a robustness check.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1182/blood-2023-180109",
+      "title": "First Results from a Phase 1, First-in-Human Study of the Bruton's Tyrosine Kinase (BTK) Degrader Bgb-16673 in Patients (pts) with Relapsed or Refractory (R/R) B-Cell Malignancies (BGB-16673-101)",
+      "authors": [
+        "John F. Seymour"
+      ],
+      "venue": "BLOOD",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6572f2cf939a5f4082aa4796",
+      "matched_phrase": "BGB",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.2785053",
+      "title": "A Rental-Equivalence Index for Owner-Occupied Housing in West Germany 1985 to 1998",
+      "authors": [
+        "Kurz, Claudia",
+        "Hoffmann, Johannes"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>In this paper, we review the German practice of imputing the costs of owner-occupied</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003426493-11",
+      "title": "Social struggles around rental housing in Germany",
+      "authors": [
+        "Schipper, Sebastian"
+      ],
+      "venue": "Reimagining Urban Marxisms",
+      "year": 2025,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5502577",
+      "title": "Free plug-in photovoltaics for rental apartments in Germany: a win-win-win financial opportunity for landlords, tenants and society",
+      "authors": [
+        "Galvin, Ray"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.9785/mdtr-2022-760914",
+      "title": "Reiseveranstalter-Entschädigung bei Reiserücktritt (BGB a.F.); Darlegungs- und Beweislast",
+      "authors": [],
+      "venue": "Monatsschrift für Deutsches Recht",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.9785/mdtr-2022-760913",
+      "title": "Reiseveranstalter-Entschädigung und Auskunft dazu an Reisenden nach Reiserücktritt (BGB n.F.)",
+      "authors": [],
+      "venue": "Monatsschrift für Deutsches Recht",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2026.11.2.37",
+      "title": "The impact of deposit insurance on rental deposit ratios: Evidence\n                        from default events",
+      "authors": [
+        "Lee, Songhee"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 37,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/juru-2025-2017",
+      "title": "Zugriff auf die Mietkaution bei verjährten Schadensersatzforderungen?",
+      "authors": [
+        "Hinz, Werner"
+      ],
+      "venue": "Juristische Rundschau",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1057/978-1-137-50710-5_8",
+      "title": "East Germany: Integration to a Well-Established Environment",
+      "authors": [
+        "Kofner, Stefan"
+      ],
+      "venue": "Private Rental Housing in Transition Countries",
+      "year": 2018,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/j.ctv27h1p5g.12",
+      "title": "Managing Multicultural Tenants:",
+      "authors": [
+        "Oxfeldt, Elisabeth"
+      ],
+      "venue": "Migration and Multiculturalism in Scandinavia",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5771/9783465143673-139",
+      "title": "Chapter 5: Medical Error and the \"BGB\"",
+      "authors": [
+        "McGrath, Colm Peter"
+      ],
+      "venue": "The Development of Medical Liability in Germany, 1800–1945",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003125495-3",
+      "title": "Quantifying a century of state intervention in rental housing in Germany",
+      "authors": [
+        "Kholodilin, Konstantin A."
+      ],
+      "venue": "Transforming Social Housing",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 1,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.15396/eres2023_130",
+      "title": "Rental Price Dynamics in Germany: A Distributional Regression Model with Heterogenous Covariate Effects",
+      "authors": [
+        "Lang, Stefan",
+        "Granna, Julian"
+      ],
+      "venue": "29th Annual European Real Estate Society Conference",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24144/2788-6018.2026.01.1.53",
+      "title": "Content of the housing rental agreement in Ukraine and Germany",
+      "authors": [
+        "Utekhin, I. B."
+      ],
+      "venue": "Analytical and Comparative Jurisprudence",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>For the first time, an analysis of the concept «of the content of the housing rental agreement under the legislation of Ukraine and Germany» was carried out. It has been proven that it has both common and distinctive features. It is justified that the content of the housing rental agreement should be understood in a broad sense: as an agreement, as a transaction, obligation and document. Because of this, the content of this contract is complex. This feature applies to all other civil law",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.9785/mdtr-2019-731917",
+      "title": "Abrechnung einer Mietkaution",
+      "authors": [],
+      "venue": "Monatsschrift für Deutsches Recht",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37460/sid.1718122",
+      "title": "Türkiye'de Sabit Nominal Tutarla Alınan Kira Depozitolarının Enflasyon Karşısındaki Reel Değer Kaybı",
+      "authors": [
+        "Emine Örs"
+      ],
+      "venue": "Sakarya Üniversitesi İktisat Dergisi",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://dergipark.org.tr/tr/download/article-file/4952347",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1208.2724v5",
+      "arxiv_id": "1208.2724v5",
+      "title": "Caching with rental cost and zapping",
+      "authors": [
+        "Monik Khare",
+        "Neal E. Young"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.2724v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2005.11278v3",
+      "arxiv_id": "2005.11278v3",
+      "title": "The Impact of Response Measures on COVID-19-Related Hospitalization and Death Rates in Germany and Switzerland",
+      "authors": [
+        "Martin Huber",
+        "Henrika Langen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.11278v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2401.16845v4",
+      "arxiv_id": "2401.16845v4",
+      "title": "Chronicling Germany: An Annotated Historical Newspaper Dataset",
+      "authors": [
+        "Christian Schultze",
+        "Niklas Kerkfeld",
+        "Kara Kuebart",
+        "Princilia Weber",
+        "Moritz Wolter",
+        "Felix Selgert"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.16845v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1039/D0RA03375H",
+      "arxiv_id": "2010.03819v1",
+      "title": "A multi-technique study of altered granitic rock from the Krunkelbach Valley uranium deposit, Southern Germany",
+      "authors": [
+        "Ivan Pidchenko",
+        "Stephen Bauters",
+        "Irina Sinenko",
+        "Simone Hempel",
+        "Lucia Amidani",
+        "Dirk Detollenaere",
+        "Laszlo Vinze",
+        "Dipanjan Banerjee",
+        "Roelof van Silfhout",
+        "Stepan Kalmykov",
+        "Jörg Göttlicher",
+        "Robert J. Baker",
+        "Kristina Kvashnina"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2010.03819v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1911.08253v1",
+      "arxiv_id": "1911.08253v1",
+      "title": "The gift of the gab: Are rental scammers skilled at the art of persuasion?",
+      "authors": [
+        "Sophie Van Der Zee",
+        "Richard Clayton",
+        "Ross Anderson"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1911.08253v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0739456X16664789",
+      "arxiv_id": "1605.05397v4",
+      "title": "New Insights into Rental Housing Markets across the United States: Web Scraping and Analyzing Craigslist Rental Listings",
+      "authors": [
+        "Geoff Boeing",
+        "Paul Waddell"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.05397v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0802.2832v1",
+      "arxiv_id": "0802.2832v1",
+      "title": "Rent, Lease or Buy: Randomized Algorithms for Multislope Ski Rental",
+      "authors": [
+        "Zvi Lotker",
+        "Boaz Patt-Shamir",
+        "Dror Rawitz"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0802.2832v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2209.14200v1",
+      "arxiv_id": "2209.14200v1",
+      "title": "Building an Ethereum-Based Decentralized Vehicle Rental System",
+      "authors": [
+        "N García-Moreno",
+        "P Caballero-Gil",
+        "C Caballero-Gil",
+        "J Molina-Gil"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2209.14200v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/00029890.2022.2037988",
+      "arxiv_id": "1912.13249v2",
+      "title": "Generalized Rental Harmony",
+      "authors": [
+        "Erel Segal-Halevi"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1912.13249v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2505.07579v2",
+      "arxiv_id": "2505.07579v2",
+      "title": "Dynamic Rental Games with Stagewise Individual Rationality",
+      "authors": [
+        "Batya Berzack",
+        "Rotem Oshman",
+        "Inbal Talgam-Cohen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.07579v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s42854-021-00024-2",
+      "arxiv_id": "2108.08229v1",
+      "title": "Tilted Platforms: Rental Housing Technology and the Rise of Urban Big Data Oligopolies",
+      "authors": [
+        "Geoff Boeing",
+        "Max Besbris",
+        "David Wachsmuth",
+        "Jake Wegmann"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.08229v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2504.06180v1",
+      "arxiv_id": "2504.06180v1",
+      "title": "Blockchain Oracles for Real Estate Rental",
+      "authors": [
+        "Nuno Braz",
+        "João Santos",
+        "Tiago Dias",
+        "Miguel Correia"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2504.06180v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2308.06929v1",
+      "arxiv_id": "2308.06929v1",
+      "title": "Predicting Listing Prices In Dynamic Short Term Rental Markets Using Machine Learning Models",
+      "authors": [
+        "Sam Chapman",
+        "Seifey Mohammad",
+        "Kimberly Villegas"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2308.06929v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1063/5.0010844",
+      "arxiv_id": "2004.02914v1",
+      "title": "Carbon doping of GaN: Proof of the formation of electrically active tri-carbon defects",
+      "authors": [
+        "Ivan Gamov",
+        "Eberhard Richter",
+        "Markus Weyers",
+        "Günter Gärtner",
+        "Klaus Irmscher",
+        "Leibniz-Institut für Kristallzüchtung",
+        " Berlin",
+        " Germany",
+        " Ferdinand-Braun-Institut",
+        "Leibniz-Institut für Höchstfrequenztechnik",
+        " Berlin",
+        " Germany",
+        "Institute of Experimental Physics",
+        "TU Bergakademie Freiberg",
+        " Freiberg",
+        " Germany"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2004.02914v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2402.06704v1",
+      "arxiv_id": "2402.06704v1",
+      "title": "Blockchain-based Rental Documentation Management with Audit Support",
+      "authors": [
+        "João F. Santos",
+        "Miguel Correia",
+        "Tiago R. Dias"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.06704v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.55029/kabl.2023.48.141",
+      "arxiv_id": "",
+      "title": "Harmonization of Interests between Housing Lessor and Lessee in the Rental Market",
+      "authors": [
+        "Jong-Duk Lee"
+      ],
+      "venue": "Korean Institute for Aggregate Buildings Law",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.33196/wobl202404015601",
+      "title": "IWD – Das Schicksal Der Mietkaution Nach Vermieterwechsel",
+      "authors": [
+        "Viola Hoti"
+      ],
+      "venue": "wohnrechtliche blätter",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "662b1bed01d2a3fbfc703aad",
+      "matched_phrase": "Mietkaution",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "query": "Hashimoto's thyroiditis probiotic supplementation antibodies levothyroxine",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 15
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2021.579140",
+      "title": "Detection of Alterations in the Gut Microbiota and Intestinal Permeability in Patients With Hashimoto Thyroiditis",
+      "authors": [
+        "Leonardo César de Freitas Cayres",
+        "Larissa Vedovato Vilela de Salis",
+        "Guilherme Siqueira Pardo Rodrigues",
+        "André van Helvoort Lengert",
+        "Ana Paula Custódio Biondi",
+        "Larissa Donadel Barreto Sargentini",
+        "João Luiz Brisotti",
+        "Eleni Gomes",
+        "Gislane Lelis Vilela de Oliveira"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2021,
+      "cited_by_count": 138,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2021.579140/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25094703",
+      "title": "Autoimmunity, New Potential Biomarkers and the Thyroid Gland—The Perspective of Hashimoto’s Thyroiditis and Its Treatment",
+      "authors": [
+        "Ewa Tywanek",
+        "Agata Michalak",
+        "Joanna Świrska",
+        "Agnieszka Zwolak"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 81,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/9/4703/pdf?version=1714107018",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fendo.2022.1092837",
+      "title": "The protective role of nutritional antioxidants against oxidative stress in thyroid disorders",
+      "authors": [
+        "Mirjana Mačvanin",
+        "Zoran Gluvić",
+        "Sonja Zafirović",
+        "Xin Gao",
+        "Magbubah Essack",
+        "Esma R. Isenović"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2023,
+      "cited_by_count": 80,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fendo.2022.1092837/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13061755",
+      "title": "Celiac Disease and the Thyroid: Highlighting the Roles of Vitamin D and Iron",
+      "authors": [
+        "Christina Starchl",
+        "Mario Scherkl",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 59,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/6/1755/pdf?version=1623027951",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7759/cureus.4556",
+      "title": "Efficacy of the Autoimmune Protocol Diet as Part of a Multi-disciplinary, Supported Lifestyle Intervention for Hashimoto’s Thyroiditis",
+      "authors": [
+        "Robert D. Abbott",
+        "Adam Sadowski",
+        "Angela G Alt"
+      ],
+      "venue": "Cureus",
+      "year": 2019,
+      "cited_by_count": 47,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://assets.cureus.com/uploads/original_article/pdf/18455/1594622316-20200713-22038-tzw7af.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10238-024-01304-4",
+      "title": "Intestinal microbiota regulates the gut-thyroid axis: the new dawn of improving Hashimoto thyroiditis",
+      "authors": [
+        "Xiaxin Zhu",
+        "Chi Zhang",
+        "Shuyan Feng",
+        "Ruonan He",
+        "Shuo Zhang"
+      ],
+      "venue": "Clinical and Experimental Medicine",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-024-01304-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2023.1211231",
+      "title": "The interplay of oxidative stress and immune dysfunction in Hashimoto’s thyroiditis and polycystic ovary syndrome: a comprehensive review",
+      "authors": [
+        "Gabriela Batóg",
+        "Anna Dołoto",
+        "Ewelina Bąk",
+        "Iwona Piątkowska‐Chmiel",
+        "Paulina Krawiec",
+        "Elżbieta Pac‐Kożuchowska",
+        "Mariola Herbet"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2023,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2023.1211231/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12011-025-04653-7",
+      "title": "A Comprehensive Review of Selenium as a Key Regulator in Thyroid Health",
+      "authors": [
+        "Iqra Bano",
+        "Mohammad Farooque Hassan",
+        "Marek Kieliszek"
+      ],
+      "venue": "Biological Trace Element Research",
+      "year": 2025,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s12011-025-04653-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26444/aaem/136523",
+      "title": "The importance of gluten exclusion in the management of Hashimoto’s thyroiditis",
+      "authors": [
+        "Paulina Ihnatowicz",
+        "Paweł Wątor",
+        "Małgorzata Ewa Drywień"
+      ],
+      "venue": "Annals of Agricultural and Environmental Medicine",
+      "year": 2021,
+      "cited_by_count": 22,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://www.aaem.pl/pdf-136523-71103?filename=The importance of gluten.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu16050685",
+      "title": "Gluten-Free Diet Alters the Gut Microbiome in Women with Autoimmune Thyroiditis",
+      "authors": [
+        "Aleksandra Rodziewicz",
+        "Adrian Szewczyk",
+        "Ewa Bryl"
+      ],
+      "venue": "Nutrients",
+      "year": 2024,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/16/5/685/pdf?version=1709133460",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5603/ep.100701",
+      "title": "Autoimmune thyroiditis: an update on treatment possibilities",
+      "authors": [
+        "Kamil Dyrka",
+        "Monika Obara-Moszyńska",
+        "Marek Niedziela"
+      ],
+      "venue": "Endokrynologia Polska",
+      "year": 2024,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.viamedica.pl/endokrynologia_polska/article/download/100701/80054",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/jpm13121659",
+      "title": "Assessment of the Impact of Nutritional Intervention with the Probiotic Lactiplantibacillus plantarum 299v on Nutritional Status and Quality of Life of Hashimoto’s Thyroiditis Patients—A Randomized Double-Blind Study Protocol",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Journal of Personalized Medicine",
+      "year": 2023,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2075-4426/13/12/1659/pdf?version=1701155520",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17213387",
+      "title": "Probiotic Supplementation Enhances the Effects of a Nutritional Intervention on Quality of Life in Women with Hashimoto’s Thyroiditis—A Double-Blind Randomised Study",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/17/21/3387/pdf?version=1761664723",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13129/2282-1619/mjcp-3072",
+      "title": "Interrelations between mental health, generic and thyroid-related quality of life in patients with Hashimoto’s thyroiditis receiving levothyroxine replacement",
+      "authors": [
+        "Gabriella Martino",
+        "Andrea Caputo",
+        "Carmelo M. Vicario",
+        "Ulla Feldt‐Rasmussen",
+        "Torquil Watt",
+        "Roberto Vita",
+        "Maria C. Quattropani",
+        "Salvatore Benvenga"
+      ],
+      "venue": "DOAJ (DOAJ: Directory of Open Access Journals)",
+      "year": 2021,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doaj.org/article/8d6dc39e5d43412592763e6babca0363",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

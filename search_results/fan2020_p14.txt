@@ -1,0 +1,176 @@
+
+========== PAGE 14 ==========
+The fact that the human intestinal microbiota is 
+unique at deep resolution levels, with substantial struc-
+tural variations in species and subspecies that influ-
+ence microbiome functionality, is a major conceptual 
+and statistical challenge when comparing individual 
+microbiota irrespective of the health status of study 
+subjects17. Moreover, there are several more technical 
+and database-​related shortcomings, including incom-
+plete microbial genome databases and a lack of func-
+tional annotation of the majority of microbial genes. 
+Similarly, knowledge about the regulation of transcrip-
+tional and translational activities of the gut microbiome 
+is sparse, and when it comes to the interpretation of the 
+outcome of untargeted metabolome profiling, which is 
+often compared with microbiome features, the majority 
+of read-​outs are neither annotated nor quantified70.
+When considering the translational implications of 
+microbiome research, it recently became evident that 
+most drugs influence microbiome, metatranscriptome 
+and metabolome profiles in addition to their well-​known 
+effects on bioclinical variables57,62–64. Blindness to the 
+impact of medication on ‘omics’ analyses may there-
+fore have inflated the reported findings in human stud-
+ies of any relationships between the gut microbiome 
+and host metabolism, which we have discussed in this 
+Review. Ideally, any such omics-​based studies should be 
+performed in drug-​naive individuals. This demand is 
+difficult to accommodate in studies of individuals with 
+chronic metabolic diseases who often are prescribed 
+multiple medications. Instead, more studies are cur-
+rently undertaken in individuals at high risk of devel-
+oping metabolic diseases and prior to medication, for 
+example, in treatment-​naive pre-​morbid individuals. Yet 
+another shortcoming of microbiome studies is the fact 
+that microbiome analysis has so far largely been limited 
+to relative abundances, failing therefore to account for 
+biologically relevant differences between microbiomes 
+owing to considerable sample variation in the bacterial 
+cell density of stools or intestinal contents160.
+Experimental studies of the targets and mechanisms 
+of action of a given microbial compound are, for obvi-
+ous reasons, done in vitro in assumed target tissues 
+or cells and are complemented with in vivo studies in 
+rodents (Box 2). However, many experimental studies 
+fall short owing to lack of appropriate test animals with 
+a biology and behaviour close to those of humans and, 
+especially when unravelling the role of the gut micro-
+biome in disease causation, there is often a lack of ani-
+mal models with genetic susceptibilities comparable 
+to those of the human disorders under examination. 
+Nevertheless, experimental studies are not exclusively 
+done in cellular systems or animal models. In fact, clin-
+ically controlled trials are by their nature mechanis-
+tic experiments. Because of the massive and complex 
+inter-​individual variation in the gut microbiome, the 
+ideal human trial design is to perform various con-
+trolled crossover interventions in the same individuals 
+for years. Intra-​individual trials have been done but are 
+very resource demanding and have no potential for gen-
+eralization to the population level161. Therefore, the only 
+realistic way forward to gain population-​relevant mecha-
+nistic insights into how the gut microbiome mediates or 
+modifies the effects of diet, exercise, drugs and so forth 
+in the human setting appears to be through carefully 
+prepared randomized controlled trials of long duration. 
+That means the inclusion of homogeneous groups of 
+people who have undergone deep and extensive pheno-
+typing in a sufficient number to have statistical power to 
+address the hypothesis in focus.
+Finally, the complexity of the gut microbiome 
+is daunting, and the global intestinal microbiome is 
+far more than bacteria and archaea. It also includes 
+fungi, bacteriophages and eukaryotic virus. Future, 
+sequencing-​based and culture-​based gut microorganism 
+surveys combined with mechanistic exploitations of the 
+gut bacteriome, archaeome, phageome, virome and myco­
+biome will exponentially expand our knowledge about 
+the interactions within the global intestinal microbial 
+community. Moreover, not least, exciting new knowl-
+edge about the multitude of chemicals that the global 
+gut microbiome produces affecting host physiology and 
+numerous pathologies may foster novel efficacious paths 
+to stabilize metabolic health of the human holobiont and 
+prevent or combat common human metabolic disorders.
+Published online xx xx xxxx
+1.	
+Lynch, S. V. & Pedersen, O. The human intestinal 
+microbiome in health and disease. N. Engl. J. Med. 
+375, 2369–2379 (2016).
+2.	
+Jaacks, L. M. et al. The obesity transition: stages of 
+the global epidemic. Lancet Diabetes Endocrinol. 7, 
+231–240 (2019).
+3.	
+Younossi, Z. M. et al. Global epidemiology of 
+nonalcoholic fatty liver disease — meta-analytic 
+assessment of prevalence, incidence, and outcomes. 
+Hepatology 64, 73–84 (2016).
+4.	
+Zheng, Y., Ley, S. H. & Hu, F. B. Global aetiology  
+and epidemiology of type 2 diabetes mellitus and its 
+complications. Nat. Rev. Endocrinol. 14, 88 (2018).
+5.	
+Reddy, K. S. & Yusuf, S. Emerging epidemic of 
+cardiovascular disease in developing countries. 
+Circulation 97, 596–601 (1998).
+6.	
+Lakka, H.-M. et al. The metabolic syndrome and total 
+and cardiovascular disease mortality in middle-​aged 
+men. JAMA 288, 2709–2716 (2002).
+7.	
+Müller, O. & Krawinkel, M. Malnutrition and health  
+in developing countries. CMAJ 173, 279–286 (2005).
+8.	
+Qin, J. et al. A metagenome-​wide association study  
+of gut microbiota in type 2 diabetes. Nature 490, 
+55–60 (2012).  
+This is the first metagenome-​wide association study to 
+identify links between the gut microbiome and T2D.
+9.	
+Qin, N. et al. Alterations of the human gut microbiome 
+in liver cirrhosis. Nature 513, 59–64 (2014).
+10.	 Koeth, R. A. et al. Intestinal microbiota metabolism  
+of l-​carnitine, a nutrient in red meat, promotes 
+atherosclerosis. Nat. Med. 19, 576–585 (2013).
+11.	 Allin, K. H. et al. Aberrant intestinal microbiota in 
+individuals with prediabetes. Diabetologia 61,  
+810–820 (2018).
+12.	 Bäckhed, F. et al. The gut microbiota as an 
+environmental factor that regulates fat storage.  
+Proc. Natl Acad. Sci. USA 101, 15718–15723 
+(2004).
+13.	 Qin, J. et al. A human gut microbial gene catalogue 
+established by metagenomic sequencing. Nature 464, 
+59–65 (2010).
+14.	 Pedersen, H. K. et al. Human gut microbes impact 
+host serum metabolome and insulin sensitivity. Nature 
+535, 376–381 (2016).  
+This study identifies P. copri and B. vulgatus as  
+the main species driving the association between 
+biosynthesis of BCAAs and insulin resistance under 
+conditions of high fat intake.
+15.	 Pedersen, H. K. et al. A computational framework  
+to integrate high-​throughput ‘-omics’ datasets for  
+the identification of potential mechanistic links.  
+Nat. Protoc. 13, 2781 (2018).
+16.	 Korem, T. et al. Growth dynamics of gut microbiota in 
+health and disease inferred from single metagenomic 
+samples. Science 349, 1101–1106 (2015).
+17.	 Zeevi, D. et al. Structural variation in the gut 
+microbiome associates with host health. Nature 568, 
+43–48 (2019).
+18.	 Huttenhower, C. et al. Structure, function and diversity 
+of the healthy human microbiome. Nature 486,  
+207–214 (2012).
+19.	 Rothschild, D. et al. Environment dominates over host 
+genetics in shaping human gut microbiota. Nature 
+555, 210–215 (2018).
+20.	 Falony, G., Vieira-​Silva, S. & Raes, J. Richness and 
+ecosystem development across faecal snapshots  
+of the gut microbiota. Nat. Microbiol. 3, 526–528 
+(2018).
+21.	 Jakobsson, H. E. et al. Decreased gut microbiota 
+diversity, delayed Bacteroidetes colonisation and 
+reduced Th1 responses in infants delivered by 
+caesarean section. Gut 63, 559–566 (2014).
+22.	 Rodríguez, J. M. et al. The composition of the gut 
+microbiota throughout life, with an emphasis on  
+early life. Microb. Ecol. Health Dis. 26, 26050  
+(2015).
+23.	 Flint, H. J., Scott, K. P., Louis, P. & Duncan, S. H.  
+The role of the gut microbiota in nutrition and health. 
+www.nature.com/nrmicro
+Reviews
