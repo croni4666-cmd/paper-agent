@@ -1,0 +1,372 @@
+{
+  "query": "probiotic supplementation TPOAb TGAb Hashimoto clinical trial",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 15
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/antiox13091143",
+      "title": "Anti-Inflammatory and Anticancer Effects of Anthocyanins in In Vitro and In Vivo Studies",
+      "authors": [
+        "Tomasz Kowalczyk",
+        "Martyna Muskała",
+        "Anna Merecz-Sadowska",
+        "Joanna Sikora",
+        "Laurent Picot",
+        "Przemysław Sitarek"
+      ],
+      "venue": "Antioxidants",
+      "year": 2024,
+      "cited_by_count": 97,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-3921/13/9/1143/pdf?version=1727074612",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu16152496",
+      "title": "The Role of Nutrition on Thyroid Function",
+      "authors": [
+        "Anna-Mariia Shulhai",
+        "Roberta Rotondo",
+        "Maddalena Petraroli",
+        "Viviana Dora Patianna",
+        "Barbara Predieri",
+        "Lorenzo Iughetti",
+        "Susanna Esposito",
+        "Maria Elisabeth Street"
+      ],
+      "venue": "Nutrients",
+      "year": 2024,
+      "cited_by_count": 96,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/16/15/2496/pdf?version=1722419995",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25094703",
+      "title": "Autoimmunity, New Potential Biomarkers and the Thyroid Gland—The Perspective of Hashimoto’s Thyroiditis and Its Treatment",
+      "authors": [
+        "Ewa Tywanek",
+        "Agata Michalak",
+        "Joanna Świrska",
+        "Agnieszka Zwolak"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 81,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/9/4703/pdf?version=1714107018",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fendo.2022.1092837",
+      "title": "The protective role of nutritional antioxidants against oxidative stress in thyroid disorders",
+      "authors": [
+        "Mirjana Mačvanin",
+        "Zoran Gluvić",
+        "Sonja Zafirović",
+        "Xin Gao",
+        "Magbubah Essack",
+        "Esma R. Isenović"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2023,
+      "cited_by_count": 80,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fendo.2022.1092837/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10238-024-01304-4",
+      "title": "Intestinal microbiota regulates the gut-thyroid axis: the new dawn of improving Hashimoto thyroiditis",
+      "authors": [
+        "Xiaxin Zhu",
+        "Chi Zhang",
+        "Shuyan Feng",
+        "Ruonan He",
+        "Shuo Zhang"
+      ],
+      "venue": "Clinical and Experimental Medicine",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-024-01304-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12011-025-04653-7",
+      "title": "A Comprehensive Review of Selenium as a Key Regulator in Thyroid Health",
+      "authors": [
+        "Iqra Bano",
+        "Mohammad Farooque Hassan",
+        "Marek Kieliszek"
+      ],
+      "venue": "Biological Trace Element Research",
+      "year": 2025,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s12011-025-04653-7.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/biology11070973",
+      "title": "Immune-Mediated Diseases from the Point of View of Psychoneuroimmunoendocrinology",
+      "authors": [
+        "Miguel Á. Ortega",
+        "Cielo García‐Montero",
+        "Oscar Fraile‐Μartinez",
+        "Miguel Ángel Alvarez‐Mon",
+        "Ana M. Gómez-Lahoz",
+        "Guillermo Lahera",
+        "Jorge Monserrat",
+        "Roberto Rodríguez–Jiménez",
+        "Javier Quintero",
+        "Melchor Álvarez‐Mon"
+      ],
+      "venue": "Biology",
+      "year": 2022,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2079-7737/11/7/973/pdf?version=1657069448",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms252010918",
+      "title": "Unveiling the Role of Gut Microbiota and Metabolites in Autoimmune Thyroid Diseases: Emerging Perspectives",
+      "authors": [
+        "Kai Yan",
+        "Xin Sun",
+        "Chenxi Fan",
+        "Xin Wang",
+        "Hongsong Yu"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 29,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/20/10918/pdf?version=1728572616",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2024.1465928",
+      "title": "Recent advances in gut microbiota and thyroid disease: pathogenesis and therapeutics in autoimmune, neoplastic, and nodular conditions",
+      "authors": [
+        "Lihua Fang",
+        "Jie Ning"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2024,
+      "cited_by_count": 22,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2024.1465928/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms242015442",
+      "title": "Innate Immunity in Autoimmune Thyroid Disease during Pregnancy",
+      "authors": [
+        "Tatjana Bogović Crnčić",
+        "Neva Girotto",
+        "Maja Ilić Tomaš",
+        "Ines Krištofić",
+        "Sanja Klobučar Majanović",
+        "Lara Batičić",
+        "Božena Ćurko‐Cofek",
+        "Vlatka Sotošek Tokmadžić"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2023,
+      "cited_by_count": 19,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/24/20/15442/pdf?version=1697966715",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu16111762",
+      "title": "Vitamin D: An Essential Nutrient in the Dual Relationship between Autoimmune Thyroid Diseases and Celiac Disease—A Comprehensive Review",
+      "authors": [
+        "Francesca Gorini",
+        "Alessandro Tonacci"
+      ],
+      "venue": "Nutrients",
+      "year": 2024,
+      "cited_by_count": 18,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/16/11/1762/pdf?version=1717509480",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fnut.2024.1410538",
+      "title": "Inverse association between serum iron levels and Hashimoto’s thyroiditis in United States females of reproductive age: analysis of the NHANES 2007–2012",
+      "authors": [
+        "Liang Zhang",
+        "Yibing Li",
+        "Yang Liu",
+        "Zhixiong Luo",
+        "Zhaoyu Wu",
+        "Jingbo Wang",
+        "Siyuan Qin",
+        "Fei Ren",
+        "Tianyuan Hu"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2024,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://public-pages-files-2025.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1410538/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13129/2282-1619/mjcp-3072",
+      "title": "Interrelations between mental health, generic and thyroid-related quality of life in patients with Hashimoto’s thyroiditis receiving levothyroxine replacement",
+      "authors": [
+        "Gabriella Martino",
+        "Andrea Caputo",
+        "Carmelo M. Vicario",
+        "Ulla Feldt‐Rasmussen",
+        "Torquil Watt",
+        "Roberto Vita",
+        "Maria C. Quattropani",
+        "Salvatore Benvenga"
+      ],
+      "venue": "DOAJ (DOAJ: Directory of Open Access Journals)",
+      "year": 2021,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://doaj.org/article/8d6dc39e5d43412592763e6babca0363",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12775/qs.2024.36.56879",
+      "title": "The Impact of Diet and Lifestyle on the Course of Autoimmune Diseases",
+      "authors": [
+        "Karolina Łucja Sobek",
+        "Michał Mazur",
+        "Dorota Waz",
+        "Jakub Szarłowicz",
+        "Zofia Goliszek",
+        "Wiktoria Tabin-Barczak",
+        "Aldona Sokołowska",
+        "Klaudia Fikas",
+        "Kamil Chwaliszewski",
+        "Sebastian Samuła"
+      ],
+      "venue": "Quality in Sport",
+      "year": 2024,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://apcz.umk.pl/QS/article/download/56879/40836",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

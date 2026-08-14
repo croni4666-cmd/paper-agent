@@ -1,0 +1,64 @@
+# Pre-commit hook configuration for paper-agent
+# https://pre-commit.com/
+#
+# Install:  pip install pre-commit && pre-commit install
+# Run manually:  pre-commit run --all-files
+#
+# Hooks run on every `git commit`. Add new checks under `hooks:`.
+
+repos:
+  # === Local hook: secret + privacy scan ===
+  # Custom check for paper-agent-specific patterns (DengN, school names, etc.)
+  - repo: local
+    hooks:
+      - id: paper-agent-pre-push-scan
+        name: paper-agent pre-push secret + privacy scan
+        entry: python test_output/_pre_github_secret_scan.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # === Standard hooks ===
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # === Python: pyflakes (fast lint) ===
+  - repo: https://github.com/PyCQA/pyflakes
+    rev: 3.2.0
+    hooks:
+      - id: pyflakes
+        files: ^pa_cli/.*\.py$
+
+  # === Privacy + personal info scan (paper-agent specific) ===
+  - repo: local
+    hooks:
+      - id: paper-agent-privacy-scan
+        name: paper-agent personal info scan
+        entry: |
+          bash -c '
+            set -e
+            echo "=== Scanning for personal info in tracked files ==="
+            for pattern in "海宁" "东方学院" "海 宁" "DengN" "C:\\\\Users\\\\DengN"; do
+              if git ls-files | xargs grep -l "$pattern" 2>/dev/null; then
+                echo "FAIL: personal info pattern found: $pattern"
+                exit 1
+              fi
+            done
+            echo "OK: no personal info leaks"
+          '
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]

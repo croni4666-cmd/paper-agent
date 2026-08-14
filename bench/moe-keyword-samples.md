@@ -4,7 +4,7 @@
 > **当前状态**: v3.9.7.3 macro F1 = 0.609 (n=47, 3-engine-only: arxiv=3 / openalex=24 / crossref=20, s2=0, aminer=0)
 > **痛点**: s2 和 aminer 0 样本, MoE router 学不到这两类的路由信号
 > **本文件贡献**: 12 条已验证文献的 4 维标签 (主题/方法/数据/行业) + 5 大主题中英文 query 模板 + 引擎路由建议
-> **来源**: 2026-07-20 海宁市社科联申报书 v9.12 实战
+> **来源**: 2026-07-20 本地实际项目实战 (sanitized 2026-08-14: 移除项目/地区具体信息)
 
 ---
 
@@ -25,7 +25,7 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 
 ## 2. 12 条已验证文献 (4 维标签 + DOI + 引擎建议)
 
-> 来源: 海宁市社科联申报书 v9.12 实际引用, 全部 DOI 已 Crossref 验真
+> 来源: 本地实际项目引用, 全部 DOI 已 Crossref 验真
 
 | # | 引用 | 主题 | 方法 | 数据 | 行业 | 引擎建议 | 标签 |
 |---|---|---|---|---|---|---|---|
@@ -111,17 +111,17 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 - `industry 4.0 SME resource-based view implementation`
 - `AI divide small medium enterprise 67% 12% success rate`
 
-### 主题 5: 中国本土化 (特殊子聚类, 5/16 申报书用)
+### 主题 5: 中国本土化 (特殊子聚类, 区域产业政策)
 **中文**:
 - arxiv: `China AI textile industry 4.0 warp knitting`
-- openalex: `China AI manufacturing policy Haining warp knitting`
+- openalex: `China AI manufacturing policy local textile industry`
 - s2: `China industrial policy 12X computing power system`
 - crossref: `China AI policy subsidy enterprise`
-- aminer: `中国 经编 算力券 政策 杠杆 海宁`
+- aminer: `中国 经编 算力券 政策 杠杆`
 
 **英文** (少, 主要靠 aminer + CNKI):
 - `China industrial policy AI subsidy enterprise`
-- `China warp knitting industry Haining computing power voucher`
+- `China warp knitting industry computing power voucher`
 
 ---
 
@@ -135,7 +135,7 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 | **综述/框架** (5 级/DTCMM) | 关键词+行业 | **openalex** | s2 |
 | **ML/技术** (边缘算力/Edge AI) | technical + 4-layer + architecture | **arxiv** | openalex |
 | **影响力论文** (Capraro/Acemoglu) | 学者名+权威期刊 (PNAS) | **s2** | openalex |
-| **中国本土** | 中国+行业+政策 | **aminer** | CNKI (user cookies) |
+| **中国本土** | 中国+行业+政策 | **aminer** | CNKI (本地 cookies) |
 
 **MoE router 训练启示**:
 - s2 在 v3.9.7.3 训练数据中是 0, 但本文件 4/12 文献都建议 s2 路由
@@ -148,7 +148,7 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 
 ### 方法 1: 直接当 query 模板
 ```powershell
-cd "G:\Minimax - workspace\Paper agent"
+cd "G:\minimax - workspace\Paper agent"
 # 用主题 1 的中文 query 跑 pa search
 pa search "智能制造 成熟度 5 级 评估" --year-min 2015 --limit 30 -o results_t1_cn.json
 ```
@@ -170,7 +170,7 @@ for q in [
     "smart manufacturing maturity model 5 levels",
     "edge AI 4 layer architecture",
     "AI divide small medium enterprise",
-    "China industrial policy AI subsidy Haining warp knitting",
+    "China industrial policy AI subsidy textile industry",
 ]:
     weights = predict_weights(router, q)
     print(f"Query: {q}")
@@ -183,7 +183,7 @@ for q in [
 - "smart manufacturing maturity" → openalex 60%+ (综述+制造)
 - "edge AI 4 layer" → arxiv 50%+ (技术架构)
 - "AI divide" → s2 50%+ (影响力论文)
-- "China Haining warp knitting" → aminer 60%+ (中国本土)
+- "China warp knitting" → aminer 60%+ (中国本土)
 
 ---
 
@@ -203,7 +203,7 @@ for q in [
 
 ---
 
-## 7. 下次申报书 (2027 或其他课题) 怎么用
+## 7. 下次类似项目怎么用
 
 1. 复制本文件结构, 把 12 条文献换成新课题实际引用的
 2. 4 维标签按新课题的关键词打 (主题/方法/数据/行业)
@@ -211,11 +211,11 @@ for q in [
 4. MoE 引擎路由建议基于"该引擎是否真的返回过这条文献"标
 5. 喂给 paper-agent MoE router, 跑 predict_weights 验证
 
-**本文件是模板, 不是数据** — 每次申报书 12 条文献不同, 但 4 维标签 + 5 主题 query + 引擎路由建议的结构可以复用。
+**本文件是模板, 不是数据** — 每次项目 12 条文献不同, 但 4 维标签 + 5 主题 query + 引擎路由建议的结构可以复用。
 
 ---
 
-## 8. 7/20 实战心得 (本次申报书)
+## 8. 7/20 实战心得 (本地项目)
 
 - **12 条 Crossref DOI 不能漂移**: 写作时直接复制粘贴, 不要自己重新写
 - **中英文 query 各 5 条**: paper-agent 6 引擎 (arxiv/openalex/s2/crossref/aminer/CNKI) 都要准备

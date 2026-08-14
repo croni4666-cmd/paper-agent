@@ -1,0 +1,334 @@
+{
+  "query": "answerdotai rerankers BGE Mxbai Qwen rerank",
+  "year_min": 2024,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 6,
+    "openalex": 0,
+    "arxiv": 0,
+    "semanticscholar": 3,
+    "aminer": 6,
+    "cnki": 1
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+      "authors": [
+        "Yanzhao Zhang"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6842437a163c01c850ab1eed",
+      "matched_phrase": "rerankers",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/2024.emnlp-industry.103",
+      "title": "Mgte: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval",
+      "authors": [
+        "Xin Zhang"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "66a8498901d2a3fbfc0843e2",
+      "matched_phrase": "rerankers",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1134/s1022795426700055",
+      "title": "Identification of Reliable Reference Genes for Gene Expression Analysis in Astragalus Membranaceus (fisch.) Bge. Var. Mongholicus (bge.) Hsiao under Cold and ABA Stress",
+      "authors": [
+        "Y. Pan"
+      ],
+      "venue": "Russian Journal of Genetics",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69fc51010a96f8c83c748a5b",
+      "matched_phrase": "BGE",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3600088",
+      "title": "PARADE: Passage Representation Aggregation for Document Reranking.",
+      "authors": [
+        "Canjia Li"
+      ],
+      "venue": "ACM TRANSACTIONS ON INFORMATION SYSTEMS",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f3fa2ea91e011d38f92446a",
+      "matched_phrase": "rerankers",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/2024.emnlp-main.491",
+      "title": "FIRST: Faster Improved Listwise Reranking with Single Token Decoding",
+      "authors": [
+        "Revanth Gangi Reddy"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "667a250f01d2a3fbfc706ad1",
+      "matched_phrase": "rerankers",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3589335.3648313",
+      "title": "Discrete Conditional Diffusion for Reranking in Recommendation",
+      "authors": [
+        "Xiao Lin"
+      ],
+      "venue": "WWW 2024",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64dafb293fda6d7f064e2d1c",
+      "matched_phrase": "rerankers",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/ICFTIC64248.2024.10913101",
+      "arxiv_id": "",
+      "title": "An arXiv Paper Question-Answering System Based on Qwen and RAG",
+      "authors": [
+        "Jiakai Gu",
+        "Donghong Qin"
+      ],
+      "venue": "2024 6th International Conference on Frontier Technologies of Information and Computer (ICFTIC)",
+      "year": 2024,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 17,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Conference",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arXiv.2605.28062",
+      "arxiv_id": "2605.28062",
+      "title": "ConvMemory: A Lightweight Learned Memory Reranker, a Negative Attribution Result, and a Research-Preview Conflict Editor",
+      "authors": [
+        "Taiheng Pan"
+      ],
+      "venue": "arXiv.org",
+      "year": 2026,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 14,
+      "tldr": "ConvMemory, a small 3.6M-parameter learned reranker for conversational long-term memory retrieval, trained with cross-encoder teacher supervision over fused dense and lexical features, is described and a rigorous negative attribution result on a previously claimed mechanism is published.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "ConvMemory, a small 3.6M-parameter learned reranker for conversational long-term memory retrieval, trained with cross-encoder teacher supervision over fused dense and lexical features, is described and a rigorous negative attribution result on a previously claimed mechanism is published.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/2026.semeval-1.225",
+      "arxiv_id": "2605.12028",
+      "title": "Caraman at SemEval-2026 Task 8: Three-Stage Multi-Turn Retrieval with Query Rewriting, Hybrid Search, and Cross-Encoder Reranking",
+      "authors": [
+        "David-Maximilian Caraman",
+        "G. Silaghi"
+      ],
+      "venue": "Proceedings of the 20th International Workshop on Semantic Evaluation (2026)",
+      "year": 2026,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "Development comparisons reveal that domain-specific temperature tuning for query generation, where technical domains benefit from deterministic decoding and general domains from controlled randomness, provides consistent gains, while more complex strategies such as domain-aware prompting and multi-query expansion degrade performance.",
+      "is_oa": true,
+      "oa_url": "https://aclanthology.org/2026.semeval-1.225.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Development comparisons reveal that domain-specific temperature tuning for query generation, where technical domains benefit from deterministic decoding and general domains from controlled randomness, provides consistent gains, while more complex strategies such as domain-aware prompting and multi-query expansion degrade performance.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.36227/techrxiv.177005246.64929154/v1",
+      "title": "QWEN-SIMPLIFY: EXPLORING SENTENCE SIMPLIFICATION VIA QWEN-BASED REINFORCEMENT LEARNING PARADIGM",
+      "authors": [
+        "Zhou, Peng",
+        "Li, Guangxin",
+        "Huang, Xiaoying"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Large language models (LLMs) have demonstrated strong performance in text simplification (TS), which largely depends on sentence simplification. And reinforcement learning (RL) has proven effective in enhancing LLMs reasoning, particularly in mathematics and coding. However, existing training strategies to TS are still limited to instruction-finetuning requiring large-scale and high-quality parallel data, leaving RL applications largely underexplored. In this work, we explore the Qwen-ba",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/icassp55912.2026.11460950",
+      "title": "Qwen-Simplify: Exploring Sentence Simplification Via Qwen-Based Reinforcement Learning Paradigm",
+      "authors": [
+        "Zhou, Peng",
+        "Li, Guangxin",
+        "Huang, Xiaoying"
+      ],
+      "venue": "ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 34,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.59350/zx5ah-6gy09",
+      "title": "Qwen 2.5: Is It Really That Good?",
+      "authors": [
+        "Fan, Wendi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Introduction In the rapidly evolving landscape of AI language models, Qwen has firmly established itself as a leader, consistently pushing the boundaries of innovation. Building on the success of Qwen2, which garnered widespread adoption from developers worldwide, the release of Qwen2.5 marks a groundbreaking milestone — one of the largest open-source contributions to date.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.59350/r7sg1-d6438",
+      "title": "Qwen 2.5: Is It Really That Good?",
+      "authors": [
+        "Fan, Wendi"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 3,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Introduction In the rapidly evolving landscape of AI language models, Qwen has firmly established itself as a leader, consistently pushing the boundaries of innovation. Building on the success of Qwen2, which garnered widespread adoption from developers worldwide, the release of Qwen2.5 marks a groundbreaking milestone — one of the largest open-source contributions to date.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5220/0014021500004918",
+      "title": "A Study on Framework for Adaptive Code Generation and Performance Optimization Based on Qwen",
+      "authors": [
+        "Wu, Jiahui"
+      ],
+      "venue": "Proceedings of the 3rd International Conference on Computer Science and Mechatronics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5220/0014803000004018",
+      "title": "When to Rerank? Adaptive Reranking Decisions for Efficient Information Retrieval",
+      "authors": [
+        "Gonzalez-Gamella, Carlos",
+        "Sanchez-Santolaya, Daniel",
+        "Moraleda-Moreno, Francisco",
+        "Chaquet-Ulldemolins, Jacobo"
+      ],
+      "venue": "Proceedings of the 28th International Conference on Enterprise Information Systems",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

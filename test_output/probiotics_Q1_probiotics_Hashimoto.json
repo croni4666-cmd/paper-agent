@@ -1,0 +1,360 @@
+{
+  "query": "Hashimoto thyroiditis probiotics randomized controlled trial",
+  "year_min": 2020,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 15
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2021.579140",
+      "title": "Detection of Alterations in the Gut Microbiota and Intestinal Permeability in Patients With Hashimoto Thyroiditis",
+      "authors": [
+        "Leonardo César de Freitas Cayres",
+        "Larissa Vedovato Vilela de Salis",
+        "Guilherme Siqueira Pardo Rodrigues",
+        "André van Helvoort Lengert",
+        "Ana Paula Custódio Biondi",
+        "Larissa Donadel Barreto Sargentini",
+        "João Luiz Brisotti",
+        "Eleni Gomes",
+        "Gislane Lelis Vilela de Oliveira"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2021,
+      "cited_by_count": 138,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2021.579140/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25094703",
+      "title": "Autoimmunity, New Potential Biomarkers and the Thyroid Gland—The Perspective of Hashimoto’s Thyroiditis and Its Treatment",
+      "authors": [
+        "Ewa Tywanek",
+        "Agata Michalak",
+        "Joanna Świrska",
+        "Agnieszka Zwolak"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 81,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/25/9/4703/pdf?version=1714107018",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fendo.2022.1092837",
+      "title": "The protective role of nutritional antioxidants against oxidative stress in thyroid disorders",
+      "authors": [
+        "Mirjana Mačvanin",
+        "Zoran Gluvić",
+        "Sonja Zafirović",
+        "Xin Gao",
+        "Magbubah Essack",
+        "Esma R. Isenović"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2023,
+      "cited_by_count": 80,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fendo.2022.1092837/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/metabo12100912",
+      "title": "Gut Microbiota Dynamics in Relation to Long-COVID-19 Syndrome: Role of Probiotics to Combat Psychiatric Complications",
+      "authors": [
+        "Maha Fahad Alenazy",
+        "Haya I. Aljohar",
+        "Ashwag R. Alruwaili",
+        "Maha H. Daghestani",
+        "Mona Alonazi",
+        "Ranyah S. Labban",
+        "Afaf K. El‐Ansary",
+        "Hanan Balto"
+      ],
+      "venue": "Metabolites",
+      "year": 2022,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2218-1989/12/10/912/pdf?version=1664430256",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmed.2023.1174331",
+      "title": "Gut microbiota and atopic dermatitis: a two-sample Mendelian randomization study",
+      "authors": [
+        "Yan Xue",
+        "Linzhu Zhang",
+        "Yajun Chen",
+        "Han Wang",
+        "Jiang Xie"
+      ],
+      "venue": "Frontiers in Medicine",
+      "year": 2023,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fmed.2023.1174331/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10238-024-01304-4",
+      "title": "Intestinal microbiota regulates the gut-thyroid axis: the new dawn of improving Hashimoto thyroiditis",
+      "authors": [
+        "Xiaxin Zhu",
+        "Chi Zhang",
+        "Shuyan Feng",
+        "Ruonan He",
+        "Shuo Zhang"
+      ],
+      "venue": "Clinical and Experimental Medicine",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-024-01304-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2023.1211231",
+      "title": "The interplay of oxidative stress and immune dysfunction in Hashimoto’s thyroiditis and polycystic ovary syndrome: a comprehensive review",
+      "authors": [
+        "Gabriela Batóg",
+        "Anna Dołoto",
+        "Ewelina Bąk",
+        "Iwona Piątkowska‐Chmiel",
+        "Paulina Krawiec",
+        "Elżbieta Pac‐Kożuchowska",
+        "Mariola Herbet"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2023,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2023.1211231/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/1828051x.2025.2528554",
+      "title": "Influence of probiotic supplementation on growth, health and gut characteristics in growing rabbits",
+      "authors": [
+        "Mahmmoud A. A. Mohamed",
+        "Hitham Anas",
+        "Manal Abdullah Alduwish",
+        "Nouf Alharbi",
+        "Heba A. Alian",
+        "Islam M. Youssef",
+        "Mahmoud Moustafa",
+        "Ahmed A. Elolimy",
+        "Mohamed E. Abd El‐Hack",
+        "Hamada S. Saber"
+      ],
+      "venue": "Italian Journal of Animal Science",
+      "year": 2025,
+      "cited_by_count": 17,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/1828051X.2025.2528554?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.heliyon.2024.e25652",
+      "title": "Causal relationship between gut microbiota and autoimmune thyroiditis: A mendelian study",
+      "authors": [
+        "Yujun Xiong",
+        "Xingyun Zhu",
+        "Qingfeng Luo"
+      ],
+      "venue": "Heliyon",
+      "year": 2024,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://www.cell.com/article/S2405844024016839/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2024.1361660",
+      "title": "The impact of gut microbiota on autoimmune thyroiditis and relationship with pregnancy outcomes: a review",
+      "authors": [
+        "Yu Song",
+        "Yu Bai",
+        "Cong Liu",
+        "Xiaodan Zhai",
+        "Le Zhang"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2024,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2024.1361660/pdf?isPublishedV2=False",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu16050685",
+      "title": "Gluten-Free Diet Alters the Gut Microbiome in Women with Autoimmune Thyroiditis",
+      "authors": [
+        "Aleksandra Rodziewicz",
+        "Adrian Szewczyk",
+        "Ewa Bryl"
+      ],
+      "venue": "Nutrients",
+      "year": 2024,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/16/5/685/pdf?version=1709133460",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/jpm13121659",
+      "title": "Assessment of the Impact of Nutritional Intervention with the Probiotic Lactiplantibacillus plantarum 299v on Nutritional Status and Quality of Life of Hashimoto’s Thyroiditis Patients—A Randomized Double-Blind Study Protocol",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Journal of Personalized Medicine",
+      "year": 2023,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2075-4426/13/12/1659/pdf?version=1701155520",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5603/ep.100701",
+      "title": "Autoimmune thyroiditis: an update on treatment possibilities",
+      "authors": [
+        "Kamil Dyrka",
+        "Monika Obara-Moszyńska",
+        "Marek Niedziela"
+      ],
+      "venue": "Endokrynologia Polska",
+      "year": 2024,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.viamedica.pl/endokrynologia_polska/article/download/100701/80054",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17213387",
+      "title": "Probiotic Supplementation Enhances the Effects of a Nutritional Intervention on Quality of Life in Women with Hashimoto’s Thyroiditis—A Double-Blind Randomised Study",
+      "authors": [
+        "Karolina Osowiecka",
+        "Damian Skrypnik",
+        "Joanna Myszkowska-Ryciak"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/17/21/3387/pdf?version=1761664723",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

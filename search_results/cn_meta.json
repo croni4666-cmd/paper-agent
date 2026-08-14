@@ -1,0 +1,810 @@
+{
+  "query": "益生菌 多菌株 肠道菌群 综述",
+  "year_min": 2020,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 0,
+    "semanticscholar": 7,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 37,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1016/j.eng.2022.12.011",
+      "title": "鱼类肠道菌群研究进展及潜在应用（英文）",
+      "authors": [
+        "Yinyin Luan"
+      ],
+      "venue": "ENGINEERING",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5fdd5cd9dbcfc0a11fd87885",
+      "matched_phrase": "肠道菌群",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3969/j.issn.1672-3678.2022.01.012",
+      "title": "益生菌的分类及其多领域应用研究现状",
+      "authors": [
+        "AREAI Bahati"
+      ],
+      "venue": "Chinese Journal of Bioprocess Engineering",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62a861945aee126c0f34b833",
+      "matched_phrase": "益生菌",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2022.928050",
+      "title": "益生菌的多重抗病毒作用及其机制",
+      "authors": [
+        "Yanjin Wang"
+      ],
+      "venue": "Frontiers in cellular and infection microbiology",
+      "year": 2022,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62b596e45aee126c0f49bb7e",
+      "matched_phrase": "益生菌",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26549/yzlcyxzz.v3i6.5278",
+      "arxiv_id": "",
+      "title": "益生菌在肝病治疗中的研究进展",
+      "authors": [
+        "婷婷 娄",
+        "欢紫 王",
+        "向鹏 庞",
+        "瑞芳 郭",
+        "丽 东"
+      ],
+      "venue": "亚洲临床医学杂志",
+      "year": 2020,
+      "cited_by_count": 26,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.26549/yzlcyxzz.v3i6.5278",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41433-023-02462-7",
+      "arxiv_id": "",
+      "title": "Clinical trials targeting the gut-microbiome to effect ocular health: a systematic review",
+      "authors": [
+        "M. Russell",
+        "J. Muste",
+        "Blanche L. Kuo",
+        "Anna K. Wu",
+        "Rishi P. Singh"
+      ],
+      "venue": "Eye",
+      "year": 2023,
+      "cited_by_count": 7,
+      "influential_cite_count": 0,
+      "reference_count": 71,
+      "tldr": "The gut-eye axis appears to hold clinical relevance, but current data is limited in sample size and design and further investigation via longitudinal clinical trials may be warranted.",
+      "is_oa": true,
+      "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516887/pdf/41433_2023_Article_2462.pdf",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The gut-eye axis appears to hold clinical relevance, but current data is limited in sample size and design and further investigation via longitudinal clinical trials may be warranted.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12325/j.issn.1672-5336.2023.09.001",
+      "title": "小麦啤酒多菌株发酵工艺及风味物质研究",
+      "authors": [],
+      "venue": "Global Food Industry",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64888f6ad68f896efaadce89",
+      "matched_phrase": "多菌株",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13386/j.issn1002-0306.2020100077",
+      "title": "益生菌在我国保健食品中的应用进展",
+      "authors": [
+        "DUAN Hao"
+      ],
+      "venue": "DOAJ (DOAJ Directory of Open Access Journals)",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "629f3ce65aee126c0f05cadf",
+      "matched_phrase": "益生菌",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13343/j.cnki.wsxb.20210553",
+      "title": "益生菌促进胃肠道健康的机制及应用",
+      "authors": [
+        "DUAN Yunfeng"
+      ],
+      "venue": "Acta Microbiologica Sinica",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62abf1515aee126c0f4822fa",
+      "matched_phrase": "益生菌",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13386/j.issn1002-00306.2022030025",
+      "title": "益生菌与肠道菌群、免疫调节的相互作用与机制研究进展",
+      "authors": [
+        "TANG Manyu"
+      ],
+      "venue": "Science and Technology of Food Industry",
+      "year": 2022,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62ac14725aee126c0f3a9e82",
+      "matched_phrase": "益生菌",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/tcm.2024.131002",
+      "title": "Research Progress on Gut Microbiota in the Treatment of Irritable Bowel Syndrome",
+      "authors": [
+        "王, 思颖"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2024,
+      "cited_by_count": 4,
+      "reference_count": 38,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1128/spectrum.01370-25",
+      "title": "Prevalence and distribution patterns of drug resistance in <i>Mycobacterium tuberculosis</i> to first-line antituberculosis drugs in Urumqi, China",
+      "authors": [
+        "Jiandong Yang",
+        "Pengwei Lou",
+        "Weisheng Zhang",
+        "Yanggui Chen",
+        "Yaoqin Lu",
+        "Na Xue",
+        "Peisheng Wang",
+        "Kai Wang"
+      ],
+      "venue": "Microbiology Spectrum",
+      "year": 2025,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.chinacdc.cn/jkyj/crb2/yl/fjh/jswj_fjh/202410/P020241010432930570191.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2024.14112949",
+      "title": "Research on Biological Action and Mechanism of Bifidobacterium in Intestinal Flora",
+      "authors": [
+        "赵, 敏"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 53,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3724/1000-3207.2025.2025.0066",
+      "title": "DIETARY INCLUSION OF FERMENTED DANDELION ON GROWTH PERFORMANCE, INTESTINAL HEALTH, AND DISEASE RESISTANCE IN HYBRID GROUPER (&amp;lt;italic&amp;gt;EPINEPHELUS FUSCOGUTTATUS&amp;lt;/italic&amp;gt; ♀ &amp;times; &amp;lt;italic&amp;gt;EPINEPHELUS LANCEOLATU&amp;lt;/italic&amp;gt; ♂)",
+      "authors": [
+        "Yu-Jie YAN",
+        "Wenzheng Zou",
+        "Wenshu Huang",
+        "Zhong-Qin LI",
+        "Qiu-Hua YANG",
+        "Ruo-Fei ZHUANG",
+        "Hongmin Li"
+      ],
+      "venue": "Acta Hydrobiologica Sinica",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/BC5D439EC08F4B9491BE48B81857879E",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1360/csb-2026-0394",
+      "title": "Beneficial microorganisms in plant broad-spectrum disease resistance: advances and perspectives",
+      "authors": [
+        "Yingqi Zhang",
+        "Yu Zhang",
+        "Ziran Yang",
+        "Yuling Meng",
+        "单卫星"
+      ],
+      "venue": "Chinese Science Bulletin (Chinese Version)",
+      "year": 2026,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/565D5CB32CF64976AED1E450341328CA",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1371/journal.pone.0307171",
+      "title": "Revolutionizing pharmaceutical innovation: Unveiling the impact of endogenous knowledge spillover in China",
+      "authors": [
+        "Zhuolin Li",
+        "Lin Guo",
+        "Ping Ying"
+      ],
+      "venue": "PLoS ONE",
+      "year": 2024,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://file.vogel.com.cn/126/upload/resources/file/396704.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.70693/cjmsr.v1i1.937",
+      "arxiv_id": "",
+      "title": "探究益生菌对儿童生长发育影响的作用机制及其临床中的应用",
+      "authors": [
+        "何泳梁",
+        "颜鉴聪"
+      ],
+      "venue": "中国医学科学研究",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://ac.wisvora.com/index.php/cjmsr/article/download/937/542",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3760/cma.j.cn112138-20200227-00146",
+      "arxiv_id": "",
+      "title": "[Advances in research on the role of intestinal microbiota regulation in viral infectious diseases].",
+      "authors": [
+        "D. Zhang",
+        "J. Li"
+      ],
+      "venue": "Zhonghua nei ke za zhi",
+      "year": 2020,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "It’s time to dust off the shovels and start cleaning up after yourself.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It’s time to dust off the shovels and start cleaning up after yourself.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.69979/3029-2808.25.11.066",
+      "title": "益生菌发酵乳对中老年人群肠道菌群平衡及免疫功能的调节效果研究",
+      "authors": [
+        "苏荣锋，朱旭, 汪爱玉"
+      ],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2023.1351212",
+      "title": "Progress of Probiotics in Treating Functional Constipation through Intestinal Flora",
+      "authors": [
+        "那, 日娜"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 39,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/ojns.2020.85047",
+      "title": "Enterococcus: Potential Probiotics",
+      "authors": [
+        "黄, 云飞"
+      ],
+      "venue": "Open Journal of Natural Science",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 29,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2022.12121574",
+      "title": "Research Progress of Intestinal Flora in the Treatment of Lung Cancer—Intestinal Flora and Lung Cancer",
+      "authors": [
+        "周, 会敏"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37155/2811-0617-0507-3",
+      "title": "益生菌对育肥猪生长性能及肠道健康的影响",
+      "authors": [
+        "李志良",
+        "果树良"
+      ],
+      "venue": "农业科技与发展",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.62989/jgpr2025.2.2.3",
+      "title": "肠道菌群与肥胖症的关联及其在医学检验中的应用",
+      "authors": [
+        "",
+        "田荣, 田荣"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/bp.2026.162008",
+      "title": "The Link between Vitamin A and the Neonatal Gut Microbiota",
+      "authors": [
+        "王, 雕"
+      ],
+      "venue": "Bioprocess",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 36,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21769/bioprotoc.v1220",
+      "title": "益生菌-双歧杆菌复苏及传代",
+      "authors": [
+        "段, 熙楚"
+      ],
+      "venue": "BIO-PROTOCOL",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2026.1672680",
+      "title": "Gut Microbiota and Intracerebral Hemorrhage: Research Progress on Pathological Mechanisms and Therapeutic Strategies Mediated by the Gut-Brain Axis",
+      "authors": [
+        "凯丽 马"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pdf.hanspub.org/acm_8109552.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/tcm.2026.157364",
+      "title": "Research Progress on &lt;i&gt;Atractylodes&lt;/i&gt; &lt;i&gt;macrocephala&lt;/i&gt; in Intervening Chronic Kidney Disease by Regulating the Gut Microbiota-Metabolic Network",
+      "authors": [
+        "燕龙 张"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://pdf.hanspub.org/tcm_2273794.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1360/csb-2026-0181",
+      "title": "Metagenomic insights into the effects of ex situ conservation on gut microbial composition and function in blue sheep",
+      "authors": [
+        "Hongmei Gao",
+        "Feng Jiang",
+        "Pengfei Song",
+        "Xiangwen Chi",
+        "Haifeng Gu",
+        "Zhenyuan Cai",
+        "Xiaohu Wang",
+        "Bin Li (39349)",
+        "Chengbo Liang",
+        "Meng Zhang",
+        "Ruidong Zhang",
+        "Tongzuo Zhang"
+      ],
+      "venue": "Chinese Science Bulletin (Chinese Version)",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciengine.com/doi/pdf/6C44B0EBB7BC496D9AFEE3D635A62F27",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/hjfns.2026.154051",
+      "title": "Comparison of &lt;i&gt;in Vitro&lt;/i&gt; Passage Stability of &lt;i&gt;Staphylococcus&lt;/i&gt; &lt;i&gt;aureus&lt;/i&gt; Isolates",
+      "authors": [
+        "环 徐"
+      ],
+      "venue": "Hans Journal of Food and Nutrition Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pdf.hanspub.org/hjfns_1740824.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/wjcr.2026.163024",
+      "title": "Review on Mechanism and Research Progress of Gut Microbiota Metabolite Butyrate Regulating Colorectal Cancer Immune Microenvironment via Histone Deacetylase Inhibition",
+      "authors": [
+        "令翰 曾"
+      ],
+      "venue": "World Journal of Cancer Research",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://pdf.hanspub.org/wjcr_2150393.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2026.1672658",
+      "title": "Study on Antifungal Activity and Target Mechanism of CHR3/Caerulomycin A Compounds against &lt;i&gt;Candida albicans&lt;/i&gt;",
+      "authors": [
+        "玉淼 赵"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pdf.hanspub.org/acm_8109582.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32629/as.v8i11.3446",
+      "arxiv_id": "",
+      "title": "仔猪断奶应激综合征的营养干预策略及分子机制",
+      "authors": [
+        "红霞 蒋"
+      ],
+      "venue": "农业科学",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.32629/as.v8i11.3446",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.51600/isr.2025.5.4.1",
+      "arxiv_id": "",
+      "title": "Post-genomic Era: From Scientific Definition and Mechanism Analysis to Industrial Paradigm Innovation",
+      "authors": [
+        "T. Yu",
+        "Bin Liu",
+        "Cheng Wang",
+        "sawe ran",
+        "F. Tan"
+      ],
+      "venue": "Asia Social Science Academy",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3760/cma.j.cn112138-20200312-00230",
+      "arxiv_id": "",
+      "title": "[Research progress on non-steroidal anti-inflammatory drug related bowel disease and gut microbiota].",
+      "authors": [
+        "Y. Wang",
+        "J. Song",
+        "X. L. Zhang"
+      ],
+      "venue": "Zhonghua nei ke za zhi",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "It’s time to dust off the dustbin lids and clean up the mess.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It’s time to dust off the dustbin lids and clean up the mess.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13386/j.issn1002-0306.2024110221",
+      "title": "基于响应面法优化多菌株混合发酵铁皮石斛提高其抗氧化活性",
+      "authors": [
+        "LIU Huan"
+      ],
+      "venue": "Science and Technology of Food Industry",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68a7430e163c01c85024dccf",
+      "matched_phrase": "多菌株",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.15906/j.cnki.cn11-2975/s.20230328",
+      "title": "多菌株发酵农产品加工副产物制备蛋白质饲料的工艺优化",
+      "authors": [
+        "DENG Yongping"
+      ],
+      "venue": "中国饲料",
+      "year": 2023,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6400c20090e50fcafd7e69b3",
+      "matched_phrase": "多菌株",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3969/j.issn.1004-6704.2022.06.029",
+      "title": "多菌株益生菌+中药制剂对羔羊免疫力的影响",
+      "authors": [
+        "WANG Fu-hou"
+      ],
+      "venue": "畜牧兽医杂志",
+      "year": 2022,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63c04e2f90e50fcafdf911ef",
+      "matched_phrase": "多菌株",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

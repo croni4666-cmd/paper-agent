@@ -1,12 +1,12 @@
 fix(cnki): Export-CNKICookies.ps1 auto-detects Python with playwright installed
 
 User 2026-07-15 10:27 reported failure: `python` on PATH resolves to
-`C:\Users\DengN\miniconda3\python.exe` which has NO playwright installed.
-The real playwright is at `C:\Users\DengN\AppData\Local\Programs\Python\Python312\python.exe`.
+`C:\Users\paper-agent-author\miniconda3\python.exe` which has NO playwright installed.
+The real playwright is at `C:\Users\paper-agent-author\AppData\Local\Programs\Python\Python312\python.exe`.
 
 ## Fix: try-multiple-pythons + use first one that imports playwright
 
-Updated Step 1 in `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1`:
+Updated Step 1 in `C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1`:
 
 1. Candidate pythons (in order):
    - `py` (Windows Python Launcher)
@@ -31,7 +31,7 @@ Also fixed:
 
 ```
 [Export-CNKICookies] Finding Python with playwright...
-  OK python (with playwright): C:\Users\DengN\AppData\Local\Programs\Python\Launcher\py.exe
+  OK python (with playwright): C:\Users\paper-agent-author\AppData\Local\Programs\Python\Launcher\py.exe
   OK playwright chromium
 [Export-CNKICookies] Will launch Chromium for you to log in...
   ...

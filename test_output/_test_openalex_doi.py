@@ -30,7 +30,7 @@ for doi in dois:
     print(f"\n--- {doi} ---")
     print(f"URL: {url}")
     req = ur.Request(url, headers={
-        "User-Agent": "paper-agent/3.9.8.3 (mailto:dengn@gmail.com)",
+        "User-Agent": "paper-agent/3.9.8.3 (mailto:paper-agent@users.noreply.github.com)",
         "Accept": "application/json",
     })
     try:

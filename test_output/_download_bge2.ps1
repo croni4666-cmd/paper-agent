@@ -1,5 +1,5 @@
 # Download BGE-reranker-base (v2) — proper file list
-$dest = 'C:\Users\DengN\.paper-agent\models\bge-reranker-base'
+$dest = 'C:\Users\paper-agent-author\.paper-agent\models\bge-reranker-base'
 New-Item -ItemType Directory -Path $dest -Force | Out-Null
 
 # Correct file list (no vocab.txt — that doesn't exist; vocab is in sentencepiece.bpe.model)

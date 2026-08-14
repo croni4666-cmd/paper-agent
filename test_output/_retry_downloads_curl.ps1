@@ -1,6 +1,6 @@
 # Try to download the 10 manual PDFs via curl.exe (which we know works with proxy)
 $proxy = 'http://127.0.0.1:7897'
-$dest = 'C:\Users\DengN\.paper-agent\deep_rerank\manual_retry'
+$dest = 'C:\Users\paper-agent-author\.paper-agent\deep_rerank\manual_retry'
 New-Item -ItemType Directory -Path $dest -Force | Out-Null
 
 # 10 DOIs from v3.9.5 manual downloads list

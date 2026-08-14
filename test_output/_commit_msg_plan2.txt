@@ -5,7 +5,7 @@ Per ROADMAP [P0-9] "User confirmation needed" + "Integration plan" step 1:
 - Writes cookies export script for daily/automated CNKI session maintenance
 - 4-8h proxy session TTL means this script may be run daily
 
-## File: C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1
+## File: C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1
 
 **Workflow** (per [P0-9] cookie maintenance design):
 1. Quit Chrome completely (Chrome single-user-data-dir lock)

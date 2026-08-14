@@ -1,0 +1,1610 @@
+{
+  "query": "jeonse Korea housing deposit international comparison",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 15,
+    "arxiv": 15,
+    "semanticscholar": 15,
+    "aminer": 15,
+    "cnki": 1
+  },
+  "dedup_count": 72,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.2307/214922",
+      "title": "Housing, States and Localities",
+      "authors": [
+        "Peter Dickens"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d81d53dabfae2eeea38a49",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2026.2638389",
+      "title": "Blockchains in Housing Markets: a Simulation Analysis of the Impact on House Price Dynamics",
+      "authors": [
+        "Anetta Proskurovska"
+      ],
+      "venue": "HOUSING STUDIES",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08cd09be8eb7c4b5c0cd3",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/14036096.2026.2657849",
+      "title": "From Growth Regimes to Housing Production Failures: Risk Pathway Analysis of the 'unfinished Housing' Crisis in China",
+      "authors": [
+        "Yiming Han"
+      ],
+      "venue": "HOUSING THEORY & SOCIETY",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08d049be8eb7c4b5e9c79",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003669708",
+      "title": "The Eclipse of Council Housing",
+      "authors": [
+        "Ian Cole"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b59bdabfae2eee05b597",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1353/book.124236",
+      "title": "The Decoration of Houses",
+      "authors": [
+        "Ogden Codman"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b392dabfae2eeef5d1dc",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003586524-3",
+      "title": "Population and Housing Census",
+      "authors": [
+        "Seema Jain"
+      ],
+      "venue": "Population Census in India",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67499a2dae8580e7ff7d45e9",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.landusepol.2021.105442",
+      "title": "The financialization of rental housing in China: A case study of the asset-light financing model of long-term apartment rental",
+      "authors": [
+        "Jie Chen",
+        "Fulong Wu",
+        "Tingting Lu"
+      ],
+      "venue": "Land Use Policy",
+      "year": 2021,
+      "cited_by_count": 55,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://discovery.ucl.ac.uk/10126110/3/Wu_2021%20Land%20Use%20Policy%20The%20financialization%20of%20rental%20housing%20in%20China.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s12888-020-02586-0",
+      "title": "Factors affecting the quality of life of single mothers compared to married mothers",
+      "authors": [
+        "Ga Eun Kim",
+        "Eui‐Jung Kim"
+      ],
+      "venue": "BMC Psychiatry",
+      "year": 2020,
+      "cited_by_count": 52,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://bmcpsychiatry.biomedcentral.com/counter/pdf/10.1186/s12888-020-02586-0",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4054/demres.2021.44.39",
+      "title": "Socioeconomic differentials in fertility in South Korea",
+      "authors": [
+        "Sojung Lim"
+      ],
+      "venue": "Demographic Research",
+      "year": 2021,
+      "cited_by_count": 48,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.demographic-research.org/volumes/vol44/39/44-39.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.econlet.2017.10.014",
+      "title": "Measuring international uncertainty: The case of Korea",
+      "authors": [
+        "Minchul Shin",
+        "Boyuan Zhang",
+        "Molin Zhong",
+        "Dong Jin Lee"
+      ],
+      "venue": "Economics Letters",
+      "year": 2017,
+      "cited_by_count": 31,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.federalreserve.gov/econres/feds/files/2017066pap.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/10511482.2026.2624022",
+      "title": "Public Housing in Postwar Colombo's Urban Regeneration: Pathology of Housing Discourse",
+      "authors": [
+        "Janak Ranaweera"
+      ],
+      "venue": "HOUSING POLICY DEBATE",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c6b9be8eb7c4b585ccf",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-981-15-0780-9",
+      "title": "Housing Policy in Australia",
+      "authors": [
+        "Hal Pawson"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c82f845244ab9dcb77e106",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.19172/kreaa.28.4.4",
+      "title": "The Relationship between Jeonse-to-Price Ratio and Jeonse Deposit Non-Return Risk: Focused on Jeonse Guarantee Accident in Seoul",
+      "authors": [
+        "Kim, Jin-Yoo"
+      ],
+      "venue": "The Journal of Korea Real Estate Analysists Association",
+      "year": 2022,
+      "cited_by_count": 15,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/math11143145",
+      "title": "Predicting Depression during the COVID-19 Pandemic Using Interpretable TabNet: A Case Study in South Korea",
+      "authors": [
+        "Hung Viet Nguyen",
+        "Haewon Byeon"
+      ],
+      "venue": "Mathematics",
+      "year": 2023,
+      "cited_by_count": 14,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7390/11/14/3145/pdf?version=1689661782",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18564/jasss.4410",
+      "title": "Housing Market Agent-Based Simulation with Loan-To-Value and Debt-To-Income",
+      "authors": [
+        "Tae-Sub Yun",
+        "Il-Chul Moon"
+      ],
+      "venue": "Journal of Artificial Societies and Social Simulation",
+      "year": 2020,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.jasss.org/23/4/5/5.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/ijhma-03-2020-0025",
+      "title": "Neighborhood effects of housing program using Jeonse in Korea",
+      "authors": [
+        "Yun, Sungjin"
+      ],
+      "venue": "International Journal of Housing Markets and Analysis",
+      "year": 2021,
+      "cited_by_count": 7,
+      "reference_count": 42,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Purpose</jats:title>\n<jats:p>This study aims to introduce the Youth Jeonse Rental Housing Program using the unique characteristics of the Korean housing market to explain its theoretical value in the current theoretical landscape of public housing and to identify the effect of the program on the regional housing price.</jats:p>\n</jats:sec>\n<jats:sec>\n<jats:title content-type=\"abstract-subheading\">Design/methodology/approach</jats:title>\n<",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.19172/kreaa.27.2.4",
+      "title": "Measuring the Risk of Jeonse Deposit Loss Using Jeonse Deposit Fluctuation Distribution",
+      "authors": [
+        "Min, Byung-Chul"
+      ],
+      "venue": "The Journal of Korea Real Estate Analysists Association",
+      "year": 2021,
+      "cited_by_count": 7,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s00168-024-01274-1",
+      "title": "Impacts of demand and supply-side interventions on South Korea’s housing markets: a dynamic housing-CGE analysis",
+      "authors": [
+        "Euijune Kim",
+        "Ayoung Kim",
+        "Kyung-Min Nam"
+      ],
+      "venue": "The Annals of Regional Science",
+      "year": 2024,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00168-024-01274-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/app131910732",
+      "title": "Influence of Social Overhead Capital Facilities on Housing Prices Using Machine Learning",
+      "authors": [
+        "Juryon Paik",
+        "Seung-June Baek",
+        "Jun-Wan Kim",
+        "Kwang-Ho Ko"
+      ],
+      "venue": "Applied Sciences",
+      "year": 2023,
+      "cited_by_count": 7,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-3417/13/19/10732/pdf?version=1695799534",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22313/reik.2023.21.1.21",
+      "title": "Analysis and Solution of Jeonse(the lease of a house on a deposit basis) fraud by type",
+      "authors": [
+        "",
+        "Hwang, Se Eun",
+        "Jang, Hee Soon"
+      ],
+      "venue": "Residential Environment Institute Of Korea",
+      "year": 2023,
+      "cited_by_count": 6,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The purpose of this study is to analyze the structure and type of Jeonse fraud and to draw the type specific improvement measures and solution.\r\nJeonse has been an occupying type unique to Korea for a long time as the tenants can seek the stable housing at a low cost. The Jeonse deposit is protected in accordance with Housing Lease Protection Act and Jeonse deposit return guarantee, but there still remains a blind spot.\r\nMany collective Jeonse frauds fraudulently manipulating the market ",
+      "found_by": [
+        "crossref",
+        "semanticscholar",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/su10082875",
+      "title": "Managing Bubbles in the Korean Real Estate Market: A Real Options Framework",
+      "authors": [
+        "Kyungwon Kim",
+        "Jae Wook Song"
+      ],
+      "venue": "Sustainability",
+      "year": 2018,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/10/8/2875/pdf?version=1534240611",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jhe.2025.102045",
+      "title": "Putting a ceiling on housing costs: The aftermath of nationwide rent control in the case of jeonse system in Korea",
+      "authors": [
+        "Koo, Kang Mo",
+        "Kim, Jinyoo"
+      ],
+      "venue": "Journal of Housing Economics",
+      "year": 2025,
+      "cited_by_count": 5,
+      "reference_count": 53,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1332/17598273y2023d000000009",
+      "title": "Multidimensional child poverty in South Korea: developing measures to assess progress towards the sustainable development goals",
+      "authors": [
+        "Soyoon Weon",
+        "Marco Pomati",
+        "Shailen Nandy"
+      ],
+      "venue": "Journal of Poverty and Social Justice",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://orca.cardiff.ac.uk/id/eprint/165378/1/WeonPomatiNandy2024ChildPovertyInKorea.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2023.31.3.127",
+      "title": "Determinants of Jeonse Prices in Gangnam District: Machine Learning and Explainable Artificial Intelligence Approach",
+      "authors": [
+        "Tae-Young Kim"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578d56e939a5f408269e164",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2022.8.1.5",
+      "title": "Assessing the Risk of Underwater Jeonse",
+      "authors": [
+        "Byungchul Min"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2023,
+      "cited_by_count": 5,
+      "cited_bucket": "1-10",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578db1c939a5f4082736574",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17208/jkpa.2025.06.60.3.101",
+      "title": "Impact of Changes in Jeonse Deposit Return Guarantee Requirements on the Probability of High-Risk Jeonse Occurrence : Focusing on Row Houses and Multi-Family Housing Market in Seoul",
+      "authors": [
+        "Kwon, Hyuk",
+        "Sung, Hyungun"
+      ],
+      "venue": "Journal of Korea Planning Association",
+      "year": 2025,
+      "cited_by_count": 4,
+      "reference_count": 33,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/1467-8454.12357",
+      "arxiv_id": "",
+      "title": "Australian first home ownership assistance schemes: International comparison and assessment",
+      "authors": [
+        "Chris Martin",
+        "Hal Pawson"
+      ],
+      "venue": "Australian Economic Papers",
+      "year": 2024,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 19,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8454.12357",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/buildings13030815",
+      "arxiv_id": "",
+      "title": "Defect Repair Deposit and Insurance Premium for a New Home Warranty in Korea",
+      "authors": [
+        "Junmo Park",
+        "D. Seo"
+      ],
+      "venue": "Buildings",
+      "year": 2023,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 27,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2075-5309/13/3/815/pdf?version=1679307297",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/psp.70036",
+      "title": "Evaluating Housing Policy Effects on Childbirth Intentions in South Korea: Preferences, Benefits, and Policy Implications",
+      "authors": [
+        "Jiyun Kim",
+        "Mi-Seon Jang"
+      ],
+      "venue": "Population Space and Place",
+      "year": 2025,
+      "cited_by_count": 3,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/psp.70036",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.6115/her.2023.025",
+      "arxiv_id": "",
+      "title": "Influences on the Housing Satisfaction of Middle-Aged Households Reflected in the Korea Housing Survey 2021",
+      "authors": [
+        "Hyun-Jeong Lee"
+      ],
+      "venue": "Human Ecology Research",
+      "year": 2023,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 41,
+      "tldr": "There were significant differences in housing unit satisfaction and residential environment satisfaction among renter groups by age and rental type, which implies the need for residential area regeneration programs that consider the situation of rental households.",
+      "is_oa": true,
+      "oa_url": "http://her.re.kr/upload/pdf/her-61-3-375.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "There were significant differences in housing unit satisfaction and residential environment satisfaction among renter groups by age and rental type, which implies the need for residential area regeneration programs that consider the situation of rental households.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/ajcp.70006",
+      "title": "Social connections to neighbors and NIMBYism among public housing residents in Seoul",
+      "authors": [
+        "Gum‐Ryeong Park",
+        "Jinho Kim"
+      ],
+      "venue": "American Journal of Community Psychology",
+      "year": 2025,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ajcp.70006",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/buildings15173068",
+      "arxiv_id": "",
+      "title": "A Comparative Study on Unit Plans of Public Rental Housing in China, Japan, and South Korea: Policy, Culture, and Spatial Insights for China’s Indemnificatory Housing Development",
+      "authors": [
+        "Xue-Rui Wang",
+        "Liping Yang",
+        "Ting Huang",
+        "Byung-Kweon Jun"
+      ],
+      "venue": "Buildings",
+      "year": 2025,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 21,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2075-5309/15/17/3068/pdf?version=1756301914",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s40878-025-00457-9",
+      "title": "The political economy of immigrant homeownership: housing assets and conservative shifts in South Korea",
+      "authors": [
+        "Seungwoo Han"
+      ],
+      "venue": "Comparative Migration Studies",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://comparativemigrationstudies.springeropen.com/counter/pdf/10.1186/s40878-025-00457-9",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.6115/her.2024.045",
+      "title": "Analysis of Housing Topics for Middle-Aged Adults in Online News Articles Using Text-Mining Techniques",
+      "authors": [
+        "Yoon-Seo Hwang",
+        "Hyun-Jeong Lee"
+      ],
+      "venue": "Human Ecology Research",
+      "year": 2024,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "http://her.re.kr/upload/pdf/her-62-4-645.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47611/jsrhs.v11i4.3084",
+      "title": "South Korea's Household Debt Crisis and Its Impact on Korean Society",
+      "authors": [
+        "Daniel Song",
+        "Karl Radnitzer"
+      ],
+      "venue": "Journal of Student Research",
+      "year": 2022,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.jsr.org/hs/index.php/path/article/download/3084/1623",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2025.33.2.5",
+      "arxiv_id": "",
+      "title": "Examining Sub-Tenure Choice of Renter Households Amid the Expansion of Rental Deposit Loans: Focus on Changing Roles of Economic Characteristics and Publicly Supported Deposit Loans",
+      "authors": [
+        "Yongchan Jung",
+        "Hyunho Ahn",
+        "Seungbeom Kang"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.6946545",
+      "title": "Pricing Jeonse Deposit Guarantees with Joint Housing and Credit Risk",
+      "authors": [
+        "Kim, Yeji",
+        "Jun, Doobae"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Jeonse deposit guarantees insure tenants against the joint failure of housing collateral and landlord repayment capacity, yet existing premium schedules rely on contract-level characteristics rather than an explicit risk-pricing model. We develop a closed-form option-pricing model in which the housing price and a latent landlord credit-quality index follow correlated geometric Brownian motions under the pricing measure. The insurance payoff is a bivariate-trigger put-style shortfall, wit",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17208/jkpa.2021.04.56.2.94",
+      "title": "Housing Demand Analysis by Rental Housing Cost Increase : Focused on the Cost of Risk by Full Deposit Housing (Jeonse) Case",
+      "authors": [
+        "Jo, Anna",
+        "Jung, Chang-Mu",
+        "Kim, Hyun-Jung"
+      ],
+      "venue": "Journal of Korea Planning Association",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 24,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5998896",
+      "title": "Jeonse-to-Monthly Rent Conversion Rate and Jeonse Deposit Return Risk: A Panel Data Analysis for Seoul",
+      "authors": [
+        "Kim, Doil"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 35,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.22313/reik.2025.23.3.135",
+      "title": "The Impact of Jeonse Deposit Non-Return on Jeonse Prices Across Market Phases : A Hierarchical Linear Modeling Approach",
+      "authors": [
+        "",
+        "HA, Seok-Hyun",
+        "KIM, Jin-Woo",
+        "KIM, Seung-Hee"
+      ],
+      "venue": "Residential Environment Institute Of Korea",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54091/krepa.2025.26.2.175",
+      "title": "Valuing the Default Risk of Jeonse Deposit Obligations",
+      "authors": [
+        "",
+        "Jun, Jae Bum",
+        "Won, Jaewoong",
+        "Chun, Bumseok"
+      ],
+      "venue": "Korea Real Estate Policy Association",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p> This study aims topresent a financial model for quantitatively estimating the value of default\r\n risk in jeonse contracts. The jeonse system, inwhich tenants pay a lump-sumdeposit to the landlord\r\n and receive it back in full at the end of the contract, has long been one of the primarymeans of\r\n housing stability. However, the expansion of housing price volatility, rapid interest rate hikes, and\r\n widening regional disparities in the jeonse-to-price ratio have elevated the default risk ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17208/jkpa.2026.02.61.1.230",
+      "title": "Effects of Public Rental Financial Support and Jeonse Leverage on Underwater Jeonse Probability in Korea’s Housing Market",
+      "authors": [
+        "Park, Kwan-A",
+        "Yu, Sang-Gyun"
+      ],
+      "venue": "Journal of Korea Planning Association",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 36,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21447/jusre.2024.15.4.6",
+      "title": "Analysis of the Estimation of Jeonse Deposit and Jeonse Leverage in Seoul",
+      "authors": [
+        "",
+        "Lee, Kwang-Seok",
+        "Jung, Jong-Dae",
+        "Nam, Jin"
+      ],
+      "venue": "The Korean Association of Urban Policies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref",
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54091/krepa.2021.22.1.6",
+      "title": "\"Systematic Risk-Excess Rate of Return using Jeonse Transaction Price Index in Apartment - Focused on Jeonse Transaction Price Index and Jeonse Actual Transaction Price Index -\"",
+      "authors": [
+        "Lee, Kyeongkeun",
+        "Jun, Jaebum"
+      ],
+      "venue": "Korea Real Estate Policy Association",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54254/2754-1169/56/20231046",
+      "title": "The Influence That Jeonse Rental System Brought to the Housing Bubble in Korea",
+      "authors": [
+        "Fei, Lancheng"
+      ],
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The bubble burst, and the South Korean property market plummeted. Thousands of Koreans should not be able to afford their debts and choose to commit suicide. Prior to this, South Korea’s real estate market soared rapidly, and no one noticed the abnormality and the future direction of the real estate market. That was a miracle, but it only lasted for a while, and one of the most important factors that accelerated its destruction was a rental system called Jeonse. The purpose of this paper",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0808.0650v1",
+      "arxiv_id": "0808.0650v1",
+      "title": "Summary of the 3rd International Workshop on a Far Detector in Korea for the J-PARC Beam",
+      "authors": [
+        "T. Kajita",
+        "S. B. Kim",
+        "A. Rubbia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0808.0650v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2410.22973v1",
+      "arxiv_id": "2410.22973v1",
+      "title": "International comparison of optical frequencies with transportable optical lattice clocks",
+      "authors": [
+        "International Clock",
+        "Oscillator Networking",
+        " Collaboration",
+        " :",
+        "Anne Amy-Klein",
+        "Erik Benkler",
+        "Pascal Blondé",
+        "Kai Bongs",
+        "Etienne Cantin",
+        "Christian Chardonnet",
+        "Heiner Denker",
+        "Sören Dörscher",
+        "Chen-Hao Feng",
+        "Jacques-Olivier Gaudron",
+        "Patrick Gill",
+        "Ian R Hill",
+        "Wei Huang",
+        "Matthew Y H Johnson",
+        "Yogeshwar B Kale",
+        "Hidetoshi Katori",
+        "Joshua Klose",
+        "Jochen Kronjäger",
+        "Alexander Kuhl",
+        "Rodolphe Le Targat",
+        "Christian Lisdat",
+        "Olivier Lopez",
+        "Tim Lücke",
+        "Maxime Mazouth",
+        "Shambo Mukherjee",
+        "Ingo Nosske",
+        "Benjamin Pointard",
+        "Paul-Eric Pottie",
+        "Marco Schioppo",
+        "Yeshpal Singh",
+        "Kilian Stahl",
+        "Masao Takamoto",
+        "Mads Tønnes",
+        "Jacob Tunesi",
+        "Ichiro Ushijima",
+        "Chetan Vishwakarma"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.22973v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s00355-024-01556-9",
+      "arxiv_id": "2410.16745v1",
+      "title": "Characterizing the top trading cycles rule for housing markets with lexicographic preferences",
+      "authors": [
+        "Bettina Klaus"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.16745v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2310.10161v1",
+      "arxiv_id": "2310.10161v1",
+      "title": "Public Perceptions of Fukushima Food Products in South Korea and Its dispute Resolution: A Comparative Study on East Asia",
+      "authors": [
+        "Young Chan Seo"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2310.10161v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0801.4035v1",
+      "arxiv_id": "0801.4035v1",
+      "title": "Neutrino Oscillations With A Next Generation Liquid Argon TPC Detector in Kamioka or Korea Along The J-PARC Neutrino Beam",
+      "authors": [
+        "A. Meregaglia",
+        "A. Rubbia"
+      ],
+      "venue": "arXiv",
+      "year": 2008,
+      "pdf_url": "https://arxiv.org/pdf/0801.4035v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1802.05870v1",
+      "arxiv_id": "1802.05870v1",
+      "title": "The dynamic impact of monetary policy on regional housing prices in the US: Evidence based on factor-augmented vector autoregressions",
+      "authors": [
+        "Manfred M. Fischer",
+        "Florian Huber",
+        "Michael Pfarrhofer",
+        "Petra Staufer-Steinnocher"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.05870v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2505.03835v2",
+      "arxiv_id": "2505.03835v2",
+      "title": "The Shift Towards Preprints in AI Policy Research: A Comparative Study of Preprint Trends in the U.S., Europe, and South Korea",
+      "authors": [
+        "Simon Suh"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2505.03835v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0911.1456v1",
+      "arxiv_id": "0911.1456v1",
+      "title": "Korean journals in the Science Citation Index: What do they reveal about the intellectual structure of S&T in Korea?",
+      "authors": [
+        "Han Woo Park",
+        "Loet Leydesdorff"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0911.1456v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2509.16115v3",
+      "arxiv_id": "2509.16115v3",
+      "title": "A Korean Macroeconomic Database for Data-Rich Policy Analysis and U.S.--Korea Dependence",
+      "authors": [
+        "Changryong Baek",
+        "Seunghyun Moon",
+        "Seunghyeon Lee"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.16115v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5281/zenodo.4742043",
+      "arxiv_id": "2106.00602v1",
+      "title": "Proposal for the ILC Preparatory Laboratory (Pre-lab)",
+      "authors": [
+        " International Linear Collider International Development Team"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2106.00602v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2201.02276v1",
+      "arxiv_id": "2201.02276v1",
+      "title": "Reflections on the Fifth International Conference on Women in Physics",
+      "authors": [
+        "Chandralekha Singh"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.02276v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4230/LIPIcs.FSCD.2018.22",
+      "arxiv_id": "1801.07664v4",
+      "title": "Internal Universes in Models of Homotopy Type Theory",
+      "authors": [
+        "Daniel R. Licata",
+        "Ian Orton",
+        "Andrew M. Pitts",
+        "Bas Spitters"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1801.07664v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10773-005-7067-6",
+      "arxiv_id": "0211094v1",
+      "title": "A Geometrical Representation of Entanglement as Internal Constraint",
+      "authors": [
+        "Diederik Aerts",
+        "Bart D'Hooghe"
+      ],
+      "venue": "arXiv",
+      "year": 2002,
+      "pdf_url": "https://arxiv.org/pdf/quant-ph/0211094v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/9781118792148.ch394",
+      "arxiv_id": "1310.2710v1",
+      "title": "Correlation between Internal States and Strength in Bulk Metallic Glass",
+      "authors": [
+        "J. Tan",
+        "C. J. Li",
+        "Y. H. Jiang",
+        "R. Zhou",
+        "J. Eckert"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1310.2710v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1709.07843v1",
+      "arxiv_id": "1709.07843v1",
+      "title": "VERITAS contributions to the 35th International Cosmic Ray Conference",
+      "authors": [
+        "A. U. Abeysekara",
+        "S. Archambault",
+        "A. Archer",
+        "W. Benbow",
+        "R. Bird",
+        "R. Brose",
+        "M. Buchovecky",
+        "J. L. Christiansen",
+        "M. P. Connolly",
+        "W. Cui",
+        "M. K. Daniel",
+        "A. Falcone",
+        "Q. Feng",
+        "M. Fernandez-Alonso",
+        "J. P. Finley",
+        "H. Fleischhack",
+        "L. Fortson",
+        "A. Furniss",
+        "G. H. Gillanders",
+        "M. Hütten",
+        "D. Hanna",
+        "O. Hervet",
+        "J. Holder",
+        "G. Hughes",
+        "T. B. Humensky",
+        "C. A. Johnson",
+        "P. Kaaret",
+        "P. Kar",
+        "M. Kertzman",
+        "D. Kieda",
+        "M. Krause",
+        "F. Krennrich",
+        "S. Kumar",
+        "M. J. Lang",
+        "G. Maier",
+        "S. McArthur",
+        "P. Moriarty",
+        "R. Mukherjee",
+        "D. Nieto",
+        "S. O'Brien",
+        "R. A. Ong",
+        "A. N. Otte",
+        "D. Pandel",
+        "N. Park",
+        "M. Pohl",
+        "A. Popkow",
+        "E. Pueschel",
+        "J. Quinn",
+        "K. Ragan",
+        "P. T. Reynolds",
+        "E. Roache",
+        "A. C. Rovero",
+        "I. Sadeh",
+        "M. Santander",
+        "S. Schlenstedt",
+        "G. H. Sembroski",
+        "K. Shahinyan",
+        "J. Tyler",
+        "S. P. Wakely",
+        "A. Weinstein",
+        "R. M. Wells",
+        "P. Wilcox",
+        "A. Wilhelm",
+        "D. A. Williams",
+        "T. J Williamson",
+        "B. Zitzer"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1709.07843v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2025.33.4.5",
+      "arxiv_id": "",
+      "title": "Rising Household Debt and Housing Market Dynamics: Lease Deposit Indebtedness and Tenant-based Gap Investment",
+      "authors": [
+        "Hoobin Lee"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/ijhma-10-2024-0159",
+      "arxiv_id": "",
+      "title": "The impact of reverse jeonse incidents on the risk of nonreturn of security deposits: an empirical analysis of the South Korean housing market",
+      "authors": [
+        "Jinbaek Park",
+        "Kiduk Park"
+      ],
+      "venue": "International Journal of Housing Markets and Analysis",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 4,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2026.11.2.79",
+      "arxiv_id": "",
+      "title": "Effects of Jeonse loan usage on renters’ housing\n consumption: A control function approach",
+      "authors": [
+        "Chunil Kim"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 15,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://www.ejhuf.org/download/download_pdf?pid=jhuf-11-2-79",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.15793/KSPR.2017.94..008",
+      "arxiv_id": "",
+      "title": "Review of Policy Options for Stabilisation of Private Rental Housing Market in Korea: Focusing on International Comparison",
+      "authors": [
+        "Han， Man-Hee",
+        "J. Park"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.15793/kspr.2017.94..008",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.6115/her.2025.002",
+      "arxiv_id": "",
+      "title": "Housing Poverty among Low-income Middle-Aged Households and the Influencing Characteristics Reflected in the Korea Housing Survey 2021",
+      "authors": [
+        "Hyun-Jeong Lee"
+      ],
+      "venue": "Human Ecology Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 44,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.61173/cea2bs70",
+      "arxiv_id": "",
+      "title": "Comparison of Risks for Real Estate Finance in Asian: Evidence from China, Japan and Korea",
+      "authors": [
+        "Yao Li"
+      ],
+      "venue": "Finance &amp; Economics",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.deanfrancispress.com/index.php/fe/article/download/1039/FE002072.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37727/jkdas.2023.25.3.1035",
+      "arxiv_id": "",
+      "title": "Trends in the Jeonse Deposit Loans from the Results of the Korean Housing Survey",
+      "authors": [
+        "Jaesun Yun"
+      ],
+      "venue": "The Korean Data Analysis Society",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.31303/krear.2025.97.35",
+      "arxiv_id": "",
+      "title": "A study on the estimation method of the conversion rate for Jeonse to monthly rent using a Bayesian statistical model based on officetel actual transaction data",
+      "authors": [
+        "M. Kim",
+        "Se Hyung Kim",
+        "Namkyo Woo"
+      ],
+      "venue": "Korea Real Estate Academy",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37407/kres.2026.44.1.125",
+      "arxiv_id": "",
+      "title": "A Study on the Efficiency of Real Estate Financial Support Policies Related to Jeonse Fraud",
+      "authors": [
+        "H. Yun"
+      ],
+      "venue": "Korea Real Estate Society",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52344/hfr.2025.9.2.5",
+      "title": "Impact of Expanding Jeonse Loan Guarantees on Jeonse and Housing Sales Prices",
+      "authors": [
+        "Minjoon Oh"
+      ],
+      "venue": "Housing Finance Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a4479ff0a96f8c83c391090",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47116/apjcri.2024.10.13",
+      "title": "Causes and Solution of Jeonse Accidents",
+      "authors": [
+        "Eunghwan Kang"
+      ],
+      "venue": "Asia-pacific Journal of Convergent Research Interchange",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6721fb2801d2a3fbfca61b34",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2024.32.4.29",
+      "title": "A Study on Improving the Jeonse System to Prevent Jeonse Fraud",
+      "authors": [
+        "JinYoo Kim"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6753523dae8580e7ff39e7b6",
+      "matched_phrase": "jeonse",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

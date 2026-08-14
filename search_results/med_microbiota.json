@@ -1,0 +1,1159 @@
+{
+  "query": "Mediterranean diet gut microbiota SCFA inflammation",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 48,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1038/nature13075",
+      "title": "Enterotypes of the Human Gut Mycobiome",
+      "authors": [
+        "Senying Lai"
+      ],
+      "venue": "Microbiome",
+      "year": 2023,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "55a4083165ce5cd7b3c11ff2",
+      "matched_phrase": "gut",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41392-022-00974-4",
+      "title": "Microbiota in health and diseases",
+      "authors": [
+        "Kejun Hou",
+        "Zhuo‐Xun Wu",
+        "Xuan-Yu Chen",
+        "Jing‐Quan Wang",
+        "Dongya Zhang",
+        "Chuanxing Xiao",
+        "Dan Zhu",
+        "Jagadish Koya",
+        "Liuya Wei",
+        "Jilin Li",
+        "Zhe‐Sheng Chen"
+      ],
+      "venue": "Signal Transduction and Targeted Therapy",
+      "year": 2022,
+      "cited_by_count": 3051,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41392-022-00974-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/gutjnl-2021-326789",
+      "title": "Gut microbiome and health: mechanistic insights",
+      "authors": [
+        "Willem M. de Vos",
+        "Herbert Tilg",
+        "Matthias Van Hul",
+        "Patrice D. Cani"
+      ],
+      "venue": "Gut",
+      "year": 2022,
+      "cited_by_count": 2354,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gut.bmj.com/content/gutjnl/71/5/1020.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/microorganisms8040573",
+      "title": "The Controversial Role of Human Gut Lachnospiraceae",
+      "authors": [
+        "Mirco Vacca",
+        "Giuseppe Celano",
+        "Francesco Maria Calabrese",
+        "Piero Portincasa",
+        "Marco Gobbetti",
+        "Maria De Angelis"
+      ],
+      "venue": "Microorganisms",
+      "year": 2020,
+      "cited_by_count": 1719,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-2607/8/4/573/pdf?version=1586965087",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu15092211",
+      "title": "Short-Chain Fatty-Acid-Producing Bacteria: Key Components of the Human Gut Microbiota",
+      "authors": [
+        "William G. Fusco",
+        "Manuel Bernabeu",
+        "Marco Cintoni",
+        "Serena Porcari",
+        "Emanuele Rinninella",
+        "Francesco Kaitsas",
+        "Elena Lener",
+        "Maria Cristina Mele",
+        "Antonio Gasbarrini",
+        "María Carmen Collado",
+        "Giovanni Cammarota",
+        "Gianluca Ianiro"
+      ],
+      "venue": "Nutrients",
+      "year": 2023,
+      "cited_by_count": 1150,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/15/9/2211/pdf?version=1683369595",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu11071613",
+      "title": "Gut Microbiome: Profound Implications for Diet and Disease",
+      "authors": [
+        "Ronald D. Hills",
+        "Benjamin Pontefract",
+        "Hillary R. Mishcon",
+        "Cody A. Black",
+        "Steven C. Sutton",
+        "Cory R. Theberge"
+      ],
+      "venue": "Nutrients",
+      "year": 2019,
+      "cited_by_count": 1124,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/11/7/1613/pdf?version=1563766462",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms23031105",
+      "title": "Gut Microbiota and Short Chain Fatty Acids: Implications in Glucose Homeostasis",
+      "authors": [
+        "Piero Portincasa",
+        "Leonilde Bonfrate",
+        "Mirco Vacca",
+        "Maria De Angelis",
+        "Ilaria Farella",
+        "Elisa Lanza",
+        "Mohamad Khalil",
+        "David Q.‐H. Wang",
+        "Markus Sperandio",
+        "Agostino Di Ciaula"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2022,
+      "cited_by_count": 939,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/23/3/1105/pdf?version=1642675503",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fnut.2019.00047",
+      "title": "The Effects of Vegetarian and Vegan Diets on Gut Microbiota",
+      "authors": [
+        "Aleksandra Tomova",
+        "Igor Bukovsky",
+        "Emilie Rembert",
+        "Willy Yonas",
+        "Jihad Alwarith",
+        "Neal D. Barnard",
+        "Hana Kahleová"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2019,
+      "cited_by_count": 697,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fnut.2019.00047/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.neubiorev.2023.105147",
+      "title": "Outrunning a Bad Diet: Interactions Between Exercise and a Western-style Diet for Adolescent Mental Health, Metabolism and Microbes",
+      "authors": [
+        "Minke H. C. Nota"
+      ],
+      "venue": "NEUROSCIENCE AND BIOBEHAVIORAL REVIEWS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6421776990e50fcafda59a73",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13082795",
+      "title": "Effect of Diet and Dietary Components on the Composition of the Gut Microbiota",
+      "authors": [
+        "Ashley Beam",
+        "Elizabeth Clinger",
+        "Lei Hao"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 553,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/8/2795/pdf?version=1629020029",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13020699",
+      "title": "Nutritional Components in Western Diet Versus Mediterranean Diet at the Gut Microbiota–Immune System Interplay. Implications for Health and Disease",
+      "authors": [
+        "Cielo García‐Montero",
+        "Oscar Fraile‐Μartinez",
+        "Ana M. Gómez-Lahoz",
+        "Leonel Pekarek",
+        "Alejandro J. Castellanos",
+        "Fernando Noguerales-Fraguas",
+        "Santiago Coca",
+        "Luis G. Guijarro",
+        "Natalio García‐Honduvilla",
+        "Ángel Asúnsolo",
+        "Lara Sánchez‐Trujillo",
+        "Guillermo Lahera",
+        "Julia Buján",
+        "Jorge Monserrat",
+        "Melchor Álvarez‐Mon",
+        "Miguel Ángel Álvarez-Mon",
+        "Miguel Á. Ortega"
+      ],
+      "venue": "Nutrients",
+      "year": 2021,
+      "cited_by_count": 416,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/2/699/pdf?version=1614257561",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13010007",
+      "title": "Influence of Mediterranean Diet on Human Gut Microbiota",
+      "authors": [
+        "Giuseppe Merra",
+        "Annalisa Noce",
+        "Giulia Marrone",
+        "Marco Cintoni",
+        "Maria Grazia Tarsitano",
+        "Annunziata Capacci",
+        "Antonino De Lorenzo"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 405,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/1/7/pdf?version=1608640558",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1167/iovs.66.7.3",
+      "title": "Optical and Visual Diet in Myopia",
+      "authors": [
+        "Susana Marcos"
+      ],
+      "venue": "Investigative ophthalmology & visual science",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6841f689163c01c8505f2320",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-822562-2.00395-9",
+      "title": "Mediterranean-Climate Ecosystems",
+      "authors": [
+        "Philip W. Rundel"
+      ],
+      "venue": "Encyclopedia of Biodiversity",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b689b7602d97041f83cd",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12665-015-4239-4",
+      "title": "Karst and Karst Groundwater Resources in the Mediterranean",
+      "authors": [
+        "Julian Xanke"
+      ],
+      "venue": "Hydrogeology Journal",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8f6fadabfae2eee99c222",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5772/intechopen.104257",
+      "title": "Mediterranean Diet and Health",
+      "authors": [
+        "Semra Akar Sahingoz"
+      ],
+      "venue": "Sustainable Development Well-Being Across the Globe - New Perspectives, Concepts, Correlates and Geography",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c5533f35d8759cb6e6ee1c",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/ccol0521817463.006",
+      "title": "Mediterranean Plague in the Age of Justinian",
+      "authors": [
+        "Peregrine Horden"
+      ],
+      "venue": "Hospitals and Healing from Antiquity to the Later Middle Ages",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6216f2115aee126c0fb4b29b",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/9781009325844.021",
+      "title": "Mediterranean Region",
+      "authors": [
+        "Hans‐Otto Pörtner"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f30a939a5f40829cf9f2",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/acrefore/9780190854584.013.615",
+      "title": "Anthropology of the Mediterranean",
+      "authors": [
+        "Laia Soto Bermant"
+      ],
+      "venue": "Oxford Research Encyclopedia of Anthropology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578fcc9939a5f4082ae3540",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003260301-5",
+      "title": "Sustainable Diets",
+      "authors": [
+        "Martin Caraher"
+      ],
+      "venue": "Food Policy in the United Kingdom",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578d656939a5f40826b584d",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17060948",
+      "title": "Gut Microbiota Modulation Through Mediterranean Diet Foods: Implications for Human Health",
+      "authors": [
+        "Perrone, Pasquale",
+        "D’Angelo, Stefania"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 121,
+      "reference_count": 136,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The Mediterranean diet (MD) is widely recognized for its health benefits, particularly in modulating gut microbiota composition and reducing the risk of metabolic, cardiovascular, and neurodegenerative diseases. Characterized by a high intake of plant-based foods, monounsaturated fats, and polyphenols, primarily from extra virgin olive oil, the MD fosters the growth of beneficial gut bacteria such as Bifidobacterium, Faecalibacterium prausnitzii, and Roseburia, which produce short-chain ",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "tldr": "Emerging evidence suggests that MD variants, such as the Green-MD, and their integration with probiotics can further optimize gut microbiota composition and metabolic parameters.",
+      "influential_cite_count": 4,
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms25179366",
+      "arxiv_id": "",
+      "title": "A Comprehensive Review of the Triangular Relationship among Diet–Gut Microbiota–Inflammation",
+      "authors": [
+        "Nidesha Randeni",
+        "M. Bordiga",
+        "Baojun Xu"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2024,
+      "cited_by_count": 82,
+      "influential_cite_count": 1,
+      "reference_count": 218,
+      "tldr": "This review explores how dietary components influence the gut microbiota composition, how these microbial changes affect inflammatory pathways, and the therapeutic implications of modulating this axis for chronic inflammatory disease prevention and management.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/ijms25179366",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This review explores how dietary components influence the gut microbiota composition, how these microbial changes affect inflammatory pathways, and the therapeutic implications of modulating this axis for chronic inflammatory disease prevention and management.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/gutjnl-2020-320781",
+      "title": "Mediterranean diet, gut microbiota and health: when age and calories do not add up!",
+      "authors": [
+        "Cani, Patrice D",
+        "Van Hul, Matthias"
+      ],
+      "venue": "Gut",
+      "year": 2020,
+      "cited_by_count": 49,
+      "reference_count": 10,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "A better understanding is made of the role of the gut microbiota and the MedDiet in disease risk factors and two studies conducted in humans have now made progress towards a better understanding.",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://gut.bmj.com/content/gutjnl/69/7/1167.full.pdf",
+      "tldr": "A better understanding is made of the role of the gut microbiota and the MedDiet in disease risk factors and two studies conducted in humans have now made progress towards a better understanding.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/S0007114521003251",
+      "arxiv_id": "",
+      "title": "The role of a Mediterranean diet and physical activity in decreasing age-related inflammation through modulation of the gut microbiota composition",
+      "authors": [
+        "Jessi Clark",
+        "B. Simpson",
+        "K. Murphy"
+      ],
+      "venue": "British Journal of Nutrition",
+      "year": 2021,
+      "cited_by_count": 25,
+      "influential_cite_count": 0,
+      "reference_count": 136,
+      "tldr": "Modification of the gut microbiota through a MedDiet and PA presents as a potential method to attenuate age-related increases in inflammation, and additional studies utilising older individuals are needed to fill the knowledge gaps existing in current literature.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Modification of the gut microbiota through a MedDiet and PA presents as a potential method to attenuate age-related increases in inflammation, and additional studies utilising older individuals are needed to fill the knowledge gaps existing in current literature.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1021/acs.jafc.4c02433",
+      "title": "Salidroside Alleviates Furan-Induced Impaired Gut Barrier and Inflammation via Gut Microbiota–SCFA–TLR4 Signaling",
+      "authors": [
+        "Wang, Ziyue",
+        "Li, Lu",
+        "Li, Wenliang",
+        "Yan, Haiyang",
+        "Yuan, Yuan"
+      ],
+      "venue": "Journal of Agricultural and Food Chemistry",
+      "year": 2024,
+      "cited_by_count": 24,
+      "reference_count": 52,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/mnfr.202400677",
+      "arxiv_id": "",
+      "title": "Synergistic Interplay of Diet, Gut Microbiota, and Insulin Resistance: Unraveling the Molecular Nexus.",
+      "authors": [
+        "Rajesh Kanna Gopal",
+        "P. Ganesh",
+        "N. Pathoor"
+      ],
+      "venue": "Molecular Nutrition & Food Research",
+      "year": 2024,
+      "cited_by_count": 14,
+      "influential_cite_count": 0,
+      "reference_count": 104,
+      "tldr": "Key findings reveal that high-fat diets, especially those rich in saturated fats, contribute to dysbiosis and increased intestinal permeability, while high-fiber diets promote beneficial bacteria and SCFAs.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Key findings reveal that high-fat diets, especially those rich in saturated fats, contribute to dysbiosis and increased intestinal permeability, while high-fiber diets promote beneficial bacteria and SCFAs.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1371/journal.pone.0312606",
+      "title": "The gut microbiota-SCFA-inflammation axis in patients with AECOPD",
+      "authors": [
+        "Zhu, Hengjing",
+        "Wu, Chen",
+        "Wu, Haiyan",
+        "Liu, Juan",
+        "Ye, Wu",
+        "Zhao, Tian",
+        "Li, Zhijun"
+      ],
+      "venue": "PLOS ONE",
+      "year": null,
+      "cited_by_count": 7,
+      "reference_count": 30,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec id=\"sec001\">\n<jats:title>Objectives</jats:title>\n<jats:p>The aim of the study was to explore the alteration of microbiota and SCFA in gut and inflammation in acute exacerbation chronic obstructive pulmonary disease (AECOPD) patients, and to test the hypothesis that a disorder of gut microbiota will lead to the alteration of SCFA, which will aggravate inflammation in AECOPD patients.</jats:p>\n</jats:sec>\n<jats:sec id=\"sec002\">\n<jats:title>Methods and results</jats:title>\n<jats:p>24 pati",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/cimb47080637",
+      "arxiv_id": "",
+      "title": "Physiological Mechanisms of and Therapeutic Approaches to the Gut Microbiome and Low-Grade Inflammation in Obesity",
+      "authors": [
+        "Agnieszka Pelc",
+        "Weronika Fic",
+        "Tymoteusz Typrowicz",
+        "Ewelina Polak-Szczybyło"
+      ],
+      "venue": "Current Issues in Molecular Biology",
+      "year": 2025,
+      "cited_by_count": 7,
+      "influential_cite_count": 0,
+      "reference_count": 150,
+      "tldr": "Targeted modulation of the microbiota through diet, probiotics, or medication emerges as a promising strategy for preventing and managing obesity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Targeted modulation of the microbiota through diet, probiotics, or medication emerges as a promising strategy for preventing and managing obesity.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/s0029665120001251",
+      "title": "Influence of a 3-months low-calorie Mediterranean diet vs. Vegetarian diet on human gut microbiota and SCFA: the CARDIVEG Study",
+      "authors": [
+        "Pagliai, Giuditta",
+        "Russo, Edda",
+        "Niccolai, Elena",
+        "Dinu, Monica",
+        "Di Pilato, Vincenzo",
+        "Magrini, Alessandro",
+        "Bartolucci, Gianluca",
+        "Baldi, Simone",
+        "Menicatti, Marta",
+        "Giusti, Betti",
+        "Marcucci, Rossella",
+        "Rossolini, Gian Maria",
+        "Casini, Alessandro",
+        "Sofi, Francesco",
+        "Amedei, Amedeo"
+      ],
+      "venue": "Proceedings of the Nutrition Society",
+      "year": 2020,
+      "cited_by_count": 5,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:sec id=\"S0029665120001251_sec_a1\" sec-type=\"intro\"><jats:title>Introduction</jats:title><jats:p>There is growing interest in understanding how diet can modulate the gut microbiota (GM), including its possible association with disease states. The aim of the present study is to compare in a group of subjects in primary prevention for cardiovascular disease (CVD) the effects of Mediterranean (MD) and Vegetarian (VD) dietary patterns on the GM composition and o",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fnut.2025.1644014",
+      "arxiv_id": "",
+      "title": "Multi-omics integration reveals the impact of mediterranean diet on hepatic metabolism and gut microbiota in mice with metabolic dysfunction-associated steatotic liver disease",
+      "authors": [
+        "Zixuan Wang",
+        "Ge Chen",
+        "Xutong Sun",
+        "Jia Xiao",
+        "Lingling Kong",
+        "Shunshun Jiang",
+        "Tingting Xu",
+        "Meijiao Wang",
+        "Hong Zhao"
+      ],
+      "venue": "Frontiers in Nutrition",
+      "year": 2025,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 63,
+      "tldr": "Both dietary interventions partially ameliorated gut dysbiosis in MASLD mice, with the HF-MD group uniquely enriching beneficial taxa including Prevotella, Muribaculum, Duncaniella, and Barnesiella.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Both dietary interventions partially ameliorated gut dysbiosis in MASLD mice, with the HF-MD group uniquely enriching beneficial taxa including Prevotella, Muribaculum, Duncaniella, and Barnesiella.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.clnesp.2026.103439",
+      "title": "Mediterranean versus Western diet: Effects on gut microbiota, systemic inflammation, and clinical implications in metabolic health",
+      "authors": [
+        "Casillas-Vega, Néstor"
+      ],
+      "venue": "Clinical Nutrition ESPEN",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 34,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7554/elife.110468.1.sa0",
+      "title": "Reviewer #2 (Public review): A mediterranean-mimicking diet harnesses gut microbiota–derived 3-IAA to rejuvenate T cell",
+      "authors": [],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7554/elife.110468.1.sa1",
+      "title": "Reviewer #1 (Public review): A mediterranean-mimicking diet harnesses gut microbiota–derived 3-IAA to rejuvenate T cell",
+      "authors": [],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7554/elife.110468.1.sa2",
+      "title": "eLife Assessment: A mediterranean-mimicking diet harnesses gut microbiota–derived 3-IAA to rejuvenate T cell",
+      "authors": [
+        "Takeda, Kiyoshi"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "peer-review",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26226/morressier.5b519852b1b87b000ecee077",
+      "title": "1941 - High-glucose or -fructose diet-induced changes to the gut microbiota cause inflammation and alter lipid metabolism in mice",
+      "authors": [
+        "Park, Ho-Young"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "arXiv:2511.02766v4",
+      "arxiv_id": "2511.02766v4",
+      "title": "Microbes in the Moonlight: How the Gut Microbiota Influences Sleep",
+      "authors": [
+        "Enso Onill Torres Alegre"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.02766v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.14586/astroedu/1645",
+      "arxiv_id": "1708.07700v3",
+      "title": "Navigation in the Ancient Mediterranean and Beyond",
+      "authors": [
+        "Markus Nielbock"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.07700v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2412.19945v1",
+      "arxiv_id": "2412.19945v1",
+      "title": "Modeling and Analysis of SCFA-Driven Vagus Nerve Signaling in the Gut-Brain Axis via Molecular Communication",
+      "authors": [
+        "Beyza E. Ortlek",
+        "Ozgur B. Akan"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2412.19945v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2503.04069v1",
+      "arxiv_id": "2503.04069v1",
+      "title": "Integrating network pharmacology, metabolomics, and gut microbiota analysis to explore the effects of Jinhong tablets on chronic superficial gastritis",
+      "authors": [
+        "Lihao Xiao",
+        "Tingyu Zhang",
+        "Yun Liu",
+        "Chayanis Sutcharitchan",
+        "Qingyuan Liu",
+        "Xiaoxue Fan",
+        "Jian Feng",
+        "Huifang Gao",
+        "Tong Zhang",
+        "Shao Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.04069v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2208.13484v1",
+      "arxiv_id": "2208.13484v1",
+      "title": "Pasture Intake Protects Against Commercial Diet-induced Lipopolysaccharide Production Facilitated by Gut Microbiota through Activating Intestinal Alkaline Phosphatase Enzyme in Meat Geese",
+      "authors": [
+        "Qasim Ali",
+        "Sen Ma",
+        "Umar Farooq",
+        "Jiakuan Niu",
+        "Fen Li",
+        "Muhammad Abaidullah",
+        "Boshuai Liu",
+        "Shaokai La",
+        "Defeng Li",
+        "Zhichang Wang",
+        "Hao Sun",
+        "Yalei Cui",
+        "Yinghua Shi"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2208.13484v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2409.12209v1",
+      "arxiv_id": "2409.12209v1",
+      "title": "Multivariate Analysis of Gut Microbiota Composition and Prevalence of Gastric Cancer",
+      "authors": [
+        "Aadhith Shankarnarayanan",
+        "Dheeman Gangopadhyay",
+        "Ayman Alzaatreh"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.12209v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2302.11314v1",
+      "arxiv_id": "2302.11314v1",
+      "title": "SGMFQP:An Ontology-based Swine Gut Microbiota Federated Query Platform",
+      "authors": [
+        "Ying Wang",
+        "Qin Jiang",
+        "Yilin Geng",
+        "Yuren Hu",
+        "Yue Tang",
+        "Jixiang Li",
+        "Junmei Zhang",
+        "Wolfgang Mayer",
+        "Shanmei Liu",
+        "Hong-Yu Zhang",
+        "Xianghua Yan",
+        "Zaiwen Feng"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.11314v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2603.23985v3",
+      "arxiv_id": "2603.23985v3",
+      "title": "Diet Your LLM: Dimension-wise Global Pruning of LLMs via Merging Task-specific Importance Score",
+      "authors": [
+        "Jimyung Hong",
+        "Jaehyung Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.23985v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2005.08107v2",
+      "arxiv_id": "2005.08107v2",
+      "title": "Information content of high-order associations of the human gut microbiota network",
+      "authors": [
+        "Weston D. Viles",
+        "Juliette C. Madan",
+        "Hongzhe Li",
+        "Jason C. Moore",
+        "Margaret R. Karagas",
+        "Anne G. Hoen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.08107v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1509.02273v2",
+      "arxiv_id": "1509.02273v2",
+      "title": "Reduction of Alzheimer's disease beta-amyloid pathology in the absence of gut microbiota",
+      "authors": [
+        "T. Harach",
+        "N. Marungruang",
+        "N. Dutilleul",
+        "V. Cheatham",
+        "K. D. Mc Coy",
+        "J. J. Neher",
+        "M. Jucker",
+        "F. Fåk",
+        " T.",
+        " Lasser",
+        "T. Bolmont"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1509.02273v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1515/reveh-2026-0041",
+      "arxiv_id": "",
+      "title": "Dietary patterns, gut microbiota, and gastrointestinal disorders: mechanistic insights into irritable bowel syndrome and inflammatory bowel disease",
+      "authors": [
+        "Yasmen Khial",
+        "Shalima Lathief",
+        "Lama Aliwi",
+        "Shahd Alqashouti",
+        "H. MohamedAhmed",
+        "Fida Ali",
+        "Reema Tayyem"
+      ],
+      "venue": "Reviews on Environmental Health",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 94,
+      "tldr": "Dietary patterns substantially modulate gut microbial composition and gastrointestinal health, and the Mediterranean diet represents the most favorable pattern for both IBS and IBD.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1515/reveh-2026-0041",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Dietary patterns substantially modulate gut microbial composition and gastrointestinal health, and the Mediterranean diet represents the most favorable pattern for both IBS and IBD.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12775/qs.2026.50.67663",
+      "arxiv_id": "",
+      "title": "The Role of Gut Microbiota in the Pathogenesis and Treatment of Obesity: A Contemporary Review",
+      "authors": [
+        "Katarzyna Łysynkiewicz",
+        "I. Grzyb",
+        "J. Szewczyk",
+        "Zuzanna Wątek"
+      ],
+      "venue": "Quality in Sport",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "Evidence on the gut microbiota in obesity pathogenesis and microbiome-modulating treatments (diet, physical activity, pre-/pro-/synbiotics, postbiotics, postbiotics, selected pharmacotherapies) is summarized.",
+      "is_oa": true,
+      "oa_url": "https://apcz.umk.pl/QS/article/download/67663/45312",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Evidence on the gut microbiota in obesity pathogenesis and microbiome-modulating treatments (diet, physical activity, pre-/pro-/synbiotics, postbiotics, postbiotics, selected pharmacotherapies) is summarized.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12775/jehs.2025.80.58383",
+      "arxiv_id": "",
+      "title": "The Role of Different Diets in Shaping the Gut Microbiome",
+      "authors": [
+        "Paulina Opoka",
+        "Gracja Bojarzyńska",
+        "Weronika Pawul",
+        "Weronika Woźnica",
+        "Zuzanna Ćwiek",
+        "A. Mińkowska",
+        "Łukasz Lucima",
+        "M. Barański",
+        "K. Wydra",
+        "Monika Kondracka"
+      ],
+      "venue": "Journal of Education, Health and Sport",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 2,
+      "tldr": "Diet significantly impacts gut microbiota composition and function, affecting metabolic and immune health, underscoring the need for tailored dietary strategies to support metabolic and overall health.",
+      "is_oa": true,
+      "oa_url": "https://apcz.umk.pl/JEHS/article/download/58383/42090",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Diet significantly impacts gut microbiota composition and function, affecting metabolic and immune health, underscoring the need for tailored dietary strategies to support metabolic and overall health.",
+      "quality_flag": null
+    }
+  ]
+}

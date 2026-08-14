@@ -28,7 +28,7 @@ except Exception:
 EDGE_PROFILE_CANDIDATES = [
     Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "Edge" / "User Data",
     Path(os.environ.get("USERPROFILE", "")) / "AppData" / "Local" / "Microsoft" / "Edge" / "User Data",
-    Path("C:/Users/DengN/AppData/Local/Microsoft/Edge/User Data"),
+    Path("~/AppData/Local/Microsoft/Edge/User Data"),
 ]
 
 COOKIES_OUTPUT = Path.home() / ".paper-agent" / "cookies" / "cnki.json"

@@ -15,7 +15,7 @@ except Exception:
 from pa_cli.fetch import _http_get_bytes
 
 # The default email that paper-agent used
-for email in ["paper-agent@mavis.local", "dengn@mavis.local"]:
+for email in ["paper-agent@mavis.local", "paper-agent@mavis.local"]:
     print(f"\n--- email={email} ---")
     s, body = _http_get_bytes(
         f"https://api.unpaywall.org/v2/10.1038/nature12373?email={quote(email, safe='@')}",

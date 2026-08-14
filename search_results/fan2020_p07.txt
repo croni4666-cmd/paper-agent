@@ -1,0 +1,131 @@
+
+========== PAGE 7 ==========
+variants and a series of environmental factors, which are 
+shared with obesity53. Most individuals are either over-
+weight or obese, and the pathophysiology in the early 
+stages of these cases is characterized by insulin resist-
+ance of primarily skeletal muscles and liver and adipose 
+tissues, and a compensatory increased biosynthesis and 
+secretion of insulin. In the presence of continued insu-
+lin resistance, insulin biosynthesis declines, which is fol-
+lowed by an aggravation of hyperglycaemia54,55. Besides 
+hyperglycaemia, the T2D phenotype often exhibits 
+dyslipidaemia with elevated circulating levels of triglyc-
+erides and low-​density lipoprotein cholesterol, hyperten-
+sion and an increased tendency for platelet aggregation. 
+All of these abnormalities are risk factors for premature 
+arteriosclerosis55,56. Consequently, individuals with 
+T2D are, in addition to health behaviour modifications, 
+treated with multiple medications targeting both ele-
+vated plasma glucose and risk factors for cardiovascular 
+co-​morbidities. However, the multidrug regimens affect 
+the gut microbiota of these individuals in many differ-
+ent ways57. Therefore, recent epidemiological studies 
+attempting to elucidate links between the gut microbiota 
+and T2D have focused on the drug-​naive early stages 
+of T2D, called prediabetes. Individuals with prediabetes 
+have elevated plasma glucose values that are within the 
+non-​diabetes range but raised to a level where they are at 
+an increased risk of developing overt T2D and ischaemic 
+cardiovascular disease11. In these drug-​naive individuals 
+with prediabetes, the gut microbiota exhibits a loss 
+of butyrate-​producing taxa, a decrease in abundance of 
+Akkermansia muciniphila and an increase in abundance 
+of bacteria with pro-​inflammatory potentials11,58 (Fig. 2). 
+Gestational diabetes mellitus (GDM), which may occur 
+in the third trimester of pregnancy and is estimated to 
+affect 7–10% of all pregnancies, is another prediabetic 
+state59. In GDM, diagnostic criteria for plasma glucose 
+are set at lower thresholds than for other forms of dia-
+betes owing to the toxic effects on fetus development 
+of even slightly elevated glycaemia59. Interestingly, com-
+pared with pregnant women with normoglycaemia in 
+the same trimester, women with GDM have a disrupted 
+gut microbiota composition, and differences in the gut 
+microbiota are still detectable between the two groups 
+of women 8 months after pregnancy. Both during and 
+after pregnancy, the gut microbiota of GDM resem-
+bles the aberrant microbiota composition reported in 
+non-​pregnant individuals with T2D60, where a reduced 
+abundance of butyrate-​producing bacteria has been con-
+sistently found in addition to an often reduced bacterial 
+richness and an increase in opportunistic pathogens8,61. 
+At the functional potential level, the gut microbiome of 
+individuals with T2D is enriched in multiple pathways. 
+These include an enrichment of pathways involved in 
+sugar-​related membrane transport to increase cellular 
+glucose uptake, branched-​chain amino acid (BCAA) 
+outward transport to induce insulin resistance, methane 
+metabolism related to an anaerobic intestinal environ-
+ment, xenobiotic degradation, metabolism to promote 
+drug resistance and sulfate reduction to reduce insulin 
+sensitivity8 (Fig. 2). However, interpretation of gut micro-
+biota profiles from individuals with T2D who are being 
+treated with multiple drugs is problematic owing to 
+drug confounders. Among the drugs that are frequently 
+prescribed for T2D, the anti-​hyperglycaemic drug met-
+formin appears to change the gut microbiota most, 
+with effects on the relative abundance of multiple gen-
+era and species, such as Escherichia and Intestinibacter, 
+and enhancement of several microbiome functional 
+potentials, such as propionate and butyrate production 
+that induces intestinal gluconeogenesis62–64. In fact, the 
+gut microbiota has been suggested to mediate some of 
+the anti-​hyperglycaemic effects of metformin through 
+enhanced production of SCFAs and unconjugated bile 
+acids, which activate intestinal gluconeogenesis, and 
+an increase in intestinal gluconeogenesis resulting in 
+a lowering of glycaemia65,66. However, any effects that 
+metformin-​induced changes of gut microbiota have on 
+overall glucose regulation may be modest. Consistent 
+with this notion, it has been reported that in germ-​free 
+or antibiotic-​treated mice, the effect of metformin on 
+measures of dysmetabolism remains largely unaffected67. 
+Metformin treatment is also known to cause transient or 
+persistent intestinal discomfort in around one-​third of 
+individuals, which in part may be attributed to increased 
+gas production by some Escherichia spp. and an 
+enrichment of various virulence factors63,64,68.
+Altogether, these studies investigating the role of 
+the gut microbiota in T2D highlight several important 
+findings and shortcomings. The microbiome in indi-
+viduals with overt T2D and prediabetes appears to be 
+Fig. 1 | impact of diet on gut microbiota and host metabolism. The balance between 
+metabolically healthy microbiota and dysbiosis is crucial. Homeostasis is maintained by 
+various factors, such as host genetics, diet, daily number of defecations, physical activity, 
+smoking and drug usage. a | A metabolically healthy microbiota (mainly achieved by a 
+high-​fibre, low animal fat and low animal protein diet) is illustrated. The indigestible but 
+fermentable polysaccharides are metabolized by the microbiota of the large intestine 
+and are fermented to produce an array of compounds, and to stimulate a thick intestinal 
+mucus layer and strong barrier functions. Microbial production of short-​chain fatty acids 
+(SCFAs) provides an additional energy source for colonocytes and causes a decrease in 
+luminal pH. The SCFAs acetate, butyrate and propionate can bind to G protein-​coupled 
+receptor (GPCR)-41 and GPCR-43, which are expressed on enteroendocrine L cells, and 
+subsequently induce secretion of glucagon-​like peptide 1 (GLP-1) and peptide YY (PYY) 
+that contribute to increased energy expenditure162, reduced food intake163 and improved 
+glucose metabolism and insulin secretion164. Butyrate is an activator of the peroxisome 
+proliferator-​activated receptor-​γ (PPARγ) and a stimulator for β-​oxidation and oxygen 
+consumption in the gut, which maintains an anaerobic environment in the gut lumen114.  
+b | Microbial dysbiosis induced by a high animal fat and protein diet, sedentary life, 
+smoking, alcohol intake and relatively infrequent defecation may result in a leaky 
+mucosa, intestinal and systemic inflammation and reduced production of SCFAs, leading 
+to less gut hormones being secreted by L cells. In the fermentation process, complex 
+proteins are first cleaved by various bacterial peptidases, proteases and endopeptidases 
+to release free amino acids and short peptides that then undergo fermentation165. 
+Of note, a dysbiotic microbiota is often associated with a prolonged colonic transit time, 
+resulting in a shift in colonic metabolism leading to increased microbial proteolysis, even 
+though the preferred substrate for bacterial fermentation is fermentable dietary fibres 
+and bacteria will not switch to protein metabolism until fermentable polysaccharides are 
+depleted166.As a result of increased protein fermentation, branched-​chain fatty acids 
+(BCFAs; 2-​methyl butyrate, isobutyrate and isovalerate), trimethylamine, organic acids, 
+gases (H2S (malodorous), H2 and CO2) and trace amounts of phenols, amines, indoles and 
+ammonia are produced, causing an increase in luminal pH167. Altogether, such changes in 
+the microbial environment and metabolites cause a leakage of pathogen-​associated 
+molecular patterns (PAMPs) including lipopolysaccharides (LPS) that become increased 
+in the blood and trigger systemic low-​grade inflammation and insulin resistance147. 
+It should be noted, however, that some indole derivatives such as 3-​indolepropionic 
+acid produced by fermentation of dietary fibres have been shown to improve glucose 
+metabolism137. TMAO, trimethylamine N-​oxide.
+◀
+Nature Reviews | Microbiology
+Reviews

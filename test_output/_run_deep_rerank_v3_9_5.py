@@ -76,7 +76,7 @@ def main():
     else:
         print(f"\n[Stage 2] Skipped (no --user-pdf-dir provided)")
         print(f"  Next: user manually downloads {s1['n_manual_needed']} PDFs")
-        print(f"  Then re-run with: --user-pdf-dir C:/Users/DengN/Downloads/manual_pdfs/")
+        print(f"  Then re-run with: --user-pdf-dir ~/Downloads/manual_pdfs/")
 
 
 if __name__ == "__main__":

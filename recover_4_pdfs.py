@@ -181,7 +181,7 @@ def try_playwright_chromium(doi, name):
     except ImportError:
         print("  ✗ playwright not installed")
         return False, None
-    CHROMIUM_EXE = r"C:\Users\DengN\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
+    CHROMIUM_EXE = r"C:\Users\paper-agent-author\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
     if not Path(CHROMIUM_EXE).exists():
         print(f"  ✗ chromium binary missing: {CHROMIUM_EXE}")
         return False, None

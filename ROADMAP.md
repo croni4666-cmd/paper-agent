@@ -3356,7 +3356,7 @@ familiarity that wasn't on the original work plan.
     - 处理 redirect + JS challenge (CNKI 偶发)
     - result 解析: HTML table → `{title, authors, abstract, cnki_url, year, journal}`
   - **cookie 维护** (per user "通过其他代理" setup):
-    - `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (~50 LOC)
+    - `C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1` (~50 LOC)
     - User 在 Chrome / Edge 登录代理入口 → 跳转 CNKI 后, 该 script 用 playwright + 已登录 chrome profile, 导出 cookies 到 `~/.paper-agent/cookies/cnki.json`
     - **cookie 有效期**: 4-8 小时 (代理 session 短过期, vs CNKI 直连 7-30 天)
     - **维护频率**: 每天 user 重跑一次 export script (or 设置 Windows 任务计划自动跑)
@@ -3392,11 +3392,11 @@ familiarity that wasn't on the original work plan.
 
 #### **Modified 2026-07-15 (Plan 2 done)** — Cookies exported successfully
 
-**Source**: `C:\Users\DengN\.paper-agent\cookies\cnki.json` (4 cookies, fresh 2026-07-15 22:21 local time)
+**Source**: `C:\Users\paper-agent-author\.paper-agent\cookies\cnki.json` (4 cookies, fresh 2026-07-15 22:21 local time)
 
 **What was done**:
 - `pa_cli/cnki_channel.py` skeleton written (commit `c4b228e`)
-- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` written (commits `832c392` + `8a4f81f` + `caf87f2` + `a0ca001`)
+- `C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1` written (commits `832c392` + `8a4f81f` + `caf87f2` + `a0ca001`)
 - User successfully ran script in playwright-controlled Chromium (no Chrome dependency)
 - 4 cookies captured: PHPSESSID (proxy session, 5h TTL), user (1y), entrys (1d), expires (1d)
 - `pa cnki status` now reports `ready (cookies fresh + playwright installed)`

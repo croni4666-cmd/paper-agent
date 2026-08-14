@@ -5,7 +5,7 @@
       "doi": "10.1007/s40593-014-0023-y",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_1007_s40593-014-0023-y.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q001\\10_1007_s40593-014-0023-y.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -23,7 +23,7 @@
       "doi": "10.1016/j.compedu.2023.104967",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_1016_j_compedu_2023_104967.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q001\\10_1016_j_compedu_2023_104967.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -41,7 +41,7 @@
       "doi": "10.58631/injurity.v2i3.52",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q001\\10_58631_injurity_v2i3_52.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q001\\10_58631_injurity_v2i3_52.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 27600,
@@ -59,7 +59,7 @@
       "doi": "10.1007/978-3-030-01177-2.12",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1007_978-3-030-01177-2_12.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q003\\10_1007_978-3-030-01177-2_12.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 41971,
@@ -77,7 +77,7 @@
       "doi": "10.1109/cvpr.2009.5206529",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_1109_cvpr_2009_5206529.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q003\\10_1109_cvpr_2009_5206529.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 33874,
@@ -95,7 +95,7 @@
       "doi": "10.18653/v1.2021.naacl-main.241",
       "title": "(reconstructed from cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\auto\\q003\\10_18653_v1_2021_naacl-main_241.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\auto\\q003\\10_18653_v1_2021_naacl-main_241.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 44324,
@@ -113,7 +113,7 @@
       "doi": "10.1016/j.jebo.2020.07.014.scihub",
       "title": "(reconstructed from manual_retry cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1016_j_jebo_2020_07_014_scihub.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1016_j_jebo_2020_07_014_scihub.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -131,7 +131,7 @@
       "doi": "10.1111/j.1467-9914.2007.00378.x.scihub",
       "title": "(reconstructed from manual_retry cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1111_j_1467-9914_2007_00378_x_scihub.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\manual_retry\\q002\\10_1111_j_1467-9914_2007_00378_x_scihub.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -149,7 +149,7 @@
       "doi": "10.1109/icdar.2013.114.scihub",
       "title": "(reconstructed from manual_retry cache)",
       "source": "auto",
-      "pdf_path": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_retry\\q003\\10_1109_icdar_2013_114_scihub.pdf",
+      "pdf_path": "~/.paper-agent\\deep_rerank\\manual_retry\\q003\\10_1109_icdar_2013_114_scihub.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 24373,
@@ -167,7 +167,7 @@
       "doi": "10.1186/s41239-021-00292-9",
       "title": "The impact of artificial intelligence on learner–instructor interaction",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1186_s41239-021-00292-9.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_1186_s41239-021-00292-9.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -185,7 +185,7 @@
       "doi": "10.1001/jamanetworkopen.2021.49008",
       "title": "Effect of AI Tutoring vs Expert Instruction",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1001_jamanetworkopen_2021_49008.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_1001_jamanetworkopen_2021_49008.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -203,7 +203,7 @@
       "doi": "10.3390/su151612451",
       "title": "New Era of Artificial Intelligence in Education",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_3390_su151612451.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_3390_su151612451.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -221,7 +221,7 @@
       "doi": "10.1093/oxrep/graa051",
       "title": "Do technological advances reduce the gender wage gap",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1093_oxrep_graa051.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_1093_oxrep_graa051.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -239,7 +239,7 @@
       "doi": "10.5089/9781498303743.001",
       "title": "Is Technology Widening the Gender Gap?",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_5089_9781498303743_001.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_5089_9781498303743_001.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -257,7 +257,7 @@
       "doi": "10.1037/e686432011-001",
       "title": "Separate and Not Equal? Gender Segregation",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1037_e686432011-001.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_1037_e686432011-001.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 50000,
@@ -275,7 +275,7 @@
       "doi": "10.1145/3488560.3498443",
       "title": "Learning Discrete Representations via Constrained Clustering",
       "source": "user_manual",
-      "pdf_path": "C:\\Users\\DengN\\Downloads\\manual_pdfs\\10_1145_3488560_3498443.pdf",
+      "pdf_path": "~/Downloads\\manual_pdfs\\10_1145_3488560_3498443.pdf",
       "fulltext_extracted": true,
       "fulltext_features": {
         "fulltext_length_chars": 49111,
@@ -297,8 +297,8 @@
     "n_manual_needed": 15,
     "auto_pct": 37.5
   },
-  "manual_downloads_md": "C:\\Users\\DengN\\.paper-agent\\deep_rerank\\manual_downloads_v397_reconstructed.md",
-  "user_pdf_dir": "C:\\Users\\DengN\\Downloads\\manual_pdfs",
+  "manual_downloads_md": "~/.paper-agent\\deep_rerank\\manual_downloads_v397_reconstructed.md",
+  "user_pdf_dir": "~/Downloads\\manual_pdfs",
   "n_fulltext_extracted": 16,
   "n_total_candidates": 16
 }

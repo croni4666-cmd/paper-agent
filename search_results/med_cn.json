@@ -1,0 +1,865 @@
+{
+  "query": "地中海饮食 特征 综述 临床",
+  "year_min": 2019,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 0,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 40,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.11896/jsjkx.230900002",
+      "title": "基于深度学习的图像分割综述",
+      "authors": [],
+      "venue": "计算机科学",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65db5dea939a5f4082df3855",
+      "matched_phrase": "综述",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.eng.2022.11.004",
+      "title": "免疫球蛋白G N-糖基化与代谢特征之间的双向因果关联——一项孟德尔随机化研究（英文）",
+      "authors": [
+        "Xiaoni Meng"
+      ],
+      "venue": "ENGINEERING",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648ce9f2d68f896efa8c7751",
+      "matched_phrase": "特征",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12613-023-2802-7",
+      "title": "耐热镁合金的研究进展：综述",
+      "authors": [
+        "Hong Yang"
+      ],
+      "venue": "International Journal of Minerals, Metallurgy and Materials",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "664e015501d2a3fbfc35e711",
+      "matched_phrase": "综述",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3969/j.issn.1001-0769.2023.06.001",
+      "title": "猪场生物安全综述",
+      "authors": [],
+      "venue": "国外畜牧学(猪与禽)",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65a5057e939a5f40825a47b7",
+      "matched_phrase": "综述",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13590/j.cjfh.2022.01.028",
+      "title": "2018年全国食物中毒事件流行特征分析",
+      "authors": [],
+      "venue": "中国食品卫生杂志",
+      "year": 2022,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "604b59176f90b7f6caa19517",
+      "matched_phrase": "特征",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3779/j.issn.1009-3419.2020.102.15",
+      "arxiv_id": "",
+      "title": "肿瘤合并新型冠状病毒感染的临床特征与应对策略",
+      "authors": [
+        "Nannan Zhao",
+        "Jie Shi",
+        "Lizhong Zeng",
+        "Shuanying Yang"
+      ],
+      "venue": "Zhongguo fei ai za zhi = Chinese journal of lung cancer",
+      "year": 2020,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 16,
+      "tldr": "It’s time to dust off the gloves and get ready for 2019.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37155/2661-4766-0606-21",
+      "title": "重症医学中多器官功能障碍综合征的临床治疗策略研究",
+      "authors": [
+        "郄慧玲"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2024,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1128/spectrum.01370-25",
+      "title": "Prevalence and distribution patterns of drug resistance in <i>Mycobacterium tuberculosis</i> to first-line antituberculosis drugs in Urumqi, China",
+      "authors": [
+        "Jiandong Yang",
+        "Pengwei Lou",
+        "Weisheng Zhang",
+        "Yanggui Chen",
+        "Yaoqin Lu",
+        "Na Xue",
+        "Peisheng Wang",
+        "Kai Wang"
+      ],
+      "venue": "Microbiology Spectrum",
+      "year": 2025,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.chinacdc.cn/jkyj/crb2/yl/fjh/jswj_fjh/202410/P020241010432930570191.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3779/j.issn.1009-3419.2019.06.06",
+      "arxiv_id": "",
+      "title": "肿瘤肺泡腔内播散与肺腺癌的临床病理特征及对肺癌外科治疗和预后影响的研究进展",
+      "authors": [
+        "贵东 Guidong 屈 QU",
+        "云飞 Yunfei 施 SHI"
+      ],
+      "venue": "Zhongguo fei ai za zhi = Chinese journal of lung cancer",
+      "year": 2019,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "STAS: non-small cell lung cancer, NSCLC）关系密切, STAS: “Non- Small Cell lung cancer”.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "STAS: non-small cell lung cancer, NSCLC）关系密切, STAS: “Non- Small Cell lung cancer”.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37155/2661-4766-0503-39",
+      "title": "多囊卵巢综合征与失眠症共病患者临床特征及相关因素分析",
+      "authors": [
+        "梅慧华"
+      ],
+      "venue": "临床医学前沿",
+      "year": 2023,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3934/jimo.2025054",
+      "title": "Optimal new energy credits strategy for fuel vehicle manufacturers considering government subsidy",
+      "authors": [
+        "Niu Yu",
+        "Minghui Zhao",
+        "Haibo Zhou",
+        "Zhiqiang Jiao"
+      ],
+      "venue": "Journal of Industrial and Management Optimization",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.ipcc.ch/site/assets/uploads/sites/2/2019/10/SR15_Glossary_chinease.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.64216/3080-1508.26.03.090",
+      "title": "海底喷流矿床矿床特征与研究现状综述",
+      "authors": [],
+      "venue": "工程技术论坛",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32629/jrm.v2i5.15551",
+      "title": "中国西北地区农村食管癌临床特征分析",
+      "authors": [
+        "欧阳, 慧玲",
+        "亢, 晶",
+        "王, 凯"
+      ],
+      "venue": "乡村医学",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.62989/jgpr2024.1.3.4",
+      "title": "内科临床中消化性溃疡患者饮食调理与症状缓解研究",
+      "authors": [
+        "",
+        "郝俊梅, 郝俊梅"
+      ],
+      "venue": "Academic Frontiers Publishing Group",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p/>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.69979/3029-2808.25.12.046",
+      "title": "心脏病的临床特征与综合防治研究",
+      "authors": [],
+      "venue": "医学研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/ns.2024.1311222",
+      "title": "Dietary Nursing Application of Mediterranean Diet to Common Chronic Diseases",
+      "authors": [
+        "李, 烨"
+      ],
+      "venue": "Nursing Science",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.64658/gscr.20251113.fb34e",
+      "title": "关于1例肾病综合征合并支气管肺炎患儿的临床分析",
+      "authors": [
+        "曹, 丹丹"
+      ],
+      "venue": "中西医转化医学临床病案成果数据库",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.31219/osf.io/89b64",
+      "title": "诺丽果汁临床试验综述",
+      "authors": [
+        "West, Brett",
+        "Deng, Shixin"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<p>诺丽果汁是一种起源于热带地区全球流行的健康饮料。传统的大溪地医师认为，诺丽果对许多疾病都有益处，全世界的诺丽果汁消费者也有同样的看法。然而，人体临床试验对于了解诺丽果汁的真正健康益处是必要的。对已发表的临床研究的回顾表明，诺丽果汁可以防止吸烟引起的 DNA 损伤，血脂和同型半胱氨酸升高以及全身炎症。临床研究还表明，诺丽果汁可以改善关节健康，增强身体耐力，增强免疫活性，抑制蛋白质糖化，帮助体重管理，帮助维持女性骨骼健康，帮助维持正常血压和改善牙龈健康。另外，这些研究表明诺丽果汁具有显着的抗氧化活性，其活性比其他用作安慰剂的果汁更显著。这种抗氧化作用，以及它与免疫系统和炎症病变的相互作用，可能解释了许多之前所观察到的诺丽果汁对健康的益处。然而，现有证据对研究诺丽果汁产品方面确实存在一些局限性，因为迄今为止所有经过同行评审的临床研究仅涉及法属波利尼西亚大溪地诺丽果汁的单一来源。众所周知，地理因素和加工方法的变化会产生具有不同植物化学成分和营养成分的商业诺丽果汁产品。因此，其他来源的诺丽产品可能具有不同的毒理学和药理学特征。</p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/jcpm.2026.51040",
+      "title": "A Review on the Pathogenesis, Clinical Features, and Therapeutic Advances of Keloids",
+      "authors": [
+        "包, 金丹"
+      ],
+      "venue": "Journal of Clinical Personalized Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 43,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32629/bmtr.v8i3.20424",
+      "title": "1例阿尔茨海默病合并多种疾病患者的药学监护",
+      "authors": [
+        "鹃 张",
+        "乾 张",
+        "成芬 姚",
+        "赣花 游",
+        "恋 何"
+      ],
+      "venue": "基础医学理论研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://cn.front-sci.com/index.php/bmtr/article/view/20424/19433",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.62836/medicine.v3i3.1235",
+      "title": "基于“清胆化痰”法温胆汤治疗肥胖伴焦虑的临床研究",
+      "authors": [
+        "王亦釤",
+        "王晨惜",
+        "孙文静",
+        "朱雨森",
+        "王嘉璐",
+        "杨阳"
+      ],
+      "venue": "环球医学研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://cn.sgsci.org/medicine/article/download/1235/1095",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/tcm.2026.157360",
+      "title": "Theoretical Basis and Measures of TCM Characteristic Nursing in Elderly Care Application",
+      "authors": [
+        "柯丹 王"
+      ],
+      "venue": "Traditional Chinese Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pdf.hanspub.org/tcm_2273789.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2026.1672753",
+      "title": "Clinical Implications and Interaction between Sleep Disorders and Unhealthy Dietary Behaviors",
+      "authors": [
+        "茗茹 张"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://pdf.hanspub.org/acm_8109700.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/acm.2026.1672671",
+      "title": "Advances in Endoscopic Diagnosis and Treatment of Esophageal Foreign Bodies",
+      "authors": [
+        "舒 涂"
+      ],
+      "venue": "Advances in Clinical Medicine",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://pdf.hanspub.org/acm_8109575.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.70693/rwsk.v2i6.525",
+      "title": "中医药文化视域下叙事医学本土化建构研究",
+      "authors": [
+        "周贵阳",
+        "叶璐",
+        "陈德超",
+        "Yingan Huang",
+        "石玉丰",
+        "贺利敏",
+        "伍广山",
+        "潘韫琳",
+        "吴丽莎"
+      ],
+      "venue": "人文与社会科学学刊",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.wisvora.org/index.php/rwsk/article/download/525/526",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/hjfns.2026.154058",
+      "title": "Review on Functional Property Enhancement, System Stability Regulation and Industrial Application of Plant-Based Cereal Beverages",
+      "authors": [
+        "新可 张"
+      ],
+      "venue": "Hans Journal of Food and Nutrition Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://pdf.hanspub.org/hjfns_1740816.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12677/br.2026.154028",
+      "title": "&lt;i&gt;Cyperus esculentus&lt;/i&gt; L.: From a Traditional Crop to Multidimensional High-Value Utilisation",
+      "authors": [
+        "珈源 许"
+      ],
+      "venue": "Botanical Research",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://pdf.hanspub.org/br_2361014.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.61654/zzjkwz0305",
+      "arxiv_id": "",
+      "title": "三阴性乳腺癌免疫微环境特征及靶向治疗前景综述",
+      "authors": [
+        "措吉卓玛 陈",
+        "瑞永 李",
+        "星国 崔"
+      ],
+      "venue": "健康文摘",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 1,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32629/bmtr.v8i1.18596",
+      "arxiv_id": "",
+      "title": "紧张型头痛与焦虑抑郁的关联机制及临床管理进展综述",
+      "authors": [
+        "洪颜 李",
+        "松源 杨",
+        "月 侯",
+        "珍 米"
+      ],
+      "venue": "基础医学理论研究",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.32629/bmtr.v8i1.18596",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.63887/cn.2025.1.7.32",
+      "arxiv_id": "",
+      "title": "多模态仿真孪生与3D打印协同：从数字建模到临床定制化诊疗的技术进展与展望",
+      "authors": [
+        "童知誉",
+        "彭新宇",
+        "肖翔",
+        "易慧慧",
+        "张杰"
+      ],
+      "venue": "临床与护理",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.sci-open.net/index.php/CN/article/download/5446/6993",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3779/j.issn.1009-3419.2020.102.48",
+      "arxiv_id": "",
+      "title": "EGFR敏感突变阴性非小细胞肺癌脑转移患者临床特征",
+      "authors": [
+        "Yixiang Zhu",
+        "Ye Zhang"
+      ],
+      "venue": "Zhongguo fei ai za zhi = Chinese journal of lung cancer",
+      "year": 2021,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "It is shown that non-small cell lung cancer patients with a prophylactic oncogene 1-receptor tyrosine kinase, ROS1, are at an increased risk of disease progression.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is shown that non-small cell lung cancer patients with a prophylactic oncogene 1-receptor tyrosine kinase, ROS1, are at an increased risk of disease progression.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3760/cma.j.cn121090-20230718-00012",
+      "arxiv_id": "",
+      "title": "慢性淋巴细胞白血病中B细胞受体同型模式的生物学特征和临床意义",
+      "authors": [
+        "彤璐 Tonglu 邱 Qiu",
+        "建勇 Jianyong 李 Li",
+        "奕. Y. 夏 Xia"
+      ],
+      "venue": "Zhonghua xue ye xue za zhi = Zhonghua xueyexue zazhi",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "The definition, distribution, biological characteristics, and clinical significance of clonality patterns of the BCR in CLL are summarized.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The definition, distribution, biological characteristics, and clinical significance of clonality patterns of the BCR in CLL are summarized.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.61369/mrp.11885",
+      "arxiv_id": "",
+      "title": "原发性脑干出血的影像学特征、临床表现和预后",
+      "authors": [
+        "毅凌 马",
+        "建军 郑"
+      ],
+      "venue": "Medical Research and Practice",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.70693/cjst.v2i4.2054",
+      "arxiv_id": "",
+      "title": "近二十年学习障碍学生认知及行为特征研究述评",
+      "authors": [
+        "杜明卓",
+        "王家澍",
+        "石焕霞"
+      ],
+      "venue": "中国科学与技术学报",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://ac.wisvora.com/index.php/cjst/article/download/2054/1929",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3760/cma.j.cn121090-20240811-00300",
+      "arxiv_id": "",
+      "title": "经典型骨髓增殖性肿瘤伴高血压的临床研究进展",
+      "authors": [
+        "文. W. 张 Zhang",
+        "古生 Gusheng 唐 Tang"
+      ],
+      "venue": "Chinese Journal of Hematology",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 37,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.12102/j.issn.1009-6493.2025.06.027",
+      "title": "地中海饮食对肾移植病人健康促进的研究进展",
+      "authors": [],
+      "venue": "护理研究",
+      "year": 2025,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67e23e41163c01c85096695e",
+      "matched_phrase": "地中海饮食",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3969/j.issn.1672-6731.2024.02.008",
+      "title": "地中海饮食对老年脑心共病的影响",
+      "authors": [
+        "XIAO Pei-fang"
+      ],
+      "venue": "Chinese Journal of Contemporary Neurology and Neurosurgery",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e7ea2b13fb2c6cf608f3ca",
+      "matched_phrase": "地中海饮食",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3779/j.issn.1009-3419.2024.106.09",
+      "title": "地中海饮食对肺癌相关性影响的研究进展",
+      "authors": [
+        "Minglang Gao"
+      ],
+      "venue": "Zhongguo fei ai za zhi = Chinese journal of lung cancer",
+      "year": 2024,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "664c546801d2a3fbfc350d60",
+      "matched_phrase": "地中海饮食",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3760/cma.j.cn211501-20220228-00570",
+      "title": "地中海饮食对2型糖尿病患者心血管危险因素影响的Meta分析",
+      "authors": [],
+      "venue": "Chinese Journal of Practical Nursing",
+      "year": 2022,
+      "cited_by_count": 0,
+      "cited_bucket": "0",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63416a9090e50fcafde03381",
+      "matched_phrase": "地中海饮食",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "生酮饮食、地中海饮食、抗炎饮食、平衡膳食:哪种模式适合您",
+      "authors": [],
+      "venue": "Family Medicine",
+      "year": 2022,
+      "cited_by_count": 0,
+      "cited_bucket": "",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6357c71b90e50fcafd611210",
+      "matched_phrase": "地中海饮食",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

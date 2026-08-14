@@ -429,7 +429,7 @@ HTTP GET).
   $env:HTTPS_PROXY = 'http://127.0.0.1:10808'
   ```
   or `--proxy http://127.0.0.1:10808`. Same hint on `handoff` path.
-- `C:\Users\DengN\.minimax\skills\paper-agent\SKILL.md` (Mavis-side
+- `C:\Users\paper-agent-author\.minimax\skills\paper-agent\SKILL.md` (Mavis-side
   skill) updated to 10808 in 2 places. Future Mavis sessions will see
   the new port without having to re-discover it.
 
@@ -465,7 +465,7 @@ HTTP GET).
 **Files**:
 - `pa_cli/cli.py`: help text update + friendly error path (~25 LOC)
 - `pa_cli/fetch.py`: `_get_proxy_dict()` docstring update (~15 LOC)
-- `C:\Users\DengN\.minimax\skills\paper-agent\SKILL.md`: 2 references
+- `C:\Users\paper-agent-author\.minimax\skills\paper-agent\SKILL.md`: 2 references
   to 10808 in proxy section + usage example
 - `test_output/_diag_8channel.py` (new): diagnostic script — direct
   probe of all sci-hub mirrors + annas + reference sites, with
@@ -1050,7 +1050,7 @@ macro F1 to the target 0.70-0.75.
 
 **Next steps for 12 samples to be useful** (per moe-keyword-samples.md §6):
 1. Add 18+ more keyword samples (4-dim labels: topic/method/data/industry)
-2. Add at least 1 aminer sample (e.g. 海宁经编/算力券 query)
+2. Add at least 1 aminer sample (e.g. local industry + policy query)
 3. Run `python test_output/_merge_moe_samples.py` to merge
 4. Re-run MoE router; expect macro F1 0.70+ when conditions met
 
@@ -3434,7 +3434,7 @@ that v3.9.5.3 left open with hardcoded `query=""`.
   v3.9.5.3 external-script range 8.65–20.30)
 
 ### Bug fix 2: user-PDF filename convention
-- **Symptom**: 6 user-downloaded PDFs in `C:/Users/DengN/Downloads/manual_pdfs/` were
+- **Symptom**: 6 user-downloaded PDFs in `~/Downloads/manual_pdfs/` were
   named `q001_10.1001_jamanetworkopen.2021.49008.pdf` etc. (prefix + doi with `/` → `.`)
   - `stage2_fulltext_rerank` looks up `user_pdfs[doi_slug]` where
     `doi_slug = doi.replace("/", "_").replace(".", "_")`
@@ -3627,10 +3627,10 @@ Per user request "做一个简单的任务todo 能够在microsoft todo 里提醒
 我等下下午做", created a reusable PowerShell script that adds an Outlook task
 (syncs to Microsoft To Do via Microsoft 365 unified task list).
 
-**Script location**: `C:\Users\DengN\.mavis\bin\Add-PaperAgentTask.ps1` (UTF-8 BOM)
+**Script location**: `C:\Users\paper-agent-author\.mavis\bin\Add-PaperAgentTask.ps1` (UTF-8 BOM)
 **Current invocation**:
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\DengN\.mavis\bin\Add-PaperAgentTask.ps1" `
+powershell -ExecutionPolicy Bypass -File "C:\Users\paper-agent-author\.mavis\bin\Add-PaperAgentTask.ps1" `
     -DueDate "2026-07-14 18:00" `
     -ReminderMinutesBefore 240
 ```
@@ -3646,7 +3646,7 @@ powershell -ExecutionPolicy Bypass -File "C:\Users\DengN\.mavis\bin\Add-PaperAge
 - Outlook Tasks → To Do sync (Microsoft 365 unified task list, since 2020)
 
 **Files**:
-- `C:\Users\DengN\.mavis\bin\Add-PaperAgentTask.ps1` (not git-tracked; personal tool)
+- `C:\Users\paper-agent-author\.mavis\bin\Add-PaperAgentTask.ps1` (not git-tracked; personal tool)
 - Already invoked once; task visible in Outlook Tasks / Microsoft To Do
 
 ### v3.9.7.1 still BLOCKED on
@@ -3893,9 +3893,9 @@ Per user question "除了playwright 之外，其他是否需要 clash 端口？"
 
 ### Re-run after manual download
 ```bash
-# User downloads 7 PDFs to C:/Users/DengN/Downloads/manual_pdfs/
+# User downloads 7 PDFs to ~/Downloads/manual_pdfs/
 # Then:
-python -m pa_cli deep-rerank --user-pdf-dir C:/Users/DengN/Downloads/manual_pdfs/
+python -m pa_cli deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/
 ```
 
 ---
@@ -4000,7 +4000,7 @@ Per user feedback "playwright 为何失败？ 你应该没用 clash 端口吧" �
 
 ### Re-run after manual download
 ```bash
-python -m pa_cli deep-rerank --user-pdf-dir C:/Users/DengN/Downloads/manual_pdfs/
+python -m pa_cli deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/
 ```
 
 ---
@@ -4034,7 +4034,7 @@ Per user request "你先尝试下载pdf" — attempted to auto-download the 10 p
 **Files added** (3):
 - `test_output/_retry_manual_downloads.py` — 6-channel cascade retry via pa fetch
 - `test_output/_retry_downloads_curl.ps1` — curl + 6 mirror sources retry
-- `C:\Users\DengN\.paper-agent\deep_rerank\manual_downloads_UPDATED_20260713_1730.md` — updated manual list with failure modes
+- `C:\Users\paper-agent-author\.paper-agent\deep_rerank\manual_downloads_UPDATED_20260713_1730.md` — updated manual list with failure modes
 
 **User manual intervention is the only path forward**. Recommended:
 1. University library access (fastest)
@@ -4160,7 +4160,7 @@ User inspiration (verbatim 2026-07-13):
 | Manual needed | 10 / 15 | 66.7% |
 | **Total candidates** | **15** | **100%** |
 
-**Manual download list**: `C:\Users\DengN\.paper-agent\deep_rerank\manual_downloads_20260713_170509.md`
+**Manual download list**: `C:\Users\paper-agent-author\.paper-agent\deep_rerank\manual_downloads_20260713_170509.md`
 - 10 papers need user intervention (publisher paywalls, Cloudflare, etc.)
 - 5 auto-downloaded (all via openalex channel)
 
@@ -5386,7 +5386,7 @@ Recorded for the discipline log:
 | Check | Result |
 |---|---|
 | `pa mcp install` exit code | 0 |
-| `paper-search-mcp` install path | `C:\Users\DengN\AppData\Roaming\Python\Python312\site-packages\paper_search_mcp\` |
+| `paper-search-mcp` install path | `C:\Users\paper-agent-author\AppData\Roaming\Python\Python312\site-packages\paper_search_mcp\` |
 | `import paper_search_mcp` | OK |
 | `import paper_search_mcp.server` | OK |
 | `python -m paper_search_mcp.server` boot | OK (waits on stdio as expected) |

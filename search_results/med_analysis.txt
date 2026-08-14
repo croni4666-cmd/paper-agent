@@ -1,0 +1,205 @@
+﻿[load] 253 raw
+[dedup] 202 unique
+
+=== TOP 25 overall ===
+
+ 1. [240|c=  36|?] Experimental Outcomes of the Mediterranean Diet: Lessons Learned from the Predimed Randomized Contro
+     Kargin, Dicle, Tomaino, Laura, Serra-Majem, Lluís | Nutrients
+     DOI: 10.3390/nu11122991
+
+ 2. [230|c=   0|2026] The Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) diet and the risk of cancer, 
+     Hamid Ahmadirad, Y. Pasdar, Jalal Moludi et al. | Nutrition and Metabolism
+     DOI: 10.1186/s12986-026-01135-y
+
+ 3. [215|c= 115|?] The antioxidant potential of the Mediterranean diet in patients at high cardiovascular risk: an in-d
+     Billingsley, Hayley E, Carbone, Salvatore | Nutrition &amp; Diabetes
+     DOI: 10.1038/s41387-018-0025-1
+
+ 4. [190|c=  46|2023] Primary prevention of cardiovascular disease in women with a Mediterranean diet: systematic review a
+     A. Pant, S. Gribbin, D. Mcintyre et al. | Heart
+     DOI: 10.1136/heartjnl-2022-321930
+
+ 5. [190|c=  14|2025] Adherence to the Mediterranean Diet and the Risk of Head and Neck Cancer: A Systematic Review and Me
+     Nader G Zalaquett, Irene Lidoriki, M. Lampou et al. | Nutrients
+     DOI: 10.3390/nu17020287
+
+ 6. [175|c= 181|2019] Adherence to the Mediterranean Diet in Relation to All-Cause Mortality: A Systematic Review and Dose
+     Soltani, Sepideh, Jayedi, Ahmad, Shab-Bidar, Sakineh et al. | Advances in Nutrition
+     DOI: 10.1093/advances/nmz041
+
+ 7. [165|c= 453|2018] Effect of a Lifestyle Intervention Program With Energy-Restricted Mediterranean Diet and Exercise on
+     Jordi Salas‐Salvadó, Andrés Díaz‐López, Miguel Ruiz‐Canela et al. | Diabetes Care
+     DOI: 10.2337/dc18-0836
+
+ 8. [160|c=   0|2026] Adherence to the Mediterranean diet and all-cause mortality: A systematic review and meta-analysis w
+     D. Nucci, Francesco Saverio Ragusa, E. Mazza et al. | Nutrition (Burbank, Los Angeles County, Calif.)
+     DOI: 10.1016/j.nut.2026.113189
+
+ 9. [155|c=   8|?] Mediterranean Diet in Older Adults: Cardiovascular Outcomes and Mortality from Observational and Int
+     Furbatto, Michela, Lelli, Diana, Incalzi, Raffaele Antonelli et al. | ?
+     DOI: 10.37766/inplasy2024.10.0072
+
+10. [155|c=   0|2018] Faculty Opinions recommendation of Mediterranean diet and telomere length in high cardiovascular ris
+     Savage, Sharon | Faculty Opinions – Post-Publication Peer Review of
+     DOI: 10.3410/f.726290595.793545198
+
+11. [150|c=  66|2024] The Mediterranean Diet, Its Microbiome Connections, and Cardiovascular Health: A Narrative Review
+     Vincenzo Abrignani, Andrea Salvo, Gaetano Pacinella et al. | International Journal of Molecular Sciences
+     DOI: 10.3390/ijms25094942
+
+12. [140|c=  39|2019] Adherence to a priori dietary indexes and baseline prevalence of cardiovascular risk factors in the 
+     I. Alvarez-Alvarez, E. Toledo, O. Lecea et al. | European Journal of Nutrition
+     DOI: 10.1007/s00394-019-01982-x
+
+13. [140|c=  15|?] Adherence to the Mediterranean Diet and Risk of Gastric Cancer: A Systematic Review and Meta-Analysi
+     Bai, Xiao, Li, Xue, Ding, Siqi et al. | Nutrients
+     DOI: 10.3390/nu15173826
+
+14. [140|c=   1|2025] A Narrative Review of the Mediterranean Lifestyle and Its Role in Obesity Prevention and Management
+     Sotiria Laoutari, Efstratios Christodoulou, A. Koutelidakis | Obesities
+     DOI: 10.3390/obesities5020043
+
+15. [135|c=  53|2019] Effect of a high-fat Mediterranean diet on bodyweight and waist circumference: a prespecified second
+     R. Estruch, M. Martínez-González, D. Corella et al. | The Lancet Diabetes and Endocrinology
+     DOI: 10.1016/S2213-8587(19)30074-9
+
+16. [135|c=   7|2025] High and Low Adherence to Mediterranean and DASH Diet Patterns and the Risk of Heart Failure: A Meta
+     M. Arayıcı, Mustafa Eray Kılıç, M. B. Yılmaz | Life
+     DOI: 10.3390/life15010063
+
+17. [130|c=   9|2025] Adherence to Mediterranean Diet and Risk of Type 2 Diabetes: An Updated Systematic Review and Dose–R
+     S. Wallerer, J. Stadelmaier, Eike Floegel et al. | Advances in Nutrition
+     DOI: 10.1016/j.advnut.2025.100562
+
+18. [125|c= 398|2019] Mediterranean-style diet for the primary and secondary prevention of cardiovascular disease
+     Karen Rees, Andrea Takeda, Nicole Martin et al. | Cochrane Database of Systematic Reviews
+     DOI: 10.1002/14651858.cd009825.pub3
+
+19. [125|c= 331|2018] Cohort Profile: Design and methods of the PREDIMED-Plus randomized trial
+     Miguel Ángel Martínez‐González, Pilar Buil‐Cosiales, Dolores Corella et al. | International Journal of Epidemiology
+     DOI: 10.1093/ije/dyy225
+
+20. [125|c=  48|2020] Diet quality and nutrient density in subjects with metabolic syndrome: Influence of socioeconomic st
+     N. Cano-Ibáñez, N. Cano-Ibáñez, A. Gea et al. | Clinical Nutrition
+     DOI: 10.1016/J.CLNU.2019.04.032
+
+21. [125|c=   6|2019] Retraction and republication—Effect of a high-fat Mediterranean diet on bodyweight and waist circumf
+     The Editors of The Lancet Diabetes & Endocrinology | The Lancet Diabetes &amp; Endocrinology
+     DOI: 10.1016/s2213-8587(19)30073-7
+
+22. [125|c=   3|2018] Expression of concern—Effect of a high-fat Mediterranean diet on bodyweight and waist circumference:
+     The Editors of The Lancet Diabetes & Endocrinology | The Lancet Diabetes &amp; Endocrinology
+     DOI: 10.1016/s2213-8587(18)30236-5
+
+23. [125|c=   1|2018] Mediterranean diets and metabolic syndrome status in the PREDIMED randomized trial
+     ? | Canadian Medical Association Journal
+     DOI: 10.1503/cmaj.180791
+
+24. [125|c=   0|2019] Correction to: Plasma Ceramides, Mediterranean Diet, and Incident Cardiovascular Disease in the PRED
+     ? | Circulation
+     DOI: 10.1161/cir.0000000000000715
+
+25. [120|c= 202|2018] Mediterranean diet and its components in relation to all-cause mortality: meta-analysis
+     Dimitra Eleftheriou, Vassiliki Benetou, Antonia Trichopoulou et al. | British Journal Of Nutrition
+     DOI: 10.1017/s0007114518002593
+
+
+=== PREDIMED 专属论文 (n=18) ===
+
+1. [c=36|?] Experimental Outcomes of the Mediterranean Diet: Lessons Learned from the Predimed Randomized Controlled Trial
+   DOI: 10.3390/nu11122991
+
+2. [c=115|?] The antioxidant potential of the Mediterranean diet in patients at high cardiovascular risk: an in-depth revie
+   DOI: 10.1038/s41387-018-0025-1
+
+3. [c=453|2018] Effect of a Lifestyle Intervention Program With Energy-Restricted Mediterranean Diet and Exercise on Weight Lo
+   DOI: 10.2337/dc18-0836
+
+4. [c=0|2018] Faculty Opinions recommendation of Mediterranean diet and telomere length in high cardiovascular risk subjects
+   DOI: 10.3410/f.726290595.793545198
+
+5. [c=39|2019] Adherence to a priori dietary indexes and baseline prevalence of cardiovascular risk factors in the PREDIMED-P
+   DOI: 10.1007/s00394-019-01982-x
+
+6. [c=53|2019] Effect of a high-fat Mediterranean diet on bodyweight and waist circumference: a prespecified secondary outcom
+   DOI: 10.1016/S2213-8587(19)30074-9
+
+7. [c=331|2018] Cohort Profile: Design and methods of the PREDIMED-Plus randomized trial
+   DOI: 10.1093/ije/dyy225
+
+8. [c=48|2020] Diet quality and nutrient density in subjects with metabolic syndrome: Influence of socioeconomic status and l
+   DOI: 10.1016/J.CLNU.2019.04.032
+
+9. [c=6|2019] Retraction and republication—Effect of a high-fat Mediterranean diet on bodyweight and waist circumference: a 
+   DOI: 10.1016/s2213-8587(19)30073-7
+
+10. [c=3|2018] Expression of concern—Effect of a high-fat Mediterranean diet on bodyweight and waist circumference: a prespec
+   DOI: 10.1016/s2213-8587(18)30236-5
+
+
+=== 主题分布 ===
+  COMPONENTS/PATTERN: 62 papers
+  MORTALITY/CV: 46 papers
+  REVIEW/SR: 42 papers
+  MICROBIOTA: 41 papers
+  PREDIMED/RCT: 18 papers
+  INFLAMMATION: 13 papers
+  COGNITION: 10 papers
+
+=== TOP 3 in COMPONENTS/PATTERN ===
+  1. [c=36|?] Experimental Outcomes of the Mediterranean Diet: Lessons Learned from the Predimed Randomi
+     DOI: 10.3390/nu11122991
+  2. [c=0|2026] The Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) diet and the risk o
+     DOI: 10.1186/s12986-026-01135-y
+  3. [c=14|2025] Adherence to the Mediterranean Diet and the Risk of Head and Neck Cancer: A Systematic Rev
+     DOI: 10.3390/nu17020287
+
+=== TOP 3 in MORTALITY/CV ===
+  1. [c=36|?] Experimental Outcomes of the Mediterranean Diet: Lessons Learned from the Predimed Randomi
+     DOI: 10.3390/nu11122991
+  2. [c=0|2026] The Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) diet and the risk o
+     DOI: 10.1186/s12986-026-01135-y
+  3. [c=115|?] The antioxidant potential of the Mediterranean diet in patients at high cardiovascular ris
+     DOI: 10.1038/s41387-018-0025-1
+
+=== TOP 3 in REVIEW/SR ===
+  1. [c=0|2026] The Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) diet and the risk o
+     DOI: 10.1186/s12986-026-01135-y
+  2. [c=115|?] The antioxidant potential of the Mediterranean diet in patients at high cardiovascular ris
+     DOI: 10.1038/s41387-018-0025-1
+  3. [c=46|2023] Primary prevention of cardiovascular disease in women with a Mediterranean diet: systemati
+     DOI: 10.1136/heartjnl-2022-321930
+
+=== TOP 3 in MICROBIOTA ===
+  1. [c=66|2024] The Mediterranean Diet, Its Microbiome Connections, and Cardiovascular Health: A Narrative
+     DOI: 10.3390/ijms25094942
+  2. [c=30|2023] Gut Microbiota in Nonalcoholic Fatty Liver Disease: a PREDIMED-Plus Trial Sub Analysis.
+     DOI: 10.1080/19490976.2023.2223339
+  3. [c=82|2024] A Comprehensive Review of the Triangular Relationship among Diet–Gut Microbiota–Inflammati
+     DOI: 10.3390/ijms25179366
+
+=== TOP 3 in PREDIMED/RCT ===
+  1. [c=36|?] Experimental Outcomes of the Mediterranean Diet: Lessons Learned from the Predimed Randomi
+     DOI: 10.3390/nu11122991
+  2. [c=115|?] The antioxidant potential of the Mediterranean diet in patients at high cardiovascular ris
+     DOI: 10.1038/s41387-018-0025-1
+  3. [c=453|2018] Effect of a Lifestyle Intervention Program With Energy-Restricted Mediterranean Diet and E
+     DOI: 10.2337/dc18-0836
+
+=== TOP 3 in INFLAMMATION ===
+  1. [c=1|2025] A Narrative Review of the Mediterranean Lifestyle and Its Role in Obesity Prevention and M
+     DOI: 10.3390/obesities5020043
+  2. [c=82|2024] A Comprehensive Review of the Triangular Relationship among Diet–Gut Microbiota–Inflammati
+     DOI: 10.3390/ijms25179366
+  3. [c=0|2026] Dietary patterns, gut microbiota, and gastrointestinal disorders: mechanistic insights int
+     DOI: 10.1515/reveh-2026-0041
+
+=== TOP 3 in COGNITION ===
+  1. [c=576|2019] The Mediterranean, Dietary Approaches to Stop Hypertension (DASH), and Mediterranean-DASH 
+     DOI: 10.1093/advances/nmz054
+  2. [c=0|2018] Molecular and Intracellular Signaling Mechanisms of Herbs, Spices, and Food Components in 
+     DOI: 10.1016/b978-0-12-811959-4.00003-1
+  3. [c=0|2021] EGFR敏感突变阴性非小细胞肺癌脑转移患者临床特征
+     DOI: 10.3779/j.issn.1009-3419.2020.102.48
+
+[save] top 50 -> med_consolidated.json, PREDIMED 18 -> med_predimed.json

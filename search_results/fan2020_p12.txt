@@ -1,0 +1,141 @@
+
+========== PAGE 12 ==========
+In two independent studies, structural variations in 
+the Anaerostipes hadrus genome that encode metabolic 
+modules for inositol catabolism and for metaboliz-
+ing 3-​hydroxybutanoyl-​CoA to butyrate show inverse 
+relationships with body weight, waist circumference 
+and body mass index, potentially pointing to mecha-
+nistic links between these metabolic pathways and host 
+metabolic health17.
+A mouse study demonstrated that acetate, butyrate 
+and propionate may have anabolic effects on host 
+metabolism115, whereas another study demonstrated 
+that long-​term administration of an inulin-​propionate 
+ester significantly reduced weight gain, intra-​abdominal 
+adipose tissue distribution, intra-​hepatocellular lipid 
+content and insulin resistance in overweight adults116. 
+Nevertheless, other investigators have reported conflict-
+ing findings for effects of propionate on host metabo-
+lism. A host genetics-​driven increase in gut microbial 
+production of butyrate improved the insulin response 
+after an oral glucose tolerance test, whereas propionate 
+causally increased the risk of T2D117. In line with the 
+latter finding, another study in mice suggested that pro-
+pionate impairs insulin signalling through stimulation 
+of the production of glucagon and fatty acid-​binding 
+protein 4 (FABP4)118. Intake of a propionate-​containing 
+meal in humans resulted in a postprandial increase in 
+plasma concentrations of glucagon, FABP4 and norep-
+inephrine, leading to insulin resistance and compensa-
+tory hyperinsulinemia118. Finally, findings in a human pilot 
+study suggested that glucose metabolism is more respon-
+sive to oral butyrate supplementation in lean individu-
+als than in people with the metabolic syndrome, which 
+argues against oral butyrate supplementation as a poten-
+tial therapeutic remedy to improve glucose regulation 
+in individuals with dysmetabolism119. These conflicting 
+experimental results call for human studies in which the 
+physiological effects of each SCFA are tested separately 
+as well as in combinations, relative to their proportional 
+concentrations in circulation, in order to properly and 
+systematically investigate their net effects on glucose 
+homeostasis, insulin secretion and insulin sensitivity.
+Unlike butyrate and propionate, acetate may pre-
+dominantly have obesogenic properties because it acts 
+as a substrate for hepatic and adipocyte lipogenesis120. 
+In mice, increased acetate production induced by an 
+altered gut microbiota promotes hyperphagia through 
+increased ghrelin secretion and enhances fat storage by 
+increasing glucose-​stimulated insulin secretion121. In 
+humans, plasma concentrations of the intestinal hor-
+mones, peptide YY (PYY) and glucagon-​like peptide 
+1 (GLP-1) are reported to increase following rectal or 
+intravenous administration of acetate122.
+Host energy homeostasis and body adiposity are 
+also influenced by bile acids, and the gut microbiota 
+converts primary bile acids to various secondary bile 
+acids123. Both categories of bile acid exert their meta-
+bolic functions by binding to cellular receptors in various 
+organs of the body, including nuclear farnesoid X recep-
+tor (FXR) and TGR5, a G protein-​coupled receptor124. 
+Signalling via these receptors is implicated in glucose 
+metabolism, yet in opposite directions; FXR impairs125 
+whereas TGR5 promotes126 carbohydrate metabolism. 
+One of the primary bile acids, chenodeoxycholic acid, is 
+a highly efficacious FXR ligand127, whereas the second-
+ary bile acids lithocholic acid (LCA) and taurolithocholic 
+acid, which in rodents are transformed from primary 
+bile acids by intestinal bacteria123, are the two most 
+potent endogenous TGR5 ligands128. TGR5 signalling 
+in enteroendocrine L cells induces secretion of GLP-1, 
+thereby improving liver function and enhancing glucose 
+tolerance in obese mice126. LCA, a high-​affinity TGR5 
+agonist, stimulates thermogenesis through browning of 
+both white and brown adipose tissues129, whereas deoxy­
+cholic acid (DCA) and LCA have been suggested as 
+partial antagonists of FXR130. Recently, a subgroup of sec-
+ondary bile acids, C-6-​hydroxylated secondary bile acids, 
+have attracted attention as these bile acids may be asso-
+ciated with leanness in rodents131 and early weight loss 
+in people with obesity following sleeve gastrectomy132.
+Studies of the intestinal microbiome in several 
+chronic metabolic disorders show increased functional 
+potentials for metabolism of amino acids133. Whether 
+these observations reflect primary disease-​linked mech-
+anisms or secondary phenomena is unclear. However, in 
+the case of microbial break down of tryptophan, both 
+in vitro and in vivo studies suggest that indole, a trypto-
+phan microbial catabolite (Fig. 1), improves intestinal epi-
+thelial barrier functions134,135. Indole is also a signalling 
+molecule involved in enhancing the release of the gut 
+hormone GLP-1 from enteroendocrine L cells136, thereby 
+indirectly influencing insulin secretion and appetite 
+regulation. Similarly, the circulating concentration of 
+3-​indolepropionic acid (IPA), a catabolite involved in 
+the tryptophan metabolic pathway, is in epidemiolog-
+ical studies reported to associate with improved insulin 
+secretion and insulin sensitivity, and a lower likelihood 
+of developing T2D137.
+Microbiota affecting insulin sensitivity and endocrine 
+regulation. Elevated circulating concentrations of the 
+BCAAs leucine, isoleucine and valine are a strong bio-
+marker for insulin resistance and an increased risk of 
+T2D138. In individuals with normoglycaemia who are 
+insulin resistant, the gut microbiome has an increased 
+potential to synthesize BCAAs, which is largely driven 
+by an increased abundance of Prevotella copri and 
+Bacteroides vulgatus, but a reduced potential for micro-
+bial BCAA uptake and BCAA catabolism primar-
+ily driven by Butyrivibrio crossotus and Eubacterium 
+siraeum14. These findings, supported by experiments in 
+mice, suggest that the gut microbiome may contribute 
+to increased plasma BCAA concentrations and insulin 
+resistance under conditions of unhealthy dieting138. In 
+heart failure, the catabolism of BCAAs is impaired and 
+the accumulated BCAAs induce oxidative stress and 
+disrupt mitochondrial function139.
+Imidazole propionate is yet another microbial com-
+pound that contextually impairs insulin signalling140. In 
+portal and peripheral blood of individuals with T2D, 
+imidazole propionate was present at higher concentra-
+tions than in healthy individuals. Gut bacterial species 
+such as Streptococcus mutans and Eggerthella lenta were 
+verified as producers of imidazole propionate. In mice 
+experiments, imidazole propionate worsened glucose 
+Hyperinsulinemia
+A state where the 
+concentration of insulin in 
+blood is higher than what is 
+considered normal.
+Hyperphagia
+An abnormally great desire for 
+food.
+Ghrelin
+A circulating hormone that is 
+produced mainly by stomach 
+cells and that stimulates 
+appetite and promotes fat 
+storage.
+www.nature.com/nrmicro
+Reviews

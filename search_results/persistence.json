@@ -1,0 +1,1206 @@
+{
+  "query": "probiotic colonization persistence gut microbiota transient",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 49,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1136/gutjnl-2021-326789",
+      "title": "Gut microbiome and health: mechanistic insights",
+      "authors": [
+        "Willem M. de Vos",
+        "Herbert Tilg",
+        "Matthias Van Hul",
+        "Patrice D. Cani"
+      ],
+      "venue": "Gut",
+      "year": 2022,
+      "cited_by_count": 2354,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gut.bmj.com/content/gutjnl/71/5/1020.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41575-019-0173-3",
+      "title": "Probiotics and prebiotics in intestinal health and disease: from biology to the clinic",
+      "authors": [
+        "Mary Ellen Sanders",
+        "Daniel Merenstein",
+        "Gregor Reid",
+        "Glenn R. Gibson",
+        "Robert A. Rastall"
+      ],
+      "venue": "Nature Reviews Gastroenterology & Hepatology",
+      "year": 2019,
+      "cited_by_count": 2001,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41388-020-1341-1",
+      "title": "Gut microbiota modulation: a novel strategy for prevention and treatment of colorectal cancer",
+      "authors": [
+        "Winnie Fong",
+        "Qing Li",
+        "Jun Yu"
+      ],
+      "venue": "Oncogene",
+      "year": 2020,
+      "cited_by_count": 625,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.nature.com/articles/s41388-020-1341-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/cvpr52734.2025.00983",
+      "title": "Continuous 3D Perception Model with Persistent State",
+      "authors": [
+        "Qianqian Wang"
+      ],
+      "venue": "CVPR 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67907614ae8580e7ff218a91",
+      "matched_phrase": "persistence",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1371/journal.pone.0002020",
+      "title": "The SIRT1 Deacetylase Suppresses Intestinal Tumorigenesis and Colon Cancer Growth",
+      "authors": [
+        "Ron Firestein"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e99beab7602d9702494b1d",
+      "matched_phrase": "colonization",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arxiv.2401.05566",
+      "title": "Sleeper Agents: Training Deceptive LLMs That Persist Through Safety Training",
+      "authors": [
+        "Evan Hubinger"
+      ],
+      "venue": "CoRR",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65a0aace939a5f40828c6fe1",
+      "matched_phrase": "persistence",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/microorganisms11010095",
+      "title": "Journey of the Probiotic Bacteria: Survival of the Fittest",
+      "authors": [
+        "Allyson Andrade Mendonca"
+      ],
+      "venue": "MICROORGANISMS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63cac06690e50fcafd8ceda5",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fphar.2023.1212742",
+      "title": "Harnessing the Potential of Probiotics in the Treatment of Alcoholic Liver Disorders.",
+      "authors": [
+        "Garima Mishra"
+      ],
+      "venue": "FRONTIERS IN PHARMACOLOGY",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64af70533fda6d7f064212ed",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5281/zenodo.8086446",
+      "title": "Role of Probiotics in Aquaculture",
+      "authors": [
+        "Aditya Kumar"
+      ],
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f357939a5f40829d7ab0",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2018.02247",
+      "title": "The Gut Microbiota in the Pathogenesis and Therapeutics of Inflammatory Bowel Disease",
+      "authors": [
+        "Tao Zuo",
+        "Siew C. Ng"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": 2018,
+      "cited_by_count": 592,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fmicb.2018.02247/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fphys.2018.01534",
+      "title": "Mouse Microbiota Models: Comparing Germ-Free Mice and Antibiotics Treatment as Tools for Modifying Gut Bacteria",
+      "authors": [
+        "Elizabeth A. Kennedy",
+        "Katherine Y. King",
+        "Megan T. Baldridge"
+      ],
+      "venue": "Frontiers in Physiology",
+      "year": 2018,
+      "cited_by_count": 588,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fphys.2018.01534/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41588-021-00991-z",
+      "title": "Combined effects of host genetics and diet on human gut microbiota and incident disease in a single population cohort",
+      "authors": [
+        "Youwen Qin",
+        "Aki S. Havulinna",
+        "Yang Liu",
+        "Pekka Jousilahti",
+        "Scott C. Ritchie",
+        "Alex Tokolyi",
+        "Jon G. Sanders",
+        "Liisa Valsta",
+        "Marta Brożyńska",
+        "Qiyun Zhu",
+        "Anupriya Tripathi",
+        "Yoshiki Vázquez‐Baeza",
+        "Rohit Loomba",
+        "Susan Cheng",
+        "Mohit Jain",
+        "Teemu Niiranen",
+        "Leo Lahti",
+        "Rob Knight",
+        "Veikko Salomaa",
+        "Michael Inouye",
+        "Guillaume Méric"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2022,
+      "cited_by_count": 576,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nature.com/articles/s41588-021-00991-z.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2018.02013",
+      "title": "Effects of Psychological, Environmental and Physical Stressors on the Gut Microbiota",
+      "authors": [
+        "J. Philip Karl",
+        "Adrienne Hatch‐McChesney",
+        "Steven Arcidiacono",
+        "Sarah Pearce",
+        "Ida G. Pantoja-Feliciano",
+        "Laurel A. Doherty",
+        "Jason W. Soares"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": 2018,
+      "cited_by_count": 534,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fmicb.2018.02013/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2019.00454",
+      "title": "How Probiotics Affect the Microbiota",
+      "authors": [
+        "Grégoire Wieërs",
+        "Leïla Belkhir",
+        "Raphaël Enaud",
+        "Sophie Leclercq",
+        "Jean-Michel Philippart de Foy",
+        "Isabelle Dequenne",
+        "Philippe de Timary",
+        "Patrice D. Cani"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2020,
+      "cited_by_count": 532,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2019.00454/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/microorganisms9040697",
+      "title": "The Role of Enterobacteriaceae in Gut Microbiota Dysbiosis in Inflammatory Bowel Diseases",
+      "authors": [
+        "Valerio Baldelli",
+        "Franco Scaldaferri",
+        "Lorenza Putignani",
+        "Federica Del Chierico"
+      ],
+      "venue": "Microorganisms",
+      "year": 2021,
+      "cited_by_count": 345,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2076-2607/9/4/697/pdf?version=1617937445",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms20061482",
+      "title": "Glutamatergic Signaling Along The Microbiota-Gut-Brain Axis",
+      "authors": [
+        "Andreina Baj",
+        "Elisabetta Moro",
+        "Michela Bistoletti",
+        "Viviana Teresa Orlandi",
+        "Francesca Crema",
+        "Cristina Giaroni"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2019,
+      "cited_by_count": 335,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/20/6/1482/pdf?version=1553476232",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jinteco.2024.104027",
+      "title": "The Standard Errors of Persistence",
+      "authors": [
+        "Timothy G. Conley"
+      ],
+      "venue": "JOURNAL OF INTERNATIONAL ECONOMICS",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6218f4715aee126c0f13d375",
+      "matched_phrase": "persistence",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/vaccines12070711",
+      "title": "Deciphering the Potential of Probiotics in Vaccines",
+      "authors": [
+        "Chang Xu"
+      ],
+      "venue": "Vaccines",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "669f901f01d2a3fbfc3aa01f",
+      "matched_phrase": "probiotic",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/restud/rdaa074",
+      "title": "Understanding Cultural Persistence and Change",
+      "authors": [
+        "Paola Giuliano"
+      ],
+      "venue": "REVIEW OF ECONOMIC STUDIES",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61ca0bab5244ab9dcbb0ee48",
+      "matched_phrase": "persistence",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-3-319-91830-3_16",
+      "title": "Colonic Interposition after Esophagectomy",
+      "authors": [
+        "Michele Valmasoni"
+      ],
+      "venue": "Esophageal Cancer",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64e929863fda6d7f062ec5cb",
+      "matched_phrase": "colonization",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/molecules27030666",
+      "title": "Efficacy of Probiotic Compounds in Relieving Constipation and Their Colonization in Gut Microbiota",
+      "authors": [
+        "He, Yuan",
+        "Zhu, Leilei",
+        "Chen, Jialun",
+        "Tang, Xin",
+        "Pan, Mingluo",
+        "Yuan, Weiwei",
+        "Wang, Hongchao"
+      ],
+      "venue": "Molecules",
+      "year": null,
+      "cited_by_count": 46,
+      "reference_count": 40,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>A number of studies have confirmed the relationship between constipation and gut microbiota. Additionally, many human and animal experiments have identified probiotics as effectors for the relief of constipation symptoms. In this study, probiotic compounds, including Lactobacillus acidophilus LA11-Onlly, Lacticaseibacillus rhamnosus LR22, Limosilactobacillus reuteri LE16, Lactiplantibacillus plantarum LP-Onlly, and Bifidobacterium animalis subsp. lactis BI516, were administered to mice w",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms22041649",
+      "arxiv_id": "",
+      "title": "Gut Microbiota Profile in Children with IgE-Mediated Cow’s Milk Allergy and Cow’s Milk Sensitization and Probiotic Intestinal Persistence Evaluation",
+      "authors": [
+        "M. Mennini",
+        "Sofia Reddel",
+        "F. Del Chierico",
+        "S. Gardini",
+        "Andrea Quagliariello",
+        "P. Vernocchi",
+        "R. Valluzzi",
+        "V. Fierro",
+        "C. Riccardi",
+        "T. Napolitano",
+        "A. Fiocchi",
+        "L. Putignani"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2021,
+      "cited_by_count": 35,
+      "influential_cite_count": 4,
+      "reference_count": 58,
+      "tldr": "Gut microbiota of cow’s milk allergic infants resulted to be characterized by a dysbiotic status with a prevalence of some bacteria as Haemophilus, Klebsiella, Prevotella, Actinobacillus and Streptococcus, and among the three strains administered, B. infantis colonized the gastrointestinal tract and persisted in the gut microbiota of infants with CMA for 60 days.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1422-0067/22/4/1649/pdf?version=1614318873",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Gut microbiota of cow’s milk allergic infants resulted to be characterized by a dysbiotic status with a prevalence of some bacteria as Haemophilus, Klebsiella, Prevotella, Actinobacillus and Streptococcus, and among the three strains administered, B. infantis colonized the gastrointestinal tract and persisted in the gut microbiota of infants with CMA for 60 days.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2020.574137",
+      "title": "Persistence of Suspected Probiotic Organisms in Preterm Infant Gut Microbiota Weeks After Probiotic Supplementation in the NICU",
+      "authors": [
+        "Yousuf, Efrah I.",
+        "Carvalho, Marilia",
+        "Dizzell, Sara E.",
+        "Kim, Stephanie",
+        "Gunn, Elizabeth",
+        "Twiss, Jennifer",
+        "Giglia, Lucy",
+        "Stuart, Connie",
+        "Hutton, Eileen K."
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": null,
+      "cited_by_count": 30,
+      "reference_count": 50,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1016/j.jare.2025.03.017",
+      "arxiv_id": "",
+      "title": "The probiotic enhances donor microbiota stability and improves the efficacy of fecal microbiota transplantation for treating colitis",
+      "authors": [
+        "Jingjing Fan",
+        "Yingzhe Wu",
+        "Xing Wang",
+        "Habib Ullah",
+        "Zhenmin Ling",
+        "Pu Liu",
+        "Yu Wang",
+        "P. Feng",
+        "Jing Ji",
+        "Xiangkai Li"
+      ],
+      "venue": "Journal of Advanced Research",
+      "year": 2025,
+      "cited_by_count": 29,
+      "influential_cite_count": 0,
+      "reference_count": 46,
+      "tldr": "Modified FMT (MFMT) increases butyrate levels, boosts beneficial bacterial colonization, improves gut barrier function, and alleviates colitis symptoms more effectively than standard FMT.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1016/j.jare.2025.03.017",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Modified FMT (MFMT) increases butyrate levels, boosts beneficial bacterial colonization, improves gut barrier function, and alleviates colitis symptoms more effectively than standard FMT.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19490976.2024.2334967",
+      "arxiv_id": "",
+      "title": "Sialic acid-based probiotic intervention in lactating mothers improves the neonatal gut microbiota and immune responses by regulating sialylated milk oligosaccharide synthesis via the gut–breast axis",
+      "authors": [
+        "Yushuang Wang",
+        "Binqi Rui",
+        "X. Ze",
+        "Yujia Liu",
+        "Da Yu",
+        "Yinhui Liu",
+        "Zhi Li",
+        "Y. Xi",
+        "Xixi Ning",
+        "Zengjie Lei",
+        "Jieli Yuan",
+        "Liang Li",
+        "Xuguang Zhang",
+        "Wenzhe Li",
+        "Yanjie Deng",
+        "Jingyu Yan",
+        "Ming Li"
+      ],
+      "venue": "Gut microbes",
+      "year": 2024,
+      "cited_by_count": 21,
+      "influential_cite_count": 1,
+      "reference_count": 57,
+      "tldr": "The results showed that SA+Pro intervention modulated the gut microbiota and 6’-SL contents in milk of maternal rats more than the SA intervention, which promoted Lactobacillus reuteri colonization in neonates and immune development.",
+      "is_oa": true,
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/19490976.2024.2334967?needAccess=true",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results showed that SA+Pro intervention modulated the gut microbiota and 6’-SL contents in milk of maternal rats more than the SA intervention, which promoted Lactobacillus reuteri colonization in neonates and immune development.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2025.1563450",
+      "arxiv_id": "",
+      "title": "Harnessing the human gut microbiota: an emerging frontier in combatting multidrug-resistant bacteria",
+      "authors": [
+        "Wenwen Ding",
+        "Yiwen Cheng",
+        "Xia Liu",
+        "Zhangcheng Zhu",
+        "Lingbin Wu",
+        "Jie Gao",
+        "Wenhui Lei",
+        "Yating Li",
+        "Xin Zhou",
+        "Jian Wu",
+        "Yongtao Gao",
+        "Zongxin Ling",
+        "Ruilai Jiang"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2025,
+      "cited_by_count": 16,
+      "influential_cite_count": 0,
+      "reference_count": 279,
+      "tldr": "This review will explore how gut microbiota influence drug-resistant bacterial infections, its involvement in various types of AMR-related infections, and the potential for novel microbiota-targeted therapies, such as fecal microbiota transplantation, prebiotics, probiotics, phage therapy.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3389/fimmu.2025.1563450",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This review will explore how gut microbiota influence drug-resistant bacterial infections, its involvement in various types of AMR-related infections, and the potential for novel microbiota-targeted therapies, such as fecal microbiota transplantation, prebiotics, probiotics, phage therapy.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.semcancer.2025.06.003",
+      "arxiv_id": "",
+      "title": "Nutrient Acquisition of Gut Microbiota: Implications for Tumor Immunity.",
+      "authors": [
+        "Yusha Wang",
+        "Jing Huang",
+        "Huan Tong",
+        "Yuting Jiang",
+        "Yu Jiang",
+        "Xuelei Ma"
+      ],
+      "venue": "Seminars in Cancer Biology",
+      "year": 2025,
+      "cited_by_count": 15,
+      "influential_cite_count": 0,
+      "reference_count": 226,
+      "tldr": "Current insights into microbial nutrient metabolism are summarized, the immune-regulatory effects of key microbial metabolites are discussed, and microbiota-targeted strategies for enhancing antitumor efficacy are explored.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Current insights into microbial nutrient metabolism are summarized, the immune-regulatory effects of key microbial metabolites are discussed, and microbiota-targeted strategies for enhancing antitumor efficacy are explored.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19490976.2025.2611545",
+      "title": "The gut microbiota and host immunity synergistically orchestrate colonization resistance",
+      "authors": [
+        "Li, Na",
+        "Guo, Xiaohuan"
+      ],
+      "venue": "Gut Microbes",
+      "year": 2026,
+      "cited_by_count": 11,
+      "reference_count": 119,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19490976.2025.2503371",
+      "arxiv_id": "",
+      "title": "Gut microbiota drives structural variation of exogenous probiotics to enhance colonization",
+      "authors": [
+        "Shuaiming Jiang",
+        "S. Huang",
+        "Zeng Zhang",
+        "Wenyao Ma",
+        "Zhe Han",
+        "Yuan Song",
+        "Dongxue Huo",
+        "Weipeng Cui",
+        "Jiachao Zhang"
+      ],
+      "venue": "Gut microbes",
+      "year": 2025,
+      "cited_by_count": 11,
+      "influential_cite_count": 0,
+      "reference_count": 76,
+      "tldr": "The gut domestication process can drive probiotics to undergo many SNVs and SVs, thereby enhancing their colonization ability, which provides new insights into the colonization mechanisms and offers an ecology-based strategy.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The gut domestication process can drive probiotics to undergo many SNVs and SVs, thereby enhancing their colonization ability, which provides new insights into the colonization mechanisms and offers an ecology-based strategy.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cels.2025.101367",
+      "arxiv_id": "",
+      "title": "Personalized Clostridioides difficile colonization risk prediction and probiotic therapy assessment in the human gut.",
+      "authors": [
+        "Alex V. Carr",
+        "N. Baliga",
+        "Christian Diener",
+        "S. Gibbons"
+      ],
+      "venue": "Cell Systems",
+      "year": 2025,
+      "cited_by_count": 10,
+      "influential_cite_count": 0,
+      "reference_count": 62,
+      "tldr": "It is shown that microbial community-scale metabolic models (MCMMs) accurately predict C. difficile colonization susceptibility in vitro and in vivo, offering mechanistic insights into microbiota-specific interactions involving metabolites like succinate, trehalose, and ornithine.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is shown that microbial community-scale metabolic models (MCMMs) accurately predict C. difficile colonization susceptibility in vitro and in vivo, offering mechanistic insights into microbiota-specific interactions involving metabolites like succinate, trehalose, and ornithine.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.celrep.2025.115424",
+      "arxiv_id": "",
+      "title": "Exercise-driven gut microbiota alterations enhance colonization resistance against methicillin-resistant Staphylococcus aureus.",
+      "authors": [
+        "Tingting Xu",
+        "Dan Fang",
+        "Tianqi Xu",
+        "Xiuying Tao",
+        "Zhiqiang Wang",
+        "Yuan Liu"
+      ],
+      "venue": "Cell Reports",
+      "year": 2025,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 61,
+      "tldr": "It is demonstrated that moderate exercise significantly reduces gut colonization by methicillin-resistant Staphylococcus aureus (MRSA), a clinically important MDR pathogen, and an understudied strain of the intestinal probiotic Dubosiella newyorkensis (L8) is identified as a critical factor in mediating exercise-induced colonization resistance against MRSA.",
+      "is_oa": true,
+      "oa_url": "https://www.cell.com/action/showPdf?pii=S2211124725001950",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is demonstrated that moderate exercise significantly reduces gut colonization by methicillin-resistant Staphylococcus aureus (MRSA), a clinically important MDR pathogen, and an understudied strain of the intestinal probiotic Dubosiella newyorkensis (L8) is identified as a critical factor in mediating exercise-induced colonization resistance against MRSA.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41467-026-72289-9",
+      "title": "Gut microbiome features associated with Bifidobacterium colonization predict personalized probiotic persistence patterns",
+      "authors": [
+        "Goswami, Sourav",
+        "Ansari, Alisha",
+        "Sharaf, Chetan",
+        "O’Toole, Paul W.",
+        "Shanahan, Fergus",
+        "Ahuja, Vineet",
+        "Ghosh, Tarini Shankar"
+      ],
+      "venue": "Nature Communications",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 61,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "This work identifies microbiome features governing Bifidobacterial colonization and provides tools to predict personalized probiotic responses and introduces “Receptive Scores” to predict colonization of different Bifidobacteria from an individual’s baseline microbiome.",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.nature.com/articles/s41467-026-72289-9_reference.pdf",
+      "tldr": "This work identifies microbiome features governing Bifidobacterial colonization and provides tools to predict personalized probiotic responses and introduces “Receptive Scores” to predict colonization of different Bifidobacteria from an individual’s baseline microbiome.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.waojou.2020.100424",
+      "title": "Gut microbiota profile in infants with milk and/or egg allergy and evaluation of intestinal colonization and persistence of a probiotic mixture",
+      "authors": [
+        "Reddel, Sofia",
+        "Mennini, Maurizio",
+        "Del Chierico, Federica",
+        "Vernocchi, Pamela",
+        "Valluzzi, Rocco",
+        "Fierro, Vincenzo",
+        "Riccardi, Carla",
+        "Fiocchi, Alessandro",
+        "Putignani, Lorenza"
+      ],
+      "venue": "World Allergy Organization Journal",
+      "year": 2020,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/vetsci12050484",
+      "arxiv_id": "",
+      "title": "Lactobacillus Re-Engineers Gut Microbiota to Overcome E. coli Colonization Resistance in Mice",
+      "authors": [
+        "Jianlei Jia",
+        "P. Bao",
+        "Qinran Yu",
+        "Ning Li",
+        "Hao Ren",
+        "Qian Chen",
+        "Ping Yan"
+      ],
+      "venue": "Veterinary Sciences",
+      "year": 2025,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "Experimental evidence revealed that concurrent administration of Lactobacillus during E. coli colonization promoted the restoration of core physiological parameters, including body mass equilibrium, digestive enzymatic activity, intestinal histoarchitecture, and microbial metabolic functions.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Experimental evidence revealed that concurrent administration of Lactobacillus during E. coli colonization promoted the restoration of core physiological parameters, including body mass equilibrium, digestive enzymatic activity, intestinal histoarchitecture, and microbial metabolic functions.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2023.1176453",
+      "title": "Editorial: Mechanism of colonization and persistence of gut commensal microbiota and pathogens",
+      "authors": [
+        "Castro-Córdova, Pablo",
+        "Pizarro-Guajardo, Marjorie",
+        "Romero-Rodríguez, Alba"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 8,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.47278/book.hh/2025.183",
+      "title": "Modulation of Fish Gut Microbiota through Prebiotic and Probiotic Interventions",
+      "authors": [],
+      "venue": "Gut Microbiota and Holistic Health: The Role of Prebiotics and Probiotics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47278/book.hh/2025.58",
+      "title": "Gut Microbiota and Weight Regulation: The Role of Probiotic and Prebiotic Interventions",
+      "authors": [],
+      "venue": "Gut Microbiota and Holistic Health: The Role of Prebiotics and Probiotics",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.crfs.2026.101500",
+      "title": "Polyphenol-modified probiotics for the enhanced survivability, persistence and colonization of probiotic cells in the gut",
+      "authors": [
+        "Rai, Rewa",
+        "da Silva-Padilha, Marluci Palazzolli",
+        "Yokoyama, Wallace",
+        "Nitin, Nitin"
+      ],
+      "venue": "Current Research in Food Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 84,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1242/prelights.32913",
+      "title": "Microbiota colonization tunes the antigen threshold of microbiota-specific T cell activation in the gut",
+      "authors": [
+        "Besançon, Hervé"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "arXiv:2511.02766v4",
+      "arxiv_id": "2511.02766v4",
+      "title": "Microbes in the Moonlight: How the Gut Microbiota Influences Sleep",
+      "authors": [
+        "Enso Onill Torres Alegre"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.02766v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1509.02273v2",
+      "arxiv_id": "1509.02273v2",
+      "title": "Reduction of Alzheimer's disease beta-amyloid pathology in the absence of gut microbiota",
+      "authors": [
+        "T. Harach",
+        "N. Marungruang",
+        "N. Dutilleul",
+        "V. Cheatham",
+        "K. D. Mc Coy",
+        "J. J. Neher",
+        "M. Jucker",
+        "F. Fåk",
+        " T.",
+        " Lasser",
+        "T. Bolmont"
+      ],
+      "venue": "arXiv",
+      "year": 2015,
+      "pdf_url": "https://arxiv.org/pdf/1509.02273v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2409.12209v1",
+      "arxiv_id": "2409.12209v1",
+      "title": "Multivariate Analysis of Gut Microbiota Composition and Prevalence of Gastric Cancer",
+      "authors": [
+        "Aadhith Shankarnarayanan",
+        "Dheeman Gangopadhyay",
+        "Ayman Alzaatreh"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2409.12209v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2302.11314v1",
+      "arxiv_id": "2302.11314v1",
+      "title": "SGMFQP:An Ontology-based Swine Gut Microbiota Federated Query Platform",
+      "authors": [
+        "Ying Wang",
+        "Qin Jiang",
+        "Yilin Geng",
+        "Yuren Hu",
+        "Yue Tang",
+        "Jixiang Li",
+        "Junmei Zhang",
+        "Wolfgang Mayer",
+        "Shanmei Liu",
+        "Hong-Yu Zhang",
+        "Xianghua Yan",
+        "Zaiwen Feng"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2302.11314v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2005.08107v2",
+      "arxiv_id": "2005.08107v2",
+      "title": "Information content of high-order associations of the human gut microbiota network",
+      "authors": [
+        "Weston D. Viles",
+        "Juliette C. Madan",
+        "Hongzhe Li",
+        "Jason C. Moore",
+        "Margaret R. Karagas",
+        "Anne G. Hoen"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2005.08107v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2407.05076v1",
+      "arxiv_id": "2407.05076v1",
+      "title": "Metagenomic analysis reveals shared and distinguishing features in horse and donkey gut microbiome and maternal resemblance of the microbiota in hybrid equids",
+      "authors": [
+        "Yihang Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2407.05076v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2503.04069v1",
+      "arxiv_id": "2503.04069v1",
+      "title": "Integrating network pharmacology, metabolomics, and gut microbiota analysis to explore the effects of Jinhong tablets on chronic superficial gastritis",
+      "authors": [
+        "Lihao Xiao",
+        "Tingyu Zhang",
+        "Yun Liu",
+        "Chayanis Sutcharitchan",
+        "Qingyuan Liu",
+        "Xiaoxue Fan",
+        "Jian Feng",
+        "Huifang Gao",
+        "Tong Zhang",
+        "Shao Li"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.04069v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2509.07723v1",
+      "arxiv_id": "2509.07723v1",
+      "title": "BDPM: A Machine Learning-Based Feature Extractor for Parkinson's Disease Classification via Gut Microbiota Analysis",
+      "authors": [
+        "Bo Yu",
+        "Zhixiu Hua",
+        "Bo Zhao"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2509.07723v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1401.2389v1",
+      "arxiv_id": "1401.2389v1",
+      "title": "A possible gut microbiota basis for weight gain side effects of antipsychotic drugs",
+      "authors": [
+        "Harshad Joshi",
+        "Ankita Parihar",
+        "Dazhi Jiao",
+        "Shwetha Murali",
+        "David J. Wild"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1401.2389v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/ncomms15393",
+      "arxiv_id": "1706.01787v1",
+      "title": "Global metabolic interaction network of the human gut microbiota for context-specific community-scale analysis",
+      "authors": [
+        "Jaeyun Sung",
+        "Seunghyeon Kim",
+        "Josephine Jill T. Cabatbat",
+        "Sungho Jang",
+        "Yong-Su Jin",
+        "Gyoo Yeol Jung",
+        "Nicholas Chia",
+        "Pan-Jun Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1706.01787v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

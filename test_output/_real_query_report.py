@@ -5,9 +5,9 @@ from collections import defaultdict
 
 # Match files to query labels
 file_query_map = {
-    "_real_digital_finance": ("数字普惠金融 + 家庭消费", "经济学 (你的 ch1+ch2 方向)"),
-    "_real_ltc_insurance":   ("长期护理保险 + 人口老龄化", "保险学 (东方学院方向)"),
-    "_real_fintech_bank":     ("金融科技 + 中小银行", "金融学 (你常研究的领域)"),
+    "_real_digital_finance": ("数字普惠金融 + 家庭消费", "经济学 (用户研究方向)"),
+    "_real_ltc_insurance":   ("长期护理保险 + 人口老龄化", "保险学 (用户研究方向)"),
+    "_real_fintech_bank":     ("金融科技 + 中小银行", "金融学 (用户研究方向)"),
 }
 
 

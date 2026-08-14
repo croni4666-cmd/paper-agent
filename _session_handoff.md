@@ -26,7 +26,7 @@ For current state, see:
 **Date**: 2026-07-16 09:19 (original handoff) → 2026-07-16 12:40 (current)
 **From session**: mvs_6bb48cb3cb1e4e5b9bc5625f1a5b3da9
 **Reason for handoff**: User experiencing intermittent 内部服务器错误 (mavis
-daemon 3.0.48/3.0.49 known bug; watchdog monitors at C:\Users\DengN\.mavis\bin\Watch-Mavis.ps1)
+daemon 3.0.48/3.0.49 known bug; watchdog monitors at C:\Users\paper-agent-author\.mavis\bin\Watch-Mavis.ps1)
 
 > **Audit trail note (2026-07-16 12:40)**: handoff originally captured
 > v3.9.8.4; the new session progressed through 3.9.9 / 3.9.9.1 (pa judge)
@@ -93,8 +93,8 @@ Plus today's v3.9.8.4 commits (untracked log):
 | `G:\minimax - workspace\Paper agent\pa_cli\batch_fetch.py` | NEW v3.9.8.4 batch guide generator (~340 LOC) |
 | `G:\minimax - workspace\Paper agent\pa_cli\cli.py` | Click CLI (entry point) |
 | `G:\minimax - workspace\Paper agent\Export-CNKICookies.ps1` | Manual 4-cookie export |
-| `C:\Users\DengN\.paper-agent\cookies\cnki.json` | CNKI cookies (4 cookies, fresh = <4h) |
-| `C:\Users\DengN\.paper-agent\debug\last_cnki_detail.html` | Last fetch debug HTML |
+| `C:\Users\paper-agent-author\.paper-agent\cookies\cnki.json` | CNKI cookies (4 cookies, fresh = <4h) |
+| `C:\Users\paper-agent-author\.paper-agent\debug\last_cnki_detail.html` | Last fetch debug HTML |
 | `G:\minimax - workspace\Paper agent\ROADMAP.md` | 3465-line project roadmap (was 2554 in v3.9.8.4; grew via 17 audit rounds: 1-7 in v3.9.9.3-9.4, 8-14 in v3.9.9.5-9.6, 15-17 in current session) |
 | `G:\minimax - workspace\Paper agent\CHANGELOG.md` | All release notes |
 | `G:\minimax - workspace\Paper agent\_session_handoff.md` | **This file** |

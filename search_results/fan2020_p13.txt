@@ -1,0 +1,127 @@
+
+========== PAGE 13 ==========
+tolerance and insulin signalling through activation of the 
+mechanistic target of rapamycin complex 1 (mTORC1) 
+pathway. In line with these findings, overexpression of the 
+mTORC1-​mediated insulin signalling pathway was found 
+in liver tissue isolated from individuals with T2D140.
+Both the host and the intestinal microbiome produce 
+succinate, which may have multiple roles as a metabolic 
+intermediate. One role relates to insulin sensitivity and 
+inflammation, with effects that are also apparently con-
+textual. In wild-​type mice, microbial-​derived succinate 
+not only prevented obesity but also improved insulin 
+sensitivity and glucose tolerance141,142. By contrast, suc-
+cinate might act as a metabolite in innate immune sig-
+nalling. Thus, in LPS-​activated macrophages, succinate 
+stabilized the transcription factor hypoxia-​inducible fac-
+tor 1α, which increased IL-1β production and triggered 
+inflammation. Therefore, succinate may under some 
+conditions contribute to insulin resistance that is trig-
+gered by inflammation143. Unexpectedly, pharmacolog-
+ically raised circulating succinate concentrations in mice 
+have been shown to be a driver for uncoupling protein 
+1 (UCP1)-​dependent thermogenesis in brown adipose 
+tissue, thereby boosting protection against diet-​induced 
+obesity and improving glucose tolerance142. Nevertheless, 
+outcomes of studies of the impact of the gut micro­
+biome on regulation of UCP1 in various mouse models 
+remain inconsistent144,145. Whether microbial-​derived 
+succinate is relevant to comparable processes in human 
+metabolism is unknown.
+Bacterial LPS are the major outer surface membrane 
+components present in most Gram-​negative bacteria146. 
+LPS are released at bacterial cell death and become 
+strong stimulators of host immunity. When in excess, 
+for instance owing to habitual intake of diets high in 
+animal fat or in an extreme state such as sepsis-​elicited 
+endotoxaemia, LPS trigger local and systemic inflamma-
+tion and insulin resistance147. Generally, several common 
+chronic disorders that appear to be characterized by a 
+relative disruption of the gut barrier, which elicits mul-
+tiple imbalances in both intestinal and systemic immune 
+competences, converge to cause insulin resistance, 
+eventually leading to metabolic syndrome148,149.
+Above, we have discussed how, for instance, SCFAs 
+and indole interfere with endocrine regulation, but 
+there are more examples of how gut bacterial com-
+pounds interact with hormone secretion or act as lig-
+ands for known hormone receptors. Several proteins 
+secreted by E. coli, including ClpB, which mimics the 
+host peptide α-​melanocyte-​stimulating hormone 
+(α-​MSH), affect food intake150 and meal patterns in 
+mice151. Mechanistically, the ClpB protein stimulates 
+release of intestinal GLP-1 and PYY and activates brain 
+anorexigenic pathways inducing satiety. In humans, 
+higher plasma ClpB levels have been reported in indi-
+viduals with eating disorders such as anorexia ner-
+vosa compared with circulating ClpB levels in healthy 
+individuals152. Furthermore, some gut commensal bac-
+teria harbour N-​acyl amide synthase genes, and their 
+encoded lipids mimic binding of classical eukaryotic 
+signalling molecules to G protein-​coupled receptors153. 
+In experiments where mice were fed an engineered bac-
+terium that produces the lipid N-​acyl serinol, which 
+is structurally similar to a human ligand for GPR119, 
+the mice had an improved glucose tolerance when 
+compared with control mice that were gavaged with 
+E. coli harbouring an empty vector154. Finally, MECO-1, 
+which is a bacterial melanocortin-​like peptide that has 
+structural similarities to α-​MSH and adrenocorticotro-
+pin (ACTH)155, inhibits the release of cytokines when 
+exposed to pro-​inflammatory stimuli in vitro and res-
+cues mice from death caused by endotoxins. Whether 
+the microbial peptide also has endocrine functions like 
+its human homologous hormones is unknown.
+In summary, an overwhelming amount of data gen-
+erated both in humans and in animals suggest important 
+involvements of the primary saccharolytically derived 
+microbial fermentation products SCFAs, succinate and 
+ethanol in host metabolism. We know less about posi-
+tive or undesired health implications of proteolytic or 
+lipolytic fermentation by the gut microbiota (Fig. 1). An 
+exception is the microbial fermentation of the dietary 
+amino acids tryptophan and tyrosine that are metabo-
+lized to indoles and phenols, respectively156. In the liver, 
+the compounds are converted to indoxyl sulfate and 
+p-​cresyl sulfate, the blood concentrations of which are 
+elevated in CMD. In chronic kidney disease, elevated cir-
+culating levels of the two metabolites are associated with 
+progression of chronic kidney disease, risk of CMD and 
+all-​cause mortality157. In addition, experiments in mice 
+suggest that microbiota-​produced gluconeogenic amino 
+acid metabolites, including indoxyl sulfate, contribute to 
+maintaining glucose homeostasis158.
+Conclusions and perspectives
+The past two decades of research within the microbiome 
+field has made it evident that human biology means the 
+biology of the holobiont Homo sapiens. In other words, 
+human biology is contextual on the coexisting microor-
+ganisms, with the majority living in the digestive tract 
+from where they produce or modify various chemicals, 
+or trigger host reactions that affect various physiolog-
+ical functions including immunity, neurobiology and, 
+not least, metabolism. As appears from our discussion of 
+the pertinent literature on metabolism and the intestinal 
+microbiota, the research field is still at a juvenile stage 
+both in its basic and translational dimensions. With 
+the focus on the influence of the gut microbiome on the 
+overall functional metabolic read-​outs, much still needs 
+to be learned. The knowledge gaps to be filled include 
+annotation of hundreds of as yet unknown chemical 
+compounds in the metabolomes and peptidomes of 
+various body fluids as well as approaches to decipher 
+compounds of solely host, microbial and dietary origin, 
+or of combined origin159. Most studies are snapshots of 
+microbiome landscapes and more information is needed 
+on the short-​term and long-​term dynamics of the intes-
+tinal microbiome. Importantly, very little of the novel 
+knowledge is validated or has maturated to stages where 
+it can be translated to guide personal everyday health 
+behaviour (public health) or clinical practice. To achieve 
+such goals, several conceptual and analytical challenges 
+need attention in future studies where data on the micro-
+biome are integrated with other omics read-​out and 
+bioclinical variables (Box 2).
+Nature Reviews | Microbiology
+Reviews

@@ -122,7 +122,7 @@ def utami_direct_download():
 def mcminn_cloudflare_bypass():
     print("\n=== [C3] McMinn Cloudflare bypass ===")
     from playwright.sync_api import sync_playwright
-    CHROMIUM_EXE = r"C:\Users\DengN\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
+    CHROMIUM_EXE = r"C:\Users\paper-agent-author\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
     out = {"ok": False, "path": None, "details": []}
     landed_urls = []
     pdf_urls_observed = []

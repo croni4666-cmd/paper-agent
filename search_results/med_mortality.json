@@ -1,0 +1,1225 @@
+{
+  "query": "Mediterranean diet mortality meta-analysis adherence score",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 10,
+    "openalex": 10,
+    "arxiv": 10,
+    "semanticscholar": 10,
+    "aminer": 10,
+    "cnki": 1
+  },
+  "dedup_count": 50,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3322/caac.21834",
+      "title": "Global Cancer Statistics 2022: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.",
+      "authors": [
+        "Freddie Bray"
+      ],
+      "venue": "CA-A CANCER JOURNAL FOR CLINICIANS",
+      "year": 2024,
+      "cited_by_count": 5000,
+      "cited_bucket": "5000+",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "660f08b213fb2c6cf6edcbca",
+      "matched_phrase": "mortality",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1056/nejmoa1800389",
+      "title": "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts",
+      "authors": [
+        "Ramón Estruch",
+        "Emilio Ros",
+        "Jordi Salas‐Salvadó",
+        "María‐Isabel Covas",
+        "Dolores Corella",
+        "Fernando Arós",
+        "Enrique Gómez‐Gracia",
+        "Valentina Ruíz-Gutiérrez",
+        "Miquel Fiol",
+        "José Lapetra",
+        "Rosa M. Lamuela‐Raventós",
+        "Lluís Serra‐Majem",
+        "Xavier Pintó",
+        "Josep Basora",
+        "Miguel Ángel Muñoz",
+        "José V. Sorlí",
+        "J. Alfredo Martínéz",
+        "Montserrat Fitó",
+        "Alfredo Gea",
+        "Miguel A. Hernán",
+        "Miguel Ángel Martínez‐González"
+      ],
+      "venue": "New England Journal of Medicine",
+      "year": 2018,
+      "cited_by_count": 3530,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa1800389?articleTools=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/gutjnl-2019-319654",
+      "title": "Mediterranean diet intervention alters the gut microbiome in older people reducing frailty and improving health status: the NU-AGE 1-year dietary intervention across five European countries",
+      "authors": [
+        "Tarini Shankar Ghosh",
+        "Simone Rampelli",
+        "Ian B. Jeffery",
+        "Aurelia Santoro",
+        "Marta C. Neto",
+        "Miriam Capri",
+        "Enrico Giampieri",
+        "Amy Jennings",
+        "Marco Candela",
+        "Silvia Turroni",
+        "Erwin G. Zoetendal",
+        "Gerben D. A. Hermes",
+        "Elodie Caumon",
+        "Nathalie Meunier",
+        "Corinne Malpuech‐Brugère",
+        "Estelle Pujos‐Guillot",
+        "A. M. Berendsen",
+        "C.P.G.M. de Groot",
+        "Edith J M Feskins",
+        "Joanna Kałuża",
+        "Barbara Pietruszka",
+        "Marta Jeruszka-Bielak",
+        "Blandine Comte",
+        "Monica Maijo-Ferre",
+        "Claudio Nicoletti",
+        "Willem M. de Vos",
+        "Susan J. Fairweather‐Tait",
+        "Aedín Cassidy",
+        "Patrizia Brigidi",
+        "Claudio Franceschi",
+        "Paul W. O’Toole"
+      ],
+      "venue": "Gut",
+      "year": 2020,
+      "cited_by_count": 971,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://gut.bmj.com/content/gutjnl/69/7/1218.full.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1161/circresaha.118.313348",
+      "title": "The Mediterranean Diet and Cardiovascular Health",
+      "authors": [
+        "Miguel Ángel Martínez‐González",
+        "Alfredo Gea",
+        "Miguel Ruiz‐Canela"
+      ],
+      "venue": "Circulation Research",
+      "year": 2019,
+      "cited_by_count": 861,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.ahajournals.org/doi/pdf/10.1161/CIRCRESAHA.118.313348",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jncc.2024.01.006",
+      "title": "Cancer Incidence and Mortality in China, 2022",
+      "authors": [
+        "Bingfeng Han"
+      ],
+      "venue": "Journal of the National Cancer Center",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e6c4e413fb2c6cf625dcab",
+      "matched_phrase": "mortality",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.neubiorev.2023.105147",
+      "title": "Outrunning a Bad Diet: Interactions Between Exercise and a Western-style Diet for Adolescent Mental Health, Metabolism and Microbes",
+      "authors": [
+        "Minke H. C. Nota"
+      ],
+      "venue": "NEUROSCIENCE AND BIOBEHAVIORAL REVIEWS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6421776990e50fcafda59a73",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/advances/nmz054",
+      "title": "The Mediterranean, Dietary Approaches to Stop Hypertension (DASH), and Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) Diets Are Associated with Less Cognitive Decline and a Lower Risk of Alzheimer’s Disease—A Review",
+      "authors": [
+        "Annelien C. van den Brink",
+        "Elske M Brouwer-Brolsma",
+        "Agnes A. M. Berendsen",
+        "Ondine van de Rest"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2019,
+      "cited_by_count": 576,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S2161831322004513/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu11092059",
+      "title": "Cancer and Mediterranean Diet: A Review",
+      "authors": [
+        "Maria Chiara Mentella",
+        "Franco Scaldaferri",
+        "Caterina Ricci",
+        "Antonio Gasbarrini",
+        "Giacinto Abele Donato Miggiano"
+      ],
+      "venue": "Nutrients",
+      "year": 2019,
+      "cited_by_count": 477,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/11/9/2059/pdf?version=1568032242",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu13010007",
+      "title": "Influence of Mediterranean Diet on Human Gut Microbiota",
+      "authors": [
+        "Giuseppe Merra",
+        "Annalisa Noce",
+        "Giulia Marrone",
+        "Marco Cintoni",
+        "Maria Grazia Tarsitano",
+        "Annunziata Capacci",
+        "Antonino De Lorenzo"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 405,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/13/1/7/pdf?version=1608640558",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/14651858.cd009825.pub3",
+      "title": "Mediterranean-style diet for the primary and secondary prevention of cardiovascular disease",
+      "authors": [
+        "Karen Rees",
+        "Andrea Takeda",
+        "Nicole Martin",
+        "Leila Ellis",
+        "Dilini Wijesekara",
+        "Abhinav Vepa",
+        "Archik Das",
+        "Louise Hartley",
+        "Saverio Stranges"
+      ],
+      "venue": "Cochrane Database of Systematic Reviews",
+      "year": 2019,
+      "cited_by_count": 398,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009825.pub3/pdf/full",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu11102278",
+      "title": "Adherence to the Mediterranean Diet, Dietary Patterns and Body Composition in Women with Polycystic Ovary Syndrome (PCOS)",
+      "authors": [
+        "Luigi Barrea",
+        "Angela Arnone",
+        "Giuseppe Annunziata",
+        "Giovanna Muscogiuri",
+        "Daniela Laudisio",
+        "Ciro Salzano",
+        "Gabriella Pugliese",
+        "Annamaria Colao",
+        "Silvia Savastano"
+      ],
+      "venue": "Nutrients",
+      "year": 2019,
+      "cited_by_count": 304,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/11/10/2278/pdf?version=1569293949",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms20194716",
+      "title": "Metabolic and Vascular Effect of the Mediterranean Diet",
+      "authors": [
+        "Antonino Tuttolomondo",
+        "Irene Simonetta",
+        "Mario Daidone",
+        "A. Mogavero",
+        "Antonella Ortello",
+        "António Pinto"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2019,
+      "cited_by_count": 272,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/20/19/4716/pdf?version=1569239589",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/s0007114518002593",
+      "title": "Mediterranean diet and its components in relation to all-cause mortality: meta-analysis",
+      "authors": [
+        "Dimitra Eleftheriou",
+        "Vassiliki Benetou",
+        "Antonia Trichopoulou",
+        "Carlo La Vecchia",
+        "Christina Bamia"
+      ],
+      "venue": "British Journal Of Nutrition",
+      "year": 2018,
+      "cited_by_count": 202,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/81EB9EF4D5B7AD5BC3ADC8AEC86371E1/S0007114518002593a.pdf/div-class-title-mediterranean-diet-and-its-components-in-relation-to-all-cause-mortality-meta-analysis-div.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/advances/nmz041",
+      "title": "Adherence to the Mediterranean Diet in Relation to All-Cause Mortality: A Systematic Review and Dose-Response Meta-Analysis of Prospective Cohort Studies",
+      "authors": [
+        "Soltani, Sepideh",
+        "Jayedi, Ahmad",
+        "Shab-Bidar, Sakineh",
+        "Becerra-Tomás, Nerea",
+        "Salas-Salvadó, Jordi"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2019,
+      "cited_by_count": 181,
+      "reference_count": 66,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/S0007114518002593",
+      "arxiv_id": "",
+      "title": "Mediterranean diet and its components in relation to all-cause mortality: meta-analysis",
+      "authors": [
+        "D. Eleftheriou",
+        "V. Benetou",
+        "A. Trichopoulou",
+        "C. La Vecchia",
+        "C. Bamia"
+      ],
+      "venue": "British Journal of Nutrition",
+      "year": 2018,
+      "cited_by_count": 125,
+      "influential_cite_count": 5,
+      "reference_count": 74,
+      "tldr": "The meta-analyses confirm the inverse association of MedDiet with mortality and highlight the dietary components that influence mostly this association and propose dietary changes to effectively increase adherence to this healthy dietary pattern.",
+      "is_oa": true,
+      "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/81EB9EF4D5B7AD5BC3ADC8AEC86371E1/S0007114518002593a.pdf/div-class-title-mediterranean-diet-and-its-components-in-relation-to-all-cause-mortality-meta-analysis-div.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The meta-analyses confirm the inverse association of MedDiet with mortality and highlight the dietary components that influence mostly this association and propose dietary changes to effectively increase adherence to this healthy dietary pattern.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1167/iovs.66.7.3",
+      "title": "Optical and Visual Diet in Myopia",
+      "authors": [
+        "Susana Marcos"
+      ],
+      "venue": "Investigative ophthalmology & visual science",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6841f689163c01c8505f2320",
+      "matched_phrase": "diet",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-822562-2.00395-9",
+      "title": "Mediterranean-Climate Ecosystems",
+      "authors": [
+        "Philip W. Rundel"
+      ],
+      "venue": "Encyclopedia of Biodiversity",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b689b7602d97041f83cd",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12665-015-4239-4",
+      "title": "Karst and Karst Groundwater Resources in the Mediterranean",
+      "authors": [
+        "Julian Xanke"
+      ],
+      "venue": "Hydrogeology Journal",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8f6fadabfae2eee99c222",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5772/intechopen.104257",
+      "title": "Mediterranean Diet and Health",
+      "authors": [
+        "Semra Akar Sahingoz"
+      ],
+      "venue": "Sustainable Development Well-Being Across the Globe - New Perspectives, Concepts, Correlates and Geography",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "62c5533f35d8759cb6e6ee1c",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/ccol0521817463.006",
+      "title": "Mediterranean Plague in the Age of Justinian",
+      "authors": [
+        "Peregrine Horden"
+      ],
+      "venue": "Hospitals and Healing from Antiquity to the Later Middle Ages",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6216f2115aee126c0fb4b29b",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/9781009325844.021",
+      "title": "Mediterranean Region",
+      "authors": [
+        "Hans‐Otto Pörtner"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578f30a939a5f40829cf9f2",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/acrefore/9780190854584.013.615",
+      "title": "Anthropology of the Mediterranean",
+      "authors": [
+        "Laia Soto Bermant"
+      ],
+      "venue": "Oxford Research Encyclopedia of Anthropology",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6578fcc9939a5f4082ae3540",
+      "matched_phrase": "Mediterranean",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1017/S0007114518002179",
+      "arxiv_id": "",
+      "title": "Mediterranean diet and mortality in the elderly: a prospective cohort study and a meta-analysis.",
+      "authors": [
+        "M. Bonaccio",
+        "A. Di Castelnuovo",
+        "S. Costanzo",
+        "A. Gialluisi",
+        "M. Persichillo",
+        "C. Cerletti",
+        "M. Donati",
+        "G. de Gaetano",
+        "L. Iacoviello"
+      ],
+      "venue": "British Journal of Nutrition",
+      "year": 2018,
+      "cited_by_count": 96,
+      "influential_cite_count": 1,
+      "reference_count": 57,
+      "tldr": "A prospective cohort study and a meta-analysis showed that closer adherence to the MD was associated with prolonged survival in elderly individuals, suggesting the appropriateness for older persons to adopt/preserve the MD to maximise their prospects for survival.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A prospective cohort study and a meta-analysis showed that closer adherence to the MD was associated with prolonged survival in elderly individuals, suggesting the appropriateness for older persons to adopt/preserve the MD to maximise their prospects for survival.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/ajcn/nqaa083",
+      "arxiv_id": "",
+      "title": "Association between Mediterranean diet adherence and colorectal cancer: a dose-response meta-analysis.",
+      "authors": [
+        "Y. Zhong",
+        "Yan Zhu",
+        "Quan-peng Li",
+        "Fei Wang",
+        "Xianxiu Ge",
+        "Guangxin Zhou",
+        "Lin Miao"
+      ],
+      "venue": "American Journal of Clinical Nutrition",
+      "year": 2020,
+      "cited_by_count": 50,
+      "influential_cite_count": 0,
+      "reference_count": 49,
+      "tldr": "A meta-analysis supports the inverse association of MD adherence with CRC incidence, but not with overall mortality or CRC-specific mortality among those diagnosed with CRC.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1093/ajcn/nqaa083",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A meta-analysis supports the inverse association of MD adherence with CRC incidence, but not with overall mortality or CRC-specific mortality among those diagnosed with CRC.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/heartjnl-2022-321930",
+      "arxiv_id": "",
+      "title": "Primary prevention of cardiovascular disease in women with a Mediterranean diet: systematic review and meta-analysis",
+      "authors": [
+        "A. Pant",
+        "S. Gribbin",
+        "D. Mcintyre",
+        "R. Trivedi",
+        "S. Marschner",
+        "L. Laranjo",
+        "M. Mamas",
+        "V. Flood",
+        "Clara K. Chow",
+        "Sarah Zaman"
+      ],
+      "venue": "Heart",
+      "year": 2023,
+      "cited_by_count": 46,
+      "influential_cite_count": 2,
+      "reference_count": 50,
+      "tldr": "This study supports a beneficial effect of the Mediterranean diet on primary prevention of CVD and death in women, and is an important step in enabling sex specific guidelines.",
+      "is_oa": true,
+      "oa_url": "https://heart.bmj.com/content/heartjnl/109/16/1208.full.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study supports a beneficial effect of the Mediterranean diet on primary prevention of CVD and death in women, and is an important step in enabling sex specific guidelines.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s11357-024-01296-9",
+      "arxiv_id": "",
+      "title": "Adherence to the Mediterranean diet and its protective effects against colorectal cancer: a meta-analysis of 26 studies with 2,217,404 participants",
+      "authors": [
+        "Z. Ungvari",
+        "M. Fekete",
+        "J. Fekete",
+        "Giuseppe Grosso",
+        "Anna Ungvari",
+        "B. Győrffy"
+      ],
+      "venue": "GeroScience",
+      "year": 2024,
+      "cited_by_count": 40,
+      "influential_cite_count": 2,
+      "reference_count": 146,
+      "tldr": "The pooled analysis indicated that adherence to the Mediterranean diet significantly reduced the prevalence of CRC, reinforcing the protective role of the Mediterranean diet against CRC.",
+      "is_oa": true,
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s11357-024-01296-9.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The pooled analysis indicated that adherence to the Mediterranean diet significantly reduced the prevalence of CRC, reinforcing the protective role of the Mediterranean diet against CRC.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu15173826",
+      "title": "Adherence to the Mediterranean Diet and Risk of Gastric Cancer: A Systematic Review and Meta-Analysis",
+      "authors": [
+        "Bai, Xiao",
+        "Li, Xue",
+        "Ding, Siqi",
+        "Dai, Dongqiu"
+      ],
+      "venue": "Nutrients",
+      "year": null,
+      "cited_by_count": 15,
+      "reference_count": 53,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Available results on the association between the Mediterranean diet (MD) and gastric cancer (GC) incidence are controversial. The present study aimed to determine the correlation between different subtypes of GC and MD adherence. This meta-analysis was registered on PROSPERO (CRD42021284432). We searched Embase, PubMed, Cochrane Library, and Web of Science from inception through 22 April 2023 to retrieve relevant studies. A random-effects model was used to pool odds ratios (ORs) with 95%",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu17020287",
+      "arxiv_id": "",
+      "title": "Adherence to the Mediterranean Diet and the Risk of Head and Neck Cancer: A Systematic Review and Meta-Analysis of Case–Control Studies",
+      "authors": [
+        "Nader G Zalaquett",
+        "Irene Lidoriki",
+        "M. Lampou",
+        "Jad Saab",
+        "K. Hadkhale",
+        "C. Christophi",
+        "S. Kales"
+      ],
+      "venue": "Nutrients",
+      "year": 2025,
+      "cited_by_count": 14,
+      "influential_cite_count": 0,
+      "reference_count": 72,
+      "tldr": "Findings support the role of the MD in cancer prevention and highlight the potential benefits of MD adherence in reducing HNC risk, and further prospective studies and randomized controlled trials are needed to confirm these findings.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2072-6643/17/2/287/pdf?version=1736870028",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Findings support the role of the MD in cancer prevention and highlight the potential benefits of MD adherence in reducing HNC risk, and further prospective studies and randomized controlled trials are needed to confirm these findings.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.advnut.2025.100562",
+      "arxiv_id": "",
+      "title": "Adherence to Mediterranean Diet and Risk of Type 2 Diabetes: An Updated Systematic Review and Dose–Response Meta-analysis",
+      "authors": [
+        "S. Wallerer",
+        "J. Stadelmaier",
+        "Eike Floegel",
+        "E. Kiesswetter",
+        "G. Bantle",
+        "G. Hoffmann",
+        "Lukas Schwingshackl"
+      ],
+      "venue": "Advances in Nutrition",
+      "year": 2025,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 80,
+      "tldr": "Moderate-certainty evidence is provided that greater adherence to the MedDiet is associated with a lower risk of T2D prevention, and these findings reinforce current dietary guidelines recommending MedDiet as a sound strategy for T2D prevention.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Moderate-certainty evidence is provided that greater adherence to the MedDiet is associated with a lower risk of T2D prevention, and these findings reinforce current dietary guidelines recommending MedDiet as a sound strategy for T2D prevention.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37766/inplasy2024.10.0072",
+      "title": "Mediterranean Diet in Older Adults: Cardiovascular Outcomes and Mortality from Observational and Interventional Studies. A Systematic Review and Meta-Analysis",
+      "authors": [
+        "Furbatto, Michela",
+        "Lelli, Diana",
+        "Incalzi, Raffaele Antonelli",
+        "Pedone, Claudio"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 8,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.3390/life15010063",
+      "arxiv_id": "",
+      "title": "High and Low Adherence to Mediterranean and DASH Diet Patterns and the Risk of Heart Failure: A Meta-Analysis of Observational Studies",
+      "authors": [
+        "M. Arayıcı",
+        "Mustafa Eray Kılıç",
+        "M. B. Yılmaz"
+      ],
+      "venue": "Life",
+      "year": 2025,
+      "cited_by_count": 7,
+      "influential_cite_count": 3,
+      "reference_count": 55,
+      "tldr": "It is demonstrated that high adherence to Mediterranean and DASH diets significantly reduced the risk of incident HF among individuals without a previous diagnosis of HF, whereas only high adherence to the Mediterranean diet was associated with lower all-cause mortality among patients with HF.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/life15010063",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is demonstrated that high adherence to Mediterranean and DASH diets significantly reduced the risk of incident HF among individuals without a previous diagnosis of HF, whereas only high adherence to the Mediterranean diet was associated with lower all-cause mortality among patients with HF.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3233/mnm-200414",
+      "title": "Nutritional intervention promoting Mediterranean diet improves dietary intake and enhances score adherence in adolescent athletes",
+      "authors": [
+        "Sahnoune, Rokia",
+        "Bouchenak, Malika"
+      ],
+      "venue": "Mediterranean Journal of Nutrition and Metabolism",
+      "year": 2020,
+      "cited_by_count": 5,
+      "reference_count": 38,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>BACKGROUND: Appropriate nutrition is important to maintain health, growth, and development of adolescent athlete performance. OBJECTIVE: To evaluate the impact of nutritional intervention (NI) promoting Mediterranean diet (MD), on food consumption, and adherence to MD, in scholar adolescent athletes. METHODS: Eighty athletes (Females/Males, 39/41) aged 15±1 years participated to NI. MD Adherence was assessed, using Kidmed index, at baseline, and at 6 months. Food intake was evaluated by ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20944/preprints202501.0458.v1",
+      "title": "High and Low Adherence to Mediterranean and DASH Diet Patterns and the Risk of Heart Failure: A Meta-Analysis of Observational Studies",
+      "authors": [
+        "Arayici, Mehmet Emin",
+        "Kilic, Mustafa Eray",
+        "Yilmaz, Mehmet Birhan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>The relationship between heart failure (HF) and Mediterranean and DASH diets is not well delineated. This meta-analysis aimed to assess the effectiveness of high adherence to Mediterranean and DASH diets compared to low adherence in reducing the risk of incident HF (primary prevention of HF) and reducing all-cause mortality in patients with HF (secondary prevention of HF). The reporting stages of this meta-analysis closely adhered to the PRISMA guidelines. A comprehensive literature sear",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/01635581.2021.1909738",
+      "title": "A New Score for Quantifying Adherence to a Cancer-Preventive Mediterranean Diet",
+      "authors": [
+        "Djuric, Zora",
+        "Rifkin, Samara"
+      ],
+      "venue": "Nutrition and Cancer",
+      "year": 2022,
+      "cited_by_count": 3,
+      "reference_count": 72,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/b978-0-12-818649-7.00014-x",
+      "title": "Toward a Mediterranean-style diet beyond the Mediterranean countries: Evidence of implementation and adherence",
+      "authors": [
+        "Tsofliou, Fotini",
+        "Theodoridis, Xenophon",
+        "Arvanitidou, Eirini-Iro"
+      ],
+      "venue": "The Mediterranean Diet",
+      "year": 2020,
+      "cited_by_count": 1,
+      "reference_count": 45,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.37766/inplasy2022.6.0011",
+      "title": "Adherence to Mediterranean Diet Reduces Osteoporosis Risk: a systematic review and meta-analysis",
+      "authors": [
+        "Huang, Yue",
+        "Cen, Huijie",
+        "Ma, Chenxi",
+        "Wang, Mengfei"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "report",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1017/jns.2026.10125",
+      "title": "The impact of Mediterranean diet adherence on allergic diseases: a systematic review and meta-analysis",
+      "authors": [
+        "Panagiotou, Eleftheria",
+        "Andreou, Eleni",
+        "Nicolaou, Stella A."
+      ],
+      "venue": "Journal of Nutritional Science",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Allergies are a growing public health concern worldwide. This meta-analysis investigated the association between adherence to the Mediterranean diet (MD) and the occurrence/severity of respiratory allergic conditions. Electronic databases (PubMed, Scopus, Science Direct, and EBSCO) were searched for studies published up to April 2024. Eligible studies reported OR with 95% CI for asthma, wheezing (respiratory symptom",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/s0261-5614(19)32388-x",
+      "title": "MON-PO555: Mediterranean Diet Adherence Score as Indicator for Prediabetes in Taiwan",
+      "authors": [
+        "Hou, Y.C.",
+        "Tzeng, I.-S.",
+        "Kuo, C.-Y."
+      ],
+      "venue": "Clinical Nutrition",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.14586/astroedu/1645",
+      "arxiv_id": "1708.07700v3",
+      "title": "Navigation in the Ancient Mediterranean and Beyond",
+      "authors": [
+        "Markus Nielbock"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.07700v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2603.23985v3",
+      "arxiv_id": "2603.23985v3",
+      "title": "Diet Your LLM: Dimension-wise Global Pruning of LLMs via Merging Task-specific Importance Score",
+      "authors": [
+        "Jimyung Hong",
+        "Jaehyung Kim"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.23985v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2311.01042v1",
+      "arxiv_id": "2311.01042v1",
+      "title": "Higher Mediterranean diet score is associated with longer time between relapses in Australian females with multiple sclerosis",
+      "authors": [
+        "Hajar Mazahery",
+        "Alison Daly",
+        "Ngoc Minh Pham",
+        "Madeleine Stephens",
+        "Eleanor Dunlop",
+        "Anne-Louise Ponsonby",
+        "Ausimmune/AusLong Investigator Group",
+        "Lucinda J Black"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.01042v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2603.23707v1",
+      "arxiv_id": "2603.23707v1",
+      "title": "The Long Shadow of Pandemic: Understanding the lingering effects of cause-specific mortality shocks",
+      "authors": [
+        "Yanxin Liu",
+        "Kenneth Q. Zhou"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2603.23707v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2312.11767v1",
+      "arxiv_id": "2312.11767v1",
+      "title": "Least-cost diets to teach optimization and consumer behavior, with applications to health equity, poverty measurement and international development",
+      "authors": [
+        "Jessica K. Wallingford",
+        "William A. Masters"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2312.11767v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2401.11447v5",
+      "arxiv_id": "2401.11447v5",
+      "title": "Sequential Model for Predicting Patient Adherence in Subcutaneous Immunotherapy for Allergic Rhinitis",
+      "authors": [
+        "Yin Li",
+        "Yu Xiong",
+        "Wenxin Fan",
+        "Kai Wang",
+        "Qingqing Yu",
+        "Liping Si",
+        "Patrick van der Smagt",
+        "Jun Tang",
+        "Nutan Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2401.11447v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2201.09309v1",
+      "arxiv_id": "2201.09309v1",
+      "title": "COVID-19 mortality prediction: A case study for İstanbul",
+      "authors": [
+        "Erkan Yilmaz",
+        "Ozgur Oku",
+        "Ekrem Aydiner"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2201.09309v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1111.5213v2",
+      "arxiv_id": "1111.5213v2",
+      "title": "Multivariate Force of Mortality",
+      "authors": [
+        "Swagata Mitra",
+        "Pratyush Singh",
+        "Arni S. R. Srinivasa Rao"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1111.5213v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1708.05084v1",
+      "arxiv_id": "1708.05084v1",
+      "title": "P-value evaluation, variability index and biomarker categorization for adaptively weighted Fisher's meta-analysis method in omics applications",
+      "authors": [
+        "Zhiguang Huo",
+        "Shaowu Tang",
+        "Yongseok Park",
+        "George Tseng"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1708.05084v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1311.5380v2",
+      "arxiv_id": "1311.5380v2",
+      "title": "Probabilistic Mortality Forecasting with Varying Age-Specific Survival Improvements",
+      "authors": [
+        "Christina Bohk",
+        "Roland Rau"
+      ],
+      "venue": "arXiv",
+      "year": 2013,
+      "pdf_url": "https://arxiv.org/pdf/1311.5380v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.nut.2026.113189",
+      "arxiv_id": "",
+      "title": "Adherence to the Mediterranean diet and all-cause mortality: A systematic review and meta-analysis within the Italian National Guidelines \"La Dieta Mediterranea\".",
+      "authors": [
+        "D. Nucci",
+        "Francesco Saverio Ragusa",
+        "E. Mazza",
+        "N. Veronese",
+        "V. Gianfredi",
+        "Massimo Volpe",
+        "S. Maggi",
+        "G. Onder",
+        "C. Sieber",
+        "M. Zanetti",
+        "M. Silano",
+        "A. Chernykh",
+        "F. Lorenzo",
+        "Giulio Francesco Romiti",
+        "Piero Schirò",
+        "Andrea Ungar"
+      ],
+      "venue": "Nutrition (Burbank, Los Angeles County, Calif.)",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 97,
+      "tldr": "Higher adherence to the Mediterranean diet is associated with a reduced risk of all-cause mortality, and these findings support public health strategies promoting the MD as a sustainable dietary model for longevity.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Higher adherence to the Mediterranean diet is associated with a reduced risk of all-cause mortality, and these findings support public health strategies promoting the MD as a sustainable dietary model for longevity.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s12986-026-01135-y",
+      "arxiv_id": "",
+      "title": "The Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) diet and the risk of cancer, cardiovascular diseases, hypertension, all-cause, and cardiovascular diseases mortality: a systematic review and meta-analysis of observational studies",
+      "authors": [
+        "Hamid Ahmadirad",
+        "Y. Pasdar",
+        "Jalal Moludi",
+        "Mohammad Sedighi",
+        "Mehdi Moradinazar",
+        "Farshad Teymoori",
+        "S. Nachvak",
+        "P. Mirmiran",
+        "Hossein Farhadnejad"
+      ],
+      "venue": "Nutrition and Metabolism",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 60,
+      "tldr": "The findings suggested that the greater adherence to the MIND diet may be associated with lower risk of cancer, all-cause mortality, and CVDs-mortality; however, no significant association was observed between the MIND diet and risk of HTN and CVDs.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1186/s12986-026-01135-y",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The findings suggested that the greater adherence to the MIND diet may be associated with lower risk of cancer, all-cause mortality, and CVDs-mortality; however, no significant association was observed between the MIND diet and risk of HTN and CVDs.",
+      "quality_flag": null
+    }
+  ]
+}

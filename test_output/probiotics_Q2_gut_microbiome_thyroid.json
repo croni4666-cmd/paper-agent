@@ -1,0 +1,391 @@
+{
+  "query": "gut microbiome thyroid autoimmunity dysbiosis",
+  "year_min": 2020,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 15
+  },
+  "dedup_count": 15,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1016/j.mce.2022.111572",
+      "title": "Short chain fatty acids: Microbial metabolites for gut-brain axis signalling",
+      "authors": [
+        "Kenneth J. O’Riordan",
+        "Michael Collins",
+        "Gerard M. Moloney",
+        "Emily G. Knox",
+        "María R. Aburto",
+        "Christine Fülling",
+        "Shane J. Morley",
+        "Gerard Clarke",
+        "Harriët Schellekens",
+        "John F. Cryan"
+      ],
+      "venue": "Molecular and Cellular Endocrinology",
+      "year": 2022,
+      "cited_by_count": 672,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0303720722000193/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.14336/ad.2022.0104",
+      "title": "Functions of Gut Microbiota Metabolites, Current Status and Future Perspectives",
+      "authors": [
+        "Juan Liu",
+        "Yuzhu Tan",
+        "Hao Cheng",
+        "Dandan Zhang",
+        "Wuwen Feng",
+        "Cheng Peng"
+      ],
+      "venue": "Aging and Disease",
+      "year": 2022,
+      "cited_by_count": 493,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.aginganddisease.org/EN/PDF/10.14336/AD.2022.0104",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.ebiom.2020.102649",
+      "title": "The gut microbiome in coronary artery disease and heart failure: Current knowledge and future directions",
+      "authors": [
+        "Marius Trøseid",
+        "Geir Øystein Andersen",
+        "Kaspar Broch",
+        "Johannes R. Hov"
+      ],
+      "venue": "EBioMedicine",
+      "year": 2020,
+      "cited_by_count": 438,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "http://www.thelancet.com/article/S2352396420300244/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41569-022-00737-2",
+      "title": "Gut-derived low-grade endotoxaemia, atherothrombosis and cardiovascular disease",
+      "authors": [
+        "Francesco Violi",
+        "Vittoria Cammisotto",
+        "Simona Bartimoccia",
+        "Pasquale Pignatelli",
+        "Roberto Carnevale",
+        "Cristina Nocella"
+      ],
+      "venue": "Nature Reviews Cardiology",
+      "year": 2022,
+      "cited_by_count": 348,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.nature.com/articles/s41569-022-00737-2.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5056/jnm20208",
+      "title": "Roles of Sex Hormones and Gender in the Gut Microbiota",
+      "authors": [
+        "Kichul Yoon",
+        "Nayoung Kim"
+      ],
+      "venue": "Journal of Neurogastroenterology and Motility",
+      "year": 2021,
+      "cited_by_count": 303,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.jnmjournal.org/journal/download_pdf.php?doi=10.5056/jnm20208",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2022.903570",
+      "title": "The Gut Microbiota (Microbiome) in Cardiovascular Disease and Its Therapeutic Regulation",
+      "authors": [
+        "Md. Mominur Rahman",
+        "Fahadul Islam",
+        "Md. Harun- Or-Rashid",
+        "Abdullah Al Mamun",
+        "Md. Saidur Rahaman",
+        "Md. Mohaimenul Islam",
+        "Atkia Farzana Khan Meem",
+        "Popy Rani Sutradhar",
+        "Saikat Mitra",
+        "Anjuman Ara Mimi",
+        "Talha Bin Emran",
+        "Fatimawali Fatimawali",
+        "Rinaldi Idroes",
+        "Trina Ekawati Tallei",
+        "Muniruddin Ahmed",
+        "Simona Cavalu"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2022,
+      "cited_by_count": 249,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2022.903570/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1530/joe-22-0111",
+      "title": "The gut microbiome: a core regulator of metabolism",
+      "authors": [
+        "Shiho Fujisaka",
+        "Yoshiyuki Watanabe",
+        "Kazuyuki Tobe"
+      ],
+      "venue": "Journal of Endocrinology",
+      "year": 2022,
+      "cited_by_count": 192,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://joe.bioscientifica.com/downloadpdf/journals/joe/256/3/JOE-22-0111.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fcimb.2021.763507",
+      "title": "The Gut Microbiome and Metabolites Are Altered and Interrelated in Patients With Rheumatoid Arthritis",
+      "authors": [
+        "Die Yu",
+        "Juping Du",
+        "Xia Pu",
+        "Liyuan Zheng",
+        "Shuaishuai Chen",
+        "Na Wang",
+        "Jun Li",
+        "Shiyong Chen",
+        "Shaobiao Pan",
+        "Bo Shen"
+      ],
+      "venue": "Frontiers in Cellular and Infection Microbiology",
+      "year": 2022,
+      "cited_by_count": 177,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2021.763507/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/cells11081362",
+      "title": "Mechanistic Insights into the Link between Gut Dysbiosis and Major Depression: An Extensive Review",
+      "authors": [
+        "Sharma Sonali",
+        "Bipul Ray",
+        "Hediyal Ahmed Tousif",
+        "Annan Gopinath Rathipriya",
+        "Tuladhar Sunanda",
+        "Arehally M. Mahalakshmi",
+        "Wiramon Rungratanawanich",
+        "Musthafa Mohamed Essa",
+        "M. Walid Qoronfleh",
+        "Saravana Babu Chidambaram",
+        "Byoung‐Joon Song"
+      ],
+      "venue": "Cells",
+      "year": 2022,
+      "cited_by_count": 150,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2073-4409/11/8/1362/pdf?version=1650109460",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2019.03094",
+      "title": "Environmental Exposures and Autoimmune Diseases: Contribution of Gut Microbiome",
+      "authors": [
+        "M. Firoze Khan",
+        "Hui Wang"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2020,
+      "cited_by_count": 147,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2019.03094/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1210/clinem/dgaa511",
+      "title": "Gut Dysbiosis Contributes to the Imbalance of Treg and Th17 Cells in Graves’ Disease Patients by Propionic Acid",
+      "authors": [
+        "Xinhuan Su",
+        "Xianlun Yin",
+        "Yue Liu",
+        "Xuefang Yan",
+        "Shucui Zhang",
+        "Xiaowei Wang",
+        "Zongwei Lin",
+        "Xiaoming Zhou",
+        "Jing Gao",
+        "Zhe Wang",
+        "Qunye Zhang"
+      ],
+      "venue": "The Journal of Clinical Endocrinology & Metabolism",
+      "year": 2020,
+      "cited_by_count": 130,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/jcem/article-pdf/105/11/3526/41828580/dgaa511.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/nu16213663",
+      "title": "Physical Exercise and the Gut Microbiome: A Bidirectional Relationship Influencing Health and Performance",
+      "authors": [
+        "Sanish Varghese",
+        "Shrinidhi Rao",
+        "Aadam Khattak",
+        "Fahad Zamir",
+        "Ali Châari"
+      ],
+      "venue": "Nutrients",
+      "year": 2024,
+      "cited_by_count": 124,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/16/21/3663/pdf?version=1730110071",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijms231810729",
+      "title": "Gut Dysbiosis and Fecal Microbiota Transplantation in Autoimmune Diseases",
+      "authors": [
+        "Paulína Belvončíková",
+        "Martin Marônek",
+        "Roman Gardlík"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2022,
+      "cited_by_count": 102,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/1422-0067/23/18/10729/pdf?version=1663556332",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2022.931431",
+      "title": "The change of plasma metabolic profile and gut microbiome dysbiosis in patients with rheumatoid arthritis",
+      "authors": [
+        "Jing Zhu",
+        "Tingting Wang",
+        "Yifei Lin",
+        "Minghao Xiong",
+        "Jianghua Chen",
+        "Congcong Jian",
+        "Jie Zhang",
+        "Huanhuan Xie",
+        "Fanwei Zeng",
+        "Fanwei Zeng",
+        "Qian Huang",
+        "Jiang Su",
+        "Yi Zhao",
+        "Shilin Li",
+        "Fanxin Zeng",
+        "Fanxin Zeng"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": 2022,
+      "cited_by_count": 52,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.3389/fmicb.2022.931431",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+
+========== PAGE 9 ==========
+aberrant gut microbiota on early-​stage metabolic per-
+turbations from an imbalanced gut microbiota that, at 
+a stage distal to the dysmetabolic stage, is escalating the 
+pathogenesis of ischaemic heart disease. On top of this, 
+individuals with CMD are, as in T2D, heavily medicated, 
+making it challenging to tease apart authentic arterio-
+sclerosis signals in the gut micro­biota from signatures 
+induced by complex medication and pre-​morbidities 
+and co-​morbidities. So far, these challenges have not 
+been systematically addressed. A metagenome-​wide 
+association study of faecal samples from individuals 
+with CMD reported that the gut microbiome of these 
+individuals, without adjustments for pre-​morbidities 
+or co-​morbidities, exhibits enriched abundances of 
+Enterobacteriaceae, including Escherichia coli, Klebsiella 
+spp. and Enterobacter aerogenes, as well as an increased 
+abundance of oral cavity species when compared with 
+healthy control subjects73 (Fig. 2). By contrast, individuals 
+with CMD had a reduced abundance of Bacteroides spp. 
+and anti-​inflammatory Faecalibacterium prausnitzii74. 
+At the functional level, a decrease in some fermen-
+tation capacities was seen but an enrichment in the 
+phosphotransferase system, amino acid transporters 
+and enzymes involved in the synthesis of LPS and tri-
+methylamine (TMA)73 was also seen. Recently, it was 
+shown that ischaemic heart failure is associated with a 
+dysbiotic gut microbiota with an increased abundance of 
+Ruminococcus, Acinetobacter and Veillonella spp. and a 
+decreased abundance of Alistipes, Faecalibacterium and 
+Oscillibacter spp.75. At the functional level, the micro-
+biome of these patients was enriched in genes involved 
+in the biosynthesis of LPS and trimethylamine N-​oxide 
+(TMAO)75. Taken together, these studies of CMD point 
+to a more inflammatory and a less fermentative micro-
+biome, even though it remains to be determined which 
+components of the gut microbiota are involved in early-​
+stage dysmetabolism and which are related to a more 
+distal atherogenesis stage.
+Of special interest is the discovery of the TMAO 
+pathway with the involvement of the gut microbiota 
+and relations to ischaemic vascular diseases76. TMA is 
+synthesized by gut microbiota from dietary phosphati-
+dylcholine, lecithin and l-​carnitine, which are found 
+not only in meat from four-​legged animals but also in 
+poultry, seafood and eggs. TMA enters the portal circu-
+lation and is oxidized to TMAO in the liver. Experiments 
+in rodents demonstrate that feeding dietary TMAO or 
+its dietary precursors causes an acceleration of arterio-
+sclerosis, induces platelet aggregation and enhances the 
+thrombosis potential77. Moreover, inhibition of intestinal 
+bacterial TMA production with 3,3-​dimethyl-1-​butanol 
+(a TMA-​lyase inhibitor) attenuates arteriosclerosis and 
+thrombosis78. Epidemiological studies showing posi-
+tive relationships between the plasma concentrations 
+of TMAO and an increased prevalence of stroke and 
+myocardial infarction as well as an increase in prema-
+ture mortality of people with stable coronary artery 
+ischaemia lend support to the outcome of the mech-
+anistic experiments that TMAO is a biomarker of 
+arteriosclerosis79,80.
+Still, there are inconsistencies in available results. For 
+instance, mice fed a diet enriched in l-​carnitine have 
+increased plasma TMAO concentrations but unex-
+pectedly reduced aortic lesion sizes without changes in 
+plasma lipids, thereby indicating a potential beneficial 
+role for l-​carnitine in the prevention of atherosclerosis 
+independently of an increase in plasma TMAO, in this 
+specific mouse model81. Moreover, there are numerous 
+foods that are rich in TMAO itself, such as some cold 
+water-​dwelling fish, the intake of which is generally con-
+sidered beneficial for cardiovascular health82. Lately, the 
+contradictory results may have been reconciled to some 
+extent83. Recent animal and human studies suggest that 
+the influence of TMAO on vascular biology is dependent 
+on dietary–microbiome interactions and host genetics, 
+which may explain some of the apparent controversies 
+of TMAO’s involvement in atherothrombosis. In rodent 
+experiments, it was found that TMAO can be directly 
+produced in the gut in addition to oxidation of TMA in 
+the liver, and blood TMAO levels increased after feed-
+ing the animals with a high-​fibre diet or a high-​choline 
+diet. In two different genetically modified mouse mod-
+els that are predisposed to arteriosclerosis, investigators 
+could not find evidence of any relationships between 
+TMAO generation and accelerated atherogenesis83. 
+However, in the atherosclerosis-​prone animals, circu-
+lating TMAO concentrations linked directly with fea-
+tures of plaque instability, including biomarkers of platelet 
+aggregation, intra-​plaque bleeding and inflammation. 
+In a population-​based observational study of adults, the 
+same authors could not find evidence of correlations 
+between plasma TMAO levels and markers of arterio-
+sclerosis such as intima thickness of carotid arteries or 
+calcium scores of coronary arteries83,84. Thus, it appears 
+that a major role of the partially gut microbiota-​derived 
+TMAO, in relation to ischaemic vascular disorders, 
+may be an aggravation of atherogenesis in individu-
+als with already established ischaemic heart disease or 
+stroke through mechanisms primarily involving plaque 
+instability.
+Dysbiosis of the intestinal microbiota in metabolic liver 
+diseases. Non-​alcoholic fatty liver disease (NAFLD), 
+frequently regarded as the hepatic manifestation of 
+the metabolic syndrome, occurs in many countries 
+with a prevalence of 20–40% of the adult population3. 
+NAFLD comprises a wide spectrum of diseases ranging 
+from simple steatosis to non-​alcoholic steatohepatitis 
+(NASH), which is the inflammatory, aggressive form of 
+NAFLD85. There is growing recognition that a disrupted 
+gut microbiota may be one of several crucial factors in 
+the pathophysiology of NAFLD and NASH. Individuals 
+with NAFLD have an increased abundance of species 
+assigned to Clostridium, Anaerobacter, Streptococcus, 
+Escherichia and Lactobacillus, whereas Oscillibacter, 
+Flavonifaractor, Odoribacter and Alistipes spp. 
+are less abundant86. In comparison, the abundance of 
+Proteobacteria, Enterobacteriaceae and Escherichia 
+spp. is elevated in patients with NASH87. Concordantly, 
+children with steatosis or NASH are depleted in 
+Oscillospira spp. accompanied by higher abundance 
+of Dorea and Ruminococcus spp. when compared with 
+controls88. The microbiota alterations are associated 
+with higher faecal concentrations of 2-​butanone and 
+Atherogenesis
+The dynamic process of 
+forming atheromas (also called 
+plaques), that is, accumulated 
+inflammatory cells, lipids,  
+cell debris, minerals and 
+connective tissue in and on  
+the walls of an artery forming  
+a swelling that narrows the 
+arterial lumen and restricts  
+the flow of blood.
+Thrombosis
+The formation of a blood clot, 
+known as a thrombus, within  
+a blood vessel. The blood clot 
+that consists of platelets, red 
+blood cells and fibrin proteins 
+obstructs the flow of blood 
+through the blood vessel.
+Stroke
+An acute brain insult where 
+compromised blood flow in 
+atherosclerotic arteries or 
+bleeding from brain arteries 
+causes damage to brain tissues 
+often resulting in various 
+paresis.
+Myocardial infarction
+(Also known as an acute heart 
+attack or acute coronary 
+syndrome). An event that 
+occurs when blood flow is 
+acutely compromised or  
+is completely stopped to a  
+part of the heart muscle 
+(myocardium), causing severe 
+damage to the heart.
+Atherosclerosis
+The build-​up of cholesterol, 
+other lipids, inflammatory cells 
+and calcium in artery walls, 
+which can restrict blood flow.
+Atherothrombosis
+The formation of a blood clot 
+within an artery that is affected 
+by arteriosclerosis.
+Plaque instability
+Vulnerable arterial wall plague 
+that intermittently ruptures 
+giving rise to circulating plaque 
+fragments called emboli, which 
+may cause myocardial 
+infarction or stroke.
+Intima
+The innermost coating  
+of the vessel wall including  
+the endothelial surface  
+at the lumen.
+Steatosis
+An abnormal retention of lipids 
+within an organ. The term is 
+most often used about a fatty 
+liver.
+Nature Reviews | Microbiology
+Reviews

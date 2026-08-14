@@ -1,0 +1,178 @@
+{
+  "query": "Lactobacillus rhamnosus Bifidobacterium TPOAb thyroid",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "openalex": 7
+  },
+  "dedup_count": 7,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.3390/nu12061769",
+      "title": "Thyroid-Gut-Axis: How Does the Microbiota Influence Thyroid Function?",
+      "authors": [
+        "Jovana Knežević",
+        "Christina Starchl",
+        "Adelina Tmava Berisha",
+        "Karin Amrein"
+      ],
+      "venue": "Nutrients",
+      "year": 2020,
+      "cited_by_count": 354,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2072-6643/12/6/1769/pdf?version=1593415878",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fendo.2022.1092837",
+      "title": "The protective role of nutritional antioxidants against oxidative stress in thyroid disorders",
+      "authors": [
+        "Mirjana Mačvanin",
+        "Zoran Gluvić",
+        "Sonja Zafirović",
+        "Xin Gao",
+        "Magbubah Essack",
+        "Esma R. Isenović"
+      ],
+      "venue": "Frontiers in Endocrinology",
+      "year": 2023,
+      "cited_by_count": 80,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/articles/10.3389/fendo.2022.1092837/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10238-024-01304-4",
+      "title": "Intestinal microbiota regulates the gut-thyroid axis: the new dawn of improving Hashimoto thyroiditis",
+      "authors": [
+        "Xiaxin Zhu",
+        "Chi Zhang",
+        "Shuyan Feng",
+        "Ruonan He",
+        "Shuo Zhang"
+      ],
+      "venue": "Clinical and Experimental Medicine",
+      "year": 2024,
+      "cited_by_count": 36,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10238-024-01304-4.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fmicb.2025.1661211",
+      "title": "Gut microbiota in hypothyroidism: pathogenic mechanisms and opportunities for precision microbiome interventions",
+      "authors": [
+        "Tao Jiang",
+        "Xiuqing Yang",
+        "Baihui Wu",
+        "Runchao Tao",
+        "Rongbing Chen",
+        "Libo Jin",
+        "Da Sun",
+        "Huibin Weng"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "year": 2025,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1661211/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2147/ijgm.s467888",
+      "title": "Significance of Gut Microbiota on Graves’ Disease",
+      "authors": [
+        "Haiyan Chen",
+        "Jiamin Cao",
+        "Feng Zhang",
+        "Wei Xiong"
+      ],
+      "venue": "International Journal of General Medicine",
+      "year": 2024,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.dovepress.com/article/download/95604",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3389/fimmu.2026.1905146",
+      "title": "Lactobacillus in autoimmune thyroid diseases: benefit or risk?",
+      "authors": [
+        "Jin-min Yang",
+        "Pengfei Hou",
+        "Shuaiying Jia"
+      ],
+      "venue": "Frontiers in Immunology",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1905146/pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.31435/ijitss.4(48).2025.4434",
+      "title": "THE ROLE OF MICRONUTRIENTS AND SUPPLEMENTS IN HYPOTHYROIDISM MANAGEMENT: A LITERATURE REVIEW",
+      "authors": [
+        "Zuzanna Wróbel",
+        "Katarzyna Torbacka",
+        "Joanna Kaczor",
+        "Maja Torbacka",
+        "Katarzyna Rozkosz",
+        "Natalia Wróbel",
+        "Olga Jakubik",
+        "Patrycja Podlejska",
+        "Aleksandra Sosin",
+        "Wojciech Bednarz"
+      ],
+      "venue": "International Journal of Innovative Technologies in Social Science",
+      "year": 2025,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://rsglobal.pl/index.php/ijitss/article/download/4434/3719",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}
