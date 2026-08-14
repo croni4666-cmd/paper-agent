@@ -16,7 +16,7 @@ transformers>=4.30
 
 # === Async batch fetch (pa fetch-batch) ===
 # aiohttp + cache for parallel PDF downloads
-aiohttp>=3.9
+aiohttp>=3.14.3
 aiohttp-client-cache>=0.10
 
 # === Topic modeling (pa topics) ===

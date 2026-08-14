@@ -50,7 +50,7 @@ dependencies = [
 [project.optional-dependencies]
 llm-rerank = ["openai>=1.0", "tiktoken>=0.4"]
 cross-encoder = ["sentence-transformers>=2.2", "torch>=2.0", "transformers>=4.30"]
-async-fetch = ["aiohttp>=3.9", "aiohttp-client-cache>=0.10"]
+async-fetch = ["aiohttp>=3.14.3", "aiohttp-client-cache>=0.10"]
 topics = ["bertopic>=0.16", "umap-learn>=0.5", "hdbscan>=0.8"]
 all = [
     "openai>=1.0",
@@ -58,7 +58,7 @@ all = [
     "sentence-transformers>=2.2",
     "torch>=2.0",
     "transformers>=4.30",
-    "aiohttp>=3.9",
+    "aiohttp>=3.14.3",
     "aiohttp-client-cache>=0.10",
     "bertopic>=0.16",
     "umap-learn>=0.5",
