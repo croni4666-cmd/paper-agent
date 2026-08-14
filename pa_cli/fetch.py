@@ -1055,7 +1055,26 @@ def fetch_doi(doi: str, output_dir: str = ".",
     out_path = str(Path(output_dir) / f"{doi_slug}.pdf")
 
     # Call new fetch
-    r = fetch(doi=doi, out_path=out_path, prefer=prefer)
+    # v3.9.13.2: route --proxy CLI option through env var so _get_proxy_dict()
+    # picks it up (and runs the validation). Previously `proxy` was a
+    # parameter but never used in the function body, so `pa fetch --proxy`
+    # was silently ignored. Fix: temporarily set HTTPS_PROXY if not already
+    # set in env, then restore in finally.
+    proxy_env_set = False
+    prev_https_proxy = os.environ.get("HTTPS_PROXY")
+    prev_http_proxy = os.environ.get("HTTP_PROXY")
+    if proxy and not prev_https_proxy and not prev_http_proxy:
+        # Normalize scheme-less proxy like _get_proxy_dict does
+        p = proxy.strip()
+        if not p.startswith(("http://", "https://", "socks5://", "socks5h://")):
+            p = "http://" + p
+        os.environ["HTTPS_PROXY"] = p
+        proxy_env_set = True
+    try:
+        r = fetch(doi=doi, out_path=out_path, prefer=prefer)
+    finally:
+        if proxy_env_set:
+            os.environ.pop("HTTPS_PROXY", None)
 
     elapsed = round(time.time() - t0, 3)
 

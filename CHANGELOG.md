@@ -7,6 +7,40 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.13.2] - 2026-08-14
+
+### Bug fix
+
+- **pa fetch --proxy CLI option now actually works (was silently ignored).**
+  `pa_cli/fetch.py:fetch_doi()` accepted a `proxy` parameter in its
+  signature but never used it in the function body. The `pa fetch
+  --proxy http://...` CLI option was therefore ignored, and only the
+  `HTTPS_PROXY` env var was honored. Fix: temporarily set
+  `HTTPS_PROXY` env var when the user passes `--proxy` and not
+  env var, then restore in `finally`. This routes through
+  `_get_proxy_dict()` which runs the v3.9.13.0 TLS validation.
+
+### Security audit
+
+- Round 12 (2026-08-14) verified: 0 personal info leaks in tracked
+  files (DengN / dengn / 海宁 / 东方学院 / C:\Users\DengN /
+  嘉兴 / 李承翰 all 0 hits, excluding self-referential audit docs).
+- 0 hardcoded API keys in pa_cli source.
+- 0 `shell=True` subprocess calls.
+- 0 `verify=False` / SSL bypass.
+- 0 `pickle.load` / `yaml.load` / `eval` / `exec`.
+- TLS validation v3.9.13.0/1 verified end-to-end:
+    - `pa fetch --proxy http://127.0.0.1:10808` -> warning + 943 KB PDF
+    - `pa fetch --proxy http://8.8.8.8:8080` -> refused
+    - `pa search --engine crossref` (proxy env unset) -> 1 result
+    - CNKI HTTP+override -> warn + accept
+    - CNKI HTTP no-override -> refuse
+- Known non-TLS path: `pa_cli/search.py` uses bare `urllib.request.urlopen`
+  (not routed through `_get_proxy_dict()`). All 8 search targets are
+  HTTPS so no plaintext leak, but `pa search` does not honor
+  `HTTPS_PROXY` env var (relies on system default proxy or direct
+  connection). Tracked for v3.9.14 follow-up.
+
 ## [3.9.13.1] - 2026-08-14
 
 ### Security
