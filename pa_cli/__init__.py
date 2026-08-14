@@ -1,14 +1,14 @@
-"""paper-agent CLI — academic paper fetch + lit review synthesis.
+﻿"""paper-agent CLI 鈥?academic paper fetch + lit review synthesis.
 
 Latest stable: v3.9.12.0 (ClinicalTrials.gov engine + 2026-08-10 hotfix chain).
 See CHANGELOG [3.9.12.0] for the new engine.
 
-v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 PubMed year filter — see
+v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 PubMed year filter 鈥?see
 CHANGELOG [3.9.11.9]. esearch `pdat` filter post-filter on `year` field.
 
-v3.9.12.0 (2026-08-10): NEW ENGINE — ClinicalTrials.gov (NCBI sister
+v3.9.12.0 (2026-08-10): NEW ENGINE 鈥?ClinicalTrials.gov (NCBI sister
 site). 500K+ registered clinical trial records, free public API, no
-auth. Returns trial registry records (not papers — different content
+auth. Returns trial registry records (not papers 鈥?different content
 type from PubMed/PEDro). Use case: "is anyone running a trial for
 this intervention?"
 
@@ -58,7 +58,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.12.0"
+__version__ = "3.9.13.0"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 
