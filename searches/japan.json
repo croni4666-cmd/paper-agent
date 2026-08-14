@@ -1,0 +1,1310 @@
+{
+  "query": "Japan shikikin security deposit rental housing",
+  "year_min": 2015,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 2,
+    "arxiv": 15,
+    "semanticscholar": 15,
+    "aminer": 15,
+    "cnki": 1
+  },
+  "dedup_count": 61,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.17487/rfc8446",
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+      "authors": [
+        "E. Rescorla"
+      ],
+      "venue": "",
+      "year": 2026,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5a260c6217c44a4ba8a2b601",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.11159/rtese23.163",
+      "title": "Climate Change Impacts on Global Food Security",
+      "authors": [
+        "Charles Lee"
+      ],
+      "venue": "International Conference of Recent Trends in Environmental Science and Engineering Proceedings of the 7th International Conference of Recent Trends in Environmental Science and Engineering (RTESE 2023)",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "657936c2939a5f40820c57d4",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3610721",
+      "title": "Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions",
+      "authors": [
+        "Hammond Pearce"
+      ],
+      "venue": "COMMUNICATIONS OF THE ACM",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61234ddd5244ab9dcb6ac1d6",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Preschool in Three Cultures Revisited: China, Japan and the United states",
+      "authors": [
+        "Xinyi Zong"
+      ],
+      "venue": "ECNU REVIEW OF EDUCATION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86698dabfae2eeea51d13",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/comst.2022.3202047",
+      "title": "A Survey on Metaverse: Fundamentals, Security, and Privacy.",
+      "authors": [
+        "Yuntao Wang"
+      ],
+      "venue": "IEEE COMMUNICATIONS SURVEYS AND TUTORIALS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6226c93c5aee126c0fd577ee",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.bcra.2023.100130",
+      "title": "Security and Privacy of Blockchain",
+      "authors": [
+        "Meng Shen"
+      ],
+      "venue": "BLOCKCHAIN-RESEARCH AND APPLICATIONS",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63e33b0790e50fcafd2152c6",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1162/isec.2009.33.3.7",
+      "title": "The Heart of the Matter the Security of Women and the Security of States",
+      "authors": [
+        "Valerie M. Hudson"
+      ],
+      "venue": "SEX AND WORLD PEACE, 2 EDITION",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6679c607a925a558d58ed1bc",
+      "matched_phrase": "security",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijerph191912351",
+      "title": "Examining the Indirect Death Surveillance System of the Great East Japan Earthquake and Tsunami",
+      "authors": [
+        "Xiang Zheng"
+      ],
+      "venue": "INTERNATIONAL JOURNAL OF ENVIRONMENTAL RESEARCH AND PUBLIC HEALTH",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a50fb7602d9702e310ea",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/gji/ggag087",
+      "title": "Subslab Heterogeneity and Geodynamics of Japan Subduction Zone",
+      "authors": [
+        "Motoya Suzuki"
+      ],
+      "venue": "GEOPHYSICAL JOURNAL INTERNATIONAL",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08d7a9be8eb7c4b628a4a",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5749/minnesota/9780816665792.001.0001",
+      "title": "The Japan of Pure Invention",
+      "authors": [
+        "Josephine Lee"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d86152dabfae2eee7eacec",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1525/9780520922679",
+      "title": "Everyday Things in Premodern Japan",
+      "authors": [
+        "Susan B. Hanley"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a855b7602d970319de2d",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5771/9781442221963",
+      "title": "Japan’s New Middle Class",
+      "authors": [
+        "EZRA F. VOGEL"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8278fdabfae2eeee6a9ba",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/2108645",
+      "title": "Parties and Politics in Contemporary Japan",
+      "authors": [
+        "ROBERT A. SCALAPINO"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6216bb565aee126c0f00b983",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/jj.2430643",
+      "title": "Japan’s Invisible Race",
+      "authors": [
+        "GEORGE DE VOS"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a6547dd68f896efa02aac3",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s11748-023-01945-4",
+      "title": "Thoracic and Cardiovascular Surgeries in Japan During 2019",
+      "authors": [
+        "Kenji Minatoya"
+      ],
+      "venue": "General Thoracic and Cardiovascular Surgery",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64d645d93fda6d7f0632ac93",
+      "matched_phrase": "Japan",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/14649365.2020.1744704",
+      "title": "Living alone together in Tokyo <i>share houses</i>",
+      "authors": [
+        "Oana Druţǎ",
+        "Richard Ronald"
+      ],
+      "venue": "Social & Cultural Geography",
+      "year": 2020,
+      "cited_by_count": 44,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/14649365.2020.1744704?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2019.1621271",
+      "title": "Rental security and the property manager in a tenant’s search for a private rental property",
+      "authors": [
+        "Bate, Bronwyn"
+      ],
+      "venue": "Housing Studies",
+      "year": 2020,
+      "cited_by_count": 21,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/J.1839-4655.2015.TB00357.X",
+      "arxiv_id": "",
+      "title": "Why do tenants leave social housing? Exploring residential and social mobility at the lowest rungs of Australia's socioeconomic ladder",
+      "authors": [
+        "Ilan Wiesel",
+        "Hal Pawson"
+      ],
+      "venue": "",
+      "year": 2015,
+      "cited_by_count": 21,
+      "influential_cite_count": 1,
+      "reference_count": 16,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://hdl.handle.net/1959.4/unsworks_37670",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Lessons from Germany: Tenant power in the rental market",
+      "authors": [
+        "E. Turner",
+        "B. Davies",
+        "Susanne Marquardt"
+      ],
+      "venue": "",
+      "year": 2017,
+      "cited_by_count": 9,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Move-In Fees as a Residential Sorting Mechanism Within Online Rental Markets",
+      "authors": [
+        "Remy Stewart",
+        "Christian Hess",
+        "Ian Kennedy",
+        "Kyle Crowder"
+      ],
+      "venue": "Cityscape",
+      "year": 2023,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41598-024-58244-y",
+      "title": "Living in public rental housing is healthier than private rental housing a 9-year cohort study from Japan Gerontological Evaluation Study",
+      "authors": [
+        "Koga, Chie",
+        "Saito, Tami",
+        "Hanazato, Masamichi",
+        "Kondo, Naoki",
+        "Saito, Masashige",
+        "Ojima, Toshiyuki",
+        "Kondo, Katsunori"
+      ],
+      "venue": "Scientific Reports",
+      "year": null,
+      "cited_by_count": 5,
+      "reference_count": 57,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Housing tenure is an important aspect to determine health. However, even though renters tend to have more socioeconomic disadvantages than homeowners, mortality risk between private and public renters compared with homeowners remains unclear. Japanese public rented housing, such as the Urban Renaissance Agency, has been developed for supplying an adequate living environment since 1950s. This study aimed to examine the mortality risk among older Japanese r",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.17000/kspr.25.3.201809.75",
+      "title": "The Difference of Housing Welfare Outcomes Between Public Rental Housing and Market Rental Housing",
+      "authors": [
+        "임세희"
+      ],
+      "venue": "Korea Social Policy Review",
+      "year": 2018,
+      "cited_by_count": 4,
+      "reference_count": 17,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5334/ijic.2708",
+      "arxiv_id": "",
+      "title": "Role of the social and community prescription in the integrated community-based health care system in Japan",
+      "authors": [
+        "T. Kumakawa",
+        "M. Otaga",
+        "T. Oguchi",
+        "Mie Morikawa",
+        "Y. Tamaki",
+        "T. Matsushige"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "In order to structure the integrated community-based care system, and for improving the quality of comprehensive care in the regions, it is critical to strategically use the regional activities that presently exist in each local region as well as new regional resources that might be created out of changes in the social environment in the future.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.5334/ijic.2708",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "In order to structure the integrated community-based care system, and for improving the quality of comprehensive care in the regions, it is critical to strategically use the regional activities that presently exist in each local region as well as new regional resources that might be created out of changes in the social environment in the future.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-3-319-92099-3_56",
+      "arxiv_id": "",
+      "title": "Investment Property in Rental: Profitability and Risk Analysis",
+      "authors": [
+        "Franco Prizzon",
+        "Andrea Cullino"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 9,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-981-19-4925-8_6",
+      "title": "Housing Policy to Supply Barrier-Free Rental Housing",
+      "authors": [
+        "Hirono, Keiko Nosse"
+      ],
+      "venue": "New Frontiers in Regional Science: Asian Perspectives",
+      "year": 2022,
+      "cited_by_count": 1,
+      "reference_count": 16,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9780429338465-8",
+      "title": "Moderating Market Pressures for Washington, D.C., Rental Housing",
+      "authors": [
+        "Turner, Margery Austin"
+      ],
+      "venue": "Rent Control",
+      "year": 2020,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/land13071034",
+      "title": "China’s New Housing Security Model: Evaluation of the Job–Housing Balance in Affordable Rental Housing, Shanghai",
+      "authors": [
+        "Wang, Peihong",
+        "Li, Kerun",
+        "Zhang, Wenbing"
+      ],
+      "venue": "Land",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 45,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The Chinese government’s recent low-income housing scheme aims to tackle housing challenges faced by the urban floating population. A notable shift in this initiative is the focus on the job–housing balance. This study proposes that the spatial interaction between land designated for affordable rental housing and land for commercial facilities serves as a fundamental metric for evaluating this equilibrium, providing insights into the effectiveness of China’s nascent affordable housing ef",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/buildings16071412",
+      "title": "From “Housing Security” to “Housing Quality”: The Common Implications of Japan’s UR Rental Housing Experience for China’s Affordable Housing and South Korea’s Public Housing",
+      "authors": [
+        "Wang, Xue-Rui",
+        "Huang, Ting",
+        "Chen, Xin-Yan",
+        "Jun, Byung-Kweon"
+      ],
+      "venue": "Buildings",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 46,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This study focuses on the commonalities and differences in the public housing systems of three East Asian countries, using Japan’s UR Rental Housing as a case study. It employs a composite methodology that integrates architectural typology and cross-cultural comparison, constructing theoretical linkages within a three-dimensional framework of “social institutions–cultural context–spatial structure”. The research emphasizes three key dimensions: (1) The evolution of policy frameworks and ",
+      "found_by": [
+        "crossref",
+        "semanticscholar"
+      ],
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/2075-5309/16/7/1412/pdf?version=1775135806",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24943/1-0010",
+      "title": "Can Rental Housing Address Housing Poverty?",
+      "authors": [
+        "Harish, Swastik"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "reference-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2026.11.2.37",
+      "title": "The impact of deposit insurance on rental deposit ratios: Evidence\n                        from default events",
+      "authors": [
+        "Lee, Songhee"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 37,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21203/rs.3.rs-3108430/v1",
+      "title": "Housing Tenure and the Risk of Mortality among Older Adults in Japan: Are Those Living in Public Rental Housing Healthier than Those Living in Private Rental Housing? A 9-Year Cohort Study from the JAGES",
+      "authors": [
+        "Koga, Chie",
+        "Saito, Tami",
+        "Hanazato, Masamichi",
+        "Kondo, Naoki",
+        "Saito, Masashige",
+        "Ojima, Toshiyuki",
+        "Kondo, Katsunori"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 38,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<title>Abstract</title>\n        <p>Housing tenure is an important aspect to determine health. However, even though renters tend to have more socioeconomic disadvantages than homeowners, the mortality risk between private and public renters compared with homeowners remains unclear. Japanese public rented housing, such as the Urban Renaissance Agency, has been developed for supplying an adequate living environment since 1950s. This study aimed to examine the mortality risk among older Japanese res",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47297/wspciwsp2516-252733.20250906",
+      "title": "The Future Development Direction of Public Rental Housing Security in China",
+      "authors": [
+        "Weifang, Liao"
+      ],
+      "venue": "Creativity and Innovation",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26700/shuri.2024.4.14.1.1",
+      "title": "Comparing Determinants of Below the Minimum Housing Standard among Rental Housing Types: Focusing on Private Rental Housing and Public Rental Housing",
+      "authors": [
+        "Lee, Daeun",
+        "Seo, Wonseok"
+      ],
+      "venue": "SH Urban Research &amp; Insight",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5870478",
+      "title": "Climate-adaptive housing features in rental housing: Linking Tenant Satisfaction with Rental Premiums for Retrofit Decisions",
+      "authors": [
+        "Kavaarpuo, Godwin",
+        "Swanzy-Impraim, Samuel",
+        "Akudbillah, Nafisah"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 32,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1332/policypress/9781529211863.003.0011",
+      "title": "Subsidizing the Supply of Rental Housing",
+      "authors": [
+        "Meen, Geoffrey",
+        "Whitehead, Christine"
+      ],
+      "venue": "Understanding Affordability",
+      "year": 2020,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "<p>Chapter 11 discusses subsidies to the supply of rental housing. The traditional approach has been to subsidise first local authorities and then housing associations to produce additional social housing. Later the emphasis shifted to introducing private finance and recycling past subsidy to provide a range of affordable housing products. Additionally, the planning system was modified to make it possible to require the provision of affordable housing on residential development sites. Allocation",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.4172896",
+      "title": "Inheritance Taxation Reform Distorts Rental Housing Market: Evidence from Japan",
+      "authors": [
+        "Mikawa, Naoto",
+        "Yasuda, Shohei",
+        "Yukutake, Norifumi"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.5029/jrbh.41.53",
+      "title": "Workplace-Residence Relationships at Retail Stores in Interwar Tokyo",
+      "authors": [
+        "Isamu Mitsuzono"
+      ],
+      "venue": "Japanese Research in Business History",
+      "year": 2024,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.jstage.jst.go.jp/article/jrbh/41/0/41_53/_pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1208.2724v5",
+      "arxiv_id": "1208.2724v5",
+      "title": "Caching with rental cost and zapping",
+      "authors": [
+        "Monik Khare",
+        "Neal E. Young"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.2724v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2210.02137v1",
+      "arxiv_id": "2210.02137v1",
+      "title": "Internet Service Providers' and Individuals' Attitudes, Barriers, and Incentives to Secure IoT",
+      "authors": [
+        "Nissy Sombatruang",
+        "Tristan Caulfield",
+        "Ingolf Becker",
+        "Akira Fujita",
+        "Takahiro Kasama",
+        "Koji Nakao",
+        "Daisuke Inoue"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2210.02137v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/MSEC.2025.3539504",
+      "arxiv_id": "2506.09580v1",
+      "title": "The Everyday Security of Living with Conflict",
+      "authors": [
+        "Jessica McClearn",
+        "Reem Talhouk",
+        "Rikke Bjerg Jensen"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.09580v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s42854-021-00024-2",
+      "arxiv_id": "2108.08229v1",
+      "title": "Tilted Platforms: Rental Housing Technology and the Rise of Urban Big Data Oligopolies",
+      "authors": [
+        "Geoff Boeing",
+        "Max Besbris",
+        "David Wachsmuth",
+        "Jake Wegmann"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.08229v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0739456X16664789",
+      "arxiv_id": "1605.05397v4",
+      "title": "New Insights into Rental Housing Markets across the United States: Web Scraping and Analyzing Craigslist Rental Listings",
+      "authors": [
+        "Geoff Boeing",
+        "Paul Waddell"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.05397v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2025.104733",
+      "arxiv_id": "2503.14006v2",
+      "title": "Securing Automated Insulin Delivery Systems: A Review of Security Threats and Protective Strategies",
+      "authors": [
+        "Yuchen Niu",
+        "Siew-Kei Lam"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2503.14006v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2021.102279",
+      "arxiv_id": "2103.08436v1",
+      "title": "Formal Modelling and Security Analysis of Bitcoin's Payment Protocol",
+      "authors": [
+        "Paolo Modesti",
+        "Siamak F. Shahandashti",
+        "Patrick McCorry",
+        "Feng Hao"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.08436v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1002.1174v1",
+      "arxiv_id": "1002.1174v1",
+      "title": "M-Banking Security - a futuristic improved security approach",
+      "authors": [
+        "Geeta S. Navale",
+        "Swati S. Joshi",
+        "Aaradhana A. Deshmukh"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1002.1174v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2111.06002v1",
+      "arxiv_id": "2111.06002v1",
+      "title": "SyzScope: Revealing High-Risk Security Impacts of Fuzzer-Exposed Bugs in Linux kernel",
+      "authors": [
+        "Xiaochen Zou",
+        "Guoren Li",
+        "Weiteng Chen",
+        "Hang Zhang",
+        "Zhiyun Qian"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.06002v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2206.12647v1",
+      "arxiv_id": "2206.12647v1",
+      "title": "Feedback Dynamics of the Low-Income Rental Housing Market: Exploring Policy Responses to COVID-19",
+      "authors": [
+        "Katherine Marcal",
+        "Patrick J. Fowler",
+        "Peter S. Hovmand"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.12647v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20944/preprints202412.1927.v1",
+      "arxiv_id": "2501.06241v1",
+      "title": "Predicting House Rental Prices in Ghana Using Machine Learning",
+      "authors": [
+        "Philip Adzanoukpe"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.06241v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0308518X19869678",
+      "arxiv_id": "1907.06118v2",
+      "title": "Online Rental Housing Market Representation and the Digital Reproduction of Urban Inequality",
+      "authors": [
+        "Geoff Boeing"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1907.06118v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0739456X20904435",
+      "arxiv_id": "2002.01578v1",
+      "title": "Rental Housing Spot Markets: How Online Information Exchanges Can Supplement Transacted-Rents Data",
+      "authors": [
+        "Geoff Boeing",
+        "Jake Wegmann",
+        "Junfeng Jiao"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.01578v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2022.103008",
+      "arxiv_id": "2206.02156v2",
+      "title": "Perspectives of Non-Expert Users on Cyber Security and Privacy: An Analysis of Online Discussions on Twitter",
+      "authors": [
+        "Nandita Pattnaik",
+        "Shujun Li",
+        "Jason R. C. Nurse"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.02156v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cose.2025.104751",
+      "arxiv_id": "2511.15479v1",
+      "title": "Towards a Formal Verification of Secure Vehicle Software Updates",
+      "authors": [
+        "Martin Slind Hagen",
+        "Emil Lundqvist",
+        "Alex Phu",
+        "Yenan Wang",
+        "Kim Strandberg",
+        "Elad Michael Schiller"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2511.15479v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22423/kreus.2024.16.2.41",
+      "arxiv_id": "",
+      "title": "A Study on the Factors Affecting Housing Satisfaction of Residents in Public Rental Housing: Focusing on Happy Housing in Seoul",
+      "authors": [
+        "C. Kweon",
+        "Hye-Kyung Lee"
+      ],
+      "venue": "Konkuk Research Institute of Real Estate and Urban Studies",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22313/reik.2024.22.2.01",
+      "arxiv_id": "",
+      "title": "A Study on Prioritizing Factors Affecting Residential Satisfaction in Purchased Rental Housing: Focusing on Changing the Perception of Housing Providers in Incheon",
+      "authors": [
+        "Won-Jae Jung",
+        "Jung-Seok Han"
+      ],
+      "venue": "Residential Environment Institute Of Korea",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32989/rel.2024.28.1.37",
+      "arxiv_id": "",
+      "title": "A Review of Legislative Trends for the Provisions of Social Housing in the United States",
+      "authors": [],
+      "venue": "Korea Association Of Real Estate Law",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.32989/rel.2023.27.1.117",
+      "arxiv_id": "",
+      "title": "A Study on the Enactment Proposal on the Right to Renewal Lease under the revised Housing Lease Protection Act",
+      "authors": [
+        "M. Choi"
+      ],
+      "venue": "Korea Association Of Real Estate Law",
+      "year": 2023,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47949/gas.2024.35.006",
+      "arxiv_id": "",
+      "title": "A Study on the Urban Migration and Residential Choice Characteristics of Japan Women",
+      "authors": [
+        "Jiwan Hong"
+      ],
+      "venue": "The Women's Studies Center",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Analysis of Co-living housing",
+      "authors": [
+        "A. Ravikumar",
+        "Arun Vinodh"
+      ],
+      "venue": "",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Rental Home Sweet Home: The Disparate Impact Solution for Renters Evicted from Residential Foreclosures",
+      "authors": [
+        "D. Lurie"
+      ],
+      "venue": "",
+      "year": 2016,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.15539/khlj.57.4.5",
+      "arxiv_id": "",
+      "title": "Right of refusal of contract renewal for Actual Residence by a New Lessor",
+      "authors": [
+        "Ole Lee",
+        "Dae-Hee Kim"
+      ],
+      "venue": "Kyung Hee Law Journal",
+      "year": 2022,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "서비스스케이프 개념을 적용한 레지던스호텔(Residence Hotel) 공용공간 계획에 관한 연구",
+      "authors": [
+        "Hyeon-Hye 강현혜Kang",
+        "Chel-Hee 강철희Kang"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

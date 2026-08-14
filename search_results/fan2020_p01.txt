@@ -1,0 +1,86 @@
+
+========== PAGE 1 ==========
+From the outcome of recent epidemiological, physiolog-
+ical and omics-​based studies, complemented by cellu-
+lar studies and experiments in animals, it appears that 
+a considerable part of the environmental influence on 
+human health and disease risk may be mediated or mod-
+ified by microbial communities1. These microorganisms, 
+collectively referred to as the microbiota, include a vast 
+number of interacting bacteria, archaea, bacteriophages, 
+eukaryotic virus and fungi coexisting on human surfaces 
+and in all body cavities1. The majority of them are com-
+mensal or mutualistic microorganisms1. The collection 
+of all intestinal microbial genes (that is, the microbiome) 
+in an individual represents a genetic repertoire that is 
+more than one order of magnitude higher in genes than 
+the human genome1. The majority of microorganisms 
+that inhabit humans reside within the intestines and 
+are influenced by mode of birth, infant feeding, life-
+style, medication and the genetics of the host. The gut 
+microbiome has important roles in the training of host 
+immunity, digesting food, regulating gut endocrine func-
+tion and neurological signalling, modifying drug action 
+and metabolism, eliminating toxins and producing 
+numerous compounds that influence the host1.
+Here, we review the literature on the intestinal micro-
+biota of the human host with a focus on bacteria and 
+archaea, and their potential importance for human 
+metabolism. In the literature, there is no consensus on 
+how to define metabolic health. Yet a tentative definition 
+is to have an overall metabolism (as estimated from an 
+array of various measures of body organ functions, such 
+as those of the liver, and intestinal, fat, muscle, heart 
+and brain tissues) that in representative epidemiologi-
+cal studies is linked with both desirable life quality and 
+longevity. A considerable part of the world population, 
+however, primarily due to overeating of processed 
+energy-​dense food, urbanization with sedentary occu-
+pations and leisure-​time inactivity often combined with 
+smoking addiction, has a suboptimal or even a poor 
+metabolic health. The implications are a high prevalence 
+of metabolic disorders, including obesity, non-​alcoholic 
+liver disease, type 2 diabetes mellitus (T2D) as well 
+as cardio-​metabolic disease (CMD), and premature 
+death2–6. In some developing countries, the metabolic 
+health landscape is quite the opposite — a major part of 
+the population is chronically malnourished7.
+Despite the immense differences in pathologies of 
+common chronic metabolic disorders, they are asso-
+ciated with shared and disease-​specific abnormali-
+ties in the composition and function of the intestinal 
+microbiota8–11. Since the start of the microbiota research 
+era, whether disease-​associated aberrant microbiota are 
+involved in disease causation (that is, predisposition, ini-
+tiation or progression) or are secondary phenomena has 
+been widely debated. However, one of the first pieces of 
+evidence for a mechanistic involvement of the gut micro-
+biota in the regulation of metabolism was provided in 
+Gut microbiota in human metabolic 
+health and disease
+Yong Fan    and Oluf Pedersen    ✉
+Abstract | Observational findings achieved during the past two decades suggest that the 
+intestinal microbiota may contribute to the metabolic health of the human host and, when 
+aberrant, to the pathogenesis of various common metabolic disorders including obesity, type 2 
+diabetes, non-​alcoholic liver disease, cardio-​metabolic diseases and malnutrition. However, to 
+gain a mechanistic understanding of how the gut microbiota affects host metabolism, research  
+is moving from descriptive microbiota census analyses to cause-​and-​effect studies. Joint analyses 
+of high-​throughput human multi-​omics data, including metagenomics and metabolomics data, 
+together with measures of host physiology and mechanistic experiments in humans, animals  
+and cells hold potential as initial steps in the identification of potential molecular mechanisms 
+behind reported associations. In this Review, we discuss the current knowledge on how gut 
+microbiota and derived microbial compounds may link to metabolism of the healthy host or to 
+the pathogenesis of common metabolic diseases. We highlight examples of microbiota-​targeted 
+interventions aiming to optimize metabolic health, and we provide perspectives for future basic 
+and translational investigations within the nascent and promising research field.
+Novo Nordisk Foundation 
+Center for Basic Metabolic 
+Research, Faculty of Health 
+and Medical Sciences, 
+University of Copenhagen, 
+Copenhagen, Denmark.
+✉e-​mail: oluf@sund.ku.dk
+https://doi.org/10.1038/ 
+s41579-020-0433-9
+REvIEWS
+Nature Reviews | Microbiology

@@ -1,0 +1,150 @@
+
+========== PAGE 11 ==========
+colonic anti-​inflammatory regulatory T cells and induces 
+the NOD, LRR and pyrin domain-​containing protein 3 
+(NLRP3) inflammasome in a G protein-​coupled recep-
+tor manner111,112. Another G protein-​coupled receptor, the 
+olfactory receptor 78, which may modulate blood pres-
+sure regulation, can also be directly activated by acetate 
+and propionate113. Additionally, increased butyrate pro-
+duction activates the peroxisome proliferator-​activated 
+receptor-​γ (PPARγ), leading to β-​oxidation and oxygen 
+consumption in the gut, a phenomenon that contributes 
+to the maintenance of anaerobic conditions in the gut 
+lumen114 (Fig. 1).
+O
+R
+N
+H
+R1
+p38/mTORC1
+FMO
+• Satiety
+• Neuronal effects
+Gut peptide
+Vagus nerve
+Satiety
+• Body weight gain
+• Fat mass gain
+• Insulin resistance
+• Glucose intolerance
+• Fatty acid metabolism
+• Inﬂammation
+Atherosclerosis
+Neuro-
+transmitters
+Improved gut
+barrier function
+TLR2
+MC1R
+GPR-119
+TGR5
+GPCRs
+GLP-1/
+PYY
+Increased
+goblet cell 
+density
+Entero-
+endocrine 
+cell
+Cytokines
+Inﬂammation
+GLP-1 or PYY
+AhR
+GLP-1
+TMAO
+• Energy harvest 
+• Fat storage
+• Adipose 
+    inﬂammation
+SCFAs
+Acetate Succinate
+LPS
+LPS
+Secondary bile acids
+TMA
+BCAAs
+N-Acyl amides
+• Indole 
+• Indole
+derivatives
+Imidazole
+propionate
+Firmicutes/
+Bacteroidetes
+Gram-negative
+bacteria
+Speciﬁc
+bacteria
+Speciﬁc
+bacteria
+Speciﬁc
+bacteria
+Secondary 
+bile acids
+FXR
+Speciﬁc
+bacteria
+ClpB
+MECO-1
+Amuc_1100
+Dietary ﬁbres Primary bile acids
+Amino acids
+Phosphatidylcholine
+and L-carnitine
+Gut lumen
+Ghrelin
+UCP1
+Fig. 3 | Microbial messengers regulate host metabolism. An overview of 
+some of the intestinal microbial compounds affecting host energy 
+homeostasis, body adiposity, inflammation, glucose regulation, insulin 
+sensitivity and hormone secretion. Fermentation of the dietary fibre by gut 
+Firmicutes and Bacteroidetes produces the short-​chain fatty acids (SCFAs) 
+butyrate, propionate and acetate, which influence host metabolism in 
+multiple ways by acting on G protein-​coupled receptors (GPCRs) expressed 
+by enteroendocrine cells. Acetate and butyrate stimulates glucagon-​like 
+peptide 1 (GLP-1) and peptide YY (PYY) release with effects on the pancreas 
+(GLP-1-​induced insulin biosynthesis) and on the brain (PYY-​induced satiety), 
+and acetate may enhance fat storage by inducing secretion of ghrelin. 
+Microbial-​derived succinate drives expression of uncoupling protein 1 
+(UCP1), thereby increasing thermogenesis in adipose tissue. However, 
+succinate has pro-​inflammatory properties on lipopolysaccharide-​activated 
+macrophages and may thus contribute to adipose tissue inflammation and 
+insulin resistance. Lipopolysaccharides (LPS) are pro-​inflammatory 
+compounds derived from Gram-​negative bacterial membranes that 
+promote inflammation. Primary bile acids are converted by gut microbiota 
+to secondary bile acids that act through the TGR5 receptor to promote 
+GLP-1 release enhancing thermogenesis in adipose tissue. Gut microbiota 
+produces trimethylamine (TMA) by metabolizing dietary phosphatidy­l­
+choline and l-​carnitine. TMA is N-​oxidized in the liver by flavin-​ 
+containing monooxygenase (FMO) to trimethylamine N-​oxide (TMAO), 
+which contributes to atherosclerosis. Imidazole propionate, a bacterial 
+metabolite derived from histidine, contributes to insulin resistance. Gut 
+bacterial-​derived branched-​chain amino acids (BCAAs) correlate, in cases 
+of high fat intake, with insulin resistance in both humans and rodents. Other 
+bacterial metabolites such as indole and its derivatives bind to the aryl 
+hydrocarbon receptor (AhR). Indolepropionic acid is linked with improved 
+insulin secretion and insulin sensitivity and a decreased risk of type 2 
+diabetes. Gut bacteria produce N-​acyl amide, an endocannabinoid mimic 
+that regulates host glucose metabolism by binding to the G protein-​coupled 
+receptor 119 (GPR119). Proteins secreted by gut bacteria also modulate 
+paracrine or endocrine action. ClpB, a protein secreted by Escherichia coli, 
+is involved in regulation of appetite. Melanocortin-​like peptide of E. coli 
+(MECO-1), which is a structural and functional analogue to α-​melanocyte-​ 
+stimulating hormone and adrenocorticotropin, acts via the mammalian 
+melanocortin-1 receptor (MC1R), inhibiting cytokine release in response to 
+pro-​inflammatory stimuli. In the large intestine, pro-​inflammatory changes 
+involve increased production of cytokines such as IL-1β and IL-18, and 
+reduced IL-10 and IL-22. Amuc_1100, expressed on the outer membrane of 
+Akkermansia muciniphila, improves gut barrier function with increased 
+goblet cell density through Toll-​like receptor 2 (TLR2) and partially 
+recapitulates the beneficial effect of the live A. muciniphila bacterium on 
+energy metabolism and insulin sensitivity. Host metabolism is also 
+influenced by gut bacterially synthesized neurotransmitters (that is, 
+catecholamine, histamine, γ-​aminobutyric acid and serotonin) or gaseous 
+neurotransmitters (NO and H2S). Arrow represents stimulation, arrow with 
+bar indicates inhibition. FXR, farnesoid X receptor; mTORC1, mechanistic 
+target of rapamycin complex 1.
+Nature Reviews | Microbiology
+Reviews

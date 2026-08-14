@@ -1,0 +1,51 @@
+Nutrients 2019, 11, 1806
+8 of 26
+3. Kombucha
+Kombucha is a fermented tea beverage reported to have originated in Northeast China in
+around 220 BC and consumed extensively during the Qin Dynasty. Similar fermented tea beverages
+subsequently became popular in Russia and Eastern Europe [63]. In modern societies, a range of
+kombucha beverages are available commercially, although the microbial and metabolite composition
+of these products along with methods of production are rarely reported [15].
+Traditional kombucha is produced through aerobic fermentation of black tea (green tea may also
+be used) and white sugar by a combination of bacteria and yeast, known as the symbiotic culture of
+bacteria and yeast (SCOBY). The yeast convert sucrose to ethanol (in addition to organic acids and
+carbon dioxide) which acetic acid bacteria convert to acetaldehyde and acetic acid [64]. The microbial
+and metabolite composition of kombucha varies according to the exact composition of the SCOBY,
+the type and concentration of tea and sugar [65,66], oxygen concentrations, fermentation time [67,68],
+temperature [67,69] and storage duration [65]. The low pH of kombucha, owing mainly to the
+production of high concentration of acetic acid, has been shown to prevent the growth of pathogenic
+bacteria such as Helicobacter pylori, Escherichia coli, Salmonella typhimurium and Campylobacter jejuni [70].
+Even at neutral pH and after thermal denaturation, kombucha was able to inhibit the growth of
+pathogens in vitro, suggesting that compounds other than acetic acid exert antimicrobial eﬀects [70].
+The bacterial and fungal species constituting the SCOBY typically include acetic acid
+bacteria (Acetobacter, Gluconobacter), lactic acid bacteria (Lactobacillus, Lactococcus) and yeasts
+(Saccharomyces, Zygosaccharomyces) [15,63,71]. Studies utilising high-throughput sequencing analysis
+have demonstrated that following fermentation, Candida and Zygosaccharomyces genera are the
+predominant yeasts in kombucha [15,16], while Komagataeibacter, Lyngbya, Gluconobacter, Lactobacilli
+and Biﬁdobacteria are the most abundant bacterial genera.
+Kombucha has been shown to exert eﬀects in animal studies on blood glycaemia [72],
+oxidative stress [73], diabetes-induced weight loss [74], chemically-induced nephrotoxicity [75],
+hypercholesterolaemia [72,76] and indomethacin-induced gastric ulceration [77].
+Compounds
+hypothesised to play a role in these beneﬁcial eﬀects include d-saccharic acid-1,4-lactone (DSL).
+This is produced by Gluconobacter during fermentation [78,79], and in rats, inhibits oxidative stress
+and diabetes-induced renal damage [80] and acetaminophen-induced hepatic injury [81]. Nonetheless,
+there is no human data on DSL to conﬁrm this proposed mechanism of action. Polyphenol and
+ﬂavonoid content of tea increases with fermentation [15]. Furthermore, in vitro superoxide radical
+scavenging ability, reducing ability and total phenolic compound concentration increases during
+kombucha fermentation [82].
+Although kombucha is a rich source of acetic acid and lactic acid bacteria and yeasts [15], there are
+no published studies exploring the eﬀect of kombucha consumption on the gastrointestinal microbiota
+composition or function in either animals or humans. Interestingly, kombucha has been shown to have
+antimicrobial eﬀects in vitro [83,84]. It is currently unknown whether the proposed physiological eﬀects
+of kombucha are mediated by the gastrointestinal microbiota or other direct immunological pathways.
+Despite evidence of physiological eﬀects of kombucha consumption in animals, the eﬀects in
+humans remain largely unknown. A recent systematic review [85] did not identify any RCTs of
+kombucha on gastrointestinal disorders, including any of the functional bowel disorders.
+To conclude, there are no studies of the eﬀects of kombucha on gastrointestinal health and
+microbiota in humans.
+4. Sauerkraut
+Sauerkraut is one of the most common forms of preserved cabbage originating in the 4th century
+BC. Sauerkraut is eaten frequently in Germany, but also in other European and Asian countries
+and the United States [86]. Sauerkraut is produced from a combination of shredded cabbage and
+2.3%−3.0% salt, which is left to undergo spontaneous fermentation, generally involving Leuconostoc

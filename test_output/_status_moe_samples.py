@@ -98,7 +98,7 @@ def print_status():
         print("  Suggested additions:")
         if amin_need > 0:
             print(f"    - +{amin_need} China-local query (route to aminer)")
-            print(f"      Example: --query '海宁经编 算力券 政策 杠杆' --engine aminer \\")
+            print(f"      Example: --query '本地经编 算力券 政策 杠杆' --engine aminer \\")
             print(f"                --topic t5 --method m13 --data d11 --industry i3")
         if n_need > 0:
             print(f"    - +{n_need} more keyword samples (any topic)")

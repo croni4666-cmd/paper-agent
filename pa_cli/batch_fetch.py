@@ -79,7 +79,7 @@ def search_paper(query: str, year_min: int = None, year_max: int = None,
         try:
             url = f"https://api.openalex.org/works/doi:{quote(query, safe='/')}"
             req = ur.Request(url, headers={
-                "User-Agent": "paper-agent/3.9.8.3 (mailto:dengn@gmail.com)",
+                "User-Agent": "paper-agent/3.9.8.3 (mailto:paper-agent@users.noreply.github.com)",
                 "Accept": "application/json",
             })
             with ur.urlopen(req, timeout=15) as r:
@@ -109,7 +109,7 @@ def search_paper(query: str, year_min: int = None, year_max: int = None,
         try:
             url = f"https://api.crossref.org/works/{quote(query, safe='/')}"
             req = ur.Request(url, headers={
-                "User-Agent": "paper-agent/3.9.8.3 (mailto:dengn@gmail.com)",
+                "User-Agent": "paper-agent/3.9.8.3 (mailto:paper-agent@users.noreply.github.com)",
                 "Accept": "application/json",
             })
             with ur.urlopen(req, timeout=15) as r:

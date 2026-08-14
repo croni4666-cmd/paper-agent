@@ -1,0 +1,8 @@
+﻿Using: pdfplumber
+============================================================
+[ok] 10_1038_s41579-020-0433-9.pdf: text len=120966
+[ok] 10_3389_fmicb_2019_01046.pdf: text len=46058
+[ok] 10_3390_nu11081806.pdf: text len=95156
+
+[save] -> G:\minimax - workspace\Paper agent\search_results\pdf_extracted.txt
+Total chars: 22948

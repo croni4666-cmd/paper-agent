@@ -66,7 +66,7 @@ def build_stage1_from_previous_run(n_queries: int = 5, top_k: int = 10) -> dict:
                 })
 
     # Now read manual_needed list from previous markdown report
-    md_path = Path("C:/Users/DengN/.paper-agent/deep_rerank/manual_downloads_UPDATED_20260713_1730.md")
+    md_path = Path("~/.paper-agent/deep_rerank/manual_downloads_UPDATED_20260713_1730.md")
     md_text = md_path.read_text(encoding="utf-8")
 
     # Parse lines like: | 1 | q001 | `10.1186/s41239-021-00292-9` | The impact ... | Springer paywall ... |
@@ -85,7 +85,7 @@ def build_stage1_from_previous_run(n_queries: int = 5, top_k: int = 10) -> dict:
         })
 
     # Save markdown to a stable path for stage1 contract
-    out_md = Path("C:/Users/DengN/.paper-agent/deep_rerank/manual_downloads_v397_reconstructed.md")
+    out_md = Path("~/.paper-agent/deep_rerank/manual_downloads_v397_reconstructed.md")
     out_md.write_text(md_text, encoding="utf-8")
 
     n_total = len(auto_downloaded) + len(manual_needed)
@@ -151,7 +151,7 @@ def main():
         print(f"    [{m['qid']}] {m['doi']} (reason: {m['reason'][:60]})")
 
     # 2) Stage 2: extract fulltext
-    user_pdf_dir = Path("C:/Users/DengN/Downloads/manual_pdfs/")
+    user_pdf_dir = Path("~/Downloads/manual_pdfs/")
     print(f"\nuser_pdf_dir: {user_pdf_dir}")
     user_pdfs = sorted(p.name for p in user_pdf_dir.glob("*.pdf"))
     print(f"user PDFs ({len(user_pdfs)}):")

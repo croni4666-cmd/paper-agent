@@ -930,7 +930,7 @@ def cnki_setup():
     click.echo("  - 用 Chrome / Edge 登录代理入口")
     click.echo("  - 跳转 CNKI 后, 跑 Export-CNKICookies.ps1 (待写)")
     click.echo("  - script 导出 cookies 到:")
-    click.echo("    C:\\Users\\DengN\\.paper-agent\\cookies\\cnki.json")
+    click.echo("    ~/.paper-agent\\cookies\\cnki.json")
     click.echo()
     click.echo("STEP 3: Verify")
     click.echo("  $ pa cnki status")
@@ -1998,7 +1998,7 @@ def judge_import(input_path, source, db_path):
 def sample_pool_cmd():
     """Global Sample Pool -- relevance labels for held-out evaluation.
 
-    See C:\\Users\\DengN\\.paper-agent\\sample_pool\\README.md for the
+    See ~/.paper-agent\\sample_pool\\README.md for the
     canonical design doc. Briefly: this is a user-owned, Mavis-read-only,
     training-isolated pool of query+candidate+relevance_label triples.
 

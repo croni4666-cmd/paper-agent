@@ -81,7 +81,7 @@ def test_with_headers(url, label):
             print(f"  HTTP {e.code} | {len(body)}B | first100={body[:100]!r}")
 
 
-# Test 1: With DengN's likely real email
+# Test 1: With paper-agent-author's likely real email
 test_with_headers("https://api.unpaywall.org/v2/10.1038/nature12373?email=impactstory@example.com",
                   "Test 1: random plausible email via proxy")
 

@@ -1,0 +1,35 @@
+# .gitattributes — line ending + diff normalization
+
+# Default: LF for source code, CRLF for Windows batch scripts
+* text=auto
+
+# Python source: LF
+*.py text eol=lf
+*.pyi text eol=lf
+
+# Markdown: LF
+*.md  text eol=lf
+*.txt text eol=lf
+
+# Windows scripts: CRLF (PowerShell, batch)
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Config: LF
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# Don't diff these
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.tar.gz binary
+*.sqlite binary
+*.pkl binary

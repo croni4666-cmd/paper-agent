@@ -1,5 +1,5 @@
 # Re-download BGE model.safetensors via local clash proxy (port 7897)
-$dest = 'C:\Users\DengN\.paper-agent\models\bge-reranker-base'
+$dest = 'C:\Users\paper-agent-author\.paper-agent\models\bge-reranker-base'
 $proxy = 'http://127.0.0.1:7897'
 
 # Delete corrupted file

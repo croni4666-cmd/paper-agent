@@ -1,0 +1,405 @@
+{
+  "query": "RankZephyr RankVicuna listwise rerank",
+  "year_min": 2024,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 6,
+    "openalex": 3,
+    "arxiv": 0,
+    "semanticscholar": 3,
+    "aminer": 5,
+    "cnki": 1
+  },
+  "dedup_count": 17,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.18653/v1/2024.emnlp-main.491",
+      "title": "FIRST: Faster Improved Listwise Reranking with Single Token Decoding",
+      "authors": [
+        "Revanth Gangi Reddy"
+      ],
+      "venue": "EMNLP 2024",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "667a250f01d2a3fbfc706ad1",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arXiv.2505.14432",
+      "arxiv_id": "2505.14432",
+      "title": "Rank-K: Test-Time Reasoning for Listwise Reranking",
+      "authors": [
+        "Eugene Yang",
+        "Andrew Yates",
+        "Kathryn Ricci",
+        "Orion Weller",
+        "Vivek Chari",
+        "Benjamin Van Durme",
+        "Dawn J. Lawrie"
+      ],
+      "venue": "arXiv.org",
+      "year": 2025,
+      "cited_by_count": 36,
+      "influential_cite_count": 7,
+      "reference_count": 64,
+      "tldr": "Rank-K is introduced, a listwise passage reranking model that leverages the reasoning capability of the reasoning language model at query time that provides test time scalability to serve hard queries and improves retrieval effectiveness.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Rank-K is introduced, a listwise passage reranking model that leverages the reasoning capability of the reasoning language model at query time that provides test time scalability to serve hard queries and improves retrieval effectiveness.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3696410.3714554",
+      "title": "Leveraging Passage Embeddings for Efficient Listwise Reranking with Large Language Models",
+      "authors": [
+        "Qi Liu"
+      ],
+      "venue": "WWW 2025",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6678d2dd01d2a3fbfc6e8f88",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Rank-K: Test-Time Reasoning for Listwise Reranking",
+      "authors": [
+        "Eugene Yang"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "682d248c163c01c850f6f730",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/2024.acl-long.125",
+      "title": "ListT5: Listwise Reranking with Fusion-in-Decoder Improves Zero-shot Retrieval",
+      "authors": [
+        "Soyoung Yoon"
+      ],
+      "venue": "PROCEEDINGS OF THE 62ND ANNUAL MEETING OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, VOL 1 LONG PAPERS",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65dd4f8013fb2c6cf66f9e58",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Listwise Reward Estimation for Offline Preference-based Reinforcement Learning",
+      "authors": [
+        "Heewoong Choi"
+      ],
+      "venue": "ICML 2024",
+      "year": 2024,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "667a96cc01d2a3fbfcbd6f4f",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3726302.3730331",
+      "arxiv_id": "2505.19284",
+      "title": "RankLLM: A Python Package for Reranking with LLMs",
+      "authors": [
+        "Sahel Sharifymoghaddam",
+        "Ronak Pradeep",
+        "Andre Slavescu",
+        "Ryan Nguyen",
+        "Andrew Xu",
+        "Zijian Chen",
+        "Yilin Zhang",
+        "Yidi Chen",
+        "Jasper Xian",
+        "Jimmy Lin"
+      ],
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "year": 2025,
+      "cited_by_count": 28,
+      "influential_cite_count": 0,
+      "reference_count": 46,
+      "tldr": "RankLLM is an open-source Python package for reranking that is modular, highly configurable, and supports both proprietary and open-source LLMs in customized reranking workflows, addressing reliability concerns with LLM APIs and non-deterministic behavior in Mixture-of-Experts (MoE) models.",
+      "is_oa": true,
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3726302.3730331",
+      "source": "semanticscholar",
+      "type": "Book",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "RankLLM is an open-source Python package for reranking that is modular, highly configurable, and supports both proprietary and open-source LLMs in customized reranking workflows, addressing reliability concerns with LLM APIs and non-deterministic behavior in Mixture-of-Experts (MoE) models.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3736402",
+      "title": "Query Performance Prediction Using Relevance Judgments Generated by Large Language Models",
+      "authors": [
+        "Chuan Meng",
+        "Negar Arabzadeh",
+        "Arian Askari",
+        "Mohammad Aliannejadi",
+        "Maarten de Rijke"
+      ],
+      "venue": "ACM Transactions on Information Systems",
+      "year": 2025,
+      "cited_by_count": 18,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3736402",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "2411.06254",
+      "title": "EviRerank: Adaptive Evidence Construction for Long-Document LLM Reranking",
+      "authors": [
+        "Minghan Li",
+        "É. Gaussier",
+        "Juntao Li",
+        "Guodong Zhou"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "EviRerank is proposed, an evidence-based long-document reranking framework for decoder-only LLMs that consistently outperforms full-document LLM reranking and strong block-selection baselines while reducing input length.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "EviRerank is proposed, an evidence-based long-document reranking framework for decoder-only LLMs that consistently outperforms full-document LLM reranking and strong block-selection baselines while reducing input length.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5220/0014803000004018",
+      "title": "When to Rerank? Adaptive Reranking Decisions for Efficient Information Retrieval",
+      "authors": [
+        "Gonzalez-Gamella, Carlos",
+        "Sanchez-Santolaya, Daniel",
+        "Moraleda-Moreno, Francisco",
+        "Chaquet-Ulldemolins, Jacobo"
+      ],
+      "venue": "Proceedings of the 28th International Conference on Enterprise Information Systems",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5764903",
+      "title": "LLM-Driven Active Listwise Tournaments for Portfolio Selection in Large Asset Universes",
+      "authors": [
+        "Yuksel, Kamer Ali",
+        "Sawaf, Hassan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1145/3669754.3669821",
+      "title": "Zeroshot Listwise Learning to Rank Algorithm for Recommendation",
+      "authors": [
+        "Wang, Hao"
+      ],
+      "venue": "Proceedings of the 2024 10th International Conference on Computing and Artificial Intelligence",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 24,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.6568412",
+      "title": "R3-RAG: Reweight, Rerank, and Reflect for Evidence-Calibrated Scientific Multimodal Reasoning",
+      "authors": [
+        "Yin, Zihao",
+        "Wang, Tao",
+        "Qian, Yurong",
+        "Wang, Kai",
+        "Hu, Ping",
+        "Zhang, Li"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Multimodal Retrieval-Augmented Generation (MM-RAG) effectively grounds vision-language mod els in external evidence,yet mainstream linear frameworks struggle to capture the dynamic interaction between visual and textual modalities. Specifically,current systems suffer from blind fusion due to static modality weights,cross-modal misalignment caused by hallucinating rerankers failing to intercept contradictory noise,and open-loop Irreversibility that cascades initial retrieval errors. To ov",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3805622.3810672",
+      "title": "A Decomposed Retrieval-Edit-Rerank Framework for Chord Generation",
+      "authors": [
+        "He, Qiqi",
+        "Li, Dichucheng",
+        "Sun, Xiaoheng",
+        "Huang, Anqi"
+      ],
+      "venue": "Proceedings of the 2026 International Conference on Multimedia Retrieval",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 24,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.6568438",
+      "title": "R3-RAG: Reweight, Rerank, and Reflect for Evidence-Calibrated Scientific Multimodal Reasoning",
+      "authors": [
+        "Yin, Zihao",
+        "Wang, Tao",
+        "Qian, Yurong",
+        "Wang, Kai",
+        "Hu, Ping",
+        "Zhang, Li"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>Multimodal Retrieval-Augmented Generation (MM-RAG) effectively grounds vision-language mod els in external evidence,yet mainstream linear frameworks struggle to capture the dynamic interaction between visual and textual modalities. Specifically,current systems suffer from blind fusion due to static modality weights,cross-modal misalignment caused by hallucinating rerankers failing to intercept contradictory noise,and open-loop Irreversibility that cascades initial retrieval errors. To ov",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.51903/jtie.v5i1.537",
+      "title": "LLM-Inspired Offline Reranking for Financial Search: Query Rewriting, Hybrid Retrieval, and Listwise Relevance Ranking on FiQA",
+      "authors": [
+        "Siquan Meng",
+        "First Jing Chen",
+        "Isa Zheng"
+      ],
+      "venue": "Journal of Technology Informatics and Engineering",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://jtie.stekom.ac.id/index.php/jtie/article/download/537/346",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10506-025-09501-6",
+      "title": "Neural reranking for UK statutory retrieval: Provision-level evaluation and an open distilled model",
+      "authors": [
+        "Amal Saad Alshehri",
+        "Can Eken",
+        "Nelly Bencomo",
+        "Amir Atapour–Abarghouei"
+      ],
+      "venue": "Artificial Intelligence and Law",
+      "year": 2026,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10506-025-09501-6.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

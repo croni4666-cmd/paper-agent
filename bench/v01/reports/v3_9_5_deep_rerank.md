@@ -11,7 +11,7 @@
 - Auto-downloaded (8-channel cascade): 5 (33.3%)
 - Manual needed: 10
 
-Manual download list: `C:\Users\DengN\.paper-agent\deep_rerank\manual_downloads_20260713_170509.md`
+Manual download list: `C:\Users\paper-agent-author\.paper-agent\deep_rerank\manual_downloads_20260713_170509.md`
 
 ## 3-tier honest audit (per MEMORY.md discipline)
 

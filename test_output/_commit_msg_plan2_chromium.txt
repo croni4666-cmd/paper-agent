@@ -12,7 +12,7 @@ user's browser preference.
 
 ## Fix: rewrite to use playwright controlled Chromium
 
-`C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (10123 -> 11914 bytes):
+`C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1` (10123 -> 11914 bytes):
 
 OLD flow (Chrome debug port):
   1. User quits Chrome, launches with `--remote-debugging-port=9222`
@@ -49,13 +49,13 @@ Multi-substring OR filter (using `|` separator) — required for proxy flow.
 ## Files
 
 Modified:
-- `C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1` (rewritten: 10123 -> 11914 bytes)
+- `C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1` (rewritten: 10123 -> 11914 bytes)
 - `SESSION_HANDOFF.md` (Plan 2 section updated to reflect new approach)
 
 ## Plan 3 still pending (after user has cookies)
 
 User action required:
-1. `pwsh C:\Users\DengN\.mavis\bin\Export-CNKICookies.ps1`
+1. `pwsh C:\Users\paper-agent-author\.mavis\bin\Export-CNKICookies.ps1`
 2. In playwright-controlled Chromium: log in to xueshu789.com, click CNKI
 3. Press Enter in terminal
 4. Verify: `pa cnki status` should show `ready_for_search: True`

@@ -1,5 +1,5 @@
 # Download BGE-reranker-base files via PowerShell (urllib fails from Python on this network)
-$dest = 'C:\Users\DengN\.paper-agent\models\bge-reranker-base'
+$dest = 'C:\Users\paper-agent-author\.paper-agent\models\bge-reranker-base'
 New-Item -ItemType Directory -Path $dest -Force | Out-Null
 
 $files = @('config.json', 'tokenizer.json', 'tokenizer_config.json', 'vocab.txt', 'special_tokens_map.json')

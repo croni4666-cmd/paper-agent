@@ -1,5 +1,5 @@
 # Use curl.exe for robust download with redirect following + resume
-$dest = 'C:\Users\DengN\.paper-agent\models\bge-reranker-base'
+$dest = 'C:\Users\paper-agent-author\.paper-agent\models\bge-reranker-base'
 $proxy = 'http://127.0.0.1:7897'
 
 $model_out = Join-Path $dest 'model.safetensors'

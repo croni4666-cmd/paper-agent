@@ -10,7 +10,7 @@ from pa_cli.fetch import fetch_doi
 try:
     result = fetch_doi(
         '10.1186/s41239-021-00292-9',
-        output_dir='C:/Users/DengN/.paper-agent/deep_rerank/debug',
+        output_dir='~/.paper-agent/deep_rerank/debug',
         channels=['openalex'],
         max_total_sec=20,
     )

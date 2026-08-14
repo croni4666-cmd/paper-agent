@@ -1,0 +1,1642 @@
+{
+  "query": "China rental housing deposit hukou Beijing Shanghai",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 15,
+    "arxiv": 15,
+    "semanticscholar": 15,
+    "aminer": 15,
+    "cnki": 1
+  },
+  "dedup_count": 75,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.54254/2753-8818/31/20241109",
+      "title": "An Alternative to the One-Child Policy in China",
+      "authors": [
+        "Keyin Wang"
+      ],
+      "venue": "Theoretical and Natural Science",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e93a6113fb2c6cf63624e1",
+      "matched_phrase": "China",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/214922",
+      "title": "Housing, States and Localities",
+      "authors": [
+        "Peter Dickens"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d81d53dabfae2eeea38a49",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jncc.2024.01.006",
+      "title": "Cancer Incidence and Mortality in China, 2022",
+      "authors": [
+        "Bingfeng Han"
+      ],
+      "venue": "Journal of the National Cancer Center",
+      "year": 2024,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "65e6c4e413fb2c6cf625dcab",
+      "matched_phrase": "China",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/1468-2230.12462",
+      "title": "The Chinese Social Credit System: A Model for Other Countries?",
+      "authors": [
+        "Daithí Mac Síthigh",
+        "Mathias Siems"
+      ],
+      "venue": "Modern Law Review",
+      "year": 2019,
+      "cited_by_count": 148,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://pureadmin.qub.ac.uk/ws/files/167731395/Mac_Sithigh_Siems_SCS_April_2019.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/aea-10-2025-0392",
+      "title": "Short-term Rentals and Urban Air Pollution: Evidence from Barcelona and Madrid",
+      "authors": [
+        "Valeria Bernardo"
+      ],
+      "venue": "APPLIED ECONOMIC ANALYSIS",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08b049be8eb7c4b4d1e18",
+      "matched_phrase": "rental",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2026.2638389",
+      "title": "Blockchains in Housing Markets: a Simulation Analysis of the Impact on House Price Dynamics",
+      "authors": [
+        "Anetta Proskurovska"
+      ],
+      "venue": "HOUSING STUDIES",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08cd09be8eb7c4b5c0cd3",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/14036096.2026.2657849",
+      "title": "From Growth Regimes to Housing Production Failures: Risk Pathway Analysis of the 'unfinished Housing' Crisis in China",
+      "authors": [
+        "Yiming Han"
+      ],
+      "venue": "HOUSING THEORY & SOCIETY",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08d049be8eb7c4b5e9c79",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003669708",
+      "title": "The Eclipse of Council Housing",
+      "authors": [
+        "Ian Cole"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b59bdabfae2eee05b597",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1353/book.124236",
+      "title": "The Decoration of Houses",
+      "authors": [
+        "Ogden Codman"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b392dabfae2eeef5d1dc",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003586524-3",
+      "title": "Population and Housing Census",
+      "authors": [
+        "Seema Jain"
+      ],
+      "venue": "Population Census in India",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67499a2dae8580e7ff7d45e9",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1287/mksc.2022.1409",
+      "title": "The Effect of Short-Term Rentals on Residential Investment",
+      "authors": [
+        "Ron Bekkerman"
+      ],
+      "venue": "MARKETING SCIENCE",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c9d9d55244ab9dcb4da256",
+      "matched_phrase": "rental",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.habitatint.2020.102309",
+      "arxiv_id": "",
+      "title": "Unraveling the impact of TOD on housing rental prices and implications on spatial planning: A comparative analysis of five Chinese megacities",
+      "authors": [
+        "Shiliang Su",
+        "Jiangyue Zhang",
+        "Shenjing He",
+        "Hui Zhang",
+        "Lirong Hu",
+        "Mengjun Kang"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 73,
+      "influential_cite_count": 2,
+      "reference_count": 62,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://manuscript.elsevier.com/S0197397520314338/pdf/S0197397520314338.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.ufug.2020.126968",
+      "arxiv_id": "",
+      "title": "Do landscape amenities impact private housing rental prices? A hierarchical hedonic modeling approach based on semantic and sentimental analysis of online housing advertisements across five Chinese megacities",
+      "authors": [
+        "Shiliang Su",
+        "Shenjing He",
+        "Chenxi Sun",
+        "Hui Zhang",
+        "Lirong Hu",
+        "Mengjun Kang"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 57,
+      "influential_cite_count": 2,
+      "reference_count": 81,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.sciencedirect.com/science/article/am/pii/S1618866720307858",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.chieco.2021.101638",
+      "title": "Hukou status, housing tenure choice and wealth accumulation in urban China",
+      "authors": [
+        "Liao, Yu",
+        "Zhang, Junfu"
+      ],
+      "venue": "China Economic Review",
+      "year": 2021,
+      "cited_by_count": 44,
+      "reference_count": 54,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/1468-2427.12646",
+      "title": "Making the ‘Invisible’ Visible: Redevelopment‐induced Displacement of Migrants in Shenzhen, China",
+      "authors": [
+        "Ying Liu",
+        "Stan Geertman",
+        "Frank van Oort",
+        "Yanliu Lin"
+      ],
+      "venue": "International Journal of Urban and Regional Research",
+      "year": 2018,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1468-2427.12646",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cities.2020.102878",
+      "arxiv_id": "",
+      "title": "Breaking the land monopoly: Can collective land reform alleviate the housing shortage in China's mega-cities?",
+      "authors": [
+        "L. Tian",
+        "Yaqi Yan",
+        "George C.S. Lin Prof.",
+        "Ya-Xin Wu",
+        "Lei Shao"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 40,
+      "influential_cite_count": 0,
+      "reference_count": 28,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/01442872.2020.1738368",
+      "arxiv_id": "",
+      "title": "Policy coordination in the talent war to achieve economic upgrading: the case of four Chinese cities",
+      "authors": [
+        "Yang Shen",
+        "Bingqin Li"
+      ],
+      "venue": "Policy studies",
+      "year": 2020,
+      "cited_by_count": 40,
+      "influential_cite_count": 0,
+      "reference_count": 68,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://hdl.handle.net/1959.4/unsworks_63240",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s12115-026-01203-2",
+      "title": "Affordable Housing in Australia: the Neoliberalisation of Subsidised Rental Housing",
+      "authors": [
+        "Hanie Khosravi"
+      ],
+      "venue": "Society",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a0242460a96f8c83cb34559",
+      "matched_phrase": "rental",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10734-026-01683-5",
+      "title": "The Effect of Rental Prices on Student Mobility in Turkey",
+      "authors": [
+        "Merve Betül Gökçe"
+      ],
+      "venue": "Higher Education",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6a092e170a96f8c83c901ea0",
+      "matched_phrase": "rental",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/10511482.2026.2624022",
+      "title": "Public Housing in Postwar Colombo's Urban Regeneration: Pathology of Housing Discourse",
+      "authors": [
+        "Janak Ranaweera"
+      ],
+      "venue": "HOUSING POLICY DEBATE",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c6b9be8eb7c4b585ccf",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-981-15-0780-9",
+      "title": "Housing Policy in Australia",
+      "authors": [
+        "Hal Pawson"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c82f845244ab9dcb77e106",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0308518x221126522",
+      "title": "Rental Proptech Platforms: Changing Landlord and Tenant Power Relations in the UK Private Rental Sector?",
+      "authors": [
+        "Thomas Wainwright"
+      ],
+      "venue": "ENVIRONMENT AND PLANNING A-ECONOMY AND SPACE",
+      "year": 2023,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6347e7b690e50fcafd2a5f4e",
+      "matched_phrase": "rental",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cities.2018.09.019",
+      "title": "Assessment of barriers to public rental housing exits: Evidence from tenants in Beijing, China",
+      "authors": [
+        "Li, Jintao",
+        "Stehlík, Milan",
+        "Wang, Yi"
+      ],
+      "venue": "Cities",
+      "year": 2019,
+      "cited_by_count": 24,
+      "reference_count": 102,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.cities.2020.102897",
+      "title": "The role of family reciprocity within the welfare state in intergenerational transfers for home ownership: Evidence from Chongqing, China",
+      "authors": [
+        "Wen Jing Deng",
+        "Joris Hoekstra",
+        "Marja Elsinga"
+      ],
+      "venue": "Cities",
+      "year": 2020,
+      "cited_by_count": 23,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S0264275120312452",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/01944363.2020.1781681",
+      "arxiv_id": "",
+      "title": "Housing Single Women",
+      "authors": [
+        "J. Harten"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 22,
+      "influential_cite_count": 0,
+      "reference_count": 166,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0042098019899353",
+      "arxiv_id": "",
+      "title": "Container housing: Formal informality and deterritorialised home-making amid bulldozer urbanism in Shanghai",
+      "authors": [
+        "Minhua Ling"
+      ],
+      "venue": "Urban studies",
+      "year": 2020,
+      "cited_by_count": 19,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "http://repository.graduateinstitute.ch/record/301650",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9781513566528.002",
+      "title": "People’s Republic of China",
+      "authors": [
+        "International Monetary Fund. Asia and Pacific Dept"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2021,
+      "cited_by_count": 16,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2021/012/002.2021.issue-012-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/09670106221134968",
+      "title": "Topologies of power in China’s grid-style social management during the COVID-19 pandemic",
+      "authors": [
+        "Sabrina Habich‐Sobiegalla",
+        "Franziska Plümmer"
+      ],
+      "venue": "Security Dialogue",
+      "year": 2022,
+      "cited_by_count": 12,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1177/09670106221134968",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0097700419837929",
+      "title": "Consumption Plus Love: Inequality, Domestic Utopia, and China’s New Politics of the Future",
+      "authors": [
+        "Wanning Sun"
+      ],
+      "venue": "Modern China",
+      "year": 2019,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://opus.lib.uts.edu.au/bitstream/10453/133441/4/Wanning%20Sun%20Final%20Version.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.26076/8ceb-4056",
+      "title": "Defining and Meeting the Demand For Agricultural Machinery in China: A Case Study of John Deere",
+      "authors": [
+        "Garrett W. Davis"
+      ],
+      "venue": "Digital Commons - USU (Utah State University)",
+      "year": 2021,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1306&context=etd",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/su151713255",
+      "title": "Enhancing the Community Environment in Populous Residential Districts: Neighborhood Amenities and Residents’ Daily Needs",
+      "authors": [
+        "Kai Zhang",
+        "Dong Yan"
+      ],
+      "venue": "Sustainability",
+      "year": 2023,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2071-1050/15/17/13255/pdf?version=1693823308",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.habitatint.2025.103411",
+      "title": "Housing finance and inequality: Mortgage debt in urban China",
+      "authors": [
+        "Jinqiao Long",
+        "Liyuan Zhuang"
+      ],
+      "venue": "Habitat International",
+      "year": 2025,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.habitatint.2025.103411",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0308518x251360878",
+      "title": "Managing overaccumulation: China’s new affordable rental housing programme and its financialization through REITs",
+      "authors": [
+        "Bo Li",
+        "Manuel B. Aalbers",
+        "Jie Chen",
+        "Sebastian Kohl"
+      ],
+      "venue": "Environment and Planning A Economy and Space",
+      "year": 2025,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0308518X251360878?download=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.3439712",
+      "arxiv_id": "",
+      "title": "Outsiders, insiders and interventions in the housing market",
+      "authors": [
+        "Xiaokuai Shao",
+        "A. White"
+      ],
+      "venue": "Journal of comparative economics (Print)",
+      "year": 2020,
+      "cited_by_count": 8,
+      "influential_cite_count": 0,
+      "reference_count": 44,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9798400229787.002",
+      "title": "People’s Republic of China",
+      "authors": [
+        "International Monetary Fund. Asia and Pacific Dept"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2023,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.elibrary.imf.org/downloadpdf/journals/002/2023/067/002.2023.issue-067-en.xml",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10901-022-09982-w",
+      "arxiv_id": "",
+      "title": "Rental housing types and subjective wellbeing: Evidence from Chinese superstar cities",
+      "authors": [
+        "Xiaofen Yu",
+        "Dingpei Hu",
+        "Mingzhi Hu"
+      ],
+      "venue": "Journal of Housing and the Built Environment",
+      "year": 2022,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 61,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/psp.70099",
+      "arxiv_id": "",
+      "title": "Young Talents' Settlement Decisions in China's Metropolises: An Integrated Prospect Theory Framework",
+      "authors": [
+        "Chi Jin",
+        "Bo Li",
+        "S. J. Jansen",
+        "H. Boumeester",
+        "Peter J Boelhouwer"
+      ],
+      "venue": "Population, Space and Place",
+      "year": 2025,
+      "cited_by_count": 6,
+      "influential_cite_count": 0,
+      "reference_count": 98,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/psp.70099",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1108/pm-07-2021-0052",
+      "title": "Constructing segmented rental housing indices: evidence from Beijing, China",
+      "authors": [
+        "Song, Zisheng",
+        "Wilhelmsson, Mats",
+        "Yang, Zan"
+      ],
+      "venue": "Property Management",
+      "year": 2022,
+      "cited_by_count": 5,
+      "reference_count": 100,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:sec><jats:title content-type=\"abstract-subheading\">Purpose</jats:title><jats:p>This paper aims to construct rental housing indices and identify market segmentation for more effective property-management strategies.</jats:p></jats:sec><jats:sec><jats:title content-type=\"abstract-subheading\">Design/methodology/approach</jats:title><jats:p>The hedonic model was employed to construct the rental indices. Using the<jats:italic>k</jats:italic>-means++ and REDCAP (Regionalisation with Dynamically ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1057/s41599-024-02866-0",
+      "title": "Sense of community and residential well-being among rural-urban migrants in China",
+      "authors": [
+        "Ming Guan",
+        "Hongyi Guan"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "year": 2024,
+      "cited_by_count": 5,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41599-024-02866-0.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijerph19031121",
+      "arxiv_id": "",
+      "title": "Social Group Differences in the Exposure Risk of COVID-19: A Case Study in Beijing, China",
+      "authors": [
+        "Chenru Lu",
+        "Xiaodi Yi",
+        "Xiaocui Ren"
+      ],
+      "venue": "International Journal of Environmental Research and Public Health",
+      "year": 2022,
+      "cited_by_count": 4,
+      "influential_cite_count": 0,
+      "reference_count": 49,
+      "tldr": "Among the different population characteristics, male, 31–40 years old, married, with a high school education, income level of 20,001–25,000 yuan, with an non-local rural hukou, rental housing, farmers, three generations or more living together have a greater degree of COVID-19 exposure risk.",
+      "is_oa": true,
+      "oa_url": "https://www.mdpi.com/1660-4601/19/3/1121/pdf?version=1642668622",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Among the different population characteristics, male, 31–40 years old, married, with a high school education, income level of 20,001–25,000 yuan, with an non-local rural hukou, rental housing, farmers, three generations or more living together have a greater degree of COVID-19 exposure risk.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21629/jsee.2018.01.03",
+      "title": "Cognitive anti-jamming receiver under phase noise in high frequency bands",
+      "authors": [
+        "",
+        "FANG, Zheng",
+        "",
+        "LI, Haitao",
+        "",
+        "QIAN, Yiming",
+        "",
+        ""
+      ],
+      "venue": "Journal of Systems Engineering and Electronics",
+      "year": 2018,
+      "cited_by_count": 3,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54254/2753-8818/38/20240543",
+      "title": "Research on the influencing factors of housing rental prices-take Shanghai housing rents as an example",
+      "authors": [
+        "Qin, Zicen"
+      ],
+      "venue": "Theoretical and Natural Science",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In today’s era, renting offers lower costs and greater flexibility compared to buying, making it a preferred choice for many to meet their accommodation needs. Therefore, identifying factors that affect rental prices is of significant importance both for individuals and governments. Through the establishment of multiple linear regression and stepwise regression models, this paper analyzed 400 samples selected from a dataset of 20,000 rental listings in Shanghai, revealing the relationshi",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5089/9781484370797.002",
+      "title": "People’s Republic of China",
+      "authors": [
+        "International Monetary Fund. Asia and Pacific Dept"
+      ],
+      "venue": "IMF Staff Country Reports",
+      "year": 2018,
+      "cited_by_count": 2,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.elibrary.imf.org/doc/IMF002/25384-9781484370797/25384-9781484370797/Other_formats/Source_PDF/25384-9781484370858.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.59490/abe.2018.22.2529",
+      "title": "Young People's Housing Opportunity in Post-reform China",
+      "authors": [
+        "Weijing Deng"
+      ],
+      "venue": "Architecture and the Built Environment",
+      "year": 2018,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://journals.open.tudelft.nl/abe/article/download/2529/2791",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/asej.70002",
+      "title": "Homeownership and subjective poverty in China",
+      "authors": [
+        "Lei Yu",
+        "Rundong Wang",
+        "Sung‐chul Bang",
+        "Wei‐Chiao Huang"
+      ],
+      "venue": "Asian Economic Journal",
+      "year": 2025,
+      "cited_by_count": 1,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/asej.70002",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/su16177861",
+      "arxiv_id": "",
+      "title": "Investigating the Impact of Public Services on Rental Prices in Chinese Super Cities Based on Interpretable Machine Learning",
+      "authors": [
+        "Ruibing Kou",
+        "Y. Long",
+        "Yixin Zhou",
+        "Weilong Liu",
+        "Xiang He",
+        "Qiao Peng"
+      ],
+      "venue": "Sustainability",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 51,
+      "tldr": "The results indicate that the impact of public service resources on rent is notably higher in Beijing and Shanghai, while in Shenzhen, balanced urban planning results in property characteristics being more prominent in tenant preferences.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.3390/su16177861",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The results indicate that the impact of public service resources on rent is notably higher in Beijing and Shanghai, while in Shenzhen, balanced urban planning results in property characteristics being more prominent in tenant preferences.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.56397/as.2025.01.07",
+      "arxiv_id": "",
+      "title": "Residential Marginalization of Renters: Social Adaptation of Urban Youth in Suburbanized Living in First-Tier Cities",
+      "authors": [
+        "S. Liang",
+        "Tong Zhang"
+      ],
+      "venue": "Arts in society",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 7,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.paradigmpress.org/as/article/download/1512/1343",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Design for Street Markets in Mainland China: Study of Current Street Markets, the Ideal Model of Formalized Street Markets, and Worktable Design",
+      "authors": [
+        "Jiameng Huang"
+      ],
+      "venue": "",
+      "year": 2019,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5244762",
+      "title": "Decoupling Hukou and Welfare: Practice‑Based Citizenship Through Public Rental Housing Provision in Chongqing, China",
+      "authors": [
+        "Hu, Weijie",
+        "Sun, Zhe"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1080/19491247.2026.2624586",
+      "title": "The invisible and the familiar: how social ties shape social cohesion in public rental housing in Beijing, China",
+      "authors": [
+        "Wang, Xiaomeng",
+        "Liu, Zhilin",
+        "Chen, Yuhan"
+      ],
+      "venue": "International Journal of Housing Policy",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 64,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.18306/dlkxjz.2024.05.001",
+      "title": "Characteristics of inter-city commuting and influencing factors in the Beijing-Tianjin-Hebei mega-region based on housing rental data",
+      "authors": [
+        "Chun, ZHANG",
+        "Chang, MA",
+        "",
+        ""
+      ],
+      "venue": "Progress in Geography",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5220/0014879100005130",
+      "title": "Exploring Determinants of Housing Prices: Take Beijing, Shanghai, Chongqing Housing Prices as Examples",
+      "authors": [
+        "An, Qi",
+        "Hu, Zhenglun",
+        "Ma, Tianyi"
+      ],
+      "venue": "Proceedings of the 2nd International Conference on Financial Management and the Digital Economy",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.33582/annbiotechnol.2022.1025",
+      "title": "Two-peak Elution Profile of a Bispecific VHH-IgG Fusion Protein in Ion Exchange Purification Process caused by Atypical N-Glycosylation",
+      "authors": [
+        "",
+        "Jiao, Jing",
+        "Huang, Liming",
+        "",
+        "Xu, Xiaohui",
+        "",
+        "Liu, Yuying",
+        "",
+        "Hu, Mingyan",
+        "",
+        "Chen, Weifeng",
+        "",
+        "Li, Lei",
+        "",
+        "Xu, Hui",
+        "",
+        "He, Xugang",
+        "",
+        "Li, Nannan",
+        "",
+        "A, Aihua",
+        "",
+        "C, Chen",
+        "",
+        "Shen, Chenxi",
+        "",
+        "Wang, Lei",
+        "",
+        "Liu, Xun",
+        "",
+        "Zhang, Lianshan",
+        "",
+        "Tang, Chenxiang",
+        ""
+      ],
+      "venue": "Annals of Biotechnology",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>In-depth analysis and thorough understanding of Nglycosylation is critical for therapeutic proteins. For IgG or IgG-like molecules, the conserved N-glycosylation at Asn297 has critical safety and efficacy implications and therefore is under close scrutiny. Any additional N-glycosylation that increases complexity and heterogeneity of the molecule, should be avoided at the early stage of drug discovery. However, unexpected glycosylation at atypical sites brings unforeseen challenges for an",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003414186-16",
+      "title": "The Linkage Mechanism of Integrating the Planning, Construction, Management and Service of Indemnificatory Rental Housing in Shanghai",
+      "authors": [
+        "Wu, Boshen"
+      ],
+      "venue": "Australia and China Perspectives on Urban Regeneration and Rural Revitalization",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/land13071034",
+      "title": "China’s New Housing Security Model: Evaluation of the Job–Housing Balance in Affordable Rental Housing, Shanghai",
+      "authors": [
+        "Wang, Peihong",
+        "Li, Kerun",
+        "Zhang, Wenbing"
+      ],
+      "venue": "Land",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 45,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>The Chinese government’s recent low-income housing scheme aims to tackle housing challenges faced by the urban floating population. A notable shift in this initiative is the focus on the job–housing balance. This study proposes that the spatial interaction between land designated for affordable rental housing and land for commercial facilities serves as a fundamental metric for evaluating this equilibrium, providing insights into the effectiveness of China’s nascent affordable housing ef",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.23977/jceup.2023.051206",
+      "title": "Research on the Design of Shanghai Affordable Rental Housing",
+      "authors": [],
+      "venue": "Journal of Civil Engineering and Urban Planning",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7498/aps.72.20230947",
+      "title": "Research progress of synthesis of high-performance perovskites and its derivatives based on polyhedral distortion",
+      "authors": [
+        "Fang, Cheng",
+        "Wang, Hong",
+        "Shi, Si-Qi",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "venue": "Acta Physica Sinica",
+      "year": 2023,
+      "cited_by_count": 0,
+      "reference_count": 68,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"en\">Corner-shared coordination polyhedral crystals (CSCPCs) represented by perovskites have unique and various properties in optics, electrics, and magnetism, leading to their broad applications such as in serving as ferroelectric material, fast ionic conductors, and electro/photo-catalysts. However, the excellent properties are owned only by a very small fraction of CSCPS phases. How to obtain such phases through structural operation has always been a research hotspot and a bo",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-981-95-5075-3_2",
+      "title": "Maps, Money, and the Hukou Door: How Chongqing Drew Its City",
+      "authors": [
+        "Hu, Weijie"
+      ],
+      "venue": "Urban Sustainability",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 85,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2405.17505v1",
+      "arxiv_id": "2405.17505v1",
+      "title": "Predicting Rental Price of Lane Houses in Shanghai with Machine Learning Methods and Large Language Models",
+      "authors": [
+        "Tingting Chen",
+        "Shijing Si"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2405.17505v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1208.2724v5",
+      "arxiv_id": "1208.2724v5",
+      "title": "Caching with rental cost and zapping",
+      "authors": [
+        "Monik Khare",
+        "Neal E. Young"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1208.2724v5",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1186/s42854-021-00024-2",
+      "arxiv_id": "2108.08229v1",
+      "title": "Tilted Platforms: Rental Housing Technology and the Rise of Urban Big Data Oligopolies",
+      "authors": [
+        "Geoff Boeing",
+        "Max Besbris",
+        "David Wachsmuth",
+        "Jake Wegmann"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.08229v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0739456X16664789",
+      "arxiv_id": "1605.05397v4",
+      "title": "New Insights into Rental Housing Markets across the United States: Web Scraping and Analyzing Craigslist Rental Listings",
+      "authors": [
+        "Geoff Boeing",
+        "Paul Waddell"
+      ],
+      "venue": "arXiv",
+      "year": 2016,
+      "pdf_url": "https://arxiv.org/pdf/1605.05397v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2206.12647v1",
+      "arxiv_id": "2206.12647v1",
+      "title": "Feedback Dynamics of the Low-Income Rental Housing Market: Exploring Policy Responses to COVID-19",
+      "authors": [
+        "Katherine Marcal",
+        "Patrick J. Fowler",
+        "Peter S. Hovmand"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.12647v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.20944/preprints202412.1927.v1",
+      "arxiv_id": "2501.06241v1",
+      "title": "Predicting House Rental Prices in Ghana Using Machine Learning",
+      "authors": [
+        "Philip Adzanoukpe"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2501.06241v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0308518X19869678",
+      "arxiv_id": "1907.06118v2",
+      "title": "Online Rental Housing Market Representation and the Digital Reproduction of Urban Inequality",
+      "authors": [
+        "Geoff Boeing"
+      ],
+      "venue": "arXiv",
+      "year": 2019,
+      "pdf_url": "https://arxiv.org/pdf/1907.06118v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/0739456X20904435",
+      "arxiv_id": "2002.01578v1",
+      "title": "Rental Housing Spot Markets: How Online Information Exchanges Can Supplement Transacted-Rents Data",
+      "authors": [
+        "Geoff Boeing",
+        "Jake Wegmann",
+        "Junfeng Jiao"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "pdf_url": "https://arxiv.org/pdf/2002.01578v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/00420980221101707",
+      "arxiv_id": "2207.07985v1",
+      "title": "Home-made blues: Residential crowding and mental health in Beijing, China",
+      "authors": [
+        "Xize Wang",
+        "Tao Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.07985v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s00355-024-01556-9",
+      "arxiv_id": "2410.16745v1",
+      "title": "Characterizing the top trading cycles rule for housing markets with lexicographic preferences",
+      "authors": [
+        "Bettina Klaus"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.16745v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1702.02461v1",
+      "arxiv_id": "1702.02461v1",
+      "title": "Who Will Win Practical Artificial Intelligence? AI Engineerings in China",
+      "authors": [
+        "Huai-Yu Wu",
+        "Feiyue Wang",
+        "Chunhong Pan"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1702.02461v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s11433-022-1981-8",
+      "arxiv_id": "2206.13022v3",
+      "title": "Status and progress of China SKA Regional Centre prototype",
+      "authors": [
+        "Tao An",
+        "Xiaocong Wu",
+        "Baoqiang Lao",
+        "Shaoguang Guo",
+        "Zhijun Xu",
+        "Weijia Lv",
+        "Yingkang Zhang",
+        "Zhongli Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.13022v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2512.18226v1",
+      "arxiv_id": "2512.18226v1",
+      "title": "Multifaceted Exploration of Spatial Openness in Rental Housing: A Big Data Analysis in Tokyo's 23 Wards",
+      "authors": [
+        "Takuya OKi",
+        "Yuan Liu"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2512.18226v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1802.05870v1",
+      "arxiv_id": "1802.05870v1",
+      "title": "The dynamic impact of monetary policy on regional housing prices in the US: Evidence based on factor-augmented vector autoregressions",
+      "authors": [
+        "Manfred M. Fischer",
+        "Florian Huber",
+        "Michael Pfarrhofer",
+        "Petra Staufer-Steinnocher"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1802.05870v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2303.17791v1",
+      "arxiv_id": "2303.17791v1",
+      "title": "Analysis of the current status of tuberculosis transmission in China based on a heterogeneity model",
+      "authors": [
+        "Chuanqing Xu",
+        "Kedeng Cheng",
+        "Yu Wang",
+        "Songbai Guo",
+        "Maoxing Liu",
+        "Xiaojing Wang",
+        "Zhiguo Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.17791v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54097/8hhy6269",
+      "arxiv_id": "",
+      "title": "Research On the Housing Problems of New Residents and Youth in First-Tier Cities and Exploration of Countermeasures--Based on Shenzhen, China",
+      "authors": [
+        "Yulan Rao"
+      ],
+      "venue": "Journal of Education, Humanities and Social Sciences",
+      "year": 2024,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 10,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://drpress.org/ojs/index.php/EHSS/article/download/22625/22186",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54254/2753-7064/2025.km29017",
+      "arxiv_id": "",
+      "title": "Migrant Workers and Welfare Protection in China: A Case Study of Shanghai's Policies for Migrant Workers and Their Children",
+      "authors": [
+        "M. Zeng"
+      ],
+      "venue": "Communications in Humanities Research",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.54254/2753-7064/2025.km29017",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

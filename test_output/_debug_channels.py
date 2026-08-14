@@ -22,7 +22,7 @@ for chs in channels_to_test:
     try:
         result = fetch_doi(
             '10.1186/s41239-021-00292-9',
-            output_dir='C:/Users/DengN/.paper-agent/deep_rerank/debug',
+            output_dir='~/.paper-agent/deep_rerank/debug',
             channels=chs,
             max_total_sec=15,
         )

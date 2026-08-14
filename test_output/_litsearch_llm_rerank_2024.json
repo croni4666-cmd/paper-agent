@@ -1,0 +1,443 @@
+{
+  "query": "LLM listwise reranking RankGPT RankZephyr",
+  "year_min": 2024,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 8,
+    "openalex": 1,
+    "arxiv": 0,
+    "semanticscholar": 4,
+    "aminer": 8,
+    "cnki": 1
+  },
+  "dedup_count": 19,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1016/j.xinn.2025.101253",
+      "title": "A Survey on LLM-as-a-Judge",
+      "authors": [
+        "Jiawei Gu"
+      ],
+      "venue": "Innovation (Cambridge (Mass))",
+      "year": 2026,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67453a83ae8580e7ffadd87c",
+      "matched_phrase": "LLM",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "DAPO: an Open-Source LLM Reinforcement Learning System at Scale",
+      "authors": [
+        "Qiying Yu"
+      ],
+      "venue": "NeurIPS 2025",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67da2613163c01c8502754a8",
+      "matched_phrase": "LLM",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41586-025-09422-z",
+      "title": "DeepSeek-R1 Incentivizes Reasoning in LLMs Through Reinforcement Learning",
+      "authors": [
+        "Daya Guo"
+      ],
+      "venue": "Nature",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "68cb0986163c01c85058abe1",
+      "matched_phrase": "LLM",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+      "authors": [
+        "Yanzhao Zhang"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6842437a163c01c850ab1eed",
+      "matched_phrase": "reranking",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3649506",
+      "title": "Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond.",
+      "authors": [
+        "Jingfeng Yang"
+      ],
+      "venue": "ACM TRANSACTIONS ON KNOWLEDGE DISCOVERY FROM DATA",
+      "year": 2024,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6449e7ff582c1376bbfc6879",
+      "matched_phrase": "LLM",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "LLMs Know More Than They Show: on the Intrinsic Representation of LLM Hallucinations.",
+      "authors": [
+        "Hadas Orgad"
+      ],
+      "venue": "ICLR 2025",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "66ff683801d2a3fbfcb81526",
+      "matched_phrase": "LLM",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Rank-K: Test-Time Reasoning for Listwise Reranking",
+      "authors": [
+        "Eugene Yang"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "682d248c163c01c850f6f730",
+      "matched_phrase": "listwise",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3726302.3730331",
+      "arxiv_id": "2505.19284",
+      "title": "RankLLM: A Python Package for Reranking with LLMs",
+      "authors": [
+        "Sahel Sharifymoghaddam",
+        "Ronak Pradeep",
+        "Andre Slavescu",
+        "Ryan Nguyen",
+        "Andrew Xu",
+        "Zijian Chen",
+        "Yilin Zhang",
+        "Yidi Chen",
+        "Jasper Xian",
+        "Jimmy Lin"
+      ],
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "year": 2025,
+      "cited_by_count": 28,
+      "influential_cite_count": 0,
+      "reference_count": 46,
+      "tldr": "RankLLM is an open-source Python package for reranking that is modular, highly configurable, and supports both proprietary and open-source LLMs in customized reranking workflows, addressing reliability concerns with LLM APIs and non-deterministic behavior in Mixture-of-Experts (MoE) models.",
+      "is_oa": true,
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3726302.3730331",
+      "source": "semanticscholar",
+      "type": "Book",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "RankLLM is an open-source Python package for reranking that is modular, highly configurable, and supports both proprietary and open-source LLMs in customized reranking workflows, addressing reliability concerns with LLM APIs and non-deterministic behavior in Mixture-of-Experts (MoE) models.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3696410.3714554",
+      "arxiv_id": "2406.14848",
+      "title": "Leveraging Passage Embeddings for Efficient Listwise Reranking with Large Language Models",
+      "authors": [
+        "Qi Liu",
+        "Bo Wang",
+        "Nan Wang",
+        "Jiaxin Mao"
+      ],
+      "venue": "The Web Conference",
+      "year": 2024,
+      "cited_by_count": 27,
+      "influential_cite_count": 1,
+      "reference_count": 52,
+      "tldr": "This paper proposes PE-Rank, leveraging the single passage embedding as a good context compression for efficient listwise passage reranking, and introduces an inference method that dynamically constrains the decoding space to these special tokens, accelerating the decoding process.",
+      "is_oa": true,
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3696410.3714554",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "abstract": "This paper proposes PE-Rank, leveraging the single passage embedding as a good context compression for efficient listwise passage reranking, and introduces an inference method that dynamically constrains the decoding space to these special tokens, accelerating the decoding process.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arXiv.2508.16998",
+      "arxiv_id": "2508.16998",
+      "title": "DeAR: Dual-Stage Document Reranking with Reasoning Agents via LLM Distillation",
+      "authors": [
+        "Abdelrahman Abdallah",
+        "Jamshid Mozafari",
+        "Bhawna Piryani",
+        "Adam Jatowt"
+      ],
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "year": 2025,
+      "cited_by_count": 21,
+      "influential_cite_count": 1,
+      "reference_count": 45,
+      "tldr": "DeAR is proposed, an open-source framework that decouples listwise document reranking and holistic cross-document analysis through a dual-stage approach, achieving superior accuracy and interpretability.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "DeAR is proposed, an open-source framework that decouples listwise document reranking and holistic cross-document analysis through a dual-stage approach, achieving superior accuracy and interpretability.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.ipm.2025.104232",
+      "title": "AFR-Rank: An effective and highly efficient LLM-based listwise reranking framework via filtering noise documents",
+      "authors": [
+        "Xiong, Yinghao",
+        "Tu, Xinhui",
+        "Zhao, Weizhong"
+      ],
+      "venue": "Information Processing &amp; Management",
+      "year": 2025,
+      "cited_by_count": 7,
+      "reference_count": 48,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "2411.06254",
+      "title": "EviRerank: Adaptive Evidence Construction for Long-Document LLM Reranking",
+      "authors": [
+        "Minghan Li",
+        "É. Gaussier",
+        "Juntao Li",
+        "Guodong Zhou"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "EviRerank is proposed, an evidence-based long-document reranking framework for decoder-only LLMs that consistently outperforms full-document LLM reranking and strong block-selection baselines while reducing input length.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "EviRerank is proposed, an evidence-based long-document reranking framework for decoder-only LLMs that consistently outperforms full-document LLM reranking and strong block-selection baselines while reducing input length.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3805712.3809952",
+      "title": "One Pass, Any Order: Position-Invariant Listwise Reranking for LLM-Based Recommendation",
+      "authors": [
+        "Bito, Ethan",
+        "Ren, Yongli",
+        "He, Estrid"
+      ],
+      "venue": "Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 31,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.51903/jtie.v5i1.537",
+      "title": "LLM-Inspired Offline Reranking for Financial Search: Query Rewriting, Hybrid Retrieval, and Listwise Relevance Ranking on FiQA",
+      "authors": [
+        "Meng, Siquan",
+        "Chen, Jing",
+        "Zheng, Isa"
+      ],
+      "venue": "Journal of Technology Informatics and Engineering",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>Financial search has high practical value because investors and retail users often ask natural-language questions whose wording differs from relevant financial passages. This paper evaluates a multi-stage retrieval pipeline on FiQA, a financial question-answering retrieval collection in BEIR. The systems include BM25, Dense LSA, BM25-LSA hybrid retrieval, reciprocal-rank fusion, a compact linear reranker, fixed pointwise and listwise relevance rubrics inspired by LLM reranking, query rew",
+      "found_by": [
+        "crossref",
+        "openalex"
+      ],
+      "is_oa": true,
+      "oa_url": "https://jtie.stekom.ac.id/index.php/jtie/article/download/537/346",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-3-032-34374-1_13",
+      "title": "Beyond the Window: Scaling Listwise LLM Reranking via Candidate Filtering",
+      "authors": [
+        "Remy, Louis",
+        "Bringay, Sandra",
+        "Poncelet, Pascal",
+        "Servajean, Maximilien"
+      ],
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2027,
+      "cited_by_count": 0,
+      "reference_count": 25,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3805712.3809723",
+      "title": "When Vision Meets Texts in Listwise Reranking",
+      "authors": [
+        "Cai, Hongyi"
+      ],
+      "venue": "Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 45,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/bigdata66926.2025.11401803",
+      "title": "HMR-LLM: Hybrid Multimodal Sequential Recommendation with LLM Reranking",
+      "authors": [
+        "Sneha",
+        "Ding, Chen"
+      ],
+      "venue": "2025 IEEE International Conference on Big Data (BigData)",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 28,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3774904.3792243",
+      "title": "ONE-PASS: Single Forward Pass Decoding for Listwise Reranking",
+      "authors": [
+        "Du, Yingpeng",
+        "Sun, Zhu",
+        "Wei, Tianjun",
+        "Zhang, Jie"
+      ],
+      "venue": "Proceedings of the ACM Web Conference 2026",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 38,
+      "type": "proceedings-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/ssrn.5764903",
+      "title": "LLM-Driven Active Listwise Tournaments for Portfolio Selection in Large Asset Universes",
+      "authors": [
+        "Yuksel, Kamer Ali",
+        "Sawaf, Hassan"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    }
+  ]
+}

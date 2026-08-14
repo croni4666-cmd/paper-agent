@@ -1,0 +1,140 @@
+
+========== PAGE 5 ==========
+microbial core functions include genes encoding glycos-
+aminoglycan degradation, the production of short-​chain 
+fatty acids (SCFAs) via fermentation of complex poly-
+saccharides and synthesis of specific lipopolysaccharides 
+(LPS), and the biosynthesis of some essential amino 
+acids and vitamins13,18,23,24 (Fig. 1).
+In summary, a ‘gold standard’ reference of a human 
+gut microbiota with the capacity to promote host meta­
+b­olic health does not exist. This is owing to a tremen-
+dous variation, especially at taxonomy levels, between 
+individuals of different demography, ethnicity, sex, age 
+and health status. The implications of this variation are 
+that epidemiological studies must include controls for 
+contextual factors or adjust for the contextual differences.
+Receding gut microbial diversity
+Compared with people living traditional lifestyles (for 
+instance, people in East Africa or in the Amazonas) 
+who have not been exposed to antimicrobial factors of 
+modern living, most populations in technically devel-
+oped countries of the world show reduced gut micro-
+bial diversity25. In parallel with urbanization, sewerage, 
+higher standards of housing and improved hygiene 
+in general, the abundance of Bacteroides, Prevotella, 
+Desulfovibrio, Lactobacillus and Oxalobacter genera 
+in the gut microbiota is declining25–27. This decline in 
+diversity relates to a rise in the prevalence of common 
+chronic metabolic disorders28. Similarly, in both lean 
+individuals and individuals with obesity, low microbial 
+gene richness links with a relative increase in adipos-
+ity, insulin resistance, inflammation and dyslipidaemia28. 
+The precise and specific causes of the receding microbial 
+richness and diversity in developed countries are elusive. 
+However, besides the general improvement in standards 
+of living and hygiene, the use of antibiotics to combat 
+infectious diseases is suspected to be a contributor29. 
+For instance, the use of antibiotics before pregnancy, 
+during pregnancy or in early childhood may change 
+the composition of the gut microbiota of infants and 
+children, practices that have occurred in parallel with 
+increases in the incidence of early-​onset obesity30,31. 
+In adults, short-​term treatment of young healthy indi-
+viduals with broad-​spectrum antibiotics causes the 
+long-​term depletion of some commensal and mutual-
+istic bacteria32. However, causal relationships between 
+antibiotic use, disruption of the gut microbiota and 
+dysmetabolism have not been shown33–35. The effects of 
+antibiotics on the gut microbiota and metabolism may 
+be dependent on host genetics because studies in mice 
+fed a high-​fat diet demonstrate that the effect of anti-
+biotics on numerous metabolic variables is dependent 
+on the genetic background of the animals36. Below, we 
+discuss aspects of abnormal gut microbiota and the 
+relationships to metabolism in obesity, T2D, metabolic 
+liver disease and CMD, where the diversity of the gut 
+microbiota of the affected is often reported to be reduced 
+compared with healthy individuals, and even more 
+so compared with people living traditional lifestyles28,37. 
+In addition, we discuss how severe malnutrition dur-
+ing infancy and early childhood relates to a relative 
+depletion of certain bacteria in the gut microbiota. In 
+the absence of clinically controlled interventions aimed 
+at restoring the richness and diversity of gut microbial 
+communities in chronic disorders, it is not possible to 
+evaluate whether a receding intestinal microbiota is 
+part of disease causation or a secondary adaptation in 
+states of chronic non-​communicable disorders. Yet there 
+is some evidence that dietary interventions may improve 
+low microbial gene richness and host metabolism in 
+individuals with obesity38.
+Gut microbiota of metabolic pathologies
+Gut microbiota is aberrant in obesity. The incidence of 
+obesity and its metabolic co-​morbidities in the devel-
+oped countries has increased dramatically since the mid-​
+twentieth century39. Sedentary lifestyles and increased 
+food consumption in combination with a widespread 
+polygenetic susceptibility are considered to be the major 
+causes for the obesity epidemic40, which is potentially 
+further aggravated by the widespread use of antibiotics29. 
+In addition, evidence is accumulating for a role of the 
+gut microbiota in mediating some of the environmental 
+effects in obesity pathogenesis. Following the discovery 
+in 2006 that a transferrable obesity-​associated micro­
+biota can induce weight gain in lean mice41, subse-
+quent epidemiological studies have shown differences 
+in the gut microbiota of individuals with obesity and 
+lean individuals. At the species level, twin studies have 
+shown that the abundance of SCFA producers such as 
+Eubacterium ventriosum and Roseburia intestinalis is 
+associated with obesity42, whereas butyrate producers 
+such as Oscillospira spp.43 and the methanogenic 
+archaeon Methanobrevibacter smithii may associate 
+with leanness44. Another metagenome-​wide association 
+study of lean individuals and individuals with obesity 
+showed that the abundance of Bacteroides thetaiotaomi­
+cron, a glutamate-​fermenting commensal, was markedly 
+decreased in individuals with obesity and was inversely 
+correlated with serum glutamate concentration45. 
+Furthermore, gavage of mice with B. thetaiotaomicron 
+protected against adiposity, pointing to possible future 
+modalities for obesity intervention targeting the gut 
+microbiota with potential probiotic or microbial com-
+pounds (Box 3). Analyses of gut microbial pathways and 
+gene families suggest that obesity is associated with a 
+decreased capacity for unidirectional conjugation, 
+which transfers genetic material between bacteria, and a 
+reduction in superoxide reductase, potentially leading to 
+intestinal oxidative stress46 (Fig. 2). Observational studies 
+have been complemented by a faecal microbiota trans-
+plantation study demonstrating that transplantation of 
+stools from twins discordant for obesity into germ-​free 
+mice transfers, in a diet-​dependent manner, the pheno-
+type of the human donor to the recipient animal47. This 
+landmark study provides the rationale for the ongoing 
+intense search for gut microbial messengers linking the 
+gut microbiota with whole-​body energy metabolism. In 
+studies of the potential impact of altered gut microbiota 
+in the development of chronic disorders including obe-
+sity, however, it is important to bear in mind that various 
+drugs may influence the gut microbiota. For instance, 
+intake of statins, which are cholesterol-​lowering drugs 
+widely prescribed for the prevention of arterioscle-
+rosis, has been linked with a health-​promoting gut 
+Dysmetabolism
+Metabolic dysfunctions often 
+including abdominal obesity, 
+dyslipidaemia and higher 
+blood glucose and higher 
+blood pressure than normal.
+Endotoxaemia
+The presence of endotoxin(s) 
+within the blood, for example, 
+bacterial lipopolysaccharides.
+Dyslipidaemia
+An abnormal amount and an 
+abnormal relative distribution 
+of various lipids in the blood.
+Nature Reviews | Microbiology
+Reviews

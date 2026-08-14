@@ -1,0 +1,321 @@
+
+======================================================================
+# FILE: 10_1038_s41579-020-0433-9.pdf
+======================================================================
+
+
+## ABSTRACT
+Abstract | Observational findings achieved during the past two decades suggest that the
+intestinal microbiota may contribute to the metabolic health of the human host and, when
+aberrant, to the pathogenesis of various common metabolic disorders including obesity, type 2
+diabetes, non-a lcoholic liver disease, cardio-m etabolic diseases and malnutrition. However, to
+gain a mechanistic understanding of how the gut microbiota affects host metabolism, research
+is moving from descriptive microbiota census analyses to cause-a nd-e ffect studies. Joint analyses
+of high-t hroughput human multi-o mics data, including metagenomics and metabolomics data,
+together with measures of host physiology and mechanistic experiments in humans, animals
+and cells hold potential as initial steps in the identification of potential molecular mechanisms
+behind reported associations. In this Review, we discuss the current knowledge on how gut
+microbiota and derived microbial compounds may link to metabolism of the healthy host or to
+the pathogenesis of common metabolic diseases. We highlight examples of microbiota-t argeted
+interventions aiming to optimize metabolic health, and we provide perspectives for future basic
+and translational investigations within the nascent and promising research field.
+From the outcome of recent epidemiological, physiolog- is to have an overall metabolism (as estimated from an
+ical and omics- based studies, complemented by cellu- array of various measures of body organ functions, such
+lar studies and experiments in animals, it appears that as those of the liver, and intestinal, fat, muscle, heart
+a considerable part of the environmental influence on and brain tissues) that in representative epidemiologi-
+human health and disease risk may be mediated or mod- cal studies is linked with both desirable life quality and
+ified by microbial communities1. These microorganisms, longevity. A considerable part of the world population,
+collectively referred to as the microbiota, include a vast however, primarily due to overeating of processed
+number of interacting bacteria, archaea, bacteriophages, energy- dense food, urbanization with sedentary occu-
+eukaryotic virus and fungi coexisting on human surfaces pations and leisure-t ime inactivity often combined with
+and in all body cavities1. The majority of them are com- smoking addiction, has a suboptimal or even a poor
+mensal or mutualistic microorganisms1. The collection metabolic health. The implications are a high
+
+
+## INTRODUCTION (first 1500 chars)
+(not found)
+
+
+## CONCLUSION / DISCUSSION (first 2000 chars)
+Conclusions and perspectives
+strong stimulators of host immunity. When in excess, The past two decades of research within the microbiome
+for instance owing to habitual intake of diets high in field has made it evident that human biology means the
+animal fat or in an extreme state such as sepsis- elicited biology of the holobiont Homo sapiens. In other words,
+endotoxaemia, LPS trigger local and systemic inflamma- human biology is contextual on the coexisting microor-
+tion and insulin resistance147. Generally, several common ganisms, with the majority living in the digestive tract
+chronic disorders that appear to be characterized by a from where they produce or modify various chemicals,
+relative disruption of the gut barrier, which elicits mul- or trigger host reactions that affect various physiolog-
+tiple imbalances in both intestinal and systemic immune ical functions including immunity, neurobiology and,
+competences, converge to cause insulin resistance, not least, metabolism. As appears from our discussion of
+eventually leading to metabolic syndrome148,149. the pertinent literature on metabolism and the intestinal
+Above, we have discussed how, for instance, SCFAs microbiota, the research field is still at a juvenile stage
+and indole interfere with endocrine regulation, but both in its basic and translational dimensions. With
+there are more examples of how gut bacterial com- the focus on the influence of the gut microbiome on the
+pounds interact with hormone secretion or act as lig- overall functional metabolic read- outs, much still needs
+ands for known hormone receptors. Several proteins to be learned. The knowledge gaps to be filled include
+secreted by E. coli, including ClpB, which mimics the annotation of hundreds of as yet unknown chemical
+host peptide α- melanocyte- stimulating hormone compounds in the metabolomes and peptidomes of
+(α- MSH), affect food intake150 and meal patterns in various body fluids as well as approaches to decipher
+mice151. Mechanistica
+
+
+## FULL HEAD (first 3000 chars - 兜底)
+REvIEWS
+Gut microbiota in human metabolic
+health and disease
+Yong Fan and Oluf Pedersen ✉
+Abstract | Observational findings achieved during the past two decades suggest that the
+intestinal microbiota may contribute to the metabolic health of the human host and, when
+aberrant, to the pathogenesis of various common metabolic disorders including obesity, type 2
+diabetes, non-a lcoholic liver disease, cardio-m etabolic diseases and malnutrition. However, to
+gain a mechanistic understanding of how the gut microbiota affects host metabolism, research
+is moving from descriptive microbiota census analyses to cause-a nd-e ffect studies. Joint analyses
+of high-t hroughput human multi-o mics data, including metagenomics and metabolomics data,
+together with measures of host physiology and mechanistic experiments in humans, animals
+and cells hold potential as initial steps in the identification of potential molecular mechanisms
+behind reported associations. In this Review, we discuss the current knowledge on how gut
+microbiota and derived microbial compounds may link to metabolism of the healthy host or to
+the pathogenesis of common metabolic diseases. We highlight examples of microbiota-t argeted
+interventions aiming to optimize metabolic health, and we provide perspectives for future basic
+and translational investigations within the nascent and promising research field.
+From the outcome of recent epidemiological, physiolog- is to have an overall metabolism (as estimated from an
+ical and omics- based studies, complemented by cellu- array of various measures of body organ functions, such
+lar studies and experiments in animals, it appears that as those of the liver, and intestinal, fat, muscle, heart
+a considerable part of the environmental influence on and brain tissues) that in representative epidemiologi-
+human health and disease risk may be mediated or mod- cal studies is linked with both desirable life quality and
+ified by microbial communities1. These microorganisms, longevity. A considerable part of the world population,
+collectively referred to as the microbiota, include a vast however, primarily due to overeating of processed
+number of interacting bacteria, archaea, bacteriophages, energy- dense food, urbanization with sedentary occu-
+eukaryotic virus and fungi coexisting on human surfaces pations and leisure-t ime inactivity often combined with
+and in all body cavities1. The majority of them are com- smoking addiction, has a suboptimal or even a poor
+mensal or mutualistic microorganisms1. The collection metabolic health. The implications are a high prevalence
+of all intestinal microbial genes (that is, the microbiome) of metabolic disorders, including obesity, non-a lcoholic
+in an individual represents a genetic repertoire that is liver disease, type 2 diabetes mellitus (T2D) as well
+more than one order of magnitude higher in genes than as cardio- metabolic disease (CMD), and premature
+the human genome1. The majority of microorganisms death2–6. In so
+
+
+======================================================================
+# FILE: 10_3389_fmicb_2019_01046.pdf
+======================================================================
+
+
+## ABSTRACT
+(not found)
+
+
+## INTRODUCTION (first 1500 chars)
+INTRODUCTION
+GonzálezS,Fernández-NavarroT,
+ArboleyaS,delosReyes-GavilánCG, Fermentedfoodshaveplayedanimportantroleinhumandietsincethedevelopmentofcivilization
+SalazarNandGueimondeM(2019) andrepresentaspecialfeatureofsomedietarypatterns,suchastheMediterraneanone.Theinitial
+FermentedDairyFoods:Impacton
+goalofthefermentationprocesswastoprolongtheuseful-lifeofsomefoodsandbeverages,and
+IntestinalMicrobiota
+improving their safety, digestibility and organoleptic properties, however, nowadays fermented
+andHealth-LinkedBiomarkers.
+Front.Microbiol.10:1046. products have become more popular than ever before due to their health-promoting benefits
+doi:10.3389/fmicb.2019.01046 (S¸anlier et al., 2017). Fermented dairy foods have received special attention because of their
+FrontiersinMicrobiology|www.frontiersin.org 1 May2019|Volume10|Article1046
+fmicb-10-01046 May24,2019 Time:15:21 #2
+Gonzálezetal. FermentedDairy-ProductsandIntestinalMicrobiota
+association in epidemiological studies with obesity prevention, attention to the impact yogurt could have, independent of diet
+andwiththereductionontheriskofdifferentdiseases,including (Panahietal.,2018).
+metabolicdisorders,cardiovascularandimmune-relateddiseases Based on this evidence, it seems reasonable to hypothesize
+or cognitive decline, among others (Guo et al., 2017; Salas- that some of the described beneficial effects of fermented dairy
+Salvadó et al., 2017; Kok and Hutkins, 2018; Sivamaruthi et al., product on several pathologies, such as th
+
+
+## CONCLUSION / DISCUSSION (first 2000 chars)
+DISCUSSION effectsonhealth.
+Given the descriptive nature of our study, we are not able
+Thepresentstudyisapioneerreportanalyzingtherelationship to elucidate the mechanism of action explaining the observed
+between the intake of fermented dairy foods within the regular associations. In spite of the lack of information about the
+diet, the gut microbial profile and health related biomarkers, modulationofintestinalAkkermansiainhumans,recentresearch
+considering the subject’s global diet. Previous studies identified inmicetreatedwithantibioticshasreportedanincreaseinthis
+diets rich in fruits, vegetables or whole grains as critical bacterial group after the administration of a probiotic mix of
+modulators of the gut microorganisms, based on their content Lactobacillus (Shi et al., 2018). Therefore, it may be plausible
+in fibers, phenolic compounds and prebiotics (Cuervo et al., that the intake of such microorganisms, present in yogurt,
+2014;Fernández-Navarroetal.,2018).However,theassociation might play a role in this association (Hill et al., 2014; Rezac
+between the different live microorganisms provided by the diet et al., 2018). At this point, it should be mentioned that since
+within the intestinal ecosystem offers a novel way to look labels of products do not provide information about the viable
+into gut microbiota composition and its metabolic activity microorganisms present, we cannot know the exact amount
+(Kok and Hutkins, 2018). In this regard, our results showed and specific strains consumed by the study sample. According
+that, among the fermented dairy products assessed, yogurt to the CODEX regulation (CODEX STAN 243-2003), yogurt
+was the product which showed higher ability to modulate must include a minimum bacterial counts of 107 cfu per gram
+the fecal microbiota. Interestingly, while the consumption of from the symbiotic cultures of Streptococcus thermophilus and
+natural yogurt was directly associated with Akkermansia levels, Lactobacillus bulgaricus. This, accord
+
+
+## FULL HEAD (first 3000 chars - 兜底)
+fmicb-10-01046 May24,2019 Time:15:21 #1
+ORIGINALRESEARCH
+published:24May2019
+doi:10.3389/fmicb.2019.01046
+Fermented Dairy Foods: Impact on
+Intestinal Microbiota and
+Health-Linked Biomarkers
+S.González1,2,T.Fernández-Navarro1,2,S.Arboleya2,3,C.G.delosReyes-Gavilán2,3,
+N.Salazar2,3andM.Gueimonde2,3*
+1AreaofPhysiology,DepartmentofFunctionalBiology,FacultyofMedicine.UniversityofOviedo,Oviedo,Spain,2Group
+Diet,MicrobiotaandHealth,InstitutodeInvestigaciónSanitariadelPrincipadodeAsturias(ISPA),Oviedo,Spain,
+3DepartmentofMicrobiologyandBiochemistryofDairyProducts,InstitutodeProductosLácteosdeAsturias,Consejo
+SuperiordeInvestigacionesCientíficas(IPLA-CSIC),Villaviciosa,Spain
+The intake of fermented foods is gaining increasing interest due to their health-
+promoting benefits. Among them, fermented dairy foods have been associated with
+obesity prevention, and reduction of the risk of metabolic disorders and immune-
+related pathologies. Fermented foods could lead to these health benefits by providing
+the consumer with both easily metabolizable nutrients and beneficial microorganisms.
+Our aim was to evaluate the relationship between the consumption of fermented
+dairy products and the intestinal microbiota, serum lipid profile, and the pro-
+Editedby:
+JyotiPrakashTamang, oxidant/inflammatorystatus.130healthyadultswereevaluated.Dietaryfermentedfood
+SikkimUniversity,India intake was assessed by an annual food frequency questionnaire (FFQ), including 26
+Reviewedby: fermented dairy products. Levels of the major phylogenetic types of the intestinal
+PatriciaBurns,
+microbiota were determined by qPCR, and concentration of fecal short chain fatty
+CONICETInstitutodeLactología
+Industrial(INLAIN),Argentina acids were assessed by gas chromatography. Serum glucose and lipid profile, as well
+GracielaLilianaGarrote,
+as serum malondialdehyde (MDA), C-reactive protein (CRP), and leptin levels were
+CIDCA(CONICET-UNLP),Argentina
+determined by standardized protocols. Among fermented dairy foods, natural yogurt,
+*Correspondence:
+M.Gueimonde sweetened yogurt and matured/semi-matured cheese were the most consumed.
+mgueimonde@ipla.csic.es While natural yogurt consumers showed increased fecal levels of Akkermansia with
+respect to non-consumers, sweetened yogurt intake was associated to lower levels of
+Specialtysection:
+Thisarticlewassubmittedto Bacteroides.SerumlevelsofCRPwerealsosignificantlyreducedinyogurtconsumers.
+FoodMicrobiology, Ourresultsunderlinetheinterestinexploringthepotentialeffectsofthedifferentyogurt
+asectionofthejournal
+typesandtherolethemicrobiotamayplayinsucheffects.
+FrontiersinMicrobiology
+Received:25February2019 Keywords:fermentedfoods,yogurt,inflammation,microbiota,oxidativestress
+Accepted:25April2019
+Published:24May2019
+Citation: INTRODUCTION
+GonzálezS,Fernández-NavarroT,
+ArboleyaS,delosReyes-GavilánCG, Fermentedfoodshaveplayedanimportantroleinhumandietsincethedevelopmentofcivilization
+SalazarNandGueimondeM(2019) andrepresentaspecialfeatureofsomedietarypatterns,suc
+
+
+======================================================================
+# FILE: 10_3390_nu11081806.pdf
+======================================================================
+
+
+## ABSTRACT
+Abstract: Fermentedfoodsaredefinedasfoodsorbeveragesproducedthroughcontrolledmicrobial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction. Inrecentyears,fermented
+foodshaveundergoneasurgeinpopularity,mainlyduetotheirproposedhealthbenefits. Theaim
+ofthisreviewistodefineandcharacterisecommonfermentedfoods(kefir,kombucha,sauerkraut,
+tempeh,natto,miso,kimchi,sourdoughbread),theirmechanismsofaction(includingimpactonthe
+microbiota),andtheevidenceforeffectsongastrointestinalhealthanddiseaseinhumans. Putative
+mechanismsfortheimpactoffermentedfoodsonhealthincludethepotentialprobioticeffectoftheir
+constituentmicroorganisms,thefermentation-derivedproductionofbioactivepeptides,biogenic
+amines, andconversionofphenoliccompoundstobiologicallyactivecompounds, aswellasthe
+reduction of anti-nutrients. Fermented foods that have been tested in at least one randomised
+controlledtrial(RCT)fortheirgastrointestinaleffectswerekefir,sauerkraut,natto,andsourdough
+bread. Despiteextensiveinvitrostudies,therearenoRCTsinvestigatingtheimpactofkombucha,
+miso,kimchiortempehingastrointestinalhealth. Themostwidelyinvestigatedfermentedfoodis
+kefir,withevidencefromatleastoneRCTsuggestingbeneficialeffectsinbothlactosemalabsorption
+and Helicobacter pylori eradication. In summary, there is very limited clinical evidence for the
+effectivenessofmostfermentedfoodsingastrointestinalhealthanddisease. Giventheconvincing
+invitro findings, clinical high-quality trials investigating the health benefits of fermented foods
+arewarranted.
+Keywords: kefir;kombucha;sauerkraut;miso;natto;tempeh;soy;kimchi;sourdough;fermentedfood
+
+
+## INTRODUCTION (first 1500 chars)
+Introduction
+Fermented foods are defined as “foods or beverages produced through controlled microbial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction”[1]. Manyfoodshave
+historically undergone fermentation, including meat and fish, dairy, vegetables, soybeans, other
+legumes, cereals and fruits. There are several variables in the fermentation process including the
+microorganisms,thenutritionalingredientsandtheenvironmentalconditions,givingrisetothousands
+of different variations of fermented foods. Historically, food fermentation was performed as a
+methodofpreservation,asthegenerationofantimicrobialmetabolites(e.g.,organicacids,ethanoland
+bacteriocins)reducestheriskofcontaminationwithpathogenicmicroorganisms. Fermentationisalso
+usedtoenhancetheorganolepticproperties(e.g.,tasteandtexture),withsomefoods,suchasolives,
+beinginediblewithoutfermentationthatremovesbitterphenoliccompounds.
+Therearetwomainmethodsthroughwhichfoodsarefermented. Firstly,foodscanbefermented
+naturally,oftenreferredtoas“wildferments”or“spontaneousferments”,wherebythemicroorganisms
+Nutrients2019,11,1806;doi:10.3390/nu11081806 www.mdpi.com/journal/nutrients
+Nutrients2019,11,1806 2of26
+arepresentnaturallyintherawfoodorprocessingenvironment,forexamplesauerkraut,kimchi,and
+certainfermentedsoyproducts. Secondly,foodscanbefermentedviatheadditionofstartercultures,
+knownas“culture-dependentferments”,forexamplekefir,kombuchaandnatto[2]. Onemethodof
+performingaculture-dependentfermentis“backslopping”,inwhic
+
+
+## CONCLUSION / DISCUSSION (first 2000 chars)
+Conclusions
+Insummary,thereisonlyverylimitedevidenceontheeffectivenessofmostfermentedfoodsin
+gastrointestinalhealth,withthemajorityofstudiesbeingoflowquality. Kefiristhefermentedfood
+mostcommonlyinvestigatedintermsofitsimpactingastrointestinalhealth,withevidencesuggesting
+itmaybebeneficialforlactosemalabsorptionandH.pylorieradication. Nohumanstudieshavebeen
+conductedontheimpactofkombucha,tempehandkimchiingastrointestinalhealth. Itisworthnoting
+thedifficultyinundertakingandreplicatingfermentedfoodstudiesgiventhesignificantvariabilityof
+culturesandingredientspresentevenwithinfoodcategories,whichmaypartlyexplainheterogeneous
+findings. Toconclude,thereisinsufficientevidencetodeterminetheimpactoffermentedfoodsin
+gastrointestinalhealthanddisease.
+Nutrients2019,11,1806 18of26
+Author Contributions: All authors planned the structure and content of the manuscript and reviewed the
+literature. E.D.andS.R.C.wrotetheinitialmanuscript. M.R.andK.W.criticallyrevisedthemanuscript. All
+authorsreviewedandapprovedthefinalmanuscript.
+Funding: Publicationofthismanuscriptwasmadepossiblethroughanunrestrictededucationalgrantfrom
+Danone,Paris,FrancetotheEuropeanSocietyofNeurogastroenterologyandMotility(ESNM),Vienna,Austria.
+ConflictsofInterest: E.D.hasreceivedaneducationgrantfromAlpro,receivedspeakerfeesfromYakultand
+researchfundingfromNestecLtd,theAlmondBoardofCaliforniaandtheInternationalNutandDriedFruit
+Council. M.R.hasreceivedspeakerfeesfromRyvita,Biokult,SymproveandAlproandresearchfundingfromthe
+AlmondBoardofCaliforniaandtheInternationalNutandDriedFruitCouncil. K.W.hasservedasaconsultant
+forDanone,hasreceivedspeakerfeesfromAlproandYakultandresearchfundingfromClasadoBiosciences,
+NestecLtd,AlmondBoardofCaliforniaandtheInternationalNutandDriedFruitCouncil,andisthecoinventor
+ofamobileapptosupportpatientsfollowingthelowFODMAPdiet. SCreportsnoconflictsofinterest.
+
+
+## FULL HEAD (first 3000 chars - 兜底)
+nutrients
+Review
+Fermented Foods: Definitions and Characteristics,
+ff
+Impact on the Gut Microbiota and E ects on
+Gastrointestinal Health and Disease
+† †
+EiriniDimidi ,SelinaRoseCox ,MeganRossiandKevinWhelan*
+King’sCollegeLondon,DepartmentofNutritionalSciences,LondonSE19NH,UK
+* Correspondence: kevin.whelan@kcl.ac.uk
+† Thetwoauthorscontributedequally.
+(cid:1)(cid:2)(cid:3)(cid:1)(cid:4)(cid:5)(cid:6)(cid:7)(cid:8)(cid:1)
+(cid:1)(cid:2)(cid:3)(cid:4)(cid:5)(cid:6)(cid:7)
+Received: 9July2019;Accepted: 2August2019;Published: 5August2019
+Abstract: Fermentedfoodsaredefinedasfoodsorbeveragesproducedthroughcontrolledmicrobial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction. Inrecentyears,fermented
+foodshaveundergoneasurgeinpopularity,mainlyduetotheirproposedhealthbenefits. Theaim
+ofthisreviewistodefineandcharacterisecommonfermentedfoods(kefir,kombucha,sauerkraut,
+tempeh,natto,miso,kimchi,sourdoughbread),theirmechanismsofaction(includingimpactonthe
+microbiota),andtheevidenceforeffectsongastrointestinalhealthanddiseaseinhumans. Putative
+mechanismsfortheimpactoffermentedfoodsonhealthincludethepotentialprobioticeffectoftheir
+constituentmicroorganisms,thefermentation-derivedproductionofbioactivepeptides,biogenic
+amines, andconversionofphenoliccompoundstobiologicallyactivecompounds, aswellasthe
+reduction of anti-nutrients. Fermented foods that have been tested in at least one randomised
+controlledtrial(RCT)fortheirgastrointestinaleffectswerekefir,sauerkraut,natto,andsourdough
+bread. Despiteextensiveinvitrostudies,therearenoRCTsinvestigatingtheimpactofkombucha,
+miso,kimchiortempehingastrointestinalhealth. Themostwidelyinvestigatedfermentedfoodis
+kefir,withevidencefromatleastoneRCTsuggestingbeneficialeffectsinbothlactosemalabsorption
+and Helicobacter pylori eradication. In summary, there is very limited clinical evidence for the
+effectivenessofmostfermentedfoodsingastrointestinalhealthanddisease. Giventheconvincing
+invitro findings, clinical high-quality trials investigating the health benefits of fermented foods
+arewarranted.
+Keywords: kefir;kombucha;sauerkraut;miso;natto;tempeh;soy;kimchi;sourdough;fermentedfood
+1. Introduction
+Fermented foods are defined as “foods or beverages produced through controlled microbial
+growth,andtheconversionoffoodcomponentsthroughenzymaticaction”[1]. Manyfoodshave
+historically undergone fermentation, including meat and fish, dairy, vegetables, soybeans, other
+legumes, cereals and fruits. There are several variables in the fermentation process including the
+microorganisms,thenutritionalingredientsandtheenvironmentalconditions,givingrisetothousands
+of different variations of fermented foods. Historically, food fermentation was performed as a
+methodofpreservation,asthegenerationofantimicrobialmetabolites(e.g.,organicacids,ethanoland
+bacteriocins)reducestheriskofcontaminationwithpathogenicmicroorganisms. Fermentationisalso
+usedtoenhancetheorganolepticproperties(e.g.,tasteandtexture),withsomefoods,suchasolives,
+beinginedi

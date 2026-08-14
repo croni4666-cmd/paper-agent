@@ -11,12 +11,12 @@
 - Auto-downloaded (8-channel cascade): 9 (37.5%)
 - Manual needed: 15
 
-Manual download list: `C:\Users\DengN\.paper-agent\deep_rerank\manual_downloads_v397_reconstructed.md`
+Manual download list: `C:\Users\paper-agent-author\.paper-agent\deep_rerank\manual_downloads_v397_reconstructed.md`
 
 ## Stage 2: Full-text feature extraction (Layer 7)
 
 - Candidates with full text extracted: 16 / 16 (100.0%)
-- Output: `C:\Users\DengN\.paper-agent\deep_rerank\deep_rerank_20260714_120450.json`
+- Output: `C:\Users\paper-agent-author\.paper-agent\deep_rerank\deep_rerank_20260714_120450.json`
 
 ## 3-tier honest audit (per MEMORY.md discipline)
 

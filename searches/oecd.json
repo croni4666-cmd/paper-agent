@@ -1,0 +1,1578 @@
+{
+  "query": "OECD housing finance tenure comparison deposit",
+  "year_min": 2018,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 15,
+    "openalex": 15,
+    "arxiv": 15,
+    "semanticscholar": 15,
+    "aminer": 15,
+    "cnki": 1
+  },
+  "dedup_count": 74,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1515/9783110198065",
+      "title": "Stochastic Finance",
+      "authors": [
+        "Hans Föllmer"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "621725365aee126c0f41f242",
+      "matched_phrase": "finance",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/214922",
+      "title": "Housing, States and Localities",
+      "authors": [
+        "Peter Dickens"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d81d53dabfae2eeea38a49",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4337/9781788977869.00007",
+      "title": "Finance, Institutions and Economic Development",
+      "authors": [
+        "Raghbendra Jha"
+      ],
+      "venue": "Macroeconomics for Development",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "648d0d45d68f896efa9de0e9",
+      "matched_phrase": "finance",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2026.2638389",
+      "title": "Blockchains in Housing Markets: a Simulation Analysis of the Impact on House Price Dynamics",
+      "authors": [
+        "Anetta Proskurovska"
+      ],
+      "venue": "HOUSING STUDIES",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08cd09be8eb7c4b5c0cd3",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/14036096.2026.2657849",
+      "title": "From Growth Regimes to Housing Production Failures: Risk Pathway Analysis of the 'unfinished Housing' Crisis in China",
+      "authors": [
+        "Yiming Han"
+      ],
+      "venue": "HOUSING THEORY & SOCIETY",
+      "year": 2026,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08d049be8eb7c4b5e9c79",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003669708",
+      "title": "The Eclipse of Council Housing",
+      "authors": [
+        "Ian Cole"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b59bdabfae2eee05b597",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1353/book.124236",
+      "title": "The Decoration of Houses",
+      "authors": [
+        "Ogden Codman"
+      ],
+      "venue": "",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "56d8b392dabfae2eeef5d1dc",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003586524-3",
+      "title": "Population and Housing Census",
+      "authors": [
+        "Seema Jain"
+      ],
+      "venue": "Population Census in India",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "67499a2dae8580e7ff7d45e9",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.eneco.2023.106560",
+      "title": "Do Green Finance and Innovation Matter for Environmental Protection? A Case of OECD Economies",
+      "authors": [
+        "Muhammad Umar"
+      ],
+      "venue": "Energy Economics",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "643e923d0746dc40e38e8e19",
+      "matched_phrase": "OECD",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1525/9780520908796",
+      "title": "Housing As if People Mattered",
+      "authors": [
+        "CLARE COOPER MARCUS"
+      ],
+      "venue": "",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a6577fd68f896efa059cb2",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5744/florida/9781683403555.003.0008",
+      "title": "Houses and Households",
+      "authors": [
+        "Kathleen Deagan"
+      ],
+      "venue": "BAS SALINE A Taino Town before and after Columbus",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "654de4cb939a5f4082e069a7",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/jofi.13249",
+      "title": "Is There a Replication Crisis in Finance?",
+      "authors": [
+        "Theis Ingerslev Jensen"
+      ],
+      "venue": "JOURNAL OF FINANCE",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c9ac045244ab9dcb2169ae",
+      "matched_phrase": "finance",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.frl.2022.103426",
+      "title": "Digital Finance and Corporate ESG",
+      "authors": [
+        "Weiwei Mu"
+      ],
+      "venue": "FINANCE RESEARCH LETTERS",
+      "year": 2023,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "63884aa990e50fcafda8d4b3",
+      "matched_phrase": "finance",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10901-018-9598-1",
+      "title": "An exploration of concepts and polices on ‘affordable housing’ in England, Italy, Poland and The Netherlands",
+      "authors": [
+        "Darinka Czischke",
+        "Gerard van Bortel"
+      ],
+      "venue": "Journal of Housing and the Built Environment",
+      "year": 2018,
+      "cited_by_count": 112,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10901-018-9598-1.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/24694452.2020.1715195",
+      "title": "Assetization: The Chinese Path to Housing Financialization",
+      "authors": [
+        "Fulong Wu",
+        "Jie Chen",
+        "Fenghua Pan",
+        "Nick Gallent",
+        "Fangzhu Zhang"
+      ],
+      "venue": "Annals of the American Association of Geographers",
+      "year": 2020,
+      "cited_by_count": 102,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://discovery.ucl.ac.uk/10087540/1/AAG%20final.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02723638.2019.1681722",
+      "title": "Divided access and the spatial polarization of housing wealth",
+      "authors": [
+        "Rowan Arundel",
+        "Cody Hochstenbach"
+      ],
+      "venue": "Urban Geography",
+      "year": 2019,
+      "cited_by_count": 97,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/02723638.2019.1681722?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18408/ahuri-5314301",
+      "title": "Social housing as infrastructure: an investment pathway",
+      "authors": [
+        "Julie Lawson",
+        "Hal Pawson",
+        "Laurence Troy",
+        "Ryan van den Nouwelant",
+        "Carrie Hamilton"
+      ],
+      "venue": "AHURI Final Report",
+      "year": 2018,
+      "cited_by_count": 64,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://unsworks.unsw.edu.au/bitstreams/9fda33a6-5dfd-48ce-8e89-8cd5f19dc46d/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/tran.12346",
+      "title": "Spatial housing market polarisation: National and urban dynamics of diverging house values",
+      "authors": [
+        "Cody Hochstenbach",
+        "Rowan Arundel"
+      ],
+      "venue": "Transactions of the Institute of British Geographers",
+      "year": 2019,
+      "cited_by_count": 61,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/tran.12346",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2021.1879998",
+      "title": "Generation Rent and housing precarity in <i>‘post crisis’</i> Ireland",
+      "authors": [
+        "Richard Waldron"
+      ],
+      "venue": "Housing Studies",
+      "year": 2021,
+      "cited_by_count": 60,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://pure.qub.ac.uk/files/227948250/Waldron_2021_Generation_Rent_and_Housing_Precarity_in_Ireland.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/ser/mwab003",
+      "title": "How housing affects the association between low income and living conditions-deprivation across Europe",
+      "authors": [
+        "Caroline Dewilde"
+      ],
+      "venue": "Socio-Economic Review",
+      "year": 2021,
+      "cited_by_count": 54,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://academic.oup.com/ser/advance-article-pdf/doi/10.1093/ser/mwab003/36417805/mwab003.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2019.1667960",
+      "title": "Housing market dualization: linking insider–outsider divides in employment and housing outcomes",
+      "authors": [
+        "Rowan Arundel",
+        "Christian Lennartz"
+      ],
+      "venue": "Housing Studies",
+      "year": 2019,
+      "cited_by_count": 42,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/02673037.2019.1667960?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18408/ahuri3227801",
+      "title": "Australia’s COVID-19 pandemic housing policy responses",
+      "authors": [
+        "Leishman, C",
+        "Aminpour, F",
+        "Baker, E",
+        "Beer, A",
+        "Crowe, A",
+        "Goodall, Z",
+        "Horton, EM",
+        "Jacobs, KA",
+        "Lester, L",
+        "Torchia, S",
+        "Maclennan, D",
+        "Martin, C",
+        "Nash, MB",
+        "Pawson, H",
+        "Rowley, S",
+        "Stone, W",
+        "ViforJ, RO"
+      ],
+      "venue": "AHURI Final Report",
+      "year": 2022,
+      "cited_by_count": 37,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.ahuri.edu.au/sites/default/files/documents/2022-04/AHURI-Final-Report-376-Australias-COVID-19-pandemic-housing-policy-responses.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.47992/ijcsbe.2581.6942.0277",
+      "arxiv_id": "",
+      "title": "A Comparison of the Mahila Samman Savings Certificate with Other Small Savings Schemes for the Empowerment of Women in India",
+      "authors": [
+        "N. V. A.",
+        "P. S. Aithal",
+        "Niyaz Panakaje"
+      ],
+      "venue": "International journal of case studies in business, IT, and education",
+      "year": 2023,
+      "cited_by_count": 33,
+      "influential_cite_count": 0,
+      "reference_count": 17,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://supublication.com/index.php/ijcsbe/article/download/57/48/101",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18408/ahuri-4114101",
+      "title": "A conceptual analysis of social housing as infrastructure",
+      "authors": [
+        "Kathleen Flanagan",
+        "Chris Martin",
+        "Keith Jacobs",
+        "Julie Lawson"
+      ],
+      "venue": "AHURI Final Report",
+      "year": 2019,
+      "cited_by_count": 32,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://unsworks.unsw.edu.au/bitstreams/5a4b48c1-49fa-4dae-a358-2568b89e65da/download",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/10511482.2026.2624022",
+      "title": "Public Housing in Postwar Colombo's Urban Regeneration: Pathology of Housing Discourse",
+      "authors": [
+        "Janak Ranaweera"
+      ],
+      "venue": "HOUSING POLICY DEBATE",
+      "year": 2026,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "69f08c6b9be8eb7c4b585ccf",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-981-15-0780-9",
+      "title": "Housing Policy in Australia",
+      "authors": [
+        "Hal Pawson"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 30,
+      "cited_bucket": "11-50",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61c82f845244ab9dcb77e106",
+      "matched_phrase": "housing",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jhe.2018.05.002",
+      "title": "Credit conditions and the housing price ratio: Evidence from Ireland’s boom and bust",
+      "authors": [
+        "Ronan C. Lyons"
+      ],
+      "venue": "Journal of Housing Economics",
+      "year": 2018,
+      "cited_by_count": 26,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.sciencedirect.com/science/article/pii/S1051137717300372",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19491247.2018.1501256",
+      "arxiv_id": "",
+      "title": "Access to housing in the neoliberal era: a new comparativist analysis of the neoliberalisation of access to housing in Santiago and London",
+      "authors": [
+        "J. Beswick",
+        "Walter Imilan",
+        "P. Olivera"
+      ],
+      "venue": "International Journal of Housing Policy",
+      "year": 2019,
+      "cited_by_count": 24,
+      "influential_cite_count": 2,
+      "reference_count": 62,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10901-018-09643-x",
+      "title": "Private finance integration to affordable housing production: a comparison between Copenhagen and Istanbul",
+      "authors": [
+        "Süheyla Türk"
+      ],
+      "venue": "Journal of Housing and the Built Environment",
+      "year": 2019,
+      "cited_by_count": 14,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s10901-018-09643-x.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "reference_count": 84,
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/1468-2427.12999",
+      "arxiv_id": "",
+      "title": "THE IMPACT OF MEXICO\n ’S\n LAND REFORM ON PERIURBAN HOUSING PRODUCTION\n : Neoliberal or Neocorporatist?",
+      "authors": [
+        "A. Varley",
+        "C. Salazar"
+      ],
+      "venue": "",
+      "year": 2021,
+      "cited_by_count": 14,
+      "influential_cite_count": 0,
+      "reference_count": 110,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.1111/1468-2427.12999",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3390/ijfs6020050",
+      "title": "Housing, Housing Finance and Credit Risk",
+      "authors": [
+        "Alessandra Canepa",
+        "Fawaz Khaled"
+      ],
+      "venue": "International Journal of Financial Studies",
+      "year": 2018,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.mdpi.com/2227-7072/6/2/50/pdf?version=1525929079",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1787/7a22f9a6-en",
+      "title": "Bricks, Taxes and Spending",
+      "authors": [
+        "",
+        ""
+      ],
+      "venue": "OECD Fiscal Federalism Studies",
+      "year": null,
+      "cited_by_count": 9,
+      "reference_count": 0,
+      "type": "book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1016/J.JHE.2018.05.003",
+      "arxiv_id": "",
+      "title": "The efficiency of savings-linked relationship lending for housing finance",
+      "authors": [
+        "S. Kirsch",
+        "Hans-Peter Burghof"
+      ],
+      "venue": "Journal of Housing Economics",
+      "year": 2018,
+      "cited_by_count": 9,
+      "influential_cite_count": 1,
+      "reference_count": 40,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.habitatint.2025.103411",
+      "title": "Housing finance and inequality: Mortgage debt in urban China",
+      "authors": [
+        "Jinqiao Long",
+        "Liyuan Zhuang"
+      ],
+      "venue": "Habitat International",
+      "year": 2025,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.1016/j.habitatint.2025.103411",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02673037.2020.1819966",
+      "title": "Housing wealth and aged care: asset-based welfare in practice in three OECD countries",
+      "authors": [
+        "Gavin Wood",
+        "Rachel Ong",
+        "Marietta Haffner"
+      ],
+      "venue": "Housing Studies",
+      "year": 2020,
+      "cited_by_count": 8,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/02673037.2020.1819966?needAccess=true",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/02665433.2019.1662833",
+      "arxiv_id": "",
+      "title": "Dublin's twentieth-century social housing policies: tenure, ‘reserved areas’ and housing type",
+      "authors": [
+        "J. Brady",
+        "R. McManus"
+      ],
+      "venue": "Planning Perspectives",
+      "year": 2020,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 11,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/26892618.2020.1743514",
+      "arxiv_id": "",
+      "title": "Cross-Cultural Comparison of the Impact of Housing Modification/Adaptation for Supporting Older People at Home: An Introduction",
+      "authors": [
+        "S. Peace",
+        "R. Darton"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 3,
+      "influential_cite_count": 0,
+      "reference_count": 36,
+      "tldr": "The introduction and discussion address the priorities raised, including: housing design and environmental barriers, financing adaptations, user satisfaction with adaptations, concern over housing assets, developing robust assessment tools, and the future of inclusive design.",
+      "is_oa": true,
+      "oa_url": "https://kar.kent.ac.uk/80775/3/JAE%20Special%20Issue_SP%26RD%20Introduction_20022020%20version_Submitted.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The introduction and discussion address the priorities raised, including: housing design and environmental barriers, financing adaptations, user satisfaction with adaptations, concern over housing assets, developing robust assessment tools, and the future of inclusive design.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s11146-026-10051-0",
+      "title": "Housing tenure, wages, and market outcomes",
+      "authors": [
+        "Lisi, Gaetano"
+      ],
+      "venue": "The Journal of Real Estate Finance and Economics",
+      "year": null,
+      "cited_by_count": 2,
+      "reference_count": 49,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.38100/jhuf.2018.3.1.5",
+      "title": "An Empirical Analysis on the Effect of Financial Crisis on Housing\n                        Tenure Choice",
+      "authors": [
+        "Kim, Da Hee",
+        "Baek, Gi Hong",
+        "Hong, Sung Hyo"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2018,
+      "cited_by_count": 2,
+      "reference_count": 20,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.21272/mmi.2021.2-18",
+      "arxiv_id": "",
+      "title": "Marketing, management and financial providing of affordable housing",
+      "authors": [
+        "S. Ianchuk",
+        "Olga Garafonova",
+        "Y. Panimash",
+        "D. Pawliszczy"
+      ],
+      "venue": "Marketing and Management of Innovations",
+      "year": 2021,
+      "cited_by_count": 2,
+      "influential_cite_count": 0,
+      "reference_count": 3,
+      "tldr": "The research aims to investigate marketing and management fundamentals of providing affordable housing in connection with funding aspects based on cross-country analysis and confirms the significant drivers of policies and practices devoted to affordable and social housing, such as marketing, management, and financial providing.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.21272/mmi.2021.2-18",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The research aims to investigate marketing and management fundamentals of providing affordable housing in connection with funding aspects based on cross-country analysis and confirms the significant drivers of policies and practices devoted to affordable and social housing, such as marketing, management, and financial providing.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.52344/hfr.2024.8.1.55",
+      "title": "Migration Distance and Housing Tenure Choice: Information\n                        Uncertainty on Local Housing Markets and Migration across\n                        Regions",
+      "authors": [
+        "Hong, Sung Hyo"
+      ],
+      "venue": "Housing Finance Research",
+      "year": 2024,
+      "cited_by_count": 1,
+      "reference_count": 22,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.24957/hsr.2025.33.2.133",
+      "arxiv_id": "",
+      "title": "Do the Right to Lease Renewal and the Rent Cap Curb Apartment Rent Increases?: Dissecting Rent Dynamics in a Regulated Housing Market",
+      "authors": [
+        "Yeon Hur",
+        "Hanming Gu",
+        "Kabsung Kim"
+      ],
+      "venue": "Korean Association for Housing Policy Studies",
+      "year": 2025,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/19452829.2024.2332376",
+      "arxiv_id": "",
+      "title": "Measuring Housing Inequality with the Value of Freedom in the Capability Approach: Proposal and Demonstration",
+      "authors": [
+        "Boram Kimhur"
+      ],
+      "venue": "Journal of Human Development and Capabilities",
+      "year": 2024,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 52,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/19452829.2024.2332376?needAccess=true",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.54660/.ijmrge.2022.3.1.967-972",
+      "arxiv_id": "",
+      "title": "Real Estate Portfolio Valuation Techniques to Unlock Funding for Affordable Housing in Africa",
+      "authors": [
+        "Mark Tettey Ayumu",
+        "T. Ohakawa"
+      ],
+      "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "year": 2022,
+      "cited_by_count": 1,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.7810/9781988545332_7",
+      "title": "Alternative Housing Tenure and Finance Options",
+      "authors": [
+        "Kake, Jade"
+      ],
+      "venue": "Rebuilding the Kāinga: Lessons from Te Ao Hurihuri",
+      "year": 2019,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1787/a56e4015-en",
+      "title": "Employment by job tenure intervals: tenure composition",
+      "authors": [],
+      "venue": "OECD Employment and Labour Market Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.4324/9781003138006-3",
+      "title": "Housing Tenure and Inequality",
+      "authors": [
+        "Winter, Ian C."
+      ],
+      "venue": "The Radical Homeowner",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003138006-5",
+      "title": "The Meanings of Housing Tenure",
+      "authors": [
+        "Winter, Ian C."
+      ],
+      "venue": "The Radical Homeowner",
+      "year": 2021,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003683469-3",
+      "title": "Tenure and Housing Costs",
+      "authors": [
+        "Kemeny, J."
+      ],
+      "venue": "The Myth of Home Ownership",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003683469-12",
+      "title": "Towards Tenure-Neutral Housing Policy",
+      "authors": [
+        "Kemeny, J."
+      ],
+      "venue": "The Myth of Home Ownership",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003683469-4",
+      "title": "Tenure Policies and Housing Costs",
+      "authors": [
+        "Kemeny, J."
+      ],
+      "venue": "The Myth of Home Ownership",
+      "year": 2025,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.38100/jhuf.2026.11.2.37",
+      "title": "The impact of deposit insurance on rental deposit ratios: Evidence\n                        from default events",
+      "authors": [
+        "Lee, Songhee"
+      ],
+      "venue": "Journal of Housing and Urban Finance",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 37,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1787/05da75f5-en",
+      "title": "Labour Market Statistics: Employment by job tenure intervals: average tenure (Edition 2021)",
+      "authors": [],
+      "venue": "OECD Employment and Labour Market Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1787/ee7bf583-en",
+      "title": "Labour Market Statistics: Employment by job tenure intervals: tenure composition (Edition 2017)",
+      "authors": [],
+      "venue": "OECD Employment and Labour Market Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1787/5873e454-en",
+      "title": "Labour Market Statistics: Employment by job tenure intervals: tenure composition (Edition 2020)",
+      "authors": [],
+      "venue": "OECD Employment and Labour Market Statistics",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.1145/3490354.3494366",
+      "arxiv_id": "2111.09395v1",
+      "title": "FinRL: Deep Reinforcement Learning Framework to Automate Trading in Quantitative Finance",
+      "authors": [
+        "Xiao-Yang Liu",
+        "Hongyang Yang",
+        "Jiechao Gao",
+        "Christina Dan Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.09395v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0406129v1",
+      "arxiv_id": "0406129v1",
+      "title": "Quantum Game Theory in Finance",
+      "authors": [
+        "Edward W. Piotrowski",
+        "J. Sladkowski"
+      ],
+      "venue": "arXiv",
+      "year": 2004,
+      "pdf_url": "https://arxiv.org/pdf/quant-ph/0406129v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3490354.3494413",
+      "arxiv_id": "2111.05188v1",
+      "title": "FinRL-Podracer: High Performance and Scalable Deep Reinforcement Learning for Quantitative Finance",
+      "authors": [
+        "Zechu Li",
+        "Xiao-Yang Liu",
+        "Jiahao Zheng",
+        "Zhaoran Wang",
+        "Anwar Walid",
+        "Jian Guo"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2111.05188v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/mafi.12370",
+      "arxiv_id": "2211.15531v1",
+      "title": "A model-free approach to continuous-time finance",
+      "authors": [
+        "Henry Chiu",
+        "Rama Cont"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2211.15531v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2311.10723v2",
+      "arxiv_id": "2311.10723v2",
+      "title": "Large Language Models in Finance: A Survey",
+      "authors": [
+        "Yinheng Li",
+        "Shaofei Wang",
+        "Han Ding",
+        "Hang Chen"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.10723v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.finr.2026.100123",
+      "arxiv_id": "2604.21569v1",
+      "title": "Research Streams in Biodiversity Finance: A Bibliometric Analysis and Research Agenda",
+      "authors": [
+        "Lennart Ante",
+        "Friedrich-Philipp Wazinski",
+        "Aman Saggu"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2604.21569v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2102.10096v2",
+      "arxiv_id": "2102.10096v2",
+      "title": "How Decentralized is the Governance of Blockchain-based Finance: Empirical Evidence from four Governance Token Distributions",
+      "authors": [
+        "Johannes Rude Jensen",
+        "Victor von Wachter",
+        "Omri Ross"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2102.10096v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1707.06635v1",
+      "arxiv_id": "1707.06635v1",
+      "title": "Impact of the Global Crisis on SME Internal vs. External Financing in China",
+      "authors": [
+        "ShiXue He",
+        "Marcel Ausloos"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1707.06635v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0909.1974v2",
+      "arxiv_id": "0909.1974v2",
+      "title": "Econophysics: Empirical facts and agent-based models",
+      "authors": [
+        "Anirban Chakraborti",
+        "Ioane Muni Toke",
+        "Marco Patriarca",
+        "Frederic Abergel"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0909.1974v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s00355-024-01556-9",
+      "arxiv_id": "2410.16745v1",
+      "title": "Characterizing the top trading cycles rule for housing markets with lexicographic preferences",
+      "authors": [
+        "Bettina Klaus"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2410.16745v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2206.08401v4",
+      "arxiv_id": "2206.08401v4",
+      "title": "Is decentralized finance actually decentralized? A social network analysis of the Aave protocol on the Ethereum blockchain",
+      "authors": [
+        "Ziqiao Ao",
+        "Lin William Cong",
+        "Gergely Horvath",
+        "Luyao Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2206.08401v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1404.0989v6",
+      "arxiv_id": "1404.0989v6",
+      "title": "Polynomial Diffusions and Applications in Finance",
+      "authors": [
+        "Damir Filipovic",
+        "Martin Larsson"
+      ],
+      "venue": "arXiv",
+      "year": 2014,
+      "pdf_url": "https://arxiv.org/pdf/1404.0989v6",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2411.03314v1",
+      "arxiv_id": "2411.03314v1",
+      "title": "MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning",
+      "authors": [
+        "Ziliang Gan",
+        "Yu Lu",
+        "Dong Zhang",
+        "Haohan Li",
+        "Che Liu",
+        "Jian Liu",
+        "Ji Liu",
+        "Haipang Wu",
+        "Chaoyou Fu",
+        "Zenglin Xu",
+        "Rongjunchen Zhang",
+        "Yong Dai"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.03314v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2411.10575v2",
+      "arxiv_id": "2411.10575v2",
+      "title": "Tenure and Research Trajectories",
+      "authors": [
+        "Giorgio Tripodi",
+        "Xiang Zheng",
+        "Yifan Qian",
+        "Dakota Murray",
+        "Benjamin F. Jones",
+        "Chaoqun Ni",
+        "Dashun Wang"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2411.10575v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.13140/RG.2.2.29789.77287",
+      "arxiv_id": "1710.03211v2",
+      "title": "Behavioral Finance -- Asset Prices Predictability, Equity Premium Puzzle, Volatility Puzzle: The Rational Finance Approach",
+      "authors": [
+        "Svetlozar Rachev",
+        "Stoyan Stoyanov",
+        "Stefan Mittnik",
+        "Frank J. Fabozzi",
+        "Abootaleb Shirvani"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1710.03211v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.70864/joae.2025.v13.i6.pp221-230",
+      "arxiv_id": "",
+      "title": "COMPARISON OF HOME LOANS SCHEME OF DIFFERENT BANKS",
+      "authors": [
+        "R.Anusha",
+        "CH.Dharmender",
+        "M.Pavani"
+      ],
+      "venue": "Scientific Digest : Journal of Applied Engineering",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://joae.org/index.php/JOAE/article/download/253/222/487",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Mapping the literature on housing taxation in the UK and other OECD countries",
+      "authors": [
+        "A. Soaita"
+      ],
+      "venue": "",
+      "year": 2018,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 100,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.61978/legalis.v3i3.1125",
+      "arxiv_id": "",
+      "title": "Procedural Justice in Housing: The Impact of Legal Safeguards on Eviction Outcomes for Low-Income Renters",
+      "authors": [
+        "Hermansyah"
+      ],
+      "venue": "Journal of law review",
+      "year": 2025,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 25,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://journal.idscipub.com/legalis/article/download/1125/798",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/s10901-025-10229-7",
+      "arxiv_id": "",
+      "title": "Informal settlement upgrading—lessons learned, case study of Namuwongo, Kampala (Uganda) and Heliópolis, São Paulo (Brazil)",
+      "authors": [
+        "Kabaka Mutensa",
+        "Mohammed Abubakari",
+        "Dianah Rose Abeho"
+      ],
+      "venue": "Journal of Housing and the Built Environment",
+      "year": 2026,
+      "cited_by_count": 0,
+      "influential_cite_count": 0,
+      "reference_count": 63,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

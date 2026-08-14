@@ -173,7 +173,7 @@ def try_playwright_deep(doi, name):
     except ImportError:
         print("  ✗ playwright not installed")
         return {"ok": False, "path": None, "details": ["no playwright"]}
-    CHROMIUM_EXE = r"C:\Users\DengN\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
+    CHROMIUM_EXE = r"C:\Users\paper-agent-author\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe"
     if not Path(CHROMIUM_EXE).exists():
         return {"ok": False, "path": None, "details": ["no binary"]}
     out = {"ok": False, "path": None, "details": []}

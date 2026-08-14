@@ -45,7 +45,7 @@ print("STEP 2: Unpaywall — try various emails")
 print("=" * 70)
 from urllib.parse import quote
 
-for email in ["paper-agent@mavis.local", "test@example.com", "dengn@example.com"]:
+for email in ["paper-agent@mavis.local", "test@example.com", "paper-agent@example.com"]:
     url = f"https://api.unpaywall.org/v2/10.1038/nature12373?email={quote(email, safe='@')}"
     s, body = _http_get_bytes(url, timeout=15)
     head = body[:300].decode("utf-8", errors="replace")
