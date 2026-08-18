@@ -1249,3 +1249,234 @@ def pull_collection_to_project(
         "meta_path": str(project_files(project_slug, root)["meta"]),
         "judges_path": str(project_files(project_slug, root)["judges"]),
     }
+
+
+# ─────────────────────────────────────────────────────────────────
+# Diff / sync (v3.9.19 [P3-28.3]) -- incremental Zotero -> local updates
+# ─────────────────────────────────────────────────────────────────
+def _parse_refs_bib_dois(refs_bib_path: Path) -> Dict[str, str]:
+    """Parse a local refs.bib and return {normalized_doi: bibtex_key}.
+
+    Uses `parse_bibtex_for_doi()` (the same parser used by `push_items`).
+    Returns empty dict if the file doesn't exist or has no DOIs.
+
+    Bibtex entries without DOI are ignored for diff purposes (Zotero
+    items are matched by DOI; without DOI, we can't reliably
+    deduplicate across systems).
+    """
+    if not refs_bib_path.exists():
+        return {}
+    out: Dict[str, str] = {}
+    for entry in parse_bibtex_for_doi(refs_bib_path):
+        doi = normalize_doi(entry.get("doi", ""))
+        if doi:
+            out[doi] = entry.get("key", "")
+    return out
+
+
+def diff_collection_to_local(
+    client: "Zotero",
+    collection_key: str,
+    local_refs_bib_path: Path,
+) -> Dict[str, Any]:
+    """Compare a Zotero collection against a local refs.bib file.
+
+    Items are matched by normalized DOI. Returns:
+    - `new_dois`: DOIs in Zotero but NOT in local refs.bib (Zotero
+      has new items that the local copy doesn't)
+    - `removed_dois`: DOIs in local refs.bib but NOT in Zotero
+      (Zotero has removed items that are still in local; we DON'T
+      auto-delete locally)
+    - `new_items`: full Zotero data for the new DOIs (for use by
+      `sync_collection_to_local` to append to refs.bib)
+    - `zotero_n_items`: total top-level bibliographic items in Zotero
+    - `local_n_dois`: total DOIs found in local refs.bib
+    - `unchanged_n`: count of DOIs in both (matched)
+
+    **No "updated" detection** in v3.9.19: we don't track per-item
+    versions locally, so we can't reliably tell if a Zotero item was
+    edited after pull. The pull command in v3.9.18.0 set
+    `zotero_collection_version` (collection-level, not per-item).
+    Use `pa zotero project pull --overwrite` to fully refresh if
+    item-level updates are needed.
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_key: the collection's Zotero key
+        local_refs_bib_path: path to local refs.bib
+
+    Returns:
+        Dict with {new_dois, removed_dois, new_items, zotero_n_items,
+        local_n_dois, unchanged_n}.
+    """
+    # Local DOIs
+    local_dois = _parse_refs_bib_dois(Path(local_refs_bib_path))
+
+    # Zotero items (top-level only, not attachments/notes)
+    zotero_items = get_collection_items(client, collection_key)
+
+    zotero_doi_to_item: Dict[str, Dict[str, Any]] = {}
+    for item in zotero_items:
+        doi = normalize_doi(item.get("DOI", ""))
+        if doi:
+            zotero_doi_to_item[doi] = item
+
+    new_dois = sorted(d for d in zotero_doi_to_item if d not in local_dois)
+    removed_dois = sorted(d for d in local_dois if d not in zotero_doi_to_item)
+    unchanged_n = len(set(local_dois) & set(zotero_doi_to_item))
+    new_items = [zotero_doi_to_item[d] for d in new_dois]
+
+    return {
+        "new_dois": new_dois,
+        "removed_dois": removed_dois,
+        "new_items": new_items,
+        "zotero_n_items": len(zotero_items),
+        "local_n_dois": len(local_dois),
+        "unchanged_n": unchanged_n,
+    }
+
+
+def sync_collection_to_local(
+    client: "Zotero",
+    collection_name: str,
+    project_slug: Optional[str] = None,
+    project_root: Optional[Path] = None,
+    dry_run: bool = True,
+) -> Dict[str, Any]:
+    """Incrementally sync a Zotero collection into a local pa project.
+
+    Compares Zotero collection against the local refs.bib, optionally
+    appending new items to refs.bib. Default is `dry_run=True` (just
+    reports the diff without changing anything).
+
+    **Behavior**:
+    - **NEW** items in Zotero (DOI not in local): appended to refs.bib
+      in Bibtex format
+    - **REMOVED** items in Zotero (DOI in local but not in Zotero):
+      NOT deleted from local refs.bib (safety); recorded in
+      `meta.json` under `removed_from_zotero: [dois]` for the user
+      to decide
+    - **UNCHANGED** items: no action
+    - **`meta.json`** updated with:
+      - `zotero_collection_version` (refresh)
+      - `zotero_last_sync_at` (ISO timestamp)
+      - `n_items` (refresh)
+      - `removed_from_zotero` (list of DOIs no longer in Zotero)
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_name: Zotero collection name
+        project_slug: local project slug (default: derived from name)
+        project_root: project root (default: ~/.paper-agent/projects/)
+        dry_run: if True (default), only report diff without writing
+                 any file. Pass `dry_run=False` to actually apply.
+
+    Returns:
+        Dict with {status, project_slug, dry_run, n_new, n_removed,
+        n_unchanged, new_dois, removed_dois, refs_path, meta_path,
+        n_items, applied: bool}.
+    """
+    from .project import (
+        DEFAULT_ROOT as PA_DEFAULT_ROOT,
+        project_dir,
+        project_files,
+        load_meta,
+        save_meta,
+    )
+
+    coll = find_collection_by_name(client, collection_name)
+    if coll is None:
+        return {"status": "error",
+                "error": f"collection not found: {collection_name!r}",
+                "collection_name": collection_name}
+
+    if not project_slug:
+        project_slug = re.sub(r"[^A-Za-z0-9._-]+", "-", collection_name.strip()).strip("-").lower() or "zotero-project"
+    root = Path(project_root) if project_root else PA_DEFAULT_ROOT
+    pdir = project_dir(project_slug, root)
+    if not pdir.exists():
+        return {"status": "error",
+                "error": f"local project not found: {pdir} (run `pa zotero project pull --name {collection_name!r}` first)",
+                "project_slug": project_slug, "project_path": str(pdir)}
+    refs_path = project_files(project_slug, root)["refs"]
+    meta_path = project_files(project_slug, root)["meta"]
+
+    diff = diff_collection_to_local(client, coll["key"], refs_path)
+
+    result = {
+        "status": "ok",
+        "project_slug": project_slug,
+        "project_path": str(pdir),
+        "dry_run": dry_run,
+        "zotero_collection_name": coll["name"],
+        "zotero_key": coll["key"],
+        "zotero_n_items": diff["zotero_n_items"],
+        "local_n_dois": diff["local_n_dois"],
+        "n_new": len(diff["new_dois"]),
+        "n_removed": len(diff["removed_dois"]),
+        "n_unchanged": diff["unchanged_n"],
+        "new_dois": diff["new_dois"],
+        "removed_dois": diff["removed_dois"],
+        "refs_path": str(refs_path),
+        "meta_path": str(meta_path),
+        "applied": False,
+    }
+
+    if dry_run:
+        result["status"] = "ok_dry_run"
+        return result
+
+    # Apply: append new items to refs.bib
+    if diff["new_items"]:
+        new_bibtex_entries: List[str] = []
+        seen_keys: Set[str] = set()
+        for item in diff["new_items"]:
+            try:
+                bib_str = zotero_item_to_bibtex(item)
+            except Exception:
+                continue
+            if bib_str is None:
+                continue
+            # Extract cite-key for dedup
+            try:
+                first_line = bib_str.split("\n", 1)[0]
+                cite_key = first_line.split("{", 1)[1].rstrip(",")
+            except (IndexError, ValueError):
+                cite_key = ""
+            if cite_key and cite_key in seen_keys:
+                i = 2
+                while f"{cite_key}_{i}" in seen_keys:
+                    i += 1
+                first_line, rest = bib_str.split("\n", 1)
+                first_line = first_line.replace("{" + cite_key + ",", "{" + cite_key + f"_{i},")
+                bib_str = first_line + "\n" + rest
+                cite_key = f"{cite_key}_{i}"
+            if cite_key:
+                seen_keys.add(cite_key)
+            new_bibtex_entries.append(bib_str)
+
+        # Append to refs.bib (preserve existing content)
+        existing = refs_path.read_text(encoding="utf-8") if refs_path.exists() else ""
+        # Ensure there's a blank line separator
+        if existing and not existing.endswith("\n\n"):
+            existing = existing.rstrip("\n") + "\n\n"
+        appended = "\n\n".join(new_bibtex_entries) + "\n"
+        refs_path.write_text(existing + appended, encoding="utf-8")
+
+    # Update meta.json
+    meta = load_meta(project_slug, root)
+    if not meta:
+        meta = {"slug": project_slug, "title": collection_name}
+    meta["zotero_collection_version"] = coll.get("version", 0)
+    meta["zotero_last_sync_at"] = datetime.now().isoformat(timespec="seconds")
+    meta["n_items"] = diff["local_n_dois"] + len(diff["new_dois"])
+    if diff["removed_dois"]:
+        existing_removed = meta.get("removed_from_zotero", [])
+        meta["removed_from_zotero"] = sorted(set(existing_removed) | set(diff["removed_dois"]))
+    meta["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    save_meta(project_slug, meta, root)
+
+    result["applied"] = True
+    result["n_items"] = meta["n_items"]
+    return result
+

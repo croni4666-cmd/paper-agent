@@ -82,6 +82,8 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
 | `pa zotero project pull` | Zotero collection → local pa project | Round-trip: download for offline analysis |
+| `pa zotero project diff` | Show new/removed vs local refs.bib | Before incremental sync |
+| `pa zotero project sync` | Incrementally append new items to local refs.bib | Re-pull only what's new (idempotent) |
 | `pa zotero project export-bib` | Zotero collection → .bib file | Share with non-Zotero users (Overleaf) |
 | `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
 | `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note (+ Obsidian with `--with-obsidian`) |
@@ -513,6 +515,87 @@ pa zotero push --corpus ~/.paper-agent/projects/long-term-care/refs.bib
 **Idempotent**: re-pulling the same collection (with `--overwrite`)
 gives the same refs.bib (cite-key stable, content identical unless
 Zotero items changed).
+
+## Incremental Zotero sync (v3.9.19.0)
+
+`pa zotero-project pull` (v3.9.18.0) copies the whole Zotero
+collection. But once papers start landing in Zotero incrementally,
+re-pulling the whole thing every time is wasteful. v3.9.19.0 adds 2
+commands for incremental updates:
+
+### `pa zotero-project diff` — show what changed
+
+```bash
+pa zotero-project diff --name "long-term care"
+# Output:
+#   [zotero-project] diff: Zotero collection 'Long-term care'
+#     (key=COLL_KEY) vs local project 'long-term-care'
+#     zotero items:  20
+#     local DOIs:    15
+#     unchanged:     15
+#     new in zotero: 5  (in Zotero, not in local)
+#     removed:       0  (in local, not in Zotero)
+#
+#     New DOIs (use `pa zotero-project sync --apply` to pull):
+#       + 10.1234/new1
+#       + 10.1234/new2
+#       + 10.1234/new3
+#       + 10.1234/new4
+#       + 10.1234/new5
+```
+
+### `pa zotero-project sync` — apply the diff
+
+```bash
+# Default: dry-run (just shows the diff)
+pa zotero-project sync --name "long-term care"
+
+# Actually apply: append 5 new items to refs.bib + refresh meta.json
+pa zotero-project sync --name "long-term care" --apply
+# Output:
+#   [zotero-project] sync (APPLIED): 'Long-term care' -> local project 'long-term-care'
+#     new (will append):  5
+#     removed (kept):     0
+#     unchanged:          15
+#     refs.bib:           /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     meta.json:          /home/user/.paper-agent/projects/long-term-care/meta.json
+#
+#     Applied: 5 new item(s) added to refs.bib. meta.json refreshed.
+```
+
+### Safety: removed items
+
+If a paper is **removed from Zotero** but still in local refs.bib,
+`sync` does **NOT delete it locally** (you might want to keep it).
+It's recorded in `meta.json` under `removed_from_zotero: [dois]` so
+you can decide later what to do:
+
+```json
+{
+  "slug": "long-term-care",
+  "title": "Long-term care",
+  "zotero_collection_key": "COLL_KEY",
+  "zotero_collection_name": "Long-term care",
+  "zotero_collection_version": 7,
+  "zotero_last_sync_at": "2026-08-18T21:15:00",
+  "removed_from_zotero": ["10.1234/old.paper"]
+}
+```
+
+### Idempotent
+
+Re-running `sync --apply` after a previous sync: finds 0 new items
+(matches DOI), 0 removed (unless something was removed from Zotero
+since). Safe to run on every cron.
+
+### Full Zotero ↔ local workflow
+
+```
+pull          (v3.9.18.0)  full initial copy
+diff          (v3.9.19.0)  see what changed
+sync --apply  (v3.9.19.0)  append new items (idempotent)
+push          (v3.9.15.0)  local → Zotero (separate direction)
+```
 
 
 

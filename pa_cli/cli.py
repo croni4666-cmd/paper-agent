@@ -3590,6 +3590,221 @@ def zotero_project_export_bib(name, key, out_path, as_json):
 
 
 # ─────────────────────────────────────────────────────────────────
+# v3.9.19 [P3-28.3] pa zotero-project diff / sync -- incremental updates
+# ─────────────────────────────────────────────────────────────────
+@zotero_project.command(name="diff")
+@click.option("--name", "name", default=None,
+              help="Collection name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Collection key (mutually exclusive with --name)")
+@click.option("--slug", "slug", default=None,
+              help="Local project slug (default: derived from collection name)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override project root (default: ~/.paper-agent/projects/)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def zotero_project_diff(name, key, slug, root_path, as_json):
+    """[P3-28.3] Show what changed in a Zotero collection vs local project.
+
+    Compares a Zotero collection against the local refs.bib (from a
+    previous `pa zotero-project pull`). Returns:
+    - new DOIs (in Zotero but not local)
+    - removed DOIs (in local but not Zotero) — NOT auto-deleted locally
+    - unchanged count (matched in both)
+
+    Does NOT modify any files. Use `pa zotero-project sync --apply`
+    to actually pull the new items.
+
+    Examples:
+      pa zotero-project diff --name "long-term care"
+      pa zotero-project diff --name "long-term care" --json
+    """
+    from . import zotero_api
+    from .project import (
+        DEFAULT_ROOT as PA_DEFAULT_ROOT,
+        project_files,
+    )
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] collection not found: name={name!r} key={key!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    # Resolve local project
+    canonical_name = coll["name"]
+    if not slug:
+        slug = re.sub(r"[^A-Za-z0-9._-]+", "-", canonical_name.strip()).strip("-").lower() or "zotero-project"
+    root = Path(root_path) if root_path else PA_DEFAULT_ROOT
+    refs_path = project_files(slug, root)["refs"]
+    if not refs_path.exists():
+        click.echo(
+            f"[zotero-project] local project '{slug}' not found at {refs_path.parent} "
+            f"(run `pa zotero-project pull --name {canonical_name!r}` first)",
+            err=True,
+        )
+        sys.exit(1)
+
+    diff = zotero_api.diff_collection_to_local(client, coll["key"], refs_path)
+
+    if as_json:
+        click.echo(json.dumps(diff, ensure_ascii=False, indent=2))
+        return
+
+    click.echo(
+        f"[zotero-project] diff: Zotero collection '{coll['name']}' "
+        f"(key={coll['key']}) vs local project '{slug}'\n"
+        f"  zotero items:  {diff['zotero_n_items']}\n"
+        f"  local DOIs:    {diff['local_n_dois']}\n"
+        f"  unchanged:     {diff['unchanged_n']}\n"
+        f"  new in zotero: {len(diff['new_dois'])}  (in Zotero, not in local)\n"
+        f"  removed:       {len(diff['removed_dois'])}  (in local, not in Zotero)"
+    )
+    if diff["new_dois"]:
+        click.echo(f"\n  New DOIs (use `pa zotero-project sync --apply` to pull):")
+        for d in diff["new_dois"][:20]:
+            click.echo(f"    + {d}")
+        if len(diff["new_dois"]) > 20:
+            click.echo(f"    ... and {len(diff['new_dois']) - 20} more")
+    if diff["removed_dois"]:
+        click.echo(f"\n  Removed from Zotero (kept in local; tracked in meta.json):")
+        for d in diff["removed_dois"][:20]:
+            click.echo(f"    - {d}")
+        if len(diff["removed_dois"]) > 20:
+            click.echo(f"    ... and {len(diff['removed_dois']) - 20} more")
+    if not diff["new_dois"] and not diff["removed_dois"]:
+        click.echo("\n  Up to date. Nothing to sync.")
+
+
+@zotero_project.command(name="sync")
+@click.option("--name", "name", default=None,
+              help="Collection name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Collection key (mutually exclusive with --name)")
+@click.option("--slug", "slug", default=None,
+              help="Local project slug (default: derived from collection name)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override project root (default: ~/.paper-agent/projects/)")
+@click.option("--apply/--no-apply", "apply", default=False,
+              help="Actually write to refs.bib and meta.json (default: dry-run, "
+                   "just shows the diff)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def zotero_project_sync(name, key, slug, root_path, apply, as_json):
+    """[P3-28.3] Incrementally sync a Zotero collection into a local pa project.
+
+    Default: dry-run (just shows the diff like `pa zotero-project diff`).
+    With `--apply`: appends new items to local refs.bib and refreshes
+    meta.json (`zotero_collection_version`, `zotero_last_sync_at`,
+    `removed_from_zotero` list).
+
+    **Safety**: removed items in Zotero are NOT deleted from local
+    refs.bib (you might want to keep them). They are recorded in
+    `meta.json` under `removed_from_zotero: [dois]` so you can decide
+    later.
+
+    Use this after adding papers to a Zotero collection to keep your
+    local pa project in sync, instead of doing a full re-pull.
+
+    Examples:
+      # Dry-run: see what would change
+      pa zotero-project sync --name "long-term care"
+
+      # Actually apply the changes
+      pa zotero-project sync --name "long-term care" --apply
+    """
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] collection not found: name={name!r} key={key!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    result = zotero_api.sync_collection_to_local(
+        client,
+        collection_name=coll["name"],
+        project_slug=slug,
+        project_root=Path(root_path) if root_path else None,
+        dry_run=not apply,
+    )
+
+    if result["status"] == "error":
+        click.echo(f"[zotero-project] ERROR: {result.get('error', 'unknown')}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+
+    mode = "DRY-RUN" if result["dry_run"] else "APPLIED"
+    click.echo(
+        f"[zotero-project] sync ({mode}): '{result['zotero_collection_name']}' "
+        f"-> local project '{result['project_slug']}'\n"
+        f"  new (will append):  {result['n_new']}\n"
+        f"  removed (kept):     {result['n_removed']}\n"
+        f"  unchanged:          {result['n_unchanged']}\n"
+        f"  refs.bib:           {result['refs_path']}\n"
+        f"  meta.json:          {result['meta_path']}"
+    )
+    if result["dry_run"]:
+        if result["n_new"] or result["n_removed"]:
+            click.echo(
+                "\n  Re-run with --apply to actually write to refs.bib and meta.json."
+            )
+        else:
+            click.echo("\n  Up to date. Nothing to apply.")
+    else:
+        click.echo(
+            f"\n  Applied: {result['n_new']} new item(s) added to refs.bib. "
+            f"meta.json refreshed."
+        )
+        if result["n_removed"]:
+            click.echo(
+                f"  Note: {result['n_removed']} item(s) removed from Zotero are "
+                f"kept locally and tracked in meta.json (removed_from_zotero)."
+            )
+
+
+# ─────────────────────────────────────────────────────────────────
 # v3.9.16 [P3-29] pa obsidian — research sub-vault + project management
 # ─────────────────────────────────────────────────────────────────
 @main.group()
