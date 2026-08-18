@@ -7,6 +7,142 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.19.0] - 2026-08-18
+
+### Added — `[P3-28.3] pa zotero-project diff / sync — incremental Zotero → local updates`
+
+**Rationale** (deferred from v3.9.18.0): v3.9.18.0 shipped
+`pa zotero-project pull` to copy a whole Zotero collection into a
+local pa project. The natural next step is **incremental sync**:
+after adding papers to a Zotero collection, re-pulling the whole
+collection is wasteful. v3.9.19.0 closes this with 2 new commands.
+
+**What ships (MINOR bump, 2 new CLI commands)**:
+
+- **`pa_cli/zotero_api.py` 3 new functions**:
+  - `_parse_refs_bib_dois(refs_bib_path)` — parse a local refs.bib
+    and return `{normalized_doi: bibtex_key}`. Reuses
+    `parse_bibtex_for_doi()` (the same parser used by `push_items`).
+    Returns `{}` for missing file. Bibtex entries without DOI are
+    ignored (Zotero items matched by DOI only).
+  - `diff_collection_to_local(client, collection_key, local_refs_bib_path)`
+    — compare Zotero collection against local refs.bib. Returns
+    `{new_dois, removed_dois, new_items, zotero_n_items,
+    local_n_dois, unchanged_n}`. Items matched by normalized DOI.
+    **No "updated" detection** in v3.9.19: we don't track per-item
+    versions locally, so we can't reliably tell if a Zotero item
+    was edited after pull. Use `pa zotero-project pull --overwrite`
+    to fully refresh if item-level updates are needed.
+  - `sync_collection_to_local(client, collection_name,
+    project_slug=None, project_root=None, dry_run=True)` —
+    full orchestrator. Default `dry_run=True` (just reports diff
+    without changing anything). When `dry_run=False`:
+    - **NEW** items (DOI in Zotero, not in local): appended to
+      refs.bib in Bibtex format
+    - **REMOVED** items (DOI in local, not in Zotero): NOT deleted
+      from local refs.bib (safety); recorded in `meta.json` under
+      `removed_from_zotero: [dois]`
+    - **UNCHANGED**: no action
+    - **`meta.json`** updated with:
+      - `zotero_collection_version` (refresh)
+      - `zotero_last_sync_at` (ISO timestamp)
+      - `n_items` (refresh)
+      - `removed_from_zotero` (list of DOIs no longer in Zotero)
+
+- **`pa_cli/cli.py` 2 new Click commands** under `pa zotero-project`:
+  - `pa zotero-project diff --name X` (or `--key Y`) — show what
+    changed in Zotero vs local. Outputs:
+    - new DOIs (in Zotero, not in local)
+    - removed DOIs (in local, not in Zotero; kept locally)
+    - unchanged count
+    Human-readable shows first 20 of each list; `--json` for full
+    structured output. Does NOT modify any file.
+  - `pa zotero-project sync --name X [--apply]` — incremental
+    update. **Default: dry-run** (just shows the diff). With
+    `--apply`: writes new items to refs.bib + refreshes meta.json.
+    Use after adding papers to a Zotero collection to keep local
+    project in sync, instead of doing a full re-pull.
+
+**Tests** (22 new + 0 regression):
+- `test_output/test_zotero_diff_sync.py` (17KB, **22/22 pass**):
+  - `TestParseRefsBibDois` (4): empty / nonexistent / parses dois /
+    normalizes doi case
+  - `TestDiffCollectionToLocal` (7): new only / removed only /
+    unchanged only / mixed / local-no-dois-skipped /
+    zotero-no-dois-skipped / empty collection
+  - `TestSyncCollectionToLocal` (6): collection not found / local
+    project not found / dry-run default no writes / apply writes
+    new items / removed items kept locally and tracked in
+    meta.json / up to date / idempotent apply
+  - `TestCliDiffSync` (4 smoke): diff --help / sync --help / missing
+    name+key errors (both)
+- Related test files (re-verified, 0 regression):
+  - test_search_and_import.py: 21/21
+  - test_zotero_collections.py: 37/37
+  - test_zotero_upload_pdfs.py: 16/16
+  - test_obsidian.py: 49/49
+  - test_zotero_api.py: 16/16
+  - test_zotero_local.py: 11/11
+  - test_search_and_import_obsidian.py: 11/11
+  - test_jobs.py: 14/14
+  - test_zotero_pull_export.py: 47/47
+- Total: 320 pass + 10 skipped + 1 pre-existing fail (test_mcp_setup
+  x1 — UI changed, unrelated to v3.9.19.0). The 2 test_citations_e2e
+  fails from v3.9.18.0 are now passing (transient).
+
+**Examples**:
+
+```bash
+# Dry-run: see what changed since last pull
+pa zotero-project sync --name "long-term care"
+# Output:
+#   [zotero-project] sync (DRY-RUN): 'Long-term care' -> local project 'long-term-care'
+#     new (will append):  5
+#     removed (kept):     2
+#     unchanged:          13
+#     refs.bib:           /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     meta.json:          /home/user/.paper-agent/projects/long-term-care/meta.json
+#
+#     Re-run with --apply to actually write to refs.bib and meta.json.
+
+# Apply the changes
+pa zotero-project sync --name "long-term care" --apply
+# Output:
+#   [zotero-project] sync (APPLIED): 'Long-term care' -> local project 'long-term-care'
+#     new (will append):  5
+#     removed (kept):     2
+#     unchanged:          13
+#     refs.bib:           /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     meta.json:          /home/user/.paper-agent/projects/long-term-care/meta.json
+#
+#     Applied: 5 new item(s) added to refs.bib. meta.json refreshed.
+#     Note: 2 item(s) removed from Zotero are kept locally and tracked in meta.json.
+
+# Just see the diff (no write even with --apply)
+pa zotero-project diff --name "long-term care"
+
+# By collection key
+pa zotero-project sync --key COLL_KEY --apply
+
+# Custom local project slug
+pa zotero-project sync --name "long-term care" --slug ltc --apply
+```
+
+**No new external dependencies** (reuses `pyzotero` + `pa_cli.project`).
+
+**MINOR bump** (not PATCH): 2 new CLI commands + 3 new functions +
+incremental sync is significant new surface (the workflow that
+makes the Zotero round-trip useful in practice).
+
+**Sub-task decomposition** (final time log):
+- A. Design `_parse_refs_bib_dois` + `diff_collection_to_local` — 15min ✅
+- B. Implement diff (DOI matching, ignore no-DOI entries on both sides) — 25min ✅
+- C. Implement `sync_collection_to_local` (orchestrator, dry-run default, no-delete safety) — 35min ✅
+- D. Wire 2 new CLI commands under `@zotero_project.command(...)` — 30min ✅
+- E. Write 22 tests (mock + tmp_path) — 40min ✅
+- F. Bump version + CHANGELOG + ROADMAP + README + commit + push + tag + release — 20min ✅
+- | **Total** | **~2.7h** | on target (vs 2-3h estimate) |
+
 ## [3.9.18.0] - 2026-08-18
 
 ### Added — `[P3-28.2] pa zotero-project pull / export-bib — bidirectional Zotero <-> local pa project`
