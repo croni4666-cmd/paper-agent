@@ -77,6 +77,9 @@ search results       pa cite-check        pa fetch-batch
 | `pa search-saved` | Named search presets | Skip retyping flags |
 | `pa project` | Per-topic corpus management | Phase 1 done; Phase 2 needs user input |
 | `pa zotero check` | Read-only Zotero local DB check | "Do I already have this DOI?" |
+| `pa zotero push` | Write to Zotero Web API library | pyzotero, idempotent via DOI dedup |
+| `pa zotero search` | Query Zotero Web API library | "long-term care" style qmode |
+| `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
@@ -146,8 +149,43 @@ or `uv tool install git+https://github.com/Rimagination/instsci.git`
 **`deathcats4/instsci-workflow`** (52⭐, MIT, modified fork):
 - Adds **Zotero handoff** (`instsci zotero sync --attachment-mode linked_file`)
 - Adds **public/private evidence separation** (`public-audit`)
-- Useful as inspiration for our own Zotero sync design ([P2-17] / [P2-18]
-  in ROADMAP, deferred until [P2-16] sees real use)
+- Useful as inspiration for our own Zotero sync design — and as of
+  **v3.9.15.0**, our [P2-17] `pa zotero push` and [P2-18] `pa zotero sync`
+  ship as the paper-agent equivalent. See the Zotero integration section
+  below.
+
+## Zotero integration (v3.9.14.0 + v3.9.15.0)
+
+paper-agent ships a **bidirectional Zotero workflow** without ever
+needing Zotero's UI:
+
+| Direction | Command | What |
+|---|---|---|
+| **Read local** (no API) | `pa zotero check --corpus refs.bib` | Which DOIs in my corpus are already in my Zotero library? |
+| **Write API** (push) | `pa zotero push --corpus refs.bib` | Push new Bibtex entries to my Zotero library (idempotent, DOI dedup) |
+| **Read API** (search) | `pa zotero search --query "long-term care"` | Search my Zotero library for papers matching a query |
+| **Combined** | `pa zotero sync --corpus refs.bib` | check + search + push in 3 steps |
+
+**Auth** (留痕 discipline — env vars only, NOT `.env`):
+```bash
+# Per-session (never persist to disk)
+export ZOTERO_API_KEY="<your-key-from-zotero.org/settings/keys>"
+export ZOTERO_LIBRARY_ID="<numeric-library-id>"
+pa zotero push --corpus refs.bib
+```
+
+**Install the dep** (only if you need push/search/sync):
+```bash
+python -m pip install --user pyzotero  # >= 1.14
+```
+
+**Local check is read-only** ([P2-16] hard guarantee): SQLite `mode=ro`
+URI makes writes impossible at SQLite level, verified by test.
+
+**PDF upload deferred to v3.9.16** ([P2-17.1]): v3.9.15.0 ships
+metadata-only push. PDF attachment via `item.attachment_simple()` is a
+follow-up because it requires separate API call + Zotero file storage
+quota (~300MB free).
 
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
 

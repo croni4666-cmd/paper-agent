@@ -1324,6 +1324,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.14.1 | released 2026-08-18 | **[P0-15] `pa mcp-fetch-serve` ships (thin MCP wrapper for pa fetch tools)**: new `pa_cli/mcp_fetch.py` (12 KB) + `test_output/test_mcp_fetch.py` (7 KB, 8/8 tests pass). 2 tools: `pa_fetch(doi, prefer, use_cache)` + `pa_batch_fetch(dois, output_dir, prefer)` exposed over stdio JSON-RPC. **NOT a [P0-3] resurrection** ([P0-3] was 4 tools with high maintenance tax; this is 2 thin wrappers over existing CLI functions). Codex / Claude Code can now drive `pa fetch` and `pa fetch-pdf-batch` without SSH wrappers. Hand-maintained minimal JSON Schemas (2 only). Lazy imports inside handlers (avoids loading fetch cascade on startup). Stdio transport only (no HTTP). Same trust boundary as `pa fetch` CLI invocation. **Opt-in install**: user adds to MCP client config only if they want agent-driven fetch. New `pa mcp-fetch-serve` Click subcommand (~30 LOC) for CLI discoverability | 2026-08-18 |
 | v3.9.14.2 | released 2026-08-18 | **[P2-15] `pa jobs` status/tail/resume subcommand ships (job manager for pa fetch-pdf-batch)**: new `pa_cli/jobs.py` (14 KB, 11 functions, JobManifest dataclass) + `test_output/test_jobs.py` (12 KB, 14/14 tests pass, 1 skipped). 5 subcommands in `pa jobs` Click group: `start` / `list` / `status` / `tail` / `resume`. Inspired by `instsci jobs status/tail/resume` (Round 14 coupling). Per-job dir: `~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt}`. Atomic manifest write (temp + rename). `pa jobs start` wraps `pa fetch-pdf-batch` via subprocess, captures stdout+stderr to log.txt, updates manifest on completion. `pa jobs resume` re-runs with `--skip-existing`. Override jobs root via `$PA_JOBS_DIR`. job_id validates against `[a-zA-Z0-9_-]+` (rejects path traversal). Pure stdlib (no new dep). `pa_cli/cli.py` +150 LOC. **Acceptance**: 8/8 criteria met, 14/14 tests pass, 1 skipped (real subprocess e2e would timeout) | 2026-08-18 |
 | v3.9.14.3 | released 2026-08-18 | **[P3-27] Document instsci-mcp as friendly-neighbor MCP (docs-only)**: `README.md` new "Friendly-neighbor projects" section (~50 LOC) explains complementary positioning with `Rimagination/instsci` (288⭐, MIT) and shows side-by-side MCP client config (`paper-search-mcp` + `paper-agent-fetch` + `instsci-mcp`). `THIRD_PARTY.md` new "Friendly-neighbor projects" section (~30 LOC) lists `Rimagination/instsci` and `deathcats4/instsci-workflow` with license + install + when-to-use. `THIRD_PARTY.md` version footer bumped to v1.1. README engine count updated 6 → 8 (PubMed + ClinicalTrials); Available commands table now lists `pa zotero check` / `pa jobs` / `pa mcp-fetch-serve` / `pa mcp install`. **No code change, no new dep**. **Acceptance**: 4/4 criteria met. **v3.9.14 backlog cleared** (all 4 items shipped: P2-16/P0-15/P2-15/P3-27) | 2026-08-18 |
+| v3.9.15.0 | released 2026-08-18 | **[P2-17] + [P2-18] Zotero bidirectional integration ships**: new `pa_cli/zotero_api.py` (15 KB, 9 functions, pyzotero 1.14.0 wrapper) + `test_output/test_zotero_api.py` (13.3 KB, 16/16 tests pass). 3 new subcommands: `pa zotero push --corpus refs.bib [--pdf-dir] [--mode linked_file|imported_file] [--no-skip-existing]` (write to library via Web API v3, idempotent via `pyzotero.check_items()`); `pa zotero search --query "long-term care" [--limit N] [--qmode titleCreatorYear|everything]` (search library); `pa zotero sync --corpus refs.bib [--query Q] [--push/--no-push]` (3-step combined workflow: local check via [P2-16] → library search via new → push via [P2-17]). Auth: `$ZOTERO_API_KEY` + `$ZOTERO_LIBRARY_ID` env vars (NOT .env per 留痕 discipline). `requirements-optional.txt` added pyzotero>=1.14 (new "Zotero Web API" group). `pa_cli/cli.py` ~120 LOC for the 3 subcommands. **MINOR bump** (not PATCH) because [P2-17]+[P2-18] is a full bidirectional workflow surface. **Deferred to v3.9.16**: [P2-17.1] PDF upload via `item.attachment_simple()` (v3.9.15.0 ships metadata-only; PDF requires separate API call + file storage quota). **Zotero re-evaluation closed**: earlier "DEFERRED" judgment (same day morning) was wrong — CSV import ≠ "do I already have this paper?" All 3 Zotero items now shipped. | 2026-08-18 |
 
 ---
 
@@ -1760,9 +1761,14 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 - ✅ [P0-15] `pa mcp-fetch-serve` (v3.9.14.1)
 - ✅ [P2-15] `pa jobs status/tail/resume` (v3.9.14.2)
 - ✅ [P3-27] Document instsci-mcp (v3.9.14.3, this release)
-- **Backlog cleared**. Only deferred items remain: [P2-17] / [P2-18] (Zotero
-  push/sync, gated on real use of [P2-16]) and the pre-existing
-  [P1-13] / [P1-19] / [P3-22..25] (gated on n=200+ sample accumulation).
+- **Backlog cleared**. Only deferred items remain: [P1-13] / [P1-19] /
+  [P3-22..25] (gated on n=200+ sample accumulation). [P2-17] + [P2-18]
+  are SHIPPED in v3.9.15.0 (see below).
+
+**v3.9.15 backlog status** (post release):
+- ✅ [P2-17] `pa zotero push` (v3.9.15.0, this release)
+- ✅ [P2-18] `pa zotero search` + `pa zotero sync` (v3.9.15.0, this release)
+- **All Zotero items shipped**. Only [P2-17.1] PDF upload remains (deferred to v3.9.16).
 - **`[P2-16] pa zotero check` (read-only Zotero local DB, RECOMMENDED FIRST)**
   - **Status**: done
   - **Added**: 2026-08-18 (re-evaluated from DEFERRED same-day)
@@ -1838,29 +1844,37 @@ alone missed the fieldID 1 → 59 change.
   (e.g. "Zotero DOI is fieldID 1" was correct in 2015, wrong in 2024).
 
 **Next step** (gated on actual use):
-- [P2-17] `pa zotero push` (write via Web API, requires pyzotero, ~3h) — DEFERRED until user reports [P2-16] is useful in their workflow
-- **`[P2-17] pa zotero push` (write via Web API v3, GATED on [P2-16] being useful)** — Push bibtex entries + PDFs to user's Zotero library via Zotero Web API v3. Conditional: only ship if [P2-16] sees real use after a month. New `pa_cli/zotero_api.py` (~250 LOC) wrapping `pyzotero`:
-  - `push_items(bibtex_entries) -> {pushed: N, already_in_library: N, failed: [...]}` (idempotent via DOI dedup)
-  - `upload_pdf(item_key, pdf_path, mode={linked_file, imported_file})`
-  - CLI: `pa zotero push --corpus refs.bib --pdf-dir ./pdfs/ [--mode linked_file] [--api-key-env ZOTERO_API_KEY] [--group-id N]`
-  - Reads `ZOTERO_API_KEY` from env (NOT from `.env` per留痕 discipline; user exports per session)
-  - 5 unit tests (mock pyzotero) + 1 e2e (real personal Zotero library)
-  - **Global Rule check**: 5/5 pass BUT adds 1 dep (`pyzotero` MIT, well-maintained)
-  - **Acceptance criteria**:
-    - Idempotent: re-running same corpus does not duplicate items
-    - `linked_file` mode: PDF stays at original path, Zotero just symlinks (matches `instsci zotero sync --attachment-mode linked_file` pattern)
-    - `imported_file` mode: PDF copied to Zotero storage dir
-    - `--api-key-env` opt-in only; no `.env` write, no file persistence
-  - **Effort**: ~3h
-  - **Why gated**: if [P2-16] is rarely used, the push direction is YAGNI. Wait for actual signal.
-- **`[P2-18] pa zotero sync` (bidirectional, GATED on [P2-17])** — Combine check + push + library search into one command. Conditional: only ship if [P2-17] sees real use. New `pa_cli/zotero_sync.py` (~200 LOC) that:
-  - Wraps [P2-16] check + [P2-17] push behind one CLI
-  - Adds `pa zotero search --query "long-term care insurance"` for searching user's existing library (saves re-fetching what user already has)
-  - CLI: `pa zotero sync --corpus refs.bib --pdf-dir ./pdfs/ [--mode bidirectional] [--query "..."]`
-  - 4 unit tests (mock both modules) + 1 e2e
-  - **Global Rule check**: 5/5 pass (depends on pyzotero, gated on [P2-17])
-  - **Effort**: ~4h (mostly orchestration over [P2-16] + [P2-17])
-  - **Why gated**: pure feature accretion; only worth it after [P2-16] + [P2-17] both proven useful in actual workflow
+- ✅ **[P2-17] SHIPPED in v3.9.15.0** (see below)
+- ✅ **[P2-18] SHIPPED in v3.9.15.0** (see below)
+- **[P2-17.1] PDF upload in `pa zotero push` via `item.attachment_simple()`** — DEFERRED to v3.9.16. v3.9.15.0 ships metadata-only push; PDF attachment requires separate API call after item creation, plus Zotero file storage quota (~300MB free). Tracked as follow-up because metadata-first workflow already answers "did I cite this paper?" and Zotero's browser connector can later attach PDFs via drag-and-drop. ~2h estimated.
+
+- **`[P2-17] pa zotero push` (write via Web API v3, SHIPPED in v3.9.15.0)** — Push bibtex entries to user's Zotero library via Zotero Web API v3. New `pa_cli/zotero_api.py` (~15 KB / 9 functions) wrapping `pyzotero`:
+  - `get_client()` reads `$ZOTERO_API_KEY` + `$ZOTERO_LIBRARY_ID` (env vars only, NOT .env per 留痕 discipline)
+  - `parse_bibtex_for_doi()` minimal regex parser (extracts DOI, title, authors, year, journal)
+  - `bibtex_to_zotero_item()` converts Bibtex → Zotero API template (article→journalArticle, book→book, inproceedings→conferencePaper)
+  - `check_dois_in_library()` uses `pyzotero.check_items()` for idempotent dedup
+  - `push_items()` writes to library, returns `{created, skipped, failed}`
+  - `search_library()` uses `qmode=titleCreatorYear` (matches user's "long-term care" style queries)
+  - CLI: `pa zotero push --corpus refs.bib [--pdf-dir DIR] [--mode linked_file|imported_file] [--no-skip-existing]`
+  - 16/16 tests pass (16-case normalize_doi matrix + 3 bibtex parse + 3 type convert + 3 push + 2 search + 3 env validation)
+  - **Status**: done
+  - **Added**: 2026-08-18 (re-evaluated from DEFERRED same-day)
+  - **Completed**: 2026-08-18
+  - **Released in**: v3.9.15.0
+  - **Priority**: P2
+  - **Global Rule check**: 4/5 pass (adds 1 dep `pyzotero>=1.14` MIT, well-maintained; reads from env, no .env write)
+  - **Why shipped same-day**: user reversed DEFERRED judgment when realized "do I already have this paper?" gap was real workflow blocker, not just CSV import
+- **`[P2-18] pa zotero sync` + `pa zotero search` (SHIPPED in v3.9.15.0)** — Combine check + push + library search. 2 subcommands in same `pa_cli/zotero_api.py`:
+  - `pa zotero search --query "long-term care" [--limit N] [--qmode titleCreatorYear|everything]`
+  - `pa zotero sync --corpus refs.bib [--query Q] [--push/--no-push] [--mode]` (3 steps: local check via [P2-16] reuse → library search via [P2-18] new → push via [P2-17] reuse)
+  - All test coverage reuses the underlying functions (16/16 tests cover both push and search paths)
+  - **Status**: done
+  - **Added**: 2026-08-18
+  - **Completed**: 2026-08-18
+  - **Released in**: v3.9.15.0
+  - **Priority**: P2
+  - **Global Rule check**: 4/5 pass (depends on pyzotero, reuses zotero_local from [P2-16])
+  - **Why shipped**: orchestration over [P2-16] + [P2-17] is mostly wire-up, low marginal cost
 
 ### Tier 2: Medium (0.5-1 day each)
 
