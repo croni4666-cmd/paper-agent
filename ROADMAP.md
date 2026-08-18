@@ -1444,7 +1444,7 @@ This is a status snapshot, not a release log.
 | Project | Stars | Focus | License | Paper-agent overlap |
 |---|---|---|---|---|
 | `Rimagination/instsci` | 288⭐ | OA-first + browser-backed SSO (Shibboleth / CARSI / WebVPN / EZproxy) + 10+ publisher workflows (Elsevier/Wiley/Springer/IEEE/Nature/...) | MIT | **Complementary** — different philosophy (legitimate institutional vs gray-area sci-hub) |
-| `deathcats4/instsci-workflow` | 52⭐ | Modified fork preview — Zotero handoff (`instsci zotero sync`) + public/private evidence separation (`public-audit`) | MIT (modified) | **Inspirational** — Zotero sync + public-audit pattern useful |
+| `deathcats4/instsci-workflow` | 52⭐ | Modified fork preview — Zotero handoff (`instsci zotero sync`) + public/private evidence separation (`public-audit`) | MIT (modified) | **Inspirational** — Zotero pattern now tracked under "Zotero integration 2026-08-18" section; public-audit pattern similar to our pre-push scanner |
 
 **Key differences vs paper-agent** (v3.9.13.3):
 - InstSci philosophy: **legitimate OA + institutional SSO first**, gray-area NOT used
@@ -1460,10 +1460,23 @@ These 3 items are **accepted** (pass Global Rule, no user-maintenance tax, pure 
 - **[P0-15] `pa mcp serve` 补全 fetch 工具** — We have `pa_cli/mcp.py` (originally v3.6.0 then reverted 2026-07-04 per [P0-3]). The current `pa mcp install` only installs public `paper-search-mcp` (search-only). Add a thin in-repo `pa_cli/mcp_fetch.py` (~30 LOC) that exposes `pa_fetch(doi, prefer)` + `pa_batch_fetch(dois[])` over stdio JSON-RPC. NO new server / NO new schemas to maintain — same `pa fetch` / `pa fetch-pdf-batch` Click functions, just JSON-RPC wrapped. **Solves**: Codex/Claude Code can drive paper-agent fetch without SSH. Risk: very low (reuses existing CLI; same trust boundary as CLI invocation). Effort: ~30 min. ⭐⭐
 - **[P3-27] Document `instsci-mcp` as a friendly-neighbor MCP for users with institutional access** — `README.md` + `THIRD_PARTY.md` get a new section: "If you have university SSO (CARSI/Shibboleth), `instsci-mcp` is the friendlier fetch path. We don't replace it — we do search + rerank; InstSci does institutional fetch. Run both, route by paper availability." Pure docs change. Effort: ~30 min. ⭐
 
-These 2 items are **considered and rejected** (with reasoning, recorded for future readers):
+These 1 item is **considered and rejected** (with reasoning, recorded for future readers):
 
 - **Institutional SSO channel for paper-agent** (Playwright + persistent browser profile + CARSI/Shibboleth login) — REJECTED 2026-08-18. Reason: (a) violates "课件永远不留痕" / "pre-push hygiene: scan source comments" memory rules — persistent browser profile = cookies + localStorage + IndexedDB that look identical to sensitive data we sanitize out; (b) the user (李老师) has explicit `paper-agent` AGPL-3.0 + No-AI-Training = "resume asset, not SaaS tool" constraint; adding "we manage your university login" obligation crosses into SaaS territory; (c) InstSci already does this well in MIT, no need to duplicate; (d) Global Rule §4 "must publish / must maintain public-facing infra" applies. **If user ever changes their mind, this gets un-rejected by copying the InstSci architecture** (NOT a re-implementation from scratch).
-- **Zotero sync subcommand** (`pa zotero sync --corpus refs.bib`) — DEFERRED. Reason: (a) `pyzotero` is a fine lib but it's a new dep + new CLI surface + Zotero user-key flow needs UI design (where does user get API key?); (b) `pa export-screening` (v3.9.10.4) already produces CSV that Zotero's "Add by Identifier" accepts — that 80/20 solution ships today. Re-evaluate if user has concrete Zotero workflow that the CSV path doesn't cover.
+
+### Zotero integration 2026-08-18 (re-evaluation, was DEFERRED 2026-08-18 morning)
+
+**Re-evaluation context**: User asked "考虑增加 Zotero 部分" the same day as the InstSci coupling. Earlier judgment was "CSV export = 80/20" from engineering POV. User perspective: actual workflow gap is "I don't know if this paper is already in my Zotero library" — the CSV import path doesn't address this. **Reverted**: 3 new items added to Tier 1, see [P2-16] / [P2-17] / [P2-18] below.
+
+**Why this matters** (concrete user pain point that CSV does not solve):
+- After `pa fetch-pdf-batch` returns 30 papers, user manually checks each against their Zotero library before re-ranking relevance. This is 5-10 min/checkable-batch.
+- For lit reviews with 200+ candidate papers, this manual check is the #1 time-sink that paper-agent currently doesn't touch.
+- A read-only "do I have this already?" check eliminates the manual cross-reference step.
+
+**Three sub-features, prioritized least-invasive → most-invasive** (see Tier 1 for full specs):
+1. **[P2-16] `pa zotero check` (read-only, recommended first)** — read local `zotero.sqlite`, report which DOIs in a corpus are already in user's library. ~1.5h, 0 API key, 0 network, 0 writes.
+2. **[P2-17] `pa zotero push` (write via Web API, conditional on [P2-16] being useful)** — push bibtex entries + PDFs to user's Zotero library via Web API v3. ~3h, requires Zotero API key, all data goes through Zotero cloud.
+3. **[P2-18] `pa zotero sync` (bidirectional, conditional on [P2-17])** — combine check + push + library search. ~4h, superset of P2-16 + P2-17.
 
 ### External project tracker (for awareness only)
 
@@ -1482,7 +1495,7 @@ Future readers: these are NOT paper-agent dependencies, but they occupy the same
   - **License**: MIT (modified preview of InstSci)
   - **Stars** (at coupling): 52 (4 forks)
   - **What it is**: Zotero handoff + public/private evidence separation + `public-audit` for workflow
-  - **Coupling**: inspirational (Zotero pattern is in our reject list above; public-audit pattern is similar to our pre-push scanner — could be studied for refactor ideas)
+  - **Coupling**: inspirational (Zotero pattern now tracked under "Zotero integration 2026-08-18" section; public-audit pattern similar to our pre-push scanner — could be studied for refactor ideas)
   - **Last checked**: 2026-08-18
 
 ---
@@ -1641,6 +1654,43 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     - New "Friendly-neighbor projects" section in `README.md` (3-5 paragraphs)
     - New "External services" subsection in `THIRD_PARTY.md`
     - One-line example: how to register `instsci-mcp` alongside `paper-search-mcp` in MCP client config
+- **`[P2-16] pa zotero check` (read-only Zotero local DB, RECOMMENDED FIRST)** — Reads user's local `zotero.sqlite` (no API key, no network, no writes), returns which DOIs in a corpus are already in user's Zotero library. Solves the #1 lit-review time-sink that `pa export-screening` CSV does not address. New `pa_cli/zotero_local.py` (~150 LOC) with:
+  - `find_zotero_db()` — auto-detect path (`~/Zotero/zotero.sqlite` macOS/Linux, `~/Zotero/Profiles/*/zotero.sqlite` Windows)
+  - `get_library_dois() -> set[str]` — `SELECT value FROM itemData ... JOIN items ...` (Zotero schema)
+  - `check_corpus(corpus_dois: list[str]) -> {in_library, not_in_library, invalid_doi}`
+  - CLI: `pa zotero check --corpus refs.bib [--json] [--zotero-db PATH]`
+  - 3 unit tests (mock zotero.sqlite with 5 known DOIs) + 1 e2e (real Zotero install optional)
+  - **Global Rule check**: 5/5 pass (read-only local SQLite, no API, no hosted, ~30 min/quarter maintenance)
+  - **Acceptance criteria**:
+    - Auto-detects Zotero DB on Windows + macOS + Linux
+    - Handles Zotero 6+ schema (uses `items.itemTypeID` + `itemDataValues.valueID` join)
+    - Handles Bibtex DOIs in mixed format (raw DOI, doi.org URL, https://doi.org/...)
+    - Returns: `in_library: N (M with valid DOI) | not_in_library: N | invalid_doi: N | total: N`
+    - `--json` for pipeline use (pipe into `pa fetch-pdf-batch --skip-in-library`)
+  - **Effort**: ~1.5h
+  - **Source**: Round 14 / 2026-08-18 re-evaluation. Earlier "DEFERRED" judgment (same-day morning) was wrong — see "Zotero integration 2026-08-18" section
+- **`[P2-17] pa zotero push` (write via Web API v3, GATED on [P2-16] being useful)** — Push bibtex entries + PDFs to user's Zotero library via Zotero Web API v3. Conditional: only ship if [P2-16] sees real use after a month. New `pa_cli/zotero_api.py` (~250 LOC) wrapping `pyzotero`:
+  - `push_items(bibtex_entries) -> {pushed: N, already_in_library: N, failed: [...]}` (idempotent via DOI dedup)
+  - `upload_pdf(item_key, pdf_path, mode={linked_file, imported_file})`
+  - CLI: `pa zotero push --corpus refs.bib --pdf-dir ./pdfs/ [--mode linked_file] [--api-key-env ZOTERO_API_KEY] [--group-id N]`
+  - Reads `ZOTERO_API_KEY` from env (NOT from `.env` per留痕 discipline; user exports per session)
+  - 5 unit tests (mock pyzotero) + 1 e2e (real personal Zotero library)
+  - **Global Rule check**: 5/5 pass BUT adds 1 dep (`pyzotero` MIT, well-maintained)
+  - **Acceptance criteria**:
+    - Idempotent: re-running same corpus does not duplicate items
+    - `linked_file` mode: PDF stays at original path, Zotero just symlinks (matches `instsci zotero sync --attachment-mode linked_file` pattern)
+    - `imported_file` mode: PDF copied to Zotero storage dir
+    - `--api-key-env` opt-in only; no `.env` write, no file persistence
+  - **Effort**: ~3h
+  - **Why gated**: if [P2-16] is rarely used, the push direction is YAGNI. Wait for actual signal.
+- **`[P2-18] pa zotero sync` (bidirectional, GATED on [P2-17])** — Combine check + push + library search into one command. Conditional: only ship if [P2-17] sees real use. New `pa_cli/zotero_sync.py` (~200 LOC) that:
+  - Wraps [P2-16] check + [P2-17] push behind one CLI
+  - Adds `pa zotero search --query "long-term care insurance"` for searching user's existing library (saves re-fetching what user already has)
+  - CLI: `pa zotero sync --corpus refs.bib --pdf-dir ./pdfs/ [--mode bidirectional] [--query "..."]`
+  - 4 unit tests (mock both modules) + 1 e2e
+  - **Global Rule check**: 5/5 pass (depends on pyzotero, gated on [P2-17])
+  - **Effort**: ~4h (mostly orchestration over [P2-16] + [P2-17])
+  - **Why gated**: pure feature accretion; only worth it after [P2-16] + [P2-17] both proven useful in actual workflow
 
 ### Tier 2: Medium (0.5-1 day each)
 
