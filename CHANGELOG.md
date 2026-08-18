@@ -7,6 +7,119 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.17.1] - 2026-08-18
+
+### Added — `[P2-17.1] PDF upload in pa zotero push + pa search-and-import`
+
+**Rationale** (deferred from v3.9.15.0): `pa zotero push` was
+metadata-only in v3.9.15.0; the `--pdf-dir` flag was parsed but
+the actual upload step was a no-op (`# TODO: implement PDF upload`).
+User workflow: push metadata + have PDFs automatically attached as
+Zotero child items.
+
+**What ships**:
+
+- **`pa_cli/zotero_api.py` `upload_pdfs()` NEW** function:
+  - Input: list of `{pdf_path, parent_key, [title]}` + mode
+  - `linked_file` (default): builds `item_template("attachment", linkmode="linked_file")` + `create_items([template], parentid=parent_key)`. PDF stays at original location; Zotero just stores the absolute path. No file copy, no quota usage.
+  - `imported_file`: uses `pyzotero.attachment_simple([file_path], parentid=parent_key)`. pyzotero uploads the file to Zotero's storage dir. Counts against user's Zotero file quota (~300MB free).
+  - Returns `{n_uploaded, n_failed, results: [{pdf_path, parent_key, zotero_key, mode, status, error?}]}`
+
+- **`push_items()` UPDATED** (v3.9.15.0 step 4 was `pass`):
+  - After metadata push, scan `pdf_dir` for `{key}.pdf` files
+  - For each successfully pushed item with matching PDF, queue for upload
+  - Calls `upload_pdfs()` with the queue
+  - Returns new fields: `n_pdf_uploaded`, `n_pdf_failed`
+  - Per-item `results` now includes `pdf_uploaded` / `pdf_failed` statuses
+
+- **`pa zotero push` CLI**: `--pdf-dir` flag (existed since v3.9.15.0)
+  now actually fires the upload. Same command, just works end-to-end now.
+
+- **`pa search-and-import` UPDATED** (v3.9.17.0):
+  - `push_downloaded()` signature extended with `pdf_dir` + `mode` params
+  - `run_search_and_import()` passes `out_dir` as `pdf_dir` (PDFs from fetch bucket are auto-uploaded to Zotero)
+  - Step output now includes `n_pdf_uploaded` / `n_pdf_failed`
+  - No new CLI flag needed (PDF upload is automatic when `out_dir` has PDFs)
+
+**Tests** (16 new + 0 regression):
+- `test_output/test_zotero_upload_pdfs.py` (16KB, **16/16 pass**):
+  - TestUploadPdfsLinkedFile (2): create_items + linkmode + absolute path
+  - TestUploadPdfsImportedFile (2): attachment_simple + parentid + successful
+  - TestUploadPdfsEdgeCases (9): empty / missing file / missing parent_key / default title / explicit title / API failure / exception / mixed batch
+  - TestPushItemsIntegratesUpload (3): push_items calls upload when pdf_dir set / skips when no pdf_dir / skips when no matching PDFs
+- Existing v3.9.17.0 tests still pass: 155 + 0 regression
+- Total: 171 pass + 1 skipped (pre-existing real-subprocess e2e)
+
+**Bug fix in same commit**:
+- `pa_cli/zotero_api.py` `list_collection_notes()` was missing the
+  `out.sort(...) return out` (the function had `out = []` + for-loop
+  but no return). v3.9.16.0 tests passed by accident (mock returned
+  iterable that triggered `for ... in` but function returned `None`).
+  Fixed in v3.9.17.1; 2 tests in `test_zotero_collections` now pass.
+
+**Encoding cleanup** (跨多个 pa_cli/*.py):
+- Multiple files had truncated UTF-8 em-dash sequences (0xE2 0x80
+  without 0x94) from earlier `PowerShell -replace` operations on
+  em-dash characters. These were GBK-encoded leftovers that broke
+  Python 3.12 source decoding. Replaced with ASCII `--` via
+  `test_output/_fix_truncated.py` (auto-fixer). 0 hits now for
+  non-UTF8 sequences in pa_cli/*.py.
+
+**Examples**:
+```bash
+# PDF push (v3.9.15.0 already had --pdf-dir, now it actually works)
+pa zotero push --corpus refs.bib --pdf-dir ./pdfs/
+
+# linked_file mode (default) — PDFs stay at original location
+pa zotero push --corpus refs.bib --pdf-dir ./pdfs/ --mode linked_file
+
+# imported_file mode — PDFs copy to Zotero storage
+pa zotero push --corpus refs.bib --pdf-dir ./pdfs/ --mode imported_file
+
+# search-and-import: PDFs auto-uploaded to Zotero (no new flag)
+pa search-and-import --query "..." --project "..."
+# Output now includes: pdf_uploaded=N pdf_failed=M
+```
+
+**PATCH bump** (not MINOR): the only new code is `upload_pdfs()`
+function + integration in `push_items()`. No new CLI command, no
+new module, no new dep. Just makes the `--pdf-dir` flag (already
+in v3.9.15.0) actually work.
+
+**Sub-task decomposition** (final time log):
+- A. Design upload_pdfs (linked_file + imported_file modes) — 15min ✅
+- B. Implement upload_pdfs in zotero_api.py — 45min ✅
+- C. Wire into push_items (replace `pass` with real upload) — 15min ✅
+- D. Extend push_downloaded in search_and_import.py — 10min ✅
+- E. Bug fix: list_collection_notes return statement — 5min ✅
+- F. Encoding cleanup (fix truncated UTF-8 in pa_cli/*.py) — 10min ✅
+- G. Write 16 tests for upload_pdfs + integration — 30min ✅
+- H. Update 1 search_and_import test for new dict shape — 5min ✅
+- I. CHANGELOG + ROADMAP + README sync — 10min ✅
+- J. Commit + force-push + tag + release — 10min ✅
+
+**Files changed**:
+- `pa_cli/zotero_api.py` (+`upload_pdfs` function + `push_items` PDF step + bug fix on `list_collection_notes`)
+- `pa_cli/search_and_import.py` (`push_downloaded` extended + `run_search_and_import` passes `pdf_dir`)
+- `pa_cli/__init__.py` (version 3.9.17.0 → 3.9.17.1)
+- `pyproject.toml` (version bump)
+- `test_output/test_zotero_upload_pdfs.py` (NEW, 16KB, 16 tests)
+- `test_output/test_search_and_import.py` (1 test updated for new dict shape)
+- `test_output/_fix_truncated.py` (NEW, auto-fixer utility for GBK encoding)
+- `CHANGELOG.md` (this entry)
+- `ROADMAP.md` (v3.9.17.1 release row + [P2-17.1] Status: done)
+- `README.md` (update "End-to-end research workflow" section to mention auto PDF upload)
+
+**No new external dependencies**: pyzotero already in
+`requirements-optional.txt` (v3.9.15.0); `upload_pdfs` only uses
+pyzotero's existing `item_template` + `create_items` +
+`attachment_simple` APIs.
+
+**Deferred to v3.9.17.2+** ([P3-29.1]):
+- `--with-obsidian` flag for `pa search-and-import` (one-line
+  Obsidian sync to create matching project page)
+- Auto-cross-link master note URL to Obsidian `index.md`
+
 ## [3.9.17.0] - 2026-08-18
 
 ### Added — `[P3-28.1] pa search-and-import — end-to-end research workflow`

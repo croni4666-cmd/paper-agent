@@ -190,6 +190,17 @@ metadata-only push. PDF attachment via `item.attachment_simple()` is a
 follow-up because it requires separate API call + Zotero file storage
 quota (~300MB free).
 
+**PDF upload SHIPPED in v3.9.17.1** ([P2-17.1]): `pa zotero push --pdf-dir ./pdfs/`
+now actually uploads PDFs as Zotero attachments. Two modes:
+- `linked_file` (default): PDF stays at original path; Zotero just
+  stores the absolute path. No quota usage.
+- `imported_file`: PDF copies to Zotero's storage dir; uses
+  ~300MB free quota.
+
+`pa search-and-import` also auto-uploads downloaded PDFs to Zotero
+when pushing (no new CLI flag). Example output:
+`pushed=12 skipped=0 failed=0 pdf_uploaded=12 pdf_failed=0`.
+
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
 
 ## Zotero project (v3.9.16.0)
@@ -340,7 +351,7 @@ pa search-and-import \
   search results:  18
   downloaded:      12
   failed:          6
-  Zotero push:     ok  (pushed=12 skipped=0 failed=0)
+  Zotero push:     ok  (pushed=12 skipped=0 failed=0 pdf_uploaded=12 pdf_failed=0)
   Zotero project:  'long-term care'  (created, key=ABC123)
   items added:     12
   master note:     key=DEF456  (created)

@@ -209,22 +209,36 @@ def fetch_and_bucket(
 # ─────────────────────────────────────────────────────────────────
 def push_downloaded(
     downloaded: List[Dict[str, Any]],
+    pdf_dir: Optional[Path] = None,
+    mode: str = "linked_file",
     quiet: bool = False,
 ) -> Dict[str, Any]:
     """Push downloaded papers to Zotero library.
 
     Reuses `pa zotero push` logic (parse_bibtex_for_doi + push_items)
     by writing a temporary Bibtex file from the downloaded list and
-    calling push_items.
+    calling push_items. If `pdf_dir` is set, also uploads matching
+    PDFs as attachments via `pa zotero upload_pdfs` (v3.9.17.1 [P2-17.1]).
+
+    Args:
+        downloaded: list of {key, doi, title, saved_as, ...} from fetch_and_bucket
+        pdf_dir: directory containing PDFs named {key}.pdf (optional,
+                 v3.9.17.1+ — enables PDF attachment upload)
+        mode: 'linked_file' (default) or 'imported_file'
+        quiet: suppress progress
 
     Returns:
-        Dict with pushed/skipped/failed counts + the per-item results.
+        Dict with pushed/skipped/failed counts + n_pdf_uploaded + n_pdf_failed
+        + per-item results
     """
     if not downloaded:
-        return {"n_pushed": 0, "n_skipped": 0, "n_failed": 0, "results": []}
+        return {
+            "n_pushed": 0, "n_skipped": 0, "n_failed": 0,
+            "n_pdf_uploaded": 0, "n_pdf_failed": 0,
+            "results": [],
+        }
 
     # Build a minimal Bibtex file from the downloaded items
-    # Use a temp file because zotero_api.parse_bibtex_for_doi expects a file
     tmp_bib = Path(tempfile.gettempdir()) / f"pa_push_{datetime.now().strftime('%Y%m%d%H%M%S')}.bib"
     try:
         with tmp_bib.open("w", encoding="utf-8") as f:
@@ -238,11 +252,20 @@ def push_downloaded(
         entries = zotero_api.parse_bibtex_for_doi(tmp_bib)
         if not quiet:
             print(f"[search-and-import] pushing {len(entries)} downloaded DOIs to Zotero library...", file=sys.stderr)
-        result = zotero_api.push_items(client=client, bibtex_entries=entries, skip_existing=True)
+        # Pass pdf_dir through to push_items (v3.9.17.1+ PDF upload integration)
+        result = zotero_api.push_items(
+            client=client,
+            bibtex_entries=entries,
+            pdf_dir=pdf_dir,
+            mode=mode,
+            skip_existing=True,
+        )
         if not quiet:
             print(
                 f"[search-and-import] push: pushed={result['n_pushed']} "
-                f"skipped={result['n_skipped']} failed={result['n_failed']}",
+                f"skipped={result['n_skipped']} failed={result['n_failed']} "
+                f"pdf_uploaded={result.get('n_pdf_uploaded', 0)} "
+                f"pdf_failed={result.get('n_pdf_failed', 0)}",
                 file=sys.stderr,
             )
         return result
@@ -529,6 +552,8 @@ def run_search_and_import(
         try:
             push_results = push_downloaded(
                 fetch_result["downloaded"],
+                pdf_dir=out_dir,  # v3.9.17.1+ PDF upload
+                mode="linked_file",
                 quiet=quiet,
             )
             result["steps"]["push"] = {
@@ -536,6 +561,8 @@ def run_search_and_import(
                 "n_pushed": push_results["n_pushed"],
                 "n_skipped": push_results["n_skipped"],
                 "n_failed": push_results["n_failed"],
+                "n_pdf_uploaded": push_results.get("n_pdf_uploaded", 0),
+                "n_pdf_failed": push_results.get("n_pdf_failed", 0),
             }
         except Exception as e:
             result["steps"]["push"] = {"status": "error", "error": str(e)}

@@ -145,7 +145,12 @@ class TestPushDownloaded:
     def test_no_downloaded_returns_zero(self):
         with patch("builtins.print"):
             result = sai.push_downloaded([], quiet=True)
-        assert result == {"n_pushed": 0, "n_skipped": 0, "n_failed": 0, "results": []}
+        assert result["n_pushed"] == 0
+        assert result["n_skipped"] == 0
+        assert result["n_failed"] == 0
+        assert result["n_pdf_uploaded"] == 0
+        assert result["n_pdf_failed"] == 0
+        assert result["results"] == []
 
     def test_pushes_downloaded_dois(self, monkeypatch):
         downloaded = [
@@ -161,6 +166,7 @@ class TestPushDownloaded:
         ]
         fake_api.push_items.return_value = {
             "n_total": 2, "n_pushed": 2, "n_skipped": 0, "n_failed": 0,
+            "n_pdf_uploaded": 0, "n_pdf_failed": 0,
             "results": [
                 {"key": "k1", "doi": "10.1/k1", "status": "pushed", "zotero_key": "ZK1"},
                 {"key": "k2", "doi": "10.1/k2", "status": "pushed", "zotero_key": "ZK2"},
@@ -172,6 +178,7 @@ class TestPushDownloaded:
         assert result["n_pushed"] == 2
         assert result["n_skipped"] == 0
         assert result["n_failed"] == 0
+        assert result["n_pdf_uploaded"] == 0
 
 
 # ─────────────────────────────────────────────────────────────────
