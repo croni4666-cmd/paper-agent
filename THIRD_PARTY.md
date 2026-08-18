@@ -59,6 +59,7 @@ this is a known gap. A canonical dependency list is being prepared.
 | `python-dotenv`        | 1.2.2          | BSD-3-Clause  | .env loader                            |
 | `PyYAML`               | 6.0.3          | MIT           | YAML parser                            |
 | `tiktoken`             | 0.13.0         | MIT           | OpenAI tokenizer (for LLM rerank only) |
+| `pyzotero`             | 1.14.0         | BSD-3-Clause  | Zotero Web API client (optional, for `pa zotero push` / `pa zotero search` / `pa zotero sync` only) |
 
 **Note on optional engines**: The project also conditionally uses
 `sentence-transformers`, `transformers`, `torch`, `openai`,
@@ -106,17 +107,41 @@ environment can find them.
 > Preview build adding Zotero handoff (`instsci zotero sync
 > --attachment-mode linked_file`) and public/private evidence separation
 > (`public-audit`). Useful as inspiration for our own Zotero sync
-> design ([P2-17] / [P2-18] in ROADMAP, currently deferred).
+> design — and as of **v3.9.15.0**, paper-agent ships its own
+> [P2-17] `pa zotero push` and [P2-18] `pa zotero sync` as the
+> native equivalent (see "Zotero client" section below).
 
 - **GitHub**: https://github.com/deathcats4/instsci-workflow
 - **License**: MIT (modified preview)
-- **When to use**: if you need Zotero + InstSci integration immediately
-  and don't want to wait for our [P2-17] / [P2-18] (gated on [P2-16]
-  seeing real use).
+- **When to use**: if you need Zotero + InstSci integration in a
+  single combined workflow (fetch via institutional SSO + Zotero
+  push in one command). If you only need the Zotero half and
+  already have paper-agent installed, use `pa zotero push` instead.
 
 **Disclaimer**: paper-agent does not endorse or warranty these projects.
 They are independent open-source efforts. Use at your own discretion
 and per each project's license terms.
+
+## Zotero client (`pyzotero`)
+
+- **Package**: `pyzotero` 1.14.0
+- **License**: BSD-3-Clause
+- **Source**: https://github.com/urschrei/pyzotero
+- **PyPI**: https://pypi.org/project/pyzotero/
+- **Used by**: `pa zotero push`, `pa zotero search`, `pa zotero sync`
+  (all in `pa_cli/zotero_api.py`, v3.9.15.0+)
+- **NOT used by**: `pa zotero check` (read-only local SQLite, no
+  third-party dep)
+- **Optional install**: `python -m pip install --user pyzotero`
+  (>= 1.14). Only required for the write/search Web API path.
+- **Auth scope**: requires user's own Zotero API key (generated at
+  https://www.zotero.org/settings/keys). paper-agent reads the key
+  from `$ZOTERO_API_KEY` and `$ZOTERO_LIBRARY_ID` env vars ONLY
+  (not `.env`, not any config file, per 留痕 discipline).
+- **Data flow**: all data goes through Zotero's official Web API
+  v3. paper-agent does not proxy, cache, or store your library
+  data anywhere outside your Zotero account + the local SQLite
+  `zotero.sqlite` (read-only).
 
 ## Bench data (academic paper metadata)
 
@@ -143,6 +168,14 @@ incomplete, please open an issue at the upstream repository
 
 ## Version
 
+- **v1.2** (2026-08-18): Added "Zotero client (`pyzotero`)" section
+  listing `pyzotero` 1.14.0 (BSD-3-Clause) used by `pa zotero push` /
+  `pa zotero search` / `pa zotero sync` (v3.9.15.0+). Added `pyzotero`
+  row to the "Embedded / installed dependencies" table. Updated
+  `deathcats4/instsci-workflow` description to reflect that paper-agent
+  now ships its own equivalent Zotero workflow (v3.9.15.0). Updated
+  `instsci` "What paper-agent does better" bullet to mention MCP for
+  fetch (v3.9.14.1+).
 - **v1.1** (2026-08-18): Added "Friendly-neighbor projects" section
   listing `Rimagination/instsci` (288⭐, MIT) and
   `deathcats4/instsci-workflow` (52⭐, MIT modified fork). These are

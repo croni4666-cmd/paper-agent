@@ -2722,3 +2722,208 @@ def jobs_resume(job_id, max_total_sec):
         )
     sys.exit(returncode if returncode > 0 else 0)
 
+
+@main.command()
+@click.option("--corpus", "corpus", required=True, type=click.Path(exists=True),
+              help="Path to Bibtex file (refs.bib). DOIs are extracted.")
+@click.option("--pdf-dir", "pdf_dir", default=None, type=click.Path(),
+              help="Optional PDF directory ({key}.pdf files). PDF upload is currently metadata-only ([P2-17.1] follow-up).")
+@click.option("--mode", "mode", default="linked_file",
+              type=click.Choice(["linked_file", "imported_file"]),
+              help="Attachment mode (default: linked_file, PDF stays at original path).")
+@click.option("--no-skip-existing", "no_skip_existing", is_flag=True,
+              help="If set, RE-push even DOIs already in library. Default skips them (idempotent).")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable summary)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output (just print the summary)")
+def zotero_push(corpus, pdf_dir, mode, no_skip_existing, as_json, quiet):
+    """[P2-17] Push Bibtex entries (+ optional PDFs) to your Zotero library.
+
+    Uses the official Zotero Web API v3 (via `pyzotero` library). API key +
+    library ID must be set via env vars:
+        $ZOTERO_API_KEY       — get at https://www.zotero.org/settings/keys
+        $ZOTERO_LIBRARY_ID    — find yours at the same page (numeric ID, not username)
+
+    NO api key is read from .env file (per留痕 discipline; user exports per session).
+
+    IDEMPOTENT: by default, re-running same corpus does NOT duplicate items.
+    The library is checked first via Zotero's `check_items()` API; only
+    new DOIs are pushed. Use --no-skip-existing to override.
+
+    PDF upload is metadata-only in v3.9.15.0; the --pdf-dir flag is
+    parsed but the actual file upload is tracked as [P2-17.1] follow-up
+    (requires a separate item.attachment_simple() API call after push).
+    """
+    from . import zotero_api
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-push] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    if not quiet and not as_json:
+        click.echo(f"[zotero-push] reading {corpus} ...", err=True)
+
+    entries = zotero_api.parse_bibtex_for_doi(Path(corpus))
+    if not entries:
+        click.echo(f"[zotero-push] no DOIs found in {corpus}", err=True)
+        sys.exit(2)
+
+    if not quiet and not as_json:
+        click.echo(f"[zotero-push] found {len(entries)} entries with DOIs", err=True)
+        click.echo(f"[zotero-push] pushing to Zotero library (id={zotero_api.get_library_id()})...", err=True)
+
+    result = zotero_api.push_items(
+        client=client,
+        bibtex_entries=entries,
+        pdf_dir=Path(pdf_dir) if pdf_dir else None,
+        mode=mode,
+        skip_existing=not no_skip_existing,
+    )
+
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+
+    click.echo(
+        f"[zotero-push] {result['n_total']} entries from corpus\n"
+        f"[zotero-push]   pushed:    {result['n_pushed']:5d}\n"
+        f"[zotero-push]   skipped:   {result['n_skipped']:5d}  (already in library)\n"
+        f"[zotero-push]   failed:    {result['n_failed']:5d}"
+    )
+    if result["n_failed"] > 0:
+        click.echo("[zotero-push] failures (first 5):", err=True)
+        for r in result["results"][:5]:
+            if r.get("status") == "failed":
+                click.echo(
+                    f"[zotero-push]   key={r.get('key', '?')}  doi={r.get('doi', '?')[:40]}  err={r.get('error', '?')[:80]}",
+                    err=True,
+                )
+
+
+@main.command()
+@click.option("--query", "query", required=True,
+              help="Search query (matched against title, creator, year)")
+@click.option("--limit", "limit", default=20, type=int,
+              help="Max results to return (default 20)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable summary)")
+def zotero_search(query, limit, as_json):
+    """[P2-18] Search your Zotero library by title/author/year.
+
+    Uses Zotero Web API v3 `search()` call (qmode=titleCreatorYear).
+    Returns items already in your library that match the query — useful
+    for "do I have any papers on topic X?" before deciding what to fetch.
+
+    Requires:
+        $ZOTERO_API_KEY
+        $ZOTERO_LIBRARY_ID
+    """
+    from . import zotero_api
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-search] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    results = zotero_api.search_library(client, query, limit=limit)
+    if as_json:
+        click.echo(json.dumps(results, ensure_ascii=False, indent=2))
+        return
+    if not results:
+        click.echo(f"[zotero-search] no items match '{query}'")
+        return
+    click.echo(f"[zotero-search] {len(results)} match(es) for '{query}':")
+    for r in results:
+        creators = ", ".join(
+            f"{c.get('name', '?')}" for c in r.get("creators", [])[:3]
+        )
+        click.echo(
+            f"[zotero-search]   {r.get('date', '????')[:4]}  "
+            f"{creators:50s}  {r.get('title', '?')[:60]}"
+        )
+
+
+@main.command()
+@click.option("--corpus", "corpus", default=None, type=click.Path(exists=True),
+              help="Path to Bibtex file. If omitted, only search runs (no check+push).")
+@click.option("--doi", "dois", multiple=True,
+              help="One or more DOIs to check (repeatable). Mutually exclusive with --corpus.")
+@click.option("--query", "query", default=None,
+              help="Optional library search query (matches [P2-18] search)")
+@click.option("--push/--no-push", "do_push", default=True,
+              help="Push new DOIs to library (default yes). --no-push = check + search only.")
+@click.option("--mode", "mode", default="linked_file",
+              type=click.Choice(["linked_file", "imported_file"]),
+              help="Attachment mode for push (default: linked_file)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def zotero_sync(corpus, dois, query, do_push, mode, quiet):
+    """[P2-18] Combined Zotero workflow: check + push + search in one call.
+
+    Workflow:
+        1. (Optional) `pa zotero check` against local zotero.sqlite for
+           instant "do I have these?" without hitting the API
+        2. (Optional) Search your Zotero library for related items
+        3. (Optional) Push new DOIs from corpus to library (idempotent)
+
+    Examples:
+      pa zotero sync --corpus refs.bib
+      pa zotero sync --corpus refs.bib --query "long-term care insurance"
+      pa zotero sync --doi 10.1038/nature12373 --query "warp drive"
+      pa zotero sync --corpus refs.bib --no-push   # check only
+    """
+    from . import zotero_local, zotero_api
+
+    # Step 1: local check (read-only, fast)
+    if corpus or dois:
+        if corpus and dois:
+            click.echo("[zotero-sync] ERROR: --corpus and --doi are mutually exclusive", err=True)
+            sys.exit(2)
+        if corpus:
+            corpus_dois = zotero_local.extract_dois_from_bibtex(Path(corpus))
+        else:
+            corpus_dois = list(dois)
+        if not corpus_dois:
+            click.echo("[zotero-sync] no DOIs to process", err=True)
+            return
+        library = zotero_local.get_library_dois()
+        result = zotero_local.check_corpus(corpus_dois, library_dois=library)
+        n_in = len(result["in_library"])
+        n_out = len(result["not_in_library"])
+        click.echo(
+            f"[zotero-sync] local check: {n_in} in local Zotero / "
+            f"{n_out} not / {len(corpus_dois)} total"
+        )
+
+    # Step 2: library search (if query)
+    if query:
+        try:
+            client = zotero_api.get_client()
+        except (ImportError, ValueError) as e:
+            click.echo(f"[zotero-sync] (search skipped: {e})", err=True)
+        else:
+            results = zotero_api.search_library(client, query, limit=20)
+            click.echo(f"[zotero-sync] library search for '{query}': {len(results)} match(es)")
+            for r in results[:5]:
+                click.echo(f"[zotero-sync]   {r.get('title', '?')[:80]}")
+
+    # Step 3: push (if requested + corpus available)
+    if do_push and corpus:
+        try:
+            client = zotero_api.get_client()
+        except (ImportError, ValueError) as e:
+            click.echo(f"[zotero-sync] push skipped: {e}", err=True)
+            return
+        entries = zotero_api.parse_bibtex_for_doi(Path(corpus))
+        if not entries:
+            click.echo(f"[zotero-sync] no DOIs in {corpus}, nothing to push", err=True)
+            return
+        click.echo(f"[zotero-sync] pushing {len(entries)} new entries to library...", err=True)
+        result = zotero_api.push_items(client=client, bibtex_entries=entries, mode=mode)
+        click.echo(
+            f"[zotero-sync] push done: "
+            f"pushed={result['n_pushed']} skipped={result['n_skipped']} "
+            f"failed={result['n_failed']}"
+        )
+

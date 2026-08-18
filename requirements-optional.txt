@@ -2,6 +2,7 @@
 # These are NOT required for the core `pa search` / `pa fetch` / `pa sample-pool` workflows.
 # Install only if you need the corresponding feature.
 # v3.9.13.3: added MoE router + CNKI + build + review groups (Round 13 audit F-001/002 fixes).
+# v3.9.15.0: added Zotero group (P2-17 `pa zotero push` + P2-18 `pa zotero search/sync`).
 
 # === LLM listwise rerank (pa moe-router --use-llm) ===
 # Requires OpenAI-compatible API endpoint (e.g. local Qwen2.5 or OpenAI cloud)
@@ -64,3 +65,11 @@ brotli>=1.0
 # The MCP server itself is a public third-party package (paper-search-mcp, MIT, 22 free sources).
 # Install is handled by `pa mcp install` which writes the JSON config to your MCP client.
 # No additional Python package needed for paper-agent itself.
+
+# === Zotero Web API (pa zotero push/search/sync) — v3.9.15.0 ===
+# pyzotero 1.14.0+ wraps the Zotero Web API v3.
+# Required for: `pa zotero push` (write to library), `pa zotero search` (Web API search),
+# `pa zotero sync` (combined workflow). `pa zotero check` is local SQLite and needs no extra deps.
+# Auth: set $ZOTERO_API_KEY and $ZOTERO_LIBRARY_ID as env vars (NOT .env, per 留痕 discipline).
+# Install: python -m pip install --user pyzotero
+pyzotero>=1.14

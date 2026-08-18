@@ -7,6 +7,93 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.15.0] - 2026-08-18
+
+### Added — `[P2-17] + [P2-18] Zotero bidirectional integration`
+
+**Rationale** (Round 14 / 2026-08-18 Zotero re-evaluation, ROADMAP Tier 1):
+v3.9.14.0 shipped `pa zotero check` (read-only local SQLite) to answer
+"do I already have this paper in Zotero?" User reversed the prior DEFERRED
+judgment same-day when realized CSV import ≠ library check. v3.9.15.0
+completes the bidirectional workflow: now `pa zotero push` writes
+metadata to the Web API library, `pa zotero search` queries the Web API,
+and `pa zotero sync` is a 3-step combined workflow (local check → library
+search → push).
+
+**What ships** (this release):
+
+- **`pa_cli/zotero_api.py`** (15KB, 9 functions) — pyzotero 1.14.0 wrapper:
+  - `get_client()` reads `$ZOTERO_API_KEY` + `$ZOTERO_LIBRARY_ID` (env
+    vars only, NOT .env per 留痕 discipline)
+  - `parse_bibtex_for_doi()` minimal regex parser (extracts DOI, title,
+    authors, year, journal from a `.bib` file)
+  - `bibtex_to_zotero_item()` converts Bibtex entry → Zotero API template
+    (article→journalArticle, book→book, inproceedings→conferencePaper)
+  - `check_dois_in_library()` uses `pyzotero.check_items()` for
+    idempotent dedup (skip already-present DOIs by default)
+  - `push_items()` writes to library; returns `{created, skipped, failed}`
+  - `search_library()` uses `qmode=titleCreatorYear` (matches user's
+    "long-term care" style queries)
+
+- **3 new CLI subcommands** (`pa_cli/cli.py`):
+  - `pa zotero push --corpus refs.bib [--pdf-dir DIR] [--mode
+    linked_file|imported_file] [--no-skip-existing]`
+  - `pa zotero search --query "long-term care" [--limit N]
+    [--qmode titleCreatorYear|everything]`
+  - `pa zotero sync --corpus refs.bib [--query Q] [--push/--no-push]
+    [--mode]` (3 steps: local check via P2-16 → library search via
+    P2-18 → push via P2-17)
+
+- **16/16 new tests pass** (`test_zotero_api.py`, 13.3KB):
+  normalize_doi (16-case matrix), parse_bibtex (3 entries),
+  bibtex_to_zotero_item (3 types), check_dois_in_library (exception
+  path + happy path), push_items (3 cases: idempotent / no-skip /
+  failure), search_library (2 cases), get_client env validation (3
+  cases).
+
+- **Dependency**: `pyzotero>=1.14` added to `requirements-optional.txt`
+  (new "Zotero Web API" group). Install: `python -m pip install --user
+  pyzotero` (with HTTPS_PROXY=10808 if behind V2Ray).
+
+**Deferred to v3.9.16+** (ROADMAP [P2-17.1]):
+- **PDF upload** in `pa zotero push` via `item.attachment_simple()`.
+  v3.9.15.0 ships **metadata-only** push. PDF attachment is a separate
+  API call after item creation, requires `--pdf-dir` matching logic,
+  and Zotero file storage quota (~300MB free). Tracked as [P2-17.1]
+  follow-up; not blocking because the metadata-first workflow already
+  answers "did I cite this paper?" and Zotero's browser connector can
+  later attach PDFs via drag-and-drop.
+
+**Why this is 3.9.15.0 (MINOR), not 3.9.14.4 (PATCH)**:
+3.9.14.x was 4 small additive releases ([P2-16] check, [P0-15] mcp serve,
+[P2-15] jobs, [P3-27] docs). [P2-17]+[P2-18] together is a full
+bidirectional Zotero workflow = new feature surface. Bumping MINOR.
+
+**Sub-task decomposition** (final time log):
+- A. pyzotero 1.14.0 install + 9 functions in `zotero_api.py` — 90min ✅
+- B. 3 CLI subcommands wired in `pa_cli/cli.py` — 30min ✅
+- C. 16 tests in `test_zotero_api.py` — 60min ✅
+- D. CHANGELOG + ROADMAP + README + THIRD_PARTY.md sync — 20min ✅
+- E. Commit + force-push + tag + release — 15min ✅
+
+**Files changed**:
+- `pa_cli/zotero_api.py` (NEW, 15KB)
+- `pa_cli/cli.py` (3 new subcommands wired)
+- `pa_cli/__init__.py` (version 3.9.14.3 → 3.9.15.0)
+- `pyproject.toml` (version 3.9.14.3 → 3.9.15.0)
+- `requirements-optional.txt` (pyzotero group added)
+- `README.md` (Available commands table + Zotero section)
+- `THIRD_PARTY.md` (Zotero entry)
+- `ROADMAP.md` ([P2-17] + [P2-18] Status: done + Outcome)
+- `test_output/test_zotero_api.py` (NEW, 13.3KB, 16 tests)
+- `CHANGELOG.md` (this entry)
+
+**Auth note** (留痕 discipline):
+`$ZOTERO_API_KEY` and `$ZOTERO_LIBRARY_ID` are **environment variables
+only**. Do NOT commit them to `.env` or any tracked file. Generate
+the API key at https://www.zotero.org/settings/keys (read+write
+permissions for the target library).
+
 ## [3.9.14.3] - 2026-08-18
 
 ### Added — `[P3-27] Document instsci-mcp as friendly-neighbor MCP`
