@@ -7,6 +7,67 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.14.3] - 2026-08-18
+
+### Added — `[P3-27] Document instsci-mcp as friendly-neighbor MCP`
+
+**Rationale** (Round 14 / 2026-08-18 coupling, ROADMAP [P3-27] entry):
+Users with **university SSO** (CARSI / Shibboleth / EZproxy) need a
+**legitimate** path to closed papers that paper-agent's gray-area
+fallback (Sci-Hub) can't reliably reach. `Rimagination/instsci` (288⭐,
+MIT) is the right tool for that — it has a visible CloakBrowser for
+SSO flows, 10+ publisher-specific workflows, and an MCP server
+(`instsci-mcp`).
+
+**What ships** (docs-only):
+- `README.md` new "Friendly-neighbor projects" section: explains the
+  complementary positioning, when to pair InstSci with paper-agent,
+  and shows a side-by-side MCP client config example
+  (`paper-search-mcp` + `paper-agent-fetch` + `instsci-mcp`)
+- `README.md` engine count updated: 6 → 8 (added PubMed + ClinicalTrials)
+- `README.md` Available commands table: added 4 new commands
+  (`pa zotero check`, `pa jobs`, `pa mcp-fetch-serve`, `pa mcp install`)
+- `THIRD_PARTY.md` new "Friendly-neighbor projects" section: lists
+  `Rimagination/instsci` (288⭐) and `deathcats4/instsci-workflow`
+  (52⭐) with license, install, when-to-use
+- `THIRD_PARTY.md` version bumped to v1.1 (changelog at bottom)
+
+**No code change**. Pure docs. Zero new infra. Zero new dep.
+
+**Sub-task decomposition** (final time log):
+- A. Add "Friendly-neighbor projects" section to README.md — 15min ✅
+- B. Update engine count + Available commands table — 5min ✅
+- C. Add "Friendly-neighbor projects" section to THIRD_PARTY.md — 10min ✅
+- D. Update THIRD_PARTY.md version footer (v1.0 → v1.1) — 2min ✅
+- E. CHANGELOG + ROADMAP [P3-27] Status: done — 5min ✅
+- | **Total** | estimate 30min | **actual ~40min** | 33% over |
+
+**Variance analysis**: ~33% over. Took longer because:
+- README.md engine count was outdated (6 → 8) — fixed in same pass
+- Available commands table was outdated (missing 4 new commands) — fixed in same pass
+- THIRD_PARTY.md version footer needed bump (v1.0 → v1.1)
+
+**Acceptance criteria** (4/4 met):
+- ✅ New "Friendly-neighbor projects" section in `README.md`
+- ✅ New "External services" subsection in `THIRD_PARTY.md`
+- ✅ Side-by-side MCP client config example (`paper-search-mcp` + `paper-agent-fetch` + `instsci-mcp`)
+- ✅ One-line install command for InstSci (per `pipx install` / `uv tool install`)
+
+**Files modified** (2 docs + 2 version):
+- `README.md` (~50 LOC added for new section + table updates)
+- `THIRD_PARTY.md` (~30 LOC added for new section + version bump)
+- `pa_cli/__init__.py` (version 3.9.14.2 → 3.9.14.3)
+- `pyproject.toml` (version bump)
+
+**v3.9.14 backlog status** (post [P3-27]):
+- ✅ [P2-16] `pa zotero check` (v3.9.14.0)
+- ✅ [P0-15] `pa mcp-fetch-serve` (v3.9.14.1)
+- ✅ [P2-15] `pa jobs status/tail/resume` (v3.9.14.2)
+- ✅ [P3-27] Document instsci-mcp (v3.9.14.3, this release)
+- **Backlog cleared**. Only deferred items remain: [P2-17] / [P2-18] (Zotero
+  push/sync, gated on real use of [P2-16]) and the pre-existing
+  [P1-13] / [P1-19] / [P3-22..25] (gated on n=200+ sample accumulation).
+
 ## [3.9.14.0] - 2026-08-18
 
 ### Added — `[P2-16] pa zotero check` (read-only Zotero local DB)

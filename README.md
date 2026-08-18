@@ -1,9 +1,10 @@
 # paper-agent
 
 Academic paper search, fetch, and literature-review synthesis CLI.
-6 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI) + 1 opt-in
-engine (CORE, local-only) + pa judge relevance collection + pa build manuscript
-pipeline + Tier 2 research-topic project management.
+8 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI, PubMed,
+ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
+collection + pa build manuscript pipeline + Tier 2 research-topic project
+management + Zotero local DB check + batch job manager (status/tail/resume).
 
 **Note on CORE engine** (v3.9.11.1+): CORE code is isolated from the public
 repo. After cloning, run once:
@@ -64,7 +65,7 @@ search results       pa cite-check        pa fetch-batch
 
 | Command | What | Effort |
 |---|---|---|
-| `pa search` | 6-engine search | — |
+| `pa search` | 8-engine search | — |
 | `pa fetch` | Single PDF download | — |
 | `pa fetch-batch` | Batch PDF from Bibtex | 1 call |
 | `pa cite-check` | Validate `[@key]` in skeleton | Pre-build check |
@@ -75,6 +76,10 @@ search results       pa cite-check        pa fetch-batch
 | `pa dedup-strict` | Fuzzy + arxiv dedup | Stricter than default DOI-only |
 | `pa search-saved` | Named search presets | Skip retyping flags |
 | `pa project` | Per-topic corpus management | Phase 1 done; Phase 2 needs user input |
+| `pa zotero check` | Read-only Zotero local DB check | "Do I already have this DOI?" |
+| `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
+| `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
+| `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
 
 ## Performance (v3.9.10.2 honest, n=50 single 30/20 holdout)
 
@@ -86,6 +91,67 @@ search results       pa cite-check        pa fetch-batch
 | BGE-reranker | 0.6952 | **DEPRECATED** (Wilcoxon p=0.0008, significantly worse) |
 | LambdaMART 100 trees (LTR) | 0.7679 | **DEPRECATED at n<200** (overfit) |
 | MoE router macro F1 | 0.5173 | Honest n=47 estimate; needs more data |
+
+## Friendly-neighbor projects (complementary, not competing)
+
+paper-agent focuses on **search + rerank + fetch (gray-area fallback)**. For
+some workflows, a complementary tool is the friendlier path. We don't replace
+these — we do different things well.
+
+### `Rimagination/instsci` (288⭐, MIT)
+
+> OA-first + browser-backed institutional access for academic papers.
+> Agent-friendly MCP server + visible CloakBrowser for SSO flows.
+
+**Why pair it with paper-agent**:
+- If you have **university SSO** (CARSI / Shibboleth / EZproxy / WebVPN), InstSci
+  is the **legitimate** way to download closed papers (Elsevier, Wiley, Springer,
+  IEEE, Nature, etc.) — these are the publishers paper-agent's gray-area
+  channels can't reliably reach
+- InstSci has an **MCP server** (`instsci-mcp`) that drives the same
+  fetch workflows paper-agent does, but routed through your institution
+- Paper-agent is a **better search + rerank engine** (8 engines, LTR, MoE);
+  InstSci is a **better institutional fetch** (10+ publisher workflows)
+
+**Use it for**: closed papers you can legally access via your school's
+subscription; batch institutional downloads with SSO 2FA.
+
+**Side-by-side config** (MCP client with both):
+```json
+{
+  "mcpServers": {
+    "paper-search-mcp": {
+      "command": "uvx",
+      "args": ["paper-search-mcp"]
+    },
+    "paper-agent-fetch": {
+      "command": "python",
+      "args": ["-m", "pa_cli.mcp_fetch"]
+    },
+    "instsci-mcp": {
+      "command": "uvx",
+      "args": ["instsci-mcp"]
+    }
+  }
+}
+```
+
+Now Codex / Claude Code can choose: search with `paper-search-mcp` (broad,
+free), gray-area fetch with `paper-agent-fetch` (Sci-Hub fallback), or
+institutional fetch with `instsci-mcp` (legitimate, requires SSO).
+
+**Install InstSci**: `pipx install git+https://github.com/Rimagination/instsci.git`
+or `uv tool install git+https://github.com/Rimagination/instsci.git`
+
+**`deathcats4/instsci-workflow`** (52⭐, MIT, modified fork):
+- Adds **Zotero handoff** (`instsci zotero sync --attachment-mode linked_file`)
+- Adds **public/private evidence separation** (`public-audit`)
+- Useful as inspiration for our own Zotero sync design ([P2-17] / [P2-18]
+  in ROADMAP, deferred until [P2-16] sees real use)
+
+See `THIRD_PARTY.md` for the full third-party notice including InstSci.
+
+
 
 ## Known limitations
 
