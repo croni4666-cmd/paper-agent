@@ -2400,3 +2400,134 @@ def sample_pool_audit(limit, as_json):
         click.echo(f"{r['ts'][:19]}  {r['op']:10s} target={r.get('target') or '-':24s} session={r.get('source_session', '-')}")
         if r.get("details"):
             click.echo(f"    {json.dumps(r['details'], ensure_ascii=False)}")
+
+
+@main.command()
+@click.option("--corpus", "corpus", default=None,
+              help="Path to Bibtex file (refs.bib). If omitted, expects DOIs via --doi.")
+@click.option("--doi", "dois", multiple=True,
+              help="One or more DOIs to check (repeatable). Mutually exclusive with --corpus.")
+@click.option("--zotero-db", "zotero_db", default=None,
+              help="Explicit path to zotero.sqlite (else $ZOTERO_LOCAL_DB or auto-detect)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable summary)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output (just print the summary)")
+def zotero_check(corpus, dois, zotero_db, as_json, quiet):
+    """[P2-16] Check which DOIs in a corpus are already in your local Zotero library.
+
+    READ-ONLY: opens zotero.sqlite in `mode=ro` (writes impossible even on bug).
+    NO API key, NO network, NO cloud. The only state read is your local Zotero DB.
+
+    Use case: after `pa fetch-pdf-batch` returns N papers, run this to filter
+    out DOIs you already have in your Zotero library, so you can focus the
+    lit review on new papers.
+
+    Auto-detects Zotero DB on macOS / Linux (`~/Zotero/zotero.sqlite`) and
+    Windows (`~/Zotero/Profiles/*/zotero.sqlite`). Override with `--zotero-db`
+    or $ZOTERO_LOCAL_DB env var.
+
+    Examples:
+      pa zotero check --corpus refs.bib
+      pa zotero check --doi 10.1038/nature12373 --doi 10.1126/science.1259855
+      pa zotero check --corpus refs.bib --json > check.json
+      pa zotero check --corpus refs.bib --zotero-db "D:\\Zotero\\zotero.sqlite"
+    """
+    from . import zotero_local
+
+    # Resolve DB path
+    db_path = None
+    if zotero_db:
+        from pathlib import Path as _P
+        db_path = _P(zotero_db)
+    if db_path is None:
+        db_path = zotero_local.find_zotero_db()
+    if db_path is None:
+        click.echo(
+            "[zotero-check] ERROR: Zotero local DB not found. "
+            "Tried: $ZOTERO_LOCAL_DB, ~/Zotero/zotero.sqlite (macOS/Linux), "
+            "~/Zotero/Profiles/*/zotero.sqlite (Windows). "
+            "Use --zotero-db to specify explicitly.",
+            err=True,
+        )
+        sys.exit(2)
+
+    # Resolve corpus DOIs
+    if corpus and dois:
+        click.echo(
+            "[zotero-check] ERROR: --corpus and --doi are mutually exclusive.",
+            err=True,
+        )
+        sys.exit(2)
+
+    if corpus:
+        from pathlib import Path as _P
+        corpus_path = _P(corpus)
+        if not corpus_path.exists():
+            click.echo(f"[zotero-check] ERROR: corpus file not found: {corpus}", err=True)
+            sys.exit(2)
+        corpus_dois = zotero_local.extract_dois_from_bibtex(corpus_path)
+        if not corpus_dois:
+            click.echo(
+                f"[zotero-check] WARNING: no DOIs found in {corpus}. "
+                f"Expected entries with `doi = {{...}}` or `doi = \"...\"` fields.",
+                err=True,
+            )
+    elif dois:
+        corpus_dois = list(dois)
+    else:
+        click.echo(
+            "[zotero-check] ERROR: must provide either --corpus <refs.bib> or --doi <DOI>.",
+            err=True,
+        )
+        sys.exit(2)
+
+    if not quiet and not as_json:
+        click.echo(
+            f"[zotero-check] Zotero DB: {db_path}\n"
+            f"[zotero-check] corpus size: {len(corpus_dois)}",
+            err=True,
+        )
+
+    # Read library + compare
+    library = zotero_local.get_library_dois(db_path=db_path)
+    result = zotero_local.check_corpus(corpus_dois, library_dois=library)
+
+    # Output
+    if as_json:
+        click.echo(json.dumps(
+            {
+                "zotero_db": str(db_path),
+                "library_doi_count": len(library),
+                "corpus_size": len(corpus_dois),
+                "in_library": result["in_library"],
+                "not_in_library": result["not_in_library"],
+                "invalid_doi": result["invalid_doi"],
+                "duplicates_in_corpus": result["duplicates_in_corpus"],
+                "summary": {
+                    "in_library": len(result["in_library"]),
+                    "not_in_library": len(result["not_in_library"]),
+                    "invalid_doi": len(result["invalid_doi"]),
+                    "duplicates_in_corpus": len(result["duplicates_in_corpus"]),
+                },
+            },
+            indent=2,
+            ensure_ascii=False,
+        ))
+        return
+
+    n_in = len(result["in_library"])
+    n_out = len(result["not_in_library"])
+    n_inv = len(result["invalid_doi"])
+    n_dup = len(result["duplicates_in_corpus"])
+    n_total = n_in + n_out
+    pct = (n_in / n_total * 100) if n_total else 0.0
+
+    click.echo(
+        f"[zotero-check] {n_total} valid DOIs in corpus\n"
+        f"[zotero-check]   in_library:    {n_in:5d}  ({pct:5.1f}%)\n"
+        f"[zotero-check]   not_in_library:{n_out:5d}\n"
+        f"[zotero-check]   invalid_doi:   {n_inv:5d}  (unparseable inputs)\n"
+        f"[zotero-check]   duplicates:    {n_dup:5d}  (same DOI in corpus multiple times)\n"
+        f"[zotero-check] library size: {len(library)} DOIs"
+    )
+
