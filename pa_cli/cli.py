@@ -2531,3 +2531,32 @@ def zotero_check(corpus, dois, zotero_db, as_json, quiet):
         f"[zotero-check] library size: {len(library)} DOIs"
     )
 
+
+@main.command()
+@click.option("--debug", is_flag=True, help="Verbose logging (default quiet)")
+def mcp_fetch_serve(debug):
+    """[P0-15] Run the pa fetch MCP server over stdio JSON-RPC.
+
+    Exposes 2 tools to MCP clients (Codex / Claude Code / Cursor / etc.):
+      - pa_fetch(doi, prefer, use_cache)
+      - pa_batch_fetch(dois, output_dir, prefer)
+
+    Same trust boundary as `pa fetch` CLI invocation. NO api keys / passwords
+    accepted through this MCP (would have to go through existing CLI env vars).
+
+    Client config (paste into your MCP client's config file):
+      {
+        "mcpServers": {
+          "paper-agent-fetch": {
+            "command": "python",
+            "args": ["-m", "pa_cli.mcp_fetch"]
+          }
+        }
+      }
+    """
+    import logging as _logging
+    if debug:
+        _logging.getLogger("pa.mcp_fetch").setLevel(_logging.DEBUG)
+    from . import mcp_fetch
+    mcp_fetch.main()
+
