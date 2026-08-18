@@ -1,18 +1,31 @@
-"""pa_cli.zotero_api - Zotero Web API wrapper (v3.9.15.0, [P2-17] + [P2-18])
+"""pa_cli.zotero_api - Zotero Web API wrapper (v3.9.16, [P2-17] + [P2-18] + [P3-28])
 
-Implements Zotero write + library search via the official Zotero Web API v3,
-wrapped by the `pyzotero` library (MIT, well-maintained).
+Implements Zotero write + library search + collection-as-project
+management via the official Zotero Web API v3, wrapped by the `pyzotero`
+library (MIT, well-maintained).
 
 **What ships**:
-- `pa zotero push` — push Bibtex entries + PDFs to user's Zotero library
-- `pa zotero sync` — combine [P2-16] check + [P2-17] push + library search
-- `pa zotero search` — search user's existing Zotero library
+
+*`pa zotero push` ([P2-17], v3.9.15.0)*:
+- Push Bibtex entries + PDFs to user's Zotero library
+
+*`pa zotero search` ([P2-18], v3.9.15.0)*:
+- Search user's existing Zotero library
+
+*`pa zotero sync` ([P2-18], v3.9.15.0)*:
+- Combine [P2-16] check + [P2-17] push + library search
+
+*`pa zotero project` ([P3-28], v3.9.16) — NEW*:
+- `create` / `list` / `status` / `note` — collection-as-research-project
+- `search` — cross-collection search
+- per-project master note attached to collection
 
 **Design constraints** (per留痕 / AGPL discipline):
 - API key is read from `$ZOTERO_API_KEY` env var ONLY (NOT from `.env` per
   留痕 discipline; user exports per session)
 - Idempotent: re-running same corpus does not duplicate items (DOI dedup
   via `check_items()` before `create_items()`)
+- `create_collection` is idempotent by name (case-insensitive)
 - `linked_file` mode (default): PDF stays at original path, Zotero just
   stores the path. NO file copy. Same as `instsci zotero sync
   --attachment-mode linked_file`.
@@ -361,4 +374,289 @@ def search_library(
             "DOI": item.get("DOI", ""),
             "itemType": item.get("itemType", ""),
         })
+    return out
+
+
+# ─────────────────────────────────────────────────────────────────
+# Collections (project-as-collection) — v3.9.16 [P3-28]
+# ─────────────────────────────────────────────────────────────────
+def list_collections(client: "Zotero", top_only: bool = True) -> List[Dict[str, Any]]:
+    """List collections (= research projects) in user's Zotero library.
+
+    Args:
+        client: pyzotero.Zotero client
+        top_only: if True, return only top-level collections (skip sub-collections)
+
+    Returns:
+        List of {key, name, parentCollection, numItems, numCollections, version}
+        dicts. Sorted by name (case-insensitive).
+    """
+    try:
+        if top_only:
+            raw = client.collections_top()
+        else:
+            raw = client.collections()
+    except Exception:
+        return []
+    out = []
+    for c in raw:
+        data = c.get("data", c)  # pyzotero sometimes wraps in 'data'
+        out.append({
+            "key": data.get("key", ""),
+            "name": data.get("name", ""),
+            "parentCollection": data.get("parentCollection", False),
+            "numItems": data.get("numItems", 0),
+            "numCollections": data.get("numCollections", 0),
+            "version": data.get("version", 0),
+        })
+    out.sort(key=lambda x: x["name"].lower())
+    return out
+
+
+def find_collection_by_name(
+    client: "Zotero",
+    name: str,
+    parent_key: Optional[str] = None,
+) -> Optional[Dict[str, Any]]:
+    """Find a top-level collection by exact name. Returns the collection dict
+    or None if not found.
+
+    Case-insensitive match. For nested collections, pass parent_key to scope
+    the search to a specific parent.
+    """
+    if not name.strip():
+        return None
+    needle = name.strip().lower()
+    for coll in list_collections(client, top_only=False):
+        if coll["name"].lower() == needle:
+            if parent_key is None or coll.get("parentCollection") == parent_key:
+                return coll
+    return None
+
+
+def create_collection(
+    client: "Zotero",
+    name: str,
+    parent_key: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Create a new Zotero collection (= research project).
+
+    Args:
+        client: pyzotero.Zotero client
+        name: collection name (will be used as the project topic name)
+        parent_key: optional parent collection key (for nested projects)
+
+    Returns:
+        Dict with {status, key, name, error?}:
+          - status='created' on success with key
+          - status='exists' if collection with same name already exists
+          - status='error' on API error
+
+    **Idempotency**: returns status='exists' if a collection with the
+    same name already exists (at the same level). Safe to re-run.
+    """
+    name = (name or "").strip()
+    if not name:
+        return {"status": "error", "error": "empty collection name", "name": ""}
+
+    # Check if already exists (idempotent)
+    existing = find_collection_by_name(client, name, parent_key)
+    if existing is not None:
+        return {
+            "status": "exists",
+            "key": existing["key"],
+            "name": existing["name"],
+            "numItems": existing["numItems"],
+        }
+
+    payload = [{"name": name}]
+    if parent_key:
+        payload[0]["parentCollection"] = parent_key
+    try:
+        result = client.create_collections(payload)
+        # pyzotero returns [{"successful": {"key": ..., "data": {...}}}] or
+        # [{"failed": {...}}]
+        if not result:
+            return {"status": "error", "error": "empty response from create_collections", "name": name}
+        first = result[0]
+        if "successful" in first:
+            return {
+                "status": "created",
+                "key": first["successful"].get("key", ""),
+                "name": name,
+            }
+        elif "failed" in first:
+            err = first["failed"]
+            return {
+                "status": "error",
+                "error": str(err)[:300],
+                "name": name,
+            }
+        else:
+            return {"status": "error", "error": f"unexpected response: {str(first)[:300]}", "name": name}
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": f"{type(e).__name__}: {str(e)[:200]}",
+            "name": name,
+        }
+
+
+def get_collection_items(client: "Zotero", collection_key: str) -> List[Dict[str, Any]]:
+    """Get all items in a Zotero collection.
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_key: the collection's Zotero key
+
+    Returns:
+        List of {key, title, creators, date, DOI, itemType} dicts.
+        Sorted by date (descending), then title.
+    """
+    if not collection_key:
+        return []
+    try:
+        raw = client.collection_items(collection_key)
+    except Exception:
+        return []
+    out = []
+    for item in raw:
+        data = item.get("data", item)
+        # Filter out attachments/notes (we only want top-level bibliographic items)
+        if data.get("itemType") in ("attachment", "note"):
+            continue
+        out.append({
+            "key": data.get("key", ""),
+            "title": data.get("title", "(no title)"),
+            "creators": data.get("creators", []),
+            "date": data.get("date", ""),
+            "DOI": data.get("DOI", ""),
+            "itemType": data.get("itemType", ""),
+        })
+    # Sort by date desc, then title
+    out.sort(key=lambda x: (x.get("date", ""), x.get("title", "").lower()), reverse=True)
+    return out
+
+
+def add_items_to_collection(
+    client: "Zotero",
+    item_keys: List[str],
+    collection_key: str,
+) -> Dict[str, Any]:
+    """Add existing Zotero items to a collection.
+
+    Args:
+        client: pyzotero.Zotero client
+        item_keys: list of Zotero item keys to add
+        collection_key: target collection key
+
+    Returns:
+        Dict with {n_added, n_failed, results: [...]}
+    """
+    if not item_keys or not collection_key:
+        return {"n_added": 0, "n_failed": 0, "results": []}
+    results = []
+    n_added = 0
+    n_failed = 0
+    # pyzotero doesn't have a direct "add to collection" method; we update
+    # each item's collections field
+    for k in item_keys:
+        try:
+            item = client.item(k)
+            data = item.get("data", item)
+            existing = set(data.get("collections", []))
+            existing.add(collection_key)
+            data["collections"] = list(existing)
+            client.update_item(item)
+            n_added += 1
+            results.append({"key": k, "status": "added"})
+        except Exception as e:
+            n_failed += 1
+            results.append({"key": k, "status": "failed", "error": str(e)[:200]})
+    return {"n_added": n_added, "n_failed": n_failed, "results": results}
+
+
+def create_collection_note(
+    client: "Zotero",
+    collection_key: str,
+    title: str,
+    content: str,
+) -> Dict[str, Any]:
+    """Create a note attached to a Zotero collection (= project master note).
+
+    In Zotero, collection-level notes are 'note' items with
+    itemType='note' and the collection in their 'collections' field.
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_key: target collection key
+        title: note title (e.g. "long-term care — research note")
+        content: note content (HTML or plain text — Zotero stores HTML)
+
+    Returns:
+        Dict with {status, key, title, error?}
+    """
+    if not collection_key or not title:
+        return {"status": "error", "error": "missing collection_key or title"}
+    # Zotero notes use HTML
+    if not content.lstrip().startswith("<"):
+        # Plain text → wrap in <pre> for whitespace preservation
+        body = content.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        content = f"<h1>{title}</h1>\n<pre>{body}</pre>"
+    payload = [{
+        "itemType": "note",
+        "title": title,
+        "note": content,
+        "collections": [collection_key],
+        "tags": [{"tag": "paper-agent-project-note"}],
+    }]
+    try:
+        result = client.create_items(payload)
+        if not result:
+            return {"status": "error", "error": "empty response"}
+        first = result[0]
+        if "successful" in first:
+            return {
+                "status": "created",
+                "key": first["successful"].get("key", ""),
+                "title": title,
+            }
+        elif "failed" in first:
+            return {"status": "error", "error": str(first["failed"])[:300], "title": title}
+        return {"status": "error", "error": f"unexpected: {str(first)[:300]}", "title": title}
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": f"{type(e).__name__}: {str(e)[:200]}",
+            "title": title,
+        }
+
+
+def list_collection_notes(
+    client: "Zotero",
+    collection_key: str,
+) -> List[Dict[str, Any]]:
+    """List all notes attached to a Zotero collection.
+
+    Returns:
+        List of {key, title, note (HTML), version, dateModified}
+    """
+    if not collection_key:
+        return []
+    try:
+        items = client.collection_items(collection_key)
+    except Exception:
+        return []
+    out = []
+    for item in items:
+        data = item.get("data", item)
+        if data.get("itemType") == "note":
+            out.append({
+                "key": data.get("key", ""),
+                "title": data.get("title", ""),
+                "note": data.get("note", ""),
+                "dateModified": data.get("dateModified", ""),
+                "version": data.get("version", 0),
+            })
+    out.sort(key=lambda x: x.get("dateModified", ""), reverse=True)
     return out

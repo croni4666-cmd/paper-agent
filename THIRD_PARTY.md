@@ -143,6 +143,26 @@ and per each project's license terms.
   data anywhere outside your Zotero account + the local SQLite
   `zotero.sqlite` (read-only).
 
+## Obsidian (v3.9.16.0)
+
+- **Used by**: `pa obsidian` (`pa_cli/obsidian.py`, v3.9.16.0+)
+- **NOT a software dep**: we only write Markdown files to a directory
+  inside your existing Obsidian vault. The Obsidian app itself is
+  not required to install — but you do need to point Obsidian at the
+  same vault root to view the files.
+- **Config**: `$PAPER_AGENT_OBSIDIAN_VAULT` env var (NOT `.env`, per
+  留痕 discipline) — must point to an existing vault root.
+- **Sub-folder**: `0-Research/` (default; configurable via
+  `$PAPER_AGENT_OBSIDIAN_SUBFOLDER`).
+- **Files written**: `Inbox/*.md`, `Projects/<slug>/{index.md,
+  ideas.md, notes/*.md, synthesis.md}`, `README.md` — all plain
+  Markdown with YAML frontmatter.
+- **Auth scope**: none. We do not read your vault back; we only
+  write. You can `git diff` the vault to audit any changes.
+
+**Obsidian is a registered trademark of Obsidian.md. This module is
+not affiliated with or endorsed by the Obsidian project.**
+
 ## Bench data (academic paper metadata)
 
 The `bench/` directory contains academic paper metadata (DOIs, titles,
@@ -168,6 +188,11 @@ incomplete, please open an issue at the upstream repository
 
 ## Version
 
+- **v1.3** (2026-08-18): Added "Obsidian" section explaining the
+  `$PAPER_AGENT_OBSIDIAN_VAULT` config + `0-Research/` sub-folder
+  layout. The `pa obsidian` module (v3.9.16.0+) writes Markdown files
+  to the user's existing Obsidian vault; Obsidian app itself is NOT
+  a dep. Obsidian trademark notice added.
 - **v1.2** (2026-08-18): Added "Zotero client (`pyzotero`)" section
   listing `pyzotero` 1.14.0 (BSD-3-Clause) used by `pa zotero push` /
   `pa zotero search` / `pa zotero sync` (v3.9.15.0+). Added `pyzotero`

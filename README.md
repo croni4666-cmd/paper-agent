@@ -80,6 +80,8 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero push` | Write to Zotero Web API library | pyzotero, idempotent via DOI dedup |
 | `pa zotero search` | Query Zotero Web API library | "long-term care" style qmode |
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
+| `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
+| `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
@@ -186,6 +188,109 @@ URI makes writes impossible at SQLite level, verified by test.
 metadata-only push. PDF attachment via `item.attachment_simple()` is a
 follow-up because it requires separate API call + Zotero file storage
 quota (~300MB free).
+
+See `THIRD_PARTY.md` for the full third-party notice including InstSci.
+
+## Zotero project (v3.9.16.0)
+
+A "project" in paper-agent is a **Zotero collection** (= folder). After
+`pa zotero push` populates your library, organize by topic with
+`pa zotero project create`:
+
+```bash
+# 1. Create a project (= Zotero collection, idempotent)
+pa zotero project create --name "long-term care"
+
+# 2. Push papers to your library (existing [P2-17] workflow)
+pa zotero push --corpus refs.bib
+
+# 3. Attach papers to the project
+pa zotero project add --name "long-term care" --corpus refs.bib
+
+# 4. Attach a master note (= research log + synthesis)
+pa zotero project note --name "long-term care" --content-file note.md
+pa zotero project note --name "long-term care" --append "2026-08-18: read 5 papers on X"
+
+# 5. Browse
+pa zotero project list
+pa zotero project status --name "long-term care"
+pa zotero project search --query "long-term care insurance"
+```
+
+**All subcommands**: `create` / `list` / `status` / `note` / `add` / `search`.
+
+**Idempotent**: `create` returns the existing key if a collection with
+the same name already exists. Safe to re-run in scripts.
+
+**Master note**: attached to the collection as a regular Zotero note
+(HTML, supports `<pre>` whitespace preservation). `--append` mode
+appends a timestamped line to the latest master note (creates one
+if missing).
+
+## Obsidian research sub-vault (v3.9.16.0)
+
+Manage research projects, directions, and unformed thoughts in your
+existing Obsidian vault. We do NOT create a full vault template (you
+already have one) — we add a `0-Research/` sub-folder.
+
+**Setup** (one-time):
+```bash
+# Windows + GTD vault example
+setx PAPER_AGENT_OBSIDIAN_VAULT "G:\Todo list\Todo List"
+
+# Per-session:
+# $env:PAPER_AGENT_OBSIDIAN_VAULT = "G:\Todo list\Todo List"
+
+pa obsidian init   # creates 0-Research/ + Inbox/ + Projects/ + README.md
+```
+
+**Layout** (auto-created by `pa obsidian init`):
+```
+<vault>/0-Research/
+├── Inbox/                  # uncategorized thoughts
+│   └── YYYY-MM-DD_HHMMSS_<slug>.md
+└── Projects/
+    └── <project-slug>/
+        ├── index.md        # project home: topic, direction, question
+        ├── ideas.md        # raw / unformed thoughts
+        ├── notes/          # atomic notes (one concept per file)
+        └── synthesis.md    # cross-paper synthesis
+```
+
+**Workflow**:
+```bash
+# Project
+pa obsidian project create --name "long-term care" \
+    --research-question "How does public LTCI affect family caregivers?" \
+    --direction "empirical microeconomics, China policy"
+
+pa obsidian project thought --name "long-term care" --content "Wang 2020 has good ID but small sample"
+pa obsidian project note --name "long-term care" --type reading \
+    --content "Wang (2020) finds X. Key insight: pilot cities had 12% reduction in family caregiver burden."
+pa obsidian project list
+pa obsidian project status --name "long-term care"
+
+# Inbox (uncategorized thoughts)
+pa obsidian inbox add --content "cross-ref: paper X about Y"
+pa obsidian inbox list
+```
+
+**5 note types**: `idea` (raw thought) / `reading` (per-paper
+synthesis) / `synthesis` (cross-paper) / `question` (open question)
+/ `evidence` (data point). Each gets YAML frontmatter (title, type,
+project, created).
+
+**Auto-create**: `thought` and `note` auto-create the project if it
+doesn't exist (with minimal index.md), so you can capture an idea
+before formalizing the project.
+
+**No new dep**: pure stdlib (`pathlib`, `re`, `datetime`, `dataclass`,
+`unicodedata`).
+
+**Cross-link to Zotero**: by convention, use the same name on both
+sides (Zotero collection + Obsidian project) and reference each in
+the other's master note / `index.md`. NO automatic coupling (per
+user intent) — keeps the two systems independent.
 
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
 

@@ -2927,3 +2927,793 @@ def zotero_sync(corpus, dois, query, do_push, mode, quiet):
             f"failed={result['n_failed']}"
         )
 
+
+# ─────────────────────────────────────────────────────────────────
+# v3.9.16 [P3-28] pa zotero project — collection-as-research-project
+# ─────────────────────────────────────────────────────────────────
+@main.group()
+def zotero_project():
+    """[P3-28] Manage research projects as Zotero collections.
+
+    A "project" in pa-paper-agent is a Zotero collection (= folder). Each
+    project can hold:
+    - Bibliographic items (papers pushed via `pa zotero push`)
+    - A master note (= project summary, research log, links)
+    - Sub-collections (for nested topics / sub-projects)
+
+    **Workflow**:
+        pa zotero project create --name "long-term care"   # create
+        pa zotero push --corpus refs.bib                  # add papers
+        pa zotero project add --name "long-term care" --doi 10.xxxx/yyy
+        pa zotero project note --name "long-term care"     # create master note
+        pa zotero project status --name "long-term care"   # see progress
+
+    **Auto-create from pa search-and-import** (planned v3.9.16.1):
+        pa search-and-import --query "long-term care" --project "long-term care"
+        # = fetch → bucket (downloaded/failed) → push downloaded → auto-create
+        # project if missing + auto-append to master note
+    """
+    pass
+
+
+@zotero_project.command(name="create")
+@click.option("--name", "name", required=True,
+              help="Project name (= Zotero collection name, case-insensitive dedup)")
+@click.option("--parent-key", "parent_key", default=None,
+              help="Optional parent collection key (for nested projects)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def zotero_project_create(name, parent_key, as_json):
+    """[P3-28] Create a Zotero collection for a research project (idempotent).
+
+    If a collection with the same name already exists, returns its key
+    with status='exists' (no error). Re-running is safe.
+    """
+    from . import zotero_api
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+    result = zotero_api.create_collection(client, name, parent_key=parent_key)
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        if result["status"] == "created":
+            click.echo(
+                f"[zotero-project] created collection '{result['name']}' "
+                f"(key={result['key']})"
+            )
+        elif result["status"] == "exists":
+            click.echo(
+                f"[zotero-project] collection '{result['name']}' already exists "
+                f"(key={result['key']}, items={result.get('numItems', 0)})"
+            )
+        else:
+            click.echo(
+                f"[zotero-project] ERROR: {result.get('error', 'unknown')}",
+                err=True,
+            )
+            sys.exit(1)
+    if result["status"] == "error":
+        sys.exit(1)
+
+
+@zotero_project.command(name="list")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable table)")
+@click.option("--include-nested", "include_nested", is_flag=True,
+              help="Include sub-collections (default: top-level only)")
+def zotero_project_list(as_json, include_nested):
+    """[P3-28] List all research projects (= Zotero collections)."""
+    from . import zotero_api
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+    colls = zotero_api.list_collections(client, top_only=not include_nested)
+    if as_json:
+        click.echo(json.dumps(colls, ensure_ascii=False, indent=2))
+        return
+    if not colls:
+        click.echo("[zotero-project] no collections (= no projects) found")
+        return
+    click.echo(f"[zotero-project] {len(colls)} collection(s):")
+    click.echo(f"  {'NAME':<40s}  {'ITEMS':>6s}  {'SUBS':>5s}  KEY")
+    for c in colls:
+        click.echo(
+            f"  {c['name'][:38]:<40s}  {c.get('numItems', 0):>6d}  "
+            f"{c.get('numCollections', 0):>5d}  {c['key']}"
+        )
+
+
+@zotero_project.command(name="status")
+@click.option("--name", "name", default=None,
+              help="Project name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Project collection key (mutually exclusive with --name)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def zotero_project_status(name, key, as_json):
+    """[P3-28] Show project status: item count, sub-collections, master notes."""
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        # Direct lookup not exposed; use list + filter
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+
+    if not coll:
+        click.echo(
+            f"[zotero-project] project not found: name={name!r} key={key!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    items = zotero_api.get_collection_items(client, coll["key"])
+    notes = zotero_api.list_collection_notes(client, coll["key"])
+
+    status = {
+        "name": coll["name"],
+        "key": coll["key"],
+        "numItems": coll.get("numItems", len(items)),
+        "numCollections": coll.get("numCollections", 0),
+        "version": coll.get("version", 0),
+        "items_returned": len(items),
+        "master_notes": [
+            {"key": n["key"], "title": n.get("title", ""), "dateModified": n.get("dateModified", "")}
+            for n in notes
+        ],
+        "recent_items": items[:5],  # most recent 5
+    }
+    if as_json:
+        click.echo(json.dumps(status, ensure_ascii=False, indent=2))
+        return
+    click.echo(
+        f"[zotero-project] '{status['name']}' (key={status['key']})\n"
+        f"  items:           {status['numItems']}\n"
+        f"  sub-collections: {status['numCollections']}\n"
+        f"  master notes:    {len(status['master_notes'])}"
+    )
+    for n in status["master_notes"]:
+        click.echo(
+            f"    - {n['title']}  ({n['dateModified'][:10] if n['dateModified'] else '?'})  "
+            f"key={n['key']}"
+        )
+    if status["recent_items"]:
+        click.echo(f"  recent items (top 5 of {len(items)}):")
+        for r in status["recent_items"]:
+            date = r.get("date", "????")[:10]
+            title = r.get("title", "?")[:60]
+            doi = r.get("DOI", "")
+            click.echo(f"    {date}  {title:60s}  {doi}")
+
+
+@zotero_project.command(name="note")
+@click.option("--name", "name", default=None,
+              help="Project name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Project collection key (mutually exclusive with --name)")
+@click.option("--title", "title", default=None,
+              help="Note title (default: '<project> — research note')")
+@click.option("--content-file", "content_file", default=None,
+              type=click.Path(exists=True),
+              help="Path to a markdown/text file with note body")
+@click.option("--append", "append_text", default=None,
+              help="Append a one-liner to existing master note (creates note if missing)")
+def zotero_project_note(name, key, title, content_file, append_text):
+    """[P3-28] Create or append to a project's master note (Zotero note).
+
+    Master note is attached to the collection. Use to track research
+    questions, synthesis, links to external docs, etc.
+
+    Examples:
+      pa zotero project note --name "long-term care" --content-file note.md
+      pa zotero project note --name "long-term care" --append "2026-08-18: read 5 papers on X"
+    """
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+    if not content_file and not append_text:
+        click.echo("[zotero-project] ERROR: must provide --content-file or --append", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] project not found. Create it first: "
+            f"pa zotero project create --name {name!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    final_title = title or f"{coll['name']} — research note"
+
+    # If --append, fetch the latest master note and append to it
+    if append_text:
+        from datetime import datetime
+        existing_notes = zotero_api.list_collection_notes(client, coll["key"])
+        if existing_notes:
+            latest = existing_notes[0]  # most recent
+            # Strip HTML tags to get plain text, then append
+            from html.parser import HTMLParser
+            class Stripper(HTMLParser):
+                def __init__(self):
+                    super().__init__()
+                    self.parts = []
+                def handle_data(self, d):
+                    self.parts.append(d)
+            s = Stripper()
+            s.feed(latest.get("note", ""))
+            plain = "".join(s.parts).strip()
+            stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+            new_content = f"{plain}\n\n---\n\n**{stamp}**  {append_text}\n"
+            new_html = new_content.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            new_html = new_html.replace("\n", "<br/>\n")
+            try:
+                item = client.item(latest["key"])
+                item_data = item.get("data", item)
+                item_data["note"] = f"<pre>{new_html}</pre>"
+                client.update_item(item)
+                click.echo(
+                    f"[zotero-project] appended to note {latest['key']} in '{coll['name']}'"
+                )
+            except Exception as e:
+                click.echo(f"[zotero-project] ERROR: append failed: {e}", err=True)
+                sys.exit(1)
+            return
+        else:
+            # No existing note: create one with the append text
+            content = (
+                f"# {final_title}\n\n"
+                f"Project master note for Zotero collection '{coll['name']}' "
+                f"(key={coll['key']}).\n\n"
+                f"---\n\n"
+                f"**{datetime.now().strftime('%Y-%m-%d %H:%M')}**  {append_text}\n"
+            )
+    else:
+        content = Path(content_file).read_text(encoding="utf-8", errors="replace")
+
+    result = zotero_api.create_collection_note(
+        client=client,
+        collection_key=coll["key"],
+        title=final_title,
+        content=content,
+    )
+    if result["status"] == "created":
+        click.echo(
+            f"[zotero-project] created note '{result['title']}' "
+            f"(key={result['key']}) in '{coll['name']}'"
+        )
+    else:
+        click.echo(
+            f"[zotero-project] ERROR: {result.get('error', 'unknown')}",
+            err=True,
+        )
+        sys.exit(1)
+
+
+@zotero_project.command(name="add")
+@click.option("--name", "name", default=None,
+              help="Project name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Project collection key (mutually exclusive with --name)")
+@click.option("--doi", "dois", multiple=True,
+              help="One or more DOIs to add (repeatable)")
+@click.option("--corpus", "corpus", default=None, type=click.Path(exists=True),
+              help="Bibtex file to extract DOIs from")
+def zotero_project_add(name, key, dois, corpus):
+    """[P3-28] Add papers to a project collection.
+
+    Papers must already exist in the Zotero library (use `pa zotero push`
+    first). This command then attaches them to the project collection.
+
+    Examples:
+      pa zotero project add --name "long-term care" --doi 10.xxxx/yyy
+      pa zotero project add --name "long-term care" --corpus refs.bib
+    """
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+    if not dois and not corpus:
+        click.echo("[zotero-project] ERROR: must provide --doi or --corpus", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] project not found. Create it first: "
+            f"pa zotero project create --name {name!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    # Collect DOIs
+    doi_list = list(dois)
+    if corpus:
+        entries = zotero_api.parse_bibtex_for_doi(Path(corpus))
+        for e in entries:
+            d = zotero_api.normalize_doi(e.get("doi", ""))
+            if d and d not in doi_list:
+                doi_list.append(d)
+    if not doi_list:
+        click.echo("[zotero-project] no DOIs to add", err=True)
+        return
+
+    # Find items in library by DOI
+    existing = zotero_api.check_dois_in_library(client, doi_list)
+    if not existing:
+        click.echo(
+            f"[zotero-project] none of the {len(doi_list)} DOIs are in your Zotero library. "
+            f"Run `pa zotero push` first.",
+            err=True,
+        )
+        sys.exit(1)
+    # Note: check_items returns which DOIs exist, but doesn't give item keys.
+    # For each existing DOI, do a search to get the key.
+    item_keys = []
+    missing = []
+    for d in doi_list:
+        norm = zotero_api.normalize_doi(d)
+        if norm in existing:
+            # Search by exact DOI to get key
+            try:
+                items = client.items(q=norm, qmode="everything", limit=5)
+                for it in items:
+                    data = it.get("data", it)
+                    if data.get("DOI", "").lower() == norm.lower():
+                        item_keys.append(data["key"])
+                        break
+                else:
+                    missing.append(d)
+            except Exception:
+                missing.append(d)
+        else:
+            missing.append(d)
+
+    if missing:
+        click.echo(
+            f"[zotero-project] {len(missing)} DOIs not in library: {missing[:3]}...",
+            err=True,
+        )
+    if not item_keys:
+        click.echo("[zotero-project] no items to add", err=True)
+        sys.exit(1)
+
+    result = zotero_api.add_items_to_collection(client, item_keys, coll["key"])
+    click.echo(
+        f"[zotero-project] added {result['n_added']} item(s) to '{coll['name']}' "
+        f"(failed={result['n_failed']})"
+    )
+
+
+@zotero_project.command(name="search")
+@click.option("--query", "query", required=True,
+              help="Search query (matched against title/creator/year)")
+@click.option("--name", "name", default=None,
+              help="Limit to a specific project collection")
+@click.option("--limit", "limit", default=20, type=int,
+              help="Max results to return (default 20)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def zotero_project_search(query, name, limit, as_json):
+    """[P3-28] Search across all (or one) project collections.
+
+    Without --name: searches entire Zotero library.
+    With --name: limits to items in that project's collection.
+
+    Examples:
+      pa zotero project search --query "long-term care insurance"
+      pa zotero project search --query "warp drive" --name "long-term care"
+    """
+    from . import zotero_api
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    if name:
+        coll = zotero_api.find_collection_by_name(client, name)
+        if not coll:
+            click.echo(
+                f"[zotero-project] project not found: {name!r}",
+                err=True,
+            )
+            sys.exit(1)
+        # Search within the collection
+        try:
+            raw = client.collection_items(coll["key"])
+        except Exception as e:
+            click.echo(f"[zotero-project] ERROR: {e}", err=True)
+            sys.exit(1)
+        # Filter by query (simple case-insensitive substring)
+        needle = query.lower()
+        results = []
+        for item in raw:
+            data = item.get("data", item)
+            if data.get("itemType") in ("attachment", "note"):
+                continue
+            title = data.get("title", "").lower()
+            if needle in title or any(
+                needle in (c.get("name", "") or "").lower()
+                for c in data.get("creators", [])
+            ):
+                results.append({
+                    "key": data.get("key", ""),
+                    "title": data.get("title", "(no title)"),
+                    "creators": data.get("creators", []),
+                    "date": data.get("date", ""),
+                    "DOI": data.get("DOI", ""),
+                    "itemType": data.get("itemType", ""),
+                    "project": coll["name"],
+                })
+        results = results[:limit]
+    else:
+        # Library-wide search
+        results = zotero_api.search_library(client, query, limit=limit)
+
+    if as_json:
+        click.echo(json.dumps(results, ensure_ascii=False, indent=2))
+        return
+    if not results:
+        click.echo(f"[zotero-project] no matches for '{query}'")
+        return
+    scope = f"in project '{name}'" if name else "library-wide"
+    click.echo(f"[zotero-project] {len(results)} match(es) for '{query}' ({scope}):")
+    for r in results:
+        date = r.get("date", "????")[:10]
+        creators = ", ".join(
+            c.get("name", c.get("lastName", "?")) for c in r.get("creators", [])[:2]
+        )
+        click.echo(
+            f"  {date:10s}  {creators:30s}  {r.get('title', '?')[:60]}"
+        )
+
+
+# ─────────────────────────────────────────────────────────────────
+# v3.9.16 [P3-29] pa obsidian — research sub-vault + project management
+# ─────────────────────────────────────────────────────────────────
+@main.group()
+def obsidian():
+    """[P3-29] Manage a research sub-vault inside your Obsidian vault.
+
+    Adds a `0-Research/` folder to an existing Obsidian vault
+    (configured via $PAPER_AGENT_OBSIDIAN_VAULT env var). Provides:
+
+    - `init` — create the sub-folder skeleton
+    - `project` subcommands — create / list / status / thought / note
+    - `inbox` subcommands — drop uncategorized thoughts
+
+    **Layout**:
+        <vault>/0-Research/
+        ├── Inbox/                  # uncategorized thoughts
+        └── Projects/<slug>/
+            ├── index.md            # project home
+            ├── ideas.md            # raw thoughts
+            ├── notes/              # atomic notes
+            └── synthesis.md        # cross-paper synthesis
+
+    Examples:
+      pa obsidian init
+      pa obsidian project create --name "long-term care" \\
+          --research-question "How does public LTCI affect family caregivers?" \\
+          --direction "empirical microeconomics"
+      pa obsidian project thought --name "long-term care" \\
+          --content "Wang 2020 has good identification but small sample"
+      pa obsidian project note --name "long-term care" --type reading \\
+          --content "Wang (2020) finds X. Key insight: Y. Open question: Z."
+      pa obsidian inbox add --content "cross-ref: paper X about Y"
+    """
+    pass
+
+
+@obsidian.command(name="init")
+@click.option("--force-readme/--no-force-readme", default=False,
+              help="Overwrite existing 0-Research/README.md if present")
+def obsidian_init(force_readme):
+    """[P3-29] Initialize the research sub-folder inside the Obsidian vault.
+
+    Creates:
+      - <vault>/0-Research/Inbox/
+      - <vault>/0-Research/Projects/
+      - <vault>/0-Research/README.md (if not exists)
+
+    Idempotent: re-running is safe. Use --force-readme to overwrite README.
+    """
+    from . import obsidian as obs_mod
+    try:
+        result = obs_mod.init_vault()
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    click.echo(f"[obsidian] research root: {result['root']}")
+    if result["created"]:
+        click.echo(f"[obsidian] created {len(result['created'])} item(s):")
+        for p in result["created"]:
+            click.echo(f"  + {p}")
+    if result["existed"]:
+        click.echo(f"[obsidian] {len(result['existed'])} item(s) already existed (skipped)")
+    if force_readme:
+        readme = Path(result["root"]) / "README.md"
+        if readme.exists():
+            readme.write_text(obs_mod._README_TEMPLATE, encoding="utf-8")
+            click.echo(f"[obsidian] README.md overwritten")
+
+
+@obsidian.group(name="project")
+def obsidian_project():
+    """[P3-29] Manage research projects in the sub-vault."""
+    pass
+
+
+@obsidian_project.command(name="create")
+@click.option("--name", "name", required=True,
+              help="Project name (will be slugified for folder name)")
+@click.option("--research-question", "research_question", default="",
+              help="The core research question this project addresses")
+@click.option("--direction", "direction", default="",
+              help="Research direction / methodology (e.g. 'empirical microeconomics')")
+@click.option("--topic", "topic", default="",
+              help="Free-text topic tag")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def obsidian_project_create(name, research_question, direction, topic, as_json):
+    """[P3-29] Create a new research project in the sub-vault.
+
+    Creates a folder Projects/<slug>/ with index.md, ideas.md, notes/.
+    Idempotent: returns status='exists' if a project with the same slug
+    already exists.
+    """
+    from . import obsidian as obs_mod
+    try:
+        result = obs_mod.create_project(
+            name=name,
+            research_question=research_question,
+            direction=direction,
+            topic=topic,
+        )
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        if result["status"] == "created":
+            click.echo(
+                f"[obsidian] created project '{name}'\n"
+                f"  slug:  {result['slug']}\n"
+                f"  path:  {result['path']}"
+            )
+        elif result["status"] == "exists":
+            click.echo(
+                f"[obsidian] project '{name}' already exists (slug={result['slug']})\n"
+                f"  path:  {result['path']}"
+            )
+        else:
+            click.echo(f"[obsidian] ERROR: {result.get('error', 'unknown')}", err=True)
+            sys.exit(1)
+    if result["status"] == "error":
+        sys.exit(1)
+
+
+@obsidian_project.command(name="list")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable table)")
+def obsidian_project_list(as_json):
+    """[P3-29] List all research projects in the sub-vault."""
+    from . import obsidian as obs_mod
+    try:
+        projects = obs_mod.list_projects()
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if as_json:
+        click.echo(json.dumps(projects, ensure_ascii=False, indent=2))
+        return
+    if not projects:
+        click.echo("[obsidian] no projects found. Create one with: pa obsidian project create --name ...")
+        return
+    click.echo(f"[obsidian] {len(projects)} project(s):")
+    click.echo(f"  {'NAME':<40s}  {'SLUG':<25s}  {'THOUGHTS':>8s}  {'NOTES':>6s}  SYNTH")
+    for p in projects:
+        name = p["name"][:38]
+        slug = p["slug"][:23]
+        click.echo(
+            f"  {name:<40s}  {slug:<25s}  {p['thought_count']:>8d}  "
+            f"{p['note_count']:>6d}  {'Y' if p['synthesis_present'] else '-'}"
+        )
+
+
+@obsidian_project.command(name="status")
+@click.option("--name", "name", required=True,
+              help="Project name (will be slugified)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def obsidian_project_status(name, as_json):
+    """[P3-29] Show project status: thoughts, notes, recent activity."""
+    from . import obsidian as obs_mod
+    slug = obs_mod.slugify(name)
+    try:
+        result = obs_mod.project_status(slug)
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if result["status"] == "error":
+        click.echo(f"[obsidian] ERROR: {result['error']}", err=True)
+        sys.exit(1)
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    click.echo(
+        f"[obsidian] project '{result['name']}' (slug={result['slug']})\n"
+        f"  root:           {result['root']}\n"
+        f"  index.md:       {'Y' if result['has_index'] else '-'}\n"
+        f"  ideas.md:       {'Y' if result['has_ideas'] else '-'}  ({result['thought_count']} thought(s))\n"
+        f"  notes/:         {result['note_count']} note(s)\n"
+        f"  synthesis.md:   {'Y' if result['synthesis_present'] else '-'}"
+    )
+    if result["recent_notes"]:
+        click.echo(f"  recent notes:")
+        for n in result["recent_notes"]:
+            click.echo(
+                f"    [{n['modified'][:16]}]  {n['title'][:50]}\n"
+                f"      {n['path']}"
+            )
+
+
+@obsidian_project.command(name="thought")
+@click.option("--name", "name", required=True,
+              help="Project name (auto-creates project if missing)")
+@click.option("--content", "content", required=True,
+              help="The thought text (1-3 sentences)")
+def obsidian_project_thought(name, content):
+    """[P3-29] Append a raw/unformed thought to a project's ideas.md.
+
+    Auto-creates the project (with minimal index.md) if it doesn't exist,
+    so you can quickly capture ideas before formalizing the project.
+    """
+    from . import obsidian as obs_mod
+    try:
+        result = obs_mod.add_thought(name, content)
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if result["status"] == "error":
+        click.echo(f"[obsidian] ERROR: {result['error']}", err=True)
+        sys.exit(1)
+    click.echo(
+        f"[obsidian] appended thought to '{result['name']}' "
+        f"(total {result['thought_count']} thought(s))"
+    )
+
+
+@obsidian_project.command(name="note")
+@click.option("--name", "name", required=True,
+              help="Project name (auto-creates project if missing)")
+@click.option("--type", "note_type", default="idea",
+              type=click.Choice(list(obs_mod := __import__('pa_cli.obsidian', fromlist=['NOTE_TYPES']).NOTE_TYPES)),
+              help="Note type (idea/reading/synthesis/question/evidence)")
+@click.option("--title", "title", default="",
+              help="Explicit title (else inferred from first line of content)")
+@click.option("--content", "content", required=True,
+              help="Note body (markdown)")
+def obsidian_project_note(name, note_type, title, content):
+    """[P3-29] Create a new atomic note in a project.
+
+    Stored in <vault>/0-Research/Projects/<slug>/notes/<timestamp>.md
+    with YAML frontmatter (title, type, project, created).
+    """
+    from . import obsidian as obs_mod
+    try:
+        result = obs_mod.add_note(name, content, note_type=note_type, title=title)
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if result["status"] == "error":
+        click.echo(f"[obsidian] ERROR: {result['error']}", err=True)
+        sys.exit(1)
+    click.echo(
+        f"[obsidian] created {result['type']} note '{result['title']}'\n"
+        f"  project: {result['name']}\n"
+        f"  path:    {result['path']}"
+    )
+
+
+@obsidian.group(name="inbox")
+def obsidian_inbox():
+    """[P3-29] Inbox — uncategorized thoughts not tied to a project."""
+    pass
+
+
+@obsidian_inbox.command(name="add")
+@click.option("--content", "content", required=True,
+              help="The thought text")
+def obsidian_inbox_add(content):
+    """[P3-29] Drop a thought into the global Inbox (no project)."""
+    from . import obsidian as obs_mod
+    try:
+        result = obs_mod.inbox_add(content)
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if result["status"] == "error":
+        click.echo(f"[obsidian] ERROR: {result['error']}", err=True)
+        sys.exit(1)
+    click.echo(
+        f"[obsidian] inbox note created\n"
+        f"  filename: {result['filename']}\n"
+        f"  path:     {result['path']}"
+    )
+
+
+@obsidian_inbox.command(name="list")
+@click.option("--limit", "limit", default=20, type=int,
+              help="Max results to return (default 20)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def obsidian_inbox_list(limit, as_json):
+    """[P3-29] List recent inbox notes (most recent first)."""
+    from . import obsidian as obs_mod
+    try:
+        items = obs_mod.inbox_list(limit=limit)
+    except ValueError as e:
+        click.echo(f"[obsidian] ERROR: {e}", err=True)
+        sys.exit(2)
+    if as_json:
+        click.echo(json.dumps(items, ensure_ascii=False, indent=2))
+        return
+    if not items:
+        click.echo("[obsidian] inbox empty")
+        return
+    click.echo(f"[obsidian] {len(items)} recent inbox note(s):")
+    for it in items:
+        click.echo(f"  [{it['modified'][:16]}]  {it['title'][:50]}")
+        click.echo(f"      {it['path']}")
+
+
