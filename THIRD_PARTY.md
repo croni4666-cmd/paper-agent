@@ -72,6 +72,52 @@ via the public `paper-search-mcp` PyPI package (MIT license,
 22 free sources), installed by `pa mcp install` (`pa_cli/mcp_setup.py`).
 This is a third-party package with its own license.
 
+## Friendly-neighbor projects (complementary, not bundled)
+
+These are NOT dependencies of paper-agent — they live in their own repos
+with their own licenses. They are **complementary tools** that fill gaps
+in paper-agent's coverage. We list them here so users with the right
+environment can find them.
+
+### `Rimagination/instsci` (288⭐, MIT)
+
+> OA-first + browser-backed institutional access for AI agents and
+> CLI workflows. Uses visible CloakBrowser for SSO (CARSI, Shibboleth,
+> OpenAthens, EZproxy, WebVPN). 10+ publisher-specific workflows
+> (Elsevier, Wiley, Springer, IEEE, Nature, Oxford, RSC, ACS, AIP, IOP).
+> Agent-friendly via `instsci-mcp`.
+
+- **GitHub**: https://github.com/Rimagination/instsci
+- **License**: MIT
+- **MCP package**: `instsci-mcp` (separate PyPI package)
+- **Install**: `pipx install git+https://github.com/Rimagination/instsci.git`
+  or `uv tool install git+...`
+- **When to pair with paper-agent**: if you have university SSO access
+  (浙财大 CARSI is an example) and need to download closed papers
+  from Elsevier / Wiley / Springer / IEEE — these are channels
+  paper-agent's gray-area fallback (sci-hub) can't reliably reach.
+  InstSci is the legitimate, license-compliant path.
+- **What paper-agent does better**: multi-engine search (8 engines vs
+  3-4), LTR rerank, MoE router, sample pool, Chinese coverage (aminer +
+  CNKI plaintext), clinical trials registry, MCP for fetch (v3.9.14.1+).
+
+### `deathcats4/instsci-workflow` (52⭐, MIT, modified fork of InstSci)
+
+> Preview build adding Zotero handoff (`instsci zotero sync
+> --attachment-mode linked_file`) and public/private evidence separation
+> (`public-audit`). Useful as inspiration for our own Zotero sync
+> design ([P2-17] / [P2-18] in ROADMAP, currently deferred).
+
+- **GitHub**: https://github.com/deathcats4/instsci-workflow
+- **License**: MIT (modified preview)
+- **When to use**: if you need Zotero + InstSci integration immediately
+  and don't want to wait for our [P2-17] / [P2-18] (gated on [P2-16]
+  seeing real use).
+
+**Disclaimer**: paper-agent does not endorse or warranty these projects.
+They are independent open-source efforts. Use at your own discretion
+and per each project's license terms.
+
 ## Bench data (academic paper metadata)
 
 The `bench/` directory contains academic paper metadata (DOIs, titles,
@@ -97,5 +143,10 @@ incomplete, please open an issue at the upstream repository
 
 ## Version
 
+- **v1.1** (2026-08-18): Added "Friendly-neighbor projects" section
+  listing `Rimagination/instsci` (288⭐, MIT) and
+  `deathcats4/instsci-workflow` (52⭐, MIT modified fork). These are
+  complementary, not bundled. See ROADMAP "Competitor coupling
+  2026-08-18" section for the full coupling rationale.
 - **v1.0** (2026-08-14): Initial third-party notice. Replaces ad-hoc
   mentions in CHANGELOG and source code comments.
