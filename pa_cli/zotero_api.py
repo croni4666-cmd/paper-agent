@@ -15,9 +15,9 @@ library (MIT, well-maintained).
 *`pa zotero sync` ([P2-18], v3.9.15.0)*:
 - Combine [P2-16] check + [P2-17] push + library search
 
-*`pa zotero project` ([P3-28], v3.9.16) — NEW*:
-- `create` / `list` / `status` / `note` — collection-as-research-project
-- `search` — cross-collection search
+*`pa zotero project` ([P3-28], v3.9.16) -- NEW*:
+- `create` / `list` / `status` / `note` -- collection-as-research-project
+- `search` -- cross-collection search
 - per-project master note attached to collection
 
 **Design constraints** (per留痕 / AGPL discipline):
@@ -179,7 +179,7 @@ def check_dois_in_library(client: "Zotero", dois: List[str]) -> Set[str]:
     try:
         existing_keys = client.check_items(items_to_check)
     except Exception as e:
-        # Network error, auth error, etc. — return empty so caller proceeds
+        # Network error, auth error, etc. --?return empty so caller proceeds
         return set()
     # existing_keys is a list of the items that DO exist in library.
     # The DOI is the key by which we identified them.
@@ -219,7 +219,7 @@ def bibtex_to_zotero_item(entry: Dict[str, str]) -> Dict[str, Any]:
     if "url" not in entry and "doi" in entry:
         item["url"] = f"https://doi.org/{entry['doi']}"
     if "author" in entry:
-        # Simple split on " and " — for complex author lists, use a proper parser
+        # Simple split on " and " --?for complex author lists, use a proper parser
         item["creators"] = [
             {"creatorType": "author", "name": a.strip()}
             for a in re.split(r"\s+and\s+", entry["author"])
@@ -319,20 +319,52 @@ def push_items(
                 } for e in to_push],
             }
 
-    # Step 4: optionally upload PDFs (skipped for now — separate function)
+    # Step 4: optionally upload PDFs (v3.9.17.1 [P2-17.1] --?was no-op in v3.9.15.0)
+    n_pdf_uploaded = 0
+    n_pdf_failed = 0
+    pdf_results = []
     if pdf_dir and mode in ("linked_file", "imported_file"):
-        # TODO: implement PDF upload. The push() step created the items
-        # with metadata; uploading PDFs as attachments is a separate API
-        # call (item.attachment_simple() or upload_attachments()).
-        # For v3.9.15.0 we focus on metadata push; PDF upload tracked
-        # as [P2-17.1] follow-up.
-        pass
+        # For each successfully pushed item, look for a matching PDF
+        # at {pdf_dir}/{key}.pdf and queue for upload
+        uploads = []
+        for r in results:
+            if r.get("status") != "pushed":
+                continue
+            key = r.get("key", "")
+            parent_key = r.get("zotero_key", "")
+            if not key or not parent_key:
+                continue
+            pdf_path = Path(pdf_dir) / f"{key}.pdf"
+            if pdf_path.exists():
+                uploads.append({
+                    "pdf_path": str(pdf_path),
+                    "parent_key": parent_key,
+                    "title": f"{key}.pdf",
+                })
+        if uploads:
+            upload_result = upload_pdfs(client, uploads, mode=mode)
+            n_pdf_uploaded = upload_result["n_uploaded"]
+            n_pdf_failed = upload_result["n_failed"]
+            pdf_results = upload_result["results"]
+            # Add per-pdf results to the main results list
+            for pr in pdf_results:
+                results.append({
+                    "key": pr.get("pdf_path", ""),
+                    "doi": "",
+                    "status": "pdf_" + pr.get("status", "unknown"),
+                    "zotero_key": pr.get("zotero_key", ""),
+                    "parent_key": pr.get("parent_key", ""),
+                    "mode": pr.get("mode", ""),
+                    "error": pr.get("error", ""),
+                })
 
     return {
         "n_total": len(bibtex_entries),
         "n_pushed": n_pushed,
         "n_skipped": len(skipped),
         "n_failed": n_failed,
+        "n_pdf_uploaded": n_pdf_uploaded,
+        "n_pdf_failed": n_pdf_failed,
         "results": skipped + results,
     }
 
@@ -378,7 +410,7 @@ def search_library(
 
 
 # ─────────────────────────────────────────────────────────────────
-# Collections (project-as-collection) — v3.9.16 [P3-28]
+# Collections (project-as-collection) --?v3.9.16 [P3-28]
 # ─────────────────────────────────────────────────────────────────
 def list_collections(client: "Zotero", top_only: bool = True) -> List[Dict[str, Any]]:
     """List collections (= research projects) in user's Zotero library.
@@ -590,8 +622,8 @@ def create_collection_note(
     Args:
         client: pyzotero.Zotero client
         collection_key: target collection key
-        title: note title (e.g. "long-term care — research note")
-        content: note content (HTML or plain text — Zotero stores HTML)
+        title: note title (e.g. "long-term care --?research note")
+        content: note content (HTML or plain text --?Zotero stores HTML)
 
     Returns:
         Dict with {status, key, title, error?}
@@ -600,7 +632,7 @@ def create_collection_note(
         return {"status": "error", "error": "missing collection_key or title"}
     # Zotero notes use HTML
     if not content.lstrip().startswith("<"):
-        # Plain text → wrap in <pre> for whitespace preservation
+        # Plain text �?wrap in <pre> for whitespace preservation
         body = content.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         content = f"<h1>{title}</h1>\n<pre>{body}</pre>"
     payload = [{
@@ -658,5 +690,155 @@ def list_collection_notes(
                 "dateModified": data.get("dateModified", ""),
                 "version": data.get("version", 0),
             })
+    out.sort(key=lambda x: x.get("dateModified", ""), reverse=True)
+    return out
+
+
+# ─────────────────────────────────────────────────────────────────
+# PDF upload (v3.9.17.1 [P2-17.1]) -- attachment via pyzotero API
+# ─────────────────────────────────────────────────────────────────
+def upload_pdfs(
+    client: "Zotero",
+    uploads: List[Dict[str, str]],
+    mode: str = "linked_file",
+) -> Dict[str, Any]:
+    """Upload PDFs as attachments to existing Zotero items.
+
+    Args:
+        client: pyzotero.Zotero client
+        uploads: list of {pdf_path, parent_key, [title]} dicts
+        mode: 'linked_file' (default, symlink only --?original PDF
+              stays at pdf_path, Zotero just stores the reference)
+              or 'imported_file' (copy to Zotero storage dir; uses
+              quota --?free tier ~300MB)
+
+    Returns:
+        Dict with keys:
+          n_uploaded, n_failed, results: [...]
+
+    **Two implementation paths** (matches v3.9.15.0 push semantics):
+        - `linked_file`: uses `item_template("attachment", linkmode="linked_file")`
+          + `create_items([template], parentid=parent_key)`. The PDF
+          stays at its original location; Zotero stores the absolute
+          path. No file copy, no quota usage.
+        - `imported_file`: uses `attachment_simple([file_path], parentid=parent_key)`.
+          pyzotero uploads the file to Zotero's storage dir. Counts
+          against user's Zotero file quota.
+
+    **Auth**: inherits from client (env-var-only, per 留痕 discipline).
+    """
+    if not uploads:
+        return {"n_uploaded": 0, "n_failed": 0, "results": []}
+
+    n_uploaded = 0
+    n_failed = 0
+    results = []
+
+    for upload in uploads:
+        pdf_path = upload.get("pdf_path", "")
+        parent_key = upload.get("parent_key", "")
+        title = upload.get("title") or Path(pdf_path).name
+
+        # Validation
+        if not pdf_path or not parent_key:
+            n_failed += 1
+            results.append({
+                "pdf_path": pdf_path, "parent_key": parent_key,
+                "status": "failed", "error": "missing pdf_path or parent_key",
+            })
+            continue
+        path_obj = Path(pdf_path)
+        if not path_obj.exists():
+            n_failed += 1
+            results.append({
+                "pdf_path": pdf_path, "parent_key": parent_key,
+                "status": "failed", "error": "file not found",
+            })
+            continue
+
+        # Resolve to absolute path (Zotero requires absolute paths for linked_file)
+        abs_path = str(path_obj.resolve())
+
+        try:
+            if mode == "linked_file":
+                # Use create_items with linkmode=linked_file + absolute path
+                template = client.item_template("attachment", linkmode="linked_file")
+                template["title"] = title
+                template["path"] = abs_path
+                created = client.create_items([template], parentid=parent_key)
+                if not created:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed", "error": "empty response from create_items",
+                    })
+                    continue
+                first = created[0] if created else {}
+                if "successful" in first:
+                    n_uploaded += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "zotero_key": first["successful"].get("key", ""),
+                        "mode": "linked_file", "status": "uploaded",
+                    })
+                elif "failed" in first:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed",
+                        "error": str(first["failed"])[:200],
+                    })
+                else:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed",
+                        "error": f"unexpected response: {str(first)[:200]}",
+                    })
+            else:  # imported_file
+                # Use attachment_simple --?pyzotero handles upload
+                uploaded = client.attachment_simple([abs_path], parentid=parent_key)
+                if not uploaded:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed", "error": "empty response from attachment_simple",
+                    })
+                    continue
+                first = uploaded[0] if uploaded else {}
+                if "successful" in first:
+                    n_uploaded += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "zotero_key": first["successful"].get("key", ""),
+                        "mode": "imported_file", "status": "uploaded",
+                    })
+                elif "failed" in first:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed",
+                        "error": str(first["failed"])[:200],
+                    })
+                else:
+                    n_failed += 1
+                    results.append({
+                        "pdf_path": pdf_path, "parent_key": parent_key,
+                        "status": "failed",
+                        "error": f"unexpected response: {str(first)[:200]}",
+                    })
+        except Exception as e:
+            n_failed += 1
+            results.append({
+                "pdf_path": pdf_path, "parent_key": parent_key,
+                "status": "failed",
+                "error": f"{type(e).__name__}: {str(e)[:200]}",
+            })
+
+    return {
+        "n_uploaded": n_uploaded,
+        "n_failed": n_failed,
+        "results": results,
+    }
     out.sort(key=lambda x: x.get("dateModified", ""), reverse=True)
     return out
