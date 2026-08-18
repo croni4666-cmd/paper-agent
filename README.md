@@ -82,6 +82,7 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
 | `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
+| `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
@@ -291,6 +292,90 @@ before formalizing the project.
 sides (Zotero collection + Obsidian project) and reference each in
 the other's master note / `index.md`. NO automatic coupling (per
 user intent) — keeps the two systems independent.
+
+## End-to-end research workflow (v3.9.17.0)
+
+`pa search-and-import` collapses the search → fetch → push → project +
+note loop into a single command. This is the "every time I run
+paper-agent to study a topic, set up the Zotero project automatically"
+workflow.
+
+**7 steps in one call**:
+
+1. **Search** — 8 default engines via `pa search`
+2. **Write Bibtex** — convert results to a temp `.bib`
+3. **Fetch PDFs** — `pa fetch-batch` cascade (arxiv → unpaywall →
+   scihub → annas → cnki → playwright → openalex)
+4. **Bucket** — split into `downloaded` (PDF saved) vs `failed`
+5. **Push to library** — push downloaded DOIs to your Zotero library
+   (idempotent via `pyzotero.check_items()`)
+6. **Create Zotero project** — auto-create Zotero collection if
+   missing (idempotent by name)
+7. **Add items + master note** — attach papers to the project + write
+   a markdown fetch log (downloaded + failed tables) to the project's
+   master note
+
+**Example**:
+```bash
+pa search-and-import \
+    --query "long-term care insurance" \
+    --project "long-term care"
+
+pa search-and-import \
+    --query "数字普惠金融" \
+    --project "digital-finance" \
+    --limit 30 --year-min 2018
+
+# Dry-run fetch only (skip push + project)
+pa search-and-import \
+    --query "..." --project "..." \
+    --no-push --no-project
+```
+
+**Output** (human-readable summary):
+```
+[search-and-import] DONE
+  query:           'long-term care insurance'
+  project:         'long-term care'
+  search results:  18
+  downloaded:      12
+  failed:          6
+  Zotero push:     ok  (pushed=12 skipped=0 failed=0)
+  Zotero project:  'long-term care'  (created, key=ABC123)
+  items added:     12
+  master note:     key=DEF456  (created)
+```
+
+Or `--json` for the full structured report (steps, errors, downloaded
+list, failed list, summary stats).
+
+**After a successful run**, a hint tells you the corresponding
+`pa obsidian project` commands for the Obsidian side (cross-link
+by same name):
+
+```
+[search-and-import] Hint: also create an Obsidian project page with:
+  pa obsidian project create --name "long-term care" \
+      --research-question "..." --direction "..."
+  pa obsidian project thought --name "long-term care" \
+      --content "(see Zotero project ABC123 for papers)"
+```
+
+**Why this is its own command**: chaining 4-5 commands
+(`pa search` → `pa fetch-batch` → `pa zotero push` → `pa zotero
+project create` → `pa zotero project add` → `pa zotero project note`)
+loses track of which corpus matches which project. `pa
+search-and-import` makes the match explicit by tying the project
+name to the search query at the call site.
+
+**Required env vars** (for steps 5-7):
+- `$ZOTERO_API_KEY` — get at https://www.zotero.org/settings/keys
+- `$ZOTERO_LIBRARY_ID` — numeric ID, same page
+
+**Deferred to v3.9.17.1** ([P3-29.1]): `--with-obsidian` flag for
+auto-sync to Obsidian (1-line `pa obsidian project create + thought`
+after Zotero step). Currently you run those 2 commands manually
+after a `pa search-and-import` for the full loop.
 
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
 

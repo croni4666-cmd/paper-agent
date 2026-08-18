@@ -7,6 +7,108 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.17.0] - 2026-08-18
+
+### Added — `[P3-28.1] pa search-and-import — end-to-end research workflow`
+
+**Rationale** (Round 16 follow-up / 2026-08-18): v3.9.16.0 shipped
+`pa zotero project` + `pa obsidian` as independent tools, but the
+user pain point was "every time I run paper-agent to study a topic,
+I want the project, the papers, and the note all set up
+automatically." That requires chaining 4-5 commands
+(`pa search` → `pa fetch-batch` → `pa zotero push` → `pa zotero
+project create` → `pa zotero project add` → `pa zotero project note`)
+and tracking which corpus matches which project. v3.9.17.0
+collapses this into one command.
+
+**What ships**:
+
+- **`pa_cli/search_and_import.py`** NEW (22KB, 5 functions):
+  - `search_to_bibtex(query, ...)` — multi-engine search → temp `.bib`
+  - `fetch_and_bucket(bib_path, out_dir)` — batch PDF download + bucket
+    into downloaded/failed
+  - `push_downloaded(items)` — push downloaded DOIs to Zotero library
+    (idempotent via `pyzotero.check_items()`)
+  - `setup_zotero_project(name, downloaded, failed, ...)` — auto-create
+    Zotero collection + add items + append master note
+  - `run_search_and_import(query, project_name, ...)` — top-level
+    orchestrator (the one users call)
+
+- **1 new CLI command** in `pa_cli/cli.py` (~120 LOC):
+  - `pa search-and-import --query "..." --project "..." [--limit N] [--year-min N] [--year-max N] [--engine E] [--out-dir DIR] [--no-push/--push] [--no-project/--project] [--no-skip-existing] [--max-total-sec N] [--json] [--quiet]`
+
+**Workflow** (7 steps, fully automated):
+
+1. **Search** — 8 default engines via `pa search`
+2. **Write Bibtex** — convert results to a temp `.bib`
+3. **Fetch PDFs** — `pa fetch-batch` cascade (arxiv → unpaywall → scihub → annas → cnki → playwright → openalex)
+4. **Bucket** — split results into `downloaded` (PDF saved) vs `failed` (no PDF, error captured)
+5. **Push to library** — push downloaded DOIs to your Zotero library (idempotent, dedup by DOI)
+6. **Create Zotero project** — auto-create Zotero collection if missing (idempotent by name)
+7. **Add items + master note** — attach papers to the project + write a markdown fetch log (downloaded/failed tables) to the project's master note
+
+**Tests** (21 new, 21/21 pass + 0 regression):
+- `test_output/test_search_and_import.py` (25KB, **21/21 pass**):
+  - TestSearchToBibtex (2 cases): happy path + zero results
+  - TestFetchAndBucket (2 cases): bucket split + summary JSON write
+  - TestPushDownloaded (2 cases): empty list + push DOIs
+  - TestSetupZoteroProject (6 cases): create+note / idempotent / create-fail / client-init-fail / master-note-buckets / resolve-DOI-via-search
+  - TestRunSearchAndImport (6 cases): full happy path / zero results / search-exception / fetch-exception / no-push / push-error-continues
+  - TestRenderMasterNote (3 cases): both buckets / empty buckets / obsidian hint
+- Existing v3.9.16.0 tests still pass: 134 + 0 regression
+
+**Examples**:
+```bash
+# Full workflow: search → fetch → push → project + note
+pa search-and-import \
+    --query "long-term care insurance" \
+    --project "long-term care"
+
+# With year filter + bigger corpus
+pa search-and-import \
+    --query "数字普惠金融" \
+    --project "digital-finance" \
+    --limit 30 --year-min 2018
+
+# Dry-run fetch (skip push + project)
+pa search-and-import \
+    --query "..." --project "..." \
+    --no-push --no-project
+```
+
+**MINOR bump** (not PATCH): new top-level CLI command + new module
++ 21 new tests = significant additive workflow surface.
+
+**Sub-task decomposition** (final time log):
+- A. Design orchestrator (reuse v3.9.15.0 + v3.9.16.0 APIs) — 30min ✅
+- B. `pa_cli/search_and_import.py` (5 functions) — 75min ✅
+- C. `pa search-and-import` Click command + flag wiring — 30min ✅
+- D. Bug fix: GBK `—` in `__init__.py` line 1 (was breaking Python 3.12 source encoding) — 5min ✅
+- E. `test_search_and_import.py` (21 tests, all mock-based) — 60min ✅
+- F. CHANGELOG + ROADMAP + README + THIRD_PARTY sync — 20min ✅
+- G. Commit + force-push + tag + release — 15min ✅
+
+**Files changed**:
+- `pa_cli/search_and_import.py` (NEW, 22KB)
+- `pa_cli/cli.py` (1 new Click command, ~120 LOC)
+- `pa_cli/__init__.py` (version 3.9.16.0 → 3.9.17.0; em-dash encoding fix)
+- `pyproject.toml` (version bump)
+- `test_output/test_search_and_import.py` (NEW, 25KB, 21 tests)
+- `CHANGELOG.md` (this entry)
+- `ROADMAP.md` (v3.9.17.0 release row + v3.9.17 backlog status + Round 16 deferred marked done)
+- `README.md` (Available commands table + new "End-to-end research workflow (v3.9.17.0)" section)
+- `THIRD_PARTY.md` (no new third-party notice — uses existing `pyzotero`)
+
+**Deferred to v3.9.17.1+** ([P3-29.1]):
+- Auto-create matching Obsidian project page when Zotero project is created
+- `--with-obsidian` flag for `pa search-and-import` (1-line sync to Obsidian)
+- Same-name convention auto-cross-link (e.g. auto-append Zotero master note URL to Obsidian index.md)
+
+**Why MINOR not PATCH**: this is a new top-level CLI command
+(`pa search-and-import`) that closes the research-workflow loop
+deferred from v3.9.16.0. It's the most-requested user-facing addition
+of the v3.9.16.0 series.
+
 ## [3.9.16.0] - 2026-08-18
 
 ### Added — `[P3-28] + [P3-29] Zotero project + Obsidian research sub-vault`

@@ -3717,3 +3717,133 @@ def obsidian_inbox_list(limit, as_json):
         click.echo(f"      {it['path']}")
 
 
+# ─────────────────────────────────────────────────────────────────
+# v3.9.17.0 [P3-28.1] pa search-and-import — end-to-end research loop
+# ─────────────────────────────────────────────────────────────────
+@main.command(name="search-and-import")
+@click.option("--query", "query", required=True,
+              help="Search query (topic name)")
+@click.option("--project", "project", required=True,
+              help="Zotero project name (= collection, auto-created if missing)")
+@click.option("--limit", "limit", default=20, type=int, show_default=True,
+              help="Max results per engine (default 20)")
+@click.option("--year-min", "year_min", type=int, default=None,
+              help="Filter: min publication year")
+@click.option("--year-max", "year_max", type=int, default=None,
+              help="Filter: max publication year")
+@click.option("--engine", "engine", default="all", show_default=True,
+              help="Search engines (comma-separated; default 'all' = 8 engines)")
+@click.option("--out-dir", "out_dir", default="./pdfs",
+              type=click.Path(file_okay=False),
+              help="Where to save PDFs (default ./pdfs/)")
+@click.option("--max-total-sec", "max_total_sec", default=1800, type=int, show_default=True,
+              help="Global timeout for the fetch batch (s)")
+@click.option("--no-skip-existing", "no_skip_existing", is_flag=True,
+              help="Re-fetch even if PDF already exists in out_dir")
+@click.option("--no-push/--push", "do_push", default=True,
+              help="Skip Zotero push step (default: push downloaded DOIs)")
+@click.option("--no-project/--project", "do_project", default=True,
+              help="Skip Zotero project setup (default: create/add/note)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output full JSON report (else human-readable summary)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def search_and_import(
+    query, project, limit, year_min, year_max, engine, out_dir,
+    max_total_sec, no_skip_existing, do_push, do_project, as_json, quiet,
+):
+    """[P3-28.1] End-to-end research workflow: search → fetch → bucket → push to Zotero project + master note.
+
+    Steps (per ROADMAP Round 16 deferred):
+      1. Search (8 default engines) → write temp Bibtex
+      2. Fetch PDFs (8 channels: arxiv → unpaywall → scihub → annas → cnki → ...)
+      3. Bucket results: downloaded vs failed-to-download
+      4. (optional) Push downloaded DOIs to your Zotero library (idempotent)
+      5. (optional) Create Zotero project (= collection) if missing
+      6. Add downloaded items to project collection
+      7. Append fetch log to project's master note (downloaded + failed tables)
+
+    Use this for: "every time I run paper-agent to study a topic X, set up
+    the Zotero project X with papers + note + bucket log automatically."
+
+    Required env vars for steps 4-7:
+      $ZOTERO_API_KEY       — https://www.zotero.org/settings/keys
+      $ZOTERO_LIBRARY_ID    — numeric ID, same page
+
+    Examples:
+      pa search-and-import --query "long-term care insurance" --project "long-term care"
+      pa search-and-import --query "数字普惠金融" --project "digital-finance" \\
+          --limit 30 --year-min 2018
+    """
+    from . import search_and_import as sai
+
+    try:
+        result = sai.run_search_and_import(
+            query=query,
+            project_name=project,
+            year_min=year_min, year_max=year_max,
+            limit=limit, engine=engine,
+            out_dir=Path(out_dir),
+            max_total_sec=max_total_sec,
+            skip_existing=not no_skip_existing,
+            do_push=do_push and do_project,  # skip both together if --no-project
+            quiet=quiet,
+        )
+    except Exception as e:
+        click.echo(f"[search-and-import] FATAL: {e}", err=True)
+        sys.exit(2)
+
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+        return
+
+    # Human-readable summary
+    s = result.get("summary", {})
+    steps = result.get("steps", {})
+    click.echo(
+        f"[search-and-import] DONE\n"
+        f"  query:           {query!r}\n"
+        f"  project:         {project!r}\n"
+        f"  search results:  {s.get('n_search_results', 0)}\n"
+        f"  downloaded:      {s.get('n_downloaded', 0)}\n"
+        f"  failed:          {s.get('n_failed', 0)}"
+    )
+    if "push" in steps:
+        p = steps["push"]
+        click.echo(
+            f"  Zotero push:     {p.get('status', '?')}  "
+            f"(pushed={p.get('n_pushed', 0)} skipped={p.get('n_skipped', 0)} "
+            f"failed={p.get('n_failed', 0)})"
+        )
+    proj = steps.get("project", {})
+    if proj.get("status") == "ok":
+        click.echo(
+            f"  Zotero project:  {proj.get('project_name', '?')}  "
+            f"({proj.get('project_status', '?')}, key={proj.get('project_key', '?')})\n"
+            f"  items added:     {proj.get('n_added', 0)}\n"
+            f"  master note:     key={proj.get('note_key', '?')}  "
+            f"({proj.get('note_status', '?')})"
+        )
+    elif proj:
+        click.echo(f"  Zotero project:  {proj.get('status', '?')}  {proj.get('error', '')}", err=True)
+
+    if result.get("errors"):
+        click.echo("\n[search-and-import] errors:", err=True)
+        for err in result["errors"]:
+            click.echo(f"  - {err}", err=True)
+
+    # Obsidian hint (if project is set up OK)
+    if proj.get("status") == "ok":
+        click.echo(
+            f"\n[search-and-import] Hint: also create an Obsidian project page with:\n"
+            f"  pa obsidian project create --name \"{project}\" \\\n"
+            f"      --research-question \"...\" --direction \"...\"\n"
+            f"  pa obsidian project thought --name \"{project}\" \\\n"
+            f"      --content \"(see Zotero project {proj.get('project_key', '?')} for papers)\""
+        )
+
+    # Exit code: 0 if download+project OK, 1 if any error
+    if result.get("errors"):
+        sys.exit(1)
+
+
+
