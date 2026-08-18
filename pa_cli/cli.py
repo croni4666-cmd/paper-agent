@@ -2560,3 +2560,165 @@ def mcp_fetch_serve(debug):
     from . import mcp_fetch
     mcp_fetch.main()
 
+
+@main.group()
+def jobs():
+    """[P2-15] Manage batch fetch jobs (status / tail / resume).
+
+    Backed by ~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt}.
+    Inspired by `instsci jobs status/tail/resume` (Round 14 coupling).
+
+    Subcommands:
+      pa jobs start   --input <refs.bib> --out <dir> --job-id <id> [--prefer auto]
+      pa jobs list
+      pa jobs status  <job_id>
+      pa jobs tail    <job_id> [-n 50]
+      pa jobs resume  <job_id>
+
+    Override jobs root via $PA_JOBS_DIR.
+    """
+
+
+@jobs.command(name="start")
+@click.option("--job-id", "job_id", required=True,
+              help="Unique job ID (alphanumeric + _/-). Becomes subdir under ~/.paper-agent/jobs/")
+@click.option("--input", "input_file", required=True, type=click.Path(exists=True),
+              help="Input Bibtex file (refs.bib)")
+@click.option("--out", "output_dir", required=True, type=click.Path(),
+              help="Output directory for fetched PDFs (created if missing)")
+@click.option("--prefer", default="auto",
+              type=click.Choice(["auto", "scihub", "annas", "cnki", "arxiv", "direct"]),
+              help="Preferred fetch channel (default: auto)")
+@click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
+              help="Max total seconds before timeout (default 1800 = 30 min)")
+def jobs_start(job_id, input_file, output_dir, prefer, max_total_sec):
+    """[P2-15] Start a new fetch-pdf-batch job.
+
+    Creates ~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt} and
+    runs `pa fetch-pdf-batch` synchronously, writing the manifest on
+    completion. For long jobs, run in one terminal and `pa jobs status`
+    / `pa jobs tail` in another.
+    """
+    from . import jobs as jobs_mod
+    from pathlib import Path as _P
+
+    # Validate job_id
+    try:
+        jobs_mod.get_job_dir(job_id)  # raises if invalid
+    except ValueError as e:
+        click.echo(f"[pa jobs] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    # Refuse if job already exists (avoid clobbering manifest)
+    existing = jobs_mod.read_manifest(job_id)
+    if existing is not None:
+        click.echo(
+            f"[pa jobs] ERROR: job '{job_id}' already exists "
+            f"(status={existing.status}, created_at={existing.created_at}). "
+            f"Use `pa jobs resume {job_id}` to retry, or pick a different --job-id.",
+            err=True,
+        )
+        sys.exit(2)
+
+    click.echo(f"[pa jobs] starting {job_id} ...", err=True)
+    click.echo(f"[pa jobs]   input:  {input_file}", err=True)
+    click.echo(f"[pa jobs]   output: {output_dir}", err=True)
+    click.echo(f"[pa jobs]   log:    {jobs_mod.get_log_path(job_id)}", err=True)
+    click.echo(f"[pa jobs]   manifest: {jobs_mod.get_manifest_path(job_id)}", err=True)
+    click.echo(f"[pa jobs] (this may take a while; Ctrl+C to interrupt)", err=True)
+
+    returncode = jobs_mod.start_job(
+        job_id=job_id,
+        input_file=_P(input_file),
+        output_dir=_P(output_dir),
+        prefer=prefer,
+        max_total_sec=max_total_sec,
+    )
+    final = jobs_mod.read_manifest(job_id)
+    if final is not None:
+        click.echo(
+            f"[pa jobs] done: status={final.status} "
+            f"n_success={final.n_success}/{final.n_total} "
+            f"failed={final.n_failed}",
+            err=True,
+        )
+    sys.exit(returncode if returncode > 0 else 0)
+
+
+@jobs.command(name="list")
+def jobs_list():
+    """[P2-15] List all jobs (newest first)."""
+    from . import jobs as jobs_mod
+    items = jobs_mod.list_jobs()
+    if not items:
+        click.echo("[pa jobs] no jobs found")
+        click.echo(f"[pa jobs] jobs root: {jobs_mod.get_jobs_root()}", err=True)
+        return
+    click.echo(f"[pa jobs] {len(items)} job(s) in {jobs_mod.get_jobs_root()}:")
+    for job_id, m in items:
+        click.echo(jobs_mod.format_status_line(job_id, m))
+
+
+@jobs.command(name="status")
+@click.argument("job_id")
+def jobs_status(job_id):
+    """[P2-15] Show full status block for a job."""
+    from . import jobs as jobs_mod
+    try:
+        m = jobs_mod.read_manifest(job_id)
+    except ValueError as e:
+        click.echo(f"[pa jobs] ERROR: {e}", err=True)
+        sys.exit(2)
+    if m is None:
+        click.echo(f"[pa jobs] ERROR: job '{job_id}' not found", err=True)
+        sys.exit(2)
+    click.echo(jobs_mod.format_status_block(m))
+
+
+@jobs.command(name="tail")
+@click.argument("job_id")
+@click.option("-n", "n_lines", default=50, type=int,
+              help="Number of lines to show (default 50)")
+def jobs_tail(job_id, n_lines):
+    """[P2-15] Show last N lines of log.txt (like `tail -n`)."""
+    from . import jobs as jobs_mod
+    try:
+        if jobs_mod.read_manifest(job_id) is None:
+            click.echo(f"[pa jobs] ERROR: job '{job_id}' not found", err=True)
+            sys.exit(2)
+    except ValueError as e:
+        click.echo(f"[pa jobs] ERROR: {e}", err=True)
+        sys.exit(2)
+    lines = jobs_mod.tail_log(job_id, n=n_lines)
+    if not lines:
+        click.echo(f"[pa jobs] log empty or not found for '{job_id}'")
+        return
+    for line in lines:
+        click.echo(line)
+
+
+@jobs.command(name="resume")
+@click.argument("job_id")
+@click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
+              help="Max total seconds before timeout (default 1800 = 30 min)")
+def jobs_resume(job_id, max_total_sec):
+    """[P2-15] Re-run a job (only failed/missing entries, --skip-existing)."""
+    from . import jobs as jobs_mod
+    try:
+        returncode = jobs_mod.resume_job(job_id, max_total_sec=max_total_sec)
+    except FileNotFoundError as e:
+        click.echo(f"[pa jobs] ERROR: {e}", err=True)
+        sys.exit(2)
+    except RuntimeError as e:
+        click.echo(f"[pa jobs] ERROR: {e}", err=True)
+        sys.exit(2)
+    final = jobs_mod.read_manifest(job_id)
+    if final is not None:
+        click.echo(
+            f"[pa jobs] resume done: status={final.status} "
+            f"n_success={final.n_success}/{final.n_total} "
+            f"failed={final.n_failed}",
+            err=True,
+        )
+    sys.exit(returncode if returncode > 0 else 0)
+
