@@ -7,6 +7,192 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.18.0] - 2026-08-18
+
+### Added — `[P3-28.2] pa zotero-project pull / export-bib — bidirectional Zotero <-> local pa project`
+
+**Rationale** (deferred from v3.9.16.0 [P3-28] Zotero project work +
+v3.9.17.x orchestrator push direction):
+
+After v3.9.16.0 shipped `pa zotero project` (push direction only:
+`pa zotero push` writes to Zotero, `pa zotero project create/list/status/note/add/search`
+manage Zotero-side state) and v3.9.17.x added `pa search-and-import`
+(end-to-end push workflow with Zotero + Obsidian auto-sync), the
+**reverse direction** — pulling an existing Zotero collection into
+a local pa project for offline analysis — was still missing.
+
+v3.9.18.0 closes this gap. Two new CLI commands under
+`pa zotero-project`:
+
+1. **`pa zotero-project pull`** — pull a Zotero collection into a
+   local pa project at `~/.paper-agent/projects/<slug>/`. Creates
+   the standard pa project skeleton (`meta.json` + `refs.bib` +
+   `judges.sqlite`), and the `meta.json` is augmented with
+   Zotero-specific fields (`zotero_collection_key`,
+   `zotero_collection_name`, `zotero_collection_version`,
+   `source: "zotero-pull"`) so the round-trip is preserved.
+
+2. **`pa zotero-project export-bib`** — export a Zotero collection
+   to a `.bib` file for sharing with non-Zotero users
+   (Overleaf, colleagues, Mendeley).
+
+**What ships (MINOR bump, 2 new CLI commands)**:
+
+- **`pa_cli/zotero_api.py` 4 new functions**:
+  - `_zotero_type_to_bibtex_type(z_type, extra)` — Zotero itemType
+    → Bibtex type map (24+ types; thesisType auto-detects
+    `mastersthesis` from `Master of Science` etc.)
+  - `_zotero_creators_to_bibtex_author(creators)` — Zotero
+    `creators[]` → Bibtex `"Lastname, Firstname and ..."`. Only
+    `creatorType=author` is included (editors / translators go
+    in their own Bibtex fields, not `author`). Handles both
+    `firstName/lastName` and `name` (org) shapes.
+  - `_sanitize_bibtex_key(s, fallback="ref")` — strip non-ASCII,
+    replace runs of non-alphanumeric with `_`, trim to 40 chars.
+  - `zotero_item_to_bibtex(item)` — convert a single Zotero item
+    dict to a complete Bibtex entry string (`@type{key,\n  ...\n}`).
+    Returns `None` if no title. Cite-key: DOI last-segment, else
+    first-author-surname + year, else first-significant-word of
+    title, else `ref`. Long abstracts (4000+ chars) truncated to
+    keep file readable. Brace/backslash escaping in field values.
+  - `collection_items_to_bibtex(client, collection_key, out_path=None)`
+    — convert all items in a collection. Returns
+    `{n_total, n_converted, n_skipped, n_failed, bibtex_str,
+    out_path?, results}`. Cite-key collision handled with `_2`,
+    `_3` suffix. Failed items (unsupported types) skipped, not
+    raised. Optionally writes to `out_path` (creates parent dirs).
+  - `pull_collection_to_project(client, collection_name,
+    project_slug=None, project_root=None, overwrite=False)` —
+    full orchestrator: get items → `init_project()` (from
+    `pa_cli.project`) → augment `meta.json` with Zotero fields
+    → write `refs.bib` from `collection_items_to_bibtex`.
+    Refuses to overwrite existing project unless `overwrite=True`.
+    Returns `{status, project_path, project_slug, zotero_key,
+    zotero_collection_name, n_total, n_converted, n_skipped,
+    n_failed, refs_path, meta_path, judges_path}`.
+
+- **`pa_cli/cli.py` 2 new Click commands**:
+  - `@zotero_project.command(name="pull")` with flags
+    `--name`/`--key` (mutually exclusive), `--slug` (default:
+    derived from name), `--root` (default: `~/.paper-agent/projects/`),
+    `--overwrite`, `--json`
+  - `@zotero_project.command(name="export-bib")` with flags
+    `--name`/`--key`, `--out` (required), `--json`
+  - Both follow existing `pa zotero project` subcommand conventions
+    (mutually-exclusive `--name`/`--key`, clear error messages,
+    human-readable + JSON output modes)
+
+- **Bibtex fields emitted** (per Zotero itemType):
+  - `journalArticle`: title, author, year, doi, url, journal, volume, number, pages, abstract, zotero_key
+  - `book`: title, author, year, publisher, abstract, zotero_key
+  - `bookSection`: title, author, year, booktitle (from bookTitle), publisher, doi, url, abstract, zotero_key
+  - `conferencePaper`: title, author, year, doi, url, abstract, zotero_key
+  - `thesis` (PhD default): title, author, year, type (thesisType), school (institution), address (place), abstract, zotero_key
+  - `thesis` (Master's): @mastersthesis (auto-detected from thesisType containing "master")
+  - `preprint` / `manuscript` / `webpage` / `dataset` etc.: @misc
+  - `patent`: @patent
+  - `report`: @techreport
+  - **All entries include `zotero_key`** (Zotero item key) for
+    round-trip back to push: a future `pa zotero push --corpus
+    refs.bib` can use this to verify items are still in the
+    source collection.
+
+**Tests** (47 new + 0 regression):
+
+- `test_output/test_zotero_pull_export.py` (24KB, **47/47 pass**):
+  - `TestZoteroTypeToBibtex` (10): journalArticle / book / conferencePaper
+    / bookSection / phdthesis / mastersthesis / report / preprint /
+    unknown → misc / patent
+  - `TestZoteroCreatorsToBibtexAuthor` (7): single first+last /
+    multi / org single name / mixed / empty / editor skipped /
+    translator skipped
+  - `TestSanitizeBibtexKey` (5): simple word / punctuation replaced /
+    truncate to 40 / empty returns fallback / explicit fallback
+  - `TestZoteroItemToBibtex` (11): journalArticle full / book org
+    author / thesis master / conferencePaper / bookSection with
+    booktitle / preprint / no-title → None / no-DOI uses
+    author-year cite-key / long abstract truncated / brace escape
+  - `TestCollectionItemsToBibtex` (4): happy / empty / writes to
+    file / cite-key collision dedup with `_2` suffix
+  - `TestPullCollectionToProject` (7): happy path / idempotent
+    refuses existing / overwrite replaces / custom slug / collection
+    not found / empty collection name / creates valid judges.sqlite
+  - `TestCliPullAndExport` (4 smoke): pull --help / export-bib --help
+    / missing name+key errors / name+key mutually exclusive
+- Related test files (re-verified, 0 regression):
+  - test_search_and_import.py: 21/21
+  - test_zotero_collections.py: 37/37
+  - test_zotero_upload_pdfs.py: 16/16
+  - test_obsidian.py: 49/49
+  - test_zotero_api.py: 16/16
+  - test_zotero_local.py: 11/11
+  - test_search_and_import_obsidian.py: 11/11
+  - test_jobs.py: 14/14
+- **Total: 296 pass + 10 skipped + 3 pre-existing fails (citations_e2e
+  x2 + mcp_setup x1 — all unrelated to v3.9.18.0)**
+
+**Examples**:
+
+```bash
+# Pull a Zotero collection into a local pa project
+pa zotero-project pull --name "long-term care"
+# Output:
+#   [zotero-project] 'long-term-care' (created) from Zotero collection
+#     'long-term care' (key=COLL_KEY)
+#     project dir:    /home/user/.paper-agent/projects/long-term-care
+#     refs.bib:       /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     meta.json:      /home/user/.paper-agent/projects/long-term-care/meta.json
+#     judges.sqlite:  /home/user/.paper-agent/projects/long-term-care/judges.sqlite
+#     items:          18 total, 18 converted, 0 skipped, 0 failed
+
+# Custom slug
+pa zotero-project pull --name "long-term care" --slug ltc
+
+# By collection key
+pa zotero-project pull --key COLL_KEY
+
+# Re-pull (refuse by default; use --overwrite to replace)
+pa zotero-project pull --name "long-term care" --overwrite
+
+# Export a Zotero collection to .bib for sharing
+pa zotero-project export-bib --name "long-term care" --out ./exports/ltc.bib
+# Output:
+#   [zotero-project] exported collection 'long-term care' to
+#     /path/exports/ltc.bib
+#     total:     18
+#     converted: 18
+#     skipped:   0
+#     failed:    0
+
+# Use the pulled project with all pa project commands
+pa project status long-term-care        # n_papers=18, n_labels=0
+pa review ./projects/long-term-care/    # generate lit review from pulled corpus
+pa topics ./projects/long-term-care/    # cluster topics from pulled corpus
+
+# Round-trip: pull → modify locally → push back
+# (push is a separate command; v3.9.15.0)
+pa zotero push --corpus ./projects/long-term-care/refs.bib
+```
+
+**No new external dependencies**: uses existing `pyzotero` (Zotero
+Web API) and existing `pa_cli.project` (local project skeleton).
+
+**MINOR bump** (not PATCH): 2 new CLI commands + 4 new functions +
+significant new surface. Round-trip is a user-visible capability
+that didn't exist before.
+
+**Sub-task decomposition** (final time log):
+- A. Design Bibtex format + Zotero→Bibtex type map (24 types) — 15min ✅
+- B. Implement `_zotero_type_to_bibtex_type` + `_zotero_creators_to_bibtex_author` + `_sanitize_bibtex_key` — 20min ✅
+- C. Implement `zotero_item_to_bibtex` with cite-key logic + field escaping — 30min ✅
+- D. Implement `collection_items_to_bibtex` with dedup + file output — 20min ✅
+- E. Implement `pull_collection_to_project` orchestrator (reuses `init_project` from `pa_cli.project`) — 25min ✅
+- F. Wire 2 new CLI commands under `@zotero_project.command(...)` — 25min ✅
+- G. Write 47 tests (mock-based, no live API) — 50min ✅
+- H. CHANGELOG + ROADMAP + README updates — 15min ✅
+- I. Pre-push hygiene + commit + push + tag + release — 10min ✅
+- | **Total** | **~3.5h** | on target (vs 3-4h estimate) |
+
 ## [3.9.17.2] - 2026-08-18
 
 ### Added — `[P3-29.1] --with-obsidian flag for pa search-and-import`

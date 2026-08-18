@@ -3417,6 +3417,179 @@ def zotero_project_search(query, name, limit, as_json):
 
 
 # ─────────────────────────────────────────────────────────────────
+# v3.9.18 [P3-28.2] pa zotero project pull / export-bib — bidirectional
+# Zotero <-> local pa project
+# ─────────────────────────────────────────────────────────────────
+@zotero_project.command(name="pull")
+@click.option("--name", "name", default=None,
+              help="Collection name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Collection key (mutually exclusive with --name)")
+@click.option("--slug", "slug", default=None,
+              help="Local project slug (default: derived from collection name)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override project root (default: ~/.paper-agent/projects/)")
+@click.option("--overwrite", is_flag=True,
+              help="Replace existing local project (default: refuse if exists)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable summary)")
+def zotero_project_pull(name, key, slug, root_path, overwrite, as_json):
+    """[P3-28.2] Pull a Zotero collection into a local pa project.
+
+    Creates a new pa project at <root>/<slug>/ with:
+    - meta.json (with zotero_collection_key + name + version)
+    - refs.bib (all bibliographic items as Bibtex)
+    - judges.sqlite (empty)
+
+    Use case: take a Zotero collection offline for local analysis
+    (pa review, pa topics, pa search, etc.) without losing the
+    Zotero-side authorship. To push local changes BACK to Zotero,
+    use `pa zotero push --corpus <project>/refs.bib`.
+
+    Examples:
+      pa zotero project pull --name "long-term care"
+      pa zotero project pull --name "long-term care" --slug ltc
+      pa zotero project pull --key COLL_KEY --overwrite
+    """
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    # Resolve collection
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] collection not found: name={name!r} key={key!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    # Use the canonical collection name for the project title (so slug = name)
+    canonical_name = coll["name"]
+
+    result = zotero_api.pull_collection_to_project(
+        client,
+        collection_name=canonical_name,
+        project_slug=slug,
+        project_root=Path(root_path) if root_path else None,
+        overwrite=overwrite,
+    )
+
+    if result["status"] == "error":
+        click.echo(f"[zotero-project] ERROR: {result.get('error', 'unknown')}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+
+    click.echo(
+        f"[zotero-project] '{result['project_slug']}' ({result['status']}) "
+        f"from Zotero collection '{result['zotero_collection_name']}' "
+        f"(key={result['zotero_key']})\n"
+        f"  project dir:    {result['project_path']}\n"
+        f"  refs.bib:       {result['refs_path']}\n"
+        f"  meta.json:      {result['meta_path']}\n"
+        f"  judges.sqlite:  {result['judges_path']}\n"
+        f"  items:          {result['n_total']} total, "
+        f"{result['n_converted']} converted, "
+        f"{result['n_skipped']} skipped, "
+        f"{result['n_failed']} failed"
+    )
+
+
+@zotero_project.command(name="export-bib")
+@click.option("--name", "name", default=None,
+              help="Collection name (mutually exclusive with --key)")
+@click.option("--key", "key", default=None,
+              help="Collection key (mutually exclusive with --name)")
+@click.option("--out", "out_path", required=True, type=click.Path(dir_okay=False),
+              help="Output .bib file path (will be overwritten)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON summary (else human-readable)")
+def zotero_project_export_bib(name, key, out_path, as_json):
+    """[P3-28.2] Export a Zotero collection to a .bib file.
+
+    Use case: share a Zotero collection with a colleague who doesn't
+    use Zotero (e.g. Overleaf user). Converts each item to a Bibtex
+    entry with the standard fields (title, author, year, doi, journal,
+    volume, number, pages, abstract, zotero_key).
+
+    Examples:
+      pa zotero project export-bib --name "long-term care" --out ltc.bib
+      pa zotero project export-bib --key COLL_KEY --out ltc.bib
+    """
+    from . import zotero_api
+    if not name and not key:
+        click.echo("[zotero-project] ERROR: must provide --name or --key", err=True)
+        sys.exit(2)
+    if name and key:
+        click.echo("[zotero-project] ERROR: --name and --key are mutually exclusive", err=True)
+        sys.exit(2)
+
+    try:
+        client = zotero_api.get_client()
+    except (ImportError, ValueError) as e:
+        click.echo(f"[zotero-project] ERROR: {e}", err=True)
+        sys.exit(2)
+
+    coll = None
+    if key:
+        all_colls = zotero_api.list_collections(client, top_only=False)
+        coll = next((c for c in all_colls if c["key"] == key), None)
+    else:
+        coll = zotero_api.find_collection_by_name(client, name)
+    if not coll:
+        click.echo(
+            f"[zotero-project] collection not found: name={name!r} key={key!r}",
+            err=True,
+        )
+        sys.exit(1)
+
+    result = zotero_api.collection_items_to_bibtex(
+        client, coll["key"], out_path=Path(out_path)
+    )
+
+    if as_json:
+        # Don't dump the whole bibtex_str; just summary
+        summary = {
+            "zotero_collection": coll["name"],
+            "zotero_key": coll["key"],
+            "out_path": result.get("out_path"),
+            "n_total": result["n_total"],
+            "n_converted": result["n_converted"],
+            "n_skipped": result["n_skipped"],
+            "n_failed": result["n_failed"],
+            "results": result["results"],
+        }
+        click.echo(json.dumps(summary, ensure_ascii=False, indent=2))
+        return
+
+    click.echo(
+        f"[zotero-project] exported collection '{coll['name']}' to {result['out_path']}\n"
+        f"  total:     {result['n_total']}\n"
+        f"  converted: {result['n_converted']}\n"
+        f"  skipped:   {result['n_skipped']}  (no title or unsupported)\n"
+        f"  failed:    {result['n_failed']}"
+    )
+
+
+# ─────────────────────────────────────────────────────────────────
 # v3.9.16 [P3-29] pa obsidian — research sub-vault + project management
 # ─────────────────────────────────────────────────────────────────
 @main.group()

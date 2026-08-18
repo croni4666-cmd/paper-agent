@@ -81,6 +81,8 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero search` | Query Zotero Web API library | "long-term care" style qmode |
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
+| `pa zotero project pull` | Zotero collection → local pa project | Round-trip: download for offline analysis |
+| `pa zotero project export-bib` | Zotero collection → .bib file | Share with non-Zotero users (Overleaf) |
 | `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
 | `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note (+ Obsidian with `--with-obsidian`) |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
@@ -413,6 +415,104 @@ key + download counts, so the two systems stay cross-linked without
 auto-coupling.
 
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
+
+## Bidirectional Zotero sync (v3.9.18.0)
+
+v3.9.15.0 shipped `pa zotero push` (write metadata + PDFs to Zotero
+from a local Bibtex). v3.9.18.0 closes the **reverse direction**:
+two new commands under `pa zotero-project` for pulling from Zotero
+into a local project, or exporting a Zotero collection to a `.bib`
+file.
+
+**Why this matters**: until v3.9.18.0, once papers lived in Zotero,
+the only way to use them with `pa review` / `pa topics` / `pa search`
+was to manually re-export `.bib` from Zotero and feed it in. Now
+the round-trip is a single command.
+
+### `pa zotero-project pull` — Zotero collection → local pa project
+
+```bash
+# Default: pull a Zotero collection into a local pa project
+pa zotero-project pull --name "long-term care"
+# Output:
+#   [zotero-project] 'long-term-care' (created) from Zotero collection
+#     'long-term care' (key=COLL_KEY)
+#     project dir:    /home/user/.paper-agent/projects/long-term-care
+#     refs.bib:       /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     meta.json:      /home/user/.paper-agent/projects/long-term-care/meta.json
+#     judges.sqlite:  /home/user/.paper-agent/projects/long-term-care/judges.sqlite
+#     items:          18 total, 18 converted, 0 skipped, 0 failed
+
+# Custom slug
+pa zotero-project pull --name "long-term care" --slug ltc
+
+# By collection key
+pa zotero-project pull --key COLL_KEY
+
+# Re-pull (refuse by default; use --overwrite to replace)
+pa zotero-project pull --name "long-term care" --overwrite
+```
+
+The pulled project is a standard `pa project` skeleton (`meta.json` +
+`refs.bib` + `judges.sqlite`) — `pa project status`, `pa review`,
+`pa topics`, `pa search --project`, etc. all work on it. The
+`meta.json` is augmented with Zotero-specific fields so the
+round-trip is preserved:
+
+```json
+{
+  "slug": "long-term-care",
+  "title": "Long-term care",
+  "description": "Pulled from Zotero collection 'Long-term care' (key=COLL_KEY)",
+  "zotero_collection_key": "COLL_KEY",
+  "zotero_collection_name": "Long-term care",
+  "zotero_collection_version": 5,
+  "source": "zotero-pull"
+}
+```
+
+Every Bibtex entry also includes `zotero_key = {KEY}` so a future
+`pa zotero push --corpus refs.bib` can verify items are still in
+the source collection.
+
+### `pa zotero-project export-bib` — Zotero collection → .bib file
+
+```bash
+pa zotero-project export-bib --name "long-term care" --out ./exports/ltc.bib
+# Output:
+#   [zotero-project] exported collection 'long-term care' to
+#     /path/exports/ltc.bib
+#     total:     18
+#     converted: 18
+#     skipped:   0
+#     failed:    0
+```
+
+For sharing with colleagues who use Overleaf / Mendeley / JabRef
+instead of Zotero. Standard Bibtex format (`@article`, `@book`,
+`@inproceedings`, `@mastersthesis`, etc.) with the standard fields
+(title / author / year / doi / journal / volume / number / pages /
+abstract / zotero_key).
+
+### Round-trip use case
+
+```bash
+# 1. Pull a Zotero collection into a local pa project
+pa zotero-project pull --name "long-term care"
+
+# 2. Use it locally (any pa command)
+pa project status long-term-care
+pa review ~/.paper-agent/projects/long-term-care/
+pa topics ~/.paper-agent/projects/long-term-care/
+
+# 3. Round-trip back: push local changes to Zotero
+# (uses v3.9.15.0 push + zotero_key field for verification)
+pa zotero push --corpus ~/.paper-agent/projects/long-term-care/refs.bib
+```
+
+**Idempotent**: re-pulling the same collection (with `--overwrite`)
+gives the same refs.bib (cite-key stable, content identical unless
+Zotero items changed).
 
 
 

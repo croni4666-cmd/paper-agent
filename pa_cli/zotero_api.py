@@ -47,6 +47,7 @@ import re
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
+from datetime import datetime
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 # Lazy import pyzotero (it's a runtime dep, not import-time)
@@ -840,5 +841,411 @@ def upload_pdfs(
         "n_failed": n_failed,
         "results": results,
     }
-    out.sort(key=lambda x: x.get("dateModified", ""), reverse=True)
-    return out
+
+
+# ─────────────────────────────────────────────────────────────────
+# Pull / export-bib (v3.9.18 [P3-28.2]) -- bidirectional Zotero <-> local pa project
+# ─────────────────────────────────────────────────────────────────
+_ZOTERO_TYPE_TO_BIBTEX_TYPE = {
+    "journalArticle": "article",
+    "book": "book",
+    "bookSection": "incollection",
+    "conferencePaper": "inproceedings",
+    "thesis": "phdthesis",  # default; will check ThesisType for mastersthesis
+    "report": "techreport",
+    "preprint": "misc",
+    "manuscript": "unpublished",
+    "document": "misc",
+    "webpage": "misc",
+    "encyclopediaArticle": "incollection",
+    "dictionaryEntry": "incollection",
+    "magazineArticle": "article",
+    "newspaperArticle": "article",
+    "blogPost": "misc",
+    "forumPost": "misc",
+    "presentation": "misc",
+    "dataset": "misc",
+    "software": "misc",
+    "interview": "misc",
+    "letter": "misc",
+    "podcast": "misc",
+    "radioBroadcast": "misc",
+    "tvBroadcast": "misc",
+    "videoRecording": "misc",
+    "audioRecording": "misc",
+    "patent": "patent",
+}
+
+
+def _zotero_type_to_bibtex_type(z_type: str, extra: Optional[Dict[str, Any]] = None) -> str:
+    """Map a Zotero itemType to a Bibtex entry type.
+
+    Unknown types fall back to @misc. Thesis subtype is auto-detected
+    from extra['thesisType']: 'Master's Thesis' -> 'mastersthesis'.
+    """
+    base = _ZOTERO_TYPE_TO_BIBTEX_TYPE.get(z_type, "misc")
+    if z_type == "thesis" and extra:
+        tt = (extra.get("thesisType") or "").lower()
+        if "master" in tt:
+            return "mastersthesis"
+    return base
+
+
+def _zotero_creators_to_bibtex_author(creators: List[Dict[str, Any]]) -> str:
+    """Convert Zotero creators list to Bibtex author field value.
+
+    Zotero creator = {"creatorType": "author", "firstName": "...", "lastName": "..."}
+                  or {"creatorType": "author", "name": "..."}  (single-field for orgs)
+    Bibtex format: "Lastname, Firstname and Lastname, Firstname"
+    For single-name (organizations): pass through.
+
+    **Only `author` creatorType is included** (editors / translators
+    go in their own Bibtex fields, not in `author`).
+    """
+    if not creators:
+        return ""
+    parts = []
+    for c in creators:
+        ctype = c.get("creatorType")
+        if ctype and ctype != "author":
+            continue  # skip editor/translator/contributor/etc.
+        last = (c.get("lastName") or "").strip()
+        first = (c.get("firstName") or "").strip()
+        name = (c.get("name") or "").strip()
+        if last and first:
+            parts.append(f"{last}, {first}")
+        elif last:
+            parts.append(last)
+        elif name:
+            parts.append(name)
+    return " and ".join(parts)
+
+
+def _sanitize_bibtex_key(s: str, fallback: str = "ref") -> str:
+    """Make a string into a valid Bibtex cite-key.
+
+    Strips non-ASCII, replaces runs of non-alphanumeric with single '_',
+    trims to 40 chars. Returns 'fallback' if input is empty.
+    """
+    if not s:
+        return fallback
+    # Lowercase + replace any non [a-z0-9] with '_'
+    out = re.sub(r"[^A-Za-z0-9]+", "_", s).strip("_").lower()
+    if not out:
+        return fallback
+    return out[:40]
+
+
+def zotero_item_to_bibtex(item: Dict[str, Any]) -> Optional[str]:
+    """Convert a single Zotero item dict to a Bibtex entry string.
+
+    Args:
+        item: a single item from `client.collection_items()` (or any
+              pyzotero item response). Accepts both bare items and
+              {"data": {...}} wrapped items.
+
+    Returns:
+        A complete Bibtex entry string (e.g. "@article{key,\n  ...\n}"),
+        or None if the item has no title (skipped) or unsupported shape.
+    """
+    data = item.get("data", item) if isinstance(item, dict) else {}
+    if not data:
+        return None
+    title = (data.get("title") or "").strip()
+    if not title:
+        return None
+
+    z_type = data.get("itemType", "journalArticle")
+    bib_type = _zotero_type_to_bibtex_type(z_type, data)
+
+    # Cite-key: prefer DOI (URL-stripped, last path segment), else first-author-surname + year
+    doi = normalize_doi(data.get("DOI", "")) or ""
+    if doi:
+        # Use last path component of DOI as cite-key base
+        key_base = doi.split("/")[-1]
+    else:
+        creators = data.get("creators") or []
+        last_name = ""
+        org_name = ""
+        for c in creators:
+            if c.get("lastName"):
+                last_name = c["lastName"]
+                break
+            if not org_name and c.get("name"):
+                # Use first word of org name for cite-key
+                org_name = c["name"].split()[0] if c.get("name") else ""
+        year = (data.get("date") or "")[:4]
+        if last_name and year:
+            key_base = f"{last_name}{year}"
+        elif last_name:
+            key_base = f"{last_name}{year}" if year else last_name
+        elif org_name:
+            key_base = f"{org_name}{year}" if year else org_name
+        elif title:
+            # Use first significant word of title (skip "the", "a", etc.)
+            for w in re.split(r"\s+", title):
+                wl = w.lower().strip(".,;:")
+                if wl and wl not in ("the", "a", "an", "of", "on", "in"):
+                    key_base = w + (year or "")
+                    break
+            else:
+                key_base = title
+        else:
+            key_base = "ref"
+    cite_key = _sanitize_bibtex_key(key_base, fallback="ref")
+
+    # Build fields
+    fields = []
+    fields.append(("title", title))
+    authors = _zotero_creators_to_bibtex_author(data.get("creators") or [])
+    if authors:
+        fields.append(("author", authors))
+    date = (data.get("date") or "").strip()
+    if date:
+        # Bibtex year is YYYY; Zotero date may be 'YYYY-MM-DD' or 'YYYY'
+        year = date[:4] if date[:4].isdigit() else ""
+        if year:
+            fields.append(("year", year))
+    if doi:
+        fields.append(("doi", doi))
+        fields.append(("url", f"https://doi.org/{doi}"))
+    pub_title = (data.get("publicationTitle") or "").strip()
+    if pub_title:
+        fields.append(("journal", pub_title))
+    publisher = (data.get("publisher") or "").strip()
+    if publisher:
+        fields.append(("publisher", publisher))
+    volume = (data.get("volume") or "").strip()
+    if volume:
+        fields.append(("volume", volume))
+    issue = (data.get("issue") or "").strip()
+    if issue:
+        fields.append(("number", issue))
+    pages = (data.get("pages") or "").strip()
+    if pages:
+        fields.append(("pages", pages))
+    # For bookSection: book title goes into 'booktitle'
+    book_title = (data.get("bookTitle") or "").strip()
+    if book_title and bib_type == "incollection":
+        fields.append(("booktitle", book_title))
+    # For thesis: thesisType stays in 'type' sub-field
+    thesis_type = (data.get("thesisType") or "").strip()
+    if thesis_type and bib_type in ("phdthesis", "mastersthesis"):
+        fields.append(("type", thesis_type))
+    # Place / institution for thesis
+    place = (data.get("place") or "").strip()
+    if place and bib_type in ("phdthesis", "mastersthesis"):
+        fields.append(("address", place))
+    institution = (data.get("institution") or "").strip()
+    if institution and bib_type in ("phdthesis", "mastersthesis", "techreport"):
+        fields.append(("school" if bib_type in ("phdthesis", "mastersthesis") else "institution", institution))
+    abstract = (data.get("abstractNote") or "").strip()
+    if abstract:
+        # Truncate very long abstracts to keep file readable
+        if len(abstract) > 4000:
+            abstract = abstract[:4000] + "..."
+        fields.append(("abstract", abstract))
+    # Zotero key (for round-trip back to push)
+    z_key = (data.get("key") or "").strip()
+    if z_key:
+        fields.append(("zotero_key", z_key))
+
+    # Serialize
+    body_lines = ["@" + bib_type + "{" + cite_key + ","]
+    for k, v in fields:
+        # Escape braces / backslashes in value
+        v_esc = v.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
+        body_lines.append(f"  {k:<12s} = {{{v_esc}}},")
+    body_lines.append("}")
+    return "\n".join(body_lines)
+
+
+def collection_items_to_bibtex(
+    client: "Zotero",
+    collection_key: str,
+    out_path: Optional[Path] = None,
+) -> Dict[str, Any]:
+    """Convert all items in a Zotero collection to Bibtex format.
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_key: the collection's Zotero key
+        out_path: optional .bib file to write. If None, returns Bibtex string.
+
+    Returns:
+        Dict with {n_total, n_converted, n_skipped, n_failed, bibtex_str, out_path?}.
+        Failed items (e.g. attachments or unsupported types) are skipped, not raised.
+    """
+    if not collection_key:
+        return {"n_total": 0, "n_converted": 0, "n_skipped": 0, "n_failed": 0,
+                "bibtex_str": "", "results": []}
+
+    items = get_collection_items(client, collection_key)
+    n_total = len(items)
+
+    bibtex_entries: List[str] = []
+    n_converted = 0
+    n_skipped = 0
+    n_failed = 0
+    results: List[Dict[str, Any]] = []
+    seen_keys: Set[str] = set()  # dedup by cite-key
+
+    for item in items:
+        try:
+            bib_str = zotero_item_to_bibtex(item)
+        except Exception as e:
+            n_failed += 1
+            results.append({"key": item.get("key", ""), "title": item.get("title", ""),
+                            "status": "failed", "error": f"{type(e).__name__}: {str(e)[:200]}"})
+            continue
+        if bib_str is None:
+            n_skipped += 1
+            results.append({"key": item.get("key", ""), "title": item.get("title", ""),
+                            "status": "skipped", "error": "no title or unsupported"})
+            continue
+        # Extract cite-key (first line "@type{key,") for dedup
+        try:
+            first_line = bib_str.split("\n", 1)[0]
+            cite_key = first_line.split("{", 1)[1].rstrip(",")
+        except (IndexError, ValueError):
+            cite_key = ""
+        if cite_key and cite_key in seen_keys:
+            # Append a suffix to make unique
+            i = 2
+            while f"{cite_key}_{i}" in seen_keys:
+                i += 1
+            new_key = f"{cite_key}_{i}"
+            # Replace old cite-key with new in the first line
+            first_line, rest = bib_str.split("\n", 1)
+            first_line = first_line.replace("{" + cite_key + ",", "{" + new_key + ",")
+            bib_str = first_line + "\n" + rest
+            cite_key = new_key
+        if cite_key:
+            seen_keys.add(cite_key)
+        bibtex_entries.append(bib_str)
+        n_converted += 1
+        results.append({"key": item.get("key", ""), "title": item.get("title", ""),
+                        "cite_key": cite_key, "status": "converted"})
+
+    bibtex_str = "\n\n".join(bibtex_entries) + ("\n" if bibtex_entries else "")
+
+    written_path: Optional[str] = None
+    if out_path is not None:
+        out_path = Path(out_path)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(bibtex_str, encoding="utf-8")
+        written_path = str(out_path)
+
+    return {
+        "n_total": n_total,
+        "n_converted": n_converted,
+        "n_skipped": n_skipped,
+        "n_failed": n_failed,
+        "bibtex_str": bibtex_str,
+        "out_path": written_path,
+        "results": results,
+    }
+
+
+def pull_collection_to_project(
+    client: "Zotero",
+    collection_name: str,
+    project_slug: Optional[str] = None,
+    project_root: Optional[Path] = None,
+    overwrite: bool = False,
+) -> Dict[str, Any]:
+    """Pull a Zotero collection into a local pa project (refs.bib + meta.json).
+
+    Creates a new pa project at <project_root>/<project_slug>/ with:
+    - meta.json: {slug, title, description, created_at, updated_at,
+                  zotero_collection_key, zotero_collection_name,
+                  zotero_collection_version, source: "zotero-pull"}
+    - refs.bib: all bibliographic items from the collection (Bibtex format)
+    - judges.sqlite: empty judge table (matches local pa project layout)
+
+    Args:
+        client: pyzotero.Zotero client
+        collection_name: Zotero collection name to pull
+        project_slug: project slug (default: derived from name)
+        project_root: project root (default: ~/.paper-agent/projects/)
+        overwrite: if True, replace existing project. If False, refuse if exists.
+
+    Returns:
+        Dict with {status, project_path, project_slug, n_items, n_converted,
+                  n_skipped, n_failed, refs_path, meta_path, zotero_key,
+                  zotero_collection_name, error?}.
+    """
+    # Lazy import to avoid circular dep at module import
+    from .project import (
+        DEFAULT_ROOT as PA_DEFAULT_ROOT,
+        init_project,
+        project_dir,
+        project_files,
+        save_meta,
+    )
+
+    if not collection_name or not collection_name.strip():
+        return {"status": "error", "error": "empty collection name",
+                "collection_name": ""}
+
+    coll = find_collection_by_name(client, collection_name)
+    if coll is None:
+        return {"status": "error", "error": f"collection not found: {collection_name!r}",
+                "collection_name": collection_name}
+
+    # Slug: derived from name if not provided
+    if not project_slug:
+        project_slug = re.sub(r"[^A-Za-z0-9._-]+", "-", collection_name.strip()).strip("-").lower() or "zotero-project"
+
+    # Project root
+    root = Path(project_root) if project_root else PA_DEFAULT_ROOT
+
+    # Refuse if exists (unless overwrite)
+    pdir = project_dir(project_slug, root)
+    if pdir.exists() and not overwrite:
+        return {"status": "error",
+                "error": f"project already exists at {pdir} (use --overwrite to replace)",
+                "project_slug": project_slug, "project_path": str(pdir),
+                "collection_name": collection_name}
+
+    if pdir.exists() and overwrite:
+        import shutil
+        shutil.rmtree(pdir)
+
+    # Init project (creates meta.json + empty refs.bib + empty judges.sqlite)
+    try:
+        meta = init_project(
+            slug=project_slug,
+            title=collection_name,
+            description=f"Pulled from Zotero collection '{collection_name}' (key={coll['key']})",
+            root=root,
+        )
+    except FileExistsError as e:
+        return {"status": "error", "error": str(e), "project_slug": project_slug}
+
+    # Augment meta.json with Zotero-specific fields
+    meta["zotero_collection_key"] = coll["key"]
+    meta["zotero_collection_name"] = coll["name"]
+    meta["zotero_collection_version"] = coll.get("version", 0)
+    meta["source"] = "zotero-pull"
+    meta["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    save_meta(project_slug, meta, root)
+
+    # Convert collection items to Bibtex and write to refs.bib
+    refs_path = project_files(project_slug, root)["refs"]
+    conv = collection_items_to_bibtex(client, coll["key"], out_path=refs_path)
+
+    return {
+        "status": "created" if not overwrite else "overwritten",
+        "project_path": str(pdir),
+        "project_slug": project_slug,
+        "zotero_key": coll["key"],
+        "zotero_collection_name": coll["name"],
+        "n_total": conv["n_total"],
+        "n_converted": conv["n_converted"],
+        "n_skipped": conv["n_skipped"],
+        "n_failed": conv["n_failed"],
+        "refs_path": str(refs_path),
+        "meta_path": str(project_files(project_slug, root)["meta"]),
+        "judges_path": str(project_files(project_slug, root)["judges"]),
+    }
