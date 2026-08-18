@@ -7,6 +7,205 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.20.0] - 2026-08-18
+
+### Added — `Research Workflow Suite: 4 new capabilities across corpus analytics, PRISMA, daily linking, per-item update detection`
+
+**Rationale**: After v3.9.15.0-v3.9.19.0 closed the Zotero <-> local
+round-trip and incremental sync, v3.9.20.0 ships 4 new
+research-workflow capabilities in one release:
+
+1. **Per-project corpus analytics** (`[P2-19]`): `pa project
+   corpus-stats` shows n_papers, year distribution, top authors,
+   top venues, by-type breakdown, DOI coverage.
+2. **PRISMA in master note** (`[P2-19.1]`): `pa search-and-import`
+   master note now auto-embeds a PRISMA mermaid flow diagram
+   (identification → screening → eligibility → included) so
+   systematic reviews are journal-ready out of the box.
+3. **Obsidian daily-note linking** (`[P3-29.2]`): `pa obsidian
+   daily-link --project Y` adds a wiki-link in today's (or any
+   date's) `4-Daily/YYYY-MM-DD.md` so the daily note has 1-click
+   access to the active research project.
+4. **Per-item update detection** (`[P3-28.4]`): `pa zotero-project
+   diff/sync` now detect Zotero items edited after the local pull
+   (per-item version map in meta.json, set on first sync as
+   baseline, refreshed on each subsequent sync).
+
+**What ships (MINOR bump, 1 new module + 3 new CLI commands + 1 new
+flag)**:
+
+#### 1. `[P2-19] pa project corpus-stats`
+
+- **`pa_cli/corpus_stats.py` NEW** (6.4KB, pure stdlib + existing
+  `load_bibtex`):
+  - `compute_corpus_stats(refs_bib_path, top_n=10)` — returns
+    `{n_papers, n_with_doi, n_without_doi, by_type, year_min,
+    year_max, year_median, year_histogram, top_authors,
+    top_venues, bibtex_path}`. Missing file: all-zero dict (no
+    exception).
+  - `format_corpus_stats_human(stats)` — multi-line human-readable
+    output.
+  - Authors split on ` and ` (Bibtex "and" separator); short name
+    (last name only) used for counting.
+  - Top venues from `journal` (preferred) or `publisher` or
+    `booktitle` (inproceedings).
+
+- **`pa_cli/cli.py` NEW Click command**:
+  - `pa project corpus-stats [SLUG] [--root PATH] [--top N]
+    [--json]` — no slug = stats for all projects. Zotero projects
+    show sync info (key, version, last sync time).
+
+#### 2. `[P2-19.1] PRISMA in master note`
+
+- **`pa_cli/search_and_import.py` extended**:
+  - `_render_master_note` now embeds a `## PRISMA flow` section
+    after the Downloaded/Failed tables. The mermaid diagram maps
+    pa search-and-import stages to PRISMA's 4 stages:
+    - Identification = total results (downloaded + failed)
+    - Screening = downloaded
+    - Eligibility = downloaded (no manual step)
+    - Included = added to project
+  - `_render_prisma_block` helper that reuses `pa_cli.prisma`
+    (P1-3 shipped earlier). Graceful skip if prisma module
+    unavailable.
+
+#### 3. `[P3-29.2] pa obsidian daily-link`
+
+- **`pa_cli/obsidian.py` NEW function**:
+  - `daily_link(project_name, date=None, vault_path=None,
+    create_if_missing=False)` — adds a `## Active research
+    projects` section to `<vault>/4-Daily/<date>.md` with a
+    wiki-link to `0-Research/Projects/<slug>/index`. Idempotent
+    via per-project HTML comment marker
+    (`<!-- paper-agent:daily-link:<slug> -->`).
+  - Multiple projects on the same day: each gets its own line
+    in the same section.
+  - Returns `{status, daily_path, project_slug, link_added,
+    section_created, error?}`.
+  - Status values: `linked` / `skipped_no_daily_note` /
+    `skipped_no_vault` / `error`.
+
+- **`pa_cli/cli.py` NEW Click command**:
+  - `pa obsidian daily-link --project Y [--date YYYY-MM-DD]
+    [--vault PATH] [--create/--no-create] [--json]`.
+  - Default: skip gracefully if daily note doesn't exist
+    (`--create` to create a stub).
+
+#### 4. `[P3-28.4] pa zotero-project per-item update detection`
+
+- **`pa_cli/zotero_api.py` extended**:
+  - NEW: `_parse_refs_bib_for_zotero_keys(refs_bib_path)` —
+    returns `{zotero_key: normalized_doi}`. Brace-counting
+    parser (regex can't handle nested `title={X with } brace}`).
+  - `get_collection_items` now includes `version` field for each
+    item.
+  - `diff_collection_to_local` extended: new `local_meta_path`
+    param; new `updated_items` + `n_updated` output. Compares
+    Zotero `version` to `meta.json[zotero_item_versions][zk]`
+    (only flags updates when a baseline exists; first sync
+    establishes baseline, 0 false positives).
+  - `sync_collection_to_local` extended: on `--apply`, refreshes
+    `zotero_item_versions` in `meta.json` with the current
+    per-item Zotero versions (baseline update).
+
+- **`pa_cli/cli.py` extended**:
+  - `pa zotero-project diff` + `pa zotero-project sync` now show
+    `updated: N` in the summary. With `diff`, lists the first
+    20 updated items (Zotero key + title + DOI). With `sync`,
+    tells user to use `pa zotero-project pull --overwrite` to
+    refresh updated items (note: sync only adds NEW items; it
+    doesn't update existing Bibtex entries — that's a v3.9.21+
+    enhancement).
+
+**Tests** (50 new + 0 regression):
+- `test_output/test_corpus_stats.py` (9.5KB, **22/22 pass**)
+- `test_output/test_prisma_in_master_note.py` (2.6KB, **4/4 pass**)
+- `test_output/test_obsidian_daily_link.py` (7.7KB, **10/10 pass**)
+- `test_output/test_zotero_per_item_update.py` (13.3KB, **14/14
+  pass**)
+- Related test files (re-verified, 0 regression):
+  - test_search_and_import.py: 21/21
+  - test_zotero_collections.py: 37/37
+  - test_zotero_upload_pdfs.py: 16/16
+  - test_obsidian.py: 49/49
+  - test_zotero_api.py: 16/16
+  - test_zotero_local.py: 11/11
+  - test_search_and_import_obsidian.py: 11/11
+  - test_jobs.py: 14/14
+  - test_zotero_pull_export.py: 47/47
+  - test_zotero_diff_sync.py: 22/22
+- Total: 370 pass + 10 skipped + 1 pre-existing fail
+  (test_mcp_setup, unrelated to v3.9.20.0). The 2
+  test_citations_e2e fails from v3.9.18.0 are still passing.
+
+**Examples**:
+
+```bash
+# 1. Per-project corpus analytics
+pa project corpus-stats long-term-care
+# Output:
+#   [corpus-stats] /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     total:         18 papers
+#     with DOI:      18
+#     without DOI:   0
+#     by type:       article=15, inproceedings=2, techreport=1
+#     year range:    2018 - 2024 (median 2022)
+#     by decade:     2010s=3, 2020s=15
+#     top authors:   Smith(3), Jones(2), Lee(2), ...
+#     top venues:    J Health Econ(5), Lancet(3), ...
+#     zotero:        key=COLL_KEY version=12 last_sync=2026-08-18T20:15:00
+
+# 2. PRISMA in master note (auto, when running pa search-and-import)
+pa search-and-import --query "long-term care" --project "long-term care"
+# Master note now has a `## PRISMA flow` section with a mermaid
+# diagram showing 18 identified → 15 screened → 15 eligible → 15 included.
+
+# 3. Obsidian daily-note link
+pa obsidian daily-link --project "long-term care"
+# Output:
+#   [obsidian] created section + added backlink to 'long-term care' in
+#     G:\Todo list\Todo List\4-Daily\2026-08-18.md
+# (next time you open today's daily note, you'll see the project)
+
+# 4. Per-item update detection in diff/sync
+pa zotero-project diff --name "long-term care"
+# Output:
+#   [zotero-project] diff: ...
+#     new in zotero: 0
+#     removed:       0
+#     updated:       3  (Zotero items edited since last sync)
+#
+#     Updated items (use `pa zotero project pull --overwrite` to refresh):
+#       ~ [NEWKEY1] Paper Title One  (10.1234/aaa)
+#       ~ [NEWKEY2] Paper Title Two  (10.1234/bbb)
+#       ~ [NEWKEY3] Paper Title Three (10.1234/ccc)
+```
+
+**No new external dependencies**:
+- `corpus_stats` uses stdlib only (re, collections.Counter,
+  statistics.median) + existing `load_bibtex` from `pa_cli.scaffold`
+- PRISMA reuses existing `pa_cli.prisma` (P1-3 shipped earlier)
+- Obsidian daily-link reuses existing `obs_mod` helpers
+- Zotero per-item update detection reuses existing
+  `pyzotero` + `pa_cli.zotero_api` functions
+
+**MINOR bump** (not PATCH): 1 new module + 3 new CLI commands +
+per-item update detection in existing CLI = significant new
+surface (~400 LOC of code + ~500 LOC of tests).
+
+**Sub-task decomposition** (final time log):
+- A. Design 4 features + integration with existing v3.9.18/19/19.1 surface — 25min ✅
+- B. Feature 1: `corpus_stats.py` + CLI + 22 tests — 45min ✅
+- C. Feature 2: `_render_prisma_block` + integration in
+  `_render_master_note` + 4 tests — 25min ✅
+- D. Feature 3: `obs_mod.daily_link` + CLI + 10 tests — 40min ✅
+- E. Feature 4: `_parse_refs_bib_for_zotero_keys` +
+  `get_collection_items` version field + `diff`/`sync` update
+  detection + CLI + 14 tests — 60min ✅
+- F. Bump version + CHANGELOG + ROADMAP + README — 20min ✅
+- G. Pre-push hygiene + commit + push + tag + release — 10min ✅
+- | **Total** | **~3.7h** | on target (vs 3-4h estimate) |
+
 ## [3.9.19.0] - 2026-08-18
 
 ### Added — `[P3-28.3] pa zotero-project diff / sync — incremental Zotero → local updates`

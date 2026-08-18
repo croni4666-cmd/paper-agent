@@ -82,9 +82,10 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
 | `pa zotero project pull` | Zotero collection → local pa project | Round-trip: download for offline analysis |
-| `pa zotero project diff` | Show new/removed vs local refs.bib | Before incremental sync |
+| `pa zotero project diff` | Show new/removed/updated vs local refs.bib | Before incremental sync |
 | `pa zotero project sync` | Incrementally append new items to local refs.bib | Re-pull only what's new (idempotent) |
 | `pa zotero project export-bib` | Zotero collection → .bib file | Share with non-Zotero users (Overleaf) |
+| `pa project corpus-stats` | Per-project corpus analytics | n_papers / year / authors / venues |
 | `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
 | `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note (+ Obsidian with `--with-obsidian`) |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
@@ -592,10 +593,78 @@ since). Safe to run on every cron.
 
 ```
 pull          (v3.9.18.0)  full initial copy
-diff          (v3.9.19.0)  see what changed
+diff          (v3.9.19.0 + 3.9.20)  see what changed (new/removed/updated)
 sync --apply  (v3.9.19.0)  append new items (idempotent)
 push          (v3.9.15.0)  local → Zotero (separate direction)
 ```
+
+**v3.9.20 [P3-28.4] update**: `diff`/`sync` now also detect *updated*
+items (Zotero items edited after the local pull). The per-item
+version is stored in `meta.json[zotero_item_versions]` (baseline
+established on first sync, refreshed on each subsequent sync).
+Use `pa zotero-project pull --overwrite` to refresh updated items
+in the local refs.bib (sync itself only adds NEW items; updating
+existing Bibtex entries is a v3.9.21+ enhancement).
+
+## Per-project corpus analytics (v3.9.20 [P2-19])
+
+`pa project corpus-stats` shows aggregate stats for a pa project's
+refs.bib corpus: n_papers, with/without DOI, by type, year range
++ median + decade histogram, top N authors, top N venues. Output
+human-readable by default, or `--json` for machine-readable.
+
+```bash
+pa project corpus-stats long-term-care
+# Output:
+#   [corpus-stats] /home/user/.paper-agent/projects/long-term-care/refs.bib
+#     total:         18 papers
+#     with DOI:      18
+#     without DOI:   0
+#     by type:       article=15, inproceedings=2, techreport=1
+#     year range:    2018 - 2024 (median 2022)
+#     by decade:     2010s=3, 2020s=15
+#     top authors:   Smith(3), Jones(2), Lee(2), ...
+#     top venues:    J Health Econ(5), Lancet(3), ...
+#     zotero:        key=COLL_KEY version=12 last_sync=2026-08-18T20:15:00
+
+# All projects at once
+pa project corpus-stats
+
+# JSON for piping to jq
+pa project corpus-stats --json | jq '.top_authors[0]'
+# {"name": "Smith", "count": 3}
+```
+
+## PRISMA in master note (v3.9.20 [P2-19.1])
+
+When `pa search-and-import` finishes, the master note now includes
+a `## PRISMA flow` section with a mermaid diagram showing
+identification → screening → eligibility → included. This makes
+systematic-review journal submissions much easier — the diagram
+is right there in the Zotero project note.
+
+The mermaid block reuses the P1-3 `pa_cli.prisma` module (which
+itself wraps `skill.core.prisma.generate_mermaid`).
+
+## Obsidian daily-note linking (v3.9.20 [P3-29.2])
+
+`pa obsidian daily-link --project Y` adds a wiki-link to the
+project in today's `4-Daily/YYYY-MM-DD.md`. So the daily note
+has 1-click access to the active research project you're working
+on.
+
+```bash
+# At end of research session:
+pa obsidian daily-link --project "long-term care"
+# Output:
+#   [obsidian] created section + added backlink to 'long-term care' in
+#     G:\Todo list\Todo List\4-Daily\2026-08-18.md
+```
+
+Idempotent: re-running for the same project is a no-op. Multiple
+projects on the same day each get their own line in the same
+section. If the daily note doesn't exist, the command skips
+gracefully (use `--create` to create a stub).
 
 
 

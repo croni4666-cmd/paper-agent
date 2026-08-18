@@ -649,3 +649,151 @@ def inbox_list(limit: int = 20) -> List[Dict[str, Any]]:
                 "modified": datetime.fromtimestamp(stat.st_mtime).isoformat(timespec="seconds"),
             })
     return out[:limit]
+
+
+# ─────────────────────────────────────────────────────────────────
+# Daily-note backlink (v3.9.20 [P3-29.2]) -- link today's daily note to
+# an active research project, so the project's index page is 1 click
+# away from any daily note that mentions it.
+# ─────────────────────────────────────────────────────────────────
+DAILY_SECTION_HEADER = "## Active research projects"
+DAILY_SECTION_MARKER = "<!-- paper-agent:daily-link-section -->"  # idempotency marker
+
+
+def daily_link(
+    project_name: str,
+    date: Optional[str] = None,
+    vault_path: Optional[Path] = None,
+    create_if_missing: bool = False,
+) -> Dict[str, Any]:
+    """Add a backlink to a research project in today's daily note.
+
+    The daily note lives at `<vault>/4-Daily/<YYYY-MM-DD>.md`
+    (the GTD vault convention). If the note exists, this appends
+    a section `## Active research projects` (or adds to existing
+    section) with a wiki-link to `0-Research/Projects/<slug>/index`.
+
+    Args:
+        project_name: research project name (= project slug derivation)
+        date: ISO date string YYYY-MM-DD (default: today, local)
+        vault_path: override vault path (default: $PAPER_AGENT_OBSIDIAN_VAULT)
+        create_if_missing: if True, creates a stub daily note if it
+            doesn't exist (default: False — skip gracefully)
+
+    Returns:
+        Dict with {status, daily_path, project_slug, link_added: bool,
+        section_created: bool, error?}. Status values:
+        - "linked": link added (or section already had the link)
+        - "skipped_no_daily_note": daily note doesn't exist (and
+          create_if_missing=False)
+        - "skipped_no_vault": env var unset
+        - "error": other failure
+    """
+    if date is None:
+        date = datetime.now().strftime("%Y-%m-%d")
+
+    vault = Path(vault_path) if vault_path else get_vault_path()
+    if vault is None:
+        return {
+            "status": "skipped_no_vault",
+            "error": "$PAPER_AGENT_OBSIDIAN_VAULT is not set",
+            "project_slug": "",
+        }
+    if not vault.exists():
+        return {
+            "status": "skipped_no_vault",
+            "error": f"vault path does not exist: {vault}",
+            "project_slug": "",
+        }
+
+    # Slugify the project name the same way init_vault does
+    from .project import validate_slug  # reuse validator
+    slug = re.sub(r"[^A-Za-z0-9._-]+", "-", project_name.strip()).strip("-").lower() or "research"
+
+    daily_dir = vault / "4-Daily"
+    daily_path = daily_dir / f"{date}.md"
+    link_line = f"- [[{get_subfolder()}/Projects/{slug}/index|{project_name}]]"
+    section_marker = f"<!-- paper-agent:daily-link:{slug} -->"  # per-project dedup marker
+
+    # If daily note doesn't exist
+    if not daily_path.exists():
+        if not create_if_missing:
+            return {
+                "status": "skipped_no_daily_note",
+                "daily_path": str(daily_path),
+                "project_slug": slug,
+                "project_name": project_name,
+                "link_added": False,
+            }
+        # Create stub daily note
+        daily_dir.mkdir(parents=True, exist_ok=True)
+        stub = (
+            f"# {date}\n\n"
+            f"## Today's tasks\n\n"
+            f"- [ ] \n\n"
+            f"{DAILY_SECTION_HEADER}\n"
+            f"{DAILY_SECTION_MARKER}\n"
+            f"{link_line}  {section_marker}\n"
+        )
+        daily_path.write_text(stub, encoding="utf-8")
+        return {
+            "status": "linked",
+            "daily_path": str(daily_path),
+            "project_slug": slug,
+            "project_name": project_name,
+            "link_added": True,
+            "section_created": True,
+        }
+
+    # Daily note exists; check for section marker (idempotency)
+    content = daily_path.read_text(encoding="utf-8")
+    if section_marker in content:
+        # Already linked; idempotent return
+        return {
+            "status": "linked",
+            "daily_path": str(daily_path),
+            "project_slug": slug,
+            "project_name": project_name,
+            "link_added": False,
+            "section_created": False,
+        }
+
+    # Check if the section exists
+    if DAILY_SECTION_HEADER in content:
+        # Section exists; append our link inside it (before the next
+        # ## header or end of file)
+        lines = content.split("\n")
+        section_idx = next(
+            (i for i, ln in enumerate(lines) if ln.strip() == DAILY_SECTION_HEADER),
+            None,
+        )
+        if section_idx is None:
+            # Shouldn't happen, but fall back to appending at end
+            new_content = content.rstrip("\n") + f"\n\n{DAILY_SECTION_HEADER}\n{link_line}  {section_marker}\n"
+        else:
+            # Find the end of this section (next ## header or EOF)
+            end_idx = len(lines)
+            for i in range(section_idx + 1, len(lines)):
+                if lines[i].startswith("## "):
+                    end_idx = i
+                    break
+            insert = f"{link_line}  {section_marker}"
+            lines.insert(end_idx, insert)
+            new_content = "\n".join(lines)
+    else:
+        # Section doesn't exist; append at end
+        new_content = content.rstrip("\n") + (
+            f"\n\n{DAILY_SECTION_HEADER}\n"
+            f"{DAILY_SECTION_MARKER}\n"
+            f"{link_line}  {section_marker}\n"
+        )
+
+    daily_path.write_text(new_content, encoding="utf-8")
+    return {
+        "status": "linked",
+        "daily_path": str(daily_path),
+        "project_slug": slug,
+        "project_name": project_name,
+        "link_added": True,
+        "section_created": DAILY_SECTION_HEADER not in content,
+    }

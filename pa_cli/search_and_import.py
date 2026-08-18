@@ -471,7 +471,60 @@ def _render_master_note(
         "- (Optional) `pa obsidian project create --name \"" + project_name + "\"` for Obsidian notes",
         "",
     ]
+    # PRISMA flow diagram (v3.9.20 [P2-19.1]) — auto-embed in master note
+    # Maps pa search-and-import stages to PRISMA's 4 stages:
+    #   Identification = total results (downloaded + failed)
+    #   Screening      = downloaded
+    #   Eligibility    = downloaded (no manual step)
+    #   Included       = added to project
+    prisma_block = _render_prisma_block(
+        identified=len(downloaded) + len(failed),
+        after_screening=len(downloaded),
+        after_eligibility=len(downloaded),
+        included=n_added,
+        excluded=len(failed),
+    )
+    if prisma_block:
+        parts += ["", "## PRISMA flow", "", prisma_block, ""]
     return "\n".join(parts)
+
+
+def _render_prisma_block(
+    identified: int,
+    after_screening: int,
+    after_eligibility: int,
+    included: int,
+    excluded: int,
+) -> str:
+    """Render a PRISMA flow diagram as a Mermaid code block.
+
+    Maps pa search-and-import stages to PRISMA's 4 stages:
+    - Identification  = total results from search (downloaded + failed)
+    - Screening       = successfully downloaded (passed PDF fetch)
+    - Eligibility     = same as screening (no manual eligibility step)
+    - Included        = actually added to Zotero project
+
+    Returns a markdown string with embedded mermaid block, or empty
+    string if `pa_cli.prisma` is not available.
+
+    Added in v3.9.20 [P2-19.1].
+    """
+    try:
+        from . import prisma as prisma_mod
+        if prisma_mod.generate_mermaid is None:
+            return ""
+        # generate_mermaid already wraps in ```mermaid ... ``` block
+        return prisma_mod.generate_mermaid(
+            identified_count=identified,
+            after_screening_count=after_screening,
+            after_eligibility_count=after_eligibility,
+            included_count=included,
+            by_source={},
+            pdf_count=after_screening,
+            abstract_count=0,
+        )
+    except Exception:
+        return ""
 
 
 # ─────────────────────────────────────────────────────────────────
