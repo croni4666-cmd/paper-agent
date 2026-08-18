@@ -82,7 +82,7 @@ search results       pa cite-check        pa fetch-batch
 | `pa zotero sync` | check + search + push (3-step) | Combined workflow |
 | `pa zotero project create/list/status/note/add/search` | Zotero collection-as-research-project | Per-topic master note + items |
 | `pa obsidian init/project/inbox` | Research sub-vault in your Obsidian | 0-Research/ + project + atomic notes + inbox |
-| `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note |
+| `pa search-and-import --query X --project Y` | End-to-end research workflow | search → fetch → bucket → push → project + note (+ Obsidian with `--with-obsidian`) |
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
@@ -311,7 +311,7 @@ note loop into a single command. This is the "every time I run
 paper-agent to study a topic, set up the Zotero project automatically"
 workflow.
 
-**7 steps in one call**:
+**8 steps in one call** (Obsidian step 8 is opt-in):
 
 1. **Search** — 8 default engines via `pa search`
 2. **Write Bibtex** — convert results to a temp `.bib`
@@ -325,25 +325,36 @@ workflow.
 7. **Add items + master note** — attach papers to the project + write
    a markdown fetch log (downloaded + failed tables) to the project's
    master note
+8. **Sync to Obsidian** *(opt-in via `--with-obsidian`, v3.9.17.2 [P3-29.1])* —
+   auto-create matching Obsidian project + add a thought referencing
+   the Zotero project key + note key + download counts. Graceful skip
+   if `$PAPER_AGENT_OBSIDIAN_VAULT` env var is unset.
 
 **Example**:
 ```bash
+# Default: Zotero side only (Obsidian hint shown at end)
 pa search-and-import \
     --query "long-term care insurance" \
     --project "long-term care"
+
+# Full loop (Zotero + Obsidian, requires $PAPER_AGENT_OBSIDIAN_VAULT)
+pa search-and-import \
+    --query "long-term care insurance" \
+    --project "long-term care" \
+    --with-obsidian
 
 pa search-and-import \
     --query "数字普惠金融" \
     --project "digital-finance" \
     --limit 30 --year-min 2018
 
-# Dry-run fetch only (skip push + project)
+# Dry-run fetch only (skip push + project + obsidian)
 pa search-and-import \
     --query "..." --project "..." \
     --no-push --no-project
 ```
 
-**Output** (human-readable summary):
+**Output** (human-readable summary, with `--with-obsidian`):
 ```
 [search-and-import] DONE
   query:           'long-term care insurance'
@@ -355,14 +366,20 @@ pa search-and-import \
   Zotero project:  'long-term care'  (created, key=ABC123)
   items added:     12
   master note:     key=DEF456  (created)
+  Obsidian project: created  (slug=long-term-care, thoughts=1)
+  Obsidian path:    G:\Todo list\Todo List\0-Research\Projects\long-term-care\index.md
 ```
 
-Or `--json` for the full structured report (steps, errors, downloaded
-list, failed list, summary stats).
+If `--with-obsidian` is set but `$PAPER_AGENT_OBSIDIAN_VAULT` is not
+configured, the run still succeeds — `Obsidian: skipped ($PAPER_AGENT_OBSIDIAN_VAULT not set)`
+is printed and the orchestrator continues.
 
-**After a successful run**, a hint tells you the corresponding
-`pa obsidian project` commands for the Obsidian side (cross-link
-by same name):
+Or `--json` for the full structured report (steps, errors, downloaded
+list, failed list, summary stats, obsidian step output).
+
+**After a successful run** (without `--with-obsidian`), a hint tells you
+the corresponding `pa obsidian project` commands for the Obsidian side
+(cross-link by same name):
 
 ```
 [search-and-import] Hint: also create an Obsidian project page with:
@@ -383,10 +400,17 @@ name to the search query at the call site.
 - `$ZOTERO_API_KEY` — get at https://www.zotero.org/settings/keys
 - `$ZOTERO_LIBRARY_ID` — numeric ID, same page
 
-**Deferred to v3.9.17.1** ([P3-29.1]): `--with-obsidian` flag for
-auto-sync to Obsidian (1-line `pa obsidian project create + thought`
-after Zotero step). Currently you run those 2 commands manually
-after a `pa search-and-import` for the full loop.
+**Optional env vars** (for step 8 with `--with-obsidian`):
+- `$PAPER_AGENT_OBSIDIAN_VAULT` — absolute path to your existing
+  Obsidian vault root (e.g. `G:\Todo list\Todo List`). If unset, the
+  Obsidian step is gracefully skipped (no error).
+
+**`--with-obsidian` SHIPPED in v3.9.17.2** ([P3-29.1]): opt-in flag that
+closes the full Zotero + Obsidian bidirectional loop. The Obsidian
+project is created idempotently (same name = same slug) and the
+auto-added thought references the Zotero collection key + master note
+key + download counts, so the two systems stay cross-linked without
+auto-coupling.
 
 See `THIRD_PARTY.md` for the full third-party notice including InstSci.
 

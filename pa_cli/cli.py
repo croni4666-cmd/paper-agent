@@ -3744,12 +3744,16 @@ def obsidian_inbox_list(limit, as_json):
               help="Skip Zotero push step (default: push downloaded DOIs)")
 @click.option("--no-project/--project", "do_project", default=True,
               help="Skip Zotero project setup (default: create/add/note)")
+@click.option("--with-obsidian/--no-obsidian", "with_obsidian", default=False,
+              help="[v3.9.17.2 / P3-29.1] Also create matching Obsidian project page. "
+                   "Requires $PAPER_AGENT_OBSIDIAN_VAULT env var (else gracefully skipped). "
+                   "Default: --no-obsidian (Obsidian hint shown at end instead).")
 @click.option("--json", "as_json", is_flag=True,
               help="Output full JSON report (else human-readable summary)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search_and_import(
     query, project, limit, year_min, year_max, engine, out_dir,
-    max_total_sec, no_skip_existing, do_push, do_project, as_json, quiet,
+    max_total_sec, no_skip_existing, do_push, do_project, with_obsidian, as_json, quiet,
 ):
     """[P3-28.1] End-to-end research workflow: search → fetch → bucket → push to Zotero project + master note.
 
@@ -3786,6 +3790,7 @@ def search_and_import(
             max_total_sec=max_total_sec,
             skip_existing=not no_skip_existing,
             do_push=do_push and do_project,  # skip both together if --no-project
+            with_obsidian=with_obsidian,
             quiet=quiet,
         )
     except Exception as e:
@@ -3825,6 +3830,27 @@ def search_and_import(
         )
     elif proj:
         click.echo(f"  Zotero project:  {proj.get('status', '?')}  {proj.get('error', '')}", err=True)
+
+    # v3.9.17.2 [P3-29.1]: Obsidian step output
+    obs = steps.get("obsidian")
+    if obs:
+        if obs.get("status") == "ok":
+            click.echo(
+                f"  Obsidian project: {obs.get('project_status', '?')}  "
+                f"(slug={obs.get('project_slug', '?')}, "
+                f"thoughts={obs.get('thought_count', 0)})\n"
+                f"  Obsidian path:    {obs.get('obsidian_path', '?')}"
+            )
+        elif obs.get("status") == "skipped":
+            click.echo(
+                f"  Obsidian:         skipped ({obs.get('reason', 'env not set')})",
+                err=True,
+            )
+        else:
+            click.echo(
+                f"  Obsidian:         {obs.get('status', '?')}  {obs.get('error', '')}",
+                err=True,
+            )
 
     if result.get("errors"):
         click.echo("\n[search-and-import] errors:", err=True)

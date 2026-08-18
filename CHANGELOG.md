@@ -7,6 +7,101 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.17.2] - 2026-08-18
+
+### Added — `[P3-29.1] --with-obsidian flag for pa search-and-import`
+
+**Rationale** (deferred from v3.9.16.0 Round 16 + v3.9.17.0 ROADMAP):
+After v3.9.16.0 shipped `pa zotero project` + `pa obsidian` as
+independent tools, and v3.9.17.0 wired Zotero into `pa search-and-import`,
+the Obsidian side still required manual `pa obsidian project create` +
+`pa obsidian project thought` (1-line hint at end of run). v3.9.17.2
+adds an **opt-in flag** (`--with-obsidian`) for full automation.
+
+**What ships**:
+
+- **`pa_cli/search_and_import.py` `setup_obsidian_project()` NEW function**:
+  - Input: `project_name`, `zotero_project_key`, `zotero_note_key`, `n_downloaded`, `n_failed`
+  - Reads `$PAPER_AGENT_OBSIDIAN_VAULT` env var
+  - If unset: returns `status='skipped'` (graceful, no error)
+  - If set: calls `obs_mod.create_project(name=project_name, ...)` (idempotent) + `obs_mod.add_thought(name, content)` referencing the Zotero project + note keys + download counts
+  - Returns `{status, project_status, project_slug, obsidian_path, thought_count, thought_status}`
+
+- **`pa search-and-import --with-obsidian/--no-obsidian` NEW flag** (default `--no-obsidian`):
+  - `setup_obsidian_project()` runs after Zotero project step
+  - Both Zotero + Obsidian cross-references each other (Zotero project name = Obsidian project name = research topic; Obsidian thought references Zotero collection key + note key + download counts)
+  - Errors don't break the orchestrator (graceful skip with reason in `result['steps']['obsidian']`)
+
+- **Updated CLI output** (`pa search-and-import`):
+  - New `Obsidian project: created/exists (slug=..., thoughts=N)` line
+  - New `Obsidian path: ...` line
+  - When skipped: `Obsidian: skipped (env not set)`
+
+**Tests** (11 new + 0 regression):
+- `test_output/test_search_and_import_obsidian.py` (15KB, **11/11 pass**):
+  - TestSetupObsidianProject (7 cases): skip on no env / create + thought / idempotent existing / thought failure / create failure / Zotero refs in content / no Zotero refs
+  - TestRunSearchAndImportObsidianIntegration (4 cases): only runs when flag true / runs when flag true / skipped when env unset / cross-references Zotero keys
+- Existing v3.9.17.1 tests still pass: 171 + 0 regression
+- Total: **182 pass + 1 skipped (pre-existing), 0 regression**
+
+**Examples**:
+```bash
+# Default (no obsidian auto-sync, but Zotero hint still shown)
+pa search-and-import --query "long-term care" --project "long-term care"
+
+# Opt-in: full Zotero + Obsidian automation
+pa search-and-import --query "long-term care" --project "long-term care" --with-obsidian
+
+# With env var set:
+setx PAPER_AGENT_OBSIDIAN_VAULT "G:\Todo list\Todo List"
+pa search-and-import --query "long-term care" --project "long-term care" --with-obsidian
+# Output now includes:
+#   Obsidian project: created  (slug=long-term-care, thoughts=1)
+#   Obsidian path:    G:\Todo list\Todo List\0-Research\Projects\long-term-care\index.md
+
+# With --with-obsidian but env var unset:
+pa search-and-import --query "..." --project "..." --with-obsidian
+# Output:
+#   Obsidian:         skipped ($PAPER_AGENT_OBSIDIAN_VAULT not set)
+# (no error, run continues successfully)
+```
+
+**No new external dependencies**: `pa_cli/obsidian.py` already
+exists from v3.9.16.0. `setup_obsidian_project()` is a thin
+wrapper that calls existing `create_project()` + `add_thought()`.
+
+**PATCH bump** (not MINOR): only new code is one function + one
+flag + cross-reference content. No new module, no new CLI command,
+no new dep.
+
+**Sub-task decomposition** (final time log):
+- A. Design `setup_obsidian_project()` API — 10min ✅
+- B. Implement function (idempotent + graceful skip) — 20min ✅
+- C. Wire into `run_search_and_import` orchestrator — 10min ✅
+- D. Add `--with-obsidian/--no-obsidian` Click flag — 5min ✅
+- E. Update CLI output to show Obsidian step — 10min ✅
+- F. Write 11 tests (mock-based, all env-var scenarios) — 30min ✅
+- G. CHANGELOG + ROADMAP + README sync — 10min ✅
+- H. Commit + force-push + tag + release — 10min ✅
+
+**Files changed**:
+- `pa_cli/search_and_import.py` (+`setup_obsidian_project` function + `--with-obsidian` integration in `run_search_and_import`)
+- `pa_cli/cli.py` (1 new Click flag + output update for Obsidian step)
+- `pa_cli/__init__.py` (version 3.9.17.1 → 3.9.17.2)
+- `pyproject.toml` (version bump)
+- `test_output/test_search_and_import_obsidian.py` (NEW, 15KB, 11 tests)
+- `CHANGELOG.md` (this entry)
+- `ROADMAP.md` (v3.9.17.2 release row + [P3-29.1] Status: done)
+- `README.md` (update "End-to-end research workflow" section to mention `--with-obsidian`)
+
+**Closed loop**: all 3 Zotero-touching commands + Obsidian-touching
+commands are now end-to-end runnable in one shot:
+```
+pa search-and-import --query X --project Y --with-obsidian
+  = search + fetch + bucket + push + PDF upload + Zotero project + Obsidian project
+  = 8 steps, 1 command
+```
+
 ## [3.9.17.1] - 2026-08-18
 
 ### Added — `[P2-17.1] PDF upload in pa zotero push + pa search-and-import`

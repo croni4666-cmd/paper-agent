@@ -69,6 +69,11 @@ def _import_zotero_api():
     return zotero_api
 
 
+def _import_obsidian():
+    from . import obsidian as obs_mod
+    return obs_mod
+
+
 # ─────────────────────────────────────────────────────────────────
 # Step 1: search → bibtex
 # ─────────────────────────────────────────────────────────────────
@@ -470,6 +475,95 @@ def _render_master_note(
 
 
 # ─────────────────────────────────────────────────────────────────
+# Step 9 (v3.9.17.2 [P3-29.1]): Obsidian project sync (opt-in via --with-obsidian)
+# ─────────────────────────────────────────────────────────────────
+def setup_obsidian_project(
+    project_name: str,
+    zotero_project_key: str = "",
+    zotero_note_key: str = "",
+    n_downloaded: int = 0,
+    n_failed: int = 0,
+    quiet: bool = False,
+) -> Dict[str, Any]:
+    """Auto-create matching Obsidian project for the research topic.
+
+    Steps (v3.9.17.2 [P3-29.1]):
+    1. Read vault path from $PAPER_AGENT_OBSIDIAN_VAULT env var
+    2. If unset: return status='skipped' (graceful; same-name convention
+       still works via manual `pa obsidian project create` hint)
+    3. If set: call `obs_mod.create_project(name=project_name, ...)` (idempotent)
+    4. Add a thought referencing the Zotero project key + note key + counts
+
+    Args:
+        project_name: research topic name (= Zotero project name)
+        zotero_project_key: Zotero collection key (e.g. "ABC123")
+        zotero_note_key: Zotero note key (e.g. "DEF456")
+        n_downloaded: number of papers downloaded
+        n_failed: number of papers that failed to download
+        quiet: suppress progress
+
+    Returns:
+        Dict with status, obsidian_path, project_slug, thought_count, error?
+    """
+    obs_mod = _import_obsidian()
+    vault = obs_mod.get_vault_path()
+    if vault is None:
+        return {
+            "status": "skipped",
+            "reason": "$PAPER_AGENT_OBSIDIAN_VAULT not set",
+            "project_name": project_name,
+        }
+
+    # 1. Create project (idempotent)
+    result = obs_mod.create_project(name=project_name, research_question="", direction="")
+    if result["status"] == "error":
+        return {
+            "status": "error",
+            "error": result.get("error", "create_project failed"),
+            "project_name": project_name,
+        }
+
+    # 2. Add a thought that cross-references the Zotero project + note
+    from datetime import datetime
+    stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+    zotero_refs = []
+    if zotero_project_key:
+        zotero_refs.append(f"Zotero project (collection) key: `{zotero_project_key}`")
+    if zotero_note_key:
+        zotero_refs.append(f"Zotero master note key: `{zotero_note_key}`")
+    zotero_block = ("\n".join(f"- {r}" for r in zotero_refs) + "\n") if zotero_refs else ""
+    thought_content = (
+        f"Auto-created by `pa search-and-import --with-obsidian` at {stamp}.\n"
+        f"Topic: {project_name}\n"
+        f"Fetched: {n_downloaded} paper(s) downloaded, {n_failed} failed.\n"
+        f"{zotero_block}"
+    )
+    thought_result = obs_mod.add_thought(name=project_name, content=thought_content)
+    if not quiet:
+        if thought_result["status"] == "ok":
+            print(
+                f"[search-and-import] Obsidian: project '{project_name}' "
+                f"({result['status']}, slug={result['slug']}), "
+                f"thought added (total {thought_result.get('thought_count', 0)})",
+                file=sys.stderr,
+            )
+        else:
+            print(
+                f"[search-and-import] Obsidian: project created but thought add failed: "
+                f"{thought_result.get('error', 'unknown')}",
+                file=sys.stderr,
+            )
+    return {
+        "status": "ok",
+        "project_status": result["status"],  # 'created' or 'exists'
+        "project_slug": result["slug"],
+        "obsidian_path": result.get("path", ""),
+        "thought_count": thought_result.get("thought_count", 0) if thought_result["status"] == "ok" else 0,
+        "thought_status": thought_result.get("status", ""),
+    }
+
+
+# ─────────────────────────────────────────────────────────────────
 # Main orchestrator
 # ─────────────────────────────────────────────────────────────────
 def run_search_and_import(
@@ -483,14 +577,21 @@ def run_search_and_import(
     max_total_sec: int = 1800,
     skip_existing: bool = True,
     do_push: bool = True,
+    with_obsidian: bool = False,
     quiet: bool = False,
 ) -> Dict[str, Any]:
-    """Top-level orchestrator: search → fetch → bucket → push → project + note.
+    """Top-level orchestrator: search → fetch → bucket → push → project + note (+ optional Obsidian).
 
     Returns a single dict with all step results + summary stats.
     On any step error, the orchestrator records the error and
     continues if possible (e.g. Zotero push failure shouldn't stop
     the fetch from completing).
+
+    v3.9.17.2 [P3-29.1]: when `with_obsidian=True`, also creates a
+    matching Obsidian project page (idempotent) + adds a thought
+    referencing the Zotero project + note. Requires
+    `$PAPER_AGENT_OBSIDIAN_VAULT` env var; if unset, gracefully
+    records status='skipped' and continues.
     """
     out_dir = out_dir or Path("./pdfs")
     result: Dict[str, Any] = {
@@ -581,8 +682,25 @@ def run_search_and_import(
         )
         result["steps"]["project"] = proj_result
     except Exception as e:
-        result["steps"]["project"] = {"status": "error", "error": str(e)}
+        proj_result = {"status": "error", "error": str(e)}
+        result["steps"]["project"] = proj_result
         result["errors"].append(f"project: {e}")
+
+    # Step 9 (v3.9.17.2 [P3-29.1]): Obsidian project sync (opt-in via --with-obsidian)
+    if with_obsidian:
+        try:
+            obs_result = setup_obsidian_project(
+                project_name=project_name,
+                zotero_project_key=proj_result.get("project_key", "") if isinstance(proj_result, dict) else "",
+                zotero_note_key=proj_result.get("note_key", "") if isinstance(proj_result, dict) else "",
+                n_downloaded=fetch_result["n_downloaded"],
+                n_failed=fetch_result["n_failed"],
+                quiet=quiet,
+            )
+            result["steps"]["obsidian"] = obs_result
+        except Exception as e:
+            result["steps"]["obsidian"] = {"status": "error", "error": str(e)}
+            result["errors"].append(f"obsidian: {e}")
 
     # Cleanup the temp bib (only if we created it in a temp dir)
     if bib_path.parent == Path(tempfile.gettempdir()):
@@ -592,11 +710,15 @@ def run_search_and_import(
             pass
 
     # Final summary
+    obs_step = result["steps"].get("obsidian") or {}
     result["summary"] = {
         "n_search_results": len(paper_list),
         "n_downloaded": fetch_result["n_downloaded"],
         "n_failed": fetch_result["n_failed"],
         "zotero_project_key": (result["steps"].get("project") or {}).get("project_key", ""),
         "zotero_note_key": (result["steps"].get("project") or {}).get("note_key", ""),
+        "obsidian_project_status": obs_step.get("project_status", ""),
+        "obsidian_project_slug": obs_step.get("project_slug", ""),
+        "obsidian_path": obs_step.get("obsidian_path", ""),
     }
     return result
