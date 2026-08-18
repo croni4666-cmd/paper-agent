@@ -1320,6 +1320,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.13.1 | released 2026-08-14 | **CNKI proxy plaintext fix (Round 11)**: `_validate_cnki_proxy_security()` in `pa_cli/cnki_channel.py` — CNKI HTTP proxy (xueshu789 → 120.53.241.46:5888 plaintext) REFUSED by default. Override `PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1`. SECURITY.md Known Limitations #4 rewritten. 4/4 unit tests pass | 2026-08-14 |
 | v3.9.13.2 | released 2026-08-14 | **`pa fetch --proxy` CLI option now honored (was silently ignored)**: `pa_cli/fetch.py:fetch_doi()` accepted `proxy` param but never used it. Fix: temporarily set `HTTPS_PROXY` env var when `--proxy` passed, route through `_get_proxy_dict()` (v3.9.13.0 TLS validation now actually fires). try/finally restoration. 943KB PDF via sci-hub verified | 2026-08-14 |
 | v3.9.13.3 | released 2026-08-14 | **Round 13 4-verifier audit fixes**: (1) NEW `pa_cli/_http.py` shared module (10KB) — 6 files migrated to share v3.9.13.0 TLS validation (F-001~F-006: search/keys/aminer/batch_fetch/cross_encoder/deep_rerank). (2) F-007 fix: `pa fetch --proxy` now always wins over env var with warning. (3) Round 13 HIGH F-001/F-002 dep fix: added 5 new groups to `requirements-optional.txt` (MoE router: scipy+scikit-learn+lightgbm+jieba / CNKI: playwright / arXiv: arxiv / deep-rerank: PyMuPDF / build: weasyprint+brotli). (4) Round 13 MEDIUM privacy: sanitized `经编` → `textile` and `算力券` → `compute-subsidy` in 4 test/bench files. (5) pyproject.toml version drift 3.9.12.0 → 3.9.13.3. 0 code-pattern audit findings. Tag v3.9.13.3 + release published. **Also**: 10-round pre-push security audit (R10-R12) all PASS, AGPL-3.0 + No-AI-Training-1.0 + SECURITY.md + THIRD_PARTY.md | 2026-08-14 |
+| v3.9.14.0 | released 2026-08-18 | **[P2-16] `pa zotero check` ships (read-only Zotero local DB, recommended-first from Zotero re-evaluation)**: new `pa_cli/zotero_local.py` (12.4 KB, 9 functions) + `test_output/test_zotero_local.py` (13.1 KB, 11/11 tests pass). `pa zotero check --corpus refs.bib [--json] [--zotero-db PATH]` returns 4 buckets: in_library / not_in_library / invalid_doi / duplicates. **READ-ONLY HARD GUARANTEE**: SQLite `mode=ro` URI makes writes impossible at SQLite level (verified by `test_readonly_cannot_write`). **NO API key, NO network, NO cloud**. Schema lookups by NAME at runtime (survives Zotero 6+ change: DOI moved from fieldID 1 to fieldID 59; itemType renumbered annotation=1, book=2, attachment=3, note=28). **Live-schema inspection caught bug** that mock tests missed: original hardcoded `fieldID=1` would have shipped broken code that always returned 0 DOIs from real Zotero libraries. Old-schema compat also verified. **Re-evaluation context**: earlier "Zotero DEFERRED" judgment (same day morning) was wrong — `pa export-screening` CSV covers import but not "do I already have this paper?" gap. 1 of 3 Zotero items shipped (P2-17 push / P2-18 sync still DEFERRED) | 2026-08-18 |
 
 ---
 
@@ -1654,21 +1655,82 @@ candidates in priority order, with effort and 5-check Global Rule audit.
     - New "Friendly-neighbor projects" section in `README.md` (3-5 paragraphs)
     - New "External services" subsection in `THIRD_PARTY.md`
     - One-line example: how to register `instsci-mcp` alongside `paper-search-mcp` in MCP client config
-- **`[P2-16] pa zotero check` (read-only Zotero local DB, RECOMMENDED FIRST)** — Reads user's local `zotero.sqlite` (no API key, no network, no writes), returns which DOIs in a corpus are already in user's Zotero library. Solves the #1 lit-review time-sink that `pa export-screening` CSV does not address. New `pa_cli/zotero_local.py` (~150 LOC) with:
-  - `find_zotero_db()` — auto-detect path (`~/Zotero/zotero.sqlite` macOS/Linux, `~/Zotero/Profiles/*/zotero.sqlite` Windows)
-  - `get_library_dois() -> set[str]` — `SELECT value FROM itemData ... JOIN items ...` (Zotero schema)
-  - `check_corpus(corpus_dois: list[str]) -> {in_library, not_in_library, invalid_doi}`
-  - CLI: `pa zotero check --corpus refs.bib [--json] [--zotero-db PATH]`
-  - 3 unit tests (mock zotero.sqlite with 5 known DOIs) + 1 e2e (real Zotero install optional)
-  - **Global Rule check**: 5/5 pass (read-only local SQLite, no API, no hosted, ~30 min/quarter maintenance)
-  - **Acceptance criteria**:
-    - Auto-detects Zotero DB on Windows + macOS + Linux
-    - Handles Zotero 6+ schema (uses `items.itemTypeID` + `itemDataValues.valueID` join)
-    - Handles Bibtex DOIs in mixed format (raw DOI, doi.org URL, https://doi.org/...)
-    - Returns: `in_library: N (M with valid DOI) | not_in_library: N | invalid_doi: N | total: N`
-    - `--json` for pipeline use (pipe into `pa fetch-pdf-batch --skip-in-library`)
-  - **Effort**: ~1.5h
+- **`[P2-16] pa zotero check` (read-only Zotero local DB, RECOMMENDED FIRST)**
+  - **Status**: done
+  - **Added**: 2026-08-18 (re-evaluated from DEFERRED same-day)
+  - **Completed**: 2026-08-18
+  - **Released in**: v3.9.14.0
+  - **Priority**: P2
   - **Source**: Round 14 / 2026-08-18 re-evaluation. Earlier "DEFERRED" judgment (same-day morning) was wrong — see "Zotero integration 2026-08-18" section
+  - **Rationale**: Reads user's local `zotero.sqlite` (no API key, no network, no writes), returns which DOIs in a corpus are already in user's Zotero library. Solves the #1 lit-review time-sink that `pa export-screening` CSV does not address.
+  - **Acceptance criteria** (all met):
+    - ✅ Auto-detects Zotero DB on Windows + macOS + Linux
+    - ✅ Handles Zotero 6+ schema (DOI=fieldID 59, itemType renumbered) — runtime name lookup, not hardcoded
+    - ✅ Handles Bibtex DOIs in mixed format (raw DOI, doi.org URL, https://doi.org/, DOI:, trailing punct, case)
+    - ✅ Returns: `in_library: N | not_in_library: N | invalid_doi: N | duplicates: N | total: N`
+    - ✅ `--json` for pipeline use
+    - ✅ 11/11 tests pass (3 unit + 1 e2e + 7 sub-tests)
+    - ✅ Read-only hard guarantee (URI `mode=ro` makes writes impossible at SQLite level)
+  - **Global Rule check**: 5/5 pass (read-only local SQLite, no API, no hosted, ~30 min/quarter maintenance)
+
+#### Outcome (2026-08-18)
+
+**Sub-task breakdown**:
+- A. Design module API (path detection, DOI normalization, library read) — 15min ✅
+- B. Implement `pa_cli/zotero_local.py` — 30min ✅
+- C. Initial pass: hardcoded fieldID=1 (old schema), 5 unit tests pass — 5min ✅
+- D. **BUG FOUND**: real Zotero 6 install has DOI=fieldID 59, itemType renumbered. Refactored to name-based lookup — 20min ✅
+- E. Add e2e test that builds Zotero 6+ schema in tmp SQLite + old-schema compat test — 25min ✅
+- F. Wire `pa zotero check` Click subcommand in `pa_cli/cli.py` — 15min ✅
+- G. CHANGELOG + ROADMAP [P2-16] Status: done — 10min ✅
+- | **Total** | estimate 2h | **actual ~2h** | on target |
+
+**Variance analysis**: estimate accurate. The BUG FIND in step D was a real
+discovery (would have shipped broken code if I had skipped the live-schema
+inspection). Lesson: when reading from a 3rd-party DB schema, always
+inspect the LIVE schema BEFORE writing production code. The mock test
+alone missed the fieldID 1 → 59 change.
+
+**Files added** (2):
+- `pa_cli/zotero_local.py` (12.4 KB / 9 functions)
+- `test_output/test_zotero_local.py` (13.1 KB / 11 tests)
+
+**Files modified** (3):
+- `pa_cli/cli.py` (~80 LOC added for `zotero_check` subcommand)
+- `pa_cli/__init__.py` + `pyproject.toml` (version 3.9.13.3 → 3.9.14.0)
+
+**Reference-class anchor** (per ROADMAP estimation methodology):
+- [P0-1] Bibtex export: 3h actual (interface wrap pattern)
+- [P0-2] Local cache: 5h actual (state management overhead)
+- [P2-16] pa zotero check: ~2h actual (read-only 3rd-party schema read + new CLI)
+  — same anchor as interface wrap pattern, +0.5h for the live-schema inspection lesson
+
+**Why BUG D was a real catch**:
+- First impl: hardcoded `fieldID=1` for DOI (assumed 2015-era schema)
+- Unit tests with mock DB: all pass (mock used the same fieldID=1)
+- Live Zotero 6 install check: DOI is fieldID 59, not 1
+- Without the live-schema inspection, this would have shipped broken code
+  (would always return 0 DOIs from real Zotero libraries)
+- Fix: runtime name lookup (`SELECT fieldID FROM fields WHERE LOWER(fieldName) = 'doi'`)
+- Bonus: also test against old-schema (DOI=fieldID 1) to confirm backward compat
+  works (this caught the `fieldName='DOI'` vs `fieldName='doi'` case-sensitivity)
+
+**Acceptance criteria status**: 7/7 met
+1. ✅ Auto-detects Zotero DB on Windows + macOS + Linux (`find_zotero_db()`)
+2. ✅ Handles Zotero 6+ schema (name-based lookup, not hardcoded IDs)
+3. ✅ Handles Bibtex DOIs in mixed format (`normalize_doi()` matrix test)
+4. ✅ Returns 4-bucket result (in_library / not_in_library / invalid_doi / duplicates)
+5. ✅ `--json` for pipeline use
+6. ✅ 11/11 tests pass
+7. ✅ Read-only guarantee at SQLite level (URI `mode=ro` + verified by test)
+
+**Lesson for future estimates** (added to estimation methodology):
+- "Read from 3rd-party schema" type items: always inspect LIVE schema FIRST,
+  then write mock that matches it. Don't trust the most popular tutorial
+  (e.g. "Zotero DOI is fieldID 1" was correct in 2015, wrong in 2024).
+
+**Next step** (gated on actual use):
+- [P2-17] `pa zotero push` (write via Web API, requires pyzotero, ~3h) — DEFERRED until user reports [P2-16] is useful in their workflow
 - **`[P2-17] pa zotero push` (write via Web API v3, GATED on [P2-16] being useful)** — Push bibtex entries + PDFs to user's Zotero library via Zotero Web API v3. Conditional: only ship if [P2-16] sees real use after a month. New `pa_cli/zotero_api.py` (~250 LOC) wrapping `pyzotero`:
   - `push_items(bibtex_entries) -> {pushed: N, already_in_library: N, failed: [...]}` (idempotent via DOI dedup)
   - `upload_pdf(item_key, pdf_path, mode={linked_file, imported_file})`

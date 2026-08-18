@@ -7,6 +7,104 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.14.0] - 2026-08-18
+
+### Added — `[P2-16] pa zotero check` (read-only Zotero local DB)
+
+**Rationale** (added 2026-08-18, re-evaluation of "Zotero DEFERRED" 2026-08-14):
+The `pa export-screening` CSV path covers Zotero IMPORT (80/20), but does not
+address the #1 lit-review time-sink: "do I already have this paper in my
+Zotero library?" Re-evaluated same-day, [P2-16] prioritized over the
+[3 ACCEPTED v3.9.14 items](#-competitor-coupling-2026-08-18-instsci-awareness--v3914-backlog)
+(pa jobs / pa mcp serve / instsci docs).
+
+**What ships**:
+- `pa_cli/zotero_local.py` (~12 KB, 9 functions):
+  - `find_zotero_db()` — auto-detect Zotero local SQLite at `~/Zotero/zotero.sqlite` (macOS/Linux) or `~/Zotero/Profiles/*/zotero.sqlite` (Windows). Override via `$ZOTERO_LOCAL_DB` or `--zotero-db`
+  - `normalize_doi(raw)` — strip `https://doi.org/` / `doi:` / `DOI:` prefixes, lowercase, validate shape (`10.PREFIX/SUFFIX`)
+  - `get_library_dois(db_path)` — read zotero.sqlite via URI `mode=ro` (writes impossible even on bug), return set of normalized DOIs. **Schema lookup by NAME at runtime** (DOI is fieldID=59 in Zotero 6+, was fieldID=1 in old schema; code survives schema changes)
+  - `check_corpus(corpus_dois, library_dois=None)` — 4-bucket result: `in_library` / `not_in_library` / `invalid_doi` / `duplicates_in_corpus`
+  - `extract_dois_from_bibtex(bibtex_path)` — minimal Bibtex DOI extractor (handles `doi = {...}` and `doi = "..."`, case-insensitive field name)
+- `pa zotero check` subcommand in `pa_cli/cli.py`:
+  - `--corpus refs.bib` OR `--doi 10.xxx/yyy --doi 10.xxx/zzz` (mutually exclusive)
+  - `--zotero-db PATH` (override auto-detect)
+  - `--json` for pipeline use
+  - `--quiet` (suppress progress, just print summary)
+- Tests: `test_output/test_zotero_local.py` — **11/11 PASS** (3 unit + 1 e2e + 7 sub-tests):
+  - `normalize_doi` matrix: 16 cases (raw, URL, doi:, DOI:, case, trailing punct, whitespace, 5 invalid)
+  - `check_corpus` 4-bucket correctness + empty corpus / empty library
+  - `extract_dois_from_bibtex` with 3-entry fixture (mixed `{}` / `""`, mixed case field name)
+  - E2E: build Zotero 6+ schema in tmp SQLite (field 1=title, field 59=DOI; itemType 1=annotation, 2=book, 3=attachment, 28=note), verify get_library_dois() returns only the 3 book DOIs (excludes annotation/attachment/note)
+  - **Read-only hard guarantee**: `INSERT INTO fields ...` raises `sqlite3.OperationalError` when run against the URI mode=ro DB (guarantees even buggy future code cannot write)
+  - **Old-schema compat test**: code still works with 2015-era Zotero schema where DOI was fieldID=1 (looked up by name, not hardcoded)
+
+**Usage examples**:
+```bash
+# Check a Bibtex file against your Zotero library
+pa zotero check --corpus refs.bib
+
+# Check individual DOIs
+pa zotero check --doi 10.1038/nature12373 --doi 10.1126/science.1259855
+
+# JSON output for pipeline use
+pa zotero check --corpus refs.bib --json > zotero_check.json
+
+# Override DB path (Windows typical)
+pa zotero check --corpus refs.bib --zotero-db "D:\\Zotero\\zotero.sqlite"
+```
+
+**Honest limits** (per留痕 / AGPL discipline):
+- **READ-ONLY**: `sqlite3.connect("file:...mode=ro", uri=True)`. Writes are
+  impossible at the SQLite level, not just by convention. Verified by
+  `test_readonly_cannot_write` test.
+- **NO API key, NO network, NO cloud**: only reads `zotero.sqlite` from disk.
+  This is the deliberately minimal-invasive first step. The push direction
+  ([P2-17]) is gated on this being useful in actual workflow.
+- **Zotero not required**: if Zotero is not installed, command exits with
+  clear error message (exit code 2) and tells user to use `--zotero-db`.
+- **Schema survives Zotero version changes**: fieldID/itemTypeID lookups are
+  by NAME (`DOI`, `note`/`annotation`/`attachment`), not hardcoded numbers.
+  Verified against user's local Zotero 6 install (DOI=fieldID 59).
+
+**Sub-task decomposition** (final time log):
+- A. Design module API (path detection, DOI normalization, library read) — 15min ✅
+- B. Implement `pa_cli/zotero_local.py` — 30min ✅
+- C. Initial pass: hardcoded fieldID=1 (old schema), 5 unit tests pass — 5min ✅
+- D. **BUG FOUND**: real Zotero 6 install has DOI=fieldID 59, itemType renumbered. Refactored to name-based lookup — 20min ✅
+- E. Add e2e test that builds Zotero 6+ schema in tmp SQLite + old-schema compat test — 25min ✅
+- F. Wire `pa zotero check` Click subcommand in `pa_cli/cli.py` — 15min ✅
+- G. CHANGELOG + ROADMAP [P2-16] Status: done — 10min ✅
+- | Total estimate | 2h | Actual | ~2h | on target |
+
+**Variance analysis**: estimate accurate. The BUG FIND in step D was a real
+discovery (would have shipped broken code if I had skipped the e2e test
+with real Zotero). Lesson: when reading from a 3rd-party DB schema, always
+inspect the live schema BEFORE writing the production code. The mock
+test alone missed the fieldID 1 → 59 change.
+
+**Files added**: 2
+- `pa_cli/zotero_local.py` (12.4 KB / 9 functions)
+- `test_output/test_zotero_local.py` (13.1 KB / 11 tests)
+
+**Files modified**: 2
+- `pa_cli/cli.py` (~80 LOC added for `zotero_check` subcommand)
+- `pa_cli/__init__.py` + `pyproject.toml` (version 3.9.13.3 → 3.9.14.0)
+
+**Reference-class anchor** (per ROADMAP estimation methodology):
+- [P0-1] Bibtex export: 3h actual (interface wrap pattern)
+- [P0-2] Local cache: 5h actual (state management overhead)
+- [P2-16] pa zotero check: ~2h actual (read-only 3rd-party schema read + new CLI)
+  — same anchor as interface wrap pattern, +0.5h for the live-schema inspection lesson
+
+**Next step** (gated by [P2-16] actual use):
+- [P2-17] `pa zotero push` (write via Web API v3, requires pyzotero, ~3h) — DEFERRED until user reports [P2-16] is useful in their workflow
+- [P2-18] `pa zotero sync` (bidirectional, superset, ~4h) — DEFERRED until [P2-17]
+
+**Not shipped** (still in backlog):
+- [P3-27] Document `instsci-mcp` as friendly-neighbor MCP (~30 min, docs only)
+- [P0-15] `pa mcp serve` 补全 fetch 工具 (~30 min, low risk)
+- [P2-15] `pa jobs status/tail/resume` subcommand (~2h)
+
 ## [3.9.13.3] - 2026-08-14
 
 ### Refactor — Round 13 4-verifier audit fixes
