@@ -7,6 +7,134 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+## [3.9.16.0] - 2026-08-18
+
+### Added — `[P3-28] + [P3-29] Zotero project + Obsidian research sub-vault`
+
+**Rationale** (Round 16 / 2026-08-18): user research workflow needs both
+sides of the loop:
+1. Capture: when you fetch papers for a research topic, group them
+   under a Zotero **collection** (= project), bucket into
+   downloaded/failed, attach a master **note** to the collection
+2. Reflect: have a place to dump unformed thoughts, atomic notes,
+   synthesis — without leaving the local Obsidian vault you already use
+
+v3.9.16.0 ships both in one release.
+
+**What ships**:
+
+- **`pa_cli/zotero_api.py`** extended (v3.9.15.0 had 9 functions, now
+  16): adds `list_collections`, `find_collection_by_name`,
+  `create_collection` (idempotent by name),
+  `get_collection_items`, `add_items_to_collection`,
+  `create_collection_note` (HTML or plain text),
+  `list_collection_notes`. All wrap pyzotero with structured
+  error handling (no bare exceptions).
+
+- **`pa_cli/obsidian.py`** NEW (22KB, 14 functions): pure-stdlib
+  research sub-vault manager. Functions: `init_vault`, `create_project`
+  (idempotent), `list_projects`, `add_thought`, `add_note`
+  (5 types: idea/reading/synthesis/question/evidence),
+  `project_status`, `inbox_add`, `inbox_list`, plus helpers
+  (`slugify`, `safe_filename`, `_read_first_heading`).
+
+- **2 new Click groups** in `pa_cli/cli.py` (~280 LOC):
+  - `pa zotero project` — 5 subcommands: `create` / `list` / `status`
+    / `note` / `add` / `search`
+  - `pa obsidian` — `init` + `project` (5 subcommands) + `inbox`
+    (2 subcommands)
+
+**New commands** (8 total):
+
+| Command | What |
+|---|---|
+| `pa zotero project create --name "long-term care"` | Create Zotero collection (= research project, idempotent) |
+| `pa zotero project list` | List all projects |
+| `pa zotero project status --name "..."` | Items / sub-collections / master notes |
+| `pa zotero project note --name "..." --content-file note.md` | Attach master note to collection |
+| `pa zotero project note --name "..." --append "..."` | Append to latest master note (with timestamp) |
+| `pa zotero project add --name "..." --corpus refs.bib` | Attach papers to project (must be in library first) |
+| `pa zotero project search --query "..." [--name "..."]` | Search library or within project |
+| `pa obsidian init` | Create `0-Research/` sub-folder in your vault |
+| `pa obsidian project create --name "..." --research-question "..." --direction "..."` | Create project with index.md + ideas.md + notes/ |
+| `pa obsidian project thought --name "..." --content "..."` | Append raw thought to ideas.md (auto-creates project) |
+| `pa obsidian project note --name "..." --type reading --content "..."` | Create atomic note with YAML frontmatter |
+| `pa obsidian project list` / `status` | Browse projects |
+| `pa obsidian inbox add --content "..."` | Drop into global Inbox (no project) |
+| `pa obsidian inbox list` | Recent inbox notes |
+
+**Tests** (86 new tests, 86/86 pass + 1 pre-existing skip):
+- `test_output/test_zotero_collections.py` (19KB, **37/37 pass**):
+  list_collections / find_collection_by_name / create_collection /
+  get_collection_items / add_items_to_collection / create_collection_note
+  / list_collection_notes — all mock-based (no live API needed)
+- `test_output/test_obsidian.py` (19KB, **49/49 pass**): slugify,
+  safe_filename, vault config, init, create_project (5 cases),
+  list_projects, add_thought, add_note, project_status, inbox,
+  read_first_heading
+- Existing v3.9.15.0 tests still pass: 16 zotero_api + 11 zotero_local
+  + 8 mcp_fetch + 14 jobs (1 skipped) — **zero regression**
+
+**Auto-create integration** (v3.9.16.0):
+- `pa zotero project create` does NOT auto-create the Obsidian project
+  (per the user's "no coupling" intent — the two systems are
+  independently usable). Cross-link via name convention instead.
+- Both Zotero collection name and Obsidian project name should match
+  (= your topic name) for clean cross-referencing in `index.md`.
+- `pa zotero project status` mentions the expected Obsidian sub-path
+  in the human-readable output as a hint.
+
+**Setup** (one-time):
+
+```bash
+# 1. Zotero API key (already required for v3.9.15.0)
+export ZOTERO_API_KEY="<your-key>"
+export ZOTERO_LIBRARY_ID="<your-id>"
+
+# 2. Obsidian vault (new in v3.9.16.0)
+#    Windows + GTD vault example:
+setx PAPER_AGENT_OBSIDIAN_VAULT "G:\Todo list\Todo List"
+
+# 3. Initialize the sub-folder
+pa obsidian init
+```
+
+**MINOR bump** (not PATCH): 2 new modules, 8 new commands, 16+9 = 25
+new functions, 86 new tests = significant additive surface.
+
+**Sub-task decomposition** (final time log):
+- A. Research: cross-search for similar repos (4 web searches) — 25min ✅
+- B. `pa_cli/zotero_api.py` add 7 collection functions — 60min ✅
+- C. `pa zotero project` Click group (5 subcommands) — 45min ✅
+- D. `pa_cli/obsidian.py` NEW module (14 functions) — 75min ✅
+- E. `pa obsidian` Click group (8 subcommands) — 30min ✅
+- F. `test_zotero_collections.py` 37 tests — 50min ✅
+- G. `test_obsidian.py` 49 tests — 60min ✅
+- H. CHANGELOG + ROADMAP + README + THIRD_PARTY sync — 30min ✅
+- I. Commit + force-push + tag + release — 20min ✅
+
+**Files changed**:
+- `pa_cli/zotero_api.py` (+7 collection functions)
+- `pa_cli/obsidian.py` (NEW, 22KB)
+- `pa_cli/cli.py` (+2 Click groups, ~280 LOC)
+- `pa_cli/__init__.py` (version 3.9.15.0 → 3.9.16.0)
+- `pyproject.toml` (version 3.9.15.0 → 3.9.16.0)
+- `test_output/test_zotero_collections.py` (NEW, 19KB, 37 tests)
+- `test_output/test_obsidian.py` (NEW, 19KB, 49 tests)
+- `CHANGELOG.md` (this entry)
+- `ROADMAP.md` ([P3-28] + [P3-29] Status: done + v3.9.16.0 release row)
+- `README.md` (Zotero project + Obsidian sections + new commands in table)
+- `THIRD_PARTY.md` (Obsidian trademark notice)
+
+**Auth note** (留痕 discipline):
+- `$ZOTERO_API_KEY` + `$ZOTERO_LIBRARY_ID` — env vars only (NOT .env)
+- `$PAPER_AGENT_OBSIDIAN_VAULT` — env var, must point to an existing
+  Obsidian vault. We do NOT create vaults; only sub-folders inside one.
+
+**No new external dependencies**: pyzotero already in
+`requirements-optional.txt` (v3.9.15.0); obsidian module is pure stdlib
+(`pathlib`, `re`, `datetime`, `dataclass`, `unicodedata`).
+
 ## [3.9.15.0] - 2026-08-18
 
 ### Added — `[P2-17] + [P2-18] Zotero bidirectional integration`

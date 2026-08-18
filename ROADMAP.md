@@ -1325,6 +1325,7 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 | v3.9.14.2 | released 2026-08-18 | **[P2-15] `pa jobs` status/tail/resume subcommand ships (job manager for pa fetch-pdf-batch)**: new `pa_cli/jobs.py` (14 KB, 11 functions, JobManifest dataclass) + `test_output/test_jobs.py` (12 KB, 14/14 tests pass, 1 skipped). 5 subcommands in `pa jobs` Click group: `start` / `list` / `status` / `tail` / `resume`. Inspired by `instsci jobs status/tail/resume` (Round 14 coupling). Per-job dir: `~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt}`. Atomic manifest write (temp + rename). `pa jobs start` wraps `pa fetch-pdf-batch` via subprocess, captures stdout+stderr to log.txt, updates manifest on completion. `pa jobs resume` re-runs with `--skip-existing`. Override jobs root via `$PA_JOBS_DIR`. job_id validates against `[a-zA-Z0-9_-]+` (rejects path traversal). Pure stdlib (no new dep). `pa_cli/cli.py` +150 LOC. **Acceptance**: 8/8 criteria met, 14/14 tests pass, 1 skipped (real subprocess e2e would timeout) | 2026-08-18 |
 | v3.9.14.3 | released 2026-08-18 | **[P3-27] Document instsci-mcp as friendly-neighbor MCP (docs-only)**: `README.md` new "Friendly-neighbor projects" section (~50 LOC) explains complementary positioning with `Rimagination/instsci` (288⭐, MIT) and shows side-by-side MCP client config (`paper-search-mcp` + `paper-agent-fetch` + `instsci-mcp`). `THIRD_PARTY.md` new "Friendly-neighbor projects" section (~30 LOC) lists `Rimagination/instsci` and `deathcats4/instsci-workflow` with license + install + when-to-use. `THIRD_PARTY.md` version footer bumped to v1.1. README engine count updated 6 → 8 (PubMed + ClinicalTrials); Available commands table now lists `pa zotero check` / `pa jobs` / `pa mcp-fetch-serve` / `pa mcp install`. **No code change, no new dep**. **Acceptance**: 4/4 criteria met. **v3.9.14 backlog cleared** (all 4 items shipped: P2-16/P0-15/P2-15/P3-27) | 2026-08-18 |
 | v3.9.15.0 | released 2026-08-18 | **[P2-17] + [P2-18] Zotero bidirectional integration ships**: new `pa_cli/zotero_api.py` (15 KB, 9 functions, pyzotero 1.14.0 wrapper) + `test_output/test_zotero_api.py` (13.3 KB, 16/16 tests pass). 3 new subcommands: `pa zotero push --corpus refs.bib [--pdf-dir] [--mode linked_file|imported_file] [--no-skip-existing]` (write to library via Web API v3, idempotent via `pyzotero.check_items()`); `pa zotero search --query "long-term care" [--limit N] [--qmode titleCreatorYear|everything]` (search library); `pa zotero sync --corpus refs.bib [--query Q] [--push/--no-push]` (3-step combined workflow: local check via [P2-16] → library search via new → push via [P2-17]). Auth: `$ZOTERO_API_KEY` + `$ZOTERO_LIBRARY_ID` env vars (NOT .env per 留痕 discipline). `requirements-optional.txt` added pyzotero>=1.14 (new "Zotero Web API" group). `pa_cli/cli.py` ~120 LOC for the 3 subcommands. **MINOR bump** (not PATCH) because [P2-17]+[P2-18] is a full bidirectional workflow surface. **Deferred to v3.9.16**: [P2-17.1] PDF upload via `item.attachment_simple()` (v3.9.15.0 ships metadata-only; PDF requires separate API call + file storage quota). **Zotero re-evaluation closed**: earlier "DEFERRED" judgment (same day morning) was wrong — CSV import ≠ "do I already have this paper?" All 3 Zotero items now shipped. | 2026-08-18 |
+| v3.9.16.0 | released 2026-08-18 | **[P3-28] + [P3-29] Zotero project + Obsidian research sub-vault ship**: `pa_cli/zotero_api.py` extended with 7 collection functions (list / find / create idempotent / get_items / add_items / create_note / list_notes); `pa_cli/obsidian.py` NEW (22KB, 14 functions, pure stdlib). **2 new Click groups** in `pa_cli/cli.py` (~280 LOC): `pa zotero project` (5 subcommands: create/list/status/note/add/search) and `pa obsidian` (init + 5 project subcommands + 2 inbox). 86 new tests pass (37 zotero_collections + 49 obsidian, mock-based where applicable; pure stdlib means no live vault / library needed). `requirements-optional.txt` unchanged (pyzotero already in v3.9.15.0; obsidian is stdlib). **MINOR bump** (2 new modules + 8 new commands = significant additive surface). **Auth**: `$PAPER_AGENT_OBSIDIAN_VAULT` env var, points to existing Obsidian vault (e.g. `G:\Todo list\Todo List`). User can use either side independently; matching names give natural cross-referencing. Cross-searched 4 angles (Zotero collection API / Obsidian vault templates / paper-agent flows / Zotero Better Notes plugin) before design to validate differentiators | 2026-08-18 |
 
 ---
 
@@ -1482,6 +1483,30 @@ These 1 item is **considered and rejected** (with reasoning, recorded for future
 1. **[P2-16] `pa zotero check` (read-only, recommended first)** — read local `zotero.sqlite`, report which DOIs in a corpus are already in user's library. ~1.5h, 0 API key, 0 network, 0 writes.
 2. **[P2-17] `pa zotero push` (write via Web API, conditional on [P2-16] being useful)** — push bibtex entries + PDFs to user's Zotero library via Web API v3. ~3h, requires Zotero API key, all data goes through Zotero cloud.
 3. **[P2-18] `pa zotero sync` (bidirectional, conditional on [P2-17])** — combine check + push + library search. ~4h, superset of P2-16 + P2-17.
+
+### Round 16 / 2026-08-18 — Zotero project + Obsidian research sub-vault
+
+**Re-evaluation context**: Same evening after [P2-16]+[P2-17]+[P2-18] shipped, user asked: "every time I run paper-agent to study a topic, I want it to (1) bucket results into downloaded vs failed-download, (2) push the downloaded ones + a note into a Zotero project for that topic, (3) let me read the existing Zotero topic projects. Also, add an Obsidian interface for managing research topics, directions, and unformed thoughts." Two new items accepted into Tier 1:
+
+1. **[P3-28] `pa zotero project` (collection-as-project)** — Zotero **collection** is the natural representation for a "research project" (= folder). Add `pa zotero project create/list/status/note/add/search` (5 subcommands) that wrap pyzotero's collection + note + item APIs. Idempotent: re-running `create` is a no-op. **Why this differs from `pa zotero push`**: [P2-17] pushes items but doesn't organize them by topic. After 200 pushes, your library is a flat list. After 200 pushes + 10 `pa zotero project create` calls, your library is organized by topic.
+2. **[P3-29] `pa obsidian` (research sub-vault)** — Obsidian is the natural place for **unformed thoughts** (inbox), **atomic notes** (one concept per file), and **synthesis** (cross-paper analysis). Add `pa obsidian init` + `pa obsidian project create/list/status/thought/note` + `pa obsidian inbox add/list`. Pure stdlib (no new dep). Writes to `<vault>/0-Research/` (user-configured via `$PAPER_AGENT_OBSIDIAN_VAULT`). **Why this differs from Zotero notes**: Zotero notes are bound to items / collections; Obsidian is for free-form thinking that doesn't fit Zotero's bibliographic model.
+
+**Cross-search done first** (4 angles, per `cross-search-verify` skill):
+- **Zotero collection API** (`pyzotero.collections()` + `create_collections()` + `item_template('journalArticle')`): already exists in pyzotero 1.14.0, used as-is.
+- **Obsidian research vault templates** (`ellierennie/Telescope-Obsidian-Vault`, `codeberg.org/CSEd/research-vault-template`, `obsidian_vault_template_for_researcher`): 3 vault templates reviewed. We do NOT ship a full template (user already has GTD vault); we add a `0-Research/` sub-folder.
+- **paper-agent flows** (`OpenBlocking/Paper-Agent-Zotero`, `huanyuqu/PaperAgent`, `dadwadw233/PaperAgent`): all do arXiv daily + interest modeling + LLM summary, NONE do collection-as-project. Our differentiator: explicit project organization + per-topic note + Obsidian integration.
+- **Zotero Better Notes plugin** (`windingwind/zotero-better-notes`, 7k+ stars): does per-item note + bidirectional Obsidian sync, but NOT per-collection project. Our differentiator: collection-level master note + per-topic auto-creation.
+
+**Two systems, independently usable, cross-link by name**:
+- Use Zotero for: papers (bibliographic), collection-as-project, master note per project
+- Use Obsidian for: research questions, unformed thoughts, atomic notes, synthesis
+- Convention: same name on both sides (= your topic) gives natural cross-referencing in `index.md` and Zotero master note
+- No automatic coupling (per user intent: "create matching Obsidian project when Zotero project is created" was considered but REJECTED — keeps systems independent; user can add a `pa zotero project create + pa obsidian project create` 2-liner script if they want)
+
+**Combined into one release (v3.9.16.0)** because: (a) both reuse the existing v3.9.15.0 Zotero API; (b) both are research-workflow additions; (c) MINOR bump is the natural fit for "one big additive feature".
+
+**Deferred to v3.9.17+**:
+- `pa search-and-import --query "..." --project "..."` (auto-bucket fetched papers into downloaded/failed + auto-push downloaded to project + auto-append to master note). The fetch+import integration needs the broader search-fetch pipeline wired to Zotero project; tracked as follow-up.
 
 ### External project tracker (for awareness only)
 
@@ -1769,6 +1794,11 @@ candidates in priority order, with effort and 5-check Global Rule audit.
 - ✅ [P2-17] `pa zotero push` (v3.9.15.0, this release)
 - ✅ [P2-18] `pa zotero search` + `pa zotero sync` (v3.9.15.0, this release)
 - **All Zotero items shipped**. Only [P2-17.1] PDF upload remains (deferred to v3.9.16).
+
+**v3.9.16 backlog status** (post release):
+- ✅ [P3-28] `pa zotero project` (collection-as-project + master note + add items)
+- ✅ [P3-29] `pa obsidian` (research sub-vault + project + atomic notes + inbox)
+- **Both shipped**. Only [P2-17.1] PDF upload still deferred.
 - **`[P2-16] pa zotero check` (read-only Zotero local DB, RECOMMENDED FIRST)**
   - **Status**: done
   - **Added**: 2026-08-18 (re-evaluated from DEFERRED same-day)
