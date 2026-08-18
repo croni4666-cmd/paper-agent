@@ -1335,6 +1335,26 @@ be read as `[P0-2] Local cache, pa cache stats/clean subcommands`.
 
 ---
 
+## Release process (added 2026-08-18, after v3.9.20.0 release format refactor)
+
+When cutting a new release:
+
+1. **CHANGELOG.md** — add `[X.Y.Z] - YYYY-MM-DD` entry (long form: rationale + design + tests + files)
+2. **GitHub release body** — follow [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (TL;DR + categorized features + tests/files tables + Full Changelog link)
+3. **ROADMAP.md** — update the "Versioned roadmap summary" table + add a row to the "Current capability snapshot" section if the release adds new surface
+4. **README.md** — add new sections for any new commands / workflows
+5. **Tag** — `git tag -a vX.Y.Z -m "..."` (annotated tag, includes body)
+6. **Push** — `git push origin main` then `git push origin vX.Y.Z` (PAT may need proxy 10808, see v3.9.13.0 lessons)
+7. **Create release via API** — `POST /releases` with the body from `RELEASE_TEMPLATE.md` (not the CHANGELOG long form)
+
+Reference release using this template: **v3.9.20.0** (id=372395278,
+body_len=6949). Earlier releases (v3.9.20.0 original) used a flat
+changelog-style format and were not retroactively re-formatted;
+PATCH the body in-place if a specific release needs the new look
+(use `test_output/_patch_release_X_Y_Z.py`).
+
+---
+
 ## Current capability snapshot (added 2026-07-15, post-v3.9.7.9; updated 2026-07-23 to v3.9.11.3; updated 2026-08-14 to v3.9.13.3)
 
 This is the "what paper-agent can do today" reference. Updated whenever

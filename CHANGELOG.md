@@ -7,6 +7,12 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 - **MINOR** (v3.0 → v3.1): new searcher / new phase / new key, additive
 - **PATCH** (v3.1.0 → v3.1.1): bug fix, no API change
 
+> **Release notes format**: GitHub release body uses the template in
+> [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
+> This CHANGELOG.md is the "long form" record; the release body is
+> the "marketing" TL;DR + categorized features + tests/files tables.
+> See template for emoji vocabulary and section rules.
+
 ## [3.9.20.0] - 2026-08-18
 
 ### Added — `Research Workflow Suite: 4 new capabilities across corpus analytics, PRISMA, daily linking, per-item update detection`
