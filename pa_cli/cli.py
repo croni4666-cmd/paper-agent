@@ -1766,6 +1766,82 @@ def project_corpus(slug):
     click.echo(str(files['refs']))
 
 
+@project.command(name="corpus-stats")
+@click.argument("slug", required=False)
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--top", "top_n", default=10, show_default=True,
+              help="How many top authors/venues to show")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output full JSON (else human-readable summary)")
+def project_corpus_stats(slug, root_path, top_n, as_json):
+    """[P2-19] Show aggregate stats for a project's refs.bib corpus.
+
+    Computes: total count, with/without DOI, by type, year range +
+    median, decade histogram, top N authors (by paper count), top N
+    venues (journal/publisher/booktitle).
+
+    If `slug` is omitted, shows stats for all projects (one section
+    per project). If project is a Zotero-pulled project
+    (meta.json has zotero_collection_key), shows sync info too.
+
+    Examples:
+      pa project corpus-stats long-term-care
+      pa project corpus-stats --json | jq .top_authors
+      pa project corpus-stats                      # all projects
+    """
+    from .project import list_projects, project_files, DEFAULT_ROOT
+    from . import corpus_stats as cs
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    if slug:
+        slugs = [slug]
+    else:
+        slugs = [p["slug"] for p in list_projects(root)]
+
+    if not slugs:
+        click.echo(f"[corpus-stats] no projects found at {root}")
+        return
+
+    for s in slugs:
+        files = project_files(s, root)
+        if not files["dir"].exists():
+            click.echo(f"[corpus-stats] {s}: project not found", err=True)
+            continue
+        stats = cs.compute_corpus_stats(files["refs"], top_n=top_n)
+        if as_json:
+            # Augment with slug for clarity when batch
+            result = {"slug": s, **stats}
+            # Also include zotero info if present
+            if files["meta"].exists():
+                try:
+                    meta = json.loads(files["meta"].read_text(encoding="utf-8"))
+                    if "zotero_collection_key" in meta:
+                        result["zotero_collection_key"] = meta["zotero_collection_key"]
+                        result["zotero_collection_version"] = meta.get("zotero_collection_version")
+                        result["zotero_last_sync_at"] = meta.get("zotero_last_sync_at")
+                except Exception:
+                    pass
+            click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        else:
+            click.echo(cs.format_corpus_stats_human(stats))
+            # Zotero info if present
+            if files["meta"].exists():
+                try:
+                    meta = json.loads(files["meta"].read_text(encoding="utf-8"))
+                    if "zotero_collection_key" in meta:
+                        ver = meta.get("zotero_collection_version", "?")
+                        sync = meta.get("zotero_last_sync_at", "never")
+                        click.echo(
+                            f"  zotero:        key={meta['zotero_collection_key']} "
+                            f"version={ver} last_sync={sync}"
+                        )
+                except Exception:
+                    pass
+        click.echo("")  # blank line between projects
+
+
 @project.command(name="rm")
 @click.argument("slug")
 @click.option("--force", is_flag=True, help="Remove even without meta.json")
@@ -3656,6 +3732,7 @@ def zotero_project_diff(name, key, slug, root_path, as_json):
         slug = re.sub(r"[^A-Za-z0-9._-]+", "-", canonical_name.strip()).strip("-").lower() or "zotero-project"
     root = Path(root_path) if root_path else PA_DEFAULT_ROOT
     refs_path = project_files(slug, root)["refs"]
+    meta_path = project_files(slug, root)["meta"]
     if not refs_path.exists():
         click.echo(
             f"[zotero-project] local project '{slug}' not found at {refs_path.parent} "
@@ -3664,7 +3741,7 @@ def zotero_project_diff(name, key, slug, root_path, as_json):
         )
         sys.exit(1)
 
-    diff = zotero_api.diff_collection_to_local(client, coll["key"], refs_path)
+    diff = zotero_api.diff_collection_to_local(client, coll["key"], refs_path, local_meta_path=meta_path)
 
     if as_json:
         click.echo(json.dumps(diff, ensure_ascii=False, indent=2))
@@ -3677,7 +3754,8 @@ def zotero_project_diff(name, key, slug, root_path, as_json):
         f"  local DOIs:    {diff['local_n_dois']}\n"
         f"  unchanged:     {diff['unchanged_n']}\n"
         f"  new in zotero: {len(diff['new_dois'])}  (in Zotero, not in local)\n"
-        f"  removed:       {len(diff['removed_dois'])}  (in local, not in Zotero)"
+        f"  removed:       {len(diff['removed_dois'])}  (in local, not in Zotero)\n"
+        f"  updated:       {diff.get('n_updated', 0)}  (Zotero items edited since last sync)"
     )
     if diff["new_dois"]:
         click.echo(f"\n  New DOIs (use `pa zotero-project sync --apply` to pull):")
@@ -3691,7 +3769,19 @@ def zotero_project_diff(name, key, slug, root_path, as_json):
             click.echo(f"    - {d}")
         if len(diff["removed_dois"]) > 20:
             click.echo(f"    ... and {len(diff['removed_dois']) - 20} more")
-    if not diff["new_dois"] and not diff["removed_dois"]:
+    if diff.get("n_updated", 0) > 0:
+        click.echo(
+            f"\n  Updated items (Zotero version > stored; "
+            f"use `pa zotero-project pull --overwrite` to refresh):"
+        )
+        for it in diff.get("updated_items", [])[:20]:
+            doi = it.get("DOI", "")
+            title = (it.get("title", "") or "")[:50]
+            zk = it.get("key", "")
+            click.echo(f"    ~ [{zk}] {title}  ({doi})")
+        if diff.get("n_updated", 0) > 20:
+            click.echo(f"    ... and {diff['n_updated'] - 20} more")
+    if not diff["new_dois"] and not diff["removed_dois"] and diff.get("n_updated", 0) == 0:
         click.echo("\n  Up to date. Nothing to sync.")
 
 
@@ -3781,6 +3871,7 @@ def zotero_project_sync(name, key, slug, root_path, apply, as_json):
         f"-> local project '{result['project_slug']}'\n"
         f"  new (will append):  {result['n_new']}\n"
         f"  removed (kept):     {result['n_removed']}\n"
+        f"  updated:            {result.get('n_updated', 0)}  (use `pa zotero project pull --overwrite` to refresh)\n"
         f"  unchanged:          {result['n_unchanged']}\n"
         f"  refs.bib:           {result['refs_path']}\n"
         f"  meta.json:          {result['meta_path']}"
@@ -4103,6 +4194,89 @@ def obsidian_inbox_list(limit, as_json):
     for it in items:
         click.echo(f"  [{it['modified'][:16]}]  {it['title'][:50]}")
         click.echo(f"      {it['path']}")
+
+
+# ─────────────────────────────────────────────────────────────────
+# v3.9.20 [P3-29.2] pa obsidian daily-link -- backlink in GTD daily note
+# ─────────────────────────────────────────────────────────────────
+@obsidian.command(name="daily-link")
+@click.option("--project", "project", required=True,
+              help="Research project name (= Zotero collection / Obsidian project)")
+@click.option("--date", "date", default=None,
+              help="ISO date YYYY-MM-DD (default: today, local time)")
+@click.option("--vault", "vault_path", default=None, type=click.Path(file_okay=False),
+              help="Override vault path (default: $PAPER_AGENT_OBSIDIAN_VAULT)")
+@click.option("--create/--no-create", "create_if_missing", default=False,
+              help="Create a stub daily note if it doesn't exist "
+                   "(default: skip gracefully)")
+@click.option("--json", "as_json", is_flag=True,
+              help="Output JSON (else human-readable)")
+def obsidian_daily_link(project, date, vault_path, create_if_missing, as_json):
+    """[P3-29.2] Add a backlink to a project in today's (or a given date's) daily note.
+
+    Writes a `## Active research projects` section to
+    `<vault>/4-Daily/<date>.md` with a wiki-link to the project's
+    index page (`0-Research/Projects/<slug>/index`).
+
+    Idempotent: re-running for the same project is a no-op
+    (per-project HTML comment marker handles dedup).
+
+    Multiple projects on the same day: each gets its own line in
+    the same section.
+
+    If the daily note doesn't exist and `--create` is not set, the
+    command skips gracefully (no error, no file created).
+
+    Use case: at the end of a research session, add a backlink so
+    the day's daily note has 1-click access to the project you're
+    working on. Common workflow:
+
+        # at end of research session:
+        pa obsidian daily-link --project "long-term care"
+        # tomorrow's daily note will show this project
+    """
+    from . import obsidian as obs_mod
+    result = obs_mod.daily_link(
+        project_name=project,
+        date=date,
+        vault_path=Path(vault_path) if vault_path else None,
+        create_if_missing=create_if_missing,
+    )
+    if as_json:
+        click.echo(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if result["status"] == "error":
+        click.echo(f"[obsidian] ERROR: {result.get('error', 'unknown')}", err=True)
+        sys.exit(1)
+    if result["status"] == "skipped_no_vault":
+        click.echo(
+            f"[obsidian] skipped: {result.get('error', 'vault not configured')}",
+            err=True,
+        )
+        sys.exit(2)
+    if result["status"] == "skipped_no_daily_note":
+        click.echo(
+            f"[obsidian] skipped: daily note does not exist at {result['daily_path']}\n"
+            f"  Re-run with --create to create a stub, or create the note manually first.",
+            err=True,
+        )
+        return
+    # status == "linked"
+    if result.get("link_added"):
+        if result.get("section_created"):
+            click.echo(
+                f"[obsidian] created section + added backlink to '{project}' "
+                f"in {result['daily_path']}"
+            )
+        else:
+            click.echo(
+                f"[obsidian] added backlink to '{project}' "
+                f"in {result['daily_path']} (section already existed)"
+            )
+    else:
+        click.echo(
+            f"[obsidian] '{project}' already linked in {result['daily_path']} (no change)"
+        )
 
 
 # ─────────────────────────────────────────────────────────────────

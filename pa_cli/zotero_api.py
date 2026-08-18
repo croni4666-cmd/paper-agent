@@ -565,6 +565,7 @@ def get_collection_items(client: "Zotero", collection_key: str) -> List[Dict[str
             "date": data.get("date", ""),
             "DOI": data.get("DOI", ""),
             "itemType": data.get("itemType", ""),
+            "version": data.get("version", 0),  # for per-item update detection (v3.9.20+)
         })
     # Sort by date desc, then title
     out.sort(key=lambda x: (x.get("date", ""), x.get("title", "").lower()), reverse=True)
@@ -1274,14 +1275,63 @@ def _parse_refs_bib_dois(refs_bib_path: Path) -> Dict[str, str]:
     return out
 
 
+def _parse_refs_bib_for_zotero_keys(refs_bib_path: Path) -> Dict[str, str]:
+    """Parse a local refs.bib and return {zotero_key: normalized_doi}.
+
+    Looks for the `zotero_key = {KEY}` field that v3.9.18.0's `pull`
+    and v3.9.17.1's `push` add to every entry. Returns {} if the
+    file doesn't exist or no entries have a zotero_key.
+
+    Used for per-item update detection (v3.9.20 [P3-28.4]):
+    the local refs.bib knows which Zotero items it was pulled from,
+    so we can match by Zotero key (not just DOI) to detect edits
+    in Zotero after the local pull.
+    """
+    if not refs_bib_path.exists():
+        return {}
+    out: Dict[str, str] = {}
+    text = refs_bib_path.read_text(encoding="utf-8", errors="replace")
+    # Find each @type{...} block by brace-counting (regex can't handle
+    # nested braces like `title={X with } brace}`).
+    # Use `[{]` / `[}]` in the field regexes (no escaped quotes needed).
+    zk_re = re.compile(r"zotero_key\s*=\s*[{]\s*([^}]+?)\s*[}]", re.IGNORECASE)
+    doi_re = re.compile(r"doi\s*=\s*[{]\s*([^}]+?)\s*[}]", re.IGNORECASE)
+    for m in re.finditer(r"@(\w+)\s*\{\s*", text):
+        i = m.end()
+        depth = 1
+        body_start = i
+        while i < len(text) and depth > 0:
+            ch = text[i]
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+            i += 1
+        body = text[body_start:i - 1]
+        zk_m = zk_re.search(body)
+        if not zk_m:
+            continue
+        zotero_key = zk_m.group(1).strip()
+        if not zotero_key:
+            continue
+        doi_m = doi_re.search(body)
+        doi = normalize_doi(doi_m.group(1)) if doi_m else ""
+        out[zotero_key] = doi or ""
+    return out
+
+
 def diff_collection_to_local(
     client: "Zotero",
     collection_key: str,
     local_refs_bib_path: Path,
+    local_meta_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Compare a Zotero collection against a local refs.bib file.
 
-    Items are matched by normalized DOI. Returns:
+    Items are matched by normalized DOI (primary) and by Zotero key
+    (secondary, for per-item update detection).
+
+    Returns:
     - `new_dois`: DOIs in Zotero but NOT in local refs.bib (Zotero
       has new items that the local copy doesn't)
     - `removed_dois`: DOIs in local refs.bib but NOT in Zotero
@@ -1292,39 +1342,82 @@ def diff_collection_to_local(
     - `zotero_n_items`: total top-level bibliographic items in Zotero
     - `local_n_dois`: total DOIs found in local refs.bib
     - `unchanged_n`: count of DOIs in both (matched)
+    - `updated_items`: list of Zotero items whose `version` is
+      higher than what's stored in `meta.json[zotero_item_versions]`
+      (v3.9.20+). Empty if no meta.json or no version map yet.
+    - `n_updated`: count of updated items
 
-    **No "updated" detection** in v3.9.19: we don't track per-item
-    versions locally, so we can't reliably tell if a Zotero item was
-    edited after pull. The pull command in v3.9.18.0 set
-    `zotero_collection_version` (collection-level, not per-item).
-    Use `pa zotero project pull --overwrite` to fully refresh if
-    item-level updates are needed.
+    **Per-item update detection** (v3.9.20 [P3-28.4]):
+    - For each Zotero item that has a `zotero_key` field in local
+      refs.bib, compare its current Zotero `version` to the
+      version stored in `meta.json[zotero_item_versions]`.
+    - If Zotero.version > stored: marked as `updated_items`.
+    - On the first sync after `pull`, no version map exists yet,
+      so 0 updates are detected (baseline established on the
+      first `--apply`).
 
     Args:
         client: pyzotero.Zotero client
         collection_key: the collection's Zotero key
         local_refs_bib_path: path to local refs.bib
+        local_meta_path: optional path to local meta.json (for
+            reading stored item versions; default: skip update detection)
 
     Returns:
         Dict with {new_dois, removed_dois, new_items, zotero_n_items,
-        local_n_dois, unchanged_n}.
+        local_n_dois, unchanged_n, updated_items, n_updated}.
     """
-    # Local DOIs
+    # Local DOIs (primary match key)
     local_dois = _parse_refs_bib_dois(Path(local_refs_bib_path))
+    # Local zotero_key -> doi (for per-item update detection)
+    local_zk_to_doi = _parse_refs_bib_for_zotero_keys(Path(local_refs_bib_path))
 
     # Zotero items (top-level only, not attachments/notes)
     zotero_items = get_collection_items(client, collection_key)
 
     zotero_doi_to_item: Dict[str, Dict[str, Any]] = {}
+    zotero_key_to_item: Dict[str, Dict[str, Any]] = {}
     for item in zotero_items:
         doi = normalize_doi(item.get("DOI", ""))
         if doi:
             zotero_doi_to_item[doi] = item
+        zk = item.get("key", "")
+        if zk:
+            zotero_key_to_item[zk] = item
 
     new_dois = sorted(d for d in zotero_doi_to_item if d not in local_dois)
     removed_dois = sorted(d for d in local_dois if d not in zotero_doi_to_item)
     unchanged_n = len(set(local_dois) & set(zotero_doi_to_item))
     new_items = [zotero_doi_to_item[d] for d in new_dois]
+
+    # Per-item update detection (v3.9.20+): compare Zotero.version to
+    # the version stored in meta.json[zotero_item_versions] at the
+    # last sync.
+    updated_items: List[Dict[str, Any]] = []
+    stored_versions: Dict[str, int] = {}
+    if local_meta_path and Path(local_meta_path).exists():
+        try:
+            import json as _json
+            meta = _json.loads(Path(local_meta_path).read_text(encoding="utf-8"))
+            stored_versions = meta.get("zotero_item_versions", {}) or {}
+        except Exception:
+            stored_versions = {}
+
+    for zk, item in zotero_key_to_item.items():
+        if zk not in local_zk_to_doi:
+            # Local doesn't have this zotero_key; it's a "new" item,
+            # already counted in new_dois. Skip.
+            continue
+        # Only detect "updated" if we have a stored baseline for this
+        # zotero_key. On the first sync (no version map yet), 0 items
+        # appear as updated (baseline is established on the first
+        # --apply). This avoids false positives on initial pull.
+        if zk not in stored_versions:
+            continue
+        zotero_version = item.get("version", 0)
+        stored_version = int(stored_versions[zk])
+        if zotero_version > stored_version:
+            updated_items.append(item)
 
     return {
         "new_dois": new_dois,
@@ -1333,6 +1426,8 @@ def diff_collection_to_local(
         "zotero_n_items": len(zotero_items),
         "local_n_dois": len(local_dois),
         "unchanged_n": unchanged_n,
+        "updated_items": updated_items,
+        "n_updated": len(updated_items),
     }
 
 
@@ -1401,7 +1496,7 @@ def sync_collection_to_local(
     refs_path = project_files(project_slug, root)["refs"]
     meta_path = project_files(project_slug, root)["meta"]
 
-    diff = diff_collection_to_local(client, coll["key"], refs_path)
+    diff = diff_collection_to_local(client, coll["key"], refs_path, local_meta_path=meta_path)
 
     result = {
         "status": "ok",
@@ -1415,6 +1510,7 @@ def sync_collection_to_local(
         "n_new": len(diff["new_dois"]),
         "n_removed": len(diff["removed_dois"]),
         "n_unchanged": diff["unchanged_n"],
+        "n_updated": diff.get("n_updated", 0),
         "new_dois": diff["new_dois"],
         "removed_dois": diff["removed_dois"],
         "refs_path": str(refs_path),
@@ -1473,6 +1569,20 @@ def sync_collection_to_local(
     if diff["removed_dois"]:
         existing_removed = meta.get("removed_from_zotero", [])
         meta["removed_from_zotero"] = sorted(set(existing_removed) | set(diff["removed_dois"]))
+
+    # v3.9.20 [P3-28.4]: refresh per-item version map (for update
+    # detection on next sync). For every Zotero item, store its
+    # current `version` keyed by zotero_key. On next sync, we
+    # compare against this to detect edits.
+    zotero_items_for_versions = get_collection_items(client, coll["key"])
+    item_versions: Dict[str, int] = {}
+    for it in zotero_items_for_versions:
+        zk = it.get("key", "")
+        ver = it.get("version", 0)
+        if zk:
+            item_versions[zk] = int(ver)
+    meta["zotero_item_versions"] = item_versions
+
     meta["updated_at"] = datetime.now().isoformat(timespec="seconds")
     save_meta(project_slug, meta, root)
 
