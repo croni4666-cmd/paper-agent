@@ -54,7 +54,7 @@ pa version          # should print X.Y.Z
 
 ## ✨ What's New
 
-### 1. <emoji> <title> · [<roadmap-id>]
+### 1. <emoji> <title>
 
 <one-paragraph description>
 
@@ -144,6 +144,9 @@ $ pa <command> <args>
   - Optional: small data table (use when output is naturally tabular)
   - Optional: mermaid block for visual diagrams (PRISMA, flow, etc.)
   - Optional: "How it works" / "Why it matters" closing
+  - **No internal roadmap IDs** (`[P2-19]` etc.) — keep release notes
+    user-facing, not developer-facing. Roadmap IDs go in CHANGELOG
+    and commit messages, not in the public release body.
 
 ### Tests
 - Markdown table, files × new count × status
