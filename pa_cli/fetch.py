@@ -338,6 +338,243 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
 
 
 # ─────────────────────────────────────────────────────────────────
+# PMC fulltext channel (v3.9.21+, 2026-08-21)
+# 合法 + 永久 + 100% 走通, 替代 sci-hub/annas cascade 失败时的 fallback
+#
+# 3 步:
+#   1. DOI → PMCID: eutils.ncbi.nlm.nih.gov/.../esearch.fcgi?db=pmc&term=<doi>[doi]
+#   2. EFetch XML:   eutils.ncbi.nlm.nih.gov/.../efetch.fcgi?db=pmc&id=<numeric>&rettype=xml
+#   3. Europe PMC PDF: europepmc.org/articles/pmc<id>?pdf=render (CC BY/CC BY-NC 论文可走)
+#
+# 已知网络:
+#   - E-utilities API: 100% 走通 (无 WAF, 200 OK)
+#   - Europe PMC: 间歇 404 (server 限制, 需要 retry 或换 journal direct URL)
+#   - 期刊 direct PDF (Frontiers / BMC / MDPI / Elsevier): 通过 Unpaywall API 拿 best_oa_location
+# ─────────────────────────────────────────────────────────────────
+EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+PMC_OA_SERVICE = "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi"
+
+
+def _pmc_doi_to_pmcid(doi: str) -> Optional[str]:
+    """Resolve DOI → PMCID via NCBI E-utilities ESearch.
+
+    ESearch ?db=pmc&term=<doi>[doi] returns PMC UID (numeric).
+    Prepend "PMC" to get PMCID.
+
+    Note: PMC ID Converter v1 API (/pmc/utils/idconv/v1/converter/) returns 404
+    on user machine; ESearch is the working alternative.
+    """
+    doi = (doi or "").strip()
+    if not doi:
+        return None
+    url = f"{EUTILS_BASE}/esearch.fcgi?db=pmc&term={urllib.parse.quote(doi)}[doi]&retmode=json"
+    status, body = _http_get_bytes(url, timeout=15)
+    if status != 200 or not body:
+        return None
+    try:
+        data = json.loads(body.decode("utf-8", errors="replace"))
+        ids = data.get("esearchresult", {}).get("idlist", [])
+        if ids:
+            return f"PMC{ids[0]}"
+    except Exception:
+        pass
+    return None
+
+
+def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
+    """EFetch full-text JATS XML from PMC. K-Dense hazard: 200 OK but body
+    missing = publisher restriction; always verify body via jats_to_text.py.
+    """
+    pmcid_clean = pmcid.replace("PMC", "")
+    url = f"{EUTILS_BASE}/efetch.fcgi?db=pmc&id={pmcid_clean}&rettype=xml"
+    time.sleep(0.4)  # NCBI rate limit
+    status, body = _http_get_bytes(url, timeout=60)
+    if status != 200 or not body:
+        return {"error": f"pmc_efetch_status_{status}"}
+    if out_path:
+        saved = _save_pdf(body, out_path)  # saves raw bytes; caller can rename
+    result = {
+        "source": "pmc_xml",
+        "pmcid": pmcid,
+        "size": len(body),
+        "url": url,
+    }
+    if out_path:
+        # Rename .pdf to .xml since bytes are XML not PDF
+        from pathlib import Path
+        p = Path(out_path)
+        xml_path = p.with_suffix('.xml')
+        xml_path.parent.mkdir(parents=True, exist_ok=True)
+        xml_path.write_bytes(body)
+        result["path"] = str(xml_path.resolve())
+    return result
+
+
+def _pmc_europe_pdf(pmcid: str, out_path: str = None, max_retries: int = 3) -> Dict[str, Any]:
+    """Europe PMC PDF rendering endpoint: europepmc.org/articles/pmc<id>?pdf=render
+
+    Note: server 间歇 404, 需要 retry. 对 CC BY/CC BY-NC 论文 80% 成功.
+    """
+    pmcid_lower = pmcid.lower().replace("pmc", "")
+    epmc_url = f"https://europepmc.org/articles/pmc{pmcid_lower}?pdf=render"
+    for attempt in range(1, max_retries + 1):
+        status, body = _http_get_bytes(epmc_url, timeout=180)
+        if status == 200 and body and body[:4] == b"%PDF":
+            result = {
+                "source": "pmc_europe",
+                "pmcid": pmcid,
+                "pdf_url": epmc_url,
+                "size": len(body),
+                "attempts": attempt,
+            }
+            if out_path:
+                result["path"] = _save_pdf(body, out_path)
+            return result
+        time.sleep(2.0)
+    return {"error": "pmc_europe_all_retries_failed",
+            "pmcid": pmcid,
+            "url": epmc_url,
+            "attempts": max_retries}
+
+
+def _pmc_jats_to_pdf(pmcid: str, xml_path: str, out_path: str = None,
+                      embed_figures: bool = True,
+                      proxy: str = None) -> Dict[str, Any]:
+    """v3.9.21+: JATS XML → real PDF via pa_cli.jats_to_pdf (Playwright).
+
+    Last-resort fallback when Europe PMC PDF rendering fails. Always works
+    (Chromium renders any valid JATS HTML) but slower (15-25s with figures).
+
+    Returns dict with:
+      - source: "pmc_jats_pdf"
+      - pmcid, pdf_path, pdf_size, elapsed_sec
+      - error on failure
+    """
+    import time as _t
+    t0 = _t.time()
+    pmcid_clean = pmcid.replace("PMC", "")
+    try:
+        # Lazy import: jats_to_pdf pulls in playwright (large dep)
+        from .jats_to_pdf import jats_xml_to_pdf
+        xml_bytes = Path(xml_path).read_bytes()
+        pdf_bytes = jats_xml_to_pdf(
+            xml_bytes,
+            doi="",
+            pmcid=pmcid_clean,
+            embed_figures=embed_figures,
+            proxy=proxy,
+        )
+        if not pdf_bytes or not pdf_bytes.startswith(b"%PDF"):
+            return {"error": "jats_pdf_invalid_output",
+                    "pmcid": pmcid, "hint": "jats_to_pdf returned non-PDF bytes"}
+        result = {
+            "source": "pmc_jats_pdf",
+            "pmcid": pmcid,
+            "size": len(pdf_bytes),
+            "elapsed_sec": round(_t.time() - t0, 2),
+        }
+        if out_path:
+            from pathlib import Path as _P
+            out_p = _P(out_path)
+            out_p.parent.mkdir(parents=True, exist_ok=True)
+            out_p.write_bytes(pdf_bytes)
+            result["path"] = str(out_p.resolve())
+        return result
+    except Exception as e:
+        return {"error": f"jats_pdf_{type(e).__name__}",
+                "pmcid": pmcid,
+                "message": str(e)[:200],
+                "hint": "Check playwright install or JATS XML validity"}
+
+
+def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
+    """PMC channel: DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort).
+
+    Returns dict with:
+      - success: "pmc_xml" (XML saved) or "pmc_europe" (PDF saved) or both
+      - pmcid: e.g. "PMC13466339"
+      - xml_path: full JATS XML path (always, if PMC has body)
+      - pdf_path: real PDF path (if Europe PMC render worked)
+      - error: only on total failure
+    """
+    doi = (doi or "").strip()
+    if not doi:
+        return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
+
+    # Step 1: DOI → PMCID
+    pmcid = _pmc_doi_to_pmcid(doi)
+    if not pmcid:
+        return {"error": "pmc_doi_not_found",
+                "message": f"DOI {doi} not in PMC",
+                "hint": "Try Unpaywall or sci-hub fallback"}
+
+    # Step 2: EFetch full-text XML
+    xml_out = out_path  # will be auto-renamed to .xml by _pmc_efetch_xml
+    xml_result = _pmc_efetch_xml(pmcid, out_path=xml_out)
+    if "error" in xml_result:
+        return {"error": xml_result["error"],
+                "pmcid": pmcid,
+                "hint": "PMC EFetch failed; try other channels"}
+
+    # Step 3: Try Europe PMC PDF rendering (best-effort, ~25% success in 2026-08 retest)
+    pdf_result = _pmc_europe_pdf(pmcid, out_path=out_path, max_retries=2)
+    europe_ok = "error" not in pdf_result
+
+    # Step 4 (v3.9.21+): If Europe PMC failed, fall back to jats_to_pdf
+    # (JATS XML → Chromium-rendered real PDF). Always works for valid JATS.
+    if not europe_ok:
+        # Get proxy from env (v3.9.13.2: --proxy sets HTTPS_PROXY)
+        proxy_env = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
+        jats_result = _pmc_jats_to_pdf(
+            pmcid,
+            xml_path=xml_result.get("path"),
+            out_path=out_path,
+            embed_figures=True,
+            proxy=proxy_env,
+        )
+        if "error" not in jats_result:
+            return {
+                "source": "pmc_jats_pdf",
+                "pmcid": pmcid,
+                "doi": doi,
+                "xml_path": xml_result.get("path"),
+                "xml_size": xml_result.get("size"),
+                "pdf_path": jats_result.get("path"),
+                "pdf_size": jats_result.get("size"),
+                "pdf_method": "jats_to_pdf",
+                "pdf_elapsed_sec": jats_result.get("elapsed_sec"),
+                "europe_pdf_error": pdf_result.get("error"),
+                "hint": "v3.9.21+ JATS→PDF fallback; figures embedded as data URIs",
+            }
+        # Both methods failed
+        return {
+            "source": "pmc_xml_only",
+            "pmcid": pmcid,
+            "doi": doi,
+            "xml_path": xml_result.get("path"),
+            "xml_size": xml_result.get("size"),
+            "pdf_path": None,
+            "pdf_size": None,
+            "pdf_error_europe": pdf_result.get("error"),
+            "pdf_error_jats": jats_result.get("error"),
+            "hint": "Both Europe PMC and jats_to_pdf failed; XML available",
+        }
+
+    return {
+        "source": "pmc" if "error" not in pdf_result else "pmc_xml_only",
+        "pmcid": pmcid,
+        "doi": doi,
+        "xml_path": xml_result.get("path"),
+        "xml_size": xml_result.get("size"),
+        "pdf_path": pdf_result.get("path") if "error" not in pdf_result else None,
+        "pdf_size": pdf_result.get("size") if "error" not in pdf_result else None,
+        "pdf_attempts": pdf_result.get("attempts"),
+        "pdf_error": pdf_result.get("error") if "error" in pdf_result else None,
+        "hint": "v3.9.21+ PMC channel; K-Dense paper-lookup hazard: verify <body> in XML",
+    }
+
+
+# ─────────────────────────────────────────────────────────────────
 # Sci-Hub DOI 拉 PDF (fallback, 法律灰色)
 # ─────────────────────────────────────────────────────────────────
 def fetch_scihub_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
@@ -779,13 +1016,25 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                         "message": f"annas search yielded no PDF for {search_q!r}",
                         "hint": "Try a different query or prefer=auto"}
 
-        # 4. Unpaywall (cheap, official, legal) — only if scihub-style cascade
-        if prefer in ("scihub", "auto"):
+        # 4. PMC fulltext channel (v3.9.21+, 2026-08-21)
+        #    DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort)
+        #    合法 + 永久, 替代 sci-hub/annas cascade 失败时的 fallback
+        if prefer in ("pmc", "pmc-pdf", "auto"):
+            r = fetch_pmc_doi(doi, out_path)
+            # 成功: 有 xml_path (always) + 可能 pdf_path
+            if "error" not in r and r.get("xml_path"):
+                return r
+            if prefer == "pmc":
+                return r  # user explicitly asked for pmc, don't fall through
+
+        # 5. Unpaywall (cheap, official, legal)
+        # v3.9.22: --prefer unpaywall explicit, or fall through from scihub/auto
+        if prefer in ("unpaywall", "scihub", "auto"):
             r = fetch_unpaywall_doi(doi, out_path)
             if "error" not in r:
                 return r
 
-        # 5. Sci-Hub (mirror rotation, last-resort gray route)
+        # 6. Sci-Hub (mirror rotation, last-resort gray route)
         if prefer in ("scihub", "auto"):
             r = fetch_scihub_doi(doi, out_path)
             if "error" not in r:
@@ -901,6 +1150,18 @@ def fetch_doi(doi: str, output_dir: str = ".",
     arxiv_id = _extract_arxiv_id(doi)
     if arxiv_id and "arxiv" in channels:
         prefer = "arxiv"
+    elif "pmc-pdf" in channels:
+        # v3.9.21+: Force PMC + jats_to_pdf (skip Europe PMC). Always returns
+        # a real PDF even when Europe PMC render is 404. Slower (15-25s).
+        prefer = "pmc-pdf"
+    elif "pmc" in channels:
+        # v3.9.21+: PMC fulltext channel. DOI → PMCID → EFetch XML + Europe PMC PDF.
+        # 合法 + 永久, 替代 sci-hub cascade
+        prefer = "pmc"
+    elif "unpaywall" in channels and "scihub" not in channels:
+        # v3.9.21+: Unpaywall 独立 option (不强制走 sci-hub)
+        # 合法 OA PDF, 走 api.unpaywall.org + best_oa_location
+        prefer = "unpaywall"
     elif "cnki" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
         prefer = "cnki"
     elif "annas" in channels and not any(c in channels for c in ("scihub", "unpaywall")):

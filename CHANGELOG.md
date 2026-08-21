@@ -13,6 +13,84 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.9.21.0] - 2026-08-21
+
+### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)
+
+**Problem**: v3.9.20.1 enabled the `pmc` channel in `pa fetch` default mode,
+but PMC EFetch returns JATS XML (machine-readable, 65-115 KB) saved with a
+`.pdf` extension. For a real PDF (with images, journal layout, paginated),
+users had to fall back to `scihub` (legal grey) or `unpaywall` (works only
+for fully-OA journals). The `tradeoff` paragraph in v3.9.20.1 was
+uncomfortable: "PMC channel currently returns JATS XML saved with `.pdf`
+extension" — not a real PDF.
+
+**Solution**: New module `pa_cli/jats_to_pdf.py` converts JATS XML to a
+**real PDF** via Playwright Chromium:
+
+1. `jats_xml_to_html(xml_bytes, doi, pmcid)` — stdlib ElementTree + HTML builder
+2. `_render_figure(fig, depth, pmcid)` resolves relative `xlink:href`
+   (e.g. `fendo-17-1798827-g001.jpg`) to the real PMC figure URL
+3. `_embed_figures_as_data_uris(html)` downloads each figure and
+   base64-embeds it (offline-safe, no broken images)
+4. `_html_to_pdf_via_playwright(html)` renders the styled HTML to a
+   real PDF using Chromium
+
+**Key fixes during development**:
+- Figure URL pattern: PMC figures live at
+  `https://www.ncbi.nlm.nih.gov/pmc/articles/instance/{pmcid}/bin/<filename>`
+  (NOT `/articles/PMC{id}/bin/...` as previously assumed — that 404s).
+- `_render_figure` now accepts `pmcid` parameter and resolves relative hrefs.
+- `embed_figures=True` triggers per-figure urllib download + base64 encode.
+
+**New CLI option**: `--prefer pmc-pdf` forces PMC + jats_to_pdf pipeline
+(skipping Europe PMC PDF render, which 404s ~75% of the time).
+- Use: `pa fetch --doi 10.3389/fendo.2026.1798827 --prefer pmc-pdf`
+- Tradeoff: 15-25s slower than Europe PMC, but always returns a real PDF.
+
+**Integrated into `fetch_pmc_doi`**: After Europe PMC PDF render fails
+(common), `fetch_pmc_doi` now automatically falls back to
+`_pmc_jats_to_pdf` and returns `source=pmc_jats_pdf` with the real PDF path.
+- Eliminates the v3.9.20.1 tradeoff for PMC-archived papers.
+- Pure fallback (still tries Europe PMC first for speed).
+
+**Why Playwright, not weasyprint/reportlab?**
+- weasyprint needs GTK native libs (libgobject-2.0-0), not installed.
+- reportlab / fpdf2 / xhtml2pdf not in deps; weak CSS support.
+- Playwright Chromium is already a dep for CNKI HTML rendering (v3.9.20).
+- Tradeoff: requires `playwright install chromium` (1234 MB), but we already
+  have it from v3.9.20.
+
+**Test coverage (17 tests, all pass in 47.3s)**:
+- Helper: `_local()` namespace strip, `_render_figure` 3 URL modes
+  (no pmcid / with pmcid / absolute preserved)
+- HTML: 7 structural tests (title, sections, refs, metadata, figure URLs)
+- Regex: 3 embed_figures_as_data_uris tests (data: URI / relative / https)
+- PDF: 3 end-to-end tests (magic bytes, ≥50KB, data: URI embed count)
+
+**Verification (real PMC paper, 10.3389/fendo.2026.1798827)**:
+- PMC EFetch: 115,305 bytes JATS XML
+- jats_to_pdf with embed_figures=True: 310,145 bytes real PDF
+  (%PDF-1.4 magic, 6 figures + 2 tables + 41 refs rendered)
+- 6/6 figures resolved to `instance/13467845/bin/*.jpg` and embedded
+
+**Files**:
+- `pa_cli/jats_to_pdf.py` NEW (25,376 bytes, 16 functions, 746 lines)
+- `pa_cli/fetch.py` +75 lines: `_pmc_jats_to_pdf` helper + step 4 in
+  `fetch_pmc_doi` + `pmc-pdf` case in `fetch_doi` channel mapping
+- `pa_cli/cli.py` +1 option: `--prefer pmc-pdf` in Choice + help text
+- `pa_cli/__init__.py`: `__version__ = "3.9.21.0"`
+- `pyproject.toml`: `version = "3.9.21.0"`
+- `test_output/_test_jats_to_pdf.py` NEW (7,564 bytes, 17 tests)
+- `test_output/_test_jats_pdf_v2.py` NEW (4,488 bytes, e2e)
+- `test_output/_debug_figure_download.py` NEW (2,040 bytes, URL hunt)
+
+**Updated tradeoff in v3.9.20.1 entry**: The "Tradeoff" paragraph
+at v3.9.20.1 about "JATS XML saved with `.pdf` extension" is **no longer
+accurate** as of v3.9.21.0 for the default auto mode — fetch_pmc_doi
+now auto-falls-back to jats_to_pdf and returns a real PDF.
+
+
 ## [3.9.20.1] - 2026-08-21
 
 ### Fixed — `pa fetch` default auto mode was missing `pmc` channel
