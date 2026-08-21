@@ -1374,6 +1374,7 @@ a major version ships. Last update: 2026-07-23 (v3.9.11.3).
 ### What paper-agent can do today (v3.9.11.3)
 
 | v3.9.22.0 | released 2026-08-21 | **Fetch Channel Diversification: 5 new open-access PDF sources (S2 openAccessPdf + bioRxiv/medRxiv + CORE re-add + OSF Preprints + ChemRxiv)** — see [P3-31] backlog status. 5 new module files (pa_cli/{s2,biorxiv,core,osf,chemrxiv}_channel.py, ~30KB total, 5 fetch_*_doi functions, stdlib only — no new deps). `pa_cli/fetch.py` +4.5KB: 5 new steps in `fetch()` cascade (each with `if prefer in (..., "auto")` fallback); 5 new cases in `fetch_doi` channel→prefer mapping. `pa_cli/cli.py` `--prefer` Choice expanded 8→13 values; default `--channels` starts with the 5 new OA channels ahead of sci-hub. **2 key fixes during dev**: (1) OSF v2 wraps responses in {data, meta} — fix unwrap step that prior attempts got wrong; (2) CORE without API key gracefully returns E_API_ERROR with hint. **Tests**: 20 unit + 13 channel→prefer mapping + 5 e2e (e2e code paths verified, network-restricted in dev env). **MINOR bump** (5 new public channel modules + cascade integration). **No new dep** (all 5 channels use stdlib urllib/json; only `chemrxiv` README mentioned the optional `chemrxiv` PyPI wrapper, but we use Figshare's public API directly so no new dep needed). **Estimated coverage**: 50% (v3.9.21.0) → 70-75% (v3.9.22.0) for random DOIs. **Trade-off**: ChemRxiv is discipline-narrow (chemistry only); S2 has ~30% hit rate but the largest coverage uplift. CORE re-add corrects v3.9.11.1 removal mistake |
+| v3.9.22.1 | local 2026-08-21 (pending push) | **PATCH: 2 more e2e-discovered PMC channel bugs** — (1) Orphan JATS-as-PDF: `_pmc_efetch_xml` wrote JATS XML to BOTH .pdf and .xml; when downstream Europe PMC + jats_to_pdf both failed, .pdf was left with JATS XML content (broken). Fix: only write to .xml; .pdf reserved for real PDF. (2) `size_bytes: null` on pmc_jats_pdf success: `fetch_pmc_doi` returned `pdf_size` / `pdf_path` but not top-level `size` / `path`; wrapper reads `r.get("size")` so JSON had null even on real-PDF success. Fix: expose `path` and `size` at top level. **E2E verified**: `pa fetch --prefer pmc-pdf 10.1038/nature12373` → 126,095 bytes real PDF (4 figures, 20.7s). **Tests**: 6 new regression tests in `test_output/_test_v3_9_22_1_orphan_fix.py`, all PASS. **Version bumps**: `pa_cli/__init__.py` + `pyproject.toml` 3.9.22.0 → 3.9.22.1. **Discipline**: PATCH bump (not in-place) because user-visible behavior change (no more orphan JATS-as-PDF) |
 
 | Capability | Status | Quality (typical) | Where |
 |---|---|---|---|
@@ -2160,6 +2161,28 @@ If the goal is "validate the 课题 work is rigorous":
 - ✅ [P3-31.4] OSF Preprints channel (25+ community providers)
 - ✅ [P3-31.5] ChemRxiv channel (chemistry specialty)
 - **5 channels in 1 release** as user directed (v3.9.22.0 = 巨不老 release per user ask)
+- **3 e2e-discovered fixes (commits 016a6d9 + eb00b2f, same v3.9.22.0)**:
+  - [P3-31.fix-1] OSF `relationships` NameError on successful downloads
+  - [P3-31.fix-2] bioRxiv PDF URL construction when `link_pdf` missing (constructs from DOI + version)
+  - [P3-31.fix-3] CORE stale `downloadUrl` (prefers `sourceFulltextUrls` over Azure blob 404)
+  - [P3-31.fix-4] `--prefer X` cascade returns wrong error (now returns channel's actual error)
+- **E2E verified (2026-08-21)**: 3/5 channels download real PDFs in dev env:
+  - OSF 76KB, S2 816KB, bioRxiv 6.3MB
+
+**v3.9.22.1 backlog status** (PATCH, post v3.9.22.0 release):
+- 2 more e2e-discovered bugs from default-mode PMC testing on 10.1038/nature12373:
+  - [P3-31.fix-5] Orphan JATS-as-PDF (v3.9.22.0): `_pmc_efetch_xml` wrote JATS XML
+    to .pdf via `_save_pdf` AND to .xml via `write_bytes` — when downstream
+    Europe PMC + jats_to_pdf both failed, .pdf was left with JATS XML
+    content (broken). Fix: only write to .xml; .pdf reserved for real PDF.
+  - [P3-31.fix-6] `size_bytes: null` on pmc_jats_pdf success (v3.9.22.0):
+    `fetch_pmc_doi` returned `pdf_size` / `pdf_path` but not top-level
+    `size` / `path`. The `fetch_doi` wrapper reads `r.get("size")` so
+    JSON had `size_bytes: null` even on real-PDF success.
+    Fix: expose `path` and `size` at top level (keep pdf_size/pdf_path for back-compat).
+- **E2E verified (2026-08-21)**: `pa fetch --prefer pmc-pdf 10.1038/nature12373`
+  → 126,095 bytes real PDF, size_bytes=126095, 20.7s. Default mode also works.
+  - CORE: Azure 503 quota (dev IP); ChemRxiv: Figshare CF 403 (dev IP) — not code bugs
 - **Future work**:
   - [P3-31.6] BASE (Bielefeld) — gated by user IP registration form submission
   - [P3-31.7] Elsevier/Wiley/SN TDM APIs — gated by user institutional credentials

@@ -102,6 +102,146 @@ boost OA coverage by an estimated 20-30 percentage points.
   2M OSF + 40K ChemRxiv)
 
 
+### Fixed — 3 e2e-discovered bugs (commits 016a6d9 + eb00b2f, still v3.9.22.0)
+
+Live e2e testing immediately after release surfaced 3 real bugs that
+unit tests missed. PATCH-level fixes — no version bump (still v3.9.22.0).
+
+1. **OSF `relationships` NameError** (pa_cli/osf_channel.py, commit 016a6d9):
+   Provider name extraction referenced `relationships` (the variable) instead
+   of `preprint.get('relationships', ...)`. Caused NameError on EVERY successful
+   OSF download. Fix: `provider_data = preprint.get('relationships', {}).get(...)`.
+
+2. **bioRxiv PDF URL construction** (pa_cli/biorxiv_channel.py, commit 016a6d9):
+   bioRxiv API doesn't always return `link_pdf` field (only `jatsxml`).
+   Previous code returned E_NO_PDF even when paper had PDF.
+   Fix: construct PDF URL from DOI + version:
+     https://www.biorxiv.org/content/10.1101/{doi}v{version}.full.pdf
+   Also added Mozilla UA + Accept headers as Cloudflare bypass.
+   Also normalize server name to lowercase: 'bioRxiv' → 'biorxiv'.
+   Verified: real biorxiv PDF **6.36 MB** downloaded in 21s.
+
+3. **CORE stale `downloadUrl` fallback** (pa_cli/core_channel.py, commit 016a6d9):
+   CORE's `downloadUrl` is often a stale Azure blob URL that returns 404
+   (BlobNotFound). The real full text URL is in `sourceFulltextUrls` (preferred)
+   or `urls[]` of type=fulltext (OA source repository).
+   Fix: try multiple candidate URLs in priority order:
+     sourceFulltextUrls > urls[type=fulltext] > downloadUrl (last fallback).
+   Each candidate is downloaded; first PDF magic match wins.
+
+4. **`--prefer X` cascade returns wrong error** (pa_cli/fetch.py, commit eb00b2f):
+   When user passed `--prefer s2` (or biorxiv/core/osf/chemrxiv) and the
+   channel returned an error, the cascade fell through to the final
+   `return {error: E_ALL_MIRRORS, ...}` instead of returning the channel's
+   actual error message. User saw 'fetch_all_mirrors_failed' instead of the
+   real reason (e.g. 'no openAccessPdf for this DOI').
+   Fix: 5 new `if prefer == X: return r` lines after each v3.9.22 channel
+   cascade step. Now user sees the real per-channel error.
+
+**E2E verification (after fixes, 2026-08-21)**:
+
+| Channel | DOI | Size | Real PDF |
+| --- | --- | --- | --- |
+| OSF (socarxiv) | 10.31219/osf.io/nqzs5 | 76,390 B | ✅ |
+| S2 (PLOS ONE) | 10.1371/journal.pone.0000001 | 816,502 B | ✅ |
+| bioRxiv (KCNQ2/3) | 10.1101/2023.12.30.573731 | 6,355,727 B | ✅ |
+| CORE | (Azure 503 quota — dev machine IP) | n/a | ❌ network |
+| ChemRxiv | (Figshare CF 403 — dev machine IP) | n/a | ❌ network |
+
+3/5 channels produce real PDFs in dev env. Remaining 2 are network-restricted
+(quota / CF block) on dev machine, not code bugs.
+
+CLI e2e: `pa fetch 10.1371/journal.pone.0000001 --prefer s2 -o test_output/`
+→ 816,502 bytes real PDF saved (exit 0, magic %PDF-1.3).
+
+Tests: 20/20 unit PASS + 3/3 fix tests PASS + 13/13 mapping PASS + 1/1 CLI e2e PASS.
+
+
+## [3.9.22.1] - 2026-08-21
+
+### Fixed — Orphan JATS-as-PDF + `size_bytes: null` on pmc_jats_pdf success
+
+Live e2e testing after v3.9.22.0 surfaced 2 more real bugs. **PATCH bump** —
+both are user-visible (output file content + JSON field) but no API change.
+
+#### Bug 1: Orphan JATS-as-PDF (pa_cli/fetch.py, `_pmc_efetch_xml`)
+
+When the PMC channel ran in default mode (no `--prefer pmc-pdf`) and the
+downstream Europe PMC render + jats_to_pdf fallback both failed,
+`_pmc_efetch_xml` had already written the JATS XML to the `.pdf` output
+path (via `_save_pdf`) AND a copy to `.xml` (via `write_bytes`). The
+`.pdf` was left containing JATS XML with `.pdf` extension — user saw
+"file saved" but the .pdf couldn't be opened as PDF.
+
+**Fix**: Removed the orphan write. `_pmc_efetch_xml` now only writes
+to the `.xml` path. The `.pdf` path is reserved for a real PDF
+(Europe PMC render OR jats_to_pdf output). If neither succeeds, no
+`.pdf` is produced — the `.xml` is the only file, signalling to the
+user that no real PDF was obtained.
+
+**Before** (3 files, 2 with same JATS XML content):
+```
+10_1038_nature12373.pdf   65,891 B  ← JATS XML misnamed as PDF (broken)
+10_1038_nature12373.xml   65,891 B  ← JATS XML (copy)
+```
+
+**After** (1 file or 2 files with distinct content):
+```
+# If JATS-to-PDF fallback succeeds:
+10_1038_nature12373.pdf  126,095 B  ← real PDF (Chromium-rendered)
+10_1038_nature12373.xml   65,891 B  ← JATS source (preserved)
+
+# If both PDF methods fail:
+10_1038_nature12373.xml   65,891 B  ← JATS source only, no orphan
+```
+
+#### Bug 2: `size_bytes: null` on pmc_jats_pdf success (pa_cli/fetch.py, `fetch_pmc_doi`)
+
+`fetch_pmc_doi` returned the `pmc_jats_pdf` success result with
+`pdf_size` and `pdf_path` fields, but NOT top-level `size` / `path`.
+The `fetch_doi` wrapper reads `r.get("size")` and `r.get("path")` for
+the user-facing `size_bytes` and `saved_as` JSON fields. So even on
+real-PDF success, the JSON output was:
+```json
+{
+  "saved_as": "...",        // worked (fallback to out_path)
+  "via_channel": "pmc_jats_pdf",
+  "size_bytes": null,        // ← BUG: should be the PDF size
+  "final_status": "SUCCESS"
+}
+```
+
+**Fix**: pmc_jats_pdf return now also exposes `path` and `size` at
+top level. The existing `pdf_size` / `pdf_path` fields are kept for
+backwards compat with any caller that already used them.
+
+**After** (real-PDF success JSON):
+```json
+{
+  "saved_as": "...10_1038_nature12373.pdf",
+  "via_channel": "pmc_jats_pdf",
+  "size_bytes": 126095,      // ← FIXED: real PDF size
+  "final_status": "SUCCESS"
+}
+```
+
+**E2E verification (2026-08-21)**:
+- DOI: `10.1038/nature12373` (Nature 2013, "Nanometer scale thermometry in a living cell", PMCID PMC4221854, 4 figures)
+- Command: `pa fetch --prefer pmc-pdf 10.1038/nature12373 --no-cache`
+- Result: real PDF 126,095 bytes (magic %PDF-1.4, 20.7s elapsed)
+- Default mode (`pa fetch 10.1038/nature12373`) also works: same result
+- Orphan .pdf is gone — `_pmc_efetch_xml` no longer writes it
+
+**Regression test**: `test_output/_test_v3_9_22_1_orphan_fix.py`
+(6 tests, all PASS in 0.04s):
+- `_pmc_efetch_xml` no longer calls `_save_pdf(body, out_path)` (source check)
+- `_pmc_efetch_xml` still writes JATS XML to `.xml` (regression check)
+- `_pmc_efetch_xml` docstring documents the fix
+- `pmc_jats_pdf` return has top-level `size` + `path` + `pdf_size`
+- `fetch_doi` wrapper reads `r.get("size")` for `size_bytes`
+- `pa_cli.__version__ == "3.9.22.1"`
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)

@@ -97,6 +97,18 @@ test_output/_real_topics_*.json
 test_output/_test_*.pdf
 test_output/_test_search_*.json
 test_output/_demo_topics*.json
+
+# Root-level `pa fetch` test artifacts (user manual testing, should stay
+# untracked — never intended to be in the project repo). 2026-08-21 cleanup:
+# 7 root-level 10_*.pdf/.xml files from manual pa fetch calls; pattern added
+# so future runs don't show as untracked.
+/10_*.pdf
+/10_*.xml
+
+# Same idea for test_output/ — manual `pa fetch` outputs land here too
+# when user passes --output-dir test_output/ (e.g. bioRxiv 10_1101_* tests).
+test_output/10_*.pdf
+test_output/10_*.xml
 test_output/_demo_topics_*.py
 test_output/_engine_debug.py
 test_output/_explore_bench*.py
