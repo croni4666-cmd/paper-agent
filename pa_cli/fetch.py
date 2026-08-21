@@ -1045,6 +1045,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                     return r
             except ImportError:
                 pass
+            if prefer == "s2":
+                return r  # v3.9.22: explicit prefer, return s2's actual error
 
         # 5c. bioRxiv / medRxiv (v3.9.22+, 2026-08-21)
         # Only triggers for 10.1101/* DOIs. High-success preprint server.
@@ -1056,6 +1058,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                     return r
             except ImportError:
                 pass
+            if prefer == "biorxiv":
+                return r  # v3.9.22: explicit prefer
 
         # 5d. CORE re-add (v3.9.22+, 2026-08-21)
         # Re-added because OpenAlex only has metadata, CORE has 36M+ full text.
@@ -1068,6 +1072,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                     return r
             except ImportError:
                 pass
+            if prefer == "core":
+                return r  # v3.9.22: explicit prefer
 
         # 5e. OSF Preprints (v3.9.22+, 2026-08-21)
         # Only triggers for 10.31219/osf.io/* or 10.31234/osf.io/* DOIs.
@@ -1080,6 +1086,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                     return r
             except ImportError:
                 pass
+            if prefer == "osf":
+                return r  # v3.9.22: explicit prefer
 
         # 5f. ChemRxiv (v3.9.22+, 2026-08-21)
         # Only triggers for 10.26434/chemrxiv-* DOIs.
@@ -1091,6 +1099,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                     return r
             except ImportError:
                 pass
+            if prefer == "chemrxiv":
+                return r  # v3.9.22: explicit prefer
 
         # 6. Sci-Hub (mirror rotation, last-resort gray route)
         if prefer in ("scihub", "auto"):
