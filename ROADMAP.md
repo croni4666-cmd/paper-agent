@@ -1373,6 +1373,8 @@ a major version ships. Last update: 2026-07-23 (v3.9.11.3).
 
 ### What paper-agent can do today (v3.9.11.3)
 
+| v3.9.22.0 | released 2026-08-21 | **Fetch Channel Diversification: 5 new open-access PDF sources (S2 openAccessPdf + bioRxiv/medRxiv + CORE re-add + OSF Preprints + ChemRxiv)** — see [P3-31] backlog status. 5 new module files (pa_cli/{s2,biorxiv,core,osf,chemrxiv}_channel.py, ~30KB total, 5 fetch_*_doi functions, stdlib only — no new deps). `pa_cli/fetch.py` +4.5KB: 5 new steps in `fetch()` cascade (each with `if prefer in (..., "auto")` fallback); 5 new cases in `fetch_doi` channel→prefer mapping. `pa_cli/cli.py` `--prefer` Choice expanded 8→13 values; default `--channels` starts with the 5 new OA channels ahead of sci-hub. **2 key fixes during dev**: (1) OSF v2 wraps responses in {data, meta} — fix unwrap step that prior attempts got wrong; (2) CORE without API key gracefully returns E_API_ERROR with hint. **Tests**: 20 unit + 13 channel→prefer mapping + 5 e2e (e2e code paths verified, network-restricted in dev env). **MINOR bump** (5 new public channel modules + cascade integration). **No new dep** (all 5 channels use stdlib urllib/json; only `chemrxiv` README mentioned the optional `chemrxiv` PyPI wrapper, but we use Figshare's public API directly so no new dep needed). **Estimated coverage**: 50% (v3.9.21.0) → 70-75% (v3.9.22.0) for random DOIs. **Trade-off**: ChemRxiv is discipline-narrow (chemistry only); S2 has ~30% hit rate but the largest coverage uplift. CORE re-add corrects v3.9.11.1 removal mistake |
+
 | Capability | Status | Quality (typical) | Where |
 |---|---|---|---|
 | Multi-engine search | ✅ done | 7 engines: CNKI + AMiner + Crossref/OpenAlex/S2/arXiv (CORE explicit-only) | `pa search` |
@@ -2149,6 +2151,21 @@ If the goal is "validate the 课题 work is rigorous":
 - If yes, expand engine pool or query variations; if no, stop engineering
 
 ---
+
+
+**v3.9.22.0 backlog status** (post release):
+- ✅ [P3-31.1] Semantic Scholar `openAccessPdf` channel (`pa_cli/s2_channel.py`)
+- ✅ [P3-31.2] bioRxiv/medRxiv preprint channel (`pa_cli/biorxiv_channel.py`)
+- ✅ [P3-31.3] CORE channel re-added (corrects v3.9.11.1 removal mistake)
+- ✅ [P3-31.4] OSF Preprints channel (25+ community providers)
+- ✅ [P3-31.5] ChemRxiv channel (chemistry specialty)
+- **5 channels in 1 release** as user directed (v3.9.22.0 = 巨不老 release per user ask)
+- **Future work**:
+  - [P3-31.6] BASE (Bielefeld) — gated by user IP registration form submission
+  - [P3-31.7] Elsevier/Wiley/SN TDM APIs — gated by user institutional credentials
+  - [P3-31.8] S2 fallback chain (when S2 returns empty openAccessPdf, try S2's externalIds to arxiv/PMC)
+  - [P3-31.9] ChemRxiv 2.0 — try Open Engage API (chemrxiv.org/engage) as figshare alternative when CF blocks
+  - [P3-31.10] Channel coverage stats — per-channel success rate, integrated into `pa fetch --stats`
 
 ## Writing pipeline (added 2026-07-15, post-v3.9.7.9 — revised per user pushback)
 

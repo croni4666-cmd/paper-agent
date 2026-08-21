@@ -1034,6 +1034,64 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             if "error" not in r:
                 return r
 
+        # 5b. Semantic Scholar openAccessPdf (v3.9.22+, 2026-08-21)
+        # Cross-domain, fast, ~30% hit rate. Sits between Unpaywall and
+        # Sci-Hub because it's free + legal + S2-API-key optional.
+        if prefer in ("s2", "auto"):
+            try:
+                from .s2_channel import fetch_s2_doi
+                r = fetch_s2_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+
+        # 5c. bioRxiv / medRxiv (v3.9.22+, 2026-08-21)
+        # Only triggers for 10.1101/* DOIs. High-success preprint server.
+        if doi.lower().startswith("10.1101/") and prefer in ("biorxiv", "auto"):
+            try:
+                from .biorxiv_channel import fetch_biorxiv_doi
+                r = fetch_biorxiv_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+
+        # 5d. CORE re-add (v3.9.22+, 2026-08-21)
+        # Re-added because OpenAlex only has metadata, CORE has 36M+ full text.
+        # Requires $CORE_API_KEY (free at core.ac.uk/services/api).
+        if prefer in ("core", "auto"):
+            try:
+                from .core_channel import fetch_core_doi
+                r = fetch_core_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+
+        # 5e. OSF Preprints (v3.9.22+, 2026-08-21)
+        # Only triggers for 10.31219/osf.io/* or 10.31234/osf.io/* DOIs.
+        if (doi.lower().startswith("10.31219/osf.io/") or
+            doi.lower().startswith("10.31234/osf.io/")) and prefer in ("osf", "auto"):
+            try:
+                from .osf_channel import fetch_osf_doi
+                r = fetch_osf_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+
+        # 5f. ChemRxiv (v3.9.22+, 2026-08-21)
+        # Only triggers for 10.26434/chemrxiv-* DOIs.
+        if doi.lower().startswith("10.26434/chemrxiv-") and prefer in ("chemrxiv", "auto"):
+            try:
+                from .chemrxiv_channel import fetch_chemrxiv_doi
+                r = fetch_chemrxiv_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+
         # 6. Sci-Hub (mirror rotation, last-resort gray route)
         if prefer in ("scihub", "auto"):
             r = fetch_scihub_doi(doi, out_path)
@@ -1166,6 +1224,21 @@ def fetch_doi(doi: str, output_dir: str = ".",
         prefer = "cnki"
     elif "annas" in channels and not any(c in channels for c in ("scihub", "unpaywall")):
         prefer = "annas"
+    elif "s2" in channels and "scihub" not in channels:
+        # v3.9.22+: Semantic Scholar openAccessPdf channel (free, no key)
+        prefer = "s2"
+    elif "biorxiv" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
+        # v3.9.22+: bioRxiv/medRxiv preprint channel
+        prefer = "biorxiv"
+    elif "core" in channels and "scihub" not in channels:
+        # v3.9.22+: CORE re-added (36M+ full text vs OpenAlex metadata-only)
+        prefer = "core"
+    elif "osf" in channels and "scihub" not in channels:
+        # v3.9.22+: OSF Preprints (PsyArXiv/SocArXiv/EarthArXiv/etc.)
+        prefer = "osf"
+    elif "chemrxiv" in channels and "scihub" not in channels:
+        # v3.9.22+: ChemRxiv (chemistry preprints)
+        prefer = "chemrxiv"
     elif "scihub" in channels or "unpaywall" in channels:
         prefer = "scihub"
     else:

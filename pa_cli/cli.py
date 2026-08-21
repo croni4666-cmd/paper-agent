@@ -218,21 +218,25 @@ def keys_remind(as_json, write_alerts_path):
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
 @click.option("--prefer", default=None,
-              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "pmc-pdf", "unpaywall", "auto"]),
-              help="v3.9.11.6 new: pick a single source first. "
-                   "'arxiv' for arXiv preprints, 'annas' for annas-archive, "
-                   "'cnki' for Chinese journals, 'scihub' for sci-hub, "
-                   "'pmc' for PMC (XML + Europe PDF + jats_to_pdf fallback), "
-                   "'pmc-pdf' (v3.9.21+) forces jats_to_pdf (always returns real PDF, "
-                   "slower ~25s), "
-                   "'auto' (default) tries all in order: arxiv -> cnki -> "
-                   "annas -> unpaywall -> scihub. Takes precedence over --channels.")
-@click.option("--channels", default="pmc,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
+              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "pmc-pdf",
+                                 "unpaywall", "s2", "biorxiv", "core", "osf", "chemrxiv", "auto"]),
+              help="v3.9.11.6+ pick a single source first. "
+                   "'arxiv' arXiv preprints, 'annas' annas-archive, 'cnki' CN journals, "
+                   "'scihub' sci-hub, "
+                   "'pmc' PMC (XML + Europe PDF + jats_to_pdf fallback, v3.9.21+), "
+                   "'pmc-pdf' force jats_to_pdf (real PDF, slower ~25s, v3.9.21+), "
+                   "'unpaywall' legal OA PDF, "
+                   "'s2' Semantic Scholar openAccessPdf (v3.9.22+, ~30% hit rate), "
+                   "'biorxiv' bioRxiv/medRxiv preprint (v3.9.22+, 10.1101/* DOIs), "
+                   "'core' CORE re-added (v3.9.22+, 36M+ full text, requires CORE_API_KEY), "
+                   "'osf' OSF Preprints (v3.9.22+, 10.31219/osf.io/* DOIs), "
+                   "'chemrxiv' ChemRxiv (v3.9.22+, 10.26434/chemrxiv-* DOIs), "
+                   "'auto' tries all in order. Takes precedence over --channels.")
+@click.option("--channels", default="pmc,s2,biorxiv,core,osf,chemrxiv,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
               show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
-                   "Prefer --prefer instead. This legacy list maps heuristically to "
-                   "--prefer: 'arxiv'->arxiv, 'pmc'->pmc, 'unpaywall'/'scihub'->scihub, "
-                   "anything else->auto. v3.9.20.1: added 'pmc' (was missing — auto mode "
-                   "was skipping PMC entirely, making most biomedical papers fail).")
+                   "Prefer --prefer instead. v3.9.22: added 5 new OA channels "
+                   "(s2, biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
+                   "v3.9.20.1: added 'pmc' (was missing). Each maps to a --prefer value.")
 @click.option("--unpaywall-email", default="hello@example.com", show_default=True,
               help="Email registered with Unpaywall API")
 @click.option("--max-total-sec", default=300, show_default=True,
@@ -271,6 +275,11 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
             "pmc": ["pmc"],
             "pmc-pdf": ["pmc-pdf"],  # v3.9.21+: force PMC + jats_to_pdf
             "unpaywall": ["unpaywall"],  # v3.9.21+: explicit Unpaywall option
+            "s2": ["s2"],  # v3.9.22+: Semantic Scholar openAccessPdf
+            "biorxiv": ["biorxiv"],  # v3.9.22+: bioRxiv/medRxiv preprint
+            "core": ["core"],  # v3.9.22+: CORE re-added (36M+ full text)
+            "osf": ["osf"],  # v3.9.22+: OSF Preprints (PsyArXiv etc.)
+            "chemrxiv": ["chemrxiv"],  # v3.9.22+: ChemRxiv
             "scihub": ["scihub", "unpaywall"],  # unpaywall is checked first
             "auto": [],  # empty list -> auto
         }
