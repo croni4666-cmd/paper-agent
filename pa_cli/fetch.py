@@ -384,6 +384,13 @@ def _pmc_doi_to_pmcid(doi: str) -> Optional[str]:
 def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
     """EFetch full-text JATS XML from PMC. K-Dense hazard: 200 OK but body
     missing = publisher restriction; always verify body via jats_to_text.py.
+
+    v3.9.22.1: removed the .pdf orphan. Previously wrote JATS XML to BOTH
+    the .pdf path (via _save_pdf) AND .xml path (via write_bytes). When
+    downstream Europe PMC + jats_to_pdf both failed, the .pdf was left
+    containing JATS XML (misnamed). Now: only write to .xml; the .pdf
+    path is reserved for a real PDF (Europe PMC render or jats_to_pdf
+    output). If neither succeeds, no .pdf is produced.
     """
     pmcid_clean = pmcid.replace("PMC", "")
     url = f"{EUTILS_BASE}/efetch.fcgi?db=pmc&id={pmcid_clean}&rettype=xml"
@@ -391,8 +398,6 @@ def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
     status, body = _http_get_bytes(url, timeout=60)
     if status != 200 or not body:
         return {"error": f"pmc_efetch_status_{status}"}
-    if out_path:
-        saved = _save_pdf(body, out_path)  # saves raw bytes; caller can rename
     result = {
         "source": "pmc_xml",
         "pmcid": pmcid,
@@ -400,13 +405,17 @@ def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
         "url": url,
     }
     if out_path:
-        # Rename .pdf to .xml since bytes are XML not PDF
+        # Only write to .xml path. .pdf is reserved for real PDF.
         from pathlib import Path
         p = Path(out_path)
         xml_path = p.with_suffix('.xml')
         xml_path.parent.mkdir(parents=True, exist_ok=True)
         xml_path.write_bytes(body)
         result["path"] = str(xml_path.resolve())
+        # Defensive: if a stale .pdf exists at out_path (from prior broken
+        # run or another channel), leave it alone — caller will overwrite
+        # if real PDF is produced, or it remains as user-visible signal
+        # that no real PDF was obtained.
     return result
 
 
@@ -537,6 +546,12 @@ def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
                 "source": "pmc_jats_pdf",
                 "pmcid": pmcid,
                 "doi": doi,
+                # v3.9.22.1: also expose top-level path/size for fetch_doi
+                # wrapper (which reads r.get("path") / r.get("size") for
+                # the user-facing saved_as + size_bytes fields).
+                "path": jats_result.get("path"),
+                "size": jats_result.get("size"),
+                "pdf_url": None,  # not applicable for local JATS render
                 "xml_path": xml_result.get("path"),
                 "xml_size": xml_result.get("size"),
                 "pdf_path": jats_result.get("path"),
