@@ -13,6 +13,51 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.9.20.1] - 2026-08-21
+
+### Fixed — `pa fetch` default auto mode was missing `pmc` channel
+
+**Bug**: v3.9.21.0 added the `pmc` channel to `pa_cli/fetch.py` (100% legal,
+permanent fulltext for biomedical papers), but the **default `--channels`
+list in `cli.py` was never updated** to include it. Result: default auto
+mode for `pa fetch <DOI>` never tried PMC, even for papers that are
+100% guaranteed to be in PMC (e.g., NIH-funded research).
+
+**Symptom**: User reports "fetch 没办法用了" — `pa fetch` returned
+`ALL_FAIL` for biomedical papers that work fine with `--prefer pmc`.
+
+**Root cause** (`pa_cli/cli.py:227`):
+```python
+# Old (broken):
+@click.option("--channels", default="openalex,arxiv,unpaywall,doi_redirect,scihub,playwright", ...)
+
+# New (fixed):
+@click.option("--channels", default="pmc,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright", ...)
+```
+
+The mapping logic in `fetch.py:1062` (`elif "pmc" in channels: prefer = "pmc"`)
+only triggers if `"pmc"` is in the channel list. Without it, the cascade
+falls through to scihub, which doesn't have all biomedical papers.
+
+**Verification** (before fix → after fix, same DOI):
+- 10.3389/fendo.2026.1798827 (Frontiers in Endocrinology, NIH-funded)
+  - Before: 42s, ALL_FAIL (scihub returned "fetch_all_mirrors_failed")
+  - After: 16s, SUCCESS via `pmc_xml_only` (115 KB JATS XML)
+- 10.1038/nature12373 (Nature)
+  - Before: 24s via scihub (943 KB PDF)
+  - After: 15s via PMC (65 KB JATS XML; Nature has no PMC fulltext so falls through to XML only)
+
+**Tradeoff**: PMC channel currently returns JATS XML saved with `.pdf`
+extension (machine-readable, 65-115 KB). For real PDF with images,
+`scihub` (paywalled, via proxy) or `arxiv` (preprints) are needed.
+A future enhancement would be to add XSL-FO XML→PDF transformation
+or integrate `pdfminer.six` for text + separate image extraction.
+
+**Action for users with PDF expectations**: After upgrading, use
+`--prefer scihub` or `--prefer unpaywall` for paywalled papers, or
+`--prefer arxiv` for preprints. Default auto mode now prioritizes
+PMC (legal + permanent) for biomedical papers.
+
 ## [3.9.20.0] - 2026-08-18
 
 ### Added — `Research Workflow Suite: 4 new capabilities across corpus analytics, PRISMA, daily linking, per-item update detection`
