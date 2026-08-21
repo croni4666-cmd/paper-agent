@@ -218,17 +218,18 @@ def keys_remind(as_json, write_alerts_path):
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
 @click.option("--prefer", default=None,
-              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "auto"]),
+              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "unpaywall", "auto"]),
               help="v3.9.11.6 new: pick a single source first. "
                    "'arxiv' for arXiv preprints, 'annas' for annas-archive, "
                    "'cnki' for Chinese journals, 'scihub' for sci-hub, "
                    "'auto' (default) tries all in order: arxiv -> cnki -> "
                    "annas -> unpaywall -> scihub. Takes precedence over --channels.")
-@click.option("--channels", default="openalex,arxiv,unpaywall,doi_redirect,scihub,playwright",
+@click.option("--channels", default="pmc,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
               show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
                    "Prefer --prefer instead. This legacy list maps heuristically to "
-                   "--prefer: 'arxiv'->arxiv, 'cnki'->cnki, 'annas'->annas, "
-                   "'scihub'/'unpaywall'->scihub, anything else->auto.")
+                   "--prefer: 'arxiv'->arxiv, 'pmc'->pmc, 'unpaywall'/'scihub'->scihub, "
+                   "anything else->auto. v3.9.20.1: added 'pmc' (was missing — auto mode "
+                   "was skipping PMC entirely, making most biomedical papers fail).")
 @click.option("--unpaywall-email", default="hello@example.com", show_default=True,
               help="Email registered with Unpaywall API")
 @click.option("--max-total-sec", default=300, show_default=True,
@@ -264,6 +265,8 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
             "arxiv": ["arxiv"],
             "annas": ["annas"],
             "cnki": ["cnki"],
+            "pmc": ["pmc"],
+            "unpaywall": ["unpaywall"],  # v3.9.21+: explicit Unpaywall option
             "scihub": ["scihub", "unpaywall"],  # unpaywall is checked first
             "auto": [],  # empty list -> auto
         }
