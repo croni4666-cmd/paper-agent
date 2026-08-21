@@ -218,10 +218,13 @@ def keys_remind(as_json, write_alerts_path):
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
 @click.option("--prefer", default=None,
-              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "unpaywall", "auto"]),
+              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "pmc-pdf", "unpaywall", "auto"]),
               help="v3.9.11.6 new: pick a single source first. "
                    "'arxiv' for arXiv preprints, 'annas' for annas-archive, "
                    "'cnki' for Chinese journals, 'scihub' for sci-hub, "
+                   "'pmc' for PMC (XML + Europe PDF + jats_to_pdf fallback), "
+                   "'pmc-pdf' (v3.9.21+) forces jats_to_pdf (always returns real PDF, "
+                   "slower ~25s), "
                    "'auto' (default) tries all in order: arxiv -> cnki -> "
                    "annas -> unpaywall -> scihub. Takes precedence over --channels.")
 @click.option("--channels", default="pmc,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
@@ -266,6 +269,7 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
             "annas": ["annas"],
             "cnki": ["cnki"],
             "pmc": ["pmc"],
+            "pmc-pdf": ["pmc-pdf"],  # v3.9.21+: force PMC + jats_to_pdf
             "unpaywall": ["unpaywall"],  # v3.9.21+: explicit Unpaywall option
             "scihub": ["scihub", "unpaywall"],  # unpaywall is checked first
             "auto": [],  # empty list -> auto
