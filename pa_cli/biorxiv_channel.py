@@ -51,20 +51,41 @@ def _http_get_json(url: str, timeout: int = 20) -> tuple[int, Any]:
 
 def _download_pdf(url: str, max_bytes: int = 50 * 1024 * 1024,
                   timeout: int = 60) -> Optional[bytes]:
-    """Download a PDF URL, return bytes or None on failure."""
-    try:
-        req = urllib.request.Request(
-            url, headers={"User-Agent": USER_AGENT}
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            data = r.read(max_bytes + 1)
-            if len(data) > max_bytes:
-                logger.warning(f"bioRxiv PDF exceeds {max_bytes} bytes, truncating")
-                return data[:max_bytes]
-            return data
-    except Exception as e:
-        logger.debug(f"bioRxiv PDF download failed: {url}: {e}")
-        return None
+    """Download a PDF URL, return bytes or None on failure.
+
+    bioRxiv main site uses Cloudflare and may 429 our default UA.
+    v3.9.22 fix: try Mozilla UA + Accept headers + Referer as fallback.
+    """
+    headers_options = [
+        # Try Mozilla first (mimics real browser)
+        {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "application/pdf,*/*",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://www.biorxiv.org/",
+        },
+        # Fall back to our standard UA
+        {
+            "User-Agent": USER_AGENT,
+            "Accept": "application/pdf,*/*",
+        },
+    ]
+    for headers in headers_options:
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                data = r.read(max_bytes + 1)
+                if len(data) > max_bytes:
+                    logger.warning(f"bioRxiv PDF exceeds {max_bytes} bytes, truncating")
+                    return data[:max_bytes]
+                return data
+        except urllib.error.HTTPError as e:
+            logger.debug(f"bioRxiv PDF download HTTP {e.code} with UA {headers.get('User-Agent', '?')[:30]}: {e}")
+            continue
+        except Exception as e:
+            logger.debug(f"bioRxiv PDF download failed: {url}: {e}")
+            continue
+    return None
 
 
 def fetch_biorxiv_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
@@ -112,14 +133,18 @@ def fetch_biorxiv_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
 
     # Latest version = last in the list
     latest = collection[-1]
+
+    # v3.9.22 fix: bioRxiv API doesn't always return `link_pdf` field, only
+    # `jatsxml`. Construct the PDF URL from the standard bioRxiv pattern:
+    #   https://www.biorxiv.org/content/10.1101/{doi}v{version}.full.pdf
     pdf_url = latest.get("link_pdf")
     if not pdf_url:
-        return {"error": E_NO_PDF,
-                "doi": doi,
-                "server": latest.get("server", server),
-                "version": latest.get("version"),
-                "message": "bioRxiv metadata has no link_pdf field",
-                "hint": "Try --prefer pmc or unpaywall"}
+        version = latest.get("version", "1")
+        # DOI looks like 10.1101/2023.12.30.573731
+        # PDF URL:  https://www.biorxiv.org/content/10.1101/2023.12.30.573731v1.full.pdf
+        doi_path = doi  # keep "10.1101/..." as-is
+        pdf_url = f"https://www.biorxiv.org/content/{doi_path}v{version}.full.pdf"
+        logger.debug(f"bioRxiv: constructed PDF URL from DOI + version: {pdf_url}")
 
     # Download the PDF
     pdf_bytes = _download_pdf(pdf_url, timeout=60)
@@ -130,8 +155,11 @@ def fetch_biorxiv_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
                 "title": latest.get("title"),
                 "hint": "bioRxiv returned a PDF URL but download failed or not a real PDF"}
 
+    # v3.9.22: normalize server name to lowercase (biorxiv API returns
+    # "bioRxiv" with mixed case; we want consistent "biorxiv_pdf" / "medrxiv_pdf")
+    server_norm = (latest.get("server") or server).lower()
     result = {
-        "source": f"{latest.get('server', server)}_pdf",
+        "source": f"{server_norm}_pdf",
         "doi": doi,
         "pdf_url": pdf_url,
         "version": latest.get("version"),

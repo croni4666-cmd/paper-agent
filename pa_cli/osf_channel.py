@@ -176,7 +176,7 @@ def fetch_osf_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
                 "hint": "OSF returned a download URL but fetch failed or not a real PDF"}
 
     # Determine provider
-    provider_data = relationships.get("provider", {}).get("data", {})
+    provider_data = preprint.get("relationships", {}).get("provider", {}).get("data", {})
     provider = provider_data.get("id", "osf") if provider_data else "osf"
 
     result = {

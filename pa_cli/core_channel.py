@@ -110,15 +110,69 @@ def fetch_core_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
                 "hint": "Check $CORE_API_KEY or rate limit"}
 
     download_url = data.get("downloadUrl")
-    if not download_url:
+    fulltext_status = data.get("fulltextStatus")
+    source_fulltext_urls = data.get("sourceFulltextUrls") or []
+    urls_list = data.get("urls") or []
+
+    # v3.9.22 fix: downloadUrl from works/{doi} can be a stale Azure blob URL
+    # (returns 404). Cross-check via outputs/{id} for live downloadUrl + status.
+    if not download_url or fulltext_status == "disabled" or not data.get("fullText"):
+        # Try outputs/{id} for richer metadata
+        outputs = data.get("outputs") or []
+        for out_url in outputs:
+            out_id = out_url.rstrip("/").split("/")[-1]
+            out_api = f"{CORE_API_BASE}/outputs/{out_id}"
+            o_status, o_data = _http_get_json(out_api, timeout=20)
+            if o_status == 200 and isinstance(o_data, dict):
+                # Get the rich downloadUrl + status
+                if o_data.get("downloadUrl") and o_data.get("fulltextStatus") != "disabled":
+                    download_url = o_data["downloadUrl"]
+                    fulltext_status = o_data.get("fulltextStatus", "available")
+                # Also pick up sourceFulltextUrls (the real OA source URL)
+                src_urls = o_data.get("sourceFulltextUrls") or []
+                if src_urls:
+                    source_fulltext_urls = src_urls
+                urls_list = o_data.get("urls") or []
+                break
+
+    # v3.9.22 fix: CORE's downloadUrl is often a stale Azure blob that returns
+    # 404. The REAL full text URL is in sourceFulltextUrls (preferred) or
+    # urls[] of type=fulltext. Try these as primary.
+    candidate_urls = []
+    for u in source_fulltext_urls:
+        if u and u not in candidate_urls:
+            candidate_urls.append(u)
+    for u in urls_list:
+        if u.get("type") == "fulltext" and u.get("url") and u["url"] not in candidate_urls:
+            candidate_urls.append(u["url"])
+    if download_url and download_url not in candidate_urls:
+        candidate_urls.append(download_url)  # fallback last
+
+    if not candidate_urls:
         return {"error": E_NO_FULLTEXT,
                 "doi": doi,
                 "title": data.get("title"),
-                "message": "CORE has metadata but no full-text PDF",
+                "fulltext_status": fulltext_status,
+                "message": "CORE has metadata but no full-text PDF URL",
                 "hint": "Try --prefer unpaywall for OA copy or pmc/scihub"}
 
-    # Download
-    pdf_bytes = _download_pdf(download_url, timeout=90)
+    # Try each candidate URL until one returns a real PDF
+    pdf_bytes = None
+    last_error = None
+    for url in candidate_urls:
+        pdf_bytes = _download_pdf(url, timeout=60)
+        if pdf_bytes and pdf_bytes.startswith(b"%PDF"):
+            break
+        last_error = f"download failed for {url}"
+        pdf_bytes = None
+
+    if not pdf_bytes:
+        return {"error": E_DOWNLOAD_FAIL,
+                "doi": doi,
+                "candidate_urls": candidate_urls[:3],
+                "title": data.get("title"),
+                "message": last_error or "all CORE download URLs failed",
+                "hint": "Try --prefer unpaywall or pmc/scihub"}
     if not pdf_bytes or not pdf_bytes.startswith(b"%PDF"):
         return {"error": E_DOWNLOAD_FAIL,
                 "doi": doi,
