@@ -24,7 +24,7 @@ aiohttp-client-cache>=0.10
 # === Topic modeling (pa topics) ===
 # BERTopic + UMAP + HDBSCAN
 bertopic>=0.16
-umap-learn>=0.5
+umap-learn>=0.5.12
 hdbscan>=0.8
 
 # === MoE router (pa moe-router) — v3.9.13.3 ===
