@@ -9,7 +9,7 @@ click>=8.1
 numpy>=1.24
 
 # HTTP client (used by pa_cli/fetch.py, search.py)
-requests>=2.28
+requests>=2.34.2
 
 # Response caching (used by pa_cli/keys.py, search.py for S2 throttle+retry)
 requests-cache>=1.0
