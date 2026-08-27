@@ -58,7 +58,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.9.22.1"
+__version__ = "3.9.23.0"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 

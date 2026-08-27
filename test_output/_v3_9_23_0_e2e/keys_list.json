@@ -1,0 +1,62 @@
+[
+  {
+    "id": "openalex",
+    "name": "OpenAlex",
+    "env_var": "OPENALEX_API_KEY",
+    "tier": "free",
+    "expires": "(none)",
+    "present": true,
+    "key_length": 22,
+    "status": "active",
+    "days_to_expiry": "no-expiry",
+    "hint": "no expiry set",
+    "last_checked": "2026-08-22T09:00:18",
+    "last_used": null,
+    "notes": "OpenAlex API key for higher rate limit (1 RPS dedicated). Free tier, no expiry reported."
+  },
+  {
+    "id": "semanticscholar",
+    "name": "Semantic Scholar",
+    "env_var": "S2_API_KEY",
+    "tier": "free",
+    "expires": "(none)",
+    "present": true,
+    "key_length": 44,
+    "status": "active",
+    "days_to_expiry": "no-expiry",
+    "hint": "no expiry set",
+    "last_checked": "2026-08-22T09:00:20",
+    "last_used": null,
+    "notes": "S2 API key for higher rate limit. Free tier, no expiry reported."
+  },
+  {
+    "id": "core",
+    "name": "CORE.ac.uk",
+    "env_var": "CORE_API_KEY",
+    "tier": "free (no key needed for low-volume use)",
+    "expires": "(none)",
+    "present": true,
+    "key_length": 32,
+    "status": "active",
+    "days_to_expiry": "no-expiry",
+    "hint": "no expiry set",
+    "last_checked": "2026-08-22T09:00:22",
+    "last_used": null,
+    "notes": "v3.9.8.2: CORE v3 API key is OPTIONAL ¡ª no-key mode works. Key only raises rate limit. Use `?api_key=` query param if set (NOT Bearer header). v3.9.8.1: removed from default 'all' engine list ¡ª OpenAlex already indexes CORE's repos, marginal coverage was <5%. Available via `pa search --engine core` for explicit use."
+  },
+  {
+    "id": "unpaywall",
+    "name": "Unpaywall",
+    "env_var": "UNPAYWALL_EMAIL",
+    "tier": "free",
+    "expires": "(none)",
+    "present": true,
+    "key_length": 24,
+    "status": "active",
+    "days_to_expiry": "no-expiry",
+    "hint": "no expiry set",
+    "last_checked": "2026-08-22T09:00:24",
+    "last_used": null,
+    "notes": "Unpaywall uses a registered email instead of an API key. Free, no expiry."
+  }
+]

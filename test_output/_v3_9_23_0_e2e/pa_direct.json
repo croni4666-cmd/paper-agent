@@ -1,0 +1,62 @@
+{
+  "query": "BERT",
+  "year_min": null,
+  "year_max": null,
+  "by_engine": {
+    "semanticscholar": 2
+  },
+  "dedup_count": 2,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.18653/v1/N19-1423",
+      "arxiv_id": "1810.04805",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "authors": [
+        "Jacob Devlin",
+        "Ming-Wei Chang",
+        "Kenton Lee",
+        "Kristina Toutanova"
+      ],
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "year": 2019,
+      "cited_by_count": 119978,
+      "influential_cite_count": 22833,
+      "reference_count": 63,
+      "tldr": "A new language representation model, BERT, designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers, which can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks.",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.18653/v1/n19-1423",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A new language representation model, BERT, designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers, which can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/D19-1410",
+      "arxiv_id": "1908.10084",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": [
+        "Nils Reimers",
+        "Iryna Gurevych"
+      ],
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "year": 2019,
+      "cited_by_count": 19992,
+      "influential_cite_count": 2429,
+      "reference_count": 38,
+      "tldr": "Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity is presented.",
+      "is_oa": true,
+      "oa_url": "https://www.aclweb.org/anthology/D19-1410.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity is presented.",
+      "quality_flag": null
+    }
+  ]
+}
