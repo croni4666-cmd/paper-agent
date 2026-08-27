@@ -425,6 +425,154 @@ using the v3.9.23.0 skill. PATCH bump is appropriate because:
 - Backward compatible (pa_root discovery is a strict superset of v3.9.23.0 behavior)
 
 
+## [3.9.24.0] - 2026-08-27
+
+### Fixed — 4 user-reported search quality issues (Wilson disease test)
+
+User ran end-to-end test of the v3.9.23.x Skill searching for "Wilson Disease" (肝豆症).
+Multi-engine search worked (28 dedup results, 7 quality papers found), but
+4 quality issues surfaced. Fixed in this release.
+
+#### Issue 1: Documentation said 7 engines, actually 8
+
+`pa search --engine all` runs **8 engines** (ClinicalTrials.gov is the
+8th, added v3.9.12.0), but the skill docs (SKILL.md description,
+references/engines.md, scripts/search.py docstring) all said "7
+engines". Updated everywhere.
+
+#### Issue 2: S2 (Semantic Scholar) silent failure on non-200
+
+`search_semanticscholar` in `pa_cli/search.py` returned `[]` silently
+when S2 API returned 429 (rate limit), 500, etc. — indistinguishable
+from a genuine "no results" case. User couldn't diagnose why S2
+returned 0.
+
+**Fix**: added `logger.warning` with `[S2 search]` prefix, including
+the actual status code and the API response body (truncated to 200
+chars). Now S2 failures show up in stderr so users can see the cause.
+
+```python
+# v3.9.24.0:
+if s != 200:
+    logger.warning(
+        f"[S2 search] query='{query[:60]}' returned status={s} "
+        f"data={str(data)[:200]}"
+    )
+    return []
+```
+
+#### Issue 3: PubMed "Wilson Disease" returns author-surname noise (MeSH gotcha)
+
+Plain `Wilson Disease` query returned 36,857 papers — most matched
+"Wilson" as an author surname (Dr. Wilson, A. Wilson, etc.). User's
+suggested query `"Wilson Disease"[MeSH Terms]` returned 0 papers.
+
+**Root cause** (the real insight): **"Wilson Disease" is an ENTRY TERM,
+not a main MeSH heading.** MeSH has a thesaurus structure where each
+disease has ONE main heading and many entry terms (synonyms):
+
+- Main heading: `Hepatolenticular Degeneration` (MeSH ID D006527)
+- Entry terms: "Wilson Disease", "Wilson's Disease", "Copper storage disease"
+
+`[MeSH Terms]` field restricts to main headings only, so
+`"Wilson Disease"[MeSH Terms]` returns 0. The fix is to use the
+**canonical MeSH term**.
+
+**Verification** (live ESearch queries, 2026-08-27):
+
+| Query | Results | First 3 PMIDs relevance |
+|---|---|---|
+| `Wilson Disease` (plain) | 36,857 | "Glutathione Biology", "Peripheral Vascular Intervention", "Mycobacterium" — irrelevant (Wilson = author) |
+| `"Wilson Disease"[MeSH Terms]` (entry term) | **0** | (correct: entry term not in main MeSH) |
+| `"Hepatolenticular Degeneration"[MeSH Terms]` (main term) | **6,735** | "Wilson disease associated with ATP7B", "Hepatitis overview", etc. — relevant |
+| `... OR "Wilson Disease"[Title/Abstract]` | 7,648 | Best coverage (MeSH + free-text fallback) |
+
+**Fix in `references/engines.md`**: added a new "PubMed MeSH query
+syntax" section with:
+- Table of supported query patterns (MeSH, Title/Abstract, boolean, date)
+- **The MeSH main term vs entry term gotcha** with the Wilson disease example
+- The click shell-quoting workaround for brackets
+- Recommended fallback query: `"Hepatolenticular Degeneration"[MeSH Terms] OR "Wilson Disease"[Title/Abstract]`
+
+**Code change**: pa search already passes the full quoted MeSH query
+through ESearch via `urllib.parse.quote()` (URL-encodes brackets
+correctly). So MeSH syntax works as-is — no code change needed.
+The fix is purely **documentation + user education**.
+
+#### Issue 4: arXiv year filter bypassed for some preprints
+
+User reported pre-2020 papers appearing in `--year-min 2020` arXiv
+search. The arXiv query was `submittedDate:[20200101 TO 20991231]`
+but apparently some papers with `r.published.year < 2020` still
+passed through (possibly because arXiv's relevance-sorted results
+sometimes soft-relax the filter).
+
+**Fix in `search_arxiv`** (pa_cli/search.py): added a **post-filter**
+on `r.published.year` after the API response, same pattern as
+PubMed. The filter is applied in `r["year"] in [ymin, ymax]`. If
+the post-filter reduced the count, logs a debug message:
+
+```python
+# v3.9.24.0:
+if year_min or year_max:
+    ymin = year_min or 1991
+    ymax = year_max or 2099
+    pre_filter_count = len(results)
+    results = [
+        r for r in results
+        if r.get("year") and ymin <= int(r["year"]) <= ymax
+    ]
+    if pre_filter_count > 0 and len(results) < pre_filter_count:
+        logger.debug(
+            f"arxiv year post-filter: {pre_filter_count} -> {len(results)} "
+            f"(API submittedDate filter was relaxed; applied {ymin}-{ymax} "
+            f"client-side)"
+        )
+```
+
+**E2E verified** (2026-08-27):
+- `pa search "machine learning" --engine arxiv --year-min 2024 --limit 10`
+  → 10 results, all with `year >= 2024` (min year = 2024)
+- `pa search "machine learning" --engine arxiv --year-min 2020 --limit 10`
+  → similar verification
+
+#### Tests
+
+`test_output/_v3_9_24_0_e2e/_test_runner.py` verifies all 4 fixes:
+```
+=== Issue 1: docs 7→8 engines ===
+  [PASS] SKILL.md description says 8 engines
+  [PASS] references/engines.md says 8 engines
+  [PASS] scripts/search.py docstring says 8 search engines
+
+=== Issue 2: S2 silent error logging ===
+  [PASS] search_semanticscholar uses logger.warning with [S2 search] prefix
+
+=== Issue 3: PubMed MeSH query syntax ===
+  "Wilson Disease"[MeSH Terms] (entry term, 0 expected)
+    [PASS] Entry term returns 0 in [MeSH] (expected — main term is Hepatolenticular Degeneration)
+  "Hepatolenticular Degeneration"[MeSH Terms] (main term)
+    [PASS] Main term returns 6735 results (expected >100)
+
+=== Issue 4: arXiv year post-filter ===
+  [PASS] search_arxiv has post-filter on year
+  [PASS] arXiv post-filter: 10 results, min year=2024 (all >=2024)
+```
+
+All 30 pre-existing skill regression tests still PASS.
+
+**Version discipline**: MINOR bump (3.9.23.0 → 3.9.24.0). Although
+the user-reported issues are 4 bug fixes, the **MeSH documentation**
+adds a new public-facing capability (users can now write MeSH field
+queries), and the S2 logging adds a new public-facing behavior
+(visible warnings). Both warrant MINOR per semver.
+
+**Bonus**: AMiner query split issue (Issue 5 from user feedback) is
+NOT fixed in this release — `search_aminer` still splits multi-word
+queries into individual phrase searches. Will address in a future
+release with a `--strict-phrase` flag or query reformulation layer.
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)

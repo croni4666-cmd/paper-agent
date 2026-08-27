@@ -1,8 +1,12 @@
 ﻿#!/usr/bin/env python3
-"""scripts/search.py 鈥?Wrapper for `pa search` (7 search engines).
+"""scripts/search.py — Wrapper for `pa search` (8 search engines).
 
-Searches academic papers by query across 7 engines (Crossref, OpenAlex,
-Semantic Scholar, arXiv, AMiner, CNKI, PubMed). Returns JSON to stdout.
+Searches academic papers by query across 8 engines (Crossref, OpenAlex,
+Semantic Scholar, arXiv, AMiner, CNKI, PubMed, ClinicalTrials).
+Returns JSON to stdout.
+
+v3.9.24.0: documented MeSH field syntax support via PubMed ESearch
+(quoted terms, [MeSH Terms], [Title/Abstract], boolean operators).
 
 Usage:
     python scripts/search.py "digital finance household consumption" --engine all

@@ -1,0 +1,24 @@
+﻿=== Issue 1: docs 7→8 engines ===
+  [PASS] SKILL.md description says 8 engines
+  [PASS] references/engines.md says 8 engines
+  [PASS] scripts/search.py docstring says 8 search engines
+
+=== Issue 2: S2 silent error logging ===
+  [PASS] search_semanticscholar uses logger.warning with [S2 search] prefix
+
+=== Issue 3: PubMed MeSH query syntax ===
+  Plain 'Wilson Disease' (control)
+    count=36857, pmids[:3]=['42653505', '42652603', '42652016']
+  "Wilson Disease"[MeSH Terms] (entry term, 0 expected)
+    count=0, pmids[:3]=[]
+    [PASS] Entry term returns 0 in [MeSH] (expected — main term is Hepatolenticular Degeneration)
+  "Hepatolenticular Degeneration"[MeSH Terms] (main term)
+    count=6735, pmids[:3]=['42638654', '42606513', '42576494']
+    [PASS] Main term returns 6735 results (expected >100)
+
+=== Issue 4: arXiv year post-filter ===
+  [PASS] search_arxiv has post-filter on year
+  [PASS] arXiv post-filter: 10 results, min year=2024 (all >=2024)
+
+============================================================
+All 4 fixes verified.

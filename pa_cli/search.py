@@ -1,5 +1,5 @@
-"""
-pa_cli.search — academic paper search across multiple engines.
+﻿"""
+pa_cli.search 鈥?academic paper search across multiple engines.
 
 Default engines: Crossref, Semantic Scholar, arXiv, OpenAlex, AMiner, CNKI.
 Wraps the existing paper-agent v3.1 SearchPool pattern. Falls back gracefully
@@ -10,7 +10,7 @@ gitignored). Public repo does not include the functional CORE engine. To use
 CORE: `python tools/install_core.py` once after clone, then `pa search
 --engine core "..."`. See tools/install_core.py for rationale.
 
-v3.9.8.2 (2026-07-15): CORE removed from default "all" list — OpenAlex already
+v3.9.8.2 (2026-07-15): CORE removed from default "all" list 鈥?OpenAlex already
 indexes CORE's repos, so the marginal coverage was <5% but maintenance cost
 (buggy key auth path) was real. search_core() function still available via
 `pa search --engine core` for explicit use, and now works in no-key mode.
@@ -18,11 +18,11 @@ indexes CORE's repos, so the marginal coverage was <5% but maintenance cost
 v3.9.11.1 (2026-07-23): CORE engine code moved to pa_cli/_engines_local/core.py
 (local-only, gitignored). Public `pa search --engine core` raises "not installed"
 error; user runs `python tools/install_core.py` to enable. This separates the
-CORE engine from the rest of the package — see tools/install_core.py for the
+CORE engine from the rest of the package 鈥?see tools/install_core.py for the
 isolation rationale and trade-offs.
 
 AMiner (added v3.9.8.0): 6th default engine for Chinese papers, gated on
-AMINER_API_KEY env var (体验金 3880 calls / 60 days). +10.9pp cite lift
+AMINER_API_KEY env var (浣撻獙閲?3880 calls / 60 days). +10.9pp cite lift
 on Chinese queries vs baseline 4 engines.
 
 CNKI (added v3.9.7.3): 7th engine for Chinese papers, gated on cookies file
@@ -80,7 +80,7 @@ _load_dotenv()
 
 
 UA = "paper-agent/3.2 (Mavis; mailto:hello@example.com)"
-# v3.9.8.0: 用真实 browser UA 避免 Cloudflare/DDoS-Guard 拦截 (CORE API 之前 1010)
+# v3.9.8.0: 鐢ㄧ湡瀹?browser UA 閬垮厤 Cloudflare/DDoS-Guard 鎷︽埅 (CORE API 涔嬪墠 1010)
 UA_BROWSER = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
@@ -93,7 +93,7 @@ def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
     from ._http import http_get_json as _http_get_json_helper
     return _http_get_json_helper(url, headers=headers, timeout=timeout)
 def _s2_lookup_doi(doi: str) -> Optional[Dict]:
-    """Semantic Scholar paper/DOI endpoint — returns full metadata for one paper.
+    """Semantic Scholar paper/DOI endpoint 鈥?returns full metadata for one paper.
 
     S2 free tier: 1 RPS. Caller must jitter (use 1.0-1.5s between calls).
     """
@@ -135,7 +135,7 @@ def _s2_lookup_doi(doi: str) -> Optional[Dict]:
 
 
 def _crossref_lookup_title(title: str) -> Optional[Dict]:
-    """Crossref works?query.bibliographic — finds DOI + cite by title.
+    """Crossref works?query.bibliographic 鈥?finds DOI + cite by title.
 
     Best-effort: returns top-1 match. Crossref free tier is generous (50 RPS).
     """
@@ -166,7 +166,7 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
 
 
 def _openalex_lookup_title(title: str) -> Optional[Dict]:
-    """[P1-15] OpenAlex works?search={title} — fallback for Crossref-by-title
+    """[P1-15] OpenAlex works?search={title} 鈥?fallback for Crossref-by-title
     0-hit case. Better Chinese coverage than Crossref per v3.9.7.5 lessons.
 
     Returns same shape as _crossref_lookup_title() so the caller can use
@@ -214,12 +214,12 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
         min_cites: skip S2 lookup for papers with cited_by_count < min_cites
             (default 1 = skip 0-cite papers). Per [P1-14] ROADMAP: when many
             low-cite papers in top-N, S2 often returns shallow entry
-            (no tldr/inf_cite) for 0-cite papers, costing ~1.2s × N
+            (no tldr/inf_cite) for 0-cite papers, costing ~1.2s 脳 N
             for little gain. Set to 0 to restore v3.9.7.8 behavior (try all).
         resort_by: [P1-16] re-sort criterion after enrichment.
-            "cite" (default) — cited_by_count desc; backward compat.
-            "year" — year desc (newest first; None/0 at end).
-            "relevance" — keep natural engine order (no re-sort).
+            "cite" (default) 鈥?cited_by_count desc; backward compat.
+            "year" 鈥?year desc (newest first; None/0 at end).
+            "relevance" 鈥?keep natural engine order (no re-sort).
         max_age_years: [P1-18] skip ALL enrichment (S2 + Crossref + OpenAlex
             fallback) for papers older than this many years (default 10).
             Per [P1-18] ROADMAP: S2 cite often stale/unavailable for older
@@ -249,7 +249,7 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
             r["_enrichment"]["enrichment_skipped"] = f"year<{current_year - max_age_years}"
             skipped_old += 1
             continue
-        # Try S2 by DOI (best — gets tldr, inf_cite, ref_count)
+        # Try S2 by DOI (best 鈥?gets tldr, inf_cite, ref_count)
         # [P1-14] skip S2 if paper has cited_by_count < min_cites (saves ~12s/query
         # when many 0-cite papers in top-N; S2 returns shallow entry for 0-cite per
         # v3.9.7.7 lesson learned on Chinese papers)
@@ -295,7 +295,7 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
         results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
     elif resort_by == "year":
         results.sort(key=lambda x: x.get("year") or 0, reverse=True)
-    # resort_by == "relevance" → keep natural order, no re-sort
+    # resort_by == "relevance" 鈫?keep natural order, no re-sort
     # [P1-14] print enrichment stats (stdout; CLI can grep/pipe)
     if (min_cites > 0 and skipped_low_cite) or (max_age_years > 0 and skipped_old):
         parts = [f"enriched {enriched}"]
@@ -311,9 +311,9 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
 def sort_results(results: List[Dict], sort_by: str = "cite") -> List[Dict]:
     """[P1-16] Sort unified results by user-selected criterion.
 
-    cite (default): cited_by_count desc — v3.9.7.8 backward compat.
+    cite (default): cited_by_count desc 鈥?v3.9.7.8 backward compat.
     year: year desc (newest first; None/0 at end).
-    relevance: keep natural engine order (no sort) — preserves the
+    relevance: keep natural engine order (no sort) 鈥?preserves the
               per-engine relevance ranking each engine returned.
 
     Returns: NEW list (does not mutate input).
@@ -441,7 +441,14 @@ def _normalize_openalex(r: dict) -> dict:
 
 def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                  limit: int = 50) -> List[Dict]:
-    """arXiv SDK. Best for preprints."""
+    """arXiv SDK. Best for preprints.
+
+    v3.9.24.0: added post-filter on r.published.year. arXiv's
+    `submittedDate:[X TO Y]` filter is on the API level but the SDK
+    sometimes returns papers where r.published is outside the range
+    (e.g. when sorted by Relevance and the API soft-relaxes the filter).
+    We post-filter to enforce the year range.
+    """
     try:
         import arxiv
     except ImportError:
@@ -470,6 +477,23 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
             })
     except Exception:
         pass
+
+    # v3.9.24.0: post-filter on year to handle API filter relaxation
+    if year_min or year_max:
+        ymin = year_min or 1991
+        ymax = year_max or 2099
+        pre_filter_count = len(results)
+        results = [
+            r for r in results
+            if r.get("year") and ymin <= int(r["year"]) <= ymax
+        ]
+        if pre_filter_count > 0 and len(results) < pre_filter_count:
+            logger.debug(
+                f"arxiv year post-filter: {pre_filter_count} -> {len(results)} "
+                f"(API submittedDate filter was relaxed; applied {ymin}-{ymax} "
+                f"client-side)"
+            )
+
     return results
 
 
@@ -551,6 +575,14 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
         headers["x-api-key"] = api_key
     s, data = _s2_request_with_retry(url, headers=headers)
     if s != 200:
+        # v3.9.24.0: log the actual API status so users can diagnose why
+        # S2 returned 0 results. Common causes: 429 (rate limit), 500/502/503
+        # (server error), or just no matches. Without logging, S2 failures
+        # look identical to genuine "no results" cases.
+        logger.warning(
+            f"[S2 search] query='{query[:60]}' returned status={s} "
+            f"data={str(data)[:200]}"
+        )
         return []
     results = []
     for it in (data.get("data") or []):
@@ -614,14 +646,14 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
 
     v3.9.11.8: initial release. Returns: PMID, title, journal, year,
     authors (max 5 + et al.), DOI (if available), publication types.
-    No abstract / MeSH in v1 (deferred — needs efetch XML parse, ~+150 LOC).
+    No abstract / MeSH in v1 (deferred 鈥?needs efetch XML parse, ~+150 LOC).
     """
     # NCBI E-utilities requires email + tool parameters per their etiquette
     tool = "paper-agent"
     email = os.environ.get("NCBI_EMAIL", "paper-agent@example.com")
     api_key = os.environ.get("NCBI_API_KEY", "").strip()
 
-    # ── 1. esearch: get PMIDs matching query ─────────────────────────
+    # 鈹€鈹€ 1. esearch: get PMIDs matching query 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
     _pubmed_throttle()
     date_filter = ""
     if year_min or year_max:
@@ -644,7 +676,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     if not pmids:
         return []
 
-    # ── 2. esummary: get metadata for PMIDs ─────────────────────────
+    # 鈹€鈹€ 2. esummary: get metadata for PMIDs 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
     # NCBI limits to 200 IDs per esummary call. If we got more, chunk.
     results: List[Dict] = []
     for i in range(0, len(pmids), 100):
@@ -679,7 +711,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     # [year_min, year_max] so the user gets semantically correct results.
     #
     # Trade-off: post-filter may reduce the result count below `limit`.
-    # Acceptable — user wants correct year filter, not full limit.
+    # Acceptable 鈥?user wants correct year filter, not full limit.
     if year_min or year_max:
         ymin = year_min or 1900
         ymax = year_max or 2099
@@ -746,7 +778,7 @@ def _normalize_pubmed(r: dict) -> dict:
 
 # v3.9.12.0 (2026-08-10): ClinicalTrials.gov engine
 # Free public API, no auth, JSON-based, returns clinical trial registry
-# records (NOT papers — different content type from PubMed/PEDro).
+# records (NOT papers 鈥?different content type from PubMed/PEDro).
 # Use case: "is anyone currently running a trial for this intervention?"
 # See: https://clinicaltrials.gov/api/v2
 def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None,
@@ -754,7 +786,7 @@ def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None
     """ClinicalTrials.gov v2 API: 500K+ registered clinical trials.
 
     Free public API, no auth, no key, ~3 req/s rate limit. Returns trial
-    registry records (not published papers — different content type from
+    registry records (not published papers 鈥?different content type from
     PubMed/PEDro/etc.).
 
     v3.9.12.0: initial release. Returns: nct_id, title, status, conditions,
@@ -954,7 +986,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         # content type from PubMed/PEDro. Will appear as source='clinicaltrials'.
         "clinicaltrials": search_clinicaltrials,
     }
-    # AMiner is optional — only include if token is set (avoid hard-fail on first run)
+    # AMiner is optional 鈥?only include if token is set (avoid hard-fail on first run)
     if "aminer" in engines:
         from .aminer_channel import _aminer_token
         if not _aminer_token():
@@ -963,7 +995,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
-    # CNKI is optional — only include if cookies exist (avoid hard-fail on first run)
+    # CNKI is optional 鈥?only include if cookies exist (avoid hard-fail on first run)
     if "cnki" in engines and not _try_import_cnki():
         # Graceful skip: CNKI not configured yet; engines stays valid
         engines = [e for e in engines if e != "cnki"]
@@ -1005,8 +1037,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                     if not seen[key].get(c) and p.get(c):
                         seen[key][c] = p[c]
 
-    # tldr → abstract fallback: if abstract still empty after merge but tldr present,
-    # use tldr — BUT only if it's a real tldr (not S2's "no tldr" placeholder).
+    # tldr 鈫?abstract fallback: if abstract still empty after merge but tldr present,
+    # use tldr 鈥?BUT only if it's a real tldr (not S2's "no tldr" placeholder).
     # Known S2 placeholder strings: "It's time to dust off the gloves..."
     S2_TLDR_PLACEHOLDERS = (
         "It's time to dust off the gloves",
