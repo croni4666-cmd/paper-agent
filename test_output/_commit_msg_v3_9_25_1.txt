@@ -1,0 +1,99 @@
+fix(skill): v3.9.25.1 — packaging cleanup (4 user-reported issues)
+
+User installed v3.9.25.0 and ran the Wilson disease end-to-end test
+successfully. All 8 engines worked, PubMed MeSH returned relevant
+results, AMiner returned Wilson Disease papers, arXiv noise dropped
+from 5 → 1, $paper-agent skill installed cleanly.
+
+But 4 packaging inconsistencies in the v3.9.25.0 release artifacts:
+
+Issue 1: SKILL.md frontmatter had stale version fields
+  - version: 3.9.24.0 (should be 3.9.25.0)
+  - pa_cli_version: 3.9.23.0 (should be 3.9.25.0)
+  Fix: bumped to 3.9.25.0; this PATCH bumps to 3.9.25.1.
+
+Issue 2: SKILL.md description had a 15-line duplicated v3.9.23.0 block
+  - Started with broken text ").rch for academic papers by" (concat artifact)
+  - Listed "7 engines" (we have 8 since v3.9.12.0)
+  Fix: removed the duplicate, kept the new 8-engine description.
+
+Issue 3: SKILL.md `### scripts/search.py — Search 7 engines` heading
+  was leftover from v3.9.23.0
+  Fix: changed to "Search 8 engines (v3.9.22.0+)".
+
+Issue 4: scripts/version.py hardcoded "skill_version": "3.9.23.0"
+  Fix: bumped to 3.9.25.0; this PATCH bumps to 3.9.25.1.
+
+Issue 5: Chinese text mojibake in 6 .py docstrings + 1 SKILL.md line
+  - Root cause: UTF-8 → cp1252 → UTF-8 round-trip on em-dash "—" (U+2014)
+  - Symptom: "鈥?" (bytes E9 88 A5 3F) instead of "—"
+  - Affects SKILL.md L32 and docstrings in search/fetch/fetch_batch/
+    review/citations/keys/cache/version.py
+  Fix: replaced all 鈥? sequences with "—", stripped UTF-8 BOM from
+  7 .py files (U+FEFF at start), fixed search.py L14 example
+  (Chinese chars "数字普惠金融 家庭消费" was rendered as mojibake by
+  earlier Edit tool calls).
+
+Issue 6 (related): search.py L14 example "数字普惠金融 家庭消费"
+  was encoded as mojibake "鏁板瓧鏅儬閲戣瀺 瀹跺涵娑堣垂"
+  Fix: re-wrote L14 with proper UTF-8 (also fixed by the mojibake
+  cleanup script).
+
+Why these didn't show up in v3.9.25.0 tests:
+  The 29 skill regression tests check wrapper script structure
+  (--help works, --json flag, exit codes) but NOT:
+  - YAML frontmatter content (version field, description text)
+  - File encoding (BOM, mojibake)
+  - Hardcoded version strings in version.py
+  These are packaging/metadata issues, not behavior issues.
+
+What was changed:
+  .agents/skills/paper-agent/SKILL.md
+    - L1-33: removed 15 lines of duplicate v3.9.23.0 description
+    - L32: fixed mojibake em-dash
+    - frontmatter: version 3.9.24.0 -> 3.9.25.1, pa_cli_version 3.9.23.0 -> 3.9.25.0
+    - search.py section heading: "7 engines" -> "8 engines (v3.9.22.0+)"
+  .agents/skills/paper-agent/scripts/version.py
+    - skill_version: "3.9.23.0" -> "3.9.25.1"
+  .agents/skills/paper-agent/scripts/search.py
+    - L14 example: mojibake Chinese -> proper UTF-8
+  .agents/skills/paper-agent/scripts/{fetch,fetch_batch,review,
+    citations,keys,cache,version}.py
+    - Stripped UTF-8 BOM (U+FEFF) at start of file
+  .agents/skills/paper-agent/scripts/{fetch,fetch_batch,review,
+    citations,keys,cache}.py
+    - Replaced "鈥?" mojibake with "—" em-dash in docstrings
+
+Tests:
+  test_output/_test_v3_9_25_1_packaging.py (NEW, 8 tests, all PASS):
+  - test_skill_md_version_is_3_9_25_1
+  - test_skill_md_pa_cli_version_matches_pa_cli
+  - test_no_7_engines_text
+  - test_description_has_8_engines
+  - test_no_duplicate_description
+  - test_version_py_skill_version
+  - test_no_mojibake_in_skill_files
+  - test_no_bom_in_skill_files
+
+  Pre-existing tests still PASS:
+  - 29/29 from test_output/_test_v3_9_23_0_skill.py
+  - 12/12 from test_output/_test_v3_9_25_0_aminer.py
+  - 8/8 from test_output/_test_v3_9_25_1_packaging.py (new)
+  - Total: 49/49 PASS
+
+  Plus 1/1 from running version.py at runtime (now returns skill_version
+  3.9.25.1, pa_cli_version 3.9.25.0).
+
+Version discipline: PATCH (3.9.25.0 -> 3.9.25.1).
+  - No behavior change; only packaging metadata fixes.
+  - pa_cli/__init__.py and pyproject.toml STAY at 3.9.25.0 (no code
+    change; v3.9.25.1 is skill packaging only).
+  - SKILL.md frontmatter and scripts/version.py bump to 3.9.25.1.
+  - Justification for PATCH: v3.9.25.0 was already tagged and released;
+    cannot amend tagged release without rewriting git history.
+  - 8 lines of new tests catch all 4 user-reported issues going forward.
+
+User-side:
+  Re-pull the skill:
+    cp -r <new-repo>/.agents/skills/paper-agent/* ~/.codex/skills/paper-agent/
+  Or `pip install --upgrade paper-agent` for the pa_cli (no change).

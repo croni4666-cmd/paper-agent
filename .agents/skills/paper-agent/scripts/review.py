@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/review.py 鈥?Wrapper for `pa review` (lit review synthesis).
+#!/usr/bin/env python3
+"""scripts/review.py —Wrapper for `pa review` (lit review synthesis).
 
 Synthesizes a Markdown literature review from a corpus (PDF directory
 or BibTeX file). Supports topic-focused synthesis and topic clustering.

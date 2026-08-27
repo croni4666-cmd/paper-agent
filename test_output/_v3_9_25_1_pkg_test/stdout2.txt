@@ -1,0 +1,7 @@
+  [PASS] No UTF-8 BOM in 10 .py skill files
+  [PASS] No mojibake in 15 skill files
+  [PASS] SKILL.md description mentions 8 engines
+  [PASS] No duplicate 'Do NOT use this skill for' (count: 1)
+  [PASS] SKILL.md pa_cli_version (3.9.25.0) matches pa_cli
+  [PASS] SKILL.md frontmatter version: 3.9.25.1
+  [PASS] version.py skill_version: 3.9.25.1

@@ -1,0 +1,50 @@
+  [PASS] bootstrap.py --check returns ok when pa_cli installed
+  [PASS] bootstrap.py exists (6807 bytes)
+  [PASS] bootstrap.py --help works
+  [PASS] citations.py rejects missing doi
+  [PASS] fetch_batch.py rejects missing bibtex
+  [PASS] fetch.py rejects missing doi
+  [PASS] keys.py 'check' requires service_id
+  [PASS] review.py rejects missing corpus
+  [PASS] search.py rejects missing query
+  [PASS] All 7 wrappers have pa_cli_not_found error handling
+  [PASS] All 7 pa-dependent wrappers use find_pa_root()
+  [PASS] find_pa_root() returns valid pa_root: G:\minimax - workspace\Paper agent
+  [PASS] _pa_root.py exists (5562 bytes)
+  [PASS] _pa_root module imports find_pa_root + get_install_instructions
+  [PASS] All 8 scripts present in G:\minimax - workspace\Paper agent\.agents\skills\paper-agent\scripts
+  [PASS] All scripts have module docstring
+  [PASS] All scripts have shebang
+  [PASS] cache.py --help works
+  [PASS] citations.py --help works
+  [PASS] fetch_batch.py --help works
+  [PASS] fetch.py --help works
+  [PASS] keys.py --help works
+  [PASS] review.py --help works
+  [PASS] search.py --help works
+  [PASS] version.py --help works
+  [PASS] agents/openai.yaml exists with UI metadata
+  [PASS] All 3 reference docs present
+  [PASS] SKILL.md exists (12038 bytes)
+  [PASS] SKILL.md has valid frontmatter (name + description)
+  [PASS] version.py returns valid JSON: skill=paper-agent, python=3.12.10
+  [PASS] pa search --help shows --aminer-mode flag with auto/pro/basic
+  [PASS] _merge_aminer_results exists
+  [PASS] Only 1 search_aminer definition (no duplicate)
+  [PASS] _search_aminer_basic extracted as separate function
+  [PASS] search_aminer_pro exists and is callable
+  [PASS] search_aminer has mode='auto' default
+  [PASS] Chinese partial: 0.500
+  [PASS] Chinese full phrase: 1.000
+  [PASS] Full phrase match: 1.000
+  [PASS] No match: 0.000
+  [PASS] Partial match (Wilson only): 0.500
+  [PASS] Score always in 0.0-1.0 range
+  [PASS] No UTF-8 BOM in 10 .py skill files
+  [PASS] No mojibake in 15 skill files
+  [PASS] SKILL.md description mentions 8 engines
+  [PASS] SKILL.md description has no '7 engines' or ').rch for' text
+  [PASS] No duplicate 'Do NOT use this skill for' (count: 1)
+  [PASS] SKILL.md pa_cli_version (3.9.25.0) matches pa_cli
+  [PASS] SKILL.md frontmatter version: 3.9.25.1
+  [PASS] version.py skill_version: 3.9.25.1

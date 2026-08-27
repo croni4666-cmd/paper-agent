@@ -680,6 +680,90 @@ MINOR bump (3.9.24.0 → 3.9.25.0). New public surface:
 - AMiner Pro API is a new public capability (was unreachable before)
 
 
+## [3.9.25.1] - 2026-08-27
+
+### Fixed — v3.9.25.0 packaging cleanup (4 user-reported issues)
+
+User installed v3.9.25.0 and ran the Wilson disease end-to-end test
+successfully. All 8 engines worked, PubMed MeSH returned relevant
+results, AMiner returned Wilson Disease papers (top 5 all rel=1.0),
+arXiv noise dropped from 5 → 1, $paper-agent skill installed cleanly.
+
+But 4 packaging inconsistencies in the v3.9.25.0 release artifacts:
+
+1. **SKILL.md frontmatter** had `version: 3.9.24.0` and
+   `pa_cli_version: 3.9.23.0` — both stale (should be 3.9.25.0).
+2. **SKILL.md description** contained a duplicate old block from v3.9.23.0
+   starting with broken text `).rch for academic papers by` and listing
+   "7 engines" — leftover from the v3.9.24.0 Edit operation.
+3. **`scripts/version.py`** hardcoded `skill_version: "3.9.23.0"` —
+   should be `"3.9.25.0"`.
+4. **Chinese text mojibake** in `SKILL.md` (L32), `scripts/*.py`
+   docstrings (search/fetch/fetch_batch/review/citations/keys/cache):
+   `鈥?` (3 bytes E9 88 A5 3F) was the result of UTF-8 → cp1252 → UTF-8
+   round-trip on em-dash `—` (U+2014). Fixed by replacing all `鈥?`
+   with `—` and stripping BOMs from 7 files.
+
+#### What was fixed
+
+- `SKILL.md`:
+  - L1-33: description block de-duplicated (removed 15 lines of stale
+    v3.9.23.0 text)
+  - L32: `# paper-agent 鈥?Academic paper search...` →
+    `# paper-agent — Academic paper search...`
+  - frontmatter `version: 3.9.24.0` → `3.9.25.0` → `3.9.25.1`
+  - frontmatter `pa_cli_version: 3.9.23.0` → `3.9.25.0`
+  - `### scripts/search.py — Search 7 engines` → `Search 8 engines (v3.9.22.0+)`
+    (also a v3.9.23.0 leftover)
+- `scripts/version.py`:
+  - `skill_version: "3.9.23.0"` → `"3.9.25.0"` → `"3.9.25.1"`
+- `scripts/*.py` (6 docstrings):
+  - All `鈥?` → `—` (em-dash)
+  - All 7 `.py` files: BOM stripped (U+FEFF at start of file)
+- `scripts/search.py`:
+  - L14 example: `"鏁板瓧鏅儬閲戣瀺"` → `"数字普惠金融 家庭消费"`
+    (mojibake from Edit tool's encoding round-trip)
+
+#### Why these didn't show up in tests
+
+The 29 skill regression tests check the wrapper script structure
+(--help works, --json flag, etc.) but don't validate:
+- YAML frontmatter content (version field, description text)
+- File encoding (BOM, mojibake)
+- Hardcoded version strings in version.py
+
+These are packaging/metadata issues, not behavior issues. Added a new
+test in v3.9.25.1 to catch version mismatches going forward:
+`test_output/_test_v3_9_25_1_packaging.py` checks all 4 issues
+automatically.
+
+#### Tests (v3.9.25.1 packaging regression)
+
+`test_output/_test_v3_9_25_1_packaging.py` (NEW, 6 tests, all PASS):
+- `test_skill_md_version` — frontmatter version == git tag
+- `test_skill_md_pa_cli_version` — frontmatter pa_cli_version matches pa_cli/__init__.py
+- `test_skill_md_description_no_duplicate` — no leftover 7-engines block
+- `test_version_py_skill_version` — version.py skill_version matches
+- `test_no_mojibake_em_dash` — no 鈥? sequences in skill files
+- `test_no_bom_in_skill_files` — no UTF-8 BOM in skill .py files
+
+Pre-existing 42 tests (29 v3.9.23 skill + 12 v3.9.25 aminer + 1
+v3.9.25.1 packaging) all PASS.
+
+#### Version discipline
+
+PATCH bump (3.9.25.0 → 3.9.25.1). User-visible behavior unchanged —
+these are packaging/metadata fixes only. Justification for PATCH
+(not in-place):
+- v3.9.25.0 was already tagged and released
+- Cannot amend a tagged release (would rewrite git history)
+- New PATCH is the standard way to fix packaging without breaking
+  the version contract
+
+`pa_cli/__init__.py` and `pyproject.toml` STAY at 3.9.25.0 (no code change).
+Only `SKILL.md` frontmatter and `version.py` bump to 3.9.25.1.
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)

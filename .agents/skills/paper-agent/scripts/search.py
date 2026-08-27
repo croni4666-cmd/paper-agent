@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """scripts/search.py — Wrapper for `pa search` (8 search engines).
 
 Searches academic papers by query across 8 engines (Crossref, OpenAlex,
@@ -11,7 +11,7 @@ v3.9.24.0: documented MeSH field syntax support via PubMed ESearch
 Usage:
     python scripts/search.py "digital finance household consumption" --engine all
     python scripts/search.py "long-term care" --engine pubmed --year-min 2020 --limit 10
-    python scripts/search.py "鏁板瓧鏅儬閲戣瀺" --engine aminer --limit 30
+    python scripts/search.py "数字普惠金融 家庭消费" --engine aminer --limit 30
 """
 from __future__ import annotations
 

@@ -16,24 +16,10 @@ description: |
   "fetch all PDFs in this BibTeX", "how many papers are in cache".
   Do NOT use this skill for: general web search, code documentation
   lookup, non-academic research, or PDF reading (use a different
-  skill for that).rch for academic papers by
-  topic or keyword across 7 engines (Crossref / OpenAlex / Semantic
-  Scholar / arXiv / AMiner / CNKI / PubMed), fetch a paper PDF by DOI
-  using 14 fallback channels (incl. S2 openAccessPdf, bioRxiv, CORE,
-  OSF, ChemRxiv, JATS-to-PDF for PMC, Unpaywall, sci-hub), batch-fetch
-  PDFs from a BibTeX file, walk citation graphs (OpenAlex), cluster
-  corpus papers by topic, synthesize a literature review markdown
-  from a corpus, manage API keys for academic databases, or check
-  cache stats. Triggers include: "search for papers about X",
-  "fetch the PDF for 10.1038/nature12373", "build a lit review from
-  refs.bib", "show my API key status", "cluster my corpus by topic",
-  "fetch all PDFs in this BibTeX", "how many papers are in cache".
-  Do NOT use this skill for: general web search, code documentation
-  lookup, non-academic research, or PDF reading (use a different
   skill for that).
 metadata:
-  version: 3.9.24.0
-  pa_cli_version: 3.9.23.0
+  version: 3.9.25.1
+  pa_cli_version: 3.9.25.0
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent
@@ -159,7 +145,7 @@ See the **Installation** section above for full details.
 
 
 
-### `scripts/search.py` — Search 7 engines
+### `scripts/search.py` — Search 8 engines (v3.9.22.0+)
 
 ```bash
 python scripts/search.py QUERY [options]
@@ -171,9 +157,10 @@ python scripts/search.py QUERY [options]
 ```
 
 Returns JSON list of papers with `title / authors / year / venue / doi /
-abstract / tldr / open_access / cites / engine`. `all` runs all 7
+abstract / tldr / open_access / cites / engine`. `all` runs all 8
 engines in parallel and dedupes by DOI. AMiner is best for Chinese
-papers; PubMed for biomedical; arXiv for preprints.
+papers; PubMed for biomedical; arXiv for preprints; ClinicalTrials
+returns trial registry records.
 
 ### `scripts/fetch.py` — Fetch single paper PDF
 

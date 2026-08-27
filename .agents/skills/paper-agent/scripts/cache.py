@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/cache.py 鈥?Wrapper for `pa cache` (cache management).
+#!/usr/bin/env python3
+"""scripts/cache.py —Wrapper for `pa cache` (cache management).
 
 Manages the local paper PDF + metadata cache at ~/.paper-agent/cache/.
 Supports stats, list, clean (with age threshold), and clear.
