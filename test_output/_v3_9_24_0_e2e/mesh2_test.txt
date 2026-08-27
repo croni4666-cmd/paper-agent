@@ -1,0 +1,27 @@
+﻿Plain "Wilson Disease"
+  count=36857, pmids[:3]=['42653505', '42652603', '42652016']
+    PMID 42653505: Glutathione Biology in Neurodegenerative and Metabolic Diseases: Molecular Mecha
+    PMID 42652603: A Review of Peripheral Vascular Intervention Technologies.
+    PMID 42652016: A Longitudinal Study of Mycobacterium avium Subspecies paratuberculosis Infectio
+
+"Wilson Disease"[MeSH] (entry term, may not match)
+  count=0, pmids[:3]=[]
+
+"Hepatolenticular Degeneration"[MeSH] (CORRECT)
+  count=6735, pmids[:3]=['42638654', '42606513', '42576494']
+    PMID 42638654: Wilson disease associated with a novel variant in the ATP7B gene.
+    PMID 42606513: Hepatitis Overview: Less Common Causes of Hepatitis.
+    PMID 42576494: [Development and validation of a machine learning-based prediction model for fat
+
+"Hepatolenticular Degeneration"[MeSH] OR "Wilson Disease"[Title/Abstract]
+  count=7648, pmids[:3]=['42639305', '42638654', '42631261']
+    PMID 42639305: Copper homeostasis and organelle-dependent mechanisms in bone metabolism: implic
+    PMID 42638654: Wilson disease associated with a novel variant in the ATP7B gene.
+    PMID 42631261: A Novel Homozygous ATP7B Splice-Site Variant Causes Late-Onset Hepatic Wilson Di
+
+Just "Hepatolenticular Degeneration"
+  count=6866, pmids[:3]=['42638654', '42606513', '42576494']
+    PMID 42638654: Wilson disease associated with a novel variant in the ATP7B gene.
+    PMID 42606513: Hepatitis Overview: Less Common Causes of Hepatitis.
+    PMID 42576494: [Development and validation of a machine learning-based prediction model for fat
+

@@ -3,6 +3,20 @@ name: paper-agent
 description: |
   Academic paper search, PDF fetch, and literature review synthesis.
   Use this skill when the user wants to: search for academic papers by
+  topic or keyword across 8 engines (Crossref / OpenAlex / Semantic
+  Scholar / arXiv / AMiner / CNKI / PubMed / ClinicalTrials), fetch
+  a paper PDF by DOI using 14 fallback channels (incl. S2 openAccessPdf,
+  bioRxiv, CORE, OSF, ChemRxiv, JATS-to-PDF for PMC, Unpaywall, sci-hub),
+  batch-fetch PDFs from a BibTeX file, walk citation graphs (OpenAlex),
+  cluster corpus papers by topic, synthesize a literature review markdown
+  from a corpus, manage API keys for academic databases, or check
+  cache stats. Triggers include: "search for papers about X",
+  "fetch the PDF for 10.1038/nature12373", "build a lit review from
+  refs.bib", "show my API key status", "cluster my corpus by topic",
+  "fetch all PDFs in this BibTeX", "how many papers are in cache".
+  Do NOT use this skill for: general web search, code documentation
+  lookup, non-academic research, or PDF reading (use a different
+  skill for that).rch for academic papers by
   topic or keyword across 7 engines (Crossref / OpenAlex / Semantic
   Scholar / arXiv / AMiner / CNKI / PubMed), fetch a paper PDF by DOI
   using 14 fallback channels (incl. S2 openAccessPdf, bioRxiv, CORE,
@@ -18,8 +32,8 @@ description: |
   lookup, non-academic research, or PDF reading (use a different
   skill for that).
 metadata:
-  version: 3.9.23.1
-  pa_cli_version: 3.9.22.1
+  version: 3.9.24.0
+  pa_cli_version: 3.9.23.0
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent

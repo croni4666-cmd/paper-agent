@@ -1,0 +1,13 @@
+﻿Query: "Wilson Disease"[MeSH Terms] OR "hepatolenticular degeneration"[Title/Abstract]
+Encoded URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Wilson%20Disease%22%5BMeSH%20Terms%5D%20OR%20%22hepatolenticular%20degeneration%22%5BTitle/Abstract%5D&retmode=json&retmax=...
+
+ESearch with MeSH: count=1090, pmids[:5]=['42438777', '42364731', '42260313', '41974580', '41946579']
+
+ESearch with 'Wilson Disease' plain: count=36857, pmids[:5]=['42653505', '42652603', '42652016', '42649201', '42648878']
+
+ESearch with 'Wilson' alone: count=154741, pmids[:5]=['42655642', '42655343', '42654257', '42653809', '42653505']
+
+First 3 MeSH result titles:
+  PMID 42655642: Orally Bioavailable SARS-CoV-2 Protease Inhibitors Bearing a Hydroxymethyl Keton
+  PMID 42655343: Enhancing a Mid-Wave Infrared Fourier Transform Hyperspectral Imager for Explosi
+  PMID 42654257: Self-Reported Disordered Eating and Weight-Control Behaviours Across BMI Categor

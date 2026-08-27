@@ -1,7 +1,11 @@
 # Search Engines Reference (v3.9.22.0+)
 
-paper-agent searches across **7 academic search engines**. Default is
-`--engine all` which runs all 7 in parallel and dedupes by DOI.
+paper-agent searches across **8 academic search engines**. Default is
+`--engine all` which runs all 8 in parallel and dedupes by DOI.
+
+> **v3.9.24.0 note**: `ClinicalTrials.gov` is the 8th engine (added v3.9.12.0).
+> It returns trial registry records, NOT papers — different content type
+> from the other 7 engines. Marked with `source: "clinicaltrials"`.llel and dedupes by DOI.
 
 | # | Engine | Best for | API key | Cite lift (vs no AMiner) |
 |---|--------|----------|---------|--------------------------|
@@ -51,14 +55,88 @@ paper-agent searches across **7 academic search engines**. Default is
 - **Auth**: Cookie-based (requires browser session for full-text)
 - **Status**: Optional 6th engine (off by default in some configs)
 
-### PubMed
+### PubMed (biomedical)
+
 - **Coverage**: 36M biomedical citations
 - **API**: NCBI E-utilities (`eutils.ncbi.nlm.nih.gov/entrez/eutils/`)
-- **API key**: `?api_key=...` query param
+- **API key**: `?api_key=...` query param (free, raises rate from 3 to 10 RPS)
 - **Free**: No key needed
 - **Best for**: biomedical search
+- **MeSH support (v3.9.24.0)**: pass full PubMed ESearch syntax to narrow results
+- **v3.9.24.0 gotcha**: "Wilson Disease" is an ENTRY TERM, not a main MeSH heading.
+  Use `"Hepatolenticular Degeneration"[MeSH Terms]` (the canonical MeSH term)
+  for ~30× more relevant results than plain `"Wilson Disease"`.
 
-## Search output schema
+#### PubMed MeSH query syntax
+
+`pa search` passes the query directly to PubMed ESearch with URL encoding
+(so brackets and quotes are preserved). This means **any PubMed query
+syntax works**, including:
+
+| Pattern | Use case |
+| --- | --- |
+| `"hepatolenticular degeneration"[MeSH Terms]` | Exact MeSH main heading (most precise) |
+| `"Wilson disease"[Title/Abstract]` | Phrase in title or abstract |
+| `"ATP7B"[Title/Abstract] AND human[Mesh]` | Boolean combination |
+| `"Wilson disease"[MeSH Terms] OR "Wilson disease"[Title/Abstract]` | Fallback chain |
+| `"2020"[PDAT] : "2024"[PDAT]` | Date range (alternative to `--year-min`/`--year-max`) |
+
+⚠️ **Click quoting gotcha**: when calling from a shell, you MUST wrap
+the query in single quotes to preserve brackets. Otherwise `click`
+splits the query on spaces.
+
+```bash
+# CORRECT (single quotes around query):
+pa search '"Hepatolenticular Degeneration"[MeSH Terms]' --engine pubmed
+
+# WRONG (no quotes, click splits on spaces):
+pa search "Hepatolenticular Degeneration"[MeSH Terms] --engine pubmed
+# Error: Got unexpected extra arguments (Terms])
+```
+
+The skill's `scripts/search.py` wrapper accepts multi-word queries via
+`nargs="+"` and re-joins with spaces, so the same query works from the
+wrapper without shell-escape gymnastics:
+
+```bash
+# Works without shell-escape via the skill wrapper:
+python scripts/search.py '"Hepatolenticular Degeneration"[MeSH Terms]' --engine pubmed
+```
+
+**Main term vs entry term — why "Wilson Disease" returns 0 in MeSH**:
+
+MeSH (Medical Subject Headings) is structured like a thesaurus:
+- Each disease has ONE main heading (the canonical term)
+- Multiple "entry terms" (synonyms, lay terms) point to the main heading
+- `[MeSH Terms]` field restricts search to **main headings only**
+
+For Wilson disease:
+- Main heading: `Hepatolenticular Degeneration` (MeSH ID D006527)
+- Entry terms: "Wilson Disease", "Wilson's Disease", "Copper storage disease"
+
+So `"Wilson Disease"[MeSH Terms]` returns 0 papers because the string
+"Wilson Disease" is not a main heading. To use MeSH for Wilson disease,
+you MUST use the canonical term. If you want to be safe, use OR
+fallback:
+
+```bash
+pa search '"Hepatolenticular Degeneration"[MeSH Terms] OR "Wilson Disease"[Title/Abstract]'
+```
+
+
+
+### PubMed (v3.9.24.0 MeSH-aware)
+
+| # | Engine | Best for | API key | Cite lift (vs no AMiner) |
+|---|--------|----------|---------|--------------------------|
+| 1 | **Crossref** | General academic, English | No | baseline |
+| 2 | **OpenAlex** | Largest OA graph, citation walks | Optional `$OPENALEX_API_KEY` (higher rate) | baseline |
+| 3 | **Semantic Scholar (S2)** | Recent CS / AI / ML papers | Optional `$S2_API_KEY` (higher rate) | baseline |
+| 4 | **arXiv** | Physics, math, CS preprints | No | baseline |
+| 5 | **AMiner (智谱学术)** | **Chinese papers**, 3.3亿 papers | `$AMINER_API_KEY` (60-day JWT) | **+7.1pp** for Chinese |
+| 6 | **CNKI** | Chinese journals (CSSCI) | Optional cookie-based | baseline for Chinese |
+| 7 | **PubMed** | Biomedical (36M+ citations) | Optional `$NCBI_API_KEY` (higher rate) | baseline for biomedical |
+| 8 | **ClinicalTrials.gov** | Clinical trial registry (NOT papers) | No | n/a (trials) |
 
 ```json
 {
