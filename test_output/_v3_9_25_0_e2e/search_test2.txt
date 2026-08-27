@@ -1,0 +1,17 @@
+﻿STDOUT:
+
+=== AMiner basic mode (free) ===
+by_engine: {}
+total dedup: 0
+(no results)
+
+(skipped AMiner auto mode: AMINER_API_KEY not set)
+To test: set $env:AMINER_API_KEY = '<your JWT token>'
+
+=== AMiner auto mode (single-word 'Wilson's') ===
+by_engine: {}
+total dedup: 0
+(no results)
+
+STDERR:
+

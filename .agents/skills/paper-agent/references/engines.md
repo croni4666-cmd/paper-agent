@@ -25,6 +25,16 @@ paper-agent searches across **8 academic search engines**. Default is
 - **Weakness**: 0% abstract coverage (JATS-style metadata only), bucketed citation field (low granularity)
 - **Citation lift**: verified **+7.1pp** for Chinese economics queries (vs 5-engine baseline)
 - **Renewal decision**: 30-day eval cron; renew if lift > +7pp
+- **Multi-word queries (v3.9.25.0)**: AMiner's basic API doesn't natively support
+  multi-word queries (returns 0 results for "Wilson Disease"). v3.9.25.0 added:
+  1. `search_aminer_pro()` using `/paper/search/pro` with `keyword` param
+     (¥0.01/call, supports multi-word natively)
+  2. Title-relevance scoring on basic results (0-1 scale) so Wilson Disease
+     papers rank above "Wilson" author papers
+  3. `--aminer-mode auto|pro|basic` flag (default `auto`: pro for multi-word,
+     basic for single-word)
+  4. v3.9.25.0 e2e verified: "Wilson Disease" returns Wilson Disease papers
+     (top 5 all rel=1.0), not "Wilson" author / generic "Disease" papers
 
 ### Crossref
 - **Coverage**: ~140M DOIs, broadest English coverage

@@ -391,10 +391,16 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
                    "('low_quality' if no-abstract+low-cite+no-year; 'outdated' if >25y+<100cites). "
                    "'filter' = drop 'low_quality' results. "
                    "'off' = no filter / no annotation.")
+@click.option("--aminer-mode", "aminer_mode", default="auto", show_default=True,
+              type=click.Choice(["auto", "pro", "basic"]),
+              help="[v3.9.25.0] AMiner search mode. "
+                   "'auto' (default) = pro API for multi-word queries (¥0.01/call), "
+                   "basic for single-word. 'pro' = always Pro API. "
+                   "'basic' = only free basic API (no Pro cost, weaker multi-word recall).")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
            concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites,
-           enrich_max_age_years, sort_by, source_filter, quality_mode, quiet):
+           enrich_max_age_years, sort_by, source_filter, quality_mode, aminer_mode, quiet):
     """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):

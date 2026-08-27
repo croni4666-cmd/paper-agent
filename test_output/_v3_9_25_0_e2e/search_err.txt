@@ -1,0 +1,1 @@
+C:\Users\DengN\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'G:\\minimax': [Errno 2] No such file or directory

@@ -1,0 +1,14 @@
+﻿=== _title_relevance_score tests ===
+  score=1.000 | title='Wilson disease associated with ATP7B gene'        | query='Wilson Disease'
+  score=1.000 | title="Wilson's disease: a clinical review"              | query='Wilson Disease'
+  score=1.000 | title='Hepatolenticular Degeneration: Wilson disease'    | query='Wilson Disease'
+  score=0.500 | title="Dr. Wilson's recent work on COVID"                | query='Wilson Disease'
+  score=0.500 | title='Cardiovascular disease prevention'                | query='Wilson Disease'
+  score=0.000 | title='A review of statistical methods'                  | query='Wilson Disease'
+  score=1.000 | title='数字普惠金融 家庭消费'                                      | query='数字普惠金融 家庭消费'
+  score=0.500 | title='数字普惠金融'                                           | query='数字普惠金融 家庭消费'
+
+=== Function signature tests ===
+  search_aminer(query: 'str', year_min: 'int' = None, year_max: 'int' = None, limit: 'int' = 20, mode: 'str' = 'auto') -> 'List[Dict]'
+  search_aminer_pro(query: 'str', year_min: 'int' = None, year_max: 'int' = None, limit: 'int' = 20) -> 'List[Dict]'
+  _title_relevance_score(title: 'str', query: 'str') -> 'float'

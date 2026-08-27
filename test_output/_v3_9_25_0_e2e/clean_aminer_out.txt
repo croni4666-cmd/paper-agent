@@ -1,0 +1,6 @@
+﻿Old function starts at line 62
+Old function ends at line 194
+First few lines of old function: def search_aminer(query: str, year_min: int = None, year_max: int = None,
+Last few lines of old function: 
+First line of new function: def _title_relevance_score(title: str, query: str) -> float:
+Removed 132 lines. New total: 471 lines.

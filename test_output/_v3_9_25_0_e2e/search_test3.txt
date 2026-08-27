@@ -1,0 +1,36 @@
+﻿STDOUT:
+
+=== AMiner basic mode (free) ===
+by_engine: {'aminer': 20}
+total dedup: 20
+top 5 by relevance/year:
+  1. rel=1.0 mt=phrase:full yr=2023 | Wilson’s Disease—Genetic Puzzles with Diagnostic Implications
+  2. rel=1.0 mt=phrase:full yr=2023 | Current and Emerging Issues in Wilson's Disease.
+  3. rel=1.0 mt=phrase:full yr=2022 | Haplotype and Mutation Analysis in Japanese Patients with Wilson Disea
+  4. rel=1.0 mt=phrase:full yr=2022 | Structure of the Wilson Disease Copper Transporter ATP7B
+  5. rel=1.0 mt=phrase:Wilson yr=2022 | A Multidisciplinary Approach to the Diagnosis and Management of Wilson
+
+=== AMiner auto mode (pro) ===
+by_engine: {'aminer': 20}
+total dedup: 20
+top 5 by relevance/year:
+  1. rel=n/a mt=pro_keyword yr=2024 | Deadly Excess Copper.
+  2. rel=n/a mt=pro_keyword yr=2023 | Metallothionein: a Game Changer in Histopathological Diagnosis of Wils
+  3. rel=n/a mt=pro_keyword yr=2022 | Alzheimer Type I Astrocytes: Still Mysterious Cells
+  4. rel=n/a mt=pro_keyword yr=2022 | Mitochondrial Copper in Human Genetic Disorders
+  5. rel=n/a mt=pro_keyword yr=2022 | Wilson Disease: Update on Pathophysiology and Treatment
+
+=== AMiner auto mode (single-word 'Wilson's') ===
+by_engine: {'aminer': 10}
+total dedup: 10
+top 5 by relevance/year:
+  1. rel=1.0 mt=phrase:full yr=2023 | Wilson’s Disease—Genetic Puzzles with Diagnostic Implications
+  2. rel=1.0 mt=phrase:full yr=2023 | Phases of Wilson Lines in Conformal Field Theories
+  3. rel=1.0 mt=phrase:full yr=2023 | Wilson Loops at Large N and the Quantum M2-Brane
+  4. rel=1.0 mt=phrase:full yr=2023 | Current and Emerging Issues in Wilson's Disease.
+  5. rel=1.0 mt=phrase:full yr=2023 | Phases of Wilson Lines: Conformality and Screening
+
+STDERR (last 500):
+G:\minimax - workspace\Paper agent\pa_cli\_http.py:168: UserWarning: paper-agent: proxy http://127.0.0.1:10808 uses HTTP (plaintext CONNECT handshake - target hostname visible to anyone on path). For local Clash/V2RayN this is acceptable. For REMOTE proxy, consider HTTPS proxy or VPN.
+  proxies = get_proxy_dict()
+
