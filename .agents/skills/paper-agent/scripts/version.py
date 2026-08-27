@@ -31,7 +31,7 @@ def main() -> int:
 
     info = {
         "skill": "paper-agent",
-        "skill_version": "3.9.23.0",
+        "skill_version": "3.9.25.1",
         "python": platform.python_version(),
         "platform": platform.system(),
     }

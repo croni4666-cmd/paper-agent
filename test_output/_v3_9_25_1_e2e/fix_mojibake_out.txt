@@ -1,0 +1,15 @@
+﻿  SKILL.md: clean
+  search.py: fixed (BOM)
+  fetch.py: fixed (BOM, 鈥?(1x)→—)
+  fetch_batch.py: fixed (BOM, 鈥?(1x)→—)
+  review.py: fixed (BOM, 鈥?(1x)→—)
+  citations.py: fixed (BOM, 鈥?(1x)→—)
+  keys.py: fixed (BOM, 鈥?(1x)→—)
+  cache.py: fixed (BOM, 鈥?(1x)→—)
+  version.py: clean
+  _pa_root.py: clean
+  bootstrap.py: clean
+  channels.md: clean
+  engines.md: clean
+  cli-cheatsheet.md: clean
+  openai.yaml: clean

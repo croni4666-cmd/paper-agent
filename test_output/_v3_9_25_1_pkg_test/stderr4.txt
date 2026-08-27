@@ -1,0 +1,13 @@
+test_no_bom_in_skill_files (test_output._test_v3_9_25_1_packaging.TestMojibake.test_no_bom_in_skill_files) ... ok
+test_no_mojibake_in_skill_files (test_output._test_v3_9_25_1_packaging.TestMojibake.test_no_mojibake_in_skill_files) ... ok
+test_description_has_8_engines (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_description_has_8_engines) ... ok
+test_no_7_engines_text (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_no_7_engines_text) ... ok
+test_no_duplicate_description (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_no_duplicate_description) ... ok
+test_skill_md_pa_cli_version_matches_pa_cli (test_output._test_v3_9_25_1_packaging.TestSkillMdVersion.test_skill_md_pa_cli_version_matches_pa_cli) ... ok
+test_skill_md_version_is_3_9_25_1 (test_output._test_v3_9_25_1_packaging.TestSkillMdVersion.test_skill_md_version_is_3_9_25_1) ... ok
+test_version_py_skill_version (test_output._test_v3_9_25_1_packaging.TestVersionPy.test_version_py_skill_version) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK

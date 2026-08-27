@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/fetch_batch.py 鈥?Wrapper for `pa fetch-batch` (BibTeX 鈫?PDFs).
+#!/usr/bin/env python3
+"""scripts/fetch_batch.py —Wrapper for `pa fetch-batch` (BibTeX 鈫?PDFs).
 
 Reads a BibTeX file, extracts DOIs, fetches each PDF in sequence.
 Writes PDFs to <output-dir>/<sanitized-cite-key>.pdf. Generates a JSON

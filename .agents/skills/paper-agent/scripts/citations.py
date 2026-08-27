@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/citations.py 鈥?Wrapper for `pa citations` (OpenAlex citation walk).
+#!/usr/bin/env python3
+"""scripts/citations.py —Wrapper for `pa citations` (OpenAlex citation walk).
 
 Walks the citation graph for a paper via OpenAlex API (no key required).
 Forward = papers THIS paper cites; backward = papers that cite THIS paper.

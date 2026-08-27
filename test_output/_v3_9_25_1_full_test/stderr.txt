@@ -1,0 +1,58 @@
+test_bootstrap_check_when_installed (test_output._test_v3_9_23_0_skill.TestBootstrapScript.test_bootstrap_check_when_installed)
+If pa_cli is already installed, --check returns exit 0 + status=ok. ... ok
+test_bootstrap_exists (test_output._test_v3_9_23_0_skill.TestBootstrapScript.test_bootstrap_exists) ... ok
+test_bootstrap_help (test_output._test_v3_9_23_0_skill.TestBootstrapScript.test_bootstrap_help) ... ok
+test_citations_missing_doi (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_citations_missing_doi) ... ok
+test_fetch_batch_missing_bibtex (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_fetch_batch_missing_bibtex) ... ok
+test_fetch_missing_doi (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_fetch_missing_doi) ... ok
+test_keys_check_missing_service (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_keys_check_missing_service) ... ok
+test_review_missing_corpus (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_review_missing_corpus) ... ok
+test_search_missing_query (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_search_missing_query) ... ok
+test_all_wrappers_handle_pa_cli_not_found (test_output._test_v3_9_23_0_skill.TestPaRootDiscovery.test_all_wrappers_handle_pa_cli_not_found)
+Each wrapper should have a pa_cli_not_found error path. ... ok
+test_all_wrappers_use_pa_root_discovery (test_output._test_v3_9_23_0_skill.TestPaRootDiscovery.test_all_wrappers_use_pa_root_discovery)
+Every wrapper script must import _pa_root.find_pa_root. ... ok
+test_find_pa_root_returns_path (test_output._test_v3_9_23_0_skill.TestPaRootDiscovery.test_find_pa_root_returns_path) ... ok
+test_pa_root_module_exists (test_output._test_v3_9_23_0_skill.TestPaRootDiscovery.test_pa_root_module_exists) ... ok
+test_pa_root_module_imports (test_output._test_v3_9_23_0_skill.TestPaRootDiscovery.test_pa_root_module_imports) ... ok
+test_all_scripts_present (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_all_scripts_present) ... ok
+test_scripts_have_docstring (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_scripts_have_docstring) ... ok
+test_scripts_have_shebang (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_scripts_have_shebang) ... ok
+test_cache_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_cache_help) ... ok
+test_citations_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_citations_help) ... ok
+test_fetch_batch_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_fetch_batch_help) ... ok
+test_fetch_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_fetch_help) ... ok
+test_keys_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_keys_help) ... ok
+test_review_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_review_help) ... ok
+test_search_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_search_help) ... ok
+test_version_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_version_help) ... ok
+test_openai_yaml_exists (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_openai_yaml_exists) ... ok
+test_references_exist (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_references_exist) ... ok
+test_skill_md_exists (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_skill_md_exists) ... ok
+test_skill_md_has_frontmatter (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_skill_md_has_frontmatter) ... ok
+test_version_runs_without_pa (test_output._test_v3_9_23_0_skill.TestVersionScript.test_version_runs_without_pa) ... ok
+test_cli_help_mentions_aminer_mode (test_output._test_v3_9_25_0_aminer.TestAminerCLI.test_cli_help_mentions_aminer_mode) ... ok
+test_merge_aminer_results_exists (test_output._test_v3_9_25_0_aminer.TestAminerModeParameter.test_merge_aminer_results_exists) ... ok
+test_only_one_search_aminer_definition (test_output._test_v3_9_25_0_aminer.TestAminerModeParameter.test_only_one_search_aminer_definition) ... ok
+test_search_aminer_basic_extracted (test_output._test_v3_9_25_0_aminer.TestAminerModeParameter.test_search_aminer_basic_extracted) ... ok
+test_search_aminer_pro_exists (test_output._test_v3_9_25_0_aminer.TestAminerModeParameter.test_search_aminer_pro_exists) ... ok
+test_search_aminer_signature_has_mode (test_output._test_v3_9_25_0_aminer.TestAminerModeParameter.test_search_aminer_signature_has_mode) ... ok
+test_chinese_partial_match (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_chinese_partial_match) ... ok
+test_chinese_phrase_full_match (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_chinese_phrase_full_match) ... ok
+test_full_phrase_match_returns_1 (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_full_phrase_match_returns_1) ... ok
+test_no_match_returns_zero (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_no_match_returns_zero) ... ok
+test_partial_match_returns_mid (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_partial_match_returns_mid) ... ok
+test_score_in_range (test_output._test_v3_9_25_0_aminer.TestAminerRelevanceScoring.test_score_in_range) ... ok
+test_no_bom_in_skill_files (test_output._test_v3_9_25_1_packaging.TestMojibake.test_no_bom_in_skill_files) ... ok
+test_no_mojibake_in_skill_files (test_output._test_v3_9_25_1_packaging.TestMojibake.test_no_mojibake_in_skill_files) ... ok
+test_description_has_8_engines (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_description_has_8_engines) ... ok
+test_no_7_engines_text (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_no_7_engines_text) ... ok
+test_no_duplicate_description (test_output._test_v3_9_25_1_packaging.TestSkillMdDescription.test_no_duplicate_description) ... ok
+test_skill_md_pa_cli_version_matches_pa_cli (test_output._test_v3_9_25_1_packaging.TestSkillMdVersion.test_skill_md_pa_cli_version_matches_pa_cli) ... ok
+test_skill_md_version_is_3_9_25_1 (test_output._test_v3_9_25_1_packaging.TestSkillMdVersion.test_skill_md_version_is_3_9_25_1) ... ok
+test_version_py_skill_version (test_output._test_v3_9_25_1_packaging.TestVersionPy.test_version_py_skill_version) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.756s
+
+OK

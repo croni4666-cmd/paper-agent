@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/fetch.py 鈥?Wrapper for `pa fetch` (14 PDF fetch channels).
+#!/usr/bin/env python3
+"""scripts/fetch.py —Wrapper for `pa fetch` (14 PDF fetch channels).
 
 Fetches a single paper PDF by DOI using the cascade of 14 channels:
 pmc 鈫?s2 鈫?biorxiv 鈫?core 鈫?osf 鈫?chemrxiv 鈫?arxiv 鈫?openalex 鈫?unpaywall 鈫?doi_redirect 鈫?scihub 鈫?playwright. Returns JSON to stdout.

@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""scripts/keys.py 鈥?Wrapper for `pa keys` (API key management).
+#!/usr/bin/env python3
+"""scripts/keys.py —Wrapper for `pa keys` (API key management).
 
 Manages API keys for academic databases. Reads from .env and
 ~/.paper-agent/keys.json. Never logs the actual key value (only
