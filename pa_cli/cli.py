@@ -1080,7 +1080,7 @@ def citations(doi, direction, limit, save_bib_path, output, quiet):
         click.echo(f"[pa] saved BibTeX ({result['count']} entries) to {save_bib_path}", err=True)
 
 
-@main.command()
+@main.command(name="cnki-guide")  # v3.9.26.0: renamed from fetch_batch to avoid name conflict
 @click.option("-i", "--input", "input_file", required=True,
               type=click.Path(exists=True, dir_okay=False),
               help="Text file with one query per line (DOI or title)")
@@ -1092,8 +1092,15 @@ def citations(doi, direction, limit, save_bib_path, output, quiet):
 @click.option("--year-max", type=int, default=None,
               help="Filter: max publication year")
 @click.option("--quiet", is_flag=True, help="Suppress per-paper progress output")
-def fetch_batch(input_file, output, year_min, year_max, quiet):
-    """Generate a batch download guide for CNKI PDF (semi-automated, v3.9.8.3).
+def cnki_guide(input_file, output, year_min, year_max, quiet):
+    """[v3.9.26.0] Generate a batch download guide for CNKI PDF.
+
+    v3.9.26.0: renamed from `fetch_batch` to `cnki-guide` to avoid name
+    conflict with the new `fetch-batch` command (the actual PDF downloader
+    added in v3.9.10.0). Old command name was `fetch_batch` (underscore);
+    the new name is `cnki-guide` (hyphen).
+
+    Semi-automated, v3.9.8.3.
 
     Input: a text file with one query per line. Each line can be either:
       - a DOI (e.g. 10.3969/j.issn.1003-9031.2022.04.008)
@@ -1606,9 +1613,12 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
               help="Optional markdown failure report path")
 @click.option("--summary-json", default=None, type=click.Path(dir_okay=False),
               help="Optional JSON summary path (for programmatic use)")
+@click.option("--clean-xml", is_flag=True,
+              help="[v3.9.26.0] Delete .xml intermediate file (from JATS-to-PDF) "
+                   "after successful PDF generation. Reduces clutter.")
 @click.option("--quiet", is_flag=True, help="Suppress per-entry progress output")
 def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
-                summary_json, quiet):
+                summary_json, clean_xml, quiet):
     """[P2-11] Batch PDF download from a Bibtex file.
 
     Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in
@@ -1640,6 +1650,7 @@ def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
             max_total_sec=max_total_sec,
             skip_existing=skip_existing,
             progress_callback=on_progress,
+            clean_xml=clean_xml,  # v3.9.26.0
         )
     except Exception as e:
         click.echo(f"[pa fetch-batch] FAILED: {e}", err=True)

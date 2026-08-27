@@ -1,0 +1,29 @@
+﻿Exit: 0
+Output:
+Usage: main fetch-batch [OPTIONS] BIBTEX_FILE
+
+  [P2-11] Batch PDF download from a Bibtex file.
+
+  Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in priority
+  order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf. Lists what
+  failed and why.
+
+  Examples:   pa fetch-batch refs.bib --out-dir ./pdfs/   pa fetch-batch
+  refs.bib --out-dir ./pdfs/ --skip-existing   pa fetch-batch refs.bib --out-dir
+  ./pdfs/ --report failed.md
+
+Options:
+  --out-dir DIRECTORY      Directory to save PDFs (created if not exists)
+                           [required]
+  --max-total-sec INTEGER  Global timeout for the whole batch (s)  [default:
+                           1800]
+  --skip-existing          Skip entries whose PDF already exists in out_dir
+  --report FILE            Optional markdown failure report path
+  --summary-json FILE      Optional JSON summary path (for programmatic use)
+  --clean-xml              [v3.9.26.0] Delete .xml intermediate file (from JATS-
+                           to-PDF) after successful PDF generation. Reduces
+                           clutter.
+  --quiet                  Suppress per-entry progress output
+  -h, --help               Show this message and exit.
+[pa] loaded 1 env var(s) from .env
+

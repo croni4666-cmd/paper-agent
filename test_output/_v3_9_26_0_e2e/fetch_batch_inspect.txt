@@ -1,0 +1,153 @@
+﻿--- L49 (matched: size_bytes) ---
+      L46:     success: bool
+      L47:     source: str = ''           # 'unpaywall' / 'scihub' / etc.
+      L48:     out_path: str = ''
+  >>> L49:     size_bytes: int = 0
+      L50:     error: str = ''
+      L51:     elapsed_sec: float = 0.0
+      L52: 
+
+--- L61 (matched: size_bytes) ---
+      L58:             'success': self.success,
+      L59:             'source': self.source,
+      L60:             'out_path': self.out_path,
+  >>> L61:             'size_bytes': self.size_bytes,
+      L62:             'error': self.error,
+      L63:             'elapsed_sec': round(self.elapsed_sec, 2),
+      L64:         }
+
+--- L73 (matched: n_skipped) ---
+      L70:     n_total: int = 0
+      L71:     n_success: int = 0
+      L72:     n_failure: int = 0
+  >>> L73:     n_skipped: int = 0
+      L74:     total_size_bytes: int = 0
+      L75:     total_elapsed_sec: float = 0.0
+      L76:     results: List[FetchResult] = field(default_factory=list)
+
+--- L74 (matched: size_bytes) ---
+      L71:     n_success: int = 0
+      L72:     n_failure: int = 0
+      L73:     n_skipped: int = 0
+  >>> L74:     total_size_bytes: int = 0
+      L75:     total_elapsed_sec: float = 0.0
+      L76:     results: List[FetchResult] = field(default_factory=list)
+      L77: 
+
+--- L83 (matched: n_skipped) ---
+      L80:             'n_total': self.n_total,
+      L81:             'n_success': self.n_success,
+      L82:             'n_failure': self.n_failure,
+  >>> L83:             'n_skipped': self.n_skipped,
+      L84:             'total_size_bytes': self.total_size_bytes,
+      L85:             'total_elapsed_sec': round(self.total_elapsed_sec, 2),
+      L86:             'results': [r.to_dict() for r in self.results],
+
+--- L84 (matched: size_bytes) ---
+      L81:             'n_success': self.n_success,
+      L82:             'n_failure': self.n_failure,
+      L83:             'n_skipped': self.n_skipped,
+  >>> L84:             'total_size_bytes': self.total_size_bytes,
+      L85:             'total_elapsed_sec': round(self.total_elapsed_sec, 2),
+      L86:             'results': [r.to_dict() for r in self.results],
+      L87:         }
+
+--- L97 (matched: skip_existing) ---
+      L94: def _fetch_one_entry(
+      L95:     entry: Dict,
+      L96:     out_dir: Path,
+  >>> L97:     skip_existing: bool = False,
+      L98:     prefer: str = 'auto',
+      L99: ) -> FetchResult:
+      L100:     """Fetch a single bibtex entry via pa fetch.
+
+--- L115 (matched: skip_existing) ---
+      L112:         result.error = 'no doi or title'
+      L113:         return result
+      L114: 
+  >>> L115:     if skip_existing and out_path.exists() and out_path.stat().st_size > 0:
+      L116:         result.success = True
+      L117:         result.out_path = str(out_path)
+      L118:         result.size_bytes = out_path.stat().st_size
+
+--- L118 (matched: size_bytes) ---
+      L115:     if skip_existing and out_path.exists() and out_path.stat().st_size > 0:
+      L116:         result.success = True
+      L117:         result.out_path = str(out_path)
+  >>> L118:         result.size_bytes = out_path.stat().st_size
+      L119:         result.error = 'skipped-existing'
+      L120:         return result
+      L121: 
+
+--- L119 (matched: skipped-existing) ---
+      L116:         result.success = True
+      L117:         result.out_path = str(out_path)
+      L118:         result.size_bytes = out_path.stat().st_size
+  >>> L119:         result.error = 'skipped-existing'
+      L120:         return result
+      L121: 
+      L122:     t0 = time.time()
+
+--- L131 (matched: size_bytes) ---
+      L128:                 result.success = True
+      L129:                 result.source = r.get('source', '')
+      L130:                 result.out_path = r.get('path', str(out_path))
+  >>> L131:                 result.size_bytes = r.get('size', 0)
+      L132:                 return result
+      L133:             result.error = r.get('error', 'fetch failed')
+      L134:         # Try title fallback
+
+--- L141 (matched: size_bytes) ---
+      L138:                 result.success = True
+      L139:                 result.source = r.get('source', '')
+      L140:                 result.out_path = r.get('path', str(out_path))
+  >>> L141:                 result.size_bytes = r.get('size', 0)
+      L142:                 result.error = ''
+      L143:                 return result
+      L144:             if not result.error:
+
+--- L161 (matched: skip_existing) ---
+      L158:     bib_path: Path,
+      L159:     out_dir: Path,
+      L160:     max_total_sec: int = 1800,
+  >>> L161:     skip_existing: bool = False,
+      L162:     prefer: str = 'auto',
+      L163:     progress_callback: Optional[Callable[[int, int, FetchResult], None]] = None,
+      L164: ) -> FetchSummary:
+
+--- L191 (matched: n_skipped) ---
+      L188:                     error='global-timeout',
+      L189:                 )
+      L190:                 summary.results.append(r)
+  >>> L191:                 summary.n_skipped += 1
+      L192:             break
+      L193: 
+      L194:         result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
+
+--- L194 (matched: skip_existing) ---
+      L191:                 summary.n_skipped += 1
+      L192:             break
+      L193: 
+  >>> L194:         result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
+      L195:         summary.results.append(result)
+      L196:         if result.success:
+      L197:             summary.n_success += 1
+
+--- L198 (matched: size_bytes) ---
+      L195:         summary.results.append(result)
+      L196:         if result.success:
+      L197:             summary.n_success += 1
+  >>> L198:             summary.total_size_bytes += result.size_bytes
+      L199:         else:
+      L200:             summary.n_failure += 1
+      L201:         summary.total_elapsed_sec += result.elapsed_sec
+
+--- L233 (matched: n_skipped) ---
+      L230:     lines.append(f"- Total entries: {summary.n_total}")
+      L231:     lines.append(f"- Success: {summary.n_success}")
+      L232:     lines.append(f"- Failure: {summary.n_failure}")
+  >>> L233:     lines.append(f"- Skipped (timeout): {summary.n_skipped}")
+      L234:     lines.append(f"")
+      L235:     if failures:
+      L236:         lines.append(f"## Failures ({len(failures)})")
+

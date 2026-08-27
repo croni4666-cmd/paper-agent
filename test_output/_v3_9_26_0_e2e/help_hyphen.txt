@@ -1,0 +1,30 @@
+Usage: python -m pa_cli.cli fetch-batch [OPTIONS]
+
+  Generate a batch download guide for CNKI PDF (semi-automated, v3.9.8.3).
+
+  Input: a text file with one query per line. Each line can be either:   - a
+  DOI (e.g. 10.3969/j.issn.1003-9031.2022.04.008)   - a title  (e.g.
+  数字普惠金融对经济高质量发展的影响)
+
+  Output: a markdown guide with:   - Per-paper table (title, DOI, year, found
+  status, xueshu789 search URL)   - An Edge console JS snippet that auto-
+  scrapes doDownload URLs from     xueshu789 search result pages   - Step-by-
+  step instructions for user (the actual PDF download must be     done in
+  user's real Edge browser to bypass bar.cnki.net vLevel=5     CAPTCHA)
+
+  Honest limitation: paper-agent cannot auto-download CNKI PDFs because
+  bar.cnki.net detects all non-real-browser automation and triggers vLevel=5
+  CAPTCHA. This tool's value is in:   1. Validating that DOIs exist (skip non-
+  existent papers)   2. Generating per-paper search URLs for xueshu789   3.
+  Providing the Edge console snippet for batch doDownload URL extraction
+  User's manual Edge workflow is the only working path (verified 2026-07-15).
+
+Options:
+  -i, --input FILE    Text file with one query per line (DOI or title)
+                      [required]
+  -o, --output FILE   Output markdown guide (default:
+                      ./batch_download_guide.md)
+  --year-min INTEGER  Filter: min publication year
+  --year-max INTEGER  Filter: max publication year
+  --quiet             Suppress per-paper progress output
+  -h, --help          Show this message and exit.

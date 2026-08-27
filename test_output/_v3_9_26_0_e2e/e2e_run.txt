@@ -1,0 +1,28 @@
+﻿STDOUT:
+============================================================
+TEST 1: First download (verify size_bytes > 0)
+============================================================
+
+>>> Running: pa_cli.cli fetch-batch ... --summary-json G:\minimax - workspace\Paper agent\test_output\_v3_9_26_0_e2e\_batch_test\summary1.json
+Exit: 2
+Elapsed: 0.1s
+
+============================================================
+TEST 2: Second download with --skip-existing (verify n_skipped)
+============================================================
+
+>>> Running: pa_cli.cli fetch-batch ... --summary-json G:\minimax - workspace\Paper agent\test_output\_v3_9_26_0_e2e\_batch_test\summary2.json --skip-existing
+Exit: 2
+
+============================================================
+TEST 3: --clean-xml (should remove .xml after success)
+============================================================
+
+>>> Running: pa_cli.cli fetch-batch ... --summary-json G:\minimax - workspace\Paper agent\test_output\_v3_9_26_0_e2e\_batch_test\summary3.json --clean-xml
+Exit: 2
+
+After --clean-xml run:
+  PDF files: 0 -> []
+  XML files: 0 -> []
+  PASS: --clean-xml removed all .xml files
+

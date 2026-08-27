@@ -1,0 +1,4 @@
+Usage: python -m pa_cli.cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m pa_cli.cli --help' for help.
+
+Error: No such command 'fetch_batch'. Did you mean 'fetch'?

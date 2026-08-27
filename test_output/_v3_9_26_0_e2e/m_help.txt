@@ -1,0 +1,26 @@
+Usage: python -m pa_cli.cli [OPTIONS] COMMAND [ARGS]...
+
+  paper-agent CLI ¡ª academic paper fetch + lit review synthesis.
+
+  paper-agent v4 design principle: after 5 minutes of Cloudflare challenge
+  failure, stop iterating and surface a "your turn" handoff. Real human
+  browser sessions remain the only reliable Cloudflare bypass.
+
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
+
+Commands:
+  cache          Manage the local PDF + meta cache (~/.paper-agent/cache/).
+  citations      Walk citation graph via OpenAlex.
+  cnki           CNKI 6th search engine (Chinese papers, optional).
+  cnki-guide     [v3.9.26.0] Generate a batch download guide for CNKI PDF.
+  fetch          Fetch a single paper PDF by DOI using 8 channels with...
+  keys           Manage API keys + expiry reminders.
+  mcp            Integrate paper-agent with a public MCP server.
+  mcp-serve      DEPRECATED: shim that points to `pa mcp install` (kept...
+  prisma         Generate a PRISMA 2020 flow diagram (standalone).
+  review         Synthesize lit review markdown from a corpus directory...
+  review-topics  Cluster corpus papers by topic (cross-paper synthesis...
+  search         6-engine academic paper search (Crossref / OpenAlex /...
+  version        Show paper-agent version + key dependency status.

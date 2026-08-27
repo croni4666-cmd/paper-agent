@@ -1,0 +1,3 @@
+﻿pa_cli.cli loaded from: G:\minimax - workspace\Paper agent\pa_cli\cli.py
+pa_cli version: 3.9.25.0
+Commands: ['build', 'cache', 'citations', 'cite-check', 'cnki', 'cnki-guide', 'dedup-strict', 'export-screening', 'fetch', 'fetch-batch', 'jobs', 'judge', 'keys', 'mcp', 'mcp-fetch-serve', 'mcp-serve', 'obsidian', 'prisma', 'project', 'review', 'review-topics', 'sample-pool', 'scaffold', 'search', 'search-and-import', 'search-saved', 'version', 'zotero-check', 'zotero-project', 'zotero-push', 'zotero-search', 'zotero-sync']

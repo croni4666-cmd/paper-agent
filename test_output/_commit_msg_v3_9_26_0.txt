@@ -1,0 +1,116 @@
+fix(fetch-batch): v3.9.26.0 — 4 user-reported bugs (cnki-guide rename, size key, skip counter, clean-xml)
+
+User ran `pa fetch-batch` on 2 Wilson disease DOIs:
+  10.1002/hep.32805 (Gromadzka 2023 hepatology)
+  10.3390/ijms21239259 (Gromadzka 2020 copper)
+All 2 PDFs downloaded successfully in 53.7s (319KB + 869KB total).
+`--skip-existing` correctly skipped on 2nd run (0s, no rewrite).
+
+But 4 silent bugs in the summary JSON and CLI surface:
+
+Bug 1: pa fetch-batch says "No such option '--out-dir'"
+  Root cause: TWO Click commands registered as `fetch-batch`:
+    - OLD `fetch_batch(input_file, output, year_min, year_max, quiet)`
+      at L1095 (v3.9.8.3, CNKI guide generator; @main.command() with no
+      name = defaults to function name `fetch_batch` → click auto-
+      hyphenates to `fetch-batch`)
+    - NEW `fetch_batch(bibtex_file, out_dir, max_total_sec, ...)` at L1620
+      (v3.9.10.0, real PDF downloader; @main.command(name="fetch-batch"))
+  OLD won (defined first). The Skill's `scripts/fetch_batch.py` calls
+  `python -m pa_cli.cli fetch-batch` and got the OLD function (no
+  --out-dir option), so it failed with "No such option '--out-dir'".
+  Fix: renamed OLD function to `cnki_guide` with
+  @main.command(name="cnki-guide"). Now:
+    - `pa fetch-batch` → the new PDF downloader (with --out-dir)
+    - `pa cnki-guide` → the old CNKI guide generator
+    - `pa fetch_batch` (underscore) → "No such command" (correctly gone)
+
+Bug 2: First download size_bytes = 0 in summary
+  PDFs downloaded successfully (1.19MB total) but summary showed
+  size_bytes=0 and total_size_bytes=0 for each entry.
+  Root cause: pa_cli/fetch_batch.py used `r.get('size', 0)` to read pa
+  fetch result, but pa fetch returns `size_bytes` (not `size`). The
+  default 0 always returned. Both DOI and title-fallback paths were
+  affected.
+  Fix: changed to `r.get('size_bytes', 0)` in 2 places (DOI + title
+  fallback). Now summary correctly reports total_size_bytes.
+
+Bug 3: --skip-existing counter wrong
+  2nd run correctly skipped both PDFs and tagged them with
+  error='skipped-existing' (success=True), but summary showed
+  n_success: 2, n_skipped: 0.
+  Root cause: skip path sets success=True; orchestrator only checked
+  result.success and incremented n_success.
+  Fix: check result.error == 'skipped-existing' BEFORE n_success.
+  Now 2nd run correctly shows n_skipped: 2, n_success: 0.
+
+Bug 4: PMC .xml intermediate not cleaned up
+  JATS-to-PDF render (v3.9.21.0) creates <key>.xml alongside <key>.pdf.
+  User noted the .xml is just clutter for paper-agent's PDF-only use case.
+  Fix: added --clean-xml flag. When set, deletes the .xml after
+  successful PDF generation (best-effort). Default False for backward compat.
+
+Code changes:
+  pa_cli/cli.py
+    - Renamed @main.command() fetch_batch to @main.command(name="cnki-guide")
+      def cnki_guide(...)
+    - @main.command(name="fetch-batch") added --clean-xml option
+    - fetch_batch CLI handler passes clean_xml=clean_xml to run_fetch_batch
+  pa_cli/fetch_batch.py
+    - _fetch_one_entry: 2x r.get('size', 0) -> r.get('size_bytes', 0)
+    - run_fetch_batch: added 'if result.error == "skipped-existing"'
+      check BEFORE n_success; increments n_skipped instead
+    - run_fetch_batch: new clean_xml parameter (default False)
+    - run_fetch_batch: XML cleanup logic after successful PDF
+      (xml_path.unlink() guarded by 'if clean_xml')
+  pa_cli/__init__.py
+    __version__ 3.9.25.1 -> 3.9.26.0
+  pyproject.toml
+    version 3.9.25.1 -> 3.9.26.0
+  .agents/skills/paper-agent/SKILL.md
+    - version: 3.9.25.1 -> 3.9.26.0
+    - pa_cli_version: 3.9.25.0 -> 3.9.26.0
+  .agents/skills/paper-agent/scripts/version.py
+    skill_version "3.9.25.1" -> "3.9.26.0"
+
+Tests (v3.9.26.0 fetch_batch regression):
+  test_output/_test_v3_9_26_0_fetch_batch.py (NEW, 10 tests, all PASS):
+    - TestClickCommandNames (4): cnki-guide works, fetch-batch works,
+      --clean-xml visible, old fetch_batch underscore gone
+    - TestSizeKeyFix (2): 0 instances of 'size', 2 instances of
+      'size_bytes'
+    - TestSkipCounterFix (2): skip check before n_success, n_skipped
+      field exists
+    - TestCleanXmlOption (2): param exists, CLI passes it
+
+  Pre-existing tests still PASS:
+    29/29 v3.9.23 skill
+    12/12 v3.9.25 aminer
+    8/8 v3.9.25.1 packaging
+    10/10 v3.9.26 fetch_batch (new)
+    Total: 59/59 PASS
+
+Version discipline: MINOR (3.9.25.1 -> 3.9.26.0)
+  New public surface:
+    - cnki-guide Click command (renamed from fetch_batch)
+    - pa_cli.fetch_batch.run_fetch_batch clean_xml parameter
+    - pa_cli.cli.fetch_batch --clean-xml flag
+  These are user-facing changes, so MINOR (not PATCH).
+
+User-side:
+  pip install --upgrade paper-agent
+  # Skill wrapper now works:
+  python ~/.codex/skills/paper-agent/scripts/fetch_batch.py refs.bib \
+    --output-dir ./pdfs/ --skip-existing --clean-xml --report report.json
+  # Or use pa directly:
+  pa fetch-batch refs.bib --out-dir ./pdfs/ --skip-existing --clean-xml
+  # Old CNKI guide still available (renamed):
+  pa cnki-guide -i queries.txt -o guide.md
+
+Discovered during debugging:
+  Click 8.4.2: when multiple @main.command() with no name argument
+  are present, click auto-derives the command name from the function
+  name (snake_case -> kebab-case). Two functions named fetch_batch()
+  both registered as `fetch-batch`. The FIRST one wins registration.
+  This is a known click limitation: explicit @main.command(name="...") is
+  required to prevent auto-derivation conflicts.
