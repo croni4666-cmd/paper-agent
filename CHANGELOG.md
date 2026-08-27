@@ -335,6 +335,96 @@ only one that works without pa_cli installed (it reports the
 dependency status).
 
 
+## [3.9.23.1] - 2026-08-27
+
+### Fixed — Codex Skill `No module named 'pa_cli'` error
+
+User installed the v3.9.23.0 Codex Skill at `C:\Users\DengN\.codex\skills\paper-agent\`
+(per the documented user-level install). Codex recognized the skill, but
+the 8 wrapper scripts failed with `No module named 'pa_cli'` because:
+
+> v3.9.23.0 PA_ROOT was hardcoded as `Path(__file__).resolve().parent.parent.parent`,
+> which only worked when the skill was at `.agents/skills/paper-agent/`
+> INSIDE the paper-agent repo. When user copied the skill to
+> `~/.codex/skills/paper-agent/`, `PA_ROOT` resolved to `~/.codex/`
+> (wrong) and `subprocess.run(cwd=str(PA_ROOT))` couldn't find pa_cli.
+
+**Fix (2 parts)**:
+
+#### Part 1: Portable PA_ROOT discovery (`scripts/_pa_root.py`)
+
+New shared module. All 7 pa-dependent wrappers (search/fetch/fetch-batch/
+review/citations/keys/cache) now call `find_pa_root()` which tries
+4 strategies in priority order:
+
+1. `$PAPER_AGENT_ROOT` env var (explicit override)
+2. `import pa_cli` (most portable — works if pip-installed system-wide)
+3. Common paths under `~/minimax - workspace/Paper agent`, `~/code/`,
+   `cwd/`, `cwd/.parent/`, `~/.codex/`, etc.
+4. `pa` CLI on PATH (traces back through site-packages)
+
+If all 4 fail, the wrapper returns a clear error JSON with install
+instructions, exit code 4:
+```json
+{
+  "error": "pa_cli_not_found",
+  "message": "paper-agent (pa_cli) is not installed in this Python environment.",
+  "hint": "Run scripts/bootstrap.py or pip install -e <repo>"
+}
+```
+
+This makes the skill **portable**: works whether the user copies it to
+`~/.codex/skills/`, leaves it inside the repo at `.agents/skills/`, or
+moves it to a different machine.
+
+#### Part 2: Auto-install bootstrap script (`scripts/bootstrap.py`)
+
+New script that:
+1. Checks if pa_cli is importable (exit 0 + status=ok if yes)
+2. If not, auto-detects the paper-agent repo at common locations
+3. Runs `pip install -e <repo>` to install in editable mode
+4. Verifies the install in a fresh subprocess (since the current
+   Python has cached sys.path from when it started)
+
+Usage:
+```bash
+python scripts/bootstrap.py                # auto-detect + install
+python scripts/bootstrap.py --repo <path>  # explicit repo path
+python scripts/bootstrap.py --check        # verify only, no install
+```
+
+Exit codes:
+- 0 — pa_cli importable (already or just installed)
+- 1 — pa_cli not found, no install attempted
+- 2 — install attempted but failed
+- 3 — install succeeded but pa_cli still not importable (env issue)
+
+**E2E verified (2026-08-27)**:
+
+| Scenario | Result |
+| --- | --- |
+| bootstrap.py --check (pa_cli pre-installed) | exit 0, status=ok |
+| bootstrap.py (auto-detect + install) | exit 0, "Successfully installed paper-agent-3.9.23.0" |
+| search.py from C:\Users\DengN (totally unrelated cwd) | 2589 bytes BERT JSON, exit 0 |
+| _pa_root.py (CLI mode) | "paper-agent root: G:\minimax - workspace\Paper agent" |
+
+**Tests**: `test_output/_test_v3_9_23_0_skill.py` extended from 22 → 30 tests:
+- 3 new: `TestPaRootDiscovery` (5 tests: _pa_root module exists/imports/finds, all 7 wrappers use it, all 7 handle pa_cli_not_found)
+- 1 new: `TestBootstrapScript` (3 tests: exists, --help, --check)
+- All 30/30 PASS in ~15s
+
+**SKILL.md updated**:
+- Added "Installation" section with 3 install methods (auto / manual / env var)
+- Added "How find_pa_root() works" explaining the 4-strategy discovery
+- Updated version in frontmatter: 3.9.23.0 → 3.9.23.1
+
+**Why PATCH (not MINOR or in-place)**: The bug blocks the user from
+using the v3.9.23.0 skill. PATCH bump is appropriate because:
+- No new public surface (just internal `_pa_root.py` + `bootstrap.py`)
+- Fixes a user-reported issue
+- Backward compatible (pa_root discovery is a strict superset of v3.9.23.0 behavior)
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)

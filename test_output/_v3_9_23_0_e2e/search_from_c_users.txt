@@ -1,0 +1,68 @@
+﻿{
+  "query": "BERT",
+  "year_min": null,
+  "year_max": null,
+  "by_engine": {
+    "semanticscholar": 2
+  },
+  "dedup_count": 2,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "",
+      "arxiv_id": "1907.11692",
+      "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+      "authors": [
+        "Yinhan Liu",
+        "Myle Ott",
+        "Naman Goyal",
+        "Jingfei Du",
+        "Mandar Joshi",
+        "Danqi Chen",
+        "Omer Levy",
+        "M. Lewis",
+        "Luke Zettlemoyer",
+        "Veselin Stoyanov"
+      ],
+      "venue": "arXiv.org",
+      "year": 2019,
+      "cited_by_count": 31043,
+      "influential_cite_count": 6055,
+      "reference_count": 68,
+      "tldr": "It is found that BERT was significantly undertrained, and can match or exceed the performance of every model published after it, and the best model achieves state-of-the-art results on GLUE, RACE and SQuAD.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "It is found that BERT was significantly undertrained, and can match or exceed the performance of every model published after it, and the best model achieves state-of-the-art results on GLUE, RACE and SQuAD.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18653/v1/D19-1410",
+      "arxiv_id": "1908.10084",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": [
+        "Nils Reimers",
+        "Iryna Gurevych"
+      ],
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "year": 2019,
+      "cited_by_count": 19992,
+      "influential_cite_count": 2429,
+      "reference_count": 38,
+      "tldr": "Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity is presented.",
+      "is_oa": true,
+      "oa_url": "https://www.aclweb.org/anthology/D19-1410.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity is presented.",
+      "quality_flag": null
+    }
+  ]
+}

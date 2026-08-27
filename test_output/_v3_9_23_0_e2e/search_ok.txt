@@ -1,0 +1,3346 @@
+﻿{
+  "query": "test",
+  "year_min": null,
+  "year_max": null,
+  "by_engine": {
+    "crossref": 20,
+    "openalex": 20,
+    "arxiv": 20,
+    "semanticscholar": 20,
+    "aminer": 20,
+    "cnki": 1,
+    "pubmed": 20,
+    "clinicaltrials": 20
+  },
+  "dedup_count": 137,
+  "enrich_top": 0,
+  "results": [
+    {
+      "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+      "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "authors": [
+        "Yoav Benjamini",
+        "Yosef Hochberg"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B (Statistical Methodology)",
+      "year": 1995,
+      "cited_by_count": 111001,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/bmj.315.7109.629",
+      "title": "Bias in meta-analysis detected by a simple, graphical test",
+      "authors": [
+        "Matthias Egger",
+        "George Davey Smith",
+        "Martin Schneider",
+        "C. Minder"
+      ],
+      "venue": "BMJ",
+      "year": 1997,
+      "cited_by_count": 57361,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2127453",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/BMJ.315.7109.629",
+      "arxiv_id": "",
+      "title": "Bias in meta-analysis detected by a simple, graphical test",
+      "authors": [
+        "M. Egger",
+        "G. Smith",
+        "Martin Schneider",
+        "C. Minder"
+      ],
+      "venue": "British medical journal",
+      "year": 1997,
+      "cited_by_count": 52450,
+      "influential_cite_count": 2358,
+      "reference_count": 87,
+      "tldr": "Funnel plots, plots of the trials' effect estimates against sample size, are skewed and asymmetrical in the presence of publication bias and other biases Funnel plot asymmetry, measured by regression analysis, predicts discordance of results when meta-analyses are compared with single large trials.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2127453",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Funnel plots, plots of the trials' effect estimates against sample size, are skewed and asymmetrical in the presence of publication bias and other biases Funnel plot asymmetry, measured by regression analysis, predicts discordance of results when meta-analyses are compared with single large trials.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/bf02310555",
+      "title": "Coefficient Alpha and the Internal Structure of Tests",
+      "authors": [
+        "Lee J. Cronbach"
+      ],
+      "venue": "Psychometrika",
+      "year": 1951,
+      "cited_by_count": 43745,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/BF02310555.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3758/brm.41.4.1149",
+      "title": "Statistical power analyses using G*Power 3.1: Tests for correlation and regression analyses",
+      "authors": [
+        "Franz Faul",
+        "Edgar Erdfelder",
+        "Axel Buchner",
+        "Albert-Georg Lang"
+      ],
+      "venue": "Behavior Research Methods",
+      "year": 2009,
+      "cited_by_count": 37226,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "oa_url": "https://link.springer.com/content/pdf/10.3758/BRM.41.4.1149.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/2297968",
+      "title": "Some Tests of Specification for Panel Data: Monte Carlo Evidence and an Application to Employment Equations",
+      "authors": [
+        "Manuel Arellano",
+        "Stephen Bond"
+      ],
+      "venue": "The Review of Economic Studies",
+      "year": 1991,
+      "cited_by_count": 33279,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/1913236",
+      "title": "Co-Integration and Error Correction: Representation, Estimation, and Testing",
+      "authors": [
+        "Robert F. Engle",
+        "C. W. J. Granger"
+      ],
+      "venue": "Econometrica",
+      "year": 1987,
+      "cited_by_count": 32123,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/1912934",
+      "title": "A Heteroskedasticity-Consistent Covariance Matrix Estimator and a Direct Test for Heteroskedasticity",
+      "authors": [
+        "Halbert White"
+      ],
+      "venue": "Econometrica",
+      "year": 1980,
+      "cited_by_count": 26338,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 1272,
+      "reference_count": 25,
+      "quality_flag": null
+    },
+    {
+      "doi": "10.18637/jss.v082.i13",
+      "title": "lmerTest Package: Tests in Linear Mixed Effects Models",
+      "authors": [
+        "Alexandra Kuznetsova",
+        "Per B. Brockhoff",
+        "Rune Haubo Bojesen Christensen"
+      ],
+      "venue": "Journal of Statistical Software",
+      "year": 2017,
+      "cited_by_count": 24247,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://www.jstatsoft.org/index.php/jss/article/view/v082i13/v82i13.pdf",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/BIOMET/52.3-4.591",
+      "arxiv_id": "",
+      "title": "An Analysis of Variance Test for Normality (Complete Samples)",
+      "authors": [
+        "S. Shapiro",
+        "M. Wilk"
+      ],
+      "venue": "",
+      "year": 1965,
+      "cited_by_count": 23391,
+      "influential_cite_count": 1277,
+      "reference_count": 26,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/3001478",
+      "title": "Multiple Range and Multiple F Tests",
+      "authors": [
+        "David B. Duncan"
+      ],
+      "venue": "Biometrics",
+      "year": 1955,
+      "cited_by_count": 23258,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/4615733",
+      "title": "A Simple Sequentially Rejective Multiple Test Procedure",
+      "authors": [
+        "Sture Holm"
+      ],
+      "venue": "Scandinavian Journal of Statistics",
+      "year": 1979,
+      "cited_by_count": 21874,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex",
+        "semanticscholar"
+      ],
+      "influential_cite_count": 2331,
+      "reference_count": 6,
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/bioinformatics/14.9.817",
+      "title": "MODELTEST: testing the model of DNA substitution.",
+      "authors": [
+        "David Posada",
+        "Keith A. Crandall"
+      ],
+      "venue": "Bioinformatics",
+      "year": 1998,
+      "cited_by_count": 20131,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/jae.616",
+      "title": "Bounds testing approaches to the analysis of level relationships",
+      "authors": [
+        "M. Hashem Pesaran",
+        "Yongcheol Shin",
+        "Richard J. Smith"
+      ],
+      "venue": "Journal of Applied Econometrics",
+      "year": 2001,
+      "cited_by_count": 20020,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/jcc.20035",
+      "title": "Development and testing of a general amber force field",
+      "authors": [
+        "Junmei Wang",
+        "Romain M. Wolf",
+        "James W. Caldwell",
+        "Peter A. Kollman",
+        "David A. Case"
+      ],
+      "venue": "Journal of Computational Chemistry",
+      "year": 2004,
+      "cited_by_count": 19967,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/biomet/52.3-4.591",
+      "title": "An analysis of variance test for normality (complete samples)",
+      "authors": [
+        "Samuel S. Shapiro",
+        "M. B. Wilk"
+      ],
+      "venue": "Biometrika",
+      "year": 1965,
+      "cited_by_count": 19750,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/1913827",
+      "title": "Specification Tests in Econometrics",
+      "authors": [
+        "Jerry A. Hausman"
+      ],
+      "venue": "Econometrica",
+      "year": 1978,
+      "cited_by_count": 18725,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/0033-2909.88.3.588",
+      "title": "Significance tests and goodness of fit in the analysis of covariance structures.",
+      "authors": [
+        "Peter M. Bentler",
+        "Douglas G. Bonett"
+      ],
+      "venue": "Psychological Bulletin",
+      "year": 1980,
+      "cited_by_count": 18480,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/biomet/75.2.335",
+      "title": "Testing for a unit root in time series regression",
+      "authors": [
+        "Peter C.B. Phillips",
+        "Pierre Perrón"
+      ],
+      "venue": "Biometrika",
+      "year": 1988,
+      "cited_by_count": 18147,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/1907187",
+      "title": "Nonparametric Tests Against Trend",
+      "authors": [
+        "Henry B. Mann"
+      ],
+      "venue": "Econometrica",
+      "year": 1945,
+      "cited_by_count": 17158,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/2533446",
+      "arxiv_id": "",
+      "title": "Operating characteristics of a rank correlation test for publication bias.",
+      "authors": [
+        "C. Begg",
+        "M. Mazumdar"
+      ],
+      "venue": "Biometrics",
+      "year": 1994,
+      "cited_by_count": 16393,
+      "influential_cite_count": 800,
+      "reference_count": 15,
+      "tldr": "An adjusted rank correlation test is proposed as a technique for identifying publication bias in a meta-analysis, and its operating characteristics are evaluated via simulations, and the test statistic is a direct statistical analogue of the popular \"funnel-graph\".",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "An adjusted rank correlation test is proposed as a technique for identifying publication bias in a meta-analysis, and its operating characteristics are evaluated via simulations, and the test statistic is a direct statistical analogue of the popular \"funnel-graph\".",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/s0304-4076(03)00092-7",
+      "title": "Testing for unit roots in heterogeneous panels",
+      "authors": [
+        "Kyung So Im",
+        "M. Hashem Pesaran",
+        "Yongcheol Shin"
+      ],
+      "venue": "Journal of Econometrics",
+      "year": 2003,
+      "cited_by_count": 15166,
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://stars.library.ucf.edu/facultybib2000/3825",
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1214/AOMS/1177730491",
+      "arxiv_id": "",
+      "title": "On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other",
+      "authors": [
+        "H. B. Mann",
+        "D. Whitney"
+      ],
+      "venue": "",
+      "year": 1947,
+      "cited_by_count": 14728,
+      "influential_cite_count": 820,
+      "reference_count": 2,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-18/issue-1/On-a-Test-of-Whether-one-of-Two-Random-Variables/10.1214/aoms/1177730491.pdf",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/j.1532-5415.1991.tb01616.x",
+      "arxiv_id": "",
+      "title": "The Timed “Up & Go”: A Test of Basic Functional Mobility for Frail Elderly Persons",
+      "authors": [
+        "Diane Podsiadlo",
+        "S. Richardson"
+      ],
+      "venue": "Journal of The American Geriatrics Society",
+      "year": 1991,
+      "cited_by_count": 14717,
+      "influential_cite_count": 820,
+      "reference_count": 26,
+      "tldr": "This study evaluated a modified, timed version of the “Get‐Up and Go” Test (Mathias et al, 1986) in 60 patients referred to a Geriatric Day Hospital and suggested that the timed “Up & Go’ test is a reliable and valid test for quantifying functional mobility that may also be useful in following clinical change over time.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This study evaluated a modified, timed version of the “Get‐Up and Go” Test (Mathias et al, 1986) in 60 patients referred to a Geriatric Day Hospital and suggested that the timed “Up & Go’ test is a reliable and valid test for quantifying functional mobility that may also be useful in following clinical change over time.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1207/s15327906mbr0102_10",
+      "arxiv_id": "",
+      "title": "The Scree Test For The Number Of Factors.",
+      "authors": [
+        "R. Cattell"
+      ],
+      "venue": "Multivariate Behavioral Research",
+      "year": 1966,
+      "cited_by_count": 14125,
+      "influential_cite_count": 875,
+      "reference_count": 19,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/j.1558-5646.1989.tb04220.x",
+      "title": "ANALYZING TABLES OF STATISTICAL TESTS",
+      "authors": [
+        "William R. Rice"
+      ],
+      "venue": "Evolution",
+      "year": 1989,
+      "cited_by_count": 13899,
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "source": "openalex",
+      "type": "article",
+      "found_by": [
+        "openalex"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2139/SSRN.457280",
+      "arxiv_id": "",
+      "title": "A simple panel unit root test in the presence of cross-section dependence",
+      "authors": [
+        "M. Hashem",
+        "Pesaran",
+        "J. Breitung",
+        "Roger Moon",
+        "B. Perron",
+        "Ron P. Smith"
+      ],
+      "venue": "",
+      "year": 2007,
+      "cited_by_count": 12265,
+      "influential_cite_count": 1462,
+      "reference_count": 49,
+      "tldr": "",
+      "is_oa": true,
+      "oa_url": "https://doi.org/10.2139/ssrn.457280",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/0022-3514.74.6.1464",
+      "arxiv_id": "",
+      "title": "Measuring individual differences in implicit cognition: the implicit association test.",
+      "authors": [
+        "A. Greenwald",
+        "D. McGhee",
+        "Jordan L. K. Schwartz"
+      ],
+      "venue": "Journal of Personality and Social Psychology",
+      "year": 1998,
+      "cited_by_count": 11780,
+      "influential_cite_count": 1339,
+      "reference_count": 29,
+      "tldr": "An implicit association test (IAT) measures differential association of 2 target concepts with an attribute when instructions oblige highly associated categories to share a response key, and performance is faster than when less associated categories share a key.",
+      "is_oa": true,
+      "oa_url": "https://meth.psychopen.eu/index.php/meth/article/download/7155/7155.pdf",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "An implicit association test (IAT) measures differential association of 2 target concepts with an attribute when instructions oblige highly associated categories to share a response key, and performance is faster than when less associated categories share a key.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/J.1360-0443.1991.TB01879.X",
+      "arxiv_id": "",
+      "title": "The Fagerström Test for Nicotine Dependence: a revision of the Fagerström Tolerance Questionnaire.",
+      "authors": [
+        "T. Heatherton",
+        "L. Kozlowski",
+        "R. Frecker",
+        "K. Fagerström"
+      ],
+      "venue": "British Journal of Addiction",
+      "year": 1991,
+      "cited_by_count": 10951,
+      "influential_cite_count": 1068,
+      "reference_count": 31,
+      "tldr": "A revision of the FTQ: the Fagerström Test for Nicotine Dependence (FTND), which found that a revised scoring of time to the first cigarette of the day (TTF) and number of cigarettes smoked per day (CPD) improved the scale.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A revision of the FTQ: the Fagerström Test for Nicotine Dependence (FTND), which found that a revised scoring of time to the first cigarette of the day (TTF) and number of cigarettes smoked per day (CPD) improved the scale.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2136/SSSAJ1978.03615995004200030009X",
+      "arxiv_id": "",
+      "title": "Development of a DTPA soil test for zinc, iron, manganese and copper",
+      "authors": [
+        "W. Lindsay",
+        "W. A. Norvell"
+      ],
+      "venue": "",
+      "year": 1978,
+      "cited_by_count": 10333,
+      "influential_cite_count": 1290,
+      "reference_count": 0,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/1082-989X.7.1.83",
+      "arxiv_id": "",
+      "title": "A comparison of methods to test mediation and other intervening variable effects.",
+      "authors": [
+        "D. Mackinnon",
+        "C. Lockwood",
+        "J. Hoffman",
+        "S. West",
+        "Virgil L. Sheets"
+      ],
+      "venue": "Psychological methods",
+      "year": 2002,
+      "cited_by_count": 9606,
+      "influential_cite_count": 444,
+      "reference_count": 60,
+      "tldr": "A Monte Carlo study compared 14 methods to test the statistical significance of the intervening variable effect and found two methods based on the distribution of the product and 2 difference-in-coefficients methods have the most accurate Type I error rates and greatest statistical power.",
+      "is_oa": true,
+      "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2819363",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "A Monte Carlo study compared 14 methods to test the statistical significance of the intervening variable effect and found two methods based on the distribution of the product and 2 difference-in-coefficients methods have the most accurate Type I error rates and greatest statistical power.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1080/01621459.1988.10478722",
+      "arxiv_id": "",
+      "title": "A Test of Missing Completely at Random for Multivariate Data with Missing Values",
+      "authors": [
+        "R. Little"
+      ],
+      "venue": "",
+      "year": 1988,
+      "cited_by_count": 8889,
+      "influential_cite_count": 1367,
+      "reference_count": 14,
+      "tldr": "",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/0022-3514.90.5.751",
+      "arxiv_id": "",
+      "title": "A meta-analytic test of intergroup contact theory.",
+      "authors": [
+        "T. Pettigrew",
+        "Linda R. Tropp"
+      ],
+      "venue": "Journal of Personality and Social Psychology",
+      "year": 2006,
+      "cited_by_count": 8336,
+      "influential_cite_count": 511,
+      "reference_count": 147,
+      "tldr": "The meta-analysis finds that intergroup contact typically reduces intergroup prejudice, and this result suggests that contact theory, devised originally for racial and ethnic encounters, can be extended to other groups.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "Review",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The meta-analysis finds that intergroup contact typically reduces intergroup prejudice, and this result suggests that contact theory, devised originally for racial and ethnic encounters, can be extended to other groups.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/0022-3514.69.5.797",
+      "arxiv_id": "",
+      "title": "Stereotype threat and the intellectual test performance of African Americans.",
+      "authors": [
+        "C. Steele",
+        "Joshua Aronson"
+      ],
+      "venue": "Journal of Personality and Social Psychology",
+      "year": 1995,
+      "cited_by_count": 8264,
+      "influential_cite_count": 693,
+      "reference_count": 39,
+      "tldr": "The role of stereotype vulnerability in the standardized test performance of ability-stigmatized groups is discussed and mere salience of the stereotype could impair Blacks' performance even when the test was not ability diagnostic.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "The role of stereotype vulnerability in the standardized test performance of ability-stigmatized groups is discussed and mere salience of the stereotype could impair Blacks' performance even when the test was not ability diagnostic.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5555/2503308.2188410",
+      "arxiv_id": "",
+      "title": "A Kernel Two-Sample Test",
+      "authors": [
+        "A. Gretton",
+        "Karsten M. Borgwardt",
+        "M. Rasch",
+        "B. Schölkopf",
+        "Alex Smola"
+      ],
+      "venue": "Journal of machine learning research",
+      "year": 2012,
+      "cited_by_count": 6765,
+      "influential_cite_count": 1267,
+      "reference_count": 97,
+      "tldr": "This work proposes a framework for analyzing and comparing distributions, which is used to construct statistical tests to determine if two samples are drawn from different distributions, and presents two distribution free tests based on large deviation bounds for the maximum mean discrepancy (MMD).",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "This work proposes a framework for analyzing and comparing distributions, which is used to construct statistical tests to determine if two samples are drawn from different distributions, and presents two distribution free tests based on large deviation bounds for the maximum mean discrepancy (MMD).",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.4324/9781003028154-18",
+      "title": "The Chi-Square Test of Independence",
+      "authors": [
+        "Ronald D. Yockey"
+      ],
+      "venue": "SPSS Demystified",
+      "year": 2023,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6218ce6f5aee126c0fb8e325",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.socscimed.2021.114523",
+      "title": "Sample Sizes for Saturation in Qualitative Research: A Systematic Review of Empirical Tests",
+      "authors": [
+        "Monique Hennink"
+      ],
+      "venue": "SOCIAL SCIENCE & MEDICINE",
+      "year": 2022,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61962eaa5244ab9dcb857fe8",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arxiv.2006.10726",
+      "title": "Tent: Fully Test-time Adaptation by Entropy Minimization",
+      "authors": [
+        "Dequan Wang"
+      ],
+      "venue": "ICLR 2021",
+      "year": 2021,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eede0b791e0116a23aafece",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Experimental Tests of the Endowment Effect and the Coase Theorem",
+      "authors": [
+        "John A. List"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5ea013699fced0a24b9da368",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1001/jama.2020.8259",
+      "title": "Interpreting Diagnostic Tests for SARS-CoV-2.",
+      "authors": [
+        "Nandini Sethuraman"
+      ],
+      "venue": "",
+      "year": 2020,
+      "cited_by_count": 3000,
+      "cited_bucket": "1001-5000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5eb3debe9fced0a24bcf64ac",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "arxiv_id": "",
+      "title": "Tent: Fully Test-Time Adaptation by Entropy Minimization",
+      "authors": [
+        "Dequan Wang",
+        "Evan Shelhamer",
+        "Shaoteng Liu",
+        "B. Olshausen",
+        "Trevor Darrell"
+      ],
+      "venue": "International Conference on Learning Representations",
+      "year": 2021,
+      "cited_by_count": 2051,
+      "influential_cite_count": 569,
+      "reference_count": 64,
+      "tldr": "Tent reduces generalization error for image classification on corrupted ImageNet and CIFAR-10/100 and reaches a new state-of-the-art error on ImageNet-C, and optimize the model for confidence as measured by the entropy of its predictions.",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "Tent reduces generalization error for image classification on corrupted ImageNet and CIFAR-10/100 and reaches a new state-of-the-art error on ImageNet-C, and optimize the model for confidence as measured by the entropy of its predictions.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arXiv.2501.19393",
+      "arxiv_id": "2501.19393",
+      "title": "s1: Simple test-time scaling",
+      "authors": [
+        "Niklas Muennighoff",
+        "Zitong Yang",
+        "Weijia Shi",
+        "Xiang Lisa Li",
+        "Fei-Fei Li",
+        "Hanna Hajishirzi",
+        "Luke S. Zettlemoyer",
+        "Percy Liang",
+        "Emmanuel J. Candès",
+        "Tatsunori Hashimoto"
+      ],
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "year": 2025,
+      "cited_by_count": 1411,
+      "influential_cite_count": 207,
+      "reference_count": 98,
+      "tldr": "After supervised finetuning the Qwen2.5-32B-Instruct language model on s1K and equipping it with budget forcing, the model s1-32B exceeds o1-preview on competition math questions by up to 27% (MATH and AIME24).",
+      "is_oa": false,
+      "oa_url": "",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar"
+      ],
+      "abstract": "After supervised finetuning the Qwen2.5-32B-Instruct language model on s1K and equipping it with budget forcing, the model s1-32B exceeds o1-preview on competition math questions by up to 27% (MATH and AIME24).",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1037/met0000476",
+      "arxiv_id": "",
+      "title": "Comparing network structures on three aspects: A permutation test.",
+      "authors": [
+        "Claudia D van Borkulo",
+        "R. van Bork",
+        "L. Boschloo",
+        "J. Kossakowski",
+        "Pia Tio",
+        "R. Schoevers",
+        "D. Borsboom",
+        "L. Waldorp"
+      ],
+      "venue": "Psychological methods",
+      "year": 2022,
+      "cited_by_count": 1398,
+      "influential_cite_count": 137,
+      "reference_count": 55,
+      "tldr": "The Network Comparison Test (NCT) is presented, which uses resampling-based permutation testing to compare network structures from two independent, cross-sectional data sets on invariance of 1) network structure, 2) edge (connection) strength, and 3) global strength.",
+      "is_oa": true,
+      "oa_url": "https://research.tilburguniversity.edu/en/publications/cc68b526-678d-4a63-b1b0-42bf92b3eb6d",
+      "source": "semanticscholar",
+      "type": "JournalArticle",
+      "found_by": [
+        "semanticscholar",
+        "aminer"
+      ],
+      "abstract": "The Network Comparison Test (NCT) is presented, which uses resampling-based permutation testing to compare network structures from two independent, cross-sectional data sets on invariance of 1) network structure, 2) edge (connection) strength, and 3) global strength.",
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/026553228700400202",
+      "title": "An Alternative to Multiple Choice Vocabulary Tests",
+      "authors": [
+        "Paul Meara"
+      ],
+      "venue": "Vocabulary",
+      "year": 2026,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a593b7602d9702eb9e8c",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1103/physrevd.112.084080",
+      "title": "Tests of General Relativity with GWTC-3",
+      "authors": [
+        "R. Abbott"
+      ],
+      "venue": "PHYSICAL REVIEW D",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "61b80b745244ab9dcbf498a0",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1071/9781486303977",
+      "title": "Interpreting Soil Test Results",
+      "authors": [
+        "Pam Hazelton"
+      ],
+      "venue": "",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64a7f4d3d68f896efa57d37f",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "TTRL: Test-Time Reinforcement Learning",
+      "authors": [
+        "Yuxin Zuo"
+      ],
+      "venue": "NeurIPS 2025",
+      "year": 2025,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "680848f9163c01c8505179f5",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.2307/2331945",
+      "title": "ON THE USE AND INTERPRETATION OF CERTAIN TEST CRITERIA FOR PURPOSES OF STATISTICAL INFERENCE",
+      "authors": [
+        "J Neyman"
+      ],
+      "venue": "Joint Statistical Papers",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9a138b7602d9702a26c6a",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41567-021-01478-8",
+      "title": "Test of Lepton Universality in Beauty-Quark Decays",
+      "authors": [
+        "R. Aaij"
+      ],
+      "venue": "Nature Physics",
+      "year": 2023,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6059ce2691e011ed950a5c79",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5334/irsp.82",
+      "title": "Why Psychologists Should by Default Use Welch'S T-Test Instead of Student'S T-Test",
+      "authors": [
+        "Marie Delacre"
+      ],
+      "venue": "International Review of Social Psychology",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f8a2ac9db0c4ff23164d865",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/cvpr52688.2022.00706",
+      "title": "Continual Test-Time Domain Adaptation",
+      "authors": [
+        "Qin Wang"
+      ],
+      "venue": "2022 IEEE/CVF CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR)",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "6241273e5aee126c0f292c09",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arxiv.2204.02610",
+      "title": "Efficient Test-Time Model Adaptation Without Forgetting.",
+      "authors": [
+        "Shuaicheng Niu"
+      ],
+      "venue": "INTERNATIONAL CONFERENCE ON MACHINE LEARNING, VOL 162",
+      "year": 2022,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "624e569e5aee126c0f7f8f75",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1038/s41579-020-00461-z",
+      "title": "Considerations for Diagnostic COVID-19 Tests.",
+      "authors": [
+        "Olivier Vandenberg"
+      ],
+      "venue": "Nature Reviews Microbiology",
+      "year": 2021,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5f8ac8369fced0a24b6cffcb",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.48550/arxiv.2002.12543",
+      "title": "Metamorphic Testing: A New Approach for Generating Next Test Cases.",
+      "authors": [
+        "T. Y. Chen"
+      ],
+      "venue": "CoRR",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "53e9b0fbb7602d9703b75ec5",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "title": "Test No. 471: Bacterial Reverse Mutation Test",
+      "authors": [],
+      "venue": "OECD Guidelines for the Testing of Chemicals, Section 4",
+      "year": 2020,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64974c46d68f896efa6a38b8",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1787/9789264069961-en",
+      "title": "Test No. 203: Fish, Acute Toxicity Test",
+      "authors": [],
+      "venue": "OECD Guidelines for the Testing of Chemicals, Section 2",
+      "year": 2019,
+      "cited_by_count": 600,
+      "cited_bucket": "201-1000",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "64975185d68f896efa6d4349",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1109/ita50056.2020.9244948",
+      "title": "Safe Testing.",
+      "authors": [
+        "Peter Grunwald"
+      ],
+      "venue": "JOURNAL OF THE ROYAL STATISTICAL SOCIETY SERIES B-STATISTICAL METHODOLOGY",
+      "year": 2024,
+      "cited_by_count": 125,
+      "cited_bucket": "51-200",
+      "abstract": "",
+      "is_oa": false,
+      "oa_url": null,
+      "source": "aminer",
+      "type": "journal",
+      "aminer_id": "5d0b595b3a55acccec7854aa",
+      "matched_phrase": "test",
+      "found_by": [
+        "aminer"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.22427/ntp-data-test-test-test",
+      "title": "TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST",
+      "authors": [
+        ""
+      ],
+      "venue": "Chemical Effects in Biological Systems (CEBS)",
+      "year": 2019,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5555/987654",
+      "title": "test test test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 1,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.2139/ssrn.2821649",
+      "title": "test, test, test, test, test, test, test, test, test, test, test, test, test,",
+      "authors": [
+        "Griva, Anastasia"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "posted-content",
+      "source": "crossref",
+      "abstract": "<jats:p>test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, test, ",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.6019/s-bsst2328",
+      "title": "Test Test Test Test Test Test",
+      "authors": [
+        "TEst"
+      ],
+      "venue": "BioStudies Database",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dataset",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.2139/ssrn.2168983",
+      "title": "Test Test Test Test Test Test Test",
+      "authors": [
+        "Jackson, Addie"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.2139/ssrn.2323844",
+      "title": "Addie Test Test Test Addie Test Test Test",
+      "authors": [
+        "Jackson, Addie"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.5555/funlittlebook",
+      "title": "test test test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "edited-book",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.5555/akfjlae34",
+      "title": "Test Test Test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.70675/55085c33z08f6z4a7bzb9f5zd13e9b9a1e5e",
+      "title": "Test test test",
+      "authors": [
+        "",
+        "Pink, Thomas"
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "dissertation",
+      "source": "crossref",
+      "abstract": "<jats:p xml:lang=\"fr\">Test test</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.36288/testingtesttest002",
+      "title": "Test test test",
+      "authors": [
+        ""
+      ],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "standard",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.62184/tst.1234567",
+      "title": "test test",
+      "authors": [],
+      "venue": "test",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1007/978-1-4302-0420-6_8",
+      "title": "Test, Test, Test, and Test Again",
+      "authors": [],
+      "venue": "Beginning PL/SQL",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.5555/afadgvb1",
+      "title": "This is such a test",
+      "authors": [
+        "Farley, Isaac"
+      ],
+      "venue": "Test Test Test",
+      "year": 2024,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "<jats:p>This is one of the best abstracts I have ever read.</jats:p>",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.25267/test",
+      "title": "Test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.52144/abcd1234",
+      "title": "Test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.70780/0005ban",
+      "title": "Test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.2139/ssrn.2082156",
+      "title": "Test Test Test Test Submission",
+      "authors": [
+        "Jackson, Addie"
+      ],
+      "venue": "SSRN Electronic Journal",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal-article",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.70879/test01",
+      "title": "Test",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "journal",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "10.5555/chapter2iruqo4i",
+      "title": "Test",
+      "authors": [],
+      "venue": "Test",
+      "year": 2026,
+      "cited_by_count": 0,
+      "reference_count": 52,
+      "type": "book-chapter",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3403/00781880",
+      "title": "Power electronic capacitors",
+      "authors": [],
+      "venue": "",
+      "year": null,
+      "cited_by_count": 0,
+      "reference_count": 0,
+      "type": "standard",
+      "source": "crossref",
+      "abstract": "",
+      "found_by": [
+        "crossref"
+      ],
+      "quality_flag": "low_quality"
+    },
+    {
+      "doi": "arXiv:1101.4081v3",
+      "arxiv_id": "1101.4081v3",
+      "title": "A simple way to speedup Gauss Elimination",
+      "authors": [
+        "Sivaram Ambikasaran"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1101.4081v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1145/3278186.3278190",
+      "arxiv_id": "1807.10953v2",
+      "title": "Goal-Oriented Mutation Testing with Focal Methods",
+      "authors": [
+        "Sten Vercammen",
+        "Mohammad Ghafari",
+        "Serge Demeyer",
+        "Markus Borg"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1807.10953v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1202.4527v1",
+      "arxiv_id": "1202.4527v1",
+      "title": "Study Paper on Test Case generation for GUI Based Testing",
+      "authors": [
+        "A. Isabella",
+        "Emi Retna"
+      ],
+      "venue": "arXiv",
+      "year": 2012,
+      "pdf_url": "https://arxiv.org/pdf/1202.4527v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2311.05033v2",
+      "arxiv_id": "2311.05033v2",
+      "title": "Distribution-free tests for lossless feature selection in classification and regression",
+      "authors": [
+        "László Györfi",
+        "Tamás Linder",
+        "Harro Walk"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2311.05033v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2402.18105v3",
+      "arxiv_id": "2402.18105v3",
+      "title": "JEL ratio test for independence between a continuous and a categorical random variable",
+      "authors": [
+        "Saparya Suresh",
+        "Sudheesh K. Kattumannil"
+      ],
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf_url": "https://arxiv.org/pdf/2402.18105v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1801.00973v1",
+      "arxiv_id": "1801.00973v1",
+      "title": "A New Wald Test for Hypothesis Testing Based on MCMC outputs",
+      "authors": [
+        "Yong Li",
+        "Xiaobin Liu",
+        "Jun Yu",
+        "Tao Zeng"
+      ],
+      "venue": "arXiv",
+      "year": 2018,
+      "pdf_url": "https://arxiv.org/pdf/1801.00973v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0712.3825v1",
+      "arxiv_id": "0712.3825v1",
+      "title": "Tests of Machine Intelligence",
+      "authors": [
+        "Shane Legg",
+        "Marcus Hutter"
+      ],
+      "venue": "arXiv",
+      "year": 2007,
+      "pdf_url": "https://arxiv.org/pdf/0712.3825v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2506.02315v1",
+      "arxiv_id": "2506.02315v1",
+      "title": "A Data-Based Architecture for Flight Test without Test Points",
+      "authors": [
+        "D. Isaiah Harp",
+        "Joshua Ott",
+        "John Alora",
+        "Dylan Asmar"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.02315v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1008.0063v1",
+      "arxiv_id": "1008.0063v1",
+      "title": "Evolutionary Approach to Test Generation for Functional BIST",
+      "authors": [
+        "Y. A. Skobtsov",
+        "D. E. Ivanov",
+        "V. Y. Skobtsov",
+        "R. Ubar",
+        "J. Raik"
+      ],
+      "venue": "arXiv",
+      "year": 2010,
+      "pdf_url": "https://arxiv.org/pdf/1008.0063v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2506.16732v1",
+      "arxiv_id": "2506.16732v1",
+      "title": "On Training-Test (Mis)alignment in Unsupervised Combinatorial Optimization: Observation, Empirical Exploration, and Analysis",
+      "authors": [
+        "Fanchen Bu",
+        "Kijung Shin"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "pdf_url": "https://arxiv.org/pdf/2506.16732v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2103.04578v3",
+      "arxiv_id": "2103.04578v3",
+      "title": "Testing Autonomous Systems with Believed Equivalence Refinement",
+      "authors": [
+        "Chih-Hong Cheng",
+        "Rongjie Yan"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2103.04578v3",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.5121/ijcnc.2011.3402",
+      "arxiv_id": "1108.1351v1",
+      "title": "Fast k-means algorithm clustering",
+      "authors": [
+        "Raied Salman",
+        "Vojislav Kecman",
+        "Qi Li",
+        "Robert Strack",
+        "Erik Test"
+      ],
+      "venue": "arXiv",
+      "year": 2011,
+      "pdf_url": "https://arxiv.org/pdf/1108.1351v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2303.09755v1",
+      "arxiv_id": "2303.09755v1",
+      "title": "On the Effect of Instrumentation on Test Flakiness",
+      "authors": [
+        "Shawn Rasheed",
+        "Jens Dietrich",
+        "Amjed Tahir"
+      ],
+      "venue": "arXiv",
+      "year": 2023,
+      "pdf_url": "https://arxiv.org/pdf/2303.09755v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2601.16175v2",
+      "arxiv_id": "2601.16175v2",
+      "title": "Learning to Discover at Test Time",
+      "authors": [
+        "Mert Yuksekgonul",
+        "Daniel Koceja",
+        "Xinhao Li",
+        "Federico Bianchi",
+        "Jed McCaleb",
+        "Xiaolong Wang",
+        "Jan Kautz",
+        "Yejin Choi",
+        "James Zou",
+        "Carlos Guestrin",
+        "Yu Sun"
+      ],
+      "venue": "arXiv",
+      "year": 2026,
+      "pdf_url": "https://arxiv.org/pdf/2601.16175v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2203.09989v2",
+      "arxiv_id": "2203.09989v2",
+      "title": "Verification of colorable hypergraph states with stabilizer test",
+      "authors": [
+        "Hong Tao",
+        "Xiaoqian Zhang",
+        "Lei Shao",
+        "Xiaoqing Tan"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.09989v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2108.00503v1",
+      "arxiv_id": "2108.00503v1",
+      "title": "A new goodness of fit test for gamma distribution with censored observations",
+      "authors": [
+        "Vaisakh K. M.",
+        "Sreedevi E. P.",
+        "Sudheesh K. Kattumannil"
+      ],
+      "venue": "arXiv",
+      "year": 2021,
+      "pdf_url": "https://arxiv.org/pdf/2108.00503v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2203.10405v2",
+      "arxiv_id": "2203.10405v2",
+      "title": "IID Time Series Testing",
+      "authors": [
+        "Andrey Sarantsev"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2203.10405v2",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:0905.4937v4",
+      "arxiv_id": "0905.4937v4",
+      "title": "A criterion for hypothesis testing for stationary processes",
+      "authors": [
+        "Daniil Ryabko"
+      ],
+      "venue": "arXiv",
+      "year": 2009,
+      "pdf_url": "https://arxiv.org/pdf/0905.4937v4",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:1705.04996v1",
+      "arxiv_id": "1705.04996v1",
+      "title": "Testing Microfluidic Fully Programmable Valve Arrays (FPVAs)",
+      "authors": [
+        "Chunfeng Liu",
+        "Bing Li",
+        "Bhargab B. Bhattacharya",
+        "Krishnendu Chakrabarty",
+        "Tsung-Yi Ho",
+        "Ulf Schlichtmann"
+      ],
+      "venue": "arXiv",
+      "year": 2017,
+      "pdf_url": "https://arxiv.org/pdf/1705.04996v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "arXiv:2207.00335v1",
+      "arxiv_id": "2207.00335v1",
+      "title": "Conditional Variable Selection for Intelligent Test",
+      "authors": [
+        "Yiwen Liao",
+        "Tianjie Ge",
+        "Raphaël Latty",
+        "Bin Yang"
+      ],
+      "venue": "arXiv",
+      "year": 2022,
+      "pdf_url": "https://arxiv.org/pdf/2207.00335v1",
+      "cited_by_count": 0,
+      "source": "arxiv",
+      "type": "preprint",
+      "found_by": [
+        "arxiv"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1002/jmri.70523",
+      "pmid": "42649122",
+      "title": "Noninvasive Profiling of the Glioma Vascular Microenvironment via 7T MRI: Decoding Angiogenic Signatures for Isocitrate Dehydrogenase and World Health Organization Grade Differentiation.",
+      "authors": [
+        "Wang M",
+        "Liu G",
+        "Feng S",
+        "Bian X",
+        "Yuan L",
+        "Wang S",
+        "Ma X",
+        "Zhong Y",
+        "Yu X",
+        "Wang Z",
+        "Ma L",
+        "Lou X"
+      ],
+      "venue": "Journal of magnetic resonance imaging : JMRI",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1053-1807",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/hae.70388",
+      "pmid": "42649121",
+      "title": "Population-Level Real-World Healthcare Costs in Men and Women With Haemophilia A.",
+      "authors": [
+        "Hirniak S",
+        "Drover SSM",
+        "Edginton AN",
+        "Hajducek DM",
+        "Iorio A",
+        "Alsabbagh MW",
+        "Wong WWL"
+      ],
+      "venue": "Haemophilia : the official journal of the World Federation of Hemophilia",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1351-8216",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/hex.70845",
+      "pmid": "42649119",
+      "title": "Does Current United Kingdom Childhood Cancer Research Address the James Lind Alliance Children's Cancer Priority Setting Partnership Priorities? A Grant Mapping Study.",
+      "authors": [
+        "Bish A",
+        "Gibson F",
+        "Brownsdon A",
+        "Chisholm J",
+        "Harris J",
+        "Hollis R",
+        "Phillips B",
+        "Aldiss S"
+      ],
+      "venue": "Health expectations : an international journal of public participation in health care and health policy",
+      "year": 2026,
+      "volume": "29",
+      "issue": "5",
+      "pages": "e70845",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1369-6513",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1093/bib/bbag436",
+      "pmid": "42649115",
+      "title": "FireProtASR 2.0: evolution-guided Design of Protein Ancestors and Successors with phylogenetics and machine learning.",
+      "authors": [
+        "Kohout P",
+        "Lacko D",
+        "Musil M",
+        "Borko S",
+        "Stepanek M",
+        "Velecky J",
+        "Kabourek P",
+        "Khan RT",
+        "Rosinska M",
+        "Damborsky J",
+        "Mazurenko S",
+        "Bednar D"
+      ],
+      "venue": "Briefings in bioinformatics",
+      "year": 2026,
+      "volume": "27",
+      "issue": "4",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1467-5463",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/dom.71289",
+      "pmid": "42649111",
+      "title": "Improving Short- and Long-Term Type 2 Diabetes Risk Prediction for Middle-Aged British Adults.",
+      "authors": [
+        "Huang C",
+        "Lopes A",
+        "Britton A"
+      ],
+      "venue": "Diabetes, obesity & metabolism",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1462-8902",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/hex.70829",
+      "pmid": "42649110",
+      "title": "Can It Happen Again? Using Co-Produced Theatre to Explore the Challenges Faced by Couples Considering Pregnancy After a De Novo Genetic Diagnosis in a Child.",
+      "authors": [
+        "Kay A",
+        "Goriely A",
+        "Gummow A",
+        "Hinton L",
+        "Patel A",
+        "Price-Nowak M",
+        "Ramachandrappa S",
+        "Wells J",
+        "Wicks F",
+        "Jeffery M"
+      ],
+      "venue": "Health expectations : an international journal of public participation in health care and health policy",
+      "year": 2026,
+      "volume": "29",
+      "issue": "5",
+      "pages": "e70829",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1369-6513",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.prosdent.2026.06.038",
+      "pmid": "42649011",
+      "title": "Goal-oriented digital orthodontic intrusion system for supra-erupted maxillary molars with temporary anchorage devices: A technique report.",
+      "authors": [
+        "Feng X",
+        "Sun A",
+        "Weng L",
+        "Xue L",
+        "Lin J",
+        "Zhu H"
+      ],
+      "venue": "The Journal of prosthetic dentistry",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0022-3913",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.clinthera.2026.07.016",
+      "pmid": "42648995",
+      "title": "Optimized Cut-off Value of QuantiFERON-TB Gold Plus Test for Diagnosis of Ocular Tuberculosis in Endemic Population.",
+      "authors": [
+        "Tungsattayathitthan U",
+        "Leesakul A",
+        "Boonsopon S",
+        "Tesavibul N",
+        "Dharakul T",
+        "Choopong P"
+      ],
+      "venue": "Clinical therapeutics",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0149-2918",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jvoice.2026.08.016",
+      "pmid": "42648990",
+      "title": "Efficacy and Safety of Photoangiolytic Laser of Phonotraumatic Lesions in Professional Voice Users: A Scoping Review.",
+      "authors": [
+        "Wu P",
+        "Jung H",
+        "Chung S",
+        "Chadwick KA"
+      ],
+      "venue": "Journal of voice : official journal of the Voice Foundation",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "issn": "0892-1997",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.jcct.2026.07.011",
+      "pmid": "42648974",
+      "title": "Long-term prognosis of coronary artery calcium scoring on top of cardiac SPECT in stable symptomatic patients.",
+      "authors": [
+        "Kamerman M",
+        "van Dijk JD",
+        "Timmer JR",
+        "Ottervanger JP",
+        "Knollema S",
+        "Sidorenkov G",
+        "Vliegenthart R",
+        "Mouden M"
+      ],
+      "venue": "Journal of cardiovascular computed tomography",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.soncn.2026.152351",
+      "pmid": "42648947",
+      "title": "Navigating the Pediatric Cancer Survivorship Experience Through the Perspectives of Adolescents: An AI-Assisted Photovoice Qualitative Study.",
+      "authors": [
+        "Ozdemir-Koyu H",
+        "Kilicarslan E"
+      ],
+      "venue": "Seminars in oncology nursing",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "152351",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0749-2081",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.euf.2026.07.012",
+      "pmid": "42648940",
+      "title": "The 24-mo Outcomes from the Noninferiority Randomised Controlled Trial of Surgery for Men with Urodynamic Stress Incontinence After Prostate Surgery (MASTER).",
+      "authors": [
+        "Constable L",
+        "Drake MJ",
+        "Cooper D",
+        "MacLennan G",
+        "Harding C",
+        "Mundy A",
+        "McCormack K",
+        "Norrie J",
+        "Ramsay C",
+        "Smith R",
+        "Cotterill N",
+        "Kilonzo M",
+        "Abrams P",
+        "MASTER trial team"
+      ],
+      "venue": "European urology focus",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.sapharm.2026.08.005",
+      "pmid": "42648938",
+      "title": "Pharmaceutical pictograms: From fragmented evidence to accessible care.",
+      "authors": [
+        "Ferreira-Alfaya FJ",
+        "Bas-Sarmiento P",
+        "Fernández-Gutiérrez M",
+        "Zarzuelo-Romero MJ"
+      ],
+      "venue": "Research in social & administrative pharmacy : RSAP",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1551-7411",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.acra.2026.07.078",
+      "pmid": "42648924",
+      "title": "Nondiagnostic Lung Biopsies: Radiologist Performance in Prediction of Malignancy.",
+      "authors": [
+        "Altmayer S",
+        "Guo HH",
+        "Lin M",
+        "Vigneault DM",
+        "You H",
+        "Patel P",
+        "Shaller B",
+        "Chang J",
+        "Free D",
+        "Yenepalli A",
+        "Choi HJ",
+        "Hochhegger B",
+        "Leung AN"
+      ],
+      "venue": "Academic radiology",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1076-6332",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1016/j.acra.2026.08.033",
+      "pmid": "42648920",
+      "title": "Prediction of Residual Axillary Lymph Node Metastasis Following Neoadjuvant Therapy for Breast Cancer: Habitat Radiomics Analysis Based on Breast MRI.",
+      "authors": [
+        "Zhang J",
+        "Dai Y",
+        "Xu R",
+        "Aishanjiang D",
+        "Yin Z",
+        "Cui Y",
+        "Yang X"
+      ],
+      "venue": "Academic radiology",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1076-6332",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1136/gutjnl-2026-339593",
+      "pmid": "42648907",
+      "title": "Proteomic landscape of pan-tissue neuroendocrine carcinomas defines subtype-specific functional architectures, biomarkers and therapeutic targets.",
+      "authors": [
+        "Ge F",
+        "Wang Z",
+        "Zheng S",
+        "Wang G",
+        "Liu C",
+        "Wang X",
+        "Liu Q",
+        "Sun N",
+        "He J"
+      ],
+      "venue": "Gut",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0017-5749",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1111/cod.70231",
+      "pmid": "42648905",
+      "title": "Patch Test Results With Dental Series: An 18-Year Retrospective Study.",
+      "authors": [
+        "Jagodich M",
+        "Németh D",
+        "Tóth A",
+        "Temesvári E",
+        "Holló P",
+        "Szalai ZZ",
+        "Pónyai G"
+      ],
+      "venue": "Contact dermatitis",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0105-1873",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/15459683261477077",
+      "pmid": "42648903",
+      "title": "External Validation of the Time to Walking Independently After Stroke (TWIST) Prediction Algorithm within 72 Hours Poststroke.",
+      "authors": [
+        "Rajkovic LA",
+        "Veerbeek-Preuss S",
+        "Bärtschi S",
+        "Ottiger B",
+        "Nyffeler T",
+        "Veerbeek JM"
+      ],
+      "venue": "Neurorehabilitation and neural repair",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "15459683261477077",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1545-9683",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.1177/1877718X261462339",
+      "pmid": "42648890",
+      "title": "Serotonin content and uptake in platelets can distinguish Parkinson's disease from control patients and essential tremor.",
+      "authors": [
+        "Montenegro P",
+        "Javier CH",
+        "Pereda D",
+        "González-Brito R",
+        "Lorenzo JN",
+        "Pueyo M",
+        "Borges R"
+      ],
+      "venue": "Journal of Parkinson's disease",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "1877718X261462339",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "1877-7171",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "10.3174/ajnr.A9609",
+      "pmid": "42648875",
+      "title": "Improved Deep Learning Segmentation of Pediatric Diffuse Midline Gliomas After Treatment.",
+      "authors": [
+        "Zielke J",
+        "Mussa FR",
+        "Zapaishchykova A",
+        "Tak D",
+        "Haddadi Avval A",
+        "Mojahed-Yazdi R",
+        "Ye Z",
+        "Rameh V",
+        "Ramegowda R",
+        "Schneider AG",
+        "Hanafy A",
+        "Alves C",
+        "Vajapeyam S",
+        "Mueller S",
+        "Haas-Kogan DA",
+        "Aerts HJWL",
+        "Rauschecker AM",
+        "Linguraru MG",
+        "Poussaint TY",
+        "Arnaout O",
+        "Kann BH"
+      ],
+      "venue": "AJNR. American journal of neuroradiology",
+      "year": 2026,
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "pub_types": [
+        "Journal Article"
+      ],
+      "issn": "0195-6108",
+      "source": "pubmed",
+      "cited_by_count": 0,
+      "found_by": [
+        "pubmed"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT05777330",
+      "title": "Continuous Monitoring of Glycemic Variability to Predict Dys- and Hyperglycemia in Asymptomatic Type 1 Diabetes",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT05777330)",
+      "year": 2023,
+      "phase": "NA",
+      "enrollment": 75,
+      "status": "RECRUITING",
+      "start_date": "2023-08-09",
+      "conditions": [
+        "Type1 Diabetes Mellitus"
+      ],
+      "interventions": [
+        "Oral glucose tolerance test (OGTT)",
+        "Hyperglycemic clamp test",
+        "Continuous glucose monitoring"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT02819830",
+      "title": "The Effects of a Six-week Exercise Programme Undertaken by Women With Rheumatoid Arthritis",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT02819830)",
+      "year": 2016,
+      "phase": "NA",
+      "enrollment": 25,
+      "status": "COMPLETED",
+      "start_date": "2016-05",
+      "conditions": [
+        "Rheumatoid Arthritis",
+        "Physical Activity"
+      ],
+      "interventions": [
+        "Exercise Intervention"
+      ],
+      "related_pubs": [
+        {
+          "citation": "ACSM 2010. American College of Sports Medicine's Resource Manual for Guidelines for Exercise Testing and Prescription. 6th Edition, 659-661.",
+          "pmid": null
+        },
+        {
+          "citation": "Aletaha D, Neogi T, Silman AJ, Funovits J, Felson DT, Bingham CO 3rd, Birnbaum NS, Burmester GR, Bykerk VP, Cohen MD, Combe B, Costenbader KH, Dougados M, Emery P, Ferraccioli G, Hazes JM, Hobbs K, Huizinga TW, Kavanaugh A, Kay J, Kvien TK, Laing T, Mease P, Menard HA, Moreland LW, Naden RL, Pincus T, Smolen JS, Stanislawska-Biernat E, Symmons D, Tak PP, Upchurch KS, Vencovsky J, Wolfe F, Hawker G. 2010 Rheumatoid arthritis classification criteria: an American College of Rheumatology/European League Against Rheumatism collaborative initiative. Arthritis Rheum. 2010 Sep;62(9):2569-81. doi: 10.1002/art.27584.",
+          "pmid": "20872595"
+        },
+        {
+          "citation": "Crowson CS, Liao KP, Davis JM 3rd, Solomon DH, Matteson EL, Knutson KL, Hlatky MA, Gabriel SE. Rheumatoid arthritis and cardiovascular disease. Am Heart J. 2013 Oct;166(4):622-628.e1. doi: 10.1016/j.ahj.2013.07.010. Epub 2013 Aug 29.",
+          "pmid": "24093840"
+        },
+        {
+          "citation": "de Jong Z, Munneke M, Kroon HM, van Schaardenburg D, Dijkmans BA, Hazes JM, Vliet Vlieland TP. Long-term follow-up of a high-intensity exercise program in patients with rheumatoid arthritis. Clin Rheumatol. 2009 Jun;28(6):663-71. doi: 10.1007/s10067-009-1125-z. Epub 2009 Feb 27.",
+          "pmid": "19247575"
+        },
+        {
+          "citation": "de Jong Z, Munneke M, Zwinderman AH, Kroon HM, Jansen A, Ronday KH, van Schaardenburg D, Dijkmans BA, Van den Ende CH, Breedveld FC, Vliet Vlieland TP, Hazes JM. Is a long-term high-intensity exercise program effective and safe in patients with rheumatoid arthritis? Results of a randomized controlled trial. Arthritis Rheum. 2003 Sep;48(9):2415-24. doi: 10.1002/art.11216.",
+          "pmid": "13130460"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT01322230",
+      "title": "Trial of Educational Outcomes of WISE-MD",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT01322230)",
+      "year": 2008,
+      "phase": "NA",
+      "enrollment": 1363,
+      "status": "COMPLETED",
+      "start_date": "2008-10",
+      "conditions": [
+        "Surgery"
+      ],
+      "interventions": [
+        "Control",
+        "WISEMD Original",
+        "Social Networking",
+        "Social Networking plus Emotional Design"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Kalet AL, Coady SH, Hopkins MA, Hochberg MS, Riles TS. Preliminary evaluation of the Web Initiative for Surgical Education (WISE-MD). Am J Surg. 2007 Jul;194(1):89-93. doi: 10.1016/j.amjsurg.2006.12.035.",
+          "pmid": "17560916"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT07300930",
+      "title": "A Mobile Text Approach to Measurement and Feedback for Wraparound Care Coordination",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT07300930)",
+      "year": 2026,
+      "phase": "NA",
+      "enrollment": 216,
+      "status": "NOT_YET_RECRUITING",
+      "start_date": "2026-03-01",
+      "conditions": [
+        "Mental Health Services",
+        "Mobile Technologies",
+        "Technology Development"
+      ],
+      "interventions": [
+        "SMARTwrap"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT01807130",
+      "title": "Automated MEdical Record Driven Implantable CArdioverter-defibrillator Heart Failure Trial (AMERICA-HF)",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT01807130)",
+      "year": 2013,
+      "phase": "NA",
+      "enrollment": 77,
+      "status": "TERMINATED",
+      "start_date": "2013-09",
+      "conditions": [
+        "Heart Failure"
+      ],
+      "interventions": [
+        "Automated HF/EP Referral",
+        "Placebo (Registry Arm)"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT00781430",
+      "title": "Study Evaluating The PK And Safety Of Neratinib In Healthy Subjects And Subjects With Chronic Liver Disease",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT00781430)",
+      "year": 2009,
+      "phase": "PHASE1",
+      "enrollment": 27,
+      "status": "COMPLETED",
+      "start_date": "2009-04",
+      "conditions": [
+        "Hepatic Insufficiency"
+      ],
+      "interventions": [
+        "Neratinib (HKI-272)"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT05035030",
+      "title": "Long-term Safety and Efficacy of Odevixibat in Patients With Alagille Syndrome",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT05035030)",
+      "year": 2021,
+      "phase": "PHASE3",
+      "enrollment": 62,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "start_date": "2021-09-03",
+      "conditions": [
+        "Alagille Syndrome"
+      ],
+      "interventions": [
+        "Odevixibat"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT06147128",
+      "title": "PBP vs Traditional Training: the T-REC Trial",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT06147128)",
+      "year": 2023,
+      "phase": "",
+      "enrollment": 48,
+      "status": "UNKNOWN",
+      "start_date": "2023-08-10",
+      "conditions": [
+        "Educational Problems"
+      ],
+      "interventions": [
+        "Emergency scenario in a simulated setting where open conversion is necessary due to vessel injury during robotic surgery on a dry lab model"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Pellegrini CA. Surgical education in the United States: navigating the white waters. Ann Surg. 2006 Sep;244(3):335-42. doi: 10.1097/01.sla.0000234800.08200.6c. No abstract available.",
+          "pmid": "16926559"
+        },
+        {
+          "citation": "Cuschieri A. Whither minimal access surgery: tribulations and expectations. Am J Surg. 1995 Jan;169(1):9-19. doi: 10.1016/s0002-9610(99)80104-4. No abstract available.",
+          "pmid": "7818004"
+        },
+        {
+          "citation": "Gallagher AG. Metric-based simulation training to proficiency in medical education:- what it is and how to do it. Ulster Med J. 2012 Sep;81(3):107-13.",
+          "pmid": "23620606"
+        },
+        {
+          "citation": "Gallagher AG, Ritter EM, Champion H, Higgins G, Fried MP, Moses G, Smith CD, Satava RM. Virtual reality simulation for the operating room: proficiency-based training as a paradigm shift in surgical skills training. Ann Surg. 2005 Feb;241(2):364-72. doi: 10.1097/01.sla.0000151982.85062.80.",
+          "pmid": "15650649"
+        },
+        {
+          "citation": "Breen D, O'Brien S, McCarthy N, Gallagher A, Walshe N. Effect of a proficiency-based progression simulation programme on clinical communication for the deteriorating patient: a randomised controlled trial. BMJ Open. 2019 Jul 9;9(7):e025992. doi: 10.1136/bmjopen-2018-025992.",
+          "pmid": "31289064"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT07742228",
+      "title": "SCENAR Therapy in Chronic Non-specific Neck Pain",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT07742228)",
+      "year": 2026,
+      "phase": "NA",
+      "enrollment": 76,
+      "status": "RECRUITING",
+      "start_date": "2026-03-11",
+      "conditions": [
+        "Cervicalgia",
+        "Neck Pain",
+        "Chronic Pain"
+      ],
+      "interventions": [
+        "Active SCENAR device therapy",
+        "Sham SCENAR device Therapy"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Michel-Cherqui M, Guirimand A, Szekely B, Kennel T, Fischler M, Le Guen M. Effects of a Single Application of ScenarTM, a Low-Frequency Modulated Electric Current Therapy, for Pain Relief in Patients with Low Back and Neck Pain: A Randomized Single Blinded Trial. J Clin Med. 2021 Nov 26;10(23):5570. doi: 10.3390/jcm10235570.",
+          "pmid": "34884273"
+        },
+        {
+          "citation": "Vickers AJ, Altman DG. Statistics notes: Analysing controlled trials with baseline and follow up measurements. BMJ. 2001 Nov 10;323(7321):1123-4. doi: 10.1136/bmj.323.7321.1123. No abstract available.",
+          "pmid": "11701584"
+        },
+        {
+          "citation": "Vase L, Wartolowska K. Pain, placebo, and test of treatment efficacy: a narrative review. Br J Anaesth. 2019 Aug;123(2):e254-e262. doi: 10.1016/j.bja.2019.01.040. Epub 2019 Mar 20.",
+          "pmid": "30915982"
+        },
+        {
+          "citation": "McEntegart A, Morrison E, Capell HA, Duncan MR, Porter D, Madhok R, Thomson EA. Effect of social deprivation on disease severity and outcome in patients with rheumatoid arthritis. Ann Rheum Dis. 1997 Jul;56(7):410-3. doi: 10.1136/ard.56.7.410.",
+          "pmid": "9486002"
+        },
+        {
+          "citation": "Wlodyka-Demaille S, Poiraudeau S, Catanzariti JF, Rannou F, Fermanian J, Revel M. French translation and validation of 3 functional disability scales for neck pain. Arch Phys Med Rehabil. 2002 Mar;83(3):376-82. doi: 10.1053/apmr.2002.30623.",
+          "pmid": "11887120"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT03388528",
+      "title": "Low Residue Diet Study in Mitochondrial Disease",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT03388528)",
+      "year": 2017,
+      "phase": "NA",
+      "enrollment": 36,
+      "status": "COMPLETED",
+      "start_date": "2017-09-08",
+      "conditions": [
+        "Mitochondrial Diseases"
+      ],
+      "interventions": [
+        "Low Residue Diet Intervention"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Houghton D, Ng YS, Jackson MA, Stefanetti R, Hynd P, Mac Aogain M, Stewart CJ, Lamb CA, Bright A, Feeney C, Newman J, Turnbull DM, McFarland R, Blain AP, Gorman GS. Phase II Feasibility Study of the Efficacy, Tolerability, and Impact on the Gut Microbiome of a Low-Residue (Fiber) Diet in Adult Patients With Mitochondrial Disease. Gastro Hep Adv. 2022 Jul 1;1(4):666-677. doi: 10.1016/j.gastha.2022.03.007. eCollection 2022.",
+          "pmid": "39132075"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT06214065",
+      "title": "Modulating Temporoparietal Junction Mentalizing-Related Activity in Autism Spectrum Disorder (ASD) Using Transcranial Magnetic Stimulation (TMS)",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT06214065)",
+      "year": 2024,
+      "phase": "NA",
+      "enrollment": 80,
+      "status": "RECRUITING",
+      "start_date": "2024-04-03",
+      "conditions": [
+        "Autism Spectrum Disorder"
+      ],
+      "interventions": [
+        "fMRI",
+        "rTMS"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT04195165",
+      "title": "The Effect of Sitting and Moderate Exercise on Plasma Insulin and Glucose Responses to an Oral Glucose Tolerance Test",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT04195165)",
+      "year": 2019,
+      "phase": "NA",
+      "enrollment": 12,
+      "status": "UNKNOWN",
+      "start_date": "2019-09-23",
+      "conditions": [
+        "Sedentary Behavior",
+        "Insulin Sensitivity",
+        "Sedentary Lifestyle"
+      ],
+      "interventions": [
+        "SIT",
+        "ACTIVE",
+        "EX"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT01723865",
+      "title": "Clinical Efficacy of Remote Monitoring in the Management of Heart Failure",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT01723865)",
+      "year": 2011,
+      "phase": "",
+      "enrollment": 988,
+      "status": "COMPLETED",
+      "start_date": "2011-05",
+      "conditions": [
+        "Heart Failure"
+      ],
+      "interventions": [],
+      "related_pubs": [
+        {
+          "citation": "Capucci A, De Simone A, Luzi M, Calvi V, Stabile G, D'Onofrio A, Maffei S, Leoni L, Morani G, Sangiuolo R, Amellone C, Checchinato C, Ammendola E, Buja G. Economic impact of remote monitoring after implantable defibrillators implantation in heart failure patients: an analysis from the EFFECT study. Europace. 2017 Sep 1;19(9):1493-1499. doi: 10.1093/europace/eux017.",
+          "pmid": "28407139"
+        },
+        {
+          "citation": "De Simone A, Leoni L, Luzi M, Amellone C, Stabile G, La Rocca V, Capucci A, D'onofrio A, Ammendola E, Accardi F, Valsecchi S, Buja G. Remote monitoring improves outcome after ICD implantation: the clinical efficacy in the management of heart failure (EFFECT) study. Europace. 2015 Aug;17(8):1267-75. doi: 10.1093/europace/euu318. Epub 2015 Apr 4.",
+          "pmid": "25842271"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT05663567",
+      "title": "TheEffect of a Solution-FocusedApproach on Breastfeeding",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT05663567)",
+      "year": 2024,
+      "phase": "NA",
+      "enrollment": 75,
+      "status": "UNKNOWN",
+      "start_date": "2024-01-30",
+      "conditions": [
+        "Postpartum",
+        "Breastfeeding",
+        "Self Efficacy"
+      ],
+      "interventions": [
+        "solution oriented approach"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT03319667",
+      "title": "A Study to Investigate the Clinical Benefit of Isatuximab in Combination With Bortezomib, Lenalidomide and Dexamethasone in Adults With Newly Diagnosed Multiple Myeloma Not Eligible for Transplant",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT03319667)",
+      "year": 2017,
+      "phase": "PHASE3",
+      "enrollment": 475,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "start_date": "2017-12-07",
+      "conditions": [
+        "Plasma Cell Myeloma"
+      ],
+      "interventions": [
+        "Isatuximab SAR650984",
+        "Bortezomib",
+        "Lenalidomide",
+        "Dexamethasone"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Orlowski RZ, Dimopoulos MA, Leleu X, Facon T, Ishida T, Hajek R, Spicka I, Romejko-Jarosinska J, Vorobyev V, Besemer B, Besisik SK, Robak P, Jelinek T, Goldschmidt H, Martin T, Mohty M, Mace S, Kodas E, Tekle C, Shafer AT, Moreau P. Isatuximab, bortezomib, lenalidomide, and dexamethasone for multiple myeloma: dynamics of MRD negativity in the IMROZ study. Blood. 2026 Jun 4;147(23):2760-2769. doi: 10.1182/blood.2025030120.",
+          "pmid": "41758929"
+        },
+        {
+          "citation": "Manier S, Dimopoulos MA, Leleu XP, Moreau P, Cavo M, Goldschmidt H, Orlowski RZ, Tron M, Tekle C, Bregeault MF, Shafer AT, Beksac M, Facon T. Isatuximab plus bortezomib, lenalidomide, and dexamethasone for transplant-ineligible newly diagnosed multiple myeloma patients: a frailty subgroup analysis of the IMROZ trial. Haematologica. 2025 Sep 1;110(9):2139-2150. doi: 10.3324/haematol.2024.287200. Epub 2025 Mar 20.",
+          "pmid": "40109195"
+        },
+        {
+          "citation": "Facon T, Dimopoulos MA, Leleu XP, Beksac M, Pour L, Hajek R, Liu Z, Minarik J, Moreau P, Romejko-Jarosinska J, Spicka I, Vorobyev VI, Besemer B, Ishida T, Janowski W, Kalayoglu-Besisik S, Parmar G, Robak P, Zamagni E, Goldschmidt H, Martin TG, Manier S, Mohty M, Oprea C, Bregeault MF, Mace S, Berthou C, Bregman D, Klippel Z, Orlowski RZ; IMROZ Study Group. Isatuximab, Bortezomib, Lenalidomide, and Dexamethasone for Multiple Myeloma. N Engl J Med. 2024 Oct 31;391(17):1597-1609. doi: 10.1056/NEJMoa2400712. Epub 2024 Jun 3.",
+          "pmid": "38832972"
+        },
+        {
+          "citation": "Thoren K, Menad S, Nouadje G, Mace S. Isatuximab-Specific Immunofixation Electrophoresis Assay to Remove Interference in Serum M-Protein Measurement in Patients with Multiple Myeloma. J Appl Lab Med. 2024 Jul 1;9(4):661-671. doi: 10.1093/jalm/jfae028.",
+          "pmid": "38573925"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT06680167",
+      "title": "Hyperbaric Prilocaine 2% vs Hyperbaric Bupivacaine 0.5% in Caesarean Section",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT06680167)",
+      "year": 2024,
+      "phase": "EARLY_PHASE1",
+      "enrollment": 142,
+      "status": "COMPLETED",
+      "start_date": "2024-10-09",
+      "conditions": [
+        "Spinal Anesthesia"
+      ],
+      "interventions": [
+        "Spinal anesthesia (heavy bupivacaine 0.5%)",
+        "spinal anesthesia (hyperbaric Prilocaine 2%)"
+      ],
+      "related_pubs": [],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT01185067",
+      "title": "Physiological Effects of Grape Seed Extract in Diastolic Heart Failure",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT01185067)",
+      "year": 2010,
+      "phase": "PHASE1",
+      "enrollment": 15,
+      "status": "COMPLETED",
+      "start_date": "2010-10",
+      "conditions": [
+        "Diastolic Heart Failure",
+        "Hypertensive Heart Disease",
+        "Heart Failure With Preserved Ejection Fraction",
+        "Hypertension",
+        "Oxidative Stress"
+      ],
+      "interventions": [
+        "grape seed extract (MegaNatural BP, Polyphenolics, Inc.)"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Seymour EM, Singer AA, Bennink MR, Parikh RV, Kirakosyan A, Kaufman PB, Bolling SF. Chronic intake of a phytochemical-enriched diet reduces cardiac fibrosis and diastolic dysfunction caused by prolonged salt-sensitive hypertension. J Gerontol A Biol Sci Med Sci. 2008 Oct;63(10):1034-42. doi: 10.1093/gerona/63.10.1034.",
+          "pmid": "18948553"
+        },
+        {
+          "citation": "Ma L, Gao HQ, Li BY, Ma YB, You BA, Zhang FL. Grape seed proanthocyanidin extracts inhibit vascular cell adhesion molecule expression induced by advanced glycation end products through activation of peroxisome proliferators-activated receptor gamma. J Cardiovasc Pharmacol. 2007 May;49(5):293-8. doi: 10.1097/FJC.0b013e31803c5616.",
+          "pmid": "17513948"
+        },
+        {
+          "citation": "Sivaprakasapillai B, Edirisinghe I, Randolph J, Steinberg F, Kappagoda T. Effect of grape seed extract on blood pressure in subjects with the metabolic syndrome. Metabolism. 2009 Dec;58(12):1743-6. doi: 10.1016/j.metabol.2009.05.030. Epub 2009 Jul 15.",
+          "pmid": "19608210"
+        },
+        {
+          "citation": "Kar P, Laight D, Rooprai HK, Shaw KM, Cummings M. Effects of grape seed extract in Type 2 diabetic subjects at high cardiovascular risk: a double blind randomized placebo controlled trial examining metabolic markers, vascular tone, inflammation, oxidative stress and insulin sensitivity. Diabet Med. 2009 May;26(5):526-31. doi: 10.1111/j.1464-5491.2009.02727.x.",
+          "pmid": "19646193"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT04222400",
+      "title": "Comparison of Different Frailty Assessment Tools",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT04222400)",
+      "year": 2018,
+      "phase": "NA",
+      "enrollment": 150,
+      "status": "UNKNOWN",
+      "start_date": "2018-03-15",
+      "conditions": [
+        "Heart Failure"
+      ],
+      "interventions": [
+        "Frailty Assessment"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Roehrich L, Sundermann SH, Just IA, Kopp Fernandes L, Stein J, Solowjowa N, Mulzer J, Mueller M, Hummel M, Knierim J, Potapov E, Falk V, Schoenrath F. Comparison of feasibility and results of frailty assessment methods prior to left ventricular assist device implantation. ESC Heart Fail. 2022 Apr;9(2):1038-1049. doi: 10.1002/ehf2.13764. Epub 2022 Jan 6.",
+          "pmid": "34994094"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT06827600",
+      "title": "Breastfeeding Intention and Breastfeeding Attitudes in the Postpartum Period",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT06827600)",
+      "year": 2024,
+      "phase": "NA",
+      "enrollment": 70,
+      "status": "COMPLETED",
+      "start_date": "2024-04-03",
+      "conditions": [
+        "Caesarean Section",
+        "Nulliparous",
+        "Breastfeeding, Exclusive",
+        "Breastfeeding Attitude"
+      ],
+      "interventions": [
+        "Structured breastfeeding education and follow-up"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Güneri, S. E., Muslu, G. K., & Güner, Ö. (2019). The Turkish Version of the Infant Feeding Intention Instrument (IFI-T). 41(3): 269-74",
+          "pmid": null
+        },
+        {
+          "citation": "Buran G, Ozyazicioglu N, Aydin AI, Atak M. Evaluation of breastfeeding success and self-efficacy in mothers giving birth via vaginal delivery or cesarean section: a cross-sectional study. Women Health. 2022 Oct-Dec;62(9-10):788-798. doi: 10.1080/03630242.2022.2146832. Epub 2022 Nov 20.",
+          "pmid": "36404416"
+        },
+        {
+          "citation": "Hobbs AJ, Mannion CA, McDonald SW, Brockway M, Tough SC. The impact of caesarean section on breastfeeding initiation, duration and difficulties in the first four months postpartum. BMC Pregnancy Childbirth. 2016 Apr 26;16:90. doi: 10.1186/s12884-016-0876-1.",
+          "pmid": "27118118"
+        },
+        {
+          "citation": "Li L, Wan W, Zhu C. Breastfeeding after a cesarean section: A literature review. Midwifery. 2021 Dec;103:103117. doi: 10.1016/j.midw.2021.103117. Epub 2021 Aug 14.",
+          "pmid": "34425257"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    },
+    {
+      "doi": "",
+      "nct_id": "NCT06371300",
+      "title": "Photobiomodulation With REd vs BluE Light (REBEL)",
+      "authors": [],
+      "venue": "ClinicalTrials.gov (NCT06371300)",
+      "year": 2024,
+      "phase": "NA",
+      "enrollment": 36,
+      "status": "RECRUITING",
+      "start_date": "2024-05-01",
+      "conditions": [
+        "Dry Eye Syndromes",
+        "Meibomian Gland Dysfunction",
+        "Blepharitis"
+      ],
+      "interventions": [
+        "Red LLLT",
+        "Blue LLLT",
+        "Sham Red LLLT",
+        "Sham Blue LLLT"
+      ],
+      "related_pubs": [
+        {
+          "citation": "Tomlinson A, Bron AJ, Korb DR, Amano S, Paugh JR, Pearce EI, Yee R, Yokoi N, Arita R, Dogru M. The international workshop on meibomian gland dysfunction: report of the diagnosis subcommittee. Invest Ophthalmol Vis Sci. 2011 Mar 30;52(4):2006-49. doi: 10.1167/iovs.10-6997f. Print 2011 Mar. No abstract available.",
+          "pmid": "21450918"
+        },
+        {
+          "citation": "Pult H, Riede-Pult B. Comparison of subjective grading and objective assessment in meibography. Cont Lens Anterior Eye. 2013 Feb;36(1):22-7. doi: 10.1016/j.clae.2012.10.074. Epub 2012 Oct 27.",
+          "pmid": "23108007"
+        },
+        {
+          "citation": "Wolffsohn JS, Arita R, Chalmers R, Djalilian A, Dogru M, Dumbleton K, Gupta PK, Karpecki P, Lazreg S, Pult H, Sullivan BD, Tomlinson A, Tong L, Villani E, Yoon KC, Jones L, Craig JP. TFOS DEWS II Diagnostic Methodology report. Ocul Surf. 2017 Jul;15(3):539-574. doi: 10.1016/j.jtos.2017.05.001. Epub 2017 Jul 20.",
+          "pmid": "28736342"
+        },
+        {
+          "citation": "Schiffman RM, Christianson MD, Jacobsen G, Hirsch JD, Reis BL. Reliability and validity of the Ocular Surface Disease Index. Arch Ophthalmol. 2000 May;118(5):615-21. doi: 10.1001/archopht.118.5.615.",
+          "pmid": "10815152"
+        },
+        {
+          "citation": "Chalmers RL, Begley CG, Caffery B. Validation of the 5-Item Dry Eye Questionnaire (DEQ-5): Discrimination across self-assessed severity and aqueous tear deficient dry eye diagnoses. Cont Lens Anterior Eye. 2010 Apr;33(2):55-60. doi: 10.1016/j.clae.2009.12.010. Epub 2010 Jan 25.",
+          "pmid": "20093066"
+        }
+      ],
+      "source": "clinicaltrials",
+      "cited_by_count": 0,
+      "found_by": [
+        "clinicaltrials"
+      ],
+      "quality_flag": null
+    }
+  ]
+}

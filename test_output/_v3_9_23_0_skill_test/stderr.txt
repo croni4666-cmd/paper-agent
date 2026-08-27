@@ -1,0 +1,27 @@
+test_citations_missing_doi (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_citations_missing_doi) ... ok
+test_fetch_batch_missing_bibtex (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_fetch_batch_missing_bibtex) ... ok
+test_fetch_missing_doi (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_fetch_missing_doi) ... ok
+test_keys_check_missing_service (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_keys_check_missing_service) ... ok
+test_review_missing_corpus (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_review_missing_corpus) ... ok
+test_search_missing_query (test_output._test_v3_9_23_0_skill.TestErrorHandling.test_search_missing_query) ... ok
+test_all_scripts_present (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_all_scripts_present) ... ok
+test_scripts_have_docstring (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_scripts_have_docstring) ... ok
+test_scripts_have_shebang (test_output._test_v3_9_23_0_skill.TestScriptsExist.test_scripts_have_shebang) ... ok
+test_cache_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_cache_help) ... ok
+test_citations_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_citations_help) ... ok
+test_fetch_batch_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_fetch_batch_help) ... ok
+test_fetch_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_fetch_help) ... ok
+test_keys_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_keys_help) ... ok
+test_review_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_review_help) ... ok
+test_search_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_search_help) ... ok
+test_version_help (test_output._test_v3_9_23_0_skill.TestScriptsHelp.test_version_help) ... ok
+test_openai_yaml_exists (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_openai_yaml_exists) ... ok
+test_references_exist (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_references_exist) ... ok
+test_skill_md_exists (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_skill_md_exists) ... ok
+test_skill_md_has_frontmatter (test_output._test_v3_9_23_0_skill.TestSkillManifest.test_skill_md_has_frontmatter) ... ok
+test_version_runs_without_pa (test_output._test_v3_9_23_0_skill.TestVersionScript.test_version_runs_without_pa) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.216s
+
+OK

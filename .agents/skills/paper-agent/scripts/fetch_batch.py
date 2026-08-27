@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""scripts/fetch_batch.py — Wrapper for `pa fetch-batch` (BibTeX → PDFs).
+﻿#!/usr/bin/env python3
+"""scripts/fetch_batch.py 鈥?Wrapper for `pa fetch-batch` (BibTeX 鈫?PDFs).
 
 Reads a BibTeX file, extracts DOIs, fetches each PDF in sequence.
 Writes PDFs to <output-dir>/<sanitized-cite-key>.pdf. Generates a JSON
@@ -19,8 +19,11 @@ import sys
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
-PA_ROOT = SKILL_ROOT.parent.parent.parent
 PYTHON = sys.executable
+
+# Add this script's directory to sys.path so we can import _pa_root
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
 
 
 def main() -> int:
@@ -40,6 +43,17 @@ Examples:
     parser.add_argument("--report", help="Optional JSON summary output path")
     parser.add_argument("--summary-json", help="(deprecated) alias for --report")
     args = parser.parse_args()
+
+    # Find paper-agent root
+    pa_root = find_pa_root()
+    if not pa_root:
+        print(json.dumps({
+            "error": "pa_cli_not_found",
+            "message": "paper-agent (pa_cli) is not installed in this Python environment.",
+            "hint": get_install_instructions().strip(),
+        }, indent=2), file=sys.stderr)
+        return 4
+
 
     if not Path(args.bibtex).is_file():
         print(json.dumps({
@@ -66,7 +80,7 @@ Examples:
         result = subprocess.run(
             cmd, capture_output=True, text=True,
             timeout=args.max_total_sec + 60,
-            cwd=str(PA_ROOT),
+            cwd=str(pa_root),
         )
     except subprocess.TimeoutExpired:
         print(json.dumps({

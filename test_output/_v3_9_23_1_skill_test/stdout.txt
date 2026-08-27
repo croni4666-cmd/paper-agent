@@ -1,0 +1,30 @@
+  [PASS] bootstrap.py --check returns ok when pa_cli installed
+  [PASS] bootstrap.py exists (6807 bytes)
+  [PASS] bootstrap.py --help works
+  [PASS] citations.py rejects missing doi
+  [PASS] fetch_batch.py rejects missing bibtex
+  [PASS] fetch.py rejects missing doi
+  [PASS] keys.py 'check' requires service_id
+  [PASS] review.py rejects missing corpus
+  [PASS] search.py rejects missing query
+  [PASS] All 7 wrappers have pa_cli_not_found error handling
+  [PASS] All 7 pa-dependent wrappers use find_pa_root()
+  [PASS] find_pa_root() returns valid pa_root: G:\minimax - workspace\Paper agent
+  [PASS] _pa_root.py exists (5562 bytes)
+  [PASS] _pa_root module imports find_pa_root + get_install_instructions
+  [PASS] All 8 scripts present in G:\minimax - workspace\Paper agent\.agents\skills\paper-agent\scripts
+  [PASS] All scripts have module docstring
+  [PASS] All scripts have shebang
+  [PASS] cache.py --help works
+  [PASS] citations.py --help works
+  [PASS] fetch_batch.py --help works
+  [PASS] fetch.py --help works
+  [PASS] keys.py --help works
+  [PASS] review.py --help works
+  [PASS] search.py --help works
+  [PASS] version.py --help works
+  [PASS] agents/openai.yaml exists with UI metadata
+  [PASS] All 3 reference docs present
+  [PASS] SKILL.md exists (9861 bytes)
+  [PASS] SKILL.md has valid frontmatter (name + description)
+  [PASS] version.py returns valid JSON: skill=paper-agent, python=3.12.10

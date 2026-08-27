@@ -1,0 +1,11 @@
+﻿{
+  "step": "install",
+  "pa_cli_importable": false,
+  "repo_found": "G:\\minimax - workspace\\Paper agent",
+  "install_command": "C:\\Users\\DengN\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pip install -e G:\\minimax - workspace\\Paper agent",
+  "install_success": true,
+  "install_output_tail": "py3-none-any.whl size=29399 sha256=86ed06a1d1062a7187f22b16916b30f9aa9c912fd9872c27b983d05747e67d6e\n  Stored in directory: C:\\Users\\DengN\\AppData\\Local\\Temp\\pip-ephem-wheel-cache-9_pncji3\\wheels\\4c\\51\\94\\56731ef7aed755e84c364b91746f357c57a947897922607c02\nSuccessfully built paper-agent\nInstalling collected packages: paper-agent\nSuccessfully installed paper-agent-3.9.23.0\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: python.exe -m pip install --upgrade pip\n",
+  "pa_cli_importable_after": false,
+  "status": "import_failed",
+  "message": "Install succeeded but pa_cli is still not importable. Check PYTHONPATH or use a different Python environment."
+}

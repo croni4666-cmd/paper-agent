@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""scripts/review.py — Wrapper for `pa review` (lit review synthesis).
+﻿#!/usr/bin/env python3
+"""scripts/review.py 鈥?Wrapper for `pa review` (lit review synthesis).
 
 Synthesizes a Markdown literature review from a corpus (PDF directory
 or BibTeX file). Supports topic-focused synthesis and topic clustering.
@@ -19,8 +19,11 @@ import sys
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
-PA_ROOT = SKILL_ROOT.parent.parent.parent
 PYTHON = sys.executable
+
+# Add this script's directory to sys.path so we can import _pa_root
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
 
 
 def main() -> int:
@@ -42,6 +45,17 @@ Examples:
     parser.add_argument("--top-k-clusters", type=int, default=5, help="Number of topic clusters (default: 5)")
     parser.add_argument("--model", default=None, help="LLM model for synthesis (default: from pa config)")
     args = parser.parse_args()
+
+    # Find paper-agent root
+    pa_root = find_pa_root()
+    if not pa_root:
+        print(json.dumps({
+            "error": "pa_cli_not_found",
+            "message": "paper-agent (pa_cli) is not installed in this Python environment.",
+            "hint": get_install_instructions().strip(),
+        }, indent=2), file=sys.stderr)
+        return 4
+
 
     if not Path(args.corpus).exists():
         print(json.dumps({
@@ -74,7 +88,7 @@ Examples:
         result = subprocess.run(
             cmd, capture_output=True, text=True,
             timeout=600,  # Lit review can be slow (LLM synthesis)
-            cwd=str(PA_ROOT),
+            cwd=str(pa_root),
         )
     except subprocess.TimeoutExpired:
         print(json.dumps({
