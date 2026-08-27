@@ -1,0 +1,22 @@
+  [PASS] citations.py rejects missing doi
+  [PASS] fetch_batch.py rejects missing bibtex
+  [PASS] fetch.py rejects missing doi
+  [PASS] keys.py 'check' requires service_id
+  [PASS] review.py rejects missing corpus
+  [PASS] search.py rejects missing query
+  [PASS] All 8 scripts present in G:\minimax - workspace\Paper agent\.agents\skills\paper-agent\scripts
+  [PASS] All scripts have module docstring
+  [PASS] All scripts have shebang
+  [PASS] cache.py --help works
+  [PASS] citations.py --help works
+  [PASS] fetch_batch.py --help works
+  [PASS] fetch.py --help works
+  [PASS] keys.py --help works
+  [PASS] review.py --help works
+  [PASS] search.py --help works
+  [PASS] version.py --help works
+  [PASS] agents/openai.yaml exists with UI metadata
+  [PASS] All 3 reference docs present
+  [PASS] SKILL.md exists (9861 bytes)
+  [PASS] SKILL.md has valid frontmatter (name + description)
+  [PASS] version.py returns valid JSON: skill=paper-agent, python=3.12.10

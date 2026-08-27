@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""scripts/search.py — Wrapper for `pa search` (7 search engines).
+﻿#!/usr/bin/env python3
+"""scripts/search.py 鈥?Wrapper for `pa search` (7 search engines).
 
 Searches academic papers by query across 7 engines (Crossref, OpenAlex,
 Semantic Scholar, arXiv, AMiner, CNKI, PubMed). Returns JSON to stdout.
@@ -7,7 +7,7 @@ Semantic Scholar, arXiv, AMiner, CNKI, PubMed). Returns JSON to stdout.
 Usage:
     python scripts/search.py "digital finance household consumption" --engine all
     python scripts/search.py "long-term care" --engine pubmed --year-min 2020 --limit 10
-    python scripts/search.py "数字普惠金融" --engine aminer --limit 30
+    python scripts/search.py "鏁板瓧鏅儬閲戣瀺" --engine aminer --limit 30
 """
 from __future__ import annotations
 
@@ -18,10 +18,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Resolve paper-agent root: SKILL is at .agents/skills/paper-agent/
-# so paper-agent root is 3 levels up
-SKILL_ROOT = Path(__file__).resolve().parent.parent
-PA_ROOT = SKILL_ROOT.parent.parent.parent  # .agents/skills/paper-agent/scripts/search.py → paper-agent/
+# Add this script's directory to sys.path so we can import _pa_root
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+
 PYTHON = sys.executable  # Use the current Python interpreter (Codex env)
 
 
@@ -49,6 +49,17 @@ Examples:
     parser.add_argument("--output", choices=["json", "markdown"], default="json", help="Output format (default: json)")
     args = parser.parse_args()
 
+    # Find paper-agent root (pa_cli must be importable)
+    pa_root = find_pa_root()
+    if not pa_root:
+        print(json.dumps({
+            "error": "pa_cli_not_found",
+            "message": "paper-agent (pa_cli) is not installed in this Python environment.",
+            "hint": get_install_instructions().strip(),
+            "skill_help": "See SKILL.md 'Installation' section, or run scripts/bootstrap.py",
+        }, indent=2), file=sys.stderr)
+        return 4
+
     # Join multi-word query with spaces (AMiner prefers single-string queries)
     query = " ".join(args.query)
 
@@ -68,13 +79,13 @@ Examples:
         cmd.extend(["--year-max", str(args.year_max)])
 
     try:
-        # Run from PA_ROOT so pa_cli is importable
+        # Run from pa_root so pa_cli is importable
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
             timeout=180,
-            cwd=str(PA_ROOT),
+            cwd=str(pa_root),
         )
     except subprocess.TimeoutExpired:
         print(json.dumps({

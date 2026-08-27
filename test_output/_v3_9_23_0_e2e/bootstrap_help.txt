@@ -1,0 +1,15 @@
+﻿usage: bootstrap.py [-h] [--repo REPO] [--check] [--json]
+
+Bootstrap paper-agent (pa_cli) for the Codex Skill.
+
+options:
+  -h, --help   show this help message and exit
+  --repo REPO  Path to paper-agent repo (default: auto-detect)
+  --check      Check if pa_cli is importable, no install
+  --json       Output JSON (default: true)
+
+Examples:
+  bootstrap.py                    # auto-detect repo and install
+  bootstrap.py --repo ~/myrepo    # use specific repo path
+  bootstrap.py --check            # check only, no install
+        

@@ -18,7 +18,7 @@ description: |
   lookup, non-academic research, or PDF reading (use a different
   skill for that).
 metadata:
-  version: 3.9.23.0
+  version: 3.9.23.1
   pa_cli_version: 3.9.22.1
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
@@ -77,7 +77,73 @@ python scripts/review.py refs.bib --output lit_review.md --topic "数字普惠�
 python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
 ```
 
+## Installation
+
+The skill's 8 wrapper scripts depend on the **paper-agent Python package** (pa_cli) — the actual CLI that does the work. The skill cannot function without pa_cli installed. **v3.9.23.1 added auto-install** to handle the most common setup error ("No module named 'pa_cli'").
+
+### Recommended: run bootstrap once
+
+```bash
+python <skill-dir>/scripts/bootstrap.py
+```
+
+This will:
+1. Check if pa_cli is importable (exit 0 → done)
+2. If not, auto-detect the paper-agent repo at common locations
+3. Run `pip install -e <repo>` to install in editable mode
+4. Verify the install succeeded
+
+If the repo is not in a common location, pass `--repo <path>`:
+```bash
+python <skill-dir>/scripts/bootstrap.py --repo G:\minimax - workspace\Paper agent
+```
+
+### Manual install
+
+```bash
+# 1. Clone paper-agent repo (if not already)
+git clone https://github.com/croni4666-cmd/paper-agent.git
+
+# 2. Install in editable mode
+cd paper-agent
+pip install -e .
+
+# 3. (Optional) Set PAPER_AGENT_ROOT for explicit path
+export PAPER_AGENT_ROOT="/path/to/paper-agent"  # Linux/macOS
+$env:PAPER_AGENT_ROOT = "G:\path\to\paper-agent"  # Windows PowerShell
+```
+
+### How `find_pa_root()` discovers pa_cli
+
+The 8 wrapper scripts share a `_pa_root.py` helper that tries 4 strategies in order:
+
+1. `$PAPER_AGENT_ROOT` env var (explicit override)
+2. `import pa_cli` (works if pip-installed system-wide)
+3. Common paths under `~/minimax - workspace/Paper agent`, `~/code/paper-agent`, `cwd/`, etc.
+4. `pa` CLI on PATH (traces back to site-packages)
+
+If all 4 fail, the wrapper returns a clear error:
+```json
+{
+  "error": "pa_cli_not_found",
+  "message": "paper-agent (pa_cli) is not installed in this Python environment.",
+  "hint": "Run scripts/bootstrap.py or pip install -e <repo>"
+}
+```
+
 ## Scripts (detailed)
+
+### `scripts/bootstrap.py` — Auto-install pa_cli (v3.9.23.1+)
+
+```bash
+python scripts/bootstrap.py                  # auto-detect + install
+python scripts/bootstrap.py --repo <path>    # explicit path
+python scripts/bootstrap.py --check          # verify only
+```
+
+See the **Installation** section above for full details.
+
+
 
 ### `scripts/search.py` — Search 7 engines
 

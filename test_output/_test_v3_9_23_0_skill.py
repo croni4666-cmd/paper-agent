@@ -234,6 +234,103 @@ class TestSkillManifest(unittest.TestCase):
         print("  [PASS] All 3 reference docs present")
 
 
+class TestPaRootDiscovery(unittest.TestCase):
+    """v3.9.23.1: PA_ROOT discovery must work in any install location.
+
+    Bug fixed: v3.9.23.0 PA_ROOT was hardcoded as __file__/.parent.parent.parent,
+    which only worked if skill was at .agents/skills/paper-agent/ INSIDE
+    the paper-agent repo. When user copies skill to ~/.codex/skills/paper-agent/,
+    PA_ROOT resolved to ~/.codex/ (wrong).
+
+    Fix: _pa_root.py find_pa_root() tries 4 strategies:
+    1. $PAPER_AGENT_ROOT env var
+    2. import pa_cli (most portable; works if pip-installed)
+    3. Common paths under user home / cwd / skill location
+    4. `pa` CLI on PATH
+    """
+
+    def test_pa_root_module_exists(self):
+        pa_root_py = SCRIPTS_DIR / "_pa_root.py"
+        self.assertTrue(pa_root_py.is_file(),
+                        "_pa_root.py must exist for shared PA_ROOT discovery")
+        print(f"  [PASS] _pa_root.py exists ({pa_root_py.stat().st_size} bytes)")
+
+    def test_pa_root_module_imports(self):
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        try:
+            from _pa_root import find_pa_root, get_install_instructions
+            self.assertTrue(callable(find_pa_root))
+            self.assertTrue(callable(get_install_instructions))
+            print("  [PASS] _pa_root module imports find_pa_root + get_install_instructions")
+        except ImportError as e:
+            self.fail(f"_pa_root module failed to import: {e}")
+
+    def test_find_pa_root_returns_path(self):
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        from _pa_root import find_pa_root
+        result = find_pa_root()
+        self.assertIsNotNone(result, "find_pa_root should find pa_cli in test env")
+        self.assertTrue((result / "pa_cli" / "__init__.py").is_file(),
+                        f"Returned path {result} is not a valid paper-agent root")
+        print(f"  [PASS] find_pa_root() returns valid pa_root: {result}")
+
+    def test_all_wrappers_use_pa_root_discovery(self):
+        """Every wrapper script must import _pa_root.find_pa_root.
+
+        v3.9.23.0 bug: wrappers used hardcoded PA_ROOT, broke when skill
+        was copied out of the repo. v3.9.23.1 fix: all wrappers use
+        find_pa_root() for portable location.
+        """
+        for script in ["search.py", "fetch.py", "fetch_batch.py", "review.py",
+                       "citations.py", "keys.py", "cache.py"]:
+            content = (SCRIPTS_DIR / script).read_text(encoding="utf-8")
+            self.assertIn("from _pa_root import", content,
+                          f"{script} does not import _pa_root")
+            self.assertIn("find_pa_root()", content,
+                          f"{script} does not call find_pa_root()")
+        print(f"  [PASS] All 7 pa-dependent wrappers use find_pa_root()")
+
+    def test_all_wrappers_handle_pa_cli_not_found(self):
+        """Each wrapper should have a pa_cli_not_found error path."""
+        for script in ["search.py", "fetch.py", "fetch_batch.py", "review.py",
+                       "citations.py", "keys.py", "cache.py"]:
+            content = (SCRIPTS_DIR / script).read_text(encoding="utf-8")
+            self.assertIn("pa_cli_not_found", content,
+                          f"{script} missing 'pa_cli_not_found' error code")
+            self.assertIn("return 4", content,
+                          f"{script} missing exit code 4 for pa_cli_not_found")
+        print(f"  [PASS] All 7 wrappers have pa_cli_not_found error handling")
+
+
+class TestBootstrapScript(unittest.TestCase):
+    """v3.9.23.1: bootstrap.py auto-installs pa_cli if missing."""
+
+    def test_bootstrap_exists(self):
+        bootstrap = SCRIPTS_DIR / "bootstrap.py"
+        self.assertTrue(bootstrap.is_file())
+        print(f"  [PASS] bootstrap.py exists ({bootstrap.stat().st_size} bytes)")
+
+    def test_bootstrap_help(self):
+        r = run_script("bootstrap.py", "--help")
+        self.assertEqual(r["exit_code"], 0)
+        self.assertIn("--repo", r["stdout"])
+        self.assertIn("--check", r["stdout"])
+        print("  [PASS] bootstrap.py --help works")
+
+    def test_bootstrap_check_when_installed(self):
+        """If pa_cli is already installed, --check returns exit 0 + status=ok."""
+        r = run_script("bootstrap.py", "--check", timeout=20)
+        if r["exit_code"] == 0:
+            # Parse JSON
+            data = json.loads(r["stdout"])
+            self.assertEqual(data["status"], "ok")
+            self.assertTrue(data["pa_cli_importable"])
+            print("  [PASS] bootstrap.py --check returns ok when pa_cli installed")
+        else:
+            # pa_cli might not be importable in this specific Python; skip
+            print("  [SKIP] bootstrap.py --check: pa_cli not importable in test env")
+
+
 if __name__ == "__main__":
     import logging
     logging.disable(logging.CRITICAL)

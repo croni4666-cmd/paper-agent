@@ -1,0 +1,6 @@
+﻿{
+  "step": "init",
+  "pa_cli_importable": true,
+  "status": "ok",
+  "message": "pa_cli is already importable. No install needed."
+}

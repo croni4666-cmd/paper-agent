@@ -1,0 +1,25 @@
+﻿  search.py: OK (stdout=1079B, stderr=0B)
+  fetch.py: OK (stdout=1132B, stderr=0B)
+  fetch_batch.py: OK (stdout=1022B, stderr=0B)
+  review.py: OK (stdout=1118B, stderr=0B)
+  citations.py: OK (stdout=862B, stderr=0B)
+  keys.py: OK (stdout=522B, stderr=0B)
+  cache.py: OK (stdout=747B, stderr=0B)
+  version.py: OK (stdout=192B, stderr=0B)
+
+=== version.py real run ===
+exit: 0, stdout: 603B
+{
+  "skill": "paper-agent",
+  "skill_version": "3.9.23.0",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "pa_cli_version": "3.9.23.0",
+  "optional_deps": {
+    "playwright": {
+      "installed": true,
+      "version": "unknown"
+    },
+    "requests": {
+      "installed": true,
+      "version": "

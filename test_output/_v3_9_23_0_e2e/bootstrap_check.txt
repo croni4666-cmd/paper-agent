@@ -1,0 +1,6 @@
+﻿{
+  "step": "init",
+  "pa_cli_importable": false,
+  "status": "not_installed",
+  "message": "pa_cli is not importable. Run without --check to install."
+}
