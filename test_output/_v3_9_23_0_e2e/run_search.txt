@@ -1,0 +1,14 @@
+﻿Script exists: True
+Script size: 5723
+--help exit: 0
+--help stdout len: 1079
+--help stderr len: 0
+stdout first 200: usage: search.py [-h]
+                 [--engine {crossref,openalex,semanticscholar,arxiv,aminer,cnki,pubmed,all}]
+                 [--limit LIMIT] [--year-min YEAR_MIN] [--year-max YEAR_MAX]
+        
+
+--- Real run ---
+exit: 0
+stdout len: 0
+stderr len: 0

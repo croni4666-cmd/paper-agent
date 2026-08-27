@@ -1,0 +1,3 @@
+[pa] loaded 1 env var(s) from .env
+G:\minimax - workspace\Paper agent\pa_cli\_http.py:168: UserWarning: paper-agent: proxy http://127.0.0.1:10808 uses HTTP (plaintext CONNECT handshake - target hostname visible to anyone on path). For local Clash/V2RayN this is acceptable. For REMOTE proxy, consider HTTPS proxy or VPN.
+  proxies = get_proxy_dict()

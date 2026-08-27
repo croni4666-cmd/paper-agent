@@ -1,0 +1,6 @@
+usage: search.py [-h]
+                 [--engine {crossref,openalex,semanticscholar,arxiv,aminer,cnki,pubmed,all}]
+                 [--limit LIMIT] [--year-min YEAR_MIN] [--year-max YEAR_MAX]
+                 [--output {json,markdown}] [--no-cache]
+                 query
+search.py: error: unrecognized arguments: language model

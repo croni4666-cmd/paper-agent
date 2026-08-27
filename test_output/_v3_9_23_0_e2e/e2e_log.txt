@@ -1,0 +1,73 @@
+﻿=== Testing all 8 scripts ===
+
+1. version.py
+{
+  "exit_code": 0,
+  "stdout_len": 603,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"skill\": \"paper-agent\",\n  \"skill_version\": \"3.9.23.0\",\n  \"python\": \"3.12.10\",\n  \"platform\": \"Windows\",\n  \"pa_cli_version\": \"3.9.22.1\",\n  \"optional_deps\": {\n    \"playwright\": {\n      \"installed\": t"
+}
+
+2. keys.py list
+{
+  "exit_code": 1,
+  "stdout_len": 0,
+  "stderr_len": 303,
+  "stderr_first_200": "{\"error\": \"pa_keys_failed\", \"exit_code\": 2, \"command\": \"list\", \"service_id\": null, \"stderr_tail\": \"[pa] loaded 1 env var(s) from .env\\nUsage: python -m pa_cli.cli keys list [OPTIONS]\\nTry 'python -m p"
+}
+
+3. keys.py check (missing service)
+{
+  "exit_code": 2,
+  "stdout_len": 0,
+  "stderr_len": 119,
+  "stderr_first_200": "usage: keys.py [-h] [--as-json] {list,check,audit} [service_id]\nkeys.py: error: 'check' requires a SERVICE_ID argument\n"
+}
+
+4. cache.py stats
+{
+  "exit_code": 1,
+  "stdout_len": 0,
+  "stderr_len": 289,
+  "stderr_first_200": "{\"error\": \"pa_cache_failed\", \"exit_code\": 2, \"command\": \"stats\", \"stderr_tail\": \"[pa] loaded 1 env var(s) from .env\\nUsage: python -m pa_cli.cli cache stats [OPTIONS]\\nTry 'python -m pa_cli.cli cache "
+}
+
+5. search.py BERT
+{
+  "exit_code": 0,
+  "stdout_len": 0,
+  "stderr_len": 0
+}
+
+6. fetch.py 10.1371/journal.pone.0000001 --prefer s2
+{
+  "exit_code": 1,
+  "stdout_len": 0,
+  "stderr_len": 486,
+  "stderr_first_200": "{\"doi\": \"10.1371/journal.pone.0000001\", \"saved_as\": null, \"channels\": {\"s2\": {\"status\": \"fail\", \"error\": \"api_error\"}}, \"handoff\": {\"reason\": \"S2 API returned status 429\", \"elapsed_sec\": 0.483, \"user_"
+}
+
+7. citations.py 10.1038/nature12373 --direction forward --limit 3
+{
+  "exit_code": 0,
+  "stdout_len": 2401,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"doi\": \"10.1038/nature12373\",\n  \"direction\": \"forward\",\n  \"source_work\": {\n    \"doi\": \"10.1038/nature12373\",\n    \"title\": \"Nanometre-scale thermometry in a living cell\",\n    \"authors\": [\n      \"Ge"
+}
+
+8. review.py (missing corpus)
+{
+  "exit_code": 2,
+  "stdout_len": 0,
+  "stderr_len": 264,
+  "stderr_first_200": "usage: review.py [-h] [--output OUTPUT] [--topic TOPIC]\n                 [--max-papers MAX_PAPERS] [--topics]\n                 [--top-k-clusters TOP_K_CLUSTERS] [--model MODEL]\n                 corpus"
+}
+
+=== Final Summary ===
+  version.py: OK
+  keys.py: FAIL (exit 2)
+  cache.py: FAIL (exit 1)
+  search.py: OK
+  fetch.py: FAIL (exit 1)
+  citations.py: OK
+  review.py: FAIL (exit 2)

@@ -1,0 +1,5 @@
+RETURNCODE: 0
+STDOUT len: 2521
+STDERR len: 404
+STDOUT first 200: '{\n  "query": "BERT",\n  "year_min": null,\n  "year_max": null,\n  "by_engine": {\n    "semanticscholar": 2\n  },\n  "dedup_count": 2,\n  "enrich_top": 0,\n  "results": [\n    {\n      "doi": "",\n      "arxiv_id'
+STDERR first 200: '[pa] loaded 1 env var(s) from .env\nG:\\minimax - workspace\\Paper agent\\pa_cli\\_http.py:168: UserWarning: paper-agent: proxy http://127.0.0.1:10808 uses HTTP (plaintext CONNECT handshake - target hostna'

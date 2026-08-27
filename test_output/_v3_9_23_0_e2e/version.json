@@ -1,0 +1,31 @@
+{
+  "skill": "paper-agent",
+  "skill_version": "3.9.23.0",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "pa_cli_version": "3.9.22.1",
+  "optional_deps": {
+    "playwright": {
+      "installed": true,
+      "version": "unknown"
+    },
+    "requests": {
+      "installed": true,
+      "version": "2.33.1"
+    },
+    "bibtexparser": {
+      "installed": true,
+      "version": "1.4.4"
+    },
+    "fitz": {
+      "installed": true,
+      "version": "1.27.2.3"
+    },
+    "yaml": {
+      "installed": true,
+      "version": "6.0.3"
+    }
+  },
+  "jats_to_pdf_available": true,
+  "recommendation": "OK"
+}

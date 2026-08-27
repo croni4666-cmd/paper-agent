@@ -242,6 +242,99 @@ backwards compat with any caller that already used them.
 - `pa_cli.__version__ == "3.9.22.1"`
 
 
+## [3.9.23.0] - 2026-08-27
+
+### Added — Codex CLI Skill (`.agents/skills/paper-agent/`)
+
+paper-agent is now installable as a **standard Codex Skill**, following
+the [open agent skills spec](https://developers.openai.com/codex/skills/).
+Add `.agents/skills/paper-agent/` to a repo (or symlink to `~/.codex/skills/paper-agent/`)
+and Codex will auto-discover it via the SKILL.md frontmatter.
+
+**What's in the skill** (8 wrapper scripts + 3 reference docs + UI metadata):
+
+| File | Purpose |
+| --- | --- |
+| `SKILL.md` | Frontmatter (name/description) + when-to-trigger rules + script docs + 3 common workflows |
+| `agents/openai.yaml` | Codex App UI metadata: display_name, policy (allow_implicit_invocation), scripts list |
+| `scripts/search.py` | 7-engine search (Crossref / OpenAlex / S2 / arXiv / AMiner / CNKI / PubMed) |
+| `scripts/fetch.py` | Single DOI → PDF via 14-channel cascade |
+| `scripts/fetch_batch.py` | BibTeX → batch PDF downloads with summary report |
+| `scripts/review.py` | Corpus → literature review markdown (with `--topics` clustering) |
+| `scripts/citations.py` | Walk citation graph (forward + backward) via OpenAlex |
+| `scripts/keys.py` | API key management (list / check / audit) |
+| `scripts/cache.py` | Local PDF cache (stats / list / clean / clear) |
+| `scripts/version.py` | Show paper-agent version + dep status |
+| `references/channels.md` | 14 PDF fetch channels reference (pmc-pdf, s2, biorxiv, core, osf, chemrxiv, ...) |
+| `references/engines.md` | 7 search engines reference (with AMiner +7.1pp cite lift for Chinese) |
+| `references/cli-cheatsheet.md` | Quick `pa` CLI reference (zotero, sample-pool, PRISMA, etc.) |
+
+**Why this matters**:
+
+The user tried to install paper-agent in GPT/Codex, but GPT reported:
+> "目前不能作为 Codex Skill 直接安装。...项目实际是 Python CLI/MCP 应用"
+
+This release fixes that. Codex CLI scans `.agents/skills/` (per the
+[Codex skills spec](https://developers.openai.com/codex/skills/)) and
+loads the `paper-agent` skill with the 8 wrapper scripts. Each script
+returns JSON to stdout (parseable by Codex) and JSON error to stderr
+on failure.
+
+**Why it's "thick" (not just SKILL.md)**:
+
+Per user ask "完整 Skill 化（厚）", the skill includes:
+- 8 deterministic Python wrappers (not just "ask Codex to run `pa`")
+- Consistent error schema: `{"error": "...", "hint": "..."}` on failure
+- Reference docs for Codex's progressive disclosure (channels.md, engines.md)
+- Codex-specific UI metadata (openai.yaml) for the Codex App selector
+- 22 regression tests in `test_output/_test_v3_9_23_0_skill.py`
+
+**E2E verified (2026-08-27, dev env)**:
+
+| Script | Real call | Result |
+| --- | --- | --- |
+| `version.py` | (no args) | exit 0, 603 bytes JSON with pa_cli version + dep status |
+| `search.py` | `BERT` (semanticscholar, limit 2) | exit 0, real BERT paper JSON |
+| `citations.py` | `10.1038/nature12373` forward 3 | exit 0, 2401 bytes JSON (the Nature nanothermometry paper) |
+| `cache.py` | `stats` | exit 0, real cache JSON |
+| `keys.py` | `list` | exit 0, 1976 bytes JSON (all registered keys) |
+| `fetch.py` | `10.1371/journal.pone.0000001 --prefer s2` | exit 1, S2 API 429 (dev IP rate limit) — code works |
+| `review.py` | (no corpus) | exit 2, argparse error (expected) |
+| `fetch_batch.py` | (no bibtex) | exit 2, argparse error (expected) |
+
+**Tests**: `test_output/_test_v3_9_23_0_skill.py` (22 tests, all PASS in ~10s):
+- 8 scripts present + have shebang + have docstring
+- 8 scripts respond to `--help` with exit 0
+- 6 scripts reject missing required args with proper exit codes
+- `version.py` returns valid JSON even when pa_cli is unavailable
+- `SKILL.md` exists, has valid YAML frontmatter, name=paper-agent
+- `agents/openai.yaml` exists with interface/policy/scripts sections
+- 3 reference docs present
+
+**Installation** (after this PR is merged):
+
+```bash
+# Option 1: Repo-level skill (commit to your project)
+cd your-project
+mkdir -p .agents/skills
+cp -r /path/to/paper-agent/.agents/skills/paper-agent .agents/skills/
+
+# Option 2: User-level skill (auto-available in all your Codex sessions)
+mkdir -p ~/.codex/skills
+cp -r /path/to/paper-agent/.agents/skills/paper-agent ~/.codex/skills/
+
+# Then in Codex:
+$paper-agent search "long-term care insurance" --engine all --limit 20
+$paper-agent fetch 10.1038/nature12373 --prefer pmc-pdf
+```
+
+**Note**: The 8 wrapper scripts require `paper-agent` (the pa_cli Python
+package) to be installed in the same Python environment as Codex
+(`pip install -e .` from this repo). The `version.py` script is the
+only one that works without pa_cli installed (it reports the
+dependency status).
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)

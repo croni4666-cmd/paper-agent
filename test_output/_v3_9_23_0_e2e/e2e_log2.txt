@@ -1,0 +1,74 @@
+﻿=== Testing all 8 scripts ===
+
+1. version.py
+{
+  "exit_code": 0,
+  "stdout_len": 603,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"skill\": \"paper-agent\",\n  \"skill_version\": \"3.9.23.0\",\n  \"python\": \"3.12.10\",\n  \"platform\": \"Windows\",\n  \"pa_cli_version\": \"3.9.22.1\",\n  \"optional_deps\": {\n    \"playwright\": {\n      \"installed\": t"
+}
+
+2. keys.py list
+{
+  "exit_code": 0,
+  "stdout_len": 1976,
+  "stderr_len": 0,
+  "stdout_first_200": "[\n  {\n    \"id\": \"openalex\",\n    \"name\": \"OpenAlex\",\n    \"env_var\": \"OPENALEX_API_KEY\",\n    \"tier\": \"free\",\n    \"expires\": \"(none)\",\n    \"present\": true,\n    \"key_length\": 22,\n    \"status\": \"active\",\n "
+}
+
+3. keys.py check (missing service)
+{
+  "exit_code": 2,
+  "stdout_len": 0,
+  "stderr_len": 119,
+  "stderr_first_200": "usage: keys.py [-h] [--as-json] {list,check,audit} [service_id]\nkeys.py: error: 'check' requires a SERVICE_ID argument\n"
+}
+
+4. cache.py stats
+{
+  "exit_code": 0,
+  "stdout_len": 276,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"root\": \"C:\\\\Users\\\\DengN\\\\.paper-agent\\\\cache\",\n  \"total_files\": 18,\n  \"paper_count\": 9,\n  \"total_size_bytes\": 20707115,\n  \"oldest_ts\": 1783933050.2810478,\n  \"newest_ts\": 1784001559.839917,\n  \"ol"
+}
+
+5. search.py BERT
+{
+  "exit_code": 0,
+  "stdout_len": 2749,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"query\": \"BERT\",\n  \"year_min\": null,\n  \"year_max\": null,\n  \"by_engine\": {\n    \"semanticscholar\": 2\n  },\n  \"dedup_count\": 2,\n  \"enrich_top\": 0,\n  \"results\": [\n    {\n      \"doi\": \"10.18653/v1/N19-14"
+}
+
+6. fetch.py 10.1371/journal.pone.0000001 --prefer s2
+{
+  "exit_code": 1,
+  "stdout_len": 0,
+  "stderr_len": 486,
+  "stderr_first_200": "{\"doi\": \"10.1371/journal.pone.0000001\", \"saved_as\": null, \"channels\": {\"s2\": {\"status\": \"fail\", \"error\": \"api_error\"}}, \"handoff\": {\"reason\": \"S2 API returned status 429\", \"elapsed_sec\": 0.655, \"user_"
+}
+
+7. citations.py 10.1038/nature12373 --direction forward --limit 3
+{
+  "exit_code": 0,
+  "stdout_len": 2401,
+  "stderr_len": 0,
+  "stdout_first_200": "{\n  \"doi\": \"10.1038/nature12373\",\n  \"direction\": \"forward\",\n  \"source_work\": {\n    \"doi\": \"10.1038/nature12373\",\n    \"title\": \"Nanometre-scale thermometry in a living cell\",\n    \"authors\": [\n      \"Ge"
+}
+
+8. review.py (missing corpus)
+{
+  "exit_code": 2,
+  "stdout_len": 0,
+  "stderr_len": 264,
+  "stderr_first_200": "usage: review.py [-h] [--output OUTPUT] [--topic TOPIC]\n                 [--max-papers MAX_PAPERS] [--topics]\n                 [--top-k-clusters TOP_K_CLUSTERS] [--model MODEL]\n                 corpus"
+}
+
+=== Final Summary ===
+  version.py: OK
+  keys.py: FAIL (exit 2)
+  cache.py: OK
+  search.py: OK
+  fetch.py: FAIL (exit 1)
+  citations.py: OK
+  review.py: FAIL (exit 2)
