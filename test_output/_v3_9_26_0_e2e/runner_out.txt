@@ -1,0 +1,42 @@
+﻿STDOUT:
+click version: 8.4.2
+cli imported
+commands: ['build', 'cache', 'citations', 'cite-check', 'cnki', 'cnki-guide', 'dedup-strict', 'export-screening', 'fetch', 'fetch-batch', 'jobs', 'judge', 'keys', 'mcp', 'mcp-fetch-serve', 'mcp-serve', 'obsidian', 'prisma', 'project', 'review', 'review-topics', 'sample-pool', 'scaffold', 'search', 'search-and-import', 'search-saved', 'version', 'zotero-check', 'zotero-project', 'zotero-push', 'zotero-search', 'zotero-sync']
+---
+fetch-batch Exit: 0 len: 1253
+Output first 500:
+Usage: main fetch-batch [OPTIONS] BIBTEX_FILE
+
+  [P2-11] Batch PDF download from a Bibtex file.
+
+  Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in priority
+  order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf. Lists what
+  failed and why.
+
+  Examples:   pa fetch-batch refs.bib --out-dir ./pdfs/   pa fetch-batch
+  refs.bib --out-dir ./pdfs/ --skip-existing   pa fetch-batch refs.bib --out-dir
+  ./pdfs/ --report failed.md
+
+Options:
+  --out-dir DIRECTORY      Direc
+---
+cnki-guide Exit: 0 len: 1783
+Output first 500:
+Usage: main cnki-guide [OPTIONS]
+
+  [v3.9.26.0] Generate a batch download guide for CNKI PDF.
+
+  v3.9.26.0: renamed from `fetch_batch` to `cnki-guide` to avoid name conflict
+  with the new `fetch-batch` command (the actual PDF downloader added in
+  v3.9.10.0). Old command name was `fetch_batch` (underscore); the new name is
+  `cnki-guide` (hyphen).
+
+  Semi-automated, v3.9.8.3.
+
+  Input: a text file with one query per line. Each line can be either:   - a DOI
+  (e.g. 10.3969/j.issn.1003-9031.2022.
+
+STDERR:
+G:\minimax - workspace\Paper agent\test_output\_v3_9_26_0_e2e\_inline_test.py:3: DeprecationWarning: The '__version__' attribute is deprecated and will be removed in Click 9.1. Use feature detection or 'importlib.metadata.version("click")' instead.
+  print("click version:", click.__version__)
+

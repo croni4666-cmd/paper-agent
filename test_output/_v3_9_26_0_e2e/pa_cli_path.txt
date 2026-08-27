@@ -1,0 +1,15 @@
+﻿sys.path:
+  
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312
+  C:\Users\DengN\AppData\Roaming\Python\Python312\site-packages
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\Lib\site-packages
+  __editable__.medrax-0.1.0.finder.__path_hook__
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib
+  C:\Users\DengN\AppData\Local\Programs\Python\Python312\Lib\site-packages\pythonwin
+
+pa_cli loaded from: G:\minimax - workspace\Paper agent\pa_cli\__init__.py
+pa_cli.__version__: 3.9.25.0

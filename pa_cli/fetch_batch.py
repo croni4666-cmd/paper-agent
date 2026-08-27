@@ -128,7 +128,8 @@ def _fetch_one_entry(
                 result.success = True
                 result.source = r.get('source', '')
                 result.out_path = r.get('path', str(out_path))
-                result.size_bytes = r.get('size', 0)
+                # v3.9.26.0: pa fetch returns 'size_bytes' (not 'size')
+                result.size_bytes = r.get('size_bytes', 0)
                 return result
             result.error = r.get('error', 'fetch failed')
         # Try title fallback
@@ -138,7 +139,8 @@ def _fetch_one_entry(
                 result.success = True
                 result.source = r.get('source', '')
                 result.out_path = r.get('path', str(out_path))
-                result.size_bytes = r.get('size', 0)
+                # v3.9.26.0: pa fetch returns 'size_bytes' (not 'size')
+                result.size_bytes = r.get('size_bytes', 0)
                 result.error = ''
                 return result
             if not result.error:
@@ -161,11 +163,17 @@ def run_fetch_batch(
     skip_existing: bool = False,
     prefer: str = 'auto',
     progress_callback: Optional[Callable[[int, int, FetchResult], None]] = None,
+    clean_xml: bool = False,  # v3.9.26.0: delete .xml intermediate after successful PDF
 ) -> FetchSummary:
     """Run batch PDF download for all entries in a Bibtex.
 
     Walks each entry sequentially (parallel would hit rate limits). Stops
     when all entries processed or max_total_sec elapsed.
+
+    v3.9.26.0: added `clean_xml` option. When True, deletes the .xml
+    intermediate file (created by JATS-to-PDF rendering for PMC papers)
+    after the PDF is successfully generated. Reduces clutter in out_dir
+    when the .xml is no longer needed.
 
     Returns FetchSummary with all per-entry results.
     """
@@ -193,11 +201,25 @@ def run_fetch_batch(
 
         result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
         summary.results.append(result)
-        if result.success:
+        # v3.9.26.0: check skipped first (skipped has success=True with
+        # error='skipped-existing'); otherwise skip counts as success
+        if result.error == 'skipped-existing':
+            summary.n_skipped += 1
+            summary.total_size_bytes += result.size_bytes
+        elif result.success:
             summary.n_success += 1
             summary.total_size_bytes += result.size_bytes
         else:
             summary.n_failure += 1
+        # v3.9.26.0: clean up .xml intermediate (e.g., from JATS-to-PDF)
+        # after successful PDF generation, if --clean-xml was passed
+        if clean_xml and result.success and result.out_path:
+            xml_path = Path(result.out_path).with_suffix('.xml')
+            try:
+                if xml_path.exists() and xml_path != Path(result.out_path):
+                    xml_path.unlink()
+            except OSError:
+                pass  # best-effort cleanup, don't fail the batch
         summary.total_elapsed_sec += result.elapsed_sec
 
         if progress_callback:

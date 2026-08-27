@@ -1,0 +1,43 @@
+﻿=== Test 1: Direct Python import ===
+stdout: cli file: G:\minimax - workspace\Paper agent\pa_cli\cli.py
+commands: ['build', 'cache', 'citations', 'cite-check', 'cnki', 'cnki-guide', 'dedup-strict', 'export-screening', 'fetch', 'fetch-batch', 'jobs', 'judge', 'keys', 'mcp', 'mcp-fetch-serve', 'mcp-serve', 'obsidian', 'prisma', 'project', 'review', 'review-topics', 'sample-pool', 'scaffold', 'search', 'search-and-import', 'search-saved', 'version', 'zotero-check', 'zotero-project', 'zotero-push', 'zotero-search', 'zotero-sync']
+
+stderr: 
+
+=== Test 2: Run as module (python -m pa_cli.cli --help) ===
+stdout first 2000: Usage: python -m pa_cli.cli [OPTIONS] COMMAND [ARGS]...
+
+  paper-agent CLI �� academic paper fetch + lit review synthesis.
+
+  paper-agent v4 design principle: after 5 minutes of Cloudflare challenge
+  failure, stop iterating and surface a "your turn" handoff. Real human
+  browser sessions remain the only reliable Cloudflare bypass.
+
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
+
+Commands:
+  cache          Manage the local PDF + meta cache (~/.paper-agent/cache/).
+  citations      Walk citation graph via OpenAlex.
+  cnki           CNKI 6th search engine (Chinese papers, optional).
+  cnki-guide     [v3.9.26.0] Generate a batch download guide for CNKI PDF.
+  fetch          Fetch a single paper PDF by DOI using 8 channels with...
+  keys           Manage API keys + expiry reminders.
+  mcp            Integrate paper-agent with a public MCP server.
+  mcp-serve      DEPRECATED: shim that points to `pa mcp install` (kept...
+  prisma         Generate a PRISMA 2020 flow diagram (standalone).
+  review         Synthesize lit review markdown from a corpus directory...
+  review-topics  Cluster corpus papers by topic (cross-paper synthesis...
+  search         6-engine academic paper search (Crossref / OpenAlex /...
+  version        Show paper-agent version + key dependency status.
+
+stderr: 
+
+=== Test 3: Run as module (python -m pa_cli.cli fetch-batch --help) ===
+stdout first 500: 
+stderr: Usage: python -m pa_cli.cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m pa_cli.cli --help' for help.
+
+Error: No such command 'fetch-batch'. Did you mean 'fetch'?
+

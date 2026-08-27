@@ -1,0 +1,32 @@
+﻿============================================================
+Test 1: Verify size key fix (was 'size', now 'size_bytes')
+============================================================
+  Old pattern 'r.get("size", 0)': 0 occurrences (should be 0)
+  New pattern 'r.get("size_bytes", 0)': 2 occurrences (should be 2)
+  PASS: Bug 2 fixed (size key now 'size_bytes')
+
+============================================================
+Test 2: Verify skip counter fix (n_skipped instead of n_success)
+============================================================
+  PASS: Bug 3 fixed (skipped-existing checked before n_success)
+
+============================================================
+Test 3: Verify --clean-xml option is plumbed through
+============================================================
+  PASS: run_fetch_batch has 'clean_xml' parameter (default=False)
+
+============================================================
+Test 4: Verify XML cleanup logic
+============================================================
+  PASS: XML cleanup logic present (xml_path.unlink())
+
+============================================================
+Test 5: Verify click commands (cnki-guide + fetch-batch)
+============================================================
+  cnki-guide --help: exit=0, len=1818
+    PASS: cnki-guide command works
+  fetch-batch --help: exit=0, len=1218
+    PASS: fetch-batch command works
+    PASS: --clean-xml flag visible
+  fetch_batch (underscore) --help: exit=2 (correctly fails)
+    PASS: old fetch_batch command is gone

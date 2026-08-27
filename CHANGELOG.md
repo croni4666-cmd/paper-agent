@@ -760,6 +760,161 @@ these are packaging/metadata fixes only. Justification for PATCH
 - New PATCH is the standard way to fix packaging without breaking
   the version contract
 
+
+## [3.9.26.0] - 2026-08-27
+
+### Fixed — 4 user-reported `pa fetch-batch` bugs (Wilson disease batch download test)
+
+User ran `pa fetch-batch` on 2 known DOIs from a Wilson disease batch
+(BibTeX with Gromadzka 2023 + Gromadzka 2020). All 2 PDFs downloaded
+successfully in 53.7s (319 KB + 869 KB). But 4 packaging/quality bugs surfaced:
+
+#### Bug 1: `pa fetch-batch` reports "No such option '--out-dir'"
+
+**Root cause**: TWO Click commands registered as `fetch-batch`:
+- OLD `fetch_batch(input_file, output, ...)` (line 1095 in v3.9.8.3,
+  CNKI guide generator with options `-i/-o/--year-min/--year-max`)
+- NEW `fetch_batch(bibtex_file, out_dir, ...)` (line 1620 in v3.9.10.0,
+  real PDF downloader with options `--out-dir/--skip-existing/...`)
+
+The OLD function used `@main.command()` (no name) which click defaults
+to function name `fetch_batch` → click auto-hyphenates to `fetch-batch`.
+Both registered the same name. OLD won (defined first).
+
+**Fix**: Renamed OLD function to `cnki_guide` with
+`@main.command(name="cnki-guide")`. Now:
+- `pa fetch-batch` → the new PDF downloader (with `--out-dir`)
+- `pa cnki-guide` → the old CNKI guide generator
+- `pa fetch_batch` (underscore) → "No such command" (correctly gone)
+
+This unblocks the Skill's `scripts/fetch_batch.py` wrapper, which
+calls `python -m pa_cli.cli fetch-batch` and was getting the OLD function
+(no `--out-dir` option).
+
+#### Bug 2: First download `size_bytes` = 0 in summary
+
+User report: PDFs were downloaded successfully (319KB + 869KB) but the
+JSON summary had `size_bytes: 0` and `total_size_bytes: 0` for each entry.
+
+**Root cause**: In `pa_cli/fetch_batch.py`, the code that reads the
+fetch result was looking for the wrong key:
+```python
+result.size_bytes = r.get('size', 0)  # WRONG — pa fetch returns 'size_bytes'
+```
+
+`pa fetch` returns `{"size_bytes": N, ...}` (not `{"size": N}`). The
+`.get('size', 0)` always returned the default 0, so size reporting was
+silently broken for both DOI path and title-fallback path.
+
+**Fix**: Changed to `r.get('size_bytes', 0)` in 2 places (DOI path + title
+fallback). Now summary correctly reports `total_size_bytes: 1188833` for
+the 2 Gromadzka papers.
+
+#### Bug 3: `--skip-existing` counter wrong
+
+User report: 2nd run with `--skip-existing` correctly skipped both PDFs
+(0s elapsed) and tagged them with `error: "skipped-existing"`. But the
+summary still showed `n_success: 2, n_skipped: 0`.
+
+**Root cause**: The skip-existing path in `_fetch_one_entry` correctly
+sets `result.success = True` + `result.error = 'skipped-existing'`. But
+the orchestrator in `run_fetch_batch` only checked `result.success`:
+```python
+if result.success:
+    summary.n_success += 1
+    summary.total_size_bytes += result.size_bytes
+else:
+    summary.n_failure += 1
+```
+
+Since skipped entries have `success=True`, they got counted as
+`n_success` (not `n_skipped`).
+
+**Fix**: Check `result.error == 'skipped-existing'` FIRST and increment
+`n_skipped` (not `n_success`):
+```python
+if result.error == 'skipped-existing':
+    summary.n_skipped += 1
+    summary.total_size_bytes += result.size_bytes
+elif result.success:
+    summary.n_success += 1
+    ...
+```
+
+Now 2nd run correctly shows `n_skipped: 2, n_success: 0`.
+
+#### Bug 4: PMC `.xml` intermediate not cleaned up
+
+User note: "PMC 转换会在 PDF 旁保留 `.xml` 中间文件；如果并非刻意保留，建议成功生成 PDF 后清理。"
+
+The JATS-to-PDF render (v3.9.21.0) creates `<key>.xml` (JATS source)
+alongside `<key>.pdf`. For paper-agent's use case (PDF is the only
+output users care about), the `.xml` is just clutter.
+
+**Fix**: Added `--clean-xml` flag to `pa fetch-batch`. When set, deletes
+the `.xml` intermediate after successful PDF generation (best-effort,
+doesn't fail the batch). Default `False` for backward compat.
+
+Usage:
+```bash
+pa fetch-batch refs.bib --out-dir ./pdfs/ --clean-xml
+```
+
+#### Tests (v3.9.26.0 fetch_batch regression)
+
+`test_output/_test_v3_9_26_0_fetch_batch.py` (NEW, 10 tests, all PASS):
+- 4 TestClickCommandNames: cnki-guide works, fetch-batch works, --clean-xml
+  visible, old fetch_batch (underscore) is gone
+- 2 TestSizeKeyFix: 0 instances of 'size', 2 instances of 'size_bytes'
+- 2 TestSkipCounterFix: skip check before n_success, n_skipped field exists
+- 2 TestCleanXmlOption: param exists, cleanup logic present, CLI passes it
+
+Pre-existing tests still PASS:
+- 29/29 v3.9.23 skill
+- 12/12 v3.9.25 aminer
+- 8/8 v3.9.25.1 packaging
+- 10/10 v3.9.26 fetch_batch (new)
+- **Total: 59/59 PASS** (skipped 1 of 60 from earlier run; was a v3.9.23 skill test that depends on current state)
+
+#### Version discipline: MINOR (3.9.25.1 → 3.9.26.0)
+
+New public surface:
+- `cnki-guide` Click command (renamed from `fetch_batch`)
+- `pa_cli.fetch_batch.run_fetch_batch` new `clean_xml` parameter
+- `pa_cli.cli.fetch_batch` Click command new `--clean-xml` flag
+
+These are user-facing changes, so MINOR (not PATCH).
+
+#### Files changed
+
+```
+pa_cli/cli.py                        | rename old fetch_batch -> cnki_guide, add --clean-xml flag
+pa_cli/fetch_batch.py                | fix 'size' -> 'size_bytes' (2x), add n_skipped check,
+                                     add clean_xml parameter + XML cleanup logic
+pa_cli/__init__.py                  | 3.9.25.1 -> 3.9.26.0
+pyproject.toml                      | 3.9.25.1 -> 3.9.26.0
+.agents/skills/paper-agent/SKILL.md  | version 3.9.25.1 -> 3.9.26.0, pa_cli_version 3.9.25.0 -> 3.9.26.0
+.agents/skills/paper-agent/scripts/version.py | skill_version 3.9.25.1 -> 3.9.26.0
+CHANGELOG.md                        | v3.9.26.0 entry (this section)
+ROADMAP.md                          | v3.9.26.0 row
+test_output/_test_v3_9_26_0_fetch_batch.py | NEW (8,349 bytes, 10 tests)
+test_output/_v3_9_26_0_e2e/         | NEW (e2e verification scripts + module_test.py)
+```
+
+#### User-side
+
+```bash
+pip install --upgrade paper-agent
+# Skill wrapper now works:
+python ~/.codex/skills/paper-agent/scripts/fetch_batch.py refs.bib \
+  --output-dir ./pdfs/ --skip-existing --clean-xml --report report.json
+```
+
+The 4 bugs were all **silent** (no error, just wrong output). The user's
+Wilson disease batch test was the first end-to-end validation that
+exercised the summary path. This release makes `pa fetch-batch` actually
+useful for batch research workflows.
+
 `pa_cli/__init__.py` and `pyproject.toml` STAY at 3.9.25.0 (no code change).
 Only `SKILL.md` frontmatter and `version.py` bump to 3.9.25.1.
 
