@@ -1,0 +1,5 @@
+[pa] loaded 1 env var(s) from .env
+Usage: python -m pa_cli.cli search [OPTIONS] QUERY
+Try 'python -m pa_cli.cli search --help' for help.
+
+Error: Got unexpected extra argument (Disease)

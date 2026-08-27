@@ -1,4 +1,4 @@
-﻿"""
+"""
 pa_cli.search 鈥?academic paper search across multiple engines.
 
 Default engines: Crossref, Semantic Scholar, arXiv, OpenAlex, AMiner, CNKI.
@@ -936,7 +936,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                enrich_top_min_cites: int = 1,
                sort_by: str = "cite",
                source_filter: List[str] = None,
-               enrich_max_age_years: int = 10) -> Dict[str, Any]:
+               enrich_max_age_years: int = 10,
+               aminer_mode: str = "auto") -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -1010,6 +1011,10 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             if eng == "openalex" and concepts_filter:
                 by_engine[eng] = search_openalex(query, year_min, year_max, limit,
                                                 concepts_filter=concepts_filter)
+            elif eng == "aminer":
+                # v3.9.25.0: pass aminer_mode (auto/pro/basic)
+                by_engine[eng] = funcs[eng](query, year_min, year_max, limit,
+                                             mode=aminer_mode)
             else:
                 by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
         except Exception as e:

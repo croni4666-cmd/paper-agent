@@ -573,6 +573,113 @@ queries into individual phrase searches. Will address in a future
 release with a `--strict-phrase` flag or query reformulation layer.
 
 
+## [3.9.25.0] - 2026-08-27
+
+### Fixed — AMiner multi-word query (Wilson Disease test, Issue 5)
+
+User reported AMiner "only matches 'disease'" — searching for
+"Wilson Disease" returned 36,857 mostly-irrelevant papers (Alzheimer,
+cardiovascular, etc.) because AMiner's basic API only does exact
+title matching and doesn't support multi-word queries natively.
+
+#### Fix 1: AMiner Pro API integration (`pa_cli/aminer_channel.py`)
+
+Added `search_aminer_pro()` using AMiner's `/paper/search/pro` endpoint
+with the `keyword` parameter, which natively supports multi-word queries.
+
+**API differences**:
+- Basic `/paper/search`: free, title-only match, 0 results for multi-word
+- Pro `/paper/search/pro`: ¥0.01/call, multi-field (`title`/`keyword`/
+  `abstract`/`author`/`org`/`venue`/`order`), supports up to 100 results,
+  native multi-word via `keyword` field
+
+**Cost**: User has 3880 calls total budget. Each multi-word search
+uses 1 Pro call. 0.01 CNY per call. For typical research workflow
+(~100 multi-word searches/year), cost is ~1 CNY/year. Trivial.
+
+#### Fix 2: Title-relevance scoring (`_title_relevance_score()`)
+
+Even when using the free Basic API, results are now re-ranked by
+title-query overlap. Score is 0.0-1.0 based on:
+- Phrase bonus (+0.5 if full query string appears in title)
+- Jaccard overlap of tokenized words
+
+For "Wilson Disease":
+- "Wilson disease associated with ATP7B" → 1.0 (full phrase + both words)
+- "Wilson's disease: a clinical review" → 1.0
+- "Dr. Wilson's recent work on COVID" → 0.5 (Wilson only, no Disease)
+- "Cardiovascular disease prevention" → 0.5 (Disease only, no Wilson)
+- "A review of statistical methods" → 0.0 (no match)
+
+Results are now sorted by `(relevance, year, cited_by_count)` descending.
+
+#### Fix 3: New `--aminer-mode` flag
+
+```
+pa search "Wilson Disease" --engine aminer --aminer-mode auto
+  auto   (default): Pro for multi-word queries, basic for single-word
+  pro   : always Pro API (¥0.01/call)
+  basic : only free basic API (no Pro cost, weaker multi-word recall)
+```
+
+#### Fix 4: `search_aminer()` refactored to support 3 modes
+
+The function signature is now:
+```python
+def search_aminer(query, year_min=None, year_max=None, limit=20, mode="auto"):
+    if mode == "pro":
+        return search_aminer_pro(...)
+    elif mode == "basic":
+        return _search_aminer_basic(...)
+    elif mode == "auto":
+        # Multi-word: pro first, fall back to basic on error
+        # Single-word: basic (pro not needed)
+        ...
+```
+
+The legacy behavior (phrase-split + basic) is preserved in
+`_search_aminer_basic()` for backward compat.
+
+#### E2E verification (2026-08-27, real AMiner API call)
+
+**Test 1: AMiner basic mode for "Wilson Disease"** (free, 0.01 CNY not spent)
+- 20 results returned
+- **Top 5 (all `rel=1.0`, all `mt=phrase:full`, all Wilson Disease papers)**:
+  1. "Wilson's Disease—Genetic Puzzles with Diagnostic Implications" (2023)
+  2. "Current and Emerging Issues in Wilson's Disease" (2023)
+  3. "Haplotype and Mutation Analysis in Japanese Patients with Wilson Disease" (2022)
+  4. "Structure of the Wilson Disease Copper Transporter ATP7B" (2022)
+  5. "A Multidisciplinary Approach to the Diagnosis and Management of Wilson Disease" (2022)
+
+**Test 2: AMiner auto mode for "Wilson Disease"** (uses Pro, ¥0.01)
+- 20 results
+- Top 5 include Wilson Disease, copper, and Wilson's Disease Treatment papers
+- All from Pro API (`mt=pro_keyword`)
+
+**Test 3: AMiner auto for single-word "Wilson's"**
+- 10 results
+- Mixes Wilson Disease with Wilson loops / Wilson lines in physics
+- (This is correct: single word "Wilson's" legitimately matches both)
+
+#### Tests
+
+`test_output/_test_v3_9_25_0_aminer.py` (12 tests, all PASS):
+- 5 TestAminerRelevanceScoring: full phrase, partial, no match, Chinese, range
+- 5 TestAminerModeParameter: signatures, single definition check
+- 1 TestAminerCLI: --aminer-mode flag visible in `pa search --help`
+
+Pre-existing 29 skill regression tests (test_output/_test_v3_9_23_0_skill.py) still PASS.
+
+#### Version discipline
+
+MINOR bump (3.9.24.0 → 3.9.25.0). New public surface:
+- `search_aminer_pro()` function (callable from Python API)
+- `--aminer-mode` CLI flag
+- New `match_type` field on each result: `"pro_keyword"` | `"phrase:full"` | `"phrase:<word>"` | `"basic_fallback"`
+- New `title_relevance` field on each result (0.0-1.0)
+- AMiner Pro API is a new public capability (was unreachable before)
+
+
 ## [3.9.21.0] - 2026-08-21
 
 ### Added — JATS XML → Real PDF pipeline (`pa_cli/jats_to_pdf.py`)
