@@ -1,0 +1,80 @@
+fix(wrapper): v3.9.28.0 — resolve relative paths before subprocess (last v3.9.27.0 issue)
+
+User tested v3.9.27.0 and reported all core fixes worked:
+- ✅ File sizes: 319,618 + 869,215 = 1,188,833 bytes (correct!)
+- ✅ --clean-xml: no .xml residue
+- ✅ --skip-existing: success=0, skipped=2
+- ❌ Relative paths failed: 'refs.bib' looked up under pa_root
+
+User quote: "传入的路径保持相对形式，但子进程在第 98 行切换了工作目录"
+
+Root cause: The wrapper's subprocess.run(cmd, cwd=str(pa_root)) changes
+the subprocess CWD to the pa_cli repo dir. Any relative path
+(e.g. 'refs.bib') passed via args.bibtex was resolved against pa_root,
+not the user's invocation CWD. So 'refs.bib' (which exists in user's
+working dir) was looked up under pa_root and not found.
+
+Fix: Resolve user-provided paths to absolute via Path(...).resolve()
+BEFORE constructing the subprocess cmd. Path.cwd() is the user's
+invocation CWD, so relative paths get resolved against THAT, not pa_root.
+
+  # v3.9.28.0
+  args.bibtex = str(Path(args.bibtex).resolve())
+  args.output_dir = str(Path(args.output_dir).resolve())
+  if args.report:
+      args.report = str(Path(args.report).resolve())
+  if args.summary_json:
+      args.summary_json = str(Path(args.summary_json).resolve())
+
+This happens RIGHT after parse_args() and BEFORE the
+subprocess.run(cmd, cwd=str(pa_root)) call, so the absolute paths
+survive the CWD change.
+
+Code changes (1 line block, +4 lines):
+  .agents/skills/paper-agent/scripts/fetch_batch.py
+    - 4 new lines: Path.resolve for bibtex, output_dir, report,
+      summary_json (between parse_args() and find_pa_root())
+
+Tests (v3.9.28.0 path resolve regression):
+  test_output/_test_v3_9_28_0_path_resolve.py (NEW, 6 tests, all PASS):
+    TestPathResolution:
+      - args.bibtex has str(Path(args.bibtex).resolve())
+      - args.output_dir has str(Path(args.output_dir).resolve())
+      - args.report has str(Path(args.report).resolve())
+      - args.summary_json has str(Path(args.summary_json).resolve())
+      - resolution happens BEFORE subprocess.run (line order)
+      - subprocess.cwd is still pa_root (for pa_cli import)
+
+  Pre-existing tests still PASS:
+    29/29 v3.9.23 skill
+    12/12 v3.9.25 aminer
+    8/8 v3.9.25.1 packaging
+    10/10 v3.9.26 fetch_batch
+    8/8 v3.9.27 wrapper + size fallback
+    6/6 v3.9.28 path resolve (new)
+    Total: 73/73 PASS
+
+Version discipline: MINOR (3.9.27.0 -> 3.9.28.0)
+  Even though this is a one-line behavior fix, the user explicitly
+  said "暂不替换正式版本" (not promoting to formal version) until
+  this is fixed. Promoting this fix to PATCH could be argued, but
+  a new MINOR release is clearer (one fix per release = clean version
+  history). The other 7 releases this session (v3.9.23.0 through
+  v3.9.27.0) each had distinct fix themes.
+
+User-side:
+  pip install --upgrade paper-agent
+  # Re-pull skill
+  cp -r <new-repo>/.agents/skills/paper-agent/* ~/.codex/skills/paper-agent/
+  # Now both absolute AND relative paths work:
+  python ~/.codex/skills/paper-agent/scripts/fetch_batch.py refs.bib \
+    --output-dir ./pdfs --clean-xml --report report.json
+  # (was broken in v3.9.27.0; works in v3.9.28.0)
+
+Discovered during debugging:
+  When using subprocess.run with a custom cwd, ALL paths in cmd list
+  are interpreted relative to that cwd, not the parent's cwd. This is
+  standard POSIX behavior, but easy to forget. The fix is to always
+  resolve paths to absolute BEFORE constructing the cmd list. This
+  applies to all wrappers (search.py, fetch.py, etc.) — they should
+  also pre-resolve their input paths for the same reason.
