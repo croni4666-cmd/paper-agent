@@ -34,12 +34,16 @@ def main() -> int:
 Examples:
   %(prog)s refs.bib --output-dir ./pdfs/
   %(prog)s refs.bib --output-dir ./pdfs/ --skip-existing --report report.json
+  %(prog)s refs.bib --output-dir ./pdfs/ --clean-xml --report report.json
         """,
     )
     parser.add_argument("bibtex", help="Path to BibTeX file (.bib). Use quotes if path has spaces.")
     parser.add_argument("--output-dir", default="./pdfs", help="Where to save PDFs (default: ./pdfs)")
     parser.add_argument("--skip-existing", action="store_true", help="Skip PDFs already in output-dir")
     parser.add_argument("--max-total-sec", type=int, default=3600, help="Hard cap on total runtime (default: 3600s = 1h)")
+    parser.add_argument("--clean-xml", action="store_true",
+                        help="[v3.9.27.0] Delete .xml intermediate (JATS-to-PDF) after "
+                             "successful PDF generation. Reduces clutter in output-dir.")
     parser.add_argument("--report", help="Optional JSON summary output path")
     parser.add_argument("--summary-json", help="(deprecated) alias for --report")
     args = parser.parse_args()
@@ -66,13 +70,24 @@ Examples:
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
 
     cmd = [
-        PYTHON, "-m", "pa_cli.cli", "fetch-batch",
+        # v3.9.27.0: use 'pa_cli' (package entry point) instead of 'pa_cli.cli'
+        # (internal subpackage). The wrapper at pa_cli/__main__.py imports
+        # the same cli.main(). User reported the Skill wrapper was failing
+        # with "No such option '--out-dir'" — root cause was that
+        # 'pa_cli.cli' was loading a CACHED pa_cli.cli with the OLD
+        # 'fetch_batch' function (renamed to 'cnki-guide' in v3.9.26.0),
+        # not the new 'fetch-batch' PDF downloader. Using 'pa_cli' (the
+        # documented entry point) routes through the fresh editable install.
+        PYTHON, "-m", "pa_cli", "fetch-batch",
         args.bibtex,
         "--out-dir", args.output_dir,
         "--max-total-sec", str(args.max_total_sec),
     ]
     if args.skip_existing:
         cmd.append("--skip-existing")
+    if args.clean_xml:
+        # v3.9.27.0: forward --clean-xml to pa fetch-batch
+        cmd.append("--clean-xml")
     if args.report or args.summary_json:
         cmd.extend(["--summary-json", args.report or args.summary_json])
 
