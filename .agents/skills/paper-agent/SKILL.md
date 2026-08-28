@@ -18,8 +18,8 @@ description: |
   lookup, non-academic research, or PDF reading (use a different
   skill for that).
 metadata:
-  version: 3.9.26.0
-  pa_cli_version: 3.9.26.0
+  version: 3.9.27.0
+  pa_cli_version: 3.9.27.0
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent

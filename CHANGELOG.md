@@ -915,6 +915,120 @@ Wilson disease batch test was the first end-to-end validation that
 exercised the summary path. This release makes `pa fetch-batch` actually
 useful for batch research workflows.
 
+
+## [3.9.27.0] - 2026-08-28
+
+### Fixed — 2 remaining `pa fetch-batch` issues from v3.9.26.0
+
+User tested v3.9.26.0 with `pa fetch-batch` on the Wilson disease batch
+(2 DOIs, 53.7s, 1.19MB total). 2 of 4 bugs were fixed in v3.9.26.0
+(`n_skipped` counter, `--clean-xml` flag). 2 issues remained:
+
+#### Issue 1: Skill wrapper still failed with "No such option '--out-dir'"
+
+**Root cause**: The Skill's `scripts/fetch_batch.py` was calling
+`python -m pa_cli.cli fetch-batch`. The `pa_cli.cli` path is the
+internal subpackage module — when invoked via `-m`, it loads
+`pa_cli/cli.py` directly. But the user's installed environment may have
+been loading a STALE/CACHED `pa_cli.cli` (e.g., from a prior install
+where the OLD `fetch_batch()` CNKI guide function was still registered).
+The OLD function has no `--out-dir` option, so the wrapper failed with
+"No such option '--out-dir'".
+
+**Fix**: Use the documented package entry point instead:
+```python
+# Before (v3.9.26.0):
+PYTHON, "-m", "pa_cli.cli", "fetch-batch", ...
+
+# After (v3.9.27.0):
+PYTHON, "-m", "pa_cli", "fetch-batch", ...
+```
+
+`python -m pa_cli` routes through `pa_cli/__main__.py` which does
+`from .cli import main`. This is the documented entry point in
+`pyproject.toml` and always uses the live editable-install code.
+
+#### Issue 2: PMC jats_pdf `size_bytes` still = 0 in summary
+
+**Root cause**: The v3.9.26.0 fix used `r.get('size_bytes', 0)` to
+read the fetch result. But the PMC jats_pdf channel (v3.9.21.0)
+returns `{"size": N}` (NOT `size_bytes`). Looking at the inner
+`_pmc_jats_to_pdf` and `_pmc_europe_pdf` functions in `pa_cli/fetch.py`:
+- L247: `_pmc_europe_pdf` returns `"size": len(body)` — uses "size"
+- L330: same
+- L404: same
+- L482: `_pmc_jats_to_pdf` returns `"size": len(pdf_bytes)` — uses "size"
+- L558, L585: `fetch_pmc_doi` reads `jats_result.get("size")` — reads "size"
+
+So when the wrapper called `fetch()` for a PMC paper, the result dict
+has `size` (not `size_bytes`), and `r.get('size_bytes', 0)` returned 0.
+
+**Fix**: Use a fallback chain in `pa_cli/fetch_batch.py`:
+```python
+# v3.9.27.0: try size_bytes → size → stat(file)
+result.size_bytes = (
+    r.get("size_bytes")
+    or r.get("size")
+    or (Path(r.get("path", str(out_path))).stat().st_size
+        if Path(r.get("path", str(out_path))).exists()
+        else 0)
+)
+```
+
+This works for ALL channels regardless of which key they return. The
+file-stat fallback is guarded by `if Path(...).exists()` to avoid
+`FileNotFoundError` for failed fetches.
+
+#### Bonus: Skill wrapper now exposes `--clean-xml` flag
+
+The Skill's `scripts/fetch_batch.py` now accepts `--clean-xml` and
+forwards it to `pa fetch-batch --clean-xml`. So users get a one-stop
+batch command:
+```bash
+python ~/.codex/skills/paper-agent/scripts/fetch_batch.py refs.bib \
+  --output-dir ./pdfs/ --skip-existing --clean-xml --report report.json
+```
+
+#### Tests (v3.9.27.0 wrapper + size fallback)
+
+`test_output/_test_v3_9_27_0_skill_wrapper.py` (NEW, 8 tests, all PASS):
+- 3 TestSkillWrapperEntry: uses 'pa_cli' not 'pa_cli.cli', has --clean-xml
+  flag, epilog shows clean-xml example
+- 3 TestSizeFallback: uses fallback chain (size_bytes → size → stat),
+  old 'r.get(size_bytes, 0)' gone, stat guarded by file existence
+- 2 TestFetchBatchFetchStillWorks: skip-existing still uses stat
+  (no regression), size_bytes correctly set in skip path
+
+Pre-existing tests still PASS:
+- 29/29 v3.9.23 skill
+- 12/12 v3.9.25 aminer
+- 8/8 v3.9.25.1 packaging
+- 10/10 v3.9.26 fetch_batch
+- 8/8 v3.9.27 wrapper + size fallback (new)
+- **Total: 67/67 PASS**
+
+#### Version discipline: MINOR (3.9.26.0 → 3.9.27.0)
+
+New public surface:
+- Skill wrapper `--clean-xml` flag
+- Skill wrapper uses `python -m pa_cli` entry point (was `pa_cli.cli`)
+
+User-facing changes, so MINOR (not PATCH).
+
+#### Files changed
+
+```
+pa_cli/fetch_batch.py                | size fallback chain (size_bytes → size → stat)
+.agents/skills/paper-agent/scripts/fetch_batch.py | 'pa_cli.cli' -> 'pa_cli', add --clean-xml
+pa_cli/__init__.py                  | 3.9.26.0 -> 3.9.27.0
+pyproject.toml                      | 3.9.26.0 -> 3.9.27.0
+.agents/skills/paper-agent/SKILL.md  | version 3.9.26.0 -> 3.9.27.0, pa_cli_version 3.9.26.0 -> 3.9.27.0
+.agents/skills/paper-agent/scripts/version.py | skill_version 3.9.26.0 -> 3.9.27.0
+CHANGELOG.md                        | v3.9.27.0 entry (this section)
+ROADMAP.md                          | v3.9.27.0 row
+test_output/_test_v3_9_27_0_skill_wrapper.py | NEW (5,517 bytes, 8 tests)
+```
+
 `pa_cli/__init__.py` and `pyproject.toml` STAY at 3.9.25.0 (no code change).
 Only `SKILL.md` frontmatter and `version.py` bump to 3.9.25.1.
 

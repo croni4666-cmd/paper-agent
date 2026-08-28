@@ -128,8 +128,17 @@ def _fetch_one_entry(
                 result.success = True
                 result.source = r.get('source', '')
                 result.out_path = r.get('path', str(out_path))
-                # v3.9.26.0: pa fetch returns 'size_bytes' (not 'size')
-                result.size_bytes = r.get('size_bytes', 0)
+                # v3.9.27.0: pa fetch returns "size" (not "size_bytes")
+                # for some channels (e.g. PMC jats_pdf, fetch_batch result
+                # has "size_bytes" but the raw fetch() returns "size").
+                # Use fallback chain for robustness.
+                result.size_bytes = (
+                    r.get("size_bytes")
+                    or r.get("size")
+                    or (Path(r.get("path", str(out_path))).stat().st_size
+                        if Path(r.get("path", str(out_path))).exists()
+                        else 0)
+                )
                 return result
             result.error = r.get('error', 'fetch failed')
         # Try title fallback
@@ -139,8 +148,14 @@ def _fetch_one_entry(
                 result.success = True
                 result.source = r.get('source', '')
                 result.out_path = r.get('path', str(out_path))
-                # v3.9.26.0: pa fetch returns 'size_bytes' (not 'size')
-                result.size_bytes = r.get('size_bytes', 0)
+                # v3.9.27.0: same fallback chain as DOI path
+                result.size_bytes = (
+                    r.get("size_bytes")
+                    or r.get("size")
+                    or (Path(r.get("path", str(out_path))).stat().st_size
+                        if Path(r.get("path", str(out_path))).exists()
+                        else 0)
+                )
                 result.error = ''
                 return result
             if not result.error:
