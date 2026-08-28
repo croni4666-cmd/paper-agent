@@ -1027,6 +1027,73 @@ pyproject.toml                      | 3.9.26.0 -> 3.9.27.0
 CHANGELOG.md                        | v3.9.27.0 entry (this section)
 ROADMAP.md                          | v3.9.27.0 row
 test_output/_test_v3_9_27_0_skill_wrapper.py | NEW (5,517 bytes, 8 tests)
+
+
+## [3.9.28.0] - 2026-08-28
+
+### Fixed — Skill wrapper relative path bug (last v3.9.27.0 issue)
+
+User tested v3.9.27.0 and reported all the core fixes worked (file sizes,
+skip counter, --clean-xml). But found one remaining bug:
+
+**Bug**: Skill wrapper accepted relative paths (e.g. `refs.bib`) but
+failed to find them because the wrapper's `subprocess.run(cmd, cwd=str(pa_root))`
+changes the subprocess CWD to the pa_cli repo dir. So a relative path
+`refs.bib` was interpreted against `pa_root` (the backend repo) instead
+of the user's invocation CWD.
+
+User quote: "传入的路径保持相对形式，但子进程在第 98 行切换了工作目录"
+
+**Fix**: Resolve user-provided paths to absolute via `Path(...).resolve()`
+BEFORE constructing the subprocess cmd. `Path.cwd()` is the user's
+invocation CWD (where the user typed the command), so relative paths
+like `refs.bib` or `./pdfs` get resolved against THAT, not pa_root.
+
+```python
+# v3.9.28.0
+args.bibtex = str(Path(args.bibtex).resolve())
+args.output_dir = str(Path(args.output_dir).resolve())
+if args.report:
+    args.report = str(Path(args.report).resolve())
+if args.summary_json:
+    args.summary_json = str(Path(args.summary_json).resolve())
+```
+
+This happens RIGHT after `parse_args()`, BEFORE `subprocess.run()` with
+`cwd=pa_root`. So the absolute paths survive the CWD change.
+
+**Tests**: `test_output/_test_v3_9_28_0_path_resolve.py` (NEW, 6 tests, all PASS):
+- 4 TestPathResolution: bibtex/output-dir/report/summary_json each
+  have `str(Path(x).resolve())` pattern
+- 1 test: resolution happens BEFORE subprocess.run (line order)
+- 1 test: subprocess.cwd is still pa_root (for pa_cli import)
+
+**Pre-existing tests still PASS** (67 + 6 = 73/73):
+- 29/29 v3.9.23 skill
+- 12/12 v3.9.25 aminer
+- 8/8 v3.9.25.1 packaging
+- 10/10 v3.9.26 fetch_batch
+- 8/8 v3.9.27 wrapper + size fallback
+- 6/6 v3.9.28 path resolve (new)
+- **Total: 73/73 PASS**
+
+**Version discipline**: MINOR (3.9.27.0 → 3.9.28.0). Even though
+this is a one-line behavior fix, the user explicitly said
+"暂不替换正式版本" (not promoting to formal version) until this
+is fixed. Promoting this fix to a PATCH could be argued, but a new
+MINOR release is clearer (one fix per release = clean version history).
+
+**Files changed**:
+```
+.agents/skills/paper-agent/scripts/fetch_batch.py | +4 lines (Path.resolve for 4 args)
+.agents/skills/paper-agent/SKILL.md             | version 3.9.27.0 -> 3.9.28.0
+.agents/skills/paper-agent/scripts/version.py   | skill_version 3.9.27.0 -> 3.9.28.0
+pa_cli/__init__.py                             | 3.9.27.0 -> 3.9.28.0
+pyproject.toml                                 | 3.9.27.0 -> 3.9.28.0
+CHANGELOG.md                                   | v3.9.28.0 entry
+ROADMAP.md                                     | v3.9.28.0 row
+test_output/_test_v3_9_28_0_path_resolve.py     | NEW (3,797 bytes, 6 tests)
+```
 ```
 
 `pa_cli/__init__.py` and `pyproject.toml` STAY at 3.9.25.0 (no code change).

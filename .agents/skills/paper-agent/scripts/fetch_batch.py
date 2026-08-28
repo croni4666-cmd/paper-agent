@@ -48,6 +48,19 @@ Examples:
     parser.add_argument("--summary-json", help="(deprecated) alias for --report")
     args = parser.parse_args()
 
+    # v3.9.28.0: Resolve user-provided paths to absolute BEFORE constructing
+    # the subprocess cmd. The subprocess runs with cwd=pa_root (line below),
+    # so any relative path would be interpreted against pa_root, not the
+    # user's CWD. User reported: "传入的路径保持相对形式，但子进程在第 98 行
+    # 切换了工作目录". Resolve against Path.cwd() (the user's invocation CWD)
+    # so the path is location-independent.
+    args.bibtex = str(Path(args.bibtex).resolve())
+    args.output_dir = str(Path(args.output_dir).resolve())
+    if args.report:
+        args.report = str(Path(args.report).resolve())
+    if args.summary_json:
+        args.summary_json = str(Path(args.summary_json).resolve())
+
     # Find paper-agent root
     pa_root = find_pa_root()
     if not pa_root:
