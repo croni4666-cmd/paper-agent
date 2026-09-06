@@ -1,4 +1,4 @@
-"""
+r"""
 pa_cli.bibtex — convert paper-agent search results to BibTeX entries.
 
 Designed for downstream academic workflows: Zotero, Mendeley, Overleaf,
