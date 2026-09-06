@@ -24,6 +24,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa  # noqa: E402
 
 
 def main() -> int:
@@ -45,6 +46,8 @@ Examples:
     parser.add_argument("--top-k-clusters", type=int, default=5, help="Number of topic clusters (default: 5)")
     parser.add_argument("--model", default=None, help="LLM model for synthesis (default: from pa config)")
     args = parser.parse_args()
+    args.corpus = str(Path(args.corpus).expanduser().resolve())
+    args.output = str(Path(args.output).expanduser().resolve())
 
     # Find paper-agent root
     pa_root = find_pa_root()
@@ -85,11 +88,14 @@ Examples:
             cmd.extend(["--model", args.model])
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True,
+        result = run_pa(
+            cmd,
             timeout=600,  # Lit review can be slow (LLM synthesis)
             cwd=str(pa_root),
         )
+    except OSError as exc:
+        print(json.dumps({'status': 'failed', 'error': 'runtime_error', 'message': str(exc)}), file=sys.stderr)
+        return 3
     except subprocess.TimeoutExpired:
         print(json.dumps({
             "error": "review_timeout",
