@@ -168,3 +168,12 @@ test_output/_test_*.py  # wildcard fallback: any CJK test names
 # OS files
 .DS_Store
 Thumbs.db
+
+# Generated manual fetch and search artifacts (canonical tests live in tests/)
+/*.pdf
+/search_results/
+/test_output/**/*.pdf
+/test_output/**/*.json
+/test_output/**/*.log
+/test_output/**/*.html
+/test_output/**/*.xml
