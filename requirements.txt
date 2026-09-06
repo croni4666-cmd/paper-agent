@@ -4,6 +4,7 @@
 
 # CLI framework (used by pa_cli/cli.py)
 click>=8.1
+arxiv>=2.1
 
 # Numerics (used by pa_cli/ltr.py, moe_router.py, features.py)
 numpy>=1.24
