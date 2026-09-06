@@ -32,6 +32,7 @@ existence. See pa_cli.cnki_channel for setup details.
 import json
 import gzip
 import io
+import logging
 import os
 import sys
 import threading
@@ -41,6 +42,9 @@ from typing import List, Dict, Optional, Any
 from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
+
+
+logger = logging.getLogger(__name__)
 
 
 def _load_dotenv(path: Optional[Path] = None) -> None:
@@ -362,8 +366,10 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
            f"container-title,published-print,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
-    if s != 200:
-        return []
+    if s != 200 or not isinstance(data, dict):
+        raise RuntimeError(f"OpenAlex request failed with HTTP status {s}")
+    if data.get("error"):
+        raise RuntimeError(f"OpenAlex response error: {data['error']}")
     items = (data.get("message") or {}).get("items", [])
     return [_normalize_crossref(it) for it in items]
 
@@ -451,8 +457,8 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     """
     try:
         import arxiv
-    except ImportError:
-        return []
+    except ImportError as exc:
+        raise RuntimeError("arxiv dependency is not installed") from exc
     s_q = query
     if year_min or year_max:
         ymin = year_min or 1991
@@ -475,8 +481,8 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                 "source": "arxiv",
                 "type": "preprint",
             })
-    except Exception:
-        pass
+    except Exception as exc:
+        raise RuntimeError(f"arXiv search failed: {exc}") from exc
 
     # v3.9.24.0: post-filter on year to handle API filter relaxation
     if year_min or year_max:
@@ -583,7 +589,7 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
             f"[S2 search] query='{query[:60]}' returned status={s} "
             f"data={str(data)[:200]}"
         )
-        return []
+        raise RuntimeError(f"Semantic Scholar request failed with HTTP status {s}")
     results = []
     for it in (data.get("data") or []):
         ext = it.get("externalIds") or {}
@@ -973,8 +979,14 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     # If user explicitly asks for `--engine core`, route to search_core().
     if engine == "core":
         papers = search_core(query, year_min, year_max, limit)
-        return {"results": papers, "by_engine": {"core": papers}, "dedup_count": len(papers)}
+        return {
+            "results": papers,
+            "by_engine": {"core": papers},
+            "engine_status": {"core": {"status": "ok", "count": len(papers)}},
+            "dedup_count": len(papers),
+        }
     by_engine: Dict[str, List[Dict]] = {}
+    engine_status: Dict[str, Dict[str, Any]] = {}
     funcs = {
         "crossref": search_crossref,
         "openalex": search_openalex,
@@ -991,20 +1003,29 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     if "aminer" in engines:
         from .aminer_channel import _aminer_token
         if not _aminer_token():
-            # Graceful skip: AMiner not configured; engines stays valid
+            # Surface an unavailable optional engine instead of silently hiding it.
+            by_engine["aminer"] = []
+            engine_status["aminer"] = {"status": "skipped", "count": 0,
+                                        "message": "AMiner API token is not configured"}
             engines = [e for e in engines if e != "aminer"]
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
     # CNKI is optional 鈥?only include if cookies exist (avoid hard-fail on first run)
     if "cnki" in engines and not _try_import_cnki():
-        # Graceful skip: CNKI not configured yet; engines stays valid
+        # CNKI needs local browser/cookie setup; make that visible in output.
+        by_engine["cnki"] = []
+        engine_status["cnki"] = {"status": "skipped", "count": 0,
+                                 "message": "CNKI cookies or Playwright are not configured"}
         engines = [e for e in engines if e != "cnki"]
     elif "cnki" in engines:
         from .cnki_channel import search_cnki
         funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
+            by_engine[eng] = []
+            engine_status[eng] = {"status": "unsupported", "count": 0,
+                                  "message": f"Unsupported search engine: {eng}"}
             continue
         try:
             # Pass concepts_filter to OpenAlex; other engines ignore extra args
@@ -1017,8 +1038,11 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                                              mode=aminer_mode)
             else:
                 by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
+            engine_status[eng] = {"status": "ok", "count": len(by_engine[eng])}
         except Exception as e:
-            by_engine[eng] = [{"error": str(e)[:200]}]
+            by_engine[eng] = []
+            engine_status[eng] = {"status": "error", "count": 0,
+                                  "message": str(e)[:200]}
 
     # Dedup by DOI (or arXiv ID fallback)
     seen = {}
@@ -1082,6 +1106,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "year_min": year_min,
         "year_max": year_max,
         "by_engine": {k: len(v) for k, v in by_engine.items()},
+        "engine_status": engine_status,
         "dedup_count": len(unified),
         "enrich_top": enrich_top,
         "results": unified,

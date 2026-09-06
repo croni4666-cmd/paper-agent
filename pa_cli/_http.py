@@ -19,8 +19,8 @@ Public API:
         urllib opener with proxy support.
     - http_get(url, headers=None, timeout=30) -> bytes
         GET request with proxy support. Returns raw bytes.
-    - http_get_json(url, headers=None, timeout=30) -> dict
-        GET request, parse JSON. Returns dict (or {} on parse fail).
+    - http_get_json(url, headers=None, timeout=30) -> (status, dict)
+        GET request, parse JSON. Parse failures return a structured error dict.
     - http_post(url, data=None, headers=None, timeout=30) -> bytes
         POST request with form data and proxy support.
     - http_request_get(url, headers=None, timeout=5) -> (int, dict)
@@ -180,7 +180,9 @@ def http_get(url: str, headers: Optional[Dict[str, str]] = None,
     final_headers = {
         "User-Agent": "paper-agent/3.9.13.3 (Mavis)",
         "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
+        # Do not advertise Brotli without a guaranteed decoder.  Otherwise a
+        # Brotli-compressed JSON response reaches callers as opaque bytes.
+        "Accept-Encoding": "gzip, deflate",
     }
     if headers:
         final_headers.update(headers)
@@ -207,18 +209,21 @@ def http_get(url: str, headers: Optional[Dict[str, str]] = None,
 
 def http_get_json(url: str, headers: Optional[Dict[str, str]] = None,
                    timeout: int = 30) -> Tuple[int, Any]:
-    """GET with proxy support, returns (status, json-or-bytes).
+    """GET with proxy support, returns (status, JSON dict).
 
     v3.9.13.3: extracted from pa_cli.search:http_get_json for shared use.
     Returns (status, parsed_dict) on success, (status, error_dict) on
-    HTTP error, (0, {}) on connection error.
+    HTTP or decode error, (0, error_dict) on connection error.
     """
     try:
         body = http_get(url, headers=headers, timeout=timeout)
         try:
             return 200, json.loads(body.decode("utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError):
-            return 200, body
+            return 200, {
+                "error": "invalid_json_response",
+                "message": "Response could not be decoded as UTF-8 JSON",
+            }
     except urllib.error.HTTPError as e:
         try:
             body = e.read()

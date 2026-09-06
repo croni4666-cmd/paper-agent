@@ -14,6 +14,17 @@ import re
 import sys
 from pathlib import Path
 
+
+def _configure_console_utf8() -> None:
+    """Prevent Click help from failing on a Windows GBK console."""
+    if os.name == "nt":
+        for stream in (sys.stdout, sys.stderr):
+            if hasattr(stream, "reconfigure"):
+                stream.reconfigure(encoding="utf-8", errors="replace")
+
+
+_configure_console_utf8()
+
 import click
 
 from . import __version__
@@ -4465,6 +4476,5 @@ def search_and_import(
     # Exit code: 0 if download+project OK, 1 if any error
     if result.get("errors"):
         sys.exit(1)
-
 
 
