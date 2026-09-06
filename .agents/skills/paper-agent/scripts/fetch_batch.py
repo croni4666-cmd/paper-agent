@@ -16,6 +16,7 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
@@ -24,6 +25,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa, emit_result, json_object, validate_batch  # noqa: E402
 
 
 def main() -> int:
@@ -48,105 +50,47 @@ Examples:
     parser.add_argument("--summary-json", help="(deprecated) alias for --report")
     args = parser.parse_args()
 
-    # v3.9.28.0: Resolve user-provided paths to absolute BEFORE constructing
-    # the subprocess cmd. The subprocess runs with cwd=pa_root (line below),
-    # so any relative path would be interpreted against pa_root, not the
-    # user's CWD. User reported: "传入的路径保持相对形式，但子进程在第 98 行
-    # 切换了工作目录". Resolve against Path.cwd() (the user's invocation CWD)
-    # so the path is location-independent.
-    args.bibtex = str(Path(args.bibtex).resolve())
-    args.output_dir = str(Path(args.output_dir).resolve())
-    if args.report:
-        args.report = str(Path(args.report).resolve())
-    if args.summary_json:
-        args.summary_json = str(Path(args.summary_json).resolve())
-
-    # Find paper-agent root
+    args.bibtex = str(Path(args.bibtex).expanduser().resolve())
+    args.output_dir = str(Path(args.output_dir).expanduser().resolve())
+    report = args.report or args.summary_json
+    report = Path(report).expanduser().resolve() if report else None
     pa_root = find_pa_root()
     if not pa_root:
-        print(json.dumps({
-            "error": "pa_cli_not_found",
-            "message": "paper-agent (pa_cli) is not installed in this Python environment.",
-            "hint": get_install_instructions().strip(),
-        }, indent=2), file=sys.stderr)
-        return 4
-
-
+        return emit_result({'error': 'pa_cli_not_found',
+                            'hint': get_install_instructions().strip()}, 'failed', 4)
     if not Path(args.bibtex).is_file():
-        print(json.dumps({
-            "error": "bibtex_not_found",
-            "message": f"BibTeX file not found: {args.bibtex}",
-        }), file=sys.stderr)
-        return 1
+        return emit_result({'error': 'bibtex_not_found', 'bibtex': args.bibtex}, 'failed', 1)
 
-    # Ensure output dir exists
-    Path(args.output_dir).mkdir(parents=True, exist_ok=True)
-
-    cmd = [
-        # v3.9.27.0: use 'pa_cli' (package entry point) instead of 'pa_cli.cli'
-        # (internal subpackage). The wrapper at pa_cli/__main__.py imports
-        # the same cli.main(). User reported the Skill wrapper was failing
-        # with "No such option '--out-dir'" — root cause was that
-        # 'pa_cli.cli' was loading a CACHED pa_cli.cli with the OLD
-        # 'fetch_batch' function (renamed to 'cnki-guide' in v3.9.26.0),
-        # not the new 'fetch-batch' PDF downloader. Using 'pa_cli' (the
-        # documented entry point) routes through the fresh editable install.
-        PYTHON, "-m", "pa_cli", "fetch-batch",
-        args.bibtex,
-        "--out-dir", args.output_dir,
-        "--max-total-sec", str(args.max_total_sec),
-    ]
-    if args.skip_existing:
-        cmd.append("--skip-existing")
-    if args.clean_xml:
-        # v3.9.27.0: forward --clean-xml to pa fetch-batch
-        cmd.append("--clean-xml")
-    if args.report or args.summary_json:
-        cmd.extend(["--summary-json", args.report or args.summary_json])
-
+    payload = {'bibtex': args.bibtex, 'output_dir': args.output_dir}
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True,
-            timeout=args.max_total_sec + 60,
-            cwd=str(pa_root),
-        )
+        Path(args.output_dir).mkdir(parents=True, exist_ok=True)
+        # A fresh report is required even when the user does not request one.
+        # Never read an old user report as evidence for this run.
+        with tempfile.TemporaryDirectory(prefix='paper-agent-report-') as temporary:
+            summary_path = Path(temporary) / 'summary.json'
+            cmd = [PYTHON, '-m', 'pa_cli', 'fetch-batch', args.bibtex,
+                   '--out-dir', args.output_dir, '--max-total-sec', str(args.max_total_sec),
+                   '--summary-json', str(summary_path)]
+            if args.skip_existing:
+                cmd.append('--skip-existing')
+            if args.clean_xml:
+                cmd.append('--clean-xml')
+            result = run_pa(cmd, cwd=str(pa_root), timeout=args.max_total_sec + 60)
+            summary, status = validate_batch(
+                json_object(summary_path.read_text(encoding='utf-8-sig')), Path(pa_root))
+        if result.returncode != 0:
+            status = 'partial' if any(r['success'] for r in summary['results']) else 'failed'
+        payload.update(summary=summary, cli_exit_code=result.returncode)
+        if report:
+            report.parent.mkdir(parents=True, exist_ok=True)
+            report.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
+        if status != 'success':
+            payload['error'] = 'pa_fetch_batch_incomplete'
+        return emit_result(payload, status, 0 if status == 'success' else 1)
     except subprocess.TimeoutExpired:
-        print(json.dumps({
-            "error": "fetch_batch_timeout",
-            "message": f"Batch fetch exceeded {args.max_total_sec + 60}s timeout.",
-            "hint": "Reduce the BibTeX file size or increase --max-total-sec.",
-        }), file=sys.stderr)
-        return 2
-
-    # pa fetch-batch writes summary JSON to --summary-json path
-    # and progress to stdout/stderr
-    summary_path = args.report or args.summary_json
-    summary = None
-    if summary_path and Path(summary_path).is_file():
-        try:
-            with open(summary_path, "r", encoding="utf-8") as f:
-                summary = json.load(f)
-        except (json.JSONDecodeError, OSError):
-            pass
-
-    if result.returncode == 0:
-        print(json.dumps({
-            "status": "completed",
-            "bibtex": args.bibtex,
-            "output_dir": args.output_dir,
-            "summary": summary,
-            "exit_code": 0,
-        }, indent=2))
-        return 0
-
-    print(json.dumps({
-        "error": "pa_fetch_batch_failed",
-        "exit_code": result.returncode,
-        "bibtex": args.bibtex,
-        "summary": summary,
-        "stderr_tail": result.stderr[-500:] if result.stderr else "",
-    }, indent=2), file=sys.stderr)
-    return 1
+        return emit_result(dict(payload, error='fetch_batch_timeout'), 'failed', 2)
+    except (OSError, ValueError) as exc:
+        return emit_result(dict(payload, error='batch_result_error', message=str(exc)), 'failed', 1)
 
 
 if __name__ == "__main__":
