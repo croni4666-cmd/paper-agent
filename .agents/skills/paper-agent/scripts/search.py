@@ -25,6 +25,7 @@ from pathlib import Path
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa  # noqa: E402
 
 PYTHON = sys.executable  # Use the current Python interpreter (Codex env)
 
@@ -84,13 +85,14 @@ Examples:
 
     try:
         # Run from pa_root so pa_cli is importable
-        result = subprocess.run(
+        result = run_pa(
             cmd,
-            capture_output=True,
-            text=True,
             timeout=180,
             cwd=str(pa_root),
         )
+    except OSError as exc:
+        print(json.dumps({'status': 'failed', 'error': 'runtime_error', 'message': str(exc)}), file=sys.stderr)
+        return 3
     except subprocess.TimeoutExpired:
         print(json.dumps({
             "error": "search_timeout",
@@ -98,13 +100,6 @@ Examples:
             "hint": "First call after install may be slow (engine warmup).",
         }), file=sys.stderr)
         return 2
-    except FileNotFoundError as e:
-        print(json.dumps({
-            "error": "python_not_found",
-            "message": str(e),
-            "hint": "Ensure paper-agent is installed: pip install -e .",
-        }), file=sys.stderr)
-        return 3
 
     # pa search returns JSON to stdout when --output json
     if result.returncode != 0:

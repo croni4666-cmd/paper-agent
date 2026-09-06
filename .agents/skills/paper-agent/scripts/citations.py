@@ -23,6 +23,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa  # noqa: E402
 
 
 def main() -> int:
@@ -47,6 +48,8 @@ Examples:
     parser.add_argument("--output", help="Optional output file (default: stdout)")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-paper progress")
     args = parser.parse_args()
+    if args.output:
+        args.output = str(Path(args.output).expanduser().resolve())
 
     # Find paper-agent root
     pa_root = find_pa_root()
@@ -71,10 +74,13 @@ Examples:
         cmd.append("--quiet")
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
+        result = run_pa(
+            cmd, timeout=120,
             cwd=str(pa_root),
         )
+    except OSError as exc:
+        print(json.dumps({'status': 'failed', 'error': 'runtime_error', 'message': str(exc)}), file=sys.stderr)
+        return 3
     except subprocess.TimeoutExpired:
         print(json.dumps({
             "error": "citations_timeout",
