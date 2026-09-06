@@ -27,7 +27,29 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
 from _pa_runtime import run_pa  # noqa: E402
 
-PYTHON = sys.executable  # Use the current Python interpreter (Codex env)
+PYTHON = sys.executable  # Used as a placeholder; _pa_runtime selects the child interpreter.
+
+
+STRATEGIES = {
+    "broad": ("all", "cite"),
+    "fast": ("openalex,crossref", "relevance"),
+    "biomedical": ("pubmed,openalex", "relevance"),
+    "preprints": ("arxiv,semanticscholar", "relevance"),
+    "chinese": ("aminer,cnki,openalex", "relevance"),
+}
+
+
+def summarize_quality(results):
+    """Describe result completeness without changing ranking or filtering."""
+    flags = {}
+    multi_source = 0
+    for paper in results:
+        flag = paper.get("quality_flag", "unclassified")
+        flags[flag] = flags.get(flag, 0) + 1
+        if len(paper.get("found_by") or []) > 1:
+            multi_source += 1
+    return {"total": len(results), "by_flag": dict(sorted(flags.items())),
+            "multi_source": multi_source}
 
 
 def main() -> int:
@@ -48,11 +70,27 @@ Examples:
         default="all",
         help="Engine to search (default: all = parallel + dedup)",
     )
+    parser.add_argument("--strategy", choices=sorted(STRATEGIES),
+                        help="Choose a source set: broad, fast, biomedical, preprints, or chinese")
+    parser.add_argument("--sort-by", choices=["cite", "year", "relevance"],
+                        help="Override the strategy's ranking; default stays cite-ranked")
+    parser.add_argument("--source",
+                        help="Keep only results found by these sources after deduplication (comma-separated)")
+    parser.add_argument("--quality-mode", choices=["flag", "filter", "off"], default="flag",
+                        help="Quality labels from paper-agent: flag (default), filter, or off")
     parser.add_argument("--limit", type=int, default=20, help="Max results per engine (default: 20)")
     parser.add_argument("--year-min", type=int, default=None, help="Filter: min publication year")
     parser.add_argument("--year-max", type=int, default=None, help="Filter: max publication year")
     parser.add_argument("--output", choices=["json", "markdown"], default="json", help="Output format (default: json)")
     args = parser.parse_args()
+    if args.strategy and args.engine != "all":
+        parser.error("--strategy cannot be combined with an explicit non-all --engine")
+
+    engine = args.engine
+    sort_by = args.sort_by
+    if args.strategy:
+        engine, strategy_sort = STRATEGIES[args.strategy]
+        sort_by = sort_by or strategy_sort
 
     # Find paper-agent root (pa_cli must be importable)
     pa_root = find_pa_root()
@@ -74,10 +112,15 @@ Examples:
     cmd = [
         PYTHON, "-m", "pa_cli.cli", "search",
         query,
-        "--engine", args.engine,
+        "--engine", engine,
         "--limit", str(args.limit),
+        "--quality-mode", args.quality_mode,
         "--quiet",  # pa search prints progress to stderr; --quiet suppresses
     ]
+    if sort_by:
+        cmd.extend(["--sort-by", sort_by])
+    if args.source:
+        cmd.extend(["--source", args.source])
     if args.year_min is not None:
         cmd.extend(["--year-min", str(args.year_min)])
     if args.year_max is not None:
@@ -115,19 +158,28 @@ Examples:
             }), file=sys.stderr)
         return 1
 
-    # Success: re-emit or convert to markdown
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        print(json.dumps({"error": "invalid_search_response",
+                          "message": "paper-agent returned non-JSON search output"}), file=sys.stderr)
+        return 1
+    results = data.get("results", []) if isinstance(data, dict) else data
+    if not isinstance(results, list):
+        print(json.dumps({"error": "invalid_search_response",
+                          "message": "paper-agent search results are not a list"}), file=sys.stderr)
+        return 1
+    if isinstance(data, list):
+        data = {"results": data}
+    data["quality_summary"] = summarize_quality(results)
+    if args.strategy:
+        data["strategy"] = args.strategy
+        data["strategy_engine"] = engine
     if args.output == "json":
-        print(result.stdout, end="")
-        return 0
+        print(json.dumps(data, ensure_ascii=False, indent=2))
     else:
-        try:
-            data = json.loads(result.stdout)
-        except json.JSONDecodeError:
-            print(result.stdout, end="")
-            return 0
-        # Convert to markdown table
         print(format_markdown(data))
-        return 0
+    return 0
 
 
 def format_markdown(data) -> str:
