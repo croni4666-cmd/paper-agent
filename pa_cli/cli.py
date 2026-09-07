@@ -14,6 +14,17 @@ import re
 import sys
 from pathlib import Path
 
+
+def _configure_console_utf8() -> None:
+    """Prevent Click help from failing on a Windows GBK console."""
+    if os.name == "nt":
+        for stream in (sys.stdout, sys.stderr):
+            if hasattr(stream, "reconfigure"):
+                stream.reconfigure(encoding="utf-8", errors="replace")
+
+
+_configure_console_utf8()
+
 import click
 
 from . import __version__
@@ -1144,8 +1155,6 @@ def cnki_guide(input_file, output, year_min, year_max, quiet):
         click.echo("[pa] Next: open the guide and follow the Edge workflow", err=True)
 
 
-if __name__ == "__main__":
-    main()
 
 
 # =============== [P2-5] build + scaffold subcommands ===============
@@ -4466,5 +4475,5 @@ def search_and_import(
     if result.get("errors"):
         sys.exit(1)
 
-
-
+if __name__ == "__main__":
+    main()

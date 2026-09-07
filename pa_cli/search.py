@@ -32,15 +32,23 @@ existence. See pa_cli.cnki_channel for setup details.
 import json
 import gzip
 import io
+import logging
 import os
 import sys
 import threading
 import time
 from pathlib import Path
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional, Any, Callable
 from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
+
+
+logger = logging.getLogger(__name__)
+
+
+class EngineRateLimitError(RuntimeError):
+    """An upstream engine rejected the request because its rate limit was hit."""
 
 
 def _load_dotenv(path: Optional[Path] = None) -> None:
@@ -362,8 +370,10 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
            f"container-title,published-print,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
-    if s != 200:
-        return []
+    if s != 200 or not isinstance(data, dict):
+        raise RuntimeError(f"OpenAlex request failed with HTTP status {s}")
+    if data.get("error"):
+        raise RuntimeError(f"OpenAlex response error: {data['error']}")
     items = (data.get("message") or {}).get("items", [])
     return [_normalize_crossref(it) for it in items]
 
@@ -451,8 +461,8 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     """
     try:
         import arxiv
-    except ImportError:
-        return []
+    except ImportError as exc:
+        raise RuntimeError("arxiv dependency is not installed") from exc
     s_q = query
     if year_min or year_max:
         ymin = year_min or 1991
@@ -475,8 +485,8 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                 "source": "arxiv",
                 "type": "preprint",
             })
-    except Exception:
-        pass
+    except Exception as exc:
+        raise RuntimeError(f"arXiv search failed: {exc}") from exc
 
     # v3.9.24.0: post-filter on year to handle API filter relaxation
     if year_min or year_max:
@@ -583,7 +593,8 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
             f"[S2 search] query='{query[:60]}' returned status={s} "
             f"data={str(data)[:200]}"
         )
-        return []
+        error_type = EngineRateLimitError if s == 429 else RuntimeError
+        raise error_type(f"Semantic Scholar request failed with HTTP status {s}")
     results = []
     for it in (data.get("data") or []):
         ext = it.get("externalIds") or {}
@@ -929,6 +940,32 @@ except ImportError:
     search_core = _search_core_unavailable
 
 
+DEFAULT_ENGINE_TIMEOUT_SECONDS = 30.0
+
+
+def _run_engine_with_timeout(callback: Callable[[], List[Dict]], timeout: float) -> List[Dict]:
+    """Run one engine without allowing a stalled network call to block others."""
+    if timeout <= 0:
+        raise ValueError("engine timeout must be greater than zero")
+
+    outcome: Dict[str, Any] = {}
+    completed = threading.Event()
+
+    def invoke() -> None:
+        try:
+            outcome["value"] = callback()
+        except Exception as exc:
+            outcome["error"] = exc
+        finally:
+            completed.set()
+
+    threading.Thread(target=invoke, daemon=True).start()
+    if not completed.wait(timeout):
+        raise TimeoutError(f"search timed out after {timeout:g}s")
+    if "error" in outcome:
+        raise outcome["error"]
+    return outcome["value"]
+
 def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
                concepts_filter: str = None,
@@ -937,7 +974,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                sort_by: str = "cite",
                source_filter: List[str] = None,
                enrich_max_age_years: int = 10,
-               aminer_mode: str = "auto") -> Dict[str, Any]:
+               aminer_mode: str = "auto",
+               engine_timeout: float = DEFAULT_ENGINE_TIMEOUT_SECONDS) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -965,6 +1003,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
              unavailable for older papers; Crossref rarely adds missing
              fields for pre-2010 papers. Set to 0 to disable and enrich
              all papers regardless of age.
+    engine_timeout: maximum seconds for one engine before its result is
+             marked as an error and the remaining engines continue.
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
@@ -973,8 +1013,14 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     # If user explicitly asks for `--engine core`, route to search_core().
     if engine == "core":
         papers = search_core(query, year_min, year_max, limit)
-        return {"results": papers, "by_engine": {"core": papers}, "dedup_count": len(papers)}
+        return {
+            "results": papers,
+            "by_engine": {"core": papers},
+            "engine_status": {"core": {"status": "ok", "count": len(papers)}},
+            "dedup_count": len(papers),
+        }
     by_engine: Dict[str, List[Dict]] = {}
+    engine_status: Dict[str, Dict[str, Any]] = {}
     funcs = {
         "crossref": search_crossref,
         "openalex": search_openalex,
@@ -991,34 +1037,54 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     if "aminer" in engines:
         from .aminer_channel import _aminer_token
         if not _aminer_token():
-            # Graceful skip: AMiner not configured; engines stays valid
+            # Surface an unavailable optional engine instead of silently hiding it.
+            by_engine["aminer"] = []
+            engine_status["aminer"] = {"status": "skipped", "count": 0,
+                                        "message": "AMiner API token is not configured"}
             engines = [e for e in engines if e != "aminer"]
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
     # CNKI is optional 鈥?only include if cookies exist (avoid hard-fail on first run)
     if "cnki" in engines and not _try_import_cnki():
-        # Graceful skip: CNKI not configured yet; engines stays valid
+        # CNKI needs local browser/cookie setup; make that visible in output.
+        by_engine["cnki"] = []
+        engine_status["cnki"] = {"status": "skipped", "count": 0,
+                                 "message": "CNKI cookies or Playwright are not configured"}
         engines = [e for e in engines if e != "cnki"]
     elif "cnki" in engines:
         from .cnki_channel import search_cnki
         funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
+            by_engine[eng] = []
+            engine_status[eng] = {"status": "unsupported", "count": 0,
+                                  "message": f"Unsupported search engine: {eng}"}
             continue
         try:
-            # Pass concepts_filter to OpenAlex; other engines ignore extra args
+            # Pass concepts_filter to OpenAlex; other engines ignore extra args.
             if eng == "openalex" and concepts_filter:
-                by_engine[eng] = search_openalex(query, year_min, year_max, limit,
-                                                concepts_filter=concepts_filter)
+                invoke = lambda search_func=search_openalex: search_func(
+                    query, year_min, year_max, limit, concepts_filter=concepts_filter
+                )
             elif eng == "aminer":
-                # v3.9.25.0: pass aminer_mode (auto/pro/basic)
-                by_engine[eng] = funcs[eng](query, year_min, year_max, limit,
-                                             mode=aminer_mode)
+                invoke = lambda search_func=funcs[eng]: search_func(
+                    query, year_min, year_max, limit, mode=aminer_mode
+                )
             else:
-                by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
+                invoke = lambda search_func=funcs[eng]: search_func(
+                    query, year_min, year_max, limit
+                )
+            by_engine[eng] = _run_engine_with_timeout(invoke, engine_timeout)
+            engine_status[eng] = {"status": "ok", "count": len(by_engine[eng])}
+        except EngineRateLimitError as e:
+            by_engine[eng] = []
+            engine_status[eng] = {"status": "rate_limited", "count": 0,
+                                  "message": str(e)[:200]}
         except Exception as e:
-            by_engine[eng] = [{"error": str(e)[:200]}]
+            by_engine[eng] = []
+            engine_status[eng] = {"status": "error", "count": 0,
+                                  "message": str(e)[:200]}
 
     # Dedup by DOI (or arXiv ID fallback)
     seen = {}
@@ -1082,6 +1148,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "year_min": year_min,
         "year_max": year_max,
         "by_engine": {k: len(v) for k, v in by_engine.items()},
+        "engine_status": engine_status,
         "dedup_count": len(unified),
         "enrich_top": enrich_top,
         "results": unified,
