@@ -39,4 +39,3 @@ class EngineProbeTests(unittest.TestCase):
         message = report["engines"][0]["message"]
         self.assertNotIn("secret", message)
         self.assertIn("[REDACTED]", message)
-
