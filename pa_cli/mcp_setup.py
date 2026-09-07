@@ -37,7 +37,6 @@ from typing import Optional, Tuple
 PUBLIC_MCP_PKG = "paper-search-mcp"
 PUBLIC_MCP_DESCRIPTION = (
     "Academic paper search/download via MCP. Free-first, 22 sources "
-    "(arXiv, PubMed, Semantic Scholar, Crossref, OpenAlex, CORE, etc.), "
     "MIT-licensed, no API keys required (Unpaywall email optional)."
 )
 

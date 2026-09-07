@@ -21,7 +21,16 @@ class RetiredEngineTests(unittest.TestCase):
             self.assertNotEqual(result.exit_code, 0)
             self.assertIn("Invalid value", result.output)
 
+    def test_cli_rejects_retired_fetch_preferences(self):
+        for preference in ("cnki", "s2"):
+            result = CliRunner().invoke(main, ["fetch", "10.1/example", "--prefer", preference])
+            self.assertNotEqual(result.exit_code, 0)
+
+    def test_fetch_source_has_no_retired_branch(self):
+        from pathlib import Path
+        source = Path("pa_cli/fetch.py").read_text(encoding="utf-8")
+        self.assertNotIn("fetch_cnki_detail", source)
+        self.assertNotIn("fetch_s2_doi", source)
 
 if __name__ == "__main__":
     unittest.main()
-

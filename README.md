@@ -1,7 +1,6 @@
 # paper-agent
 
 Academic paper search, fetch, and literature-review synthesis CLI.
-8 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI, PubMed,
 ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
 collection + pa build manuscript pipeline + Tier 2 research-topic project
 management + Zotero local DB check + batch job manager (status/tail/resume).
@@ -17,16 +16,13 @@ raise a clear "not installed" error if you try `--engine core`. See
 
 ## Browser features (optional)
 
-CNKI search and the JATS XML-to-PDF fallback use Playwright. Install the optional
 browser extra, then check the runtime:
 
 ```bash
 python -m pip install -e ".[browser]"
 python -m playwright install chromium  # only when Chromium is not already cached
-pa cnki status
 ```
 
-`pa cnki status` reports the Python package and Chromium separately. CNKI still
 requires your own valid cookies and permitted institutional access.
 ## Quick start (5 commands)
 
@@ -334,7 +330,6 @@ workflow.
 1. **Search** — 8 default engines via `pa search`
 2. **Write Bibtex** — convert results to a temp `.bib`
 3. **Fetch PDFs** — `pa fetch-batch` cascade (arxiv → unpaywall →
-   scihub → annas → cnki → playwright → openalex)
 4. **Bucket** — split into `downloaded` (PDF saved) vs `failed`
 5. **Push to library** — push downloaded DOIs to your Zotero library
    (idempotent via `pyzotero.check_items()`)
@@ -689,7 +684,6 @@ gracefully (use `--create` to create a stub).
   work for low-volume academic work).
 - **CORE engine** is opt-in (v3.9.11.1+) — run `python tools/install_core.py`
   after clone to enable. Anonymous requests work at low rate.
-- **CNKI** requires user cookies / EZproxy / institution library access
 - **Layer 7 fulltext features** (3 of 4) still at 0.0 — need PDF download first
 - **Pa judge data** scales to ~5-50 projects; beyond that needs SQLite tuning
 - **BGE alternative** (monoT5/ColBERT/LLM-fulltext) not yet evaluated

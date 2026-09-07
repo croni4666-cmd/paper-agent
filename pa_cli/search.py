@@ -1,7 +1,7 @@
 """
 pa_cli.search 鈥?academic paper search across multiple engines.
 
-Default engines: Crossref, Semantic Scholar, arXiv, OpenAlex, AMiner, CNKI.
+Default engines: Crossref, OpenAlex, arXiv, AMiner, PubMed, ClinicalTrials.gov.
 Wraps the existing paper-agent v3.1 SearchPool pattern. Falls back gracefully
 on per-engine failure.
 
@@ -25,8 +25,6 @@ AMiner (added v3.9.8.0): 6th default engine for Chinese papers, gated on
 AMINER_API_KEY env var (浣撻獙閲?3880 calls / 60 days). +10.9pp cite lift
 on Chinese queries vs baseline 4 engines.
 
-CNKI (added v3.9.7.3): 7th engine for Chinese papers, gated on cookies file
-existence. See pa_cli.cnki_channel for setup details.
 """
 
 import json
@@ -100,48 +98,6 @@ def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
     """
     from ._http import http_get_json as _http_get_json_helper
     return _http_get_json_helper(url, headers=headers, timeout=timeout)
-def _s2_lookup_doi(doi: str) -> Optional[Dict]:
-    """Semantic Scholar paper/DOI endpoint 鈥?returns full metadata for one paper.
-
-    S2 free tier: 1 RPS. Caller must jitter (use 1.0-1.5s between calls).
-    """
-    if not doi:
-        return None
-    url = (f"https://api.semanticscholar.org/graph/v1/paper/DOI:{quote(doi, safe='/:')}"
-           f"?fields=title,abstract,tldr,citationCount,influentialCitationCount,"
-           f"referenceCount,authors,venue,year,externalIds,openAccessPdf,publicationTypes")
-    headers = {"User-Agent": UA}
-    api_key = os.environ.get("S2_API_KEY")
-    if api_key:
-        headers["x-api-key"] = api_key
-    s, data = http_get_json(url, headers=headers, timeout=15)
-    if s != 200 or not data or not data.get("paperId"):
-        return None
-    # Convert to our normalized result shape (subset)
-    ext = data.get("externalIds") or {}
-    oa = data.get("openAccessPdf") or {}
-    tldr_obj = data.get("tldr") or {}
-    tldr_text = tldr_obj.get("text", "") if isinstance(tldr_obj, dict) else ""
-    tldr_text = tldr_text or ""  # guard against None
-    # Filter known S2 "no tldr" placeholders
-    is_placeholder = any(tldr_text.startswith(p) for p in S2_TLDR_PLACEHOLDERS)
-    return {
-        "doi": ext.get("DOI", doi),
-        "title": data.get("title", ""),
-        "authors": [a.get("name", "") for a in (data.get("authors") or [])],
-        "venue": data.get("venue", ""),
-        "year": data.get("year"),
-        "abstract": data.get("abstract", ""),
-        "tldr": "" if is_placeholder else tldr_text,
-        "cited_by_count": data.get("citationCount", 0),
-        "influential_cite_count": data.get("influentialCitationCount", 0),
-        "reference_count": data.get("referenceCount", 0),
-        "is_oa": bool(oa.get("url")),
-        "oa_url": oa.get("url"),
-        "source": "semanticscholar_doi",
-    }
-
-
 def _crossref_lookup_title(title: str) -> Optional[Dict]:
     """Crossref works?query.bibliographic 鈥?finds DOI + cite by title.
 
@@ -199,122 +155,37 @@ def _openalex_lookup_title(title: str) -> Optional[Dict]:
     return _normalize_openalex(data["results"][0])
 
 
-def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
+def enrich_top_n(results: List[Dict], n: int = 10,
                  resort_by: str = "cite", max_age_years: int = 10) -> List[Dict]:
-    """Top-N deep enrichment (v3.9.7.8; [P1-14] min_cites + [P1-16] resort_by
-    + [P1-15] OpenAlex-by-title fallback + [P1-18] max_age_years added 2026-07-16).
-
-    For each result in top-N that lacks cite/abstract, do second-hop lookups:
-    1. If has DOI: call S2 paper/DOI for full data (tldr/inf_cite/ref_count)
-    2. If no DOI: call Crossref by title to find DOI + cite
-    3. [P1-15] If Crossref 0-hit: call OpenAlex by title (better Chinese
-       coverage than Crossref per v3.9.7.5 lessons; lifts Chinese cite +5-10pp)
-
-    Updates results in-place AND returns them. Adds `_enrichment` field
-    per paper documenting which lookups succeeded.
-
-    Jitter: 1.2s between S2 calls (1 RPS free), 0.05s between Crossref calls.
-
-    Args:
-        results: list of result dicts (will be sorted by cited_by_count, so
-                 top-N is the most-cited papers; closest to "user's interest")
-        n: how many top papers to enrich (default 10)
-        min_cites: skip S2 lookup for papers with cited_by_count < min_cites
-            (default 1 = skip 0-cite papers). Per [P1-14] ROADMAP: when many
-            low-cite papers in top-N, S2 often returns shallow entry
-            (no tldr/inf_cite) for 0-cite papers, costing ~1.2s 脳 N
-            for little gain. Set to 0 to restore v3.9.7.8 behavior (try all).
-        resort_by: [P1-16] re-sort criterion after enrichment.
-            "cite" (default) 鈥?cited_by_count desc; backward compat.
-            "year" 鈥?year desc (newest first; None/0 at end).
-            "relevance" 鈥?keep natural engine order (no re-sort).
-        max_age_years: [P1-18] skip ALL enrichment (S2 + Crossref + OpenAlex
-            fallback) for papers older than this many years (default 10).
-            Per [P1-18] ROADMAP: S2 cite often stale/unavailable for older
-            papers (e.g., pre-2015 in 2026); Crossref usually has older
-            coverage but extra lookup rarely adds value. Set to 0 to
-            disable age-based skip and enrich all papers.
-
-    Returns: same list (modified in place)
-    """
+    """Fill missing metadata for the top results from Crossref and OpenAlex."""
     if n <= 0 or not results:
         return results
     enriched = 0
-    skipped_low_cite = 0
     skipped_old = 0
-    current_year = 2026  # hardcoded; no datetime import needed for testability
-    for i, r in enumerate(results[:n]):
-        r.setdefault("_enrichment", {})
-        has_cite = bool(r.get("cited_by_count"))
-        has_abstract = bool(r.get("abstract"))
-        # [P1-18] Year-aware skip: if paper is older than max_age_years, skip
-        # ALL enrichment (S2 + Crossref + OpenAlex). S2 cite often stale for
-        # older papers; Crossref is faster but rarely adds missing fields
-        # for pre-2010 papers since OpenAlex/Crossref already covered them.
-        year = r.get("year")
-        is_old = (max_age_years > 0 and year and (current_year - year) > max_age_years)
-        if is_old:
-            r["_enrichment"]["enrichment_skipped"] = f"year<{current_year - max_age_years}"
+    current_year = 2026
+    for result in results[:n]:
+        result.setdefault("_enrichment", {})
+        year = result.get("year")
+        if max_age_years > 0 and year and current_year - year > max_age_years:
+            result["_enrichment"]["enrichment_skipped"] = f"year<{current_year - max_age_years}"
             skipped_old += 1
             continue
-        # Try S2 by DOI (best 鈥?gets tldr, inf_cite, ref_count)
-        # [P1-14] skip S2 if paper has cited_by_count < min_cites (saves ~12s/query
-        # when many 0-cite papers in top-N; S2 returns shallow entry for 0-cite per
-        # v3.9.7.7 lesson learned on Chinese papers)
-        if r.get("doi") and (not has_cite or not has_abstract):
-            if r.get("cited_by_count", 0) < min_cites:
-                r["_enrichment"]["s2_doi_skipped"] = f"cited_by_count<{min_cites}"
-                skipped_low_cite += 1
-            else:
-                s2 = _s2_lookup_doi(r["doi"])
-                if s2:
-                    for k in ("abstract", "tldr", "cited_by_count", "influential_cite_count",
-                              "reference_count", "venue", "authors", "year"):
-                        if s2.get(k) and not r.get(k):
-                            r[k] = s2[k]
-                    r["_enrichment"]["s2_doi"] = True
-                    enriched += 1
-                time.sleep(1.2)  # S2 free tier: 1 RPS
-        # Try Crossref by title (fills missing DOI, gives cite for non-DOI papers)
-        if (not r.get("cited_by_count") or not r.get("doi")) and r.get("title"):
-            cr = _crossref_lookup_title(r["title"])
-            if cr:
-                for k in ("doi", "cited_by_count", "reference_count", "abstract",
-                          "venue", "year"):
-                    if cr.get(k) and not r.get(k):
-                        r[k] = cr[k]
-                r["_enrichment"]["crossref_title"] = True
+        if (not result.get("cited_by_count") or not result.get("doi")) and result.get("title"):
+            enrichment = _crossref_lookup_title(result["title"]) or _openalex_lookup_title(result["title"])
+            if enrichment:
+                for key in ("doi", "cited_by_count", "reference_count", "abstract", "venue", "year"):
+                    if enrichment.get(key) and not result.get(key):
+                        result[key] = enrichment[key]
+                result["_enrichment"][enrichment.get("source", "metadata")] = True
                 enriched += 1
-            else:
-                # [P1-15] Fallback: OpenAlex-by-title for Chinese papers that
-                # Crossref-by-title misses (per v3.9.7.5 lesson: OpenAlex has
-                # better CN coverage than Crossref for the same query).
-                oa = _openalex_lookup_title(r["title"])
-                if oa:
-                    for k in ("doi", "cited_by_count", "abstract", "venue", "year"):
-                        if oa.get(k) and not r.get(k):
-                            r[k] = oa[k]
-                    r["_enrichment"]["openalex_title"] = True
-                    enriched += 1
-            time.sleep(0.05)  # Crossref is generous; OpenAlex too
-    # [P1-16] Re-sort by user-chosen criterion (newly enriched papers may
-    # have higher counts, so cite-sorted re-rank is important)
+            time.sleep(0.05)
     if resort_by == "cite":
-        results.sort(key=lambda x: x.get("cited_by_count", 0) or 0, reverse=True)
+        results.sort(key=lambda item: item.get("cited_by_count", 0) or 0, reverse=True)
     elif resort_by == "year":
-        results.sort(key=lambda x: x.get("year") or 0, reverse=True)
-    # resort_by == "relevance" 鈫?keep natural order, no re-sort
-    # [P1-14] print enrichment stats (stdout; CLI can grep/pipe)
-    if (min_cites > 0 and skipped_low_cite) or (max_age_years > 0 and skipped_old):
-        parts = [f"enriched {enriched}"]
-        if min_cites > 0 and skipped_low_cite:
-            parts.append(f"skipped_low_cite {skipped_low_cite}")
-        if max_age_years > 0 and skipped_old:
-            parts.append(f"skipped_old {skipped_old} (year<{current_year - max_age_years})")
-        print(f"  [P1-14/18] enrich_top_n: {', '.join(parts)} of top-{n}",
-              file=sys.stderr)
+        results.sort(key=lambda item: item.get("year") or 0, reverse=True)
+    if skipped_old:
+        print(f"  [enrich] enriched {enriched}; skipped_old {skipped_old} of top-{n}", file=sys.stderr)
     return results
-
 
 def sort_results(results: List[Dict], sort_by: str = "cite") -> List[Dict]:
     """[P1-16] Sort unified results by user-selected criterion.
@@ -337,10 +208,10 @@ def sort_results(results: List[Dict], sort_by: str = "cite") -> List[Dict]:
 def filter_by_source(results: List[Dict], source_filter: List[str] = None) -> List[Dict]:
     """[P1-17] Post-filter unified results to only show those from specified
     engines. Use case: query many engines, but only display certain ones
-    (e.g., to compare CNKI vs OpenAlex coverage side-by-side).
+    (for example, to compare OpenAlex and AMiner coverage).
 
     source_filter: list of base engine names like
-        ["openalex", "crossref", "cnki", "arxiv", "aminer", "semanticscholar", "core"]
+        ["openalex", "crossref", "arxiv", "aminer", "pubmed", "clinicaltrials", "core"]
         If None or empty, no filter (all results returned).
     Matching: a result matches if its `source` field starts with any filter
         entry. So "openalex" matches both "openalex" and "openalex_title"
@@ -504,118 +375,6 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                 f"client-side)"
             )
 
-    return results
-
-
-def _s2_throttle_lock() -> threading.Lock:
-    """Module-level lock to serialize S2 rate-limit state across calls."""
-    global _S2_LOCK
-    if _S2_LOCK is None:
-        _S2_LOCK = threading.Lock()
-    return _S2_LOCK
-
-
-_S2_LOCK: Optional[threading.Lock] = None
-_S2_LAST_CALL: float = 0.0
-_S2_MIN_INTERVAL: float = 1.1  # 1 RPS sustained (slightly > 1s for safety)
-_S2_MAX_RETRIES: int = 3
-_S2_BACKOFF_BASE: float = 1.0  # seconds
-_S2_BACKOFF_MAX: float = 30.0
-
-
-def _s2_throttle_wait() -> None:
-    """Sleep just enough to maintain 1 RPS on S2 free tier.
-
-    Module-level state: `_S2_LAST_CALL` is the timestamp of the last
-    `_s2_throttle_wait()` call. Thread-safe via `_S2_LOCK`.
-    """
-    global _S2_LAST_CALL
-    with _s2_throttle_lock():
-        now = time.time()
-        gap = now - _S2_LAST_CALL
-        if gap < _S2_MIN_INTERVAL:
-            time.sleep(_S2_MIN_INTERVAL - gap)
-        _S2_LAST_CALL = time.time()
-
-
-def _s2_request_with_retry(url: str, headers: dict) -> tuple:
-    """HTTP GET with S2-aware throttle + 429 backoff/retry.
-
-    Returns (status, body_dict). On exhausted retries, returns
-    (last_status, {}) so the caller can fall back gracefully.
-
-    Retry strategy: 1s -> 2s -> 4s -> ... capped at _S2_BACKOFF_MAX.
-    """
-    last_s = 0
-    for attempt in range(_S2_MAX_RETRIES + 1):
-        _s2_throttle_wait()
-        s, data = http_get_json(url, headers=headers)
-        last_s = s
-        if s == 200:
-            return s, data
-        if s == 429:
-            # Rate-limited: exponential backoff
-            backoff = min(_S2_BACKOFF_BASE * (2 ** attempt), _S2_BACKOFF_MAX)
-            print(f"  [S2] 429 rate-limited, backing off {backoff:.0f}s "
-                  f"(attempt {attempt+1}/{_S2_MAX_RETRIES+1})", file=sys.stderr)
-            time.sleep(backoff)
-            continue
-        # Non-429, non-200: don't retry (e.g. 400 bad request, 404 not found)
-        return s, {}
-    # Exhausted retries
-    return last_s, {}
-
-
-def search_semanticscholar(query: str, year_min: int = None, year_max: int = None,
-                           limit: int = 50) -> List[Dict]:
-    """Semantic Scholar API. Best for citation-rich data.
-
-    [P1-20] v3.9.10.11: 1 RPS throttle + 429 backoff/retry (max 3 retries,
-    exponential backoff 1s -> 2s -> 4s, capped at 30s). This lets the
-    S2 free tier be used in 50-query batch rebuilds without hitting
-    429 rate limits.
-    """
-    url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={quote(query)}&limit={min(limit, 100)}"
-    if year_min or year_max:
-        url += f"&year={year_min or ''}-{year_max or ''}"
-    url += "&fields=title,authors,venue,year,citationCount,influentialCitationCount,referenceCount,tldr,externalIds,openAccessPdf,publicationTypes"
-    headers = {}
-    api_key = os.environ.get("S2_API_KEY")
-    if api_key:
-        headers["x-api-key"] = api_key
-    s, data = _s2_request_with_retry(url, headers=headers)
-    if s != 200:
-        # v3.9.24.0: log the actual API status so users can diagnose why
-        # S2 returned 0 results. Common causes: 429 (rate limit), 500/502/503
-        # (server error), or just no matches. Without logging, S2 failures
-        # look identical to genuine "no results" cases.
-        logger.warning(
-            f"[S2 search] query='{query[:60]}' returned status={s} "
-            f"data={str(data)[:200]}"
-        )
-        error_type = EngineRateLimitError if s == 429 else RuntimeError
-        raise error_type(f"Semantic Scholar request failed with HTTP status {s}")
-    results = []
-    for it in (data.get("data") or []):
-        ext = it.get("externalIds") or {}
-        oa = it.get("openAccessPdf") or {}
-        tldr_obj = it.get("tldr") or {}
-        results.append({
-            "doi": ext.get("DOI", ""),
-            "arxiv_id": ext.get("ArXiv", ""),
-            "title": it.get("title", ""),
-            "authors": [a.get("name", "") for a in (it.get("authors") or [])],
-            "venue": it.get("venue", ""),
-            "year": it.get("year"),
-            "cited_by_count": it.get("citationCount", 0),
-            "influential_cite_count": it.get("influentialCitationCount", 0),
-            "reference_count": it.get("referenceCount", 0),
-            "tldr": tldr_obj.get("text", "") if isinstance(tldr_obj, dict) else "",
-            "is_oa": bool(oa.get("url")),
-            "oa_url": oa.get("url"),
-            "source": "semanticscholar",
-            "type": (it.get("publicationTypes") or [""])[0],
-        })
     return results
 
 
@@ -970,7 +729,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
                concepts_filter: str = None,
                enrich_top: int = 0,
-               enrich_top_min_cites: int = 1,
                sort_by: str = "cite",
                source_filter: List[str] = None,
                enrich_max_age_years: int = 10,
@@ -985,24 +743,16 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                        - AND: "concepts.id:C1+concepts.id:C2"
 
     enrich_top: if > 0, do second-hop lookups for top-N results lacking
-                cite/abstract (S2 by DOI + Crossref by title). See
-                enrich_top_n() docs. Adds ~12s for N=10 (S2 1 RPS).
+                cite/abstract (Crossref or OpenAlex by title). See
+                enrich_top_n() docs.
                 Default 0 = off (backward compatible).
-    enrich_top_min_cites: [P1-14] skip S2 lookup for papers with
-                cited_by_count < this threshold (default 1 = skip 0-cite).
-                Saves ~12s/query when many low-cite papers in top-N.
-                Set to 0 to restore v3.9.7.8 behavior (try all).
     sort_by: [P1-16] sort criterion for unified results.
              "cite" (default), "year", or "relevance". See sort_results().
     source_filter: [P1-17] post-filter results to only show those from
-             specified engines (e.g. ["openalex", "cnki"]). None/empty =
+             specified engines (e.g. ["openalex", "aminer"]). None/empty =
              no filter (default). See filter_by_source() for matching
              semantics. Use case: query many engines, display subset.
-    enrich_max_age_years: [P1-18] skip ALL enrichment for papers older
-             than this many years (default 10). S2 cite often stale/
-             unavailable for older papers; Crossref rarely adds missing
-             fields for pre-2010 papers. Set to 0 to disable and enrich
-             all papers regardless of age.
+    enrich_max_age_years: skip enrichment for papers older than this many years; set 0 to disable.
     engine_timeout: maximum seconds for one engine before its result is
              marked as an error and the remaining engines continue.
     """
@@ -1025,7 +775,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "crossref": search_crossref,
         "openalex": search_openalex,
         "arxiv": search_arxiv,
-        "semanticscholar": search_semanticscholar,
         # v3.9.11.8 (2026-08-09): PubMed medical engine, no auth required.
         "pubmed": search_pubmed,
         # v3.9.12.0 (2026-08-10): ClinicalTrials.gov, no auth, JSON API.
@@ -1098,27 +847,17 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                     if not seen[key].get(c) and p.get(c):
                         seen[key][c] = p[c]
 
-    # tldr 鈫?abstract fallback: if abstract still empty after merge but tldr present,
-    # use tldr 鈥?BUT only if it's a real tldr (not S2's "no tldr" placeholder).
-    # Known S2 placeholder strings: "It's time to dust off the gloves..."
-    S2_TLDR_PLACEHOLDERS = (
-        "It's time to dust off the gloves",
-        "It\u2019s time to dust off the gloves",
-        "It's time to dust off the sledgehammers",
-        "It\u2019s time to dust off the sledgehammers",
-    )
+    # Use a provider summary as an abstract only when no abstract is present.
     for r in seen.values():
-        tldr = r.get("tldr") or ""  # guard against None
-        if (not r.get("abstract") and tldr
-                and not any(tldr.startswith(p) for p in S2_TLDR_PLACEHOLDERS)):
-            r["abstract"] = tldr
+        if not r.get("abstract") and r.get("tldr"):
+            r["abstract"] = r["tldr"]
 
     unified = sort_results(list(seen.values()), sort_by=sort_by)
 
     # Top-N deep enrichment (v3.9.7.8): second-hop lookups for top-N results
     # that lack cite/abstract. Off by default (enrich_top=0).
     if enrich_top > 0:
-        enrich_top_n(unified, n=enrich_top, min_cites=enrich_top_min_cites,
+        enrich_top_n(unified, n=enrich_top,
                      resort_by=sort_by, max_age_years=enrich_max_age_years)
     elif sort_by != "cite":
         # Even without enrichment, ensure final sort matches user request
@@ -1143,24 +882,3 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "enrich_top": enrich_top,
         "results": unified,
     }
-
-
-def _try_import_cnki() -> bool:
-    """Return True if CNKI channel can be used (cookies + playwright available).
-
-    Per v3.9.7.3 design: CNKI is optional. If cookies file missing OR
-    playwright not installed, gracefully skip CNKI from the engine pool
-    (downgrade to 5 English engines without raising).
-    """
-    try:
-        from . import cnki_channel
-    except ImportError:
-        return False
-    if not cnki_channel.cookies_exist():
-        return False
-    try:
-        import playwright  # noqa: F401
-    except ImportError:
-        return False
-    # All preconditions met
-    return True

@@ -29,7 +29,6 @@ This policy covers:
 
 This policy does **not** cover:
 - Third-party search engines and PDF sources (Crossref, OpenAlex,
-  arXiv, Semantic Scholar, AMiner, CNKI, PubMed, ClinicalTrials.gov,
   Sci-Hub mirrors, Anna's Archive, Unpaywall). Report to those
   services directly.
 - User-supplied credentials in `.env` — you are responsible for
@@ -69,12 +68,8 @@ This policy does **not** cover:
 - **Don't use sci-hub in jurisdictions where it's illegal**. The
   user is responsible for compliance with local laws.
 
-### 3. CNKI cookies
 
-- **Don't commit your `cnki.json`** (it's in `.gitignore`).
-- **Re-export cookies every 4-8h** (CNKI session TTL).
 - **Never share your cookies** — they identify you personally to
-  CNKI.
 
 ### 4. Sample pool
 
@@ -111,17 +106,10 @@ These are accepted limitations of the current design, not bugs:
    Mitigation: verify checksums for any PDF you intend to use in
    published work.
 
-4. **CNKI proxy IP discovery via redirect** (v3.9.13.1+ mitigated). The
-   example IP `120.53.241.46:5888` in `pa_cli/cnki_channel.py` is a
    load-balanced endpoint resolved from `xueshu789.com` (HTTPS) JS
    redirect. As of v3.9.13.0, the actual connection is over **plaintext
-   HTTP** because the third-party CNKI proxy service does not support
-   HTTPS. This is a real plaintext leak: user CNKI session cookies and
    search queries were transmitted in cleartext. **v3.9.13.1 now REFUSES
-   this by default** with `_validate_cnki_proxy_security()`. Users who
-   must keep using CNKI can override with `PAPER_AGENT_ALLOW_PLAINTEXT_CNKI=1`
    (accepts with WARN) or, better, use a VPN that encrypts traffic to
-   the CNKI proxy IP. The long-term fix is for the CNKI proxy service
    to support HTTPS — out of paper-agent's scope.
 
 5. **Branch protection on main allows direct push** (no required
