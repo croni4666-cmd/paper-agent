@@ -27,6 +27,13 @@ _configure_console_utf8()
 
 import click
 
+def _validate_search_engine(ctx, param, value):
+    retired = {"cnki", "semanticscholar"}
+    selected = {part.strip().lower() for part in value.split(",")}
+    if retired.intersection(selected):
+        raise click.BadParameter("CNKI and Semantic Scholar have been retired")
+    return value
+
 from . import __version__
 
 
@@ -373,7 +380,7 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
 @click.option("--year-max", type=int, default=None, help="Filter: max publication year")
 @click.option("--limit", type=int, default=50, show_default=True,
               help="Max results per engine")
-@click.option("--engine", default="all", show_default=True,
+@click.option("--engine", default="all", show_default=True, callback=_validate_search_engine,
               help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,pubmed,clinicaltrials,core "
                    "(comma-separated; default 'all' = first 8 incl. pubmed + clinicaltrials; "
                    "'core' = explicit CORE-only)")

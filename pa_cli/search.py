@@ -1006,7 +1006,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     engine_timeout: maximum seconds for one engine before its result is
              marked as an error and the remaining engines continue.
     """
-    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed", "clinicaltrials"]
+    engines = (["crossref", "openalex", "arxiv", "aminer", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
     # OpenAlex already indexes CORE's repos, so marginal coverage is <5%.
@@ -1045,16 +1045,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
-    # CNKI is optional 鈥?only include if cookies exist (avoid hard-fail on first run)
-    if "cnki" in engines and not _try_import_cnki():
-        # CNKI needs local browser/cookie setup; make that visible in output.
-        by_engine["cnki"] = []
-        engine_status["cnki"] = {"status": "skipped", "count": 0,
-                                 "message": "CNKI cookies or Playwright are not configured"}
-        engines = [e for e in engines if e != "cnki"]
-    elif "cnki" in engines:
-        from .cnki_channel import search_cnki
-        funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
             by_engine[eng] = []
