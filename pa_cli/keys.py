@@ -135,16 +135,6 @@ DEFAULT_REGISTRY = {
         "last_checked": None,
         "last_used": None,
     },
-    "semanticscholar": {
-        "name": "Semantic Scholar",
-        "env_var": "S2_API_KEY",
-        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=test&limit=1",
-        "tier": "free",
-        "expires": None,
-        "notes": "S2 API key for higher rate limit. Free tier, no expiry reported.",
-        "last_checked": None,
-        "last_used": None,
-    },
     "core": {
         "name": "CORE.ac.uk",
         "env_var": "CORE_API_KEY",
@@ -326,8 +316,6 @@ def cmd_check(service_id: Optional[str] = None) -> Dict[str, Any]:
         headers = {}
         if svc["env_var"] == "OPENALEX_API_KEY":
             url = url + "&api_key=" + quote(env_value)
-        elif svc["env_var"] == "S2_API_KEY":
-            headers["x-api-key"] = env_value
         elif svc["env_var"] == "CORE_API_KEY":
             headers["Authorization"] = f"Bearer {env_value}"
         elif svc["env_var"] == "UNPAYWALL_EMAIL":

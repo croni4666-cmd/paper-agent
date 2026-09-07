@@ -2,7 +2,6 @@
 
 Per ROADMAP [P2-11] (added 2026-07-15, shipped 2026-07-20 in v3.9.10.7):
   Walks every Bibtex entry through the 8 fetch channels in priority order:
-    1. CNKI (CN journal DOI heuristic, v3.9.8.3)
     2. Unpaywall (legal, stable)
     3. Sci-Hub (fallback)
     4. Anna's Archive

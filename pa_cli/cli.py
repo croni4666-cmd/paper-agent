@@ -253,24 +253,24 @@ def keys_remind(as_json, write_alerts_path):
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
 @click.option("--prefer", default=None,
-              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "pmc-pdf",
-                                 "unpaywall", "s2", "biorxiv", "core", "osf", "chemrxiv", "auto"]),
+              type=click.Choice(["arxiv", "annas", "scihub", "pmc", "pmc-pdf",
+                                 "unpaywall", "biorxiv", "core", "osf", "chemrxiv", "auto"]),
               help="v3.9.11.6+ pick a single source first. "
-                   "'arxiv' arXiv preprints, 'annas' annas-archive, 'cnki' CN journals, "
+                   "'arxiv' arXiv preprints, 'annas' annas-archive, "
                    "'scihub' sci-hub, "
                    "'pmc' PMC (XML + Europe PDF + jats_to_pdf fallback, v3.9.21+), "
                    "'pmc-pdf' force jats_to_pdf (real PDF, slower ~25s, v3.9.21+), "
                    "'unpaywall' legal OA PDF, "
-                   "'s2' Semantic Scholar openAccessPdf (v3.9.22+, ~30% hit rate), "
+                   ""
                    "'biorxiv' bioRxiv/medRxiv preprint (v3.9.22+, 10.1101/* DOIs), "
                    "'core' CORE re-added (v3.9.22+, 36M+ full text, requires CORE_API_KEY), "
                    "'osf' OSF Preprints (v3.9.22+, 10.31219/osf.io/* DOIs), "
                    "'chemrxiv' ChemRxiv (v3.9.22+, 10.26434/chemrxiv-* DOIs), "
                    "'auto' tries all in order. Takes precedence over --channels.")
-@click.option("--channels", default="pmc,s2,biorxiv,core,osf,chemrxiv,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
+@click.option("--channels", default="pmc,biorxiv,core,osf,chemrxiv,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
               show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
                    "Prefer --prefer instead. v3.9.22: added 5 new OA channels "
-                   "(s2, biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
+                   "(biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
                    "v3.9.20.1: added 'pmc' (was missing). Each maps to a --prefer value.")
 @click.option("--unpaywall-email", default="hello@example.com", show_default=True,
               help="Email registered with Unpaywall API")
@@ -306,11 +306,9 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
         channel_to_prefer = {
             "arxiv": ["arxiv"],
             "annas": ["annas"],
-            "cnki": ["cnki"],
             "pmc": ["pmc"],
             "pmc-pdf": ["pmc-pdf"],  # v3.9.21+: force PMC + jats_to_pdf
             "unpaywall": ["unpaywall"],  # v3.9.21+: explicit Unpaywall option
-            "s2": ["s2"],  # v3.9.22+: Semantic Scholar openAccessPdf
             "biorxiv": ["biorxiv"],  # v3.9.22+: bioRxiv/medRxiv preprint
             "core": ["core"],  # v3.9.22+: CORE re-added (36M+ full text)
             "osf": ["osf"],  # v3.9.22+: OSF Preprints (PsyArXiv etc.)
@@ -381,8 +379,8 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
 @click.option("--limit", type=int, default=50, show_default=True,
               help="Max results per engine")
 @click.option("--engine", default="all", show_default=True, callback=_validate_search_engine,
-              help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,pubmed,clinicaltrials,core "
-                   "(comma-separated; default 'all' = first 8 incl. pubmed + clinicaltrials; "
+              help="all / crossref,openalex,arxiv,aminer,pubmed,clinicaltrials,core "
+                   "(comma-separated; default 'all' includes six public engines; "
                    "'core' = explicit CORE-only)")
 @click.option("--format", "out_format", default="json", show_default=True,
               type=click.Choice(["json", "bibtex"]),
@@ -400,15 +398,11 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
               help="How to combine multiple concepts: or (any) or and (all)")
 @click.option("--enrich-top", "enrich_top", default=0, show_default=True,
               help="Top-N deep enrichment (v3.9.7.8): second-hop lookups via "
-                   "S2 paper/DOI + Crossref by title for top-N results. "
-                   "0 = off (default). Adds ~12s for N=10 (S2 1 RPS free).")
-@click.option("--enrich-top-min-cites", "enrich_top_min_cites", default=1, show_default=True,
-              help="[P1-14] Skip S2 lookup for papers with cited_by_count < this. "
-                   "Default 1 = skip 0-cite papers (saves ~12s/query when many "
-                   "low-cite papers in top-N). Set 0 to try all (v3.9.7.8 behavior).")
+                   "Crossref or OpenAlex by title for top-N results. "
+                   "0 = off (default).")
 @click.option("--enrich-max-age-years", "enrich_max_age_years", default=10, show_default=True,
               help="[P1-18] Skip ALL enrichment for papers older than this many years. "
-                   "Default 10 (S2 cite often stale/unavailable for older papers; "
+                   "Default 10 (older records are less likely to gain metadata; "
                    "Crossref rarely adds missing fields for pre-2010 papers). "
                    "Set 0 to enrich all papers regardless of age.")
 @click.option("--sort-by", "sort_by", default="cite", show_default=True,
@@ -417,7 +411,7 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
                    "'year' = newest first; 'relevance' = keep each engine's natural order.")
 @click.option("--source", "source_filter", default=None,
               help="[P1-17] Post-filter results to only show those from specified engines. "
-                   "Comma-separated: e.g. 'openalex,cnki'. Matches 'source' field prefix "
+                   "Comma-separated: e.g. 'openalex,aminer'. Matches 'source' field prefix "
                    "(so 'openalex' also matches 'openalex_title' enrichment). Default = no filter.")
 @click.option("--quality-mode", "quality_mode", default="flag", show_default=True,
               type=click.Choice(["flag", "filter", "off"]),
@@ -434,9 +428,9 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
                    "'basic' = only free basic API (no Pro cost, weaker multi-word recall).")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites,
+           concept_ids, concept_names, concept_mode, enrich_top,
            enrich_max_age_years, sort_by, source_filter, quality_mode, aminer_mode, quiet):
-    """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
+    """Academic paper search across Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov.
 
     Concept filtering (OpenAlex [P1-2]):
       --concepts C1,C2         direct concept IDs (OR by default)
@@ -488,7 +482,6 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
     results = run_search(query, year_min, year_max, limit, engine,
                          concepts_filter=concepts_filter or None,
                          enrich_top=enrich_top,
-                         enrich_top_min_cites=enrich_top_min_cites,
                          sort_by=sort_by,
                          source_filter=src_list,
                          enrich_max_age_years=enrich_max_age_years)
@@ -922,268 +915,6 @@ def mcp_serve():
     sys.exit(1)
 
 
-# =============== CNKI subcommand group (P0-9, added 2026-07-15) ===============
-
-@main.group()
-def cnki():
-    """CNKI 6th search engine (Chinese papers, optional).
-
-    Per ROADMAP [P0-9] (added 2026-07-14, skeleton in v3.9.7.3):
-    - Adds Chinese-paper coverage (0% → ~15-25% on Chinese queries)
-    - User-maintained cookies (4-8h proxy session TTL)
-    - NOT through clash proxy (CNKI 国内站, user 用"其他代理")
-
-    Subcommands: status / setup / search
-    """
-
-
-@cnki.command("status")
-@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
-def cnki_status(as_json):
-    """Check CNKI channel readiness (cookies, playwright, TTL)."""
-    from .cnki_channel import status_report
-    s = status_report()
-    if as_json:
-        click.echo(json.dumps(s, indent=2, ensure_ascii=False))
-        return
-    marker = "[OK]" if s["ready_for_search"] else "[WARN]"
-    click.echo(f"{marker} CNKI channel status (v{s['version']})")
-    click.echo(f"  cookies_path:           {s['cookies_path']}")
-    click.echo(f"  cookies_exist:          {s['cookies_exist']}")
-    if s["cookie_age_hours"] is not None:
-        click.echo(f"  cookie_age_hours:       {s['cookie_age_hours']:.1f}h "
-                   f"(max {s['max_cookie_age_hours']:.1f}h)")
-    else:
-        click.echo(f"  cookie_age_hours:       (no file)")
-    click.echo(f"  n_cookies:              {s['n_cookies']}")
-    click.echo(f"  playwright_installed:   {s['playwright_installed']}")
-    click.echo(f"  search_implemented:     {s['search_implemented']} (v3.9.7.6 close-out: cite/dl deprecated, see ROADMAP [P0-9.1b])")
-    click.echo(f"  cite/dl:                None (deprecated per [P0-9.1b]; 5 paths blocked)")
-    click.echo(f"                          see CHANGELOG v3.9.7.6 for honest audit")
-    click.echo()
-    if not s["ready_for_search"]:
-        click.echo(f"[pa-cnki] {s['next_action']}", err=True)
-    else:
-        click.echo("[pa-cnki] ready (cookies fresh + playwright installed)", err=True)
-
-
-@cnki.command("setup")
-def cnki_setup():
-    """Print CNKI setup instructions (proxy + cookies + Export script).
-
-    Per ROADMAP [P0-9] "User confirmation needed" list:
-    - 代理类型 (校园 VPN / EZproxy / 机构图书馆代理)
-    - 代理登录 session 实际过期时间
-    - cookies 维护自动化
-    """
-    click.echo("[pa-cnki] Setup instructions for CNKI 6th engine")
-    click.echo()
-    click.echo("STEP 1: Provide proxy access")
-    click.echo("  - 校园 VPN / EZproxy / 机构图书馆代理")
-    click.echo("  - 必须能访问 CNKI hostname (www.cnki.net)")
-    click.echo("  - 不能走 clash (CNKI 反爬可能检测到 proxy 流量)")
-    click.echo()
-    click.echo("STEP 2: Manual cookies export (one-time setup)")
-    click.echo("  - 用 Chrome / Edge 登录代理入口")
-    click.echo("  - 跳转 CNKI 后, 跑 Export-CNKICookies.ps1 (待写)")
-    click.echo("  - script 导出 cookies 到:")
-    click.echo("    ~/.paper-agent\\cookies\\cnki.json")
-    click.echo()
-    click.echo("STEP 3: Verify")
-    click.echo("  $ pa cnki status")
-    click.echo("  $ pa search \"东数西算\" --engine cnki")
-    click.echo()
-    click.echo("Cookie TTL: 4-8 hours (proxy session)")
-    click.echo("  - 每天 user 重跑一次 export script")
-    click.echo("  - 或设置 Windows 任务计划每日自动跑 (TODO)")
-    click.echo()
-    click.echo("Per ROADMAP [P0-9] status: skeleton code ready (v3.9.7.3)")
-    click.echo("Real playwright + HTML parser will be wired in after you provide proxy + cookies.")
-
-
-@cnki.command("search")
-@click.argument("query")
-@click.option("--limit", type=int, default=10, show_default=True,
-              help="Max results to return (1-100)")
-@click.option("--year-min", type=int, default=None,
-              help="Earliest year filter (CNKI may not honor in simple search)")
-@click.option("--year-max", type=int, default=None,
-              help="Latest year filter (CNKI may not honor in simple search)")
-@click.option("--field", "field", default="subject", show_default=True,
-              type=click.Choice(["subject", "title", "keyword", "tka", "abstract",
-                                 "fulltext", "author", "affiliation"]),
-              help="Search field")
-@click.option("--db", "db", default="all", show_default=True,
-              type=click.Choice(["all", "journal", "thesis", "book", "conference",
-                                 "newspaper", "almanac", "patent", "standard",
-                                 "law", "achievement"]),
-              help="CNKI database to search")
-@click.option("--format", "out_format", default="summary", show_default=True,
-              type=click.Choice(["json", "summary"]))
-def cnki_search(query, limit, year_min, year_max, field, db, out_format):
-    """Search CNKI directly (v3.9.7.4 real search).
-
-    Examples:
-        pa cnki search "东数西算"
-        pa cnki search "保险精算" --field title --limit 5
-        pa cnki search "深度学习" --db journal --limit 10
-    """
-    from .cnki_channel import search_cnki
-    results = search_cnki(query, year_min=year_min, year_max=year_max,
-                         limit=limit, field=field, db=db)
-    if not results:
-        click.echo("[pa-cnki] No results returned", err=True)
-        sys.exit(1)
-    # If first result is an error dict, surface it
-    if "error" in results[0]:
-        click.echo(f"[pa-cnki] {results[0]['error']}: {results[0].get('message', '')}",
-                  err=True)
-        if results[0].get("hint"):
-            click.echo(f"  Hint: {results[0]['hint']}", err=True)
-        sys.exit(2)
-    if out_format == "summary":
-        click.echo(f"Found {len(results)} results for query: {query!r}")
-        click.echo(f"  field={field}, db={db}, limit={limit}")
-        click.echo()
-        for i, r in enumerate(results):
-            click.echo(f"[{i+1}] {r.get('title', '?')[:60]}")
-            click.echo(f"    venue: {r.get('venue', '?')}, year: {r.get('year', '?')}, "
-                      f"type: {r.get('type', '?')}, db_type: {r.get('db_type', '?')}")
-            authors = r.get('authors', [])
-            if authors:
-                click.echo(f"    authors: {', '.join(authors[:3])}"
-                          + (" ..." if len(authors) > 3 else ""))
-            click.echo(f"    cnki_url: {r.get('cnki_url', '?')[:100]}")
-            click.echo()
-    else:
-        click.echo(json.dumps(results, indent=2, ensure_ascii=False))
-
-
-@main.command()
-@click.argument("doi")
-@click.option("--direction", "direction",
-              type=click.Choice(["forward", "backward"]),
-              default="forward", show_default=True,
-              help="forward = papers that cite <DOI>; backward = papers <DOI> cites")
-@click.option("--limit", default=100, show_default=True, type=int,
-              help="Max papers to return (forward default 100; backward 50 recommended)")
-@click.option("--save-bib", "save_bib_path", default=None, metavar="PATH",
-              help="Also write BibTeX to this path")
-@click.option("-o", "--output", default=None, metavar="PATH",
-              help="Save JSON result to this path (else stdout)")
-@click.option("--quiet", is_flag=True, help="Suppress progress output")
-def citations(doi, direction, limit, save_bib_path, output, quiet):
-    """Walk citation graph via OpenAlex.
-
-    Examples:
-      pa citations 10.1186/s41239-023-00411-8 --direction forward --limit 20
-      pa citations 10.1186/s41239-023-00411-8 --direction backward --limit 50
-      pa citations 10.1186/s41239-023-00411-8 --save-bib crompton_citers.bib
-
-    forward = "who cites this paper?"
-      Cursor-paginated; bounded by --limit.
-
-    backward = "what does this paper cite?"
-      Resolves DOI -> referenced_works[] via OpenAlex, fetches each.
-      N+1 API calls (one per reference). Use --limit wisely (default 100,
-      but recommend 50 since each ref = a separate HTTP request).
-
-    Requires OPENALEX_API_KEY env var for higher rate limit (1 RPS free, faster
-    with key). Without key, the walk still works but slower.
-    """
-    import json as _json
-    from .citations import citation_walk
-    from .bibtex import write_bibtex
-    if not quiet:
-        click.echo(f"[pa] citations doi={doi} direction={direction} limit={limit}", err=True)
-    result = citation_walk(doi, direction=direction, limit=limit)
-    if result.get("error"):
-        click.echo(f"[pa] error: {result['error']}", err=True)
-        click.echo(_json.dumps(result, indent=2, ensure_ascii=False))
-        sys.exit(2)
-    if not quiet:
-        click.echo(f"[pa] source: {result['source_work'].get('title', '')[:80]!r}", err=True)
-        click.echo(f"[pa] fetched {result['count']} papers (truncated={result['truncated']})", err=True)
-    out_json = _json.dumps(result, indent=2, ensure_ascii=False)
-    if output:
-        Path(output).write_text(out_json, encoding="utf-8")
-        click.echo(f"[pa] saved JSON to {output}", err=True)
-    else:
-        click.echo(out_json)
-    if save_bib_path:
-        write_bibtex(result["results"], save_bib_path)
-        click.echo(f"[pa] saved BibTeX ({result['count']} entries) to {save_bib_path}", err=True)
-
-
-@main.command(name="cnki-guide")  # v3.9.26.0: renamed from fetch_batch to avoid name conflict
-@click.option("-i", "--input", "input_file", required=True,
-              type=click.Path(exists=True, dir_okay=False),
-              help="Text file with one query per line (DOI or title)")
-@click.option("-o", "--output", default="batch_download_guide.md",
-              type=click.Path(dir_okay=False),
-              help="Output markdown guide (default: ./batch_download_guide.md)")
-@click.option("--year-min", type=int, default=None,
-              help="Filter: min publication year")
-@click.option("--year-max", type=int, default=None,
-              help="Filter: max publication year")
-@click.option("--quiet", is_flag=True, help="Suppress per-paper progress output")
-def cnki_guide(input_file, output, year_min, year_max, quiet):
-    """[v3.9.26.0] Generate a batch download guide for CNKI PDF.
-
-    v3.9.26.0: renamed from `fetch_batch` to `cnki-guide` to avoid name
-    conflict with the new `fetch-batch` command (the actual PDF downloader
-    added in v3.9.10.0). Old command name was `fetch_batch` (underscore);
-    the new name is `cnki-guide` (hyphen).
-
-    Semi-automated, v3.9.8.3.
-
-    Input: a text file with one query per line. Each line can be either:
-      - a DOI (e.g. 10.3969/j.issn.1003-9031.2022.04.008)
-      - a title  (e.g. 数字普惠金融对经济高质量发展的影响)
-
-    Output: a markdown guide with:
-      - Per-paper table (title, DOI, year, found status, xueshu789 search URL)
-      - An Edge console JS snippet that auto-scrapes doDownload URLs from
-        xueshu789 search result pages
-      - Step-by-step instructions for user (the actual PDF download must be
-        done in user's real Edge browser to bypass bar.cnki.net vLevel=5
-        CAPTCHA)
-
-    Honest limitation: paper-agent cannot auto-download CNKI PDFs because
-    bar.cnki.net detects all non-real-browser automation and triggers
-    vLevel=5 CAPTCHA. This tool's value is in:
-      1. Validating that DOIs exist (skip non-existent papers)
-      2. Generating per-paper search URLs for xueshu789
-      3. Providing the Edge console snippet for batch doDownload URL extraction
-    User's manual Edge workflow is the only working path (verified 2026-07-15).
-    """
-    from pathlib import Path
-    from .batch_fetch import generate_guide
-
-    input_path = Path(input_file)
-    output_path = Path(output)
-    queries = [line.strip() for line in input_path.read_text(encoding="utf-8").splitlines()
-               if line.strip() and not line.strip().startswith("#")]
-    if not queries:
-        click.echo("[pa] no queries in input file", err=True)
-        sys.exit(1)
-    if not quiet:
-        click.echo(f"[pa] {len(queries)} queries from {input_file}", err=True)
-    summary = generate_guide(queries, output_path,
-                            year_min=year_min, year_max=year_max)
-    if not quiet:
-        click.echo(f"[pa] {summary['n_found']}/{summary['n_total']} papers metadata found", err=True)
-        click.echo(f"[pa] {summary['n_not_found']} not found (likely Chinese-only, not in OpenAlex/Crossref)", err=True)
-        click.echo(f"[pa] guide saved to {summary['output']}", err=True)
-        click.echo("", err=True)
-        click.echo("[pa] Next: open the guide and follow the Edge workflow", err=True)
-
-
-
-
-# =============== [P2-5] build + scaffold subcommands ===============
-# Appended at end of file (rather than inserted in middle) to minimize diff
-# against v3.9.8.4 baseline. Both are part of v3.9.9 release.
 
 @main.command()
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
@@ -1463,12 +1194,11 @@ def search_saved_list(as_json):
 @click.option("--concept", default=None, help="Concept name(s) to resolve")
 @click.option("--concept-mode", default=None, type=click.Choice(["or", "and"]))
 @click.option("--enrich-top", type=int, default=None)
-@click.option("--enrich-top-min-cites", type=int, default=None)
 @click.option("--enrich-max-age-years", type=int, default=None)
 @click.option("--sort-by", default=None, type=click.Choice(["cite", "year", "relevance"]))
 @click.option("--source", default=None, help="Post-filter to specific engines")
 def search_saved_add(name, query, year_min, year_max, engine, limit, concepts,
-                     concept, concept_mode, enrich_top, enrich_top_min_cites,
+                     concept, concept_mode, enrich_top,
                      enrich_max_age_years, sort_by, source):
     """Create a new saved search."""
     from .search_saved import add, DEFAULT_PATH
@@ -1476,7 +1206,6 @@ def search_saved_add(name, query, year_min, year_max, engine, limit, concepts,
         'year_min': year_min, 'year_max': year_max, 'engine': engine,
         'limit': limit, 'concepts': concepts, 'concept': concept,
         'concept_mode': concept_mode, 'enrich_top': enrich_top,
-        'enrich_top_min_cites': enrich_top_min_cites,
         'enrich_max_age_years': enrich_max_age_years,
         'sort_by': sort_by, 'source': source,
     }
@@ -1560,7 +1289,6 @@ def search_saved_run(name, output, quiet):
             concept_names=args.get('concept'),
             concept_mode=args.get('concept_mode', 'or'),
             enrich_top=args.get('enrich_top', 0),
-            enrich_top_min_cites=args.get('enrich_top_min_cites', 1),
             enrich_max_age_years=args.get('enrich_max_age_years', 10),
             sort_by=args.get('sort_by', 'cite'),
             source_filter=args.get('source'),
@@ -1632,7 +1360,7 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
 
 # =============== [P2-11] fetch-batch subcommand ===============
 # Batch PDF download from a Bibtex: walks each entry through fetch channels
-# in priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+# in priority order (PMC, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
 
 @main.command(name="fetch-batch")
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
@@ -1655,7 +1383,7 @@ def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
     """[P2-11] Batch PDF download from a Bibtex file.
 
     Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in
-    priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+    priority order (PMC, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
     Lists what failed and why.
 
     Examples:
@@ -2729,7 +2457,7 @@ def jobs():
 @click.option("--out", "output_dir", required=True, type=click.Path(),
               help="Output directory for fetched PDFs (created if missing)")
 @click.option("--prefer", default="auto",
-              type=click.Choice(["auto", "scihub", "annas", "cnki", "arxiv", "direct"]),
+              type=click.Choice(["auto", "scihub", "annas", "arxiv", "direct"]),
               help="Preferred fetch channel (default: auto)")
 @click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
               help="Max total seconds before timeout (default 1800 = 30 min)")
@@ -4387,7 +4115,7 @@ def search_and_import(
 
     Steps (per ROADMAP Round 16 deferred):
       1. Search (8 default engines) → write temp Bibtex
-      2. Fetch PDFs (8 channels: arxiv → unpaywall → scihub → annas → cnki → ...)
+      2. Fetch PDFs through the available open-access and archive channels.
       3. Bucket results: downloaded vs failed-to-download
       4. (optional) Push downloaded DOIs to your Zotero library (idempotent)
       5. (optional) Create Zotero project (= collection) if missing

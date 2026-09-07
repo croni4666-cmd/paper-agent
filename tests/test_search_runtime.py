@@ -43,18 +43,6 @@ class SearchRuntimeTests(unittest.TestCase):
         self.assertEqual(result["engine_status"]["openalex"]["status"], "error")
         self.assertIn("network failed", result["engine_status"]["openalex"]["message"])
 
-    def test_semantic_scholar_rate_limit_is_reported_as_engine_error(self):
-        with patch.object(search, "_s2_request_with_retry", return_value=(429, {})):
-            result = search.run_search("test", engine="semanticscholar", limit=1)
-        self.assertEqual(result["by_engine"], {"semanticscholar": 0})
-        self.assertEqual(result["engine_status"]["semanticscholar"]["status"], "rate_limited")
-        self.assertIn("429", result["engine_status"]["semanticscholar"]["message"])
-
-
-    def test_semantic_scholar_non_rate_limit_failure_is_an_error(self):
-        with patch.object(search, "_s2_request_with_retry", return_value=(503, {})):
-            result = search.run_search("test", engine="semanticscholar", limit=1)
-        self.assertEqual(result["engine_status"]["semanticscholar"]["status"], "error")
     def test_blocked_engine_times_out_without_blocking_search(self):
         release = threading.Event()
 
