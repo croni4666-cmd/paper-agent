@@ -7,7 +7,7 @@ A local-first research CLI and Codex skill for finding papers, retrieving open c
 - Work from BibTeX through screening, PDF collection, Zotero, Obsidian, and manuscript generation.
 - Inspect local fetch-channel success rates with pa fetch-stats.
 
-Current release: **v3.9.29.0**. CNKI and Semantic Scholar have been retired from the public interface.
+Current release: **v3.9.29.1**. CNKI and Semantic Scholar have been retired from the public interface.
 
 ## Quick start
 

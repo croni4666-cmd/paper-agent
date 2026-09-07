@@ -291,7 +291,7 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
     from .fetch import fetch_doi
     if not quiet:
         click.echo(f"[pa] fetch DOI={doi}", err=True)
-        click.echo(f"[pa] output_dir={output_dir} proxy={proxy or '(none)'}", err=True)
+        click.echo(f"[pa] output_dir={output_dir} proxy={'<configured>' if proxy else '(none)'}", err=True)
         prefer_msg = prefer or "(auto from --channels)"
         click.echo(f"[pa] prefer={prefer_msg} channels={channels} cache={'disabled' if no_cache else 'enabled'}", err=True)
         click.echo(f"[pa] max_total_sec={max_total_sec}", err=True)
