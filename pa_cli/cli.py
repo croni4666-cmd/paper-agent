@@ -394,6 +394,31 @@ def fetch_stats(as_json):
         )
 
 @main.command()
+@click.argument("query", default="machine learning")
+@click.option("--engine", "engines", default="all", show_default=True,
+              help="all or a comma-separated public-engine list")
+@click.option("--limit", default=1, show_default=True, type=click.IntRange(1, 5))
+@click.option("--timeout", "engine_timeout", default=10.0, show_default=True,
+              type=click.FloatRange(min=0.1), help="Maximum seconds per engine")
+@click.option("-o", "--output", type=click.Path(dir_okay=False, writable=True))
+def engine_probe(query, engines, limit, engine_timeout, output):
+    """Opt-in, sequential availability probe for public search engines."""
+    from .engine_probe import PUBLIC_SEARCH_ENGINES, probe_search_engines
+    selected = PUBLIC_SEARCH_ENGINES if engines == "all" else tuple(
+        item.strip() for item in engines.split(",") if item.strip()
+    )
+    try:
+        report = probe_search_engines(query, engines=selected, limit=limit,
+                                      engine_timeout=engine_timeout)
+    except ValueError as exc:
+        raise click.BadParameter(str(exc)) from exc
+    payload = json.dumps(report, indent=2, ensure_ascii=False)
+    if output:
+        Path(output).write_text(payload + "\n", encoding="utf-8")
+    click.echo(payload)
+
+
+@main.command()
 @click.argument("query")
 @click.option("--year-min", type=int, default=None, help="Filter: min publication year")
 @click.option("--year-max", type=int, default=None, help="Filter: max publication year")

@@ -1,6 +1,6 @@
 # Paper-Agent Roadmap
 
-Last updated: 2026-09-07
+Last updated: 2026-09-08
 Current release: 3.9.29.1
 
 ## Product Direction
@@ -29,7 +29,7 @@ providers or model-heavy ranking features.
 
 ### P0.1 — Release and compatibility gate
 
-Status: in review
+Status: complete
 
 Add a GitHub Actions workflow that runs the formal test suite on supported
 Python versions, compiles the package, checks dependency resolution, and runs
@@ -43,14 +43,19 @@ Acceptance criteria:
 - Vulnerability audit is visible in pull requests.
 - Release documentation names the required checks.
 
-Why now: the repository currently has no automated GitHub workflow, while
-dependency and network behavior are central to the product.
-
-Implementation is ready for GitHub's Python-version matrix validation.
+Verified in merged PR #33: Python 3.10/3.11/3.12 tests, dependency resolution,
+and dependency audit all passed.
 
 ### P0.2 — Engine contract tests and live-smoke harness
 
-Status: next
+Status: in progress
+
+Implemented: opt-in `pa engine-probe` JSON reports, sequential engine execution,
+validated limits and engine selection, and fixed diagnostics that do not copy
+provider exception text. Formal tests cover probe validation and error handling.
+
+Remaining: normalized-result fixtures for all six engines and the retrieval
+channel success/non-PDF/oversize/network-failure matrix. P0.2 is not complete.
 
 Separate deterministic offline contract tests from opt-in live probes. Each
 supported engine should have a fixture for result normalization and a small,

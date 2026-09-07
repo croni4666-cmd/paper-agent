@@ -13,6 +13,13 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [Unreleased]
+
+- Add opt-in sequential engine availability probes with JSON reports.
+- Reject invalid probe engine lists, limits, and non-finite timeouts before requests.
+- Deduplicate engine selections and suppress raw provider errors in probe reports.
+- Complete the release CI gate and track remaining P0.2 contract coverage.
+
 ## [3.9.29.1] - 2026-09-07
 
 ### Security
