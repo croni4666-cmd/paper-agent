@@ -78,9 +78,9 @@ def _download_pdf(url: str, max_bytes: int = 50 * 1024 * 1024,
             with build_opener().open(req, timeout=timeout) as r:
                 data = r.read(max_bytes + 1)
                 if len(data) > max_bytes:
-                    logger.warning(f"bioRxiv PDF exceeds {max_bytes} bytes, truncating")
-                    return data[:max_bytes]
-                return data
+                    logger.warning(f"bioRxiv PDF exceeds {max_bytes} bytes, rejecting")
+                    return None
+                return data if data.startswith(b"%PDF") else None
         except urllib.error.HTTPError as e:
             logger.debug(f"bioRxiv PDF download HTTP {e.code} with UA {headers.get('User-Agent', '?')[:30]}: {e}")
             continue
