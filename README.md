@@ -855,3 +855,20 @@ against LLM/ML training. Together they reflect the author's preference for
 
 If you have questions about whether your intended use is allowed, contact the
 copyright holder.
+
+
+### Opt-in engine availability report
+
+Run `pa engine-probe "machine learning" --engine all --limit 1 --timeout 10`
+to probe the six public search engines sequentially. Use `--engine crossref,pubmed`
+to select engines, and `--output probe.json` to save the JSON report. Reports
+include status, result count, elapsed time, and sanitized diagnostics. Provider
+failures are report entries; invalid command options cause a CLI error.
+
+This command makes live requests only when invoked. AMiner requires a configured
+token and may consume API quota. The limit bounds returned results, not HTTP
+request count; provider adapters may make additional metadata requests. A timeout
+stops waiting for an engine, but its underlying request may finish later.
+Reports include your query; review that field before sharing a report. A
+successful request is an availability check, not proof of search relevance or
+full-text coverage.
