@@ -38,10 +38,10 @@ dependencies:
 scripts:
   - name: "search"
     path: "./scripts/search.py"
-    description: "Search 7 academic engines (Crossref, OpenAlex, S2, arXiv, AMiner, CNKI, PubMed)"
+    description: "Search current public engines (Crossref, OpenAlex, arXiv, AMiner, PubMed, ClinicalTrials)"
   - name: "fetch"
     path: "./scripts/fetch.py"
-    description: "Fetch a single paper PDF by DOI (14 fallback channels)"
+    description: "Fetch a single paper PDF by DOI through the configured cascade"
   - name: "fetch_batch"
     path: "./scripts/fetch_batch.py"
     description: "Batch fetch PDFs from a BibTeX file"
