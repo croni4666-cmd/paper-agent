@@ -21,7 +21,7 @@ start.
 | Hardcoded API keys                    | 0          | 0     |
 | Real email leaks in CLI User-Agent    | 1 (CRITICAL) | 0   |
 | Personal name (`paper-agent-user`) in tracked files | 92         | 0     |
-| Personal Windows paths (`C:\Users\paper-agent-user\...`) | 38 | 0  |
+| Personal Windows paths (`~\...`) | 38 | 0  |
 | City/school name leaks (`USER_LOCATION` / `USER_INSTITUTION`) | 6+ | 0    |
 | Dependabot enabled                    | ❌          | ✅    |
 | Vulnerability alerts enabled          | ❌          | ✅    |
@@ -37,10 +37,10 @@ start.
 
 ### Top 5 fixes shipped in this audit
 
-1. **`paper-agent-user@gmail.com` removed from `pa_cli/batch_fetch.py` User-Agent**
+1. **`redacted@example.invalid` removed from `pa_cli/batch_fetch.py` User-Agent**
    — was a real email leak in the CLI source
 2. **`Copyright (C) 2026 paper-agent-user` replaced with `Copyright (C) 2026 paper-agent contributors`** in `LICENSE` — author name fully anonymized
-3. **92 occurrences of `paper-agent-user` and 38 occurrences of `C:\Users\paper-agent-user\...` paths removed from all tracked files** (CHANGELOG, ROADMAP, _session_handoff.md, bench/, test_output/, recover_4_pdfs.py, ...)
+3. **92 occurrences of `paper-agent-user` and 38 occurrences of `~\...` paths removed from all tracked files** (CHANGELOG, ROADMAP, _session_handoff.md, bench/, test_output/, recover_4_pdfs.py, ...)
 4. **6+ city/school name leaks** (`USER_LOCATION`, `USER_INSTITUTION`, `USER_REGION`, `USER_NAME`, ...) removed from `bench/moe-keyword-samples.md`, `test_output/_real_query_report.py`, `test_output/_add_moe_sample.py`, `test_output/_status_moe_samples.py`
 5. **GitHub repo hardening enabled** — Dependabot + CodeQL + vulnerability alerts + branch protection on main
 
@@ -60,22 +60,22 @@ start.
 - `CHANGELOG.md:1053`: `USER_LOCATION经编/算力券 query` (city + topic)
 - `LICENSE:4, 728`: `Copyright (C) 2026 paper-agent-user` (real author name, twice)
 - 92 hits of `paper-agent-user` across CHANGELOG/ROADMAP/test_output/bench/_session_handoff.md
-- 38 hits of `C:\Users\paper-agent-user\...` paths across same files + `recover_4_pdfs.py` (3 files hardcode `CHROMIUM_EXE = r"C:\Users\paper-agent-user\..."`)
-- 1 CRITICAL: `pa_cli/batch_fetch.py:82, 112` User-Agent header references `paper-agent-user@gmail.com` (real email)
+- 38 hits of `~\...` paths across same files + `recover_4_pdfs.py` (3 files hardcode `CHROMIUM_EXE = r"~\..."`)
+- 1 CRITICAL: `pa_cli/batch_fetch.py:82, 112` User-Agent header references `redacted@example.invalid` (real email)
 
 **Fixes applied**:
 - All 6+ city/school name leaks replaced with neutral placeholders (`local city`, `local college`, `用户研究方向`)
 - `LICENSE` copyright holder: `paper-agent-user` → `paper-agent contributors`
-- `pa_cli/batch_fetch.py` User-Agent: `paper-agent-user@gmail.com` → `paper-agent@users.noreply.github.com`
+- `pa_cli/batch_fetch.py` User-Agent: `redacted@example.invalid` → `paper-agent@users.noreply.github.com`
 - Batch replace script (`test_output/_sanitize_emails.py` + `_sanitize_log_files.py`) cleaned:
-  - 78 occurrences of `C:\Users\paper-agent-user\...` paths (sed-like batch)
-  - 13 email strings (`paper-agent-user@gmail.com`, `paper-agent-user@gmail.com`, `paper-agent-user@example.com`, `paper-agent-user@qq.com`, `paper-agent-user@163.com`, `paper-agent-user+research@outlook.com`, `paper-agent-user@mavis.local`)
+  - 78 occurrences of `~\...` paths (sed-like batch)
+  - 13 email strings (`redacted@example.invalid`, `redacted@example.invalid`, `sample-user@example.com`, `redacted@example.invalid`, `redacted@example.invalid`, `redacted@example.invalid`, `redacted@example.invalid`)
   - 4 stragglers in UTF-16-encoded `.log` files
-- 92 `paper-agent-user` → `paper-agent-author` (where the name stood alone); 38 `C:\Users\paper-agent-user\...` → `~/...` (cross-platform form)
+- 92 `paper-agent-user` → `paper-agent-author` (where the name stood alone); 38 `~\...` → `~/...` (cross-platform form)
 
 **Verification**:
 ```
-$ git ls-files | xargs grep -l 'paper-agent-user\|paper-agent-user\|paper-agent-user'   # → 0 matches
+$ git ls-files | xargs grep -l 'paper-agent-user\|sample-user\|sample-user'   # → 0 matches
 $ git ls-files | xargs grep -l 'USER_LOCATION\|USER_INSTITUTION\|USER_REGION\|海 宁'  # → 0 matches
 $ git ls-files | xargs grep -l 'C:\\Users\\paper-agent-user'           # → 0 matches
 $ git ls-files | xargs grep -l 'USER_NAME\|李 老师'              # → 0 matches
@@ -284,7 +284,7 @@ $ git ls-files | xargs grep -l 'USER_NAME\|李 老师'              # → 0 matc
   - Local hook: `paper-agent-pre-push-scan` (runs `test_output/_pre_github_secret_scan.py`)
   - Standard hooks: trailing whitespace, EOF fixer, YAML/JSON/TOML check, large file check, merge conflict, private key
   - pyflakes for `pa_cli/`
-  - Local hook: `paper-agent-privacy-scan` (scans for `USER_LOCATION` / `USER_INSTITUTION` / `paper-agent-user` / `C:\Users\paper-agent-user`)
+  - Local hook: `paper-agent-privacy-scan` (scans for `USER_LOCATION` / `USER_INSTITUTION` / `paper-agent-user` / `~`)
 
 **Status**: ✅ DONE
 
@@ -298,9 +298,9 @@ $ git ls-files | xargs grep -l 'USER_NAME\|李 老师'              # → 0 matc
 
 | Scan                                    | Hits |
 |-----------------------------------------|------|
-| `paper-agent-user` / `paper-agent-user` / `paper-agent-user`         | 0    |
+| `paper-agent-user` / `sample-user` / `sample-user`         | 0    |
 | `USER_LOCATION` / `USER_INSTITUTION` / `USER_REGION` / `李 老师` | 0    |
-| `C:\Users\paper-agent-user`                        | 0    |
+| `~`                        | 0    |
 | Hardcoded API keys / tokens             | 0    |
 | `subprocess` `shell=True`               | 0    |
 | `pickle.load` / `yaml.load` / `eval`    | 0    |
@@ -375,7 +375,7 @@ git push origin <tag>
 These insights apply to any future Mavis-initiated security audit:
 
 1. **Pre-push hygiene must include source comments**, not just API keys.
-   The `paper-agent-user@gmail.com` User-Agent was a real leak that an API-key-only
+   The `redacted@example.invalid` User-Agent was a real leak that an API-key-only
    scanner would miss.
 2. **Batch sed is the only scalable way** to clean 130+ occurrences
    across 30+ files. Manual editing is too slow.

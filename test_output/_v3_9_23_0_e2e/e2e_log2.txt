@@ -1,4 +1,4 @@
-﻿=== Testing all 8 scripts ===
+=== Testing all 8 scripts ===
 
 1. version.py
 {

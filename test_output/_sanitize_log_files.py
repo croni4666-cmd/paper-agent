@@ -10,16 +10,16 @@ log_files = [
 
 replacements = [
     # Order matters: longer patterns first
-    ('mailto:paper-agent-user@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@example.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('paper-agent-user@gmail.com', 'paper-agent@example.com'),
-    ('paper-agent-user@gmail.com', 'paper-agent@example.com'),
-    ('paper-agent-user@example.com', 'paper-agent@example.com'),
-    ('paper-agent-user@qq.com', 'paper-agent@example.com'),
-    ('paper-agent-user@163.com', 'paper-agent@example.com'),
-    ('paper-agent-user+research@outlook.com', 'paper-agent+research@example.com'),
-    ('paper-agent-user@mavis.local', 'paper-agent@mavis.local'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:sample-user@example.com', 'mailto:paper-agent@users.noreply.github.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('sample-user@example.com', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent+research@example.com'),
+    ('redacted@example.invalid', 'paper-agent@mavis.local'),
     # Path patterns in logs
     ('C:\\Users\\paper-agent-user\\.paper-agent', '~/.paper-agent'),
     ('C:\\Users\\paper-agent-user\\.mavis', '~/.mavis'),

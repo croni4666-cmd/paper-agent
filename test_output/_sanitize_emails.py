@@ -8,27 +8,27 @@ files = result.stdout.splitlines()
 # Email + handle replacements (2nd pass)
 replacements = [
     # User-Agent headers (in CLI source + tests)
-    ('mailto:paper-agent-user@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@example.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@qq.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user@163.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:paper-agent-user+research@outlook.com', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:sample-user@example.com', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
     # Quoted email strings (test data)
-    ('"paper-agent-user@gmail.com"', '"paper-agent@example.com"'),
-    ('"paper-agent-user@gmail.com"', '"paper-agent@example.com"'),
-    ('"paper-agent-user@example.com"', '"paper-agent@example.com"'),
-    ('"paper-agent-user@qq.com"', '"paper-agent@example.com"'),
-    ('"paper-agent-user@163.com"', '"paper-agent@example.com"'),
-    ('"paper-agent-user+research@outlook.com"', '"paper-agent+research@example.com"'),
-    ('"paper-agent-user@mavis.local"', '"paper-agent@mavis.local"'),
+    ('"redacted@example.invalid"', '"paper-agent@example.com"'),
+    ('"redacted@example.invalid"', '"paper-agent@example.com"'),
+    ('"sample-user@example.com"', '"paper-agent@example.com"'),
+    ('"redacted@example.invalid"', '"paper-agent@example.com"'),
+    ('"redacted@example.invalid"', '"paper-agent@example.com"'),
+    ('"redacted@example.invalid"', '"paper-agent+research@example.com"'),
+    ('"redacted@example.invalid"', '"paper-agent@mavis.local"'),
     # Unquoted (in log lines, comments)
-    ('paper-agent-user@gmail.com', 'paper-agent@example.com'),
-    ('paper-agent-user@gmail.com', 'paper-agent@example.com'),
-    ('paper-agent-user@qq.com', 'paper-agent@example.com'),
-    ('paper-agent-user@163.com', 'paper-agent@example.com'),
-    ('paper-agent-user@example.com', 'paper-agent@example.com'),
-    ('paper-agent-user@mavis.local', 'paper-agent@mavis.local'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('sample-user@example.com', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@mavis.local'),
 ]
 
 total_changes = 0
