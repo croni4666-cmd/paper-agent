@@ -64,3 +64,28 @@ class SearchContracts(unittest.TestCase):
             'publication_date':'unknown','authorships':[{'author':None}],
             'cited_by_count':None})
         self.check_record(record,'openalex',None)
+
+    def test_aminer_basic_deduplicates_phrases_and_filters_year(self):
+        payload={'data':[
+            {'id':'keep','title':'Example study','year':'2025',
+             'first_author':'A Example','venue_name':'Journal','n_citation_bucket':'51-200'},
+            {'id':'old','title':'Example study','year':'2020'},
+            {'id':'unknown','title':'Example study','year':'unknown'}]}
+        with patch.object(aminer_channel,'_aminer_token',return_value='test-token'), \
+             patch.object(aminer_channel.time,'sleep'), \
+             patch.object(aminer_channel,'_http_get',return_value=(200,payload)) as request:
+            records=aminer_channel.search_aminer('Example study',year_min=2024,
+                                                 year_max=2026,limit=5,mode='basic')
+        self.assertEqual(len(records),1)
+        self.check_record(records[0],'aminer')
+        self.assertEqual(records[0]['aminer_id'],'keep')
+        self.assertEqual(records[0]['cited_bucket'],'51-200')
+        self.assertEqual(request.call_count,3)
+
+    def test_aminer_auto_preserves_failure_when_both_paths_fail(self):
+        failure={'error':'upstream_error','message':'Provider unavailable'}
+        with patch.object(aminer_channel,'search_aminer_pro',return_value=[failure]), \
+             patch.object(aminer_channel,'_search_aminer_basic',return_value=[failure]):
+            records=aminer_channel.search_aminer('Example study',mode='auto')
+        self.assertTrue(records)
+        self.assertIn('error',records[0])
