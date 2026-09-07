@@ -1,30 +1,16 @@
 # paper-agent
 
-Academic paper search, fetch, and literature-review synthesis CLI.
-ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
-collection + pa build manuscript pipeline + Tier 2 research-topic project
-management + Zotero local DB check + batch job manager (status/tail/resume).
+A local-first research CLI and Codex skill for finding papers, retrieving open copies, organizing a corpus, and producing review-ready outputs.
 
-**Note on CORE engine** (v3.9.11.1+): CORE code is isolated from the public
-repo. After cloning, run once:
-```bash
-python tools/install_core.py   # generates pa_cli/_engines_local/core.py (gitignored)
-```
-Then `pa search --engine core "..."` works. Public clone without this step will
-raise a clear "not installed" error if you try `--engine core`. See
-`tools/install_core.py` docstring for the isolation rationale.
+- Search six public sources: Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov.
+- Retrieve PDFs through an open-access cascade: PMC, bioRxiv, CORE, OSF, ChemRxiv, arXiv, and Unpaywall.
+- Work from BibTeX through screening, PDF collection, Zotero, Obsidian, and manuscript generation.
+- Inspect local fetch-channel success rates with pa fetch-stats.
 
-## Browser features (optional)
+Current release: **v3.9.29.0**. CNKI and Semantic Scholar have been retired from the public interface.
 
-browser extra, then check the runtime:
+## Quick start
 
-```bash
-python -m pip install -e ".[browser]"
-python -m playwright install chromium  # only when Chromium is not already cached
-```
-
-requires your own valid cookies and permitted institutional access.
-## Quick start (5 commands)
 
 ### 1. Search — 6 engines in one call
 ```bash
