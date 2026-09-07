@@ -863,6 +863,37 @@ def search_cnki(query: str, year_min: int = None, year_max: int = None,
 # Status helper (for `pa cnki status` CLI subcommand)
 # ──────────────────────────────────────────────────────────────────────
 
+# ──────────────────────────────────────────────────────────────────────
+# Browser runtime status
+# ──────────────────────────────────────────────────────────────────────
+
+def _playwright_runtime_status() -> Dict[str, Any]:
+    """Report whether the optional Playwright package and Chromium are usable."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return {"installed": False, "browser_ready": False, "executable_path": None,
+                "message": "Playwright is not installed. Install paper-agent[browser]."}
+    try:
+        with sync_playwright() as pw:
+            executable_path = Path(pw.chromium.executable_path)
+            if not executable_path.is_file():
+                return {
+                    "installed": True,
+                    "browser_ready": False,
+                    "executable_path": str(executable_path),
+                    "message": "Chromium is not installed. Run python -m playwright install chromium.",
+                }
+            browser = pw.chromium.launch(headless=True)
+            browser.close()
+    except Exception as exc:
+        return {"installed": True, "browser_ready": False, "executable_path": None,
+                "message": f"Playwright could not start: {exc}"}
+
+    return {"installed": True, "browser_ready": True,
+            "executable_path": str(executable_path),
+            "message": "Playwright and Chromium are ready."}
+
 def status_report() -> Dict[str, Any]:
     """Return a dict summarizing CNKI channel readiness.
 
@@ -872,12 +903,7 @@ def status_report() -> Dict[str, Any]:
     age = cookie_age_hours()
     n_cookies = len(load_cookies()) if exists else 0
 
-    # Try playwright import
-    try:
-        import playwright  # noqa: F401
-        has_playwright = True
-    except ImportError:
-        has_playwright = False
+    runtime = _playwright_runtime_status()
 
     return {
         "cookies_path": str(CNKI_COOKIES_PATH),
@@ -886,8 +912,11 @@ def status_report() -> Dict[str, Any]:
         "n_cookies": n_cookies,
         "max_cookie_age_hours": 4.0,
         "cookies_fresh": exists and age is not None and age < 4.0,
-        "playwright_installed": has_playwright,
-        "ready_for_search": exists and age is not None and age < 4.0 and has_playwright,
+        "playwright_installed": runtime["installed"],
+        "playwright_browser_ready": runtime["browser_ready"],
+        "playwright_executable_path": runtime["executable_path"],
+        "playwright_message": runtime["message"],
+        "ready_for_search": exists and age is not None and age < 4.0 and runtime["browser_ready"],
         "version": "v3.9.7.6-cite-dl-deprecated-honest-audit",
         "search_implemented": True,
         "search_endpoint": f"POST {CNKI_BRIEF_GRID_PATH} (via xueshu789.com redirect)",
