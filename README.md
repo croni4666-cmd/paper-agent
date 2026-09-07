@@ -15,6 +15,19 @@ Then `pa search --engine core "..."` works. Public clone without this step will
 raise a clear "not installed" error if you try `--engine core`. See
 `tools/install_core.py` docstring for the isolation rationale.
 
+## Browser features (optional)
+
+CNKI search and the JATS XML-to-PDF fallback use Playwright. Install the optional
+browser extra, then check the runtime:
+
+```bash
+python -m pip install -e ".[browser]"
+python -m playwright install chromium  # only when Chromium is not already cached
+pa cnki status
+```
+
+`pa cnki status` reports the Python package and Chromium separately. CNKI still
+requires your own valid cookies and permitted institutional access.
 ## Quick start (5 commands)
 
 ### 1. Search — 6 engines in one call

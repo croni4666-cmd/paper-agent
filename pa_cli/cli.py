@@ -922,6 +922,8 @@ def cnki_status(as_json):
         click.echo(f"  cookie_age_hours:       (no file)")
     click.echo(f"  n_cookies:              {s['n_cookies']}")
     click.echo(f"  playwright_installed:   {s['playwright_installed']}")
+    click.echo(f"  chromium_ready:         {s['playwright_browser_ready']}")
+    click.echo(f"  playwright_message:     {s['playwright_message']}")
     click.echo(f"  search_implemented:     {s['search_implemented']} (v3.9.7.6 close-out: cite/dl deprecated, see ROADMAP [P0-9.1b])")
     click.echo(f"  cite/dl:                None (deprecated per [P0-9.1b]; 5 paths blocked)")
     click.echo(f"                          see CHANGELOG v3.9.7.6 for honest audit")
@@ -4465,6 +4467,3 @@ def search_and_import(
     # Exit code: 0 if download+project OK, 1 if any error
     if result.get("errors"):
         sys.exit(1)
-
-
-
