@@ -84,6 +84,23 @@ def version(remind):
     click.echo(f"Entry: python -m pa_cli <command>")
 
 
+
+@main.command("doctor")
+@click.option("--json", "as_json", is_flag=True, help="Output the offline report as JSON")
+def doctor_cmd(as_json):
+    """Check optional integrations without making network requests."""
+    from .doctor import build_report
+
+    report = build_report()
+    if as_json:
+        click.echo(json.dumps(report, ensure_ascii=False, indent=2))
+        return
+
+    click.echo(f"paper-agent readiness: {report['overall_status']}")
+    for name, check in report["checks"].items():
+        click.echo(f"  [{check['status']}] {name}: {check['summary']}")
+        if check.get("next_action"):
+            click.echo(f"    {check['next_action']}")
 # =============== keys subcommand group ===============
 
 @main.group()
