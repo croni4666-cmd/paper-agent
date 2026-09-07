@@ -42,6 +42,9 @@ scripts:
   - name: "fetch"
     path: "./scripts/fetch.py"
     description: "Fetch a single paper PDF by DOI through the configured cascade"
+  - name: "fetch_stats"
+    path: "./scripts/fetch_stats.py"
+    description: "Show privacy-minimal local PDF fetch channel outcomes"
   - name: "fetch_batch"
     path: "./scripts/fetch_batch.py"
     description: "Batch fetch PDFs from a BibTeX file"
@@ -60,3 +63,4 @@ scripts:
   - name: "version"
     path: "./scripts/version.py"
     description: "Show paper-agent version and dependency status"
+
