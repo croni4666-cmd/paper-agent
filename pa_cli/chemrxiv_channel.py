@@ -1,21 +1,12 @@
-"""ChemRxiv channel (v3.9.22+, 2026-08-21).
+"""ChemRxiv open-access PDF channel.
 
-ChemRxiv is a free preprint server for chemistry, operated by ACS in
-partnership with Cambridge University Press, RSC, and GDCh. 40K+ preprints
-in chemistry + materials science + chemical engineering + biochemistry.
-
-DOI pattern: 10.26434/chemrxiv-*
-
-API: Open Engage API (https://api.figshare.com/v2/) — ChemRxiv is built
-on Figshare infrastructure. We use the public Figshare endpoint directly
-(no key needed for read).
-
-Legal: ✅ ACS + Cambridge + RSC + GDCh; CC-BY licenses
+ChemRxiv migrated from Figshare to Cambridge Open Engage in 2021. This module
+uses the documented public Open Engage DOI endpoint and follows the canonical
+asset URL returned in its metadata. A DOI-PDF endpoint is retained as a
+metadata-free fallback for transient API outages.
 """
 import json
 import logging
-import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -30,140 +21,122 @@ E_API_ERROR = "chemrxiv_api_error"
 E_NO_PDF = "chemrxiv_no_pdf"
 E_DOWNLOAD_FAIL = "chemrxiv_download_failed"
 
-# ChemRxiv runs on Figshare. Public endpoint: search by DOI
-FIGSHARE_API = "https://api.figshare.com/v2/articles/search"
-USER_AGENT = "paper-agent/3.9.22 (+github.com/croni4666-cmd/paper-agent)"
+OPEN_ENGAGE_API = "https://chemrxiv.org/engage/chemrxiv/public-api/v1"
+DOI_PDF_URL = "https://chemrxiv.org/doi/pdf/{doi}?download=true&redirectToLatest=false"
+USER_AGENT = "paper-agent/3.9 (+github.com/croni4666-cmd/paper-agent)"
 
 
 def _http_get_json(url: str, timeout: int = 20) -> tuple[int, Any]:
     """GET JSON; return (status, parsed_json_or_error_dict)."""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, json.loads(r.read())
-    except urllib.error.HTTPError as e:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return response.status, json.loads(response.read())
+    except urllib.error.HTTPError as exc:
         try:
-            return e.code, json.loads(e.read())
+            return exc.code, json.loads(exc.read())
         except Exception:
-            return e.code, {"error": str(e)}
-    except Exception as e:
-        return 0, {"error": f"{type(e).__name__}: {e}"}
+            return exc.code, {"error": str(exc)}
+    except Exception as exc:
+        return 0, {"error": f"{type(exc).__name__}: {exc}"}
 
 
 def _download_pdf(url: str, max_bytes: int = 50 * 1024 * 1024,
                   timeout: int = 60) -> Optional[bytes]:
-    """Download a PDF URL, return bytes or None on failure."""
+    """Download a PDF URL, returning bytes only when it is a real PDF."""
     try:
-        req = urllib.request.Request(
-            url, headers={"User-Agent": USER_AGENT}
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            data = r.read(max_bytes + 1)
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            data = response.read(max_bytes + 1)
             if len(data) > max_bytes:
-                logger.warning(f"ChemRxiv PDF exceeds {max_bytes} bytes, truncating")
-                return data[:max_bytes]
-            return data
-    except Exception as e:
-        logger.debug(f"ChemRxiv PDF download failed: {url}: {e}")
+                logger.warning("ChemRxiv PDF exceeds %s bytes", max_bytes)
+                return None
+            return data if data.startswith(b"%PDF") else None
+    except Exception as exc:
+        logger.debug("ChemRxiv PDF download failed: %s: %s", url, exc)
         return None
 
 
+def _open_engage_pdf_url(record: Any) -> Optional[str]:
+    """Return the canonical PDF asset URL from an Open Engage item."""
+    if not isinstance(record, dict):
+        return None
+    record = record.get("item", record)
+    direct = record.get("pdfUrl")
+    if isinstance(direct, str) and direct:
+        return direct
+    asset = record.get("asset")
+    if isinstance(asset, dict):
+        original = asset.get("original")
+        if isinstance(original, dict):
+            url = original.get("url")
+            if isinstance(url, str) and url:
+                return url
+    return None
+
+
+def _write_result(doi: str, pdf_url: str, pdf_bytes: bytes, record: Any,
+                  out_path: Optional[str], source: str) -> Dict[str, Any]:
+    """Build a stable result shape and optionally persist the PDF."""
+    item = record.get("item", record) if isinstance(record, dict) else {}
+    result: Dict[str, Any] = {
+        "source": source,
+        "doi": doi,
+        "pdf_url": pdf_url,
+        "size": len(pdf_bytes),
+        "title": item.get("title"),
+        "published_date": item.get("publishedDate"),
+        "chemrxiv_id": item.get("id"),
+    }
+    if out_path:
+        target = Path(out_path)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(pdf_bytes)
+        result["path"] = str(target.resolve())
+    return result
+
+
 def fetch_chemrxiv_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
-    """Fetch a PDF from ChemRxiv by DOI.
-
-    Triggers only on `10.26434/chemrxiv-*` DOIs.
-
-    Returns dict with:
-      - source: "chemrxiv_pdf"
-      - doi, pdf_url, size, path
-      - title, authors, published_date
-      - error: only on total failure
-    """
+    """Fetch a ChemRxiv PDF using its public Open Engage service."""
     doi = (doi or "").strip()
     if not doi:
         return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
-
     if not doi.lower().startswith("10.26434/chemrxiv-"):
-        return {"error": E_NOT_CHEMRXIV,
-                "doi": doi,
-                "message": "DOI is not a ChemRxiv preprint (10.26434/chemrxiv-*)",
-                "hint": "ChemRxiv channel only handles ChemRxiv preprints"}
+        return {
+            "error": E_NOT_CHEMRXIV, "doi": doi,
+            "message": "DOI is not a ChemRxiv preprint (10.26434/chemrxiv-*)",
+            "hint": "ChemRxiv channel only handles ChemRxiv preprints",
+        }
 
-    # Figshare search by DOI
-    api_url = f"{FIGSHARE_API}?search_for={urllib.parse.quote(doi)}&item_type=3"
-    status, data = _http_get_json(api_url, timeout=20)
-    if status != 200 or not isinstance(data, list):
-        return {"error": E_API_ERROR,
-                "doi": doi,
-                "status": status,
-                "message": f"Figshare API returned status {status}",
-                "hint": "Check DOI or rate limit"}
+    api_url = f"{OPEN_ENGAGE_API}/items/doi/{urllib.parse.quote(doi, safe='/')}"
+    status, record = _http_get_json(api_url, timeout=20)
+    pdf_url = _open_engage_pdf_url(record) if status == 200 else None
+    if pdf_url:
+        pdf_bytes = _download_pdf(pdf_url, timeout=60)
+        if pdf_bytes:
+            return _write_result(doi, pdf_url, pdf_bytes, record, out_path,
+                                 "chemrxiv_pdf")
+        api_error = E_DOWNLOAD_FAIL
+    else:
+        api_error = E_NO_PDF if status == 200 else E_API_ERROR
 
-    # Filter to ChemRxiv records
-    matches = [a for a in data if a.get("doi") == doi]
-    if not matches and data:
-        # Figshare search may not require exact DOI match; try first record
-        matches = [data[0]]
-    if not matches:
-        return {"error": E_API_ERROR,
-                "doi": doi,
-                "message": "Figshare has no ChemRxiv record for this DOI",
-                "hint": "Check DOI or try other channels"}
+    # Public canonical fallback: useful when metadata service is temporarily down.
+    fallback_url = DOI_PDF_URL.format(doi=urllib.parse.quote(doi, safe="/"))
+    fallback_bytes = _download_pdf(fallback_url, timeout=60)
+    if fallback_bytes:
+        return _write_result(doi, fallback_url, fallback_bytes, record, out_path,
+                             "chemrxiv_doi_pdf")
 
-    record = matches[0]
-    article_id = record.get("id")
-    title = record.get("title")
-    published_date = record.get("published_date")
-
-    # Get file details to find the PDF download URL
-    files_url = f"https://api.figshare.com/v2/articles/{article_id}/files"
-    f_status, f_data = _http_get_json(files_url, timeout=15)
-    if f_status != 200 or not isinstance(f_data, list) or not f_data:
-        return {"error": E_NO_PDF,
-                "doi": doi,
-                "title": title,
-                "message": "ChemRxiv record has no files",
-                "hint": "Try other channels"}
-
-    # Find the PDF (name ends with .pdf or content_type is application/pdf)
-    pdf_file = None
-    for f in f_data:
-        name = (f.get("name") or "").lower()
-        if name.endswith(".pdf") or f.get("content_type") == "application/pdf":
-            pdf_file = f
-            break
-    if not pdf_file:
-        pdf_file = f_data[0]  # fall back to first file
-
-    download_url = pdf_file.get("download_url")
-    if not download_url:
-        return {"error": E_NO_PDF,
-                "doi": doi,
-                "title": title,
-                "message": "ChemRxiv file has no download_url",
-                "hint": "Try other channels"}
-
-    # Download
-    pdf_bytes = _download_pdf(download_url, timeout=60)
-    if not pdf_bytes or not pdf_bytes.startswith(b"%PDF"):
-        return {"error": E_DOWNLOAD_FAIL,
-                "doi": doi,
-                "pdf_url": download_url,
-                "title": title,
-                "hint": "ChemRxiv returned a download URL but fetch failed or not a real PDF"}
-
-    result = {
-        "source": "chemrxiv_pdf",
-        "doi": doi,
-        "pdf_url": download_url,
-        "size": len(pdf_bytes),
-        "title": title,
-        "published_date": published_date,
-        "figshare_id": article_id,
+    if api_error == E_API_ERROR:
+        message = f"Open Engage API returned status {status}"
+        hint = "ChemRxiv may be rate-limiting or challenging this network; retry later."
+    elif api_error == E_NO_PDF:
+        message = "Open Engage record has no PDF asset"
+        hint = "The preprint may have been withdrawn or have no downloadable PDF."
+    else:
+        message = "ChemRxiv returned a PDF URL but it was unavailable or not a PDF"
+        hint = "Retry later or use another open-access source."
+    return {
+        "error": api_error, "doi": doi, "status": status,
+        "message": message, "hint": hint, "fallback_url": fallback_url,
     }
-    if out_path:
-        out_p = Path(out_path)
-        out_p.parent.mkdir(parents=True, exist_ok=True)
-        out_p.write_bytes(pdf_bytes)
-        result["path"] = str(out_p.resolve())
-    return result
