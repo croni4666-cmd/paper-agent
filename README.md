@@ -87,6 +87,23 @@ search results       pa cite-check        pa fetch-batch
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
 
+## Release checks
+
+Every pull request and push to `main` runs the compatibility gate on Python
+3.10, 3.11, and 3.12. A change is ready to release only after the formal test
+suite passes, distribution artifacts build successfully, declared dependencies
+resolve cleanly, and `pip-audit` reports no known vulnerabilities.
+
+Run the same checks locally before preparing a release:
+
+```bash
+python -m pip install . pytest build pip-audit
+python -m pytest -q
+python -m build
+python -m pip check
+python -m pip-audit -r requirements.txt
+```
+
 ## Performance (v3.9.10.2 honest, n=50 single 30/20 holdout)
 
 | Ranker | NDCG@10 | Notes |

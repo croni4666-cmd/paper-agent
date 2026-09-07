@@ -29,7 +29,7 @@ providers or model-heavy ranking features.
 
 ### P0.1 — Release and compatibility gate
 
-Status: next
+Status: in review
 
 Add a GitHub Actions workflow that runs the formal test suite on supported
 Python versions, compiles the package, checks dependency resolution, and runs
@@ -45,6 +45,8 @@ Acceptance criteria:
 
 Why now: the repository currently has no automated GitHub workflow, while
 dependency and network behavior are central to the product.
+
+Implementation is ready for GitHub's Python-version matrix validation.
 
 ### P0.2 — Engine contract tests and live-smoke harness
 
