@@ -8,7 +8,6 @@ topic, does:
 2. **Write Bibtex** — convert results to a temporary `.bib` file
 3. **Fetch PDFs** — batch download via `pa fetch-batch` (cascade of
    8 channels: arxiv → unpaywall → doi_redirect → scihub → annas →
-   cnki → playwright → openalex)
 4. **Bucket** — split into `downloaded` (PDF saved) vs `failed` (no
    PDF saved, fetch error captured)
 5. **Push to Zotero library** — push downloaded DOIs (idempotent via

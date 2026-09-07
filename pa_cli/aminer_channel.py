@@ -1,8 +1,7 @@
-﻿"""pa_cli/aminer_channel.py 鈥?AMiner 7th search engine (v3.9.8.0)
+"""pa_cli/aminer_channel.py 鈥?AMiner 7th search engine (v3.9.8.0)
 
 Per ROADMAP [P1-7] (added 2026-07-15, user-decided after B+鈫扐 gap analysis):
   - AMiner 鏅鸿氨瀛︽湳 API 闆嗘垚 (hobbyist budget: 3880 calls 涓€娆℃€т綋楠岄噾)
-  - 涓枃 paper 鏀跺綍姣?CNKI 鏇村箍 (3.3 浜?papers, 鍚腑鑻辨枃)
   - 寮曠敤杩借釜 (cited_by_count) 鏄?AMiner 寮洪」
   - 60 澶?token 鏈熼檺 (鐢ㄦ埛鎺у埗鍙拌鐨? 30 澶╂槸榛樿)
 
@@ -10,7 +9,6 @@ Per ROADMAP [P1-7] (added 2026-07-15, user-decided after B+鈫扐 gap analysis):
   - 瀹炵幇鏍稿績 paper/search 绔偣
   - 涓嶅疄鐜?person/search + reference graph (閭ｄ簺鑰?token 澶? 鍚庣画鎸夐渶)
   - 1.2s jitter 閬垮厤瑙﹀彂闄愭祦
-  - 澶辫触杩斿洖鍗曞厓绱?error dict (璺?CNKI 妯″紡涓€鑷?
 
 **宸茬煡 limitations** (璇氬疄涓夋璁?:
   - 涓€娆″厤璐瑰寘 3880 calls, 鐢ㄥ畬鍏呭€?Token 鎵嶈兘缁х画 (杩濆弽 Global Rule 闀挎湡鏉℃)
@@ -37,7 +35,6 @@ AM_BASE = "https://datacenter.aminer.cn/gateway/open_platform/api"
 AM_PAPER_SEARCH = f"{AM_BASE}/paper/search"          # basic, free, title-only
 AM_PAPER_SEARCH_PRO = f"{AM_BASE}/paper/search/pro"    # pro, 楼0.01/call, multi-field
 
-# Error codes (璺?CNKI 妯″紡涓€鑷?
 E_NO_TOKEN = "aminer_no_token"
 E_NETWORK = "aminer_network"
 E_AUTH = "aminer_auth"

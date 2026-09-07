@@ -69,7 +69,7 @@ TOOL_PA_FETCH = Tool(
         "Fetch a single paper PDF by DOI. Returns the same dict as `pa fetch <doi>` "
         "from the CLI: {saved_as, via_channel, cache_hit, size_bytes, error/handoff}. "
         "Reuses local cache when use_cache=True. Can route through Sci-Hub / annas / "
-        "arXiv / CNKI / direct DOI resolver depending on availability."
+        "arXiv / direct DOI resolver depending on availability."
     ),
     inputSchema={
         "type": "object",
@@ -80,7 +80,7 @@ TOOL_PA_FETCH = Tool(
             },
             "prefer": {
                 "type": "string",
-                "enum": ["auto", "scihub", "annas", "cnki", "arxiv", "direct"],
+                "enum": ["auto", "scihub", "annas", "arxiv", "direct"],
                 "default": "auto",
                 "description": "Preferred fetch channel. Default 'auto' tries all in priority order.",
             },
@@ -117,7 +117,7 @@ TOOL_PA_BATCH_FETCH = Tool(
             },
             "prefer": {
                 "type": "string",
-                "enum": ["auto", "scihub", "annas", "cnki", "arxiv", "direct"],
+                "enum": ["auto", "scihub", "annas", "arxiv", "direct"],
                 "default": "auto",
                 "description": "Preferred fetch channel for all entries.",
             },

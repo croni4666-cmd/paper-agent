@@ -10,7 +10,6 @@ Why MoE-for-IR:
   - arxiv strong for technical CS/ML
   - OpenAlex strong for recent papers
   - Crossref strong for citation graph
-  - Semantic Scholar strong for influential papers
   - CORE strong for OA
 - Round-robin wastes budget (technical query gets OpenAlex but top-5 are 0)
 - MoE learns to allocate budget per query type

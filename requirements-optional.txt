@@ -1,7 +1,6 @@
 # paper-agent OPTIONAL dependencies
 # These are NOT required for the core `pa search` / `pa fetch` / `pa sample-pool` workflows.
 # Install only if you need the corresponding feature.
-# v3.9.13.3: added MoE router + CNKI + build + review groups (Round 13 audit F-001/002 fixes).
 # v3.9.15.0: added Zotero group (P2-17 `pa zotero push` + P2-18 `pa zotero search/sync`).
 
 # === LLM listwise rerank (pa moe-router --use-llm) ===
@@ -36,11 +35,9 @@ scikit-learn>=1.3
 lightgbm>=4.0
 jieba>=0.42
 
-# === CNKI engine (pa search --engine cnki) — v3.9.13.3 ===
-# Playwright is a HARD dep of pa_cli/cnki_channel.py (default in `all` engine list).
-# Without playwright, `pa search --engine all` will ImportError when cascade reaches CNKI.
-# First run: `python -m playwright install chromium`
-playwright>=1.40
+# Install with: python -m pip install -e ".[browser]"
+# If Chromium is not cached: python -m playwright install chromium
+playwright>=1.60,<1.61
 
 # === arXiv engine (pa search --engine arxiv) — v3.9.13.3 ===
 # Official `arxiv` PyPI package wraps the arxiv.org API.
