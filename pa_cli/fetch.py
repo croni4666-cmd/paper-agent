@@ -34,6 +34,8 @@ import urllib.parse
 from typing import List, Dict, Optional, Any, Tuple
 from pathlib import Path
 
+JATS_CACHE_DIR = Path.home() / ".paper-agent" / "jats_cache"
+
 # 公共 headers (Cloudflare/DDoS-Guard bypass)
 COMMON_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -379,42 +381,47 @@ def _pmc_doi_to_pmcid(doi: str) -> Optional[str]:
 
 
 def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
-    """EFetch full-text JATS XML from PMC. K-Dense hazard: 200 OK but body
-    missing = publisher restriction; always verify body via jats_to_text.py.
+    """Fetch PMC JATS XML, using a PMCID-keyed local cache when available."""
+    pmcid_clean = pmcid.upper().replace("PMC", "")
+    cache_path = JATS_CACHE_DIR / f"PMC{pmcid_clean}.xml"
+    body = b""
+    cache_hit = False
+    if cache_path.is_file():
+        try:
+            body = cache_path.read_bytes()
+            cache_hit = bool(body)
+        except OSError:
+            body = b""
 
-    v3.9.22.1: removed the .pdf orphan. Previously wrote JATS XML to BOTH
-    the .pdf path (via _save_pdf) AND .xml path (via write_bytes). When
-    downstream Europe PMC + jats_to_pdf both failed, the .pdf was left
-    containing JATS XML (misnamed). Now: only write to .xml; the .pdf
-    path is reserved for a real PDF (Europe PMC render or jats_to_pdf
-    output). If neither succeeds, no .pdf is produced.
-    """
-    pmcid_clean = pmcid.replace("PMC", "")
     url = f"{EUTILS_BASE}/efetch.fcgi?db=pmc&id={pmcid_clean}&rettype=xml"
-    time.sleep(0.4)  # NCBI rate limit
-    status, body = _http_get_bytes(url, timeout=60)
-    if status != 200 or not body:
-        return {"error": f"pmc_efetch_status_{status}"}
+    if not cache_hit:
+        time.sleep(0.4)  # NCBI rate limit
+        status, body = _http_get_bytes(url, timeout=60)
+        if status != 200 or not body:
+            return {"error": f"pmc_efetch_status_{status}"}
+        try:
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            temp_path = cache_path.with_suffix(".tmp")
+            temp_path.write_bytes(body)
+            temp_path.replace(cache_path)
+        except OSError:
+            pass  # cache is an optimization, never a download blocker
+
     result = {
         "source": "pmc_xml",
         "pmcid": pmcid,
         "size": len(body),
         "url": url,
+        "cache_hit": cache_hit,
     }
     if out_path:
-        # Only write to .xml path. .pdf is reserved for real PDF.
-        from pathlib import Path
-        p = Path(out_path)
-        xml_path = p.with_suffix('.xml')
+        xml_path = Path(out_path).with_suffix(".xml")
         xml_path.parent.mkdir(parents=True, exist_ok=True)
         xml_path.write_bytes(body)
         result["path"] = str(xml_path.resolve())
-        # Defensive: if a stale .pdf exists at out_path (from prior broken
-        # run or another channel), leave it alone — caller will overwrite
-        # if real PDF is produced, or it remains as user-visible signal
-        # that no real PDF was obtained.
+    else:
+        result["path"] = str(cache_path.resolve()) if cache_hit else None
     return result
-
 
 def _pmc_europe_pdf(pmcid: str, out_path: str = None, max_retries: int = 3) -> Dict[str, Any]:
     """Europe PMC PDF rendering endpoint: europepmc.org/articles/pmc<id>?pdf=render
