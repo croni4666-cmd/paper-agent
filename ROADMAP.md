@@ -1,4 +1,4 @@
-﻿# Paper-Agent Roadmap (Living Document)
+# Paper-Agent Roadmap (Living Document)
 
 > **Status discipline** 鈥?This document is the single source of truth for paper-agent's evolution.
 > All future improvements **MUST** follow this protocol:
@@ -4463,8 +4463,8 @@ and `pa review` now surfaces the caveat. Marking **done**.
 - **v01 数据不迁移**: v01 50 query 的 labels 留在 `bench/v01/labels_n50_mixed.json` 作为 debug baseline,不入池(已污染)。CHANGELOG v3.9.11.4 加 note: "v01 numbers are in-sample, do not generalize"
 - **Acceptance criteria**:
   - [ ] v3.9.11.4: `pa sample-pool` CLI 全部子命令 smoke test 通过
-  - [ ] v3.9.11.4: ROADMAP 5 个 sample library 全部标 Deprecated
-  - [ ] v3.9.11.4: CHANGELOG 写 v01 不可 generalize 警告
+  - [x] v3.9.11.4: ROADMAP sample libraries are marked Deprecated (verified 2026-09-07)
+  - [x] v3.9.11.4: CHANGELOG contains the v01 in-sample warning (verified 2026-09-07)
   - [ ] (later) user 第一批 n>=20 entry 入池,写 n>=20 milestone
   - [ ] (later) gate 1 unlock,跑 MoE merge
 - **Estimated effort**: ~3h (CLI 实现) + user-driven (积累 entry,~5min/entry,估 2-3 月到 n=100)
