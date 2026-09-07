@@ -6,7 +6,7 @@
 
 # === LLM listwise rerank (pa moe-router --use-llm) ===
 # Requires OpenAI-compatible API endpoint (e.g. local Qwen2.5 or OpenAI cloud)
-openai>=1.0
+openai>=3.3.1
 tiktoken>=0.4
 
 # === Local cross-encoder rerank (pa moe-router --use-cross-encoder) ===
