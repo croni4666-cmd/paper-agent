@@ -3,9 +3,8 @@ name: paper-agent
 description: |
   Academic paper search, PDF fetch, and literature review synthesis.
   Use this skill when the user wants to: search for academic papers by
-  topic or keyword across 8 engines (Crossref / OpenAlex / Semantic
-  Scholar / arXiv / AMiner / CNKI / PubMed / ClinicalTrials), fetch
-  a paper PDF by DOI using 14 fallback channels (incl. S2 openAccessPdf,
+  topic or keyword across 6 public engines (Crossref / OpenAlex / arXiv / AMiner / PubMed / ClinicalTrials), fetch
+  a paper PDF by DOI through the configured open-access cascade (including
   bioRxiv, CORE, OSF, ChemRxiv, JATS-to-PDF for PMC, Unpaywall, sci-hub),
   batch-fetch PDFs from a BibTeX file, walk citation graphs (OpenAlex),
   cluster corpus papers by topic, synthesize a literature review markdown
@@ -47,7 +46,7 @@ available via `python -m pa_cli.cli <command>` if needed.
 | "fetch all PDFs in this BibTeX" / "batch download refs.bib" | `scripts/fetch_batch.py` |
 | "build a lit review from refs.bib" / "synthesize a literature review" | `scripts/review.py` |
 | "cluster my corpus by topic" / "group papers by theme" | `scripts/review.py --topics` |
-| "show my API key status" / "check AMiner / OpenAlex / S2 keys" | `scripts/keys.py` |
+| "show my API key status" / "check OpenAlex / CORE / Unpaywall settings" | `scripts/keys.py` |
 | "how many papers in cache" / "show cache stats" / "clean old PDFs" | `scripts/cache.py` |
 | "walk citations of 10.xxxx" / "what papers cite this one" | `scripts/citations.py` |
 | "what version of paper-agent" / "is playwright installed" | `scripts/version.py` |
@@ -145,11 +144,11 @@ See the **Installation** section above for full details.
 
 
 
-### `scripts/search.py` — Search 8 engines (v3.9.22.0+)
+### `scripts/search.py` — Search current public engines
 
 ```bash
 python scripts/search.py QUERY [options]
-  --engine [crossref|openalex|semanticscholar|arxiv|aminer|cnki|pubmed|all]  default=all
+  --engine ENGINE                  default=all; comma-separated lists supported
   --limit N                          default=20
   --year-min YYYY                    default=None
   --year-max YYYY                    default=None
@@ -166,12 +165,12 @@ returns trial registry records.
 
 ```bash
 python scripts/fetch.py DOI [options]
-  --prefer [arxiv|pmc|pmc-pdf|unpaywall|s2|biorxiv|core|osf|chemrxiv|auto]  default=auto
+  --prefer [arxiv|annas|scihub|pmc|pmc-pdf|unpaywall|biorxiv|core|osf|chemrxiv|auto]  default=auto
   --output-dir DIR                  default=.
   --no-cache                        skip cache lookup
 ```
 
-Tries 14 channels in cascade order. Returns JSON with `saved_as /
+Tries the configured open-access cascade in order. Returns JSON with `saved_as /
 via_channel / via_url / size_bytes / elapsed_sec`. For PMC papers
 (PubMed Central), use `--prefer pmc-pdf` to force JATS XML → real PDF
 render via headless Chromium (~20-25s).

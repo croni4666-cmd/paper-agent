@@ -5,7 +5,7 @@ This is a quick reference for the most useful subcommands.
 
 ## Core commands
 
-### `pa search` — search 7 engines
+### `pa search` — search current public engines
 ```bash
 pa search "query" [--engine all] [--limit 20] [--year-min 2020] [--output json|markdown]
 pa search "数字普惠金融" --engine aminer --limit 30
@@ -13,7 +13,7 @@ pa search "数字普惠金融" --engine aminer --limit 30
 
 ### `pa fetch` — fetch single PDF
 ```bash
-pa fetch <doi> [--prefer auto|pmc-pdf|s2|biorxiv|core|osf|chemrxiv|unpaywall|scihub|...] [--output-dir .]
+pa fetch <doi> [--prefer auto|pmc-pdf|biorxiv|core|osf|chemrxiv|unpaywall|scihub|...] [--output-dir .]
 pa fetch 10.1038/nature12373 --prefer pmc-pdf
 ```
 
@@ -40,7 +40,7 @@ pa citations <doi> [--direction forward|backward|both] [--limit 50] [--output fo
 ### `pa keys` — API key management
 ```bash
 pa keys list                          # Show all keys + status (last 4 chars only)
-pa keys check semanticscholar          # Live-probe a service
+pa keys check openalex          # Live-probe a service
 pa keys audit                          # Show expiry warnings (60-day TTL etc.)
 pa keys add <service> <key>            # Add a new key
 ```

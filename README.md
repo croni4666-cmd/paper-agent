@@ -130,7 +130,7 @@ these — we do different things well.
   channels can't reliably reach
 - InstSci has an **MCP server** (`instsci-mcp`) that drives the same
   fetch workflows paper-agent does, but routed through your institution
-- Paper-agent is a **better search + rerank engine** (8 engines, LTR, MoE);
+- Paper-agent is a **better search + rerank engine** (current public engines, LTR, MoE);
   InstSci is a **better institutional fetch** (10+ publisher workflows)
 
 **Use it for**: closed papers you can legally access via your school's
@@ -678,7 +678,7 @@ gracefully (use `--create` to create a stub).
 
 ## Known limitations
 
-- **API key rate limits**: Some engines (S2, CORE) have higher rate limits with
+- **API key rate limits**: Some services (AMiner, CORE) have higher limits with
   free API keys. See [`.env.example`](./.env.example) for which keys unlock
   which engines. No keys are required for basic use (anonymous rate limits
   work for low-volume academic work).

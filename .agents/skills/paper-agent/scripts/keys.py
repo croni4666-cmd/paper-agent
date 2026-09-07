@@ -7,7 +7,7 @@ the last 4 chars).
 
 Usage:
     python scripts/keys.py list
-    python scripts/keys.py check semanticscholar
+    python scripts/keys.py check openalex
     python scripts/keys.py audit
 """
 from __future__ import annotations
@@ -34,7 +34,7 @@ def main() -> int:
         epilog="""
 Examples:
   %(prog)s list                 # Show all keys + status
-  %(prog)s check semanticscholar # Live-probe a single service
+  %(prog)s check openalex # Live-probe a single service
   %(prog)s audit                # Show expiry warnings
         """,
     )
