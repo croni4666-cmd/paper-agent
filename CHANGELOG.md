@@ -13,6 +13,25 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.9.29.0] - 2026-09-07
+
+### Added
+- Local fetch-channel statistics via pa fetch-stats and the paper-agent skill wrapper.
+- PubMed result enrichment with abstracts and MeSH terms.
+- PMC JATS XML cache for repeat PDF rendering.
+
+### Changed
+- Retired CNKI and Semantic Scholar from the public search and fetch surface.
+- Migrated ChemRxiv metadata lookup from the retired Figshare API to Cambridge Open Engage, with the official DOI-PDF fallback.
+- Simplified the installable skill so its engines, preferences, and documentation match the CLI.
+
+### Fixed
+- Pytest now collects only the formal tests directory and prioritizes workspace code, preventing historical test-output scripts from loading an unrelated editable installation.
+
+### Validation
+- Formal suite: 20 passed.
+- Live probes: Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov each returned results.
+- Live PDF-source checks: bioRxiv, OSF, and PMC succeeded. ChemRxiv currently returns an actionable Cloudflare 403 from this network; CORE was not found for the probe DOI.
 ## [3.9.22.0] - 2026-08-21
 
 ### Added — Fetch Channel Diversification: 5 new open-access PDF sources
