@@ -45,6 +45,25 @@ def get_allow_remote_proxy() -> bool:
     )
 
 
+def safe_proxy_label(proxy_url: str) -> str:
+    """Return a display-safe proxy label without credentials or URL path."""
+    try:
+        parsed = urllib.parse.urlparse(proxy_url)
+        scheme = (parsed.scheme or "proxy").lower()
+        host = parsed.hostname
+        if not host:
+            return "<configured>"
+        if ":" in host and not host.startswith("["):
+            host = f"[{host}]"
+        try:
+            port = f":{parsed.port}" if parsed.port else ""
+        except ValueError:
+            port = ""
+        return f"{scheme}://{host}{port}"
+    except Exception:
+        return "<configured>"
+
+
 def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
     """Validate proxy URL for plaintext-leak risk. Warn or raise.
 
@@ -94,7 +113,7 @@ def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
     if scheme in ("socks5", "socks5h"):
         if is_local:
             warnings.warn(
-                f"paper-agent: proxy {proxy_url} uses SOCKS5 (plaintext hostname "
+                f"paper-agent: proxy {safe_proxy_label(proxy_url)} uses SOCKS5 (plaintext hostname "
                 f"leak). For local proxy this is acceptable; for remote consider "
                 f"using HTTPS proxy or VPN.",
                 stacklevel=3,
@@ -102,7 +121,7 @@ def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
         else:
             if not allow_remote:
                 raise RuntimeError(
-                    f"paper-agent: REFUSING remote SOCKS5 proxy {proxy_url}. "
+                    f"paper-agent: REFUSING remote SOCKS5 proxy {safe_proxy_label(proxy_url)}. "
                     f"SOCKS5 leaks target hostname in plaintext. Either:\n"
                     f"  - Run a local SOCKS5 proxy (Clash/V2RayN on 127.0.0.1)\n"
                     f"  - Use HTTPS proxy instead\n"
@@ -114,7 +133,7 @@ def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
     if scheme == "http":
         if is_local:
             warnings.warn(
-                f"paper-agent: proxy {proxy_url} uses HTTP (plaintext CONNECT "
+                f"paper-agent: proxy {safe_proxy_label(proxy_url)} uses HTTP (plaintext CONNECT "
                 f"handshake - target hostname visible to anyone on path). For "
                 f"local Clash/V2RayN this is acceptable. For REMOTE proxy, "
                 f"consider HTTPS proxy or VPN.",
@@ -123,7 +142,7 @@ def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
         else:
             if not allow_remote:
                 raise RuntimeError(
-                    f"paper-agent: REFUSING remote HTTP proxy {proxy_url}. "
+                    f"paper-agent: REFUSING remote HTTP proxy {safe_proxy_label(proxy_url)}. "
                     f"HTTP proxy leaks target hostname in plaintext CONNECT. "
                     f"Either:\n"
                     f"  - Run a local HTTP proxy (Clash/V2RayN on 127.0.0.1)\n"
@@ -132,7 +151,7 @@ def validate_proxy_security(proxy_url: str, allow_remote: bool = False) -> None:
                     f"to override (NOT recommended for untrusted networks)"
                 )
             warnings.warn(
-                f"paper-agent: using remote HTTP proxy {proxy_url} "
+                f"paper-agent: using remote HTTP proxy {safe_proxy_label(proxy_url)} "
                 f"(PAPER_AGENT_ALLOW_REMOTE_PROXY=1). Target hostname will be "
                 f"visible in plaintext CONNECT. This is your decision; do not use "
                 f"on untrusted networks.",

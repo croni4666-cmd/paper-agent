@@ -1042,7 +1042,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
             active = "HTTPS_PROXY" if prev_https_proxy else "HTTP_PROXY"
             import warnings as _w
             _w.warn(
-                f"paper-agent: --proxy={proxy} overrides existing {active} env var. "
+                f"paper-agent: --proxy=<configured> overrides existing {active} env var. "
                 f"To use env var, omit --proxy. (v3.9.13.3 F-007 fix)",
                 stacklevel=2,
             )

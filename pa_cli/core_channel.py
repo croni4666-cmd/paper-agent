@@ -26,6 +26,8 @@ import urllib.request
 from pathlib import Path
 from typing import Any, Dict, Optional
 
+from ._http import build_opener
+
 logger = logging.getLogger(__name__)
 
 E_NO_DOI = "no_doi"
@@ -50,7 +52,7 @@ def _http_get_json(url: str, timeout: int = 20,
                    "hint": "Register free at core.ac.uk/services/api and set $CORE_API_KEY"}
     try:
         req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with build_opener().open(req, timeout=timeout) as r:
             return r.status, json.loads(r.read())
     except urllib.error.HTTPError as e:
         try:
@@ -68,7 +70,7 @@ def _download_pdf(url: str, max_bytes: int = 100 * 1024 * 1024,
         req = urllib.request.Request(
             url, headers={"User-Agent": USER_AGENT}
         )
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with build_opener().open(req, timeout=timeout) as r:
             data = r.read(max_bytes + 1)
             if len(data) > max_bytes:
                 logger.warning(f"CORE PDF exceeds {max_bytes} bytes, truncating")
