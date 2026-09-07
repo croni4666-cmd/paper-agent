@@ -85,3 +85,6 @@ pa_cli = ["py.typed"]
 # Note: AGPL-3.0 + No-AI-Training restriction. See LICENSE and NO_AI_TRAINING.md.
 # This software may NOT be used to train, fine-tune, validate, benchmark, or
 # otherwise improve any AI/ML/LLM/embedding model. See LICENSE PART 2.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
