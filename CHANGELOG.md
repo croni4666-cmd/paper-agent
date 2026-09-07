@@ -15,6 +15,11 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Cover AMiner Basic phrase deduplication and year filtering; preserve an error when both automatic search paths fail.
+
+- Add offline result-contract fixtures for the six public search engines.
+- Handle empty Crossref date lists, missing OpenAlex author objects, unknown dates, and null citation counts without aborting result normalization.
+
 - Add opt-in sequential engine availability probes with JSON reports.
 - Reject invalid probe engine lists, limits, and non-finite timeouts before requests.
 - Deduplicate engine selections and suppress raw provider errors in probe reports.

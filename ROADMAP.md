@@ -54,8 +54,10 @@ Implemented: opt-in `pa engine-probe` JSON reports, sequential engine execution,
 validated limits and engine selection, and fixed diagnostics that do not copy
 provider exception text. Formal tests cover probe validation and error handling.
 
-Remaining: normalized-result fixtures for all six engines and the retrieval
-channel success/non-PDF/oversize/network-failure matrix. P0.2 is not complete.
+Added: offline normalized-result fixtures for all six public engines (AMiner Pro and Basic
+paths), including Crossref empty dates and OpenAlex missing-author/date regressions.
+Remaining: the retrieval-channel
+success/non-PDF/oversize/network-failure matrix. P0.2 is not complete.
 
 Separate deterministic offline contract tests from opt-in live probes. Each
 supported engine should have a fixture for result normalization and a small,

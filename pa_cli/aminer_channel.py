@@ -266,6 +266,9 @@ def _merge_aminer_results(pro: List[Dict], basic: List[Dict], limit: int) -> Lis
     pro_clean = [r for r in pro if "error" not in r]
     basic_clean = [r for r in basic if "error" not in r]
 
+    if not pro_clean and not basic_clean:
+        return [r for r in basic + pro if "error" in r][:1]
+
     # Dedupe by aminer_id
     seen = {}
     for r in pro_clean:
