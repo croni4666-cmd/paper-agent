@@ -1,4 +1,4 @@
-﻿=== Testing all 8 scripts ===
+=== Testing all 8 scripts ===
 
 1. version.py
 {
@@ -29,7 +29,7 @@
   "exit_code": 0,
   "stdout_len": 275,
   "stderr_len": 0,
-  "stdout_first_200": "{\n  \"root\": \"C:\\\\Users\\\\DengN\\\\.paper-agent\\\\cache\",\n  \"total_files\": 18,\n  \"paper_count\": 9,\n  \"total_size_bytes\": 20707115,\n  \"oldest_ts\": 1783933050.2810478,\n  \"newest_ts\": 1784001559.839917,\n  \"ol"
+  "stdout_first_200": "{\n  \"root\": \"C:\\\\Users\\\\paper-agent-user\\\\.paper-agent\\\\cache\",\n  \"total_files\": 18,\n  \"paper_count\": 9,\n  \"total_size_bytes\": 20707115,\n  \"oldest_ts\": 1783933050.2810478,\n  \"newest_ts\": 1784001559.839917,\n  \"ol"
 }
 
 5. search.py BERT

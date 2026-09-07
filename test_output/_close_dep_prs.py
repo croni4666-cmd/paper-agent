@@ -61,12 +61,12 @@ def make_short_comment(dep, old, new):
         f"- `CHANGELOG.md` rewritten (+6032/-6132)\n\n"
         f"Most concerning: **LICENSE change strips the actual copyright**:\n\n"
         f"```\n"
-        f"-Copyright (C) 2026 DengN\n"
+        f"-Copyright (C) 2026 paper-agent-user\n"
         f"+Copyright (C) 2026 paper-agent contributors\n"
         f"```\n\n"
         f"If the new doc files (SECURITY.md, NO_AI_TRAINING.md, etc.) are wanted, "
         f"please open a clean PR that adds only those files and keeps "
-        f"`Copyright (C) 2026 DengN` in LICENSE.\n"
+        f"`Copyright (C) 2026 paper-agent-user` in LICENSE.\n"
     )
 
 

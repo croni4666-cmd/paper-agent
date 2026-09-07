@@ -10,23 +10,23 @@ log_files = [
 
 replacements = [
     # Order matters: longer patterns first
-    ('mailto:dengn@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:deng.nju@gmail.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('mailto:dengn@example.com', 'mailto:paper-agent@users.noreply.github.com'),
-    ('deng.nju@gmail.com', 'paper-agent@example.com'),
-    ('dengn@gmail.com', 'paper-agent@example.com'),
-    ('dengn@example.com', 'paper-agent@example.com'),
-    ('dengn@qq.com', 'paper-agent@example.com'),
-    ('dengn@163.com', 'paper-agent@example.com'),
-    ('dengn+research@outlook.com', 'paper-agent+research@example.com'),
-    ('dengn@mavis.local', 'paper-agent@mavis.local'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:redacted@example.invalid', 'mailto:paper-agent@users.noreply.github.com'),
+    ('mailto:sample-user@example.com', 'mailto:paper-agent@users.noreply.github.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('sample-user@example.com', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent@example.com'),
+    ('redacted@example.invalid', 'paper-agent+research@example.com'),
+    ('redacted@example.invalid', 'paper-agent@mavis.local'),
     # Path patterns in logs
-    ('C:\\Users\\DengN\\.paper-agent', '~/.paper-agent'),
-    ('C:\\Users\\DengN\\.mavis', '~/.mavis'),
-    ('C:\\Users\\DengN\\.minimax', '~/.minimax'),
-    ('C:\\Users\\DengN\\', '~/'),
-    ('C:/Users/DengN/', '~/'),
-    ('DengN', 'paper-agent-author'),
+    ('C:\\Users\\paper-agent-user\\.paper-agent', '~/.paper-agent'),
+    ('C:\\Users\\paper-agent-user\\.mavis', '~/.mavis'),
+    ('C:\\Users\\paper-agent-user\\.minimax', '~/.minimax'),
+    ('C:\\Users\\paper-agent-user\\', '~/'),
+    ('C:/Users/paper-agent-user/', '~/'),
+    ('paper-agent-user', 'paper-agent-author'),
 ]
 
 for f in log_files:

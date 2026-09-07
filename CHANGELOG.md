@@ -371,7 +371,7 @@ dependency status).
 
 ### Fixed — Codex Skill `No module named 'pa_cli'` error
 
-User installed the v3.9.23.0 Codex Skill at `C:\Users\DengN\.codex\skills\paper-agent\`
+User installed the v3.9.23.0 Codex Skill at `~\.codex\skills\paper-agent\`
 (per the documented user-level install). Codex recognized the skill, but
 the 8 wrapper scripts failed with `No module named 'pa_cli'` because:
 
@@ -437,7 +437,7 @@ Exit codes:
 | --- | --- |
 | bootstrap.py --check (pa_cli pre-installed) | exit 0, status=ok |
 | bootstrap.py (auto-detect + install) | exit 0, "Successfully installed paper-agent-3.9.23.0" |
-| search.py from C:\Users\DengN (totally unrelated cwd) | 2589 bytes BERT JSON, exit 0 |
+| search.py from ~ (totally unrelated cwd) | 2589 bytes BERT JSON, exit 0 |
 | _pa_root.py (CLI mode) | "paper-agent root: G:\minimax - workspace\Paper agent" |
 
 **Tests**: `test_output/_test_v3_9_23_0_skill.py` extended from 22 → 30 tests:
@@ -2556,8 +2556,8 @@ test alone missed the fieldID 1 → 59 change.
 ### Security audit
 
 - Round 12 (2026-08-14) verified: 0 personal info leaks in tracked
-  files (DengN / dengn / 海宁 / 东方学院 / C:\Users\DengN /
-  嘉兴 / 李承翰 all 0 hits, excluding self-referential audit docs).
+  files (paper-agent-user / sample-user / USER_LOCATION / USER_INSTITUTION / ~ /
+  USER_REGION / USER_NAME all 0 hits, excluding self-referential audit docs).
 - 0 hardcoded API keys in pa_cli source.
 - 0 `shell=True` subprocess calls.
 - 0 `verify=False` / SSL bypass.

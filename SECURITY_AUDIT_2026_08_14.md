@@ -20,9 +20,9 @@ start.
 |---------------------------------------|------------|-------|
 | Hardcoded API keys                    | 0          | 0     |
 | Real email leaks in CLI User-Agent    | 1 (CRITICAL) | 0   |
-| Personal name (`DengN`) in tracked files | 92         | 0     |
-| Personal Windows paths (`C:\Users\DengN\...`) | 38 | 0  |
-| City/school name leaks (`海宁` / `东方学院`) | 6+ | 0    |
+| Personal name (`paper-agent-user`) in tracked files | 92         | 0     |
+| Personal Windows paths (`~\...`) | 38 | 0  |
+| City/school name leaks (`USER_LOCATION` / `USER_INSTITUTION`) | 6+ | 0    |
 | Dependabot enabled                    | ❌          | ✅    |
 | Vulnerability alerts enabled          | ❌          | ✅    |
 | Branch protection on main             | ❌          | ✅    |
@@ -37,11 +37,11 @@ start.
 
 ### Top 5 fixes shipped in this audit
 
-1. **`dengn@gmail.com` removed from `pa_cli/batch_fetch.py` User-Agent**
+1. **`redacted@example.invalid` removed from `pa_cli/batch_fetch.py` User-Agent**
    — was a real email leak in the CLI source
-2. **`Copyright (C) 2026 DengN` replaced with `Copyright (C) 2026 paper-agent contributors`** in `LICENSE` — author name fully anonymized
-3. **92 occurrences of `DengN` and 38 occurrences of `C:\Users\DengN\...` paths removed from all tracked files** (CHANGELOG, ROADMAP, _session_handoff.md, bench/, test_output/, recover_4_pdfs.py, ...)
-4. **6+ city/school name leaks** (`海宁`, `东方学院`, `嘉兴`, `李承翰`, ...) removed from `bench/moe-keyword-samples.md`, `test_output/_real_query_report.py`, `test_output/_add_moe_sample.py`, `test_output/_status_moe_samples.py`
+2. **`Copyright (C) 2026 paper-agent-user` replaced with `Copyright (C) 2026 paper-agent contributors`** in `LICENSE` — author name fully anonymized
+3. **92 occurrences of `paper-agent-user` and 38 occurrences of `~\...` paths removed from all tracked files** (CHANGELOG, ROADMAP, _session_handoff.md, bench/, test_output/, recover_4_pdfs.py, ...)
+4. **6+ city/school name leaks** (`USER_LOCATION`, `USER_INSTITUTION`, `USER_REGION`, `USER_NAME`, ...) removed from `bench/moe-keyword-samples.md`, `test_output/_real_query_report.py`, `test_output/_add_moe_sample.py`, `test_output/_status_moe_samples.py`
 5. **GitHub repo hardening enabled** — Dependabot + CodeQL + vulnerability alerts + branch protection on main
 
 ---
@@ -53,32 +53,32 @@ start.
 **Scope**: Search all tracked files for personal identifiers.
 
 **Findings**:
-- `bench/moe-keyword-samples.md`: 8 occurrences of `海宁市社科联申报书 v9.12`, `经编 / 算力券 / 海宁` (user's actual research project)
-- `test_output/_real_query_report.py:9`: `保险学 (东方学院方向)` (school name)
-- `test_output/_add_moe_sample.py:87`: `海宁经编产业大脑研究` (city + industry)
-- `test_output/_status_moe_samples.py:101`: `海宁经编 算力券 政策 杠杆` (city + topic)
-- `CHANGELOG.md:1053`: `海宁经编/算力券 query` (city + topic)
-- `LICENSE:4, 728`: `Copyright (C) 2026 DengN` (real author name, twice)
-- 92 hits of `DengN` across CHANGELOG/ROADMAP/test_output/bench/_session_handoff.md
-- 38 hits of `C:\Users\DengN\...` paths across same files + `recover_4_pdfs.py` (3 files hardcode `CHROMIUM_EXE = r"C:\Users\DengN\..."`)
-- 1 CRITICAL: `pa_cli/batch_fetch.py:82, 112` User-Agent header references `dengn@gmail.com` (real email)
+- `bench/moe-keyword-samples.md`: 8 occurrences of `USER_LOCATION市社科联申报书 v9.12`, `经编 / 算力券 / USER_LOCATION` (user's actual research project)
+- `test_output/_real_query_report.py:9`: `保险学 (USER_INSTITUTION方向)` (school name)
+- `test_output/_add_moe_sample.py:87`: `USER_LOCATION经编产业大脑研究` (city + industry)
+- `test_output/_status_moe_samples.py:101`: `USER_LOCATION经编 算力券 政策 杠杆` (city + topic)
+- `CHANGELOG.md:1053`: `USER_LOCATION经编/算力券 query` (city + topic)
+- `LICENSE:4, 728`: `Copyright (C) 2026 paper-agent-user` (real author name, twice)
+- 92 hits of `paper-agent-user` across CHANGELOG/ROADMAP/test_output/bench/_session_handoff.md
+- 38 hits of `~\...` paths across same files + `recover_4_pdfs.py` (3 files hardcode `CHROMIUM_EXE = r"~\..."`)
+- 1 CRITICAL: `pa_cli/batch_fetch.py:82, 112` User-Agent header references `redacted@example.invalid` (real email)
 
 **Fixes applied**:
 - All 6+ city/school name leaks replaced with neutral placeholders (`local city`, `local college`, `用户研究方向`)
-- `LICENSE` copyright holder: `DengN` → `paper-agent contributors`
-- `pa_cli/batch_fetch.py` User-Agent: `dengn@gmail.com` → `paper-agent@users.noreply.github.com`
+- `LICENSE` copyright holder: `paper-agent-user` → `paper-agent contributors`
+- `pa_cli/batch_fetch.py` User-Agent: `redacted@example.invalid` → `paper-agent@users.noreply.github.com`
 - Batch replace script (`test_output/_sanitize_emails.py` + `_sanitize_log_files.py`) cleaned:
-  - 78 occurrences of `C:\Users\DengN\...` paths (sed-like batch)
-  - 13 email strings (`dengn@gmail.com`, `deng.nju@gmail.com`, `dengn@example.com`, `dengn@qq.com`, `dengn@163.com`, `dengn+research@outlook.com`, `dengn@mavis.local`)
+  - 78 occurrences of `~\...` paths (sed-like batch)
+  - 13 email strings (`redacted@example.invalid`, `redacted@example.invalid`, `sample-user@example.com`, `redacted@example.invalid`, `redacted@example.invalid`, `redacted@example.invalid`, `redacted@example.invalid`)
   - 4 stragglers in UTF-16-encoded `.log` files
-- 92 `DengN` → `paper-agent-author` (where the name stood alone); 38 `C:\Users\DengN\...` → `~/...` (cross-platform form)
+- 92 `paper-agent-user` → `paper-agent-author` (where the name stood alone); 38 `~\...` → `~/...` (cross-platform form)
 
 **Verification**:
 ```
-$ git ls-files | xargs grep -l 'DengN\|dengn\|deng.nju'   # → 0 matches
-$ git ls-files | xargs grep -l '海宁\|东方学院\|嘉兴\|海 宁'  # → 0 matches
-$ git ls-files | xargs grep -l 'C:\\Users\\DengN'           # → 0 matches
-$ git ls-files | xargs grep -l '李承翰\|李 老师'              # → 0 matches
+$ git ls-files | xargs grep -l 'paper-agent-user\|sample-user\|sample-user'   # → 0 matches
+$ git ls-files | xargs grep -l 'USER_LOCATION\|USER_INSTITUTION\|USER_REGION\|海 宁'  # → 0 matches
+$ git ls-files | xargs grep -l 'C:\\Users\\paper-agent-user'           # → 0 matches
+$ git ls-files | xargs grep -l 'USER_NAME\|李 老师'              # → 0 matches
 ```
 
 **Status**: ✅ ALL CLEAN
@@ -90,7 +90,7 @@ $ git ls-files | xargs grep -l '李承翰\|李 老师'              # → 0 matc
 **Scope**: LICENSE, third-party attribution, SPDX identifiers.
 
 **Findings**:
-- `LICENSE` has `Copyright (C) 2026 DengN` (already fixed in Round 1)
+- `LICENSE` has `Copyright (C) 2026 paper-agent-user` (already fixed in Round 1)
 - `LICENSE` is a custom AGPL-3.0 + No-AI-Training dual license, ~750 lines
 - No `NO_AI_TRAINING.md` standalone file (only inline in `LICENSE` PART 2)
 - No `THIRD_PARTY.md` / `NOTICE` / `CREDITS` file
@@ -238,7 +238,7 @@ $ git ls-files | xargs grep -l '李承翰\|李 老师'              # → 0 matc
   - `lint` — pyflakes + pycodestyle
   - `test-core` — smoke test (`pa --version`, `pa --help`, `pa sample-pool init/verify/count`)
   - `test-network` — engine smoke tests on push (continue-on-error to avoid blocking on rate limits)
-  - `secret-scan` — regression check: 3 patterns (API key, DengN path, 海宁/东方) must produce 0 hits
+  - `secret-scan` — regression check: 3 patterns (API key, paper-agent-user path, USER_LOCATION/东方) must produce 0 hits
 - Created `.github/workflows/codeql.yml` (0.9 KB) — CodeQL weekly + on every push/PR, with `security-and-quality` + `security-extended` query packs
 
 **Status**: ✅ DONE
@@ -284,7 +284,7 @@ $ git ls-files | xargs grep -l '李承翰\|李 老师'              # → 0 matc
   - Local hook: `paper-agent-pre-push-scan` (runs `test_output/_pre_github_secret_scan.py`)
   - Standard hooks: trailing whitespace, EOF fixer, YAML/JSON/TOML check, large file check, merge conflict, private key
   - pyflakes for `pa_cli/`
-  - Local hook: `paper-agent-privacy-scan` (scans for `海宁` / `东方学院` / `DengN` / `C:\Users\DengN`)
+  - Local hook: `paper-agent-privacy-scan` (scans for `USER_LOCATION` / `USER_INSTITUTION` / `paper-agent-user` / `~`)
 
 **Status**: ✅ DONE
 
@@ -298,9 +298,9 @@ $ git ls-files | xargs grep -l '李承翰\|李 老师'              # → 0 matc
 
 | Scan                                    | Hits |
 |-----------------------------------------|------|
-| `DengN` / `dengn` / `deng.nju`         | 0    |
-| `海宁` / `东方学院` / `嘉兴` / `李 老师` | 0    |
-| `C:\Users\DengN`                        | 0    |
+| `paper-agent-user` / `sample-user` / `sample-user`         | 0    |
+| `USER_LOCATION` / `USER_INSTITUTION` / `USER_REGION` / `李 老师` | 0    |
+| `~`                        | 0    |
 | Hardcoded API keys / tokens             | 0    |
 | `subprocess` `shell=True`               | 0    |
 | `pickle.load` / `yaml.load` / `eval`    | 0    |
@@ -340,7 +340,7 @@ These are accepted as design decisions, not bugs:
 python test_output/_pre_github_secret_scan.py
 
 # 2. Run privacy scan
-git ls-files | xargs grep -l '海宁\|东方学院\|DengN\|C:\\Users\\DengN' && echo "FAIL" || echo "OK"
+git ls-files | xargs grep -l 'USER_LOCATION\|USER_INSTITUTION\|paper-agent-user\|C:\\Users\\paper-agent-user' && echo "FAIL" || echo "OK"
 
 # 3. Run unit smoke
 python -m pa_cli --version
@@ -375,7 +375,7 @@ git push origin <tag>
 These insights apply to any future Mavis-initiated security audit:
 
 1. **Pre-push hygiene must include source comments**, not just API keys.
-   The `dengn@gmail.com` User-Agent was a real leak that an API-key-only
+   The `redacted@example.invalid` User-Agent was a real leak that an API-key-only
    scanner would miss.
 2. **Batch sed is the only scalable way** to clean 130+ occurrences
    across 30+ files. Manual editing is too slow.
