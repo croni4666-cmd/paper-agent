@@ -40,6 +40,7 @@ from typing import List, Dict, Optional, Any, Callable
 from urllib.parse import quote
 import urllib.request as ur
 import urllib.error
+import xml.etree.ElementTree as ET
 
 
 logger = logging.getLogger(__name__)
@@ -393,7 +394,7 @@ def _search_core_unavailable(*args, **kwargs):
 # First medical-specific search engine. ~36M biomedical citations.
 # Free public API, no auth required (API key raises rate limit from 3 to 10 RPS).
 # Returns: PMID, title, journal, year, authors, DOI, publication types.
-# Does NOT return: abstract / MeSH terms (would need efetch XML, deferred to v3.9.12).
+# Adds best-effort abstracts and MeSH terms through batched EFetch XML.
 # 2 calls per search: esearch (PMID list) + esummary (metadata). 1s polite sleep between.
 _PUBMED_LAST_CALL_TS = [0.0]  # module-level throttle
 
@@ -407,6 +408,57 @@ def _pubmed_throttle(min_interval: float = 0.4) -> None:
     _PUBMED_LAST_CALL_TS[0] = time.time()
 
 
+def _parse_pubmed_details(xml_bytes: bytes) -> Dict[str, Dict[str, Any]]:
+    """Extract abstract sections and MeSH descriptors from PubMed EFetch XML."""
+    details: Dict[str, Dict[str, Any]] = {}
+    try:
+        root = ET.fromstring(xml_bytes)
+    except ET.ParseError:
+        return details
+    for article in root.findall(".//PubmedArticle"):
+        pmid = (article.findtext("./MedlineCitation/PMID") or "").strip()
+        if not pmid:
+            continue
+        abstract_parts = []
+        for item in article.findall("./MedlineCitation/Article/Abstract/AbstractText"):
+            text = " ".join("".join(item.itertext()).split())
+            if text:
+                label = (item.get("Label") or "").strip()
+                abstract_parts.append(f"{label}: {text}" if label else text)
+        mesh_terms = []
+        for item in article.findall("./MedlineCitation/MeshHeadingList/MeshHeading/DescriptorName"):
+            text = " ".join("".join(item.itertext()).split())
+            if text:
+                mesh_terms.append(text)
+        details[pmid] = {
+            "abstract": " ".join(abstract_parts),
+            "mesh_terms": mesh_terms,
+        }
+    return details
+
+
+def _fetch_pubmed_details(pmids: List[str], tool: str, email: str,
+                          api_key: str) -> Dict[str, Dict[str, Any]]:
+    """Best-effort EFetch enrichment; failure leaves ESummary results usable."""
+    if not pmids:
+        return {}
+    from ._http import http_get
+    details: Dict[str, Dict[str, Any]] = {}
+    for i in range(0, len(pmids), 100):
+        _pubmed_throttle()
+        ids = ",".join(pmids[i:i + 100])
+        url = (
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+            f"?db=pubmed&id={ids}&retmode=xml&tool={tool}&email={quote(email)}"
+        )
+        if api_key:
+            url += f"&api_key={quote(api_key)}"
+        try:
+            details.update(_parse_pubmed_details(http_get(url, timeout=45)))
+        except Exception:
+            continue
+    return details
+
 def search_pubmed(query: str, year_min: int = None, year_max: int = None,
                   limit: int = 50) -> List[Dict]:
     """PubMed (NCBI E-utilities): ~36M biomedical/biomedical-adjacent citations.
@@ -416,7 +468,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
 
     v3.9.11.8: initial release. Returns: PMID, title, journal, year,
     authors (max 5 + et al.), DOI (if available), publication types.
-    No abstract / MeSH in v1 (deferred 鈥?needs efetch XML parse, ~+150 LOC).
+    Abstract and MeSH enrichment is best effort and never blocks search results.
     """
     # NCBI E-utilities requires email + tool parameters per their etiquette
     tool = "paper-agent"
@@ -472,6 +524,15 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
                 continue
             results.append(_normalize_pubmed(r))
 
+    # 3. EFetch: add abstracts and controlled MeSH terms in batches.
+    # An EFetch outage must not discard usable ESummary metadata.
+    pubmed_details = _fetch_pubmed_details(pmids, tool, email, api_key)
+    for paper in results:
+        detail = pubmed_details.get(paper.get("pmid"), {})
+        if detail.get("abstract"):
+            paper["abstract"] = detail["abstract"]
+        if detail.get("mesh_terms"):
+            paper["mesh_terms"] = detail["mesh_terms"]
     # Post-filter by year (v3.9.11.8 hotfix)
     #
     # esearch's `datetype=pdat` filter is on ONLINE publication date (epub
@@ -539,6 +600,8 @@ def _normalize_pubmed(r: dict) -> dict:
         "pages": pages,
         "pub_types": pub_types,
         "issn": r.get("issn", ""),
+        "abstract": "",
+        "mesh_terms": [],
         "source": "pubmed",
         # cited_by_count: PubMed doesn't have a direct cite count.
         # Leave 0; downstream engines (S2/OpenAlex dedup) can fill it in.
