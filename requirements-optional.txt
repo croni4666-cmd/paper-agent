@@ -45,7 +45,7 @@ playwright>=1.40
 # === arXiv engine (pa search --engine arxiv) — v3.9.13.3 ===
 # Official `arxiv` PyPI package wraps the arxiv.org API.
 # Without it, search.py falls back to direct HTTP (works but no rate-limit awareness).
-arxiv>=2.0
+arxiv>=4.0.1
 
 # === Deep rerank + review (pa deep-rerank / pa review) — v3.9.13.3 ===
 # PyMuPDF (fitz) for PDF text extraction in deep_rerank.py and review.py.
