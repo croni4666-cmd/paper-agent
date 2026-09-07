@@ -1,4 +1,4 @@
-﻿{
+{
   "step": "install",
   "pa_cli_importable": false,
   "repo_found": "G:\\minimax - workspace\\Paper agent",

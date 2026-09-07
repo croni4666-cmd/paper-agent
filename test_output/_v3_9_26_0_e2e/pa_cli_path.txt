@@ -1,15 +1,15 @@
-﻿sys.path:
+sys.path:
   
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\python312.zip
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\DLLs
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\Lib
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312
-  C:\Users\paper-agent-user\AppData\Roaming\Python\Python312\site-packages
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\Lib\site-packages
+  ~\AppData\Local\Programs\Python\Python312\python312.zip
+  ~\AppData\Local\Programs\Python\Python312\DLLs
+  ~\AppData\Local\Programs\Python\Python312\Lib
+  ~\AppData\Local\Programs\Python\Python312
+  ~\AppData\Roaming\Python\Python312\site-packages
+  ~\AppData\Local\Programs\Python\Python312\Lib\site-packages
   __editable__.medrax-0.1.0.finder.__path_hook__
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib
-  C:\Users\paper-agent-user\AppData\Local\Programs\Python\Python312\Lib\site-packages\pythonwin
+  ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32
+  ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\win32\lib
+  ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pythonwin
 
 pa_cli loaded from: G:\minimax - workspace\Paper agent\pa_cli\__init__.py
 pa_cli.__version__: 3.9.25.0
