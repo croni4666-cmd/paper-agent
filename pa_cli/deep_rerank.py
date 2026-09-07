@@ -183,7 +183,6 @@ def stage1_download_orchestration(
         "1. For each DOI below, manually download the PDF:",
         "   - Try the publisher's website first",
         "   - If paywalled, try arXiv preprint, ResearchGate, or your university library",
-        "   - For Chinese papers, try CNKI / WanFang",
         "2. Save the PDF to a directory (e.g. `~/Downloads/manual_pdfs/`)",
         "3. Re-run: `python -m pa_cli deep-rerank --user-pdf-dir ~/Downloads/manual_pdfs/`",
         "",

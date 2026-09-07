@@ -1,4 +1,4 @@
-﻿[build-system]
+[build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
@@ -38,6 +38,7 @@ classifiers = [
 ]
 dependencies = [
     "click>=8.1",
+    "arxiv>=2.1",
     "numpy>=1.24",
     "requests>=2.28",
     "requests-cache>=1.0",
@@ -51,6 +52,7 @@ dependencies = [
 llm-rerank = ["openai>=1.0", "tiktoken>=0.4"]
 cross-encoder = ["sentence-transformers>=2.2", "torch>=2.0", "transformers>=4.30"]
 async-fetch = ["aiohttp>=3.9", "aiohttp-client-cache>=0.10"]
+browser = ["playwright>=1.60,<1.61"]
 topics = ["bertopic>=0.16", "umap-learn>=0.5", "hdbscan>=0.8"]
 all = [
     "openai>=1.0",
@@ -63,6 +65,7 @@ all = [
     "bertopic>=0.16",
     "umap-learn>=0.5",
     "hdbscan>=0.8",
+    "playwright>=1.60,<1.61",
 ]
 
 [project.scripts]
