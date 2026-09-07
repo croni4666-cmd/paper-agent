@@ -1053,6 +1053,19 @@ def fetch_doi(doi: str, output_dir: str = ".",
 
     elapsed = round(time.time() - t0, 3)
 
+    # Record one final outcome. Failed automatic cascades are labelled "auto"
+    # because this legacy downloader does not expose each internal attempt.
+    try:
+        from .channel_stats import record_event
+        record_event(
+            doi,
+            r.get("source", prefer) if "error" not in r else prefer,
+            "error" not in r,
+            elapsed,
+            error=r.get("error"),
+        )
+    except Exception:
+        pass
     # Translate result to old shape
     if "error" in r:
         return {

@@ -372,6 +372,27 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
         sys.exit(1)
 
 
+@main.command(name="fetch-stats")
+@click.option("--json", "as_json", is_flag=True, help="Print machine-readable JSON")
+def fetch_stats(as_json):
+    """Show local download outcomes by final channel."""
+    from .channel_stats import summarize
+    data = summarize()
+    if as_json:
+        click.echo(json.dumps(data, indent=2, ensure_ascii=False))
+        return
+    click.echo(f"Fetch statistics: {data['total_attempts']} attempt(s)")
+    click.echo(f"Log: {data['path']}")
+    if not data["channels"]:
+        click.echo("No fetch outcomes have been recorded yet.")
+        return
+    click.echo("channel                 attempts  success  average seconds")
+    for name, row in data["channels"].items():
+        click.echo(
+            f"{name:<22} {row['attempts']:>8}  {row['success_rate']:>6.1%}  "
+            f"{row['avg_elapsed_sec']:>14.2f}"
+        )
+
 @main.command()
 @click.argument("query")
 @click.option("--year-min", type=int, default=None, help="Filter: min publication year")
