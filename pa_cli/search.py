@@ -114,7 +114,7 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
         return None
     it = data["message"]["items"][0]
     pub = it.get("published-print") or it.get("published-online") or {}
-    parts = pub.get("date-parts", [[None]])[0]
+    parts = (pub.get("date-parts") or [[None]])[0]
     year = parts[0] if parts else None
     return {
         "doi": it.get("DOI", ""),
@@ -124,7 +124,7 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
         "venue": (it.get("container-title") or [""])[0] if it.get("container-title") else "",
         "year": year,
         "abstract": it.get("abstract", ""),
-        "cited_by_count": it.get("is-referenced-by-count", 0),
+        "cited_by_count": (it.get("is-referenced-by-count") or 0),
         "reference_count": it.get("references-count", 0),
         "source": "crossref_title",
     }
@@ -255,7 +255,7 @@ def _normalize_crossref(it: dict) -> dict:
     authors = [f"{a.get('family', '')}, {a.get('given', '')}".strip(", ")
                for a in (it.get("author") or [])]
     pub = it.get("published-print") or it.get("published-online") or {}
-    parts = pub.get("date-parts", [[None]])[0]
+    parts = (pub.get("date-parts") or [[None]])[0]
     year = parts[0] if parts else None
     return {
         "doi": it.get("DOI", ""),
@@ -263,7 +263,7 @@ def _normalize_crossref(it: dict) -> dict:
         "authors": authors,
         "venue": (it.get("container-title") or [""])[0] if it.get("container-title") else "",
         "year": year,
-        "cited_by_count": it.get("is-referenced-by-count", 0),
+        "cited_by_count": (it.get("is-referenced-by-count") or 0),
         "reference_count": it.get("references-count", 0),
         "type": it.get("type", ""),
         "source": "crossref",
@@ -300,11 +300,11 @@ def search_openalex(query: str, year_min: int = None, year_max: int = None,
 
 
 def _normalize_openalex(r: dict) -> dict:
-    authors = [a.get("author", {}).get("display_name", "") for a in (r.get("authorships") or [])]
+    authors = [(a.get("author") or {}).get("display_name", "") for a in (r.get("authorships") or [])]
     venue = (r.get("primary_location") or {}).get("source", {}).get("display_name", "") \
         if (r.get("primary_location") or {}).get("source") else ""
     pub_date = r.get("publication_date", "")
-    year = int(pub_date[:4]) if pub_date else None
+    year = int(pub_date[:4]) if pub_date and pub_date[:4].isdigit() else None
     oa = r.get("open_access") or {}
     return {
         "doi": (r.get("doi") or "").replace("https://doi.org/", ""),
@@ -312,7 +312,7 @@ def _normalize_openalex(r: dict) -> dict:
         "authors": authors,
         "venue": venue,
         "year": year,
-        "cited_by_count": r.get("cited_by_count", 0),
+        "cited_by_count": (r.get("cited_by_count") or 0),
         "is_oa": oa.get("is_oa", False),
         "oa_status": oa.get("oa_status"),
         "oa_url": oa.get("oa_url"),
