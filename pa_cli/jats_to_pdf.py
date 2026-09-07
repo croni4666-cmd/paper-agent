@@ -48,6 +48,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from xml.etree.ElementTree import Element
 
+from ._http import build_opener, get_allow_remote_proxy, validate_proxy_security
+
 logger = logging.getLogger(__name__)
 
 # Maximum size for downloaded figure (skip huge images to avoid timeout)
@@ -657,14 +659,27 @@ def _html_to_pdf_via_playwright(html_str: str, timeout: int = 60) -> bytes:
 # Optional: download figures and embed as data URIs
 # ---------------------------------------------------------------------------
 
-def _download_figure(url: str, timeout: int = 10) -> Optional[bytes]:
+def _build_figure_opener(proxy: Optional[str] = None):
+    """Build a figure downloader opener without changing global urllib state."""
+    if not proxy:
+        return build_opener()
+    normalized = proxy.strip()
+    if not normalized.startswith(("http://", "https://", "socks5://", "socks5h://")):
+        normalized = "http://" + normalized
+    validate_proxy_security(normalized, allow_remote=get_allow_remote_proxy())
+    return urllib.request.build_opener(
+        urllib.request.ProxyHandler({"http": normalized, "https": normalized})
+    )
+
+
+def _download_figure(url: str, opener, timeout: int = 10) -> Optional[bytes]:
     """Download a figure URL; return None on failure."""
     try:
         req = urllib.request.Request(
             url,
             headers={"User-Agent": "paper-agent-jats2pdf/1.0"},
         )
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with opener.open(req, timeout=timeout) as r:
             content = r.read(_MAX_FIG_BYTES)
             return content
     except Exception as e:
@@ -678,18 +693,13 @@ def _embed_figures_as_data_uris(html_str: str, doi: str = "", proxy: str = None)
     Best-effort: download each figure and convert to base64. Failures
     are silently skipped (URL stays as remote, browser may still load).
     """
-    if proxy:
-        # Set proxy for urllib
-        opener = urllib.request.build_opener(
-            urllib.request.ProxyHandler({"http": proxy, "https": proxy})
-        )
-        urllib.request.install_opener(opener)
+    opener = _build_figure_opener(proxy)
 
     def replace_img(m: re.Match) -> str:
         prefix, url, alt = m.group(1), m.group(2), m.group(3)
         if url.startswith("data:") or not url.startswith("http"):
             return m.group(0)
-        data = _download_figure(url)
+        data = _download_figure(url, opener)
         if not data:
             return m.group(0)
         # Guess MIME from URL
