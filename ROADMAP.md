@@ -2195,7 +2195,7 @@ If the goal is "validate the 课题 work is rigorous":
   - [P3-31.6] BASE (Bielefeld) — gated by user IP registration form submission
   - [P3-31.7] Elsevier/Wiley/SN TDM APIs — gated by user institutional credentials
   - [P3-31.8] S2 fallback chain (when S2 returns empty openAccessPdf, try S2's externalIds to arxiv/PMC)
-  - [P3-31.9] ChemRxiv 2.0 — try Open Engage API (chemrxiv.org/engage) as figshare alternative when CF blocks
+  - ✅ [P3-31.9] ChemRxiv 2.0 — migrated from retired Figshare API to Open Engage DOI metadata plus canonical DOI-PDF fallback (2026-09-07). Current network audit receives Cloudflare 403, reported as actionable chemrxiv_api_error; no challenge bypass is attempted.
   - [P3-31.10] Channel coverage stats — per-channel success rate, integrated into `pa fetch --stats`
 
 ## Writing pipeline (added 2026-07-15, post-v3.9.7.9 — revised per user pushback)
