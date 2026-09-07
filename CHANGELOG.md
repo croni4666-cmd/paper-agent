@@ -13,6 +13,19 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.9.29.1] - 2026-09-07
+
+### Security
+- Redact proxy credentials from command status, warnings, and validation errors.
+- Route bioRxiv, ChemRxiv, CORE, and OSF download requests through the shared proxy validator.
+- Remove JATS figure download's process-global urllib opener mutation.
+
+### Fixed
+- Constrain arxiv and requests to their declared compatible release range, avoiding the requests 2.34 resolver conflict.
+
+### Validation
+- Formal suite: 24 passed.
+- Dependency vulnerability audit: no known vulnerabilities in requirements.txt.
 ## [3.9.29.0] - 2026-09-07
 
 ### Added

@@ -2,124 +2,55 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in paper-agent, please report
-it privately via GitHub's private vulnerability reporting:
-
-**https://github.com/croni4666-cmd/paper-agent/security/advisories/new**
-
-Do **NOT** open a public GitHub issue for security vulnerabilities.
-
-## Response Timeline
-
-- **Initial response**: within 7 days
-- **Triage and impact assessment**: within 14 days
-- **Patch or mitigation**: within 30 days for high-severity issues,
-  60 days for medium, 90 days for low
-
-(These are soft targets for a personal hobby project; actual response
-time may be longer.)
+Please report security vulnerabilities privately through
+[GitHub private vulnerability reporting](https://github.com/croni4666-cmd/paper-agent/security/advisories/new).
+Do not publish exploitable details in a public issue before a fix is available.
 
 ## Scope
 
-This policy covers:
-- Source code under `pa_cli/`, `tools/`, and other top-level Python
-- Default configuration and example `.env.example`
-- Public APIs and search engines integrated by `pa search`
-- PDF download cascade in `pa fetch`
+This policy covers the released source code, command-line interfaces, default
+configuration, search providers, and PDF download channels. It does not cover
+third-party services or user-managed credentials and local data.
 
-This policy does **not** cover:
-- Third-party search engines and PDF sources (Crossref, OpenAlex,
-  Sci-Hub mirrors, Anna's Archive, Unpaywall). Report to those
-  services directly.
-- User-supplied credentials in `.env` — you are responsible for
-  securing your own API keys.
-- The user's local `~/.paper-agent/` directory (cross-Mavis-session
-  SQLite pool). This contains user-labeled relevance data and is
-  gitignored.
+## Credential Handling
 
-## Security Best Practices for Users
+- Keep API keys in an untracked .env file or environment variables.
+- Never commit .env, private keys, browser cookies, or proxy credentials.
+- Do not include credentials in issue reports or terminal captures.
+- Rotate a credential if it may have appeared in an external log or commit.
 
-### 1. API key handling
+## Network and Proxy Handling
 
-- **Never commit `.env`** — it's in `.gitignore` already, but verify.
-- **Use free-tier keys** where possible (all engines support keyless
-  use; keys just raise rate limit).
-- **Rotate keys periodically** if you suspect leakage.
-- **Don't paste keys in GitHub issues** — they will be flagged as
-  secrets by GitHub's automated scanning.
+All paper-agent network paths use the shared HTTP layer for proxy checks.
 
-### 2. Proxy / network
-
-- **Set `HTTPS_PROXY` correctly**. Common values:
-  - `http://127.0.0.1:10808` (Clash on Windows after 2026-08-06) — local HTTP proxy, ACCEPTED with warning
-  - `socks5://127.0.0.1:10808` (SOCKS5 variant)
-  - `https://127.0.0.1:10809` (HTTPS proxy, best, encrypted CONNECT)
-- **TLS validation** (v3.9.13.0+): `pa_cli/fetch.py:_validate_proxy_security()`
-  - Local HTTP proxy (127.0.0.1, 10.*, 192.168.*, 172.16-31.*, ::1) → WARN but accept
-  - Remote HTTP proxy → REFUSE with clear error (set `PAPER_AGENT_ALLOW_REMOTE_PROXY=1` to override)
-  - Remote SOCKS5 proxy → REFUSE similarly
-  - HTTPS proxy → silent (no leak)
-- **Threat model**: HTTP proxy leaks the target hostname in the
-  plaintext CONNECT handshake. After CONNECT, the data flow is
-  TLS-encrypted to the destination, so API keys in URL (OpenAlex
-  `?api_key=...`) are NOT visible to the proxy. Only the target
-  hostname is. For local Clash this is acceptable; for REMOTE
-  proxy this is a privacy leak.
-- **Don't use sci-hub in jurisdictions where it's illegal**. The
-  user is responsible for compliance with local laws.
-
-
-- **Never share your cookies** — they identify you personally to
-
-### 4. Sample pool
-
-- **Treat as user-private data**. The pool contains your
-  relevance labels and queries, which may reflect your
-  research interests. Don't share `~/.paper-agent/sample_pool/`
-  unless you've anonymized it.
-- The `pa sample-pool export` command writes to a path you choose
-  (not the pool itself), so the export is safe to share if you
-  choose to.
-
-### 5. Privacy in your contributions
-
-- **Don't include personal information** (school name, city, real
-  name, Windows user path) in PRs, issues, or commits.
-- The repo has a sanitize script (`test_output/_pre_github_secret_scan.py`)
-  that catches most accidental leaks. Run it before `git push`.
+- Local HTTP and SOCKS proxies are permitted with a warning because their
+  hostname handshake can be visible on the local network path.
+- Remote HTTP and SOCKS proxies are refused by default. Set
+  PAPER_AGENT_ALLOW_REMOTE_PROXY=1 only when the proxy and network are
+  trusted.
+- HTTPS proxies are preferred because their CONNECT handshake is encrypted.
+- Proxy URLs are redacted in paper-agent status messages, warnings, and
+  validation errors. Do not rely on this to protect credentials from shell
+  history; use environment variables where practical.
 
 ## Known Limitations
 
-These are accepted limitations of the current design, not bugs:
+- OpenAlex may require an API key in its URL query string, as specified by its
+  public API. The connection uses standard HTTPS certificate verification.
+- The project relies on the operating system's trusted CA store and does not
+  implement certificate pinning.
+- Third-party PDF sources can change or return invalid content. Check a
+  downloaded PDF before relying on it in a research workflow.
+- A repository maintainer can improve protection by enabling GitHub branch
+  protection and secret scanning.
 
-1. **API keys in URL query params** (OpenAlex). This is the official
-   OpenAlex API pattern; we don't control it. Mitigation: v3.9.13.0+
-   enforces local proxy only, so even if the proxy is logging the
-   URL, it's only the user's own proxy (not a third party). API key
-   visibility is limited to the user themselves + OpenAlex.
+## Response Targets
 
-2. **No TLS pinning**. We rely on the system TLS store. Compromise
-   of a CA would allow MITM. Acceptable risk for a research tool.
+The maintainer aims to acknowledge reports within seven days, assess them
+within fourteen days, and publish a fix or mitigation according to severity.
 
-3. **Sci-Hub mirrors may serve arbitrary content**. Last-resort
-   channel. We do not validate the integrity of returned PDFs.
-   Mitigation: verify checksums for any PDF you intend to use in
-   published work.
+## Audit History
 
-   load-balanced endpoint resolved from `xueshu789.com` (HTTPS) JS
-   redirect. As of v3.9.13.0, the actual connection is over **plaintext
-   search queries were transmitted in cleartext. **v3.9.13.1 now REFUSES
-   (accepts with WARN) or, better, use a VPN that encrypts traffic to
-   to support HTTPS — out of paper-agent's scope.
-
-5. **Branch protection on main allows direct push** (no required
-   PR reviews) because this is a single-maintainer hobby project.
-   If you fork, consider stricter rules.
-
-## Vulnerability Disclosure History
-
-No publicly disclosed vulnerabilities as of 2026-08-14.
-
-## Acknowledgments
-
-Thanks to researchers who report vulnerabilities responsibly.
+The 2026-09 security audit added proxy credential redaction, routed download
+channels through the shared proxy validator, and removed process-global proxy
+installation from JATS figure downloads.

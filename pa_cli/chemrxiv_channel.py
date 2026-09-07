@@ -13,6 +13,8 @@ import urllib.request
 from pathlib import Path
 from typing import Any, Dict, Optional
 
+from ._http import build_opener
+
 logger = logging.getLogger(__name__)
 
 E_NO_DOI = "no_doi"
@@ -30,7 +32,7 @@ def _http_get_json(url: str, timeout: int = 20) -> tuple[int, Any]:
     """GET JSON; return (status, parsed_json_or_error_dict)."""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        with build_opener().open(req, timeout=timeout) as response:
             return response.status, json.loads(response.read())
     except urllib.error.HTTPError as exc:
         try:
@@ -46,7 +48,7 @@ def _download_pdf(url: str, max_bytes: int = 50 * 1024 * 1024,
     """Download a PDF URL, returning bytes only when it is a real PDF."""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        with build_opener().open(req, timeout=timeout) as response:
             data = response.read(max_bytes + 1)
             if len(data) > max_bytes:
                 logger.warning("ChemRxiv PDF exceeds %s bytes", max_bytes)
