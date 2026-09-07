@@ -88,7 +88,7 @@ Examples:
         # the same cli.main(). User reported the Skill wrapper was failing
         # with "No such option '--out-dir'" — root cause was that
         # 'pa_cli.cli' was loading a CACHED pa_cli.cli with the OLD
-        # 'fetch_batch' function (renamed to 'cnki-guide' in v3.9.26.0),
+        # underlying batch fetch implementation,
         # not the new 'fetch-batch' PDF downloader. Using 'pa_cli' (the
         # documented entry point) routes through the fresh editable install.
         PYTHON, "-m", "pa_cli", "fetch-batch",
