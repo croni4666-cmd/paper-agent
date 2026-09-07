@@ -37,10 +37,10 @@ lightgbm>=4.0
 jieba>=0.42
 
 # === CNKI engine (pa search --engine cnki) — v3.9.13.3 ===
-# Playwright is a HARD dep of pa_cli/cnki_channel.py (default in `all` engine list).
-# Without playwright, `pa search --engine all` will ImportError when cascade reaches CNKI.
-# First run: `python -m playwright install chromium`
-playwright>=1.40
+# Optional browser runtime for CNKI search and JATS XML-to-PDF rendering.
+# Install with: python -m pip install -e ".[browser]"
+# If Chromium is not cached: python -m playwright install chromium
+playwright>=1.60,<1.61
 
 # === arXiv engine (pa search --engine arxiv) — v3.9.13.3 ===
 # Official `arxiv` PyPI package wraps the arxiv.org API.
