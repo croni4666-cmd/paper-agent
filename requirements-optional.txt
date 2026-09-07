@@ -25,7 +25,7 @@ aiohttp-client-cache>=0.10
 # BERTopic + UMAP + HDBSCAN
 bertopic>=0.16
 umap-learn>=0.5
-hdbscan>=0.8
+hdbscan>=0.8.44
 
 # === MoE router (pa moe-router) — v3.9.13.3 ===
 # Heavyweight stack: scikit-learn (Ridge/LogReg) + LightGBM (LTR) +
