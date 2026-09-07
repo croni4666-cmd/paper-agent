@@ -1,5 +1,6 @@
 """Regression tests for real-environment search failures."""
 import unittest
+import threading
 from unittest.mock import patch
 
 from pa_cli import _http, search
@@ -46,9 +47,32 @@ class SearchRuntimeTests(unittest.TestCase):
         with patch.object(search, "_s2_request_with_retry", return_value=(429, {})):
             result = search.run_search("test", engine="semanticscholar", limit=1)
         self.assertEqual(result["by_engine"], {"semanticscholar": 0})
-        self.assertEqual(result["engine_status"]["semanticscholar"]["status"], "error")
+        self.assertEqual(result["engine_status"]["semanticscholar"]["status"], "rate_limited")
         self.assertIn("429", result["engine_status"]["semanticscholar"]["message"])
 
+
+    def test_semantic_scholar_non_rate_limit_failure_is_an_error(self):
+        with patch.object(search, "_s2_request_with_retry", return_value=(503, {})):
+            result = search.run_search("test", engine="semanticscholar", limit=1)
+        self.assertEqual(result["engine_status"]["semanticscholar"]["status"], "error")
+    def test_blocked_engine_times_out_without_blocking_search(self):
+        release = threading.Event()
+
+        def blocked(*_args, **_kwargs):
+            release.wait(1)
+            return []
+
+        try:
+            with patch.object(search, "search_openalex", side_effect=blocked):
+                result = search.run_search(
+                    "test", engine="openalex", limit=1, engine_timeout=0.01
+                )
+        finally:
+            release.set()
+
+        self.assertEqual(result["by_engine"], {"openalex": 0})
+        self.assertEqual(result["engine_status"]["openalex"]["status"], "error")
+        self.assertIn("timed out", result["engine_status"]["openalex"]["message"])
 
 if __name__ == "__main__":
     unittest.main()
