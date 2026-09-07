@@ -333,3 +333,4 @@ python -m pa_cli.cli sample-pool add --qid q001 --relevance 1
 - All scripts are idempotent (cache-aware; safe to re-run).
 - This skill is read-only on the agent's project workspace unless
   the user explicitly asks for fetch/review which write files.
+Fetch statistics: run scripts/fetch_stats.py when asked which PDF sources work best locally. It reads local outcomes only and does not fetch papers.
