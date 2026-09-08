@@ -27,7 +27,7 @@ class RetrievalOptionsTests(unittest.TestCase):
 
     def test_invalid_source_fails_before_cache_or_network(self):
         with patch('pa_cli.cache.cache_get') as cache, patch.object(fetch, 'fetch') as cascade:
-            result = fetch.fetch_doi('10.1000/fixture', prefer='unsupported')
+            result = fetch._fetch_doi_in_process('10.1000/fixture', prefer='unsupported')
         self.assertEqual(result['final_status'], 'ALL_FAIL')
         self.assertEqual(result['error'], 'fetch_invalid_preference')
         cache.assert_not_called()
@@ -36,7 +36,7 @@ class RetrievalOptionsTests(unittest.TestCase):
     def test_explicit_source_overrides_legacy_channels(self):
         with patch.object(fetch, 'fetch', return_value={'error': 'fixture'}) as cascade, \
              patch('pa_cli.channel_stats.record_event'):
-            fetch.fetch_doi('10.1000/fixture', channels=['pmc'], prefer='core', use_cache=False)
+            fetch._fetch_doi_in_process('10.1000/fixture', channels=['pmc'], prefer='core', use_cache=False)
         self.assertEqual(cascade.call_args.kwargs['prefer'], 'core')
 
     def test_proxy_restored_after_outcomes(self):
@@ -62,14 +62,15 @@ class RetrievalOptionsTests(unittest.TestCase):
                         warnings.simplefilter('ignore')
                         if outcome == 'exception':
                             with self.assertRaises(RuntimeError):
-                                fetch.fetch_doi('10.1000/fixture', temp, proxy='127.0.0.1:9003', use_cache=False)
+                                fetch._fetch_doi_in_process('10.1000/fixture', temp, proxy='127.0.0.1:9003', use_cache=False)
                         else:
-                            fetch.fetch_doi('10.1000/fixture', temp, proxy='127.0.0.1:9003', use_cache=False)
+                            fetch._fetch_doi_in_process('10.1000/fixture', temp, proxy='127.0.0.1:9003', use_cache=False)
                         self.assertEqual(dict(os.environ), env)
 
     def test_mcp_preference_reaches_cascade(self):
         for prefer in ('pmc', 'pmc-pdf', 'core', 'unpaywall', 'auto'):
-            with self.subTest(prefer=prefer), patch.object(fetch, 'fetch', return_value={'error': 'fixture'}) as cascade, \
+            with self.subTest(prefer=prefer), patch.object(fetch, 'fetch_doi', fetch._fetch_doi_in_process), \
+                 patch.object(fetch, 'fetch', return_value={'error': 'fixture'}) as cascade, \
                  patch('pa_cli.channel_stats.record_event'):
                 mcp_fetch._handle_pa_fetch({'doi': '10.1000/fixture', 'prefer': prefer, 'use_cache': False})
                 cascade.assert_called_once()

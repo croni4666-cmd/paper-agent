@@ -37,6 +37,15 @@ pa judge add --query "AI literacy" --paper-key smith2023 --relevance 2 --reason 
 pa build refs.bib skeleton.md -o paper.pdf
 ```
 
+## Single-paper download deadline
+
+`pa fetch <DOI> --max-total-sec 60` stops the download worker and its normal
+browser descendants when the budget expires. The default is 300 seconds,
+including cache access. Timeout returns `fetch_timeout` and CLI exit code 2.
+OS process startup/cleanup adds overhead, and files already written are not
+rolled back. This applies to `fetch_doi()` and the single-paper MCP handler;
+batch retrieval and direct Python `fetch()` keep their existing timeout behavior.
+
 ## Core workflow
 
 ```

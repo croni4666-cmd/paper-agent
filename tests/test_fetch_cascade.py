@@ -59,6 +59,12 @@ def pmc_fixture(root, pdf_source=None, fallback=False):
 
 
 class PmcPdfOutcomes(unittest.TestCase):
+    def invoke_cli(self, *args, **kwargs):
+        # Unit-test provider fixtures stay in this process. Public worker/CLI
+        # integration is exercised in test_fetch_deadline.py.
+        with patch.object(fetch, 'fetch_doi', fetch._fetch_doi_in_process):
+            return CliRunner().invoke(*args, **kwargs)
+
     def test_both_pdf_paths_expose_canonical_result(self):
         for source in ('europe', 'jats'):
             with self.subTest(source=source), tempfile.TemporaryDirectory() as temp:
@@ -115,7 +121,7 @@ class PmcPdfOutcomes(unittest.TestCase):
             stale = root / '10_1000_fixture.pdf'
             stale.write_bytes(PDF)
             with pmc_fixture(root):
-                result = fetch.fetch_doi(DOI, output_dir=temp, channels=['pmc'], use_cache=False)
+                result = fetch._fetch_doi_in_process(DOI, output_dir=temp, channels=['pmc'], use_cache=False)
             self.assertEqual(result['final_status'], 'ALL_FAIL')
             self.assertIsNone(result['saved_as'])
             self.assertEqual(Path(result['xml_path']).read_bytes(), XML)
@@ -134,7 +140,7 @@ class PmcPdfOutcomes(unittest.TestCase):
     def test_cli_reports_failure_for_xml_only(self):
         with tempfile.TemporaryDirectory() as temp:
             with pmc_fixture(Path(temp)):
-                result = CliRunner().invoke(main, ['fetch', DOI, '--output-dir', temp,
+                result = self.invoke_cli(main, ['fetch', DOI, '--output-dir', temp,
                                                   '--prefer', 'pmc', '--no-cache', '--quiet'])
             self.assertEqual(result.exit_code, 2, result.output)
             self.assertIn('"saved_as": null', result.output)
@@ -142,7 +148,7 @@ class PmcPdfOutcomes(unittest.TestCase):
     def test_default_cli_continues_to_fallback_pdf(self):
         with tempfile.TemporaryDirectory() as temp:
             with pmc_fixture(Path(temp), fallback=True) as calls:
-                result = CliRunner().invoke(main, ['fetch', DOI, '--output-dir', temp,
+                result = self.invoke_cli(main, ['fetch', DOI, '--output-dir', temp,
                                                   '--no-cache', '--quiet'])
             self.assertEqual(calls, ['unpaywall'])
             self.assertEqual(result.exit_code, 0, result.output)
@@ -151,7 +157,7 @@ class PmcPdfOutcomes(unittest.TestCase):
     def test_wrapper_success_includes_real_pdf_details(self):
         with tempfile.TemporaryDirectory() as temp:
             with pmc_fixture(Path(temp), pdf_source='europe'):
-                result = fetch.fetch_doi(DOI, output_dir=temp, channels=['pmc'], use_cache=False)
+                result = fetch._fetch_doi_in_process(DOI, output_dir=temp, channels=['pmc'], use_cache=False)
             self.assertEqual(result['final_status'], 'SUCCESS')
             self.assertEqual(Path(result['saved_as']).read_bytes(), PDF)
             self.assertEqual(result['size_bytes'], len(PDF))
@@ -165,7 +171,7 @@ class PmcPdfOutcomes(unittest.TestCase):
                     out.write_bytes(body)
                 with patch.object(fetch, 'fetch', return_value={'source': 'fixture', 'path': str(out)}), \
                      patch('pa_cli.channel_stats.record_event') as record:
-                    result = fetch.fetch_doi(DOI, output_dir=temp, use_cache=False)
+                    result = fetch._fetch_doi_in_process(DOI, output_dir=temp, use_cache=False)
                 self.assertEqual(result['final_status'], 'ALL_FAIL')
                 self.assertIsNone(result['saved_as'])
                 self.assertFalse(record.call_args.args[2])
@@ -175,7 +181,7 @@ class PmcPdfOutcomes(unittest.TestCase):
             (Path(temp) / '10_1000_fixture.pdf').write_bytes(PDF)
             with patch.object(fetch, 'fetch', return_value={'source': 'fixture'}), \
                  patch('pa_cli.channel_stats.record_event') as record:
-                result = fetch.fetch_doi(DOI, output_dir=temp, use_cache=False)
+                result = fetch._fetch_doi_in_process(DOI, output_dir=temp, use_cache=False)
             self.assertEqual(result['final_status'], 'ALL_FAIL')
             self.assertIsNone(result['saved_as'])
             self.assertFalse(record.call_args.args[2])
@@ -184,7 +190,7 @@ class PmcPdfOutcomes(unittest.TestCase):
         hit = {'pdf_path': 'fixture-cache.pdf', 'channel': 'pmc', 'sha256': 'fixture-hash'}
         with patch('pa_cli.cache.cache_get', return_value=hit), \
              patch.object(fetch, 'fetch') as cascade:
-            result = fetch.fetch_doi(DOI)
+            result = fetch._fetch_doi_in_process(DOI)
         self.assertEqual(result['final_status'], 'SUCCESS_CACHE_HIT')
         self.assertEqual(result['saved_as'], hit['pdf_path'])
         cascade.assert_not_called()
