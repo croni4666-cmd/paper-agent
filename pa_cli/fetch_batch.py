@@ -136,8 +136,10 @@ def _fetch_one_entry(entry: Dict, out_dir: Path, skip_existing: bool = False,
             # may have left a truncated intermediate, so discard that stage.
             if response.get('error') not in ('fetch_timeout', 'fetch_worker_failed') and xml.is_file():
                 try:
-                    xml.replace(target.with_suffix('.xml'))
-                    result.xml_path = str(target.with_suffix('.xml'))
+                    from .fetch import _is_jats_article
+                    if _is_jats_article(xml.read_bytes()):
+                        xml.replace(target.with_suffix('.xml'))
+                        result.xml_path = str(target.with_suffix('.xml'))
                 except OSError:
                     if not result.success:
                         result.error = 'batch-output-error'

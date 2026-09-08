@@ -153,3 +153,21 @@ main()
                 summary = fetch_batch.run_fetch_batch(root / 'refs.bib', root, clean_xml=True)
             self.assertEqual(summary.n_success, 1)
             self.assertEqual(xml.read_text(), '<article>previous</article>')
+
+    def test_partial_xml_write_failure_does_not_replace_previous_xml(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            xml = root / 'paper.xml'
+            original = b'<article><body>Previous full text</body></article>'
+            xml.write_bytes(original)
+            def interrupted(**kwargs):
+                Path(kwargs['out_path']).with_suffix('.xml').write_bytes(b'<article><body>partial')
+                raise OSError('fixture interrupted XML write')
+            with patch('pa_cli.fetch.fetch', side_effect=interrupted), \
+                 patch('pa_cli.fetch_deadline.run_fetch', side_effect=inline_worker):
+                result = fetch_batch._fetch_one_entry({'key': 'paper', 'doi': '10.1000/a'}, root)
+            self.assertFalse(result.success)
+            self.assertEqual(result.error, 'fetch-entry-failed')
+            self.assertEqual(result.xml_path, '')
+            self.assertEqual(xml.read_bytes(), original)
+            self.assertEqual(list(root.iterdir()), [xml])
