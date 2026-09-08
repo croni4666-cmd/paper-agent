@@ -75,8 +75,19 @@ provider behavior remain unverified. The image size limit applies to Python
 embedding downloads; failed embedding still leaves the existing browser URL
 fallback. Image header checks are not a full image decode. Page-load timeout
 is not an end-to-end conversion deadline.
-Remaining: other retrieval paths (including the main cascade and browser/JATS
-paths) need equivalent coverage. P0.2 is not complete.
+Added: PMC PDF versus XML-only outcomes, automatic fallback, CLI exit status,
+batch XML preservation, and saved-file validation contracts. The default CLI
+now uses the automatic cascade; explicit source choices retain their routing.
+The wrapper checks PDF headers, not full document integrity.
+Remaining: other retrieval paths and size limits need equivalent coverage.
+P0.2 is not complete.
+
+Next retrieval fixes identified during contract review:
+
+- Restore the previous proxy environment after an explicit per-call override.
+- Honor MCP source preferences and the documented `pmc-pdf` rendering choice.
+- Reconcile advertised cache writes, runtime limits, and Unpaywall email options
+  with actual wrapper behavior; retain clear limits until implemented and tested.
 
 Separate deterministic offline contract tests from opt-in live probes. Each
 supported engine should have a fixture for result normalization and a small,

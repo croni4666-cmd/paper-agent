@@ -43,15 +43,15 @@ class ChannelStatsTests(unittest.TestCase):
     @patch("pa_cli.channel_stats.record_event")
     @patch("pa_cli.fetch.fetch")
     def test_fetch_wrapper_records_final_source(self, mock_fetch, mock_record):
-        mock_fetch.return_value = {
-            "source": "pmc_jats_pdf",
-            "path": "ignored.pdf",
-            "size": 123,
-            "pdf_url": None,
-        }
         from pa_cli.fetch import fetch_doi
-
-        result = fetch_doi("10.1000/example", output_dir=".", use_cache=False)
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "paper.pdf"
+            path.write_bytes(b"%PDF test")
+            mock_fetch.return_value = {
+                "source": "pmc_jats_pdf", "path": str(path),
+                "size": path.stat().st_size, "pdf_url": None,
+            }
+            result = fetch_doi("10.1000/example", output_dir=temp, use_cache=False)
 
         self.assertEqual(result["final_status"], "SUCCESS")
         args, _ = mock_record.call_args
