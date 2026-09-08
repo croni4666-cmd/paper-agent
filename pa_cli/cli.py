@@ -275,7 +275,8 @@ def keys_remind(as_json, write_alerts_path):
 @click.option("--unpaywall-email", default=None,
               help="Email for Unpaywall; defaults to UNPAYWALL_EMAIL when omitted")
 @click.option("--max-total-sec", default=300, show_default=True,
-              help="Compatibility option; total runtime cap is not yet enforced. Requests use per-source timeouts.")
+              type=click.IntRange(min=1),
+              help="Total single-fetch worker budget in seconds; stops download and browser processes on timeout")
 @click.option("--no-cache", is_flag=True,
               help="Bypass cache lookup; cascade attempts download (cache still written on success)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")

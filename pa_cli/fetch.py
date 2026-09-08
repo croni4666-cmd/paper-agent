@@ -942,50 +942,29 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 
 
 # ─────────────────────────────────────────────────────────────────
-# Backward-compat wrapper: v3.9.8.1-style fetch_doi (used by CLI + deep_rerank)
-# Added 2026-07-16 (audit round 22) — v3.9.8.2 renamed fetch_doi → fetch and
-# dropped channels/output_dir/use_cache/max_total_sec params. This wrapper
-# translates old API → new API, restoring `pa fetch <DOI>` CLI + cache
-# integration compatibility.
-#
-# Honest 3-tier limits (documented):
-#   - cache integration: lookup can be bypassed; successful downloads still
-#     attempt a cache write, reporting cache_written without failing the download.
-#   - max_total_sec: NOT implemented in new fetch. Old 5-min hard cap
-#     is gone. Each channel call has its own 30s timeout (urllib default).
-#   - channels: translated to `prefer` heuristically. Not all 8 channels
-#     supported (e.g. "openalex" / "arxiv" / "doi_redirect" / "playwright"
-#     are not in new fetch's prefer list — they fall through to "auto").
-#   - result dict shape: mapped back to old shape (via_channel, saved_as,
-#     elapsed_sec, final_status, channels) for callers that depend on it.
-def fetch_doi(doi: str, output_dir: str = ".",
-              proxy: str = None,
-              channels = None,
-              unpaywall_email: Optional[str] = None,
-              max_total_sec: int = 300,
-              use_cache: bool = True, prefer: Optional[str] = None) -> Dict[str, Any]:
-    """v3.9.8.1-style fetch wrapper. Translates to new fetch() and maps result back.
+# The public wrapper supervises an isolated process so a timeout stops blocking
+# provider calls and browser descendants, rather than abandoning a live thread.
+def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
+              channels=None, unpaywall_email: Optional[str] = None,
+              max_total_sec: int = 300, use_cache: bool = True,
+              prefer: Optional[str] = None) -> Dict[str, Any]:
+    """Fetch with a total worker deadline (including cache access).
 
-    Explicit prefer overrides legacy channels. A valid cache hit still wins
-    when use_cache=True; disable cache to require a fresh source attempt.
-
-    New in v3.9.9.6 (audit round 22): this wrapper was added to restore
-    `pa fetch <DOI>` CLI and `pa_cli.deep_rerank.fetch_doi` callsite
-    after v3.9.8.2 renamed fetch_doi → fetch and changed the signature.
-
-    Channel → prefer mapping (heuristic; not all 8 channels supported):
-      ["unpaywall", ...]     → prefer="scihub"  (new cascade includes unpaywall)
-      ["scihub", ...]        → prefer="scihub"
-      ["annas", ...]         → prefer="annas"
-      default / other        → prefer="auto"
-
-    Result shape mapping:
-      new `path`        → old `saved_as`
-      new `source`      → old `via_channel` (no "cache:" prefix; cache is bypassed)
-      new `size`        → (not in old shape, but kept for completeness)
-      new `pdf_url`     → old `via_url`
-      new `error`       → old `final_status` = "ALL_FAIL" + `error` + `hint`
+    The budget starts before process launch. OS process creation and termination
+    may add overhead. Timeout returns no saved path; files already written are
+    not rolled back. Direct fetch() and batch retrieval are not supervised here.
     """
+    from .fetch_deadline import run_fetch
+    return run_fetch(dict(doi=doi, output_dir=str(output_dir), proxy=proxy,
+                          channels=channels, unpaywall_email=unpaywall_email,
+                          use_cache=use_cache, prefer=prefer), max_total_sec)
+
+
+def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
+                          channels=None, unpaywall_email: Optional[str] = None,
+                          max_total_sec: int = 300, use_cache: bool = True,
+                          prefer: Optional[str] = None) -> Dict[str, Any]:
+    """Worker implementation. Caller owns process lifetime and cancellation."""
     t0 = time.time()
     requested_prefer = prefer
     if requested_prefer is not None and requested_prefer not in FETCH_PREFERENCES:

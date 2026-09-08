@@ -43,7 +43,7 @@ class ChannelStatsTests(unittest.TestCase):
     @patch("pa_cli.channel_stats.record_event")
     @patch("pa_cli.fetch.fetch")
     def test_fetch_wrapper_records_final_source(self, mock_fetch, mock_record):
-        from pa_cli.fetch import fetch_doi
+        from pa_cli.fetch import _fetch_doi_in_process as fetch_doi
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "paper.pdf"
             path.write_bytes(b"%PDF test")

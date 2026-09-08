@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Enforce the single-fetch runtime budget in an isolated worker, including cache access and provider/browser work. Timeout returns `fetch_timeout` without a saved path, and terminates the worker and normal descendants.
+- Preserve the calling directory while resolving the worker from the active package; pass request settings through stdin and sanitize worker failures.
+- Validate positive CLI timeouts and cover real process-tree cleanup, local HTTP blocking, and opt-in Chromium termination. Batch/direct `fetch()` budgets are unchanged; completed or partial file writes are not rolled back.
+
 - Require matching DOI identity, checksum, and a valid timestamp within 365 days for PDF cache hits; corrupt or colliding entries become misses without deleting files.
 - Stage PDF and metadata before replacing cache files. Serialization failures preserve the old pair; interrupted publication yields a safe miss, not a guaranteed atomic update.
 - Keep tests isolated from the user cache even when individual tests clear environment variables.

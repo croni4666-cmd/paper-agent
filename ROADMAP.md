@@ -89,8 +89,14 @@ SDK; they do not verify a live stdio MCP client/server session.
 
 Next retrieval fixes identified during contract review:
 
-- Implement a real, cancellable end-to-end runtime deadline. The legacy option
-  remains unenforced and the CLI now states that limitation explicitly.
+- Extend cancellation to the batch/direct `fetch()` paths and define partial-file
+  recovery. Single-fetch `fetch_doi()` and `pa fetch` now enforce a worker budget
+  (default 300 seconds), including cache, provider calls, and browser rendering.
+  Normal descendants are contained by Windows Job Objects or POSIX process groups.
+  OS launch/cleanup overhead can exceed the budget; existing writes are not rolled
+  back. POSIX children deliberately creating a new session are outside the group.
+  Tests cover local HTTP blocking, child-process late writes, and opt-in Chromium
+  termination; public-provider latency is not a deterministic acceptance test.
 
 Added: cache identity/checksum/365-day expiry contracts and staged writes, with
 failure tests for metadata encoding and interrupted publication. Publication of
