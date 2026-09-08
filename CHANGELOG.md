@@ -15,6 +15,9 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Reject oversize PDFs in bioRxiv, CORE, and OSF instead of returning truncated files.
+- Reject empty/non-PDF responses at those download boundaries and cover four downloader channels with offline failure tests.
+
 - Cover AMiner Basic phrase deduplication and year filtering; preserve an error when both automatic search paths fail.
 
 - Add offline result-contract fixtures for the six public search engines.

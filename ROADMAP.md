@@ -56,8 +56,10 @@ provider exception text. Formal tests cover probe validation and error handling.
 
 Added: offline normalized-result fixtures for all six public engines (AMiner Pro and Basic
 paths), including Crossref empty dates and OpenAlex missing-author/date regressions.
-Remaining: the retrieval-channel
-success/non-PDF/oversize/network-failure matrix. P0.2 is not complete.
+Added: bioRxiv, CORE, OSF, and ChemRxiv downloader contracts for success,
+non-PDF/empty responses, exact size limits, oversize, and connection/read failures.
+Remaining: other retrieval paths (including the main cascade and browser/JATS
+paths) need equivalent coverage. P0.2 is not complete.
 
 Separate deterministic offline contract tests from opt-in live probes. Each
 supported engine should have a fixture for result normalization and a small,
