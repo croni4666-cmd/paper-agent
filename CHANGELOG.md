@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Require matching DOI identity, checksum, and a valid timestamp within 365 days for PDF cache hits; corrupt or colliding entries become misses without deleting files.
+- Stage PDF and metadata before replacing cache files. Serialization failures preserve the old pair; interrupted publication yields a safe miss, not a guaranteed atomic update.
+- Keep tests isolated from the user cache even when individual tests clear environment variables.
+
 - Populate the PDF cache after successful wrapper downloads, including `--no-cache` downloads; report `cache_written` and preserve the downloaded file when caching fails.
 - Allow small PDFs in the header-checked cache instead of rejecting everything below 50KB.
 - Honor `--unpaywall-email` with a per-call override, default to the environment when omitted, and avoid echoing emails or raw response bodies in failure diagnostics.

@@ -2,31 +2,20 @@
 
 Avoids re-downloading the same DOI across `pa fetch` invocations.
 
-Design (matches user's [P0-2] acceptance criteria):
-  ~/.paper-agent/cache/{doi_slug}.pdf          ← actual PDF bytes
-  ~/.paper-agent/cache/{doi_slug}.meta.json     ← {ts, sha256, channel, url, size}
-
-Cache layout is **read-through**:
-  - pa fetch checks cache first; on hit (PDF magic + sha256 match) returns path
-  - cascade skips entirely on hit
-  - after cascade success, sidecar is written so next call hits cache
-
-Cache root configuration:
-  - Default: ~/.paper-agent/cache/  (per original P0-2 spec)
-  - Override: PA_CACHE_DIR env var
-  - Dev fallback (HOME undefined): ./pa_cache/
-
-TTL handling (admin-side, not enforced on read):
-  - `pa cache stats` reports oldest/newest timestamps
-  - `pa cache clean --older-than Nd` removes old entries
-  - read-path ignores expired (treats as miss) — defensive against slow invalidation
+PDFs and JSON sidecars share the existing DOI-derived filename layout.
+Reads verify DOI identity, PDF header, checksum, and a fixed 365-day lifetime.
+Writes stage both files before replacing each destination. Pair publication is
+not atomic: an interrupted replacement can leave a pair that reads as a miss.
+PA_CACHE_DIR overrides the default ~/.paper-agent/cache/ directory.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional, Tuple
@@ -37,17 +26,7 @@ DEFAULT_CACHE_ROOT = Path.home() / ".paper-agent" / "cache"
 
 
 def get_cache_root() -> Path:
-    """Resolve cache root. PA_CACHE_DIR env var > ~/.paper-agent/cache/.
-
-    Always uses ~/.paper-agent/cache/ as the default per [P0-2] acceptance.
-    Creates it on first call (parents=True, no failure if already exists).
-    No fallback to ./pa_cache/ — keeping semantics consistent with
-    keys-related state (which always lives under ~/.mavis/... or ~/.paper-agent/...).
-
-    PA_TEST=1 fallback: for unit tests, when HOME is unavailable or testing
-    in a sandbox without persistent home, returns ./pa_cache_test/. Tests
-    should set PA_TEST=1 to opt into this path.
-    """
+    """Resolve and create PA_CACHE_DIR, or the default user cache directory."""
     env = os.environ.get("PA_CACHE_DIR")
     if env:
         p = Path(env).expanduser()
@@ -59,15 +38,20 @@ def get_cache_root() -> Path:
     return p
 
 
-def _doi_slug(doi: str) -> str:
-    """DOI → filename slug. Strip URL prefixes, replace problematic chars."""
+def _bare_doi(doi: str) -> str:
+    """Remove supported DOI prefixes without collapsing identifier characters."""
     if doi.startswith("https://doi.org/"):
         doi = doi[len("https://doi.org/"):]
     elif doi.startswith("http://doi.org/"):
         doi = doi[len("http://doi.org/"):]
     elif doi.startswith("doi:"):
         doi = doi[len("doi:"):]
-    return doi.replace("/", "_").replace(".", "_")
+    return doi
+
+
+def _doi_slug(doi: str) -> str:
+    """Keep the existing cache filename format for compatibility."""
+    return _bare_doi(doi).replace("/", "_").replace(".", "_")
 
 
 def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
@@ -78,7 +62,7 @@ def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
 
 
 def _is_pdf(b: bytes) -> bool:
-    """PDF magic check — same as fetch.is_pdf."""
+    """Check the PDF header without validating the full document structure."""
     return b.startswith(b"%PDF") and len(b) > 4
 
 
@@ -101,8 +85,7 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
       1. Both .pdf and .meta.json exist
       2. .pdf passes is_pdf() magic check
       3. .meta.json sha256 matches re-computed sha256 of .pdf
-      4. ts in meta is within read_ttl_days (default 365; cache_clean is the
-         admin path, but defends against infinite growth)
+      4. DOI matches and ts is finite, positive, not future, and at most 365 days old
     """
     root = root or get_cache_root()
     pdf_path, meta_path = _paths(doi, root)
@@ -110,7 +93,23 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
         return None
     try:
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
+    except (json.JSONDecodeError, UnicodeDecodeError, OSError):
+        return None
+
+    if not isinstance(meta, dict) or not isinstance(meta.get("doi"), str):
+        return None
+    if _bare_doi(meta["doi"]).casefold() != _bare_doi(doi).casefold():
+        return None
+    ts = meta.get("ts")
+    if isinstance(ts, bool) or not isinstance(ts, (int, float)):
+        return None
+    try:
+        if not math.isfinite(ts):
+            return None
+    except OverflowError:
+        return None
+    age_days = (time.time() - ts) / 86400
+    if ts <= 0 or not 0 <= age_days <= 365:
         return None
 
     # Validate PDF magic
@@ -123,17 +122,9 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
 
     # Validate sha256 against sidecar
     actual_sha = hashlib.sha256(body).hexdigest()
-    if meta.get("sha256") and meta["sha256"] != actual_sha:
-        # Sidecar out of sync — treat as miss. Clean up both files so the
-        # entry doesn't linger and skew cache_stats. Next fetch will re-write.
-        try:
-            pdf_path.unlink()
-        except OSError:
-            pass
-        try:
-            meta_path.unlink()
-        except OSError:
-            pass
+    if meta.get("sha256") != actual_sha:
+        # A reader may see the gap between the two published files. Treat it
+        # as a miss, without deleting files another writer may be replacing.
         return None
 
     return {
@@ -145,7 +136,7 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
         "channel": meta.get("channel", ""),
         "url": meta.get("url", ""),
         "size": len(body),
-        "age_days": (time.time() - meta.get("ts", 0)) / 86400,
+        "age_days": age_days,
     }
 
 
@@ -165,12 +156,25 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
     pdf_path, meta_path = _paths(doi, root)
     sha = hashlib.sha256(body).hexdigest()
     ts = time.time()
-    pdf_path.write_bytes(body)
-    meta_path.write_text(json.dumps(
+    metadata = json.dumps(
         {"doi": doi, "ts": ts, "sha256": sha, "channel": channel,
          "url": url, "size": len(body)},
         ensure_ascii=False, indent=2,
-    ), encoding="utf-8")
+    ).encode("utf-8")
+    root.mkdir(parents=True, exist_ok=True)
+    staged = []
+    try:
+        for target, data in ((pdf_path, body), (meta_path, metadata)):
+            with tempfile.NamedTemporaryFile(dir=root, prefix=".pa-cache-", delete=False) as stream:
+                temporary = Path(stream.name)
+                staged.append((temporary, target))
+                stream.write(data)
+            # Both files are fully staged before publishing either one.
+        for temporary, target in staged:
+            temporary.replace(target)
+    finally:
+        for temporary, _ in staged:
+            temporary.unlink(missing_ok=True)
     return {
         "doi": doi, "pdf_path": str(pdf_path), "meta_path": str(meta_path),
         "sha256": sha, "ts": ts, "channel": channel, "url": url,
