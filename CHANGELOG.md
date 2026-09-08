@@ -15,6 +15,11 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Populate the PDF cache after successful wrapper downloads, including `--no-cache` downloads; report `cache_written` and preserve the downloaded file when caching fails.
+- Allow small PDFs in the header-checked cache instead of rejecting everything below 50KB.
+- Honor `--unpaywall-email` with a per-call override, default to the environment when omitted, and avoid echoing emails or raw response bodies in failure diagnostics.
+- Correct single-fetch help: the legacy total runtime option is not an enforced hard deadline. Isolate formal tests from the user's PDF cache.
+
 - Restore the previous HTTPS proxy setting after per-call overrides, including failed downloads and raised exceptions.
 - Honor explicit retrieval preferences in the wrapper and MCP handler, reject unsupported preferences, and stop retrying internal TypeErrors as a different request.
 - Make `pmc-pdf` skip Europe PMC and use JATS rendering as documented; expose supported source choices in the single-paper MCP schema.

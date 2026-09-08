@@ -89,8 +89,13 @@ SDK; they do not verify a live stdio MCP client/server session.
 
 Next retrieval fixes identified during contract review:
 
-- Reconcile advertised cache writes, runtime limits, and Unpaywall email options
-  with actual wrapper behavior; retain clear limits until implemented and tested.
+- Implement a real, cancellable end-to-end runtime deadline. The legacy option
+  remains unenforced and the CLI now states that limitation explicitly.
+
+Added: best-effort PDF cache writes after wrapper success (also with cache lookup
+disabled), small-PDF cache acceptance, per-call Unpaywall email precedence and
+cleanup, and private diagnostic contracts. Formal tests isolate the PDF cache.
+Cache acceptance checks headers only, not complete document integrity.
 
 Separate deterministic offline contract tests from opt-in live probes. Each
 supported engine should have a fixture for result normalization and a small,

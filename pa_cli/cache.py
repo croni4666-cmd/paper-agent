@@ -79,7 +79,7 @@ def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
 
 def _is_pdf(b: bytes) -> bool:
     """PDF magic check — same as fetch.is_pdf."""
-    return b.startswith(b"%PDF") and len(b) > 50_000
+    return b.startswith(b"%PDF") and len(b) > 4
 
 
 # ===== public API =====
@@ -154,12 +154,12 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
     """Persist PDF + sidecar to cache. Returns the entry dict on success.
 
     Idempotent: overwrites existing entry if present (newer ts + sha256).
-    Always validates PDF magic before writing — refuses to cache a corrupt PDF.
+    Checks PDF headers before writing; does not parse or validate full PDF structure.
     """
     if not _is_pdf(body):
         raise ValueError(
             f"cache_put: refusing to cache invalid PDF for {doi} "
-            f"(magic prefix check failed or size < 50KB: actual size={len(body)})"
+            f"(PDF header missing or incomplete: actual size={len(body)})"
         )
     root = root or get_cache_root()
     pdf_path, meta_path = _paths(doi, root)

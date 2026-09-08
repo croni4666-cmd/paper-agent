@@ -28,6 +28,7 @@ import os
 import re
 import json
 import time
+from contextvars import ContextVar
 import urllib.request as ur
 import urllib.error
 import urllib.parse
@@ -87,6 +88,7 @@ FETCH_PREFERENCES = (
     "auto", "arxiv", "annas", "pmc", "pmc-pdf", "unpaywall",
     "biorxiv", "core", "osf", "chemrxiv", "scihub",
 )
+_UNPAYWALL_EMAIL_OVERRIDE = ContextVar("unpaywall_email_override", default=None)
 
 
 def _get_proxy_dict() -> Dict[str, str]:
@@ -281,7 +283,10 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
 
     # Unpaywall 邮箱必须注册过 (v3.9.8.2 验证: 假邮箱返 1041B CF 反爬页)
-    email = os.environ.get("UNPAYWALL_EMAIL", "").strip()
+    email = _UNPAYWALL_EMAIL_OVERRIDE.get()
+    if email is None:
+        email = os.environ.get("UNPAYWALL_EMAIL", "")
+    email = email.strip()
     if not email:
         return {"error": "unpaywall_no_email",
                 "message": "UNPAYWALL_EMAIL env var is empty",
@@ -300,14 +305,12 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     if status == 422:
         # v3.9.8.2: 422 = "Please use your own email address" (Unpaywall 拒了陌生邮箱)
         return {"error": "unpaywall_email_invalid",
-                "message": f"Unpaywall rejected UNPAYWALL_EMAIL={email!r} (HTTP 422)",
-                "hint": "Either email is fake OR not registered. "
-                        f"Register {email} at https://api.unpaywall.org/register "
-                        "or use a different email that's already registered."}
+                "message": "Unpaywall rejected the configured email (HTTP 422)",
+                "hint": "Check --unpaywall-email or UNPAYWALL_EMAIL"}
     if status != 200:
         return {"error": f"unpaywall_http_{status}",
-                "message": body.decode("utf-8", errors="replace")[:200],
-                "hint": "If body mentions 'email', see unpaywall_email_invalid fix above."}
+                "message": f"Unpaywall request failed (HTTP {status})",
+                "hint": "Check service availability and email configuration"}
     # v3.9.8.2: Unpaywall returns 1041B zlib/CF page for unknown email (HTTP 200)
     # Detect by checking JSON parse failure + small body
     try:
@@ -316,8 +319,7 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         return {"error": "unpaywall_email_invalid",
                 "message": f"Got HTTP 200 but body is {len(body)}B non-JSON "
                            "(likely Unpaywall CF anti-bot for unknown email)",
-                "hint": f"Register {email} at https://api.unpaywall.org/register, "
-                        "or use a different UNPAYWALL_EMAIL that's already registered"}
+                "hint": "Check the service response and configured Unpaywall email"}
     # 拿 best_oa_location
     best = data.get("best_oa_location") or {}
     pdf_url = best.get("url")
@@ -947,9 +949,8 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 # integration compatibility.
 #
 # Honest 3-tier limits (documented):
-#   - cache integration: NOT restored (was removed in v3.9.8.2). --no-cache
-#     flag has no effect on the wrapper (always bypasses cache). Use
-#     `pa cache put` to manually populate cache.
+#   - cache integration: lookup can be bypassed; successful downloads still
+#     attempt a cache write, reporting cache_written without failing the download.
 #   - max_total_sec: NOT implemented in new fetch. Old 5-min hard cap
 #     is gone. Each channel call has its own 30s timeout (urllib default).
 #   - channels: translated to `prefer` heuristically. Not all 8 channels
@@ -960,7 +961,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 def fetch_doi(doi: str, output_dir: str = ".",
               proxy: str = None,
               channels = None,
-              unpaywall_email: str = "hello@example.com",
+              unpaywall_email: Optional[str] = None,
               max_total_sec: int = 300,
               use_cache: bool = True, prefer: Optional[str] = None) -> Dict[str, Any]:
     """v3.9.8.1-style fetch wrapper. Translates to new fetch() and maps result back.
@@ -1107,9 +1108,11 @@ def fetch_doi(doi: str, output_dir: str = ".",
             p = "http://" + p
         os.environ["HTTPS_PROXY"] = p
         proxy_env_set = True
+    email_token = _UNPAYWALL_EMAIL_OVERRIDE.set(unpaywall_email)
     try:
         r = fetch(doi=doi, out_path=out_path, prefer=prefer)
     finally:
+        _UNPAYWALL_EMAIL_OVERRIDE.reset(email_token)
         if proxy_env_set:
             if prev_https_proxy is None:
                 os.environ.pop("HTTPS_PROXY", None)
@@ -1168,6 +1171,16 @@ def fetch_doi(doi: str, output_dir: str = ".",
                 "channels_translated_to": prefer,
             },
         }
+    # Caching is best-effort; a cache failure must not invalidate a saved PDF.
+    cache_written = False
+    try:
+        from .cache import cache_put
+        cache_put(doi, Path(r["path"]).read_bytes(),
+                  channel=r.get("source", prefer), url=r.get("pdf_url") or "")
+        cache_written = True
+    except Exception:
+        pass
+
     # Success
     return {
         "doi": doi,
@@ -1177,6 +1190,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
         "elapsed_sec": elapsed,
         "final_status": "SUCCESS",
         "cache_hit": False,  # not from cache (would have returned earlier)
+        "cache_written": cache_written,
         "size_bytes": r.get("size"),
         "_wrapper_notes": {
             "cache_supported": True,
