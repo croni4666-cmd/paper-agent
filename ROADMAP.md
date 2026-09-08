@@ -25,6 +25,21 @@ providers or model-heavy ranking features.
 - Safety baseline: proxy validation, credential redaction, dependency
   compatibility constraints, formal tests, and a security policy.
 
+## Recommended execution order
+
+| Order | Item | User-visible gain | Completion evidence |
+|---|---|---|---|
+| 1 | P0.4: bound PDF parsing and validate old cache | No indefinite validation or false cache success | Timeout/resource and migration fixtures |
+| 2 | P0.2: browser CI, remaining channels, real MCP | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
+| 3 | P1.1: diagnostic reports and resumable batches | Retry only eligible failed papers with clear reasons | Interrupted-job restart tests |
+| 4 | P0.3: shared provenance schema | Trace records from search to downloaded/exported evidence | Compatible schema and merge/export tests |
+| 5 | P1.2: evidence-linked synthesis | Separate supported claims from missing/contradictory evidence | Deterministic citation-linked outputs |
+| 6 | P2.1/P2.2: command modularization and reproducible release | Reduce maintenance and installation regressions | CLI compatibility and clean-install checks |
+
+Keep six engines for now. Evaluate retrieval success, relevance, latency and
+API cost on a fixed, opt-in query/DOI corpus before adding providers or ranking
+models. No current AMiner price or renewal recommendation is inferred from tests.
+
 ## Active Roadmap
 
 ### P0.1 — Release and compatibility gate
@@ -46,98 +61,70 @@ Acceptance criteria:
 Verified in merged PR #33: Python 3.10/3.11/3.12 tests, dependency resolution,
 and dependency audit all passed.
 
-### P0.2 — Engine contract tests and live-smoke harness
+### P0.2 — Engine and retrieval contract coverage
 
-Status: in progress
+Status: in progress; verified improvements merged through PR #48
 
-Implemented: opt-in `pa engine-probe` JSON reports, sequential engine execution,
-validated limits and engine selection, and fixed diagnostics that do not copy
-provider exception text. Formal tests cover probe validation and error handling.
+Completed coverage:
 
-Added: offline normalized-result fixtures for all six public engines (AMiner Pro and Basic
-paths), including Crossref empty dates and OpenAlex missing-author/date regressions.
-Added: bioRxiv, CORE, OSF, and ChemRxiv downloader contracts for success,
-non-PDF/empty responses, exact size limits, oversize, and connection/read failures.
-Added: main HTTP response lifecycle, gzip/deflate decoding, HTTP error bodies,
-and safe transport-failure return contracts.
-Added: JATS cold-cache paths, malformed/error XML, invalid IDs, network failures,
-and unavailable-cache contracts.
-Added: standalone/namespaced JATS rendering contracts and an opt-in real Chromium
-PDF test (`PA_TEST_BROWSER=1`, with Playwright browser and pypdf installed).
-Added: figure response size/header checks, safe failure logs, embedding attributes,
-and temporary-file/browser cleanup contracts. Opt-in tests use a local HTTP fixture
-and real Chromium to verify a PDF image object, encoded file paths, and cleanup
-after a stalled image times out. Tested with the declared Playwright 1.60 extra.
-Run the browser tests with `PA_TEST_BROWSER=1` after installing `.[browser]`,
-`pypdf`, and Playwright Chromium. Default CI skips browser integration tests.
-Limits: publisher-specific layouts, lazy images across pages, and external
-provider behavior remain unverified. The image size limit applies to Python
-embedding downloads; failed embedding still leaves the existing browser URL
-fallback. Image header checks are not a full image decode. Page-load timeout
-is not an end-to-end conversion deadline.
-Added: PMC PDF versus XML-only outcomes, automatic fallback, CLI exit status,
-batch XML preservation, and saved-file validation contracts. The default CLI
-now uses the automatic cascade; explicit source choices retain their routing.
-The wrapper checks PDF headers, not full document integrity.
-Remaining: other retrieval paths and size limits need equivalent coverage.
-P0.2 is not complete.
+- Six public search engines have offline normalization fixtures; AMiner Basic
+  and Pro paths are covered. `pa engine-probe` provides opt-in sequential JSON
+  availability reports with validated inputs and sanitized errors.
+- bioRxiv, CORE, OSF and ChemRxiv have download success, invalid-content,
+  size-limit and transport-failure contracts. Main HTTP responses are closed
+  consistently and decoding/error handling has regression coverage.
+- PMC JATS cache validation, cold-cache output, XML-only failure and automatic
+  PDF fallback are covered. Explicit source selection and Unpaywall email/proxy
+  precedence have contracts. MCP handler coverage uses transport SDK stubs.
+- Real Chromium tests cover article text, embedded image objects, special local
+  paths and timeout cleanup. They use local HTTP fixtures, not publisher sites.
+- Single-fetch workers enforce their budget; batches pass each active worker the
+  shared remaining budget. Tests check that normal descendants stop on timeout.
+- Single and batch output is staged. PDF copy failures/timeouts preserve old
+  output; validated XML survives XML-only outcomes and cleanup uses provenance.
+- Fresh PDFs and skip-existing candidates use strict pypdf page/content checks.
+  Cache hits verify DOI, checksum and 365-day age, but still only check PDF headers.
 
-Added: per-call proxy restoration across success/error/exception outcomes,
-MCP-to-wrapper source forwarding, explicit-preference validation/precedence,
-and forced JATS mode contracts. MCP handler tests stub the optional transport
-SDK; they do not verify a live stdio MCP client/server session.
+Evidence checkpoint: PR #48 code passed 129 tests and 151 subtests locally with
+`PA_TEST_BROWSER=1`, plus dependency checks. Its five CI jobs passed on GitHub.
+This is historical evidence for that commit, not a new live-provider assessment.
+Default CI skips the optional Chromium tests; install `.[browser]` and Chromium
+and set `PA_TEST_BROWSER=1` to include them locally.
 
-Next retrieval fixes identified during contract review:
+Remaining acceptance criteria:
 
-- Extend cancellation to direct `fetch()` and bound parent-side PDF parsing.
-  Fresh output and skip-existing validation now use pypdf strict parsing with
-  nonempty unencrypted page trees and readable page content streams. Real PDF,
-  marker-only, truncated, missing-page/content and encrypted fixtures are covered.
-  Legacy cache validation remains header/checksum-based. Font/image decoding,
-  visual fidelity and parser time/memory limits are still outside this check.
-  Single-fetch output now uses staging and same-directory atomic replacement per
-  published file; copy failure, timeout, and invalid markers preserve old output.
-  XML is validated before publication. Cache hits need no writable output folder.
-  Cache entries can persist even if output publication fails; PDF/XML publication
-  is independent, and filesystem publication overhead is outside worker time.
-  Batch retrieval now shares the remaining budget with each worker, stages PDFs,
-  checks header/EOF markers and publishes only completed output. Timeout discards
-  the stage and preserves previous PDFs. Completed XML-only results are retained;
-  `--clean-xml` leaves skipped-existing files alone. Full PDF structure validation
-  and batch parsing/callback deadlines remain outside this implementation. Single-fetch `fetch_doi()` and `pa fetch` now enforce a worker budget
-  (default 300 seconds), including cache, provider calls, and browser rendering.
-  Normal descendants are contained by Windows Job Objects or POSIX process groups.
-  OS launch/cleanup overhead can exceed the budget; direct `fetch()` writes are not
-  transactional. POSIX children deliberately creating a new session are outside the group.
-  Tests cover local HTTP blocking, child-process late writes, and opt-in Chromium
-  termination; public-provider latency is not a deterministic acceptance test.
+- Add equivalent contracts for remaining retrieval channels and size limits.
+- Exercise the real MCP stdio transport, not just its handler.
+- Establish a reproducible browser CI job and representative JATS layout corpus
+  for multi-page content, lazy images and publisher-specific structures.
+- Keep external availability/quality probes opt-in and separate from offline CI;
+  classify provider failures as environmental results with actionable causes.
 
-Added: cache identity/checksum/365-day expiry contracts and staged writes, with
-failure tests for metadata encoding and interrupted publication. Publication of
-the two files is not atomic; a mismatched pair safely becomes a cache miss.
-Concurrent-writer coordination and crash durability remain unverified.
+P0.2 remains open until those coverage gaps are closed.
 
-Added: best-effort PDF cache writes after wrapper success (also with cache lookup
-disabled), small-PDF cache acceptance, per-call Unpaywall email precedence and
-cleanup, and private diagnostic contracts. Formal tests isolate the PDF cache.
-Cache acceptance checks headers only, not complete document integrity.
+### P0.4 — Bounded validation and consistent cache acceptance
 
-Separate deterministic offline contract tests from opt-in live probes. Each
-supported engine should have a fixture for result normalization and a small,
-rate-limited probe that records availability, latency, result count, and
-actionable failures without exposing credentials.
+Status: planned; recommended next implementation
 
-Acceptance criteria:
+1. Put PDF parsing behind a cancellable boundary with explicit resource limits.
+   Parent-side parsing currently has no separate time/memory limit. Verify that
+   pathological documents stop within the bound and leave no background work.
+2. Revalidate legacy cached PDFs with a versioned validation policy. A matching
+   checksum alone must not make an unreadable PDF a successful cache hit. Test
+   migration, corrupted entries and preservation of valid existing cache data.
+3. Define cache publication/concurrency behavior. PDF and metadata replacement
+   is not a single transaction; concurrent writers and crash durability remain
+   unverified. Fault injection should prove that mismatched pairs never hit.
+4. Consolidate direct `fetch()` and supervised public entry-point semantics.
+   Direct calls still use provider timeouts and write directly. Define which
+   paths are supported before extending or deprecating legacy behavior.
 
-- Every public search engine has normalized-schema contract coverage.
-- Every retrieval channel has success, non-PDF, oversize, and network-failure
-  coverage where applicable.
-- Live probes are explicitly opt-in and emit a machine-readable report.
-- A failing external service is reported as an environmental result, not a
-  flaky unit-test failure.
-
-Why now: provider behavior changes more often than core code, and the current
-test suite mostly covers recent fixes rather than all engine contracts.
+Limits to retain in user documentation: strict parsing can reject repairable or
+encrypted files; readable page streams do not prove visual fidelity, decoded
+fonts/images or absence of malicious content. PDF/XML publication is independent,
+valid cache writes can outlive output failure, and OS startup/cleanup, publication,
+BibTeX parsing and progress callbacks are not a strict whole-command deadline.
+POSIX children deliberately detaching into a new session escape process groups.
 
 ### P0.3 — Provenance-first result model
 
@@ -254,6 +241,15 @@ Before starting a roadmap item:
 5. Update this Roadmap and CHANGELOG only with verified outcomes.
 
 ## Completed Recently
+
+Merged on main, still **Unreleased** (release remains 3.9.29.1):
+
+- PR #34–#42: probes/contracts, HTTP/JATS reliability, source routing and options.
+- PR #43–#44: cache population, identity/checksum/expiry and staged writes.
+- PR #45–#47: real worker cancellation and protected batch/single file publication.
+- PR #48: strict fresh-PDF/page-content validation and real PDF test fixtures.
+
+Published release history:
 
 - 3.9.29.1: proxy credential redaction, unified network validation, JATS
   network-state fix, compatible dependency constraints, and a full security
