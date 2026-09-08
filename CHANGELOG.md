@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Restore the previous HTTPS proxy setting after per-call overrides, including failed downloads and raised exceptions.
+- Honor explicit retrieval preferences in the wrapper and MCP handler, reject unsupported preferences, and stop retrying internal TypeErrors as a different request.
+- Make `pmc-pdf` skip Europe PMC and use JATS rendering as documented; expose supported source choices in the single-paper MCP schema.
+
 - Treat PMC XML-only retrieval as a PDF failure while preserving the XML and error details; automatic retrieval continues to other sources instead of reporting a nonexistent PDF.
 - Preserve canonical PDF path, size, and URL for Europe PMC results. Verify the saved file's PDF header before reporting wrapper success or successful channel statistics.
 - Default CLI retrieval to the automatic cascade. Cover CLI failure status, fallback selection, stale/missing outputs, and batch XML preservation after PDF failure.

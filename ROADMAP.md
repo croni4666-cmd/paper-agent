@@ -82,10 +82,13 @@ The wrapper checks PDF headers, not full document integrity.
 Remaining: other retrieval paths and size limits need equivalent coverage.
 P0.2 is not complete.
 
+Added: per-call proxy restoration across success/error/exception outcomes,
+MCP-to-wrapper source forwarding, explicit-preference validation/precedence,
+and forced JATS mode contracts. MCP handler tests stub the optional transport
+SDK; they do not verify a live stdio MCP client/server session.
+
 Next retrieval fixes identified during contract review:
 
-- Restore the previous proxy environment after an explicit per-call override.
-- Honor MCP source preferences and the documented `pmc-pdf` rendering choice.
 - Reconcile advertised cache writes, runtime limits, and Unpaywall email options
   with actual wrapper behavior; retain clear limits until implemented and tested.
 

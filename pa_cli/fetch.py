@@ -83,6 +83,11 @@ E_404 = "fetch_404"
 E_ALL_MIRRORS = "fetch_all_mirrors_failed"
 E_SAVE = "fetch_save_error"
 
+FETCH_PREFERENCES = (
+    "auto", "arxiv", "annas", "pmc", "pmc-pdf", "unpaywall",
+    "biorxiv", "core", "osf", "chemrxiv", "scihub",
+)
+
 
 def _get_proxy_dict() -> Dict[str, str]:
     """Deprecated wrapper. Use pa_cli._http.get_proxy_dict() instead.
@@ -527,8 +532,10 @@ def _pmc_jats_to_pdf(pmcid: str, xml_path: str, out_path: str = None,
                 "hint": "Check playwright install or JATS XML validity"}
 
 
-def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
+def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -> Dict[str, Any]:
     """PMC channel: DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort).
+
+    With force_jats=True, skip Europe PMC and render the retrieved XML locally.
 
     Returns dict with:
       - success: "pmc_xml" (XML saved) or "pmc_europe" (PDF saved) or both
@@ -557,7 +564,8 @@ def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
                 "hint": "PMC EFetch failed; try other channels"}
 
     # Step 3: Try Europe PMC PDF rendering (best-effort, ~25% success in 2026-08 retest)
-    pdf_result = _pmc_europe_pdf(pmcid, out_path=out_path, max_retries=2)
+    pdf_result = ({"error": "pmc_europe_skipped"} if force_jats else
+                  _pmc_europe_pdf(pmcid, out_path=out_path, max_retries=2))
     europe_ok = "error" not in pdf_result
 
     # Step 4 (v3.9.21+): If Europe PMC failed, fall back to jats_to_pdf
@@ -835,7 +843,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         #    DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort)
         #    合法 + 永久, 替代 sci-hub/annas cascade 失败时的 fallback
         if prefer in ("pmc", "pmc-pdf", "auto"):
-            r = fetch_pmc_doi(doi, out_path)
+            r = fetch_pmc_doi(doi, out_path, force_jats=True) if prefer == "pmc-pdf" else fetch_pmc_doi(doi, out_path)
             if "error" not in r:
                 return r
             if r.get("xml_path"):
@@ -954,8 +962,11 @@ def fetch_doi(doi: str, output_dir: str = ".",
               channels = None,
               unpaywall_email: str = "hello@example.com",
               max_total_sec: int = 300,
-              use_cache: bool = True) -> Dict[str, Any]:
+              use_cache: bool = True, prefer: Optional[str] = None) -> Dict[str, Any]:
     """v3.9.8.1-style fetch wrapper. Translates to new fetch() and maps result back.
+
+    Explicit prefer overrides legacy channels. A valid cache hit still wins
+    when use_cache=True; disable cache to require a fresh source attempt.
 
     New in v3.9.9.6 (audit round 22): this wrapper was added to restore
     `pa fetch <DOI>` CLI and `pa_cli.deep_rerank.fetch_doi` callsite
@@ -975,6 +986,10 @@ def fetch_doi(doi: str, output_dir: str = ".",
       new `error`       → old `final_status` = "ALL_FAIL" + `error` + `hint`
     """
     t0 = time.time()
+    requested_prefer = prefer
+    if requested_prefer is not None and requested_prefer not in FETCH_PREFERENCES:
+        return {"error": "fetch_invalid_preference", "saved_as": None,
+                "final_status": "ALL_FAIL", "hint": "Choose a supported retrieval source"}
 
     # Cache check at function entry — short-circuit cascade on hit.
     # P0-2 acceptance (re-restored 2026-07-16): if PDF magic valid +
@@ -1053,6 +1068,10 @@ def fetch_doi(doi: str, output_dir: str = ".",
     else:
         prefer = "auto"
 
+    # Explicit source takes precedence over the legacy channel-list mapping.
+    if requested_prefer is not None:
+        prefer = requested_prefer
+
     # Map output_dir + DOI → out_path
     # v3.9.11.6: also replace ':' (legacy arXiv prefix) and other
     # Windows-illegal chars. arxiv:2310.06825 → arxiv_2310_06825
@@ -1092,7 +1111,10 @@ def fetch_doi(doi: str, output_dir: str = ".",
         r = fetch(doi=doi, out_path=out_path, prefer=prefer)
     finally:
         if proxy_env_set:
-            os.environ.pop("HTTPS_PROXY", None)
+            if prev_https_proxy is None:
+                os.environ.pop("HTTPS_PROXY", None)
+            else:
+                os.environ["HTTPS_PROXY"] = prev_https_proxy
 
     # The wrapper always requests a saved PDF. A requested filename or a
     # provider's success metadata is not proof that a usable file was saved.

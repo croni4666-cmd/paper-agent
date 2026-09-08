@@ -48,6 +48,8 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
+from .fetch import FETCH_PREFERENCES
+
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import CallToolResult, TextContent, Tool
@@ -80,7 +82,7 @@ TOOL_PA_FETCH = Tool(
             },
             "prefer": {
                 "type": "string",
-                "enum": ["auto", "scihub", "annas", "arxiv", "direct"],
+                "enum": list(FETCH_PREFERENCES),
                 "default": "auto",
                 "description": "Preferred fetch channel. Default 'auto' tries all in priority order.",
             },
@@ -185,18 +187,12 @@ def _handle_pa_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
     prefer = arguments.get("prefer", "auto")
     use_cache = bool(arguments.get("use_cache", True))
 
-    # fetch_doi already supports prefer param in v3.9.10.x+
-    # We pass it through; if old API ignores, behavior is "auto".
-    try:
-        result = fetch_doi(
-            doi=doi,
-            output_dir=".",
-            prefer=prefer,
-            use_cache=use_cache,
-        )
-    except TypeError:
-        # Fallback: older signature without prefer
-        result = fetch_doi(doi=doi, output_dir=".", use_cache=use_cache)
+    result = fetch_doi(
+        doi=doi,
+        output_dir=".",
+        prefer=prefer,
+        use_cache=use_cache,
+    )
 
     # The CLI version returns the old shape: {doi, saved_as, channels, final_status, ...}
     # The new fetch() returns: {doi, path, source, size, pdf_url, error?, hint?}
