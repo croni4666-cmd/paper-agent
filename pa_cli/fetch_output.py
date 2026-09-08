@@ -1,4 +1,4 @@
-"""Staged single-fetch output publication and shared PDF marker checks."""
+"""Staged single-fetch output publication and shared PDF structure checks."""
 from pathlib import Path
 import math
 import shutil
@@ -7,7 +7,7 @@ import time
 
 
 def _complete_pdf(path: Path) -> bool:
-    """Check header and EOF marker, not the full PDF object structure."""
+    """Require readable unencrypted pages and content streams (not visual validation)."""
     try:
         with path.open('rb') as stream:
             if stream.read(5) != b'%PDF-':
@@ -15,8 +15,32 @@ def _complete_pdf(path: Path) -> bool:
             stream.seek(0, 2)
             size = stream.tell()
             stream.seek(max(0, size - 4096))
-            return stream.read().rstrip().endswith(b'%%EOF')
-    except OSError:
+            if not stream.read().rstrip().endswith(b'%%EOF'):
+                return False
+            stream.seek(0)
+            from pypdf import PdfReader
+            reader = PdfReader(stream, strict=True)
+            if reader.is_encrypted or not reader.pages:
+                return False
+            for page in reader.pages:
+                if page.get('/Type') != '/Page':
+                    return False
+                from pypdf.generic import ArrayObject, NullObject, StreamObject
+                raw = page.get('/Contents')
+                if raw is not None:
+                    raw = raw.get_object()
+                    members = raw if isinstance(raw, ArrayObject) else [raw]
+                    for member in members:
+                        member = member.get_object()
+                        if not isinstance(member, (StreamObject, NullObject)):
+                            return False
+                contents = page.get_contents()
+                if contents is not None:
+                    contents.get_data()
+            return True
+    except Exception:
+        # Malformed documents can raise several parser/codec exceptions. Never
+        # expose document content or parser details through fetch diagnostics.
         return False
 
 

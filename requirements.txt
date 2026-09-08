@@ -37,3 +37,5 @@ PyYAML>=6.0
 # sentence-transformers>=2.2
 # torch>=2.0
 # transformers>=4.30
+
+pypdf>=6.18,<7

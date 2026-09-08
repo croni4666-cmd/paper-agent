@@ -1121,7 +1121,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
         from .fetch_output import _complete_pdf
         if not _complete_pdf(Path(r['path'])):
             r = {**r, 'error': 'fetch_invalid_pdf_output',
-                 'hint': 'Downloaded file is missing PDF header or EOF markers'}
+                 'hint': 'Downloaded file failed PDF structure validation'}
 
     # Record one final outcome. Failed automatic cascades are labelled "auto"
     # because this legacy downloader does not expose each internal attempt.

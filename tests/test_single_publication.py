@@ -8,7 +8,8 @@ from pa_cli import cache, fetch
 from pa_cli.fetch_deadline import run_fetch
 from pa_cli.fetch_output import _publish
 
-PDF = b'%PDF-1.7\ncomplete fixture\n%%EOF'
+from test_pdf_structure import make_pdf
+PDF = make_pdf()
 DOI = '10.1000/publication'
 
 
