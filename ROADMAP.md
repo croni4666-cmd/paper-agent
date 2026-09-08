@@ -89,7 +89,12 @@ SDK; they do not verify a live stdio MCP client/server session.
 
 Next retrieval fixes identified during contract review:
 
-- Extend cancellation to direct `fetch()` and improve PDF structural validation.
+- Extend cancellation to direct `fetch()` and bound parent-side PDF parsing.
+  Fresh output and skip-existing validation now use pypdf strict parsing with
+  nonempty unencrypted page trees and readable page content streams. Real PDF,
+  marker-only, truncated, missing-page/content and encrypted fixtures are covered.
+  Legacy cache validation remains header/checksum-based. Font/image decoding,
+  visual fidelity and parser time/memory limits are still outside this check.
   Single-fetch output now uses staging and same-directory atomic replacement per
   published file; copy failure, timeout, and invalid markers preserve old output.
   XML is validated before publication. Cache hits need no writable output folder.

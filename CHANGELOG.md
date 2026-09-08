@@ -15,6 +15,9 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Parse fresh PDFs and skip-existing candidates with pypdf strict mode; reject marker-only files, damaged page trees/content references, zero-page and encrypted documents.
+- Declare pypdf as a runtime dependency and use real generated PDFs in publication tests. This is a readability check, not full visual/security validation; legacy cache hits remain unchanged.
+
 - Stage fresh single-paper output and copy to a same-directory temporary file before replacing the destination, preserving old output after timeout or copy failure.
 - Reject fresh PDFs missing header/EOF markers before caching or publication; retain only validated XML and remove temporary result paths.
 - Preserve cache-hit behavior without requiring a writable output directory. Share PDF marker checks with batch retrieval; document independent PDF/XML publication and cache persistence.

@@ -9,7 +9,8 @@ from unittest.mock import patch
 from pa_cli import fetch_batch
 from pa_cli.fetch_deadline import run_fetch
 
-PDF = b'%PDF-1.7\nfixture complete\n%%EOF'
+from test_pdf_structure import make_pdf
+PDF = make_pdf()
 
 
 def inline_worker(request, seconds):
