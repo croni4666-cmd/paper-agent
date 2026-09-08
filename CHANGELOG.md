@@ -15,6 +15,11 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Preserve figure attributes and decode escaped image URLs during JATS embedding; identify supported image MIME types from content and reject oversized/non-image embedding responses.
+- Remove raw figure URLs and exception text from download failure logs.
+- Clean up temporary HTML after write failures and encode local file URLs correctly, including paths containing `#`.
+- Cover actual Chromium image embedding, load-timeout cleanup, and special file paths with opt-in local HTTP/browser integration tests.
+
 - Render standalone JATS article roots, including namespaces, as well as article-set wrappers. Add an opt-in Chromium PDF test that verifies extracted title and body text.
 
 - Validate PMC identifiers and JATS responses before caching; refresh invalid cache entries and return a usable path on first download. Report cache save failure when no output file is available.
