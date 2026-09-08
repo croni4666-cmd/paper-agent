@@ -62,6 +62,10 @@ Added: main HTTP response lifecycle, gzip/deflate decoding, HTTP error bodies,
 and safe transport-failure return contracts.
 Added: JATS cold-cache paths, malformed/error XML, invalid IDs, network failures,
 and unavailable-cache contracts.
+Added: standalone/namespaced JATS rendering contracts and an opt-in real Chromium
+PDF test (`PA_TEST_BROWSER=1`, with Playwright browser and pypdf installed).
+The smoke test uses local synthetic text without external figures; it does not
+verify remote figure loading, timeout handling, or publisher-specific layouts.
 Remaining: other retrieval paths (including the main cascade and browser/JATS
 paths) need equivalent coverage. P0.2 is not complete.
 

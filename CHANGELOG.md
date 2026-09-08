@@ -15,6 +15,8 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Render standalone JATS article roots, including namespaces, as well as article-set wrappers. Add an opt-in Chromium PDF test that verifies extracted title and body text.
+
 - Validate PMC identifiers and JATS responses before caching; refresh invalid cache entries and return a usable path on first download. Report cache save failure when no output file is available.
 
 - Close main retrieval HTTP responses on success and failure; suppress raw transport exception text.
