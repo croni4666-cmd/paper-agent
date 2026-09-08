@@ -272,10 +272,10 @@ def keys_remind(as_json, write_alerts_path):
                    "Prefer --prefer instead. v3.9.22: added 5 new OA channels "
                    "(biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
                    "v3.9.20.1: added 'pmc' (was missing). Each maps to a --prefer value.")
-@click.option("--unpaywall-email", default="hello@example.com", show_default=True,
-              help="Email registered with Unpaywall API")
+@click.option("--unpaywall-email", default=None,
+              help="Email for Unpaywall; defaults to UNPAYWALL_EMAIL when omitted")
 @click.option("--max-total-sec", default=300, show_default=True,
-              help="Hard cap on total runtime (paper-agent v4: 300s)")
+              help="Compatibility option; total runtime cap is not yet enforced. Requests use per-source timeouts.")
 @click.option("--no-cache", is_flag=True,
               help="Bypass cache lookup; cascade attempts download (cache still written on success)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
