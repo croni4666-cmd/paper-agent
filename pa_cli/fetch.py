@@ -383,16 +383,35 @@ def _pmc_doi_to_pmcid(doi: str) -> Optional[str]:
     return None
 
 
+def _is_jats_article(body: bytes) -> bool:
+    """Reject error pages and malformed XML before caching EFetch output."""
+    import xml.etree.ElementTree as ET
+    try:
+        root = ET.fromstring(body)
+    except (ET.ParseError, ValueError):
+        return False
+    tag = root.tag.rsplit("}", 1)[-1]
+    return tag == "article" or (
+        tag == "article-set" and any(
+            child.tag.rsplit("}", 1)[-1] == "article" for child in root
+        )
+    )
+
+
 def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
     """Fetch PMC JATS XML, using a PMCID-keyed local cache when available."""
-    pmcid_clean = pmcid.upper().replace("PMC", "")
+    match = re.fullmatch(r"(?:PMC)?([0-9]+)", (pmcid or "").strip(), re.IGNORECASE)
+    if not match:
+        return {"error": "pmc_invalid_id"}
+    pmcid_clean = match.group(1)
     cache_path = JATS_CACHE_DIR / f"PMC{pmcid_clean}.xml"
     body = b""
     cache_hit = False
+    cache_saved = False
     if cache_path.is_file():
         try:
             body = cache_path.read_bytes()
-            cache_hit = bool(body)
+            cache_hit = _is_jats_article(body)
         except OSError:
             body = b""
 
@@ -402,11 +421,14 @@ def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
         status, body = _http_get_bytes(url, timeout=60)
         if status != 200 or not body:
             return {"error": f"pmc_efetch_status_{status}"}
+        if not _is_jats_article(body):
+            return {"error": "pmc_efetch_invalid_xml"}
         try:
             cache_path.parent.mkdir(parents=True, exist_ok=True)
             temp_path = cache_path.with_suffix(".tmp")
             temp_path.write_bytes(body)
             temp_path.replace(cache_path)
+            cache_saved = True
         except OSError:
             pass  # cache is an optimization, never a download blocker
 
@@ -423,7 +445,9 @@ def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
         xml_path.write_bytes(body)
         result["path"] = str(xml_path.resolve())
     else:
-        result["path"] = str(cache_path.resolve()) if cache_hit else None
+        if not (cache_hit or cache_saved):
+            return {"error": "pmc_xml_save_error"}
+        result["path"] = str(cache_path.resolve())
     return result
 
 def _pmc_europe_pdf(pmcid: str, out_path: str = None, max_retries: int = 3) -> Dict[str, Any]:
