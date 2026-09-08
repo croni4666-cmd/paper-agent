@@ -92,6 +92,11 @@ Next retrieval fixes identified during contract review:
 - Implement a real, cancellable end-to-end runtime deadline. The legacy option
   remains unenforced and the CLI now states that limitation explicitly.
 
+Added: cache identity/checksum/365-day expiry contracts and staged writes, with
+failure tests for metadata encoding and interrupted publication. Publication of
+the two files is not atomic; a mismatched pair safely becomes a cache miss.
+Concurrent-writer coordination and crash durability remain unverified.
+
 Added: best-effort PDF cache writes after wrapper success (also with cache lookup
 disabled), small-PDF cache acceptance, per-call Unpaywall email precedence and
 cleanup, and private diagnostic contracts. Formal tests isolate the PDF cache.
