@@ -44,7 +44,11 @@ browser descendants when the budget expires. The default is 300 seconds,
 including cache access. Timeout returns `fetch_timeout` and CLI exit code 2.
 OS process startup/cleanup adds overhead, and files already written are not
 rolled back. This applies to `fetch_doi()` and the single-paper MCP handler;
-batch retrieval and direct Python `fetch()` keep their existing timeout behavior.
+`pa fetch-batch` shares its budget across entries and interrupts the active
+worker when time runs out. Batch files are staged before replacing final PDFs;
+timeouts discard the staged output and preserve any previous PDF. Skipping an
+existing file requires PDF header and EOF markers (not full structural validation).
+Direct Python `fetch()` retains its per-provider timeout behavior.
 
 ## Core workflow
 

@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Interrupt the active batch download using the shared remaining budget; report timed-out work as failed and remaining entries as skipped.
+- Stage batch output before publication, reject incomplete PDF markers and unsafe citation filenames, and preserve existing PDFs after failure or timeout.
+- Preserve completed XML-only retrieval and avoid deleting XML beside skipped-existing PDFs. Report batch elapsed wall time and redact unexpected entry exceptions.
+
 - Enforce the single-fetch runtime budget in an isolated worker, including cache access and provider/browser work. Timeout returns `fetch_timeout` without a saved path, and terminates the worker and normal descendants.
 - Preserve the calling directory while resolving the worker from the active package; pass request settings through stdin and sanitize worker failures.
 - Validate positive CLI timeouts and cover real process-tree cleanup, local HTTP blocking, and opt-in Chromium termination. Batch/direct `fetch()` budgets are unchanged; completed or partial file writes are not rolled back.

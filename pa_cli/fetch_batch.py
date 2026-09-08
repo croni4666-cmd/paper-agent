@@ -1,27 +1,9 @@
-"""pa_cli.fetch_batch — batch PDF download from a Bibtex file.
-
-Per ROADMAP [P2-11] (added 2026-07-15, shipped 2026-07-20 in v3.9.10.7):
-  Walks every Bibtex entry through the 8 fetch channels in priority order:
-    2. Unpaywall (legal, stable)
-    3. Sci-Hub (fallback)
-    4. Anna's Archive
-    5. CORE
-    6. arXiv (for arXiv IDs)
-    7. DOI redirect
-    8. Playwright fallback
-  Downloads to `pdfs/{key}.pdf`. Lists what failed and why.
-
-  Reuses pa_cli/scaffold.py:load_bibtex for bib parsing, pa_cli/fetch.py:fetch
-  for the actual download.
-
-Usage from CLI:
-  pa fetch-batch refs.bib --out-dir ./pdfs/
-  pa fetch-batch refs.bib --out-dir ./pdfs/ --max-total-sec 1800
-  pa fetch-batch refs.bib --out-dir ./pdfs/ --skip-existing
-"""
+"""Sequential BibTeX retrieval with cancellable workers and staged PDF output."""
 from __future__ import annotations
 
 import json
+import math
+import tempfile
 import sys
 import time
 from dataclasses import dataclass, field
@@ -48,6 +30,7 @@ class FetchResult:
     size_bytes: int = 0
     error: str = ''
     elapsed_sec: float = 0.0
+    xml_path: str = ''         # XML published by this attempt, if any
 
     def to_dict(self) -> Dict:
         return {
@@ -60,6 +43,7 @@ class FetchResult:
             'size_bytes': self.size_bytes,
             'error': self.error,
             'elapsed_sec': round(self.elapsed_sec, 2),
+            'xml_path': self.xml_path,
         }
 
 
@@ -90,7 +74,83 @@ class FetchSummary:
 # Per-entry fetch
 # ──────────────────────────────────────────────────────────────────────
 
-def _fetch_one_entry(
+def _complete_pdf(path: Path) -> bool:
+    """Check header and EOF marker, not the full PDF object structure."""
+    try:
+        with path.open('rb') as stream:
+            if stream.read(5) != b'%PDF-':
+                return False
+            stream.seek(0, 2)
+            size = stream.tell()
+            stream.seek(max(0, size - 4096))
+            return stream.read().rstrip().endswith(b'%%EOF')
+    except OSError:
+        return False
+
+
+def _fetch_one_entry(entry: Dict, out_dir: Path, skip_existing: bool = False,
+                     prefer: str = 'auto', max_total_sec: float = 300) -> FetchResult:
+    """Stage one isolated worker's files; publish only a completed PDF.
+
+    The caller owns the batch deadline. Failed/timed-out PDF files are discarded;
+    a completed worker's XML-only result is retained for full-text recovery.
+    """
+    from .fetch_deadline import run_fetch
+    started = time.monotonic()
+    key = entry.get('key', 'unknown')
+    result = FetchResult(key=key, doi=entry.get('doi') or '',
+                         title=entry.get('title') or '', success=False)
+    # A citation key must be a single portable filename, never a path.
+    if (not isinstance(key, str) or not key or key in ('.', '..')
+            or any(c in key for c in '/\\:<>"|?*')
+            or any(ord(c) < 32 for c in key) or key.endswith((' ', '.'))
+            or key.split('.')[0].upper() in
+            {'CON', 'PRN', 'AUX', 'NUL', *(f'COM{i}' for i in range(1, 10)),
+             *(f'LPT{i}' for i in range(1, 10))}):
+        result.error = 'invalid-citation-key'
+        return result
+    target = out_dir / f'{key}.pdf'
+    if skip_existing and _complete_pdf(target):
+        result.success, result.error = True, 'skipped-existing'
+        result.out_path, result.size_bytes = str(target), target.stat().st_size
+        return result
+    out_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        with tempfile.TemporaryDirectory(prefix='.pa-batch-', dir=out_dir) as temp:
+            stage = Path(temp)
+            remaining = max_total_sec - (time.monotonic() - started)
+            if remaining <= 0:
+                result.error = 'fetch_timeout'
+                return result
+            response = run_fetch({'_operation': 'batch_entry', 'entry': entry,
+                                  'out_dir': str(stage), 'prefer': prefer}, remaining)
+            pdf, xml = stage / f'{key}.pdf', stage / f'{key}.xml'
+            if response.get('success') and _complete_pdf(pdf):
+                pdf.replace(target)
+                result.success = True
+                result.out_path, result.size_bytes = str(target), target.stat().st_size
+                result.source = response.get('source', '')
+            else:
+                result.error = response.get('error') or 'invalid-pdf-output'
+            # Preserve XML only when the worker completed normally. A timeout
+            # may have left a truncated intermediate, so discard that stage.
+            if response.get('error') not in ('fetch_timeout', 'fetch_worker_failed') and xml.is_file():
+                try:
+                    xml.replace(target.with_suffix('.xml'))
+                    result.xml_path = str(target.with_suffix('.xml'))
+                except OSError:
+                    if not result.success:
+                        result.error = 'batch-output-error'
+    except OSError:
+        result.error = 'batch-output-error'
+        result.success = False
+        result.out_path = ''
+    finally:
+        result.elapsed_sec = time.monotonic() - started
+    return result
+
+
+def _fetch_one_entry_in_process(
     entry: Dict,
     out_dir: Path,
     skip_existing: bool = False,
@@ -159,8 +219,8 @@ def _fetch_one_entry(
                 return result
             if not result.error:
                 result.error = r.get('error', 'title fallback failed')
-    except Exception as e:
-        result.error = f"exception: {e}"
+    except Exception:
+        result.error = "fetch-entry-failed"
     finally:
         result.elapsed_sec = time.time() - t0
     return result
@@ -191,15 +251,23 @@ def run_fetch_batch(
 
     Returns FetchSummary with all per-entry results.
     """
+    try:
+        valid = (not isinstance(max_total_sec, bool)
+                 and isinstance(max_total_sec, (int, float))
+                 and math.isfinite(max_total_sec) and max_total_sec > 0)
+    except OverflowError:
+        valid = False
+    if not valid:
+        raise ValueError('max_total_sec must be a finite positive number')
     out_dir.mkdir(parents=True, exist_ok=True)
     entries = load_bibtex(bib_path)
     summary = FetchSummary(n_total=len(entries))
-    t_start = time.time()
+    t_start = time.monotonic()
 
     for i, entry in enumerate(entries):
         # Global timeout check
-        elapsed = time.time() - t_start
-        if elapsed > max_total_sec:
+        elapsed = time.monotonic() - t_start
+        if elapsed >= max_total_sec:
             # Mark remaining as skipped
             for j, e in enumerate(entries[i:], start=i):
                 r = FetchResult(
@@ -213,7 +281,8 @@ def run_fetch_batch(
                 summary.n_skipped += 1
             break
 
-        result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
+        result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer,
+                                  max_total_sec=max_total_sec - elapsed)
         summary.results.append(result)
         # v3.9.26.0: check skipped first (skipped has success=True with
         # error='skipped-existing'); otherwise skip counts as success
@@ -227,18 +296,19 @@ def run_fetch_batch(
             summary.n_failure += 1
         # v3.9.26.0: clean up .xml intermediate (e.g., from JATS-to-PDF)
         # after successful PDF generation, if --clean-xml was passed
-        if clean_xml and result.success and result.out_path:
-            xml_path = Path(result.out_path).with_suffix('.xml')
+        if clean_xml and result.success and result.xml_path:
+            xml_path = Path(result.xml_path)
             try:
                 if xml_path.exists() and xml_path != Path(result.out_path):
                     xml_path.unlink()
+                    result.xml_path = ''
             except OSError:
                 pass  # best-effort cleanup, don't fail the batch
-        summary.total_elapsed_sec += result.elapsed_sec
 
         if progress_callback:
             progress_callback(i + 1, len(entries), result)
 
+    summary.total_elapsed_sec = time.monotonic() - t_start
     return summary
 
 

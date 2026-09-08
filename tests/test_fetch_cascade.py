@@ -130,8 +130,13 @@ class PmcPdfOutcomes(unittest.TestCase):
     def test_batch_does_not_delete_only_fulltext(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            with pmc_fixture(root), patch.object(fetch_batch, 'load_bibtex',
-                    return_value=[{'key': 'fixture', 'doi': DOI}]):
+            def in_process(request, seconds):
+                request = dict(request)
+                request.pop('_operation')
+                request['out_dir'] = Path(request['out_dir'])
+                return fetch_batch._fetch_one_entry_in_process(**request).to_dict()
+            with pmc_fixture(root), patch('pa_cli.fetch_deadline.run_fetch', side_effect=in_process), \
+                 patch.object(fetch_batch, 'load_bibtex', return_value=[{'key': 'fixture', 'doi': DOI}]):
                 summary = fetch_batch.run_fetch_batch(root / 'refs.bib', root, prefer='pmc', clean_xml=True)
             self.assertEqual(summary.n_success, 0)
             self.assertEqual(summary.n_failure, 1)

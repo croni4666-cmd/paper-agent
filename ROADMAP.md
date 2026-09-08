@@ -89,8 +89,12 @@ SDK; they do not verify a live stdio MCP client/server session.
 
 Next retrieval fixes identified during contract review:
 
-- Extend cancellation to the batch/direct `fetch()` paths and define partial-file
-  recovery. Single-fetch `fetch_doi()` and `pa fetch` now enforce a worker budget
+- Extend cancellation to direct `fetch()` and transactional single-file output.
+  Batch retrieval now shares the remaining budget with each worker, stages PDFs,
+  checks header/EOF markers and publishes only completed output. Timeout discards
+  the stage and preserves previous PDFs. Completed XML-only results are retained;
+  `--clean-xml` leaves skipped-existing files alone. Full PDF structure validation
+  and batch parsing/callback deadlines remain outside this implementation. Single-fetch `fetch_doi()` and `pa fetch` now enforce a worker budget
   (default 300 seconds), including cache, provider calls, and browser rendering.
   Normal descendants are contained by Windows Job Objects or POSIX process groups.
   OS launch/cleanup overhead can exceed the budget; existing writes are not rolled
