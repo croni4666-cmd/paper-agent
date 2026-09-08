@@ -546,7 +546,8 @@ def jats_xml_to_html(xml_bytes: bytes, doi: str = "", pmcid: str = "") -> str:
     front = None
     body = None
     back = None
-    for c in root:
+    candidates = [root] if _local(root.tag) == "article" else root
+    for c in candidates:
         local = _local(c.tag)
         if local == "article":
             article = c
