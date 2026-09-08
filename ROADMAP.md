@@ -64,8 +64,17 @@ Added: JATS cold-cache paths, malformed/error XML, invalid IDs, network failures
 and unavailable-cache contracts.
 Added: standalone/namespaced JATS rendering contracts and an opt-in real Chromium
 PDF test (`PA_TEST_BROWSER=1`, with Playwright browser and pypdf installed).
-The smoke test uses local synthetic text without external figures; it does not
-verify remote figure loading, timeout handling, or publisher-specific layouts.
+Added: figure response size/header checks, safe failure logs, embedding attributes,
+and temporary-file/browser cleanup contracts. Opt-in tests use a local HTTP fixture
+and real Chromium to verify a PDF image object, encoded file paths, and cleanup
+after a stalled image times out. Tested with the declared Playwright 1.60 extra.
+Run the browser tests with `PA_TEST_BROWSER=1` after installing `.[browser]`,
+`pypdf`, and Playwright Chromium. Default CI skips browser integration tests.
+Limits: publisher-specific layouts, lazy images across pages, and external
+provider behavior remain unverified. The image size limit applies to Python
+embedding downloads; failed embedding still leaves the existing browser URL
+fallback. Image header checks are not a full image decode. Page-load timeout
+is not an end-to-end conversion deadline.
 Remaining: other retrieval paths (including the main cascade and browser/JATS
 paths) need equivalent coverage. P0.2 is not complete.
 
