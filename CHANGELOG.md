@@ -15,61 +15,64 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
-- Parse fresh PDFs and skip-existing candidates with pypdf strict mode; reject marker-only files, damaged page trees/content references, zero-page and encrypted documents.
-- Declare pypdf as a runtime dependency and use real generated PDFs in publication tests. This is a readability check, not full visual/security validation; legacy cache hits remain unchanged.
+Merged improvements through PR #48; no new version or release has been published.
 
-- Stage fresh single-paper output and copy to a same-directory temporary file before replacing the destination, preserving old output after timeout or copy failure.
-- Reject fresh PDFs missing header/EOF markers before caching or publication; retain only validated XML and remove temporary result paths.
-- Preserve cache-hit behavior without requiring a writable output directory. Share PDF marker checks with batch retrieval; document independent PDF/XML publication and cache persistence.
+### Added
 
-- Interrupt the active batch download using the shared remaining budget; report timed-out work as failed and remaining entries as skipped.
-- Stage batch output before publication, reject incomplete PDF markers and unsafe citation filenames, and preserve existing PDFs after failure or timeout.
-- Preserve completed XML-only retrieval and avoid deleting XML beside skipped-existing PDFs. Report batch elapsed wall time and redact unexpected entry exceptions.
+- Opt-in sequential six-engine availability probes with JSON reports, validated
+  inputs and sanitized errors (PR #34).
+- Offline engine/retrieval contracts and local HTTP/Chromium integration coverage
+  for PDF text, image embedding, temporary files and process cleanup (PR #35–#42).
+- Strict pypdf validation for fresh PDFs and batch skip-existing candidates,
+  including nonempty unencrypted page trees and valid content-stream references.
+  Declare `pypdf>=6.18,<7` as a runtime dependency (PR #48).
 
-- Enforce the single-fetch runtime budget in an isolated worker, including cache access and provider/browser work. Timeout returns `fetch_timeout` without a saved path, and terminates the worker and normal descendants.
-- Preserve the calling directory while resolving the worker from the active package; pass request settings through stdin and sanitize worker failures.
-- Validate positive CLI timeouts and cover real process-tree cleanup, local HTTP blocking, and opt-in Chromium termination. Batch/direct `fetch()` budgets are unchanged; completed or partial file writes are not rolled back.
+### Fixed
 
-- Require matching DOI identity, checksum, and a valid timestamp within 365 days for PDF cache hits; corrupt or colliding entries become misses without deleting files.
-- Stage PDF and metadata before replacing cache files. Serialization failures preserve the old pair; interrupted publication yields a safe miss, not a guaranteed atomic update.
-- Keep tests isolated from the user cache even when individual tests clear environment variables.
+- Normalize missing Crossref dates and OpenAlex author/date/citation data; preserve
+  AMiner failure diagnostics and Basic query deduplication/year filtering.
+- Reject oversized/non-PDF downloader responses; close HTTP responses and handle
+  decoding failures without exposing raw transport errors.
+- Validate PMC JATS cache entries, render standalone/namespaced articles, preserve
+  image attributes/MIME, and clean up browser/temporary-file failure paths.
+- Treat XML-only PMC retrieval as PDF failure while retaining usable XML; automatic
+  retrieval continues to fallback sources. Respect explicit source preference and
+  forced JATS mode without retrying internal TypeErrors.
+- Honor per-call Unpaywall email and proxy settings; restore caller state and avoid
+  exposing credentials in diagnostics.
+- Populate the cache after successful downloads, including `--no-cache` retrieval
+  (which bypasses lookup only). Cache write failure does not invalidate output.
+- Require DOI identity, matching checksum and valid age within 365 days for cache
+  hits; stage cache writes and treat mismatched pairs as misses (PR #43–#44).
+- Enforce single-fetch worker budgets and shared batch download budgets, terminating
+  active workers and normal descendants on timeout (PR #45–#46).
+- Stage fresh output and replace final files only after validation; failure or
+  timeout preserves previous PDFs. Validate XML before publication, clean only
+  current-attempt intermediates, and preserve PDF success after XML/cleanup errors
+  (PR #46–#47).
+- Resolve workers from the active package without changing caller directories;
+  reject unsafe batch filenames and isolate provider fixtures from real execution.
 
-- Populate the PDF cache after successful wrapper downloads, including `--no-cache` downloads; report `cache_written` and preserve the downloaded file when caching fails.
-- Allow small PDFs in the header-checked cache instead of rejecting everything below 50KB.
-- Honor `--unpaywall-email` with a per-call override, default to the environment when omitted, and avoid echoing emails or raw response bodies in failure diagnostics.
-- Correct single-fetch help: the legacy total runtime option is not an enforced hard deadline. Isolate formal tests from the user's PDF cache.
+### Validation checkpoint
 
-- Restore the previous HTTPS proxy setting after per-call overrides, including failed downloads and raised exceptions.
-- Honor explicit retrieval preferences in the wrapper and MCP handler, reject unsupported preferences, and stop retrying internal TypeErrors as a different request.
-- Make `pmc-pdf` skip Europe PMC and use JATS rendering as documented; expose supported source choices in the single-paper MCP schema.
+- PR #48: 129 tests and 151 subtests passed locally including real Chromium;
+  dependency consistency check passed. Five GitHub CI jobs passed, including
+  Python 3.10/3.11/3.12, build/resolution and dependency vulnerability audit.
+- These counts describe the tested PR #48 commit. Default CI skips Chromium;
+  local fixtures do not establish current public-provider availability or quality.
 
-- Treat PMC XML-only retrieval as a PDF failure while preserving the XML and error details; automatic retrieval continues to other sources instead of reporting a nonexistent PDF.
-- Preserve canonical PDF path, size, and URL for Europe PMC results. Verify the saved file's PDF header before reporting wrapper success or successful channel statistics.
-- Default CLI retrieval to the automatic cascade. Cover CLI failure status, fallback selection, stale/missing outputs, and batch XML preservation after PDF failure.
+### Remaining limits
 
-- Preserve figure attributes and decode escaped image URLs during JATS embedding; identify supported image MIME types from content and reject oversized/non-image embedding responses.
-- Remove raw figure URLs and exception text from download failure logs.
-- Clean up temporary HTML after write failures and encode local file URLs correctly, including paths containing `#`.
-- Cover actual Chromium image embedding, load-timeout cleanup, and special file paths with opt-in local HTTP/browser integration tests.
-
-- Render standalone JATS article roots, including namespaces, as well as article-set wrappers. Add an opt-in Chromium PDF test that verifies extracted title and body text.
-
-- Validate PMC identifiers and JATS responses before caching; refresh invalid cache entries and return a usable path on first download. Report cache save failure when no output file is available.
-
-- Close main retrieval HTTP responses on success and failure; suppress raw transport exception text.
-
-- Reject oversize PDFs in bioRxiv, CORE, and OSF instead of returning truncated files.
-- Reject empty/non-PDF responses at those download boundaries and cover four downloader channels with offline failure tests.
-
-- Cover AMiner Basic phrase deduplication and year filtering; preserve an error when both automatic search paths fail.
-
-- Add offline result-contract fixtures for the six public search engines.
-- Handle empty Crossref date lists, missing OpenAlex author objects, unknown dates, and null citation counts without aborting result normalization.
-
-- Add opt-in sequential engine availability probes with JSON reports.
-- Reject invalid probe engine lists, limits, and non-finite timeouts before requests.
-- Deduplicate engine selections and suppress raw provider errors in probe reports.
-- Complete the release CI gate and track remaining P0.2 contract coverage.
+- Legacy cache hits still use PDF header/checksum checks, not strict parsing.
+- Parent-side PDF parsing has no separate time/memory bound. Strict parsing is not
+  rendering or a security scan and can reject repairable/encrypted documents.
+- Direct `fetch()` retains provider timeouts and direct writes. OS launch/cleanup,
+  publication, batch parsing and callbacks can add time outside worker budgets.
+- PDF/XML and cache PDF/metadata pairs are not joint transactions. Valid cache
+  entries may remain when output publication fails; crash/concurrency guarantees
+  require further work.
+- Remaining provider contracts, representative JATS layouts and real MCP stdio
+  integration are tracked in ROADMAP.md.
 
 ## [3.9.29.1] - 2026-09-07
 
