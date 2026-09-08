@@ -15,6 +15,8 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Validate PMC identifiers and JATS responses before caching; refresh invalid cache entries and return a usable path on first download. Report cache save failure when no output file is available.
+
 - Close main retrieval HTTP responses on success and failure; suppress raw transport exception text.
 
 - Reject oversize PDFs in bioRxiv, CORE, and OSF instead of returning truncated files.

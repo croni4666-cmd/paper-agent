@@ -60,6 +60,8 @@ Added: bioRxiv, CORE, OSF, and ChemRxiv downloader contracts for success,
 non-PDF/empty responses, exact size limits, oversize, and connection/read failures.
 Added: main HTTP response lifecycle, gzip/deflate decoding, HTTP error bodies,
 and safe transport-failure return contracts.
+Added: JATS cold-cache paths, malformed/error XML, invalid IDs, network failures,
+and unavailable-cache contracts.
 Remaining: other retrieval paths (including the main cascade and browser/JATS
 paths) need equivalent coverage. P0.2 is not complete.
 
