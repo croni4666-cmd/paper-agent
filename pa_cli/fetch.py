@@ -944,6 +944,12 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 # ─────────────────────────────────────────────────────────────────
 # The public wrapper supervises an isolated process so a timeout stops blocking
 # provider calls and browser descendants, rather than abandoning a live thread.
+def _doi_output_name(doi: str) -> str:
+    slug = (doi.replace('/', '_').replace('.', '_').replace(':', '_')
+            .replace('\\', '_').replace(' ', '_'))
+    return f'{slug}.pdf'
+
+
 def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
               channels=None, unpaywall_email: Optional[str] = None,
               max_total_sec: int = 300, use_cache: bool = True,
@@ -951,11 +957,12 @@ def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
     """Fetch with a total worker deadline (including cache access).
 
     The budget starts before process launch. OS process creation and termination
-    may add overhead. Timeout returns no saved path; files already written are
-    not rolled back. Direct fetch() and batch retrieval are not supervised here.
+    may add overhead. Fresh output is staged and validated before publication;
+    timeout leaves previous output untouched. Publication adds filesystem overhead.
+    Direct fetch() is not supervised here.
     """
-    from .fetch_deadline import run_fetch
-    return run_fetch(dict(doi=doi, output_dir=str(output_dir), proxy=proxy,
+    from .fetch_output import staged_fetch
+    return staged_fetch(dict(doi=doi, output_dir=str(output_dir), proxy=proxy,
                           channels=channels, unpaywall_email=unpaywall_email,
                           use_cache=use_cache, prefer=prefer), max_total_sec)
 
@@ -963,7 +970,7 @@ def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
 def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
                           channels=None, unpaywall_email: Optional[str] = None,
                           max_total_sec: int = 300, use_cache: bool = True,
-                          prefer: Optional[str] = None) -> Dict[str, Any]:
+                          prefer: Optional[str] = None, _staged: bool = False) -> Dict[str, Any]:
     """Worker implementation. Caller owns process lifetime and cancellation."""
     t0 = time.time()
     requested_prefer = prefer
@@ -1055,9 +1062,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
     # Map output_dir + DOI → out_path
     # v3.9.11.6: also replace ':' (legacy arXiv prefix) and other
     # Windows-illegal chars. arxiv:2310.06825 → arxiv_2310_06825
-    doi_slug = (doi.replace("/", "_").replace(".", "_").replace(":", "_")
-                    .replace("\\", "_").replace(" ", "_"))
-    out_path = str(Path(output_dir) / f"{doi_slug}.pdf")
+    out_path = str(Path(output_dir) / _doi_output_name(doi))
 
     # Call new fetch
     # v3.9.13.2: route --proxy CLI option through env var so _get_proxy_dict()
@@ -1111,6 +1116,12 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
                  "hint": "The reported output is missing or is not a PDF; check the output directory and retry"}
 
     elapsed = round(time.time() - t0, 3)
+
+    if _staged and 'error' not in r:
+        from .fetch_output import _complete_pdf
+        if not _complete_pdf(Path(r['path'])):
+            r = {**r, 'error': 'fetch_invalid_pdf_output',
+                 'hint': 'Downloaded file is missing PDF header or EOF markers'}
 
     # Record one final outcome. Failed automatic cascades are labelled "auto"
     # because this legacy downloader does not expose each internal attempt.
@@ -1171,6 +1182,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
         "cache_hit": False,  # not from cache (would have returned earlier)
         "cache_written": cache_written,
         "size_bytes": r.get("size"),
+        **{key: r[key] for key in ('xml_path', 'xml_size') if key in r},
         "_wrapper_notes": {
             "cache_supported": True,
             "max_total_sec_supported": False,

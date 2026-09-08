@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Stage fresh single-paper output and copy to a same-directory temporary file before replacing the destination, preserving old output after timeout or copy failure.
+- Reject fresh PDFs missing header/EOF markers before caching or publication; retain only validated XML and remove temporary result paths.
+- Preserve cache-hit behavior without requiring a writable output directory. Share PDF marker checks with batch retrieval; document independent PDF/XML publication and cache persistence.
+
 - Interrupt the active batch download using the shared remaining budget; report timed-out work as failed and remaining entries as skipped.
 - Stage batch output before publication, reject incomplete PDF markers and unsafe citation filenames, and preserve existing PDFs after failure or timeout.
 - Preserve completed XML-only retrieval and avoid deleting XML beside skipped-existing PDFs. Report batch elapsed wall time and redact unexpected entry exceptions.

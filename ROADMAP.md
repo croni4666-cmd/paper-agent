@@ -89,7 +89,12 @@ SDK; they do not verify a live stdio MCP client/server session.
 
 Next retrieval fixes identified during contract review:
 
-- Extend cancellation to direct `fetch()` and transactional single-file output.
+- Extend cancellation to direct `fetch()` and improve PDF structural validation.
+  Single-fetch output now uses staging and same-directory atomic replacement per
+  published file; copy failure, timeout, and invalid markers preserve old output.
+  XML is validated before publication. Cache hits need no writable output folder.
+  Cache entries can persist even if output publication fails; PDF/XML publication
+  is independent, and filesystem publication overhead is outside worker time.
   Batch retrieval now shares the remaining budget with each worker, stages PDFs,
   checks header/EOF markers and publishes only completed output. Timeout discards
   the stage and preserves previous PDFs. Completed XML-only results are retained;
@@ -97,8 +102,8 @@ Next retrieval fixes identified during contract review:
   and batch parsing/callback deadlines remain outside this implementation. Single-fetch `fetch_doi()` and `pa fetch` now enforce a worker budget
   (default 300 seconds), including cache, provider calls, and browser rendering.
   Normal descendants are contained by Windows Job Objects or POSIX process groups.
-  OS launch/cleanup overhead can exceed the budget; existing writes are not rolled
-  back. POSIX children deliberately creating a new session are outside the group.
+  OS launch/cleanup overhead can exceed the budget; direct `fetch()` writes are not
+  transactional. POSIX children deliberately creating a new session are outside the group.
   Tests cover local HTTP blocking, child-process late writes, and opt-in Chromium
   termination; public-provider latency is not a deterministic acceptance test.
 
