@@ -15,6 +15,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Treat PMC XML-only retrieval as a PDF failure while preserving the XML and error details; automatic retrieval continues to other sources instead of reporting a nonexistent PDF.
+- Preserve canonical PDF path, size, and URL for Europe PMC results. Verify the saved file's PDF header before reporting wrapper success or successful channel statistics.
+- Default CLI retrieval to the automatic cascade. Cover CLI failure status, fallback selection, stale/missing outputs, and batch XML preservation after PDF failure.
+
 - Preserve figure attributes and decode escaped image URLs during JATS embedding; identify supported image MIME types from content and reject oversized/non-image embedding responses.
 - Remove raw figure URLs and exception text from download failure logs.
 - Clean up temporary HTML after write failures and encode local file URLs correctly, including paths containing `#`.

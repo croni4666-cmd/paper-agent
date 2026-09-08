@@ -535,7 +535,7 @@ def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
       - pmcid: e.g. "PMC13466339"
       - xml_path: full JATS XML path (always, if PMC has body)
       - pdf_path: real PDF path (if Europe PMC render worked)
-      - error: only on total failure
+      - error: when no PDF is available; retained XML is reported separately
     """
     doi = (doi or "").strip()
     if not doi:
@@ -594,6 +594,7 @@ def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
             }
         # Both methods failed
         return {
+            "error": "pmc_pdf_unavailable",
             "source": "pmc_xml_only",
             "pmcid": pmcid,
             "doi": doi,
@@ -610,6 +611,9 @@ def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         "source": "pmc" if "error" not in pdf_result else "pmc_xml_only",
         "pmcid": pmcid,
         "doi": doi,
+        "path": pdf_result.get("path"),
+        "size": pdf_result.get("size"),
+        "pdf_url": pdf_result.get("pdf_url"),
         "xml_path": xml_result.get("path"),
         "xml_size": xml_result.get("size"),
         "pdf_path": pdf_result.get("path") if "error" not in pdf_result else None,
@@ -801,6 +805,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
              or dict with 'error' on failure.
     """
     if doi:
+        partial_result = None
         # 1. arXiv channel — if DOI looks like arXiv (10.48550/arXiv.* or bare ID)
         arxiv_id = _extract_arxiv_id(doi)
         if arxiv_id and prefer in ("arxiv", "auto"):
@@ -831,10 +836,11 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         #    合法 + 永久, 替代 sci-hub/annas cascade 失败时的 fallback
         if prefer in ("pmc", "pmc-pdf", "auto"):
             r = fetch_pmc_doi(doi, out_path)
-            # 成功: 有 xml_path (always) + 可能 pdf_path
-            if "error" not in r and r.get("xml_path"):
+            if "error" not in r:
                 return r
-            if prefer == "pmc":
+            if r.get("xml_path"):
+                partial_result = r
+            if prefer in ("pmc", "pmc-pdf"):
                 return r  # user explicitly asked for pmc, don't fall through
 
         # 5. Unpaywall (cheap, official, legal)
@@ -904,6 +910,9 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             if "error" not in r:
                 return r
 
+        if partial_result is not None:
+            return {**partial_result, "cascade_error": E_ALL_MIRRORS,
+                    "hint": "No source produced a PDF; retained PMC XML is available at xml_path"}
         return {"error": E_ALL_MIRRORS,
                 "message": f"All sources failed for DOI {doi}",
                 "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"}
@@ -1085,6 +1094,18 @@ def fetch_doi(doi: str, output_dir: str = ".",
         if proxy_env_set:
             os.environ.pop("HTTPS_PROXY", None)
 
+    # The wrapper always requests a saved PDF. A requested filename or a
+    # provider's success metadata is not proof that a usable file was saved.
+    if "error" not in r:
+        try:
+            with Path(r["path"]).open("rb") as pdf:
+                if pdf.read(4) != b"%PDF":
+                    raise ValueError("not a PDF")
+                r = {**r, "size": os.fstat(pdf.fileno()).st_size}
+        except (OSError, KeyError, TypeError, ValueError):
+            r = {**r, "error": E_SAVE,
+                 "hint": "The reported output is missing or is not a PDF; check the output directory and retry"}
+
     elapsed = round(time.time() - t0, 3)
 
     # Record one final outcome. Failed automatic cascades are labelled "auto"
@@ -1115,6 +1136,10 @@ def fetch_doi(doi: str, output_dir: str = ".",
             "final_status": "ALL_FAIL",
             "error": r["error"],
             "hint": r.get("hint"),
+            **{key: r[key] for key in (
+                "source", "pmcid", "xml_path", "xml_size",
+                "pdf_error_europe", "pdf_error_jats", "cascade_error",
+            ) if key in r},
             "_wrapper_notes": {
                 "cache_supported": True,  # cache check restored; not the issue here
                 "max_total_sec_supported": False,
@@ -1124,7 +1149,7 @@ def fetch_doi(doi: str, output_dir: str = ".",
     # Success
     return {
         "doi": doi,
-        "saved_as": r.get("path", out_path),
+        "saved_as": r.get("path"),
         "via_channel": r.get("source", prefer),
         "via_url": r.get("pdf_url"),
         "elapsed_sec": elapsed,

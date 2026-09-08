@@ -267,7 +267,7 @@ def keys_remind(as_json, write_alerts_path):
                    "'osf' OSF Preprints (v3.9.22+, 10.31219/osf.io/* DOIs), "
                    "'chemrxiv' ChemRxiv (v3.9.22+, 10.26434/chemrxiv-* DOIs), "
                    "'auto' tries all in order. Takes precedence over --channels.")
-@click.option("--channels", default="pmc,biorxiv,core,osf,chemrxiv,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
+@click.option("--channels", default="auto",
               show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
                    "Prefer --prefer instead. v3.9.22: added 5 new OA channels "
                    "(biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
