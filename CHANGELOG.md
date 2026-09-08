@@ -15,6 +15,8 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+- Close main retrieval HTTP responses on success and failure; suppress raw transport exception text.
+
 - Reject oversize PDFs in bioRxiv, CORE, and OSF instead of returning truncated files.
 - Reject empty/non-PDF responses at those download boundaries and cover four downloader channels with offline failure tests.
 
