@@ -128,23 +128,23 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
     opener = _build_opener()
     try:
         req = ur.Request(url, headers=final_headers)
-        resp = opener.open(req, timeout=timeout)
-        body = resp.read()
-        # Handle gzip / deflate / br (brotli)
-        ce = resp.headers.get("Content-Encoding", "")
-        if ce == "gzip":
-            import gzip
-            body = gzip.decompress(body)
-        elif ce == "deflate":
-            import zlib
-            body = zlib.decompress(body)
-        elif ce == "br":
-            try:
-                import brotli
-                body = brotli.decompress(body)
-            except ImportError:
-                pass  # If brotli not installed, return raw (will JSON-fail)
-        return resp.status, body
+        with opener.open(req, timeout=timeout) as resp:
+            body = resp.read()
+            # Handle gzip / deflate / br (brotli)
+            ce = resp.headers.get("Content-Encoding", "")
+            if ce == "gzip":
+                import gzip
+                body = gzip.decompress(body)
+            elif ce == "deflate":
+                import zlib
+                body = zlib.decompress(body)
+            elif ce == "br":
+                try:
+                    import brotli
+                    body = brotli.decompress(body)
+                except ImportError:
+                    pass  # If brotli not installed, return raw (will JSON-fail)
+            return resp.status, body
     except urllib.error.HTTPError as e:
         try:
             body = e.read()
@@ -164,8 +164,11 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
             return e.code, body
         except Exception:
             return e.code, b""
-    except Exception as e:
-        return 0, str(e).encode("utf-8")
+        finally:
+            e.close()
+    except Exception:
+        # Transport errors may contain proxy credentials or signed URLs.
+        return 0, b""
 
 
 def _save_pdf(body: bytes, out_path: str) -> str:
