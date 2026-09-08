@@ -1413,8 +1413,8 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
 @click.option("--out-dir", required=True, type=click.Path(file_okay=False),
               help="Directory to save PDFs (created if not exists)")
-@click.option("--max-total-sec", type=int, default=1800, show_default=True,
-              help="Global timeout for the whole batch (s)")
+@click.option("--max-total-sec", type=click.IntRange(min=1), default=1800, show_default=True,
+              help="Shared download budget; interrupts the active worker when exhausted (s)")
 @click.option("--skip-existing", is_flag=True,
               help="Skip entries whose PDF already exists in out_dir")
 @click.option("--report", "report_file", default=None, type=click.Path(dir_okay=False),
