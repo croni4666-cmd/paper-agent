@@ -74,18 +74,7 @@ class FetchSummary:
 # Per-entry fetch
 # ──────────────────────────────────────────────────────────────────────
 
-def _complete_pdf(path: Path) -> bool:
-    """Check header and EOF marker, not the full PDF object structure."""
-    try:
-        with path.open('rb') as stream:
-            if stream.read(5) != b'%PDF-':
-                return False
-            stream.seek(0, 2)
-            size = stream.tell()
-            stream.seek(max(0, size - 4096))
-            return stream.read().rstrip().endswith(b'%%EOF')
-    except OSError:
-        return False
+from .fetch_output import _complete_pdf
 
 
 def _fetch_one_entry(entry: Dict, out_dir: Path, skip_existing: bool = False,

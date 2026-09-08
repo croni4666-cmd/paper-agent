@@ -42,8 +42,11 @@ pa build refs.bib skeleton.md -o paper.pdf
 `pa fetch <DOI> --max-total-sec 60` stops the download worker and its normal
 browser descendants when the budget expires. The default is 300 seconds,
 including cache access. Timeout returns `fetch_timeout` and CLI exit code 2.
-OS process startup/cleanup adds overhead, and files already written are not
-rolled back. This applies to `fetch_doi()` and the single-paper MCP handler;
+OS process startup/cleanup and final file publication add overhead. Fresh single
+and batch downloads are staged; timeout or invalid PDF markers leave previous
+output untouched. Successful publication replaces each file independently;
+PDF and XML publication is not a joint transaction. Valid cache writes may remain
+even if final output publication fails. This applies to `fetch_doi()` and the single-paper MCP handler;
 `pa fetch-batch` shares its budget across entries and interrupts the active
 worker when time runs out. Batch files are staged before replacing final PDFs;
 timeouts discard the staged output and preserve any previous PDF. Skipping an
