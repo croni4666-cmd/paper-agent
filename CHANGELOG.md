@@ -35,6 +35,11 @@ Includes merged improvements through PR #48 and bounded validation changes; no n
 
 ### Fixed
 
+- Publish new cache PDFs as immutable generations and atomically replace the
+  metadata index. Interrupted updates preserve the old entry; overlapping writers
+  publish coherent versions. Continue reading the old cache format and include
+  retained generations in explicit removal/cleaning and disk usage statistics.
+
 - Reject cache hits when PDF or metadata identity changes during validation,
   including concurrent replacement or deletion. Test interleaved process writers
   and recovery from mixed PDF/metadata publication without claiming atomic writes.

@@ -62,10 +62,15 @@ These are per-validation bounds, not a whole-command deadline. Cache reads hash
 and parse the same bytes; unreadable or over-budget old entries become cache misses
 without deletion. Valid hits include the validation policy identifier.
 Cache reads compare PDF and metadata file identities before and after validation;
-observed replacement, modification or deletion returns a miss. This is optimistic
-race detection, not a lock: returned paths can change after the check. Concurrent
-writers can leave a mismatched pair, which remains a miss until a successful write;
-paired publication and crash durability are not guaranteed.
+observed replacement, modification or deletion returns a miss. New writes publish a complete unique PDF and atomically switch the metadata
+index. Failed or interrupted publication preserves the previous entry; overlapping
+writers publish coherent generations. Old format entries remain readable.
+Old PDF generations remain until explicit removal/cleaning, increasing disk use;
+cache statistics count metadata slots as papers and include retained PDF bytes.
+Reads still use optimistic race detection: external edits and explicit deletion
+can invalidate returned paths. Do not run destructive cleaning during active
+fetches. Sudden power-loss durability is not guaranteed. A killed writer may leave
+unpublished temporary files; they are never accepted as cache hits.
 Direct Python `fetch()` retains its per-provider timeout behavior.
 
 ## Core workflow

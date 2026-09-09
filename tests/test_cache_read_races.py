@@ -47,21 +47,21 @@ class CacheReadRaceTests(unittest.TestCase):
         context = multiprocessing.get_context('spawn')
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            cache.cache_put('10.1000/race', make_pdf(), root=root)
+            old = cache.cache_put('10.1000/race', make_pdf(), root=root)
             ready, release = context.Event(), context.Event()
             worker = context.Process(target=paused_writer,
                                      args=(temp, make_pdf(2), ready, release))
             worker.start()
             try:
                 self.assertTrue(ready.wait(10), 'First writer did not publish its PDF')
-                self.assertIsNone(cache.cache_get('10.1000/race', root=root))
+                self.assertEqual(cache.cache_get('10.1000/race', root=root)['sha256'], old['sha256'])
                 # Writer B completes before A publishes its metadata.
                 cache.cache_put('10.1000/race', make_pdf(3), root=root)
                 self.assertIsNotNone(cache.cache_get('10.1000/race', root=root))
                 release.set()
                 worker.join(10)
                 self.assertEqual(worker.exitcode, 0)
-                self.assertIsNone(cache.cache_get('10.1000/race', root=root))
+                self.assertEqual(Path(cache.cache_get('10.1000/race', root=root)['pdf_path']).read_bytes(), make_pdf(2))
                 cache.cache_put('10.1000/race', make_pdf(3), root=root)
                 self.assertIsNotNone(cache.cache_get('10.1000/race', root=root))
             finally:
