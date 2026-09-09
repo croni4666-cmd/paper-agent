@@ -19,6 +19,10 @@ Includes merged improvements through PR #48 and bounded validation changes; no n
 
 ### Added
 
+- Dedicated Linux Chromium CI job installs the browser extra and matching system
+  dependencies, then runs the complete suite with real-browser tests enabled.
+  The existing three-version Python matrix remains in place.
+
 - Run PDF structure checks in a separate worker with 10-second, 512 MiB memory
   and 256 MiB input bounds. Reject validation timeout and resource failures.
 - Revalidate legacy cache entries on every lookup using the same byte snapshot

@@ -30,7 +30,7 @@ providers or model-heavy ranking features.
 | Order | Item | User-visible gain | Completion evidence |
 |---|---|---|---|
 | 1 | P0.4: cache concurrency and direct-call semantics | Consistent cache and public entry-point behavior | Concurrent-writer and direct-call contracts |
-| 2 | P0.2: browser CI, remaining channels, real MCP | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
+| 2 | P0.2: remaining channels and real MCP | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
 | 3 | P1.1: diagnostic reports and resumable batches | Retry only eligible failed papers with clear reasons | Interrupted-job restart tests |
 | 4 | P0.3: shared provenance schema | Trace records from search to downloaded/exported evidence | Compatible schema and merge/export tests |
 | 5 | P1.2: evidence-linked synthesis | Separate supported claims from missing/contradictory evidence | Deterministic citation-linked outputs |
@@ -89,15 +89,18 @@ Completed coverage:
 Evidence checkpoint: PR #48 code passed 129 tests and 151 subtests locally with
 `PA_TEST_BROWSER=1`, plus dependency checks. Its five CI jobs passed on GitHub.
 This is historical evidence for that commit, not a new live-provider assessment.
-Default CI skips the optional Chromium tests; install `.[browser]` and Chromium
-and set `PA_TEST_BROWSER=1` to include them locally.
+The Python-version matrix skips optional Chromium tests. A separate Linux
+Chromium job installs `.[browser]` and its matching browser/system dependencies,
+then runs the full suite with `PA_TEST_BROWSER=1` and a 15-minute job limit.
+It uses local fixtures and no publisher credentials. To reproduce locally,
+install `.[browser]` and Chromium and set `PA_TEST_BROWSER=1`.
 
 Remaining acceptance criteria:
 
 - Add equivalent contracts for remaining retrieval channels and size limits.
 - Exercise the real MCP stdio transport, not just its handler.
-- Establish a reproducible browser CI job and representative JATS layout corpus
-  for multi-page content, lazy images and publisher-specific structures.
+- Expand the JATS layout corpus for multi-page content, lazy images and
+  publisher-specific structures; browser CI now runs existing real-browser tests.
 - Keep external availability/quality probes opt-in and separate from offline CI;
   classify provider failures as environmental results with actionable causes.
 
