@@ -1,3 +1,4 @@
+from test_pdf_structure import make_pdf
 import json
 import os
 from pathlib import Path
@@ -16,7 +17,7 @@ from pa_cli.fetch_deadline import run_fetch
 
 class FetchDeadlineTests(unittest.TestCase):
     def test_public_worker_and_cli_return_real_cache_hit(self):
-        entry = cache.cache_put('10.1000/deadline', b'%PDF cached fixture')
+        entry = cache.cache_put('10.1000/deadline', make_pdf())
         result = fetch.fetch_doi('10.1000/deadline', max_total_sec=10)
         self.assertEqual(result['final_status'], 'SUCCESS_CACHE_HIT', result)
         self.assertEqual(result['saved_as'], entry['pdf_path'])

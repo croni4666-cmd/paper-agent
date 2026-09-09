@@ -6,7 +6,8 @@ from unittest.mock import patch
 
 from pa_cli import cache
 
-PDF = b'%PDF fixture old'
+from test_pdf_structure import make_pdf
+PDF = make_pdf()
 DOI = '10.1000/a.b'
 
 

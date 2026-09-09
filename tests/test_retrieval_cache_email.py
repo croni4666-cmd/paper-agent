@@ -10,7 +10,8 @@ from click.testing import CliRunner
 from pa_cli import cache, fetch
 from pa_cli.cli import main
 
-PDF = b'%PDF-1.7\nsmall fixture\n%%EOF'
+from test_pdf_structure import make_pdf
+PDF = make_pdf()
 DOI = '10.1000/cache-fixture'
 
 

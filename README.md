@@ -53,9 +53,14 @@ timeouts discard the staged output and preserve any previous PDF. Skipping an
 existing file requires the same PDF structure check as fresh downloads.
 The check uses pypdf strict parsing, requires at least one readable page and
 readable page content streams, and rejects encrypted documents. It does not
-render pages or verify every font/image object, detect malicious content, or
-revalidate legacy cache hits. Strict mode can reject repairable documents.
-Parent-side validation has no separate time/memory limit.
+render pages, verify every font/image object or detect malicious content. Strict mode can reject repairable documents.
+Fresh output, skip-existing files and every cache hit use a separate validation
+worker with a 10-second budget, 512 MiB memory limit and 256 MiB input cap.
+Windows limits job committed memory; POSIX limits virtual address space.
+Parser overhead counts toward the memory limit, so large valid PDFs may be rejected.
+These are per-validation bounds, not a whole-command deadline. Cache reads hash
+and parse the same bytes; unreadable or over-budget old entries become cache misses
+without deletion. Valid hits include the validation policy identifier.
 Direct Python `fetch()` retains its per-provider timeout behavior.
 
 ## Core workflow
@@ -81,7 +86,7 @@ search results       pa cite-check        pa fetch-batch
 
 | Command | What | Effort |
 |---|---|---|
-| `pa search` | 8-engine search | — |
+| `pa search` | 6-engine search | — |
 | `pa fetch` | Single PDF download | — |
 | `pa fetch-batch` | Batch PDF from Bibtex | 1 call |
 | `pa cite-check` | Validate `[@key]` in skeleton | Pre-build check |
