@@ -51,6 +51,25 @@ jobs:
       - name: Run suite including real Chromium integration
         run: python -m pytest -q -rs
 
+  mcp:
+    name: MCP stdio integration (Python 3.12)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PA_TEST_MCP: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project with MCP support
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ".[mcp]" pytest
+          python -m pip check
+      - name: Run suite including real MCP stdio client
+        run: python -m pytest -q -rs
+
   package:
     name: Build and resolve dependencies
     runs-on: ubuntu-latest

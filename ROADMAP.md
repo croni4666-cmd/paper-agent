@@ -30,7 +30,7 @@ providers or model-heavy ranking features.
 | Order | Item | User-visible gain | Completion evidence |
 |---|---|---|---|
 | 1 | P0.4: cache concurrency and direct-call semantics | Consistent cache and public entry-point behavior | Concurrent-writer and direct-call contracts |
-| 2 | P0.2: remaining channels and real MCP | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
+| 2 | P0.2: remaining channels and MCP error/cancellation coverage | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
 | 3 | P1.1: diagnostic reports and resumable batches | Retry only eligible failed papers with clear reasons | Interrupted-job restart tests |
 | 4 | P0.3: shared provenance schema | Trace records from search to downloaded/exported evidence | Compatible schema and merge/export tests |
 | 5 | P1.2: evidence-linked synthesis | Separate supported claims from missing/contradictory evidence | Deterministic citation-linked outputs |
@@ -75,7 +75,7 @@ Completed coverage:
   consistently and decoding/error handling has regression coverage.
 - PMC JATS cache validation, cold-cache output, XML-only failure and automatic
   PDF fallback are covered. Explicit source selection and Unpaywall email/proxy
-  precedence have contracts. MCP handler coverage uses transport SDK stubs.
+  precedence have contracts. MCP handler contracts are supplemented by a real SDK stdio client test.
 - Real Chromium tests cover article text, embedded image objects, special local
   paths and timeout cleanup. They use local HTTP fixtures, not publisher sites.
 - Single-fetch workers enforce their budget; batches pass each active worker the
@@ -98,7 +98,11 @@ install `.[browser]` and Chromium and set `PA_TEST_BROWSER=1`.
 Remaining acceptance criteria:
 
 - Add equivalent contracts for remaining retrieval channels and size limits.
-- Exercise the real MCP stdio transport, not just its handler.
+- Real MCP stdio initialize/list/call/ping/session-close coverage now uses a
+  temporary PDF cache, including invalid schema input and empty batches. A
+  dedicated Linux job installs `.[mcp]` and enables `PA_TEST_MCP=1`.
+  Successful batch retrieval, cancellation and provider-error transport remain
+  follow-up coverage; this test makes no external publisher requests.
 - Expand the JATS layout corpus for multi-page content, lazy images and
   publisher-specific structures; browser CI now runs existing real-browser tests.
 - Keep external availability/quality probes opt-in and separate from offline CI;

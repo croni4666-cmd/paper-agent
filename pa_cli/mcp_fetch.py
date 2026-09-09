@@ -4,27 +4,10 @@ Exposes 2 paper-agent fetch tools over stdio JSON-RPC, so AI agents
 (Codex / Claude Code / OpenCode) can drive the same `pa fetch` and
 `pa fetch-pdf-batch` commands that a human would run from the terminal.
 
-**Why this is NOT a [P0-3] resurrection** (per ROADMAP [P0-15] entry):
-- [P0-3] (deprecated 2026-07-04) was a 4-tool full-featured MCP server
-  with hand-maintained JSON Schemas. Maintenance burden was too high.
-- This module: 2 thin wrappers over EXISTING pa CLI functions. No new
-  schemas to maintain beyond 2 simple ones. The mcp.Server boilerplate
-  is identical; the maintenance tax is the 2 schemas, not the server.
-- The MCP tool is opt-in: user adds it to their MCP client config only
-  if they want agent-driven fetch. Not auto-installed.
-
-**Tools exposed** (matches `pa fetch` / `pa fetch-pdf-batch` CLI):
-  - `pa_fetch(doi, prefer, use_cache) -> {saved_as, via_channel, ...}`
-  - `pa_batch_fetch(dois, output_dir, prefer) -> {n_total, n_success, ...}`
-
-**Design constraints** (per Global Rule + 留痕 discipline):
-- NO new dependency (mcp SDK is already installed per [P0-3] Round 2)
-- NO new server to maintain in a public-facing infra sense
-- Stdio transport only (single-machine local use; no HTTP for cross-machine)
-- Same trust boundary as `pa fetch` CLI invocation (any path that calls
-  `pa fetch` is reachable from this MCP)
-- Same留痕 discipline: NO api keys / passwords accepted through MCP
-  (they would have to go through the existing CLI env var mechanism)
+Install the optional SDK with `python -m pip install "paper-agent[mcp]"`.
+The server uses local stdio transport and the same filesystem/provider trust
+boundary as the fetch CLI. Configure credentials through the existing environment
+mechanism; the MCP schemas do not accept API keys.
 
 **Client config example** (paste into Claude Code / Codex / etc.):
 ```json
