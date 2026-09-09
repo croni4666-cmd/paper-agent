@@ -99,6 +99,21 @@ def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
     """
     from ._http import http_get_json as _http_get_json_helper
     return _http_get_json_helper(url, headers=headers, timeout=timeout)
+def _crossref_publication_year(item: dict) -> Optional[int]:
+    """Use publication dates only; metadata creation is not publication."""
+    for field in ("published-print", "published-online", "published", "issued"):
+        date = item.get(field)
+        if not isinstance(date, dict):
+            continue
+        parts = date.get("date-parts")
+        if not isinstance(parts, list) or not parts or not isinstance(parts[0], list) or not parts[0]:
+            continue
+        year = parts[0][0]
+        if type(year) is int and 1 <= year <= 9999:
+            return year
+    return None
+
+
 def _crossref_lookup_title(title: str) -> Optional[Dict]:
     """Crossref works?query.bibliographic 鈥?finds DOI + cite by title.
 
@@ -108,14 +123,12 @@ def _crossref_lookup_title(title: str) -> Optional[Dict]:
         return None
     url = (f"https://api.crossref.org/works?query.bibliographic={quote(title)}"
            f"&rows=1&select=DOI,title,author,abstract,container-title,"
-           f"is-referenced-by-count,references-count,published-print")
+           f"is-referenced-by-count,references-count,published-print,published-online,published,issued")
     s, data = http_get_json(url, headers={}, timeout=15)
     if s != 200 or not data.get("message") or not data["message"].get("items"):
         return None
     it = data["message"]["items"][0]
-    pub = it.get("published-print") or it.get("published-online") or {}
-    parts = (pub.get("date-parts") or [[None]])[0]
-    year = parts[0] if parts else None
+    year = _crossref_publication_year(it)
     return {
         "doi": it.get("DOI", ""),
         "title": it.get("title", [""])[0] if isinstance(it.get("title"), list) else it.get("title", ""),
@@ -240,12 +253,12 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
         fq = f"&filter=from-pub-date:{ymin},until-pub-date:{ymax}"
     url = (f"https://api.crossref.org/works?query.bibliographic={quote(query)}"
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
-           f"container-title,published-print,is-referenced-by-count,references-count,type")
+           f"container-title,published-print,published-online,published,issued,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
     if s != 200 or not isinstance(data, dict):
-        raise RuntimeError(f"OpenAlex request failed with HTTP status {s}")
+        raise RuntimeError(f"Crossref request failed with HTTP status {s}")
     if data.get("error"):
-        raise RuntimeError(f"OpenAlex response error: {data['error']}")
+        raise RuntimeError(f"Crossref response error: {data['error']}")
     items = (data.get("message") or {}).get("items", [])
     return [_normalize_crossref(it) for it in items]
 
@@ -254,9 +267,7 @@ def _normalize_crossref(it: dict) -> dict:
     title = (it.get("title") or [""])[0] if it.get("title") else ""
     authors = [f"{a.get('family', '')}, {a.get('given', '')}".strip(", ")
                for a in (it.get("author") or [])]
-    pub = it.get("published-print") or it.get("published-online") or {}
-    parts = (pub.get("date-parts") or [[None]])[0]
-    year = parts[0] if parts else None
+    year = _crossref_publication_year(it)
     return {
         "doi": it.get("DOI", ""),
         "title": title,
@@ -267,7 +278,7 @@ def _normalize_crossref(it: dict) -> dict:
         "reference_count": it.get("references-count", 0),
         "type": it.get("type", ""),
         "source": "crossref",
-        "abstract": it.get("abstract", "")[:500] if it.get("abstract") else "",
+        "abstract": it.get("abstract") or "",
     }
 
 
