@@ -2,10 +2,11 @@
 
 Avoids re-downloading the same DOI across `pa fetch` invocations.
 
-PDFs and JSON sidecars share the existing DOI-derived filename layout.
+Metadata retains the DOI-derived filename; new PDFs use immutable generations.
 Reads verify DOI identity, bounded PDF structure, checksum, and a fixed 365-day lifetime.
-Writes stage both files before replacing each destination. Pair publication is
-not atomic: an interrupted replacement can leave a pair that reads as a miss.
+Writes publish a complete unique PDF, then atomically replace the metadata index.
+Old PDFs remain until explicit cleaning; legacy PDF/sidecar pairs remain readable.
+Concurrent destructive cleaning and power-loss durability are not guaranteed.
 PA_CACHE_DIR overrides the default ~/.paper-agent/cache/ directory.
 """
 
@@ -17,6 +18,8 @@ import math
 import os
 import tempfile
 import time
+import uuid
+import re
 from pathlib import Path
 from typing import Optional, Tuple
 
@@ -61,6 +64,14 @@ def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
     return root / f"{slug}.pdf", root / f"{slug}.meta.json"
 
 
+def _generation_prefix(slug: str) -> str:
+    return 'pa-' + hashlib.sha256(slug.encode('utf-8')).hexdigest() + '-'
+
+
+def _generation_paths(root: Path, slug: str):
+    return root.glob(_generation_prefix(slug) + '*.pdf')
+
+
 def _is_pdf(b: bytes) -> bool:
     """Check the PDF header without validating the full document structure."""
     return b.startswith(b"%PDF") and len(b) > 4
@@ -95,12 +106,20 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
     """
     root = root or get_cache_root()
     pdf_path, meta_path = _paths(doi, root)
-    if not (pdf_path.exists() and meta_path.exists()):
-        return None
     try:
-        before = (_file_identity(pdf_path), _file_identity(meta_path))
+        meta_identity = _file_identity(meta_path)
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, UnicodeDecodeError, OSError):
+        return None
+    if isinstance(meta, dict) and 'pdf_file' in meta:
+        filename = meta['pdf_file']
+        pattern = re.escape(_generation_prefix(_doi_slug(doi))) + r'[0-9a-f]{32}\.pdf'
+        if not isinstance(filename, str) or re.fullmatch(pattern, filename) is None:
+            return None
+        pdf_path = root / filename
+    try:
+        before = (_file_identity(pdf_path), meta_identity)
+    except OSError:
         return None
 
     if not isinstance(meta, dict) or not isinstance(meta.get("doi"), str):
@@ -150,7 +169,7 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
               root: Optional[Path] = None) -> dict:
     """Persist PDF + sidecar to cache. Returns the entry dict on success.
 
-    Idempotent: overwrites existing entry if present (newer ts + sha256).
+    Publishes a new generation and atomically switches the index (newer ts + sha256).
     Checks PDF headers before writing; does not parse or validate full PDF structure.
     """
     if not _is_pdf(body):
@@ -160,27 +179,34 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
         )
     root = root or get_cache_root()
     pdf_path, meta_path = _paths(doi, root)
+    pdf_path = root / (_generation_prefix(_doi_slug(doi)) + uuid.uuid4().hex + '.pdf')
     sha = hashlib.sha256(body).hexdigest()
     ts = time.time()
     metadata = json.dumps(
         {"doi": doi, "ts": ts, "sha256": sha, "channel": channel,
-         "url": url, "size": len(body)},
+         "url": url, "size": len(body), "pdf_file": pdf_path.name},
         ensure_ascii=False, indent=2,
     ).encode("utf-8")
     root.mkdir(parents=True, exist_ok=True)
     staged = []
+    published = False
     try:
         for target, data in ((pdf_path, body), (meta_path, metadata)):
             with tempfile.NamedTemporaryFile(dir=root, prefix=".pa-cache-", delete=False) as stream:
                 temporary = Path(stream.name)
                 staged.append((temporary, target))
                 stream.write(data)
+                stream.flush()
+                os.fsync(stream.fileno())
             # Both files are fully staged before publishing either one.
         for temporary, target in staged:
             temporary.replace(target)
+        published = True
     finally:
         for temporary, _ in staged:
             temporary.unlink(missing_ok=True)
+        if not published:
+            pdf_path.unlink(missing_ok=True)
     return {
         "doi": doi, "pdf_path": str(pdf_path), "meta_path": str(meta_path),
         "sha256": sha, "ts": ts, "channel": channel, "url": url,
@@ -193,7 +219,7 @@ def cache_remove(doi: str, root: Optional[Path] = None) -> bool:
     root = root or get_cache_root()
     pdf_path, meta_path = _paths(doi, root)
     removed = False
-    for p in (pdf_path, meta_path):
+    for p in (meta_path, pdf_path, *_generation_paths(root, _doi_slug(doi))):
         if p.exists():
             p.unlink()
             removed = True
@@ -217,8 +243,6 @@ def cache_stats(root: Optional[Path] = None) -> dict:
     """
     root = root or get_cache_root()
     pdfs = list(root.glob("*.pdf"))
-    metas = {p.with_suffix(".meta.json") for p in pdfs}  # not strictly needed
-    metas = [m for m in metas if m.exists()] if False else None  # placeholder
     metas = list(root.glob("*.meta.json"))
 
     total_size = 0
@@ -235,7 +259,7 @@ def cache_stats(root: Optional[Path] = None) -> dict:
         except (json.JSONDecodeError, OSError):
             pass
 
-    paper_count = len(pdfs)  # .pdf count = unique papers (1 entry per DOI)
+    paper_count = len(metas)  # Index slots, independent of retained PDF versions.
 
     return {
         "root": str(root),
@@ -280,21 +304,28 @@ def cache_clean(older_than_days: Optional[int] = None, root: Optional[Path] = No
             ts = 0
         if older_than_days is not None and (now - ts) < older_than_days * 86400:
             continue
-        # Remove paired .pdf and .meta.json
-        slug = m.name.replace(".meta.json", "")
-        pdf = root / f"{slug}.pdf"
-        if pdf.exists():
+        # Explicit cleaning removes the index and all its retained generations.
+        slug = m.name[:-len('.meta.json')]
+        for target in (m, root / f'{slug}.pdf', *_generation_paths(root, slug)):
             try:
-                freed_bytes += pdf.stat().st_size
-                pdf.unlink()
+                size = target.stat().st_size
+                target.unlink()
                 removed_files += 1
+                if target.suffix == '.pdf':
+                    freed_bytes += size
             except OSError:
                 pass
-        try:
-            m.unlink()
-            removed_files += 1
-        except OSError:
-            pass
+    if older_than_days is None:
+        # A killed first writer may leave an unreferenced generation.
+        for target in root.glob('pa-*.pdf'):
+            if re.fullmatch(r'pa-[0-9a-f]{64}-[0-9a-f]{32}\.pdf', target.name):
+                try:
+                    size = target.stat().st_size
+                    target.unlink()
+                    removed_files += 1
+                    freed_bytes += size
+                except OSError:
+                    pass
 
     # Recompute remaining stats
     pdfs = list(root.glob("*.pdf"))
@@ -309,5 +340,5 @@ def cache_clean(older_than_days: Optional[int] = None, root: Optional[Path] = No
         "removed_files": removed_files,
         "freed_bytes": freed_bytes,
         "remaining_files": len(pdfs) + len(list(root.glob("*.meta.json"))),
-        "remaining_papers": len(pdfs),
+        "remaining_papers": len(list(root.glob("*.meta.json"))),
     }

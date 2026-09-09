@@ -124,11 +124,12 @@ confirmed its fix; this is not an external publisher availability test.
 
 Remaining acceptance criteria:
 
-1. Cache read-race detection and deterministic interleaved-process tests are
-   implemented: observed PDF/metadata changes cause a miss, mixed publication
-   pairs do not hit, and a later coherent write restores the hit. This does not
-   provide a lock or stable returned path. Atomic pair publication, changes after
-   the final identity check, and crash durability remain unresolved.
+1. Generation-based publication is implemented: new writes publish immutable PDF
+   versions and atomically switch the metadata index. Failed publication preserves
+   the old hit; overlapping writers cannot mix PDF/metadata generations. Legacy
+   pairs remain readable and retained versions are removed by explicit cleaning.
+   External edits, concurrent destructive cleaning, temporary-file reclamation
+   after process death and power-loss durability remain outside the guarantee.
 2. Consolidate direct `fetch()` and supervised public entry-point semantics.
    Direct calls still use provider timeouts and write directly. Define which
    paths are supported before extending or deprecating legacy behavior.

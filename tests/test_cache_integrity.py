@@ -1,4 +1,5 @@
 import json
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -65,4 +66,4 @@ class CacheIntegrityTests(unittest.TestCase):
                 with self.assertRaises(OSError):
                     cache.cache_put(DOI, b'%PDF new data', root=root)
             self.assertEqual(len(list(root.iterdir())), 2)
-            self.assertIsNone(cache.cache_get(DOI, root=root))
+            self.assertEqual(cache.cache_get(DOI, root=root)['sha256'], hashlib.sha256(PDF).hexdigest())
