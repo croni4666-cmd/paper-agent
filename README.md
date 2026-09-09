@@ -908,3 +908,18 @@ stops waiting for an engine, but its underlying request may finish later.
 Reports include your query; review that field before sharing a report. A
 successful request is an availability check, not proof of search relevance or
 full-text coverage.
+
+## Browser integration checks
+
+Pull requests run a dedicated Linux Chromium job in addition to the Python
+3.10/3.11/3.12 test matrix. It exercises local PDF rendering, embedded figures,
+special temporary paths and timeout cleanup without publisher credentials.
+To run the same suite locally:
+
+```sh
+python -m pip install ".[browser]" pytest
+python -m playwright install --with-deps chromium
+PA_TEST_BROWSER=1 python -m pytest -q -rs
+```
+
+In PowerShell, set `$env:PA_TEST_BROWSER='1'` before running pytest.
