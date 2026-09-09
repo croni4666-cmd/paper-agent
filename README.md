@@ -923,3 +923,16 @@ PA_TEST_BROWSER=1 python -m pytest -q -rs
 ```
 
 In PowerShell, set `$env:PA_TEST_BROWSER='1'` before running pytest.
+
+## Local fetch MCP server
+
+Install `python -m pip install "paper-agent[mcp]"` and configure your MCP client
+with command `python` and arguments `["-m", "pa_cli.mcp_fetch"]`. Use the Python
+executable from the environment where paper-agent is installed. This local stdio
+server exposes `pa_fetch` and `pa_batch_fetch`; it does not configure the separate
+public search MCP integration or register itself in a client automatically.
+
+A dedicated CI job runs a real SDK client against the server process, testing
+initialization, tool discovery, cached single retrieval, invalid inputs, ping and
+session closure with temporary cache data. Run locally with `PA_TEST_MCP=1 python
+-m pytest -q -rs` (PowerShell: set `$env:PA_TEST_MCP='1'` first).

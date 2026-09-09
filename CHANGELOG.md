@@ -19,6 +19,10 @@ Includes merged improvements through PR #48 and bounded validation changes; no n
 
 ### Added
 
+- Optional `mcp` installation extra (`mcp>=1.30,<2`) for the local fetch server,
+  included in the `all` extra. Add real SDK stdio client coverage and a dedicated
+  CI job for initialization, listing, cached retrieval, schema errors and closure.
+
 - Dedicated Linux Chromium CI job installs the browser extra and matching system
   dependencies, then runs the complete suite with real-browser tests enabled.
   The existing three-version Python matrix remains in place.
