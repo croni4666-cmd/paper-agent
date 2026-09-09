@@ -124,9 +124,11 @@ confirmed its fix; this is not an external publisher availability test.
 
 Remaining acceptance criteria:
 
-1. Define cache publication/concurrency behavior. PDF and metadata replacement
-   is not a single transaction; concurrent writers and crash durability remain
-   unverified. Fault injection should prove that mismatched pairs never hit.
+1. Cache read-race detection and deterministic interleaved-process tests are
+   implemented: observed PDF/metadata changes cause a miss, mixed publication
+   pairs do not hit, and a later coherent write restores the hit. This does not
+   provide a lock or stable returned path. Atomic pair publication, changes after
+   the final identity check, and crash durability remain unresolved.
 2. Consolidate direct `fetch()` and supervised public entry-point semantics.
    Direct calls still use provider timeouts and write directly. Define which
    paths are supported before extending or deprecating legacy behavior.

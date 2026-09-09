@@ -35,6 +35,10 @@ Includes merged improvements through PR #48 and bounded validation changes; no n
 
 ### Fixed
 
+- Reject cache hits when PDF or metadata identity changes during validation,
+  including concurrent replacement or deletion. Test interleaved process writers
+  and recovery from mixed PDF/metadata publication without claiming atomic writes.
+
 - Normalize missing Crossref dates and OpenAlex author/date/citation data; preserve
   AMiner failure diagnostics and Basic query deduplication/year filtering.
 - Reject oversized/non-PDF downloader responses; close HTTP responses and handle

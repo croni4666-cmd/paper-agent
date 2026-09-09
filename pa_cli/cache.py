@@ -66,6 +66,12 @@ def _is_pdf(b: bytes) -> bool:
     return b.startswith(b"%PDF") and len(b) > 4
 
 
+def _file_identity(path: Path) -> tuple:
+    """Observe replacement/in-place edits; this is not a lock or a durable lease."""
+    stat = path.stat()
+    return (stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns)
+
+
 # ===== public API =====
 
 def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
@@ -92,6 +98,7 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
     if not (pdf_path.exists() and meta_path.exists()):
         return None
     try:
+        before = (_file_identity(pdf_path), _file_identity(meta_path))
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, UnicodeDecodeError, OSError):
         return None
@@ -118,6 +125,11 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
         return None
     actual_sha = checked['sha256']
     if meta.get('sha256') != actual_sha:
+        return None
+    try:
+        if before != (_file_identity(pdf_path), _file_identity(meta_path)):
+            return None
+    except OSError:
         return None
 
     return {
