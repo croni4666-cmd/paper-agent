@@ -230,15 +230,15 @@ def _handle_pa_batch_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
         return {
             "n_total": summary.n_total,
             "n_success": summary.n_success,
-            "n_failed": summary.n_failed,
+            "n_failed": summary.n_failure,
             "n_skipped": summary.n_skipped,
-            "elapsed_sec": round(summary.elapsed_sec, 2) if hasattr(summary, "elapsed_sec") else None,
+            "elapsed_sec": round(summary.total_elapsed_sec, 2),
             "output_dir": str(output_dir),
             "results": [
                 {
                     "doi": r.doi,
-                    "saved_as": r.saved_as,
-                    "via_channel": r.via_channel,
+                    "saved_as": r.out_path,
+                    "via_channel": r.source,
                     "size_bytes": r.size_bytes,
                     "error": r.error,
                 }
