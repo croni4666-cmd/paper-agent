@@ -15,9 +15,15 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
-Merged improvements through PR #48; no new version or release has been published.
+Includes merged improvements through PR #48 and bounded validation changes; no new version or release has been published.
 
 ### Added
+
+- Run PDF structure checks in a separate worker with 10-second, 512 MiB memory
+  and 256 MiB input bounds. Reject validation timeout and resource failures.
+- Revalidate legacy cache entries on every lookup using the same byte snapshot
+  for parsing and checksum verification. Return a versioned validation policy;
+  invalid entries become misses without being deleted.
 
 - Opt-in sequential six-engine availability probes with JSON reports, validated
   inputs and sanitized errors (PR #34).

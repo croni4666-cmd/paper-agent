@@ -1,6 +1,6 @@
 # Paper-Agent Roadmap
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 Current release: 3.9.29.1
 
 ## Product Direction
@@ -29,7 +29,7 @@ providers or model-heavy ranking features.
 
 | Order | Item | User-visible gain | Completion evidence |
 |---|---|---|---|
-| 1 | P0.4: bound PDF parsing and validate old cache | No indefinite validation or false cache success | Timeout/resource and migration fixtures |
+| 1 | P0.4: cache concurrency and direct-call semantics | Consistent cache and public entry-point behavior | Concurrent-writer and direct-call contracts |
 | 2 | P0.2: browser CI, remaining channels, real MCP | Catch environment/transport regressions before release | Repeatable CI and stdio integration |
 | 3 | P1.1: diagnostic reports and resumable batches | Retry only eligible failed papers with clear reasons | Interrupted-job restart tests |
 | 4 | P0.3: shared provenance schema | Trace records from search to downloaded/exported evidence | Compatible schema and merge/export tests |
@@ -83,7 +83,8 @@ Completed coverage:
 - Single and batch output is staged. PDF copy failures/timeouts preserve old
   output; validated XML survives XML-only outcomes and cleanup uses provenance.
 - Fresh PDFs and skip-existing candidates use strict pypdf page/content checks.
-  Cache hits verify DOI, checksum and 365-day age, but still only check PDF headers.
+  Cache hits also revalidate structure under resource limits, DOI, checksum and
+  365-day age. Invalid legacy entries remain on disk but return a miss.
 
 Evidence checkpoint: PR #48 code passed 129 tests and 151 subtests locally with
 `PA_TEST_BROWSER=1`, plus dependency checks. Its five CI jobs passed on GitHub.
@@ -104,18 +105,29 @@ P0.2 remains open until those coverage gaps are closed.
 
 ### P0.4 — Bounded validation and consistent cache acceptance
 
-Status: planned; recommended next implementation
+Status: in progress
 
-1. Put PDF parsing behind a cancellable boundary with explicit resource limits.
-   Parent-side parsing currently has no separate time/memory limit. Verify that
-   pathological documents stop within the bound and leave no background work.
-2. Revalidate legacy cached PDFs with a versioned validation policy. A matching
-   checksum alone must not make an unreadable PDF a successful cache hit. Test
-   migration, corrupted entries and preservation of valid existing cache data.
-3. Define cache publication/concurrency behavior. PDF and metadata replacement
+Implemented in the current change:
+
+- PDF parsing runs in a separate worker with a 10-second deadline, 512 MiB memory
+  limit and 256 MiB input cap. Windows uses job committed memory; POSIX uses
+  virtual address space. Oversized, stalled or failed validation is rejected.
+- Every cache hit revalidates and hashes the same byte snapshot. The returned
+  policy is `pypdf-strict-pages-v1`; no persistent migration stamp is trusted.
+  Invalid legacy entries become misses without deletion; valid entries still hit.
+
+Local evidence (2026-09-09): 133 tests and 151 subtests passed with real
+Chromium enabled; the POSIX nested-process cleanup test is skipped on Windows
+and must pass Linux CI before merge. Memory-allocation and stalled-parser tests
+run real subprocesses. Independent review found the nested-group issue and
+confirmed its fix; this is not an external publisher availability test.
+
+Remaining acceptance criteria:
+
+1. Define cache publication/concurrency behavior. PDF and metadata replacement
    is not a single transaction; concurrent writers and crash durability remain
    unverified. Fault injection should prove that mismatched pairs never hit.
-4. Consolidate direct `fetch()` and supervised public entry-point semantics.
+2. Consolidate direct `fetch()` and supervised public entry-point semantics.
    Direct calls still use provider timeouts and write directly. Define which
    paths are supported before extending or deprecating legacy behavior.
 

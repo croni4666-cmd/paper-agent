@@ -15,8 +15,12 @@ import sys
 import time
 
 
+# Set only by our private worker after containment has been established.
+_IN_FETCH_WORKER = False
+
+
 class _WindowsJob:
-    def __init__(self):
+    def __init__(self, memory_mb=None):
         import ctypes as c
         from ctypes import wintypes as w
 
@@ -47,6 +51,9 @@ class _WindowsJob:
             raise OSError("Cannot create download process containment")
         info = Extended()
         info.basic.flags = 0x2000  # JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+        if memory_mb is not None:
+            info.basic.flags |= 0x200  # JOB_OBJECT_LIMIT_JOB_MEMORY
+            info.job_memory = int(memory_mb * 1024 * 1024)
         if not self.api.SetInformationJobObject(self.handle, 9, c.byref(info), c.sizeof(info)):
             self.close()
             raise OSError("Cannot configure download process containment")
@@ -75,7 +82,7 @@ def _failure(code, started):
             "_wrapper_notes": {"max_total_sec_supported": True}}
 
 
-def run_fetch(request, seconds, *, _command=None):
+def run_fetch(request, seconds, *, _command=None, _memory_mb=None):
     """Run one private worker; return sanitized failures and always reap it.
 
     No user inputs are placed on the command line. POSIX children deliberately
@@ -90,17 +97,27 @@ def run_fetch(request, seconds, *, _command=None):
     if not valid:
         return _failure("fetch_invalid_timeout", started)
     process = job = None
+    # A nested PDF parser must stay in the retrieval group: if its supervising
+    # worker is killed, the outer supervisor must still be able to reap it.
+    shared_group = os.name != 'nt' and _IN_FETCH_WORKER and _memory_mb is not None
     try:
         payload = json.dumps(request).encode("utf-8")
         if os.name == "nt":
-            job = _WindowsJob()
+            job = _WindowsJob(_memory_mb)
+        command = _command or [sys.executable, "-c",
+                              "import sys; sys.path.insert(0, sys.argv[1]); "
+                              "from pa_cli.fetch_worker import main; main()",
+                              str(Path(__file__).resolve().parent.parent)]
+        if _memory_mb is not None and os.name != 'nt':
+            command = [sys.executable, '-c',
+                       'import resource,os,sys; n=int(sys.argv[1]); '
+                       'resource.setrlimit(resource.RLIMIT_AS,(n,n)); '
+                       'os.execv(sys.argv[2],sys.argv[2:])',
+                       str(int(_memory_mb * 1024 * 1024)), *command]
         process = subprocess.Popen(
-            _command or [sys.executable, "-c",
-                         "import sys; sys.path.insert(0, sys.argv[1]); "
-                         "from pa_cli.fetch_worker import main; main()",
-                         str(Path(__file__).resolve().parent.parent)],
+            command,
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-            start_new_session=os.name != "nt",
+            start_new_session=os.name != "nt" and not shared_group,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
         )
         if job:
@@ -127,7 +144,7 @@ def run_fetch(request, seconds, *, _command=None):
         # Kill descendants even if their direct parent already exited.
         if job:
             job.close()
-        elif process:
+        elif process and not shared_group:
             try:
                 os.killpg(process.pid, signal.SIGKILL)
             except ProcessLookupError:

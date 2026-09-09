@@ -7,9 +7,15 @@ import time
 
 
 def _complete_pdf(path: Path) -> bool:
+    from .pdf_validation import validate_pdf
+    return validate_pdf(path).get('valid', False)
+
+
+def _parse_pdf_in_process(path: Path) -> bool:
     """Require readable unencrypted pages and content streams (not visual validation)."""
     try:
-        with path.open('rb') as stream:
+        from contextlib import nullcontext
+        with (path.open('rb') if isinstance(path, Path) else nullcontext(path)) as stream:
             if stream.read(5) != b'%PDF-':
                 return False
             stream.seek(0, 2)

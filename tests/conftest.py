@@ -1,7 +1,7 @@
 import pytest
 import tempfile
 from pathlib import Path
-from pa_cli import cache
+from pa_cli import cache, pdf_validation  # Bind real validation supervisor before download mocks.
 
 
 @pytest.fixture(autouse=True)

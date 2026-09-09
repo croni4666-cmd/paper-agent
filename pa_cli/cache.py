@@ -3,7 +3,7 @@
 Avoids re-downloading the same DOI across `pa fetch` invocations.
 
 PDFs and JSON sidecars share the existing DOI-derived filename layout.
-Reads verify DOI identity, PDF header, checksum, and a fixed 365-day lifetime.
+Reads verify DOI identity, bounded PDF structure, checksum, and a fixed 365-day lifetime.
 Writes stage both files before replacing each destination. Pair publication is
 not atomic: an interrupted replacement can leave a pair that reads as a miss.
 PA_CACHE_DIR overrides the default ~/.paper-agent/cache/ directory.
@@ -83,7 +83,7 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
 
     Cache hit criteria (all must pass):
       1. Both .pdf and .meta.json exist
-      2. .pdf passes is_pdf() magic check
+      2. .pdf passes resource-bounded structural validation
       3. .meta.json sha256 matches re-computed sha256 of .pdf
       4. DOI matches and ts is finite, positive, not future, and at most 365 days old
     """
@@ -112,19 +112,12 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
     if ts <= 0 or not 0 <= age_days <= 365:
         return None
 
-    # Validate PDF magic
-    try:
-        body = pdf_path.read_bytes()
-    except OSError:
+    from .pdf_validation import validate_pdf
+    checked = validate_pdf(pdf_path)
+    if not checked.get('valid'):
         return None
-    if not _is_pdf(body):
-        return None
-
-    # Validate sha256 against sidecar
-    actual_sha = hashlib.sha256(body).hexdigest()
-    if meta.get("sha256") != actual_sha:
-        # A reader may see the gap between the two published files. Treat it
-        # as a miss, without deleting files another writer may be replacing.
+    actual_sha = checked['sha256']
+    if meta.get('sha256') != actual_sha:
         return None
 
     return {
@@ -135,7 +128,8 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
         "ts": meta.get("ts", 0),
         "channel": meta.get("channel", ""),
         "url": meta.get("url", ""),
-        "size": len(body),
+        "size": checked["size"],
+        "validation_policy": checked["validation_policy"],
         "age_days": age_days,
     }
 
