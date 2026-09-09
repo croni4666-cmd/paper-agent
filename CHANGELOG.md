@@ -43,6 +43,10 @@ Includes merged improvements through PR #48 and bounded validation changes; no n
 
 ### Fixed
 
+- Map MCP batch summaries to current retrieval dataclass fields while preserving
+  public `n_failed`, `elapsed_sec`, `saved_as` and `via_channel` names. Real stdio
+  fixtures cover successful, partially failed and fully failed batch results.
+
 - Publish new cache PDFs as immutable generations and atomically replace the
   metadata index. Interrupted updates preserve the old entry; overlapping writers
   publish coherent versions. Continue reading the old cache format and include

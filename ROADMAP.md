@@ -101,8 +101,9 @@ Remaining acceptance criteria:
 - Real MCP stdio initialize/list/call/ping/session-close coverage now uses a
   temporary PDF cache, including invalid schema input and empty batches. A
   dedicated Linux job installs `.[mcp]` and enables `PA_TEST_MCP=1`.
-  Successful batch retrieval, cancellation and provider-error transport remain
-  follow-up coverage; this test makes no external publisher requests.
+  Batch result mapping now has real-transport fixtures for success, partial and
+  total failure using actual result dataclasses. External batch retrieval,
+  cancellation and unexpected provider exceptions remain follow-up coverage; this test makes no external publisher requests.
 - Expand the JATS layout corpus for multi-page content, lazy images and
   publisher-specific structures; browser CI now runs existing real-browser tests.
 - Keep external availability/quality probes opt-in and separate from offline CI;
