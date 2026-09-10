@@ -1,6 +1,6 @@
 # Paper-Agent Roadmap
 
-Last updated: 2026-09-09
+Last updated: 2026-09-10
 Current release: 3.9.29.1
 
 ## Product Direction
@@ -24,6 +24,12 @@ providers or model-heavy ranking features.
   Obsidian projects, and manuscript scaffold/build commands.
 - Safety baseline: proxy validation, credential redaction, dependency
   compatibility constraints, formal tests, and a security policy.
+
+## Social-science pilot follow-up (2026-09-10)
+
+- Implemented locally: full Crossref abstracts and validated publication-date fallback, with targeted regression and live-request checks. Release pending.
+- Validated in the separate pilot sampler: source round-robin selection gives 13 Crossref / 12 OpenAlex records from the saved three-query results. This does not change global search ranking or retroactively replace the original reviewed corpus.
+- Next: refresh metadata for pending studies, independently review eligibility, and extend balanced multi-engine validation. Missing evidence remains pending; a successful handoff does not establish screening accuracy or causal conclusions.
 
 ## Recommended execution order
 

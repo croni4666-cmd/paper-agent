@@ -15,6 +15,13 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+### Search metadata integrity (2026-09-10)
+
+- Preserve complete Crossref abstracts instead of silently truncating at 500 characters.
+- Request online, published and issued dates alongside print dates for search and title enrichment; skip invalid date values and never substitute metadata creation dates.
+- Identify Crossref correctly in search error messages.
+- Regression coverage includes complete abstracts, date fallback, request field selection and error attribution. A live 12-record request returned no missing years and seven abstracts longer than 500 characters; this is a bounded check, not an all-engine guarantee.
+
 Includes merged improvements through PR #48 and bounded validation changes; no new version or release has been published.
 
 ### Added
