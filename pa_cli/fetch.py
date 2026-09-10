@@ -122,6 +122,10 @@ def _build_opener() -> "urllib.request.OpenerDirector":
     return ur.build_opener()
 
 
+from .fetch_trace import traced, emit
+
+
+@traced("http")
 def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60) -> Tuple[int, bytes]:
     """Returns (status_code, body_bytes). Auto-decode gzip/deflate/br if present.
 
@@ -230,6 +234,7 @@ def _extract_arxiv_id(s: str) -> Optional[str]:
     return None
 
 
+@traced("arxiv")
 def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
     """arXiv channel: directly download PDF from arxiv.org/pdf/<id>.
 
@@ -266,6 +271,7 @@ def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
 # ─────────────────────────────────────────────────────────────────
 # Unpaywall (主路径, 合法 + 稳定)
 # ─────────────────────────────────────────────────────────────────
+@traced("unpaywall")
 def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     """Unpaywall API: 合法 OA PDF 链接 (绿色/金色 OA)。
 
@@ -534,6 +540,7 @@ def _pmc_jats_to_pdf(pmcid: str, xml_path: str, out_path: str = None,
                 "hint": "Check playwright install or JATS XML validity"}
 
 
+@traced("pmc")
 def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -> Dict[str, Any]:
     """PMC channel: DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort).
 
@@ -637,6 +644,7 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
 # ─────────────────────────────────────────────────────────────────
 # Sci-Hub DOI 拉 PDF (fallback, 法律灰色)
 # ─────────────────────────────────────────────────────────────────
+@traced("scihub")
 def fetch_scihub_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     """Try all sci-hub mirrors for a DOI. Returns PDF bytes or error dict.
 
@@ -716,6 +724,7 @@ def _extract_pdf_url_from_scihub_html(html_bytes: bytes, doi_enc: str, mirror: s
 # ─────────────────────────────────────────────────────────────────
 # annas-archive.org 搜索 + 下载
 # ─────────────────────────────────────────────────────────────────
+@traced("annas_search")
 def fetch_annas_search(query: str, limit: int = 5) -> List[Dict[str, Any]]:
     """Search annas-archive.org for query, return list of {title, md5, format, size}."""
     q_enc = urllib.parse.quote(query)
@@ -754,6 +763,7 @@ def _parse_annas_search_html(html: str, domain: str) -> List[Dict[str, Any]]:
     return results
 
 
+@traced("annas_download")
 def fetch_annas_md5(md5_path: str, out_path: str = None) -> Dict[str, Any]:
     """从 annas /md5/<hash> 详情页拿真实下载 URL, 再下载 PDF."""
     if not md5_path.startswith("/"):
@@ -865,7 +875,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         if doi.lower().startswith("10.1101/") and prefer in ("biorxiv", "auto"):
             try:
                 from .biorxiv_channel import fetch_biorxiv_doi
-                r = fetch_biorxiv_doi(doi, out_path)
+                r = traced("biorxiv")(fetch_biorxiv_doi)(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -879,7 +889,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         if prefer in ("core", "auto"):
             try:
                 from .core_channel import fetch_core_doi
-                r = fetch_core_doi(doi, out_path)
+                r = traced("core")(fetch_core_doi)(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -893,7 +903,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             doi.lower().startswith("10.31234/osf.io/")) and prefer in ("osf", "auto"):
             try:
                 from .osf_channel import fetch_osf_doi
-                r = fetch_osf_doi(doi, out_path)
+                r = traced("osf")(fetch_osf_doi)(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -906,7 +916,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         if doi.lower().startswith("10.26434/chemrxiv-") and prefer in ("chemrxiv", "auto"):
             try:
                 from .chemrxiv_channel import fetch_chemrxiv_doi
-                r = fetch_chemrxiv_doi(doi, out_path)
+                r = traced("chemrxiv")(fetch_chemrxiv_doi)(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -973,6 +983,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
                           prefer: Optional[str] = None, _staged: bool = False) -> Dict[str, Any]:
     """Worker implementation. Caller owns process lifetime and cancellation."""
     t0 = time.time()
+    monotonic_start = time.monotonic()
     requested_prefer = prefer
     if requested_prefer is not None and requested_prefer not in FETCH_PREFERENCES:
         return {"error": "fetch_invalid_preference", "saved_as": None,
@@ -1163,13 +1174,19 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
         }
     # Caching is best-effort; a cache failure must not invalidate a saved PDF.
     cache_written = False
-    try:
-        from .cache import cache_put
-        cache_put(doi, Path(r["path"]).read_bytes(),
-                  channel=r.get("source", prefer), url=r.get("pdf_url") or "")
-        cache_written = True
-    except Exception:
-        pass
+    cache_status = 'skipped_budget'
+    # Optional caching must not consume the remaining retrieval budget. Run it
+    # in a contained child, with one second reserved for the result protocol.
+    cache_seconds = min(3.0, max_total_sec - (time.monotonic() - monotonic_start) - 1.0)
+    if cache_seconds > 0:
+        from .fetch_deadline import run_fetch
+        emit('cache_write', 'started')
+        cached = run_fetch(dict(_operation='cache_write', doi=doi, path=r['path'],
+                                channel=r.get('source', prefer), url=r.get('pdf_url') or ''),
+                           cache_seconds, _memory_mb=512)
+        cache_written = cached.get('cache_written') is True
+        cache_status = 'written' if cache_written else cached.get('error', 'cache_write_failed')
+        emit('cache_write', 'completed' if cache_written else 'failed')
 
     # Success
     return {
@@ -1181,6 +1198,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
         "final_status": "SUCCESS",
         "cache_hit": False,  # not from cache (would have returned earlier)
         "cache_written": cache_written,
+        "cache_status": cache_status,
         "size_bytes": r.get("size"),
         **{key: r[key] for key in ('xml_path', 'xml_size') if key in r},
         "_wrapper_notes": {

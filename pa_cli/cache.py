@@ -165,6 +165,9 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
     }
 
 
+from .fetch_trace import traced
+
+@traced("cache_write")
 def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
               root: Optional[Path] = None) -> dict:
     """Persist PDF + sidecar to cache. Returns the entry dict on success.

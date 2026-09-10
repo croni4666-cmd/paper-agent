@@ -177,3 +177,5 @@ Thumbs.db
 /test_output/**/*.log
 /test_output/**/*.html
 /test_output/**/*.xml
+# Machine-local skill backend paths
+runtime.local.json

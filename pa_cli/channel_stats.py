@@ -10,6 +10,9 @@ from typing import Any, Dict, Optional
 DEFAULT_PATH = Path.home() / ".paper-agent" / "fetch_channel_stats.jsonl"
 
 
+from .fetch_trace import traced
+
+@traced("statistics")
 def record_event(
     doi: str,
     channel: str,

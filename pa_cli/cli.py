@@ -333,43 +333,9 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
         sys.exit(0)
     elif result.get("handoff"):
         click.echo(f"\n[pa] ⚠ handoff: {result['handoff'].get('user_action_required')}", err=True)
-        # v3.9.11.5: also surface a proxy-missing hint on handoff path, since
-        # the most common cause of "all sources failed" is missing/wrong proxy.
-        env_proxy = (
-            os.environ.get("HTTPS_PROXY")
-            or os.environ.get("HTTP_PROXY")
-            or os.environ.get("ALL_PROXY")
-        )
-        if not proxy and not env_proxy:
-            click.echo(
-                "[pa] hint: no proxy is set. If you expected a paper to download,\n"
-                "         try:  $env:HTTPS_PROXY = 'http://127.0.0.1:10808'\n"
-                "         (user's clash-verge port changed 7897 -> 10808 on 2026-08-06)",
-                err=True,
-            )
         sys.exit(2)
     else:
-        # v3.9.11.5: friendly hint when all channels fail (often = missing proxy)
-        env_proxy = (
-            os.environ.get("HTTPS_PROXY")
-            or os.environ.get("HTTP_PROXY")
-            or os.environ.get("ALL_PROXY")
-        )
-        if not proxy and not env_proxy:
-            click.echo(
-                "\n[pa] ❌ all channels failed AND no proxy is set.\n"
-                "     Most likely cause: paper-agent needs a proxy to reach foreign\n"
-                "     services (OpenAlex, arXiv, Unpaywall, Sci-Hub, annas, etc.).\n"
-                "     Set one of:\n"
-                "       $env:HTTPS_PROXY = 'http://127.0.0.1:10808'   # Windows PowerShell\n"
-                "       export HTTPS_PROXY=http://127.0.0.1:10808      # bash/sh\n"
-                "     Or pass --proxy http://127.0.0.1:10808 to this command.\n"
-                "     v3.9.11.5: user's clash-verge proxy port changed 7897 -> 10808\n"
-                "     (see memory note 2026-08-06); old 7897 is no longer listening.",
-                err=True,
-            )
-        else:
-            click.echo("\n[pa] ❌ all channels failed (proxy is set; check network/Cloudflare)", err=True)
+        click.echo("\n[pa] retrieval did not complete; inspect error and retrieval_trace in the JSON result", err=True)
         sys.exit(1)
 
 

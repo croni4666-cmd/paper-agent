@@ -168,12 +168,18 @@ python scripts/fetch.py DOI [options]
   --prefer [arxiv|annas|scihub|pmc|pmc-pdf|unpaywall|biorxiv|core|osf|chemrxiv|auto]  default=auto
   --output-dir DIR                  default=.
   --no-cache                        skip cache lookup
+  --max-total-sec N                 total worker budget (default 300s)
 ```
 
 Tries the configured open-access cascade in order. Returns JSON with `saved_as /
 via_channel / via_url / size_bytes / elapsed_sec`. For PMC papers
 (PubMed Central), use `--prefer pmc-pdf` to force JATS XML → real PDF
 render via headless Chromium (~20-25s).
+
+
+`--no-cache` skips reads; successful downloads still attempt cache writes. Optional writes have a separate 3-second maximum, leaving time to return the PDF. Inspect `cache_status` and `retrieval_trace` when retrieval fails or the cache is unavailable. The trace retains the latest 64 events (`trace_truncated` marks omitted earlier events). Trace entries record reached stages and status, not URLs or exception text; a `started` entry without completion means that stage was still running or the worker ended. Unvisited sources have not been tested.
+
+For an installed skill outside the backend repository, set `PAPER_AGENT_ROOT` and `PAPER_AGENT_PYTHON`, or create `runtime.local.json` beside this SKILL.md with absolute `root` and `python` paths. Environment settings take precedence. Keep that machine-local file out of Git and deployment packages. `runtime.version`, `runtime.entry` and `runtime.trace_schema` identify the backend protocol in fetch results.
 
 ### `scripts/fetch_batch.py` — Batch fetch from BibTeX
 

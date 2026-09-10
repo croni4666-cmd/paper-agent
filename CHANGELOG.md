@@ -15,6 +15,15 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+### Native fetch reliability (2026-09-10)
+
+- Resolve relative output directories before changing the child process working directory, so PDFs target the caller's requested location.
+- Decode child CLI output explicitly as UTF-8 and reject malformed DOI input before starting network work.
+- Preserve successful downloads when optional cache writes stall; cache writes run in a contained worker with a 3-second maximum and expose `cache_status`.
+- Retain bounded source, HTTP, PDF-validation and cache progress on worker timeout, with backend version/entry information and no private paths in the trace.
+- Preserve supported DOI/arXiv input forms and configured Python discovery; installed skills can use a local backend configuration excluded from Git.
+- A native, no-cache arXiv positive control now succeeds with both a writable isolated cache and an unavailable default cache. This is a bounded regression check, not a corpus-wide success-rate claim.
+
 ### Search metadata integrity (2026-09-10)
 
 - Preserve complete Crossref abstracts instead of silently truncating at 500 characters.
