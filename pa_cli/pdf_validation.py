@@ -7,6 +7,9 @@ VALIDATION_MEMORY_MB = 512
 VALIDATION_POLICY = 'pypdf-strict-pages-v1'
 
 
+from .fetch_trace import traced
+
+@traced("pdf_validation")
 def validate_pdf(path: Path) -> dict:
     result = run_fetch({'_operation': 'validate_pdf', 'path': str(Path(path).resolve())},
                        VALIDATION_SECONDS, _memory_mb=VALIDATION_MEMORY_MB)

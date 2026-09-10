@@ -13,6 +13,9 @@ import signal
 import subprocess
 import sys
 import time
+import tempfile
+from .fetch_trace import read_trace
+from . import __version__
 
 
 # Set only by our private worker after containment has been established.
@@ -97,11 +100,25 @@ def run_fetch(request, seconds, *, _command=None, _memory_mb=None):
     if not valid:
         return _failure("fetch_invalid_timeout", started)
     process = job = None
+    trace_path = None
+    def finish(result):
+        result["runtime"] = {"version": __version__, "entry": "pa_cli.fetch_worker", "trace_schema": 1}
+        if trace_path:
+            result['retrieval_trace'] = read_trace(trace_path)
+            result['trace_truncated'] = bool(result['retrieval_trace'] and result['retrieval_trace'][0].get('sequence', 0) > 1)
+        return result
+    def failure(code):
+        result = finish(_failure(code, started))
+        if code == 'fetch_timeout':
+            result['hint'] = 'Inspect retrieval_trace for the last reached stage; later sources may not have run'
+        return result
     # A nested PDF parser must stay in the retrieval group: if its supervising
     # worker is killed, the outer supervisor must still be able to reap it.
     shared_group = os.name != 'nt' and _IN_FETCH_WORKER and _memory_mb is not None
     try:
-        payload = json.dumps(request).encode("utf-8")
+        with tempfile.NamedTemporaryFile(prefix='pa-fetch-trace-', suffix='.jsonl', delete=False) as trace:
+            trace_path = trace.name
+        payload = json.dumps({**request, '_trace_path': trace_path, '_deadline': started + seconds}).encode("utf-8")
         if os.name == "nt":
             job = _WindowsJob(_memory_mb)
         command = _command or [sys.executable, "-c",
@@ -124,22 +141,22 @@ def run_fetch(request, seconds, *, _command=None, _memory_mb=None):
             job.assign(process.pid)
         remaining = seconds - (time.monotonic() - started)
         if remaining <= 0:
-            return _failure("fetch_timeout", started)
+            return failure("fetch_timeout")
         output, _ = process.communicate(payload, timeout=remaining)
         if time.monotonic() - started > seconds:
-            return _failure("fetch_timeout", started)
+            return failure("fetch_timeout")
         if process.returncode:
-            return _failure("fetch_worker_failed", started)
+            return failure("fetch_worker_failed")
         result = json.loads(output)
         if not isinstance(result, dict):
-            return _failure("fetch_worker_failed", started)
+            return failure("fetch_worker_failed")
         result.setdefault("_wrapper_notes", {})["max_total_sec_supported"] = True
         result["elapsed_sec"] = round(time.monotonic() - started, 3)
-        return result
+        return finish(result)
     except subprocess.TimeoutExpired:
-        return _failure("fetch_timeout", started)
+        return failure("fetch_timeout")
     except (OSError, ValueError, TypeError):
-        return _failure("fetch_worker_failed", started)
+        return failure("fetch_worker_failed")
     finally:
         # Kill descendants even if their direct parent already exited.
         if job:
@@ -156,3 +173,9 @@ def run_fetch(request, seconds, *, _command=None, _memory_mb=None):
             for stream in (process.stdin, process.stdout):
                 if stream:
                     stream.close()
+        if trace_path:
+            try:
+                Path(trace_path).unlink(missing_ok=True)
+                Path(trace_path + '.pending').unlink(missing_ok=True)
+            except OSError:
+                pass

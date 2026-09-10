@@ -16,6 +16,7 @@ Returns: Path to paper-agent root, or None if not found.
 from __future__ import annotations
 
 import importlib
+import json
 import os
 import shutil
 import subprocess
@@ -24,10 +25,19 @@ from pathlib import Path
 from typing import Optional
 
 
+def _local_runtime():
+    """Read user-managed local install paths, never package this file."""
+    try:
+        value = json.loads((Path(__file__).resolve().parents[1] / 'runtime.local.json').read_text(encoding='utf-8'))
+        return {k: v for k, v in value.items() if k in ('root', 'python') and isinstance(v, str) and v.strip()}
+    except (OSError, ValueError, AttributeError):
+        return {}
+
+
 def find_pa_root() -> Optional[Path]:
     """Find the paper-agent root directory. Returns None if not found."""
     # 1. Explicit env var
-    env_root = os.environ.get("PAPER_AGENT_ROOT")
+    env_root = os.environ.get("PAPER_AGENT_ROOT") or _local_runtime().get("root")
     if env_root:
         p = Path(env_root).expanduser().resolve()
         if (p / "pa_cli" / "__init__.py").is_file():
@@ -115,6 +125,34 @@ def find_pa_root() -> Optional[Path]:
 def find_pa_executable() -> Optional[str]:
     """Find the `pa` executable on PATH. Returns full path or None."""
     return shutil.which("pa")
+
+
+def find_pa_python(pa_root: Optional[Path] = None) -> str:
+    """Return a Python interpreter capable of running paper-agent."""
+    # Child CLI output frequently contains titles and author names outside the
+    # active Windows code page.  Force UTF-8 for every wrapper subprocess.
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    os.environ.setdefault("PYTHONUTF8", "1")
+
+    env_python = os.environ.get("PAPER_AGENT_PYTHON") or _local_runtime().get("python")
+    if env_python:
+        candidate = Path(env_python).expanduser()
+        if candidate.is_file():
+            return str(candidate.absolute())
+
+    root = pa_root or find_pa_root()
+    if root:
+        candidates = [
+            root / ".venv-codex" / "Scripts" / "python.exe",
+            root / ".venv-codex" / "bin" / "python",
+            root / ".venv" / "Scripts" / "python.exe",
+            root / ".venv" / "bin" / "python",
+        ]
+        for candidate in candidates:
+            if candidate.is_file():
+                return str(candidate.absolute())
+
+    return sys.executable
 
 
 def get_install_instructions() -> str:

@@ -169,3 +169,35 @@ main()
             self.assertEqual(result['final_status'], 'SUCCESS')
             self.assertEqual(Path(result['saved_as']).read_bytes(), PDF)
             self.assertEqual(result['cleanup_error'], 'fetch-output-cleanup-failed')
+    def test_slow_optional_cache_cannot_discard_download(self):
+        script = '''
+from pathlib import Path
+import sys,time
+from pa_cli import fetch,cache,fetch_deadline,channel_stats
+from pa_cli.fetch_worker import main
+
+def slow(*args,**kwargs):
+    time.sleep(30)
+cache.cache_put=slow
+channel_stats.record_event=lambda *a,**k:None
+supervise=fetch_deadline.run_fetch
+slow_child="from pa_cli import cache; import time; cache.cache_put=lambda *a,**k:time.sleep(30); from pa_cli.fetch_worker import main; main()"
+def nested(request, seconds, **kwargs):
+    if request.get('_operation')=='cache_write':
+        kwargs['_command']=[sys.executable,'-c',slow_child]
+    return supervise(request,seconds,**kwargs)
+fetch_deadline.run_fetch=nested
+def download(**kwargs):
+    Path(kwargs['out_path']).write_bytes(%r)
+    return {'path':kwargs['out_path'],'source':'fixture'}
+fetch.fetch=download
+main()
+''' % PDF
+        script = script.replace('\nmain()\n', '\ntime.sleep(1.5)\nmain()\n')
+        with tempfile.TemporaryDirectory() as temp:
+            request=dict(doi=DOI,output_dir=temp,use_cache=False,_staged=True)
+            result=run_fetch(request,4,_command=[sys.executable,'-c',script])
+            self.assertEqual(result.get('final_status'),'SUCCESS',result)
+            self.assertFalse(result['cache_written'])
+            self.assertEqual(result['cache_status'],'fetch_timeout')
+            self.assertEqual(Path(result['saved_as']).read_bytes(),PDF)

@@ -48,8 +48,10 @@ class RetrievalCacheEmailTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / 'paper.pdf'
             path.write_bytes(PDF)
+            blocked_cache = Path(temp) / 'synthetic-private-detail'
+            blocked_cache.write_text('cache root is a file')
             with patch.object(fetch, 'fetch', return_value={'path': str(path), 'source': 'fixture'}), \
-                 patch.object(cache, 'cache_put', side_effect=OSError('synthetic-private-detail')), \
+                 patch.dict(os.environ, {'PA_CACHE_DIR': str(blocked_cache)}), \
                  patch('pa_cli.channel_stats.record_event'):
                 result = fetch._fetch_doi_in_process(DOI, temp, use_cache=False)
             self.assertEqual(result['final_status'], 'SUCCESS')
