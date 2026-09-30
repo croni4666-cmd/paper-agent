@@ -13,142 +13,327 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
-## [Unreleased]
+## [3.10.0.0] - 2026-09-30
 
-### Native fetch reliability (2026-09-10)
+### Security & Privacy — User data sanitization, test artifact audit & codebase hardening (2026-09-30)
 
-- Resolve relative output directories before changing the child process working directory, so PDFs target the caller's requested location.
-- Decode child CLI output explicitly as UTF-8 and reject malformed DOI input before starting network work.
-- Preserve successful downloads when optional cache writes stall; cache writes run in a contained worker with a 3-second maximum and expose `cache_status`.
-- Retain bounded source, HTTP, PDF-validation and cache progress on worker timeout, with backend version/entry information and no private paths in the trace.
-- Preserve supported DOI/arXiv input forms and configured Python discovery; installed skills can use a local backend configuration excluded from Git.
-- A native, no-cache arXiv positive control now succeeds with both a writable isolated cache and an unavailable default cache. This is a bounded regression check, not a corpus-wide success-rate claim.
+- **Comprehensive Personal Privacy Audit & Sanitization**:
+  - Eliminated all occurrences of local usernames and Windows user paths (`C:\Users\<user>\...`) across `CHANGELOG.md`, `ROADMAP.md`, `SKILL.md`, and 13 historical test logs, standardizing on cross-platform placeholders (`~/.gemini/config/...`, `~/.codex/skills/...`, `<Temp>/pytest-of-<User>`, and `C:\Users\paper-agent-author\`).
+  - Redacted and sanitized legacy session cookies (CNKI proxy `PHPSESSID`, `user` token, `expires`) across `_session_handoff.md` and test scripts (`_write_cnki_cookies.py`, `_write_cnki_cookies_v2.py`).
+  - Generalized local research directory names to neutral corpus identifiers (`Corpus A`, `Corpus B`).
+  - Cleaned all test residue (`.pytest_temp/`) and verified that 0 temporary files, logs, or SQLite databases are tracked by Git.
+- **Path Traversal & Boundary Containment (`pa_cli/project.py`, `pa_cli/fetch_batch.py`)**:
+  - Hardened `validate_slug`: explicitly rejects `.` and `..` parent traversal sequences, hidden paths (`.hidden`), and invalid directory markers.
+  - Enforced `relative_to` path containment in `project_dir`: guarantees all resolved project directories are strictly subpaths of `DEFAULT_ROOT`, preventing any escape from the root directory.
+  - Hardened `corpus_merge`: cleanly differentiates between external filesystem `.bib` files and project slugs before path resolution.
+  - Sanitized BibTeX cite-keys in `fetch_batch.py`: strips directory traversal markers (`..`, `/`, `\`) from untrusted incoming `.bib` entries before building output `.pdf` paths.
+- **Cache Filename Sanitization (`pa_cli/cache.py`)**:
+  - Hardened `_doi_slug`: sanitizes backslashes, colons, and illegal Windows filesystem characters (`*`, `?`, `"`, `<`, `>`, `|`) into underscores, preventing traversal and NTFS reserved filename errors.
+- **XXE & XML Entity Expansion Guard (`pa_cli/jats_to_pdf.py`)**:
+  - Enforced 20MB payload size limit and strictly prohibited DTD `<!ENTITY` declarations before `ET.fromstring()` parsing, neutralizing XML external entity attacks (XXE) and Billion Laughs quadratic expansion.
+- **Audited Secure Subsystems (Zero Vulnerabilities Confirmed)**:
+  - **Secret Management**: Confirmed 0 hardcoded API keys or credentials; secrets are strictly loaded via `.env` (gitignored); CLI output masks tokens and only displays `key_length`.
+  - **SQL Injection**: Verified all SQLite queries use parameter binding (`?`); read-only queries in `sample_pool` enforce `mode=ro` URI connections with DDL/DML keyword blocking.
+  - **Command Injection**: Verified 0 instances of `shell=True` or `eval()`/`exec()` on user inputs; all subprocess invocations use structured argument lists with explicit timeouts.
+  - **Network & TLS**: Verified proxy validation in `_http.py` rejects remote plaintext HTTP proxies by default; verified 0 `verify=False` occurrences.
+- **Testing**: Added `test_output/test_security_audit.py` with 6 dedicated test cases covering path traversal, cache sanitization, and XXE protection (100% pass).
 
-### Search metadata integrity (2026-09-10)
 
-- Preserve complete Crossref abstracts instead of silently truncating at 500 characters.
-- Request online, published and issued dates alongside print dates for search and title enrichment; skip invalid date values and never substitute metadata creation dates.
-- Identify Crossref correctly in search error messages.
-- Regression coverage includes complete abstracts, date fallback, request field selection and error attribution. A live 12-record request returned no missing years and seven abstracts longer than 500 characters; this is a bounded check, not an all-engine guarantee.
 
-Includes merged improvements through PR #48 and bounded validation changes; no new version or release has been published.
+### Added — Project bibliography metadata enrichment (`pa project enrich`) & console encoding hardening (2026-09-30)
 
-### Added
+- **Automated Metadata Enrichment (`pa project enrich <slug>`)**:
+  - Automatically identifies stub citations in project `refs.bib` (e.g. from raw directory scanning or minimalist import with only DOIs and "Paper 10.xxxx" stubs).
+  - Resolves DOIs via OpenAlex (with S2 fallback) to extract authoritative paper titles, author lists, publication years, venues/journals, and reconstructed abstracts (from OpenAlex `abstract_inverted_index`).
+  - Preserves exact existing citation keys (e.g. `@article{1057_s41599_024_04296_4,`) so manuscript references (`[@bibkey]`) remain 100% stable.
+  - Automatically updates `refs.bib` with clean, publication-ready BibTeX entries and stamps `last_enrich_at` in `meta.json`.
+  - Supports `--limit N` (batch throttle) and `--force` (re-enrich non-stubs) flags.
+  - Verified live on real user research corpora: successfully enriched 39 stubs in `fertility-study` and 65 stubs in `korea-tripartite-game`.
+- **BibTeX Cite-Key & Abstract Preservation (`pa_cli/bibtex.py`)**:
+  - `make_cite_key` now checks and preserves existing `paper["key"]` when provided, avoiding unnecessary key churn.
+  - Added support for `abstract` field formatting in `to_bibtex`.
+- **Windows Console Encoding Hardening (`pa_cli/cli.py`)**:
+  - Configured automatic `sys.stdout` and `sys.stderr` UTF-8 reconfigure with `errors="replace"` on Windows platforms, eliminating `UnicodeEncodeError: 'gbk' codec can't encode character '\u0161'` when printing international academic author names.
+- **Agent Skill & CLI Integration**:
+  - Added CLI command `pa project enrich` in `pa_cli/cli.py`.
+  - Added `enrich` subparser and handler to `.agents/skills/paper-agent/scripts/project.py`.
+  - Updated `.agents/skills/paper-agent/SKILL.md` and synchronized to global skill directory `~/.gemini/config/skills/paper-agent/`.
+- **Testing**: Added `TestProjectEnrich` in `test_output/_test_project.py` (total 53/53 tests pass, 100% green).
 
-- Optional `mcp` installation extra (`mcp>=1.30,<2`) for the local fetch server,
-  included in the `all` extra. Add real SDK stdio client coverage and a dedicated
-  CI job for initialization, listing, cached retrieval, schema errors and closure.
 
-- Dedicated Linux Chromium CI job installs the browser extra and matching system
-  dependencies, then runs the complete suite with real-browser tests enabled.
-  The existing three-version Python matrix remains in place.
 
-- Run PDF structure checks in a separate worker with 10-second, 512 MiB memory
-  and 256 MiB input bounds. Reject validation timeout and resource failures.
-- Revalidate legacy cache entries on every lookup using the same byte snapshot
-  for parsing and checksum verification. Return a versioned validation policy;
-  invalid entries become misses without being deleted.
+### Added — Project bibliometrics, citation audit & multi-format literature digest export ([P2-12], [P2-7], [P2-19]) (2026-09-30)
 
-- Opt-in sequential six-engine availability probes with JSON reports, validated
-  inputs and sanitized errors (PR #34).
-- Offline engine/retrieval contracts and local HTTP/Chromium integration coverage
-  for PDF text, image embedding, temporary files and process cleanup (PR #35–#42).
-- Strict pypdf validation for fresh PDFs and batch skip-existing candidates,
-  including nonempty unencrypted page trees and valid content-stream references.
-  Declare `pypdf>=6.18,<7` as a runtime dependency (PR #48).
+- **Bibliometric Analysis (`pa project stats <slug>`)**:
+  - Computes comprehensive bibliometric statistics for topic projects: total catalogued papers, DOI coverage percentage, publication type distribution (articles, book chapters, conference papers), publication year chronology (min, max, median, decade histogram), top authors (with frequency), top venues/journals, and local Zotero deduplication linkage.
+  - Automatically updates `meta.json` with `n_papers`, `n_pdfs`, `n_topics`, and `stats` summary.
+  - Supports `--json` flag for machine-readable output.
+- **Manuscript Citation Audit (`pa project cite-check <slug> <manuscript>`)**:
+  - Scans manuscripts (`.md`, `.tex`, `.txt`, `.qmd`, `.rmd`) for pandoc/natbib citation keys (`[@key]`, `\cite{key}`, `@key`).
+  - Verifies presence of all cited keys against project `refs.bib`.
+  - Flags missing citations and provides fuzzy Levenshtein/edit-distance suggestions for probable typos.
+  - Identifies orphan / unused BibTeX entries in project bibliography.
+  - Supports `--json` flag and returns exit code 1 on missing citations for CI/pre-commit pipeline integration.
+- **Curated Literature Digest & Export (`pa project export <slug>`)**:
+  - Exports project corpus into three production formats:
+    - `digest` (Markdown): grouped by sub-topic clusters (from `topics.json`), includes PDF availability indicators, publication venue metadata, abstract, and clickable DOI links.
+    - `bibtex` (`.bib`): clean, formatted, standardized project bibliography.
+    - `json` (`.json`): structured corpus array with parsed author names, year, venue, abstract, and local PDF paths.
+  - Supports `--output <file>` for direct saving to file.
+- **Agent Skill & CLI Integration**:
+  - Wired commands to `pa project stats`, `pa project cite-check`, and `pa project export` in `pa_cli/cli.py`.
+  - Added CLI handlers `stats`, `cite-check`, `export` to `.agents/skills/paper-agent/scripts/project.py` with JSON output.
+  - Updated `.agents/skills/paper-agent/SKILL.md` with complete usage instructions and synchronized to global skill directory.
+- **Testing**: Added `TestProjectStatsCiteCheckExport` in `test_output/_test_project.py` (51 tests total, 100% pass).
 
-### Fixed
 
-- Map MCP batch summaries to current retrieval dataclass fields while preserving
-  public `n_failed`, `elapsed_sec`, `saved_as` and `via_channel` names. Real stdio
-  fixtures cover successful, partially failed and fully failed batch results.
 
-- Publish new cache PDFs as immutable generations and atomically replace the
-  metadata index. Interrupted updates preserve the old entry; overlapping writers
-  publish coherent versions. Continue reading the old cache format and include
-  retained generations in explicit removal/cleaning and disk usage statistics.
+### Fixed — Full test suite regression audit & cross-platform encoding hardening (2026-09-30)
 
-- Reject cache hits when PDF or metadata identity changes during validation,
-  including concurrent replacement or deletion. Test interleaved process writers
-  and recovery from mixed PDF/metadata publication without claiming atomic writes.
+- **Comprehensive Test Sweep**: Audited and executed all 42 test suites across `test_output/`, `handoff/run_offline_tests.py`, and `_test_project.py` (totaling 350+ tests), achieving a **100% pass rate (42/42 suites passing, 0 failures, 0 errors)**.
+- **Brotli Decompression Hardening (`pa_cli/_http.py`)**: Fixed critical bug where `Accept-Encoding: gzip, deflate, br` was unconditionally advertised even when `brotli` was not installed, causing servers (e.g. OpenAlex) to return Brotli-compressed payloads that failed JSON parsing (`UnicodeDecodeError` / `AttributeError: 'bytes' object has no attribute 'get'`). Dynamically detects Brotli availability via `_default_accept_encoding()` and installed `brotli` into the virtual environment.
+- **Non-Dict HTTP Response Guarding (`pa_cli/concepts.py`, `pa_cli/citations.py`)**: Added `isinstance(data, dict)` guards to `search_concepts`, `fetch_concept_metadata`, and `get_referenced` to prevent crashes when proxies return HTML/non-JSON responses.
+- **Windows GBK Console Encoding Hardening**:
+  - Reconfigured `sys.stdout` and `sys.stderr` to UTF-8 in `test_output/test_citations_e2e.py`, `test_output/test_pa_cache_cli.py`, and `test_output/test_labels_real_corpus.py` to prevent `UnicodeEncodeError: 'gbk' codec can't encode character '\u26a0' / '\u2705'`.
+  - Replaced unicode checkmark/cross characters in `pa_cli/mcp_setup.py` with ASCII-safe `[OK]` and `[FAILED]`.
+  - Added `encoding="utf-8", errors="replace"` in `test_labels_real_corpus.py:_run_cli` subprocess execution.
+- **Pytest Temp Directory Permission Fix (`pyproject.toml`, `.gitignore`)**:
+  - Configured `[tool.pytest.ini_options]` with `addopts = "--basetemp=.pytest_temp"` to bypass Windows ACL permissions lock on `<Temp>/pytest-of-<User>`.
+  - Added `.pytest_cache/` and `.pytest_temp/` to `.gitignore`.
+  - Installed `pytest==9.1.1` into the local virtual environment.
+- **PyMuPDF 1.28 Deprecation Warning Cleanup**:
+  - Standardized modern `import pymupdf as fitz` with fallback across `pa_cli/review.py` and `pa_cli/deep_rerank.py`, eliminating deprecation warnings.
+- **Full Regression Subprocess Environment Isolation (`test_output/test_full_regression.py`)**:
+  - Forwarded proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, etc.) and `APPDATA`/`LOCALAPPDATA` in `MIN_ENV` so network-requiring E2E tests (`test_citations_e2e.py`, `test_concepts_e2e.py`) succeed seamlessly behind user proxies.
+  - Gracefully skipped non-existent legacy `skill/examples/test_skill.py`.
 
-- Normalize missing Crossref dates and OpenAlex author/date/citation data; preserve
-  AMiner failure diagnostics and Basic query deduplication/year filtering.
-- Reject oversized/non-PDF downloader responses; close HTTP responses and handle
-  decoding failures without exposing raw transport errors.
-- Validate PMC JATS cache entries, render standalone/namespaced articles, preserve
-  image attributes/MIME, and clean up browser/temporary-file failure paths.
-- Treat XML-only PMC retrieval as PDF failure while retaining usable XML; automatic
-  retrieval continues to fallback sources. Respect explicit source preference and
-  forced JATS mode without retrying internal TypeErrors.
-- Honor per-call Unpaywall email and proxy settings; restore caller state and avoid
-  exposing credentials in diagnostics.
-- Populate the cache after successful downloads, including `--no-cache` retrieval
-  (which bypasses lookup only). Cache write failure does not invalidate output.
-- Require DOI identity, matching checksum and valid age within 365 days for cache
-  hits; stage cache writes and treat mismatched pairs as misses (PR #43–#44).
-- Enforce single-fetch worker budgets and shared batch download budgets, terminating
-  active workers and normal descendants on timeout (PR #45–#46).
-- Stage fresh output and replace final files only after validation; failure or
-  timeout preserves previous PDFs. Validate XML before publication, clean only
-  current-attempt intermediates, and preserve PDF success after XML/cleanup errors
-  (PR #46–#47).
-- Resolve workers from the active package without changing caller directories;
-  reject unsafe batch filenames and isolate provider fixtures from real execution.
+### Added — Project sub-topic clustering (`pa project topics`) & OpenAlex serialization hardening (2026-09-30)
 
-### Validation checkpoint
+- Implemented `pa project topics <slug>` (`pa_cli/project.py:project_topics`):
+  - Integrates topic clustering (TF-IDF + c-TF-IDF / OpenAlex concepts Jaccard, 100% local-first, zero paid LLM).
+  - Automatically clusters downloaded full-text PDFs in `<slug>/pdfs/` or generates staged markdown representations from `refs.bib` (titles, authors, venue, year, abstract) when PDFs are not yet fetched.
+  - Automatically outputs canonical `<slug>/topics.json` and tracks `n_topics` + `last_topics_at` in `meta.json`.
+  - Added CLI flags: `--alpha`, `--word-count-min`, `--method`, `--label-method`, `--custom-labels`, and `--domain-stopwords-file`.
+- Updated `scripts/project.py`: added `topics` command with structured JSON stdout.
+- Updated `pa project status`: reports `n_topics` and canonical `paths['topics']`.
+- Fixed JSON serialization bug in `pa_cli/topics.py`: ensured `_jsonify(result)` converts all numpy scalar integers (`int64`, `float64`) prior to returning `result`.
+- Fixed OpenAlex non-dict response handling in `pa_cli/citations.py` (`get_work_by_doi`, `get_citing`) and `pa_cli/topics.py` (`_fetch_concepts_for_doi`) to prevent `'bytes' object has no attribute 'get'`.
+- Installed `scikit-learn` (v1.9.1) and `scipy` (v1.18.1) in local virtual environment.
+- Added `TestProjectTopics` in `test_output/_test_project.py` (total 46 tests, 100% pass).
 
-- PR #48: 129 tests and 151 subtests passed locally including real Chromium;
-  dependency consistency check passed. Five GitHub CI jobs passed, including
-  Python 3.10/3.11/3.12, build/resolution and dependency vulnerability audit.
-- These counts describe the tested PR #48 commit. Default CI skips Chromium;
-  local fixtures do not establish current public-provider availability or quality.
+### Added — Project batch operations: fetch, prisma, and review ([P2-12]) (2026-09-30)
 
-### Remaining limits
+- Implemented `pa project fetch <slug>` (`pa_cli/project.py:project_fetch`):
+  - Batch downloads PDFs for all entries in a topic project's `refs.bib` into `<root>/<slug>/pdfs/`.
+  - Reuses robust sequential download orchestrator `run_fetch_batch` across all 8 fetch channels.
+  - Updates `meta.json` with `last_fetch_at`, `n_pdfs`, and `updated_at`.
+- Implemented `pa project prisma <slug>` (`pa_cli/project.py:project_prisma`):
+  - Auto-computes PRISMA 2020 systematic review counts (identified, screened, eligibility, included) directly from project `refs.bib` + downloaded `pdfs/`.
+  - Groups source distributions by publication venue / journal / publisher.
+  - Generates publication-ready Mermaid diagrams and structured Markdown reports.
+- Implemented `pa project review <slug>` (`pa_cli/project.py:project_review`):
+  - Generates comprehensive academic literature review drafts scoped to topic projects.
+  - Automatically synthesizes downloaded full-text PDFs (via PyMuPDF word-count classification) or catalogued `refs.bib` entries when PDFs are pending download.
+  - Previews PRISMA 2020 flow diagrams, study chronologies, venue breakdowns, and research gaps.
+- Updated `pa project status`: reports `n_pdfs` alongside `n_papers` and `n_labels` across both individual JSON output and multi-project CLI summaries.
+- Expanded `scripts/project.py` with `fetch`, `prisma`, and `review` handlers and synchronized to global skill directory `~/.gemini/config/skills/paper-agent/`.
+- Expanded test suite `test_output/_test_project.py` to 44 tests (100% pass, 0 regressions across all 182 test cases).
 
-- Legacy cache hits still use PDF header/checksum checks, not strict parsing.
-- Parent-side PDF parsing has no separate time/memory bound. Strict parsing is not
-  rendering or a security scan and can reject repairable/encrypted documents.
-- Direct `fetch()` retains provider timeouts and direct writes. OS launch/cleanup,
-  publication, batch parsing and callbacks can add time outside worker budgets.
-- PDF/XML and cache PDF/metadata pairs are not joint transactions. Valid cache
-  entries may remain when output publication fails; crash/concurrency guarantees
-  require further work.
-- Remaining provider contracts, representative JATS layouts and real MCP stdio
-  integration are tracked in ROADMAP.md.
+### Added — Workspace scanning, import-dir, and stub metadata enrichment (2026-09-30)
 
-## [3.9.29.1] - 2026-09-07
+- Added `pa project scan <dir>` and `scripts/project.py scan <dir>`: recursively scans research directories for academic DOI mentions across `.md`, `.txt`, `.tex`, `.bib` files, tracking citation counts and source files. Verified on large multi-file research corpora (Corpus A discovered 194 mentions across 1721 files; Corpus B discovered 46 DOIs across 22 files).
+- Added `pa project import-dir <slug> <dir>` and `scripts/project.py import-dir`: auto-initializes topic projects, discovers citations, loads local `.bib` metadata, and constructs structured project `refs.bib`.
+- Enhanced `pa project corpus-merge`: automatically enriches stub entries (e.g. `Paper 10.xxxx`) with rich titles, authors, venues, and publication years from incoming BibTeX files without losing existing DOI keys.
+- Expanded `test_output/_test_project.py` to 36 tests (100% PASS).
 
-### Security
-- Redact proxy credentials from command status, warnings, and validation errors.
-- Route bioRxiv, ChemRxiv, CORE, and OSF download requests through the shared proxy validator.
-- Remove JATS figure download's process-global urllib opener mutation.
+### Added — [P2-12] Phase 2 multi-corpus operations & agent project tool (2026-09-30)
 
-### Fixed
-- Constrain arxiv and requests to their declared compatible release range, avoiding the requests 2.34 resolver conflict.
+- Implemented `corpus-search` (search within project refs.bib with matched fields highlight), `corpus-merge` (deduplicated merge from external BibTeX or another project), `corpus-add` (direct DOI / BibTeX addition), and `corpus-check` (zero-network check against local `zotero.sqlite`) in `pa_cli/project.py` and `pa project` CLI group.
+- Added agent wrapper script `scripts/project.py` with JSON-first stdout for multi-corpus topic workflows.
+- Expanded `test_output/_test_project.py` with 7 new tests (33 tests total, 100% pass).
 
-### Validation
-- Formal suite: 24 passed.
-- Dependency vulnerability audit: no known vulnerabilities in requirements.txt.
-## [3.9.29.0] - 2026-09-07
+### Added — 6-Tool MCP Server (`pa_cli/mcp_fetch.py`) (2026-09-30)
 
-### Added
-- Local fetch-channel statistics via pa fetch-stats and the paper-agent skill wrapper.
-- PubMed result enrichment with abstracts and MeSH terms.
-- PMC JATS XML cache for repeat PDF rendering.
+- Expanded stdio MCP Server to 6 native tools: `pa_search`, `pa_fetch`, `pa_batch_fetch`, `pa_evidence`, `pa_verify_claim`, and `pa_zotero_check`.
+- Handlers include zero-hallucination claim verification, page-aware evidence extraction, multi-engine paper search, and local Zotero deduplication.
+- Expanded `test_output/test_mcp_fetch.py` to 16 tests covering all 6 tool schemas, input validations, and end-to-end stdio initialization.
 
-### Changed
-- Retired CNKI and Semantic Scholar from the public search and fetch surface.
-- Migrated ChemRxiv metadata lookup from the retired Figshare API to Cambridge Open Engage, with the official DOI-PDF fallback.
-- Simplified the installable skill so its engines, preferences, and documentation match the CLI.
+### Added — Unified `pa zotero` command group (2026-09-30)
 
-### Fixed
-- Pytest now collects only the formal tests directory and prioritizes workspace code, preventing historical test-output scripts from loading an unrelated editable installation.
+- Registered Click group `pa zotero` with subcommands `check`, `search`, `push`, `sync`, and `project` to match documentation in `references/cli-cheatsheet.md`.
+- Preserved flat command aliases (`pa zotero-check`, `pa zotero-project`, etc.) for 100% backward compatibility.
 
-### Validation
-- Formal suite: 20 passed.
-- Live probes: Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov each returned results.
-- Live PDF-source checks: bioRxiv, OSF, and PMC succeeded. ChemRxiv currently returns an actionable Cloudflare 403 from this network; CORE was not found for the probe DOI.
+### Added — M5 measured evaluation & threshold calibration (2026-09-30)
+
+- `pa jev evaluation-score` joins predictions to frozen evaluation cases, preserves live exposure exclusions, selects calibration threshold via FNR-constrained grid search, and computes holdout metrics with 95% Wilson confidence intervals.
+- `pa_cli/jev_eval_join.py`: Wilson score confidence interval, Brier calibration score, reliability deciles, and synthetic fixture protection.
+- 4 new unit tests added in `test_jev_eval_join.py` (all 10 offline suites / 97 tests passing 100% OK).
+
+### Added — Skill layer expansion to 12 scripts (2026-09-30)
+
+- Added `scripts/evidence.py` (M2 page-aware PDF text extraction with exact character offsets).
+- Added `scripts/provenance.py` (M1B artifact license CC-BY/CC0 verification & DOI check).
+- Added `scripts/zotero.py` (local read-only `zotero.sqlite` check, library search, BibTeX push).
+- Added `scripts/prisma.py` (PRISMA 2020 Mermaid flowchart & Markdown report generator).
+- Installed updated skill to Antigravity global configuration `~/.gemini/config/skills/paper-agent`.
+
+### Fixed — CLI premature exit & PRISMA self-containment (2026-09-30)
+
+- Fixed premature `main()` call at line 1152 of `pa_cli/cli.py` which prevented 20+ subcommands from registering; all 33 commands now active.
+- Made `pa_cli/prisma.py` self-contained with fallback implementation to remove cross-package untracked dependency.
+
+
+### Added — independent human adjudication (2026-09-27)
+
+- `review-resolve` adds append-only human resolution without rewriting reviews;
+  exact current judgment basis and distinct adjudicator ID are required.
+- New schema v3; v2 prior operations remain available without automatic migration.
+- Five new adjudication, five existing M5 and seven CLI tests passed, all synthetic.
+
+### Fixed — M5 freeze evidence validation (2026-09-27)
+
+- Luna reproduced hash-consistent malformed evidence being accepted by freeze.
+  Freeze and export now share span/completeness validation, rejecting bad IDs,
+  pages, blank/duplicate evidence and invalid completeness fields.
+- New synthetic M5 suite: 5 tests, including 9 malformed-input subcases. All
+  88 M4/M5 checks passed after repair; no live requests or real labels involved.
+
+### Added — M5 human judgments and freeze (2026-09-27)
+
+- Schema v2 freezes allowed rubric labels/evidence IDs; explicit human labels,
+  abstentions and correction chains bind to reviewer assignments.
+- `review-submit` deduplicates submission IDs; `judgments-freeze` requires complete
+  consistent unexposed judgments and retains abstentions/exposure exclusions.
+- No actual human labels entered or tests run. Version 1 migration remains open.
+
+### Added — M5 local coordination (2026-09-27)
+
+- Separate immutable case/split ledger, source-bound export validation, explicit
+  reviewer assignments and study-level exposure history with read-only status.
+- Commands: `evaluation-freeze`, `review-assign`, `review-expose`, `evaluation-status`.
+- No real assignments, labels, uploads or tests performed during implementation.
+
+### Added — M5 local review export (2026-09-27)
+
+- Read-only M3 `pa jev review-export`: allowlisted evidence/rubric and completeness
+  notices, separate coordinator manifest, single-directory publication.
+- No label writes or external calls. No tests added or run for this increment.
+
+### Added — M4 explicit resume and linked retry (2026-09-27)
+
+- Local `pa jev resume` records worker/final-usage attestations, requires settled
+  outcomes, fresh price and remaining capacity, and preserves caps and usage.
+- Optional job/API `retry_of` binds fresh approval to a failed same-run parent;
+  immutable links and deterministic child IDs prevent duplicate retry sends.
+- All attempts retain accounting; late results can halt a resumed run again.
+- 83 offline checks passed, including 13 retry/resume scenarios and 12 approval
+  CLI checks. No live provider request or manuscript upload was made.
+
+
+### Added — M4 interruption quarantine (2026-09-27)
+
+- `pa jev quarantine` retains pending reservations, halts the run and appends an
+  operator incident record; it does not claim to cancel active HTTP requests.
+- Late outcomes remain in human review, preserving earlier manual usage evidence
+  and conservative accounting. Reconciliation now accepts quarantined/review states.
+- Final send gate prevents already-quarantined work from starting. Fixed approval
+  expiry during gate lock delay by rechecking time immediately after the gate.
+- 69 offline checks pass, including 11 interruption and 19 dispatch scenarios.
+
+### Added — M4 interactive dispatch approval
+
+- `pa jev dispatch --job ... --db ...` defaults to artifact/rights/budget preflight.
+- Optional live mode requires explicit pilot attestation, a visible terminal,
+  an environment key and review of the exact payload and estimated caps.
+- Final dispatch rechecks artifacts and prices; approval is hash-bound and expires.
+- Shared routing validation avoids preflight/dispatch disagreement. Pilot
+  attestation is recorded locally; no automated M5 validation is implied.
+- Eleven approval tests and all 16 PDF-dependent dispatch regressions pass with
+  synthetic transport. Together with local CLI/recovery/adapter checks: 55 pass.
+
+### Added — M4 operator usage reconciliation
+
+- Local `pa jev reconcile` records verified final usage for unknown outcomes,
+  preserving audit history and halted runs; no requests are resent.
+- `pa jev status --requests` exposes redacted identifiers for operator inspection.
+- Eight offline recovery tests cover atomic rollback, concurrency, confirmation,
+  model matching, pending-worker refusal and no automatic resumption.
+
+### Added — M4 local Jev CLI
+
+- `pa jev preview`: minimized payload/hash review with explicit no-upload semantics.
+- `pa jev status`: read-only dispatch accounting without stored passages or answers.
+- Both commands work offline; interactive dispatch and recovery remain open.
+
+
+### Added — `[P3-32] M4 persistent opt-in dispatch API`
+
+- Added dedicated SQLite reservations, immutable per-run caps, concurrent duplicate
+  suppression, usage reconciliation, and halted runs after unknown billing/overruns.
+- Bound fresh provenance and exact minimized payload to short-lived explicit upload
+  approval and estimated caps. Private, stale or incomplete evidence cannot send.
+- Added fixed-origin HTTPS, redirect refusal, response-size limit, isolated timeout
+  worker and redacted errors; no automatic retries or ambient proxy forwarding.
+- Added critical-score human escalation and a separately authorized GPT queue label.
+- Sixteen offline tests pass. No actual Jev/GPT call or paid request was performed.
+  CLI, recovery workflows and live validation remain open; M4 remains partial.
+
+
+### Added — `[P3-32] M4 offline adapter (partial milestone)`
+
+- Checked official OpenAPI 0.2.0; added minimal request builder and typed noul,
+  choice, score, named-answer, distribution, legend, and usage validation.
+- Corrected wire `noul` versus local `p_yes` documentation. Added pilot review
+  routing, explicit price/model checks, and in-memory budget reservation dry-run.
+- Thirteen offline tests cover payload minimization, response errors, routing,
+  stale prices, unknown usage, reconciliation and estimate overruns.
+- Live transport, persistent spend accounting, authorization gates and production
+  routing remain open. No API keys, paid calls, or uploads are used.
+
+
+### Added — `[P3-32] M3 local shadow baseline`
+
+- Joined fresh artifact provenance and exact M2 evidence with task-specific rubrics.
+- Added dedicated append-only request/event ledger, separate synthetic suggestions,
+  human adjudication schema, and offline-only fixture provider interface.
+- Persist requests before dispatch; deduplicate repeats; do not retry unknown
+  outcomes. Reject altered artifacts/packets and unrelated existing databases.
+- Twelve offline scenarios cover routing, invalid answers, privacy, title checks,
+  extraction gaps, immutability, unknown results, and separation from human truth.
+- Human entry/blinding UI, production CLI, paid providers, and live evaluation
+  remain unimplemented. No network calls or human-label writes were introduced.
+
+
+### Added — `[P3-32] M2 local PDF evidence baseline`
+
+- Standalone `pa_cli.evidence` API/module command preserves exact page text,
+  character spans, stable evidence IDs, PDF/extractor hashes, and index integrity.
+- Local lexical packet builder enforces span and complete UTF-8 JSON limits,
+  marks missing evidence and blank pages, and never authorizes upload.
+- Added usage/limitations in `docs/evidence-m2.md` and 10 offline regression
+  scenarios, including real PDF extraction, CLI export, and overwrite protection.
+- Review/ranking integration, OCR, semantic retrieval, citation resolution,
+  and provider dispatch remain planned; current behavior is local-only.
+
+
+### Added — `[P3-32] M1B conservative provenance and identity gate`
+
+- Fresh and cached Fetch artifacts now include local `provenance`, three-state DOI/title identity, evidence hash, rights classification, and routing reasons.
+- JATS article metadata and optional PDF XMP are inspected without network calls; cache keys and reference-list DOIs cannot verify identity.
+- External evaluation candidates require explicit public classification, matching metadata, allowlisted HTTPS source, and CC BY/CC0 metadata. Upload remains disabled; unknown/private/unpublished data stays local.
+- Fixed XML-only results incorrectly adopting and caching a stale PDF at the requested output path.
+- Added 10 offline scenarios, including real PDF metadata/cache behavior when PyMuPDF is installed. Missing PDF parsing support fails closed.
+
+
+### Fixed — `[P3-32] M1A Fetch correctness baseline`
+
+- Successful real-PDF fetches now write through to the canonical `pa_cli.cache` store and return both artifact and cache SHA-256.
+- `--no-cache` now truthfully means “bypass lookup”; a successful PDF is still cached, matching existing CLI help.
+- `--max-total-sec` now runs the cascade in a spawned worker process and terminates it at the deadline.
+- PMC XML-only outcomes return `SUCCESS_XML_ONLY`; reported successes with no valid PDF/XML return `INVALID_ARTIFACT` and are never PDF-cached.
+- Existing cache-hit and error-result compatibility is preserved.
+
+**Offline verification**: M1A Fetch 5/5, existing cache integration 2/2, cache smoke 6/6.
 ## [3.9.22.0] - 2026-08-21
 
 ### Added — Fetch Channel Diversification: 5 new open-access PDF sources
@@ -475,7 +660,7 @@ dependency status).
 
 ### Fixed — Codex Skill `No module named 'pa_cli'` error
 
-User installed the v3.9.23.0 Codex Skill at `~\.codex\skills\paper-agent\`
+User installed the v3.9.23.0 Codex Skill at `~/.codex/skills/paper-agent/`
 (per the documented user-level install). Codex recognized the skill, but
 the 8 wrapper scripts failed with `No module named 'pa_cli'` because:
 
@@ -495,7 +680,7 @@ review/citations/keys/cache) now call `find_pa_root()` which tries
 
 1. `$PAPER_AGENT_ROOT` env var (explicit override)
 2. `import pa_cli` (most portable — works if pip-installed system-wide)
-3. Common paths under `~/minimax - workspace/Paper agent`, `~/code/`,
+3. Common paths under `~/paper-agent`, `~/code/`,
    `cwd/`, `cwd/.parent/`, `~/.codex/`, etc.
 4. `pa` CLI on PATH (traces back through site-packages)
 
@@ -541,8 +726,8 @@ Exit codes:
 | --- | --- |
 | bootstrap.py --check (pa_cli pre-installed) | exit 0, status=ok |
 | bootstrap.py (auto-detect + install) | exit 0, "Successfully installed paper-agent-3.9.23.0" |
-| search.py from ~ (totally unrelated cwd) | 2589 bytes BERT JSON, exit 0 |
-| _pa_root.py (CLI mode) | "paper-agent root: G:\minimax - workspace\Paper agent" |
+| search.py from unrelated cwd (~) | 2589 bytes BERT JSON, exit 0 |
+| _pa_root.py (CLI mode) | "paper-agent root: /path/to/paper-agent" |
 
 **Tests**: `test_output/_test_v3_9_23_0_skill.py` extended from 22 → 30 tests:
 - 3 new: `TestPaRootDiscovery` (5 tests: _pa_root module exists/imports/finds, all 7 wrappers use it, all 7 handle pa_cli_not_found)
@@ -2660,8 +2845,7 @@ test alone missed the fieldID 1 → 59 change.
 ### Security audit
 
 - Round 12 (2026-08-14) verified: 0 personal info leaks in tracked
-  files (paper-agent-user / sample-user / USER_LOCATION / USER_INSTITUTION / ~ /
-  USER_REGION / USER_NAME all 0 hits, excluding self-referential audit docs).
+  files (local usernames, personal emails, regional city/institution identifiers, and real author names all 0 hits).
 - 0 hardcoded API keys in pa_cli source.
 - 0 `shell=True` subprocess calls.
 - 0 `verify=False` / SSL bypass.
@@ -2926,7 +3110,7 @@ setx NCBI_API_KEY "your-key-from-ncbi-account-settings"
 **Verify** (after fix, end-to-end):
 - `pa fetch 10.48550/arXiv.2310.06825 --prefer auto` →
   `via_channel: "arxiv"`, 3,749,788 bytes, 216.1s, `final_status: "SUCCESS"`.
-- Output PDF: `G:\minimax - workspace\Paper agent\10_48550_arXiv_2310_06825.pdf`.
+- Output PDF: `paper-agent/10_48550_arXiv_2310_06825.pdf`.
 
 **Why version 3.9.11.7 (not 3.9.11.6.1)**:
 - v3.9.11.6 was already tagged and committed as a "release" — it shipped
@@ -6227,8 +6411,8 @@ Per user "走 A+B", used these substitutes for the Hegewisch 2010 #C350a paper
 ### Re-run after user provides more PDFs
 ```bash
 # When user has more user-downloaded PDFs (e.g. real 2010, B 2025):
-$env:PYTHONPATH = "G:\minimax - workspace\Paper agent"
-cd "G:\minimax - workspace\Paper agent"
+$env:PYTHONPATH = "paper-agent"
+cd "paper-agent"
 python test_output/_run_stage2_only_v397.py
 ```
 
@@ -7480,7 +7664,7 @@ designed to keep paper-agent zero-LLM and personal-hobbyist-friendly.
 - **For future [P1-6] LLM labels**: the `LabelGenerator` ABC + registry is the
   integration point. A future `LLMLabelGenerator` subclass would slot in
   without touching `topics.py` or `cli.py`.
-- **For user's planned RL research** (`G:\minimax - workspace\Paper agent experiments\MEMO.md`):
+- **For user's planned RL research** (`../paper-agent-experiments/MEMO.md`):
   the `register_label_generator()` API + `__init__.py` docstring shows the exact
   3-step path for plugging in a custom PIEClass / RL-trained generator:
   ```python

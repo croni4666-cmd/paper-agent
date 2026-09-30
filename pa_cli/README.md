@@ -52,6 +52,8 @@ python -m pa_cli search "AI literacy higher education" \
   --output results.json
 ```
 
+Engines: `crossref`, `openalex`, `arxiv`, `semanticscholar`, `core`. Set
+`CORE_API_KEY`, `S2_API_KEY`, `OPENALEX_API_KEY` env vars for higher rate
 limits. Results are deduped by DOI (arXiv ID fallback) and merged with
 `found_by: [...]` arrays.
 
@@ -153,7 +155,7 @@ See `CHANGELOG.md` v3.2 entry for the empirical basis.
 For system-wide `pa` command:
 
 ```bash
-cd "G:\minimax - workspace\Paper agent"
+cd paper-agent
 pip install -e .
 ```
 

@@ -21,7 +21,7 @@ import json
 import re
 from pathlib import Path
 
-BENCH_DIR = Path(r"G:\minimax - workspace\Paper agent\bench\v01")
+BENCH_DIR = Path(__file__).resolve().parent
 SPOT_DIR = BENCH_DIR / "spot_check"
 LABELS_IN = BENCH_DIR / "labels.json"
 LABELS_OUT = BENCH_DIR / "labels_clean.json"

@@ -20,6 +20,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # Skip if user opts out of network
 if os.environ.get("PA_NETWORK_OFFLINE", "").lower() in ("1", "true", "yes"):
     print("SKIP: PA_NETWORK_OFFLINE=1")

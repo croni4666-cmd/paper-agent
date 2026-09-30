@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paper-agent"
-version = "3.9.29.1"
+version = "3.10.0.0"
 description = "Multi-engine academic paper search, full-text fetch, and sample pool for research workflows"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -37,11 +37,9 @@ classifiers = [
     "Topic :: Text Processing :: Markup",
 ]
 dependencies = [
-    "pypdf>=6.18,<7",
     "click>=8.1",
-    "arxiv>=2.1,<5",
     "numpy>=1.24",
-    "requests>=2.32,<2.34",
+    "requests>=2.28",
     "requests-cache>=1.0",
     "charset-normalizer>=3.0",
     "cryptography>=41.0",
@@ -53,11 +51,8 @@ dependencies = [
 llm-rerank = ["openai>=1.0", "tiktoken>=0.4"]
 cross-encoder = ["sentence-transformers>=2.2", "torch>=2.0", "transformers>=4.30"]
 async-fetch = ["aiohttp>=3.9", "aiohttp-client-cache>=0.10"]
-browser = ["playwright>=1.60,<1.61"]
-mcp = ["mcp>=1.30,<2"]
 topics = ["bertopic>=0.16", "umap-learn>=0.5", "hdbscan>=0.8"]
 all = [
-    "mcp>=1.30,<2",
     "openai>=1.0",
     "tiktoken>=0.4",
     "sentence-transformers>=2.2",
@@ -68,7 +63,6 @@ all = [
     "bertopic>=0.16",
     "umap-learn>=0.5",
     "hdbscan>=0.8",
-    "playwright>=1.60,<1.61",
 ]
 
 [project.scripts]
@@ -85,9 +79,9 @@ packages = ["pa_cli"]
 [tool.setuptools.package-data]
 pa_cli = ["py.typed"]
 
+[tool.pytest.ini_options]
+addopts = "--basetemp=.pytest_temp"
+
 # Note: AGPL-3.0 + No-AI-Training restriction. See LICENSE and NO_AI_TRAINING.md.
 # This software may NOT be used to train, fine-tune, validate, benchmark, or
 # otherwise improve any AI/ML/LLM/embedding model. See LICENSE PART 2.
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["."]

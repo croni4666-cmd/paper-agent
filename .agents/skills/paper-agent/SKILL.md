@@ -1,24 +1,19 @@
 ---
 name: paper-agent
 description: |
-  Academic paper search, PDF fetch, and literature review synthesis.
+  Academic paper search, PDF fetch, page-aware evidence extraction, and lit review synthesis.
   Use this skill when the user wants to: search for academic papers by
-  topic or keyword across 6 public engines (Crossref / OpenAlex / arXiv / AMiner / PubMed / ClinicalTrials), fetch
-  a paper PDF by DOI through the configured open-access cascade (including
+  topic or keyword across 8 engines (Crossref / OpenAlex / Semantic
+  Scholar / arXiv / AMiner / CNKI / PubMed / ClinicalTrials), fetch
+  a paper PDF by DOI using 14 fallback channels (incl. S2 openAccessPdf,
   bioRxiv, CORE, OSF, ChemRxiv, JATS-to-PDF for PMC, Unpaywall, sci-hub),
-  batch-fetch PDFs from a BibTeX file, walk citation graphs (OpenAlex),
-  cluster corpus papers by topic, synthesize a literature review markdown
-  from a corpus, manage API keys for academic databases, or check
-  cache stats. Triggers include: "search for papers about X",
-  "fetch the PDF for 10.1038/nature12373", "build a lit review from
-  refs.bib", "show my API key status", "cluster my corpus by topic",
-  "fetch all PDFs in this BibTeX", "how many papers are in cache".
-  Do NOT use this skill for: general web search, code documentation
-  lookup, non-academic research, or PDF reading (use a different
-  skill for that).
+  batch-fetch PDFs from a BibTeX file, extract verbatim page-aware evidence
+  passages with exact offsets from PDFs, check open access rights/provenance,
+  sync/check with local Zotero library, generate PRISMA 2020 flow diagrams,
+  walk citation graphs (OpenAlex), cluster corpus papers by topic, or manage keys/cache.
 metadata:
-  version: 3.9.29.0
-  pa_cli_version: 3.9.29.0
+  version: 3.10.0.0
+  pa_cli_version: 3.10.0.0
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent
@@ -28,11 +23,11 @@ allowed-tools:
   - Write
 ---
 
-# paper-agent — Academic paper search, fetch, and lit-review Skill
+# paper-agent — Academic paper search, fetch, evidence extraction, and lit-review Skill
 
-A Codex Skill wrapper around the `paper-agent` Python CLI/MCP. Provides
-8 pre-vetted wrapper scripts in `scripts/` that Codex can invoke
-deterministically. The full `pa` CLI (30+ subcommands) is also
+A comprehensive Skill wrapper around the `paper-agent` Python CLI/MCP. Provides
+14 pre-vetted wrapper scripts in `scripts/` that AI agents can invoke
+deterministically. The full `pa` CLI (33 subcommands) is also
 available via `python -m pa_cli.cli <command>` if needed.
 
 ## When to trigger
@@ -44,18 +39,25 @@ available via `python -m pa_cli.cli <command>` if needed.
 | "search for papers about X" / "find me papers on Y" | `scripts/search.py` |
 | "fetch the PDF for 10.xxxx/xxx" / "download paper DOI 10.xxxx" | `scripts/fetch.py` |
 | "fetch all PDFs in this BibTeX" / "batch download refs.bib" | `scripts/fetch_batch.py` |
+| "extract evidence for X from paper.pdf" / "find method section in paper" | `scripts/evidence.py` |
+| "verify if paper supports claim X" / "check citation accuracy in paper.pdf" | `scripts/verify_claim.py` |
+| "verify license / copyright of this paper" / "is it CC-BY" | `scripts/provenance.py` |
+
+| "is this paper in my Zotero" / "check refs.bib against Zotero" | `scripts/zotero.py check` |
+| "manage topic project" / "search project corpus" / "merge project bib" | `scripts/project.py` |
+| "generate PRISMA flow diagram" / "systematic review screening flowchart" | `scripts/prisma.py` |
 | "build a lit review from refs.bib" / "synthesize a literature review" | `scripts/review.py` |
 | "cluster my corpus by topic" / "group papers by theme" | `scripts/review.py --topics` |
-| "show my API key status" / "check OpenAlex / CORE / Unpaywall settings" | `scripts/keys.py` |
+| "show my API key status" / "check AMiner / OpenAlex / S2 keys" | `scripts/keys.py` |
 | "how many papers in cache" / "show cache stats" / "clean old PDFs" | `scripts/cache.py` |
 | "walk citations of 10.xxxx" / "what papers cite this one" | `scripts/citations.py` |
 | "what version of paper-agent" / "is playwright installed" | `scripts/version.py` |
 
 **Do NOT trigger for**:
-- General web search (use Codex's built-in `web_search`)
+- General web search (use built-in search)
 - Code documentation lookup
-- Reading a PDF (use a PDF reader skill)
 - Non-academic queries (news, weather, etc.)
+
 
 ## Quick start
 
@@ -78,7 +80,7 @@ python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
 
 ## Installation
 
-The skill's 8 wrapper scripts depend on the **paper-agent Python package** (pa_cli) — the actual CLI that does the work. The skill cannot function without pa_cli installed. **v3.9.23.1 added auto-install** to handle the most common setup error ("No module named 'pa_cli'").
+The skill's 14 wrapper scripts depend on the **paper-agent Python package** (pa_cli) — the actual CLI that does the work. The skill cannot function without pa_cli installed. **v3.9.23.1 added auto-install** to handle the most common setup error ("No module named 'pa_cli'").
 
 ### Recommended: run bootstrap once
 
@@ -94,7 +96,7 @@ This will:
 
 If the repo is not in a common location, pass `--repo <path>`:
 ```bash
-python <skill-dir>/scripts/bootstrap.py --repo G:\minimax - workspace\Paper agent
+python <skill-dir>/scripts/bootstrap.py --repo /path/to/paper-agent
 ```
 
 ### Manual install
@@ -114,11 +116,11 @@ $env:PAPER_AGENT_ROOT = "G:\path\to\paper-agent"  # Windows PowerShell
 
 ### How `find_pa_root()` discovers pa_cli
 
-The 8 wrapper scripts share a `_pa_root.py` helper that tries 4 strategies in order:
+The 14 wrapper scripts share a `_pa_root.py` helper that tries 4 strategies in order:
 
 1. `$PAPER_AGENT_ROOT` env var (explicit override)
 2. `import pa_cli` (works if pip-installed system-wide)
-3. Common paths under `~/minimax - workspace/Paper agent`, `~/code/paper-agent`, `cwd/`, etc.
+3. Common paths under `~/paper-agent`, `~/code/paper-agent`, `cwd/`, etc.
 4. `pa` CLI on PATH (traces back to site-packages)
 
 If all 4 fail, the wrapper returns a clear error:
@@ -144,11 +146,11 @@ See the **Installation** section above for full details.
 
 
 
-### `scripts/search.py` — Search current public engines
+### `scripts/search.py` — Search 8 engines (v3.9.22.0+)
 
 ```bash
 python scripts/search.py QUERY [options]
-  --engine ENGINE                  default=all; comma-separated lists supported
+  --engine [crossref|openalex|semanticscholar|arxiv|aminer|cnki|pubmed|all]  default=all
   --limit N                          default=20
   --year-min YYYY                    default=None
   --year-max YYYY                    default=None
@@ -165,21 +167,15 @@ returns trial registry records.
 
 ```bash
 python scripts/fetch.py DOI [options]
-  --prefer [arxiv|annas|scihub|pmc|pmc-pdf|unpaywall|biorxiv|core|osf|chemrxiv|auto]  default=auto
+  --prefer [arxiv|pmc|pmc-pdf|unpaywall|s2|biorxiv|core|osf|chemrxiv|auto]  default=auto
   --output-dir DIR                  default=.
   --no-cache                        skip cache lookup
-  --max-total-sec N                 total worker budget (default 300s)
 ```
 
-Tries the configured open-access cascade in order. Returns JSON with `saved_as /
+Tries 14 channels in cascade order. Returns JSON with `saved_as /
 via_channel / via_url / size_bytes / elapsed_sec`. For PMC papers
 (PubMed Central), use `--prefer pmc-pdf` to force JATS XML → real PDF
 render via headless Chromium (~20-25s).
-
-
-`--no-cache` skips reads; successful downloads still attempt cache writes. Optional writes have a separate 3-second maximum, leaving time to return the PDF. Inspect `cache_status` and `retrieval_trace` when retrieval fails or the cache is unavailable. The trace retains the latest 64 events (`trace_truncated` marks omitted earlier events). Trace entries record reached stages and status, not URLs or exception text; a `started` entry without completion means that stage was still running or the worker ended. Unvisited sources have not been tested.
-
-For an installed skill outside the backend repository, set `PAPER_AGENT_ROOT` and `PAPER_AGENT_PYTHON`, or create `runtime.local.json` beside this SKILL.md with absolute `root` and `python` paths. Environment settings take precedence. Keep that machine-local file out of Git and deployment packages. `runtime.version`, `runtime.entry` and `runtime.trace_schema` identify the backend protocol in fetch results.
 
 ### `scripts/fetch_batch.py` — Batch fetch from BibTeX
 
@@ -211,7 +207,96 @@ a Markdown lit review with: introduction, theme-based sections, paper
 summaries, gap analysis, and references. The `--topics` flag does
 clustering instead (TF-IDF + KMeans) and writes cluster summaries.
 
+### `scripts/evidence.py` — Page-aware PDF evidence extractor (M2)
+
+```bash
+python scripts/evidence.py PDF_PATH [options]
+  --query "text query"              lexical query to retrieve relevant passages
+  --section SECTION                 methods|results|limitations|abstract
+  --max-spans N                     default=5
+  --index-only                      inspect document page structure & char counts
+  --output FILE                     default=stdout
+```
+
+Extracts verbatim, page-aware evidence passages from academic PDFs with exact
+Unicode character offsets, section heuristics, and OCR status. Essential for
+preventing LLM hallucination and supporting verifiable academic claims.
+
+### `scripts/verify_claim.py` — Academic claim & citation verifier
+
+```bash
+python scripts/verify_claim.py PDF_PATH --claim "statement or finding to verify"
+```
+
+Uses M2 page-aware evidence retrieval to cross-check whether a specific academic
+claim is substantiated by the text of the PDF. Returns structured JSON with
+verdict (`supported`, `partially_supported`, `insufficient_evidence`), exact
+matching keywords, and verbatim quoting passages with page numbers and offsets.
+
+
+### `scripts/provenance.py` — Rights & identity inspector (M1B)
+
+```bash
+python scripts/provenance.py ARTIFACT [options]
+  --doi DOI                         expected paper DOI
+  --title TITLE                     expected paper title
+  --data-class [unknown|public|private] default=unknown (strictly local)
+```
+
+Inspects PDF XMP / JATS metadata, validates DOI and title match, and checks CC-BY /
+CC0 eligibility before any document or excerpt leaves the local workstation.
+
+### `scripts/zotero.py` — Zotero library check & sync
+
+```bash
+python scripts/zotero.py check --corpus refs.bib     # Check which DOIs are already in Zotero
+python scripts/zotero.py check --doi 10.xxxx/xxx     # Single DOI check
+python scripts/zotero.py search "query"              # Search Zotero library
+python scripts/zotero.py push refs.bib [--pdf-dir DIR] # Push to Zotero collection
+```
+
+`check` runs entirely offline and read-only against the local `zotero.sqlite` database
+(auto-detected on Windows/macOS/Linux) without requiring network or API keys.
+
+### `scripts/project.py` — Multi-corpus topic & project management ([P2-12])
+
+```bash
+python scripts/project.py init <slug> --title "Topic Title"
+python scripts/project.py list
+python scripts/project.py status <slug>
+python scripts/project.py search <slug> "query"
+python scripts/project.py merge <target_slug> <source_bib_or_slug>
+python scripts/project.py add <slug> --doi "10.xxxx/xxx"
+python scripts/project.py check-zotero <slug>
+python scripts/project.py scan <dir_path>
+python scripts/project.py import-dir <slug> <dir_path>
+python scripts/project.py fetch <slug>
+python scripts/project.py prisma <slug> [--format markdown|mermaid]
+python scripts/project.py review <slug> [-o out.md]
+python scripts/project.py topics <slug> [-o topics.json]
+python scripts/project.py stats <slug> [--top 10]
+python scripts/project.py cite-check <slug> <doc.md> [--strict]
+python scripts/project.py export <slug> [--format markdown|bibtex|json] [-o out_file]
+python scripts/project.py enrich <slug> [--limit N] [--force]
+```
+
+Manages topic-specific research workspaces (`~/.paper-agent/projects/<slug>/`).
+Supports directory DOI scanning, deduplicated BibTeX merging, batch PDF retrieval into `<slug>/pdfs/`,
+PRISMA 2020 flowchart generation, literature review drafting, sub-topic clustering (c-TF-IDF / OpenAlex concepts),
+bibliometric corpus stats, manuscript cite-checking against refs.bib, structured literature digests,
+and automated metadata enrichment (resolving stub DOIs to full authors, titles, venues, and abstracts).
+
+### `scripts/prisma.py` — PRISMA 2020 flowchart generator
+
+```bash
+python scripts/prisma.py --identified N --screened N --eligible N --included N [--format mermaid|markdown]
+python scripts/prisma.py --corpus ./pdfs/ --format markdown
+```
+
+Generates standardized PRISMA 2020 systematic review flowcharts or Markdown reports.
+
 ### `scripts/citations.py` — Walk citation graph
+
 
 ```bash
 python scripts/citations.py DOI [options]
@@ -339,4 +424,3 @@ python -m pa_cli.cli sample-pool add --qid q001 --relevance 1
 - All scripts are idempotent (cache-aware; safe to re-run).
 - This skill is read-only on the agent's project workspace unless
   the user explicitly asks for fetch/review which write files.
-Fetch statistics: run scripts/fetch_stats.py when asked which PDF sources work best locally. It reads local outcomes only and does not fetch papers.

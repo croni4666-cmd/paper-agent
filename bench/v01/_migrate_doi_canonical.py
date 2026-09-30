@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from pa_cli.doi import canonicalize_doi, normalize_labels_dict  # noqa: E402
 
-BENCH_DIR = Path(r"G:\minimax - workspace\Paper agent\bench\v01")
+BENCH_DIR = Path(__file__).resolve().parent
 FILES = [
     BENCH_DIR / "labels.json",
     BENCH_DIR / "labels_clean.json",

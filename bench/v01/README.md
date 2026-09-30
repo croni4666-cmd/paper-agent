@@ -130,7 +130,7 @@ graded relevance (gain 1) but not to recall/precision (binary relevance).
 ### Run baseline (v3.8.3)
 
 ```powershell
-cd "G:\minimax - workspace\Paper agent"
+cd paper-agent
 # for each query, snapshot top-30 candidates
 python -m bench.v0.1.snapshot --queries bench/v0.1/queries.json --out bench/v0.1/system_outputs
 ```

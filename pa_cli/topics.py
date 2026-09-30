@@ -101,7 +101,7 @@ def _fetch_concepts_for_doi(doi: str) -> Optional[Dict]:
     except ImportError:
         return None
     raw = get_work_by_doi(doi)
-    if not raw:
+    if not raw or not isinstance(raw, dict):
         return None
     norm = _normalize_openalex(raw)
     concepts_raw = raw.get("concepts") or []
@@ -932,12 +932,14 @@ def cluster_topics(
         "concept_data": concept_data_summary,
     }
 
+    result = _jsonify(result)
+
     # Write output
     if output_path is None:
         output_path = Path(corpus_dir) / "topics.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(_jsonify(result), f, indent=2, ensure_ascii=False)
+        json.dump(result, f, indent=2, ensure_ascii=False)
 
     return result
 

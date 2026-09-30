@@ -28,7 +28,7 @@ import json
 from pathlib import Path
 from collections import OrderedDict
 
-BENCH_ROOT = Path(r"G:\minimax - workspace\Paper agent\bench\v01")
+BENCH_ROOT = Path(__file__).resolve().parent
 LABELS_PATH = BENCH_ROOT / "labels.json"
 OUT_DIR = BENCH_ROOT / "spot_check"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

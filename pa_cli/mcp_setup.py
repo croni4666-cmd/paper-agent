@@ -37,6 +37,7 @@ from typing import Optional, Tuple
 PUBLIC_MCP_PKG = "paper-search-mcp"
 PUBLIC_MCP_DESCRIPTION = (
     "Academic paper search/download via MCP. Free-first, 22 sources "
+    "(arXiv, PubMed, Semantic Scholar, Crossref, OpenAlex, CORE, etc.), "
     "MIT-licensed, no API keys required (Unpaywall email optional)."
 )
 
@@ -139,7 +140,7 @@ def install(use_uvx: bool = False, dry_run: bool = False) -> dict:
         capture_output=True, text=True, encoding="utf-8",
     )
     if result.returncode != 0:
-        print(f"[pa-mcp] ❌ pip install failed (rc={result.returncode})", file=sys.stderr)
+        print(f"[pa-mcp] [FAILED] pip install failed (rc={result.returncode})", file=sys.stderr)
         print(result.stderr[-500:], file=sys.stderr)
         _print_config_block(method="uvx")
         return {"status": "install_failed", "method": "pip",
@@ -148,7 +149,7 @@ def install(use_uvx: bool = False, dry_run: bool = False) -> dict:
                     "mcpServers": {"paper-search-mcp": {
                         "command": "uvx", "args": ["paper-search-mcp"]}}}, indent=2)}
 
-    print(f"[pa-mcp] ✅ {PUBLIC_MCP_PKG} installed successfully")
+    print(f"[pa-mcp] [OK] {PUBLIC_MCP_PKG} installed successfully")
     _print_config_block(method="pip")
     return {"status": "installed", "method": "pip",
             "config_json": json.dumps({

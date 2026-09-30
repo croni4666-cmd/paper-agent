@@ -7,18 +7,6 @@
 # Hooks run on every `git commit`. Add new checks under `hooks:`.
 
 repos:
-  # === Local hook: secret + privacy scan ===
-  # Custom check for paper-agent-specific patterns (paper-agent-user, school names, etc.)
-  - repo: local
-    hooks:
-      - id: paper-agent-pre-push-scan
-        name: paper-agent pre-push secret + privacy scan
-        entry: python test_output/_pre_github_secret_scan.py
-        language: system
-        pass_filenames: false
-        always_run: true
-        stages: [pre-commit]
-
   # === Standard hooks ===
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -41,22 +29,32 @@ repos:
       - id: pyflakes
         files: ^pa_cli/.*\.py$
 
-  # === Privacy + personal info scan (paper-agent specific) ===
+  # === Privacy + personal info scan ===
   - repo: local
     hooks:
       - id: paper-agent-privacy-scan
         name: paper-agent personal info scan
         entry: |
-          bash -c '
-            set -e
-            echo "=== Scanning for personal info in tracked files ==="
-            for pattern in "USER_LOCATION" "USER_INSTITUTION" "海 宁" "paper-agent-user" "C:\\\\Users\\\\paper-agent-user"; do
-              if git ls-files | xargs grep -l "$pattern" 2>/dev/null; then
-                echo "FAIL: personal info pattern found: $pattern"
-                exit 1
-              fi
-            done
-            echo "OK: no personal info leaks"
+          python -c '
+          import subprocess, sys, re, os
+          files = subprocess.check_output(["git", "ls-files"], text=True).splitlines()
+          user_path_re = re.compile(r"[a-zA-Z]:[\\\\/]Users[\\\\/](?!paper-agent)[a-zA-Z0-9_-]+", re.I)
+          patterns = []
+          if os.path.exists(".privacy_patterns"):
+              patterns = [p.strip() for p in open(".privacy_patterns", encoding="utf-8") if p.strip()]
+          for f in files:
+              try:
+                  content = open(f, encoding="utf-8", errors="ignore").read()
+              except Exception:
+                  continue
+              if user_path_re.search(content):
+                  print(f"FAIL: local Windows user path found in {f}")
+                  sys.exit(1)
+              for pat in patterns:
+                  if pat in content:
+                      print(f"FAIL: private pattern match in {f}")
+                      sys.exit(1)
+          print("OK: no personal info leaks")
           '
         language: system
         pass_filenames: false

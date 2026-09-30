@@ -33,8 +33,7 @@ from pathlib import Path
 
 # Common locations where paper-agent repo might be cloned
 DEFAULT_SEARCH_PATHS = [
-    Path.home() / "minimax - workspace" / "Paper agent",
-    Path.home() / "Minmax - workspace" / "Paper agent",
+    Path.home() / "paper-agent",
     Path.home() / "Documents" / "GitHub" / "paper-agent",
     Path.home() / "code" / "paper-agent",
     Path.home() / "src" / "paper-agent",

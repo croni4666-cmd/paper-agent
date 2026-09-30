@@ -148,7 +148,7 @@ MoE router 训练特征 = 4 维标签的 TF-IDF + 6 metadata (query_length_chars
 
 ### 方法 1: 直接当 query 模板
 ```powershell
-cd "G:\minimax - workspace\Paper agent"
+cd paper-agent
 # 用主题 1 的中文 query 跑 pa search
 pa search "智能制造 成熟度 5 级 评估" --year-min 2015 --limit 30 -o results_t1_cn.json
 ```

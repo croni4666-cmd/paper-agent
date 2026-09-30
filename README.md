@@ -1,16 +1,21 @@
 # paper-agent
 
-A local-first research CLI and Codex skill for finding papers, retrieving open copies, organizing a corpus, and producing review-ready outputs.
+Academic paper search, fetch, and literature-review synthesis CLI.
+8 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI, PubMed,
+ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
+collection + pa build manuscript pipeline + Tier 2 research-topic project
+management + Zotero local DB check + batch job manager (status/tail/resume).
 
-- Search six public sources: Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov.
-- Retrieve PDFs through an open-access cascade: PMC, bioRxiv, CORE, OSF, ChemRxiv, arXiv, and Unpaywall.
-- Work from BibTeX through screening, PDF collection, Zotero, Obsidian, and manuscript generation.
-- Inspect local fetch-channel success rates with pa fetch-stats.
+**Note on CORE engine** (v3.9.11.1+): CORE code is isolated from the public
+repo. After cloning, run once:
+```bash
+python tools/install_core.py   # generates pa_cli/_engines_local/core.py (gitignored)
+```
+Then `pa search --engine core "..."` works. Public clone without this step will
+raise a clear "not installed" error if you try `--engine core`. See
+`tools/install_core.py` docstring for the isolation rationale.
 
-Current release: **v3.9.29.1**. CNKI and Semantic Scholar have been retired from the public interface.
-
-## Quick start
-
+## Quick start (5 commands)
 
 ### 1. Search — 6 engines in one call
 ```bash
@@ -37,42 +42,6 @@ pa judge add --query "AI literacy" --paper-key smith2023 --relevance 2 --reason 
 pa build refs.bib skeleton.md -o paper.pdf
 ```
 
-## Single-paper download deadline
-
-`pa fetch <DOI> --max-total-sec 60` stops the download worker and its normal
-browser descendants when the budget expires. The default is 300 seconds,
-including cache access. Timeout returns `fetch_timeout` and CLI exit code 2.
-OS process startup/cleanup and final file publication add overhead. Fresh single
-and batch downloads are staged; timeout or invalid PDF structure leave previous
-output untouched. Successful publication replaces each file independently;
-PDF and XML publication is not a joint transaction. Valid cache writes may remain
-even if final output publication fails. This applies to `fetch_doi()` and the single-paper MCP handler;
-`pa fetch-batch` shares its budget across entries and interrupts the active
-worker when time runs out. Batch files are staged before replacing final PDFs;
-timeouts discard the staged output and preserve any previous PDF. Skipping an
-existing file requires the same PDF structure check as fresh downloads.
-The check uses pypdf strict parsing, requires at least one readable page and
-readable page content streams, and rejects encrypted documents. It does not
-render pages, verify every font/image object or detect malicious content. Strict mode can reject repairable documents.
-Fresh output, skip-existing files and every cache hit use a separate validation
-worker with a 10-second budget, 512 MiB memory limit and 256 MiB input cap.
-Windows limits job committed memory; POSIX limits virtual address space.
-Parser overhead counts toward the memory limit, so large valid PDFs may be rejected.
-These are per-validation bounds, not a whole-command deadline. Cache reads hash
-and parse the same bytes; unreadable or over-budget old entries become cache misses
-without deletion. Valid hits include the validation policy identifier.
-Cache reads compare PDF and metadata file identities before and after validation;
-observed replacement, modification or deletion returns a miss. New writes publish a complete unique PDF and atomically switch the metadata
-index. Failed or interrupted publication preserves the previous entry; overlapping
-writers publish coherent generations. Old format entries remain readable.
-Old PDF generations remain until explicit removal/cleaning, increasing disk use;
-cache statistics count metadata slots as papers and include retained PDF bytes.
-Reads still use optimistic race detection: external edits and explicit deletion
-can invalidate returned paths. Do not run destructive cleaning during active
-fetches. Sudden power-loss durability is not guaranteed. A killed writer may leave
-unpublished temporary files; they are never accepted as cache hits.
-Direct Python `fetch()` retains its per-provider timeout behavior.
-
 ## Core workflow
 
 ```
@@ -96,7 +65,7 @@ search results       pa cite-check        pa fetch-batch
 
 | Command | What | Effort |
 |---|---|---|
-| `pa search` | 6-engine search | — |
+| `pa search` | 8-engine search | — |
 | `pa fetch` | Single PDF download | — |
 | `pa fetch-batch` | Batch PDF from Bibtex | 1 call |
 | `pa cite-check` | Validate `[@key]` in skeleton | Pre-build check |
@@ -122,23 +91,6 @@ search results       pa cite-check        pa fetch-batch
 | `pa jobs start/list/status/tail/resume` | Batch fetch job manager | Inspired by InstSci |
 | `pa mcp-fetch-serve` | MCP server for fetch tools | Codex/Claude Code integration |
 | `pa mcp install` | Install public `paper-search-mcp` | One-shot setup |
-
-## Release checks
-
-Every pull request and push to `main` runs the compatibility gate on Python
-3.10, 3.11, and 3.12. A change is ready to release only after the formal test
-suite passes, distribution artifacts build successfully, declared dependencies
-resolve cleanly, and `pip-audit` reports no known vulnerabilities.
-
-Run the same checks locally before preparing a release:
-
-```bash
-python -m pip install . pytest build pip-audit
-python -m pytest -q
-python -m build
-python -m pip check
-python -m pip-audit -r requirements.txt
-```
 
 ## Performance (v3.9.10.2 honest, n=50 single 30/20 holdout)
 
@@ -169,7 +121,7 @@ these — we do different things well.
   channels can't reliably reach
 - InstSci has an **MCP server** (`instsci-mcp`) that drives the same
   fetch workflows paper-agent does, but routed through your institution
-- Paper-agent is a **better search + rerank engine** (current public engines, LTR, MoE);
+- Paper-agent is a **better search + rerank engine** (8 engines, LTR, MoE);
   InstSci is a **better institutional fetch** (10+ publisher workflows)
 
 **Use it for**: closed papers you can legally access via your school's
@@ -369,6 +321,7 @@ workflow.
 1. **Search** — 8 default engines via `pa search`
 2. **Write Bibtex** — convert results to a temp `.bib`
 3. **Fetch PDFs** — `pa fetch-batch` cascade (arxiv → unpaywall →
+   scihub → annas → cnki → playwright → openalex)
 4. **Bucket** — split into `downloaded` (PDF saved) vs `failed`
 5. **Push to library** — push downloaded DOIs to your Zotero library
    (idempotent via `pyzotero.check_items()`)
@@ -717,12 +670,13 @@ gracefully (use `--create` to create a stub).
 
 ## Known limitations
 
-- **API key rate limits**: Some services (AMiner, CORE) have higher limits with
+- **API key rate limits**: Some engines (S2, CORE) have higher rate limits with
   free API keys. See [`.env.example`](./.env.example) for which keys unlock
   which engines. No keys are required for basic use (anonymous rate limits
   work for low-volume academic work).
 - **CORE engine** is opt-in (v3.9.11.1+) — run `python tools/install_core.py`
   after clone to enable. Anonymous requests work at low rate.
+- **CNKI** requires user cookies / EZproxy / institution library access
 - **Layer 7 fulltext features** (3 of 4) still at 0.0 — need PDF download first
 - **Pa judge data** scales to ~5-50 projects; beyond that needs SQLite tuning
 - **BGE alternative** (monoT5/ColBERT/LLM-fulltext) not yet evaluated
@@ -745,9 +699,8 @@ gracefully (use `--create` to create a stub).
 ## Documentation
 
 - [ROADMAP.md](ROADMAP.md) — what's done, what's next, full priority plan
-- [CHANGELOG.md](CHANGELOG.md) — version-by-version release notes (v3.9.10.8 latest)
+- [CHANGELOG.md](CHANGELOG.md) — version-by-version release notes (v3.10.0.0 latest)
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system design + Cloudflare handling
-- [SESSION_HANDOFF.md](SESSION_HANDOFF.md) — current state for new sessions
 
 ## CLI: try `pa --help` and `pa <command> --help`
 
@@ -891,48 +844,3 @@ against LLM/ML training. Together they reflect the author's preference for
 
 If you have questions about whether your intended use is allowed, contact the
 copyright holder.
-
-
-### Opt-in engine availability report
-
-Run `pa engine-probe "machine learning" --engine all --limit 1 --timeout 10`
-to probe the six public search engines sequentially. Use `--engine crossref,pubmed`
-to select engines, and `--output probe.json` to save the JSON report. Reports
-include status, result count, elapsed time, and sanitized diagnostics. Provider
-failures are report entries; invalid command options cause a CLI error.
-
-This command makes live requests only when invoked. AMiner requires a configured
-token and may consume API quota. The limit bounds returned results, not HTTP
-request count; provider adapters may make additional metadata requests. A timeout
-stops waiting for an engine, but its underlying request may finish later.
-Reports include your query; review that field before sharing a report. A
-successful request is an availability check, not proof of search relevance or
-full-text coverage.
-
-## Browser integration checks
-
-Pull requests run a dedicated Linux Chromium job in addition to the Python
-3.10/3.11/3.12 test matrix. It exercises local PDF rendering, embedded figures,
-special temporary paths and timeout cleanup without publisher credentials.
-To run the same suite locally:
-
-```sh
-python -m pip install ".[browser]" pytest
-python -m playwright install --with-deps chromium
-PA_TEST_BROWSER=1 python -m pytest -q -rs
-```
-
-In PowerShell, set `$env:PA_TEST_BROWSER='1'` before running pytest.
-
-## Local fetch MCP server
-
-Install `python -m pip install "paper-agent[mcp]"` and configure your MCP client
-with command `python` and arguments `["-m", "pa_cli.mcp_fetch"]`. Use the Python
-executable from the environment where paper-agent is installed. This local stdio
-server exposes `pa_fetch` and `pa_batch_fetch`; it does not configure the separate
-public search MCP integration or register itself in a client automatically.
-
-A dedicated CI job runs a real SDK client against the server process, testing
-initialization, tool discovery, cached single retrieval, invalid inputs, ping and
-session closure with temporary cache data. Run locally with `PA_TEST_MCP=1 python
--m pytest -q -rs` (PowerShell: set `$env:PA_TEST_MCP='1'` first).

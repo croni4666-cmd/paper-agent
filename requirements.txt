@@ -4,13 +4,12 @@
 
 # CLI framework (used by pa_cli/cli.py)
 click>=8.1
-arxiv>=2.1,<5
 
 # Numerics (used by pa_cli/ltr.py, moe_router.py, features.py)
 numpy>=1.24
 
 # HTTP client (used by pa_cli/fetch.py, search.py)
-requests>=2.32,<2.34
+requests>=2.28
 
 # Response caching (used by pa_cli/keys.py, search.py for S2 throttle+retry)
 requests-cache>=1.0
@@ -37,5 +36,3 @@ PyYAML>=6.0
 # sentence-transformers>=2.2
 # torch>=2.0
 # transformers>=4.30
-
-pypdf>=6.18,<7

@@ -32,7 +32,7 @@ from pathlib import Path
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
-BENCH_DIR = Path(r"G:\minimax - workspace\Paper agent\bench\v01")
+BENCH_DIR = Path(__file__).resolve().parent
 EVAL_PY = BENCH_DIR / "eval.py"
 QUERIES = BENCH_DIR / "queries.json"
 

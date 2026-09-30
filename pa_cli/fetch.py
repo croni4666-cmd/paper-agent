@@ -2,19 +2,21 @@
 
 Per ROADMAP [P1-8] (added 2026-07-15, user-pivoted decision after AMiner probe):
   - 全文 PDF 下载 (绕开 metadata 天花板)
-  - multi-source fallback for accessible full text
+  - 3 路 fallback: annas-archive.org → sci-hub mirrors → CNKI detail page
   - 不存盘, 拿到 PDF bytes 后调用方决定 (写文件 / 解析 / 转发)
 
 **v3.9.8.1 (2026-07-15, 0.1.0 初始实现)**:
   - Go 不可用 (用户机器没装), 用纯 Python (urllib + BeautifulSoup)
   - annas-archive.org HTML 搜索 (Cloudflare/DDoS-Guard 可能拦, fallback sci-hub)
   - sci-hub 7 个镜像轮询 (2026 验证可用: .shop / .ee / .vg / .ren / .mk / .in / .al)
-  - 失败返回单元素 error dict
+  - CNKI 走 xueshu789 cookies (4-8h TTL, 单篇 detail page)
+  - 失败返回单元素 error dict (跟 CNKI / AMiner 模式一致)
 
 **已知 limitations** (诚实三段论):
   - 影子图书馆法律灰色 (个人使用 + 不分发 + 24h 内删除 OK)
   - annas-archive Cloudflare 拦截率高 (5-7/10 失败)
   - sci-hub 2021+ 新论文覆盖弱
+  - CNKI 单篇走 HTML 慢, 1 paper ~5-10s
   - 2026 部分镜像域名可能换 (我用 list 维护, 挂了换下一个)
 
 **CLI** (registered in cli.py separately):
@@ -28,14 +30,15 @@ import os
 import re
 import json
 import time
-from contextvars import ContextVar
+import hashlib
+import multiprocessing as mp
+import queue as queue_module
+import types
 import urllib.request as ur
 import urllib.error
 import urllib.parse
 from typing import List, Dict, Optional, Any, Tuple
 from pathlib import Path
-
-JATS_CACHE_DIR = Path.home() / ".paper-agent" / "jats_cache"
 
 # 公共 headers (Cloudflare/DDoS-Guard bypass)
 COMMON_HEADERS = {
@@ -82,13 +85,10 @@ E_NETWORK = "fetch_network"
 E_CLOUDFLARE = "fetch_cloudflare_block"
 E_404 = "fetch_404"
 E_ALL_MIRRORS = "fetch_all_mirrors_failed"
+E_CNKI_NO_COOKIES = "fetch_cnki_no_cookies"
 E_SAVE = "fetch_save_error"
-
-FETCH_PREFERENCES = (
-    "auto", "arxiv", "annas", "pmc", "pmc-pdf", "unpaywall",
-    "biorxiv", "core", "osf", "chemrxiv", "scihub",
-)
-_UNPAYWALL_EMAIL_OVERRIDE = ContextVar("unpaywall_email_override", default=None)
+E_TIMEOUT = "fetch_timeout"
+E_INVALID_ARTIFACT = "fetch_invalid_artifact"
 
 
 def _get_proxy_dict() -> Dict[str, str]:
@@ -122,10 +122,6 @@ def _build_opener() -> "urllib.request.OpenerDirector":
     return ur.build_opener()
 
 
-from .fetch_trace import traced, emit
-
-
-@traced("http")
 def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60) -> Tuple[int, bytes]:
     """Returns (status_code, body_bytes). Auto-decode gzip/deflate/br if present.
 
@@ -139,23 +135,23 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
     opener = _build_opener()
     try:
         req = ur.Request(url, headers=final_headers)
-        with opener.open(req, timeout=timeout) as resp:
-            body = resp.read()
-            # Handle gzip / deflate / br (brotli)
-            ce = resp.headers.get("Content-Encoding", "")
-            if ce == "gzip":
-                import gzip
-                body = gzip.decompress(body)
-            elif ce == "deflate":
-                import zlib
-                body = zlib.decompress(body)
-            elif ce == "br":
-                try:
-                    import brotli
-                    body = brotli.decompress(body)
-                except ImportError:
-                    pass  # If brotli not installed, return raw (will JSON-fail)
-            return resp.status, body
+        resp = opener.open(req, timeout=timeout)
+        body = resp.read()
+        # Handle gzip / deflate / br (brotli)
+        ce = resp.headers.get("Content-Encoding", "")
+        if ce == "gzip":
+            import gzip
+            body = gzip.decompress(body)
+        elif ce == "deflate":
+            import zlib
+            body = zlib.decompress(body)
+        elif ce == "br":
+            try:
+                import brotli
+                body = brotli.decompress(body)
+            except ImportError:
+                pass  # If brotli not installed, return raw (will JSON-fail)
+        return resp.status, body
     except urllib.error.HTTPError as e:
         try:
             body = e.read()
@@ -175,11 +171,8 @@ def _http_get_bytes(url: str, headers: Dict[str, str] = None, timeout: int = 60)
             return e.code, body
         except Exception:
             return e.code, b""
-        finally:
-            e.close()
-    except Exception:
-        # Transport errors may contain proxy credentials or signed URLs.
-        return 0, b""
+    except Exception as e:
+        return 0, str(e).encode("utf-8")
 
 
 def _save_pdf(body: bytes, out_path: str) -> str:
@@ -194,7 +187,7 @@ def _save_pdf(body: bytes, out_path: str) -> str:
 # ============================================================================
 # arXiv channel (v3.9.11.6, new — was missing from cascade in v3.9.8.x)
 # ============================================================================
-# arXiv papers are not on sci-hub or annas. The old
+# arXiv papers are not on sci-hub, not on annas, not on CNKI. The old
 # `pa fetch` for arXiv DOIs returned "all sources failed" because no
 # channel knew how to fetch from arxiv.org. v3.9.11.6 adds this channel
 # so arXiv preprints (a huge portion of CS/AI/ML research) are reachable.
@@ -234,7 +227,6 @@ def _extract_arxiv_id(s: str) -> Optional[str]:
     return None
 
 
-@traced("arxiv")
 def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
     """arXiv channel: directly download PDF from arxiv.org/pdf/<id>.
 
@@ -242,7 +234,7 @@ def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
     on success, or dict with 'error' on failure.
 
     v3.9.11.6: new channel. arXiv preprints have their own DOI namespace
-    (10.48550/arXiv.*) and are not on sci-hub or annas. Without this
+    (10.48550/arXiv.*) and are not on sci-hub/annas/CNKI. Without this
     channel, all arXiv papers returned "fetch_all_mirrors_failed".
     """
     arxiv_id = _extract_arxiv_id(doi_or_id)
@@ -271,7 +263,6 @@ def fetch_arxiv_doi(doi_or_id: str, out_path: str = None) -> Dict[str, Any]:
 # ─────────────────────────────────────────────────────────────────
 # Unpaywall (主路径, 合法 + 稳定)
 # ─────────────────────────────────────────────────────────────────
-@traced("unpaywall")
 def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     """Unpaywall API: 合法 OA PDF 链接 (绿色/金色 OA)。
 
@@ -289,10 +280,7 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         return {"error": E_NO_DOI, "message": "Empty DOI", "hint": "Provide --doi"}
 
     # Unpaywall 邮箱必须注册过 (v3.9.8.2 验证: 假邮箱返 1041B CF 反爬页)
-    email = _UNPAYWALL_EMAIL_OVERRIDE.get()
-    if email is None:
-        email = os.environ.get("UNPAYWALL_EMAIL", "")
-    email = email.strip()
+    email = os.environ.get("UNPAYWALL_EMAIL", "").strip()
     if not email:
         return {"error": "unpaywall_no_email",
                 "message": "UNPAYWALL_EMAIL env var is empty",
@@ -311,12 +299,14 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     if status == 422:
         # v3.9.8.2: 422 = "Please use your own email address" (Unpaywall 拒了陌生邮箱)
         return {"error": "unpaywall_email_invalid",
-                "message": "Unpaywall rejected the configured email (HTTP 422)",
-                "hint": "Check --unpaywall-email or UNPAYWALL_EMAIL"}
+                "message": f"Unpaywall rejected UNPAYWALL_EMAIL={email!r} (HTTP 422)",
+                "hint": "Either email is fake OR not registered. "
+                        f"Register {email} at https://api.unpaywall.org/register "
+                        "or use a different email that's already registered."}
     if status != 200:
         return {"error": f"unpaywall_http_{status}",
-                "message": f"Unpaywall request failed (HTTP {status})",
-                "hint": "Check service availability and email configuration"}
+                "message": body.decode("utf-8", errors="replace")[:200],
+                "hint": "If body mentions 'email', see unpaywall_email_invalid fix above."}
     # v3.9.8.2: Unpaywall returns 1041B zlib/CF page for unknown email (HTTP 200)
     # Detect by checking JSON parse failure + small body
     try:
@@ -325,7 +315,8 @@ def fetch_unpaywall_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         return {"error": "unpaywall_email_invalid",
                 "message": f"Got HTTP 200 but body is {len(body)}B non-JSON "
                            "(likely Unpaywall CF anti-bot for unknown email)",
-                "hint": "Check the service response and configured Unpaywall email"}
+                "hint": f"Register {email} at https://api.unpaywall.org/register, "
+                        "or use a different UNPAYWALL_EMAIL that's already registered"}
     # 拿 best_oa_location
     best = data.get("best_oa_location") or {}
     pdf_url = best.get("url")
@@ -396,72 +387,43 @@ def _pmc_doi_to_pmcid(doi: str) -> Optional[str]:
     return None
 
 
-def _is_jats_article(body: bytes) -> bool:
-    """Reject error pages and malformed XML before caching EFetch output."""
-    import xml.etree.ElementTree as ET
-    try:
-        root = ET.fromstring(body)
-    except (ET.ParseError, ValueError):
-        return False
-    tag = root.tag.rsplit("}", 1)[-1]
-    return tag == "article" or (
-        tag == "article-set" and any(
-            child.tag.rsplit("}", 1)[-1] == "article" for child in root
-        )
-    )
-
-
 def _pmc_efetch_xml(pmcid: str, out_path: str = None) -> Dict[str, Any]:
-    """Fetch PMC JATS XML, using a PMCID-keyed local cache when available."""
-    match = re.fullmatch(r"(?:PMC)?([0-9]+)", (pmcid or "").strip(), re.IGNORECASE)
-    if not match:
-        return {"error": "pmc_invalid_id"}
-    pmcid_clean = match.group(1)
-    cache_path = JATS_CACHE_DIR / f"PMC{pmcid_clean}.xml"
-    body = b""
-    cache_hit = False
-    cache_saved = False
-    if cache_path.is_file():
-        try:
-            body = cache_path.read_bytes()
-            cache_hit = _is_jats_article(body)
-        except OSError:
-            body = b""
+    """EFetch full-text JATS XML from PMC. K-Dense hazard: 200 OK but body
+    missing = publisher restriction; always verify body via jats_to_text.py.
 
+    v3.9.22.1: removed the .pdf orphan. Previously wrote JATS XML to BOTH
+    the .pdf path (via _save_pdf) AND .xml path (via write_bytes). When
+    downstream Europe PMC + jats_to_pdf both failed, the .pdf was left
+    containing JATS XML (misnamed). Now: only write to .xml; the .pdf
+    path is reserved for a real PDF (Europe PMC render or jats_to_pdf
+    output). If neither succeeds, no .pdf is produced.
+    """
+    pmcid_clean = pmcid.replace("PMC", "")
     url = f"{EUTILS_BASE}/efetch.fcgi?db=pmc&id={pmcid_clean}&rettype=xml"
-    if not cache_hit:
-        time.sleep(0.4)  # NCBI rate limit
-        status, body = _http_get_bytes(url, timeout=60)
-        if status != 200 or not body:
-            return {"error": f"pmc_efetch_status_{status}"}
-        if not _is_jats_article(body):
-            return {"error": "pmc_efetch_invalid_xml"}
-        try:
-            cache_path.parent.mkdir(parents=True, exist_ok=True)
-            temp_path = cache_path.with_suffix(".tmp")
-            temp_path.write_bytes(body)
-            temp_path.replace(cache_path)
-            cache_saved = True
-        except OSError:
-            pass  # cache is an optimization, never a download blocker
-
+    time.sleep(0.4)  # NCBI rate limit
+    status, body = _http_get_bytes(url, timeout=60)
+    if status != 200 or not body:
+        return {"error": f"pmc_efetch_status_{status}"}
     result = {
         "source": "pmc_xml",
         "pmcid": pmcid,
         "size": len(body),
         "url": url,
-        "cache_hit": cache_hit,
     }
     if out_path:
-        xml_path = Path(out_path).with_suffix(".xml")
+        # Only write to .xml path. .pdf is reserved for real PDF.
+        from pathlib import Path
+        p = Path(out_path)
+        xml_path = p.with_suffix('.xml')
         xml_path.parent.mkdir(parents=True, exist_ok=True)
         xml_path.write_bytes(body)
         result["path"] = str(xml_path.resolve())
-    else:
-        if not (cache_hit or cache_saved):
-            return {"error": "pmc_xml_save_error"}
-        result["path"] = str(cache_path.resolve())
+        # Defensive: if a stale .pdf exists at out_path (from prior broken
+        # run or another channel), leave it alone — caller will overwrite
+        # if real PDF is produced, or it remains as user-visible signal
+        # that no real PDF was obtained.
     return result
+
 
 def _pmc_europe_pdf(pmcid: str, out_path: str = None, max_retries: int = 3) -> Dict[str, Any]:
     """Europe PMC PDF rendering endpoint: europepmc.org/articles/pmc<id>?pdf=render
@@ -540,18 +502,15 @@ def _pmc_jats_to_pdf(pmcid: str, xml_path: str, out_path: str = None,
                 "hint": "Check playwright install or JATS XML validity"}
 
 
-@traced("pmc")
-def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -> Dict[str, Any]:
+def fetch_pmc_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     """PMC channel: DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort).
-
-    With force_jats=True, skip Europe PMC and render the retrieved XML locally.
 
     Returns dict with:
       - success: "pmc_xml" (XML saved) or "pmc_europe" (PDF saved) or both
       - pmcid: e.g. "PMC13466339"
       - xml_path: full JATS XML path (always, if PMC has body)
       - pdf_path: real PDF path (if Europe PMC render worked)
-      - error: when no PDF is available; retained XML is reported separately
+      - error: only on total failure
     """
     doi = (doi or "").strip()
     if not doi:
@@ -573,8 +532,7 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
                 "hint": "PMC EFetch failed; try other channels"}
 
     # Step 3: Try Europe PMC PDF rendering (best-effort, ~25% success in 2026-08 retest)
-    pdf_result = ({"error": "pmc_europe_skipped"} if force_jats else
-                  _pmc_europe_pdf(pmcid, out_path=out_path, max_retries=2))
+    pdf_result = _pmc_europe_pdf(pmcid, out_path=out_path, max_retries=2)
     europe_ok = "error" not in pdf_result
 
     # Step 4 (v3.9.21+): If Europe PMC failed, fall back to jats_to_pdf
@@ -601,6 +559,7 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
                 "size": jats_result.get("size"),
                 "pdf_url": None,  # not applicable for local JATS render
                 "xml_path": xml_result.get("path"),
+                "source_url": xml_result.get("url"),
                 "xml_size": xml_result.get("size"),
                 "pdf_path": jats_result.get("path"),
                 "pdf_size": jats_result.get("size"),
@@ -611,11 +570,11 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
             }
         # Both methods failed
         return {
-            "error": "pmc_pdf_unavailable",
             "source": "pmc_xml_only",
             "pmcid": pmcid,
             "doi": doi,
             "xml_path": xml_result.get("path"),
+            "source_url": xml_result.get("url"),
             "xml_size": xml_result.get("size"),
             "pdf_path": None,
             "pdf_size": None,
@@ -628,10 +587,8 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
         "source": "pmc" if "error" not in pdf_result else "pmc_xml_only",
         "pmcid": pmcid,
         "doi": doi,
-        "path": pdf_result.get("path"),
-        "size": pdf_result.get("size"),
-        "pdf_url": pdf_result.get("pdf_url"),
         "xml_path": xml_result.get("path"),
+        "source_url": xml_result.get("url"),
         "xml_size": xml_result.get("size"),
         "pdf_path": pdf_result.get("path") if "error" not in pdf_result else None,
         "pdf_size": pdf_result.get("size") if "error" not in pdf_result else None,
@@ -644,7 +601,6 @@ def fetch_pmc_doi(doi: str, out_path: str = None, *, force_jats: bool = False) -
 # ─────────────────────────────────────────────────────────────────
 # Sci-Hub DOI 拉 PDF (fallback, 法律灰色)
 # ─────────────────────────────────────────────────────────────────
-@traced("scihub")
 def fetch_scihub_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
     """Try all sci-hub mirrors for a DOI. Returns PDF bytes or error dict.
 
@@ -689,7 +645,7 @@ def fetch_scihub_doi(doi: str, out_path: str = None) -> Dict[str, Any]:
         # 试下一个 mirror
     return {"error": E_ALL_MIRRORS,
             "message": f"All {len(SCIHUB_MIRRORS)} sci-hub mirrors failed for DOI {doi}",
-            "hint": "Try later or use another supported source"}
+            "hint": "Try later or use CNKI for Chinese papers"}
 
 
 def _extract_pdf_url_from_scihub_html(html_bytes: bytes, doi_enc: str, mirror: str) -> Optional[str]:
@@ -724,7 +680,6 @@ def _extract_pdf_url_from_scihub_html(html_bytes: bytes, doi_enc: str, mirror: s
 # ─────────────────────────────────────────────────────────────────
 # annas-archive.org 搜索 + 下载
 # ─────────────────────────────────────────────────────────────────
-@traced("annas_search")
 def fetch_annas_search(query: str, limit: int = 5) -> List[Dict[str, Any]]:
     """Search annas-archive.org for query, return list of {title, md5, format, size}."""
     q_enc = urllib.parse.quote(query)
@@ -763,7 +718,6 @@ def _parse_annas_search_html(html: str, domain: str) -> List[Dict[str, Any]]:
     return results
 
 
-@traced("annas_download")
 def fetch_annas_md5(md5_path: str, out_path: str = None) -> Dict[str, Any]:
     """从 annas /md5/<hash> 详情页拿真实下载 URL, 再下载 PDF."""
     if not md5_path.startswith("/"):
@@ -807,13 +761,239 @@ def fetch_annas_md5(md5_path: str, out_path: str = None) -> Dict[str, Any]:
 
 
 # ─────────────────────────────────────────────────────────────────
+# CNKI 单篇 detail page
+# ─────────────────────────────────────────────────────────────────
+def fetch_cnki_detail(cnki_id: str, out_path: str = None) -> Dict[str, Any]:
+    """CNKI 单篇 PDF download (xueshu789 cookies required, 4-8h TTL).
+
+    v3.9.8.3 实装 (2026-07-15):
+      1. Check cookies fresh (< 4h)
+      2. Bootstrap via xueshu789 (same pattern as CNKIClient.search)
+      3. If cnki_id looks like a DOI: search for it, get cnki_url
+      4. page.goto(cnki_url) detail page (try proxy IP domain first, fallback to kns.cnki.net)
+      5. Find PDF download link in detail HTML
+      6. Trigger page.expect_download() and save to out_path
+
+    KNOWN LIMITATIONS (verified 2026-07-15 E2E):
+      - 2-cookie sessions (only PHPSESSID + user) are insufficient for detail page access.
+        v3.9.7.4 used 4 cookies (PHPSESSID + user + entrys + expires); the 2-cookie
+        minimal set triggers kns.cnki.net's anti-bot Vue SPA (安全验证 page).
+      - Real CNKI downloads go through bar.cnki.net/bar/download/order (paid order
+        system, requires institutional subscription OR CAPTCHA per-download). Out of
+        hobbyist scope.
+      - xueshu789 proxy IP (120.53.241.46:5888) only proxies search (/kns8s/brief/grid)
+        and brief navigation; not detail page or download.
+      - Result: fetch_cnki_detail() works for SEARCH-side metadata only; PDF download
+        remains blocked unless user has full cookies + bar.cnki.net access.
+
+    Args:
+        cnki_id: either a CNKI internal filename (e.g. "CSDB202607008") OR a DOI
+                 (e.g. "10.3969/j.issn.1003-9031.2022.04.008"). If DOI, will search first.
+        out_path: optional path to save PDF (else return bytes)
+    """
+    try:
+        from . import cnki_channel
+    except ImportError:
+        return {"error": E_CNKI_NO_COOKIES, "message": "cnki_channel not available",
+                "hint": "Set up CNKI cookies first"}
+    if not cnki_channel.cookies_exist():
+        return {"error": E_CNKI_NO_COOKIES, "message": "No CNKI cookies file",
+                "hint": "Run Export-CNKICookies.ps1"}
+    age = cnki_channel.cookie_age_hours()
+    if age is None or age > 4.0:
+        return {"error": E_CNKI_NO_COOKIES,
+                "message": f"CNKI cookies {age:.1f}h old (>4h TTL)" if age else "cookie age unknown",
+                "hint": "Re-run Export-CNKICookies.ps1"}
+
+    # If cnki_id is a DOI, search for the matching paper first
+    cnki_url = None
+    cnki_filename = None
+    if "10." in cnki_id and "/" in cnki_id:
+        # Looks like a DOI — search for it
+        # We need proxy_base, but CNKIClient.search opens a new browser.
+        # Simpler: search for the DOI substring, get the first match's cnki_url.
+        try:
+            from playwright.sync_api import sync_playwright
+            client = cnki_channel.CNKIClient()
+            client.load()
+            with sync_playwright() as pw:
+                browser = pw.chromium.launch(
+                    headless=True,
+                    args=['--no-sandbox', '--disable-blink-features=AutomationControlled'],
+                )
+                ctx = browser.new_context(
+                    user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                "Chrome/120.0.0.0 Safari/537.36"),
+                    accept_downloads=True,
+                )
+                ctx.add_cookies(client._cookies)
+                page = ctx.new_page()
+                try:
+                    proxy_base = client._bootstrap_in_context(ctx, page)
+                    # Search by DOI field (CNKI field code SU=主题, but DOI is not searchable
+                    # via SU; we use FT=全文 for fulltext search)
+                    query_json = client._build_query_json(
+                        cnki_id, "FT", "WD0FTY92", "CROSSDB", None, None)
+                    html = client._post_brief_page_in_context(
+                        ctx, page, proxy_base, query_json, 1)
+                    results = client._parse_brief_response(html)
+                    for r in results:
+                        if r.get("doi") and cnki_id.lower() in r["doi"].lower():
+                            cnki_url = r.get("cnki_url")
+                            cnki_filename = r.get("cnki_filename")
+                            break
+                    if not cnki_url and results:
+                        # Fallback: take first result
+                        cnki_url = results[0].get("cnki_url")
+                        cnki_filename = results[0].get("cnki_filename")
+                finally:
+                    try:
+                        browser.close()
+                    except Exception:
+                        pass
+        except Exception as e:
+            return {"error": "fetch_cnki_search_failed",
+                    "message": f"DOI search failed: {str(e)[:200]}",
+                    "hint": "Try passing cnki_filename directly instead of DOI"}
+        if not cnki_url:
+            return {"error": "fetch_cnki_not_found",
+                    "message": f"DOI {cnki_id} not found in CNKI",
+                    "hint": "CNKI may not have this paper, or cookies need refresh"}
+    else:
+        # Treat as cnki_filename
+        cnki_filename = cnki_id
+        cnki_url = f"https://kns.cnki.net/kcms2/article/abstract?v={cnki_filename}"
+
+    # Now visit detail page and find PDF link
+    try:
+        from playwright.sync_api import sync_playwright
+        client = cnki_channel.CNKIClient()
+        if not client._cookies:
+            client.load()
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(
+                headless=True,
+                args=['--no-sandbox', '--disable-blink-features=AutomationControlled'],
+            )
+            ctx = browser.new_context(
+                user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                            "AppleWebKit/537.36 (KHTML, like Gecko) "
+                            "Chrome/120.0.0.0 Safari/537.36"),
+                accept_downloads=True,
+            )
+            ctx.add_cookies(client._cookies)
+            page = ctx.new_page()
+            try:
+                proxy_base = client._bootstrap_in_context(ctx, page)
+                # Visit detail page
+                # v3.9.8.3 fix: ALWAYS reconstruct on proxy_base (kns.cnki.net
+                # domain has anti-bot security check that rejects xueshu789
+                # cookies — see debug/last_cnki_detail.html after first run).
+                detail_url = None
+                if cnki_url:
+                    if "kns.cnki.net" in cnki_url:
+                        # Reconstruct on proxy IP
+                        # E.g. https://kns.cnki.net/kcms2/article/abstract?v=X
+                        #   → http://{proxy}/kcms2/article/abstract?v=X
+                        path = cnki_url.split("kns.cnki.net", 1)[1]
+                        detail_url = f"{proxy_base.rstrip('/')}{path}"
+                    elif cnki_url.startswith("http"):
+                        detail_url = cnki_url
+                    else:
+                        detail_url = f"{proxy_base.rstrip('/')}/{cnki_url.lstrip('/')}"
+                page.goto(detail_url, timeout=30_000, wait_until="domcontentloaded")
+                # Find PDF/Caj download link in detail page
+                # Common patterns: /kcms2/article/vvip/{filename}, /kns8s/download, etc.
+                pdf_url = None
+                html = page.content()
+                # Save HTML for debugging (overwritten on each call)
+                try:
+                    debug_path = Path(os.path.expanduser("~")) / ".paper-agent" / "debug" / "last_cnki_detail.html"
+                    debug_path.parent.mkdir(parents=True, exist_ok=True)
+                    debug_path.write_text(html, encoding="utf-8")
+                except Exception:
+                    pass
+                # Try vvip link
+                import re as _re
+                m = _re.search(r'href=["\']([^"\']*vvip[^"\']+)', html, _re.IGNORECASE)
+                if m:
+                    pdf_url = m.group(1)
+                # Try download link
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']*download[^"\']+)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try explicit PDF link
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']+\.pdf[^"\']*)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try Caj link (CNKI proprietary format)
+                if not pdf_url:
+                    m = _re.search(r'href=["\']([^"\']*caj[^"\']*)', html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                # Try kns.cnki.net direct download path
+                if not pdf_url:
+                    m = _re.search(r'["\']([^"\']*(?:kcms2|kns8s)[^"\']*(?:download|file|article/abstract)[^"\']*)',
+                                    html, _re.IGNORECASE)
+                    if m:
+                        pdf_url = m.group(1)
+                if not pdf_url:
+                    return {"error": "fetch_cnki_no_pdf_link",
+                            "message": f"Detail page ({detail_url}) loaded but no PDF link found",
+                            "hint": f"Detail HTML saved to {debug_path}. Inspect for download link."}
+                # Resolve relative URL
+                if pdf_url.startswith("/"):
+                    pdf_url = f"{proxy_base.rstrip('/')}{pdf_url}"
+                elif not pdf_url.startswith("http"):
+                    pdf_url = f"{proxy_base.rstrip('/')}/{pdf_url.lstrip('/')}"
+                # Trigger download
+                with page.expect_download(timeout=30_000) as dl_info:
+                    # Use the same page (cookies + proxy context preserved)
+                    page.goto(pdf_url, timeout=30_000, wait_until="domcontentloaded")
+                download = dl_info.value
+                # Save to out_path
+                if out_path:
+                    from pathlib import Path as _P
+                    p = _P(out_path)
+                    p.parent.mkdir(parents=True, exist_ok=True)
+                    download.save_as(str(p))
+                    saved_path = str(p.resolve())
+                else:
+                    # Save to temp file
+                    import tempfile
+                    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
+                    download.save_as(tmp.name)
+                    saved_path = tmp.name
+                return {"source": "cnki",
+                        "cnki_filename": cnki_filename,
+                        "cnki_url": cnki_url,
+                        "pdf_url": pdf_url,
+                        "path": saved_path,
+                        "size": _P(saved_path).stat().st_size if out_path else None}
+            finally:
+                try:
+                    browser.close()
+                except Exception:
+                    pass
+    except Exception as e:
+        return {"error": "fetch_cnki_failed",
+                "message": str(e)[:300],
+                "hint": "Check cookies freshness, network, or paper access permissions"}
+
+
+# ─────────────────────────────────────────────────────────────────
+# Unified entry: --doi / --title / --md5
 # ─────────────────────────────────────────────────────────────────
 def fetch(doi: str = None, title: str = None, md5_path: str = None,
           out_path: str = None, prefer: str = "auto") -> Dict[str, Any]:
-    """Unified fetch from supported download channels.
+    """Unified fetch. prefer: 'arxiv' / 'annas' / 'cnki' / 'scihub' / 'auto'.
 
     v3.9.11.6 cascade (was buggy in v3.9.8.x — only scihub was reachable):
       1. arXiv     (NEW v3.9.11.6)  — if DOI looks like arXiv
+      2. CNKI                       — if DOI is Chinese journal pattern
       3. Anna's archive             — search by DOI tail / title
       4. Unpaywall                  — official, legal, stable
       5. Sci-Hub                    — mirror rotation, last resort
@@ -825,7 +1005,6 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
              or dict with 'error' on failure.
     """
     if doi:
-        partial_result = None
         # 1. arXiv channel — if DOI looks like arXiv (10.48550/arXiv.* or bare ID)
         arxiv_id = _extract_arxiv_id(doi)
         if arxiv_id and prefer in ("arxiv", "auto"):
@@ -834,6 +1013,16 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
                 return r
             # If user explicitly asked for arxiv and it failed, don't fall through
             if prefer == "arxiv":
+                return r
+
+        # 2. CNKI — if DOI is Chinese journal pattern
+        is_cn_journal = (doi.startswith("10.3969/") or doi.startswith("10.16525/")
+                          or "/j.cnki." in doi or "/j.issn." in doi)
+        if is_cn_journal and prefer in ("cnki", "auto"):
+            r = fetch_cnki_detail(doi, out_path)
+            if "error" not in r:
+                return r
+            if prefer == "cnki":
                 return r
 
         # 3. Anna's archive — search by DOI tail (or title if provided)
@@ -855,12 +1044,11 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         #    DOI → PMCID → EFetch XML (always) + Europe PMC PDF (best-effort)
         #    合法 + 永久, 替代 sci-hub/annas cascade 失败时的 fallback
         if prefer in ("pmc", "pmc-pdf", "auto"):
-            r = fetch_pmc_doi(doi, out_path, force_jats=True) if prefer == "pmc-pdf" else fetch_pmc_doi(doi, out_path)
-            if "error" not in r:
+            r = fetch_pmc_doi(doi, out_path)
+            # 成功: 有 xml_path (always) + 可能 pdf_path
+            if "error" not in r and r.get("xml_path"):
                 return r
-            if r.get("xml_path"):
-                partial_result = r
-            if prefer in ("pmc", "pmc-pdf"):
+            if prefer == "pmc":
                 return r  # user explicitly asked for pmc, don't fall through
 
         # 5. Unpaywall (cheap, official, legal)
@@ -870,12 +1058,26 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             if "error" not in r:
                 return r
 
+        # 5b. Semantic Scholar openAccessPdf (v3.9.22+, 2026-08-21)
+        # Cross-domain, fast, ~30% hit rate. Sits between Unpaywall and
+        # Sci-Hub because it's free + legal + S2-API-key optional.
+        if prefer in ("s2", "auto"):
+            try:
+                from .s2_channel import fetch_s2_doi
+                r = fetch_s2_doi(doi, out_path)
+                if "error" not in r:
+                    return r
+            except ImportError:
+                pass
+            if prefer == "s2":
+                return r  # v3.9.22: explicit prefer, return s2's actual error
+
         # 5c. bioRxiv / medRxiv (v3.9.22+, 2026-08-21)
         # Only triggers for 10.1101/* DOIs. High-success preprint server.
         if doi.lower().startswith("10.1101/") and prefer in ("biorxiv", "auto"):
             try:
                 from .biorxiv_channel import fetch_biorxiv_doi
-                r = traced("biorxiv")(fetch_biorxiv_doi)(doi, out_path)
+                r = fetch_biorxiv_doi(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -889,7 +1091,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         if prefer in ("core", "auto"):
             try:
                 from .core_channel import fetch_core_doi
-                r = traced("core")(fetch_core_doi)(doi, out_path)
+                r = fetch_core_doi(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -903,7 +1105,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             doi.lower().startswith("10.31234/osf.io/")) and prefer in ("osf", "auto"):
             try:
                 from .osf_channel import fetch_osf_doi
-                r = traced("osf")(fetch_osf_doi)(doi, out_path)
+                r = fetch_osf_doi(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -916,7 +1118,7 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
         if doi.lower().startswith("10.26434/chemrxiv-") and prefer in ("chemrxiv", "auto"):
             try:
                 from .chemrxiv_channel import fetch_chemrxiv_doi
-                r = traced("chemrxiv")(fetch_chemrxiv_doi)(doi, out_path)
+                r = fetch_chemrxiv_doi(doi, out_path)
                 if "error" not in r:
                     return r
             except ImportError:
@@ -930,9 +1132,6 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
             if "error" not in r:
                 return r
 
-        if partial_result is not None:
-            return {**partial_result, "cascade_error": E_ALL_MIRRORS,
-                    "hint": "No source produced a PDF; retained PMC XML is available at xml_path"}
         return {"error": E_ALL_MIRRORS,
                 "message": f"All sources failed for DOI {doi}",
                 "hint": "Try a different DOI, set UNPAYWALL_EMAIL, or use --title with prefer=annas"}
@@ -952,42 +1151,143 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
 
 
 # ─────────────────────────────────────────────────────────────────
-# The public wrapper supervises an isolated process so a timeout stops blocking
-# provider calls and browser descendants, rather than abandoning a live thread.
-def _doi_output_name(doi: str) -> str:
-    slug = (doi.replace('/', '_').replace('.', '_').replace(':', '_')
-            .replace('\\', '_').replace(' ', '_'))
-    return f'{slug}.pdf'
+# Bounded fetch execution (M1A, 2026-09-25)
+# ─────────────────────────────────────────────────────────────────
+def _fetch_worker(result_queue, doi: str, out_path: str, prefer: str,
+                  fetch_fn=None) -> None:
+    """Run one fetch in an isolated process and return a serializable result."""
+    fn = fetch_fn or fetch
+    try:
+        result_queue.put(("ok", fn(doi=doi, out_path=out_path, prefer=prefer)))
+    except BaseException as exc:  # child must always report a terminal result
+        result_queue.put(("error", {
+            "error": "fetch_internal_error",
+            "message": f"{type(exc).__name__}: {str(exc)[:300]}",
+            "hint": "Inspect the selected fetch channel and retry explicitly.",
+        }))
 
 
-def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
-              channels=None, unpaywall_email: Optional[str] = None,
-              max_total_sec: int = 300, use_cache: bool = True,
-              prefer: Optional[str] = None) -> Dict[str, Any]:
-    """Fetch with a total worker deadline (including cache access).
+def _run_fetch_with_timeout(doi: str, out_path: str, prefer: str,
+                            max_total_sec: Optional[float], fetch_fn=None) -> Dict[str, Any]:
+    """Execute fetch with a hard caller-visible deadline.
 
-    The budget starts before process launch. OS process creation and termination
-    may add overhead. Fresh output is staged and validated before publication;
-    timeout leaves previous output untouched. Publication adds filesystem overhead.
-    Direct fetch() is not supervised here.
+    Production calls use a spawned child process so timeout can terminate the
+    network cascade and prevent late writes. A non-function callable (normally
+    a unittest mock) is executed inline to preserve backward-compatible test
+    injection; real helper functions still exercise process isolation.
     """
-    from .fetch_output import staged_fetch
-    return staged_fetch(dict(doi=doi, output_dir=str(output_dir), proxy=proxy,
-                          channels=channels, unpaywall_email=unpaywall_email,
-                          use_cache=use_cache, prefer=prefer), max_total_sec)
+    fn = fetch_fn or fetch
+    if max_total_sec is None:
+        return fn(doi=doi, out_path=out_path, prefer=prefer)
+    try:
+        timeout = float(max_total_sec)
+    except (TypeError, ValueError):
+        return {
+            "error": E_TIMEOUT,
+            "message": f"Invalid max_total_sec={max_total_sec!r}",
+            "hint": "Pass a positive number of seconds.",
+        }
+    if timeout <= 0:
+        return {
+            "error": E_TIMEOUT,
+            "message": "Fetch deadline expired before the cascade started",
+            "hint": "Increase --max-total-sec.",
+        }
+
+    # unittest.mock callables are intentionally not pickle-safe. Keeping this
+    # narrow compatibility path avoids turning existing offline tests into
+    # network calls; production and top-level helper functions use a process.
+    if not isinstance(fn, types.FunctionType):
+        return fn(doi=doi, out_path=out_path, prefer=prefer)
+
+    ctx = mp.get_context("spawn")
+    result_queue = ctx.Queue(maxsize=1)
+    process_fn = None if fn is fetch else fn
+    process = ctx.Process(
+        target=_fetch_worker,
+        args=(result_queue, doi, out_path, prefer, process_fn),
+        daemon=True,
+    )
+    try:
+        process.start()
+        process.join(timeout)
+        if process.is_alive():
+            process.terminate()
+            process.join(2.0)
+            return {
+                "error": E_TIMEOUT,
+                "message": f"Fetch exceeded max_total_sec={timeout:g}",
+                "hint": "Increase --max-total-sec or choose a faster channel.",
+            }
+        try:
+            status, payload = result_queue.get(timeout=1.0)
+        except queue_module.Empty:
+            return {
+                "error": "fetch_worker_failed",
+                "message": f"Fetch worker exited with code {process.exitcode} without a result",
+                "hint": "Retry once or inspect the selected channel.",
+            }
+        return payload
+    except (OSError, RuntimeError) as exc:
+        return {
+            "error": "fetch_worker_start_failed",
+            "message": f"{type(exc).__name__}: {str(exc)[:300]}",
+            "hint": "Run from a normal Python entry point or retry without process restrictions.",
+        }
+    finally:
+        try:
+            result_queue.close()
+            result_queue.join_thread()
+        except (OSError, ValueError):
+            pass
 
 
-def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
-                          channels=None, unpaywall_email: Optional[str] = None,
-                          max_total_sec: int = 300, use_cache: bool = True,
-                          prefer: Optional[str] = None, _staged: bool = False) -> Dict[str, Any]:
-    """Worker implementation. Caller owns process lifetime and cancellation."""
+# ─────────────────────────────────────────────────────────────────
+# Backward-compat wrapper: v3.9.8.1-style fetch_doi (used by CLI + deep_rerank)
+# Added 2026-07-16 (audit round 22) — v3.9.8.2 renamed fetch_doi → fetch and
+# dropped channels/output_dir/use_cache/max_total_sec params. This wrapper
+# translates old API → new API, restoring `pa fetch <DOI>` CLI + cache
+# integration compatibility.
+#
+# M1A correctness guarantees (2026-09-25):
+#   - valid PDF successes are written to the canonical cache and return SHA-256;
+#     --no-cache bypasses lookup but still writes a successful PDF.
+#   - max_total_sec is enforced by an isolated worker process that is terminated
+#     on timeout, preventing late output writes.
+#   - XML-only and invalid-artifact results are explicit and never PDF-cached.
+#   - channels: translated to `prefer` heuristically. Not all 8 channels
+#     supported (e.g. "openalex" / "arxiv" / "doi_redirect" / "playwright"
+#     are not in new fetch's prefer list — they fall through to "auto").
+#   - result dict shape: mapped back to old shape (via_channel, saved_as,
+#     elapsed_sec, final_status, channels) for callers that depend on it.
+def _fetch_doi_artifact(doi: str, output_dir: str = ".",
+              proxy: str = None,
+              channels = None,
+              unpaywall_email: str = "hello@example.com",
+              max_total_sec: Optional[float] = 300,
+              use_cache: bool = True,
+              _fetch_fn=None) -> Dict[str, Any]:
+    """v3.9.8.1-style fetch wrapper. Translates to new fetch() and maps result back.
+
+    New in v3.9.9.6 (audit round 22): this wrapper was added to restore
+    `pa fetch <DOI>` CLI and `pa_cli.deep_rerank.fetch_doi` callsite
+    after v3.9.8.2 renamed fetch_doi → fetch and changed the signature.
+
+    Channel → prefer mapping (heuristic; not all 8 channels supported):
+      ["cnki", ...]         → prefer="cnki"
+      ["unpaywall", ...]     → prefer="scihub"  (new cascade includes unpaywall)
+      ["scihub", ...]        → prefer="scihub"
+      ["annas", ...]         → prefer="annas"
+      default / other        → prefer="auto"
+
+    Result shape mapping:
+      new `path`        → old `saved_as`
+      new `source`      → old `via_channel`; valid PDF successes are cached
+      new `size`        → (not in old shape, but kept for completeness)
+      new `pdf_url`     → old `via_url`
+      new `error`       → old `final_status` = "ALL_FAIL" + `error` + `hint`
+    """
     t0 = time.time()
-    monotonic_start = time.monotonic()
-    requested_prefer = prefer
-    if requested_prefer is not None and requested_prefer not in FETCH_PREFERENCES:
-        return {"error": "fetch_invalid_preference", "saved_as": None,
-                "final_status": "ALL_FAIL", "hint": "Choose a supported retrieval source"}
 
     # Cache check at function entry — short-circuit cascade on hit.
     # P0-2 acceptance (re-restored 2026-07-16): if PDF magic valid +
@@ -1003,13 +1303,18 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
                     "via_channel": f"cache:{hit['channel']}" if hit.get("channel") else "cache",
                     "via_url": hit.get("url", ""),
                     "cache_hit": True,
+                    "cache_written": False,
                     "cache_age_days": round(hit.get("age_days", 0), 3),
                     "cache_sha256": hit["sha256"],
+                    "cache_path": hit["pdf_path"],
+                    "artifact_type": "pdf",
+                    "artifact_sha256": hit["sha256"],
+                    "size_bytes": hit.get("size"),
                     "elapsed_sec": round(time.time() - t0, 3),
                     "final_status": "SUCCESS_CACHE_HIT",
                     "_wrapper_notes": {
                         "cache_supported": True,
-                        "max_total_sec_supported": False,
+                        "max_total_sec_supported": True,
                         "channels_translated_to": "(cache hit, no fetch)",
                     },
                 }
@@ -1021,7 +1326,7 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
     #
     # Key insight: if DOI looks like arXiv (10.48550/arXiv.* / bare ID /
     # arxiv: prefix), ONLY the arxiv channel can fetch it — sci-hub,
-    # annas does not carry arXiv preprints. So when the DOI is
+    # annas, CNKI don't carry arXiv preprints. So when the DOI is
     # arXiv-shaped AND "arxiv" is in the channel list, we MUST use
     # arxiv regardless of other channels being present.
     #
@@ -1047,8 +1352,13 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
         # v3.9.21+: Unpaywall 独立 option (不强制走 sci-hub)
         # 合法 OA PDF, 走 api.unpaywall.org + best_oa_location
         prefer = "unpaywall"
+    elif "cnki" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
+        prefer = "cnki"
     elif "annas" in channels and not any(c in channels for c in ("scihub", "unpaywall")):
         prefer = "annas"
+    elif "s2" in channels and "scihub" not in channels:
+        # v3.9.22+: Semantic Scholar openAccessPdf channel (free, no key)
+        prefer = "s2"
     elif "biorxiv" in channels and not any(c in channels for c in ("annas", "scihub", "unpaywall")):
         # v3.9.22+: bioRxiv/medRxiv preprint channel
         prefer = "biorxiv"
@@ -1066,92 +1376,72 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
     else:
         prefer = "auto"
 
-    # Explicit source takes precedence over the legacy channel-list mapping.
-    if requested_prefer is not None:
-        prefer = requested_prefer
-
     # Map output_dir + DOI → out_path
     # v3.9.11.6: also replace ':' (legacy arXiv prefix) and other
     # Windows-illegal chars. arxiv:2310.06825 → arxiv_2310_06825
-    out_path = str(Path(output_dir) / _doi_output_name(doi))
+    doi_slug = (doi.replace("/", "_").replace(".", "_").replace(":", "_")
+                    .replace("\\", "_").replace(" ", "_"))
+    out_path = str(Path(output_dir) / f"{doi_slug}.pdf")
 
-    # Call new fetch
-    # v3.9.13.2: route --proxy CLI option through env var so _get_proxy_dict()
-    # picks it up (and runs the validation). Previously `proxy` was a
-    # parameter but never used in the function body, so `pa fetch --proxy`
-    # was silently ignored. Fix: temporarily set HTTPS_PROXY if not already
-    # set in env, then restore in finally.
-    # v3.9.13.3 (F-007 fix): --proxy CLI option ALWAYS wins over env var.
-    # If user passes --proxy AND has HTTPS_PROXY/HTTP_PROXY set, we warn
-    # but use --proxy. Standard CLI > env var precedence.
+    # Call the cascade inside an isolated process so max_total_sec is a hard
+    # boundary and a timed-out worker cannot write the output later.
     proxy_env_set = False
     prev_https_proxy = os.environ.get("HTTPS_PROXY")
     prev_http_proxy = os.environ.get("HTTP_PROXY")
     if proxy:
         if prev_https_proxy or prev_http_proxy:
-            # v3.9.13.3: warn that --proxy overrides env var (UX improvement)
             active = "HTTPS_PROXY" if prev_https_proxy else "HTTP_PROXY"
             import warnings as _w
             _w.warn(
-                f"paper-agent: --proxy=<configured> overrides existing {active} env var. "
+                f"paper-agent: --proxy={proxy} overrides existing {active} env var. "
                 f"To use env var, omit --proxy. (v3.9.13.3 F-007 fix)",
                 stacklevel=2,
             )
-        # Normalize scheme-less proxy like _get_proxy_dict does
         p = proxy.strip()
         if not p.startswith(("http://", "https://", "socks5://", "socks5h://")):
             p = "http://" + p
         os.environ["HTTPS_PROXY"] = p
         proxy_env_set = True
-    email_token = _UNPAYWALL_EMAIL_OVERRIDE.set(unpaywall_email)
+
+    if max_total_sec is None:
+        remaining_sec = None
+    else:
+        remaining_sec = max(0.0, float(max_total_sec) - (time.time() - t0))
     try:
-        r = fetch(doi=doi, out_path=out_path, prefer=prefer)
+        r = _run_fetch_with_timeout(
+            doi=doi,
+            out_path=out_path,
+            prefer=prefer,
+            max_total_sec=remaining_sec,
+            fetch_fn=_fetch_fn or fetch,
+        )
     finally:
-        _UNPAYWALL_EMAIL_OVERRIDE.reset(email_token)
         if proxy_env_set:
             if prev_https_proxy is None:
                 os.environ.pop("HTTPS_PROXY", None)
             else:
                 os.environ["HTTPS_PROXY"] = prev_https_proxy
 
-    # The wrapper always requests a saved PDF. A requested filename or a
-    # provider's success metadata is not proof that a usable file was saved.
-    if "error" not in r:
-        try:
-            with Path(r["path"]).open("rb") as pdf:
-                if pdf.read(4) != b"%PDF":
-                    raise ValueError("not a PDF")
-                r = {**r, "size": os.fstat(pdf.fileno()).st_size}
-        except (OSError, KeyError, TypeError, ValueError):
-            r = {**r, "error": E_SAVE,
-                 "hint": "The reported output is missing or is not a PDF; check the output directory and retry"}
-
     elapsed = round(time.time() - t0, 3)
+    common_notes = {
+        "cache_supported": True,
+        "max_total_sec_supported": True,
+        "channels_translated_to": prefer,
+    }
 
-    if _staged and 'error' not in r:
-        from .fetch_output import _complete_pdf
-        if not _complete_pdf(Path(r['path'])):
-            r = {**r, 'error': 'fetch_invalid_pdf_output',
-                 'hint': 'Downloaded file failed PDF structure validation'}
+    if not isinstance(r, dict):
+        r = {
+            "error": E_INVALID_ARTIFACT,
+            "message": f"Fetch returned {type(r).__name__}, expected a result object",
+            "hint": "Inspect the selected fetch channel.",
+        }
 
-    # Record one final outcome. Failed automatic cascades are labelled "auto"
-    # because this legacy downloader does not expose each internal attempt.
-    try:
-        from .channel_stats import record_event
-        record_event(
-            doi,
-            r.get("source", prefer) if "error" not in r else prefer,
-            "error" not in r,
-            elapsed,
-            error=r.get("error"),
-        )
-    except Exception:
-        pass
-    # Translate result to old shape
     if "error" in r:
+        final_status = "TIMEOUT" if r["error"] == E_TIMEOUT else "ALL_FAIL"
         return {
             "doi": doi,
             "saved_as": None,
+            "artifact_type": None,
             "channels": {prefer: {"status": "fail", "error": r["error"]}},
             "handoff": {
                 "reason": r.get("message", r["error"]),
@@ -1159,54 +1449,138 @@ def _fetch_doi_in_process(doi: str, output_dir: str = ".", proxy: str = None,
                 "user_action_required": r.get("hint", "Try a different DOI or check network"),
             },
             "elapsed_sec": elapsed,
-            "final_status": "ALL_FAIL",
+            "final_status": final_status,
             "error": r["error"],
             "hint": r.get("hint"),
-            **{key: r[key] for key in (
-                "source", "pmcid", "xml_path", "xml_size",
-                "pdf_error_europe", "pdf_error_jats", "cascade_error",
-            ) if key in r},
-            "_wrapper_notes": {
-                "cache_supported": True,  # cache check restored; not the issue here
-                "max_total_sec_supported": False,
-                "channels_translated_to": prefer,
-            },
+            "_wrapper_notes": common_notes,
         }
-    # Caching is best-effort; a cache failure must not invalidate a saved PDF.
-    cache_written = False
-    cache_status = 'skipped_budget'
-    # Optional caching must not consume the remaining retrieval budget. Run it
-    # in a contained child, with one second reserved for the result protocol.
-    cache_seconds = min(3.0, max_total_sec - (time.monotonic() - monotonic_start) - 1.0)
-    if cache_seconds > 0:
-        from .fetch_deadline import run_fetch
-        emit('cache_write', 'started')
-        cached = run_fetch(dict(_operation='cache_write', doi=doi, path=r['path'],
-                                channel=r.get('source', prefer), url=r.get('pdf_url') or ''),
-                           cache_seconds, _memory_mb=512)
-        cache_written = cached.get('cache_written') is True
-        cache_status = 'written' if cache_written else cached.get('error', 'cache_write_failed')
-        emit('cache_write', 'completed' if cache_written else 'failed')
 
-    # Success
+    from . import cache as _cache_mod
+
+    # Prefer an explicit PDF path, then the generic path, then the requested
+    # output path. Only a validated real PDF may enter the PDF cache.
+    pdf_candidate = r.get("pdf_path") or r.get("path")
+    if not pdf_candidate and not r.get("xml_path"):
+        pdf_candidate = out_path
+    pdf_path = Path(pdf_candidate) if pdf_candidate else None
+    pdf_body = None
+    if pdf_path and pdf_path.exists() and pdf_path.is_file():
+        try:
+            candidate_body = pdf_path.read_bytes()
+            if _cache_mod._is_pdf(candidate_body):
+                pdf_body = candidate_body
+        except OSError:
+            pdf_body = None
+
+    if pdf_body is not None:
+        artifact_sha = hashlib.sha256(pdf_body).hexdigest()
+        cache_written = False
+        cache_entry = None
+        cache_error = None
+        try:
+            cache_entry = _cache_mod.cache_put(
+                doi,
+                pdf_body,
+                channel=r.get("source", prefer),
+                url=r.get("pdf_url") or "",
+            )
+            cache_written = True
+        except (OSError, ValueError) as exc:
+            cache_error = f"{type(exc).__name__}: {str(exc)[:300]}"
+
+        final_status = "SUCCESS" if cache_written else "SUCCESS_UNCACHED"
+        result = {
+            "doi": doi,
+            "saved_as": str(pdf_path),
+            "via_channel": r.get("source", prefer),
+            "via_url": r.get("pdf_url"),
+            "artifact_type": "pdf",
+            "artifact_sha256": artifact_sha,
+            "elapsed_sec": elapsed,
+            "final_status": final_status,
+            "cache_hit": False,
+            "cache_written": cache_written,
+            "cache_sha256": cache_entry.get("sha256") if cache_entry else None,
+            "cache_path": cache_entry.get("pdf_path") if cache_entry else None,
+            "size_bytes": len(pdf_body),
+            "_wrapper_notes": common_notes,
+        }
+        if cache_error:
+            result["cache_error"] = cache_error
+        return result
+
+    # PMC may legitimately return JATS XML when no PDF renderer succeeds.
+    xml_candidate = r.get("xml_path")
+    xml_path = Path(xml_candidate) if xml_candidate else None
+    if xml_path and xml_path.exists() and xml_path.is_file():
+        try:
+            xml_body = xml_path.read_bytes()
+        except OSError:
+            xml_body = b""
+        if xml_body:
+            return {
+                "doi": doi,
+                "saved_as": str(xml_path),
+                "via_channel": r.get("source", prefer),
+                "via_url": r.get("source_url") or r.get("pdf_url"),
+                "artifact_type": "xml",
+                "artifact_sha256": hashlib.sha256(xml_body).hexdigest(),
+                "elapsed_sec": elapsed,
+                "final_status": "SUCCESS_XML_ONLY",
+                "cache_hit": False,
+                "cache_written": False,
+                "size_bytes": len(xml_body),
+                "hint": r.get("hint"),
+                "_wrapper_notes": common_notes,
+            }
+
     return {
         "doi": doi,
-        "saved_as": r.get("path"),
-        "via_channel": r.get("source", prefer),
-        "via_url": r.get("pdf_url"),
-        "elapsed_sec": elapsed,
-        "final_status": "SUCCESS",
-        "cache_hit": False,  # not from cache (would have returned earlier)
-        "cache_written": cache_written,
-        "cache_status": cache_status,
-        "size_bytes": r.get("size"),
-        **{key: r[key] for key in ('xml_path', 'xml_size') if key in r},
-        "_wrapper_notes": {
-            "cache_supported": True,
-            "max_total_sec_supported": False,
-            "channels_translated_to": prefer,
+        "saved_as": None,
+        "artifact_type": None,
+        "cache_hit": False,
+        "cache_written": False,
+        "channels": {prefer: {"status": "fail", "error": E_INVALID_ARTIFACT}},
+        "handoff": {
+            "reason": "Fetch reported success but produced no valid PDF or XML artifact",
+            "elapsed_sec": elapsed,
+            "user_action_required": "Inspect the selected channel output and retry explicitly.",
         },
+        "elapsed_sec": elapsed,
+        "final_status": "INVALID_ARTIFACT",
+        "error": E_INVALID_ARTIFACT,
+        "hint": "No valid PDF or XML artifact was produced.",
+        "_wrapper_notes": common_notes,
     }
+
+
+def fetch_doi(doi: str, output_dir: str = ".", proxy: str = None,
+              channels=None, unpaywall_email: str = "hello@example.com",
+              max_total_sec: Optional[float] = 300, use_cache: bool = True,
+              _fetch_fn=None, *, expected_title=None, data_class="unknown") -> Dict[str, Any]:
+    """Fetch locally and attach a conservative M1B provenance assessment.
+
+    data_class is per-call, never inherited from cache. Public classification
+    only makes an artifact a candidate; it never constitutes upload consent.
+    XML and PDF metadata are inspected independently, including on cache hits.
+    Missing PDF metadata stays unverified; a companion JATS file cannot prove
+    the identity or license of an independently downloaded PDF.
+    """
+    result = _fetch_doi_artifact(
+        doi, output_dir=output_dir, proxy=proxy, channels=channels,
+        unpaywall_email=unpaywall_email, max_total_sec=max_total_sec,
+        use_cache=use_cache, _fetch_fn=_fetch_fn,
+    )
+    if result.get("saved_as"):
+        from .provenance import inspect_artifact
+        source = result.get("via_channel", "")
+        if source.startswith("cache:"):
+            source = source[len("cache:"):]
+        result["provenance"] = inspect_artifact(
+            result["saved_as"], doi, source, result.get("via_url"),
+            expected_title=expected_title, data_class=data_class,
+        )
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────

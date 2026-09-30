@@ -51,7 +51,7 @@ sys.path.insert(0, str(_PROJECT_ROOT))
 
 from pa_cli.recency import RecencyConfig, apply_recency_to_results  # noqa: E402
 
-BENCH_DIR = Path(r"G:\minimax - workspace\Paper agent\bench\v01")
+BENCH_DIR = Path(__file__).resolve().parent
 SYSTEM_IN = BENCH_DIR / "system_outputs"
 
 CONDITION_OUT_DIRS = {

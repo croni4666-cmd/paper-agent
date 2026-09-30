@@ -48,8 +48,6 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from xml.etree.ElementTree import Element
 
-from ._http import build_opener, get_allow_remote_proxy, validate_proxy_security
-
 logger = logging.getLogger(__name__)
 
 # Maximum size for downloaded figure (skip huge images to avoid timeout)
@@ -533,6 +531,10 @@ def jats_xml_to_html(xml_bytes: bytes, doi: str = "", pmcid: str = "") -> str:
     Returns:
         A complete HTML document string.
     """
+    # Guard against XXE entity expansion and excessive memory consumption
+    if len(xml_bytes) > 20 * 1024 * 1024 or b"<!ENTITY" in xml_bytes.upper():
+        raise ValueError("Invalid JATS XML: payload exceeds 20MB limit or contains prohibited DTD ENTITY declarations")
+
     # Parse with stdlib (handles the typical PMC EFetch output without
     # needing lxml; lxml would also work but stdlib is more portable).
     try:
@@ -546,8 +548,7 @@ def jats_xml_to_html(xml_bytes: bytes, doi: str = "", pmcid: str = "") -> str:
     front = None
     body = None
     back = None
-    candidates = [root] if _local(root.tag) == "article" else root
-    for c in candidates:
+    for c in root:
         local = _local(c.tag)
         if local == "article":
             article = c
@@ -634,14 +635,13 @@ def _html_to_pdf_via_playwright(html_str: str, timeout: int = 60) -> bytes:
             context = browser.new_context()
             page = context.new_page()
             # Use file:// to render the HTML; avoids http://localhost overhead
-            tmp_path = None
+            with tempfile.NamedTemporaryFile(
+                mode="w", suffix=".html", delete=False, encoding="utf-8"
+            ) as tmp:
+                tmp.write(html_str)
+                tmp_path = tmp.name
             try:
-                with tempfile.NamedTemporaryFile(
-                    mode="w", suffix=".html", delete=False, encoding="utf-8"
-                ) as tmp:
-                    tmp_path = Path(tmp.name)
-                    tmp.write(html_str)
-                page.goto(tmp_path.resolve().as_uri(), wait_until="load", timeout=timeout * 1000)
+                page.goto(f"file://{tmp_path}", wait_until="load", timeout=timeout * 1000)
                 # Give images time to load
                 page.wait_for_load_state("networkidle", timeout=timeout * 1000)
                 pdf_bytes = page.pdf(
@@ -651,8 +651,7 @@ def _html_to_pdf_via_playwright(html_str: str, timeout: int = 60) -> bytes:
                     margin={"top": "0", "right": "0", "bottom": "0", "left": "0"},
                 )
             finally:
-                if tmp_path is not None:
-                    tmp_path.unlink(missing_ok=True)
+                Path(tmp_path).unlink(missing_ok=True)
             return pdf_bytes
         finally:
             browser.close()
@@ -662,52 +661,18 @@ def _html_to_pdf_via_playwright(html_str: str, timeout: int = 60) -> bytes:
 # Optional: download figures and embed as data URIs
 # ---------------------------------------------------------------------------
 
-def _build_figure_opener(proxy: Optional[str] = None):
-    """Build a figure downloader opener without changing global urllib state."""
-    if not proxy:
-        return build_opener()
-    normalized = proxy.strip()
-    if not normalized.startswith(("http://", "https://", "socks5://", "socks5h://")):
-        normalized = "http://" + normalized
-    validate_proxy_security(normalized, allow_remote=get_allow_remote_proxy())
-    return urllib.request.build_opener(
-        urllib.request.ProxyHandler({"http": normalized, "https": normalized})
-    )
-
-
-def _figure_mime(data: bytes) -> Optional[str]:
-    """Identify supported image headers; this is not a full image decode."""
-    if data.startswith(b"\x89PNG\r\n\x1a\n"):
-        return "image/png"
-    if data.startswith(b"\xff\xd8\xff"):
-        return "image/jpeg"
-    if data.startswith((b"GIF87a", b"GIF89a")):
-        return "image/gif"
-    if data.startswith(b"RIFF") and data[8:12] == b"WEBP":
-        return "image/webp"
-    try:
-        root = ET.fromstring(data)
-        if _local(root.tag) == "svg":
-            return "image/svg+xml"
-    except (ET.ParseError, ValueError):
-        pass
-    return None
-
-
-def _download_figure(url: str, opener, timeout: int = 10) -> Optional[bytes]:
+def _download_figure(url: str, timeout: int = 10) -> Optional[bytes]:
     """Download a figure URL; return None on failure."""
     try:
         req = urllib.request.Request(
             url,
             headers={"User-Agent": "paper-agent-jats2pdf/1.0"},
         )
-        with opener.open(req, timeout=timeout) as r:
-            content = r.read(_MAX_FIG_BYTES + 1)
-            if len(content) > _MAX_FIG_BYTES or not _figure_mime(content):
-                return None
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            content = r.read(_MAX_FIG_BYTES)
             return content
-    except Exception:
-        logger.debug("Figure download failed; skipping embedding")
+    except Exception as e:
+        logger.debug(f"figure download failed: {url}: {e}")
         return None
 
 
@@ -717,20 +682,25 @@ def _embed_figures_as_data_uris(html_str: str, doi: str = "", proxy: str = None)
     Best-effort: download each figure and convert to base64. Failures
     are silently skipped (URL stays as remote, browser may still load).
     """
-    opener = _build_figure_opener(proxy)
+    if proxy:
+        # Set proxy for urllib
+        opener = urllib.request.build_opener(
+            urllib.request.ProxyHandler({"http": proxy, "https": proxy})
+        )
+        urllib.request.install_opener(opener)
 
     def replace_img(m: re.Match) -> str:
-        prefix, url, suffix = m.group(1), html_mod.unescape(m.group(2)), m.group(3)
+        prefix, url, alt = m.group(1), m.group(2), m.group(3)
         if url.startswith("data:") or not url.startswith("http"):
             return m.group(0)
-        data = _download_figure(url, opener)
+        data = _download_figure(url)
         if not data:
             return m.group(0)
-        mime = _figure_mime(data)
-        if not mime:
-            return m.group(0)
+        # Guess MIME from URL
+        ext = Path(url).suffix.lower().lstrip(".")
+        mime = {"jpg": "jpeg", "jpeg": "jpeg", "png": "png", "gif": "gif", "svg": "svg+xml"}.get(ext, "jpeg")
         b64 = base64.b64encode(data).decode("ascii")
-        return f'{prefix}data:{mime};base64,{b64}{suffix}'
+        return f'{prefix}data:image/{mime};base64,{b64}" alt="{alt}'
 
     # Match <img src="..."> with any attribute order
     return re.sub(

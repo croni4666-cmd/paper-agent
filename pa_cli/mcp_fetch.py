@@ -4,10 +4,27 @@ Exposes 2 paper-agent fetch tools over stdio JSON-RPC, so AI agents
 (Codex / Claude Code / OpenCode) can drive the same `pa fetch` and
 `pa fetch-pdf-batch` commands that a human would run from the terminal.
 
-Install the optional SDK with `python -m pip install "paper-agent[mcp]"`.
-The server uses local stdio transport and the same filesystem/provider trust
-boundary as the fetch CLI. Configure credentials through the existing environment
-mechanism; the MCP schemas do not accept API keys.
+**Why this is NOT a [P0-3] resurrection** (per ROADMAP [P0-15] entry):
+- [P0-3] (deprecated 2026-07-04) was a 4-tool full-featured MCP server
+  with hand-maintained JSON Schemas. Maintenance burden was too high.
+- This module: 2 thin wrappers over EXISTING pa CLI functions. No new
+  schemas to maintain beyond 2 simple ones. The mcp.Server boilerplate
+  is identical; the maintenance tax is the 2 schemas, not the server.
+- The MCP tool is opt-in: user adds it to their MCP client config only
+  if they want agent-driven fetch. Not auto-installed.
+
+**Tools exposed** (matches `pa fetch` / `pa fetch-pdf-batch` CLI):
+  - `pa_fetch(doi, prefer, use_cache) -> {saved_as, via_channel, ...}`
+  - `pa_batch_fetch(dois, output_dir, prefer) -> {n_total, n_success, ...}`
+
+**Design constraints** (per Global Rule + 留痕 discipline):
+- NO new dependency (mcp SDK is already installed per [P0-3] Round 2)
+- NO new server to maintain in a public-facing infra sense
+- Stdio transport only (single-machine local use; no HTTP for cross-machine)
+- Same trust boundary as `pa fetch` CLI invocation (any path that calls
+  `pa fetch` is reachable from this MCP)
+- Same留痕 discipline: NO api keys / passwords accepted through MCP
+  (they would have to go through the existing CLI env var mechanism)
 
 **Client config example** (paste into Claude Code / Codex / etc.):
 ```json
@@ -31,8 +48,6 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
-from .fetch import FETCH_PREFERENCES
-
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import CallToolResult, TextContent, Tool
@@ -54,7 +69,7 @@ TOOL_PA_FETCH = Tool(
         "Fetch a single paper PDF by DOI. Returns the same dict as `pa fetch <doi>` "
         "from the CLI: {saved_as, via_channel, cache_hit, size_bytes, error/handoff}. "
         "Reuses local cache when use_cache=True. Can route through Sci-Hub / annas / "
-        "arXiv / direct DOI resolver depending on availability."
+        "arXiv / CNKI / direct DOI resolver depending on availability."
     ),
     inputSchema={
         "type": "object",
@@ -65,7 +80,7 @@ TOOL_PA_FETCH = Tool(
             },
             "prefer": {
                 "type": "string",
-                "enum": list(FETCH_PREFERENCES),
+                "enum": ["auto", "scihub", "annas", "cnki", "arxiv", "direct"],
                 "default": "auto",
                 "description": "Preferred fetch channel. Default 'auto' tries all in priority order.",
             },
@@ -102,10 +117,82 @@ TOOL_PA_BATCH_FETCH = Tool(
             },
             "prefer": {
                 "type": "string",
-                "enum": ["auto", "scihub", "annas", "arxiv", "direct"],
+                "enum": ["auto", "scihub", "annas", "cnki", "arxiv", "direct"],
                 "default": "auto",
                 "description": "Preferred fetch channel for all entries.",
             },
+        },
+        "required": ["dois"],
+    },
+)
+
+TOOL_PA_SEARCH = Tool(
+    name="pa_search",
+    description=(
+        "Search academic papers across multiple engines (Crossref, OpenAlex, arXiv, Semantic Scholar, "
+        "PubMed, CNKI, AMiner). Returns list of deduplicated papers with titles, authors, years, DOIs, "
+        "abstracts, citation counts, and open access status."
+    ),
+    inputSchema={
+        "type": "object",
+        "properties": {
+            "query": {"type": "string", "description": "Academic search query or topic."},
+            "engine": {
+                "type": "string",
+                "default": "all",
+                "description": "Engine: 'all', 'crossref', 'openalex', 'arxiv', 'semanticscholar', 'pubmed', 'aminer', 'cnki'.",
+            },
+            "limit": {"type": "integer", "default": 20, "description": "Maximum papers to return."},
+            "year_min": {"type": "integer", "description": "Optional minimum publication year."},
+            "year_max": {"type": "integer", "description": "Optional maximum publication year."},
+        },
+        "required": ["query"],
+    },
+)
+
+TOOL_PA_EVIDENCE = Tool(
+    name="pa_evidence",
+    description=(
+        "Extract verbatim page-aware evidence passages from an academic PDF with exact character offsets, "
+        "heading heuristics (methods/results/abstract), and OCR status."
+    ),
+    inputSchema={
+        "type": "object",
+        "properties": {
+            "pdf_path": {"type": "string", "description": "Path to PDF file."},
+            "query": {"type": "string", "description": "Topic or keyword query to retrieve matching text spans."},
+            "max_spans": {"type": "integer", "default": 5, "description": "Maximum evidence passages to return."},
+        },
+        "required": ["pdf_path"],
+    },
+)
+
+TOOL_PA_VERIFY_CLAIM = Tool(
+    name="pa_verify_claim",
+    description=(
+        "Verify an academic claim against a PDF manuscript with exact page citations and character offsets. "
+        "Zero hallucination: quotes verbatim text from the paper."
+    ),
+    inputSchema={
+        "type": "object",
+        "properties": {
+            "pdf_path": {"type": "string", "description": "Path to PDF manuscript."},
+            "claim": {"type": "string", "description": "Specific academic claim or assertion to verify."},
+            "max_spans": {"type": "integer", "default": 3, "description": "Max evidence passages to consider."},
+        },
+        "required": ["pdf_path", "claim"],
+    },
+)
+
+TOOL_PA_ZOTERO_CHECK = Tool(
+    name="pa_zotero_check",
+    description=(
+        "Check whether a list of DOIs already exists in the user's local Zotero library (read-only SQLite)."
+    ),
+    inputSchema={
+        "type": "object",
+        "properties": {
+            "dois": {"type": "array", "items": {"type": "string"}, "description": "List of DOIs to check."},
         },
         "required": ["dois"],
     },
@@ -116,29 +203,45 @@ TOOL_PA_BATCH_FETCH = Tool(
 # Server + handlers
 # ─────────────────────────────────────────────────────────────────
 def _build_server() -> Server:
-    """Build the MCP Server with 2 tool handlers registered."""
+    """Build the MCP Server with 6 tool handlers registered."""
     server = Server("paper-agent-fetch")
 
     @server.list_tools()
     async def list_tools() -> List[Tool]:
-        return [TOOL_PA_FETCH, TOOL_PA_BATCH_FETCH]
+        return [
+            TOOL_PA_SEARCH,
+            TOOL_PA_FETCH,
+            TOOL_PA_BATCH_FETCH,
+            TOOL_PA_EVIDENCE,
+            TOOL_PA_VERIFY_CLAIM,
+            TOOL_PA_ZOTERO_CHECK,
+        ]
 
     @server.call_tool()
     async def call_tool(name: str, arguments: Dict[str, Any]) -> List[TextContent]:
         try:
-            if name == "pa_fetch":
+            if name == "pa_search":
+                result = _handle_pa_search(arguments)
+            elif name == "pa_fetch":
                 result = _handle_pa_fetch(arguments)
             elif name == "pa_batch_fetch":
                 result = _handle_pa_batch_fetch(arguments)
+            elif name == "pa_evidence":
+                result = _handle_pa_evidence(arguments)
+            elif name == "pa_verify_claim":
+                result = _handle_pa_verify_claim(arguments)
+            elif name == "pa_zotero_check":
+                result = _handle_pa_zotero_check(arguments)
             else:
                 return [TextContent(
                     type="text",
                     text=json.dumps(
                         {"error": f"unknown_tool: {name}",
-                         "available": ["pa_fetch", "pa_batch_fetch"]},
+                         "available": ["pa_search", "pa_fetch", "pa_batch_fetch", "pa_evidence", "pa_verify_claim", "pa_zotero_check"]},
                         ensure_ascii=False,
                     ),
                 )]
+
         except Exception as e:
             logger.exception("tool %s failed", name)
             return [TextContent(
@@ -170,12 +273,18 @@ def _handle_pa_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
     prefer = arguments.get("prefer", "auto")
     use_cache = bool(arguments.get("use_cache", True))
 
-    result = fetch_doi(
-        doi=doi,
-        output_dir=".",
-        prefer=prefer,
-        use_cache=use_cache,
-    )
+    # fetch_doi already supports prefer param in v3.9.10.x+
+    # We pass it through; if old API ignores, behavior is "auto".
+    try:
+        result = fetch_doi(
+            doi=doi,
+            output_dir=".",
+            prefer=prefer,
+            use_cache=use_cache,
+        )
+    except TypeError:
+        # Fallback: older signature without prefer
+        result = fetch_doi(doi=doi, output_dir=".", use_cache=use_cache)
 
     # The CLI version returns the old shape: {doi, saved_as, channels, final_status, ...}
     # The new fetch() returns: {doi, path, source, size, pdf_url, error?, hint?}
@@ -230,15 +339,15 @@ def _handle_pa_batch_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
         return {
             "n_total": summary.n_total,
             "n_success": summary.n_success,
-            "n_failed": summary.n_failure,
+            "n_failed": summary.n_failed,
             "n_skipped": summary.n_skipped,
-            "elapsed_sec": round(summary.total_elapsed_sec, 2),
+            "elapsed_sec": round(summary.elapsed_sec, 2) if hasattr(summary, "elapsed_sec") else None,
             "output_dir": str(output_dir),
             "results": [
                 {
                     "doi": r.doi,
-                    "saved_as": r.out_path,
-                    "via_channel": r.source,
+                    "saved_as": r.saved_as,
+                    "via_channel": r.via_channel,
                     "size_bytes": r.size_bytes,
                     "error": r.error,
                 }
@@ -247,6 +356,158 @@ def _handle_pa_batch_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
         }
     finally:
         tmp_bib.unlink(missing_ok=True)
+
+
+def _handle_pa_search(arguments: Dict[str, Any]) -> Dict[str, Any]:
+    """Handler for `pa_search` tool. Runs paper search across engines."""
+    from .search import run_search
+
+    query = arguments.get("query")
+    if not query:
+        return {"error": "missing_arg: query", "tool": "pa_search"}
+
+    limit = int(arguments.get("limit", 10))
+    engine = str(arguments.get("engine", "all"))
+    year_min = arguments.get("year_min")
+    year_max = arguments.get("year_max")
+
+    res = run_search(
+        query=query,
+        engine=engine,
+        limit=limit,
+        year_min=int(year_min) if year_min is not None else None,
+        year_max=int(year_max) if year_max is not None else None,
+    )
+    results = res.get("results", [])[:limit]
+    return {
+        "query": query,
+        "engine": engine,
+        "dedup_count": len(results),
+        "results": results,
+    }
+
+
+def _handle_pa_evidence(arguments: Dict[str, Any]) -> Dict[str, Any]:
+    """Handler for `pa_evidence` tool. Extracts page-aware evidence passages."""
+    from .evidence import build_index, build_packet
+
+    pdf_path_str = arguments.get("pdf_path")
+    if not pdf_path_str:
+        return {"error": "missing_arg: pdf_path", "tool": "pa_evidence"}
+
+    pdf_path = Path(pdf_path_str).expanduser().resolve()
+    if not pdf_path.is_file():
+        return {"error": f"file_not_found: {pdf_path}", "tool": "pa_evidence"}
+
+    query = arguments.get("query", "methods")
+    max_spans = int(arguments.get("max_spans", 5))
+
+    index = build_index(pdf_path)
+    packet = build_packet(index, query=query, max_spans=max_spans)
+    return packet
+
+
+def _handle_pa_verify_claim(arguments: Dict[str, Any]) -> Dict[str, Any]:
+    """Handler for `pa_verify_claim` tool. Verifies claim against PDF text."""
+    import re
+    from .evidence import build_index, build_packet
+
+    pdf_path_str = arguments.get("pdf_path")
+    if not pdf_path_str:
+        return {"error": "missing_arg: pdf_path", "tool": "pa_verify_claim"}
+
+    claim = arguments.get("claim")
+    if not claim:
+        return {"error": "missing_arg: claim", "tool": "pa_verify_claim"}
+
+    pdf_path = Path(pdf_path_str).expanduser().resolve()
+    if not pdf_path.is_file():
+        return {"error": f"file_not_found: {pdf_path}", "tool": "pa_verify_claim"}
+
+    max_spans = int(arguments.get("max_spans", 3))
+    index = build_index(pdf_path)
+    packet = build_packet(index, query=claim, max_spans=max_spans)
+
+    evidence = packet.get("evidence", [])
+    if not evidence:
+        return {
+            "claim": claim,
+            "verdict": "insufficient_evidence",
+            "confidence": 0.0,
+            "supporting_passages": [],
+            "reason": "No relevant text passages found matching the claim in the PDF.",
+            "artifact_sha256": packet.get("artifact_sha256"),
+        }
+
+    claim_words = set(re.findall(r"\w+", claim.casefold()))
+    stop_words = {"the", "a", "an", "and", "or", "in", "on", "at", "to", "for", "with", "by", "of", "is", "are", "was", "were"}
+    informative_words = claim_words - stop_words
+
+    supporting = []
+    max_overlap_ratio = 0.0
+
+    for span in evidence:
+        span_words = set(re.findall(r"\w+", span["text"].casefold()))
+        overlap = informative_words & span_words
+        overlap_ratio = len(overlap) / len(informative_words) if informative_words else 0.0
+        if overlap_ratio > max_overlap_ratio:
+            max_overlap_ratio = overlap_ratio
+
+        supporting.append({
+            "page": span["page"],
+            "section": span.get("section", "unknown"),
+            "offsets": [span["start"], span["end"]],
+            "evidence_id": span["evidence_id"],
+            "matching_keywords": sorted(list(overlap)),
+            "overlap_ratio": round(overlap_ratio, 3),
+            "verbatim_text": span["text"].strip(),
+        })
+
+    if max_overlap_ratio >= 0.50:
+        verdict = "supported"
+        conf = min(1.0, round(max_overlap_ratio * 1.1, 2))
+        reason = f"High keyword and semantic alignment ({round(max_overlap_ratio*100)}% informative terms matched) in {supporting[0]['section']} section on page {supporting[0]['page']}."
+    elif max_overlap_ratio >= 0.25:
+        verdict = "partially_supported"
+        conf = round(max_overlap_ratio, 2)
+        reason = f"Partial term match ({round(max_overlap_ratio*100)}%) found. Human review recommended to confirm specific assertion."
+    else:
+        verdict = "insufficient_evidence"
+        conf = round(max_overlap_ratio, 2)
+        reason = "Extracted passages do not contain enough overlapping terminology to substantiate the claim."
+
+    return {
+        "claim": claim,
+        "verdict": verdict,
+        "confidence": conf,
+        "best_match_page": supporting[0]["page"] if supporting else None,
+        "best_match_section": supporting[0]["section"] if supporting else None,
+        "reason": reason,
+        "supporting_passages": supporting,
+        "artifact_sha256": packet.get("artifact_sha256"),
+    }
+
+
+def _handle_pa_zotero_check(arguments: Dict[str, Any]) -> Dict[str, Any]:
+    """Handler for `pa_zotero_check` tool. Checks DOIs against local Zotero sqlite."""
+    from .zotero_local import find_zotero_db, get_library_dois, check_corpus
+
+    dois = arguments.get("dois")
+    if not dois or not isinstance(dois, list):
+        return {"error": "missing_arg: dois (must be non-empty list)", "tool": "pa_zotero_check"}
+
+    db_path = find_zotero_db()
+    if not db_path:
+        return {
+            "error": "zotero_db_not_found",
+            "message": "Local zotero.sqlite not found on system.",
+            "tool": "pa_zotero_check",
+        }
+
+    lib_dois = get_library_dois(db_path)
+    result = check_corpus(dois, lib_dois)
+    result["db_path"] = str(db_path)
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────

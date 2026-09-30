@@ -62,7 +62,7 @@ def get_work_by_doi(doi: str) -> Optional[dict]:
     """
     url = f"{OPENALEX_BASE}/works/doi:{quote(doi, safe='/:')}{_api_key_suffix('?')}"
     status, data = http_get_json(url, timeout=30)
-    if status != 200:
+    if status != 200 or not isinstance(data, dict):
         return None
     return data
 
@@ -94,7 +94,7 @@ def get_citing(doi: str, limit: int = 100, per_page: int = 50) -> List[Dict]:
             f"{_api_key_suffix('&')}"
         )
         status, data = http_get_json(url, timeout=60)
-        if status != 200:
+        if status != 200 or not isinstance(data, dict):
             log.warning(f"cites page fetch failed: status={status}, cursor={cursor[:20]}")
             break
         for r in data.get("results", []):
@@ -136,7 +136,7 @@ def get_referenced(doi: str, limit: int = 50) -> List[Dict]:
         short_id = _strip_openalex_url(oa_url)
         url = f"{OPENALEX_BASE}/works/{short_id}{_api_key_suffix('?')}"
         status, data = http_get_json(url, timeout=30)
-        if status != 200:
+        if status != 200 or not isinstance(data, dict):
             log.warning(f"referenced work fetch failed: id={short_id}, status={status}")
             continue
         normalised = _normalize_openalex(data)

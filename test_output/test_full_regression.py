@@ -38,9 +38,16 @@ MIN_ENV = {
     "TMP": os.environ.get("TMP", ""),
     "USERPROFILE": os.environ.get("USERPROFILE", ""),
     "HOME": os.environ.get("HOME", ""),
+    "APPDATA": os.environ.get("APPDATA", ""),
+    "LOCALAPPDATA": os.environ.get("LOCALAPPDATA", ""),
     "PYTHONIOENCODING": "utf-8",
     "PYTHONUTF8": "1",
 }
+# Forward proxy and network test flags
+for _k in ["HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy",
+           "NO_PROXY", "no_proxy", "PA_NETWORK_OFFLINE", "PA_TEST_REAL_CORPUS", "OPENALEX_API_KEY"]:
+    if _k in os.environ:
+        MIN_ENV[_k] = os.environ[_k]
 
 
 def run(cmd, timeout=30, **kw):
@@ -439,8 +446,10 @@ def section_skill_local_tests():
     """
     print("\n" + "="*60)
     print("F. skill/test_skill.py (local, no network)")
-    print("="*60)
     script = ROOT / "skill" / "examples" / "test_skill.py"
+    if not script.exists():
+        print(f"  [SKIP] test_skill.py (not present at {script})")
+        return [("skill/test_skill.py", "SKIP", 0, "")]
     rc, out, err = run([sys.executable, str(script)], timeout=30)
     passed_cleanly = rc == 0 and "ALL TESTS PASSED" in out
     has_known_signature_error = "get_config 必须传 topic" in err or "get_config 必须传 topic" in out

@@ -55,7 +55,7 @@ def search_concepts(query: str, limit: int = 5) -> List[Dict]:
     url = f"{OPENALEX_BASE}/concepts?search={quote(query.strip())}&per-page={min(limit, 50)}"
     url += _api_key_suffix("&")
     status, data = http_get_json(url, timeout=20)
-    if status != 200:
+    if status != 200 or not isinstance(data, dict):
         log.warning(f"concept search failed: status={status}")
         return []
     results = data.get("results", [])
@@ -156,7 +156,7 @@ def fetch_concept_metadata(concept_id: str) -> Optional[Dict]:
         return None
     url = f"{OPENALEX_BASE}/concepts/{cid}{_api_key_suffix('?')}"
     status, data = http_get_json(url, timeout=20)
-    if status != 200:
+    if status != 200 or not isinstance(data, dict):
         return None
     return {
         "concept_id": _short_id(data.get("id", "")),

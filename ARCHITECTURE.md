@@ -1,8 +1,8 @@
 # Paper-Agent Architecture (v3.9.1)
 
-> **Last updated**: 2026-07-13 14:46 (post v3.9.1 patch — P0-4 + P1-5)
-> **Code root**: `G:\minimax - workspace\Paper agent\`
-> **Status**: 13 of 20 ROADMAP items shipped (8 done + 1 reverted + 4 deferred); 7 in backlog (1 P0/P1 + 4 P1 + 1 P1-research + 1 P2)
+> **Last audited**: 2026-09-25; base architecture snapshot remains v3.9.1 (2026-07-13).
+> **Code root**: `paper-agent/`
+> **Current status**: historical architecture context; `ROADMAP.md` is canonical. Section 7 is a 2026-07-13 plan; Section 9 records the revised 2026-09-25 Jev/Fetch design, with M1A and the conservative M1B metadata gate implemented; M2 local evidence baseline implemented; M3 local shadow baseline implemented; M4 opt-in dispatch API is implemented; product integration is partial; M5 onward remains proposed.
 
 ---
 
@@ -399,4 +399,85 @@ Per discipline: any item failing the 5 checks goes back to `proposed` with redes
 
 ---
 
-**End of architecture.md** (2026-07-13 14:46)
+**End of v3.9.1 architecture snapshot** (2026-07-13 14:46).
+
+## 9. Proposed Jev + Fetch evidence workflow ([P3-32]; M1A/M1B metadata gate implemented, M2 local baseline implemented; M3 local baseline implemented; M4 dispatch API implemented, product integration partial; M5 onward not implemented)
+
+M1A is implemented on branch `codex/m1a-fetch-correctness`: valid PDF successes write the canonical cache and return SHA-256, total timeout uses a terminable worker, and XML-only/invalid artifacts receive truthful result types. M1B now attaches artifact-bound JATS/PDF-XMP identity and source-rights assessments on fresh and cached artifacts; absent metadata stays unverified. M2 now provides a standalone local page/span index and bounded packet builder (`docs/evidence-m2.md`); M3 joins the standalone evidence/provenance APIs locally; review/ranking integration remains open. `pa judge` remains the human annotation store.
+
+```text
+Search results
+  -> local metadata/abstract screen + deterministic gates
+  -> full text needed? -- no --> existing local workflow
+                         yes
+  -> pa fetch
+  -> [implemented M1B] source-rights gate (default unknown/local-only)
+       | verified public OA and user-authorized -> external-evaluation candidate
+       | unknown/gray/private/confidential      -> local-only review
+  -> [implemented M1A] artifact gate: real PDF + SHA-256 + canonical cache write/read + hard timeout
+  -> [implemented M1B] metadata identity: verified / mismatch / unverified
+  -> [implemented M2 standalone] page-aware local extraction
+  -> [implemented M2 standalone] evidence index: PDF hash + evidence ID + page + offsets
+                   + section confidence + OCR/extraction status
+  -> [implemented M2 standalone] bounded lexical packet; local review only
+  -> [implemented M3 local] request/event ledger + separate synthetic suggestions
+  -> [implemented M3 schema only] task-specific human adjudications
+  -> optional Jev call (explicit backend/data/budget consent)
+  -> validate by answer type
+       | noul: p_yes thresholds
+       | choice: top probability + top-two margin
+       | score: expected score + probability mass across action boundary
+  -> high confidence: triage suggestion only
+     uncertain: optional GPT-5.6 under separate consent, else human queue
+     invalid/high-stakes/conflicting: human review
+  -> explicit human accept/correct/reject
+  -> human action may write pa judge / P3-26 / task-specific adjudication truth
+```
+
+External-upload eligibility is independent from Fetch success. The existing cascade may retrieve a paper for lawful local use, but only a separately allowlisted, rights-eligible public-OA source may proceed to Jev. DOI/title identity is three-state; only `verified` enters automatic external routing. Page/span/hash provenance is authoritative, while inferred section labels remain advisory.
+
+The provider API is downstream of the local evidence layer. It does not fetch, identify, quote, cache, classify source rights, or create ground truth. Jev suggestions use a separate store and cannot mutate human labels, screening exclusions, citations, or manuscript claims. The whole workflow remains useful offline and with Jev unconfigured or declined.
+
+M1B candidate eligibility is a local policy result, never upload consent. The Python API accepts per-call `data_class` and optional `expected_title`; CLI calls remain unknown/local-only. Only explicit public classification, matching artifact metadata, an allowlisted HTTPS origin, and CC BY/CC0 metadata yield an evaluation candidate. Missing PDF XMP/PyMuPDF, unknown source/license, or confidential/unpublished input cannot qualify. Separate XML metadata is not attributed to a PDF. No external service is called.
+
+M3 uses only offline fixtures and dedicated SQLite storage; it never writes human labels. Current PDF identity/rights, packet integrity, and extraction gaps are checked before dispatch. Requests commit first; repeats reuse stored outcomes, and unknown outcomes do not retry. Human entry/blinding, external providers, budgets, and live evaluation remain later work. See `docs/shadow-m3.md`.
+
+M4 remains partial at product level. `pa_cli.jev` provides typed primitives;
+`pa_cli.jev_dispatch` persists reservations, validates fresh provenance and exact
+payload/caps approval, and uses a fixed HTTPS endpoint with bounded worker life.
+`pa_cli.jev_submit` adds complete local job preflight plus interactive upload/cost
+approval. The CLI defaults to no upload; live mode requires a pilot attestation,
+environment key and visible terminal review. Final dispatch rechecks the artifact,
+price and short-lived hash-bound approval. Pilot attestation is stored locally but
+does not automatically verify M5 evaluation. M3 remains offline-only.
+
+`pa_cli.jev_recovery` quarantines suspected interrupted pending work and reconciles
+unknown/interrupted/late-review usage with operator evidence. All transitions are
+atomic with append-only audit events; quarantine/reconciliation preserve the halt. Quarantine is
+not worker cancellation. Dispatch checks a final local send gate and then expiry;
+late settlements preserve earlier manual evidence and retain conservative usage
+for human review. Status inspection exposes identifiers without payloads.
+Explicit resume preserves caps and usage; it requires settled outcomes, fresh price,
+remaining budget and operator worker/final-usage attestations. Linked retries bind
+fresh approval to a failed parent and create a single deterministic child within
+the same run; immutable links preserve ancestry and every attempt counts toward
+the original caps. GPT execution and live validation remain open.
+All 83 current M4 checks use synthetic transport; no paid request or manuscript upload
+was made. See `docs/jev-cli.md` and `docs/jev-dispatch.md`.
+
+M5 local coordination now separates `jev_review` exports from a dedicated
+`jev_evaluation` SQLite ledger. Freeze binds exported content to a read-only M3
+snapshot and stores immutable case/study/split records. Assignments require explicit
+no-exposure attestation; study-level exposure events disqualify all related review
+assignments without changing their original split. Status recomputes eligibility
+from exposure history. These controls are local to one ledger and do not prove
+independent blinding. `jev_judgments` now records explicit human labels/abstentions,
+append-only correction chains and a hashed freeze snapshot in evaluation schema v2.
+Freeze blocks further assignments/submissions but permits later exposure records;
+consumers must recompute eligibility. Schema v3 adds independent human resolution
+bound to every current reviewer submission; disagreements without valid resolution
+refuse freezing. Original judgments remain in the snapshot. Schema v2 keeps its
+previous operations. Explicit schema migration and scoring remain unimplemented.
+Five offline M5 regressions now pass alongside 83 M4 checks. Export and freeze
+share evidence/completeness validation after Luna reproduced an import gap.
+See `docs/jev-evaluation-operations.md`; synthetic fixtures do not measure quality.

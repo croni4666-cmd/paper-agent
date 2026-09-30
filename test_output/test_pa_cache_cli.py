@@ -20,6 +20,11 @@ from pathlib import Path
 FAKE_PDF = b"%PDF-1.4\n%test\n" + b"%% padding " * 6000  # ~66KB
 
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # Force UTF-8 in subprocess output (Windows console defaults to GBK/CP936)
 _SUBENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 

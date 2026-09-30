@@ -14,27 +14,19 @@ import re
 import sys
 from pathlib import Path
 
-
-def _configure_console_utf8() -> None:
-    """Prevent Click help from failing on a Windows GBK console."""
-    if os.name == "nt":
-        for stream in (sys.stdout, sys.stderr):
-            if hasattr(stream, "reconfigure"):
-                stream.reconfigure(encoding="utf-8", errors="replace")
-
-
-_configure_console_utf8()
-
 import click
 
-def _validate_search_engine(ctx, param, value):
-    retired = {"cnki", "semanticscholar"}
-    selected = {part.strip().lower() for part in value.split(",")}
-    if retired.intersection(selected):
-        raise click.BadParameter("CNKI and Semantic Scholar have been retired")
-    return value
-
 from . import __version__
+
+# Windows console encoding hardening against cp936/GBK UnicodeEncodeError on author names
+if sys.platform == "win32":
+    try:
+        if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+            sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
@@ -60,6 +52,11 @@ def main():
         sys.stderr.write(f"[pa] loaded {n_loaded} env var(s) from .env\n")
     # Show expiry reminders on every CLI invocation (non-intrusive: stderr only)
     cmd_remind(quiet=False)
+
+
+# Local-only Jev inspection commands; provider dispatch remains a separate API.
+from .jev_cli import jev as jev_commands
+main.add_command(jev_commands)
 
 
 @main.command()
@@ -91,23 +88,6 @@ def version(remind):
     click.echo(f"Entry: python -m pa_cli <command>")
 
 
-
-@main.command("doctor")
-@click.option("--json", "as_json", is_flag=True, help="Output the offline report as JSON")
-def doctor_cmd(as_json):
-    """Check optional integrations without making network requests."""
-    from .doctor import build_report
-
-    report = build_report()
-    if as_json:
-        click.echo(json.dumps(report, ensure_ascii=False, indent=2))
-        return
-
-    click.echo(f"paper-agent readiness: {report['overall_status']}")
-    for name, check in report["checks"].items():
-        click.echo(f"  [{check['status']}] {name}: {check['summary']}")
-        if check.get("next_action"):
-            click.echo(f"    {check['next_action']}")
 # =============== keys subcommand group ===============
 
 @main.group()
@@ -253,30 +233,29 @@ def keys_remind(as_json, write_alerts_path):
                    "(see memory 2026-08-06); use 10808 to reach foreign services "
                    "via GFW bypass.")
 @click.option("--prefer", default=None,
-              type=click.Choice(["arxiv", "annas", "scihub", "pmc", "pmc-pdf",
-                                 "unpaywall", "biorxiv", "core", "osf", "chemrxiv", "auto"]),
+              type=click.Choice(["arxiv", "annas", "cnki", "scihub", "pmc", "pmc-pdf",
+                                 "unpaywall", "s2", "biorxiv", "core", "osf", "chemrxiv", "auto"]),
               help="v3.9.11.6+ pick a single source first. "
-                   "'arxiv' arXiv preprints, 'annas' annas-archive, "
+                   "'arxiv' arXiv preprints, 'annas' annas-archive, 'cnki' CN journals, "
                    "'scihub' sci-hub, "
                    "'pmc' PMC (XML + Europe PDF + jats_to_pdf fallback, v3.9.21+), "
                    "'pmc-pdf' force jats_to_pdf (real PDF, slower ~25s, v3.9.21+), "
                    "'unpaywall' legal OA PDF, "
-                   ""
+                   "'s2' Semantic Scholar openAccessPdf (v3.9.22+, ~30% hit rate), "
                    "'biorxiv' bioRxiv/medRxiv preprint (v3.9.22+, 10.1101/* DOIs), "
                    "'core' CORE re-added (v3.9.22+, 36M+ full text, requires CORE_API_KEY), "
                    "'osf' OSF Preprints (v3.9.22+, 10.31219/osf.io/* DOIs), "
                    "'chemrxiv' ChemRxiv (v3.9.22+, 10.26434/chemrxiv-* DOIs), "
                    "'auto' tries all in order. Takes precedence over --channels.")
-@click.option("--channels", default="auto",
+@click.option("--channels", default="pmc,s2,biorxiv,core,osf,chemrxiv,arxiv,openalex,unpaywall,doi_redirect,scihub,playwright",
               show_default=True, help="[DEPRECATED v3.9.11.6] Comma-separated channel list. "
                    "Prefer --prefer instead. v3.9.22: added 5 new OA channels "
-                   "(biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
+                   "(s2, biorxiv, core, osf, chemrxiv) ahead of scihub fallback. "
                    "v3.9.20.1: added 'pmc' (was missing). Each maps to a --prefer value.")
-@click.option("--unpaywall-email", default=None,
-              help="Email for Unpaywall; defaults to UNPAYWALL_EMAIL when omitted")
+@click.option("--unpaywall-email", default="hello@example.com", show_default=True,
+              help="Email registered with Unpaywall API")
 @click.option("--max-total-sec", default=300, show_default=True,
-              type=click.IntRange(min=1),
-              help="Total single-fetch worker budget in seconds; stops download and browser processes on timeout")
+              help="Hard cap on total runtime (paper-agent v4: 300s)")
 @click.option("--no-cache", is_flag=True,
               help="Bypass cache lookup; cascade attempts download (cache still written on success)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
@@ -292,7 +271,7 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
     from .fetch import fetch_doi
     if not quiet:
         click.echo(f"[pa] fetch DOI={doi}", err=True)
-        click.echo(f"[pa] output_dir={output_dir} proxy={'<configured>' if proxy else '(none)'}", err=True)
+        click.echo(f"[pa] output_dir={output_dir} proxy={proxy or '(none)'}", err=True)
         prefer_msg = prefer or "(auto from --channels)"
         click.echo(f"[pa] prefer={prefer_msg} channels={channels} cache={'disabled' if no_cache else 'enabled'}", err=True)
         click.echo(f"[pa] max_total_sec={max_total_sec}", err=True)
@@ -307,9 +286,11 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
         channel_to_prefer = {
             "arxiv": ["arxiv"],
             "annas": ["annas"],
+            "cnki": ["cnki"],
             "pmc": ["pmc"],
             "pmc-pdf": ["pmc-pdf"],  # v3.9.21+: force PMC + jats_to_pdf
             "unpaywall": ["unpaywall"],  # v3.9.21+: explicit Unpaywall option
+            "s2": ["s2"],  # v3.9.22+: Semantic Scholar openAccessPdf
             "biorxiv": ["biorxiv"],  # v3.9.22+: bioRxiv/medRxiv preprint
             "core": ["core"],  # v3.9.22+: CORE re-added (36M+ full text)
             "osf": ["osf"],  # v3.9.22+: OSF Preprints (PsyArXiv etc.)
@@ -333,56 +314,44 @@ def fetch(doi, output_dir, proxy, prefer, channels, unpaywall_email, max_total_s
         sys.exit(0)
     elif result.get("handoff"):
         click.echo(f"\n[pa] ⚠ handoff: {result['handoff'].get('user_action_required')}", err=True)
+        # v3.9.11.5: also surface a proxy-missing hint on handoff path, since
+        # the most common cause of "all sources failed" is missing/wrong proxy.
+        env_proxy = (
+            os.environ.get("HTTPS_PROXY")
+            or os.environ.get("HTTP_PROXY")
+            or os.environ.get("ALL_PROXY")
+        )
+        if not proxy and not env_proxy:
+            click.echo(
+                "[pa] hint: no proxy is set. If you expected a paper to download,\n"
+                "         try:  $env:HTTPS_PROXY = 'http://127.0.0.1:10808'\n"
+                "         (user's clash-verge port changed 7897 -> 10808 on 2026-08-06)",
+                err=True,
+            )
         sys.exit(2)
     else:
-        click.echo("\n[pa] retrieval did not complete; inspect error and retrieval_trace in the JSON result", err=True)
-        sys.exit(1)
-
-
-@main.command(name="fetch-stats")
-@click.option("--json", "as_json", is_flag=True, help="Print machine-readable JSON")
-def fetch_stats(as_json):
-    """Show local download outcomes by final channel."""
-    from .channel_stats import summarize
-    data = summarize()
-    if as_json:
-        click.echo(json.dumps(data, indent=2, ensure_ascii=False))
-        return
-    click.echo(f"Fetch statistics: {data['total_attempts']} attempt(s)")
-    click.echo(f"Log: {data['path']}")
-    if not data["channels"]:
-        click.echo("No fetch outcomes have been recorded yet.")
-        return
-    click.echo("channel                 attempts  success  average seconds")
-    for name, row in data["channels"].items():
-        click.echo(
-            f"{name:<22} {row['attempts']:>8}  {row['success_rate']:>6.1%}  "
-            f"{row['avg_elapsed_sec']:>14.2f}"
+        # v3.9.11.5: friendly hint when all channels fail (often = missing proxy)
+        env_proxy = (
+            os.environ.get("HTTPS_PROXY")
+            or os.environ.get("HTTP_PROXY")
+            or os.environ.get("ALL_PROXY")
         )
-
-@main.command()
-@click.argument("query", default="machine learning")
-@click.option("--engine", "engines", default="all", show_default=True,
-              help="all or a comma-separated public-engine list")
-@click.option("--limit", default=1, show_default=True, type=click.IntRange(1, 5))
-@click.option("--timeout", "engine_timeout", default=10.0, show_default=True,
-              type=click.FloatRange(min=0.1), help="Maximum seconds per engine")
-@click.option("-o", "--output", type=click.Path(dir_okay=False, writable=True))
-def engine_probe(query, engines, limit, engine_timeout, output):
-    """Opt-in, sequential availability probe for public search engines."""
-    from .engine_probe import PUBLIC_SEARCH_ENGINES, probe_search_engines
-    selected = PUBLIC_SEARCH_ENGINES if engines == "all" else tuple(
-        item.strip() for item in engines.split(",") if item.strip()
-    )
-    try:
-        report = probe_search_engines(query, engines=selected, limit=limit,
-                                      engine_timeout=engine_timeout)
-    except ValueError as exc:
-        raise click.BadParameter(str(exc)) from exc
-    payload = json.dumps(report, indent=2, ensure_ascii=False)
-    if output:
-        Path(output).write_text(payload + "\n", encoding="utf-8")
-    click.echo(payload)
+        if not proxy and not env_proxy:
+            click.echo(
+                "\n[pa] ❌ all channels failed AND no proxy is set.\n"
+                "     Most likely cause: paper-agent needs a proxy to reach foreign\n"
+                "     services (OpenAlex, arXiv, Unpaywall, Sci-Hub, annas, etc.).\n"
+                "     Set one of:\n"
+                "       $env:HTTPS_PROXY = 'http://127.0.0.1:10808'   # Windows PowerShell\n"
+                "       export HTTPS_PROXY=http://127.0.0.1:10808      # bash/sh\n"
+                "     Or pass --proxy http://127.0.0.1:10808 to this command.\n"
+                "     v3.9.11.5: user's clash-verge proxy port changed 7897 -> 10808\n"
+                "     (see memory note 2026-08-06); old 7897 is no longer listening.",
+                err=True,
+            )
+        else:
+            click.echo("\n[pa] ❌ all channels failed (proxy is set; check network/Cloudflare)", err=True)
+        sys.exit(1)
 
 
 @main.command()
@@ -391,9 +360,9 @@ def engine_probe(query, engines, limit, engine_timeout, output):
 @click.option("--year-max", type=int, default=None, help="Filter: max publication year")
 @click.option("--limit", type=int, default=50, show_default=True,
               help="Max results per engine")
-@click.option("--engine", default="all", show_default=True, callback=_validate_search_engine,
-              help="all / crossref,openalex,arxiv,aminer,pubmed,clinicaltrials,core "
-                   "(comma-separated; default 'all' includes six public engines; "
+@click.option("--engine", default="all", show_default=True,
+              help="all / crossref,openalex,arxiv,semanticscholar,aminer,cnki,pubmed,clinicaltrials,core "
+                   "(comma-separated; default 'all' = first 8 incl. pubmed + clinicaltrials; "
                    "'core' = explicit CORE-only)")
 @click.option("--format", "out_format", default="json", show_default=True,
               type=click.Choice(["json", "bibtex"]),
@@ -411,11 +380,15 @@ def engine_probe(query, engines, limit, engine_timeout, output):
               help="How to combine multiple concepts: or (any) or and (all)")
 @click.option("--enrich-top", "enrich_top", default=0, show_default=True,
               help="Top-N deep enrichment (v3.9.7.8): second-hop lookups via "
-                   "Crossref or OpenAlex by title for top-N results. "
-                   "0 = off (default).")
+                   "S2 paper/DOI + Crossref by title for top-N results. "
+                   "0 = off (default). Adds ~12s for N=10 (S2 1 RPS free).")
+@click.option("--enrich-top-min-cites", "enrich_top_min_cites", default=1, show_default=True,
+              help="[P1-14] Skip S2 lookup for papers with cited_by_count < this. "
+                   "Default 1 = skip 0-cite papers (saves ~12s/query when many "
+                   "low-cite papers in top-N). Set 0 to try all (v3.9.7.8 behavior).")
 @click.option("--enrich-max-age-years", "enrich_max_age_years", default=10, show_default=True,
               help="[P1-18] Skip ALL enrichment for papers older than this many years. "
-                   "Default 10 (older records are less likely to gain metadata; "
+                   "Default 10 (S2 cite often stale/unavailable for older papers; "
                    "Crossref rarely adds missing fields for pre-2010 papers). "
                    "Set 0 to enrich all papers regardless of age.")
 @click.option("--sort-by", "sort_by", default="cite", show_default=True,
@@ -424,7 +397,7 @@ def engine_probe(query, engines, limit, engine_timeout, output):
                    "'year' = newest first; 'relevance' = keep each engine's natural order.")
 @click.option("--source", "source_filter", default=None,
               help="[P1-17] Post-filter results to only show those from specified engines. "
-                   "Comma-separated: e.g. 'openalex,aminer'. Matches 'source' field prefix "
+                   "Comma-separated: e.g. 'openalex,cnki'. Matches 'source' field prefix "
                    "(so 'openalex' also matches 'openalex_title' enrichment). Default = no filter.")
 @click.option("--quality-mode", "quality_mode", default="flag", show_default=True,
               type=click.Choice(["flag", "filter", "off"]),
@@ -441,9 +414,9 @@ def engine_probe(query, engines, limit, engine_timeout, output):
                    "'basic' = only free basic API (no Pro cost, weaker multi-word recall).")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def search(query, year_min, year_max, limit, engine, out_format, output,
-           concept_ids, concept_names, concept_mode, enrich_top,
+           concept_ids, concept_names, concept_mode, enrich_top, enrich_top_min_cites,
            enrich_max_age_years, sort_by, source_filter, quality_mode, aminer_mode, quiet):
-    """Academic paper search across Crossref, OpenAlex, arXiv, AMiner, PubMed, and ClinicalTrials.gov.
+    """6-engine academic paper search (Crossref / OpenAlex / arXiv / S2 / AMiner / CNKI).
 
     Concept filtering (OpenAlex [P1-2]):
       --concepts C1,C2         direct concept IDs (OR by default)
@@ -495,6 +468,7 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
     results = run_search(query, year_min, year_max, limit, engine,
                          concepts_filter=concepts_filter or None,
                          enrich_top=enrich_top,
+                         enrich_top_min_cites=enrich_top_min_cites,
                          sort_by=sort_by,
                          source_filter=src_list,
                          enrich_max_age_years=enrich_max_age_years)
@@ -928,6 +902,267 @@ def mcp_serve():
     sys.exit(1)
 
 
+# =============== CNKI subcommand group (P0-9, added 2026-07-15) ===============
+
+@main.group()
+def cnki():
+    """CNKI 6th search engine (Chinese papers, optional).
+
+    Per ROADMAP [P0-9] (added 2026-07-14, skeleton in v3.9.7.3):
+    - Adds Chinese-paper coverage (0% → ~15-25% on Chinese queries)
+    - User-maintained cookies (4-8h proxy session TTL)
+    - NOT through clash proxy (CNKI 国内站, user 用"其他代理")
+
+    Subcommands: status / setup / search
+    """
+
+
+@cnki.command("status")
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON")
+def cnki_status(as_json):
+    """Check CNKI channel readiness (cookies, playwright, TTL)."""
+    from .cnki_channel import status_report
+    s = status_report()
+    if as_json:
+        click.echo(json.dumps(s, indent=2, ensure_ascii=False))
+        return
+    marker = "[OK]" if s["ready_for_search"] else "[WARN]"
+    click.echo(f"{marker} CNKI channel status (v{s['version']})")
+    click.echo(f"  cookies_path:           {s['cookies_path']}")
+    click.echo(f"  cookies_exist:          {s['cookies_exist']}")
+    if s["cookie_age_hours"] is not None:
+        click.echo(f"  cookie_age_hours:       {s['cookie_age_hours']:.1f}h "
+                   f"(max {s['max_cookie_age_hours']:.1f}h)")
+    else:
+        click.echo(f"  cookie_age_hours:       (no file)")
+    click.echo(f"  n_cookies:              {s['n_cookies']}")
+    click.echo(f"  playwright_installed:   {s['playwright_installed']}")
+    click.echo(f"  search_implemented:     {s['search_implemented']} (v3.9.7.6 close-out: cite/dl deprecated, see ROADMAP [P0-9.1b])")
+    click.echo(f"  cite/dl:                None (deprecated per [P0-9.1b]; 5 paths blocked)")
+    click.echo(f"                          see CHANGELOG v3.9.7.6 for honest audit")
+    click.echo()
+    if not s["ready_for_search"]:
+        click.echo(f"[pa-cnki] {s['next_action']}", err=True)
+    else:
+        click.echo("[pa-cnki] ready (cookies fresh + playwright installed)", err=True)
+
+
+@cnki.command("setup")
+def cnki_setup():
+    """Print CNKI setup instructions (proxy + cookies + Export script).
+
+    Per ROADMAP [P0-9] "User confirmation needed" list:
+    - 代理类型 (校园 VPN / EZproxy / 机构图书馆代理)
+    - 代理登录 session 实际过期时间
+    - cookies 维护自动化
+    """
+    click.echo("[pa-cnki] Setup instructions for CNKI 6th engine")
+    click.echo()
+    click.echo("STEP 1: Provide proxy access")
+    click.echo("  - 校园 VPN / EZproxy / 机构图书馆代理")
+    click.echo("  - 必须能访问 CNKI hostname (www.cnki.net)")
+    click.echo("  - 不能走 clash (CNKI 反爬可能检测到 proxy 流量)")
+    click.echo()
+    click.echo("STEP 2: Manual cookies export (one-time setup)")
+    click.echo("  - 用 Chrome / Edge 登录代理入口")
+    click.echo("  - 跳转 CNKI 后, 跑 Export-CNKICookies.ps1 (待写)")
+    click.echo("  - script 导出 cookies 到:")
+    click.echo("    ~/.paper-agent\\cookies\\cnki.json")
+    click.echo()
+    click.echo("STEP 3: Verify")
+    click.echo("  $ pa cnki status")
+    click.echo("  $ pa search \"东数西算\" --engine cnki")
+    click.echo()
+    click.echo("Cookie TTL: 4-8 hours (proxy session)")
+    click.echo("  - 每天 user 重跑一次 export script")
+    click.echo("  - 或设置 Windows 任务计划每日自动跑 (TODO)")
+    click.echo()
+    click.echo("Per ROADMAP [P0-9] status: skeleton code ready (v3.9.7.3)")
+    click.echo("Real playwright + HTML parser will be wired in after you provide proxy + cookies.")
+
+
+@cnki.command("search")
+@click.argument("query")
+@click.option("--limit", type=int, default=10, show_default=True,
+              help="Max results to return (1-100)")
+@click.option("--year-min", type=int, default=None,
+              help="Earliest year filter (CNKI may not honor in simple search)")
+@click.option("--year-max", type=int, default=None,
+              help="Latest year filter (CNKI may not honor in simple search)")
+@click.option("--field", "field", default="subject", show_default=True,
+              type=click.Choice(["subject", "title", "keyword", "tka", "abstract",
+                                 "fulltext", "author", "affiliation"]),
+              help="Search field")
+@click.option("--db", "db", default="all", show_default=True,
+              type=click.Choice(["all", "journal", "thesis", "book", "conference",
+                                 "newspaper", "almanac", "patent", "standard",
+                                 "law", "achievement"]),
+              help="CNKI database to search")
+@click.option("--format", "out_format", default="summary", show_default=True,
+              type=click.Choice(["json", "summary"]))
+def cnki_search(query, limit, year_min, year_max, field, db, out_format):
+    """Search CNKI directly (v3.9.7.4 real search).
+
+    Examples:
+        pa cnki search "东数西算"
+        pa cnki search "保险精算" --field title --limit 5
+        pa cnki search "深度学习" --db journal --limit 10
+    """
+    from .cnki_channel import search_cnki
+    results = search_cnki(query, year_min=year_min, year_max=year_max,
+                         limit=limit, field=field, db=db)
+    if not results:
+        click.echo("[pa-cnki] No results returned", err=True)
+        sys.exit(1)
+    # If first result is an error dict, surface it
+    if "error" in results[0]:
+        click.echo(f"[pa-cnki] {results[0]['error']}: {results[0].get('message', '')}",
+                  err=True)
+        if results[0].get("hint"):
+            click.echo(f"  Hint: {results[0]['hint']}", err=True)
+        sys.exit(2)
+    if out_format == "summary":
+        click.echo(f"Found {len(results)} results for query: {query!r}")
+        click.echo(f"  field={field}, db={db}, limit={limit}")
+        click.echo()
+        for i, r in enumerate(results):
+            click.echo(f"[{i+1}] {r.get('title', '?')[:60]}")
+            click.echo(f"    venue: {r.get('venue', '?')}, year: {r.get('year', '?')}, "
+                      f"type: {r.get('type', '?')}, db_type: {r.get('db_type', '?')}")
+            authors = r.get('authors', [])
+            if authors:
+                click.echo(f"    authors: {', '.join(authors[:3])}"
+                          + (" ..." if len(authors) > 3 else ""))
+            click.echo(f"    cnki_url: {r.get('cnki_url', '?')[:100]}")
+            click.echo()
+    else:
+        click.echo(json.dumps(results, indent=2, ensure_ascii=False))
+
+
+@main.command()
+@click.argument("doi")
+@click.option("--direction", "direction",
+              type=click.Choice(["forward", "backward"]),
+              default="forward", show_default=True,
+              help="forward = papers that cite <DOI>; backward = papers <DOI> cites")
+@click.option("--limit", default=100, show_default=True, type=int,
+              help="Max papers to return (forward default 100; backward 50 recommended)")
+@click.option("--save-bib", "save_bib_path", default=None, metavar="PATH",
+              help="Also write BibTeX to this path")
+@click.option("-o", "--output", default=None, metavar="PATH",
+              help="Save JSON result to this path (else stdout)")
+@click.option("--quiet", is_flag=True, help="Suppress progress output")
+def citations(doi, direction, limit, save_bib_path, output, quiet):
+    """Walk citation graph via OpenAlex.
+
+    Examples:
+      pa citations 10.1186/s41239-023-00411-8 --direction forward --limit 20
+      pa citations 10.1186/s41239-023-00411-8 --direction backward --limit 50
+      pa citations 10.1186/s41239-023-00411-8 --save-bib crompton_citers.bib
+
+    forward = "who cites this paper?"
+      Cursor-paginated; bounded by --limit.
+
+    backward = "what does this paper cite?"
+      Resolves DOI -> referenced_works[] via OpenAlex, fetches each.
+      N+1 API calls (one per reference). Use --limit wisely (default 100,
+      but recommend 50 since each ref = a separate HTTP request).
+
+    Requires OPENALEX_API_KEY env var for higher rate limit (1 RPS free, faster
+    with key). Without key, the walk still works but slower.
+    """
+    import json as _json
+    from .citations import citation_walk
+    from .bibtex import write_bibtex
+    if not quiet:
+        click.echo(f"[pa] citations doi={doi} direction={direction} limit={limit}", err=True)
+    result = citation_walk(doi, direction=direction, limit=limit)
+    if result.get("error"):
+        click.echo(f"[pa] error: {result['error']}", err=True)
+        click.echo(_json.dumps(result, indent=2, ensure_ascii=False))
+        sys.exit(2)
+    if not quiet:
+        click.echo(f"[pa] source: {result['source_work'].get('title', '')[:80]!r}", err=True)
+        click.echo(f"[pa] fetched {result['count']} papers (truncated={result['truncated']})", err=True)
+    out_json = _json.dumps(result, indent=2, ensure_ascii=False)
+    if output:
+        Path(output).write_text(out_json, encoding="utf-8")
+        click.echo(f"[pa] saved JSON to {output}", err=True)
+    else:
+        click.echo(out_json)
+    if save_bib_path:
+        write_bibtex(result["results"], save_bib_path)
+        click.echo(f"[pa] saved BibTeX ({result['count']} entries) to {save_bib_path}", err=True)
+
+
+@main.command(name="cnki-guide")  # v3.9.26.0: renamed from fetch_batch to avoid name conflict
+@click.option("-i", "--input", "input_file", required=True,
+              type=click.Path(exists=True, dir_okay=False),
+              help="Text file with one query per line (DOI or title)")
+@click.option("-o", "--output", default="batch_download_guide.md",
+              type=click.Path(dir_okay=False),
+              help="Output markdown guide (default: ./batch_download_guide.md)")
+@click.option("--year-min", type=int, default=None,
+              help="Filter: min publication year")
+@click.option("--year-max", type=int, default=None,
+              help="Filter: max publication year")
+@click.option("--quiet", is_flag=True, help="Suppress per-paper progress output")
+def cnki_guide(input_file, output, year_min, year_max, quiet):
+    """[v3.9.26.0] Generate a batch download guide for CNKI PDF.
+
+    v3.9.26.0: renamed from `fetch_batch` to `cnki-guide` to avoid name
+    conflict with the new `fetch-batch` command (the actual PDF downloader
+    added in v3.9.10.0). Old command name was `fetch_batch` (underscore);
+    the new name is `cnki-guide` (hyphen).
+
+    Semi-automated, v3.9.8.3.
+
+    Input: a text file with one query per line. Each line can be either:
+      - a DOI (e.g. 10.3969/j.issn.1003-9031.2022.04.008)
+      - a title  (e.g. 数字普惠金融对经济高质量发展的影响)
+
+    Output: a markdown guide with:
+      - Per-paper table (title, DOI, year, found status, xueshu789 search URL)
+      - An Edge console JS snippet that auto-scrapes doDownload URLs from
+        xueshu789 search result pages
+      - Step-by-step instructions for user (the actual PDF download must be
+        done in user's real Edge browser to bypass bar.cnki.net vLevel=5
+        CAPTCHA)
+
+    Honest limitation: paper-agent cannot auto-download CNKI PDFs because
+    bar.cnki.net detects all non-real-browser automation and triggers
+    vLevel=5 CAPTCHA. This tool's value is in:
+      1. Validating that DOIs exist (skip non-existent papers)
+      2. Generating per-paper search URLs for xueshu789
+      3. Providing the Edge console snippet for batch doDownload URL extraction
+    User's manual Edge workflow is the only working path (verified 2026-07-15).
+    """
+    from pathlib import Path
+    from .batch_fetch import generate_guide
+
+    input_path = Path(input_file)
+    output_path = Path(output)
+    queries = [line.strip() for line in input_path.read_text(encoding="utf-8").splitlines()
+               if line.strip() and not line.strip().startswith("#")]
+    if not queries:
+        click.echo("[pa] no queries in input file", err=True)
+        sys.exit(1)
+    if not quiet:
+        click.echo(f"[pa] {len(queries)} queries from {input_file}", err=True)
+    summary = generate_guide(queries, output_path,
+                            year_min=year_min, year_max=year_max)
+    if not quiet:
+        click.echo(f"[pa] {summary['n_found']}/{summary['n_total']} papers metadata found", err=True)
+        click.echo(f"[pa] {summary['n_not_found']} not found (likely Chinese-only, not in OpenAlex/Crossref)", err=True)
+        click.echo(f"[pa] guide saved to {summary['output']}", err=True)
+        click.echo("", err=True)
+        click.echo("[pa] Next: open the guide and follow the Edge workflow", err=True)
+
+
+
+# =============== [P2-5] build + scaffold subcommands ===============
+# Appended at end of file (rather than inserted in middle) to minimize diff
+# against v3.9.8.4 baseline. Both are part of v3.9.9 release.
 
 @main.command()
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
@@ -1207,11 +1442,12 @@ def search_saved_list(as_json):
 @click.option("--concept", default=None, help="Concept name(s) to resolve")
 @click.option("--concept-mode", default=None, type=click.Choice(["or", "and"]))
 @click.option("--enrich-top", type=int, default=None)
+@click.option("--enrich-top-min-cites", type=int, default=None)
 @click.option("--enrich-max-age-years", type=int, default=None)
 @click.option("--sort-by", default=None, type=click.Choice(["cite", "year", "relevance"]))
 @click.option("--source", default=None, help="Post-filter to specific engines")
 def search_saved_add(name, query, year_min, year_max, engine, limit, concepts,
-                     concept, concept_mode, enrich_top,
+                     concept, concept_mode, enrich_top, enrich_top_min_cites,
                      enrich_max_age_years, sort_by, source):
     """Create a new saved search."""
     from .search_saved import add, DEFAULT_PATH
@@ -1219,6 +1455,7 @@ def search_saved_add(name, query, year_min, year_max, engine, limit, concepts,
         'year_min': year_min, 'year_max': year_max, 'engine': engine,
         'limit': limit, 'concepts': concepts, 'concept': concept,
         'concept_mode': concept_mode, 'enrich_top': enrich_top,
+        'enrich_top_min_cites': enrich_top_min_cites,
         'enrich_max_age_years': enrich_max_age_years,
         'sort_by': sort_by, 'source': source,
     }
@@ -1302,6 +1539,7 @@ def search_saved_run(name, output, quiet):
             concept_names=args.get('concept'),
             concept_mode=args.get('concept_mode', 'or'),
             enrich_top=args.get('enrich_top', 0),
+            enrich_top_min_cites=args.get('enrich_top_min_cites', 1),
             enrich_max_age_years=args.get('enrich_max_age_years', 10),
             sort_by=args.get('sort_by', 'cite'),
             source_filter=args.get('source'),
@@ -1373,14 +1611,14 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
 
 # =============== [P2-11] fetch-batch subcommand ===============
 # Batch PDF download from a Bibtex: walks each entry through fetch channels
-# in priority order (PMC, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+# in priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
 
 @main.command(name="fetch-batch")
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
 @click.option("--out-dir", required=True, type=click.Path(file_okay=False),
               help="Directory to save PDFs (created if not exists)")
-@click.option("--max-total-sec", type=click.IntRange(min=1), default=1800, show_default=True,
-              help="Shared download budget; interrupts the active worker when exhausted (s)")
+@click.option("--max-total-sec", type=int, default=1800, show_default=True,
+              help="Global timeout for the whole batch (s)")
 @click.option("--skip-existing", is_flag=True,
               help="Skip entries whose PDF already exists in out_dir")
 @click.option("--report", "report_file", default=None, type=click.Path(dir_okay=False),
@@ -1396,7 +1634,7 @@ def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
     """[P2-11] Batch PDF download from a Bibtex file.
 
     Per ROADMAP [P2-11]: walks every entry through 8 fetch channels in
-    priority order (PMC, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
+    priority order (CNKI, Unpaywall, Sci-Hub, etc.). Saves to out_dir/{key}.pdf.
     Lists what failed and why.
 
     Examples:
@@ -1553,7 +1791,7 @@ def project_status(slug, root_path):
             try:
                 s = get_status(p['slug'], root)
                 click.echo(
-                    f"  {s['slug']:<25s} papers={s['n_papers']:4d}  labels={s['n_labels']:4d}  "
+                    f"  {s['slug']:<25s} papers={s['n_papers']:4d}  pdfs={s.get('n_pdfs', 0):4d}  labels={s['n_labels']:4d}  "
                     f"title={s['title']}",
                     err=True,
                 )
@@ -1571,6 +1809,177 @@ def project_corpus(slug):
         click.echo(f"[pa project corpus] FAILED: project {slug!r} not found", err=True)
         sys.exit(1)
     click.echo(str(files['refs']))
+
+
+@project.command(name="corpus-search")
+@click.argument("slug")
+@click.argument("query")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output full JSON results")
+def project_corpus_search(slug, query, root_path, as_json):
+    """[P2-12 Phase 2] Search within a project's refs.bib by keyword in title/author/abstract/doi/year."""
+    from .project import corpus_search, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    results = corpus_search(slug, query, root=root)
+    if as_json:
+        click.echo(json.dumps(results, indent=2, ensure_ascii=False))
+        return
+    if not results:
+        click.echo(f"[pa project corpus-search] no papers match {query!r} in {slug!r}")
+        return
+    click.echo(f"[pa project corpus-search] {len(results)} match(es) for {query!r} in {slug!r}:")
+    for r in results:
+        author = (r.get("author") or "Unknown")[:30]
+        year = r.get("year") or "????"
+        title = (r.get("title") or "Untitled")[:60]
+        matched = ",".join(r.get("_matched_fields", []))
+        click.echo(f"  [{year}] {author:<30s} {title} (matched: {matched})")
+
+
+@project.command(name="corpus-merge")
+@click.argument("target_slug")
+@click.argument("source")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output full JSON report")
+def project_corpus_merge(target_slug, source, root_path, as_json):
+    """[P2-12 Phase 2] Merge an external BibTeX file or another project's refs.bib into target project."""
+    from .project import corpus_merge, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        res = corpus_merge(target_slug, source, root=root)
+    except (FileNotFoundError, ValueError) as e:
+        click.echo(f"[pa project corpus-merge] FAILED: {e}", err=True)
+        sys.exit(1)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    click.echo(
+        f"[pa project corpus-merge] Merged {res['source']} -> {res['target']}:\n"
+        f"  Total in source:        {res['total_source']}\n"
+        f"  Added to project:       {res['added']}\n"
+        f"  Updated (enriched):     {res.get('updated', 0)}\n"
+        f"  Duplicates skipped:     {res['duplicates_skipped']}\n"
+        f"  Total papers now:       {res['total_after']}"
+    )
+
+
+@project.command(name="corpus-add")
+@click.argument("slug")
+@click.option("--doi", default=None, help="DOI of paper to add")
+@click.option("--title", default=None, help="Paper title")
+@click.option("--author", default=None, help="Paper authors (e.g. 'Smith, J. and Doe, A.')")
+@click.option("--year", default=None, help="Publication year")
+@click.option("--bibtex", default=None, help="Raw BibTeX snippet to add")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output JSON")
+def project_corpus_add(slug, doi, title, author, year, bibtex, root_path, as_json):
+    """[P2-12 Phase 2] Add a paper or BibTeX entry directly to the project's refs.bib."""
+    from .project import corpus_add, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    if not doi and not bibtex:
+        click.echo("[pa project corpus-add] ERROR: Specify --doi or --bibtex", err=True)
+        sys.exit(1)
+    res = corpus_add(slug, doi=doi, bibtex_str=bibtex, title=title, author=author, year=year, root=root)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    click.echo(f"[pa project corpus-add] {res['status'].upper()}: {slug} (total: {res.get('total_after', '?')})")
+
+
+@project.command(name="corpus-check")
+@click.argument("slug")
+@click.option("--zotero-db", "zotero_db", default=None,
+              help="Explicit path to zotero.sqlite (else auto-detect)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output full JSON report")
+def project_corpus_check(slug, zotero_db, root_path, as_json):
+    """[P2-12 Phase 2] Check which DOIs in the project's refs.bib exist in your local Zotero library."""
+    from .project import corpus_check_zotero, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    db_path = Path(zotero_db) if zotero_db else None
+    res = corpus_check_zotero(slug, root=root, zotero_db=db_path)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    if "error" in res:
+        click.echo(f"[pa project corpus-check] ERROR: {res['error']}", err=True)
+        sys.exit(1)
+    n_in = len(res.get("in_library", []))
+    n_out = len(res.get("not_in_library", []))
+    n_inv = len(res.get("invalid_doi", []))
+    click.echo(
+        f"[pa project corpus-check] Project {slug!r} vs Zotero ({res.get('zotero_db', '')}):\n"
+        f"  In Zotero library:      {n_in}\n"
+        f"  Not in Zotero library:  {n_out}\n"
+        f"  Invalid DOIs:           {n_inv}"
+    )
+
+
+@project.command(name="scan")
+@click.argument("dir_path", type=click.Path(exists=True))
+@click.option("--no-recursive", "no_recursive", is_flag=True, help="Do not scan subdirectories")
+@click.option("--json", "as_json", is_flag=True, help="Output full JSON report")
+def project_scan(dir_path, no_recursive, as_json):
+    """Scan a folder for academic DOIs across markdown, text, latex, and bibtex files."""
+    from .project import scan_directory_dois
+    res = scan_directory_dois(dir_path, recursive=not no_recursive)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    click.echo(
+        f"[pa project scan] Scanned {res['files_scanned']} files in {res['path']}:\n"
+        f"  Total DOI mentions:     {res['total_occurrences']}\n"
+        f"  Unique DOIs found:      {res['unique_dois_count']}"
+    )
+    if res["dois"]:
+        click.echo("\nTop cited DOIs:")
+        for item in res["dois"][:10]:
+            click.echo(f"  {item['doi']:40s} ({item['occurrences']} file(s): {', '.join(item['files'][:2])})")
+
+
+@project.command(name="import-dir")
+@click.argument("slug")
+@click.argument("dir_path", type=click.Path(exists=True))
+@click.option("--title", default=None, help="Human-readable title (if creating new project)")
+@click.option("--no-recursive", "no_recursive", is_flag=True, help="Do not scan subdirectories")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output full JSON report")
+def project_import_dir(slug, dir_path, title, no_recursive, root_path, as_json):
+    """Scan directory for DOIs and import them into project refs.bib."""
+    from .project import import_directory_to_project, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        res = import_directory_to_project(
+            slug,
+            dir_path,
+            title=title,
+            root=root,
+            recursive=not no_recursive,
+        )
+    except Exception as e:
+        click.echo(f"[pa project import-dir] FAILED: {e}", err=True)
+        sys.exit(1)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    click.echo(
+        f"[pa project import-dir] Imported from {res['source_dir']} into {slug!r}:\n"
+        f"  Files scanned:          {res['files_scanned']}\n"
+        f"  Discovered DOIs:        {res['discovered_dois']}\n"
+        f"  New papers added:       {res['added']}\n"
+        f"  Already in project:     {res['already_present']}\n"
+        f"  Total papers now:       {res['total_papers_after']}"
+    )
 
 
 @project.command(name="corpus-stats")
@@ -1669,6 +2078,283 @@ def project_rm(slug, force, root_path):
     except ValueError as e:
         click.echo(f"[pa project rm] FAILED: {e}", err=True)
         sys.exit(1)
+
+
+@project.command(name="fetch")
+@click.argument("slug")
+@click.option("--skip-existing/--no-skip-existing", default=True, show_default=True,
+              help="Skip PDFs that already exist in project pdfs/")
+@click.option("--max-total-sec", default=1800, show_default=True,
+              help="Global timeout in seconds")
+@click.option("--prefer", default="auto", show_default=True,
+              type=click.Choice(["auto", "unpaywall", "scihub", "annas", "core", "arxiv", "cnki"]),
+              help="Preferred fetch channel")
+@click.option("--clean-xml/--no-clean-xml", default=True, show_default=True,
+              help="Clean temporary XML files from PMC JATS downloads")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output JSON report")
+def project_fetch_cmd(slug, skip_existing, max_total_sec, prefer, clean_xml, root_path, as_json):
+    """Batch download PDFs for papers in a project's refs.bib."""
+    from .project import project_fetch, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        res = project_fetch(
+            slug,
+            root=root,
+            skip_existing=skip_existing,
+            max_total_sec=max_total_sec,
+            prefer=prefer,
+            clean_xml=clean_xml,
+        )
+    except Exception as e:
+        click.echo(f"[pa project fetch] FAILED: {e}", err=True)
+        sys.exit(1)
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+    click.echo(
+        f"[pa project fetch] Completed fetch for project {slug!r}:\n"
+        f"  Total papers in refs:   {res['n_total']}\n"
+        f"  Successfully fetched:   {res['n_success']}\n"
+        f"  Skipped (existing):     {res['n_skipped']}\n"
+        f"  Failed:                 {res['n_failure']}\n"
+        f"  Total PDFs now:         {res['n_pdfs_in_project']}\n"
+        f"  PDF Directory:          {res['pdf_dir']}"
+    )
+
+
+@project.command(name="prisma")
+@click.argument("slug")
+@click.option("--format", "output_format", default="markdown", show_default=True,
+              type=click.Choice(["markdown", "mermaid"]),
+              help="Output format: markdown (full report) or mermaid (diagram only)")
+@click.option("-o", "--output", default=None,
+              help="Write diagram to output file instead of stdout")
+@click.option("--word-count-min", default=1000, show_default=True,
+              help="Min word count in PDF to consider full text")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+def project_prisma_cmd(slug, output_format, output, word_count_min, root_path):
+    """Generate PRISMA 2020 flow diagram for a project topic corpus."""
+    from .project import project_prisma, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        diagram = project_prisma(
+            slug,
+            root=root,
+            word_count_min=word_count_min,
+            output_format=output_format,
+            out_file=output,
+        )
+    except Exception as e:
+        click.echo(f"[pa project prisma] FAILED: {e}", err=True)
+        sys.exit(1)
+    if not output:
+        click.echo(diagram)
+    else:
+        click.echo(f"[pa project prisma] Diagram saved to {output}", err=True)
+
+
+@project.command(name="review")
+@click.argument("slug")
+@click.option("--template", default="v32", show_default=True,
+              help="Lit review template version")
+@click.option("--word-count-min", default=1000, show_default=True,
+              help="Min word count to classify as full-text")
+@click.option("--with-prisma/--no-prisma", default=True, show_default=True,
+              help="Include PRISMA 2020 flow diagram at start of review")
+@click.option("-o", "--output", default=None,
+              help="Write literature review to output file instead of stdout")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+def project_review_cmd(slug, template, word_count_min, with_prisma, output, root_path):
+    """Generate literature review markdown draft for a project topic corpus."""
+    from .project import project_review, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        md = project_review(
+            slug,
+            root=root,
+            template=template,
+            word_count_min=word_count_min,
+            with_prisma=with_prisma,
+            out_file=output,
+        )
+    except Exception as e:
+        click.echo(f"[pa project review] FAILED: {e}", err=True)
+        sys.exit(1)
+    if not output:
+        click.echo(md)
+    else:
+        click.echo(f"[pa project review] Review saved to {output}", err=True)
+
+
+@project.command(name="topics")
+@click.argument("slug")
+@click.option("-o", "--output", default=None,
+              help="Output topics.json path (default: <project_dir>/topics.json)")
+@click.option("--alpha", type=float, default=0.4, show_default=True,
+              help="Weight on OpenAlex concept-Jaccard vs TF-IDF cosine (0..1)")
+@click.option("--word-count-min", type=int, default=1000, show_default=True,
+              help="Min word count to classify as full-text")
+@click.option("--method", "force_method", default="auto", show_default=True,
+              type=click.Choice(["auto", "bertopic", "handroll"]),
+              help="Clustering method")
+@click.option("--label-method", default="auto", show_default=True,
+              type=click.Choice(["auto", "ctfidf", "handroll", "custom"]),
+              help="Topic label generator")
+@click.option("--custom-labels", default=None,
+              help="JSON dict {topic_id: label_str} to override auto labels")
+@click.option("--domain-stopwords-file", default=None, type=click.Path(exists=True),
+              help="File with domain-specific stopwords")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output JSON directly")
+def project_topics_cmd(slug, output, alpha, word_count_min, force_method, label_method,
+                       custom_labels, domain_stopwords_file, root_path, as_json):
+    """Cluster papers in a project topic into sub-topics."""
+    from .project import project_topics, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    c_labels = None
+    if custom_labels:
+        try:
+            c_labels = {int(k): str(v) for k, v in json.loads(custom_labels).items()}
+        except Exception as e:
+            click.echo(f"[pa project topics] Invalid custom-labels JSON: {e}", err=True)
+            sys.exit(1)
+
+    domain_stops = None
+    if domain_stopwords_file:
+        try:
+            domain_stops = [line.strip() for line in Path(domain_stopwords_file).read_text(encoding="utf-8").splitlines() if line.strip()]
+        except Exception as e:
+            click.echo(f"[pa project topics] Cannot read domain-stopwords-file: {e}", err=True)
+            sys.exit(1)
+
+    try:
+        res = project_topics(
+            slug,
+            root=root,
+            alpha=alpha,
+            word_count_min=word_count_min,
+            force_method=force_method,
+            label_method=label_method,
+            custom_labels=c_labels,
+            domain_stopwords=domain_stops,
+            out_file=output,
+        )
+    except Exception as e:
+        click.echo(f"[pa project topics] FAILED: {e}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+
+    topics = res.get("topics", [])
+    click.echo(f"[pa project topics] Clustered {res.get('total_papers', len(topics))} papers in {slug!r} into {len(topics)} sub-topics (method: {res.get('method', 'unknown')}):")
+    for t in topics:
+        click.echo(f"  Topic {t['topic_id']}: {t['label']} ({t['paper_count']} paper(s))")
+        if t.get('keywords'):
+            click.echo(f"    Keywords: {', '.join(t['keywords'][:6])}")
+    click.echo(f"Saved to: {output or (res.get('slug') + '/topics.json')}")
+
+
+@project.command(name="cite-check")
+@click.argument("slug")
+@click.argument("doc_path", type=click.Path(exists=True))
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--strict", is_flag=True, help="Exit 1 if any missing placeholders found")
+@click.option("--json", "as_json", is_flag=True, help="Output JSON report")
+def project_cite_check_cmd(slug, doc_path, root_path, strict, as_json):
+    """[P2-7] Validate `[@bibkey]` placeholders in markdown document against project refs.bib."""
+    from .project import project_cite_check, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        summary, report = project_cite_check(slug, doc_path, root=root)
+    except Exception as e:
+        click.echo(f"[pa project cite-check] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(summary, indent=2, ensure_ascii=False))
+    else:
+        click.echo(report)
+
+    if strict and (summary["missing"] or summary["typoed"]):
+        sys.exit(1)
+
+
+@project.command(name="export")
+@click.argument("slug")
+@click.option("--format", "-f", default="markdown",
+              type=click.Choice(["markdown", "bibtex", "json"], case_sensitive=False),
+              show_default=True, help="Export format")
+@click.option("-o", "--output", default=None, help="Write export to destination file")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output metadata as JSON")
+def project_export_cmd(slug, format, output, root_path, as_json):
+    """Export project corpus to Markdown literature digest, BibTeX, or JSON."""
+    from .project import project_export, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        res = project_export(slug, format=format, out_file=output, root=root)
+    except Exception as e:
+        click.echo(f"[pa project export] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+
+    if output:
+        click.echo(f"[pa project export] Exported {res['n_papers']} papers ({res['format']}) to: {output}")
+    else:
+        click.echo(res.get("content", ""))
+
+
+@project.command("enrich")
+@click.argument("slug")
+@click.option("--limit", type=int, default=0, show_default=True,
+              help="Max stub papers to enrich (0 = all)")
+@click.option("--force", is_flag=True, help="Force re-enrichment of all papers with DOIs")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Output JSON result")
+def project_enrich_cmd(slug, limit, force, root_path, as_json):
+    """Enrich stub project references with rich metadata (title, author, venue, abstract)."""
+    from .project import project_enrich, DEFAULT_ROOT
+    from pathlib import Path
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    try:
+        res = project_enrich(slug, limit=limit, force=force, root=root)
+    except Exception as e:
+        click.echo(f"[pa project enrich] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+
+    click.echo(f"[pa project enrich] Finished enrichment for '{slug}':")
+    click.echo(f"  total catalogued: {res['total']}")
+    click.echo(f"  stubs detected:   {res['stubs']}")
+    click.echo(f"  enriched:         {res['enriched']}")
+    click.echo(f"  failed:           {res['failed']}")
+    click.echo(f"  unchanged:        {res['unchanged']}")
+
+
+project.add_command(project_corpus_stats, name="stats")
 
 
 # =============== [P3-1] judge subcommand ===============
@@ -2470,7 +3156,7 @@ def jobs():
 @click.option("--out", "output_dir", required=True, type=click.Path(),
               help="Output directory for fetched PDFs (created if missing)")
 @click.option("--prefer", default="auto",
-              type=click.Choice(["auto", "scihub", "annas", "arxiv", "direct"]),
+              type=click.Choice(["auto", "scihub", "annas", "cnki", "arxiv", "direct"]),
               help="Preferred fetch channel (default: auto)")
 @click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
               help="Max total seconds before timeout (default 1800 = 30 min)")
@@ -3703,6 +4389,22 @@ def zotero_project_sync(name, key, slug, root_path, apply, as_json):
 
 
 # ─────────────────────────────────────────────────────────────────
+# Unified `pa zotero` command group (v3.9.29.0)
+# ─────────────────────────────────────────────────────────────────
+@main.group(name="zotero")
+def zotero_group():
+    """[P2-16..P3-28] Manage Zotero library integration, collections, and synchronization."""
+    pass
+
+
+zotero_group.add_command(zotero_check, name="check")
+zotero_group.add_command(zotero_search, name="search")
+zotero_group.add_command(zotero_push, name="push")
+zotero_group.add_command(zotero_sync, name="sync")
+zotero_group.add_command(zotero_project, name="project")
+
+
+# ─────────────────────────────────────────────────────────────────
 # v3.9.16 [P3-29] pa obsidian — research sub-vault + project management
 # ─────────────────────────────────────────────────────────────────
 @main.group()
@@ -4128,7 +4830,7 @@ def search_and_import(
 
     Steps (per ROADMAP Round 16 deferred):
       1. Search (8 default engines) → write temp Bibtex
-      2. Fetch PDFs through the available open-access and archive channels.
+      2. Fetch PDFs (8 channels: arxiv → unpaywall → scihub → annas → cnki → ...)
       3. Bucket results: downloaded vs failed-to-download
       4. (optional) Push downloaded DOIs to your Zotero library (idempotent)
       5. (optional) Create Zotero project (= collection) if missing
@@ -4239,6 +4941,7 @@ def search_and_import(
     # Exit code: 0 if download+project OK, 1 if any error
     if result.get("errors"):
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 {
   "version": "v3.9.0-pre",
-  "labels": "G:\\minimax - workspace\\Paper agent\\bench\\v01\\labels.json",
+  "labels": "bench/v01/labels.json",
   "table": {
     "original": {
       "recall@5_mean": 0.0708925296925297,
