@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel pytest
+          python -m pip install -e .
+      - name: Security audit test
+        run: python test_output/test_security_audit.py
+      - name: Run offline test suite
+        run: |
+          python test_output/test_cache_atomic_safety.py
+          python test_output/test_cache_smoke.py
+          python test_output/test_cache_integration.py
+          python test_output/test_pa_cache_cli.py
+          python test_output/_test_project.py
+          python test_output/test_jev_adjudication.py
+          python test_output/test_jev_evaluation.py
+          python test_output/test_jev_retry.py
+          python test_output/test_jev_interrupted.py
+          python test_output/test_jev_dispatch.py
+          python test_output/test_jev_recovery.py
+          python test_output/test_jev_submit.py
+          python test_output/test_jev_cli.py
+          python test_output/test_jev_m4.py
+          python test_output/test_jev_eval_join.py
+          python test_output/test_mcp_fetch.py
+
+  package:
+    name: Build wheel and verify package contents
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build wheel
+        run: |
+          python -m pip install --upgrade pip setuptools wheel build
+          python -m build --wheel
+      - name: Verify wheel contents (subpackages and data files)
+        run: |
+          python -c "
+          import zipfile, glob, sys
+          whl = glob.glob('dist/*.whl')[0]
+          z = zipfile.ZipFile(whl)
+          names = set(z.namelist())
+          required = [
+              'pa_cli/labels/__init__.py',
+              'pa_cli/labels/base.py',
+              'pa_cli/data/chinese-gb7714-2005-numeric.csl',
+              'pa_cli/data/cn_stopwords.txt'
+          ]
+          missing = [r for r in required if r not in names]
+          if missing:
+              print(f'Wheel is missing required package files: {missing}', file=sys.stderr)
+              sys.exit(1)
+          print('Wheel package verification passed!')
+          "
+      - name: Install wheel in clean environment and run smoke test
+        run: |
+          python -m venv test_env
+          test_env/bin/python -m pip install dist/*.whl
+          test_env/bin/python -c "
+          import pa_cli
+          import pa_cli.labels
+          from pa_cli.build import DEFAULT_CSL
+          assert DEFAULT_CSL.is_file(), f'Default CSL file missing: {DEFAULT_CSL}'
+          print('Installed wheel smoke test passed!')
+          "

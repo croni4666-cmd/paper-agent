@@ -359,6 +359,59 @@ class TestPhase2CorpusMerge(unittest.TestCase):
         self.assertEqual(res['added'], 1)
         self.assertEqual(res['total_after'], 2)
 
+    def test_merge_stub_preserves_cite_key_and_rich_fields(self):
+        from pa_cli.project import corpus_merge, project_files
+        refs = project_files('target_proj', self.root)['refs']
+        refs.write_text("""
+@article{keepme,
+  title = {Paper 10.1234/test},
+  author = {Smith, John},
+  year = {2020},
+  doi = {10.1234/test},
+  volume = {42},
+  pages = {100--110},
+  abstract = {A very important abstract.},
+  note = {Do not delete},
+}
+@article{other_doc,
+  title = {Other Untouched Paper},
+  author = {Doe, Jane},
+  year = {2021},
+  doi = {10.5678/other},
+  volume = {10},
+  pages = {1--5},
+  note = {Untouched note},
+}
+""", encoding='utf-8')
+        ext_bib = self.tmpdir / 'rich_source.bib'
+        ext_bib.write_text("""
+@article{source_ref,
+  title = {Rich Full Title for Test},
+  author = {Smith, John and Brown, Charlie},
+  journal = {Journal of Testing},
+  year = {2020},
+  doi = {10.1234/test},
+}
+""", encoding='utf-8')
+        res = corpus_merge('target_proj', ext_bib, root=self.root)
+        self.assertEqual(res['updated'], 1)
+        updated_text = refs.read_text(encoding='utf-8')
+        # Check cite keys remain intact
+        self.assertIn("@article{keepme,", updated_text)
+        self.assertIn("@article{other_doc,", updated_text)
+        # Check rich fields preserved
+        self.assertIn("volume = {42}", updated_text)
+        self.assertIn("pages = {100--110}", updated_text)
+        self.assertIn("abstract = {A very important abstract.}", updated_text)
+        self.assertIn("note = {Do not delete}", updated_text)
+        self.assertIn("volume = {10}", updated_text)
+        self.assertIn("note = {Untouched note}", updated_text)
+        # Check enriched metadata
+        self.assertIn("title = {Rich Full Title for Test}", updated_text)
+        self.assertIn("journal = {Journal of Testing}", updated_text)
+        self.assertIn("author = {Smith, John and Brown, Charlie}", updated_text)
+
+
 
 class TestPhase2CorpusAdd(unittest.TestCase):
     def setUp(self):

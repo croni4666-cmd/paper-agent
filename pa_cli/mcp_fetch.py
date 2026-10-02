@@ -336,23 +336,37 @@ def _handle_pa_batch_fetch(arguments: Dict[str, Any]) -> Dict[str, Any]:
             prefer=prefer,
         )
         # Convert FetchSummary dataclass to plain dict
+        # Provide both canonical fields and legacy alias fields for full compatibility
+        results_list = []
+        for r in summary.results:
+            out_p = str(r.out_path) if getattr(r, "out_path", None) else None
+            src = getattr(r, "source", "")
+            results_list.append({
+                "key": getattr(r, "key", ""),
+                "doi": getattr(r, "doi", ""),
+                "title": getattr(r, "title", ""),
+                "success": getattr(r, "success", False),
+                "source": src,
+                "via_channel": src,
+                "out_path": out_p,
+                "saved_as": out_p,
+                "size_bytes": getattr(r, "size_bytes", 0),
+                "error": getattr(r, "error", ""),
+                "elapsed_sec": round(getattr(r, "elapsed_sec", 0.0), 2),
+            })
+        total_sec = getattr(summary, "total_elapsed_sec", 0.0)
+        n_fail = getattr(summary, "n_failure", 0)
         return {
             "n_total": summary.n_total,
             "n_success": summary.n_success,
-            "n_failed": summary.n_failed,
+            "n_failure": n_fail,
+            "n_failed": n_fail,
             "n_skipped": summary.n_skipped,
-            "elapsed_sec": round(summary.elapsed_sec, 2) if hasattr(summary, "elapsed_sec") else None,
+            "total_size_bytes": getattr(summary, "total_size_bytes", 0),
+            "total_elapsed_sec": round(total_sec, 2),
+            "elapsed_sec": round(total_sec, 2),
             "output_dir": str(output_dir),
-            "results": [
-                {
-                    "doi": r.doi,
-                    "saved_as": r.saved_as,
-                    "via_channel": r.via_channel,
-                    "size_bytes": r.size_bytes,
-                    "error": r.error,
-                }
-                for r in summary.results
-            ],
+            "results": results_list,
         }
     finally:
         tmp_bib.unlink(missing_ok=True)

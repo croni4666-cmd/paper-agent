@@ -74,9 +74,9 @@ class TestJevEvalJoin(unittest.TestCase):
                 created_at TEXT NOT NULL
             );
             CREATE TABLE judgment_freeze (
-                freeze_id INTEGER PRIMARY KEY,
+                singleton INTEGER PRIMARY KEY CHECK(singleton=1),
                 operator TEXT NOT NULL,
-                evidence_reference TEXT NOT NULL,
+                reference TEXT NOT NULL,
                 created_at TEXT NOT NULL,
                 snapshot TEXT NOT NULL,
                 snapshot_hash TEXT NOT NULL
@@ -226,6 +226,74 @@ class TestJevEvalJoin(unittest.TestCase):
             out_json = json.loads(res.output)
             self.assertEqual(out_json["schema_version"], "m5-evaluation-report-1")
             self.assertIn("report_hash", out_json)
+
+    def test_extract_p_yes_semantic_correctness(self):
+        from pa_cli.jev_eval_join import extract_p_yes
+        # Positive classes
+        self.assertEqual(extract_p_yes({"probabilities": {"included": 0.01, "excluded": 0.99}}), 0.01)
+        self.assertEqual(extract_p_yes({"probabilities": {"yes": 0.85, "no": 0.15}}), 0.85)
+        self.assertEqual(extract_p_yes({"probabilities": {"relevant": 0.70}}), 0.70)
+        # Negative classes only
+        self.assertEqual(extract_p_yes({"probabilities": {"excluded": 0.99}}), 0.01)
+        self.assertEqual(extract_p_yes({"probabilities": {"no": 0.80}}), 0.20)
+        # Explicit p_yes override
+        self.assertEqual(extract_p_yes({"p_yes": 0.42, "probabilities": {"included": 0.99}}), 0.42)
+        # Unrecognized classes must raise ValueError, NOT take max
+        with self.assertRaises(ValueError):
+            extract_p_yes({"probabilities": {"cat": 0.9, "dog": 0.1}})
+
+    def test_json_shapes_and_case_id_keyed(self):
+        from pa_cli.jev_eval_join import load_predictions_from_json
+        # 1. Bare list
+        p1 = self.root / "bare_list.json"
+        p1.write_text(json.dumps([
+            {"case_id": "c1", "p_yes": 0.9},
+            {"case_id": "c2", "p_yes": 0.1},
+        ]), encoding="utf-8")
+        res1 = load_predictions_from_json(p1)
+        self.assertEqual(set(res1.keys()), {"c1", "c2"})
+        self.assertEqual(res1["c1"]["p_yes"], 0.9)
+
+        # 2. Case_id keyed dict
+        p2 = self.root / "keyed_dict.json"
+        p2.write_text(json.dumps({
+            "c1": {"p_yes": 0.9},
+            "c2": {"probabilities": {"included": 0.05, "excluded": 0.95}},
+        }), encoding="utf-8")
+        res2 = load_predictions_from_json(p2)
+        self.assertEqual(set(res2.keys()), {"c1", "c2"})
+        self.assertEqual(res2["c1"]["p_yes"], 0.9)
+        self.assertEqual(res2["c2"]["p_yes"], 0.05)
+
+    def test_real_lifecycle_freeze_and_evaluate(self):
+        import test_jev_evaluation as fixture
+        from pa_cli.jev_evaluation import assign_review
+        from pa_cli.jev_judgments import submit_judgment, freeze_judgments
+        from pa_cli.jev_eval_join import evaluate_run
+
+        # Setup real evaluation database using formal fixture
+        fix = fixture.JevEvaluationTests()
+        fix.setUp()
+        eval_db = fix.evaluation
+
+        # Assign and submit judgments for real cases
+        a1 = assign_review(eval_db, fix.review_id, reviewer='r1', operator='op', no_prior_exposure=True)['assignment_id']
+        submit_judgment(eval_db, fix._entry('s1', a1, reviewer='r1', label='yes'), human_confirmed=True)
+
+        # Freeze using formal freeze_judgments interface (creates real judgment_freeze with singleton=1)
+        freeze_res = freeze_judgments(eval_db, operator='op', evidence_reference='ref1', human_review_confirmed=True)
+        self.assertIn('snapshot_hash', freeze_res)
+
+        # Predictions file targeting the real frozen case
+        pred_file = self.root / "real_pred.json"
+        pred_file.write_text(json.dumps([
+            {"case_id": "synthetic-case-1", "p_yes": 0.95, "is_synthetic": True}
+        ]), encoding="utf-8")
+
+        # Now run evaluate_run on the real frozen database!
+        report = evaluate_run(eval_db, pred_file, allow_synthetic=True)
+        self.assertEqual(report["schema_version"], "m5-evaluation-report-1")
+        self.assertIn("report_hash", report)
 
 
 if __name__ == "__main__":

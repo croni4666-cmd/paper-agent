@@ -30,10 +30,12 @@ Usage from CLI:
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import sqlite3
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any, Union
@@ -403,9 +405,11 @@ def corpus_merge(
             is_stub = t_title.startswith("Paper 10.") or not target_entry.get("author")
             has_rich = s_title and not s_title.startswith("Paper 10.") and (e.get("author") or e.get("journal"))
             if is_stub and has_rich:
-                for field in ("title", "author", "journal", "year", "volume", "number", "pages", "type"):
-                    if e.get(field):
-                        target_entry[field] = e[field]
+                for field, val in e.items():
+                    if field == "key":
+                        continue
+                    if val and (not target_entry.get(field) or field in ("title", "author", "journal", "booktitle", "year", "volume", "number", "pages", "type", "doi", "url", "abstract", "note", "publisher")):
+                        target_entry[field] = val
                 updated.append(e)
             else:
                 skipped.append(e)
@@ -414,7 +418,8 @@ def corpus_merge(
                 existing_entries_by_key[k] = e
             added.append(e)
 
-    from .bibtex import to_bibtex
+    from .bibtex import format_bibtex_entry
+    import tempfile
 
     if updated:
         # Re-write the full refs.bib with updated metadata
@@ -425,29 +430,28 @@ def corpus_merge(
         )
         seen_keys = set()
         for item in target_entries:
-            paper_dict = {
-                "title": item.get("title", ""),
-                "authors": [a.strip() for a in item.get("author", "").split(" and ")] if item.get("author") else [],
-                "venue": item.get("journal") or item.get("booktitle") or "",
-                "year": item.get("year", ""),
-                "doi": item.get("doi", ""),
-                "type": item.get("type", "article"),
-            }
-            rebuilt_text += to_bibtex(paper_dict, seen_keys)
+            k = item.get("key") or "ref"
+            seen_keys.add(k)
+            rebuilt_text += format_bibtex_entry(item) + "\n"
         if added:
             rebuilt_text += f"\n% --- Merged from {source_desc} on {datetime.now().isoformat(timespec='seconds')} ---\n"
             for item in added:
-                paper_dict = {
-                    "title": item.get("title", ""),
-                    "authors": [a.strip() for a in item.get("author", "").split(" and ")] if item.get("author") else [],
-                    "venue": item.get("journal") or item.get("booktitle") or "",
-                    "year": item.get("year", ""),
-                    "doi": item.get("doi", ""),
-                    "type": item.get("type", "article"),
-                }
-                rebuilt_text += to_bibtex(paper_dict, seen_keys)
+                orig_k = item.get("key") or "ref"
+                candidate = orig_k
+                suffix = 2
+                while candidate in seen_keys:
+                    candidate = f"{orig_k}_v{suffix}"
+                    suffix += 1
+                seen_keys.add(candidate)
+                item_to_format = dict(item)
+                item_to_format["key"] = candidate
+                rebuilt_text += format_bibtex_entry(item_to_format) + "\n"
 
-        target_files['refs'].write_text(rebuilt_text, encoding='utf-8')
+        target_file = target_files['refs']
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:
+            f_tmp.write(rebuilt_text)
+            tmp_path = Path(f_tmp.name)
+        os.replace(tmp_path, target_file)
         meta['updated_at'] = datetime.now().isoformat(timespec='seconds')
         save_meta(target_slug, meta, root)
 
@@ -455,18 +459,23 @@ def corpus_merge(
         existing_cite_keys = {e.get('key') for e in target_entries if e.get('key')}
         appended_text = "\n% --- Merged from " + source_desc + " on " + datetime.now().isoformat(timespec='seconds') + " ---\n"
         for item in added:
-            paper_dict = {
-                "title": item.get("title", ""),
-                "authors": [a.strip() for a in item.get("author", "").split(" and ")] if item.get("author") else [],
-                "venue": item.get("journal") or item.get("booktitle") or "",
-                "year": item.get("year", ""),
-                "doi": item.get("doi", ""),
-                "type": item.get("type", "article"),
-            }
-            appended_text += to_bibtex(paper_dict, existing_cite_keys)
+            orig_k = item.get("key") or "ref"
+            candidate = orig_k
+            suffix = 2
+            while candidate in existing_cite_keys:
+                candidate = f"{orig_k}_v{suffix}"
+                suffix += 1
+            existing_cite_keys.add(candidate)
+            item_to_format = dict(item)
+            item_to_format["key"] = candidate
+            appended_text += format_bibtex_entry(item_to_format) + "\n"
 
-        with target_files['refs'].open('a', encoding='utf-8') as f:
-            f.write(appended_text)
+        target_file = target_files['refs']
+        existing_text = target_file.read_text(encoding='utf-8') if target_file.exists() else ""
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:
+            f_tmp.write(existing_text + appended_text)
+            tmp_path = Path(f_tmp.name)
+        os.replace(tmp_path, target_file)
 
         meta = load_meta(target_slug, root)
         meta['updated_at'] = datetime.now().isoformat(timespec='seconds')
@@ -1416,58 +1425,45 @@ def project_enrich(
                         words = sorted([(pos, w) for w, poses in inv.items() for pos in poses if isinstance(poses, list)])
                         abstract = ' '.join(w for _, w in words)
 
+                from .bibtex import format_authors
+                if title:
+                    entry['title'] = title
+                if authors:
+                    entry['author'] = format_authors(authors)
+                if year:
+                    entry['year'] = year
+                if venue:
+                    entry['journal'] = venue
+                if norm_doi:
+                    entry['doi'] = norm_doi
                 entry_type = work.get('type') or entry.get('type', 'article')
-
-                paper_dict = {
-                    "key": entry.get('key'),
-                    "title": title or entry.get('title', ''),
-                    "authors": authors if authors else ([entry['author']] if entry.get('author') else []),
-                    "year": year,
-                    "venue": venue or entry.get('journal') or entry.get('booktitle') or '',
-                    "doi": norm_doi,
-                    "type": entry_type,
-                    "abstract": abstract or entry.get('abstract', ''),
-                }
-                enriched_entries.append(paper_dict)
+                if entry_type:
+                    entry['type'] = entry_type
+                if abstract:
+                    entry['abstract'] = abstract
                 enriched_count += 1
             else:
                 failed_count += 1
-                paper_dict = {
-                    "key": entry.get('key'),
-                    "title": entry.get('title', ''),
-                    "authors": [a.strip() for a in entry.get('author', '').split(' and ')] if entry.get('author') else [],
-                    "year": entry.get('year', ''),
-                    "venue": entry.get('journal') or entry.get('booktitle') or '',
-                    "doi": doi,
-                    "type": entry.get('type', 'article'),
-                    "abstract": entry.get('abstract', ''),
-                }
-                enriched_entries.append(paper_dict)
         else:
             unchanged_count += 1
-            paper_dict = {
-                "key": entry.get('key'),
-                "title": entry.get('title', ''),
-                "authors": [a.strip() for a in entry.get('author', '').split(' and ')] if entry.get('author') else [],
-                "year": entry.get('year', ''),
-                "venue": entry.get('journal') or entry.get('booktitle') or '',
-                "doi": doi,
-                "type": entry.get('type', 'article'),
-                "abstract": entry.get('abstract', ''),
-            }
-            enriched_entries.append(paper_dict)
 
     if enriched_count > 0:
+        from .bibtex import format_bibtex_entry
+        import tempfile
+
         meta = load_meta(slug, root)
         rebuilt_text = (
             f"% Bibtex for project {slug!r} ({meta.get('title', slug)})\n"
             f"% Enriched with rich academic metadata on {datetime.now().isoformat(timespec='seconds')}\n\n"
         )
-        seen_keys = set()
-        for p in enriched_entries:
-            rebuilt_text += to_bibtex(p, seen_keys)
+        for e in entries:
+            rebuilt_text += format_bibtex_entry(e) + "\n"
 
-        files['refs'].write_text(rebuilt_text, encoding='utf-8')
+        target_file = files['refs']
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:
+            f_tmp.write(rebuilt_text)
+            tmp_path = Path(f_tmp.name)
+        os.replace(tmp_path, target_file)
         meta['last_enrich_at'] = datetime.now().isoformat(timespec='seconds')
         meta['updated_at'] = datetime.now().isoformat(timespec='seconds')
         save_meta(slug, meta, root)

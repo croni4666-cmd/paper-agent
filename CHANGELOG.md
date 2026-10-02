@@ -13,6 +13,38 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.1] - 2026-10-02
+
+### Bug Fixes & Hardening — GitHub Code Review Remediation (2026-10-02)
+
+- **Issue 1 (Data Integrity — BibTeX Cite-Keys & Metadata Round-Trip)**:
+  - Fixed `corpus_merge` and `project_enrich` in `pa_cli/project.py`: previously reconstructed entries using lossy `to_bibtex()`, clobbering cite-keys (e.g. converting `keepme` into generated stubs), dropping `volume`, `pages`, `abstract`, `note`, `url`, and mis-parsing author strings.
+  - Implemented `format_bibtex_entry` in `pa_cli/bibtex.py` that preserves original cite-keys, entry types, and all existing fields verbatim.
+  - Added atomic writing via staging temporary files and `os.replace` for bibliography files.
+  - Added regression test `test_merge_stub_preserves_cite_key_and_rich_fields` in `test_output/_test_project.py`.
+- **Issue 2 (M5 Evaluation Schema Alignment)**:
+  - Fixed schema mismatch in `pa_cli/jev_eval_join.py`: changed `judgment_freeze` query from `WHERE freeze_id=1` to `WHERE singleton=1`, aligning with production schema created by `pa_cli/jev_evaluation.py:130`.
+  - Added real end-to-end regression test `test_real_lifecycle_freeze_and_evaluate` traversing the complete `freeze_plan` -> `assign` -> `submit` -> `freeze_judgments` -> `evaluate_run` pipeline.
+- **Issue 3 (MCP Fetch Contract Alignment)**:
+  - Fixed `_handle_pa_batch_fetch` in `pa_cli/mcp_fetch.py`: mapped actual `FetchSummary` and `FetchResult` dataclass fields (`n_failure`, `out_path`, `source`, `total_elapsed_sec`), preventing `AttributeError: 'FetchSummary' object has no attribute 'n_failed'`.
+  - Maintained backward-compatible aliases (`n_failed`, `saved_as`, `via_channel`, `elapsed_sec`).
+  - Added test case `test_pa_batch_fetch_summary_dataclass_contract` in `test_output/test_mcp_fetch.py`.
+- **Issue 4 (Atomic Cache Persistence & Non-Destructive Reads)**:
+  - Fixed `cache_put` in `pa_cli/cache.py`: writes new immutable generation PDF file first, stages metadata, and atomically replaces pointers via `os.replace`. If an update fails mid-way, existing valid cache entries remain 100% intact.
+  - Fixed `cache_get`: removed destructive `unlink()` calls on read-time hash mismatches, preventing deletion of valid files during concurrent writes or inspection.
+  - Added dedicated regression test `test_output/test_cache_atomic_safety.py`.
+- **Issue 5 (Packaging & Distribution Integrity)**:
+  - Updated `pyproject.toml` setuptools configuration to include subpackage `pa_cli.labels` and essential data assets (`data/*.csl`, `data/*.txt`).
+  - Verified wheel contents using `build --wheel`, ensuring `chinese-gb7714-2005-numeric.csl` and `cn_stopwords.txt` are included.
+- **Issue 6 (Evaluation Positive Class Semantics)**:
+  - Fixed probability normalization in `pa_cli/jev_eval_join.py`: replaced blind `max()` with explicit semantic class resolution (`extract_p_yes`). Positives (`included`, `yes`, `relevant`, `true`, `1`) return their probability; negatives (`excluded`, `no`, `false`, `0`) return `1.0 - p_neg`.
+  - Unrecognized multi-class rubrics now raise descriptive `ValueError` instead of silently inverting evaluation metrics.
+- **Issue 7 (Prediction Input Format Robustness)**:
+  - Fixed `load_predictions_from_json` in `pa_cli/jev_eval_join.py`: now supports bare lists `[{"case_id": "...", ...}]`, dict wrapper `{"predictions": [...]}`, and `case_id`-keyed dicts `{"case_1": {...}}` with duplicate detection and format validation.
+- **Issue 8 (Continuous Integration Workflow)**:
+  - Restored `.github/workflows/ci.yml` matrix testing across Python 3.10, 3.11, and 3.12.
+  - Added automated security audit, offline test suites, wheel package validation, and installed wheel smoke tests.
+
 ## [3.10.0.0] - 2026-09-30
 
 ### Security & Privacy — User data sanitization, test artifact audit & codebase hardening (2026-09-30)

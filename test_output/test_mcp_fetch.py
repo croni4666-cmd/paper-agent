@@ -125,6 +125,58 @@ class TestHandlers(unittest.TestCase):
         result = mcp_fetch._handle_pa_zotero_check({})
         self.assertIn("error", result)
 
+    def test_pa_batch_fetch_summary_dataclass_contract(self):
+        from unittest.mock import patch
+        from pa_cli.fetch_batch import FetchSummary, FetchResult
+        fake_summary = FetchSummary(
+            n_total=2,
+            n_success=1,
+            n_failure=1,
+            n_skipped=0,
+            total_size_bytes=1024,
+            total_elapsed_sec=3.45,
+            results=[
+                FetchResult(
+                    key="k1",
+                    doi="10.1234/a",
+                    title="Title A",
+                    success=True,
+                    source="unpaywall",
+                    out_path="/tmp/a.pdf",
+                    size_bytes=1024,
+                    elapsed_sec=1.2,
+                ),
+                FetchResult(
+                    key="k2",
+                    doi="10.1234/b",
+                    title="Title B",
+                    success=False,
+                    source="",
+                    out_path="",
+                    error="not found",
+                    elapsed_sec=2.25,
+                ),
+            ],
+        )
+        with patch("pa_cli.fetch_batch.run_fetch_batch", return_value=fake_summary):
+            res = mcp_fetch._handle_pa_batch_fetch({"dois": ["10.1234/a", "10.1234/b"]})
+            self.assertEqual(res["n_total"], 2)
+            self.assertEqual(res["n_success"], 1)
+            self.assertEqual(res["n_failure"], 1)
+            self.assertEqual(res["n_failed"], 1)
+            self.assertEqual(res["total_elapsed_sec"], 3.45)
+            self.assertEqual(res["elapsed_sec"], 3.45)
+            self.assertEqual(len(res["results"]), 2)
+            # Item 1
+            self.assertEqual(res["results"][0]["saved_as"], "/tmp/a.pdf")
+            self.assertEqual(res["results"][0]["out_path"], "/tmp/a.pdf")
+            self.assertEqual(res["results"][0]["via_channel"], "unpaywall")
+            self.assertEqual(res["results"][0]["source"], "unpaywall")
+            # Item 2
+            self.assertIsNone(res["results"][1]["saved_as"])
+            self.assertEqual(res["results"][1]["error"], "not found")
+
+
 
 # ─────────────────────────────────────────────────────────────────
 # E2E test: launch stdio server, send initialize + tools/list + tools/call

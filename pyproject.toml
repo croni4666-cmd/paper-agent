@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paper-agent"
-version = "3.10.0.0"
+version = "3.10.0.1"
 description = "Multi-engine academic paper search, full-text fetch, and sample pool for research workflows"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -74,10 +74,10 @@ Issues = "https://github.com/croni4666-cmd/paper-agent/issues"
 Changelog = "https://github.com/croni4666-cmd/paper-agent/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
-packages = ["pa_cli"]
+packages = ["pa_cli", "pa_cli.labels"]
 
 [tool.setuptools.package-data]
-pa_cli = ["py.typed"]
+pa_cli = ["py.typed", "data/*.csl", "data/*.txt"]
 
 [tool.pytest.ini_options]
 addopts = "--basetemp=.pytest_temp"

@@ -171,12 +171,44 @@ def to_bibtex(paper: Dict, seen: Optional[set] = None) -> str:
     return f"@{entry_type}{{{cite_key},\n  {field_str}\n}}\n"
 
 
+def format_bibtex_entry(entry: Dict) -> str:
+    """Format an existing parsed BibTeX entry preserving original key and fields.
+
+    Unlike to_bibtex() which constructs a new cite key and maps specific fields,
+    format_bibtex_entry() preserves the original cite key, entry type, and any
+    standard or custom fields (e.g. volume, pages, abstract, note, url) verbatim.
+    """
+    key = str(entry.get("key", "")).strip() or "ref"
+    etype = str(entry.get("type", "article")).strip().lower() or "article"
+    standard_order = [
+        "title", "author", "journal", "booktitle", "year",
+        "volume", "number", "pages", "month", "doi",
+        "publisher", "address", "url", "abstract", "note"
+    ]
+    fields = []
+    seen = {"key", "type"}
+    for f in standard_order:
+        val = entry.get(f)
+        if val is not None and str(val).strip():
+            fields.append((f, str(val).strip()))
+            seen.add(f)
+    for f, val in entry.items():
+        if f not in seen and val is not None and str(val).strip():
+            fields.append((f, str(val).strip()))
+
+    if fields:
+        field_str = ",\n  ".join(f"{k} = {{{v}}}" for k, v in fields)
+        return f"@{etype}{{{key},\n  {field_str}\n}}\n"
+    return f"@{etype}{{{key}\n}}\n"
+
+
 def _clean_title(title: str) -> str:
     """Strip trailing period, normalize whitespace. BibTeX titles usually omit final period."""
     title = " ".join(title.split())
     if title.endswith("."):
         title = title[:-1]
     return title
+
 
 
 # ---------- File writer ----------

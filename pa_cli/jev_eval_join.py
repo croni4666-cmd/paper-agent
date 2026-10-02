@@ -78,17 +78,67 @@ def load_predictions_from_db(db_path: Path) -> Dict[str, Dict[str, Any]]:
             r_hash = _hash(rubric)
             case_key = _hash([art, p_hash, r_hash])
 
-            # Extract normalized p_yes or top probability
-            probs = answer.get("probabilities", {})
-            p_yes = None
-            if "p_yes" in answer:
-                p_yes = float(answer["p_yes"])
-            elif "yes" in probs:
-                p_yes = float(probs["yes"])
-            elif probs:
-                # Top class probability
-                sorted_probs = sorted(probs.items(), key=lambda x: x[1], reverse=True)
-                p_yes = float(sorted_probs[0][1])
+POS_CLASSES = {"yes", "true", "1", "included", "relevant", "pos", "positive"}
+NEG_CLASSES = {"no", "false", "0", "excluded", "irrelevant", "neg", "negative"}
+
+
+def extract_p_yes(container: Dict[str, Any]) -> Optional[float]:
+    """Extract normalized positive class probability from prediction answer or probabilities dict.
+
+    Guarantees:
+    - If explicit p_yes is provided, validates and returns float(p_yes).
+    - If probabilities dict contains a positive class (e.g. 'yes', 'included'), uses its value.
+    - If probabilities dict contains a negative class (e.g. 'no', 'excluded'), returns 1.0 - p_neg.
+    - If probabilities are provided but no recognized binary class is found, raises ValueError
+      rather than silently taking the maximum probability (which causes evaluation inversion).
+    """
+    if "p_yes" in container and container["p_yes"] is not None:
+        p_val = float(container["p_yes"])
+        return max(0.0, min(1.0, p_val))
+
+    probs = container.get("probabilities", {})
+    if not isinstance(probs, dict) or not probs:
+        return None
+
+    # Check positive classes
+    for k, v in probs.items():
+        if str(k).strip().lower() in POS_CLASSES and v is not None:
+            return max(0.0, min(1.0, float(v)))
+
+    # Check negative classes
+    for k, v in probs.items():
+        if str(k).strip().lower() in NEG_CLASSES and v is not None:
+            return round(max(0.0, min(1.0, 1.0 - float(v))), 6)
+
+    raise ValueError(
+        f"Cannot determine positive class probability from classes {list(probs.keys())}. "
+        f"Classes must map to recognized positive ({sorted(POS_CLASSES)}) or "
+        f"negative ({sorted(NEG_CLASSES)}) classes, or specify explicit 'p_yes'."
+    )
+
+
+def load_predictions_from_db(pred_db_path: Path) -> Dict[str, Dict[str, Any]]:
+    """Load predictions from a JEV predictions SQLite database."""
+    pred_map = {}
+    with closing(sqlite3.connect(f"{pred_db_path.as_uri()}?mode=ro", uri=True, timeout=10)) as conn:
+        app_id = conn.execute("PRAGMA application_id").fetchone()[0]
+        if app_id != PRED_APP_ID:
+            raise ValueError(f"Expected prediction database (app_id={PRED_APP_ID}), got {app_id}")
+
+        rows = conn.execute(
+            "SELECT artifact_sha256, packet_json, rubric_json, answer_json, is_synthetic FROM predictions"
+        ).fetchall()
+
+        for art, p_json, r_json, ans_json, is_synth in rows:
+            packet = json.loads(p_json)
+            rubric = json.loads(r_json)
+            answer = json.loads(ans_json)
+            p_hash = packet.get("packet_hash") or _hash({k: v for k, v in packet.items() if k != "packet_hash"})
+            r_hash = _hash(rubric)
+            case_key = _hash([art, p_hash, r_hash])
+
+            # Extract normalized p_yes safely
+            p_yes = extract_p_yes(answer)
 
             pred_map[case_key] = {
                 "case_key": case_key,
@@ -97,7 +147,7 @@ def load_predictions_from_db(db_path: Path) -> Dict[str, Dict[str, Any]]:
                 "rubric_hash": r_hash,
                 "model": answer.get("model", "unknown"),
                 "p_yes": p_yes,
-                "probabilities": probs,
+                "probabilities": answer.get("probabilities", {}),
                 "is_synthetic": bool(is_synth),
                 "raw_answer": answer,
             }
@@ -105,30 +155,66 @@ def load_predictions_from_db(db_path: Path) -> Dict[str, Dict[str, Any]]:
 
 
 def load_predictions_from_json(json_path: Path) -> Dict[str, Dict[str, Any]]:
-    """Load predictions from a JSON file (keyed by case_id or list of predictions)."""
+    """Load predictions from a JSON file.
+
+    Supports 3 standard formats:
+    1. Bare list of prediction items: [{"case_id": "...", "p_yes": 0.9}, ...]
+    2. Dict wrapper with "predictions" key: {"predictions": [...]} or {"predictions": {"case_1": {...}}}
+    3. Dict keyed by case_id: {"case_1": {"p_yes": 0.9}, ...}
+    """
     with Path(json_path).open("r", encoding="utf-8") as f:
         data = json.load(f)
 
-    pred_map = {}
-    items = data.values() if isinstance(data, dict) and "predictions" not in data else data.get("predictions", data)
-    if isinstance(items, dict):
-        items = list(items.values())
+    raw_items: List[Tuple[Optional[str], Dict[str, Any]]] = []
 
-    for item in items:
+    if isinstance(data, list):
+        for item in data:
+            if not isinstance(item, dict):
+                raise ValueError(f"Expected prediction dict in list, got {type(item).__name__}")
+            raw_items.append((None, item))
+    elif isinstance(data, dict):
+        if "predictions" in data:
+            preds = data["predictions"]
+            if isinstance(preds, list):
+                for item in preds:
+                    if not isinstance(item, dict):
+                        raise ValueError(f"Expected prediction dict in predictions list, got {type(item).__name__}")
+                    raw_items.append((None, item))
+            elif isinstance(preds, dict):
+                for k, item in preds.items():
+                    if not isinstance(item, dict):
+                        raise ValueError(f"Expected prediction dict for key {k}, got {type(item).__name__}")
+                    raw_items.append((k, item))
+            else:
+                raise ValueError(f"Unrecognized 'predictions' container type: {type(preds).__name__}")
+        else:
+            # Dict keyed by case_id
+            for k, item in data.items():
+                if isinstance(item, dict):
+                    raw_items.append((k, item))
+                else:
+                    raise ValueError(f"Expected prediction dict for case key {k}, got {type(item).__name__}")
+    else:
+        raise ValueError(f"Invalid JSON predictions root structure: expected list or dict, got {type(data).__name__}")
+
+    pred_map = {}
+    seen_keys = set()
+    for outer_key, item in raw_items:
         art = item.get("artifact_sha256")
         p_hash = item.get("packet_hash")
         r_hash = item.get("rubric_hash")
-        case_key = item.get("case_id") or item.get("case_key")
+        case_key = item.get("case_id") or item.get("case_key") or outer_key
         if not case_key and art and p_hash and r_hash:
             case_key = _hash([art, p_hash, r_hash])
 
         if not case_key:
-            continue
+            raise ValueError(f"Prediction item missing case identification: {item}")
 
-        probs = item.get("probabilities", {})
-        p_yes = item.get("p_yes")
-        if p_yes is None and "yes" in probs:
-            p_yes = float(probs["yes"])
+        if case_key in seen_keys:
+            raise ValueError(f"Duplicate prediction case_key detected: {case_key}")
+        seen_keys.add(case_key)
+
+        p_yes = extract_p_yes(item)
 
         pred_map[case_key] = {
             "case_key": case_key,
@@ -136,8 +222,8 @@ def load_predictions_from_json(json_path: Path) -> Dict[str, Dict[str, Any]]:
             "packet_hash": p_hash,
             "rubric_hash": r_hash,
             "model": item.get("model", "unknown"),
-            "p_yes": float(p_yes) if p_yes is not None else None,
-            "probabilities": probs,
+            "p_yes": p_yes,
+            "probabilities": item.get("probabilities", {}),
             "is_synthetic": bool(item.get("is_synthetic", False)),
             "raw_answer": item,
         }
@@ -233,7 +319,7 @@ def evaluate_run(
             raise ValueError(f"Expected evaluation database (app_id={EVAL_APP_ID}), got {app_id}")
 
         # Check judgment freeze
-        freeze_row = conn.execute("SELECT operator, snapshot, snapshot_hash FROM judgment_freeze WHERE freeze_id=1").fetchone()
+        freeze_row = conn.execute("SELECT operator, snapshot, snapshot_hash FROM judgment_freeze WHERE singleton=1").fetchone()
         if not freeze_row:
             raise ValueError("Judgments are not frozen in evaluation database. Run `pa jev judgments-freeze` first.")
 
