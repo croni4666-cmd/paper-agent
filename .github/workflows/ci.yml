@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel pytest
-          python -m pip install -e .
+          python -m pip install -e ".[test]"
       - name: Security audit test
         run: python test_output/test_security_audit.py
       - name: Run offline test suite
@@ -46,6 +46,7 @@ jobs:
           python test_output/test_jev_m4.py
           python test_output/test_jev_eval_join.py
           python test_output/test_mcp_fetch.py
+          python test_output/test_rereview_6fa4b79.py
 
   package:
     name: Build wheel and verify package contents
@@ -78,14 +79,15 @@ jobs:
               sys.exit(1)
           print('Wheel package verification passed!')
           "
-      - name: Install wheel in clean environment and run smoke test
+      - name: Install wheel in clean environment and run smoke test outside repo
         run: |
-          python -m venv test_env
-          test_env/bin/python -m pip install dist/*.whl
-          test_env/bin/python -c "
+          python -m venv /tmp/test_env
+          /tmp/test_env/bin/python -m pip install dist/*.whl
+          cd /tmp
+          /tmp/test_env/bin/python -c "
           import pa_cli
           import pa_cli.labels
           from pa_cli.build import DEFAULT_CSL
           assert DEFAULT_CSL.is_file(), f'Default CSL file missing: {DEFAULT_CSL}'
-          print('Installed wheel smoke test passed!')
+          print('Installed wheel smoke test passed outside repository!')
           "

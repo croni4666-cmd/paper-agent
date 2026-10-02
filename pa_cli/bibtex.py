@@ -29,17 +29,27 @@ from typing import List, Dict, Optional
 
 _TYPE_MAP = {
     "article": "article",
+    "journal-article": "article",
     "preprint": "article",  # arXiv preprints — bibtex sees them as articles
     "review": "article",
     "book": "book",
     "book-chapter": "incollection",
+    "chapter": "incollection",
+    "incollection": "incollection",
     "inproceedings": "inproceedings",
     "conference": "inproceedings",
     "proceedings": "proceedings",
+    "proceedings-article": "inproceedings",
     "thesis": "phdthesis",
+    "dissertation": "phdthesis",
+    "phdthesis": "phdthesis",
+    "mastersthesis": "mastersthesis",
     "report": "techreport",
+    "techreport": "techreport",
     "dataset": "misc",
+    "software": "misc",
     "other": "misc",
+    "misc": "misc",
 }
 
 
@@ -179,14 +189,17 @@ def format_bibtex_entry(entry: Dict) -> str:
     standard or custom fields (e.g. volume, pages, abstract, note, url) verbatim.
     """
     key = str(entry.get("key", "")).strip() or "ref"
-    etype = str(entry.get("type", "article")).strip().lower() or "article"
+    raw_type = str(entry.get("type", "article")).strip().lower() or "article"
+    etype = _TYPE_MAP.get(raw_type, raw_type)
+    if "-" in etype:
+        etype = _TYPE_MAP.get(etype.replace("-", ""), "misc")
     standard_order = [
         "title", "author", "journal", "booktitle", "year",
         "volume", "number", "pages", "month", "doi",
         "publisher", "address", "url", "abstract", "note"
     ]
     fields = []
-    seen = {"key", "type"}
+    seen = {"key", "type", "_raw", "_was_updated", "_was_enriched"}
     for f in standard_order:
         val = entry.get(f)
         if val is not None and str(val).strip():

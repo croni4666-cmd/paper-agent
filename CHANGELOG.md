@@ -13,6 +13,34 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.2] - 2026-10-02
+
+### Bug Fixes & Hardening — Second Round GitHub Code Review Remediation (2026-10-02)
+
+- **Issue 1 (SQLite Evaluation Predictions Loader Restoration & Schema Realignment)**:
+  - Fixed duplicate `load_predictions_from_db` in `pa_cli/jev_eval_join.py`: removed the second override that referenced undefined `PRED_APP_ID` and non-existent `predictions` table.
+  - Retained and completed single production implementation joining M3 shadow `suggestions` and `requests` tables under `SHADOW_APP_ID`.
+  - Reused semantic positive class probability extraction (`extract_p_yes`) and preserved `is_synthetic` flags.
+  - Added strict finite probability range checks `[0.0, 1.0]` (rejecting NaN, inf, negatives, or >1.0).
+  - Added consistency validation between explicit `case_id` and hashed `(artifact, packet, rubric)` keys in `load_predictions_from_json`.
+  - Verified with real shadow SQLite database end-to-end via `test_sqlite_prediction_loader_m3_schema`.
+- **Issue 2 (BibTeX Round-Trip Lossless Preservation on Merge & Enrich)**:
+  - Fixed lightweight BibTeX parser in `pa_cli/scaffold.py`: upgraded `_parse_bibtex_fields` to support bare numbers (`year = 2021`), bare macros (`journal = jmacro`), and arbitrarily nested braces without stripping (preserving `title = {An {RNA} study}` and `author = {{World Health Organization}}`).
+  - Added raw chunk tracking (`entry["_raw"]`): `corpus_merge` and `project_enrich` in `pa_cli/project.py` now preserve the byte-for-byte original representation of all untouched references when updating stubs or enriching selected entries.
+- **Issue 3 (Work Type Mapping & Standard BibTeX Conformity)**:
+  - Fixed OpenAlex work type mapping in `pa_cli/project.py` (`project_enrich`): maps provider work types (e.g. `book-chapter`) to standard BibTeX types (`incollection`) via `_TYPE_MAP`.
+  - Expanded `_TYPE_MAP` in `pa_cli/bibtex.py` with academic synonyms (`book-chapter -> incollection`, `chapter -> incollection`, `journal-article -> article`, `proceedings-article -> inproceedings`, `dissertation -> phdthesis`, `techreport -> techreport`).
+  - Added hyphen sanitization in `format_bibtex_entry` to prevent writing non-standard BibTeX entry types.
+  - Upgraded `_BIB_ENTRY_RE` in `pa_cli/scaffold.py` to parse hyphenated types gracefully.
+- **Issue 4 (Cross-Reference Cite-Key Remapping in Merges)**:
+  - Fixed `corpus_merge` in `pa_cli/project.py`: constructed comprehensive `source_key_map` across all deduplicated and newly added source entries.
+  - When colliding source keys are suffixed (`parent` -> `parent_v2`), all dependent `crossref = {parent}` fields in child entries are automatically updated to `parent_v2`.
+  - When parent entries are deduplicated, child `crossref` fields are automatically remapped to the existing target parent cite-key.
+- **Issue 5 (Continuous Integration Dependencies & Isolated Smoke Tests)**:
+  - Declared `test` optional dependencies in `pyproject.toml` (`pytest`, `scikit-learn`, `PyMuPDF`, `mcp`).
+  - Updated `.github/workflows/ci.yml` to install `.[test]` and added `test_rereview_6fa4b79.py` to the automated suite.
+  - Isolated the package smoke test in CI by executing Python from outside the repository directory (`cd /tmp`), preventing local source directory shadowing.
+
 ## [3.10.0.1] - 2026-10-02
 
 ### Bug Fixes & Hardening — GitHub Code Review Remediation (2026-10-02)

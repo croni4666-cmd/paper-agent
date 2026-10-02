@@ -410,6 +410,7 @@ def corpus_merge(
                         continue
                     if val and (not target_entry.get(field) or field in ("title", "author", "journal", "booktitle", "year", "volume", "number", "pages", "type", "doi", "url", "abstract", "note", "publisher")):
                         target_entry[field] = val
+                target_entry["_was_updated"] = True
                 updated.append(e)
             else:
                 skipped.append(e)
@@ -421,31 +422,50 @@ def corpus_merge(
     from .bibtex import format_bibtex_entry
     import tempfile
 
+    # Build comprehensive source key mapping to target keys (for collisions & dedup)
+    seen_keys = {item.get("key") for item in target_entries if item.get("key")}
+    source_key_map: Dict[str, str] = {}
+
+    for e in source_entries:
+        k = _entry_key(e)
+        if k[1] and k in existing_entries_by_key:
+            target_entry = existing_entries_by_key[k]
+            if e.get("key") and target_entry.get("key"):
+                source_key_map[e["key"]] = target_entry["key"]
+
+    for item in added:
+        orig_k = item.get("key") or "ref"
+        candidate = orig_k
+        suffix = 2
+        while candidate in seen_keys:
+            candidate = f"{orig_k}_v{suffix}"
+            suffix += 1
+        seen_keys.add(candidate)
+        item["key"] = candidate
+        source_key_map[orig_k] = candidate
+
+    # Remap crossref references in added entries using source_key_map
+    for item in added:
+        crossref = item.get("crossref")
+        if crossref and crossref in source_key_map:
+            item["crossref"] = source_key_map[crossref]
+
     if updated:
-        # Re-write the full refs.bib with updated metadata
+        # Re-write the full refs.bib with updated metadata, preserving raw text for untouched items
         meta = load_meta(target_slug, root)
         rebuilt_text = (
             f"% Bibtex for project {target_slug!r} ({meta.get('title', target_slug)})\n"
             f"% Updated with rich metadata on {datetime.now().isoformat(timespec='seconds')}\n\n"
         )
-        seen_keys = set()
         for item in target_entries:
-            k = item.get("key") or "ref"
-            seen_keys.add(k)
-            rebuilt_text += format_bibtex_entry(item) + "\n"
+            if not item.get("_was_updated") and item.get("_raw"):
+                rebuilt_text += item["_raw"].strip() + "\n\n"
+            else:
+                rebuilt_text += format_bibtex_entry(item) + "\n"
         if added:
             rebuilt_text += f"\n% --- Merged from {source_desc} on {datetime.now().isoformat(timespec='seconds')} ---\n"
             for item in added:
-                orig_k = item.get("key") or "ref"
-                candidate = orig_k
-                suffix = 2
-                while candidate in seen_keys:
-                    candidate = f"{orig_k}_v{suffix}"
-                    suffix += 1
-                seen_keys.add(candidate)
-                item_to_format = dict(item)
-                item_to_format["key"] = candidate
-                rebuilt_text += format_bibtex_entry(item_to_format) + "\n"
+                rebuilt_text += format_bibtex_entry(item) + "\n"
 
         target_file = target_files['refs']
         with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:
@@ -456,19 +476,9 @@ def corpus_merge(
         save_meta(target_slug, meta, root)
 
     elif added:
-        existing_cite_keys = {e.get('key') for e in target_entries if e.get('key')}
         appended_text = "\n% --- Merged from " + source_desc + " on " + datetime.now().isoformat(timespec='seconds') + " ---\n"
         for item in added:
-            orig_k = item.get("key") or "ref"
-            candidate = orig_k
-            suffix = 2
-            while candidate in existing_cite_keys:
-                candidate = f"{orig_k}_v{suffix}"
-                suffix += 1
-            existing_cite_keys.add(candidate)
-            item_to_format = dict(item)
-            item_to_format["key"] = candidate
-            appended_text += format_bibtex_entry(item_to_format) + "\n"
+            appended_text += format_bibtex_entry(item) + "\n"
 
         target_file = target_files['refs']
         existing_text = target_file.read_text(encoding='utf-8') if target_file.exists() else ""
@@ -1436,9 +1446,13 @@ def project_enrich(
                     entry['journal'] = venue
                 if norm_doi:
                     entry['doi'] = norm_doi
-                entry_type = work.get('type') or entry.get('type', 'article')
-                if entry_type:
-                    entry['type'] = entry_type
+                from .bibtex import _TYPE_MAP
+                raw_type = str(work.get('type') or entry.get('type', 'article')).strip().lower()
+                entry_type = _TYPE_MAP.get(raw_type, raw_type)
+                if "-" in entry_type:
+                    entry_type = _TYPE_MAP.get(entry_type.replace("-", ""), "misc")
+                entry['type'] = entry_type
+                entry['_was_enriched'] = True
                 if abstract:
                     entry['abstract'] = abstract
                 enriched_count += 1
@@ -1457,7 +1471,10 @@ def project_enrich(
             f"% Enriched with rich academic metadata on {datetime.now().isoformat(timespec='seconds')}\n\n"
         )
         for e in entries:
-            rebuilt_text += format_bibtex_entry(e) + "\n"
+            if not e.get("_was_enriched") and e.get("_raw"):
+                rebuilt_text += e["_raw"].strip() + "\n\n"
+            else:
+                rebuilt_text += format_bibtex_entry(e) + "\n"
 
         target_file = files['refs']
         with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:

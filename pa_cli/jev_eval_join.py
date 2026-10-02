@@ -57,6 +57,63 @@ def brier_score(probabilities: List[float], outcomes: List[int]) -> Optional[flo
     return round(total_sq_err / len(probabilities), 4)
 
 
+POS_CLASSES = {"yes", "true", "1", "included", "relevant", "pos", "positive"}
+NEG_CLASSES = {"no", "false", "0", "excluded", "irrelevant", "neg", "negative"}
+
+
+def extract_p_yes(container: Dict[str, Any]) -> Optional[float]:
+    """Extract normalized positive class probability from prediction answer or probabilities dict.
+
+    Guarantees:
+    - If explicit p_yes is provided, validates finite within [0.0, 1.0] and returns float(p_yes).
+    - If probabilities dict contains a positive class (e.g. 'yes', 'included'), validates and returns its value.
+    - If probabilities dict contains a negative class (e.g. 'no', 'excluded'), returns 1.0 - p_neg.
+    - If probabilities are provided but no recognized binary class is found, raises ValueError
+      rather than silently taking the maximum probability (which causes evaluation inversion).
+    - Non-finite (NaN, inf) or out-of-range (<0 or >1) probabilities raise ValueError.
+    """
+    if "p_yes" in container and container["p_yes"] is not None:
+        try:
+            p_val = float(container["p_yes"])
+        except (ValueError, TypeError):
+            raise ValueError(f"Invalid non-numeric p_yes: {container['p_yes']!r}")
+        if not math.isfinite(p_val) or p_val < 0.0 or p_val > 1.0:
+            raise ValueError(f"Prediction p_yes must be finite and within [0.0, 1.0], got {p_val}")
+        return p_val
+
+    probs = container.get("probabilities", {})
+    if not isinstance(probs, dict) or not probs:
+        return None
+
+    # Check positive classes
+    for k, v in probs.items():
+        if str(k).strip().lower() in POS_CLASSES and v is not None:
+            try:
+                p_val = float(v)
+            except (ValueError, TypeError):
+                raise ValueError(f"Invalid probability for positive class {k}: {v!r}")
+            if not math.isfinite(p_val) or p_val < 0.0 or p_val > 1.0:
+                raise ValueError(f"Positive class probability must be finite and within [0.0, 1.0], got {p_val}")
+            return p_val
+
+    # Check negative classes
+    for k, v in probs.items():
+        if str(k).strip().lower() in NEG_CLASSES and v is not None:
+            try:
+                p_val = float(v)
+            except (ValueError, TypeError):
+                raise ValueError(f"Invalid probability for negative class {k}: {v!r}")
+            if not math.isfinite(p_val) or p_val < 0.0 or p_val > 1.0:
+                raise ValueError(f"Negative class probability must be finite and within [0.0, 1.0], got {p_val}")
+            return round(1.0 - p_val, 6)
+
+    raise ValueError(
+        f"Cannot determine positive class probability from classes {list(probs.keys())}. "
+        f"Classes must map to recognized positive ({sorted(POS_CLASSES)}) or "
+        f"negative ({sorted(NEG_CLASSES)}) classes, or specify explicit 'p_yes'."
+    )
+
+
 def load_predictions_from_db(db_path: Path) -> Dict[str, Dict[str, Any]]:
     """Load predictions from an M3 shadow database."""
     pred_map = {}
@@ -78,66 +135,6 @@ def load_predictions_from_db(db_path: Path) -> Dict[str, Dict[str, Any]]:
             r_hash = _hash(rubric)
             case_key = _hash([art, p_hash, r_hash])
 
-POS_CLASSES = {"yes", "true", "1", "included", "relevant", "pos", "positive"}
-NEG_CLASSES = {"no", "false", "0", "excluded", "irrelevant", "neg", "negative"}
-
-
-def extract_p_yes(container: Dict[str, Any]) -> Optional[float]:
-    """Extract normalized positive class probability from prediction answer or probabilities dict.
-
-    Guarantees:
-    - If explicit p_yes is provided, validates and returns float(p_yes).
-    - If probabilities dict contains a positive class (e.g. 'yes', 'included'), uses its value.
-    - If probabilities dict contains a negative class (e.g. 'no', 'excluded'), returns 1.0 - p_neg.
-    - If probabilities are provided but no recognized binary class is found, raises ValueError
-      rather than silently taking the maximum probability (which causes evaluation inversion).
-    """
-    if "p_yes" in container and container["p_yes"] is not None:
-        p_val = float(container["p_yes"])
-        return max(0.0, min(1.0, p_val))
-
-    probs = container.get("probabilities", {})
-    if not isinstance(probs, dict) or not probs:
-        return None
-
-    # Check positive classes
-    for k, v in probs.items():
-        if str(k).strip().lower() in POS_CLASSES and v is not None:
-            return max(0.0, min(1.0, float(v)))
-
-    # Check negative classes
-    for k, v in probs.items():
-        if str(k).strip().lower() in NEG_CLASSES and v is not None:
-            return round(max(0.0, min(1.0, 1.0 - float(v))), 6)
-
-    raise ValueError(
-        f"Cannot determine positive class probability from classes {list(probs.keys())}. "
-        f"Classes must map to recognized positive ({sorted(POS_CLASSES)}) or "
-        f"negative ({sorted(NEG_CLASSES)}) classes, or specify explicit 'p_yes'."
-    )
-
-
-def load_predictions_from_db(pred_db_path: Path) -> Dict[str, Dict[str, Any]]:
-    """Load predictions from a JEV predictions SQLite database."""
-    pred_map = {}
-    with closing(sqlite3.connect(f"{pred_db_path.as_uri()}?mode=ro", uri=True, timeout=10)) as conn:
-        app_id = conn.execute("PRAGMA application_id").fetchone()[0]
-        if app_id != PRED_APP_ID:
-            raise ValueError(f"Expected prediction database (app_id={PRED_APP_ID}), got {app_id}")
-
-        rows = conn.execute(
-            "SELECT artifact_sha256, packet_json, rubric_json, answer_json, is_synthetic FROM predictions"
-        ).fetchall()
-
-        for art, p_json, r_json, ans_json, is_synth in rows:
-            packet = json.loads(p_json)
-            rubric = json.loads(r_json)
-            answer = json.loads(ans_json)
-            p_hash = packet.get("packet_hash") or _hash({k: v for k, v in packet.items() if k != "packet_hash"})
-            r_hash = _hash(rubric)
-            case_key = _hash([art, p_hash, r_hash])
-
-            # Extract normalized p_yes safely
             p_yes = extract_p_yes(answer)
 
             pred_map[case_key] = {
@@ -204,8 +201,14 @@ def load_predictions_from_json(json_path: Path) -> Dict[str, Dict[str, Any]]:
         p_hash = item.get("packet_hash")
         r_hash = item.get("rubric_hash")
         case_key = item.get("case_id") or item.get("case_key") or outer_key
-        if not case_key and art and p_hash and r_hash:
-            case_key = _hash([art, p_hash, r_hash])
+        if art and p_hash and r_hash:
+            computed_key = _hash([art, p_hash, r_hash])
+            if case_key and case_key != computed_key:
+                raise ValueError(
+                    f"Prediction case_id mismatch: explicit case_id {case_key!r} "
+                    f"does not match hash([artifact, packet, rubric])={computed_key!r}"
+                )
+            case_key = case_key or computed_key
 
         if not case_key:
             raise ValueError(f"Prediction item missing case identification: {item}")

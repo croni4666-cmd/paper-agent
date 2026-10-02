@@ -32,36 +32,86 @@ from typing import Dict, List, Optional, Tuple
 # ---------- Bibtex parsing (lightweight, no external deps) ----------
 
 _BIB_ENTRY_RE = re.compile(
-    r"@\w+\s*\{\s*([^,\s]+)\s*,", re.MULTILINE
+    r"@([\w-]+)\s*\{\s*([^,\s]+)\s*,", re.MULTILINE
 )
-_FIELD_RE = re.compile(
-    r"(\w+)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|\"((?:[^\"]|\"[^\"]*\")*)\")",
-    re.DOTALL,
-)
+
+
+def _parse_bibtex_fields(body: str) -> Dict[str, str]:
+    """Parse fields from a BibTeX entry body with full brace nesting, macro, and bare number support."""
+    fields = {}
+    i = 0
+    n = len(body)
+    while i < n:
+        while i < n and (body[i].isspace() or body[i] == ','):
+            i += 1
+        if i >= n:
+            break
+        m_name = re.match(r'([A-Za-z0-9_:-]+)\s*=', body[i:])
+        if not m_name:
+            while i < n and body[i] not in (',', '\n'):
+                i += 1
+            continue
+        fname = m_name.group(1).lower()
+        i += m_name.end()
+        while i < n and body[i].isspace():
+            i += 1
+        if i >= n:
+            break
+
+        if body[i] == '{':
+            i += 1
+            depth = 1
+            val_start = i
+            while i < n and depth > 0:
+                if body[i] == '{':
+                    depth += 1
+                elif body[i] == '}':
+                    depth -= 1
+                i += 1
+            val_end = i - 1 if depth == 0 else i
+            fval = body[val_start:val_end]
+        elif body[i] == '"':
+            i += 1
+            val_start = i
+            while i < n and body[i] != '"':
+                if body[i] == '\\' and i + 1 < n:
+                    i += 2
+                else:
+                    i += 1
+            val_end = i
+            fval = body[val_start:val_end]
+            if i < n and body[i] == '"':
+                i += 1
+        else:
+            val_start = i
+            while i < n and body[i] not in (',', '}', '\r', '\n'):
+                i += 1
+            fval = body[val_start:i].strip()
+
+        fval = fval.strip().replace("\r", "")
+        fval = re.sub(r"[ \t]+", " ", fval)
+        fields[fname] = fval
+    return fields
 
 
 def parse_bibtex(text: str) -> List[Dict[str, str]]:
-    """Lightweight bibtex parser. Returns list of {key, type, title, author, year, ...}.
-
-    Does NOT handle nested braces perfectly (one level deep is OK). Sufficient
-    for `pa search --format bibtex` output.
-    """
+    """Robust bibtex parser preserving nested braces, bare numbers, macros, and entry types."""
     entries = []
-    # Split on @ entries
-    chunks = re.split(r"(?=@\w+\s*\{)", text)
+    chunks = re.split(r"(?=@[\w-]+\s*\{)", text)
     for chunk in chunks:
-        chunk = chunk.strip()
-        if not chunk.startswith("@"):
+        chunk_clean = chunk.strip()
+        if not chunk_clean.startswith("@"):
             continue
-        # Entry type and key
-        m = re.match(r"@(\w+)\s*\{\s*([^,\s]+)\s*,", chunk)
+        m = re.match(r"@([\w-]+)\s*\{\s*([^,\s]+)\s*,", chunk_clean)
         if not m:
             continue
-        etype, key = m.group(1).lower(), m.group(2)
-        # Strip balanced braces/quotes from field values
-        body = chunk[m.end():]
-        # Trim trailing closing brace
-        # Find matching closing brace from the end
+        raw_type, key = m.group(1).lower(), m.group(2)
+        from .bibtex import _TYPE_MAP
+        etype = _TYPE_MAP.get(raw_type, raw_type)
+        if "-" in etype:
+            etype = _TYPE_MAP.get(etype.replace("-", ""), "misc")
+
+        body = chunk_clean[m.end():]
         depth = 0
         end = len(body) - 1
         for i in range(len(body) - 1, -1, -1):
@@ -73,18 +123,10 @@ def parse_bibtex(text: str) -> List[Dict[str, str]]:
                 end = i
                 break
         body = body[:end]
-        # Parse fields
-        fields = {"key": key, "type": etype}
-        for fm in _FIELD_RE.finditer(body):
-            fname = fm.group(1).lower()
-            fval = fm.group(2) if fm.group(2) is not None else fm.group(3)
-            if fval is None:
-                continue
-            # Clean internal braces/quotes
-            fval = re.sub(r"[{}]", "", fval)
-            fval = fval.strip().replace("\n", " ").replace("\r", "")
-            fval = re.sub(r"\s+", " ", fval)
-            fields[fname] = fval
+        fields = _parse_bibtex_fields(body)
+        fields["key"] = key
+        fields["type"] = etype
+        fields["_raw"] = chunk_clean
         entries.append(fields)
     return entries
 
