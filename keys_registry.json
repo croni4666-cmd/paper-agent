@@ -1,4 +1,4 @@
-﻿{
+{
   "openalex": {
     "name": "OpenAlex",
     "env_var": "OPENALEX_API_KEY",

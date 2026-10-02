@@ -1,4 +1,4 @@
-﻿"""pa_cli/aminer_channel.py 鈥?AMiner 7th search engine (v3.9.8.0)
+"""pa_cli/aminer_channel.py 鈥?AMiner 7th search engine (v3.9.8.0)
 
 Per ROADMAP [P1-7] (added 2026-07-15, user-decided after B+鈫扐 gap analysis):
   - AMiner 鏅鸿氨瀛︽湳 API 闆嗘垚 (hobbyist budget: 3880 calls 涓€娆℃€т綋楠岄噾)
