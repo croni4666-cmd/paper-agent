@@ -4782,3 +4782,180 @@ Implemented `pa_cli/jev_eval_join.py` and `pa jev evaluation-score`:
 - Holdout evaluation checks live `exposures` table to exclude exposed studies, tracks human abstentions, and computes 95% Wilson score confidence intervals for error rates and Brier score calibration.
 - Full offline test suite (10 suites, 97 tests) verified 100% OK.
 
+
+
+---
+
+## Paper Agent 4 (v4) Transition & Acceptance Specification (Added 2026-10-02)
+
+### 1. Functional Boundary & Scope Clarification (User Directive 2026-10-02)
+
+> **User directive (verbatim 2026-10-02)**: "不应将最终论文成稿归在此sKill 当中，因现实中还需要 模型、爬虫数据抓取，数据库数据抓取、拟合、模拟、命题扩展等"
+
+Real-world scientific research (econometrics, quantitative finance, computational social sciences, empirical AI, and natural sciences) requires data scraping, proprietary/public database extraction (Wind, CSMAR, CRSP, FRED, EDGAR), theoretical proposition derivation, econometric fitting, numerical simulation, and robustness estimation. If Paper Agent attempts to generate "complete final manuscripts" end-to-end, it will inevitably fabricate empirical tables, hallucinate regression results, and produce scientifically ungrounded text.
+
+Therefore, **full-manuscript drafting is explicitly excluded from Paper Agent's scope**. Paper Agent is strictly positioned as the **Academic Literature & Evidence Intelligence Subsystem (科研文献与证据中枢)**:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                        Real Research Workflow & Paper Agent Boundary         │
+├──────────────────────────────┬───────────────────────────────────────────────┤
+│ External Specialized Tools   │ Paper Agent v4 Core Responsibilities          │
+├──────────────────────────────┼───────────────────────────────────────────────┤
+│ [Data Crawlers & Databases]  │ ◄── Extract data source specs & sample rules  │
+│ [Theoretical Derivation]     │ ◄── Map theoretical propositions & hypotheses │
+│ [Simulation & Estimation]    │ ◄── Harvest calibration priors & parameters   │
+│ [Econometric Fitting]        │ ──► [Align empirical findings with literature]│
+│ [User Writes Draft]          │ ──► [Audit citation fidelity & zero-halluc.]  │
+│ [Formatting & Submission]    │ ◄── Scaffolds "Related Work" section only     │
+└──────────────────────────────┴───────────────────────────────────────────────┘
+```
+
+- **Global Rule Audit**: 100% local-first, zero recurring cloud costs, local SQLite storage, strictly bounded optional external calls (max $0.01/run hard limit), and zero unauthorized data egress (AGPL-3.0 + No-AI-Training compliance).
+
+---
+
+### 2. Paper Agent 4 (v4) Prerequisites & Acceptance Criteria
+
+Version designation will transition from `v3.x` to `v4.0.0` only when all of the following criteria are satisfied and pass 100% offline regression testing:
+
+1. **Empirical Design & Variable Extraction (`[P0-18]`)**: Automated extraction of variable proxies, calculation formulas, database origins, and sample filtering criteria from published Data/Methodology chapters into structured specifications.
+2. **Simulation Calibration Priors (`[P1-25]`)**: Automated extraction of structural parameters, elasticities, baseline effect sizes, and confidence intervals to supply priors for external numerical simulations and models.
+3. **Consensus & Contradiction Graph (`[P1-22]`)**: Local SQLite-backed matrix identifying theoretical propositions, competing hypotheses ($H_1$ vs. $H_2$), consensus findings, and active empirical disputes.
+4. **Empirical Finding Alignment (`[P2-23]`)**: Given user regression/simulation coefficients, locate supporting, conflicting, and heterogeneity-explaining literature from the local cache.
+5. **Full-Manuscript Citation Fidelity Audit (`[P2-21]`)**: Automated sentence-by-sentence verification of draft citations against local cached PDF evidence packets, achieving $\ge 90\%$ detection rate for misattributions, quotes out of context, and hallucinations.
+6. **Zero-Cost Local Architecture**: All core features must operate fully offline on local SQLite and PyMuPDF without requiring cloud vector databases, GPUs, or hosted API subscriptions.
+
+---
+
+### 3. Transition Tickets for v3.11 -> v4.0
+
+### [P0-16] Structured research metadata export (`pa export --target jupyter/typst/bib`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P0
+- **Effort**: 1 engineering day
+- **Source**: User feedback 2026-10-02 on downstream modeling integration.
+- **Rationale**: Researchers need structured handoffs from Paper Agent to Python/Jupyter data pipelines and modern typesetting environments. This ticket adds structured export formats: Pandas DataFrame JSON, clean BibTeX, and Typst project scaffolding.
+- **Global Rule audit**: Local file conversion; no external services or dependencies.
+
+### [P0-17] Local offline PDF tabular data extractor (`pa extract-tables`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P0
+- **Effort**: 2 engineering days
+- **Source**: Paper Agent 4 multimodal micro-evidence initiative.
+- **Rationale**: Academic papers report critical empirical evidence in tables (Table 1: Descriptive Stats, Table 2: Baseline Regressions). PyMuPDF drawing paths and cell geometry allow high-fidelity offline reconstruction into Markdown and JSON matrices without expensive cloud OCR APIs.
+- **Global Rule audit**: Pure PyMuPDF offline parsing; zero API cost.
+
+### [P0-18] Empirical design, variable definition, and data source extractor (`pa extract-design`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P0
+- **Effort**: 2-3 engineering days
+- **Source**: User directive 2026-10-02 (supporting external crawlers and databases).
+- **Rationale**: Before writing scrapers or querying databases (Wind, CSMAR, Compustat), researchers need to know how the literature constructs samples and variables. This tool extracts: (1) Data sources & time coverage, (2) Dependent/independent variable proxy definitions and formulas, (3) Baseline control variables.
+- **Global Rule audit**: Local passage parsing via M2 evidence packets; zero cloud infra.
+
+### [P1-22] Theoretical proposition controversy and consensus matrix (`pa consensus`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P1
+- **Effort**: 3 engineering days
+- **Source**: Paper Agent 4 consensus graph requirement.
+- **Rationale**: Maps competing theoretical propositions and empirical hypotheses ($H_1$ vs. $H_2$). Generates a structured matrix of agreement vs. contradiction across corpus papers, identifying consensus baselines and active debates.
+- **Global Rule audit**: Pure SQLite adjacency and relational joins; no neo4j or cloud graph DBs.
+
+### [P1-23] Evolutionary citation and methodology lineage (`pa lineage`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P1
+- **Effort**: 2 engineering days
+- **Source**: Literature review depth improvement.
+- **Rationale**: Traces methodology evolution (Baseline model -> Extension -> Paradigm shift) by joining OpenAlex citation graphs with M2 methodology section fingerprints.
+- **Global Rule audit**: Uses free OpenAlex endpoints + local SQLite cache; zero cost.
+
+### [P1-24] Statistical report consistency and heuristic verification (`pa stats-check`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P1
+- **Effort**: 1-2 engineering days
+- **Source**: Academic rigor and empirical validation.
+- **Rationale**: Implements local heuristic verification (similar to statcheck) to parse reported test statistics ($t, F, z, r$) and verify degrees of freedom against reported $p$-values, flagging mathematical discrepancies.
+- **Global Rule audit**: Pure regex and local math verification; runs completely offline.
+
+### [P1-25] Simulation calibration parameters and effect-size prior harvester (`pa extract-parameters`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P1
+- **Effort**: 2 engineering days
+- **Source**: User directive 2026-10-02 (supporting external simulation and fitting).
+- **Rationale**: Numerical simulation and structural estimation require parameter priors from literature (e.g., risk aversion, elasticities, discount factors). Extracts numerical parameters, confidence intervals, and estimation context into a calibration table.
+- **Global Rule audit**: Local regex and M2 evidence scanning; zero external API cost.
+
+### [P2-20] Evidence-grounded literature review section scripter (`pa project review --evidence-backed`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P2
+- **Effort**: 2 engineering days
+- **Source**: Scope boundary realignment (restricting generation strictly to Related Work).
+- **Rationale**: Replaces naive abstract concatenation with an evidence-grounded literature review generator. Every generated claim sentence binds directly to a verified local PDF passage with exact DOI, page number, and character offsets.
+- **Global Rule audit**: Local template synthesis; no hosted LLM required by default.
+
+### [P2-21] Manuscript citation fidelity and hallucination audit (`pa cite-audit`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P2
+- **Effort**: 3 engineering days
+- **Source**: Academic integrity and hallucination defense.
+- **Rationale**: Accepts a full academic manuscript written by the user. Extracts all citations (`\cite{...}` or `[^cite]`) and compares the assertion against the cached source PDF text, reporting an Evidence Fidelity Score and flagging misattributions or ungrounded claims.
+- **Global Rule audit**: Local lexical and NLI comparison; runs 100% offline.
+
+### [P2-22] Standalone offline interactive knowledge graph (`pa graph --interactive`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P2
+- **Effort**: 2 engineering days
+- **Source**: User experience and visual exploration.
+- **Rationale**: Exports an interactive, single-file HTML visualization (using embedded D3/vis.js) showing citation networks, topic clusters, and controversy links without requiring a running web server.
+- **Global Rule audit**: Static self-contained HTML generation; zero maintenance.
+
+### [P2-23] Empirical findings literature alignment engine (`pa align-findings`)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P2
+- **Effort**: 2-3 engineering days
+- **Source**: User directive 2026-10-02 (post-estimation literature alignment).
+- **Rationale**: After users estimate regressions or complete simulations in external codebases, they can input their empirical finding. The engine searches local literature to classify: (1) Direct supporting evidence, (2) Direct contradictory evidence, (3) Novel heterogeneity.
+- **Global Rule audit**: Local SQLite claim retrieval and lexical matching; zero cloud dependencies.
+
+### [P3-33] Dual-agent review & adjudication loop (Reviewer Panel vs Drafter)
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P3
+- **Effort**: 4-5 engineering days
+- **Source**: Paper Agent 4 quality assurance.
+- **Rationale**: Connects the 5-role academic reviewer panel with Paper Agent's M2/M5 adjudication schema, evaluating generated literature review sections against strict peer-review criteria before user handoff.
+- **Global Rule audit**: Runs with local rules or strictly budget-capped external calls.
+
+### [P3-34] M6 Public-OA pilot and zero-retention safe gateway
+
+- **Status**: proposed
+- **Added**: 2026-10-02
+- **Priority**: P3
+- **Effort**: 3 engineering days
+- **Source**: Milestone 6 progression from `[P3-32]`.
+- **Rationale**: Implements the public-OA pilot with per-run consent, mandatory token/cost hard ceilings ($0.01/run), anti-prompt injection validation, and strict zero-retention attestations.
+- **Global Rule audit**: Mandatory operator confirmation, immutable audit log, and strict budget caps.
