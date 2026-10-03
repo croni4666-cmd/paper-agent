@@ -104,7 +104,9 @@ def _fetch_one_entry(
     from .fetch import fetch  # lazy import to avoid heavy deps
     import re
     key = entry.get('key', 'unknown')
-    doi = (entry.get('doi') or '').strip()
+    from .identifiers import split_identifiers
+    doi, aid = split_identifiers(entry)
+    identifier = doi or (f'arXiv:{aid}' if aid else '')
     title = entry.get('title', '')
     clean_key = re.sub(r'[^A-Za-z0-9_\-.]', '_', str(key)).strip('._') or 'unknown'
     out_path = out_dir / f"{clean_key}.pdf"
@@ -114,7 +116,7 @@ def _fetch_one_entry(
         out_path = out_dir / f"sanitized_{clean_key[:32]}.pdf"
     result = FetchResult(key=key, doi=doi, title=title, success=False)
 
-    if not doi and not title:
+    if not identifier and not title:
         result.error = 'no doi or title'
         return result
 
@@ -127,9 +129,9 @@ def _fetch_one_entry(
 
     t0 = time.time()
     try:
-        # Try DOI first if present
-        if doi:
-            r = fetch(doi=doi, out_path=str(out_path), prefer=prefer)
+        # fetch's scalar transport accepts arXiv IDs; result.doi stays bibliographic.
+        if identifier:
+            r = fetch(doi=identifier, out_path=str(out_path), prefer=prefer)
             if 'error' not in r:
                 result.success = True
                 result.source = r.get('source', '')

@@ -23,6 +23,8 @@ SECTIONS = {
     'overview': 'introduction',
     # methods
     'methods': 'methods', 'methodology': 'methods', 'materials and methods': 'methods',
+    'method': 'methods', 'research method': 'methods', 'research methods': 'methods',
+    'research methodology': 'methods', 'research method and analysis': 'methods',
     'data': 'methods', 'dataset': 'methods', 'datasets': 'methods',
     'data and methods': 'methods', 'data and methodology': 'methods',
     'setting and data': 'methods', 'our setting': 'methods',
@@ -89,7 +91,7 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
     if not body.startswith(b'%PDF'):
         raise ValueError('expected PDF')
     artifact = hashlib.sha256(body).hexdigest()
-    extractor = f'PyMuPDF/{fitz.VersionBind};text;sort=false;{VERSION}'
+    extractor = f'PyMuPDF/{fitz.VersionBind};text;sort=false;{VERSION};headings-v2'
     pages, spans = [], []
     total = 0
     section = 'unknown'
@@ -114,8 +116,13 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
             # Split at explicit heading lines so a methods label cannot silently
             # carry into results on the same page. Unknown layouts stay advisory.
             boundaries = [(0, section)]
+            previous_number = False
             for match in re.finditer(r'^[^\n]+$', text, re.MULTILINE):
                 line = match.group().strip()
+                split_number = previous_number
+                # Unknown major sections reset the parent; subsection titles
+                # (e.g. 4.1 Productivity Metrics under Main Results) inherit it.
+                previous_number = bool(re.fullmatch(r'(?:\d+|[IVXLCDM]+)[.]?', line))
                 if not line or len(line) > 120:
                     continue
 
@@ -129,13 +136,20 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
                 heading_lead = clean_heading.split(':', 1)[0].split(' - ', 1)[0].strip()
 
                 detected = None
-                if clean_heading in SECTIONS:
+                if re.match(r'^abstract[.:]\s', line, re.I):
+                    detected = 'abstract'
+                elif clean_heading in SECTIONS:
                     detected = SECTIONS[clean_heading]
                 elif heading_lead in SECTIONS:
                     detected = SECTIONS[heading_lead]
                 elif re.match(r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*)[.:\-\s]+[a-zA-Z]', line, re.IGNORECASE):
                     # Explicit numbered section header (e.g. "3 Conversational Change", "5 Attrition")
                     # but not recognized as a standard section name: reset section to 'unknown'
+                    detected = 'unknown'
+                elif split_number and len(line.split()) <= 18 and not re.search(r'[.,;]', line) and sum(
+                        word[:1].isupper() for word in line.split()) >= max(1, len(line.split()) // 2):
+                    # A separately extracted number followed by a short title.
+                    # Avoid carrying methods into an unclassified results heading.
                     detected = 'unknown'
 
                 if detected is not None:
