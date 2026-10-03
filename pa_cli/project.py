@@ -413,17 +413,23 @@ def corpus_merge(
             is_stub = t_title.startswith("Paper 10.") or not target_entry.get("author")
             has_rich = s_title and not s_title.startswith("Paper 10.") and (e.get("author") or e.get("journal"))
             if is_stub and has_rich:
+                target_bare = set(target_entry.get("_bare_fields") or ())
+                source_bare = set(e.get("_bare_fields") or ())
                 for field, val in e.items():
-                    if field in ("key", "_raw", "_was_updated"):
+                    if field in ("key", "_raw", "_was_updated", "_bare_fields"):
                         continue
                     if val and (not target_entry.get(field) or field in ("title", "author", "journal", "booktitle", "year", "volume", "number", "pages", "type", "doi", "url", "abstract", "note", "publisher", "crossref")):
                         target_entry[field] = val
                         if field == "crossref":
                             target_entry["_crossref_from_source"] = True
-                if e.get("_bare_fields"):
-                    target_entry.setdefault("_bare_fields", set()).update(
-                        f for f in e["_bare_fields"] if f in target_entry
-                    )
+                        if field in source_bare:
+                            target_bare.add(field)
+                        else:
+                            target_bare.discard(field)
+                if target_bare:
+                    target_entry["_bare_fields"] = list(sorted(target_bare))
+                else:
+                    target_entry.pop("_bare_fields", None)
                 if id(target_entry) in target_entry_ids:
                     target_entry["_was_updated"] = True
                     updated.append(e)
@@ -1239,11 +1245,14 @@ def project_export(
     if format_lower == "bibtex":
         content = files['refs'].read_text(encoding="utf-8", errors="replace")
     elif format_lower == "json":
+        clean_papers = []
+        for e in entries:
+            clean_papers.append({k: v for k, v in e.items() if not k.startswith("_")})
         export_dict = {
             "meta": meta,
-            "n_papers": len(entries),
+            "n_papers": len(clean_papers),
             "n_pdfs": len(pdf_map),
-            "papers": entries,
+            "papers": clean_papers,
             "topics": topics_data.get("topics", []) if topics_data else [],
         }
         content = json.dumps(export_dict, ensure_ascii=False, indent=2)
@@ -1472,16 +1481,23 @@ def project_enrich(
                         abstract = ' '.join(w for _, w in words)
 
                 from .bibtex import format_authors
+                bare_fields = set(entry.get("_bare_fields") or ())
                 if title:
                     entry['title'] = title
+                    bare_fields.discard("title")
                 if authors:
                     entry['author'] = format_authors(authors)
+                    bare_fields.discard("author")
                 if year:
                     entry['year'] = year
+                    bare_fields.discard("year")
                 if venue:
                     entry['journal'] = venue
-                    if entry.get("_bare_fields"):
-                        entry["_bare_fields"].discard("journal")
+                    bare_fields.discard("journal")
+                if bare_fields:
+                    entry["_bare_fields"] = list(sorted(bare_fields))
+                else:
+                    entry.pop("_bare_fields", None)
                 if norm_doi:
                     entry['doi'] = norm_doi
                 from .bibtex import _TYPE_MAP

@@ -56,11 +56,21 @@ def build_screening_dict(bib_path: Path) -> Dict[str, Dict[str, str]]:
         if not key:
             continue
         # Authors field in bibtex is comma-separated "Last, First and Last2, First2"
-        # Normalize: replace " and " with "; " for CSV friendliness
         authors = e.get('author', '').replace(' and ', '; ')
-        venue = e.get('journal', '') or e.get('booktitle', '') or e.get('publisher', '')
-        if e.get('_macros') and venue.lower() in e['_macros']:
-            venue = e['_macros'][venue.lower()]
+        venue_field = None
+        for f in ('journal', 'booktitle', 'publisher'):
+            if e.get(f):
+                venue_field = f
+                break
+
+        if venue_field:
+            raw_v = e.get(venue_field, '')
+            bare_fields = set(e.get('_bare_fields') or ())
+            is_bare = venue_field in bare_fields
+            from .scaffold import resolve_bibtex_value
+            venue = resolve_bibtex_value(raw_v, is_bare=is_bare, macros=e.get('_macros'))
+        else:
+            venue = ''
         out[key] = {
             'paper_key': key,
             'title': e.get('title', ''),

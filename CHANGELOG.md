@@ -13,6 +13,26 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.5] - 2026-10-03
+
+### Bug Fixes & Hardening — Fifth Round GitHub Code Review Remediation (2026-10-03)
+
+- **Issue 1 (Syntax Marker Synchronization on Field Replacement in Merge & Enrich)**:
+  - Updated `corpus_merge` in `pa_cli/project.py` to synchronize bare status (`_bare_fields`) strictly per updated field: when a target field is overwritten by a rich source field, its bare marker is cleared so literal titles/authors/journals format with braces (e.g. `title = {A Rich Study}`); un-updated target fields retain their own syntax markers without cross-contamination.
+  - Updated `project_enrich` in `pa_cli/project.py` to clear bare markers for `title`, `author`, `year`, and `journal` when replaced by enriched metadata, preventing bare multi-word strings in formatted output.
+- **Issue 2 (JSON Export Serialization & Defense-in-Depth Clean Boundary)**:
+  - Stored `_bare_fields` as a deterministic sorted JSON-serializable list in `_parse_bibtex_fields`, preventing `TypeError: Object of type set is not JSON serializable` on bare year (`year = 2024`) or macro values.
+  - Sanitized `project_export(format="json")` in `pa_cli/project.py` to strip internal metadata fields starting with `_` from exported paper entries.
+- **Issue 3 (Full Value Expression Parser for Quoted/Braced Concatenation & Multiline Expressions)**:
+  - Overhauled `_parse_bibtex_fields` in `pa_cli/scaffold.py` with a token-based expression parser supporting braced strings (`{...}`), quoted strings (`"..."`), and bare tokens across `#` concatenations and multiline breaks.
+  - Fully preserves expressions starting with quotes or braces (e.g. `journal = "Journal" # " Suppl"`, `journal = {Journal} # " Suppl"`) and multiline `#\n` breaks without truncation or hanging `#`.
+- **Issue 4 (Accurate Venue Macro Resolution in Screening Export)**:
+  - Added `resolve_bibtex_value` in `pa_cli/scaffold.py` to expand macro identifiers and concatenated expressions only when fields are genuinely marked as bare (`_bare_fields`).
+  - Updated `build_screening_dict` in `pa_cli/export_screening.py` to distinguish literal string venues (`journal = {jmacro}` or `"jmacro"`) from macro references (`journal = jmacro`), eliminating erroneous macro expansions of literal text.
+- **Quality & Regression Coverage**:
+  - Added regression test suite `test_output/test_rereview_e0c1532.py` (9 tests covering all findings and edge cases).
+  - Added `test_rereview_e0c1532.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.4] - 2026-10-03
 
 ### Bug Fixes & Hardening — Fourth Round GitHub Code Review Remediation (2026-10-03)

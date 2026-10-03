@@ -85,8 +85,87 @@ def _find_entry_end(body: str, close_delim: str) -> int:
     return n
 
 
+def resolve_bibtex_value(val: str, is_bare: bool = False, macros: Optional[Dict[str, str]] = None) -> str:
+    """Resolve a BibTeX field value, expanding macros only when is_bare is True.
+
+    If is_bare is False, the value was quoted or braced and represents a literal string.
+    If is_bare is True, bare tokens (macro identifiers) are resolved against macros.
+    Handles single tokens as well as '#' concatenated expressions.
+    """
+    if not val:
+        return ""
+    if not is_bare or not macros:
+        return val
+
+    if "#" in val:
+        tokens = []
+        i = 0
+        n = len(val)
+        while i < n:
+            while i < n and val[i].isspace():
+                i += 1
+            if i >= n:
+                break
+            if val[i] == '{':
+                i += 1
+                depth = 1
+                start = i
+                while i < n and depth > 0:
+                    if val[i] == '\\' and i + 1 < n:
+                        i += 2
+                        continue
+                    if val[i] == '{':
+                        depth += 1
+                    elif val[i] == '}':
+                        depth -= 1
+                    i += 1
+                end = i - 1 if depth == 0 else i
+                tokens.append(val[start:end])
+            elif val[i] == '"':
+                i += 1
+                depth = 0
+                start = i
+                while i < n:
+                    if val[i] == '\\' and i + 1 < n:
+                        i += 2
+                        continue
+                    if val[i] == '{':
+                        depth += 1
+                    elif val[i] == '}':
+                        if depth > 0:
+                            depth -= 1
+                    elif val[i] == '"' and depth == 0:
+                        break
+                    i += 1
+                end = i
+                if i < n and val[i] == '"':
+                    i += 1
+                tokens.append(val[start:end])
+            else:
+                start = i
+                while i < n and not val[i].isspace() and val[i] != '#':
+                    i += 1
+                token_text = val[start:i].strip()
+                if token_text.lower() in macros:
+                    tokens.append(macros[token_text.lower()])
+                else:
+                    tokens.append(token_text)
+
+            while i < n and val[i].isspace():
+                i += 1
+            if i < n and val[i] == '#':
+                i += 1
+
+        return "".join(tokens)
+
+    v_clean = val.strip()
+    if v_clean.lower() in macros:
+        return macros[v_clean.lower()]
+    return val
+
+
 def _parse_bibtex_fields(body: str) -> Dict[str, Any]:
-    """Parse fields from a BibTeX entry body with full brace nesting, macro, and bare number support."""
+    """Parse fields from a BibTeX entry body with full brace nesting, macro, concatenation, and bare number support."""
     fields = {}
     bare_fields = set()
     i = 0
@@ -96,108 +175,110 @@ def _parse_bibtex_fields(body: str) -> Dict[str, Any]:
             i += 1
         if i >= n:
             break
+        if body[i] == '%':
+            while i < n and body[i] != '\n':
+                i += 1
+            continue
         m_name = re.match(r'([A-Za-z0-9_:-]+)\s*=', body[i:])
         if not m_name:
             while i < n and body[i] not in (',', '\n'):
                 i += 1
+            if i < n and body[i] in (',', '\n'):
+                i += 1
             continue
         fname = m_name.group(1).lower()
         i += m_name.end()
-        while i < n and body[i].isspace():
-            i += 1
-        if i >= n:
-            break
 
-        if body[i] == '{':
-            i += 1
-            depth = 1
-            val_start = i
-            while i < n and depth > 0:
-                if body[i] == '{':
-                    depth += 1
-                elif body[i] == '}':
-                    depth -= 1
+        # Parse field value tokens joined by '#'
+        tokens = []
+        has_hash = False
+
+        while i < n:
+            while i < n and body[i].isspace():
                 i += 1
-            val_end = i - 1 if depth == 0 else i
-            fval = body[val_start:val_end]
-        elif body[i] == '"':
-            i += 1
-            val_start = i
-            depth = 0
-            while i < n:
-                if body[i] == '\\' and i + 1 < n:
-                    i += 2
-                    continue
-                if body[i] == '{':
-                    depth += 1
-                elif body[i] == '}':
-                    if depth > 0:
-                        depth -= 1
-                elif body[i] == '"' and depth == 0:
-                    break
+            if i >= n or body[i] in (',', '}', ')'):
+                break
+
+            if body[i] == '{':
                 i += 1
-            val_end = i
-            fval = body[val_start:val_end]
-            if i < n and body[i] == '"':
-                i += 1
-        else:
-            val_start = i
-            depth = 0
-            in_q = False
-            q_depth = 0
-            while i < n:
-                c = body[i]
-                if in_q:
-                    if c == '\\' and i + 1 < n:
+                depth = 1
+                val_start = i
+                while i < n and depth > 0:
+                    if body[i] == '\\' and i + 1 < n:
                         i += 2
                         continue
-                    if c == '{':
-                        q_depth += 1
-                    elif c == '}':
-                        if q_depth > 0:
-                            q_depth -= 1
-                    elif c == '"' and q_depth == 0:
-                        in_q = False
-                    i += 1
-                    continue
-                if c == '"':
-                    in_q = True
-                    q_depth = 0
-                    i += 1
-                    continue
-                if c == '{':
-                    depth += 1
-                    i += 1
-                    continue
-                if c == '}':
-                    if depth > 0:
+                    if body[i] == '{':
+                        depth += 1
+                    elif body[i] == '}':
                         depth -= 1
-                        i += 1
-                        continue
-                    else:
-                        break
-                if c == ')' and depth == 0:
-                    break
-                if c == ',' and depth == 0:
-                    break
-                if c in ('\r', '\n') and depth == 0:
-                    peek = i + 1
-                    while peek < n and body[peek] in (' ', '\t', '\r', '\n'):
-                        peek += 1
-                    if peek < n and body[peek] == '#':
-                        i = peek
-                        continue
-                    break
+                    i += 1
+                val_end = i - 1 if depth == 0 else i
+                tokens.append(('braced', body[val_start:val_end], body[val_start-1:i]))
+            elif body[i] == '"':
                 i += 1
-            fval = body[val_start:i].strip()
+                val_start = i
+                depth = 0
+                while i < n:
+                    if body[i] == '\\' and i + 1 < n:
+                        i += 2
+                        continue
+                    if body[i] == '{':
+                        depth += 1
+                    elif body[i] == '}':
+                        if depth > 0:
+                            depth -= 1
+                    elif body[i] == '"' and depth == 0:
+                        break
+                    i += 1
+                val_end = i
+                if i < n and body[i] == '"':
+                    i += 1
+                tokens.append(('quoted', body[val_start:val_end], body[val_start-1:i]))
+            else:
+                val_start = i
+                while i < n and not body[i].isspace() and body[i] not in ('#', ',', '}', ')'):
+                    i += 1
+                raw_token = body[val_start:i]
+                if not raw_token:
+                    break
+                tokens.append(('bare', raw_token, raw_token))
+
+            while i < n and body[i].isspace():
+                i += 1
+
+            if i < n and body[i] == '#':
+                has_hash = True
+                i += 1
+                while i < n and body[i].isspace():
+                    i += 1
+            else:
+                break
+
+        if i < n and body[i] == ',':
+            i += 1
+
+        if not tokens:
+            fields[fname] = ""
+            continue
+
+        if not has_hash and len(tokens) == 1:
+            ttype, inner, raw = tokens[0]
+            val = inner.strip().replace("\r", "")
+            val = re.sub(r"[ \t]+", " ", val)
+            fields[fname] = val
+            if ttype == 'bare':
+                bare_fields.add(fname)
+        else:
+            parts = []
+            for ttype, inner, raw in tokens:
+                p = raw.strip().replace("\r", "")
+                p = re.sub(r"[ \t]+", " ", p)
+                parts.append(p)
+            fields[fname] = " # ".join(parts)
             bare_fields.add(fname)
 
-        fval = fval.strip().replace("\r", "")
-        fval = re.sub(r"[ \t]+", " ", fval)
-        fields[fname] = fval
-
     if bare_fields:
-        fields["_bare_fields"] = bare_fields
+        fields["_bare_fields"] = list(sorted(bare_fields))
     return fields
 
 
