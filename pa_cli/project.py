@@ -387,6 +387,7 @@ def corpus_merge(
         return ("title_year", f"{title}_{year}")
 
     existing_entries_by_key = {}
+    target_entry_ids = {id(e) for e in target_entries}
     for e in target_entries:
         k = _entry_key(e)
         if k[1]:
@@ -395,8 +396,15 @@ def corpus_merge(
     added = []
     updated = []
     skipped = []
+    source_key_to_canonical: Dict[str, Dict] = {}
 
     for e in source_entries:
+        if e.get("_is_special") or e.get("type") in ("string", "preamble", "comment"):
+            target_special_raws = {t.get("_raw", "").strip() for t in target_entries if t.get("_is_special") or t.get("type") in ("string", "preamble", "comment")}
+            if e.get("_raw", "").strip() not in target_special_raws:
+                added.append(e)
+            continue
+
         k = _entry_key(e)
         if k[1] and k in existing_entries_by_key:
             target_entry = existing_entries_by_key[k]
@@ -406,34 +414,37 @@ def corpus_merge(
             has_rich = s_title and not s_title.startswith("Paper 10.") and (e.get("author") or e.get("journal"))
             if is_stub and has_rich:
                 for field, val in e.items():
-                    if field == "key":
+                    if field in ("key", "_raw", "_was_updated"):
                         continue
-                    if val and (not target_entry.get(field) or field in ("title", "author", "journal", "booktitle", "year", "volume", "number", "pages", "type", "doi", "url", "abstract", "note", "publisher")):
+                    if val and (not target_entry.get(field) or field in ("title", "author", "journal", "booktitle", "year", "volume", "number", "pages", "type", "doi", "url", "abstract", "note", "publisher", "crossref")):
                         target_entry[field] = val
-                target_entry["_was_updated"] = True
-                updated.append(e)
+                        if field == "crossref":
+                            target_entry["_crossref_from_source"] = True
+                if id(target_entry) in target_entry_ids:
+                    target_entry["_was_updated"] = True
+                    updated.append(e)
+                else:
+                    skipped.append(e)
             else:
                 skipped.append(e)
+            canonical_entry = target_entry
         else:
             if k[1]:
                 existing_entries_by_key[k] = e
             added.append(e)
+            canonical_entry = e
+
+        if e.get("key"):
+            source_key_to_canonical[e["key"]] = canonical_entry
 
     from .bibtex import format_bibtex_entry
     import tempfile
 
-    # Build comprehensive source key mapping to target keys (for collisions & dedup)
+    # Allocate non-colliding keys for added regular entries
     seen_keys = {item.get("key") for item in target_entries if item.get("key")}
-    source_key_map: Dict[str, str] = {}
-
-    for e in source_entries:
-        k = _entry_key(e)
-        if k[1] and k in existing_entries_by_key:
-            target_entry = existing_entries_by_key[k]
-            if e.get("key") and target_entry.get("key"):
-                source_key_map[e["key"]] = target_entry["key"]
-
     for item in added:
+        if item.get("_is_special") or item.get("type") in ("string", "preamble", "comment"):
+            continue
         orig_k = item.get("key") or "ref"
         candidate = orig_k
         suffix = 2
@@ -442,10 +453,16 @@ def corpus_merge(
             suffix += 1
         seen_keys.add(candidate)
         item["key"] = candidate
-        source_key_map[orig_k] = candidate
 
-    # Remap crossref references in added entries using source_key_map
-    for item in added:
+    # Build comprehensive source key mapping to canonical keys (for collisions, dedup, and aliases)
+    source_key_map: Dict[str, str] = {}
+    for src_k, canonical_ent in source_key_to_canonical.items():
+        if canonical_ent.get("key"):
+            source_key_map[src_k] = canonical_ent["key"]
+
+    # Remap crossref references in added entries AND updated target entries using source_key_map
+    entries_to_remap = [item for item in added if not item.get("_is_special") and item.get("type") not in ("string", "preamble", "comment")] + [item for item in target_entries if item.get("_was_updated") and item.get("_crossref_from_source")]
+    for item in entries_to_remap:
         crossref = item.get("crossref")
         if crossref and crossref in source_key_map:
             item["crossref"] = source_key_map[crossref]
@@ -463,9 +480,15 @@ def corpus_merge(
             else:
                 rebuilt_text += format_bibtex_entry(item) + "\n"
         if added:
-            rebuilt_text += f"\n% --- Merged from {source_desc} on {datetime.now().isoformat(timespec='seconds')} ---\n"
-            for item in added:
-                rebuilt_text += format_bibtex_entry(item) + "\n"
+            added_specials = [item for item in added if item.get("_is_special") or item.get("type") in ("string", "preamble", "comment")]
+            added_regulars = [item for item in added if not item.get("_is_special") and item.get("type") not in ("string", "preamble", "comment")]
+            if added_specials:
+                for item in added_specials:
+                    rebuilt_text += item.get("_raw", "").strip() + "\n\n"
+            if added_regulars:
+                rebuilt_text += f"\n% --- Merged from {source_desc} on {datetime.now().isoformat(timespec='seconds')} ---\n"
+                for item in added_regulars:
+                    rebuilt_text += format_bibtex_entry(item) + "\n"
 
         target_file = target_files['refs']
         with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=target_file.parent, delete=False, suffix='.tmp') as f_tmp:
@@ -476,9 +499,16 @@ def corpus_merge(
         save_meta(target_slug, meta, root)
 
     elif added:
-        appended_text = "\n% --- Merged from " + source_desc + " on " + datetime.now().isoformat(timespec='seconds') + " ---\n"
-        for item in added:
-            appended_text += format_bibtex_entry(item) + "\n"
+        appended_text = ""
+        added_specials = [item for item in added if item.get("_is_special") or item.get("type") in ("string", "preamble", "comment")]
+        added_regulars = [item for item in added if not item.get("_is_special") and item.get("type") not in ("string", "preamble", "comment")]
+        if added_specials:
+            for item in added_specials:
+                appended_text += "\n" + item.get("_raw", "").strip() + "\n"
+        if added_regulars:
+            appended_text += "\n% --- Merged from " + source_desc + " on " + datetime.now().isoformat(timespec='seconds') + " ---\n"
+            for item in added_regulars:
+                appended_text += format_bibtex_entry(item) + "\n"
 
         target_file = target_files['refs']
         existing_text = target_file.read_text(encoding='utf-8') if target_file.exists() else ""
@@ -1371,6 +1401,8 @@ def project_enrich(
     enriched_entries = []
 
     for entry in entries:
+        if entry.get("_is_special") or entry.get("type") in ("string", "preamble", "comment"):
+            continue
         doi = (entry.get('doi') or '').strip()
         if not doi and entry.get('url'):
             m = re.search(r'10\.\d{4,9}/[-._;()/:A-Za-z0-9]+', entry['url'])
@@ -1471,7 +1503,9 @@ def project_enrich(
             f"% Enriched with rich academic metadata on {datetime.now().isoformat(timespec='seconds')}\n\n"
         )
         for e in entries:
-            if not e.get("_was_enriched") and e.get("_raw"):
+            if e.get("_is_special") or e.get("type") in ("string", "preamble", "comment"):
+                rebuilt_text += e.get("_raw", "").strip() + "\n\n"
+            elif not e.get("_was_enriched") and e.get("_raw"):
                 rebuilt_text += e["_raw"].strip() + "\n\n"
             else:
                 rebuilt_text += format_bibtex_entry(e) + "\n"

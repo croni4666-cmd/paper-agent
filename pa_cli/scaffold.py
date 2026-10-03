@@ -73,11 +73,19 @@ def _parse_bibtex_fields(body: str) -> Dict[str, str]:
         elif body[i] == '"':
             i += 1
             val_start = i
-            while i < n and body[i] != '"':
+            depth = 0
+            while i < n:
                 if body[i] == '\\' and i + 1 < n:
                     i += 2
-                else:
-                    i += 1
+                    continue
+                if body[i] == '{':
+                    depth += 1
+                elif body[i] == '}':
+                    if depth > 0:
+                        depth -= 1
+                elif body[i] == '"' and depth == 0:
+                    break
+                i += 1
             val_end = i
             fval = body[val_start:val_end]
             if i < n and body[i] == '"':
@@ -97,14 +105,44 @@ def _parse_bibtex_fields(body: str) -> Dict[str, str]:
 def parse_bibtex(text: str) -> List[Dict[str, str]]:
     """Robust bibtex parser preserving nested braces, bare numbers, macros, and entry types."""
     entries = []
-    chunks = re.split(r"(?=@[\w-]+\s*\{)", text)
+    chunks = re.split(r"(?=@[\w-]+\s*[\{\(])", text)
     for chunk in chunks:
         chunk_clean = chunk.strip()
         if not chunk_clean.startswith("@"):
             continue
-        m = re.match(r"@([\w-]+)\s*\{\s*([^,\s]+)\s*,", chunk_clean)
-        if not m:
+        m_head = re.match(r"@([\w-]+)\s*([\{\(])", chunk_clean)
+        if not m_head:
             continue
+        raw_type = m_head.group(1).lower()
+        open_delim = m_head.group(2)
+        close_delim = "}" if open_delim == "{" else ")"
+
+        # Preserve special BibTeX entries: @string, @preamble, @comment
+        if raw_type in ("string", "preamble", "comment"):
+            macro_name = f"_{raw_type}"
+            if raw_type == "string":
+                m_str = re.match(r"@string\s*[\{\(]\s*([A-Za-z0-9_:-]+)\s*=", chunk_clean, re.IGNORECASE)
+                if m_str:
+                    macro_name = m_str.group(1)
+            entries.append({
+                "type": raw_type,
+                "key": macro_name,
+                "macro": macro_name,
+                "_raw": chunk_clean,
+                "_is_special": True,
+            })
+            continue
+
+        m = re.match(r"@([\w-]+)\s*[\{\(]\s*([^,\s]+)\s*,", chunk_clean)
+        if not m:
+            entries.append({
+                "type": raw_type,
+                "key": f"_{raw_type}",
+                "_raw": chunk_clean,
+                "_is_special": True,
+            })
+            continue
+
         raw_type, key = m.group(1).lower(), m.group(2)
         from .bibtex import _TYPE_MAP
         etype = _TYPE_MAP.get(raw_type, raw_type)
@@ -115,9 +153,9 @@ def parse_bibtex(text: str) -> List[Dict[str, str]]:
         depth = 0
         end = len(body) - 1
         for i in range(len(body) - 1, -1, -1):
-            if body[i] == "}":
+            if body[i] == close_delim:
                 depth += 1
-            elif body[i] == "{":
+            elif body[i] == open_delim:
                 depth -= 1
             if depth == 0:
                 end = i

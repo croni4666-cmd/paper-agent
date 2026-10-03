@@ -13,10 +13,13 @@ from __future__ import annotations
 import json
 import math
 import shutil
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from pa_cli.bibtex import format_bibtex_entry, _TYPE_MAP
 from pa_cli.evidence import _hash

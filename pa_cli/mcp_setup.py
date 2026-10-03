@@ -109,6 +109,14 @@ def install(use_uvx: bool = False, dry_run: bool = False) -> dict:
           "config_json": str (the JSON block, always populated)
           "stderr": str (only on install_failed)
     """
+    if dry_run:
+        print("[pa-mcp] DRY-RUN: would run `python -m pip install --user paper-search-mcp`")
+        _print_config_block(method="pip")
+        return {"status": "dry_run", "method": "pip",
+                "config_json": json.dumps({
+                    "mcpServers": {"paper-search-mcp": {
+                        "command": "python", "args": ["-m", "paper_search_mcp.server"]}}}, indent=2)}
+
     if use_uvx and _have_uvx():
         # uvx runs the package on-demand without permanent install
         _print_config_block(method="uvx")
@@ -126,13 +134,6 @@ def install(use_uvx: bool = False, dry_run: bool = False) -> dict:
 
     # Need to install. Use --user so it goes to user site-packages and can
     # be cleanly uninstalled later.
-    if dry_run:
-        print("[pa-mcp] DRY-RUN: would run `python -m pip install --user paper-search-mcp`")
-        _print_config_block(method="pip")
-        return {"status": "dry_run", "method": "pip",
-                "config_json": json.dumps({
-                    "mcpServers": {"paper-search-mcp": {
-                        "command": "python", "args": ["-m", "paper_search_mcp.server"]}}}, indent=2)}
 
     print(f"[pa-mcp] installing {PUBLIC_MCP_PKG} via pip (user site-packages) ...")
     result = subprocess.run(

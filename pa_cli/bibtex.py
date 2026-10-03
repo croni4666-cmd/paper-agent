@@ -187,7 +187,14 @@ def format_bibtex_entry(entry: Dict) -> str:
     Unlike to_bibtex() which constructs a new cite key and maps specific fields,
     format_bibtex_entry() preserves the original cite key, entry type, and any
     standard or custom fields (e.g. volume, pages, abstract, note, url) verbatim.
+    Special entries (@string, @preamble, @comment) are returned verbatim.
     """
+    if entry.get("_is_special") or entry.get("type") in ("string", "preamble", "comment"):
+        raw = entry.get("_raw", "").strip()
+        if raw:
+            return raw + "\n\n"
+        return ""
+
     key = str(entry.get("key", "")).strip() or "ref"
     raw_type = str(entry.get("type", "article")).strip().lower() or "article"
     etype = _TYPE_MAP.get(raw_type, raw_type)
@@ -199,7 +206,7 @@ def format_bibtex_entry(entry: Dict) -> str:
         "publisher", "address", "url", "abstract", "note"
     ]
     fields = []
-    seen = {"key", "type", "_raw", "_was_updated", "_was_enriched"}
+    seen = {"key", "type", "_raw", "_was_updated", "_was_enriched", "_is_special", "macro"}
     for f in standard_order:
         val = entry.get(f)
         if val is not None and str(val).strip():

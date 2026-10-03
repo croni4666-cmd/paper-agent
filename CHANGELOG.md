@@ -13,6 +13,34 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.3] - 2026-10-03
+
+### Bug Fixes & Hardening — Third Round GitHub Code Review Remediation (2026-10-03)
+
+- **Issue 1 (Complete Bibliography Structure & Special Entries Preservation)**:
+  - Fixed `parse_bibtex` in `pa_cli/scaffold.py`: upgraded entry pattern to parse and retain `@string`, `@preamble`, and `@comment` records with balanced delimiter handling. Marked special records with `_is_special: True` and preserved raw chunk text in `_raw`.
+  - Fixed `corpus_merge` and `project_enrich` in `pa_cli/project.py`: special entries (`@string`, `@preamble`, `@comment`) are preserved byte-for-byte across both in-place stub updates and merge additions, preventing dangling macro references (`journal = jmacro`) and document preamble truncation.
+  - Excluded special records from stub enrichment calculations in `project_enrich`.
+- **Issue 2 (Quoted Field Scanner Nesting & Brace Depth Tracking)**:
+  - Fixed quoted-value scanner in `pa_cli/scaffold.py` (`_parse_bibtex_fields`): added brace depth counter (`depth`) and escaped character handling inside quoted strings (`body[i] == '"'`).
+  - Quoted strings now only terminate on `"` when `depth == 0`, correctly parsing titles containing nested braces and quotes (e.g. `title="A {"quoted"} study"`), preventing truncated titles, syntax corruption, and data loss upon round-trip serialization.
+- **Issue 3 (Model Context Protocol SDK Version Pinning & Compatibility)**:
+  - Constrained `mcp` optional dependency in `pyproject.toml` to `"mcp>=1.0.0,<2.0.0"`, aligning with `pa_cli/mcp_fetch.py` implementation of the MCP 1.x protocol (`Server.list_tools`).
+  - Prevented pip from installing `mcp>=2.0.0` which broke `_build_server()` and CI jobs due to upstream breaking API removals.
+  - Verified MCP stdio server protocol and tool list handlers (17/17 tests passing).
+- **Issue 4 (Crossref Remapping for Updated Target Stubs on Cite-Key Collisions)**:
+  - Fixed `corpus_merge` in `pa_cli/project.py`: tracked `_crossref_from_source` when copying metadata from richer source records to target stub entries.
+  - Expanded crossref remapping loop to include both newly added entries and updated target stubs whose crossrefs originated from the source.
+  - When a source parent book collides with an existing target cite-key and is disambiguated (e.g. `parent` -> `parent_v2`), the updated target stub's `crossref` is correctly updated to `parent_v2` instead of erroneously pointing to the unrelated target parent.
+- **Issue 5 (Canonical Object Mapping for Intra-Source Aliases Prior to Collision Resolution)**:
+  - Refactored deduplication and collision resolution sequence in `corpus_merge` (`pa_cli/project.py`): mapped each source entry key (including deduplicated aliases) to its canonical dictionary object (`source_key_to_canonical`).
+  - Suffix-based collision resolution updates the canonical object's `key` in-place, and `source_key_map` is derived subsequently from canonical objects.
+  - Ensures source aliases (e.g. `parent` and `alias` sharing the same DOI) resolve to the final disambiguated key (`parent_v2`), eliminating dangling or misdirected cross-references for dependent child entries.
+- **Quality & Test Coverage**:
+  - Added full regression test suite `test_output/test_rereview_93a2db8.py` (8 new test cases covering all 5 findings).
+  - Prioritized `--dry-run` flag handling in `pa_cli/mcp_setup.py` so dry-run simulations always display intent regardless of host environment package state.
+  - Added `test_rereview_93a2db8.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.2] - 2026-10-02
 
 ### Bug Fixes & Hardening — Second Round GitHub Code Review Remediation (2026-10-02)
