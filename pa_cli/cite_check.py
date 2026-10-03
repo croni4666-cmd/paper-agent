@@ -21,7 +21,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, Optional, Any
 
 from .scaffold import parse_bibtex, load_bibtex
 
@@ -140,41 +140,56 @@ def cross_ref(
 # ──────────────────────────────────────────────────────────────────────
 
 def format_report(
-    result: Dict[str, List[Dict]],
+    result: Dict[str, Any],
     skeleton_path: Path,
     bib_path: Path,
+    n_placeholders: Optional[int] = None,
+    n_unique_placeholders: Optional[int] = None,
+    n_bib_keys: Optional[int] = None,
 ) -> str:
     """Human-readable report."""
+    if n_placeholders is None:
+        n_placeholders = result.get('n_placeholders', result.get('total_placeholders'))
+    if n_unique_placeholders is None:
+        n_unique_placeholders = result.get('n_unique_placeholder_keys', result.get('unique_placeholders'))
+    if n_bib_keys is None:
+        n_bib_keys = result.get('n_bib_keys', result.get('total_bib_keys'))
+
+    unique_bad = len({k['key'] for k in (result.get('missing', []) + result.get('typoed', []))})
+    if n_placeholders is None:
+        n_placeholders = sum(len(v) for v in result.values() if isinstance(v, list) and 'line' in (v[0] if v else {}))
+    if n_bib_keys is None:
+        n_bib_keys = len(result.get('orphan', [])) + unique_bad
+
     lines = []
     lines.append(f"# Cite-check report")
     lines.append(f"")
     lines.append(f"- Skeleton: {skeleton_path}")
     lines.append(f"- Bibtex:   {bib_path}")
-    lines.append(f"- Placeholders: {sum(len(v) for v in result.values() if 'line' in (v[0] if v else {}))} occurrences "
-                 f"({len({k['key'] for k in (result['missing'] + result['typoed'])})} unique missing/typoed)")
-    lines.append(f"- Bib keys: {len(result['orphan']) + len({k['key'] for k in (result['missing'] + result['typoed'])})}")
+    lines.append(f"- Placeholders: {n_placeholders} occurrences ({unique_bad} unique missing/typoed)")
+    lines.append(f"- Bib keys: {n_bib_keys}")
     lines.append(f"")
 
-    if result['missing']:
+    if result.get('missing'):
         lines.append(f"## [MISSING] ({len(result['missing'])} placeholders have no bib entry)")
         for entry in result['missing']:
             lines.append(f"  - line {entry['line']:4d}: [@{entry['key']}]  <-- no match in {bib_path.name}")
         lines.append("")
 
-    if result['typoed']:
+    if result.get('typoed'):
         lines.append(f"## [TYPOED]  ({len(result['typoed'])} placeholders have a near match)")
         for entry in result['typoed']:
             sugs = ', '.join(f"[@{s}]" for s in entry['suggest'])
             lines.append(f"  - line {entry['line']:4d}: [@{entry['key']}]  <-- did you mean {sugs}?")
         lines.append("")
 
-    if result['orphan']:
+    if result.get('orphan'):
         lines.append(f"## [ORPHAN]  ({len(result['orphan'])} bib entries never cited)")
         for entry in result['orphan']:
             lines.append(f"  - @{entry['key']}")
         lines.append("")
 
-    if not result['missing'] and not result['typoed'] and not result['orphan']:
+    if not result.get('missing') and not result.get('typoed') and not result.get('orphan'):
         lines.append("[OK] All placeholders resolve. No orphans. Clean.")
 
     return "\n".join(lines) + "\n"
@@ -188,7 +203,7 @@ def run_cite_check(
     bib_path: Path,
     skeleton_path: Path,
     output_json: bool = False,
-) -> Tuple[Dict[str, List[Dict]], str]:
+) -> Tuple[Dict[str, Any], str]:
     """Full pipeline: load bib, load skeleton, cross-ref, format report.
 
     Returns (result_dict, report_text).
@@ -200,6 +215,9 @@ def run_cite_check(
     placeholders = extract_cite_keys(skeleton_text)
 
     result = cross_ref(placeholders, bib_keys)
+    result['n_placeholders'] = len(placeholders)
+    result['n_unique_placeholder_keys'] = len({k for k, _ in placeholders})
+    result['n_bib_keys'] = len(bib_keys)
 
     if output_json:
         report = json.dumps({
@@ -213,6 +231,11 @@ def run_cite_check(
             'orphan': result['orphan'],
         }, indent=2, ensure_ascii=False)
     else:
-        report = format_report(result, skeleton_path, bib_path)
+        report = format_report(
+            result, skeleton_path, bib_path,
+            n_placeholders=len(placeholders),
+            n_unique_placeholders=len({k for k, _ in placeholders}),
+            n_bib_keys=len(bib_keys),
+        )
 
     return result, report

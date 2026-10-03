@@ -71,14 +71,15 @@ def build_screening_dict(bib_path: Path) -> Dict[str, Dict[str, str]]:
             venue = resolve_bibtex_value(raw_v, is_bare=is_bare, macros=e.get('_macros'))
         else:
             venue = ''
+        from .bibtex import unescape_bibtex
         out[key] = {
             'paper_key': key,
-            'title': e.get('title', ''),
+            'title': unescape_bibtex(e.get('title', '')),
             'authors': authors,
             'year': e.get('year', ''),
-            'venue': venue,
+            'venue': unescape_bibtex(venue),
             'doi': e.get('doi', ''),
-            'abstract': e.get('abstract', ''),
+            'abstract': unescape_bibtex(e.get('abstract', '')),
             'type': e.get('type', 'misc'),
             'bib_url': f"https://doi.org/{e['doi']}" if e.get('doi') else '',
         }

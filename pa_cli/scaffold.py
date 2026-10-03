@@ -587,10 +587,14 @@ def render_skeleton(
             lines += [f"> {THEME_HEADER_PROMPT}", ""]
         for e in group_entries:
             key = e["key"]
-            title_short = (e.get("title") or "(untitled)").strip()
+            from .bibtex import unescape_bibtex
+            raw_title = e.get("title") or "(untitled)"
+            title_clean = unescape_bibtex(raw_title).strip() or "(untitled)"
             # Truncate long titles
-            if len(title_short) > 120:
-                title_short = title_short[:117] + "..."
+            if len(title_clean) > 120:
+                title_short = title_clean[:117] + "..."
+            else:
+                title_short = title_clean
             venue = e.get("journal") or e.get("booktitle") or e.get("publisher") or ""
             year = e.get("year", "")
             author = _author_short(e.get("author", ""))

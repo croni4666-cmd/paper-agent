@@ -488,6 +488,9 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
         results["concept_mode"] = concept_mode
     if not quiet:
         click.echo(f"[pa] by_engine: {results['by_engine']}", err=True)
+        if results.get("engine_errors"):
+            for eng, err_msg in results["engine_errors"].items():
+                click.echo(f"[pa] engine {eng}: {err_msg}", err=True)
         click.echo(f"[pa] dedup_count: {results['dedup_count']}", err=True)
     if out_format == "bibtex":
         # Determine default output path if none given
@@ -1169,7 +1172,7 @@ def cnki_guide(input_file, output, year_min, year_max, quiet):
 @click.option("--skeleton", "skeleton_file", required=True,
               type=click.Path(exists=True, dir_okay=False),
               help="Markdown skeleton with [@bibkey] or [cite: bibkey] placeholders")
-@click.option("-o", "--output", required=True, type=click.Path(dir_okay=False),
+@click.option("-o", "--output", "--out", required=True, type=click.Path(dir_okay=False),
               help="Output file. Suffix determines format: .html / .docx / .pdf / .tex / .md")
 @click.option("--csl", "csl_file", default=None,
               type=click.Path(exists=True, dir_okay=False),
@@ -1246,7 +1249,7 @@ def build(bibtex_file, skeleton_file, output, csl_file, out_format,
               help="topics.json from `pa review-topics` (required if --group-by topic)")
 @click.option("--title", default="文献综述", show_default=True,
               help="Top-level skeleton title (markdown H1)")
-@click.option("-o", "--output", default=None, type=click.Path(dir_okay=False),
+@click.option("-o", "--output", "--out", default=None, type=click.Path(dir_okay=False),
               help="Output file (else stdout)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def scaffold(bibtex_file, group_by, topics_file, title, output, quiet):

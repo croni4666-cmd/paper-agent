@@ -369,12 +369,16 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
 
 
 def _normalize_crossref(it: dict) -> dict:
+    from .bibtex import clean_markup_text
     title = (it.get("title") or [""])[0] if it.get("title") else ""
+    title = clean_markup_text(title)
     authors = [f"{a.get('family', '')}, {a.get('given', '')}".strip(", ")
                for a in (it.get("author") or [])]
     pub = it.get("published-print") or it.get("published-online") or {}
     parts = pub.get("date-parts", [[None]])[0]
     year = parts[0] if parts else None
+    abstract_raw = it.get("abstract", "") or ""
+    abstract = clean_markup_text(abstract_raw)
     return {
         "doi": it.get("DOI", ""),
         "title": title,
@@ -385,7 +389,7 @@ def _normalize_crossref(it: dict) -> dict:
         "reference_count": it.get("references-count", 0),
         "type": it.get("type", ""),
         "source": "crossref",
-        "abstract": it.get("abstract", "")[:500] if it.get("abstract") else "",
+        "abstract": abstract[:1000] if abstract else "",
     }
 
 
@@ -452,21 +456,22 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     try:
         import arxiv
     except ImportError:
-        return []
+        return [{"error": "missing_dependency", "message": "arXiv SDK not installed (pip install arxiv)"}]
     s_q = query
     if year_min or year_max:
         ymin = year_min or 1991
         ymax = year_max or 2099
         s_q = f"{query} AND submittedDate:[{ymin}0101 TO {ymax}1231]"
-    client = arxiv.Client(page_size=min(limit, 50), delay_seconds=3, num_retries=3)
+    client = arxiv.Client(page_size=min(limit, 50), delay_seconds=1.0, num_retries=2)
     search = arxiv.Search(query=s_q, max_results=limit, sort_by=arxiv.SortCriterion.Relevance)
     results = []
+    from .bibtex import clean_markup_text
     try:
         for r in client.results(search):
             results.append({
                 "doi": r.doi or f"arXiv:{r.entry_id.split('/')[-1]}",
                 "arxiv_id": r.entry_id.split("/")[-1],
-                "title": r.title,
+                "title": clean_markup_text(r.title),
                 "authors": [a.name for a in r.authors],
                 "venue": "arXiv",
                 "year": r.published.year if r.published else None,
@@ -475,8 +480,9 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                 "source": "arxiv",
                 "type": "preprint",
             })
-    except Exception:
-        pass
+    except Exception as e:
+        if not results:
+            return [{"error": type(e).__name__, "message": f"arXiv search failed: {e}"}]
 
     # v3.9.24.0: post-filter on year to handle API filter relaxation
     if year_min or year_max:
@@ -1003,22 +1009,29 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     elif "cnki" in engines:
         from .cnki_channel import search_cnki
         funcs["cnki"] = search_cnki
+    engine_timeout = 25
+    from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
+
     for eng in engines:
         if eng not in funcs:
             continue
         try:
-            # Pass concepts_filter to OpenAlex; other engines ignore extra args
+            target_fn = funcs[eng]
+            fn_kwargs = {}
             if eng == "openalex" and concepts_filter:
-                by_engine[eng] = search_openalex(query, year_min, year_max, limit,
-                                                concepts_filter=concepts_filter)
+                fn_kwargs["concepts_filter"] = concepts_filter
             elif eng == "aminer":
-                # v3.9.25.0: pass aminer_mode (auto/pro/basic)
-                by_engine[eng] = funcs[eng](query, year_min, year_max, limit,
-                                             mode=aminer_mode)
-            else:
-                by_engine[eng] = funcs[eng](query, year_min, year_max, limit)
+                fn_kwargs["mode"] = aminer_mode
+
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(target_fn, query, year_min, year_max, limit, **fn_kwargs)
+                try:
+                    res = future.result(timeout=engine_timeout)
+                    by_engine[eng] = res if isinstance(res, list) else []
+                except FuturesTimeoutError:
+                    by_engine[eng] = [{"error": "timeout", "message": f"{eng} timed out after {engine_timeout}s"}]
         except Exception as e:
-            by_engine[eng] = [{"error": str(e)[:200]}]
+            by_engine[eng] = [{"error": type(e).__name__, "message": str(e)[:200]}]
 
     # Dedup by DOI (or arXiv ID fallback)
     seen = {}
@@ -1077,11 +1090,24 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             print(f"  [P1-17] filter_by_source: {pre_count} -> {post_count} "
                   f"(kept only: {','.join(source_filter)})", file=sys.stderr)
 
+    engine_status = {}
+    engine_errors = {}
+    for eng, papers in by_engine.items():
+        errs = [p for p in papers if "error" in p]
+        if errs:
+            msg = errs[0].get("message") or errs[0].get("error") or "engine error"
+            engine_status[eng] = "error"
+            engine_errors[eng] = msg
+        else:
+            engine_status[eng] = "ok"
+
     return {
         "query": query,
         "year_min": year_min,
         "year_max": year_max,
-        "by_engine": {k: len(v) for k, v in by_engine.items()},
+        "by_engine": {k: sum(1 for p in v if "error" not in p) for k, v in by_engine.items()},
+        "engine_status": engine_status,
+        "engine_errors": engine_errors,
         "dedup_count": len(unified),
         "enrich_top": enrich_top,
         "results": unified,

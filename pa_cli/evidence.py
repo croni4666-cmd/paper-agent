@@ -14,10 +14,40 @@ from pathlib import Path
 
 VERSION = 'evidence-m2-1'
 SECTIONS = {
+    # abstract
+    'abstract': 'abstract',
+    # introduction
+    'introduction': 'introduction', 'background': 'introduction',
+    'related work': 'introduction', 'prior work': 'introduction',
+    'literature review': 'introduction', 'motivation': 'introduction',
+    'overview': 'introduction',
+    # methods
     'methods': 'methods', 'methodology': 'methods', 'materials and methods': 'methods',
-    'results': 'results', 'discussion': 'discussion', 'limitations': 'limitations',
-    'abstract': 'abstract', 'introduction': 'introduction', 'conclusion': 'conclusion',
-    'conclusions': 'conclusion', 'references': 'references',
+    'data': 'methods', 'dataset': 'methods', 'datasets': 'methods',
+    'data and methods': 'methods', 'data and methodology': 'methods',
+    'setting and data': 'methods', 'our setting': 'methods',
+    'research setting': 'methods', 'empirical setting': 'methods',
+    'experimental setup': 'methods', 'experiment design': 'methods',
+    'experimental design': 'methods', 'empirical strategy': 'methods',
+    'empirical methodology': 'methods', 'empirical framework': 'methods',
+    'model and estimation': 'methods', 'study design': 'methods',
+    # results
+    'results': 'results', 'findings': 'results', 'empirical results': 'results',
+    'main results': 'results', 'experimental results': 'results',
+    'evaluation': 'results', 'estimates': 'results', 'effects': 'results',
+    # discussion
+    'discussion': 'discussion', 'implications': 'discussion',
+    'policy implications': 'discussion', 'practical implications': 'discussion',
+    'mechanisms': 'discussion', 'robustness': 'discussion',
+    'robustness checks': 'discussion', 'heterogeneity': 'discussion',
+    # limitations
+    'limitations': 'limitations', 'threats to validity': 'limitations',
+    # conclusion
+    'conclusion': 'conclusion', 'conclusions': 'conclusion', 'summary': 'conclusion',
+    'concluding remarks': 'conclusion',
+    # references
+    'references': 'references', 'bibliography': 'references',
+    'literature cited': 'references', 'works cited': 'references',
 }
 
 
@@ -76,13 +106,40 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
             status = 'text_extracted' if text.strip() else 'empty_needs_review'
             pages.append({'page': number, 'text': text, 'status': status,
                           'ocr_status': 'not_attempted'})
+
+            # Prevent abstract label from propagating beyond frontmatter (page > 2)
+            if number > 2 and section == 'abstract':
+                section = 'unknown'
+
             # Split at explicit heading lines so a methods label cannot silently
             # carry into results on the same page. Unknown layouts stay advisory.
             boundaries = [(0, section)]
-            for match in re.finditer(r'^.*$', text, re.MULTILINE):
-                heading = re.sub(r'^\s*\d+(?:\.\d+)*[.)]?\s*', '', match.group()).strip().rstrip(':').casefold()
-                if heading in SECTIONS:
-                    section = SECTIONS[heading]
+            for match in re.finditer(r'^[^\n]+$', text, re.MULTILINE):
+                line = match.group().strip()
+                if not line or len(line) > 120:
+                    continue
+
+                # Strip Roman numerals, numbers, "Section X", etc.: "1. Introduction" -> "Introduction"
+                clean_heading = re.sub(
+                    r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*|[a-z]\.)[.:\-\s]+\s*',
+                    '', line, flags=re.IGNORECASE
+                ).strip().rstrip(':').casefold()
+
+                # Leading clause before subtitle colon or dash: "Our Setting: LLMs for Customer Support" -> "our setting"
+                heading_lead = clean_heading.split(':', 1)[0].split(' - ', 1)[0].strip()
+
+                detected = None
+                if clean_heading in SECTIONS:
+                    detected = SECTIONS[clean_heading]
+                elif heading_lead in SECTIONS:
+                    detected = SECTIONS[heading_lead]
+                elif re.match(r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*)[.:\-\s]+[a-zA-Z]', line, re.IGNORECASE):
+                    # Explicit numbered section header (e.g. "3 Conversational Change", "5 Attrition")
+                    # but not recognized as a standard section name: reset section to 'unknown'
+                    detected = 'unknown'
+
+                if detected is not None:
+                    section = detected
                     if match.start() == 0:
                         boundaries[0] = (0, section)
                     else:

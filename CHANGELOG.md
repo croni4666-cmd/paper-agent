@@ -13,6 +13,38 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.8] - 2026-10-03
+
+### Bug Fixes & Hardening — Live Task Test Report Remediation (2026-10-03)
+
+- **Issue 1 (P2: Author Formatting Reversal Prevention)**:
+  - Fixed `format_authors` in `pa_cli/bibtex.py` to recognize names already in `"Last, First"` or `"Last, First Middle"` format (e.g. from Crossref API `["Brynjolfsson, Erik"]`), preventing double-reversal into `"Erik, Brynjolfsson,"`.
+  - Cleans trailing commas and supports author dict structures (`{"family": ..., "given": ...}`).
+  - Fixed cite-key generation fallback in `_base_key` to correctly isolate surname from `"Last, First"` inputs (`brynjolfsson_2023_...` instead of `erik_2023_...`).
+  - Ensures corpus stats (`pa project stats` / `_split_authors` / `_author_short`) correctly identify surnames as top authors.
+- **Issue 2 (P3: Cite-Check Report Accuracy Fix)**:
+  - Updated `run_cite_check` in `pa_cli/cite_check.py` to record `n_placeholders`, `n_unique_placeholder_keys`, and `n_bib_keys` directly from scanned data instead of deducing them only from missing/orphan lists.
+  - Updated `format_report` to display the actual count of placeholder occurrences and total bib keys (e.g. `Placeholders: 6 occurrences (0 unique missing/typoed)` and `Bib keys: 6` when 0 missing/orphaned), aligning the text report with JSON output.
+  - Updated `project_cite_check` in `pa_cli/project.py` to include `n_placeholders` and `n_bib_keys` in the summary dict.
+- **Issue 3 (P2: Evidence Section Detection & Abstract Capping)**:
+  - Capped `abstract` section propagation in `build_index` (`pa_cli/evidence.py`) so abstract never leaks beyond frontmatter (page > 2), automatically resetting to `unknown` if no subsequent section heading is encountered.
+  - Expanded `SECTIONS` dictionary with domain synonyms for methods (`data`, `our setting`, `setting and data`, `empirical strategy`, `study design`, etc.) and results (`findings`, `evaluation`, `estimates`, `effects`, etc.).
+  - Added heading pattern matching that strips Roman numerals (`I.`, `II.`), section numbers (`1.`, `2.1`), and "Section X:".
+  - Recognizes unclassified numbered section headings (e.g. `3. Conversational Change`, `5. Attrition`) to reset section state to `unknown` rather than propagating prior section tags.
+  - Solves `insufficient_evidence` when generating bounded evidence packets with required sections (`methods`, `results`).
+- **Issue 4 (Scaffold & Build CLI Output Flag Aliases)**:
+  - Added `--out` alias to `@click.option("-o", "--output")` for both `pa scaffold` and `pa build` in `pa_cli/cli.py`, aligning CLI options with user documentation and examples.
+- **Issue 5 (HTML/JATS Metadata Cleaning & LaTeX Text Sanitization)**:
+  - Added `clean_markup_text` and `unescape_bibtex` in `pa_cli/bibtex.py` to strip XML/HTML tags (e.g. `<jats:p>`, `<jats:title>`, `<i>`), unescape entities (`&amp;`, `&lt;`, `&gt;`), and unescape LaTeX escapes (`\&`, `\%`, etc.).
+  - Applied metadata cleaning across `_normalize_crossref`, `to_bibtex`, `render_skeleton` (`scaffold.py`), and `load_bib_metadata` (`export_screening.py`), removing formatting noise while preserving verbatim whitespace for macro definitions.
+- **Issue 6 (ArXiv Missing Dependency & Per-Engine Timeout Budget)**:
+  - In `pa_cli/search.py`: when `arxiv` package is missing, `search_arxiv` returns explicit status `{"error": "missing_dependency", "message": "arXiv SDK not installed (pip install arxiv)"}` instead of silently returning `[]`.
+  - Added per-engine timeout budget (25s) using `ThreadPoolExecutor` in `run_search` to prevent unresponsive network endpoints from hanging multi-engine searches.
+  - Added `engine_status` and `engine_errors` to `run_search` return dictionary, and surfaced engine error messages in `pa search` CLI output.
+- **Quality & Regression Coverage**:
+  - Added regression test suite `test_output/test_live_task_fixes.py` (9 tests covering author formatting, cite-check counts, evidence section detection, `--out` CLI alias, markup cleaning, and search error handling).
+  - Added `test_live_task_fixes.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.7] - 2026-10-03
 
 ### Bug Fixes & Hardening — Seventh Round GitHub Code Review Remediation (2026-10-03)

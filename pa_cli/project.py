@@ -1202,6 +1202,8 @@ def project_cite_check(
         "n_missing": len(result['missing']),
         "n_typoed": len(result['typoed']),
         "n_orphan": len(result['orphan']),
+        "n_placeholders": result.get('n_placeholders', 0),
+        "n_bib_keys": result.get('n_bib_keys', 0),
         "clean": len(result['missing']) == 0 and len(result['typoed']) == 0,
     }
     return summary, report

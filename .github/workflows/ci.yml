@@ -52,6 +52,7 @@ jobs:
           python test_output/test_rereview_e0c1532.py
           python test_output/test_rereview_dd26466.py
           python test_output/test_rereview_f77c013.py
+          python test_output/test_live_task_fixes.py
 
   package:
     name: Build wheel and verify package contents

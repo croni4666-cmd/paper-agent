@@ -21,8 +21,10 @@ Field mapping priority (when same data has multiple sources):
   url:      oa_url if open access, else doi.org
 """
 
+import html
+import re
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 
 
 # ---------- BibTeX entry type mapping ----------
@@ -82,7 +84,13 @@ def _base_key(paper: Dict) -> str:
     # Fallback: first-author-lastname + year + first title word
     authors = paper.get("authors") or ["anon"]
     first_author = authors[0] or "anon"
-    last = first_author.split()[-1].lower() if first_author.split() else "anon"
+    if isinstance(first_author, dict):
+        first_author = first_author.get("family") or first_author.get("name") or "anon"
+    first_author_str = str(first_author).strip()
+    if "," in first_author_str:
+        last = first_author_str.split(",")[0].strip().lower()
+    else:
+        last = first_author_str.split()[-1].lower() if first_author_str.split() else "anon"
     last = "".join(c for c in last if c.isalnum()) or "anon"
     year = paper.get("year") or "nd"
     title = (paper.get("title") or "").split()
@@ -91,21 +99,81 @@ def _base_key(paper: Dict) -> str:
     return f"{last}_{year}_{title_word}"[:64]  # bibtex keys should be reasonable length
 
 
+# ---------- Markup and LaTeX Text Cleaning ----------
+
+def unescape_bibtex(s: str) -> str:
+    """Unescape common LaTeX escapes in BibTeX fields: \\& -> &, \\% -> %, etc.
+    Also strips embedded XML/HTML tags and unescapes entities without collapsing spacing.
+    """
+    if not s:
+        return ""
+    s = str(s)
+    s = re.sub(r'\\([&%$#_{}])', r'\1', s)
+    s = s.replace(r'\\', r' ')
+    s = html.unescape(s)
+    s = re.sub(r"<[^>]+>", "", s)
+    return s
+
+
+def clean_markup_text(s: str) -> str:
+    """Clean HTML/XML tags (e.g. JATS tags like <jats:p>, <jats:sec>, <i>, <b>),
+    HTML entities (&amp;, &lt;, &gt;, &quot;, &#39;), and normalize whitespace.
+    """
+    if not s:
+        return ""
+    text = unescape_bibtex(s)
+    return " ".join(text.split()).strip()
+
+
 # ---------- Author formatting ----------
 
-def format_authors(authors: List[str]) -> str:
-    """['First Last', 'First Middle Last'] -> ['Last, First Middle', ...] joined with ' and '."""
+def format_authors(authors: List[Any]) -> str:
+    """Format author list into standard BibTeX 'Last, First and Last, First' format.
+
+    Handles:
+    - Already formatted: 'Brynjolfsson, Erik' -> 'Brynjolfsson, Erik'
+    - First Last: 'Erik Brynjolfsson' -> 'Brynjolfsson, Erik'
+    - First Middle Last: 'John F. Kennedy' -> 'Kennedy, John F.'
+    - Trailing commas or dirty strings: 'Brynjolfsson, Erik,' -> 'Brynjolfsson, Erik'
+    - Dicts: {'family': 'Brynjolfsson', 'given': 'Erik'} -> 'Brynjolfsson, Erik'
+    - Single names: 'Plato' -> 'Plato'
+    """
     formatted = []
     for a in authors:
         if not a:
             continue
-        parts = a.strip().split()
-        if len(parts) >= 2:
-            last = parts[-1]
-            first_middle = " ".join(parts[:-1])
-            formatted.append(f"{last}, {first_middle}")
+        if isinstance(a, dict):
+            fam = a.get("family") or a.get("lastName") or a.get("last") or ""
+            giv = a.get("given") or a.get("firstName") or a.get("first") or ""
+            if fam and giv:
+                formatted.append(f"{str(fam).strip()}, {str(giv).strip()}")
+                continue
+            name_val = a.get("name") or fam or giv or ""
+            a_str = str(name_val).strip()
         else:
-            formatted.append(a)
+            a_str = str(a).strip()
+
+        # Clean leading/trailing commas or semicolons
+        a_str = a_str.strip(",; ")
+        if not a_str:
+            continue
+
+        if "," in a_str:
+            # Already in "Last, First" or "Last, First Middle" format
+            parts = [p.strip() for p in a_str.split(",") if p.strip()]
+            if len(parts) >= 2:
+                formatted.append(f"{parts[0]}, {', '.join(parts[1:])}")
+            elif len(parts) == 1:
+                formatted.append(parts[0])
+        else:
+            # "First Middle Last" format
+            parts = a_str.split()
+            if len(parts) >= 2:
+                last = parts[-1]
+                first_middle = " ".join(parts[:-1])
+                formatted.append(f"{last}, {first_middle}")
+            else:
+                formatted.append(a_str)
     return " and ".join(formatted)
 
 
@@ -161,7 +229,7 @@ def to_bibtex(paper: Dict, seen: Optional[set] = None) -> str:
     url = paper.get("oa_url") or (f"https://doi.org/{doi}" if doi else "")
     if url:
         fields.append(("url", url))
-    abstract = (paper.get("abstract") or "").strip()
+    abstract = clean_markup_text(paper.get("abstract") or "")
     if abstract:
         fields.append(("abstract", escape_bibtex(abstract)))
     # Notes — useful for academic workflows
@@ -230,10 +298,15 @@ def format_bibtex_entry(entry: Dict) -> str:
 
 
 def _clean_title(title: str) -> str:
-    """Strip trailing period, normalize whitespace. BibTeX titles usually omit final period."""
+    """Strip trailing period, normalize whitespace, clean markup and LaTeX escapes.
+    BibTeX titles usually omit final period.
+    """
+    if not title:
+        return ""
+    title = unescape_bibtex(title)
     title = " ".join(title.split())
     if title.endswith("."):
-        title = title[:-1]
+        title = title[:-1].strip()
     return title
 
 
