@@ -13,6 +13,27 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.9] - 2026-10-03
+
+### Live workflow repairs
+
+- Search engines now run in spawned, terminable processes with a 25-second
+  per-engine work budget and bounded cleanup. Receive results before joining
+  workers so large abstracts cannot deadlock the IPC queue. CORE follows the
+  same status/count/error response shape as other engines.
+- Strip recognized HTML/JATS markup before decoding entities; retain comparison
+  operators, unknown programming generic tags, and original field whitespace.
+- Keep arXiv IDs separate from DOI in search, BibTeX and screening exports.
+  Export `eprint`/`archivePrefix` and valid URLs; accept historical arXiv pseudo
+  DOI fields when reading, and route eprint-only batch/project fetches correctly.
+- Recognize inline `Abstract.` and `Research Method and Analysis` headings,
+  including separately extracted section numbers. Reset labels at unclassified
+  split numbered headings. Evidence extractor revision changes to `headings-v2`;
+  rebuild existing indexes to obtain the new labels and evidence IDs.
+- Add 16 offline regressions and include them plus evidence M2 tests in CI.
+  Section labels remain advisory heuristics; these changes do not grant upload
+  consent or invoke Jev or other paid model APIs.
+
 ## [3.10.0.8] - 2026-10-03
 
 ### Bug Fixes & Hardening — Live Task Test Report Remediation (2026-10-03)
