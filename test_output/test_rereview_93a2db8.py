@@ -79,7 +79,7 @@ class TestRereview93a2db8Fixes(unittest.TestCase):
         self.assertIn("jmacro", merged_text)
 
         # Re-parse target refs to verify structure
-        parsed = parse_bibtex(merged_text)
+        parsed = parse_bibtex(merged_text, include_special=True)
         special_types = [e.get("type") for e in parsed if e.get("_is_special")]
         self.assertIn("string", special_types)
         self.assertIn("preamble", special_types)

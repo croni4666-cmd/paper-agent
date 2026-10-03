@@ -50,18 +50,23 @@ def build_screening_dict(bib_path: Path) -> Dict[str, Dict[str, str]]:
     entries = load_bibtex(bib_path)
     out = {}
     for e in entries:
+        if e.get('_is_special') or e.get('type') in ('string', 'preamble', 'comment'):
+            continue
         key = e.get('key')
         if not key:
             continue
         # Authors field in bibtex is comma-separated "Last, First and Last2, First2"
         # Normalize: replace " and " with "; " for CSV friendliness
         authors = e.get('author', '').replace(' and ', '; ')
+        venue = e.get('journal', '') or e.get('booktitle', '') or e.get('publisher', '')
+        if e.get('_macros') and venue.lower() in e['_macros']:
+            venue = e['_macros'][venue.lower()]
         out[key] = {
             'paper_key': key,
             'title': e.get('title', ''),
             'authors': authors,
             'year': e.get('year', ''),
-            'venue': e.get('journal', '') or e.get('booktitle', '') or e.get('publisher', ''),
+            'venue': venue,
             'doi': e.get('doi', ''),
             'abstract': e.get('abstract', ''),
             'type': e.get('type', 'misc'),

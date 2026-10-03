@@ -48,6 +48,7 @@ jobs:
           python test_output/test_mcp_fetch.py
           python test_output/test_rereview_6fa4b79.py
           python test_output/test_rereview_93a2db8.py
+          python test_output/test_rereview_bc1b455.py
 
   package:
     name: Build wheel and verify package contents

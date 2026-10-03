@@ -13,6 +13,29 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.4] - 2026-10-03
+
+### Bug Fixes & Hardening — Fourth Round GitHub Code Review Remediation (2026-10-03)
+
+- **Issue 1 (Parenthesis Entry Format Scanner & Internal Parentheses Protection)**:
+  - Replaced backwards entry delimiter scanner in `pa_cli/scaffold.py` with forward state-aware scanner `_find_entry_end(body, close_delim)`.
+  - Maintains brace depth and quoted string boundaries so that unescaped parentheses inside math intervals (e.g. `title={Use the interval (0,1]}` or `[0,1)`), citations, and parenthetical phrases are not mistaken for the outer `@article(...)` entry delimiter.
+  - Fixes premature truncation of title, authors, and year in parenthesis-delimited entries.
+- **Issue 2 (Macro Reference Syntax & Expression Concatenation Preservation)**:
+  - Upgraded `_parse_bibtex_fields` in `pa_cli/scaffold.py` to identify bare values (macro identifiers, bare numbers, `#` string concatenation) and track them via `_bare_fields`.
+  - Updated `format_bibtex_entry` in `pa_cli/bibtex.py`: bare fields are written as `field = val` without wrapping in braces (e.g. `journal = jmacro` or `journal = jmacro # " Suppl 1"`), preserving genuine BibTeX macro reference semantics.
+  - Automatically resolves defined `@string` macros for human-readable consumers (`export_screening.py` venue resolution).
+- **Issue 3 (Separation of Special Bibliography Nodes from Paper Consumers)**:
+  - Standardized `parse_bibtex` and `load_bibtex` with `include_special: bool = False` by default, ensuring all literature consumers (`cite_check`, `corpus_stats`, `build_screening_dict`, `render_skeleton`, `fetch_batch`) receive exclusively ordinary paper records.
+  - Added defense-in-depth special node filters across `build_screening_dict`, `corpus_stats`, `render_skeleton`, and `cite_check`.
+  - Resolves key collisions where a paper sharing a key with a `@string` was overwritten, and prevents phantom orphan citations or untitled skeleton sections.
+  - Rewriting operations (`corpus_merge` and `project_enrich`) explicitly specify `include_special=True` to maintain 100% lossless preservation of macros and preambles.
+- **Issue 4 (Internal Metadata Leak Prevention)**:
+  - Updated `format_bibtex_entry` in `pa_cli/bibtex.py` to filter out any fields starting with `_` (`not f.startswith("_")`), preventing internal tracking flags like `_crossref_from_source`, `_was_updated`, or `_bare_fields` from leaking into formatted BibTeX.
+- **Quality & Regression Coverage**:
+  - Added dedicated test suite `test_output/test_rereview_bc1b455.py` (7 tests covering all 4 findings).
+  - Added `test_rereview_bc1b455.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.3] - 2026-10-03
 
 ### Bug Fixes & Hardening — Third Round GitHub Code Review Remediation (2026-10-03)

@@ -194,7 +194,7 @@ def run_cite_check(
     Returns (result_dict, report_text).
     """
     bib_entries = load_bibtex(bib_path)
-    bib_keys = {e['key'] for e in bib_entries}
+    bib_keys = {e['key'] for e in bib_entries if not e.get('_is_special') and e.get('type') not in ('string', 'preamble', 'comment')}
 
     skeleton_text = skeleton_path.read_text(encoding='utf-8')
     placeholders = extract_cite_keys(skeleton_text)

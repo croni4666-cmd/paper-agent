@@ -206,18 +206,25 @@ def format_bibtex_entry(entry: Dict) -> str:
         "publisher", "address", "url", "abstract", "note"
     ]
     fields = []
-    seen = {"key", "type", "_raw", "_was_updated", "_was_enriched", "_is_special", "macro"}
+    seen = {"key", "type", "_raw", "_was_updated", "_was_enriched", "_is_special", "macro", "_bare_fields", "_macros"}
     for f in standard_order:
         val = entry.get(f)
         if val is not None and str(val).strip():
             fields.append((f, str(val).strip()))
             seen.add(f)
     for f, val in entry.items():
-        if f not in seen and val is not None and str(val).strip():
+        if f not in seen and not f.startswith("_") and val is not None and str(val).strip():
             fields.append((f, str(val).strip()))
 
+    bare_fields = set(entry.get("_bare_fields") or ())
     if fields:
-        field_str = ",\n  ".join(f"{k} = {{{v}}}" for k, v in fields)
+        field_lines = []
+        for k, v in fields:
+            if k in bare_fields:
+                field_lines.append(f"{k} = {v}")
+            else:
+                field_lines.append(f"{k} = {{{v}}}")
+        field_str = ",\n  ".join(field_lines)
         return f"@{etype}{{{key},\n  {field_str}\n}}\n"
     return f"@{etype}{{{key}\n}}\n"
 

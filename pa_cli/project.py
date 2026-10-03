@@ -374,8 +374,8 @@ def corpus_merge(
         raise FileNotFoundError(f"source BibTeX file or project not found: {source}")
 
     from .scaffold import load_bibtex
-    target_entries = load_bibtex(target_files['refs']) if target_files['refs'].exists() else []
-    source_entries = load_bibtex(source_bib)
+    target_entries = load_bibtex(target_files['refs'], include_special=True) if target_files['refs'].exists() else []
+    source_entries = load_bibtex(source_bib, include_special=True)
 
     def _entry_key(entry: Dict[str, str]) -> Tuple[str, str]:
         doi = entry.get('doi', '').strip().lower()
@@ -420,6 +420,10 @@ def corpus_merge(
                         target_entry[field] = val
                         if field == "crossref":
                             target_entry["_crossref_from_source"] = True
+                if e.get("_bare_fields"):
+                    target_entry.setdefault("_bare_fields", set()).update(
+                        f for f in e["_bare_fields"] if f in target_entry
+                    )
                 if id(target_entry) in target_entry_ids:
                     target_entry["_was_updated"] = True
                     updated.append(e)
@@ -1373,7 +1377,7 @@ def project_enrich(
     from .bibtex import to_bibtex
 
     content = files['refs'].read_text(encoding='utf-8')
-    entries = parse_bibtex(content)
+    entries = parse_bibtex(content, include_special=True)
     if not entries:
         return {
             "slug": slug,
@@ -1476,6 +1480,8 @@ def project_enrich(
                     entry['year'] = year
                 if venue:
                     entry['journal'] = venue
+                    if entry.get("_bare_fields"):
+                        entry["_bare_fields"].discard("journal")
                 if norm_doi:
                     entry['doi'] = norm_doi
                 from .bibtex import _TYPE_MAP

@@ -36,9 +36,59 @@ _BIB_ENTRY_RE = re.compile(
 )
 
 
-def _parse_bibtex_fields(body: str) -> Dict[str, str]:
+def _find_entry_end(body: str, close_delim: str) -> int:
+    """Find index of the matching closing delimiter ('}' or ')') for an entry body."""
+    i = 0
+    n = len(body)
+    brace_depth = 0
+    in_quotes = False
+    quote_brace_depth = 0
+    while i < n:
+        c = body[i]
+        # Ignore comments outside strings/braces
+        if not in_quotes and brace_depth == 0 and c == '%':
+            while i < n and body[i] != '\n':
+                i += 1
+            continue
+        if in_quotes:
+            if c == '\\' and i + 1 < n:
+                i += 2
+                continue
+            if c == '{':
+                quote_brace_depth += 1
+            elif c == '}':
+                if quote_brace_depth > 0:
+                    quote_brace_depth -= 1
+            elif c == '"' and quote_brace_depth == 0:
+                in_quotes = False
+            i += 1
+            continue
+        if c == '"':
+            in_quotes = True
+            quote_brace_depth = 0
+            i += 1
+            continue
+        if c == '{':
+            brace_depth += 1
+            i += 1
+            continue
+        if c == '}':
+            if brace_depth > 0:
+                brace_depth -= 1
+                i += 1
+                continue
+            elif close_delim == '}':
+                return i
+        if c == ')' and brace_depth == 0 and close_delim == ')':
+            return i
+        i += 1
+    return n
+
+
+def _parse_bibtex_fields(body: str) -> Dict[str, Any]:
     """Parse fields from a BibTeX entry body with full brace nesting, macro, and bare number support."""
     fields = {}
+    bare_fields = set()
     i = 0
     n = len(body)
     while i < n:
@@ -92,20 +142,77 @@ def _parse_bibtex_fields(body: str) -> Dict[str, str]:
                 i += 1
         else:
             val_start = i
-            while i < n and body[i] not in (',', '}', '\r', '\n'):
+            depth = 0
+            in_q = False
+            q_depth = 0
+            while i < n:
+                c = body[i]
+                if in_q:
+                    if c == '\\' and i + 1 < n:
+                        i += 2
+                        continue
+                    if c == '{':
+                        q_depth += 1
+                    elif c == '}':
+                        if q_depth > 0:
+                            q_depth -= 1
+                    elif c == '"' and q_depth == 0:
+                        in_q = False
+                    i += 1
+                    continue
+                if c == '"':
+                    in_q = True
+                    q_depth = 0
+                    i += 1
+                    continue
+                if c == '{':
+                    depth += 1
+                    i += 1
+                    continue
+                if c == '}':
+                    if depth > 0:
+                        depth -= 1
+                        i += 1
+                        continue
+                    else:
+                        break
+                if c == ')' and depth == 0:
+                    break
+                if c == ',' and depth == 0:
+                    break
+                if c in ('\r', '\n') and depth == 0:
+                    peek = i + 1
+                    while peek < n and body[peek] in (' ', '\t', '\r', '\n'):
+                        peek += 1
+                    if peek < n and body[peek] == '#':
+                        i = peek
+                        continue
+                    break
                 i += 1
             fval = body[val_start:i].strip()
+            bare_fields.add(fname)
 
         fval = fval.strip().replace("\r", "")
         fval = re.sub(r"[ \t]+", " ", fval)
         fields[fname] = fval
+
+    if bare_fields:
+        fields["_bare_fields"] = bare_fields
     return fields
 
 
-def parse_bibtex(text: str) -> List[Dict[str, str]]:
-    """Robust bibtex parser preserving nested braces, bare numbers, macros, and entry types."""
+def parse_bibtex(text: str, include_special: bool = False) -> List[Dict[str, Any]]:
+    """Robust bibtex parser preserving nested braces, bare numbers, macros, and entry types.
+
+    Args:
+        text: BibTeX formatted string.
+        include_special: If False (default), filters out @string, @preamble, and @comment
+                         so downstream literature consumers receive only ordinary paper entries.
+                         If True, preserves special records for bibliography rewriting.
+    """
     entries = []
     chunks = re.split(r"(?=@[\w-]+\s*[\{\(])", text)
+    macro_defs: Dict[str, str] = {}
     for chunk in chunks:
         chunk_clean = chunk.strip()
         if not chunk_clean.startswith("@"):
@@ -120,27 +227,34 @@ def parse_bibtex(text: str) -> List[Dict[str, str]]:
         # Preserve special BibTeX entries: @string, @preamble, @comment
         if raw_type in ("string", "preamble", "comment"):
             macro_name = f"_{raw_type}"
+            macro_val = ""
             if raw_type == "string":
                 m_str = re.match(r"@string\s*[\{\(]\s*([A-Za-z0-9_:-]+)\s*=", chunk_clean, re.IGNORECASE)
                 if m_str:
                     macro_name = m_str.group(1)
+
+            sp_body = chunk_clean[m_head.end():]
+            sp_end = _find_entry_end(sp_body, close_delim)
+            raw_special = chunk_clean[:m_head.end() + sp_end + 1]
+
+            if raw_type == "string":
+                m_v = re.search(r'=\s*(?:\{([^}]*)\}|"([^"]*)"|([^,\s}]+))', sp_body[:sp_end])
+                if m_v:
+                    macro_val = m_v.group(1) or m_v.group(2) or m_v.group(3) or ""
+                    macro_defs[macro_name.lower()] = macro_val
+
             entries.append({
                 "type": raw_type,
                 "key": macro_name,
                 "macro": macro_name,
-                "_raw": chunk_clean,
+                "value": macro_val,
+                "_raw": raw_special,
                 "_is_special": True,
             })
             continue
 
         m = re.match(r"@([\w-]+)\s*[\{\(]\s*([^,\s]+)\s*,", chunk_clean)
         if not m:
-            entries.append({
-                "type": raw_type,
-                "key": f"_{raw_type}",
-                "_raw": chunk_clean,
-                "_is_special": True,
-            })
             continue
 
         raw_type, key = m.group(1).lower(), m.group(2)
@@ -150,28 +264,28 @@ def parse_bibtex(text: str) -> List[Dict[str, str]]:
             etype = _TYPE_MAP.get(etype.replace("-", ""), "misc")
 
         body = chunk_clean[m.end():]
-        depth = 0
-        end = len(body) - 1
-        for i in range(len(body) - 1, -1, -1):
-            if body[i] == close_delim:
-                depth += 1
-            elif body[i] == open_delim:
-                depth -= 1
-            if depth == 0:
-                end = i
-                break
-        body = body[:end]
-        fields = _parse_bibtex_fields(body)
+        end = _find_entry_end(body, close_delim)
+        raw_entry = chunk_clean[:m.end() + end + 1]
+        fields = _parse_bibtex_fields(body[:end])
         fields["key"] = key
         fields["type"] = etype
-        fields["_raw"] = chunk_clean
+        fields["_raw"] = raw_entry
+        if macro_defs:
+            fields["_macros"] = dict(macro_defs)
         entries.append(fields)
+
+    if not include_special:
+        return [e for e in entries if not e.get("_is_special") and e.get("type") not in ("string", "preamble", "comment")]
     return entries
 
 
-def load_bibtex(path: Path) -> List[Dict[str, str]]:
-    """Load + parse a .bib file."""
-    return parse_bibtex(path.read_text(encoding="utf-8"))
+def load_bibtex(path: Path, include_special: bool = False) -> List[Dict[str, Any]]:
+    """Load + parse a .bib file.
+    
+    If include_special is False (default), filters out non-paper records (@string, @preamble, @comment)
+    so consumers only receive ordinary literature entries.
+    """
+    return parse_bibtex(path.read_text(encoding="utf-8"), include_special=include_special)
 
 
 # ---------- Topic clusters (from `pa review-topics`) ----------
@@ -303,6 +417,7 @@ def render_skeleton(
     Returns:
         Markdown string.
     """
+    entries = [e for e in entries if not e.get('_is_special') and e.get('type') not in ('string', 'preamble', 'comment')]
     if not entries:
         return (
             f"# {title}\n\n"

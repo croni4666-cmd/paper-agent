@@ -104,6 +104,7 @@ def compute_corpus_stats(refs_bib_path: Path, top_n: int = 10) -> Dict[str, Any]
     except Exception:
         return out
 
+    entries = [e for e in entries if not e.get('_is_special') and e.get('type') not in ('string', 'preamble', 'comment')]
     out["n_papers"] = len(entries)
 
     # Type + DOI counts
