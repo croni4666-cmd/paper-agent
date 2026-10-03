@@ -13,6 +13,21 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.6] - 2026-10-03
+
+### Bug Fixes & Hardening — Sixth Round GitHub Code Review Remediation (2026-10-03)
+
+- **Issue 1 (Preserve Year Macro on Enrich Fallback)**:
+  - Updated `project_enrich` in `pa_cli/project.py` to only update `entry['year']` and discard `'year'` from `_bare_fields` when the enrichment API explicitly supplies a new `publication_year`.
+  - When API metadata lacks `publication_year`, existing macro values (e.g. `year = ym`) are preserved as macro references without incorrectly converting them to literal braced strings (`year = {ym}`).
+- **Issue 2 (Pure String Concatenation Evaluation in Screening Export)**:
+  - Updated `resolve_bibtex_value` in `pa_cli/scaffold.py` to evaluate compound `#` string concatenation expressions even when no `@string` definitions exist (`macros is None` or `{}`), ensuring pure string concatenations like `journal = "Journal" # " Suppl"` evaluate to `Journal Suppl`.
+- **Extended Macro & String Definition Fidelity**:
+  - Upgraded `@string` macro parsing in `parse_bibtex` (`pa_cli/scaffold.py`) to share the full expression parser and `resolve_bibtex_value`, supporting nested braces (`@string{j={A {B}}}`), string concatenation (`@string{j="A" # " B"}`), and macro aliases (`@string{j=base # " Suppl"}`).
+- **Quality & Regression Coverage**:
+  - Added regression test suite `test_output/test_rereview_dd26466.py` (6 tests covering all findings and extended macro features).
+  - Added `test_rereview_dd26466.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.5] - 2026-10-03
 
 ### Bug Fixes & Hardening — Fifth Round GitHub Code Review Remediation (2026-10-03)

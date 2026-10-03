@@ -1455,7 +1455,7 @@ def project_enrich(
             if work:
                 # Extract fields
                 title = work.get('title') or work.get('display_name')
-                year = work.get('publication_year') or entry.get('year')
+                new_year = work.get('publication_year')
                 authors = []
                 for auth in work.get('authorships', []):
                     name = auth.get('author', {}).get('display_name')
@@ -1488,8 +1488,8 @@ def project_enrich(
                 if authors:
                     entry['author'] = format_authors(authors)
                     bare_fields.discard("author")
-                if year:
-                    entry['year'] = year
+                if new_year:
+                    entry['year'] = str(new_year)
                     bare_fields.discard("year")
                 if venue:
                     entry['journal'] = venue

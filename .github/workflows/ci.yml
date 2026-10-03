@@ -50,6 +50,7 @@ jobs:
           python test_output/test_rereview_93a2db8.py
           python test_output/test_rereview_bc1b455.py
           python test_output/test_rereview_e0c1532.py
+          python test_output/test_rereview_dd26466.py
 
   package:
     name: Build wheel and verify package contents

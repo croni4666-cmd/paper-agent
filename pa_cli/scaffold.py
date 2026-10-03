@@ -90,12 +90,14 @@ def resolve_bibtex_value(val: str, is_bare: bool = False, macros: Optional[Dict[
 
     If is_bare is False, the value was quoted or braced and represents a literal string.
     If is_bare is True, bare tokens (macro identifiers) are resolved against macros.
-    Handles single tokens as well as '#' concatenated expressions.
+    Handles single tokens as well as '#' concatenated expressions (even with empty macros).
     """
     if not val:
         return ""
-    if not is_bare or not macros:
+    if not is_bare:
         return val
+
+    macro_dict = macros or {}
 
     if "#" in val:
         tokens = []
@@ -146,8 +148,8 @@ def resolve_bibtex_value(val: str, is_bare: bool = False, macros: Optional[Dict[
                 while i < n and not val[i].isspace() and val[i] != '#':
                     i += 1
                 token_text = val[start:i].strip()
-                if token_text.lower() in macros:
-                    tokens.append(macros[token_text.lower()])
+                if token_text.lower() in macro_dict:
+                    tokens.append(macro_dict[token_text.lower()])
                 else:
                     tokens.append(token_text)
 
@@ -159,8 +161,8 @@ def resolve_bibtex_value(val: str, is_bare: bool = False, macros: Optional[Dict[
         return "".join(tokens)
 
     v_clean = val.strip()
-    if v_clean.lower() in macros:
-        return macros[v_clean.lower()]
+    if v_clean.lower() in macro_dict:
+        return macro_dict[v_clean.lower()]
     return val
 
 
@@ -319,10 +321,20 @@ def parse_bibtex(text: str, include_special: bool = False) -> List[Dict[str, Any
             raw_special = chunk_clean[:m_head.end() + sp_end + 1]
 
             if raw_type == "string":
-                m_v = re.search(r'=\s*(?:\{([^}]*)\}|"([^"]*)"|([^,\s}]+))', sp_body[:sp_end])
-                if m_v:
-                    macro_val = m_v.group(1) or m_v.group(2) or m_v.group(3) or ""
+                parsed_fields = _parse_bibtex_fields(sp_body[:sp_end])
+                for k, v in parsed_fields.items():
+                    if k.startswith("_"):
+                        continue
+                    macro_name = k
+                    is_bare = k in (parsed_fields.get("_bare_fields") or ())
+                    macro_val = resolve_bibtex_value(v, is_bare=is_bare, macros=macro_defs)
                     macro_defs[macro_name.lower()] = macro_val
+                    break
+                if not macro_val:
+                    m_v = re.search(r'=\s*(?:\{([^}]*)\}|"([^"]*)"|([^,\s}]+))', sp_body[:sp_end])
+                    if m_v:
+                        macro_val = m_v.group(1) or m_v.group(2) or m_v.group(3) or ""
+                        macro_defs[macro_name.lower()] = macro_val
 
             entries.append({
                 "type": raw_type,
