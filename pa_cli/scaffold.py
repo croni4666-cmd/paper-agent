@@ -166,6 +166,107 @@ def resolve_bibtex_value(val: str, is_bare: bool = False, macros: Optional[Dict[
     return val
 
 
+def _parse_expression_tokens(body: str, i: int, n: int) -> Tuple[List[Tuple[str, str, str]], bool, int]:
+    """Parse a sequence of value tokens separated by '#' across lines.
+
+    Returns:
+        tokens: list of (ttype, inner, raw) where:
+            - ttype: 'braced', 'quoted', or 'bare'
+            - inner: unescaped/inner string (leading and trailing whitespace inside delimiters preserved)
+            - raw: raw token string
+        has_hash: True if concatenation operator '#' was encountered
+        next_i: index in body after reading the expression
+    """
+    tokens = []
+    has_hash = False
+
+    while i < n:
+        while i < n and body[i].isspace():
+            i += 1
+        if i >= n or body[i] in (',', '}', ')'):
+            break
+
+        if body[i] == '{':
+            i += 1
+            depth = 1
+            val_start = i
+            while i < n and depth > 0:
+                if body[i] == '\\' and i + 1 < n:
+                    i += 2
+                    continue
+                if body[i] == '{':
+                    depth += 1
+                elif body[i] == '}':
+                    depth -= 1
+                i += 1
+            val_end = i - 1 if depth == 0 else i
+            tokens.append(('braced', body[val_start:val_end], body[val_start-1:i]))
+        elif body[i] == '"':
+            i += 1
+            val_start = i
+            depth = 0
+            while i < n:
+                if body[i] == '\\' and i + 1 < n:
+                    i += 2
+                    continue
+                if body[i] == '{':
+                    depth += 1
+                elif body[i] == '}':
+                    if depth > 0:
+                        depth -= 1
+                elif body[i] == '"' and depth == 0:
+                    break
+                i += 1
+            val_end = i
+            if i < n and body[i] == '"':
+                i += 1
+            tokens.append(('quoted', body[val_start:val_end], body[val_start-1:i]))
+        else:
+            val_start = i
+            while i < n and not body[i].isspace() and body[i] not in ('#', ',', '}', ')'):
+                i += 1
+            raw_token = body[val_start:i]
+            if not raw_token:
+                break
+            tokens.append(('bare', raw_token, raw_token))
+
+        while i < n and body[i].isspace():
+            i += 1
+
+        if i < n and body[i] == '#':
+            has_hash = True
+            i += 1
+            while i < n and body[i].isspace():
+                i += 1
+        else:
+            break
+
+    return tokens, has_hash, i
+
+
+def _eval_macro_expr(val_body: str, macro_defs: Dict[str, str]) -> str:
+    """Evaluate a @string macro value expression preserving whitespace inside quoted/braced tokens."""
+    tokens, has_hash, _ = _parse_expression_tokens(val_body, 0, len(val_body))
+    if not tokens:
+        return ""
+    if not has_hash and len(tokens) == 1:
+        ttype, inner, raw = tokens[0]
+        if ttype in ('quoted', 'braced'):
+            return inner
+        else:
+            token_key = inner.strip().lower()
+            return macro_defs.get(token_key, inner.strip())
+    else:
+        parts = []
+        for ttype, inner, raw in tokens:
+            if ttype in ('quoted', 'braced'):
+                parts.append(inner)
+            else:
+                token_key = inner.strip().lower()
+                parts.append(macro_defs.get(token_key, inner.strip()))
+        return "".join(parts)
+
+
 def _parse_bibtex_fields(body: str) -> Dict[str, Any]:
     """Parse fields from a BibTeX entry body with full brace nesting, macro, concatenation, and bare number support."""
     fields = {}
@@ -192,69 +293,7 @@ def _parse_bibtex_fields(body: str) -> Dict[str, Any]:
         i += m_name.end()
 
         # Parse field value tokens joined by '#'
-        tokens = []
-        has_hash = False
-
-        while i < n:
-            while i < n and body[i].isspace():
-                i += 1
-            if i >= n or body[i] in (',', '}', ')'):
-                break
-
-            if body[i] == '{':
-                i += 1
-                depth = 1
-                val_start = i
-                while i < n and depth > 0:
-                    if body[i] == '\\' and i + 1 < n:
-                        i += 2
-                        continue
-                    if body[i] == '{':
-                        depth += 1
-                    elif body[i] == '}':
-                        depth -= 1
-                    i += 1
-                val_end = i - 1 if depth == 0 else i
-                tokens.append(('braced', body[val_start:val_end], body[val_start-1:i]))
-            elif body[i] == '"':
-                i += 1
-                val_start = i
-                depth = 0
-                while i < n:
-                    if body[i] == '\\' and i + 1 < n:
-                        i += 2
-                        continue
-                    if body[i] == '{':
-                        depth += 1
-                    elif body[i] == '}':
-                        if depth > 0:
-                            depth -= 1
-                    elif body[i] == '"' and depth == 0:
-                        break
-                    i += 1
-                val_end = i
-                if i < n and body[i] == '"':
-                    i += 1
-                tokens.append(('quoted', body[val_start:val_end], body[val_start-1:i]))
-            else:
-                val_start = i
-                while i < n and not body[i].isspace() and body[i] not in ('#', ',', '}', ')'):
-                    i += 1
-                raw_token = body[val_start:i]
-                if not raw_token:
-                    break
-                tokens.append(('bare', raw_token, raw_token))
-
-            while i < n and body[i].isspace():
-                i += 1
-
-            if i < n and body[i] == '#':
-                has_hash = True
-                i += 1
-                while i < n and body[i].isspace():
-                    i += 1
-            else:
-                break
+        tokens, has_hash, i = _parse_expression_tokens(body, i, n)
 
         if i < n and body[i] == ',':
             i += 1
@@ -311,26 +350,18 @@ def parse_bibtex(text: str, include_special: bool = False) -> List[Dict[str, Any
         if raw_type in ("string", "preamble", "comment"):
             macro_name = f"_{raw_type}"
             macro_val = ""
-            if raw_type == "string":
-                m_str = re.match(r"@string\s*[\{\(]\s*([A-Za-z0-9_:-]+)\s*=", chunk_clean, re.IGNORECASE)
-                if m_str:
-                    macro_name = m_str.group(1)
-
             sp_body = chunk_clean[m_head.end():]
             sp_end = _find_entry_end(sp_body, close_delim)
             raw_special = chunk_clean[:m_head.end() + sp_end + 1]
 
             if raw_type == "string":
-                parsed_fields = _parse_bibtex_fields(sp_body[:sp_end])
-                for k, v in parsed_fields.items():
-                    if k.startswith("_"):
-                        continue
-                    macro_name = k
-                    is_bare = k in (parsed_fields.get("_bare_fields") or ())
-                    macro_val = resolve_bibtex_value(v, is_bare=is_bare, macros=macro_defs)
+                m_str = re.match(r"\s*([A-Za-z0-9_:-]+)\s*=", sp_body[:sp_end])
+                if m_str:
+                    macro_name = m_str.group(1)
+                    val_body = sp_body[:sp_end][m_str.end():]
+                    macro_val = _eval_macro_expr(val_body, macro_defs)
                     macro_defs[macro_name.lower()] = macro_val
-                    break
-                if not macro_val:
+                else:
                     m_v = re.search(r'=\s*(?:\{([^}]*)\}|"([^"]*)"|([^,\s}]+))', sp_body[:sp_end])
                     if m_v:
                         macro_val = m_v.group(1) or m_v.group(2) or m_v.group(3) or ""

@@ -13,6 +13,20 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.7] - 2026-10-03
+
+### Bug Fixes & Hardening — Seventh Round GitHub Code Review Remediation (2026-10-03)
+
+- **Issue 1 (Preserve String Macro Literal Leading & Trailing Whitespace)**:
+  - Extracted `_parse_expression_tokens` and introduced `_eval_macro_expr` in `pa_cli/scaffold.py` to evaluate `@string` macro definitions using un-stripped token content.
+  - Correctly preserves intentional leading and trailing spaces inside quoted and braced tokens (e.g. `@string{suffix=" Suppl"}` -> `" Suppl"`, `@string{prefix={Journal }}` -> `"Journal "`, `@string{space=" "}` -> `" "`), preventing concatenated venue names from colliding without spaces (e.g. `JournalSuppl` -> `Journal Suppl`).
+- **Issue 2 (Fix Empty String Macro Alias Fallback)**:
+  - In `parse_bibtex` (`pa_cli/scaffold.py`), structured `@string` definition evaluation with an explicit parsing success path rather than checking `if not macro_val`.
+  - Empty string macros (`@string{blank=""}`) and their aliases (`@string{alias=blank}`) successfully evaluate to `""` without erroneously falling back to the macro identifier text.
+- **Quality & Regression Coverage**:
+  - Added regression test suite `test_output/test_rereview_f77c013.py` (5 tests covering whitespace preservation, empty alias resolution, and whitespace-only macro combinations).
+  - Added `test_rereview_f77c013.py` to GitHub Actions CI workflow (`.github/workflows/ci.yml`).
+
 ## [3.10.0.6] - 2026-10-03
 
 ### Bug Fixes & Hardening — Sixth Round GitHub Code Review Remediation (2026-10-03)
