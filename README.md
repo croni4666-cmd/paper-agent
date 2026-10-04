@@ -17,6 +17,20 @@ raise a clear "not installed" error if you try `--engine core`. See
 
 ## Quick start (5 commands)
 
+Search providers have a 25-second work budget each (including process startup),
+followed by bounded worker cleanup. A timed-out provider is stopped and reported
+in `engine_status`/`engine_errors`; other providers continue. Optional enrichment
+has its own network work and is not included in that per-provider budget.
+Python callers of `run_search()` should use an importable script with an
+`if __name__ == "__main__":` guard, as required by spawned multiprocessing.
+
+arXiv records keep `arxiv_id` separate from DOI. BibTeX exports include `eprint`
+and `archivePrefix`; `fetch-batch` and project fetch support these fields.
+Historical `doi={arXiv:...}` entries are interpreted without creating invalid
+doi.org links. Rebuild local evidence indexes after upgrading to 3.10.0.9 to
+apply the revised heading detection. Section labels are heuristic and still
+need review; a ready local packet does not authorize external upload.
+
 ### 1. Search — 6 engines in one call
 ```bash
 pa search "AI literacy K-12" --year-min 2020 --limit 30 -o results.json

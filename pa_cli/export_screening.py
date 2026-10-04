@@ -72,16 +72,17 @@ def build_screening_dict(bib_path: Path) -> Dict[str, Dict[str, str]]:
         else:
             venue = ''
         from .bibtex import unescape_bibtex
+        from .identifiers import split_identifiers, citation_url
         out[key] = {
             'paper_key': key,
             'title': unescape_bibtex(e.get('title', '')),
             'authors': authors,
             'year': e.get('year', ''),
             'venue': unescape_bibtex(venue),
-            'doi': e.get('doi', ''),
+            'doi': split_identifiers(e)[0],
             'abstract': unescape_bibtex(e.get('abstract', '')),
             'type': e.get('type', 'misc'),
-            'bib_url': f"https://doi.org/{e['doi']}" if e.get('doi') else '',
+            'bib_url': citation_url(e),
         }
     return out
 

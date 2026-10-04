@@ -23,6 +23,8 @@ Field mapping priority (when same data has multiple sources):
 
 import html
 import re
+from html.parser import HTMLParser
+from .identifiers import split_identifiers, citation_url
 from pathlib import Path
 from typing import List, Dict, Optional, Any
 
@@ -76,11 +78,13 @@ def make_cite_key(paper: Dict, seen: set) -> str:
 def _base_key(paper: Dict) -> str:
     if paper.get("key"):
         return str(paper["key"]).strip()
-    doi = (paper.get("doi") or "").replace("https://doi.org/", "").strip()
+    doi, aid = split_identifiers(paper)
     if doi:
         # e.g. 10.1186/s41239-023-00411-8 -> 10_1186_s41239_023_00411_8
         # strip leading "10." since it's redundant
         return doi.replace("10.", "").replace("/", "_").replace(".", "_").replace("-", "_")
+    if aid:
+        return 'arxiv_' + re.sub(r'[^A-Za-z0-9]', '_', aid)
     # Fallback: first-author-lastname + year + first title word
     authors = paper.get("authors") or ["anon"]
     first_author = authors[0] or "anon"
@@ -101,6 +105,49 @@ def _base_key(paper: Dict) -> str:
 
 # ---------- Markup and LaTeX Text Cleaning ----------
 
+class _MarkupText(HTMLParser):
+    """Strip recognized markup only; unknown angle-bracket text stays literal."""
+    tags = set('a b i em strong u s sub sup p br div span ul ol li h1 h2 h3 h4 h5 h6 '
+               'table thead tbody tr td th blockquote italic bold underline sec title '
+               'abstract article article-title label ext-link xref inline-formula '
+               'disp-formula math mrow mi mn mo msup msub mfrac'.split())
+
+    def __init__(self, source):
+        super().__init__(convert_charrefs=False)
+        self.source, self.parts = source, []
+        self.starts = [0]
+        self.starts.extend(m.end() for m in re.finditer('\n', source))
+
+    def known(self, tag):
+        return tag in self.tags or tag.startswith(('jats:', 'mml:'))
+
+    def handle_starttag(self, tag, attrs):
+        if not self.known(tag):
+            self.parts.append(self.get_starttag_text())
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+
+    def handle_endtag(self, tag):
+        if not self.known(tag):
+            line, col = self.getpos()
+            start = self.starts[line - 1] + col
+            self.parts.append(self.source[start:self.source.index('>', start) + 1])
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+    def handle_entityref(self, name):
+        self._entity('&' + name)
+
+    def handle_charref(self, name):
+        self._entity('&#' + name)
+
+    def _entity(self, prefix):
+        line, col = self.getpos()
+        end = self.starts[line - 1] + col + len(prefix)
+        self.parts.append(prefix + (';' if self.source[end:end + 1] == ';' else ''))
+
 def unescape_bibtex(s: str) -> str:
     """Unescape common LaTeX escapes in BibTeX fields: \\& -> &, \\% -> %, etc.
     Also strips embedded XML/HTML tags and unescapes entities without collapsing spacing.
@@ -110,9 +157,10 @@ def unescape_bibtex(s: str) -> str:
     s = str(s)
     s = re.sub(r'\\([&%$#_{}])', r'\1', s)
     s = s.replace(r'\\', r' ')
-    s = html.unescape(s)
-    s = re.sub(r"<[^>]+>", "", s)
-    return s
+    parser = _MarkupText(s)
+    parser.feed(s)
+    parser.close()
+    return html.unescape(''.join(parser.parts))
 
 
 def clean_markup_text(s: str) -> str:
@@ -222,11 +270,12 @@ def to_bibtex(paper: Dict, seen: Optional[set] = None) -> str:
     year = paper.get("year")
     if year:
         fields.append(("year", str(year)))
-    doi = (paper.get("doi") or "").replace("https://doi.org/", "").strip()
+    doi, aid = split_identifiers(paper)
     if doi:
         fields.append(("doi", doi))
-    # URL priority: oa_url > doi.org URL
-    url = paper.get("oa_url") or (f"https://doi.org/{doi}" if doi else "")
+    if aid:
+        fields.extend((("eprint", aid), ("archivePrefix", "arXiv")))
+    url = citation_url(paper)
     if url:
         fields.append(("url", url))
     abstract = clean_markup_text(paper.get("abstract") or "")

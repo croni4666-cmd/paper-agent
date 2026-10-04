@@ -251,11 +251,10 @@ class TestLiveTaskFixes(unittest.TestCase):
                 self.assertEqual(results[0].get("error"), "missing_dependency")
 
     def test_run_search_status_reporting(self):
-        # Mock search_mock_eng to return an error dict
-        def mock_failing_eng(query, year_min, year_max, limit):
-            return [{"error": "missing_dependency", "message": "SDK not installed"}]
-
-        with patch("pa_cli.search.search_arxiv", side_effect=mock_failing_eng):
+        # Aggregation test: mock the transport, not an unpicklable provider.
+        # Real spawned providers are covered by test_live_workflow_repair.py.
+        with patch("pa_cli.search._run_search_engine", return_value=[
+                {"error": "missing_dependency", "message": "SDK not installed"}]):
             res = run_search("test query", engine="arxiv")
             self.assertEqual(res["by_engine"]["arxiv"], 0)
             self.assertEqual(res["engine_status"]["arxiv"], "error")

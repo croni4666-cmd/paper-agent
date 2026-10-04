@@ -36,6 +36,8 @@ import os
 import sys
 import threading
 import time
+import multiprocessing as mp
+from queue import Empty
 from pathlib import Path
 from typing import List, Dict, Optional, Any
 from urllib.parse import quote
@@ -469,8 +471,9 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     try:
         for r in client.results(search):
             results.append({
-                "doi": r.doi or f"arXiv:{r.entry_id.split('/')[-1]}",
+                "doi": r.doi or "",
                 "arxiv_id": r.entry_id.split("/")[-1],
+                "url": f"https://arxiv.org/abs/{r.entry_id.split('/')[-1]}",
                 "title": clean_markup_text(r.title),
                 "authors": [a.name for a in r.authors],
                 "venue": "arXiv",
@@ -935,6 +938,60 @@ except ImportError:
     search_core = _search_core_unavailable
 
 
+SEARCH_ENGINE_TIMEOUT = 25
+
+
+def _search_worker(output, function, args, kwargs):
+    """Top-level target so Windows spawn can import it."""
+    try:
+        result = function(*args, **kwargs)
+        output.put(result if isinstance(result, list) else [])
+    except Exception as exc:
+        output.put([{'error': type(exc).__name__, 'message': str(exc)[:200]}])
+
+
+def _run_search_engine(function, args, kwargs, timeout):
+    """Bound provider work, including startup, and stop it before returning.
+
+    Drain IPC before joining: large result lists may exceed the pipe buffer.
+    Cleanup joins are bounded independently of the provider deadline.
+    """
+    context = mp.get_context('spawn')
+    output = context.Queue()
+    worker = context.Process(target=_search_worker, args=(output, function, args, kwargs), daemon=True)
+    started = False
+    deadline = time.monotonic() + timeout
+    try:
+        worker.start()
+        started = True
+        while True:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                return [{'error': 'timeout', 'message': f'{function.__name__} timed out after {timeout}s'}]
+            try:
+                return output.get(timeout=min(remaining, 0.05))
+            except Empty:
+                if not worker.is_alive():
+                    # Normal exit has flushed the queue feeder; check once more.
+                    try:
+                        return output.get_nowait()
+                    except Empty:
+                        return [{'error': 'worker_failed', 'message': f'search worker exited with code {worker.exitcode}'}]
+    finally:
+        if started:
+            worker.join(0.1)
+            if worker.is_alive():
+                worker.terminate()
+                worker.join(0.5)
+            if worker.is_alive():
+                worker.kill()
+                worker.join(0.5)
+        if not started or not worker.is_alive():
+            worker.close()
+        output.cancel_join_thread()
+        output.close()
+
+
 def run_search(query: str, year_min: int = None, year_max: int = None,
                limit: int = 50, engine: str = "all",
                concepts_filter: str = None,
@@ -977,9 +1034,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
     # OpenAlex already indexes CORE's repos, so marginal coverage is <5%.
     # If user explicitly asks for `--engine core`, route to search_core().
-    if engine == "core":
-        papers = search_core(query, year_min, year_max, limit)
-        return {"results": papers, "by_engine": {"core": papers}, "dedup_count": len(papers)}
     by_engine: Dict[str, List[Dict]] = {}
     funcs = {
         "crossref": search_crossref,
@@ -992,6 +1046,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         # Note: returns trial registry records (NOT papers). Different
         # content type from PubMed/PEDro. Will appear as source='clinicaltrials'.
         "clinicaltrials": search_clinicaltrials,
+        "core": search_core,
     }
     # AMiner is optional 鈥?only include if token is set (avoid hard-fail on first run)
     if "aminer" in engines:
@@ -1009,9 +1064,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     elif "cnki" in engines:
         from .cnki_channel import search_cnki
         funcs["cnki"] = search_cnki
-    engine_timeout = 25
-    from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
-
     for eng in engines:
         if eng not in funcs:
             continue
@@ -1023,13 +1075,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             elif eng == "aminer":
                 fn_kwargs["mode"] = aminer_mode
 
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(target_fn, query, year_min, year_max, limit, **fn_kwargs)
-                try:
-                    res = future.result(timeout=engine_timeout)
-                    by_engine[eng] = res if isinstance(res, list) else []
-                except FuturesTimeoutError:
-                    by_engine[eng] = [{"error": "timeout", "message": f"{eng} timed out after {engine_timeout}s"}]
+            by_engine[eng] = _run_search_engine(
+                target_fn, (query, year_min, year_max, limit), fn_kwargs, SEARCH_ENGINE_TIMEOUT)
         except Exception as e:
             by_engine[eng] = [{"error": type(e).__name__, "message": str(e)[:200]}]
 
