@@ -13,6 +13,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.13] - 2026-10-04
+
+### Statistical Report Consistency & Heuristic Verification ([P1-24])
+
+- Implement `pa stats-check` CLI command and `pa_cli/stats_check.py` for automated offline statistical verification:
+  - High-precision pure-Python cumulative distribution functions (CDF) for Student's $t$, $F$, $\chi^2$, Normal $z$, and Pearson correlation $r$ using continued fractions (regularized incomplete beta and gamma) with machine precision ($\approx 10^{-16}$). Zero external math or cloud dependencies required.
+  - Comprehensive pattern extraction from academic prose and PDFs covering APA and standard empirical test expressions ($t(df) = \dots, p = \dots$, $F(df_1, df_2)$, $\chi^2(df)$, $z$, $r(df)$).
+  - Robust text normalization handling full-width Chinese punctuation (`（`, `）`, `，`, `＝`), Unicode minus signs (`−`, `–`, `—`), inequalities (`≤`, `≥`), and mathematical italic characters (`𝑡`, `𝐹`, `𝑧`, `𝑟`, `𝑝`).
+  - Strict verification classifying reported results into: Consistent (within reported decimal rounding margin), Inconsistent, Decision Errors (statistical significance reversals across $\alpha = 0.05$), and One-Tailed Hypothesis Matches.
+  - Multi-target presentation across ASCII terminal tables, structured Markdown reports, and machine-readable JSON summaries for individual files, strings, and project corpora.
+- Add test suite `test_output/test_stats_check_p1_24.py` (8 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.12] - 2026-10-04
 
 ### Local Offline PDF Tabular Data Extractor ([P0-17])

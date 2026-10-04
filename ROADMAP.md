@@ -4888,12 +4888,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P1-24] Statistical report consistency and heuristic verification (`pa stats-check`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-04 (v3.10.0.13)
 - **Priority**: P1
 - **Effort**: 1-2 engineering days
 - **Source**: Academic rigor and empirical validation.
-- **Rationale**: Implements local heuristic verification (similar to statcheck) to parse reported test statistics ($t, F, z, r$) and verify degrees of freedom against reported $p$-values, flagging mathematical discrepancies.
+- **Rationale**: Implements local heuristic verification (similar to statcheck) to parse reported test statistics ($t, F, z, r, \chi^2$) and verify degrees of freedom against reported $p$-values, flagging mathematical discrepancies.
+- **Outcome**: Implemented `pa_cli/stats_check.py` and `pa stats-check` CLI command. Features machine-precision pure Python CDF calculations (incomplete beta and gamma continued fractions), full-width and Unicode math character normalization, detection of rounding discrepancies, decision error classification (significance shifts across $\alpha = 0.05$), and one-tailed hypothesis consistency detection. Supports raw text strings, individual PDFs, and full project corpora across table, markdown, and json formats. Covered by 8 tests in `test_output/test_stats_check_p1_24.py`.
 - **Global Rule audit**: Pure regex and local math verification; runs completely offline.
 
 ### [P1-25] Simulation calibration parameters and effect-size prior harvester (`pa extract-parameters`)

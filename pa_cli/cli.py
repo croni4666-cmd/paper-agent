@@ -1585,6 +1585,94 @@ def extract_tables_cmd(target, format, output, root_path, as_json):
         click.echo(rendered)
 
 
+# =============== [P1-24] pa stats-check: Statistical Report Verification ===============
+
+@main.command("stats-check")
+@click.argument("target", required=False, default=None)
+@click.option("--text", "-t", default=None,
+              help="Raw text string or paragraph to verify for statistical consistency")
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug to scan all cached PDF papers")
+@click.option("--format", "-f", default="table",
+              type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              show_default=True, help="Output format: table, markdown, or json")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file to save verification report")
+@click.option("--alpha", default=0.05, type=float, show_default=True,
+              help="Significance threshold for decision error detection")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Print verification report as raw JSON")
+def stats_check_cmd(target, text, project_slug, format, output, alpha, root_path, as_json):
+    """[P1-24] Statistical report consistency and heuristic verification.
+
+    Extracts reported statistical tests (t, F, chi2, z, r) and mathematically
+    verifies degrees of freedom against reported p-values offline. Flags inconsistencies
+    and decision errors (statistical significance shifts across alpha).
+
+    EXAMPLES:
+      pa stats-check --text "t(28) = 2.45, p = 0.021; F(1, 40) = 4.25, p = 0.046"
+      pa stats-check ./paper.pdf --format markdown -o stats_report.md
+      pa stats-check --project my-project --format table
+      pa stats-check ./paper.pdf --json
+    """
+    from .stats_check import (
+        StatsCheckItem,
+        extract_stats_from_text,
+        extract_stats_from_pdf,
+        extract_stats_from_project,
+        summarize_findings,
+        format_stats_report,
+    )
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    fmt = "json" if as_json else format.lower()
+
+    try:
+        if text:
+            items = extract_stats_from_text(text, source="input_text", alpha=alpha)
+            summary = summarize_findings(items)
+            rendered = format_stats_report(summary, fmt=fmt)
+        elif project_slug or (target and not Path(target).exists() and (root / target).is_dir()):
+            slug = project_slug or target
+            proj_data = extract_stats_from_project(slug, root=root, alpha=alpha)
+            if fmt == "json":
+                rendered = json.dumps(proj_data, indent=2, ensure_ascii=False)
+            else:
+                flat_items = []
+                for p_dict in proj_data.get("papers", {}).values():
+                    for item_data in p_dict.get("items", []):
+                        flat_items.append(StatsCheckItem(**item_data))
+                summary = summarize_findings(flat_items)
+                rendered = format_stats_report(summary, fmt=fmt)
+        elif target:
+            target_p = Path(target)
+            if not target_p.exists():
+                raise FileNotFoundError(f"Target file not found: {target}")
+            if target_p.suffix.lower() == ".pdf":
+                summary = extract_stats_from_pdf(target_p, alpha=alpha)
+            else:
+                raw = target_p.read_text(encoding="utf-8", errors="replace")
+                items = extract_stats_from_text(raw, source=target_p.name, alpha=alpha)
+                summary = summarize_findings(items)
+            rendered = format_stats_report(summary, fmt=fmt)
+        else:
+            click.echo("Error: Please provide a TARGET file/project, --project, or --text string.", err=True)
+            sys.exit(1)
+    except Exception as e:
+        click.echo(f"[pa stats-check] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa stats-check] Verification report saved to: {output}")
+    else:
+        click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.
