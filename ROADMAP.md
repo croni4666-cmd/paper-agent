@@ -4900,12 +4900,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P1-25] Simulation calibration parameters and effect-size prior harvester (`pa extract-parameters`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-04 (v3.10.0.14)
 - **Priority**: P1
 - **Effort**: 2 engineering days
 - **Source**: User directive 2026-10-02 (supporting external simulation and fitting).
 - **Rationale**: Numerical simulation and structural estimation require parameter priors from literature (e.g., risk aversion, elasticities, discount factors). Extracts numerical parameters, confidence intervals, and estimation context into a calibration table.
+- **Outcome**: Implemented `pa_cli/parameter_harvester.py` and `pa extract-parameters` CLI command. Extracts structural macro parameters (discount factors, CRRA risk aversion, capital share, depreciation rates, Frisch elasticities, shock persistence/volatilities) and micro/empirical parameters (price elasticities, MPC, baseline treatment effect sizes) along with standard errors, 95% confidence intervals, and frequency horizons. Exports to terminal table, markdown, json, and executable Python code dictionaries (`CALIBRATION_PRIORS`). Covered by 7 tests in `test_output/test_parameter_harvester_p1_25.py`.
 - **Global Rule audit**: Local regex and M2 evidence scanning; zero external API cost.
 
 ### [P2-20] Evidence-grounded literature review section scripter (`pa project review --evidence-backed`)

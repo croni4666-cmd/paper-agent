@@ -1673,6 +1673,95 @@ def stats_check_cmd(target, text, project_slug, format, output, alpha, root_path
         click.echo(rendered)
 
 
+# =============== [P1-25] pa extract-parameters: Simulation Calibration Priors ===============
+
+@main.command("extract-parameters")
+@click.argument("target", required=False, default=None)
+@click.option("--text", "-t", default=None,
+              help="Raw text string or paragraph to harvest calibration parameters from")
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug to scan all cached PDF papers")
+@click.option("--format", "-f", default="table",
+              type=click.Choice(["table", "markdown", "json", "python"], case_sensitive=False),
+              show_default=True, help="Output format: table, markdown, json, or python code")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file to save harvested parameters")
+@click.option("--category", "-c", default=None,
+              type=click.Choice(["macro", "micro", "empirical", "all"], case_sensitive=False),
+              help="Filter parameters by domain category")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Print harvested parameters as raw JSON")
+def extract_parameters_cmd(target, text, project_slug, format, output, category, root_path, as_json):
+    """[P1-25] Harvest simulation calibration parameters and empirical effect-size priors.
+
+    Extracts numerical parameter priors (discount factors, risk aversion, depreciation rates,
+    elasticities, shock volatilities/persistences, treatment effect sizes, SEs, and CIs)
+    from academic PDFs or project corpora to supply simulation models (SciPy, PyMC, DSGE).
+
+    EXAMPLES:
+      pa extract-parameters ./paper.pdf
+      pa extract-parameters ./paper.pdf --format python -o calibration.py
+      pa extract-parameters --project my-project --format markdown -o priors.md
+      pa extract-parameters --text "We calibrate beta = 0.99 (quarterly) and gamma = 2.0"
+    """
+    from .parameter_harvester import (
+        CalibrationParameter,
+        harvest_parameters_from_text,
+        harvest_parameters_from_pdf,
+        harvest_parameters_from_project,
+        summarize_parameters,
+        format_parameters_report,
+    )
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    fmt = "json" if as_json else format.lower()
+
+    try:
+        if text:
+            params = harvest_parameters_from_text(text, source_doc="input_text", category_filter=category)
+            summary = summarize_parameters(params)
+            rendered = format_parameters_report(summary, fmt=fmt)
+        elif project_slug or (target and not Path(target).exists() and (root / target).is_dir()):
+            slug = project_slug or target
+            proj_data = harvest_parameters_from_project(slug, root=root, category_filter=category)
+            if fmt == "json":
+                rendered = json.dumps(proj_data, indent=2, ensure_ascii=False)
+            else:
+                flat_params = []
+                for p_dict in proj_data.get("papers", {}).values():
+                    for param_data in p_dict.get("parameters", []):
+                        flat_params.append(CalibrationParameter(**param_data))
+                summary = summarize_parameters(flat_params)
+                rendered = format_parameters_report(summary, fmt=fmt)
+        elif target:
+            target_p = Path(target)
+            if not target_p.exists():
+                raise FileNotFoundError(f"Target file not found: {target}")
+            if target_p.suffix.lower() == ".pdf":
+                summary = harvest_parameters_from_pdf(target_p, category_filter=category)
+            else:
+                raw = target_p.read_text(encoding="utf-8", errors="replace")
+                params = harvest_parameters_from_text(raw, source_doc=target_p.name, category_filter=category)
+                summary = summarize_parameters(params)
+            rendered = format_parameters_report(summary, fmt=fmt)
+        else:
+            click.echo("Error: Please provide a TARGET file/project, --project, or --text string.", err=True)
+            sys.exit(1)
+    except Exception as e:
+        click.echo(f"[pa extract-parameters] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa extract-parameters] Calibration priors saved to: {output}")
+    else:
+        click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.

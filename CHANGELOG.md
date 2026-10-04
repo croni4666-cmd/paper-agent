@@ -13,6 +13,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.14] - 2026-10-04
+
+### Simulation Calibration Parameters & Effect-Size Prior Harvester ([P1-25])
+
+- Implement `pa extract-parameters` CLI command and `pa_cli/parameter_harvester.py` for automated extraction of quantitative parameter priors:
+  - Canonical macro/structural parameter harvesting: discount factors ($\beta$), relative risk aversion ($\gamma$, CRRA), capital share ($\alpha$), capital depreciation rate ($\delta$), Frisch labor supply elasticity ($\eta$), intertemporal elasticity of substitution (IES, $\psi$), shock persistence ($\rho$), and innovation volatility ($\sigma$).
+  - Microeconomic and empirical effect-size priors: price elasticity of demand ($\theta$), marginal propensity to consume (MPC), and empirical baseline treatment effects ($\beta$, ATE, DID estimates).
+  - Sentence clause boundary isolation preventing cross-sentence metadata bleeding; automatic extraction of associated standard errors (SE), 95% confidence intervals, and time/frequency horizons (quarterly, annual, monthly).
+  - Parameter prior distribution calculation aggregated across multiple occurrences or papers (min, mean, max, sample count).
+  - Multi-target export formatting: terminal ASCII summary table, academic Markdown calibration table, structured JSON records, and executable Python code dictionary (`CALIBRATION_PRIORS = {...}`) configured for direct import in SciPy, PyMC, and DSGE simulation pipelines.
+- Add test suite `test_output/test_parameter_harvester_p1_25.py` (7 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.13] - 2026-10-04
 
 ### Statistical Report Consistency & Heuristic Verification ([P1-24])
