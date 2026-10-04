@@ -13,6 +13,17 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.10] - 2026-10-04
+
+### Structured Research Metadata Export ([P0-16])
+
+- Implement `pa export` and enhance `pa project export` with multi-target research handoffs:
+  - `jupyter`: Generates Pandas DataFrame-ready records JSON and starter analysis notebooks (`.ipynb` v4) pre-loaded with bibliographic distributions, full-text availability, and keyword search filters.
+  - `typst`: Scaffolds complete modern Typst documents (`main.typ`) and companion clean BibTeX (`refs.bib`) configured for compile-ready literature digests.
+  - `bib` / `bibtex`: Curated, clean standard BibTeX export with normalized metadata.
+- Add `pa_cli/export_research.py` polymorphic exporter supporting project slugs, standalone `.bib` files, `.json` files, and in-memory paper dicts.
+- Add test suite `test_output/test_export_research_p0_16.py` (7 tests) covering Jupyter notebook JSON validation, Typst scaffolding, and CLI invocations.
+
 ## [3.10.0.9] - 2026-10-03
 
 ### Live workflow repairs

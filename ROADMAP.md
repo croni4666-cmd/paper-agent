@@ -4832,12 +4832,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P0-16] Structured research metadata export (`pa export --target jupyter/typst/bib`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-04 (v3.10.0.10)
 - **Priority**: P0
 - **Effort**: 1 engineering day
 - **Source**: User feedback 2026-10-02 on downstream modeling integration.
 - **Rationale**: Researchers need structured handoffs from Paper Agent to Python/Jupyter data pipelines and modern typesetting environments. This ticket adds structured export formats: Pandas DataFrame JSON, clean BibTeX, and Typst project scaffolding.
+- **Outcome**: Implemented `pa_cli/export_research.py`, added `pa export` CLI command and enhanced `pa project export`. Supports `jupyter` (.ipynb and .json records), `typst` (scaffolds `main.typ` and `refs.bib`), and clean `bib` / `bibtex`. Validated by 7 regression tests in `test_output/test_export_research_p0_16.py`.
 - **Global Rule audit**: Local file conversion; no external services or dependencies.
 
 ### [P0-17] Local offline PDF tabular data extractor (`pa extract-tables`)

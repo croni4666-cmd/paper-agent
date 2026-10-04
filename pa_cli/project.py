@@ -1327,11 +1327,12 @@ def project_export(
                 lines.append(f"- **DOI**: [{doi}]({doi_link})")
             if e.get("abstract"):
                 lines.append(f"- **Abstract**: {e['abstract'][:400]}...")
-            lines.append("")
-
         content = "\n".join(lines)
+    elif format_lower in ("jupyter", "typst", "bib"):
+        from .export_research import export_research
+        return export_research(slug, target=format_lower, out_file=out_file, root=root)
     else:
-        raise ValueError(f"Unsupported export format {format!r}. Choose from 'markdown', 'bibtex', 'json'.")
+        raise ValueError(f"Unsupported export format {format!r}. Choose from 'markdown', 'bibtex', 'bib', 'json', 'jupyter', 'typst'.")
 
     written_to = None
     if out_file:

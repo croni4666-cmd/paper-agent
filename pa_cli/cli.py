@@ -1389,6 +1389,63 @@ def export_screening(bibtex_file, out_file, judges_db, query, no_unrated):
         err=True,
     )
 
+# =============== [P0-16] pa export: Structured Research Metadata Export ===============
+
+@main.command("export")
+@click.argument("source", required=False, default=None)
+@click.option("--target", "-t", "--format", "-f", "target", default="jupyter",
+              type=click.Choice(["jupyter", "typst", "bib", "bibtex", "markdown", "json"], case_sensitive=False),
+              show_default=True, help="Target export format")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file or directory")
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug (if source is not specified as a slug)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Output metadata as JSON")
+def export_cmd(source, target, output, project_slug, root_path, as_json):
+    """[P0-16] Export literature corpus to Jupyter/Pandas, Typst, BibTeX, or Markdown.
+
+    Exports catalogued research metadata for downstream Python/Jupyter data pipelines,
+    econometric analysis, or modern Typst typesetting.
+
+    TARGETS:
+      jupyter   - Pandas DataFrame records JSON or starter analysis notebook (.ipynb)
+      typst     - Typst scaffolding (main.typ + refs.bib) ready for `typst compile`
+      bib/bibtex- Standard clean BibTeX references
+      markdown  - Literature digest document
+      json      - Full machine-readable metadata
+
+    EXAMPLES:
+      pa export my-project --target jupyter -o analysis.ipynb
+      pa export my-project --target typst -o ./typst_report
+      pa export refs.bib --target jupyter -o corpus_df.json
+      pa export --project my-project --target bib -o cleaned_refs.bib
+    """
+    from .export_research import export_research
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    src = source or project_slug
+    if not src:
+        click.echo("[pa export] ERROR: Must specify a project slug or input file path (or use --project).", err=True)
+        sys.exit(1)
+
+    try:
+        res = export_research(src, target=target, out_file=output, root=root)
+    except Exception as e:
+        click.echo(f"[pa export] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if as_json:
+        click.echo(json.dumps(res, indent=2, ensure_ascii=False))
+        return
+
+    if output or res.get("files_written"):
+        out_dest = output or ", ".join(res.get("files_written", []))
+        click.echo(f"[pa export] Successfully exported {res['n_papers']} papers ({res['target']}) to: {out_dest}")
+    else:
+        click.echo(res.get("content", ""))
+
 
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
@@ -2298,15 +2355,15 @@ def project_cite_check_cmd(slug, doc_path, root_path, strict, as_json):
 
 @project.command(name="export")
 @click.argument("slug")
-@click.option("--format", "-f", default="markdown",
-              type=click.Choice(["markdown", "bibtex", "json"], case_sensitive=False),
-              show_default=True, help="Export format")
-@click.option("-o", "--output", default=None, help="Write export to destination file")
+@click.option("--format", "-f", "--target", "-t", "format", default="markdown",
+              type=click.Choice(["markdown", "bibtex", "bib", "json", "jupyter", "typst"], case_sensitive=False),
+              show_default=True, help="Export format / target")
+@click.option("-o", "--output", "--out", "output", default=None, help="Write export to destination file")
 @click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
               help="Override default project root")
 @click.option("--json", "as_json", is_flag=True, help="Output metadata as JSON")
 def project_export_cmd(slug, format, output, root_path, as_json):
-    """Export project corpus to Markdown literature digest, BibTeX, or JSON."""
+    """Export project corpus to Markdown literature digest, BibTeX, JSON, Jupyter, or Typst."""
     from .project import project_export, DEFAULT_ROOT
     from pathlib import Path
     root = Path(root_path) if root_path else DEFAULT_ROOT
