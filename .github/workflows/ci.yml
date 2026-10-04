@@ -57,6 +57,7 @@ jobs:
           python test_output/test_evidence_m2.py
           python test_output/test_export_research_p0_16.py
           python test_output/test_empirical_design_p0_18.py
+          python test_output/test_table_extractor_p0_17.py
 
   package:
     name: Build wheel and verify package contents

@@ -4844,12 +4844,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P0-17] Local offline PDF tabular data extractor (`pa extract-tables`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-04 (v3.10.0.12)
 - **Priority**: P0
 - **Effort**: 2 engineering days
 - **Source**: Paper Agent 4 multimodal micro-evidence initiative.
 - **Rationale**: Academic papers report critical empirical evidence in tables (Table 1: Descriptive Stats, Table 2: Baseline Regressions). PyMuPDF drawing paths and cell geometry allow high-fidelity offline reconstruction into Markdown and JSON matrices without expensive cloud OCR APIs.
+- **Outcome**: Implemented `pa_cli/table_extractor.py` and `pa extract-tables` CLI command. Features two-tier table detection (PyMuPDF `find_tables()` + rule-based LaTeX three-line table heuristic reconstruction), automatic table title/caption pairing, semantic classification (`descriptive_statistics`, `baseline_regression`, `correlation_matrix`, `robustness_checks`, etc.), footnote association, and multi-format export (`markdown`, `json`, `csv`). Covered by 8 tests in `test_output/test_table_extractor_p0_17.py`.
 - **Global Rule audit**: Pure PyMuPDF offline parsing; zero API cost.
 
 ### [P0-18] Empirical design, variable definition, and data source extractor (`pa extract-design`)

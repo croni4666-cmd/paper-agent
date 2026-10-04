@@ -13,6 +13,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.12] - 2026-10-04
+
+### Local Offline PDF Tabular Data Extractor ([P0-17])
+
+- Implement `pa extract-tables` CLI command and `pa_cli/table_extractor.py` for structured empirical table extraction from local PDFs:
+  - Two-tier extraction architecture: Tier 1 utilizes PyMuPDF native `find_tables()` for bordered grid tables; Tier 2 deploys heuristic gap/alignment analysis to reconstruct borderless LaTeX three-line tables.
+  - Automatic detection and pairing of table captions/titles (e.g., `Table 1: Descriptive Statistics`, `表 2: 基准回归结果`) and table footnote notes (e.g., `Notes: *** p<0.01, robust standard errors...`).
+  - Semantic table type classification into categories: `descriptive_statistics`, `baseline_regression`, `correlation_matrix`, `robustness_checks`, `heterogeneity`, `mechanism_analysis`, and `general`.
+  - Multi-target export formatting: Markdown tables with metadata headers, JSON with cell matrices and column headers, and individual CSV exports per extracted table.
+  - Support for single PDF parsing or batch extraction over entire project corpus collections.
+- Add comprehensive test suite `test_output/test_table_extractor_p0_17.py` (8 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.11] - 2026-10-04
 
 ### Empirical Design, Variable Definition & Data Source Extractor ([P0-18])
