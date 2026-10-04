@@ -1446,6 +1446,70 @@ def export_cmd(source, target, output, project_slug, root_path, as_json):
     else:
         click.echo(res.get("content", ""))
 
+# =============== [P0-18] pa extract-design: Empirical Design & Variable Extractor ===============
+
+@main.command("extract-design")
+@click.argument("target", required=True)
+@click.option("--format", "-f", default="markdown",
+              type=click.Choice(["markdown", "json", "table"], case_sensitive=False),
+              show_default=True, help="Output presentation format")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file to save empirical design extraction")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Print extracted design as raw JSON")
+def extract_design_cmd(target, format, output, root_path, as_json):
+    """[P0-18] Extract empirical design, variables, data sources, and sample rules from PDFs.
+
+    Parses academic PDFs or an entire project corpus to extract empirical specifications:
+    (1) Databases (CSMAR, Wind, Compustat, CRSP, FRED, etc.)
+    (2) Sample time period & filtering rules (excluding ST/financial firms, winsorization)
+    (3) Dependent, independent, and control variables with proxies
+    (4) Econometric identification strategies (DID, Fixed Effects, 2SLS, RDD, GMM)
+
+    EXAMPLES:
+      pa extract-design ./paper.pdf
+      pa extract-design my-project --format markdown -o empirical_specs.md
+      pa extract-design my-project --format json -o design_matrix.json
+    """
+    from .empirical_design import (
+        extract_empirical_design,
+        extract_project_empirical_designs,
+        render_design_markdown,
+    )
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    target_path = Path(target)
+
+    try:
+        # Check if target is a file or project slug
+        if target_path.is_file():
+            data = extract_empirical_design(target_path)
+        else:
+            proj_dir = root / target
+            if proj_dir.is_dir() and (proj_dir / "meta.json").exists():
+                data = extract_project_empirical_designs(target, root=root)
+            else:
+                raise FileNotFoundError(
+                    f"Target {target!r} is neither an existing file nor a project under {root}"
+                )
+    except Exception as e:
+        click.echo(f"[pa extract-design] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if as_json or format.lower() == "json":
+        rendered = json.dumps(data, indent=2, ensure_ascii=False)
+    else:
+        rendered = render_design_markdown(data)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa extract-design] Empirical design specifications saved to: {output}")
+    else:
+        click.echo(rendered)
+
 
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without

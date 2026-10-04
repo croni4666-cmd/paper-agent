@@ -4854,12 +4854,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P0-18] Empirical design, variable definition, and data source extractor (`pa extract-design`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-04 (v3.10.0.11)
 - **Priority**: P0
 - **Effort**: 2-3 engineering days
 - **Source**: User directive 2026-10-02 (supporting external crawlers and databases).
 - **Rationale**: Before writing scrapers or querying databases (Wind, CSMAR, Compustat), researchers need to know how the literature constructs samples and variables. This tool extracts: (1) Data sources & time coverage, (2) Dependent/independent variable proxy definitions and formulas, (3) Baseline control variables.
+- **Outcome**: Implemented `pa_cli/empirical_design.py` and `pa extract-design` CLI command. Extracts commercial databases (CSMAR, Wind, Compustat, CRSP, FRED, etc.), sample periods, sample filtering (ST, financial, winsorization), identification strategies (DID, FE, 2SLS, RDD, GMM), and variables. Generates single-paper breakdowns and cross-paper comparative matrices (`markdown`, `json`). Covered by 6 tests in `test_output/test_empirical_design_p0_18.py`.
 - **Global Rule audit**: Local passage parsing via M2 evidence packets; zero cloud infra.
 
 ### [P1-22] Theoretical proposition controversy and consensus matrix (`pa consensus`)

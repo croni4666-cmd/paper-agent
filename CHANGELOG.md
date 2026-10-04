@@ -13,6 +13,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.11] - 2026-10-04
+
+### Empirical Design, Variable Definition & Data Source Extractor ([P0-18])
+
+- Implement `pa extract-design` and `pa_cli/empirical_design.py` to extract empirical research specifications from full-text PDFs:
+  - Commercial & public academic databases: CSMAR, Wind, Choice, CNRDS, Compustat, CRSP, WRDS, FRED, SEC EDGAR, China Customs, etc.
+  - Sample time horizons (e.g. 2012–2021) and selection/filtering criteria (financial industry exclusion, ST/*ST firm elimination, winsorization thresholds).
+  - Econometric identification strategies (DID, Staggered DID, Fixed Effects / TWFE, 2SLS / Instrumental Variables, RDD, PSM, GMM, Event Study) and clustering levels.
+  - Dependent, independent/explanatory, and baseline control variable proxies.
+  - Multi-paper cross-study comparative matrix rendering (`markdown`, `json`, `table`).
+- Add comprehensive test suite `test_output/test_empirical_design_p0_18.py` (6 tests) and integrate into CI pipeline.
+
 ## [3.10.0.10] - 2026-10-04
 
 ### Structured Research Metadata Export ([P0-16])
