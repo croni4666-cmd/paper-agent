@@ -13,6 +13,23 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.17] - 2026-10-07
+
+### Manuscript Citation Fidelity & Hallucination Audit ([P2-21])
+
+- Implement `pa cite-audit` CLI command and `pa_cli/cite_audit.py` for automated sentence-level verification of draft manuscripts:
+  - Universal academic citation parsing supporting Markdown citeproc (`[@key]`, `[@k1; @k2]`), LaTeX (`\cite`, `\citep`, `\citet`, `\autocite`, `\parencite`), Typst (`@key`), Markdown footnotes (`[^key]`), and inline author-year citations (`Author et al. (2020)`).
+  - Sentence-by-sentence boundary extraction with academic abbreviation safeguards (`e.g.`, `i.e.`, `et al.`, `vs.`, `cf.`, `p.`, `pp.`, `vol.`, `3.14`).
+  - Source resolution mapping citation keys to local full-text PDFs (via file fields, DOI cache slugs, key matching) or local BibTeX abstract metadata.
+  - Multi-dimensional offline verification engine:
+    - Lexical & semantic overlap scoring with keyword recall and Jaccard similarity.
+    - Directional / polarity verification detecting alignment vs. contradictions (e.g. asserting positive effect when source found negative or null findings).
+    - Numerical claim verification comparing claimed percentages, basis points, and decimal coefficients against source full-text and tables.
+    - Flagging ungrounded/hallucinated references, out-of-context quotes, and domain mismatches.
+  - Generates quantitative Evidence Fidelity Scores (EFS $\in [0, 1]$) and categorical verdicts: `VERIFIED_FAITHFUL`, `PARTIALLY_SUPPORTED`, `MISATTRIBUTION`, `HALLUCINATED_CITATION`, and `NUMERICAL_DISCREPANCY`.
+  - Multi-target presentation: Windows CP936 safe terminal ASCII tables, comprehensive publication-ready Markdown audit reports with evidence excerpts, and machine-readable JSON summaries with `--strict` CI gating.
+- Add test suite `test_output/test_cite_audit_p2_21.py` (10 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.16] - 2026-10-07
 
 ### Evolutionary Citation & Methodology Lineage ([P1-23])

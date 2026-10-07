@@ -4926,13 +4926,16 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P2-21] Manuscript citation fidelity and hallucination audit (`pa cite-audit`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P2
 - **Effort**: 3 engineering days
 - **Source**: Academic integrity and hallucination defense.
 - **Rationale**: Accepts a full academic manuscript written by the user. Extracts all citations (`\cite{...}` or `[^cite]`) and compares the assertion against the cached source PDF text, reporting an Evidence Fidelity Score and flagging misattributions or ungrounded claims.
-- **Global Rule audit**: Local lexical and NLI comparison; runs 100% offline.
+- **Outcome**: Implemented `pa_cli/cite_audit.py` and `pa cite-audit` CLI command. Extracts diverse academic citation styles (LaTeX `\cite`, Markdown citeproc `[@key]`, Typst `@key`, footnotes `[^key]`, and author-year text) and sentence assertions. Cross-references claims against local PDFs and BibTeX metadata to calculate Evidence Fidelity Scores (EFS) and detects misattributions, polarity inversions, numerical hallucinations, and ungrounded citations completely offline. Exports terminal ASCII tables, Markdown reports, and JSON. Covered by 10 unit tests in `test_output/test_cite_audit_p2_21.py`.
+- **Global Rule audit**: Local lexical and NLI comparison; runs 100% offline; zero API costs.
 
 ### [P2-22] Standalone offline interactive knowledge graph (`pa graph --interactive`)
 

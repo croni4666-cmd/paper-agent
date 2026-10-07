@@ -1938,6 +1938,90 @@ def lineage_cmd(target, project_slug, format, output, root_path, as_json):
         click.echo(rendered)
 
 
+# =============== [P2-21] pa cite-audit: Manuscript Citation Fidelity Audit ===============
+@main.command("cite-audit")
+@click.argument("manuscript_path", required=False, type=click.Path(exists=True, dir_okay=False))
+@click.option("--text", "inline_text", default=None, help="Inline manuscript text/claim to audit")
+@click.option("--bib", "bib_path", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Path to BibTeX bibliography file (auto-detected if omitted)")
+@click.option("--pdf-dir", "pdf_dir", type=click.Path(exists=True, file_okay=False), default=None,
+              help="Directory containing source PDF files or cache")
+@click.option("--threshold", default=0.60, type=float, show_default=True,
+              help="Minimum required overall fidelity score (0.0 - 1.0)")
+@click.option("--strict", is_flag=True,
+              help="Exit code 1 if any citation is misattributed, hallucinated, or below threshold")
+@click.option("--format", "format_type", type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              default="table", show_default=True, help="Output display format")
+@click.option("-o", "--output", type=click.Path(dir_okay=False), default=None,
+              help="Destination file to save audit report")
+@click.option("--json", "as_json", is_flag=True, help="Print audit results as raw JSON")
+def cite_audit_cmd(manuscript_path, inline_text, bib_path, pdf_dir, threshold, strict, format_type, output, as_json):
+    """[P2-21] Manuscript citation fidelity and hallucination audit.
+
+    Accepts an academic draft (Markdown, LaTeX, Typst, or text). Extracts citations
+    and sentence-level assertions, cross-referencing against local source PDFs
+    or BibTeX metadata to calculate Evidence Fidelity Scores (EFS) and detect
+    misattributions, numerical discrepancies, polarity inversions, and hallucinated citations.
+
+    Examples:
+      pa cite-audit ./draft.md --bib refs.bib
+      pa cite-audit ./paper.tex --strict --format markdown -o audit_report.md
+      pa cite-audit --text "Smith (2020) demonstrated a 24% increase in output." --bib refs.bib
+      pa cite-audit ./manuscript.md --json
+    """
+    from .cite_audit import (
+        audit_manuscript,
+        format_audit_table,
+        format_audit_markdown,
+        format_audit_json,
+    )
+
+    if not manuscript_path and not inline_text:
+        click.echo("[pa cite-audit] ERROR: Must provide either a manuscript file path or --text.", err=True)
+        sys.exit(2)
+
+    if inline_text:
+        text_to_audit = inline_text
+        m_path = None
+    else:
+        m_p = Path(manuscript_path)
+        text_to_audit = m_p.read_text(encoding="utf-8", errors="ignore")
+        m_path = m_p
+
+    fmt = "json" if as_json else format_type.lower()
+
+    try:
+        report = audit_manuscript(
+            manuscript_text=text_to_audit,
+            bib_path=bib_path,
+            pdf_dir=pdf_dir,
+            threshold=threshold,
+            manuscript_path=m_path,
+        )
+    except Exception as e:
+        click.echo(f"[pa cite-audit] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if fmt == "json":
+        rendered = format_audit_json(report)
+    elif fmt == "markdown":
+        rendered = format_audit_markdown(report)
+    else:
+        rendered = format_audit_table(report)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa cite-audit] Audit report saved to: {output}")
+    else:
+        click.echo(rendered)
+
+    if strict and not report.pass_status:
+        click.echo(f"[pa cite-audit] Strict check failed: overall EFS {report.overall_fidelity_score:.1%} or issues detected.", err=True)
+        sys.exit(1)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.

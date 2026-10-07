@@ -62,6 +62,7 @@ jobs:
           python test_output/test_parameter_harvester_p1_25.py
           python test_output/test_consensus_p1_22.py
           python test_output/test_lineage_p1_23.py
+          python test_output/test_cite_audit_p2_21.py
 
   package:
     name: Build wheel and verify package contents
