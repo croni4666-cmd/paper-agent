@@ -1840,6 +1840,104 @@ def consensus_cmd(target, text, project_slug, format, output, root_path, as_json
         click.echo(rendered)
 
 
+# =============== [P1-23] pa lineage: Methodology Evolution Lineage ===============
+
+@main.command("lineage")
+@click.argument("target", required=False, default=None)
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug to construct methodology lineage across cached PDFs/meta")
+@click.option("--format", "-f", default="tree",
+              type=click.Choice(["tree", "mermaid", "markdown", "json"], case_sensitive=False),
+              show_default=True, help="Output format: tree, mermaid, markdown, or json")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file to save methodology lineage report")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Print lineage graph as raw JSON")
+def lineage_cmd(target, project_slug, format, output, root_path, as_json):
+    """[P1-23] Trace methodology lineage, evolutionary transitions, and paradigm shifts.
+
+    Constructs chronological methodology evolution graphs (Baseline -> Critique ->
+    Extension -> Paradigm Shift) by analyzing econometric, structural, and machine
+    learning models across corpus literature.
+
+    EXAMPLES:
+      pa lineage my-project --format tree
+      pa lineage my-project --format mermaid -o lineage_graph.mmd
+      pa lineage my-project --format markdown -o methodology_evolution.md
+      pa lineage ./paper.pdf
+    """
+    from .methodology_lineage import (
+        build_lineage_graph,
+        extract_project_lineage,
+        format_lineage_tree,
+        format_lineage_mermaid,
+        format_lineage_markdown,
+        format_lineage_json,
+    )
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    fmt = "json" if as_json else format.lower()
+
+    try:
+        if project_slug or (target and not Path(target).exists() and (root / target).is_dir()):
+            slug = project_slug or target
+            lineage = extract_project_lineage(slug, root=root)
+        elif target:
+            target_p = Path(target)
+            if not target_p.exists():
+                raise FileNotFoundError(f"Target file not found: {target}")
+            if target_p.suffix.lower() == ".pdf":
+                import fitz
+                doc = fitz.open(str(target_p))
+                txt = "\n".join([page.get_text() for page in doc[:3]])
+                doc.close()
+                m_year = re.search(r"\b(19\d\d|20\d\d)\b", txt)
+                year = int(m_year.group(1)) if m_year else 2020
+                papers = [{
+                    "paper_id": target_p.stem,
+                    "title": target_p.stem.replace("_", " ").title(),
+                    "authors": "Paper Author",
+                    "year": year,
+                    "content": txt,
+                }]
+                lineage = build_lineage_graph(papers)
+            else:
+                raw = target_p.read_text(encoding="utf-8", errors="replace")
+                papers = [{
+                    "paper_id": target_p.stem,
+                    "title": target_p.stem.replace("_", " ").title(),
+                    "authors": "Paper Author",
+                    "year": 2020,
+                    "content": raw,
+                }]
+                lineage = build_lineage_graph(papers)
+        else:
+            click.echo("Error: Please provide a TARGET file or --project slug.", err=True)
+            sys.exit(1)
+    except Exception as e:
+        click.echo(f"[pa lineage] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if fmt == "json":
+        rendered = format_lineage_json(lineage)
+    elif fmt == "mermaid":
+        rendered = format_lineage_mermaid(lineage)
+    elif fmt == "markdown":
+        rendered = format_lineage_markdown(lineage)
+    else:
+        rendered = format_lineage_tree(lineage)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa lineage] Methodology lineage saved to: {output}")
+    else:
+        click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.

@@ -13,6 +13,17 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.16] - 2026-10-07
+
+### Evolutionary Citation & Methodology Lineage ([P1-23])
+
+- Implement `pa lineage` CLI command and `pa_cli/methodology_lineage.py` for mapping academic methodology evolution, genealogical trees, and paradigm shifts:
+  - Curate domain-specific methodology taxonomies across Causal Econometrics (OLS -> TWFE -> Staggered DID -> SDID / Synthetic Control), Macroeconomics (RBC -> DSGE -> HANK), Machine Learning & NLP (Linear Models -> Tree Ensembles -> Neural Networks -> Transformers -> Large Language Models), and Finance/Asset Pricing (CAPM -> Fama-French 3-Factor -> Carhart 4-Factor -> Fama-French 5-Factor).
+  - Automatically identify methodology keywords, canonical citations, publication years, and categorize paradigm roles (`Foundational`, `Critique`, `Extension`, `Application`).
+  - Construct chronological methodology lineage DAGs (Directed Acyclic Graphs) tracking predecessor-to-successor relations and citation influences.
+  - Multi-target visualization and export formatting: ASCII terminal tree hierarchies (with Windows CP936 safe ASCII fallback), Mermaid flowchart graphs for research diagrams, structured Markdown methodology lineage digests, and JSON export for programmatic graph pipelines.
+- Add test suite `test_output/test_lineage_p1_23.py` (7 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.15] - 2026-10-07
 
 ### Theoretical Proposition Controversy & Consensus Matrix ([P1-22])

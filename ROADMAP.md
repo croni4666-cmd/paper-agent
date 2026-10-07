@@ -4880,13 +4880,15 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P1-23] Evolutionary citation and methodology lineage (`pa lineage`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-07 (v3.10.0.16)
 - **Priority**: P1
 - **Effort**: 2 engineering days
 - **Source**: Literature review depth improvement.
 - **Rationale**: Traces methodology evolution (Baseline model -> Extension -> Paradigm shift) by joining OpenAlex citation graphs with M2 methodology section fingerprints.
-- **Global Rule audit**: Uses free OpenAlex endpoints + local SQLite cache; zero cost.
+- **Outcome**: Implemented `pa_cli/methodology_lineage.py` and `pa lineage` CLI command. Traces methodological transitions across causal econometrics (OLS -> TWFE -> Staggered DID -> SDID), macro modeling (RBC -> DSGE -> HANK), and machine learning (Linear -> Trees -> Neural -> Transformers -> LLM). Classifies paradigm roles (Foundational, Critique, Extension, Application), constructs chronological lineage DAGs, and renders visual Mermaid flowcharts, ASCII evolutionary trees, structured Markdown digests, and JSON DAGs. Covered by 7 tests in `test_output/test_lineage_p1_23.py`.
+- **Global Rule audit**: Pure local citation graphs and M2 evidence scanning; zero cost.
 
 ### [P1-24] Statistical report consistency and heuristic verification (`pa stats-check`)
 
