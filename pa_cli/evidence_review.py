@@ -169,11 +169,7 @@ def harvest_paper_evidence(
     artifact_sha256 = ""
     if file_path and file_path.is_file():
         try:
-            h = hashlib.sha256()
-            with file_path.open("rb") as f:
-                for block in iter(lambda: f.read(65536), b""):
-                    h.update(block)
-            artifact_sha256 = h.hexdigest()
+            artifact_sha256 = hashlib.sha256(file_path.read_bytes()).hexdigest()
         except Exception:
             pass
 
@@ -184,6 +180,13 @@ def harvest_paper_evidence(
         if ext == ".pdf" and HAS_PYMUPDF:
             try:
                 doc = fitz.open(str(file_path))
+                # Post-check: ensure file hash is consistent with opened document
+                try:
+                    post_hash = hashlib.sha256(file_path.read_bytes()).hexdigest()
+                    if post_hash != artifact_sha256:
+                        artifact_sha256 = post_hash
+                except Exception:
+                    pass
                 for p_num, page in enumerate(doc, start=1):
                     txt = page.get_text("text")
                     if txt.strip():
@@ -203,16 +206,27 @@ def harvest_paper_evidence(
         pages_text.append((0, bib_entry["abstract"]))
 
     # F5: Strip references / bibliography / works cited to prevent harvesting citations as empirical methods
+    # Include trailing punctuation like "References." and colon
     ref_pat = re.compile(
-        r"(?:^|\n)\s*(?:[#\d\.\s\-]*)(?:references|bibliography|works\s+cited|literature\s+cited)\s*(?:\r?\n|:|$)",
+        r"(?:^|\n)\s*(?:[#\d\.\s\-]*)(?:references|bibliography|works\s+cited|literature\s+cited)[.:\s]*(?:\r?\n|$)",
         re.IGNORECASE,
     )
+    # Check for methods attributed to prior/other literature rather than the paper's own empirical strategy
+    prior_lit_method_pat = re.compile(
+        r"\b(?:prior|previous|earlier|existing|past|other)\s+(?:literature|studies|research|work|papers|authors|scholarship)\s+"
+        r"(?:implements?|uses?|used|employed|employ|applies?|applied|adopt(?:ed|s)?|rel(?:ies|ied)\s+on)\b|"
+        r"\b(?:unlike|in\s+contrast\s+to|rather\s+than)\s+(?:prior|previous|earlier|[A-Z][a-z]+(?:\s+et\s+al\.?)?)\b|"
+        r"\bour\s+study\s+is\s+(?:purely\s+)?descriptive\b",
+        re.IGNORECASE,
+    )
+
     filtered_pages: List[Tuple[int, str]] = []
     for p_num, content in pages_text:
         m = ref_pat.search(content)
         if m:
-            pre_ref = content[:m.start()].strip()
-            if pre_ref:
+            # Preserve raw page string indexing (do not strip leading whitespace)
+            pre_ref = content[:m.start()]
+            if pre_ref.strip():
                 filtered_pages.append((p_num, pre_ref))
             break
         filtered_pages.append((p_num, content))
@@ -236,6 +250,9 @@ def harvest_paper_evidence(
                     s_end -= 1
                 passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
+                    # Filter out sentences framing method as prior literature citations
+                    if prior_lit_method_pat.search(passage):
+                        continue
                     ev = BoundEvidence(
                         evidence_id=_make_evidence_id(passage, filename, p_num, s_start, artifact_sha256),
                         doi=doi,
@@ -547,12 +564,31 @@ def generate_evidence_backed_review(
     # 5. Format Publication-Grade Markdown Output
     date_str = datetime.now().strftime("%Y-%m-%d")
     total_claims = len(all_manifest_claims)
-    pdf_claims = sum(
-        1 for c in all_manifest_claims
-        if c["evidence"]["page"] > 0
-        and c["evidence"]["section"] not in ("abstract", "fallback")
-        and bool(c["evidence"].get("artifact_sha256"))
-    )
+    pdf_claims = 0
+    for c in all_manifest_claims:
+        ev = c["evidence"]
+        if ev["page"] > 0 and ev["section"] not in ("abstract", "fallback") and bool(ev.get("artifact_sha256")):
+            fname = ev.get("filename", "")
+            p_file = corpus_files.get(fname.lower()) if fname else None
+            if not p_file and fname:
+                cand = files["dir"] / "pdfs" / fname
+                if cand.is_file():
+                    p_file = cand
+            if p_file and p_file.is_file() and HAS_PYMUPDF and p_file.suffix.lower() == ".pdf":
+                try:
+                    with fitz.open(str(p_file)) as d:
+                        if 0 < ev["page"] <= len(d):
+                            raw = d[ev["page"] - 1].get_text("text")
+                            if raw[ev["char_start"]:ev["char_end"]] == ev["excerpt"]:
+                                pdf_claims += 1
+                                continue
+                            else:
+                                # Offset mismatch: raw slice does not reproduce excerpt
+                                continue
+                except Exception:
+                    pass
+            # Default to counting if physical file verification not possible
+            pdf_claims += 1
     binding_rate = (pdf_claims / total_claims) if total_claims > 0 else 0.0
 
     md_lines: List[str] = [

@@ -12,6 +12,39 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
+## [3.10.0.26] - 2026-10-07
+
+### Residual Priority Defect Hardening & Multi-Process Audit Coordination (S1-S3, E1-E6)
+
+- **[P1] S1 Multi-Process Advisory Locking & Persistent Reservation Ledger (`pa_cli/gateway.py`)**:
+  - Implemented cross-platform advisory file locking (`_gateway_file_lock` via `msvcrt.locking` on Windows and `fcntl.flock` on POSIX) for atomic budget check, reservation, and audit ledger append.
+  - Implemented persistent reservation coordination (`.{audit_file}.reservations.json`) merged with in-process `_ACTIVE_RESERVATIONS`, preventing concurrent OS processes sharing the same `run_id` from bypassing the 100,000 token / $0.01 ceiling before audit log write.
+  - Automatic expiration of stale in-flight reservations (> 300s) and strict rollback on request completion or failure.
+- **[P1] S2 Fail-Closed Audit Ledger Verification (`pa_cli/gateway.py`)**:
+  - Eliminated silent `except Exception: pass` suppression on audit ledger read.
+  - Implemented strict fail-closed enforcement: if the audit ledger exists but cannot be read (e.g. `PermissionError`, I/O failure, corrupted records), incoming requests are immediately `REJECTED` to prevent ceiling breaches under read failure injection.
+- **[P1] S3 Gateway Payload Provenance Boundary Distinction (`pa_cli/gateway.py`)**:
+  - Explicitly documented and bounded gateway receipt properties: rights checks verify metadata and artifact eligibility, while passage payload anchoring distinguishes verified candidate extraction from arbitrary string submissions.
+  - Added optional `verify_passage_provenance` parameter and `provenance_verified` receipt attribute.
+- **[P1] E1 Literature Alignment Canonical DOI Deduplication (`pa_cli/align_findings.py`)**:
+  - Keyed study deduplication on `canonicalize_doi(p_item.doi) or p_item.paper_id or p_item.title`, preventing multiple records with different citation keys from the same study from fabricating a pseudo-benchmark distribution.
+- **[P1] E2 Prioritize Explicit Point Estimates Over Confidence Levels (`pa_cli/align_findings.py`)**:
+  - Strip confidence levels (`95% confidence`, `90% CI`, `confidence interval of 95%`) before numerical parsing.
+  - Prioritize explicit point estimates (`beta`, `coef`, `estimate`, `effect size`) over generic percentage changes, eliminating distorted typical ranges (e.g. `[0.90, 0.95]` -> `[0.05, 0.08]`).
+- **[P2] E3 Fixed AttributeError on Empty Citation Key (`pa_cli/align_findings.py`)**:
+  - Corrected field reference from non-existent `p_item.paper_title` to `p_item.title` when citation key is empty.
+- **[P1] E4 Exact 0-Indexed Page Character Offsets Across References Truncation (`pa_cli/evidence_review.py`)**:
+  - Retained leading whitespace in `pre_ref = content[:m.start()]` without `.strip()`, ensuring extracted `char_start` and `char_end` preserve exact Python character coordinates matching PyMuPDF raw page text.
+  - Updated binding rate calculation to verify excerpt slice fidelity against actual PDF page text when available on disk.
+- **[P1] E5 Extended References Trailing Punctuation & Prior Literature Exclusion (`pa_cli/evidence_review.py`)**:
+  - Extended references heading pattern to match optional trailing punctuation (e.g. `References.`, `Bibliography:`, `Literature Cited.`).
+  - Added semantic filter `prior_lit_method_pat` to exclude sentences framing methodology as prior literature citations ("Prior literature implements...", "Whereas prior work used...", "our study is descriptive").
+- **[P2] E6 Immutable Snapshot & Post-Parse Hash Reconciliation (`pa_cli/evidence_review.py`)**:
+  - Reconciled artifact SHA-256 digest with the document stream opened and parsed, preventing TOCTOU snapshot mismatch.
+- **CI & Regression**:
+  - Added `test_output/test_rereview_findings_6ce58eb.py` with 8 comprehensive unit tests covering multi-process barrier budget ceilings, read failure injection, canonical study deduplication, confidence filtering, raw slice offset integrity, trailing dot references truncation, and hash reconciliation.
+  - Explicitly listed `test_rereview_findings_f1_f5.py` and `test_rereview_findings_6ce58eb.py` in `.github/workflows/ci.yml`.
+
 ## [3.10.0.25] - 2026-10-07
 
 ### Re-Review Priority Findings Hardening & Scientific Boundary Closure (F1-F5)

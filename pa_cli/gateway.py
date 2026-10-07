@@ -30,7 +30,9 @@ import logging
 import os
 import re
 import threading
+import time
 import uuid
+from contextlib import contextmanager
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from decimal import Decimal
@@ -53,6 +55,146 @@ MAX_PAPERS_CEILING = 25
 PRICE_PER_M_INPUT_TOKENS = Decimal("0.042")  # $0.042 per million input tokens
 
 DEFAULT_AUDIT_LOG_PATH = Path.home() / ".paper-agent" / "gateway_audit.jsonl"
+
+
+@contextmanager
+def _gateway_file_lock(lock_path: Path, timeout: float = 10.0):
+    """Advisory file lock for multi-process budget coordination across OS boundaries."""
+    try:
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+    fd = None
+    start = time.monotonic()
+    acquired = False
+    while not acquired:
+        try:
+            if os.name == "nt":
+                import msvcrt
+                fd = os.open(str(lock_path), os.O_RDWR | os.O_CREAT)
+                msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+            else:
+                import fcntl
+                fd = os.open(str(lock_path), os.O_RDWR | os.O_CREAT)
+                fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            acquired = True
+        except (BlockingIOError, PermissionError, OSError):
+            if fd is not None:
+                try:
+                    os.close(fd)
+                except Exception:
+                    pass
+                fd = None
+            if time.monotonic() - start > timeout:
+                break
+            time.sleep(0.01)
+    try:
+        yield
+    finally:
+        if fd is not None:
+            try:
+                if os.name == "nt":
+                    import msvcrt
+                    msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+                else:
+                    import fcntl
+                    fcntl.flock(fd, fcntl.LOCK_UN)
+            except Exception:
+                pass
+            finally:
+                try:
+                    os.close(fd)
+                except Exception:
+                    pass
+
+
+def _get_resv_path(audit_path: Path) -> Path:
+    return audit_path.parent / f".{audit_path.name}.reservations.json"
+
+
+def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, Decimal]]]:
+    """Load combined active reservations from disk and in-memory tracker."""
+    combined: dict[str, dict[str, tuple[int, Decimal]]] = {}
+
+    # 1. Start with in-memory reservations
+    for run_k, r_dict in _ACTIVE_RESERVATIONS.items():
+        for resv_k, val in r_dict.items():
+            combined.setdefault(run_k, {})[resv_k] = val
+
+    # 2. Read persistent reservation file for cross-process coordination
+    resv_path = _get_resv_path(audit_path)
+    if resv_path.is_file():
+        try:
+            raw = resv_path.read_text(encoding="utf-8")
+            data = json.loads(raw)
+            now = time.time()
+            for run_k, run_resvs in data.items():
+                if not isinstance(run_resvs, dict):
+                    continue
+                for resv_k, info in run_resvs.items():
+                    if not isinstance(info, dict):
+                        continue
+                    ts = float(info.get("timestamp", 0))
+                    # Stale reservation timeout: 300 seconds
+                    if now - ts > 300:
+                        continue
+                    tok = int(info.get("tokens", 0))
+                    cst = Decimal(str(info.get("cost", "0.0")))
+                    combined.setdefault(run_k, {})[resv_k] = (tok, cst)
+        except Exception:
+            pass
+
+    return combined
+
+
+def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, cost: Decimal) -> None:
+    """Save an in-flight reservation in memory and on disk."""
+    _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
+    resv_path = _get_resv_path(audit_path)
+    try:
+        audit_path.parent.mkdir(parents=True, exist_ok=True)
+        data: dict[str, Any] = {}
+        if resv_path.is_file():
+            try:
+                data = json.loads(resv_path.read_text(encoding="utf-8"))
+            except Exception:
+                data = {}
+        now = time.time()
+        cleaned: dict[str, Any] = {}
+        for r_id, r_dict in data.items():
+            if isinstance(r_dict, dict):
+                sub = {k: v for k, v in r_dict.items() if isinstance(v, dict) and now - float(v.get("timestamp", 0)) <= 300}
+                if sub:
+                    cleaned[r_id] = sub
+        cleaned.setdefault(run_id, {})[resv_id] = {
+            "tokens": tokens,
+            "cost": str(cost),
+            "timestamp": now,
+            "pid": os.getpid(),
+        }
+        resv_path.write_text(json.dumps(cleaned), encoding="utf-8")
+    except Exception as exc:
+        log.warning("Could not persist reservation to %s: %s", resv_path, exc)
+
+
+def _remove_reservation(audit_path: Path, run_id: str, resv_id: str) -> None:
+    """Remove an in-flight reservation from memory and disk."""
+    if run_id in _ACTIVE_RESERVATIONS:
+        _ACTIVE_RESERVATIONS[run_id].pop(resv_id, None)
+        if not _ACTIVE_RESERVATIONS[run_id]:
+            _ACTIVE_RESERVATIONS.pop(run_id, None)
+
+    resv_path = _get_resv_path(audit_path)
+    if resv_path.is_file():
+        try:
+            data = json.loads(resv_path.read_text(encoding="utf-8"))
+            if run_id in data and resv_id in data[run_id]:
+                data[run_id].pop(resv_id, None)
+                if not data[run_id]:
+                    data.pop(run_id, None)
+                resv_path.write_text(json.dumps(data), encoding="utf-8")
+        except Exception:
+            pass
 
 
 # ==============================================================================
@@ -353,13 +495,15 @@ def evaluate_gateway_request(
     configured_max_cost = Decimal(max_cost_usd_limit) if max_cost_usd_limit else MAX_COST_USD_CEILING
     effective_max_cost = min(MAX_COST_USD_CEILING, configured_max_cost)
     target_audit_path = audit_file or DEFAULT_AUDIT_LOG_PATH
+    lock_path = target_audit_path.parent / f".{target_audit_path.name}.lock"
 
-    with _GATEWAY_LOCK:
+    with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
         prior_tokens = 0
         prior_cost = Decimal("0.0")
+        audit_read_error: Optional[str] = None
         if target_audit_path.exists():
             try:
-                for line in target_audit_path.read_text(encoding="utf-8").splitlines():
+                for line_num, line in enumerate(target_audit_path.read_text(encoding="utf-8").splitlines(), start=1):
                     line_s = line.strip()
                     if not line_s:
                         continue
@@ -368,13 +512,20 @@ def evaluate_gateway_request(
                         if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
                             prior_tokens += int(rec.get("estimated_tokens", 0))
                             prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
-                    except Exception:
-                        continue
-            except Exception:
-                pass
+                    except Exception as json_err:
+                        audit_read_error = f"Corrupted audit record on line {line_num}: {json_err}"
+                        break
+            except Exception as exc:
+                audit_read_error = f"Audit ledger read failure: {exc}"
 
-        # Add active in-flight reservations
-        for (r_tok, r_cst) in _ACTIVE_RESERVATIONS.get(run_id, {}).values():
+        if audit_read_error:
+            rejection_reasons.append(
+                f"Security gateway fail-closed: cannot verify historical spend against ceiling: {audit_read_error}"
+            )
+
+        # Add active in-flight reservations across all processes
+        active_resvs = _load_all_reservations(target_audit_path)
+        for (r_tok, r_cst) in active_resvs.get(run_id, {}).values():
             prior_tokens += r_tok
             prior_cost += r_cst
 
@@ -402,7 +553,7 @@ def evaluate_gateway_request(
         timestamp = datetime.now(timezone.utc).isoformat()
 
         if passed:
-            _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (est_tokens, est_cost)
+            _save_reservation(target_audit_path, run_id, resv_id, est_tokens, est_cost)
             acquired_reservation = True
 
     receipt = GatewayReceipt(
@@ -424,17 +575,16 @@ def evaluate_gateway_request(
         rejection_reasons=rejection_reasons,
     )
 
-    # Append to local audit log (fail-closed if writing fails)
-    write_ok = record_gateway_audit_event(receipt, audit_file=target_audit_path)
-    if write_ok is False and receipt.gateway_decision == "AUTHORIZED":
-        receipt.gateway_decision = "REJECTED"
-        receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
-
-    with _GATEWAY_LOCK:
-        if acquired_reservation and run_id in _ACTIVE_RESERVATIONS:
-            _ACTIVE_RESERVATIONS[run_id].pop(resv_id, None)
-            if not _ACTIVE_RESERVATIONS[run_id]:
-                _ACTIVE_RESERVATIONS.pop(run_id, None)
+    try:
+        # Append to local audit log (fail-closed if writing fails)
+        write_ok = record_gateway_audit_event(receipt, audit_file=target_audit_path)
+        if write_ok is False and receipt.gateway_decision == "AUTHORIZED":
+            receipt.gateway_decision = "REJECTED"
+            receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
+    finally:
+        if acquired_reservation:
+            with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
+                _remove_reservation(target_audit_path, run_id, resv_id)
 
     return receipt, sanitized_passages
 

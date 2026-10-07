@@ -5003,11 +5003,35 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 - **Source**: External peer review on `729e96a` (`v3.10.0.24`).
 - **Rationale**: Eliminates lingering security, copyright, and scientific grounding defects identified during controlled counter-example testing across safe gateway budget reservations, Open-Access verification without physical artifacts, empirical effect size scraping, statistical reporting formatters, and evidence review bibliography leakage.
 - **Outcome**:
-  1. `[P1] F1`: Unique per-request reservation IDs (`resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"`) and guard flag `acquired_reservation` in `pa_cli/gateway.py`. Ensures rejected requests cannot delete concurrent in-flight reservations, strictly honoring the 100k cumulative token limit under 3-request concurrency races.
-  2. `[P1] F2`: Strict physical artifact inspection in `pa_cli/gateway.py`. Completely excised presumed CC-BY / Open-Access approvals for raw DOI strings; verification strictly requires a physical PDF/XML artifact with validated license metadata and allowlisted host origin.
-  3. `[P1] F3`: Clean econometric effect size separation in `pa_cli/align_findings.py`. Strips standard errors (SE), p-values, test statistics ($t/z/F$), and $R^2$ before number parsing; eliminates generic decimal fallback; requires $\ge 2$ independent empirical papers before constructing literature benchmark distributions.
-  4. `[P2] F4`: Robust statistical check report formatting in `pa_cli/stats_check.py`. Safely formats `None` consistency rates as `"N/A"` across table and markdown formatters without raising `TypeError`.
-  5. `[P1] F5`: Structural references boundary truncation, refined causal econometrics method patterns, and physical file SHA-256 bindings in `pa_cli/evidence_review.py`.
-  Covered by 5 comprehensive regression unit tests in `test_output/test_rereview_findings_f1_f5.py`.
+  1. `[P1] F1`: Unique per-request reservation IDs (`resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"`) and guard flag `acquired_reservation` in `pa_cli/gateway.py`. Eliminated single-process peer deletion. Note: Multi-process coordination and read failure injection remained open as S1/S2 (addressed in P3-36).
+  2. `[P1] F2`: Fully closed (within defined defect scope). Strict physical artifact inspection in `pa_cli/gateway.py`. Completely excised presumed CC-BY / Open-Access approvals for raw DOI strings; verification strictly requires a physical PDF/XML artifact with validated license metadata and allowlisted host origin.
+  3. `[P1] F3`: Clean econometric effect size separation in `pa_cli/align_findings.py`. Stripped single-paper SE/p-values. Note: Cross-key canonical study deduplication and confidence percentage filtering remained open as E1/E2/E3 (addressed in P3-36).
+  4. `[P2] F4`: Fully closed (within defined defect scope). Robust statistical check report formatting in `pa_cli/stats_check.py`. Safely formats `None` consistency rates as `"N/A"` across table and markdown formatters without raising `TypeError`.
+  5. `[P1] F5`: Structural references boundary truncation, refined causal econometrics method patterns, and physical file SHA-256 bindings in `pa_cli/evidence_review.py`. Note: Leading whitespace offset shifts, trailing punctuation headings, and prior literature attributions remained open as E4/E5/E6 (addressed in P3-36).
+  Covered by 5 regression unit tests in `test_output/test_rereview_findings_f1_f5.py`.
 - **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
+### [P3-36] Multi-Process Audit Coordination, Fail-Closed Gateway & Exact Evidence Grounding (S1-S3, E1-E6)
+
+- **Status**: done
+- **Added**: 2026-10-07
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
+- **Priority**: P1 / P2
+- **Effort**: 1 engineering day
+- **Source**: Controlled independent peer review on `6ce58eb` (`v3.10.0.25`).
+- **Rationale**: Eliminates residual P1 defects across multi-process concurrency, failure injection, econometric study identity deduplication, confidence percentage parsing, and raw character offset slicing.
+- **Outcome**:
+  1. `[P1] S1`: Cross-process advisory file lock (`_gateway_file_lock`) and atomic persistent reservation ledger (`.{audit_file}.reservations.json`) in `pa_cli/gateway.py`. Enforces 100,000 token / $0.01 ceiling across 5 concurrent OS processes.
+  2. `[P1] S2`: Strict fail-closed audit ledger verification. Ledger read failures (`PermissionError`, I/O faults, corrupted records) immediately reject incoming requests rather than resetting spend to 0.
+  3. `[P1] S3`: Distinct gateway receipt semantics: candidate inspection validates metadata/rights eligibility; payload passages provenance checking is bounded and verifiable via `verify_passage_provenance`.
+  4. `[P1] E1`: Study deduplication by `canonicalize_doi(p_item.doi) or p_item.paper_id or p_item.title`, preventing multiple records with identical DOI but different keys from fabricating a benchmark distribution.
+  5. `[P1] E2`: Filtered confidence level percentages (`95% confidence`, `90% CI`) and prioritized explicit point estimates (`beta`, `coef`, `estimate`), preventing confidence levels from distorting effect size distributions.
+  6. `[P2] E3`: Fixed `AttributeError` on missing citation key by referencing `p_item.title` (instead of non-existent `p_item.paper_title`).
+  7. `[P1] E4`: Retained leading whitespace in `content[:m.start()]` without `.strip()`, preserving exact 0-indexed character offsets relative to PyMuPDF raw page text; verified binding rate against physical PDF text slices.
+  8. `[P1] E5`: Extended references heading regex to match optional trailing punctuation (`References.`) and filtered prior literature method citations (`prior_lit_method_pat`).
+  9. `[P2] E6`: Reconciled parsed artifact hash with the document stream opened, eliminating TOCTOU digest divergence.
+  Covered by 8 unit tests in `test_output/test_rereview_findings_6ce58eb.py`, and integrated into `.github/workflows/ci.yml`.
+- **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
 

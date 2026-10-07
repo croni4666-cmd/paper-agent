@@ -359,7 +359,10 @@ def align_empirical_finding(
             paper_estimates: dict[str, float] = {}
             for p_item in supporting + contradictory:
                 text = p_item.evidence_quote
-                paper_key = p_item.paper_id or p_item.paper_title or str(id(p_item))
+                # Deduplicate by canonical DOI to ensure multiple entries of the same study
+                # do not fabricate an empirical benchmark distribution. Fall back to title or paper_id.
+                clean_doi = canonicalize_doi(p_item.doi) if p_item.doi else ""
+                study_identity = clean_doi or p_item.paper_id or p_item.title or str(id(p_item))
 
                 # 1. Filter out 4-digit publication/sample years (1900-2099)
                 clean_text = re.sub(r"\b(?:19|20)\d{2}\b", " ", text)
@@ -372,7 +375,21 @@ def align_empirical_finding(
                 )
                 clean_text = re.sub(r"\b[Nn]\s*=\s*\d+\b", " ", clean_text)
 
-                # 3. Filter out standard errors (SE = 0.01, (0.01), Std. Err. = 0.02)
+                # 3. Filter out confidence intervals and confidence levels (e.g. 95% confidence, 90% CI)
+                clean_text = re.sub(
+                    r"\b\d+(?:\.\d+)?%\s*(?:confidence\s*(?:intervals?|levels?)?|ci)\b",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(
+                    r"\b(?:ci|confidence\s*(?:intervals?|levels?)?)\s*(?:of|at|level|is)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+
+                # 4. Filter out standard errors (SE = 0.01, (0.01), Std. Err. = 0.02)
                 clean_text = re.sub(
                     r"(?:\bSE\b|\bStd\.?\s*Err(?:or)?\b)\s*[:=]?\s*\(?[-+]?\d*\.?\d+\)?",
                     " ",
@@ -381,14 +398,14 @@ def align_empirical_finding(
                 )
                 clean_text = re.sub(r"\(\s*[-+]?\d*\.?\d+\s*\)", " ", clean_text)
 
-                # 4. Filter out p-values (p = 0.003, p < 0.01, p-value = 0.05)
+                # 5. Filter out p-values (p = 0.003, p < 0.01, p-value = 0.05)
                 clean_text = re.sub(
                     r"\b[pP](?:[-_\s]*val(?:ue)?)?\s*(?:[<>=]|<=|>=|[:=])\s*[-+]?\d*\.?\d+",
                     " ",
                     clean_text,
                 )
 
-                # 5. Filter out t-stats, z-stats, F-stats, R-squared
+                # 6. Filter out t-stats, z-stats, F-stats, R-squared
                 clean_text = re.sub(
                     r"\b(?:t|z|F)[-_\s]*(?:stat(?:istic)?\b)?\s*[:=]\s*[-+]?\d*\.?\d+",
                     " ",
@@ -401,18 +418,10 @@ def align_empirical_finding(
                 )
                 clean_text = re.sub(r"\[\d+\]", " ", clean_text)
 
-                # 6. Extract explicitly marked empirical coefficients or percentage effects
+                # 7. Extract explicitly marked empirical coefficients or percentage effects
                 extracted_for_paper: list[float] = []
 
-                # Percentage effects: 5% -> 0.05
-                for pct in re.findall(r"[-+]?\d+(?:\.\d+)?%", clean_text):
-                    try:
-                        extracted_for_paper.append(float(pct.replace("%", "")) / 100.0)
-                    except ValueError:
-                        pass
-                clean_text = re.sub(r"[-+]?\d+(?:\.\d+)?%", " ", clean_text)
-
-                # Explicit coefficient labels: beta/b/coef/estimate/effect size
+                # Explicit coefficient labels: beta/b/coef/estimate/effect size take highest priority
                 for c in re.findall(
                     r"(?:\bbeta\b|\bb\b|\bcoef(?:ficient)?\b|\bestimate\b|\beffect\s*(?:size)?\b)\s*[:=]?\s*([-+]?\d*\.?\d+)",
                     clean_text,
@@ -425,9 +434,17 @@ def align_empirical_finding(
                     except ValueError:
                         pass
 
-                # Record at most 1 representative estimate per paper
-                if extracted_for_paper and paper_key not in paper_estimates:
-                    paper_estimates[paper_key] = extracted_for_paper[0]
+                # If no explicit point estimate is found, check for genuine percentage effects
+                if not extracted_for_paper:
+                    for pct in re.findall(r"[-+]?\d+(?:\.\d+)?%", clean_text):
+                        try:
+                            extracted_for_paper.append(float(pct.replace("%", "")) / 100.0)
+                        except ValueError:
+                            pass
+
+                # Record at most 1 representative estimate per independent study
+                if extracted_for_paper and study_identity not in paper_estimates:
+                    paper_estimates[study_identity] = extracted_for_paper[0]
 
             distinct_estimates = list(paper_estimates.values())
             # Require at least 2 independent papers with comparable estimates

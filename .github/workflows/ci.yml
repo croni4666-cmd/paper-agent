@@ -70,6 +70,8 @@ jobs:
           python test_output/test_gateway_p3_34.py
           python test_output/test_rereview_audit_fixes_111532f.py
           python test_output/test_review_fixes_1ae4c36.py
+          python test_output/test_rereview_findings_f1_f5.py
+          python test_output/test_rereview_findings_6ce58eb.py
 
   package:
     name: Build wheel and verify package contents
