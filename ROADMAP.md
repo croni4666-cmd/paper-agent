@@ -4968,13 +4968,16 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P3-33] Dual-agent review & adjudication loop (Reviewer Panel vs Drafter)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P3
 - **Effort**: 4-5 engineering days
 - **Source**: Paper Agent 4 quality assurance.
 - **Rationale**: Connects the 5-role academic reviewer panel with Paper Agent's M2/M5 adjudication schema, evaluating generated literature review sections against strict peer-review criteria before user handoff.
-- **Global Rule audit**: Runs with local rules or strictly budget-capped external calls.
+- **Outcome**: Implemented `pa_cli/review_adjudicate.py` and `pa review-adjudicate` CLI command. Simulates a 5-seat academic referee panel: (1) Journal-Fit Reviewer (thematic structure, tone, research gap), (2) Methodology & Identification Reviewer (causal overclaims, quasi-experimental identification strategies), (3) Domain Literature Reviewer (citation density, bibliographic grounding), (4) Boundary Conditions Reviewer (generalizability, institutional moderators), and (5) Devil's Advocate Reviewer (confirmation bias, competing literature, logic leaps). Editorial synthesizer computes composite scores, enforces Devil's Advocate critical issue blocking against unconditional Accept, issues authoritative Editorial Decision letters, and constructs prioritized Revision Roadmaps (`MUST-ADDRESS`, `RECOMMENDED`, `POLISH`). Includes the dual-agent revision loop (`--revise`) where the drafter automatically refines manuscripts to address referee criticisms, generates an itemized author Response to Reviewers letter, and conducts verification re-review calculating improvement deltas. Covered by 5 unit tests in `test_output/test_review_adjudicate_p3_33.py`.
+- **Global Rule audit**: Runs with local rules or strictly budget-capped external calls; 100% offline-first execution with zero cloud costs.
 
 ### [P3-34] M6 Public-OA pilot and zero-retention safe gateway
 

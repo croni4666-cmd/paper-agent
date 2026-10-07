@@ -13,6 +13,32 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.21] - 2026-10-07
+
+### Dual-Agent Review & Adjudication Loop ([P3-33])
+
+- Implement `pa review-adjudicate` CLI command and `pa_cli/review_adjudicate.py`:
+  - Connects the 5-role academic referee panel with Paper Agent's M2/M5 adjudication schema, evaluating drafted literature review and academic text before manuscript finalization:
+    1. **Journal-Fit Reviewer (`eic`)**: Thematic structural balance, tone/register, and explicit research gap synthesis.
+    2. **Methodology & Identification Reviewer (`methodology`)**: Causal overclaim detection (`proves that`, `unquestionably causes`), distinction between correlational OLS vs quasi-experimental identification designs (Staggered DID, TWFE, IV, RDD).
+    3. **Domain Literature Reviewer (`domain`)**: Bibliographic grounding, citation density scoring, detection of naked assertion paragraphs.
+    4. **Boundary Conditions Reviewer (`perspective`)**: Institutional moderators, cross-sectional heterogeneity (SOE vs non-SOE, financial constraints), and sample context specificity.
+    5. **Devil's Advocate Reviewer (`devils_advocate`)**: Identifies confirmation bias (one-sided consensus vs mixed/competing hypotheses), non-sequiturs, and missing counter-arguments.
+  - **Editorial Adjudication Engine**:
+    - Generates authoritative composite score ($1.0 - 10.0$) and Editorial Verdict (`ACCEPT`, `MINOR_REVISION`, `MAJOR_REVISION`, `REJECT_AND_RESUBMIT`).
+    - Enforces Devil's Advocate critical issue veto: unaddressed DA critical issues block unconditional acceptance.
+    - Synthesizes consensus strengths, consensus weaknesses, arbitrated reviewer disagreements, and a prioritized **Revision Roadmap** (`[MUST-ADDRESS]`, `[RECOMMENDED]`, `[POLISH]`).
+  - **Drafter & Revision Loop (`--revise`)**:
+    - Automatically refines the manuscript based on reviewer critiques (hedging causal overclaims, inserting competing hypothesis sections, incorporating boundary conditions).
+    - Automatically generates a publication-grade academic **Response to Reviewers** letter (`response_to_reviewers.md`) with itemized author replies.
+    - Conducts verification re-review on the revised draft, measuring the quality improvement score delta ($\Delta$).
+  - Multi-target publication exports:
+    - Clean Markdown adjudication package (`--format markdown`, `-o review_report.md`).
+    - High-density ASCII summary tables (`--format table`).
+    - Structured JSON provenance packages (`--json`).
+    - Dedicated revised manuscript (`--output-revised <file>`) and author response (`--output-response <file>`) files.
+- Add comprehensive test suite `test_output/test_review_adjudicate_p3_33.py` (5 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.20] - 2026-10-07
 
 ### Empirical Findings Literature Alignment Engine ([P2-23])

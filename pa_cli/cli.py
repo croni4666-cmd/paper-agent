@@ -2201,6 +2201,122 @@ def align_findings_cmd(finding, var_x, var_y, direction, coef, std_err, p_value,
         click.echo(rendered)
 
 
+# =============== [P3-33] pa review-adjudicate: Dual-Agent Review & Adjudication Loop ===============
+@main.command("review-adjudicate")
+@click.option("--input", "-i", "input_file", type=click.Path(dir_okay=False), default=None,
+              help="Path to markdown/text file of drafted literature review to evaluate")
+@click.option("--text", "-t", "inline_text", default=None,
+              help="Inline literature review text string to evaluate")
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug to read literature review from")
+@click.option("--venue-tier", type=click.Choice(["top", "field_top", "general", "working_paper"]),
+              default="field_top", show_default=True, help="Target journal tier standard")
+@click.option("--revise/--no-revise", default=False, is_flag=True,
+              help="Run dual-agent revision loop to auto-patch critiques and draft response letter")
+@click.option("--format", "format_type", type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              default="markdown", show_default=True, help="Output display format")
+@click.option("-o", "--output", default=None, help="Destination file to save review & adjudication report")
+@click.option("--output-revised", default=None, help="Destination file to save revised manuscript text")
+@click.option("--output-response", default=None, help="Destination file to save Response to Reviewers letter")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Print adjudication package as raw JSON")
+def review_adjudicate_cmd(input_file, inline_text, project_slug, venue_tier, revise,
+                          format_type, output, output_revised, output_response, root_path, as_json):
+    """[P3-33] Dual-agent peer review & adjudication loop (Reviewer Panel vs Drafter).
+
+    Evaluates drafted literature review or academic text against the 5-seat referee panel:
+    (1) Journal-Fit Reviewer (scope, academic framing, research gap)
+    (2) Methodology & Identification Reviewer (causal rigor, overclaim detection)
+    (3) Domain Literature Reviewer (citation coverage, seminal balance, citation density)
+    (4) Boundary Conditions Reviewer (generalizability, institutional qualifiers)
+    (5) Devil's Advocate Reviewer (logic fallacies, cherry-picking, confirmation bias)
+
+    Produces an authoritative Editorial Decision (Accept / Minor / Major / Reject),
+    a prioritized Revision Roadmap, and when `--revise` is enabled, executes the
+    dual-agent revision loop to auto-patch critiques and draft an author Response Letter.
+
+    Examples:
+      pa review-adjudicate -i literature_review.md --venue-tier top
+      pa review-adjudicate --project esg_study --revise -o review_package.md
+      pa review-adjudicate -t "ESG proves profitability causes higher growth." --format table
+      pa review-adjudicate -i draft.md --revise --output-revised fixed.md --output-response rebuttal.md
+    """
+    from .review_adjudicate import (
+        run_dual_agent_loop,
+        format_adjudication_table,
+        format_adjudication_markdown,
+        format_adjudication_json,
+    )
+    from .project import DEFAULT_ROOT, project_files
+    from pathlib import Path
+    import sys
+
+    raw_text = ""
+    if input_file:
+        if input_file == "-":
+            raw_text = sys.stdin.read()
+        else:
+            p = Path(input_file)
+            if not p.is_file():
+                click.echo(f"[pa review-adjudicate] ERROR: File not found: {input_file}", err=True)
+                sys.exit(1)
+            raw_text = p.read_text(encoding="utf-8")
+    elif inline_text:
+        raw_text = inline_text
+    elif project_slug:
+        root = Path(root_path) if root_path else DEFAULT_ROOT
+        files = project_files(project_slug, root)
+        # Look for review.md or notes.md
+        rev_cand = root / project_slug / "review.md"
+        ev_cand = root / project_slug / "evidence_review.md"
+        if rev_cand.is_file():
+            raw_text = rev_cand.read_text(encoding="utf-8")
+        elif ev_cand.is_file():
+            raw_text = ev_cand.read_text(encoding="utf-8")
+        elif files["notes"].is_file():
+            raw_text = files["notes"].read_text(encoding="utf-8")
+        else:
+            click.echo(f"[pa review-adjudicate] ERROR: No review file found in project '{project_slug}'. Specify -i <file>.", err=True)
+            sys.exit(1)
+
+    if not raw_text.strip():
+        click.echo("[pa review-adjudicate] ERROR: Must provide text to review via -i <file>, -t <text>, or --project <slug>.", err=True)
+        sys.exit(2)
+
+    pkg = run_dual_agent_loop(raw_text, venue_tier=venue_tier, auto_revise=revise)
+
+    fmt = "json" if as_json else format_type.lower()
+    if fmt == "json":
+        rendered = format_adjudication_json(pkg)
+    elif fmt == "table":
+        rendered = format_adjudication_table(pkg)
+    else:
+        rendered = format_adjudication_markdown(pkg)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa review-adjudicate] Adjudication report saved to: {output}")
+    else:
+        click.echo(rendered)
+
+    if output_revised and pkg.revised_text:
+        rev_p = Path(output_revised)
+        rev_p.parent.mkdir(parents=True, exist_ok=True)
+        rev_p.write_text(pkg.revised_text, encoding="utf-8")
+        click.echo(f"[pa review-adjudicate] Revised manuscript text saved to: {output_revised}")
+
+    if output_response and pkg.response_to_reviewers:
+        resp_p = Path(output_response)
+        resp_p.parent.mkdir(parents=True, exist_ok=True)
+        resp_p.write_text(pkg.response_to_reviewers, encoding="utf-8")
+        click.echo(f"[pa review-adjudicate] Author response letter saved to: {output_response}")
+
+
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.
