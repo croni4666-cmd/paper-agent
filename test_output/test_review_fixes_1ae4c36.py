@@ -103,17 +103,45 @@ class TestReviewFixes1ae4c36(unittest.TestCase):
         self.assertFalse(res_unver.is_public_oa)
         self.assertEqual(res_unver.status, "BLOCKED_NON_OA")
 
-        # Canonical arXiv DOI is verified
-        c_valid = PaperEvaluationCandidate("arxiv_01", None, "10.48550/arXiv.2101.00001", source="arxiv", data_class="public")
-        res_valid = verify_paper_rights(c_valid)
-        self.assertTrue(res_valid.is_public_oa)
-        self.assertEqual(res_valid.status, "VERIFIED_PUBLIC_OA")
+        # Candidate without inspected artifact is strictly blocked
+        c_no_art = PaperEvaluationCandidate("arxiv_01", None, "10.48550/arXiv.2101.00001", source="arxiv", data_class="public")
+        res_no_art = verify_paper_rights(c_no_art)
+        self.assertFalse(res_no_art.is_public_oa)
+        self.assertEqual(res_no_art.status, "BLOCKED_NON_OA")
+        self.assertEqual(res_no_art.rights_class, "unverified_no_artifact")
+
+        # Canonical arXiv DOI with inspected XML artifact is verified
+        with tempfile.TemporaryDirectory() as td:
+            xml_p = Path(td) / "article.xml"
+            xml_p.write_bytes(
+                b'<article xmlns:xlink="http://www.w3.org/1999/xlink">'
+                b'<front><article-meta>'
+                b'<article-id pub-id-type="doi">10.48550/arxiv.2101.00001</article-id>'
+                b'<title-group><article-title>Valid OA Article</article-title></title-group>'
+                b'<permissions><license xlink:href="https://creativecommons.org/licenses/by/4.0/"/></permissions>'
+                b'</article-meta></front>'
+                b'<body><p>Text</p></body></article>'
+            )
+            c_valid = PaperEvaluationCandidate("arxiv_01", str(xml_p), "10.48550/arXiv.2101.00001", source="arxiv", url="https://arxiv.org/abs/2101.00001", data_class="public")
+            res_valid = verify_paper_rights(c_valid)
+            self.assertTrue(res_valid.is_public_oa)
+            self.assertEqual(res_valid.status, "VERIFIED_PUBLIC_OA")
 
     def test_r4_gateway_cumulative_budget_and_write_failure(self):
         """R4: Cumulative ceilings, corrupted log resilience, write failure fail-closed, and race prevention."""
         with tempfile.TemporaryDirectory() as td:
             log_path = Path(td) / "audit.jsonl"
-            cand = PaperEvaluationCandidate("cand_01", None, "10.48550/arXiv.2101.00001", source="arxiv", data_class="public")
+            xml_p = Path(td) / "article.xml"
+            xml_p.write_bytes(
+                b'<article xmlns:xlink="http://www.w3.org/1999/xlink">'
+                b'<front><article-meta>'
+                b'<article-id pub-id-type="doi">10.48550/arxiv.2101.00001</article-id>'
+                b'<title-group><article-title>Valid OA Article</article-title></title-group>'
+                b'<permissions><license xlink:href="https://creativecommons.org/licenses/by/4.0/"/></permissions>'
+                b'</article-meta></front>'
+                b'<body><p>Text</p></body></article>'
+            )
+            cand = PaperEvaluationCandidate("cand_01", str(xml_p), "10.48550/arXiv.2101.00001", source="arxiv", url="https://arxiv.org/abs/2101.00001", data_class="public")
 
             # 1. Sequential calls: second exceeds 100k cumulative limit
             with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", log_path):
@@ -141,9 +169,9 @@ class TestReviewFixes1ae4c36(unittest.TestCase):
 
             # 4. Concurrency race prevention
             barrier = threading.Barrier(2)
-            def delayed_record(receipt):
+            def delayed_record(receipt, *args, **kwargs):
                 barrier.wait(timeout=5)
-                record_gateway_audit_event(receipt)
+                return record_gateway_audit_event(receipt, *args, **kwargs)
 
             race_log = Path(td) / "race.jsonl"
             with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", race_log), patch("pa_cli.gateway.record_gateway_audit_event", side_effect=delayed_record):

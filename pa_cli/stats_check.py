@@ -683,10 +683,11 @@ def format_stats_report(summary: StatsCheckSummary, fmt: str = "table") -> str:
         return json.dumps(summary.to_dict(), indent=2, ensure_ascii=False)
 
     lines: list[str] = []
+    rate_str = f"{summary.consistency_rate * 100:.1f}%" if summary.consistency_rate is not None else "N/A"
     if fmt == "markdown":
         lines.append("# Statistical Report Consistency Verification Report\n")
         lines.append(f"- **Total Tests Found**: {summary.total_tests}")
-        lines.append(f"- **Consistent Tests**: {summary.consistent_count} ({summary.consistency_rate * 100:.1f}%)")
+        lines.append(f"- **Consistent Tests**: {summary.consistent_count} ({rate_str})")
         lines.append(f"- **Inconsistencies**: {summary.inconsistent_count}")
         lines.append(f"- **Decision Errors**: {summary.decision_error_count}")
         lines.append(f"- **One-Tailed Matches**: {summary.one_tailed_match_count}\n")
@@ -710,7 +711,7 @@ def format_stats_report(summary: StatsCheckSummary, fmt: str = "table") -> str:
     header = (
         f"Statistical Consistency Check Report\n"
         f"Total Tests: {summary.total_tests} | "
-        f"Consistent: {summary.consistent_count} ({summary.consistency_rate * 100:.1f}%) | "
+        f"Consistent: {summary.consistent_count} ({rate_str}) | "
         f"Inconsistent: {summary.inconsistent_count} | "
         f"Decision Errors: {summary.decision_error_count}\n"
         f"{'-' * 88}"

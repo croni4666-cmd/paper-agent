@@ -12,6 +12,52 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
+## [3.10.0.25] - 2026-10-07
+
+### Re-Review Priority Findings Hardening & Scientific Boundary Closure (F1-F5)
+
+- **[P1] F1 Gateway Reservation Ownership & Safe Rollback (`pa_cli/gateway.py`)**:
+  - Replaced list-based active reservations with per-run, per-request dictionary `dict[str, dict[str, tuple[int, Decimal]]]`.
+  - Assigned each in-flight verification a unique reservation identifier (`resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"`).
+  - Added `acquired_reservation` boolean guard ensuring rejected requests never modify in-flight peer reservations.
+  - Eliminated the budget leakage flaw where rejected requests deleted prior reservations, ensuring strict cumulative enforcement of the 100,000 input tokens ceiling across concurrent requests.
+- **[P1] F2 Strict Physical Artifact Inspection / Eliminating Presumed OA (`pa_cli/gateway.py`, `pa_cli/cli.py`)**:
+  - Completely removed presumed Open-Access approvals for raw DOI strings without inspected physical files.
+  - Enforced mandatory inspection of local PDF/XML artifacts with explicit CC-BY / CC-0 metadata from allowlisted hosts before granting `VERIFIED_PUBLIC_OA`.
+  - Candidates lacking `artifact_path` or pointing to missing files are strictly rejected with `status="BLOCKED_NON_OA"`, `rights_class="unverified_no_artifact"`.
+  - Added `--url` CLI argument to `pa gateway verify` with safe allowlisted fallbacks.
+- **[P1] F3 Rigorous Econometric Effect Size Separation (`pa_cli/align_findings.py`)**:
+  - Strip standard errors (`SE = ...`, `(0.01)`), $p$-values (`p = ...`, `p < ...`), test statistics ($t/z/F$), and $R^2$ before number parsing.
+  - Removed generic decimal fallback regex that scraped non-effect figures.
+  - Enforced extraction of at most one representative coefficient estimate per paper.
+  - Required $\ge 2$ independent empirical papers before computing `literature_typical_range`; returns `None`/`null` when literature is insufficient rather than fabricating pseudo-ranges from single-paper SE/p-values.
+- **[P2] F4 Statistical Consistency Check Robust Formatting (`pa_cli/stats_check.py`)**:
+  - Fixed `None` consistency rate in `format_stats_report` across ASCII table and Markdown formatters, displaying `"N/A"` without raising `TypeError` when no statistical tests are detected.
+- **[P1] F5 Evidence Review Structural Boundaries & Artifact SHA-256 Binding (`pa_cli/evidence_review.py`)**:
+  - Implemented bibliography section boundary detection: immediately halts text harvesting upon encountering `References`, `Bibliography`, `Works Cited`, or `Literature Cited` headers, preventing cited literature titles and methods from being misclassified as study methods.
+  - Refined `METHOD_PATTERNS` to causal econometrics identification designs (Staggered DiD, TWFE, Synthetic Control, IV/2SLS, RDD, Panel FE, Causal ML, Event Study), removing generic ML/transformer keywords that conflated study tools/topics with identification methodology.
+  - Added physical file SHA-256 computation to `BoundEvidence.artifact_sha256`, bound file hash into evidence ID generation, and required verified SHA-256 for PDF claim binding rate calculations.
+- **Regression Suite**:
+  - Added `test_output/test_rereview_findings_f1_f5.py` with 5 targeted unit tests covering 3-request concurrency race isolation, no-artifact rejection, single-paper SE/p-value separation, empty stats report formatters, and bibliography truncation.
+  - Updated existing gateway test suites (`test_gateway_p3_34.py`, `test_review_fixes_1ae4c36.py`, `test_rereview_audit_fixes_111532f.py`) with inspected XML fixtures.
+
+## [3.10.0.24] - 2026-10-07
+
+### Re-Review Priority Findings Fixes (R1-R7)
+
+- **R1**: Citation audit numerical discrepancy blocking on numerical mismatch.
+- **R2**: Evidence excerpt character offsets preservation and headings-v3 indexing.
+- **R3**: Gateway rejection of unverified DOI strings lacking artifact metadata.
+- **R4**: Cumulative budget enforcement and audit log fail-closed behavior.
+- **R5**: Filtering of 4-digit years and sample sizes from literature benchmark ranges.
+- **R6**: Defaulting untested hypotheses in consensus matrix to `untested`.
+- **R7**: Strict inequality enforcement for $p$-value decision errors.
+
+## [3.10.0.23] - 2026-10-07
+
+### Scientific Grounding & Gateway Audit Integrity Hardening (F1-F14)
+
+- Addressed findings F1 through F14 across evidence review grounding, direction inference, review adjudication hedging, and table extraction validation.
 
 ## [3.10.0.22] - 2026-10-07
 

@@ -30,6 +30,7 @@ import logging
 import os
 import re
 import threading
+import uuid
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from decimal import Decimal
@@ -43,7 +44,7 @@ from .provenance import inspect_artifact
 log = logging.getLogger(__name__)
 
 _GATEWAY_LOCK = threading.Lock()
-_ACTIVE_RESERVATIONS: dict[str, list[tuple[int, Decimal]]] = {}
+_ACTIVE_RESERVATIONS: dict[str, dict[str, tuple[int, Decimal]]] = {}
 
 # Hard limits for M6 pilot (Strict ceilings)
 MAX_COST_USD_CEILING = Decimal("0.01")
@@ -223,38 +224,17 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 license_urls=lic_urls,
             )
 
-    # 4. Strict metadata evaluation if artifact_path is omitted
-    # Must have public data_class, syntactically valid DOI (10.xxxx/...), and proven OA repository format
-    doi_syntax = re.compile(r"^10\.\d{4,9}/[-._;()/:A-Za-z0-9]+$")
-    c_doi = canonicalize_doi(candidate.doi or "")
-    if candidate.data_class == "public" and doi_syntax.match(c_doi):
-        src = candidate.source.lower()
-        if src == "arxiv" and (c_doi.startswith("10.48550/") or "arxiv" in c_doi.lower()):
-            return PaperVerificationResult(
-                paper_id=candidate.paper_id,
-                doi=c_doi,
-                is_public_oa=True,
-                status="VERIFIED_PUBLIC_OA",
-                rights_class="public_oa",
-                license_urls=["https://creativecommons.org/licenses/by/4.0/"],
-            )
-        elif src in ("pmc", "pmc_xml", "europepmc"):
-            return PaperVerificationResult(
-                paper_id=candidate.paper_id,
-                doi=c_doi,
-                is_public_oa=True,
-                status="VERIFIED_PUBLIC_OA",
-                rights_class="public_oa",
-                license_urls=["https://creativecommons.org/licenses/by/4.0/"],
-            )
-
+    # 4. Strict rejection if artifact_path is omitted / not provided
+    # Per F2: No presumed OA or CC-BY grant without physical artifact inspection
     return PaperVerificationResult(
         paper_id=candidate.paper_id,
         doi=candidate.doi,
         is_public_oa=False,
         status="BLOCKED_NON_OA",
-        rights_class="unknown",
-        blocking_reasons=["Paper source or license could not be verified as public OA."],
+        rights_class="unverified_no_artifact",
+        blocking_reasons=[
+            "Verification strictly requires an inspected artifact file (PDF/XML) with validated open-access license metadata."
+        ],
     )
 
 
@@ -319,9 +299,12 @@ def evaluate_gateway_request(
     consent_public_oa: bool,
     consent_zero_retention: bool,
     max_cost_usd_limit: Optional[str] = None,
+    audit_file: Optional[Path] = None,
 ) -> tuple[GatewayReceipt, list[str]]:
     """Execute the complete M6 Safe Gateway security & privacy verification pipeline."""
     rejection_reasons: list[str] = []
+    resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"
+    acquired_reservation = False
 
     # 1. Mandatory Operator Consent Checks
     if not consent_public_oa:
@@ -369,13 +352,14 @@ def evaluate_gateway_request(
 
     configured_max_cost = Decimal(max_cost_usd_limit) if max_cost_usd_limit else MAX_COST_USD_CEILING
     effective_max_cost = min(MAX_COST_USD_CEILING, configured_max_cost)
+    target_audit_path = audit_file or DEFAULT_AUDIT_LOG_PATH
 
     with _GATEWAY_LOCK:
         prior_tokens = 0
         prior_cost = Decimal("0.0")
-        if DEFAULT_AUDIT_LOG_PATH.exists():
+        if target_audit_path.exists():
             try:
-                for line in DEFAULT_AUDIT_LOG_PATH.read_text(encoding="utf-8").splitlines():
+                for line in target_audit_path.read_text(encoding="utf-8").splitlines():
                     line_s = line.strip()
                     if not line_s:
                         continue
@@ -390,7 +374,7 @@ def evaluate_gateway_request(
                 pass
 
         # Add active in-flight reservations
-        for (r_tok, r_cst) in _ACTIVE_RESERVATIONS.get(run_id, []):
+        for (r_tok, r_cst) in _ACTIVE_RESERVATIONS.get(run_id, {}).values():
             prior_tokens += r_tok
             prior_cost += r_cst
 
@@ -418,7 +402,8 @@ def evaluate_gateway_request(
         timestamp = datetime.now(timezone.utc).isoformat()
 
         if passed:
-            _ACTIVE_RESERVATIONS.setdefault(run_id, []).append((est_tokens, est_cost))
+            _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (est_tokens, est_cost)
+            acquired_reservation = True
 
     receipt = GatewayReceipt(
         receipt_id=receipt_id,
@@ -440,14 +425,16 @@ def evaluate_gateway_request(
     )
 
     # Append to local audit log (fail-closed if writing fails)
-    write_ok = record_gateway_audit_event(receipt)
+    write_ok = record_gateway_audit_event(receipt, audit_file=target_audit_path)
     if write_ok is False and receipt.gateway_decision == "AUTHORIZED":
         receipt.gateway_decision = "REJECTED"
         receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
 
     with _GATEWAY_LOCK:
-        if run_id in _ACTIVE_RESERVATIONS and (est_tokens, est_cost) in _ACTIVE_RESERVATIONS[run_id]:
-            _ACTIVE_RESERVATIONS[run_id].remove((est_tokens, est_cost))
+        if acquired_reservation and run_id in _ACTIVE_RESERVATIONS:
+            _ACTIVE_RESERVATIONS[run_id].pop(resv_id, None)
+            if not _ACTIVE_RESERVATIONS[run_id]:
+                _ACTIVE_RESERVATIONS.pop(run_id, None)
 
     return receipt, sanitized_passages
 

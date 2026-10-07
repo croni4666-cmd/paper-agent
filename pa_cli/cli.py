@@ -2335,6 +2335,7 @@ def gateway_group():
               help="Path to paper PDF/XML to inspect")
 @click.option("--doi", default="", help="Expected paper DOI (e.g. 10.1000/182)")
 @click.option("--source", default="arxiv", help="Source channel or platform host (e.g. arxiv, pmc)")
+@click.option("--url", default="", help="Artifact origin URL")
 @click.option("--data-class", default="public", type=click.Choice(["public", "private", "confidential", "unpublished"]),
               help="Data sensitivity classification")
 @click.option("--text", "-t", "passage_text", default="", help="Sample text passage to scan for injection and PII")
@@ -2346,7 +2347,7 @@ def gateway_group():
               default="table", show_default=True, help="Output display format")
 @click.option("-o", "--output", default=None, help="Destination file to save gateway receipt")
 @click.option("--json", "as_json", is_flag=True, help="Output receipt as raw JSON")
-def gateway_verify_cmd(artifact_file, doi, source, data_class, passage_text, operator,
+def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text, operator,
                        consent_public_oa, consent_zero_retention, max_cost_limit,
                        format_type, output, as_json):
     """Run pre-flight gateway verification on paper candidate and text passages."""
@@ -2360,6 +2361,15 @@ def gateway_verify_cmd(artifact_file, doi, source, data_class, passage_text, ope
 
     run_id = f"run_{uuid.uuid4().hex[:8]}"
     candidates = []
+    if not url:
+        src_lower = source.lower()
+        if src_lower == "arxiv":
+            url = f"https://arxiv.org/abs/{doi.replace('10.48550/', '')}" if doi else "https://arxiv.org"
+        elif src_lower in ("pmc", "pmc_europe"):
+            url = "https://europepmc.org"
+        elif src_lower in ("pmc_xml", "pmc_xml_only"):
+            url = "https://eutils.ncbi.nlm.nih.gov"
+
     if doi or artifact_file:
         cand_id = Path(artifact_file).stem if artifact_file else "candidate_01"
         candidates.append(PaperEvaluationCandidate(
@@ -2367,6 +2377,7 @@ def gateway_verify_cmd(artifact_file, doi, source, data_class, passage_text, ope
             artifact_path=artifact_file,
             doi=doi,
             source=source,
+            url=url,
             data_class=data_class,
         ))
 

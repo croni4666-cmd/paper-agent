@@ -35,19 +35,48 @@ class TestGatewayP334(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.tmp_dir, ignore_errors=True)
 
+    def _create_oa_xml(self, filename="valid.xml", doi="10.48550/arXiv.2101.00001", license_url="https://creativecommons.org/licenses/by/4.0/") -> Path:
+        p = Path(self.tmp_dir) / filename
+        p.write_bytes(
+            f'''<article xmlns:xlink="http://www.w3.org/1999/xlink">
+            <front><article-meta>
+              <article-id pub-id-type="doi">{doi}</article-id>
+              <title-group><article-title>Valid OA Article</article-title></title-group>
+              <permissions><license xlink:href="{license_url}"/></permissions>
+            </article-meta></front>
+            <body><p>Text</p></body></article>'''.encode("utf-8")
+        )
+        return p
+
     def test_public_oa_rights_verification(self):
         """Test classification of public OA vs restricted and private papers."""
-        # 1. Allowlisted public-OA source (arXiv)
-        cand_oa = PaperEvaluationCandidate(
-            paper_id="arxiv_01",
+        # 1. Without inspected artifact file, candidate is strictly blocked
+        cand_no_art = PaperEvaluationCandidate(
+            paper_id="arxiv_no_art",
             artifact_path=None,
             doi="10.48550/arXiv.2101.00001",
             source="arxiv",
             data_class="public",
         )
+        res_no_art = verify_paper_rights(cand_no_art)
+        self.assertFalse(res_no_art.is_public_oa)
+        self.assertEqual(res_no_art.status, "BLOCKED_NON_OA")
+        self.assertEqual(res_no_art.rights_class, "unverified_no_artifact")
+
+        # 2. Allowlisted public-OA source with valid inspected XML artifact
+        xml_p = self._create_oa_xml()
+        cand_oa = PaperEvaluationCandidate(
+            paper_id="arxiv_01",
+            artifact_path=str(xml_p),
+            doi="10.48550/arXiv.2101.00001",
+            source="arxiv",
+            url="https://arxiv.org/abs/2101.00001",
+            data_class="public",
+        )
         res_oa = verify_paper_rights(cand_oa)
         self.assertTrue(res_oa.is_public_oa)
         self.assertEqual(res_oa.status, "VERIFIED_PUBLIC_OA")
+        self.assertEqual(res_oa.rights_class, "public_oa")
 
         # 2. Restricted sources are immediately blocked
         for rest_src in ["scihub", "annas", "cnki", "pirate"]:
@@ -111,11 +140,13 @@ class TestGatewayP334(unittest.TestCase):
 
     def test_hard_ceilings_and_consent_enforcement(self):
         """Test budget caps ($0.01 / 100k tokens / 25 papers) and mandatory consent."""
+        xml_p = self._create_oa_xml("ceilings.xml")
         cand = PaperEvaluationCandidate(
             paper_id="paper_01",
-            artifact_path=None,
+            artifact_path=str(xml_p),
             doi="10.48550/arXiv.2101.00001",
             source="arxiv",
+            url="https://arxiv.org/abs/2101.00001",
             data_class="public",
         )
         passages = ["This is a standard evidence passage discussing empirical findings."]
@@ -134,7 +165,7 @@ class TestGatewayP334(unittest.TestCase):
 
         # 2. Exceeding paper count ceiling (>25)
         too_many_cands = [
-            PaperEvaluationCandidate(paper_id=f"p_{i}", artifact_path=None, doi=f"10.1000/{i}", source="arxiv")
+            PaperEvaluationCandidate(paper_id=f"p_{i}", artifact_path=str(xml_p), doi=f"10.1000/{i}", source="arxiv")
             for i in range(26)
         ]
         r_too_many, _ = evaluate_gateway_request(
@@ -177,11 +208,13 @@ class TestGatewayP334(unittest.TestCase):
 
     def test_audit_trail_and_receipt_formatting(self):
         """Test recording and reading gateway verification receipts."""
+        xml_p = self._create_oa_xml("audit.xml")
         cand = PaperEvaluationCandidate(
             paper_id="paper_01",
-            artifact_path=None,
+            artifact_path=str(xml_p),
             doi="10.48550/arXiv.2101.00001",
             source="arxiv",
+            url="https://arxiv.org/abs/2101.00001",
             data_class="public",
         )
         receipt, _ = evaluate_gateway_request(
@@ -225,11 +258,13 @@ class TestGatewayP334(unittest.TestCase):
         self.assertIn("INJECTION / ADVERSARIAL THREAT DETECTED", res_scan.stdout)
         self.assertIn("ignore_previous_instructions", res_scan.stdout)
 
-        # 2. Gateway verify CLI (Clean, authorized case)
+        # 2. Gateway verify CLI (Clean, authorized case with inspected XML artifact)
+        xml_p = self._create_oa_xml("cli_oa.xml")
         res_v_auth = runner.invoke(
             main,
             [
                 "gateway", "verify",
+                "-f", str(xml_p),
                 "--doi", "10.48550/arXiv.2101.00001",
                 "--source", "arxiv",
                 "-t", "Clean empirical evidence passage.",
@@ -247,6 +282,7 @@ class TestGatewayP334(unittest.TestCase):
             main,
             [
                 "gateway", "verify",
+                "-f", str(xml_p),
                 "--doi", "10.1016/j.jfineco.2020.01.001",
                 "--source", "scihub",
                 "--consent-public-oa",
@@ -255,6 +291,21 @@ class TestGatewayP334(unittest.TestCase):
         )
         self.assertNotEqual(res_v_block.exit_code, 0)
         self.assertIn("REJECTED", res_v_block.stdout)
+
+        # 4. Gateway verify CLI (Omitted artifact file case strictly blocked)
+        res_v_no_art = runner.invoke(
+            main,
+            [
+                "gateway", "verify",
+                "--doi", "10.48550/arXiv.2101.00001",
+                "--source", "arxiv",
+                "--consent-public-oa",
+                "--consent-zero-retention",
+            ],
+        )
+        self.assertNotEqual(res_v_no_art.exit_code, 0)
+        self.assertIn("REJECTED", res_v_no_art.stdout)
+        self.assertIn("strictly requires an inspected artifact file", res_v_no_art.stdout)
 
 
 if __name__ == "__main__":

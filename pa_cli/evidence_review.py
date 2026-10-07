@@ -59,6 +59,7 @@ class BoundEvidence:
     char_end: int
     section: str  # 'theory', 'methods', 'results', 'discussion', 'abstract'
     excerpt: str
+    artifact_sha256: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -125,7 +126,8 @@ METHOD_PATTERNS = [
     ("iv", "Instrumental Variables (IV / 2SLS)", re.compile(r"\b(?:instrumental\s+variables?|2sls|two[- ]stage\s+least\s+squares|exclusion\s+restriction)\b", re.I)),
     ("rdd", "Regression Discontinuity Design", re.compile(r"\b(?:regression\s+discontinuity|rdd|sharp\s+rd|fuzzy\s+rd|running\s+variable)\b", re.I)),
     ("panel_fe", "Panel Fixed Effects", re.compile(r"\b(?:firm\s+fixed\s+effects|year\s+fixed\s+effects|panel\s+estimation)\b", re.I)),
-    ("ml", "Machine Learning / NLP", re.compile(r"\b(?:random\s+forest|gradient\s+boosting|neural\s+network|transformer|large\s+language\s+model|bert)\b", re.I)),
+    ("causal_ml", "Causal ML / Double Machine Learning", re.compile(r"\b(?:causal\s+forest|double\s+machine\s+learning|\bdml\b|high[- ]dimensional\s+controls|lasso\s+regression|ridge\s+regression)\b", re.I)),
+    ("event_study", "Event Study Design", re.compile(r"\b(?:event\s+study(?:\s+design)?|leads\s+and\s+lags|dynamic\s+treatment\s+effects?)\b", re.I)),
 ]
 
 FINDING_PATTERNS = [
@@ -144,9 +146,9 @@ HETEROGENEITY_PATTERNS = [
 ]
 
 
-def _make_evidence_id(text: str, filename: str, page: int, start: int) -> str:
+def _make_evidence_id(text: str, filename: str, page: int, start: int, artifact_sha256: str = "") -> str:
     """Generate deterministic SHA-256 evidence span ID."""
-    raw = f"{filename}:{page}:{start}:{text.strip()}"
+    raw = f"{artifact_sha256}:{filename}:{page}:{start}:{text.strip()}"
     return "ev-" + hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
 
 
@@ -164,6 +166,16 @@ def harvest_paper_evidence(
 
     doi = canonicalize_doi(bib_entry.get("doi", ""))
     filename = file_path.name if file_path else (bib_entry.get("key", "meta") + ".bib")
+    artifact_sha256 = ""
+    if file_path and file_path.is_file():
+        try:
+            h = hashlib.sha256()
+            with file_path.open("rb") as f:
+                for block in iter(lambda: f.read(65536), b""):
+                    h.update(block)
+            artifact_sha256 = h.hexdigest()
+        except Exception:
+            pass
 
     pages_text: List[Tuple[int, str]] = []
 
@@ -190,6 +202,22 @@ def harvest_paper_evidence(
         # Fall back to BibTeX abstract
         pages_text.append((0, bib_entry["abstract"]))
 
+    # F5: Strip references / bibliography / works cited to prevent harvesting citations as empirical methods
+    ref_pat = re.compile(
+        r"(?:^|\n)\s*(?:[#\d\.\s\-]*)(?:references|bibliography|works\s+cited|literature\s+cited)\s*(?:\r?\n|:|$)",
+        re.IGNORECASE,
+    )
+    filtered_pages: List[Tuple[int, str]] = []
+    for p_num, content in pages_text:
+        m = ref_pat.search(content)
+        if m:
+            pre_ref = content[:m.start()].strip()
+            if pre_ref:
+                filtered_pages.append((p_num, pre_ref))
+            break
+        filtered_pages.append((p_num, content))
+    pages_text = filtered_pages
+
     for p_num, page_content in pages_text:
         # 1. Search for Methodological specifications
         for m_id, m_name, m_pat in METHOD_PATTERNS:
@@ -209,7 +237,7 @@ def harvest_paper_evidence(
                 passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
-                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
+                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start, artifact_sha256),
                         doi=doi,
                         filename=filename,
                         page=p_num,
@@ -217,6 +245,7 @@ def harvest_paper_evidence(
                         char_end=s_end,
                         section="methods",
                         excerpt=passage,
+                        artifact_sha256=artifact_sha256,
                     )
                     buckets["methods"].append(ev)
                     break
@@ -233,7 +262,7 @@ def harvest_paper_evidence(
                 passage = page_content[s_start:s_end]
                 if len(passage) >= 35:
                     ev = BoundEvidence(
-                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
+                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start, artifact_sha256),
                         doi=doi,
                         filename=filename,
                         page=p_num,
@@ -241,6 +270,7 @@ def harvest_paper_evidence(
                         char_end=s_end,
                         section="results",
                         excerpt=passage,
+                        artifact_sha256=artifact_sha256,
                     )
                     buckets["results"].append(ev)
                     if len(buckets["results"]) >= 4:
@@ -258,7 +288,7 @@ def harvest_paper_evidence(
                 passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
-                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
+                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start, artifact_sha256),
                         doi=doi,
                         filename=filename,
                         page=p_num,
@@ -266,6 +296,7 @@ def harvest_paper_evidence(
                         char_end=s_end,
                         section="theory",
                         excerpt=passage,
+                        artifact_sha256=artifact_sha256,
                     )
                     buckets["theory"].append(ev)
                     if len(buckets["theory"]) >= 3:
@@ -283,7 +314,7 @@ def harvest_paper_evidence(
                 passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
-                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
+                        evidence_id=_make_evidence_id(passage, filename, p_num, s_start, artifact_sha256),
                         doi=doi,
                         filename=filename,
                         page=p_num,
@@ -291,6 +322,7 @@ def harvest_paper_evidence(
                         char_end=s_end,
                         section="heterogeneity",
                         excerpt=passage,
+                        artifact_sha256=artifact_sha256,
                     )
                     buckets["heterogeneity"].append(ev)
                     if len(buckets["heterogeneity"]) >= 3:
@@ -517,7 +549,9 @@ def generate_evidence_backed_review(
     total_claims = len(all_manifest_claims)
     pdf_claims = sum(
         1 for c in all_manifest_claims
-        if c["evidence"]["page"] > 0 and c["evidence"]["section"] not in ("abstract", "fallback")
+        if c["evidence"]["page"] > 0
+        and c["evidence"]["section"] not in ("abstract", "fallback")
+        and bool(c["evidence"].get("artifact_sha256"))
     )
     binding_rate = (pdf_claims / total_claims) if total_claims > 0 else 0.0
 

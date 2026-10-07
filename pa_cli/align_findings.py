@@ -356,12 +356,14 @@ def align_empirical_finding(
                 "interpretation": "No comparable empirical estimates found in local literature to construct a benchmark distribution.",
             }
         else:
-            lit_nums = []
+            paper_estimates: dict[str, float] = {}
             for p_item in supporting + contradictory:
                 text = p_item.evidence_quote
-                # Filter out 4-digit publication/sample years (1900-2099)
+                paper_key = p_item.paper_id or p_item.paper_title or str(id(p_item))
+
+                # 1. Filter out 4-digit publication/sample years (1900-2099)
                 clean_text = re.sub(r"\b(?:19|20)\d{2}\b", " ", text)
-                # Filter out sample sizes like "1000 firms", "500 enterprises", "N = 300"
+                # 2. Filter out sample sizes like "1000 firms", "500 enterprises", "N = 300"
                 clean_text = re.sub(
                     r"\b\d+\s*(?:firms?|enterprises?|companies?|observations?|obs|cases?|respondents?|samples?|家|个|样本)\b",
                     " ",
@@ -370,35 +372,68 @@ def align_empirical_finding(
                 )
                 clean_text = re.sub(r"\b[Nn]\s*=\s*\d+\b", " ", clean_text)
 
-                # Extract percentages: 5% -> 0.05
+                # 3. Filter out standard errors (SE = 0.01, (0.01), Std. Err. = 0.02)
+                clean_text = re.sub(
+                    r"(?:\bSE\b|\bStd\.?\s*Err(?:or)?\b)\s*[:=]?\s*\(?[-+]?\d*\.?\d+\)?",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(r"\(\s*[-+]?\d*\.?\d+\s*\)", " ", clean_text)
+
+                # 4. Filter out p-values (p = 0.003, p < 0.01, p-value = 0.05)
+                clean_text = re.sub(
+                    r"\b[pP](?:[-_\s]*val(?:ue)?)?\s*(?:[<>=]|<=|>=|[:=])\s*[-+]?\d*\.?\d+",
+                    " ",
+                    clean_text,
+                )
+
+                # 5. Filter out t-stats, z-stats, F-stats, R-squared
+                clean_text = re.sub(
+                    r"\b(?:t|z|F)[-_\s]*(?:stat(?:istic)?\b)?\s*[:=]\s*[-+]?\d*\.?\d+",
+                    " ",
+                    clean_text,
+                )
+                clean_text = re.sub(
+                    r"\b(?:[rR][-_ ]?squared?|[rR]\^2)\s*[:=]?\s*[-+]?\d*\.?\d+",
+                    " ",
+                    clean_text,
+                )
+                clean_text = re.sub(r"\[\d+\]", " ", clean_text)
+
+                # 6. Extract explicitly marked empirical coefficients or percentage effects
+                extracted_for_paper: list[float] = []
+
+                # Percentage effects: 5% -> 0.05
                 for pct in re.findall(r"[-+]?\d+(?:\.\d+)?%", clean_text):
                     try:
-                        lit_nums.append(float(pct.replace("%", "")) / 100.0)
+                        extracted_for_paper.append(float(pct.replace("%", "")) / 100.0)
                     except ValueError:
                         pass
                 clean_text = re.sub(r"[-+]?\d+(?:\.\d+)?%", " ", clean_text)
 
-                # Extract explicit coefficient values (e.g. beta/coef/estimate)
-                for c in re.findall(r"(?:beta|b|coef(?:ficient)?|estimate|effect)\s*[:=]?\s*([-+]?\d*\.?\d+)", clean_text, flags=re.IGNORECASE):
+                # Explicit coefficient labels: beta/b/coef/estimate/effect size
+                for c in re.findall(
+                    r"(?:\bbeta\b|\bb\b|\bcoef(?:ficient)?\b|\bestimate\b|\beffect\s*(?:size)?\b)\s*[:=]?\s*([-+]?\d*\.?\d+)",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                ):
                     try:
                         val = float(c)
-                        if abs(val) <= 50 and val not in lit_nums:
-                            lit_nums.append(val)
+                        if abs(val) <= 50 and val not in extracted_for_paper:
+                            extracted_for_paper.append(val)
                     except ValueError:
                         pass
 
-                # Extract decimal coefficients with explicit decimal point
-                for d in re.findall(r"(?<![\d\w])[-+]?\d+\.\d+(?![\d\w%])", clean_text):
-                    try:
-                        val = float(d)
-                        if abs(val) <= 50 and val not in lit_nums:
-                            lit_nums.append(val)
-                    except ValueError:
-                        pass
+                # Record at most 1 representative estimate per paper
+                if extracted_for_paper and paper_key not in paper_estimates:
+                    paper_estimates[paper_key] = extracted_for_paper[0]
 
-            if len(lit_nums) >= 2:
-                typical_min = round(min(lit_nums), 4)
-                typical_max = round(max(lit_nums), 4)
+            distinct_estimates = list(paper_estimates.values())
+            # Require at least 2 independent papers with comparable estimates
+            if len(distinct_estimates) >= 2:
+                typical_min = round(min(distinct_estimates), 4)
+                typical_max = round(max(distinct_estimates), 4)
                 is_outlier = bool(user_c < typical_min or user_c > typical_max)
                 prior_bench = {
                     "user_coefficient": user_c,

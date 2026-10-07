@@ -21,6 +21,7 @@ import tempfile
 import unittest
 from decimal import Decimal
 from pathlib import Path
+from unittest.mock import patch
 
 from pa_cli.align_findings import EmpiricalInput, align_empirical_finding
 from pa_cli.cite_audit import (
@@ -160,11 +161,22 @@ class TestRereviewAuditFixes111532f(unittest.TestCase):
         self.assertTrue(any("Missing candidate papers" in r for r in receipt_empty.rejection_reasons))
 
         # 3. Prompt injection interception rejection
+        xml_p = self.tmpdir / "cand1.xml"
+        xml_p.write_bytes(
+            b'<article xmlns:xlink="http://www.w3.org/1999/xlink">'
+            b'<front><article-meta>'
+            b'<article-id pub-id-type="doi">10.48550/arxiv.2101.00001</article-id>'
+            b'<title-group><article-title>Valid OA Article</article-title></title-group>'
+            b'<permissions><license xlink:href="https://creativecommons.org/licenses/by/4.0/"/></permissions>'
+            b'</article-meta></front>'
+            b'<body><p>Text</p></body></article>'
+        )
         valid_cand = PaperEvaluationCandidate(
             paper_id="cand1",
-            artifact_path=None,
+            artifact_path=str(xml_p),
             doi="10.48550/arXiv.2101.00001",
             source="arxiv",
+            url="https://arxiv.org/abs/2101.00001",
             data_class="public",
         )
         receipt_inj, _ = evaluate_gateway_request(
@@ -180,29 +192,32 @@ class TestRereviewAuditFixes111532f(unittest.TestCase):
 
         # 4. Cumulative ceiling across calls sharing the same run_id
         audit_file = self.tmpdir / "gateway_audit.jsonl"
-        # First call authorized
-        receipt_ok, _ = evaluate_gateway_request(
-            run_id="run_ceiling_test",
-            operator="tester",
-            candidates=[valid_cand],
-            passages=["Public evidence passage A " * 1000],  # ~6000 tokens
-            consent_public_oa=True,
-            consent_zero_retention=True,
-        )
-        self.assertEqual(receipt_ok.gateway_decision, "AUTHORIZED")
-        record_gateway_audit_event(receipt_ok, audit_file=audit_file)
+        with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", audit_file):
+            # First call authorized
+            receipt_ok, _ = evaluate_gateway_request(
+                run_id="run_ceiling_test",
+                operator="tester",
+                candidates=[valid_cand],
+                passages=["Public evidence passage A " * 1000],  # ~6000 tokens
+                consent_public_oa=True,
+                consent_zero_retention=True,
+                audit_file=audit_file,
+            )
+            self.assertEqual(receipt_ok.gateway_decision, "AUTHORIZED")
+            record_gateway_audit_event(receipt_ok, audit_file=audit_file)
 
-        # Second call with giant payload under same run_id exceeding token limit
-        receipt_over, _ = evaluate_gateway_request(
-            run_id="run_ceiling_test",
-            operator="tester",
-            candidates=[valid_cand],
-            passages=["Public evidence passage B " * 20000],  # ~120,000 tokens
-            consent_public_oa=True,
-            consent_zero_retention=True,
-        )
-        self.assertEqual(receipt_over.gateway_decision, "REJECTED")
-        self.assertFalse(receipt_over.ceiling_compliant)
+            # Second call with giant payload under same run_id exceeding token limit
+            receipt_over, _ = evaluate_gateway_request(
+                run_id="run_ceiling_test",
+                operator="tester",
+                candidates=[valid_cand],
+                passages=["Public evidence passage B " * 20000],  # ~120,000 tokens
+                consent_public_oa=True,
+                consent_zero_retention=True,
+                audit_file=audit_file,
+            )
+            self.assertEqual(receipt_over.gateway_decision, "REJECTED")
+            self.assertFalse(receipt_over.ceiling_compliant)
 
     # -------------------------------------------------------------------------
     # F6: Citation Audit

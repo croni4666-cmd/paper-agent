@@ -4991,3 +4991,23 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 - **Rationale**: Implements the public-OA pilot with per-run consent, mandatory token/cost hard ceilings ($0.01/run), anti-prompt injection validation, and strict zero-retention attestations.
 - **Outcome**: Implemented `pa_cli/gateway.py` and `pa gateway` CLI command group (`verify`, `check-injection`, `audit`). Enforces: (1) Source rights verification: only CC-BY/CC-0 Public-OA papers with verified DOIs from allowlisted hosts may proceed, strictly blocking restricted (Sci-Hub, Anna's Archive, CNKI) or confidential manuscripts, (2) Anti-prompt-injection scanning and neutralization of adversarial instructions, system prompt overrides, and delimiter breakouts, (3) Zero-retention PII scrubbing (emails, phone numbers, credentials), (4) Hard spend and token ceilings (max $0.01 USD / run, max 100,000 input tokens, max 25 papers) with mandatory explicit per-run operator consent, and (5) Cryptographic tamper-evident audit receipts with payload SHA-256 signatures and local append-only logging. Covered by 5 unit tests in `test_output/test_gateway_p3_34.py`.
 - **Global Rule audit**: Mandatory operator confirmation, immutable audit log, and strict budget caps; 100% offline-first execution with zero cloud costs.
+
+### [P3-35] Re-Review Priority Hardening & Scientific Boundary Closure (F1-F5)
+
+- **Status**: done
+- **Added**: 2026-10-07
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
+- **Priority**: P1 / P2
+- **Effort**: 2 engineering days
+- **Source**: External peer review on `729e96a` (`v3.10.0.24`).
+- **Rationale**: Eliminates lingering security, copyright, and scientific grounding defects identified during controlled counter-example testing across safe gateway budget reservations, Open-Access verification without physical artifacts, empirical effect size scraping, statistical reporting formatters, and evidence review bibliography leakage.
+- **Outcome**:
+  1. `[P1] F1`: Unique per-request reservation IDs (`resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"`) and guard flag `acquired_reservation` in `pa_cli/gateway.py`. Ensures rejected requests cannot delete concurrent in-flight reservations, strictly honoring the 100k cumulative token limit under 3-request concurrency races.
+  2. `[P1] F2`: Strict physical artifact inspection in `pa_cli/gateway.py`. Completely excised presumed CC-BY / Open-Access approvals for raw DOI strings; verification strictly requires a physical PDF/XML artifact with validated license metadata and allowlisted host origin.
+  3. `[P1] F3`: Clean econometric effect size separation in `pa_cli/align_findings.py`. Strips standard errors (SE), p-values, test statistics ($t/z/F$), and $R^2$ before number parsing; eliminates generic decimal fallback; requires $\ge 2$ independent empirical papers before constructing literature benchmark distributions.
+  4. `[P2] F4`: Robust statistical check report formatting in `pa_cli/stats_check.py`. Safely formats `None` consistency rates as `"N/A"` across table and markdown formatters without raising `TypeError`.
+  5. `[P1] F5`: Structural references boundary truncation, refined causal econometrics method patterns, and physical file SHA-256 bindings in `pa_cli/evidence_review.py`.
+  Covered by 5 comprehensive regression unit tests in `test_output/test_rereview_findings_f1_f5.py`.
+- **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
