@@ -13,6 +13,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.15] - 2026-10-07
+
+### Theoretical Proposition Controversy & Consensus Matrix ([P1-22])
+
+- Implement `pa consensus` CLI command and `pa_cli/consensus.py` for mapping academic debates, hypothesis outcomes, and field consensus:
+  - Extract formalized hypotheses ($H_1, H_2, \dots$) and general empirical findings across English and Chinese literature.
+  - Automatically pair proposed proposition directions (positive, negative, U-shaped, inverted U-shaped) with empirical verification results (supported, rejected, partially supported) to determine effective empirical findings.
+  - Ground independent and dependent variables against canonical academic concepts (ESG, CSR, firm performance, innovation, debt leverage, environmental regulation, CEO duality, agency cost, etc.) or open-ended causal clauses.
+  - Synthesize cross-paper consensus matrix: compute quantitative Consensus Scores ($S_{\text{consensus}} \in [0, 1]$), categorize debate intensity levels (Consensus Baseline $\ge 75\%$, Moderate Debate, Intense Controversy $< 50\%$), and identify boundary conditions / heterogeneity qualifiers.
+  - Multi-target export formatting: ASCII terminal matrix table, academic Markdown literature review consensus digest, and structured JSON records for programmatic graph downstream ingestion.
+- Add comprehensive test suite `test_output/test_consensus_p1_22.py` (8 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.14] - 2026-10-04
 
 ### Simulation Calibration Parameters & Effect-Size Prior Harvester ([P1-25])

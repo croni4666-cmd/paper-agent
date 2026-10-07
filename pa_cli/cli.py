@@ -1762,6 +1762,84 @@ def extract_parameters_cmd(target, text, project_slug, format, output, category,
         click.echo(rendered)
 
 
+# =============== [P1-22] pa consensus: Theoretical Proposition Consensus Matrix ===============
+
+@main.command("consensus")
+@click.argument("target", required=False, default=None)
+@click.option("--text", "-t", default=None,
+              help="Raw text string or paragraph to extract hypotheses and findings from")
+@click.option("--project", "-p", "project_slug", default=None,
+              help="Project slug to synthesize cross-paper consensus matrix from all cached PDFs")
+@click.option("--format", "-f", default="table",
+              type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              show_default=True, help="Output format: table, markdown, or json")
+@click.option("-o", "--output", "--out", "output", default=None,
+              help="Destination file to save consensus report")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root (~/.paper-agent/projects)")
+@click.option("--json", "as_json", is_flag=True, help="Print consensus matrix as raw JSON")
+def consensus_cmd(target, text, project_slug, format, output, root_path, as_json):
+    """[P1-22] Theoretical proposition controversy and consensus matrix.
+
+    Maps competing theoretical propositions and empirical hypotheses (H1 vs H2,
+    positive vs negative vs null findings) across literature. Calculates consensus
+    scores, debate levels (Consensus Baseline vs Intense Controversy), and boundary
+    conditions across research corpora.
+
+    EXAMPLES:
+      pa consensus ./paper.pdf
+      pa consensus --project my-project --format markdown -o consensus_matrix.md
+      pa consensus --project my-project --format table
+      pa consensus --text "Hypothesis 1: ESG positively impacts firm performance. H1 is supported."
+    """
+    from .consensus import (
+        extract_hypotheses_from_text,
+        extract_consensus_from_pdf,
+        extract_project_consensus,
+        build_consensus_matrix,
+        format_consensus_report,
+    )
+    from .project import DEFAULT_ROOT
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+
+    fmt = "json" if as_json else format.lower()
+
+    try:
+        if text:
+            hyps = extract_hypotheses_from_text(text, source_doc="input_text")
+            report = build_consensus_matrix(hyps)
+            rendered = format_consensus_report(report, fmt=fmt)
+        elif project_slug or (target and not Path(target).exists() and (root / target).is_dir()):
+            slug = project_slug or target
+            report = extract_project_consensus(slug, root=root)
+            rendered = format_consensus_report(report, fmt=fmt)
+        elif target:
+            target_p = Path(target)
+            if not target_p.exists():
+                raise FileNotFoundError(f"Target file not found: {target}")
+            if target_p.suffix.lower() == ".pdf":
+                hyps = extract_consensus_from_pdf(target_p)
+            else:
+                raw = target_p.read_text(encoding="utf-8", errors="replace")
+                hyps = extract_hypotheses_from_text(raw, source_doc=target_p.name)
+            report = build_consensus_matrix(hyps)
+            rendered = format_consensus_report(report, fmt=fmt)
+        else:
+            click.echo("Error: Please provide a TARGET file/project, --project, or --text string.", err=True)
+            sys.exit(1)
+    except Exception as e:
+        click.echo(f"[pa consensus] ERROR: {e}", err=True)
+        sys.exit(1)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa consensus] Consensus matrix saved to: {output}")
+    else:
+        click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.

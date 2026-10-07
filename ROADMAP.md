@@ -4868,12 +4868,14 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P1-22] Theoretical proposition controversy and consensus matrix (`pa consensus`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Completed**: 2026-10-07 (v3.10.0.15)
 - **Priority**: P1
 - **Effort**: 3 engineering days
 - **Source**: Paper Agent 4 consensus graph requirement.
 - **Rationale**: Maps competing theoretical propositions and empirical hypotheses ($H_1$ vs. $H_2$). Generates a structured matrix of agreement vs. contradiction across corpus papers, identifying consensus baselines and active debates.
+- **Outcome**: Implemented `pa_cli/consensus.py` and `pa consensus` CLI command. Extracts formalized hypotheses ($H_1, H_2$, etc.) and direct empirical findings across English and Chinese papers. Pairs proposed directions (positive, negative, nonlinear/inverted U) with empirical testing outcomes (supported, rejected, partially supported) to determine effective empirical directions. Computes cross-paper consensus scores, debate intensity levels (Consensus Baseline, Moderate Debate, Intense Controversy), and boundary conditions/heterogeneity qualifiers. Exports to terminal table, academic markdown synthesis, and structured JSON. Covered by 8 tests in `test_output/test_consensus_p1_22.py`.
 - **Global Rule audit**: Pure SQLite adjacency and relational joins; no neo4j or cloud graph DBs.
 
 ### [P1-23] Evolutionary citation and methodology lineage (`pa lineage`)
