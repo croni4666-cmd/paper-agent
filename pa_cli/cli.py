@@ -2801,12 +2801,20 @@ def project_prisma_cmd(slug, output_format, output, word_count_min, root_path):
               help="Min word count to classify as full-text")
 @click.option("--with-prisma/--no-prisma", default=True, show_default=True,
               help="Include PRISMA 2020 flow diagram at start of review")
+@click.option("--evidence-backed", is_flag=True, default=False,
+              help="Generate literature review with sentence-level PDF evidence bindings [P2-20]")
+@click.option("--json", "as_json", is_flag=True, default=False,
+              help="Output evidence provenance manifest as JSON")
 @click.option("-o", "--output", default=None,
               help="Write literature review to output file instead of stdout")
 @click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
               help="Override default project root")
-def project_review_cmd(slug, template, word_count_min, with_prisma, output, root_path):
-    """Generate literature review markdown draft for a project topic corpus."""
+def project_review_cmd(slug, template, word_count_min, with_prisma, evidence_backed, as_json, output, root_path):
+    """Generate literature review markdown draft for a project topic corpus.
+
+    Use --evidence-backed to generate publication-grade related work with
+    exact sentence-level bindings to local PDF/paper evidence passages [P2-20].
+    """
     from .project import project_review, DEFAULT_ROOT
     from pathlib import Path
     root = Path(root_path) if root_path else DEFAULT_ROOT
@@ -2817,6 +2825,8 @@ def project_review_cmd(slug, template, word_count_min, with_prisma, output, root
             template=template,
             word_count_min=word_count_min,
             with_prisma=with_prisma,
+            evidence_backed=evidence_backed,
+            as_json=as_json,
             out_file=output,
         )
     except Exception as e:

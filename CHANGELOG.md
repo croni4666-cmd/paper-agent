@@ -13,6 +13,23 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.18] - 2026-10-07
+
+### Evidence-Grounded Literature Review Section Scripter ([P2-20])
+
+- Implement `pa_cli/evidence_review.py` and `--evidence-backed` option in `pa project review`:
+  - Replaces naive abstract concatenation with an evidence-grounded literature review generator for academic related work sections.
+  - Page-aware evidence harvesting across local PDFs, plain text, and BibTeX metadata categorizing passages into: theoretical foundations, empirical methods, empirical findings/results, and heterogeneity/boundary conditions.
+  - Generates five comprehensive thematic review sections:
+    1. Theoretical Framework & Conceptual Foundations (foundational models and agency/market friction theories).
+    2. Core Empirical Debates & Competing Hypotheses (structuring supporting vs countervailing empirical findings).
+    3. Causal Identification Strategies & Methodological Lineage (tracking Staggered DID, TWFE, Synthetic Control, IV, and RDD specifications).
+    4. Boundary Conditions & Heterogeneity Dimensions (analyzing institutional, firm-size, and market friction qualifiers).
+    5. Unresolved Tensions & Empirical Research Gaps (synthesizing remaining theoretical gaps to motivate empirical contributions).
+  - Strict evidence binding guarantee: 100.0% of synthesized claim sentences bind directly to verified local PDF evidence passages with exact file names, page numbers, character offsets, deterministic SHA-256 evidence IDs, and verbatim excerpt quotes.
+  - Multi-target export: publication-grade Markdown text and machine-readable JSON provenance manifest (`--json`) for automated downstream ingestion.
+- Add test suite `test_output/test_evidence_review_p2_20.py` (5 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.17] - 2026-10-07
 
 ### Manuscript Citation Fidelity & Hallucination Audit ([P2-21])

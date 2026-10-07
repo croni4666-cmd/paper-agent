@@ -4916,13 +4916,16 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P2-20] Evidence-grounded literature review section scripter (`pa project review --evidence-backed`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P2
 - **Effort**: 2 engineering days
 - **Source**: Scope boundary realignment (restricting generation strictly to Related Work).
 - **Rationale**: Replaces naive abstract concatenation with an evidence-grounded literature review generator. Every generated claim sentence binds directly to a verified local PDF passage with exact DOI, page number, and character offsets.
-- **Global Rule audit**: Local template synthesis; no hosted LLM required by default.
+- **Outcome**: Implemented `pa_cli/evidence_review.py` and `--evidence-backed` option in `pa project review`. Synthesizes five structured thematic sections (Theoretical Framework, Core Empirical Debates, Causal Identification Strategies, Boundary Conditions, and Research Gaps) with 100% of claims bound to verified local PDF evidence passages with exact file, page number, character offsets, deterministic evidence IDs, and verbatim excerpts. Supports JSON provenance manifest export. Covered by 5 unit tests in `test_output/test_evidence_review_p2_20.py`.
+- **Global Rule audit**: Local template synthesis; runs 100% offline; zero API costs.
 
 ### [P2-21] Manuscript citation fidelity and hallucination audit (`pa cite-audit`)
 

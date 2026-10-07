@@ -939,10 +939,14 @@ def project_review(
     template: str = "v32",
     word_count_min: int = 1000,
     with_prisma: bool = True,
+    evidence_backed: bool = False,
+    as_json: bool = False,
     out_file: Optional[Path | str] = None,
 ) -> str:
     """Generate structured literature review document for a project topic corpus.
 
+    If evidence_backed is True, generates publication-grade literature review with
+    exact sentence-level bindings to local PDF/paper evidence passages [P2-20].
     If PDFs or documents are in <slug>/pdfs/, parses and synthesizes them.
     If only refs.bib exists, synthesizes a structured review catalogue from metadata.
     Includes PRISMA 2020 flow diagram if with_prisma is True.
@@ -955,6 +959,25 @@ def project_review(
     meta = load_meta(slug, root)
     title = meta.get("title", slug)
     desc = meta.get("description", "")
+
+    if evidence_backed:
+        from .evidence_review import generate_evidence_backed_review
+        md_text, rep = generate_evidence_backed_review(
+            slug=slug,
+            root=root,
+            word_count_min=word_count_min,
+            with_prisma=with_prisma,
+        )
+        content = json.dumps(rep.to_dict(), indent=2, ensure_ascii=False) if as_json else md_text
+        if out_file:
+            out_p = Path(out_file)
+            out_p.parent.mkdir(parents=True, exist_ok=True)
+            out_p.write_text(content, encoding='utf-8')
+
+        meta['last_review_at'] = datetime.now().isoformat(timespec='seconds')
+        meta['updated_at'] = datetime.now().isoformat(timespec='seconds')
+        save_meta(slug, meta, root)
+        return content
 
     pdf_dir = files['pdfs']
     has_corpus_files = pdf_dir.exists() and any(
