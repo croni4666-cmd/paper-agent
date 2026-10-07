@@ -394,6 +394,12 @@ def align_empirical_finding(
                     clean_text,
                     flags=re.IGNORECASE,
                 )
+                clean_text = re.sub(
+                    r"\b(?:survey\s+)?(?:response|participation|completion|retention|turnout|attrition|refusal)\s*(?:rates?|ratio|percentage)?\s*(?:of|at|was|is)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
 
                 # 3. Filter out confidence intervals and confidence levels (e.g. 95% confidence, 90% CI)
                 clean_text = re.sub(
@@ -458,16 +464,31 @@ def align_empirical_finding(
                         pass
 
                 # If no explicit point estimate is found, check for genuine percentage effects
-                # framed as changes, impacts, increases, decreases, or effects
+                # strictly framed with causal effect verbs (increases/decreases/reduces/etc.)
                 if not extracted_for_paper:
                     for m in re.finditer(
-                        r"(?:(?:increases?|increased|decreases?|decreased|reduces?|reduced|raises?|raised|grows?|grew|drops?|dropped|rises?|rose|falls?|fell|effects?|impacts?|boosts?|enhances?|improves?|declines?)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?|(?:\bby\s+|\bof\s+))([-+]?\d+(?:\.\d+)?%)",
+                        r"(?P<verb>increases?|increased|raises?|raised|grows?|grew|boosts?|enhances?|improves?|rises?|rose|decreases?|decreased|reduces?|reduced|lowers?|lowered|drops?|dropped|falls?|fell|declines?|declined|effects?|impacts?)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?(?P<pct>[-+]?\d+(?:\.\d+)?%)",
                         clean_text,
                         flags=re.IGNORECASE,
                     ):
-                        pct_str = m.group(1)
+                        verb = m.group("verb").lower()
+                        pct_str = m.group("pct")
                         try:
-                            extracted_for_paper.append(float(pct_str.replace("%", "")) / 100.0)
+                            val = float(pct_str.replace("%", "")) / 100.0
+                            if verb in (
+                                "decreases", "decreased", "reduces", "reduced",
+                                "lowers", "lowered", "drops", "dropped",
+                                "falls", "fell", "declines", "declined",
+                            ):
+                                val = -abs(val)
+                            elif verb in (
+                                "increases", "increased", "raises", "raised",
+                                "grows", "grew", "boosts", "enhances",
+                                "improves", "rises", "rose",
+                            ):
+                                val = abs(val)
+                            if abs(val) <= 50 and val not in extracted_for_paper:
+                                extracted_for_paper.append(val)
                         except ValueError:
                             pass
 

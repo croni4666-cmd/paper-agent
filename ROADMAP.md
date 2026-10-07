@@ -5054,4 +5054,24 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
   Covered by 6 unit tests in `test_output/test_rereview_findings_4a0cb65.py`, and registered in `.github/workflows/ci.yml`.
 - **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
 
+### [P3-38] Reservation Ledger Atomic Consistency, Provenance Hash Continuity, and Signed Effect Calibration (R1-R6)
+
+- **Status**: done
+- **Added**: 2026-10-08
+- **Started**: 2026-10-08
+- **Completed**: 2026-10-08
+- **Priority**: P1 / P2
+- **Effort**: 1 engineering day
+- **Source**: Controlled independent peer review on `c75087e` (`v3.10.0.27`).
+- **Rationale**: Eliminates lingering defects identified by counter-examples in `pa-c75087e-boundaries.py`, `pa-c75087e-extra.py`, and `TEST-REPORT.md`: `_save_reservation` secondary read failure swallowed with `data = {}` wiping peer reservations and breaching ceiling (>100k tokens); phantom in-memory reservations left after persistent disk write failure blocking retries; candidate rights check and passage extraction not bound to same artifact snapshot (TOCTOU substitution attack); percentage fallback regex matching lone `of/by` (e.g. `survey response rate of 40%`) and ignoring directional sign on decrease verbs; evidence binding rate failing to verify physical file SHA-256 against recorded `artifact_sha256`; and ABA file swapping during parse bypassing post-hash checks.
+- **Outcome**:
+  1. `[P1] R1`: `_save_reservation` in `pa_cli/gateway.py` propagates read errors immediately rather than setting `data = {}`, preventing peer ledger wiping and preserving the hard 100,000 token budget ceiling across concurrent processes.
+  2. `[P2] R2`: `_save_reservation` in `pa_cli/gateway.py` updates in-memory `_ACTIVE_RESERVATIONS` only after durable disk write succeeds; `evaluate_gateway_request` pops any partial in-memory reservation if write fails, allowing healthy retries.
+  3. `[P1] R3`: Candidate rights check records `artifact_sha256`; Step 4b in `evaluate_gateway_request` cryptographically asserts that the physical candidate file on disk has not mutated between rights check and passage extraction (`current_sha256 == expected_sha256`). Mutated files fail closed (`REJECTED`, `provenance_verified = False`).
+  4. `[P1] R4`: `pa_cli/align_findings.py` strips survey response/participation/turnout/retention rates from literature benchmark distributions, and parses decrease verbs as negative coefficients (`-abs(val)`), producing correct negative literature ranges (e.g. `[-0.08, -0.05]`).
+  5. `[P1] R5`: `generate_evidence_backed_review` in `pa_cli/evidence_review.py` strictly checks physical file SHA-256 against recorded `artifact_sha256`; substituted or metadata-altered files yield `binding_rate == 0.0`.
+  6. `[P2] R6`: `harvest_paper_evidence` in `pa_cli/evidence_review.py` inspects `doc.stream` from PyMuPDF document snapshots, binding `artifact_sha256` to the in-memory byte stream parsed, resilient to ABA disk swaps.
+  Covered by 6 unit tests in `test_output/test_rereview_findings_c75087e.py`, and registered in `.github/workflows/ci.yml`.
+- **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
 

@@ -180,6 +180,9 @@ def harvest_paper_evidence(
         if ext == ".pdf" and HAS_PYMUPDF:
             try:
                 doc = fitz.open(str(file_path))
+                stream_bytes = getattr(doc, "stream", None)
+                if isinstance(stream_bytes, (bytes, bytearray)):
+                    artifact_sha256 = hashlib.sha256(stream_bytes).hexdigest()
                 for p_num, page in enumerate(doc, start=1):
                     txt = page.get_text("text")
                     if txt.strip():
@@ -188,14 +191,15 @@ def harvest_paper_evidence(
 
                 # Post-check: ensure hash accurately reflects the parsed document content
                 try:
-                    post_bytes = file_path.read_bytes()
-                    post_hash = hashlib.sha256(post_bytes).hexdigest()
-                    if post_hash != artifact_sha256:
-                        with fitz.open(stream=post_bytes, filetype="pdf") as post_doc:
-                            post_texts = [p.get_text("text") for p in post_doc]
-                        parsed_texts = [txt for _, txt in pages_text]
-                        if post_texts == parsed_texts:
-                            artifact_sha256 = post_hash
+                    if not isinstance(stream_bytes, (bytes, bytearray)):
+                        post_bytes = file_path.read_bytes()
+                        post_hash = hashlib.sha256(post_bytes).hexdigest()
+                        if post_hash != artifact_sha256:
+                            with fitz.open(stream=post_bytes, filetype="pdf") as post_doc:
+                                post_texts = [p.get_text("text") for p in post_doc]
+                            parsed_texts = [txt for _, txt in pages_text]
+                            if post_texts == parsed_texts:
+                                artifact_sha256 = post_hash
                 except Exception:
                     pass
             except Exception:
@@ -581,6 +585,14 @@ def generate_evidence_backed_review(
                 if cand.is_file():
                     p_file = cand
             if p_file and p_file.is_file():
+                # R5 Check: Verify physical file hash matches recorded artifact_sha256
+                try:
+                    file_bytes = p_file.read_bytes()
+                    if hashlib.sha256(file_bytes).hexdigest() != ev.get("artifact_sha256"):
+                        continue
+                except Exception:
+                    continue
+
                 if HAS_PYMUPDF and p_file.suffix.lower() == ".pdf":
                     try:
                         with fitz.open(str(p_file)) as d:

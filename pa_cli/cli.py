@@ -2346,10 +2346,11 @@ def gateway_group():
 @click.option("--format", "format_type", type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
               default="table", show_default=True, help="Output display format")
 @click.option("-o", "--output", default=None, help="Destination file to save gateway receipt")
+@click.option("--verify-provenance", is_flag=True, default=False, help="Verify that passages originate from candidate artifacts")
 @click.option("--json", "as_json", is_flag=True, help="Output receipt as raw JSON")
 def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text, operator,
                        consent_public_oa, consent_zero_retention, max_cost_limit,
-                       format_type, output, as_json):
+                       format_type, output, verify_provenance, as_json):
     """Run pre-flight gateway verification on paper candidate and text passages."""
     from .gateway import (
         PaperEvaluationCandidate,
@@ -2391,6 +2392,7 @@ def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text
         consent_public_oa=consent_public_oa,
         consent_zero_retention=consent_zero_retention,
         max_cost_usd_limit=max_cost_limit,
+        verify_passage_provenance=verify_provenance,
     )
 
     fmt = "json" if as_json else format_type.lower()

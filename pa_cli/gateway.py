@@ -147,16 +147,14 @@ def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, D
 
 
 def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, cost: Decimal) -> None:
-    """Save an in-flight reservation in memory and on disk. Raises on write failure."""
-    _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
+    """Save an in-flight reservation in memory and on disk. Raises on read/write failure."""
     resv_path = _get_resv_path(audit_path)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
     data: dict[str, Any] = {}
     if resv_path.is_file():
-        try:
-            data = json.loads(resv_path.read_text(encoding="utf-8"))
-        except Exception:
-            data = {}
+        raw_text = resv_path.read_text(encoding="utf-8")
+        if raw_text.strip():
+            data = json.loads(raw_text)
     now = time.time()
     cleaned: dict[str, Any] = {}
     for r_id, r_dict in data.items():
@@ -171,6 +169,7 @@ def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, 
         "pid": os.getpid(),
     }
     resv_path.write_text(json.dumps(cleaned), encoding="utf-8")
+    _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
 
 
 def _remove_reservation(audit_path: Path, run_id: str, resv_id: str) -> None:
@@ -241,6 +240,7 @@ class PaperVerificationResult:
     rights_class: str
     blocking_reasons: list[str] = field(default_factory=list)
     license_urls: list[str] = field(default_factory=list)
+    artifact_sha256: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -330,6 +330,10 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 rights_class="missing_artifact",
                 blocking_reasons=[f"Artifact file not found: {candidate.artifact_path}"],
             )
+        try:
+            art_sha = hashlib.sha256(artifact_p.read_bytes()).hexdigest()
+        except Exception:
+            art_sha = ""
         p_res = inspect_artifact(
             path=artifact_p,
             requested_doi=candidate.doi,
@@ -351,6 +355,7 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 status="VERIFIED_PUBLIC_OA",
                 rights_class="public_oa",
                 license_urls=lic_urls,
+                artifact_sha256=art_sha,
             )
         else:
             return PaperVerificationResult(
@@ -361,6 +366,7 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 rights_class=rights_cls,
                 blocking_reasons=blocking or ["Artifact fails public-OA metadata verification."],
                 license_urls=lic_urls,
+                artifact_sha256=art_sha,
             )
 
     # 4. Strict rejection if artifact_path is omitted / not provided
@@ -463,10 +469,13 @@ def evaluate_gateway_request(
     # 3. Paper Source & Rights Evaluation
     verified_oa_count = 0
     blocked_count = 0
+    cand_rights_hashes: dict[str, str] = {}
     for cand in candidates:
         v_res = verify_paper_rights(cand)
         if v_res.is_public_oa:
             verified_oa_count += 1
+            if cand.artifact_path and v_res.artifact_sha256:
+                cand_rights_hashes[cand.artifact_path] = v_res.artifact_sha256
         else:
             blocked_count += 1
             rejection_reasons.append(f"Paper '{cand.paper_id}' ({cand.doi}): {v_res.status} - {'; '.join(v_res.blocking_reasons)}")
@@ -490,10 +499,20 @@ def evaluate_gateway_request(
     provenance_verified = False
     if verify_passage_provenance and passages:
         candidate_texts: list[str] = []
+        artifact_mutated = False
         for cand in candidates:
             if cand.artifact_path and Path(cand.artifact_path).is_file():
+                cpath = Path(cand.artifact_path)
                 try:
-                    cpath = Path(cand.artifact_path)
+                    current_hash = hashlib.sha256(cpath.read_bytes()).hexdigest()
+                    expected_hash = cand_rights_hashes.get(cand.artifact_path)
+                    if expected_hash and current_hash != expected_hash:
+                        artifact_mutated = True
+                        rejection_reasons.append(
+                            f"Artifact security violation: file '{cand.artifact_path}' was mutated after rights verification (hash mismatch)."
+                        )
+                        continue
+
                     if cpath.suffix.lower() == ".pdf":
                         import pymupdf as fitz
                         with fitz.open(str(cpath)) as doc:
@@ -502,16 +521,19 @@ def evaluate_gateway_request(
                         candidate_texts.append(cpath.read_text(encoding="utf-8", errors="ignore"))
                 except Exception:
                     pass
-        combined_candidate_text = "\n".join(candidate_texts)
-        all_found = True
-        for p in passages:
-            p_strip = p.strip()
-            if p_strip and p_strip not in combined_candidate_text:
-                all_found = False
-                rejection_reasons.append(
-                    f"Passage payload provenance violation: text snippet '{p_strip[:50]}...' is not anchored in verified candidate artifact."
-                )
-        if all_found and candidate_texts:
+        if artifact_mutated:
+            all_found = False
+        else:
+            combined_candidate_text = "\n".join(candidate_texts)
+            all_found = True
+            for p in passages:
+                p_strip = p.strip()
+                if p_strip and p_strip not in combined_candidate_text:
+                    all_found = False
+                    rejection_reasons.append(
+                        f"Passage payload provenance violation: text snippet '{p_strip[:50]}...' is not anchored in verified candidate artifact."
+                    )
+        if all_found and candidate_texts and not artifact_mutated:
             provenance_verified = True
     elif not passages:
         provenance_verified = True
@@ -592,6 +614,10 @@ def evaluate_gateway_request(
                     acquired_reservation = True
                 except Exception as resv_write_err:
                     passed = False
+                    if run_id in _ACTIVE_RESERVATIONS:
+                        _ACTIVE_RESERVATIONS[run_id].pop(resv_id, None)
+                        if not _ACTIVE_RESERVATIONS[run_id]:
+                            _ACTIVE_RESERVATIONS.pop(run_id, None)
                     rejection_reasons.append(
                         f"Reservation ledger write failure: cannot persist in-flight budget reservation: {resv_write_err}"
                     )

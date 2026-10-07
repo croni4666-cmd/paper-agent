@@ -11,7 +11,32 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
-> See template for emoji vocabulary and section rules.
+## [3.10.0.28] - 2026-10-08
+
+### Reservation Ledger Atomic Consistency, Provenance Hash Continuity, and Signed Effect Calibration (R1-R6)
+
+- **[P1] R1 Secondary Reservation Save Read Fault Propagation (`pa_cli/gateway.py`)**:
+  - Eliminated dangerous secondary read fallback `except Exception: data = {}` inside `_save_reservation`.
+  - Read failures during reservation updates now propagate immediately, preventing the wiping of existing peer reservations and strictly preserving the hard 100,000 token budget ceiling across concurrent processes.
+- **[P2] R2 In-Memory Reservation Rollback on Persistence Fault (`pa_cli/gateway.py`)**:
+  - `_save_reservation` now updates in-memory `_ACTIVE_RESERVATIONS` only *after* durable disk write succeeds.
+  - Added explicit rollback in `evaluate_gateway_request` exception handling to purge zombie reservation entries if disk write fails, ensuring healthy retries are not blocked by phantom spend.
+- **[P1] R3 End-to-End Artifact SHA-256 Provenance Continuity (`pa_cli/gateway.py`, `pa_cli/cli.py`)**:
+  - Added `artifact_sha256` to `PaperVerificationResult` recorded during initial rights inspection.
+  - In `evaluate_gateway_request`, Step 4b (`verify_passage_provenance`) now cryptographically asserts that the physical candidate file on disk has not mutated between rights check and passage extraction (`current_sha256 == expected_sha256`). Mutated files fail closed (`REJECTED`, `provenance_verified = False`).
+  - Added `--verify-provenance` CLI flag to `pa gateway verify` command.
+- **[P1] R4 Signed Effect Parsing & Survey Demographic Rate Filtering (`pa_cli/align_findings.py`)**:
+  - Added regex filters to strip survey response, participation, completion, turnout, and retention rates (`survey response rate of 40%`) from literature benchmark distributions.
+  - Removed lone `by`/`of` prepositions and parsed decrease verbs (`decreases`, `reduces`, `lowers`, `drops`, `falls`, `declines`) as negative coefficients (`-abs(val)`), eliminating inverted typical ranges (e.g. `[-0.08, -0.05]` instead of `[0.05, 0.08]`).
+- **[P1] R5 Physical File SHA-256 Validation for Evidence Binding Rate (`pa_cli/evidence_review.py`)**:
+  - In `generate_evidence_backed_review`, evidence claims now strictly verify that the physical file on disk matches the recorded `artifact_sha256`.
+  - Replaced or metadata-altered PDF files are rejected from verified claim counts, correctly reporting `binding_rate == 0.0`.
+- **[P2] R6 PyMuPDF In-Memory Stream Digest Binding (`pa_cli/evidence_review.py`)**:
+  - In `harvest_paper_evidence`, inspects `doc.stream` from PyMuPDF document snapshot if present, ensuring `artifact_sha256` binds to the parsed in-memory byte snapshot rather than post-swapped disk files, resilient to ABA file swapping.
+- **CI & Regression**:
+  - Added `test_output/test_rereview_findings_c75087e.py` with 6 dedicated test cases verifying R1-R6 findings.
+  - Registered `test_rereview_findings_c75087e.py` in `.github/workflows/ci.yml`.
+
 ## [3.10.0.27] - 2026-10-08
 
 ### Critical Security Fail-Closed Hardening, S3 Provenance Contract & Econometric Evidence Calibration (A1-A3, B1-B3)
