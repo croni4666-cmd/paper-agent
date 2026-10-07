@@ -2315,9 +2315,140 @@ def review_adjudicate_cmd(input_file, inline_text, project_slug, venue_tier, rev
         click.echo(f"[pa review-adjudicate] Author response letter saved to: {output_response}")
 
 
+# =============== [P3-34] pa gateway: M6 Public-OA Safe Gateway ===============
+@main.group("gateway")
+def gateway_group():
+    """[P3-34] M6 Public-OA pilot and zero-retention safe gateway.
+
+    Enforces pre-flight security, copyright, and privacy compliance before any external transit:
+    (1) Source rights verification: only CC-BY/CC-0 Public-OA papers with verified DOIs.
+    (2) Anti-prompt-injection validation and adversarial sanitization.
+    (3) Zero-retention PII scrubbing (emails, phones, credentials).
+    (4) Mandatory operator consent and hard spend ceiling ($0.01 USD / run).
+    (5) Cryptographic tamper-evident audit receipts.
+    """
+    pass
 
 
-# =============== [P2-9] search-saved subcommand group ===============
+@gateway_group.command("verify")
+@click.option("--file", "-f", "artifact_file", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Path to paper PDF/XML to inspect")
+@click.option("--doi", default="", help="Expected paper DOI (e.g. 10.1000/182)")
+@click.option("--source", default="arxiv", help="Source channel or platform host (e.g. arxiv, pmc)")
+@click.option("--data-class", default="public", type=click.Choice(["public", "private", "confidential", "unpublished"]),
+              help="Data sensitivity classification")
+@click.option("--text", "-t", "passage_text", default="", help="Sample text passage to scan for injection and PII")
+@click.option("--operator", default="operator", help="Accountable operator ID for audit trail")
+@click.option("--consent-public-oa", is_flag=True, default=False, help="Attest operator consent for public OA transit")
+@click.option("--consent-zero-retention", is_flag=True, default=False, help="Attest operator consent for zero retention transit")
+@click.option("--max-cost", "max_cost_limit", default=None, help="Custom cost ceiling (cannot exceed $0.01)")
+@click.option("--format", "format_type", type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              default="table", show_default=True, help="Output display format")
+@click.option("-o", "--output", default=None, help="Destination file to save gateway receipt")
+@click.option("--json", "as_json", is_flag=True, help="Output receipt as raw JSON")
+def gateway_verify_cmd(artifact_file, doi, source, data_class, passage_text, operator,
+                       consent_public_oa, consent_zero_retention, max_cost_limit,
+                       format_type, output, as_json):
+    """Run pre-flight gateway verification on paper candidate and text passages."""
+    from .gateway import (
+        PaperEvaluationCandidate,
+        evaluate_gateway_request,
+        format_receipt_table,
+        format_receipt_markdown,
+    )
+    import uuid
+
+    run_id = f"run_{uuid.uuid4().hex[:8]}"
+    candidates = []
+    if doi or artifact_file:
+        cand_id = Path(artifact_file).stem if artifact_file else "candidate_01"
+        candidates.append(PaperEvaluationCandidate(
+            paper_id=cand_id,
+            artifact_path=artifact_file,
+            doi=doi,
+            source=source,
+            data_class=data_class,
+        ))
+
+    passages = [passage_text] if passage_text else []
+
+    receipt, _ = evaluate_gateway_request(
+        run_id=run_id,
+        operator=operator,
+        candidates=candidates,
+        passages=passages,
+        consent_public_oa=consent_public_oa,
+        consent_zero_retention=consent_zero_retention,
+        max_cost_usd_limit=max_cost_limit,
+    )
+
+    fmt = "json" if as_json else format_type.lower()
+    if fmt == "json":
+        rendered = json.dumps(receipt.to_dict(), indent=2, ensure_ascii=False)
+    elif fmt == "markdown":
+        rendered = format_receipt_markdown(receipt)
+    else:
+        rendered = format_receipt_table(receipt)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa gateway] Verification receipt saved to: {output}")
+    else:
+        click.echo(rendered)
+
+    if receipt.gateway_decision != "AUTHORIZED":
+        sys.exit(1)
+
+
+@gateway_group.command("check-injection")
+@click.option("--text", "-t", required=True, help="Text passage or prompt to analyze")
+@click.option("--json", "as_json", is_flag=True, help="Print result as JSON")
+def gateway_check_injection_cmd(text, as_json):
+    """Scan text passage for adversarial prompt injections, jailbreaks, and PII."""
+    from .gateway import sanitize_evidence_text
+
+    result = sanitize_evidence_text(text)
+    if as_json:
+        click.echo(json.dumps(result.to_dict(), indent=2, ensure_ascii=False))
+    else:
+        status_label = "CLEAN & SAFE" if result.is_safe else "INJECTION / ADVERSARIAL THREAT DETECTED"
+        click.echo(f"Security Scan Status: {status_label}")
+        if result.injections_detected:
+            click.echo(f"Injections Neutralized: {', '.join(result.injections_detected)}")
+        if result.pii_redacted:
+            click.echo(f"PII Scrubbed: {len(result.pii_redacted)} fields ({', '.join(result.pii_redacted[:3])})")
+        click.echo(f"Sanitized Output:\n{result.sanitized_text}")
+
+
+@gateway_group.command("audit")
+@click.option("--limit", type=int, default=10, show_default=True, help="Maximum recent receipts to show")
+@click.option("--json", "as_json", is_flag=True, help="Print raw JSON lines")
+def gateway_audit_cmd(limit, as_json):
+    """View local append-only gateway verification audit trail."""
+    from .gateway import read_gateway_audit_events
+
+    events = read_gateway_audit_events()
+    if not events:
+        click.echo("[pa gateway] No gateway audit events recorded yet.")
+        return
+
+    recent = events[-limit:]
+    if as_json:
+        for ev in recent:
+            click.echo(json.dumps(ev.to_dict(), ensure_ascii=False))
+    else:
+        click.echo(f"Recent Gateway Verification Receipts (last {len(recent)} of {len(events)}):")
+        click.echo("-" * 86)
+        for ev in reversed(recent):
+            click.echo(f"[{ev.timestamp_utc}] {ev.receipt_id} | {ev.gateway_decision} | "
+                       f"OA: {ev.verified_oa_count}/{ev.total_candidates} | "
+                       f"Cost: ${ev.estimated_cost_usd} | Operator: {ev.operator}")
+        click.echo("-" * 86)
+
+
+
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.
 

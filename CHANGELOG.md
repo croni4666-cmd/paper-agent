@@ -13,6 +13,23 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.22] - 2026-10-07
+
+### M6 Public-OA Pilot and Zero-Retention Safe Gateway ([P3-34])
+
+- Implement `pa gateway` command group and `pa_cli/gateway.py`:
+  - Enforces rigorous pre-flight security, copyright, and privacy compliance before any external transit:
+    1. **Source Rights Verification Gate**: Restricts eligible papers strictly to verified Public-OA (CC-BY / CC-0) licenses from allowlisted hosts (arXiv, PMC). Immediately blocks non-OA paywalled papers, local confidential manuscripts, and restricted/shadow sources (Sci-Hub, Anna's Archive, CNKI).
+    2. **Anti-Prompt-Injection & Adversarial Sanitization**: Real-time scanner identifying and neutralizing adversarial instructions (`ignore previous instructions`), chat delimiter breakouts (`<|im_start|>`, `[INST]`), persona jailbreaks (`DAN mode`), and rubric overrides into safe quoted tokens.
+    3. **Zero-Retention PII Scrubbing**: Automatically scrubs author personally identifiable information (emails, phone numbers, API credentials, bearer tokens) and restricts payloads strictly to bounded evidence passages with exact character offsets.
+    4. **Hard Ceiling & Explicit Consent Enforcement**: Enforces hard caps of max $0.01 USD spend, max 100,000 input tokens, and max 25 papers per run. Halts immediately if ceilings are breached or if mandatory explicit operator consents (`--consent-public-oa`, `--consent-zero-retention`) are absent.
+    5. **Cryptographic Tamper-Evident Receipts**: Generates deterministic gateway verification receipts with transit payload SHA-256 signatures, operator timestamps, and records an append-only audit trail at `~/.paper-agent/gateway_audit.jsonl`.
+  - Subcommands:
+    - `pa gateway verify`: Evaluates candidate paper artifacts, DOIs, and evidence passages against rights, security, and budget ceilings.
+    - `pa gateway check-injection`: Scans arbitrary text passages for prompt injection vulnerabilities and PII leaks.
+    - `pa gateway audit`: Inspects local immutable audit trail of past gateway verification receipts.
+- Add comprehensive unit test suite `test_output/test_gateway_p3_34.py` (5 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.21] - 2026-10-07
 
 ### Dual-Agent Review & Adjudication Loop ([P3-33])

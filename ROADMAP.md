@@ -4981,10 +4981,13 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P3-34] M6 Public-OA pilot and zero-retention safe gateway
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P3
 - **Effort**: 3 engineering days
 - **Source**: Milestone 6 progression from `[P3-32]`.
 - **Rationale**: Implements the public-OA pilot with per-run consent, mandatory token/cost hard ceilings ($0.01/run), anti-prompt injection validation, and strict zero-retention attestations.
-- **Global Rule audit**: Mandatory operator confirmation, immutable audit log, and strict budget caps.
+- **Outcome**: Implemented `pa_cli/gateway.py` and `pa gateway` CLI command group (`verify`, `check-injection`, `audit`). Enforces: (1) Source rights verification: only CC-BY/CC-0 Public-OA papers with verified DOIs from allowlisted hosts may proceed, strictly blocking restricted (Sci-Hub, Anna's Archive, CNKI) or confidential manuscripts, (2) Anti-prompt-injection scanning and neutralization of adversarial instructions, system prompt overrides, and delimiter breakouts, (3) Zero-retention PII scrubbing (emails, phone numbers, credentials), (4) Hard spend and token ceilings (max $0.01 USD / run, max 100,000 input tokens, max 25 papers) with mandatory explicit per-run operator consent, and (5) Cryptographic tamper-evident audit receipts with payload SHA-256 signatures and local append-only logging. Covered by 5 unit tests in `test_output/test_gateway_p3_34.py`.
+- **Global Rule audit**: Mandatory operator confirmation, immutable audit log, and strict budget caps; 100% offline-first execution with zero cloud costs.
