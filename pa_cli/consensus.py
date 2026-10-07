@@ -122,11 +122,11 @@ class ConsensusReport:
 # ==============================================================================
 
 DIR_POSITIVE = re.compile(
-    r"\b(?:positive|positively|promotes|enhances|improves|boosts|increases|higher|fosters|stimulates)\b|正向|促进|提升|显著增加",
+    r"\b(?:positive|positively|promotes?|enhances?|improves?|boosts?|increases?|higher|fosters?|stimulates?)\b|正向|促进|提升|显著增加",
     re.IGNORECASE,
 )
 DIR_NEGATIVE = re.compile(
-    r"\b(?:negative|negatively|inhibits|suppresses|reduces|decreases|lower|dampens|impedes)\b|负向|抑制|降低|显著减少",
+    r"\b(?:negative|negatively|inhibits?|suppresses?|reduces?|decreases?|lower|lowers?|dampens?|impedes?)\b|负向|抑制|降低|显著减少",
     re.IGNORECASE,
 )
 DIR_NONLINEAR = re.compile(

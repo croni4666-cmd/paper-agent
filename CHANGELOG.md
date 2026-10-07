@@ -13,6 +13,27 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.20] - 2026-10-07
+
+### Empirical Findings Literature Alignment Engine ([P2-23])
+
+- Implement `pa align-findings` CLI command and `pa_cli/align_findings.py` for post-estimation literature grounding:
+  - Connects empirical estimation outputs (regressions, DID, TWFE, IV, ML models) with local literature consensus and debate.
+  - Supports flexible input modes:
+    - Natural language statements: e.g. `pa align-findings -f "ESG disclosure significantly increases ROA"` or `pa align-findings -f "Credit constraints reduce corporate investment"`.
+    - Structured econometric parameters: `--x`, `--y`, `--direction` (positive/negative/neutral/nonlinear), and statistical coefficients (`--coef`, `--se`, `--pval`).
+  - Four-pillar literature classification:
+    1. **Direct Supporting Literature**: Concurring papers documenting statistically aligned effects with exact evidence quotes and alignment scores.
+    2. **Direct Contradictory Literature**: Competing papers reporting opposing directions or null effects, paired with identifying institutional reconciling mechanisms.
+    3. **Novel Heterogeneity & Boundary Conditions**: Identifies subsample conditions (e.g. SOE vs non-SOE, high vs low financial constraint) that explain empirical divergences and help authors defend unexpected results.
+    4. **Prior Distribution Benchmarking**: Automatically maps user regression coefficients ($\beta$, SE, p-value) against typical literature ranges to identify whether findings are conservative, standard, or anomalously extreme.
+  - Multi-target publication exports:
+    - Publication-ready Discussion section in Markdown (`--format markdown`, `-o discussion.md`).
+    - High-density ASCII terminal tables (`--format table`).
+    - Structured JSON provenance manifests (`--json`).
+- Extend causal polarity detection in `pa_cli/consensus.py` with flexible inflection support for singular and plural action verbs (`promotes?`, `reduces?`, `decreases?`, `lowers?`, `boosts?`, `enhances?`).
+- Add comprehensive test suite `test_output/test_align_findings_p2_23.py` (4 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.19] - 2026-10-07
 
 ### Standalone Offline Interactive Knowledge Graph ([P2-22])

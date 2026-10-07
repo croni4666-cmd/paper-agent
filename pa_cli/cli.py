@@ -2102,6 +2102,105 @@ def graph_cmd(target, project_slug, bib_path, interactive, format_type, output, 
             click.echo(rendered)
 
 
+# =============== [P2-23] pa align-findings: Empirical Findings Literature Alignment ===============
+@main.command("align-findings")
+@click.option("--finding", "-f", default=None, help="Empirical finding statement (e.g. 'ESG increases ROA')")
+@click.option("--x", "var_x", default=None, help="Independent variable (X)")
+@click.option("--y", "var_y", default=None, help="Dependent variable (Y)")
+@click.option("--direction", type=click.Choice(["positive", "negative", "neutral", "nonlinear"]), default=None)
+@click.option("--coef", type=float, default=None, help="Estimated regression coefficient (beta)")
+@click.option("--se", "std_err", type=float, default=None, help="Standard error of the estimate")
+@click.option("--pval", "p_value", type=float, default=None, help="P-value of the estimate")
+@click.option("--sample", "sample_context", default="", help="Empirical sample setting (e.g. 'Chinese listed firms')")
+@click.option("--project", "project_slug", default=None, help="Project slug to align finding against")
+@click.option("--bib", "bib_path", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Path to BibTeX bibliography file")
+@click.option("--format", "format_type", type=click.Choice(["table", "markdown", "json"], case_sensitive=False),
+              default="table", show_default=True, help="Output display format")
+@click.option("-o", "--output", default=None, help="Destination file to save alignment report")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Print alignment results as raw JSON")
+def align_findings_cmd(finding, var_x, var_y, direction, coef, std_err, p_value, sample_context,
+                       project_slug, bib_path, format_type, output, root_path, as_json):
+    """[P2-23] Align empirical findings with literature consensus and debate.
+
+    Grounds your regression or simulation results against local literature, classifying:
+    (1) Direct supporting evidence (concurring papers)
+    (2) Direct contradictory evidence (opposing / null papers)
+    (3) Novel heterogeneity & boundary conditions (reconciling mechanisms)
+    (4) Prior distribution benchmarks for estimated coefficients.
+
+    Examples:
+      pa align-findings -f "ESG disclosure significantly increases ROA" --project esg_study
+      pa align-findings --x "CEO duality" --y "agency costs" --direction positive --project corp_gov
+      pa align-findings -f "Minimum wage increases unemployment" --bib refs.bib --format markdown -o discussion.md
+      pa align-findings -f "FinTech reduces bank risk" --coef -0.045 --se 0.012 --pval 0.001 --json
+    """
+    from .align_findings import (
+        parse_user_finding,
+        align_empirical_finding,
+        format_alignment_table,
+        format_alignment_markdown,
+        format_alignment_json,
+    )
+    from .scaffold import load_bibtex
+    from .project import DEFAULT_ROOT, project_files
+    from pathlib import Path
+
+    if not finding and not var_x and not var_y:
+        click.echo("[pa align-findings] ERROR: Must provide either --finding (-f) or --x and --y.", err=True)
+        sys.exit(2)
+
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    papers = []
+
+    if bib_path:
+        papers = load_bibtex(Path(bib_path))
+    elif project_slug:
+        files = project_files(project_slug, root)
+        if files["refs"].is_file():
+            papers = load_bibtex(files["refs"])
+    else:
+        # Check current working directory for *.bib
+        local_bibs = list(Path.cwd().glob("*.bib"))
+        if local_bibs:
+            papers = load_bibtex(local_bibs[0])
+
+    if not papers:
+        click.echo("[pa align-findings] ERROR: No papers found. Specify --project <slug> or --bib <file>.", err=True)
+        sys.exit(1)
+
+    finding_input = parse_user_finding(
+        statement=finding,
+        var_x=var_x,
+        var_y=var_y,
+        direction=direction,
+        coefficient=coef,
+        std_err=std_err,
+        p_value=p_value,
+        sample_context=sample_context,
+    )
+
+    report = align_empirical_finding(finding_input, papers)
+    fmt = "json" if as_json else format_type.lower()
+
+    if fmt == "json":
+        rendered = format_alignment_json(report)
+    elif fmt == "markdown":
+        rendered = format_alignment_markdown(report)
+    else:
+        rendered = format_alignment_table(report)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa align-findings] Alignment report saved to: {output}")
+    else:
+        click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.

@@ -4955,12 +4955,15 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P2-23] Empirical findings literature alignment engine (`pa align-findings`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P2
 - **Effort**: 2-3 engineering days
 - **Source**: User directive 2026-10-02 (post-estimation literature alignment).
 - **Rationale**: After users estimate regressions or complete simulations in external codebases, they can input their empirical finding. The engine searches local literature to classify: (1) Direct supporting evidence, (2) Direct contradictory evidence, (3) Novel heterogeneity.
+- **Outcome**: Implemented `pa_cli/align_findings.py` and `pa align-findings` CLI command. Accepts natural language empirical statements (e.g. `pa align-findings -f "ESG increases ROA"`) or structured econometric parameters (`--x`, `--y`, `--direction`, `--coef`, `--se`, `--pval`). Searches local literature corpora or BibTeX bibliographies to classify: (1) Direct supporting evidence (concurring papers with alignment scores and verbatim quotes), (2) Direct contradictory evidence (tensions and competing findings with boundary factor reconciliations), (3) Novel heterogeneity and institutional qualifiers, and (4) Prior distribution benchmarking comparing user coefficients against literature ranges. Outputs publication-ready Discussion markdown, formatted ASCII tables, and structured JSON manifests. Covered by 4 unit tests in `test_output/test_align_findings_p2_23.py`.
 - **Global Rule audit**: Local SQLite claim retrieval and lexical matching; zero cloud dependencies.
 
 ### [P3-33] Dual-agent review & adjudication loop (Reviewer Panel vs Drafter)
