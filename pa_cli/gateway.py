@@ -78,16 +78,18 @@ def _gateway_file_lock(lock_path: Path, timeout: float = 10.0):
                 fd = os.open(str(lock_path), os.O_RDWR | os.O_CREAT)
                 fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
             acquired = True
-        except (BlockingIOError, PermissionError, OSError):
+        except (BlockingIOError, PermissionError, OSError) as lock_exc:
             if fd is not None:
                 try:
                     os.close(fd)
                 except Exception:
                     pass
                 fd = None
-            if time.monotonic() - start > timeout:
-                break
+            if time.monotonic() - start >= timeout:
+                raise TimeoutError(f"Could not acquire gateway lock {lock_path}: {lock_exc}")
             time.sleep(0.01)
+    if not acquired:
+        raise TimeoutError(f"Could not acquire gateway lock {lock_path}")
     try:
         yield
     finally:
@@ -113,7 +115,7 @@ def _get_resv_path(audit_path: Path) -> Path:
 
 
 def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, Decimal]]]:
-    """Load combined active reservations from disk and in-memory tracker."""
+    """Load combined active reservations from disk and in-memory tracker. Raises on read error."""
     combined: dict[str, dict[str, tuple[int, Decimal]]] = {}
 
     # 1. Start with in-memory reservations
@@ -124,57 +126,51 @@ def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, D
     # 2. Read persistent reservation file for cross-process coordination
     resv_path = _get_resv_path(audit_path)
     if resv_path.is_file():
-        try:
-            raw = resv_path.read_text(encoding="utf-8")
-            data = json.loads(raw)
-            now = time.time()
-            for run_k, run_resvs in data.items():
-                if not isinstance(run_resvs, dict):
+        raw = resv_path.read_text(encoding="utf-8")
+        data = json.loads(raw)
+        now = time.time()
+        for run_k, run_resvs in data.items():
+            if not isinstance(run_resvs, dict):
+                continue
+            for resv_k, info in run_resvs.items():
+                if not isinstance(info, dict):
                     continue
-                for resv_k, info in run_resvs.items():
-                    if not isinstance(info, dict):
-                        continue
-                    ts = float(info.get("timestamp", 0))
-                    # Stale reservation timeout: 300 seconds
-                    if now - ts > 300:
-                        continue
-                    tok = int(info.get("tokens", 0))
-                    cst = Decimal(str(info.get("cost", "0.0")))
-                    combined.setdefault(run_k, {})[resv_k] = (tok, cst)
-        except Exception:
-            pass
+                ts = float(info.get("timestamp", 0))
+                # Stale reservation timeout: 300 seconds
+                if now - ts > 300:
+                    continue
+                tok = int(info.get("tokens", 0))
+                cst = Decimal(str(info.get("cost", "0.0")))
+                combined.setdefault(run_k, {})[resv_k] = (tok, cst)
 
     return combined
 
 
 def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, cost: Decimal) -> None:
-    """Save an in-flight reservation in memory and on disk."""
+    """Save an in-flight reservation in memory and on disk. Raises on write failure."""
     _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
     resv_path = _get_resv_path(audit_path)
-    try:
-        audit_path.parent.mkdir(parents=True, exist_ok=True)
-        data: dict[str, Any] = {}
-        if resv_path.is_file():
-            try:
-                data = json.loads(resv_path.read_text(encoding="utf-8"))
-            except Exception:
-                data = {}
-        now = time.time()
-        cleaned: dict[str, Any] = {}
-        for r_id, r_dict in data.items():
-            if isinstance(r_dict, dict):
-                sub = {k: v for k, v in r_dict.items() if isinstance(v, dict) and now - float(v.get("timestamp", 0)) <= 300}
-                if sub:
-                    cleaned[r_id] = sub
-        cleaned.setdefault(run_id, {})[resv_id] = {
-            "tokens": tokens,
-            "cost": str(cost),
-            "timestamp": now,
-            "pid": os.getpid(),
-        }
-        resv_path.write_text(json.dumps(cleaned), encoding="utf-8")
-    except Exception as exc:
-        log.warning("Could not persist reservation to %s: %s", resv_path, exc)
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    data: dict[str, Any] = {}
+    if resv_path.is_file():
+        try:
+            data = json.loads(resv_path.read_text(encoding="utf-8"))
+        except Exception:
+            data = {}
+    now = time.time()
+    cleaned: dict[str, Any] = {}
+    for r_id, r_dict in data.items():
+        if isinstance(r_dict, dict):
+            sub = {k: v for k, v in r_dict.items() if isinstance(v, dict) and now - float(v.get("timestamp", 0)) <= 300}
+            if sub:
+                cleaned[r_id] = sub
+    cleaned.setdefault(run_id, {})[resv_id] = {
+        "tokens": tokens,
+        "cost": str(cost),
+        "timestamp": now,
+        "pid": os.getpid(),
+    }
+    resv_path.write_text(json.dumps(cleaned), encoding="utf-8")
 
 
 def _remove_reservation(audit_path: Path, run_id: str, resv_id: str) -> None:
@@ -288,6 +284,7 @@ class GatewayReceipt:
     payload_sha256: str
     gateway_decision: str  # 'AUTHORIZED', 'REJECTED'
     rejection_reasons: list[str] = field(default_factory=list)
+    provenance_verified: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -442,6 +439,7 @@ def evaluate_gateway_request(
     consent_zero_retention: bool,
     max_cost_usd_limit: Optional[str] = None,
     audit_file: Optional[Path] = None,
+    verify_passage_provenance: bool = False,
 ) -> tuple[GatewayReceipt, list[str]]:
     """Execute the complete M6 Safe Gateway security & privacy verification pipeline."""
     rejection_reasons: list[str] = []
@@ -488,6 +486,36 @@ def evaluate_gateway_request(
                 f"Adversarial prompt injection attempt intercepted in passage payload: {', '.join(s_res.injections_detected)}."
             )
 
+    # 4b. Passage Payload Provenance Verification (S3)
+    provenance_verified = False
+    if verify_passage_provenance and passages:
+        candidate_texts: list[str] = []
+        for cand in candidates:
+            if cand.artifact_path and Path(cand.artifact_path).is_file():
+                try:
+                    cpath = Path(cand.artifact_path)
+                    if cpath.suffix.lower() == ".pdf":
+                        import pymupdf as fitz
+                        with fitz.open(str(cpath)) as doc:
+                            candidate_texts.append("\n".join(page.get_text("text") for page in doc))
+                    else:
+                        candidate_texts.append(cpath.read_text(encoding="utf-8", errors="ignore"))
+                except Exception:
+                    pass
+        combined_candidate_text = "\n".join(candidate_texts)
+        all_found = True
+        for p in passages:
+            p_strip = p.strip()
+            if p_strip and p_strip not in combined_candidate_text:
+                all_found = False
+                rejection_reasons.append(
+                    f"Passage payload provenance violation: text snippet '{p_strip[:50]}...' is not anchored in verified candidate artifact."
+                )
+        if all_found and candidate_texts:
+            provenance_verified = True
+    elif not passages:
+        provenance_verified = True
+
     # 5. Token & Cost Hard Ceiling Checks (including cumulative tracking per run_id)
     combined_payload = "\n".join(sanitized_passages)
     est_tokens, est_cost = estimate_tokens_and_cost(combined_payload)
@@ -497,64 +525,85 @@ def evaluate_gateway_request(
     target_audit_path = audit_file or DEFAULT_AUDIT_LOG_PATH
     lock_path = target_audit_path.parent / f".{target_audit_path.name}.lock"
 
-    with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
-        prior_tokens = 0
-        prior_cost = Decimal("0.0")
-        audit_read_error: Optional[str] = None
-        if target_audit_path.exists():
+    try:
+        with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
+            prior_tokens = 0
+            prior_cost = Decimal("0.0")
+            audit_read_error: Optional[str] = None
+            if target_audit_path.exists():
+                try:
+                    for line_num, line in enumerate(target_audit_path.read_text(encoding="utf-8").splitlines(), start=1):
+                        line_s = line.strip()
+                        if not line_s:
+                            continue
+                        try:
+                            rec = json.loads(line_s)
+                            if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
+                                prior_tokens += int(rec.get("estimated_tokens", 0))
+                                prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
+                        except Exception as json_err:
+                            audit_read_error = f"Corrupted audit record on line {line_num}: {json_err}"
+                            break
+                except Exception as exc:
+                    audit_read_error = f"Audit ledger read failure: {exc}"
+
+            if audit_read_error:
+                rejection_reasons.append(
+                    f"Security gateway fail-closed: cannot verify historical spend against ceiling: {audit_read_error}"
+                )
+
+            # Add active in-flight reservations across all processes
             try:
-                for line_num, line in enumerate(target_audit_path.read_text(encoding="utf-8").splitlines(), start=1):
-                    line_s = line.strip()
-                    if not line_s:
-                        continue
-                    try:
-                        rec = json.loads(line_s)
-                        if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
-                            prior_tokens += int(rec.get("estimated_tokens", 0))
-                            prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
-                    except Exception as json_err:
-                        audit_read_error = f"Corrupted audit record on line {line_num}: {json_err}"
-                        break
-            except Exception as exc:
-                audit_read_error = f"Audit ledger read failure: {exc}"
+                active_resvs = _load_all_reservations(target_audit_path)
+                for (r_tok, r_cst) in active_resvs.get(run_id, {}).values():
+                    prior_tokens += r_tok
+                    prior_cost += r_cst
+            except Exception as resv_read_err:
+                rejection_reasons.append(
+                    f"Reservation ledger read failure: cannot verify active budget reservations: {resv_read_err}"
+                )
 
-        if audit_read_error:
-            rejection_reasons.append(
-                f"Security gateway fail-closed: cannot verify historical spend against ceiling: {audit_read_error}"
-            )
+            cum_tokens = prior_tokens + est_tokens
+            cum_cost = prior_cost + est_cost
 
-        # Add active in-flight reservations across all processes
-        active_resvs = _load_all_reservations(target_audit_path)
-        for (r_tok, r_cst) in active_resvs.get(run_id, {}).values():
-            prior_tokens += r_tok
-            prior_cost += r_cst
+            ceiling_ok = (cum_tokens <= MAX_INPUT_TOKENS_CEILING) and (cum_cost <= effective_max_cost)
 
-        cum_tokens = prior_tokens + est_tokens
-        cum_cost = prior_cost + est_cost
+            if cum_tokens > MAX_INPUT_TOKENS_CEILING:
+                rejection_reasons.append(
+                    f"Estimated input tokens ({cum_tokens} cumulative for run '{run_id}') exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
+                )
 
-        ceiling_ok = (cum_tokens <= MAX_INPUT_TOKENS_CEILING) and (cum_cost <= effective_max_cost)
+            if cum_cost > effective_max_cost:
+                rejection_reasons.append(
+                    f"Estimated cost (${cum_cost} cumulative for run '{run_id}') exceeds budget ceiling (${effective_max_cost})."
+                )
 
-        if cum_tokens > MAX_INPUT_TOKENS_CEILING:
-            rejection_reasons.append(
-                f"Estimated input tokens ({cum_tokens} cumulative for run '{run_id}') exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
-            )
+            # 6. Payload Fingerprint
+            payload_hash = hashlib.sha256(combined_payload.encode("utf-8")).hexdigest()
 
-        if cum_cost > effective_max_cost:
-            rejection_reasons.append(
-                f"Estimated cost (${cum_cost} cumulative for run '{run_id}') exceeds budget ceiling (${effective_max_cost})."
-            )
+            # 7. Final Decision & Receipt Generation
+            passed = len(rejection_reasons) == 0
+            receipt_id = f"rcpt_{run_id}_{payload_hash[:10]}"
+            timestamp = datetime.now(timezone.utc).isoformat()
 
-        # 6. Payload Fingerprint
+            if passed:
+                try:
+                    _save_reservation(target_audit_path, run_id, resv_id, est_tokens, est_cost)
+                    acquired_reservation = True
+                except Exception as resv_write_err:
+                    passed = False
+                    rejection_reasons.append(
+                        f"Reservation ledger write failure: cannot persist in-flight budget reservation: {resv_write_err}"
+                    )
+    except Exception as lock_err:
+        passed = False
+        ceiling_ok = False
+        rejection_reasons.append(
+            f"Gateway concurrency lock failure: unable to acquire exclusive budget lock: {lock_err}"
+        )
         payload_hash = hashlib.sha256(combined_payload.encode("utf-8")).hexdigest()
-
-        # 7. Final Decision & Receipt Generation
-        passed = len(rejection_reasons) == 0
         receipt_id = f"rcpt_{run_id}_{payload_hash[:10]}"
         timestamp = datetime.now(timezone.utc).isoformat()
-
-        if passed:
-            _save_reservation(target_audit_path, run_id, resv_id, est_tokens, est_cost)
-            acquired_reservation = True
 
     receipt = GatewayReceipt(
         receipt_id=receipt_id,
@@ -573,18 +622,23 @@ def evaluate_gateway_request(
         payload_sha256=payload_hash,
         gateway_decision="AUTHORIZED" if passed else "REJECTED",
         rejection_reasons=rejection_reasons,
+        provenance_verified=provenance_verified,
     )
 
     try:
         # Append to local audit log (fail-closed if writing fails)
         write_ok = record_gateway_audit_event(receipt, audit_file=target_audit_path)
-        if write_ok is False and receipt.gateway_decision == "AUTHORIZED":
+        if write_ok is False:
             receipt.gateway_decision = "REJECTED"
-            receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
+            if not any("Audit log write failure" in r for r in receipt.rejection_reasons):
+                receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
     finally:
         if acquired_reservation:
-            with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
-                _remove_reservation(target_audit_path, run_id, resv_id)
+            try:
+                with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
+                    _remove_reservation(target_audit_path, run_id, resv_id)
+            except Exception:
+                pass
 
     return receipt, sanitized_passages
 

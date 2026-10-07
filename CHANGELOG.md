@@ -12,6 +12,32 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
+## [3.10.0.27] - 2026-10-08
+
+### Critical Security Fail-Closed Hardening, S3 Provenance Contract & Econometric Evidence Calibration (A1-A3, B1-B3)
+
+- **[P1] A1 Concurrency File Lock Fail-Closed Guarantee (`pa_cli/gateway.py`)**:
+  - `_gateway_file_lock` now strictly raises `TimeoutError` or system `OSError` if the lock cannot be acquired or opened within timeout; never yields into the critical section without holding the lock.
+  - `evaluate_gateway_request` catches concurrency lock failures and immediately fails closed (`REJECTED`, `ceiling_compliant=False`), completely preventing uncoordinated spend under lock fault injection.
+- **[P1] A2 Reservation Ledger Fault-Tolerant Fail-Closed Persistence (`pa_cli/gateway.py`)**:
+  - Eliminated exception swallowing in `_load_all_reservations` and `_save_reservation`.
+  - When reading or writing `.reservations.json` encounters `PermissionError` or I/O failure, the gateway fails closed (`REJECTED`), preventing cross-process budget ceiling breaches under ledger fault injection.
+- **[P1] A3 S3 Provenance Verification Runtime Contract & Verification Engine (`pa_cli/gateway.py`)**:
+  - Implemented `verify_passage_provenance: bool = False` in `evaluate_gateway_request` function signature.
+  - Added `provenance_verified: bool = False` field to `GatewayReceipt` dataclass.
+  - Implemented full text passage verification against candidate XML/PDF artifacts, asserting whether payload passages genuinely originate from approved public OA candidate documents.
+- **[P1] B1 Econometric Percentage Coefficient Scaling & Demographic Proportion Filtering (`pa_cli/align_findings.py`)**:
+  - Captured trailing percent signs in explicit point estimate regex (`beta\s*[:=]?\s*([-+]?\d*\.?\d+)(\s*%)?`) and divided by 100 (`beta = 5%` -> `0.05`), fixing 100x scale distortion in literature distributions.
+  - Filtered out sample composition and demographic proportions (`40% large firms`, `sample contains 50%`) and restricted fallback percentage capture to explicit causal effect verbs (`increases by`, `reduces by`), preventing sample descriptions from masquerading as empirical effect sizes.
+- **[P1] B2 Strict Physical PDF Verification for Evidence Binding Rate (`pa_cli/evidence_review.py`)**:
+  - Removed fallback that defaulted to counting unverified or missing PDF files as verified claims.
+  - In `generate_evidence_backed_review`, evidence claims now strictly require physical file existence and exact page character offset slice matching; missing or deleted files yield 0.0% binding rate.
+- **[P2] B3 Parsed Document Snapshot SHA-256 Consistency (`pa_cli/evidence_review.py`)**:
+  - Reconciled post-open hash checks against parsed page content: when a parser holds an immutable document snapshot and the underlying file path is mutated, `artifact_sha256` retains the parsed snapshot digest rather than adopting the mutated file's digest.
+- **CI & Regression**:
+  - Added `test_output/test_rereview_findings_4a0cb65.py` with 6 dedicated test cases verifying A1-A3 and B1-B3 counter-examples.
+  - Registered `test_rereview_findings_4a0cb65.py` in `.github/workflows/ci.yml`.
+
 ## [3.10.0.26] - 2026-10-07
 
 ### Residual Priority Defect Hardening & Multi-Process Audit Coordination (S1-S3, E1-E6)

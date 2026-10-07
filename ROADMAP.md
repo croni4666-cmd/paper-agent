@@ -5034,4 +5034,24 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
   Covered by 8 unit tests in `test_output/test_rereview_findings_6ce58eb.py`, and integrated into `.github/workflows/ci.yml`.
 - **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
 
+### [P3-37] Concurrency Lock Fail-Closed, S3 Provenance Contract & Econometric Evidence Calibration (A1-A3, B1-B3)
+
+- **Status**: done
+- **Added**: 2026-10-08
+- **Started**: 2026-10-08
+- **Completed**: 2026-10-08
+- **Priority**: P1 / P2
+- **Effort**: 1 engineering day
+- **Source**: Controlled independent peer review on `4a0cb65` (`v3.10.0.26`).
+- **Rationale**: Eliminates lingering defects identified by counter-examples in `pa-4a0cb65-boundaries.py` and `TEST-REPORT.md`: lock acquisition failure entering critical sections without lock; reservation ledger read/write failure bypassing ceiling; missing `verify_passage_provenance` parameter and `provenance_verified` receipt field; coefficient percentage scaling (5% parsed as 5.0 instead of 0.05) and sample demographics (40% large firms) treated as effect sizes; unlinked/missing PDF defaulting to 100% binding rate; and post-open file mutations overwriting snapshot digest.
+- **Outcome**:
+  1. `[P1] A1`: `_gateway_file_lock` in `pa_cli/gateway.py` strictly raises `TimeoutError` or system `OSError` if the exclusive lock cannot be acquired; `evaluate_gateway_request` catches this and fails closed (`REJECTED`, `ceiling_compliant=False`), completely preventing uncoordinated spend under lock fault injection.
+  2. `[P1] A2`: `_load_all_reservations` and `_save_reservation` in `pa_cli/gateway.py` no longer swallow exceptions; reservation ledger read/write failures immediately fail closed with `REJECTED`, preventing budget ceiling breaches under ledger fault injection.
+  3. `[P1] A3`: Implemented `verify_passage_provenance: bool = False` in `evaluate_gateway_request` and `provenance_verified: bool = False` in `GatewayReceipt`; implemented passage extraction verification against candidate XML/PDF full texts.
+  4. `[P1] B1`: Point estimate regex in `pa_cli/align_findings.py` captures trailing `%` and divides by 100 (`beta = 5%` -> `0.05`); sample proportions (`40% large firms`, `sample contains 50%`) are filtered from literature benchmark distributions.
+  5. `[P1] B2`: Removed fallback default in `pa_cli/evidence_review.py` that counted unverified or missing PDF files as bound claims; unlinked files now strictly yield `binding_rate == 0.0`.
+  6. `[P2] B3`: Reconciled post-open file hash checks against parsed page text in `pa_cli/evidence_review.py`, preserving the immutable parsed snapshot digest when the file on disk changes after open.
+  Covered by 6 unit tests in `test_output/test_rereview_findings_4a0cb65.py`, and registered in `.github/workflows/ci.yml`.
+- **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
 

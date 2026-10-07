@@ -375,6 +375,26 @@ def align_empirical_finding(
                 )
                 clean_text = re.sub(r"\b[Nn]\s*=\s*\d+\b", " ", clean_text)
 
+                # 2b. Filter out sample composition & demographic proportions (e.g. "40% large firms", "sample contains 50%")
+                clean_text = re.sub(
+                    r"\b\d+(?:\.\d+)?%\s*(?:large|small|medium|micro|firms?|enterprises?|companies?|total|share|population|sample|women|men|male|female|workers?|participants?|respondents?|households?|of\s+the\s+sample|of\s+sample|of\s+firms?|of\s+all)\b",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(
+                    r"\b(?:sample\s+(?:contains?|comprises?|consists\s+of|includes?|is\s+composed\s+of))\s+\d+(?:\.\d+)?%",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(
+                    r"\b(?:proportion|fraction|percentage|ratio|share)\s*(?:of[^.,;]+)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+
                 # 3. Filter out confidence intervals and confidence levels (e.g. 95% confidence, 90% CI)
                 clean_text = re.sub(
                     r"\b\d+(?:\.\d+)?%\s*(?:confidence\s*(?:intervals?|levels?)?|ci)\b",
@@ -422,23 +442,32 @@ def align_empirical_finding(
                 extracted_for_paper: list[float] = []
 
                 # Explicit coefficient labels: beta/b/coef/estimate/effect size take highest priority
-                for c in re.findall(
-                    r"(?:\bbeta\b|\bb\b|\bcoef(?:ficient)?\b|\bestimate\b|\beffect\s*(?:size)?\b)\s*[:=]?\s*([-+]?\d*\.?\d+)",
+                for m in re.finditer(
+                    r"(?:\bbeta\b|\bb\b|\bcoef(?:ficient)?\b|\bestimate\b|\beffect\s*(?:size)?\b)\s*[:=]?\s*([-+]?\d*\.?\d+)(\s*%)?",
                     clean_text,
                     flags=re.IGNORECASE,
                 ):
+                    val_str, pct_flag = m.group(1), m.group(2)
                     try:
-                        val = float(c)
+                        val = float(val_str)
+                        if pct_flag:
+                            val = val / 100.0
                         if abs(val) <= 50 and val not in extracted_for_paper:
                             extracted_for_paper.append(val)
                     except ValueError:
                         pass
 
                 # If no explicit point estimate is found, check for genuine percentage effects
+                # framed as changes, impacts, increases, decreases, or effects
                 if not extracted_for_paper:
-                    for pct in re.findall(r"[-+]?\d+(?:\.\d+)?%", clean_text):
+                    for m in re.finditer(
+                        r"(?:(?:increases?|increased|decreases?|decreased|reduces?|reduced|raises?|raised|grows?|grew|drops?|dropped|rises?|rose|falls?|fell|effects?|impacts?|boosts?|enhances?|improves?|declines?)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?|(?:\bby\s+|\bof\s+))([-+]?\d+(?:\.\d+)?%)",
+                        clean_text,
+                        flags=re.IGNORECASE,
+                    ):
+                        pct_str = m.group(1)
                         try:
-                            extracted_for_paper.append(float(pct.replace("%", "")) / 100.0)
+                            extracted_for_paper.append(float(pct_str.replace("%", "")) / 100.0)
                         except ValueError:
                             pass
 
