@@ -163,8 +163,9 @@ class TestRereviewAuditFixes111532f(unittest.TestCase):
         valid_cand = PaperEvaluationCandidate(
             paper_id="cand1",
             artifact_path=None,
-            doi="10.1234/openaccess.test",
+            doi="10.48550/arXiv.2101.00001",
             source="arxiv",
+            data_class="public",
         )
         receipt_inj, _ = evaluate_gateway_request(
             run_id="run_inj",
@@ -326,10 +327,10 @@ class TestRereviewAuditFixes111532f(unittest.TestCase):
         )
         self.assertFalse(cons)
 
-        # Empty tests summary must report 0.0 consistency rate, not 1.0 (100%)
+        # Empty tests summary must report None (not evaluated) consistency rate, not 1.0 (100%)
         summary = summarize_findings([])
         self.assertEqual(summary.total_tests, 0)
-        self.assertEqual(summary.consistency_rate, 0.0)
+        self.assertIsNone(summary.consistency_rate)
 
     # -------------------------------------------------------------------------
     # F13: Jupyter Export Executability

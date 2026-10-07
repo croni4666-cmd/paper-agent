@@ -29,6 +29,7 @@ import json
 import logging
 import os
 import re
+import threading
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from decimal import Decimal
@@ -40,6 +41,9 @@ from .evidence import _hash
 from .provenance import inspect_artifact
 
 log = logging.getLogger(__name__)
+
+_GATEWAY_LOCK = threading.Lock()
+_ACTIVE_RESERVATIONS: dict[str, list[tuple[int, Decimal]]] = {}
 
 # Hard limits for M6 pilot (Strict ceilings)
 MAX_COST_USD_CEILING = Decimal("0.01")
@@ -174,10 +178,20 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
             blocking_reasons=[f"Source '{candidate.source}' is on the restricted gateway blocklist."],
         )
 
-    # 3. Artifact inspection if file exists
-    if candidate.artifact_path and Path(candidate.artifact_path).is_file():
+    # 3. Artifact inspection if file path is provided
+    if candidate.artifact_path:
+        artifact_p = Path(candidate.artifact_path)
+        if not artifact_p.is_file():
+            return PaperVerificationResult(
+                paper_id=candidate.paper_id,
+                doi=candidate.doi,
+                is_public_oa=False,
+                status="BLOCKED_NON_OA",
+                rights_class="missing_artifact",
+                blocking_reasons=[f"Artifact file not found: {candidate.artifact_path}"],
+            )
         p_res = inspect_artifact(
-            path=Path(candidate.artifact_path),
+            path=artifact_p,
             requested_doi=candidate.doi,
             source=candidate.source,
             url=candidate.url,
@@ -209,19 +223,30 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 license_urls=lic_urls,
             )
 
-    # 4. Fallback metadata evaluation if only DOI/source provided
-    # Require explicit, structurally valid 10. DOI and allowlisted source
-    allowlisted_sources = {"arxiv", "pmc", "pmc_xml", "europepmc"}
+    # 4. Strict metadata evaluation if artifact_path is omitted
+    # Must have public data_class, syntactically valid DOI (10.xxxx/...), and proven OA repository format
+    doi_syntax = re.compile(r"^10\.\d{4,9}/[-._;()/:A-Za-z0-9]+$")
     c_doi = canonicalize_doi(candidate.doi or "")
-    if candidate.source.lower() in allowlisted_sources and c_doi.startswith("10."):
-        return PaperVerificationResult(
-            paper_id=candidate.paper_id,
-            doi=c_doi,
-            is_public_oa=True,
-            status="VERIFIED_PUBLIC_OA",
-            rights_class="public_oa",
-            license_urls=["https://creativecommons.org/licenses/by/4.0/"],
-        )
+    if candidate.data_class == "public" and doi_syntax.match(c_doi):
+        src = candidate.source.lower()
+        if src == "arxiv" and (c_doi.startswith("10.48550/") or "arxiv" in c_doi.lower()):
+            return PaperVerificationResult(
+                paper_id=candidate.paper_id,
+                doi=c_doi,
+                is_public_oa=True,
+                status="VERIFIED_PUBLIC_OA",
+                rights_class="public_oa",
+                license_urls=["https://creativecommons.org/licenses/by/4.0/"],
+            )
+        elif src in ("pmc", "pmc_xml", "europepmc"):
+            return PaperVerificationResult(
+                paper_id=candidate.paper_id,
+                doi=c_doi,
+                is_public_oa=True,
+                status="VERIFIED_PUBLIC_OA",
+                rights_class="public_oa",
+                license_urls=["https://creativecommons.org/licenses/by/4.0/"],
+            )
 
     return PaperVerificationResult(
         paper_id=candidate.paper_id,
@@ -345,39 +370,55 @@ def evaluate_gateway_request(
     configured_max_cost = Decimal(max_cost_usd_limit) if max_cost_usd_limit else MAX_COST_USD_CEILING
     effective_max_cost = min(MAX_COST_USD_CEILING, configured_max_cost)
 
-    prior_tokens = 0
-    prior_cost = Decimal("0.0")
-    if DEFAULT_AUDIT_LOG_PATH.exists():
-        try:
-            for line in DEFAULT_AUDIT_LOG_PATH.read_text(encoding="utf-8").splitlines():
-                if line.strip():
-                    rec = json.loads(line)
-                    if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
-                        prior_tokens += int(rec.get("estimated_tokens", 0))
-                        prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
-        except Exception:
-            pass
+    with _GATEWAY_LOCK:
+        prior_tokens = 0
+        prior_cost = Decimal("0.0")
+        if DEFAULT_AUDIT_LOG_PATH.exists():
+            try:
+                for line in DEFAULT_AUDIT_LOG_PATH.read_text(encoding="utf-8").splitlines():
+                    line_s = line.strip()
+                    if not line_s:
+                        continue
+                    try:
+                        rec = json.loads(line_s)
+                        if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
+                            prior_tokens += int(rec.get("estimated_tokens", 0))
+                            prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
+                    except Exception:
+                        continue
+            except Exception:
+                pass
 
-    cum_tokens = prior_tokens + est_tokens
-    cum_cost = prior_cost + est_cost
+        # Add active in-flight reservations
+        for (r_tok, r_cst) in _ACTIVE_RESERVATIONS.get(run_id, []):
+            prior_tokens += r_tok
+            prior_cost += r_cst
 
-    if cum_tokens > MAX_INPUT_TOKENS_CEILING:
-        rejection_reasons.append(
-            f"Estimated input tokens ({cum_tokens} cumulative for run '{run_id}') exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
-        )
+        cum_tokens = prior_tokens + est_tokens
+        cum_cost = prior_cost + est_cost
 
-    if cum_cost > effective_max_cost:
-        rejection_reasons.append(
-            f"Estimated cost (${cum_cost} cumulative for run '{run_id}') exceeds budget ceiling (${effective_max_cost})."
-        )
+        ceiling_ok = (cum_tokens <= MAX_INPUT_TOKENS_CEILING) and (cum_cost <= effective_max_cost)
 
-    # 6. Payload Fingerprint
-    payload_hash = hashlib.sha256(combined_payload.encode("utf-8")).hexdigest()
+        if cum_tokens > MAX_INPUT_TOKENS_CEILING:
+            rejection_reasons.append(
+                f"Estimated input tokens ({cum_tokens} cumulative for run '{run_id}') exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
+            )
 
-    # 7. Final Decision & Receipt Generation
-    passed = len(rejection_reasons) == 0
-    receipt_id = f"rcpt_{run_id}_{payload_hash[:10]}"
-    timestamp = datetime.now(timezone.utc).isoformat()
+        if cum_cost > effective_max_cost:
+            rejection_reasons.append(
+                f"Estimated cost (${cum_cost} cumulative for run '{run_id}') exceeds budget ceiling (${effective_max_cost})."
+            )
+
+        # 6. Payload Fingerprint
+        payload_hash = hashlib.sha256(combined_payload.encode("utf-8")).hexdigest()
+
+        # 7. Final Decision & Receipt Generation
+        passed = len(rejection_reasons) == 0
+        receipt_id = f"rcpt_{run_id}_{payload_hash[:10]}"
+        timestamp = datetime.now(timezone.utc).isoformat()
+
+        if passed:
+            _ACTIVE_RESERVATIONS.setdefault(run_id, []).append((est_tokens, est_cost))
 
     receipt = GatewayReceipt(
         receipt_id=receipt_id,
@@ -391,28 +432,37 @@ def evaluate_gateway_request(
         pii_scrubbed_count=total_pii,
         estimated_tokens=est_tokens,
         estimated_cost_usd=str(est_cost),
-        ceiling_compliant=est_cost <= effective_max_cost and est_tokens <= MAX_INPUT_TOKENS_CEILING,
+        ceiling_compliant=ceiling_ok,
         zero_retention_attested=consent_zero_retention,
         payload_sha256=payload_hash,
         gateway_decision="AUTHORIZED" if passed else "REJECTED",
         rejection_reasons=rejection_reasons,
     )
 
-    # Append to local audit log
-    record_gateway_audit_event(receipt)
+    # Append to local audit log (fail-closed if writing fails)
+    write_ok = record_gateway_audit_event(receipt)
+    if write_ok is False and receipt.gateway_decision == "AUTHORIZED":
+        receipt.gateway_decision = "REJECTED"
+        receipt.rejection_reasons.append("Audit log write failure: security gateway requires durable audit trail.")
+
+    with _GATEWAY_LOCK:
+        if run_id in _ACTIVE_RESERVATIONS and (est_tokens, est_cost) in _ACTIVE_RESERVATIONS[run_id]:
+            _ACTIVE_RESERVATIONS[run_id].remove((est_tokens, est_cost))
 
     return receipt, sanitized_passages
 
 
-def record_gateway_audit_event(receipt: GatewayReceipt, audit_file: Optional[Path] = None) -> None:
+def record_gateway_audit_event(receipt: GatewayReceipt, audit_file: Optional[Path] = None) -> bool:
     """Append immutable gateway verification receipt to local audit log."""
     path = audit_file or DEFAULT_AUDIT_LOG_PATH
     try:
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(receipt.to_dict(), ensure_ascii=False) + "\n")
+        return True
     except Exception as exc:
         log.error("Failed to write gateway audit log: %s", exc)
+        return False
 
 
 def read_gateway_audit_events(audit_file: Optional[Path] = None) -> list[GatewayReceipt]:
@@ -428,7 +478,7 @@ def read_gateway_audit_events(audit_file: Optional[Path] = None) -> list[Gateway
                     data = json.loads(line)
                     receipts.append(GatewayReceipt(**data))
                 except Exception:
-                    pass
+                    continue
     return receipts
 
 

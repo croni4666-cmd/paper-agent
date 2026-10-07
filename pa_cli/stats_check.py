@@ -215,7 +215,7 @@ class StatsCheckSummary:
     inconsistent_count: int
     decision_error_count: int
     one_tailed_match_count: int
-    consistency_rate: float
+    consistency_rate: Optional[float]
     items: list[StatsCheckItem]
 
     def to_dict(self) -> dict[str, Any]:
@@ -225,7 +225,7 @@ class StatsCheckSummary:
             "inconsistent_count": self.inconsistent_count,
             "decision_error_count": self.decision_error_count,
             "one_tailed_match_count": self.one_tailed_match_count,
-            "consistency_rate": round(self.consistency_rate, 4),
+            "consistency_rate": round(self.consistency_rate, 4) if self.consistency_rate is not None else None,
             "items": [item.to_dict() for item in self.items],
         }
 
@@ -264,12 +264,12 @@ def check_p_consistency(
         if p_op == "<":
             consistent_two = p_comp_two < p_rep
         else:
-            consistent_two = p_comp_two <= (p_rep + margin)
+            consistent_two = p_comp_two <= p_rep
     elif p_op in (">", ">=", "≥"):
         if p_op == ">":
             consistent_two = p_comp_two > p_rep
         else:
-            consistent_two = p_comp_two >= (p_rep - margin)
+            consistent_two = p_comp_two >= p_rep
     else:
         consistent_two = False
 
@@ -283,12 +283,12 @@ def check_p_consistency(
         if p_op == "<":
             consistent_one = p_comp_one < p_rep
         else:
-            consistent_one = p_comp_one <= (p_rep + margin)
+            consistent_one = p_comp_one <= p_rep
     elif p_op in (">", ">=", "≥"):
         if p_op == ">":
             consistent_one = p_comp_one > p_rep
         else:
-            consistent_one = p_comp_one >= (p_rep - margin)
+            consistent_one = p_comp_one >= p_rep
     else:
         consistent_one = False
 
@@ -597,7 +597,7 @@ def summarize_findings(items: list[StatsCheckItem]) -> StatsCheckSummary:
     inconsistent = sum(1 for it in items if not it.is_consistent and not it.is_decision_error)
     dec_err = sum(1 for it in items if it.is_decision_error)
     one_tailed = sum(1 for it in items if it.is_consistent_one_tailed and not it.is_consistent)
-    rate = (consistent / total) if total > 0 else 0.0
+    rate = (consistent / total) if total > 0 else None
 
     return StatsCheckSummary(
         total_tests=total,

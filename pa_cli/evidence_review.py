@@ -202,7 +202,11 @@ def harvest_paper_evidence(
                     s_end = min(len(page_content), m.end() + 150)
                 else:
                     s_end += 1
-                passage = page_content[s_start:s_end].strip().replace("\n", " ")
+                while s_start < s_end and page_content[s_start].isspace():
+                    s_start += 1
+                while s_end > s_start and page_content[s_end - 1].isspace():
+                    s_end -= 1
+                passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
                         evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
@@ -222,7 +226,11 @@ def harvest_paper_evidence(
             for m in f_pat.finditer(page_content):
                 s_start = max(0, page_content.rfind(".", 0, m.start()) + 1)
                 s_end = min(len(page_content), m.end() + 1)
-                passage = page_content[s_start:s_end].strip().replace("\n", " ")
+                while s_start < s_end and page_content[s_start].isspace():
+                    s_start += 1
+                while s_end > s_start and page_content[s_end - 1].isspace():
+                    s_end -= 1
+                passage = page_content[s_start:s_end]
                 if len(passage) >= 35:
                     ev = BoundEvidence(
                         evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
@@ -243,7 +251,11 @@ def harvest_paper_evidence(
             for m in t_pat.finditer(page_content):
                 s_start = max(0, page_content.rfind(".", 0, m.start()) + 1)
                 s_end = min(len(page_content), m.end() + 1)
-                passage = page_content[s_start:s_end].strip().replace("\n", " ")
+                while s_start < s_end and page_content[s_start].isspace():
+                    s_start += 1
+                while s_end > s_start and page_content[s_end - 1].isspace():
+                    s_end -= 1
+                passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
                         evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
@@ -264,7 +276,11 @@ def harvest_paper_evidence(
             for m in h_pat.finditer(page_content):
                 s_start = max(0, page_content.rfind(".", 0, m.start()) + 1)
                 s_end = min(len(page_content), m.end() + 1)
-                passage = page_content[s_start:s_end].strip().replace("\n", " ")
+                while s_start < s_end and page_content[s_start].isspace():
+                    s_start += 1
+                while s_end > s_start and page_content[s_end - 1].isspace():
+                    s_end -= 1
+                passage = page_content[s_start:s_end]
                 if len(passage) >= 30:
                     ev = BoundEvidence(
                         evidence_id=_make_evidence_id(passage, filename, p_num, s_start),
@@ -279,48 +295,6 @@ def harvest_paper_evidence(
                     buckets["heterogeneity"].append(ev)
                     if len(buckets["heterogeneity"]) >= 3:
                         break
-
-    # If any bucket is empty, create a fallback from abstract or first available page
-    if not buckets["theory"] and pages_text:
-        first_p, first_t = pages_text[0]
-        snippet = first_t[:260].strip().replace("\n", " ")
-        buckets["theory"].append(
-            BoundEvidence(
-                evidence_id=_make_evidence_id(snippet, filename, first_p, 0),
-                doi=doi,
-                filename=filename,
-                page=first_p,
-                char_start=0,
-                char_end=len(snippet),
-                section="abstract",
-                excerpt=snippet,
-            )
-        )
-
-    if not buckets["results"] and pages_text:
-        first_p, first_t = pages_text[0]
-        t_len = len(first_t)
-        if t_len > 260:
-            snippet = first_t[260:min(540, t_len)].strip()
-            c_start = 260
-            c_end = min(540, t_len)
-        else:
-            snippet = first_t[:min(200, t_len)].strip()
-            c_start = 0
-            c_end = min(200, t_len)
-        if snippet:
-            buckets["results"].append(
-                BoundEvidence(
-                    evidence_id=_make_evidence_id(snippet, filename, first_p, c_start),
-                    doi=doi,
-                    filename=filename,
-                    page=first_p,
-                    char_start=c_start,
-                    char_end=c_end,
-                    section="abstract" if first_p == 0 else "results",
-                    excerpt=snippet,
-                )
-            )
 
     return buckets
 
@@ -541,7 +515,10 @@ def generate_evidence_backed_review(
     # 5. Format Publication-Grade Markdown Output
     date_str = datetime.now().strftime("%Y-%m-%d")
     total_claims = len(all_manifest_claims)
-    pdf_claims = sum(1 for c in all_manifest_claims if c["evidence"]["page"] > 0)
+    pdf_claims = sum(
+        1 for c in all_manifest_claims
+        if c["evidence"]["page"] > 0 and c["evidence"]["section"] not in ("abstract", "fallback")
+    )
     binding_rate = (pdf_claims / total_claims) if total_claims > 0 else 0.0
 
     md_lines: List[str] = [

@@ -352,15 +352,50 @@ def align_empirical_finding(
             prior_bench = {
                 "user_coefficient": user_c,
                 "literature_typical_range": None,
-                "is_outlier": False,
+                "is_outlier": None,
                 "interpretation": "No comparable empirical estimates found in local literature to construct a benchmark distribution.",
             }
         else:
             lit_nums = []
             for p_item in supporting + contradictory:
-                nums = [float(n.replace("%", "")) / (100.0 if "%" in n else 1.0)
-                        for n in re.findall(r"[-+]?\d*\.?\d+(?:%)?", p_item.evidence_quote)]
-                lit_nums.extend(nums)
+                text = p_item.evidence_quote
+                # Filter out 4-digit publication/sample years (1900-2099)
+                clean_text = re.sub(r"\b(?:19|20)\d{2}\b", " ", text)
+                # Filter out sample sizes like "1000 firms", "500 enterprises", "N = 300"
+                clean_text = re.sub(
+                    r"\b\d+\s*(?:firms?|enterprises?|companies?|observations?|obs|cases?|respondents?|samples?|家|个|样本)\b",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(r"\b[Nn]\s*=\s*\d+\b", " ", clean_text)
+
+                # Extract percentages: 5% -> 0.05
+                for pct in re.findall(r"[-+]?\d+(?:\.\d+)?%", clean_text):
+                    try:
+                        lit_nums.append(float(pct.replace("%", "")) / 100.0)
+                    except ValueError:
+                        pass
+                clean_text = re.sub(r"[-+]?\d+(?:\.\d+)?%", " ", clean_text)
+
+                # Extract explicit coefficient values (e.g. beta/coef/estimate)
+                for c in re.findall(r"(?:beta|b|coef(?:ficient)?|estimate|effect)\s*[:=]?\s*([-+]?\d*\.?\d+)", clean_text, flags=re.IGNORECASE):
+                    try:
+                        val = float(c)
+                        if abs(val) <= 50 and val not in lit_nums:
+                            lit_nums.append(val)
+                    except ValueError:
+                        pass
+
+                # Extract decimal coefficients with explicit decimal point
+                for d in re.findall(r"(?<![\d\w])[-+]?\d+\.\d+(?![\d\w%])", clean_text):
+                    try:
+                        val = float(d)
+                        if abs(val) <= 50 and val not in lit_nums:
+                            lit_nums.append(val)
+                    except ValueError:
+                        pass
+
             if len(lit_nums) >= 2:
                 typical_min = round(min(lit_nums), 4)
                 typical_max = round(max(lit_nums), 4)
@@ -375,7 +410,7 @@ def align_empirical_finding(
                 prior_bench = {
                     "user_coefficient": user_c,
                     "literature_typical_range": None,
-                    "is_outlier": False,
+                    "is_outlier": None,
                     "interpretation": "Insufficient numerical estimates in aligned literature to construct a quantitative benchmark.",
                 }
 

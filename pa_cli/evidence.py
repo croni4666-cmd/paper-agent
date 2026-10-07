@@ -93,7 +93,7 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
     if not body.startswith(b'%PDF'):
         raise ValueError('expected PDF')
     artifact = hashlib.sha256(body).hexdigest()
-    extractor = f'PyMuPDF/{fitz.VersionBind};text;sort=false;{VERSION};headings-v2'
+    extractor = f'PyMuPDF/{fitz.VersionBind};text;sort=false;{VERSION};headings-v3'
     pages, spans = [], []
     total = 0
     section = 'unknown'

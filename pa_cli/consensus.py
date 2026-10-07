@@ -231,12 +231,27 @@ def extract_hypotheses_from_text(text: str, source_doc: str = "") -> list[Hypoth
         r"(?:(?:Hypothesis|Proposition|假说|假设|命题|[HP])\s*([0-9]+[a-zA-Z]?)[^.\n]{0,80}?(supported|rejected|not\s+supported|confirmed|failed\s+to\s+support|validated|verified|通过检验|未能支持|被拒绝|得到支持|验证了)|(supported|rejected|not\s+supported|confirmed|failed\s+to\s+support|validated|verified|通过检验|未能支持|被拒绝|得到支持|验证了|supporting|rejecting|confirming)\s+(?:Hypothesis|Proposition|假说|假设|命题|[HP])\s*([0-9]+[a-zA-Z]?))",
         re.IGNORECASE,
     )
+    FUTURE_OR_CONDITIONAL = re.compile(
+        r"\b(?:whether|if|future|plan(?:s|ned)?|will\s+test|to\s+test|remains?\s+to\s+be|yet\s+to\s+be|leaving|untested)\b|未来|计划|是否|待检验|留待",
+        re.IGNORECASE,
+    )
     for m in outcome_scan.finditer(text):
         h_num = (m.group(1) or m.group(4) or "").strip().upper()
         raw_out = (m.group(2) or m.group(3) or "").strip().lower()
         if not h_num or not raw_out:
             continue
-        if OUTCOME_REJECTED.search(raw_out):
+
+        s_start = max(0, text.rfind("\n", 0, m.start()), text.rfind(".", 0, m.start()))
+        s_end = text.find("\n", m.end())
+        if s_end == -1:
+            s_end = text.find(".", m.end())
+        if s_end == -1:
+            s_end = len(text)
+        surrounding_sent = text[s_start:s_end]
+
+        if FUTURE_OR_CONDITIONAL.search(surrounding_sent):
+            status = "untested"
+        elif OUTCOME_REJECTED.search(raw_out):
             status = "rejected"
         elif OUTCOME_PARTIAL.search(raw_out):
             status = "partially_supported"
@@ -399,24 +414,29 @@ def build_consensus_matrix(hypotheses: list[HypothesisItem], boundary_conditions
                 nonlin_papers.add(doc_id)
 
         all_papers = pos_papers | neg_papers | null_papers | nonlin_papers
-        total_p = max(1, len(all_papers))
-
-        counts = {
-            "positive": len(pos_papers),
-            "negative": len(neg_papers),
-            "null": len(null_papers),
-            "nonlinear": len(nonlin_papers),
-        }
-        dominant_dir, max_count = max(counts.items(), key=lambda x: x[1])
-        score = max_count / total_p
-
-        # Debate classification
-        if score >= 0.75:
-            debate_level = "Consensus Baseline"
-        elif score >= 0.50:
-            debate_level = "Moderate Debate"
+        if not all_papers:
+            dominant_dir = "untested"
+            score = 0.0
+            debate_level = "Insufficient Evidence"
+            total_p = len({h.paper_id for h in h_list})
         else:
-            debate_level = "Intense Controversy"
+            total_p = len(all_papers)
+            counts = {
+                "positive": len(pos_papers),
+                "negative": len(neg_papers),
+                "null": len(null_papers),
+                "nonlinear": len(nonlin_papers),
+            }
+            dominant_dir, max_count = max(counts.items(), key=lambda x: x[1])
+            score = max_count / total_p
+
+            # Debate classification
+            if score >= 0.75:
+                debate_level = "Consensus Baseline"
+            elif score >= 0.50:
+                debate_level = "Moderate Debate"
+            else:
+                debate_level = "Intense Controversy"
 
         relationships.append(
             RelationshipConsensus(

@@ -724,9 +724,10 @@ def compute_fidelity_score(
             f"Assertion claims {claim_dir} outcome, but source paper explicitly reports "
             f"{evid_dir} finding."
         )
-    elif any("NUMERICAL_DISCREPANCY" in fl for fl in flags) and efs < 0.60:
+    elif any("NUMERICAL_DISCREPANCY" in fl for fl in flags):
         verdict = "NUMERICAL_DISCREPANCY"
         explanation = "Specific numerical estimates claimed in draft are not supported in source document."
+        efs = min(efs, 0.45)
     elif "DOMAIN_MISMATCH" in flags:
         verdict = "MISATTRIBUTION"
         explanation = "Extremely low topical relevance between draft assertion and cited paper."
@@ -875,7 +876,12 @@ def audit_manuscript(
         else 1.0
     )
 
-    pass_status = (avg_efs >= threshold) and (hallucinated == 0) and (misattributions == 0)
+    pass_status = (
+        (avg_efs >= threshold)
+        and (hallucinated == 0)
+        and (misattributions == 0)
+        and (numerical == 0)
+    )
 
     return AuditReport(
         manuscript_name=manuscript_name,
