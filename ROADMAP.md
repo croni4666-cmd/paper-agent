@@ -4942,13 +4942,16 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 
 ### [P2-22] Standalone offline interactive knowledge graph (`pa graph --interactive`)
 
-- **Status**: proposed
+- **Status**: done
 - **Added**: 2026-10-02
+- **Started**: 2026-10-07
+- **Completed**: 2026-10-07
 - **Priority**: P2
 - **Effort**: 2 engineering days
 - **Source**: User experience and visual exploration.
 - **Rationale**: Exports an interactive, single-file HTML visualization (using embedded D3/vis.js) showing citation networks, topic clusters, and controversy links without requiring a running web server.
-- **Global Rule audit**: Static self-contained HTML generation; zero maintenance.
+- **Outcome**: Implemented `pa_cli/graph.py` and `pa graph` CLI command. Builds knowledge graphs from project corpora or BibTeX files, integrating topic clustering, methodology lineage, and consensus/controversy edges. Exports 100% self-contained offline interactive HTML pages with an embedded pure-vanilla canvas physics engine (drag, zoom, pan, hover inspection, topic filters, search bar, and details panel) requiring zero web servers and zero external CDN connections. Also supports Graphviz DOT, Mermaid diagrams, and JSON. Covered by 5 unit tests in `test_output/test_graph_p2_22.py`.
+- **Global Rule audit**: Static self-contained HTML generation; 100% offline; zero maintenance; zero cloud dependencies.
 
 ### [P2-23] Empirical findings literature alignment engine (`pa align-findings`)
 

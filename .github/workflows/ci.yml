@@ -64,6 +64,7 @@ jobs:
           python test_output/test_lineage_p1_23.py
           python test_output/test_cite_audit_p2_21.py
           python test_output/test_evidence_review_p2_20.py
+          python test_output/test_graph_p2_22.py
 
   package:
     name: Build wheel and verify package contents

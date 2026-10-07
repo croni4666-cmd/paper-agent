@@ -13,6 +13,21 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 > See template for emoji vocabulary and section rules.
 
+## [3.10.0.19] - 2026-10-07
+
+### Standalone Offline Interactive Knowledge Graph ([P2-22])
+
+- Implement `pa graph` CLI command and `pa_cli/graph.py` for exporting interactive, self-contained academic knowledge graphs:
+  - Generates 100% standalone single-file HTML visualizations (`file:///` protocol compatible) with an embedded pure-vanilla JavaScript physics engine (Verlet repulsion, spring attraction, centering, damping). Zero external CDN or web server dependencies required.
+  - Multi-dimensional graph synthesis integrating:
+    - Intra-corpus citation and influence linkages.
+    - Methodology evolution and paradigm transitions from `pa_cli/methodology_lineage.py`.
+    - Topic cluster grouping and color-coding.
+    - Consensus agreement (green solid edges) vs. controversy and opposing empirical findings (red dashed edges) from `pa_cli/consensus.py`.
+  - Rich interactive browser interface: real-time physics simulation toggle, node drag-and-drop, zoom and pan, live search filtering by author/title/key, topic dropdown filters, paradigm role legend, and interactive paper details inspector panel displaying authors, year, DOI links, and abstract excerpts.
+  - Multi-format diagram exports: Graphviz DOT (`--format dot`), Mermaid diagrams (`--format mermaid`), and machine-readable JSON (`--json`).
+- Add test suite `test_output/test_graph_p2_22.py` (5 unit tests) and integrate into CI pipeline.
+
 ## [3.10.0.18] - 2026-10-07
 
 ### Evidence-Grounded Literature Review Section Scripter ([P2-20])

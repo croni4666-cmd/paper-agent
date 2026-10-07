@@ -2022,6 +2022,86 @@ def cite_audit_cmd(manuscript_path, inline_text, bib_path, pdf_dir, threshold, s
         sys.exit(1)
 
 
+# =============== [P2-22] pa graph: Standalone Offline Interactive Knowledge Graph ===============
+@main.command("graph")
+@click.argument("target", required=False, default=None)
+@click.option("--project", "project_slug", default=None,
+              help="Project slug to build interactive knowledge graph for")
+@click.option("--bib", "bib_path", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Path to BibTeX bibliography file")
+@click.option("--interactive", is_flag=True, default=True,
+              help="Generate standalone interactive HTML visualization (default: True)")
+@click.option("--format", "format_type", type=click.Choice(["html", "json", "dot", "mermaid"], case_sensitive=False),
+              default="html", show_default=True, help="Graph export format")
+@click.option("-o", "--output", default=None,
+              help="Destination file to save graph (default: <name>_graph.html or stdout)")
+@click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
+              help="Override default project root")
+@click.option("--json", "as_json", is_flag=True, help="Print graph structure as raw JSON")
+def graph_cmd(target, project_slug, bib_path, interactive, format_type, output, root_path, as_json):
+    """[P2-22] Standalone offline interactive knowledge graph.
+
+    Generates a single-file interactive HTML visualization of citation networks,
+    topic clusters, and controversy/consensus links without requiring a running web server.
+    Also supports JSON, Graphviz DOT, and Mermaid diagram export.
+
+    Examples:
+      pa graph my-project --interactive -o my_graph.html
+      pa graph --bib refs.bib --format html -o refs_graph.html
+      pa graph my-project --format mermaid
+      pa graph my-project --json
+    """
+    from .graph import (
+        build_project_graph,
+        build_graph_from_bib,
+        generate_interactive_html,
+    )
+    from .scaffold import load_bibtex
+    from .project import DEFAULT_ROOT
+    from pathlib import Path
+
+    root = Path(root_path) if root_path else DEFAULT_ROOT
+    slug = project_slug or (target if target and not target.endswith(".bib") and not Path(target).is_file() else None)
+
+    if bib_path:
+        b_p = Path(bib_path)
+        entries = load_bibtex(b_p)
+        graph = build_graph_from_bib(entries, title=f"Knowledge Graph: {b_p.stem}")
+    elif slug:
+        graph = build_project_graph(slug, root=root)
+    elif target and (target.endswith(".bib") or Path(target).is_file()):
+        b_p = Path(target)
+        entries = load_bibtex(b_p)
+        graph = build_graph_from_bib(entries, title=f"Knowledge Graph: {b_p.stem}")
+    else:
+        click.echo("[pa graph] ERROR: Must provide a project slug, --project, or --bib.", err=True)
+        sys.exit(2)
+
+    fmt = "json" if as_json else format_type.lower()
+
+    if fmt == "json":
+        rendered = json.dumps(graph.to_dict(), indent=2, ensure_ascii=False)
+    elif fmt == "dot":
+        rendered = graph.to_dot()
+    elif fmt == "mermaid":
+        rendered = graph.to_mermaid()
+    else:
+        rendered = generate_interactive_html(graph)
+
+    if output:
+        out_p = Path(output)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text(rendered, encoding="utf-8")
+        click.echo(f"[pa graph] Knowledge graph saved to: {output}")
+    else:
+        if fmt == "html":
+            default_name = f"{slug or 'academic'}_graph.html"
+            Path(default_name).write_text(rendered, encoding="utf-8")
+            click.echo(f"[pa graph] Interactive knowledge graph saved to: {default_name}")
+        else:
+            click.echo(rendered)
+
+
 # =============== [P2-9] search-saved subcommand group ===============
 # Named search presets with parameter snapshots. Re-run `pa search` without
 # retyping all the flags.
