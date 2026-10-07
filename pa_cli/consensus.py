@@ -139,11 +139,11 @@ DIR_NULL = re.compile(
 )
 
 OUTCOME_SUPPORTED = re.compile(
-    r"\b(?:(?:is\s*|was\s*|strongly\s*|empirically\s*)?supported|confirmed|verified|validated|consistent\s*with)\b|得到支持|通过检验|验证了",
+    r"\b(?:(?:is\s*|was\s*|strongly\s*|empirically\s*)?supported|support(?:s|ing)?|confirmed|verified|validated|consistent\s*with)\b|得到支持|通过检验|验证了",
     re.IGNORECASE,
 )
 OUTCOME_REJECTED = re.compile(
-    r"\b(?:(?:is\s*|was\s*)?rejected|not\s*supported|failed\s*to\s*support|fails\s*to\s*find\s*support|disconfirmed)\b|被拒绝|未通过|未能支持",
+    r"\b(?:(?:is\s*|was\s*)?rejected|not\s*supported|failed\s*to\s*support|fails\s*to\s*find\s*support|disconfirmed|reject(?:s|ing)?)\b|被拒绝|未通过|未能支持",
     re.IGNORECASE,
 )
 OUTCOME_PARTIAL = re.compile(
@@ -218,22 +218,24 @@ def extract_hypotheses_from_text(text: str, source_doc: str = "") -> list[Hypoth
     items: list[HypothesisItem] = []
 
     # 1. Match hypothesis proposals
-    # e.g. "Hypothesis 1 (H1): Corporate ESG ...", "H1a: ...", "假设 1: ..."
+    # e.g. "Hypothesis 1 (H1): Corporate ESG ...", "H1a: ...", "假设 1: ...", "Proposition 1: ..."
     h_prop_pattern = re.compile(
-        r"(?:(?:Hypothesis|Proposition|假说|命题)\s*([0-9]+[a-zA-Z]?)|(?:H|P)([0-9]+[a-zA-Z]?))\s*[\(\[（]?(?:[hH][0-9]+[a-zA-Z]?)?[\)\]）]?\s*[:：\.-]?\s*([^\n\.\;]{15,280}[\.\;\n])",
+        r"(?:(?:Hypothesis|Proposition|假说|假设|命题)\s*([0-9]+[a-zA-Z]?)|(?:H|P)([0-9]+[a-zA-Z]?))\s*[\(\[（]?(?:[hH][0-9]+[a-zA-Z]?)?[\)\]）]?\s*[:：\.-]?\s*([^\n\.\;]{15,280}[\.\;\n])",
         re.IGNORECASE,
     )
 
     # 2. Match outcome statements across the text
-    # e.g. "Hypothesis 1 is supported", "H2 was rejected", "supporting H1"
+    # e.g. "Hypothesis 1 is supported", "H2 was rejected", "supporting H1", "假设1通过检验"
     h_outcomes: dict[str, Tuple[str, str]] = {}  # h_num -> (outcome, snippet)
     outcome_scan = re.compile(
-        r"\b(?:Hypothesis|H)\s*([0-9]+[a-zA-Z]?)\b[^.\n]{0,80}\b(supported|rejected|not supported|confirmed|failed to support|validated|verified|通过检验|未能支持|被拒绝)\b",
+        r"(?:(?:Hypothesis|Proposition|假说|假设|命题|[HP])\s*([0-9]+[a-zA-Z]?)[^.\n]{0,80}?(supported|rejected|not\s+supported|confirmed|failed\s+to\s+support|validated|verified|通过检验|未能支持|被拒绝|得到支持|验证了)|(supported|rejected|not\s+supported|confirmed|failed\s+to\s+support|validated|verified|通过检验|未能支持|被拒绝|得到支持|验证了|supporting|rejecting|confirming)\s+(?:Hypothesis|Proposition|假说|假设|命题|[HP])\s*([0-9]+[a-zA-Z]?))",
         re.IGNORECASE,
     )
     for m in outcome_scan.finditer(text):
-        h_num = m.group(1).upper()
-        raw_out = m.group(2).lower()
+        h_num = (m.group(1) or m.group(4) or "").strip().upper()
+        raw_out = (m.group(2) or m.group(3) or "").strip().lower()
+        if not h_num or not raw_out:
+            continue
         if OUTCOME_REJECTED.search(raw_out):
             status = "rejected"
         elif OUTCOME_PARTIAL.search(raw_out):
@@ -258,18 +260,21 @@ def extract_hypotheses_from_text(text: str, source_doc: str = "") -> list[Hypoth
         relation_key = f"{x_key} -> {y_key}"
 
         # Associate outcome if found
-        outcome, outcome_snip = h_outcomes.get(num, ("supported", ""))
+        outcome, outcome_snip = h_outcomes.get(num, ("untested", ""))
 
         # Determine effective empirical finding direction:
         # If proposed positive and supported -> positive
         # If proposed positive and rejected -> neutral or negative
         # If proposed negative and supported -> negative
+        # If untested -> untested
         if outcome == "supported":
             effective = direction
         elif outcome == "rejected":
             effective = "neutral" if direction != "neutral" else "unspecified"
-        else:
+        elif outcome == "partially_supported":
             effective = direction
+        else:
+            effective = "untested"
 
         items.append(
             HypothesisItem(

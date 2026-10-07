@@ -30,6 +30,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 
 from .cache import _bare_doi, _doi_slug
 from .doi import canonicalize_doi
+from .consensus import detect_direction
 
 log = logging.getLogger(__name__)
 
@@ -298,17 +299,25 @@ def harvest_paper_evidence(
 
     if not buckets["results"] and pages_text:
         first_p, first_t = pages_text[0]
-        snippet = first_t[260:540].strip().replace("\n", " ") if len(first_t) > 260 else first_t[:200]
+        t_len = len(first_t)
+        if t_len > 260:
+            snippet = first_t[260:min(540, t_len)].strip()
+            c_start = 260
+            c_end = min(540, t_len)
+        else:
+            snippet = first_t[:min(200, t_len)].strip()
+            c_start = 0
+            c_end = min(200, t_len)
         if snippet:
             buckets["results"].append(
                 BoundEvidence(
-                    evidence_id=_make_evidence_id(snippet, filename, first_p, 260),
+                    evidence_id=_make_evidence_id(snippet, filename, first_p, c_start),
                     doi=doi,
                     filename=filename,
                     page=first_p,
-                    char_start=260,
-                    char_end=260 + len(snippet),
-                    section="abstract",
+                    char_start=c_start,
+                    char_end=c_end,
+                    section="abstract" if first_p == 0 else "results",
                     excerpt=snippet,
                 )
             )
@@ -396,10 +405,8 @@ def generate_evidence_backed_review(
             best_ev = evs[0]
             auth = p.get("author", "Author").split(" and ")[0].split(",")[-1].strip()
             yr = p.get("year", "n.d.")
-            prose = (
-                f"The foundational framework developed by {auth} ({yr}) [@{pkey}] posits that "
-                f"information transparency and strategic governance mitigate principal-agent agency friction."
-            )
+            clean_snip = best_ev.excerpt.strip().rstrip(".:")
+            prose = f"Examining conceptual baselines, {auth} ({yr}) [@{pkey}] notes: \"{clean_snip}\"."
             c = ReviewClaim(
                 claim_id=f"CLAIM-{claim_idx:03d}",
                 section_category="theoretical_foundation",
@@ -407,8 +414,8 @@ def generate_evidence_backed_review(
                 citation_key=pkey,
                 citation_display=f"[@{pkey}]",
                 evidence=best_ev,
-                empirical_direction="positive",
-                confidence_score=0.95,
+                empirical_direction="positive" if "positive" in clean_snip.lower() else "unspecified",
+                confidence_score=0.90 if best_ev.page > 0 else 0.70,
             )
             claims_by_section["theoretical_foundation"].append(c)
             all_manifest_claims.append(c.to_dict())
@@ -425,20 +432,19 @@ def generate_evidence_backed_review(
         best_ev = evs[0]
         auth = p.get("author", "Author").split(" and ")[0].split(",")[-1].strip()
         yr = p.get("year", "n.d.")
+        clean_snip = best_ev.excerpt.strip().rstrip(".:")
 
-        # Alternating debate presentation
-        if idx % 2 == 0:
-            prose = (
-                f"Corroborating the value-enhancement perspective, {auth} et al. ({yr}) [@{pkey}] demonstrate "
-                f"that proactive corporate initiatives generate statistically significant positive welfare gains."
-            )
-            dir_str = "positive"
+        # Grounded empirical direction based on extracted findings, not parity
+        detected_dir = detect_direction(clean_snip)
+        dir_str = detected_dir if detected_dir in ("positive", "negative", "neutral") else "unspecified"
+        if dir_str == "positive":
+            prose = f"Documenting positive empirical findings, {auth} ({yr}) [@{pkey}] reports: \"{clean_snip}\"."
+        elif dir_str == "negative":
+            prose = f"Documenting negative or constrained empirical effects, {auth} ({yr}) [@{pkey}] reports: \"{clean_snip}\"."
+        elif dir_str == "neutral":
+            prose = f"Documenting null or neutral empirical findings, {auth} ({yr}) [@{pkey}] reports: \"{clean_snip}\"."
         else:
-            prose = (
-                f"Conversely, challenging the universal benefits proposition, {auth} ({yr}) [@{pkey}] document "
-                f"pronounced countervailing frictions, suggesting that compliance and adjustment costs offset initial gains."
-            )
-            dir_str = "negative"
+            prose = f"Reporting empirical observations, {auth} ({yr}) [@{pkey}] states: \"{clean_snip}\"."
 
         c = ReviewClaim(
             claim_id=f"CLAIM-{claim_idx:03d}",
@@ -448,7 +454,7 @@ def generate_evidence_backed_review(
             citation_display=f"[@{pkey}]",
             evidence=best_ev,
             empirical_direction=dir_str,
-            confidence_score=0.92,
+            confidence_score=0.90 if best_ev.page > 0 else 0.70,
         )
         claims_by_section["empirical_debates"].append(c)
         all_manifest_claims.append(c.to_dict())
@@ -464,10 +470,8 @@ def generate_evidence_backed_review(
             best_ev = evs[0]
             auth = p.get("author", "Author").split(" and ")[0].split(",")[-1].strip()
             yr = p.get("year", "n.d.")
-            prose = (
-                f"To address endogeneity and omitted variable bias, {auth} ({yr}) [@{pkey}] implement "
-                f"a quasi-experimental causal identification design isolating exogenous policy variation."
-            )
+            clean_snip = best_ev.excerpt.strip().rstrip(".:")
+            prose = f"Regarding empirical design and estimation, {auth} ({yr}) [@{pkey}] specifies: \"{clean_snip}\"."
             c = ReviewClaim(
                 claim_id=f"CLAIM-{claim_idx:03d}",
                 section_category="methodological_evolution",
@@ -476,7 +480,7 @@ def generate_evidence_backed_review(
                 citation_display=f"[@{pkey}]",
                 evidence=best_ev,
                 empirical_direction="unspecified",
-                confidence_score=0.90,
+                confidence_score=0.88 if best_ev.page > 0 else 0.65,
             )
             claims_by_section["methodological_evolution"].append(c)
             all_manifest_claims.append(c.to_dict())
@@ -492,10 +496,8 @@ def generate_evidence_backed_review(
             best_ev = evs[0]
             auth = p.get("author", "Author").split(" and ")[0].split(",")[-1].strip()
             yr = p.get("year", "n.d.")
-            prose = (
-                f"Extending the core model to institutional boundary conditions, {auth} ({yr}) [@{pkey}] find "
-                f"that the baseline effect is significantly moderated by market friction and organizational scale."
-            )
+            clean_snip = best_ev.excerpt.strip().rstrip(".:")
+            prose = f"Highlighting subsample heterogeneity and contextual boundaries, {auth} ({yr}) [@{pkey}] notes: \"{clean_snip}\"."
             c = ReviewClaim(
                 claim_id=f"CLAIM-{claim_idx:03d}",
                 section_category="boundary_conditions",
@@ -504,7 +506,7 @@ def generate_evidence_backed_review(
                 citation_display=f"[@{pkey}]",
                 evidence=best_ev,
                 empirical_direction="nonlinear",
-                confidence_score=0.88,
+                confidence_score=0.85 if best_ev.page > 0 else 0.65,
             )
             claims_by_section["boundary_conditions"].append(c)
             all_manifest_claims.append(c.to_dict())
@@ -521,10 +523,8 @@ def generate_evidence_backed_review(
             best_ev = evs[0]
             auth = last_p.get("author", "Author").split(" and ")[0].split(",")[-1].strip()
             yr = last_p.get("year", "n.d.")
-            prose = (
-                f"Notwithstanding substantial progress in recent literature [@{lkey}], unresolved empirical tensions "
-                f"remain regarding long-term structural persistence and dynamic general equilibrium spillovers."
-            )
+            clean_snip = best_ev.excerpt.strip().rstrip(".:")
+            prose = f"Identifying empirical tensions and open questions in recent literature [@{lkey}], {auth} ({yr}) observes: \"{clean_snip}\"."
             c = ReviewClaim(
                 claim_id=f"CLAIM-{claim_idx:03d}",
                 section_category="research_gaps",
@@ -533,13 +533,17 @@ def generate_evidence_backed_review(
                 citation_display=f"[@{lkey}]",
                 evidence=best_ev,
                 empirical_direction="unspecified",
-                confidence_score=0.91,
+                confidence_score=0.85 if best_ev.page > 0 else 0.65,
             )
             claims_by_section["research_gaps"].append(c)
             all_manifest_claims.append(c.to_dict())
 
     # 5. Format Publication-Grade Markdown Output
     date_str = datetime.now().strftime("%Y-%m-%d")
+    total_claims = len(all_manifest_claims)
+    pdf_claims = sum(1 for c in all_manifest_claims if c["evidence"]["page"] > 0)
+    binding_rate = (pdf_claims / total_claims) if total_claims > 0 else 0.0
+
     md_lines: List[str] = [
         f"# Evidence-Grounded Literature Review: {title}\n",
         f"**Project Slug**: `{slug}` | **Synthesized**: {date_str} | **Architecture**: Paper Agent Evidence-Backed [P2-20]\n",
@@ -550,8 +554,8 @@ def generate_evidence_backed_review(
     md_lines.append("## Evidence Grounding & Provenance Verification\n\n")
     md_lines.append(
         f"- **Corpus Size**: {len(bib_entries)} indexed papers ({total_fulltext} full-text PDFs / documents)\n"
-        f"- **Synthesized Claims**: {len(all_manifest_claims)} claim statements\n"
-        f"- **Verifiable PDF Evidence Binding Rate**: **100.0%** (0 ungrounded claims, zero hallucinated citations)\n"
+        f"- **Synthesized Claims**: {total_claims} claim statements\n"
+        f"- **Verifiable PDF Evidence Binding Rate**: **{binding_rate * 100:.1f}%** ({pdf_claims}/{total_claims} claims verified against full-text PDF)\n"
         f"- **Offline Verification Engine**: Pure-Python lexical & span offset alignment\n\n"
     )
 
@@ -635,7 +639,7 @@ def generate_evidence_backed_review(
         total_papers=len(bib_entries),
         fulltext_papers=total_fulltext,
         total_claims=len(all_manifest_claims),
-        binding_rate=1.0 if all_manifest_claims else 0.0,
+        binding_rate=round(binding_rate, 4),
         sections=claims_by_section,
         markdown_text=full_md,
         manifest=all_manifest_claims,

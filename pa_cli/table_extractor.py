@@ -161,10 +161,14 @@ def _extract_text_aligned_table(
     header_line_idx = -1
     table_lines: List[str] = []
 
-    # 1. Look for table title (e.g. Table 1, 表 1)
+    # 1. Look for genuine table caption (e.g. Table 1: Estimates, not "Table 1 provides details...")
     for idx, line in enumerate(lines):
         clean = line.strip()
-        if re.match(r"^(?:Table\s+\d+|表\s*\d+)[.:\s]", clean, re.IGNORECASE):
+        if len(clean) > 90:
+            continue
+        if re.search(r"\b(?:provides?|shows?|illustrates?|summarizes?|describes?|presents?|reports?|we\s+find|in\s+table)\b", clean, re.I):
+            continue
+        if re.match(r"^(?:Table\s+\d+|表\s*\d+)(?:[.:\s]|$)", clean, re.IGNORECASE):
             title = clean
             header_line_idx = idx + 1
             break
@@ -186,25 +190,21 @@ def _extract_text_aligned_table(
     if len(table_lines) < 2:
         return None
 
-    # 3. Parse headers and rows
-    # Split using 2 or more spaces or tabs
-    header_tokens = re.split(r"\s{2,}|\t", table_lines[0].strip())
-    if len(header_tokens) < 2:
-        # Fallback to whitespace split if header line doesn't have double space
-        header_tokens = table_lines[0].split()
-
+    # 3. Parse headers and rows strictly requiring tabular gutters (>=2 spaces or tabs)
+    header_tokens = [t.strip() for t in re.split(r"\s{2,}|\t|\|", table_lines[0].strip()) if t.strip()]
     if len(header_tokens) < 2:
         return None
 
     rows: List[List[str]] = []
+    num_numeric_cells = 0
     for row_line in table_lines[1:]:
-        tokens = re.split(r"\s{2,}|\t", row_line.strip())
-        if len(tokens) < 2:
-            tokens = row_line.split()
-        if tokens:
+        tokens = [t.strip() for t in re.split(r"\s{2,}|\t|\|", row_line.strip()) if t.strip()]
+        if len(tokens) >= 2:
             rows.append(tokens)
+            num_numeric_cells += sum(1 for t in tokens if re.search(r"\d", t) or t in ("-", "—", "*", "**", "***"))
 
-    if not rows:
+    # Academic tables must contain numerical data, coefficients, or standard errors
+    if not rows or num_numeric_cells < 2:
         return None
 
     return title, header_tokens, rows, notes

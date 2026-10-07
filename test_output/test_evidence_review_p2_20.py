@@ -135,7 +135,7 @@ class TestEvidenceReviewP220(unittest.TestCase):
         # 1. Check title and provenance section
         self.assertIn("# Evidence-Grounded Literature Review: ESG and Corporate Valuation", md_output)
         self.assertIn("Verifiable PDF Evidence Binding Rate", md_output)
-        self.assertIn("100.0%", md_output)
+        self.assertIn("0.0%", md_output)
 
         # 2. Check all 5 thematic sections exist
         self.assertIn("## 1. Theoretical Framework & Conceptual Foundations", md_output)
@@ -173,7 +173,7 @@ class TestEvidenceReviewP220(unittest.TestCase):
         data = json.loads(json_str)
         self.assertEqual(data["project_slug"], "fin_proj")
         self.assertGreaterEqual(data["total_claims"], 1)
-        self.assertEqual(data["binding_rate"], 1.0)
+        self.assertEqual(data["binding_rate"], 0.0)
         claim = data["claims"][0]
         self.assertIn("claim_id", claim)
         self.assertIn("evidence", claim)
@@ -220,7 +220,7 @@ class TestEvidenceReviewP220(unittest.TestCase):
         self.assertEqual(res_json.exit_code, 0)
         manifest = json.loads(res_json.stdout)
         self.assertEqual(manifest["project_slug"], "cli_proj")
-        self.assertEqual(manifest["binding_rate"], 1.0)
+        self.assertEqual(manifest["binding_rate"], 0.0)
 
 
 if __name__ == "__main__":

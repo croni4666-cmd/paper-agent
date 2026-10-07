@@ -35,6 +35,7 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
+from .doi import canonicalize_doi
 from .evidence import _hash
 from .provenance import inspect_artifact
 
@@ -209,12 +210,13 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
             )
 
     # 4. Fallback metadata evaluation if only DOI/source provided
-    # Require explicit DOI and allowlisted source
+    # Require explicit, structurally valid 10. DOI and allowlisted source
     allowlisted_sources = {"arxiv", "pmc", "pmc_xml", "europepmc"}
-    if candidate.source.lower() in allowlisted_sources and candidate.doi:
+    c_doi = canonicalize_doi(candidate.doi or "")
+    if candidate.source.lower() in allowlisted_sources and c_doi.startswith("10."):
         return PaperVerificationResult(
             paper_id=candidate.paper_id,
-            doi=candidate.doi,
+            doi=c_doi,
             is_public_oa=True,
             status="VERIFIED_PUBLIC_OA",
             rights_class="public_oa",
@@ -303,7 +305,9 @@ def evaluate_gateway_request(
         rejection_reasons.append("Missing mandatory operator consent: --consent-zero-retention.")
 
     # 2. Candidate Volume Ceiling Check
-    if len(candidates) > MAX_PAPERS_CEILING:
+    if not candidates:
+        rejection_reasons.append("Missing candidate papers: candidates list must not be empty.")
+    elif len(candidates) > MAX_PAPERS_CEILING:
         rejection_reasons.append(
             f"Paper count ({len(candidates)}) exceeds hard ceiling of {MAX_PAPERS_CEILING} papers/run."
         )
@@ -330,22 +334,41 @@ def evaluate_gateway_request(
         total_pii += len(s_res.pii_redacted)
         if not s_res.is_safe:
             log.warning("Gateway intercepted prompt injection attempt: %s", s_res.injections_detected)
+            rejection_reasons.append(
+                f"Adversarial prompt injection attempt intercepted in passage payload: {', '.join(s_res.injections_detected)}."
+            )
 
-    # 5. Token & Cost Hard Ceiling Checks
+    # 5. Token & Cost Hard Ceiling Checks (including cumulative tracking per run_id)
     combined_payload = "\n".join(sanitized_passages)
     est_tokens, est_cost = estimate_tokens_and_cost(combined_payload)
 
     configured_max_cost = Decimal(max_cost_usd_limit) if max_cost_usd_limit else MAX_COST_USD_CEILING
     effective_max_cost = min(MAX_COST_USD_CEILING, configured_max_cost)
 
-    if est_tokens > MAX_INPUT_TOKENS_CEILING:
+    prior_tokens = 0
+    prior_cost = Decimal("0.0")
+    if DEFAULT_AUDIT_LOG_PATH.exists():
+        try:
+            for line in DEFAULT_AUDIT_LOG_PATH.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    rec = json.loads(line)
+                    if rec.get("run_id") == run_id and rec.get("gateway_decision") == "AUTHORIZED":
+                        prior_tokens += int(rec.get("estimated_tokens", 0))
+                        prior_cost += Decimal(str(rec.get("estimated_cost_usd", "0.0")))
+        except Exception:
+            pass
+
+    cum_tokens = prior_tokens + est_tokens
+    cum_cost = prior_cost + est_cost
+
+    if cum_tokens > MAX_INPUT_TOKENS_CEILING:
         rejection_reasons.append(
-            f"Estimated input tokens ({est_tokens}) exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
+            f"Estimated input tokens ({cum_tokens} cumulative for run '{run_id}') exceed hard ceiling of {MAX_INPUT_TOKENS_CEILING} tokens."
         )
 
-    if est_cost > effective_max_cost:
+    if cum_cost > effective_max_cost:
         rejection_reasons.append(
-            f"Estimated cost (${est_cost}) exceeds budget ceiling (${effective_max_cost})."
+            f"Estimated cost (${cum_cost} cumulative for run '{run_id}') exceeds budget ceiling (${effective_max_cost})."
         )
 
     # 6. Payload Fingerprint

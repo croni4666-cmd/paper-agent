@@ -146,7 +146,10 @@ def parse_user_finding(
     if not detected_dir and raw_statement:
         detected_dir = detect_direction(raw_statement)
     if not detected_dir or detected_dir == "unspecified":
-        detected_dir = "positive"  # Default assumption if unspecified
+        if coefficient is not None:
+            detected_dir = "negative" if coefficient < 0 else ("positive" if coefficient > 0 else "neutral")
+        else:
+            detected_dir = "unspecified"
 
     x_res = var_x
     y_res = var_y
@@ -345,13 +348,36 @@ def align_empirical_finding(
     prior_bench: dict[str, Any] = {}
     if finding_input.coefficient is not None:
         user_c = finding_input.coefficient
-        # Synthesize benchmark range
-        prior_bench = {
-            "user_coefficient": user_c,
-            "literature_typical_range": [round(user_c * 0.6, 4), round(user_c * 1.5, 4)],
-            "is_outlier": False,
-            "interpretation": f"Your estimated coefficient ({user_c}) lies within the standard empirical effect size interval.",
-        }
+        if not supporting and not contradictory:
+            prior_bench = {
+                "user_coefficient": user_c,
+                "literature_typical_range": None,
+                "is_outlier": False,
+                "interpretation": "No comparable empirical estimates found in local literature to construct a benchmark distribution.",
+            }
+        else:
+            lit_nums = []
+            for p_item in supporting + contradictory:
+                nums = [float(n.replace("%", "")) / (100.0 if "%" in n else 1.0)
+                        for n in re.findall(r"[-+]?\d*\.?\d+(?:%)?", p_item.evidence_quote)]
+                lit_nums.extend(nums)
+            if len(lit_nums) >= 2:
+                typical_min = round(min(lit_nums), 4)
+                typical_max = round(max(lit_nums), 4)
+                is_outlier = bool(user_c < typical_min or user_c > typical_max)
+                prior_bench = {
+                    "user_coefficient": user_c,
+                    "literature_typical_range": [typical_min, typical_max],
+                    "is_outlier": is_outlier,
+                    "interpretation": f"Your estimated coefficient ({user_c}) lies {'outside' if is_outlier else 'within'} the documented range [{typical_min}, {typical_max}] in aligned literature.",
+                }
+            else:
+                prior_bench = {
+                    "user_coefficient": user_c,
+                    "literature_typical_range": None,
+                    "is_outlier": False,
+                    "interpretation": "Insufficient numerical estimates in aligned literature to construct a quantitative benchmark.",
+                }
 
     return AlignmentReport(
         input_finding=finding_input,

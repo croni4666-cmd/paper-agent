@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
 from .bibtex import format_bibtex_entry
+from .identifiers import citation_url, split_identifiers
 from .project import DEFAULT_ROOT, load_meta, project_files
 from .scaffold import load_bibtex
 
@@ -57,13 +58,8 @@ def _extract_paper_records(
             or e.get("venue")
             or ""
         ).strip()
-        doi = e.get("doi", "").strip()
-        arxiv_id = e.get("arxiv_id", "").strip()
-        url = e.get("url", "").strip()
-        if not url and doi:
-            url = f"https://doi.org/{doi}"
-        elif not url and arxiv_id:
-            url = f"https://arxiv.org/abs/{arxiv_id}"
+        doi, arxiv_id = split_identifiers(e)
+        url = citation_url(e)
 
         abstract = e.get("abstract", "").strip()
 
@@ -125,7 +121,7 @@ def export_to_jupyter_notebook(
                 "import json\n",
                 "import pandas as pd\n",
                 "\n",
-                f"raw_records = {json.dumps(records, ensure_ascii=False, indent=2)}\n",
+                f"raw_records = json.loads({json.dumps(json.dumps(records, ensure_ascii=False, indent=2))})\n",
                 "\n",
                 "df = pd.DataFrame(raw_records)\n",
                 'print(f"Loaded {len(df)} papers into DataFrame. Shape: {df.shape}")\n',

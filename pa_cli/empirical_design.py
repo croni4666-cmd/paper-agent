@@ -118,13 +118,13 @@ def _extract_sample_period(text: str) -> Optional[str]:
     """Scan text for sample time coverage (e.g. '2010 to 2020', '2005-2019')."""
     patterns = [
         # English: from 2010 to 2020 / sample period spans 2005 through 2018
-        r"(?:sample\s+(?:period|covers?|spans?|from|range)|data\s+(?:from|period)|time\s+period(?:\s+is)?)\s*(?:from|spans|covers)?\s*([12][90]\d{2})\s*(?:to|through|-|–|—|until|and)\s*([12][90]\d{2})",
+        r"(?:sample\s+(?:period|covers?|spans?|from|range)|data\s+(?:from|period)|time\s+period(?:\s+is)?|study\s+period)\s*(?:from|spans|covers)?\s*([12][90]\d{2})\s*(?:to|through|-|–|—|until|and)\s*([12][90]\d{2})",
         # English: between 2010 and 2020
         r"between\s+([12][90]\d{2})\s+and\s+([12][90]\d{2})",
         # Chinese: 2010—2020年 / 2010年至2020年
         r"([12][90]\d{2})\s*(?:年)?\s*[-–—至到]\s*([12][90]\d{2})\s*年",
-        # Fallback year range: 2010-2022
-        r"\b([12][90]\d{2})\s*[-–—]\s*([12][90]\d{2})\b",
+        # Contextual year range: during/for/spanning the period 2010-2022
+        r"(?:during|for|covering|spanning)\s+(?:the\s+period\s+)?([12][90]\d{2})\s*[-–—]\s*([12][90]\d{2})",
     ]
     for pat in patterns:
         m = re.search(pat, text, re.IGNORECASE)
@@ -274,12 +274,18 @@ def extract_empirical_design(pdf_path: Union[str, Path]) -> Dict[str, Any]:
     idx = build_index(path)
     pages = idx.get("pages", [])
 
-    # Gather full text, giving priority focus to methods and data sections
+    # Gather full text, giving priority focus to methods and data sections, excluding references
     full_text_list = []
     methods_text_list = []
 
     for p in pages:
         txt = p.get("text", "")
+        # Cut off once references section begins
+        if re.search(r"^\s*(?:references|bibliography|works\s+cited|参考文献)\s*$", txt, re.IGNORECASE | re.MULTILINE):
+            pre_ref = re.split(r"^\s*(?:references|bibliography|works\s+cited|参考文献)\s*$", txt, flags=re.IGNORECASE | re.MULTILINE)[0]
+            if pre_ref.strip():
+                full_text_list.append(pre_ref)
+            break
         full_text_list.append(txt)
         # Check if page has methods or data
         if any(w in txt.lower() for w in ["data", "method", "empirical", "sample", "variable", "model", "estimation", "数据", "变量", "模型"]):

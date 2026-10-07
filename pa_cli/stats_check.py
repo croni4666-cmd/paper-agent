@@ -261,9 +261,15 @@ def check_p_consistency(
         else:
             consistent_two = abs(p_comp_two - p_rep) <= margin
     elif p_op in ("<", "<=", "≤"):
-        consistent_two = p_comp_two <= (p_rep + margin)
+        if p_op == "<":
+            consistent_two = p_comp_two < p_rep
+        else:
+            consistent_two = p_comp_two <= (p_rep + margin)
     elif p_op in (">", ">=", "≥"):
-        consistent_two = p_comp_two >= (p_rep - margin)
+        if p_op == ">":
+            consistent_two = p_comp_two > p_rep
+        else:
+            consistent_two = p_comp_two >= (p_rep - margin)
     else:
         consistent_two = False
 
@@ -274,9 +280,15 @@ def check_p_consistency(
         else:
             consistent_one = abs(p_comp_one - p_rep) <= margin
     elif p_op in ("<", "<=", "≤"):
-        consistent_one = p_comp_one <= (p_rep + margin)
+        if p_op == "<":
+            consistent_one = p_comp_one < p_rep
+        else:
+            consistent_one = p_comp_one <= (p_rep + margin)
     elif p_op in (">", ">=", "≥"):
-        consistent_one = p_comp_one >= (p_rep - margin)
+        if p_op == ">":
+            consistent_one = p_comp_one > p_rep
+        else:
+            consistent_one = p_comp_one >= (p_rep - margin)
     else:
         consistent_one = False
 
@@ -585,7 +597,7 @@ def summarize_findings(items: list[StatsCheckItem]) -> StatsCheckSummary:
     inconsistent = sum(1 for it in items if not it.is_consistent and not it.is_decision_error)
     dec_err = sum(1 for it in items if it.is_decision_error)
     one_tailed = sum(1 for it in items if it.is_consistent_one_tailed and not it.is_consistent)
-    rate = (consistent / total) if total > 0 else 1.0
+    rate = (consistent / total) if total > 0 else 0.0
 
     return StatsCheckSummary(
         total_tests=total,

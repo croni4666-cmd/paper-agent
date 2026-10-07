@@ -11,6 +11,7 @@ Global Rule audit:
 """
 from __future__ import annotations
 
+import html
 import json
 import logging
 import math
@@ -341,14 +342,20 @@ def build_project_graph(slug: str, root: Optional[Path] = None) -> KnowledgeGrap
 
 def generate_interactive_html(graph: KnowledgeGraph) -> str:
     """Generate a 100% self-contained offline interactive HTML page with pure-vanilla JS physics."""
-    graph_data_json = json.dumps(graph.to_dict(), ensure_ascii=False)
+    raw_json = json.dumps(graph.to_dict(), ensure_ascii=False)
+    graph_data_json = (
+        raw_json.replace("</", "<\\/")
+        .replace("<!--", "<\\!--")
+        .replace("<script", "<\\script")
+    )
+    safe_title = html.escape(graph.title)
 
     html_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{graph.title} - Paper Agent Knowledge Graph</title>
+  <title>{safe_title} - Paper Agent Knowledge Graph</title>
   <style>
     :root {{
       --bg: #0f172a;
@@ -532,7 +539,7 @@ def generate_interactive_html(graph: KnowledgeGraph) -> str:
 <body>
   <header>
     <div class="brand">
-      <span>{graph.title}</span>
+      <span>{safe_title}</span>
       <span class="badge">Paper Agent Offline Interactive Graph</span>
     </div>
     <div>
@@ -830,15 +837,42 @@ def generate_interactive_html(graph: KnowledgeGraph) -> str:
       const panel = document.getElementById('details-panel');
       document.getElementById('d-badge').textContent = n.role + ' • ' + n.topic;
       document.getElementById('d-title').textContent = n.title;
-      document.getElementById('d-meta').innerHTML =
-        '<strong>Authors:</strong> ' + (n.authors || 'Unknown') + '<br>' +
-        '<strong>Year:</strong> ' + (n.year || 'n.d.') + '<br>' +
-        '<strong>Cite Key:</strong> <code>' + n.id + '</code>' +
-        (n.doi ? '<br><strong>DOI:</strong> <a style="color:var(--primary)" target="_blank" href="https://doi.org/' + n.doi + '">' + n.doi + '</a>' : '');
+      const dMeta = document.getElementById('d-meta');
+      dMeta.textContent = '';
+      const row1 = document.createElement('div');
+      row1.innerHTML = '<strong>Authors:</strong> ';
+      row1.appendChild(document.createTextNode(n.authors || 'Unknown'));
+      dMeta.appendChild(row1);
+      const row2 = document.createElement('div');
+      row2.innerHTML = '<strong>Year:</strong> ';
+      row2.appendChild(document.createTextNode(n.year || 'n.d.'));
+      dMeta.appendChild(row2);
+      const row3 = document.createElement('div');
+      row3.innerHTML = '<strong>Cite Key:</strong> ';
+      const codeEl = document.createElement('code');
+      codeEl.textContent = n.id;
+      row3.appendChild(codeEl);
+      dMeta.appendChild(row3);
+      if (n.doi) {{
+        const row4 = document.createElement('div');
+        row4.innerHTML = '<strong>DOI:</strong> ';
+        const aEl = document.createElement('a');
+        aEl.style.color = 'var(--primary)';
+        aEl.target = '_blank';
+        aEl.href = 'https://doi.org/' + encodeURIComponent(n.doi);
+        aEl.textContent = n.doi;
+        row4.appendChild(aEl);
+        dMeta.appendChild(row4);
+      }}
       document.getElementById('d-abstract').textContent = n.abstract || 'No abstract available.';
 
       const connected = edges.filter(e => e.source === n.id || e.target === n.id);
-      document.getElementById('d-links').innerHTML = '<strong>Connected Papers:</strong> ' + connected.length;
+      const dLinks = document.getElementById('d-links');
+      dLinks.textContent = '';
+      const strongEl = document.createElement('strong');
+      strongEl.textContent = 'Connected Papers: ';
+      dLinks.appendChild(strongEl);
+      dLinks.appendChild(document.createTextNode(connected.length));
       panel.classList.add('open');
     }}
 

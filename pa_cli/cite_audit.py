@@ -690,9 +690,13 @@ def compute_fidelity_score(
     # 2. Numerical claim verification
     num_bonus = 0.0
     if claim_nums:
-        # Check if numbers appear in best evidence or full text
-        found_in_evidence = [n for n in claim_nums if n.lower() in evidence.text.lower()]
-        found_in_full = [n for n in claim_nums if n.lower() in full_source_text.lower()]
+        def _num_present(num_str: str, target_text: str) -> bool:
+            pat = rf"(?<![\d\w\.]){re.escape(num_str.lower())}(?![\d\w])"
+            return bool(re.search(pat, target_text.lower()))
+
+        # Check if numbers appear in best evidence or full text with proper boundaries
+        found_in_evidence = [n for n in claim_nums if _num_present(n, evidence.text)]
+        found_in_full = [n for n in claim_nums if _num_present(n, full_source_text)]
 
         if len(found_in_evidence) == len(claim_nums):
             num_bonus = 0.15
@@ -702,7 +706,7 @@ def compute_fidelity_score(
             flags.append("NUMERICAL_CONFIRMED_IN_FULLTEXT")
         else:
             num_bonus = -0.30
-            missing_nums = [n for n in claim_nums if n.lower() not in full_source_text.lower()]
+            missing_nums = [n for n in claim_nums if not _num_present(n, full_source_text)]
             flags.append(f"NUMERICAL_DISCREPANCY:missing({','.join(missing_nums)})")
 
     # 3. Domain mismatch check

@@ -25,6 +25,8 @@ SECTIONS = {
     'methods': 'methods', 'methodology': 'methods', 'materials and methods': 'methods',
     'method': 'methods', 'research method': 'methods', 'research methods': 'methods',
     'research methodology': 'methods', 'research method and analysis': 'methods',
+    'method and analysis': 'methods', 'methods and analysis': 'methods',
+    'research and analysis': 'methods', 'data and analysis': 'methods',
     'data': 'methods', 'dataset': 'methods', 'datasets': 'methods',
     'data and methods': 'methods', 'data and methodology': 'methods',
     'setting and data': 'methods', 'our setting': 'methods',
@@ -117,7 +119,11 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
             # carry into results on the same page. Unknown layouts stay advisory.
             boundaries = [(0, section)]
             previous_number = False
-            for match in re.finditer(r'^[^\n]+$', text, re.MULTILINE):
+            matches = list(re.finditer(r'^[^\n]+$', text, re.MULTILINE))
+            skip_idx = -1
+            for idx, match in enumerate(matches):
+                if idx <= skip_idx:
+                    continue
                 line = match.group().strip()
                 split_number = previous_number
                 # Unknown major sections reset the parent; subsection titles
@@ -142,15 +148,33 @@ def build_index(path, *, chunk_chars=1200, max_pages=500,
                     detected = SECTIONS[clean_heading]
                 elif heading_lead in SECTIONS:
                     detected = SECTIONS[heading_lead]
-                elif re.match(r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*)[.:\-\s]+[a-zA-Z]', line, re.IGNORECASE):
-                    # Explicit numbered section header (e.g. "3 Conversational Change", "5 Attrition")
-                    # but not recognized as a standard section name: reset section to 'unknown'
-                    detected = 'unknown'
-                elif split_number and len(line.split()) <= 18 and not re.search(r'[.,;]', line) and sum(
-                        word[:1].isupper() for word in line.split()) >= max(1, len(line.split()) // 2):
-                    # A separately extracted number followed by a short title.
-                    # Avoid carrying methods into an unclassified results heading.
-                    detected = 'unknown'
+                elif idx + 1 < len(matches):
+                    # Multi-line heading check: test if current line combined with next line forms a section heading
+                    next_line = matches[idx + 1].group().strip()
+                    if next_line and len(line.split()) <= 8 and len(next_line.split()) <= 8:
+                        comb = f"{line} {next_line}"
+                        clean_comb = re.sub(
+                            r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*|[a-z]\.)[.:\-\s]+\s*',
+                            '', comb, flags=re.IGNORECASE
+                        ).strip().rstrip(':').casefold()
+                        lead_comb = clean_comb.split(':', 1)[0].split(' - ', 1)[0].strip()
+                        if clean_comb in SECTIONS:
+                            detected = SECTIONS[clean_comb]
+                            skip_idx = idx + 1
+                        elif lead_comb in SECTIONS:
+                            detected = SECTIONS[lead_comb]
+                            skip_idx = idx + 1
+
+                if detected is None:
+                    if re.match(r'^\s*(?:section\s+)?(?:[0-9]+(?:\.[0-9]+)*|[ivxlcdm]+(?:\.[ivxlcdm]+)*)[.:\-\s]+[a-zA-Z]', line, re.IGNORECASE):
+                        # Explicit numbered section header (e.g. "3 Conversational Change", "5 Attrition")
+                        # but not recognized as a standard section name: reset section to 'unknown'
+                        detected = 'unknown'
+                    elif split_number and len(line.split()) <= 18 and not re.search(r'[.,;]', line) and sum(
+                            word[:1].isupper() for word in line.split()) >= max(1, len(line.split()) // 2):
+                        # A separately extracted number followed by a short title.
+                        # Avoid carrying methods into an unclassified results heading.
+                        detected = 'unknown'
 
                 if detected is not None:
                     section = detected

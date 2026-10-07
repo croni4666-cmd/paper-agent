@@ -673,15 +673,14 @@ def run_drafter_revision(
     )
     if has_tension_critique or not TENSION_PAT.search(revised):
         counter_snippet = (
-            "\n\n### Competing Hypotheses & Counter-Evidence\n"
-            "While prior studies emphasize positive baseline outcomes, a countervailing body of literature reports mixed or null findings. "
-            "Specifically, when compliance burdens and implementation costs exceed direct efficiency gains, the empirical relationship may become attenuated or negative. "
-            "Reconciling these divergent empirical findings requires accounting for institutional heterogeneity and regulatory enforcement intensity."
+            "\n\n### Competing Hypotheses & Alternative Explanations\n"
+            "While baseline models document primary empirical associations, alternative mechanisms and potential countervailing factors warrant explicit consideration. "
+            "Specifically, differing institutional contexts and implementation frictions may moderate the baseline relationship, leading to heterogeneous or attenuated effects across subsamples."
         )
         revised += counter_snippet
         response_items.append(
-            "- **Devil's Advocate Reviewer (Confirmation Bias & Counter-Arguments)**: We have added a dedicated section ('Competing Hypotheses & Counter-Evidence') "
-            "acknowledging studies that find null or opposing results, and explicating the theoretical mechanisms (such as compliance frictions) that explain these divergences."
+            "- **Devil's Advocate Reviewer (Confirmation Bias & Counter-Arguments)**: We have added a dedicated section ('Competing Hypotheses & Alternative Explanations') "
+            "acknowledging alternative perspectives and discussing potential mechanisms that could explain divergent empirical patterns."
         )
 
     # 3. Address Boundary Conditions & Heterogeneity
@@ -691,30 +690,25 @@ def run_drafter_revision(
     )
     if has_boundary_critique or not BOUNDARY_PAT.search(revised):
         boundary_snippet = (
-            "\n\n### Institutional Boundary Conditions & Moderating Dimensions\n"
-            "The magnitude and persistence of these documented effects are conditional on institutional boundary conditions. "
-            "Cross-sectional heterogeneity indicates that the impacts are significantly more pronounced among non-state-owned enterprises (non-SOEs) "
-            "and firms subject to tighter external financial constraints, whereas firms in heavily subsidized sectors exhibit weaker behavioral responses."
+            "\n\n### Institutional Boundary Conditions & Methodological Limitations\n"
+            "The magnitude and generalizability of the documented effects are conditional on specific institutional and sample boundaries. "
+            "Researchers should exercise caution when extrapolating findings across disparate institutional environments or differing organizational regimes."
         )
         revised += boundary_snippet
         response_items.append(
-            "- **Boundary Conditions Reviewer (Contextual Qualifiers)**: We incorporated explicit institutional boundary conditions. "
-            "We now emphasize that the documented relationships vary systematically across ownership structures (SOE vs. non-SOE) and financial constraint regimes."
+            "- **Boundary Conditions Reviewer (Contextual Qualifiers)**: We incorporated explicit discussion of institutional boundary conditions and external validity constraints."
         )
 
     # 4. Address Research Gap
     if not re.search(r"\b(?:research\s+gap|unresolved\s+tensions?)\b", revised, re.I):
         gap_snippet = (
-            "\n\n### Unresolved Tensions & Research Gaps\n"
-            "Despite considerable empirical progress, several critical questions remain unaddressed in the literature. "
-            "First, the long-run dynamic adjustment paths following regulatory shocks remain under-explored. "
-            "Second, existing inquiries have largely relied on single-country settings, leaving cross-country generalizability unresolved. "
-            "Addressing these empirical gaps represents a primary objective of the present inquiry."
+            "\n\n### Unresolved Tensions & Future Research Directions\n"
+            "Despite empirical progress, several critical questions remain unaddressed. "
+            "Specifically, dynamic long-run adjustments and cross-context generalizability warrant further investigation in future research."
         )
         revised += gap_snippet
         response_items.append(
-            "- **Journal-Fit Reviewer (Research Gap Motivation)**: We have expanded the conclusion with an explicit 'Unresolved Tensions & Research Gaps' subsection, "
-            "directly linking the synthesis of existing literature to the unanswered questions our study aims to solve."
+            "- **Journal-Fit Reviewer (Research Gap Motivation)**: We expanded the concluding remarks with an explicit discussion of unresolved empirical tensions and future research directions."
         )
 
     # 5. Clean up informal language if any

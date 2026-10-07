@@ -270,11 +270,14 @@ def build_lineage_graph(papers: list[dict[str, Any]]) -> MethodologyLineage:
             late_methods = set(node_late.methods)
 
             # Check if papers share methodology family or methods
-            same_family = node_early.primary_family == node_late.primary_family
+            # Generic 'general_empirical' or empty methods must not fabricate evolution edges
+            has_substantive_methods = bool(early_methods and late_methods)
+            substantive_family = (node_early.primary_family != "general_empirical" and
+                                  node_early.primary_family == node_late.primary_family)
             shares_methods = bool(early_methods & late_methods)
 
-            # Connect if they share methods or early is a critique/baseline for late
-            if (same_family or shares_methods) and node_early.year < node_late.year:
+            # Connect only if they share specific methods or a specialized family
+            if (shares_methods or (substantive_family and has_substantive_methods)) and node_early.year < node_late.year:
                 # Determine relationship type
                 if node_late.paradigm_role == "critique":
                     rel = "critiques"
