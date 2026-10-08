@@ -395,7 +395,13 @@ def align_empirical_finding(
                     flags=re.IGNORECASE,
                 )
                 clean_text = re.sub(
-                    r"\b(?:survey\s+)?(?:response|participation|completion|retention|turnout|attrition|refusal)\s*(?:rates?|ratio|percentage)?\s*(?:of|at|was|is)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    r"\b(?:survey\s+)?(?:response|participation|completion|retention|turnout|attrition|refusal)\s*(?:rates?|ratio|percentage)?\s*(?:increases?|decreases?|reduces?|rises?|falls?|drops?|of|at|was|is|were)?\s*(?:by\s+|of\s+)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    " ",
+                    clean_text,
+                    flags=re.IGNORECASE,
+                )
+                clean_text = re.sub(
+                    r"\b(?:side|adverse)\s+effects?\s*(?:of|at|was|were|is)?\s*[:=]?\s*\d+(?:\.\d+)?%",
                     " ",
                     clean_text,
                     flags=re.IGNORECASE,
@@ -466,27 +472,46 @@ def align_empirical_finding(
                 # If no explicit point estimate is found, check for genuine percentage effects
                 # strictly framed with causal effect verbs (increases/decreases/reduces/etc.)
                 if not extracted_for_paper:
-                    for m in re.finditer(
-                        r"(?P<verb>increases?|increased|raises?|raised|grows?|grew|boosts?|enhances?|improves?|rises?|rose|decreases?|decreased|reduces?|reduced|lowers?|lowered|drops?|dropped|falls?|fell|declines?|declined|effects?|impacts?)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?(?P<pct>[-+]?\d+(?:\.\d+)?%)",
-                        clean_text,
-                        flags=re.IGNORECASE,
-                    ):
+                    causal_pat = (
+                        r"(?P<verb>increases?|increased|increasing|raises?|raised|raising|grows?|grew|growing|"
+                        r"boosts?|boosted|boosting|enhances?|enhanced|enhancing|improves?|improved|improving|"
+                        r"rises?|rose|rising|decreases?|decreased|decreasing|reduces?|reduced|reducing|"
+                        r"lowers?|lowered|lowering|drops?|dropped|dropping|falls?|fell|falling|"
+                        r"declines?|declined|declining)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?(?P<pct>[-+]?\d+(?:\.\d+)?%)"
+                    )
+                    neg_verbs = {
+                        "decrease", "decreases", "decreased", "decreasing",
+                        "reduce", "reduces", "reduced", "reducing",
+                        "lower", "lowers", "lowered", "lowering",
+                        "drop", "drops", "dropped", "dropping",
+                        "fall", "falls", "fell", "falling",
+                        "decline", "declines", "declined", "declining",
+                    }
+                    pos_verbs = {
+                        "increase", "increases", "increased", "increasing",
+                        "raise", "raises", "raised", "raising",
+                        "grow", "grows", "grew", "growing",
+                        "boost", "boosts", "boosted", "boosting",
+                        "enhance", "enhances", "enhanced", "enhancing",
+                        "improve", "improves", "improved", "improving",
+                        "rise", "rises", "rose", "rising",
+                    }
+                    for m in re.finditer(causal_pat, clean_text, flags=re.IGNORECASE):
+                        # Negation check: ignore if negated by "not", "does not", "did not", etc.
+                        prefix = clean_text[max(0, m.start() - 60):m.start()]
+                        if re.search(r"\b(?:not|does\s+not|did\s+not|will\s+not|would\s+not|is\s+not|was\s+not|are\s+not|were\s+not|no|never|neither|cannot|fails?\s+to|without)\b(?:\s+\w+){0,3}\s*$", prefix, re.IGNORECASE):
+                            continue
+
                         verb = m.group("verb").lower()
                         pct_str = m.group("pct")
                         try:
                             val = float(pct_str.replace("%", "")) / 100.0
-                            if verb in (
-                                "decreases", "decreased", "reduces", "reduced",
-                                "lowers", "lowered", "drops", "dropped",
-                                "falls", "fell", "declines", "declined",
-                            ):
+                            if verb in neg_verbs:
                                 val = -abs(val)
-                            elif verb in (
-                                "increases", "increased", "raises", "raised",
-                                "grows", "grew", "boosts", "enhances",
-                                "improves", "rises", "rose",
-                            ):
+                            elif verb in pos_verbs:
                                 val = abs(val)
+                            else:
+                                continue
                             if abs(val) <= 50 and val not in extracted_for_paper:
                                 extracted_for_paper.append(val)
                         except ValueError:

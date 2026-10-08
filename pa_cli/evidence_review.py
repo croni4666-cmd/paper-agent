@@ -183,30 +183,23 @@ def harvest_paper_evidence(
                 stream_bytes = getattr(doc, "stream", None)
                 if isinstance(stream_bytes, (bytes, bytearray)):
                     artifact_sha256 = hashlib.sha256(stream_bytes).hexdigest()
+                else:
+                    try:
+                        active_bytes = file_path.read_bytes()
+                        artifact_sha256 = hashlib.sha256(active_bytes).hexdigest()
+                    except Exception:
+                        pass
                 for p_num, page in enumerate(doc, start=1):
                     txt = page.get_text("text")
                     if txt.strip():
                         pages_text.append((p_num, txt))
                 doc.close()
-
-                # Post-check: ensure hash accurately reflects the parsed document content
-                try:
-                    if not isinstance(stream_bytes, (bytes, bytearray)):
-                        post_bytes = file_path.read_bytes()
-                        post_hash = hashlib.sha256(post_bytes).hexdigest()
-                        if post_hash != artifact_sha256:
-                            with fitz.open(stream=post_bytes, filetype="pdf") as post_doc:
-                                post_texts = [p.get_text("text") for p in post_doc]
-                            parsed_texts = [txt for _, txt in pages_text]
-                            if post_texts == parsed_texts:
-                                artifact_sha256 = post_hash
-                except Exception:
-                    pass
             except Exception:
                 pass
         elif ext in (".md", ".txt"):
             try:
                 txt = file_path.read_text(encoding="utf-8", errors="ignore")
+                artifact_sha256 = hashlib.sha256(txt.encode("utf-8")).hexdigest()
                 pages_text.append((1, txt))
             except Exception:
                 pass
@@ -595,18 +588,22 @@ def generate_evidence_backed_review(
 
                 if HAS_PYMUPDF and p_file.suffix.lower() == ".pdf":
                     try:
-                        with fitz.open(str(p_file)) as d:
+                        with fitz.open(stream=file_bytes, filetype="pdf") as d:
                             if 0 < ev["page"] <= len(d):
                                 raw = d[ev["page"] - 1].get_text("text")
                                 if raw[ev["char_start"]:ev["char_end"]] == ev["excerpt"]:
-                                    pdf_claims += 1
+                                    post_bytes = p_file.read_bytes()
+                                    if hashlib.sha256(post_bytes).hexdigest() == ev.get("artifact_sha256"):
+                                        pdf_claims += 1
                     except Exception:
                         pass
                 elif p_file.suffix.lower() in (".md", ".txt"):
                     try:
-                        raw = p_file.read_text(encoding="utf-8", errors="ignore")
+                        raw = file_bytes.decode("utf-8", errors="ignore")
                         if raw[ev["char_start"]:ev["char_end"]] == ev["excerpt"]:
-                            pdf_claims += 1
+                            post_bytes = p_file.read_bytes()
+                            if hashlib.sha256(post_bytes).hexdigest() == ev.get("artifact_sha256"):
+                                pdf_claims += 1
                     except Exception:
                         pass
     binding_rate = (pdf_claims / total_claims) if total_claims > 0 else 0.0

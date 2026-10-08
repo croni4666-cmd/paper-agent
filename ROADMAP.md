@@ -5074,4 +5074,26 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
   Covered by 6 unit tests in `test_output/test_rereview_findings_c75087e.py`, and registered in `.github/workflows/ci.yml`.
 - **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
 
+### [P3-39] Adversarial Security Hardening, In-Memory Provenance Binding & Multiprocessing Lease Isolation (F1-F5)
 
+- **Status**: done
+- **Added**: 2026-10-08
+- **Started**: 2026-10-08
+- **Completed**: 2026-10-08
+- **Priority**: P1 / P2
+- **Effort**: 1 engineering day
+- **Source**: Adversarial security audit report `SECURITY_AUDIT.md` on `4bc4377` (`v3.10.0.28`).
+- **Rationale**: Closes all 5 confirmed findings (4 P1, 1 P2) from adversarial security evaluation:
+  1. `[P1] F1 (R3)`: verify_paper_rights & passage extraction consumed separate disk reads, allowing ABA swaps during rights check or text extraction. Closed by freezing `raw_bytes` once and passing to `inspect_artifact` and in-memory text/PDF extraction streams.
+  2. `[P1] F2 (R5/R6)`: Path-opened PyMuPDF documents (`doc.stream is None`) and text reads allowed ABA swaps between open and close or post-close, leading to false 1.0 binding rates with mismatched digests. Closed by taking active in-memory byte snapshots during harvesting, parsing reviews via stream, and validating physical file integrity post-parse.
+  3. `[P1] F3 (R4)`: Percentage extraction omitted base form decrease verbs (`decrease`, `reduce`, `lower`, `drop`, `fall`, `decline`), inverted signs, lacked negation detection (`does not decrease`), and accepted non-causal metrics (`side effects of 5%`). Closed by full verb normalization, negative verb set expansion, negation look-behind filtering, and stripping non-causal side effects.
+  4. `[P1] F4`: In multiprocessing, live process reservations were pruned solely by `age > 300s`, allowing paused or delayed processes to be double-spent beyond the 100k token / $0.004 ceiling under logical clock advancement. Closed by coupling lease checks with OS process liveness verification (`_is_pid_alive`).
+  5. `[P2] F5 (R2)`: Shared reservation ledger writes truncated the file before writing; failed disk writes (e.g. disk full midway) corrupted peer reservations. Closed by atomic rollback restoring exact pre-write ledger bytes on any I/O failure.
+- **Outcome**:
+  1. `[P1] F1`: `pa_cli/gateway.py` freezes `raw_bytes` in `PaperVerificationResult`, inspects in-memory bytes, and extracts passage text exclusively from verified streams without re-reading mutable disk paths; sets `provenance_verified = False` if candidate rights checks fail.
+  2. `[P1] F2`: `pa_cli/evidence_review.py` snapshots active bytes while PDF is open, binds `artifact_sha256` to parsed content, and asserts physical file integrity before and after in-memory stream parsing during review verification.
+  3. `[P1] F3`: `pa_cli/align_findings.py` normalizes base verbs, expands `neg_verbs` and `pos_verbs`, adds negation detection across 12 mutation cases, and filters out non-causal side effects and survey metrics.
+  4. `[P1] F4`: `pa_cli/gateway.py` adds `_is_pid_alive` for Windows/POSIX, retaining uncommitted reservations for live processes even past 300s, strictly preventing multi-process double-spending.
+  5. `[P2] F5`: `pa_cli/gateway.py` preserves `orig_bytes` during `_save_reservation` and performs transactional binary rollback if write fails, preventing ledger truncation or corruption.
+  Covered by 7 unit tests in `test_output/test_security_audit_4bc4377.py`, and verified against 100% of probes in `probes.py` and `concurrency.py`.
+- **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.

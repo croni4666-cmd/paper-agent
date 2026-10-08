@@ -74,6 +74,7 @@ jobs:
           python test_output/test_rereview_findings_6ce58eb.py
           python test_output/test_rereview_findings_4a0cb65.py
           python test_output/test_rereview_findings_c75087e.py
+          python test_output/test_security_audit_4bc4377.py
 
   package:
     name: Build wheel and verify package contents

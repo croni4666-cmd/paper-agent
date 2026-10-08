@@ -29,6 +29,7 @@ import json
 import logging
 import os
 import re
+import sys
 import threading
 import time
 import uuid
@@ -114,6 +115,36 @@ def _get_resv_path(audit_path: Path) -> Path:
     return audit_path.parent / f".{audit_path.name}.reservations.json"
 
 
+def _is_pid_alive(pid: int) -> bool:
+    """Check if process with given PID is currently alive on the system."""
+    if not pid or pid <= 0:
+        return False
+    if pid == os.getpid():
+        return True
+    if sys.platform == "win32":
+        try:
+            import ctypes
+            kernel32 = ctypes.windll.kernel32
+            SYNCHRONIZE = 0x00100000
+            PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+            h_proc = kernel32.OpenProcess(SYNCHRONIZE | PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+            if h_proc:
+                exit_code = ctypes.c_ulong()
+                kernel32.GetExitCodeProcess(h_proc, ctypes.byref(exit_code))
+                kernel32.CloseHandle(h_proc)
+                STILL_ACTIVE = 259
+                return exit_code.value == STILL_ACTIVE
+        except Exception:
+            pass
+        return False
+    else:
+        try:
+            os.kill(pid, 0)
+            return True
+        except (OSError, ProcessLookupError):
+            return False
+
+
 def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, Decimal]]]:
     """Load combined active reservations from disk and in-memory tracker. Raises on read error."""
     combined: dict[str, dict[str, tuple[int, Decimal]]] = {}
@@ -127,6 +158,8 @@ def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, D
     resv_path = _get_resv_path(audit_path)
     if resv_path.is_file():
         raw = resv_path.read_text(encoding="utf-8")
+        if not raw.strip():
+            return combined
         data = json.loads(raw)
         now = time.time()
         for run_k, run_resvs in data.items():
@@ -136,8 +169,10 @@ def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, D
                 if not isinstance(info, dict):
                     continue
                 ts = float(info.get("timestamp", 0))
-                # Stale reservation timeout: 300 seconds
-                if now - ts > 300:
+                pid = int(info.get("pid", 0))
+                age = now - ts
+                # Lease expiration: retain if <= 300s OR holding process is still alive!
+                if age > 300 and not (pid and _is_pid_alive(pid)):
                     continue
                 tok = int(info.get("tokens", 0))
                 cst = Decimal(str(info.get("cost", "0.0")))
@@ -150,16 +185,22 @@ def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, 
     """Save an in-flight reservation in memory and on disk. Raises on read/write failure."""
     resv_path = _get_resv_path(audit_path)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
+    orig_text = resv_path.read_text(encoding="utf-8") if resv_path.is_file() else None
+    orig_bytes = orig_text.encode("utf-8") if orig_text is not None else None
     data: dict[str, Any] = {}
-    if resv_path.is_file():
-        raw_text = resv_path.read_text(encoding="utf-8")
-        if raw_text.strip():
-            data = json.loads(raw_text)
+    if orig_text is not None and orig_text.strip():
+        data = json.loads(orig_text)
     now = time.time()
     cleaned: dict[str, Any] = {}
     for r_id, r_dict in data.items():
         if isinstance(r_dict, dict):
-            sub = {k: v for k, v in r_dict.items() if isinstance(v, dict) and now - float(v.get("timestamp", 0)) <= 300}
+            sub = {}
+            for k, v in r_dict.items():
+                if isinstance(v, dict):
+                    pid = int(v.get("pid", 0))
+                    age = now - float(v.get("timestamp", 0))
+                    if age <= 300 or (pid and _is_pid_alive(pid)):
+                        sub[k] = v
             if sub:
                 cleaned[r_id] = sub
     cleaned.setdefault(run_id, {})[resv_id] = {
@@ -168,7 +209,23 @@ def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, 
         "timestamp": now,
         "pid": os.getpid(),
     }
-    resv_path.write_text(json.dumps(cleaned), encoding="utf-8")
+    content = json.dumps(cleaned, ensure_ascii=False)
+    try:
+        resv_path.write_text(content, encoding="utf-8")
+    except Exception:
+        # Atomic rollback: restore exact original ledger state if write fails midway
+        if orig_bytes is not None:
+            try:
+                with open(resv_path, "wb") as f:
+                    f.write(orig_bytes)
+            except Exception:
+                pass
+        elif resv_path.is_file():
+            try:
+                os.remove(resv_path)
+            except Exception:
+                pass
+        raise
     _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
 
 
@@ -180,14 +237,38 @@ def _remove_reservation(audit_path: Path, run_id: str, resv_id: str) -> None:
             _ACTIVE_RESERVATIONS.pop(run_id, None)
 
     resv_path = _get_resv_path(audit_path)
-    if resv_path.is_file():
+    if not resv_path.is_file():
+        return
+    try:
+        orig_text = resv_path.read_text(encoding="utf-8")
+        orig_bytes = orig_text.encode("utf-8")
+        if not orig_text.strip():
+            return
+        data = json.loads(orig_text)
+    except Exception:
+        return
+    now = time.time()
+    cleaned: dict[str, Any] = {}
+    for r_id, r_dict in data.items():
+        if isinstance(r_dict, dict):
+            sub = {}
+            for k, v in r_dict.items():
+                if r_id == run_id and k == resv_id:
+                    continue
+                if isinstance(v, dict):
+                    pid = int(v.get("pid", 0))
+                    age = now - float(v.get("timestamp", 0))
+                    if age <= 300 or (pid and _is_pid_alive(pid)):
+                        sub[k] = v
+            if sub:
+                cleaned[r_id] = sub
+    try:
+        resv_path.write_text(json.dumps(cleaned, ensure_ascii=False), encoding="utf-8")
+    except Exception:
+        # Restore original on failure
         try:
-            data = json.loads(resv_path.read_text(encoding="utf-8"))
-            if run_id in data and resv_id in data[run_id]:
-                data[run_id].pop(resv_id, None)
-                if not data[run_id]:
-                    data.pop(run_id, None)
-                resv_path.write_text(json.dumps(data), encoding="utf-8")
+            with open(resv_path, "wb") as f:
+                f.write(orig_bytes)
         except Exception:
             pass
 
@@ -241,9 +322,12 @@ class PaperVerificationResult:
     blocking_reasons: list[str] = field(default_factory=list)
     license_urls: list[str] = field(default_factory=list)
     artifact_sha256: str = ""
+    raw_bytes: bytes = field(default=b"", repr=False)
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        d = asdict(self)
+        d.pop("raw_bytes", None)
+        return d
 
 
 @dataclass
@@ -331,8 +415,10 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 blocking_reasons=[f"Artifact file not found: {candidate.artifact_path}"],
             )
         try:
-            art_sha = hashlib.sha256(artifact_p.read_bytes()).hexdigest()
+            raw_bytes = artifact_p.read_bytes()
+            art_sha = hashlib.sha256(raw_bytes).hexdigest()
         except Exception:
+            raw_bytes = b""
             art_sha = ""
         p_res = inspect_artifact(
             path=artifact_p,
@@ -341,6 +427,7 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
             url=candidate.url,
             expected_title=candidate.title or None,
             data_class=candidate.data_class,
+            raw_bytes=raw_bytes,
         )
         rights_cls = p_res.get("rights", {}).get("class", "unknown")
         lic_urls = p_res.get("rights", {}).get("license_urls", [])
@@ -356,6 +443,7 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 rights_class="public_oa",
                 license_urls=lic_urls,
                 artifact_sha256=art_sha,
+                raw_bytes=raw_bytes,
             )
         else:
             return PaperVerificationResult(
@@ -367,6 +455,7 @@ def verify_paper_rights(candidate: PaperEvaluationCandidate) -> PaperVerificatio
                 blocking_reasons=blocking or ["Artifact fails public-OA metadata verification."],
                 license_urls=lic_urls,
                 artifact_sha256=art_sha,
+                raw_bytes=raw_bytes,
             )
 
     # 4. Strict rejection if artifact_path is omitted / not provided
@@ -470,12 +559,14 @@ def evaluate_gateway_request(
     verified_oa_count = 0
     blocked_count = 0
     cand_rights_hashes: dict[str, str] = {}
+    cand_rights_bytes: dict[str, bytes] = {}
     for cand in candidates:
         v_res = verify_paper_rights(cand)
         if v_res.is_public_oa:
             verified_oa_count += 1
             if cand.artifact_path and v_res.artifact_sha256:
                 cand_rights_hashes[cand.artifact_path] = v_res.artifact_sha256
+                cand_rights_bytes[cand.artifact_path] = v_res.raw_bytes
         else:
             blocked_count += 1
             rejection_reasons.append(f"Paper '{cand.paper_id}' ({cand.doi}): {v_res.status} - {'; '.join(v_res.blocking_reasons)}")
@@ -500,30 +591,36 @@ def evaluate_gateway_request(
     if verify_passage_provenance and passages:
         candidate_texts: list[str] = []
         artifact_mutated = False
-        for cand in candidates:
-            if cand.artifact_path and Path(cand.artifact_path).is_file():
-                cpath = Path(cand.artifact_path)
-                try:
-                    current_hash = hashlib.sha256(cpath.read_bytes()).hexdigest()
-                    expected_hash = cand_rights_hashes.get(cand.artifact_path)
-                    if expected_hash and current_hash != expected_hash:
-                        artifact_mutated = True
-                        rejection_reasons.append(
-                            f"Artifact security violation: file '{cand.artifact_path}' was mutated after rights verification (hash mismatch)."
-                        )
-                        continue
-
-                    if cpath.suffix.lower() == ".pdf":
-                        import pymupdf as fitz
-                        with fitz.open(str(cpath)) as doc:
-                            candidate_texts.append("\n".join(page.get_text("text") for page in doc))
-                    else:
-                        candidate_texts.append(cpath.read_text(encoding="utf-8", errors="ignore"))
-                except Exception:
-                    pass
-        if artifact_mutated:
+        if blocked_count > 0:
             all_found = False
         else:
+            for cand in candidates:
+                if cand.artifact_path and Path(cand.artifact_path).is_file():
+                    cpath = Path(cand.artifact_path)
+                    try:
+                        current_bytes = cpath.read_bytes()
+                        current_hash = hashlib.sha256(current_bytes).hexdigest()
+                        expected_hash = cand_rights_hashes.get(cand.artifact_path)
+                        expected_bytes = cand_rights_bytes.get(cand.artifact_path)
+                        if (expected_hash and current_hash != expected_hash) or (expected_bytes is not None and current_bytes != expected_bytes):
+                            artifact_mutated = True
+                            rejection_reasons.append(
+                                f"Artifact security violation: file '{cand.artifact_path}' was mutated after rights verification (hash mismatch)."
+                            )
+                            continue
+
+                        parse_bytes = expected_bytes if expected_bytes is not None else current_bytes
+                        if cpath.suffix.lower() == ".pdf":
+                            import pymupdf as fitz
+                            with fitz.open(stream=parse_bytes, filetype="pdf") as doc:
+                                candidate_texts.append("\n".join(page.get_text("text") for page in doc))
+                        else:
+                            candidate_texts.append(parse_bytes.decode("utf-8", errors="ignore"))
+                    except Exception:
+                        pass
+        if artifact_mutated:
+            all_found = False
+        elif blocked_count == 0:
             combined_candidate_text = "\n".join(candidate_texts)
             all_found = True
             for p in passages:
@@ -533,7 +630,7 @@ def evaluate_gateway_request(
                     rejection_reasons.append(
                         f"Passage payload provenance violation: text snippet '{p_strip[:50]}...' is not anchored in verified candidate artifact."
                     )
-        if all_found and candidate_texts and not artifact_mutated:
+        if all_found and candidate_texts and not artifact_mutated and blocked_count == 0:
             provenance_verified = True
     elif not passages:
         provenance_verified = True

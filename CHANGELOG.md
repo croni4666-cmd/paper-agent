@@ -11,6 +11,33 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
+## [3.10.0.29] - 2026-10-08
+
+### Adversarial Security Hardening, In-Memory Provenance Binding & Multiprocessing Lease Isolation (F1-F5)
+
+- **[P1] F1 Frozen Byte Snapshot for Rights & Passage Provenance (`pa_cli/gateway.py`, `pa_cli/provenance.py`)**:
+  - `verify_paper_rights` reads artifact bytes once, passing `raw_bytes` directly to `inspect_artifact` and caching in `PaperVerificationResult.raw_bytes`.
+  - In `evaluate_gateway_request`, Step 4b extracts candidate passages directly from the frozen byte snapshot (`cand_rights_bytes`) via in-memory stream (`fitz.open(stream=parse_bytes)` / UTF-8 decode), eliminating separate disk reads.
+  - Asserted that candidate rights failures prevent setting `provenance_verified = True`, defeating adversarial ABA substitution attacks.
+- **[P1] F2 Active Document Byte Snapping & Post-Parse Verification (`pa_cli/evidence_review.py`)**:
+  - In `harvest_paper_evidence`, active bytes are captured while the PyMuPDF document is open (`file_path.read_bytes()`) when `doc.stream` is None (path opening), and text decoded bytes are hashed directly, binding `artifact_sha256` to actual parsed content.
+  - In `generate_evidence_backed_review`, verification parses claims strictly from verified `file_bytes` streams and confirms post-parse disk integrity (`post_bytes == recorded_hash`), ensuring mutated files yield `binding_rate == 0.0`.
+- **[P1] F3 Econometric Verb Normalization, Negation & Non-Causal Metric Filtering (`pa_cli/align_findings.py`)**:
+  - Expanded negative causal verb set to include base forms: `{"decrease", "decreases", "decreased", "decreasing", "reduce", "reduces", "reduced", "reducing", "lower", "lowers", "lowered", "lowering", "drop", "drops", "dropped", "dropping", "fall", "falls", "fell", "falling", "decline", "declines", "declined", "declining"}`.
+  - Expanded positive causal verb set to include base forms (`increase`, `raise`, `grow`, `boost`, `enhance`, `improve`, `rise`).
+  - Removed non-verb nouns `effects?|impacts?` from the causal verb regex.
+  - Added look-behind negation detection (e.g. `does not decrease`, `did not increase`, `fails to drop`), discarding negated empirical claims.
+  - Added filter patterns to eliminate non-causal metrics such as `side effects of 5%` or `adverse effects of 8%` from literature distributions.
+- **[P1] F4 Multiprocessing PID Liveness Validation for Uncommitted Leases (`pa_cli/gateway.py`)**:
+  - Implemented `_is_pid_alive(pid: int) -> bool` using Win32 `OpenProcess`/`GetExitCodeProcess` and POSIX `os.kill(pid, 0)`.
+  - In `_load_all_reservations`, `_save_reservation`, and `_remove_reservation`, uncommitted leases are preserved beyond 300 seconds if the holding process is still running, preventing multi-process double-spending and budget ceiling violations (>100k tokens / $0.004).
+- **[P2] F5 Atomic Rollback on Partial Reservation Ledger Write (`pa_cli/gateway.py`)**:
+  - Preserved pre-write ledger bytes `orig_bytes` in `_save_reservation`.
+  - On any disk error (e.g. disk full after partial write/truncation), automatically restores exact original ledger bytes, preventing ledger corruption and preserving peer reservations for clean retries.
+- **CI & Regression**:
+  - Added `test_output/test_security_audit_4bc4377.py` with 7 dedicated test cases covering F1-F5.
+  - Registered `test_security_audit_4bc4377.py` in `.github/workflows/ci.yml`.
+
 ## [3.10.0.28] - 2026-10-08
 
 ### Reservation Ledger Atomic Consistency, Provenance Hash Continuity, and Signed Effect Calibration (R1-R6)

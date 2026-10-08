@@ -43,11 +43,15 @@ def _parse_xml(body):
     return ET.fromstring(body)
 
 
-def _metadata(path):
+def _metadata(path, raw_bytes=None):
     """Return evidence anchored in the article header or embedded XMP."""
+    if raw_bytes is None:
+        if path.is_file():
+            raw_bytes = path.read_bytes()
+        else:
+            return [], [], [], 'artifact_missing'
     if path.suffix.lower() == '.xml':
-        with path.open('rb') as stream:
-            tree = _parse_xml(stream.read(MAX_XML_BYTES + 1))
+        tree = _parse_xml(raw_bytes[:MAX_XML_BYTES + 1])
         # Strip JATS namespace only; never search the body or back matter.
         for node in tree.iter():
             node.tag = node.tag.rsplit('}', 1)[-1]
@@ -70,7 +74,7 @@ def _metadata(path):
         import pymupdf as fitz
     except ImportError:
         import fitz  # Compatibility with older installations.
-    with fitz.open(str(path)) as doc:
+    with fitz.open(stream=raw_bytes, filetype="pdf") as doc:
         xmp = doc.get_xml_metadata()
     if not xmp:
         return [], [], [], 'pdf_xmp_missing'
@@ -93,7 +97,7 @@ def _allowed_license(value):
 
 
 def inspect_artifact(path, requested_doi, source='', url='', *,
-                     expected_title=None, data_class='unknown'):
+                     expected_title=None, data_class='unknown', raw_bytes=None):
     """Inspect bytes on every call, including cache hits. Never authorize uploads.
 
     Public data classification must be explicit. Only CC BY/CC0 metadata and
@@ -106,14 +110,14 @@ def inspect_artifact(path, requested_doi, source='', url='', *,
     dois, titles, licenses = [], [], []
     evidence = 'metadata_unavailable'
     try:
-        if artifact.stat().st_size > MAX_ARTIFACT_BYTES:
+        if raw_bytes is None:
+            if artifact.stat().st_size > MAX_ARTIFACT_BYTES:
+                raise ValueError('artifact_size_limit')
+            raw_bytes = artifact.read_bytes()
+        elif len(raw_bytes) > MAX_ARTIFACT_BYTES:
             raise ValueError('artifact_size_limit')
-        sha = hashlib.sha256()
-        with artifact.open('rb') as stream:
-            for block in iter(lambda: stream.read(1024 * 1024), b''):
-                sha.update(block)
-        digest = sha.hexdigest()
-        dois, titles, licenses, evidence = _metadata(artifact)
+        digest = hashlib.sha256(raw_bytes).hexdigest()
+        dois, titles, licenses, evidence = _metadata(artifact, raw_bytes=raw_bytes)
     except Exception as exc:
         # Optional parser errors must not break local Fetch or leak document text.
         evidence = f'metadata_unavailable:{type(exc).__name__}'
