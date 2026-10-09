@@ -11,6 +11,20 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
+## [3.10.0.30] - 2026-10-09
+
+### Verified Consistency Fixes and Cross-Platform Quality Gate
+
+- Parse PDF/text evidence and compute physical SHA-256 from one captured byte snapshot. Preserve original text bytes when hashing CRLF or non-UTF-8 input; snapshot read failures cannot produce file-bound evidence.
+- Correct empty-payload provenance receipts for blocked candidates.
+- Normalize contraction negations and conservatively exclude negated, uncertain, nominal, survey and side-effect percentage matches from effect benchmarks.
+- Treat PID liveness as alive/dead/unknown. Query errors preserve quota; Windows API calls use declared ctypes signatures, checked results and guaranteed handle cleanup.
+- Publish reservation changes via complete temporary writes, flush/fsync and atomic replace. Memory follows successful disk commits; empty/corrupt ledgers fail closed. Removal uses the same publication protocol.
+- Add 19 consistency boundary regressions and a reusable offline quality gate that runs 65 related tests and repeats boundary tests three times. CI runs the gate on Ubuntu and Windows alongside Python 3.10/3.11/3.12 regressions and wheel verification.
+- Assessment: suitable for the current supervised offline workflow. Unknown/legacy leases remain conservative and require explicit recovery; cross-file power-loss transactions and complete NLP semantics are not guaranteed. See `docs/stability-3.10.0.30.md`.
+- Validation on the merged fix: all six CI jobs passed. The restricted local broad suite had 683 passes and the same 66 environment-dependent failures as the original checkout, with no new failed test IDs; one blocking MCP stdio case was excluded locally. These limitations do not waive CI checks.
+- Update runtime/package version metadata and README to identify the verified revision; no new runtime dependencies or public API changes.
+
 ## [3.10.0.29] - 2026-10-08
 
 ### Adversarial Security Hardening, In-Memory Provenance Binding & Multiprocessing Lease Isolation (F1-F5)

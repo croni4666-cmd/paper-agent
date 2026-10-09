@@ -1,6 +1,10 @@
 # paper-agent
 
 Academic paper search, fetch, and literature-review synthesis CLI.
+
+Current release: **v3.10.0.30**. This revision includes immutable evidence snapshots,
+fault-safe reservation persistence and Ubuntu/Windows consistency quality gates.
+See [stability and operating boundaries](docs/stability-3.10.0.30.md).
 8 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI, PubMed,
 ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
 collection + pa build manuscript pipeline + Tier 2 research-topic project
@@ -713,7 +717,7 @@ gracefully (use `--create` to create a stub).
 ## Documentation
 
 - [ROADMAP.md](ROADMAP.md) — what's done, what's next, full priority plan
-- [CHANGELOG.md](CHANGELOG.md) — version-by-version release notes (v3.10.0.0 latest)
+- [CHANGELOG.md](CHANGELOG.md) — version-by-version release notes (v3.10.0.30 latest)
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system design + Cloudflare handling
 
 ## CLI: try `pa --help` and `pa <command> --help`
