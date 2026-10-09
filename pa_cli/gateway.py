@@ -378,6 +378,9 @@ class GatewayReceipt:
     gateway_decision: str  # 'AUTHORIZED', 'REJECTED'
     rejection_reasons: list[str] = field(default_factory=list)
     provenance_verified: bool = False
+    request_id: str = ""
+    recovery: Optional[dict[str, str]] = None
+    legacy_pending: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -534,21 +537,10 @@ def estimate_tokens_and_cost(text_payload: str) -> tuple[int, Decimal]:
     return estimated_tokens, cost.quantize(Decimal("0.000001"))
 
 
-def evaluate_gateway_request(
-    run_id: str,
-    operator: str,
-    candidates: list[PaperEvaluationCandidate],
-    passages: list[str],
-    consent_public_oa: bool,
-    consent_zero_retention: bool,
-    max_cost_usd_limit: Optional[str] = None,
-    audit_file: Optional[Path] = None,
-    verify_passage_provenance: bool = False,
-) -> tuple[GatewayReceipt, list[str]]:
-    """Execute the complete M6 Safe Gateway security & privacy verification pipeline."""
+def _prepare_gateway_request(run_id, operator, candidates, passages, consent_public_oa,
+                             consent_zero_retention, verify_passage_provenance):
+    """Shared frozen-artifact/content checks for both accounting backends."""
     rejection_reasons: list[str] = []
-    resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"
-    acquired_reservation = False
 
     # 1. Mandatory Operator Consent Checks
     if not consent_public_oa:
@@ -648,6 +640,116 @@ def evaluate_gateway_request(
     combined_payload = "\n".join(sanitized_passages)
     est_tokens, est_cost = estimate_tokens_and_cost(combined_payload)
 
+    payload_hash = hashlib.sha256(combined_payload.encode("utf-8")).hexdigest()
+    receipt = GatewayReceipt(
+        receipt_id=f"rcpt_{run_id}_{payload_hash[:10]}", run_id=run_id,
+        timestamp_utc=datetime.now(timezone.utc).isoformat(), operator=operator,
+        total_candidates=len(candidates), verified_oa_count=verified_oa_count,
+        blocked_count=blocked_count, injections_intercepted_count=total_injections,
+        pii_scrubbed_count=total_pii, estimated_tokens=est_tokens,
+        estimated_cost_usd=str(est_cost), ceiling_compliant=True,
+        zero_retention_attested=consent_zero_retention, payload_sha256=payload_hash,
+        gateway_decision="REJECTED" if rejection_reasons else "AUTHORIZED",
+        rejection_reasons=rejection_reasons, provenance_verified=provenance_verified,
+    )
+    return receipt, sanitized_passages
+
+
+def gateway_store_path(audit_file: Optional[Path] = None) -> Path:
+    """Deterministic sibling journal; the JSONL path remains a legacy locator."""
+    audit = Path(audit_file or DEFAULT_AUDIT_LOG_PATH)
+    return audit.parent / f".{audit.name}.gateway.sqlite3"
+
+
+def evaluate_gateway_request(
+    run_id: str, operator: str, candidates: list[PaperEvaluationCandidate], passages: list[str],
+    consent_public_oa: bool, consent_zero_retention: bool,
+    max_cost_usd_limit: Optional[str] = None, audit_file: Optional[Path] = None,
+    verify_passage_provenance: bool = False, *, ledger_file: Optional[Path] = None,
+    storage_backend: str = "transactional",
+) -> tuple[GatewayReceipt, list[str]]:
+    """Validate offline and durably authorize with the v4 transactional journal.
+
+    ``audit_file`` locates a legacy epoch and its sibling journal; it is never
+    silently imported. ``legacy-json`` is a deprecated compatibility adapter.
+    A new request ID is generated per evaluation; Store.finalize is idempotent.
+    """
+    from .gateway_store import GatewayStore
+    from .process_identity import current_owner
+
+    audit = Path(audit_file or DEFAULT_AUDIT_LOG_PATH)
+    ledger = Path(ledger_file) if ledger_file is not None else gateway_store_path(audit)
+    if storage_backend == "legacy-json" and not ledger.exists() and not gateway_store_path(audit).exists():
+        return _evaluate_legacy_gateway_request(run_id, operator, candidates, passages,
+            consent_public_oa, consent_zero_retention, max_cost_usd_limit, audit,
+            verify_passage_provenance)
+
+    receipt, sanitized = _prepare_gateway_request(run_id, operator, candidates, passages,
+        consent_public_oa, consent_zero_retention, verify_passage_provenance)
+    receipt.request_id = f"req_{uuid.uuid4().hex}"
+    store = None
+    try:
+        if storage_backend != "transactional":
+            raise ValueError("Cannot use legacy/unknown backend in a transactional epoch")
+        if not ledger.exists() and (audit.exists() or _get_resv_path(audit).exists()):
+            raise ValueError("Legacy gateway data requires explicit migration with all v3 writers stopped")
+        configured = Decimal(max_cost_usd_limit) if max_cost_usd_limit is not None else MAX_COST_USD_CEILING
+        if not configured.is_finite() or configured < 0:
+            raise ValueError("Cost ceiling must be finite and nonnegative")
+        cap = min(configured, MAX_COST_USD_CEILING)
+        store = GatewayStore(ledger)
+        if audit.exists() or _get_resv_path(audit).exists():
+            sidecar = _get_resv_path(audit)
+            digests = {"audit": hashlib.sha256(audit.read_bytes()).hexdigest() if audit.exists() else None,
+                       "reservations": hashlib.sha256(sidecar.read_bytes()).hexdigest() if sidecar.exists() else None}
+            if not any(event.get("kind") == "migration" and event.get("source_digests") == digests
+                       for event in store.status()["events"]):
+                raise ValueError("Legacy gateway data requires a completed explicit migration with unchanged sources")
+        if receipt.gateway_decision == "AUTHORIZED":
+            accepted = store.reserve(receipt.request_id, run_id, receipt.estimated_tokens,
+                Decimal(receipt.estimated_cost_usd), MAX_INPUT_TOKENS_CEILING, cap,
+                current_owner(), receipt.to_dict())
+            if not accepted:
+                receipt.gateway_decision = "REJECTED"
+                receipt.ceiling_compliant = False
+                receipt.rejection_reasons.append("Cumulative token or cost budget ceiling exceeded")
+                store.record_rejection(receipt.to_dict())
+            else:
+                store.finalize(receipt.request_id, receipt.to_dict())
+        else:
+            store.record_rejection(receipt.to_dict())
+    except Exception as exc:
+        # Never release a reservation on ambiguous persistence failure. Recovery
+        # uses the immutable request snapshot and preserves accounting exactly once.
+        receipt.gateway_decision = "REJECTED"
+        receipt.ceiling_compliant = False
+        receipt.rejection_reasons.append(f"Gateway journal unavailable or conflicting state: {exc}")
+    finally:
+        if store is not None:
+            store.close()
+    return receipt, sanitized
+
+
+def _evaluate_legacy_gateway_request(
+    run_id: str,
+    operator: str,
+    candidates: list[PaperEvaluationCandidate],
+    passages: list[str],
+    consent_public_oa: bool,
+    consent_zero_retention: bool,
+    max_cost_usd_limit: Optional[str] = None,
+    audit_file: Optional[Path] = None,
+    verify_passage_provenance: bool = False,
+) -> tuple[GatewayReceipt, list[str]]:
+    """Execute the complete M6 Safe Gateway security & privacy verification pipeline."""
+    receipt, sanitized_passages = _prepare_gateway_request(run_id, operator, candidates, passages,
+        consent_public_oa, consent_zero_retention, verify_passage_provenance)
+    rejection_reasons = receipt.rejection_reasons
+    est_tokens = receipt.estimated_tokens
+    est_cost = Decimal(receipt.estimated_cost_usd)
+    combined_payload = "\n".join(sanitized_passages)
+    resv_id = f"resv_{run_id}_{uuid.uuid4().hex}"
+    acquired_reservation = False
     configured_max_cost = Decimal(max_cost_usd_limit) if max_cost_usd_limit else MAX_COST_USD_CEILING
     effective_max_cost = min(MAX_COST_USD_CEILING, configured_max_cost)
     target_audit_path = audit_file or DEFAULT_AUDIT_LOG_PATH
@@ -737,25 +839,10 @@ def evaluate_gateway_request(
         receipt_id = f"rcpt_{run_id}_{payload_hash[:10]}"
         timestamp = datetime.now(timezone.utc).isoformat()
 
-    receipt = GatewayReceipt(
-        receipt_id=receipt_id,
-        run_id=run_id,
-        timestamp_utc=timestamp,
-        operator=operator,
-        total_candidates=len(candidates),
-        verified_oa_count=verified_oa_count,
-        blocked_count=blocked_count,
-        injections_intercepted_count=total_injections,
-        pii_scrubbed_count=total_pii,
-        estimated_tokens=est_tokens,
-        estimated_cost_usd=str(est_cost),
-        ceiling_compliant=ceiling_ok,
-        zero_retention_attested=consent_zero_retention,
-        payload_sha256=payload_hash,
-        gateway_decision="AUTHORIZED" if passed else "REJECTED",
-        rejection_reasons=rejection_reasons,
-        provenance_verified=provenance_verified,
-    )
+    receipt.receipt_id = receipt_id
+    receipt.timestamp_utc = timestamp
+    receipt.ceiling_compliant = ceiling_ok
+    receipt.gateway_decision = "AUTHORIZED" if passed else "REJECTED"
 
     try:
         # Append to local audit log (fail-closed if writing fails)
@@ -788,8 +875,24 @@ def record_gateway_audit_event(receipt: GatewayReceipt, audit_file: Optional[Pat
         return False
 
 
-def read_gateway_audit_events(audit_file: Optional[Path] = None) -> list[GatewayReceipt]:
+def read_gateway_audit_events(audit_file: Optional[Path] = None, *, ledger_file: Optional[Path] = None,
+                              storage_backend: str = "transactional") -> list[GatewayReceipt]:
     """Read all recorded gateway verification receipts."""
+    if storage_backend == "transactional":
+        from .gateway_store import GatewayStore
+        from dataclasses import fields
+        keys = {item.name for item in fields(GatewayReceipt)}
+        # Legacy pending rows lacked content/rights metadata. Keep that unknown
+        # rather than manufacturing attestation during operator reconciliation.
+        defaults = dict(timestamp_utc="legacy", operator="legacy", total_candidates=0,
+                        verified_oa_count=0, blocked_count=0, injections_intercepted_count=0,
+                        pii_scrubbed_count=0, ceiling_compliant=False,
+                        zero_retention_attested=False, payload_sha256="")
+        with GatewayStore(ledger_file or gateway_store_path(audit_file), read_only=True, create=False) as store:
+            return [GatewayReceipt(**{key: value for key, value in (defaults | rec).items() if key in keys})
+                    for rec in store.receipts()]
+    if storage_backend != "legacy-json":
+        raise ValueError("Unknown gateway backend")
     path = audit_file or DEFAULT_AUDIT_LOG_PATH
     if not path.is_file():
         return []

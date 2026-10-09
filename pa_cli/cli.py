@@ -34,14 +34,18 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
 @click.group(context_settings=CONTEXT_SETTINGS)
 @click.version_option(__version__, prog_name="paper-agent (pa)")
-def main():
+@click.pass_context
+def main(ctx):
     """paper-agent CLI — academic paper fetch + lit review synthesis.
 
     paper-agent v4 design principle: after 5 minutes of Cloudflare challenge
     failure, stop iterating and surface a "your turn" handoff. Real human
     browser sessions remain the only reliable Cloudflare bypass.
     """
-    # At every CLI invocation:
+    if ctx.invoked_subcommand == "gateway":
+        # Local journal commands have no dependency on external API credentials.
+        return
+    # At every other CLI invocation:
     #   1. Load .env into os.environ (does not override existing values)
     #   2. Emit expiry reminders to stderr if any keys are <= 14 days
     #      to expiry or already expired. Quiet by default to keep
@@ -2347,10 +2351,12 @@ def gateway_group():
               default="table", show_default=True, help="Output display format")
 @click.option("-o", "--output", default=None, help="Destination file to save gateway receipt")
 @click.option("--verify-provenance", is_flag=True, default=False, help="Verify that passages originate from candidate artifacts")
+@click.option("--ledger", default=None, type=click.Path(dir_okay=False), help="Canonical local gateway journal")
+@click.option("--run-id", default=None, help="Stable run identity for cumulative budget accounting")
 @click.option("--json", "as_json", is_flag=True, help="Output receipt as raw JSON")
 def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text, operator,
                        consent_public_oa, consent_zero_retention, max_cost_limit,
-                       format_type, output, verify_provenance, as_json):
+                       format_type, output, verify_provenance, ledger, run_id, as_json):
     """Run pre-flight gateway verification on paper candidate and text passages."""
     from .gateway import (
         PaperEvaluationCandidate,
@@ -2360,7 +2366,7 @@ def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text
     )
     import uuid
 
-    run_id = f"run_{uuid.uuid4().hex[:8]}"
+    run_id = run_id or f"run_{uuid.uuid4().hex[:8]}"
     candidates = []
     if not url:
         src_lower = source.lower()
@@ -2393,6 +2399,7 @@ def gateway_verify_cmd(artifact_file, doi, source, url, data_class, passage_text
         consent_zero_retention=consent_zero_retention,
         max_cost_usd_limit=max_cost_limit,
         verify_passage_provenance=verify_provenance,
+        ledger_file=Path(ledger) if ledger else None,
     )
 
     fmt = "json" if as_json else format_type.lower()
@@ -2436,30 +2443,28 @@ def gateway_check_injection_cmd(text, as_json):
 
 
 @gateway_group.command("audit")
-@click.option("--limit", type=int, default=10, show_default=True, help="Maximum recent receipts to show")
-@click.option("--json", "as_json", is_flag=True, help="Print raw JSON lines")
-def gateway_audit_cmd(limit, as_json):
-    """View local append-only gateway verification audit trail."""
-    from .gateway import read_gateway_audit_events
+@click.option("--limit", type=click.IntRange(min=1), default=10, show_default=True)
+@click.option("--ledger", type=click.Path(dir_okay=False), help="Existing canonical journal")
+@click.option("--json", "as_json", is_flag=True)
+def gateway_audit_cmd(limit, ledger, as_json):
+    """Read durable receipt history without creating or changing the journal."""
+    from .gateway_commands import _guarded, _path, _display
+    from .gateway_store import GatewayStore
+    def action():
+        with GatewayStore(_path(ledger), read_only=True, create=False) as store:
+            events = store.receipts(limit)
+        if as_json:
+            _display(events, True)
+        else:
+            click.echo(f"Recent Gateway Receipts ({len(events)}):")
+            for event in reversed(events):
+                click.echo(f"{event.get('timestamp_utc', 'legacy')} | {event['request_id']} | "
+                           f"{event['gateway_decision']} | Cost: ${event['estimated_cost_usd']}")
+    _guarded(action)
 
-    events = read_gateway_audit_events()
-    if not events:
-        click.echo("[pa gateway] No gateway audit events recorded yet.")
-        return
 
-    recent = events[-limit:]
-    if as_json:
-        for ev in recent:
-            click.echo(json.dumps(ev.to_dict(), ensure_ascii=False))
-    else:
-        click.echo(f"Recent Gateway Verification Receipts (last {len(recent)} of {len(events)}):")
-        click.echo("-" * 86)
-        for ev in reversed(recent):
-            click.echo(f"[{ev.timestamp_utc}] {ev.receipt_id} | {ev.gateway_decision} | "
-                       f"OA: {ev.verified_oa_count}/{ev.total_candidates} | "
-                       f"Cost: ${ev.estimated_cost_usd} | Operator: {ev.operator}")
-        click.echo("-" * 86)
-
+from .gateway_commands import register_gateway_commands
+register_gateway_commands(gateway_group)
 
 
 # Named search presets with parameter snapshots. Re-run `pa search` without

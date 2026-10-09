@@ -29,7 +29,7 @@ def write_oa(path):
 
 
 def evaluate(root, passages, **extra):
-    return g.evaluate_gateway_request(
+    return g._evaluate_legacy_gateway_request(
         "shared", "offline", [g.PaperEvaluationCandidate(
             "paper", str(root / "public.xml"), "10.1234/test",
             source="pmc_xml_only", url="https://eutils.ncbi.nlm.nih.gov")],

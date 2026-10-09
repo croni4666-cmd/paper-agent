@@ -30,7 +30,7 @@ from pa_cli.evidence_review import harvest_paper_evidence
 from pa_cli.gateway import (
     PaperEvaluationCandidate,
     verify_paper_rights,
-    evaluate_gateway_request,
+    _evaluate_legacy_gateway_request as evaluate_gateway_request,
     record_gateway_audit_event,
 )
 from pa_cli.stats_check import check_p_consistency, summarize_findings

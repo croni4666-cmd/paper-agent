@@ -84,7 +84,7 @@ class TestSecurityAudit4BC4377(unittest.TestCase):
                 p.write_bytes(a_bytes)
 
         with patch.object(g, "inspect_artifact", swap_inspect):
-            receipt, _ = g.evaluate_gateway_request(
+            receipt, _ = g._evaluate_legacy_gateway_request(
                 "run-f1", "offline-auditor", [cand], ["Non OA confidential passage."],
                 True, True, audit_file=self.audit_log, verify_passage_provenance=True,
             )
@@ -110,7 +110,7 @@ class TestSecurityAudit4BC4377(unittest.TestCase):
             return orig_read(path_obj, *args, **kwargs)
 
         with patch.object(Path, "read_text", swap_read):
-            receipt, _ = g.evaluate_gateway_request(
+            receipt, _ = g._evaluate_legacy_gateway_request(
                 "run-f1-parse", "offline-auditor", [cand], ["Secret replacement passage."],
                 True, True, audit_file=self.audit_log, verify_passage_provenance=True,
             )

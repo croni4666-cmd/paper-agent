@@ -2048,6 +2048,15 @@ alone missed the fieldID 1 → 59 change.
   - E. CLI wire + 1 e2e test (3-paper fixture, mock one channel failure) — 40min ✅
   - F. real-corpus smoke test (5-10 paper mix) + edge-case error reporting polish — 60min
     (deferred to user-real-corpus run; mock tests cover all edge cases)
+
+  **Modified 2026-10-09 — real-corpus validation indefinitely suspended**:
+  Per the user's explicit instruction (no time for real-corpus work), `[P2-11]`
+  sub-task F's real-corpus Fetch validation is **suspended indefinitely**, with no
+  restart date, scheduled reminder, or personal-corpus access. Shipped batch Fetch
+  and controlled regressions remain available. Historical channel observations
+  and mocked checks do not establish present live download performance; the
+  unfinished real-corpus acceptance condition remains unfinished. Engineering
+  fixes and generated-fixture reporting checks may proceed under `[P3-40]`.
 - **`[P2-12] pa project` `init/list/status/corpus-search/corpus-merge`** —
   Multi-corpus management. Each research topic = one project at
   `~/.paper-agent/projects/<slug>/`, holding its own bibtex + judge
@@ -4432,7 +4441,7 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
 ### [P3-26] v02 Global Sample Pool — single source of truth for relevance labels (added 2026-08-03)
 
-- **Status**: in-progress; live read-only check 2026-09-25: 1 active entry, 0 relevance labels, all gates locked
+- **Status**: suspended indefinitely for real-corpus accumulation, human labeling and evaluation (user instruction 2026-10-09); shipped local infrastructure remains available. Historical read-only check 2026-09-25: 1 active entry, 0 relevance labels, all gates locked.
 - **Added**: 2026-08-03
 - **Priority**: P0 (foundation for [P1-13], [P1-19], [P3-22..25] and all future held-out evaluations)
 - **Source**: User direction 2026-08-03 ("你的真实样本池子应该有让别的对话写入的能力...样本池是需要我自己积累的,而不是你自己生成的...样本池子要和 rerank 方法之间做一层隔离"); honest 3-tier audit of v01 50-query evaluation (5 methodological errors acknowledged 2026-08-03)
@@ -4442,12 +4451,12 @@ and `pa review` now surfaces the caveat. Marking **done**.
   - `README.md` (canonical, 22KB, 11 sections + 4 appendices) — every Mavis session reads this
   - `schema.sql` (SQLite DDL, 4 tables + 6 views + 5 gates)
   - `example_entry.json` (standard entry example)
-  - `pool.sqlite` (initialized; live 2026-09-25: 1 active entry, 0 relevance labels)
+  - `pool.sqlite` (initialized; historical read-only check 2026-09-25: 1 active entry, 0 relevance labels)
 - **Three Iron Rules** (强制,任何场景):
   1. **User only write** — Mavis 永远不自动加;`add` 命令默认 interactive confirm
   2. **Mavis read-only** — Mavis session / 自动化脚本只读 list/get/stats/count/query/export;不可 add/update/delete
   3. **Training 复制,不改** — `pa sample-pool export` 写到 `bench/v02/working/`,原池永远不动
-- **Five gates** (all LOCKED; live 2026-09-25 check found every `current_n=0`, `unlocked=0`):
+- **Five gates** (historically all LOCKED; read-only 2026-09-25 check found every `current_n=0`, `unlocked=0`; no fresh pool access on 2026-10-09):
   | Gate | n threshold | Extra | Unlocks |
   |---|---|---|---|
   | `moe_merge_n30` | 30 | aminer>=1 | MoE 合并训练 |
@@ -4466,7 +4475,7 @@ and `pa review` now surfaces the caveat. Marking **done**.
 
   | Phase | Trigger | Action | Decision point |
   |---|---|---|---|
-  | 0 (now) | 1 active entry, 0 labels | Pool infra + Combined default | 不加新方法。**池子是瓶颈,不是方法。** |
+  | 0 (historical 2026-09-25) | 1 active entry, 0 labels | Pool infra + Combined default | 不加新方法。**池子是瓶颈,不是方法。** |
   | 1 | n>=30 + aminer>=1 | MoE merge [P1-21] | 验证 merge 逻辑通 |
   | 2 | n>=100 | Ridge/LogReg 重训 | 简单方法在新数据上还是不是 top? |
   | 3 | n>=200 + holdout | **首次诚实 holdout 评估** + 加 [P3-22] answerdotai/rerankers (3h) + [P3-25] Qwen3 Embedding (4h) | **A vs B 决策点**: 4 个老方法在 n=200 holdout 上还赢 BGE-reranker-v2-m3 吗? |
@@ -4496,6 +4505,24 @@ and `pa review` now surfaces the caveat. Marking **done**.
   - 解释: [P1-13] n=50→n=200 目标变 "v02 pool n>=200"
   - 解释: [P3-22/23/24/25] 新方法从 "proposed" 变 "gated by [P3-26] n=200 holdout"
 
+### Modified 2026-10-09 — real-corpus and human-label work indefinitely suspended
+
+**Current disposition**: the user explicitly has no time for real-corpus work and
+suspends it indefinitely. The previous in-progress accumulation status is now
+suspended, without an automatic restart, reminder, or schedule. Preserve the
+existing infrastructure, original rationale, user-only write rule, training/test
+isolation and all five gate IDs/thresholds. Do not read the personal pool to refresh
+counts, write samples/labels, generate substitutes, train models or run live
+holdout evaluation for this release. The dated counts above are historical audit
+observations, not statements about the pool today.
+
+This suspension applies to `[P1-13]` label expansion, `[P1-19]`/`[P1-21]` dependent
+training, `[P0-8]`/`[P1-12]` scientific ranking validation and `[P3-22..25]` gated
+reranking proposals. Reaching a historical threshold does not override the user's
+suspension; resumption requires a new user instruction and the original gates.
+`[P3-40]` proceeds with generated artifacts and isolated stores solely to verify
+software reliability. Its completion cannot unlock these scientific-data gates.
+
 ### [P3-22] `answerdotai/rerankers` opt-in wrapper (proposed 2026-07-29, gated by [P3-26] n=200)
 
 - **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=200 holdout unlocks)
@@ -4517,6 +4544,13 @@ and `pa review` now surfaces the caveat. Marking **done**.
 - **Global Rule check**: 5/5 pass (free MIT lib, local compute, no hosted)
 - **User confirmation needed**: 选哪个具体模型 (推荐 BGE-reranker-v2-m3 起步,再考虑其他)
 
+### Modified 2026-10-09 — dependent reranking work suspended
+
+**Current disposition**: suspended indefinitely under `[P3-26]`'s explicit user
+instruction. Preserve `holdout_eval_n200`, its sample/split requirements and the
+original proposal; no model download, training or corpus evaluation is authorized
+by the v4 software release work.
+
 ### [P3-23] Local LLM listwise rerank — Qwen2.5-1.5B (proposed 2026-07-29, gated by [P3-26] n=500)
 
 - **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=500 unlocks)
@@ -4536,6 +4570,13 @@ and `pa review` now surfaces the caveat. Marking **done**.
 - **Global Rule check**: 5/5 pass (local model, no API)
 - **User confirmation needed**: 用户硬件 (VRAM ≥ 8GB?) + 接受 ~2s/query 延迟
 
+### Modified 2026-10-09 — dependent reranking work suspended
+
+**Current disposition**: suspended indefinitely under `[P3-26]`'s explicit user
+instruction. Preserve `mldl_rerank_n500`, hardware/latency prerequisites and the
+original proposal. No listwise model training or scientific performance claim is
+part of `[P3-40]`.
+
 ### [P3-24] Multi-stage cascade rerank (proposed 2026-07-29, gated by [P3-26] n=200+ decision B)
 
 - **Status**: proposed (gated — **DO NOT START** until [P3-22] A vs B decision at n=200+)
@@ -4553,6 +4594,13 @@ and `pa review` now surfaces the caveat. Marking **done**.
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: latency vs quality tradeoff (1s vs 5s per query)
 
+### Modified 2026-10-09 — dependent reranking work suspended
+
+**Current disposition**: suspended indefinitely under `[P3-26]`'s explicit user
+instruction. Preserve the n>=200 frozen-holdout A/B decision and `[P3-22]`
+dependency; the local reliability release neither establishes decision B nor
+justifies starting the cascade.
+
 ### [P3-25] Qwen3 Embedding (2025 SoTA) integration (proposed 2026-07-29, gated by [P3-26] n=200)
 
 - **Status**: proposed (gated — **DO NOT START** until [P3-26] n>=200 holdout unlocks)
@@ -4568,6 +4616,12 @@ and `pa review` now surfaces the caveat. Marking **done**.
 - **Estimated effort**: ~4h
 - **Global Rule check**: 5/5 pass
 - **User confirmation needed**: 是否接受 8B 模型 (~16GB VRAM, 2-3s/query) 作为 bi-encoder
+
+### Modified 2026-10-09 — dependent reranking work suspended
+
+**Current disposition**: suspended indefinitely under `[P3-26]`'s explicit user
+instruction. Preserve `holdout_eval_n200` and the original embedding proposal;
+generated software fixtures provide no evidence for embedding/ranking quality.
 
 ### [P1-13] n=50 → n=100 → n=200 label expansion (added 2026-07-15)
 
@@ -4603,6 +4657,14 @@ Status: **blocked** until either:
 
 Re-evaluate [P1-13] when either condition is met.
 
+### Modified 2026-10-09 — label expansion indefinitely suspended
+
+The explicit user suspension now supersedes the prior automatic re-evaluation
+trigger. `[P1-13]` is **suspended indefinitely** with `[P3-26]`; all historical
+labels, caveats and sample thresholds remain recorded. No human review requests,
+sample collection, synthetic ground-truth replacement or model retraining is
+scheduled. A future user instruction must precede any resumption.
+
 ## Current backlog reconciliation and Jev/Fetch proposal (2026-09-25)
 
 This audit reconciles the living ticket list with later release notes, the 2026-07-23 `TODO.md` snapshot, `BENCHMARK_TODO.md`, `ARCHITECTURE.md`, and current Fetch/review/judge code. `ROADMAP.md` remains the ticket system; this repository documents no external issue tracker. Statuses below distinguish code shipped from evidence/data gates still open.
@@ -4636,6 +4698,16 @@ No existing paper-agent function is marked “replaced by Jev”: current `pa ju
 
 ## Proposed items
 
+### Modified 2026-10-09 — reconciliation dispositions under user suspension
+
+The 2026-09-25 table above is a historical reconciliation. Its `[P2-11]`
+real-corpus Fetch pass, `[P3-26]` sample accumulation/human labeling and named
+real-data workflows are now **suspended indefinitely** by explicit user
+instruction. Existing code and offline checks remain available; the old
+"complete after" and first-real-workflow triggers do not schedule those activities.
+The user authorizes autonomous local engineering decisions for `[P3-40]` while
+retaining the Global Rule and all scientific-data gates.
+
 ### [P3-32] Optional Jev adapter for Fetch-grounded structured evidence decisions
 
 - **Status**: proposed; M0.5, M1A, conservative M1B metadata gate, and M2 local PDF index/packet baseline implemented on branch `codex/m1a-fetch-correctness`; M3 local shadow baseline and M4 opt-in dispatch API implemented; interactive dispatch approval, interruption quarantine/late-result handling and usage reconciliation implemented; explicit resume and linked retries implemented; M5 measured evaluation, calibration threshold selection, and prediction joins implemented (`pa_cli/jev_eval_join.py`, 4/4 new tests, 10 offline suites pass, v3.10.0.0, 2026-09-30); live validation and external evaluation prerequisites remain open; opt-in, shadow-first, and off by default.
@@ -4657,7 +4729,7 @@ No existing paper-agent function is marked “replaced by Jev”: current `pa ju
 - **M1B limits**: no fuzzy title or body-based identity, no source license lookup, no inference from Unpaywall/S2/channel names, and no inherited consent from cache. Missing optional PyMuPDF leaves PDF identity unverified. XML inspection is bounded to 8 MiB, artifact inspection to 100 MiB. The new Python API accepts `expected_title` and `data_class`; CLI stays unknown/local-only. Preserve these conservative defaults when M2/M3 add more evidence.
 - **M1B regression found and fixed**: XML-only results no longer adopt and cache an unrelated PDF left at the requested output path.
 - **M2 baseline implemented (2026-09-26)**: `pa_cli.evidence` provides a standalone local PDF index and bounded lexical packet builder with exact Unicode offsets, stable evidence IDs, file/extractor/index/packet hashes, advisory section labels, and explicit blank-page/OCR status. See `docs/evidence-m2.md`. Existing `pa review` and `deep_rerank` remain unchanged; M3 connects the standalone APIs locally. OCR, citation resolution, semantic retrieval, context expansion, and passage redaction are not implemented.
-- The live [P3-26] pool contains 1 active entry and 0 relevance labels. Its schema is relevance-only, so it cannot serve as ground truth for evidence support, study design, result direction, or methodology tasks.
+- The historical read-only [P3-26] check on 2026-09-25 recorded 1 active entry and 0 relevance labels; this is not a current live-state claim. Its schema is relevance-only, so it cannot serve as ground truth for evidence support, study design, result direction, or methodology tasks.
 
 - **M3 local baseline implemented (2026-09-26)**: dedicated append-only-by-API SQLite records bind fresh provenance, exact indexed excerpts, task rubric, and offline provider identity. Requests commit before dispatch; unknown outcomes never retry automatically. Suggestions are synthetic and separate from the human-only adjudication schema. No existing human labels are read or written. See `docs/shadow-m3.md` for limits and the 12-scenario verification.
 
@@ -4782,6 +4854,25 @@ Implemented `pa_cli/jev_eval_join.py` and `pa jev evaluation-score`:
 - Holdout evaluation checks live `exposures` table to exclude exposed studies, tracks human abstentions, and computes 95% Wilson score confidence intervals for error rates and Brier score calibration.
 - Full offline test suite (10 suites, 97 tests) verified 100% OK.
 
+### Modified 2026-10-09 — M5 real evaluation and live dispatch/pilot suspended
+
+**Current disposition for `[P3-32]`**: shipped M0.5–M5 local preparation,
+prediction joins, calibration/scoring code, recovery and synthetic regressions
+remain available. Actual task-specific human labeling, study assignments,
+blinding attestations, calibration/holdout execution on real corpora, M4 live
+validation/GPT execution and the M6 public-OA pilot are **suspended indefinitely**
+per the user's explicit instruction. The historical "next" implementation order
+and waitlist statements above do not authorize a live run or automatic resumption.
+
+No personal data is accessed, no label is created or refreshed, no paid/provider
+call is executed, and no reminder or restart date is scheduled for this work.
+Keep all original consent, rights, provenance, frozen-split, risk-bound and human
+approval conditions. Offline fixtures verify implementation only; they cannot
+establish actual blinding, calibrated scientific performance or measured quality.
+`[P3-34]`'s gateway implementation is available, while its real public-OA pilot
+remains subject to this suspension. Resume only on a new user instruction and
+after the original evaluation prerequisites; `[P3-40]` does not bypass them.
+
 
 
 ---
@@ -4829,6 +4920,18 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
 ---
 
 ### 3. Transition Tickets for v3.11 -> v4.0
+
+### Modified 2026-10-09 — software release gate separate from scientific validation
+
+The user authorizes completing v4 local engineering while indefinitely suspending
+real-corpus work. `[P3-40]` therefore defines the **software reliability release
+gate**: transactional/recoverable local state, compatibility, independent review,
+offline regressions and cross-platform packaging checks. The implemented feature
+tickets below remain recorded; real-corpus accuracy claims (including the earlier
+>=90% citation-fidelity detection target), human evaluation and reranking
+performance validation remain **unvalidated and suspended**. Synthetic checks
+cannot satisfy those scientific targets. A v4.0.0 software release must describe
+this limitation and cannot mark the suspended data/evaluation items completed.
 
 ### [P0-16] Structured research metadata export (`pa export --target jupyter/typst/bib`)
 
@@ -5097,3 +5200,95 @@ Version designation will transition from `v3.x` to `v4.0.0` only when all of the
   5. `[P2] F5`: `pa_cli/gateway.py` preserves `orig_bytes` during `_save_reservation` and performs transactional binary rollback if write fails, preventing ledger truncation or corruption.
   Covered by 7 unit tests in `test_output/test_security_audit_4bc4377.py`, and verified against 100% of probes in `probes.py` and `concurrency.py`.
 - **Global Rule audit**: 100% offline-first execution, zero external network requests, zero cloud costs.
+
+### Modified 2026-10-09 — v3.10.0.30 closure and corrected guarantee boundaries
+
+**Status**: done for the bounded v3.10.0.30 fixes. Preserve the 2026-10-08 account
+above as implementation history; its absolute closure/rollback/liveness claims
+were too broad and are superseded by this amendment.
+
+1. **Raw-byte parse snapshot**: harvesting reads a single immutable byte snapshot
+   and opens PyMuPDF from that stream, so the recorded digest describes the bytes
+   actually parsed. This corrects the earlier path-opened/`doc.stream` assumption;
+   post-read disk substitution cannot redefine that parsed snapshot.
+2. **Tri-state PID uncertainty**: PID probing returns alive/dead/unknown. Native
+   errors or inaccessible metadata are unknown, and retain quota; elapsed lease
+   time alone cannot discard a live or unknown owner. PID-only v3 ownership still
+   cannot distinguish process-instance reuse; `[P3-40b]` addresses that limitation.
+3. **Atomic publication**: reservation bytes are written to a temporary file and
+   published with atomic replacement. This replaces the earlier truncate-then-
+   restore rollback claim, which could itself fail. Failed pre-publication writes
+   preserve the previous ledger. Separate JSONL receipt/JSON reservation files
+   still do not form one atomic transaction; `[P3-40a]` closes that state boundary.
+
+**Recorded quality gate (v3.10.0.30)**: 65 related checks and 19 boundary checks
+passed; boundary stress repeated three times; the six-job Ubuntu/Windows ×
+Python 3.10–3.12 CI matrix passed. These are release-specific engineering results,
+not newly measured corpus accuracy or a universal filesystem/power-loss guarantee.
+**Global Rule audit**: passes; local code, generated fixtures, no paid execution
+or hosted service. Subsequent v4 criteria remain independently tracked below.
+
+### [P3-40] v4 local reliability and recoverable gateway state
+
+- **Status**: in-progress
+- **Added**: 2026-10-09
+- **Started**: 2026-10-09
+- **Priority**: P1 / P2
+- **Effort**: bounded local engineering; release depends on verified acceptance criteria
+- **Source**: explicit user instruction 2026-10-09 to indefinitely suspend real-corpus work and autonomously complete the software roadmap to v4; [v4 design](docs/superpowers/specs/2026-10-09-v4-local-reliability-design.md) and [implementation plan](docs/superpowers/plans/2026-10-09-v4-local-reliability.md).
+- **Rationale**: v3's separate reservation and receipt files leave a crash boundary,
+  PID-only ownership permits reuse ambiguity, and interrupted runs require a
+  reviewable operator recovery path. Deliver one local transaction domain and
+  explicit compatibility/migration without asserting improved scientific accuracy.
+- **Dependencies**: bounded `[P3-39]` v3.10.0.30 closure; existing shared rights,
+  consent, provenance, sanitization and token/paper/cost validation. Suspended
+  `[P2-11]`, `[P3-26]`, `[P3-32]` real evaluations are not software-release blockers
+  and their original scientific acceptance conditions remain unmet.
+- **Acceptance criteria / letter subtasks**:
+  - [ ] **`[P3-40a]` Canonical stdlib SQLite gateway store**: make the dedicated
+    local journal the v4 default, with application/schema identity, integrity
+    validation, immutable run limits, append-only receipts/recovery events and
+    `BEGIN IMMEDIATE`, foreign keys and `synchronous=FULL`. Reservations transition
+    to committed/aborted; receipt publication, pending removal and counted spend
+    commit together. Failed/unknown commits cannot return `AUTHORIZED` or release
+    quota. Same-request/exact-receipt finalization is idempotent; conflicting data
+    rejects without overwriting history. Preserve 100000-token, 25-paper and at
+    most $0.01/run ceilings, including tighter caller caps. Reject foreign,
+    corrupt or unsupported stores without reinitializing them.
+  - [ ] **`[P3-40b]` Process-instance ownership**: store PID and creation token,
+    plus boot identity where available; use typed native Windows queries and
+    Linux proc start ticks/boot ID. Token mismatch identifies an exited original
+    owner despite PID reuse. Missing/inaccessible identity or liveness stays
+    unknown and retains budget. Status/recovery queries never signal, kill or
+    modify processes. Exercise real process death, reuse and unknown states.
+  - [ ] **`[P3-40c]` Compatibility, migration and operator recovery**: retain an
+    explicit deprecated v3 JSON backend and additive public API parameters;
+    document the changed CLI default and prohibit mixed v3/v4 writers against
+    one budget. Provide read-only `status`/`doctor` totals, owner and integrity
+    diagnostics without credentials/full passages. Explicit confirmed migration
+    atomically imports a stopped legacy JSONL/sidecar pair into a dedicated store
+    with source digests and unchanged source bytes; reject malformed records,
+    live/unknown pending ownership and conflicting/repeated imports. Recovery
+    requires request ID, operator, evidence reference and confirmation; abort
+    only a confirmed dead reserved owner, or commit known usage without releasing
+    its reserved amounts. Never reset limits or alter prior committed receipts;
+    append an immutable recovery event. Atomically export canonical JSONL to an
+    operator-selected file; export failure leaves budget state unchanged.
+  - [ ] **`[P3-40d]` Quality, backward compatibility and release gate**: generated
+    documents and isolated stores demonstrate exact-once accounting, real
+    multiprocess contention, failed commits, owner death/reuse/unknown,
+    corrupt/foreign schemas, migration rollback/source preservation, unsafe
+    recovery refusal, CLI behavior and continued v3 contract coverage. Complete
+    independent review and full offline regressions. Require Ubuntu/Windows ×
+    Python 3.10–3.12 CI and a clean wheel installation before v4.0.0 publication;
+    only then record completion/release evidence. Document local-filesystem,
+    single-machine durability limits and migration instructions. No corpus result
+    or scientific-performance improvement follows from this software gate.
+- **Global Rule audit**: 5/5 pass. Stdlib SQLite/ctypes and existing dependencies;
+  local files on one machine; no paid infrastructure, hosted service, recurring
+  cloud cost, publication obligation or new model training. Maintenance remains
+  bounded to a small local journal/operator surface. Third-party free-tier loss
+  does not affect core operation; optional external paths retain explicit gates.
+- **Execution constraints**: use autonomous engineering judgment within the design;
+  no personal corpus/pool access, fabricated labels/results, paid API execution,
+  scheduled data collection or automatic reopening of suspended scientific work.
