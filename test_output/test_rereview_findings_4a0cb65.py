@@ -55,7 +55,7 @@ class TestReReviewFindings4a0cb65(unittest.TestCase):
         with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             # Simulate lock open permission failure
             with patch("pa_cli.gateway.os.open", side_effect=PermissionError("controlled lock-open fault")):
-                receipt, _ = g.evaluate_gateway_request(
+                receipt, _ = g._evaluate_legacy_gateway_request(
                     "run-a1", "operator", [cand], ["Public open text."], True, True
                 )
                 self.assertEqual(receipt.gateway_decision, "REJECTED")
@@ -80,13 +80,13 @@ class TestReReviewFindings4a0cb65(unittest.TestCase):
         with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             # 1. Read fault fails closed
             with patch("pa_cli.gateway._load_all_reservations", side_effect=PermissionError("controlled reservation read fault")):
-                r_read, _ = g.evaluate_gateway_request("run-a2-read", "operator", [cand], ["Public text"], True, True)
+                r_read, _ = g._evaluate_legacy_gateway_request("run-a2-read", "operator", [cand], ["Public text"], True, True)
                 self.assertEqual(r_read.gateway_decision, "REJECTED")
                 self.assertTrue(any("Reservation ledger read failure" in r for r in r_read.rejection_reasons))
 
             # 2. Write fault fails closed
             with patch("pa_cli.gateway._save_reservation", side_effect=PermissionError("controlled reservation write fault")):
-                r_write, _ = g.evaluate_gateway_request("run-a2-write", "operator", [cand], ["Public text"], True, True)
+                r_write, _ = g._evaluate_legacy_gateway_request("run-a2-write", "operator", [cand], ["Public text"], True, True)
                 self.assertEqual(r_write.gateway_decision, "REJECTED")
                 self.assertTrue(any("Reservation ledger write failure" in r for r in r_write.rejection_reasons))
 
@@ -95,7 +95,7 @@ class TestReReviewFindings4a0cb65(unittest.TestCase):
     # -------------------------------------------------------------------------
     def test_a3_gateway_verify_passage_provenance_contract(self):
         """A3: verify_passage_provenance parameter in evaluate_gateway_request and provenance_verified in receipt."""
-        sig = inspect.signature(g.evaluate_gateway_request)
+        sig = inspect.signature(g._evaluate_legacy_gateway_request)
         self.assertIn("verify_passage_provenance", sig.parameters)
         self.assertIn("provenance_verified", g.GatewayReceipt.__dataclass_fields__)
 
@@ -111,14 +111,14 @@ class TestReReviewFindings4a0cb65(unittest.TestCase):
 
         with patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             # Matching passage -> provenance_verified is True
-            r_match, _ = g.evaluate_gateway_request(
+            r_match, _ = g._evaluate_legacy_gateway_request(
                 "run-a3-match", "operator", [cand], ["Legitimate verified research passage."], True, True,
                 verify_passage_provenance=True,
             )
             self.assertTrue(r_match.provenance_verified)
 
             # Unrelated passage not in candidate -> provenance_verified is False
-            r_unmatch, _ = g.evaluate_gateway_request(
+            r_unmatch, _ = g._evaluate_legacy_gateway_request(
                 "run-a3-unmatch", "operator", [cand], ["Completely synthesized unpublished internal memo."], True, True,
                 verify_passage_provenance=True,
             )

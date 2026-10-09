@@ -17,6 +17,9 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_FILES = [
+    "test_output/test_process_identity_v4.py",
+    "test_output/test_gateway_store_v4.py",
+    "test_output/test_gateway_v4.py",
     "test_output/test_consistency_boundaries.py",
     "test_output/test_security_audit_4bc4377.py",
     "test_output/test_rereview_findings_c75087e.py",
@@ -67,6 +70,10 @@ def main() -> int:
                     print(f"Consistency boundary stress run {index + 1}/{args.stress_runs}", flush=True)
                     suite = unittest.defaultTestLoader.loadTestsFromName("test_output.test_consistency_boundaries")
                     if not unittest.TextTestRunner(verbosity=1).run(suite).wasSuccessful():
+                        return 1
+                    if pytest.main([str(ROOT / "test_output/test_gateway_store_v4.py"),
+                                    str(ROOT / "test_output/test_gateway_v4.py"), "-q",
+                                    "--basetemp=" + str(run_dir / f"v4-stress-{index}")]):
                         return 1
     finally:
         tempfile.tempdir = old_temp

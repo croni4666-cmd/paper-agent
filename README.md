@@ -2,9 +2,13 @@
 
 Academic paper search, fetch, and literature-review synthesis CLI.
 
-Current release: **v3.10.0.30**. This revision includes immutable evidence snapshots,
-fault-safe reservation persistence and Ubuntu/Windows consistency quality gates.
-See [stability and operating boundaries](docs/stability-3.10.0.30.md).
+Current version: **v4.0.0**. [P3-40] makes the local gateway journal transactional,
+with process-instance ownership and accountable migration/recovery. No new runtime
+dependencies or paid infrastructure. The gateway storage default changes: read the
+[v4 operating and migration guide](docs/gateway-v4.md) before using an existing
+v3 ledger. Real-corpus and human-label work is indefinitely suspended; this release
+verifies software consistency and does not claim scientific accuracy improvements.
+
 8 default search engines (Crossref, OpenAlex, arXiv, S2, AMiner, CNKI, PubMed,
 ClinicalTrials.gov) + 1 opt-in engine (CORE, local-only) + pa judge relevance
 collection + pa build manuscript pipeline + Tier 2 research-topic project

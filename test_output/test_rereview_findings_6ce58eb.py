@@ -86,7 +86,7 @@ def hold(r, audit_file=None):
         time.sleep(0.02)
     return orig(r, audit_file=audit_file)
 g.record_gateway_audit_event = hold
-r, _ = g.evaluate_gateway_request("same-processes-run", "local-review", [c], [label * 240000], True, True)
+r, _ = g._evaluate_legacy_gateway_request("same-processes-run", "local-review", [c], [label * 240000], True, True)
 print(json.dumps(r.to_dict()))
 ''', encoding="utf-8")
 
@@ -139,7 +139,7 @@ print(json.dumps(r.to_dict()))
 
         with patch.object(gateway, "DEFAULT_AUDIT_LOG_PATH", audit_file):
             # First request succeeds
-            r1, _ = gateway.evaluate_gateway_request("read-fault-run", "op", [cand], ["A" * 240000], True, True)
+            r1, _ = gateway._evaluate_legacy_gateway_request("read-fault-run", "op", [cand], ["A" * 240000], True, True)
             self.assertEqual(r1.gateway_decision, "AUTHORIZED")
             self.assertEqual(r1.estimated_tokens, 60000)
 
@@ -151,7 +151,7 @@ print(json.dumps(r.to_dict()))
                 return original_read_text(path, *args, **kwargs)
 
             with patch.object(Path, "read_text", faulty_read):
-                r2, _ = gateway.evaluate_gateway_request("read-fault-run", "op", [cand], ["B" * 240000], True, True)
+                r2, _ = gateway._evaluate_legacy_gateway_request("read-fault-run", "op", [cand], ["B" * 240000], True, True)
                 self.assertEqual(r2.gateway_decision, "REJECTED")
                 self.assertTrue(any("cannot verify historical spend against ceiling" in r for r in r2.rejection_reasons))
 

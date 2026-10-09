@@ -37,7 +37,7 @@ from pa_cli.evidence_review import generate_evidence_backed_review
 from pa_cli.export_research import _extract_paper_records, export_research
 from pa_cli.gateway import (
     PaperEvaluationCandidate,
-    evaluate_gateway_request,
+    _evaluate_legacy_gateway_request as evaluate_gateway_request,
     verify_paper_rights,
     record_gateway_audit_event,
 )

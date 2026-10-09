@@ -63,7 +63,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
 
         with patch.object(g, "DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             # Authorize first request (60,000 tokens)
-            first_receipt, _ = g.evaluate_gateway_request(
+            first_receipt, _ = g._evaluate_legacy_gateway_request(
                 "run-r1", "operator", [cand], ["A" * 240000], True, True
             )
             self.assertEqual(first_receipt.gateway_decision, "AUTHORIZED")
@@ -90,7 +90,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
                 return orig_read(p, *args, **kwargs)
 
             with patch.object(Path, "read_text", fail_second_read):
-                second_receipt, _ = g.evaluate_gateway_request(
+                second_receipt, _ = g._evaluate_legacy_gateway_request(
                     "run-r1", "operator", [cand], ["B" * 240000], True, True
                 )
                 self.assertEqual(second_receipt.gateway_decision, "REJECTED")
@@ -98,7 +98,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
             # Ensure that the peer ledger was NOT overwritten with an empty dict.
             # Active tokens on disk must still account for the first 60k tokens.
             # Another 60k request must be REJECTED because 60k + 60k = 120k > 100k ceiling.
-            third_receipt, _ = g.evaluate_gateway_request(
+            third_receipt, _ = g._evaluate_legacy_gateway_request(
                 "run-r1", "operator", [cand], ["C" * 240000], True, True
             )
             self.assertEqual(third_receipt.gateway_decision, "REJECTED")
@@ -114,7 +114,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
 
         with patch.object(g, "DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             with patch.object(g.os, "replace", side_effect=PermissionError("controlled reservation publish fault")):
-                receipt, _ = g.evaluate_gateway_request(
+                receipt, _ = g._evaluate_legacy_gateway_request(
                     "run-r2", "operator", [cand], ["D" * 240000], True, True
                 )
                 self.assertEqual(receipt.gateway_decision, "REJECTED")
@@ -123,7 +123,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
             self.assertEqual(len(g._ACTIVE_RESERVATIONS.get("run-r2", {})), 0)
 
             # A subsequent healthy retry succeeds without hitting phantom reservation ceilings
-            retry_receipt, _ = g.evaluate_gateway_request(
+            retry_receipt, _ = g._evaluate_legacy_gateway_request(
                 "run-r2", "operator", [cand], ["E" * 240000], True, True
             )
             self.assertEqual(retry_receipt.gateway_decision, "AUTHORIZED")
@@ -145,7 +145,7 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
 
         with patch.object(g, "DEFAULT_AUDIT_LOG_PATH", self.audit_log):
             with patch.object(g, "verify_paper_rights", side_effect=mutate_after_rights):
-                receipt, _ = g.evaluate_gateway_request(
+                receipt, _ = g._evaluate_legacy_gateway_request(
                     "run-r3", "operator", [cand], [secret], True, True, verify_passage_provenance=True
                 )
                 self.assertEqual(receipt.gateway_decision, "REJECTED")

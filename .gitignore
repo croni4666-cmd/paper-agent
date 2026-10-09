@@ -172,6 +172,8 @@ Thumbs.db
 # Pytest cache & temp
 .pytest_cache/
 .pytest_temp/
+.pytest_temp_*/
+.planning/
 
 # Ignore binary PDFs and personal research / training dumps
 *.pdf

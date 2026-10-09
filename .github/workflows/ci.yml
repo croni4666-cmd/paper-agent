@@ -11,17 +11,18 @@ permissions:
 
 jobs:
   consistency:
-    name: Consistency quality gate (${{ matrix.os }})
+    name: Consistency quality gate (${{ matrix.os }}, Python ${{ matrix.python-version }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
       - name: Install test dependencies
         run: python -m pip install -e ".[test]" pytest
       - name: Run offline consistency quality gate
@@ -93,6 +94,7 @@ jobs:
           python test_output/test_rereview_findings_c75087e.py
           python test_output/test_security_audit_4bc4377.py
           python test_output/test_consistency_boundaries.py
+          python -m pytest test_output/test_process_identity_v4.py test_output/test_gateway_store_v4.py test_output/test_gateway_v4.py -q
 
   package:
     name: Build wheel and verify package contents
@@ -114,6 +116,9 @@ jobs:
           z = zipfile.ZipFile(whl)
           names = set(z.namelist())
           required = [
+              'pa_cli/gateway_store.py',
+              'pa_cli/gateway_commands.py',
+              'pa_cli/process_identity.py',
               'pa_cli/labels/__init__.py',
               'pa_cli/labels/base.py',
               'pa_cli/data/chinese-gb7714-2005-numeric.csl',
@@ -137,3 +142,4 @@ jobs:
           assert DEFAULT_CSL.is_file(), f'Default CSL file missing: {DEFAULT_CSL}'
           print('Installed wheel smoke test passed outside repository!')
           "
+          /tmp/test_env/bin/python "$GITHUB_WORKSPACE/tools/gateway_wheel_smoke.py"

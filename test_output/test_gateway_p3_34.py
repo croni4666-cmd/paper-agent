@@ -4,6 +4,7 @@ import os
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 from decimal import Decimal
 from pathlib import Path
 from click.testing import CliRunner
@@ -13,7 +14,7 @@ from pa_cli.gateway import (
     verify_paper_rights,
     sanitize_evidence_text,
     estimate_tokens_and_cost,
-    evaluate_gateway_request,
+    _evaluate_legacy_gateway_request as evaluate_gateway_request,
     record_gateway_audit_event,
     read_gateway_audit_events,
     format_receipt_table,
@@ -31,6 +32,10 @@ class TestGatewayP334(unittest.TestCase):
     def setUp(self):
         self.tmp_dir = tempfile.mkdtemp(prefix="test_gateway_")
         self.audit_log = Path(self.tmp_dir) / "gateway_audit.jsonl"
+        # The v4 CLI has its own isolated transactional epoch per test.
+        default_audit = patch("pa_cli.gateway.DEFAULT_AUDIT_LOG_PATH", Path(self.tmp_dir) / "default_audit.jsonl")
+        default_audit.start()
+        self.addCleanup(default_audit.stop)
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir, ignore_errors=True)
@@ -228,7 +233,7 @@ class TestGatewayP334(unittest.TestCase):
 
         # Audit persistence
         record_gateway_audit_event(receipt, audit_file=self.audit_log)
-        events = read_gateway_audit_events(audit_file=self.audit_log)
+        events = read_gateway_audit_events(audit_file=self.audit_log, storage_backend="legacy-json")
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0].receipt_id, receipt.receipt_id)
 

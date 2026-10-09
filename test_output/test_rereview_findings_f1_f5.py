@@ -23,7 +23,7 @@ from pa_cli.cli import main
 from pa_cli.evidence_review import BoundEvidence, harvest_paper_evidence
 from pa_cli.gateway import (
     PaperEvaluationCandidate,
-    evaluate_gateway_request,
+    _evaluate_legacy_gateway_request as evaluate_gateway_request,
     verify_paper_rights,
 )
 from pa_cli.stats_check import StatsCheckSummary, format_stats_report
