@@ -132,32 +132,18 @@ class TestSecurityAudit4BC4377(unittest.TestCase):
         p = self.root / "paper.pdf"
         p.write_bytes(a_pdf)
 
-        orig_open = fitz.open
+        real_read = Path.read_bytes
 
-        class ClosingRestore:
-            def __init__(self, doc, path, content):
-                self.doc = doc
-                self.path = path
-                self.content = content
-
-            def __getattr__(self, k):
-                return getattr(self.doc, k)
-
-            def __iter__(self):
-                return iter(self.doc)
-
-            def close(self):
-                self.doc.close()
-                self.path.write_bytes(self.content)
-
-        def swap_open(*args, **kwargs):
-            if args and str(args[0]) == str(p):
+        def swap_read(path, *args, **kwargs):
+            if path == p:
                 p.write_bytes(b_pdf)
-                doc = orig_open(*args, **kwargs)
-                return ClosingRestore(doc, p, a_pdf)
-            return orig_open(*args, **kwargs)
+                snapshot = real_read(path, *args, **kwargs)
+                p.write_bytes(a_pdf)
+                return snapshot
+            return real_read(path, *args, **kwargs)
 
-        with patch.object(er.fitz, "open", swap_open):
+        # Inject at snapshot acquisition, which now precedes memory-stream parsing.
+        with patch.object(Path, "read_bytes", swap_read):
             buckets = er.harvest_paper_evidence(p, {"key": "paper"})
 
         rows = [ev.to_dict() for group in buckets.values() for ev in group]
@@ -306,15 +292,24 @@ class TestSecurityAudit4BC4377(unittest.TestCase):
         orig_content = json.dumps(peer_ledger, ensure_ascii=False)
         resv_path.write_text(orig_content, encoding="utf-8")
 
-        orig_write = Path.write_text
+        real_fdopen = os.fdopen
 
-        def failing_write(path_obj, text, *args, **kwargs):
-            if path_obj == resv_path:
-                orig_write(path_obj, text[:12], *args, **kwargs)
+        class PartialWriter:
+            def __init__(self, file):
+                self.file = file
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                self.file.close()
+
+            def write(self, content):
+                self.file.write(content[:12])
+                self.file.flush()
                 raise OSError("simulated disk full midway through write")
-            return orig_write(path_obj, text, *args, **kwargs)
 
-        with patch.object(Path, "write_text", failing_write):
+        with patch.object(g.os, "fdopen", side_effect=lambda *a, **kw: PartialWriter(real_fdopen(*a, **kw))):
             with self.assertRaises(OSError):
                 g._save_reservation(self.audit_log, "run-shared", "my-resv", 30000, Decimal("0.00126"))
 

@@ -27,9 +27,11 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import math
 import os
 import re
 import sys
+import tempfile
 import threading
 import time
 import uuid
@@ -115,8 +117,8 @@ def _get_resv_path(audit_path: Path) -> Path:
     return audit_path.parent / f".{audit_path.name}.reservations.json"
 
 
-def _is_pid_alive(pid: int) -> bool:
-    """Check if process with given PID is currently alive on the system."""
+def _is_pid_alive(pid: int) -> Optional[bool]:
+    """Return True/False only for confirmed liveness/death, None if unknown."""
     if not pid or pid <= 0:
         return False
     if pid == os.getpid():
@@ -124,25 +126,100 @@ def _is_pid_alive(pid: int) -> bool:
     if sys.platform == "win32":
         try:
             import ctypes
-            kernel32 = ctypes.windll.kernel32
+            from ctypes import wintypes
+            kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+            kernel32.OpenProcess.restype = wintypes.HANDLE
+            kernel32.GetExitCodeProcess.argtypes = [wintypes.HANDLE, ctypes.POINTER(wintypes.DWORD)]
+            kernel32.GetExitCodeProcess.restype = wintypes.BOOL
+            kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+            kernel32.CloseHandle.restype = wintypes.BOOL
             SYNCHRONIZE = 0x00100000
             PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
             h_proc = kernel32.OpenProcess(SYNCHRONIZE | PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
-            if h_proc:
-                exit_code = ctypes.c_ulong()
-                kernel32.GetExitCodeProcess(h_proc, ctypes.byref(exit_code))
+            if not h_proc:
+                # ERROR_INVALID_PARAMETER identifies a nonexistent PID. Access
+                # denial and other query errors cannot establish process death.
+                return False if ctypes.get_last_error() == 87 else None
+            try:
+                exit_code = wintypes.DWORD()
+                if not kernel32.GetExitCodeProcess(h_proc, ctypes.byref(exit_code)):
+                    return None
+                return exit_code.value == 259  # STILL_ACTIVE
+            finally:
                 kernel32.CloseHandle(h_proc)
-                STILL_ACTIVE = 259
-                return exit_code.value == STILL_ACTIVE
         except Exception:
-            pass
-        return False
+            return None
     else:
         try:
             os.kill(pid, 0)
             return True
-        except (OSError, ProcessLookupError):
+        except ProcessLookupError:
             return False
+        except OSError:
+            # EPERM, namespace restrictions and transient errors are unknown.
+            return None
+
+
+def _read_reservation_data(resv_path: Path) -> dict[str, Any]:
+    """Missing ledger is new; an existing empty/corrupt ledger is not healthy."""
+    try:
+        raw = resv_path.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return {}
+    data = json.loads(raw)
+    if not isinstance(data, dict):
+        raise ValueError("Reservation ledger must be an object")
+    for run_resvs in data.values():
+        if not isinstance(run_resvs, dict):
+            raise ValueError("Invalid reservation group")
+        for info in run_resvs.values():
+            if not isinstance(info, dict):
+                raise ValueError("Invalid reservation record")
+            tokens = info.get("tokens")
+            cost = Decimal(str(info.get("cost", "NaN")))
+            timestamp = float(info.get("timestamp", 0))
+            pid = info.get("pid", 0)
+            if (not isinstance(tokens, int) or isinstance(tokens, bool) or tokens < 0
+                    or not cost.is_finite() or cost < 0 or not math.isfinite(timestamp)
+                    or not isinstance(pid, int) or isinstance(pid, bool) or pid < 0):
+                raise ValueError("Invalid reservation amounts or process metadata")
+    return data
+
+
+def _retain_reservation(info: dict[str, Any], now: float) -> bool:
+    """Only a confirmed dead owner can expire an older reservation."""
+    if now - float(info.get("timestamp", 0)) <= 300:
+        return True
+    pid = info.get("pid", 0)
+    # Legacy records without process identity require explicit recovery.
+    return not pid or _is_pid_alive(pid) is not False
+
+
+def _atomic_write_reservations(resv_path: Path, data: dict[str, Any]) -> None:
+    """Publish a complete, synced ledger under the caller's budget lock.
+
+    A failed temporary write or replace leaves the original file untouched.
+    No compensating overwrite of the shared ledger is necessary.
+    """
+    content = json.dumps(data, ensure_ascii=False, allow_nan=False).encode("utf-8")
+    fd, name = tempfile.mkstemp(prefix=f".{resv_path.name}.", suffix=".tmp", dir=resv_path.parent)
+    temp_path = Path(name)
+    try:
+        with os.fdopen(fd, "wb") as file:
+            fd = -1
+            if file.write(content) != len(content):
+                raise OSError("Short reservation ledger write")
+            file.flush()
+            os.fsync(file.fileno())
+        os.replace(temp_path, resv_path)
+    finally:
+        if fd != -1:
+            os.close(fd)
+        try:
+            temp_path.unlink(missing_ok=True)
+        except OSError:
+            log.warning("Unable to remove reservation temporary file %s", temp_path)
 
 
 def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, Decimal]]]:
@@ -156,27 +233,12 @@ def _load_all_reservations(audit_path: Path) -> dict[str, dict[str, tuple[int, D
 
     # 2. Read persistent reservation file for cross-process coordination
     resv_path = _get_resv_path(audit_path)
-    if resv_path.is_file():
-        raw = resv_path.read_text(encoding="utf-8")
-        if not raw.strip():
-            return combined
-        data = json.loads(raw)
-        now = time.time()
-        for run_k, run_resvs in data.items():
-            if not isinstance(run_resvs, dict):
-                continue
-            for resv_k, info in run_resvs.items():
-                if not isinstance(info, dict):
-                    continue
-                ts = float(info.get("timestamp", 0))
-                pid = int(info.get("pid", 0))
-                age = now - ts
-                # Lease expiration: retain if <= 300s OR holding process is still alive!
-                if age > 300 and not (pid and _is_pid_alive(pid)):
-                    continue
-                tok = int(info.get("tokens", 0))
-                cst = Decimal(str(info.get("cost", "0.0")))
-                combined.setdefault(run_k, {})[resv_k] = (tok, cst)
+    data = _read_reservation_data(resv_path)
+    now = time.time()
+    for run_k, run_resvs in data.items():
+        for resv_k, info in run_resvs.items():
+            if _retain_reservation(info, now):
+                combined.setdefault(run_k, {})[resv_k] = (info["tokens"], Decimal(str(info["cost"])))
 
     return combined
 
@@ -185,92 +247,39 @@ def _save_reservation(audit_path: Path, run_id: str, resv_id: str, tokens: int, 
     """Save an in-flight reservation in memory and on disk. Raises on read/write failure."""
     resv_path = _get_resv_path(audit_path)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
-    orig_text = resv_path.read_text(encoding="utf-8") if resv_path.is_file() else None
-    orig_bytes = orig_text.encode("utf-8") if orig_text is not None else None
-    data: dict[str, Any] = {}
-    if orig_text is not None and orig_text.strip():
-        data = json.loads(orig_text)
+    data = _read_reservation_data(resv_path)
     now = time.time()
     cleaned: dict[str, Any] = {}
     for r_id, r_dict in data.items():
-        if isinstance(r_dict, dict):
-            sub = {}
-            for k, v in r_dict.items():
-                if isinstance(v, dict):
-                    pid = int(v.get("pid", 0))
-                    age = now - float(v.get("timestamp", 0))
-                    if age <= 300 or (pid and _is_pid_alive(pid)):
-                        sub[k] = v
-            if sub:
-                cleaned[r_id] = sub
+        sub = {k: v for k, v in r_dict.items() if _retain_reservation(v, now)}
+        if sub:
+            cleaned[r_id] = sub
     cleaned.setdefault(run_id, {})[resv_id] = {
         "tokens": tokens,
         "cost": str(cost),
         "timestamp": now,
         "pid": os.getpid(),
     }
-    content = json.dumps(cleaned, ensure_ascii=False)
-    try:
-        resv_path.write_text(content, encoding="utf-8")
-    except Exception:
-        # Atomic rollback: restore exact original ledger state if write fails midway
-        if orig_bytes is not None:
-            try:
-                with open(resv_path, "wb") as f:
-                    f.write(orig_bytes)
-            except Exception:
-                pass
-        elif resv_path.is_file():
-            try:
-                os.remove(resv_path)
-            except Exception:
-                pass
-        raise
+    _atomic_write_reservations(resv_path, cleaned)
     _ACTIVE_RESERVATIONS.setdefault(run_id, {})[resv_id] = (tokens, cost)
 
 
 def _remove_reservation(audit_path: Path, run_id: str, resv_id: str) -> None:
-    """Remove an in-flight reservation from memory and disk."""
+    """Release memory only after durable disk removal; propagate write errors."""
+    resv_path = _get_resv_path(audit_path)
+    data = _read_reservation_data(resv_path)
+    now = time.time()
+    cleaned: dict[str, Any] = {}
+    for r_id, r_dict in data.items():
+        sub = {k: v for k, v in r_dict.items()
+               if not (r_id == run_id and k == resv_id) and _retain_reservation(v, now)}
+        if sub:
+            cleaned[r_id] = sub
+    _atomic_write_reservations(resv_path, cleaned)
     if run_id in _ACTIVE_RESERVATIONS:
         _ACTIVE_RESERVATIONS[run_id].pop(resv_id, None)
         if not _ACTIVE_RESERVATIONS[run_id]:
             _ACTIVE_RESERVATIONS.pop(run_id, None)
-
-    resv_path = _get_resv_path(audit_path)
-    if not resv_path.is_file():
-        return
-    try:
-        orig_text = resv_path.read_text(encoding="utf-8")
-        orig_bytes = orig_text.encode("utf-8")
-        if not orig_text.strip():
-            return
-        data = json.loads(orig_text)
-    except Exception:
-        return
-    now = time.time()
-    cleaned: dict[str, Any] = {}
-    for r_id, r_dict in data.items():
-        if isinstance(r_dict, dict):
-            sub = {}
-            for k, v in r_dict.items():
-                if r_id == run_id and k == resv_id:
-                    continue
-                if isinstance(v, dict):
-                    pid = int(v.get("pid", 0))
-                    age = now - float(v.get("timestamp", 0))
-                    if age <= 300 or (pid and _is_pid_alive(pid)):
-                        sub[k] = v
-            if sub:
-                cleaned[r_id] = sub
-    try:
-        resv_path.write_text(json.dumps(cleaned, ensure_ascii=False), encoding="utf-8")
-    except Exception:
-        # Restore original on failure
-        try:
-            with open(resv_path, "wb") as f:
-                f.write(orig_bytes)
-        except Exception:
-            pass
 
 
 # ==============================================================================
@@ -632,7 +641,7 @@ def evaluate_gateway_request(
                     )
         if all_found and candidate_texts and not artifact_mutated and blocked_count == 0:
             provenance_verified = True
-    elif not passages:
+    elif not passages and candidates and blocked_count == 0:
         provenance_verified = True
 
     # 5. Token & Cost Hard Ceiling Checks (including cumulative tracking per run_id)
@@ -760,8 +769,8 @@ def evaluate_gateway_request(
             try:
                 with _GATEWAY_LOCK, _gateway_file_lock(lock_path):
                     _remove_reservation(target_audit_path, run_id, resv_id)
-            except Exception:
-                pass
+            except Exception as cleanup_err:
+                log.warning("Reservation cleanup failed; retaining budget reservation: %s", cleanup_err)
 
     return receipt, sanitized_passages
 

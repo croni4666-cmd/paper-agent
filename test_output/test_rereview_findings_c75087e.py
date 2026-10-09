@@ -112,14 +112,8 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
         xml_path = self._write_oa_xml(self.root / "valid.xml")
         cand = self._make_candidate(xml_path)
 
-        orig_write = Path.write_text
-        def fail_reservations_write(p, *args, **kwargs):
-            if p.name.endswith(".reservations.json"):
-                raise PermissionError("controlled reservation write fault")
-            return orig_write(p, *args, **kwargs)
-
         with patch.object(g, "DEFAULT_AUDIT_LOG_PATH", self.audit_log):
-            with patch.object(Path, "write_text", fail_reservations_write):
+            with patch.object(g.os, "replace", side_effect=PermissionError("controlled reservation publish fault")):
                 receipt, _ = g.evaluate_gateway_request(
                     "run-r2", "operator", [cand], ["D" * 240000], True, True
                 )
@@ -241,16 +235,16 @@ class TestReReviewFindingsC75087E(unittest.TestCase):
         old_bytes = old_pdf.read_bytes()
         new_bytes = new_pdf.read_bytes()
 
-        orig_open = pymupdf.open
-        def aba_open(*args, **kwargs):
-            if args and str(args[0]) == str(old_pdf):
+        real_read = Path.read_bytes
+        def aba_read(path, *args, **kwargs):
+            if path == old_pdf:
                 old_pdf.write_bytes(new_bytes)
-                doc = orig_open(stream=old_pdf.read_bytes(), filetype="pdf")
+                snapshot = real_read(path, *args, **kwargs)
                 old_pdf.write_bytes(old_bytes)
-                return doc
-            return orig_open(*args, **kwargs)
+                return snapshot
+            return real_read(path, *args, **kwargs)
 
-        with patch.object(er.fitz, "open", side_effect=aba_open):
+        with patch.object(Path, "read_bytes", aba_read):
             ev_dict = er.harvest_paper_evidence(old_pdf, {"key": "aba"})
 
         rows = [e.to_dict() for items in ev_dict.values() for e in items]

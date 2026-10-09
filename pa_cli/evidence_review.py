@@ -167,42 +167,28 @@ def harvest_paper_evidence(
     doi = canonicalize_doi(bib_entry.get("doi", ""))
     filename = file_path.name if file_path else (bib_entry.get("key", "meta") + ".bib")
     artifact_sha256 = ""
-    if file_path and file_path.is_file():
-        try:
-            artifact_sha256 = hashlib.sha256(file_path.read_bytes()).hexdigest()
-        except Exception:
-            pass
-
     pages_text: List[Tuple[int, str]] = []
 
     if file_path and file_path.is_file():
         ext = file_path.suffix.lower()
-        if ext == ".pdf" and HAS_PYMUPDF:
+        raw_bytes = None
+        try:
+            raw_bytes = file_path.read_bytes()
+            artifact_sha256 = hashlib.sha256(raw_bytes).hexdigest()
+        except OSError as exc:
+            log.warning("Cannot capture evidence snapshot %s: %s", file_path, exc)
+        if raw_bytes is not None and ext == ".pdf" and HAS_PYMUPDF:
             try:
-                doc = fitz.open(str(file_path))
-                stream_bytes = getattr(doc, "stream", None)
-                if isinstance(stream_bytes, (bytes, bytearray)):
-                    artifact_sha256 = hashlib.sha256(stream_bytes).hexdigest()
-                else:
-                    try:
-                        active_bytes = file_path.read_bytes()
-                        artifact_sha256 = hashlib.sha256(active_bytes).hexdigest()
-                    except Exception:
-                        pass
-                for p_num, page in enumerate(doc, start=1):
-                    txt = page.get_text("text")
-                    if txt.strip():
-                        pages_text.append((p_num, txt))
-                doc.close()
-            except Exception:
-                pass
-        elif ext in (".md", ".txt"):
-            try:
-                txt = file_path.read_text(encoding="utf-8", errors="ignore")
-                artifact_sha256 = hashlib.sha256(txt.encode("utf-8")).hexdigest()
-                pages_text.append((1, txt))
-            except Exception:
-                pass
+                with fitz.open(stream=raw_bytes, filetype="pdf") as doc:
+                    for p_num, page in enumerate(doc, start=1):
+                        txt = page.get_text("text")
+                        if txt.strip():
+                            pages_text.append((p_num, txt))
+            except Exception as exc:
+                pages_text.clear()
+                log.warning("Cannot parse evidence snapshot %s: %s", file_path, exc)
+        elif raw_bytes is not None and ext in (".md", ".txt"):
+            pages_text.append((1, raw_bytes.decode("utf-8", errors="ignore")))
 
     if not pages_text and bib_entry.get("abstract"):
         # Fall back to BibTeX abstract
