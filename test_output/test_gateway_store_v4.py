@@ -19,7 +19,8 @@ def store_type():
 def receipt(request_id="req", run_id="run", tokens=10, cost="0.001", decision="AUTHORIZED"):
     return {"request_id": request_id, "run_id": run_id, "estimated_tokens": tokens,
             "estimated_cost_usd": cost, "gateway_decision": decision,
-            "receipt_id": "receipt_" + request_id, "payload_sha256": "a" * 64}
+            "receipt_id": "receipt_" + request_id, "payload_sha256": "a" * 64,
+            "total_candidates": 1}
 
 
 def reserve(store, request_id="req", tokens=10, cost="0.001", owner=None, **kwargs):
@@ -74,6 +75,38 @@ def test_caps_and_request_identity_cannot_change(tmp_path):
     with pytest.raises(ValueError):
         store.finalize("req", receipt(tokens=11))
     assert store.totals("run") == (20, Decimal("0.002"))
+    store.close()
+
+
+@pytest.mark.parametrize("field,value", [("payload_sha256", "b" * 64),
+                                        ("receipt_id", "replacement"),
+                                        ("provenance_verified", True),
+                                        ("operator", "replacement")])
+def test_first_finalization_cannot_change_verified_snapshot(tmp_path, field, value):
+    store = store_type()(tmp_path / "journal.db")
+    original = receipt() | {"provenance_verified": False, "operator": "original"}
+    assert store.reserve("req", "run", 10, "0.001", 100000, "0.01",
+                         {"pid": 123, "birth": "old"}, original)
+    changed = original | {field: value}
+    with pytest.raises(ValueError):
+        store.finalize("req", changed)
+    assert store.receipts() == []
+    assert store.totals("run") == (10, Decimal("0.001"))
+    assert len(store.status()["pending"]) == 1
+    store.finalize("req", original)
+    assert store.receipts() == [original]
+    store.close()
+
+
+def test_paper_ceiling_is_cumulative_across_reserved_and_committed(tmp_path):
+    store = store_type()(tmp_path / "journal.db")
+    first = receipt("first") | {"total_candidates": 20}
+    assert store.reserve("first", "run", 10, "0.001", 100000, "0.01", {"pid": 123}, first)
+    second = receipt("second") | {"total_candidates": 6}
+    assert not store.reserve("second", "run", 10, "0.001", 100000, "0.01", {"pid": 123}, second)
+    store.finalize("first", first)
+    assert not store.reserve("second", "run", 10, "0.001", 100000, "0.01", {"pid": 123}, second)
+    assert store.status()["runs"][0]["papers"] == 20
     store.close()
 
 

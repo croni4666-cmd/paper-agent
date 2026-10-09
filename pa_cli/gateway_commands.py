@@ -54,7 +54,7 @@ def register_gateway_commands(group):
 
     @group.command("migrate")
     @click.option("--ledger", type=click.Path(dir_okay=False), help="Dedicated target journal")
-    @click.option("--audit-file", required=True, type=click.Path(exists=True, dir_okay=False))
+    @click.option("--audit-file", required=True, type=click.Path(dir_okay=False))
     @click.option("--reservation-file", default=None, type=click.Path(dir_okay=False))
     @click.option("--operator", required=True)
     @click.option("--legacy-max-cost", required=True,

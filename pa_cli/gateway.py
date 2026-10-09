@@ -698,13 +698,17 @@ def evaluate_gateway_request(
             raise ValueError("Cost ceiling must be finite and nonnegative")
         cap = min(configured, MAX_COST_USD_CEILING)
         store = GatewayStore(ledger)
-        if audit.exists() or _get_resv_path(audit).exists():
-            sidecar = _get_resv_path(audit)
-            digests = {"audit": hashlib.sha256(audit.read_bytes()).hexdigest() if audit.exists() else None,
-                       "reservations": hashlib.sha256(sidecar.read_bytes()).hexdigest() if sidecar.exists() else None}
-            if not any(event.get("kind") == "migration" and event.get("source_digests") == digests
-                       for event in store.status()["events"]):
-                raise ValueError("Legacy gateway data requires a completed explicit migration with unchanged sources")
+        imports = [event for event in store.status()["events"] if event.get("kind") == "migration"]
+        if (audit.exists() or _get_resv_path(audit).exists()) and not any(
+                event.get("source_paths", {}).get("audit") == str(audit.resolve()) for event in imports):
+            raise ValueError("Legacy gateway data requires a completed explicit migration")
+        for event in imports:
+            # The manifest preserves actual custom source locations and absence.
+            paths = event["source_paths"]
+            digests = {key: hashlib.sha256(Path(path).read_bytes()).hexdigest() if Path(path).exists() else None
+                       for key, path in paths.items()}
+            if digests != event["source_digests"]:
+                raise ValueError("Legacy migration sources changed; stop all legacy writers")
         if receipt.gateway_decision == "AUTHORIZED":
             accepted = store.reserve(receipt.request_id, run_id, receipt.estimated_tokens,
                 Decimal(receipt.estimated_cost_usd), MAX_INPUT_TOKENS_CEILING, cap,
@@ -712,7 +716,7 @@ def evaluate_gateway_request(
             if not accepted:
                 receipt.gateway_decision = "REJECTED"
                 receipt.ceiling_compliant = False
-                receipt.rejection_reasons.append("Cumulative token or cost budget ceiling exceeded")
+                receipt.rejection_reasons.append("Cumulative token, cost or paper budget ceiling exceeded")
                 store.record_rejection(receipt.to_dict())
             else:
                 store.finalize(receipt.request_id, receipt.to_dict())

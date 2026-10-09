@@ -22,6 +22,7 @@ APPLICATION_ID = 0x50414734  # PAG4
 SCHEMA_VERSION = 1
 MAX_TOKENS = 100000
 MAX_COST = Decimal("0.01")
+MAX_PAPERS = 25
 
 
 class GatewayStoreError(ValueError):
@@ -172,6 +173,27 @@ def _bind(rec: dict, request_id: str, run_id: str, tokens: int, cost: Decimal):
         raise GatewayStoreError("Receipt does not match reserved request identity and amounts")
 
 
+def _bind_snapshot(rec: dict, snapshot: dict, *, recovery=None):
+    expected = dict(snapshot)
+    if recovery is not None:
+        expected["recovery"] = recovery
+    if rec["gateway_decision"] == "REJECTED":
+        # A rejected finalization may explain rejection, not replace evidence.
+        mutable = {"gateway_decision", "rejection_reasons", "ceiling_compliant"}
+        expected = {key: value for key, value in expected.items() if key not in mutable}
+        actual = {key: value for key, value in rec.items() if key not in mutable}
+    else:
+        actual = rec
+    if actual != expected:
+        raise GatewayStoreError("Final receipt differs from the verified reservation snapshot")
+
+
+def _papers(rec: dict) -> int:
+    # Unknown counts are tracked separately and block further reservations.
+    # This permits migration/recovery alongside known historical receipts.
+    return _tokens(rec.get("total_candidates", 0))
+
+
 def _timestamp() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -276,6 +298,7 @@ class GatewayStore:
             tokens, cost = _tokens(row["tokens"]), _cost(row["cost"])
             _owner(_decode(row["owner"]))
             snapshot = _receipt(_decode(row["snapshot"]))
+            _papers(snapshot)
             _bind(snapshot, row["request_id"], row["run_id"], tokens, cost)
             if row["state"] not in {"reserved", "committed", "aborted"}:
                 raise GatewayStoreError("Invalid request state")
@@ -291,6 +314,15 @@ class GatewayStore:
                     raise GatewayStoreError("Authorization without accounted request")
             else:
                 _bind(rec, req["request_id"], req["run_id"], req["tokens"], _cost(req["cost"]))
+                recovery = None
+                if rec.get("recovery") is not None:
+                    matching = [event for event in (_decode(row[0]) for row in conn.execute("SELECT content FROM events"))
+                                if event.get("kind") == "recovery" and event.get("request_id") == req["request_id"]
+                                and event.get("resolution") == "commit"]
+                    if len(matching) != 1:
+                        raise GatewayStoreError("Recovered receipt missing its accountable event")
+                    recovery = {key: matching[0][key] for key in ("operator", "evidence")}
+                _bind_snapshot(rec, _decode(req["snapshot"]), recovery=recovery)
                 desired = "committed" if rec["gateway_decision"] == "AUTHORIZED" else "aborted"
                 if req["state"] != desired:
                     raise GatewayStoreError("Receipt and reservation state conflict")
@@ -303,7 +335,7 @@ class GatewayStore:
                 raise GatewayStoreError("Invalid journal event")
         for run_id, row in runs.items():
             tokens, cost = self._totals(run_id)
-            if tokens > row["max_tokens"] or cost > _cost(row["max_cost"]):
+            if tokens > row["max_tokens"] or cost > _cost(row["max_cost"]) or self._paper_total(run_id) > MAX_PAPERS:
                 raise GatewayStoreError("Stored usage exceeds immutable run cap")
 
     @staticmethod
@@ -329,6 +361,20 @@ class GatewayStore:
         with self._transaction():
             result = self._totals(run_id)
         return result
+
+    def _paper_total(self, run_id, state=None):
+        sql = "SELECT snapshot FROM requests WHERE run_id=?"
+        args = [run_id]
+        if state is None:
+            sql += " AND state IN ('reserved','committed')"
+        else:
+            sql += " AND state=?"
+            args.append(state)
+        return sum(_papers(_decode(row[0])) for row in self._conn.execute(sql, args))
+
+    def _paper_unknown(self, run_id):
+        return any("total_candidates" not in _decode(row[0]) for row in self._conn.execute(
+            "SELECT snapshot FROM requests WHERE run_id=? AND state IN ('reserved','committed')", (run_id,)))
 
     def _run(self, run_id, max_tokens, max_cost):
         row = self._conn.execute("SELECT * FROM runs WHERE run_id=?", (run_id,)).fetchone()
@@ -362,7 +408,9 @@ class GatewayStore:
                     raise GatewayStoreError("Request identity already belongs to a receipt")
                 self._run(run_id, max_tokens, max_cost)
                 prior_tokens, prior_cost = self._totals(run_id)
-                result = prior_tokens + tokens <= max_tokens and _sum_cost([prior_cost, cost]) <= max_cost
+                result = (prior_tokens + tokens <= max_tokens and _sum_cost([prior_cost, cost]) <= max_cost
+                          and not self._paper_unknown(run_id)
+                          and self._paper_total(run_id) + _papers(rec) <= MAX_PAPERS)
                 if result:
                     self._conn.execute("INSERT INTO requests VALUES (?,?,?,?,?,?, 'reserved')",
                                        (request_id, run_id, tokens, str(cost), owner_json, snapshot))
@@ -387,6 +435,7 @@ class GatewayStore:
             else:
                 if request["state"] != "reserved":
                     raise GatewayStoreError("Request already resolved by recovery")
+                _bind_snapshot(rec, _decode(request["snapshot"]))
                 state = "committed" if rec["gateway_decision"] == "AUTHORIZED" else "aborted"
                 self._insert_receipt(rec)
                 self._conn.execute("UPDATE requests SET state=? WHERE request_id=?", (state, request_id))
@@ -420,6 +469,8 @@ class GatewayStore:
                 committed_tokens, committed_cost = self._totals(row["run_id"], "committed")
                 reserved_tokens, reserved_cost = self._totals(row["run_id"], "reserved")
                 result["runs"].append({"run_id": row["run_id"], "max_tokens": row["max_tokens"],
+                    "max_papers": MAX_PAPERS, "papers": self._paper_total(row["run_id"]),
+                    "paper_count_unknown": self._paper_unknown(row["run_id"]),
                     "max_cost": row["max_cost"], "tokens": tokens, "cost": str(cost),
                     "committed_tokens": committed_tokens, "committed_cost": str(committed_cost),
                     "reserved_tokens": reserved_tokens, "reserved_cost": str(reserved_cost)})
@@ -491,11 +542,14 @@ class GatewayStore:
         if self.path in {audit_path, reservation_path} or audit_path == reservation_path:
             raise GatewayStoreError("Migration source and target paths must be distinct")
         try:
-            audit_bytes = audit_path.read_bytes()
+            audit_bytes = audit_path.read_bytes() if audit_path.exists() else None
             reservation_bytes = reservation_path.read_bytes() if reservation_path.exists() else None
         except OSError as exc:
             raise GatewayStoreError("Cannot read migration sources") from exc
-        digests = {"audit": hashlib.sha256(audit_bytes).hexdigest(),
+        if audit_bytes is None and reservation_bytes is None:
+            raise GatewayStoreError("Both migration sources are missing")
+        paths = {"audit": str(audit_path), "reservations": str(reservation_path)}
+        digests = {"audit": hashlib.sha256(audit_bytes).hexdigest() if audit_bytes is not None else None,
                    "reservations": hashlib.sha256(reservation_bytes).hexdigest() if reservation_bytes is not None else None}
         digest = hashlib.sha256(_json(digests).encode("utf-8")).hexdigest()
         with self._transaction(write=True):
@@ -503,6 +557,8 @@ class GatewayStore:
             if prior:
                 result = _decode(prior[0])
                 prior_cap = result.get("legacy_max_cost")
+                if result.get("source_paths") != paths:
+                    raise GatewayStoreError("Conflicting migration source locations")
                 if ((prior_cap is None) != (legacy_max_cost is None)
                         or (prior_cap is not None and _cost(prior_cap) != legacy_max_cost)):
                     raise GatewayStoreError("Conflicting reconciled legacy cap for repeated import")
@@ -511,15 +567,16 @@ class GatewayStore:
                 if any(self._conn.execute(f"SELECT 1 FROM {table} LIMIT 1").fetchone()
                        for table in ("runs", "requests", "receipts", "events", "imports")):
                     raise GatewayStoreError("Migration requires a dedicated empty target")
-                result = self._import_sources(audit_bytes, reservation_bytes, digests, operator, legacy_max_cost)
+                result = self._import_sources(audit_bytes or b"", reservation_bytes, digests, operator, legacy_max_cost)
+                result["source_paths"] = paths
                 # Detect source edits during parsing. Concurrent mixed-version
                 # writers are still unsupported; this is not a cross-file lock.
-                if (audit_path.read_bytes() != audit_bytes
+                if ((audit_path.read_bytes() if audit_path.exists() else None) != audit_bytes
                         or (reservation_path.read_bytes() if reservation_path.exists() else None) != reservation_bytes):
                     raise GatewayStoreError("Migration source changed; stop all legacy writers")
                 self._validate()
                 self._conn.execute("INSERT INTO imports VALUES (?,?)", (digest, _json(result)))
-                event = {"kind": "migration", "operator": operator, "source_digests": digests,
+                event = {"kind": "migration", "operator": operator, "source_digests": digests, "source_paths": paths,
                          "imported_receipts": result["imported_receipts"],
                          "imported_reservations": result["imported_reservations"],
                          "legacy_max_cost": result["legacy_max_cost"],

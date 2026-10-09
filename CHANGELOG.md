@@ -11,6 +11,19 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
+## [4.0.0] - 2026-10-09
+
+### Local Transactional Reliability [P3-40a–d]
+
+- Change the default gateway accounting contract to one local stdlib SQLite journal. Reservations, immutable receipts and recovery events share a transaction; pending and committed usage count exactly once. Immutable run ceilings include cumulative 100000 tokens, 25 submitted candidates and at most $0.01, or a tighter caller cost ceiling.
+- Bind first finalization and journal validation to the entire verified receipt snapshot. Only rejection decision fields may change; recovery metadata must match its recorded operator event. Unique request IDs distinguish attempts; exact repeated finalization is idempotent, conflicting data rejects.
+- Record process-instance birth identity with PID (Linux boot/start token; typed Windows process handles). PID reuse establishes original-owner death; unsupported/inaccessible queries stay unknown. No time-based v4 eviction or automatic release.
+- Add local `gateway status`, `doctor`, `migrate`, `recover` and `export`. Inspection is read-only and does not load unrelated API credentials. Migration needs stopped legacy writers and an explicit reconciled cap, preserves source bytes/absence/paths/digests, handles pre-first-receipt sidecars and custom paths, and commits all imports atomically. Failed/changed imports cannot silently start fresh accounting. Recovery cannot abort live/unknown owners or reset limits.
+- Retain an explicit deprecated v3 JSON compatibility adapter. **Breaking storage/output changes:** `audit_file` is a legacy locator rather than a JSONL append destination; the CLI defaults to SQLite, `gateway audit --json` returns an array, and legacy state requires explicit migration. Exports are review artifacts rather than automatic reverse migrations. See [upgrade and rollback boundaries](docs/gateway-v4.md).
+- Add 125 generated-fixture checks across process identity (51), journal (54) and integration/CLI (20). The offline consistency gate runs 190 checks plus 18 subtests and repeats 19 legacy boundary checks plus 74 journal/integration checks three times. Independent review identified three Important issues; each has a failing-then-passing regression. Cross-platform/Python/package CI remains the required publication gate.
+- Indefinitely suspend real-corpus acquisition, human labeling and dependent scientific/ranking evaluation under the user instruction, preserving historical Roadmap targets. v4 is a software reliability milestone; it does not satisfy suspended scientific performance thresholds.
+- No new runtime dependency, provider calls, hosted service, scheduled collection or personal sample-pool writes.
+
 ## [3.10.0.30] - 2026-10-09
 
 ### Verified Consistency Fixes and Cross-Platform Quality Gate

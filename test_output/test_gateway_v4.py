@@ -224,3 +224,53 @@ def test_minimal_legacy_pending_recovery_has_readable_history(tmp_path):
     assert events[0].estimated_tokens == 5
     assert events[0].legacy_pending
     assert not events[0].provenance_verified
+
+
+def test_custom_migration_sidecar_is_used_for_later_integrity_checks(tmp_path):
+    audit = tmp_path / "audit.jsonl"
+    audit.write_bytes(b"")
+    sidecar = tmp_path / "custom-pending.json"
+    sidecar.write_bytes(b"{}")
+    ledger = g.gateway_store_path(audit)
+    result = CliRunner().invoke(main, ["gateway", "migrate", "--audit-file", str(audit),
+        "--reservation-file", str(sidecar), "--ledger", str(ledger),
+        "--operator", "tester", "--confirm-stopped", "--legacy-max-cost", "0.01"])
+    assert result.exit_code == 0, result.output
+    rec, _ = evaluate(tmp_path)
+    assert rec.gateway_decision == "AUTHORIZED"
+    sidecar.write_bytes(b'{"changed":{}}')
+    changed, _ = evaluate(tmp_path)
+    assert changed.gateway_decision == "REJECTED"
+
+
+def _legacy_pending_exit(directory):
+    from decimal import Decimal
+    g._save_reservation(Path(directory) / "audit.jsonl", "run", "legacy-pending", 60000, Decimal("0.00252"))
+
+
+def test_pre_first_receipt_crash_sidecar_can_migrate_without_audit(tmp_path):
+    from pa_cli.gateway_store import GatewayStore
+    child = multiprocessing.get_context("spawn").Process(target=_legacy_pending_exit, args=(str(tmp_path),))
+    child.start()
+    child.join(20)
+    assert child.exitcode == 0
+    audit = tmp_path / "audit.jsonl"
+    assert not audit.exists()
+    before = g._get_resv_path(audit).read_bytes()
+    result = CliRunner().invoke(main, ["gateway", "migrate", "--audit-file", str(audit),
+        "--operator", "tester", "--confirm-stopped", "--legacy-max-cost", "0.01"])
+    assert result.exit_code == 0, result.output
+    with GatewayStore(g.gateway_store_path(audit), read_only=True, create=False) as store:
+        assert store.totals("run")[0] == 60000
+        assert len(store.status()["pending"]) == 1
+        assert store.status()["events"][0]["source_digests"]["audit"] is None
+    assert not audit.exists()
+    assert g._get_resv_path(audit).read_bytes() == before
+    # Still counted, with the configured original cap, after migration.
+    rec, _ = evaluate(tmp_path)
+    assert rec.gateway_decision == "REJECTED"  # legacy paper count is unknown
+    with GatewayStore(g.gateway_store_path(audit)) as store:
+        assert store.status()["runs"][0]["paper_count_unknown"]
+        store.recover("legacy-pending", "abort", "tester", "Exited before first audit, no operation executed")
+    healthy, _ = evaluate(tmp_path)
+    assert healthy.gateway_decision == "AUTHORIZED"

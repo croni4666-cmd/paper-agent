@@ -1,6 +1,7 @@
 """paper-agent CLI -- academic paper fetch + lit review synthesis.
 
-Latest stable: v3.9.12.0 (ClinicalTrials.gov engine + 2026-08-10 hotfix chain).
+Current version: v4.0.0 — local transactional gateway reliability [P3-40].
+Historical module notes follow.
 See CHANGELOG [3.9.12.0] for the new engine.
 
 v3.9.11.9 (2026-08-10): Hotfix for v3.9.11.8 PubMed year filter ?see
@@ -58,7 +59,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "3.10.0.30"
+__version__ = "4.0.0"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 

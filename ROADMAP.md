@@ -5245,7 +5245,7 @@ or hosted service. Subsequent v4 criteria remain independently tracked below.
   `[P2-11]`, `[P3-26]`, `[P3-32]` real evaluations are not software-release blockers
   and their original scientific acceptance conditions remain unmet.
 - **Acceptance criteria / letter subtasks**:
-  - [ ] **`[P3-40a]` Canonical stdlib SQLite gateway store**: make the dedicated
+  - [x] **`[P3-40a]` Canonical stdlib SQLite gateway store**: make the dedicated
     local journal the v4 default, with application/schema identity, integrity
     validation, immutable run limits, append-only receipts/recovery events and
     `BEGIN IMMEDIATE`, foreign keys and `synchronous=FULL`. Reservations transition
@@ -5255,13 +5255,13 @@ or hosted service. Subsequent v4 criteria remain independently tracked below.
     rejects without overwriting history. Preserve 100000-token, 25-paper and at
     most $0.01/run ceilings, including tighter caller caps. Reject foreign,
     corrupt or unsupported stores without reinitializing them.
-  - [ ] **`[P3-40b]` Process-instance ownership**: store PID and creation token,
+  - [x] **`[P3-40b]` Process-instance ownership**: store PID and creation token,
     plus boot identity where available; use typed native Windows queries and
     Linux proc start ticks/boot ID. Token mismatch identifies an exited original
     owner despite PID reuse. Missing/inaccessible identity or liveness stays
     unknown and retains budget. Status/recovery queries never signal, kill or
     modify processes. Exercise real process death, reuse and unknown states.
-  - [ ] **`[P3-40c]` Compatibility, migration and operator recovery**: retain an
+  - [x] **`[P3-40c]` Compatibility, migration and operator recovery**: retain an
     explicit deprecated v3 JSON backend and additive public API parameters;
     document the changed CLI default and prohibit mixed v3/v4 writers against
     one budget. Provide read-only `status`/`doctor` totals, owner and integrity
@@ -5292,3 +5292,23 @@ or hosted service. Subsequent v4 criteria remain independently tracked below.
 - **Execution constraints**: use autonomous engineering judgment within the design;
   no personal corpus/pool access, fabricated labels/results, paid API execution,
   scheduled data collection or automatic reopening of suspended scientific work.
+
+### Modified 2026-10-09 — implementation and independent review complete; publication gate pending
+
+Canonical journal, process identity and operator surface are implemented. First
+finalization binds the entire verification snapshot; migration stores actual
+custom paths and supports a missing audit with an existing valid sidecar. The
+25-paper ceiling is cumulative across pending/committed submissions. Unknown
+legacy counts block extra reservations without blocking migration/recovery.
+CLI migration requires an explicitly reconciled historical cost cap.
+
+**Local evidence**: 190 related tests plus18 subtests; three stress passes of19
+legacy boundaries plus74 journal/integration tests. Broad offline regression:
+808 passed,10 skipped,28 subtests; the same66 failed IDs as the recorded v3
+baseline (network-dependent fixtures, restricted legacy Jev filesystem operations,
+missing optional pyzotero), no new failed IDs. The known blocking MCP stdio case
+is deselected locally and remains in normal CI. The local wheel builder lacks
+setuptools; clean build/install is a mandatory CI gate rather than a waived check.
+Independent review found three Important issues; all have observed RED→GREEN
+regressions. No deferred minor finding. `[P3-40d]` stays open until the Ubuntu/
+Windows × Python3.10–3.12 matrix and package checks pass.
