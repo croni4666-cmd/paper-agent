@@ -276,17 +276,17 @@ print(json.dumps(r.to_dict()))
 
         digest_b = hashlib.sha256(pdf_b.read_bytes()).hexdigest()
 
-        # Simulate file replacement right before parse
-        original_open = pymupdf.open
+        # Simulate replacement immediately before acquiring the immutable snapshot.
+        original_read = Path.read_bytes
         swapped = False
-        def switch_before_parse(*args, **kwargs):
+        def switch_before_read(path, *args, **kwargs):
             nonlocal swapped
-            if not swapped and args and str(args[0]) == str(pdf_a):
+            if not swapped and path == pdf_a:
                 shutil.copyfile(pdf_b, pdf_a)
                 swapped = True
-            return original_open(*args, **kwargs)
+            return original_read(path, *args, **kwargs)
 
-        with patch.object(pymupdf, "open", side_effect=switch_before_parse):
+        with patch.object(Path, "read_bytes", switch_before_read):
             buckets = harvest_paper_evidence(pdf_a, {"key": "swap"})
 
         self.assertTrue(swapped)

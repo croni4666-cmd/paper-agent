@@ -366,6 +366,8 @@ def align_empirical_finding(
 
                 # 1. Filter out 4-digit publication/sample years (1900-2099)
                 clean_text = re.sub(r"\b(?:19|20)\d{2}\b", " ", text)
+                # Normalize ASCII/typographic contractions before checking scope.
+                clean_text = re.sub(r"\b([A-Za-z]+)n['’]t\b", r"\1 not", clean_text)
                 # 2. Filter out sample sizes like "1000 firms", "500 enterprises", "N = 300"
                 clean_text = re.sub(
                     r"\b\d+\s*(?:firms?|enterprises?|companies?|observations?|obs|cases?|respondents?|samples?|家|个|样本)\b",
@@ -395,13 +397,13 @@ def align_empirical_finding(
                     flags=re.IGNORECASE,
                 )
                 clean_text = re.sub(
-                    r"\b(?:survey\s+)?(?:response|participation|completion|retention|turnout|attrition|refusal)\s*(?:rates?|ratio|percentage)?\s*(?:increases?|decreases?|reduces?|rises?|falls?|drops?|of|at|was|is|were)?\s*(?:by\s+|of\s+)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    r"\b(?:survey\s+)?(?:response|participation|completion|retention|turnout|attrition|refusal)\s*(?:rates?|ratio|percentage)?\b[^.;!?%\n]*?\d+(?:\.\d+)?%",
                     " ",
                     clean_text,
                     flags=re.IGNORECASE,
                 )
                 clean_text = re.sub(
-                    r"\b(?:side|adverse)\s+effects?\s*(?:of|at|was|were|is)?\s*[:=]?\s*\d+(?:\.\d+)?%",
+                    r"\b(?:side|adverse)[\s-]+effects?\b[^.;!?%\n]*?\d+(?:\.\d+)?%",
                     " ",
                     clean_text,
                     flags=re.IGNORECASE,
@@ -473,11 +475,11 @@ def align_empirical_finding(
                 # strictly framed with causal effect verbs (increases/decreases/reduces/etc.)
                 if not extracted_for_paper:
                     causal_pat = (
-                        r"(?P<verb>increases?|increased|increasing|raises?|raised|raising|grows?|grew|growing|"
+                        r"\b(?P<verb>increases?|increased|increasing|raises?|raised|raising|grows?|grew|growing|"
                         r"boosts?|boosted|boosting|enhances?|enhanced|enhancing|improves?|improved|improving|"
                         r"rises?|rose|rising|decreases?|decreased|decreasing|reduces?|reduced|reducing|"
                         r"lowers?|lowered|lowering|drops?|dropped|dropping|falls?|fell|falling|"
-                        r"declines?|declined|declining)\s+(?:by\s+|of\s+|about\s+|approximately\s+)?(?P<pct>[-+]?\d+(?:\.\d+)?%)"
+                        r"declines?|declined|declining)\b\s+(?:by\s+|about\s+|approximately\s+)?(?P<pct>[-+]?\d+(?:\.\d+)?%)"
                     )
                     neg_verbs = {
                         "decrease", "decreases", "decreased", "decreasing",
@@ -498,8 +500,10 @@ def align_empirical_finding(
                     }
                     for m in re.finditer(causal_pat, clean_text, flags=re.IGNORECASE):
                         # Negation check: ignore if negated by "not", "does not", "did not", etc.
-                        prefix = clean_text[max(0, m.start() - 60):m.start()]
-                        if re.search(r"\b(?:not|does\s+not|did\s+not|will\s+not|would\s+not|is\s+not|was\s+not|are\s+not|were\s+not|no|never|neither|cannot|fails?\s+to|without)\b(?:\s+\w+){0,3}\s*$", prefix, re.IGNORECASE):
+                        prefix = re.split(r"[.;!?\n]|\b(?:but|however|whereas)\b",
+                                          clean_text[:m.start()], flags=re.IGNORECASE)[-1]
+                        if re.search(r"\b(?:not|no|never|neither|cannot|fail(?:s|ed|ing)?\s+to|without|"
+                                     r"may|might|could|would|possibly|perhaps)\b", prefix, re.IGNORECASE):
                             continue
 
                         verb = m.group("verb").lower()
