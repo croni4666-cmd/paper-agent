@@ -22,30 +22,30 @@
 
 ### Task 1: Roadmap and paused work
 Files: ROADMAP.md. Add P3-39's dated v3.10.0.30 amendment, explicit data suspension and P3-40 letter subtasks/acceptance criteria.
-- [ ] Inspect existing tickets; retain historical rationale/data gates.
-- [ ] Write narrowly scoped changes, self-review against user's local budget rule.
+- [x] Inspect existing tickets; retain historical rationale/data gates.
+- [x] Write narrowly scoped changes, self-review against user's local budget rule.
 
 ### Task 2: Process-instance identity
 Files: pa_cli/process_identity.py; test_output/test_process_identity_v4.py.
 Interfaces: process_alive, process_birth, current_owner, owner_status as specified.
-- [ ] Write tests: matched birth alive, mismatched birth dead, inaccessible birth unknown, invalid PID, native API failure and Linux proc parsing.
-- [ ] Run red, implement minimal no-signal queries, run green.
+- [x] Write tests: matched birth alive, mismatched birth dead, inaccessible birth unknown, invalid PID, native API failure and Linux proc parsing.
+- [x] Run red, implement minimal no-signal queries, run green.
 
 ### Task 3: Canonical journal and recovery
 Files: pa_cli/gateway_store.py; test_output/test_gateway_store_v4.py.
 Interfaces: GatewayStore methods from spec; costs serialize as finite Decimal text.
-- [ ] Write tests for 60000+60000 >100000 concurrent reservation rejection and exact-once finalization.
-- [ ] Add rollback/foreign schema/duplicate identity cases; implement transaction domain.
-- [ ] Add explicit migration/recovery tests with source preservation and forbidden owner states; implement and verify.
+- [x] Write tests for 60000+60000 >100000 concurrent reservation rejection and exact-once finalization.
+- [x] Add rollback/foreign schema/duplicate identity cases; implement transaction domain.
+- [x] Add explicit migration/recovery tests with source preservation and forbidden owner states; implement and verify.
 
 ### Task 4: Gateway and CLI integration
 Files: pa_cli/gateway.py, pa_cli/cli.py; test_output/test_gateway_v4.py.
-- [ ] Write default-backend and content-gate tests plus CLI status/doctor/migrate/recover/export assertions.
-- [ ] Integrate shared validation, immutable receipts and canonical accounting; preserve named v3 adapter.
-- [ ] Adapt historical tests to explicitly target v3 compatibility when testing its physical IO contract; never relax behavioral assertions.
+- [x] Write default-backend and content-gate tests plus CLI status/doctor/migrate/recover/export assertions.
+- [x] Integrate shared validation, immutable receipts and canonical accounting; preserve named v3 adapter.
+- [x] Adapt historical tests to explicitly target v3 compatibility when testing its physical IO contract; never relax behavioral assertions.
 
 ### Task 5: Quality and release
 Files: tools/consistency_quality_gate.py, .github/workflows/ci.yml, migration docs, metadata/changelog/README.
-- [ ] Add new suites and real-process stress cases; run old and new gates plus full offline comparison.
-- [ ] Independent read-only review of all state transitions; fix demonstrated issues and repeat relevant verification.
-- [ ] Update version to 4.0.0 only when P3-40's criteria are met. Push reviewed PR, require all CI and package checks, integrate/tag/publish.
+- [x] Add new suites and real-process stress cases; run old and new gates plus full offline comparison.
+- [x] Independent read-only review of all state transitions; fix demonstrated issues and repeat relevant verification.
+- [ ] Finalize v4.0.0: metadata prepared, candidate CI passed; require every final exact-head check, then integrate/tag/publish.

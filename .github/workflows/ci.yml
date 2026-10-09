@@ -116,6 +116,9 @@ jobs:
           z = zipfile.ZipFile(whl)
           names = set(z.namelist())
           required = [
+              'pa_cli/gateway_store.py',
+              'pa_cli/gateway_commands.py',
+              'pa_cli/process_identity.py',
               'pa_cli/labels/__init__.py',
               'pa_cli/labels/base.py',
               'pa_cli/data/chinese-gb7714-2005-numeric.csl',
@@ -139,3 +142,4 @@ jobs:
           assert DEFAULT_CSL.is_file(), f'Default CSL file missing: {DEFAULT_CSL}'
           print('Installed wheel smoke test passed outside repository!')
           "
+          /tmp/test_env/bin/python "$GITHUB_WORKSPACE/tools/gateway_wheel_smoke.py"

@@ -5230,9 +5230,10 @@ or hosted service. Subsequent v4 criteria remain independently tracked below.
 
 ### [P3-40] v4 local reliability and recoverable gateway state
 
-- **Status**: in-progress
+- **Status**: done — software acceptance complete; publication requires exact-head checks
 - **Added**: 2026-10-09
 - **Started**: 2026-10-09
+- **Completed**: 2026-10-09
 - **Priority**: P1 / P2
 - **Effort**: bounded local engineering; release depends on verified acceptance criteria
 - **Source**: explicit user instruction 2026-10-09 to indefinitely suspend real-corpus work and autonomously complete the software roadmap to v4; [v4 design](docs/superpowers/specs/2026-10-09-v4-local-reliability-design.md) and [implementation plan](docs/superpowers/plans/2026-10-09-v4-local-reliability.md).
@@ -5274,7 +5275,7 @@ or hosted service. Subsequent v4 criteria remain independently tracked below.
     its reserved amounts. Never reset limits or alter prior committed receipts;
     append an immutable recovery event. Atomically export canonical JSONL to an
     operator-selected file; export failure leaves budget state unchanged.
-  - [ ] **`[P3-40d]` Quality, backward compatibility and release gate**: generated
+  - [x] **`[P3-40d]` Quality, backward compatibility and release gate**: generated
     documents and isolated stores demonstrate exact-once accounting, real
     multiprocess contention, failed commits, owner death/reuse/unknown,
     corrupt/foreign schemas, migration rollback/source preservation, unsafe
@@ -5312,3 +5313,14 @@ setuptools; clean build/install is a mandatory CI gate rather than a waived chec
 Independent review found three Important issues; all have observed RED→GREEN
 regressions. No deferred minor finding. `[P3-40d]` stays open until the Ubuntu/
 Windows × Python3.10–3.12 matrix and package checks pass.
+
+### Modified 2026-10-09 — software acceptance passed
+
+The candidate's [ten CI jobs](https://github.com/croni4666-cmd/paper-agent/actions/runs/37913639257)
+passed on7d00b61: Windows/Linux × Python3.10–3.12 consistency gates, three original
+Python regression jobs, and clean wheel build/install. Added a final installed-wheel
+gateway authorization/doctor smoke check; publication still requires every current
+exact-head check. `[P3-40a–d]` software acceptance is complete.
+See [acceptance and review evidence](docs/v4-quality-gate.md) and
+[operating/migration boundaries](docs/gateway-v4.md). Suspended scientific criteria
+remain unfulfilled and are not reclassified as completed by this release.

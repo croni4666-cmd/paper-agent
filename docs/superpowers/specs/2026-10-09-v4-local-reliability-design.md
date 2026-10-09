@@ -60,7 +60,10 @@ current_owner()->dict with pid/birth; owner_status(owner)->alive/dead/unknown.
 gateway_store.py: GatewayStore(path), totals(run_id), reserve(request_id, run_id,
 tokens, cost, max_tokens, max_cost, owner, receipt), finalize(request_id, receipt),
 status(run_id=None), recover(request_id, resolution, operator, evidence),
-receipts(limit=None), migrate(audit_path, reservation_path, operator), close().
+receipts(limit=None), migrate(audit_path, reservation_path, operator, max_cost=None), close().
+Migration manifests preserve actual source paths and absence; the CLI requires
+an explicitly reconciled historical cap. Unknown legacy paper counts block new
+reservations, while known counts enforce25 papers cumulatively per run.
 
 gateway.py: shared content validation, an explicit storage backend selector and a
 transactional evaluation path. Preserve existing fields and add a unique request
