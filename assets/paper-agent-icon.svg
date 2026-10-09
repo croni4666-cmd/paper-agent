@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Paper Agent</title>
+  <rect width="512" height="512" rx="112" fill="#f8f5ec"/>
+  <path d="M148 94h159l67 67v220a28 28 0 0 1-28 28H148a28 28 0 0 1-28-28V122a28 28 0 0 1 28-28Z" fill="#fff" stroke="#102a43" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M307 96v54a15 15 0 0 0 15 15h52" fill="#d8e3ec" stroke="#102a43" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M166 207h132M166 252h101M166 297h67" fill="none" stroke="#486581" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="333" cy="324" r="71" fill="#102a43" stroke="#f8f5ec" stroke-width="15"/>
+  <circle cx="333" cy="324" r="53" fill="none" stroke="#2ec4b6" stroke-width="17"/>
+  <path d="m378 370 49 49" fill="none" stroke="#102a43" stroke-width="30" stroke-linecap="round"/>
+  <path d="m333 290 8 23 23 8-23 8-8 23-8-23-23-8 23-8Z" fill="#ffbf69"/>
+</svg>
