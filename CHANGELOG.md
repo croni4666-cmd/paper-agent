@@ -13,6 +13,12 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+### Offline reference interchange [P3-43 / P0-16]
+
+- Add RIS to `pa export` and `pa project export`, covering BibTeX and supported project/search JSON, Unicode/repeated authors, optional bibliographic fields and DOI/arXiv separation. No provider, SDK, PDF inventory or upload is required; `n_pdfs` is explicitly unknown for RIS.
+- Normalize metadata line breaks to prevent extra RIS tags/records. Resolve existing BibTeX macros, reject unsupported JSON structures and source aliases, and publish complete UTF-8 files atomically without truncating prior outputs on write failures.
+- Record a source-pinned comparison of five similarly named GitHub projects. RIS extends existing P0-16; P3-44 refines the already planned local workflow report, while real-corpus and label work stays suspended.
+
 ### Reviewed PR consolidation [P3-42]
 
 - Consolidate PRs #11–#14 into the v4 skill documentation and wrapper runtime: explicit interpreter/UTF-8, caller-relative paths, verified PDF signatures/EOF, honest partial batch results, source strategies and metadata quality summaries. Preserve current evidence/provenance and other command discoverability.

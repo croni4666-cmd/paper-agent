@@ -40,6 +40,25 @@ pa search "AI literacy" --year-min 2020 --limit 20 -o results.json
 
 Use `--engine` to select providers, `--year-min` / `--year-max` to constrain publication years, and `--limit` to cap results per provider. Results depend on provider coverage and availability; inspect the records and deduplicate or correct them before relying on the bibliography. Some providers may require an API key for full access or enrichment. Use `pa keys --help` to manage supported keys.
 
+### Export references as RIS
+
+To hand off references as a local RIS file, use:
+
+```console
+pa export refs.bib --target ris -o refs.ris
+pa export results.json --target ris -o results.ris
+pa project export ai-literacy --format ris -o project.ris
+```
+
+RIS export reads bibliography metadata only; it does not fetch/parse PDFs or
+upload to a reference manager. JSON may contain a record list or `papers`,
+`entries`, or search `results`. Unicode, repeated authors and available DOI/arXiv
+metadata are retained. Missing optional fields are omitted. RIS metadata reports
+`n_pdfs: null` because the PDF inventory is not inspected. Output cannot alias
+source files; failed file publication preserves an existing destination. Verify
+the chosen reference manager's import behavior; no universal client compatibility
+or TeX-to-Unicode conversion is claimed.
+
 ## 3. Fetch papers you may access
 
 For a single DOI, choose a source appropriate to the paper and your access rights. For example, try Unpaywall or arXiv first where applicable:

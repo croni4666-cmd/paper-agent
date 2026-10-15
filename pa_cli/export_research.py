@@ -7,6 +7,7 @@ Supports target formats:
   - bib / bibtex: Curated, clean BibTeX references file.
   - markdown: Comprehensive literature digest markdown report.
   - json: Full machine-readable metadata and papers export.
+  - ris: Local reference interchange, without PDF inspection.
 """
 
 from __future__ import annotations
@@ -304,11 +305,11 @@ def export_research(
     out_file: Optional[Union[str, Path]] = None,
     root: Path = DEFAULT_ROOT,
 ) -> Dict[str, Any]:
-    """Export literature corpus to Jupyter/Pandas, Typst, BibTeX, Markdown, or JSON.
+    """Export literature corpus to Jupyter/Pandas, Typst, BibTeX, Markdown, JSON, or RIS.
 
     Parameters:
       source: Project slug, Path to .bib/.json, or list of dict entries.
-      target: One of ['jupyter', 'typst', 'bib', 'bibtex', 'markdown', 'json'].
+      target: One of ['jupyter', 'typst', 'bib', 'bibtex', 'markdown', 'json', 'ris'].
       out_file: Destination file or directory path.
       root: Default project storage root.
     """
@@ -318,7 +319,7 @@ def export_research(
     else:
         target_norm = target_lower
 
-    allowed_targets = {"jupyter", "typst", "bib", "markdown", "json"}
+    allowed_targets = {"jupyter", "typst", "bib", "markdown", "json", "ris"}
     if target_norm not in allowed_targets:
         raise ValueError(
             f"Unsupported target {target!r}. Must be one of: {sorted(allowed_targets)}"
@@ -330,6 +331,7 @@ def export_research(
     topics_data: Optional[Dict[str, Any]] = None
     raw_entries: List[Dict[str, Any]] = []
     slug: Optional[str] = None
+    protected_paths: List[Path] = []
 
     if isinstance(source, (str, Path)):
         src_path = Path(source)
@@ -338,27 +340,33 @@ def export_research(
         if proj_dir.is_dir() and (proj_dir / "meta.json").exists():
             slug = str(source)
             files = project_files(slug, root)
+            protected_paths.extend([files["refs"], files["meta"], files["dir"] / "topics.json"])
             meta = load_meta(slug, root)
             raw_entries = load_bibtex(files["refs"])
-            if files["pdfs"].exists():
+            if target_norm != "ris" and files["pdfs"].exists():
                 for p in files["pdfs"].glob("*.pdf"):
                     pdf_map[p.stem] = str(p)
                     pdf_map[p.stem.lower()] = str(p)
             topics_file = files["dir"] / "topics.json"
-            if topics_file.exists():
+            if target_norm != "ris" and topics_file.exists():
                 try:
                     topics_data = json.loads(topics_file.read_text(encoding="utf-8"))
                 except Exception:
                     pass
         elif src_path.is_file():
+            protected_paths.append(src_path)
             if src_path.suffix.lower() == ".bib":
                 raw_entries = load_bibtex(src_path)
                 meta = {"title": src_path.stem}
             elif src_path.suffix.lower() == ".json":
                 try:
                     data = json.loads(src_path.read_text(encoding="utf-8"))
-                    if isinstance(data, dict):
-                        raw_entries = data.get("papers") or data.get("entries") or []
+                    if target_norm == "ris":
+                        from .ris import ris_entries
+                        raw_entries = ris_entries(data)
+                        meta = {"title": src_path.stem}
+                    elif isinstance(data, dict):
+                        raw_entries = data.get("papers") or data.get("entries") or data.get("results") or []
                         meta = data.get("meta") or {"title": src_path.stem}
                     elif isinstance(data, list):
                         raw_entries = data
@@ -376,10 +384,30 @@ def export_research(
         raw_entries = source
         meta = {"title": "Exported Corpus"}
     elif isinstance(source, dict):
-        raw_entries = source.get("papers") or source.get("entries") or []
+        if target_norm == "ris":
+            from .ris import ris_entries
+            raw_entries = ris_entries(source)
+        else:
+            raw_entries = source.get("papers") or source.get("entries") or source.get("results") or []
         meta = source.get("meta") or {"title": "Exported Corpus"}
     else:
         raise ValueError(f"Unsupported source type: {type(source)}")
+
+    if target_norm == "ris":
+        from .ris import render_ris, ris_entries, write_ris
+
+        raw_entries = ris_entries(raw_entries)
+        content = render_ris(raw_entries)
+        if out_file:
+            write_ris(out_file, content, protected_paths=protected_paths)
+        return {
+            "target": "ris", "format": "ris", "n_papers": len(raw_entries),
+            "n_pdfs": None, "pdf_inventory": "not_inspected",
+            "files_written": [str(out_file)] if out_file else [],
+            "out_file": str(out_file) if out_file else None,
+            "content_length": len(content), "content": None if out_file else content,
+            **({"slug": slug} if slug else {}),
+        }
 
     records = _extract_paper_records(raw_entries, pdf_map, topics_data)
 
