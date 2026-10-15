@@ -87,13 +87,14 @@ UA_BROWSER = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
 
-def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
+def http_get_json(url: str, headers: dict = None, timeout: int = 30, response_headers: dict = None) -> tuple:
     """v3.9.13.3: now goes through pa_cli._http so HTTPS_PROXY env var is honored.
 
     Returns (status_code, parsed_dict_or_bytes_or_error_dict).
     """
     from ._http import http_get_json as _http_get_json_helper
-    return _http_get_json_helper(url, headers=headers, timeout=timeout)
+    kwargs = {"response_headers": response_headers} if response_headers is not None else {}
+    return _http_get_json_helper(url, headers=headers, timeout=timeout, **kwargs)
 
 
 class EngineResponseError(RuntimeError):
@@ -494,7 +495,7 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
         ymin = year_min or 1991
         ymax = year_max or 2099
         s_q = f"{query} AND submittedDate:[{ymin}0101 TO {ymax}1231]"
-    client = arxiv.Client(page_size=min(limit, 50), delay_seconds=1.0, num_retries=2)
+    client = arxiv.Client(page_size=min(limit, 50), delay_seconds=3.0, num_retries=1)
     search = arxiv.Search(query=s_q, max_results=limit, sort_by=arxiv.SortCriterion.Relevance)
     results = []
     from .bibtex import clean_markup_text
@@ -569,26 +570,57 @@ def _s2_throttle_wait() -> None:
         _S2_LAST_CALL = time.time()
 
 
+def _retry_after_seconds(value):
+    """Parse delta-seconds or an HTTP date; invalid/unbounded advice is ignored."""
+    import math
+    from datetime import datetime, timezone
+    from email.utils import parsedate_to_datetime
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        if value.strip().isdigit():
+            seconds = float(value.strip())
+        else:
+            date = parsedate_to_datetime(value)
+            if date.tzinfo is None:
+                date = date.replace(tzinfo=timezone.utc)
+            seconds = max(0.0, (date - datetime.now(timezone.utc)).total_seconds())
+        return seconds if math.isfinite(seconds) and 0 <= seconds <= 86400 * 365 else None
+    except (ValueError, TypeError, OverflowError):
+        return None
+
+
 def _s2_request_with_retry(url: str, headers: dict) -> tuple:
     """HTTP GET with S2-aware throttle + 429 backoff/retry.
 
     Returns (status, body_dict). On exhausted retries, returns
     (last_status, {}) so the caller can fall back gracefully.
 
-    Retry strategy: 1s -> 2s -> 4s -> ... capped at _S2_BACKOFF_MAX.
+    Anonymous 429 stops immediately (shared quota); keyed retries respect server
+    advice and a total 20-second budget inside the engine's parent deadline.
     """
     last_s = 0
+    deadline = time.monotonic() + 20
     for attempt in range(_S2_MAX_RETRIES + 1):
         _s2_throttle_wait()
-        s, data = http_get_json(url, headers=headers)
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return last_s, {}
+        response_headers = {}
+        s, data = http_get_json(url, headers=headers, timeout=min(8, remaining), response_headers=response_headers)
         last_s = s
         if s == 200:
             return s, data
         if s == 429:
-            if attempt == _S2_MAX_RETRIES:
+            if not headers.get("x-api-key") or attempt == _S2_MAX_RETRIES:
                 break
             # Rate-limited: exponential backoff
             backoff = min(_S2_BACKOFF_BASE * (2 ** attempt), _S2_BACKOFF_MAX)
+            advice = _retry_after_seconds(response_headers.get("Retry-After"))
+            if advice is not None:
+                backoff = max(backoff, advice)
+            if backoff + 0.5 >= deadline - time.monotonic():
+                break
             print(f"  [S2] 429 rate-limited, backing off {backoff:.0f}s "
                   f"(attempt {attempt+1}/{_S2_MAX_RETRIES+1})", file=sys.stderr)
             time.sleep(backoff)
@@ -603,10 +635,9 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
                            limit: int = 50) -> List[Dict]:
     """Semantic Scholar API. Best for citation-rich data.
 
-    [P1-20] v3.9.10.11: 1 RPS throttle + 429 backoff/retry (max 3 retries,
-    exponential backoff 1s -> 2s -> 4s, capped at 30s). This lets the
-    S2 free tier be used in 50-query batch rebuilds without hitting
-    429 rate limits.
+    Anonymous quota is shared: a 429 is surfaced immediately. Keyed retries
+    honor Retry-After within a bounded total budget; a key does not guarantee
+    service availability. Other explicitly selected engines continue normally.
     """
     url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={quote(query)}&limit={min(limit, 100)}"
     if year_min or year_max:

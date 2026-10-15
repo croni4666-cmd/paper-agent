@@ -5454,3 +5454,15 @@ its historical pre-integration wording above is retained as an audit trail.
   compatibility failures, or a new operator need. Real corpus/labels remain
   indefinitely suspended. P3-44 operational reporting is integrated via PR #69;
   historical M4 evidence coverage still depends on PR #16.
+
+### P3-45 maintenance follow-up — arXiv route / S2 retry correction
+
+- **Implemented, exact-head CI required**: the health probe now uses an existing
+  credential-free configured route by default, with explicit direct diagnostics.
+  arXiv's official endpoint and real SDK search both returned results from this
+  host; prior forced-direct timeouts remain historical path-specific observations.
+- **S2 boundary**: anonymous 429 ends retries; keyed requests honor Retry-After
+  within a 20-second budget. Shared remote limits are not claimed repaired.
+- **Evidence**: three offline rounds each passing 49 tests/54 subtests; dated
+  observations and scope in docs/engine-recovery-2026-10-15.md. No new feature
+  expansion, dependency, paid access, corpus or scientific evaluation.
