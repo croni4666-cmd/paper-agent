@@ -5360,3 +5360,51 @@ remain unfulfilled and are not reclassified as completed by this release.
 - **Global Rule audit**: passes; no added runtime service, paid APIs, data
   collection or scientific evaluation. Existing Requests gets a bounded range.
 - **Review evidence**: docs/pr-review-2026-10-15.md.
+
+### [P3-43] Offline RIS reference export (extends [P0-16])
+
+- **Status**: in-progress
+- **Added / Started**: 2026-10-15
+- **Priority / Effort**: P2 / bounded local exporter
+- **Source**: user asks to study similarly named GitHub projects and implement
+  suitable ideas; galleonli/paper-agent BibTeX/RIS export; see
+  docs/github-projects-2026-10-15.md for pinned sources and transfer boundaries.
+- **Rationale**: existing [P0-16] supports BibTeX/JSON/Markdown/Jupyter/Typst,
+  but no RIS interchange for reference-manager handoff. Extend that interface;
+  do not build a competing export subsystem or cloud connector.
+- **Acceptance**: `pa export INPUT --target ris` and project export support
+  BibTeX and standard project/search JSON; preserve Unicode/repeated authors,
+  source types, optional bibliographic fields and real DOI/arXiv separation;
+  normalize line breaks so fields cannot inject RIS records; reject invalid
+  input and aliases to source files; atomic output preserves old destination on
+  write failures. No PDF parsing, credential requirement or external requests.
+  Use generated fixtures, existing export regressions, CI and wheel checks.
+- **Global Rule audit**: 5/5 pass; stdlib, no new dependency, hosted/paid service,
+  collection schedule or model/scientific evaluation. Offline export survives
+  provider/free-tier changes. Reference-manager UI import remains unvalidated.
+
+### [P3-44] Local run report (refines historical skill-reliability M4)
+
+- **Status**: proposed; not started
+- **Added**: 2026-10-15
+- **Priority / Effort**: P2 / bounded report after format/schema design
+- **Source**: whut09/paper_agent stage contracts/checkpoint artifact traces;
+  happyTonakai/PaperAgent local template export; historical M4 is retained and
+  clarified, not duplicated. See docs/github-projects-2026-10-15.md.
+- **Rationale**: make independently produced search/download/review outcomes
+  inspectable together. Reuse existing jobs/journal/evidence state; no second
+  scheduler, orchestration engine or global database.
+- **Acceptance**: explicit operator-supplied result files, clear partial/failed/
+  unknown states, supported schema/version, input/output references and optional
+  content hashes; never rerun a stage or infer missing success. Redact secrets;
+  keep report generation read-only except its selected output. Evidence-specific
+  binding awaits PR16's snapshot/identity repair. Validate with generated files.
+- **Global Rule audit**: passes provisionally; no SDK/hosted service or paid
+  execution. No live dispatch, automatic collection, labeling or model evaluation.
+
+### Modified 2026-10-15 — P3-42 integrated
+
+PR #66 merged to ee0b3eb after all ten exact-head CI checks passed. Consolidated
+#10–#14 and closed their originals; superseded #19/#60 closed. Seven retained
+proposals have concrete blockers in docs/pr-review-2026-10-15.md. P3-42 is done;
+its historical pre-integration wording above is retained as an audit trail.

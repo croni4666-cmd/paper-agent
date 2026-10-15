@@ -39,6 +39,23 @@ pa search "人工智能素养" --year-min 2020 --limit 20 -o results.json
 
 使用 `--engine` 选择来源，使用 `--year-min` / `--year-max` 限制发表年份，使用 `--limit` 限制每个来源返回的记录数。检索结果受各来源覆盖范围和可用性影响；在使用前请核对记录，并按需要去重和修正。部分来源的完整访问或元数据补全可能需要 API 密钥。可运行 `pa keys --help` 查看密钥管理功能。
 
+### 导出 RIS 参考文献
+
+需要向文献管理器交接参考文献时，可先导出本地 RIS 文件：
+
+```console
+pa export refs.bib --target ris -o refs.ris
+pa export results.json --target ris -o results.ris
+pa project export ai-literacy --format ris -o project.ris
+```
+
+RIS 导出只读取书目元数据，不下载或解析 PDF，也不向文献管理器上传内容。
+JSON 支持记录列表，或包含 `papers`、`entries`、检索 `results` 的对象。
+导出保留 Unicode、多作者及已知的 DOI/arXiv 信息，缺失的可选字段直接省略。
+由于没有清点 PDF，返回元数据中的 `n_pdfs` 为 `null`。输出不得覆盖来源文件，
+文件发布失败会保留已有目标。请核对目标文献管理器的导入效果；本功能不保证
+所有客户端版本的兼容性，也不是 TeX 到 Unicode 的转换器。
+
 ## 3. 获取有权访问的论文
 
 获取单篇论文时，根据论文来源和你的访问权限选择渠道。例如，适用时可优先尝试 Unpaywall 或 arXiv：

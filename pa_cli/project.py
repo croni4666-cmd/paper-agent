@@ -1245,6 +1245,10 @@ def project_export(
     - bibtex: Curated, clean BibTeX file.
     - json: Full machine-readable export with meta, entries, and stats.
     """
+    if format.lower().strip() == "ris":
+        from .export_research import export_research
+        validate_slug(slug)
+        return export_research(slug, target="ris", out_file=out_file, root=root)
     files = project_files(slug, root)
     if not files['dir'].exists():
         raise FileNotFoundError(f"Project {slug!r} does not exist at {root}")

@@ -42,7 +42,7 @@ def main(ctx):
     failure, stop iterating and surface a "your turn" handoff. Real human
     browser sessions remain the only reliable Cloudflare bypass.
     """
-    if ctx.invoked_subcommand in {"gateway", "doctor"}:
+    if ctx.invoked_subcommand in {"gateway", "doctor", "export"}:
         # Local inspection must not load private dotenv or credential registries.
         return
     # At every other CLI invocation:
@@ -1416,7 +1416,7 @@ def export_screening(bibtex_file, out_file, judges_db, query, no_unrated):
 @main.command("export")
 @click.argument("source", required=False, default=None)
 @click.option("--target", "-t", "--format", "-f", "target", default="jupyter",
-              type=click.Choice(["jupyter", "typst", "bib", "bibtex", "markdown", "json"], case_sensitive=False),
+              type=click.Choice(["jupyter", "typst", "bib", "bibtex", "markdown", "json", "ris"], case_sensitive=False),
               show_default=True, help="Target export format")
 @click.option("-o", "--output", "--out", "output", default=None,
               help="Destination file or directory")
@@ -1435,6 +1435,7 @@ def export_cmd(source, target, output, project_slug, root_path, as_json):
       jupyter   - Pandas DataFrame records JSON or starter analysis notebook (.ipynb)
       typst     - Typst scaffolding (main.typ + refs.bib) ready for `typst compile`
       bib/bibtex- Standard clean BibTeX references
+      ris       - Offline RIS reference-manager interchange
       markdown  - Literature digest document
       json      - Full machine-readable metadata
 
@@ -3403,7 +3404,7 @@ def project_cite_check_cmd(slug, doc_path, root_path, strict, as_json):
 @project.command(name="export")
 @click.argument("slug")
 @click.option("--format", "-f", "--target", "-t", "format", default="markdown",
-              type=click.Choice(["markdown", "bibtex", "bib", "json", "jupyter", "typst"], case_sensitive=False),
+              type=click.Choice(["markdown", "bibtex", "bib", "json", "jupyter", "typst", "ris"], case_sensitive=False),
               show_default=True, help="Export format / target")
 @click.option("-o", "--output", "--out", "output", default=None, help="Write export to destination file")
 @click.option("--root", "root_path", default=None, type=click.Path(file_okay=False),
