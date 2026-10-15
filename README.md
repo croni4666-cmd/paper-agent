@@ -46,6 +46,7 @@ Real-corpus collection, human labels, and corpus-dependent evaluation are indefi
 - [简体中文使用指南](docs/usage_zh.md)
 - [v4 gateway operation and migration](docs/gateway-v4.md)
 - [v4 reliability quality gate](docs/v4-quality-gate.md)
+- [Offline run report](docs/local-run-report.md)
 - [Repository icon PNG](assets/paper-agent-icon.png)
 - [Changelog](CHANGELOG.md)
 - [License and use restrictions](LICENSE)

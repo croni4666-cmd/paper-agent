@@ -30,6 +30,7 @@ jobs:
           python tools/consistency_quality_gate.py
           python -m unittest discover -s tests -p "test_*wrapper*.py" -v
           python -m unittest test_output.test_ris_export -v
+          python -m unittest test_output.test_run_report -v
 
   test:
     name: Test (Python ${{ matrix.python-version }})
@@ -125,6 +126,7 @@ jobs:
               'pa_cli/process_identity.py',
               'pa_cli/doctor.py',
               'pa_cli/ris.py',
+              'pa_cli/run_report.py',
               'pa_cli/labels/__init__.py',
               'pa_cli/labels/base.py',
               'pa_cli/data/chinese-gb7714-2005-numeric.csl',
@@ -150,4 +152,5 @@ jobs:
           "
           /tmp/test_env/bin/python "$GITHUB_WORKSPACE/tools/gateway_wheel_smoke.py"
           /tmp/test_env/bin/python -m pa_cli doctor --json
+          /tmp/test_env/bin/python -m pa_cli run-report --help
           /tmp/test_env/bin/python -c "from pa_cli.ris import render_ris; assert 'TY  - BOOK' in render_ris([{'type':'book','title':'Fixture'}])"
