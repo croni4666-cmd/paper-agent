@@ -194,10 +194,10 @@ def http_get(url: str, headers: Optional[Dict[str, str]] = None,
         final_headers.update(headers)
     opener = build_opener()
     req = ur.Request(url, headers=final_headers)
-    resp = opener.open(req, timeout=timeout)
-    body = resp.read()
-    # Auto-decode gzip/deflate/br
-    ce = resp.headers.get("Content-Encoding", "").lower()
+    with opener.open(req, timeout=timeout) as resp:
+        body = resp.read()
+        ce = resp.headers.get("Content-Encoding", "").lower()
+    # Close the response even when reading or decompression fails.
     if ce == "gzip":
         import gzip
         body = gzip.decompress(body)
@@ -229,7 +229,8 @@ def http_get_json(url: str, headers: Optional[Dict[str, str]] = None,
             return 200, body
     except urllib.error.HTTPError as e:
         try:
-            body = e.read()
+            with e:
+                body = e.read()
             return e.code, json.loads(body.decode("utf-8"))
         except Exception:
             return e.code, {}
@@ -255,8 +256,8 @@ def http_post(url: str, data: Optional[Dict[str, Any]] = None,
         body_data = urllib.parse.urlencode(data).encode("utf-8")
     opener = build_opener()
     req = ur.Request(url, data=body_data, headers=final_headers, method="POST")
-    resp = opener.open(req, timeout=timeout)
-    return resp.read()
+    with opener.open(req, timeout=timeout) as resp:
+        return resp.read()
 
 
 def http_request_get(url: str, headers: Optional[Dict[str, str]] = None,

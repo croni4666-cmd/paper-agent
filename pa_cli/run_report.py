@@ -50,7 +50,7 @@ def _search(data):
         raise ValueError("inconsistent_search")
     ok = sum(value == "ok" for value in statuses.values())
     failed = len(statuses) - ok
-    return _state(ok, failed), {"engines_ok": ok, "engines_failed": failed, "results": len(rows)}
+    return _state(ok or bool(rows), failed), {"engines_ok": ok, "engines_failed": failed, "results": len(rows)}
 
 
 def _fetch(data):

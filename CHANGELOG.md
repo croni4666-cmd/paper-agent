@@ -13,6 +13,12 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+### Maintenance acceptance [P3-45]
+
+- Preserve engine failures for HTTP errors, malformed responses and invalid worker rows; retain partial PubMed/arXiv results with error indicators, expose optional skips/unknown engines, and isolate optional enrichment failures. Keep spawned-worker cancellation.
+- Close HTTP responses on success and failure, stop redundant S2 backoff after retry exhaustion, and reject empty/malformed CNKI configuration while distinguishing local readiness from verified service access.
+- Add an offline capability pressure gate (process contention, large reference/batch outputs, generated PDF indexing) and opt-in capped keyless endpoint checks. Document the maintenance-phase decision and unresolved external access; no new release, dependency or corpus work.
+
 ### Local snapshot run report [P3-44]
 
 - Add `pa run-report` for explicitly selected search, batch and review-wrapper JSON. Preserve partial/failure/unknown distinctions, separate existing-file skips from timeouts, and record hashes of the exact parsed JSON bytes. No reruns, linked artifact reads or evidence-binding claims.

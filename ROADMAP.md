@@ -5431,3 +5431,26 @@ PR #66 merged to ee0b3eb after all ten exact-head CI checks passed. Consolidated
 #10–#14 and closed their originals; superseded #19/#60 closed. Seven retained
 proposals have concrete blockers in docs/pr-review-2026-10-15.md. P3-42 is done;
 its historical pre-integration wording above is retained as an audit trail.
+
+### [P3-45] Core capacity acceptance and engine maintenance
+
+- **Status**: implemented; integration requires all ten exact-head CI checks
+- **Added**: 2026-10-15
+- **Scope**: bounded generated-only capability stress, truthful provider failures,
+  partial-result preservation, local CNKI configuration checks, closed HTTP
+  responses, and opt-in keyless public endpoint health. No scheduler service,
+  new dependencies, corpus collection, labels or scientific evaluation.
+- **Acceptance**: five rounds of 41 tests/51 subtests; eight-process quota
+  contention, 3,000 RIS records, 8,000 mixed batch outcomes, 80 generated PDF
+  pages. Existing 190-test/18-subtest gate plus ten stress repetitions passes.
+  Six platform/Python CI jobs run the bounded three-round gate; full suite and
+  clean package checks remain required. See docs/maintenance-acceptance-2026-10-15.md.
+- **External limitations**: arXiv endpoint access remains unverified from this
+  host; Semantic Scholar had intermittent 429. These do not count as healthy
+  service acceptance. Optional authenticated/browser/download integrations and
+  retained PRs remain separately gated.
+- **Phase decision**: after required CI integration, pause proactive feature
+  expansion and enter weekly maintenance. Reopen for confirmed reliability or
+  compatibility failures, or a new operator need. Real corpus/labels remain
+  indefinitely suspended. P3-44 operational reporting is integrated via PR #69;
+  historical M4 evidence coverage still depends on PR #16.
