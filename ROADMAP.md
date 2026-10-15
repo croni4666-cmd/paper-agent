@@ -5466,3 +5466,18 @@ its historical pre-integration wording above is retained as an audit trail.
 - **Evidence**: three offline rounds each passing 49 tests/54 subtests; dated
   observations and scope in docs/engine-recovery-2026-10-15.md. No new feature
   expansion, dependency, paid access, corpus or scientific evaluation.
+
+### v4.1.0 phase closeout — 2026-10-15
+
+P3-41–P3-45 implementation is integrated through PRs #65–#71. This compatible
+minor release packages offline doctor, RIS export, local run reports and the
+verified engine/runtime fixes. P3-44 and P3-45 operational scopes are complete;
+historical evidence coverage remains deferred, as do real corpus/labels/model
+evaluation and the separately blocked optional proposals. arXiv configured-route
+access is verified; anonymous S2 429 is still an external limit.
+
+Publication requires every final candidate CI check, a version-consistent clean
+installed wheel, and a tag targeting the merged main revision. After publication,
+pause proactive feature expansion and keep the existing Monday 10:00 Asia/Shanghai
+maintenance schedule. Reopen development for confirmed regressions, compatibility
+or dependency fixes, or an explicit new user need. No PyPI publication is implied.

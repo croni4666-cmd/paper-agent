@@ -13,6 +13,14 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+No changes yet.
+
+## [4.1.0] - 2026-10-15
+
+Compatible minor release for local diagnostics, reference interchange, snapshot
+run reporting and maintenance hardening. Gateway v4 storage remains unchanged;
+this milestone ends proactive feature development and enters weekly maintenance.
+
 ### Engine recovery follow-up
 
 - Correct forced-direct health probes to use existing credential-free configured HTTP(S) routes, with explicit direct mode and network labels. Confirm arXiv endpoint and SDK search on this host; use a three-second SDK page interval and one retry.
