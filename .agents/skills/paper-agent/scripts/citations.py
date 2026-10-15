@@ -2,10 +2,10 @@
 """scripts/citations.py —Wrapper for `pa citations` (OpenAlex citation walk).
 
 Walks the citation graph for a paper via OpenAlex API (no key required).
-Forward = papers THIS paper cites; backward = papers that cite THIS paper.
+Forward = papers that cite THIS paper; backward = references cited by THIS paper.
 
 Usage:
-    python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
+    python scripts/citations.py 10.1038/nature12373 --direction backward --limit 50
     python scripts/citations.py 10.1038/nature12373 --direction forward --output forward_cites.json
 """
 from __future__ import annotations
@@ -32,7 +32,7 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s 10.1038/nature12373 --direction both --limit 50
+  %(prog)s 10.1038/nature12373 --direction backward --limit 50
   %(prog)s 10.1038/nature12373 --direction forward --output forward.json
   %(prog)s 10.1038/nature12373 --direction backward --limit 100
         """,
@@ -40,9 +40,9 @@ Examples:
     parser.add_argument("doi", help="Paper DOI (e.g. 10.1038/nature12373)")
     parser.add_argument(
         "--direction",
-        choices=["forward", "backward", "both"],
-        default="both",
-        help="Which direction to walk (default: both)",
+        choices=["forward", "backward"],
+        default="forward",
+        help="forward: citing papers; backward: references (default: forward); run each for both sets",
     )
     parser.add_argument("--limit", type=int, default=50, help="Max papers to return (default: 50)")
     parser.add_argument("--output", help="Optional output file (default: stdout)")

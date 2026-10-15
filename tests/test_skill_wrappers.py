@@ -46,7 +46,8 @@ elif args[0] == 'fetch-batch':
         else: target.write_text(json.dumps(summary))
     print('Downloaded batch')
 elif args[0] == 'review':
-    assert Path(args[1]).is_file(), args[1]
+    assert Path(args[1]).is_dir(), args[1]
+    assert '--max-papers' not in args
     Path(option('--output')).write_text('Evidence review', encoding='utf-8')
 elif args[0] == 'citations':
     Path(option('--output')).write_text(json.dumps({'count': 1, 'forward':[{}]}))
@@ -136,7 +137,8 @@ class WrapperTests(unittest.TestCase):
         self.assertEqual(json.loads(result.stderr).get('status'), 'failed')
 
     def test_review_resolves_input_and_output(self):
-        result = self.run_wrapper('review.py', 'refs.bib', '--output', 'review.md')
+        (self.cwd / 'corpus').mkdir()
+        result = self.run_wrapper('review.py', 'corpus', '--output', 'review.md')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual((self.cwd / 'review.md').read_text(), 'Evidence review')
 

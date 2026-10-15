@@ -34,18 +34,19 @@ def main() -> int:
         epilog="""
 Examples:
   %(prog)s ./pdfs/ --output lit_review.md
-  %(prog)s refs.bib --output lit_review.md --topic "long-term care"
-  %(prog)s ./pdfs/ --topics --top-k-clusters 5
+  %(prog)s ./pdfs/ --topics --output topics.json
         """,
     )
-    parser.add_argument("corpus", help="Path to corpus: directory of PDFs or .bib file. Use quotes if path has spaces.")
+    parser.add_argument("corpus", help="Path to a local corpus directory. Use quotes if path has spaces.")
     parser.add_argument("--output", default="lit_review.md", help="Output markdown file (default: lit_review.md)")
     parser.add_argument("--topic", help="Focus synthesis on a specific topic/theme")
-    parser.add_argument("--max-papers", type=int, default=50, help="Max papers to include (default: 50)")
+    parser.add_argument("--max-papers", type=int, default=None, help="Legacy option; unsupported by the current CLI")
     parser.add_argument("--topics", action="store_true", help="Cluster corpus by topic instead of full review")
-    parser.add_argument("--top-k-clusters", type=int, default=5, help="Number of topic clusters (default: 5)")
+    parser.add_argument("--top-k-clusters", type=int, default=None, help="Legacy option; current CLI selects cluster count automatically")
     parser.add_argument("--model", default=None, help="LLM model for synthesis (default: from pa config)")
     args = parser.parse_args()
+    if any(value is not None for value in (args.topic, args.max_papers, args.top_k_clusters, args.model)):
+        parser.error("--topic, --max-papers, --top-k-clusters and --model are unsupported by the current CLI")
     args.corpus = str(Path(args.corpus).expanduser().resolve())
     args.output = str(Path(args.output).expanduser().resolve())
 
@@ -60,7 +61,7 @@ Examples:
         return 4
 
 
-    if not Path(args.corpus).exists():
+    if not Path(args.corpus).is_dir():
         print(json.dumps({
             "error": "corpus_not_found",
             "message": f"Corpus not found: {args.corpus}",
@@ -72,7 +73,7 @@ Examples:
         cmd = [
             PYTHON, "-m", "pa_cli.cli", "review-topics",
             args.corpus,
-            "--top-k", str(args.top_k_clusters),
+            "--output", args.output,
         ]
     else:
         # Full review mode
@@ -80,12 +81,7 @@ Examples:
             PYTHON, "-m", "pa_cli.cli", "review",
             args.corpus,
             "--output", args.output,
-            "--max-papers", str(args.max_papers),
         ]
-        if args.topic:
-            cmd.extend(["--topic", args.topic])
-        if args.model:
-            cmd.extend(["--model", args.model])
 
     try:
         result = run_pa(
@@ -100,7 +96,7 @@ Examples:
         print(json.dumps({
             "error": "review_timeout",
             "message": "Synthesis exceeded 600s timeout.",
-            "hint": "Try smaller --max-papers or check LLM API connectivity.",
+            "hint": "Use a smaller local corpus directory.",
         }), file=sys.stderr)
         return 2
 
@@ -108,7 +104,7 @@ Examples:
         out = {
             "status": "completed",
             "corpus": args.corpus,
-            "output": args.output if not args.topics else "(topic clusters printed to stdout)",
+            "output": args.output,
             "mode": "clustering" if args.topics else "synthesis",
         }
         if args.topics:

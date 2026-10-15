@@ -65,7 +65,8 @@ Examples:
     cmd = [PYTHON, "-m", "pa_cli.cli", "keys", args.command]
     if args.service_id:
         cmd.append(args.service_id)
-    cmd.append("--json")  # pa uses --json, not --as-json
+    if args.command == "list":
+        cmd.append("--json")  # check/audit do not accept this flag.
 
     try:
         result = run_pa(

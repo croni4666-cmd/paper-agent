@@ -35,21 +35,22 @@ def main() -> int:
         epilog="""
 Examples:
   %(prog)s stats
-  %(prog)s list --limit 20
+  %(prog)s path
   %(prog)s clean --older-than-days 90
-  %(prog)s clear --confirm
+  %(prog)s clean --older-than-days 90 --dry-run
         """,
     )
     parser.add_argument(
         "command",
-        choices=["stats", "list", "clean", "clear"],
+        choices=["stats", "path", "clean"],
         help="Cache subcommand",
     )
     parser.add_argument("--older-than-days", type=int, help="(clean) Delete entries older than N days")
-    parser.add_argument("--limit", type=int, help="(list) Max entries to show")
-    parser.add_argument("--confirm", action="store_true", help="(clear) Skip confirmation prompt")
+    parser.add_argument("--dry-run", action="store_true", help="(clean) Preview without deleting files")
     parser.add_argument("--as-json", action="store_true", default=True, help="Output as JSON (default)")
     args = parser.parse_args()
+    if args.command != "clean" and (args.older_than_days is not None or args.dry_run):
+        parser.error("--older-than-days and --dry-run require clean")
 
     # Find paper-agent root
     pa_root = find_pa_root()
@@ -64,12 +65,10 @@ Examples:
 
     cmd = [PYTHON, "-m", "pa_cli.cli", "cache", args.command]
     if args.older_than_days is not None:
-        cmd.extend(["--older-than-days", str(args.older_than_days)])
-    if args.limit is not None:
-        cmd.extend(["--limit", str(args.limit)])
-    if args.confirm:
-        cmd.append("--confirm")
-    if args.as_json:
+        cmd.extend(["--older-than", str(args.older_than_days)])
+    if args.dry_run:
+        cmd.append("--dry-run")
+    if args.as_json and args.command != "path":
         cmd.append("--json")  # pa uses --json, not --as-json
 
     try:

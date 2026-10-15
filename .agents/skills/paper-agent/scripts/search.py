@@ -45,8 +45,10 @@ def summarize_quality(results):
     multi_source = 0
     for paper in results:
         flag = paper.get("quality_flag", "unclassified")
+        if not isinstance(flag, str):
+            flag = "unclassified"
         flags[flag] = flags.get(flag, 0) + 1
-        if len(paper.get("found_by") or []) > 1:
+        if isinstance(paper.get("found_by"), list) and len(paper["found_by"]) > 1:
             multi_source += 1
     return {"total": len(results), "by_flag": dict(sorted(flags.items())),
             "multi_source": multi_source}
@@ -165,7 +167,7 @@ Examples:
                           "message": "paper-agent returned non-JSON search output"}), file=sys.stderr)
         return 1
     results = data.get("results", []) if isinstance(data, dict) else data
-    if not isinstance(results, list):
+    if not isinstance(results, list) or not all(isinstance(paper, dict) for paper in results):
         print(json.dumps({"error": "invalid_search_response",
                           "message": "paper-agent search results are not a list"}), file=sys.stderr)
         return 1

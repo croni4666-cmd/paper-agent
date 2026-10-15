@@ -1,9 +1,9 @@
 ---
 name: paper-agent
-description: Use when searching academic papers, fetching PDFs by DOI or BibTeX, tracing citations, clustering a corpus, drafting literature reviews, or managing paper-agent keys and cache. Not for general web search or reading PDFs.
+description: Use when searching academic papers, fetching PDFs by DOI or BibTeX, extracting page-aware evidence, verifying claims and provenance, using Zotero or topic projects, generating PRISMA diagrams, tracing citations, clustering a corpus, drafting literature reviews, or managing paper-agent keys and cache. Not for general web search.
 metadata:
-  version: 3.9.28.0
-  pa_cli_version: 3.9.28.0
+  version: 4.0.0
+  pa_cli_version: 4.0.0
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent
@@ -30,13 +30,15 @@ Prefix each entry with `python "<skill-dir>/scripts/…"`. Use the selected scri
 | Search | `search.py QUERY --engine all --limit 20` |
 | Fetch one PDF | `fetch.py DOI --output-dir ABS_DIR` |
 | Fetch BibTeX PDFs | `fetch_batch.py ABS_BIB --output-dir ABS_DIR --report ABS_JSON --skip-existing` |
-| Draft literature review | `review.py ABS_CORPUS --output ABS_MD --topic TOPIC` |
-| Cluster corpus | `review.py ABS_CORPUS --topics --top-k-clusters 5` |
-| Trace citations | `citations.py DOI --direction both --limit 50 --output ABS_JSON` |
-| Key status / configuration | `keys.py list`, `check SERVICE_ID`, `audit`, `add SERVICE_ID KEY` |
-| Cache inspection / cleanup | `cache.py stats`, `list`, `clean --older-than-days N`, `clear` |
+| Draft literature review | `review.py ABS_CORPUS --output ABS_MD` |
+| Cluster corpus | `review.py ABS_CORPUS --topics --output ABS_JSON` |
+| Trace citations | `citations.py DOI --direction forward --limit 50 --output ABS_JSON` |
+| Key status | `keys.py list`, `check SERVICE_ID`, `audit` |
+| Cache inspection / cleanup | `cache.py stats`, `path`, `clean --older-than-days N --dry-run` |
+| Page-aware evidence / claims / provenance | `evidence.py --help`, `verify_claim.py --help`, `provenance.py --help` |
+| Zotero / topic projects / PRISMA | `zotero.py --help`, `project.py --help`, `prisma.py --help` |
 
-`ABS_CORPUS` is a PDF directory or BibTeX file. Search accepts `--year-min`, `--year-max`, and `--output markdown`; `--limit` is per engine. Supported engine choices are `crossref`, `openalex`, `semanticscholar`, `arxiv`, `aminer`, `cnki`, `pubmed`, and `all`; do not infer wrapper options from engine counts in older documentation.
+`ABS_CORPUS` is a local directory. Search accepts `--year-min`, `--year-max`, `--strategy`, `--source`, `--quality-mode`, and `--output markdown`; `--limit` is per engine. Use wrapper help for the supported engine choices.
 
 ## Execution notes
 
@@ -44,8 +46,9 @@ Prefix each entry with `python "<skill-dir>/scripts/…"`. Use the selected scri
 - Inspect exit status, stdout, stderr, and actual output files. Output is often JSON, but format varies by command. Report partial failures instead of assuming every paper succeeded.
 - On timeout, narrow the engine or limit; on quota/authentication failures, use an available alternative or report the missing configuration. Avoid indefinite retries.
 - For PMC XML-to-PDF rendering, use `fetch.py --prefer pmc-pdf`; this requires Playwright. Confirm the result is a PDF before reporting a successful download.
-- The citation wrapper documents `forward` as references and `backward` as citing papers. Verify the installed CLI's semantics before choosing a single direction; use `both` when both sets are needed.
+- Citation `forward` means citing papers; `backward` means references. Run each direction separately for both sets. Legacy `both` is rejected rather than forwarded as an invalid CLI option.
 - Review output is a draft. Check its citations and distinguish abstract-based findings from full-text evidence.
+- Real-corpus collection, human labeling and dependent scientific evaluation remain indefinitely suspended. Generated fixtures only verify software behavior.
 - Cache cleanup deletes files; key updates and external sync change persistent state. Perform them only within the user's requested scope. Do not expose key values.
 
 ## References — load only as needed

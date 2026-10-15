@@ -43,12 +43,28 @@ CLI convention covering cached skips and global-timeout entries; inspect each
 row's `success` and `error` to distinguish them. Hard process timeouts that
 prevent a fresh report are reported as failed, with files left in place.
 
-## Offline regression tests
+## v4 command compatibility (2026-10-15)
+
+The review wrapper requires a corpus directory, not a BibTeX file. It forwards
+only options supported by the installed v4 CLI; legacy `--topic`, `--model`,
+`--max-papers` and `--top-k-clusters` fail explicitly. Topic clustering chooses
+its count automatically and writes to `--output`.
+
+Citation `forward` means citing papers, `backward` means references. The default
+is now `forward`; use two explicit invocations for both directions, since v4
+does not accept `both`. Cache wrappers support `stats`, `path` and `clean`, with
+`--dry-run` for a preview. Removed `list`/`clear` commands were never accepted by
+the current CLI. Key `check`/`audit` omit the unsupported JSON flag.
+
+Search strategy/quality fields describe metadata only. The wrapper rejects
+non-object result rows with a JSON error instead of raising an uncaught error.
+
+## Offline regression tests (v4)
 
 From the repository root:
 
 ```sh
-python -m unittest discover -s tests -p test_skill_wrappers.py -v
+python -m unittest discover -s tests -p "test_*wrapper*.py" -v
 ```
 
 Tests run real wrapper subprocesses against an isolated fixture CLI and

@@ -1,5 +1,18 @@
 # Paper Agent skill reliability roadmap — 2026-09
 
+## Current disposition — 2026-10-15
+
+This historical plan was reviewed against v4. The M0–M2 changes from PRs
+#11–#13 are consolidated with v4 command compatibility fixes and offline tests;
+merge acceptance requires the current candidate's full CI. M3 (PR #16) remains
+blocked by duplicate evidence identities and repeated corpus reads; it is not
+accepted as a verified evidence-binding implementation. M4 remains deferred.
+
+All historical manual/public-source smoke checks below are suspended, along
+with real-corpus collection and human labels, under the operator's 2026-10-09
+instruction. Generated fixtures and command-parser checks are the engineering
+gate; they do not claim scientific accuracy. ROADMAP.md remains authoritative.
+
 This delivery roadmap supplements the repository's long-term
 [ROADMAP.md](../ROADMAP.md). It covers the local Codex skill wrapper only:
 reliable execution, honest download results, discoverable search controls and

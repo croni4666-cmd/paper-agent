@@ -13,6 +13,12 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+### Reviewed PR consolidation [P3-42]
+
+- Consolidate PRs #11–#14 into the v4 skill documentation and wrapper runtime: explicit interpreter/UTF-8, caller-relative paths, verified PDF signatures/EOF, honest partial batch results, source strategies and metadata quality summaries. Preserve current evidence/provenance and other command discoverability.
+- Correct wrapper arguments against the real v4 parser, including review directory inputs, automatic topic counts, citation directions, cache cleanup options and key JSON support. Add cross-platform wrapper/CLI contract coverage. Legacy unsupported options fail explicitly.
+- Reapply PR #10's Requests range (`>=2.34.2,<2.35`) to the current dependency baseline without importing unrelated old branch metadata. Other optional dependency upgrades require separate compatibility validation.
+
 ### Local capability inventory [P3-41]
 
 - Add `pa doctor` and `pa doctor --json` to discover optional packages, Pandoc and process-environment credential presence without network calls, browser launches or private configuration reads. Failed checks stay isolated and optional gaps do not mark the whole CLI unavailable. Local discovery is not a service-health or credential-validity claim.
