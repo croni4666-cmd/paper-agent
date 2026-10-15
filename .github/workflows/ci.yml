@@ -31,6 +31,7 @@ jobs:
           python -m unittest discover -s tests -p "test_*wrapper*.py" -v
           python -m unittest test_output.test_ris_export -v
           python -m unittest test_output.test_run_report -v
+          python tools/capability_stress_gate.py --rounds 3
 
   test:
     name: Test (Python ${{ matrix.python-version }})

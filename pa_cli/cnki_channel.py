@@ -197,8 +197,15 @@ def load_cookies() -> List[Dict[str, Any]]:
         cookies = json.loads(CNKI_COOKIES_PATH.read_text(encoding="utf-8"))
         if not isinstance(cookies, list):
             return []
+        if not all(isinstance(cookie, dict) and isinstance(cookie.get("name"), str) and cookie["name"]
+                   and isinstance(cookie.get("value"), str) and cookie["value"]
+                   and (isinstance(cookie.get("url"), str) and cookie["url"].startswith("https://")
+                        or isinstance(cookie.get("domain"), str) and cookie["domain"]
+                        and isinstance(cookie.get("path"), str) and cookie["path"].startswith("/"))
+                   for cookie in cookies):
+            return []
         return cookies
-    except (json.JSONDecodeError, OSError):
+    except (ValueError, OSError):
         return []
 
 
@@ -206,8 +213,13 @@ def cookie_age_hours() -> Optional[float]:
     """Return age of cookies file in hours, or None if file doesn't exist."""
     if not CNKI_COOKIES_PATH.exists():
         return None
-    mtime = CNKI_COOKIES_PATH.stat().st_mtime
-    return (time.time() - mtime) / 3600
+    try:
+        mtime = CNKI_COOKIES_PATH.stat().st_mtime
+        age = (time.time() - mtime) / 3600
+        # Filesystem timestamp rounding can put a new Windows file slightly ahead.
+        return max(0.0, age) if age >= -5 / 3600 else None
+    except OSError:
+        return None
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -887,7 +899,9 @@ def status_report() -> Dict[str, Any]:
         "max_cookie_age_hours": 4.0,
         "cookies_fresh": exists and age is not None and age < 4.0,
         "playwright_installed": has_playwright,
-        "ready_for_search": exists and age is not None and age < 4.0 and has_playwright,
+        "ready_for_search": exists and n_cookies > 0 and age is not None and age < 4.0 and has_playwright,
+        "readiness_scope": "local_configuration_only",
+        "service_access_verified": False,
         "version": "v3.9.7.6-cite-dl-deprecated-honest-audit",
         "search_implemented": True,
         "search_endpoint": f"POST {CNKI_BRIEF_GRID_PATH} (via xueshu789.com redirect)",

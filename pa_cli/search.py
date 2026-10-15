@@ -94,6 +94,35 @@ def http_get_json(url: str, headers: dict = None, timeout: int = 30) -> tuple:
     """
     from ._http import http_get_json as _http_get_json_helper
     return _http_get_json_helper(url, headers=headers, timeout=timeout)
+
+
+class EngineResponseError(RuntimeError):
+    """Finite provider diagnostics; never embed response bodies or credentials."""
+
+
+def _checked_json(status, data, engine):
+    if status != 200:
+        raise EngineResponseError(f"{engine} HTTP {status}")
+    if not isinstance(data, dict) or "error" in data or "errors" in data:
+        raise EngineResponseError(f"{engine} invalid JSON response")
+    return data
+
+
+def _records(data, key, engine):
+    rows = data.get(key)
+    if not isinstance(rows, list) or not all(isinstance(row, dict) for row in rows):
+        raise EngineResponseError(f"{engine} invalid result schema")
+    return rows
+
+
+def _optional_lookup(function, value):
+    """Optional enrichment must not discard already collected search results."""
+    try:
+        return function(value)
+    except Exception:
+        return None
+
+
 def _s2_lookup_doi(doi: str) -> Optional[Dict]:
     """Semantic Scholar paper/DOI endpoint 鈥?returns full metadata for one paper.
 
@@ -260,7 +289,7 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
                 r["_enrichment"]["s2_doi_skipped"] = f"cited_by_count<{min_cites}"
                 skipped_low_cite += 1
             else:
-                s2 = _s2_lookup_doi(r["doi"])
+                s2 = _optional_lookup(_s2_lookup_doi, r["doi"])
                 if s2:
                     for k in ("abstract", "tldr", "cited_by_count", "influential_cite_count",
                               "reference_count", "venue", "authors", "year"):
@@ -271,7 +300,7 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
                 time.sleep(1.2)  # S2 free tier: 1 RPS
         # Try Crossref by title (fills missing DOI, gives cite for non-DOI papers)
         if (not r.get("cited_by_count") or not r.get("doi")) and r.get("title"):
-            cr = _crossref_lookup_title(r["title"])
+            cr = _optional_lookup(_crossref_lookup_title, r["title"])
             if cr:
                 for k in ("doi", "cited_by_count", "reference_count", "abstract",
                           "venue", "year"):
@@ -283,7 +312,7 @@ def enrich_top_n(results: List[Dict], n: int = 10, min_cites: int = 1,
                 # [P1-15] Fallback: OpenAlex-by-title for Chinese papers that
                 # Crossref-by-title misses (per v3.9.7.5 lesson: OpenAlex has
                 # better CN coverage than Crossref for the same query).
-                oa = _openalex_lookup_title(r["title"])
+                oa = _optional_lookup(_openalex_lookup_title, r["title"])
                 if oa:
                     for k in ("doi", "cited_by_count", "abstract", "venue", "year"):
                         if oa.get(k) and not r.get(k):
@@ -364,9 +393,11 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
            f"container-title,published-print,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
-    if s != 200:
-        return []
-    items = (data.get("message") or {}).get("items", [])
+    data = _checked_json(s, data, "Crossref")
+    message = data.get("message")
+    if not isinstance(message, dict):
+        raise EngineResponseError("Crossref invalid result schema")
+    items = _records(message, "items", "Crossref")
     return [_normalize_crossref(it) for it in items]
 
 
@@ -417,9 +448,8 @@ def search_openalex(query: str, year_min: int = None, year_max: int = None,
     if api_key:
         url += f"&api_key={api_key}"
     s, data = http_get_json(url)
-    if s != 200:
-        return []
-    results = data.get("results") or []
+    data = _checked_json(s, data, "OpenAlex")
+    results = _records(data, "results", "OpenAlex")
     return [_normalize_openalex(r) for r in results]
 
 
@@ -486,16 +516,18 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
     except Exception as e:
         if not results:
             return [{"error": type(e).__name__, "message": f"arXiv search failed: {e}"}]
+        results.append({"error": "partial_response", "message": "arXiv iteration interrupted"})
 
     # v3.9.24.0: post-filter on year to handle API filter relaxation
     if year_min or year_max:
         ymin = year_min or 1991
         ymax = year_max or 2099
         pre_filter_count = len(results)
+        errors = [r for r in results if "error" in r]
         results = [
             r for r in results
             if r.get("year") and ymin <= int(r["year"]) <= ymax
-        ]
+        ] + errors
         if pre_filter_count > 0 and len(results) < pre_filter_count:
             logger.debug(
                 f"arxiv year post-filter: {pre_filter_count} -> {len(results)} "
@@ -553,6 +585,8 @@ def _s2_request_with_retry(url: str, headers: dict) -> tuple:
         if s == 200:
             return s, data
         if s == 429:
+            if attempt == _S2_MAX_RETRIES:
+                break
             # Rate-limited: exponential backoff
             backoff = min(_S2_BACKOFF_BASE * (2 ** attempt), _S2_BACKOFF_MAX)
             print(f"  [S2] 429 rate-limited, backing off {backoff:.0f}s "
@@ -583,18 +617,9 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     if api_key:
         headers["x-api-key"] = api_key
     s, data = _s2_request_with_retry(url, headers=headers)
-    if s != 200:
-        # v3.9.24.0: log the actual API status so users can diagnose why
-        # S2 returned 0 results. Common causes: 429 (rate limit), 500/502/503
-        # (server error), or just no matches. Without logging, S2 failures
-        # look identical to genuine "no results" cases.
-        logger.warning(
-            f"[S2 search] query='{query[:60]}' returned status={s} "
-            f"data={str(data)[:200]}"
-        )
-        return []
+    data = _checked_json(s, data, "Semantic Scholar")
     results = []
-    for it in (data.get("data") or []):
+    for it in _records(data, "data", "Semantic Scholar"):
         ext = it.get("externalIds") or {}
         oa = it.get("openAccessPdf") or {}
         tldr_obj = it.get("tldr") or {}
@@ -679,9 +704,11 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
         esearch_url += f"&api_key={quote(api_key)}"
 
     s, data = http_get_json(esearch_url, timeout=30)
-    if s != 200 or not data:
-        return []
-    pmids = (data.get("esearchresult") or {}).get("idlist") or []
+    data = _checked_json(s, data, "PubMed")
+    root = data.get("esearchresult")
+    pmids = root.get("idlist") if isinstance(root, dict) and not root.get("errorlist") else None
+    if not isinstance(pmids, list) or not all(isinstance(uid, str) and uid.isdigit() for uid in pmids):
+        raise EngineResponseError("PubMed invalid ID schema")
     if not pmids:
         return []
 
@@ -701,13 +728,19 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
             esummary_url += f"&api_key={quote(api_key)}"
 
         s2, data2 = http_get_json(esummary_url, timeout=30)
-        if s2 != 200 or not data2:
+        try:
+            data2 = _checked_json(s2, data2, "PubMed summary")
+            result_root = data2.get("result")
+            uids = result_root.get("uids") if isinstance(result_root, dict) else None
+            if not isinstance(uids, list) or set(uids) != set(chunk):
+                raise EngineResponseError("PubMed incomplete summary IDs")
+        except (EngineResponseError, TypeError):
+            results.append({"error": "partial_response", "message": "PubMed summary incomplete"})
             continue
-        result_root = data2.get("result") or {}
-        uids = result_root.get("uids") or []
         for uid in uids:
             r = result_root.get(uid) or {}
-            if not r or r.get("error"):
+            if not isinstance(r, dict) or not r or r.get("error"):
+                results.append({"error": "partial_response", "message": "PubMed summary record unavailable"})
                 continue
             results.append(_normalize_pubmed(r))
 
@@ -724,10 +757,11 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     if year_min or year_max:
         ymin = year_min or 1900
         ymax = year_max or 2099
+        errors = [r for r in results if "error" in r]
         results = [
             r for r in results
             if r.get("year") and ymin <= int(r["year"]) <= ymax
-        ]
+        ] + errors
 
     return results
 
@@ -827,10 +861,8 @@ def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None
     _pubmed_throttle(0.4)  # ~2.5 RPS, polite to CT.gov
 
     s, data = http_get_json(url, timeout=30)
-    if s != 200 or not data:
-        return []
-
-    studies = data.get("studies") or []
+    data = _checked_json(s, data, "ClinicalTrials")
+    studies = _records(data, "studies", "ClinicalTrials")
     results: List[Dict] = []
     for study in studies:
         norm = _normalize_clinicaltrial(study)
@@ -945,9 +977,28 @@ def _search_worker(output, function, args, kwargs):
     """Top-level target so Windows spawn can import it."""
     try:
         result = function(*args, **kwargs)
-        output.put(result if isinstance(result, list) else [])
+        output.put(_validated_engine_rows(result))
     except Exception as exc:
         output.put([{'error': type(exc).__name__, 'message': str(exc)[:200]}])
+
+
+def _validated_engine_rows(result):
+    if not isinstance(result, list) or not all(isinstance(row, dict) for row in result):
+        raise EngineResponseError("Search engine returned invalid result rows")
+    for row in result:
+        if "error" in row:
+            if not isinstance(row["error"], str):
+                raise EngineResponseError("Search engine returned invalid error row")
+            continue
+        if any(row.get(key) is not None and not isinstance(row[key], str)
+               for key in ("doi", "arxiv_id", "title", "source", "abstract", "tldr")):
+            raise EngineResponseError("Search engine returned invalid text fields")
+        if any(row.get(key) is not None and (type(row[key]) is not int or row[key] < 0)
+               for key in ("year", "cited_by_count")):
+            raise EngineResponseError("Search engine returned invalid numeric fields")
+        if not (row.get("doi") or row.get("arxiv_id") or row.get("title")):
+            raise EngineResponseError("Search engine returned no result identity")
+    return result
 
 
 def _run_search_engine(function, args, kwargs, timeout):
@@ -1031,6 +1082,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     """
     engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
+    engines = list(dict.fromkeys(engines))
+    skipped_engines = {}
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
     # OpenAlex already indexes CORE's repos, so marginal coverage is <5%.
     # If user explicitly asks for `--engine core`, route to search_core().
@@ -1054,6 +1107,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         if not _aminer_token():
             # Graceful skip: AMiner not configured; engines stays valid
             engines = [e for e in engines if e != "aminer"]
+            skipped_engines["aminer"] = "not_configured"
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
@@ -1061,11 +1115,13 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     if "cnki" in engines and not _try_import_cnki():
         # Graceful skip: CNKI not configured yet; engines stays valid
         engines = [e for e in engines if e != "cnki"]
+        skipped_engines["cnki"] = "not_configured"
     elif "cnki" in engines:
         from .cnki_channel import search_cnki
         funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
+            by_engine[eng] = [{"error": "unsupported_engine", "message": "Unknown search engine"}]
             continue
         try:
             target_fn = funcs[eng]
@@ -1075,8 +1131,8 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             elif eng == "aminer":
                 fn_kwargs["mode"] = aminer_mode
 
-            by_engine[eng] = _run_search_engine(
-                target_fn, (query, year_min, year_max, limit), fn_kwargs, SEARCH_ENGINE_TIMEOUT)
+            by_engine[eng] = _validated_engine_rows(_run_search_engine(
+                target_fn, (query, year_min, year_max, limit), fn_kwargs, SEARCH_ENGINE_TIMEOUT))
         except Exception as e:
             by_engine[eng] = [{"error": type(e).__name__, "message": str(e)[:200]}]
 
@@ -1155,6 +1211,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "by_engine": {k: sum(1 for p in v if "error" not in p) for k, v in by_engine.items()},
         "engine_status": engine_status,
         "engine_errors": engine_errors,
+        "skipped_engines": skipped_engines,
         "dedup_count": len(unified),
         "enrich_top": enrich_top,
         "results": unified,
@@ -1172,7 +1229,7 @@ def _try_import_cnki() -> bool:
         from . import cnki_channel
     except ImportError:
         return False
-    if not cnki_channel.cookies_exist():
+    if not cnki_channel.load_cookies():
         return False
     try:
         import playwright  # noqa: F401

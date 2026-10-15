@@ -151,6 +151,10 @@ nonzero if any supplied stage is incomplete or unknown.
 
 ## Troubleshooting
 
+For bounded offline stress checks, opt-in public engine health checks and the
+current maintenance boundaries, see [maintenance acceptance](maintenance-acceptance-2026-10-15.md).
+An unavailable or rate-limited service remains incomplete; it is not an empty successful search.
+
 - **`pa` is not found:** activate the environment where you installed the package, or invoke it with `python -m pa_cli`.
 - **A provider returns no results or an error:** check its status in the output, retry later, reduce the query scope, or select another provider. Network access, quotas, and provider APIs can change.
 - **A fetch fails:** verify the DOI and try a source you are entitled to use, including your library or institutional access.
