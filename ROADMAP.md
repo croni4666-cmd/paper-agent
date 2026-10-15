@@ -5324,3 +5324,23 @@ exact-head check. `[P3-40a–d]` software acceptance is complete.
 See [acceptance and review evidence](docs/v4-quality-gate.md) and
 [operating/migration boundaries](docs/gateway-v4.md). Suspended scientific criteria
 remain unfulfilled and are not reclassified as completed by this release.
+
+### [P3-41] Read-only offline capability inventory
+
+- **Status**: in-progress
+- **Added / Started**: 2026-10-15
+- **Priority**: P2
+- **Effort**: bounded local CLI work
+- **Source**: existing PR #19 offline readiness proposal; user asks to continue development.
+- **Rationale**: diagnose optional installation gaps before research workflows without
+  contacting providers or reading private settings. Adapt the old proposal to v4;
+  do not equate missing optional integrations with an unavailable CLI.
+- **Acceptance**: `pa doctor` and `--json` list package discovery, Pandoc and
+  process-environment credential presence; no SDK/browser launch, network,
+  cookie/dotenv/registry/corpus reads or writes. Failed checks are isolated;
+  credential values, local paths and exception contents never appear. Document
+  discovery-vs-health limitations in both usage guides and run offline regressions.
+- **Global Rule audit**: passes all five constraints; stdlib plus existing Click,
+  no new dependency, hosted service, paid API, recurring work or scientific claims.
+- **Delivery**: CI/package checks required before integration. PR #19 stays open
+  until the replacement is merged; preserve its historical rationale.

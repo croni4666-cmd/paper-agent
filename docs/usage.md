@@ -12,7 +12,15 @@ Python 3.10 or newer is required. From a local checkout:
 python -m pip install -e .
 pa --version
 pa --help
+pa doctor
 ```
+
+`pa doctor --json` inventories optional packages, Pandoc on PATH and credentials
+already present in the process environment. It makes no network requests, starts
+no browser and reads no cookie files, `.env`, key registry or paper collection.
+Missing optional capabilities produce `attention`, not a broken CLI. `ready`
+means locally discoverable/configured only; package imports, browser installation
+and credential validity still need separate verification.
 
 The base install is enough for core CLI workflows. Some integrations and optional features need extra packages or credentials. Install only the extras you need, and never commit API keys, tokens, or private configuration files.
 

@@ -11,6 +11,12 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > [`RELEASE_TEMPLATE.md`](./RELEASE_TEMPLATE.md) (adopted in v3.9.20.0).
 > This CHANGELOG.md is the "long form" record; the release body is
 > the "marketing" TL;DR + categorized features + tests/files tables.
+## [Unreleased]
+
+### Local capability inventory [P3-41]
+
+- Add `pa doctor` and `pa doctor --json` to discover optional packages, Pandoc and process-environment credential presence without network calls, browser launches or private configuration reads. Failed checks stay isolated and optional gaps do not mark the whole CLI unavailable. Local discovery is not a service-health or credential-validity claim.
+
 ## [4.0.0] - 2026-10-09
 
 ### Local Transactional Reliability [P3-40a–d]
