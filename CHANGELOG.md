@@ -13,6 +13,11 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+### Engine recovery follow-up
+
+- Correct forced-direct health probes to use existing credential-free configured HTTP(S) routes, with explicit direct mode and network labels. Confirm arXiv endpoint and SDK search on this host; use a three-second SDK page interval and one retry.
+- Stop anonymous S2 429 retries, and honor keyed Retry-After advice within a bounded 20-second budget. Preserve service failures and source identity; upstream shared limits remain outside the local fix.
+
 ### Maintenance acceptance [P3-45]
 
 - Preserve engine failures for HTTP errors, malformed responses and invalid worker rows; retain partial PubMed/arXiv results with error indicators, expose optional skips/unknown engines, and isolate optional enrichment failures. Keep spawned-worker cancellation.

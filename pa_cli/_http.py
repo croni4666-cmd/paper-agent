@@ -180,7 +180,7 @@ def _default_accept_encoding() -> str:
 
 
 def http_get(url: str, headers: Optional[Dict[str, str]] = None,
-              timeout: int = 30) -> bytes:
+              timeout: int = 30, response_headers: Optional[Dict[str, str]] = None) -> bytes:
     """GET with proxy support, returns raw bytes.
 
     v3.9.13.3: extracted from pa_cli.fetch:_http_get_bytes for shared use.
@@ -195,6 +195,10 @@ def http_get(url: str, headers: Optional[Dict[str, str]] = None,
     opener = build_opener()
     req = ur.Request(url, headers=final_headers)
     with opener.open(req, timeout=timeout) as resp:
+        if response_headers is not None:
+            retry_after = resp.headers.get("Retry-After")
+            if retry_after is not None:
+                response_headers["Retry-After"] = retry_after
         body = resp.read()
         ce = resp.headers.get("Content-Encoding", "").lower()
     # Close the response even when reading or decompression fails.
@@ -214,7 +218,7 @@ def http_get(url: str, headers: Optional[Dict[str, str]] = None,
 
 
 def http_get_json(url: str, headers: Optional[Dict[str, str]] = None,
-                   timeout: int = 30) -> Tuple[int, Any]:
+                   timeout: int = 30, response_headers: Optional[Dict[str, str]] = None) -> Tuple[int, Any]:
     """GET with proxy support, returns (status, json-or-bytes).
 
     v3.9.13.3: extracted from pa_cli.search:http_get_json for shared use.
@@ -222,12 +226,17 @@ def http_get_json(url: str, headers: Optional[Dict[str, str]] = None,
     HTTP error, (0, {}) on connection error.
     """
     try:
-        body = http_get(url, headers=headers, timeout=timeout)
+        kwargs = {"response_headers": response_headers} if response_headers is not None else {}
+        body = http_get(url, headers=headers, timeout=timeout, **kwargs)
         try:
             return 200, json.loads(body.decode("utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError):
             return 200, body
     except urllib.error.HTTPError as e:
+        if response_headers is not None:
+            retry_after = e.headers.get("Retry-After") if e.headers else None
+            if retry_after is not None:
+                response_headers["Retry-After"] = retry_after
         try:
             with e:
                 body = e.read()

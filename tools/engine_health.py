@@ -4,12 +4,14 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+import ipaddress
 from pathlib import Path
 import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
+import urllib.parse
 import xml.etree.ElementTree as ET
 
 ENDPOINTS = {
@@ -23,7 +25,29 @@ ENDPOINTS = {
 MAX_BYTES = 2 * 1024 * 1024
 CHILD_TIMEOUT = 15
 STATUSES = {"healthy", "empty", "rate_limited", "access_denied", "unavailable", "timeout",
-            "schema_changed", "response_too_large", "not_checked", "probe_failed"}
+            "schema_changed", "response_too_large", "not_checked", "probe_failed", "network_configuration_error"}
+
+
+def proxy_handler(network):
+    """Use only explicitly configured, credential-free HTTP(S) routes."""
+    if network == "direct":
+        return urllib.request.ProxyHandler({})
+    proxies = {}
+    for scheme, value in urllib.request.getproxies().items():
+        if scheme not in ("http", "https"):
+            continue
+        parsed = urllib.parse.urlsplit(value)
+        if (parsed.scheme not in ("http", "https") or not parsed.hostname or parsed.username is not None
+                or parsed.password is not None or parsed.query or parsed.fragment):
+            raise ValueError("unsupported configured route")
+        try:
+            local = ipaddress.ip_address(parsed.hostname).is_loopback
+        except ValueError:
+            local = parsed.hostname.lower() == "localhost"
+        if parsed.scheme == "http" and not local:
+            raise ValueError("remote plaintext route refused")
+        proxies[scheme] = value
+    return urllib.request.ProxyHandler(proxies)
 
 
 def validate_body(engine, raw):
@@ -74,15 +98,20 @@ def validate_body(engine, raw):
     return len(rows)
 
 
-def probe(engine):
+def probe(engine, network="configured"):
     started = time.monotonic()
-    result = {"engine": engine, "status": "probe_failed"}
+    result = {"engine": engine, "status": "probe_failed", "network": network}
     try:
-        # No inherited proxy credentials, API keys, cookies, redirects to login or retries.
+        # No proxy credentials, API keys, cookies, redirects to login or retries.
         class NoRedirect(urllib.request.HTTPRedirectHandler):
             def redirect_request(self, *args, **kwargs):
                 return None
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
+        try:
+            handler = proxy_handler(network)
+        except ValueError:
+            result["status"] = "network_configuration_error"
+            return result
+        opener = urllib.request.build_opener(handler, NoRedirect())
         request = urllib.request.Request(ENDPOINTS[engine], headers={
             "User-Agent": "paper-agent-maintenance/1", "Accept-Encoding": "identity"})
         with opener.open(request, timeout=10) as response:
@@ -112,7 +141,9 @@ def probe(engine):
     return result
 
 
-def collect(live=False, engines=None):
+def collect(live=False, engines=None, network="configured"):
+    if network not in ("configured", "direct"):
+        raise ValueError("Unsupported network mode")
     selected = list(ENDPOINTS) if engines is None else list(dict.fromkeys(engines))
     if not selected or set(selected) - set(ENDPOINTS):
         raise ValueError("Select a supported engine")
@@ -121,14 +152,14 @@ def collect(live=False, engines=None):
         row = {"engine": engine, "status": "not_checked"}
         if live:
             try:
-                child = subprocess.run([sys.executable, str(Path(__file__).resolve()), "--probe-child", engine],
+                child = subprocess.run([sys.executable, str(Path(__file__).resolve()), "--probe-child", engine, "--network", network],
                                        capture_output=True, timeout=CHILD_TIMEOUT)
                 candidate = json.loads(child.stdout)
                 if (child.returncode != 0 or not isinstance(candidate, dict) or candidate.get("engine") != engine
                         or candidate.get("status") not in STATUSES):
                     raise ValueError("invalid child receipt")
                 # Allowlist fields; never relay arbitrary child text or stderr.
-                row = {key: candidate[key] for key in ("engine", "status", "http_status", "sample_count", "elapsed_seconds")
+                row = {key: candidate[key] for key in ("engine", "status", "http_status", "sample_count", "elapsed_seconds", "network")
                        if key in candidate}
             except subprocess.TimeoutExpired:
                 row["status"] = "timeout"
@@ -137,6 +168,7 @@ def collect(live=False, engines=None):
         checks.append(row)
     return {"schema": "paper-agent-engine-health", "schema_version": 1,
             "checked_at": datetime.now(timezone.utc).isoformat(), "mode": "live-keyless" if live else "offline",
+            "network": network,
             "scope": "Endpoint shape/access only, not installed SDK or scientific quality; no response bodies retained.",
             "checks": checks, "unselected_engines": [engine for engine in ENDPOINTS if engine not in selected],
             "optional_not_probed": ["aminer", "cnki", "core", "pdf-download-channels"]}
@@ -147,12 +179,14 @@ def main():
     parser.add_argument("--live", action="store_true", help="One public request per engine, no keys/retries/PDFs")
     parser.add_argument("--engine", action="append", choices=ENDPOINTS, help="Limit checks to named engines (repeatable)")
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--network", choices=("configured", "direct"), default="configured",
+                        help="Use a safe configured route (default), or explicitly test direct access")
     parser.add_argument("--probe-child", choices=ENDPOINTS, help=argparse.SUPPRESS)
     args = parser.parse_args()
     if args.probe_child:
-        print(json.dumps(probe(args.probe_child)))
+        print(json.dumps(probe(args.probe_child, args.network)))
         return 0
-    report = collect(args.live, args.engine)
+    report = collect(args.live, args.engine, args.network)
     content = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     if args.output:
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))

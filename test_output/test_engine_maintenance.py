@@ -56,7 +56,7 @@ class EngineContracts(unittest.TestCase):
     def test_s2_exhaustion_does_not_sleep_after_last_attempt(self):
         with patch.object(search, "http_get_json", return_value=(429, {})) as request, \
              patch.object(search, "_s2_throttle_wait"), patch.object(search.time, "sleep") as sleep:
-            status, _ = search._s2_request_with_retry("https://fixture.test", {})
+            status, _ = search._s2_request_with_retry("https://fixture.test", {"x-api-key": "fixture"})
         self.assertEqual(status, 429)
         self.assertEqual(request.call_count, search._S2_MAX_RETRIES + 1)
         self.assertEqual(sleep.call_count, search._S2_MAX_RETRIES)
@@ -159,6 +159,11 @@ class EngineContracts(unittest.TestCase):
 
 
 class HealthContracts(unittest.TestCase):
+    def setUp(self):
+        route = patch("urllib.request.getproxies", return_value={})
+        route.start()
+        self.addCleanup(route.stop)
+
     def test_offline_inventory_never_dispatches(self):
         with patch.object(subprocess, "run", side_effect=AssertionError("dispatch")), \
              patch.object(socket.socket, "connect", side_effect=AssertionError("network")):

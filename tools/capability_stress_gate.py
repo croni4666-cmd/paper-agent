@@ -35,6 +35,7 @@ def main():
                     print(f"Offline capability round {index + 1}/{args.rounds}", flush=True)
                     result = pytest.main([str(ROOT / "test_output/test_capability_stress.py"),
                                           str(ROOT / "test_output/test_engine_maintenance.py"),
+                                          str(ROOT / "test_output/test_engine_recovery.py"),
                                           str(ROOT / "test_output/test_live_workflow_repair.py"), "-q",
                                           "--basetemp=" + str(Path(directory) / str(index))])
                     if result:
