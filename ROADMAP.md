@@ -5327,7 +5327,8 @@ remain unfulfilled and are not reclassified as completed by this release.
 
 ### [P3-41] Read-only offline capability inventory
 
-- **Status**: in-progress
+- **Status**: done — PR #65 merged at 4815a6e after all ten CI checks passed
+- **Completed**: 2026-10-15
 - **Added / Started**: 2026-10-15
 - **Priority**: P2
 - **Effort**: bounded local CLI work
@@ -5344,3 +5345,18 @@ remain unfulfilled and are not reclassified as completed by this release.
   no new dependency, hosted service, paid API, recurring work or scientific claims.
 - **Delivery**: CI/package checks required before integration. PR #19 stays open
   until the replacement is merged; preserve its historical rationale.
+
+### [P3-42] Open PR consolidation and v4 wrapper contracts
+
+- **Status**: implementation complete; integration requires exact-head CI
+- **Added / Started**: 2026-10-15
+- **Priority**: P2
+- **Source**: user instruction to review and uniformly process all open PRs.
+- **Scope**: consolidate #10–#14 against current main; preserve newer skill
+  commands, correct v4 parser drift and enforce truthful download results.
+  Close superseded #19/#60; keep #6–#9/#16–#18 with explicit evidence/action.
+- **Acceptance**: 29 generated-fixture/parser checks, supported-platform CI and
+  clean-wheel install pass before merge; record final dispositions on GitHub.
+- **Global Rule audit**: passes; no added runtime service, paid APIs, data
+  collection or scientific evaluation. Existing Requests gets a bounded range.
+- **Review evidence**: docs/pr-review-2026-10-15.md.

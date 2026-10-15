@@ -25,6 +25,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa  # noqa: E402
 
 
 def main() -> int:
@@ -64,13 +65,17 @@ Examples:
     cmd = [PYTHON, "-m", "pa_cli.cli", "keys", args.command]
     if args.service_id:
         cmd.append(args.service_id)
-    cmd.append("--json")  # pa uses --json, not --as-json
+    if args.command == "list":
+        cmd.append("--json")  # check/audit do not accept this flag.
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=30,
+        result = run_pa(
+            cmd, timeout=30,
             cwd=str(pa_root),
         )
+    except OSError as exc:
+        print(json.dumps({'status': 'failed', 'error': 'runtime_error', 'message': str(exc)}), file=sys.stderr)
+        return 3
     except subprocess.TimeoutExpired:
         print(json.dumps({
             "error": "keys_timeout",

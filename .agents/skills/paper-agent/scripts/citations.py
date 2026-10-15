@@ -2,10 +2,10 @@
 """scripts/citations.py —Wrapper for `pa citations` (OpenAlex citation walk).
 
 Walks the citation graph for a paper via OpenAlex API (no key required).
-Forward = papers THIS paper cites; backward = papers that cite THIS paper.
+Forward = papers that cite THIS paper; backward = references cited by THIS paper.
 
 Usage:
-    python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
+    python scripts/citations.py 10.1038/nature12373 --direction backward --limit 50
     python scripts/citations.py 10.1038/nature12373 --direction forward --output forward_cites.json
 """
 from __future__ import annotations
@@ -23,6 +23,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa  # noqa: E402
 
 
 def main() -> int:
@@ -31,7 +32,7 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s 10.1038/nature12373 --direction both --limit 50
+  %(prog)s 10.1038/nature12373 --direction backward --limit 50
   %(prog)s 10.1038/nature12373 --direction forward --output forward.json
   %(prog)s 10.1038/nature12373 --direction backward --limit 100
         """,
@@ -39,14 +40,16 @@ Examples:
     parser.add_argument("doi", help="Paper DOI (e.g. 10.1038/nature12373)")
     parser.add_argument(
         "--direction",
-        choices=["forward", "backward", "both"],
-        default="both",
-        help="Which direction to walk (default: both)",
+        choices=["forward", "backward"],
+        default="forward",
+        help="forward: citing papers; backward: references (default: forward); run each for both sets",
     )
     parser.add_argument("--limit", type=int, default=50, help="Max papers to return (default: 50)")
     parser.add_argument("--output", help="Optional output file (default: stdout)")
     parser.add_argument("--quiet", action="store_true", help="Suppress per-paper progress")
     args = parser.parse_args()
+    if args.output:
+        args.output = str(Path(args.output).expanduser().resolve())
 
     # Find paper-agent root
     pa_root = find_pa_root()
@@ -71,10 +74,13 @@ Examples:
         cmd.append("--quiet")
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
+        result = run_pa(
+            cmd, timeout=120,
             cwd=str(pa_root),
         )
+    except OSError as exc:
+        print(json.dumps({'status': 'failed', 'error': 'runtime_error', 'message': str(exc)}), file=sys.stderr)
+        return 3
     except subprocess.TimeoutExpired:
         print(json.dumps({
             "error": "citations_timeout",

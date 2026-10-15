@@ -24,6 +24,7 @@ PYTHON = sys.executable
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_runtime import run_pa, emit_result, json_object, validate_pdf  # noqa: E402
 
 
 def main() -> int:
@@ -49,16 +50,16 @@ Examples:
     parser.add_argument("--no-cache", action="store_true", help="Skip cache lookup")
     parser.add_argument("--max-total-sec", type=int, default=300, help="Hard cap on total runtime (default: 300s)")
     args = parser.parse_args()
+    args.output_dir = str(Path(args.output_dir).expanduser().resolve())
 
     # Find paper-agent root
     pa_root = find_pa_root()
     if not pa_root:
-        print(json.dumps({
+        return emit_result({
             "error": "pa_cli_not_found",
             "message": "paper-agent (pa_cli) is not installed in this Python environment.",
             "hint": get_install_instructions().strip(),
-        }, indent=2), file=sys.stderr)
-        return 4
+        }, 'failed', 4)
 
     cmd = [
         PYTHON, "-m", "pa_cli.cli", "fetch",
@@ -71,42 +72,34 @@ Examples:
         cmd.append("--no-cache")
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=args.max_total_sec + 30,
+        result = run_pa(
+            cmd, timeout=args.max_total_sec + 30,
             cwd=str(pa_root),
         )
     except subprocess.TimeoutExpired:
-        print(json.dumps({
+        return emit_result({
             "error": "fetch_timeout",
             "message": f"`pa fetch` exceeded {args.max_total_sec + 30}s timeout.",
             "hint": "Try a specific --prefer channel or reduce --max-total-sec.",
-        }), file=sys.stderr)
-        return 2
+        }, 'failed', 2)
+    except OSError as exc:
+        return emit_result({'error': 'runtime_error', 'message': str(exc)}, 'failed', 3)
 
-    # pa fetch returns JSON to stdout with saved_as/via_channel/size_bytes/etc.
-    if result.returncode == 0:
-        print(result.stdout, end="")
-        return 0
-
-    # Failure: try to parse the stderr/stdout for the error JSON
-    out = result.stdout.strip()
-    if out:
-        try:
-            data = json.loads(out)
-            if data.get("error"):
-                print(json.dumps(data), file=sys.stderr)
-                return 1
-        except json.JSONDecodeError:
-            pass
-
-    # Generic failure
-    print(json.dumps({
-        "error": "pa_fetch_failed",
-        "exit_code": result.returncode,
-        "doi": args.doi,
-        "stderr_tail": result.stderr[-500:] if result.stderr else "",
-    }), file=sys.stderr)
-    return 1
+    if result.returncode != 0:
+        return emit_result({'error': 'pa_fetch_failed', 'doi': args.doi,
+                            'cli_exit_code': result.returncode,
+                            'stderr_tail': result.stderr[-500:]}, 'failed', 1)
+    try:
+        data = json_object(result.stdout)
+        if data.get('error') or data.get('success') is False:
+            return emit_result(data, 'failed', 1)
+        path, size = validate_pdf(data.get('saved_as') or data.get('path')
+                                  or data.get('out_path'), Path(pa_root))
+    except (ValueError, OSError) as exc:
+        return emit_result({'error': 'invalid_download', 'doi': args.doi,
+                            'message': str(exc)}, 'failed', 1)
+    data.update(saved_as=str(path), size_bytes=size, validation='signature_and_eof')
+    return emit_result(data, 'success')
 
 
 if __name__ == "__main__":
