@@ -1,5 +1,6 @@
 """Run outside the checkout against an installed wheel; generated local XML only."""
 import json
+from importlib.metadata import version
 import tempfile
 from pathlib import Path
 
@@ -12,7 +13,7 @@ from pa_cli.gateway_store import GatewayStore
 
 
 def run():
-    assert pa_cli.__version__ == "4.0.0"
+    assert pa_cli.__version__ == version("paper-agent") == "4.1.0"
     with tempfile.TemporaryDirectory(prefix="gateway-wheel-") as directory:
         root = Path(directory)
         artifact = root / "generated.xml"

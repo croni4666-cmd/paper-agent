@@ -1,6 +1,6 @@
 """paper-agent CLI -- academic paper fetch + lit review synthesis.
 
-Current version: v4.0.0 — local transactional gateway reliability [P3-40].
+Current version: v4.1.0 — local workflow tools and maintenance acceptance [P3-41–45].
 Historical module notes follow.
 See CHANGELOG [3.9.12.0] for the new engine.
 
@@ -59,7 +59,7 @@ user. Real human browser sessions remain the only reliable Cloudflare
 bypass for academic PDF recovery.
 """
 
-__version__ = "4.0.0"
+__version__ = "4.1.0"
 __author__ = "Mavis (mavis)"
 __license__ = "AGPL-3.0-only WITH No-AI-Training-1.0 restriction"
 

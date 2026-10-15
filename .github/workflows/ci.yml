@@ -155,3 +155,10 @@ jobs:
           /tmp/test_env/bin/python -m pa_cli doctor --json
           /tmp/test_env/bin/python -m pa_cli run-report --help
           /tmp/test_env/bin/python -c "from pa_cli.ris import render_ris; assert 'TY  - BOOK' in render_ris([{'type':'book','title':'Fixture'}])"
+      - name: Retain verified release wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-wheel
+          path: dist/*.whl
+          if-no-files-found: error
+          retention-days: 14
