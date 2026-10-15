@@ -5396,7 +5396,7 @@ scientific accuracy result is inferred. P3-44 remains proposed.
 
 ### [P3-44] Local run report (refines historical skill-reliability M4)
 
-- **Status**: implemented; local gates passed, integration CI pending
+- **Status**: implemented; integration requires all ten exact-head CI checks
 - **Added**: 2026-10-15
 - **Priority / Effort**: P2 / bounded report after format/schema design
 - **Source**: whut09/paper_agent stage contracts/checkpoint artifact traces;
@@ -5419,6 +5419,11 @@ scientific accuracy result is inferred. P3-44 remains proposed.
   Source roles and digests identify inputs; private paths and output references
   are omitted. No job/journal database or linked artifact is opened. Historical
   M4 evidence coverage/exclusions remain deferred with PR16, not claimed complete.
+- **Validation / integration record**: 23 generated report cases (22 pass on
+  Windows, one POSIX FIFO case runs on Linux), 16 existing doctor/RIS cases,
+  29 wrapper cases, and the 190-test consistency gate with 18 subtests plus three
+  stress repetitions. Required platform/package checks and final integration are
+  recorded in [PR #69](https://github.com/croni4666-cmd/paper-agent/pull/69).
 
 ### Modified 2026-10-15 — P3-42 integrated
 
