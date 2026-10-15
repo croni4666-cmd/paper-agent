@@ -17,6 +17,7 @@ Output is a markdown file structured for direct use in academic lit review.
   most files).
 """
 
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -163,10 +164,90 @@ def build_corpus_index(corpus_dir: Path, word_count_min: int = 1000) -> List[Dic
     return papers
 
 
+def _evidence_id(paper: Dict[str, Any]) -> str:
+    """Return an ID stable for the same DOI or corpus filename."""
+    doi = str(paper.get("doi", "")).strip().lower()
+    identity = f"doi:{doi}" if doi else f"filename:{paper['filename'].casefold()}"
+    return "E-" + hashlib.sha256(identity.encode("utf-8")).hexdigest()[:12].upper()
+
+
+def _evidence_basis(paper: Dict[str, Any]) -> str:
+    """Classify what can honestly support a review statement."""
+    if paper.get("error"):
+        return "unavailable"
+    if paper.get("is_full_text"):
+        return "full_text"
+    if paper.get("word_count", 0) > 0:
+        return "abstract"
+    if paper.get("doi") or paper.get("title"):
+        return "metadata"
+    return "unavailable"
+
+
+def build_evidence_manifest(corpus_dir: Path, word_count_min: int = 1000) -> Dict[str, Any]:
+    """Describe each corpus input for a review without altering source files."""
+    entries = []
+    for paper in build_corpus_index(corpus_dir, word_count_min):
+        entry = dict(paper)
+        entry["evidence_id"] = _evidence_id(entry)
+        entry["evidence_basis"] = _evidence_basis(entry)
+        entries.append(entry)
+    return {
+        "schema_version": 1,
+        "corpus": str(corpus_dir.resolve()),
+        "entries": entries,
+    }
+
+
+def validate_review_evidence(review_text: str, manifest: Dict[str, Any]) -> Dict[str, Any]:
+    """Check that review evidence tags resolve to classified manifest entries."""
+    entries = manifest.get("entries", [])
+    known = {entry.get("evidence_id") for entry in entries if entry.get("evidence_id")}
+    cited = set(re.findall(r"\[(E-[0-9A-F]{12})\]", review_text))
+    unclassified = sorted(
+        entry["evidence_id"] for entry in entries
+        if entry.get("evidence_id") and entry.get("evidence_basis") not in {
+            "full_text", "abstract", "metadata", "unavailable"
+        }
+    )
+    unresolved = sorted(cited - known)
+    return {
+        "valid": not unresolved and not unclassified,
+        "cited_ids": sorted(cited),
+        "unresolved_ids": unresolved,
+        "unused_input_ids": sorted(known - cited),
+        "unclassified_input_ids": unclassified,
+        "abstract_only_ids": sorted(
+            entry["evidence_id"] for entry in entries
+            if entry.get("evidence_basis") == "abstract" and entry.get("evidence_id") in cited
+        ),
+    }
+
+
+def write_review_artifacts(
+    corpus_dir: Path,
+    output_path: Path,
+    manifest_path: Path,
+    validation_path: Path,
+    word_count_min: int = 1000,
+    template: str = "v32",
+) -> Dict[str, Any]:
+    """Write a review and its traceability sidecars using one corpus snapshot."""
+    manifest = build_evidence_manifest(corpus_dir, word_count_min)
+    review_text = synthesize(corpus_dir, template, word_count_min)
+    report = validate_review_evidence(review_text, manifest)
+    for path in (output_path, manifest_path, validation_path):
+        path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(review_text, encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    validation_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    return report
+
+
 def synthesize(corpus_dir: Path, template: str = "v32",
                word_count_min: int = 1000) -> str:
     """Generate lit review markdown from corpus."""
-    corpus = build_corpus_index(corpus_dir, word_count_min)
+    corpus = build_evidence_manifest(corpus_dir, word_count_min)["entries"]
     if not corpus:
         return f"# Lit Review\n\n(empty corpus: {corpus_dir})\n"
     full_text = [p for p in corpus if p["is_full_text"]]
@@ -183,7 +264,7 @@ def synthesize(corpus_dir: Path, template: str = "v32",
 
     for i, p in enumerate(corpus, 1):
         status = "✅ FULL TEXT" if p["is_full_text"] else "⚠ abstract-only"
-        md.append(f"### {i}. {p['title']} {status}\n\n")
+        md.append(f"### {i}. [{p['evidence_id']}] {p['title']} {status}\n\n")
         md.append(f"- **File**: `{p['filename']}`\n")
         if p["author"]:
             md.append(f"- **Author(s)**: {p['author']}\n")

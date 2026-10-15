@@ -502,15 +502,20 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
               help="Min words extracted to count as full-text (else abstract-only)")
 @click.option("--with-prisma", is_flag=True,
               help="Prepend a PRISMA 2020 flow diagram (auto-derived from corpus)")
+@click.option("--manifest", default=None,
+              help="Evidence manifest JSON path (default: <output>.manifest.json)")
+@click.option("--validation-report", default=None,
+              help="Evidence validation JSON path (default: <output>.validation.json)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
-def review(corpus_dir, template, output, word_count_min, with_prisma, quiet):
+def review(corpus_dir, template, output, word_count_min, with_prisma, manifest,
+           validation_report, quiet):
     """Synthesize lit review markdown from a corpus directory of PDFs.
 
     --with-prisma adds a PRISMA 2020 flow diagram at the top of the output,
     auto-derived from the corpus (identified=PDFs found, after-screening=
     full-text vs abstract-only by word_count_min).
     """
-    from .review import synthesize
+    from .review import build_evidence_manifest, synthesize, validate_review_evidence
     corpus_path = Path(corpus_dir)
     if not quiet:
         click.echo(f"[pa] review corpus={corpus_path}", err=True)
@@ -539,6 +544,26 @@ def review(corpus_dir, template, output, word_count_min, with_prisma, quiet):
         click.echo(f"[pa] saved {output}", err=True)
     else:
         click.echo(md)
+
+    manifest_path = Path(manifest) if manifest else (
+        Path(f"{output}.manifest.json") if output else None
+    )
+    report_path = Path(validation_report) if validation_report else (
+        Path(f"{output}.validation.json") if output else None
+    )
+    if manifest_path or report_path:
+        evidence_manifest = build_evidence_manifest(corpus_path, word_count_min)
+        report = validate_review_evidence(md, evidence_manifest)
+        for path in (manifest_path, report_path):
+            if path:
+                path.parent.mkdir(parents=True, exist_ok=True)
+        if manifest_path:
+            manifest_path.write_text(json.dumps(evidence_manifest, ensure_ascii=False, indent=2),
+                                     encoding="utf-8")
+        if report_path:
+            report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        if not report["valid"]:
+            raise click.ClickException("Evidence validation failed; inspect --validation-report")
 
 
 @main.command()
@@ -4465,6 +4490,5 @@ def search_and_import(
     # Exit code: 0 if download+project OK, 1 if any error
     if result.get("errors"):
         sys.exit(1)
-
 
 

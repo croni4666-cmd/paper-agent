@@ -45,9 +45,18 @@ Examples:
     parser.add_argument("--topics", action="store_true", help="Cluster corpus by topic instead of full review")
     parser.add_argument("--top-k-clusters", type=int, default=5, help="Number of topic clusters (default: 5)")
     parser.add_argument("--model", default=None, help="LLM model for synthesis (default: from pa config)")
+    parser.add_argument("--manifest", default=None,
+                        help="Evidence manifest JSON path (default: <output>.manifest.json)")
+    parser.add_argument("--validation-report", default=None,
+                        help="Evidence validation JSON path (default: <output>.validation.json)")
     args = parser.parse_args()
     args.corpus = str(Path(args.corpus).expanduser().resolve())
     args.output = str(Path(args.output).expanduser().resolve())
+    if not args.topics:
+        args.manifest = str(Path(args.manifest or f"{args.output}.manifest.json").expanduser().resolve())
+        args.validation_report = str(
+            Path(args.validation_report or f"{args.output}.validation.json").expanduser().resolve()
+        )
 
     # Find paper-agent root
     pa_root = find_pa_root()
@@ -86,6 +95,7 @@ Examples:
             cmd.extend(["--topic", args.topic])
         if args.model:
             cmd.extend(["--model", args.model])
+        cmd.extend(["--manifest", args.manifest, "--validation-report", args.validation_report])
 
     try:
         result = run_pa(
@@ -111,6 +121,9 @@ Examples:
             "output": args.output if not args.topics else "(topic clusters printed to stdout)",
             "mode": "clustering" if args.topics else "synthesis",
         }
+        if not args.topics:
+            out["manifest"] = args.manifest
+            out["validation_report"] = args.validation_report
         if args.topics:
             out["clusters"] = result.stdout  # pa review-topics prints clusters
         print(json.dumps(out, indent=2))
