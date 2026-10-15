@@ -42,8 +42,8 @@ def main(ctx):
     failure, stop iterating and surface a "your turn" handoff. Real human
     browser sessions remain the only reliable Cloudflare bypass.
     """
-    if ctx.invoked_subcommand == "gateway":
-        # Local journal commands have no dependency on external API credentials.
+    if ctx.invoked_subcommand in {"gateway", "doctor"}:
+        # Local inspection must not load private dotenv or credential registries.
         return
     # At every other CLI invocation:
     #   1. Load .env into os.environ (does not override existing values)
@@ -90,6 +90,24 @@ def version(remind):
             click.echo(f"  [--] {label:10s} not installed")
     click.echo(f"\nPython: {sys.version.split()[0]}")
     click.echo(f"Entry: python -m pa_cli <command>")
+
+
+@main.command("doctor")
+@click.option("--json", "as_json", is_flag=True, help="Output a machine-readable offline inventory")
+def doctor_cmd(as_json):
+    """Inspect local optional capabilities without network, browser launch or private files."""
+    from .doctor import build_report
+
+    report = build_report()
+    if as_json:
+        click.echo(json.dumps(report, ensure_ascii=False, indent=2))
+        return
+    click.echo(f"paper-agent local capabilities: {report['overall_status']}")
+    click.echo(report["scope"])
+    for name, check in report["checks"].items():
+        click.echo(f"  [{check['status']}] {name}: {check['summary']}")
+        if check.get("next_action"):
+            click.echo(f"    {check['next_action']}")
 
 
 # =============== keys subcommand group ===============
