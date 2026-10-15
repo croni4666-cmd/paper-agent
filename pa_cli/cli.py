@@ -42,7 +42,7 @@ def main(ctx):
     failure, stop iterating and surface a "your turn" handoff. Real human
     browser sessions remain the only reliable Cloudflare bypass.
     """
-    if ctx.invoked_subcommand in {"gateway", "doctor", "export"}:
+    if ctx.invoked_subcommand in {"gateway", "doctor", "export", "run-report"}:
         # Local inspection must not load private dotenv or credential registries.
         return
     # At every other CLI invocation:
@@ -108,6 +108,34 @@ def doctor_cmd(as_json):
         click.echo(f"  [{check['status']}] {name}: {check['summary']}")
         if check.get("next_action"):
             click.echo(f"    {check['next_action']}")
+
+
+@main.command("run-report")
+@click.option("--search", "search_path", type=click.Path(path_type=Path), help="Saved v4 search JSON")
+@click.option("--fetch", "fetch_path", type=click.Path(path_type=Path), help="Saved batch summary or wrapper JSON")
+@click.option("--review", "review_path", type=click.Path(path_type=Path), help="Saved review wrapper receipt JSON")
+@click.option("--format", "fmt", type=click.Choice(["json", "markdown"]), default="markdown", show_default=True)
+@click.option("--output", type=click.Path(path_type=Path), help="Write atomically to this file; parent must exist")
+@click.option("--strict", is_flag=True, help="Exit 1 unless all supplied stages report success")
+def run_report_cmd(search_path, fetch_path, review_path, fmt, output, strict):
+    """Summarize explicit local JSON snapshots without rerunning or verifying artifacts."""
+    from .run_report import build_report, render_markdown, write_report
+
+    inputs = {kind: path for kind, path in (("search", search_path), ("fetch", fetch_path), ("review", review_path))
+              if path is not None}
+    if not inputs:
+        raise click.UsageError("Supply --search, --fetch or --review")
+    report = build_report(inputs)
+    content = json.dumps(report, ensure_ascii=False, indent=2) + "\n" if fmt == "json" else render_markdown(report)
+    if output is None:
+        click.echo(content, nl=False)
+    else:
+        try:
+            write_report(output, content, inputs.values())
+        except (OSError, ValueError):
+            raise click.ClickException("Cannot publish report; check output permissions and input aliases") from None
+    if strict and report["overall_status"] != "success":
+        raise click.exceptions.Exit(1)
 
 
 # =============== keys subcommand group ===============

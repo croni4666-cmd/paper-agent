@@ -133,6 +133,20 @@ Zotero API 操作需要 `ZOTERO_API_KEY`、`ZOTERO_LIBRARY_ID` 等凭据。请�
 
 网关在本地评估请求，并使用事务型 SQLite 日志记录预留额度；网关本身不会调用外部服务。查看现有日志可使用 `status`、`doctor` 和 `audit`。迁移旧版 v3 账本前，请先阅读[迁移指南](gateway-v4.md)。不得让 v3 与 v4 写入进程同时操作同一记账域。
 
+## 9. 离线汇总已保存的运行结果
+
+```console
+pa run-report --search search.json --fetch batch.json --output run.md
+pa run-report --fetch batch.json --format json --strict
+```
+
+命令只读取你明确指定的结果 JSON，汇总成功、部分完成、失败或未知状态，并列出未提供的阶段。
+它不会重新搜索或下载，也不会打开结果里引用的 PDF、综述文档或链接。
+综述完成回执只表示原命令报告完成，不能证明文档或证据有效。
+输入计数矛盾、格式不支持或读取失败会显示“未知”，不会自动补成成功。
+`--strict` 在任一已提供阶段未成功或状态未知时返回非零退出码。
+支持的文件格式、摘要含义与输出规则见[运行报告说明](local-run-report.md)。
+
 ## 故障排查
 
 - **找不到 `pa` 命令：** 激活安装了 paper-agent 的 Python 环境，或改用 `python -m pa_cli`。

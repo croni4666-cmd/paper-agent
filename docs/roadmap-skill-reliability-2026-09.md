@@ -6,7 +6,9 @@ This historical plan was reviewed against v4. The M0–M2 changes from PRs
 #11–#13 are consolidated with v4 command compatibility fixes and offline tests;
 merge acceptance requires the current candidate's full CI. M3 (PR #16) remains
 blocked by duplicate evidence identities and repeated corpus reads; it is not
-accepted as a verified evidence-binding implementation. M4 remains deferred.
+accepted as a verified evidence-binding implementation. M4's bounded operational
+report is implemented under P3-44; evidence coverage and real-corpus acceptance
+remain deferred. See [the local report contract](local-run-report.md).
 
 All historical manual/public-source smoke checks below are suspended, along
 with real-corpus collection and human labels, under the operator's 2026-10-09
@@ -38,7 +40,7 @@ gated by the Global Sample Pool.
 | M1 — verified retrieval | Ready in [PR #12](https://github.com/croni4666-cmd/paper-agent/pull/12) | One child interpreter, UTF-8 execution, caller-relative paths, PDF signature/EOF validation, explicit success/partial/failure batch states | 15 offline wrapper tests; one reviewed smoke fetch after merge |
 | M2 — searchable quality controls | Ready in [PR #13](https://github.com/croni4666-cmd/paper-agent/pull/13) | Strategy presets, source filtering, existing quality labels and transparent quality summary | 7 offline wrapper tests; compare source counts on two representative queries |
 | M3 — evidence-traceable reviews | Planned | Corpus manifest, stable evidence IDs, review citations that resolve to the manifest, and a post-generation validation report | Fixture corpus test verifies every citation resolves and every listed input is classified |
-| M4 — research workflow audit | Proposed | A single local run report joining search, retrieval and review: selected sources, exclusions, failed downloads and evidence coverage | Run on a small user-selected corpus; no external synchronization |
+| M4 — research workflow audit | Operational subset implemented (P3-44); evidence coverage deferred | Explicit supplied-result snapshots and truthful stage accounting; no inferred relationship between runs | Generated contract/fault fixtures; corpus acceptance remains suspended |
 
 ## Merge and verification order
 
@@ -49,7 +51,8 @@ gated by the Global Sample Pool.
    engine mode return their declared source metadata.
 4. Start M3 only after #12 and #13 are merged. It builds on their consistent
    paths, statuses and search metadata.
-5. Consider M4 only after M3 supplies a validated evidence manifest.
+5. M4 evidence coverage depends on M3's validated manifest. P3-44's snapshot-only
+   operational report can ship independently; it does not validate evidence.
 
 ## M3 design boundary
 

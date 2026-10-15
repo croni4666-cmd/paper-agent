@@ -5396,7 +5396,7 @@ scientific accuracy result is inferred. P3-44 remains proposed.
 
 ### [P3-44] Local run report (refines historical skill-reliability M4)
 
-- **Status**: proposed; not started
+- **Status**: implemented; local gates passed, integration CI pending
 - **Added**: 2026-10-15
 - **Priority / Effort**: P2 / bounded report after format/schema design
 - **Source**: whut09/paper_agent stage contracts/checkpoint artifact traces;
@@ -5412,6 +5412,13 @@ scientific accuracy result is inferred. P3-44 remains proposed.
   binding awaits PR16's snapshot/identity repair. Validate with generated files.
 - **Global Rule audit**: passes provisionally; no SDK/hosted service or paid
   execution. No live dispatch, automatic collection, labeling or model evaluation.
+- **Implemented contract**: `pa run-report` reads only explicitly selected search,
+  batch-summary and review-wrapper JSON snapshots. Schema v1, versioned legacy
+  adapters, snapshot hashes, finite diagnostics, partial/failed/unknown accounting,
+  strict exit mode and atomic output are documented in docs/local-run-report.md.
+  Source roles and digests identify inputs; private paths and output references
+  are omitted. No job/journal database or linked artifact is opened. Historical
+  M4 evidence coverage/exclusions remain deferred with PR16, not claimed complete.
 
 ### Modified 2026-10-15 — P3-42 integrated
 

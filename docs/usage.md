@@ -136,6 +136,19 @@ Zotero API workflows require credentials such as `ZOTERO_API_KEY` and `ZOTERO_LI
 
 The gateway evaluates requests locally and accounts for reservations in a transactional SQLite journal. It does not itself call an external provider. To inspect a journal, use `status`, `doctor`, and `audit`; to migrate an existing v3 ledger, follow [the migration guide](gateway-v4.md) first. Do not run v3 and v4 writers against the same accounting domain at the same time.
 
+## 9. Summarize saved run results offline
+
+```console
+pa run-report --search search.json --fetch batch.json --output run.md
+pa run-report --fetch batch.json --format json --strict
+```
+
+The report summarizes only the JSON files you select, lists omitted stages and
+marks failed, partial or unknown results. It never repeats a run or opens linked
+PDFs. A review completion receipt does not verify its output or evidence. See
+[supported formats and report behavior](local-run-report.md). `--strict` returns
+nonzero if any supplied stage is incomplete or unknown.
+
 ## Troubleshooting
 
 - **`pa` is not found:** activate the environment where you installed the package, or invoke it with `python -m pa_cli`.

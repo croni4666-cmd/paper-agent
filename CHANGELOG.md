@@ -13,6 +13,11 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 > the "marketing" TL;DR + categorized features + tests/files tables.
 ## [Unreleased]
 
+### Local snapshot run report [P3-44]
+
+- Add `pa run-report` for explicitly selected search, batch and review-wrapper JSON. Preserve partial/failure/unknown distinctions, separate existing-file skips from timeouts, and record hashes of the exact parsed JSON bytes. No reruns, linked artifact reads or evidence-binding claims.
+- Provide JSON schema v1, bounded legacy adapters, finite privacy-preserving diagnostics, strict exit mode, atomic output and source-alias protection. Add generated contract/fault tests and bilingual usage guidance; historical M4 evidence coverage stays deferred with PR #16.
+
 ### Offline reference interchange [P3-43 / P0-16]
 
 - Add RIS to `pa export` and `pa project export`, covering BibTeX and supported project/search JSON, Unicode/repeated authors, optional bibliographic fields and DOI/arXiv separation. No provider, SDK, PDF inventory or upload is required; `n_pdfs` is explicitly unknown for RIS.
