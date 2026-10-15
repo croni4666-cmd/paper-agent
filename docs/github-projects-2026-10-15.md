@@ -5,6 +5,10 @@ affiliates. Primary repository files were read at the commits linked below;
 their code/dependencies were not executed or installed. This is a scoped design
 comparison, not an endorsement, benchmark or claim of production reliability.
 
+Delivery: [RIS implementation #67](https://github.com/croni4666-cmd/paper-agent/pull/67)
+merged at `607726e` after ten CI checks passed. The run-report proposal remains
+unimplemented; this research did not reopen suspended scientific/data work.
+
 | Project / inspected commit | Concrete observation | Fit for our project |
 | --- | --- | --- |
 | [galleonli/paper-agent](https://github.com/galleonli/paper-agent/tree/2552cb66758755f36f04166cf3ee82709c6633bc) | `paper_agent/export/bibtex_ris.py` writes BibTeX/RIS; `pipeline.py` connects selected papers to local notes, exports and digests. | Adopt the portable export idea, not scheduled discovery. Add RIS beside existing export formats; no provider or corpus required. |

@@ -5348,7 +5348,8 @@ remain unfulfilled and are not reclassified as completed by this release.
 
 ### [P3-42] Open PR consolidation and v4 wrapper contracts
 
-- **Status**: implementation complete; integration requires exact-head CI
+- **Status**: done — PR #66 merged at ee0b3eb after all ten CI checks passed
+- **Completed**: 2026-10-15
 - **Added / Started**: 2026-10-15
 - **Priority**: P2
 - **Source**: user instruction to review and uniformly process all open PRs.
@@ -5363,7 +5364,8 @@ remain unfulfilled and are not reclassified as completed by this release.
 
 ### [P3-43] Offline RIS reference export (extends [P0-16])
 
-- **Status**: in-progress
+- **Status**: done — PR #67 merged at 607726e after all ten CI checks passed
+- **Completed**: 2026-10-15
 - **Added / Started**: 2026-10-15
 - **Priority / Effort**: P2 / bounded local exporter
 - **Source**: user asks to study similarly named GitHub projects and implement
@@ -5382,6 +5384,15 @@ remain unfulfilled and are not reclassified as completed by this release.
 - **Global Rule audit**: 5/5 pass; stdlib, no new dependency, hosted/paid service,
   collection schedule or model/scientific evaluation. Offline export survives
   provider/free-tier changes. Reference-manager UI import remains unvalidated.
+
+### Modified 2026-10-15 — P3-43 software acceptance passed
+
+[PR #67](https://github.com/croni4666-cmd/paper-agent/pull/67) passed all ten
+current-head CI jobs on 78e9289, including RIS checks on Windows/Linux and
+Python 3.10–3.12 plus clean wheel import outside the checkout. Local checks:
+11 generated RIS cases, seven existing export regressions and 29 wrapper cases
+passed. RIS software delivery is complete; no real corpus, client UI import or
+scientific accuracy result is inferred. P3-44 remains proposed.
 
 ### [P3-44] Local run report (refines historical skill-reliability M4)
 
