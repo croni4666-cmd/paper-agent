@@ -3,10 +3,12 @@ import hashlib
 import json
 import tempfile
 import unittest
+import sys
 from pathlib import Path
 from unittest.mock import patch
 from pa_cli import cache
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from test_output.pdf_fixture import make_pdf
 fake_pdf_1 = make_pdf(1)
 fake_pdf_2 = make_pdf(2)
