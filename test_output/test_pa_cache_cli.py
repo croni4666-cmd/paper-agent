@@ -17,7 +17,8 @@ from pathlib import Path
 
 
 # A small valid-looking PDF for testing purposes
-FAKE_PDF = b"%PDF-1.4\n%test\n" + b"%% padding " * 6000  # ~66KB
+from test_output.pdf_fixture import make_pdf
+FAKE_PDF = make_pdf()
 
 
 if hasattr(sys.stdout, "reconfigure"):

@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.1.1] - 2026-10-16
+
+Repairs the failures reproduced on the unchanged 4.1.0 tag while retaining the
+v4 transactional gateway journal.
+
+- Validate PDF structure in bounded workers before publication and on cold
+  cache reads. Preserve good active generations on rejection; accept valid
+  small PDFs. Memoize exact validated hashes for bounded-cost hot reads.
+- Keep PMID-only records, publication identity aliases, and nonempty metadata;
+  retain OpenAlex abstracts and PMIDs. Attempt bounded PubMed XML details.
+- Generate auditable source inventories; do not infer full text from word count,
+  index generated inventories as papers, or inject fixed coverage percentages.
+- Serialize PubMed pacing. Reject invalid downloads instead of reporting
+  SUCCESS_UNCACHED. Replace header-padding fixtures with generated valid PDFs.
+
+Release attachments document original failed samples, complete pressure reruns,
+platform checks, dependency audit, source bindings and artifact SHA256 values.
+
 All notable changes to Paper Agent Skill.
 
 Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.

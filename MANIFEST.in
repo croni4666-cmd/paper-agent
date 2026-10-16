@@ -1,0 +1,10 @@
+include README.md LICENSE NO_AI_TRAINING.md CHANGELOG.md requirements.txt
+recursive-include pa_cli/data *.csl *.txt *.json
+recursive-include tests *.py
+recursive-include test_output *.py
+recursive-include tools *.py
+recursive-include .agents/skills/paper-agent *.py *.md *.yaml
+recursive-include docs *.md
+global-exclude *.pyc
+global-exclude runtime.local.json
+prune .pytest_temp

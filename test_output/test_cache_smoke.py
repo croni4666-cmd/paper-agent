@@ -11,7 +11,8 @@ from pa_cli import cache as c
 
 
 # A synthetic "PDF" — magic header + padding to exceed 50KB threshold
-fake_pdf = b"%PDF-1.4\n%test\n" + b"%% padding to pass 50KB is_pdf threshold\n" * 1500
+from test_output.pdf_fixture import make_pdf
+fake_pdf = make_pdf()
 print(f"Fake PDF size: {len(fake_pdf)} bytes")
 
 

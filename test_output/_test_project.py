@@ -657,7 +657,12 @@ class TestProjectPrismaAndReview(unittest.TestCase):
         (pdf_dir / 'paper1.txt').write_text("# Deep Learning Applications\n" + "Word " * 1200, encoding='utf-8')
         rev = project_review('lit_proj', root=self.root, with_prisma=True)
         self.assertIn('Deep Learning Applications', rev)
-        self.assertIn('FULL TEXT', rev)
+        self.assertIn('completeness unverified', rev)
+        self.assertNotIn('FULL TEXT', rev)
+        from pa_cli.review import build_corpus_index
+        inventory = build_corpus_index(pdf_dir)
+        self.assertEqual(len(inventory), 1)
+        self.assertFalse(inventory[0]['is_full_text'])
 
     def test_cli_prisma_and_review(self):
         from pa_cli.cli import main

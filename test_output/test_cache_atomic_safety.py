@@ -7,8 +7,9 @@ from pathlib import Path
 from unittest.mock import patch
 from pa_cli import cache
 
-fake_pdf_1 = b"%PDF-1.4\n%version1\n" + b"%% padding to pass 50KB threshold\n" * 1500
-fake_pdf_2 = b"%PDF-1.4\n%version2\n" + b"%% different padding for second version\n" * 1500
+from test_output.pdf_fixture import make_pdf
+fake_pdf_1 = make_pdf(1)
+fake_pdf_2 = make_pdf(2)
 
 
 class TestCacheAtomicSafety(unittest.TestCase):

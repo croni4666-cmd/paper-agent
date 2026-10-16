@@ -1467,7 +1467,9 @@ def _fetch_doi_artifact(doi: str, output_dir: str = ".",
     if pdf_path and pdf_path.exists() and pdf_path.is_file():
         try:
             candidate_body = pdf_path.read_bytes()
-            if _cache_mod._is_pdf(candidate_body):
+            from .pdf_validation import structurally_valid
+            if (_cache_mod._is_pdf(candidate_body) and
+                    structurally_valid(pdf_path, hashlib.sha256(candidate_body).hexdigest())):
                 pdf_body = candidate_body
         except OSError:
             pdf_body = None

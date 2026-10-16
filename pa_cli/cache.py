@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import re
 import tempfile
@@ -90,7 +91,8 @@ def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
     if meta_path.exists():
         try:
             data = json.loads(meta_path.read_text(encoding="utf-8"))
-            if isinstance(data, dict) and data.get("pdf_file"):
+            if (isinstance(data, dict) and isinstance(data.get("pdf_file"), str)
+                    and re.fullmatch(re.escape(_generation_prefix(slug))+r'[0-9a-f]{16}\.pdf',data['pdf_file'])):
                 gen_path = root / data["pdf_file"]
                 if gen_path.exists():
                     return gen_path, meta_path
@@ -101,7 +103,7 @@ def _paths(doi: str, root: Optional[Path] = None) -> Tuple[Path, Path]:
 
 def _is_pdf(b: bytes) -> bool:
     """PDF magic check — same as fetch.is_pdf."""
-    return b.startswith(b"%PDF") and len(b) > 50_000
+    return b.startswith(b"%PDF-") and len(b) > 5
 
 
 # ===== public API =====
@@ -149,14 +151,21 @@ def cache_get(doi: str, root: Optional[Path] = None) -> Optional[dict]:
 
     # Validate sha256 against sidecar
     actual_sha = hashlib.sha256(body).hexdigest()
-    if meta.get("sha256") and meta["sha256"] != actual_sha:
+    if meta.get("sha256") != actual_sha:
         # Sidecar out of sync — treat as miss.
         # NEVER unlink existing files on read-time observation:
         # this prevents losing valid files during concurrent writes or inspection.
         return None
 
+    from .pdf_validation import structurally_valid
+    if not structurally_valid(pdf_path, actual_sha):return None
     ts = meta.get("ts", 0)
-    age_days = (time.time() - ts) / 86400 if ts else 0.0
+    if type(ts) not in (int,float):return None
+    try:
+        if not math.isfinite(ts) or not 0 < ts <= time.time():return None
+    except OverflowError:return None
+    age_days = (time.time() - ts) / 86400
+    if age_days>365:return None
 
     return {
         "doi": doi,
@@ -221,7 +230,10 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
             f_meta.flush()
             os.fsync(f_meta.fileno())
 
-        # 3. Publish: first write immutable generation PDF, then atomically replace metadata pointer
+        from .pdf_validation import structurally_valid
+        if not structurally_valid(staged[0][0], sha):
+            raise ValueError('cache_put: refusing structurally invalid PDF')
+        # 3. Publish only structurally validated bytes.
         os.replace(staged[0][0], gen_pdf_path)
         os.replace(staged[1][0], meta_path)
         published = True

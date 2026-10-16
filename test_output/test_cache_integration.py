@@ -28,7 +28,8 @@ from pa_cli import fetch, cache as pa_cache
 
 
 # Fake PDF body -- valid magic header + padding (must exceed 50KB threshold)
-fake_pdf = b"%PDF-1.4\n%test\n" + b"%% padding " * 6000  # ~66KB
+from test_output.pdf_fixture import make_pdf
+fake_pdf = make_pdf()
 
 
 def test_cache_hit():

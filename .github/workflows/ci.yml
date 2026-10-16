@@ -27,6 +27,7 @@ jobs:
         run: python -m pip install -e ".[test]" pytest
       - name: Run offline consistency quality gate
         run: |
+          python -m pytest tests/test_v411_repairs.py -q
           python tools/consistency_quality_gate.py
           python -m unittest discover -s tests -p "test_*wrapper*.py" -v
           python -m unittest test_output.test_ris_export -v
@@ -162,3 +163,16 @@ jobs:
           path: dist/*.whl
           if-no-files-found: error
           retention-days: 14
+
+  dependency-audit:
+    name: Audit core dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit declared core requirements
+        run: |
+          python -m pip install --upgrade pip pip-audit
+          python -m pip_audit -r requirements.txt

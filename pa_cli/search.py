@@ -30,6 +30,8 @@ existence. See pa_cli.cnki_channel for setup details.
 """
 
 import json
+import xml.etree.ElementTree as ET
+import re
 import gzip
 import io
 import os
@@ -455,24 +457,40 @@ def search_openalex(query: str, year_min: int = None, year_max: int = None,
 
 
 def _normalize_openalex(r: dict) -> dict:
-    authors = [a.get("author", {}).get("display_name", "") for a in (r.get("authorships") or [])]
+    authors = [(a.get("author") or {}).get("display_name", "") for a in (r.get("authorships") or [])]
     venue = (r.get("primary_location") or {}).get("source", {}).get("display_name", "") \
         if (r.get("primary_location") or {}).get("source") else ""
     pub_date = r.get("publication_date", "")
-    year = int(pub_date[:4]) if pub_date else None
+    year = int(pub_date[:4]) if pub_date and pub_date[:4].isdigit() else None
     oa = r.get("open_access") or {}
+    # OpenAlex supplies word positions rather than a plaintext abstract.
+    inverted = r.get('abstract_inverted_index')
+    positions = {}
+    if isinstance(inverted, dict):
+        for word, offsets in inverted.items():
+            if not isinstance(word, str) or not isinstance(offsets, list):
+                continue
+            for offset in offsets:
+                if type(offset) is int and 0 <= offset < 100000:
+                    positions.setdefault(offset, word)
+    abstract = ' '.join(positions[p] for p in sorted(positions))
+    ids = r.get('ids') if isinstance(r.get('ids'), dict) else {}
+    raw_pmid = str(ids.get('pmid') or '')
+    pmid_match = re.fullmatch(r'(?:https?://pubmed\.ncbi\.nlm\.nih\.gov/)?(\d+)/?', raw_pmid)
     return {
         "doi": (r.get("doi") or "").replace("https://doi.org/", ""),
         "title": r.get("title", "") or r.get("display_name", ""),
         "authors": authors,
         "venue": venue,
         "year": year,
-        "cited_by_count": r.get("cited_by_count", 0),
+        "cited_by_count": (r.get("cited_by_count") or 0),
         "is_oa": oa.get("is_oa", False),
         "oa_status": oa.get("oa_status"),
         "oa_url": oa.get("oa_url"),
         "source": "openalex",
         "type": r.get("type", ""),
+        "abstract": abstract,
+        "pmid": pmid_match.group(1) if pmid_match else '',
     }
 
 
@@ -691,15 +709,65 @@ def _search_core_unavailable(*args, **kwargs):
 # Does NOT return: abstract / MeSH terms (would need efetch XML, deferred to v3.9.12).
 # 2 calls per search: esearch (PMID list) + esummary (metadata). 1s polite sleep between.
 _PUBMED_LAST_CALL_TS = [0.0]  # module-level throttle
+_PUBMED_THROTTLE_LOCK = threading.Lock()
 
 def _pubmed_throttle(min_interval: float = 0.4) -> None:
     """NCBI etiquette: 3 RPS without API key, 10 RPS with key.
     Default 0.4s = 2.5 RPS = safely under both limits and polite to NCBI.
     """
-    elapsed = time.time() - _PUBMED_LAST_CALL_TS[0]
-    if elapsed < min_interval:
-        time.sleep(min_interval - elapsed)
-    _PUBMED_LAST_CALL_TS[0] = time.time()
+    with _PUBMED_THROTTLE_LOCK:
+        elapsed = time.monotonic() - _PUBMED_LAST_CALL_TS[0]
+        while elapsed < min_interval:
+            time.sleep(min_interval - elapsed)
+            elapsed = time.monotonic() - _PUBMED_LAST_CALL_TS[0]
+        _PUBMED_LAST_CALL_TS[0] = time.monotonic()
+
+
+def _parse_pubmed_details(xml_bytes: bytes) -> Dict[str, Dict[str, Any]]:
+    """Extract abstract sections and MeSH descriptors from PubMed EFetch XML."""
+    details: Dict[str, Dict[str, Any]] = {}
+    try:
+        root = ET.fromstring(xml_bytes)
+    except ET.ParseError:
+        return details
+    for article in root.findall(".//PubmedArticle"):
+        pmid = (article.findtext("./MedlineCitation/PMID") or "").strip()
+        if not pmid:
+            continue
+        abstract_parts = []
+        for item in article.findall("./MedlineCitation/Article/Abstract/AbstractText"):
+            text = " ".join("".join(item.itertext()).split())
+            if text:
+                label = (item.get("Label") or "").strip()
+                abstract_parts.append(f"{label}: {text}" if label else text)
+        mesh_terms = []
+        for item in article.findall("./MedlineCitation/MeshHeadingList/MeshHeading/DescriptorName"):
+            text = " ".join("".join(item.itertext()).split())
+            if text:
+                mesh_terms.append(text)
+        details[pmid] = {
+            "abstract": " ".join(abstract_parts),
+            "mesh_terms": mesh_terms,
+        }
+    return details
+
+
+def _fetch_pubmed_details(pmids, tool, email, api_key, seconds=8):
+    """Best effort within one shared budget; missing XML never erases summaries."""
+    from ._http import http_get
+    deadline=time.monotonic()+seconds
+    details={}
+    for offset in range(0,len(pmids),100):
+        _pubmed_throttle()
+        remaining=deadline-time.monotonic()
+        if remaining<=0:break
+        ids=','.join(pmids[offset:offset+100])
+        url=('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi'
+             f'?db=pubmed&id={ids}&retmode=xml&tool={tool}&email={quote(email)}')
+        if api_key:url+=f'&api_key={quote(api_key)}'
+        try:details.update(_parse_pubmed_details(http_get(url,timeout=min(8,remaining))))
+        except Exception:continue
+    return details
 
 
 def search_pubmed(query: str, year_min: int = None, year_max: int = None,
@@ -774,6 +842,10 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
                 results.append({"error": "partial_response", "message": "PubMed summary record unavailable"})
                 continue
             results.append(_normalize_pubmed(r))
+
+    details = _fetch_pubmed_details([r['pmid'] for r in results if r.get('pmid')], tool, email, api_key)
+    for row in results:
+        row.update(details.get(row.get('pmid'), {}))
 
     # Post-filter by year (v3.9.11.8 hotfix)
     #
@@ -1027,7 +1099,7 @@ def _validated_engine_rows(result):
         if any(row.get(key) is not None and (type(row[key]) is not int or row[key] < 0)
                for key in ("year", "cited_by_count")):
             raise EngineResponseError("Search engine returned invalid numeric fields")
-        if not (row.get("doi") or row.get("arxiv_id") or row.get("title")):
+        if not (row.get("doi") or row.get("arxiv_id") or row.get("pmid") or row.get("nct_id") or row.get("title")):
             raise EngineResponseError("Search engine returned no result identity")
     return result
 
@@ -1167,27 +1239,16 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         except Exception as e:
             by_engine[eng] = [{"error": type(e).__name__, "message": str(e)[:200]}]
 
-    # Dedup by DOI (or arXiv ID fallback)
-    seen = {}
+    from .record_identity import deduplicate_records
+    publication_rows = []
     for eng, papers in by_engine.items():
         for p in papers:
             if "error" in p:
                 continue
-            key = p.get("doi") or p.get("arxiv_id") or p.get("title", "")[:60]
-            if not key:
-                continue
-            if key not in seen:
-                seen[key] = dict(p)
-                seen[key]["found_by"] = [eng]
-            else:
-                if eng not in seen[key]["found_by"]:
-                    seen[key]["found_by"].append(eng)
-                # Merge citation count + abstract + enrichment fields (prefer non-empty)
-                for c in ("cited_by_count", "is_oa", "oa_url", "tldr", "abstract",
-                          "venue", "authors", "influential_cite_count", "reference_count",
-                          "doi", "arxiv_id"):
-                    if not seen[key].get(c) and p.get(c):
-                        seen[key][c] = p[c]
+            row = dict(p)
+            row['found_by'] = [eng]
+            publication_rows.append(row)
+    seen = dict(enumerate(deduplicate_records(publication_rows)))
 
     # tldr 鈫?abstract fallback: if abstract still empty after merge but tldr present,
     # use tldr 鈥?BUT only if it's a real tldr (not S2's "no tldr" placeholder).
