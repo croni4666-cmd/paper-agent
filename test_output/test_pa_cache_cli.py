@@ -17,6 +17,7 @@ from pathlib import Path
 
 
 # A small valid-looking PDF for testing purposes
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from test_output.pdf_fixture import make_pdf
 FAKE_PDF = make_pdf()
 
