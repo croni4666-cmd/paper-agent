@@ -154,7 +154,7 @@ def test_citation_report_counts_resolved_citations_and_real_bib_keys(tmp_path):
 
 def test_offline_browser_check_is_supervised_and_bounded():
     with patch('pa_cli.fetch_deadline.run_fetch',return_value={'installed':True}) as worker, \
-         patch('playwright.sync_api.sync_playwright',side_effect=RuntimeError('driver not available')):
+         patch.dict('sys.modules',{'playwright':None,'playwright.sync_api':None}):
         assert doctor._chromium_installed() is True
     assert worker.call_count==1 and worker.call_args.args[1]<=10
 
