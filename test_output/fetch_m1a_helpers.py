@@ -1,10 +1,20 @@
 """Pickle-safe offline fetch helpers for the M1A subprocess tests."""
 
 from pathlib import Path
+import io
 import time
+from pypdf import PdfWriter
 
 
-FAKE_PDF = b"%PDF-1.4\n%m1a\n" + b"offline padding\n" * 4000
+def _generated_pdf():
+    writer = PdfWriter()
+    writer.add_blank_page(width=100, height=100)
+    output = io.BytesIO()
+    writer.write(output)
+    return output.getvalue()
+
+
+FAKE_PDF = _generated_pdf()
 
 
 def successful_pdf_fetch(doi=None, out_path=None, prefer="auto"):

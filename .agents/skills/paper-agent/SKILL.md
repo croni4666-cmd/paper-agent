@@ -2,8 +2,8 @@
 name: paper-agent
 description: Use when searching academic papers, fetching PDFs by DOI or BibTeX, extracting page-aware evidence, verifying claims and provenance, using Zotero or topic projects, generating PRISMA diagrams, tracing citations, clustering a corpus, drafting literature reviews, or managing paper-agent keys and cache. Not for general web search.
 metadata:
-  version: 4.1.1
-  pa_cli_version: 4.1.1
+  version: 4.1.2
+  pa_cli_version: 4.1.2
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent
@@ -23,7 +23,7 @@ Requires Python 3.10+ and `pa_cli`. Check availability with `python "<skill-dir>
 
 ## Commands
 
-`review` in 4.1.1 produces a source inventory with completeness marked unverified.
+`review` in 4.1.2 produces a source inventory with completeness marked unverified.
 It does not adjudicate scientific claims or certify full text from word count.
 See the release validation attachment for tested paths and remaining boundaries.
 

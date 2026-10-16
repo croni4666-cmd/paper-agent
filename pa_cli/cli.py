@@ -2653,7 +2653,7 @@ def search_saved_run(name, output, quiet):
                    f"year_max={args.get('year_max')}, limit={args.get('limit', 50)}",
                    err=True)
     try:
-        search_cmd(
+        click.get_current_context().invoke(search_cmd,
             query=args['query'],
             year_min=args.get('year_min'),
             year_max=args.get('year_max'),
@@ -2662,7 +2662,7 @@ def search_saved_run(name, output, quiet):
             out_format=args.get('format', 'json'),
             output=output,
             concept_ids=args.get('concepts'),
-            concept_names=args.get('concept'),
+            concept_names=args.get('concept') or (),
             concept_mode=args.get('concept_mode', 'or'),
             enrich_top=args.get('enrich_top', 0),
             enrich_top_min_cites=args.get('enrich_top_min_cites', 1),

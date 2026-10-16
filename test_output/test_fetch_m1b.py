@@ -76,7 +76,8 @@ class ProvenanceTests(unittest.TestCase):
             self.assertFalse(p['external_evaluation_candidate'])
 
     def test_unknown_pdf_cache_is_not_promoted_by_doi_key(self):
-        body = b'%PDF-1.4\n' + b'padding\n' * 8000
+        from test_output.fetch_m1a_helpers import FAKE_PDF
+        body = FAKE_PDF
         with patch.object(cache, 'get_cache_root', return_value=self.root):
             cache.cache_put(DOI, body, channel='pmc', url=URL)
             result = fetch.fetch_doi(DOI)
@@ -96,7 +97,7 @@ class ProvenanceTests(unittest.TestCase):
         <rdf:Description xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:cc="http://creativecommons.org/ns#">
         <prism:doi>10.1234/article</prism:doi><cc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         </rdf:Description></rdf:RDF></x:xmpmeta>''')
-        body = doc.tobytes() + b'\n%' + b'padding' * 10000
+        body = doc.tobytes()
         doc.close()
         with patch.object(cache, 'get_cache_root', return_value=self.root):
             cache.cache_put(DOI, body, channel='pmc', url='https://europepmc.org/articles/PMC1?pdf=render')

@@ -33,6 +33,7 @@ from .scaffold import parse_bibtex, load_bibtex
 # Match [@key] or [@key:page] or [@key, p. 12] etc.
 # Key chars: letters, digits, underscore, hyphen, dot, colon (common in author-year keys)
 _CITE_RE = re.compile(r"\[@([\w\-:.]+)(?:\s*[,;][^\]]*)?\]")
+_KEY_RE = re.compile(r"(?<![\w@])@([\w\-:.]+)")
 
 
 def extract_cite_keys(skeleton_text: str) -> List[Tuple[str, int]]:
@@ -44,8 +45,12 @@ def extract_cite_keys(skeleton_text: str) -> List[Tuple[str, int]]:
     """
     out = []
     for lineno, line in enumerate(skeleton_text.splitlines(), start=1):
+        seen = set()
         for m in _CITE_RE.finditer(line):
-            out.append((m.group(1), lineno))
+            for key in _KEY_RE.findall(m.group(0)):
+                if key not in seen:
+                    out.append((key, lineno))
+                    seen.add(key)
     return out
 
 

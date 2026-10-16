@@ -1,3 +1,10 @@
+# v4.1.2
+
+- Preserve PMID/PMCID in BibTeX export.
+- Check every key in grouped citations with per-line deduplication.
+- Execute saved searches through Click context defaults.
+- Add regression coverage for failures observed in the v4.1.1 real workflow.
+
 # Changelog
 
 ## [4.1.1] - 2026-10-16

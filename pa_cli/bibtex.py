@@ -281,6 +281,9 @@ def to_bibtex(paper: Dict, seen: Optional[set] = None) -> str:
     abstract = clean_markup_text(paper.get("abstract") or "")
     if abstract:
         fields.append(("abstract", escape_bibtex(abstract)))
+    for name in ("pmid", "pmcid"):
+        if paper.get(name):
+            fields.append((name, escape_bibtex(str(paper[name]))))
     # Notes — useful for academic workflows
     notes = []
     if paper.get("is_oa"):
